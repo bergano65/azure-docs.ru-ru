@@ -21,10 +21,10 @@ ms.locfileid: "74420789"
 ---
 # <a name="manage-azure-sql-database-long-term-backup-retention"></a>Управление долгосрочным хранением резервных копий базы данных SQL Azure
 
-In Azure SQL Database, you can configure a single or a pooled database with a [long-term backup retention](sql-database-long-term-retention.md) policy (LTR) to automatically retain the database backups in separate Azure Blob storage containers for up to 10 years. После этого появляется возможность восстановления базы данных с помощью резервных копий на портале Azure или через PowerShell.
+В базе данных SQL Azure можно настроить одну или несколько баз данных с помощью политики [долгосрочного хранения резервных копий](sql-database-long-term-retention.md) (LTR), чтобы автоматически хранить резервные копии баз данных в отдельных контейнерах хранилища BLOB-объектов Azure до 10 лет. После этого появляется возможность восстановления базы данных с помощью резервных копий на портале Azure или через PowerShell.
 
 > [!IMPORTANT]
-> [Azure SQL database managed instance](sql-database-managed-instance.md) does not currently support long-term backup retention.
+> [Управляемый экземпляр базы данных SQL Azure](sql-database-managed-instance.md) в настоящее время не поддерживает долгосрочное хранение резервных копий.
 
 ## <a name="using-azure-portal"></a>Использование портала Azure
 
@@ -45,9 +45,9 @@ In Azure SQL Database, you can configure a single or a pooled database with a [l
 3. По завершении операций нажмите кнопку **Применить**.
 
 > [!IMPORTANT]
-> When you enable a long-term backup retention policy, it may take up to 7 days for the first backup to become visible and available to restore. For details of the LTR backup cadance, see [long-term backup retention](sql-database-long-term-retention.md).
+> При включении политики долгосрочного хранения резервных копий может потребоваться до 7 дней, чтобы первая резервная копия стала видимой и доступной для восстановления. Дополнительные сведения о резервном копировании LTR каданце см. в статье [долгосрочное хранение резервных копий](sql-database-long-term-retention.md).
 
-### <a name="view-backups-and-restore-from-a-backup"></a>View backups and restore from a backup
+### <a name="view-backups-and-restore-from-a-backup"></a>Просмотр резервных копий и восстановление из резервной копии
 
 Просмотрите резервные копии, которые сохраняются в указанной базе данных под управлением политики долгосрочного хранения (LTR), и выполните восстановление из этих резервных копий.
 
@@ -74,36 +74,36 @@ In Azure SQL Database, you can configure a single or a pooled database with a [l
 > [!NOTE]
 > Здесь вы можете подключиться к восстановленной базе данных с помощью SQL Server Management Studio и выполнить необходимые задания, например [извлечь часть данных из восстановленной базы данных, чтобы скопировать их в имеющуюся базу данных, или удалить имеющуюся базу данных и присвоить ее имя восстановленной базе данных](sql-database-recovery-using-backups.md#point-in-time-restore).
 
-## <a name="using-powershell"></a>Использование PowerShell
+## <a name="using-powershell"></a>с использованием PowerShell.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 > [!IMPORTANT]
-> The PowerShell Azure Resource Manager module is still supported by Azure SQL Database, but all future development is for the Az.Sql module. For these cmdlets, see [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). The arguments for the commands in the Az module and in the AzureRm modules are substantially identical.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
 В следующем разделе показано, как настроить долгосрочное хранение резервных копий, просматривать резервные копии в хранилище SQL Azure и выполнять восстановление из резервной копии в хранилище SQL Azure с помощью PowerShell.
 
 ### <a name="rbac-roles-to-manage-long-term-retention"></a>Роли RBAC для управления долгосрочным хранением
 
-For **Get-AzSqlDatabaseLongTermRetentionBackup** and **Restore-AzSqlDatabase**, you will need to have one of the following roles:
+Для **Get-азсклдатабаселонгтермретентионбаккуп** и **RESTORE-азсклдатабасе**необходимо иметь одну из следующих ролей:
 
-- Subscription Owner role or
-- SQL Server Contributor role or
-- Custom role with the following permissions:
+- Роль владельца подписки или
+- Роль участника SQL Server или
+- Пользовательская роль со следующими разрешениями:
 
-   Microsoft.Sql/locations/longTermRetentionBackups/read  Microsoft.Sql/locations/longTermRetentionServers/longTermRetentionBackups/read  Microsoft.Sql/locations/longTermRetentionServers/longTermRetentionDatabases/longTermRetentionBackups/read
+   Microsoft. SQL/Locations/Лонгтермретентионбаккупс/Read Microsoft. SQL/Locations/Лонгтермретентионсерверс/Лонгтермретентионбаккупс/Read Microsoft. SQL/Locations/Лонгтермретентионсерверс/longTermRetentionDatabases/ Лонгтермретентионбаккупс/чтение
 
-For **Remove-AzSqlDatabaseLongTermRetentionBackup**, you will need to have one of the following roles:
+Для **Remove-азсклдатабаселонгтермретентионбаккуп**необходимо иметь одну из следующих ролей:
 
-- Subscription Owner role or
-- Custom role with the following permission:
+- Роль владельца подписки или
+- Пользовательская роль со следующим разрешением:
 
    Microsoft.Sql/locations/longTermRetentionServers/longTermRetentionDatabases/longTermRetentionBackups/delete
 
 > [!NOTE]
-> The SQL Server Contributor role does not have permission to delete LTR backups.
+> Роль участника SQL Server не имеет разрешения на удаление резервных копий слева направо.
 
-RBAC permissions could be granted in either *subscription* or *resource group* scope. However, to access LTR backups that belong to a dropped server, the permission must be granted in the *subscription* scope of that server.
+Разрешения RBAC можно предоставить в *подписке* или области *группы ресурсов* . Однако для доступа к резервным копиям LTR, принадлежащим удаленному серверу, разрешение должно быть предоставлено в области действия *подписки* этого сервера.
 
 - Microsoft.Sql/locations/longTermRetentionServers/longTermRetentionDatabases/longTermRetentionBackups/delete
 
@@ -186,7 +186,7 @@ Remove-AzSqlDatabaseLongTermRetentionBackup -ResourceId $ltrBackup.ResourceId
 ```
 
 > [!IMPORTANT]
-> Удаление резервной копии LTR отменить нельзя. To delete an LTR backup after the server has been deleted you must have Subscription scope permission. Можно настроить уведомления о каждом удалении в Azure Monitor, выполнив фильтрацию по операции Deletes a long term retention backup (Удаление резервной копии долгосрочного хранения). В журнале действий содержатся сведения о том, кто и когда выполнил запрос. Подробные сведения см. в статье [Создание, просмотр и управление оповещениями журнала действий с помощью Azure Monitor](../azure-monitor/platform/alerts-activity-log.md).
+> Удаление резервной копии LTR отменить нельзя. Чтобы удалить резервную копию LTR после удаления сервера, необходимо иметь разрешение на область подписки. Можно настроить уведомления о каждом удалении в Azure Monitor, выполнив фильтрацию по операции Deletes a long term retention backup (Удаление резервной копии долгосрочного хранения). В журнале действий содержатся сведения о том, кто и когда выполнил запрос. Подробные сведения см. в статье [Создание, просмотр и управление оповещениями журнала действий с помощью Azure Monitor](../azure-monitor/platform/alerts-activity-log.md).
 
 ### <a name="restore-from-ltr-backups"></a>Восстановление из резервных копий LTR
 
@@ -199,12 +199,12 @@ Restore-AzSqlDatabase -FromLongTermRetentionBackup -ResourceId $ltrBackup.Resour
 ```
 
 > [!IMPORTANT]
-> To restore from an LTR backup after the server has been deleted, you must have permissions scoped to the server's subscription and that subscription must be active. You must also omit the optional -ResourceGroupName parameter.
+> Для восстановления из резервной копии LTR после удаления сервера необходимо иметь разрешения, ограниченные подпиской сервера, и эта подписка должна быть активной. Необходимо также опустить необязательный параметр-ResourceGroupName.
 
 > [!NOTE]
 > Здесь вы можете подключиться к восстановленной базе данных с помощью SQL Server Management Studio и выполнить необходимые задания, например извлечь часть данных из восстановленной базы данных, чтобы скопировать их в имеющуюся базу данных или удалить имеющуюся базу данных и присвоить ее имя восстановленной базе данных. Ознакомьтесь с [восстановлением до точки во времени](sql-database-recovery-using-backups.md#point-in-time-restore).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения о резервных копиях базы данных, создаваемых автоматически службой, см. в [этой статье](sql-database-automated-backups.md).
+- Чтобы узнать больше о резервных копиях базы данных, создаваемых автоматически службой, ознакомьтесь с разделом [Подробнее о резервном копировании базы данных SQL](sql-database-automated-backups.md).
 - Дополнительные сведения о долгосрочном хранении резервных копий см. в статье [Хранение резервных копий базы данных SQL Azure до 10 лет](sql-database-long-term-retention.md).

@@ -1,6 +1,6 @@
 ---
-title: Connectivity Architecture
-description: This document explains the Azure SQL connectivity architecture for database connections from within Azure or from outside of Azure.
+title: Архитектура подключения
+description: В этом документе объясняется архитектура подключения к базе данных Azure SQL в Azure или за пределами Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: development
@@ -39,15 +39,15 @@ ms.locfileid: "74483724"
 
 База данных SQL Azure поддерживает следующие три варианта для параметра политики подключения сервера Базы данных SQL.
 
-- **Redirect (recommended):** Clients establish connections directly to the node hosting the database, leading to reduced latency and improved throughout. For connections to use this mode clients need to
-   - Allow inbound and outbound communication from the client to all Azure IP addresses in the region on ports in the range of 11000 11999.  
-   - Allow inbound and outbound communication from the client to Azure SQL Database gateway IP addresses on port 1433.
+- **Перенаправление (рекомендуется):** Клиенты устанавливают подключения непосредственно к узлу, на котором размещена база данных, что приводит к снижению задержки и улучшению в течение всего времени. Для подключений, использующих этот режим, клиенты должны
+   - Разрешите входящий и исходящий обмен данными от клиента ко всем IP-адресам Azure в регионе на портах в диапазоне 11000 11999.  
+   - Разрешите входящий и исходящий обмен данными между клиентом и IP-адресом шлюза базы данных SQL Azure через порт 1433.
 
-- **Proxy:** In this mode, all connections are proxied via the Azure SQL Database gateways,leading to increased latency and reduced throughout. For connections to use this mode clients need to allow inbound and outbound communication from the client to Azure SQL Database gateway IP addresses on port 1433.
+- **Прокси-сервер:** В этом режиме все подключения предоставляются через шлюзы базы данных SQL Azure, что приводит к увеличению задержки и сокращению их использования. Для подключений, использующих этот режим, клиенты должны разрешать входящий и исходящий обмен данными между клиентом и IP-адресом шлюза базы данных SQL Azure через порт 1433.
 
-- **Default:** This is the connection policy in effect on all servers after creation unless you explicitly alter the connection policy to either `Proxy` or `Redirect`. The default policy is`Redirect` for all client connections originating inside of Azure (e.g. from an Azure Virtual Machine) and `Proxy`for all client connections originating inside ( e.g. connections from your local workstation)
+- **По умолчанию:** Это политика подключения, которая действует на всех серверах после создания, если политика подключения не была явно изменена на `Proxy` или `Redirect`. Политика по умолчанию`Redirect` для всех подключений клиентов, исходящих внутри Azure (например, с виртуальной машины Azure), и `Proxy`для всех подключений клиентов, исходящих внутри сети (например, подключений с локальной рабочей станции).
 
- We highly recommend the `Redirect` connection policy over the `Proxy` connection policy for the lowest latency and highest throughput.However, you will need to meet the additional requirements for allowing network traffic as outlined above. If the client is an Azure Virtual Machine you can accomplish this using Network Security Groups (NSG) with [service tags](../virtual-network/security-overview.md#service-tags). If the client is connecting from a workstation on-premises then you may need to work with your network admin to allow network traffic through your corporate firewall.
+ Мы настоятельно рекомендуем `Redirect` политику подключения для `Proxy` политики подключения с минимальной задержкой и высокой пропускной способностью. Тем не менее вам потребуется выполнить дополнительные требования для разрешения сетевого трафика, как описано выше. Если клиент является виртуальной машиной Azure, это можно сделать с помощью групп безопасности сети (NSG) с [тегами службы](../virtual-network/security-overview.md#service-tags). Если клиент подключается из локальной рабочей станции, вам может потребоваться обратиться к администратору сети, чтобы разрешить сетевой трафик через корпоративный брандмауэр.
 
 ## <a name="connectivity-from-within-azure"></a>Подключение из Azure
 
@@ -62,57 +62,57 @@ ms.locfileid: "74483724"
 ![Общий вид архитектуры](./media/sql-database-connectivity-architecture/connectivity-onprem.png)
 
 > [!IMPORTANT]
-> Additionally open ports 14000-14999 to enable [Connecting with DAC](https://docs.microsoft.com/sql/database-engine/configure-windows/diagnostic-connection-for-database-administrators?view=sql-server-2017#connecting-with-dac)
+> Дополнительно откройте порты 14000-14999, чтобы включить [подключение с помощью DAC](https://docs.microsoft.com/sql/database-engine/configure-windows/diagnostic-connection-for-database-administrators?view=sql-server-2017#connecting-with-dac) .
 
 
 ## <a name="azure-sql-database-gateway-ip-addresses"></a>IP-адреса шлюза Базы данных SQL Azure
 
-The table below lists the IP Addresses of Gateways by region. To connect to an Azure SQL Database, you need to allow network traffic to & from **all** Gateways for the region.
+В следующей таблице перечислены IP-адреса шлюзов по регионам. Чтобы подключиться к базе данных SQL Azure, необходимо разрешить & сетевого трафика со **всех** шлюзов для региона.
 
-Details of how traffic shall be migrated to new Gateways in specific regions are in the following article: [Azure SQL Database traffic migration to newer Gateways](sql-database-gateway-migration.md)
+Сведения о переносе трафика в новые шлюзы в конкретных регионах см. в следующей статье: [Миграция трафика базы данных SQL Azure на новые шлюзы](sql-database-gateway-migration.md) .
 
 
-| Название региона          | Gateway IP Addresses |
+| Имя региона          | IP-адреса шлюза |
 | --- | --- |
 | Центральная Австралия    | 20.36.105.0 |
-| Australia Central2   | 20.36.113.0 |
-| Восточная Австралия       | 13.75.149.87, 40.79.161.1 |
+| Central2 Австралия   | 20.36.113.0 |
+| Восточная часть Австралии       | 13.75.149.87, 40.79.161.1 |
 | Юго-Восточная Австралия | 191.239.192.109, 13.73.109.251 |
-| Южная часть Бразилии         | 104.41.11.5, 191.233.200.14 |
+| Южная Бразилия         | 104.41.11.5, 191.233.200.14 |
 | Центральная Канада       | 40.85.224.249      |
 | Восточная Канада          | 40.86.226.166      |
-| Центральная часть США           | 13.67.215.62, 52.182.137.15, 23.99.160.139, 104.208.16.96, 104.208.21.1 | 
-| Восточный Китай           | 139.219.130.35     |
-| Восточный Китай 2         | 40.73.82.1         |
-| Северный Китай          | 139.219.15.17      |
-| Северный Китай 2        | 40.73.50.0         |
+| Central US           | 13.67.215.62, 52.182.137.15, 23.99.160.139, 104.208.16.96, 104.208.21.1 | 
+| Восток Китая           | 139.219.130.35     |
+| Восточный Китай 2         | 40.73.82.1         |
+| Север Китая          | 139.219.15.17      |
+| Северный Китай 2        | 40.73.50.0         |
 | Восточная Азия            | 191.234.2.139, 52.175.33.150, 13.75.32.4 |
 | Восточная часть США              | 40.121.158.30, 40.79.153.12, 191.238.6.43, 40.78.225.32 |
-| Восточная часть США 2            | 40.79.84.180, 52.177.185.181, 52.167.104.0,  191.239.224.107, 104.208.150.3 | 
+| Восток США 2            | 40.79.84.180, 52.177.185.181, 52.167.104.0, 191.239.224.107, 104.208.150.3 | 
 | Центральная Франция       | 40.79.137.0, 40.79.129.1 |
 | Центральная Германия      | 51.4.144.100       |
 | Северо-восточная Германия   | 51.5.144.179       |
 | Центральная Индия        | 104.211.96.159     |
 | Южная Индия          | 104.211.224.146    |
 | Западная Индия           | 104.211.160.80     |
-| Восточная Япония           | 13.78.61.196, 40.79.184.8, 13.78.106.224, 191.237.240.43, 40.79.192.5 | 
-| Западная Япония           | 104.214.148.156, 40.74.100.192, 191.238.68.11, 40.74.97.10 | 
-| Республика Корея, центральный регион        | 52.231.32.42       |
-| Республика Корея, южный регион          | 52.231.200.86      |
+| Восточная часть Японии           | 13.78.61.196, 40.79.184.8, 13.78.106.224, 191.237.240.43, 40.79.192.5 | 
+| Западная часть Японии           | 104.214.148.156, 40.74.100.192, 191.238.68.11, 40.74.97.10 | 
+| Центральная Корея        | 52.231.32.42       |
+| Южная Корея          | 52.231.200.86      |
 | Центрально-северная часть США     | 23.96.178.199, 23.98.55.75, 52.162.104.33 |
 | Северная Европа         | 40.113.93.91, 191.235.193.75, 52.138.224.1 | 
-| Северная часть ЮАР   | 102.133.152.0      |
+| Северная часть ЮАР;   | 102.133.152.0      |
 | Западная часть ЮАР    | 102.133.24.0       |
 | Центрально-южная часть США     | 13.66.62.124, 23.98.162.75, 104.214.16.32   | 
 | Юго-Восточная Азия      | 104.43.15.0, 23.100.117.95, 40.78.232.3   | 
 | Центральная часть ОАЭ          | 20.37.72.64        |
-| Северная часть ОАЭ            | 65.52.248.0        |
-| Южная часть Соединенного Королевства             | 51.140.184.11      |
-| Западная часть Соединенного Королевства              | 51.141.8.11        |
-| Центрально-западная часть США      | 13.78.145.25       |
+| Северная часть ОАЭ;            | 65.52.248.0        |
+| Южная часть Великобритании             | 51.140.184.11      |
+| Западная часть Великобритании              | 51.141.8.11        |
+| Западно-центральная часть США      | 13.78.145.25       |
 | Западная Европа          | 40.68.37.158, 191.237.232.75, 104.40.168.105  |
-| Западная часть США              | 104.42.238.205, 23.99.34.75, 13.86.216.196   |
-| Западная часть США 2            | 13.66.226.202      |
+| Запад США              | 104.42.238.205, 23.99.34.75, 13.86.216.196   |
+| Западный регион США 2            | 13.66.226.202      |
 |                      |                    |
 
 ## <a name="change-azure-sql-database-connection-policy"></a>Изменение политики подключения для Базы данных SQL Azure
@@ -126,7 +126,7 @@ Details of how traffic shall be migrated to new Gateways in specific regions are
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> The PowerShell Azure Resource Manager module is still supported by Azure SQL Database, but all future development is for the Az.Sql module. For these cmdlets, see [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). The arguments for the commands in the Az module and in the AzureRm modules are substantially identical. The following script requires the [Azure PowerShell module](/powershell/azure/install-az-ps).
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны. Для следующего скрипта требуется [модуль Azure PowerShell](/powershell/azure/install-az-ps).
 
 Приведенный ниже сценарий PowerShell показывает, как изменить политику подключения.
 
@@ -149,12 +149,12 @@ Set-AzResource -ResourceId $id -Properties @{"connectionType" = "Proxy"} -f
 > [!IMPORTANT]
 > Для работы этого сценария требуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
-### <a name="azure-cli-in-a-bash-shell"></a>Azure CLI in a bash shell
+### <a name="azure-cli-in-a-bash-shell"></a>Azure CLI в оболочке bash
 
 > [!IMPORTANT]
 > Для работы этого сценария требуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
-The following CLI script shows how to change the connection policy in a bash shell.
+В следующем сценарии интерфейса командной строки показано, как изменить политику подключения в оболочке bash.
 
 ```azurecli-interactive
 # Get SQL Server ID
@@ -170,12 +170,12 @@ az resource show --ids $ids
 az resource update --ids $ids --set properties.connectionType=Proxy
 ```
 
-### <a name="azure-cli-from-a-windows-command-prompt"></a>Azure CLI from a Windows command prompt
+### <a name="azure-cli-from-a-windows-command-prompt"></a>Azure CLI из командной строки Windows
 
 > [!IMPORTANT]
 > Для работы этого сценария требуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
-The following CLI script shows how to change the connection policy from a Windows command prompt (with Azure CLI installed).
+В следующем сценарии CLI показано, как изменить политику подключения из командной строки Windows (с Azure CLI установленным).
 
 ```azurecli
 # Get SQL Server ID and set URI
@@ -188,7 +188,7 @@ az resource show --ids %sqlserverid%
 az resource update --ids %sqlserverid% --set properties.connectionType=Proxy
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения о том, как изменить политику подключения Базы данных SQL Azure для сервера Базы данных SQL Azure, см. в статье о команде [conn-policy](https://docs.microsoft.com/cli/azure/sql/server/conn-policy).
 - Сведения о поведении подключения к базе данных SQL Azure клиентов, использующих ADO.NET 4.5 или более поздней версии, см. в разделе [Порты для ADO.NET 4.5, отличные от порта 1433](sql-database-develop-direct-route-ports-adonet-v12.md).

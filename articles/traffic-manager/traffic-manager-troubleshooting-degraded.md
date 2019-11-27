@@ -21,7 +21,7 @@ ms.locfileid: "74227714"
 ---
 # <a name="troubleshooting-degraded-state-on-azure-traffic-manager"></a>Устранение неполадок, связанных со сбоем диспетчера трафика
 
-В этой статье описывается устранение неполадок в профиле диспетчера трафика Azure, который находится в состоянии пониженной функциональности. As a first step in troubleshooting a Azure Traffic Manager degraded state is to enable diagnostic logging.  Refer to [Enable diagnostic logs](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-diagnostic-logs) for more information. Для этого сценария предположим, что вы настроили профиль диспетчера трафика, указывающего на некоторые из размещенных служб .cloudapp.net. Если в диспетчере трафика отображается состояние **Деградация**, одна или несколько конечных точек также могут иметь состояние **Деградация**.
+В этой статье описывается устранение неполадок в профиле диспетчера трафика Azure, который находится в состоянии пониженной функциональности. В качестве первого шага при устранении неполадок в состоянии пониженной работоспособности диспетчера трафика Azure необходимо включить ведение журнала диагностики.  Дополнительные сведения см. в статье [Включение журналов диагностики](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-diagnostic-logs) . Для этого сценария предположим, что вы настроили профиль диспетчера трафика, указывающего на некоторые из размещенных служб .cloudapp.net. Если в диспетчере трафика отображается состояние **Деградация**, одна или несколько конечных точек также могут иметь состояние **Деградация**.
 
 ![состояние "Деградация" конечной точки](./media/traffic-manager-troubleshooting-degraded/traffic-manager-degradedifonedegraded.png)
 
@@ -31,14 +31,14 @@ ms.locfileid: "74227714"
 
 ## <a name="understanding-traffic-manager-probes"></a>Общие сведения о проверках диспетчера трафика
 
-* Диспетчер трафика считает, что конечная точка работает В СЕТИ, только если из пути проверки получен ответ HTTP 200. If you application returns any other HTTP response code you should add that response code to [Expected status code ranges](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-monitoring#configure-endpoint-monitoring) of your Traffic Manager profile.
-* A 30x redirect response is treated as failure unless you have specified this as a valid response code in [Expected status code ranges](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-monitoring#configure-endpoint-monitoring) of your Traffic Manager profile. Traffic Manager does not probe the redirection target.
+* Диспетчер трафика считает, что конечная точка работает В СЕТИ, только если из пути проверки получен ответ HTTP 200. Если приложение возвращает любой другой код ответа HTTP, необходимо добавить этот код ответа в [Ожидаемые диапазоны кодов состояния](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-monitoring#configure-endpoint-monitoring) для профиля диспетчера трафика.
+* Ответ перенаправления повышалась обрабатывается как сбой, если вы не указали его как допустимый код ответа в [ожидаемых диапазонах кода состояния](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-monitoring#configure-endpoint-monitoring) вашего профиля диспетчера трафика. Диспетчер трафика не проверяет Цель перенаправления.
 * При проверках HTTP ошибки сертификата пропускаются.
 * Фактическое содержимое пути проверки не имеет значения, если возвращается ответ 200. Как правило, URL-адрес проверяется на наличие статического содержимого, например /favicon.ico. Динамическое содержимое, например страницы поставщика услуг по предоставлению приложений в аренду (ASP), может не всегда возвращать ответ 200, даже если приложение работоспособно.
-* A best practice is to set the probe path to something that has enough logic to determine that the site is up or down. В предыдущем примере, указав путь к /favicon.ico, вы проверяли, отвечает ли w3wp.exe. Эта проверка может не показать, работоспособно ли веб-приложение. Лучше было бы задать путь к элементу, например /Probe.aspx, содержащему логику для определения работоспособности сайта. Например, можно использовать счетчики производительности для определения загрузки ЦП или определить число неудачных запросов. Кроме того, можно попытаться получить доступ к ресурсам базы данных или состоянию сеанса, чтобы убедиться, что веб-приложение работает.
+* Рекомендуется установить путь пробы на что-то, имеющее достаточное количество логики, чтобы определить, что сайт работает. В предыдущем примере, указав путь к /favicon.ico, вы проверяли, отвечает ли w3wp.exe. Эта проверка может не показать, работоспособно ли веб-приложение. Лучше было бы задать путь к элементу, например /Probe.aspx, содержащему логику для определения работоспособности сайта. Например, можно использовать счетчики производительности для определения загрузки ЦП или определить число неудачных запросов. Кроме того, можно попытаться получить доступ к ресурсам базы данных или состоянию сеанса, чтобы убедиться, что веб-приложение работает.
 * Если функциональность всех конечных точек в профиле снижена, то диспетчер трафика будет считать их работоспособными и будет перенаправлять трафик во все конечные точки. Такое поведение гарантирует, что проблемы с механизмом проверки не приведут к сбою службы.
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Чтобы устранить сбой проверки, необходимо средство, позволяющее просмотреть код состояния HTTP, возвращаемый после проверки URL-адреса. Существует множество средств, позволяющих просмотреть необработанный ответ HTTP:
 
@@ -48,7 +48,7 @@ ms.locfileid: "74227714"
 
 Кроме того, для просмотра ответа HTTP можно воспользоваться вкладкой "Сеть" средств отладки F12 в Internet Explorer.
 
-For this example we want to see the response from our probe URL: http:\//watestsdp2008r2.cloudapp.net:80/Probe. Проблема продемонстрирована в приведенном ниже примере PowerShell.
+В этом примере мы хотим увидеть ответ от нашего URL-адреса пробы: http:\//watestsdp2008r2.cloudapp.net:80/Probe. Проблема продемонстрирована в приведенном ниже примере PowerShell.
 
 ```powershell
 Invoke-WebRequest 'http://watestsdp2008r2.cloudapp.net/Probe' -MaximumRedirection 0 -ErrorAction SilentlyContinue | Select-Object StatusCode,StatusDescription
@@ -79,15 +79,15 @@ public class TrustAllCertsPolicy : ICertificatePolicy {
 [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [О методах маршрутизации трафика в диспетчере трафика](traffic-manager-routing-methods.md)
 
 [Что такое диспетчер трафика](traffic-manager-overview.md)
 
-[облачные службы](https://go.microsoft.com/fwlink/?LinkId=314074)
+[Облачные службы](https://go.microsoft.com/fwlink/?LinkId=314074)
 
-[Служба приложений Azure](https://azure.microsoft.com/documentation/services/app-service/web/)
+[службы приложений Azure](https://azure.microsoft.com/documentation/services/app-service/web/)
 
 [Операции с диспетчером трафика (справочник по REST API)](https://go.microsoft.com/fwlink/?LinkId=313584)
 

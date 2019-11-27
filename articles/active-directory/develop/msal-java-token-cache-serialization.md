@@ -1,7 +1,7 @@
 ---
-title: Custom token cache serialization in MSAL for Java
+title: Сериализация пользовательского кэша маркеров в MSAL для Java
 titleSuffix: Microsoft identity platform
-description: Learn how to serialize the token cache for MSAL for Java
+description: Сведения о сериализации кэша маркеров для MSAL для Java
 services: active-directory
 documentationcenter: dev-center-name
 author: sangonzal
@@ -25,15 +25,15 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/24/2019
 ms.locfileid: "74452603"
 ---
-# <a name="custom-token-cache-serialization-in-msal-for-java"></a>Custom token cache serialization in MSAL for Java
+# <a name="custom-token-cache-serialization-in-msal-for-java"></a>Сериализация пользовательского кэша маркеров в MSAL для Java
 
-To persist the token cache between instances of your application, you will need to customize the serialization. The Java classes and interfaces involved in token cache serialization are the following:
+Чтобы сохранить кэш маркеров между экземплярами приложения, необходимо настроить сериализацию. Классы и интерфейсы Java, участвующие в сериализации кэша маркеров, следующие:
 
-- [ITokenCache](https://static.javadoc.io/com.microsoft.azure/msal4j/0.5.0-preview/com/microsoft/aad/msal4j/ITokenCache.html):  Interface representing security token cache.
-- [ITokenCacheAccessAspect](https://static.javadoc.io/com.microsoft.azure/msal4j/0.5.0-preview/com/microsoft/aad/msal4j/ITokenCacheAccessAspect.html): Interface representing operation of executing code before and after access. You would @Override *beforeCacheAccess* and *afterCacheAccess* with the logic responsible for serializing and deserializing the cache.
-- [ITokenCacheContext](https://static.javadoc.io/com.microsoft.azure/msal4j/0.5.0-preview/com/microsoft/aad/msal4j/ITokenCacheAccessContext.html): Interface representing context in which the token cache is accessed. 
+- [Итокенкаче](https://static.javadoc.io/com.microsoft.azure/msal4j/0.5.0-preview/com/microsoft/aad/msal4j/ITokenCache.html): интерфейс, представляющий кэш маркеров безопасности.
+- [Итокенкачеакцессаспект](https://static.javadoc.io/com.microsoft.azure/msal4j/0.5.0-preview/com/microsoft/aad/msal4j/ITokenCacheAccessAspect.html): интерфейс, представляющий операцию выполнения кода до и после доступа. Вы @Override *бефорекачеакцесс* и *афтеркачеакцесс* с логикой, отвечающей за сериализацию и десериализацию кэша.
+- [Итокенкачеконтекст](https://static.javadoc.io/com.microsoft.azure/msal4j/0.5.0-preview/com/microsoft/aad/msal4j/ITokenCacheAccessContext.html): интерфейс, представляющий контекст, в котором осуществляется доступ к кэшу маркера. 
 
-Below is a naive implementation of custom serialization of token cache serialization/deserialization. Do not copy and paste this into a production environment.
+Ниже приведена упрощенная реализация пользовательской сериализации сериализации и десериализации кэша маркеров. Не копируйте и не вставляйте его в рабочую среду.
 
 ```Java
 static class TokenPersistence implements ITokenCacheAccessAspect {
@@ -65,6 +65,6 @@ PublicClientApplication app =
 PublicClientApplication.builder("my_client_id").setTokenCacheAccessAspect(persistenceAspect).build();
 ```
 
-## <a name="learn-more"></a>Дополнительные сведения
+## <a name="learn-more"></a>Подробнее
 
-Learn about [Get and remove accounts from the token cache using MSAL for Java](msal-java-get-remove-accounts-token-cache.md).
+Узнайте [, как получать и удалять учетные записи из кэша маркеров с помощью MSAL для Java](msal-java-get-remove-accounts-token-cache.md).

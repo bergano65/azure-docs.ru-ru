@@ -1,6 +1,6 @@
 ---
 title: Добавление слоя изображений в Azure Maps | Документация Майкрософт
-description: How to add an Image Layer to the Azure Maps Web SDK.
+description: Добавление слоя изображения в веб-пакет SDK Azure Maps.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 07/29/2019
@@ -29,16 +29,16 @@ ms.locfileid: "74480494"
 > [!TIP]
 > Класс [ImageLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer?view=azure-iot-typescript-latest) — это быстрый и простой способ наложения изображений на карту. Тем не менее, если изображение велико, браузеру будет трудно загрузить его. В этом случае следует разбить изображение на фрагменты и загрузить их на карту в виде объекта [TileLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.tilelayer?view=azure-iot-typescript-latest).
 
-The image layer supports the following image formats:
+Слой изображений поддерживает следующие форматы изображений:
 
 - JPEG
 - PNG
 - BMP
-- GIF (no animations)
+- GIF (без анимации)
 
 ## <a name="add-an-image-layer"></a>Добавление слоя изображений
 
-In the following code overlays an image of a [map of Newark New Jersey from 1922](https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg) on the map. An [ImageLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer?view=azure-iot-typescript-latest) is created by passing a URL to an image and coordinates for the four corners in the format `[Top Left Corner, Top Right Corner, Bottom Right Corner, Bottom Left Corner]`.
+В следующем коде накладывается изображение [схемы Ньюарке New Джерси с 1922](https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg) на карте. [Имажелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer?view=azure-iot-typescript-latest) создается путем передачи URL-адреса изображению и координат для четырех углов в формате `[Top Left Corner, Top Right Corner, Bottom Right Corner, Bottom Left Corner]`.
 
 ```javascript
 //Create an image layer and add it to the map.
@@ -53,7 +53,7 @@ map.layers.add(new atlas.layer.ImageLayer({
 }));
 ```
 
-Below is the complete running code sample of the above functionality.
+Ниже приведен полный пример выполнения кода описанной выше функциональности.
 
 <br/>
 
@@ -62,9 +62,9 @@ Below is the complete running code sample of the above functionality.
 
 ## <a name="import-a-kml-ground-overlay"></a>Импорт наземного наложения KML
 
-В этом примере показано, как выполнить наземное наложение KML как слоя изображений на карте. KML ground overlays provide north, south, east, and west coordinates and a counter-clockwise rotation, whereas the image layer expects coordinates for each corner of the image. Наземное наложение KML в этом примере является изображением Шартрского собора, взятым на [Викимедии](https://commons.wikimedia.org/wiki/File:Chartres.svg/overlay.kml).
+В этом примере показано, как выполнить наземное наложение KML как слоя изображений на карте. Наложение заземления КМЛ предоставляет координаты Севера, Юг, Восток и Запад, а также поворот по часовой стрелке, в то время как слой изображения ожидает координаты для каждого угла изображения. Наземное наложение KML в этом примере является изображением Шартрского собора, взятым на [Викимедии](https://commons.wikimedia.org/wiki/File:Chartres.svg/overlay.kml).
 
-The following code uses the static `getCoordinatesFromEdges` function of the [ImageLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer?view=azure-iot-typescript-latest) class to calculate the four corners of the image from the north, south, east, west and rotation information from the KML ground overlay.
+В следующем коде используется статическая функция `getCoordinatesFromEdges` класса [имажелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer?view=azure-iot-typescript-latest) для вычисления четырех углов изображения из сведений о севере, Южной, Восток, западе и повороте из наложения КМЛ.
 
 <br/>
 
@@ -73,14 +73,14 @@ The following code uses the static `getCoordinatesFromEdges` function of the [Im
 
 ## <a name="customize-an-image-layer"></a>Настройка слоя изображений
 
-Слой изображений имеет множество вариантов стилизации, которые можно опробовать с помощью определенного средства.
+Слой изображений имеет множество вариантов стилизации, которые можно опробовать.
 
 <br/>
 
 <iframe height='700' scrolling='no' title='Параметры слоя изображений' src='//codepen.io/azuremaps/embed/RqOGzx/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода с <a href='https://codepen.io/azuremaps/pen/RqOGzx/'>параметрами слоя изображений</a>, опубликованный для Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

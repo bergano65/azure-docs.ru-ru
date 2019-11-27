@@ -1,6 +1,6 @@
 ---
-title: Evaluate the impact of a new Azure policy
-description: Understand the process to follow when introducing a new policy definition into your Azure environment.
+title: Оценка влияния новой политики Azure
+description: Изучите процесс, который необходимо выполнить при внедрении нового определения политики в среду Azure.
 ms.date: 09/23/2019
 ms.topic: conceptual
 ms.openlocfilehash: 562fa2378356ddc1eac48b6ea5c160ebf655d525
@@ -10,67 +10,67 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "74463525"
 ---
-# <a name="evaluate-the-impact-of-a-new-azure-policy"></a>Evaluate the impact of a new Azure policy
+# <a name="evaluate-the-impact-of-a-new-azure-policy"></a>Оценка влияния новой политики Azure
 
-Azure Policy is a powerful tool for managing your Azure resources to business standards and to meet compliance needs. When people, processes, or pipelines create or update resources, Azure Policy reviews the request. When the policy definition effect is [Append](./effects.md#deny) or [DeployIfNotExists](./effects.md#deployifnotexists), Policy alters the request or adds to it. When the policy definition effect is [Audit](./effects.md#audit) or [AuditIfNotExists](./effects.md#auditifnotexists), Policy causes an Activity log entry to be created. And when the policy definition effect is [Deny](./effects.md#deny), Policy stops the creation or alteration of the request.
+Политика Azure — это мощный инструмент для управления ресурсами Azure в соответствии с бизнес-стандартами и обеспечения соответствия требованиям. Когда люди, процессы или конвейеры создают или обновляют ресурсы, политика Azure проверяет запрос. Когда воздействие определения политики — [append](./effects.md#deny) или [DeployIfNotExists](./effects.md#deployifnotexists), политика изменяет запрос или добавляет к нему. Когда воздействие определения политики — [Audit](./effects.md#audit) или [помощью параметров auditifnotexists](./effects.md#auditifnotexists), политика вызывает создание записи журнала действий. А когда воздействие определения политики [отклоняется](./effects.md#deny), политика останавливает создание или изменение запроса.
 
-These outcomes are exactly as desired when you know the policy is defined correctly. However, it's important to validate a new policy works as intended before allowing it to change or block work. The validation must ensure only the intended resources are determined to be non-compliant and no compliant resources are incorrectly included (known as a _false positive_) in the results.
+Эти результаты будут в точности совпадать, если известно, что политика определена правильно. Однако важно проверить, что новая политика работает так, как задумано, прежде чем разрешить ей изменять или блокировать работу. Проверка должна обеспечивать, чтобы только требуемые ресурсы были определены как несовместимые, а соответствующие ресурсы не были ошибочно включены (в результатах они называются _ложными_).
 
-The recommended approach to validating a new policy definition is by following these steps:
+Для проверки нового определения политики рекомендуется выполнить следующие действия.
 
-- Tightly define your policy
-- Audit your existing resources
-- Audit new or updated resource requests
-- Deploy your policy to resources
+- Жестко Определите политику
+- Аудит существующих ресурсов
+- Аудит новых или обновленных запросов ресурсов
+- Развертывание политики в ресурсах
 - Непрерывный мониторинг
 
-## <a name="tightly-define-your-policy"></a>Tightly define your policy
+## <a name="tightly-define-your-policy"></a>Жестко Определите политику
 
-It's important to understand how the business policy is implemented as a policy definition and the relationship of Azure resources with other Azure services. This step is accomplished by [identifying the requirements](../tutorials/create-custom-policy-definition.md#identify-requirements) and [determining the resource properties](../tutorials/create-custom-policy-definition.md#determine-resource-properties).
-But it's also important to see beyond the narrow definition of your business policy. Does your policy state for example "All Virtual Machines must..."? What about other Azure services that make use of VMs, such as HDInsight or AKS? When defining a policy, we must consider how this policy impacts resources that are used by other services.
+Важно понимать, как бизнес-политика реализуется в качестве определения политики и связи ресурсов Azure с другими службами Azure. Этот шаг выполняется путем [определения требований](../tutorials/create-custom-policy-definition.md#identify-requirements) и [определения свойств ресурсов](../tutorials/create-custom-policy-definition.md#determine-resource-properties).
+Но также важно увидеть, что вы выходите за пределы определения бизнес-политики. Состояние политики, например "все виртуальные машины должны..."? Как насчет других служб Azure, использующих виртуальные машины, например HDInsight или AKS? При определении политики необходимо учитывать, как эта политика влияет на ресурсы, используемые другими службами.
 
-For this reason, your policy definitions should be as tightly defined and focused on the resources and the properties you need to evaluate for compliance as possible.
+По этой причине определения политик должны быть определенным образом определены и зависят от ресурсов и свойств, которые необходимо проверить на соответствие как можно более строгим.
 
-## <a name="audit-existing-resources"></a>Audit existing resources
+## <a name="audit-existing-resources"></a>Аудит существующих ресурсов
 
-Before looking to manage new or updated resources with your new policy definition, it's best to see how it evaluates a limited subset of existing resources, such as a test resource group. Use the [enforcement mode](./assignment-structure.md#enforcement-mode)
-_Disabled_ (DoNotEnforce) on your policy assignment to prevent the [effect](./effects.md) from triggering or activity log entries from being created.
+Прежде чем начать управление новыми или обновленными ресурсами с помощью нового определения политики, лучше понять, как она оценивает ограниченное подмножество существующих ресурсов, например тестовую группу ресурсов. Используйте [режим принудительного применения](./assignment-structure.md#enforcement-mode)
+_отключено_ (донотенфорце) для назначения [политики, чтобы](./effects.md) предотвратить создание триггера или запись журнала действий.
 
-This step gives you a chance to evaluate the compliance results of the new policy on existing resources without impacting work flow. Check that no compliant resources are marked as non-compliant (_false positive_) and that all the resources you expect to be non-compliant are marked correctly.
-After the initial subset of resources validates as expected, slowly expand the evaluation to all existing resources.
+Этот шаг дает возможность оценить результаты проверки соответствия для новой политики в существующих ресурсах без влияния на рабочий процесс. Убедитесь, что соответствующие ресурсы не помечены как несовместимые (_ложные положительные_) и что все ресурсы, которые предполагается не соответствовать требованиям, отмечены правильно.
+Когда начальное подмножество ресурсов будет проверено ожидаемым образом, медленно разверните вычисление для всех существующих ресурсов.
 
-Evaluating existing resources in this way also provides an opportunity to remediate non-compliant resources before full implementation of the new policy. This cleanup can be done manually or through a [remediation task](../how-to/remediate-resources.md) if the policy definition effect is _DeployIfNotExists_.
+Оценка существующих ресурсов таким образом также дает возможность исправлять несоответствующие ресурсы до полной реализации новой политики. Эту очистку можно выполнить вручную или с помощью [задачи исправления](../how-to/remediate-resources.md) , если воздействие определения политики — _DeployIfNotExists_.
 
-## <a name="audit-new-or-updated-resources"></a>Audit new or updated resources
+## <a name="audit-new-or-updated-resources"></a>Аудит новых или обновленных ресурсов
 
-Once you've validated your new policy definition is reporting correctly on existing resources, it's time to look at the impact of the policy when resources get created or updated. If the policy definition supports effect parameterization, use [Audit](./effects.md#audit). This configuration allows you to monitor the creation and updating of resources to see if the new policy definition triggers an entry in Azure Activity log for a resource that is non-compliant without impacting existing work or requests.
+После проверки того, что новое определение политики правильно сообщает о существующих ресурсах, следует рассмотреть влияние политики на создание или обновление ресурсов. Если определение политики поддерживает параметризацию параметров, используйте [Аудит](./effects.md#audit). Эта конфигурация позволяет отслеживать создание и обновление ресурсов, чтобы определить, активирует ли новое определение политики запись в журнале действий Azure для ресурса, который не соответствует требованиям, не влияя на существующие рабочие или запросы.
 
-It's recommended to both update and create new resources that match your policy definition to see that the _Audit_ effect is correctly being triggered when expected. Be on the lookout for resource requests that shouldn't be impacted by the new policy definition that trigger the _Audit_ effect.
-These impacted resources are another example of _false positives_ and must be fixed in the policy definition before full implementation.
+Рекомендуется как обновлять, так и создавать новые ресурсы, соответствующие определению политики, чтобы убедиться в том, что в случае ожидания активируется правильный результат _аудита_ . Lookout для запросов ресурсов, которые не должны затронутся новым определением политики, запускающим эффект _аудита_ .
+Эти затронутые ресурсы являются еще одним примером _ложных срабатываний_ и должны быть исправлены в определении политики до полной реализации.
 
-In the event the policy definition is changed at this stage of testing, it's recommended to begin the validation process over with the auditing of existing resources. A change to the policy definition for a _false positive_ on new or updated resources is likely to also have an impact on existing resources.
+В случае изменения определения политики на этом этапе тестирования рекомендуется начать процесс проверки с аудитом существующих ресурсов. Изменение определения политики на _ложное срабатывание_ новых или обновленных ресурсов, вероятно, также повлияет на существующие ресурсы.
 
-## <a name="deploy-your-policy-to-resources"></a>Deploy your policy to resources
+## <a name="deploy-your-policy-to-resources"></a>Развертывание политики в ресурсах
 
-After completing validation of your new policy definition with both existing resources and new or updated resource requests, you begin the process of implementing the policy. It's recommended to create the policy assignment for the new policy definition to a subset of all resources first, such as a resource group. After validating initial deployment, extend the scope of the policy to broader and broader levels, such as subscriptions and management groups. This expansion is achieved by removing the assignment and creating a new one at the target scopes until it's assigned to the full scope of resources intended to be covered by your new policy definition.
+После завершения проверки нового определения политики с помощью существующих ресурсов и новых или обновленных запросов ресурсов начинается процесс реализации политики. Рекомендуется сначала создать назначение политики для нового определения политики в подмножестве всех ресурсов, например в группе ресурсов. После проверки первоначального развертывания расширьте область применения политики на более широкие и более широкие уровни, такие как подписки и группы управления. Это расширение достигается путем удаления назначения и создания нового в целевых областях до тех пор, пока оно не будет назначено всей области ресурсов, предназначенных для нового определения политики.
 
-During rollout, if resources are located that should be exempt from your new policy definition, address them in one of the following ways:
+Если при разрешении обнаружены ресурсы, которые должны быть исключены из нового определения политики, их можно устранить одним из следующих способов.
 
-- Update the policy definition to be more explicit to reduce unintended impact
-- Change the scope of the policy assignment (by removing and creating a new assignment)
-- Add the group of resources to the exclusion list for the policy assignment
+- Измените определение политики, чтобы оно было более явным, чтобы снизить непреднамеренное воздействие.
+- Изменение области назначения политики (путем удаления и создания нового назначения)
+- Добавление группы ресурсов в список исключений для назначения политики
 
-Any changes to the scope (level or exclusions) should be fully validated and communicated with your security and compliance organizations to ensure there are no gaps in coverage.
+Все изменения в области (уровень или исключения) должны быть полностью проверены и взаимосвязаны с вашими организациями по обеспечению безопасности и соответствия требованиям, чтобы гарантировать отсутствие пробелов в покрытии.
 
-## <a name="monitor-your-policy-and-compliance"></a>Monitor your policy and compliance
+## <a name="monitor-your-policy-and-compliance"></a>Мониторинг политики и соответствия требованиям
 
-Implementing and assigning your policy definition isn't the final step. Continuously monitor the [compliance](../how-to/get-compliance-data.md) level of resources to your new policy definition and setup appropriate [Azure Monitor alerts and notifications](../../../azure-monitor/platform/alerts-overview.md) for when non-compliant devices are identified. It's also recommended to evaluate the policy definition and related assignments on a scheduled basis to validate the policy definition is meeting business policy and compliance needs. Policies should be removed if no longer needed. Policies also need updating from time to time as the underlying Azure resources evolve and add new properties and capabilities.
+Реализация и назначение определения политики не является последним шагом. Непрерывно Контролируйте уровень [соответствия требованиям](../how-to/get-compliance-data.md) для нового определения политики и настраиваете соответствующие [Azure Monitor оповещения и уведомления](../../../azure-monitor/platform/alerts-overview.md) о том, когда обнаруживаются несоответствующие устройства. Также рекомендуется оценить определение политики и связанные назначения по расписанию, чтобы убедиться, что определение политики соответствует требованиям бизнес-политики и соответствия требованиям. Политики должны быть удалены, если они больше не нужны. Политикам также требуется обновлять время по мере развития базовых ресурсов Azure и добавлять новые свойства и возможности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- Learn about the [policy definition structure](./definition-structure.md).
-- Learn about the [policy assignment structure](./assignment-structure.md).
-- Understand how to [programmatically create policies](../how-to/programmatically-create.md).
-- Learn how to [get compliance data](../how-to/get-compliance-data.md).
-- Learn how to [remediate non-compliant resources](../how-to/remediate-resources.md).
+- Сведения о [структуре определения политики](./definition-structure.md).
+- Сведения о [структуре назначений политик](./assignment-structure.md).
+- Узнайте, как [программно создавать политики](../how-to/programmatically-create.md).
+- Узнайте, как [получить данные о соответствии](../how-to/get-compliance-data.md).
+- Узнайте, как [исправлять несоответствующие ресурсы](../how-to/remediate-resources.md).
 - Дополнительные сведения о группе управления см. в статье [Упорядочивание ресурсов с помощью групп управления Azure](../../management-groups/overview.md).

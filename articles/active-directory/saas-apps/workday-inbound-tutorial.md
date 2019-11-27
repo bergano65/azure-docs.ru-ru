@@ -24,9 +24,9 @@ ms.locfileid: "74233334"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Руководство по настройке Workday для автоматической подготовки пользователей
 
-The objective of this tutorial is to show the steps you need to perform to import worker profiles from Workday into both Active Directory and Azure Active Directory, with optional write-back of email address and username to Workday.
+Цель этого руководства — показать действия, которые необходимо выполнить для импорта профилей рабочих ролей из Workday в Active Directory и Azure Active Directory с необязательным адресом электронной почты и именем пользователя в Workday.
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 Для подготовки учетных записей пользователей [служба подготовки пользователей Azure Active Directory](../manage-apps/user-provisioning.md) интегрируется с [API отдела кадров Workday](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v21.1/Get_Workers.html). Azure AD использует это подключение для включения следующих рабочих процессов подготовки пользователей:
 
@@ -34,7 +34,7 @@ The objective of this tutorial is to show the steps you need to perform to impor
 
 * **Подготовка только облачных пользователей в Azure Active Directory** — в сценариях, где локальный Active Directory не используется, пользователей можно перенести непосредственно из Workday в Azure Active Directory с помощью службы подготовки пользователя Azure AD.
 
-* **Write back email address and username to Workday** - The Azure AD user provisioning service can write the email addresses and username from Azure AD back to Workday.
+* **Напишите обратный адрес электронной почты и имя пользователя в workday** — служба подготовки пользователей Azure AD может записать адреса электронной почты и имя пользователя из Azure AD обратно в workday.
 
 ### <a name="what-human-resources-scenarios-does-it-cover"></a>Для каких сценариев работы отдела кадров это подходит?
 
@@ -50,7 +50,7 @@ The objective of this tutorial is to show the steps you need to perform to impor
 
 ### <a name="who-is-this-user-provisioning-solution-best-suited-for"></a>Кому это решение подготовки пользователей подходит лучше всего?
 
-This Workday user provisioning solution is ideally suited for:
+Решение для подготовки пользователей Workday идеально подходит для:
 
 * организаций, которым необходимо готовое облачное решение для подготовки пользователей в Workday;
 
@@ -67,19 +67,19 @@ This Workday user provisioning solution is ideally suited for:
 В этом разделе описывается архитектура полноценного решения для подготовки пользователей в распространенных гибридных средах. Имеется два связанных потока:
 
 * **Полномочный поток данных отдела кадров Workday в локальную службу Active Directory.** В этом потоке связанные с работниками события (например, найм, перевод и увольнение) сначала происходят в облачном клиенте отдела кадров Workday, а затем данные событий передаются в локальную службу Active Directory через Azure AD и агент подготовки. В зависимости от события, это может приводить к операциям создания, обновления, включения или отключения в AD.
-* **Email and Username Writeback Flow – from on-premises Active Directory to Workday:** Once the account creation is complete in Active Directory, it is synced with Azure AD through Azure AD Connect and email and username attribute can be written back to Workday.
+* **Поток обратной записи электронной почты и имени пользователя — из локальной Active Directory в Workday:** После завершения создания учетной записи в Active Directory она синхронизируется с Azure AD через Azure AD Connect и атрибут email и username можно записать обратно в Workday.
 
-![Краткое описание](./media/workday-inbound-tutorial/wd_overview.png)
+![Обзор](./media/workday-inbound-tutorial/wd_overview.png)
 
 ### <a name="end-to-end-user-data-flow"></a>Полноценный поток данных пользователей
 
 1. Команда отдела кадров выполняет транзакции с работниками (присоединение, перемещение и удаление или найм, перевод и увольнение) в Workday HCM.
 2. Служба подготовки Azure AD выполняет плановую синхронизацию удостоверений из Workday HR и определяет изменения, которые требуется обработать для синхронизации с локальной службой Active Directory.
-3. The Azure AD Provisioning Service invokes the on-premises Azure AD Connect Provisioning Agent with a request payload containing AD account create/update/enable/disable operations.
+3. Служба подготовки Azure AD вызывает локальный агент подготовки Azure AD Connect с использованием полезных данных запроса, содержащих операции создания, обновления, включения и отключения учетной записи AD.
 4. Агент подготовки Azure AD Connect использует учетную запись службы для добавления или обновления данных учетной записи AD.
 5. Модуль Azure AD Connect/AD Sync выполняет разностную синхронизацию, чтобы получить обновления в AD.
 6. Обновления Active Directory синхронизируются с Azure Active Directory.
-7. If the Workday Writeback connector is configured, it writes back email attribute and username to Workday, based on the matching attribute used.
+7. Если настроен соединитель обратной записи Workday, он записывает атрибут обратной почты и имя пользователя в Workday на основе используемого атрибута сопоставления.
 
 ## <a name="planning-your-deployment"></a>Планирование развертывания
 
@@ -93,12 +93,12 @@ This Workday user provisioning solution is ideally suited for:
 * [Интеграция с несколькими доменами Active Directory](#integrating-with-multiple-active-directory-domains).
 * [Планирование трансформации и сопоставления атрибутов пользователей Workday и Active Directory](#planning-workday-to-active-directory-user-attribute-mapping-and-transformations).
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительным требованиям
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
-* A valid Azure AD Premium P1 or higher subscription license for every user that will be sourced from Workday and provisioned into either on-premises Active Directory or Azure Active Directory.
-* Azure AD global administrator access to configure the provisioning agent
+* Действительная лицензия на подписку Azure AD Premium P1 или более поздней версии для каждого пользователя, который будет источником из Workday и подготовлена в локальной Active Directory или Azure Active Directory.
+* Доступ глобального администратора Azure AD для настройки агента подготовки
 * Клиент реализации Workday для целей тестирования и интеграции.
 * Права администратора в Workday для создания пользователя системы интеграции и внесения изменений для проверки данных о сотруднике в целях тестирования.
 * Для подготовки пользователей в Active Directory на сервере Windows Server 2012 (или более поздней версии) со средой выполнения .NET 4.7.1+ должен быть размещен [локальный агент подготовки](https://go.microsoft.com/fwlink/?linkid=847801).
@@ -112,7 +112,7 @@ This Workday user provisioning solution is ideally suited for:
 
 * **Workday to Active Directory User Provisioning** — это приложение упрощает подготовку учетной записи пользователя из Workday в одном домене Active Directory. Если имеется несколько доменов, можно добавить один экземпляр этого приложения из коллекции приложений Azure AD для каждого домена Active Directory, в котором требуется подготовка.
 
-* **Workday to Azure AD User Provisioning** - While Azure AD Connect is the tool that should be used to synchronize Active Directory users to Azure Active Directory, this app can be used to facilitate provisioning of cloud-only users from Workday to a single Azure Active Directory tenant.
+* **Подготовка пользователей к работе с Workday в Azure AD** . Хотя Azure AD Connect — это средство, которое следует использовать для синхронизации пользователей Active Directory с Azure Active Directory, это приложение можно использовать для упрощения подготовки облачных пользователей из Workday к одному клиенту Azure Active Directory.
 
 * **Workday Writeback** — это приложение упрощает обратную запись электронных адресов пользователей из Azure Active Directory в Workday.
 
@@ -120,7 +120,7 @@ This Workday user provisioning solution is ideally suited for:
 > Стандартное приложение Workday используется для настройки единого входа между Workday и Azure Active Directory.
 
 Воспользуйтесь приведенной ниже схемой принятия решений, чтобы определить, какие приложения подготовки Workday подходят для вашего сценария.
-    ![Decision Flowchart](./media/workday-inbound-tutorial/wday_app_flowchart.png "Decision Flowchart")
+    ![Блок-схема принятия решений](./media/workday-inbound-tutorial/wday_app_flowchart.png "Decisионная блок-схема ")
 
 Используйте оглавление, чтобы перейти к соответствующему разделу этого руководства.
 
@@ -147,36 +147,36 @@ This Workday user provisioning solution is ideally suited for:
 
 В зависимости от топологии Active Directory вам нужно будет определить количество приложений соединителя подготовки пользователей и количество агентов подготовки, которые необходимо настроить. Ниже перечислены некоторые из распространенных шаблонов развертывания, которые можно использовать при планировании развертывания.
 
-#### <a name="deployment-scenario-1--single-workday-tenant---single-ad-domain"></a>Deployment Scenario #1 : Single Workday Tenant -> Single AD domain
+#### <a name="deployment-scenario-1--single-workday-tenant---single-ad-domain"></a>Сценарий развертывания #1: один клиент Workday — > один домен AD
 
 В этом сценарии у вас есть один клиент Workday и вы хотели бы подготовить пользователей для одного целевого домена AD. Ниже приведена рекомендуемая рабочая конфигурация для этого развертывания.
 
 |   |   |
 | - | - |
-| Нет. агентов подготовки для развертывания в локальной среде | 3 (для высокого уровня доступности и отработки отказа) |
-| Нет. приложений подготовки пользователей Workday в AD для настройки на портале Azure | 1 |
+| Нет агентов подготовки для развертывания в локальной среде | 3 (для высокого уровня доступности и отработки отказа) |
+| Нет приложений подготовки пользователей Workday в AD для настройки на портале Azure | 1 |
 
   ![Сценарий 1](./media/workday-inbound-tutorial/dep_scenario1.png)
 
-#### <a name="deployment-scenario-2--single-workday-tenant---multiple-child-ad-domains"></a>Deployment Scenario #2 : Single Workday Tenant -> Multiple child AD domains
+#### <a name="deployment-scenario-2--single-workday-tenant---multiple-child-ad-domains"></a>Сценарий развертывания #2: один клиент Workday — > несколько дочерних доменов AD.
 
 Этот сценарий предусматривает подготовку пользователей Workday для нескольких целевых дочерних доменов AD в лесу. Ниже приведена рекомендуемая рабочая конфигурация для этого развертывания.
 
 |   |   |
 | - | - |
-| Нет. агентов подготовки для развертывания в локальной среде | 3 (для высокого уровня доступности и отработки отказа) |
-| Нет. приложений подготовки пользователей Workday в AD для настройки на портале Azure | одно приложение на дочерний домен |
+| Нет агентов подготовки для развертывания в локальной среде | 3 (для высокого уровня доступности и отработки отказа) |
+| Нет приложений подготовки пользователей Workday в AD для настройки на портале Azure | одно приложение на дочерний домен |
 
   ![Сценарий 2](./media/workday-inbound-tutorial/dep_scenario2.png)
 
-#### <a name="deployment-scenario-3--single-workday-tenant---disjoint-ad-forests"></a>Deployment Scenario #3 : Single Workday Tenant -> Disjoint AD forests
+#### <a name="deployment-scenario-3--single-workday-tenant---disjoint-ad-forests"></a>Сценарий развертывания #3: клиент с одним Workday — > несвязанными лесами AD
 
 Этот сценарий предусматривает подготовку пользователей из Workday в домены в несвязанных лесах AD. Ниже приведена рекомендуемая рабочая конфигурация для этого развертывания.
 
 |   |   |
 | - | - |
-| Нет. агентов подготовки для развертывания в локальной среде | 3 на несвязанный лес AD |
-| Нет. приложений подготовки пользователей Workday в AD для настройки на портале Azure | одно приложение на дочерний домен |
+| Нет агентов подготовки для развертывания в локальной среде | 3 на несвязанный лес AD |
+| Нет приложений подготовки пользователей Workday в AD для настройки на портале Azure | одно приложение на дочерний домен |
 
   ![Сценарий 3](./media/workday-inbound-tutorial/dep_scenario3.png)
 
@@ -211,11 +211,11 @@ This Workday user provisioning solution is ideally suited for:
 
 * **Каким образом необходимо сопоставить пользователей Workday и Active Directory?**
 
-  * *Example: Users with a specific Workday "Worker_ID" value are matched with Active Directory users where "employeeID" has the same value. If the Worker_ID value is not found in Active Directory, then create a new user.*
+  * *Пример. пользователи с указанным значением Workday "Worker_ID" сопоставляются с Active Directory пользователями, где "employeeID" имеет одинаковое значение. Если значение Worker_ID не найдено в Active Directory, создайте нового пользователя.*
   
 * **Содержит ли лес Active Directory идентификаторы пользователей, необходимые для работы логики сопоставления?**
 
-  * *Example: If this setup is a new Workday deployment, it is recommended that Active Directory be pre-populated with the correct Workday Worker_ID values (or unique ID value of choice) to keep the matching logic as simple as possible.*
+  * *Пример. Если эта настройка является новым развертыванием Workday, рекомендуется предварительно заполнить Active Directory, указав правильные значения Workday Worker_ID (или значение уникального идентификатора), чтобы обеспечить максимально простую логику сопоставления.*
 
 В оставшихся разделах этого руководства рассматриваются процедуры установки и настройки этих специальных приложений соединителей подготовки. Выбор приложений, которые требуется настроить, будет зависеть от того, в каких системах необходимо выполнить подготовку и сколько доменов Active Directory и клиентов Azure AD находится в вашей среде.
 
@@ -238,14 +238,14 @@ This Workday user provisioning solution is ideally suited for:
 
 1. Войдите в клиент Workday с помощью учетной записи администратора. В области **Workday Application** введите в поле поиска "create user", а затем щелкните ссылку **Create Integration System User** (Создать пользователя системы интеграции).
 
-    ![Create user](./media/workday-inbound-tutorial/wd_isu_01.png "Создать пользователя")
+    ![Создание пользователя](./media/workday-inbound-tutorial/wd_isu_01.png "Создать пользователя")
 2. Завершите задачу **Создание пользователя системы интеграции** , указав имя пользователя и пароль для нового пользователя системы интеграции.  
   
 * Не устанавливайте флажок **Require New Password at Next Sign In** (Запросить новый пароль при следующем входе), так как этот пользователь будет осуществлять вход в систему программными средствами.
 * Для параметра **Session Timeout Minutes** (Время ожидания сеанса в минутах) оставьте значение по умолчанию 0, что не позволит сеансам пользователя завершаться раньше времени.
 * Выберите параметр **Do Not Allow UI Sessions** (Не разрешать сеансы пользовательского интерфейса), так как он предоставляет пользователю пароль системы интеграции при входе в Workday.
 
-    ![Create Integration System User](./media/workday-inbound-tutorial/wd_isu_02.png "Create Integration System User")
+    ![Создание пользователя системы интеграции](./media/workday-inbound-tutorial/wd_isu_02.png "Create Integration System User")
 
 ### <a name="creating-an-integration-security-group"></a>Создание группы безопасности интеграции
 
@@ -255,20 +255,20 @@ This Workday user provisioning solution is ideally suited for:
 
 1. Введите в поле поиска текст "создать группу безопасности", а затем щелкните **Создать группу безопасности**.
 
-    ![CreateSecurity Group](./media/workday-inbound-tutorial/wd_isu_03.png "Создать группу безопасности")
+    ![Группа создание](./media/workday-inbound-tutorial/wd_isu_03.png "Создать группу безопасности")
 2. Завершите задачу **создания группы безопасности**. 
 
    * Есть два типа групп безопасности в Workday:
-     * **Unconstrained:** All members of the security group can access all data instances secured by the security group.
-     * **Constrained:** All security group members have contextual access to a subset of data instances (rows) that the security group can access.
+     * Не **ограничено:** Все члены группы безопасности имеют доступ ко всем экземплярам данных, защищенным группой безопасности.
+     * **Ограничение:** Все члены группы безопасности имеют контекстный доступ к подмножеству экземпляров данных (строк), к которым имеет доступ группа безопасности.
    * Обратитесь к партнеру по интеграции Workday, чтобы выбрать подходящий тип группы безопасности для интеграции.
    * Зная тип группы, выберите **Integration System Security Group (Unconstrained)** (Группа безопасности системы интеграции без ограничений) или **Integration System Security Group (Сonstrained)** (Группа безопасности системы интеграции с ограничениями) в раскрывающемся списке **Type of Tenanted Security Group** (Тип клиентской группы безопасности).
 
-     ![CreateSecurity Group](./media/workday-inbound-tutorial/wd_isu_04.png "Создать группу безопасности")
+     ![Группа создание](./media/workday-inbound-tutorial/wd_isu_04.png "Создать группу безопасности")
 
 3. После успешного создания группы безопасности вы увидите страницу, где можно назначать участников группе безопасности. Добавьте в эту группу безопасности нового пользователя системы интеграции, созданного на предыдущем шаге. Если вы используете *группу безопасности с ограничениями*, вам также нужно будет выбрать соответствующую область организации.
 
-    ![Edit Security Group](./media/workday-inbound-tutorial/wd_isu_05.png "Изменить группу безопасности")
+    ![Изменить группу безопасности](./media/workday-inbound-tutorial/wd_isu_05.png "Изменить группу безопасности")
 
 ### <a name="configuring-domain-security-policy-permissions"></a>Настройка разрешений политики безопасности домена
 
@@ -278,7 +278,7 @@ This Workday user provisioning solution is ideally suited for:
 
 1. В поле поиска введите **Domain Security Configuration**, а затем перейдите по ссылке **Domain Security Configuration Report** (Отчет о конфигурации безопасности домена).  
 
-    ![Domain Security Policies](./media/workday-inbound-tutorial/wd_isu_06.png "Политики безопасности домена")  
+    ![Политики безопасности домена](./media/workday-inbound-tutorial/wd_isu_06.png "Политики безопасности домена")  
 2. С помощью текстового поля **Domain** (Домен) найдите указанные ниже домены и добавьте их к фильтру по одному.  
    * *External Account Provisioning* (Подготовка внешних учетных записей)
    * *Worker Data: Public Worker Reports* (Данные о работниках: общедоступные отчеты о работниках)
@@ -286,25 +286,25 @@ This Workday user provisioning solution is ideally suited for:
    * *Worker Data: All Positions* (Данные о работниках: все позиции)
    * *Worker Data: Current Staffing Information* (Данные о работниках: сведения о текущем персонале)
    * *Worker Data: Business Title on Worker Profile* (Данные о работниках: рабочая должность в профиле работника)
-   * *Workday Accounts*
+   * *Учетные записи Workday*
    
-     ![Domain Security Policies](./media/workday-inbound-tutorial/wd_isu_07.png "Политики безопасности домена")  
+     ![Политики безопасности домена](./media/workday-inbound-tutorial/wd_isu_07.png "Политики безопасности домена")  
 
-     ![Domain Security Policies](./media/workday-inbound-tutorial/wd_isu_08.png "Политики безопасности домена") 
+     ![Политики безопасности домена](./media/workday-inbound-tutorial/wd_isu_08.png "Политики безопасности домена") 
 
-     Последовательно выберите **ОК**.
+     Нажмите кнопку **ОК**.
 
 3. В открывшемся отчете нажмите многоточие (...) рядом с элементом **External Account Provisioning** и выберите пункт меню **Domain -> Edit Security Policy Permissions** (Домен -> Изменить разрешения политики безопасности).
 
-    ![Domain Security Policies](./media/workday-inbound-tutorial/wd_isu_09.png "Политики безопасности домена")  
+    ![Политики безопасности домена](./media/workday-inbound-tutorial/wd_isu_09.png "Политики безопасности домена")  
 
 4. Прокрутите страницу **Edit Domain Security Policy Permissions** (Изменение разрешений политики безопасности для домена) до раздела **Integration Permissions** (Разрешения интеграции). Нажмите значок "+", чтобы добавить группу системы интеграции в список групп безопасности с разрешениями интеграции **Get** и **Put**.
 
-    ![Edit Permission](./media/workday-inbound-tutorial/wd_isu_10.png "Изменить разрешение")  
+    ![Изменение разрешения](./media/workday-inbound-tutorial/wd_isu_10.png "Изменить разрешение")  
 
 5. Нажмите значок "+", чтобы добавить группу системы интеграции в список групп безопасности с разрешениями интеграции **Get** и **Put**.
 
-    ![Edit Permission](./media/workday-inbound-tutorial/wd_isu_11.png "Изменить разрешение")  
+    ![Изменение разрешения](./media/workday-inbound-tutorial/wd_isu_11.png "Изменить разрешение")  
 
 6. Повторите указанные выше этапы 3–5 для каждой из оставшихся политик безопасности:
 
@@ -315,7 +315,7 @@ This Workday user provisioning solution is ideally suited for:
    | Получить | Worker Data: All Positions |
    | Получить | Worker Data: Current Staffing Information |
    | Получить | Worker Data: Business Title on Worker Profile |
-   | Get и Put | Workday Accounts |
+   | Get и Put | Учетные записи Workday |
 
 ### <a name="configuring-business-process-security-policy-permissions"></a>Настройка разрешений политики безопасности для бизнес-процессов
 
@@ -325,19 +325,19 @@ This Workday user provisioning solution is ideally suited for:
 
 1. Введите **Business Process Policy** в поле поиска и выберите задачу **Edit Business Process Security Policy** (Изменение политики безопасности бизнес-процессов).  
 
-    ![Business Process Security Policies](./media/workday-inbound-tutorial/wd_isu_12.png "Business Process Security Policies")  
+    ![Политики безопасности бизнес-процессов](./media/workday-inbound-tutorial/wd_isu_12.png "Политики безопасности бизнес-процессов")  
 
 2. В текстовом поле **Business Process Type** (Тип бизнес-процесса) выполните поиск по запросу *Contact*, выберите бизнес-процесс **Contact Change** (Изменение контакта) и нажмите кнопку **ОК**.
 
-    ![Business Process Security Policies](./media/workday-inbound-tutorial/wd_isu_13.png "Business Process Security Policies")  
+    ![Политики безопасности бизнес-процессов](./media/workday-inbound-tutorial/wd_isu_13.png "Политики безопасности бизнес-процессов")  
 
 3. Прокрутите страницу **Edit Business Process Security Policy** (Изменение политики безопасности бизнес-процессов) до раздела **Maintain Contact Information (Web Service)** (Хранение контактных данных — веб-служба).
 
-    ![Business Process Security Policies](./media/workday-inbound-tutorial/wd_isu_14.png "Business Process Security Policies")  
+    ![Политики безопасности бизнес-процессов](./media/workday-inbound-tutorial/wd_isu_14.png "Политики безопасности бизнес-процессов")  
 
 4. Выберите новую группу безопасности системы интеграции и добавьте ее в список групп безопасности, которая может инициировать запрос к веб-службам. Нажмите кнопку **Готово**. 
 
-    ![Business Process Security Policies](./media/workday-inbound-tutorial/wd_isu_15.png "Business Process Security Policies")  
+    ![Политики безопасности бизнес-процессов](./media/workday-inbound-tutorial/wd_isu_15.png "Политики безопасности бизнес-процессов")  
 
 ### <a name="activating-security-policy-changes"></a>Активация изменений политики безопасности
 
@@ -350,7 +350,7 @@ This Workday user provisioning solution is ideally suited for:
 1. Начните выполнять задачу активации ожидающих изменений политики безопасности: введите комментарий для проведения аудита и нажмите кнопку **ОК**.
 1. Завершите задачу на следующем экране, установив флажок **Confirm** (Подтверждаю) и нажав кнопку **ОК**.
 
-    ![Activate Pending Security](./media/workday-inbound-tutorial/wd_isu_18.png "Активировать ожидающие изменения безопасности")  
+    ![Активация ожидающей безопасности](./media/workday-inbound-tutorial/wd_isu_18.png "Активировать ожидающие изменения безопасности")  
 
 ## <a name="configuring-user-provisioning-from-workday-to-active-directory"></a>Настройка подготовки пользователей из Workday в Active Directory
 
@@ -371,11 +371,11 @@ This Workday user provisioning solution is ideally suited for:
 
 Развернув .NET 4.7.1+, вы можете скачать **[локальный агент подготовки здесь](https://go.microsoft.com/fwlink/?linkid=847801)** и выполнить указанные ниже действия, чтобы завершить настройку агента.
 
-1. Sign in to the Windows Server where you want to install the new agent.
+1. Войдите на сервер Windows Server, на котором нужно установить новый агент.
 
-1. Launch the Provisioning Agent installer, agree to the terms, and click on the **Install** button.
+1. Запустите установщик агента подготовки, примите условия и нажмите кнопку **установить** .
 
-   ![Install Screen](./media/workday-inbound-tutorial/pa_install_screen_1.png "Install Screen")
+   ![Экран установки](./media/workday-inbound-tutorial/pa_install_screen_1.png "Экран установки")
    
 1. По завершении установки запустится мастер, и вы увидите экран **Connect Azure AD** (Подключение Azure AD). Нажмите кнопку **Authenticate** (Проверка подлинности), чтобы подключиться к экземпляру Azure AD.
 
@@ -383,14 +383,14 @@ This Workday user provisioning solution is ideally suited for:
    
 1. Пройдите проверку подлинности в экземпляре Azure AD, используя учетные данные глобального администратора.
 
-   ![Admin Auth](./media/workday-inbound-tutorial/pa_install_screen_3.png "Admin Auth")
+   ![Проверка подлинности администратора](./media/workday-inbound-tutorial/pa_install_screen_3.png "Проверка подлинности администратора")
 
    > [!NOTE]
    > Учетные данные администратора Azure AD используются только для того, чтобы подключиться к клиенту Azure AD. Агент не хранит учетные данные локально на сервере.
 
 1. После успешной проверки подлинности в Azure AD вы увидите экран **Connect Active Directory** (Подключение Active Directory). Теперь введите доменное имя AD и нажмите кнопку **Add Directory** (Добавить каталог).
 
-   ![Add Directory](./media/workday-inbound-tutorial/pa_install_screen_4.png "Add Directory")
+   ![Добавить каталог](./media/workday-inbound-tutorial/pa_install_screen_4.png "Добавить каталог")
   
 1. Вам будет предложено ввести учетные данные, необходимые для подключения к домену AD. На том же экране можно использовать команду **Select domain controller priority** (Выбрать приоритет контроллеров домена), чтобы указать контроллеры домена, которые агент должен использовать для отправки запросов на подготовку.
 
@@ -398,7 +398,7 @@ This Workday user provisioning solution is ideally suited for:
    
 1. После настройки домена установщик выводит список настроенных доменов. На этом экране можно повторить действия 5 и 6, чтобы добавить другие домены, или нажать кнопку **Next** (Далее), чтобы перейти к регистрации агента.
 
-   ![Configured Domains](./media/workday-inbound-tutorial/pa_install_screen_6.png "Configured Domains")
+   ![Настроенные домены](./media/workday-inbound-tutorial/pa_install_screen_6.png "Настроенные домены")
 
    > [!NOTE]
    > Если у вас несколько доменов AD (например, na.contoso.com, emea.contoso.com), добавляйте домены в список по отдельности.
@@ -406,15 +406,15 @@ This Workday user provisioning solution is ideally suited for:
    
 1. Просмотрите данные конфигурации и нажмите кнопку **Confirm** (Подтвердить), чтобы зарегистрировать агент.
   
-   ![Confirm Screen](./media/workday-inbound-tutorial/pa_install_screen_7.png "Confirm Screen")
+   ![Подтвердить экран](./media/workday-inbound-tutorial/pa_install_screen_7.png "Подтвердить экран")
    
 1. В мастере настройки отображается ход регистрации агента.
   
-   ![Agent Registration](./media/workday-inbound-tutorial/pa_install_screen_8.png "Регистрация агента")
+   ![Регистрация агента](./media/workday-inbound-tutorial/pa_install_screen_8.png "Регистрация агента")
    
 1. После успешной регистрации агента вы можете нажать кнопку **Exit** (Выход), чтобы выйти из мастера.
   
-   ![Exit Screen](./media/workday-inbound-tutorial/pa_install_screen_9.png "Exit Screen")
+   ![Выйти из экрана](./media/workday-inbound-tutorial/pa_install_screen_9.png "Выйти из экрана")
    
 1. Проверьте установку агента и убедитесь, что он работает, открыв оснастку "Services" (Службы) и обнаружив службу "Microsoft Azure AD Connect Provisioning Agent".
   
@@ -424,7 +424,7 @@ This Workday user provisioning solution is ideally suited for:
 
 **Настройка подготовки Workday в Active Directory.**
 
-1. Перейдите на сайт <https://portal.azure.com>.
+1. Перейдите на сайт <https://portal.azure.com>
 
 2. В области навигации слева выберите **Azure Active Directory**.
 
@@ -440,7 +440,7 @@ This Workday user provisioning solution is ideally suited for:
 
 8. В разделе **Учетные данные администратора** заполните поля следующим образом.
 
-   * **Имя пользователя администратора** — введите имя пользователя учетной записи системы интеграции Workday с указанием имени домена клиента. It should look something like: **username\@tenant_name**
+   * **Имя пользователя администратора** — введите имя пользователя учетной записи системы интеграции Workday с указанием имени домена клиента. Он должен выглядеть примерно так: **username\@tenant_name**
 
    * **Пароль администратора** — введите пароль учетной записи системы интеграции Workday.
 
@@ -461,11 +461,11 @@ This Workday user provisioning solution is ideally suited for:
 
    * Нажмите кнопку **Проверить подключение**. Если проверка подключения выполнена успешно, нажмите кнопку **Сохранить** в верхней части. В случае неудачи убедитесь, что учетные данные Workday и AD, заданные в настройках агента, действительны.
 
-     ![портала Azure](./media/workday-inbound-tutorial/wd_1.png)
+     ![портале Azure](./media/workday-inbound-tutorial/wd_1.png)
 
    * После успешного сохранения учетных данных в разделе **Сопоставления** отобразится сопоставление по умолчанию **Synchronize Workday Workers to On Premises Active Directory** (Синхронизировать работников Workday с локальной средой Active Directory).
 
-### <a name="part-3-configure-attribute-mappings"></a>Part 3: Configure attribute mappings
+### <a name="part-3-configure-attribute-mappings"></a>Часть 3. Настройка сопоставлений атрибутов
 
 В этом разделе вы настроите потоки данных пользователя из Workday в Active Directory.
 
@@ -473,7 +473,7 @@ This Workday user provisioning solution is ideally suited for:
 
 1. В поле **Область исходного объекта** можно выбрать, какие наборы пользователей в Workday должны учитываться при подготовке в AD, определив набор фильтров на основе атрибутов. Область по умолчанию — "Все пользователи в Workday". Примеры фильтров
 
-   * Example: Scope to users with Worker IDs between 1000000 and    2000000 (excluding 2000000)
+   * Пример. область действия для пользователей с идентификаторами рабочих ролей в диапазоне от 1000000 до 2000000 (исключая 2000000)
 
       * Атрибут: WorkerID
 
@@ -491,7 +491,7 @@ This Workday user provisioning solution is ideally suited for:
    > При первой настройке приложения подготовки необходимо проверить сопоставления атрибутов и выражения, чтобы получить желаемый результат. Корпорация Майкрософт рекомендует использовать фильтры области действия в разделе **Область исходного объекта** для проверки сопоставлений с несколькими тестовыми пользователями из Workday. После проверки работоспособности сопоставлений можно либо удалить фильтр, либо постепенно расширять его, добавляя больше пользователей.
 
    > [!CAUTION] 
-   > The default behavior of the provisioning engine is to disable/delete users that go out of scope. This may not be desirable in your Workday to AD integration. To override this default behavior refer to the article [Skip deletion of user accounts that go out of scope](../manage-apps/skip-out-of-scope-deletions.md)
+   > Поведение подсистемы подготовки по умолчанию заключается в том, чтобы отключить или удалить пользователей, которые выходят за пределы области. Это может быть нежелательно при интеграции Workday с AD. Чтобы переопределить это поведение по умолчанию, см. статью [пропуск удаления учетных записей пользователей, которые выходят за пределы области](../manage-apps/skip-out-of-scope-deletions.md)
   
 1. В поле **Действия с целевыми объектами** можно в глобальном масштабе отфильтровать, какие действия доступны для выполнения в Active Directory. Самыми распространенными являются **создание** и **обновление**.
 
@@ -526,7 +526,7 @@ This Workday user provisioning solution is ideally suited for:
 
 1. Чтобы сохранить сопоставления, щелкните **Сохранить** в верхней части раздела "Сопоставление атрибутов".
 
-   ![портала Azure](./media/workday-inbound-tutorial/wd_2.png)
+   ![портале Azure](./media/workday-inbound-tutorial/wd_2.png)
 
 #### <a name="below-are-some-example-attribute-mappings-between-workday-and-active-directory-with-some-common-expressions"></a>Ниже приведено несколько примеров сопоставлений атрибутов между Workday и Active Directory с некоторыми общими выражениями.
 
@@ -540,7 +540,7 @@ This Workday user provisioning solution is ideally suited for:
 | ---------- | ---------- | ---------- | ---------- |
 | **WorkerID**  |  EmployeeID | **Да** | Записывается только при создании |
 | **PreferredNameData**    |  cn    |   |   Записывается только при создании |
-| **SelectUniqueValue( Join("\@", Join(".",  \[FirstName\], \[LastName\]), "contoso.com"), Join("\@", Join(".",  Mid(\[FirstName\], 1, 1), \[LastName\]), "contoso.com"), Join("\@", Join(".",  Mid(\[FirstName\], 1, 2), \[LastName\]), "contoso.com"))**   | userPrincipalName     |     | Записывается только при создании 
+| **Селектуникуевалуе (присоединение ("\@", соединение (".", \[FirstName\], \[LastName\]), "contoso.com"), Join ("\@", Join (".", MID (\[FirstName\], 1, 1), \[LastName\]), "contoso.com"), объединения ("\@", Join (".", MID (\[FirstName\], 1, 2), \[LastName\]), "contoso.com"))**   | userPrincipalName     |     | Записывается только при создании 
 | **Replace(Mid(Replace(\[UserID\], , "(\[\\\\/\\\\\\\\\\\\\[\\\\\]\\\\:\\\\;\\\\\|\\\\=\\\\,\\\\+\\\\\*\\\\?\\\\&lt;\\\\&gt;\])", , "", , ), 1, 20), , "([\\\\.)\*\$](file:///\\.)*$)", , "", , )**      |    sAMAccountName            |     |         Записывается только при создании |
 | **Switch(\[Active\], , "0", "True", "1", "False")** |  accountDisabled      |     | Создание и обновление |
 | **FirstName**   | givenName       |     |    Создание и обновление |
@@ -608,7 +608,7 @@ This Workday user provisioning solution is ideally suited for:
 
    * Если проверка подключения выполнена успешно, нажмите кнопку **Сохранить** в верхней части. В случае неудачи дважды проверьте правильность URL-адреса и учетных данных Workday в приложении Workday.
 
-### <a name="part-2-configure-workday-and-azure-ad-attribute-mappings"></a>Part 2: Configure Workday and Azure AD attribute mappings
+### <a name="part-2-configure-workday-and-azure-ad-attribute-mappings"></a>Часть 2. Настройка сопоставлений атрибутов Workday и Azure AD
 
 В этом разделе вы настроите потоки данных пользователя из Workday в Active Directory только для облачных пользователей.
 
@@ -665,19 +665,19 @@ This Workday user provisioning solution is ideally suited for:
 
 После завершения настройки сопоставления атрибутов [можно включить и запустить службу подготовки пользователей](#enable-and-launch-user-provisioning).
 
-## <a name="configuring-azure-ad-attribute-writeback-to-workday"></a>Configuring Azure AD attribute writeback to Workday
+## <a name="configuring-azure-ad-attribute-writeback-to-workday"></a>Настройка обратной записи атрибута Azure AD в Workday
 
-Follow these instructions to configure writeback of user email addresses and username from Azure Active Directory to Workday.
+Выполните эти инструкции, чтобы настроить обратную запись адресов электронной почты пользователей и имен пользователей из Azure Active Directory в Workday.
 
 * [Добавление приложения соединителя обратной записи и создание подключения к Workday](#part-1-adding-the-writeback-connector-app-and-creating-the-connection-to-workday)
 * [Настройка сопоставлений атрибутов обратной записи](#part-2-configure-writeback-attribute-mappings)
 * [Включение и запуск подготовки пользователей](#enable-and-launch-user-provisioning)
 
-### <a name="part-1-adding-the-writeback-connector-app-and-creating-the-connection-to-workday"></a>Part 1: Adding the Writeback connector app and creating the connection to Workday
+### <a name="part-1-adding-the-writeback-connector-app-and-creating-the-connection-to-workday"></a>Часть 1. Добавление приложения соединителя обратной записи и создание подключения к Workday
 
 **Настройка соединителя обратной записи Workday:**
 
-1. Перейдите на сайт <https://portal.azure.com>.
+1. Перейдите на сайт <https://portal.azure.com>
 
 2. В области навигации слева выберите **Azure Active Directory**.
 
@@ -693,7 +693,7 @@ Follow these instructions to configure writeback of user email addresses and use
 
 8. В разделе **Учетные данные администратора** заполните поля следующим образом.
 
-   * **Имя пользователя администратора** — введите имя пользователя учетной записи системы интеграции Workday с указанием имени домена клиента. Should look something like: *username\@contoso4*
+   * **Имя пользователя администратора** — введите имя пользователя учетной записи системы интеграции Workday с указанием имени домена клиента. Должен выглядеть примерно так: *username\@contoso4*
 
    * **Пароль администратора** — введите пароль учетной записи системы интеграции Workday.
 
@@ -703,9 +703,9 @@ Follow these instructions to configure writeback of user email addresses and use
 
    * Нажмите кнопку **Проверить подключение**. Если проверка подключения выполнена успешно, нажмите кнопку **Сохранить** в верхней части. В случае неудачи дважды проверьте правильность URL-адреса и учетных данных Workday в приложении Workday.
 
-### <a name="part-2-configure-writeback-attribute-mappings"></a>Part 2: Configure writeback attribute mappings
+### <a name="part-2-configure-writeback-attribute-mappings"></a>Часть 2. Настройка сопоставлений атрибутов обратной записи
 
-В этом разделе описывается настройка потока атрибутов обратной записи из Azure AD в Workday. At present, the connector only supports writeback of email address and username to Workday.
+В этом разделе описывается настройка потока атрибутов обратной записи из Azure AD в Workday. В настоящее время соединитель поддерживает обратную запись адреса электронной почты и имени пользователя в Workday.
 
 1. На вкладке "Подготовка" в разделе **Сопоставления** щелкните **Synchronize Azure Active Directory Users to Workday** (Синхронизировать пользователей Azure Active Directory с Workday).
 
@@ -713,7 +713,7 @@ Follow these instructions to configure writeback of user email addresses and use
 
 3. В разделе **Сопоставление атрибутов**, обновите соответствующий идентификатор, чтобы указать атрибут в Azure Active Directory, где хранится идентификатор рабочей роли или идентификатор сотрудника для Workday. Распространенный метод сопоставления заключается в синхронизации ИД работника или ИД сотрудника Workday с extensionAttribute1-15 в Azure AD. Затем этот атрибут используется в Azure AD для обратного сопоставления пользователей в Workday.
 
-4. Typically you map the Azure AD *userPrincipalName* attribute to Workday *UserID* attribute and map the Azure AD *mail* attribute to the Workday *EmailAddress* attribute. Чтобы сохранить сопоставления, щелкните **Сохранить** в верхней части раздела "Сопоставление атрибутов".
+4. Обычно вы сопоставляете атрибут *userPrincipalName* Azure AD с атрибутом workday *UserID* и сопоставляете атрибут *почты* Azure AD с атрибутом *EmailAddress* . Чтобы сохранить сопоставления, щелкните **Сохранить** в верхней части раздела "Сопоставление атрибутов".
 
 После завершения настройки сопоставления атрибутов [можно включить и запустить службу подготовки пользователей](#enable-and-launch-user-provisioning).
 
@@ -726,7 +726,7 @@ Follow these instructions to configure writeback of user email addresses and use
 
 1. На вкладке **Подготовка** установите для параметра **Состояние подготовки** значение **Вкл**.
 
-2. В нижней части страницы нажмите кнопку **Save**.
+2. Выберите команду **Сохранить**.
 
 3. Будет запущена начальная синхронизация, которая может длиться переменное число часов в зависимости от количества пользователей в клиенте Workday. 
 
@@ -734,9 +734,9 @@ Follow these instructions to configure writeback of user email addresses and use
 
 5. После завершения первичной синхронизации на вкладке **Подготовка** будет создан сводный отчет аудита, как показано ниже.
 
-   ![портала Azure](./media/workday-inbound-tutorial/wd_3.png)
+   ![портале Azure](./media/workday-inbound-tutorial/wd_3.png)
 
-## <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions-faq"></a>Вопросы и ответы
 
 * **Вопросы о возможностях решения**
   * [Как решение устанавливает пароль для новой учетной записи пользователя в Active Directory при обработке найма нового сотрудника из Workday?](#when-processing-a-new-hire-from-workday-how-does-the-solution-set-the-password-for-the-new-user-account-in-active-directory)
@@ -753,7 +753,7 @@ Follow these instructions to configure writeback of user email addresses and use
   * [Какая версия агента подготовки является общедоступной?](#what-is-the-ga-version-of-the-provisioning-agent)
   * [Как узнать версию моего агента подготовки?](#how-do-i-know-the-version-of-my-provisioning-agent)
   * [Автоматически ли корпорация Майкрософт отправляет обновления агента подготовки?](#does-microsoft-automatically-push-provisioning-agent-updates)
-  * [Can I install the Provisioning Agent on the same server running Azure AD Connect?](#can-i-install-the-provisioning-agent-on-the-same-server-running-azure-ad-connect)
+  * [Можно ли установить агент подготовки на том же сервере, на котором работает Azure AD Connect?](#can-i-install-the-provisioning-agent-on-the-same-server-running-azure-ad-connect)
   * [Как настроить агент подготовки для использования прокси-сервера исходящих HTTP-подключений?](#how-do-i-configure-the-provisioning-agent-to-use-a-proxy-server-for-outbound-http-communication)
   * [Как убедиться, что агент подготовки может взаимодействовать с клиентом Azure AD и никакие брандмауэры не блокируют порты, необходимые агенту?](#how-do-i-ensure-that-the-provisioning-agent-is-able-to-communicate-with-the-azure-ad-tenant-and-no-firewalls-are-blocking-ports-required-by-the-agent)
   * [Как отменить регистрацию домена, связанного с агентом подготовки?](#how-do-i-de-register-the-domain-associated-with-my-provisioning-agent)
@@ -761,7 +761,7 @@ Follow these instructions to configure writeback of user email addresses and use
   
 * **Вопросы по конфигурации и сопоставлению атрибутов Workday и AD**
   * [Как создать резервную копию или экспортировать рабочую копию сопоставления атрибутов подготовки Workday и схемы?](#how-do-i-back-up-or-export-a-working-copy-of-my-workday-provisioning-attribute-mapping-and-schema)
-  * [I have custom attributes in Workday and Active Directory. How do I configure the solution to work with my custom attributes?](#i-have-custom-attributes-in-workday-and-active-directory-how-do-i-configure-the-solution-to-work-with-my-custom-attributes)
+  * [У меня есть настраиваемые атрибуты в Workday и Active Directory. Разделы справки настроить решение для работы с пользовательскими атрибутами?](#i-have-custom-attributes-in-workday-and-active-directory-how-do-i-configure-the-solution-to-work-with-my-custom-attributes)
   * [Можно ли подготовить фотографию пользователя из Workday в Active Directory?](#can-i-provision-users-photo-from-workday-to-active-directory)
   * [Как на основе согласия пользователя синхронизировать мобильные номера из Workday для публичного использования?](#how-do-i-sync-mobile-numbers-from-workday-based-on-user-consent-for-public-usage)
   * [Как форматировать отображаемые имена в AD на основе атрибутов отдела, страны и города пользователя и обрабатывать региональные различия?](#how-do-i-format-display-names-in-ad-based-on-the-users-departmentcountrycity-attributes-and-handle-regional-variances)
@@ -782,7 +782,7 @@ Follow these instructions to configure writeback of user email addresses and use
 
 Одним из последних шагов подготовки новой учетной записи AD пользователя является предоставление назначенного ей временного пароля. Многие предприятия по-прежнему используют традиционный подход предоставления временного пароля руководителю пользователя, который затем передает его новому сотруднику или временному работнику. Этот процесс имеет недостаток, связанный с безопасностью. Есть возможность реализовать лучший подход с использованием возможностей Azure AD.
 
-В рамках процесса найма команды отдела кадров обычно проводят фоновую проверку и проверяют номер мобильного телефона нового сотрудника. С помощью интеграции подготовки пользователей из Workday в AD вы можете внедрить и развернуть возможность самостоятельного сброса пароля для пользователя в первый день. This is accomplished by propagating the “Mobile Number” attribute of the new hire from Workday to AD and then from AD to Azure AD using Azure AD Connect. Как только атрибут "Номер мобильного телефона" появится в Azure AD, можно включить функцию [самостоятельного сброса пароля (SSPR)](../authentication/howto-sspr-authenticationdata.md) для учетной записи пользователя, чтобы в первый день новый сотрудник мог использовать зарегистрированный и проверенный номер мобильного телефона для аутентификации.
+В рамках процесса найма команды отдела кадров обычно проводят фоновую проверку и проверяют номер мобильного телефона нового сотрудника. С помощью интеграции подготовки пользователей из Workday в AD вы можете внедрить и развернуть возможность самостоятельного сброса пароля для пользователя в первый день. Это достигается путем распространения атрибута "номер мобильного устройства" нового приема на работу из Workday в AD, а затем из AD в Azure AD с помощью Azure AD Connect. Как только атрибут "Номер мобильного телефона" появится в Azure AD, можно включить функцию [самостоятельного сброса пароля (SSPR)](../authentication/howto-sspr-authenticationdata.md) для учетной записи пользователя, чтобы в первый день новый сотрудник мог использовать зарегистрированный и проверенный номер мобильного телефона для аутентификации.
 
 #### <a name="does-the-solution-cache-workday-user-profiles-in-the-azure-ad-cloud-or-at-the-provisioning-agent-layer"></a>Решение кэширует профили пользователей Workday в облаке Azure AD или на уровне подготовки агента?
 
@@ -798,7 +798,7 @@ Follow these instructions to configure writeback of user email addresses and use
 
 * Get_Workers (версии 21.1) для получения информации о работнике;
 * Maintain_Contact_Information (версии 26.1) для функции обратной записи рабочего электронного адреса.
-* Update_Workday_Account (v31.2) for Username Writeback feature
+* Update_Workday_Account (v 31,2) для функции обратной записи имени пользователя
 
 #### <a name="can-i-configure-my-workday-hcm-tenant-with-two-azure-ad-tenants"></a>Можно ли настроить клиент Workday HCM с двумя клиентами Azure AD?
 
@@ -833,19 +833,19 @@ Follow these instructions to configure writeback of user email addresses and use
 
 #### <a name="how-do-i-know-the-version-of-my-provisioning-agent"></a>Как узнать версию моего агента подготовки?
 
-* Sign in to the Windows server where the Provisioning Agent is installed.
+* Войдите на сервер Windows Server, на котором установлен агент подготовки.
 * Перейдите в меню **Панель управления** -> **Uninstall or Change a Program** (Удаление или изменение программ).
 * Найдите версию, соответствующую записи **агента подготовки Microsoft Azure AD Connect**.
 
-  ![портала Azure](./media/workday-inbound-tutorial/pa_version.png)
+  ![портале Azure](./media/workday-inbound-tutorial/pa_version.png)
 
 #### <a name="does-microsoft-automatically-push-provisioning-agent-updates"></a>Автоматически ли корпорация Майкрософт отправляет обновления агента подготовки?
 
 Да, корпорация Майкрософт автоматически обновляет агент подготовки. Автоматическое обновление можно отключить, остановив службу Windows **Microsoft Azure AD Connect Agent Updater**.
 
-#### <a name="can-i-install-the-provisioning-agent-on-the-same-server-running-azure-ad-connect"></a>Can I install the Provisioning Agent on the same server running Azure AD Connect?
+#### <a name="can-i-install-the-provisioning-agent-on-the-same-server-running-azure-ad-connect"></a>Можно ли установить агент подготовки на том же сервере, на котором работает Azure AD Connect?
 
-Yes, you can install the Provisioning Agent on the same server that runs Azure AD Connect.
+Да, агент подготовки можно установить на том же сервере, на котором выполняется Azure AD Connect.
 
 #### <a name="at-the-time-of-configuration-the-provisioning-agent-prompts-for-azure-ad-admin-credentials-does-the-agent-store-the-credentials-locally-on-the-server"></a>Во время настройки агент подготовки запрашивает учетные данные администратора Azure AD. Агент хранит учетные данные локально на сервере?
 
@@ -853,7 +853,7 @@ Yes, you can install the Provisioning Agent on the same server that runs Azure A
 
 #### <a name="how-do-i-configure-the-provisioning-agent-to-use-a-proxy-server-for-outbound-http-communication"></a>Как настроить агент подготовки для использования прокси-сервера исходящих HTTP-подключений?
 
-Агент подготовки поддерживает использование исходящего прокси-сервера. You can configure it by editing the agent config file **C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\AADConnectProvisioningAgent.exe.config**. Add the following lines into it, towards the end of the file just before the closing `</configuration>` tag.
+Агент подготовки поддерживает использование исходящего прокси-сервера. Его можно настроить, изменив файл конфигурации агента **C:\Program Files\Microsoft Azure AD Connect подготовки ажент\аадконнектпровисионингажент.ЕКСЕ.конфиг**. Добавьте в него следующие строки, расположенные ближе к концу файла непосредственно перед закрывающим тегом `</configuration>`.
 Замените переменные [proxy-server] и [proxy-port] значениями имени прокси-сервера и номера порта.
 
 ```xml
@@ -870,12 +870,12 @@ Yes, you can install the Provisioning Agent on the same server that runs Azure A
 
 #### <a name="how-do-i-ensure-that-the-provisioning-agent-is-able-to-communicate-with-the-azure-ad-tenant-and-no-firewalls-are-blocking-ports-required-by-the-agent"></a>Как убедиться, что агент подготовки может взаимодействовать с клиентом Azure AD и никакие брандмауэры не блокируют порты, необходимые агенту?
 
-You can also check whether you have all the required ports open by opening the [Connector Ports Test Tool](https://aadap-portcheck.connectorporttest.msappproxy.net/) from your on premises network. Большее число зеленых флажков означает большую устойчивость.
+Вы также можете проверить, открыты ли все необходимые порты, открыв [средство проверки портов соединителей](https://aadap-portcheck.connectorporttest.msappproxy.net/) из локальной сети. Большее число зеленых флажков означает большую устойчивость.
 
 Чтобы получить правильные результаты, необходимо:
 
 * Откройте средство в браузере на сервере, где установлен агент подготовки.
-* Убедитесь, что все прокси-серверы или брандмауэры, которые применяются к агенту подготовки, также применяются к этой странице. This can be done in Internet Explorer by going to **Settings -> Internet Options -> Connections -> LAN Settings**. На этой странице появится флажок "Использовать прокси-сервер для локальной сети". Установите этот флажок и укажите адрес прокси-сервера в поле "Адрес".
+* Убедитесь, что все прокси-серверы или брандмауэры, которые применяются к агенту подготовки, также применяются к этой странице. Это можно сделать в Internet Explorer, выбрав **Параметры-> свойства браузера — > подключения — > параметры локальной сети**. На этой странице появится флажок "Использовать прокси-сервер для локальной сети". Установите этот флажок и укажите адрес прокси-сервера в поле "Адрес".
 
 #### <a name="can-one-provisioning-agent-be-configured-to-provision-multiple-ad-domains"></a>Можно ли настроить один агент подготовки для подготовки нескольких доменов AD?
 
@@ -884,8 +884,8 @@ You can also check whether you have all the required ports open by opening the [
 #### <a name="how-do-i-de-register-the-domain-associated-with-my-provisioning-agent"></a>Как отменить регистрацию домена, связанного с агентом подготовки?
 
 * На портале Azure получите *идентификатор клиента* Azure AD.
-* Sign in to the Windows server running the Provisioning Agent.
-* Open PowerShell as Windows Administrator.
+* Войдите на сервер Windows Server, на котором выполняется агент подготовки.
+* Откройте PowerShell с правами администратора Windows.
 * Перейдите в каталог, содержащий сценарии регистрации, и выполните следующие команды, заменив параметр \[tenant ID\] значением вашего идентификатора клиента.
 
   ```powershell
@@ -895,7 +895,7 @@ You can also check whether you have all the required ports open by opening the [
   ```
 
 * В появившемся списке агентов скопируйте значение поля id из ресурса, значение *resourceName* которого соответствует вашему доменному имени AD.
-* Paste the ID value into this command and execute the command in PowerShell.
+* Вставьте значение идентификатора в эту команду и выполните команду в PowerShell.
 
   ```powershell
   Remove-PublishedResource -ResourceId "[resource ID]" -TenantId "[tenant ID]"
@@ -906,7 +906,7 @@ You can also check whether you have all the required ports open by opening the [
 
 #### <a name="how-do-i-uninstall-the-provisioning-agent"></a>Как удалить агент подготовки?
 
-* Sign in to the Windows server where the Provisioning Agent is installed.
+* Войдите на сервер Windows Server, на котором установлен агент подготовки.
 * Перейдите в меню **Панель управления** -> **Uninstall or Change a Program** (Удаление или изменение программ).
 * Удалите следующие программы:
   * агент подготовки Microsoft Azure AD Connect;
@@ -963,9 +963,9 @@ You can also check whether you have all the required ports open by opening the [
 
 #### <a name="how-do-i-format-display-names-in-ad-based-on-the-users-departmentcountrycity-attributes-and-handle-regional-variances"></a>Как форматировать отображаемые имена в AD на основе атрибутов отдела, страны и города пользователя и обрабатывать региональные различия?
 
-It is a common requirement to configure the *displayName* attribute in AD so that it also provides information about the user's department and country/region. Например, если Иван Воронков работает в отделе маркетинга в США, можно настроить так, чтобы его значение *displayName* отображалось как *Воронков, Иван (Маркетинг-Россия)* .
+Распространенным требованием является настройка атрибута *DisplayName* в Active Directory, чтобы он также выдает информацию о штате и стране или регионе пользователя. Например, если Иван Воронков работает в отделе маркетинга в США, можно настроить так, чтобы его значение *displayName* отображалось как *Воронков, Иван (Маркетинг-Россия)* .
 
-Here is how you can handle such requirements for constructing *CN* or *displayName* to include attributes such as company, business unit, city, or country/region.
+Вот как можно реализовать такие требования для создания *CN* или *DisplayName* , чтобы включить такие атрибуты, как компания, подразделение, город или страна или регион.
 
 * Каждый атрибут Workday извлекается с помощью базового выражения XPath API, которое настраивается в меню **Сопоставление атрибутов -> раздел Advanced (Дополнительно) -> Edit attribute list for Workday (Изменить список атрибутов для Workday)** . Ниже приведено выражение XPath API по умолчанию для атрибутов Workday *PreferredFirstName*, *PreferredLastName*, *Company* и *SupervisoryOrganization*.
 
@@ -992,12 +992,12 @@ Here is how you can handle such requirements for constructing *CN* or *displayNa
 
   Согласуйте с командой Workday, допустимы ли приведенные выше выражения API для конфигурации клиента Workday. При необходимости эти выражения можно отредактировать, как описано в разделе [Настройка списка атрибутов пользователя Workday](#customizing-the-list-of-workday-user-attributes).
 
-* To build the right attribute mapping expression, identify which Workday attribute “authoritatively” represents the user’s first name, last name, country/region and department. Предположим, у нас есть атрибуты *PreferredFirstName*, *PreferredLastName*, *CountryReferenceTwoLetter* и *SupervisoryOrganization* соответственно. Их можно использовать, чтобы создать приведенное ниже выражение для атрибута AD *displayName* и получить отображаемое имя, например *Воронков, Иван (Маркетинг-Россия)* .
+* Чтобы создать правильное выражение сопоставления атрибута, необходимо выяснить, какой атрибут Workday представляет собой имя пользователя, фамилию, страну, регион и отдел. Предположим, у нас есть атрибуты *PreferredFirstName*, *PreferredLastName*, *CountryReferenceTwoLetter* и *SupervisoryOrganization* соответственно. Их можно использовать, чтобы создать приведенное ниже выражение для атрибута AD *displayName* и получить отображаемое имя, например *Воронков, Иван (Маркетинг-Россия)* .
 
     ```
      Append(Join(", ",[PreferredLastName],[PreferredFirstName]), Join(""," (",[SupervisoryOrganization],"-",[CountryReferenceTwoLetter],")"))
     ```
-    Once you have the right expression, edit the Attribute Mappings table and modify the *displayName* attribute mapping as shown below:   ![DisplayName Mapping](./media/workday-inbound-tutorial/wd_displayname_map.png)
+    После получения правильного выражения измените таблицу сопоставления атрибутов и измените сопоставление атрибутов *DisplayName* , как показано ниже: сопоставление ![DisplayName](./media/workday-inbound-tutorial/wd_displayname_map.png)
 
 * Расширим приведенный выше пример. Допустим, вы хотите преобразовать названия городов из Workday в сокращенные значения, а затем использовать их, чтобы создать отображаемые имена, например *Воронков, Иван (MOS)* или *Сазанова, Мария (SPT)* . Это можно сделать с использованием выражения оператора switch с атрибутом Workday *Municipality* в качестве определяющей переменной.
 
@@ -1028,7 +1028,7 @@ SelectUniqueValue(
 )
 ```
 
-How the above expression works: If the user is John Smith, it first tries to generate JSmith, if JSmith already exists, then it generates JoSmith, if that exists, it generates JohSmith. Выражение также проверяет, чтобы созданное значение соответствовало ограничениям длины и специальных знаков, связанных с *samAccountName*.
+Принцип работы приведенного выше выражения: Если пользователь имеет имя John Smith, он сначала пытается создать JSmith, если JSmith уже существует, а затем создает Жосмис, если он существует, он создает Жохсмис. Выражение также проверяет, чтобы созданное значение соответствовало ограничениям длины и специальных знаков, связанных с *samAccountName*.
 
 См. также:
 
@@ -1042,7 +1042,7 @@ How the above expression works: If the user is John Smith, it first tries to gen
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 
-В этом разделе приведены рекомендации по устранению неполадок подготовки, возникающих во время интеграции Workday, с помощью журналов аудита Azure AD и журналов средства просмотра событий Windows Server. It builds on top of the generic troubleshooting steps and concepts captured in the [Tutorial: Reporting on automatic user account provisioning](../manage-apps/check-status-user-account-provisioning.md)
+В этом разделе приведены рекомендации по устранению неполадок подготовки, возникающих во время интеграции Workday, с помощью журналов аудита Azure AD и журналов средства просмотра событий Windows Server. Он основан на общих действиях по устранению неполадок и концепциях, полученных в этом [учебнике: создание отчетов об автоматической подготовке учетных записей пользователей](../manage-apps/check-status-user-account-provisioning.md)
 
 В этом разделе описываются следующие аспекты устранения неполадок:
 
@@ -1054,7 +1054,7 @@ How the above expression works: If the user is John Smith, it first tries to gen
 
 ### <a name="setting-up-windows-event-viewer-for-agent-troubleshooting"></a>Настройка средства просмотра событий Windows для устранения неполадок агента
 
-* Sign in to the Windows Server machine where the Provisioning Agent is deployed
+* Войдите на компьютер Windows Server, на котором развернут агент подготовки.
 * Откройте настольное приложение **просмотра событий Windows Server**.
 * Выберите **Журналы Windows > Приложение**.
 * Используйте параметр **Фильтровать текущий журнал...** , чтобы просмотреть все события, зарегистрированные в источнике **AAD.Connect.ProvisioningAgent**, и исключить события с идентификатором 5, указав фильтр "-5", как показано ниже.
@@ -1080,11 +1080,11 @@ How the above expression works: If the user is John Smith, it first tries to gen
 
 При обнаружении нового сотрудника в Workday (например, с идентификатором *21023*) служба подготовки Azure AD пытается создать новую учетную запись пользователя AD для него и в процессе создает 4 записи журнала аудита, как описано ниже.
 
-  [![Audit log create ops](media/workday-inbound-tutorial/wd_audit_logs_02.png)](media/workday-inbound-tutorial/wd_audit_logs_02.png#lightbox)
+  [журнал аудита ![создание Ops](media/workday-inbound-tutorial/wd_audit_logs_02.png)](media/workday-inbound-tutorial/wd_audit_logs_02.png#lightbox)
 
 Если щелкнуть любую из записей журнала аудита, откроется страница **Сведения о действии**. Так будет выглядеть страница **Сведения о действии** для каждого типа записей журнала.
 
-* **Workday Import** record: This log record displays the worker information fetched from Workday. Используйте информацию, приведенную в разделе *Дополнительные сведения* для записи журнала, чтобы устранить неполадки, связанные с извлечением данных из Workday. Ниже показан пример записи вместе с указателями того, как интерпретировать каждое поле.
+* Запись **импорта Workday** . Эта запись журнала отображает сведения о рабочем процессе, полученные из Workday. Используйте информацию, приведенную в разделе *Дополнительные сведения* для записи журнала, чтобы устранить неполадки, связанные с извлечением данных из Workday. Ниже показан пример записи вместе с указателями того, как интерпретировать каждое поле.
 
   ```JSON
   ErrorCode : None  // Use the error code captured here to troubleshoot Workday issues
@@ -1093,7 +1093,7 @@ How the above expression works: If the user is John Smith, it first tries to gen
   SourceAnchor : a071861412de4c2486eb10e5ae0834c3 // set to the WorkdayID (WID) associated with the record
   ```
 
-* **AD Import** record: This log record displays information of the account fetched from AD. Так как при первоначальном создании пользователя учетная запись AD отсутствует, в столбцах *причины, состояния и активности* будет указано, что в Active Directory не найдена учетная запись с таким значением атрибута идентификатора сопоставления. Используйте информацию, приведенную в разделе *Дополнительные сведения* для записи журнала, чтобы устранить неполадки, связанные с извлечением данных из Workday. Ниже показан пример записи вместе с указателями того, как интерпретировать каждое поле.
+* Запись **импорта Active Directory** . Эта запись журнала отображает сведения об учетной записи, полученной из AD. Так как при первоначальном создании пользователя учетная запись AD отсутствует, в столбцах *причины, состояния и активности* будет указано, что в Active Directory не найдена учетная запись с таким значением атрибута идентификатора сопоставления. Используйте информацию, приведенную в разделе *Дополнительные сведения* для записи журнала, чтобы устранить неполадки, связанные с извлечением данных из Workday. Ниже показан пример записи вместе с указателями того, как интерпретировать каждое поле.
 
   ```JSON
   ErrorCode : None // Use the error code captured here to troubleshoot Workday issues
@@ -1113,7 +1113,7 @@ How the above expression works: If the user is John Smith, it first tries to gen
 
   ![Результаты LDAP](media/workday-inbound-tutorial/wd_event_viewer_04.png)
 
-* **Synchronization rule action** record: This log record displays the results of the attribute mapping rules and configured scoping filters along with the provisioning action that will be taken to process the incoming Workday event. Используйте информацию, приведенную в разделе *Дополнительные сведения* записи журнала, чтобы устранить неполадки, связанные с действием синхронизации. Ниже показан пример записи вместе с указателями того, как интерпретировать каждое поле.
+* Запись **действия правила синхронизации** . Эта запись журнала отображает результаты правил сопоставления атрибутов и настроенные фильтры области, а также действие подготовки, которое будет выполнено для обработки входящего события Workday. Используйте информацию, приведенную в разделе *Дополнительные сведения* записи журнала, чтобы устранить неполадки, связанные с действием синхронизации. Ниже показан пример записи вместе с указателями того, как интерпретировать каждое поле.
 
   ```JSON
   ErrorCode : None // Use the error code captured here to troubleshoot sync issues
@@ -1124,7 +1124,7 @@ How the above expression works: If the user is John Smith, it first tries to gen
 
   Если возникли проблемы с выражениями сопоставления атрибутов или со входящими данными Workday (например, пустое или нулевое значение для обязательных атрибутов), на этом этапе вы увидите сбой с кодом ошибки, содержащим сведения о ней.
 
-* **AD Export** record: This log record displays the result of AD account creation operation along with the attribute values that were set in the process. Используйте информацию, приведенную в разделе *Дополнительные сведения* записи журнала, чтобы устранить неполадки, связанные с операцией создания учетной записи. Ниже показан пример записи вместе с указателями того, как интерпретировать каждое поле. В разделе "Дополнительные сведения" для параметра EventName задано значение EntryExportAdd, для параметра JoiningProperty устанавливается значение атрибута идентификатора сопоставления, для параметра SourceAnchor — значение WorkdayID (WID), связанное с записью, а для параметра TargetAnchor — значение атрибута ObjectGuid AD созданного пользователя. 
+* Запись **экспорта Active Directory** . в этой записи журнала отображается результат операции создания учетной записи AD вместе со значениями атрибутов, заданными в процессе. Используйте информацию, приведенную в разделе *Дополнительные сведения* записи журнала, чтобы устранить неполадки, связанные с операцией создания учетной записи. Ниже показан пример записи вместе с указателями того, как интерпретировать каждое поле. В разделе "Дополнительные сведения" для параметра EventName задано значение EntryExportAdd, для параметра JoiningProperty устанавливается значение атрибута идентификатора сопоставления, для параметра SourceAnchor — значение WorkdayID (WID), связанное с записью, а для параметра TargetAnchor — значение атрибута ObjectGuid AD созданного пользователя. 
 
   ```JSON
   ErrorCode : None // Use the error code captured here to troubleshoot AD account creation issues
@@ -1148,7 +1148,7 @@ How the above expression works: If the user is John Smith, it first tries to gen
 
 Атрибут руководителя является ссылочным атрибутом в AD. Служба подготовки не устанавливает атрибут руководителя как часть операции создания пользователя. Скорее, атрибут руководителя устанавливается как часть операции *обновления* после создания учетной записи AD для пользователя. Предположим, что новый сотрудник с идентификатором 21451 активирован в Workday, а у руководителя нового сотрудника (*21023*) уже есть учетная запись AD. В этом случае в результате поиска пользователя 21451 в журналах аудита отобразится 5 записей.
 
-  [![Manager Update](media/workday-inbound-tutorial/wd_audit_logs_03.png)](media/workday-inbound-tutorial/wd_audit_logs_03.png#lightbox)
+  [Обновление ![Manager](media/workday-inbound-tutorial/wd_audit_logs_03.png)](media/workday-inbound-tutorial/wd_audit_logs_03.png#lightbox)
 
 Первые 4 записи похожи на те, которые мы рассматривали в рамках операции создания пользователя. 5-я запись — это экспорт, связанный с обновлением атрибута руководителя. В записи журнала отображается результат операции обновления руководителя учетной записи AD, которая выполняется с использованием атрибута *objectGuid* руководителя.
 
@@ -1179,9 +1179,9 @@ How the above expression works: If the user is John Smith, it first tries to gen
 
 |#|Сценарий ошибки |Возможные причины|Рекомендуемое решение|
 |--|---|---|---|
-|1.| Error installing the provisioning agent with error message:  *Service 'Microsoft Azure AD Connect Provisioning Agent' (AADConnectProvisioningAgent) failed to start. Verify that you have sufficient privileges to start the system.* | Эта ошибка обычно появляется при попытке установить агент подготовки на контроллере домена, а групповая политика запрещает запуск службы.  Она также отображается, если у вас работает предыдущая версия агента и вы не удалили ее перед началом новой установки.| Установите агент подготовки на сервере, отличном от сервера контроллера домена. Перед установкой нового агента убедитесь, что предыдущие версии агента удалены.|
-|2.| Служба Windows "Агент подготовки Microsoft Azure AD Connect" находится в состоянии *Запускается* и не переходит в состояние *Выполняется*. | В ходе установки мастер агента создает локальную учетную запись (**NT Service\\AADConnectProvisioningAgent**) на сервере, и эта учетная запись **для входа в систему** используется для запуска службы. Эта ошибка возникнет, если политика безопасности на сервере Windows запрещает локальным учетным записям запускать службы. | Откройте *консоль служб*. Щелкните правой кнопкой мыши службу Windows "Агент подготовки Microsoft Azure AD Connect" и на вкладке входа укажите учетную запись администратора домена, которая будет использоваться для запуска службы. Перезапустите службу. |
-|3.| При настройке агента подготовки с доменом AD на шаге *подключения Active Directory* мастер долго загружает схему AD, но в конечном итоге время ожидания истекает. | Эта ошибка обычно отображается, если мастеру не удается связаться с сервером контроллера домена AD из-за проблем брандмауэра. | На шаге *подключения Active Directory* в мастере при вводе учетных данных домена AD есть параметр *Select domain controller priority* (Выбрать приоритет контроллеров домена). Используя этот параметр, выберите контроллер домена, который находится на том же сайте, что и сервер агента, и убедитесь в отсутствии правил брандмауэра, блокирующих связь. |
+|1.| Произошла ошибка при установке агента подготовки с сообщением об ошибке: *не удалось запустить службу "Microsoft Azure AD подключить агент подготовки" (аадконнектпровисионингажент). Убедитесь, что у вас есть необходимые привилегии для запуска системы.* | Эта ошибка обычно появляется при попытке установить агент подготовки на контроллере домена, а групповая политика запрещает запуск службы.  Она также отображается, если у вас работает предыдущая версия агента и вы не удалили ее перед началом новой установки.| Установите агент подготовки на сервере, отличном от сервера контроллера домена. Перед установкой нового агента убедитесь, что предыдущие версии агента удалены.|
+|2)| Служба Windows "Агент подготовки Microsoft Azure AD Connect" находится в состоянии *Запускается* и не переходит в состояние *Выполняется*. | В ходе установки мастер агента создает локальную учетную запись (**NT Service\\AADConnectProvisioningAgent**) на сервере, и эта учетная запись **для входа в систему** используется для запуска службы. Эта ошибка возникнет, если политика безопасности на сервере Windows запрещает локальным учетным записям запускать службы. | Откройте *консоль служб*. Щелкните правой кнопкой мыши службу Windows "Агент подготовки Microsoft Azure AD Connect" и на вкладке входа укажите учетную запись администратора домена, которая будет использоваться для запуска службы. Перезапустите службу. |
+|3)| При настройке агента подготовки с доменом AD на шаге *подключения Active Directory* мастер долго загружает схему AD, но в конечном итоге время ожидания истекает. | Эта ошибка обычно отображается, если мастеру не удается связаться с сервером контроллера домена AD из-за проблем брандмауэра. | На шаге *подключения Active Directory* в мастере при вводе учетных данных домена AD есть параметр *Select domain controller priority* (Выбрать приоритет контроллеров домена). Используя этот параметр, выберите контроллер домена, который находится на том же сайте, что и сервер агента, и убедитесь в отсутствии правил брандмауэра, блокирующих связь. |
 
 #### <a name="connectivity-errors"></a>Ошибки подключения.
 
@@ -1189,16 +1189,16 @@ How the above expression works: If the user is John Smith, it first tries to gen
 
 |#|Сценарий ошибки |Возможные причины|Рекомендуемое решение|
 |--|---|---|---|
-|1.| When you click on **Test Connection**, you get the error message: *There was an error connecting to Active Directory. Please ensure that the on-premises Provisioning Agent is running and it is configured with the correct Active Directory domain.* | Эта ошибка обычно отображается, если агент подготовки не запущен или брандмауэр блокирует подключение между Azure AD и агентом подготовки. Эта ошибка также может появиться, если домен не настроен в мастере агента. | Откройте консоль *Службы* на сервере Windows, чтобы убедиться, что агент запущен. Откройте мастер агента подготовки и убедитесь, что нужный домен зарегистрирован в агенте.  |
-|2.| Задание подготовки переходит в состояние карантина в выходные дни (пятница и суббота), и мы получаем уведомление по электронной почте о том, что произошла ошибка синхронизации. | Одной из распространенных причин этой ошибки является запланированный простой Workday. Если вы используете клиент реализации Workday, обратите внимание, что Workday запланировал для своих клиентов реализации простой на выходные дни (обычно с вечера пятницы до утра субботы). В течение этого периода приложения подготовки Workday могут перейти в состояние карантина, так как не могут подключиться к Workday. Задание возвращается в нормальное состояние, как только клиент реализации Workday возвращается в сеть. В редких случаях эта ошибка может также появиться, если пароль пользователя системы интеграции был изменен из-за обновления клиента или если учетная запись заблокирована либо истек срок ее действия. | Обратитесь к администратору Workday или партнеру по интеграции, чтобы узнать, когда Workday планирует время простоя, чтобы игнорировать предупреждения в период простоя и подтвердить доступность после подключения экземпляра Workday.  |
+|1.| При нажатии кнопки **проверить подключение**появляется сообщение об ошибке: произошла *Ошибка при подключении к Active Directory. Убедитесь, что локальный агент подготовки работает и для него настроен правильный домен Active Directory.* | Эта ошибка обычно отображается, если агент подготовки не запущен или брандмауэр блокирует подключение между Azure AD и агентом подготовки. Эта ошибка также может появиться, если домен не настроен в мастере агента. | Откройте консоль *Службы* на сервере Windows, чтобы убедиться, что агент запущен. Откройте мастер агента подготовки и убедитесь, что нужный домен зарегистрирован в агенте.  |
+|2)| Задание подготовки переходит в состояние карантина в выходные дни (пятница и суббота), и мы получаем уведомление по электронной почте о том, что произошла ошибка синхронизации. | Одной из распространенных причин этой ошибки является запланированный простой Workday. Если вы используете клиент реализации Workday, обратите внимание, что Workday запланировал для своих клиентов реализации простой на выходные дни (обычно с вечера пятницы до утра субботы). В течение этого периода приложения подготовки Workday могут перейти в состояние карантина, так как не могут подключиться к Workday. Задание возвращается в нормальное состояние, как только клиент реализации Workday возвращается в сеть. В редких случаях эта ошибка может также появиться, если пароль пользователя системы интеграции был изменен из-за обновления клиента или если учетная запись заблокирована либо истек срок ее действия. | Обратитесь к администратору Workday или партнеру по интеграции, чтобы узнать, когда Workday планирует время простоя, чтобы игнорировать предупреждения в период простоя и подтвердить доступность после подключения экземпляра Workday.  |
 
 
 #### <a name="ad-user-account-creation-errors"></a>Ошибки создания учетной записи пользователя AD
 
 |#|Сценарий ошибки |Возможные причины|Рекомендуемое решение|
 |--|---|---|---|
-|1.| Export operation failures in the audit log with the message *Error: OperationsError-SvcErr: An operation error occurred. No superior reference has been configured for the directory service. The directory service is therefore unable to issue referrals to objects outside this forest.* | Эта ошибка обычно появляется, если подразделение *контейнера Active Directory* установлено неправильно или есть проблемы с сопоставлением выражений, используемым для *parentDistinguishedName*. | Проверьте параметр подразделения *контейнера Active Directory* на наличие опечаток. Если вы используете атрибут *parentDistinguishedName* в сопоставлении атрибутов, убедитесь, что он всегда соответствует известному контейнеру в домене AD. Проверьте событие *экспорта* в журналах аудита, чтобы увидеть созданное значение. |
-|2.| Export operation failures in the audit log with error code: *SystemForCrossDomainIdentityManagementBadResponse* and message *Error: ConstraintViolation-AtrErr: A value in the request is invalid. A value for the attribute was not in the acceptable range of values. \nError Details: CONSTRAINT_ATT_TYPE - company*. | Хотя эта ошибка относится только к атрибуту *company*, она может возникнуть и для других атрибутов, таких как *CN*. Эта ошибка появляется из-за принудительного ограничения схемы AD. По умолчанию такие атрибуты, как *company* и *CN* в AD, имеют верхний предел длины в 64 знака. Если длина значения из Workday превышает 64 знака, вы увидите это сообщение об ошибке. | Проверьте событие *экспорта* в журналах аудита, чтобы увидеть значение атрибута, указанное в сообщении об ошибке. Попробуйте обрезать значение, полученное из Workday, с помощью функции [Mid](../manage-apps/functions-for-customizing-application-data.md#mid), или изменить сопоставления на атрибут AD, который не имеет аналогичных ограничений длины.  |
+|1.| Сбой операции экспорта в журнале аудита с сообщением *об ошибке: оператионсеррор-свцерр: произошла ошибка операции. Для службы каталогов не настроена старшая ссылка. Поэтому служба каталогов не может выдавать ссылки на объекты, находящиеся за пределами этого леса.* | Эта ошибка обычно появляется, если подразделение *контейнера Active Directory* установлено неправильно или есть проблемы с сопоставлением выражений, используемым для *parentDistinguishedName*. | Проверьте параметр подразделения *контейнера Active Directory* на наличие опечаток. Если вы используете атрибут *parentDistinguishedName* в сопоставлении атрибутов, убедитесь, что он всегда соответствует известному контейнеру в домене AD. Проверьте событие *экспорта* в журналах аудита, чтобы увидеть созданное значение. |
+|2)| Сбой операции экспорта в журнале аудита с кодом ошибки: *системфоркроссдомаинидентитиманажементбадреспонсе* и сообщение *об ошибке: констраинтвиолатион-атрерр: недопустимое значение в запросе. Значение атрибута не находится в допустимом диапазоне значений. \ Nсведения об ошибке: CONSTRAINT_ATT_TYPE-Company*. | Хотя эта ошибка относится только к атрибуту *company*, она может возникнуть и для других атрибутов, таких как *CN*. Эта ошибка появляется из-за принудительного ограничения схемы AD. По умолчанию такие атрибуты, как *company* и *CN* в AD, имеют верхний предел длины в 64 знака. Если длина значения из Workday превышает 64 знака, вы увидите это сообщение об ошибке. | Проверьте событие *экспорта* в журналах аудита, чтобы увидеть значение атрибута, указанное в сообщении об ошибке. Попробуйте обрезать значение, полученное из Workday, с помощью функции [Mid](../manage-apps/functions-for-customizing-application-data.md#mid), или изменить сопоставления на атрибут AD, который не имеет аналогичных ограничений длины.  |
 
 #### <a name="ad-user-account-update-errors"></a>Ошибки обновления учетной записи пользователя AD
 
@@ -1207,7 +1207,7 @@ How the above expression works: If the user is John Smith, it first tries to gen
 |#|Сценарий ошибки |Возможные причины|Рекомендуемое решение|
 |--|---|---|---|
 |1.| Сбой действия правила синхронизации в журнале аудита с сообщением *EventName = EntrySynchronizationError и ErrorCode = EndpointUnavailable*. | Эта ошибка отображается, если служба сопоставления не может получить данные профиля пользователя из Active Directory из-за ошибки обработки, обнаруженной локальным агентом подготовки. | Проверьте журналы средства просмотра событий агента подготовки на наличие ошибок, которые указывают на проблемы с операцией чтения (отфильтруйте по идентификатору события 2). |
-|2.| Атрибут руководителя в AD не обновляется для определенных пользователей в AD. | Наиболее вероятная причина этой ошибки — использование правил области действия, где настроена область, в которую руководитель пользователя не входит. Вы также можете столкнуться с этой проблемой, если атрибут идентификатора сопоставления руководителя (например, EmployeeID) не найден в целевом домене AD или имеет неверное значение. | Просмотрите фильтр области действия и добавьте руководителя в нужную область. Проверьте профиль руководителя в AD, чтобы убедиться в наличии значения для атрибута идентификатора сопоставления. |
+|2)| Атрибут руководителя в AD не обновляется для определенных пользователей в AD. | Наиболее вероятная причина этой ошибки — использование правил области действия, где настроена область, в которую руководитель пользователя не входит. Вы также можете столкнуться с этой проблемой, если атрибут идентификатора сопоставления руководителя (например, EmployeeID) не найден в целевом домене AD или имеет неверное значение. | Просмотрите фильтр области действия и добавьте руководителя в нужную область. Проверьте профиль руководителя в AD, чтобы убедиться в наличии значения для атрибута идентификатора сопоставления. |
 
 ## <a name="managing-your-configuration"></a>Управление конфигурацией
 
@@ -1242,7 +1242,7 @@ How the above expression works: If the user is John Smith, it first tries to gen
 
 7. Задайте для параметра **Operation** значение **Get_Workers**.
 
-8.  Щелкните ссылку **configure** (Настроить) под областями Request/Response (Запрос/Ответ), чтобы задать учетные данные Workday. Установите флажок **Authentication** (Аутентификация), а затем введите имя пользователя и пароль учетной записи системы интеграции Workday. Be sure to format the user name as name\@tenant, and leave the **WS-Security UsernameToken** option selected.
+8.  Щелкните ссылку **configure** (Настроить) под областями Request/Response (Запрос/Ответ), чтобы задать учетные данные Workday. Установите флажок **Authentication** (Аутентификация), а затем введите имя пользователя и пароль учетной записи системы интеграции Workday. Обязательно отформатируйте имя пользователя как имя\@клиента и оставьте параметр **WS-Security UsernameToken** установленным.
 
     ![Workday Studio](./media/workday-inbound-tutorial/wdstudio2.png)
 
@@ -1337,7 +1337,7 @@ How the above expression works: If the user is John Smith, it first tries to gen
 
 ### <a name="exporting-and-importing-your-configuration"></a>Экспорт и импорт конфигурации
 
-Refer to the article [Exporting and importing provisioning configuration](../manage-apps/export-import-provisioning-configuration.md)
+См. статью [Экспорт и импорт конфигурации подготовки](../manage-apps/export-import-provisioning-configuration.md) .
 
 ## <a name="managing-personal-data"></a>Управление персональными данными
 
@@ -1349,7 +1349,7 @@ Refer to the article [Exporting and importing provisioning configuration](../man
 
 Что касается хранения данных, служба подготовки Azure AD не создает отчеты, не выполняет аналитику и не предоставляет аналитику более чем за 30 дней. Таким образом, в службе подготовки Azure AD не хранятся и не обрабатываются данные за период более 30 дней. Такой подход является совместимым с нормами GDPR, требованиями соответствия нормативам корпорации Майкрософт о конфиденциальности и политике хранения данных Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 * [Узнайте, как настроить единый вход Azure Active Directory в Workday](workday-tutorial.md).

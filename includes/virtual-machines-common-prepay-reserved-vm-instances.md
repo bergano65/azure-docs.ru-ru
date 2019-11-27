@@ -11,20 +11,20 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74414533"
 ---
-When you commit to an Azure reserved VM instance you can save money. Скидка на резервирование автоматически применяется к количеству работающих виртуальных машин, которые соответствуют области и атрибутам резервирования. You don't need to assign a reservation to a virtual machine to get the discounts. A reserved instance purchase covers only the compute part of your VM usage. For Windows VMs, the usage meter is split into two separate meters. There's a compute meter, which is same as the Linux meter, and a Windows IP meter. The charges that you see when you make the purchase are only for the compute costs. Charges don't include Windows software costs. For more information about software costs, see [Software costs not included with Azure Reserved VM Instances](../articles/billing/billing-reserved-instance-windows-software-costs.md).
+При фиксации в зарезервированном экземпляре виртуальной машины Azure вы можете сэкономить деньги. Скидка на резервирование автоматически применяется к количеству работающих виртуальных машин, которые соответствуют области и атрибутам резервирования. Для получения скидок не нужно назначать резервирование виртуальной машине. Покупка зарезервированного экземпляра охватывает только вычислительную часть использования виртуальной машины. Для виртуальных машин Windows показатель использования делится на два отдельных счетчика. Есть счетчик вычислений, который аналогичен показателю Linux и счетчику IP-адресов Windows. Плата, которую вы видите при совершении покупки, будет взиматься только за затраты на вычисление. В оплату не входят расходы на программное обеспечение Windows. Дополнительные сведения о затратах на программное обеспечение см. [в разделе затраты на программное обеспечение, не включаемые в Azure reserved VM Instances](../articles/billing/billing-reserved-instance-windows-software-costs.md).
 
 ## <a name="determine-the-right-vm-size-before-you-buy"></a>Определение нужного размера виртуальной машины перед покупкой
 
-Before you buy a reservation, you should determine the size of the VM that you need. The following sections will help you determine the right VM size.
+Перед покупкой резервирования следует определить необходимый размер виртуальной машины. Следующие разделы помогут определить правильный размер виртуальной машины.
 
-### <a name="use-reservation-recommendations"></a>Use reservation recommendations
+### <a name="use-reservation-recommendations"></a>Использование рекомендаций по резервированию
 
-You can use reservation recommendations to help determine the reservations you should purchase.
+Вы можете использовать рекомендации по резервированию, чтобы определить резервирования, которые следует приобрести.
 
-- Purchase recommendations and recommended quantity are show when you purchase a VM reserved instance in the Azure portal.
-- Azure Advisor provides purchase recommendations for individual subscriptions.  
-- You can use the APIs to get purchase recommendations for both shared scope and single subscription scope. For more information, see [Reserved instance purchase recommendation APIs for enterprise customers](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-recommendation).
-- For Enterprise Agreement (EA) and Microsoft Customer Agreement (MCA) customers, purchase recommendations for shared and single subscription scopes are available with the [Azure Consumption Insights Power BI content pack](/power-bi/service-connect-to-azure-consumption-insights).
+- Рекомендации по приобретению и рекомендуемое количество отображаются при покупке зарезервированного экземпляра виртуальной машины в портал Azure.
+- Помощник по Azure предоставляет рекомендации по приобретению отдельных подписок.  
+- Вы можете использовать API для получения рекомендаций по покупке как для общей области, так и для области одной подписки. Дополнительные сведения см. в разделе [API рекомендации по приобретению зарезервированных экземпляров для корпоративных клиентов](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-recommendation).
+- Для пользователей Соглашение Enterprise (EA) и клиентов Майкрософт (MCA) доступны рекомендации по приобретению общих и отдельных областей подписки с [пакетом содержимого Azure Consumption Insights Power BI](/power-bi/service-connect-to-azure-consumption-insights).
 
 ### <a name="services-that-get-vm-reservation-discounts"></a>Службы, которые получают скидки на резервирование виртуальных машин
 
@@ -37,7 +37,7 @@ You can use reservation recommendations to help determine the reservations you s
 Независимо от того, включен ли параметр или выключен, скидки на резервирование автоматически применяются к любому соответствующему использованию виртуальной машины, если параметр *ConsumedService* равен `Microsoft.Compute`. Поэтому проверьте данные об использовании для значения *ConsumedService*. Некоторые примеры:
 
 - Виртуальные машины
-- Масштабируемые наборы виртуальных машин
+- наборы для масштабирования виртуальных машин
 - Служба контейнеров
 - Развертывания пакетной службы Azure (в режиме пользовательских подписок)
 - Служба Azure Kubernetes (AKS)
@@ -55,95 +55,95 @@ You can use reservation recommendations to help determine the reservations you s
 
 Дополнительные сведения о гибкости размера экземпляров см. в статье [Гибкость размеров виртуальных машин при использовании зарезервированных экземпляров виртуальных машин](../articles/virtual-machines/windows/reserved-vm-instance-size-flexibility.md).
 
-### <a name="analyze-your-usage-information"></a>Analyze your usage information
-Analyze your usage information to help determine which reservations you should purchase.
+### <a name="analyze-your-usage-information"></a>Анализ сведений об использовании
+Проанализируйте сведения об использовании, чтобы определить, какие резервирования следует приобрести.
 
-Usage data is available in the usage file and APIs. Use them together to determine which reservation to purchase. Check for VM instances that have high usage on daily basis to determine the quantity of reservations to purchase.
+Данные об использовании доступны в файле использования и API-интерфейсах. Используйте их вместе, чтобы определить, какое резервирование следует приобрести. Проверьте наличие экземпляров виртуальных машин с высоким уровнем использования на ежедневной основе, чтобы определить количество резервируемых резервирований.
 
-Avoid the `Meter` subcategory and `Product` fields in usage data. They don't distinguish between VM sizes that use premium storage. If you use these fields to determine the VM size for reservation purchase, you may buy the wrong size. Then you won't get the reservation discount you expect. Instead, refer to the `AdditionalInfo` field in your usage file or usage API to determine the correct VM size.
+Избегайте `Meter` подкатегории и `Product` полей в данных об использовании. Они не различают размеры виртуальных машин, которые используют хранилище класса Premium. Если вы используете эти поля для определения размера виртуальной машины для приобретения резервирования, вы можете купить неправильный размер. Тогда вы не получите желаемую скидку на резервирование. Вместо этого обратитесь к полю `AdditionalInfo` в файле использования или API использования, чтобы определить правильный размер виртуальной машины.
 
-### <a name="purchase-restriction-considerations"></a>Purchase restriction considerations
+### <a name="purchase-restriction-considerations"></a>Рекомендации по ограничениям покупки
 
-Reserved VM Instances are available for most VM sizes with some exceptions. Reservation discounts don't apply for the following VMs:
+Зарезервированные экземпляры виртуальных машин доступны для большинства размеров виртуальных машин с некоторыми исключениями. Скидки на резервирование не применяются к следующим виртуальным машинам:
 
-- **VM series** - A-series, Av2-series, or G-series.
+- Серия **виртуальных машин** серии A, серии Av2 или G.
 
-- **Preview or Promo VMs** - Any VM-series or size that is in preview or uses promotional meter.
+- **Предварительная версия или Акционная виртуальные** машины — любой ряд виртуальных машин или размер, который находится на этапе предварительной версии, или использует счетчик рекламных акций.
 
-- **Clouds** - Reservations aren't available for purchase in Germany or China regions.
+- **Облака** . резервирование недоступно для приобретения в Германии и в регионах Китая.
 
-- **Insufficient quota** - A reservation that is scoped to a single subscription must have vCPU quota available in the subscription for the new RI. Например, если целевая подписка имеет квоту на 10 виртуальных ЦП для серии D, вы не сможете приобрести резервирование для 11 экземпляров Standard_D1. При проверке квоты для резервирования учитываются все виртуальные машины, уже размещенные в подписке. Например, если подписка имеет квоту на 10 виртуальных ЦП для серии D и два развернутых экземпляра Standard_D1, в этой подписке можно приобрести резервирование для 10 экземпляров Standard_D1. You can [create quote increase request](../articles/azure-supportability/resource-manager-core-quotas-request.md) to resolve this issue.
+- **Недостаточная квота** . для резервирования в рамках одной подписки должна быть доступна квота виртуальных ЦП в подписке для новой RI. Например, если целевая подписка имеет квоту на 10 виртуальных ЦП для серии D, вы не сможете приобрести резервирование для 11 экземпляров Standard_D1. При проверке квоты для резервирования учитываются все виртуальные машины, уже размещенные в подписке. Например, если подписка имеет квоту на 10 виртуальных ЦП для серии D и два развернутых экземпляра Standard_D1, в этой подписке можно приобрести резервирование для 10 экземпляров Standard_D1. Чтобы устранить эту проблему, можно [создать запрос на увеличение квоты](../articles/azure-supportability/resource-manager-core-quotas-request.md) .
 
-- **Capacity restrictions** - In rare circumstances, Azure limits the purchase of new reservations for subset of VM sizes, because of low capacity in a region.
+- **Ограничения емкости** . в редких обстоятельствах Azure ограничивает покупку новых резервирований для подмножества размеров виртуальных машин из-за нехватки емкости в регионе.
 
 ## <a name="buy-a-reserved-vm-instance"></a>Приобретение Reserved VM Instance
 
-You can buy a reserved VM instance in the [Azure portal](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/CreateBlade/referrer/documentation/filters/%7B%22reservedResourceType%22%3A%22VirtualMachines%22%7D). Платите за резервирование [наперед или ежемесячными платежами](../articles/billing/billing-monthly-payments-reservations.md).
-These requirements apply to buying a reserved VM instance:
+Зарезервированный экземпляр виртуальной машины можно купить в [портал Azure](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/CreateBlade/referrer/documentation/filters/%7B%22reservedResourceType%22%3A%22VirtualMachines%22%7D). Платите за резервирование [наперед или ежемесячными платежами](../articles/billing/billing-monthly-payments-reservations.md).
+Эти требования применяются для приобретения зарезервированного экземпляра виртуальной машины.
 
-- You must be in an Owner role for at least one EA subscription or a subscription with a pay-as-you-go rate.
-- For EA subscriptions, the **Add Reserved Instances** option must be enabled in the [EA portal](https://ea.azure.com/). Or, if that setting is disabled, you must be an EA Admin for the subscription.
+- Необходимо быть членом роли владельца по крайней мере для одной подписки EA или подписки с оплатой по мере использования.
+- Для подписок EA параметр **Добавить зарезервированные экземпляры** должен быть включен на [портале EA](https://ea.azure.com/). Если этот параметр отключен, необходимо быть администратором EA для подписки.
 - В рамках программы для поставщиков облачных решений (CSP) только агенты администрирования или агенты продаж могут приобрести резервирования.
 
 Требования для приобретения экземпляра.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 1. Выберите **Все службы** > **Резервирование**.
-1. Select **Add** to purchase a new reservation and then click **Virtual machine**.
-1. Enter required fields. Работающие экземпляры виртуальной машины, соответствующие выбранным атрибутам, подходят для получения скидки на резервирование. Фактическое число экземпляров виртуальной машины, получающих скидку, зависит от области и выбранного количества.
+1. Выберите **Добавить** , чтобы приобрести новое резервирование, а затем щелкните **Виртуальная машина**.
+1. Заполните обязательные поля. Работающие экземпляры виртуальной машины, соответствующие выбранным атрибутам, подходят для получения скидки на резервирование. Фактическое число экземпляров виртуальной машины, получающих скидку, зависит от области и выбранного количества.
 
-If you have an EA agreement, you can use the **Add more option** to quickly add additional instances. The option isn't available for other subscription types.
+При наличии соглашения EA можно использовать **параметр добавить дополнительные** , чтобы быстро добавить дополнительные экземпляры. Параметр недоступен для других типов подписки.
 
 
-| Поле      | Описание|
+| Поле      | ОПИСАНИЕ|
 |------------|--------------|
-|Subscription|Подписка, используемая для оплаты резервирования. The payment method on the subscription is charged the costs for the reservation. The subscription type must be an enterprise agreement (offer numbers: MS-AZR-0017P or MS-AZR-0148P) or Microsoft Customer Agreement or an individual subscription with pay-as-you-go rates (offer numbers: MS-AZR-0003P or MS-AZR-0023P). The charges are deducted from the monetary commitment balance, if available, or charged as overage. For a subscription with pay-as-you-go rates, the charges are billed to the credit card or invoice payment method on the subscription.|    
-|Область действия       |Область резервирования может охватывать одну или несколько подписок (общая область). Если выбрать: <ul><li>**Одна группа ресурсов** — скидка по резервированию применяется к подходящим ресурсам только в выбранной группе ресурсов.</li><li>**Одна подписка** — скидка по резервированию применяется к подходящим ресурсам только в выбранной подписке.</li><li>**Общая область резервирования** — скидка по резервированию применяется к подходящим ресурсам во всех допустимых подписках в контексте выставления счетов. For EA customers, the billing context is the enrollment. Для отдельных подписок с оплатой по мере использования областью выставления счетов считаются все допустимые подписки, созданные администратором учетной записи.</li></ul>|
+|подписку|Подписка, используемая для оплаты резервирования. Для метода оплаты в подписке взимается плата за резервирование. Тип подписки должен быть соглашением Enterprise (номера предложения: MS-AZR-0017P или MS-AZR-0148P) или соглашением с клиентами Майкрософт или индивидуальной подпиской с оплатой по мере использования (номера предложений: MS-AZR-0003P или MS-AZR-0023P). Расходы вычитаются из баланса денежных обязательств, если они доступны, или оплачиваются как избыточные. Для подписки с тарифами с оплатой по мере использования плата оплачивается по методу оплаты кредитной карты или счета-фактуры в подписке.|    
+|Область       |Область резервирования может охватывать одну или несколько подписок (общая область). Если выбрать: <ul><li>**Одна группа ресурсов** — скидка по резервированию применяется к подходящим ресурсам только в выбранной группе ресурсов.</li><li>**Одна подписка** — скидка по резервированию применяется к подходящим ресурсам только в выбранной подписке.</li><li>**Общая область резервирования** — скидка по резервированию применяется к подходящим ресурсам во всех допустимых подписках в контексте выставления счетов. Для клиентов EA контекст выставления счетов — это регистрация. Для индивидуальных клиентов с оплатой по мере использования областью резервирования считаются все допустимые подписки, созданные администратором учетной записи.</li></ul>|
 |Регион    |Регион Azure, охватываемый резервированием.|    
 |Размер виртуальной машины     |Размер экземпляров виртуальной машины.|
-|Оптимизировать для     |VM instance size flexibility is selected by default. Click **Advanced settings** to change the instance size flexibility value to apply the reservation discount to other VMs in the same [VM size group](../articles/virtual-machines/windows/reserved-vm-instance-size-flexibility.md). Приоритет емкости назначает приоритет емкости центра обработки данных для развертываний. It offers additional confidence in your ability to launch the VM instances when you need them. Приоритет емкости доступен только в том случае, если область резервирования является одиночной подпиской. |
-|Срок действия        |Один или три года.|
-|Количество    |Число экземпляров, приобретаемых в рамках резервирования. Это количество работающих экземпляров виртуальной машины, которые могут получить скидку. For example, if you are running 10 Standard_D2 VMs in the East US, then you would specify quantity as 10 to maximize the benefit for all running VMs. |
+|Оптимизировать для     |Гибкость размера экземпляра виртуальной машины выбрана по умолчанию. Щелкните **Дополнительные параметры** , чтобы изменить значение гибкости размера экземпляра, чтобы применить скидку резервирования к другим виртуальным машинам в той же [группе размеров виртуальной машины](../articles/virtual-machines/windows/reserved-vm-instance-size-flexibility.md). Приоритет емкости назначает приоритет емкости центра обработки данных для развертываний. Она обеспечивает дополнительную уверенность в возможности запуска экземпляров виртуальных машин по мере необходимости. Приоритет емкости доступен только в том случае, если область резервирования является одиночной подпиской. |
+|Термин        |Один или три года.|
+|Количество    |Число экземпляров, приобретаемых в рамках резервирования. Это количество работающих экземпляров виртуальной машины, которые могут получить скидку. Например, если вы используете 10 Standard_D2 виртуальных машин в восточной части США, то для максимального увеличения преимуществ для всех работающих виртуальных машин следует указать количество 10. |
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2PjmT]
 
-## <a name="usage-data-and-reservation-utilization"></a>Usage data and reservation utilization
+## <a name="usage-data-and-reservation-utilization"></a>Данные об использовании и использование резервирования
 
-В данных об использовании указана нулевая эффективная цена за использование, на которое распространяется скидка на резервирование. You can see which VM instance received the reservation discount for each reservation.
+В данных об использовании указана нулевая эффективная цена за использование, на которое распространяется скидка на резервирование. Вы можете увидеть, какой экземпляр виртуальной машины получил скидку резервирования для каждого резервирования.
 
-For more information about how reservation discounts appear in usage data, see [Understand Azure reservation usage for your Enterprise enrollment](../articles/billing/billing-understand-reserved-instance-usage-ea.md) if you are an EA customer. If you have an individual subscription, see [Understand Azure reservation usage for your Pay-As-You-Go subscription](../articles/billing/billing-understand-reserved-instance-usage.md).
+Дополнительные сведения о том, как скидки на резервирование отображаются в данных об использовании, см. в статье [сведения об использовании резервирования Azure для регистрации на предприятии](../articles/billing/billing-understand-reserved-instance-usage-ea.md) , если вы ЯВЛЯЕТЕСЬ клиентом EA. Если у вас есть отдельная подписка, см. статью [сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../articles/billing/billing-understand-reserved-instance-usage.md).
 
-## <a name="change-a-reservation-after-purchase"></a>Change a reservation after purchase
+## <a name="change-a-reservation-after-purchase"></a>Изменение резервирования после покупки
 
 После приобретения в резервирование можно внести следующие типы изменений:
 
 - Обновить область резервирования
-- Instance size flexibility (if applicable)
-- Ownership
+- Гибкость размера экземпляра (если применимо)
+- Владения
 
-You can also split a reservation into smaller chunks and merge already split reservations. None of the changes cause a new commercial transaction or change the end date of the reservation.
+Можно также разделить резервирование на небольшие фрагменты и объединить уже разделенные резервирования. Ни одно из изменений не вызывает новую коммерческую транзакцию или не изменяет дату окончания резервирования.
 
-You can't make the following types of changes after purchase, directly:
+Следующие типы изменений нельзя внести после приобретения, непосредственно:
 
-- An existing reservation’s region
-- SKU
+- Регион существующего резервирования
+- Sku
 - Количество
-- Duration
+- Длительность
 
-However, you can *exchange* a reservation if you want to make changes.
+Тем не менее можно выполнить *Обмен* резервированиями, если необходимо внести изменения.
 
-## <a name="cancel-exchange-or-refund-reservations"></a>Отмена, обмен резервирования, возмещение средств за резервирование
+## <a name="cancel-exchange-or-refund-reservations"></a>Отмена, обмен или возврат резервирования
 
-Вы можете отменить и обменять резервирования, а также вернуть вложенные в резервирование средства, но при этом применяются определенные ограничения. Дополнительные сведения см. в статье [Самостоятельное выполнение обмена и возмещения средств для Azure Reserved Virtual Machine Instances](../articles/billing/billing-azure-reservations-self-service-exchange-and-refund.md).
+Вы можете отменить и обменять резервирования, а также вернуть вложенные в резервирование средства, но при этом применяются определенные ограничения. Дополнительные сведения см. в статье [Self-service exchanges and refunds for Azure Reservations](../articles/billing/billing-azure-reservations-self-service-exchange-and-refund.md) (Самостоятельное выполнение обмена и возмещения средств для резервирований Azure).
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения об управлении резервированием см. в разделе [Управление резервированиями в Azure](../articles/billing/billing-manage-reserved-vm-instance.md).
-- Дополнительные сведения о резервировании в Azure см. в следующих статьях.
+- Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
     - [Основные сведения о резервировании в Azure](../articles/billing/billing-save-compute-costs-reservations.md)
     - [Управление резервированиями в Azure](../articles/billing/billing-manage-reserved-vm-instance.md)
     - [Сведения о применении скидки на зарезервированный экземпляр виртуальной машины](../articles/billing/billing-understand-vm-reservation-charges.md)

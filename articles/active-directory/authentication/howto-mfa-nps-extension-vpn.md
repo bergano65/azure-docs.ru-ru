@@ -1,5 +1,5 @@
 ---
-title: VPN with Azure MFA using the NPS extension - Azure Active Directory
+title: VPN с Azure MFA с помощью расширения NPS — Azure Active Directory
 description: Интеграция инфраструктуры VPN с Azure MFA с помощью расширения сервера политики сети для Microsoft Azure.
 services: multi-factor-authentication
 ms.service: active-directory
@@ -55,7 +55,7 @@ ms.locfileid: "74404692"
 
 Помимо выполнения аутентификации и проверки удостоверения, пользователи должны иметь соответствующие разрешения на входящее подключение. В простых реализациях эти разрешения на входящее подключение, которые обеспечивают доступ, задаются непосредственно в объектах-пользователях Active Directory.
 
-![Dial-in tab in Active Directory Users and Computers user properties](./media/howto-mfa-nps-extension-vpn/image1.png)
+![Вкладка "удаленный вход" в свойствах пользователя "Active Directory пользователи и компьютеры"](./media/howto-mfa-nps-extension-vpn/image1.png)
 
 В простых реализациях каждый VPN-сервер предоставляет или запрещает доступ на основе политик, определенных на каждом локальном VPN-сервере.
 
@@ -72,11 +72,11 @@ ms.locfileid: "74404692"
 7. После аутентификации и авторизации подключения сервер политики сети, на котором установлено расширение NPS, отправляет сообщение *Access-Accept* RADIUS на VPN-сервер (клиент RADIUS).
 8. Пользователю предоставляется доступ к виртуальному порту на VPN-сервере, и создается зашифрованный VPN-туннель.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-This section details the prerequisites that must be completed before you can integrate MFA with the VPN. Прежде чем приступить к работе, следует подготовить приведенные ниже необходимые компоненты:
+В этом разделе описаны предварительные требования, которые необходимо выполнить, прежде чем можно будет интегрировать MFA с VPN. Прежде чем приступить к работе, следует подготовить приведенные ниже необходимые компоненты:
 
-* Инфраструктура VPN
+* инфраструктура VPN;
 * роль "Службы политики сети и доступа";
 * лицензия Azure MFA;
 * программное обеспечение Windows Server;
@@ -84,7 +84,7 @@ This section details the prerequisites that must be completed before you can int
 * синхронизация Azure Active Directory (Azure AD) с локальной службой Active Directory;
 * Идентификатор GUID Azure Active Directory
 
-### <a name="vpn-infrastructure"></a>Инфраструктура VPN
+### <a name="vpn-infrastructure"></a>инфраструктура VPN;
 
 В этой статье предполагается наличие рабочей инфраструктуры VPN на основе Microsoft Windows Server 2016. Также предполагается, что VPN-сервер не настроен для пересылки запросов на подключение на сервер RADIUS. В этой статье вы настроите инфраструктуру VPN для использования центрального сервера RADIUS.
 
@@ -143,7 +143,7 @@ This section details the prerequisites that must be completed before you can int
 
 3. В консоли сервера политики сети щелкните правой кнопкой мыши **Сервер сетевых политик (локальный)** , а затем щелкните **Зарегистрировать сервер в Active Directory**. Дважды нажмите кнопку **ОК**.
 
-    ![Register server in Active Directory menu option](./media/howto-mfa-nps-extension-vpn/image2.png)
+    ![Пункт «зарегистрировать сервер» в Active Directory меню](./media/howto-mfa-nps-extension-vpn/image2.png)
 
 4. Оставьте консоль открытой для выполнения следующей процедуры.
 
@@ -155,17 +155,17 @@ This section details the prerequisites that must be completed before you can int
 
 2. В разделе **Стандартная конфигурация** выберите **RADIUS-сервер для подключений удаленного доступа или VPN**, а затем щелкните **Настройка VPN или удаленного доступа**.
 
-    ![Configure RADIUS Server for Dial-Up or VPN Connections](./media/howto-mfa-nps-extension-vpn/image3.png)
+    ![Настройка RADIUS-сервера для подключений удаленного доступа или VPN](./media/howto-mfa-nps-extension-vpn/image3.png)
 
 3. В окне **Выберите тип подключения - удаленный доступ или виртуальная частная сеть** выберите **Virtual Private Network Connections** (Подключения к виртуальной частной сети) и нажмите кнопку **Далее**.
 
-    ![Configure Virtual private network connections](./media/howto-mfa-nps-extension-vpn/image4.png)
+    ![Настройка подключений к виртуальной частной сети](./media/howto-mfa-nps-extension-vpn/image4.png)
 
 4. В окне **Укажите сервер удаленного доступа или VPN-сервер** щелкните **Добавить**.
 
 5. В окне **Новый RADIUS-клиент** введите понятное имя, разрешаемое имя или IP-адрес VPN-сервера и общий секретный пароль. Этот секретный пароль должен быть длинным и сложным. Запишите его, так как он понадобится в следующем разделе.
 
-    ![Create a New RADIUS client window](./media/howto-mfa-nps-extension-vpn/image5.png)
+    ![Создание нового RADIUS-окна клиента](./media/howto-mfa-nps-extension-vpn/image5.png)
 
 6. Нажмите кнопку **ОК**, а затем щелкните **Создать**.
 
@@ -176,9 +176,9 @@ This section details the prerequisites that must be completed before you can int
 
 8. В окне **Настройка групп пользователей** щелкните **Добавить** и выберите соответствующую группу. Если группа не существует, оставьте поле пустым, чтобы предоставить доступ всем пользователям.
 
-    ![Specify User Groups window to allow or deny access](./media/howto-mfa-nps-extension-vpn/image7.png)
+    ![Укажите окно групп пользователей, чтобы разрешить или запретить доступ](./media/howto-mfa-nps-extension-vpn/image7.png)
 
-9. Щелкните **Далее**.
+9. Нажмите кнопку **Далее**.
 
 10. В окне **Задайте IP-фильтры** щелкните **Далее**.
 
@@ -192,7 +192,7 @@ This section details the prerequisites that must be completed before you can int
 
 13. В окне **Завершение создания подключений удаленного доступа или виртуальной частной сети и RADIUS-клиентов** нажмите кнопку **Готово**.
 
-    ![Completed configuration window](./media/howto-mfa-nps-extension-vpn/image10.png)
+    ![Окно конфигурации завершено](./media/howto-mfa-nps-extension-vpn/image10.png)
 
 ### <a name="verify-the-radius-configuration"></a>Проверка конфигурации RADIUS
 
@@ -202,17 +202,17 @@ This section details the prerequisites that must be completed before you can int
 
 2. В области сведений щелкните правой кнопкой мыши созданный вами клиент RADIUS и выберите **Свойства**. Свойства клиента RADIUS (VPN-сервера) должны быть аналогичны показанным ниже.
 
-    ![Verify the VPN properties and configuration](./media/howto-mfa-nps-extension-vpn/image11.png)
+    ![Проверка свойств и конфигурации VPN](./media/howto-mfa-nps-extension-vpn/image11.png)
 
 3. Нажмите кнопку **Отмена**.
 
 4. На сервере политики сети в консоли "Сервер сетевых политик (локальный)" разверните элемент **Политики** и выберите **Политики запросов на подключение**. Отобразится политика VPN-подключений, как показано на следующем рисунке.
 
-    ![Connection request policy showing VPN connection policy](./media/howto-mfa-nps-extension-vpn/image12.png)
+    ![Политика запросов на подключение, показывающая политику VPN-подключений](./media/howto-mfa-nps-extension-vpn/image12.png)
 
 5. В разделе **Политики** выберите **Сетевые политики**. Вы должны увидеть политику VPN-подключений, напоминающую политику, показанную на рисунке ниже.
 
-    ![Network Policies showing Virtual Private Network Connections policy](./media/howto-mfa-nps-extension-vpn/image13.png)
+    ![Политики сети, отображающие политику подключений виртуальной частной сети](./media/howto-mfa-nps-extension-vpn/image13.png)
 
 ## <a name="configure-your-vpn-server-to-use-radius-authentication"></a>Настройка VPN-сервера для использования аутентификации RADIUS
 
@@ -234,20 +234,20 @@ This section details the prerequisites that must be completed before you can int
 
 5. На вкладке **Безопасность** в разделе **Поставщик проверки подлинности** щелкните **Проверка подлинности RADIUS**, а затем — **Настройка**.
 
-    ![Configure RADIUS Authentication provider](./media/howto-mfa-nps-extension-vpn/image15.png)
+    ![Настройка поставщика проверки подлинности RADIUS](./media/howto-mfa-nps-extension-vpn/image15.png)
 
 6. В окне **Проверка подлинности RADIUS** щелкните **Добавить**.
 
 7. В окне **Добавление RADIUS-сервера** выполните следующие действия.
 
-    а) В поле **Имя сервера** добавьте имя или IP-адрес сервера RADIUS, настроенного в предыдущем разделе.
+    a. В поле **Имя сервера** добавьте имя или IP-адрес сервера RADIUS, настроенного в предыдущем разделе.
 
-    б) В разделе **Общий секрет** щелкните **Изменить** и введите общий секретный пароль, который вы создали и записали ранее.
+    b. В разделе **Общий секрет** щелкните **Изменить** и введите общий секретный пароль, который вы создали и записали ранее.
 
-    в) In the **Time-out (seconds)** box, enter a value of **30**.  
+    c. В поле **время ожидания (секунды)** введите значение **30**.  
     Это необходимо, чтобы предоставить достаточно времени для второго фактора аутентификации.
 
-    ![Add RADIUS Server window configuring the Time-out](./media/howto-mfa-nps-extension-vpn/image16.png)
+    ![Окно добавления сервера RADIUS, которое настраивает время ожидания](./media/howto-mfa-nps-extension-vpn/image16.png)
 
 8. Нажмите кнопку **ОК**.
 
@@ -275,7 +275,7 @@ This section details the prerequisites that must be completed before you can int
 
 7. Щелкните **Изменение параметров адаптера**.
 
-    ![Network and Sharing Center - Change adapter settings](./media/howto-mfa-nps-extension-vpn/image18.png)
+    ![Центр управления сетями и общим доступом — изменение параметров адаптера](./media/howto-mfa-nps-extension-vpn/image18.png)
 
 8. Щелкните правой кнопкой мыши VPN-подключение и выберите **Свойства**.
 
@@ -288,9 +288,9 @@ This section details the prerequisites that must be completed before you can int
 11. Щелкните правой кнопкой мыши VPN-подключение и выберите **Подключить**.
 
 12. В окне **Параметры** выберите **Подключить**.  
-    A successful connection appears in the Security log, on the RADIUS server, as Event ID 6272, as shown here:
+    Успешное подключение появится в журнале безопасности на сервере RADIUS в качестве события с ИДЕНТИФИКАТОРом 6272, как показано ниже:
 
-    ![Event Properties window showing a successful connection](./media/howto-mfa-nps-extension-vpn/image21.png)
+    ![Событие окно свойств показывающее успешное подключение](./media/howto-mfa-nps-extension-vpn/image21.png)
 
 ## <a name="troubleshooting-radius"></a>Устранение неполадок с RADIUS
 
@@ -298,11 +298,11 @@ This section details the prerequisites that must be completed before you can int
 
 Чтобы устранить эти неполадки, лучше всего начать с проверки журналов событий безопасности на сервере RADIUS. Чтобы сэкономить время при поиске событий, можно использовать настраиваемое представление политик сети и сервера доступа в службе "Просмотр событий", как показано на следующем рисунке. Идентификатор события 6273 обозначает события, в которых сервер политики сети отказал пользователю в доступе.
 
-![Event Viewer showing NPAS events](./media/howto-mfa-nps-extension-vpn/image22.png)
+![Просмотр событий отображения событий NPAS](./media/howto-mfa-nps-extension-vpn/image22.png)
 
 ## <a name="configure-multi-factor-authentication"></a>Настройка Многофакторной идентификации
 
-For assistance configuring users for Multi-Factor Authentication see the articles [Planning a cloud-based Azure Multi-Factor Authentication deployment](howto-mfa-getstarted.md#create-conditional-access-policy) and [Set up my account for two-step verification](../user-help/multi-factor-authentication-end-user-first-time.md)
+Дополнительные сведения о настройке пользователей для многофакторной проверки подлинности см. в статьях [Планирование развертывания многофакторной идентификации Azure с помощью облачной](howto-mfa-getstarted.md#create-conditional-access-policy) [службы и настройка учетной записи для двухфакторной проверки](../user-help/multi-factor-authentication-end-user-first-time.md) подлинности.
 
 ## <a name="install-and-configure-the-nps-extension"></a>Установка и настройка расширения NPS
 
@@ -332,11 +332,11 @@ For assistance configuring users for Multi-Factor Authentication see the article
 
 4. Чтобы скопировать идентификатор Azure AD, нажмите кнопку **Копировать**.
 
-    ![Azure AD Directory ID in the Azure portal](./media/howto-mfa-nps-extension-vpn/image35.png)
+    ![Идентификатор каталога Azure AD в портал Azure](./media/howto-mfa-nps-extension-vpn/image35.png)
 
 ### <a name="install-the-nps-extension"></a>Установка расширения NPS
 
-Расширение NPS должно быть установлено на сервере, на котором установлена роль "Службы политики сети и доступа" и который действует как сервер RADIUS в инфраструктуре. Do *not* install the NPS extension on your VPN server.
+Расширение NPS должно быть установлено на сервере, на котором установлена роль "Службы политики сети и доступа" и который действует как сервер RADIUS в инфраструктуре. *Не* устанавливайте расширение NPS на VPN-сервере.
 
 1. Скачайте расширение NPS из [Центра загрузки Майкрософт](https://aka.ms/npsmfa).
 
@@ -372,23 +372,23 @@ For assistance configuring users for Multi-Factor Authentication see the article
 
 2. В командной строке PowerShell введите команду **cd "c:\Program Files\Microsoft\AzureMfa\Config"** и нажмите клавишу ВВОД.
 
-3. At the next command prompt, enter **.\AzureMfaNpsExtnConfigSetup.ps1**, and then select Enter. Сценарий проверяет, установлен ли модуль PowerShell для Azure Active Directory. Если он не установлен, сценарий автоматически установит этот модуль.
+3. В следующей командной строке введите **.\AzureMfaNpsExtnConfigSetup.ps1**, а затем нажмите клавишу ВВОД. Сценарий проверяет, установлен ли модуль PowerShell для Azure Active Directory. Если он не установлен, сценарий автоматически установит этот модуль.
 
-    ![Running the AzureMfsNpsExtnConfigSetup.ps1 configuration script](./media/howto-mfa-nps-extension-vpn/image38.png)
+    ![Выполнение скрипта настройки Азуремфснпсекстнконфигсетуп. ps1](./media/howto-mfa-nps-extension-vpn/image38.png)
 
     Проверив установку модуля PowerShell, сценарий отобразит диалоговое окно входа для модуля PowerShell Azure для Active Directory.
 
 4. Введите учетные данные администратора Azure AD, включая пароль, и щелкните **Вход**.
 
-    ![Authenticate to Azure AD PowerShell](./media/howto-mfa-nps-extension-vpn/image39.png)
+    ![Аутентификация в Azure AD PowerShell](./media/howto-mfa-nps-extension-vpn/image39.png)
 
 5. Вставьте идентификатор клиента, скопированный ранее, в командную строку и нажмите клавишу ВВОД.
 
-    ![Input the Azure AD Directory ID copied before](./media/howto-mfa-nps-extension-vpn/image40.png)
+    ![Введите идентификатор каталога Azure AD, скопированный ранее](./media/howto-mfa-nps-extension-vpn/image40.png)
 
     Этот сценарий создает самозаверяющий сертификат и выполняет другие изменения конфигурация. Выходные данные должны иметь вид, как показано на рисунке ниже.
 
-    ![PowerShell window showing Self-signed certificate](./media/howto-mfa-nps-extension-vpn/image41.png)
+    ![Окно PowerShell с самозаверяющим сертификатом](./media/howto-mfa-nps-extension-vpn/image41.png)
 
 6. Перезагрузите сервер.
 
@@ -402,13 +402,13 @@ For assistance configuring users for Multi-Factor Authentication see the article
 
 В следующем примере приложение Microsoft Authenticator в Windows Phone используется для дополнительной аутентификации.
 
-![Example MFA prompt on Windows Phone](./media/howto-mfa-nps-extension-vpn/image43.png)
+![Пример запроса MFA на Windows Phone](./media/howto-mfa-nps-extension-vpn/image43.png)
 
 После успешного прохождения аутентификации с помощью дополнительного метода вам предоставляется доступ к виртуальному порту на VPN-сервере. Так как вы должны были пройти дополнительную аутентификацию с помощью мобильного приложения на доверенном устройстве, процесс входа защищен лучше, чем при использовании только имени пользователя и пароля.
 
 ### <a name="view-event-viewer-logs-for-successful-sign-in-events"></a>Просмотр событий успешного входа в журналах службы "Просмотр событий"
 
-To view successful sign-in events in the Windows Event Viewer logs query the Windows Security log, on the NPS server, by entering the following PowerShell command:
+Чтобы просмотреть события успешного входа в журналы Windows Просмотр событий, выполните запрос к журналу безопасности Windows на сервере NPS, введя следующую команду PowerShell:
 
     `Get-WinEvent -Logname Security | where {$_.ID -eq '6272'} | FL`
 
@@ -416,13 +416,13 @@ To view successful sign-in events in the Windows Event Viewer logs query the Win
 
 Можно также просмотреть настраиваемое представление "Службы политики сети и доступа", как показано ниже.
 
-![Example Network Policy Server log](./media/howto-mfa-nps-extension-vpn/image45.png)
+![Пример журнала сервера политики сети](./media/howto-mfa-nps-extension-vpn/image45.png)
 
 На сервере с расширением NPS для Azure MFA можно найти журналы приложений службы "Просмотр событий", относящиеся к этому расширению: *Application and Services Logs\Microsoft\AzureMfa*.
 
     `Get-WinEvent -Logname Security | where {$_.ID -eq '6272'} | FL`
 
-![Example Event Viewer AuthZ logs pane](./media/howto-mfa-nps-extension-vpn/image46.png)
+![Пример Просмотр событий панели "журналы авторизации"](./media/howto-mfa-nps-extension-vpn/image46.png)
 
 ## <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -442,15 +442,15 @@ To view successful sign-in events in the Windows Event Viewer logs query the Win
 
 Записи в этих файлах журнала сложно интерпретировать, не импортировав их в электронную таблицу или базу данных. В Интернете можно найти множество инструментов анализа для службы проверки подлинности в Интернете (IAS), которые упростят интерпретацию файлов журнала. Ниже показаны выходные данные одной из таких скачиваемых [условно бесплатных программ](https://www.deepsoftware.com/iasviewer).
 
-![Sample Shareware app IAS parser](./media/howto-mfa-nps-extension-vpn/image49.png)
+![Пример средства синтаксического анализа IAS приложения для условно-бесплатных приложений](./media/howto-mfa-nps-extension-vpn/image49.png)
 
 Чтобы еще больше расширить возможности устранения неполадок, можно использовать анализатор протокола, например Wireshark или [Microsoft Message Analyzer](https://technet.microsoft.com/library/jj649776.aspx). На следующем снимке экрана Wireshark показаны сообщения RADIUS, передаваемые между VPN-сервером и сервером политики сети.
 
-![Microsoft Message Analyzer showing filtered traffic](./media/howto-mfa-nps-extension-vpn/image50.png)
+![Анализатор сообщений Майкрософт, демонстрирующий отфильтрованный трафик](./media/howto-mfa-nps-extension-vpn/image50.png)
 
 Дополнительные сведения см. в разделе [Интеграция существующей инфраструктуры NPS с Многофакторной идентификацией Azure](howto-mfa-nps-extension.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Как получить службу Azure Multi-Factor Authentication](concept-mfa-licensing.md)
 

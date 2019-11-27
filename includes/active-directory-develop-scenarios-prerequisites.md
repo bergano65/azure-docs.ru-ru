@@ -21,9 +21,9 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "74482493"
 ---
-Before reading this article, you should be familiar with the following concepts:
+Прежде чем читать эту статью, необходимо ознакомиться со следующими понятиями.
 
-- [Microsoft identity platform overview](../articles/active-directory/develop/v2-overview.md)
+- [Обзор платформы идентификации Майкрософт](../articles/active-directory/develop/v2-overview.md)
 - [Основные сведения об аутентификации](../articles/active-directory/develop/authentication-scenarios.md)
 - [Аудитории](../articles/active-directory/develop/v2-supported-account-types.md)
 - [Приложения и субъекты-службы](../articles/active-directory/develop/app-objects-and-service-principals.md)

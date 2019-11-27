@@ -17,7 +17,7 @@ Microsoft Power BI предоставляет возможность легко 
 
 В этой статье содержится пошаговое руководство по подключению к базе данных SQL Azure Blockchain Workbench из PowerBI Desktop, созданию отчета и его развертыванию на сайте powerbi.com.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 * Загрузите [Power BI Desktop](https://aka.ms/pbidesktopstore).
 
@@ -49,7 +49,7 @@ Microsoft Power BI предоставляет возможность легко 
 
 Теперь вы можете создавать и публиковать отчеты как обычно, с помощью Power BI.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Database views in Azure Blockchain Workbench](database-views.md) (Представления базы данных в Azure Blockchain Workbench)

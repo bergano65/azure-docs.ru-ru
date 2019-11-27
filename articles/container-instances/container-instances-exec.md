@@ -1,5 +1,5 @@
 ---
-title: Execute commands in running container instance
+title: Выполнение команд в работающем экземпляре контейнера
 description: Узнайте, как выполнить команду в контейнере, который выполняется в данный момент в службе "Экземпляры контейнеров"
 ms.topic: article
 ms.date: 03/30/2018
@@ -16,7 +16,7 @@ ms.locfileid: "74481583"
 
 ## <a name="run-a-command-with-azure-cli"></a>Выполнение команды с помощью Azure CLI
 
-Execute a command in a running container with [az container exec][az-container-exec] in the [Azure CLI][azure-cli]:
+Выполните команду в работающем контейнере с помощью команды [AZ Container Exec][az-container-exec] в [Azure CLI][azure-cli]:
 
 ```azurecli
 az container exec --resource-group <group-name> --name <container-group-name> --exec-command "<command>"
@@ -80,9 +80,9 @@ az container exec --resource-group myResourceGroup --name mynginx --container-na
 
 ## <a name="restrictions"></a>Ограничения
 
-Azure Container Instances currently supports launching a single process with [az container exec][az-container-exec], and you cannot pass command arguments. Например, нельзя добавить команды, как в случае с `sh -c "echo FOO && echo BAR"`, или выполнить `echo FOO`.
+Сейчас служба "экземпляры контейнеров Azure" поддерживает запуск одного процесса с помощью команды [AZ Container Exec][az-container-exec], и вы не можете передавать аргументы команды. Например, нельзя добавить команды, как в случае с `sh -c "echo FOO && echo BAR"`, или выполнить `echo FOO`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о других средствах устранения неполадок и часто встречающихся проблемах развертывания см. в статье [Устранение неполадок развертывания с помощью службы "Экземпляры контейнеров Azure"](container-instances-troubleshooting.md).
 

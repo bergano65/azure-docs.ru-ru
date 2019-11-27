@@ -1,6 +1,6 @@
 ---
-title: Upload a vhd to Azure using Azure PowerShell
-description: Learn how to upload a vhd to an Azure managed disk and copy a managed disk across regions, using Azure PowerShell, via direct upload.
+title: Отправка виртуального жесткого диска в Azure с помощью Azure PowerShell
+description: Узнайте, как передать VHD на управляемый диск Azure и скопировать управляемый диск в регионах с помощью Azure PowerShell, используя прямую передачу.
 author: roygara
 ms.author: rogarana
 ms.date: 05/06/2019
@@ -15,35 +15,35 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/24/2019
 ms.locfileid: "74456664"
 ---
-# <a name="upload-a-vhd-to-azure-using-azure-powershell"></a>Upload a vhd to Azure using Azure PowerShell
+# <a name="upload-a-vhd-to-azure-using-azure-powershell"></a>Отправка виртуального жесткого диска в Azure с помощью Azure PowerShell
 
-This article explains how to upload a vhd from your local machine to an Azure managed disk. Previously, you had to follow a more involved process that included staging your data in a storage account, and managing that storage account. Now, you no longer need to manage a storage account, or stage data in it to upload a vhd. Instead, you create an empty managed disk, and upload a vhd directly to it. This simplifies uploading on-premises VMs to Azure and enables you to upload a vhd up to 32 TiB directly into a large managed disk.
+В этой статье объясняется, как передать VHD с локального компьютера на управляемый диск Azure. Ранее было необходимо было выполнить более сложный процесс, который включал в себя промежуточное хранение данных в учетной записи хранения и управление этой учетной записью хранения. Теперь вам больше не нужно управлять учетной записью хранения или промежуточными данными в ней для отправки виртуального жесткого диска. Вместо этого создайте пустой управляемый диск и отправьте в него виртуальный жесткий диск. Это упрощает передачу локальных виртуальных машин в Azure и позволяет передавать VHD вплоть до 32 Тиб непосредственно на большой управляемый диск.
 
-If you are providing a backup solution for IaaS VMs in Azure, we recommend you use direct upload to restore customer backups to managed disks. If you are uploading a VHD from a machine external to Azure, speeds with depend on your local bandwidth. If you are using an Azure VM, then your bandwidth will be the same as standard HDDs.
+Если вы предоставляете решение для резервного копирования виртуальных машин IaaS в Azure, мы рекомендуем использовать прямую передачу для восстановления резервных копий клиентов на управляемые диски. Если вы отправляете виртуальный жесткий диск с компьютера, который является внешним по отношению к Azure, скорости с зависят от локальной пропускной способности. Если вы используете виртуальную машину Azure, пропускная способность будет такой же, как и для стандартных дисков.
 
-Currently, direct upload is supported for standard HDD, standard SSD, and premium SSD managed disks. It is not yet supported for ultra SSDs.
+В настоящее время прямая отправка поддерживается для дисков уровня "Стандартный", "Стандартный SSD" и "Премиум", управляемых на SSD. Она пока не поддерживается для Ultra SSDs.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-- Download the latest [version of AzCopy v10](../../storage/common/storage-use-azcopy-v10.md#download-and-install-azcopy).
-- [Install Azure PowerShell module](/powershell/azure/install-Az-ps).
-- If you intend to upload a vhd from on-pem: A vhd that [has been prepared for Azure](prepare-for-upload-vhd-image.md), stored locally.
-- Or, a managed disk in Azure, if you intend to perform a copy action.
+- Скачайте последнюю [версию AzCopy V10](../../storage/common/storage-use-azcopy-v10.md#download-and-install-azcopy).
+- [Установите модуль Azure PowerShell](/powershell/azure/install-Az-ps).
+- Если вы собираетесь передать виртуальный жесткий диск из in-PEM: VHD, [подготовленный для Azure](prepare-for-upload-vhd-image.md), который хранится локально.
+- Или управляемый диск в Azure, если планируется выполнить действие копирования.
 
-## <a name="create-an-empty-managed-disk"></a>Create an empty managed disk
+## <a name="create-an-empty-managed-disk"></a>Создание пустого управляемого диска
 
-To upload your vhd to Azure, you'll need to create an empty managed disk that is configured for this upload process. Before you create one, there's some additional information you should know about these disks.
+Чтобы отправить VHD в Azure, необходимо создать пустой управляемый диск, настроенный для этого процесса отправки. Прежде чем создать его, необходимо ознакомиться с дополнительными сведениями об этих дисках.
 
-This kind of managed disk has two unique states:
+Этот тип управляемого диска имеет два уникальных состояния:
 
-- ReadToUpload, which means the disk is ready to receive an upload but, no [secure access signature](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) (SAS) has been generated.
-- ActiveUpload, which means that the disk is ready to receive an upload and the SAS has been generated.
+- Реадтауплоад. Это означает, что диск готов к получению отправки, но [подпись безопасного доступа](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) (SAS) не была создана.
+- Активеуплоад. Это означает, что диск готов к получению отправки, и создан SAS.
 
-While in either of these states, the managed disk will be billed at [standard HDD pricing](https://azure.microsoft.com/pricing/details/managed-disks/), regardless of the actual type of disk. For example, a P10 will be billed as an S10. This will be true until `revoke-access` is called on the managed disk, which is required in order to attach the disk to a VM.
+Хотя в одном из этих состояний плата за управляемый диск будет взиматься по [стандартному тарифу на HDD](https://azure.microsoft.com/pricing/details/managed-disks/), независимо от фактического типа диска. Например, P10 будет оплачиваться как S10. Это справедливо до тех пор, пока на управляемом диске не будет вызван `revoke-access`, что необходимо для подключения диска к виртуальной машине.
 
-Before you create an empty standard HDD for uploading, you'll need the file size in bytes of the vhd you want to upload. The example code will get that for you but, to do it yourself you can use: `$vhdSizeBytes = (Get-Item "<fullFilePathHere>").length`. This value is used when specifying the **-UploadSizeInBytes** parameter.
+Перед созданием пустого стандартного жесткого диска для отправки вам потребуется размер файла в байтах виртуального жесткого диска, который требуется передать. Пример кода получит это, но для самостоятельного использования можно использовать: `$vhdSizeBytes = (Get-Item "<fullFilePathHere>").length`. Это значение используется при указании параметра **-уплоадсизеинбитес** .
 
-Now, on your local shell, create an empty standard HDD for uploading by specifying the **Upload** setting in the **-CreateOption** parameter as well as the **-UploadSizeInBytes** parameter in the [New-AzDiskConfig](https://docs.microsoft.com/powershell/module/az.compute/new-azdiskconfig?view=azps-1.8.0) cmdlet. Then call [New-AzDisk](https://docs.microsoft.com/powershell/module/az.compute/new-azdisk?view=azps-1.8.0) to create the disk:
+Теперь в локальной оболочке создайте пустой жесткий диск "Стандартный" для отправки, указав параметр **отправки** в параметре **-CreateOption** , а также параметр **-уплоадсизеинбитес** в командлете [New-аздискконфиг](https://docs.microsoft.com/powershell/module/az.compute/new-azdiskconfig?view=azps-1.8.0) . Затем вызовите [New-аздиск](https://docs.microsoft.com/powershell/module/az.compute/new-azdisk?view=azps-1.8.0) , чтобы создать диск:
 
 ```powershell
 $vhdSizeBytes = (Get-Item "<fullFilePathHere>").length
@@ -53,11 +53,11 @@ $diskconfig = New-AzDiskConfig -SkuName 'Standard_LRS' -OsType 'Windows' -Upload
 New-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'myDiskName' -Disk $diskconfig
 ```
 
-If you would like to upload either a premium SSD or a standard SSD, replace **Standard_LRS** with either **Premium_LRS** or **StandardSSD_LRS**. Ultra SSD is not yet supported.
+Если вы хотите передать либо твердотельный SSD класса Premium, либо стандартный SSD, замените **Standard_LRS** на **Premium_LRS** или **StandardSSD_LRS**. SSD (цен. категория "Ультра") еще не поддерживается.
 
-You have now created an empty managed disk that is configured for the upload process. To upload a vhd to the disk, you'll need a writeable SAS, so that you can reference it as the destination for your upload.
+Теперь вы создали пустой управляемый диск, настроенный для процесса отправки. Чтобы отправить VHD на диск, вам потребуется доступный для записи SAS, чтобы можно было ссылаться на него как на место назначения для отправки.
 
-To generate a writable SAS of your empty managed disk, use the following command:
+Чтобы создать SAS с возможностью записи для пустого управляемого диска, используйте следующую команду:
 
 ```powershell
 $diskSas = Grant-AzDiskAccess -ResourceGroupName 'myResouceGroup' -DiskName 'myDiskName' -DurationInSecond 86400 -Access 'Write'
@@ -65,21 +65,21 @@ $diskSas = Grant-AzDiskAccess -ResourceGroupName 'myResouceGroup' -DiskName 'myD
 $disk = Get-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'myDiskName'
 ```
 
-## <a name="upload-vhd"></a>Upload vhd
+## <a name="upload-vhd"></a>Отправить виртуальный жесткий диск
 
-Now that you have a SAS for your empty managed disk, you can use it to set your managed disk as the destination for your upload command.
+Теперь, когда у вас есть SAS для пустого управляемого диска, его можно использовать для задания управляемого диска в качестве места назначения для команды отправки.
 
-Use AzCopy v10 to upload your local VHD file to a managed disk by specifying the SAS URI you generated.
+Используйте AzCopy V10 для передачи локального VHD-файла на управляемый диск, указав созданный URI SAS.
 
-This upload has the same throughput as the equivalent [standard HDD](disks-types.md#standard-hdd). For example, if you have a size that equates to S4, you will have a throughput of up to 60 MiB/s. But, if you have a size that equates to S70, you will have a throughput of up to 500 MiB/s.
+Эта передача имеет ту же пропускную способность, что и эквивалент [стандартного жесткого диска](disks-types.md#standard-hdd). Например, если размер равен S4, у вас будет пропускная способность до 60 MiB/с. Но если у вас есть размер, который соответствует S70, вы получите пропускную способность до 500 MiB/с.
 
 ```
 AzCopy.exe copy "c:\somewhere\mydisk.vhd" $diskSas.AccessSAS --blob-type PageBlob
 ```
 
-If your SAS expires during the upload, and you haven't called `revoke-access` yet, you can get a new SAS to continue the upload using `grant-access`, again.
+Если срок действия SAS истекает во время отправки и вы еще не вызывали `revoke-access`, можно получить новый SAS, чтобы продолжить передачу с помощью `grant-access`.
 
-After the upload is complete, and you no longer need to write any more data to the disk, revoke the SAS. Revoking the SAS will change the state of the managed disk and allow you to attach the disk to a VM.
+После завершения передачи вам больше не нужно писать какие-либо данные на диск, отозвать SAS. Отзыв SAS изменит состояние управляемого диска и позволит подключить диск к виртуальной машине.
 
 ```powershell
 Revoke-AzDiskAccess -ResourceGroupName 'myResourceGroup' -DiskName 'myDiskName'
@@ -87,14 +87,14 @@ Revoke-AzDiskAccess -ResourceGroupName 'myResourceGroup' -DiskName 'myDiskName'
 
 ## <a name="copy-a-managed-disk"></a>Копирование управляемого диска
 
-Direct upload also simplifies the process of copying a managed disk. You can either copy within the same region or cross-region (to another region).
+Прямая загрузка также упрощает процесс копирования управляемого диска. Можно скопировать в один и тот же регион или между регионами (в другой регион).
 
-The follow script will do this for you, the process is similar to the steps described earlier, with some differences since you're working with an existing disk.
+Следующий сценарий сделает это для вас, процесс аналогичен описанному ранее действиям с некоторыми отличиями, которые возникают после работы с существующим диском.
 
 > [!IMPORTANT]
-> You need to add an offset of 512 when you're providing the disk size in bytes of a managed disk from Azure. This is because Azure omits the footer when returning the disk size. The copy will fail if you do not do this. The following script already does this for you.
+> При предоставлении размера диска в байтах управляемого диска из Azure необходимо добавить смещение 512. Это обусловлено тем, что при возврате диска в Azure нижний колонтитул опускается. Если этого не сделать, копирование завершится ошибкой. Следующий сценарий уже выполняет это.
 
-Replace the `<sourceResourceGroupHere>`, `<sourceDiskNameHere>`, `<targetDiskNameHere>`, `<targetResourceGroupHere>`, `<yourOSTypeHere>` and `<yourTargetLocationHere>` (an example of a location value would be uswest2) with your values, then run the following script in order to copy a managed disk.
+Замените `<sourceResourceGroupHere>`, `<sourceDiskNameHere>`, `<targetDiskNameHere>`, `<targetResourceGroupHere>`, `<yourOSTypeHere>` и `<yourTargetLocationHere>` (например, значение расположения uswest2) значениями, а затем выполните следующий сценарий, чтобы скопировать управляемый диск.
 
 ```powershell
 
@@ -124,8 +124,8 @@ Revoke-AzDiskAccess -ResourceGroupName $sourceRG -DiskName $sourceDiskName
 Revoke-AzDiskAccess -ResourceGroupName $targetRG -DiskName $targetDiskName 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Now that you've successfully uploaded a vhd to a managed disk, you can attach your disk to a VM and begin using it.
+После успешной отправки виртуального жесткого диска на управляемый диск можно подключить его к виртуальной машине и начать использовать.
 
-To learn how to attach a data disk to a VM, see our article on the subject: [Attach a data disk to a Windows VM with PowerShell](attach-disk-ps.md). To use the disk as the OS disk, see [Create a Windows VM from a specialized disk](create-vm-specialized.md#create-the-new-vm).
+Сведения о подключении диска данных к виртуальной машине см. в статье о [подключении диска данных к виртуальной машине Windows с помощью PowerShell](attach-disk-ps.md). Сведения о том, как использовать диск в качестве диска операционной системы, см. в статье [Создание виртуальной машины Windows на основе специализированного диска](create-vm-specialized.md#create-the-new-vm).

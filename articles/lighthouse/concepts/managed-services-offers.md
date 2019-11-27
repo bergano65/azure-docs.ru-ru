@@ -36,7 +36,7 @@ ms.locfileid: "74464001"
 
 Чтобы узнать, как опубликовать предложение управляемых служб, см. раздел [Publish a managed services offer to Azure Marketplace](../how-to/publish-managed-services-offers.md) (Публикация предложений управляемых служб в Azure Marketplace). Общие сведения о публикации в Azure Marketplace с помощью портала Cloud Partner см. раздел [Azure Marketplace and AppSource publishing guide](https://docs.microsoft.com/azure/marketplace/marketplace-publishers-guide) (Руководство по публикации в Azure Marketplace и AppSource) и [Manage Azure and AppSource Marketplace offers](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/manage-offers/cpp-manage-offers) (Управление предложениями Azure и AppSource Marketplace).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения о [делегированном управлении ресурсами Azure](azure-delegated-resource-management.md) и [интерфейсах управления для различных клиентов](cross-tenant-management-experience.md).
 - [Publish a managed services offer](../how-to/publish-managed-services-offers.md) (Публикация предложения управляемых служб) в Azure Marketplace.

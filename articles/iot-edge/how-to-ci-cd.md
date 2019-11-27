@@ -21,13 +21,13 @@ ms.locfileid: "74457242"
 
 ![Схема ветвей CI и CD для разработки и эксплуатации](./media/how-to-ci-cd/cd.png)
 
-Из этой статьи вы узнаете, как с помощью встроенных задач Azure IoT Edge в Azure Pipelines создать два конвейера для вашего решения IoT Edge. There are four actions can be used in the Azure IoT Edge tasks.
-   - **Azure IoT Edge - Build Module images** takes your IoT Edge solution code and builds the container images.
-   - **Azure IoT Edge - Push Module images** pushes module images to the container registry you specified.
-   - **Azure IoT Edge - Generate Deployment Manifest** takes a deployment.template.json file and the variables, then generates the final IoT Edge deployment manifest file.
-   - **Azure IoT Edge - Deploy to IoT Edge devices** helps create IoT Edge deployments to single/multiple IoT Edge devices.
+Из этой статьи вы узнаете, как с помощью встроенных задач Azure IoT Edge в Azure Pipelines создать два конвейера для вашего решения IoT Edge. В задачах Azure IoT Edge можно использовать четыре действия.
+   - **Образы модулей Azure IOT Edge сборки** занимают код IOT Edgeного решения и создает образы контейнеров.
+   - **Azure IOT Edge образы модулей push-уведомлений** отправляют образы модулей в указанный реестр контейнеров.
+   - **Azure IOT Edge — создание манифеста развертывания** принимает файл Deployment. Template. JSON и переменные, а затем создает окончательный файл манифеста развертывания IOT Edge.
+   - **Azure IOT Edge-Deploy to IOT Edge Devices** помогает создавать IOT Edge развертывания на одном или нескольких IOT Edge устройствах.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 * Репозиторий Azure Repos. Если у вас его нет, вы можете [создать репозиторий Git в проекте](https://docs.microsoft.com/azure/devops/repos/git/create-new-repo?view=vsts&tabs=new-nav).
 * Решение IoT Edge, зафиксированное и отправленное в репозиторий. Если вы хотите создать пример решения для тестирования инструкций в этой статье, следуйте шагам, изложенным в статье [Использование Visual Studio Code для разработки и отладки модулей для Azure IoT Edge](how-to-vs-code-develop-module.md) или [Сведения об использовании Visual Studio 2017 для разработки и отладки модулей C# для Azure IoT Edge (предварительная версия)](how-to-visual-studio-develop-csharp-module.md).
@@ -49,7 +49,7 @@ ms.locfileid: "74457242"
 >
 >Дополнительные сведения см. в разделе о [создании конвейера сборки](https://docs.microsoft.com/azure/devops/pipelines/create-first-pipeline).
 
-1. Sign into your Azure DevOps organization (**https:\//dev.azure.com/{your organization}/** ) and open the project that contains your IoT Edge solution repository.
+1. Войдите в свою организацию Azure DevOps (**https:\//дев.Азуре.ком/{йоур Organization}/** ) и откройте проект, содержащий репозиторий IOT Edge решений.
 
    В этой статье мы создали репозиторий, который называется **IoTEdgeRepo**. Этот репозиторий содержит **IoTEdgeSolution** с кодом для модуля под названием **filtermodule**. 
 
@@ -75,48 +75,48 @@ ms.locfileid: "74457242"
 
    * Если вы хотите создавать модули на платформе amd64 для контейнеров Windows 1809, вам необходимо [настроить агента в Windows в локальной среде](https://docs.microsoft.com/azure/devops/pipelines/agents/v2-windows?view=vsts).
 
-   * If you would like to build your modules in platform arm32v7 or arm64 for Linux containers, you need to [set up self-hosted agent on Linux](https://blogs.msdn.microsoft.com/iotdev/2018/11/13/setup-azure-iot-edge-ci-cd-pipeline-with-arm-agent/).
+   * Если вы хотите создать модули на платформе platform arm32v7 или arm64 для контейнеров Linux, необходимо [настроить самостоятельный агент в Linux](https://blogs.msdn.microsoft.com/iotdev/2018/11/13/setup-azure-iot-edge-ci-cd-pipeline-with-arm-agent/).
     
      ![Настройка пула агентов сборки](./media/how-to-ci-cd/configure-env.png)
 
-5. Конвейер предварительно настроен с заданием **Agent job 1** (Задание агента 1). Select the plus sign ( **+** ) to add three tasks to the job: **Azure IoT Edge** twice, **Copy Files** once and **Publish Build Artifacts** once. (Наведите указатель мыши на имя каждой задачи, чтобы увидеть кнопку **Добавить**.)
+5. Конвейер предварительно настроен с заданием **Agent job 1** (Задание агента 1). Щелкните знак "плюс" ( **+** ), чтобы добавить в задание три задачи: **Azure IOT Edge** дважды, **скопируйте файлы** один раз и **опубликуйте артефакты сборки** один раз. (Наведите указатель мыши на имя каждой задачи, чтобы увидеть кнопку **Добавить**.)
 
    ![Добавление задачи Azure IoT Edge](./media/how-to-ci-cd/add-iot-edge-task.png)
 
-   When all four tasks are added, your Agent job looks like the following example:
+   Когда все четыре задачи будут добавлены, задание агента будет выглядеть, как в следующем примере:
     
    ![Три задачи в конвейер сборки](./media/how-to-ci-cd/add-tasks.png)
 
-6. Выберите первую задачу **Azure IoT Edge**, чтобы изменить ее. This task builds all modules in the solution with the target platform that you specify.
+6. Выберите первую задачу **Azure IoT Edge**, чтобы изменить ее. Эта задача создает все модули в решении с указанной целевой платформой.
 
-   * **Display name**: Accept the default **Azure IoT Edge - Build module images**.
-   * **Action**: Accept the default **Build module images**. 
-   * **.template.json file**: Select the ellipsis ( **...** ) and navigate to the **deployment.template.json** file in the repository that contains your IoT Edge solution. 
-   * **Default platform**: Select the appropriate platform for your modules based on your target IoT Edge device. 
-   * **Output variables**: The output variables include a reference name that you can use to configure the file path where your deployment.json file will be generated. Укажите какое-нибудь запоминающееся справочное имя, например **edge**. 
+   * **Отображаемое имя**: примите используемые по умолчанию **образы модулей Azure IOT Edge-Build**.
+   * **Действие**: Примите **образы модуля сборки**по умолчанию. 
+   * **файл Template. JSON**: нажмите кнопку с многоточием ( **...** ) и перейдите к файлу **Deployment. Template. JSON** в репозитории, содержащем решение IOT Edge. 
+   * **Платформа по умолчанию**: выберите подходящую платформу для модулей на основе целевого устройства IOT Edge. 
+   * **Выходные переменные**. выходные переменные включают ссылочное имя, которое можно использовать для настройки пути к файлу, в котором будет создан файл Deployment. JSON. Укажите какое-нибудь запоминающееся справочное имя, например **edge**. 
 
 7. Выберите вторую задачу **Azure IoT Edge**, чтобы изменить ее. Эта задача передает все образы модулей в выбранный реестр контейнеров.
 
-   * **Display name**: The display name is automatically updated when the action field changes. 
-   * **Action**: Use the dropdown list to select **Push module images**. 
-   * **Container registry type**: Select the type of container registry that you use to store your module images. Форма меняется в зависимости от выбранного типа реестра. Если вы выберете **Реестр контейнеров Azure**, используйте раскрывающиеся списки, чтобы выбрать подписку Azure и имя реестра контейнеров. При выборе **универсального реестра контейнеров** щелкните **Создать**, чтобы создать подключение к службе реестра. 
-   * **.template.json file**: Select the ellipsis ( **...** ) and navigate to the **deployment.template.json** file in the repository that contains your IoT Edge solution. 
-   * **Default platform**: Select the same platform as your built module images.
+   * **Отображаемое имя**: отображаемое имя автоматически обновляется при изменении поля действия. 
+   * **Действие**: Используйте раскрывающийся список, чтобы выбрать **образы модуля push-уведомлений**. 
+   * **Тип реестра контейнеров**: выберите тип реестра контейнеров, который будет использоваться для хранения образов модулей. Форма меняется в зависимости от выбранного типа реестра. Если вы выберете **Реестр контейнеров Azure**, используйте раскрывающиеся списки, чтобы выбрать подписку Azure и имя реестра контейнеров. При выборе **универсального реестра контейнеров** щелкните **Создать**, чтобы создать подключение к службе реестра. 
+   * **файл Template. JSON**: нажмите кнопку с многоточием ( **...** ) и перейдите к файлу **Deployment. Template. JSON** в репозитории, содержащем решение IOT Edge. 
+   * **Платформа по умолчанию**: выберите ту же платформу, что и образы созданного модуля.
 
    Если для размещения образов модулей вы используете несколько реестров контейнеров, создайте дубликат этой задачи и выберите в нем другой реестр контейнеров, затем разместите действие **Bypass module(s)** (Обойти модуль/модули) в разделе дополнительных параметров, чтобы пропускать образы, не имеющие отношение к конкретному реестру.
 
-8. Select the **Copy Files** task to edit it. Use this task to copy files to the artifact staging directory.
+8. Выберите задачу **копирование файлов** , чтобы изменить ее. Эта задача предназначена для копирования файлов в промежуточный каталог артефактов.
 
-   * **Display name**: Copy Files to: Drop folder.
-   * **Contents**: Put two lines in this section, `deployment.template.json` and `**/module.json`. These two types of files are the inputs to generate IoT Edge deployment manifest. Need to be copied to the artifact staging folder and published for release pipeline.
-   * **Target Folder**: Put the variable `$(Build.ArtifactStagingDirectory)`. See [Build variables](https://docs.microsoft.com/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml#build-variables) to learn about the description.
+   * **Отображаемое имя**: копирование файлов в: папка сброса.
+   * **Содержимое**: Разместите две строки в этом разделе, `deployment.template.json` и `**/module.json`. Эти два типа файлов являются входными данными для создания манифеста IoT Edge развертывания. Необходимо скопировать в промежуточную папку артефактов и опубликовать для конвейера выпуска.
+   * **Целевая папка**: вставьте переменную `$(Build.ArtifactStagingDirectory)`. Дополнительные сведения о описании см. в разделе [переменные сборки](https://docs.microsoft.com/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml#build-variables) .
 
-9. Выберите задачу **Publish Build Artifacts** (Публикация артефактов сборки), чтобы изменить его. Provide artifact staging directory path to the task so that the path can be published to release pipeline.
+9. Выберите задачу **Publish Build Artifacts** (Публикация артефактов сборки), чтобы изменить его. Укажите путь к промежуточному каталогу артефакта для задачи, чтобы путь можно было опубликовать в конвейере выпуска.
    
-   * **Display name**: Publish Artifact: drop.
-   * **Path to publish**: Put the variable `$(Build.ArtifactStagingDirectory)`. See [Build variables](https://docs.microsoft.com/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml#build-variables) to learn about the description.
-   * **Artifact name**: drop.
-   * **Artifact publish location**: Azure Pipelines.
+   * **Отображаемое имя**: публикация артефакта: Drop.
+   * **Путь для публикации**: вставьте переменную `$(Build.ArtifactStagingDirectory)`. Дополнительные сведения о описании см. в разделе [переменные сборки](https://docs.microsoft.com/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml#build-variables) .
+   * **Имя артефакта**: Drop.
+   * **Расположение публикации артефакта**: Azure pipelines.
 
 
 10. Откройте вкладку **Триггеры** и установите флажок **Enable continuous integration** (Включить непрерывную интеграцию). Убедитесь, что включена ветвь, содержащая ваш код.
@@ -130,7 +130,7 @@ ms.locfileid: "74457242"
 ## <a name="configure-continuous-deployment"></a>настройка непрерывного развертывания;
 В этом разделе описано, как создать конвейер выпуска, настроенный для автоматического запуска при получении артефакта от конвейера сборки и отображения журналов сборки в Azure Pipelines.
 
-Create a new pipeline, and add a new stage 
+Создать новый конвейер и добавить новый этап 
 
 1. На вкладке **Releases** (Выпуски) выберите **+ New pipeline** (Создать конвейер). Если у вас уже есть конвейеры выпуска, нажмите кнопку **+ Создать** и щелкните **+ Создать конвейер выпуска**.  
 
@@ -140,7 +140,7 @@ Create a new pipeline, and add a new stage
 
     ![Начало работы с пустым заданием](./media/how-to-ci-cd/start-with-empty-job.png)
 
-3. Ваш новый конвейер выпуска инициализируется с одним этапом, который называется **Этап 1**. Rename Stage 1 to **dev** and treat it as a test environment. Usually, continuous deployment pipelines have multiple stages including **dev**, **staging** and **prod**. You can create more based on your DevOps practice. Закройте окно сведений об этапе после его переименования. 
+3. Ваш новый конвейер выпуска инициализируется с одним этапом, который называется **Этап 1**. Переименование этапа 1 в среду **разработки** и его обработка в качестве тестовой среды. Обычно конвейеры непрерывного развертывания имеют несколько **этапов, включая** **разработку**, **промежуточную** среду и рабочую среду. Вы можете создать больше, основываясь на DevOps практике. Закройте окно сведений об этапе после его переименования. 
 
 4. Свяжите выпуск с артефактами сборки, опубликованными конвейером сборки. Щелкните **Add** (Добавить) в области артефактов.
 
@@ -154,44 +154,44 @@ Create a new pipeline, and add a new stage
 
    ![Настройка триггера непрерывного развертывания](./media/how-to-ci-cd/add-a-trigger.png)
 
-7. The **dev** stage is preconfigured with one job and zero tasks. From the pipeline menu, select **Tasks** then choose the **dev** stage.  Выберите число заданий и задач, чтобы настроить задачи на этом этапе.
+7. Этап **разработки** предварительно настроен с одним заданием и нулевыми задачами. В меню конвейера выберите **задачи** , а затем выберите этап **разработки** .  Выберите число заданий и задач, чтобы настроить задачи на этом этапе.
 
-    ![Configure dev tasks](./media/how-to-ci-cd/view-stage-tasks.png)
+    ![Настройка задач разработки](./media/how-to-ci-cd/view-stage-tasks.png)
 
-8. In the **dev** stage, you should see a default **Agent job**. Вы можете настроить сведения о задании агента, но задача развертывания не зависит от платформы, поэтому вы можете использовать **Hosted VS2017** или **Hosted Ubuntu 1604** в **пуле агентов** (или любой другой агент, управляемый вами). 
+8. На этапе **разработки** вы должны увидеть **Задание агента**по умолчанию. Вы можете настроить сведения о задании агента, но задача развертывания не зависит от платформы, поэтому вы можете использовать **Hosted VS2017** или **Hosted Ubuntu 1604** в **пуле агентов** (или любой другой агент, управляемый вами). 
 
-9. Select the plus sign ( **+** ) to add two task. Search for and add **Azure IoT Edge** twice.
+9. Щелкните знак «плюс» ( **+** ), чтобы добавить две задачи. Выполните поиск и добавьте **Azure IOT Edge** дважды.
 
-    ![Add tasks for dev](./media/how-to-ci-cd/add-task-qa.png)
+    ![Добавление задач для разработки](./media/how-to-ci-cd/add-task-qa.png)
 
-10. Select the first **Azure IoT Edge** task and configure it with the following values:
+10. Выберите первую задачу **Azure IOT Edge** и настройте ее со следующими значениями:
 
-    * **Display name**: The display name is automatically updated when the action field changes. 
-    * **Action**: Use the dropdown list to select **Generate deployment manifest**. В случае изменения значения действия для соответствия также обновляется отображаемое имя задачи.
-    * **.template.json file**: Put the path `$(System.DefaultWorkingDirectory)/Drop/drop/deployment.template.json`. The path is published from build pipeline.
-    * **Default platform**: Choose the same value when building the module images.
-    * **Output path**: Put the path `$(System.DefaultWorkingDirectory)/Drop/drop/configs/deployment.json`. This path is the final IoT Edge deployment manifest file.
+    * **Отображаемое имя**: отображаемое имя автоматически обновляется при изменении поля действия. 
+    * **Действие**: Используйте раскрывающийся список, чтобы выбрать **создать манифест развертывания**. В случае изменения значения действия для соответствия также обновляется отображаемое имя задачи.
+    * **. Template. JSON файл**: вставьте путь `$(System.DefaultWorkingDirectory)/Drop/drop/deployment.template.json`. Путь публикуется из конвейера сборки.
+    * **Платформа по умолчанию**: выберите то же значение при создании образов модулей.
+    * **Путь вывода**: вставьте `$(System.DefaultWorkingDirectory)/Drop/drop/configs/deployment.json`пути. Этот путь является окончательным файлом манифеста развертывания IoT Edge.
 
-    These configurations helps replace the module image URLs in the `deployment.template.json` file. The **Generate deployment manifest** also helps replace the variables with the exact value you defined in the `deployment.template.json` file. In VS/VS Code, you are specifying the actual value in a `.env` file. In Azure Pipelines, you set the value in Release Pipeline Variables tab. Move to Variables tab and configure the Name and Value as following.
+    Эти конфигурации помогают заменить URL-адреса образа модуля в файле `deployment.template.json`. **Манифест создания развертывания** также помогает заменить переменные на точные значения, определенные в файле `deployment.template.json`. В VS/VS Code Вы указываете фактическое значение в `.env`ном файле. В Azure Pipelines значение задается на вкладке Переменные конвейера выпуска. Перейдите на вкладку Переменные и настройте имя и значение следующим образом.
 
-    * **ACR_ADDRESS**: Your Azure Container Registry address. 
-    * **ACR_PASSWORD**: Your Azure Container Registry password.
-    * **ACR_USER**: Your Azure Container Registry username.
+    * **ACR_ADDRESS**. ваш адрес реестра контейнеров Azure. 
+    * **ACR_PASSWORD**: пароль реестра контейнеров Azure.
+    * **ACR_USER**: имя пользователя реестра контейнеров Azure.
 
-    If you have other variables in your project, you can specify the name and value in this tab. The **Generate deployment manifest** can only recognize the variables are in `${VARIABLE}` flavor, make sure you are using this in your `*.template.json` files.
+    Если в проекте имеются другие переменные, можно указать имя и значение на этой вкладке. Файл **создания манифеста развертывания** может распознать только те переменные, которые находятся в `${VARIABLE}` версии. Убедитесь, что вы используете его в файлах `*.template.json`.
 
-    ![Configure variables for release pipeline](./media/how-to-ci-cd/configure-variables.png)
+    ![Настройка переменных для конвейера выпуска](./media/how-to-ci-cd/configure-variables.png)
 
-10. Select the second **Azure IoT Edge** task and configure it with the following values:
+10. Выберите вторую задачу **Azure IOT Edge** и настройте ее со следующими значениями:
 
-    * **Display name**: The display name is automatically updated when the action field changes. 
-    * **Action**: Use the dropdown list to select **Deploy to IoT Edge devices**. В случае изменения значения действия для соответствия также обновляется отображаемое имя задачи.
-    * **Azure subscription**: Select the subscription that contains your IoT Hub.
-    * **IoT Hub name**: Select your IoT hub. 
-    * **Choose single/multiple device**: Choose whether you want the release pipeline to deploy to one device or multiple devices. 
+    * **Отображаемое имя**: отображаемое имя автоматически обновляется при изменении поля действия. 
+    * **Действие**: Используйте раскрывающийся список, чтобы выбрать **развертывание на IOT Edge устройств**. В случае изменения значения действия для соответствия также обновляется отображаемое имя задачи.
+    * **Подписка Azure**. Выберите подписку, которая содержит центр Интернета вещей.
+    * **Имя центра Интернета вещей**: выберите центр Интернета вещей. 
+    * **Выберите одно или несколько устройств**: выберите, следует ли выполнять развертывание конвейера выпуска на одном устройстве или на нескольких устройствах. 
       * При развертывании на одно устройство введите **идентификатор устройства IoT Edge**. 
-      * При развертывании на нескольких устройствах следует указать **целевое условие** устройства. The target condition is a filter to match a set of IoT Edge devices in IoT Hub. Если в качестве условия вы решите использовать теги устройства, не забудьте обновить соответствующие теги устройств в двойниках устройств Центра Интернета вещей. Обновите **идентификатор развертывания** и **приоритет развертывания IoT Edge** в разделе дополнительных параметров. Дополнительные сведения о создании развертывания для нескольких устройств см. в статье [Общие сведения об автоматических развертываниях IoT Edge для отдельных устройств или в требуемом масштабе](module-deployment-monitoring.md).
-    * Expand Advanced Settings, select **IoT Edge deployment ID**, put the variable `$(System.TeamProject)-$(Release.EnvironmentName)`. This maps the project and release name with your IoT Edge deployment ID.
+      * При развертывании на нескольких устройствах следует указать **целевое условие** устройства. Условие назначения — это фильтр, который соответствует набору IoT Edge устройств в центре Интернета вещей. Если в качестве условия вы решите использовать теги устройства, не забудьте обновить соответствующие теги устройств в двойниках устройств Центра Интернета вещей. Обновите **идентификатор развертывания** и **приоритет развертывания IoT Edge** в разделе дополнительных параметров. Дополнительные сведения о создании развертывания для нескольких устройств см. в статье [Общие сведения об автоматических развертываниях IoT Edge для отдельных устройств или в требуемом масштабе](module-deployment-monitoring.md).
+    * Разверните узел Дополнительные параметры, выберите **IOT Edge идентификатор развертывания**, вставьте переменную `$(System.TeamProject)-$(Release.EnvironmentName)`. Это сопоставление проекта и имени выпуска с ИДЕНТИФИКАТОРом развертывания IoT Edge.
 
 11. Выберите **Сохранить**, чтобы сохранить изменения в новом конвейере выпуска. Вернитесь в представление конвейера, выбрав **Конвейер** в меню. 
     
@@ -205,21 +205,21 @@ Create a new pipeline, and add a new stage
 
     ![Ручной триггер](./media/how-to-ci-cd/manual-trigger.png)
 
-3. Выберите задание сборки, чтобы просмотреть ход его выполнения. If the build pipeline is completed successfully, it triggers a release to **dev** stage. 
+3. Выберите задание сборки, чтобы просмотреть ход его выполнения. Если конвейер сборки успешно завершен, он активирует выпуск на этапе **разработки** . 
 
     ![Журналы сборки](./media/how-to-ci-cd/build-logs.png)
 
-4. The successful **dev** release creates IoT Edge deployment to target IoT Edge devices.
+4. В успешном выпуске **dev** создается IOT Edge развертывание для целевых устройств IOT Edge.
 
-    ![Release to dev](./media/how-to-ci-cd/pending-approval.png)
+    ![Выпуск для разработки](./media/how-to-ci-cd/pending-approval.png)
 
-5. Click **dev** stage to see release logs.
+5. Щелкните этап **разработки** , чтобы просмотреть журналы выпуска.
 
     ![Журналы выпуска](./media/how-to-ci-cd/release-logs.png)
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
-* IoT Edge DevOps best practices sample in [Azure DevOps Project for IoT Edge](how-to-devops-project.md)
+## <a name="next-steps"></a>Дополнительная информация
+* IoT Edge рекомендации по DevOps в [проекте DevOps Azure для IOT Edge](how-to-devops-project.md)
 * Основные сведения о развертывании IoT Edge см. в статье [Understand IoT Edge deployments for single devices or at scale](module-deployment-monitoring.md) (Основные сведения о развертываниях IoT Edge для отдельных устройств или в требуемом масштабе).
 * Ознакомьтесь со статьей [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-monitor.md), чтобы узнать, как создавать, обновлять или удалять развертывание.

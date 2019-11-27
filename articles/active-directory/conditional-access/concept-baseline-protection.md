@@ -1,6 +1,6 @@
 ---
-title: Conditional Access baseline policies - Azure Active Directory
-description: Baseline Conditional Access policies to protect organizations from common attacks
+title: Базовые политики условного доступа — Azure Active Directory
+description: Базовые политики условного доступа для защиты организаций от распространенных атак
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
@@ -18,75 +18,75 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74420565"
 ---
-# <a name="what-are-baseline-policies"></a>What are baseline policies?
+# <a name="what-are-baseline-policies"></a>Что такое базовые политики?
 
-Baseline policies are a set of predefined policies that help protect organizations against many common attacks. These common attacks can include password spray, replay, and phishing. Baseline policies are available in all editions of Azure AD. Microsoft is making these baseline protection policies available to everyone because identity-based attacks have been on the rise over the last few years. The goal of these four policies is to ensure that all organizations have a baseline level of security enabled at no extra cost.  
+Базовые политики — это набор стандартных политик, которые помогают защитить организации от многих распространенных атак. Эти распространенные атаки могут включать распыление паролей, воспроизведение и фишинг. Базовые политики доступны во всех выпусках Azure AD. Корпорация Майкрософт делает эти политики базовой защиты доступными всем, поскольку атаки на основе удостоверений находились в течение последних нескольких лет. Цель этих четырех политик заключается в том, чтобы гарантировать, что для всех организаций включен базовый уровень безопасности без дополнительной платы.  
 
-Managing customized Conditional Access policies requires an Azure AD Premium license.
+Для управления настроенными политиками условного доступа требуется лицензия Azure AD Premium.
 
 ## <a name="baseline-policies"></a>Базовые политики
 
-![Conditional Access baseline policies in the Azure portal](./media/concept-baseline-protection/conditional-access-policies.png)
+![Базовые политики условного доступа в портал Azure](./media/concept-baseline-protection/conditional-access-policies.png)
 
-There are four baseline policies:
+Существует четыре базовые политики:
 
-* Require MFA for admins (preview)
-* End user protection (preview)
-* Block legacy authentication (preview)
-* Require MFA for service management (preview)
+* Требовать MFA для администраторов (Предварительная версия)
+* Защита конечных пользователей (Предварительная версия)
+* Блокировать устаревшую проверку подлинности (Предварительная версия)
+* Требовать MFA для управления службами (Предварительная версия)
 
-All four of these policies will impact legacy authentication flows like POP, IMAP, and older Office desktop clients.
+Все четыре из этих политик повлияют на прежние потоки проверки подлинности, такие как POP, IMAP и более старые настольные клиенты Office.
 
-### <a name="require-mfa-for-admins-preview"></a>Require MFA for admins (preview)
+### <a name="require-mfa-for-admins-preview"></a>Требовать MFA для администраторов (Предварительная версия)
 
-Due to the power and access that administrator accounts have, you should treat them with special care. One common method to improve the protection of privileged accounts is to require a stronger form of account verification when they are used to sign in. In Azure Active Directory, you can get a stronger account verification by requiring administrators to register for and use Azure Multi-Factor Authentication.
+Из-за питания и доступа к учетным записям администратора их следует рассматривать особым осторожностью. Одним из распространенных способов улучшения защиты привилегированных учетных записей является необходимость более надежной проверки учетной записи, когда они используются для входа в систему. В Azure Active Directory можно получить более надежную проверку учетной записи, запросив администраторам регистрироваться и использовать многофакторную идентификацию Azure.
 
-Require MFA for admins (preview) is a baseline policy that requires multi-factor authentication (MFA) for the following directory roles, considered to be the most privileged Azure AD roles:
+Требовать MFA для администраторов (Предварительная версия) — это базовая политика, требующая многофакторную проверку подлинности (MFA) для следующих ролей каталога, которая считается наиболее привилегированными ролями Azure AD:
 
-* Глобальный администратор.
+* Глобальный администратор
 * администратор SharePoint;
 * администратор Exchange;
 * Администратор условного доступа
 * Администратор безопасности
-* Helpdesk administrator / Password administrator
+* Администратор службы технической поддержки и администратор паролей
 * Администратор выставления счетов
 * Администратор пользователей
 
-If your organization has these accounts in use in scripts or code, consider replacing them with [managed identities](../managed-identities-azure-resources/overview.md).
+Если в вашей организации используются эти учетные записи в сценариях или коде, рекомендуется заменить их [управляемыми удостоверениями](../managed-identities-azure-resources/overview.md).
 
-### <a name="end-user-protection-preview"></a>End user protection (preview)
+### <a name="end-user-protection-preview"></a>Защита конечных пользователей (Предварительная версия)
 
-High privileged administrators aren’t the only ones targeted in attacks. Bad actors tend to target normal users. After gaining access, these bad actors can request access to privileged information on behalf of the original account holder or download the entire directory and perform a phishing attack on your whole organization. One common method to improve the protection for all users is to require a stronger form of account verification when a risky sign-in is detected.
+Администраторы с высоким уровнем привилегий не предназначены только для атак. Неправильные субъекты обычно предназначены для обычных пользователей. После получения доступа эти недопустимые субъекты могут запросить доступ к привилегированным сведениям от имени владельца исходной учетной записи или скачать весь каталог и выполнить фишинговую атаку для всей Организации. Одним из распространенных способов улучшения защиты для всех пользователей является необходимость более надежной проверки учетной записи при обнаружении опасного входа.
 
-**End user protection (preview)** is a baseline policy that protects all users in a directory. Enabling this policy requires all users to register for Azure Multi-Factor Authentication within 14 days. Once registered, users will be prompted for MFA only during risky sign-in attempts. Compromised user accounts are blocked until password reset and risk dismissal. 
+**Защита конечных пользователей (Предварительная версия)** — это базовая политика, защищающая всех пользователей в каталоге. При включении этой политики все пользователи должны зарегистрироваться для использования многофакторной идентификации Azure в течение 14 дней. После регистрации пользователи будут получать запрос на MFA только во время безопасных попыток входа. Скомпрометированные учетные записи пользователей блокируются до сброса пароля и риска. 
 
 [!NOTE]
-Any users previously flagged for risk are blocked until password reset and risk dismissal upon policy activation.
+Все пользователи, ранее помеченные для риска, блокируются до сброса пароля и устранения риска при активации политики.
 
-### <a name="block-legacy-authentication-preview"></a>Block legacy authentication (preview)
+### <a name="block-legacy-authentication-preview"></a>Блокировать устаревшую проверку подлинности (Предварительная версия)
 
-Legacy authentication protocols (ex: IMAP, SMTP, POP3) are protocols normally used by older mail clients to authenticate. Legacy protocols do not support multi-factor authentication. Even if you have a policy requiring multi-factor authentication for your directory, a bad actor can authenticate using one of these legacy protocols and bypass multi-factor authentication.
+Устаревшие протоколы аутентификации (например, IMAP, SMTP, POP3) — это протоколы, обычно используемые старыми почтовыми клиентами для проверки подлинности. Устаревшие протоколы не поддерживают многофакторную проверку подлинности. Даже если имеется политика, требующая многофакторную проверку подлинности для каталога, Недопустимый субъект может пройти проверку подлинности с помощью одного из этих устаревших протоколов и обойти многофакторную проверку подлинности.
 
-The best way to protect your account from malicious authentication requests made by legacy protocols is to block them.
+Лучший способ защитить учетную запись от вредоносных запросов проверки подлинности, сделанных устаревшими протоколами, заключается в их блокировке.
 
-The **Block legacy authentication (preview)** baseline policy blocks authentication requests that are made using legacy protocols. Modern authentication must be used to successfully sign in for all users. Used in conjunction with the other baseline policies, requests coming from legacy protocols will be blocked. In addition, all users will be required to MFA whenever required. This policy does not block Exchange ActiveSync.
+Базовая политика **блокировать устаревшие проверки подлинности (Предварительная версия)** блокирует запросы проверки подлинности, выполненные с помощью устаревших протоколов. Для успешного входа всех пользователей необходимо использовать современную проверку подлинности. При использовании в сочетании с другими базовыми политиками запросы, поступающие от устаревших протоколов, будут заблокированы. Кроме того, каждый пользователь должен будет использовать MFA каждый раз, когда это необходимо. Эта политика не блокирует Exchange ActiveSync.
 
-### <a name="require-mfa-for-service-management-preview"></a>Require MFA for service management (preview)
+### <a name="require-mfa-for-service-management-preview"></a>Требовать MFA для управления службами (Предварительная версия)
 
-Organizations use a variety of Azure services and manage them from Azure Resource Manager based tools like:
+Организации используют различные службы Azure и управляют ими на основе Azure Resource Managerных средств, таких как:
 
-* портала Azure
+* портале Azure
 * Azure PowerShell
-* Azure CLI
+* Интерфейс командной строки Azure
 
-Using any of these tools to perform resource management is a highly privileged action. These tools can alter subscription-wide configurations, such as service settings and subscription billing.
+Использование любого из этих средств для управления ресурсами является действием с высоким уровнем привилегий. Эти средства могут изменять конфигурации на уровне подписки, такие как параметры службы и выставление счетов по подписке.
 
-To protect privileged actions, this **Require MFA for service management (preview)** policy will require multi-factor authentication for any user accessing Azure portal, Azure PowerShell, or Azure CLI.
+Для защиты привилегированных действий это **требует** использования многофакторной проверки подлинности для всех пользователей, обращающихся к портал Azure, Azure PowerShell или Azure CLI.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения см. здесь:
+Дополнительные сведения см. в следующих источниках.
 
-* [Common Conditional Access policies](concept-conditional-access-policy-common.md)
+* [Общие политики условного доступа](concept-conditional-access-policy-common.md)
 * [Пять шагов по защите инфраструктуры удостоверений](../../security/fundamentals/steps-secure-identity.md)
-* [Что представляет собой условный доступ в Azure Active Directory?](overview.md)
+* [Что такое условный доступ в Azure Active Directory?](overview.md)

@@ -15,15 +15,15 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "74485493"
 ---
-| Ресурс | Ограничение по умолчанию |
+| Resource (Ресурс) | Ограничение по умолчанию |
 | --- | :--- |
-| Maximum clusters per subscription | 100 |
-| Maximum nodes per cluster with Virtual Machine Availability Sets and Basic Load Balancer SKU  | 100 |
-| Maximum nodes per cluster with Virtual Machine Scale Sets and [Standard Load Balancer SKU][standard-load-balancer] | 800 (100 nodes per [node pool][node-pool]) |
-| Maximum pods per node: [Basic networking][basic-networking] with Kubenet | 110 |
-| Maximum pods per node: [Advanced networking][advanced-networking] with Azure Container Networking Interface | Развертывание с помощью Azure CLI: 30<sup>1</sup><br />Azure Resource Manager template: 30<sup>1</sup><br />Развертывание портала: 30 |
+| Максимальное число кластеров на подписку | 100 |
+| Максимальное число узлов на кластер с группами доступности виртуальных машин и номером SKU "базовый Load Balancer"  | 100 |
+| Максимальное число узлов на кластер с масштабируемыми наборами виртуальных машин и [Load Balancer (цен. Категория "Стандартный") SKU][standard-load-balancer] | 800 (100 узлов на [пул узлов][node-pool]) |
+| Максимальное число модулей Pod на узел: [Базовая сеть][basic-networking] с кубенет | 110 |
+| Максимальное число модулей Pod на узел: [Расширенная][advanced-networking] работа с сетевыми интерфейсами контейнеров Azure | Развертывание с помощью Azure CLI: 30<sup>1</sup><br />Шаблон Azure Resource Manager: 30<sup>1</sup><br />Развертывание портала: 30 |
 
-<sup>1</sup>When you deploy an Azure Kubernetes Service (AKS) cluster with the Azure CLI or a Resource Manager template, this value is configurable up to 250 pods per node. You can't configure maximum pods per node after you've already deployed an AKS cluster, or if you deploy a cluster by using the Azure portal.<br />
+<sup>1</sup> При развертывании кластера Azure Kubernetes Service (AKS) с Azure CLI или шаблоном диспетчер ресурсов это значение можно настроить до 250 модулей Pod на узел. Вы не можете настроить максимальное число модулей Pod на узел после развертывания кластера AKS или при развертывании кластера с помощью портал Azure.<br />
 
 <!-- LINKS - Internal -->
 [basic-networking]: ../articles/aks/concepts-network.md#kubenet-basic-networking

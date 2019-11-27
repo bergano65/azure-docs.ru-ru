@@ -1,6 +1,6 @@
 ---
-title: Use Azure Storage Explorer with Azure Data Lake Storage Gen2
-description: Learn how to use Azure Storage Explorer to create a file system in an Azure Data Lake Storage Gen2 account, as well as a directory and a file. Далее вы узнаете, как загружать файл на локальный компьютер и как просматривать все файлы в каталоге.
+title: Использование Обозреватель службы хранилища Azure с Azure Data Lake Storage 2-го поколения
+description: Узнайте, как использовать Обозреватель службы хранилища Azure для создания файловой системы в учетной записи Azure Data Lake Storage 2-го поколения, а также в каталоге и файле. Далее вы узнаете, как загружать файл на локальный компьютер и как просматривать все файлы в каталоге.
 author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
@@ -15,11 +15,11 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "74484480"
 ---
-# <a name="use-azure-storage-explorer-with-azure-data-lake-storage-gen2"></a>Use Azure Storage Explorer with Azure Data Lake Storage Gen2
+# <a name="use-azure-storage-explorer-with-azure-data-lake-storage-gen2"></a>Использование Обозреватель службы хранилища Azure с Azure Data Lake Storage 2-го поколения
 
-In this article, you'll learn how to use [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) to create a directory and a blob. Далее вы узнаете, как загружать большой двоичный объект на локальный компьютер и как просматривать все большие двоичные объекты в каталоге. Вы также узнаете, как создавать моментальный снимок большого двоичного объекта, управлять политиками доступа к каталогу и создавать подписанный URL-адрес.
+В этой статье вы узнаете, как использовать [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) для создания каталога и большого двоичного объекта. Далее вы узнаете, как загружать большой двоичный объект на локальный компьютер и как просматривать все большие двоичные объекты в каталоге. Вы также узнаете, как создавать моментальный снимок большого двоичного объекта, управлять политиками доступа к каталогу и создавать подписанный URL-адрес.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
 
@@ -29,11 +29,11 @@ In this article, you'll learn how to use [Azure Storage Explorer](https://azure.
 
 При первом запуске откроется окно **подключения обозревателя службы хранилища Microsoft Azure**. Хотя Обозреватель службы хранилища предоставляет несколько способов подключения к учетным записям хранения, в настоящее время поддерживается только один из способов управления ACL.
 
-|Задача|Цель|
+|Задача.|Назначение|
 |---|---|
 |Добавление учетной записи Azure | Перенаправляет вас на страницу входа организации для аутентификации в Azure. В настоящее время это единственный поддерживаемый метод проверки подлинности, если вы хотите задавать списки ACL и управлять ими. |
 
-Select **Add an Azure Account** and click **Sign in..** . Follow the on-screen prompts to sign into your Azure account.
+Выберите **Добавить учетную запись Azure** и нажмите кнопку **войти..** . Следуйте инструкциям на экране, чтобы войти в учетную запись Azure.
 
 ![Обозреватель службы хранилища Microsoft Azure — окно подключения](media/storage-quickstart-blobs-storage-explorer/connect.png)
 
@@ -45,9 +45,9 @@ Select **Add an Azure Account** and click **Sign in..** . Follow the on-screen p
 
 Большие двоичные объекты всегда отправляются в каталог. Это позволяет упорядочивать группы BLOB-объектов аналогично организации файлов в папки на компьютере.
 
-Чтобы создать каталог, разверните учетную запись хранения, созданную на предыдущем шаге. Щелкните правой кнопкой мыши элемент **Контейнеры больших двоичных объектов** и выберите пункт **Создать контейнер BLOB-объектов**. Enter the name for your container. When complete, press **Enter** to create the container. После успешного создания каталога больших двоичных объектов он отобразится в папке **Контейнеры больших двоичных объектов** выбранной учетной записи хранения.
+Чтобы создать каталог, разверните учетную запись хранения, созданную на предыдущем шаге. Щелкните правой кнопкой мыши элемент **Контейнеры больших двоичных объектов** и выберите пункт **Создать контейнер BLOB-объектов**. Введите имя контейнера. По завершении нажмите клавишу **Ввод** , чтобы создать контейнер. После успешного создания каталога больших двоичных объектов он отобразится в папке **Контейнеры больших двоичных объектов** выбранной учетной записи хранения.
 
-![Microsoft Azure Storage Explorer - Creating a container](media/storage-quickstart-blobs-storage-explorer/creating-a-filesystem.png)
+![Обозреватель службы хранилища Microsoft Azure — создание контейнера](media/storage-quickstart-blobs-storage-explorer/creating-a-filesystem.png)
 
 ## <a name="upload-blobs-to-the-directory"></a>Отправка больших двоичных объектов в каталог
 
@@ -75,7 +75,7 @@ Select **Add an Azure Account** and click **Sign in..** . Follow the on-screen p
 
 Чтобы скачать большие двоичные объекты с помощью **обозревателя службы хранилища Azure**, выберите большой двоичный объект, а затем на ленте нажмите кнопку **Скачать**. Откроется диалоговое окно, в котором можно ввести имя файла. Нажмите кнопку **Сохранить** чтобы начать скачивание большого двоичного объекта в локальную папку.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Из этого краткого руководства вы узнали, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure с помощью **обозревателя службы хранилища Azure**. Дополнительные сведения о том, как задать ACL для файлов и каталогов, см. в нашем практическом руководстве по этой теме.
 

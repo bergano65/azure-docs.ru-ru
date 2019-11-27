@@ -1,5 +1,5 @@
 ---
-title: YAML reference - ACR Tasks
+title: YAML Reference — задачи записи контроля доступа
 description: Справка по определению задач Реестра контейнеров Azure в YAML, включая свойства задач, типы шагов, свойства шагов и встроенные переменные.
 ms.topic: article
 ms.date: 10/23/2019
@@ -12,17 +12,17 @@ ms.locfileid: "74454647"
 ---
 # <a name="acr-tasks-reference-yaml"></a>Справка по задачам Реестра контейнеров Azure: YAML
 
-Определение многошаговой задачи в службе "Задачи ACR" предоставляет ориентированный на контейнеры вычислительный примитив, направленный на сборку, тестирование и исправление контейнеров. This article covers the commands, parameters, properties, and syntax for the YAML files that define your multi-step tasks.
+Определение многошаговой задачи в службе "Задачи ACR" предоставляет ориентированный на контейнеры вычислительный примитив, направленный на сборку, тестирование и исправление контейнеров. В этой статье рассматриваются команды, параметры, свойства и синтаксис для файлов YAML, определяющих многошаговые задачи.
 
 Эта статья содержит справочные сведения о создании YAML-файлов многошаговых задач для службы "Задачи ACR". Общие сведения о задачах ACR см. в [обзоре службы "Задачи ACR"](container-registry-tasks-overview.md).
 
 ## <a name="acr-taskyaml-file-format"></a>Формат файла acr-task.yaml
 
-Служба "Задачи ACR" поддерживает объявление многошаговой задачи в стандартном синтаксисе YAML. You define a task's steps in a YAML file. You can then run the task manually by passing the file to the [az acr run][az-acr-run] command. Or, use the file to create a task with [az acr task create][az-acr-task-create] that's triggered automatically on a Git commit or base image update. Несмотря на то, что в этой статье `acr-task.yaml` рассматривается как файл, содержащий шаги, служба "Задачи ACR" поддерживает любое допустимое имя файла с [поддерживаемым расширением](#supported-task-filename-extensions).
+Служба "Задачи ACR" поддерживает объявление многошаговой задачи в стандартном синтаксисе YAML. Шаги задачи определяются в файле YAML. Затем эту задачу можно запустить вручную, передав файл в команду AZ запись [контроля][az-acr-run] доступа. Или используйте файл для создания задачи с помощью команды AZ контроля учетных записей, [созданной][az-acr-task-create] автоматически при фиксации Git или обновлении базового образа. Несмотря на то, что в этой статье `acr-task.yaml` рассматривается как файл, содержащий шаги, служба "Задачи ACR" поддерживает любое допустимое имя файла с [поддерживаемым расширением](#supported-task-filename-extensions).
 
 Примитивами `acr-task.yaml` верхнего уровня являются **свойства задачи**, **типы шагов** и **свойства шага**.
 
-* [Свойства задачи](#task-properties) применяются для всех шагов на протяжении всего выполнения задачи. There are several global task properties, including:
+* [Свойства задачи](#task-properties) применяются для всех шагов на протяжении всего выполнения задачи. Существует несколько глобальных свойств задачи, включая следующие.
   * `version`
   * `stepTimeout`
   * `workingDirectory`
@@ -57,13 +57,13 @@ YAML — единственный формат файлов, который се
 
 ## <a name="run-the-sample-tasks"></a>Запуск примеров задач
 
-В следующих разделах этой статьи приводятся ссылки на несколько примеров файлов задач. The sample tasks are in a public GitHub repository, [Azure-Samples/acr-tasks][acr-tasks]. You can run them with the Azure CLI command [az acr run][az-acr-run]. Примеры команд выглядят приблизительно так:
+В следующих разделах этой статьи приводятся ссылки на несколько примеров файлов задач. Примеры задач находятся в общедоступном репозитории GitHub, [Azure-Samples/контроля доступа — задачах][acr-tasks]. Их можно запустить с помощью команды Azure CLI [AZ запись контроля][az-acr-run]доступа. Примеры команд выглядят приблизительно так:
 
 ```azurecli
 az acr run -f build-push-hello-world.yaml https://github.com/Azure-Samples/acr-tasks.git
 ```
 
-Форматирование в примерах команд предполагает, что вы уже настроили реестр по умолчанию в Azure CLI, поэтому параметр `--registry` опускается. To configure a default registry, use the [az configure][az-configure] command with the `--defaults` parameter, which accepts an `acr=REGISTRY_NAME` value.
+Форматирование в примерах команд предполагает, что вы уже настроили реестр по умолчанию в Azure CLI, поэтому параметр `--registry` опускается. Чтобы настроить реестр по умолчанию, используйте команду [AZ configure][az-configure] с параметром `--defaults`, который принимает значение `acr=REGISTRY_NAME`.
 
 Например, чтобы настроить Azure CLI с реестром myregistry по умолчанию, выполните следующую команду:
 
@@ -73,48 +73,48 @@ az configure --defaults acr=myregistry
 
 ## <a name="task-properties"></a>Свойства задачи
 
-Task properties typically appear at the top of an `acr-task.yaml` file, and are global properties that apply throughout the full execution of the task steps. Некоторые из этих глобальных свойств могут быть переопределены в рамках отдельного шага.
+Свойства задачи обычно отображаются в верхней части файла `acr-task.yaml` и являются глобальными свойствами, которые применяются во время полного выполнения шагов задачи. Некоторые из этих глобальных свойств могут быть переопределены в рамках отдельного шага.
 
-| Свойство | Тип | Необязательно | Описание | Поддерживается ли переопределение | Значение по умолчанию |
+| Свойство | введите | Необязательно | ОПИСАНИЕ | Поддерживается ли переопределение | Значение по умолчанию |
 | -------- | ---- | -------- | ----------- | ------------------ | ------------- |
-| `version` | string | ДА | Версия файла `acr-task.yaml`, проанализированного службой "Задачи ACR". В то время как служба "Задачи ACR" стремится поддерживать обратную совместимость, это значение позволяет службе поддерживать совместимость в пределах заданной версии. If unspecified, defaults to the latest version. | Нет | Нет |
-| `stepTimeout` | int (секунды) | ДА | Максимальное число секунд выполнения шага. If the property is specified on a task, it sets the default `timeout` property of all the steps. If the `timeout` property is specified on a step, it overrides the property provided by the task. | ДА | 600 (10 минут) |
-| `workingDirectory` | string | ДА | The working directory of the container during runtime. If the property is specified on a task, it sets the default `workingDirectory` property of all the steps. If specified on a step, it overrides the property provided by the task. | ДА | `$HOME` |
-| `env` | [строка, строка, ...] | ДА |  Array of strings in `key=value` format that define the environment variables for the task. If the property is specified on a task, it sets the default `env` property of all the steps. If specified on a step, it overrides any environment variables inherited from the task. | Нет |
-| `secrets` | [secret, secret, ...] | ДА | Array of [secret](#secret) objects. | Нет |
-| `networks` | [network, network, ...] | ДА | Array of [network](#network) objects. | Нет |
+| `version` | строка | Yes | Версия файла `acr-task.yaml`, проанализированного службой "Задачи ACR". В то время как служба "Задачи ACR" стремится поддерживать обратную совместимость, это значение позволяет службе поддерживать совместимость в пределах заданной версии. Если значение не указано, по умолчанию используется последняя версия. | Нет | Нет |
+| `stepTimeout` | int (секунды) | Yes | Максимальное число секунд выполнения шага. Если свойство задано в задаче, оно задает свойство `timeout` по умолчанию для всех шагов. Если свойство `timeout` задано на шаге, оно переопределяет свойство, предоставленное задачей. | Yes | 600 (10 минут) |
+| `workingDirectory` | строка | Yes | Рабочий каталог контейнера во время выполнения. Если свойство задано в задаче, оно задает свойство `workingDirectory` по умолчанию для всех шагов. Если этот параметр указан на шаге, он переопределяет свойство, предоставленное задачей. | Yes | `$HOME` |
+| `env` | [строка, строка, ...] | Yes |  Массив строк в формате `key=value`, который определяет переменные среды для задачи. Если свойство задано в задаче, оно задает свойство `env` по умолчанию для всех шагов. Если этот параметр указан на шаге, он переопределяет все переменные среды, унаследованные от задачи. | Нет |
+| `secrets` | [секретный, секретный,...] | Yes | Массив [секретных](#secret) объектов. | Нет |
+| `networks` | [сеть, сеть,...] | Yes | Массив [сетевых](#network) объектов. | Нет |
 
 ### <a name="secret"></a>secret
 
-The secret object has the following properties.
+Секретный объект имеет следующие свойства.
 
-| Свойство | Тип | Необязательно | Описание | Значение по умолчанию |
+| Свойство | введите | Необязательно | ОПИСАНИЕ | Значение по умолчанию |
 | -------- | ---- | -------- | ----------- | ------- |
-| `id` | string | Нет | The identifier of the secret. | Нет |
-| `keyvault` | string | ДА | The Azure Key Vault Secret URL. | Нет |
-| `clientID` | string | ДА | The client ID of the [user-assigned managed identity](container-registry-tasks-authentication-managed-identity.md) for Azure resources. | Нет |
+| `id` | строка | Нет | Идентификатор секрета. | Нет |
+| `keyvault` | строка | Yes | URL-адрес Azure Key Vault секрета. | Нет |
+| `clientID` | строка | Yes | Идентификатор клиента [управляемого удостоверения, назначаемого пользователем](container-registry-tasks-authentication-managed-identity.md) для ресурсов Azure. | Нет |
 
 ### <a name="network"></a>Сеть
 
-The network object has the following properties.
+Объект Network имеет следующие свойства.
 
-| Свойство | Тип | Необязательно | Описание | Значение по умолчанию |
+| Свойство | введите | Необязательно | ОПИСАНИЕ | Значение по умолчанию |
 | -------- | ---- | -------- | ----------- | ------- | 
-| `name` | string | Нет | Имя сети. | Нет |
-| `driver` | string | ДА | The driver to manage the network. | Нет |
-| `ipv6` | bool | ДА | Whether IPv6 networking is enabled. | `false` |
-| `skipCreation` | bool | ДА | Whether to skip network creation. | `false` |
-| `isDefault` | bool | ДА | Whether the network is a default network provided with Azure Container Registry | `false` |
+| `name` | строка | Нет | Имя сети. | Нет |
+| `driver` | строка | Yes | Драйвер для управления сетью. | Нет |
+| `ipv6` | bool | Yes | Включена ли сеть IPv6. | `false` |
+| `skipCreation` | bool | Yes | Указывает, следует ли пропустить создание сети. | `false` |
+| `isDefault` | bool | Yes | Является ли сеть сетью по умолчанию, предоставляемой реестром контейнеров Azure | `false` |
 
 ## <a name="task-step-types"></a>Типы шагов задач
 
 Служба "Задачи ACR" поддерживает три типа шагов. Каждый тип шага поддерживает несколько свойств, подробно описанных в соответствующих разделах о каждом из типов.
 
-| Тип шага | Описание |
+| Тип шага | ОПИСАНИЕ |
 | --------- | ----------- |
 | [`build`](#build) | Создает образ контейнера с использованием знакомого синтаксиса `docker build`. |
 | [`push`](#push) | Выполняет команду `docker push` для отправки только что созданных или перемаркированных образов в реестр контейнеров. Поддерживается Реестр контейнеров Azure, другие закрытые реестры, а также общедоступный реестр Docker Hub. |
-| [`cmd`](#cmd) | Запускает контейнер в качестве команды с параметрами, передаваемыми в `[ENTRYPOINT]` контейнера. The `cmd` step type supports parameters like `env`, `detach`, and other familiar `docker run` command options, enabling unit and functional testing with concurrent container execution. |
+| [`cmd`](#cmd) | Запускает контейнер в качестве команды с параметрами, передаваемыми в `[ENTRYPOINT]` контейнера. Тип шага `cmd` поддерживает такие параметры, как `env`, `detach`и другие знакомые параметры команды `docker run`, позволяющие выполнять модульное и функциональное тестирование с параллельным выполнением контейнера. |
 
 ## <a name="build"></a>build;
 
@@ -131,26 +131,26 @@ steps:
 
 Тип шага `build` поддерживает параметры, описанные в следующей таблице. Тип шага `build` также поддерживает все параметры сборки из команды [docker build](https://docs.docker.com/engine/reference/commandline/build/), такие как `--build-arg`, для определения переменных во время сборки.
 
-| Параметр | Описание | Необязательно |
+| Параметр | ОПИСАНИЕ | Необязательно |
 | --------- | ----------- | :-------: |
-| `-t` &#124; `--image` | Определяет полное значение `image:tag` созданного образа.<br /><br />Так как образы могут использоваться для внутренних проверок задач, например функциональных тестов, не все образы требуют выполнения `push` для отправки в реестр. Но чтобы создать экземпляр образа в пределах выполнения задачи, необходимо указать имя образа для ссылки.<br /><br />Unlike `az acr build`, running ACR Tasks doesn't provide default push behavior. При использовании службы "Задачи ACR" стандартный сценарий предполагает возможность создания, проверки и последующей отправки образа. Сведения о том, как при необходимости отправлять созданные образы, см. в описании команды [push](#push). | ДА |
-| `-f` &#124; `--file` | Позволяет указать файл Dockerfile, передаваемый в `docker build`. Если этот параметр не указан, по умолчанию принимается Dockerfile в корне контекста. To specify a Dockerfile, pass the filename relative to the root of the context. | ДА |
+| `-t` &#124; `--image` | Определяет полное значение `image:tag` созданного образа.<br /><br />Так как образы могут использоваться для внутренних проверок задач, например функциональных тестов, не все образы требуют выполнения `push` для отправки в реестр. Но чтобы создать экземпляр образа в пределах выполнения задачи, необходимо указать имя образа для ссылки.<br /><br />В отличие от `az acr build`, выполнение задач контроля доступа не обеспечивает принудительного поведения по умолчанию. При использовании службы "Задачи ACR" стандартный сценарий предполагает возможность создания, проверки и последующей отправки образа. Сведения о том, как при необходимости отправлять созданные образы, см. в описании команды [push](#push). | Yes |
+| `-f` &#124; `--file` | Позволяет указать файл Dockerfile, передаваемый в `docker build`. Если этот параметр не указан, по умолчанию принимается Dockerfile в корне контекста. Чтобы указать Dockerfile, передайте имя файла относительно корня контекста. | Yes |
 | `context` | Корневой каталог, передаваемый в `docker build`. В качестве корневого каталога каждой задачи задается общий каталог [workingDirectory](#task-step-properties), который включает в себя корень связанного клонированного каталога Git. | Нет |
 
 ### <a name="properties-build"></a>Свойства: build
 
-Тип шага `build` поддерживает следующие свойства. Find details of these properties in the [Task step properties](#task-step-properties) section of this article.
+Тип шага `build` поддерживает следующие свойства. Дополнительные сведения об этих свойствах см. в разделе [Свойства шага задачи](#task-step-properties) этой статьи.
 
 | | | |
 | -------- | ---- | -------- |
 | `detach` | bool | Необязательно |
 | `disableWorkingDirectoryOverride` | bool | Необязательно |
-| `entryPoint` | string | Необязательно |
+| `entryPoint` | строка | Необязательно |
 | `env` | [строка, строка, ...] | Необязательно |
 | `expose` | [строка, строка, ...] | Необязательно |
-| `id` | string | Необязательно |
+| `id` | строка | Необязательно |
 | `ignoreErrors` | bool | Необязательно |
-| `isolation` | string | Необязательно |
+| `isolation` | строка | Необязательно |
 | `keep` | bool | Необязательно |
 | `network` | object | Необязательно |
 | `ports` | [строка, строка, ...] | Необязательно |
@@ -162,7 +162,7 @@ steps:
 | `startDelay` | int (секунды) | Необязательно |
 | `timeout` | int (секунды) | Необязательно |
 | `when` | [строка, строка, ...] | Необязательно |
-| `workingDirectory` | string | Необязательно |
+| `workingDirectory` | строка | Необязательно |
 
 ### <a name="examples-build"></a>Примеры: build
 
@@ -183,7 +183,7 @@ steps:
   - build: -t $Registry/hello-world -f hello-world.dockerfile ./subDirectory
 ```
 
-## <a name="push"></a>push
+## <a name="push"></a>push;
 
 Отправляет командой один или несколько из только что созданных или перемаркированных образов в реестр контейнеров. Команда push поддерживается для таких закрытых реестров, как Реестр контейнеров Azure, а также общедоступный реестр Docker Hub.
 
@@ -211,12 +211,12 @@ steps:
 
 ### <a name="properties-push"></a>Свойства: push
 
-Тип шага `push` поддерживает следующие свойства. Find details of these properties in the [Task step properties](#task-step-properties) section of this article.
+Тип шага `push` поддерживает следующие свойства. Дополнительные сведения об этих свойствах см. в разделе [Свойства шага задачи](#task-step-properties) этой статьи.
 
 | | | |
 | -------- | ---- | -------- |
 | `env` | [строка, строка, ...] | Необязательно |
-| `id` | string | Необязательно |
+| `id` | строка | Необязательно |
 | `ignoreErrors` | bool | Необязательно |
 | `startDelay` | int (секунды) | Необязательно |
 | `timeout` | int (секунды) | Необязательно |
@@ -262,12 +262,12 @@ steps:
 | -------- | ---- | -------- |
 | `detach` | bool | Необязательно |
 | `disableWorkingDirectoryOverride` | bool | Необязательно |
-| `entryPoint` | string | Необязательно |
+| `entryPoint` | строка | Необязательно |
 | `env` | [строка, строка, ...] | Необязательно |
 | `expose` | [строка, строка, ...] | Необязательно |
-| `id` | string | Необязательно |
+| `id` | строка | Необязательно |
 | `ignoreErrors` | bool | Необязательно |
-| `isolation` | string | Необязательно |
+| `isolation` | строка | Необязательно |
 | `keep` | bool | Необязательно |
 | `network` | object | Необязательно |
 | `ports` | [строка, строка, ...] | Необязательно |
@@ -279,7 +279,7 @@ steps:
 | `startDelay` | int (секунды) | Необязательно |
 | `timeout` | int (секунды) | Необязательно |
 | `when` | [строка, строка, ...] | Необязательно |
-| `workingDirectory` | string | Необязательно |
+| `workingDirectory` | строка | Необязательно |
 
 Сведения об этих свойствах см. в разделе [Свойства шага задачи](#task-step-properties) этой статьи.
 
@@ -330,9 +330,9 @@ steps:
   - cmd: docker.io/bash:3.0 echo hello world
 ```
 
-By using the standard `docker run` image reference convention, `cmd` can run images from any private registry or the public Docker Hub. Если вы ссылаетесь на образы в том же реестре, в котором выполняется задача ACR, не нужно указывать учетные данные реестра.
+Используя стандартное соглашение о ссылках на образы `docker run`, `cmd` может запускать образы из любого частного реестра или общедоступного центра DOCKER. Если вы ссылаетесь на образы в том же реестре, в котором выполняется задача ACR, не нужно указывать учетные данные реестра.
 
-* Run an image that's from an Azure container registry. The following example assumes you have a registry named `myregistry`, and a custom image `myimage:mytag`.
+* Запустите образ из реестра контейнеров Azure. В следующем примере предполагается, что у вас есть реестр с именем `myregistry`и пользовательский образ `myimage:mytag`.
 
     ```yml
     version: v1.1.0
@@ -340,11 +340,11 @@ By using the standard `docker run` image reference convention, `cmd` can run ima
         - cmd: myregistry.azurecr.io/myimage:mytag
     ```
 
-* Generalize the registry reference with a Run variable or alias
+* Обобщить ссылку реестра с помощью переменной запуска или псевдонима
 
-    Instead of hard-coding your registry name in an `acr-task.yaml` file, you can make it more portable by using a [Run variable](#run-variables) or [alias](#aliases). The `Run.Registry` variable or `$Registry` alias expands at runtime to the name of the registry in which the task is executing.
+    Вместо жесткого кодирования имени реестра в файле `acr-task.yaml` можно сделать его более переносимым с помощью [переменной запуска](#run-variables) или [псевдонима](#aliases). Переменная `Run.Registry` или `$Registry` псевдоним расширяется во время выполнения на имя реестра, в котором выполняется задача.
 
-    For example, to generalize the preceding task so that it works in any Azure container registry, reference the $Registry variable in the image name:
+    Например, чтобы обобщить предыдущую задачу, чтобы она работала в любом реестре контейнеров Azure, сослаться на переменную $Registry в имени образа:
 
     ```yml
     version: v1.1.0
@@ -356,30 +356,30 @@ By using the standard `docker run` image reference convention, `cmd` can run ima
 
 Каждый тип шага поддерживает несколько свойств, подходящих для его типа. В следующей таблице определены все доступные свойства шагов. Не все типы шагов поддерживают все свойства. Чтобы узнать, какие из этих свойств доступны для каждого типа шага, см. разделы справки по типам шагов [cmd](#cmd), [build](#build) и [push](#push).
 
-| Свойство | Тип | Необязательно | Описание | Значение по умолчанию |
+| Свойство | введите | Необязательно | ОПИСАНИЕ | Значение по умолчанию |
 | -------- | ---- | -------- | ----------- | ------- |
-| `detach` | bool | ДА | Определяет, следует ли отсоединить контейнер при запуске. | `false` |
-| `disableWorkingDirectoryOverride` | bool | ДА | Whether to disable `workingDirectory` override functionality. Use this in combination with `workingDirectory` to have complete control over the container's working directory. | `false` |
-| `entryPoint` | string | ДА | Переопределяет `[ENTRYPOINT]` контейнера шага. | Нет |
-| `env` | [строка, строка, ...] | ДА | Массив строк в формате `key=value`, определяющий переменные среды для шага. | Нет |
-| `expose` | [строка, строка, ...] | ДА | Array of ports that are exposed from the container. |  Нет |
-| [`id`](#example-id) | string | ДА | Однозначно определяет шаг в рамках задачи. Другие шаги в задаче могут ссылаться на `id` шага, например для проверки зависимостей с помощью `when`.<br /><br />`id` также является именем запущенного контейнера. Процессы, запущенные в других контейнерах в задаче, могут ссылаться на `id` в качестве имени его узла DNS, или же для доступа к нему с помощью журналов docker [id], например. | `acb_step_%d`, where `%d` is the 0-based index of the step top-down in the YAML file |
-| `ignoreErrors` | bool | ДА | Whether to mark the step as successful regardless of whether an error occurred during container execution. | `false` |
-| `isolation` | string | ДА | The isolation level of the container. | `default` |
-| `keep` | bool | ДА | Следует ли сохранить контейнер этого шага после выполнения. | `false` |
-| `network` | object | ДА | Identifies a network in which the container runs. | Нет |
-| `ports` | [строка, строка, ...] | ДА | Array of ports that are published from the container to the host. |  Нет |
-| `pull` | bool | ДА | Whether to force a pull of the container before executing it to prevent any caching behavior. | `false` |
-| `privileged` | bool | ДА | Whether to run the container in privileged mode. | `false` |
-| `repeat` | int | ДА | The number of retries to repeat the execution of a container. | 0 |
-| `retries` | int | ДА | The number of retries to attempt if a container fails its execution. A retry is only attempted if a container's exit code is non-zero. | 0 |
-| `retryDelay` | int (секунды) | ДА | The delay in seconds between retries of a container's execution. | 0 |
-| `secret` | object | ДА | Identifies an Azure Key Vault secret or [managed identity for Azure resources](container-registry-tasks-authentication-managed-identity.md). | Нет |
-| `startDelay` | int (секунды) | ДА | Number of seconds to delay a container's execution. | 0 |
-| `timeout` | int (секунды) | ДА | Максимальное число секунд, в течение которого может выполняться шаг перед завершением. | 600 |
-| [`when`](#example-when) | [строка, строка, ...] | ДА | Настраивает зависимость шага от одного или нескольких других шагов в пределах задачи. | Нет |
-| `user` | string | ДА | The user name or UID of a container | Нет |
-| `workingDirectory` | string | ДА | Задает рабочий каталог для шага. По умолчанию служба "Задачи ACR" создает корневой каталог в качестве рабочего каталога. Но если сборка включает несколько шагов, для предыдущих и последующих шагов можно использовать общие артефакты, указав один и тот же рабочий каталог. | `$HOME` |
+| `detach` | bool | Yes | Определяет, следует ли отсоединить контейнер при запуске. | `false` |
+| `disableWorkingDirectoryOverride` | bool | Yes | Следует ли отключать функции переопределения `workingDirectory`. Используйте его в сочетании с `workingDirectory`, чтобы получить полный контроль над рабочим каталогом контейнера. | `false` |
+| `entryPoint` | строка | Yes | Переопределяет `[ENTRYPOINT]` контейнера шага. | Нет |
+| `env` | [строка, строка, ...] | Yes | Массив строк в формате `key=value`, определяющий переменные среды для шага. | Нет |
+| `expose` | [строка, строка, ...] | Yes | Массив портов, доступных из контейнера. |  Нет |
+| [`id`](#example-id) | строка | Yes | Однозначно определяет шаг в рамках задачи. Другие шаги в задаче могут ссылаться на `id` шага, например для проверки зависимостей с помощью `when`.<br /><br />`id` также является именем запущенного контейнера. Процессы, запущенные в других контейнерах в задаче, могут ссылаться на `id` в качестве имени его узла DNS, или же для доступа к нему с помощью журналов docker [id], например. | `acb_step_%d`, где `%d` — это Отсчитываемый от нуля индекс шага сверху вниз в файле YAML |
+| `ignoreErrors` | bool | Yes | Помечать ли шаг как успешный независимо от того, произошла ли ошибка во время выполнения контейнера. | `false` |
+| `isolation` | строка | Yes | Уровень изоляции контейнера. | `default` |
+| `keep` | bool | Yes | Следует ли сохранить контейнер этого шага после выполнения. | `false` |
+| `network` | object | Yes | Определяет сеть, в которой выполняется контейнер. | Нет |
+| `ports` | [строка, строка, ...] | Yes | Массив портов, опубликованных из контейнера на узле. |  Нет |
+| `pull` | bool | Yes | Указывает, следует ли принудительно запрашивать контейнер перед его выполнением, чтобы предотвратить любое поведение кэширования. | `false` |
+| `privileged` | bool | Yes | Следует ли запускать контейнер в привилегированном режиме. | `false` |
+| `repeat` | int | Yes | Число повторных попыток для повторного выполнения контейнера. | 0 |
+| `retries` | int | Yes | Число повторных попыток при сбое выполнения контейнера. Повторная попытка выполняется только в том случае, если код выхода контейнера не равен нулю. | 0 |
+| `retryDelay` | int (секунды) | Yes | Задержка в секундах между повторными попытками выполнения контейнера. | 0 |
+| `secret` | object | Yes | Определяет Azure Key Vault секретного или [управляемого удостоверения для ресурсов Azure](container-registry-tasks-authentication-managed-identity.md). | Нет |
+| `startDelay` | int (секунды) | Yes | Количество секунд, в течение которых откладывается выполнение контейнера. | 0 |
+| `timeout` | int (секунды) | Yes | Максимальное число секунд, в течение которого может выполняться шаг перед завершением. | 600 |
+| [`when`](#example-when) | [строка, строка, ...] | Yes | Настраивает зависимость шага от одного или нескольких других шагов в пределах задачи. | Нет |
+| `user` | строка | Yes | Имя пользователя или UID контейнера | Нет |
+| `workingDirectory` | строка | Yes | Задает рабочий каталог для шага. По умолчанию служба "Задачи ACR" создает корневой каталог в качестве рабочего каталога. Но если сборка включает несколько шагов, для предыдущих и последующих шагов можно использовать общие артефакты, указав один и тот же рабочий каталог. | `$HOME` |
 
 ### <a name="examples-task-step-properties"></a>Примеры. Свойства шага задачи
 
@@ -421,7 +421,7 @@ az acr run -f when-sequential-id.yaml https://github.com/Azure-Samples/acr-tasks
 <!-- SOURCE: https://github.com/Azure-Samples/acr-tasks/blob/master/when-sequential-id.yaml -->
 [!code-yml[task](~/acr-tasks/when-sequential-id.yaml)]
 
-Parallel images build:
+Сборка параллельных образов:
 
 ```azurecli
 az acr run -f when-parallel.yaml https://github.com/Azure-Samples/acr-tasks.git
@@ -454,11 +454,11 @@ az acr run -f when-parallel-dependent.yaml https://github.com/Azure-Samples/acr-
 * `Run.Branch`
 * `Run.TaskName`
 
-The variable names are generally self-explanatory. Details follows for commonly used variables. As of YAML version `v1.1.0`, you can use an abbreviated, predefined [task alias](#aliases) in place of most run variables. For example, in place of `{{.Run.Registry}}`, use the `$Registry` alias.
+Имена переменных обычно говорят сами за себя. Ниже приведены сведения о часто используемых переменных. Начиная с версии YAML `v1.1.0`можно использовать сокращенный, предопределенный [псевдоним задачи](#aliases) вместо большинства переменных запуска. Например, вместо `{{.Run.Registry}}`используйте псевдоним `$Registry`.
 
 ### <a name="runid"></a>Run.ID
 
-Each Run, through `az acr run`, or trigger based execution of tasks created through `az acr task create`, has a unique ID. Идентификатор представляет выполняющуюся в текущий момент команду Run.
+Каждый запуск, через `az acr run`или на выполнение задач, созданных с помощью `az acr task create`, имеет уникальный идентификатор. Идентификатор представляет выполняющуюся в текущий момент команду Run.
 
 Обычно используется для уникальной маркировки образа:
 
@@ -478,9 +478,9 @@ steps:
   - build: -t $Registry/hello-world:$ID .
 ```
 
-### <a name="runregistryname"></a>Run.RegistryName
+### <a name="runregistryname"></a>Run. Регистринаме
 
-The name of the container registry. Typically used in task steps that don't require a fully qualified server name, for example, `cmd` steps that run Azure CLI commands on registries.
+Имя реестра контейнеров. Обычно используется в шагах задач, не требующих полного имени сервера, например `cmd` действия, выполняемые Azure CLI команд в реестре.
 
 ```yml
 version 1.1.0
@@ -494,27 +494,27 @@ steps:
 
 Текущее время в формате UTC, когда начался запуск.
 
-### <a name="runcommit"></a>Run.Commit
+### <a name="runcommit"></a>Выполнить. Commit
 
-For a task triggered by a commit to a GitHub repository, the commit identifier.
+Для задачи, активируемой фиксацией в репозитории GitHub, идентификатор фиксации.
 
-### <a name="runbranch"></a>Run.Branch
+### <a name="runbranch"></a>Запустить. Branch
 
-For a task triggered by a commit to a GitHub repository, the branch name.
+Для задачи, активируемой фиксацией в репозитории GitHub, это имя ветви.
 
 ## <a name="aliases"></a>Псевдонимы
 
-As of `v1.1.0`, ACR Tasks supports aliases that are available to task steps when they execute. Aliases are similar in concept to aliases (command shortcuts) supported in bash and some other command shells. 
+Начиная с `v1.1.0`задачи записи контроля доступа поддерживают псевдонимы, доступные для шагов задач при их выполнении. Псевдонимы похожи на понятия псевдонимов (ярлыки команд), поддерживаемые Bash и другие командные оболочки. 
 
-With an alias, you can launch any command or group of commands (including options and filenames) by entering a single word.
+С помощью псевдонима можно запустить любую команду или группу команд (включая параметры и имена файлов), введя одно слово.
 
-ACR Tasks supports several predefined aliases and also custom aliases you create.
+Задачи записи контроля доступа поддерживают несколько предопределенных псевдонимов, а также пользовательские псевдонимы, которые вы создаете.
 
-### <a name="predefined-aliases"></a>Predefined aliases
+### <a name="predefined-aliases"></a>Предопределенные псевдонимы
 
-The following task aliases are available to use in place of [run variables](#run-variables):
+Следующие псевдонимы задач можно использовать вместо [переменных запуска](#run-variables):
 
-| Alias | Run variable |
+| Псевдоним | Выполнить переменную |
 | ----- | ------------ |
 | `ID` | `Run.ID` |
 | `SharedVolume` | `Run.SharedVolume` |
@@ -526,7 +526,7 @@ The following task aliases are available to use in place of [run variables](#run
 | `Commit` | `Run.Commit` |
 | `Branch` | `Run.Branch` |
 
-In task steps, precede an alias with the `$` directive, as in this example:
+В шагах задачи перед псевдонимом с помощью директивы `$`, как показано в следующем примере:
 
 ```yaml
 version: v1.1.0
@@ -534,18 +534,18 @@ steps:
   - build: -t $Registry/hello-world:$ID -f hello-world.dockerfile .
 ```
 
-### <a name="image-aliases"></a>Image aliases
+### <a name="image-aliases"></a>Псевдонимы изображений
 
-Each of the following aliases points to a stable image in Microsoft Container Registry (MCR). You can refer to each of them in the `cmd` section of a Task file without using a directive.
+Каждый из следующих псевдонимов указывает на стабильный образ в реестре контейнеров Microsoft (мкр). Вы можете ссылаться на каждую из них в разделе `cmd` файла задачи без использования директивы.
 
-| Alias | Изображение |
+| Псевдоним | Образ — |
 | ----- | ----- |
 | `acr` | `mcr.microsoft.com/acr/acr-cli:0.1` |
 | `az` | `mcr.microsoft.com/acr/azure-cli:d0725bc` |
 | `bash` | `mcr.microsoft.com/acr/bash:d0725bc` |
 | `curl` | `mcr.microsoft.com/acr/curl:d0725bc` |
 
-The following example task uses several aliases to [purge](container-registry-auto-purge.md) image tags older than 7 days in the repo `samples/hello-world` in the run registry:
+В следующем примере задача использует несколько псевдонимов для [очистки](container-registry-auto-purge.md) тегов изображений старше 7 дней в репозитории `samples/hello-world` в реестре выполнения:
 
 ```yaml
 version: v1.1.0
@@ -554,9 +554,9 @@ steps:
   - cmd: acr purge --registry $RegistryName --filter samples/hello-world:.* --ago 7d
 ```
 
-### <a name="custom-alias"></a>Custom alias
+### <a name="custom-alias"></a>Пользовательский псевдоним
 
-Define a custom alias in your YAML file and use it as shown in the following example. An alias can contain only alphanumeric characters. The default directive to expand an alias is the `$` character.
+Определите пользовательский псевдоним в файле YAML и используйте его, как показано в следующем примере. Псевдоним может содержать только буквенно-цифровые символы. Директивой по умолчанию для расширения псевдонима является `$`ный символ.
 
 ```yml
 version: v1.1.0
@@ -567,7 +567,7 @@ steps:
   - build: -t $Registry/$repo/hello-world:$ID -f Dockerfile .
 ```
 
-You can link to a remote or local YAML file for custom alias definitions. The following example links to a YAML file in Azure blob storage:
+Можно создать ссылку на удаленный или локальный файл YAML для определений пользовательских псевдонимов. В следующем примере выполняется ссылка на файл YAML в хранилище BLOB-объектов Azure:
 
 ```yml
 version: v1.1.0
@@ -577,7 +577,7 @@ alias:
 [...]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Обзор многошаговых задач см. в статье [Run multi-step build, test, and patch tasks in ACR Tasks](container-registry-tasks-multi-step.md) (Выполнение многошаговых задач сборки, тестирования и исправления в решении "Задачи ACR").
 

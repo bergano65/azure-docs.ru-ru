@@ -13,21 +13,21 @@ ms.locfileid: "74231279"
 ---
 # <a name="timers-in-durable-functions-azure-functions"></a>Таймеры в устойчивых функциях (Функции Azure)
 
-[Устойчивые функции](durable-functions-overview.md) предоставляют *устойчивые таймеры*, которые используются в функциях оркестраторов для реализации задержек или настройки времени ожидания в асинхронных действиях. Устойчивые таймеры следует использовать в функциях оркестраторов вместо `Thread.Sleep` (C#) или `Task.Delay``setTimeout()``setInterval()` (JavaScript).
+[Устойчивые функции](durable-functions-overview.md) предоставляют *устойчивые таймеры*, которые используются в функциях оркестраторов для реализации задержек или настройки времени ожидания в асинхронных действиях. Устойчивые таймеры следует использовать в функциях оркестраторов вместо `Thread.Sleep` (C#) или `Task.Delay` (JavaScript).
 
-You create a durable timer by calling the `CreateTimer` (.NET) method or the `createTimer` (JavaScript) method of the [orchestration trigger binding](durable-functions-bindings.md#orchestration-trigger). The method returns a task that completes on a specified date and time.
+Устойчивый таймер создается путем вызова метода `CreateTimer` (.NET) или метода `createTimer` (JavaScript) [привязки триггера оркестрации](durable-functions-bindings.md#orchestration-trigger). Метод возвращает задачу, которая завершается в указанные дату и время.
 
 ## <a name="timer-limitations"></a>Ограничения таймера
 
-When you create a timer that expires at 4:30 pm, the underlying Durable Task Framework enqueues a message that becomes visible only at 4:30 pm. When running in the Azure Functions Consumption plan, the newly visible timer message will ensure that the function app gets activated on an appropriate VM.
+При создании таймера, срок действия которого истекает до 4:30 PM, базовая платформа устойчивых задач ставит в очередь сообщение, которое станет видимым только в 4:30 РМ. При запуске в плане потребления функций Azure вновь видимое сообщение таймера обеспечит активацию приложения функции на соответствующей виртуальной машине.
 
 > [!NOTE]
-> * Durable timers are currently limited to 7 days. If longer delays are needed, they can be simulated using the timer APIs in a `while` loop.
-> * Always use `CurrentUtcDateTime` instead of `DateTime.UtcNow` in .NET or `currentUtcDateTime` instead of `Date.now` or `Date.UTC` in JavaScript when computing the fire time for durable timers. For more information, see the [orchestrator function code constraints](durable-functions-code-constraints.md) article.
+> * Устойчивые таймеры в настоящее время ограничены 7 днями. Если требуется больше задержек, их можно имитировать с помощью API-интерфейсов таймера в цикле `while`.
+> * Всегда используйте `CurrentUtcDateTime` вместо `DateTime.UtcNow` в .NET или `currentUtcDateTime` вместо `Date.now` или `Date.UTC` в JavaScript при вычислении времени срабатывания для устойчивых таймеров. Дополнительные сведения см. в статье [ограничения кода функции Orchestrator](durable-functions-code-constraints.md) .
 
 ## <a name="usage-for-delay"></a>Использование для задержки
 
-В следующем примере показано, как использовать устойчивые таймеры для задержки выполнения. The example is issuing a billing notification every day for 10 days.
+В следующем примере показано, как использовать устойчивые таймеры для задержки выполнения. В этом примере выдается уведомление о выставлении счетов каждый день в течение 10 дней.
 
 ### <a name="c"></a>C#
 
@@ -46,7 +46,7 @@ public static async Task Run(
 ```
 
 > [!NOTE]
-> The previous C# example targets Durable Functions 2.x. For Durable Functions 1.x, you must use `DurableOrchestrationContext` instead of `IDurableOrchestrationContext`. For more information about the differences between versions, see the [Durable Functions versions](durable-functions-versions.md) article.
+> Предыдущий C# пример предназначен для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 ### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
@@ -103,7 +103,7 @@ public static async Task<bool> Run(
 ```
 
 > [!NOTE]
-> The previous C# example targets Durable Functions 2.x. For Durable Functions 1.x, you must use `DurableOrchestrationContext` instead of `IDurableOrchestrationContext`. For more information about the differences between versions, see the [Durable Functions versions](durable-functions-versions.md) article.
+> Предыдущий C# пример предназначен для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 ### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
 
@@ -132,13 +132,13 @@ module.exports = df.orchestrator(function*(context) {
 ```
 
 > [!WARNING]
-> Use a `CancellationTokenSource` to cancel a durable timer (.NET) or call `cancel()` on the returned `TimerTask` (JavaScript) if your code will not wait for it to complete. The Durable Task Framework will not change an orchestration's status to "completed" until all outstanding tasks are completed or canceled.
+> Используйте `CancellationTokenSource`, чтобы отменить устойчивый таймер (.NET) или вызвать `cancel()` на возвращенном `TimerTask` (JavaScript), если код не будет ждать его завершения. Платформа устойчивых задач не изменит состояние оркестрации на "завершено" до тех пор, пока все невыполненные задачи не будут завершены или отменены.
 
-This cancellation mechanism doesn't terminate in-progress activity function or sub-orchestration executions. Вместо этого он просто позволяет функции оркестратора игнорировать результат и двигаться дальше. If your function app uses the Consumption plan, you'll still be billed for any time and memory consumed by the abandoned activity function. По умолчанию для функций, выполняемых в плане потребления, устанавливается время ожидания в пять минут. При превышении этого ограничения узел Функций Azure перезапускается для остановки выполнения всех процессов и предотвращения неконтролируемого выставления счетов. [Время ожидания функции можно настроить](../functions-host-json.md#functiontimeout).
+Этот механизм отмены не прерывает выполняющиеся действия по выполнению функций или подorchestration. Вместо этого он просто позволяет функции оркестратора игнорировать результат и двигаться дальше. Если приложение-функция использует план потребления, плата за все время и память, потребляемые прерванной функцией действия, будет взиматься. По умолчанию для функций, выполняемых в плане потребления, устанавливается время ожидания в пять минут. При превышении этого ограничения узел Функций Azure перезапускается для остановки выполнения всех процессов и предотвращения неконтролируемого выставления счетов. [Время ожидания функции можно настроить](../functions-host-json.md#functiontimeout).
 
-For a more in-depth example of how to implement timeouts in orchestrator functions, see the [Human Interaction & Timeouts - Phone Verification](durable-functions-phone-verification.md) article.
+Более подробный пример реализации времени ожидания в функциях Orchestrator см. в статье [взаимодействие с человеком & время ожидания — Проверка телефона](durable-functions-phone-verification.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Сведения о том, как вызывать и обрабатывать внешние события](durable-functions-external-events.md)

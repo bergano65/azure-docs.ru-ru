@@ -72,7 +72,7 @@ ms.locfileid: "74279655"
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портал Azure](https://portal.azure.com). 
+Войдите на [портале Azure](https://portal.azure.com). 
 
 ## <a name="view-health-of-an-aks-or-non-aks-cluster"></a>Просмотр работоспособности кластера AKS или AKS
 

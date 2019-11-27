@@ -23,17 +23,17 @@ ms.locfileid: "74422523"
 Синхронизация данных SQL — это служба, созданная на основе Базы данных SQL Azure, которая позволяет в двунаправленном режиме синхронизировать выбранные данные в нескольких базах данных SQL и экземплярах SQL Server.
 
 > [!IMPORTANT]
-> Azure SQL Data Sync does not support Azure SQL Database Managed Instance at this time.
+> В настоящее время синхронизация данных SQL Azure не поддерживает Управляемый экземпляр Базы данных SQL Azure.
 
 ## <a name="when-to-use-data-sync"></a>Когда следует использовать синхронизацию данных
 
-Data Sync is useful in cases where data needs to be kept updated across several Azure SQL databases or SQL Server databases. Ниже приведены основных варианты использования синхронизации данных.
+Синхронизация данных полезна в тех случаях, когда необходимо обновлять данные в нескольких базах данных SQL Azure или базах данных SQL Server. Ниже приведены основных варианты использования синхронизации данных.
 
 - **Гибридная синхронизация данных.** Вы можете обеспечить синхронизацию данных между локальными базами данных и базами данных SQL Azure, чтобы включить гибридные приложения. Эта возможность может привлечь клиентов, которые рассматривают переход в облако и собираются поместить некоторые из своих приложений в Azure.
 - **Распределенные приложения**. Во многих случаях полезно разделить разные рабочие нагрузки на разные базы данных. Например, если у вас есть большая рабочая база данных, но необходимо также выполнять рабочую нагрузку для составления отчетов и анализа этих данных, удобно иметь вторую базу данных для этих целей. Такой подход сводит к минимуму влияние на производительность производственной рабочей нагрузки. Чтобы синхронизировать эти две базы данных, можно использовать службу синхронизации данных.
-- **Globally Distributed Applications:** Many businesses span several regions and even several countries/regions. Чтобы свести к минимуму задержки в сети, рекомендуется хранить свои данные в регионе, ближайшем к вам. Используя синхронизацию данных, можно легко обеспечить синхронизацию баз данных в регионах по всему миру.
+- **Глобально распределенные приложения:** Многие компании охватывают несколько регионов и даже несколько стран или регионов. Чтобы свести к минимуму задержки в сети, рекомендуется хранить свои данные в регионе, ближайшем к вам. Используя синхронизацию данных, можно легко обеспечить синхронизацию баз данных в регионах по всему миру.
 
-Data Sync isn't the preferred solution for the following scenarios:
+Синхронизация данных не является предпочтительным решением для следующих сценариев:
 
 | Сценарий | Рекомендуемые решения |
 |----------|----------------------------|
@@ -51,7 +51,7 @@ Data Sync isn't the preferred solution for the following scenarios:
 
 - **Центральной базой данных** должна быть база данных SQL Azure.
 - **Рядовыми базами данных** могут быть базы данных SQL, локальные базы данных SQL Server или экземпляры SQL Server на виртуальных машинах Azure.
-- The **Sync Database** contains the metadata and log for Data Sync. The Sync Database has to be an Azure SQL Database located in the same region as the Hub Database. База данных синхронизации создается клиентом и принадлежит ему.
+- **База данных синхронизации** содержит метаданные и журнал для синхронизации данных. База данных синхронизации должна быть базой данных SQL Azure, расположенной в том же регионе, что и Центральная база данных. База данных синхронизации создается клиентом и принадлежит ему.
 
 > [!NOTE]
 > Если в качестве рядовой вы используете локальную базу данных, необходимо [установить и настроить локальный агент синхронизации](sql-database-get-started-sql-data-sync.md#add-on-prem).
@@ -67,7 +67,7 @@ Data Sync isn't the preferred solution for the following scenarios:
 
 ## <a name="how-does-data-sync-work"></a>Как работает синхронизация данных?
 
-- **Отслеживание изменения данных**. Служба синхронизации данных отслеживают изменения при помощи триггеров вставки, обновления и удаления. Изменения записываются во вспомогательную таблицу в пользовательской базе данных. Note that BULK INSERT doesn't fire triggers by default. If FIRE_TRIGGERS isn't specified, no insert triggers execute. Добавьте параметр FIRE_TRIGGERS, чтобы служба синхронизации данных могла отслеживать эти вставки. 
+- **Отслеживание изменения данных**. Служба синхронизации данных отслеживают изменения при помощи триггеров вставки, обновления и удаления. Изменения записываются во вспомогательную таблицу в пользовательской базе данных. Обратите внимание, что BULK INSERT не запускает триггеры по умолчанию. Если FIRE_TRIGGERS не указан, триггеры INSERT не выполняются. Добавьте параметр FIRE_TRIGGERS, чтобы служба синхронизации данных могла отслеживать эти вставки. 
 - **Синхронизация данных**. Служба синхронизации данных разработана на основе звездообразной модели. Центральная база данных синхронизируется с каждым членом по отдельности. Изменения в центральной базе данных передаются в член, после чего изменения из члена передаются в центральную базу данных.
 - **Устранение конфликтов**. Служба синхронизации данных предоставляет два параметра для устранения конфликтов, *Выигрывает концентратор* и *Member wins* (Выигрывает член).
   - Если выбран параметр *Выигрывает концентратор*, то изменения в центральной базе данных всегда записываются поверх изменений в члене.
@@ -84,7 +84,7 @@ Data Sync isn't the preferred solution for the following scenarios:
 
 ### <a name="set-up-data-sync-in-the-azure-portal"></a>Настройка синхронизации данных на портале Azure
 
-- [Настройка синхронизации данных SQL Azure](sql-database-get-started-sql-data-sync.md).
+- [Начало работы с синхронизацией данных SQL Azure (предварительная версия)](sql-database-get-started-sql-data-sync.md)
 - Агент синхронизации данных: [Агент синхронизации данных для синхронизации данных SQL Azure](sql-database-data-sync-agent.md).
 
 ### <a name="set-up-data-sync-with-powershell"></a>Настройка синхронизации данных с помощью PowerShell
@@ -104,7 +104,7 @@ Data Sync isn't the preferred solution for the following scenarios:
 
 ### <a name="eventual-consistency"></a>Итоговая согласованность
 
-Since Data Sync is trigger-based, transactional consistency isn't guaranteed. Microsoft guarantees that all changes are made eventually and that Data Sync doesn't cause data loss.
+Так как синхронизация данных основана на триггерах, согласованность транзакций не гарантируется. Корпорация Майкрософт гарантирует, что все изменения будут внесены в конечном итоге, а синхронизация данных не приведет к потере данных.
 
 ### <a name="performance-impact"></a>Влияние на производительность
 
@@ -119,21 +119,21 @@ Since Data Sync is trigger-based, transactional consistency isn't guaranteed. Mi
 - Каждая таблица должна иметь первичный ключ. Не изменяйте значение первичного ключа ни в какой строке. Если это необходимо сделать, удалите строку и создайте ее повторно с новым значением первичного ключа.
 
 > [!IMPORTANT]
-> Changing the value of an existing primary key will result in the following faulty behavior:
-> - Data between hub and member can be lost even though sync does not report any issue.
-> - Sync can fail because the tracking table has a non-existing row from source due to the primary key change.
+> Изменение значения существующего первичного ключа приведет к появлению следующего поведения:
+> - Данные между концентратором и элементом могут быть потеряны, хотя синхронизация не сообщает о каких-либо проблемах.
+> - Синхронизация может завершиться ошибкой, так как таблица отслеживания содержит несуществующую строку из источника из-за изменения первичного ключа.
 
 - Необходимо включить изоляцию моментального снимка. Дополнительные сведения см. в статье [Изоляция моментального снимка в SQL Server](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/snapshot-isolation-in-sql-server).
 
 ### <a name="general-limitations"></a>Общие ограничения
 
-- A table can't have an identity column that isn't the primary key.
-- A primary key can't have the following data types: sql_variant, binary, varbinary, image, xml.
+- Таблица не может иметь столбец идентификаторов, который не является первичным ключом.
+- Первичный ключ не может иметь следующие типы данных: sql_variant, binary, varbinary, Image, XML.
 - При использовании типов данных time, datetime, datetime2, datetimeoffset для первичного ключа нужно учитывать, что поддерживается точность только до секунды.
-- The names of objects (databases, tables, and columns) can't contain the printable characters period (.), left square bracket ([), or right square bracket (]).
-- Azure Active Directory authentication isn't supported.
-- Tables with same name but different schema (for example, dbo.customers and sales.customers) aren't supported.
-- Columns with User Defined Data Types aren't supported
+- Имена объектов (баз данных, таблиц и столбцов) не могут содержать печатные символы (.), левые квадратные скобки ([) или правая квадратная скобка (]).
+- Azure Active Directory проверка подлинности не поддерживается.
+- Таблицы с одинаковыми именами, но с разными схемами (например, dbo. Customers и Sales. Customers) не поддерживаются.
+- Столбцы с определяемыми пользователем типами данных не поддерживаются.
 
 #### <a name="unsupported-data-types"></a>Неподдерживаемые типы данных
 
@@ -144,7 +144,7 @@ Since Data Sync is trigger-based, transactional consistency isn't guaranteed. Mi
 
 #### <a name="unsupported-column-types"></a>Неподдерживаемые типы столбцов
 
-При синхронизации данных столбцы только для чтения и созданные системой столбцы не синхронизируются. Пример.
+При синхронизации данных столбцы только для чтения и созданные системой столбцы не синхронизируются. Например,
 
 - Вычисляемые столбцы.
 - Созданные системой столбцы для темпоральных таблиц.
@@ -160,7 +160,7 @@ Since Data Sync is trigger-based, transactional consistency isn't guaranteed. Mi
 | Таблицы в группе синхронизации                                          | 500                    | Создайте несколько групп синхронизации. |
 | Столбцы в таблице в группе синхронизации                              | 1000                   |                             |
 | Размер строки данных в таблице                                        | 24 МБ                  |                             |
-| Минимальный интервал синхронизации                                           | 5 мин              |                             |
+| Минимальный интервал синхронизации                                           | 5 мин              |                             |
 
 > [!NOTE]
 > В единственной группе синхронизации может находится до 30 конечных точек. Если имеется несколько групп синхронизации, общее количество конечных точек во всех группах синхронизации не может превышать 30. Если база данных принадлежит к нескольким группам синхронизации, она считается как несколько конечных точек, а не как одна.
@@ -169,7 +169,7 @@ Since Data Sync is trigger-based, transactional consistency isn't guaranteed. Mi
 
 ### <a name="how-much-does-the-sql-data-sync-service-cost"></a>Сколько стоит использование службы синхронизации данных SQL?
 
-There's no charge for the SQL Data Sync service itself. However, you still collect data transfer charges for data movement in and out of your SQL Database instance. Дополнительные сведения см. на странице [цен на базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/).
+Плата за саму службу синхронизация данных SQL не взимается. Однако вы по-прежнему получаете оплату за передачу данных для перемещения данных в экземпляре базы данных SQL и из него. Дополнительные сведения см. на странице [цен на базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/).
 
 ### <a name="what-regions-support-data-sync"></a>Какие регионы поддерживают синхронизацию данных?
 
@@ -190,7 +190,7 @@ There's no charge for the SQL Data Sync service itself. However, you still colle
 - Если подписки принадлежат к одному клиенту и у вас есть разрешения на все подписки, то на портале Azure можно настроить группу синхронизации.
 - В противном случае необходимо использовать PowerShell, чтобы добавить участников синхронизации, которые принадлежат к другой подписке.
 
-### <a name="can-i-use-data-sync-to-sync-between-sql-databases-that-belong-to-different-clouds-like-azure-public-cloud-and-azure-china-21vianet"></a>Can I use Data Sync to sync between SQL Databases that belong to different clouds (like Azure Public Cloud and Azure China 21Vianet)
+### <a name="can-i-use-data-sync-to-sync-between-sql-databases-that-belong-to-different-clouds-like-azure-public-cloud-and-azure-china-21vianet"></a>Можно ли использовать синхронизацию данных для синхронизации между базами данных SQL, которые принадлежат разным облакам (например, общедоступное облако Azure и Azure Китая 21Vianet)
 
 Да. Вы можете использовать службу синхронизации данных для синхронизации между Базами данных SQL, которые принадлежат к разным облакам. Для этого с помощью PowerShell необходимо добавить участников синхронизации, которые принадлежат к разным подпискам.
 
@@ -200,7 +200,7 @@ There's no charge for the SQL Data Sync service itself. However, you still colle
 
 ### <a name="should-i-use-sql-data-sync-to-back-up-and-restore-my-databases"></a>Следует ли использовать Синхронизацию данных SQL для резервного копирования и восстановления баз данных?
 
-It isn't recommended to use SQL Data Sync to create a backup of your data. You can't back up and restore to a specific point in time because SQL Data Sync synchronizations are not versioned. Furthermore, SQL Data Sync does not back up other SQL objects, such as stored procedures, and doesn't do the equivalent of a restore operation quickly.
+Не рекомендуется использовать синхронизация данных SQL для создания резервной копии данных. Нельзя выполнять резервное копирование и восстановление на конкретный момент времени, так как синхронизация данных SQL синхронизации не имеют версий. Кроме того, синхронизация данных SQL не выполняет резервное копирование других объектов SQL, например хранимых процедур, и не позволяет быстро выполнить операцию восстановления.
 
 Один из рекомендуемых способов резервного копирования описан в статье [Копирование базы данных SQL Azure](sql-database-copy.md).
 
@@ -213,30 +213,30 @@ It isn't recommended to use SQL Data Sync to create a backup of your data. You c
 
 Да. Синхронизация данных SQL поддерживает параметры сортировки в следующих сценариях.
 
-- If the selected sync schema tables aren't already in your hub or member databases, then when you deploy the sync group, the service automatically creates the corresponding tables and columns with the collation settings selected in the empty destination databases.
+- Если выбранные таблицы схемы синхронизации еще не находятся в базах данных концентратора или элемента, то при развертывании группы синхронизации служба автоматически создает соответствующие таблицы и столбцы с параметрами сортировки, выбранными в пустых целевых базах данных.
 - Если синхронизируемые таблицы уже существуют как в центральной базе данных, так и в рядовых базах данных, синхронизация данных SQL требует, чтобы столбцы первичного ключа имели одинаковые параметры сортировки в центральной базе данных и рядовых базах данных, для успешного развертывания группы синхронизации. Для столбцов, отличных от столбцов первичного ключа, на параметры сортировки нет ограничений.
 
 ### <a name="is-federation-supported-in-sql-data-sync"></a>Поддерживается ли федерация в Синхронизации данных SQL?
 
-Корневая база данных федерации может использоваться в службе синхронизации данных SQL без каких-либо ограничений. You can't add the Federated Database endpoint to the current version of SQL Data Sync.
+Корневая база данных федерации может использоваться в службе синхронизации данных SQL без каких-либо ограничений. Невозможно добавить конечную точку федеративной базы данных в текущую версию синхронизация данных SQL.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 ### <a name="update-the-schema-of-a-synced-database"></a>Обновление схемы синхронизированной базы данных
 
-Вам нужно обновить схему базы данных в группе синхронизации? Schema changes aren't automatically replicated. Некоторые решения описаны в следующих статьях:
+Вам нужно обновить схему базы данных в группе синхронизации? Изменения схемы не реплицируются автоматически. Некоторые решения описаны в следующих статьях:
 
 - [Автоматическая репликация изменений схемы при синхронизации данных SQL Azure](sql-database-update-sync-schema.md)
 - [Использование PowerShell для обновления схемы синхронизации в существующей группе синхронизации](scripts/sql-database-sync-update-schema.md)
 
-### <a name="monitor-and-troubleshoot"></a>Мониторинг и устранение неисправностей
+### <a name="monitor-and-troubleshoot"></a>Мониторинг и устранение неполадок
 
-Is SQL Data Sync doing as expected? Сведения об отслеживании действий и устранении неполадок см. в следующих статьях:
+Синхронизация данных SQL выполнить так, как ожидалось? Сведения об отслеживании действий и устранении неполадок см. в следующих статьях:
 
-- [Monitor Azure SQL Data Sync with Azure Monitor logs](sql-database-sync-monitor-oms.md)
+- [Мониторинг синхронизация данных SQL Azure с помощью журналов Azure Monitor](sql-database-sync-monitor-oms.md)
 - [Устранение неполадок с синхронизацией данных SQL Azure (предварительная версия)](sql-database-troubleshoot-data-sync.md)
 
-### <a name="learn-more-about-azure-sql-database"></a>Подробнее о базе данных SQL Azure
+### <a name="learn-more-about-azure-sql-database"></a>См. дополнительные сведения о Базе данных SQL Azure
 
 Дополнительные сведения о Базе данных SQL Azure см. в следующих статьях:
 

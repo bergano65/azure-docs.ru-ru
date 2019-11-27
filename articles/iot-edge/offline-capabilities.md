@@ -14,63 +14,63 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/24/2019
 ms.locfileid: "74456890"
 ---
-# <a name="understand-extended-offline-capabilities-for-iot-edge-devices-modules-and-child-devices"></a>Understand extended offline capabilities for IoT Edge devices, modules, and child devices
+# <a name="understand-extended-offline-capabilities-for-iot-edge-devices-modules-and-child-devices"></a>Общие сведения о расширенных возможностях автономного режима для IoT Edge устройств, модулей и дочерних устройств
 
-Azure IoT Edge supports extended offline operations on your IoT Edge devices, and enables offline operations on non-IoT Edge child devices too. Пока у устройства IoT Edge есть возможность подключиться к центру Интернета вещей, оно и его дочерние устройства могут продолжать работу с нестабильным подключением к Интернету или даже без него. 
+Azure IoT Edge поддерживает расширенные автономные операции на устройствах IoT Edge, а также позволяет выполнять автономные операции на дочерних устройствах, отличных от IoT Edge. Пока у устройства IoT Edge есть возможность подключиться к центру Интернета вещей, оно и его дочерние устройства могут продолжать работу с нестабильным подключением к Интернету или даже без него. 
 
 
-## <a name="how-it-works"></a>Принципы работы
+## <a name="how-it-works"></a>Принцип работы
 
 Когда устройство IoT Edge переходит в автономный режим, центр IoT Edge выполняет три роли. Во-первых, он хранит все сообщения, которые необходимо отправить, до тех пор, пока соединение с устройством не будет восстановлено. Во-вторых, он выступает от имени центра Интернета вещей и проверяет подлинность модулей и дочерних устройств, чтобы они продолжали работу. В-третьих, он обеспечивает связь между дочерними устройствами, которая обычно проходит через центр Интернета вещей. 
 
 В следующем примере показано, как IoT Edge работает в автономном режиме:
 
-1. **Configure devices**
+1. **Настройка устройств**
 
-   Функция автономной работы включена на устройствах IoT Edge автоматически. Чтобы дать эту возможность другим устройствам Интернета вещей, необходимо объявить отношение "родитель-дочерний элемент" между устройствами в центре Интернета вещей. Then, you configure the child devices to trust their assigned parent device and route the device-to-cloud communications through the parent as a gateway. 
+   Функция автономной работы включена на устройствах IoT Edge автоматически. Чтобы дать эту возможность другим устройствам Интернета вещей, необходимо объявить отношение "родитель-дочерний элемент" между устройствами в центре Интернета вещей. Затем следует настроить дочерние устройства, чтобы они доверяли назначенному им родительскому устройству, и направить обмен данными между устройством и облаком через родительский сервер в качестве шлюза. 
 
-2. **Sync with IoT Hub**
+2. **Синхронизация с центром Интернета вещей**
 
    Хотя бы один раз после установки среды выполнения IoT Edge необходимо подключить устройство IoT Edge к сети для синхронизации с центром Интернета вещей. Во время синхронизации устройство IoT Edge получает сведения о назначенных ему дочерних устройствах. Устройство IoT Edge безопасно обновляет свой локальный кэш, чтобы можно было продолжать работу автономно, и извлекает параметры для локального хранения сообщений телеметрии. 
 
-3. **Go offline**
+3. **Переход в автономный режим**
 
    При отключении от центра Интернета вещей устройств IoT Edge его развернутые модули и любые дочерние устройства Интернета вещей могут работать бесконечно. Модули и дочерние устройства могут запускаться и перезапускаться с прохождением аутентификации в центре IoT Edge в автономном режиме. Восходящий поток телеметрии в центр Интернета вещей хранится локально. Обмен данными между модулями или дочерними устройствами Интернета вещей поддерживается через прямые методы или сообщения. 
 
-4. **Reconnect and resync with IoT Hub**
+4. **Повторное подключение и повторная синхронизация с центром Интернета вещей**
 
    После восстановления связи с центром Интернета вещей устройство IoT Edge будет снова синхронизировано. Локально хранимые сообщения доставляются в том же порядке, в котором они были сохранены. Все различия между требуемыми и сообщаемыми свойствами модулей и устройств будут согласованы. Устройство IoT Edge передает все изменения в свои назначенные дочерние устройства.
 
 ## <a name="restrictions-and-limits"></a>Ограничения
 
-The extended offline capabilities described in this article are available in [IoT Edge version 1.0.7 or higher](https://github.com/Azure/azure-iotedge/releases). Более ранние версии имеют подмножество автономных функций. Существующие устройства IoT Edge без расширенных возможностей автономной работы невозможно обновить, изменив версию среды выполнения. Необходимо изменить их конфигурацию с использованием нового удостоверения устройства IoT Edge, чтобы использовать эти функции. 
+Возможности расширенного автономного режима, описанные в этой статье, доступны в [IOT Edge версии 1.0.7 или более поздней](https://github.com/Azure/azure-iotedge/releases). Более ранние версии имеют подмножество автономных функций. Существующие устройства IoT Edge без расширенных возможностей автономной работы невозможно обновить, изменив версию среды выполнения. Необходимо изменить их конфигурацию с использованием нового удостоверения устройства IoT Edge, чтобы использовать эти функции. 
 
 Расширенная поддержка автономной работы доступна во всех регионах, где есть Центр Интернета вещей, **за исключением** региона "Восточная часть США".
 
-Only non-IoT Edge devices can be added as child devices. 
+В качестве дочерних устройств можно добавлять только устройства, не относящиеся к IoT Edge. 
 
-IoT Edge devices and their assigned child devices can function indefinitely offline after the initial, one-time sync. However, storage of messages depends on the time to live (TTL) setting and the available disk space for storing the messages. 
+IoT Edge устройства и назначенные им дочерние устройства могут работать в неопределенном режиме вне сети после первоначальной однократной синхронизации. Однако хранение сообщений зависит от настройки срока жизни (TTL) и свободного места на диске для хранения сообщений. 
 
-## <a name="set-up-parent-and-child-devices"></a>Set up parent and child devices
+## <a name="set-up-parent-and-child-devices"></a>Настройка родительских и дочерних устройств
 
-For an IoT Edge device to extend its extended offline capabilities to child IoT devices, you need to complete two steps. First, declare the parent-child relationships in the Azure portal. Second, create a trust relationship between the parent device and any child devices, then configure device-to-cloud communications to go through the parent as a gateway. 
+Для расширения возможностей расширенного автономного режима до дочерних устройств IoT на IoT Edge устройстве необходимо выполнить два действия. Сначала объявите связи типа «родители-потомки» в портал Azure. Во-вторых, создайте отношение доверия между родительским устройством и любыми дочерними устройствами, а затем настройте обмен данными между устройством и облаком, чтобы сделать его родительским в качестве шлюза. 
 
 ### <a name="assign-child-devices"></a>Назначение дочерних устройств
 
-Child devices can be any non-IoT Edge device registered to the same IoT Hub. Parent devices can have multiple child devices, but a child device only has one parent. There are three options to set child devices to an edge device: through the Azure portal, using the Azure CLI, or using the IoT Hub service SDK. 
+Дочерние устройства могут быть любыми устройствами, не IoT Edge, зарегистрированными в одном центре Интернета вещей. У родительских устройств может быть несколько дочерних устройств, но у дочернего устройства есть только один родительский. Существует три варианта установки дочерних устройств на пограничном устройстве: через портал Azure, с помощью Azure CLI или с помощью пакета SDK для службы центра Интернета вещей. 
 
-The following sections provide examples of how you can declare the parent/child relationship in IoT Hub for existing IoT devices. If you're creating new device identities for your child devices, see [Authenticate a downstream device to Azure IoT Hub](how-to-authenticate-downstream-device.md) for more information.
+В следующих разделах приведены примеры объявления отношений "родители-потомки" в центре Интернета вещей для существующих устройств IoT. Дополнительные сведения о создании новых удостоверений устройств для дочерних устройств см. в статье [Проверка подлинности подчиненного устройства в центре Интернета вещей Azure](how-to-authenticate-downstream-device.md) .
 
-#### <a name="option-1-iot-hub-portal"></a>Option 1: IoT Hub Portal
+#### <a name="option-1-iot-hub-portal"></a>Вариант 1. портал центра Интернета вещей
 
-You can declare the parent-child relationship when creating a new device. Or for existing devices, you can declare the relationship from the device details page of either the parent IoT Edge device or the child IoT device. 
+Вы можете объявить отношение "родители-потомки" при создании нового устройства. Или для существующих устройств можно объявить связь со страницы сведений об устройстве либо родительского IoT Edge устройства, либо дочернего устройства Интернета вещей. 
 
    ![Управление дочерними устройствами на странице сведений об устройстве IoT Edge](./media/offline-capabilities/manage-child-devices.png)
 
 
-#### <a name="option-2-use-the-az-command-line-tool"></a>Option 2: Use the `az` command-line tool
+#### <a name="option-2-use-the-az-command-line-tool"></a>Вариант 2. Использование программы командной строки `az`
 
-Using the [Azure command-line interface](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) with [IoT extension](https://github.com/azure/azure-iot-cli-extension) (v0.7.0 or newer), you can manage parent child relationships with the [device-identity](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity?view=azure-cli-latest) subcommands. The example below uses a query to assign all non-IoT Edge devices in the hub to be child devices of an IoT Edge device. 
+Используя [интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) с [расширением Интернета вещей](https://github.com/azure/azure-iot-cli-extension) (v 0.7.0 или более поздней версии), можно управлять связями родительского дочернего элемента с помощью подкоманд [удостоверения устройства](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity?view=azure-cli-latest) . В примере ниже запрос используется для назначения всех устройств, не являющихся IoT Edge, в концентраторе дочерними устройствами устройства IoT Edge. 
 
 ```shell
 # Set IoT Edge parent device
@@ -93,35 +93,35 @@ az iot hub device-identity add-children \
   --subscription replace-with-sub-name 
 ```
 
-You can modify the [query](../iot-hub/iot-hub-devguide-query-language.md) to select a different subset of devices. The command may take several seconds if you specify a large set of devices.
+Можно изменить [запрос](../iot-hub/iot-hub-devguide-query-language.md) , чтобы выбрать другое подмножество устройств. Выполнение команды может занять несколько секунд, если указать большой набор устройств.
 
-#### <a name="option-3-use-iot-hub-service-sdk"></a>Option 3: Use IoT Hub Service SDK 
+#### <a name="option-3-use-iot-hub-service-sdk"></a>Вариант 3. Использование пакета SDK службы центра Интернета вещей 
 
-Finally, you can manage parent child relationships programmatically using either C#, Java or Node.js IoT Hub Service SDK. Here is an [example of assigning a child device](https://aka.ms/set-child-iot-device-c-sharp) using the C# SDK.
+Наконец, можно управлять родительскими дочерними связями C#программно с помощью пакета SDK для службы центра Интернета вещей Java или Node. js. Ниже приведен [Пример назначения дочернего устройства](https://aka.ms/set-child-iot-device-c-sharp) с помощью C# пакета SDK.
 
-### <a name="set-up-the-parent-device-as-a-gateway"></a>Set up the parent device as a gateway
+### <a name="set-up-the-parent-device-as-a-gateway"></a>Настройка родительского устройства в качестве шлюза
 
-You can think of a parent/child relationship as a transparent gateway, where the child device has its own identity in IoT Hub but communicates through the cloud via its parent. For secure communication, the child device needs to be able to verify that the parent device comes from a trusted source. Otherwise, third-parties could set up malicious devices to impersonate parents and intercept communications. 
+Отношение "родители-потомки" можно считать прозрачным шлюзом, где дочернее устройство имеет собственное удостоверение в центре Интернета вещей, но взаимодействует через облако через его родительский узел. Для безопасного взаимодействия дочернее устройство должно иметь возможность убедиться, что родительское устройство поступает из надежного источника. В противном случае сторонние устройства могут настроить для олицетворения родителей и перехвата взаимодействий с вредоносными устройствами. 
 
-One way to create this trust relationship is described in detail in the following articles: 
-* [Настройка устройства IoT Edge в качестве прозрачного шлюза](how-to-create-transparent-gateway.md).
-* [Connect a downstream (child) device to an Azure IoT Edge gateway](how-to-connect-downstream-device.md)
+Один из способов создания этого отношения доверия подробно описан в следующих статьях: 
+* [Настройка устройства IoT Edge для использования в качестве прозрачного шлюза](how-to-create-transparent-gateway.md)
+* [Подключение подчиненного (дочернего) устройства к шлюзу Azure IoT Edge](how-to-connect-downstream-device.md)
 
 ## <a name="specify-dns-servers"></a>Указание DNS-серверов 
 
-To improve robustness, it is highly recommended you specify the DNS server addresses used in your environment. To set your DNS server for IoT Edge, see the resolution for [Edge Agent module continually reports 'empty config file' and no modules start on device](troubleshoot.md#edge-agent-module-continually-reports-empty-config-file-and-no-modules-start-on-the-device) in the troubleshooting article.
+Для повышения надежности настоятельно рекомендуется указать адреса DNS-серверов, используемые в вашей среде. Сведения о настройке DNS-сервера для IoT Edge см. в разделе разрешение [модуля агента ребра непрерывно сообщает о пустом файле конфигурации и не запускайте модули на устройстве](troubleshoot.md#edge-agent-module-continually-reports-empty-config-file-and-no-modules-start-on-the-device) в статье Устранение неполадок.
 
 ## <a name="optional-offline-settings"></a>Дополнительные параметры автономной работы
 
-If your devices go offline, the IoT Edge parent device stores all device-to-cloud messages until the connection is reestablished. The IoT Edge hub module manages the storage and forwarding of offline messages. For devices that may go offline for extended periods of time, optimize performance by configuring two IoT Edge hub settings. 
+Если устройства переходят в автономный режим, IoT Edge родительское устройство сохраняет все сообщения, отправляемые с устройства в облако, до тех пор, пока подключение не будет восстановлено. Модуль IoT Edge концентратора управляет хранением и пересылкой автономных сообщений. Для устройств, которые могут переключиться в автономный режим в течение продолжительного периода времени, оптимизируйте производительность, настроив два параметра центра IoT Edge. 
 
-First, increase the time to live setting so that the IoT Edge hub will keep messages long enough for your device to reconnect. Затем добавьте дополнительное место на диске для хранения сообщений. 
+Во-первых, увеличьте время жизни, чтобы центр IoT Edge сохранит сообщения достаточно долго для того, чтобы устройство подключится. Затем добавьте дополнительное место на диске для хранения сообщений. 
 
 ### <a name="time-to-live"></a>Срок жизни
 
-Срок жизни — это период времени (в секундах), в течение которого сообщение ожидает доставки, прежде чем срок его действия истечет. По умолчанию это 7200 секунд (два часа). The maximum value is only limited by the maximum value of an integer variable, which is around 2 billion. 
+Срок жизни — это период времени (в секундах), в течение которого сообщение ожидает доставки, прежде чем срок его действия истечет. По умолчанию это 7200 секунд (два часа). Максимальное значение ограничивается только максимальным значением целочисленной переменной, которое обходится около 2 000 000 000. 
 
-Этот параметр является требуемым свойством центра IoT Edge, которое хранится в двойнике модуля. You can configure it in the Azure portal or directly in the deployment manifest. 
+Этот параметр является требуемым свойством центра IoT Edge, которое хранится в двойнике модуля. Его можно настроить в портал Azure или непосредственно в манифесте развертывания. 
 
 ```json
 "$edgeHub": {
@@ -135,14 +135,14 @@ First, increase the time to live setting so that the IoT Edge hub will keep mess
 }
 ```
 
-### <a name="host-storage-for-system-modules"></a>Host storage for system modules
+### <a name="host-storage-for-system-modules"></a>Хранилище узлов для системных модулей
 
-Messages and module state information are stored in the IoT Edge hub's local container filesystem by default. For improved reliability, especially when operating offline, you can also dedicate storage on the host IoT Edge device. For more information, see [Give modules access to a device's local storage](how-to-access-host-storage-from-module.md)
+Сообщения и сведения о состоянии модуля хранятся в локальной файловой системе контейнера IoT Edge по умолчанию. Для повышения надежности, особенно при работе в автономном режиме, можно также выделить хранилище на узле IoT Edge устройстве. Дополнительные сведения см. в разделе [предоставление модулям доступа к локальному хранилищу устройства](how-to-access-host-storage-from-module.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Learn more about how to set up a transparent gateway for your parent/child device connections: 
+Дополнительные сведения о настройке прозрачного шлюза для подключений между родительскими и дочерними устройствами: 
 
-* [Настройка устройства IoT Edge в качестве прозрачного шлюза](how-to-create-transparent-gateway.md).
+* [Настройка устройства IoT Edge для использования в качестве прозрачного шлюза](how-to-create-transparent-gateway.md)
 * [Аутентификация подчиненного устройства в Центре Интернета вещей](how-to-authenticate-downstream-device.md)
 * [Connect a downstream device to an Azure IoT Edge gateway](how-to-connect-downstream-device.md) (Подключение подчиненного устройства к шлюзу Azure IoT Edge)

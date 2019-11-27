@@ -1,6 +1,6 @@
 ---
-title: Managed identity in ACR task
-description: Enable a managed identity for Azure Resources in an Azure Container Registry task to allow the task to access other Azure resources including other private container registries.
+title: Управляемое удостоверение в задаче контроля доступа
+description: Включите управляемое удостоверение для ресурсов Azure в задаче реестра контейнеров Azure, чтобы разрешить этой задаче доступ к другим ресурсам Azure, включая другие закрытые реестры контейнеров.
 services: container-registry
 author: dlepow
 manager: gwallace
@@ -15,44 +15,44 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/24/2019
 ms.locfileid: "74454734"
 ---
-# <a name="use-an-azure-managed-identity-in-acr-tasks"></a>Use an Azure-managed identity in ACR Tasks 
+# <a name="use-an-azure-managed-identity-in-acr-tasks"></a>Использование удостоверения, управляемого Azure, в задачах контроля доступа 
 
-Enable a [managed identity for Azure resources](../active-directory/managed-identities-azure-resources/overview.md) in an [ACR task](container-registry-tasks-overview.md), so the task can access other Azure resources, without needing to provide or manage credentials. For example, use a managed identity to enable a task step to pull or push container images to another registry.
+Включите [управляемое удостоверение для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md) в [задаче записи контроля](container-registry-tasks-overview.md)доступа, чтобы задача могла получить доступ к другим ресурсам Azure без необходимости предоставлять учетные данные или управлять ими. Например, можно использовать управляемое удостоверение, чтобы сделать шаг задачи запрашивать или отправлять образы контейнеров в другой реестр.
 
-In this article, you learn how to use the Azure CLI to enable a user-assigned or system-assigned managed identity on an ACR task. You can use the Azure Cloud Shell or a local installation of the Azure CLI. If you'd like to use it locally, version 2.0.68 or later is required. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
+Из этой статьи вы узнаете, как использовать Azure CLI для включения управляемого удостоверения, назначенного пользователем или системой, в задаче записи контроля доступа. Можно использовать Azure Cloud Shell или локальную установку Azure CLI. Если вы хотите использовать его локально, требуется версия 2.0.68 или более поздняя. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
-For scenarios to access secured resources from an ACR task using a managed identity, see:
+Сценарии для доступа к защищенным ресурсам из задачи контроля доступа с помощью управляемого удостоверения см. в следующих статьях:
 
-* [Cross-registry authentication](container-registry-tasks-cross-registry-authentication.md)
-* [Access external resources with secrets stored in Azure Key Vault](container-registry-tasks-authentication-key-vault.md)
+* [Проверка подлинности между реестрами](container-registry-tasks-cross-registry-authentication.md)
+* [Доступ к внешним ресурсам с помощью секретов, хранящихся в Azure Key Vault](container-registry-tasks-authentication-key-vault.md)
 
 ## <a name="why-use-a-managed-identity"></a>Для чего нужны управляемые удостоверения?
 
-A managed identity for Azure resources provides selected Azure services with an automatically managed identity in Azure Active Directory (Azure AD). You can configure an ACR task with a managed identity so that the task can access other secured Azure resources, without passing credentials in the task steps.
+Управляемое удостоверение для ресурсов Azure предоставляет выбранные службы Azure с автоматически управляемым удостоверением в Azure Active Directory (Azure AD). Вы можете настроить задачу контроля учетных записей с помощью управляемого удостоверения, чтобы задача могла получать доступ к другим защищенным ресурсам Azure без передачи учетных данных в шагах задач.
 
 Управляемые удостоверения бывают двух типов:
 
-* *User-assigned identities*, which you can assign to multiple resources and persist for as long as you want. Назначаемые пользователем удостоверения сейчас доступны в предварительной версии.
+* *Назначенные пользователю удостоверения*, которые можно назначить нескольким ресурсам и сохранять в течение всего времени. Назначаемые пользователем удостоверения сейчас доступны в предварительной версии.
 
-* A *system-assigned identity*, which is unique to a specific resource such as an ACR task and lasts for the lifetime of that resource.
+* *Назначенное системой удостоверение*, которое является уникальным для конкретного ресурса, например задачи записи контроля доступа и продолжается в течение времени существования этого ресурса.
 
-You can enable either or both types of identity in an ACR task. Grant the identity access to another resource, just like any security principal. When the task runs, it uses the identity to access the resource in any task steps that require access.
+В задаче контроля доступа можно включить один или оба типа удостоверений. Предоставьте удостоверению доступ к другому ресурсу, как и любому субъекту безопасности. При выполнении задачи она использует удостоверение для доступа к ресурсу во всех шагах задач, требующих доступа.
 
-## <a name="steps-to-use-a-managed-identity"></a>Steps to use a managed identity
+## <a name="steps-to-use-a-managed-identity"></a>Действия по использованию управляемого удостоверения
 
-Follow these high-level steps to use a managed identity with an ACR task.
+Выполните эти высокоуровневые действия, чтобы использовать управляемое удостоверение с задачей контроля доступа.
 
-### <a name="1-optional-create-a-user-assigned-identity"></a>1. (Optional) Create a user-assigned identity
+### <a name="1-optional-create-a-user-assigned-identity"></a>1. Создание назначенного пользователем удостоверения (необязательно)
 
-If you plan to use a user-assigned identity, you can use an existing identity. Or, create the identity using the Azure CLI or other Azure tools. For example, use the [az identity create][az-identity-create] command. 
+Если вы планируете использовать назначенное пользователем удостоверение, можно использовать существующее удостоверение. Или создайте удостоверение с помощью Azure CLI или других средств Azure. Например, используйте команду [AZ Identity Create][az-identity-create] . 
 
-If you plan to use only a system-assigned identity, skip this step. You can create a system-assigned identity when you create the ACR task.
+Если вы планируете использовать только назначенное системой удостоверение, пропустите этот шаг. При создании задачи контроля учетных записей можно создать удостоверение, назначенное системой.
 
-### <a name="2-enable-identity-on-an-acr-task"></a>2. Enable identity on an ACR task
+### <a name="2-enable-identity-on-an-acr-task"></a>2. Включение удостоверения для задачи записи контроля доступа
 
-When you create an ACR task, optionally enable a user-assigned identity, a system-assigned identity, or both. For example, pass the `--assign-identity` parameter when you run the [az acr task create][az-acr-task-create] command in the Azure CLI.
+При создании задачи записи контроля доступа при необходимости можно включить пользовательское удостоверение, назначенное системой удостоверение или и то, и другое. Например, передайте параметр `--assign-identity` при выполнении команды AZ запись [контроля][az-acr-task-create] доступа в Azure CLI.
 
-To enable a system-assigned identity, pass `--assign-identity` with no value or `assign-identity [system]`. The following command creates a Linux task from a public GitHub repository which builds the `hello-world` image with a Git commit trigger and with a system-assigned managed identity:
+Чтобы включить назначенное системой удостоверение, передайте `--assign-identity` без значения или `assign-identity [system]`. Следующая команда создает задачу Linux из общедоступного репозитория GitHub, который создает `hello-world` образ с триггером фиксации Git и с управляемым удостоверением, назначенным системой:
 
 ```azurecli
 az acr task create \
@@ -63,7 +63,7 @@ az acr task create \
     --assign-identity
 ```
 
-To enable a user-assigned identity, pass `--assign-identity` with a value of the *resource ID* of the identity. The following command creates a Linux task from a public GitHub repository which builds the `hello-world` image with a Git commit trigger and with a user-assigned managed identity:
+Чтобы включить назначенное пользователем удостоверение, передайте `--assign-identity` со значением *идентификатора ресурса* удостоверения. Следующая команда создает задачу Linux из общедоступного репозитория GitHub, который создает `hello-world` образ с триггером фиксации Git и с управляемым удостоверением, назначаемым пользователем:
 
 ```azurecli
 az acr task create \
@@ -74,33 +74,33 @@ az acr task create \
     --assign-identity <resourceID>
 ```
 
-You can get the resource ID of the identity by running the [az identity show][az-identity-show] command. The resource ID for the ID *myUserAssignedIdentity* in resource group *myResourceGroup* is of the form. 
+Идентификатор ресурса для удостоверения можно получить, выполнив команду [AZ Identity показывать][az-identity-show] . Идентификатор ресурса для идентификатора *мюсерассигнедидентити* в группе ресурсов *myResourceGroup* имеет форму. 
 
 ```
 "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/myUserAssignedIdentity"
 ```
 
-### <a name="3-grant-the-identity-permissions-to-access-other-azure-resources"></a>3. Grant the identity permissions to access other Azure resources
+### <a name="3-grant-the-identity-permissions-to-access-other-azure-resources"></a>3. Предоставьте разрешения удостоверениям для доступа к другим ресурсам Azure.
 
-Depending on the requirements of your task, grant the identity permissions to access other Azure resources. Примеры.
+В зависимости от требований задачи предоставьте удостоверениям разрешения на доступ к другим ресурсам Azure. Примеры таких ошибок:
 
-* Assign the managed identity a role with pull, push and pull, or other permissions to a target container registry in Azure. For a complete list of registry roles, see [Azure Container Registry roles and permissions](container-registry-roles.md). 
-* Assign the managed identity a role to read secrets in an Azure key vault.
+* Назначьте управляемому удостоверению роль с запросом на включение внесенных изменений, принудительную отправку и извлечение или другие разрешения для целевого реестра контейнеров в Azure. Полный список ролей реестра см. в статье [роли и разрешения реестра контейнеров Azure](container-registry-roles.md). 
+* Назначьте управляемому удостоверению роль для чтения секретов в хранилище ключей Azure.
 
-Use the [Azure CLI](../role-based-access-control/role-assignments-cli.md) or other Azure tools to manage role-based access to resources. For example, run the [az role assignment create][az-role-assignment-create] command to assign the identity a role to the identity. 
+Используйте [Azure CLI](../role-based-access-control/role-assignments-cli.md) или другие инструменты Azure для управления доступом на основе ролей к ресурсам. Например, выполните команду [AZ Role назначение Create][az-role-assignment-create] , чтобы назначить удостоверение роли удостоверению. 
 
-The following example assigns a managed identity the permissions to pull from a container registry. The command specifies the *service principal ID* of the identity and the *resource ID* of the target registry.
+В следующем примере управляемому удостоверению присваивается разрешение на извлечение из реестра контейнеров. Команда задает *идентификатор субъекта-службы* удостоверения и *идентификатор ресурса* целевого реестра.
 
 
 ```azurecli
 az role assignment create --assignee <servicePrincipalID> --scope <registryID> --role acrpull
 ```
 
-### <a name="4-optional-add-credentials-to-the-task"></a>4. (Optional) Add credentials to the task
+### <a name="4-optional-add-credentials-to-the-task"></a>4. Добавление учетных данных в задачу (необязательно)
 
-If your task pulls or pushes images to another Azure container registry, add credentials to the task for the identity to authenticate. Run the [az acr task credential add][az-acr-task-credential-add] command and pass the `--use-identity` parameter to add the identity's credentials to the task. 
+Если задача запрашивает или отправляет образы в другой реестр контейнеров Azure, добавьте в задачу учетные данные для проверки подлинности. Выполните команду [AZ запись контроля учетных данных][az-acr-task-credential-add] и передайте параметр `--use-identity`, чтобы добавить учетные данные удостоверения в задачу. 
 
-For example, to add credentials for a system-assigned identity to authenticate with the registry *targetregistry*, pass `use-identity [system]`:
+Например, чтобы добавить учетные данные для назначенного системой удостоверения для проверки подлинности в реестре *таржетрегистри*, передайте `use-identity [system]`:
 
 ```azurecli
 az acr task credential add \
@@ -110,7 +110,7 @@ az acr task credential add \
     --use-identity [system]
 ```
 
-To add credentials for a user-assigned identity to authenticate with the registry *targetregistry*, pass `use-identity` with a value of the *client ID* of the identity. Пример.
+Чтобы добавить учетные данные для назначенного пользователем удостоверения для проверки подлинности в реестре *таржетрегистри*, передайте `use-identity` со значением *идентификатора клиента* удостоверения. Например,
 
 ```azurecli
 az acr task credential add \
@@ -120,14 +120,14 @@ az acr task credential add \
     --use-identity <clientID>
 ```
 
-You can get the client ID of the identity by running the [az identity show][az-identity-show] command. The client ID is a GUID of the form `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
+Идентификатор клиента для удостоверения можно получить, выполнив команду [AZ Identity показывать][az-identity-show] . Идентификатор клиента является идентификатором GUID формы `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-In this article, you learned how to enable and use a user-assigned or system-assigned managed identity on an ACR task. For scenarios to access secured resources from an ACR task using a managed identity, see:
+В этой статье вы узнали, как включить и использовать назначенное пользователем или управляемое системой удостоверение для задачи контроля учетных записей. Сценарии для доступа к защищенным ресурсам из задачи контроля доступа с помощью управляемого удостоверения см. в следующих статьях:
 
-* [Cross-registry authentication](container-registry-tasks-cross-registry-authentication.md)
-* [Access external resources with secrets stored in Azure Key Vault](container-registry-tasks-authentication-key-vault.md)
+* [Проверка подлинности между реестрами](container-registry-tasks-cross-registry-authentication.md)
+* [Доступ к внешним ресурсам с помощью секретов, хранящихся в Azure Key Vault](container-registry-tasks-authentication-key-vault.md)
 
 
 <!-- LINKS - Internal -->

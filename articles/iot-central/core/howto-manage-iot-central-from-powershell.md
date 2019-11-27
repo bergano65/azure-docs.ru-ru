@@ -1,6 +1,6 @@
 ---
 title: Управление IoT Central в Azure PowerShell | Документация Майкрософт
-description: This article describes how to create and manage your IoT Central applications from Azure PowerShell.
+description: В этой статье описывается создание приложений IoT Central и управление ими из Azure PowerShell.
 services: iot-central
 ms.service: iot-central
 author: dominicbetts
@@ -19,11 +19,11 @@ ms.locfileid: "74480282"
 
 [!INCLUDE [iot-central-selector-manage](../../../includes/iot-central-selector-manage.md)]
 
-Instead of creating and managing IoT Central applications on the [Azure IoT Central application manager](https://aka.ms/iotcentral) website, you can use [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) to manage your applications.
+Вместо создания приложений IoT Central и управления ими на веб-сайте [диспетчера приложений Azure IOT Central](https://aka.ms/iotcentral) можно использовать [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) для управления приложениями.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
@@ -45,7 +45,7 @@ Install-Module Az.IotCentral
 
 ## <a name="create-an-application"></a>Создание приложения
 
-Используйте командлет [New-AzIotCentralApp](https://docs.microsoft.com/powershell/module/az.iotcentral/New-AzIotCentralApp), чтобы создать приложение IoT Central в подписке Azure. Пример.
+Используйте командлет [New-AzIotCentralApp](https://docs.microsoft.com/powershell/module/az.iotcentral/New-AzIotCentralApp), чтобы создать приложение IoT Central в подписке Azure. Например,
 
 ```powershell
 # Create a resource group for the IoT Central application
@@ -61,46 +61,46 @@ New-AzIotCentralApp -ResourceGroupName "MyIoTCentralResourceGroup" `
   -DisplayName "My Custom Display Name"
 ```
 
-The script first creates a resource group in the east US location for the application. В следующей таблице описаны параметры, используемые в команде **New-AzIotCentralApp**:
+Сначала сценарий создает группу ресурсов в регионе Восточная часть США для приложения. В следующей таблице описаны параметры, используемые в команде **New-AzIotCentralApp**:
 
-|Параметр         |Описание |
+|Параметр         |ОПИСАНИЕ |
 |------------------|------------|
 |ResourceGroupName |Группа ресурсов, в которой содержится приложение. В подписке уже должна существовать эта группа ресурсов. |
-|Location |По умолчанию этот командлет использует расположение из группы ресурсов. Currently, you can create an IoT Central application in the **United States**, **Australia**, **Asia Pacific**, or in the **Europe** locations.  |
-|Name              |Имя приложения на портале Azure. |
+|Место проведения |По умолчанию этот командлет использует расположение из группы ресурсов. В настоящее время можно создать IoT Centralное приложение в **США**, **Австралии**, **Азиатско-Тихоокеанский регион**или в **странах Европы** .  |
+|имя              |Имя приложения на портале Azure. |
 |Поддомен         |Поддомен в URL-адресе приложения. В примере URL-адрес приложения — https://mysubdomain.azureiotcentral.com. |
-|SKU               |В настоящее время единственное значение — **S1** (уровень "Стандартный"). Ознакомьтесь с разделом [Цены на Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/). |
-|Шаблон          | Шаблон приложения для использования. Дополнительные сведения приведены в таблице ниже. |
-|displayName       |Имя приложения, отображаемое на пользовательском интерфейсе. |
+|Sku               |В настоящее время единственное значение — **S1** (уровень "Стандартный"). Ознакомьтесь с разделом [Цены на Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/). |
+|шаблона          | Шаблон приложения для использования. Дополнительные сведения приведены в таблице ниже. |
+|DisplayName       |Имя приложения, отображаемое на пользовательском интерфейсе. |
 
-**Application templates with generally available features**
+**Шаблоны приложений с общедоступными функциями**
 
-| Имя шаблона            | Описание |
+| Имя шаблона            | ОПИСАНИЕ |
 | ------------------------ | ----------- |
 | iotc-default@1.0.0       | Создает пустое приложение, в которое необходимо добавить собственные шаблоны устройств и сами устройства. |
 | iotc-demo@1.0.0          | Создает приложение, содержащее шаблон устройства, созданный для охлаждаемого торгового автомата. Используйте этот шаблон, чтобы приступить к работе в Azure IoT Central. |
 | iotc-devkit-sample@1.0.0 | Создает приложение с готовыми шаблонами устройств, чтобы вы могли подключить устройство MXChip или Raspberry Pi. Используйте этот шаблон, если вы являетесь разработчиком устройства, работающим с одним из этих устройств. |
 
 
-**Application templates with public preview features**
+**Шаблоны приложений с функциями общедоступной предварительной версии**
 
-| Имя шаблона            | Описание |
+| Имя шаблона            | ОПИСАНИЕ |
 | ------------------------ | ----------- |
-| iotc-pnp-preview@1.0.0   | Creates an empty plug and play preview application for you to populate with your own device templates and devices. |
-| iotc-condition@1.0.0     | Creates an application with a in-store analytics – condition monitoring template. Use this template to connect and monitor store environment. |
-| iotc-consumption@1.0.0   | Creates an application with water consumption monitoring template. Use this template to monitor and control water flow. |
-| iotc-distribution@1.0.0  | Creates an application with a Digital distribution template. Use this template to improve warehouse output efficiency by digitalizing key assets and actions. |
-| iotc-inventory@1.0.0     | Creates an application with a smart inventory management template. Use this template to automate receiving, product movement, cycle counting, and tracking of sensors. |
-| iotc-logistics@1.0.0     | Creates an application with a Connected logistics template. Use this template to track your shipment in real-time across air, water and land with location and condition monitoring. |
-| iotc-meter@1.0.0         | Creates an application with smart meter monitoring template. Use this template to monitor energy consumption, network status, and identify trends to improve customer support and smart meter management.  |
-| iotc-patient@1.0.0       | Creates an application with continuous patient monitoring template. Use this template to extend patient care, re-admissions, and manage diseases. |
-| iotc-power@1.0.0         | Creates an application with solar panel monitoring template. Use this template to monitor solar panel status, energy generation trends. |
-| iotc-quality@1.0.0       | Creates an application with water quality monitoring template. Use this template to digitally monitor water quality.|
-| iotc-store@1.0.0         | Creates an application with a in-store analytics – checkout template. Use this template to monitor and manage the checkout flow inside your store. |
-| iotc-waste@1.0.0         | Creates an application with a Connected waste management template. Use this template to monitor waste bins and dispatch field operators. |
+| iotc-pnp-preview@1.0.0   | Создает пустое предварительное приложение Plug and Play для заполнения с помощью собственных шаблонов устройств и устройств. |
+| iotc-condition@1.0.0     | Создает приложение с шаблоном мониторинга "аналитика в магазине". Этот шаблон используется для подключения и мониторинга среды хранения. |
+| iotc-consumption@1.0.0   | Создает приложение с шаблоном мониторинга потребления воды. Этот шаблон используется для мониторинга потока воды и управления им. |
+| iotc-distribution@1.0.0  | Создает приложение с шаблоном цифрового распространения. Используйте этот шаблон, чтобы повысить эффективность вывода данных в хранилище, дигитализинг ключевые активы и действия. |
+| iotc-inventory@1.0.0     | Создает приложение с шаблоном управления интеллектуальным складом. Этот шаблон используется для автоматизации приема, перемещения продуктов, циклического подсчета и отслеживания датчиков. |
+| iotc-logistics@1.0.0     | Создает приложение с подключенным шаблоном логистики. Этот шаблон используется для отслеживания отгрузки в реальном времени в сети, вода и земли с мониторингом расположения и условий. |
+| iotc-meter@1.0.0         | Создает приложение с шаблоном интеллектуального мониторинга измерения. Этот шаблон используется для наблюдения за энергопотреблением, состоянием сети и выявления тенденций, повышающих эффективность поддержки клиентов и интеллектуального управления измерениями.  |
+| iotc-patient@1.0.0       | Создание приложения с непрерывным шаблоном наблюдения за пациентами. Используйте этот шаблон, чтобы расширить здравоохранение, повторное распространение и управление заболеваниях. |
+| iotc-power@1.0.0         | Создает приложение с шаблоном мониторинга солнечной панели. Этот шаблон используется для отслеживания состояния солнечной панели, тенденций создания энергии. |
+| iotc-quality@1.0.0       | Создает приложение с шаблоном мониторинга качества воды. Используйте этот шаблон для цифрового мониторинга качества воды.|
+| iotc-store@1.0.0         | Создает приложение с шаблоном "аналитика в магазине" — "извлечь". Этот шаблон используется для отслеживания потока извлечения в хранилище и управления им. |
+| iotc-waste@1.0.0         | Создает приложение с подключенным шаблоном управления отходами. Этот шаблон используется для отслеживания расходных ячеек и операторов полей диспетчеризации. |
 
 > [!NOTE]
-> The preview application templates are currently only available in the **Europe** and **United States** locations.
+> В настоящее время шаблоны приложений предварительной версии доступны только в **странах Европы** и **США** .
 
 ## <a name="view-your-iot-central-applications"></a>Просмотр приложений IoT Central
 
@@ -118,14 +118,14 @@ Set-AzIotCentralApp -Name "myiotcentralapp" `
 
 ## <a name="remove-an-application"></a>Удаление приложения
 
-Используйте командлет [Remove-AzIotCentralApp](https://docs.microsoft.com/powershell/module/az.iotcentral/Remove-AzIotCentralApp) для удаления приложения IoT Central. Пример.
+Используйте командлет [Remove-AzIotCentralApp](https://docs.microsoft.com/powershell/module/az.iotcentral/Remove-AzIotCentralApp) для удаления приложения IoT Central. Например,
 
 ```powershell
 Remove-AzIotCentralApp -ResourceGroupName "MyIoTCentralResourceGroup" `
  -Name "myiotcentralapp"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Вы узнали, как управлять приложениями Azure IoT Central в Azure PowerShell, а значит, вы готовы к следующему шагу:
 

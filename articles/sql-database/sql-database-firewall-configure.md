@@ -1,6 +1,6 @@
 ---
 title: Правила брандмауэра для IP-адресов
-description: Configure server-level IP firewall rules for a SQL database or SQL Data Warehouse firewall. Manage access and configure database-level IP firewall rules for a single or pooled database.
+description: Настройте правила брандмауэра IP на уровне сервера для базы данных SQL или брандмауэра хранилища данных SQL. Управление доступом и настройка правил брандмауэра для IP-адресов на уровне базы данных для отдельной базы данных или в составе пула.
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
@@ -19,142 +19,142 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "74481442"
 ---
-# <a name="azure-sql-database-and-azure-sql-data-warehouse-ip-firewall-rules"></a>Azure SQL Database and Azure SQL Data Warehouse IP firewall rules
+# <a name="azure-sql-database-and-azure-sql-data-warehouse-ip-firewall-rules"></a>Правила брандмауэра IP-адресов для базы данных SQL Azure и хранилища данных SQL Azure
 
 > [!NOTE]
-> This article applies to Azure SQL servers, and to both Azure SQL Database and Azure SQL Data Warehouse databases on an Azure SQL server. For simplicity, *SQL Database* is used to refer to both SQL Database and SQL Data Warehouse.
+> Эта статья относится к серверам SQL Azure и к базам данных SQL Azure и хранилищам данных SQL Azure на сервере Azure SQL Server. Для простоты *база данных SQL* используется для ссылки на базу данных SQL и хранилище данных SQL.
 
 > [!IMPORTANT]
-> Эта статья *не* относится к *Управляемому экземпляру Базы данных SQL Azure*. For information about network configuration, see [Connect your application to Azure SQL Database Managed Instance](sql-database-managed-instance-connect-app.md).
+> Эта статья *не* относится к *Управляемому экземпляру Базы данных SQL Azure*. Сведения о конфигурации сети см. [в статье подключение приложения к управляемый экземпляр базы данных SQL Azure](sql-database-managed-instance-connect-app.md).
 
-When you create a new Azure SQL server named *mysqlserver*, for example, the SQL Database firewall blocks all access to the public endpoint for the server (which is accessible at *mysqlserver.database.windows.net*).
+Например, при создании нового сервера SQL Azure с именем *MySQLServer*брандмауэр базы данных SQL блокирует доступ к общедоступной конечной точке сервера (который доступен по адресу *MySQLServer.Database.Windows.NET*).
 
 > [!IMPORTANT]
-> SQL Data Warehouse only supports server-level IP firewall rules. It doesn't support database-level IP firewall rules.
+> Хранилище данных SQL поддерживает только правила брандмауэра для IP-адресов уровня сервера. Правила брандмауэра для IP-адресов уровня базы данных не поддерживаются.
 
-## <a name="how-the-firewall-works"></a>How the firewall works
-Connection attempts from the internet and Azure must pass through the firewall before they reach your SQL server or SQL database, as the following diagram shows.
+## <a name="how-the-firewall-works"></a>Как работает брандмауэр
+Попытки подключения из Интернета и Azure должны проходить через брандмауэр перед достижением SQL Server или базы данных SQL, как показано на следующей схеме.
 
-   ![Firewall configuration diagram][1]
+   ![Схема конфигурации брандмауэра][1]
 
 ### <a name="server-level-ip-firewall-rules"></a>Правила брандмауэра для IP-адресов на уровне сервера
 
-  Эти правила разрешают клиентам доступ ко всему серверу Azure SQL Server, то есть ко всем базам данных на одном сервере Базы данных SQL. The rules are stored in the *master* database. You can have a maximum of 128 server-level IP firewall rules for an Azure SQL Server.
+  Эти правила разрешают клиентам доступ ко всему серверу Azure SQL Server, то есть ко всем базам данных на одном сервере Базы данных SQL. Правила хранятся в базе данных *master* . Вы можете использовать не более 128 правил брандмауэра IP на уровне сервера для SQL Server Azure.
   
-  You can configure server-level IP firewall rules by using the Azure portal, PowerShell, or Transact-SQL statements.
-  - To use the portal or PowerShell, you must be the subscription owner or a subscription contributor.
-  - To use Transact-SQL, you must connect to the SQL Database instance as the server-level principal login or as the Azure Active Directory administrator. (A server-level IP firewall rule must first be created by a user who has Azure-level permissions.)
+  Правила брандмауэра IP на уровне сервера можно настроить с помощью инструкций портал Azure, PowerShell или Transact-SQL.
+  - Чтобы использовать портал или PowerShell, необходимо быть владельцем подписки или участником подписки.
+  - Чтобы использовать Transact-SQL, необходимо подключиться к экземпляру базы данных SQL в качестве имени входа субъекта уровня сервера или администратора Azure Active Directory. (Правило брандмауэра IP уровня сервера должно быть создано пользователем, имеющим разрешения уровня Azure.)
 
 ### <a name="database-level-ip-firewall-rules"></a>Правила брандмауэра для IP-адресов на уровне базы данных
 
-  Эти правила разрешают клиентам доступ к определенным (защищенным) базам данных на одном сервере Базы данных SQL. You create the rules for each database (including the *master* database), and they're stored in the individual database.
+  Эти правила разрешают клиентам доступ к определенным (защищенным) базам данных на одном сервере Базы данных SQL. Правила создаются для каждой базы данных (включая базу данных *master* ) и хранятся в отдельной базе данных.
   
-  You can only create and manage database-level IP firewall rules for master and user databases by using Transact-SQL statements and only after you configure the first server-level firewall.
+  Создавать и администрировать правила брандмауэра IP уровня базы данных для баз данных master и User можно только с помощью инструкций Transact-SQL и только после настройки первого брандмауэра на уровне сервера.
   
-  If you specify an IP address range in the database-level IP firewall rule that's outside the range in the server-level IP firewall rule, only those clients that have IP addresses in the database-level range can access the database.
+  Если указать диапазон IP-адресов в правиле брандмауэра IP уровня базы данных, который находится за пределами диапазона в правиле брандмауэра IP на уровне сервера, то только те клиенты, у которых есть IP-адреса в диапазоне уровня базы данных, могут получить доступ к базе данных.
   
-  Для базы данных можно задать не более 128 правил брандмауэра для IP-адресов на уровне базы данных. For more information about configuring database-level IP firewall rules, see the example later in this article and see [sp_set_database_firewall_rule (Azure SQL Database)](https://msdn.microsoft.com/library/dn270010.aspx).
+  Для базы данных можно задать не более 128 правил брандмауэра для IP-адресов на уровне базы данных. Дополнительные сведения о настройке правил брандмауэра для IP-адресов на уровне базы данных см. в примере ниже в этой статье и см. в разделе [sp_set_database_firewall_rule (база данных SQL Azure)](https://msdn.microsoft.com/library/dn270010.aspx).
 
-### <a name="recommendations-for-how-to-set-firewall-rules"></a>Recommendations for how to set firewall rules
+### <a name="recommendations-for-how-to-set-firewall-rules"></a>Рекомендации по настройке правил брандмауэра
 
-We recommend that you use database-level IP firewall rules whenever possible. This practice enhances security and makes your database more portable. Use server-level IP firewall rules for administrators. Also use them when you have many databases that have the same access requirements, and you don't want to configure each database individually.
+При возможности рекомендуется использовать правила брандмауэра для IP-адресов уровня базы данных. Такой подход повышает безопасность и делает базу данных более переносимой. Используйте правила брандмауэра IP на уровне сервера для администраторов. Их также можно использовать при наличии большого количества баз данных, имеющих одинаковые требования к доступу, и вы не хотите настраивать каждую базу данных по отдельности.
 
 > [!NOTE]
 > Сведения о портативных базах данных в контексте непрерывности бизнес-процессов см. в разделе [Требования к проверке подлинности для аварийного восстановления](sql-database-geo-replication-security-config.md).
 
 ## <a name="server-level-versus-database-level-ip-firewall-rules"></a>Правила брандмауэра для IP-адресов уровня сервера и уровня базы данных
 
-*Should users of one database be fully isolated from another database?*
+*Следует ли полностью изолировать пользователей одной базы данных от другой?*
 
-If *yes*, use database-level IP firewall rules to grant access. This method avoids using server-level IP firewall rules, which permit access through the firewall to all databases. That would reduce the depth of your defenses.
+Если *Да*, используйте правила брандмауэра для IP-адресов на уровне базы данных, чтобы предоставить доступ. Этот метод позволяет избежать использования правил брандмауэра IP на уровне сервера, позволяющих получить доступ через брандмауэр ко всем базам данных. Это снизит глубину защиты.
 
-*Do users at the IP addresses need access to all databases?*
+*Требуются ли пользователям с IP-адресами доступ ко всем базам данных?*
 
-If *yes*, use server-level IP firewall rules to reduce the number of times that you have to configure IP firewall rules.
+Если *Да*, используйте правила брандмауэра IP на уровне сервера, чтобы сократить число попыток настройки правил брандмауэра IP.
 
-*Does the person or team who configures the IP firewall rules only have access through the Azure portal, PowerShell, or the REST API?*
+*Имеет ли пользователь или группа, которые настраивают правила брандмауэра IP, доступ только через портал Azure, PowerShell или REST API?*
 
-If so, you must use server-level IP firewall rules. Database-level IP firewall rules can only be configured through Transact-SQL.  
+В этом случае необходимо использовать правила брандмауэра для IP-адресов на уровне сервера. Правила брандмауэра IP-адресов уровня базы данных можно настроить только с помощью Transact-SQL.  
 
-*Is the person or team who configures the IP firewall rules prohibited from having high-level permission at the database level?*
+*Пользователь или группа, которые настраивают правила брандмауэра IP-адресов, не имеют разрешения высокого уровня на уровне базы данных?*
 
-If so, use server-level IP firewall rules. You need at least *CONTROL DATABASE* permission at the database level to configure database-level IP firewall rules through Transact-SQL.  
+Если это так, используйте правила брандмауэра IP на уровне сервера. Для настройки правил брандмауэра для IP-адресов уровня базы данных с помощью Transact-SQL требуется по крайней мере разрешение *Control Database* на уровне базы данных.  
 
-*Does the person or team who configures or audits the IP firewall rules centrally manage IP firewall rules for many (perhaps hundreds) of databases?*
+*Пользователь или группа, которые настраивают или подлежат аудиту правил брандмауэра IP-адресов, централизованно управляют правилами брандмауэра IP-адресов для многих (возможно, сотен) баз данных?*
 
-In this scenario, best practices are determined by your needs and environment. Правила брандмауэра для IP-адресов на уровне сервера проще настроить, но сценарии позволяют настроить правила уровня базы данных. And even if you use server-level IP firewall rules, you might need to audit database-level IP firewall rules to see if users with *CONTROL* permission on the database  create database-level IP firewall rules.
+В этом сценарии рекомендации определяются вашими потребностями и средой. Правила брандмауэра для IP-адресов на уровне сервера проще настроить, но сценарии позволяют настроить правила уровня базы данных. Даже если используются правила брандмауэра IP на уровне сервера, может потребоваться выполнить аудит правил брандмауэра для IP-адресов на уровне базы данных, чтобы узнать, есть ли пользователи с разрешением *Control* на базу данных создание правил брандмауэра для IP-адресов на уровне базы данных.
 
-*Can I use a mix of server-level and database-level IP firewall rules?*
+*Можно ли использовать правила брандмауэра IP уровня сервера и уровня базы данных?*
 
-Да. Some users, such as administrators, might need server-level IP firewall rules. А другим пользователям, например пользователям приложения базы данных, необходимы правила брандмауэра для IP-адресов на уровне базы данных.
+Да. Некоторым пользователям, например администраторам, могут потребоваться правила брандмауэра для IP-адресов на уровне сервера. А другим пользователям, например пользователям приложения базы данных, необходимы правила брандмауэра для IP-адресов на уровне базы данных.
 
 ### <a name="connections-from-the-internet"></a>Подключения через Интернет
 
-When a computer tries to connect to your database server from the internet, the firewall first checks the originating IP address of the request against the database-level IP firewall rules for the database that the connection requests.
+Когда компьютер пытается подключиться к серверу базы данных из Интернета, брандмауэр сначала проверяет исходный IP-адрес запроса по правилам брандмауэра IP уровня базы данных для базы данных, которую запрашивает соединение.
 
-- If the address is within a range that's specified in the database-level IP firewall rules, the connection is granted to the SQL database that contains the rule.
-- If the address isn't within a range in the database-level IP firewall rules, the firewall checks the server-level IP firewall rules. If the address is within a range that's in the server-level IP firewall rules, the connection is granted. Правила брандмауэра для IP-адресов на уровне сервера применяются ко всем базам данных SQL на сервере SQL Azure.  
-- If the address isn't within a range that's in any of the database-level or server-level IP firewall rules, the connection request fails.
+- Если адрес находится в диапазоне, указанном в правилах брандмауэра IP-адресов уровня базы данных, то соединение предоставляется базе данных SQL, содержащей правило.
+- Если адрес не входит в диапазон правил брандмауэра для IP-адресов уровня базы данных, брандмауэр проверяет правила брандмауэра IP-адресов на уровне сервера. Если адрес находится в диапазоне, который находится в правилах брандмауэра IP на уровне сервера, соединение предоставляется. Правила брандмауэра для IP-адресов на уровне сервера применяются ко всем базам данных SQL на сервере SQL Azure.  
+- Если адрес находится не в диапазоне, который находится в каком-либо из правил брандмауэра на уровне базы данных или на уровне сервера, запрос на подключение завершается ошибкой.
 
 > [!NOTE]
-> To access SQL Database from your local computer, ensure that the firewall on your network and local computer allow outgoing communication on TCP port 1433.
+> Чтобы получить доступ к базе данных SQL с локального компьютера, убедитесь, что брандмауэр в сети и локальный компьютер разрешают исходящие подключения через TCP-порт 1433.
 
-### <a name="connections-from-inside-azure"></a>Connections from inside Azure
+### <a name="connections-from-inside-azure"></a>Подключения из Azure
 
-To allow applications hosted inside Azure to connect to your SQL server, Azure connections must be enabled. When an application from Azure tries to connect to your database server, the firewall verifies that Azure connections are allowed. A firewall setting that has starting and ending IP addresses equal to *0.0.0.0* indicates that Azure connections are allowed. If the connection isn't allowed, the request doesn't reach the SQL Database server.
-
-> [!IMPORTANT]
-> This option configures the firewall to allow all connections from Azure, including connections from the subscriptions of other customers. If you select this option, make sure that your login and user permissions limit access to authorized users only.
-
-## <a name="create-and-manage-ip-firewall-rules"></a>Create and manage IP firewall rules
-
-You create the first server-level firewall setting by using the [Azure portal](https://portal.azure.com/) or programmatically by using [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.sql), [Azure CLI](https://docs.microsoft.com/cli/azure/sql/server/firewall-rule), or an Azure [REST API](https://docs.microsoft.com/rest/api/sql/firewallrules/createorupdate). You create and manage additional server-level IP firewall rules by using these methods or Transact-SQL.
+Чтобы разрешить приложениям, размещенным в Azure, подключаться к серверу SQL Server, необходимо включить подключения Azure. Когда приложение из Azure пытается подключиться к серверу базы данных, брандмауэр проверяет, разрешены ли подключения Azure. Параметр брандмауэра с начальным и конечным IP-адресами, равным *0.0.0.0* , указывает, что разрешены подключения Azure. Если соединение не разрешено, запрос не достигает сервера базы данных SQL.
 
 > [!IMPORTANT]
-> Database-level IP firewall rules can only be created and managed by using Transact-SQL.
+> Этот параметр позволяет настроить брандмауэр для разрешения всех подключений из Azure, включая подключения из подписок других клиентов. При выборе этого параметра убедитесь, что учетные данные и разрешения пользователя ограничивают доступ только для полномочных пользователей.
+
+## <a name="create-and-manage-ip-firewall-rules"></a>Создание правил брандмауэра IP-адресов и управление ими
+
+Первый параметр брандмауэра на уровне сервера создается с помощью [портал Azure](https://portal.azure.com/) или программным путем с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.sql), [Azure CLI](https://docs.microsoft.com/cli/azure/sql/server/firewall-rule)или [REST API](https://docs.microsoft.com/rest/api/sql/firewallrules/createorupdate)Azure. Вы создаете дополнительные правила брандмауэра IP на уровне сервера и управляете ими с помощью этих методов или Transact-SQL.
+
+> [!IMPORTANT]
+> Правила брандмауэра IP уровня базы данных могут создаваться и управляться только с помощью Transact-SQL.
 
 Для повышения производительности правила брандмауэра для IP-адресов на уровне сервера временно кэшируются на уровне базы данных. Сведения об обновлении кэша см. в статье [DBCC FLUSHAUTHCACHE (Transact-SQL)](https://msdn.microsoft.com/library/mt627793.aspx).
 
 > [!TIP]
 > Чтобы провести аудит изменений брандмауэра уровня сервера и уровня базы данных, можно использовать [аудит базы данных SQL](sql-database-auditing.md).
 
-### <a name="use-the-azure-portal-to-manage-server-level-ip-firewall-rules"></a>Use the Azure portal to manage server-level IP firewall rules
+### <a name="use-the-azure-portal-to-manage-server-level-ip-firewall-rules"></a>Использование портал Azure для управления правилами брандмауэра IP на уровне сервера
 
-To set a server-level IP firewall rule in the Azure portal, go to the overview page for your Azure SQL database or your SQL Database server.
+Чтобы задать правило брандмауэра IP на уровне сервера в портал Azure, перейдите на страницу обзора для базы данных SQL Azure или сервера базы данных SQL.
 
 > [!TIP]
 > Руководство см. в статье [Создание базы данных SQL Azure на портале Azure](sql-database-single-database-get-started.md).
 
-#### <a name="from-the-database-overview-page"></a>From the database overview page
+#### <a name="from-the-database-overview-page"></a>На странице "Обзор базы данных"
 
-1. To set a server-level IP firewall rule from the database overview page, select **Set server firewall** on the toolbar, as the following image shows. Откроется страница **параметров брандмауэра** для сервера Базы данных SQL.
+1. Чтобы задать правило брандмауэра IP на уровне сервера на странице Обзор базы данных, на панели инструментов выберите **задать брандмауэр сервера** , как показано на следующем рисунке. Откроется страница **параметров брандмауэра** для сервера Базы данных SQL.
 
-      ![Server IP firewall rule](./media/sql-database-get-started-portal/server-firewall-rule.png)
+      ![Правило брандмауэра IP-адреса сервера](./media/sql-database-get-started-portal/server-firewall-rule.png)
 
-2. Select **Add client IP** on the toolbar to add the IP address of the computer that you're using, and then select **Save**. Для текущего IP-адреса будет создано правило брандмауэра для IP-адресов на уровне сервера.
+2. Выберите **Добавить IP-адрес клиента** на панели инструментов для добавления IP-адреса компьютера, который вы используете, а затем нажмите кнопку **сохранить**. Для текущего IP-адреса будет создано правило брандмауэра для IP-адресов на уровне сервера.
 
-      ![Set server-level IP firewall rule](./media/sql-database-get-started-portal/server-firewall-rule-set.png)
+      ![Задать правило брандмауэра IP на уровне сервера](./media/sql-database-get-started-portal/server-firewall-rule-set.png)
 
-#### <a name="from-the-server-overview-page"></a>From the server overview page
+#### <a name="from-the-server-overview-page"></a>На странице обзора сервера
 
-The overview page for your server opens. It shows the fully qualified server name (such as *mynewserver20170403.database.windows.net*) and provides options for further configuration.
+Откроется страница обзора сервера. Он отображает полное имя сервера (например, *mynewserver20170403.Database.Windows.NET*) и предоставляет параметры для дальнейшей настройки.
 
-1. To set a server-level rule from this page, select **Firewall** from the **Settings** menu on the left side.
+1. Чтобы задать правило уровня сервера на этой странице, выберите брандмауэр в меню **Параметры** в левой части **экрана** .
 
-2. Select **Add client IP** on the toolbar to add the IP address of the computer that you're using, and then select **Save**. Для текущего IP-адреса будет создано правило брандмауэра для IP-адресов на уровне сервера.
+2. Выберите **Добавить IP-адрес клиента** на панели инструментов для добавления IP-адреса компьютера, который вы используете, а затем нажмите кнопку **сохранить**. Для текущего IP-адреса будет создано правило брандмауэра для IP-адресов на уровне сервера.
 
-### <a name="use-transact-sql-to-manage-ip-firewall-rules"></a>Use Transact-SQL to manage IP firewall rules
+### <a name="use-transact-sql-to-manage-ip-firewall-rules"></a>Использование Transact-SQL для управления правилами брандмауэра IP-адресов
 
-| Catalog view or stored procedure | уровень | Описание |
+| Представление каталога или хранимая процедура | уровень | ОПИСАНИЕ |
 | --- | --- | --- |
-| [sys.firewall_rules](https://msdn.microsoft.com/library/dn269980.aspx) |Сервер |Отображает текущие правила брандмауэра для IP-адресов на уровне сервера |
-| [sp_set_firewall_rule](https://msdn.microsoft.com/library/dn270017.aspx) |Сервер |Создает или обновляет правила брандмауэра для IP-адресов на уровне сервера |
-| [sp_delete_firewall_rule](https://msdn.microsoft.com/library/dn270024.aspx) |Сервер |Удаляет правила брандмауэра для IP-адресов на уровне сервера |
+| [sys.firewall_rules](https://msdn.microsoft.com/library/dn269980.aspx) |Server |Отображает текущие правила брандмауэра для IP-адресов на уровне сервера |
+| [sp_set_firewall_rule](https://msdn.microsoft.com/library/dn270017.aspx) |Server |Создает или обновляет правила брандмауэра для IP-адресов на уровне сервера |
+| [sp_delete_firewall_rule](https://msdn.microsoft.com/library/dn270024.aspx) |Server |Удаляет правила брандмауэра для IP-адресов на уровне сервера |
 | [sys.database_firewall_rules](https://msdn.microsoft.com/library/dn269982.aspx) |База данных |Отображает текущие правила брандмауэра для IP-адресов на уровне базы данных |
 | [sp_set_database_firewall_rule](https://msdn.microsoft.com/library/dn270010.aspx) |База данных |Создает или обновляет правила брандмауэра для IP-адресов на уровне базы данных |
 | [sp_delete_database_firewall_rule](https://msdn.microsoft.com/library/dn270030.aspx) |Базы данных |Удаляет правила брандмауэра для IP-адресов на уровне базы данных |
 
-The following example reviews the existing rules, enables a range of IP addresses on the server *Contoso*, and deletes an IP firewall rule:
+В следующем примере просматриваются существующие правила, включается диапазон IP-адресов на сервере *contoso*и удаляется правило брандмауэра IP-адреса.
 
 ```sql
 SELECT * FROM sys.firewall_rules ORDER BY name;
@@ -167,26 +167,26 @@ EXECUTE sp_set_firewall_rule @name = N'ContosoFirewallRule',
    @start_ip_address = '192.168.1.1', @end_ip_address = '192.168.1.10'
 ```
 
-To delete a server-level IP firewall rule, execute the *sp_delete_firewall_rule* stored procedure. The following example deletes the rule *ContosoFirewallRule*:
+Чтобы удалить правило брандмауэра IP на уровне сервера, выполните хранимую процедуру *sp_delete_firewall_rule* . В следующем примере удаляется правило *ContosoFirewallRule*:
 
 ```sql
 EXECUTE sp_delete_firewall_rule @name = N'ContosoFirewallRule'
 ```
 
-### <a name="use-powershell-to-manage-server-level-ip-firewall-rules"></a>Use PowerShell to manage server-level IP firewall rules 
+### <a name="use-powershell-to-manage-server-level-ip-firewall-rules"></a>Использование PowerShell для управления правилами брандмауэра IP на уровне сервера 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> The PowerShell Azure Resource Manager module is still supported by Azure SQL Database, but all development is now for the Az.Sql module. For these cmdlets, see [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). The arguments for the commands in the Az and AzureRm modules are substantially identical.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но теперь для модуля AZ. SQL используется вся разработка. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модулях AZ и AzureRm существенно идентичны.
 
-| Командлет | уровень | Описание |
+| Командлет | уровень | ОПИСАНИЕ |
 | --- | --- | --- |
-| [Get-AzSqlServerFirewallRule](/powershell/module/az.sql/get-azsqlserverfirewallrule) |Сервер |Возвращает текущие правила брандмауэра уровня сервера |
-| [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule) |Сервер |Создает новое правило брандмауэра уровня сервера |
-| [Set-AzSqlServerFirewallRule](/powershell/module/az.sql/set-azsqlserverfirewallrule) |Сервер |Обновляет свойства существующего правила брандмауэра уровня сервера |
-| [Remove-AzSqlServerFirewallRule](/powershell/module/az.sql/remove-azsqlserverfirewallrule) |Сервер |Удаляет правила брандмауэра уровня сервера |
+| [Get-Азсклсерверфиреваллруле](/powershell/module/az.sql/get-azsqlserverfirewallrule) |Server |Возвращает текущие правила брандмауэра уровня сервера |
+| [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule) |Server |Создает новое правило брандмауэра уровня сервера |
+| [Set-Азсклсерверфиреваллруле](/powershell/module/az.sql/set-azsqlserverfirewallrule) |Server |Обновляет свойства существующего правила брандмауэра уровня сервера |
+| [Remove-Азсклсерверфиреваллруле](/powershell/module/az.sql/remove-azsqlserverfirewallrule) |Server |Удаляет правила брандмауэра уровня сервера |
 
-The following example uses PowerShell to set a server-level IP firewall rule:
+В следующем примере с помощью PowerShell задается правило брандмауэра IP на уровне сервера:
 
 ```powershell
 New-AzSqlServerFirewallRule -ResourceGroupName "myResourceGroup" `
@@ -194,79 +194,79 @@ New-AzSqlServerFirewallRule -ResourceGroupName "myResourceGroup" `
     -FirewallRuleName "ContosoIPRange" -StartIpAddress "192.168.1.0" -EndIpAddress "192.168.1.255"
 ```
 > [!TIP]
-> For $servername specify the server name and not the fully qualified DNS name e.g. specify **mysqldbserver** instead of **mysqldbserver.database.windows.net**
+> Для $servername укажите имя сервера, а не полное DNS-имя, например, укажите **мисклдбсервер** вместо **mysqldbserver.Database.Windows.NET** .
 
 > [!TIP]
-> For PowerShell examples in the context of a quickstart, see [Create DB - PowerShell](sql-database-powershell-samples.md) and [Create a single database and configure a SQL Database server-level IP firewall rule using PowerShell](scripts/sql-database-create-and-configure-database-powershell.md).
+> Примеры для PowerShell в контексте краткого руководства см. в статьях создание базы данных [PowerShell](sql-database-powershell-samples.md) и [Настройка правила брандмауэра IP-адреса уровня сервера базы данных SQL с помощью PowerShell](scripts/sql-database-create-and-configure-database-powershell.md).
 
-### <a name="use-cli-to-manage-server-level-ip-firewall-rules"></a>Use CLI to manage server-level IP firewall rules
+### <a name="use-cli-to-manage-server-level-ip-firewall-rules"></a>Использование интерфейса командной строки для управления правилами брандмауэра IP на уровне сервера
 
-| Командлет | уровень | Описание |
+| Командлет | уровень | ОПИСАНИЕ |
 | --- | --- | --- |
-|[az sql server firewall-rule create](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-create)|Сервер|Создает правило брандмауэра для IP-адресов на уровне сервера|
-|[az sql server firewall-rule list](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-list)|Сервер|Выводит список правил брандмауэра для IP-адресов на сервере|
-|[az sql server firewall-rule show](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-show)|Сервер|Shows the detail of an IP firewall rule|
-|[az sql server firewall-rule update](/cli/azure/sql/server/firewall-rule##az-sql-server-firewall-rule-update)|Сервер|Updates an IP firewall rule|
-|[az sql server firewall-rule delete](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-delete)|Сервер|Deletes an IP firewall rule|
+|[az sql server firewall-rule create](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-create)|Server|Создает правило брандмауэра для IP-адресов на уровне сервера|
+|[az sql server firewall-rule list](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-list)|Server|Выводит список правил брандмауэра для IP-адресов на сервере|
+|[az sql server firewall-rule show](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-show)|Server|Отображение сведений о правиле брандмауэра IP-адресов|
+|[az sql server firewall-rule update](/cli/azure/sql/server/firewall-rule##az-sql-server-firewall-rule-update)|Server|Обновляет правило брандмауэра IP-адресов.|
+|[az sql server firewall-rule delete](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-delete)|Server|Удаление правила брандмауэра IP-адресов|
 
-The following example uses CLI to set a server-level IP firewall rule:
+В следующем примере с помощью интерфейса командной строки задается правило брандмауэра IP на уровне сервера:
 
 ```azurecli-interactive
 az sql server firewall-rule create --resource-group myResourceGroup --server $servername \
 -n ContosoIPRange --start-ip-address 192.168.1.0 --end-ip-address 192.168.1.255
 ```
 > [!TIP]
-> For $servername specify the server name and not the fully qualified DNS name e.g. specify **mysqldbserver** instead of **mysqldbserver.database.windows.net**
+> Для $servername укажите имя сервера, а не полное DNS-имя, например, укажите **мисклдбсервер** вместо **mysqldbserver.Database.Windows.NET** .
 
 > [!TIP]
-> For a CLI example in the context of a quickstart, see [Create DB - Azure CLI](sql-database-cli-samples.md) and [Create a single database and configure a SQL Database IP firewall rule using the Azure CLI](scripts/sql-database-create-and-configure-database-cli.md).
+> Пример для интерфейса командной строки в контексте краткого руководства см. в разделе [CREATE DB-Azure CLI](sql-database-cli-samples.md) и [Создание отдельной базы данных и настройка правила брандмауэра для IP-адреса базы данных SQL с помощью Azure CLI](scripts/sql-database-create-and-configure-database-cli.md).
 
-### <a name="use-a-rest-api-to-manage-server-level-ip-firewall-rules"></a>Use a REST API to manage server-level IP firewall rules
+### <a name="use-a-rest-api-to-manage-server-level-ip-firewall-rules"></a>Использование REST API для управления правилами брандмауэра IP на уровне сервера
 
-| API | уровень | Описание |
+| API | уровень | ОПИСАНИЕ |
 | --- | --- | --- |
-| [List firewall rules](https://docs.microsoft.com/rest/api/sql/firewallrules/listbyserver) |Сервер |Отображает текущие правила брандмауэра для IP-адресов на уровне сервера |
-| [Create or update firewall rules](https://docs.microsoft.com/rest/api/sql/firewallrules/createorupdate) |Сервер |Создает или обновляет правила брандмауэра для IP-адресов на уровне сервера |
-| [Delete firewall rules](https://docs.microsoft.com/rest/api/sql/firewallrules/delete) |Сервер |Удаляет правила брандмауэра для IP-адресов на уровне сервера |
-| [Get firewall rules](https://docs.microsoft.com/rest/api/sql/firewallrules/get) | Сервер | Возвращает правила брандмауэра для IP-адресов на уровне сервера |
+| [Вывод списка правил брандмауэра](https://docs.microsoft.com/rest/api/sql/firewallrules/listbyserver) |Server |Отображает текущие правила брандмауэра для IP-адресов на уровне сервера |
+| [Создание или обновление правил брандмауэра](https://docs.microsoft.com/rest/api/sql/firewallrules/createorupdate) |Server |Создает или обновляет правила брандмауэра для IP-адресов на уровне сервера |
+| [Удаление правил брандмауэра](https://docs.microsoft.com/rest/api/sql/firewallrules/delete) |Server |Удаляет правила брандмауэра для IP-адресов на уровне сервера |
+| [Получение правил брандмауэра](https://docs.microsoft.com/rest/api/sql/firewallrules/get) | Server | Возвращает правила брандмауэра для IP-адресов на уровне сервера |
 
-## <a name="troubleshoot-the-database-firewall"></a>Troubleshoot the database firewall
+## <a name="troubleshoot-the-database-firewall"></a>Устранение неполадок брандмауэра базы данных
 
-Consider the following points when access to the SQL Database service doesn't behave as you expect.
+Если доступ к службе базы данных SQL не работает должным образом, учитывайте следующие моменты.
 
 - **Конфигурация локального брандмауэра**
 
-  Before your computer can access SQL Database, you may need to create a firewall exception on your computer for TCP port 1433. To make connections inside the Azure cloud boundary, you may have to open additional ports. For more information, see the "SQL Database: Outside vs inside" section of [Ports beyond 1433 for ADO.NET 4.5 and SQL Database](sql-database-develop-direct-route-ports-adonet-v12.md).
+  Прежде чем компьютер сможет получить доступ к базе данных SQL, может потребоваться создать исключение брандмауэра на компьютере для TCP-порта 1433. Чтобы установить подключения внутри границы облака Azure, может потребоваться открыть дополнительные порты. Дополнительные сведения см. в разделе «База данных SQL: за пределами Vs Inside» [портов за пределами 1433 для ADO.NET 4,5 и базы данных SQL](sql-database-develop-direct-route-ports-adonet-v12.md).
 
-- **Network address translation:**
+- **Преобразование сетевых адресов:**
 
-  Because of network address translation (NAT), the IP address that's used by your computer to connect to SQL Database may be different than the IP address in your computer's IP configuration settings. To view the IP address that your computer is using to connect to Azure:
+  В связи с преобразованием сетевых адресов (NAT) IP-адрес, используемый вашим компьютером для подключения к базе данных SQL, может отличаться от IP-адреса в параметрах IP-конфигурации вашего компьютера. Чтобы просмотреть IP-адрес, который используется компьютером для подключения к Azure, сделайте следующее:
     1. Войдите на портал.
-    1. Go to the **Configure** tab on the server that hosts your database.
-    1. The **Current Client IP Address** is displayed in the **Allowed IP Addresses** section. Select **Add** for **Allowed IP Addresses** to allow this computer to access the server.
+    1. Перейдите на вкладку **Настройка** на сервере, на котором размещена ваша база данных.
+    1. **IP-адрес текущего клиента** отображается в разделе **Разрешенные IP-адреса** . Выберите **Добавить** для **разрешенных IP-адресов** , чтобы разрешить этому компьютеру доступ к серверу.
 
-- **Changes to the allow list haven't taken effect yet:**
+- **Изменения в списке разрешений еще не вступили в действие:**
 
-  There may be up to a five-minute delay for changes to the SQL Database firewall configuration to take effect.
+  Чтобы изменения конфигурации брандмауэра базы данных SQL вступили в силу, может потребоваться около 5 минут.
 
-- **The login isn't authorized, or an incorrect password was used:**
+- **Имя входа не имеет полномочий или был использован неверный пароль:**
 
-  If a login doesn't have permissions on the SQL Database server or the password is incorrect, the connection to the server is denied. Creating a firewall setting only gives clients an *opportunity* to try to connect to your server. The client must still provide the necessary security credentials. For more information about preparing logins, see [Controlling and granting database access to SQL Database and SQL Data Warehouse](sql-database-manage-logins.md).
+  Если у имени входа нет разрешений на сервере базы данных SQL или пароль неверен, соединение с сервером будет отклонено. Создание параметра брандмауэра дает клиентам *возможность* попытаться подключиться к серверу. Клиент по-прежнему должен предоставлять необходимые учетные данные безопасности. Дополнительные сведения о подготовке имен входа см. в разделе Управление доступом к базе данных [SQL и хранилище данных SQL и предоставление им доступа к ним](sql-database-manage-logins.md).
 
 - **Динамический IP-адрес**
 
-  If you have an internet connection that uses dynamic IP addressing and you have trouble getting through the firewall, try one of the following solutions:
+  Если у вас есть подключение к Интернету, использующее динамическую IP-адресацию, и у вас возникли проблемы с брандмауэром, попробуйте одно из следующих решений.
   
-  - Ask your internet service provider for the IP address range that's assigned to your client computers that access the SQL Database server. Add that IP address range as an IP firewall rule.
-  - Get static IP addressing instead for your client computers. Add the IP addresses as IP firewall rules.
+  - Попросите поставщика услуг Интернета указать диапазон IP-адресов, назначенный клиентским компьютерам, обращающимся к серверу базы данных SQL. Добавьте этот диапазон IP-адресов в качестве правила брандмауэра IP.
+  - Для клиентских компьютеров следует получить статические IP-адреса. Добавьте IP-адреса в качестве правил брандмауэра IP-адресов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- Confirm that your corporate network environment allows inbound communication from the compute IP address ranges (including SQL ranges) that are used by the Azure datacenters. You might have to add those IP addresses to the allow list. See [Microsoft Azure datacenter IP ranges](https://www.microsoft.com/download/details.aspx?id=41653).  
-- For a quickstart about creating a server-level IP firewall rule, see [Create an Azure SQL database](sql-database-single-database-get-started.md).
-- For help with connecting to an Azure SQL database from open-source or third-party applications, see [Client quickstart code samples to SQL Database](https://msdn.microsoft.com/library/azure/ee336282.aspx).
-- For information about additional ports that you may need to open, see the "SQL Database: Outside vs inside" section of [Ports beyond 1433 for ADO.NET 4.5 and SQL Database](sql-database-develop-direct-route-ports-adonet-v12.md)
-- For an overview of Azure SQL Database security, see [Securing your database](sql-database-security-overview.md).
+- Убедитесь, что корпоративная сетевая среда разрешает входящий трафик из диапазонов вычислительных IP-адресов (включая диапазоны SQL), которые используются центрами обработки данных Azure. Может потребоваться добавить эти IP-адреса в список разрешений. См. раздел [диапазоны IP-адресов центра обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653).  
+- Краткое руководство по созданию правила брандмауэра IP на уровне сервера см. в статье [Создание базы данных SQL Azure](sql-database-single-database-get-started.md).
+- Дополнительные сведения о подключении к базе данных SQL Azure из приложений с открытым исходным кодом или сторонними приложениями см. [в статье примеры кода для быстрого запуска клиента в базе данных SQL](https://msdn.microsoft.com/library/azure/ee336282.aspx).
+- Дополнительные сведения о дополнительных портах, которые, возможно, потребуется открыть, см. в разделе "база данных SQL: за пределами Vs внутри" [портов за пределами 1433 для ADO.NET 4,5 и базы данных SQL](sql-database-develop-direct-route-ports-adonet-v12.md) .
+- Общие сведения о безопасности базы данных SQL Azure см. в разделе [Защита базы данных](sql-database-security-overview.md).
 
 <!--Image references-->
 [1]: ./media/sql-database-firewall-configure/sqldb-firewall-1.png

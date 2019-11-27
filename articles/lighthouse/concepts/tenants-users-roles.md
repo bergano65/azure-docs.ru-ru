@@ -39,7 +39,7 @@ ms.locfileid: "74463922"
 - Добавьте пользователя с ролью [Managed Services Registration Assignment Delete](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#managed-services-registration-assignment-delete-role) (Удаление назначенных регистраций управляемых служб), чтобы можно было при необходимости [удалить доступ к делегированию](../how-to/onboard-customer.md#remove-access-to-a-delegation) позже. Если эта роль не назначена, делегированные ресурсы могут быть удалены только пользователем в арендаторе клиента.
 - Убедитесь, что любой пользователь, которому нужно [просматривать страницу "Мои клиенты" на портале Azure](../how-to/view-manage-customers.md), имеет роль [Читатель](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#reader) (или другую встроенную роль, которая предоставляет доступ для чтения).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Узнайте больше о [рекомендациях по обеспечению безопасности для делегированного управления ресурсами Azure](recommended-security-practices.md).
 - Подключите клиентов к делегированному управлению ресурсами Azure с помощью [шаблонов Azure Resource Manager](../how-to/onboard-customer.md) или путем [публикации предложения частных или общедоступных управляемых служб в Azure Marketplace](../how-to/publish-managed-services-offers.md).

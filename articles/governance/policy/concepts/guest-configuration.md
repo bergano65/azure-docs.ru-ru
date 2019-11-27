@@ -1,6 +1,6 @@
 ---
-title: Learn to audit the contents of virtual machines
-description: Learn how Azure Policy uses the Guest Configuration agent to audit settings inside virtual machines.
+title: Изучение аудита содержимого виртуальных машин
+description: Узнайте, как политика Azure использует агент гостевой конфигурации для аудита параметров в виртуальных машинах.
 ms.date: 11/04/2019
 ms.topic: conceptual
 ms.openlocfilehash: f68bbc64ee8f0da02d213895a70e4c533b9a5f63
@@ -12,9 +12,9 @@ ms.locfileid: "74463797"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 
-Beyond auditing and [remediating](../how-to/remediate-resources.md) Azure resources, Azure Policy can audit settings inside a machine. Проверка выполняется с помощью расширения гостевой конфигурации и клиента. Расширение с помощью клиента проверяет такие параметры, как:
+Помимо аудита и [устранения](../how-to/remediate-resources.md) ресурсов Azure, политика Azure может выполнять аудит параметров внутри компьютера. Проверка выполняется с помощью расширения гостевой конфигурации и клиента. Расширение с помощью клиента проверяет такие параметры, как:
 
-- The configuration of the operating system
+- Конфигурация операционной системы
 - конфигурация или наличие приложения;
 - Параметры среды
 
@@ -22,15 +22,15 @@ Beyond auditing and [remediating](../how-to/remediate-resources.md) Azure resour
 
 ## <a name="extension-and-client"></a>Расширение и клиент
 
-To audit settings inside a machine, a [virtual machine extension](../../../virtual-machines/extensions/overview.md) is enabled. Расширение скачивает подходящее назначение политики и соответствующее определение конфигурации.
+Для аудита параметров на компьютере включено [расширение виртуальной машины](../../../virtual-machines/extensions/overview.md) . Расширение скачивает подходящее назначение политики и соответствующее определение конфигурации.
 
-### <a name="limits-set-on-the-extension"></a>Limits set on the extension
+### <a name="limits-set-on-the-extension"></a>Ограничения, установленные для расширения
 
-To limit the extension from impacting applications running inside the machine, the Guest Configuration isn't allowed to exceed more than 5% of CPU utilization. This limitation exists for both built-in and custom definitions.
+Чтобы ограничить расширение, влияющее на приложения, выполняемые внутри компьютера, конфигурация гостевой системы не может превышать 5% использования ЦП. Это ограничение существует как для встроенных, так и для пользовательских определений.
 
 ## <a name="register-guest-configuration-resource-provider"></a>Регистрация поставщика ресурсов гостевой конфигурации
 
-Перед использованием гостевой конфигурации необходимо зарегистрировать поставщик ресурсов. Регистрацию можно выполнить с помощью портала или PowerShell. The resource provider is registered automatically if assignment of a Guest Configuration policy is done through the portal.
+Перед использованием гостевой конфигурации необходимо зарегистрировать поставщик ресурсов. Регистрацию можно выполнить с помощью портала или PowerShell. Поставщик ресурсов регистрируется автоматически, если назначение политики конфигурации на виртуальной машине выполняется на портале.
 
 ### <a name="registration---portal"></a>Регистрация на портале
 
@@ -55,117 +55,117 @@ Register-AzResourceProvider -ProviderNamespace 'Microsoft.GuestConfiguration'
 
 ## <a name="validation-tools"></a>Инструменты проверки
 
-Inside the machine, the Guest Configuration client uses local tools to run the audit.
+На виртуальной машине клиент настройки гостевой системы использует локальные средства для запуска аудита.
 
 В следующей таблице перечислены локальные средства, используемые в поддерживаемых операционных системах:
 
-|Операционная система|Инструмент проверки|Заметки|
+|операционная система|Инструмент проверки|Примечания|
 |-|-|-|
-|Windows|[Windows PowerShell Desired State Configuration](/powershell/scripting/dsc/overview/overview) v2| |
+|Windows|[Настройка требуемого состояния Windows PowerShell](/powershell/scripting/dsc/overview/overview) v2| |
 |Linux|[Chef InSpec](https://www.chef.io/inspec/)| Ruby и Python устанавливаются с помощью расширения гостевой конфигурации. |
 
 ### <a name="validation-frequency"></a>Частота проверки
 
-Клиент гостевой конфигурации проверяет наличие нового содержимого каждые 5 минут. После получения назначения гостя параметры проверяются с 15-минутным интервалом. Результаты отправляются поставщику ресурсов гостевой конфигурации после завершения аудита. Когда происходит [триггер оценки](../how-to/get-compliance-data.md#evaluation-triggers) политики, состояние компьютера записывается в поставщик ресурсов гостевой конфигурации. This update causes Azure Policy to evaluate the Azure Resource Manager properties. An on-demand Azure Policy evaluation retrieves the latest value from the Guest Configuration resource provider. However, it doesn't trigger a new audit of the configuration within the machine.
+Клиент гостевой конфигурации проверяет наличие нового содержимого каждые 5 минут. После получения назначения гостя параметры проверяются с 15-минутным интервалом. Результаты отправляются поставщику ресурсов гостевой конфигурации после завершения аудита. Когда происходит [триггер оценки](../how-to/get-compliance-data.md#evaluation-triggers) политики, состояние компьютера записывается в поставщик ресурсов гостевой конфигурации. Это обновление приводит к тому, что политика Azure оценивает свойства Azure Resource Manager. При оценке политики Azure по запросу извлекается Последнее значение из поставщика ресурсов гостевой конфигурации. Однако он не активирует новый аудит конфигурации в пределах компьютера.
 
 ## <a name="supported-client-types"></a>Поддерживаемые типы клиентов
 
 В следующей таблице перечислены операционные системы, поддерживаемые в образах Azure:
 
-|ИЗДАТЕЛЬ|Name|Версии|
+|Издатель|имя|Версии|
 |-|-|-|
 |Canonical|Сервер Ubuntu|14.04, 16.04, 18.04|
 |Credativ|Debian|8, 9|
-|Майкрософт|Windows Server|2012 Datacenter, 2012 R2 Datacenter, 2016 Datacenter, 2019 Datacenter|
-|Майкрософт|Клиент Windows|Windows 10|
+|Microsoft|Windows Server|2012 Datacenter, 2012 R2 Datacenter, 2016 Datacenter, 2019 Datacenter|
+|Microsoft|Клиент Windows|Windows 10|
 |OpenLogic|CentOS|7.3, 7.4, 7.5|
-|Red Hat|Red Hat Enterprise Linux|7.4, 7.5|
+|Red Hat|Red Hat Enterprise Linux.|7.4, 7.5|
 |SUSE|SLES|12 с пакетом обновления 3|
 
 > [!IMPORTANT]
-> Guest Configuration can audit nodes running a supported OS. If you would like to audit virtual machines that use a custom image, you need to duplicate the **DeployIfNotExists** definition and modify the **If** section to include your image properties.
+> Гостевая конфигурация может выполнять аудит узлов, работающих под управлением поддерживаемой ОС. Если вы хотите выполнять аудит виртуальных машин, использующих пользовательский образ, необходимо дублировать определение **DeployIfNotExists** и изменить раздел **If** , включив в него свойства изображения.
 
 ### <a name="unsupported-client-types"></a>Неподдерживаемые типы клиентов
 
-Windows Server Nano Server isn't supported in any version.
+Windows Server Nano Server не поддерживается ни в одной версии.
 
-## <a name="guest-configuration-extension-network-requirements"></a>Guest Configuration Extension network requirements
+## <a name="guest-configuration-extension-network-requirements"></a>Требования к сети для расширения конфигурации гостя
 
-To communicate with the Guest Configuration resource provider in Azure, machines require outbound access to Azure datacenters on port **443**. If you're using a private virtual network in Azure that doesn't allow outbound traffic, configure exceptions with [Network Security Group](../../../virtual-network/manage-network-security-group.md#create-a-security-rule) rules. A service tag doesn't currently exist for Azure Policy Guest Configuration.
+Для взаимодействия с поставщиком ресурсов гостевой конфигурации в Azure компьютерам требуется исходящий доступ к центрам обработки данных Azure через порт **443**. Если вы используете в Azure частную виртуальную сеть, которая не разрешает исходящий трафик, настройте исключения с помощью правил [группы безопасности сети](../../../virtual-network/manage-network-security-group.md#create-a-security-rule) . В настоящее время тег службы не существует для гостевой конфигурации политики Azure.
 
-For IP address lists, you can download [Microsoft Azure Datacenter IP Ranges](https://www.microsoft.com/download/details.aspx?id=41653). Файл обновляется еженедельно и содержит развернутые в настоящее время диапазоны и все предстоящие изменения диапазонов IP-адресов. You only need to allow outbound access to the IPs in the regions where your VMs are deployed.
+Для списков IP-адресов можно скачать [диапазоны IP-адреса центра обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653). Файл обновляется еженедельно и содержит развернутые в настоящее время диапазоны и все предстоящие изменения диапазонов IP-адресов. Вам нужно только разрешить исходящий доступ к IP-адресам в регионах, где развернуты виртуальные машины.
 
 > [!NOTE]
 > В XML-файле IP-адресов центра обработки данных Azure приводится список диапазонов IP-адресов, используемых в центрах обработки данных Microsoft Azure. Этот файл включает диапазоны вычисления, хранения и SQL. Обновленный файл публикуется еженедельно. Он отражает развернутые в настоящее время диапазоны и все предстоящие изменения IP-адресов. Новые диапазоны, появившиеся в файле, не будут использоваться в центрах обработки данных по крайней мере одну неделю. Скачивайте новый XML-файл каждую неделю и вносите соответствующие изменения на своем сайте, чтобы правильно определять службы, выполняемые в Azure. Пользователям Azure ExpressRoute следует обратить внимание, что этот файл используется для того, чтобы обновлять протокол BGP в пространстве Azure в первую неделю каждого месяца.
 
 ## <a name="guest-configuration-definition-requirements"></a>Требования к определению гостевой конфигурации
 
-Each audit run by Guest Configuration requires two policy definitions, a **DeployIfNotExists** definition and an **AuditIfNotExists** definition. The **DeployIfNotExists** definition is used to prepare the machine with the Guest Configuration agent and other components to support the [validation tools](#validation-tools).
+Для каждого запуска аудита в гостевой конфигурации требуются два определения политик: определение **DeployIfNotExists** и определение **помощью параметров auditifnotexists** . Определение **DeployIfNotExists** используется для подготовки компьютера с помощью гостевого агента конфигурации и других компонентов для поддержки [средств проверки](#validation-tools).
 
 Определение политики **DeployIfNotExists** проверяет и исправляет следующее:
 
-- Validate the machine has been assigned a configuration to evaluate. If no assignment is currently present, get the assignment and prepare the machine by:
-  - Authenticating to the machine using a [managed identity](../../../active-directory/managed-identities-azure-resources/overview.md)
+- Убедитесь, что компьютеру назначена конфигурация для оценки. Если назначение отсутствует, получите назначение и Подготовьте компьютер следующим образом.
+  - Проверка подлинности на компьютере с помощью [управляемого удостоверения](../../../active-directory/managed-identities-azure-resources/overview.md)
   - установки последней версии расширения **Microsoft.GuestConfiguration**;
   - установки [средств проверки](#validation-tools) и зависимостей, если это необходимо.
 
-If the **DeployIfNotExists** assignment is Non-compliant, a [remediation task](../how-to/remediate-resources.md#create-a-remediation-task) can be used.
+Если назначение **DeployIfNotExists** не соответствует требованиям, можно использовать [задачу по исправлению](../how-to/remediate-resources.md#create-a-remediation-task) .
 
-Once the **DeployIfNotExists** assignment is Compliant, the **AuditIfNotExists** policy assignment uses the local validation tools to determine if the configuration assignment is Compliant or Non-compliant. Средство проверки предоставляет результаты клиенту гостевой конфигурации. Клиент перенаправляет результаты в гостевое расширение, чтобы сделать их доступными через поставщик ресурсов гостевой конфигурации.
+После того как назначение **DeployIfNotExists** соответствует требованиям, назначение политики **помощью параметров auditifnotexists** использует средства локальной проверки, чтобы определить, является ли назначение конфигурации совместимым или несоответствующим. Средство проверки предоставляет результаты клиенту гостевой конфигурации. Клиент перенаправляет результаты в гостевое расширение, чтобы сделать их доступными через поставщик ресурсов гостевой конфигурации.
 
 Служба "Политика Azure" использует свойство поставщиков ресурсов **complianceStatus**, чтобы сообщить о совместимости в узле **Compliance**. Дополнительные сведения см. в руководстве по [получению данных соответствия](../how-to/get-compliance-data.md).
 
 > [!NOTE]
-> The **DeployIfNotExists** policy is required for the **AuditIfNotExists** policy to return results. Without the **DeployIfNotExists**, the **AuditIfNotExists** policy shows "0 of 0" resources as status.
+> Политика **DeployIfNotExists** необходима, чтобы политика **помощью параметров auditifnotexists** возвращала результаты. Без **DeployIfNotExists**политика **помощью параметров auditifnotexists** показывает ресурсы "0 из 0" в качестве состояния.
 
-Все встроенные политики гостевой конфигурации включены в инициативу для группировки определений, которые могут использоваться в назначениях. The built-in initiative named _\[Preview\]: Audit Password security settings inside Linux and Windows machines_ contains 18 policies. Существует шесть пар определений **DeployIfNotExists** и **AuditIfNotExists** для Windows и три пары для Linux. The [policy definition](definition-structure.md#policy-rule) logic validates that only the target operating system is evaluated.
+Все встроенные политики гостевой конфигурации включены в инициативу для группировки определений, которые могут использоваться в назначениях. Встроенная инициатива с именем _\[Preview\]: аудит параметров безопасности паролей в Linux и Windows_ содержит 18 политик. Существует шесть пар определений **DeployIfNotExists** и **AuditIfNotExists** для Windows и три пары для Linux. Логика [определения политики](definition-structure.md#policy-rule) проверяет, что оценивается только Целевая операционная система.
 
-#### <a name="auditing-operating-system-settings-following-industry-baselines"></a>Auditing operating system settings following industry baselines
+#### <a name="auditing-operating-system-settings-following-industry-baselines"></a>Аудит параметров операционной системы в следующих отраслевых показателях
 
-One of the initiatives available in Azure Policy provides the ability to audit operating system settings inside virtual machines following a "baseline" from Microsoft. The definition, _\[Preview\]: Audit Windows VMs that do not match Azure security baseline settings_ includes a complete set of audit rules based on settings from Active Directory Group Policy.
+Одна из инициатив, доступных в политике Azure, позволяет выполнять аудит параметров операционной системы в виртуальных машинах с помощью "базовых показателей" от корпорации Майкрософт. Определение _\[Предварительная версия\]: аудит виртуальных машин Windows, которые не соответствуют базовым параметрам безопасности Azure,_ включает полный набор правил аудита на основе параметров из Active Directory групповая политика.
 
-Most of the settings are available as parameters. This functionality allows you to customize what is audited to align the policy with your organizational requirements or to map the policy to third party information such as industry regulatory standards.
+Большинство параметров доступны в качестве параметров. Эта функция позволяет настроить аудит, чтобы согласовать политику с требованиями организации или сопоставлять политику со сторонними сведениями, такими как отраслевые стандарты.
 
-Some parameters support an integer value range. For example, the Maximum Password Age parameter can be set using a range operator to give flexibility to machine owners. You could audit that the effective Group Policy setting requiring users to change their passwords should be no more than 70 days, but shouldn't be less than one day. As described in the info-bubble for the parameter, to make this business policy the effective audit value, set the value to "1,70".
+Некоторые параметры поддерживают диапазон целочисленных значений. Например, параметр максимального срока действия пароля может быть установлен с помощью оператора Range для предоставления гибкости владельцам компьютеров. Можно было бы проследить, что действующий параметр групповая политика, требующий от пользователей изменять пароли, должен быть не более 70 дней, но должен быть не меньше одного дня. Как описано в информационном подсказке для параметра, чтобы бизнес-политика действовала в соответствии с действующим значением аудита, установите значение "1, 70".
 
-If you assign the policy using an Azure Resource Manager deployment template, you can use a parameters file to manage these settings from source control. Using a tool such as Git to manage changes to Audit policies with comments at each check-in documents evidence as to why an assignment should be an exception to the expected value.
+При назначении политики с помощью шаблона развертывания Azure Resource Manager можно использовать файл параметров для управления этими параметрами из системы управления версиями. Использование таких средств, как Git, для управления изменениями политик аудита с комментариями при каждом документе возврата свидетельствует о том, почему назначение должно быть исключением из ожидаемого значения.
 
-#### <a name="applying-configurations-using-guest-configuration"></a>Applying configurations using Guest Configuration
+#### <a name="applying-configurations-using-guest-configuration"></a>Применение конфигураций с помощью гостевой конфигурации
 
-The latest feature of Azure Policy configures settings inside machines. The definition _Configure the time zone on Windows machines_ makes changes to the machine by configuring the time zone.
+Последняя функция политики Azure настраивает параметры внутри компьютеров. Определение Настройка часового _пояса на компьютерах Windows_ вносит изменения на компьютере, настраивая часовой пояс.
 
-When assigning definitions that begin with _Configure_, you must also assign the definition _Deploy prerequisites to enable Guest Configuration Policy on Windows VMs_. You can combine these definitions in an initiative if you choose.
+При назначении определений, начинающихся с _Configure_, необходимо также назначить определение _необходимые условия для включения гостевой политики конфигурации на виртуальных машинах Windows_. Вы можете комбинировать эти определения в инициативе, если вы решили.
 
-#### <a name="assigning-policies-to-machines-outside-of-azure"></a>Assigning policies to machines outside of Azure
+#### <a name="assigning-policies-to-machines-outside-of-azure"></a>Назначение политик компьютерам за пределами Azure
 
-The Audit policies available for Guest Configuration include the **Microsoft.HybridCompute/machines** resource type. Any machines onboarded to [Azure Arc for Servers](../../../azure-arc/servers/overview.md) that are in the scope of the policy assignment are automatically included.
+Политики аудита, доступные для гостевой конфигурации, включают тип ресурса **Microsoft. хибридкомпуте/Machines** . Все компьютеры, подключенные к [службе "Дуга Azure" для серверов](../../../azure-arc/servers/overview.md) , которые находятся в области назначения политики, включаются автоматически.
 
-### <a name="multiple-assignments"></a>Multiple assignments
+### <a name="multiple-assignments"></a>Несколько назначений
 
-Guest Configuration policies currently only support assigning the same Guest Assignment once per machine, even if the Policy assignment uses different parameters.
+Политики конфигурации гостя в настоящее время поддерживают назначение одного и того же назначения гостей один раз на компьютер, даже если в назначении политики используются другие параметры.
 
-## <a name="built-in-resource-modules"></a>Built-in resource modules
+## <a name="built-in-resource-modules"></a>Встроенные модули ресурсов
 
-When installing the Guest Configuration extension, the 'GuestConfiguration' PowerShell module is included with the latest version of DSC resource modules. This module can be downloaded from the PowerShell Gallery by using the 'Manual Download' link from the module page [GuestConfiguration](https://www.powershellgallery.com/packages/GuestConfiguration/). The '.nupkg' file format can be renamed to '.zip' to uncompress and review.
+При установке расширения гостевой конфигурации модуль PowerShell "Гуестконфигуратион" входит в последнюю версию модулей ресурсов DSC. Этот модуль можно скачать из коллекция PowerShell с помощью ссылки для скачивания вручную на странице модуля [гуестконфигуратион](https://www.powershellgallery.com/packages/GuestConfiguration/). Формат файла ". nupkg" можно переименовать в ZIP-файл для распаковки и просмотра.
 
-## <a name="client-log-files"></a>Client log files
+## <a name="client-log-files"></a>Файлы журналов клиента
 
-The Guest Configuration extension writes log files to the following locations:
+Модуль настройки гостевой конфигурации записывает файлы журналов в следующие расположения:
 
 Windows: `C:\Packages\Plugins\Microsoft.GuestConfiguration.ConfigurationforWindows\<version>\dsc\logs\dsc.log`
 
 Linux: `/var/lib/waagent/Microsoft.GuestConfiguration.ConfigurationforLinux-<version>/GCAgent/logs/dsc.log`
 
-Where `<version>` refers to the current version number.
+Где `<version>` ссылается на номер текущей версии.
 
-### <a name="collecting-logs-remotely"></a>Collecting logs remotely
+### <a name="collecting-logs-remotely"></a>Удаленная сбор журналов
 
-The first step in troubleshooting Guest Configuration configurations or modules should be to use the `Test-GuestConfigurationPackage` cmdlet following the steps in [Test a Guest Configuration package](../how-to/guest-configuration-create.md#test-a-guest-configuration-package).
-If that isn't successful, collecting client logs can help diagnose issues.
+Первым шагом в устранении неполадок конфигураций гостевых конфигураций или модулей является использование командлета `Test-GuestConfigurationPackage`, следуя инструкциям в разделе [тестирование гостевого пакета конфигурации](../how-to/guest-configuration-create.md#test-a-guest-configuration-package).
+Если это не удалось, сбор журналов клиентов может помочь в диагностике проблем.
 
 #### <a name="windows"></a>Windows
 
-To use the Azure VM Run Command capability to capture information from log files in Windows machines, the following example PowerShell script can be helpful. For more information, see [Run PowerShell scripts in your Windows VM with Run Command](../../../virtual-machines/windows/run-command.md).
+Чтобы использовать возможности команды запуска виртуальной машины Azure для записи данных из файлов журнала на компьютерах Windows, может оказаться полезным следующий пример сценария PowerShell. Дополнительные сведения см. [в статье запуск сценариев PowerShell в виртуальной машине Windows с помощью команды Run](../../../virtual-machines/windows/run-command.md).
 
 ```powershell
 $linesToIncludeBeforeMatch = 0
@@ -176,7 +176,7 @@ Select-String -Path "$latestVersion\dsc\logs\dsc.log" -pattern 'DSCEngine','DSCM
 
 #### <a name="linux"></a>Linux
 
-To use the Azure VM Run Command capability to capture information from log files in Linux machines, the following example Bash script can be helpful. For more information, see [Run shell scripts in your Linux VM with Run Command](../../../virtual-machines/linux/run-command.md)
+Чтобы использовать возможности команды запуска виртуальной машины Azure для записи данных из файлов журнала на компьютерах Linux, может быть полезным следующий пример bash скрипта. Дополнительные сведения см. [в статье запуск сценариев оболочки на виртуальной машине Linux с помощью команды Run](../../../virtual-machines/linux/run-command.md) .
 
 ```Bash
 linesToIncludeBeforeMatch=0
@@ -185,19 +185,19 @@ latestVersion=$(find /var/lib/waagent/ -type d -name "Microsoft.GuestConfigurati
 egrep -B $linesToIncludeBeforeMatch -A $linesToIncludeAfterMatch 'DSCEngine|DSCManagedEngine' "$latestVersion/GCAgent/logs/dsc.log" | tail
 ```
 
-## <a name="guest-configuration-samples"></a>Guest Configuration samples
+## <a name="guest-configuration-samples"></a>Примеры настройки гостевой виртуальной машины
 
-Samples for Policy Guest Configuration are available in the following locations:
+Примеры настройки гостевой конфигурации политики доступны в следующих расположениях:
 
-- [Samples index - Guest Configuration](../samples/index.md#guest-configuration)
-- [Azure Policy samples GitHub repo](https://github.com/Azure/azure-policy/tree/master/samples/GuestConfiguration)
+- [Индекс выборок — конфигурация гостя](../samples/index.md#guest-configuration)
+- [Репозиторий с примерами политик Azure](https://github.com/Azure/azure-policy/tree/master/samples/GuestConfiguration)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- Review examples at [Azure Policy samples](../samples/index.md).
+- Просмотрите примеры в [примерах политики Azure](../samples/index.md).
 - Изучите статью о [структуре определения Политики Azure](definition-structure.md).
-- Изучите [сведения о действии политик](effects.md).
-- Understand how to [programmatically create policies](../how-to/programmatically-create.md).
-- Learn how to [get compliance data](../how-to/get-compliance-data.md).
-- Learn how to [remediate non-compliant resources](../how-to/remediate-resources.md).
+- См. дополнительные сведения о [действиях политик](effects.md).
+- Узнайте, как [программно создавать политики](../how-to/programmatically-create.md).
+- Узнайте, как [получить данные о соответствии](../how-to/get-compliance-data.md).
+- Узнайте, как [исправлять несоответствующие ресурсы](../how-to/remediate-resources.md).
 - Дополнительные сведения о группе управления см. в статье [Упорядочивание ресурсов с помощью групп управления Azure](../../management-groups/overview.md).

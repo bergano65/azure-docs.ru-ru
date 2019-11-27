@@ -88,7 +88,7 @@ foreach ($ManagedSub in $ManagedSubscriptions)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения о службе [Политика Azure](https://docs.microsoft.com/azure/governance/policy/).
 - Узнайте больше об [интерфейсах управления для различных клиентов](../concepts/cross-tenant-management-experience.md).

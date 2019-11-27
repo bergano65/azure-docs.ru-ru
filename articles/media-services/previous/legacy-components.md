@@ -1,6 +1,6 @@
 ---
-title: Azure Media Services legacy components | Microsoft Docs
-description: This topic discusses Azure Media Services legacy components.
+title: Устаревшие компоненты служб мультимедиа Azure | Документация Майкрософт
+description: В этом разделе обсуждаются устаревшие компоненты служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -20,24 +20,24 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74423920"
 ---
-# <a name="azure-media-services-legacy-components"></a>Azure Media Services legacy components
+# <a name="azure-media-services-legacy-components"></a>Устаревшие компоненты служб мультимедиа Azure
 
-Over time, there have been steady improvements and enhancements to Media Service components. As a result, some legacy components have been retired. You can find the instructions on how to migrate your application from the legacy component to a current component in the following articles.
+Со временем были внесены устойчивые улучшения и усовершенствования компонентов службы мультимедиа. В результате некоторые устаревшие компоненты были удалены. Инструкции по переносу приложения из устаревшего компонента можно найти в текущем компоненте в следующих статьях.
  
-## <a name="retirement-plans-of-legacy-components-and-migration-guidance"></a>Retirement plans of legacy components and migration guidance
+## <a name="retirement-plans-of-legacy-components-and-migration-guidance"></a>Планы выбытия устаревших компонентов и руководство по миграции
 
-We are announcing deprecation of the *Windows Azure Media Encoder* (WAME) and *Azure Media Encoder* (AME) media processors. These processors are being retired on March 31, 2020.
+Мы сообщаем о прекращении использования *Windows Azure Media Encoder* (Ваме) и обработчиков мультимедиа *кодировщика мультимедиа Azure* (\ \ Media Encoder). Эти процессоры будут прекращены 31 марта 2020 г.
 
-* [Migrate from Windows Azure Media Encoder to Media Encoder Standard](migrate-windows-azure-media-encoder.md)
-* [Migrate from Azure Media Encoder to Media Encoder Standard](migrate-azure-media-encoder.md)
+* [Миграция из кодировщика мультимедиа Windows Azure в Media Encoder Standard](migrate-windows-azure-media-encoder.md)
+* [Миграция из кодировщика мультимедиа Azure в Media Encoder Standard](migrate-azure-media-encoder.md)
 
-We are also announcing retirement of the following Media Analytics media processors: 
+Мы также сообщаем о прекращении использования следующих Аналитика мультимедиа обработчиков мультимедиа: 
  
 |Имя обработчика мультимедиа|Дата вывода|Дополнительные замечания|
 |---|---|
-|[Azure Media Indexer 2](media-services-process-content-with-indexer2.md)| January 1 of 2020|This media processor will be replaced by [Azure Media Services Video Indexer](https://docs.microsoft.com/azure/media-services/video-indexer/). For more information, see [Migrate from Azure Media Indexer 2 to Azure Media Services Video Indexer](migrate-indexer-v1-v2.md).|
-|[Azure Media Indexer](media-services-index-content.md)|October 1st of 2020|This media processor will be replaced by [Azure Media Services Video Indexer](https://docs.microsoft.com/azure/media-services/video-indexer/). For more information, see [Migrate from Azure Media Indexer to Azure Media Services Video Indexer](migrate-indexer-v1-v2.md)
+|[Azure Media Indexer 2](media-services-process-content-with-indexer2.md)| 1 января 2020 года|Этот обработчик мультимедиа будет заменен [индексатором видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/). Дополнительные сведения см. в статье [Миграция из Azure Media indexer 2 в индексатор видео служб мультимедиа Azure](migrate-indexer-v1-v2.md).|
+|[Azure Media Indexer](media-services-index-content.md)|1 октября 2020 г.|Этот обработчик мультимедиа будет заменен [индексатором видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/). Дополнительные сведения см. в статье [Миграция с Azure Media indexer в индексатор видео служб мультимедиа Azure](migrate-indexer-v1-v2.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](../latest/migrate-from-v2-to-v3.md)

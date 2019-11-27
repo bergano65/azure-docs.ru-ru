@@ -1,6 +1,6 @@
 ---
-title: Delete image resources
-description: Details on how to effectively manage registry size by deleting container image data using Azure CLI commands.
+title: Удаление ресурсов изображения
+description: Сведения о том, как эффективно управлять размером реестра путем удаления данных образа контейнера с помощью команд Azure CLI.
 ms.topic: article
 ms.date: 07/31/2019
 ms.openlocfilehash: 8d20bf2be1d472855c3e67dd79ea1725c152e3d2
@@ -10,25 +10,25 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/24/2019
 ms.locfileid: "74455271"
 ---
-# <a name="delete-container-images-in-azure-container-registry-using-the-azure-cli"></a>Delete container images in Azure Container Registry using the Azure CLI
+# <a name="delete-container-images-in-azure-container-registry-using-the-azure-cli"></a>Удаление образов контейнеров в реестре контейнеров Azure с помощью Azure CLI
 
 Чтобы управлять размером Реестра контейнеров Azure, необходимо периодически удалять данные устаревших образов. Хотя некоторые образы контейнеров, развернутые в рабочей среде, могут потребовать долговременного хранения, другие, как правило, могут быть удалены быстрее. Например, в сценарии автоматизированной сборки и тестирования реестр может быть быстро заполнен изображениями, которые никогда не придется развертывать, и после того, как завершится этап построения и тестирования, они незамедлительно могут быть удалены.
 
-Так как данные образов можно удалить несколькими способами, важно понимать, как каждая из операций удаления влияет на использование хранилища. This article covers several methods for deleting image data:
+Так как данные образов можно удалить несколькими способами, важно понимать, как каждая из операций удаления влияет на использование хранилища. В этой статье рассматривается несколько методов удаления данных изображения.
 
 * Удаление [репозитория](#delete-repository). Это действие удаляет из репозитория все образы и все уникальные слои.
 * Удаление [тегов](#delete-by-tag). Это действие удаляет образ, тег и все уникальные слои, связанные с образом, и все другие теги, связанные с образом.
 * Удаление [дайджеста манифеста](#delete-by-manifest-digest). Удаление образа, все уникальных слоев в образе и всех тегов, связанных с образом.
 
-Sample scripts are provided to help automate delete operations.
+Примеры сценариев позволяют автоматизировать операции удаления.
 
-For an introduction to these concepts, see [About registries, repositories, and images](container-registry-concepts.md).
+Общие сведения об этих концепциях см. в статье [о реестрах, репозиториях и образах](container-registry-concepts.md).
 
 ## <a name="delete-repository"></a>Удаление репозитория
 
-При удалении репозитория удаляются все образы хранилища, включая все теги, уникальные слои и манифесты. When you delete a repository, you recover the storage space used by the images that reference unique layers in that repository.
+При удалении репозитория удаляются все образы хранилища, включая все теги, уникальные слои и манифесты. При удалении репозитория восстанавливается дисковое пространство, используемое образами, которые ссылаются на уникальные слои в этом репозитории.
 
-Следующая команда Azure CLI удаляет репозиторий acr-helloworld и все теги и манифесты репозитория. If layers referenced by the deleted manifests are not referenced by any other images in the registry, their layer data is also deleted, recovering the storage space.
+Следующая команда Azure CLI удаляет репозиторий acr-helloworld и все теги и манифесты репозитория. Если на слои, на которые ссылаются удаленные манифесты, нет ссылок из других образов в реестре, их данные слоя также удаляются, что позволяет восстановить дисковое пространство.
 
 ```azurecli
  az acr repository delete --name myregistry --repository acr-helloworld
@@ -38,7 +38,7 @@ For an introduction to these concepts, see [About registries, repositories, and 
 
 С помощью операции удаления можно удалить отдельные образы из репозитория по указанным именам репозиториев и тегов. При удалении по тегу восстанавливается дисковое пространство, используемое любыми уникальными слоями в образе (слои, которые не используются совместно с другими образами в реестре).
 
-To delete by tag, use [az acr repository delete][az-acr-repository-delete] and specify the image name in the `--image` parameter. Удаляются все уникальные слои образа и все другие теги, связанные с удаляемым образом.
+Чтобы удалить по тегу, используйте команду [AZ запись контроля доступа Delete][az-acr-repository-delete] и укажите имя образа в параметре `--image`. Удаляются все уникальные слои образа и все другие теги, связанные с удаляемым образом.
 
 Пример удаления образа acr-helloworld:latest из реестра myregistry.
 
@@ -49,13 +49,13 @@ Are you sure you want to continue? (y/n): y
 ```
 
 > [!TIP]
-> Удаление *по тегу* не следует путать с удалением тега (обестегивание). You can delete a tag with the Azure CLI command [az acr repository untag][az-acr-repository-untag]. No space is freed when you untag an image because its [manifest](container-registry-concepts.md#manifest) and layer data remain in the registry. Удаляется только ссылка на тег.
+> Удаление *по тегу* не следует путать с удалением тега (обестегивание). Вы можете удалить тег с помощью команды Azure CLI [AZ удалить тег Repository репозитория][az-acr-repository-untag]. При удалить тегии изображения пробелы не освобождаются, поскольку данные [манифеста](container-registry-concepts.md#manifest) и слоя остаются в реестре. Удаляется только ссылка на тег.
 
 ## <a name="delete-by-manifest-digest"></a>Удаление с помощью дайджеста манифеста
 
 [Дайджест манифеста](container-registry-concepts.md#manifest-digest) может быть связан с одним, несколькими тегами или не иметь связей с тегами вообще. При удалении с помощью дайджеста все теги, связанные манифестом, удаляются, как и данные слоя для любых слоев, уникальных для образа. Данные общего слоя не удаляются.
 
-Для удаления с помощью дайджеста сначала перечислите дайджесты манифеста для репозитория, содержащего изображения, которые необходимо удалить. Пример.
+Для удаления с помощью дайджеста сначала перечислите дайджесты манифеста для репозитория, содержащего изображения, которые необходимо удалить. Например,
 
 ```console
 $ az acr repository show-manifests --name myregistry --repository acr-helloworld
@@ -78,7 +78,7 @@ $ az acr repository show-manifests --name myregistry --repository acr-helloworld
 ]
 ```
 
-Next, specify the digest you wish to delete in the [az acr repository delete][az-acr-repository-delete] command. Команда имеет следующий формат.
+Затем укажите дайджест, который вы хотите удалить, в команде [AZ запись в репозитории удаления][az-acr-repository-delete] . Команда имеет следующий формат.
 
 ```azurecli
 az acr repository delete --name <acrName> --image <repositoryName>@<digest>
@@ -92,23 +92,23 @@ This operation will delete the manifest 'sha256:3168a21b98836dda7eb7a846b3d73528
 Are you sure you want to continue? (y/n): y
 ```
 
-The `acr-helloworld:v2` image is deleted from the registry, as is any layer data unique to that image. Если манифест связан с несколькими тегами, все связанные теги также удаляются.
+Образ `acr-helloworld:v2` удаляется из реестра, как и все данные слоя, уникальные для этого образа. Если манифест связан с несколькими тегами, все связанные теги также удаляются.
 
-## <a name="delete-digests-by-timestamp"></a>Delete digests by timestamp
+## <a name="delete-digests-by-timestamp"></a>Удалить дайджесты по метке времени
 
-To maintain the size of a repository or registry, you might need to periodically delete manifest digests older than a certain date.
+Чтобы сохранить размер репозитория или реестра, может потребоваться периодически удалять дайджесты манифеста, которые старше определенной даты.
 
-The following Azure CLI command lists all manifest digest in a repository older than a specified timestamp, in ascending order. Замените `<acrName>` и `<repositoryName>` значениями, уместными для вашей среды. The timestamp could be a full date-time expression or a date, as in this example.
+Следующая команда Azure CLI выводит все дайджест манифеста в репозитории старше указанной метки времени в возрастающем порядке. Замените `<acrName>` и `<repositoryName>` значениями, уместными для вашей среды. Метка времени может быть полным выражением даты и времени или датой, как в этом примере.
 
 ```azurecli
 az acr repository show-manifests --name <acrName> --repository <repositoryName> \
 --orderby time_asc -o tsv --query "[?timestamp < '2019-04-05'].[digest, timestamp]"
 ```
 
-After identifying stale manifest digests, you can run the following Bash script to delete manifest digests older than a specified timestamp. Для работы этого сценария требуется Azure CLI и **xargs**. Сценарий не выполняет удаление по умолчанию. Чтобы включить удаление образа, измените значение `ENABLE_DELETE` на `true`.
+Определив устаревшие дайджесты манифеста, можно выполнить следующий скрипт Bash, чтобы удалить дайджесты манифеста старше указанной метки времени. Для работы этого сценария требуется Azure CLI и **xargs**. Сценарий не выполняет удаление по умолчанию. Чтобы включить удаление образа, измените значение `ENABLE_DELETE` на `true`.
 
 > [!WARNING]
-> Use the following sample script with caution--deleted image data is UNRECOVERABLE. If you have systems that pull images by manifest digest (as opposed to image name), you should not run these scripts. Deleting the manifest digests will prevent those systems from pulling the images from your registry. Instead of pulling by manifest, consider adopting a *unique tagging* scheme, a [recommended best practice](container-registry-image-tag-version.md). 
+> Используйте следующий пример сценария с осторожностью: удаленные данные изображения являются невосстанавливаемыми. При наличии систем, которые извлекают образы по дайджесту манифеста (в отличие от имени образа), не следует запускать эти сценарии. Удаление дайджестов манифеста не позволит этим системам извлечь образы из реестра. Вместо того чтобы извлекать манифест, рекомендуется использовать *уникальную схему тегов* , [рекомендуемую рекомендацию](container-registry-image-tag-version.md). 
 
 ```bash
 #!/bin/bash
@@ -183,7 +183,7 @@ fi
    ]
    ```
 
-As you can see in the output of the last step in the sequence, there is now an orphaned manifest whose `"tags"` property is an empty list. Этот манифест существует в реестре вместе с уникальными данными слоя, на которые он ссылается. **Чтобы удалить потерянные образы и их данные слоя, необходимо удалить дайджест манифеста**.
+Как видно в выходных данных последнего шага последовательности, теперь существует потерянный манифест, свойство `"tags"` которого является пустым списком. Этот манифест существует в реестре вместе с уникальными данными слоя, на которые он ссылается. **Чтобы удалить потерянные образы и их данные слоя, необходимо удалить дайджест манифеста**.
 
 ## <a name="delete-all-untagged-images"></a>Удаление всех образов без тегов
 
@@ -193,10 +193,10 @@ As you can see in the output of the last step in the sequence, there is now an o
 az acr repository show-manifests --name <acrName> --repository <repositoryName> --query "[?tags[0]==null].digest"
 ```
 
-Using this command in a script, you can delete all untagged images in a repository.
+Используя эту команду в скрипте, можно удалить все изображения без тегов в репозитории.
 
 > [!WARNING]
-> С осторожностью используйте следующие примеры сценариев — данные удаленных изображений восстановлению не подлежат. If you have systems that pull images by manifest digest (as opposed to image name), you should not run these scripts. Удаление образов без тегов не позволит этим системам получать образы из реестра. Instead of pulling by manifest, consider adopting a *unique tagging* scheme, a [recommended best practice](container-registry-image-tag-version.md).
+> С осторожностью используйте следующие примеры сценариев — данные удаленных изображений восстановлению не подлежат. При наличии систем, которые извлекают образы по дайджесту манифеста (в отличие от имени образа), не следует запускать эти сценарии. Удаление образов без тегов не позволит этим системам получать образы из реестра. Вместо того чтобы извлекать манифест, рекомендуется использовать *уникальную схему тегов* , [рекомендуемую рекомендацию](container-registry-image-tag-version.md).
 
 **Azure CLI в Bash**
 
@@ -257,11 +257,11 @@ if ($enableDelete) {
 
 ## <a name="automatically-purge-tags-and-manifests-preview"></a>Автоматическая очистка тегов и манифестов (предварительная версия)
 
-As an alternative to scripting Azure CLI commands, run an on-demand or scheduled ACR task to delete all tags that are older than a certain duration or match a specified name filter. For more information, see [Automatically purge images from an Azure container registry](container-registry-auto-purge.md).
+В качестве альтернативы Azure CLI командам скрипта запустите задачу контроля доступа по запросу или по расписанию, чтобы удалить все теги, которые старше определенной длительности или соответствуют указанному фильтру имен. Дополнительные сведения см. в разделе [Автоматическая очистка образов из реестра контейнеров Azure](container-registry-auto-purge.md).
 
-Optionally set a [retention policy](container-registry-retention-policy.md) for each registry, to manage untagged manifests. When you enable a retention policy, image manifests in the registry that don't have any associated tags, and the underlying layer data, are automatically deleted after a set period.
+При необходимости задайте [политику хранения](container-registry-retention-policy.md) для каждого реестра, чтобы управлять манифестами без тегов. При включении политики хранения манифесты изображений в реестре, у которых нет связанных тегов, а также данные базового слоя, автоматически удаляются после заданного периода.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об образе хранилища в реестре контейнеров Azure см. в статье [Хранение образа контейнера в реестре контейнеров Azure](container-registry-storage.md).
 

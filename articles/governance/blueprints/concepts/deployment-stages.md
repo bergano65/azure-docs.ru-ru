@@ -1,6 +1,6 @@
 ---
 title: Этапы развертывания схемы
-description: Learn the security and artifact related steps the Azure Blueprint services goes through while creating a blueprint assignment.
+description: Изучите шаги, связанные с безопасностью и артефактами, которые выполняет Azure Blueprintные службы при создании назначения схемы.
 ms.date: 11/13/2019
 ms.topic: conceptual
 ms.openlocfilehash: 4c1d0cd47e0f43b73e3178e18a4ba5d705048a72
@@ -12,49 +12,49 @@ ms.locfileid: "74463550"
 ---
 # <a name="stages-of-a-blueprint-deployment"></a>Этапы развертывания схемы
 
-When a blueprint gets deployed, a series of actions is taken by the Azure Blueprints service to deploy the resources defined in the blueprint. This article provides details about what each step involves.
+При развертывании проекта служба "схемы Azure" предпринимает ряд действий для развертывания ресурсов, определенных в проекте. В этой статье приводятся сведения о том, что включает каждый шаг.
 
-Blueprint deployment is triggered by assigning a blueprint to a subscription or [updating an existing assignment](../how-to/update-existing-assignments.md). During the deployment, Blueprints takes the following high-level steps:
+Развертывание схемы активируется путем назначения схемы подписке или [обновления существующего назначения](../how-to/update-existing-assignments.md). Во время развертывания схемы выполняются в следующих общих действиях:
 
 > [!div class="checklist"]
-> - Blueprints granted owner rights
-> - The blueprint assignment object is created
-> - Optional - Blueprints creates **system-assigned** managed identity
-> - The managed identity deploys blueprint artifacts
-> - Blueprint service and **system-assigned** managed identity rights are revoked
+> - Схемы, получившие права владельца
+> - Объект назначения схемы создан
+> - Необязательные — схемы создание управляемого удостоверения, **назначенного системой**
+> - Управляемые удостоверения развертывает артефакты схемы
+> - Служба схемы и **назначенные системой** управляемые удостоверения отменяются
 
-## <a name="blueprints-granted-owner-rights"></a>Blueprints granted owner rights
+## <a name="blueprints-granted-owner-rights"></a>Схемы, получившие права владельца
 
-The Azure Blueprints service principal is granted owner rights to the assigned subscription or subscriptions when a [system-assigned managed identity](../../../active-directory/managed-identities-azure-resources/overview.md) managed identity is used. The granted role allows Blueprints to create, and later revoke, the **system-assigned** managed identity. If using a **user-assigned** managed identity, the Azure Blueprints service principal doesn't get and doesn't need owner rights on the subscription.
+Субъекту-службе схем Azure предоставляются права владельца для назначенной подписки или подписок, если используется управляемое системой удостоверение управляемого [удостоверения](../../../active-directory/managed-identities-azure-resources/overview.md) . Предоставленная роль позволяет проектам создавать и позднее отменять **назначенное системой** управляемое удостоверение. При использовании **назначенного пользователем** управляемого удостоверения субъект-служба схем Azure не получает и не требует прав владельца для подписки.
 
-The rights are granted automatically if the assignment is done through the portal. However, if the assignment is done through the REST API, granting the rights needs to be done with a separate API call. The Azure Blueprint AppId is `f71766dc-90d9-4b7d-bd9d-4499c4331c3f`, but the service principal varies by tenant. Use [Azure Active Directory Graph API](../../../active-directory/develop/active-directory-graph-api.md) and REST endpoint [servicePrincipals](/graph/api/resources/serviceprincipal) to get the service principal. Then, grant the Azure Blueprints the _Owner_ role through the [Portal](../../../role-based-access-control/role-assignments-portal.md), [Azure CLI](../../../role-based-access-control/role-assignments-cli.md), [Azure PowerShell](../../../role-based-access-control/role-assignments-powershell.md), [REST API](../../../role-based-access-control/role-assignments-rest.md), or a [Resource Manager template](../../../role-based-access-control/role-assignments-template.md).
+Права предоставляются автоматически, если назначение выполняется на портале. Однако, если назначение выполняется с помощью REST API, предоставление прав необходимо выполнять с помощью отдельного вызова API. Идентификатор AppId Azure Blueprint `f71766dc-90d9-4b7d-bd9d-4499c4331c3f`, но субъект-служба зависит от клиента. Для получения субъекта-службы используйте [Azure Active Directory API Graph](../../../active-directory/develop/active-directory-graph-api.md) и конечную точку RESTful [Свойства serviceprincipals](/graph/api/resources/serviceprincipal) . Затем предоставьте роль _владельца_ в Azure на [портале](../../../role-based-access-control/role-assignments-portal.md), [Azure CLI](../../../role-based-access-control/role-assignments-cli.md), [Azure PowerShell](../../../role-based-access-control/role-assignments-powershell.md), [REST API](../../../role-based-access-control/role-assignments-rest.md)или [шаблоне диспетчер ресурсов](../../../role-based-access-control/role-assignments-template.md).
 
-The Blueprints service doesn't directly deploy the resources.
+Служба чертежей не развертывает ресурсы напрямую.
 
-## <a name="the-blueprint-assignment-object-is-created"></a>The blueprint assignment object is created
+## <a name="the-blueprint-assignment-object-is-created"></a>Объект назначения схемы создан
 
-A user, group, or service principal assigns a blueprint to a subscription. The assignment object exists at the subscription level where the blueprint was assigned. Resources created by the deployment aren't done in context of the deploying entity.
+Пользователь, группа или субъект-служба назначает проект для подписки. Объект назначения существует на уровне подписки, где был назначен проект. Ресурсы, созданные при развертывании, не выполняются в контексте сущности развертывания.
 
-While creating the blueprint assignment, the type of [managed identity](../../../active-directory/managed-identities-azure-resources/overview.md) is selected. The default is a **system-assigned** managed identity. A **user-assigned** managed identity can be chosen. When using a **user-assigned** managed identity, it must be defined and granted permissions before the blueprint assignment is created. Both the [Owner](../../../role-based-access-control/built-in-roles.md#owner) and [Blueprint Operator](../../../role-based-access-control/built-in-roles.md#blueprint-operator) built-in roles have the necessary `blueprintAssignment/write` permission to create an assignment that uses a **user-assigned** managed identity.
+При создании назначения схемы выбирается тип [управляемого удостоверения](../../../active-directory/managed-identities-azure-resources/overview.md) . Значение по умолчанию — управляемое **системой** удостоверение. Можно выбрать **назначаемое пользователем** управляемое удостоверение. При использовании управляемого удостоверения, **назначенного пользователем** , его необходимо определить и предоставить разрешения перед созданием назначения схемы. Роли " [владелец](../../../role-based-access-control/built-in-roles.md#owner) " и " [оператор](../../../role-based-access-control/built-in-roles.md#blueprint-operator) построения" имеют необходимые разрешения `blueprintAssignment/write` для создания назначения, которое использует управляемое **пользователем** удостоверение.
 
-## <a name="optional---blueprints-creates-system-assigned-managed-identity"></a>Optional - Blueprints creates system-assigned managed identity
+## <a name="optional---blueprints-creates-system-assigned-managed-identity"></a>Необязательные — схемы создание управляемого удостоверения, назначенного системой
 
-When [system-assigned managed identity](../../../active-directory/managed-identities-azure-resources/overview.md) is selected during assignment, Blueprints creates the identity and grants the managed identity the [owner](../../../role-based-access-control/built-in-roles.md#owner) role. If an [existing assignment is upgraded](../how-to/update-existing-assignments.md), Blueprints uses the previously created managed identity.
+При выборе [управляемого удостоверения, назначенного системой](../../../active-directory/managed-identities-azure-resources/overview.md) во время назначения, схемы создают удостоверение и предоставляют управляемому удостоверению роль [владельца](../../../role-based-access-control/built-in-roles.md#owner) . При [обновлении существующего назначения](../how-to/update-existing-assignments.md)схемы используют ранее созданное управляемое удостоверение.
 
-The managed identity related to the blueprint assignment is used to deploy or redeploy the resources defined in the blueprint. This design avoids assignments inadvertently interfering with each other.
-This design also supports the [resource locking](./resource-locking.md) feature by controlling the security of each deployed resource from the blueprint.
+Управляемое удостоверение, связанное с назначением схемы, используется для развертывания или повторного развертывания ресурсов, определенных в проекте. Такая схема позволяет избежать непреднамеренного влияния на назначения друг на друга.
+Эта схема также поддерживает функцию [блокировки ресурсов](./resource-locking.md) , контролируя безопасность каждого развернутого ресурса из схемы.
 
-## <a name="the-managed-identity-deploys-blueprint-artifacts"></a>The managed identity deploys blueprint artifacts
+## <a name="the-managed-identity-deploys-blueprint-artifacts"></a>Управляемые удостоверения развертывает артефакты схемы
 
-The managed identity then triggers the Resource Manager deployments of the artifacts within the blueprint in the defined [sequencing order](./sequencing-order.md). The order can be adjusted to ensure artifacts dependent on other artifacts are deployed in the correct order.
+Затем управляемое удостоверение активирует диспетчер ресурсов развертывания артефактов в пределах схемы в определенном [порядке последовательности](./sequencing-order.md). Заказ можно изменить, чтобы убедиться, что артефакты, зависящие от других артефактов, развернуты в правильном порядке.
 
-An access failure by a deployment is often the result of the level of access granted to the managed identity. The Blueprints service manages the security lifecycle of the **system-assigned** managed identity. However, the user is responsible for managing the rights and lifecycle of a **user-assigned** managed identity.
+Сбой доступа при развертывании часто является результатом уровня доступа, предоставляемого управляемому удостоверению. Служба чертежей управляет жизненным циклом безопасности управляемого удостоверения, **назначенного системой** . Однако пользователь несет ответственность за управление правами и жизненным циклом управляемого удостоверения, **назначаемого пользователем** .
 
-## <a name="blueprint-service-and-system-assigned-managed-identity-rights-are-revoked"></a>Blueprint service and system-assigned managed identity rights are revoked
+## <a name="blueprint-service-and-system-assigned-managed-identity-rights-are-revoked"></a>Служба схемы и назначенные системой управляемые удостоверения отменяются
 
-Once the deployments are completed, Blueprints revokes the rights of the **system-assigned** managed identity from the subscription. Then, the Blueprints service revokes its rights from the subscription. Rights removal prevents Blueprints from becoming a permanent owner on a subscription.
+После завершения развертывания схемы отменяют права управляемого **системой** удостоверения из подписки. Затем служба чертежей отзывает свои права из подписки. Удаление прав предотвращает создание планами постоянного владельца подписки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Узнайте, как использовать [статические и динамические параметры](parameters.md).
 - Научитесь настраивать [последовательность схемы](sequencing-order.md).
