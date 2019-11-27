@@ -1,5 +1,5 @@
 ---
-title: Использование пустых граничных узлов в кластерах Apache Hadoop в HDInsight в Azure
+title: Использование пустых граничных узлов в кластерах Apache Hadoop в Azure HDInsight
 description: Сведения о том, как добавить пустой граничный узел в кластер HDInsight, который может использоваться в качестве клиента, а затем тестировать и разместить приложения HDInsight.
 ms.reviewer: jasonh
 author: hrasheed-msft
@@ -8,12 +8,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 06/13/2019
 ms.author: hrasheed
-ms.openlocfilehash: a669c6fe0ffd6ff1c4d4613a91074edfe9fa87e9
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: b39d30248e9aedc82b5da1e479a383e0c9bfbdc4
+ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73162654"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73498026"
 ---
 # <a name="use-empty-edge-nodes-on-apache-hadoop-clusters-in-hdinsight"></a>Использование пустых граничных узлов в кластерах Apache Hadoop в HDInsight
 
@@ -62,7 +62,7 @@ ms.locfileid: "73162654"
 > * [Форум MSDN для HDInsight](https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight)
 > * [https://stackoverflow.com](https://stackoverflow.com).
 >
-> При использовании технологии Apache можно получить помощь на соответствующих сайтах для проектов Apache, например [Apache Hadoop](https://hadoop.apache.org/) на сайте [https://apache.org](https://apache.org).
+> При использовании технологии Apache можно получить помощь на соответствующих сайтах для проектов Apache, например [Apache Hadoop https://apache.org на сайте ](https://apache.org)[](https://hadoop.apache.org/).
 
 > [!IMPORTANT]
 > Образы Ubuntu станут доступны для создания кластера HDInsight в течение 3 месяцев после публикации. По состоянию на январь 2019 года работающие кластеры (включая граничные узлы) **не** были автоматически исправлены. Клиенты должны использовать действия сценария или другие механизмы для исправления работающего кластера.  Дополнительные сведения см. в статье [Обновление путем частичной замены ОС для кластеров HDInsight](./hdinsight-os-patching.md).
@@ -151,13 +151,13 @@ ms.locfileid: "73162654"
 4. Щелкните правой кнопкой мыши граничный узел, который нужно удалить, и выберите пункт **Удалить**.
 5. Нажмите кнопку **Да** для подтверждения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 В этой статье вы узнали, как добавить граничный узел и как получить к нему доступ. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
 
 * [Установка приложений HDInsight](hdinsight-apps-install-applications.md)— узнайте, как устанавливать в кластер приложения HDInsight.
 * [Установка пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md)— узнайте, как развернуть в HDInsight неопубликованное приложение HDInsight.
 * [Публикация приложений HDInsight в Azure Marketplace](hdinsight-apps-publish-applications.md)— узнайте, как опубликовать пользовательские приложения HDInsight в Azure Marketplace.
-* [Install an HDInsight application](https://msdn.microsoft.com/library/mt706515.aspx)(Установка приложения HDInsight) — сведения об определении приложений HDInsight.
+* [Install an HDInsight application](https://msdn.microsoft.com/library/mt706515.aspx)(Установка приложения HDInsight) — узнайте, как определить приложения HDInsight.
 * [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md)— узнайте, как использовать действие скрипта для установки дополнительных приложений.
-* [Создание кластеров Apache Hadoop под управлением Linux в HDInsight с помощью шаблонов ARM](hdinsight-hadoop-create-linux-clusters-arm-templates.md)— узнайте, как вызывать шаблоны Resource Manager для создания кластеров HDInsight.
+* [Создание кластеров Apache Hadoop под управлением Linux в HDInsight с помощью шаблонов Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md) — узнайте, как вызывать шаблоны Resource Manager для создания кластеров HDInsight.
 

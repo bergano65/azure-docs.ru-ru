@@ -7,19 +7,19 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 09/05/2018
-ms.openlocfilehash: d77bbe355b3f6a2666f46246d1d12cfb2e43e559
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: 860694a750ae313f04aceab924429dcf08ecbb66
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72677577"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73887541"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Использование Application Insights для облачных служб Azure
 [Application Insights][start] можете отслеживать [приложения облачных служб Azure](https://azure.microsoft.com/services/cloud-services/) на предмет доступности, производительности, сбоев и использования, объединяя данные из Application Insights SDK с [система диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) данными из облачных служб. Благодаря получаемым данным о производительности и эффективности работы приложения на практике вы можете принимать осознанные решения о направлении разработки в каждом жизненном цикле.
 
 ![Панель мониторинга с общими сведениями](./media/cloudservices/overview-graphs.png)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 Для этого потребуются следующие компоненты.
 
 * Подписка [Azure](https://azure.com). Войдите с помощью учетной записи Майкрософт для Windows, XBox Live или других облачных служб Майкрософт. 
@@ -57,7 +57,7 @@ ms.locfileid: "72677577"
 ### <a name="resources-for-components"></a>Ресурсы для компонентов
 Мы рекомендуем создать отдельный ресурс для каждого компонента приложения. Это означает, что ресурс создается для каждой веб-роли и рабочей роли. Вы можете анализировать каждый компонент отдельно, но удобнее создать [панель мониторинга](../../azure-monitor/app/overview-dashboard.md) с важнейшими диаграммами для всех компонентов, чтобы сравнивать и отслеживать их вместе. 
 
-Вместо этого вы можете отправлять данные телеметрии из нескольких ролей в один ресурс, [добавив в каждый элемент телеметрии свойство измерения](../../azure-monitor/app/api-filtering-sampling.md#add-properties-itelemetryinitializer), которое определяет его исходную роль. При таком подходе диаграммы метрик (например, исключений) обычно отображают агрегированные данные для нескольких ролей. При необходимости вы можете сегментировать диаграмму по идентификатору роли. Поиск также можно фильтровать по одному измерению. Этот вариант делает более удобным одновременный просмотр информации, но может привести к некоторой путанице с ролями.
+Вместо этого вы можете отправлять данные телеметрии из нескольких ролей в один ресурс, [добавив в каждый элемент телеметрии свойство измерения](../../azure-monitor/app/api-filtering-sampling.md#addmodify-properties-itelemetryinitializer), которое определяет его исходную роль. При таком подходе диаграммы метрик (например, исключений) обычно отображают агрегированные данные для нескольких ролей. При необходимости вы можете сегментировать диаграмму по идентификатору роли. Поиск также можно фильтровать по одному измерению. Этот вариант делает более удобным одновременный просмотр информации, но может привести к некоторой путанице с ролями.
 
 Данные телеметрии браузера обычно добавляются в тот же ресурс, что и данные соответствующей серверной веб-роли.
 
@@ -74,7 +74,7 @@ ms.locfileid: "72677577"
 
 Если вы решили создать отдельный ресурс для каждой роли и, возможно, отдельный набор для каждой конфигурации сборки, проще это сделать на портале Application Insights. Если создается много ресурсов, можно [автоматизировать этот процесс](../../azure-monitor/app/powershell.md).
 
-1. В [портал Azure][portal]выберите **создать**  > **службы разработчиков**  > **Application Insights**.  
+1. В [портал Azure][portal]выберите **создать** > **службы разработчиков** > **Application Insights**.  
 
     ![Панель Application Insights](./media/cloudservices/01-new.png)
 
@@ -107,22 +107,22 @@ ms.locfileid: "72677577"
 
 1. Чтобы настроить **рабочие ролей**, сделайте следующее: 
 
-    а) Щелкните проект правой кнопкой мыши и выберите **Управление пакетами Nuget**.
+    a. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами Nuget**.
 
-    б) Добавьте [Application Insights для Windows Servers](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/).
+    b. Добавьте [Application Insights для Windows Servers](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/).
 
     ![Поиск Application Insights](./media/cloudservices/04-ai-nuget.png)
 
 1. Чтобы настроить пакет SDK для отправки данных в ресурс Application Insights, сделайте следующее:
 
-    а) В соответствующей функции запуска задайте ключ инструментирования, указанный в параметре конфигурации из файла *.cscfg*.
+    a. В соответствующей функции запуска задайте ключ инструментирования, указанный в параметре конфигурации из файла *.cscfg*.
  
     ```csharp
    
      TelemetryConfiguration.Active.InstrumentationKey = RoleEnvironment.GetConfigurationSettingValue("APPINSIGHTS_INSTRUMENTATIONKEY");
     ```
    
-    б) Повторите предыдущий шаг (a) для каждой роли в приложении. См. указанные ниже примеры.
+    b. Повторите предыдущий шаг (a) для каждой роли в приложении. См. указанные ниже примеры.
    
     * [Веб-роль](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/Global.asax.cs#L27)
     * [Рабочая роль](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/WorkerRoleA.cs#L232)
@@ -224,12 +224,12 @@ ms.locfileid: "72677577"
 ## <a name="performance-counters"></a>Счетчики производительности
 По умолчанию собираются приведенные ниже счетчики.
 
-* \Process (?? APP_WIN32_PROC??) \% процессорного времени
+* \Process (?? APP_WIN32_PROC??)\% процессорного времени
 * \Память\доступные байты
 * \.NET CLR Exceptions(??APP_CLR_PROC??)\# Исключений в секунду
 * \Process(??APP_WIN32_PROC??)\Байт исключительного пользования
 * \Process(??APP_WIN32_PROC??)\I/O — обмен данными, байт в секунду
-* \Processor(_Total)\% Загруженность процессора
+* \Процессор (_общий объем ресурсов)\% загруженности процессора
 
 Эти счетчики также собираются для веб-ролей.
 
@@ -237,7 +237,7 @@ ms.locfileid: "72677577"
 * \ASP.NET Applications(??APP_W3SVC_PROC??)\Время выполнения запросов
 * \ASP.NET Applications(??APP_W3SVC_PROC??)\Запросы в очереди приложений
 
-Можно указать дополнительные пользовательские или другие счетчики производительности Windows, [изменив файл *ApplicationInsights.config*](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/ApplicationInsights.config#L14).
+Можно указать дополнительные пользовательские или другие счетчики производительности Windows, *изменив файл* ApplicationInsights.config[](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/ApplicationInsights.config#L14).
 
   ![Счетчики производительности](./media/cloudservices/002-servers.png)
 
@@ -275,7 +275,7 @@ ms.locfileid: "72677577"
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * [Настройка системы диагностики Azure для отправки данных в Application Insights](../../azure-monitor/platform/diagnostics-extension-to-application-insights.md)
 * [Создание ресурсов Application Insights с помощью PowerShell](../../azure-monitor/app/powershell.md)
 * [Настройка Application Insights для веб-приложения Azure с помощью PowerShell](../../azure-monitor/app/powershell-azure-diagnostics.md)
