@@ -1,6 +1,6 @@
 ---
-title: Request process and email notifications in Azure AD entitlement management - Azure Active Directory
-description: Learn about the request process for an access package and when email notifications are sent in Azure Active Directory entitlement management.
+title: Обработка запросов и уведомлений по электронной почте в управлении назначениями Azure AD — Azure Active Directory
+description: Сведения о процессе запроса для пакета доступа и об отправке уведомлений по электронной почте в Azure Active Directory управления назначением.
 services: active-directory
 documentationCenter: ''
 author: msaburnley
@@ -23,136 +23,136 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74206927"
 ---
-# <a name="request-process-and-email-notifications-in-azure-ad-entitlement-management"></a>Request process and email notifications in Azure AD entitlement management
+# <a name="request-process-and-email-notifications-in-azure-ad-entitlement-management"></a>Обработка запросов и уведомлений по электронной почте в управлении назначениями Azure AD
 
-When a user submits a request to an access package, a process begins to deliver that access request. Azure AD entitlement management sends email notifications to approvers and requestors when key events occur during the process. This article describes the request process and the email notifications that are sent.
+Когда пользователь отправляет запрос в пакет Access, процесс начинает предоставлять этот запрос на доступ. Управление обслуживанием Azure AD отправляет уведомления по электронной почте утверждающим и запрашивающим лицам при возникновении ключевых событий во время процесса. В этой статье описывается процесс запроса и отправляемые уведомления по электронной почте.
 
-## <a name="request-process"></a>Request process
+## <a name="request-process"></a>Процесс запроса
 
-A user that needs access to an access package can submit an access request. Depending on the configuration of the policy, the request might require an approval. When a request is approved, a process begins to assign the user access to each resource in the access package. The following diagram shows an overview of the process and the different states:
+Пользователь, которому необходим доступ к пакету Access, может отправить запрос на доступ. В зависимости от конфигурации политики запрос может потребовать утверждения. При утверждении запроса процесс начинает назначать пользователю доступ к каждому ресурсу в пакете доступа. На следующей схеме показан обзор процесса и различные состояния.
 
-![Approval process diagram](./media/entitlement-management-process/request-process.png)
+![Схема процесса утверждения](./media/entitlement-management-process/request-process.png)
 
-| Состояние | Описание |
+| Состояние | ОПИСАНИЕ |
 | --- | --- |
-| Submitted | User submits a request. |
-| Ожидающие утверждения | If the policy for an access package requires approval, a request moves to pending approval. |
-| Срок действия истек | If no approvers approve a request within the approval request timeout, the request expires. To try again, the user will have to resubmit their request. |
-| Denied | Approver denies a request. |
-| Approved | Approver approves a request. |
-| Доставка содержимого | User has **not** been assigned access to all the resources in the access package. If this is an external user, the user may not have accessed the resource directory yet. They also may not have accepted the consent prompt. |
-| Доставлено | User has been assigned access to all the resources in the access package. |
-| Access extended | If extensions are allowed in the policy, the user extended the assignment. |
-| Access expired | User's access to the access package has expired. To get access again, the user will have to submit a request. |
+| DAA | Пользователь отправляет запрос. |
+| Ожидающие утверждения | Если политика для пакета доступа требует утверждения, запрос переходит к ожидающему утверждению. |
+| Срок действия истек | Если ни один из утверждающих не утвердит запрос в течение времени ожидания запроса на утверждение, срок действия запроса истечет. Чтобы повторить попытку, пользователю придется повторно отправить свой запрос. |
+| Запрещен | Утверждающий отклоняет запрос. |
+| Approved | Утверждающий утверждает запрос. |
+| Доставка содержимого | Пользователю **не** был назначен доступ ко всем ресурсам в пакете доступа. Если это внешний пользователь, пользователь может еще не получить доступ к каталогу ресурсов. Они также могут не принять запрос на согласие. |
+| Доставлено | Пользователю был назначен доступ ко всем ресурсам в пакете доступа. |
+| Расширенный доступ | Если в политике разрешены расширения, пользователь расширил назначение. |
+| Срок действия доступа истек | Срок действия доступа пользователя к пакету доступа истек. Чтобы снова получить доступ, пользователю придется отправить запрос. |
 
-## <a name="email-notifications"></a>Уведомления по электронной почте
+## <a name="email-notifications"></a>Уведомления по почте
 
-If you're an approver, you're sent email notifications when you need to approve an access request. You also receive notifications when an access request has been completed. You're also sent email notifications that indicate the status of your request if you're a requestor.
+Если вы являетесь утверждающим, вы отправляете уведомления по электронной почте, когда вам нужно одобрить запрос на доступ. Вы также получаете уведомления о завершении запроса на доступ. Вы также отправляете уведомления по электронной почте, которые указывают на состояние вашего запроса, если вы являетесь инициатором запроса.
 
-The following diagrams show when these email notifications are sent to either the approvers or the requestor. Reference the [email notifications table](entitlement-management-process.md#email-notifications-table) to find the corresponding number to the email notifications displayed in the diagrams.
+На следующих диаграммах показано, когда эти уведомления отправляются либо утверждающим, либо запрашивающему. Чтобы найти соответствующий номер для уведомлений по электронной почте, отображаемых на диаграммах, воспользуйтесь ссылкой на [таблицу уведомлений по электронной почте](entitlement-management-process.md#email-notifications-table) .
 
-### <a name="first-approvers-and-alternate-approvers"></a>First approvers and alternate approvers
-The following diagram shows the experience of first approvers and alternate approvers, and the email notifications they receive during the request process:
+### <a name="first-approvers-and-alternate-approvers"></a>Первые утверждающие лица и другие утверждающие
+На следующей схеме показана работа первых утверждающих и альтернативных утверждающих, а также уведомления по электронной почте, которые они получают в процессе запроса:
 
-![First and alternate approvers process flow](./media/entitlement-management-process/first-approvers-and-alternate-with-escalation-flow.png)
+![Первый и альтернативный поток обработки утверждающих](./media/entitlement-management-process/first-approvers-and-alternate-with-escalation-flow.png)
 
 ### <a name="requestors"></a>Запрашивающие стороны
-The following diagram shows the experience of requestors and the email notifications they receive during the request process:
+На следующей схеме показана работа с запросами и уведомлениями по электронной почте, которые они получают в процессе запроса:
 
-![Requestor process flow](./media/entitlement-management-process/requestor-approval-request-flow.png)
+![Поток процесса запрашивающей стороны](./media/entitlement-management-process/requestor-approval-request-flow.png)
 
-### <a name="2-stage-approval"></a>2-stage approval
-The following diagram shows the experience of stage-1 and stage-2 approvers and the email notifications they receive during the request process:
+### <a name="2-stage-approval"></a>утверждение 2 этапа
+На следующей схеме показана работа с утверждениями этапа 1 и 2, а также уведомления по электронной почте, которые они получают в процессе запроса:
 
-![2-stage approval process flow](./media/entitlement-management-process/2stage-approval-with-request-timeout-flow.png)
+![поток процесса утверждения 2 этапа](./media/entitlement-management-process/2stage-approval-with-request-timeout-flow.png)
 
-### <a name="email-notifications-table"></a>Email notifications table
-The following table provides more detail about each of these email notifications. To manage these emails, you can use rules. For example, in Outlook, you can create rules to move the emails to a folder if the subject contains words from this table:
+### <a name="email-notifications-table"></a>Таблица уведомлений по электронной почте
+В следующей таблице приведены более подробные сведения о каждом из этих уведомлений по электронной почте. Для управления этими сообщениями электронной почты можно использовать правила. Например, в Outlook можно создать правила для перемещения сообщений электронной почты в папку, если тема содержит слова из этой таблицы:
 
-| # | Тема сообщения | When sent | Sent to |
+| # | Тема сообщения | При отправке | Кому отправлено |
 | --- | --- | --- | --- |
-| 1 | Action required: Approve or deny forwarded request by *[date]* | This email will be sent to Stage-1 alternate approvers (after the request has been escalated) to take action. | Stage-1 alternate approvers |
-| 2 | Action required: Approve or deny request by *[date]* | This email will be sent to the first approver, if escalation is disabled, to take action. | First approver |
-| 3 | Reminder: Approve or deny the request by *[date]* for *[requestor]* | This reminder email will be sent to the first approver, if escalation is disabled. The email asks them to take action if they haven't. | First approver |
-| 4 | Approve or deny the request by *[time]* on *[date]* | This email will be sent to the first approver (if escalation is enabled) to take action. | First approver |
-| 5 | Action required reminder: Approve or deny the request by *[date]* for *[requestor]* | This reminder email will be sent to the first approver, if escalation is enabled. The email asks them to take action if they haven't. | First approver |
-| 6 | Request has expired for *[access_package]* | This email will be sent to the first approver and stage-1 alternate approvers after the request has expired. | First approver, stage-1 alternate approvers |
-| 7 | Request approved for *[requestor]* to *[access_package]* | This email will be sent to the first approver and stage-1 alternate approvers upon request completion. | First approver, stage-1 alternate approvers |
-| 8 | Request approved for *[requestor]* to *[access_package]* | This email will be sent to the first approver and stage-1 alternate approvers of a 2-stage request when the stage-1 request is approved. | First approver, stage-1 alternate approvers |
-| 9 | Request denied to *[access_package]* | This email will be sent to the requestor when their request is denied | Requestor |
-| 10 | Your request has expired for *[access_package]* | This email will be sent to the requestor at the end of a single or 2-stage request. The email notifies the requestor that the request expired. | Requestor |
-| 11 | Action required: Approve or deny request by *[date]* | This email will be sent to the second approver, if escalation is disabled, to take action. | Second approver |
-| 12 | Action required reminder: Approve or deny the request by *[date]* | This reminder email will be sent to the second approver, if escalation is disabled. The notification asks them to take action if they haven't yet. | Second approver |
-| 13 | Action required: Approve or deny the request by *[date]* for *[requestor]* | This email will be sent to second approver, if escalation is enabled, to take action. | Second approver |
-| 14 | Action required reminder: Approve or deny the request by *[date]* for *[requestor]* | This reminder email will be sent to the second approver, if escalation is enabled. The notification asks them to take action if they haven't yet. | Second approver |
-| 15 | Action required: Approve or deny forwarded request by *[date]* | This email will be sent to stage-2 alternate approvers, if escalation is enabled, to take action. | Stage-2 alternate approvers |
-| 16 | Request approved for *[requestor]* to *[access_package]* | This email will be sent to the second approver and stage-2 alternate approvers upon approving the request. | Second approver, Stage-2 alternate approvers |
-| 17 | A request has expired for *[access_package]* | This email will be sent to the second approver or alternate approvers, after the request expires. | Second approver, stage-2 alternate approvers |
-| 18 | You now have access to *[access_package]* | This email will be sent to the end users to start using their access. | Requestor |
-| 19 | Extend access for *[access_package]* by *[date]* | This email will be sent to the end users before their access expires. | Requestor |
-| 20 | Access has ended for *[access_package]* | This email will be sent to the end users after their access expires. | Requestor |
+| 1 | Требуется действие: утвердить или отклонить перенаправленный запрос по *[DATE]* | Это электронное письмо будет отправлено на этап-1 альтернативные утверждающие (после эскалации запроса) для выполнения действия. | Дополнительный утверждающий, этап 1 |
+| 2 | Требуется действие: утвердить или отклонить запрос по *[DATE]* | Это сообщение будет отправлено первому утверждающему, если эскалация отключена, чтобы выполнить действие. | Первый утверждающий |
+| 3 | Напоминание. Утвердите или отклоните запрос по *[DATE]* для *[запрашивающей стороны]* | Это сообщение электронной почты будет отправлено первому утверждающему лицу, если укрупнение отключено. По этому адресу будет предложено выполнить действие, если это не так. | Первый утверждающий |
+| 4\. | Утвердить или отклонить запрос по *[Time]* *[Дата]* | Это сообщение будет отправлено первому утверждающему (если эскалация включена) для выполнения действия. | Первый утверждающий |
+| 5 | Напоминание о требуемом действии: Утвердите или отклоните запрос по *[DATE]* для *[запрашивающей стороны]* | Это сообщение электронной почты будет отправлено первому утверждающему, если укрупнение включено. По этому адресу будет предложено выполнить действие, если это не так. | Первый утверждающий |
+| 6 | Срок действия запроса истек для *[access_package]* | Это сообщение электронной почты будет отправлено первому утверждающему и поэтапному отправке другому лицу по истечении срока действия запроса. | Первый утверждающий, этап-1, альтернативное утверждение |
+| 7 | Запрос утвержден для *[запрашивающей стороны]* на *[access_package]* | Это сообщение электронной почты будет отправлено первому утверждающему и поэтапному отправке после завершения запроса. | Первый утверждающий, этап-1, альтернативное утверждение |
+| 8 | Запрос утвержден для *[запрашивающей стороны]* на *[access_package]* | Это электронное письмо будет отправлено первому утверждающему и этапу 1. Дополнительные утверждающие запросы в 2 этапа, когда запрос этапа 1 утверждается. | Первый утверждающий, этап-1, альтернативное утверждение |
+| 9 | Запрос отклонен на *[access_package]* | Это сообщение будет отправлено запрашивающему, когда запрос будет отклонен. | Запрашивающей стороны |
+| 10 | Срок действия вашего запроса истек для *[access_package]* | Это сообщение будет отправлено инициатору запроса в конце одного или 2-этапного запроса. Сообщение электронной почты уведомляет запрашивающий, что срок действия запроса истек. | Запрашивающей стороны |
+| 11 | Требуется действие: утвердить или отклонить запрос по *[DATE]* | Это сообщение будет отправлено второму утверждающему, если эскалация отключена, чтобы выполнить действие. | Второй утверждающий |
+| 12 | Напоминание о требуемом действии: утверждение или отклонение запроса с помощью *[DATE]* | Это сообщение электронной почты будет отправлено второму утверждающему, если укрупнение отключено. Уведомление предложит принять меры, если они еще не были. | Второй утверждающий |
+| 13. | Требуется действие: Утвердите или отклоните запрос по *[DATE]* для *[запрашивающей стороны]* | Это сообщение будет отправлено второму утверждающему, если эскалация включена, чтобы выполнить действие. | Второй утверждающий |
+| 14 | Напоминание о требуемом действии: Утвердите или отклоните запрос по *[DATE]* для *[запрашивающей стороны]* | Это сообщение электронной почты будет отправлено второму утверждающему, если укрупнение включено. Уведомление предложит принять меры, если они еще не были. | Второй утверждающий |
+| 15 | Требуется действие: утвердить или отклонить перенаправленный запрос по *[DATE]* | Это сообщение будет отправлено на промежуточный этап 2, если эскалация включена, чтобы выполнить действие. | Этап 2. альтернативные утверждающие |
+| 16 | Запрос утвержден для *[запрашивающей стороны]* на *[access_package]* | Это сообщение будет отправлено второму утверждающему и поэтапному отправке другим утверждающим при утверждении запроса. | Второй утверждающий, этап 2 альтернативный утверждающий |
+| 17 | Срок действия запроса истек для *[access_package]* | Это сообщение будет отправлено второму утверждающему или альтернативному утверждаю после истечения срока действия запроса. | Второй утверждающий, этап 2 альтернативный утверждающий |
+| 18 | Теперь у вас есть доступ к *[access_package]* | Это электронное письмо будет отправлено конечным пользователям для начала использования доступа. | Запрашивающей стороны |
+| 19 | Расширение доступа для *[access_package]* по *[DATE]* | Это сообщение будет отправлено конечным пользователям до истечения срока действия доступа. | Запрашивающей стороны |
+| 20 | Доступ к *[access_package]* завершен. | Это сообщение электронной почты будет отправлено конечным пользователям после истечения срока действия доступа. | Запрашивающей стороны |
 
-### <a name="access-request-emails"></a>Access request emails
+### <a name="access-request-emails"></a>Сообщения с запросами на доступ
 
-When a requestor submits an access request for an access package configured to require approval, all approvers added to the policy will receive an email notification with details of the request. The details in the email include: requestor's name organization, and business justification; and the requested access start and end date (if provided). The details will also include when the request was submitted and when the request will expire.
+Когда запрашивающий отправляет запрос на доступ к пакету доступа, настроенному для обязательного утверждения, все утверждающие, добавленные в политику, получат уведомление по электронной почте с подробными сведениями о запросе. В сообщении электронной почты содержатся следующие сведения: организация имени запрашивающей стороны и деловое обоснование. и Дата и время начала и окончания доступа (если задано). Эти сведения также будут включать в себя, когда запрос был отправлен и срок действия запроса истечет.
 
-The email includes a link approvers can click on to go to My Access to approve or deny the access request. Here is a sample email notification that is sent to the first approver or second approver (if 2-stage approval is enabled) to complete an access request:
+Сообщение электронной почты содержит утверждающих, чтобы перейти к разделу "мой доступ", чтобы утвердить или отклонить запрос на доступ. Ниже приведен пример уведомления по электронной почте, которое отправляется первому утверждающему или второму утверждающему (если включено 2-этапное утверждение) для завершения запроса на доступ:
 
-![Approve request to access package email](./media/entitlement-management-shared/approver-request-email.png)
+![Утвердить запрос на доступ к электронной почте пакета](./media/entitlement-management-shared/approver-request-email.png)
 
-Approvers can also receive a reminder email. The email asks the approver to make a decision on the request. Here is a sample email notification the approver receives to remind them to take action:
+Утверждающие могут также получить электронное сообщение с напоминанием. Сообщение электронной почты попросит утверждающего принять решение о запросе. Ниже приведен пример уведомления по электронной почте, которое поступает утверждающему, чтобы напомнить им предпринять следующие действия:
 
-![Reminder access request email](./media/entitlement-management-process/approver-access-request-reminder-email.png)
+![Сообщение с запросом на доступ к напоминанию](./media/entitlement-management-process/approver-access-request-reminder-email.png)
 
-### <a name="alternate-approvers-request-emails"></a>Alternate approvers request emails
+### <a name="alternate-approvers-request-emails"></a>Другие утверждающие запрашивают сообщения электронной почты
 
-If the alternate approvers setting is enabled and the request is still pending, it will be forwarded. Alternate approvers will receive an email to approve or deny the request. You can enable alternate approvers in stage-1 and stage-2. Here is a sample email of the notification the alternate approvers receive:
+Если параметр альтернативный утверждающий включен и запрос все еще находится в состоянии ожидания, он будет перенаправлен. Другие утверждающие получат сообщение электронной почты, чтобы утвердить или отклонить запрос. Можно включить альтернативных утверждающих на этапе 1 и 2. Ниже приведен пример сообщения электронной почты с уведомлением о получении альтернативных утверждающих:
 
-![Alternate approvers request email](./media/entitlement-management-process/alternate-approver-email-fwd-request.png)
+![Запрос электронной почты для других утверждающих](./media/entitlement-management-process/alternate-approver-email-fwd-request.png)
 
-Both the approver and the alternate approvers can approve or deny the request.
+И утверждающий, и альтернативные утверждающие могут утвердить или отклонить запрос.
 
-### <a name="approved-or-denied-emails"></a>Approved or denied emails
+### <a name="approved-or-denied-emails"></a>Утвержденные или отклоненные сообщения электронной почты
 
- When an approver receives an access request submitted by a requestor, they can approve or deny the access request. The approver needs to add a business justification for their decision. Here is a sample email sent to the approvers and alternate approvers after a request is approved:
+ Когда утверждающий получает запрос на доступ, отправленный запрашивающей стороны, он может утвердить или отклонить запрос на доступ. Утверждающему лицу необходимо добавить Деловое обоснование для принятия решения. Ниже приведен пример сообщения электронной почты, отправленного утверждающим и другим утверждающим после утверждения запроса.
 
-![Approved request to access package email](./media/entitlement-management-process/approver-request-email-approved.png)
+![Утвержденный запрос на доступ к электронной почте пакета](./media/entitlement-management-process/approver-request-email-approved.png)
 
-When an access request is approved, and their access is provisioned, an email notification is sent to the requestor that they now have access to the access package. Here is a sample email notification that is sent to a requestor when they're granted access to an access package:
+После утверждения запроса на доступ и подготовки его доступа к запрашивающему пользователю отправляется уведомление о том, что теперь у него есть доступ к пакету Access. Ниже приведен пример уведомления по электронной почте, которое отправляется запрашивающему, когда ему предоставляется доступ к пакету Access.
 
-![Approved requestor access request email](./media/entitlement-management-process/requestor-email-approved.png)
+![Сообщение электронной почты с утвержденным запросом на доступ](./media/entitlement-management-process/requestor-email-approved.png)
 
-When an access request is denied, an email notification is sent to the requestor. Here is a sample email notification that is sent to a requestor when their access request is denied:
+Когда запрос на доступ отклоняется, запрашивающему получателю отправляется уведомление по электронной почте. Ниже приведен пример уведомления по электронной почте, которое отправляется запрашивающему, когда запрос на доступ запрещен.
 
-![Requestor request denied email](./media/entitlement-management-process/requestor-email-denied.png)
+![Запрос запроса отклонил сообщение электронной почты](./media/entitlement-management-process/requestor-email-denied.png)
 
-### <a name="2-stage-approval-access-request-emails"></a>2-stage approval access request emails
+### <a name="2-stage-approval-access-request-emails"></a>сообщения электронной почты с запросом на разрешение на утверждение 2 этапа
 
-If 2-stage approval is enabled, at least two approvers must approve the request, one from each stage, before the requestor can receive access.
+Если включено утверждение 2 этапа, по крайней мере два утверждающих должны утвердить запрос, по одному на каждом этапе, прежде чем запрашивающий сможет получить доступ.
 
-During stage-1, the first approver will receive the access request email and make a decision. If they approve the request, all first approvers and alternate approvers in stage-1 (if escalation is enabled) will receive notification that stage-1 is complete. Here is a sample email of the notification that is sent when stage-1 is complete:
+Во время этапа 1 первый утверждающий будет получать электронное сообщение с запросом на доступ и принимать решение о принятии решения. При утверждении запроса всем первым утверждающим и дополнительным утверждающим на этапе 1 (Если укрупнение включено) будет получено уведомление о завершении этапа 1. Ниже приведен пример сообщения электронной почты уведомления, которое отправляется при завершении этапа 1.
 
-![2-stage access request email](./media/entitlement-management-process/approver-request-email-2stage.png)
+![сообщение с запросом на 2 этапа доступа](./media/entitlement-management-process/approver-request-email-2stage.png)
 
-After the first or alternate approvers approve the request in stage-1, stage-2 begins. During stage-2, the second approver will receive the access request notification email. After the second approver or alternate approvers in stage-2 (if escalation is enabled) decide to approve or deny the request, notification emails are sent to the first and second approvers, and all alternate approvers in stage-1 and stage-2, as well as the requestor.
+После того как первый или другой утверждающий утвердит запрос на этапе 1, начинается этап 2. Во время этапа 2 второй утверждающий будет получать по электронной почте уведомление о запросе на доступ. После второго утверждающего или альтернативного утверждающих на этапе 2 (Если укрупнение включено) решите утвердить или отклонить запрос, отправлять уведомления по электронной почте на первый и второй утверждающие лица, а также на всех альтернативных утверждающих на этапе 1 и 2 и на запрашивающей стороне.
 
-### <a name="expired-access-request-emails"></a>Expired access request emails
+### <a name="expired-access-request-emails"></a>Сообщения электронной почты для запроса на доступ с истекшим сроком
 
-Access requests could expire if no approver has approved or denied the request. 
+Срок действия запросов доступа может истечь, если утверждающий не утвердил или не отклонил запрос. 
 
-When the request reaches its configured expiration date and expires, it can no longer be approved or denied by the approvers. Here is a sample email of the notification sent to all of the first, second (if 2-stage approval is enabled), and alternate approvers:
+По истечении заданного срока действия запрос не может быть утвержден или отклонен утверждающим. Ниже приведен пример сообщения электронной почты с уведомлением, отправляемым ко всем первым, вторым (если включено утверждение 2 этапа) и другим утверждающим:
 
-![Approvers expired access request email](./media/entitlement-management-process/approver-request-email-expired.png)
+![Сообщение электронной почты с истекшим сроком действия утверждающих](./media/entitlement-management-process/approver-request-email-expired.png)
 
-An email notification is also sent to the requestor, notifying them that their access request has expired, and that they need to resubmit the access request. The following diagram shows the experience of the requestor and the email notifications they receive when they request to extend access:
+Уведомление по электронной почте также отправляется запрашивающему, уведомляя его о том, что срок действия запроса на доступ истек, и необходимо повторно отправить запрос на доступ. На следующей схеме показан интерфейс запрашивающей стороны и уведомления по электронной почте, которые они получают при запросе на расширение доступа:
 
-![Requestor extend access process flow](./media/entitlement-management-process/requestor-expiration-request-flow.png) 
+![Поток процесса расширения доступа запрашивающей стороны](./media/entitlement-management-process/requestor-expiration-request-flow.png) 
 
-Here is a sample email notification that is sent to a requestor when their access request has expired:
+Ниже приведен пример уведомления по электронной почте, которое отправляется запрашивающему, когда срок его запроса на доступ истек.
 
-![Requestor expired access request email](./media/entitlement-management-process/requestor-email-request-expired.png)
+![Сообщение электронной почты с истекшим сроком действия запроса на доступ](./media/entitlement-management-process/requestor-email-request-expired.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- [Request access to an access package](entitlement-management-request-access.md)
-- [Approve or deny access requests](entitlement-management-request-approve.md)
+- [Запрос доступа к пакету Access](entitlement-management-request-access.md)
+- [Утверждение или отклонение запросов на доступ](entitlement-management-request-approve.md)

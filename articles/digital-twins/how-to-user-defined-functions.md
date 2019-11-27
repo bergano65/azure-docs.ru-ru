@@ -1,5 +1,5 @@
 ---
-title: How to create user-defined functions - in Azure Digital Twins | Microsoft Docs
+title: Создание определяемых пользователем функций — в Azure Digital двойников | Документация Майкрософт
 description: Создание определяемых пользователем функций, сопоставителей и назначений ролей с помощью Azure Digital Twins.
 ms.author: alinast
 author: alinamstanciu
@@ -69,11 +69,11 @@ YOUR_MANAGEMENT_API_URL/matchers
 }
 ```
 
-| Value | Заменить на |
+| Значение | Заменить на |
 | --- | --- |
-| YOUR_SPACE_IDENTIFIER | Регион сервера, в котором размещен ваш экземпляр. |
+| YOUR_SPACE_IDENTIFIER | Регион сервера, в котором размещен ваш экземпляр |
 
-## <a name="create-a-user-defined-function"></a>Создание определяемой пользователем функции
+## <a name="create-a-user-defined-function"></a>создание определяемой пользователем функции;
 
 Создание определяемой пользователем функции включает в себя составной HTTP-запрос к API управления Azure Digital Twins.
 
@@ -109,7 +109,7 @@ function process(telemetry, executionContext) {
 --USER_DEFINED_BOUNDARY--
 ```
 
-| Value | Заменить на |
+| Значение | Заменить на |
 | --- | --- |
 | USER_DEFINED_BOUNDARY | Имя границы составного содержимого |
 | YOUR_SPACE_IDENTIFIER | Идентификатор пространства  |
@@ -214,7 +214,7 @@ function process(telemetry, executionContext) {
     YOUR_MANAGEMENT_API_URL/spaces?name=YOUR_SPACE_NAME&includes=fullpath
     ```
 
-    | Value | Заменить на |
+    | Значение | Заменить на |
     | --- | --- |
     | YOUR_SPACE_NAME | Имя необходимого пространства |
 
@@ -234,11 +234,11 @@ function process(telemetry, executionContext) {
     }
     ```
 
-    | Value | Заменить на |
+    | Значение | Заменить на |
     | --- | --- |
     | YOUR_DESIRED_ROLE_IDENTIFIER | Идентификатор необходимой роли |
     | YOUR_USER_DEFINED_FUNCTION_ID | Идентификатор необходимой определяемой пользователем функции |
-    | YOUR_USER_DEFINED_FUNCTION_TYPE_ID | The ID specifying the user-defined function type (`UserDefinedFunctionId`) |
+    | YOUR_USER_DEFINED_FUNCTION_TYPE_ID | Идентификатор, указывающий тип определяемой пользователем функции (`UserDefinedFunctionId`) |
     | YOUR_ACCESS_CONTROL_PATH | Путь для управления доступом |
 
 >[!TIP]
@@ -252,7 +252,7 @@ function process(telemetry, executionContext) {
 1. В зависимости от того, что именно сопоставители успешно оценили, извлеките связанные определяемые пользователем функции.
 1. Выполните каждую определяемую пользователем функцию.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Узнайте, как [создать конечные точки Azure Digital Twins](./how-to-egress-endpoints.md), чтобы отправлять в них события.
 

@@ -1,5 +1,5 @@
 ---
-title: Migrate TDE certificate - managed instance
+title: Миграция экземпляра, управляемого сертификатом TDE
 description: Сведения о переносе сертификата, защищающего ключ шифрования базы данных с прозрачным шифрованием данных, в Управляемый экземпляр Базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -30,9 +30,9 @@ ms.locfileid: "74420743"
 Альтернативный вариант — это использование полностью управляемой службы для плавной миграции как защищенной TDE базы данных, так и соответствующего сертификата. Дополнительные сведения см. в разделе [Перенос SQL Server в Управляемый экземпляр базы данных SQL Azure с помощью DMS](../dms/tutorial-sql-server-to-managed-instance.md).
 
 > [!IMPORTANT]
-> Перенесенный сертификат используется только для восстановления базы данных, защищенной TDE. Soon after restore is done, the migrated certificate gets replaced by a different protector, either service-managed certificate or asymmetric key from the key vault, depending on the type of the transparent data encryption you set on the instance.
+> Перенесенный сертификат используется только для восстановления базы данных, защищенной TDE. Вскоре после восстановления перенесенный сертификат заменяется другим предохранителем, либо управляемым службой сертификатом, либо асимметричным ключом из хранилища ключей в зависимости от типа прозрачного шифрования данных, заданного для экземпляра.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
 
@@ -43,22 +43,22 @@ ms.locfileid: "74420743"
 
 Вам потребуются:
 
-- Azure PowerShell module [installed and updated](https://docs.microsoft.com/powershell/azure/install-az-ps).
-- [Az.Sql module](https://www.powershellgallery.com/packages/Az.Sql).
+- Модуль Azure PowerShell [установлен и обновлен](https://docs.microsoft.com/powershell/azure/install-az-ps).
+- [AZ. SQL Module](https://www.powershellgallery.com/packages/Az.Sql).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 > [!IMPORTANT]
-> The PowerShell Azure Resource Manager module is still supported by Azure SQL Database, but all future development is for the Az.Sql module. For these cmdlets, see [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). The arguments for the commands in the Az module and in the AzureRm modules are substantially identical.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
-Run the following commands in PowerShell to install/update the module:
+Выполните следующие команды в PowerShell, чтобы установить или обновить модуль:
 
 ```azurepowershell
 Install-Module -Name Az.Sql
 Update-Module -Name Az.Sql
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
 
 Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
 
@@ -156,9 +156,9 @@ Update-Module -Name Az.Sql
        -ManagedInstanceName "<managedInstanceName>" -PrivateBlob $securePrivateBlob -Password $securePassword
    ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
 
-You need to first [setup an Azure Key Vault](/azure/key-vault/key-vault-manage-with-cli2) with your *.pfx* file.
+Сначала необходимо [настроить Azure Key Vault](/azure/key-vault/key-vault-manage-with-cli2) с *PFX* -файлом.
 
 1. Начните с шагов подготовки в PowerShell.
 
@@ -184,7 +184,7 @@ You need to first [setup an Azure Key Vault](/azure/key-vault/key-vault-manage-w
 
 Теперь сертификат доступен для указанного управляемого экземпляра и резервная копия соответствующей базы данных, защищенной TDE, может быть успешно восстановлена.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этой статье описано, как перенести сертификат, защищающий ключ шифрования базы данных с помощью прозрачного шифрования данных, из локального или IaaS SQL Server в Управляемый экземпляр Базы данных SQL Azure.
 

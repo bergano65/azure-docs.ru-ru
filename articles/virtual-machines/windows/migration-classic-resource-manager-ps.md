@@ -1,6 +1,6 @@
 ---
-title: Migrate to Resource Manager with PowerShell
-description: This article walks through the platform-supported migration of IaaS resources such as virtual machines (VMs), virtual networks, and storage accounts from classic to Azure Resource Manager by using Azure PowerShell commands
+title: Переход на диспетчер ресурсов с помощью PowerShell
+description: В этой статье рассматриваются поддерживаемые платформой перенос ресурсов IaaS, таких как виртуальные машины (ВМ), виртуальные сети и учетные записи хранения, из классической модели в Azure Resource Manager с помощью Azure PowerShellных команд.
 services: virtual-machines-windows
 documentationcenter: ''
 author: singhkays
@@ -21,51 +21,51 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "74484376"
 ---
-# <a name="migrate-iaas-resources-from-classic-to-azure-resource-manager-by-using-powershell"></a>Migrate IaaS resources from classic to Azure Resource Manager by using PowerShell
+# <a name="migrate-iaas-resources-from-classic-to-azure-resource-manager-by-using-powershell"></a>Перенос ресурсов IaaS из классической модели в Azure Resource Manager с помощью PowerShell
 Ниже последовательно описано, как использовать команды Azure PowerShell для переноса ресурсов IaaS из классической модели развертывания в модель развертывания с помощью Azure Resource Manager.
 
-If you want, you can also migrate resources by using the [Azure CLI](../linux/migration-classic-resource-manager-cli.md).
+При необходимости можно также перенести ресурсы с помощью [Azure CLI](../linux/migration-classic-resource-manager-cli.md).
 
 * Общие сведения о поддерживаемых сценариях переноса см. в разделе [Поддерживаемый платформой перенос ресурсов IaaS из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-overview.md).
 * Подробное руководство и инструкции по переносу см. в разделе [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-deep-dive.md).
-* [Review the most common migration errors](migration-classic-resource-manager-errors.md).
+* [Ознакомьтесь с наиболее распространенными ошибками миграции](migration-classic-resource-manager-errors.md).
 
 <br>
-Here's a flowchart to identify the order in which steps need to be executed during a migration process.
+Ниже приведена блок-схема для указания порядка, в котором необходимо выполнить шаги в процессе миграции.
 
-![Screenshot that shows the migration steps](media/migration-classic-resource-manager/migration-flow.png)
+![Снимок экрана с последовательностью операций переноса](media/migration-classic-resource-manager/migration-flow.png)
 
  
 
 ## <a name="step-1-plan-for-migration"></a>Шаг 1. Планирование миграции
-Here are a few best practices that we recommend as you evaluate whether to migrate IaaS resources from classic to Resource Manager:
+Ниже приведены некоторые рекомендации, которые мы рекомендуем использовать при оценке необходимости переноса ресурсов IaaS из классической модели в диспетчер ресурсов.
 
-* Ознакомьтесь с [поддерживаемыми и неподдерживаемыми компонентами и конфигурациями](migration-classic-resource-manager-overview.md). If you have virtual machines that use unsupported configurations or features, wait for the configuration or feature support to be announced. Также вы можете удалить такую функцию или вынести ее за пределы конфигурации, чтобы выполнить перенос.
+* Ознакомьтесь с [поддерживаемыми и неподдерживаемыми компонентами и конфигурациями](migration-classic-resource-manager-overview.md). Если у вас есть виртуальные машины, использующие неподдерживаемые конфигурации или функции, дождитесь объявления о конфигурации или функции. Также вы можете удалить такую функцию или вынести ее за пределы конфигурации, чтобы выполнить перенос.
 * Если у вас есть текущие автоматизированные сценарии, которые развертывают инфраструктуру и приложения, попробуйте создать аналогичную программу установки для миграции с помощью этих сценариев. Вы можете также настроить примеры среды с помощью портала Azure.
 
 > [!IMPORTANT]
-> Application gateways aren't currently supported for migration from classic to Resource Manager. To migrate a virtual network with an application gateway, remove the gateway before you run a Prepare operation to move the network. После завершения переноса повторно подключите шлюз в Azure Resource Manager.
+> Шлюзы приложений сейчас не поддерживают миграцию из классической модели в диспетчер ресурсов. Чтобы перенести виртуальную сеть с помощью шлюза приложений, удалите шлюз перед выполнением операции подготовки для перемещения сети. После завершения переноса повторно подключите шлюз в Azure Resource Manager.
 >
-> Azure ExpressRoute gateways that connect to ExpressRoute circuits in another subscription can't be migrated automatically. In such cases, remove the ExpressRoute gateway, migrate the virtual network, and re-create the gateway. For more information, see [Migrate ExpressRoute circuits and associated virtual networks from the classic to the Resource Manager deployment model](../../expressroute/expressroute-migration-classic-resource-manager.md).
+> Шлюзы Azure ExpressRoute, которые подключаются к каналам ExpressRoute в другой подписке, нельзя перенести автоматически. В таких случаях удалите шлюз ExpressRoute, перенесите виртуальную сеть и повторно создайте шлюз. Дополнительные сведения см. в статье [Перенос каналов ExpressRoute и связанных виртуальных сетей из классической модели в модель развертывания Диспетчер ресурсов](../../expressroute/expressroute-migration-classic-resource-manager.md).
 
-## <a name="step-2-install-the-latest-version-of-powershell"></a>Step 2: Install the latest version of PowerShell
+## <a name="step-2-install-the-latest-version-of-powershell"></a>Шаг 2. Установка последней версии PowerShell
 Есть два основных способа установки Azure PowerShell — с помощью [коллекции PowerShell](https://www.powershellgallery.com/profiles/azure-sdk/) и [установщика веб-платформы (WebPI)](https://aka.ms/webpi-azps). Обновления для установщика веб-платформы выпускаются ежемесячно. Обновления для коллекции PowerShell выпускаются на постоянной основе. В этой статье используется Azure PowerShell 2.1.0.
 
 Инструкции по установке см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview).
 
 <br>
 
-## <a name="step-3-ensure-that-youre-an-administrator-for-the-subscription"></a>Step 3: Ensure that you're an administrator for the subscription
-To perform this migration, you must be added as a coadministrator for the subscription in the [Azure portal](https://portal.azure.com).
+## <a name="step-3-ensure-that-youre-an-administrator-for-the-subscription"></a>Шаг 3. Убедитесь, что вы являетесь администратором подписки.
+Чтобы выполнить эту миграцию, необходимо добавить учетную запись соадминистратора для подписки в [портал Azure](https://portal.azure.com).
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. On the **Hub** menu, select **Subscription**. Если вы не видите этот пункт, щелкните **Все службы**.
-3. Find the appropriate subscription entry, and then look at the **MY ROLE** field. For a coadministrator, the value should be _Account admin_.
+2. В меню **концентратора** выберите пункт **Подписка**. Если вы не видите этот пункт, щелкните **Все службы**.
+3. Найдите соответствующую запись подписки и посмотрите на поле **Моя роль** . Для соадминистратора это значение должно быть _администратором учетной записи_.
 
-If you're not able to add a coadministrator, contact a service administrator or coadministrator for the subscription to get yourself added.
+Если вы не можете добавить соадминистратора, обратитесь к администратору службы или соадминистратору, чтобы добавить подписку.
 
-## <a name="step-4-set-your-subscription-and-sign-up-for-migration"></a>Step 4: Set your subscription, and sign up for migration
-Сначала запустите командную строку PowerShell. For migration, set up your environment for both classic and Resource Manager.
+## <a name="step-4-set-your-subscription-and-sign-up-for-migration"></a>Шаг 4. Настройка подписки и регистрация для миграции
+Сначала запустите командную строку PowerShell. Для миграции настройте среду как для классической, так и для диспетчер ресурсов.
 
 Войдите в учетную запись для модели Resource Manager.
 
@@ -86,7 +86,7 @@ If you're not able to add a coadministrator, contact a service administrator or 
 ```
 
 > [!NOTE]
-> Registration is a one-time step, but you must do it once before you attempt migration. Если вы не зарегистрируетесь, отобразится такое сообщение об ошибке:
+> Регистрация выполняется один раз, но ее необходимо выполнить один раз, прежде чем пытаться выполнить миграцию. Если вы не зарегистрируетесь, отобразится такое сообщение об ошибке:
 >
 > *Неправильный запрос: Подписка не зарегистрирована для миграции.*
 
@@ -96,7 +96,7 @@ If you're not able to add a coadministrator, contact a service administrator or 
     Register-AzResourceProvider -ProviderNamespace Microsoft.ClassicInfrastructureMigrate
 ```
 
-Wait five minutes for the registration to finish. Check the status of the approval by using the following command:
+Подождите пять минут, пока не завершится регистрация. Проверьте состояние утверждения с помощью следующей команды:
 
 ```powershell
     Get-AzResourceProvider -ProviderNamespace Microsoft.ClassicInfrastructureMigrate
@@ -104,7 +104,7 @@ Wait five minutes for the registration to finish. Check the status of the approv
 
 Убедитесь, что RegistrationState имеет значение `Registered` , прежде чем продолжить.
 
-Now, sign in to your account for the classic deployment model.
+Теперь войдите в свою учетную запись для классической модели развертывания.
 
 ```powershell
     Add-AzureAccount
@@ -124,8 +124,8 @@ Now, sign in to your account for the classic deployment model.
 
 <br>
 
-## <a name="step-5-have-enough-resource-manager-vm-vcpus"></a>Step 5: Have enough Resource Manager VM vCPUs
-Make sure that you have enough Azure Resource Manager virtual machine vCPUs in the Azure region of your current deployment or virtual network. Чтобы проверить текущее количество виртуальных ЦП в Azure Resource Manager, используйте приведенную ниже команду PowerShell. Чтобы узнать больше о квотах на виртуальные ЦП, см. соответствующий раздел статьи [Подписка Azure, границы, квоты и ограничения службы](../../azure-subscription-service-limits.md#limits-and-azure-resource-manager).
+## <a name="step-5-have-enough-resource-manager-vm-vcpus"></a>Шаг 5. достаточно диспетчер ресурсов виртуальной машины виртуальных ЦП
+Убедитесь, что у вас достаточно Azure Resource Manager виртуальной машины виртуальных ЦП в регионе Azure текущего развертывания или виртуальной сети. Чтобы проверить текущее количество виртуальных ЦП в Azure Resource Manager, используйте приведенную ниже команду PowerShell. Чтобы узнать больше о квотах на виртуальные ЦП, см. соответствующий раздел статьи [Подписка Azure, границы, квоты и ограничения службы](../../azure-subscription-service-limits.md#limits-and-azure-resource-manager).
 
 В этом примере проверяется доступность в регионе **Западная часть США**. Замените регион в примере своим собственным значением.
 
@@ -134,16 +134,16 @@ Get-AzVMUsage -Location "West US"
 ```
 
 ## <a name="step-6-run-commands-to-migrate-your-iaas-resources"></a>Шаг 6. Выполнение команд для переноса ресурсов IaaS
-* [Migrate VMs in a cloud service (not in a virtual network)](#step-61-option-1---migrate-virtual-machines-in-a-cloud-service-not-in-a-virtual-network)
+* [Перенос виртуальных машин в облачную службу (не в виртуальной сети)](#step-61-option-1---migrate-virtual-machines-in-a-cloud-service-not-in-a-virtual-network)
 * [Перенос виртуальных машин в виртуальную сеть](#step-61-option-2---migrate-virtual-machines-in-a-virtual-network).
-* [Migrate a storage account](#step-62-migrate-a-storage-account)
+* [Перенос учетной записи хранения](#step-62-migrate-a-storage-account)
 
 > [!NOTE]
 > Все операции, описанные здесь, являются идемпотентными. Если вы столкнетесь с какой-либо проблемой, не связанной с неподдерживаемой функцией или ошибкой конфигурации, мы рекомендуем повторить подготовку, прервать или зафиксировать текущую операцию. Платформа попытается повторить это действие.
 
 
 ### <a name="step-61-option-1---migrate-virtual-machines-in-a-cloud-service-not-in-a-virtual-network"></a>Шаг. 6.1. Вариант 1. Миграция виртуальных машин в облачную службу (не в виртуальную сеть)
-Get the list of cloud services by using the following command. Then pick the cloud service that you want to migrate. Если виртуальные машины в облачной службе размещены в виртуальной сети или им назначены веб-роли или рабочие роли, то команда возвращает сообщение об ошибке.
+Получите список облачных служб с помощью следующей команды. Затем выберите облачную службу, которую требуется перенести. Если виртуальные машины в облачной службе размещены в виртуальной сети или им назначены веб-роли или рабочие роли, то команда возвращает сообщение об ошибке.
 
 ```powershell
     Get-AzureService | ft Servicename
@@ -159,9 +159,9 @@ Get the list of cloud services by using the following command. Then pick the clo
 
 Подготовьте к переносу виртуальные машины в облачной службе. Возможно два варианта.
 
-* **Option 1: Migrate the VMs to a platform-created virtual network.**
+* **Вариант 1. Миграция виртуальных машин в виртуальную сеть, созданную платформой.**
 
-    First, validate that you can migrate the cloud service by using the following commands:
+    Сначала проверьте, можно выполнить миграцию облачной службы с помощью следующих команд:
 
     ```powershell
     $validate = Move-AzureService -Validate -ServiceName $serviceName `
@@ -169,15 +169,15 @@ Get the list of cloud services by using the following command. Then pick the clo
     $validate.ValidationMessages
     ```
 
-    Приведенная ниже команда позволяет отобразить все предупреждения и ошибки, которые мешают миграции. If validation is successful, you can move on to the Prepare step.
+    Приведенная ниже команда позволяет отобразить все предупреждения и ошибки, которые мешают миграции. Если проверка прошла успешно, можно перейти к шагу подготовки.
 
     ```powershell
     Move-AzureService -Prepare -ServiceName $serviceName `
         -DeploymentName $deploymentName -CreateNewVirtualNetwork
     ```
-* **Option 2: Migrate to an existing virtual network in the Resource Manager deployment model.**
+* **Вариант 2. Миграция в существующую виртуальную сеть в модели развертывания диспетчер ресурсов.**
 
-    This example sets the resource group name to **myResourceGroup**, the virtual network name to **myVirtualNetwork**, and the subnet name to **mySubNet**. Замените имена в примере именами своих ресурсов.
+    В этом примере задается имя группы ресурсов **myResourceGroup**, имя виртуальной сети — **myVirtualNetwork**, а имя подсети — **mySubNet**. Замените имена в примере именами своих ресурсов.
 
     ```powershell
     $existingVnetRGName = "myResourceGroup"
@@ -185,7 +185,7 @@ Get the list of cloud services by using the following command. Then pick the clo
     $subnetName = "mySubNet"
     ```
 
-    First, validate that you can migrate the virtual network by using the following command:
+    Сначала проверьте, можно выполнить миграцию виртуальной сети с помощью следующей команды:
 
     ```powershell
     $validate = Move-AzureService -Validate -ServiceName $serviceName `
@@ -193,7 +193,7 @@ Get the list of cloud services by using the following command. Then pick the clo
     $validate.ValidationMessages
     ```
 
-    Приведенная ниже команда позволяет отобразить все предупреждения и ошибки, которые мешают миграции. If validation is successful, you can proceed with the following Prepare step:
+    Приведенная ниже команда позволяет отобразить все предупреждения и ошибки, которые мешают миграции. Если проверка прошла успешно, можно перейти к следующему шагу подготовки:
 
     ```powershell
         Move-AzureService -Prepare -ServiceName $serviceName -DeploymentName $deploymentName `
@@ -201,7 +201,7 @@ Get the list of cloud services by using the following command. Then pick the clo
         -VirtualNetworkName $vnetName -SubnetName $subnetName
     ```
 
-После успешного завершения операции подготовки для одного из перечисленных выше вариантов запросите состояние миграции виртуальных машин. Ensure that they're in the `Prepared` state.
+После успешного завершения операции подготовки для одного из перечисленных выше вариантов запросите состояние миграции виртуальных машин. Убедитесь, что они находятся в состоянии `Prepared`.
 
 В этом примере виртуальной машине присваивается имя **myVM**. Замените имя в примере именем своей виртуальной машины.
 
@@ -211,7 +211,7 @@ Get the list of cloud services by using the following command. Then pick the clo
     $vm.VM.MigrationState
 ```
 
-Проверьте конфигурацию для подготовленных ресурсов с помощью PowerShell или портала Azure. If you're not ready for migration and you want to go back to the old state, use the following command:
+Проверьте конфигурацию для подготовленных ресурсов с помощью PowerShell или портала Azure. Если вы еще не готовы выполнить миграцию и хотите вернуться к старому состоянию, используйте следующую команду:
 
 ```powershell
     Move-AzureService -Abort -ServiceName $serviceName -DeploymentName $deploymentName
@@ -227,11 +227,11 @@ Get the list of cloud services by using the following command. Then pick the clo
 
 Для миграции виртуальных машин в виртуальной сети переносится сама виртуальная сеть. Виртуальные машины автоматически переносятся вместе с ней. Выберите виртуальную сеть, в которую будете переносить ресурсы.
 > [!NOTE]
-> [Migrate a single virtual machine](migrate-single-classic-to-resource-manager.md) created using the classic deployment model by creating a new Resource Manager virtual machine with Managed Disks by using the VHD (OS and data) files of the virtual machine.
+> [Перенос одной виртуальной машины](migrate-single-classic-to-resource-manager.md) , созданной с помощью классической модели развертывания, путем создания новой диспетчер ресурсов виртуальной машины с управляемыми дисками с помощью файлов виртуального жесткого диска (ОС и данных) виртуальной машины.
 <br>
 
 > [!NOTE]
-> The virtual network name might be different from what is shown in the new portal. The new Azure portal displays the name as `[vnet-name]`, but the actual virtual network name is of type `Group [resource-group-name] [vnet-name]`. Before you start the migration, look up the actual virtual network name by using the command `Get-AzureVnetSite | Select -Property Name` or view it in the old Azure portal. 
+> Имя виртуальной сети может отличаться от имени, отображаемого на новом портале. Новое портал Azure отображает имя как `[vnet-name]`, но фактическое имя виртуальной сети имеет тип `Group [resource-group-name] [vnet-name]`. Прежде чем начать миграцию, найдите фактическое имя виртуальной сети с помощью команды `Get-AzureVnetSite | Select -Property Name` или просмотрите ее в старом портал Azure. 
 
 В этом примере виртуальной сети присваивается имя **myVnet**. Замените имя виртуальной сети в примере своим собственным значением.
 
@@ -242,19 +242,19 @@ Get the list of cloud services by using the following command. Then pick the clo
 > [!NOTE]
 > Если в виртуальной сети есть виртуальные машины, веб-роли или рабочие роли с неподдерживаемыми конфигурациями, то отображается сообщение об ошибке проверки.
 
-First, validate that you can migrate the virtual network by using the following command:
+Сначала проверьте, можно выполнить миграцию виртуальной сети с помощью следующей команды:
 
 ```powershell
     Move-AzureVirtualNetwork -Validate -VirtualNetworkName $vnetName
 ```
 
-Приведенная ниже команда позволяет отобразить все предупреждения и ошибки, которые мешают миграции. If validation is successful, you can proceed with the following Prepare step:
+Приведенная ниже команда позволяет отобразить все предупреждения и ошибки, которые мешают миграции. Если проверка прошла успешно, можно перейти к следующему шагу подготовки:
 
 ```powershell
     Move-AzureVirtualNetwork -Prepare -VirtualNetworkName $vnetName
 ```
 
-Проверьте конфигурацию для подготовленных виртуальных машин с помощью Azure PowerShell или портала Azure. If you're not ready for migration and you want to go back to the old state, use the following command:
+Проверьте конфигурацию для подготовленных виртуальных машин с помощью Azure PowerShell или портала Azure. Если вы еще не готовы выполнить миграцию и хотите вернуться к старому состоянию, используйте следующую команду:
 
 ```powershell
     Move-AzureVirtualNetwork -Abort -VirtualNetworkName $vnetName
@@ -266,39 +266,39 @@ First, validate that you can migrate the virtual network by using the following 
     Move-AzureVirtualNetwork -Commit -VirtualNetworkName $vnetName
 ```
 
-### <a name="step-62-migrate-a-storage-account"></a>Step 6.2: Migrate a storage account
-After you're done migrating the virtual machines, perform the following prerequisite checks before you migrate the storage accounts.
+### <a name="step-62-migrate-a-storage-account"></a>Шаг 6,2. Миграция учетной записи хранения
+После завершения миграции виртуальных машин выполните следующие проверки готовности перед переносом учетных записей хранения.
 
 > [!NOTE]
-> If your storage account has no associated disks or VM data, you can skip directly to the "Validate storage accounts and start migration" section.
+> Если у вашей учетной записи хранения нет связанных дисков или данных виртуальной машины, можно сразу перейти к разделу "проверка учетных записей хранения и запуск миграции".
 
-* Prerequisite checks if you migrated any VMs or your storage account has disk resources:
-    * Migrate virtual machines whose disks are stored in the storage account.
+* Проверки готовности при переносе виртуальных машин или учетной записи хранения имеют дисковые ресурсы:
+    * Выполните миграцию виртуальных машин, диски которых хранятся в учетной записи хранения.
 
-        The following command returns RoleName and DiskName properties of all the VM disks in the storage account. RoleName — это имя виртуальной машины, к которой подключен диск. If this command returns disks, then ensure that virtual machines to which these disks are attached are migrated before you migrate the storage account.
+        Следующая команда возвращает свойства RoleName и DiskName всех дисков виртуальной машины в учетной записи хранения. RoleName — это имя виртуальной машины, к которой подключен диск. Если эта команда возвращает диски, то перед переносом учетной записи хранения убедитесь, что виртуальные машины, к которым подключены эти диски, перенесены.
         ```powershell
          $storageAccountName = 'yourStorageAccountName'
           Get-AzureDisk | where-Object {$_.MediaLink.Host.Contains($storageAccountName)} | Select-Object -ExpandProperty AttachedTo -Property `
           DiskName | Format-List -Property RoleName, DiskName
 
         ```
-    * Delete unattached VM disks stored in the storage account.
+    * Удаление неподключенных дисков виртуальной машины, хранящихся в учетной записи хранения.
 
-        Find unattached VM disks in the storage account by using the following command:
+        Найдите в учетной записи хранения неподключенные диски виртуальных машин с помощью следующей команды:
 
         ```powershell
             $storageAccountName = 'yourStorageAccountName'
             Get-AzureDisk | where-Object {$_.MediaLink.Host.Contains($storageAccountName)} | Where-Object -Property AttachedTo -EQ $null | Format-List -Property DiskName  
 
         ```
-        If the previous command returns disks, delete these disks by using the following command:
+        Если предыдущая команда возвращает диски, удалите эти диски с помощью следующей команды:
 
         ```powershell
            Remove-AzureDisk -DiskName 'yourDiskName'
         ```
-    * Delete VM images stored in the storage account.
+    * Удаление образов виртуальных машин, хранящихся в учетной записи хранения.
 
-        The following command returns all the VM images with OS disks stored in the storage account.
+        Следующая команда возвращает все образы виртуальных машин с дисками ОС, хранящимися в учетной записи хранения.
          ```powershell
             Get-AzureVmImage | Where-Object { $_.OSDiskConfiguration.MediaLink -ne $null -and $_.OSDiskConfiguration.MediaLink.Host.Contains($storageAccountName)`
                                     } | Select-Object -Property ImageName, ImageLabel
@@ -310,11 +310,11 @@ After you're done migrating the virtual machines, perform the following prerequi
                                              -and ($_.DataDiskConfigurations | Where-Object {$_.MediaLink -ne $null -and $_.MediaLink.Host.Contains($storageAccountName)}).Count -gt 0 `
                                             } | Select-Object -Property ImageName, ImageLabel
          ```
-        Delete all the VM images returned by the previous commands by using this command:
+        Удалите все образы виртуальных машин, возвращенные предыдущими командами, с помощью следующей команды:
         ```powershell
         Remove-AzureVMImage -ImageName 'yourImageName'
         ```
-* Validate storage accounts and start migration.
+* Проверьте учетные записи хранения и начните миграцию.
 
     Подготовьте каждую учетную запись хранения к переносу, используя следующую команду. В этом примере имя учетной записи хранения — **myStorageAccount**. Замените имя в примере именем своей учетной записи хранения.
 
@@ -323,14 +323,14 @@ After you're done migrating the virtual machines, perform the following prerequi
         Move-AzureStorageAccount -Validate -StorageAccountName $storageAccountName
     ```
 
-    The next step is to prepare the storage account for migration.
+    Следующим шагом является подготовка учетной записи хранения для миграции.
 
     ```powershell
         $storageAccountName = "myStorageAccount"
         Move-AzureStorageAccount -Prepare -StorageAccountName $storageAccountName
     ```
 
-    Проверьте конфигурацию для подготовленной учетной записи хранения с помощью Azure PowerShell или портала Azure. If you're not ready for migration and you want to go back to the old state, use the following command:
+    Проверьте конфигурацию для подготовленной учетной записи хранения с помощью Azure PowerShell или портала Azure. Если вы еще не готовы выполнить миграцию и хотите вернуться к старому состоянию, используйте следующую команду:
 
     ```powershell
         Move-AzureStorageAccount -Abort -StorageAccountName $storageAccountName
@@ -342,7 +342,7 @@ After you're done migrating the virtual machines, perform the following prerequi
         Move-AzureStorageAccount -Commit -StorageAccountName $storageAccountName
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * [Обзор поддерживаемого платформой переноса ресурсов IaaS из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 * [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-deep-dive.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 * [Planning for migration of IaaS resources from classic to Azure Resource Manager](migration-classic-resource-manager-plan.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (Планирование переноса ресурсов IaaS из классической модели в модель Azure Resource Manager)

@@ -1,6 +1,6 @@
 ---
 title: Установка Azure IoT Edge в Linux | Документация Майкрософт
-description: Azure IoT Edge installation instructions on Linux devices running Ubuntu or Raspbian
+description: Azure IoT Edge инструкции по установке на устройствах Linux под управлением Ubuntu или Raspbian
 author: kgremban
 manager: philmea
 ms.reviewer: veyalla
@@ -16,34 +16,34 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/24/2019
 ms.locfileid: "74457326"
 ---
-# <a name="install-the-azure-iot-edge-runtime-on-debian-based-linux-systems"></a>Install the Azure IoT Edge runtime on Debian-based Linux systems
+# <a name="install-the-azure-iot-edge-runtime-on-debian-based-linux-systems"></a>Установка среды выполнения Azure IoT Edge в системах Linux на основе Debian
 
-Среда выполнения Azure IoT Edge превращает устройство в устройство IoT Edge. Среду выполнения можно развернуть на всех устройствах — от небольшого Raspberry Pi до технического сервера. Как только на устройстве будет настроена среда выполнения IoT Edge, вы можете начать развертывать в нее бизнес-логику из облака. To learn more, see [Understand the Azure IoT Edge runtime and its architecture](iot-edge-runtime.md).
+Среда выполнения Azure IoT Edge превращает устройство в устройство IoT Edge. Среду выполнения можно развернуть на всех устройствах — от небольшого Raspberry Pi до технического сервера. Как только на устройстве будет настроена среда выполнения IoT Edge, вы можете начать развертывать в нее бизнес-логику из облака. Дополнительные сведения см. [в разделе Знакомство со средой выполнения Azure IOT EDGE и ее архитектурой](iot-edge-runtime.md).
 
-This article lists the steps to install the Azure IoT Edge runtime on an X64, ARM32, or ARM64 Linux device. Installation packages are provided for Ubuntu Server 16.04, Ubuntu Server 18.04, and Raspbian Stretch. Refer to [Azure IoT Edge supported systems](support.md#operating-systems) for a list of supported Linux operating systems and architectures.
+В этой статье перечислены действия по установке среды выполнения Azure IoT Edge на устройстве Linux x64, ARM32 или ARM64. Пакеты установки предоставляются для Ubuntu Server 16,04, Ubuntu Server 18,04 и Raspbian Stretch. Список поддерживаемых операционных систем и архитектур Linux см. в [Azure IOT Edge поддерживаемых системах](support.md#operating-systems) .
 
 >[!NOTE]
->Support for ARM64 devices is in [public preview](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+>Поддержка устройств ARM64 доступна в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 > [!NOTE]
 > К пакетам в репозиториях программного обеспечения Linux применяются условия лицензии, которые можно найти в каждом пакете (/usr/share/doc/*имя-пакета*). Прежде чем использовать пакет, ознакомьтесь с условиями лицензии. Установка и использование пакета свидетельствуют о принятии этих условий. Если вы не согласны с условиями лицензии, не используйте этот пакет.
 
-## <a name="install-the-latest-runtime-version"></a>Install the latest runtime version
+## <a name="install-the-latest-runtime-version"></a>Установка последней версии среды выполнения
 
-Use the following sections to install the most recent version of the Azure IoT Edge runtime onto your device. 
+Используйте следующие разделы для установки последней версии среды выполнения Azure IoT Edge на устройстве. 
 
 ### <a name="register-microsoft-key-and-software-repository-feed"></a>Регистрация канала репозитория программного обеспечения и ключей (Майкрософт)
 
-Prepare your device for the IoT Edge runtime installation.
+Подготовьте устройство к установке среды выполнения IoT Edge.
 
-Install the repository configuration. Choose the **16.04** or **18.04** command that matches your device operating system:
+Установите конфигурацию репозитория. Выберите команду **16,04** или **18,04** , соответствующую операционной системе устройства:
 
-* **Ubuntu Server 16.04**:
+* **Ubuntu Server 16,04**:
    ```bash
    curl https://packages.microsoft.com/config/ubuntu/16.04/multiarch/prod.list > ./microsoft-prod.list
    ```
 
-* **Ubuntu Server 18.04**:
+* **Ubuntu Server 18,04**:
    ```bash
    curl https://packages.microsoft.com/config/ubuntu/18.04/multiarch/prod.list > ./microsoft-prod.list
    ```
@@ -53,13 +53,13 @@ Install the repository configuration. Choose the **16.04** or **18.04** command 
    curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list > ./microsoft-prod.list
    ```
 
-Copy the generated list.
+Скопируйте созданный список.
 
    ```bash
    sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
    ```
 
-Install Microsoft GPG public key
+Установка открытого ключа Microsoft GPG
 
    ```bash
    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -68,9 +68,9 @@ Install Microsoft GPG public key
 
 ### <a name="install-the-container-runtime"></a>Установка среды выполнения контейнера
 
-Служба Azure IoT Edge использует среду выполнения контейнера, [совместимую с OCI](https://www.opencontainers.org/). For production scenarios, we recommended that you use the [Moby-based](https://mobyproject.org/) engine provided below. Это единственная платформа контейнеров, которая официально поддерживается с Azure IoT Edge. Образы контейнеров Docker (Community Edition или Enterprise Edition) совместимы со средой выполнения Moby.
+Служба Azure IoT Edge использует среду выполнения контейнера, [совместимую с OCI](https://www.opencontainers.org/). Для рабочих сценариев рекомендуется использовать подсистему [на основе значок Кита](https://mobyproject.org/) , приведенную ниже. Это единственная платформа контейнеров, которая официально поддерживается с Azure IoT Edge. Образы контейнеров Docker (Community Edition или Enterprise Edition) совместимы со средой выполнения Moby.
 
-Perform apt update.
+Выполните обновление apt.
 
    ```bash
    sudo apt-get update
@@ -88,15 +88,15 @@ Perform apt update.
    sudo apt-get install moby-cli
    ```
 
-If you encounter errors when installing the Moby container runtime, follow the steps to [Verify your Linux kernel for Moby compatibility](#verify-your-linux-kernel-for-moby-compatibility), provided later in this article. 
+Если при установке среды выполнения контейнера значок Кита возникают ошибки, выполните действия по [проверке совместимости ядра Linux для значок Кита](#verify-your-linux-kernel-for-moby-compatibility), приведенного далее в этой статье. 
 
 ### <a name="install-the-azure-iot-edge-security-daemon"></a>Установка управляющей программы безопасности Azure IoT Edge
 
-The **IoT Edge security daemon** provides and maintains security standards on the IoT Edge device. Управляющая программа запускается при каждой загрузке устройства и перезагружает устройство, запуская остальные компоненты среды выполнения IoT Edge.
+**Управляющая программа IOT Edge безопасности** предоставляет и поддерживает стандарты безопасности на устройстве IOT Edge. Управляющая программа запускается при каждой загрузке устройства и перезагружает устройство, запуская остальные компоненты среды выполнения IoT Edge.
 
-The installation command also installs the standard version of the **libiothsm** if not already present.
+Команда установки также устанавливает стандартную версию **либиоссм** , если она еще не установлена.
 
-Perform apt update.
+Выполните обновление apt.
 
    ```bash
    sudo apt-get update
@@ -108,55 +108,55 @@ Perform apt update.
    sudo apt-get install iotedge
    ```
 
-Once IoT Edge is successfully installed, the output will prompt you to update the configuration file. Follow the steps in the [Configure the Azure IoT Edge security daemon](#configure-the-security-daemon) section to finish provisioning your device. 
+После успешной установки IoT Edge в выходных данных будет предложено обновить файл конфигурации. Выполните действия, описанные в разделе [Настройка управляющей программы Azure IOT Edge Security](#configure-the-security-daemon) , чтобы завершить подготовку устройства. 
 
-## <a name="install-a-specific-runtime-version"></a>Install a specific runtime version
+## <a name="install-a-specific-runtime-version"></a>Установка определенной версии среды выполнения
 
-If you want to install a specific version of the Azure IoT Edge runtime, you can target the component files directly from the IoT Edge GitHub repository. Use the following steps to get all of the IoT Edge components onto your device: the Moby engine and CLI, the libiothsm, and finally the IoT Edge security daemon.
+Если вы хотите установить определенную версию среды выполнения Azure IoT Edge, можно ориентироваться на файлы компонентов непосредственно из репозитория IoT Edge GitHub. Чтобы получить все компоненты IoT Edge на устройстве, выполните следующие действия: подсистема значок Кита и интерфейс командной строки, либиоссм и, наконец, управляющая программа безопасности IoT Edge.
 
-1. Navigate to the [Azure IoT Edge releases](https://github.com/Azure/azure-iotedge/releases), and find the release version that you want to target. 
+1. Перейдите к [Azure IOT Edge выпускам](https://github.com/Azure/azure-iotedge/releases)и найдите целевую версию для выпуска. 
 
-2. Expand the **Assets** section for that version.
+2. Разверните раздел **активы** для этой версии.
 
-3. There may or may not be updates to the Moby engine in any given release. If you see files that start with **moby-engine** and **moby-cli**, use the following commands to update those components. If you don't see any Moby files, go back through the older release assets until you find the most recent version. 
+3. В любом выпуске могут быть обновления ядра значок Кита. Если вы видите файлы, которые начинаются с **значок Кита-Engine** и **значок Кита-CLI**, используйте следующие команды для обновления этих компонентов. Если вы не видите какие-либо файлы значок Кита, вернитесь назад к более старым ресурсам выпуска, пока не найдете последнюю версию. 
 
-   1. Find the **moby-engine** file that matches your IoT Edge device's architecture. Right-click on the file link and copy the link address.
+   1. Найдите файл **значок Кита Engine** , соответствующий архитектуре устройства IOT Edge. Щелкните ссылку на файл правой кнопкой мыши и скопируйте адрес ссылки.
 
-   2. Use the copied link in the following command to install that version of the Moby engine: 
+   2. Чтобы установить эту версию модуля значок Кита, используйте скопированную ссылку в следующей команде: 
 
       ```bash
       curl -L <moby-engine link> -o moby_engine.deb && sudo dpkg -i ./moby_engine.deb
       ```
 
-   3. Find the **moby-cli** file that matches your IoT Edge device's architecture. The Moby CLI is an optional component, but can be helpful during development. Right-click on the file link and copy the link address. 
+   3. Найдите файл **значок Кита-CLI** , соответствующий архитектуре устройства IOT Edge. Интерфейс командной строки значок Кита является необязательным компонентом, но он может быть полезен во время разработки. Щелкните ссылку на файл правой кнопкой мыши и скопируйте адрес ссылки. 
 
-   4. Use the copied link in the following command to install that version of the Moby CLI: 
+   4. Чтобы установить эту версию интерфейса командной строки значок Кита, используйте скопированную ссылку в следующей команде: 
 
       ```bash
       curl -L <moby-cli link> -o moby_cli.deb && sudo dpkg -i ./moby_cli.deb
       ```
 
-4. Every release should have new files for the IoT Edge security daemon and the hsmlib. Use the following commands to update those components. 
+4. Каждый выпуск должен иметь новые файлы для управляющей программы IoT Edge безопасности и хсмлиб. Используйте следующие команды для обновления этих компонентов. 
 
-   1. Find the **libiothsm-std** file that matches your IoT Edge device's architecture. Right-click on the file link and copy the link address. 
+   1. Найдите файл **либиоссм-STD** , соответствующий архитектуре устройства IOT Edge. Щелкните ссылку на файл правой кнопкой мыши и скопируйте адрес ссылки. 
 
-   2. Use the copied link in the following command to install that version of the hsmlib:
+   2. Чтобы установить эту версию хсмлиб, используйте скопированную ссылку в следующей команде:
 
       ```bash
       curl -L <libiothsm-std link> -o libiothsm-std.deb && sudo dpkg -i ./libiothsm-std.deb
       ```
    
-   3. Find the **iotedge** file that matches your IoT Edge device's architecture. Right-click on the file link and copy the link address. 
+   3. Найдите файл **iotedge** , соответствующий архитектуре устройства IOT Edge. Щелкните ссылку на файл правой кнопкой мыши и скопируйте адрес ссылки. 
 
-   4. Use the copied link in the following command to install that version of the IoT Edge security daemon. 
+   4. Используйте ссылку копировать в следующей команде, чтобы установить эту версию управляющей программы IoT Edge безопасности. 
 
       ```bash
       curl -L <iotedge link> -o iotedge.deb && sudo dpkg -i ./iotedge.deb
       ```
 
-Once IoT Edge is successfully installed, the output will prompt you to update the configuration file. Follow the steps in the next section to finish provisioning your device. 
+После успешной установки IoT Edge в выходных данных будет предложено обновить файл конфигурации. Выполните действия, описанные в следующем разделе, чтобы завершить подготовку устройства. 
 
-## <a name="configure-the-security-daemon"></a>Configure the security daemon
+## <a name="configure-the-security-daemon"></a>Настройка управляющей программы безопасности
 
 Настройте среду выполнения IoT Edge, чтобы связать свое физическое устройство с идентификатором, который существует в Центре Интернета вещей Azure.
 
@@ -174,7 +174,7 @@ Once IoT Edge is successfully installed, the output will prompt you to update th
 sudo nano /etc/iotedge/config.yaml
 ```
 
-Find the provisioning configurations of the file and uncomment the **Manual provisioning configuration** section. Замените значение **device_connection_string** строкой подключения для устройства IoT Edge. Make sure any other provisioning sections are commented out.
+Найдите конфигурации подготовки файла и раскомментируйте раздел **Настройка подготовки вручную** . Замените значение **device_connection_string** строкой подключения для устройства IoT Edge. Убедитесь, что все остальные разделы подготовки включены в комментарий.
 
    ```yaml
    # Manual provisioning configuration
@@ -191,7 +191,7 @@ Find the provisioning configurations of the file and uncomment the **Manual prov
    #     method: "tpm"
    #     registration_id: "{registration_id}"
 ```
-To paste clipboard contents into Nano `Shift+Right Click` or press `Shift+Insert`.
+Чтобы вставить содержимое буфера обмена в `Shift+Right Click` Nano или нажмите клавишу `Shift+Insert`.
 
 Сохраните и закройте файл.
 
@@ -205,7 +205,7 @@ sudo systemctl restart iotedge
 
 ### <a name="option-2-automatic-provisioning"></a>Вариант 2. Автоматическая подготовка
 
-Для автоматической подготовки устройства [настройте службу подготовки устройств и получите идентификатор регистрации устройства](how-to-auto-provision-simulated-device-linux.md). There are a number of attestation mechanisms supported by IoT Edge when using automatic provisioning but your hardware requirements also impact your choices. For example, Raspberry Pi devices do not come with a Trusted Platform Module (TPM) chip by default.
+Для автоматической подготовки устройства [настройте службу подготовки устройств и получите идентификатор регистрации устройства](how-to-auto-provision-simulated-device-linux.md). Существует несколько механизмов аттестации, поддерживаемых IoT Edge при использовании автоматической подготовки, но требования к оборудованию также влияют на выбор. Например, по умолчанию устройства Raspberry Pi не поставляются с микросхемой доверенный платформенный модуль (TPM) (TPM).
 
 Откройте файл конфигурации.
 
@@ -213,7 +213,7 @@ sudo systemctl restart iotedge
 sudo nano /etc/iotedge/config.yaml
 ```
 
-Find the provisioning configurations of the file and uncomment the section appropriate for your attestation mechanism. When using TPM attestation, for example, update the values of **scope_id** and **registration_id** with the values from your IoT Hub Device Provisioning service and your IoT Edge device with TPM, respectively.
+Найдите конфигурации подготовки файла и раскомментируйте раздел, соответствующий вашему механизму аттестации. Например, при использовании аттестации доверенного платформенного модуля обновите значения **scope_id** и **registration_id** значениями из службы подготовки устройств центра интернета вещей и устройства IOT Edge с доверенным платформенным модулем соответственно.
 
    ```yaml
    # Manual provisioning configuration
@@ -231,7 +231,7 @@ Find the provisioning configurations of the file and uncomment the section appro
        registration_id: "{registration_id}"
    ```
 
-To paste clipboard contents into Nano `Shift+Right Click` or press `Shift+Insert`.
+Чтобы вставить содержимое буфера обмена в `Shift+Right Click` Nano или нажмите клавишу `Shift+Insert`.
 
 Сохраните и закройте файл.
 
@@ -245,45 +245,45 @@ sudo systemctl restart iotedge
 
 ## <a name="verify-successful-installation"></a>Проверка успешного выполнения установки
 
-Если вы выполняли **настройку вручную**, как описано в предыдущем разделе, подготовленная среда выполнения IoT Edge должна работать на вашем устройстве. Если вы выполняли **автоматическую настройку**, вам нужно сделать еще кое-что, чтобы среда выполнения могла зарегистрировать ваше устройство в центре Интернета вещей от вашего имени. For next steps, see [Create and provision a simulated TPM IoT Edge device on a Linux virtual machine](how-to-auto-provision-simulated-device-linux.md#give-iot-edge-access-to-the-tpm).
+Если вы выполняли **настройку вручную**, как описано в предыдущем разделе, подготовленная среда выполнения IoT Edge должна работать на вашем устройстве. Если вы выполняли **автоматическую настройку**, вам нужно сделать еще кое-что, чтобы среда выполнения могла зарегистрировать ваше устройство в центре Интернета вещей от вашего имени. Дальнейшие действия см. в статье [Создание и инициализация имитации устройства IOT Edge TPM на виртуальной машине Linux](how-to-auto-provision-simulated-device-linux.md#give-iot-edge-access-to-the-tpm).
 
-You can check the status of the IoT Edge Daemon:
+Вы можете проверить состояние управляющей программы IoT Edge:
 
 ```bash
 systemctl status iotedge
 ```
 
-Examine daemon logs:
+Проверьте журналы управляющей программы:
 
 ```bash
 journalctl -u iotedge --no-pager --no-full
 ```
 
-Run an automated check for the most common configuration and networking errors: 
+Выполните автоматическую проверку наиболее распространенных ошибок конфигурации и сети. 
 
 ```bash
 sudo iotedge check
 ```
 
-And, list running modules:
+И перечислите выполняемые модули:
 
 ```bash
 sudo iotedge list
 ```
 
-After installing IoT Edge on your device, the only module you should see running is **edgeAgent**. Once you create your first deployment, the other system module **$edgeHub** will start on the device as well. For more information, see [deploy IoT Edge modules](how-to-deploy-modules-portal.md).
+После установки IoT Edge на устройстве доступен только тот модуль, который должен работать под **edgeAgent**. После создания первого развертывания на устройстве также будет запущен другой модуль системы **$edgeHub** . Дополнительные сведения см. в разделе [deploy IOT Edge modules](how-to-deploy-modules-portal.md).
 
 ## <a name="tips-and-troubleshooting"></a>Рекомендации и устранение неполадок
 
-Для запуска команд `iotedge` требуется более высокий уровень привилегий. После установки среды выполнения выйдите из системы компьютера, а затем снова войдите для автоматического обновления разрешений. До тех пор используйте перед любой командой `iotedge` префикс **sudo**.
+Для запуска команд `iotedge` требуется более высокий уровень привилегий. После установки среды выполнения выйдите из системы компьютера, а затем снова войдите для автоматического обновления разрешений. До тех пор используйте перед любой командой **префикс**sudo`iotedge`.
 
 В устройствах с ограниченными ресурсами настоятельно рекомендуется присвоить переменной среды *OptimizeForPerformance* значение *false* согласно инструкциям в [руководстве по устранению неполадок](troubleshoot.md).
 
 Если в вашей сети используется прокси-сервер, выполните действия, описанные в статье [Настройка устройства IoT Edge для обмена данными через прокси-сервер](how-to-configure-proxy-support.md).
 
-### <a name="verify-your-linux-kernel-for-moby-compatibility"></a>Verify your Linux kernel for Moby compatibility
+### <a name="verify-your-linux-kernel-for-moby-compatibility"></a>Проверка совместимости ядра Linux с значок Кита
 
-Many embedded device manufacturers ship device images that contain custom Linux kernels without the features required for container runtime compatibility. If you encounter issues while installing the recommended Moby container runtime, you may be able to troubleshoot your Linux kernel configuration using the [check-config](https://raw.githubusercontent.com/moby/moby/master/contrib/check-config.sh) script from the official [Moby GitHub repository](https://github.com/moby/moby). Run the following commands on the device to check your kernel configuration:
+Многие производители встраиваемых устройств доставляют образы устройств, которые содержат пользовательские ядра Linux, без функций, необходимых для совместимости среды выполнения контейнеров. Если при установке рекомендуемой среды выполнения контейнеров значок Кита возникли проблемы, вы можете устранить неполадки в конфигурации ядра Linux с помощью скрипта [Check-config](https://raw.githubusercontent.com/moby/moby/master/contrib/check-config.sh) из официального [репозитория значок Кита GitHub](https://github.com/moby/moby). Выполните следующие команды на устройстве, чтобы проверить конфигурацию ядра:
 
    ```bash
    curl -sSL https://raw.githubusercontent.com/moby/moby/master/contrib/check-config.sh -o check-config.sh
@@ -291,7 +291,7 @@ Many embedded device manufacturers ship device images that contain custom Linux 
    ./check-config.sh
    ```
 
-This will provide a detailed output that contains the status of kernel features that are used by the Moby runtime. You will want to ensure that all items under `Generally Necessary` and  `Network Drivers` are enabled to ensure that your kernel is fully compatible with the Moby runtime.  If you have identified any missing features, enable them by rebuilding your kernel from source and selecting the associated modules for inclusion in the appropriate kernel .config.  Similarly, if you are using a kernel configuration generator like defconfig or menuconfig, find and enable the respective features and rebuild your kernel accordingly.  Once you have deployed your newly modified kernel, run the check-config script again to verify that all the required features were successfully enabled.
+В результате будет предоставлен подробный результат, содержащий состояние функций ядра, которые используются средой выполнения значок Кита. Необходимо убедиться, что все элементы в разделе `Generally Necessary` и `Network Drivers` включены, чтобы обеспечить полную совместимость ядра с средой выполнения значок Кита.  Если вы определили недостающие компоненты, включите их, перестроив ядро из источника и выбрав связанные модули для включения в соответствующий файл kernel. config.  Аналогично, если вы используете генератор конфигурации ядра, например дефконфиг или менуконфиг, найдите и включите соответствующие функции и перестройте ядро соответствующим образом.  После развертывания недавно измененного ядра запустите сценарий Check-config еще раз, чтобы убедиться, что все необходимые компоненты были успешно включены.
 
 
 ## <a name="uninstall-iot-edge"></a>Удаление IoT Edge
@@ -323,10 +323,10 @@ sudo apt-get remove --purge moby-cli
 sudo apt-get remove --purge moby-engine
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge](how-to-deploy-modules-portal.md).
 
-If you are having problems with the IoT Edge runtime installing properly, check out the [troubleshooting](troubleshoot.md) page.
+Если при правильной установке среды выполнения IoT Edge возникли проблемы, ознакомьтесь со страницей [устранения неполадок](troubleshoot.md) .
 
 Чтобы обновить существующую установку до последней версии IoT Edge, см. раздел [Обновление управляющей программы безопасности и среды выполнения IoT Edge](how-to-update-iot-edge.md).

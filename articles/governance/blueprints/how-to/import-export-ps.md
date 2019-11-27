@@ -1,6 +1,6 @@
 ---
-title: Import and export blueprints with PowerShell
-description: Learn how to work with your blueprint definitions as code. Share, source control, and manage them using the export and import commands.
+title: Импорт и экспорт схем с помощью PowerShell
+description: Узнайте, как работать с определениями схем в виде кода. Совместное использование, управление исходным кодом и управление ими с помощью команд экспорта и импорта.
 ms.date: 09/03/2019
 ms.topic: conceptual
 ms.openlocfilehash: 2822fd1aea1911ba264113d43595346a612ebc50
@@ -10,38 +10,38 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74406351"
 ---
-# <a name="import-and-export-blueprint-definitions-with-powershell"></a>Import and export blueprint definitions with PowerShell
+# <a name="import-and-export-blueprint-definitions-with-powershell"></a>Импорт и экспорт определений схем с помощью PowerShell
 
-Azure Blueprints can be fully managed through Azure portal. As organizations advance in their use of Blueprints, they should start thinking of blueprint definitions as managed code. This concept is often referred to as Infrastructure as Code (IaC). Treating your blueprint definitions as code offers additional advantages beyond what Azure portal offers. These benefits include:
+Схемы Azure можно полностью управлять с помощью портал Azure. По мере того, как организации начинают использовать схемы, они должны начать думать об определениях схем как управляемого кода. Эта концепция часто называется инфраструктурой как код (IaC). Рассматривая определения схемы как код, вы найдете дополнительные преимущества, помимо того, какие портал Azure предложения. К этим преимуществам относятся:
 
-- Sharing blueprint definitions
-- Backing up your blueprint definitions
-- Reusing blueprint definitions in different tenants or subscriptions
-- Placing the blueprint definitions in source control
-  - Automated testing of blueprint definitions in test environments
-  - Support of continuous integration and continuous deployment (CI/CD) pipelines
+- Совместное использование определений схем
+- Резервное копирование определений схем
+- Повторное использование определений схем в разных клиентах или подписках
+- Размещение определений схем в системе управления версиями
+  - Автоматическое тестирование определений схем в тестовых средах
+  - Поддержка конвейеров непрерывной интеграции и непрерывного развертывания (CI/CD)
 
-Whatever your reasons, managing your blueprint definitions as code has benefits. This article shows how to use the `Import-AzBlueprintWithArtifact` and `Export-AzBlueprintWithArtifact` commands in the [Az.Blueprint](https://powershellgallery.com/packages/Az.Blueprint/) module.
+По каким бы то ни было вашим причинам, Управление определениями схем в качестве кода имеет свои преимущества. В этой статье показано, как использовать команды `Import-AzBlueprintWithArtifact` и `Export-AzBlueprintWithArtifact` в модуле [AZ. чертеж](https://powershellgallery.com/packages/Az.Blueprint/) .
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-This article assumes a moderate working knowledge of Azure Blueprints. If you haven't done so yet, work through the following articles:
+В этой статье предполагается умеренный опыт работы с чертежами Azure. Если вы еще не сделали этого, выполните действия, описанные в следующих статьях:
 
-- [Create a blueprint in the portal](../create-blueprint-portal.md)
-- Read about [deployment stages](../concepts/deployment-stages.md) and [the blueprint lifecycle](../concepts/lifecycle.md)
-- [Creating](../create-blueprint-powershell.md) and [managing](./manage-assignments-ps.md) blueprint definitions and assignments with PowerShell
+- [Создание схемы на портале](../create-blueprint-portal.md)
+- Ознакомьтесь с [этапами развертывания](../concepts/deployment-stages.md) и [жизненным циклом](../concepts/lifecycle.md) проекта
+- [Создание](../create-blueprint-powershell.md) определений [и назначений схем и](./manage-assignments-ps.md) их назначение с помощью PowerShell
 
 Выполните инструкции из [этой статьи](./manage-assignments-ps.md#add-the-azblueprint-module), чтобы установить модуль **Az.Blueprint** из коллекции PowerShell и проверить его работу.
 
-## <a name="folder-structure-of-a-blueprint-definition"></a>Folder structure of a blueprint definition
+## <a name="folder-structure-of-a-blueprint-definition"></a>Структура папок определения схемы
 
-Before looking at exporting and importing blueprints, let's look at how the files that make up the blueprint definition are structured. A blueprint definition should be stored in its own folder.
+Перед просмотром экспорта и импорта схем рассмотрим, как структурированы файлы, составляющие определение схемы. Определение схемы должно храниться в отдельной папке.
 
 > [!IMPORTANT]
-> If no value is passed to the **Name** parameter of the `Import-AzBlueprintWithArtifact` cmdlet, the name of the folder the blueprint definition is stored in is used.
+> Если значение параметра **Name** командлета `Import-AzBlueprintWithArtifact` не передается, используется имя папки, в которой хранится определение схемы.
 
-Along with the blueprint definition, which must be named `blueprint.json`, are the artifacts that the blueprint definition is composed of. Each artifact must be in the subfolder named `artifacts`.
-Put together, the structure of your blueprint definition as JSON files in folders should look as follows:
+Вместе с определением схемы, которое должно называться `blueprint.json`, — это артефакты, из которых состоит определение схемы. Каждый артефакт должен находиться в подпапке с именем `artifacts`.
+Вместе, структура определения схемы как JSON Files в папках должна выглядеть следующим образом:
 
 ```text
 .
@@ -56,20 +56,20 @@ Put together, the structure of your blueprint definition as JSON files in folder
 
 ```
 
-## <a name="export-your-blueprint-definition"></a>Export your blueprint definition
+## <a name="export-your-blueprint-definition"></a>Экспорт определения схемы
 
-The steps to exporting your blueprint definition are straightforward. Exporting the blueprint definition can be useful for sharing, backup, or placing into source control.
+Действия по экспорту определения схемы просты. Экспорт определения схемы может быть полезен для совместного использования, резервного копирования или размещения в системе управления версиями.
 
-- **Blueprint** [required]
-  - Specifies the blueprint definition
-  - Use `Get-AzBlueprint` to get the reference object
-- **OutputPath** [required]
-  - Specifies the path to save the blueprint definition JSON files to
-  - The output files are in a subfolder with the name of the blueprint definition
-- **Version** (optional)
-  - Specifies the version to output if the **Blueprint** reference object contains references to more than one version.
+- **Чертеж** [обязательный]
+  - Указывает определение схемы
+  - Получение ссылочного объекта с помощью `Get-AzBlueprint`
+- **OutputPath** [обязательный]
+  - Указывает путь для сохранения JSON определения схемы в
+  - Выходные файлы находятся во вложенной папке с именем определения схемы.
+- **Версия** (необязательно)
+  - Указывает версию для **вывода, если эталонный** объект схемы содержит ссылки на более чем одну версию.
 
-1. Get a reference to the blueprint definition to export from the subscription represented as `{subId}`:
+1. Получите ссылку на определение схемы для экспорта из подписки, представленной в виде `{subId}`:
 
    ```azurepowershell-interactive
    # Login first with Connect-AzAccount if not using Cloud Shell
@@ -78,31 +78,31 @@ The steps to exporting your blueprint definition are straightforward. Exporting 
    $bpDefinition = Get-AzBlueprint -SubscriptionId '{subId}' -Name 'MyBlueprint' -Version '1.1'
    ```
 
-1. Use the `Export-AzBlueprintWithArtifact` cmdlet to export the specified blueprint definition:
+1. Используйте командлет `Export-AzBlueprintWithArtifact`, чтобы экспортировать указанное определение схемы:
 
    ```azurepowershell-interactive
    Export-AzBlueprintWithArtifact -Blueprint $bpDefinition -OutputPath 'C:\Blueprints'
    ```
 
-## <a name="import-your-blueprint-definition"></a>Import your blueprint definition
+## <a name="import-your-blueprint-definition"></a>Импорт определения схемы
 
-Once you have either an [exported blueprint definition](#export-your-blueprint-definition) or have a manually created blueprint definition in the [required folder structure](#folder-structure-of-a-blueprint-definition), you can import that blueprint definition to a different management group or subscription.
+После того как [экспортировано определение](#export-your-blueprint-definition) схемы или создано вручную определение схемы в [необходимой структуре папок](#folder-structure-of-a-blueprint-definition), можно импортировать определение схемы в другую группу управления или подписку.
 
-For examples of built-in blueprint definitions, see the [Azure Blueprint GitHub repo](https://github.com/Azure/azure-blueprints/tree/master/samples/builtins).
+Примеры встроенных определений схем см. в [репозитории Azure Blueprint GitHub](https://github.com/Azure/azure-blueprints/tree/master/samples/builtins).
 
-- **Name** [required]
-  - Specifies the name for the new blueprint definition
-- **InputPath** [required]
-  - Specifies the path to create the blueprint definition from
-  - Must match the [required folder structure](#folder-structure-of-a-blueprint-definition)
-- **ManagementGroupId** (optional)
-  - The management group ID to save the blueprint definition to if not the current context default
-  - Either **ManagementGroupId** or **SubscriptionId** must be specified
-- **SubscriptionId** (optional)
-  - The subscription ID to save the blueprint definition to if not the current context default
-  - Either **ManagementGroupId** or **SubscriptionId** must be specified
+- **Имя** [обязательный]
+  - Указывает имя для нового определения схемы
+- **InputPath** [обязательный]
+  - Указывает путь для создания определения схемы из
+  - Должно соответствовать [требуемой структуре папок](#folder-structure-of-a-blueprint-definition)
+- **ManagementGroupId** (необязательно)
+  - Идентификатор группы управления, в которую необходимо сохранить определение схемы, если не является текущим контекстом по умолчанию
+  - Необходимо указать либо **ManagementGroupId** , либо **SubscriptionId** .
+- **SubscriptionId** (необязательно)
+  - Идентификатор подписки, в которую необходимо сохранить определение схемы, если не является текущим контекстом по умолчанию
+  - Необходимо указать либо **ManagementGroupId** , либо **SubscriptionId** .
 
-1. Use the `Import-AzBlueprintWithArtifact` cmdlet to import the specified blueprint definition:
+1. Используйте командлет `Import-AzBlueprintWithArtifact`, чтобы импортировать указанное определение схемы:
 
    ```azurepowershell-interactive
    # Login first with Connect-AzAccount if not using Cloud Shell
@@ -110,16 +110,16 @@ For examples of built-in blueprint definitions, see the [Azure Blueprint GitHub 
    Import-AzBlueprintWithArtifact -Name 'MyBlueprint' -ManagementGroupId 'DevMG' -InputPath 'C:\Blueprints\MyBlueprint'
    ```
 
-Once the blueprint definition is imported, [assign it with PowerShell](./manage-assignments-ps.md#create-blueprint-assignments).
+После импорта определения схемы [назначьте его с помощью PowerShell](./manage-assignments-ps.md#create-blueprint-assignments).
 
-For information about creating advanced blueprint definitions, see the following articles:
+Дополнительные сведения о создании расширенных определений схем см. в следующих статьях:
 
-- Use [static and dynamic parameters](../concepts/parameters.md).
-- Customize the [blueprint sequencing order](../concepts/sequencing-order.md).
-- Protect deployments with [blueprint resource locking](../concepts/resource-locking.md).
-- [Manage Blueprints as Code](https://github.com/Azure/azure-blueprints/blob/master/README.md).
+- Используйте [статические и динамические параметры](../concepts/parameters.md).
+- Настройка [порядка следования схем в последовательности](../concepts/sequencing-order.md).
+- Защита развертываний с помощью [блокировки ресурсов](../concepts/resource-locking.md)схемы.
+- [Управляйте чертежами в виде кода](https://github.com/Azure/azure-blueprints/blob/master/README.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Ознакомьтесь со сведениями о [жизненном цикле схем](../concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](../concepts/parameters.md).

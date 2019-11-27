@@ -17,14 +17,14 @@ ms.locfileid: "74457446"
 ---
 # <a name="learn-how-to-deploy-modules-and-establish-routes-in-iot-edge"></a>Сведения о развертывании модулей и установлении маршрутов в IoT Edge
 
-На каждом устройстве IoT Edge работают по меньшей мере два модуля – $edgeAgent и $edgeHub, входящие в среду выполнения IoT Edge. IoT Edge device can run multiple additional modules for any number of processes. Use a deployment manifest to tell your device which modules to install and how to configure them to work together. 
+На каждом устройстве IoT Edge работают по меньшей мере два модуля – $edgeAgent и $edgeHub, входящие в среду выполнения IoT Edge. Устройство IoT Edge может запускать несколько дополнительных модулей для любого количества процессов. Используйте манифест развертывания, чтобы сообщить устройству, какие модули устанавливать, и как настроить их для совместной работы. 
 
 *Манифест развертывания* — это документ JSON, который описывает:
 
-* The **IoT Edge agent** module twin, which includes three components. 
-  * The container image for each module that runs on the device.
-  * The credentials to access private container registries that contain module images.
-  * Instructions for how each module should be created and managed.
+* Модуль **агента IOT Edge** двойника, который содержит три компонента. 
+  * Образ контейнера для каждого модуля, запущенного на устройстве.
+  * Учетные данные для доступа к закрытым реестрам контейнеров, содержащим образы модулей.
+  * Инструкции по созданию и управлению каждым модулем.
 * двойник модуля **центра IoT Edge**, которая описывает поток сообщений между модулями и в конечном итоге к Центру Интернета вещей;
 * (необязательно) требуемые свойства дополнительных двойников модулей.
 
@@ -77,9 +77,9 @@ ms.locfileid: "74457446"
 
 ## <a name="configure-modules"></a>Настройка модулей
 
-Определите, как среда выполнения IoT Edge устанавливает модули в развертывании. Агент IoT Edge — это компонент среды выполнения, который управляет установкой, обновлением и отчетами о состоянии для устройства IoT Edge. Таким образом, в двойник модуля $edgeAgent следует включить сведения по управлению и настройке для всех модулей. This information includes the configuration parameters for the IoT Edge agent itself. 
+Определите, как среда выполнения IoT Edge устанавливает модули в развертывании. Агент IoT Edge — это компонент среды выполнения, который управляет установкой, обновлением и отчетами о состоянии для устройства IoT Edge. Таким образом, в двойник модуля $edgeAgent следует включить сведения по управлению и настройке для всех модулей. Эти сведения включают параметры конфигурации для самого агента IoT Edge. 
 
-For a complete list of properties that can or must be included, see [Properties of the IoT Edge agent and IoT Edge hub](module-edgeagent-edgehub.md).
+Полный список свойств, которые могут или должны быть добавлены, см. в разделе [Свойства агента IOT EDGE и центра IOT Edge](module-edgeagent-edgehub.md).
 
 Свойства $edgeAgent имеют такую структуру:
 
@@ -136,24 +136,24 @@ For a complete list of properties that can or must be included, see [Properties 
 
 ### <a name="source"></a>Источник
 
-Исходная точка определяет то место, откуда поступают сообщения. IoT Edge can route messages from modules or leaf devices. 
+Исходная точка определяет то место, откуда поступают сообщения. IoT Edge может маршрутизировать сообщения от модулей или конечных устройств. 
 
-Using the IoT SDKs, modules can declare specific output queues for their messages using the ModuleClient class. Output queues aren't necessary, but are helpful for managing multiple routes. Leaf devices can use the DeviceClient class of the IoT SDKs to send messages to IoT Edge gateway devices in the same way that they would send messages to IoT Hub. For more information, see [Understand and use Azure IoT Hub SDKs](../iot-hub/iot-hub-devguide-sdks.md).
+С помощью пакетов SDK для IoT модули могут объявлять определенные очереди вывода для своих сообщений с помощью класса Модулеклиент. Выходные очереди не нужны, но они полезны для управления несколькими маршрутами. Конечные устройства могут использовать класс DeviceClient пакетов SDK для IoT, чтобы отправить сообщения на IoT Edge устройства шлюза так же, как они отправляют сообщения в центр Интернета вещей. Дополнительные сведения см. в статье [изучение и использование пакетов SDK для центра Интернета вещей Azure](../iot-hub/iot-hub-devguide-sdks.md).
 
 Свойство source может принимать любое из следующих значений:
 
-| Источник | Описание |
+| Источник | ОПИСАНИЕ |
 | ------ | ----------- |
 | `/*` | Все сообщения, отправляемые с устройства в облако, и уведомления об изменениях двойника из любого модуля или конечного устройства. |
 | `/twinChangeNotifications` | Любые изменения двойника (сообщаемые свойства) из любого модуля или конечного устройства. |
-| `/messages/*` | Any device-to-cloud message sent by a module through some or no output, or by a leaf device |
+| `/messages/*` | Все сообщения, передаваемые с устройства в облако, отправленные модулем через некоторые или без выходных данных или конечным устройством. |
 | `/messages/modules/*` | Все сообщения с устройства в облако, отправленные модулем с некоторыми выходными данными или без них. |
 | `/messages/modules/<moduleId>/*` | Все сообщения, отправляемые с устройства в облако конкретным модулем с выходными данными или без них. |
 | `/messages/modules/<moduleId>/outputs/*` | Все сообщения, отправляемые с устройства в облако конкретным модулем с выходными данными или без них. |
 | `/messages/modules/<moduleId>/outputs/<output>` | Все сообщения, отправляемые с устройства в облако конкретным модулем с выходными данными или без них. |
 
 ### <a name="condition"></a>Условие
-Условие является необязательным при объявлении маршрута. If you want to pass all messages from the source to the sink, just leave out the **WHERE** clause entirely. Можно также воспользоваться [языком запросов Центра Интернета вещей](../iot-hub/iot-hub-devguide-routing-query-syntax.md) для фильтрации определенных сообщений или типов сообщений, удовлетворяющих заданному условию. Маршруты IoT Edge не поддерживает фильтрацию сообщений на основе тегов или свойств двойников. 
+Условие является необязательным при объявлении маршрута. Если вы хотите передать все сообщения из источника в приемник, просто оставьте предложение **WHERE** полностью. Можно также воспользоваться [языком запросов Центра Интернета вещей](../iot-hub/iot-hub-devguide-routing-query-syntax.md) для фильтрации определенных сообщений или типов сообщений, удовлетворяющих заданному условию. Маршруты IoT Edge не поддерживает фильтрацию сообщений на основе тегов или свойств двойников. 
 
 Сообщения, которые проходят между модулями в IoT Edge, форматируются так же, как сообщения, которые проходят между вашими устройствами и Центром Интернета вещей. Все сообщения представлены в формате JSON с параметрами **systemProperties**, **appProperties** и **body**. 
 
@@ -176,14 +176,14 @@ FROM /messages/* WHERE NOT IS_DEFINED($connectionModuleId) INTO $upstream
 
 Свойство sink может принимать любое из следующих значений:
 
-| Приемник | Описание |
+| Приемник | ОПИСАНИЕ |
 | ---- | ----------- |
 | `$upstream` | Отправляет сообщение в Центр Интернета вещей. |
 | `BrokeredEndpoint("/modules/<moduleId>/inputs/<input>")` | Отправка сообщений на определенный вход конкретного модуля |
 
-IoT Edge предоставляет гарантии как минимум однократной доставки. The IoT Edge hub stores messages locally in case a route can't deliver the message to its sink. For example, if the IoT Edge hub can't connect to IoT Hub, or the target module isn't connected.
+IoT Edge предоставляет гарантии как минимум однократной доставки. Центр IoT Edge хранит сообщения локально в случае, если маршрут не может доставить сообщение в его приемник. Например, если концентратору IoT Edge не удается подключиться к центру Интернета вещей или целевой модуль не подключен.
 
-IoT Edge hub stores the messages up to the time specified in the `storeAndForwardConfiguration.timeToLiveSecs` property of the [IoT Edge hub desired properties](module-edgeagent-edgehub.md).
+Центр IoT Edge хранит сообщения до времени, указанного в свойстве `storeAndForwardConfiguration.timeToLiveSecs` [требуемых свойств центра IOT Edge](module-edgeagent-edgehub.md).
 
 ## <a name="define-or-update-desired-properties"></a>Определение или обновление требуемых свойств 
 
@@ -275,8 +275,8 @@ IoT Edge hub stores the messages up to the time specified in the `storeAndForwar
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-* For a complete list of properties that can or must be included in $edgeAgent and $edgeHub, see [Properties of the IoT Edge agent and IoT Edge hub](module-edgeagent-edgehub.md).
+* Полный список свойств, которые можно или необходимо включать в $edgeAgent и $edgeHub, см. в разделе [Свойства агента IOT EDGE и центра IOT Edge](module-edgeagent-edgehub.md).
 
 * Теперь, когда вы знаете, как используются модули IoT Edge, ознакомьтесь со статьей [Сведения о требованиях и средствах разработки модулей IoT Edge](module-development.md).

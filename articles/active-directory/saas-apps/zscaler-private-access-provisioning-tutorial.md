@@ -125,7 +125,7 @@ Azure Active Directory использует концепцию, называем
 
 ### <a name="to-configure-automatic-user-provisioning-for-zscaler-private-access-zpa-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для Zscaler Private Access (ZPA) в Azure AD, сделайте следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **корпоративные приложения**, а затем выберите **все приложения**.
+1. Войдите на [портале Azure](https://portal.azure.com). Выберите **корпоративные приложения**, а затем выберите **все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 

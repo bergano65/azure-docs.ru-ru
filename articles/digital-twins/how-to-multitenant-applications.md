@@ -1,5 +1,5 @@
 ---
-title: Enable multitenant applications - Azure Digital Twins | Microsoft Docs
+title: Включение многоклиентских приложений в Azure Digital двойников | Документация Майкрософт
 description: Как настроить мультитенантные приложения Azure Active Directory для Azure Digital Twins.
 ms.author: alinast
 author: alinamstanciu
@@ -54,18 +54,18 @@ ms.locfileid: "74383336"
 
 - На [портале Azure](https://portal.azure.com) администратор клиента Azure AD **пользователя** должен выполнить описанные ниже действия:
 
-  1. Search for **Subscriptions** in the top Azure search field. Выберите **Подписки**.
+  1. Поиск **подписок** в верхнем поле поиска Azure. Выберите **Подписки**.
   1. Выберите подписку с клиентом Azure Active Directory, который будет использоваться в приложении **разработчика**.
 
-     [![Azure Active Directory subscriptions](media/multitenant/ad-subscriptions.png)](media/multitenant/ad-subscriptions.png#lightbox)
+     [![подписки Azure Active Directory](media/multitenant/ad-subscriptions.png)](media/multitenant/ad-subscriptions.png#lightbox)
 
   1. Выбрать **Поставщики ресурсов**.
   1. Найти **Microsoft.IoTSpaces**.
   1. Выберите **Зарегистрировать**.
 
-     [![Azure Active Directory resource providers](media/multitenant/ad-resource-providers.png)](media/multitenant/ad-resource-providers.png#lightbox)
+     [поставщики ресурсов ![Azure Active Directory](media/multitenant/ad-resource-providers.png)](media/multitenant/ad-resource-providers.png#lightbox)
   
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения см. в статье [Создание определяемых пользователем функций в Azure Digital Twins](./how-to-user-defined-functions.md).
 

@@ -1,6 +1,6 @@
 ---
-title: Risk policies - Azure Active Directory Identity Protection
-description: Enable and configure risk policies in Azure Active Directory Identity Protection
+title: Политики риска — Защита идентификации Azure Active Directory
+description: Включение и Настройка политик риска в Защита идентификации Azure Active Directory
 services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
@@ -18,66 +18,66 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74382177"
 ---
-# <a name="how-to-configure-and-enable-risk-policies"></a>How To: Configure and enable risk policies
+# <a name="how-to-configure-and-enable-risk-policies"></a>Как настроить и включить политики риска
 
-As we learned in the previous article, [Identity Protection policies](concept-identity-protection-policies.md) we have two risk policies that we can enable in our directory. 
+Как было сказано в предыдущей статье, [политики защиты идентификации](concept-identity-protection-policies.md) включают две политики риска, которые можно включить в нашем каталоге. 
 
-- Политика риска входа
+- Sign-in risk policy
 - Политика риска пользователя
 
-![Security overview page to enable user and sign-in risk policies](./media/howto-identity-protection-configure-risk-policies/identity-protection-security-overview.png)
+![Страница "Общие сведения о безопасности" для включения политик риска для пользователей и входа](./media/howto-identity-protection-configure-risk-policies/identity-protection-security-overview.png)
 
-Both policies work to automate the response to risk detections in your environment and allow users to self-remediate when risk is detected. 
+Обе политики позволяют автоматизировать ответ на обнаружение рисков в вашей среде и позволить пользователям самостоятельно устранять неполадки при обнаружении риска. 
 
 > [!VIDEO https://www.youtube.com/embed/zEsbbik-BTE]
 
-## <a name="prerequisites"></a>Технические условия 
+## <a name="prerequisites"></a>предварительным требованиям 
 
-If your organization wants to allow users to self-remediate when risks are detected, users must be registered for both self-service password reset and Azure Multi-Factor Authentication. We recommend [enabling the combined security information registration experience](../authentication/howto-registration-mfa-sspr-combined.md) for the best experience. Allowing users to self-remediate gets them back to a productive state more quickly without requiring administrator intervention. Administrators can still see these events and investigate them after the fact. 
+Если организация хочет разрешить пользователям самостоятельно устранять неполадки, пользователи должны быть зарегистрированы для самостоятельного сброса пароля и многофакторной идентификации Azure. Мы рекомендуем [включить общий способ регистрации сведений о безопасности](../authentication/howto-registration-mfa-sspr-combined.md) для достижения оптимальной производительности. Предоставление пользователям возможности самостоятельного восстановления повышает эффективность работы, не требуя вмешательства администратора. Администраторы по-прежнему могут просматривать эти события и исследовать их после фактического. 
 
-## <a name="choosing-acceptable-risk-levels"></a>Choosing acceptable risk levels
+## <a name="choosing-acceptable-risk-levels"></a>Выбор приемлемых уровней риска
 
-Organizations must decide the level of risk they are willing to accept balancing user experience and security posture. 
+Организациям необходимо решить, какой уровень риска они хотят принимать в качестве сбалансированного взаимодействия с пользователем и безопасностью. 
 
-Microsoft's recommendation is to set the user risk policy threshold to **High** and the sign-in risk policy to **Medium and above**.
+Рекомендуется установить для политики риска пользователя значение **высокий** , а для политики риска входа — значение **средний и выше**.
 
-Если выбрать пороговое значение уровня **Высокий** , уменьшится количество случаев активации политики и степень влияния на пользователей. However, it excludes **Low** and **Medium** risk detections from the policy, which may not block an attacker from exploiting a compromised identity. Selecting a **Low** threshold introduces additional user interrupts, but increased security posture.
+Если выбрать пороговое значение уровня **Высокий** , уменьшится количество случаев активации политики и степень влияния на пользователей. Однако он исключает из политики **слабые** и **средние** обнаружения рисков, которые не могут препятствовать использованию скомпрометированного удостоверения злоумышленником. Установка **нижнего** порогового значения приводит к дополнительным прерываниям пользователей, но повышает уровень безопасности.
 
 ## <a name="exclusions"></a>Исключения
 
-All of the policies allow for excluding users such as your [emergency access or break-glass administrator accounts](../users-groups-roles/directory-emergency-access.md). Organizations may determine they need to exclude other accounts from specific policies based on the way the accounts are used. All exclusions should be reviewed regularly to see if they are still applicable.
+Все политики позволяют исключить пользователей, например [учетные записи администратора для аварийного доступа или прерывания](../users-groups-roles/directory-emergency-access.md). Организации могут определить необходимость исключения других учетных записей из конкретных политик в зависимости от способа использования учетных записей. Все исключения следует регулярно проверять, чтобы узнать, применимы ли они к прежнему.
 
-## <a name="enable-policies"></a>Enable policies
+## <a name="enable-policies"></a>Включить политики
 
-To enable the user risk and sign-in risk policies complete the following steps.
+Чтобы включить политики риска для пользователя и входа в систему, выполните следующие действия.
 
 1. Перейдите на [портал Azure](https://portal.azure.com).
-1. Browse to **Azure Active Directory** > **Security** > **Identity Protection** > **Overview**.
-1. Select **Configure user risk policy**.
-   1. Under **Assignments**
-      1. **Users** - Choose **All users** or **Select individuals and groups** if limiting your rollout.
-         1. Optionally you can choose to exclude users from the policy.
-      1. **Conditions** - **User risk** Microsoft's recommendation is to set this option to **High**.
-   1. Under **Controls**
-      1. **Access** - Microsoft's recommendation is to **Allow access** and **Require password change**.
-   1. **Enforce Policy** - **On**
-   1. **Save** - This action will return you to the **Overview** page.
-1. Select **Configure sign-in risk policy**.
-   1. Under **Assignments**
-      1. **Users** - Choose **All users** or **Select individuals and groups** if limiting your rollout.
-         1. Optionally you can choose to exclude users from the policy.
-      1. **Conditions** - **Sign-in risk** Microsoft's recommendation is to set this option to **Medium and above**.
-   1. Under **Controls**
-      1. **Access** - Microsoft's recommendation is to **Allow access** and **Require multi-factor authentication**.
-   1. **Enforce Policy** - **On**
+1. Перейдите в **Azure Active Directory** > **Безопасность** > **Идентификация** > **Обзор**.
+1. Выберите **Настройка политики риска для пользователей**.
+   1. В разделе " **назначения** "
+      1. **Пользователи** . Выберите **все пользователи** или **выберите отдельных пользователей и группы,** если хотите ограничить развертывание.
+         1. При необходимости можно исключить пользователей из политики.
+      1. **Условия** - о **рисках для пользователей** рекомендуется установить для этого параметра значение **высокий**.
+   1. В разделе **элементы управления**
+      1. **Access** — Корпорация Майкрософт рекомендует **Разрешить доступ** и **Требовать смену пароля**.
+   1. **Принудительное применение политики** ** - **
+   1. **Сохранить** — это действие вернет вас на страницу **обзора** .
+1. Выберите **Настройка политики риска входа в систему**.
+   1. В разделе " **назначения** "
+      1. **Пользователи** . Выберите **все пользователи** или **выберите отдельных пользователей и группы,** если хотите ограничить развертывание.
+         1. При необходимости можно исключить пользователей из политики.
+      1. **Условия** , - **риск входа в систему** Майкрософт рекомендует установить для этого параметра значение **средний и выше**.
+   1. В разделе **элементы управления**
+      1. **Access** — Корпорация Майкрософт рекомендует **Разрешить доступ** и **требовать многофакторную проверку подлинности**.
+   1. **Принудительное применение политики** ** - **
    1. **Сохранить**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- [Enable Azure Multi-Factor Authentication registration policy](howto-identity-protection-configure-mfa-policy.md)
+- [Включение политики регистрации многофакторной идентификации Azure](howto-identity-protection-configure-mfa-policy.md)
 
-- [What is risk](concept-identity-protection-risks.md)
+- [Что такое риск](concept-identity-protection-risks.md)
 
-- [Investigate risk detections](howto-identity-protection-investigate-risk.md)
+- [Исследование обнаружений рисков](howto-identity-protection-investigate-risk.md)
 
-- [Simulate risk detections](howto-identity-protection-simulate-risk.md)
+- [Моделирование обнаружений рисков](howto-identity-protection-simulate-risk.md)

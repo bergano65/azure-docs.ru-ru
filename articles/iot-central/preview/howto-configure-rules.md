@@ -1,6 +1,6 @@
 ---
 title: Настройка правил и действий в Azure IoT Central | Документация Майкрософт
-description: This how-to article shows you, as a builder, how to configure telemetry-based rules and actions in your Azure IoT Central application.
+description: В этом пошаговом руководстве показано, как настроить правила и действия на основе телеметрии в приложении IoT Central Azure.
 author: vavilla
 ms.author: vavilla
 ms.date: 11/11/2019
@@ -15,41 +15,41 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "74484916"
 ---
-# <a name="configure-rules-preview-features"></a>Configure rules (preview features)
+# <a name="configure-rules-preview-features"></a>Настройка правил (Предварительная версия компонентов)
 
 [!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
 
 *Эта статья предназначена для операторов, разработчиков и администраторов.*
 
-Rules in IoT Central serve as a customizable response tool that trigger on actively monitored events from connected devices. The following sections describe how rules are evaluated.
+Правила в IoT Central служат настраиваемым средством реагирования, которое активирует активные отслеживаемые события с подключенных устройств. В следующих разделах описывается, как оцениваются правила.
 
-## <a name="select-target-devices"></a>Select target devices
+## <a name="select-target-devices"></a>Выбор целевых устройств
 
-Use the target devices section to select on what kind of devices this rule will be applied. Filters allow you to further refine what devices should be included. The filters use properties on the device template to filter down the set of devices. Filters themselves don't trigger an action. In the following screenshot, the devices that are being targeted are of device template type **Refrigerator**. The filter states that the rule should only include **Refrigerators** where the **Manufactured State** property equals **Washington**.
+Используйте раздел целевые устройства, чтобы выбрать устройства, к которым будет применяться это правило. Фильтры позволяют дополнительно уточнить, какие устройства должны быть добавлены. Фильтры используют свойства в шаблоне устройства для фильтрации набора устройств. Сами фильтры не активируют действие. На следующем снимке экрана целевые устройства имеют тип шаблона устройства **холодильник**. Фильтр указывает, что правило должно включать только **рефрижераторс** , где свойство « **штат производства** » равно **Вашингтон**.
 
 ![Условия](media/howto-configure-rules/filters.png)
 
-## <a name="use-multiple-conditions"></a>Use multiple conditions
+## <a name="use-multiple-conditions"></a>Использование нескольких условий
 
-Conditions are what rules trigger on. Currently, when you add multiple conditions to a rule, they're logically AND'd together. In other words, all conditions must be met for the rule to evaluate as true.  
+Условия запускаются правилами. В настоящее время при добавлении нескольких условий к правилу они логически и объединяются. Иными словами, должны быть выполнены все условия, чтобы правило вычисляют значение true.  
 
-In the following screenshot, the conditions check when the temperature is greater than 90 and the humidity is less than 10. When both of these statements are true, the rule evaluates to true and triggers an action.
+На следующем снимке экрана условия проверяют, когда температура превышает 90, а влажность меньше 10. Если оба этих оператора имеют значение true, правило принимает значение true и активирует действие.
 
 ![Условия](media/howto-configure-rules/conditions.png)
 
-## <a name="use-aggregate-windowing"></a>Use aggregate windowing
+## <a name="use-aggregate-windowing"></a>Использовать агрегированное окно
 
-Rules evaluate aggregate time windows as tumbling windows. In the screenshot below, the time window is five minutes. Every five minutes, the rule evaluates on the last five minutes of data. The data is only evaluated once in the window to which it corresponds.
+Правила оценивают совокупное время в виде окон "переворачивающегося". На следующем снимке экрана интервал времени составляет 5 минут. Каждые пять минут правило оценивается за последние пять минут данных. Данные оцениваются только один раз в окне, к которому они соответствуют.
 
-![Tumbling Windows](media/howto-configure-rules/tumbling-window.png)
+!["Переворачивающегося" Windows](media/howto-configure-rules/tumbling-window.png)
 
-## <a name="use-rules-with-iot-edge-modules"></a>Use rules with IoT Edge modules
+## <a name="use-rules-with-iot-edge-modules"></a>Использование правил с модулями IoT Edge
 
-A restriction applies to rules that are applied to IoT Edge modules. Rules on telemetry from different modules aren't evaluated as valid rules. Take the following as an example. The first condition of the rule is on a temperature telemetry from Module A. The second condition of the rule is on a humidity telemetry on Module B. Since the two conditions are from different modules, this is an invalid set of conditions. The rule isn't valid and will throw an error on trying to save the rule.
+Ограничение применяется к правилам, применяемым к IoT Edgeным модулям. Правила для телеметрии из разных модулей не оцениваются как допустимые правила. В качестве примера возьмем следующий пример. Первое условие правила находится в телеметрии температуры из модуля а. Второе условие правила находится на телеметрии влажности на модуле B. Так как два условия относятся к разным модулям, это недопустимый набор условий. Правило недопустимо, и при попытке сохранить правило будет выдано сообщение об ошибке.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Now that you've learned how to configure a rule in your Azure IoT Central application, you can:
+Теперь, когда вы узнали, как настроить правило в приложении IoT Central Azure, вы можете:
 
 > [!div class="nextstepaction"]
-> [Analyze your data on the fly](howto-create-analytics.md)
+> [Анализ данных в режиме реального времени](howto-create-analytics.md)
