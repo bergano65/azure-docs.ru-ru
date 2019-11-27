@@ -1,6 +1,6 @@
 ---
-title: What is Azure Private Link service?
-description: Learn about Azure Private Link service.
+title: Что такое служба частной связи Azure?
+description: Сведения о службе частной связи Azure.
 services: private-link
 author: asudbring
 ms.service: private-link
@@ -14,97 +14,97 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74228062"
 ---
-# <a name="what-is-azure-private-link-service"></a>What is Azure Private Link service?
+# <a name="what-is-azure-private-link-service"></a>Что такое служба частной связи Azure?
 
-Azure Private Link service is the reference to your own service that is powered by Azure Private Link. Your service that is running behind [Azure Standard Load Balancer](../load-balancer/load-balancer-standard-overview.md) can be enabled for Private Link access so that consumers to your service can access it privately from their own VNets. Your customers can create a private endpoint inside their VNet and map it to this service. This article explains concepts related to the service provider side. 
+Служба "Частная связь Azure" — это ссылка на вашу собственную службу, которая работает на базе частной связи Azure. Служба, выполняющаяся на [Load Balancer (цен. Категория "Стандартный") Azure](../load-balancer/load-balancer-standard-overview.md) , может быть включена для доступа к частным каналам, чтобы пользователи службы могли получить к ней доступ в частном порядке из своих собственных виртуальных сетей. Ваши клиенты могут создать частную конечную точку в своей виртуальной сети и связать ее с этой службой. В этой статье описываются основные понятия, связанные со стороны поставщика услуг. 
 
 ## <a name="workflow"></a>Рабочий процесс
 
-![Private Link service workflow](media/private-link-service-overview/private-link-service-workflow.png)
+![Рабочий процесс службы частной связи](media/private-link-service-overview/private-link-service-workflow.png)
 
-### <a name="create-your-private-link-service"></a>Create your Private Link Service
+### <a name="create-your-private-link-service"></a>Создание службы частной связи
 
-- Configure your application to run behind a standard load balancer in your virtual network. If you already have your application configured behind a standard load balancer, you can skip this step.   
-- Create a Private Link Service referencing the load balancer above. In the load balancer selection process, choose the frontend IP configuration where you want to receive the traffic. Choose a subnet for NAT IP addresses for the Private Link Service. It is recommended to have at least eight NAT IP addresses available in the subnet. All consumer traffic will appear to originate from this pool of private IP addresses to the service provider. Choose the appropriate properties/settings for the Private Link Service.    
+- Настройте приложение для запуска на основе стандартной подсистемы балансировки нагрузки в виртуальной сети. Если вы уже настроили приложение за стандартную подсистему балансировки нагрузки, этот шаг можно пропустить.   
+- Создайте службу частной связи, ссылающуюся на подсистему балансировки нагрузки выше. В процессе выбора подсистемы балансировки нагрузки выберите IP-конфигурацию переднего плана, в которой требуется получить трафик. Выберите подсеть для IP-адресов NAT для службы частной связи. Рекомендуется, чтобы в подсети было доступно по крайней мере восемь IP-адресов NAT. Весь трафик потребителей поступает из этого пула частных IP-адресов поставщику услуг. Выберите соответствующие свойства и параметры для службы "Частная связь".    
 
     > [!NOTE]
-    > Azure Private Link Service is only supported on Standard Load Balancer. 
+    > Служба "Частная связь Azure" поддерживается только в Load Balancer (цен. категория "Стандартный"). 
     
-### <a name="share-your-service"></a>Share your service
+### <a name="share-your-service"></a>Предоставление общего доступа к службе
 
-After you create a Private Link service, Azure will generate a globally unique named moniker called "alias" based on the name you provide for your service. You can share either the alias or resource URI of your service with your customers offline. Consumers can start a Private Link connection using the alias or the resource URI.
+После создания службы частной связи Azure создаст глобально уникальный именованный моникер с именем Alias (псевдоним) на основе имени, которое вы задаст для службы. Вы можете совместно использовать псевдоним или URI ресурса службы с клиентами в автономном режиме. Потребители могут запускать подключение к частной ссылке с помощью псевдонима или URI ресурса.
  
-### <a name="manage-your-connection-requests"></a>Manage your connection requests
+### <a name="manage-your-connection-requests"></a>Управление запросами на подключение
 
-After a consumer initiates a connection, the service provider can accept or reject the connection request. All connection requests will be listed under the **privateendpointconnections** property on the Private Link service.
+После того как потребитель инициирует подключение, поставщик услуг может принять или отклонить запрос на подключение. Все запросы на подключение будут перечислены в свойстве **приватиндпоинтконнектионс** в службе частной связи.
  
-### <a name="delete-your-service"></a>Delete your service
+### <a name="delete-your-service"></a>Удаление службы
 
-If the Private Link service is no longer in use, you can delete it. However, before your delete the service, ensure that there are no private endpoint connections associated with it. You can reject all connections and delete the service.
+Если служба закрытых ссылок больше не используется, ее можно удалить. Однако перед удалением службы убедитесь, что с ней не связаны частные конечные точки. Вы можете отклонить все подключения и удалить службу.
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>свойства
 
-A Private Link service specifies the following properties: 
+Служба частной связи задает следующие свойства: 
 
 |Свойство |Пояснение  |
 |---------|---------|
-|Provisioning State (provisioningState)  |A read-only property that lists the current provisioning state for Private Link service. Applicable provisioning states are: "Deleting; Failed; Succeeded; Updating". When the provisioning state is "Succeeded", you have successfully provisioned your Private Link service.        |
-|Alias (alias)     | Alias is a globally unique read-only string for your service. It helps you mask the customer data for your service and at the same time creates an easy-to-share name for your service. When you create a Private Link service, Azure generates the alias for your service that you can share with your customers. Your customers can use this alias to request a connection to your service.          |
-|Visibility (visibility)     | Visibility is the property that controls the exposure settings for your Private Link service. Service providers can choose to limit the exposure to their service to subscriptions with role-based access control (RBAC) permissions, a restricted set of subscriptions, or all Azure subscriptions.          |
-|Auto Approval (autoApproval)    |   Auto-approval controls the automated access to the Private Link service. The subscriptions specified in the auto-approval list are approved automatically when a connection is requested from private endpoints in those subscriptions.          |
-|Load Balancer Frontend IP Configuration (loadBalancerFrontendIpConfigurations)    |    Private Link service is tied to the frontend IP address of a Standard Load Balancer. All traffic destined for the service will reach the frontend of the SLB. You can configure SLB rules to direct this traffic to appropriate backend pools where your applications are running. Load balancer frontend IP configurations are different than NAT IP configurations.      |
-|NAT IP Configuration (ipConfigurations)    |    This property refers to the NAT (Network Address Translation) IP configuration for the Private Link service. The NAT IP can be chosen from any subnet in a service provider's virtual network. Private Link service performs destination side NAT-ing on the Private Link traffic. This ensures that there is no IP conflict between source (consumer side) and destination (service provider) address space. On the destination side (service provider side), the NAT IP address will show up as Source IP for all packets received by your service and destination IP for all packets sent by your service.       |
-|Private endpoint connections (privateEndpointConnections)     |  This property lists the private endpoints connecting to Private Link service. Multiple private endpoints can connect to the same Private Link service and the service provider can control the state for individual private endpoints.        |
+|Состояние подготовки (provisioningState)  |Свойство только для чтения, которое содержит текущее состояние подготовки для службы закрытых ссылок. Применимые состояния подготовки: "Удаление; Ошибок Успешно Идет обновление ". Если состояние подготовки — "успешно", вы успешно подготовили службу частной связи.        |
+|Псевдоним (псевдоним)     | Псевдоним — это глобально уникальная строка, доступная только для чтения для вашей службы. Он позволяет маскировать данные клиента для службы и в то же время создает удобное для общего доступа имя службы. При создании службы частной связи Azure создает псевдоним для вашей службы, к которому можно предоставить доступ своим клиентам. Клиенты могут использовать этот псевдоним для запроса подключения к службе.          |
+|Видимость (видимость)     | Видимость — это свойство, которое управляет параметрами экспозиции для службы частной ссылки. Поставщики услуг могут ограничить доступ к службе для подписок с разрешениями управления доступом на основе ролей (RBAC), ограниченного набора подписок или всех подписок Azure.          |
+|Автоматическое утверждение (Автоутверждение)    |   Автоматическое утверждение управляет автоматическим доступом к службе частной ссылки. Подписки, указанные в списке автоматических утверждений, утверждаются автоматически при запросе соединения от частных конечных точек в этих подписках.          |
+|Load Balancer многоинтерфейсной IP-конфигурации (Лоадбаланцерфронтендипконфигуратионс)    |    Служба частной связи привязана к интерфейсному IP-адресу Load Balancer (цен. категория "Стандартный"). Весь трафик, предназначенный для службы, будет достигнут на интерфейсе SLB. Можно настроить правила SLB, чтобы направить трафик в соответствующие серверные пулы, в которых выполняются приложения. Конфигурации внешнего IP-адреса балансировщика нагрузки отличаются от конфигураций IP-адресов NAT.      |
+|IP-конфигурация NAT (ipConfigurations)    |    Это свойство относится к IP-конфигурации NAT (преобразование сетевых адресов) для службы закрытых ссылок. IP-адрес NAT можно выбрать из любой подсети в виртуальной сети поставщика услуг. Служба частной связи выполняет преобразование NAT на стороне назначения по трафику частной связи. Это гарантирует отсутствие конфликта IP-адресов между исходным (на стороне потребителя) и адресным пространством (поставщиком услуг). На стороне назначения (на стороне поставщика услуг) IP-адрес NAT будет отображаться как исходный IP для всех пакетов, полученных службой, и IP-адреса назначения для всех пакетов, отправляемых службой.       |
+|Подключения к частным конечным точкам (Приватиндпоинтконнектионс)     |  Это свойство перечисляет частные конечные точки, подключающиеся к службе частной связи. Несколько частных конечных точек могут подключаться к одной и той же службе частной связи, и поставщик услуг может управлять состоянием отдельных частных конечных точек.        |
 |||
 
 
-### <a name="details"></a>Сведения
+### <a name="details"></a>Подробная информация
 
-- Private Link service can be accessed from approved private endpoints in the same region. The private endpoint can be reached from the same virtual network, regionally peered VNets, globally peered VNets and on premises using private VPN or ExpressRoute connections. 
+- Доступ к службе Private Link можно получить из утвержденных частных конечных точек в том же регионе. Частная конечная точка может быть достигнута из той же виртуальной сети, с использованием виртуальных сетей, глобально равноправных виртуальных сетей и локальных, с помощью частных подключений VPN или ExpressRoute. 
  
-- When creating a Private Link Service, a network interface is created for the lifecycle of the resource. This interface is not manageable by the customer.
+- При создании службы частной связи создается сетевой интерфейс для жизненного цикла ресурса. Этот интерфейс не может управляться клиентом.
  
-- The Private Link Service must be deployed in the same region as the virtual network and the Standard Load Balancer.  
+- Служба частной связи должна быть развернута в том же регионе, что и виртуальная сеть и Load Balancer (цен. категория "Стандартный").  
  
-- A single Private Link Service can be accessed from multiple Private Endpoints belonging to different VNets, subscriptions and/or Active Directory tenants. The connection is established through a connection workflow. 
+- К одной частной службе ссылок можно получить доступ из нескольких частных конечных точек, принадлежащих различным виртуальных сетей, подпискам и/или Active Directory клиентам. Соединение устанавливается через рабочий процесс подключения. 
  
-- Multiple Private Link services can be created on the same Standard Load Balancer using different front-end IP configurations. There are limits to the number of Private Link services you can create per Standard Load Balancer and per subscription. For details, see [Azure limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#networking-limits).
+- На одном Load Balancer (цен. категория "Стандартный") можно создать несколько служб частной связи, используя разные конфигурации IP-адресов внешнего интерфейса. Существует ряд ограничений на количество служб, которые можно создать на Load Balancer (цен. категория "Стандартный") и на подписку. Дополнительные сведения см. в статье [ограничения Azure](https://docs.microsoft.com/azure/azure-subscription-service-limits#networking-limits).
  
-- Private Link service can have more than one NAT IP configurations linked to it. Choosing more than one NAT IP configurations can help service providers to scale. Today, service providers can assign up to eight NAT IP addresses per Private Link service. With each NAT IP address, you can assign more ports for your TCP connections and thus scale out. After you add multiple NAT IP addresses to a Private Link service, you can't delete the NAT IP addresses. This is done to ensure that active connections are not impacted while deleting the NAT IP addresses.
+- Служба частной связи может иметь несколько связанных с ней конфигураций IP-адресов NAT. При выборе нескольких конфигураций IP-адресов NAT поставщики услуг могут масштабировать их. Сейчас поставщики услуг могут назначить до восьми IP-адресов NAT на службу частных ссылок. С каждым IP-адресом NAT можно назначить дополнительные порты для подключений TCP и, таким же, масштабировать их. После добавления нескольких IP-адресов NAT в службу частной связи вы не сможете удалить IP-адреса NAT. Это делается для того, чтобы гарантировать, что активные подключения не будут затронуты при удалении IP-адресов NAT.
 
 
-## <a name="alias"></a>Alias
+## <a name="alias"></a>Псевдоним
 
-**Alias** is a globally unique name for your service. It helps you mask the customer data for your service and at the same time creates an easy-to-share name for your service. When you create a Private Link service, Azure generates an alias for your service that you can share with your customers. Your customers can use this alias to request a connection to your service.
+**Псевдоним** — это глобально уникальное имя для службы. Он позволяет маскировать данные клиента для службы и в то же время создает удобное для общего доступа имя службы. При создании службы частной связи Azure создает псевдоним для вашей службы, к которому можно предоставить доступ своим клиентам. Клиенты могут использовать этот псевдоним для запроса подключения к службе.
 
-The alias is composed of three parts: *Prefix*.*GUID*.*Suffix*
+Псевдоним состоит из трех частей: *prefix*. *Идентификатор GUID*. *Суффикс*
 
-- Prefix is the service name. You can pick you own prefix. After "Alias" is created, you can't change it, so select your prefix appropriately.  
-- GUID will be provided by platform. This helps make the name globally unique. 
-- Suffix is appended by Azure: *region*.azure.privatelinkservice 
+- Prefix — имя службы. Вы можете выбрать собственный префикс. После создания псевдонима нельзя изменить, поэтому выберите соответствующий префикс.  
+- Идентификатор GUID будет предоставляться платформой. Это позволяет сделать имя глобально уникальным. 
+- Суффикс добавляется Azure: *Region*. Azure. привателинксервице 
 
-Complete alias:  *Prefix*. {GUID}.*region*.azure.privatelinkservice  
+Полный псевдоним: *prefix*. {GUID}. *регион*. Azure. привателинксервице  
 
-## <a name="control-service-exposure"></a>Control service exposure
+## <a name="control-service-exposure"></a>Предоставление доступа к службе
 
-Private Link service provides you options to control the exposure of your service through "Visibility" setting. You can make the service private for consumption from different VNets you own (RBAC permissions only), restrict the exposure to a limited set of subscriptions that you trust, or make it public so that all Azure subscriptions can request connections on the Private Link service. Your visibility settings decide whether a consumer can connect to your service or not. 
+Служба частной связи предоставляет параметры для управления раскрытием службы с помощью параметра "видимость". Вы можете сделать службу закрытой для использования в разных виртуальных сетейах (только разрешения RBAC), ограничить доступ к ограниченному набору подписок, которым вы доверяете, или сделать его открытым, чтобы все подписки Azure могли запрашивать подключения к частной ссылке. служеб. Параметры видимости позволяют решить, может ли потребитель подключиться к службе. 
 
-## <a name="control-service-access"></a>Control service access
+## <a name="control-service-access"></a>Управление доступом к службе
 
-Consumers having exposure (controlled by visibility setting) to your Private Link service can create a private endpoint in their VNets and request a connection to your Private Link service. The private endpoint connection will be created in a "Pending" state on the Private Link service object. The service provider is responsible for acting on the connection request. You can either approve the connection, reject the connection, or delete the connection. Only connections that are approved can send traffic to the Private Link service.
+Потребители, у которых есть возможность получить доступ к службе частной связи (управляется параметром видимости), могут создать закрытую конечную точку в своих виртуальных сетей и запросить подключение к службе частной связи. Подключение к частной конечной точке будет создано в состоянии "ожидание" в объекте службы частной ссылки. Поставщик услуг отвечает за взаимодействие с запросом на подключение. Можно либо утвердить подключение, отклонить подключение, либо удалить подключение. Только утвержденные подключения могут передавать трафик в службу Private Link.
 
-The action of approving the connections can be automated by using the auto-approval property on the Private Link service. Auto-Approval is an ability for service providers to preapprove a set of subscriptions for automated access to their service. Customers will need to share their subscriptions offline for service providers to add to the auto-approval list. Auto-approval is a subset of the visibility array. Visibility controls the exposure settings whereas auto-approval controls the approval settings for your service. If a customer requests a connection from a subscription in the auto-approval list, the connection is automatically approved and the connection is established. Service providers don’t need to manually approve the request anymore. On the other hand, if a customer requests a connection from a subscription in the visibility array and not in the auto-approval array, the request will reach the service provider but the service provider has to manually approve the connections.
+Действие по утверждению подключений можно автоматизировать с помощью свойства автоматического утверждения в службе Private Link. Автоматическое утверждение позволяет поставщикам услуг предварительно утверждать набор подписок для автоматического доступа к их службе. Клиентам потребуется предоставить доступ к своим подпискам в автономном режиме, чтобы поставщики услуг могли добавить их в список автоматического утверждения. Автоматическое утверждение является подмножеством массива видимости. Видимость управляет параметрами экспозиции, в то время как автоматическое утверждение управляет параметрами утверждения для службы. Если клиент запрашивает подключение из подписки в списке автоматического утверждения, подключение автоматически утверждается и подключение устанавливается. Поставщикам услуг больше не требуется вручную утверждать запрос. С другой стороны, если клиент запрашивает соединение из подписки в массиве видимости, а не в массиве автоматического утверждения, запрос будет достигнут поставщик услуг, но поставщику услуг необходимо вручную утвердить подключения.
 
 ## <a name="limitations"></a>Ограничения
 
-The following are the known limitations when using the Private Link service:
-- Supported only on Standard Load Balancer 
-- Supports IPv4 traffic only
-- Supports TCP traffic only
-- Only reachable from private endpoints in the same region
-- Create and Manage experience from Azure portal is not supported
-- Clients connection information using proxy protocol is not available to service provider
+Ниже перечислены известные ограничения при использовании службы Private Link.
+- Поддерживается только в Load Balancer (цен. категория "Стандартный") 
+- Поддерживает только трафик IPv4
+- Поддерживает только TCP-трафик
+- Доступен только из частных конечных точек в том же регионе
+- Создание интерфейса и управление им из портал Azure не поддерживается
+- Сведения о подключении клиентов с использованием протокола прокси недоступны для поставщика услуг
 
-## <a name="next-steps"></a>Дальнейшие действия
-- [Create a private link service using Azure PowerShell](create-private-link-service-powershell.md)
-- [Create a private link service using Azure CLI](create-private-link-service-cli.md)
+## <a name="next-steps"></a>Дополнительная информация
+- [Создание службы частной связи с помощью Azure PowerShell](create-private-link-service-powershell.md)
+- [Создание службы частной связи с помощью Azure CLI](create-private-link-service-cli.md)

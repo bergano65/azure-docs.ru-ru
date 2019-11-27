@@ -1,6 +1,6 @@
 ---
-title: Public preview service limits - Azure Digital Twins | Microsoft Docs
-description: Learn about public preview service, subscription, instance, and rate limits for Azure Digital Twins.
+title: Ограничения общедоступной предварительной версии службы Azure Digital двойников | Документация Майкрософт
+description: Сведения о службе общедоступной предварительной версии, подписке, экземпляре и ограничениях скорости для цифровых двойников Azure.
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
@@ -70,9 +70,9 @@ ms.locfileid: "74383051"
 
 В следующих ограничениях задано максимальное общее количество сообщений, отправляемых устройствами в экземпляр Azure Digital Twins.
 
-- 100 messages per second across all devices
--   25 messages per second per device
+- 100 сообщений в секунду на всех устройствах
+-   25 сообщений в секунду на устройство
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Ознакомиться с примером Azure Digital Twins на практике можно в статье [Краткое руководство. Поиск свободных помещений с помощью Azure Digital Twins](./quickstart-view-occupancy-dotnet.md).

@@ -1,20 +1,14 @@
 ---
-title: Использование управляемого удостоверения для службы "Экземпляры контейнеров Azure"
-description: Узнайте, как использовать управляемое удостоверение для проверки подлинности в других службах Azure из службы "Экземпляры контейнеров Azure".
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
+title: Включение управляемого удостоверения в группе контейнеров
+description: Узнайте, как включить управляемое удостоверение в службе "экземпляры контейнеров Azure", которое может проходить проверку подлинности в других службах Azure
 ms.topic: article
 ms.date: 10/22/2018
-ms.author: danlep
-ms.custom: ''
-ms.openlocfilehash: 773650e5e5e85d4a5fca0b3755f3730921cc5f2e
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: b5546e8c4b512b584a57e8e4c2ff46c52ab856a0
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325940"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533676"
 ---
 # <a name="how-to-use-managed-identities-with-azure-container-instances"></a>Использование управляемых удостоверений для службы "Экземпляры контейнеров Azure"
 
@@ -60,7 +54,7 @@ ms.locfileid: "68325940"
 
 Если вы решили установить и использовать CLI локально, для работы с этой статьей вам понадобится Azure CLI 2.0.49 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-## <a name="create-an-azure-key-vault"></a>Создание Azure Key Vault
+## <a name="create-an-azure-key-vault"></a>создать Azure Key Vault;
 
 В примерах в этой статье управляемое удостоверение в службе "Экземпляры контейнеров Azure" используется для доступа к секрету, сохраненному в Azure Key Vault. 
 
@@ -84,7 +78,7 @@ az keyvault secret set --name SampleSecret --value "Hello Container Instances!" 
 
 Переходите к следующим примерам, в которых описан доступ к Key Vault из службы "Экземпляры контейнеров Azure" с использованием назначаемого пользователем или системой управляемого удостоверения.
 
-## <a name="example-1-use-a-user-assigned-identity-to-access-azure-key-vault"></a>Пример 1 Использование назначаемого пользователем удостоверения для доступа к Azure Key Vault
+## <a name="example-1-use-a-user-assigned-identity-to-access-azure-key-vault"></a>Пример 1. Использование назначаемого пользователем удостоверения для доступа к Azure Key Vault
 
 ### <a name="create-an-identity"></a>Создание удостоверения
 
@@ -183,7 +177,7 @@ curl https://mykeyvault.vault.azure.net/secrets/SampleSecret/?api-version=2016-1
 {"value":"Hello Container Instances!","contentType":"ACIsecret","id":"https://mykeyvault.vault.azure.net/secrets/SampleSecret/xxxxxxxxxxxxxxxxxxxx","attributes":{"enabled":true,"created":1539965967,"updated":1539965967,"recoveryLevel":"Purgeable"},"tags":{"file-encoding":"utf-8"}}
 ```
 
-## <a name="example-2-use-a-system-assigned-identity-to-access-azure-key-vault"></a>Пример 2 Использование назначаемого системой удостоверения для доступа к Azure Key Vault
+## <a name="example-2-use-a-system-assigned-identity-to-access-azure-key-vault"></a>Пример 2. Использование назначаемого пользователем удостоверения для доступа к Azure Key Vault
 
 ### <a name="enable-a-system-assigned-identity-on-a-container-group"></a>Применение к группе контейнеров удостоверения, назначаемого системой
 
@@ -352,7 +346,7 @@ identity:
    {'myResourceID1':{}}
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как использовать управляемые удостоверения в службе "Экземпляры контейнеров Azure" и выполнять следующие действия:
 

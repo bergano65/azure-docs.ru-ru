@@ -48,7 +48,7 @@ Cloudyn извлекает данные выставления счетов Goog
 - API BigQuery;
 - Google Cloud SQL;
 - API Google Cloud Datastore;
-- Google Cloud Storage
+- Google Cloud Storage;
 - API Google Cloud Storage JSON;
 - API Google Compute Engine.
 
@@ -73,6 +73,6 @@ Cloudyn извлекает данные выставления счетов Goog
 
 В течение нескольких часов в отчетах Cloudyn появятся сведения об издержках и использовании Google.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения о Cloudyn см. в руководстве для Cloudyn [Просмотр сведений об использовании и затратах](./tutorial-review-usage.md).

@@ -1,6 +1,6 @@
 ---
-title: On-premises password writeback integration with Azure AD SSPR - Azure Active Directory
-description: Get cloud passwords written back to on-premises AD infrastructure
+title: Интеграция локальной обратной записи паролей с Azure AD SSPR — Azure Active Directory
+description: Получение облачных паролей, записанных обратно в локальную инфраструктуру AD
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
@@ -43,7 +43,7 @@ ms.locfileid: "74420656"
 * **Не требуются какие-либо правила брандмауэра для входящего трафика**. Компонент обратной записи паролей использует ретранслятор служебной шины Azure в качестве базового коммуникационного канала. Весь обмен данными является исходящим и осуществляется через порт 443.
 
 > [!NOTE]
-> Обратная запись паролей не поддерживается для учетных записей администраторов в защищенных группах в локальной службе Active Directory. Administrators can change their password in the cloud but cannot use password reset to reset a forgotten password. Дополнительные сведения о защищенных группах см. в статье [Appendix C: Protected Accounts and Groups in Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-c--protected-accounts-and-groups-in-active-directory) (Приложение В. Защищенные учетные записи и группы в Active Directory).
+> Обратная запись паролей не поддерживается для учетных записей администраторов в защищенных группах в локальной службе Active Directory. Администраторы могут изменять свой пароль в облаке, но не могут использовать сброс пароля для сброса забытого пароля. Дополнительные сведения о защищенных группах см. в статье [Appendix C: Protected Accounts and Groups in Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-c--protected-accounts-and-groups-in-active-directory) (Приложение В. Защищенные учетные записи и группы в Active Directory).
 
 ## <a name="licensing-requirements-for-password-writeback"></a>Требования к лицензированию для обратной записи паролей
 
@@ -51,14 +51,14 @@ ms.locfileid: "74420656"
 
 Чтобы использовать компонент обратной записи паролей, клиенту должна быть назначена одна из приведенных ниже лицензий:
 
-* Azure AD Premium P1
-* Azure AD Premium P2
+* Azure AD Premium P1
+* Azure AD Premium P2
 * Enterprise Mobility + Security E3 или A3;
 * Enterprise Mobility + Security E5 или A5;
 * Microsoft 365 E3 или A3;
 * Microsoft 365 E5 или A5;
-* Microsoft 365 F1;
-* Microsoft 365 бизнес;
+* Microsoft 365 F1
+* Microsoft 365 бизнес
 
 > [!WARNING]
 > Автономные планы лицензирования Office 365 *не поддерживают функции самостоятельного сброса пароля, изменения пароля или разблокировки при помощи локальной обратной записи*. Для работы этих функций требуется один из указанных выше планов.
@@ -161,11 +161,11 @@ ms.locfileid: "74420656"
    * Все операции сброса пароля пользователя с помощью PowerShell версии 1, PowerShell версии 2 или API Graph Azure AD.
 * **Неподдерживаемые операции администрирования:**
    * все операции сброса пароля пользователя, инициируемые администратором с помощью PowerShell версии 1, PowerShell версии 2 или API Graph Azure AD.
-   * Any administrator-initiated end-user password reset from the [Microsoft 365 admin center](https://admin.microsoft.com)
+   * Любые сброс пароля конечного пользователя, инициированный администратором, из [центра администрирования Microsoft 365](https://admin.microsoft.com)
 
 > [!WARNING]
-> Use of the checkbox "User must change password at next logon" in on-premises Active Directory administrative tools like Active Directory Users and Computers or the Active Directory Administrative Center is supported as a preview feature of Azure AD Connect. For more information, see the article, [Implement password hash synchronization with Azure AD Connect sync](../hybrid/how-to-connect-password-hash-synchronization.md#public-preview-of-synchronizing-temporary-passwords-and-force-password-on-next-logon).
+> Используйте флажок "пользователь должен сменить пароль при следующем входе в систему" в локальных Active Directory средствах администрирования, таких как Active Directory пользователи и компьютеры, или центр администрирования Active Directory поддерживается в качестве предварительной версии функции Azure AD Connect. Дополнительные сведения см. в статье [Реализация синхронизации хэшей паролей с Azure AD Connect синхронизацией](../hybrid/how-to-connect-password-hash-synchronization.md#public-preview-of-synchronizing-temporary-passwords-and-force-password-on-next-logon).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Включите обратную запись паролей с помощью руководства [Руководство. Включение компонента обратной записи паролей](tutorial-enable-writeback.md).

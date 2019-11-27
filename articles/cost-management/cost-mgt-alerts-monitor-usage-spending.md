@@ -35,21 +35,21 @@ ms.locfileid: "74230122"
 
 Оповещения о квотах расходов отдела уведомляют вас, когда расходы отдела достигают фиксированного порогового значения квоты. Квоты затрат настраиваются на портале EA. Каждый раз, когда достигается пороговое значение, создается сообщение электронной почты для владельцев отделов и отображается в оповещениях о затратах. Например, 50 или 75 % квоты.
 
-## <a name="supported-alert-features-by-offer-categories"></a>Supported alert features by offer categories
+## <a name="supported-alert-features-by-offer-categories"></a>Поддерживаемые функции оповещений по категориям предложений
 
-Support for alert types depends on the type of Azure account that you have (Microsoft offer). The following table shows the alert features that are supported by various Microsoft offers. You can view the full list of Microsoft offers at [Understand Cost Management data](understand-cost-mgt-data.md).
+Поддержка типов оповещений зависит от типа учетной записи Azure (предложение Майкрософт). В следующей таблице показаны функции предупреждений, которые поддерживаются различными предложениями Майкрософт. Полный список предложений Майкрософт можно просмотреть на странице данные по [управлению затратами](understand-cost-mgt-data.md).
 
-| Тип оповещения | Соглашение Enterprise | Клиентское соглашение Майкрософт | Web direct/Pay-As-You-Go |
+| Тип оповещения | Соглашение Enterprise | Клиентское соглашение Майкрософт | Web Direct/оплата по мере использования |
 |---|---|---|---|
-| Budget | ✔ | ✔ | ✔ |
+| Составлен | ✔ | ✔ | ✔ |
 | Материалы | ✔ |✘ | ✘ |
-| Department spending quota | ✔ | ✘ | ✘ |
+| Квота на расходы Отдела | ✔ | ✘ | ✘ |
 
 
 
 ## <a name="view-cost-alerts"></a>Просмотр оповещений о затратах
 
-To view cost alerts, open the desired scope in the Azure portal and select **Budgets** in the menu. Use the **Scope** pill to switch to a different scope. Select **Cost alerts** in the menu. См. [основные сведения об областях и работе с ними](understand-work-scopes.md).
+Чтобы просмотреть оповещения о затратах, откройте нужную область в портал Azure и выберите в меню пункт **бюджеты** . Используйте **область** пилюля для переключения на другую область. В меню выберите пункт **оповещения о затратах** . См. [основные сведения об областях и работе с ними](understand-work-scopes.md).
 
 ![Пример изображения оповещений, показанных в Управлении затратами](./media/cost-mgt-alerts-monitor-usage-spending/budget-alerts-fullscreen.png)
 
@@ -67,6 +67,6 @@ To view cost alerts, open the desired scope in the Azure portal and select **Bud
 
 ![Пример изображения, на котором показано параметры отклонения и повторной активации](./media/cost-mgt-alerts-monitor-usage-spending/Dismiss-reactivate-options.png)
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 - Если вы еще не создали бюджет или не настроили условия оповещений для бюджета, выполните действия, описанные в [этом руководстве](tutorial-acm-create-budgets.md).

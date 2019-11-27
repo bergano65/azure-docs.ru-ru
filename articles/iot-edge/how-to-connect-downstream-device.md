@@ -8,13 +8,12 @@ ms.date: 10/08/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.custom: seodec18
-ms.openlocfilehash: c37c3ed2031746d7c476850749bb3dc613252654
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: 719ec736fd2f28f8d8b3b226109bc988c872d10f
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72176778"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74457122"
 ---
 # <a name="connect-a-downstream-device-to-an-azure-iot-edge-gateway"></a>Подключение подчиненного устройства к шлюзу Azure IoT Edge
 
@@ -34,7 +33,7 @@ ms.locfileid: "72176778"
 
 В этой статье под терминами *шлюз* и *шлюз IoT Edge* подразумевается устройство IoT Edge, которое настроенное в качестве прозрачного шлюза. 
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>предварительным требованиям 
 
 Попросите файл сертификата **Азуре-ИОТ-тест-Онли. root. ca. CERT. pem** , созданный в [настройке устройства IOT EDGE, в качестве прозрачного шлюза](how-to-create-transparent-gateway.md) , доступного на подчиненном устройстве. Подчиненное устройство использует этот сертификат для проверки подлинности устройства шлюза. 
 
@@ -88,7 +87,7 @@ sudo cp <path>/azure-iot-test-only.root.ca.cert.pem /usr/local/share/ca-certific
 sudo update-ca-certificates
 ```
 
-Должно отобразиться следующее сообщение: "Updating certificates in /etc/ssl/certs... 1 added, 0 removed; done" (Обновление сертификатов в /etc/ssl/certs... Добавлено: 1, удалено: 0. Готово.).
+Должно отобразиться сообщение "обновление сертификатов в/ЕТК/ССЛ/цертс... 1 добавлено, 0 удалено; Готово».
 
 ### <a name="windows"></a>Windows
 
@@ -121,9 +120,9 @@ import-certificate  <file path>\azure-iot-test-only.root.ca.cert.pem -certstorel
 
 * Полный путь к сертификату корневого ЦС, который вы скопировали (сохранили) на подчиненное устройство.
 
-    Например, `<path>/azure-iot-test-only.root.ca.cert.pem`. 
+    Пример: `<path>/azure-iot-test-only.root.ca.cert.pem`. 
 
-### <a name="nodejs"></a>Node.js
+### <a name="nodejs"></a>NodeJS
 
 Этот раздел содержит пример приложения для подключения клиентского устройства Azure IoT NodeJS к шлюзу IoT Edge. Для приложений NodeJS необходимо установить сертификат корневого ЦС на уровне приложения, как показано ниже. Приложения NodeJS не используют хранилище сертификатов системы. 
 
@@ -170,7 +169,7 @@ var options = {
 
 Если вы не используете OpenSSL или другую библиотеку TLS, на узлах Windows пакет SDK по умолчанию применяет Schannel. Чтобы обеспечить правильную работу Schannel, сертификат корневого ЦС для IoT Edge должен быть установлен в хранилище сертификатов Windows, а не с помощью операции `IoTHubDeviceClient_SetOption`. 
 
-### <a name="java"></a>Java
+### <a name="java"></a>Java:
 
 Этот раздел знакомит вас с примером приложения для подключения клиентского устройства Azure IoT Java к шлюзу IoT Edge. 
 
@@ -183,7 +182,7 @@ var options = {
 Этот раздел знакомит вас с примером приложения для подключения клиентского устройства Azure IoT Python к шлюзу IoT Edge. 
 
 1. Получите пример для **send_message** из [пакета SDK для устройств Azure IOT для примеров Python](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/advanced-edge-scenarios). 
-2. Убедитесь, что либо выполняется в контейнере IoT Edge, либо в сценарии отладки заданы переменные среды `EdgeHubConnectionString` и `EdgeModuleCACertificateFile`.
+2. Убедитесь, что вы либо работаете в контейнере IoT Edge, либо в сценарии отладки `EdgeHubConnectionString` и `EdgeModuleCACertificateFile` заданы переменные среды.
 3. В документации по пакету SDK вы найдете инструкции по запуску примера на конкретном устройстве. 
 
 
@@ -197,7 +196,7 @@ openssl s_client -connect mygateway.contoso.com:8883 -CAfile <CERTDIR>/certs/azu
 
 Эта команда проверяет соединения через МКТТС (порт 8883). Если вы используете другой протокол, внесите необходимые изменения в команду для AMQPS (5671) или HTTPS (433).
 
-Выходные данные этой команды могут быть длинными, включая сведения обо всех сертификатах в цепочке. Если подключение установлено успешно, вы увидите строку, например `Verification: OK` или `Verify return code: 0 (ok)`.
+Выходные данные этой команды могут быть длинными, включая сведения обо всех сертификатах в цепочке. Если подключение установлено успешно, вы увидите строку, подобную `Verification: OK` или `Verify return code: 0 (ok)`.
 
 ![Проверка подключения шлюза](./media/how-to-connect-downstream-device/verification-ok.png)
 
@@ -209,6 +208,6 @@ openssl s_client -connect mygateway.contoso.com:8883 -CAfile <CERTDIR>/certs/azu
 2. Разрешается ли имя узла шлюза в IP-адрес? Вы можете разрешить периодические подключения с помощью DNS или путем добавления записи файла узла на конечном устройстве.
 3. Открыты ли порты связи в брандмауэре? Связь, основанная на используемом протоколе (МКТТС: 8883/AMQPS: 5671/HTTPS: 433), должна быть возможна между подчиненным устройством и прозрачным IoT Edge.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте, как IoT Edge расширяет [возможности автономной работы](offline-capabilities.md) для подчиненных устройств. 

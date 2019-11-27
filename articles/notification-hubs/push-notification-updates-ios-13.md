@@ -1,6 +1,6 @@
 ---
-title: Azure Notification Hubs iOS 13 updates | Microsoft Docs
-description: Learn about iOS 13 breaking changes in Azure Notification Hubs
+title: Обновления в центрах уведомлений Azure для iOS 13 | Документация Майкрософт
+description: Дополнительные сведения о критических изменениях iOS 13 в центрах уведомлений Azure
 author: sethmanheim
 ms.author: sethm
 ms.date: 10/16/2019
@@ -17,19 +17,19 @@ ms.locfileid: "74228142"
 ---
 # <a name="azure-notification-hubs-updates-for-ios-13"></a>Обновление службы "Центры уведомлений Azure" для iOS 13
 
-Apple recently made some changes to their public push service; the changes mostly aligned with the releases of iOS 13 and Xcode. This article describes the impact of these changes on Azure Notification Hubs.
+Недавно корпорация Apple внесла некоторые изменения в общедоступную службу push-уведомлений. изменения в основном согласованы с выпусками iOS 13 и Xcode. В этой статье описывается влияние этих изменений в центрах уведомлений Azure.
 
-## <a name="apns-push-payload-changes"></a>APNS push payload changes
+## <a name="apns-push-payload-changes"></a>Изменения полезных данных отправки APNS
 
-### <a name="apns-push-type"></a>APNS push type
+### <a name="apns-push-type"></a>Тип отправки APNS
 
-Apple now requires that developers identify notifications as an alert or background notifications through the new `apns-push-type` header in the APNS API. According to [Apple's documentation](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns): "The value of this header must accurately reflect the contents of your notification's payload. Если имеется несоответствие или в необходимых системах отсутствует заголовок, APNs может вернуть ошибку, задержать доставку уведомления или полностью отклонить его".
+Apple теперь требует, чтобы разработчики определяли уведомления в виде оповещений или фоновых уведомлений через новый заголовок `apns-push-type` в API APNS. В соответствии с [документацией Apple](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns): "значение этого заголовка должно точно отражать содержимое полезных данных уведомления. Если имеется несоответствие или в необходимых системах отсутствует заголовок, APNs может вернуть ошибку, задержать доставку уведомления или полностью отклонить его".
 
-Developers must now set this header in applications that send notifications through Azure Notification Hubs. Due to a technical limitation, customers must use token-based authentication for APNS credentials with requests that include this attribute. If you are using certificate-based authentication for your APNS credentials, you must switch to using token-based authentication.
+Теперь разработчики должны задать этот заголовок в приложениях, отправляющих уведомления через центры уведомлений Azure. Из-за технических ограничений клиенты должны использовать проверку подлинности на основе маркеров для учетных данных APNS с запросами, включающими этот атрибут. Если для учетных данных APNS используется проверка подлинности на основе сертификатов, необходимо переключиться на использование проверки подлинности на основе маркеров.
 
-The following code samples show how to set this header attribute in notification requests sent through Azure Notification Hubs.
+В следующих примерах кода показано, как задать атрибут заголовка в запросах на уведомления, отправляемых через центры уведомлений Azure.
 
-#### <a name="template-notifications---net-sdk"></a>Template notifications - .NET SDK
+#### <a name="template-notifications---net-sdk"></a>Уведомления шаблонов — пакет SDK для .NET
 
 ```csharp
 var hub = NotificationHubClient.CreateFromConnectionString(...);
@@ -40,7 +40,7 @@ notification.Headers = headers;
 await hub.SendNotificationAsync(notification);
 ```
 
-#### <a name="native-notifications---net-sdk"></a>Native notifications - .NET SDK
+#### <a name="native-notifications---net-sdk"></a>Собственные уведомления — пакет SDK для .NET
 
 ```csharp
 var hub = NotificationHubClient.CreateFromConnectionString(...);
@@ -49,7 +49,7 @@ var notification = new AppleNotification("notification text", headers);
 await hub.SendNotificationAsync(notification);
 ```
 
-#### <a name="direct-rest-calls"></a>Direct REST calls
+#### <a name="direct-rest-calls"></a>Прямые вызовы RESTFUL
 
 ```csharp
 var request = new HttpRequestMessage(method, $"<resourceUri>?api-version=2017-04");
@@ -58,13 +58,13 @@ request.Headers.Add("ServiceBusNotification-Format", "apple");
 request.Headers.Add("apns-push-type", "alert");
 ```
 
-To help you during this transition, when Azure Notification Hubs detects a notification that doesn't have the `apns-push-type` set, the service infers the push type from the notification request and sets the value automatically. Remember that you must configure Azure Notification Hubs to use token-based authentication to set the required header; for more information, see [Token-based (HTTP/2) Authentication for APNS](notification-hubs-push-notification-http2-token-authentification.md).
+Чтобы помочь вам во время этого перехода, когда центры уведомлений Azure обнаруживают уведомление без установленного `apns-push-type`, служба выводит тип отправки из запроса уведомления и устанавливает значение автоматически. Помните, что необходимо настроить центры уведомлений Azure на использование проверки подлинности на основе маркеров для задания требуемого заголовка; Дополнительные сведения см. в статье [Проверка подлинности на основе маркеров (http/2) для APNs](notification-hubs-push-notification-http2-token-authentification.md).
 
-## <a name="apns-priority"></a>APNS priority
+## <a name="apns-priority"></a>Приоритет APNS
 
-Another minor change, but one that requires a change to the backend application that sends notifications, is the requirement that for background notifications the `apns-priority` header must now be set to 5. Many applications set the `apns-priority` header to 10 (indicating immediate delivery), or don't set it and get the default value (which is also 10).
+Еще одно незначительное изменение, которое требует изменения серверного приложения, отправляющего уведомления, является требованием для фоновых уведомлений. Теперь заголовок `apns-priority` должен иметь значение 5. Во многих приложениях для заголовка `apns-priority` задается значение 10 (указывает немедленное доставкой) или не задаются и не устанавливаются значения по умолчанию (а также 10).
 
-Setting this value to 10 is no longer allowed for background notifications, and you must set the value for each request. Apple will not deliver background notifications if this value is missing. Пример.
+Установка этого значения равным 10 больше не разрешена для фоновых уведомлений, и необходимо задать значение для каждого запроса. Apple не будет предоставлять фоновые уведомления, если это значение отсутствует. Например,
 
 ```csharp
 var hub = NotificationHubClient.CreateFromConnectionString(...);
@@ -73,6 +73,6 @@ var notification = new AppleNotification("notification text", headers);
 await hub.SendNotificationAsync(notification);
 ```
 
-## <a name="sdk-changes"></a>SDK changes
+## <a name="sdk-changes"></a>Изменения пакета SDK
 
-For years, iOS developers used the `description` attribute of the `deviceToken` data sent to the push token delegate to extract the push token that a backend application uses to send notifications to the device. With Xcode 11, that `description` attribute changed to a different format. Existing code that developers used for this attribute is now broken. We have updated the Azure Notification Hubs SDK to accommodate this change, so please update the SDK used by your applications to version 2.0.4 or newer of the [Azure Notification Hubs iOS SDK](https://github.com/Azure/azure-notificationhubs-ios).
+В течение года разработчики iOS использовали атрибут `description` `deviceToken` данных, отправленных в делегата Push-маркера, для извлечения токена push-уведомлений, используемого внутренним приложением для отправки уведомления на устройство. В Xcode 11 это `description` атрибут изменился на другой формат. Существующий код, используемый разработчиками для этого атрибута, теперь нарушен. Мы обновили пакет SDK для центров уведомлений Azure в соответствии с этим изменением, поэтому обновите пакет SDK, используемый вашими приложениями, до версии 2.0.4 или более новой версии [пакета Azure Notification](https://github.com/Azure/azure-notificationhubs-ios)Hub для iOS.

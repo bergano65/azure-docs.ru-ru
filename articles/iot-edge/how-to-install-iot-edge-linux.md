@@ -9,13 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: kgremban
-ms.custom: seodec18
-ms.openlocfilehash: aca417ebbc6f9af80058ddece32842f38918ce60
-ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+ms.openlocfilehash: ec463efb1282c311757bb90fd614e1247459c80f
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72964760"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74457326"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-debian-based-linux-systems"></a>Установка среды выполнения Azure IoT Edge в системах Linux на основе Debian
 
@@ -214,7 +213,7 @@ sudo systemctl restart iotedge
 sudo nano /etc/iotedge/config.yaml
 ```
 
-Найдите конфигурации подготовки файла и раскомментируйте раздел, соответствующий вашему механизму аттестации. Например, при использовании аттестации доверенного платформенного модуля необходимо обновить значения **scope_id** и **registration_id** , указав значения из службы подготовки устройств центра интернета вещей и устройства IOT Edge с доверенным платформенным модулем соответственно.
+Найдите конфигурации подготовки файла и раскомментируйте раздел, соответствующий вашему механизму аттестации. Например, при использовании аттестации доверенного платформенного модуля обновите значения **scope_id** и **registration_id** значениями из службы подготовки устройств центра интернета вещей и устройства IOT Edge с доверенным платформенным модулем соответственно.
 
    ```yaml
    # Manual provisioning configuration
@@ -276,7 +275,7 @@ sudo iotedge list
 
 ## <a name="tips-and-troubleshooting"></a>Рекомендации и устранение неполадок
 
-Для запуска команд `iotedge` требуется более высокий уровень привилегий. После установки среды выполнения выйдите из системы компьютера, а затем снова войдите для автоматического обновления разрешений. До тех пор используйте перед любой командой `iotedge` префикс **sudo**.
+Для запуска команд `iotedge` требуется более высокий уровень привилегий. После установки среды выполнения выйдите из системы компьютера, а затем снова войдите для автоматического обновления разрешений. До тех пор используйте перед любой командой **префикс**sudo`iotedge`.
 
 В устройствах с ограниченными ресурсами настоятельно рекомендуется присвоить переменной среды *OptimizeForPerformance* значение *false* согласно инструкциям в [руководстве по устранению неполадок](troubleshoot.md).
 
@@ -324,7 +323,7 @@ sudo apt-get remove --purge moby-cli
 sudo apt-get remove --purge moby-engine
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge](how-to-deploy-modules-portal.md).
 

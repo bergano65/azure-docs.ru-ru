@@ -1,5 +1,5 @@
 ---
-title: Configure the MFA registration policy - Azure Active Directory Identity Protection
+title: Настройка политики регистрации MFA — Защита идентификации Azure Active Directory
 description: Сведения о настройке политики регистрации с многофакторной проверкой подлинности в службе "Защита идентификации Azure Active Directory".
 services: active-directory
 ms.service: active-directory
@@ -18,45 +18,45 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74382144"
 ---
-# <a name="how-to-configure-the-azure-multi-factor-authentication-registration-policy"></a>How To: Configure the Azure Multi-Factor Authentication registration policy
+# <a name="how-to-configure-the-azure-multi-factor-authentication-registration-policy"></a>Как настроить политику регистрации многофакторной идентификации Azure
 
-Azure AD Identity Protection helps you manage the roll-out of Azure Multi-Factor Authentication (MFA) registration by configuring a Conditional Access policy to require MFA registration no matter what modern authentication app you are signing in to.
+Защита идентификации Azure AD помогает управлять развертыванием регистрации многофакторной идентификации Azure (MFA), настраивая политику условного доступа, чтобы требовать регистрацию MFA независимо от того, в каком приложении для проверки подлинности вы входите в систему.
 
-## <a name="what-is-the-azure-multi-factor-authentication-registration-policy"></a>What is the Azure Multi-Factor Authentication registration policy?
+## <a name="what-is-the-azure-multi-factor-authentication-registration-policy"></a>Что такое политика регистрации многофакторной идентификации Azure?
 
-Azure Multi-Factor Authentication provides a means to verify who you are using more than just a username and password. It provides a second layer of security to user sign-ins. In order for users to be able to respond to MFA prompts, they must first register for Azure Multi-Factor Authentication.
+Многофакторная идентификация Azure предоставляет средства для проверки того, кто использует не только имя пользователя и пароль. Он обеспечивает второй уровень безопасности при входе пользователей в систему. Чтобы пользователи могли отвечать на запросы MFA, они должны сначала зарегистрироваться для использования многофакторной идентификации Azure.
 
-We recommend that you require Azure Multi-Factor Authentication for user sign-ins because it:
+Мы рекомендуем требовать многофакторную идентификацию Azure для входа пользователей, так как это:
 
-- Delivers strong authentication through a range of verification options.
-- Plays a key role in preparing your organization to self-remediate from risk detections in Identity Protection.
+- Обеспечивает надежную проверку подлинности с помощью ряда вариантов проверки.
+- Играет ключевую роль в подготовке Организации к самостоятельному исправлению рисков в защите идентификации.
 
-For more information on Azure Multi-Factor Authentication, see [What is Azure Multi-Factor Authentication?](../authentication/howto-mfa-getstarted.md)
+Дополнительные сведения о многофакторной идентификации Azure см. в статье [что такое многофакторная идентификация Azure?](../authentication/howto-mfa-getstarted.md)
 
 ## <a name="policy-configuration"></a>Настройки политики
 
 1. Перейдите на [портал Azure](https://portal.azure.com).
-1. Browse to **Azure Active Directory** > **Security** > **Identity Protection** > **MFA registration policy**.
-   1. Under **Assignments**
-      1. **Users** - Choose **All users** or **Select individuals and groups** if limiting your rollout.
-         1. Optionally you can choose to exclude users from the policy.
-   1. Under **Controls**
-      1. Ensure the checkbox **Require Azure MFA registration** is checked and choose **Select**.
-   1. **Enforce Policy** - **On**
+1. Перейдите в **Azure Active Directory** > **Безопасность** > **Идентификация** > **MFA**.
+   1. В разделе " **назначения** "
+      1. **Пользователи** . Выберите **все пользователи** или **выберите отдельных пользователей и группы,** если хотите ограничить развертывание.
+         1. При необходимости можно исключить пользователей из политики.
+   1. В разделе **элементы управления**
+      1. Убедитесь, что флажок **требовать регистрацию Azure MFA** установлен, и нажмите кнопку **выбрать**.
+   1. **Принудительное применение политики** ** - **
    1. **Сохранить**
 
 ## <a name="user-experience"></a>Возможности для пользователя
 
-Azure Active Directory Identity Protection will prompt your users to register the next time they sign in interactively and they will have 14 days to complete registration. During this 14-day period, they can bypass registration but at the end of the period they will be required to register before they can complete the sign-in process.
+Защита идентификации Azure Active Directory предложит пользователям регистрироваться при следующем входе в интерактивный режиме, и у них будет 14 дней для завершения регистрации. В течение этого 14-дневного периода они могут обходить регистрацию, но в конце периода они должны зарегистрироваться, прежде чем они смогут завершить процесс входа.
 
 Общие сведения о соответствующем взаимодействии с пользователями см. в статьях:
 
 - [Процедуры входа с защитой идентификации Azure AD](concept-identity-protection-user-experience.md).  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- [Enable sign-in and user risk policies](howto-identity-protection-configure-risk-policies.md)
+- [Включение политик входа и риска для пользователей](howto-identity-protection-configure-risk-policies.md)
 
-- [Enable Azure AD self-service password reset](../authentication/howto-sspr-deployment.md)
+- [Включение самостоятельного сброса пароля в Azure AD](../authentication/howto-sspr-deployment.md)
 
-- [Enable Azure Multi-Factor Authentication](../authentication/howto-mfa-getstarted.md)
+- [Включение многофакторной идентификации Azure](../authentication/howto-mfa-getstarted.md)

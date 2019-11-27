@@ -1,5 +1,5 @@
 ---
-title: Примеры диаграмм метрик Azure Monitor
+title: Пример диаграммы метрик Azure Monitor
 description: Сведения о визуализации данных Azure Monitor.
 author: vgorbenko
 services: azure-monitor
@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.date: 01/29/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: bbfeb428d38c23955df4497242184499349aecf9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8cc653b8e5d2c239243bf6a09955b10011c7408b
+ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60256715"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74538965"
 ---
-# <a name="metric-chart-samples"></a>Примеры диаграмм метрик
+# <a name="metric-chart-examples"></a>Примеры диаграмм метрик 
 
 Платформа Azure предоставляет [более тысячи метрик](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported), многие из которых обладают измерениями. Используя [фильтры измерения](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts), применяя тип диаграммы управления [разделение](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts) и изменяя параметры диаграммы, вы можете создавать эффективные представления и панели мониторинга диагностики, которые содержат подробные сведения о работоспособности инфраструктуры и приложения. В данной статье приведены некоторые примеры диаграмм, которые можно создать с помощью [Обозревателя метрик](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts), и инструкции с обязательными шагами, которые необходимо выполнить для настройки каждой диаграммы.
 

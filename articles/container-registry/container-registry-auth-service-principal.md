@@ -1,19 +1,14 @@
 ---
-title: Аутентификация в реестре контейнеров Azure с помощью субъекта-службы
+title: Проверка подлинности с помощью субъекта-службы
 description: Предоставление доступа к образам, размещенным в закрытом реестре контейнеров, с помощью субъекта-службы Azure Active Directory.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 10/04/2019
-ms.author: danlep
-ms.openlocfilehash: 853b9bdb771fb08185670e13ec85a45028f9a145
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 37da784c8e95a5f5b924532e4a019552924a1a3f
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74150126"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74455407"
 ---
 # <a name="azure-container-registry-authentication-with-service-principals"></a>Аутентификация в реестре контейнеров Azure с помощью субъектов-служб
 

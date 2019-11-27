@@ -1,6 +1,6 @@
 ---
-title: Azure VMware Solution by CloudSimple - Stretch a Layer 2 network on-premises to Private Cloud
-description: Describes how to set up a Layer 2 VPN between NSX-T on a CloudSimple Private Cloud and an on-premises standalone NSX Edge client
+title: Решение VMware для Azure, Клаудсимпле перетягивание локальной сети уровня 2 в частное облако
+description: Описывает, как настроить VPN уровня 2 между НСКС-T в частном облаке Клаудсимпле и локальном изолированном клиенте НСКС пограничной Организации.
 author: sharaths-cs
 ms.author: b-shsury
 ms.date: 08/19/2019
@@ -17,165 +17,165 @@ ms.locfileid: "74232381"
 ---
 # <a name="migrate-workloads-using-layer-2-stretched-networks"></a>Перенос рабочих нагрузок с помощью растянутых сетей уровня 2
 
-In this guide, you will learn how to use Layer 2 VPN (L2VPN) to stretch a Layer 2 network from your on-premises environment to your CloudSimple Private Cloud. This solution enables migration of workloads running in your on-premises VMware environment to the Private Cloud in Azure within the same subnet address space without having to re-IP your workloads.
+В этом руководство вы узнаете, как использовать VPN уровня 2 (L2VPN) для переноса сети уровня 2 из локальной среды в частное облако Клаудсимпле. Это решение позволяет выполнять миграцию рабочих нагрузок, работающих в локальной среде VMware, в частное облако в Azure в рамках одного адресного пространства подсети без необходимости повторного IP-адреса рабочих нагрузок.
 
-L2VPN based stretching of Layer 2 networks can work with or without NSX-based networks in your on-premises VMware environment. If you don't have NSX-based networks for workloads on-premises, you can use a standalone NSX Edge Services Gateway.
+Растяжение на основе L2VPN в сетях уровня 2 может работать с сетями на основе НСКС или без них в локальной среде VMware. Если у вас нет сетей на основе НСКС для рабочих нагрузок в локальной среде, можно использовать изолированный шлюз служб НСКС ребра.
 
 > [!NOTE]
-> This guide covers the scenario where on-premises and the Private Cloud datacenters are connected over Site-to-Site VPN.
+> В этом руководстве рассматривается сценарий, в котором локальные и частные облачные центры данных подключены через VPN типа "сеть — сеть".
 
-## <a name="deployment-scenario"></a>Deployment scenario
+## <a name="deployment-scenario"></a>Сценарий развертывания
 
-To stretch your on-premises network using L2VPN, you must configure an L2VPN server (destination NSX-T Tier0 router) and an L2VPN client (source standalone client).  
+Чтобы растянуть локальную сеть с помощью L2VPN, необходимо настроить сервер L2VPN (назначение маршрутизатора назначения НСКС-T Tier0) и клиент L2VPN (исходный автономный клиент).  
 
-In this deployment scenario, your Private Cloud is connected to your on-premises environment via a Site-to-Site VPN tunnel that allows on-premises management and vMotion subnets to communicate with the Private Cloud management and vMotion subnets. This arrangement is necessary for Cross vCenter vMotion (xVC-vMotion). A NSX-T Tier0 router is deployed as an L2VPN server in the Private Cloud.
+В этом сценарии развертывания ваше частное облако подключается к локальной среде через VPN-туннель типа "сеть — сеть", который позволяет локальным средам управления и виртуальным подсетям vMotion обмениваться данными с подсетями управления частным облаком и vMotion. Это расположение необходимо для перекрестного vCenter vMotion (КСВК-vMotion). Маршрутизатор НСКС-T Tier0 развертывается в частном облаке как сервер L2VPN.
 
-Standalone NSX Edge is deployed in your on-premises environment as an L2VPN client and subsequently paired with the L2VPN server. A GRE tunnel endpoint is created on each side and configured to 'stretch' the on-premises Layer 2 network to your Private Cloud. This configuration is depicted in the following figure.
+Автономный НСКСный периметр развертывается в локальной среде как клиент L2VPN и затем связывается с сервером L2VPN. Конечная точка туннеля GRE создается на каждой стороне и настроена для переноса локальной сети уровня 2 в частное облако. Эта конфигурация показана на следующем рисунке.
 
-![Deployment scenario](media/l2vpn-deployment-scenario.png)
+![Сценарий развертывания](media/l2vpn-deployment-scenario.png)
 
-To learn more about migration using L2 VPN, see [Virtual Private Networks](https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.3/com.vmware.nsxt.admin.doc/GUID-A8B113EC-3D53-41A5-919E-78F1A3705F58.html#GUID-A8B113EC-3D53-41A5-919E-78F1A3705F58__section_44B4972B5F12453B90625D98F86D5704) in the VMware documentation.
+Дополнительные сведения о миграции с помощью VPN уровня "L2" см. в статье [Виртуальные частные сети](https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.3/com.vmware.nsxt.admin.doc/GUID-A8B113EC-3D53-41A5-919E-78F1A3705F58.html#GUID-A8B113EC-3D53-41A5-919E-78F1A3705F58__section_44B4972B5F12453B90625D98F86D5704) в документации по VMware.
 
-## <a name="prerequisites-for-deploying-the-solution"></a>Prerequisites for deploying the solution
+## <a name="prerequisites-for-deploying-the-solution"></a>Необходимые условия для развертывания решения
 
-Verify that the following are in place before deploying and configuring the solution:
+Перед развертыванием и настройкой решения убедитесь, что выполняются следующие действия.
 
-* The on-premises vSphere version is 6.7U1+ or 6.5P03+.
-* The on-premises vSphere license is at the Enterprise Plus level (for vSphere Distributed Switch).
-* Identify the workload Layer 2 network to be stretched to your Private Cloud.
-* Identify a Layer 2 network in your on-premises environment for deploying your L2VPN client appliance.
-* [A Private Cloud is already created](create-private-cloud.md).
-* The version of the standalone NSX-T Edge appliance is compatible with the NSX-T Manager version (NSX-T 2.3.0) used in your Private Cloud environment.
-* A trunk port group has been created in the on-premises vCenter with forged transmits enabled.
-* A public IP address has been reserved to use for the NSX-T standalone client uplink IP  address, and 1:1 NAT is in place for translation between the two addresses.
-* DNS forwarding is set on the on-premises DNS servers for the az.cloudsimple.io domain to point to the Private Cloud DNS servers.
-* RTT latency is less than or equal to 150 ms, as required for vMotion to work across the two sites.
+* Локальная версия vSphere — 6.7 U1 + или 6.5 P03 +.
+* Локальная лицензия vSphere находится на уровне "Корпоративный Плюс" (для распределенного коммутатора vSphere).
+* Найдите сеть уровня рабочей нагрузки 2, которую нужно растянуть в частном облаке.
+* Найдите сеть уровня 2 в локальной среде для развертывания клиентского устройства L2VPN.
+* [Частное облако уже создано](create-private-cloud.md).
+* Версия автономного НСКС-T пограничной устройства совместима с версией НСКС-T Manager (НСКС-T 2.3.0), используемой в среде частного облака.
+* Группа магистральных портов была создана в локальном vCenter с включенными подложными передачами.
+* Общедоступный IP-адрес зарезервирован для использования с IP-адресом исходящей связи автономного клиента НСКС-T, и для преобразования между двумя адресами используется NAT 1:1.
+* Пересылка DNS задается на локальных DNS-серверах, чтобы домен az.cloudsimple.io указывал на DNS-серверы частного облака.
+* Задержка приема-передачи меньше или равна 150 мс, так как требуется для выполнения операции vMotion между двумя сайтами.
 
 ## <a name="limitations-and-considerations"></a>Ограничения и рекомендации
 
-The following table lists supported vSphere versions and network adaptor types.  
+В следующей таблице перечислены поддерживаемые версии vSphere и типы сетевых адаптеров.  
 
-| vSphere version | Source vSwitch type | Virtual NIC driver | Target vSwitch Type | Supported? |
+| Версия vSphere | Исходный тип vSwitch | Драйвер виртуального сетевого адаптера | Целевой тип vSwitch | Поддерживается? |
 ------------ | ------------- | ------------ | ------------- | ------------- 
-| Все | DVS | Все | DVS | ДА |
-| vSphere 6.7UI or higher, 6.5P03 or higher | DVS | VMXNET3 | N-VDS | ДА |
-| vSphere 6.7UI or higher, 6.5P03 or higher | DVS | E1000 | N-VDS | [Not supported per VWware](https://kb.vmware.com/s/article/56991) |
-| vSphere 6.7UI or 6.5P03, NSX-V or versions below NSX-T2.2, 6.5P03 or higher | Все | Все | N-VDS | [Not supported per VWware](https://kb.vmware.com/s/article/56991) |
+| Все | Программа | Все | Программа | Yes |
+| vSphere 6.7 UI или более поздней версии, 6.5 P03 или более поздней версии | Программа | VMXNET3 | N — VDS | Yes |
+| vSphere 6.7 UI или более поздней версии, 6.5 P03 или более поздней версии | Программа | E1000 | N — VDS | [Не поддерживается для Ввваре](https://kb.vmware.com/s/article/56991) |
+| vSphere 6.7 UI или 6.5 P03, НСКС-V или версии ниже НСКС-T 2.2, 6.5 P03 или выше | Все | Все | N — VDS | [Не поддерживается для Ввваре](https://kb.vmware.com/s/article/56991) |
 
-As of the VMware NSX-T 2.3 release:
+Начиная с версии VMware НСКС-T 2,3:
 
-* The logical switch on the Private Cloud side that is stretched to on-premises over L2VPN can't be routed at the same time. The stretched logical switch can't be connected to a logical router.
-* L2VPN and route-based IPSEC VPNs can only be configured using API calls.
+* Логический коммутатор на стороне частного облака, который дотягивается в локальную среду через L2VPN, нельзя маршрутизировать одновременно. Растянутый логический коммутатор не может быть подключен к логическому маршрутизатору.
+* Виртуальные частные сети IPSEC на основе L2VPN и route можно настроить только с помощью вызовов API.
 
-For more information, see [Virtual Private Networks](https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.3/com.vmware.nsxt.admin.doc/GUID-A8B113EC-3D53-41A5-919E-78F1A3705F58.html#GUID-A8B113EC-3D53-41A5-919E-78F1A3705F58__section_44B4972B5F12453B90625D98F86D5704) in the VMware documentation.
+Дополнительные сведения см. в статье [Виртуальные частные сети](https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.3/com.vmware.nsxt.admin.doc/GUID-A8B113EC-3D53-41A5-919E-78F1A3705F58.html#GUID-A8B113EC-3D53-41A5-919E-78F1A3705F58__section_44B4972B5F12453B90625D98F86D5704) в документации по VMware.
 
-### <a name="sample-l2-vpn-deployment-addressing"></a>Sample L2 VPN deployment addressing
+### <a name="sample-l2-vpn-deployment-addressing"></a>Пример адресации VPN-развертывания L2
 
-### <a name="on-premises-network-where-the-standalone-esg-l2-vpn-client-is-deployed"></a>On-premises network where the standalone ESG (L2 VPN client) is deployed
+### <a name="on-premises-network-where-the-standalone-esg-l2-vpn-client-is-deployed"></a>Локальная сеть, в которой развернут автономный ESG (VPN-клиент L2)
 
 | **Элемент** | **Значение** |
 |------------|-----------------|
-| Network name | MGMT_NET_VLAN469 |
+| Сетевое имя | MGMT_NET_VLAN469 |
 | Виртуальная локальная сеть | 469 |
 | CIDR| 10.250.0.0/24 |
-| Standalone Edge appliance IP address | 10.250.0.111 |
-| Standalone Edge appliance NAT IP address | 192.227.85.167 |
+| IP-адрес автономного пограничных устройств | 10.250.0.111 |
+| IP-адрес автономного пограничных устройств NAT | 192.227.85.167 |
 
-### <a name="on-premises-network-to-be-stretched"></a>On-premises network to be stretched
+### <a name="on-premises-network-to-be-stretched"></a>Локальная сеть для растягивания
 
 | **Элемент** | **Значение** |
 |------------|-----------------|
 | Виртуальная локальная сеть | 472 |
 | CIDR| 10.250.3.0/24 |
 
-### <a name="private-cloud-ip-schema-for-nsx-t-tier0-router-l2-vpn-serve"></a>Private Cloud IP schema for NSX-T Tier0 Router (L2 VPN serve)
+### <a name="private-cloud-ip-schema-for-nsx-t-tier0-router-l2-vpn-serve"></a>IP-схема частного облака для маршрутизатора НСКС-T Tier0 (виртуальные частные сети L2)
 
 | **Элемент** | **Значение** |
 |------------|-----------------|
-| Loopback interface | 192.168.254.254/32 |
-| Tunnel interface | 5.5.5.1/29 |
-| Logical switch (stretched) | Stretch_LS |
-| Loopback interface (NAT IP address) | 104.40.21.81 |
+| Интерфейс замыкания на себя | 192.168.254.254/32 |
+| Туннельный интерфейс | 5.5.5.1/29 |
+| Логический коммутатор (растянутый) | Stretch_LS |
+| Интерфейс замыкания на себя (IP-адрес NAT) | 104.40.21.81 |
 
-### <a name="private-cloud-network-to-be-mapped-to-the-stretched-network"></a>Private Cloud network to be mapped to the stretched network
+### <a name="private-cloud-network-to-be-mapped-to-the-stretched-network"></a>Сеть частного облака, которая будет сопоставлена с растянутой сетью
 
 | **Элемент** | **Значение** |
 |------------|-----------------|
 | Виртуальная локальная сеть | 712 |
 | CIDR| 10.200.15.0/24 |
 
-## <a name="fetch-the-logical-router-id-needed-for-l2vpn"></a>Fetch the logical router ID needed for L2VPN
+## <a name="fetch-the-logical-router-id-needed-for-l2vpn"></a>Получение идентификатора логического маршрутизатора, необходимого для L2VPN
 
-The following steps show how to fetch the logical-router ID of Tier0 DR logical router instance for the IPsec and L2VPN services. The logical-router ID is needed later when implementing the L2VPN.
+В следующих шагах показано, как получить идентификатор логического маршрутизатора для экземпляра логического маршрутизатора Tier0 DR для служб IPsec и L2VPN. ИДЕНТИФИКАТОР логического маршрутизатора требуется позже при реализации L2VPN.
 
-1. Sign in to NSX-T Manager https://*nsx-t-manager-ip-address* and select **Networking** > **Routers** > **Provider-LR** > **Overview**. For **High Availability Mode**, select **Active-Standby**. This action opens a pop-up window that shows the Edge VM on which the Tier0 router is currently active.
+1. Войдите в НСКС-T Manager https://*НСКС-t-Manager-IP-Address* и выберите **Сетевые** > **маршрутизаторы** > **поставщик —**  > **Обзор**. В **режиме высокого уровня доступности выберите режим**" **Активный — ожидание**". Это действие открывает всплывающее окно, в котором отображается пограничная виртуальная машина, на которой в данный момент активен маршрутизатор Tier0.
 
-    ![Select active-standby](media/l2vpn-fetch01.png)
+    ![Выбор режима "активный — резервный"](media/l2vpn-fetch01.png)
 
-2. Select **Fabric** > **Nodes** > **Edges**. Make a note of the management IP address of the active Edge VM (Edge VM1) identified in the previous step.
+2. Выберите **Fabric** > **узлы** > **края**. Запишите IP-адрес активной виртуальной машины (ребра VM1), указанной на предыдущем шаге.
 
-    ![Note management IP](media/l2vpn-fetch02.png)
+    ![IP-адрес управления заметками](media/l2vpn-fetch02.png)
 
-3. Open an SSH session to the management IP address of the Edge VM. Run the ```get logical-router``` command with username **admin** and password **CloudSimple 123!** .
+3. Откройте сеанс SSH с IP-адресом управления пограничной виртуальной машины. Выполните команду ```get logical-router``` с именем пользователя **Admin** и паролем **клаудсимпле 123!** .
 
-    ![get logical-router output](media/l2vpn-fetch03.png)
+    ![получение выходных данных логического маршрутизатора](media/l2vpn-fetch03.png)
 
-4. If you don't see an entry 'DR-Provider-LR', complete the following steps.
+4. Если вы не видите запись "DR-Provider-LR", выполните следующие действия.
 
-5. Create two overlay-backed logical switches. One logical switch is stretched to on-premises where the migrated workloads reside. Another logical switch is a dummy switch. For instructions, see [Create a Logical Switch](https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.3/com.vmware.nsxt.admin.doc/GUID-23194F9A-416A-40EA-B9F7-346B391C3EF8.html) in the VMware documentation.
+5. Создайте два логических коммутатора, поддерживающих перекрытие. Один логический коммутатор растягивается в локальную среду, где находятся перенесенные рабочие нагрузки. Другой логический коммутатор — фиктивный параметр. Инструкции см. в разделе [Создание логического коммутатора](https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.3/com.vmware.nsxt.admin.doc/GUID-23194F9A-416A-40EA-B9F7-346B391C3EF8.html) в документации по VMware.
 
-    ![Create logical switch](media/l2vpn-fetch04.png)
+    ![Создание логического коммутатора](media/l2vpn-fetch04.png)
 
-6. Attach the dummy switch to the Tier1 router with a link local IP address or any non-overlapping subnet from on-premises or your Private Cloud. See [Add a Downlink Port on a Tier-1 Logical Router](https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.3/com.vmware.nsxt.admin.doc/GUID-E7EA867C-604C-4224-B61D-2A8EF41CB7A6.html) in the VMware documentation.
+6. Подключите фиктивный коммутатор к маршрутизатору 1 класса с локальным IP-адресом канала или любой другой непересекающейся подсетью из локального или частного облака. См. раздел [Добавление порта разную на логическом маршрутизаторе уровня 1](https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.3/com.vmware.nsxt.admin.doc/GUID-E7EA867C-604C-4224-B61D-2A8EF41CB7A6.html) в документации по VMware.
 
-    ![Attach dummy switch](media/l2vpn-fetch05.png)
+    ![Присоединить фиктивный параметр](media/l2vpn-fetch05.png)
 
-7. Run the `get logical-router` command again on the SSH session of the Edge VM. The UUID of the 'DR-Provider-LR' logical router is displayed. Make a note of the UUID, which is required when configuring the L2VPN.
+7. Снова выполните команду `get logical-router` в сеансе SSH пограничной виртуальной машины. Отображается UUID логического маршрутизатора DR-Provider-LR. Запишите идентификатор UUID, который требуется при настройке L2VPN.
 
-    ![get logical-router output](media/l2vpn-fetch06.png)
+    ![получение выходных данных логического маршрутизатора](media/l2vpn-fetch06.png)
 
-## <a name="fetch-the-logical-switch-id-needed-for-l2vpn"></a>Fetch the logical-switch ID needed for L2VPN
+## <a name="fetch-the-logical-switch-id-needed-for-l2vpn"></a>Получение идентификатора логического коммутатора, необходимого для L2VPN
 
-1. Sign in to [NSX-T Manager](https://nsx-t-manager-ip-address).
-2. Select **Networking** > **Switching** > **Switches** >  **<\Logical switch\>**  > **Overview**.
-3. Make a note of the UUID of the stretch logical switch, which is required when configuring the L2VPN.
+1. Войдите в [НСКС-T Manager](https://nsx-t-manager-ip-address).
+2. Выберите **сетевые** > **Переключение** > **коммутаторов** >  **< коммутатор \логикал\>** **Обзор**. > 
+3. Запишите UUID логического коммутатора растяжения, который требуется при настройке L2VPN.
 
-    ![get logical-router output](media/l2vpn-fetch-switch01.png)
+    ![получение выходных данных логического маршрутизатора](media/l2vpn-fetch-switch01.png)
 
-## <a name="routing-and-security-considerations-for-l2vpn"></a>Routing and security considerations for L2VPN
+## <a name="routing-and-security-considerations-for-l2vpn"></a>Вопросы маршрутизации и безопасности для L2VPN
 
-To establish an IPsec route-based VPN between the NSX-T Tier0 router and the standalone NSX Edge client, the loopback interface of the NSX-T Tier0 router must be able to communicate with the public IP address of NSX standalone client on-premises over UDP 500/4500.
+Чтобы установить VPN на основе маршрутов IPsec между маршрутизатором НСКС-T Tier0 и изолированным клиентским клиентом НСКС, интерфейс замыкания на себя маршрутизатора НСКС-T Tier0 должен иметь возможность взаимодействовать с общедоступным IP-адресом локального клиента НСКС по протоколу UDP 500/4500.
 
-### <a name="allow-udp-5004500-for-ipsec"></a>Allow UDP 500/4500 for IPsec
+### <a name="allow-udp-5004500-for-ipsec"></a>Разрешить UDP 500/4500 для IPsec
 
-1. [Create a public IP address](public-ips.md) for the NSX-T Tier0 loopback interface in the CloudSimple portal.
+1. [Создайте общедоступный IP-адрес](public-ips.md) для интерфейса замыкания на себя НСКС-T Tier0 на портале клаудсимпле.
 
-2. [Create a firewall table](firewall.md) with stateful rules that allow UDP 500/ 4500 inbound traffic and attach the firewall table to the NSX-T HostTransport subnet.
+2. [Создайте таблицу брандмауэра](firewall.md) с правилами с отслеживанием состояния, разрешающими входящий трафик UDP 500/4500, и вложите таблицу брандмауэра в подсеть НСКС-T хосттранспорт.
 
-### <a name="advertise-the-loopback-interface-ip-to-the-underlay-network"></a>Advertise the loopback interface IP to the underlay network
+### <a name="advertise-the-loopback-interface-ip-to-the-underlay-network"></a>Объявление IP-адреса интерфейса замыкания на себя в сети ундерлай
 
-1. Create a null route for the loopback interface network. Sign in to NSX-T Manager and select **Networking** > **Routing** > **Routers** > **Provider-LR** > **Routing** > **Static Routes**. Щелкните **Добавить**. For **Network**, enter the loopback interface IP address. For **Next Hops**, click **Add**, specify 'Null' for the next hop, and keep the default of 1 for Admin Distance.
+1. Создайте маршрут со значением NULL для сети интерфейса замыкания на себя. Войдите в Диспетчер НСКС-T и выберите **сетевые** > **Маршрутизация** > **маршрутизаторы** > **поставщик-LR** > **Маршрутизация** > **статические маршруты**. Нажмите кнопку **Добавить**. В поле **сеть**введите IP-адрес интерфейса замыкания на себя. Для **следующих прыжков**нажмите кнопку **Добавить**, укажите значение NULL для следующего прыжка и выберите значение по умолчанию 1 для параметра Расстояние администратора.
 
-    ![Add static route](media/l2vpn-routing-security01.png)
+    ![Добавить статический маршрут](media/l2vpn-routing-security01.png)
 
-2. Create an IP prefix list. Sign in to NSX-T Manager and select **Networking** > **Routing** > **Routers** > **Provider-LR** > **Routing** > **IP Prefix Lists**. Щелкните **Добавить**. Enter a name to identify the list. For **Prefixes**, click **Add** twice. In the first line, enter '0.0.0.0/0' for **Network** and 'Deny' for **Action**. In the second line, select **Any** for **Network** and **Permit** for **Action**.
-3. Attach the IP prefix list to both BGP neighbors (TOR). Attaching the IP prefix list to the BGP neighbor prevents the default route from being advertised in BGP to the TOR switches. However, any other route that includes the null route will advertise the loopback interface IP address to the TOR switches.
+2. Создайте список префиксов IP-адресов. Войдите в Диспетчер НСКС-T и выберите **сетевые** > **Маршрутизация** > **маршрутизаторы** > **поставщик-LR** > **Маршрутизация** > **списки префиксов IP-адресов**. Нажмите кнопку **Добавить**. Введите имя для указания списка. Для добавления **префиксов**нажмите кнопку **Добавить** дважды. В первой строке введите "0.0.0.0/0" для команды " **сеть** " и "запретить" для **действия**. Во второй строке выберите **любой** для **сети** и **разрешите** **действие**.
+3. Присоедините список префиксов IP-адресов к соседам BGP (TOR). Присоединение списка префиксов IP-адресов к соседу BGP предотвращает объявление маршрута по умолчанию в BGP для коммутаторов TOR. Однако любой другой маршрут, который содержит маршрут null, будет объявлять IP-адрес интерфейса замыкания на себя для коммутаторов TOR.
 
-    ![Create IP prefix list](media/l2vpn-routing-security02.png)
+    ![Создать список префиксов IP-адресов](media/l2vpn-routing-security02.png)
 
-4. Sign in to NSX-T Manager and select **Networking** > **Routing** > **Routers** > **Provider-LR** > **Routing** > **BGP** > **Neighbors**. Select the first neighbor. Click **Edit** > **Address Families**. For the IPv4 family, Edit the **Out Filter** column and select the IP prefix list that you created. В нижней части страницы нажмите кнопку **Save**. Repeat this step for the second neighbor.
+4. Войдите в Диспетчер НСКС-T и выберите **сетевые** > **Маршрутизация** > **маршрутизаторы** > **поставщик-LR** > **Маршрутизация** > **соседей** **BGP** > . Выберите первый сосед. Щелкните **изменить** **семейства адресов** > . В семействе IPv4 измените столбец **исходящий фильтр** и выберите созданный список IP-префиксов. Выберите команду **Сохранить**. Повторите этот шаг для второго соседа.
 
-    ![Attach IP prefix list 1](media/l2vpn-routing-security03.png) ![Attach IP prefix list 2](media/l2vpn-routing-security04.png)
+    ![присоединить список префиксов IP-адресов](media/l2vpn-routing-security03.png) ![присоединить IP-префикс список 2](media/l2vpn-routing-security04.png)
 
-5. Redistribute the null static route into BGP. To advertise the loopback interface route to the underlay, you must redistribute the null static route into BGP. Sign in to NSX-T Manager and select **Networking** > **Routing** > **Routers** > **Provider-LR** > **Routing** > **Route Redistribution** > **Neighbors**. Select **Provider-LR-Route_Redistribution** and click **Edit**. Select the **Static** checkbox and click **Save**.
+5. Повторно распространите статический маршрут NULL в BGP. Чтобы объявить маршрут интерфейса замыкания на ундерлай, необходимо повторно распространить статический маршрут NULL в BGP. Войдите в Диспетчер НСКС-T и выберите **сетевые** > **Маршрутизация** > **маршрутизаторы** > **поставщик-LR** > **Маршрутизация** > **соседи** > **перераспределения маршрутов** . Выберите **поставщик-LR-Route_Redistribution** и нажмите кнопку **изменить**. Установите флажок **статический** и нажмите кнопку **сохранить**.
 
-    ![Redistribute null static route into BGP](media/l2vpn-routing-security05.png)
+    ![Повторное распространение статического маршрута NULL в BGP](media/l2vpn-routing-security05.png)
 
-## <a name="configure-a-route-based-vpn-on-the-nsx-t-tier0-router"></a>Configure a route-based VPN on the NSX-T Tier0 router
+## <a name="configure-a-route-based-vpn-on-the-nsx-t-tier0-router"></a>Настройка VPN на основе маршрутов на маршрутизаторе НСКС-T Tier0
 
-Use the following template to fill in all the details for configuring a route-based VPN on the NSX-T Tier0 router. The UUIDs in each POST call are required in subsequent POST calls. The IP addresses for the loopback and tunnel interfaces for L2VPN must be unique and not overlap with the on-premises or Private Cloud networks.
+Используйте следующий шаблон, чтобы заполнить все сведения о настройке VPN на основе маршрутов на маршрутизаторе НСКС-T Tier0. Идентификаторы UUID в каждом вызове POST необходимы во всех последующих вызовах POST. IP-адреса для интерфейсов замыкания на себя и туннеля для L2VPN должны быть уникальными и не перекрываться с локальными или частными сетями.
 
-The IP addresses chosen for loopback and tunnel interface used for L2VPN must be unique and not overlap with the on-premises or Private Cloud networks. The loopback interface network must always be /32.
+IP-адреса, выбранные для интерфейса замыкания на себя и туннеля, используемые для L2VPN, должны быть уникальными и не перекрываться локальными или частными сетями. Сеть интерфейса замыкания на себя всегда должна иметь значение/32.
 
 ```
 Loopback interface ip : 192.168.254.254/32
@@ -195,9 +195,9 @@ Logical-Port ID :
 Peer Code :
 ```
 
-For all of the following API calls, replace the IP address with your NSX-T Manager IP address. You can run all these API calls from the POSTMAN client or by using `curl` commands.
+Для всех приведенных ниже вызовов API Замените IP-адрес своим IP адресом НСКС-T Manager. Все эти вызовы API можно выполнить из пост-клиента или с помощью команд `curl`.
 
-### <a name="enable-the-ipsec-vpn-service-on-the-logical-router"></a>Enable the IPSec VPN service on the logical router
+### <a name="enable-the-ipsec-vpn-service-on-the-logical-router"></a>Включение службы VPN IPSec на логическом маршрутизаторе
 
 ```
 POST   https://192.168.110.201/api/v1/vpn/ipsec/services/
@@ -211,7 +211,7 @@ POST   https://192.168.110.201/api/v1/vpn/ipsec/services/
 }
 ```
 
-### <a name="create-profiles-ike"></a>Create profiles: IKE
+### <a name="create-profiles-ike"></a>Создание профилей: IKE
 
 ```
 POST https://192.168.110.201/api/v1/vpn/ipsec/ike-profiles
@@ -228,7 +228,7 @@ POST https://192.168.110.201/api/v1/vpn/ipsec/ike-profiles
 }
 ```
 
-### <a name="create-profiles-dpd"></a>Create profiles: DPD
+### <a name="create-profiles-dpd"></a>Создание профилей: DPD
 
 ```
 POST  https://192.168.110.201/api/v1/vpn/ipsec/dpd-profiles  
@@ -240,7 +240,7 @@ POST  https://192.168.110.201/api/v1/vpn/ipsec/dpd-profiles
 }
 ```
 
-### <a name="create-profiles-tunnel"></a>Create profiles: Tunnel
+### <a name="create-profiles-tunnel"></a>Создание профилей: туннелирование
 
 ```
 POST  https://192.168.110.201/api/v1/vpn/ipsec/tunnel-profiles
@@ -259,7 +259,7 @@ POST  https://192.168.110.201/api/v1/vpn/ipsec/tunnel-profiles
 }
 ```
 
-### <a name="create-a-local-endpoint"></a>Create a local endpoint
+### <a name="create-a-local-endpoint"></a>Создание локальной конечной точки
 
 ``` 
 POST https://192.168.110.201/api/v1/vpn/ipsec/local-endpoints
@@ -277,7 +277,7 @@ POST https://192.168.110.201/api/v1/vpn/ipsec/local-endpoints
 }
 ```
 
-### <a name="create-a-peer-endpoint"></a>Create a peer endpoint
+### <a name="create-a-peer-endpoint"></a>Создание одноранговой конечной точки
 
 ```
 POST https://192.168.110.201/api/v1/vpn/ipsec/peer-endpoints
@@ -297,7 +297,7 @@ POST https://192.168.110.201/api/v1/vpn/ipsec/peer-endpoints
 }
 ```
 
-### <a name="create-a-route-based-vpn-session"></a>Create a route-based VPN session
+### <a name="create-a-route-based-vpn-session"></a>Создание сеанса VPN на основе маршрута
 
 ```
 POST :  https://192.168.110.201/api/v1/vpn/ipsec/sessions
@@ -323,9 +323,9 @@ POST :  https://192.168.110.201/api/v1/vpn/ipsec/sessions
 }
 ```
 
-## <a name="configure-l2vpn-on-nsx-t-tier0-router"></a>Configure L2VPN on NSX-T Tier0 router
+## <a name="configure-l2vpn-on-nsx-t-tier0-router"></a>Настройка L2VPN на маршрутизаторе НСКС-T Tier0
 
-Fill in the following information after every POST call. The IDs are required in subsequent POST calls.
+После каждого вызова POST заполните следующие сведения. Идентификаторы необходимы при последующих вызовах POST.
 
 ```
 L2VPN Service ID:
@@ -333,15 +333,15 @@ L2VPN Session ID:
 Logical Port ID:
 ```
 
-### <a name="create-the-l2vpn-service"></a>Create the L2VPN service
+### <a name="create-the-l2vpn-service"></a>Создание службы L2VPN
 
-The output of the following GET command will be blank, because the configuration is not complete yet.
+Выходные данные следующей команды GET будут пустыми, так как конфигурация еще не завершена.
 
 ```
 GET : https://192.168.110.201/api/v1/vpn/l2vpn/services
 ```
 
-For the following POST command, the logical router ID is the UUID of the Tier0 DR logical router obtained earlier.
+Для следующей команды POST идентификатор логического маршрутизатора — это UUID логического маршрутизатора Tier0 DR, полученного ранее.
 
 ```
 POST : https://192.168.110.201/api/v1/vpn/l2vpn/services
@@ -352,9 +352,9 @@ POST : https://192.168.110.201/api/v1/vpn/l2vpn/services
 }
 ```
 
-### <a name="create-the-l2vpn-session"></a>Create the L2VPN session
+### <a name="create-the-l2vpn-session"></a>Создание сеанса L2VPN
 
-For the following POST command, the L2VPN service ID is the ID that you just obtained and the IPsec VPN session ID is the ID obtained in the previous section.
+Для следующей команды POST идентификатор службы L2VPN — это только что полученный идентификатор, а идентификатор сеанса VPN-подключения IPsec — это идентификатор, полученный в предыдущем разделе.
 
 ``` 
 POST: https://192.168.110.201/api/v1/vpn/l2vpn/sessions
@@ -368,7 +368,7 @@ POST: https://192.168.110.201/api/v1/vpn/l2vpn/sessions
 }
 ```
 
-These calls create a GRE tunnel endpoint. To check the status, run the following command.
+Эти вызовы создают конечную точку туннеля GRE. Чтобы проверить состояние, выполните следующую команду.
 
 ```
 edge-2> get tunnel-port
@@ -391,7 +391,7 @@ REMOTE      : 192.168.140.156
 ENCAP       : GENEVE
 ```
 
-### <a name="create-logical-port-with-the-tunnel-id-specified"></a>Create logical port with the tunnel ID specified
+### <a name="create-logical-port-with-the-tunnel-id-specified"></a>Создание логического порта с указанным ИДЕНТИФИКАТОРом туннеля
 
 ```
     POST https://192.168.110.201/api/v1/logical-ports/
@@ -412,70 +412,70 @@ ENCAP       : GENEVE
         }
 ```
 
-## <a name="obtain-the-peer-code-for-l2vpn-on-the-nsx-t-side"></a>Obtain the peer code for L2VPN on the NSX-T side
+## <a name="obtain-the-peer-code-for-l2vpn-on-the-nsx-t-side"></a>Получение кода однорангового узла для L2VPN на стороне НСКС-T
 
-Obtain the peer code of the NSX-T endpoint. The peer code is required when configuring the remote endpoint. The L2VPN <session-id> can be obtained from the previous section. For more information, see the [NSX-T 2.3 API Guide](https://www.vmware.com/support/nsxt/doc/nsxt_23_api.html).
+Получите одноранговый код конечной точки НСКС-T. При настройке удаленной конечной точки требуется одноранговый код. Идентификатор сеанса > L2VPN < можно получить из предыдущего раздела. Дополнительные сведения см. в разделе [НСКС-T 2,3 API Guide](https://www.vmware.com/support/nsxt/doc/nsxt_23_api.html).
 
 ```
 GET https://192.168.110.201/api/v1/vpn/l2vpn/sessions/<session-id>/peer-codes
 ```
 
-## <a name="deploy-the-nsx-t-standalone-client-on-premises"></a>Deploy the NSX-T standalone client (on-premises)
+## <a name="deploy-the-nsx-t-standalone-client-on-premises"></a>Развертывание автономного клиента НСКС-T (локально)
 
-Before deploying, verify that your on-premises firewall rules allow inbound and outbound UDP 500/4500 traffic from/to the CloudSimple public IP address that was reserved earlier for the NSX-T T0 router loopback interface. 
+Перед развертыванием убедитесь, что локальные правила брандмауэра разрешают входящий и исходящий трафик UDP 500/4500 от/к общедоступному IP-адресу Клаудсимпле, который был зарезервирован ранее для интерфейса замыкания маршрутизатора НСКС-T T0. 
 
-1. [Download the Standalone NSX Edge Client](https://my.vmware.com/group/vmware/details?productId=673&rPId=33945&downloadGroup=NSX-T-230) OVF and Extract the files from the downloaded bundle into a folder.
+1. [Скачайте автономный клиент НСКС пограничных](https://my.vmware.com/group/vmware/details?productId=673&rPId=33945&downloadGroup=NSX-T-230) устройств OVF и извлеките файлы из скачанного пакета в папку.
 
-    ![Download standalone NSX Edge client](media/l2vpn-deploy-client01.png)
+    ![Скачать автономный клиент НСКС пограничных устройств](media/l2vpn-deploy-client01.png)
 
-2. Go to the folder with all the extracted files. Select all the vmdks (NSX-l2t-client-large.mf and NSX-l2t-client-large.ovf for large appliance size or NSX-l2t-client-Xlarge.mf and NSX-l2t-client-Xlarge.ovf for extra large size appliance size). Щелкните **Далее**.
+2. Перейдите в папку со всеми извлеченными файлами. Выберите все VMDK (НСКС-L2T-Client-Large. MF и NSX-l2t-client-large. ovf для большого размера устройства или НСКС-L2T-Client-Ксларже. MF и NSX-l2t-client-Xlarge. ovf для очень большого размера устройства). Щелкните **Далее**.
 
-    ![Select template](media/l2vpn-deploy-client02.png) ![Select template](media/l2vpn-deploy-client03.png)
+    ![выберите шаблон](media/l2vpn-deploy-client02.png) ![выберите шаблон](media/l2vpn-deploy-client03.png)
 
-3. Enter a name for the NSX-T standalone client and click **Next**.
+3. Введите имя автономного клиента НСКС-T и нажмите кнопку **Далее**.
 
-    ![Enter template name](media/l2vpn-deploy-client04.png)
+    ![Введите имя шаблона](media/l2vpn-deploy-client04.png)
 
-4. Click **Next** as needed to reach the datastore settings. Select the appropriate datastore for NSX-T standalone client and click **Next**.
+4. Нажмите кнопку **Далее** по мере необходимости, чтобы получить доступ к параметрам хранилища данных. Выберите соответствующее хранилище данных для автономного клиента НСКС-T и нажмите кнопку **Далее**.
 
-    ![Select datastore](media/l2vpn-deploy-client06.png)
+    ![Выбор хранилища данных](media/l2vpn-deploy-client06.png)
 
-5. Select the correct port groups for Trunk (Trunk PG), Public (Uplink PG) and HA interface (Uplink PG) for the NSX-T standalone client. Щелкните **Далее**.
+5. Выберите правильные группы портов для магистрали (магистральная PG), общедоступный (канал PG) и интерфейс высокой доступности (исходящей связи PG) для автономного клиента НСКС-T. Щелкните **Далее**.
 
-    ![Select port groups](media/l2vpn-deploy-client07.png)
+    ![Выбор групп портов](media/l2vpn-deploy-client07.png)
 
-6. Fill the following details in the **Customize template** screen and click **Next**:
+6. Введите следующие сведения на экране **Настройка шаблона** и нажмите кнопку **Далее**.
 
-    Expand L2T:
+    Разверните L2T:
 
-    * **Peer Address**. Enter the IP address reserved on Azure CloudSimple portal for NSX-T Tier0 Loopback interface.
-    * **Peer Code**. Paste the peer code obtained from the last step of L2VPN Server deployment.
-    * **Sub Interfaces VLAN (Tunnel ID)** . Enter the VLAN ID to be stretched. In parentheses (), enter the tunnel ID that was previously configured.
+    * **Одноранговый адрес**. Введите IP-адрес, зарезервированный на портале Azure Клаудсимпле, для интерфейса замыкания на себя НСКС-T Tier0.
+    * **Одноранговый код**. Вставьте одноранговый код, полученный на последнем шаге развертывания сервера L2VPN.
+    * **Подинтерфейсы VLAN (идентификатор туннеля)** . Введите идентификатор виртуальной ЛС для растяжения. В скобках () введите идентификатор туннеля, который был ранее настроен.
 
-    Expand Uplink Interface:
+    Разверните узел интерфейс исходящей связи:
 
-    * **DNS IP Address**. Enter the on-premises DNS IP address.
-    * **Default Gateway**.  Enter the default gateway of the VLAN that will act as a default gateway for this client.
-    * **IP Address**. Enter the uplink IP address of the standalone client.
-    * **Prefix Length**. Enter the prefix length of the uplink VLAN/subnet.
-    * **CLI admin/enable/root User Password**. Set the password for admin /enable /root account.
+    * **IP-адрес DNS**. Введите локальный IP-адрес DNS.
+    * **Шлюз по умолчанию**.  Введите шлюз по умолчанию виртуальной ЛС, который будет использоваться в качестве шлюза по умолчанию для этого клиента.
+    * **IP-адрес**. Введите IP-адрес канала исходящей связи автономного клиента.
+    * **Длина префикса**. Введите длину префикса VLAN или подсети исходящей связи.
+    * **Администратор CLI, включение и ввод пароля пользователя root**. Задайте пароль для учетной записи администратора/Enable/root.
 
-      ![Customize template](media/l2vpn-deploy-client08.png)
-      ![Customize template - more](media/l2vpn-deploy-client09.png)
+      ![настроить шаблон](media/l2vpn-deploy-client08.png)
+      ![настроить шаблон — дополнительно](media/l2vpn-deploy-client09.png)
 
-7. Review the settings and click **Finish**.
+7. Проверьте параметры и нажмите кнопку **Готово**.
 
-    ![Complete configuration](media/l2vpn-deploy-client10.png)
+    ![Завершение настройки](media/l2vpn-deploy-client10.png)
 
-## <a name="configure-an-on-premises-sink-port"></a>Configure an on-premises sink port
+## <a name="configure-an-on-premises-sink-port"></a>Настройка локального порта приемника
 
-If one of the VPN sites doesn't have NSX deployed, you can configure an L2 VPN by deploying a standalone NSX Edge at that site. A standalone NSX Edge is deployed using an OVF file on a host that is not managed by NSX. This deploys an NSX Edge Services Gateway appliance to function as an L2 VPN client.
+Если на одном из сайтов VPN не развернут НСКС, можно настроить VPN уровня "L2", развернув автономную НСКС границу на этом сайте. Автономный НСКСный периметр развертывается с помощью файла OVF на узле, который не управляется НСКС. Это позволяет развернуть устройство шлюза служб НСКС ребра для работы в качестве VPN-клиента L2.
 
-If a standalone edge trunk vNIC is connected to a vSphere Distributed Switch, either promiscuous mode or a sink port is required for L2 VPN function. Using promiscuous mode can cause duplicate pings and duplicate responses. For this reason, use sink port mode in the L2 VPN standalone NSX Edge configuration. See the [Configure a sink port](https://docs.vmware.com/en/VMware-NSX-Data-Center-for-vSphere/6.4/com.vmware.nsx.admin.doc/GUID-3CDA4346-E692-4592-8796-ACBEEC87C161.html) in the VMware documentation.
+Если автономная пограничная магистральная vNIC подключена к vSphere распределенному коммутатору, то для функции VPN уровня "L2" требуется либо неизбирательный режим, либо порт приемника. Использование неизбирательного режима может привести к дублированию проверки связи и дублированию ответов. По этой причине используйте режим порта приемника в конфигурации автономной НСКС границы виртуальной частной сети L2. См. раздел [Настройка порта приемника](https://docs.vmware.com/en/VMware-NSX-Data-Center-for-vSphere/6.4/com.vmware.nsx.admin.doc/GUID-3CDA4346-E692-4592-8796-ACBEEC87C161.html) в документации по VMware.
 
-## <a name="ipsec-vpn-and-l2vpn-verification"></a>IPsec VPN and L2VPN verification
+## <a name="ipsec-vpn-and-l2vpn-verification"></a>Проверка VPN и L2VPN IPsec
 
-Use the following commands to verify IPsec and L2VPN sessions from standalone NSX-T Edge.
+Используйте следующие команды для проверки сеансов IPsec и L2VPN из автономной НСКС-T.
 
 ```
 nsx-l2t-edge> show service ipsec
@@ -502,7 +502,7 @@ SITENAME                       IPSECSTATUS          VTI                  GRE
 1ecb00fb-a538-4740-b788-c9049e8cb6c6 UP                   vti-100              l2t-1
 ```
 
-Use the following commands to verify IPsec and L2VPN sessions from the NSX-T Tier0 router.
+Используйте следующие команды для проверки сеансов IPsec и L2VPN из маршрутизатора НСКС-T Tier0.
 
 ```
 edge-2> get ipsecvpn session
@@ -531,7 +531,7 @@ IPSEC Session : 1ecb00fb-a538-4740-b788-c9049e8cb6c6
 Status        : UP
 ```
 
-Use the following commands to verify the sink port on the ESXi host where the NSX-T standalone client VM resides in the on-premises environment.
+Используйте следующие команды, чтобы проверить порт приемника на узле ESXi, где находится виртуальная машина НСКС-T в локальной среде.
 
 ```
  [root@esxi02:~] esxcfg-vswitch -l |grep NSX

@@ -84,16 +84,18 @@
               href: concepts-limits.md
         - name: Доступ к данным и безопасность
           items:
-            - name: Правила брандмауэра
-              href: concepts-firewall-rules.md
+            - name: Общие сведения о безопасности
+              href: concepts-security.md
             - name: Настройка SSL
               href: concepts-ssl-connection-security.md
-            - name: Расширенная защита от угроз
-              href: concepts-data-access-and-security-threat-protection.md
-            - name: Виртуальная сеть
-              href: concepts-data-access-and-security-vnet.md
             - name: Архитектура подключения
               href: concepts-connectivity-architecture.md
+            - name: Правила брандмауэра
+              href: concepts-firewall-rules.md
+            - name: Виртуальная сеть
+              href: concepts-data-access-and-security-vnet.md
+            - name: Расширенная защита от угроз
+              href: concepts-data-access-and-security-threat-protection.md
             - name: "Аутентификация Azure\_AD"
               href: concepts-aad-authentication.md
         - name: Непрерывность бизнес-процессов
@@ -173,6 +175,10 @@
   items:
     - name: Отдельный сервер
       items:
+        - name: Управление сервером
+          items:
+            - name: Портал Azure
+              href: howto-create-manage-server-portal.md
         - name: Аутентификация
           items:
             - name: Создание пользователей

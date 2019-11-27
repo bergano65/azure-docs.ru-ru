@@ -1,7 +1,7 @@
 ---
-title: Collaborate with others - LUIS
+title: Совместная работа с другими пользователями — LUIS
 titleSuffix: Azure Cognitive Services
-description: An app owner can add contributors to the authoring resource. These contributors can modify the model, train, and publish the app.
+description: Владелец приложения может добавлять участников в ресурс разработки. Эти участники могут изменять модель, обучать и публиковать приложение.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -11,43 +11,43 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: diberry
-ms.openlocfilehash: efeb8b28ef2b8eec480fcf5090e0173d6451deef
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 96aa7517a3418ab30b0b6a1736eea950ecf4a731
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74225527"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533805"
 ---
-# <a name="add-contributors-to-your-app"></a>Add contributors to your app
+# <a name="add-contributors-to-your-app"></a>Добавление участников в приложение
 
-An app owner can add contributors to apps. Они могут изменять модель, обучать и публиковать приложение. 
+Владелец приложения может добавлять участников в приложения. Они могут изменять модель, обучать и публиковать приложение. 
 
 [!INCLUDE [Manage collaborators and contributors based on migrated or not-migrated apps](./includes/manage-contributor-collaborator-migration.md)]
 
-## <a name="add-contributor-to-azure-authoring-resource"></a>Add contributor to Azure authoring resource
+## <a name="add-contributor-to-azure-authoring-resource"></a>Добавление участника в ресурс создания Azure
 
-The following procedure is for all users that have **migrated** to use the Azure authoring resource.
+Следующая процедура предназначена для всех пользователей, которые выполнили **миграцию** для использования ресурса по разработке Azure.
 
-You have migrated if your LUIS authoring experience is tied to an Authoring resource on the **Manage -> Azure resources** page in the LUIS portal.
+Вы выполнили миграцию, если ваш интерфейс LUIS для разработки привязан к ресурсу, созданному на странице " **> управление ресурсами Azure** " на портале Luis.
 
-1. In the Azure portal, find the Language Understanding (LUIS) authoring resource. It has the type `LUIS.Authoring`.
-1. On this resource's **Access Control (IAM)** page, select **+Add** then select **Add role assignment**.
+1. В портал Azure найдите ресурс для разработки Language Understanding (LUIS). Он имеет тип `LUIS.Authoring`.
+1. На странице **Управление доступом (IAM)** этого ресурса нажмите кнопку **+ Добавить** , а затем выберите **добавить назначение ролей**.
 
-    ![In Azure portal, add role assignment on authoring resource.](./media/luis-how-to-collaborate/authoring-resource-access-control-add-role.png)
+    ![В портал Azure добавьте назначение ролей при создании ресурса.](./media/luis-how-to-collaborate/authoring-resource-access-control-add-role.png)
 
-1. In the **Add role assignment** window, select the **Role** of Contributor. In the **Assign access to** option, select **Azure AD user, group, or service principal**. In the **Select** option, enter the user's email address. If the user is known by more than 1 email address for the same domain, make sure the enter the _primary_ email account.
+1. В окне **Добавление назначения ролей** выберите **роль** участника. В параметре **назначить доступ к** выберите **пользователь Azure AD, группа или субъект-служба**. В параметре **выбрать** введите адрес электронной почты пользователя. Если пользователю известно более одного адреса электронной почты для того же домена, убедитесь, что в поле введите _основную_ учетную запись электронной почты.
 
-    ![Add user's email to the contributor role for Azure AD](./media/luis-how-to-collaborate/add-role-assignment-for-contributor.png)
+    ![Добавление адреса электронной почты пользователя в роль участника для Azure AD](./media/luis-how-to-collaborate/add-role-assignment-for-contributor.png)
 
-    When the user's email is found, select the account and select **Save**. 
+    При обнаружении адреса электронной почты пользователя выберите учетную запись и нажмите кнопку **сохранить**. 
 
-    If you have trouble with this role assignment, review [Azure role assignments](../../role-based-access-control/role-assignments-portal.md) and [Azure access control troubleshooting](../../role-based-access-control/troubleshooting.md#problems-with-rbac-role-assignments).
+    Если у вас возникли проблемы с этим назначением ролей, проверьте [назначения ролей Azure](../../role-based-access-control/role-assignments-portal.md) и [Устранение неполадок управления доступом Azure](../../role-based-access-control/troubleshooting.md#problems-with-rbac-role-assignments).
 
-## <a name="add-collaborator-to-luis-app"></a>Add collaborator to LUIS app
+## <a name="add-collaborator-to-luis-app"></a>Добавление участника совместной работы в приложение LUIS
 
-The following procedure is for all users that have **not migrated** to use the Azure authoring resource.
+Следующая процедура предназначена для всех пользователей, которые не выполнили **миграцию** для использования ресурса разработки Azure.
 
-You have not migrated if your LUIS authoring experience is not tied to an Authoring resource on the **Manage -> Azure resources** page in the LUIS portal.
+Вы не перенеслись, если ваш интерфейс LUIS не привязан к ресурсу разработки на странице " **> управление ресурсами Azure** " на портале Luis.
 
 У приложения есть один владелец, он же автор. Кроме него, у приложения может быть много участников совместной работы. Чтобы участники совместной работы могли изменять приложение, их адреса электронной почты, используемые для доступа к порталу LUIS, необходимо добавить в список участников совместной работы. Приложение появится на их портале LUIS после добавления.
 
@@ -60,9 +60,9 @@ You have not migrated if your LUIS authoring experience is not tied to an Author
     ![Добавления адресов электронной почты участников совместной работы](./media/luis-how-to-collaborate/add-collaborator-pop-up.png)
 
 
-### <a name="users-with-multiple-emails"></a>Users with multiple emails 
+### <a name="users-with-multiple-emails"></a>Пользователи с несколькими сообщениями электронной почты 
 
-If you add contributors/collaborators to a LUIS app, you are specifying the exact email address. While Azure Active Directory (Azure AD) allows a single user to have more than one email account used interchangeably, LUIS requires the user to sign in with the email address specified when adding the contributor/collaborator.
+При добавлении участников или участников совместной работы в приложение LUIS вы указываете точный адрес электронной почты. Хотя Azure Active Directory (Azure AD) позволяет одному пользователю использовать более одной учетной записи электронной почты, LUIS требует, чтобы пользователь выполнил вход с использованием адреса электронной почты, указанного при добавлении участника или совместной работы.
 
 <a name="owner-and-collaborators"></a>
 
@@ -89,14 +89,14 @@ If you add contributors/collaborators to a LUIS app, you are specifying the exac
 
 Если администратору клиента требуется, чтобы только определенные пользователи могли применять LUIS, для этого есть несколько возможных решений.
 * Предоставить "согласие администратора" (согласия для всех пользователей Azure AD), а затем установить значение "Да" для параметра "Требуется назначение пользователей" в свойствах приложения уровня "Корпоративный" и наконец назначить или добавить только нужных пользователей к приложению. При использовании этого метода администратор по-прежнему предоставляет "согласие администратора", имея при этом возможность контролировать доступ пользователей к приложению.
-* Второе решение — использовать [API Graph Azure AD](https://docs.microsoft.com/graph/azuread-identity-access-management-concept-overview) для предоставления согласия для каждого конкретного пользователя. 
+* Второе решение — использование [API удостоверений и управления доступом Azure AD в Microsoft Graph](https://docs.microsoft.com/graph/azuread-identity-access-management-concept-overview) для предоставления согласия каждому конкретному пользователю. 
 
 Узнайте больше о пользователях и согласии Azure Active Directory. 
 * [Ограничьте набор пользователей](../../active-directory/develop/howto-restrict-your-app-to-a-set-of-users.md) приложения.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Learn [how to use versions](luis-how-to-manage-versions.md) to control your app life cycle.
-* Understand the concepts including the [authoring resource](luis-concept-keys.md#authoring-key) and [contributors](luis-concept-keys.md#contributions-from-other-authors) on that resource.
-* Learn [how to create](luis-how-to-azure-subscription.md) authoring and runtime resources
-* Migrate to the new [authoring resource](luis-migration-authoring.md) 
+* Узнайте [, как использовать версии](luis-how-to-manage-versions.md) для управления жизненным циклом приложения.
+* Изучите основные понятия, в том числе [ресурсы для разработки](luis-concept-keys.md#authoring-key) и [участников](luis-concept-keys.md#contributions-from-other-authors) этого ресурса.
+* Сведения [о создании](luis-how-to-azure-subscription.md) ресурсов разработки и среды выполнения
+* Переход на новый [ресурс создания](luis-migration-authoring.md) 

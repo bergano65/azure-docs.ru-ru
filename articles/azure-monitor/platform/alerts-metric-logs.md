@@ -17,13 +17,13 @@ ms.locfileid: "74226521"
 ---
 # <a name="create-metric-alerts-for-logs-in-azure-monitor"></a>Создание оповещений о метриках для журналов в Azure Monitor
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 Azure Monitor поддерживает [тип оповещений о метриках](../../azure-monitor/platform/alerts-metric-near-real-time.md), который обладает преимуществами над [классическими оповещениями](../../azure-monitor/platform/alerts-classic-portal.md). Метрики доступны для [большого числа служб Azure](../../azure-monitor/platform/metrics-supported.md). В этой статье описывается использование подмножества для ресурса `Microsoft.OperationalInsights/workspaces`.
 
-You can use metric alerts on popular Log Analytics logs extracted as metrics as part of Metrics from Logs including resources in Azure or on-premises. Поддерживаемые решения Log Analytics перечислены ниже.
+Оповещения метрик можно использовать в популярных журналах Log Analytics, извлеченных в качестве метрик в составе метрик из журналов, включая ресурсы в Azure или локально. Поддерживаемые решения Log Analytics перечислены ниже.
 
 - [Счетчики производительности](../../azure-monitor/platform/data-sources-performance-counters.md) для компьютеров Windows и Linux.
 - [Записи пульсов для решения "Работоспособность агентов"](../../azure-monitor/insights/solution-agenthealth.md).
@@ -56,8 +56,8 @@ You can use metric alerts on popular Log Analytics logs extracted as metrics as 
 Чтобы обеспечить работу метрики для журналов, собранных на основе данных Log Analytics, необходимо настроить и сделать доступными следующие компоненты:
 
 1. **Активная рабочую область Log Analytics**. Требуется действительная и активная рабочая область Log Analytics. Дополнительные сведения см. в статье [Создание рабочей области Log Analytics на портале Azure](../../azure-monitor/learn/quick-create-workspace.md).
-2. **Agent is configured for Log Analytics Workspace**: Agent needs to be configured for Azure VMs (and/or) on-premises VMs to send data into the Log Analytics Workspace used in earlier step. Дополнительные сведения см. в статье [Обзор агентов Azure для мониторинга виртуальных машин Azure](../../azure-monitor/platform/agents-overview.md).
-3. **Supported Log Analytics Solutions is installed**: Log Analytics solution should be configured and sending data into Log Analytics workspace - supported solutions are [Performance counters for Windows & Linux](../../azure-monitor/platform/data-sources-performance-counters.md), [Heartbeat records for Agent Health](../../azure-monitor/insights/solution-agenthealth.md), [Update management](../../automation/automation-update-management.md), and [Event data](../../azure-monitor/platform/data-sources-windows-events.md).
+2. **Агент настроен для log Analytics рабочей области**: необходимо настроить агент для виртуальных машин Azure (и (или)) на локальных виртуальных машинах для отправки данных в рабочую область log Analytics, которая использовалась на предыдущем шаге. Дополнительные сведения см. в статье [Обзор агентов Azure для мониторинга виртуальных машин Azure](../../azure-monitor/platform/agents-overview.md).
+3. **Поддерживаемые решения log Analytics установлены**: log Analytics решение должно быть настроено и отправлено в log Analytics решения, поддерживаемые рабочей областью — это [счетчики производительности для Windows & Linux](../../azure-monitor/platform/data-sources-performance-counters.md), [записи пульса для работоспособность агентов](../../azure-monitor/insights/solution-agenthealth.md), [управления обновлениями](../../automation/automation-update-management.md)и [данных событий](../../azure-monitor/platform/data-sources-windows-events.md).
 4. **Решения Log Analytics, настроенные для отправки журналов**. В решении Log Analytics должны быть включены необходимые журналы (данные), соответствующие [метрикам, поддерживаемым для рабочих областей Log Analytics](../../azure-monitor/platform/metrics-supported.md#microsoftoperationalinsightsworkspaces). Например, для подсчета *% доступной памяти* соответствующий счетчик сначала необходимо настроить в решении [Счетчики производительности](../../azure-monitor/platform/data-sources-performance-counters.md).
 
 ## <a name="configuring-metric-alert-for-logs"></a>Настройка оповещения о метриках для журналов
@@ -687,7 +687,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile metricfrom
 az group deployment create --resource-group myRG --template-file metricfromLogsAlertDynamic.json --parameters @metricfromLogsAlertDynamic.parameters.json
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - См. дополнительные сведения об [оповещениях о метриках](alerts-metric.md).
 - Ознакомьтесь со сведениями об [оповещениях журналов в Azure](../../azure-monitor/platform/alerts-unified-log.md).

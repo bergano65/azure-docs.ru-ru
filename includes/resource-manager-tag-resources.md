@@ -52,7 +52,7 @@ ms.locfileid: "74451595"
 
 Чтобы просмотреть все ресурсы с тегом, сделайте следующее.
 
-1. On the Azure portal menu, select **All services**. Select **General**, then **Tags**.
+1. В меню портал Azure выберите **все службы**. Выберите **Общие**, а затем — **теги**.
 
      ![Поиск по тегу](./media/resource-manager-tag-resources/find-tags-general.png)
 
@@ -66,8 +66,8 @@ ms.locfileid: "74451595"
 
 1. Закрепите представление на панели мониторинга, чтобы всегда иметь его под рукой.
 
-     ![Закрепить на панели мониторинга](./media/resource-manager-tag-resources/pin-to-dashboard.png)
+     ![Закрепление на панели мониторинга](./media/resource-manager-tag-resources/pin-to-dashboard.png)
 
 1. Представление доступно на панели мониторинга.
 
-     ![панель мониторинга](./media/resource-manager-tag-resources/dashboard-with-view.png)
+     ![Панель мониторинга](./media/resource-manager-tag-resources/dashboard-with-view.png)

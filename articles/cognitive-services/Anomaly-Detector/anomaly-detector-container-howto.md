@@ -1,5 +1,5 @@
 ---
-title: How to install and run containers for using Anomaly Detector API
+title: Установка и запуск контейнеров для использования API детектора аномалий
 titleSuffix: Azure Cognitive Services
 description: Используйте расширенные алгоритмы API Детектора аномалий для определения аномалий в данных временных рядов.
 services: cognitive-services
@@ -17,34 +17,34 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74327259"
 ---
-# <a name="install-and-run-anomaly-detector-containers-preview"></a>Install and run Anomaly Detector containers (Preview)
+# <a name="install-and-run-anomaly-detector-containers-preview"></a>Установка и запуск контейнеров детекторов аномалий (Предварительная версия)
 
-The Anomaly Detector has the following container feature functionality:
+Средство обнаружения аномалий имеет следующие функциональные возможности контейнера:
 
-| Функция | Компоненты |
+| Функция | Функции |
 |--|--|
-| Anomaly detector | <li> Detects anomalies as they occur in real-time. <li> Detects anomalies throughout your data set as a batch. <li> Infers the expected normal range of your data. <li> Supports anomaly detection sensitivity adjustment to better fit your data. |
+| Детектор аномалий | <li> Обнаруживает аномалии по мере их возникновения в режиме реального времени. <li> Обнаруживает аномалии во всем наборе данных как пакет. <li> Выводит ожидаемый нормальный диапазон данных. <li> Поддерживает настройку чувствительности к обнаружению аномалий, чтобы лучше соответствовать вашим данным. |
 
-For detailed information about the APIs, please see:
-* [Learn more about Anomaly Detector API service](https://go.microsoft.com/fwlink/?linkid=2080698&clcid=0x409)
+Подробные сведения об API см. в следующих статьях:
+* [Дополнительные сведения о службе API детектора аномалий](https://go.microsoft.com/fwlink/?linkid=2080698&clcid=0x409)
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-You must meet the following prerequisites before using Anomaly Detector containers:
+Прежде чем использовать контейнеры детекторов аномалий, необходимо выполнить следующие предварительные требования:
 
-|Обязательно для заполнения|Цель|
+|обязательные|Назначение|
 |--|--|
-|Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
+|Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). См. [общие сведения о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
-|Anomaly Detector resource |Для использования контейнеров необходимо следующее:<br><br>An Azure _Anomaly Detector_ resource to get the associated API key and endpoint URI. Both values are available on the Azure portal's **Anomaly Detector** Overview and Keys pages and are required to start the container.<br><br>**{API_KEY}** : One of the two available resource keys on the **Keys** page<br><br>**{ENDPOINT_URI}** : The endpoint as provided on the **Overview** page|
+|Ресурс детектора аномалий |Для использования контейнеров необходимо следующее:<br><br>Ресурс _детектора аномалий_ Azure для получения соответствующего ключа API и URI конечной точки. Оба значения доступны на страницах "Обзор **детекторов аномалий** " и "ключи" портал Azure и необходимы для запуска контейнера.<br><br>**{API_KEY}** : один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}** : конечная точка, указанная на странице **обзора**|
 
 [!INCLUDE [Gathering required container parameters](../containers/includes/container-gathering-required-parameters.md)]
 
 ## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
 
-You must first complete and submit the [Anomaly Detector Container Request form](https://aka.ms/adcontainer) to request access to the container.
+Сначала необходимо завершить и отправить [форму запроса контейнера детектора аномалий](https://aka.ms/adcontainer) , чтобы запросить доступ к контейнеру.
 
 [!INCLUDE [Request access to the container registry](../../../includes/cognitive-services-containers-request-access-only.md)]
 
@@ -58,12 +58,12 @@ You must first complete and submit the [Anomaly Detector Container Request form]
 
 ### <a name="container-requirements-and-recommendations"></a>Требования к контейнеру и рекомендации
 
-The following table describes the minimum and recommended CPU cores and memory to allocate for Anomaly Detector container.
+В следующей таблице описаны минимальные и Рекомендуемые ядра ЦП и память, выделяемые для контейнера детекторов обнаружения аномалий.
 
-| QPS(Queries per second) | Минимальная | Рекомендуется |
+| QPS (запросов в секунду) | Минимальная | Рекомендуется |
 |-----------|---------|-------------|
-| 10 QPS | 4 core, 1-GB memory | 8 core 2-GB memory |
-| 20 QPS | 8 core, 2-GB memory | 16 core 4-GB memory |
+| 10 QPS | 4 ядра, 1 ГБ памяти | 8-ядерный 2 ГБ памяти |
+| 20 QPS | 8 ядер, 2 ГБ памяти | 16-ядерный 4 ГБ памяти |
 
 Частота каждого ядра должна быть минимум 2,6 ГГц.
 
@@ -75,14 +75,14 @@ The following table describes the minimum and recommended CPU cores and memory t
 
 | Контейнер | Репозиторий |
 |-----------|------------|
-| cognitive-services-anomaly-detector | `containerpreview.azurecr.io/microsoft/cognitive-services-anomaly-detector:latest` |
+| обнаружение аномалий-службы-детектор | `containerpreview.azurecr.io/microsoft/cognitive-services-anomaly-detector:latest` |
 
 <!--
 For a full description of available tags, such as `latest` used in the preceding command, see [anomaly-detector](https://go.microsoft.com/fwlink/?linkid=2083827&clcid=0x409) on Docker Hub.
 -->
 [!INCLUDE [Tip for using docker list](../../../includes/cognitive-services-containers-docker-list-tip.md)]
 
-### <a name="docker-pull-for-the-anomaly-detector-container"></a>Docker pull for the Anomaly Detector container
+### <a name="docker-pull-for-the-anomaly-detector-container"></a>Извлечение DOCKER для контейнера детекторов аномалий
 
 ```Docker
 docker pull containerpreview.azurecr.io/microsoft/cognitive-services-anomaly-detector:latest
@@ -97,9 +97,9 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-anomaly-det
 
 ## <a name="run-the-container-with-docker-run"></a>Запуск контейнера с помощью команды `docker run`
 
-Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Refer to [gathering required parameters](#gathering-required-parameters) for details on how to get the `{ENDPOINT_URI}` and `{API_KEY}` values.
+Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Сведения о том, как получить значения `{ENDPOINT_URI}` и `{API_KEY}`, см. в разделе [сбор обязательных параметров](#gathering-required-parameters) .
 
-[Examples](anomaly-detector-container-configuration.md#example-docker-run-commands) of the `docker run` command are available.
+Доступны [примеры](anomaly-detector-container-configuration.md#example-docker-run-commands) команды `docker run`.
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
@@ -111,21 +111,21 @@ ApiKey={API_KEY}
 
 Эта команда:
 
-* Runs an Anomaly Detector container from the container image
+* Запускает контейнер детектора аномалий из образа контейнера
 * выделяет одно ядро ЦП и 4 ГБ памяти;
-* предоставляет TCP-порт 5000 и выделяет псевдотелетайп для контейнера;
+* открывает TCP-порт 5000 и выделяет псевдотелетайп для контейнера;
 * автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере. 
 
 > [!IMPORTANT]
-> Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
+> Для выполнения контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
 
-### <a name="running-multiple-containers-on-the-same-host"></a>Running multiple containers on the same host
+### <a name="running-multiple-containers-on-the-same-host"></a>Запуск нескольких контейнеров на одном узле
 
 Если вы планируете запускать несколько контейнеров при открытых портах, обязательно назначьте каждому контейнеру отдельный порт. Например, запускайте первый контейнер на порте 5000, а второй — на порте 5001.
 
-Замените `<container-registry>` и `<container-name>` значениями используемых контейнеров. При этом можно использовать разные контейнеры. You can have the Anomaly Detector container and the LUIS container running on the HOST together or you can have multiple Anomaly Detector containers running. 
+Замените `<container-registry>` и `<container-name>` значениями используемых контейнеров. При этом можно использовать разные контейнеры. Контейнер детектора аномалий и контейнер LUIS, выполняющиеся на узле, можно использовать совместно, либо можно использовать несколько контейнеров обнаружения аномалий. 
 
-Запустите первый контейнер на порте 5000. 
+Выполните первый контейнер на порте 5000. 
 
 ```bash 
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
@@ -162,7 +162,7 @@ ApiKey={API_KEY}
 
 [!INCLUDE [How to stop the container](../../../includes/cognitive-services-containers-stop.md)]
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Если контейнер запускается с выходным [подключением](anomaly-detector-container-configuration.md#mount-settings) и включенным ведением журнала, контейнер создает файлы журнала, которые удобно использовать для устранения неполадок, возникающих во время запуска или работы контейнера.
 
@@ -170,31 +170,31 @@ ApiKey={API_KEY}
 
 ## <a name="billing"></a>Выставление счетов
 
-The Anomaly Detector containers send billing information to Azure, using an _Anomaly Detector_ resource on your Azure account. 
+Контейнеры детекторов аномалий отправляют сведения о выставлении счетов в Azure с помощью ресурса _детектора аномалий_ в учетной записи Azure. 
 
 [!INCLUDE [Container's Billing Settings](../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 
-Дополнительные сведения об этих параметрах см. в разделе [Настройка контейнеров](anomaly-detector-container-configuration.md).
+Дополнительные сведения об этих параметрах см. в статье [Настройка контейнеров](anomaly-detector-container-configuration.md).
 
 <!--blogs/samples/video coures -->
 
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="summary"></a>Резюме
+## <a name="summary"></a>summary
 
-In this article, you learned concepts and workflow for downloading, installing, and running Anomaly Detector containers. В разделе "Сводка" сделайте следующее.
+В этой статье вы узнали основные понятия и рабочий процесс по скачиванию, установке и запуску контейнеров детекторов аномалий. Краткая сводка.
 
-* Anomaly Detector provides one Linux container for Docker, encapsulating anomaly detection with batch vs streaming, expected range inference, and sensitivity tuning.
-* Container images are downloaded from a private Azure Container Registry dedicated for containers preview.
-* Образы контейнеров выполняются в Docker.
-* You can use either the REST API or SDK to call operations in Anomaly Detector containers by specifying the host URI of the container.
-* При создании экземпляра контейнера нужно указать данные для выставления счетов.
+* Детектор аномалий предоставляет один контейнер Linux для DOCKER, инкапсуляцию обнаружения аномалий с помощью пакетной и потоковой передачи, ожидаемого определения диапазона и настройки чувствительности.
+* Образы контейнеров загружаются из закрытого реестра контейнеров Azure, выделенного для предварительной версии контейнеров.
+* Образы контейнеров, которые выполняются в Docker.
+* Вы можете использовать REST API или пакет SDK для вызова операций в контейнерах детектора аномалий, указав универсальный код ресурса (URI) узла контейнера.
+* При создании контейнера необходимо указать данные для выставления счетов.
 
 > [!IMPORTANT]
-> Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Cognitive Services containers do not send customer data (e.g., the time series data that is being analyzed) to Microsoft.
+> Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Cognitive Services контейнеры не отправляют данные клиента (например, анализируемые данные временных рядов) в корпорацию Майкрософт.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-* Ознакомьтесь со статьей о [конфигурации контейнеров](anomaly-detector-container-configuration.md).
-* [Deploy an Anomaly Detector container to Azure Container Instances](how-to/deploy-anomaly-detection-on-container-instances.md)
-* [Learn more about Anomaly Detector API service](https://go.microsoft.com/fwlink/?linkid=2080698&clcid=0x409)
+* Ознакомьтесь со статьей о [параметрах конфигурации](anomaly-detector-container-configuration.md).
+* [Развертывание контейнера детекторов аномалий в службе "экземпляры контейнеров Azure"](how-to/deploy-anomaly-detection-on-container-instances.md)
+* [Дополнительные сведения о службе API детектора аномалий](https://go.microsoft.com/fwlink/?linkid=2080698&clcid=0x409)

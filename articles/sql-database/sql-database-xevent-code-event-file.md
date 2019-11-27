@@ -1,5 +1,5 @@
 ---
-title: XEvent Event File code
+title: Код файла событий XEvent
 description: Содержит сценарии PowerShell и Transact-SQL для примера двухэтапного кода, демонстрирующего целевой файл событий в расширенном событии в Базе данных SQL Azure. Обязательной частью данного сценария является хранилище Azure.
 services: sql-database
 ms.service: sql-database
@@ -34,12 +34,12 @@ ms.locfileid: "74422476"
   - назначение контейнера хранилища Azure для целевого файла событий;
   - создание и запуск сеанса событий и т. д.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 > [!IMPORTANT]
-> The PowerShell Azure Resource Manager module is still supported by Azure SQL Database, but all future development is for the Az.Sql module. For these cmdlets, see [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). The arguments for the commands in the Az module and in the AzureRm modules are substantially identical.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
 - Учетная запись и подписка Azure. Вы можете зарегистрироваться, чтобы получить [бесплатную пробную версию](https://azure.microsoft.com/pricing/free-trial/).
 - Любая база данных, позволяющая создать таблицу.
@@ -54,7 +54,7 @@ ms.locfileid: "74422476"
 
 - Установленные [модули Azure PowerShell](https://go.microsoft.com/?linkid=9811175) .
 
-  - The modules provide commands such as - **New-AzStorageAccount**.
+  - Модули предоставляют команды, такие как- **New-азсторажеаккаунт**.
 
 ## <a name="phase-1-powershell-code-for-azure-storage-container"></a>Этап 1. Код PowerShell для контейнера хранилища Azure
 
@@ -74,7 +74,7 @@ ms.locfileid: "74422476"
 
 ### <a name="powershell-code"></a>Код PowerShell
 
-This PowerShell script assumes you have already installed the Az module. For information, see [Install the Azure PowerShell module](/powershell/azure/install-Az-ps).
+В этом сценарии PowerShell предполагается, что вы уже установили модуль AZ. Дополнительные сведения см. [в разделе Установка модуля Azure PowerShell](/powershell/azure/install-Az-ps).
 
 ```powershell
 ## TODO: Before running, find all 'TODO' and make each edit!!
@@ -442,9 +442,9 @@ GO
 
 ## <a name="output"></a>Выходные данные
 
-После того как сценарий Transact-SQL будет выполнен, щелкните ячейку под заголовком столбца **event_data_XML**. One **\<event>** element is displayed which shows one UPDATE statement.
+После того как сценарий Transact-SQL будет выполнен, щелкните ячейку под заголовком столбца **event_data_XML**. Отображается один элемент **> события\<** , в котором показана одна инструкция UPDATE.
 
-Here is one **\<event>** element that was generated during testing:
+Ниже приведен один **\<элемент > события** , созданный во время тестирования:
 
 ```xml
 <event name="sql_statement_starting" package="sqlserver" timestamp="2015-09-22T19:18:45.420Z">

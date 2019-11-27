@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: d1ef8852916e598373c104fb98a1c09ab656fbaf
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.openlocfilehash: 3e60c0e165b8f9ec79aac2048011d9e315b0ce18
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74196205"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483968"
 ---
 # <a name="using-custom-security-policies-preview"></a>Использование настраиваемых политик безопасности (Предварительная версия)
 
@@ -32,7 +32,9 @@ ms.locfileid: "74196205"
     [![выбрать подписку, для которой вы создадите настраиваемую политику](media/custom-security-policies/custom-policy-selecting-a-subscription.png)](media/custom-security-policies/custom-policy-selecting-a-subscription.png#lightbox)
 
     > [!NOTE]
-    > При добавлении пользовательского стандарта ему назначается *инициатива* для этой области. Поэтому рекомендуется выбрать самую широкую область, необходимую для этого назначения. 
+    > Для оценки и отображения в центре безопасности необходимо добавить пользовательские стандарты на уровне подписки (или выше). 
+    >
+    > При добавлении пользовательского стандарта ему назначается *инициатива* для этой области. Поэтому рекомендуется выбрать самую широкую область, необходимую для этого назначения.
 
 1. На странице Политика безопасности в разделе Пользовательские инициативы (Предварительная версия) щелкните **добавить пользовательскую инициативу**.
 

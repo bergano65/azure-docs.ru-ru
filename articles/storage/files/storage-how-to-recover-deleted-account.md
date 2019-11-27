@@ -1,5 +1,5 @@
 ---
-title: Use an Azure file share with Azure Storage | Microsoft Docs
+title: Использование файлового ресурса Azure с хранилищем Azure | Документация Майкрософт
 description: Узнайте, как использовать общую папку Azure в Windows и Windows Server.
 author: todmccoy
 manager: dcscontentpm
@@ -17,29 +17,29 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74233796"
 ---
-# <a name="how-to-recover-a-deleted-storage-account"></a>How to recover a deleted storage account
+# <a name="how-to-recover-a-deleted-storage-account"></a>Как восстановить удаленную учетную запись хранения
 
-Azure Storage provides data resiliency through automated replicas, but doesn't prevent users or application code from corrupting data, whether accidentally or maliciously. Maintaining data fidelity during instances of application or user error requires more advanced techniques, such as copying the data to a secondary storage location with an audit log.
+Служба хранилища Azure обеспечивает устойчивость данных посредством автоматических реплик, но не мешает пользователям или коду приложения повредить данные независимо от того, случайно или злонамеренно. Поддержание качества данных во время экземпляров ошибки приложения или пользователя требует более сложных приемов, таких как копирование данных в дополнительное место хранения с помощью журнала аудита.
 
-The following table provides overview of the scope of Storage Account Recovery depending on the replication strategy.
+В следующей таблице приведены общие сведения о области восстановления учетной записи хранения в зависимости от стратегии репликации.
 
-| |LRS|ZRS|GRS|RA - GRS|
+| |LRS|ZRS|GRS|RA-GRS|
 |---|---|---|---|---|
-|Storage Account Azure Resource Manager|ДА|ДА|ДА|ДА|
-|Storage Account Classic|ДА|ДА|ДА|ДА|
+|Azure Resource Manager учетной записи хранения|Yes|Yes|Yes|Yes|
+|Классическая учетная запись хранения|Yes|Yes|Yes|Yes|
 
-Gather the following information and file a support request with Microsoft Support:
+Соберите следующие сведения и отправьте запрос в службу поддержки с помощью служба поддержки Майкрософт:
 
 * Имя учетной записи хранения
-* Date of deletion
-* Storage account region
-* How was the storage account deleted?
-* What method deleted the storage account? (Portal, PowerShell, etc.)
+* Дата удаления
+* Регион учетной записи хранения
+* Как была удалена учетная запись хранения?
+* Какой метод удалил учетную запись хранения? (Портал, PowerShell и т. д.)
 
-Important Points
+Важные моменты
 
-* It can generally take up to 15 days from the time of deletion for the storage service to perform garbage collection, so storage accounts recovery may not be recovered with an SLA.
-* Microsoft Support will try to recover the Container/Account on a best-effort basis and cannot guarantee the recovery.
+* Обычно может потребоваться до 15 дней с момента удаления службы хранилища для выполнения сборки мусора, поэтому восстановление учетных записей хранения не может быть восстановлено с соглашением об уровне обслуживания.
+* Служба поддержки Майкрософт попытается восстановить контейнер или учетную запись на основе максимальной силы и не сможет гарантировать восстановление.
 
 > [!NOTE]
-> The recovery may not be successful if the account has been re-created. If you have already re-created the account, you must delete it first before recovery can be attempted.
+> Восстановление может не быть успешным, если учетная запись создана повторно. Если учетная запись уже создана, ее необходимо сначала удалить, прежде чем можно будет выполнить восстановление.

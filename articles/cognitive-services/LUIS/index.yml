@@ -1,9 +1,9 @@
 ### YamlMime:Landing
 title: Документация по Распознаванию речи (LUIS)
-summary: Сведения об использовании службы "Распознавание речи", которая позволяет приложению распознавать желания людей на основе их собственных слов.
+summary: Узнайте, как с помощью службы "Распознавание речи" приложения могут распознавать желания людей, исходя из их слов.
 metadata:
   ms.topic: landing-page
-  ms.date: 09/19/2019
+  ms.date: 11/22/2019
   ms.author: nitinme
   author: nitinme
   ms.service: cognitive-services
@@ -11,13 +11,13 @@ metadata:
   services: cognitive-services
   title: Документация по Распознаванию речи (LUIS)
   titleSuffix: Azure Cognitive Services
-  description: Служба "Распознавание речи" (LUIS) позволяет приложению распознавать желания людей на основе их собственных слов. LUIS использует машинное обучение, позволяя разработчикам создавать приложения, которые могут получать входные данные пользователей на естественном языке, а также распознавать их значение.
-  ms.openlocfilehash: 70249b540e53ab8182a25f81d7401697b2b888c1
-  ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
+  description: Служба "Распознавание речи" (LUIS) позволяет приложению распознавать желания людей, исходя из их слов. LUIS использует машинное обучение, позволяя разработчикам создавать приложения, которые могут получать входные данные пользователей на естественном языке, а также распознавать их значение.
+  ms.openlocfilehash: 14386a08b92814b16fb007e4dd01cb4bb5238c0a
+  ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/20/2019
-  ms.locfileid: "71155018"
+  ms.lasthandoff: 11/22/2019
+  ms.locfileid: "74406157"
 landingContent:
 - title: Сведения о Распознавании речи (LUIS)
   linkLists:
@@ -25,16 +25,18 @@ landingContent:
     links:
     - text: Общие сведения о Распознавании речи
       url: what-is-luis.md
-    - text: Новые возможности
-      url: whats-new.md
     - text: Портал LUIS
       url: https://www.luis.ai
   - linkListType: concept
     links:
     - text: Планирование приложения
       url: luis-how-plan-your-app.md
-    - text: Цикл разработки приложения
+    - text: Разработка итеративного приложения
       url: luis-concept-app-iteration.md
+  - linkListType: whats-new
+    links:
+    - text: Новые возможности
+      url: whats-new.md
   - linkListType: video
     links:
     - text: 'Презентация решений для ИИ: LUIS'
@@ -47,9 +49,9 @@ landingContent:
       url: luis-concept-intent.md
     - text: Сущности
       url: luis-concept-entity-types.md
-    - text: Хороший пример речевого фрагмента
+    - text: Высказывания
       url: luis-concept-utterance.md
-    - text: Признаки списков фраз
+    - text: Признаки списка фраз
       url: luis-concept-feature.md
   - linkListType: quickstart
     links:
@@ -91,13 +93,13 @@ landingContent:
     links:
     - text: Управление версиями приложения
       url: luis-how-to-manage-versions.md
-    - text: Интерактивное тестирование
+    - text: Выполнение интерактивного тестирования
       url: luis-interactive-test.md
-    - text: Пакетное тестирование
+    - text: Выполнение пакетного тестирования
       url: luis-how-to-batch-test.md
     - text: Обучение приложения
       url: luis-how-to-train.md
-    - text: Публикация для использования конечной точки прогнозирования
+    - text: Публикация конечной точки прогнозирования
       url: luis-how-to-publish-app.md
 - title: Получение прогноза из конечной точки
   linkLists:

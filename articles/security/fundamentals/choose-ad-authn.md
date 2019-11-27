@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: security
 ms.subservice: security-fundamentals
 ms.workload: identity
-ms.openlocfilehash: 71b4a8abc641a3ab11d6b17bbc8de3b42b61c34c
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 71339565eed9f41f8f32da852a727c82df482662
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820545"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483952"
 ---
 # <a name="choose-the-right-authentication-method-for-your-azure-active-directory-hybrid-identity-solution"></a>Выбор правильного метода аутентификации для гибридного решения для идентификации Azure Active Directory
 
@@ -173,11 +173,11 @@ Azure AD поддерживает следующие методы аутенти
 |Рассматриваемый вопрос|Синхронизация хэша паролей и простой единый вход|Сквозная аутентификация и простой единый вход|Федерация с AD FS|
 |:-----|:-----|:-----|:-----|
 |Где происходит аутентификация?|В облаке|В облаке после безопасного обмена данными проверки пароля с локальным агентом аутентификации|Локальная система|
-|Каковы требования к локальному серверу помимо системы подготовки (Azure AD Connect)?|None|Один сервер для каждого дополнительного агента аутентификации|Не менее двух серверов AD FS<br><br>Не менее двух WAP-серверов в сети периметра|
-|Каковы локальные требования к доступу к Интернету и сетевым подключениям помимо системы подготовки?|None|[Исходящий доступ к Интернету](../../active-directory/hybrid/how-to-connect-pta-quick-start.md) с серверов, где работают агенты аутентификации|[Входящий доступ к Интернету](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-requirements) к WAP-серверам в сети периметра<br><br>Входящий сетевой доступ к серверам AD FS с WAP-серверов в сети периметра<br><br>Балансировка сетевой нагрузки|
-|Существует ли требование к SSL-сертификату?|Нет|Нет|Да|
+|Каковы требования к локальному серверу помимо системы подготовки (Azure AD Connect)?|Нет|Один сервер для каждого дополнительного агента аутентификации|Не менее двух серверов AD FS<br><br>Не менее двух WAP-серверов в сети периметра|
+|Каковы локальные требования к доступу к Интернету и сетевым подключениям помимо системы подготовки?|Нет|[Исходящий доступ к Интернету](../../active-directory/hybrid/how-to-connect-pta-quick-start.md) с серверов, где работают агенты аутентификации|[Входящий доступ к Интернету](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-requirements) к WAP-серверам в сети периметра<br><br>Входящий сетевой доступ к серверам AD FS с WAP-серверов в сети периметра<br><br>Балансировка сетевой нагрузки|
+|Существует ли требование к SSL-сертификату?|Нет|Нет|Yes|
 |Имеется ли решение для мониторинга работоспособности?|Не требуется|Состояние агента, предоставляемое [Центром администрирования Azure Active Directory](../../active-directory/hybrid/tshoot-connect-pass-through-authentication.md)|[Azure AD Connect Health](../../active-directory/hybrid/how-to-connect-health-adfs.md)|
-|Пользователи получают единый вход в облачные ресурсы с присоединенных к домену устройств в корпоративной сети?|Да, с [простым единым входом](../../active-directory/hybrid/how-to-connect-sso.md)|Да, с [простым единым входом](../../active-directory/hybrid/how-to-connect-sso.md)|Да|
+|Пользователи получают единый вход в облачные ресурсы с присоединенных к домену устройств в корпоративной сети?|Да, с [простым единым входом](../../active-directory/hybrid/how-to-connect-sso.md)|Да, с [простым единым входом](../../active-directory/hybrid/how-to-connect-sso.md)|Yes|
 |Какие типы входа поддерживаются?|UserPrincipalName и пароль<br><br>Встроенная проверка подлинности Windows с помощью [простого единого входа](../../active-directory/hybrid/how-to-connect-sso.md)<br><br>[Альтернативный идентификатор входа](../../active-directory/hybrid/how-to-connect-install-custom.md)|UserPrincipalName и пароль<br><br>Встроенная проверка подлинности Windows с помощью [простого единого входа](../../active-directory/hybrid/how-to-connect-sso.md)<br><br>[Альтернативный идентификатор входа](../../active-directory/hybrid/how-to-connect-pta-faq.md)|UserPrincipalName и пароль<br><br>sAMAccountName и пароль<br><br>Встроенная проверка подлинности Windows<br><br>[Аутентификация с использованием сертификатов и смарт-карт](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-user-certificate-authentication)<br><br>[Альтернативный идентификатор входа](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configuring-alternate-login-id)|
 |Поддерживается ли Windows Hello для бизнеса?|[Модель доверия на основе ключей](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)|[Модель доверия на основе ключей](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)<br>*Требует режима работы домена Windows Server 2016*|[Модель доверия на основе ключей](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)<br><br>[Модель доверия на основе сертификатов](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-key-trust-adfs)|
 |Какие варианты многофакторной проверки подлинности существуют?|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Пользовательские элементы управления с условным доступом *](../../active-directory/conditional-access/controls.md)|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Пользовательские элементы управления с условным доступом *](../../active-directory/conditional-access/controls.md)|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Сервер Azure MFA](../../active-directory/authentication/howto-mfaserver-deploy.md)<br><br>[Стороннее решение многофакторной идентификации](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-additional-authentication-methods-for-ad-fs)<br><br>[Пользовательские элементы управления с условным доступом *](../../active-directory/conditional-access/controls.md)|
@@ -185,12 +185,12 @@ Azure AD поддерживает следующие методы аутенти
 |Что такое параметры условного доступа?|[Условный доступ Azure AD с Azure AD Premium](../../active-directory/conditional-access/overview.md)|[Условный доступ Azure AD с Azure AD Premium](../../active-directory/conditional-access/overview.md)|[Условный доступ Azure AD с Azure AD Premium](../../active-directory/conditional-access/overview.md)<br><br>[Правила утверждений AD FS](https://adfshelp.microsoft.com/AadTrustClaims/ClaimsGenerator)|
 |Поддерживается ли блокировка устаревших протоколов?|[Да](../../active-directory/conditional-access/conditions.md)|[Да](../../active-directory/conditional-access/conditions.md)|[Да](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/access-control-policies-w2k12)|
 |Можно ли настроить логотип, изображение и описание на страницах входа?|[Да, в Azure AD Premium](../../active-directory/fundamentals/customize-branding.md)|[Да, в Azure AD Premium](../../active-directory/fundamentals/customize-branding.md)|[Да](../../active-directory/hybrid/how-to-connect-fed-management.md)|
-|Какие дополнительные сценарии поддерживаются?|[Интеллектуальная блокировка паролей](../../active-directory/authentication/concept-sspr-howitworks.md)<br><br>[Отчеты об утечке учетных данных, с Azure AD Premium P2](../../active-directory/reports-monitoring/concept-risk-events.md)|[Интеллектуальная блокировка паролей](../../active-directory/authentication/howto-password-smart-lockout.md)|Система аутентификации нескольких сайтов с низкой задержкой<br><br>[Блокировка экстрасети AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-soft-lockout-protection)<br><br>[Интеграция со сторонними системами идентификации](../../active-directory/hybrid/how-to-connect-fed-compatibility.md)|
+|Какие дополнительные сценарии поддерживаются?|[Интеллектуальная блокировка паролей](../../active-directory/authentication/howto-password-smart-lockout.md)<br><br>[Отчеты об утечке учетных данных, с Azure AD Premium P2](../../active-directory/reports-monitoring/concept-risk-events.md)|[Интеллектуальная блокировка паролей](../../active-directory/authentication/howto-password-smart-lockout.md)|Система аутентификации нескольких сайтов с низкой задержкой<br><br>[Блокировка экстрасети AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-soft-lockout-protection)<br><br>[Интеграция со сторонними системами идентификации](../../active-directory/hybrid/how-to-connect-fed-compatibility.md)|
 
 > [!NOTE]
 > Настраиваемые элементы управления в условном доступе Azure AD в настоящее время не поддерживают регистрацию устройств.
 
-## <a name="recommendations"></a>Рекомендации
+## <a name="recommendations"></a>рекомендации
 Ваша система идентификации гарантирует доступ пользователей к облачным приложениям и бизнес-приложениям, которые вы переносите в облако. Аутентификация управляет доступом к приложениям, обеспечивая работу авторизованных пользователей и исключение остальных субъектов для защиты конфиденциальных данных организации.
 
 Используйте или включите синхронизацию хэша паролей независимо от того, какой метод аутентификации вы выбираете, по следующим причинам.
@@ -213,7 +213,7 @@ Azure AD поддерживает следующие методы аутенти
 
 Рассмотрите каждый метод аутентификации. Соответствуют вашим бизнес-требованиям трудозатраты, необходимые для развертывания решения, и взаимодействие с пользователем при входе в систему? Оцените, нужны ли вашей организации расширенные сценарии и возможности обеспечения непрерывности бизнес-процессов каждого метода аутентификации. Наконец, учтите рекомендации для каждого метода аутентификации. Возможно, какая-либо из них изменит ваше решение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В современном мире угрозы есть постоянно и повсюду. Реализация правильного метода аутентификации поможет снизить риски для безопасности и защитить удостоверения.
 

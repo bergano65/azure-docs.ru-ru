@@ -12,40 +12,40 @@ ms.locfileid: "74226537"
 ---
 # <a name="azure-functions-runtime-versions-overview"></a>Обзор версий среды выполнения для решения "Функции Azure"
 
-The major versions of the Azure Functions runtime are related to the version of .NET on which the runtime is based. The following table indicates the current version of the runtime, the release level, and the related .NET version. 
+Основные версии среды выполнения функций Azure связаны с версией .NET, на которой основана среда выполнения. В следующей таблице указывается текущая версия среды выполнения, уровень выпуска и связанная версия .NET. 
 
-| Версия среды выполнения | Release level<sup>1</sup> | Версия .NET | 
+| Версия среды выполнения | Уровень выпуска<sup>1</sup> | Версия .NET | 
 | --------------- | ------------- | ------------ |
-| 3.x  | предварительная версия | .NET Core 3.x | 
-| 2.x | Общая доступность | .NET Core 2.2 |
-| 1.x | GA<sup>2</sup> | .NET Framework 4.6<sup>3</sup> |
+| 3.x  | предварительный просмотр | .NET Core 3. x | 
+| 2.x | GA | .NET Core 2.2 |
+| 1.x | Общедоступная версия<sup>2</sup> | .NET Framework 4,6<sup>3</sup> |
 
-<sup>1</sup>GA releases are supported for production scenarios.   
-<sup>2</sup>Version 1.x is in maintenance mode. Enhancements are provided only in later versions.   
-<sup>3</sup>Only supports development in the Azure portal or locally on Windows computers.
+<sup>1</sup> В рабочих сценариях поддерживаются общедоступные версии.   
+<sup>2</sup> Версия 1. x находится в режиме обслуживания. Усовершенствования предоставляются только в более поздних версиях.   
+<sup>3</sup> Поддерживает только разработку на портал Azure или локально на компьютерах Windows.
 
 >[!NOTE]  
-> Version 3.x of the Functions runtime is in preview and isn't supported for production environments. For more information about trying out version 3.x, see [this announcement](https://dev.to/azure/develop-azure-functions-using-net-core-3-0-gcm).
+> Версия 3. x среды выполнения функций доступна в режиме предварительной версии и не поддерживается в рабочих средах. Дополнительные сведения об попытке выполнить версию 3. x см. в [этом объявлении](https://dev.to/azure/develop-azure-functions-using-net-core-3-0-gcm).
 
-This article details some of the differences between the various versions, how you can create each version, and how to change versions.
+В этой статье описаны некоторые различия между различными версиями, способы создания каждой версии и изменения версий.
 
-## <a name="languages"></a>Языки
+## <a name="languages"></a>Languages
 
-Starting with version 2.x, the runtime uses a language extensibility model, and all functions in a function app must share the same language. The language of functions in a function app is chosen when creating the app and is maintained in the [FUNCTIONS\_WORKER\_RUNTIME](functions-app-settings.md#functions_worker_runtime) setting. 
+Начиная с версии 2. x, среда выполнения использует модель расширяемости языка, и все функции в приложении-функции должны использовать один и тот же язык. Язык функций в приложении-функции выбирается при создании приложения и сохраняется в параметрах [\_рабочего\_времени выполнения для функций](functions-app-settings.md#functions_worker_runtime) . 
 
-Azure Functions 1.x experimental languages can't use the new model, so they aren't supported in 2.x. В следующей таблице перечислены языки программирования, которые в настоящее время поддерживаются для каждой версии среды выполнения.
+Функции Azure 1. x экспериментальные языки не могут использовать новую модель, поэтому они не поддерживаются в 2. x. В следующей таблице перечислены языки программирования, которые в настоящее время поддерживаются для каждой версии среды выполнения.
 
 [!INCLUDE [functions-supported-languages](../../includes/functions-supported-languages.md)]
 
 Дополнительные сведения см. в [списке поддерживаемых языков](supported-languages.md).
 
-## <a name="creating-1x-apps"></a>Run on a specific version
+## <a name="creating-1x-apps"></a>Запуск в определенной версии
 
-By default, function apps created in the Azure portal and by the Azure CLI are set to version 2.x. When possible, you should use this runtime version. Но если нужно, вы еще может выполнять приложения-функции в среде выполнения версии 1.x. Версию среды выполнения следует менять только после создания приложения-функции, но до добавления в него функций. Чтобы узнать, как закрепить версию 1.x для среды выполнения, изучите статью [Выбор целевых версий среды выполнения Функций Azure](set-runtime-version.md#view-and-update-the-current-runtime-version).
+По умолчанию приложения функций, созданные в портал Azure и Azure CLI, имеют значение версии 2. x. По возможности следует использовать эту версию среды выполнения. Но если нужно, вы еще может выполнять приложения-функции в среде выполнения версии 1.x. Версию среды выполнения следует менять только после создания приложения-функции, но до добавления в него функций. Чтобы узнать, как закрепить версию 1.x для среды выполнения, изучите статью [Выбор целевых версий среды выполнения Функций Azure](set-runtime-version.md#view-and-update-the-current-runtime-version).
 
-You can also upgrade to version 3.x of the runtime, which is in preview. Do this if you need to be able to run your functions on .NET Core 3.x. To learn how to upgrade to 3.x, see [View and update the current runtime version](set-runtime-version.md#view-and-update-the-current-runtime-version).
+Кроме того, можно выполнить обновление до версии 3. x среды выполнения, которая находится на этапе предварительного просмотра. Это необходимо сделать, если вам нужно иметь возможность выполнять функции в .NET Core 3. x. Сведения об обновлении до 3. x см. в статье [Просмотр и обновление текущей версии среды выполнения](set-runtime-version.md#view-and-update-the-current-runtime-version).
 
-## <a name="migrating-from-1x-to-later-versions"></a>Migrating from 1.x to later versions
+## <a name="migrating-from-1x-to-later-versions"></a>Переход с версии 1. x на более позднюю версию
 
 Вы можете перенести существующее приложение, написанное для среды выполнения версии 1.x, на новую версию 2.x. Большинство изменений, которые нужно внести в этом случае, связаны с языковой средой выполнения, например с различиями API C# между версиями для .NET Framework 4.7 и .NET Core 2. Также нужно убедиться, что код и библиотеки совместимы с выбранными языковыми средами выполнения. И наконец, обязательно обратите внимание на все изменения в триггерах, привязках и функциях, указанные ниже. Чтобы миграция прошла идеально, создайте новое приложение-функцию для версии 2.x и портируйте код существующей функции версии 1.x в новое приложение.  
 
@@ -115,7 +115,7 @@ You can also upgrade to version 3.x of the runtime, which is in preview. Do this
 
 ## <a name="bindings"></a>Привязки
 
-Starting with version 2.x, the runtime uses a new [binding extensibility model](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview) that offers these advantages:
+Начиная с версии 2. x среда выполнения использует новую [модель расширяемости привязки](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview) , которая предоставляет следующие преимущества:
 
 * Поддержка сторонних расширений привязок.
 
@@ -131,7 +131,7 @@ Starting with version 2.x, the runtime uses a new [binding extensibility model](
 
 [!INCLUDE [Timeout Duration section](../../includes/functions-timeout-duration.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Для получения дополнительных сведений см. следующие ресурсы:
 

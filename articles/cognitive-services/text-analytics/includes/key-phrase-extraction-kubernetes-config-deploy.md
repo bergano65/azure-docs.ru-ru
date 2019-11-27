@@ -1,7 +1,7 @@
 ---
-title: Key Phrase Extraction Kubernetes config and deploy steps
+title: извлечение ключевых фраз конфигурации Kubernetes и шаги развертывания
 titleSuffix: Azure Cognitive Services
-description: Key Phrase Extraction Kubernetes config and deploy steps
+description: извлечение ключевых фраз конфигурации Kubernetes и шаги развертывания
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -16,39 +16,39 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74383460"
 ---
-### <a name="deploy-the-key-phrase-extraction-container-to-an-aks-cluster"></a>Deploy the Key Phrase Extraction container to an AKS cluster
+### <a name="deploy-the-key-phrase-extraction-container-to-an-aks-cluster"></a>Развертывание контейнера извлечение ключевых фраз в кластере AKS
 
-1. Open the Azure CLI, and sign in to Azure.
+1. Откройте Azure CLI и войдите в Azure.
 
     ```azurecli
     az login
     ```
 
-1. Sign in to the AKS cluster. Replace `your-cluster-name` and `your-resource-group` with the appropriate values.
+1. Войдите в кластер AKS. Замените `your-cluster-name` и `your-resource-group` соответствующими значениями.
 
     ```azurecli
     az aks get-credentials -n your-cluster-name -g -your-resource-group
     ```
 
-    After this command runs, it reports a message similar to the following:
+    После выполнения этой команды будет выводится сообщение следующего вида:
 
     ```console
     Merged "your-cluster-name" as current context in /home/username/.kube/config
     ```
 
     > [!WARNING]
-    > If you have multiple subscriptions available to you on your Azure account and the `az aks get-credentials` command returns with an error, a common problem is that you're using the wrong subscription. Set the context of your Azure CLI session to use the same subscription that you created the resources with and try again.
+    > Если в учетной записи Azure доступно несколько подписок, а команда `az aks get-credentials` возвращает ошибку, то распространенная проблема заключается в том, что вы используете неправильную подписку. Задайте контекст сеанса Azure CLI, чтобы использовать ту же подписку, в которой были созданы ресурсы, и повторите попытку.
     > ```azurecli
     >  az account set -s subscription-id
     > ```
 
-1. Open the text editor of choice. This example uses Visual Studio Code.
+1. Откройте текстовый редактор по желанию. В этом примере используется Visual Studio Code.
 
     ```azurecli
     code .
     ```
 
-1. Within the text editor, create a new file named *keyphrase.yaml*, and paste the following YAML into it. Be sure to replace `billing/value` and `apikey/value` with your own information.
+1. В текстовом редакторе создайте новый файл с именем *кэйфрасе. YAML*и вставьте в него следующий YAML. Обязательно замените `billing/value` и `apikey/value` собственными сведениями.
 
     ```yaml
     apiVersion: apps/v1beta1
@@ -94,39 +94,39 @@ ms.locfileid: "74383460"
         app: keyphrase-app
     ```
 
-1. Save the file, and close the text editor.
-1. Run the Kubernetes `apply` command with the *keyphrase.yaml* file as its target:
+1. Сохраните файл и закройте текстовый редактор.
+1. Выполните команду Kubernetes `apply` с файлом *кэйфрасе. YAML* в качестве целевого объекта:
 
     ```console
     kubectl apply -f keyphrase.yaml
     ```
 
-    After the command successfully applies the deployment configuration, a message appears similar to the following output:
+    После того как команда успешно применит конфигурацию развертывания, появится сообщение следующего вида:
 
     ```console
     deployment.apps "keyphrase" created
     service "keyphrase" created
     ```
-1. Verify that the pod was deployed:
+1. Убедитесь, что модуль был развернут:
 
     ```console
     kubectl get pods
     ```
 
-    The output for the running status of the pod:
+    Выходные данные для состояния выполнения Pod:
 
     ```console
     NAME                         READY     STATUS    RESTARTS   AGE
     keyphrase-5c9ccdf575-mf6k5   1/1       Running   0          1m
     ```
 
-1. Verify that the service is available, and get the IP address.
+1. Убедитесь, что служба доступна, и получите IP-адрес.
 
     ```console
     kubectl get services
     ```
 
-    The output for the running status of the *keyphrase* service in the pod:
+    Выходные данные для состояния выполнения службы *кэйфрасе* в Pod:
 
     ```console
     NAME         TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)          AGE

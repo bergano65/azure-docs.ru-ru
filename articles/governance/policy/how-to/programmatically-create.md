@@ -1,14 +1,14 @@
 ---
 title: Программное создание политик
-description: В этой статье описано программное создание и управление политиками для службы "Политика Azure".
+description: В этой статье описывается программное создание политик и управление ими для политики Azure с помощью Azure CLI, Azure PowerShell и REST API.
 ms.date: 01/31/2019
 ms.topic: conceptual
-ms.openlocfilehash: bc97eac8f66a3c289bb22bfac8617177d60b4583
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 98af714e5aaf8e103b81e77c9960589fa0ee6b77
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74267235"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463540"
 ---
 # <a name="programmatically-create-policies"></a>Программное создание политик
 

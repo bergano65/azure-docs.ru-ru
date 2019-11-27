@@ -1,6 +1,6 @@
 ---
-title: Use Microsoft identity platform to access secure resources without user interaction | Azure
-description: Build web applications by using the Microsoft identity platform implementation of the OAuth 2.0 authentication protocol.
+title: Использование платформы Microsoft Identity для доступа к защищенным ресурсам без взаимодействия с пользователем | Службы
+description: Создавайте веб-приложения с помощью реализации протокола проверки подлинности OAuth 2,0 на платформе Microsoft Identity.
 services: active-directory
 documentationcenter: ''
 author: rwike77
@@ -25,18 +25,18 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74207633"
 ---
-# <a name="microsoft-identity-platform-and-the-oauth-20-client-credentials-flow"></a>Microsoft identity platform and the OAuth 2.0 client credentials flow
+# <a name="microsoft-identity-platform-and-the-oauth-20-client-credentials-flow"></a>Платформа удостоверений Майкрософт и поток учетных данных клиента OAuth 2,0
 
 [!INCLUDE [active-directory-develop-applies-v2](../../../includes/active-directory-develop-applies-v2.md)]
 
 [Предоставление учетных данных клиента OAuth 2.0](https://tools.ietf.org/html/rfc6749#section-4.4), указанное в спецификации RFC 6749, которое иногда называют также *двусторонним OAuth*, можно использовать для доступа к интернет-ресурсам с помощью удостоверения приложения. Этот тип предоставления разрешения часто используется для взаимодействия между серверами, которое должно выполняться в фоновом режиме без непосредственного взаимодействия с пользователем. Такие типы приложений часто называют *управляющими программами* или *учетными записями служб*.
 
-This article describes how to program directly against the protocol in your application.  When possible, we recommend you use the supported Microsoft Authentication Libraries (MSAL) instead to [acquire tokens and call secured web APIs](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows).  Also take a look at the [sample apps that use MSAL](sample-v2-code.md).
+В этой статье описывается, как программировать непосредственно по протоколу в приложении.  По возможности рекомендуется использовать поддерживаемые библиотеки проверки подлинности Майкрософт (MSAL) вместо [получения маркеров и вызова защищенных веб-API](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows).  Также ознакомьтесь с [примерами приложений, которые используют MSAL](sample-v2-code.md).
 
 Процесс предоставления учетных данных клиента OAuth 2.0 позволяет веб-службе (конфиденциальный клиент) вместо олицетворения пользователя использовать свои собственные учетные данные для аутентификации при вызове другой веб-службы. В этом сценарии клиент обычно является веб-службой среднего уровня, службой управляющей программы или веб-сайтом. Для большей надежности платформа удостоверений Майкрософт также позволяет вызывающей службе использовать в качестве учетных данных сертификат (вместо общего секрета).
 
 > [!NOTE]
-> The Microsoft identity platform endpoint doesn't support all Azure AD scenarios and features. To determine whether you should use the Microsoft identity platform endpoint, read about [Microsoft identity platform limitations](active-directory-v2-limitations.md).
+> Конечная точка платформы Microsoft Identity не поддерживает все сценарии и функции Azure AD. Чтобы определить, следует ли использовать конечную точку платформы идентификации Майкрософт, ознакомьтесь с [ограничениями платформы удостоверений Майкрософт](active-directory-v2-limitations.md).
 
 В более распространенном сценарии *трехстороннего OAuth* клиентскому приложению предоставляется разрешение на доступ к ресурсу от имени определенного пользователя. Обычно разрешение делегируется приложению пользователем во время [предоставления разрешений](v2-permissions-and-consent.md). Однако в потоке учетных данных клиента (*трехстороннего OAuth*) разрешения предоставляются приложению напрямую. Когда приложение предоставляет маркер для ресурса, то для выполнения действия этот ресурс требует авторизацию приложения, а не пользователя.
 
@@ -44,7 +44,7 @@ This article describes how to program directly against the protocol in your appl
 
 Весь поток учетных данных клиента аналогичен приведенному на следующей схеме. Описание каждого шага приведено далее в этой статье.
 
-![Diagram showing the client credentials flow](./media/v2-oauth2-client-creds-grant-flow/convergence-scenarios-client-creds.svg)
+![Схема, показывающая поток учетных данных клиента](./media/v2-oauth2-client-creds-grant-flow/convergence-scenarios-client-creds.svg)
 
 ## <a name="get-direct-authorization"></a>Получение прямой авторизации
 
@@ -55,11 +55,11 @@ This article describes how to program directly against the protocol in your appl
 
 Эти два метода являются самыми распространенными в Azure AD, и их рекомендуется использовать для клиентов и ресурсов, применяющих поток учетных данных клиента. Ресурс также может выбрать другой способ авторизации клиентов. Каждый сервер ресурсов может выбрать метод, являющийся наиболее оптимальным для приложения.
 
-### <a name="access-control-lists"></a>Списки управления доступом
+### <a name="access-control-lists"></a>Доступ к спискам управления
 
-Поставщик ресурсов может принудительно применять проверку авторизации на основе списка известных идентификаторов приложений (клиента), а также предоставлять определенный уровень доступа на основе этих идентификаторов. When the resource receives a token from the Microsoft identity platform endpoint, it can decode the token and extract the client's application ID from the `appid` and `iss` claims. Затем он проверяет наличие приложения в действующем списке управления доступом. Детализация и методы использования списка управления доступом для разных ресурсов могут значительно отличаться.
+Поставщик ресурсов может принудительно применять проверку авторизации на основе списка известных идентификаторов приложений (клиента), а также предоставлять определенный уровень доступа на основе этих идентификаторов. Когда ресурс получает маркер от конечной точки платформы идентификации Майкрософт, он может декодировать маркер и извлечь идентификатор клиентского приложения из `appid` и `iss` утверждений. Затем он проверяет наличие приложения в действующем списке управления доступом. Детализация и методы использования списка управления доступом для разных ресурсов могут значительно отличаться.
 
-Нередко список управления доступом используется для выполнения тестов веб-приложения или веб-API. Веб-API может предоставить определенному клиенту только ограниченный набор прав доступа. To run end-to-end tests on the API, create a test client that acquires tokens from the Microsoft identity platform endpoint and then sends them to the API. Затем API может проверить идентификатор приложения тестового клиента с помощью списка управления доступом для предоставления доступа ко всем возможностям API. При использовании такого списка управления доступом нужно не только проверить значение `appid` вызывающей стороны, но и убедиться в надежности значения `iss` маркера.
+Нередко список управления доступом используется для выполнения тестов веб-приложения или веб-API. Веб-API может предоставить определенному клиенту только ограниченный набор прав доступа. Чтобы выполнить сквозные тесты в API, создайте тестового клиента, который получает токены от конечной точки платформы идентификации Майкрософт, а затем отправляет их в API. Затем API может проверить идентификатор приложения тестового клиента с помощью списка управления доступом для предоставления доступа ко всем возможностям API. При использовании такого списка управления доступом нужно не только проверить значение `appid` вызывающей стороны, но и убедиться в надежности значения `iss` маркера.
 
 Данный тип авторизации часто используется в управляющих программах и учетных записях служб, которым требуется доступ к данным пользователей, являющихся потребителями с личной учетной записью Майкрософт. Необходимую авторизацию для доступа к корпоративным данным рекомендуется получать с помощью разрешений приложения.
 
@@ -78,23 +78,23 @@ This article describes how to program directly against the protocol in your appl
 
 #### <a name="request-the-permissions-in-the-app-registration-portal"></a>Запрос разрешений на портале регистрации приложения
 
-1. Register and create an app through the new [App registrations (Preview) experience](quickstart-register-app.md).
-2. Go to your application in the App registrations (Preview) experience. Navigate to the **Certificates & secrets** section, and add a **new client secret**, because you'll need at least one client secret to request a token.
+1. Зарегистрируйте и создайте приложение с помощью нового [интерфейса Регистрация приложений (Предварительная версия)](quickstart-register-app.md).
+2. Перейдите к приложению в Регистрация приложений (Предварительная версия). Перейдите к разделу **сертификаты & секреты** и добавьте **новый секрет клиента**, так как для запроса маркера необходим по крайней мере один секрет клиента.
 3. Найдите раздел **Разрешения API** и добавьте **разрешения приложения**, необходимые для приложения.
 4. **Сохраните** регистрацию приложения.
 
-#### <a name="recommended-sign-the-user-into-your-app"></a>Recommended: Sign the user into your app
+#### <a name="recommended-sign-the-user-into-your-app"></a>Рекомендуется: подписывать пользователя в приложении
 
 Обычно при создании приложения, использующего разрешения, для него нужно настроить страницу или представление, в котором администратор может утвердить разрешения приложения. Эта страница может быть частью потока входа в приложение, параметров приложения или выделенного потока подключения. Во многих случаях разумно отображать это представление подключения в приложении только после того, как пользователь выполнил вход с помощью учебной или рабочей учетной записи Майкрософт.
 
-If you sign the user into your app, you can identify the organization to which the user belongs to before you ask the user to approve the application permissions. Хотя это не обязательно, таким образом можно сделать пользовательский интерфейс более интуитивно понятным. To sign the user in, follow our [Microsoft identity platform protocol tutorials](active-directory-v2-protocols.md).
+При входе пользователя в приложение можно указать организацию, к которой принадлежит пользователь, прежде чем попросить пользователя подтвердить разрешения приложения. Хотя это не обязательно, таким образом можно сделать пользовательский интерфейс более интуитивно понятным. Чтобы подписать пользователя в, следуйте нашим [руководствам по протоколу платформы идентификации Майкрософт](active-directory-v2-protocols.md).
 
 #### <a name="request-the-permissions-from-a-directory-admin"></a>Запрос разрешений у администратора каталога
 
-When you're ready to request permissions from the organization's admin, you can redirect the user to the Microsoft identity platform *admin consent endpoint*.
+Когда вы будете готовы запросить разрешения у администратора организации, вы можете перенаправить пользователя на *конечную точку согласия администратора*платформы удостоверений Майкрософт.
 
 > [!TIP]
-> Попытайтесь выполнить этот запрос в Postman. (Use your own app ID for best results - the tutorial application won't request useful permissions.) [![Try running this request in Postman](./media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d)
+> Попытайтесь выполнить этот запрос в Postman. (Для получения лучших результатов используйте собственный идентификатор приложения. приложение Tutorial не запрашивает полезные разрешения.) [![попытаться выполнить этот запрос в Post](./media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d)
 
 ```
 // Line breaks are for legibility only.
@@ -113,14 +113,14 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 https://login.microsoftonline.com/common/adminconsent?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&state=12345&redirect_uri=http://localhost/myapp/permissions
 ```
 
-| Параметр | Условие | Описание |
+| Параметр | Условие | ОПИСАНИЕ |
 | --- | --- | --- |
-| `tenant` | Обязательно для заполнения | Клиент каталога, из которого необходимо запросить разрешение. Его можно указать в виде GUID или понятного имени. Если неизвестно, какому клиенту относится пользователь, и нужно обеспечить его вход с помощью любого клиента, используйте `common`. |
-| `client_id` | Обязательно для заполнения | The **Application (client) ID** that the [Azure portal – App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) experience assigned to your app. |
-| `redirect_uri` | Обязательно для заполнения | Универсальный код ресурса (URI) перенаправления, на который нужно направлять ответ для обработки в приложении. Он должен в точности соответствовать одному из универсальных кодов ресурсов (URI) перенаправления, зарегистрированных на портале, но иметь вид URL-адреса. Он может содержать дополнительные сегменты пути. |
+| `tenant` | обязательные | Клиент каталога, из которого необходимо запросить разрешение. Его можно указать в виде GUID или понятного имени. Если неизвестно, какому клиенту относится пользователь, и нужно обеспечить его вход с помощью любого клиента, используйте `common`. |
+| `client_id` | обязательные | **Идентификатор приложения (клиента)** , который [портал Azure — регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) , назначенный приложению. |
+| `redirect_uri` | обязательные | Универсальный код ресурса (URI) перенаправления, на который нужно направлять ответ для обработки в приложении. Он должен в точности соответствовать одному из универсальных кодов ресурсов (URI) перенаправления, зарегистрированных на портале, но иметь вид URL-адреса. Он может содержать дополнительные сегменты пути. |
 | `state` | Рекомендуется | Значение, включенное в запрос, которое также возвращается в ответе маркера. Это может быть строка любого контента. Параметр state используется для кодирования сведений о состоянии пользователя в приложении перед созданием запроса на аутентификацию, например сведений об открытой на тот момент странице или представлении. |
 
-At this point, Azure AD enforces that only a tenant administrator can sign into complete the request. Администратору будет предложено утвердить все непосредственные разрешения, запрошенные для приложения на портале регистрации приложений.
+На этом этапе Azure AD применяет, чтобы только администратор клиента мог выполнить запрос. Администратору будет предложено утвердить все непосредственные разрешения, запрошенные для приложения на портале регистрации приложений.
 
 ##### <a name="successful-response"></a>Успешный ответ
 
@@ -130,7 +130,7 @@ At this point, Azure AD enforces that only a tenant administrator can sign into 
 GET http://localhost/myapp/permissions?tenant=a8990e1f-ff32-408a-9f8e-78d3b9139b95&state=state=12345&admin_consent=True
 ```
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 | --- | --- |
 | `tenant` | Клиент каталога, предоставивший приложению запрошенные разрешения в формате GUID. |
 | `state` | Значение, добавленное в запрос, которое также возвращается в ответе маркера. Это может быть строка любого контента. Параметр state используется для кодирования сведений о состоянии пользователя в приложении перед созданием запроса на аутентификацию, например сведений об открытой на тот момент странице или представлении. |
@@ -144,7 +144,7 @@ GET http://localhost/myapp/permissions?tenant=a8990e1f-ff32-408a-9f8e-78d3b9139b
 GET http://localhost/myapp/permissions?error=permission_denied&error_description=The+admin+canceled+the+request
 ```
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 | --- | --- |
 | `error` | Строка кода ошибки, которую можно использовать для классификации типов ошибок и реагирования на ошибки. |
 | `error_description` | Конкретное сообщение об ошибке, с помощью которого можно определить первопричину возникновения ошибки. |
@@ -153,10 +153,10 @@ GET http://localhost/myapp/permissions?error=permission_denied&error_description
 
 ## <a name="get-a-token"></a>Получение маркера
 
-Авторизовав приложение, можно переходить к получению маркеров доступа для интерфейсов API. To get a token by using the client credentials grant, send a POST request to the `/token` Microsoft identity platform endpoint:
+Авторизовав приложение, можно переходить к получению маркеров доступа для интерфейсов API. Чтобы получить маркер с помощью предоставления учетных данных клиента, отправьте запрос POST в `/token` конечную точку платформы идентификации Майкрософт:
 
 > [!TIP]
-> Попытайтесь выполнить этот запрос в Postman. (Use your own app ID for best results - the tutorial application won't request useful permissions.) [![Try running this request in Postman](./media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d)
+> Попытайтесь выполнить этот запрос в Postman. (Для получения лучших результатов используйте собственный идентификатор приложения. приложение Tutorial не запрашивает полезные разрешения.) [![попытаться выполнить этот запрос в Post](./media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d)
 
 ### <a name="first-case-access-token-request-with-a-shared-secret"></a>Первый сценарий: запрос маркера доступа с помощью общего секрета
 
@@ -176,13 +176,13 @@ client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=535fb089-9ff3-47b6-9bfb-4f1264799865&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&client_secret=qWgdYAmab0YSkuL1qKv5bPX&grant_type=client_credentials' 'https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token'
 ```
 
-| Параметр | Условие | Описание |
+| Параметр | Условие | ОПИСАНИЕ |
 | --- | --- | --- |
-| `tenant` | Обязательно для заполнения | Клиент каталога, который будет использовать приложение, в формате GUID или доменного имени. |
-| `client_id` | Обязательно для заполнения | Идентификатор приложения, назначенный приложению. Эти сведения можно найти на портале, где вы зарегистрировали свое приложение. |
-| `scope` | Обязательно для заполнения | Значение, передаваемое для параметра `scope` в этом запросе, должно быть идентификатором требуемого ресурса (универсальным кодом ресурса (URI) идентификатора приложения) с суффиксом `.default`. В примере Microsoft Graph используется значение `https://graph.microsoft.com/.default`. <br/>This value tells the Microsoft identity platform endpoint that of all the direct application permissions you have configured for your app, the endpoint should issue a token for the ones associated with the resource you want to use. Дополнительные сведения об области `/.default` можно найти в документации о согласии [здесь](v2-permissions-and-consent.md#the-default-scope). |
-| `client_secret` | Обязательно для заполнения | The client secret that you generated for your app in the app registration portal. Секрет клиента должен быть преобразован в формат URL-адреса перед отправкой. |
-| `grant_type` | Обязательно для заполнения | Нужно задать значение `client_credentials`. |
+| `tenant` | обязательные | Клиент каталога, который будет использовать приложение, в формате GUID или доменного имени. |
+| `client_id` | обязательные | Идентификатор приложения, назначенный приложению. Эти сведения можно найти на портале, где вы зарегистрировали свое приложение. |
+| `scope` | обязательные | Значение, передаваемое для параметра `scope` в этом запросе, должно быть идентификатором требуемого ресурса (универсальным кодом ресурса (URI) идентификатора приложения) с суффиксом `.default`. В примере Microsoft Graph используется значение `https://graph.microsoft.com/.default`. <br/>Это значение указывает конечной точке платформы идентификации Майкрософт, которая содержит все прямые разрешения приложений, настроенные для вашего приложения. Конечная точка должна выдавать маркер для тех, которые связаны с ресурсом, который вы хотите использовать. Дополнительные сведения об области `/.default` можно найти в документации о согласии [здесь](v2-permissions-and-consent.md#the-default-scope). |
+| `client_secret` | обязательные | Секрет клиента, созданный для приложения на портале регистрации приложений. Секрет клиента должен быть преобразован в формат URL-адреса перед отправкой. |
+| `grant_type` | обязательные | Нужно задать значение `client_credentials`. |
 
 ### <a name="second-case-access-token-request-with-a-certificate"></a>Второй сценарий: запрос маркера доступа с помощью сертификата
 
@@ -198,14 +198,14 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 &grant_type=client_credentials
 ```
 
-| Параметр | Условие | Описание |
+| Параметр | Условие | ОПИСАНИЕ |
 | --- | --- | --- |
-| `tenant` | Обязательно для заполнения | Клиент каталога, который будет использовать приложение, в формате GUID или доменного имени. |
-| `client_id` | Обязательно для заполнения |Идентификатор приложения (клиента), который назначен приложению. |
-| `scope` | Обязательно для заполнения | Значение, передаваемое для параметра `scope` в этом запросе, должно быть идентификатором требуемого ресурса (универсальным кодом ресурса (URI) идентификатора приложения) с суффиксом `.default`. В примере Microsoft Graph используется значение `https://graph.microsoft.com/.default`. <br/>This value informs the Microsoft identity platform endpoint that of all the direct application permissions you have configured for your app, it should issue a token for the ones associated with the resource you want to use. Дополнительные сведения об области `/.default` можно найти в документации о согласии [здесь](v2-permissions-and-consent.md#the-default-scope). |
-| `client_assertion_type` | Обязательно для заполнения | Необходимо установить значение `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`. |
-| `client_assertion` | Обязательно для заполнения | Утверждение (JSON Web Token), которое необходимо создать и подписать с помощью сертификата, зарегистрированного как учетные данные для приложения. Ознакомьтесь с [учетными данными сертификата](active-directory-certificate-credentials.md), чтобы узнать, как зарегистрировать сертификат и отформатировать утверждение.|
-| `grant_type` | Обязательно для заполнения | Нужно задать значение `client_credentials`. |
+| `tenant` | обязательные | Клиент каталога, который будет использовать приложение, в формате GUID или доменного имени. |
+| `client_id` | обязательные |Идентификатор приложения (клиента), который назначен приложению. |
+| `scope` | обязательные | Значение, передаваемое для параметра `scope` в этом запросе, должно быть идентификатором требуемого ресурса (универсальным кодом ресурса (URI) идентификатора приложения) с суффиксом `.default`. В примере Microsoft Graph используется значение `https://graph.microsoft.com/.default`. <br/>Это значение информирует конечную точку платформы Microsoft Identity, которая содержит все непосредственные разрешения приложений, настроенные для вашего приложения, он должен выдать маркер для тех, которые связаны с ресурсом, который вы хотите использовать. Дополнительные сведения об области `/.default` можно найти в документации о согласии [здесь](v2-permissions-and-consent.md#the-default-scope). |
+| `client_assertion_type` | обязательные | Необходимо установить значение `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`. |
+| `client_assertion` | обязательные | Утверждение (веб-токен JSON), которое необходимо создать и подписать с помощью сертификата, зарегистрированного как учетные данные для приложения. Ознакомьтесь с информацией об [учетных данных сертификата](active-directory-certificate-credentials.md), чтобы узнать, как зарегистрировать сертификат и задать формат утверждения.|
+| `grant_type` | обязательные | Нужно задать значение `client_credentials`. |
 
 Обратите внимание на то, что параметры являются почти такими же, как и при использовании запроса с помощью общего секрета, за исключением параметра client_secret, который заменяется двумя параметрами: client_assertion_type и client_assertion.
 
@@ -221,10 +221,10 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 }
 ```
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 | --- | --- |
 | `access_token` | Запрашиваемый маркер доступа. Приложение может использовать этот маркер для аутентификации в защищенном ресурсе, таком как веб-API. |
-| `token_type` | Указывает значение типа маркера. The only type that Microsoft identity platform supports is `bearer`. |
+| `token_type` | Указывает значение типа токена. Единственным типом, поддерживаемым платформой Microsoft Identity, является `bearer`. |
 | `expires_in` | Срок действия маркера доступа (в секундах). |
 
 ### <a name="error-response"></a>Сообщение об ошибке
@@ -244,7 +244,7 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 }
 ```
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 | --- | --- |
 | `error` | Строка кода ошибки, которую можно использовать для классификации типов возникших ошибок и реагирования на них. |
 | `error_description` | Конкретное сообщение об ошибке, с помощью которого можно определить первопричину возникновения ошибки аутентификации. |
@@ -275,7 +275,7 @@ curl -X GET -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG...." 'https://graph
 
 Чтобы получить дополнительные сведения об учетных данных клиента, прочтите [эту статью](https://aka.ms/msal-net-client-credentials) из библиотеки проверки подлинности Майкрософт.
 
-| Пример | платформа |Описание |
+| Образец | платформа |ОПИСАНИЕ |
 |--------|----------|------------|
 |[active-directory-dotnetcore-daemon-v2](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) | Консоль .NET Core 2.1 | Простое приложение .NET Core, которое отображает пользователей клиента, которые делают запрос в Microsoft Graph не от имени пользователя, а используя удостоверение приложения. В примере также показаны различные варианты проверки подлинности с помощью сертификатов. |
-|[active-directory-dotnet-daemon-v2](https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2)|ASP.NET MVC | Веб-приложение, которое синхронизирует данные из Microsoft Graph на основе удостоверения приложения, а не имени пользователя. |
+|[active-directory-dotnet-daemon-v2](https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2)|ASP.NET MVC 3 | Веб-приложение, которое синхронизирует данные из Microsoft Graph на основе удостоверения приложения, а не имени пользователя. |

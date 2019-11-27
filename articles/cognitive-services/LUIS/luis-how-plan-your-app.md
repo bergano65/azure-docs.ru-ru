@@ -1,5 +1,5 @@
 ---
-title: Plan your app - LUIS
+title: Планирование приложения — LUIS
 titleSuffix: Azure Cognitive Services
 description: Определяйте соответствующие приложению намерения и сущности, а затем создавайте планы приложений в Интеллектуальной службе распознавания речи (LUIS).
 services: cognitive-services
@@ -18,47 +18,47 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74326772"
 ---
-# <a name="plan-your-luis-app-schema-with-subject-domain-and-data-extraction"></a>Plan your LUIS app schema with subject domain and data extraction
+# <a name="plan-your-luis-app-schema-with-subject-domain-and-data-extraction"></a>Планирование схемы приложения LUIS с темой предметной области и извлечение данных
 
-A LUIS app schema contains [intents](luis-glossary.md#intent) and [entities](luis-glossary.md#entity) relevant to your subject [domain](luis-glossary.md#domain). The intents classify user [utterances](luis-glossary.md#utterance), and the entities extract data from the user utterances.
+Схема приложения LUIS содержит целевые объекты [и](luis-glossary.md#intent) [сущности](luis-glossary.md#entity) , относящиеся к [домену](luis-glossary.md#domain)субъекта. Объекты классифицируют пользователя [фразы продолжительностью](luis-glossary.md#utterance), а сущности извлекают данные из фразы продолжительностью пользователя.
 
 ## <a name="identify-your-domain"></a>Определите предметную область
 
-A LUIS app is centered around a subject domain. For example, you may have a travel app that handles booking of tickets, flights, hotels, and rental cars. Другое приложение может предоставлять содержимое, связанное с тренировками, отслеживать результаты упражнений и ставить цели. Identifying the domain helps you find words or phrases that are relevant to your domain.
+Приложение LUIS выравнивается по домену предметной области. Например, у вас может быть приложение для командировок, которое обрабатывает бронирование билетов, авиарейсов, гостиниц и арендных автомобилей. Другое приложение может предоставлять содержимое, связанное с тренировками, отслеживать результаты упражнений и ставить цели. Идентификация домена помогает найти слова или фразы, относящиеся к вашему домену.
 
 > [!TIP]
 > Для многих сценариев LUIS предлагает [готовые предметные области](luis-how-to-use-prebuilt-domains.md). Проверьте, можете ли вы использовать готовую предметную область в качестве отправной точки для своего приложения.
 
 ## <a name="identify-your-intents"></a>Определение намерений
 
-Think about the [intents](luis-concept-intent.md) that are important to your application's task.
+Подумайте о способах [, важных](luis-concept-intent.md) для задачи приложения.
 
-Рассмотрим пример приложения для путешествий с функциями по бронированию авиабилетов и проверки погоды в пункте назначения пользователя. You can define the `BookFlight` and `GetWeather` intents for these actions.
+Рассмотрим пример приложения для путешествий с функциями по бронированию авиабилетов и проверки погоды в пункте назначения пользователя. Для этих действий можно определить `BookFlight` и `GetWeather`.
 
-In a more complex app with more functions, you have more intents, and you should define them carefully so the intents aren't too specific. For example, `BookFlight` and `BookHotel` may need to be separate intents, but `BookInternationalFlight` and `BookDomesticFlight` may be too similar.
+В более сложном приложении с большим числом функций у вас есть больше способов, и их следует тщательно определить, чтобы их не было слишком специфичным. Например, `BookFlight` и `BookHotel` могут быть отдельными удержаниями, но `BookInternationalFlight` и `BookDomesticFlight` могут быть похожи.
 
 > [!NOTE]
-> Рекомендуется использовать только столько намерений, сколько необходимо для выполнения функций приложения. Если вы определите слишком много намерений, службе LUIS будет сложнее правильно классифицировать высказывания. If you define too few, they may be so general that they overlap.
+> Рекомендуется использовать только столько намерений, сколько необходимо для выполнения функций приложения. Если вы определите слишком много намерений, службе LUIS будет сложнее правильно классифицировать высказывания. Если определить слишком мало, они могут быть настолько общими, что они перекрываются.
 
-If you don't need to identify overall user intention, add all the example user utterances to the `None` intent. If your app grows into needing more intents, you can create them later.
+Если вам не нужно выявляет общую намерение пользователя, добавьте всех примеров User фразы продолжительностью в `None` намерение. Если в приложении требуется больше целей, их можно создать позже.
 
 ## <a name="create-example-utterances-for-each-intent"></a>Создание примера высказывания для каждого намерения
 
-To begin with, avoid creating too many utterances for each intent. Once you have determined the intents, create 15 to 30 example utterances per intent. Each utterance should be different from the previously provided utterances. A good variety in utterances include overall word count, word choice, verb tense, and punctuation.
+Для начала старайтесь не создавать слишком много фразы продолжительностью для каждой цели. Определив смысл, создайте 15 – 30 примеров фразы продолжительностью для каждой цели. Каждый utterance должен отличаться от ранее предоставленной фразы продолжительностью. Хороший спектр в фразы продолжительностью включает в себя общее число слов, выбор слов, глаголы и знаки препинания.
 
-For more information, see [understanding good utterances for LUIS apps](luis-concept-utterance.md).
+Дополнительные сведения см. в разделе [понимание хорошего фразы продолжительностью для приложений Luis](luis-concept-utterance.md).
 
 ## <a name="identify-your-entities"></a>Определение сущностей
 
-В примерах высказываний укажите сущности, которые нужно извлечь. To book a flight, you need information like the destination, date, airline, ticket category, and travel class. Create entities for these data types and then mark the [entities](luis-concept-entity-types.md) in the example utterances. Entities are important for accomplishing an intent.
+В примерах высказываний укажите сущности, которые нужно извлечь. Чтобы зарезервировать перелет, вам понадобятся такие сведения, как назначение, Дата, авиакомпании, Категория билетов и класс командировок. Создайте сущности для этих типов данных, а затем пометьте [сущности](luis-concept-entity-types.md) в примере фразы продолжительностью. Сущности важны для выполнения намерений.
 
-When determining which entities to use in your app, keep in mind that there are different types of entities for capturing relationships between object types. [Сущности в LUIS](luis-concept-entity-types.md) предоставляют больше сведений о различных типах.
+При определении сущностей для использования в приложении учитывайте, что существуют различные типы сущностей для захвата отношений между типами объектов. [Сущности в LUIS](luis-concept-entity-types.md) предоставляют больше сведений о различных типах.
 
 > [!TIP]
-> LUIS offers [prebuilt entities](luis-prebuilt-entities.md) for common, conversational user scenarios. Consider using prebuilt entities as a starting point for your application development.
+> LUIS предлагает [Готовые сущности](luis-prebuilt-entities.md) для распространенных пользовательских сценариев. Рассмотрите возможность использования готовых сущностей в качестве отправной точки для разработки приложений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Learning the LUIS development lifecylce](luis-concept-app-iteration.md)
+> [Изучение лифецилце разработки LUIS](luis-concept-app-iteration.md)
 

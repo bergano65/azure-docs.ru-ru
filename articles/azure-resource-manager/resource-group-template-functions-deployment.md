@@ -1,5 +1,5 @@
 ---
-title: Template functions - deployment
+title: Функции шаблонов — развертывание
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для получения сведений о развертывании.
 ms.topic: conceptual
 ms.date: 11/19/2019
@@ -15,13 +15,13 @@ ms.locfileid: "74230235"
 Диспетчер ресурсов предоставляет следующие функции для получения значений из разделов шаблонов и значений, связанных с развертыванием:
 
 * [deployment](#deployment)
-* [environment](#environment)
+* [PXE](#environment)
 * [parameters](#parameters)
 * [variables](#variables)
 
 Сведения о получении значений из ресурсов, групп ресурсов или подписки см. в разделе [Функции для работы с ресурсами](resource-group-template-functions-resource.md).
 
-## <a name="deployment"></a>Развертывание
+## <a name="deployment"></a>deployment
 
 `deployment()`
 
@@ -137,11 +137,11 @@ ms.locfileid: "74230235"
 
 `environment()`
 
-Returns information about the Azure environment used for deployment.
+Возвращает сведения о среде Azure, используемой для развертывания.
 
 ### <a name="return-value"></a>Возвращаемое значение
 
-This function returns properties for the current Azure environment.
+Эта функция возвращает свойства для текущей среды Azure.
 
 ```json
 {
@@ -179,7 +179,7 @@ This function returns properties for the current Azure environment.
 
 ### <a name="example"></a>Пример
 
-The following example template returns the environment object.
+В следующем примере шаблона возвращается объект среды.
 
 ```json
 {
@@ -195,7 +195,7 @@ The following example template returns the environment object.
 }
 ```
 
-The preceding example returns the following object when deployed to global Azure:
+Предыдущий пример возвращает следующий объект при развертывании в глобальном Azure:
 
 ```json
 {
@@ -231,17 +231,17 @@ The preceding example returns the following object when deployed to global Azure
 }
 ```
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>Параметры
 
 `parameters(parameterName)`
 
 Возвращает значение параметра. Указанное имя параметра должно быть определено в разделе параметров шаблона.
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>parameters
 
-| Параметр | Обязательно для заполнения | Тип | Описание |
+| Параметр | обязательные | введите | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
-| имя_параметра |ДА |string |Имя параметра, который требуется вернуть. |
+| имя_параметра |Yes |строка |Имя параметра, который требуется вернуть. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -326,15 +326,15 @@ The preceding example returns the following object when deployed to global Azure
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | Тип | Value |
+| имя | введите | Значение |
 | ---- | ---- | ----- |
-| stringOutput | Строка | вариант 1 |
-| intOutput | Int | 1 |
-| objectOutput | Объекты | {"one": "a", "two": "b"} |
-| arrayOutput | Массив, | [1, 2, 3] |
-| crossOutput | Строка | вариант 1 |
+| stringOutput | Строка, | вариант 1 |
+| intOutput | int | 1 |
+| objectOutput | Объект. | {"one": "a", "two": "b"} |
+| arrayOutput | Массив. | [1, 2, 3] |
+| crossOutput | Строка, | вариант 1 |
 
-For more information about using parameters, see [Parameters in Azure Resource Manager template](template-parameters.md).
+Дополнительные сведения об использовании параметров см. [в разделе Параметры в Azure Resource Manager шаблоне](template-parameters.md).
 
 ## <a name="variables"></a>variables
 
@@ -342,11 +342,11 @@ For more information about using parameters, see [Parameters in Azure Resource M
 
 Возвращает значение переменной. Указанное имя переменной должно быть определено в разделе переменных шаблона.
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>parameters
 
-| Параметр | Обязательно для заполнения | Тип | Описание |
+| Параметр | обязательные | введите | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
-| variableName |ДА |Строка |Имя переменной, которую необходимо вернуть. |
+| variableName |Yes |Строка, |Имя переменной, которую необходимо вернуть. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -418,16 +418,16 @@ For more information about using parameters, see [Parameters in Azure Resource M
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | Тип | Value |
+| имя | введите | Значение |
 | ---- | ---- | ----- |
-| exampleOutput1 | Строка | myVariable |
-| exampleOutput2 | Массив, | [1, 2, 3, 4] |
-| exampleOutput3 | Строка | myVariable |
-| exampleOutput4 |  Объекты | {"property1": "value1", "property2": "value2"} |
+| exampleOutput1 | Строка, | myVariable |
+| exampleOutput2 | Массив. | [1, 2, 3, 4] |
+| exampleOutput3 | Строка, | myVariable |
+| exampleOutput4 |  Объект. | {"property1": "value1", "property2": "value2"} |
 
-For more information about using variables, see [Variables in Azure Resource Manager template](template-variables.md).
+Дополнительные сведения об использовании переменных см. [в разделе переменные в шаблоне Azure Resource Manager](template-variables.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Инструкции по объединению нескольких шаблонов см. в статье [Функции развертывания для шаблонов Azure Resource Manager](resource-group-linked-templates.md).
 * Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](resource-group-create-multiple.md).

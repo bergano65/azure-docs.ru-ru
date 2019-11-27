@@ -1,6 +1,6 @@
 ---
-title: 'Disable network policies for Azure Private Link service source IP address '
-description: Learn how to disable network policies for Azure private Link
+title: 'Отключение сетевых политик для IP-адреса источника службы частной связи Azure '
+description: Узнайте, как отключить политики сети для частной связи Azure
 services: private-link
 author: asudbring
 ms.service: private-link
@@ -14,16 +14,16 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74228105"
 ---
-# <a name="disable-network-policies-for-private-link-service-source-ip"></a>Disable network policies for Private Link service source IP
+# <a name="disable-network-policies-for-private-link-service-source-ip"></a>Отключить политики сети для исходного IP-адреса службы частной связи
 
-In order to choose a source IP address for your Private Link service, an explicit disable setting `privateLinkServiceNetworkPolicies` is required on the subnet. This setting is only applicable for the specific private IP address you chose as the source IP of the Private Link service. For other resources in the subnet, access is controlled based on Network Security Groups (NSG) security rules definition. 
+Чтобы выбрать исходный IP-адрес для службы частной связи, в подсети необходимо указать явный параметр отключения `privateLinkServiceNetworkPolicies`. Этот параметр применим только к конкретному частному IP-адресу, выбранному в качестве исходного IP-адреса службы частной связи. Для других ресурсов в подсети управление доступом осуществляется на основе определения правил безопасности группы безопасности сети (NSG). 
  
-When using any Azure client (PowerShell, CLI or templates), an additional step is required to change this property. You can disable the policy using the cloud shell from the Azure portal, or local installations of Azure PowerShell, Azure CLI, or use Azure Resource Manager templates.  
+При использовании любого клиента Azure (PowerShell, CLI или шаблонов) для изменения этого свойства требуется дополнительный шаг. Вы можете отключить политику с помощью Cloud Shell из портал Azure или локальной установки Azure PowerShell, Azure CLI или использовать шаблоны Azure Resource Manager.  
  
-Follow the steps below to disable private link service network policies for a virtual network named *myVirtualNetwork* with a *default* subnet hosted in a resource group named *myResourceGroup*. 
+Выполните следующие действия, чтобы отключить сетевые политики службы частной связи для виртуальной сети с именем *myVirtualNetwork* и подсетью *по умолчанию* , размещенной в группе ресурсов с именем *myResourceGroup*. 
 
 ## <a name="using-azure-powershell"></a>Использование Azure PowerShell
-This section describes how to disable subnet private endpoint policies using Azure PowerShell.
+В этом разделе описывается, как отключить политики частной конечной точки подсети с помощью Azure PowerShell.
 
 ```azurepowershell
 $virtualNetwork= Get-AzVirtualNetwork `
@@ -35,7 +35,7 @@ $virtualNetwork= Get-AzVirtualNetwork `
 $virtualNetwork | Set-AzVirtualNetwork 
 ```
 ## <a name="using-azure-cli"></a>Использование Azure CLI
-This section describes how to disable subnet private endpoint policies using Azure CLI.
+В этом разделе описывается, как отключить политики частной конечной точки подсети с помощью Azure CLI.
 ```azurecli
 az network vnet subnet update \ 
   --name default \ 
@@ -44,7 +44,7 @@ az network vnet subnet update \
   --disable-private-link-service-network-policies true 
 ```
 ## <a name="using-a-template"></a>Использование шаблона
-This section describes how to disable subnet private endpoint policies using Azure Resource Manager Template.
+В этом разделе описывается, как отключить политики частной конечной точки подсети с помощью шаблона Azure Resource Manager.
 ```json
 { 
     "name": "myVirtualNetwork", 
@@ -70,6 +70,6 @@ This section describes how to disable subnet private endpoint policies using Azu
 } 
  
 ```
-## <a name="next-steps"></a>Дальнейшие действия
-- Learn more about [Azure Private Endpoint](private-endpoint-overview.md)
+## <a name="next-steps"></a>Дополнительная информация
+- Дополнительные сведения о [частной конечной точке Azure](private-endpoint-overview.md)
  

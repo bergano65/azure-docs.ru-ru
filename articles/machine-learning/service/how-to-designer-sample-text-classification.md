@@ -1,7 +1,7 @@
 ---
-title: 'Designer: classify book reviews example'
+title: 'Конструктор: пример классификации рецензий книги'
 titleSuffix: Azure Machine Learning
-description: Build a multiclass logistic regression classifier to predict the company category with wikipedia SP 500 dataset using Azure Machine Learning designer.
+description: Создайте классификатор логистической регрессии с многоклассовой классификацией для прогнозирования категории компании с набором данных Википедии SP 500 с помощью конструктора Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -17,41 +17,41 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74213778"
 ---
-# <a name="build-a-classifier-to-predict-company-category-using-azure-machine-learning-designer"></a>Build a classifier to predict company category using Azure Machine Learning designer.
+# <a name="build-a-classifier-to-predict-company-category-using-azure-machine-learning-designer"></a>Создание классификатора для прогнозирования категории компании с помощью Машинное обучение Azure конструктора.
 
-**Designer (preview) sample 7**
+**Конструктор (Предварительная версия) — пример 7**
 
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
 
-This sample demonstrates how to use text analytics modules to build a text classification pipeline in Azure Machine Learning designer (preview).
+В этом примере показано, как использовать модули текстовой аналитики для создания конвейера классификации текста в Машинное обучение Azure конструктора (Предварительная версия).
 
-The goal of text classification is to assign some piece of text to one or more predefined classes or categories. The piece of text could be a document, news article, search query, email, tweet, support tickets, customer feedback, user product review etc. Applications of text classification include categorizing newspaper articles and news wire contents into topics, organizing web pages into hierarchical categories, filtering spam email, sentiment analysis, predicting user intent from search queries, routing support tickets, and analyzing customer feedback. 
+Цель классификации текста состоит в том, чтобы назначить некоторый фрагмент текста одному или нескольким предопределенным классам или категориям. Фрагментом текста может быть документ, статья новостей, поисковый запрос, электронная почта, твит, запросы в службу поддержки, Отзывы пользователей, проверка продукта и т. д. Приложения классификации текста включают в себя категоризацию газетных статей и новостей по каналам, упорядочение веб-страниц в иерархические категории, фильтрацию нежелательной почты, анализ тональностиности, прогнозирование намерений пользователя из поисковых запросов, маршрутизация билеты на поддержку и анализ отзывов клиентов. 
 
-This pipeline trains a **multiclass logistic regression classifier** to predict the company category with **Wikipedia SP 500 dataset derived from Wikipedia**.  
+Этот конвейер обучает **классификатор логистической регрессии с многоклассовой классификацией** для прогнозирования категории компании с **набором данных Википедии SP 500, производным от Википедии**.  
 
-The fundamental steps of a training machine learning model with text data are:
+Фундаментальные этапы обучения модели машинного обучения с текстовыми данными:
 
 1. Получение данных
 
-1. Pre-process the text data
+1. Предварительная обработка текстовых данных
 
 1. Проектирование признаков
 
-   Convert text feature into the numerical feature with feature extracting module such as feature hashing, extract n-gram feature from the text data.
+   Преобразование текста в числовую функцию с помощью модуля извлечения компонентов, например, хэширования признаков, извлечение функции n-грамм из текстовых данных.
 
 1. Обучение модели
 
-1. Score dataset
+1. Набор данных оценки
 
-1. Оценка модели
+1. Анализ модели
 
-Here's the final, completed graph of the pipeline we'll be working on. We'll provide the rationale for all the modules so you can make similar decisions on your own.
+Вот окончательный завершенный граф конвейера, над которым мы будем работать. Мы предоставим основание для всех модулей, чтобы вы могли принимать аналогичные решения самостоятельно.
 
-[![Graph of the pipeline](./media/how-to-designer-sample-text-classification/nlp-modules-overall.png)](./media/how-to-designer-sample-text-classification/nlp-modules-overall.png#lightbox)
+[![граф конвейера](./media/how-to-designer-sample-text-classification/nlp-modules-overall.png)](./media/how-to-designer-sample-text-classification/nlp-modules-overall.png#lightbox)
 
 ## <a name="data"></a>Данные
 
-In this pipeline, we use the **Wikipedia SP 500** dataset. The dataset is derived from Wikipedia (https://www.wikipedia.org/) based on articles of each S&P 500 company. Before uploading to Azure Machine Learning designer, the dataset was processed as follows:
+В этом конвейере мы используем набор данных **Википедии SP 500** . Набор данных является производным от Википедии (https://www.wikipedia.org/) на основе статей каждой компании S & P 500. Перед отправкой в конструктор Машинное обучение Azure, набор данных был обработан следующим образом:
 
 - Был извлечен текст по каждой конкретной компании
 - Удалено форматирование Википедии
@@ -59,60 +59,60 @@ In this pipeline, we use the **Wikipedia SP 500** dataset. The dataset is derive
 - Весь текст преобразован в нижний регистр
 - Были добавлены известные категории компаний
 
-Articles could not be found for some companies, so the number of records is less than 500.
+Не удалось найти статьи для некоторых компаний, поэтому число записей меньше 500.
 
-## <a name="pre-process-the-text-data"></a>Pre-process the text data
+## <a name="pre-process-the-text-data"></a>Предварительная обработка текстовых данных
 
-We use the **Preprocess Text** module to preprocess the text data, including detect the sentences, tokenize sentences and so on. You would found all supported options in the [**Preprocess Text**](../algorithm-module-reference/preprocess-text.md) article. After pre-processing tex data, we use the **Split Data** module to randomly divide the input data so that the training dataset contains 50% of the original data and the testing dataset contains 50% of the original data.
+Мы используем модуль **предварительной обработки текста** для предварительной обработки текстовых данных, включая определение предложений, маркировку предложений и т. д. Вы нашли все поддерживаемые параметры в статье [**Предварительная обработка текста**](../algorithm-module-reference/preprocess-text.md) . После предварительной обработки да данных мы используем модуль **Split Data (разделение данных** ), чтобы случайным образом разделить входные данные таким образом, чтобы набор данных для обучения содержал 50% исходных данных, а проверочный набор данных содержит 50% от исходных.
 
 ## <a name="feature-engineering"></a>Проектирование признаков
-In this sample, we will use two methods performing feature engineering.
+В этом примере мы будем использовать два метода, выполняющих проектирование характеристик.
 
 ### <a name="feature-hashing"></a>Хэширование признаков
-We used the [**Feature Hashing**](../algorithm-module-reference/feature-hashing.md) module to convert the plain text of the articles to integers and used the integer values as input features to the model. 
+Мы использовали модуль [**хэширования функций**](../algorithm-module-reference/feature-hashing.md) для преобразования обычного текста статей в целые числа и использовали целочисленные значения в качестве входных функций для модели. 
 
-The **Feature Hashing** module can be used to convert variable-length text documents to equal-length numeric feature vectors, using the 32-bit murmurhash v3 hashing method provided by the Vowpal Wabbit library. The objective of using feature hashing is dimensionality reduction; also feature hashing makes the lookup of feature weights faster at classification time because it uses hash value comparison instead of string comparison.
+Модуль **хэширования функций** можно использовать для преобразования текстовых документов переменной длины в векторы числовых признаков одинаковой длины с использованием 32-разрядного метода хэширования мурмурхаш v3, предоставляемого библиотекой Wabbit Vowpal. Цель использования хэширования признаков — уменьшение размерности; Кроме того, хэширование признаков делает поиск весовых коэффициентов функций быстрее во время классификации, так как использует сравнение хэш-значений вместо сравнения строк.
 
-In the sample pipeline, we set the number of hashing bits to 14 and set the number of n-grams to 2. With these settings, the hash table can hold 2^14 entries, in which each hashing feature represents one or more n-gram features and its value represents the occurrence frequency of that n-gram in the text instance. For many problems, a hash table of this size is more than adequate, but in some cases, more space might be needed to avoid collisions. Evaluate the performance of your machine learning solution using different number of bits. 
+В примере конвейера мы устанавливаем число битов хэширования равным 14 и устанавливаем число n-грамм равным 2. С помощью этих параметров хэш-таблица может содержать 2 ^ 14 записей, в которых каждая функция хэширования представляет одну или несколько функций n-грамм, а ее значение — частоту вхождений этого n-грамм в экземпляре текста. Для многих проблем хэш-таблица этого размера больше, чем достаточно, но в некоторых случаях может потребоваться дополнительное пространство, чтобы избежать конфликтов. Оцените производительность решения машинного обучения, используя разное количество битов. 
 
-### <a name="extract-n-gram-feature-from-text"></a>Extract N-Gram Feature from Text
+### <a name="extract-n-gram-feature-from-text"></a>Извлечение функции N-грамм из текста
 
-An n-gram is a contiguous sequence of n terms from a given sequence of text. An n-gram of size 1 is referred to as a unigram; an n-gram of size 2 is a bigram; an n-gram of size 3 is a trigram. N-grams of larger sizes are sometimes referred to by the value of n, for instance, "four-gram", "five-gram", and so on.
+N-грамма — это непрерывная последовательность из n терминов из заданной последовательности текста. N-грамма размера 1 называется униграм; n-грамма размера 2 — это биграм; n-грамма размера 3 — это триграмм. N-граммы большего размера иногда называются значением n, например, "четыре-граммами", "пять-граммами" и т. д.
 
-We used [**Extract N-Gram Feature from Text**](../algorithm-module-reference/extract-n-gram-features-from-text.md)module as another solution for feature engineering. This module first extracts the set of n-grams, in addition to the n-grams, the number of documents where each n-gram appears in the text is counted(DF). In this sample, TF-IDF metric is used to calculate feature values. Then, it converts unstructured text data into equal-length numeric feature vectors where each feature represents the TF-IDF of an n-gram in a text instance.
+Мы использовали [**функцию извлечения N-грамм из текстового**](../algorithm-module-reference/extract-n-gram-features-from-text.md)модуля в качестве другого решения для проектирования характеристик. Этот модуль сначала извлекает набор n-датаграмм, в дополнение к n-датаграммам, число документов, в которых каждый n-грамм отображается в тексте, подсчитывается (DF). В этом примере для вычисления значений компонентов используется метрика TF-IDF. Затем он преобразует неструктурированные текстовые данные в векторы числовых признаков одинаковой длины, где каждая функция представляет TF-IDF n-грамм в экземпляре Text.
 
-After converting text data into numeric feature vectors, A **Select Column** module is used to remove the text data from the dataset. 
+После преобразования текстовых данных в векторы числовых характеристик для удаления текстовых данных из набора данных используется модуль **выбора столбца** . 
 
 ## <a name="train-the-model"></a>Обучение модели
 
-Your choice of algorithm often depends on the requirements of the use case. Because the goal of this pipeline is to predict the category of company, a multi-class classifier model is a good choice. Considering that the number of features is large and these features are sparse, we use **Multiclass Logistic Regression** model for this pipeline.
+Выбор алгоритма часто зависит от требований варианта использования. Поскольку целью этого конвейера является прогнозирование категории компании, хорошим выбором является модель классификатора с несколькими классами. Учитывая, что количество функций велико и эти функции являются разреженными, мы используем **многоклассовую модель логистической регрессии** для этого конвейера.
 
-## <a name="test-evaluate-and-compare"></a>Test, evaluate, and compare
+## <a name="test-evaluate-and-compare"></a>Тестирование, оценка и сравнение
 
- We split the dataset and use different datasets to train and test the model to make the evaluation of the model more objective.
+ Мы разбиваем набор данных и используем различные наборы данных для обучения и тестирования модели, чтобы сделать оценку модели более целевой.
 
-After the model is trained, we would use the **Score Model** and **Evaluate Model** modules to generate predicted results and evaluate the models. However, before using the **Score Model** module, performing feature engineering as what we have done during training is required. 
+После обучения модели мы будем использовать **модель оценки** и **вычислить модули модели** для создания прогнозируемых результатов и оценки моделей. Тем не менее, прежде чем использовать модуль **оценки модели** , необходимо выполнить проектирование характеристик, как это было сделано во время обучения. 
 
-For **Feature Hashing** module, it is easy to perform feature engineer on scoring flow as training flow. Use **Feature Hashing** module directly to process the input text data.
+Для модуля **хэширования** признаков очень просто выполнить инженера по оценке потока в качестве потока обучения. Используйте модуль **хэширования компонентов** непосредственно для обработки входных текстовых данных.
 
-For **Extract N-Gram Feature from Text** module, we would connect the **Result Vocabulary output** from the training dataflow to the **Input Vocabulary** on the scoring dataflow, and set the **Vocabulary mode** parameter to **ReadOnly**.
-[![Graph of n-gram score](./media/how-to-designer-sample-text-classification/n-gram.png)](./media/how-to-designer-sample-text-classification/n-gram.png)
+Чтобы **извлечь N-граммную функцию из текстового** модуля, мы будем подключать **выходные данные результирующего словаря** из обучающего потока **данных к входному словарю** в потоке вычислений и присвоить параметру **режима словаря** значение **ReadOnly.** .
+[![график с показателями n-грамм](./media/how-to-designer-sample-text-classification/n-gram.png)](./media/how-to-designer-sample-text-classification/n-gram.png)
 
-After finishing the engineering step, **Score Model** could be used to generate predictions for the test dataset by using the trained model. To check the result, select the output port of **Score Model** and then select **Visualize**.
+После завершения этапа проектирования **модель оценки** можно использовать для создания прогнозов для тестового набора данных с помощью обученной модели. Чтобы проверить результат, выберите порт вывода **модели оценки** и нажмите кнопку **визуализировать**.
 
-We then pass the scores to the **Evaluate Model** module to generate evaluation metrics. **Evaluate Model** has two input ports, so that we could evaluate and compare scored datasets that are generated with different methods. In this sample, we compare the performance of the result generated with feature hashing method and n-gram method.
-To check the result, select the output port of the **Evaluate Model** and then select **Visualize**.
+Затем мы передаем оценки модулю **Evaluate Model** для создания метрик оценки. Функция " **оценить модель** " имеет два входных порта, поэтому мы можем вычислить и сравнить оцененные наборы данных, созданные с помощью различных методов. В этом примере сравнивается производительность результата, созданного с помощью метода хэширования компонентов и метода n-грамм.
+Чтобы проверить результат, выберите порт вывода для **модели вычисления** и щелкните **визуализировать**.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [aml-ui-cleanup](../../../includes/aml-ui-cleanup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Explore the other samples available for the designer:
-- [Sample 1 - Regression: Predict an automobile's price](how-to-designer-sample-regression-automobile-price-basic.md)
-- [Sample 2 - Regression: Compare algorithms for automobile price prediction](how-to-designer-sample-regression-automobile-price-compare-algorithms.md)
-- [Sample 3 - Classification with feature selection: Income Prediction](how-to-designer-sample-classification-predict-income.md)
-- [Sample 4 - Classification: Predict credit risk (cost sensitive)](how-to-designer-sample-classification-credit-risk-cost-sensitive.md)
-- [Sample 5 - Classification: Predict churn](how-to-designer-sample-classification-churn.md)
-- [Sample 6 - Classification: Predict flight delays](how-to-designer-sample-classification-flight-delay.md)
+Изучите другие примеры, доступные для конструктора:
+- [Пример 1. регрессия: прогнозирование цены автомобиля](how-to-designer-sample-regression-automobile-price-basic.md)
+- [Пример 2. регрессия. алгоритмы сравнения для прогнозирования цен автомобилей](how-to-designer-sample-regression-automobile-price-compare-algorithms.md)
+- [Пример 3. Классификация с выбором компонентов: прогноз дохода](how-to-designer-sample-classification-predict-income.md)
+- [Пример 4. Классификация: прогнозируемый кредитный риск (с учетом стоимости)](how-to-designer-sample-classification-credit-risk-cost-sensitive.md)
+- [Пример 5. Классификация: обработка прогнозов](how-to-designer-sample-classification-churn.md)
+- [Пример 6. Классификация: прогнозы задержек полета](how-to-designer-sample-classification-flight-delay.md)

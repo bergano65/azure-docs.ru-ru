@@ -1,19 +1,14 @@
 ---
-title: Примеры задач реестра контейнеров Azure
+title: Примеры задач записи контроля доступа
 description: Примеры задач реестра контейнеров Azure (задачи записи контроля доступа) для создания, запуска и исправления образов контейнеров
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 11/14/2019
-ms.author: danlep
-ms.openlocfilehash: 488e13ed0d1961fbafad545057accb61957a7005
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 49df3bf565052a729ac3c587bd2ba11a299d05f1
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74152857"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456079"
 ---
 # <a name="acr-tasks-samples"></a>Примеры задач записи контроля доступа
 

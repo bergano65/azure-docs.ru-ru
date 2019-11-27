@@ -1,19 +1,14 @@
 ---
-title: Разрешения для репозиториев в реестре контейнеров Azure
+title: Разрешения для репозиториев
 description: Создание маркера с разрешениями, ограниченными конкретными репозиториями в реестре для извлечения или отправки изображений
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 10/31/2019
-ms.author: danlep
-ms.openlocfilehash: 7b9d220ac7e507513458eab6b55276b3aa434739
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: cf36a49ffd6c04897e6f44b844f0c813d0992b18
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73742747"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74454911"
 ---
 # <a name="repository-scoped-permissions-in-azure-container-registry"></a>Разрешения уровня репозитория в реестре контейнеров Azure 
 
@@ -31,7 +26,7 @@ ms.locfileid: "73742747"
 * Эта функция доступна только в реестре контейнеров уровня " **премиум** ". Сведения об уровнях и ограничениях служб реестра см. в статье [номера SKU реестра контейнеров Azure](container-registry-skus.md).
 * В настоящее время невозможно назначить разрешения уровня репозитория для объекта Azure Active Directory, такого как субъект-служба или управляемое удостоверение.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 * **Azure CLI** . для работы с этой статьей требуется локальная установка Azure CLI (версия 2.0.76 или более поздняя). Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 * **DOCKER** — для проверки подлинности в реестре также необходима локальная установка DOCKER. На сайте Docker предоставляются инструкции по установке для систем [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms).
@@ -190,7 +185,7 @@ az acr scope-map update --name MyScopeMap --registry myregistry \
 
 Если схема области связана с несколькими маркерами, команда обновляет разрешение всех связанных маркеров.
 
-Если вы хотите обновить маркер с другой картой области, выполните команду AZ запись [контроля обновления токена][az-acr-token-update]. Например:
+Если вы хотите обновить маркер с другой картой области, выполните команду AZ запись [контроля обновления токена][az-acr-token-update]. Например,
 
 ```azurecli
 az acr token update --name MyToken --registry myregistry \
@@ -199,7 +194,7 @@ az acr token update --name MyToken --registry myregistry \
 
 После обновления маркера или сопоставления области, связанного с маркером, изменения разрешений вступают в силу при следующей `docker login` или другой проверке подлинности с помощью маркера.
 
-После обновления маркера может потребоваться создать новые пароли для доступа к реестру. Выполните команду [AZ запись контроля учетных данных маркера][az-acr-token-credential-generate]. Например:
+После обновления маркера может потребоваться создать новые пароли для доступа к реестру. Выполните команду [AZ запись контроля учетных данных маркера][az-acr-token-credential-generate]. Например,
 
 ```azurecli
 az acr token credential generate \
@@ -216,7 +211,7 @@ az acr token credential generate \
 
 * **Действия** с каждым из указанных репозиториев включают в себя один или несколько следующих элементов.
 
-  |Действие  |Description (Описание)  |
+  |Действие  |ОПИСАНИЕ  |
   |---------|---------|
   |`content/read`     |  Чтение данных из репозитория. Например, извлекать артефакт.  |
   |`metadata/read`    | Чтение метаданных из репозитория. Например, перечислите теги или отобразите метаданные манифеста.   |
@@ -259,7 +254,7 @@ az acr token credential generate \
 
 Например, если в репозитории разрешены `metadata/read` действия, передайте учетные данные маркера при выполнении команды AZ запись в [репозитории для просмотра][az-acr-repository-show-tags] тегов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Чтобы управлять картами области и маркерами доступа, используйте дополнительные команды в группах команд AZ запись в [области видимости записей: Map][az-acr-scope-map] и [AZ][az-acr-token] .
 * В разделе [Общие сведения о проверке подлинности](container-registry-authentication.md) приведены сценарии для проверки подлинности в реестре контейнеров Azure с помощью учетной записи администратора или удостоверения Azure Active Directory.

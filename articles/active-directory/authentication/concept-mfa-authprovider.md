@@ -1,5 +1,5 @@
 ---
-title: Azure Multi-Factor Auth Providers - Azure Active Directory
+title: Поставщики многофакторной идентификации Azure — Azure Active Directory
 description: Когда следует использовать поставщик аутентификации с Azure MFA?
 services: multi-factor-authentication
 ms.service: active-directory
@@ -25,7 +25,7 @@ ms.locfileid: "74382006"
 Поставщик Многофакторной идентификации Azure позволяет пользователям, у которых **нет лицензий**, воспользоваться преимуществами функций Многофакторной идентификации Azure.
 
 > [!NOTE]
-> С 1 сентября 2018 года создавать новые поставщики аутентификации невозможно. Existing auth providers may continue to be used and updated, but migration is no longer possible. Многофакторная аутентификация по-прежнему будет предоставляться как функция в лицензиях Azure AD ценовой категории "Премиум".
+> С 1 сентября 2018 года создавать новые поставщики аутентификации невозможно. Существующие поставщики проверки подлинности могут продолжать использоваться и обновляться, но миграция больше невозможна. Многофакторная аутентификация по-прежнему будет предоставляться как функция в лицензиях Azure AD ценовой категории "Премиум".
 
 ## <a name="caveats-related-to-the-azure-mfa-sdk"></a>Предупреждения о пакете SDK для Azure MFA
 
@@ -43,35 +43,35 @@ ms.locfileid: "74382006"
 
 Если поставщик MFA не связан с клиентом Azure AD или новый поставщик MFA связан с другим клиентом Azure AD, пользовательские настройки и параметры конфигурации не будут применяться. Кроме того, вам потребуется повторно активировать существующие серверы Azure MFA с помощью учетных данных активации, созданных с помощью поставщика многофакторной идентификации. Повторная активация серверов MFA для их связи с поставщиком MFA не влияет на аутентификацию с помощью телефонного звонка и текстового сообщения в отличие от уведомлений мобильных приложений, которые перестанут работать, пока пользователи повторно не активируют мобильные приложения.
 
-### <a name="removing-an-authentication-provider"></a>Removing an authentication provider
+### <a name="removing-an-authentication-provider"></a>Удаление поставщика проверки подлинности
 
 > [!CAUTION]
-> There is no confirmation when deleting an authentication provider. Selecting **Delete** is a permanent process.
+> При удалении поставщика проверки подлинности подтверждение не выполняется. Выбор **удаления** является постоянным процессом.
 
-Authentication providers can be found in the **Azure portal** > **Azure Active Directory** > **MFA** > **Providers**. Click on listed providers to see details and configurations associated with that provider.
+Поставщики проверки подлинности можно найти в **портал Azure** > **Azure Active Directory** > **MFA** > **providers**. Щелкните список поставщиков, чтобы просмотреть сведения и конфигурации, связанные с этим поставщиком.
 
-Before removing an authentication provider, take note of any customized settings configured in your provider. Decide what settings need to be migrated to general MFA settings from your provider and complete the migration of those settings. 
+Перед удалением поставщика проверки подлинности запишите все настроенные параметры, настроенные в поставщике. Определите, какие параметры необходимо перенести в общие параметры MFA от поставщика, и завершите перенос этих параметров. 
 
-Azure MFA Servers linked to providers will need to be reactivated using credentials generated under **Azure portal** > **Azure Active Directory** > **MFA** > **Server settings**. Before reactivating, the following files must be deleted from the `\Program Files\Multi-Factor Authentication Server\Data\` directory on Azure MFA Servers in your environment:
+Серверы Azure MFA, связанные с поставщиками, потребуется активировать повторно, используя учетные данные, созданные в разделе **портал Azure** > **Azure Active Directory** > **MFA** > **Параметры сервера**. Перед повторной активацией необходимо удалить следующие файлы из каталога `\Program Files\Multi-Factor Authentication Server\Data\` на серверах Azure MFA в вашей среде:
 
 - caCert
 - cert
-- groupCACert
+- граупкацерт
 - groupKey
-- groupName
-- licenseKey
-- pkey
+- Группа
+- Ключ лицензии
+- PKEY
 
-![Delete an auth provider from the Azure portal](./media/concept-mfa-authprovider/authentication-provider-removal.png)
+![Удаление поставщика проверки подлинности из портал Azure](./media/concept-mfa-authprovider/authentication-provider-removal.png)
 
-When you have confirmed that all settings have been migrated, you can browse to the **Azure portal** > **Azure Active Directory** > **MFA** > **Providers** and select the ellipses **...** and select **Delete**.
+Убедившись в том, что все параметры были перенесены, можно перейти к **портал Azure** > **Azure Active Directory** > **MFA** > **providers** и выбрать многоточие **...** и нажать кнопку **Удалить**.
 
 > [!WARNING]
-> Deleting an authentication provider will delete any reporting information associated with that provider. You may want to save activity reports before deleting your provider.
+> При удалении поставщика проверки подлинности будут удалены все сведения о отчетах, связанные с этим поставщиком. Перед удалением поставщика может потребоваться сохранить отчеты о действиях.
 
 > [!NOTE]
-> Users with older versions of the Microsoft Authenticator app and Azure MFA Server may need to re-register their app.
+> Пользователям с более старыми версиями приложения Microsoft Authenticator и Azure MFA может потребоваться повторная регистрация приложения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Настройка параметров Многофакторной идентификации](howto-mfa-mfasettings.md)

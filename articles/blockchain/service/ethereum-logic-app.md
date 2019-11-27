@@ -1,5 +1,5 @@
 ---
-title: Use Ethereum Blockchain connector with Azure Logic Apps - Azure Blockchain Service
+title: Использование соединителя Ethereum Блокчейн с Azure Logic Apps Azure Блокчейн Service
 description: Сведения об использовании блокчейн-соединителя Ethereum с Azure Logic Apps для активации функций и реагирования на события смарт-контракта.
 ms.date: 10/14/2019
 ms.topic: article
@@ -15,9 +15,9 @@ ms.locfileid: "74325223"
 
 Выполняйте действия смарт-контракта и реагируйте на его события с помощью [блокчейн-соединителя Ethereum](https://docs.microsoft.com/connectors/blockchainethereum/) с [Azure Logic Apps](https://docs.microsoft.com/azure/logic-apps/). Предположим, что вам требуется создать микрослужбу на основе REST, которая возвращает сведения из реестра блокчейна. С помощью приложения логики вы можете принимать HTTP-запросы, которые запрашивают сведения, хранящиеся в реестре блокчейна.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-Complete the optional prerequisite [Quickstart: Use Visual Studio Code to connect to an Azure Blockchain Service consortium network](connect-vscode.md). В этом кратком руководстве описывается, как установить [Пакет средств разработки Блокчейна Azure для Ethereum](https://marketplace.visualstudio.com/items?itemName=AzBlockchain.azure-blockchain) и настроить среду разработки блокчейна.
+Выполните дополнительную предварительную проверку [: используйте Visual Studio Code для подключения к сети консорциума Блокчейн службы Azure](connect-vscode.md). В этом кратком руководстве описывается, как установить [Пакет средств разработки Блокчейна Azure для Ethereum](https://marketplace.visualstudio.com/items?itemName=AzBlockchain.azure-blockchain) и настроить среду разработки блокчейна.
 
 ## <a name="create-a-logic-app"></a>Создайте приложение логики
 
@@ -52,7 +52,7 @@ Complete the optional prerequisite [Quickstart: Use Visual Studio Code to connec
 
     ![Конструктор Logic Apps, где отображаются свойства триггера событий](./media/ethereum-logic-app/event-properties.png)
 
-    | Свойство | Описание |
+    | Свойство | ОПИСАНИЕ |
     |----------|-------------|
     | **ABI контракта** | Двоичный интерфейс приложения (ABI) контракта определяет интерфейсы смарт-контракта. См. сведения о [получении ABI контракта](#get-the-contract-abi). |
     | **Адрес смарт-контракта** | Адрес контракта — это адрес назначения смарт-контракта в блокчейне Ethereum. См. сведения о [получении адреса контракта](#get-the-contract-address). |
@@ -78,7 +78,7 @@ Complete the optional prerequisite [Quickstart: Use Visual Studio Code to connec
 1. Измените или [создайте подключение API](#create-an-api-connection) к службе "Блокчейн Azure".
 1. В зависимости от выбранного действия укажите следующие сведения о функции смарт-контракта.
 
-    | Свойство | Описание |
+    | Свойство | ОПИСАНИЕ |
     |----------|-------------|
     | **ABI контракта** | ABI контракта определяет интерфейсы смарт-контракта. См. сведения о [получении ABI контракта](#get-the-contract-abi). |
     | **Байт-код контракта** | Скомпилированный байт-код смарт-контракта. См. сведения о [получении байт-кода контракта](#get-the-contract-bytecode). |
@@ -153,10 +153,10 @@ Complete the optional prerequisite [Quickstart: Use Visual Studio Code to connec
 
 Чтобы настроить подключение к участнику службы "Блокчейн Azure", используйте доступные свойства из следующего списка с учетом своего сценария.
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 |----------|-------------|
-|**Имя подключения** | Имя подключения API. Обязательный параметр. |
-|**Конечная точка Ethereum RPC** | HTTP-адрес узла транзакций службы "Блокчейн Azure". Обязательный параметр. См. сведения о [получении конечной точки RPC](#get-the-rpc-endpoint). |
+|**Имя подключения** | Имя подключения API. обязательный параметр. |
+|**Конечная точка Ethereum RPC** | HTTP-адрес узла транзакций службы "Блокчейн Azure". обязательный параметр. См. сведения о [получении конечной точки RPC](#get-the-rpc-endpoint). |
 |**Закрытый ключ** | Закрытый ключ учетной записи Ethereum. Для транзакций требуются закрытый ключ, адрес учетной записи и пароль. См. сведения о [получении закрытого ключа](#get-the-private-key). |
 |**Адрес учетной записи** | Адрес учетной записи участника службы "Блокчейн Azure". Для транзакций требуются закрытый ключ, адрес учетной записи и пароль. См. сведения о [получении адреса учетной записи](#get-the-account-address). |
 |**Пароль учетной записи** | Пароль учетной записи задается при создании участника. Сведения о сбросе пароля см. в разделе [Учетная запись Ethereum](consortium.md#ethereum-account).|
@@ -193,7 +193,7 @@ Complete the optional prerequisite [Quickstart: Use Visual Studio Code to connec
 Закрытый ключ учетной записи Ethereum можно использовать для проверки подлинности при отправке транзакции в блокчейн. Открытый и закрытый ключи учетной записи Ethereum создаются из назначенного набора 12 слов. Этот назначенный набор создается Пакетом средств разработки Блокчейна Azure для Ethereum при подключении к участнику консорциума службы "Блокчейн Azure". Адрес конечной точки можно получить с помощью расширения комплекта SDK.
 
 1. Откройте палитру команд (F1) в Visual Studio Code.
-1. Select **Azure Blockchain: Retrieve private key**.
+1. Выберите **Azure блокчейн: Получение закрытого ключа**.
 1. Выберите назначенный набор, который вы сохранили при подключении к участнику консорциума.
 
     ![Палитра команд с возможностью выбрать символ](./media/ethereum-logic-app/private-key.png)
@@ -282,6 +282,6 @@ Truffle отображает адрес контракта после разве
 
 ![Метаданные в Visual Studio Code, где представлено значение адреса](./media/ethereum-logic-app/contract-address-metadata.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Просмотрите видео о [распространенных сценариях работы с Logic Apps](https://channel9.msdn.com/Shows/Blocktalk/Doing-more-with-Logic-Apps?term=logic%20apps%20blockchain&lang-en=true).

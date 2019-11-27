@@ -1,5 +1,5 @@
 ---
-title: Resource providers and resource types
+title: Поставщики ресурсов и типы ресурсов
 description: Описывает поставщиков ресурсов, которые поддерживают диспетчер ресурсов, их схемы и доступные версии API, а также регионы, допускающие размещение ресурсов.
 ms.topic: conceptual
 ms.date: 08/29/2019
@@ -12,7 +12,7 @@ ms.locfileid: "74422198"
 ---
 # <a name="azure-resource-providers-and-types"></a>Поставщики и типы ресурсов Azure
 
-При развертывании ресурсов часто бывает необходимо получить сведения о типах и поставщиках ресурсов. For example, if you want to store keys and secrets, you work with the Microsoft.KeyVault resource provider. This resource provider offers a resource type called vaults for creating the key vault.
+При развертывании ресурсов часто бывает необходимо получить сведения о типах и поставщиках ресурсов. Например, если вы хотите сохранить ключи и секреты, вы работаете с поставщиком ресурсов Microsoft. KeyVault. Этот поставщик ресурсов предоставляет тип ресурсов, называемый хранилищами для создания хранилища ключей.
 
 Формат имени типа ресурса: **{поставщик_ресурса}/{тип_ресурса}** . Тип ресурса для хранилища ключей — **Microsoft.KeyVault/vaults**.
 
@@ -25,16 +25,16 @@ ms.locfileid: "74422198"
 * просмотр допустимых расположений для типа ресурса;
 * просмотр допустимых версий API для типа ресурса.
 
-You can do these steps through the Azure portal, Azure PowerShell, or Azure CLI.
+Эти действия можно выполнить с помощью портал Azure, Azure PowerShell или Azure CLI.
 
-For a list that maps resource providers to Azure services, see [Resource providers for Azure services](azure-services-resource-providers.md).
+Список поставщиков ресурсов для служб Azure см. в статье [поставщики ресурсов для служб Azure](azure-services-resource-providers.md).
 
-## <a name="azure-portal"></a>портала Azure
+## <a name="azure-portal"></a>портале Azure
 
 Чтобы просмотреть всех поставщиков ресурсов, а также состояние регистрации для подписки, сделайте следующее:
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. On the Azure portal menu, select **All services**.
+2. В меню портал Azure выберите **все службы**.
 
     ![выбор подписок](./media/resource-manager-supported-services/select-all-services.png)
 
@@ -44,14 +44,14 @@ For a list that maps resource providers to Azure services, see [Resource provide
 
     ![отображение поставщиков ресурсов](./media/resource-manager-supported-services/show-resource-providers.png)
 
-6. Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов. Областью регистрации всегда является подписка. По умолчанию многие поставщики ресурсов регистрируются автоматически. Тем не менее, некоторые поставщики ресурсов может потребоваться зарегистрировать вручную. To register a resource provider, you must have permission to do the `/register/action` operation for the resource provider. Эта операция включается в роли участника и владельца. Чтобы зарегистрировать поставщика ресурсов, выберите **Регистрация**. На предыдущем снимке экрана ссылка **Регистрация** выделена в поле **Microsoft.Blueprint**.
+6. Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов. Областью регистрации всегда является подписка. По умолчанию многие поставщики ресурсов регистрируются автоматически. Тем не менее, некоторые поставщики ресурсов может потребоваться зарегистрировать вручную. Чтобы зарегистрировать поставщик ресурсов, необходимо иметь разрешение на выполнение `/register/action` операции для поставщика ресурсов. Эта операция включается в роли участника и владельца. Чтобы зарегистрировать поставщика ресурсов, выберите **Регистрация**. На предыдущем снимке экрана ссылка **Регистрация** выделена в поле **Microsoft.Blueprint**.
 
-    You can't unregister a resource provider when you still have resource types from that resource provider in your subscription.
+    Вы не можете отменить регистрацию поставщика ресурсов, если у вас по-прежнему есть типы ресурсов от этого поставщика ресурсов в вашей подписке.
 
 Чтобы просмотреть сведения для конкретного поставщика ресурсов, сделайте следующее:
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. On the Azure portal menu, select **All services**.
+2. В меню портал Azure выберите **все службы**.
 3. В поле **Все службы** введите **обозреватель ресурсов** и выберите **Обозреватель ресурсов**.
 
     ![Пункт "Все службы"](./media/resource-manager-supported-services/select-resource-explorer.png)
@@ -94,7 +94,7 @@ Microsoft.CognitiveServices      Registered
 ...
 ```
 
-Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов. Областью регистрации всегда является подписка. По умолчанию многие поставщики ресурсов регистрируются автоматически. Тем не менее, некоторые поставщики ресурсов может потребоваться зарегистрировать вручную. To register a resource provider, you must have permission to do the `/register/action` operation for the resource provider. Эта операция включается в роли участника и владельца.
+Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов. Областью регистрации всегда является подписка. По умолчанию многие поставщики ресурсов регистрируются автоматически. Тем не менее, некоторые поставщики ресурсов может потребоваться зарегистрировать вручную. Чтобы зарегистрировать поставщик ресурсов, необходимо иметь разрешение на выполнение `/register/action` операции для поставщика ресурсов. Эта операция включается в роли участника и владельца.
 
 ```azurepowershell-interactive
 Register-AzResourceProvider -ProviderNamespace Microsoft.Batch
@@ -109,7 +109,7 @@ ResourceTypes     : {batchAccounts, operations, locations, locations/quotas}
 Locations         : {West Europe, East US, East US 2, West US...}
 ```
 
-You can't unregister a resource provider when you still have resource types from that resource provider in your subscription.
+Вы не можете отменить регистрацию поставщика ресурсов, если у вас по-прежнему есть типы ресурсов от этого поставщика ресурсов в вашей подписке.
 
 Чтобы просмотреть сведения для конкретного поставщика ресурсов, используйте команду ниже:
 
@@ -179,7 +179,7 @@ West US
 ...
 ```
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Интерфейс командной строки Azure
 
 Чтобы просмотреть всех поставщиков ресурсов в Azure, а также состояние регистрации для подписки, используйте команду ниже:
 
@@ -199,7 +199,7 @@ Microsoft.CognitiveServices      Registered
 ...
 ```
 
-Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов. Областью регистрации всегда является подписка. По умолчанию многие поставщики ресурсов регистрируются автоматически. Тем не менее, некоторые поставщики ресурсов может потребоваться зарегистрировать вручную. To register a resource provider, you must have permission to do the `/register/action` operation for the resource provider. Эта операция включается в роли участника и владельца.
+Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов. Областью регистрации всегда является подписка. По умолчанию многие поставщики ресурсов регистрируются автоматически. Тем не менее, некоторые поставщики ресурсов может потребоваться зарегистрировать вручную. Чтобы зарегистрировать поставщик ресурсов, необходимо иметь разрешение на выполнение `/register/action` операции для поставщика ресурсов. Эта операция включается в роли участника и владельца.
 
 ```azurecli
 az provider register --namespace Microsoft.Batch
@@ -207,7 +207,7 @@ az provider register --namespace Microsoft.Batch
 
 Оно возвращает сообщение о выполнении регистрации.
 
-You can't unregister a resource provider when you still have resource types from that resource provider in your subscription.
+Вы не можете отменить регистрацию поставщика ресурсов, если у вас по-прежнему есть типы ресурсов от этого поставщика ресурсов в вашей подписке.
 
 Чтобы просмотреть сведения для конкретного поставщика ресурсов, используйте команду ниже:
 
@@ -285,9 +285,9 @@ West US
 ...
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Сведения о создании шаблонов Resource Manager см. в статье [Создание шаблонов диспетчера ресурсов Azure](resource-group-authoring-templates.md). 
 * Схемы шаблонов поставщиков ресурсов см. в статье [Define resources in Azure Resource Manager templates](/azure/templates/) (Определение ресурсов в шаблонах Azure Resource Manager).
-* For a list that maps resource providers to Azure services, see [Resource providers for Azure services](azure-services-resource-providers.md).
+* Список поставщиков ресурсов для служб Azure см. в статье [поставщики ресурсов для служб Azure](azure-services-resource-providers.md).
 * Чтобы просмотреть операции для поставщика ресурсов, ознакомьтесь с [Azure REST API](/rest/api/).

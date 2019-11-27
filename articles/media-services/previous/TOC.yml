@@ -266,18 +266,6 @@
           href: media-services-dotnet-long-operations.md
         - name: Спецификация Fragmented MP4 Live Ingest
           href: ../media-services-fmp4-live-ingest-overview.md
-        - name: Начало работы
-          href: media-services-azure-media-clipper-getting-started.md
-        - name: Загрузка видео
-          href: media-services-azure-media-clipper-load-assets.md
-        - name: Настройка сочетаний клавиш
-          href: media-services-azure-media-clipper-keyboard-shortcuts.md
-        - name: Настройка локализации
-          href: media-services-azure-media-clipper-localization.md
-        - name: Отправка заданий обрезки
-          href: media-services-azure-media-clipper-submit-job.md
-        - name: Портал Azure
-          href: media-services-azure-media-clipper-portal.md
     - name: Защита содержимого
       href: media-services-content-protection-overview.md
       items:

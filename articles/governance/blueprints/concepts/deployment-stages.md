@@ -1,14 +1,14 @@
 ---
 title: Этапы развертывания схемы
-description: Сведения о действиях, которые выполняет Azure Blueprintные службы во время развертывания.
+description: Изучите шаги, связанные с безопасностью и артефактами, которые выполняет Azure Blueprintные службы при создании назначения схемы.
 ms.date: 11/13/2019
 ms.topic: conceptual
-ms.openlocfilehash: b329613e4e4954a1ea1452017a6e6c8b7343f2d3
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.openlocfilehash: 4c1d0cd47e0f43b73e3178e18a4ba5d705048a72
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74048610"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463550"
 ---
 # <a name="stages-of-a-blueprint-deployment"></a>Этапы развертывания схемы
 

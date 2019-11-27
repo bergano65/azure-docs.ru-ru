@@ -43,7 +43,7 @@ ms.locfileid: "74226628"
 
 Чтобы приступить к работе со средой выполнения для решения "Функции Azure", установите Windows Server 2016 или Windows 10 Creators Update с доступом к экземпляру SQL Server.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Установите [предварительную версию среды выполнения Функций Azure](https://aka.ms/azafrdoc).
 

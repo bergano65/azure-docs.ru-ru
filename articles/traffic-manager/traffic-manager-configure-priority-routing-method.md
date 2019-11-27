@@ -1,6 +1,6 @@
 ---
-title: Tutorial - Configure priority traffic routing with Azure Traffic Manager
-description: This tutorial explains how to configure the priority traffic routing method in Traffic Manager
+title: Руководство по настройке приоритетной маршрутизации трафика с помощью диспетчера трафика Azure
+description: В этом учебнике объясняется, как настроить метод маршрутизации трафика по приоритету в диспетчере трафика.
 services: traffic-manager
 documentationcenter: ''
 author: asudbring
@@ -19,7 +19,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74420303"
 ---
-# <a name="tutorial-configure-priority-traffic-routing-method-in-traffic-manager"></a>Tutorial: Configure priority traffic routing method in Traffic Manager
+# <a name="tutorial-configure-priority-traffic-routing-method-in-traffic-manager"></a>Учебник. Настройка метода маршрутизации трафика по приоритету в диспетчере трафика
 
 Независимо от режима веб-сайта веб-сайты Azure уже обеспечивают отработку отказов для веб-сайтов в центре данных (регионе). Диспетчер трафика обеспечивает отработку отказа для веб-сайтов в различных центрах данных.
 
@@ -49,7 +49,7 @@ ms.locfileid: "74420303"
 
 ![Настройка метода маршрутизации трафика по приоритету с помощью диспетчера трафика][1]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 
 - Узнайте о [методе взвешенной маршрутизации трафика](traffic-manager-configure-weighted-routing-method.md).

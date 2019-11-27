@@ -1,6 +1,6 @@
 ---
-title: Register Azure Functions binding extensions
-description: Learn to register an Azure Functions binding extension based on your environment.
+title: Регистрация расширений привязки функций Azure
+description: Узнайте, как зарегистрировать расширение привязки функций Azure на основе вашей среды.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 07/08/2019
@@ -12,61 +12,61 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74231114"
 ---
-# <a name="register-azure-functions-binding-extensions"></a>Register Azure Functions binding extensions
+# <a name="register-azure-functions-binding-extensions"></a>Регистрация расширений привязки функций Azure
 
-In Azure Functions version 2.x, [bindings](./functions-triggers-bindings.md) are available as separate packages from the functions runtime. While .NET functions access bindings through NuGet packages, extension bundles allow other functions access to all bindings through a configuration setting.
+В функциях Azure версии 2. x [привязки](./functions-triggers-bindings.md) доступны в виде отдельных пакетов из среды выполнения функций. Несмотря на то, что функции .NET обращаются к привязкам через пакеты NuGet, пакеты расширений позволяют другим функциям обращаться ко всем привязкам через параметр конфигурации.
 
-Consider the following items related to binding extensions:
+Рассмотрим следующие элементы, связанные с расширениями привязки:
 
-- Binding extensions aren't explicitly registered in Functions 1.x except when [creating a C# class library using Visual Studio](#local-csharp).
+- Расширения привязки явно не регистрируются в функциях 1. x, за исключением случаев [создания библиотеки C# классов с помощью Visual Studio](#local-csharp).
 
-- HTTP and timer triggers are supported by default and don't require an extension.
+- Триггеры HTTP и Timer поддерживаются по умолчанию и не нуждаются в расширении.
 
-The following table indicates when and how you register bindings.
+В следующей таблице показано, когда и как регистрируются привязки.
 
 | Среда разработки |Регистрация<br/> в службе "Функции" версии 1.x  |Регистрация<br/> в службе "Функции" версии 2.x  |
 |-------------------------|------------------------------------|------------------------------------|
-|портала Azure|Автоматический|Автоматический|
-|Non-.NET languages or local Azure Core Tools development|Автоматический|[Use Azure Functions Core Tools and extension bundles](#extension-bundles)|
-|C# class library using Visual Studio|[С помощью средств NuGet](#vs)|[С помощью средств NuGet](#vs)|
-|Библиотека классов C# с использованием Visual Studio Code|Н/Д|[С помощью .NET Core CLI](#vs-code)|
+|портале Azure|Автоматический|Автоматический|
+|Разработка Non-.NET языков или локальных средств Azure Core Tools|Автоматический|[Использование Azure Functions Core Tools и пакетов расширений](#extension-bundles)|
+|C#Библиотека классов с помощью Visual Studio|[С помощью средств NuGet](#vs)|[С помощью средств NuGet](#vs)|
+|Библиотека классов C# с использованием Visual Studio Code|Недоступно|[С помощью .NET Core CLI](#vs-code)|
 
-## <a name="extension-bundles"></a>Extension bundles for local development
+## <a name="extension-bundles"></a>Пакеты расширений для локальной разработки
 
-Extension bundles is a deployment technology that lets you add a compatible set of Functions binding extensions to your function app. A predefined set of extensions are added when you build your app. Extension packages defined in a bundle are compatible with each other, which helps you avoid conflicts between packages. You enable extension bundles in the app's host.json file.  
+Пакеты расширений — это технология развертывания, позволяющая добавить совместимый набор функций расширений привязки к приложению-функции. При создании приложения добавляется предопределенный набор расширений. Пакеты расширений, определенные в пакете, совместимы друг с другом, что позволяет избежать конфликтов между пакетами. Пакеты расширений можно включить в файле host. JSON приложения.  
 
-You can use extension bundles with version 2.x and later versions of the Functions runtime. When developing locally, make sure you are using the latest version of [Azure Functions Core Tools](functions-run-local.md#v2).
+Вы можете использовать пакеты расширений с версией 2. x и более поздними версиями среды выполнения функций. При разработке локально убедитесь, что вы используете последнюю версию [Azure functions Core Tools](functions-run-local.md#v2).
 
-Use extension bundles for local development using Azure Functions Core Tools, Visual Studio Code, and when you build remotely.
+Пакеты расширений можно использовать для локальной разработки с помощью Azure Functions Core Tools, Visual Studio Code и при удаленной сборке.
 
-If you don't use extension bundles, you must install the .NET Core 2.x SDK on your local computer before you install any binding extensions. Extension bundles removes this requirement for local development. 
+Если вы не используете пакеты расширений, необходимо установить пакет SDK для .NET Core 2. x на локальном компьютере перед установкой каких бы то ни было расширений привязки. Пакеты расширений удаляют это требование для локальной разработки. 
 
-To use extension bundles, update the *host.json* file to include the following entry for `extensionBundle`:
+Чтобы использовать пакеты расширений, обновите файл *Host. JSON* , включив в него следующую запись для `extensionBundle`:
  
 [!INCLUDE [functions-extension-bundles-json](../../includes/functions-extension-bundles-json.md)]
 
 <a name="local-csharp"></a>
 
-## <a name="vs"></a> C\# class library with Visual Studio
+## <a name="vs"></a>Библиотека классов C\# в Visual Studio
 
-In **Visual Studio**, you can install packages from the Package Manager Console using the [Install-Package](https://docs.microsoft.com/nuget/tools/ps-ref-install-package) command, as shown in the following example:
+В **Visual Studio**пакеты можно установить из консоли диспетчера пакетов с помощью команды [Install-Package](https://docs.microsoft.com/nuget/tools/ps-ref-install-package) , как показано в следующем примере:
 
 ```powershell
 Install-Package Microsoft.Azure.WebJobs.Extensions.ServiceBus -Version <TARGET_VERSION>
 ```
 
-The name of the package used for a given binding is provided in the reference article for that binding. Например, вы можете ознакомиться с [разделом о пакетах в справочной статье о привязках Служебной шины](functions-bindings-service-bus.md#packages---functions-1x).
+Имя пакета, используемого для данной привязки, приведено в справочной статье для этой привязки. Например, вы можете ознакомиться с [разделом о пакетах в справочной статье о привязках Служебной шины](functions-bindings-service-bus.md#packages---functions-1x).
 
-Замените `<TARGET_VERSION>` в этом примере определенной версией пакета, например `3.0.0-beta5`. Valid versions are listed on the individual package pages at [NuGet.org](https://nuget.org). The major versions that correspond to Functions runtime 1.x or 2.x are specified in the reference article for the binding.
+Замените `<TARGET_VERSION>` в этом примере определенной версией пакета, например `3.0.0-beta5`. Допустимые версии перечислены на отдельных страницах пакета по адресу [NuGet.org](https://nuget.org). Основные версии, соответствующие функциям среды выполнения 1. x или 2. x, указаны в справочной статье для привязки.
 
-If you use `Install-Package` to reference a binding, you don't need to use [extension bundles](#extension-bundles). This approach is specific for class libraries built in Visual Studio.
+Если для ссылки на привязку используется `Install-Package`, не нужно использовать [пакеты расширений](#extension-bundles). Этот подход характерен для библиотек классов, созданных в Visual Studio.
 
-## <a name="vs-code"></a> C# class library with Visual Studio Code
+## <a name="vs-code"></a>C# библиотека классов с Visual Studio Code
 
 > [!NOTE]
-> We recommend using [extension bundles](#extension-bundles) to have Functions automatically install a compatible set of binding extension packages. 
+> Мы рекомендуем использовать [пакеты расширений](#extension-bundles) , чтобы функции автоматически установили совместимый набор пакетов расширений привязки. 
 
-In **Visual Studio Code**, install packages for a C# class library project from the command prompt using the [dotnet add package](https://docs.microsoft.com/dotnet/core/tools/dotnet-add-package) command in the .NET Core CLI. The following example demonstrates how you add a  binding:
+В **Visual Studio Code**установите пакеты для проекта библиотеки C# классов из командной строки с помощью команды [DotNet Add Package](https://docs.microsoft.com/dotnet/core/tools/dotnet-add-package) в .NET Core CLI. В следующем примере показано, как добавить привязку:
 
 ```terminal
 dotnet add package Microsoft.Azure.WebJobs.Extensions.<BINDING_TYPE_NAME> --version <TARGET_VERSION>
@@ -74,10 +74,10 @@ dotnet add package Microsoft.Azure.WebJobs.Extensions.<BINDING_TYPE_NAME> --vers
 
 Интерфейс .NET Core CLI можно использовать только при разработке в среде "Функции Azure" версии 2.х.
 
-Replace `<BINDING_TYPE_NAME>` with the name of the package that contains the binding you need. You can find the desired binding reference article in the [list of supported bindings](./functions-triggers-bindings.md#supported-bindings).
+Замените `<BINDING_TYPE_NAME>` именем пакета, который содержит необходимую привязку. Нужную ссылочную статью привязки можно найти в [списке поддерживаемых привязок](./functions-triggers-bindings.md#supported-bindings).
 
-Замените `<TARGET_VERSION>` в этом примере определенной версией пакета, например `3.0.0-beta5`. Valid versions are listed on the individual package pages at [NuGet.org](https://nuget.org). The major versions that correspond to Functions runtime 1.x or 2.x are specified in the reference article for the binding.
+Замените `<TARGET_VERSION>` в этом примере определенной версией пакета, например `3.0.0-beta5`. Допустимые версии перечислены на отдельных страницах пакета по адресу [NuGet.org](https://nuget.org). Основные версии, соответствующие функциям среды выполнения 1. x или 2. x, указаны в справочной статье для привязки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"]
-> [Azure Function trigger and binding example](./functions-bindings-example.md)
+> [Пример триггера и привязки функции Azure](./functions-bindings-example.md)

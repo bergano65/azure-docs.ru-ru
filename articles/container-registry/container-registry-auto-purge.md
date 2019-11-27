@@ -1,19 +1,14 @@
 ---
-title: Автоматическое удаление ресурсов изображений в реестре контейнеров Azure
+title: Очистка тегов и манифестов
 description: Используйте команду "очистить", чтобы удалить несколько тегов и манифестов из реестра контейнеров Azure на основе возраста и фильтра тегов, а также при необходимости запланировать операции очистки.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 08/14/2019
-ms.author: danlep
-ms.openlocfilehash: 6841bf18f57f514455f7680126c3cc58e7ebd7b1
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 65169927f7a1cffa88a2d909217e636417f695cc
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74148933"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456485"
 ---
 # <a name="automatically-purge-images-from-an-azure-container-registry"></a>Автоматическая очистка образов из реестра контейнеров Azure
 

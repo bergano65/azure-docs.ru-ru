@@ -1,19 +1,16 @@
 ---
-title: Реестр контейнеров Azure — часто задаваемые вопросы
+title: Часто задаваемые вопросы
 description: Ответы на часто задаваемые вопросы, связанные со службой реестра контейнеров Azure
-services: container-registry
 author: sajayantony
-manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 07/02/2019
 ms.author: sajaya
-ms.openlocfilehash: 40e82f1ae6366575352bd0675e3f748dc345ed75
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 1f2c79b47df4cf44b6fa3981bac4a5a3bf61c4df
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74279235"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456393"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о Реестре контейнеров Azure
 

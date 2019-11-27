@@ -13,77 +13,78 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: robreed
-ms.openlocfilehash: 1825f9f0f5d525c0129341d800ca5949136ae633
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: b631a370c64522c201f1208819b5a76895d83b09
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73750076"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74457519"
 ---
-# <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Расширение DSC для Linux (Microsoft.OSTCExtensions.DSCForLinux)
+# <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Расширение DSC для Linux (Microsoft. OSTCExtensions. Дскфорлинукс)
 
-Desired State Configuration (DSC) — это платформа, которая позволяет управлять инфраструктурой ИТ и разработки, используя конфигурацию как код.
+Настройка требуемого состояния (DSC) — это платформа управления, которую можно использовать для управления инфраструктурой ИТ и разработки с помощью конфигурации в виде кода.
 
-> ! Обратите внимание, что расширение DSC для Linux и [Azure Monitor расширение виртуальной машины для Linux](/azure/virtual-machines/extensions/oms-linux) в настоящее время представляют конфликт и не поддерживаются в параллельной конфигурации.  Это означает, что эти два решения не следует использовать вместе на одной виртуальной машине.
+> [!NOTE]
+> Расширение DSC для Linux и [Azure Monitor расширение виртуальной машины для Linux](/azure/virtual-machines/extensions/oms-linux) в настоящее время представляют конфликт и не поддерживаются в параллельной конфигурации. Не используйте эти два решения на одной виртуальной машине.
 
-Расширение DSCForLinux публикуется и поддерживается корпорацией Майкрософт. Оно устанавливает агенты OMI и DSC на виртуальных машинах Azure. Расширение DSC также может выполнить следующие действия:
+Расширение Дскфорлинукс публикуется и поддерживается корпорацией Майкрософт. Оно устанавливает агенты OMI и DSC на виртуальных машинах Azure. Расширение DSC также может выполнять следующие действия:
 
 
-- регистрация виртуальной машины Linux в учетной записи службы автоматизации Azure для извлечения конфигураций из службы автоматизации Azure (Register ExtensionAction);
-- отправка конфигураций MOF на виртуальную машину Linux (Push ExtensionAction);
-- применение конфигурации Meta MOF на виртуальной машине Linux для настройки опрашивающего сервера с целью извлечения конфигурации узла (Pull ExtensionAction);
-- установка пользовательских модулей DSC на виртуальную машину Linux (Install ExtensionAction);
-- удаление пользовательских модулей DSC с виртуальной машины Linux (Remove ExtensionAction).
+- Зарегистрируйте виртуальную машину Linux в учетной записи службы автоматизации Azure, чтобы извлекать конфигурации в службе автоматизации Azure (Register Екстенсионактион).
+- Принудительная отправка конфигураций MOF на виртуальную машину Linux (Push Екстенсионактион).
+- Примените конфигурацию meta MOF к виртуальной машине Linux, чтобы настроить опрашивающий сервер для настройки опрашивающего узла (Pull Екстенсионактион).
+- Установите пользовательские модули DSC на виртуальную машину Linux (установите Екстенсионактион).
+- Удалите пользовательские модули DSC с виртуальной машины Linux (удалите Екстенсионактион).
 
  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 ### <a name="operating-system"></a>операционная система
 
 Расширение DSC для Linux поддерживает все [дистрибутивы Linux, рекомендованные для Azure](/azure/virtual-machines/linux/endorsed-distros), за исключением следующих.
 
-| Дистрибутив | Version (версия) |
+| Дистрибутив | Версия |
 |---|---|
-| Debian | Все версии. |
+| Debian | Все версии |
 | Ubuntu| 18,04 |
  
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 
-Для расширения DSCForLinux требуется, чтобы целевая виртуальная машина была подключена к Интернету. Например расширение Register требует подключения к службе автоматизации. Для других действий, например Pull, Push, Install требуется подключение к хранилищу Azure или GitHub. Это зависит от параметров, указанных клиентом.
+Для расширения Дскфорлинукс требуется, чтобы Целевая виртуальная машина была подключена к Интернету. Например, для расширения Register требуется подключение к службе автоматизации. Для других действий, таких как извлечение, извлечение, требуется подключение к службе хранилища Azure и GitHub. Это зависит от параметров, предоставленных клиентом.
 
 ## <a name="extension-schema"></a>Схема расширения
 
-### <a name="11-public-configuration"></a>1.1 Открытая конфигурация
+### <a name="public-configuration"></a>Открытая конфигурация
 
 Ниже приведены все поддерживаемые параметры открытой конфигурации:
 
-* `FileUri` (необязательный, строчный): код URI файла MOF, Meta MOF или ZIP с пользовательскими ресурсами.
-* `ResourceName` (необязательный, строчный): имя пользовательского модуля ресурсов.
-* `ExtensionAction` (необязательный, строчный): указывает, что делает расширения. Допустимые значения: Register, Push, Pull, Install, Remove. Если этот параметр не указан, по умолчанию он распознается как действие отправки.
-* `NodeConfigurationName` (необязательный, строчный): имя применяемой конфигурации узла.
-* `RefreshFrequencyMins` (необязательный, целочисленный): указывает частоту (в минутах), с которой DSC пытается получить конфигурацию от опрашивающего сервера. 
+* `FileUri`: (необязательный, строковый) универсальный код ресурса (URI) MOF-файла, файла meta MOF или настраиваемого ZIP-файла ресурса.
+* `ResourceName`: (необязательный, строковый) имя пользовательского модуля ресурсов.
+* `ExtensionAction` (необязательный, строчный): указывает, что делает расширения. Допустимые значения: Register, Push, Pull, install и Remove. Если он не указан, по умолчанию он считается действием Push.
+* `NodeConfigurationName`: (необязательный, строковый) имя конфигурации узла, которую нужно применить.
+* `RefreshFrequencyMins`: (необязательный, int) указывает частоту (в минутах), с которой DSC пытается получить конфигурацию с опрашивающего сервера. 
        Если конфигурация на опрашивающем сервере отличается от текущей на целевом узле, она копируется в ожидающее хранилище и применяется.
-* `ConfigurationMode` (необязательный, строчный): указывает, каким образом DSC следует применить конфигурацию. Допустимые значения: ApplyOnly, ApplyAndMonitor, ApplyAndAutoCorrect.
+* `ConfigurationMode` (необязательный, строчный): указывает, каким образом DSC следует применить конфигурацию. Допустимые значения: ApplyOnly, ApplyAndMonitor и ApplyAndAutoCorrect.
 * `ConfigurationModeFrequencyMins` (необязательный, целочисленный): указывает интервал (в минутах), с которым DSC проверяет, что конфигурация находится в требуемом состоянии.
 
 > [!NOTE]
-> Если вы используете версию старее 2.3, параметр mode совпадает с ExtensionAction. Похоже, что режим является перегруженным термином. Поэтому во избежание путаницы, начиная с версии 2.3, используется ExtensionAction. Для обеспечения обратной совместимости, расширение поддерживает как mode, так и ExtensionAction. 
+> Если вы используете более раннюю версию, чем 2,3, параметр Mode будет таким же, как и Екстенсионактион. Похоже, что режим является перегруженным термином. Чтобы избежать путаницы, Екстенсионактион используется в версии 2,3. Для обеспечения обратной совместимости, расширение поддерживает как mode, так и ExtensionAction. 
 >
 
-### <a name="12-protected-configuration"></a>1.2 Защищенная конфигурация
+### <a name="protected-configuration"></a>Защищенная конфигурация
 
 Ниже приведены все поддерживаемые параметры защищенной конфигурации:
 
-* `StorageAccountName` (необязательный, строчный): имя учетной записи хранения содержащей файл.
-* `StorageAccountKey` (необязательный, строчный): ключ учетной записи хранения содержащей файл.
-* `RegistrationUrl` (необязательный, строчный): URL-адрес учетной записи службы автоматизации Azure.
-* `RegistrationKey` (необязательный, строчный): ключ доступа учетной записи службы автоматизации Azure.
+* `StorageAccountName`: (необязательно, String) имя учетной записи хранения, содержащей файл
+* `StorageAccountKey`: (необязательный, строковый) ключ учетной записи хранения, содержащей файл
+* `RegistrationUrl`(необязательный, строковый) URL-адрес учетной записи службы автоматизации Azure.
+* `RegistrationKey`(необязательный, строковый) ключ доступа учетной записи службы автоматизации Azure.
 
 
 ## <a name="scenarios"></a>Сценарии
 
-### <a name="register-to-azure-automation-account"></a>Регистрация в учетной записи службы автоматизации Azure
+### <a name="register-an-azure-automation-account"></a>Регистрация учетной записи службы автоматизации Azure
 protected.json
 ```json
 {
@@ -118,7 +119,7 @@ $publicConfig = '{
 }'
 ```
 
-### <a name="apply-a-mof-configuration-file-in-azure-storage-account-to-the-vm"></a>Применение MOF-файла конфигурации (в учетной записи хранения Azure) к виртуальной машине
+### <a name="apply-an-mof-configuration-file-in-an-azure-storage-account-to-the-vm"></a>Применение файла конфигурации MOF (в учетной записи хранения Azure) к виртуальной машине
 
 protected.json
 ```json
@@ -150,7 +151,7 @@ $publicConfig = '{
 ```
 
 
-### <a name="apply-a-mof-configuration-file-in-public-storage-to-the-vm"></a>Применение MOF-файла конфигурации (в общедоступном хранилище) к виртуальной машине
+### <a name="apply-an-mof-configuration-file-in-public-storage-to-the-vm"></a>Применение файла конфигурации MOF (в общедоступном хранилище) к виртуальной машине
 
 public.json
 ```json
@@ -166,7 +167,7 @@ $publicConfig = '{
 }'
 ```
 
-### <a name="apply-a-meta-mof-configuration-file-in-azure-storage-account-to-the-vm"></a>Применение файла конфигурации Meta MOF (в учетной записи хранения Azure) к виртуальной машине
+### <a name="apply-a-meta-mof-configuration-file-in-an-azure-storage-account-to-the-vm"></a>Применение файла конфигурации meta MOF (в учетной записи хранения Azure) к виртуальной машине
 
 protected.json
 ```json
@@ -213,7 +214,7 @@ $publicConfig = '{
 }'
 ```
 
-### <a name="install-a-custom-resource-module-zip-file-in-azure-storage-account-to-the-vm"></a>Установка пользовательского модуля ресурсов (ZIP-файл в учетной записи хранения Azure) на виртуальной машине
+### <a name="install-a-custom-resource-module-a-zip-file-in-an-azure-storage-account-to-the-vm"></a>Установка настраиваемого модуля ресурсов (ZIP-файл в учетной записи хранения Azure) на виртуальную машину
 protected.json
 ```json
 {
@@ -242,7 +243,7 @@ $publicConfig = '{
 }'
 ```
 
-### <a name="install-a-custom-resource-module-zip-file-in-public-storage-to-the-vm"></a>Установка пользовательского модуля ресурсов (ZIP-файл в общедоступном хранилище) на виртуальной машине
+### <a name="install-a-custom-resource-module-a-zip-file-in-public-storage-to-the-vm"></a>Установка настраиваемого модуля ресурсов (ZIP-файл в общедоступном хранилище) на виртуальную машину
 public.json
 ```json
 {
@@ -276,25 +277,25 @@ $publicConfig = '{
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 
-Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Шаблоны идеально подходят для развертывания одной или нескольких виртуальных машин, требующих настройки после развертывания, например подключения к службе автоматизации Azure. 
+Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Шаблоны идеально подходят при развертывании одной или нескольких виртуальных машин, для которых требуется настройка после развертывания, например для адаптации к службе автоматизации Azure. 
 
 Пример шаблона Resource Manager — [201-dsc-linux-azure-storage-on-ubuntu](https://github.com/Azure/azure-quickstart-templates/tree/master/201-dsc-linux-azure-storage-on-ubuntu) и [201-dsc-linux-public-storage-on-ubuntu](https://github.com/Azure/azure-quickstart-templates/tree/master/201-dsc-linux-public-storage-on-ubuntu).
 
-Дополнительную информацию о шаблонах Resource Manager см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md).
+Дополнительные сведения о шаблоне Azure Resource Manager см. в разделе [authoring Azure Resource Manager Templates](../../azure-resource-manager/resource-group-authoring-templates.md).
 
 
 ## <a name="azure-cli-deployment"></a>Развертывание с помощью Azure CLI
 
-### <a name="21-using-azure-cliazure-cli"></a>2.1. Использование [**Azure CLI**] [azure-cli]
-Прежде чем развертывать расширение DSCForLinux, необходимо настроить `public.json` и `protected.json` в соответствии с различными сценариями, описанными в разделе 3.
+### <a name="use-azure-cliazure-cli"></a>Использование [Azure CLI] [Azure-CLI]
+Перед развертыванием расширения Дскфорлинукс настройте `public.json` и `protected.json` в соответствии с различными сценариями в разделе 3.
 
-#### <a name="211-classic"></a>2.1.1. Классический
-Классический режим еще называют режимом управления службами Azure. Его можно включить с помощью команды:
+#### <a name="classic"></a>Классический
+Классический режим развертывания также называется режимом управления службами Azure. Его можно включить с помощью команды:
 ```
 $ azure config mode asm
 ```
 
-Расширение DSCForLinux развертывается командой:
+Расширение Дскфорлинукс можно развернуть, выполнив команду:
 ```
 $ azure vm extension set <vm-name> DSCForLinux Microsoft.OSTCExtensions <version> \
 --private-config-path protected.json --public-config-path public.json
@@ -305,33 +306,33 @@ $ azure vm extension set <vm-name> DSCForLinux Microsoft.OSTCExtensions <version
 $ azure vm extension list
 ```
 
-#### <a name="212-resource-manager"></a>2.1.2. Диспетчер ресурсов
+#### <a name="resource-manager"></a>Диспетчер ресурсов
 Чтобы переключиться в режим Azure Resource Manager, выполните команду:
 ```
 $ azure config mode arm
 ```
 
-Расширение DSCForLinux развертывается командой:
+Расширение Дскфорлинукс можно развернуть, выполнив команду:
 ```
 $ azure vm extension set <resource-group> <vm-name> \
 DSCForLinux Microsoft.OSTCExtensions <version> \
 --private-config-path protected.json --public-config-path public.json
 ```
 > [!NOTE]
-> В режиме Azure Resource Manager `azure vm extension list` на данный момент недоступна.
+> В Azure Resource Manager режиме `azure vm extension list` сейчас недоступен.
 >
 
-### <a name="22-using-azure-powershellazure-powershell"></a>2.2. Использование [**Azure PowerShell**] [azure-powershell]
+### <a name="use-azure-powershellazure-powershell"></a>Использование [Azure PowerShell] [Azure-PowerShell]
 
-#### <a name="221-classic"></a>2.2.1 Классический
+#### <a name="classic"></a>Классический
 
-Вы можете войти в учетную запись Azure (режим управления службами Azure), с помощью команды:
+Вы можете войти в учетную запись Azure в режиме управления службами Azure, выполнив команду:
 
 ```powershell>
 Add-AzureAccount
 ```
 
-Затем следует развернуть расширение DSCForLinux с помощью команды:
+И разверните расширение Дскфорлинукс, выполнив команду:
 
 ```powershell>
 $vmname = '<vm-name>'
@@ -341,7 +342,7 @@ $publisher = 'Microsoft.OSTCExtensions'
 $version = '< version>'
 ```
 
-После этого необходимо изменить содержимое $privateConfig и $publicConfig в соответствии с различными сценариями, описанными в разделе выше. 
+Измените содержимое $privateConfig и $publicConfig в соответствии с различными сценариями, описанными в предыдущем разделе.
 ```
 $privateConfig = '{
   "StorageAccountName": "<storage-account-name>",
@@ -362,17 +363,17 @@ Set-AzureVMExtension -ExtensionName $extensionName -VM $vm -Publisher $publisher
   -PublicConfiguration $publicConfig | Update-AzureVM
 ```
 
-#### <a name="222resource-manager"></a>2.2.2.Диспетчер ресурсов
+#### <a name="resource-manager"></a>Диспетчер ресурсов
 
-Вы можете войти в учетную запись Azure (режим Azure Resource Manager) с помощью команды:
+Вы можете войти в учетную запись Azure в Azure Resource Managerном режиме, выполнив команду:
 
 ```powershell>
 Login-AzAccount
 ```
 
-Дополнительную информацию об использовании Azure PowerShell с Azure Resource Manager см. [**здесь**](../../azure-resource-manager/manage-resources-powershell.md).
+Дополнительные сведения об использовании Azure PowerShell с Azure Resource Manager см. в статье [Управление ресурсами Azure с помощью Azure PowerShell](../../azure-resource-manager/manage-resources-powershell.md).
 
-Расширение DSCForLinux развертывается командой:
+Расширение Дскфорлинукс можно развернуть, выполнив команду:
 
 ```powershell>
 $rgName = '<resource-group-name>'
@@ -383,7 +384,7 @@ $publisher = 'Microsoft.OSTCExtensions'
 $version = '< version>'
 ```
 
-После этого необходимо изменить содержимое $privateConfig и $publicConfig в соответствии с различными сценариями, описанными в разделе выше. 
+Измените содержимое $privateConfig и $publicConfig в соответствии с различными сценариями, описанными в предыдущем разделе.
 ```
 $privateConfig = '{
   "StorageAccountName": "<storage-account-name>",
@@ -408,7 +409,7 @@ Set-AzVMExtension -ResourceGroupName $rgName -VMName $vmName -Location $location
 
 ### <a name="troubleshoot"></a>Устранение неполадок
 
-Данные о состоянии развертывания расширения можно получить на портале Azure, а также использовав Azure CLI. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните следующую команду в Azure CLI.
+Данные о состоянии развертываний расширений можно получить из портал Azure и с помощью Azure CLI. Чтобы просмотреть состояние развертывания расширений для данной виртуальной машины, выполните следующую команду с помощью Azure CLI.
 
 ```azurecli
 az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
@@ -420,14 +421,14 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 /var/log/azure/<extension-name>/<version>/extension.log file.
 ```
 
-Код ошибки 51 указывает на неподдерживаемый дистрибутив или неподдерживаемое действие расширения.
-Иногда расширению DSC Linux не удается установить OMI, если на компьютере уже есть более новая версия OMI. [error response: (000003)Downgrade not allowed] (сообщение об ошибке: (000003) откат на более старую версию не разрешен)
+Код ошибки: 51 представляет неподдерживаемое распространение или неподдерживаемое действие расширения.
+В некоторых случаях расширение DSC для Linux не может установить OMI, если на компьютере уже существует более поздняя версия OMI. [error response: (000003)Downgrade not allowed] (сообщение об ошибке: (000003) откат на более старую версию не разрешен)
 
 
 
 ### <a name="support"></a>Поддержка
 
-Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если вам нужна дополнительная помощь в любой момент в этой статье, обратитесь к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зафайлировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/)и выберите **получить поддержку**. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения о расширениях виртуальных машин см. в обзоре [расширений и компонентов виртуальной машины для Linux](features-linux.md).

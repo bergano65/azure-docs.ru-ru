@@ -19,19 +19,19 @@ ms.author: ryanwi
 ms.reviewer: sureshja
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 662d8ecf3d20716a717a5f04f30e04114c9dce04
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: 92a88b1e17812b9dc99fd1d5b391d95ba541f48a
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72374164"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533068"
 ---
 # <a name="how-to-use-the-azure-ad-graph-api"></a>Использование API Graph Azure AD
 
 > [!IMPORTANT]
-> Мы настоятельно рекомендуем использовать для доступа к ресурсам Azure Active Directory [Microsoft Graph](https://developer.microsoft.com/graph) вместо API Azure AD Graph. В настоящее время усилия наших разработчиков направлены на Microsoft Graph, и дальнейшие усовершенствования API Azure AD Graph не планируются. Существует ограниченное количество сценариев, в которых API Graph Azure AD все еще может быть подходящими. Дополнительные сведения см. в блоге [Microsoft Graph или Azure AD Graph](https://dev.office.com/blogs/microsoft-graph-or-azure-ad-graph) , а также [в статье Перенос приложений Azure ad Graph в Microsoft Graph](https://docs.microsoft.com/graph/migrate-azure-ad-graph-overview).
+> Для доступа к ресурсам Azure Active Directory (Azure AD) настоятельно рекомендуется использовать [Microsoft Graph](https://developer.microsoft.com/graph) , а не API Graph Azure AD. В настоящее время усилия наших разработчиков направлены на Microsoft Graph, и дальнейшие усовершенствования API Azure AD Graph не планируются. Существует ограниченное количество сценариев, в которых API Graph Azure AD все еще может быть подходящими. Дополнительные сведения см. в блоге [Microsoft Graph или Azure AD Graph](https://dev.office.com/blogs/microsoft-graph-or-azure-ad-graph) , а также [в статье Перенос приложений Azure ad Graph в Microsoft Graph](https://docs.microsoft.com/graph/migrate-azure-ad-graph-overview).
 
-API Graph Azure Active Directory (Azure AD) обеспечивает программный доступ к Azure AD через конечные точки REST API OData. Приложения могут использовать API Azure AD Graph для выполнения операций создания, чтения, обновления и удаления (CRUD) с данными и объектами каталогов. Например, можно использовать API Azure AD Graph для создания нового пользователя, просмотра или обновления свойств пользователя, изменения пароля пользователя, проверки членства в группе для доступа на основе ролей, а также отключения или удаления пользователя. Дополнительные сведения о функциях и сценариях приложений Azure AD API Graph см. в статье [API Graph Azure AD](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) и [Предварительные требования для API Graph Azure AD](https://msdn.microsoft.com/library/hh974476.aspx). API Graph Azure AD работает только с рабочими или учебными учетными записями или организациями.
+Azure AD API Graph предоставляет программный доступ к Azure AD через REST API конечные точки OData. Приложения могут использовать API Azure AD Graph для выполнения операций создания, чтения, обновления и удаления (CRUD) с данными и объектами каталогов. Например, можно использовать API Azure AD Graph для создания нового пользователя, просмотра или обновления свойств пользователя, изменения пароля пользователя, проверки членства в группе для доступа на основе ролей, а также отключения или удаления пользователя. Дополнительные сведения о функциях и сценариях приложений Azure AD API Graph см. в статье [API Graph Azure AD](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) и [Предварительные требования для API Graph Azure AD](https://msdn.microsoft.com/library/hh974476.aspx). API Graph Azure AD работает только с рабочими или учебными учетными записями или организациями.
 
 В этой статье рассматривается API Graph Azure AD. Аналогичные сведения, связанные с API Microsoft Graph, см. в статье [Использование API Microsoft Graph](https://developer.microsoft.com/graph/docs/concepts/use_the_api).
 

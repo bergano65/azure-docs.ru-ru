@@ -1,7 +1,7 @@
 ---
-title: 'Designer: Predict churn example'
+title: 'Конструктор: пример изменения прогноза'
 titleSuffix: Azure Machine Learning
-description: Follow this classification example to predict churn with Azure Machine Learning designer & boosted decision trees.
+description: Используйте этот пример классификации для прогнозирования обновлений с помощью Машинное обучение Azure конструктора & увеличивающихся деревьев принятия решений.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -17,73 +17,73 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74225124"
 ---
-# <a name="use-boosted-decision-tree-to-predict-churn-with-azure-machine-learning-designer"></a>Use boosted decision tree to predict churn with Azure Machine Learning designer
+# <a name="use-boosted-decision-tree-to-predict-churn-with-azure-machine-learning-designer"></a>Использование увеличивающегося дерева принятия решений для прогнозирования обновлений с помощью Машинное обучение Azure конструктора
 
-**Designer (preview) sample 5**
+**Конструктор (Предварительная версия) — пример 5**
 
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
 
-Learn how to build a complex machine learning pipeline without writing a single line of code using the designer (preview).
+Узнайте, как создать сложный конвейер машинного обучения без написания единой строки кода с помощью конструктора (Предварительная версия).
 
-This pipeline trains 2 **two-class boosted decision tree** classifiers to predict common tasks for customer relationship management (CRM) systems - customer churn. The data values and labels are split across multiple data sources and scrambled to anonymize customer information, however, we can still use the designer to combine data sets and train a model using the obscured values.
+Этот конвейер обучает 2 классификаторов **дерева принятия решений с двумя классами** для прогнозирования общих задач для систем управления отношениями с клиентами (CRM). Значения данных и метки разбиваются по нескольким источникам данных и передаются в Анонимизация информацию о клиентах, однако мы по-прежнему можем использовать конструктор для объединения наборов данных и обучения модели с помощью скрытых значений.
 
-Because you're trying to answer the question "Which one?" this is called a classification problem, but you can apply the same logic shown in this sample to tackle any type of machine learning problem whether it be regression, classification, clustering, and so on.
+Так как вы пытаетесь ответить на вопрос "какой из них?" Это называется проблемой классификации, но вы можете применить ту же логику, показанную в этом примере, чтобы решить любой тип проблемы машинного обучения, будь то регрессия, классификация, кластеризация и т. д.
 
-Here's the completed graph for this pipeline:
+Вот завершенный граф для этого конвейера:
 
-![Pipeline graph](./media/how-to-designer-sample-classification-predict-churn/pipeline-graph.png)
+![Граф конвейера](./media/how-to-designer-sample-classification-predict-churn/pipeline-graph.png)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 
-4. Click sample 5 to open it. 
+4. Щелкните пример 5, чтобы открыть его. 
 
 ## <a name="data"></a>Данные
 
-The data for this pipeline is from KDD Cup 2009. It has 50,000 rows and 230 feature columns. The task is to predict churn, appetency, and up-selling for customers who use these features. For more information about the data and the task, see the [KDD website](https://www.kdd.org/kdd-cup/view/kdd-cup-2009).
+Данные для этого конвейера находятся в KDDной чашке 2009. Он содержит 50 000 строк и 230 столбцов функций. Задача заключается в прогнозировании обновлений, стремления и продаж для клиентов, использующих эти функции. Дополнительные сведения о данных и задачах см. на [веб-сайте KDD](https://www.kdd.org/kdd-cup/view/kdd-cup-2009).
 
-## <a name="pipeline-summary"></a>Pipeline summary
+## <a name="pipeline-summary"></a>Сводка по конвейеру
 
-This sample pipeline in the designer shows binary classifier prediction of churn, appetency, and up-selling, a common task for customer relationship management (CRM).
+В этом образце конвейера в конструкторе показана двоичная классификация по обработке, стремления и продажам в двоичном виде, которая представляет собой общую задачу управления отношениями с клиентами (CRM).
 
-First, some simple data processing.
+Во первых, это упрощает обработку данных.
 
-- The raw dataset has many missing values. Use the **Clean Missing Data** module to replace the missing values with 0.
+- Необработанный набор данных содержит много отсутствующих значений. Используйте модуль **Clean Missing Data (очистка недостающих данных** ), чтобы заменить отсутствующие значения на 0.
 
-    ![Clean the dataset](./media/how-to-designer-sample-classification-predict-churn/cleaned-dataset.png)
+    ![Очистка набора данных](./media/how-to-designer-sample-classification-predict-churn/cleaned-dataset.png)
 
-- The features and the corresponding churn are in different datasets. Use the **Add Columns** module to append the label columns to the feature columns. The first column, **Col1**, is the label column. From the visualization result we can see the dataset is unbalanced. There way more negative (-1) examples than positive examples (+1). We will use **SMOTE** module to increase underrepresented cases later.
+- Функции и соответствующие обновления находятся в разных наборах данных. Используйте модуль **Добавление столбцов** , чтобы добавить столбцы меток в столбцы компонентов. Первый столбец **col1**является столбцом меток. В результате визуализации можно увидеть, что набор данных не сбалансирован. Есть более отрицательные (-1) примеры, чем положительные примеры (+ 1). Мы будем использовать модуль **смоте** для увеличения количества несоответствующих вариантов позже.
 
-    ![Add the column dataset](./media/how-to-designer-sample-classification-predict-churn/added-column1.png)
+    ![Добавление набора данных столбца](./media/how-to-designer-sample-classification-predict-churn/added-column1.png)
 
 
 
-- Use the **Split Data** module to split the dataset into train and test sets.
+- Используйте модуль **Split Data (разделение данных** ), чтобы разделить набор данных на обучение и тестирование наборов.
 
-- Then use the Boosted Decision Tree binary classifier with the default parameters to build the prediction models. Build one model per task, that is, one model each to predict up-selling, appetency, and churn.
+- Затем используйте двоичный классификатор увеличивающегося дерева принятия решений с параметрами по умолчанию для построения моделей прогнозирования. Создайте одну модель для каждой задачи, то есть одну модель для прогнозирования продаж, стремления и обработки.
 
-- In the right part of the pipeline, we use **SMOTE** module to increase the percentage of positive examples. The SMOTE percentage is set to 100 to double the positive examples. Learn more on how SMOTE module works with [SMOTE module reference0](../././algorithm-module-reference/SMOTE.md).
+- В правой части конвейера мы используем модуль **смоте** для увеличения процента положительных примеров. Значение СМОТЕ в процентах устанавливается равным 100, чтобы удвоить положительные примеры. Узнайте больше о работе модуля СМОТЕ с [reference0 модуля смоте](../././algorithm-module-reference/SMOTE.md).
 
 ## <a name="results"></a>Результаты
 
-Visualize the output of the **Evaluate Model** module to see the performance of the model on the test set. 
+Визуализируйте выходные данные модуля « **Анализ модели** », чтобы оценить производительность модели в тестовом наборе. 
 
 ![анализ результатов;](./media/how-to-designer-sample-classification-predict-churn/evaluate-result.png)
 
- You can move the **Threshold** slider and see the metrics change for the binary classification task. 
+ Можно переместить ползунок **порога** и просмотреть изменения метрик для задачи двоичной классификации. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [aml-ui-cleanup](../../../includes/aml-ui-cleanup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Explore the other samples available for the designer:
+Изучите другие примеры, доступные для конструктора:
 
-- [Sample 1 - Regression: Predict an automobile's price](how-to-designer-sample-regression-automobile-price-basic.md)
-- [Sample 2 - Regression: Compare algorithms for automobile price prediction](how-to-designer-sample-regression-automobile-price-compare-algorithms.md)
-- [Sample 3 - Classification with feature selection: Income Prediction](how-to-designer-sample-classification-predict-income.md)
-- [Sample 4 - Classification: Predict credit risk (cost sensitive)](how-to-designer-sample-classification-credit-risk-cost-sensitive.md)
-- [Sample 6 - Classification: Predict flight delays](how-to-designer-sample-classification-flight-delay.md)
-- [Sample 7 - Text Classification: Wikipedia SP 500 Dataset](how-to-designer-sample-text-classification.md)
+- [Пример 1. регрессия: прогнозирование цены автомобиля](how-to-designer-sample-regression-automobile-price-basic.md)
+- [Пример 2. регрессия. алгоритмы сравнения для прогнозирования цен автомобилей](how-to-designer-sample-regression-automobile-price-compare-algorithms.md)
+- [Пример 3. Классификация с выбором компонентов: прогноз дохода](how-to-designer-sample-classification-predict-income.md)
+- [Пример 4. Классификация: прогнозируемый кредитный риск (с учетом стоимости)](how-to-designer-sample-classification-credit-risk-cost-sensitive.md)
+- [Пример 6. Классификация: прогнозы задержек полета](how-to-designer-sample-classification-flight-delay.md)
+- [Пример 7. Классификация текста: набор данных Википедии SP 500](how-to-designer-sample-text-classification.md)

@@ -10,14 +10,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 11/04/2019
+ms.date: 11/22/2019
 ms.author: apimpm
-ms.openlocfilehash: 28ef082d6aac5557998f7b67443d4dafd3a0fb15
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: 8629d07830622770c3b30dacdd1fabc8417d7f52
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74285579"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74454421"
 ---
 # <a name="access-and-customize-developer-portal"></a>Доступ и Настройка портала разработчика
 
@@ -111,13 +111,16 @@ ms.locfileid: "74285579"
 
 > [!VIDEO https://www.youtube.com/embed/5mMtUSmfUlw]
 
-## <a name="publish-the-portal"></a>Публикация портала
+## <a name="publish"> </a>Публикация портала
 
 Чтобы сделать портал и его последние изменения доступными для посетителей, необходимо опубликовать его.
 
 1. Убедитесь, что изменения сохранены, щелкнув значок **сохранить** .
 1. Щелкните **Опубликовать веб-сайт** в разделе **операции** меню. Это может занять несколько минут.  
     ![опубликовать портал](media/api-management-howto-developer-portal-customize/publish-portal.png)
+
+> [!NOTE]
+> После изменения конфигурации службы управления API необходимо повторно опубликовать портал, например назначить личный домен, обновить поставщики удостоверений, задать делегирование, указать условия входа и продукта, а также многое другое.
 
 ## <a name="visit-the-published-portal"></a>Посетите опубликованный портал
 

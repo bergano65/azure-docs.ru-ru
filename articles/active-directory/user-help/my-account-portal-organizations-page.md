@@ -1,6 +1,6 @@
 ---
-title: Manage your organizations from the My Account portal - Azure AD
-description: How to view and leave organizations connected to your work or school account from the Organizations page of the My Account portal.
+title: Управляйте своими организациями на портале "Моя учетная запись" — Azure AD
+description: Как просматривать и оставлять Организации, подключенные к рабочей или учебной учетной записи, со страницы Организации на портале "Моя учетная запись".
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -19,9 +19,9 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74231849"
 ---
-# <a name="manage-organizations-connected-to-your-work-or-school-account-from-the-organizations-page"></a>Manage organizations connected to your work or school account from the Organizations page
+# <a name="manage-organizations-connected-to-your-work-or-school-account-from-the-organizations-page"></a>Управление организациями, подключенными к рабочей или учебной учетной записи, со страницы "Организации"
 
-You can manage your organizations from the **Organizations** page of the **My Account** portal.
+Управлять организациями можно на странице **Организации** на портале " **Моя учетная запись** ".
 
 На странице **Организации** отображаются два типа организаций.
 
@@ -30,7 +30,7 @@ You can manage your organizations from the **Organizations** page of the **My Ac
 - **Другие организации.** Другие организации — это любая группа, в которую вы вошли, прежде чем использовать вашу рабочую или учебную учетную запись. Вы можете покинуть эти организации в любое время.
 
     >[!NOTE]
-    > If you don't have an assigned Home organization, you'll just see a single heading that says Organizations with the list of your associated organizations.
+    > Если у вас нет назначенной домашней организации, вы увидите только один заголовок, содержащий Организации со списком связанных организаций.
 
 ## <a name="view-your-organizations"></a>Просмотр ваших организаций
 
@@ -38,7 +38,7 @@ You can manage your organizations from the **Organizations** page of the **My Ac
 
 2. Выберите на панели навигации слева **Организации** или из блока **Организации** выберите ссылку **Управление организациями**.
 
-    ![My Account page, showing highlighted Organizations links](media/my-account-portal/my-account-portal-organizations.png)
+    ![Страница «Моя учетная запись», на которой показаны ссылки на выделенные Организации](media/my-account-portal/my-account-portal-organizations.png)
 
 3. Проверьте информацию о вашей **домашней организации**.
 
@@ -51,20 +51,20 @@ You can manage your organizations from the **Organizations** page of the **My Ac
 Вы можете выйти из любой организации, кроме домашней.
 
 >[!Important]
->Если вы случайно вышли из организации, нельзя это отменить. You'll have to wait for the administrator of that organization to invite you again.
+>Если вы случайно вышли из организации, нельзя это отменить. Вам придется подождать, пока администратор этой Организации не попытается пригласить вас.
 
-1. Select **Leave organization** next to the organization you want to leave, and then select **Leave** to confirm you want to leave.
+1. Выберите вариант **покинуть организацию** рядом с Организацией, которую вы хотите покинуть, а затем нажмите кнопку **выйти** , чтобы подтвердить выход.
 
     ![Страница "Организации" со ссылкой на выход из организации](media/my-account-portal/my-account-portal-organizations-leave.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-After viewing your organizations, you can:
+Просмотрев свои организации, вы можете:
 
-- View or manage your [security info](user-help-security-info-overview.md).
+- Просмотр [сведений о безопасности](user-help-security-info-overview.md)и управление ими.
 
-- View or manage your connected [devices](my-account-portal-devices-page.md).
+- Просмотр подключенных [устройств](my-account-portal-devices-page.md)или управление ими.
 
-- View your [sign-in activity](my-account-portal-sign-ins-page.md).
+- Просмотр [действий входа](my-account-portal-sign-ins-page.md).
 
-- View how your organization [uses your privacy-related data](my-account-portal-privacy-page.md).
+- Посмотрите, как ваша организация [использует данные, связанные с конфиденциальностью](my-account-portal-privacy-page.md).

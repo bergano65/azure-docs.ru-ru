@@ -86,6 +86,8 @@
           href: groups-members-owners-search.md
         - name: Создание группы (портал Azure)
           href: /azure/active-directory/fundamentals/active-directory-groups-create-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
+        - name: Назначение меток конфиденциальности (предварительная версия)
+          href: groups-assign-sensitivity-labels.md
         - name: "Управление группами в PowerShell для Graph (версия\_2)"
           href: groups-settings-v2-cmdlets.md
         - name: Управление группами в PowerShell MSOnline

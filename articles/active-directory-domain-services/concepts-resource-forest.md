@@ -1,6 +1,6 @@
 ---
-title: Resource forest concepts for Azure AD Domain Services | Microsoft Docs
-description: Learn what a resource forest is in Azure Active Directory Domain Services and how they benefit your organization in hybrid environment with limited user authentication options or security concerns.
+title: Основные понятия леса ресурсов для доменных служб Azure AD | Документация Майкрософт
+description: Узнайте, что такое лес ресурсов в Azure Active Directory доменных служб, и как они используют вашу организацию в гибридной среде с ограниченными параметрами проверки подлинности пользователей или вопросами безопасности.
 services: active-directory-ds
 author: iainfoulds
 manager: daveba
@@ -17,106 +17,106 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74233614"
 ---
-# <a name="resource-forest-concepts-and-features-for-azure-active-directory-domain-services"></a>Resource forest concepts and features for Azure Active Directory Domain Services
+# <a name="resource-forest-concepts-and-features-for-azure-active-directory-domain-services"></a>Основные понятия и функции леса ресурсов для Azure Active Directory доменных служб
 
-Azure Active Directory Domain Services (AD DS) provides a sign-in experience for legacy, on-premises, line-of-business applications. Users, groups, and password hashes of on-premises and cloud users are synchronized to the Azure AD DS managed domain. These synchronized password hashes are what gives users a single set of credentials they can use for the on-premises AD DS, Office 365, and Azure Active Directory.
+Azure Active Directory доменных служб (AD DS) предоставляет возможность входа для устаревших локальных бизнес-приложений. Пользователи, группы и хэши паролей локальных и облачных пользователей синхронизируются с управляемым доменом AD DS Azure. Эти синхронизированные хэши паролей дают пользователям единый набор учетных данных, которые они могут использовать для локальных AD DS, Office 365 и Azure Active Directory.
 
-Although secure and provides additional security benefits, some organizations can't synchronize those user passwords hashes to Azure AD or Azure AD DS. Users in an organization may not know their password because they only use smart card authentication. These limitations prevent some organizations from using Azure AD DS to lift and shift on-premises classic applications to Azure.
+Хотя безопасность и предоставляет дополнительные преимущества безопасности, некоторые организации не могут синхронизировать эти хэши паролей пользователей с Azure AD или Azure AD DS. Пользователи в организации могут не иметь сведений о пароле, так как они используют только проверку подлинности с помощью смарт-карты. Эти ограничения не позволяют некоторым организациям использовать AD DS Azure для переноса и смены локальных классических приложений в Azure.
 
-To address these needs and restrictions, you can create an Azure AD DS managed domain that uses a resource forest. This conceptual article explains what forests are, and how they trust other resources to provide a secure authentication method. Azure AD DS resource forests are currently in preview.
+Для решения этих задач и ограничений можно создать управляемый домен Azure AD DS, использующий лес ресурсов. В этой концептуальной статье объясняется, что представляют собой леса и как они доверяют другим ресурсам, чтобы обеспечить безопасный метод проверки подлинности. В настоящее время доступны предварительные версии лесов ресурсов Azure AD DS.
 
 > [!IMPORTANT]
-> Azure AD DS resource forests don't currently support Azure HDInsight or Azure Files. The default Azure AD DS user forests do support both of these additional services.
+> В настоящее время лес ресурсов Azure AD DS не поддерживает Azure HDInsight или службы файлов Azure. По умолчанию пользовательские леса AD DS Azure поддерживают обе эти дополнительные службы.
 
-## <a name="what-are-forests"></a>What are forests?
+## <a name="what-are-forests"></a>Что такое леса?
 
-A *forest* is a logical construct used by Active Directory Domain Services (AD DS) to group one or more *domains*. The domains then store objects for user or groups, and provide authentication services.
+*Лес* — это логическая конструкция, используемая службами домен Active Directory Services (AD DS) для группирования одного или нескольких *доменов*. Затем домены сохраняют объекты для пользователей или групп и предоставляют службы проверки подлинности.
 
-In Azure AD DS, the forest only contains one domain. On-premises AD DS forests often contain many domains. In large organizations, especially after mergers and acquisitions, you may end up with multiple on-premises forests that each then contain multiple domains.
+В AD DS Azure лес содержит только один домен. Локальные AD DSные леса часто содержат много доменов. В больших организациях, особенно после слияния и приобретения, вы можете получить несколько локальных лесов, каждый из которых будет содержать несколько доменов.
 
-By default, an Azure AD DS managed domain is created as a *user* forest. This type of forest synchronizes all objects from Azure AD, including any user accounts created in an on-premises AD DS environment. User accounts can directly authenticate against the Azure AD DS managed domain, such as to sign in to a domain-joined VM. A user forest works when the password hashes can be synchronized and users aren't using exclusive sign-in methods like smart card authentication.
+По умолчанию управляемый домен Azure AD DS создается в качестве леса *пользователя* . Лес этого типа синхронизирует все объекты из Azure AD, включая учетные записи пользователей, созданные в локальной среде AD DS. Учетные записи пользователей могут напрямую проходить проверку подлинности в управляемом домене Azure AD DS, например для входа в виртуальную машину, присоединенную к домену. Пользовательский лес работает, когда хэши паролей могут быть синхронизированы, и пользователи не используют эксклюзивные методы входа, такие как проверка подлинности с помощью смарт-карты.
 
-In an Azure AD DS *resource* forest, users authenticate over a one-way forest *trust* from their on-premises AD DS. With this approach, the user objects and password hashes aren't synchronized to Azure AD DS. The user objects and credentials only exist in the on-premises AD DS. This approach lets enterprises host resources and application platforms in Azure that depend on classic authentication such LDAPS, Kerberos, or NTLM, but any authentication issues or concerns are removed. Azure AD DS resource forests are currently in preview.
+В лесу *ресурсов* Azure AD DS пользователи проходят проверку подлинности одностороннего *доверия* между лесами из локальной AD DS. При таком подходе пользовательские объекты и хэши паролей не синхронизируются с Azure AD DS. Пользовательские объекты и учетные данные существуют только в локальной AD DS. Такой подход позволяет предприятиям размещать ресурсы и платформы приложений в Azure, которые зависят от классической проверки подлинности, таких как LDAPs, Kerberos или NTLM, но все проблемы проверки подлинности или неполадки удаляются. В настоящее время доступны предварительные версии лесов ресурсов Azure AD DS.
 
-Resource forests also provide the capability to lift-and-shift your applications one component at a time. Many legacy on-premises applications are multi-tiered, often using a web server or front end and many database-related components. These tiers make it hard to lift-and-shift the entire application to the cloud in one step. With resource forests, you can lift your application to the cloud in phased approach, which makes it easier to move your application to Azure.
+Леса ресурсов также предоставляют возможность переноса и сдвига приложений по одному компоненту за раз. Многие устаревшие локальные приложения являются многоуровневые, часто используют веб-сервер или внешний интерфейс и многие компоненты, связанные с базами данных. Эти уровни затруднить перемещение всего приложения в облако за один шаг. С помощью лесов ресурсов вы можете переносить приложение в облако в поэтапном подходе, что упрощает перенос приложения в Azure.
 
-## <a name="what-are-trusts"></a>What are trusts?
+## <a name="what-are-trusts"></a>Что такое отношения доверия?
 
-Organizations that have more than one domain often need users to access shared resources in a different domain. Access to these shared resources requires that users in one domain authenticate to another domain. To provide these authentication and authorization capabilities between clients and servers in different domains, there must be a *trust* between the two domains.
+Организациям, имеющим более одного домена, часто требуется доступ пользователей к общим ресурсам в другом домене. Для доступа к этим общим ресурсам пользователи в одном домене должны пройти проверку подлинности в другом домене. Чтобы обеспечить эти возможности проверки подлинности и авторизации между клиентами и серверами в разных доменах, необходимо *отношение доверия* между двумя доменами.
 
-With domain trusts, the authentication mechanisms for each domain trust the authentications coming from the other domain. Trusts help provide controlled access to shared resources in a resource domain (the *trusting* domain) by verifying that incoming authentication requests come from a trusted authority (the *trusted* domain). Trusts act as bridges that only allow validated authentication requests to travel between domains.
+При использовании доверительных отношений между доменами механизмы проверки подлинности для каждого домена доверяют проверки подлинности, поступающие из другого домена. Отношения доверия обеспечивают управляемый доступ к общим ресурсам в домене ресурсов ( *доверяющем* домене), проверяя, что входящие запросы на аутентификацию поступают из доверенного центра ( *доверенного* домена). Отношения доверия действуют как мосты, которые позволяют пропускать проверенные запросы проверки подлинности между доменами.
 
-How a trust passes authentication requests depends on how it's configured. Trusts can be configured in one of the following ways:
+Способ, которым доверие передает запросы на проверку подлинности, зависит от того, как он настроен. Отношения доверия можно настроить одним из следующих способов:
 
-* **One-way** - provides access from the trusted domain to resources in the trusting domain.
-* **Two-way** - provides access from each domain to resources in the other domain.
+* **Односторонний** — обеспечивает доступ из доверенного домена к ресурсам в доверяющем домене.
+* **Двусторонний** — обеспечивает доступ из каждого домена к ресурсам в другом домене.
 
-Trusts are also be configured to handle additional trust relationships in one of the following ways:
+Отношения доверия также настроены на обработку дополнительных отношений доверия одним из следующих способов:
 
-* **Nontransitive** - The trust exists only between the two trust partner domains.
-* **Transitive** - Trust automatically extends to any other domains that either of the partners trusts.
+* **Нетранзитивное** — доверие существует только между двумя доверенными доменами партнеров.
+* **Транзитивное** доверие автоматически распространяется на любые другие домены, которым доверяет любой из партнеров.
 
-In some cases, trust relationships are automatically established when domains are created. Other times, you must choose a type of trust and explicitly establish the appropriate relationships. The specific types of trusts used and the structure of those trust relationships depend on how the Active Directory directory service is organized, and whether different versions of Windows coexist on the network.
+В некоторых случаях отношения доверия автоматически устанавливаются при создании доменов. В других случаях необходимо выбрать тип доверия и явно установить соответствующие связи. Конкретные типы отношений доверия и структура этих отношений доверия зависят от того, как организована служба Active Directory Directory и различаются ли разные версии Windows в сети.
 
-## <a name="trusts-between-two-forests"></a>Trusts between two forests
+## <a name="trusts-between-two-forests"></a>Отношения доверия между двумя лесами
 
-You can extend domain trusts within a single forest to another forest by manually creating a one-way or two-way forest trust. A forest trust is a transitive trust that exists only between a forest root domain and a second forest root domain.
+Вы можете расширить доверительные отношения доменов в пределах одного леса на другой лес, вручную создав одностороннее или двустороннее доверие лесов. Доверие лесов — это транзитивное отношение доверия, которое существует только между корневым доменом леса и вторым корневым доменом леса.
 
-* A one-way forest trust allows all users in one forest to trust all domains in the other forest.
-* A two-way forest trust forms a transitive trust relationship between every domain in both forests.
+* Одностороннее доверие лесов позволяет всем пользователям в одном лесу доверять всем доменам в другом лесу.
+* Двустороннее доверие лесов образует транзитивное отношение доверия между всеми доменами в обоих лесах.
 
-The transitivity of forest trusts is limited to the two forest partners. The forest trust doesn't extend to additional forests trusted by either of the partners.
+Транзитивность доверия лесов ограничено двумя партнерами леса. Доверие лесов не распространяется на дополнительные леса, которые являются доверенными для одного из участников.
 
-![Diagram of forest trust from Azure AD DS to on-premises AD DS](./media/concepts-resource-forest/resource-forest-trust-relationship.png)
+![Схема доверия лесов из AD DS Azure к локальной AD DS](./media/concepts-resource-forest/resource-forest-trust-relationship.png)
 
-You can create different domain and forest trust configurations depending on the Active Directory structure of the organization. Azure AD DS only supports a one-way forest trust. In this configuration, resources in Azure AD DS can trust all domains in an on-premises forest.
+Можно создать различные конфигурации доверия домена и леса в зависимости от структуры Active Directory организации. AD DS Azure поддерживает только односторонние отношения доверия лесов. В этой конфигурации ресурсы в AD DS Azure могут доверять всем доменам в локальном лесу.
 
-## <a name="supporting-technology-for-trusts"></a>Supporting technology for trusts
+## <a name="supporting-technology-for-trusts"></a>Поддержка технологии для отношений доверия
 
-Trusts use various services and features, such as DNS to locate domain controllers in partnering forests. Trusts also depend on NTLM and Kerberos authentication protocols and on Windows-based authorization and access control mechanisms to help provide a secured communications infrastructure across Active Directory domains and forests. The following services and features help support successful trust relationships.
+Отношения доверия используют различные службы и функции, такие как DNS, для размещения контроллеров домена в партнерских лесах. Отношения доверия также зависят от протоколов проверки подлинности NTLM и Kerberos и механизмов управления доступом и авторизации на основе Windows, чтобы обеспечить безопасную инфраструктуру связи в Active Directory доменах и лесах. Следующие службы и компоненты помогают поддерживать успешные доверительные отношения.
 
 ### <a name="dns"></a>DNS
 
-AD DS needs DNS for domain controller (DC) location and naming. The following support from DNS is provided for AD DS to work successfully:
+AD DS требуется DNS для расположения и именования контроллера домена. Для успешной работы AD DS предоставлена следующая поддержка DNS:
 
-* A name resolution service that lets network hosts and services to locate DCs.
-* A naming structure that enables an enterprise to reflect its organizational structure in the names of its directory service domains.
+* Служба разрешения имен, которая позволяет сетевым узлам и службам размещать контроллеры домена.
+* Структура именования, которая позволяет Организации отражать организационную структуру в именах доменов службы каталогов.
 
-A DNS domain namespace is usually deployed that mirrors the AD DS domain namespace. If there's an existing DNS namespace before the AD DS deployment, the DNS namespace is typically partitioned for Active Directory, and a DNS subdomain and delegation for the Active Directory forest root is created. Additional DNS domain names are then added for each Active Directory child domain.
+Обычно развертывается пространство имен домена DNS, отражающее AD DS пространство имен домена. Если перед развертыванием AD DS существует существующее пространство имен DNS, пространство имен DNS обычно секционируется для Active Directory, а также создается поддомен DNS и делегирование для корня леса Active Directory. Затем добавляются дополнительные доменные имена DNS для каждого Active Directory дочернего домена.
 
-DNS is also used to support the location of Active Directory DCs. The DNS zones are populated with DNS resource records that enable network hosts and services to locate Active Directory DCs.
+DNS также используется для поддержки расположения Active Directory контроллеров домена. Зоны DNS заполняются записями ресурсов DNS, которые позволяют узлам и службам сети разрешать обнаружение Active Directory контроллеров домена.
 
-### <a name="applications-and-net-logon"></a>Applications and Net Logon
+### <a name="applications-and-net-logon"></a>Приложения и Net Logon
 
-Both applications and the Net Logon service are components of the Windows distributed security channel model. Applications integrated with Windows Server and Active Directory use authentication protocols to communicate with the Net Logon service so that a secured path can be established over which authentication can occur.
+Оба приложения и служба сетевого входа в систему являются компонентами модели распределенного канала безопасности Windows. Приложения, интегрированные с Windows Server и Active Directory используют протоколы проверки подлинности для взаимодействия со службой сетевого входа в систему, чтобы можно было установить защищенный путь, который может быть установлен для проверки подлинности.
 
 ### <a name="authentication-protocols"></a>Протоколы проверки подлинности
 
-Active Directory DCs authenticate users and applications using one of the following protocols:
+Active Directory DCs проверяет подлинность пользователей и приложений с помощью одного из следующих протоколов:
 
-* **Kerberos version 5 authentication protocol**
-    * The Kerberos version 5 protocol is the default authentication protocol used by on-premises computers running Windows and supporting third-party operating systems. This protocol is specified in RFC 1510 and is fully integrated with Active Directory, server message block (SMB), HTTP, and remote procedure call (RPC), as well as the client and server applications that use these protocols.
-    * When the Kerberos protocol is used, the server doesn't have to contact the DC. Instead, the client gets a ticket for a server by requesting one from a DC in the server account domain. The server then validates the ticket without consulting any other authority.
-    * If any computer involved in a transaction doesn't support the Kerberos version 5 protocol, the NTLM protocol is used.
+* **Протокол проверки подлинности Kerberos версии 5**
+    * Протокол Kerberos версии 5 является протоколом проверки подлинности по умолчанию, используемым локальными компьютерами под управлением Windows и поддерживающими операционные системы сторонних производителей. Этот протокол указан в RFC 1510 и полностью интегрирован с Active Directory, SMB, HTTP и удаленным вызовом процедур (RPC), а также клиентскими и серверными приложениями, использующими эти протоколы.
+    * Если используется протокол Kerberos, серверу не нужно обращаться к контроллеру домена. Вместо этого клиент получает билет для сервера, запрашивая его у контроллера домена в домене учетной записи сервера. Затем сервер проверяет билет без консультации с другими центрами.
+    * Если любой компьютер, вовлеченный в транзакцию, не поддерживает протокол Kerberos версии 5, используется протокол NTLM.
 
-* **NTLM authentication protocol**
-    * The NTLM protocol is a classic network authentication protocol used by older operating systems. For compatibility reasons, it's used by Active Directory domains to process network authentication requests that come from applications designed for earlier Windows-based clients and servers, and third-party operating systems.
-    * When the NTLM protocol is used between a client and a server, the server must contact a domain authentication service on a DC to verify the client credentials. The server authenticates the client by forwarding the client credentials to a DC in the client account domain.
-    * When two Active Directory domains or forests are connected by a trust, authentication requests made using these protocols can be routed to provide access to resources in both forests.
+* **Протокол проверки подлинности NTLM**
+    * Протокол NTLM — это классический сетевой протокол проверки подлинности, используемый в старых операционных системах. В целях совместимости он используется Active Directory доменами для обработки запросов проверки подлинности сети, поступающих из приложений, предназначенных для более ранних клиентов и серверов под управлением Windows, и операционных систем сторонних производителей.
+    * Если между клиентом и сервером используется протокол NTLM, сервер должен обратиться к службе проверки подлинности домена на КОНТРОЛЛЕРе домена, чтобы проверить учетные данные клиента. Сервер выполняет проверку подлинности клиента, пересылая учетные данные клиента КОНТРОЛЛЕРу домена в домене учетной записи клиента.
+    * При соединении доверия между двумя Active Directory доменами или лесами запросы на проверку подлинности, созданные с помощью этих протоколов, можно маршрутизировать для предоставления доступа к ресурсам в обоих лесах.
 
 ## <a name="authorization-and-access-control"></a>Проверка подлинности и управление доступом
 
-Authorization and trust technologies work together to provide a secured communications infrastructure across Active Directory domains or forests. Authorization determines what level of access a user has to resources in a domain. Trusts facilitate cross-domain authorization of users by providing a path for authenticating users in other domains so their requests to shared resources in those domains can be authorized.
+Технологии авторизации и доверия работают совместно, чтобы обеспечить безопасную инфраструктуру связи в Active Directory доменах или лесах. Авторизация определяет уровень доступа пользователя к ресурсам в домене. Отношения доверия упрощают междоменную авторизацию пользователей, предоставляя путь для проверки подлинности пользователей в других доменах, чтобы их запросы к общим ресурсам в этих доменах могли быть авторизованы.
 
-When an authentication request made in a trusting domain is validated by the trusted domain, it's passed to the target resource. The target resource then determines whether to authorize the specific request made by the user, service, or computer in the trusted domain based on its access control configuration.
+Когда запрос на проверку подлинности, сделанный в доверяющем домене, проверяется доверенным доменом, он передается целевому ресурсу. Затем целевой ресурс определяет, следует ли авторизовать конкретный запрос, сделанный пользователем, службой или компьютером в доверенном домене, на основе его конфигурации контроля доступа.
 
-Trusts provide this mechanism to validate authentication requests that are passed to a trusting domain. Access control mechanisms on the resource computer determine the final level of access granted to the requestor in the trusted domain.
+Отношения доверия обеспечивают этот механизм для проверки запросов проверки подлинности, передаваемых в доверяющий домен. Механизмы управления доступом на компьютере ресурса определяют окончательный уровень доступа, предоставленный запрашивающему пользователю в доверенном домене.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-To learn more about trusts, see [How do forest trusts work in Azure AD DS?][concepts-trust]
+Дополнительные сведения о доверии см [. в разделе как работают отношения доверия лесов в Azure AD DS?][concepts-trust]
 
-To get started with creating an Azure AD DS managed domain with a resource forest, see [Create and configure an Azure AD DS managed domain][tutorial-create-advanced]. You can then [Create an outbound forest trust to an on-premises domain (preview)][create-forest-trust].
+Чтобы приступить к созданию управляемого домена Azure AD DS с помощью леса ресурсов, см. статью [Создание и Настройка управляемого домена AD DS Azure][tutorial-create-advanced]. Затем можно [создать исходящее доверие лесов для локального домена (Предварительная версия)][create-forest-trust].
 
 <!-- LINKS - INTERNAL -->
 [concepts-trust]: concepts-forest-trust.md

@@ -1,19 +1,14 @@
 ---
-title: Справочник по схеме веб-перехватчика реестра контейнеров Azure
-description: Запрос к веб-перехватчику со ссылкой на полезные данные JSON для реестра контейнеров Azure.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
+title: Справочник по схеме веб-перехватчика реестра
+description: Справочник по полезной нагрузке JSON для запросов веб-перехватчиков в реестре контейнеров Azure, которые создаются, когда веб-перехватчики включены для событий принудительной отправки или удаления артефактов.
 ms.topic: article
 ms.date: 03/05/2019
-ms.author: danlep
-ms.openlocfilehash: fcdee2be92f2a3052e2ebbfaab3a2f9cb96e0125
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 8354ef9db24d5825238155ac567d5d829f9b0d7f
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68311595"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74455973"
 ---
 # <a name="azure-container-registry-webhook-reference"></a>Справочник по веб-перехватчику реестра контейнеров Azure
 
@@ -41,7 +36,7 @@ ms.locfileid: "68311595"
 
 ### <a name="push-event-payload"></a>Полезные данные события Push
 
-|Элемент|Тип|Описание|
+|Элемент|введите|ОПИСАНИЕ|
 |-------------|----------|-----------|
 |`id`|Строка,|Идентификатор события веб-перехватчика.|
 |`timestamp`|DateTime|Время создания события веб-перехватчика.|
@@ -51,7 +46,7 @@ ms.locfileid: "68311595"
 
 ### <a name="target"></a>мишень
 
-|Элемент|Тип|Описание|
+|Элемент|введите|ОПИСАНИЕ|
 |------------------|----------|-----------|
 |`mediaType`|Строка,|Тип MIME передаваемого объекта.|
 |`size`|Int32|Число байтов содержимого. Это значение совпадает со значением поля Length.|
@@ -62,7 +57,7 @@ ms.locfileid: "68311595"
 
 ### <a name="request"></a>получения
 
-|Элемент|Тип|Описание|
+|Элемент|введите|ОПИСАНИЕ|
 |------------------|----------|-----------|
 |`id`|Строка,|Идентификатор запроса, инициировавшего событие.|
 |`host`|Строка,|Доступное из внешней сети имя узла на экземпляре реестра, которое указано в заголовке host во входящих HTTP-запросах.|
@@ -105,7 +100,7 @@ docker push myregistry.azurecr.io/hello-world:v1
 
 ### <a name="chart-push-event-payload"></a>Полезные данные события push-уведомлений диаграммы
 
-|Элемент|Тип|Описание|
+|Элемент|введите|ОПИСАНИЕ|
 |-------------|----------|-----------|
 |`id`|Строка,|Идентификатор события веб-перехватчика.|
 |`timestamp`|DateTime|Время создания события веб-перехватчика.|
@@ -114,7 +109,7 @@ docker push myregistry.azurecr.io/hello-world:v1
 
 ### <a name="helm_target"></a>мишень
 
-|Элемент|Type|Описание|
+|Элемент|введите|ОПИСАНИЕ|
 |------------------|----------|-----------|
 |`mediaType`|Строка,|Тип MIME передаваемого объекта.|
 |`size`|Int32|Число байтов содержимого.|
@@ -143,7 +138,7 @@ docker push myregistry.azurecr.io/hello-world:v1
 }
 ```
 
-Пример [Azure CLI](/cli/azure/acr) команды, запускающей веб-перехватчик события **chart_push** :
+Пример [Azure CLI](/cli/azure/acr) команды, запускающей веб-перехватчик **chart_push** события:
 
 ```azurecli
 az acr helm push wordpress-5.4.0.tgz --name MyRegistry
@@ -155,7 +150,7 @@ az acr helm push wordpress-5.4.0.tgz --name MyRegistry
 
 ### <a name="delete-event-payload"></a>Полезные данные события Delete
 
-|Элемент|Тип|Описание|
+|Элемент|введите|ОПИСАНИЕ|
 |-------------|----------|-----------|
 |`id`|Строка,|Идентификатор события веб-перехватчика.|
 |`timestamp`|DateTime|Время создания события веб-перехватчика.|
@@ -165,7 +160,7 @@ az acr helm push wordpress-5.4.0.tgz --name MyRegistry
 
 ### <a name="delete_target"></a> target
 
-|Элемент|Тип|Описание|
+|Элемент|введите|ОПИСАНИЕ|
 |------------------|----------|-----------|
 |`mediaType`|Строка,|Тип MIME передаваемого объекта.|
 |`digest`|Строка,|Хэш-код содержимого, как определено в спецификации API HTTP версии 2 реестра.|
@@ -173,7 +168,7 @@ az acr helm push wordpress-5.4.0.tgz --name MyRegistry
 
 ### <a name="delete_request"></a> request
 
-|Элемент|Тип|Описание|
+|Элемент|введите|ОПИСАНИЕ|
 |------------------|----------|-----------|
 |`id`|Строка,|Идентификатор запроса, инициировавшего событие.|
 |`host`|Строка,|Доступное из внешней сети имя узла на экземпляре реестра, которое указано в заголовке host во входящих HTTP-запросах.|
@@ -217,7 +212,7 @@ az acr repository delete --name MyRegistry --image MyRepository:MyTag
 
 ### <a name="chart-delete-event-payload"></a>Полезные данные события удаления диаграммы
 
-|Элемент|Type|Описание|
+|Элемент|введите|ОПИСАНИЕ|
 |-------------|----------|-----------|
 |`id`|Строка,|Идентификатор события веб-перехватчика.|
 |`timestamp`|DateTime|Время создания события веб-перехватчика.|
@@ -226,7 +221,7 @@ az acr repository delete --name MyRegistry --image MyRepository:MyTag
 
 ### <a name="chart_delete_target"></a> target
 
-|Элемент|Тип|Описание|
+|Элемент|введите|ОПИСАНИЕ|
 |------------------|----------|-----------|
 |`mediaType`|Строка,|Тип MIME передаваемого объекта.|
 |`size`|Int32|Число байтов содержимого.|
@@ -255,12 +250,12 @@ az acr repository delete --name MyRegistry --image MyRepository:MyTag
 }
 ```
 
-Пример [Azure CLI](/cli/azure/acr) команды, запускающей веб-перехватчик события **chart_delete** :
+Пример [Azure CLI](/cli/azure/acr) команды, запускающей веб-перехватчик **chart_delete** события:
 
 ```azurecli
 az acr helm delete wordpress --version 5.4.0 --name MyRegistry
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 [Использование веб-перехватчиков реестра контейнеров Azure](container-registry-webhook.md)

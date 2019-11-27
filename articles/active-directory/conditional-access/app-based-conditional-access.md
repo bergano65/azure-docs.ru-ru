@@ -1,6 +1,6 @@
 ---
-title: Approved client apps with Conditional Access - Azure Active Directory
-description: Learn how to require approved client apps for cloud app access with Conditional Access in Azure Active Directory.
+title: Утвержденные клиентские приложения с условным доступом Azure Active Directory
+description: Узнайте, как запрашивать утвержденные клиентские приложения для доступа к облачным приложениям с помощью условного доступа в Azure Active Directory.
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
@@ -18,44 +18,44 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74381122"
 ---
-# <a name="how-to-require-approved-client-apps-for-cloud-app-access-with-conditional-access"></a>How To: Require approved client apps for cloud app access with Conditional Access 
+# <a name="how-to-require-approved-client-apps-for-cloud-app-access-with-conditional-access"></a>Как запросить утвержденные клиентские приложения для доступа к облачным приложениям с помощью условного доступа 
 
-Ваши сотрудники используют мобильные устройства как в личных целях, так и для выполнения рабочих задач. Помимо обеспечения эффективности работы сотрудников требуется предотвратить возможную потерю данных. With Azure Active Directory (Azure AD) Conditional Access, you can restrict access to your cloud apps to approved client apps that can protect your corporate data.  
+Ваши сотрудники используют мобильные устройства как в личных целях, так и для выполнения рабочих задач. Помимо обеспечения эффективности работы сотрудников требуется предотвратить возможную потерю данных. С помощью условного доступа Azure Active Directory (Azure AD) можно ограничить доступ к облачным приложениям утвержденными клиентскими приложениями, которые могут защищать корпоративные данные.  
 
 В этом разделе описывается настройка политик условного доступа, которые требуют использовать утвержденные клиентские приложения.
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
-With [Azure AD Conditional Access](overview.md), you can fine-tune how authorized users can access your resources. Например, вы можете ограничить доступ к своим облачным приложениям, предоставив его только доверенным устройствам.
+С помощью [условного доступа Azure AD](overview.md)вы можете точно настроить, как разрешенные пользователи могут получать доступ к вашим ресурсам. Например, вы можете ограничить доступ к своим облачным приложениям, предоставив его только доверенным устройствам.
 
 Можно использовать [политики защиты приложений Intune](https://docs.microsoft.com/intune/app-protection-policy), чтобы обеспечить безопасность данных компании. Политики защиты приложений Intune не требуют решения по управлению мобильными устройствами (MDM). Это позволяет защитить данные компании, используя или не используя регистрацию устройств в решении по управлению устройствами.
 
-Azure Active Directory Conditional Access enables you to limit access to your cloud apps to client apps that support Intune app protection policies. Например, можно ограничить доступ приложения Outlook к Exchange Online.
+Azure Active Directory условный доступ позволяет ограничить доступ к облачным приложениям для клиентских приложений, поддерживающих политики защиты приложений Intune. Например, можно ограничить доступ приложения Outlook к Exchange Online.
 
-In the Conditional Access terminology, these client apps are known as **approved client apps**.  
+В терминологии условного доступа эти клиентские приложения называются **утвержденными клиентскими приложениями**.  
 
-![Условный доступ](./media/app-based-conditional-access/05.png)
+![условный доступ;](./media/app-based-conditional-access/05.png)
 
 Список утвержденных клиентских приложений приведен в разделе [Требование утвержденного клиентского приложения](technical-reference.md#approved-client-app-requirement).
 
-You can combine app-based Conditional Access policies with other policies such as [device-based Conditional Access policies](require-managed-devices.md) to provide flexibility in how to protect data for both personal and corporate devices.
+Политики условного доступа на основе приложений можно сочетать с другими политиками, такими как [политики условного доступа на основе устройств](require-managed-devices.md) , чтобы обеспечить гибкость в защите данных как для персональных, так и для корпоративных устройств.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
 В данной статье предполагается, что вы знакомы со следующими технологиями и процедурами:
 
 - Технический справочник по [требованию утвержденных клиентских приложений](technical-reference.md#approved-client-app-requirement).
-- The basic concepts of [Conditional Access in Azure Active Directory](overview.md).
-- How to [configure a Conditional Access policy](app-based-mfa.md).
-- The [migration of Conditional Access policies](best-practices.md#policy-migration).
+- Основные понятия [условного доступа в Azure Active Directory](overview.md).
+- [Настройка политики условного доступа](app-based-mfa.md).
+- [Миграция политик условного доступа](best-practices.md#policy-migration).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-To create an app-based Conditional Access policy, you must have an Enterprise Mobility + Security or an Azure Active Directory premium subscription, and the users must be licensed for EMS or Azure AD. 
+Чтобы создать политику условного доступа на основе приложений, необходимо иметь Enterprise Mobility + Security или подписку Azure Active Directory Premium, и пользователи должны иметь лицензию для EMS или Azure AD. 
 
 ## <a name="exchange-online-policy"></a>Политика Exchange Online 
 
-This scenario consists of an app-based Conditional Access policy for access to Exchange Online.
+Этот сценарий состоит из политики условного доступа на основе приложений для доступа к Exchange Online.
 
 ### <a name="scenario-playbook"></a>Обзор сценария
 
@@ -70,36 +70,36 @@ This scenario consists of an app-based Conditional Access policy for access to E
 - получает запрос на регистрацию устройства;
 - может получить доступ к электронной почте.
 
-Any Intune app protection policies are activated at the time the access corporate data and may prompt the user to restart the application, use an additional PIN etc. (if configured for the application and platform).
+Все политики защиты приложений Intune активируются во время доступа к корпоративным данным и могут предложить пользователю перезапустить приложение, использовать дополнительный ПИН-код и т. д. (если настроено для приложения и платформы).
 
-### <a name="configuration"></a>Настройка 
+### <a name="configuration"></a>Параметр Configuration 
 
-**Step 1 - Configure an Azure AD Conditional Access policy for Exchange Online**
+**Шаг 1. Настройка политики условного доступа Azure AD для Exchange Online**
 
-For the Conditional Access policy in this step, you need to configure the following components:
+Для политики условного доступа на этом шаге необходимо настроить следующие компоненты.
 
-1. The **Name** of your Conditional Access policy.
-1. **Users and groups**: Each Conditional Access policy must have at least one user or group selected.
+1. **Имя** политики условного доступа.
+1. **Пользователи и группы**: для каждой политики условного доступа необходимо выбрать по крайней мере одного пользователя или группу.
 1. **Облачные приложения.** Для облачных приложений необходимо выбрать **Office 365 Exchange Online**.
 1. **Условия.** В качестве **условий** необходимо настроить **платформы устройств** и **клиентские приложения**.
    1. В разделе **Платформы устройств** выберите **Android** и **iOS**.
    1. Для параметра **Клиентские приложения (предварительная версия)** выберите варианты **Мобильные и классические приложения** и **Клиенты с современной проверкой подлинности**.
 1. В разделе **Элементы управления доступом** необходимо установить флажок **Требовать утвержденное клиентское приложение (предварительная версия)** .
 
-   ![Условный доступ](./media/app-based-conditional-access/05.png)
+   ![условный доступ;](./media/app-based-conditional-access/05.png)
 
-**Step 2 - Configure an Azure AD Conditional Access policy for Exchange Online with Active Sync (EAS)**
+**Шаг 2. Настройка политики условного доступа Azure AD для Exchange Online с помощью Active Sync (EAS)**
 
-For the Conditional Access policy in this step, you need to configure the following components:
+Для политики условного доступа на этом шаге необходимо настроить следующие компоненты.
 
-1. The **Name** of your Conditional Access policy.
-1. **Users and groups**: Each Conditional Access policy must have at least one user or group selected.
+1. **Имя** политики условного доступа.
+1. **Пользователи и группы**: для каждой политики условного доступа необходимо выбрать по крайней мере одного пользователя или группу.
 1. **Облачные приложения.** Для облачных приложений необходимо выбрать **Office 365 Exchange Online**.
 1. **Условия.** Для параметра **Условия** следует настроить **Клиентские приложения (предварительная версия)** . 
    1. Для параметра **Клиентские приложения (предварительная версия)** выберите варианты **Мобильные и классические приложения** и **Клиенты Exchange ActiveSync**.
    1. В разделе **Элементы управления доступом** необходимо установить флажок **Требовать утвержденное клиентское приложение (предварительная версия)** .
 
-      ![Условный доступ](./media/app-based-conditional-access/05.png)
+      ![условный доступ;](./media/app-based-conditional-access/05.png)
 
 **Шаг 3. Настройка политики защиты приложений Intune для клиентских приложений iOS и Android**
 
@@ -107,71 +107,71 @@ For the Conditional Access policy in this step, you need to configure the follow
 
 ## <a name="exchange-online-and-sharepoint-online-policy"></a>Политика Exchange Online и SharePoint Online
 
-This scenario consists of a Conditional Access with mobile app management policy for access to Exchange Online and SharePoint Online with approved apps.
+Этот сценарий состоит из условного доступа с политикой управления мобильными приложениями для доступа к Exchange Online и SharePoint Online с утвержденными приложениями.
 
 ### <a name="scenario-playbook"></a>Обзор сценария
 
 В этом сценарии предполагается, что пользователь:
 
 - пытается использовать приложение SharePoint для подключения и просмотра корпоративных сайтов;
-- Attempts to sign in with the same credentials as the Outlook app credentials
+- Пытается войти в систему с теми же учетными данными, что и у приложения Outlook
 - не должен выполнять повторную регистрацию и может получить доступ к ресурсам.
 
-### <a name="configuration"></a>Настройка
+### <a name="configuration"></a>Параметр Configuration
 
-**Step 1 - Configure an Azure AD Conditional Access policy for Exchange Online and SharePoint Online**
+**Шаг 1. Настройка политики условного доступа Azure AD для Exchange Online и SharePoint Online**
 
-For the Conditional Access policy in this step, you need to configure the following components:
+Для политики условного доступа на этом шаге необходимо настроить следующие компоненты.
 
-1. The **Name** of your Conditional Access policy.
-1. **Users and groups**: Each Conditional Access policy must have at least one user or group selected.
+1. **Имя** политики условного доступа.
+1. **Пользователи и группы**: для каждой политики условного доступа необходимо выбрать по крайней мере одного пользователя или группу.
 1. **Облачные приложения.** Для облачных приложений необходимо выбрать **Office 365 Exchange Online** и **Office 365 SharePoint Online**. 
 1. **Условия.** В качестве **условий** необходимо настроить **платформы устройств** и **клиентские приложения**.
    1. В разделе **Платформы устройств** выберите **Android** и **iOS**.
    1. Для параметра **Клиентские приложения (предварительная версия)** выберите варианты **Мобильные приложения и классические клиенты** и **Клиенты с современной проверкой подлинности**.
 1. В разделе **Элементы управления доступом** необходимо установить флажок **Требовать утвержденное клиентское приложение (предварительная версия)** .
 
-   ![Условный доступ](./media/app-based-conditional-access/05.png)
+   ![условный доступ;](./media/app-based-conditional-access/05.png)
 
-**Step 2 - Configure an Azure AD Conditional Access policy for Exchange Online with Active Sync (EAS)**
+**Шаг 2. Настройка политики условного доступа Azure AD для Exchange Online с помощью Active Sync (EAS)**
 
-For the Conditional Access policy in this step, you need to configure the following components:
+Для политики условного доступа на этом шаге необходимо настроить следующие компоненты.
 
-1. The **Name** of your Conditional Access policy.
-1. **Users and groups**: Each Conditional Access policy must have at least one user or group selected.
+1. **Имя** политики условного доступа.
+1. **Пользователи и группы**: для каждой политики условного доступа необходимо выбрать по крайней мере одного пользователя или группу.
 1. **Облачные приложения.** Для облачных приложений необходимо выбрать **Office 365 Exchange Online**. В сети 
 1. **Условия.** В качестве **условий** необходимо настроить **клиентские приложения**.
    1. Для параметра **Клиентские приложения (предварительная версия)** выберите варианты **Мобильные и классические приложения** и **Клиенты Exchange ActiveSync**.
    1. В разделе **Элементы управления доступом** необходимо установить флажок **Требовать утвержденное клиентское приложение (предварительная версия)** .
 
-      ![Условный доступ](./media/app-based-conditional-access/05.png)
+      ![условный доступ;](./media/app-based-conditional-access/05.png)
 
 **Шаг 3. Настройка политики защиты приложений Intune для клиентских приложений iOS и Android**
 
-![Условный доступ](./media/app-based-conditional-access/09.png)
+![условный доступ;](./media/app-based-conditional-access/09.png)
 
 Дополнительные сведения см. в статье [Защита приложений и данных с помощью Microsoft Intune](https://docs.microsoft.com/intune-classic/deploy-use/protect-apps-and-data-with-microsoft-intune).
 
 ## <a name="app-based-or-compliant-device-policy-for-exchange-online-and-sharepoint-online"></a>Политика на основе приложений или политика соответствующего устройства для Exchange Online и SharePoint Online
 
-This scenario consists of an app-based or compliant device Conditional Access policy for access to Exchange Online.
+Этот сценарий состоит из политики условного доступа на основе приложений или соответствующего устройства для доступа к Exchange Online.
 
 ### <a name="scenario-playbook"></a>Обзор сценария
 
 В этом сценарии предполагается, что:
  
-- Some users are already enrolled (with or without corporate devices)
+- Некоторые пользователи уже зарегистрированы (с корпоративными устройствами или без них).
 - пользователям, не зарегистрированным в Azure AD с использованием защищенного приложения, нужно зарегистрировать устройство для доступа к ресурсам;
 - зарегистрированным пользователям, использующим защищенное приложение, не нужно повторно регистрировать устройство.
 
-### <a name="configuration"></a>Настройка
+### <a name="configuration"></a>Параметр Configuration
 
-**Step 1 - Configure an Azure AD Conditional Access policy for Exchange Online and SharePoint Online**
+**Шаг 1. Настройка политики условного доступа Azure AD для Exchange Online и SharePoint Online**
 
-For the Conditional Access policy in this step, you need to configure the following components:
+Для политики условного доступа на этом шаге необходимо настроить следующие компоненты.
 
-1. The **Name** of your Conditional Access policy.
-1. **Users and groups**: Each Conditional Access policy must have at least one user or group selected.
+1. **Имя** политики условного доступа.
+1. **Пользователи и группы**: для каждой политики условного доступа необходимо выбрать по крайней мере одного пользователя или группу.
 1. **Облачные приложения.** Для облачных приложений необходимо выбрать **Office 365 Exchange Online** и **Office 365 SharePoint Online**. 
 1. **Условия.** В качестве **условий** необходимо настроить **платформы устройств** и **клиентские приложения**. 
    1. В разделе **Платформы устройств** выберите **Android** и **iOS**.
@@ -181,30 +181,30 @@ For the Conditional Access policy in this step, you need to configure the follow
    - **Требовать утвержденное клиентское приложение (предварительная версия)**
    - **Требовать один из выбранных элементов управления**   
  
-      ![Условный доступ](./media/app-based-conditional-access/11.png)
+      ![условный доступ;](./media/app-based-conditional-access/11.png)
 
-**Step 2 - Configure an Azure AD Conditional Access policy for Exchange Online with Active Sync (EAS)**
+**Шаг 2. Настройка политики условного доступа Azure AD для Exchange Online с помощью Active Sync (EAS)**
 
-For the Conditional Access policy in this step, you need to configure the following components:
+Для политики условного доступа на этом шаге необходимо настроить следующие компоненты.
 
-1. The **Name** of your Conditional Access policy.
-1. **Users and groups**: Each Conditional Access policy must have at least one user or group selected.
+1. **Имя** политики условного доступа.
+1. **Пользователи и группы**: для каждой политики условного доступа необходимо выбрать по крайней мере одного пользователя или группу.
 1. **Облачные приложения.** Для облачных приложений необходимо выбрать **Office 365 Exchange Online**. 
 1. **Условия.** В качестве **условий** необходимо настроить **клиентские приложения**. 
    1. Для параметра **Клиентские приложения (предварительная версия)** выберите варианты **Мобильные и классические приложения** и **Клиенты Exchange ActiveSync**.
 1. В разделе **Элементы управления доступом** необходимо установить флажок **Требовать утвержденное клиентское приложение (предварительная версия)** .
  
-   ![Условный доступ](./media/app-based-conditional-access/11.png)
+   ![условный доступ;](./media/app-based-conditional-access/11.png)
 
 **Шаг 3. Настройка политики защиты приложений Intune для клиентских приложений iOS и Android**
 
-![Условный доступ](./media/app-based-conditional-access/09.png)
+![условный доступ;](./media/app-based-conditional-access/09.png)
 
 Дополнительные сведения см. в статье [Защита приложений и данных с помощью Microsoft Intune](https://docs.microsoft.com/intune-classic/deploy-use/protect-apps-and-data-with-microsoft-intune).
 
 ## <a name="app-based-and-compliant-device-policy-for-exchange-online-and-sharepoint-online"></a>Политика на основе приложений и политика соответствующего устройства для Exchange Online и SharePoint Online
 
-This scenario consists of an app-based and compliant device Conditional Access policy for access to Exchange Online.
+Этот сценарий состоит из политики условного доступа на основе приложений и соответствующего устройства для доступа к Exchange Online.
 
 ### <a name="scenario-playbook"></a>Обзор сценария
 
@@ -220,14 +220,14 @@ This scenario consists of an app-based and compliant device Conditional Access p
 
 Любые политики защиты приложений Intune активируются во время получения доступа к корпоративным данным. Пользователю может быть предложено перезапустить приложение, использовать дополнительный PIN-код и т. д. (если он настроен для приложения и платформы).
 
-### <a name="configuration"></a>Настройка
+### <a name="configuration"></a>Параметр Configuration
 
-**Step 1 - Configure an Azure AD Conditional Access policy for Exchange Online and SharePoint Online**
+**Шаг 1. Настройка политики условного доступа Azure AD для Exchange Online и SharePoint Online**
 
-For the Conditional Access policy in this step, you need to configure the following components:
+Для политики условного доступа на этом шаге необходимо настроить следующие компоненты.
 
-1. The **Name** of your Conditional Access policy.
-1. **Users and groups**: Each Conditional Access policy must have at least one user or group selected.
+1. **Имя** политики условного доступа.
+1. **Пользователи и группы**: для каждой политики условного доступа необходимо выбрать по крайней мере одного пользователя или группу.
 1. **Облачные приложения.** Для облачных приложений необходимо выбрать **Office 365 Exchange Online** и **Office 365 SharePoint Online**. 
 1. **Условия.** В качестве **условий** необходимо настроить **платформы устройств** и **клиентские приложения**. 
    1. В разделе **Платформы устройств** выберите **Android** и **iOS**.
@@ -237,19 +237,19 @@ For the Conditional Access policy in this step, you need to configure the follow
    - **Требовать утвержденное клиентское приложение (предварительная версия)**
    - **Требовать все выбранные элементы управления**   
  
-      ![Условный доступ](./media/app-based-conditional-access/13.png)
+      ![условный доступ;](./media/app-based-conditional-access/13.png)
 
-**Step 2 - Configure an Azure AD Conditional Access policy for Exchange Online with Active Sync (EAS)**
+**Шаг 2. Настройка политики условного доступа Azure AD для Exchange Online с помощью Active Sync (EAS)**
 
-For the Conditional Access policy in this step, you need to configure the following components:
+Для политики условного доступа на этом шаге необходимо настроить следующие компоненты.
 
-1. The **Name** of your Conditional Access policy.
-1. **Users and groups**: Each Conditional Access policy must have at least one user or group selected.
+1. **Имя** политики условного доступа.
+1. **Пользователи и группы**: для каждой политики условного доступа необходимо выбрать по крайней мере одного пользователя или группу.
 1. **Облачные приложения.** Для облачных приложений необходимо выбрать **Office 365 Exchange Online**. 
 1. **Условия.** Для параметра **Условия** следует настроить **Клиентские приложения (предварительная версия)** . 
    1. Для параметра **Клиентские приложения (предварительная версия)** выберите варианты **Мобильные и классические приложения** и **Клиенты Exchange ActiveSync**.
 
-   ![Условный доступ](./media/app-based-conditional-access/92.png)
+   ![условный доступ;](./media/app-based-conditional-access/92.png)
 
 1. В разделе **Элементы управления доступом** необходимо выбрать следующие параметры:
    - **Требовать, чтобы устройство было отмечено как соответствующее**
@@ -258,11 +258,11 @@ For the Conditional Access policy in this step, you need to configure the follow
 
 **Шаг 3. Настройка политики защиты приложений Intune для клиентских приложений iOS и Android**
 
-![Условный доступ](./media/app-based-conditional-access/09.png)
+![условный доступ;](./media/app-based-conditional-access/09.png)
 
 Дополнительные сведения см. в статье [Защита приложений и данных с помощью Microsoft Intune](https://docs.microsoft.com/intune-classic/deploy-use/protect-apps-and-data-with-microsoft-intune).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Чтобы узнать, как настроить политику условного доступа, см. статью [Краткое руководство. Требование Многофакторной идентификации для конкретных приложений с помощью условного доступа Azure Active Directory](app-based-mfa.md).
 

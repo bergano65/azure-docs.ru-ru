@@ -18,12 +18,12 @@ ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 97ea1c5260d1082619d59a2b8614a0ba7e9181a8
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 5960389389e4b75794a7334c0bff12ce3ac0f170
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74145169"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74452466"
 ---
 # <a name="logging-in-msal-applications"></a>Ведение журнала в приложениях MSAL
 
@@ -320,7 +320,7 @@ MSALGlobalConfig.loggerConfig.logLevel = .verbose
 
 ## <a name="msal-for-java-logging"></a>MSAL для ведения журнала Java
 
-MSAL for Java (MSAL4J) позволяет использовать библиотеку ведения журналов, которая уже используется в приложении, при условии, что оно совместимо с SLF4J. MSAL4j использует [Простое ведение журнала фасад для Java](http://www.slf4j.org/) (SLF4J) в качестве простой фасадной или абстракции для различных платформ ведения журналов, таких как [Java. util. Logging](https://docs.oracle.com/javase/7/docs/api/java/util/logging/package-summary.html), [Logback](http://logback.qos.ch/) и [log4j](https://logging.apache.org/log4j/2.x/). SLF4J позволяет пользователю подключаться к нужной инфраструктуре ведения журналов во время развертывания.
+MSAL для Java позволяет использовать библиотеку ведения журналов, которая уже используется в приложении, при условии, что оно совместимо с SLF4J. MSAL для Java использует [Простое ведение журнала фасад для Java](http://www.slf4j.org/) (SLF4J) как простое фасадной или абстракцию для различных платформ ведения журналов, таких как [Java. util. Logging](https://docs.oracle.com/javase/7/docs/api/java/util/logging/package-summary.html), [Logback](http://logback.qos.ch/) и [log4j](https://logging.apache.org/log4j/2.x/). SLF4J позволяет пользователю подключаться к нужной инфраструктуре ведения журналов во время развертывания.
 
 Например, чтобы использовать Logback в качестве платформы ведения журнала в приложении, добавьте зависимость Logback в файл Maven POM для вашего приложения:
 

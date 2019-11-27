@@ -1,5 +1,5 @@
 ---
-title: Glossary - LUIS
+title: Глоссарий — LUIS
 titleSuffix: Azure Cognitive Services
 description: В глоссарии объясняются термины, с которыми вы можете столкнуться при работе со службой API LUIS.
 services: cognitive-services
@@ -22,36 +22,36 @@ ms.locfileid: "74325948"
 
 ## <a name="active-version"></a>Активная версия
 
-Активная версия LUIS — это версия, которая принимает все изменения, вносимые в модель. In the [LUIS](luis-reference-regions.md) portal, if you want to make changes to a version that is not the active version, you need to first set that version as active.
+Активная версия LUIS — это версия, которая принимает все изменения, вносимые в модель. Если вы хотите внести изменения в версию, которая не является активной, на портале [Luis](luis-reference-regions.md) необходимо сначала задать эту версию как активную.
 
 ## <a name="authoring"></a>Разработка
 
-Authoring is the ability to create, manage and deploy a [LUIS app](#luis-app), either using the [LUIS](luis-reference-regions.md) portal or the [authoring APIs](https://go.microsoft.com/fwlink/?linkid=2092087).
+Разработка — это возможность создания, управления и развертывания [приложения Luis](#luis-app)с помощью портала [Luis](luis-reference-regions.md) или [API-интерфейсов разработки](https://go.microsoft.com/fwlink/?linkid=2092087).
 
 ## <a name="authoring-key"></a>Ключ разработки
 
 Прежнее название — программный ключ. Используется для разработки приложения. Не используется для запросов конечной точки рабочего уровня. Дополнительные сведения см. в разделе об [ограничениях ключа](luis-boundaries.md#key-limits).
 
-## <a name="batch-test-json-file"></a>Batch test JSON file
+## <a name="batch-test-json-file"></a>JSON-файл пакетного теста
 
-Batch testing is the ability to validate a current LUIS app's model with a consistent and known test set of user utterances. The batch test is defined in a [JSON formatted file](luis-concept-batch-test.md#batch-file-format).
+Пакетное тестирование — это возможность проверить модель текущего приложения LUIS с помощью единообразного и известного тестового набора пользователей фразы продолжительностью. Пакетный тест определяется в [отформатированном файле JSON](luis-concept-batch-test.md#batch-file-format).
 
 См. также:
 * [Основные понятия](luis-concept-batch-test.md)
-* [How-to](luis-how-to-batch-test.md)
+* [Практические руководства](luis-how-to-batch-test.md)
 * [Руководство](luis-tutorial-batch-testing.md)
 
 ## <a name="collaborator"></a>Участник совместной работы
 
-A collaborator/contributor, is not the [owner](#owner) of the app, but has the same permissions to add, edit, and delete the intents, entities, utterances.
+Участник, [ответственный](#owner) за совместную работу, не является владельцем приложения, но имеет те же разрешения на добавление, изменение и удаление целей, сущностей, фразы продолжительностью.
 
-## <a name="contributor"></a>Contributor
+## <a name="contributor"></a>Участник
 
-A contributor is the same thing as a [collaborator](#collaborator).
+Участник — это то же самое, что и [Совместная работа](#collaborator).
 
 ## <a name="descriptor"></a>Descriptor
 
-A descriptor is a [feature](#features) applied to a model at training time, including [phrase lists](#phrase-list) and [entities](#entity). 
+Дескриптор — это [функция](#features) , применяемая к модели во время обучения, включая [списки фраз](#phrase-list) и [сущности](#entity). 
 
 ## <a name="domain"></a>Предметная область
 
@@ -69,11 +69,11 @@ A descriptor is a [feature](#features) applied to a model at training time, incl
 
 В [пакетном тестировании](luis-interactive-test.md#batch-testing) это измерение точности теста.
 
-## <a name="false-negative"></a>False negative (FN)
+## <a name="false-negative"></a>Ложное отрицательное (FN)
 
 В [пакетном тестировании](luis-interactive-test.md#batch-testing) точка данных представляет высказывания, в которых приложение неверно спрогнозировало отсутствие целевого намерения или сущности.
 
-## <a name="false-positive"></a>False positive (FP)
+## <a name="false-positive"></a>Ложный положительный результат (FP)
 
 В [пакетном тестировании](luis-interactive-test.md#batch-testing) точка данных представляет высказывания, в которых приложение неверно спрогнозировало наличие целевого намерения или сущности.
 
@@ -87,11 +87,11 @@ A descriptor is a [feature](#features) applied to a model at training time, incl
 
 ## <a name="labeling"></a>Пометка
 
-Labeling, or marking, is the process of associating a word or phrase in an intent's [utterance](#utterance) with an [entity](#entity) (datatype).
+Пометка или маркировка — это процесс связывания слова или фразы в [utterance](#utterance) намерений с [сущностью](#entity) (DataType).
 
 ## <a name="luis-app"></a>Приложение LUIS
 
-A LUIS app is a collection of language models for natural language processing including [intents](#intent), [entities](#entity), and labeled [utterances](#utterance).
+LUIS приложение — это набор языковых моделей для обработки естественного языка, включая [удержания](#intent), [сущности](#entity)и помеченные [фразы продолжительностью](#utterance).
 
 ## <a name="owner"></a>Владелец
 
@@ -121,7 +121,7 @@ A LUIS app is a collection of language models for natural language processing in
 
 ## <a name="publish"></a>Публикация
 
-Publishing means making a LUIS active version available on either the staging or production [endpoint](#endpoint).  
+Публикация означает, что LUIS активная версия доступна либо в промежуточной, либо в рабочей [конечной точке](#endpoint).  
 
 ## <a name="quota"></a>Квота
 
@@ -146,15 +146,15 @@ Publishing means making a LUIS active version available on either the staging or
 
 ## <a name="starter-key"></a>Ключ для начала разработки
 
-A free key to use when first starting out using LUIS.
+Бесплатный ключ для использования при первом запуске с помощью LUIS.
 
-## <a name="structure"></a>Structure
+## <a name="structure"></a>Дереве
 
-Add structure to a machine-learned entity to provide subcomponents with descriptors (features) and constraints (regular expression or list entities).
+Добавьте структуру в сущность, занятую компьютером, чтобы предоставить подкомпоненты с дескрипторами (функциями) и ограничениями (регулярными выражениями или списками сущностей).
 
 ## <a name="subscription-key"></a>Ключ подписки
 
-The subscription key is the **prediction endpoint** key associated with the LUIS service [you created in Azure](luis-how-to-azure-subscription.md). Этот ключ не является [ключом разработки](#programmatic-key). Имеющийся ключ конечной точки следует использовать для запросов конечной точки. Не используйте для этой цели ключ разработки. Текущий ключ конечной точки можно увидеть в URL-адресе конечной точки в нижней части страницы [**Keys and endpoints**](luis-how-to-azure-subscription.md) (Ключи и конечные точки) на веб-сайте [LUIS](luis-reference-regions.md). Это значение **ключ-подписка** пары "имя-значение".
+Ключ подписки — это ключ **конечной точки прогнозирования** , связанный со службой Luis [, созданной в Azure](luis-how-to-azure-subscription.md). Этот ключ не является [ключом разработки](#programmatic-key). Имеющийся ключ конечной точки следует использовать для запросов конечной точки. Не используйте для этой цели ключ разработки. Текущий ключ конечной точки можно увидеть в URL-адресе конечной точки в нижней части страницы [**Keys and endpoints**](luis-how-to-azure-subscription.md) (Ключи и конечные точки) на веб-сайте [LUIS](luis-reference-regions.md). Это значение **ключ-подписка** пары "имя-значение".
 
 ## <a name="test"></a>Тест
 
@@ -171,7 +171,7 @@ The subscription key is the **prediction endpoint** key associated with the LUIS
 
 ## <a name="train"></a>Обучение
 
-Training is the process of teaching LUIS about any changes to the active version since the last training.
+Обучение — это процесс обучения LUIS о любых изменениях в активной версии с момента последнего обучения.
 
 ## <a name="true-negative"></a>Истинный отрицательный результат (TN)
 

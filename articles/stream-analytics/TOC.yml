@@ -133,6 +133,9 @@
         - name: Обработка данных Центров событий
           href: ../event-hubs/process-data-azure-stream-analytics.md
           maintainContext: true
+        - name: Обработка Базы данных SQL Azure
+          href: ../sql-database/sql-database-stream-analytics.md
+          maintainContext: true
         - name: Сценарии обработки геопространственных данных
           href: geospatial-scenarios.md
     - name: Монитор

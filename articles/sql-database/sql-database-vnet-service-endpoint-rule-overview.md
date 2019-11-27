@@ -1,5 +1,5 @@
 ---
-title: VNet endpoints and rules for single and pooled databases
+title: Конечные точки и правила виртуальной сети для одной и для баз данных в составе пула
 description: Пометьте подсеть как конечную точку службы для виртуальной сети. Затем внесите конечную точку в виде правила виртуальной сети в список управления доступом к базе данных SQL Azure. После этого база данных SQL будет принимать подключения от всех виртуальных машин и других узлов в этой подсети.
 services: sql-database
 ms.service: sql-database
@@ -23,9 +23,9 @@ ms.locfileid: "74422505"
 *Правила виртуальной сети* — это одна из функций безопасности брандмауэра, которая контролирует то, обеспечивает ли сервер отдельной базы данных и эластичного пула в [Базе данных SQL](sql-database-technical-overview.md) Azure или базы данных в [Хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) обмен данными с определенными подсетями в виртуальных сетях. В этой статье объясняется, почему правила виртуальной сети иногда являются лучшим вариантом для защиты подключений к базе данных SQL Azure и хранилищу данных SQL.
 
 > [!IMPORTANT]
-> Эта статья относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере SQL Azure. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL. Эта статья *не* применяется к развертыванию **управляемого экземпляра** в Базе данных SQL Azure, так как с ним не связана конечная точка службы.
+> Эта статья относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере SQL Azure. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL. Эта статья *не* применяется к развертыванию **управляемого экземпляра** в Базе данных SQL Azure, так как с ним не связана конечная точка службы.
 
-To create a virtual network rule, there must first be a [virtual network service endpoint][vm-virtual-network-service-endpoints-overview-649d] for the rule to reference.
+Чтобы создать правило виртуальной сети, сначала необходимо указать [конечную точку службы виртуальной сети][vm-virtual-network-service-endpoints-overview-649d] , на которую будет ссылаться правило.
 
 ## <a name="how-to-create-a-virtual-network-rule"></a>Как создать правило виртуальной сети
 
@@ -60,7 +60,7 @@ To create a virtual network rule, there must first be a [virtual network service
 
 Роли администратора сети и администратора базы данных имеют больше возможностей, чем требуется для управления правилами виртуальной сети. На самом деле для этого требуется только часть их возможностей.
 
-You have the option of using [role-based access control (RBAC)][rbac-what-is-813s] in Azure to create a single custom role that has only the necessary subset of capabilities. The custom role could be used instead of involving either the Network Admin or the Database Admin. The surface area of your security exposure is lower if you add a user to a custom role, versus adding the user to the other two major administrator roles.
+Вы можете использовать [Управление доступом на основе ролей (RBAC)][rbac-what-is-813s] в Azure, чтобы создать одну настраиваемую роль, имеющую только необходимое подмножество возможностей. Вместо администратора сети или администратора базы данных можно использовать пользовательскую роль. При добавлении пользователя в пользовательскую роль контактная зона снижает уровень безопасности, а не добавляет пользователя к двум другим основным ролям администратора.
 
 > [!NOTE]
 > Иногда база данных SQL Azure и подсеть виртуальной сети относятся к разным подпискам. В этих случаях необходимо обеспечить следующую конфигурацию:
@@ -76,14 +76,14 @@ You have the option of using [role-based access control (RBAC)][rbac-what-is-813
 
 - Каждый сервер Базы данных SQL Azure может использовать до 128 записей ACL для любой заданной виртуальной сети.
 
-- Virtual network rules apply only to Azure Resource Manager virtual networks; and not to [classic deployment model][arm-deployment-model-568f] networks.
+- Правила виртуальной сети применяются только к виртуальным сетям Azure Resource Manager. а не в [классические сети модели развертывания][arm-deployment-model-568f] .
 
 - Включение конечных точек службы виртуальной сети для Базы данных SQL Azure также включает конечные точки для служб MySQL и PostgreSQL Azure. Тем не менее, если конечные точки включены в базе данных, подключение через них к экземплярам MySQL или PostgreSQL может завершиться ошибкой.
   - В основном это происходит из-за того, что для MySQL и PostgreSQL не настроены правила виртуальной сети. Настройте правило виртуальной сети для Базы данных Azure для MySQL и PostgreSQL, чтобы установить подключение.
 
 - К приведенным ниже элементам сети применяются диапазоны IP-адресов в брандмауэре, а правила виртуальной сети — нет:
-  - [Site-to-Site (S2S) virtual private network (VPN)][vpn-gateway-indexmd-608y]
-  - On-premises via [ExpressRoute][expressroute-indexmd-744v]
+  - [Виртуальная частная сеть (VPN) типа "сеть — сеть" (S2S)][vpn-gateway-indexmd-608y]
+  - Локальная среда с помощью [ExpressRoute][expressroute-indexmd-744v]
 
 ### <a name="considerations-when-using-service-endpoints"></a>Рекомендации по использованию конечных точек служб
 
@@ -110,18 +110,18 @@ When searching for blogs about ASM, you probably need to use this old and now-fo
 
 PolyBase часто используют для загрузки данных в Хранилище данных SQL Azure из учетных записей службы хранилища Azure. Если учетная запись службы хранилища Azure, из которой загружаются данные, предоставляет доступ только к набору подсетей виртуальной сети, подключение из PolyBase к учетной записи будет прервано. Чтобы обеспечить возможность импорта и экспорта PolyBase в Хранилище данных SQL Azure, подключенное к службе хранилища Azure, прикрепленной к виртуальной сети, сделайте следующее:
 
-#### <a name="prerequisites"></a>Технические условия
+#### <a name="prerequisites"></a>предварительным требованиям
 
 - Установите Azure PowerShell, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/powershell/azure/install-az-ps).
 - При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо сначала выполнить обновление до учетной записи хранения общего назначения версии 2, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade).
 - Необходимо включить параметр **Разрешить доверенным службам Майкрософт доступ к этой учетной записи хранения** в меню параметров **Брандмауэры и виртуальные сети** учетной записи службы хранилища Azure. Дополнительные сведения см. в [этом руководстве](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
 
 > [!IMPORTANT]
-> The PowerShell Azure Resource Manager module is still supported by Azure SQL Database, but all future development is for the Az.Sql module. The AzureRM module will continue to receive bug fixes until at least December 2020.  The arguments for the commands in the Az module and in the AzureRm modules are substantially identical. For more about their compatibility, see [Introducing the new Azure PowerShell Az module](/powershell/azure/new-azureps-module-az).
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Модуль AzureRM продолжит принимать исправления ошибок до 2020 декабря.  Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны. Дополнительные сведения о совместимости см. [в разделе Введение в новый модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az).
 
 #### <a name="steps"></a>Действия
 
-1. In PowerShell, **register your Azure SQL Server** hosting your Azure SQL Data Warehouse instance with Azure Active Directory (AAD):
+1. В PowerShell **зарегистрируйте SQL Server Azure** , в которой размещен экземпляр хранилища данных SQL Azure, с Azure Active Directory (AAD):
 
    ```powershell
    Connect-AzAccount
@@ -135,7 +135,7 @@ PolyBase часто используют для загрузки данных в
    > - При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо **сначала выполнить обновление до учетной записи хранения версии 2**, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade).
    > - Сведения об известных проблемах с Azure Data Lake Storage 2-го поколения см. в этом [руководстве](https://docs.microsoft.com/azure/storage/data-lake-storage/known-issues).
     
-1. В учетной записи хранения перейдите к элементу **Управление доступом (IAM)** и нажмите кнопку **Добавить назначение ролей**. Assign **Storage Blob Data Contributor** RBAC role to your Azure SQL Server hosting your Azure SQL Data Warehouse which you've registered with Azure Active Directory (AAD) as in step#1.
+1. В учетной записи хранения перейдите к элементу **Управление доступом (IAM)** и нажмите кнопку **Добавить назначение ролей**. Назначьте роли RBAC **участника данных BLOB-объекта хранилища** Azure SQL Server размещения хранилища данных SQL Azure, зарегистрированного в Azure Active Directory (AAD), как в шаге 1.
 
    > [!NOTE]
    > Этот шаг могут выполнять только участники с правами владельца. Сведения о различных встроенных ролях для ресурсов Azure см. в этом [руководстве](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles).
@@ -181,7 +181,7 @@ PolyBase часто используют для загрузки данных в
 
 Если задать лишь правило брандмауэра, вы не сможете обеспечить безопасность сервера. Для этого вам также потребуется включить конечные точки службы виртуальной сети. При включении конечных точек службы подсеть виртуальной сети будет простаивать, пока не будет выполнен переход из состояния "Выкл." в состояние "Вкл.". Это особенно верно в случае с большими виртуальными сетями. С помощью параметра **IgnoreMissingVNetServiceEndpoint** можно уменьшить или исключить время простоя во время перехода.
 
-Задать параметр **IgnoreMissingVNetServiceEndpoint** можно с помощью PowerShell. For details, see [PowerShell to create a Virtual Network service endpoint and rule for Azure SQL Database][sql-db-vnet-service-endpoint-rule-powershell-md-52d].
+Задать параметр **IgnoreMissingVNetServiceEndpoint** можно с помощью PowerShell. Дополнительные сведения см. [в статье Создание конечной точки службы виртуальной сети и правила для базы данных SQL Azure с помощью PowerShell][sql-db-vnet-service-endpoint-rule-powershell-md-52d].
 
 ## <a name="errors-40914-and-40615"></a>Ошибки 40914 и 40615
 
@@ -207,7 +207,7 @@ PolyBase часто используют для загрузки данных в
 
 ## <a name="portal-can-create-a-virtual-network-rule"></a>Портал может создать правило виртуальной сети
 
-This section illustrates how you can use the [Azure portal][http-azure-portal-link-ref-477t] to create a *virtual network rule* in your Azure SQL Database. Правило предписывает базе данных SQL принимать подключения из определенной подсети, которая помечена как *конечная точка службы для виртуальной сети*.
+В этом разделе показано, как можно использовать [портал Azure][http-azure-portal-link-ref-477t] для создания *правила виртуальной сети* в базе данных SQL Azure. Правило предписывает базе данных SQL принимать подключения из определенной подсети, которая помечена как *конечная точка службы для виртуальной сети*.
 
 > [!NOTE]
 > Если вы собираетесь добавить конечную точку службы в правила брандмауэра виртуальной сети на сервере Базы данных SQL Azure, сначала убедитесь, что конечные точки службы включены для подсети.
@@ -216,20 +216,20 @@ This section illustrates how you can use the [Azure portal][http-azure-portal-li
 
 ## <a name="powershell-alternative"></a>Альтернатива PowerShell
 
-A script can also create virtual network rules using PowerShell cmdlet **New-AzSqlServerVirtualNetworkRule** or [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create). If interested, see [PowerShell to create a Virtual Network service endpoint and rule for Azure SQL Database][sql-db-vnet-service-endpoint-rule-powershell-md-52d].
+Скрипт также может создавать правила виртуальной сети с помощью командлета PowerShell **New-азсклсервервиртуалнетворкруле** или [AZ Network vnet Create](/cli/azure/network/vnet#az-network-vnet-create). Если интересно, см. статью [Создание конечной точки службы виртуальной сети и правила для базы данных SQL Azure с помощью PowerShell][sql-db-vnet-service-endpoint-rule-powershell-md-52d].
 
 ## <a name="rest-api-alternative"></a>Альтернативный REST API
 
 На внутреннем уровне командлеты PowerShell для действий виртуальной сети SQL вызывают REST API. REST API можно вызывать напрямую.
 
-- [Virtual Network Rules: Operations][rest-api-virtual-network-rules-operations-862r]
+- [Правила виртуальной сети: операции][rest-api-virtual-network-rules-operations-862r]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Необходима подсеть, помеченная определенным *именем типа* конечной точки службы для виртуальной сети, относящимся к базе данных SQL Azure.
 
 - В нашем случае именем типа конечной точки является **Microsoft.Sql**.
-- If your subnet might not be tagged with the type name, see [Verify your subnet is an endpoint][sql-db-vnet-service-endpoint-rule-powershell-md-a-verify-subnet-is-endpoint-ps-100].
+- Если подсеть не может быть помечена именем типа, см. раздел Проверка того, что [подсеть является конечной точкой][sql-db-vnet-service-endpoint-rule-powershell-md-a-verify-subnet-is-endpoint-ps-100].
 
 <a name="a-portal-steps-for-vnet-rule-200" />
 
@@ -242,7 +242,7 @@ A script can also create virtual network rules using PowerShell cmdlet **New-AzS
 3. Задайте для элемента управления **Разрешить доступ к службам Azure** значение "Выкл.".
 
     > [!IMPORTANT]
-    > If you leave the control set to ON, your Azure SQL Database server accepts communication from any subnet inside the Azure boundary i.e. originating from one of the IP addresses that is recognized as those within ranges defined for Azure data centers. что сделает доступ слишком незащищенным. Используя конечные точки службы для виртуальной сети Microsoft Azure с правилами виртуальной сети базы данных SQL можно уменьшить контактную зону системы безопасности.
+    > Если оставить этот элемент управления ВКЛЮЧЕНным, сервер базы данных SQL Azure будет принимать данные из любой подсети в границах Azure, т. е. исходит от одного из IP-адресов, распознаваемых в диапазонах, определенных для центров обработки данных Azure. что сделает доступ слишком незащищенным. Используя конечные точки службы для виртуальной сети Microsoft Azure с правилами виртуальной сети базы данных SQL можно уменьшить контактную зону системы безопасности.
 
 4. Щелкните элемент управления **+ Добавить существующий** в разделе **Виртуальные сети**.
 
@@ -273,15 +273,15 @@ A script can also create virtual network rules using PowerShell cmdlet **New-AzS
 
 ## <a name="related-articles"></a>Связанные статьи
 
-- [Azure virtual network service endpoints][vm-virtual-network-service-endpoints-overview-649d]
-- [Azure SQL Database server-level and database-level firewall rules][sql-db-firewall-rules-config-715d]
+- [Конечные точки службы виртуальной сети Azure][vm-virtual-network-service-endpoints-overview-649d]
+- [Правила брандмауэра на уровне сервера базы данных SQL Azure и уровня базы данных][sql-db-firewall-rules-config-715d]
 
 Функция правила виртуальной сети для Базы данных SQL Azure стала доступной в конце сентября 2017 г.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- [Use PowerShell to create a virtual network service endpoint, and then a virtual network rule for Azure SQL Database.][sql-db-vnet-service-endpoint-rule-powershell-md-52d]
-- [Virtual Network Rules: Operations][rest-api-virtual-network-rules-operations-862r] with REST APIs
+- [С помощью PowerShell создайте конечную точку службы виртуальной сети, а затем правило виртуальной сети для базы данных SQL Azure.][sql-db-vnet-service-endpoint-rule-powershell-md-52d]
+- [Правила виртуальной сети. операции][rest-api-virtual-network-rules-operations-862r] с помощью API-ИНТЕРФЕЙСов RESTful
 
 <!-- Link references, to images. -->
 [image-portal-firewall-vnet-add-existing-10-png]: media/sql-database-vnet-service-endpoint-rule-overview/portal-firewall-vnet-add-existing-10.png

@@ -8,13 +8,12 @@ ms.date: 04/26/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.custom: seodec18
-ms.openlocfilehash: a453779ffe4ae20acf55510d0ac9f9483763af21
-ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+ms.openlocfilehash: 7f3627a79cad6833b5fb20f3c829c1e3bcbd9c3e
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72964836"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74457349"
 ---
 # <a name="how-to-install-iot-edge-on-kubernetes-preview"></a>Установка IoT Edge в Kubernetes (Предварительная версия)
 
@@ -33,7 +32,7 @@ IoT Edge можно интегрировать с Kubernetes, используя
 
 ## <a name="install-locally-for-a-quick-test-environment"></a>Локальная установка для быстрой тестовой среды
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительным требованиям
 
 * Kubernetes 1,10 или более поздней версии. Если у вас нет существующей настройки кластера, можно использовать [Minikube](https://kubernetes.io/docs/setup/minikube/) для локальной среды кластера. 
 
@@ -92,7 +91,7 @@ IoT Edge можно интегрировать с Kubernetes, используя
 helm delete --purge k8s-edge1
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 ### <a name="deploy-as-a-highly-available-edge-gateway"></a>Развертывание в качестве шлюза с высокой доступностью 
 

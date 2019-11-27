@@ -32,7 +32,7 @@ ms.locfileid: "74226508"
 
 1. Выполните необходимые дополнения и обновления для элементов **PackageReference** в **ItemGroup**, а затем нажмите кнопку **Сохранить**. Текущий список поддерживаемых пакетов версии можно найти в вики-статье [What packages do I need?](https://github.com/Azure/azure-functions-host/wiki/Updating-your-function-app-extensions#what-nuget-packages-do-i-need) (Требуемые пакеты NuGet). Пакет Microsoft.Azure.WebJobs.Extensions.Storage является необходимым для всех трех привязок службы хранилища Azure.
 
-1. Чтобы повторно собрать упоминаемые сборки в папке `bin`, перейдите в папку `wwwroot` и выполните следующую команду.
+1. Чтобы повторно собрать упоминаемые сборки в папке `wwwroot`, перейдите в папку `bin` и выполните следующую команду.
 
     ```cmd
     dotnet build extensions.csproj -o bin --no-incremental --packages D:\home\.nuget
@@ -40,7 +40,7 @@ ms.locfileid: "74226508"
 
 1. Чтобы перезапустить приложение-функцию, вернитесь на вкладку **Сводка** на портале и выберите **Начало**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

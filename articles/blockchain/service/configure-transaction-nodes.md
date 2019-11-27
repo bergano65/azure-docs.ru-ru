@@ -1,6 +1,6 @@
 ---
-title: Configure Azure Blockchain Service transaction nodes
-description: How to configure Azure Blockchain Service transaction nodes
+title: Настройка узлов транзакций службы Azure Блокчейн
+description: Настройка узлов транзакций службы Azure Блокчейн
 ms.date: 11/20/2019
 ms.topic: article
 ms.reviewer: janders
@@ -11,127 +11,127 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74326309"
 ---
-# <a name="configure-azure-blockchain-service-transaction-nodes"></a>Configure Azure Blockchain Service transaction nodes
+# <a name="configure-azure-blockchain-service-transaction-nodes"></a>Настройка узлов транзакций службы Azure Блокчейн
 
-Transaction nodes are used to send blockchain transactions to Azure Blockchain Service through a public endpoint. The default transaction node contains the private key of the Ethereum account registered on the blockchain, and as such cannot be deleted.
+Узлы транзакций используются для отправки транзакций блокчейн в службу Блокчейн Azure через общедоступную конечную точку. Узел транзакции по умолчанию содержит закрытый ключ учетной записи Ethereum, зарегистрированной в блокчейн, поэтому его невозможно удалить.
 
-To view the default transaction node details:
+Просмотр сведений об узле транзакции по умолчанию:
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-1. Перейдите в область участника службы "Блокчейн Azure". Select **Transaction nodes**.
+1. Перейдите в область участника службы "Блокчейн Azure". Выберите **узлы транзакций**.
 
     ![Выбор узла транзакций по умолчанию](./media/configure-transaction-nodes/nodes.png)
 
-    Overview details include public endpoint addresses and public key.
+    Общие сведения включают адреса общедоступной конечной точки и открытый ключ.
 
 ## <a name="create-transaction-node"></a>Создание узла транзакций
 
-You can add up to nine additional transaction nodes to your blockchain member, for a total of 10 transaction nodes. By adding transaction nodes, you can increase scalability or distribute load. For example, you could have a transaction node endpoint for different client applications.
+К элементу блокчейн можно добавить до девяти дополнительных узлов транзакций, а всего 10 узлов транзакций. Добавляя узлы транзакций, можно повысить масштабируемость или распределение нагрузки. Например, у вас может быть конечная точка узла транзакции для разных клиентских приложений.
 
-To add a transaction node:
+Чтобы добавить узел транзакции, выполните следующие действия.
 
-1. In the Azure portal, navigate to your Azure Blockchain Service member and select **Transaction nodes > Add**.
-1. Complete the settings for the new transaction node.
+1. В портал Azure перейдите к своему члену службы Azure Блокчейн и выберите **узлы транзакций > добавить**.
+1. Заполните параметры для нового узла транзакции.
 
-    ![Add transaction node](./media/configure-transaction-nodes/add-node.png)
+    ![Добавление узла транзакции](./media/configure-transaction-nodes/add-node.png)
 
-    | Параметр | Описание |
+    | Настройка | ОПИСАНИЕ |
     |---------|-------------|
-    | Name | Имя узла транзакций. Имя, используемое при создании адреса DNS для конечной точки узла транзакций. Пример: `newnode-myblockchainmember.blockchain.azure.com`. The node name cannot be changed once it is created. |
-    | Пароль | Set a strong password. Use the password to access the transaction node endpoint with basic authentication.
+    | имя | Имя узла транзакций. Имя, используемое при создании адреса DNS для конечной точки узла транзакций. Пример: `newnode-myblockchainmember.blockchain.azure.com`. Имя узла нельзя изменить после его создания. |
+    | Пароль | Задайте надежный пароль. Используйте пароль для доступа к конечной точке узла транзакции с обычной проверкой подлинности.
 
 1. Нажмите кнопку **Создать**.
 
-    Подготовка нового узла транзакций занимает около 10 минут. Additional transaction nodes incur cost. For more information on costs, see [Azure pricing](https://aka.ms/ABSPricing).
+    Подготовка нового узла транзакций занимает около 10 минут. На дополнительные узлы транзакций взимается плата. Дополнительные сведения о затратах см. на странице [цен на Azure](https://aka.ms/ABSPricing).
 
-## <a name="endpoints"></a>Конечные точки
+## <a name="endpoints"></a>конечные точки;
 
-Transaction nodes have a unique DNS name and public endpoints.
+Узлы транзакций имеют уникальные DNS-имена и общедоступные конечные точки.
 
-To view a transaction node's endpoint details:
+Чтобы просмотреть сведения о конечной точке узла транзакции, выполните следующие действия.
 
-1. In the Azure portal, navigate to one of your Azure Blockchain Service member transaction nodes and select **Overview**.
+1. В портал Azure перейдите к одному из узлов транзакций члена службы Azure Блокчейн и выберите **Обзор**.
 
-    ![Конечные точки](./media/configure-transaction-nodes/endpoints.png)
+    ![конечные точки;](./media/configure-transaction-nodes/endpoints.png)
 
-Transaction node endpoints are secure and require authentication. You can connect to a transaction endpoint using Azure AD authentication, HTTPS basic authentication, and using an access key over HTTPS or Websocket over SSL.
+Конечные точки узла транзакции являются безопасными и нуждаются в проверке подлинности. Вы можете подключиться к конечной точке транзакции с помощью аутентификации Azure AD, обычной проверки подлинности HTTPS и использовать ключ доступа через HTTPS или WebSocket через SSL.
 
 ### <a name="azure-active-directory-access-control"></a>Управление доступом Azure Active Directory
 
-Azure Blockchain Service transaction node endpoints support Azure Active Directory (Azure AD) authentication. You can grant Azure AD user, group, and service principal access to your endpoint.
+Конечные точки узла транзакций службы Azure Блокчейн поддерживают проверку подлинности Azure Active Directory (Azure AD). Вы можете предоставить доступ к конечной точке пользователю Azure AD, группе и субъекту-службе.
 
-To grant Azure AD access control to your endpoint:
+Чтобы предоставить Azure AD контроль доступа к конечной точке:
 
-1. In the Azure portal, navigate to your Azure Blockchain Service member and select **Transaction nodes > Access control (IAM) > Add > Add role assignment**.
-1. Create a new role assignment for a user, group, or service principal (application roles).
+1. В портал Azure перейдите к своему члену службы Azure Блокчейн и выберите **узлы транзакций > управления доступом (IAM) > добавить > добавить назначение ролей**.
+1. Создайте новое назначение ролей для пользователя, группы или субъекта-службы (роли приложения).
 
-    ![Add IAM role](./media/configure-transaction-nodes/add-role.png)
+    ![Добавить роль IAM](./media/configure-transaction-nodes/add-role.png)
 
-    | Параметр | Действия |
+    | Настройка | Действие |
     |---------|-------------|
-    | Роль | Select **Owner**, **Contributor**, or **Reader**.
-    | Назначение доступа для | Select **Azure AD user, group, or service principal**.
-    | Выберите | Search for the user, group, or service principal you want to add.
+    | Роль | Выберите **владелец**, **участник**или **читатель**.
+    | Назначение доступа для | Выберите **пользователя Azure AD, группу или субъект-службу**.
+    | Выберите | Найдите пользователя, группу или субъект-службу, которые нужно добавить.
 
-1. Select **Save** to add the role assignment.
+1. Нажмите кнопку **сохранить** , чтобы добавить назначение ролей.
 
-For more information on Azure AD access control, see [Manage access to Azure resources using RBAC and the Azure portal](../../role-based-access-control/role-assignments-portal.md)
+Дополнительные сведения об управлении доступом Azure AD см. [в статье Управление доступом к ресурсам Azure с помощью RBAC и портал Azure](../../role-based-access-control/role-assignments-portal.md)
 
-For details on how to connect using Azure AD authentication, see [connect to your node using AAD authentication](configure-aad.md).
+Дополнительные сведения о подключении с использованием проверки подлинности Azure AD см. в статье [Подключение к узлу с помощью проверки подлинности AAD](configure-aad.md).
 
 ### <a name="basic-authentication"></a>Обычная аутентификация
 
-For HTTPS basic authentication, user name and password credentials are passed in the HTTPS header of the request to the endpoint.
+Для обычной проверки подлинности HTTPS учетные данные имени пользователя и пароля передаются в заголовке HTTPS запроса в конечную точку.
 
-You can view a transaction node's basic authentication endpoint details in the Azure portal. Navigate to one of your Azure Blockchain Service member transaction nodes and select **Basic Authentication** in settings.
+Вы можете просмотреть сведения о базовой конечной точке проверки подлинности узла транзакций в портал Azure. Перейдите к одному из узлов транзакций члена службы Azure Блокчейн и выберите **Обычная проверка подлинности** в параметрах.
 
 ![Обычная аутентификация](./media/configure-transaction-nodes/basic.png)
 
-The user name is the name of your node and cannot be changed.
+Имя пользователя является именем узла и не может быть изменено.
 
-To use the URL, replace \<password\> with the password set when the node was provisioned. You can update the password by selecting **Reset password**.
+Чтобы использовать URL-адрес, замените \<Password\> паролем, установленным при инициализации узла. Вы можете обновить пароль, нажав кнопку **Сброс пароля**.
 
 ### <a name="access-keys"></a>Ключи доступа
 
-For access key authentication, the access key is included in the endpoint URL. When the transaction node is provisioned, two access keys are generated. Either access key can be used for authentication. Two keys enable you to change and rotate keys.
+Для проверки подлинности с помощью ключа доступа ключ доступа включается в URL-адрес конечной точки. При подготовке узла транзакции создаются два ключа доступа. Для проверки подлинности можно использовать любой ключ доступа. Два ключа позволяют изменять и поворачивать ключи.
 
-You can view a transaction node's access key details and copy endpoint addresses that include the access keys. Navigate to one of your Azure Blockchain Service member transaction nodes and select **Access Keys** in settings.
+Вы можете просмотреть сведения о ключе доступа к узлу транзакции и скопировать адреса конечных точек, которые содержат ключи доступа. Перейдите к одному из узлов транзакций с членами службы Блокчейн Azure и выберите **ключи доступа** в параметрах.
 
-### <a name="firewall-rules"></a>Правила брандмауэра
+### <a name="firewall-rules"></a>Правила файрволла
 
-Firewall rules enable you to limit the IP addresses that can attempt to authenticate to your transaction node.  If no firewall rules are configured for your transaction node, it cannot be accessed by any party.  
+Правила брандмауэра позволяют ограничить IP-адреса, которые могут попытаться пройти проверку подлинности в узле транзакции.  Если для узла транзакции не настроены правила брандмауэра, доступ к нему не может получить ни одна сторона.  
 
-To view a transaction node's firewall rules, navigate to one of your Azure Blockchain Service member transaction nodes and select **Firewall rules** in settings.
+Чтобы просмотреть правила брандмауэра узла транзакций, перейдите к одному из узлов транзакций члена службы Azure Блокчейн и выберите **правила брандмауэра** в окне Параметры.
 
-You can add firewall rules by entering a rule name, starting IP address, and an ending IP address in the **Firewall rules** grid.
+Правила брандмауэра можно добавить, введя имя правила, начальный IP-адрес и конечный IP-адрес в сетке **правила брандмауэра** .
 
-![Правила брандмауэра](./media/configure-transaction-nodes/firewall-rules.png)
+![Правила файрволла](./media/configure-transaction-nodes/firewall-rules.png)
 
-To enable:
+Чтобы включить:
 
-* **Single IP address:** Configure the same IP address for the starting and ending IP addresses.
-* **IP address range:** Configure the starting and ending IP address range. For example, a range starting at 10.221.34.0 and ending at 10.221.34.255 would enable the entire 10.221.34.xxx subnet.
-* **Allow all IP addresses:** Configure the starting IP address to 0.0.0.0 and the ending IP address to 255.255.255.255.
+* **Один IP-адрес:** Настройте один и тот же IP-адрес для начального и конечного IP-адресов.
+* **Диапазон IP-адресов:** Настройте начальный и конечный диапазоны IP-адресов. Например, диапазон, начинающийся с 10.221.34.0 и заканчивая на 10.221.34.255, включит всю подсеть 10.221.34.xxx.
+* **Разрешить все IP-адреса:** Задайте для начального IP-адреса значение 0.0.0.0, а для конечного IP-адреса — 255.255.255.255.
 
-## <a name="connection-strings"></a>Строки подключения
+## <a name="connection-strings"></a>строки подключения.
 
-Connection string syntax for your transaction node is provided for basic authentication or using access keys. Connection strings including access keys over HTTPS and WebSockets are provided.
+Синтаксис строки подключения для узла транзакции предоставляется для обычной проверки подлинности или использования ключей доступа. Предоставляются строки подключения, включая ключи доступа по протоколам HTTPS и WebSocket.
 
-You can view a transaction node's connection strings and copy endpoint addresses. Navigate to one of your Azure Blockchain Service member transaction nodes and select **Connection strings** in settings.
+Можно просмотреть строки подключения узла транзакции и скопировать адреса конечных точек. Перейдите к одному из узлов транзакций с членами службы Блокчейн Azure и выберите **строки подключения** в параметрах.
 
-![Строки подключения](./media/configure-transaction-nodes/connection-strings.png)
+![строки подключения.](./media/configure-transaction-nodes/connection-strings.png)
 
 ## <a name="sample-code"></a>Пример кода
 
-Sample code is provided to quickly enable connecting to your transaction node via Web3, Nethereum, Web3js, and Truffle.
+Пример кода предоставляется для быстрого включения подключения к узлу транзакции через Web3, Несереум, Web3js и Труффле.
 
-You can view a transaction node's sample connection code and copy it to use with popular developer tools. Go to one of your Azure Blockchain Service member transaction nodes and select **Sample Code** in settings.
+Вы можете просмотреть пример кода подключения для узла транзакции и скопировать его для использования с популярными инструментами разработчика. Перейдите к одному из узлов транзакций с членами службы Блокчейн Azure и выберите **пример кода** в параметрах.
 
-Choose the Web3, Nethereum, Truffle, or Web3j tab to view the code sample you want to use.
+Перейдите на вкладку Web3, Несереум, Труффле или Web3j, чтобы просмотреть пример кода, который вы хотите использовать.
 
 ![Пример кода](./media/configure-transaction-nodes/sample-code.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Configure transaction nodes using Azure CLI](manage-cli.md)
+> [Настройка узлов транзакций с помощью Azure CLI](manage-cli.md)

@@ -1,5 +1,5 @@
 ---
-title: Deprovision devices that were provisioned with Azure IoT Hub Device Provisioning Service
+title: Отменить подготовку устройств, подготовленных с помощью службы подготовки устройств для центра Интернета вещей Azure
 description: Сведения о том, как отменить подготовку устройств, которые были подготовлены с помощью службы подготовки устройств к добавлению в Центр Интернета вещей Azure
 author: wesmc7777
 ms.author: wesmc

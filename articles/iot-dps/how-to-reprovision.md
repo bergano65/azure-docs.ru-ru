@@ -1,6 +1,6 @@
 ---
-title: Reprovision devices in Azure IoT Hub Device Provisioning Service
-description: Learn how to reprovision devices with your device provisioning service instance, and why you might need to do this.
+title: Повторная подготовка устройств в службе подготовки устройств для центра Интернета вещей Azure
+description: Узнайте, как повторно подготовить устройства с помощью экземпляра службы подготовки устройств и зачем это нужно.
 author: wesmc7777
 ms.author: wesmc
 ms.date: 04/04/2019
@@ -26,7 +26,7 @@ ms.locfileid: "74229707"
 
 * **Карантин**: аналогичен смене решения. Неисправное, скомпрометированное или устаревшее устройство может быть переназначено Центру Интернета вещей, где оно может пройти обновление и вернуться в состояние соответствия требованиям. Когда устройство будет работать надлежащим образом, оно переносится в свой основной центр.
 
-For more a more detailed overview of reprovisioning, see [IoT Hub Device reprovisioning concepts](concepts-device-reprovision.md).
+Более подробные сведения о повторной подготовке см. в статье [Основные понятия повторной инициализации устройств в центре Интернета вещей](concepts-device-reprovision.md).
 
 
 ## <a name="configure-the-enrollment-allocation-policy"></a>Настройка политики распределения регистрации
@@ -90,10 +90,10 @@ For more a more detailed overview of reprovisioning, see [IoT Hub Device reprovi
 Например, код отправки запросов на подготовку с устройства во время последовательности загрузки см. в статье об [автоматической подготовке имитированного устройства](quick-create-simulated-device.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- To learn more Reprovisioning, see [IoT Hub Device reprovisioning concepts](concepts-device-reprovision.md) 
-- To learn more Deprovisioning, see [How to deprovision devices that were previously auto-provisioned](how-to-unprovision-devices.md) 
+- Дополнительные сведения о повторной подготовке см. в статье [Основные понятия повторной инициализации устройств центра Интернета вещей](concepts-device-reprovision.md) . 
+- Дополнительные сведения об отмене подготовки см. в статье [как отменить подготовку устройств, которые были подготовлены ранее](how-to-unprovision-devices.md) . 
 
 
 

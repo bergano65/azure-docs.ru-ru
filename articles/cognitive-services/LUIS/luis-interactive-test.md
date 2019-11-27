@@ -20,7 +20,7 @@ ms.locfileid: "74221731"
 ---
 # <a name="test-your-luis-app-in-the-luis-portal"></a>Тестирование приложения LUIS на портале LUIS
 
-[Testing](luis-concept-test.md) an app is an iterative process. После обучения приложения LUIS протестируйте его с примерами высказываний на предмет правильного распознавания намерений и сущностей. Если распознавание выполняется неправильно, внесите изменения в приложение, а затем обучите его и протестируйте еще раз. 
+[Тестирование](luis-concept-test.md) приложения является итеративным процессом. После обучения приложения LUIS протестируйте его с примерами высказываний на предмет правильного распознавания намерений и сущностей. Если распознавание выполняется неправильно, внесите изменения в приложение, обучите его и протестируйте еще раз. 
 
 [!INCLUDE [Uses preview portal](includes/uses-portal-preview.md)]
 
@@ -30,20 +30,20 @@ ms.locfileid: "74221731"
 <a name="access-the-test-page"></a>
 <a name="luis-interactive-testing"></a>
 
-## <a name="train-before-testing"></a>Train before testing
+## <a name="train-before-testing"></a>Обучение перед тестированием
 
-In order to test against the most recent version of the active app, select **Train** from the top menu, before testing. 
+Чтобы проверить последнюю версию активного приложения, выберите в верхнем меню пункт **обучить** перед тестированием. 
 
 ## <a name="test-an-utterance"></a>Тестирование высказывания
 
-The test utterance should not be exactly the same as any example utterances in the app. The test utterance should include word choice, phrase length, and entity usage you expect for a user. 
+Тестовый utterance не должен быть точно таким же, как и любой пример фразы продолжительностью в приложении. Тестовый utterance должен включать возможность выбора слов, длины фразы и использования сущностей, которые вы ожидаете использовать для пользователя. 
 
 1. Откройте приложение, выбрав его имя на странице **Мои приложения**. 
 
 1. Чтобы открыть выдвигающуюся панель **Test** (Тестирование), щелкните **Test** (Тестировать) на верхней панели приложения.
 
     > [!div class="mx-imgBorder"]
-    > ![Train & Test App page](./media/luis-how-to-interactive-test/test.png)
+    > страница ![обучения & тестовом приложении](./media/luis-how-to-interactive-test/test.png)
 
 1. Введите высказывание в текстовом поле и нажмите клавишу ВВОД. На панели **Test** (Тестирование) можно вводить неограниченное количество тестовых высказываний, но только одно высказывание за раз.
 
@@ -73,7 +73,7 @@ The test utterance should not be exactly the same as any example utterances in t
 
 ## <a name="view-sentiment-results"></a>Просмотр результатов тональности
 
-Если на странице **[Publish](luis-how-to-publish-app.md#enable-sentiment-analysis)** (Публикация) настроен **анализ тональности**, результаты теста содержат тональность, найденную в высказывании. 
+Если на страницеPublish **[ (Публикация) настроен ](luis-how-to-publish-app.md#enable-sentiment-analysis)анализ тональности**, результаты теста содержат тональность, найденную в высказывании. 
 
 ![Изображение панели тестирования с анализом тональности](./media/luis-how-to-interactive-test/sentiment.png)
 
@@ -100,7 +100,7 @@ The test utterance should not be exactly the same as any example utterances in t
 При наличии нескольких конечных точек LUIS щелкните ссылку **Дополнительные параметры** на панели "Published" (Опубликовано), чтобы изменить конечную точку, используемую для тестирования. Если вы не уверены, какую конечную точку выбрать, выберите значение по умолчанию **Starter_Key**. 
 
 > [!div class="mx-imgBorder"]
-> ![Test panel with Additional Settings link highlighted](media/luis-how-to-interactive-test/additional-settings-v3-settings.png)
+> ![ная панель тестирования с дополнительными параметрами, выделенная](media/luis-how-to-interactive-test/additional-settings-v3-settings.png)
 
 <!--
 ###  View Bing Spell Check corrections in test panel
@@ -138,9 +138,9 @@ Use the following procedure to include the [Bing Spell Check v7](https://azure.m
 ## <a name="batch-testing"></a>Пакетное тестирование
 Ознакомьтесь с [принципами](luis-concept-batch-test.md) пакетного тестирования и узнайте, [как](luis-how-to-batch-test.md) протестировать пакет высказываний.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Если тестирование показывает, что приложение LUIS не распознает правильные намерения и сущности, вы можете повысить точность приложения LUIS путем пометки дополнительных высказываний или добавления функций. 
 
-* [Label suggested utterances with LUIS](luis-how-to-review-endpoint-utterances.md) (Добавление меток к предлагаемым фразам в LUIS) 
+* [Label suggested utterances with LUIS](luis-how-to-review-endpoint-utterances.md) (Пометка предлагаемых высказываний в LUIS) 
 * [Use features to improve your LUIS app's performance](luis-how-to-add-features.md) (Использование функций для повышения производительности приложения LUIS) 

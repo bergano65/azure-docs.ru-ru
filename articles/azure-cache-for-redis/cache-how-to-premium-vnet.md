@@ -1,5 +1,5 @@
 ---
-title: Configure a Virtual Network for a Premium Azure Cache for Redis
+title: Настройка виртуальной сети для кэша Azure уровня "Премиум" для Redis
 description: Узнайте, как настроить поддержку виртуальной сети и управлять ей для экземпляров кэша Azure для Redis ценовой категории "Премиум"
 author: yegu-ms
 ms.service: cache
@@ -14,14 +14,14 @@ ms.lasthandoff: 11/20/2019
 ms.locfileid: "74233130"
 ---
 # <a name="how-to-configure-virtual-network-support-for-a-premium-azure-cache-for-redis"></a>Настройка поддержки виртуальной сети для кэша Azure для Redis ценовой категории "Премиум"
-Кэш Azure для Redis предлагает разные варианты кэша, которые позволяют выбирать размер и функции кэша, включая функции ценовой категории "Премиум", такие как кластеризация, постоянное хранение данных и поддержка виртуальной сети. Виртуальная сеть — это частная сеть в облаке. Если экземпляр кэша Azure для Redis настроен в виртуальной сети, он не является общедоступным, а доступен только для виртуальных машин и приложений в этой виртуальной сети. В этой статье описана настройка поддержки виртуальных сетей для экземпляра кэша Azure для Redis ценовой категории "Премиум".
+Кэш Azure для Redis содержит разные предложения кэша, которые позволяют выбирать размер и функции кэша, включая функции уровня "Премиум", например, кластеризация, сохраняемость и поддержка виртуальной сети. Виртуальная сеть — это частная сеть в облаке. Если экземпляр кэша Azure для Redis настроен в виртуальной сети, он не является общедоступным, а доступен только для виртуальных машин и приложений в этой виртуальной сети. В этой статье описана настройка поддержки виртуальных сетей для экземпляра кэша Azure для Redis ценовой категории "Премиум".
 
 > [!NOTE]
 > Кэш Azure для Redis поддерживает классические виртуальные сети и виртуальные сети Resource Manager.
 > 
 > 
 
-См. дополнительные сведения о других функциях [кэша Azure для Redis ценовой категории "Премиум"](cache-premium-tier-intro.md).
+Дополнительные сведения о других функциях кэша категории "Премиум" см. в статье [Introduction to the Azure Cache for Redis Premium tier](cache-premium-tier-intro.md) (Общие сведения о кэше Azure для Redis уровня "Премиум").
 
 ## <a name="why-vnet"></a>Зачем использовать виртуальные сети?
 Развертывание [виртуальной сети Azure](https://azure.microsoft.com/services/virtual-network/) обеспечивает дополнительные возможности защиты и изоляции для кэша Azure для Redis. Такие развертывания позволяют определять подсети, настраивать политики контроля доступа, а также использовать другие функции ограничения доступа.
@@ -35,7 +35,7 @@ ms.locfileid: "74233130"
 
 Чтобы настроить виртуальную сеть для нового кэша, щелкните **Виртуальная сеть** в колонке **New Azure Cache for Redis** (Новый кэш Azure для Redis) и в раскрывающемся списке выберите нужную виртуальную сеть.
 
-![Виртуальная сеть][redis-cache-vnet]
+![виртуальную сеть][redis-cache-vnet]
 
 Выберите нужную подсеть в раскрывающемся списке **Подсети** и укажите необходимый **статический IP-адрес**. При использовании классической виртуальной сети заполнять поле **Статический IP-адрес** не обязательно, а если этот адрес не задан, то он выбирается из указанной подсети.
 
@@ -44,7 +44,7 @@ ms.locfileid: "74233130"
 > 
 > 
 
-![Виртуальная сеть][redis-cache-vnet-ip]
+![виртуальную сеть][redis-cache-vnet-ip]
 
 > [!IMPORTANT]
 > Azure резервирует некоторые IP-адреса в каждой подсети, которые нельзя использовать. Зарезервированы первый и последний IP-адреса подсетей (для соответствия требованиям протокола), а также еще три адреса, используемые для служб Azure. Дополнительные сведения см. в разделе [Существуют ли ограничения на использование IP-адресов в пределах этих подсетей?](../virtual-network/virtual-networks-faq.md#are-there-any-restrictions-on-using-ip-addresses-within-these-subnets)
@@ -55,7 +55,7 @@ ms.locfileid: "74233130"
 
 Создав кэш, конфигурацию виртуальной сети можно просмотреть, щелкнув **Виртуальная сеть** в **меню ресурсов**.
 
-![Виртуальная сеть][redis-cache-vnet-info]
+![виртуальную сеть][redis-cache-vnet-info]
 
 Чтобы подключиться к экземпляру кэша Azure для Redis при использовании виртуальной сети, укажите в строке подключения имя узла кэша, как показано в приведенном ниже примере.
 
@@ -96,46 +96,46 @@ ms.locfileid: "74233130"
 
 #### <a name="outbound-port-requirements"></a>Обязательные порты для исходящего трафика
 
-There are nine outbound port requirements. Outbound requests in these ranges are either outbound to other services necessary for the cache to function or internal to the Redis subnet for internode communication. For geo-replication, additional outbound requirements exist for communication between subnets of the primary and secondary cache.
+Существует девять требований к исходящему порту. Исходящие запросы в этих диапазонах являются либо исходящими для других служб, необходимых для функционирования кэша, либо внутренними в подсети Redis для взаимодействия между узлами. Для георепликации существуют дополнительные требования к исходящему трафику между подсетями основного и дополнительного кэша.
 
-| Порты | Направление | Транспортный протокол | Цель | Локальный IP-адрес | Удаленный IP-адрес |
+| Порты | Направление | Транспортный протокол | Назначение | Локальный IP-адрес | Удаленный IP-адрес |
 | --- | --- | --- | --- | --- | --- |
-| 80, 443 |Исход. |TCP |Зависимости Redis в службе хранилища Azure или PKI (Интернет) | (Подсеть Redis) |* |
-| 443 | Исход. | TCP | Redis dependency on Azure Key Vault | (Подсеть Redis) | AzureKeyVault <sup>1</sup> |
-| 53 |Исход. |TCP/UDP |Зависимости Redis в DNS (Интернет/виртуальная сеть) | (Подсеть Redis) | 168.63.129.16 and 169.254.169.254 <sup>2</sup> and any custom DNS server for the subnet <sup>3</sup> |
-| 8443 |Исход. |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) | (Подсеть Redis) |
-| 10221-10231 |Исход. |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) | (Подсеть Redis) |
-| 20226 |Исход. |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
-| 13000-13999 |Исход. |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
-| 15000-15999 |Исход. |TCP |Internal communications for Redis and Geo-Replication | (Подсеть Redis) |(Redis subnet) (Geo-replica peer subnet) |
-| 6379-6380 |Исход. |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
+| 80, 443 |Исходящие |TCP |Зависимости Redis в службе хранилища Azure или PKI (Интернет) | (Подсеть Redis) |* |
+| 443 | Исходящие | TCP | Зависимость Redis от Azure Key Vault | (Подсеть Redis) | AzureKeyVault <sup>1</sup> |
+| 53 |Исходящие |TCP/UDP |Зависимости Redis в DNS (Интернет/виртуальная сеть) | (Подсеть Redis) | 168.63.129.16 и 169.254.169.254 <sup>2</sup> , а также любой пользовательский DNS-сервер для подсети <sup>3</sup> |
+| 8443 |Исходящие |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) | (Подсеть Redis) |
+| 10221-10231 |Исходящие |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) | (Подсеть Redis) |
+| 20226 |Исходящие |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
+| 13000-13999 |Исходящие |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
+| 15000-15999 |Исходящие |TCP |Внутренние коммуникации для Redis и георепликации | (Подсеть Redis) |(Подсеть Redis) (Геореплика одноранговая подсеть) |
+| 6379-6380 |Исходящие |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
 
-<sup>1</sup> You can use the service tag 'AzureKeyVault' with Resource Manager Network Security Groups.
+<sup>1</sup> вы можете использовать тег службы "AzureKeyVault" с диспетчер ресурсов группами безопасности сети.
 
-<sup>2</sup> These IP addresses owned by Microsoft are used to address the Host VM which serves Azure DNS.
+<sup>2</sup> эти IP-адреса, принадлежащие корпорации Майкрософт, используются для адресации виртуальной машины узла, которая обслуживает Azure DNS.
 
-<sup>3</sup> Not needed for subnets with no custom DNS server, or newer redis caches that ignore custom DNS.
+<sup>3</sup> не требуется для подсетей без НАСТРАИВАЕМОГО DNS-сервера или более новых кэшей Redis, которые игнорируют пользовательский DNS.
 
-#### <a name="geo-replication-peer-port-requirements"></a>Geo-replication peer port requirements
+#### <a name="geo-replication-peer-port-requirements"></a>Требования к одноранговой порту георепликации
 
-If you are using georeplication between caches in Azure Virtual Networks, please note that the recommended configuration is to unblock ports 15000-15999 for the whole subnet in both inbound AND outbound directions to both caches, so that all the replica components in the subnet can communicate directly with each other even in the event of a future geo-failover.
+Если вы используете георепликацию между кэшами в виртуальных сетях Azure, то следует отметить, что рекомендуемой конфигурацией является разблокировка портов 15000-15999 для всей подсети в качестве входящих и исходящих направлений для обоих кэшей, чтобы все компоненты реплики в подсети могут напрямую взаимодействовать друг с другом даже в случае последующей географической отработки отказа.
 
 #### <a name="inbound-port-requirements"></a>Обязательные порты для входящего трафика
 
 Существует восемь обязательных диапазонов портов для входящего трафика. Входящие запросы в этих диапазонах исходят от других служб, размещенных в той же виртуальной сети, или являются результатом внутреннего обмена данными в подсети Redis.
 
-| Порты | Направление | Транспортный протокол | Цель | Локальный IP-адрес | Удаленный IP-адрес |
+| Порты | Направление | Транспортный протокол | Назначение | Локальный IP-адрес | Удаленный IP-адрес |
 | --- | --- | --- | --- | --- | --- |
-| 6379, 6380 |Вход. |TCP |Обмен данными между клиентом и Redis, балансировка нагрузки Azure | (Подсеть Redis) | (Redis subnet), Virtual Network, Azure Load Balancer <sup>1</sup> |
-| 8443 |Вход. |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
-| 8500 |Вход. |TCP/UDP |Балансировка нагрузки Azure | (Подсеть Redis) |Подсистема балансировщика нагрузки Azure |
-| 10221-10231 |Вход. |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) Azure Load Balancer |
-| 13000-13999 |Вход. |TCP |Обмен данными между клиентом и кластерами Redis, балансировка нагрузки Azure | (Подсеть Redis) |Виртуальная сеть, Azure Load Balancer |
-| 15000-15999 |Вход. |TCP |Client communication to Redis Clusters, Azure load Balancing, and Geo-Replication | (Подсеть Redis) |Virtual Network, Azure Load Balancer, (Geo-replica peer subnet) |
-| 16001 |Вход. |TCP/UDP |Балансировка нагрузки Azure | (Подсеть Redis) |Подсистема балансировщика нагрузки Azure |
-| 20226 |Вход. |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
+| 6379, 6380 |Входящий трафик |TCP |Обмен данными между клиентом и Redis, балансировка нагрузки Azure | (Подсеть Redis) | (Подсеть Redis), виртуальная сеть, Azure Load Balancer <sup>1</sup> |
+| 8443 |Входящий трафик |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
+| 8500 |Входящий трафик |TCP/UDP |Балансировка нагрузки Azure | (Подсеть Redis) |Подсистема балансировщика нагрузки Azure |
+| 10221-10231 |Входящий трафик |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) Azure Load Balancer |
+| 13000-13999 |Входящий трафик |TCP |Обмен данными между клиентом и кластерами Redis, балансировка нагрузки Azure | (Подсеть Redis) |Виртуальная сеть, Azure Load Balancer |
+| 15000-15999 |Входящий трафик |TCP |Взаимодействие клиента с кластерами Redis, балансировкой нагрузки Azure и георепликацией | (Подсеть Redis) |Виртуальная сеть, Azure Load Balancer, (одноранговая подсеть геореплики) |
+| 16001 |Входящий трафик |TCP/UDP |Балансировка нагрузки Azure | (Подсеть Redis) |Подсистема балансировщика нагрузки Azure |
+| 20226 |Входящий трафик |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
 
-<sup>1</sup> You can use the Service Tag 'AzureLoadBalancer' (Resource Manager) (or 'AZURE_LOADBALANCER' for classic) for authoring the NSG rules.
+<sup>1</sup> можно использовать тег службы "AzureLoadBalancer" (диспетчер ресурсов) (или "AZURE_LOADBALANCER" для классической модели) для создания правил NSG.
 
 #### <a name="additional-vnet-network-connectivity-requirements"></a>Дополнительные требования к подключению к виртуальной сети
 
@@ -149,7 +149,7 @@ If you are using georeplication between caches in Azure Virtual Networks, please
 ### <a name="how-can-i-verify-that-my-cache-is-working-in-a-vnet"></a>Как проверить, что кэш работает в виртуальной сети?
 
 >[!IMPORTANT]
->When connecting to an Azure Cache for Redis instance that is hosted in a VNET, your cache clients must be in the same VNET or in a VNET with VNET peering enabled within the same Azure region. Global VNET Peering isn't currently supported. Сюда входят все тестовые приложения и средства диагностики для проверки связи. Независимо от того, где размещено клиентское приложение, сетевые группы безопасности необходимо настроить таким образом, чтобы сетевой трафик клиента достигал экземпляра Redis.
+>При подключении к кэшу Azure для экземпляра Redis, размещенного в виртуальной сети, клиенты кэша должны находиться в одной виртуальной сети или в виртуальной сети с включенным пирингом виртуальных сетей в одном регионе Azure. Глобальная Пиринг виртуальных сетей в настоящее время не поддерживается. Сюда входят все тестовые приложения и средства диагностики для проверки связи. Независимо от того, где размещено клиентское приложение, сетевые группы безопасности необходимо настроить таким образом, чтобы сетевой трафик клиента достигал экземпляра Redis.
 >
 >
 
@@ -157,7 +157,7 @@ If you are using georeplication between caches in Azure Virtual Networks, please
 
 - [Перезагрузите](cache-administration.md#reboot) все узлы кэша. Если не установить все необходимые зависимости кэша (как описано в разделах [Обязательные порты для входящего трафика](cache-how-to-premium-vnet.md#inbound-port-requirements) и [Обязательные порты для исходящего трафика](cache-how-to-premium-vnet.md#outbound-port-requirements)), то кэш не сможет перезапускаться.
 - После перезапуска узлов кэша (по данным о состоянии кэша на портале Azure) можно выполнить следующие поверки:
-  - проверить связь с конечной точкой кэша (через порт 6380) с компьютера, который находится с кэшем в одной виртуальной сети, используя инструмент [tcping](https://www.elifulkerson.com/projects/tcping.php). Пример.
+  - проверить связь с конечной точкой кэша (через порт 6380) с компьютера, который находится с кэшем в одной виртуальной сети, используя инструмент [tcping](https://www.elifulkerson.com/projects/tcping.php). Например,
     
     `tcping.exe contosocache.redis.cache.windows.net 6380`
     
@@ -180,7 +180,7 @@ If you are using georeplication between caches in Azure Virtual Networks, please
 
 `10.128.2.84:6380,password=xxxxxxxxxxxxxxxxxxxx,ssl=True,abortConnect=False`
 
-Если не удается разрешить имя DNS, некоторые клиентские библиотеки содержат параметры конфигурации, например `sslHost`, которые предоставляет клиент StackExchange.Redis. Это позволяет переопределить имя узла, используемое для проверки сертификата. Пример.
+Если не удается разрешить имя DNS, некоторые клиентские библиотеки содержат параметры конфигурации, например `sslHost`, которые предоставляет клиент StackExchange.Redis. Это позволяет переопределить имя узла, используемое для проверки сертификата. Например,
 
 `10.128.2.84:6380,password=xxxxxxxxxxxxxxxxxxxx,ssl=True,abortConnect=False;sslHost=[mycachename].redis.windows.net`
 
@@ -233,7 +233,7 @@ Azure резервирует некоторые IP-адреса в каждой 
 
 Дополнительные сведения об ExpressRoute см. в статье [Технический обзор ExpressRoute](../expressroute/expressroute-introduction.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Узнайте, как использовать расширенные функции кэша.
 
 * [Общие сведения о кэше Azure для Redis уровня "Премиум"](cache-premium-tier-intro.md)

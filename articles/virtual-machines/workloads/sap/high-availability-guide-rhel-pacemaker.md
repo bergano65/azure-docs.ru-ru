@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/17/2018
 ms.author: sedusch
-ms.openlocfilehash: 954ff23997e56249859dd8d35f124324432f2b22
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.openlocfilehash: ee67c811835d99bf2f4c00dc59b43e29f63c81d6
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71673002"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533816"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "71673002"
 [2243692]: https://launchpad.support.sap.com/#/notes/2243692
 [1999351]: https://launchpad.support.sap.com/#/notes/1999351
 
-[virtual-machines-linux-maintenance]:../../linux/maintenance-and-updates.md#maintenance-that-doesnt-require-a-reboot
+[virtual-machines-linux-maintenance]:../../maintenance-and-updates.md#maintenance-that-doesnt-require-a-reboot
 
 
 Прежде всего прочитайте следующие примечания и документы SAP:
@@ -200,7 +200,7 @@ ms.locfileid: "71673002"
 
 Устройство STONITH использует субъект-службу для авторизации в Microsoft Azure. Чтобы создать субъект-службу, выполните следующее.
 
-1. Перейдите на сайт <https://portal.azure.com>
+1. Перейдите на сайт <https://portal.azure.com>.
 1. Откройте колонку "Azure Active Directory".  
    Перейдите в колонку "Свойства" и запишите идентификатор каталога. Это **идентификатор клиента**.
 1. Щелкните "Регистрация приложений".
@@ -243,7 +243,7 @@ ms.locfileid: "71673002"
 
 Назначьте субъекту-службе пользовательскую роль Linux Fence Agent Role, созданную в последней главе. Больше не используйте роль владельца!
 
-1. Перейдите на сайт https://portal.azure.com
+1. Перейдите на сайт https://portal.azure.com.
 1. Откройте колонку "Все ресурсы".
 1. Выберите виртуальную машину первого узла кластера.
 1. Выберите "Управление доступом (IAM)".
@@ -274,7 +274,7 @@ sudo pcs property set stonith-timeout=900
 <pre><code>sudo pcs property set stonith-enabled=true
 </code></pre>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]

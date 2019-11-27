@@ -1,6 +1,6 @@
 ---
-title: Connect to Azure Database for MySQL with redirection
-description: This article describes how you can configure you application to connect to Azure Database for MySQL with redirection.
+title: Подключение к базе данных Azure для MySQL с перенаправлением
+description: В этой статье описывается, как настроить приложение для подключения к базе данных Azure для MySQL с перенаправлением.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
@@ -13,53 +13,53 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74233744"
 ---
-# <a name="connect-to-azure-database-for-mysql-with-redirection"></a>Connect to Azure Database for MySQL with redirection
+# <a name="connect-to-azure-database-for-mysql-with-redirection"></a>Подключение к базе данных Azure для MySQL с перенаправлением
 
-This topic explains how to connect an application your Azure Database for MySQL server with redirection mode. Redirection aims to reduce network latency between client applications and MySQL servers by allowing applications to connect directly to backend server nodes.
+В этом разделе объясняется, как подключить приложение сервера базы данных Azure для MySQL с режимом перенаправления. Перенаправление нацелено на сокращение задержки в сети между клиентскими приложениями и серверами MySQL, позволяя приложениям подключаться непосредственно к внутренним узлам сервера.
 
 > [!IMPORTANT]
-> Support for redirection in the PHP [mysqlnd_azure](https://github.com/microsoft/mysqlnd_azure) is currently in preview.
+> Поддержка перенаправления в [MYSQLND_AZURE](https://github.com/microsoft/mysqlnd_azure) PHP сейчас доступна в предварительной версии.
 
 ## <a name="before-you-begin"></a>Перед началом работы
-Войдите на [портале Azure](https://portal.azure.com). Create an Azure Database for MySQL server with engine version 5.6, 5.7, or 8.0. Дополнительные сведения см. в статье [Создание базы данных Azure для сервера MySQL с помощью портала Azure](quickstart-create-mysql-server-database-using-azure-portal.md) или [Создание сервера базы данных Azure для MySQL с помощью Azure CLI](quickstart-create-mysql-server-database-using-azure-cli.md).
+Войдите на [портале Azure](https://portal.azure.com). Создайте сервер базы данных Azure для MySQL с ядром версии 5,6, 5,7 или 8,0. Дополнительные сведения см. в статье [Создание базы данных Azure для сервера MySQL с помощью портала Azure](quickstart-create-mysql-server-database-using-azure-portal.md) или [Создание сервера базы данных Azure для MySQL с помощью Azure CLI](quickstart-create-mysql-server-database-using-azure-cli.md).
 
-Redirection is currently only supported when SSL is enabled. Дополнительные сведения о настройке SSL см. в статье [Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/howto-configure-ssl#step-3-enforcing-ssl-connections-in-azure). 
+В настоящее время перенаправление поддерживается, только если включен протокол SSL. Дополнительные сведения о настройке SSL см. в статье [Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/howto-configure-ssl#step-3-enforcing-ssl-connections-in-azure). 
 
 ## <a name="php"></a>PHP
 
 ### <a name="ubuntu-linux"></a>Ubuntu Linux
 
-#### <a name="prerequisites"></a>Технические условия 
-- PHP versions 7.2.15+ and 7.3.2+
-- PHP PEAR 
-- php-mysql
-- Azure Database for MySQL server with SSL enabled
+#### <a name="prerequisites"></a>предварительным требованиям 
+- Версии PHP 7.2.15 + и 7.3.2 +
+- ГРУША PHP 
+- PHP — MySQL
+- Сервер базы данных Azure для MySQL с включенным SSL
 
-1. Install [mysqlnd_azure](https://github.com/microsoft/mysqlnd_azure) with [PECL](https://pecl.php.net/package/mysqlnd_azure).
+1. Установите [mysqlnd_azure](https://github.com/microsoft/mysqlnd_azure) с помощью [PECL](https://pecl.php.net/package/mysqlnd_azure).
 
     ```bash
     sudo pecl install mysqlnd_azure
     ```
 
-2. Locate the extension directory (`extension_dir`) by running the below:
+2. Откройте каталог расширения (`extension_dir`), выполнив следующую команду:
 
     ```bash
     php -i | grep "extension_dir"
     ```
 
-3. Change directories to the returned folder and ensure `mysqlnd_azure.so` is located in this folder. 
+3. Измените каталоги на возвращенную папку и убедитесь, что `mysqlnd_azure.so` находится в этой папке. 
 
-4. Locate the folder for .ini files by running the below: 
+4. Откройте папку для ini-файлов, выполнив следующую команду: 
 
     ```bash
     php -i | grep "dir for additional .ini files"
     ```
 
-5. Change directories to this returned folder. 
+5. Измените каталоги на эту возвращенную папку. 
 
-6. Create a new .ini file for `mysqlnd_azure`. Make sure the alphabet order of the name is after that of mysqnld, since the modules are loaded according to the name order of the ini files. For example, if `mysqlnd` .ini is named `10-mysqlnd.ini`, name the mysqlnd ini as `20-mysqlnd-azure.ini`.
+6. Создайте новый ini-файл для `mysqlnd_azure`. Убедитесь, что в алфавитном порядке указано имя после мискнлд, так как модули загружаются в соответствии с порядком имен ini-файлов. Например, если `mysqlnd`. ini имеет имя `10-mysqlnd.ini`, присвойте параметру мисклнд ini имя `20-mysqlnd-azure.ini`.
 
-7. Within the new .ini file, add the following lines to enable redirection.
+7. В новом ini-файле добавьте следующие строки, чтобы включить перенаправление.
 
     ```bash
     extension=mysqlnd_azure
@@ -68,51 +68,51 @@ Redirection is currently only supported when SSL is enabled. Дополните�
 
 ### <a name="windows"></a>Windows
 
-#### <a name="prerequisites"></a>Технические условия 
-- PHP versions 7.2.15+ and 7.3.2+
-- php-mysql
-- Azure Database for MySQL server with SSL enabled
+#### <a name="prerequisites"></a>предварительным требованиям 
+- Версии PHP 7.2.15 + и 7.3.2 +
+- PHP — MySQL
+- Сервер базы данных Azure для MySQL с включенным SSL
 
-1. Determine if you are running a x64 or x86 version of PHP by running the following command:
+1. Определите, используется ли версия PHP для x64 или x86, выполнив следующую команду:
 
     ```cmd
     php -i | findstr "Thread"
     ```
 
-2. Download the corresponding x64 or x86 version of the [mysqlnd_azure](https://github.com/microsoft/mysqlnd_azure) DLL from [PECL](https://pecl.php.net/package/mysqlnd_azure) that matches your version of PHP. 
+2. Скачайте соответствующую версию [mysqlnd_azure](https://github.com/microsoft/mysqlnd_azure) DLL для платформы x64 или x86 из [PECL](https://pecl.php.net/package/mysqlnd_azure) , которая соответствует вашей версии PHP. 
 
-3. Extract the zip file and find the DLL named `php_mysqlnd_azure.dll`.
+3. Извлеките ZIP-файл и найдите библиотеку DLL с именем `php_mysqlnd_azure.dll`.
 
-4. Locate the extension directory (`extension_dir`) by running the below command:
+4. Откройте каталог расширения (`extension_dir`), выполнив следующую команду:
 
     ```cmd
     php -i | find "extension_dir"s
     ```
 
-5. Copy the `php_mysqlnd_azure.dll` file into the directory returned in step 4. 
+5. Скопируйте файл `php_mysqlnd_azure.dll` в каталог, возвращенный на шаге 4. 
 
-6. Locate the PHP folder containing the `php.ini` file using the following command:
+6. Откройте папку PHP, содержащую файл `php.ini`, с помощью следующей команды:
 
     ```cmd
     php -i | find "Loaded Configuration File"
     ```
 
-7. Modify the `php.ini` file and add the following extra lines to enable redirection. 
+7. Измените файл `php.ini` и добавьте следующие дополнительные строки, чтобы включить перенаправление. 
 
-    Under the Dynamic Extensions section: 
+    В разделе Динамические расширения: 
     ```cmd
     extension=mysqlnd_azure
     ```
     
-    Under the Module Settings section:     
+    В разделе Параметры модуля:     
     ```cmd 
     [mysqlnd_azure]
     mysqlnd_azure.enabled=on
     ```
 
-### <a name="confirm-redirection"></a>Confirm redirection
+### <a name="confirm-redirection"></a>Подтверждение перенаправления
 
-You can also confirm redirection is configured with the below sample PHP code. Create a PHP file called `mysqlConnect.php` and paste the below code. Update the server name, username, and password with your own. 
+Также можно подтвердить, что перенаправление настроено с помощью приведенного ниже примера кода PHP. Создайте файл PHP с именем `mysqlConnect.php` и вставьте приведенный ниже код. Обновите имя сервера, имя пользователя и пароль. 
  
  ```php
 <?php
@@ -135,6 +135,6 @@ $db->close();
  ?>
  ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения о строках подключения см. в [соответствующей статье](howto-connection-string.md).
 

@@ -1,21 +1,21 @@
 ### YamlMime:Hub
-title: Документация по Центру Интернета вещей Azure
+title: Документация по Интернету вещей Azure
 summary: Azure IoT — это коллекция управляемых корпорацией Майкрософт облачных служб, которые позволяют подключать миллиарды ресурсов Интернета вещей, отслеживать их состояние и управлять ими.
 brand: azure
 metadata:
-  title: Документация по Центру Интернета вещей Azure
+  title: Документация по Интернету вещей Azure
   description: Azure IoT — это коллекция управляемых корпорацией Майкрософт облачных служб, которые позволяют подключать миллиарды ресурсов Интернета вещей, отслеживать их состояние и управлять ими.
   ms.service: iot-fundamentals
   ms.topic: hub-page
   author: philmea
   ms.author: philmea
   ms.date: 09/04/2019
-  ms.openlocfilehash: b99b45427cf793eec4f6257190823c102b838cfa
-  ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+  ms.openlocfilehash: cbd3a4dbaa80119d72cd54efa7dd2dc751b91b40
+  ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/10/2019
-  ms.locfileid: "73903348"
+  ms.lasthandoff: 11/23/2019
+  ms.locfileid: "74422812"
 highlightedContent:
   items:
   - title: Что такое Azure IoT?
@@ -40,7 +40,7 @@ conceptualContent:
   title: Начало разработки решения для Интернета вещей
   summary: Интернет вещей Azure предоставляет облачные и пограничные платформы Интернета вещей, а также полностью управляемые решения Интернета вещей
   items:
-  - title: Создание собственного решения Интернета вещей с помощью Центра Интернета вещей
+  - title: Создание собственного облачного решения для Интернета вещей
     links:
     - url: ../iot-hub/about-iot-hub.md
       itemType: overview
@@ -54,7 +54,7 @@ conceptualContent:
     footerLink:
       url: ../iot-hub/index.yml
       text: Дополнительные сведения
-  - title: Развертывание полностью управляемого решения Интернета вещей с помощью IoT Central
+  - title: Развертывание полностью управляемого решения для Интернета вещей
     links:
     - url: ../iot-central/core/overview-iot-central.md
       itemType: overview
@@ -68,7 +68,7 @@ conceptualContent:
     footerLink:
       url: ../iot-central/core/index.yml
       text: Дополнительные сведения
-  - title: Настройка готового решения для Интернета вещей с помощью акселераторов решений Azure IoT
+  - title: Настройка предварительно созданного решения для Интернета вещей
     links:
     - url: ../iot-accelerators/about-iot-accelerators.md
       itemType: overview
@@ -82,7 +82,7 @@ conceptualContent:
     footerLink:
       url: ../iot-accelerators/index.md
       text: Дополнительные сведения
-  - title: Выполнение облачной аналитики на устройствах с помощью Azure IoT Edge
+  - title: Запуск решений Cloud Intelligence на пограничных устройствах
     links:
     - url: ../iot-edge/about-iot-edge.md
       itemType: overview
@@ -96,7 +96,7 @@ conceptualContent:
     footerLink:
       url: ../iot-edge/index.yml
       text: Дополнительные сведения
-  - title: Создание интеллектуальных инфраструктур с возможностью подключения с помощью Azure Digital Twins
+  - title: Создание интеллектуальной инфраструктуры с подключением к сети
     links:
     - url: ../digital-twins/about-digital-twins.md
       itemType: overview
@@ -110,7 +110,7 @@ conceptualContent:
     footerLink:
       url: ../digital-twins/index.yml
       text: Дополнительные сведения
-  - title: Безопасная подготовка устройств в нужном масштабе с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей Azure
+  - title: Безопасная подготовка устройств в нужном масштабе
     links:
     - url: ../iot-dps/about-iot-dps.md
       itemType: overview
@@ -124,7 +124,7 @@ conceptualContent:
     footerLink:
       url: ../iot-dps/index.yml
       text: Дополнительные сведения
-  - title: Изучение и анализ данных устройства с помощью службы "Аналитика временных рядов Azure"
+  - title: Просмотр и анализ данных устройства
     links:
     - url: ../time-series-insights/time-series-insights-update-overview.md
       itemType: overview
@@ -138,7 +138,7 @@ conceptualContent:
     footerLink:
       url: ../time-series-insights/index.yml
       text: Дополнительные сведения
-  - title: Обеспечение мобильности на предприятии с помощью Azure Maps
+  - title: Обеспечение мобильности на предприятии
     links:
     - url: ../azure-maps/about-azure-maps.md
       itemType: overview

@@ -1,5 +1,5 @@
 ---
-title: Assign sensitivity labels to groups - Azure AD | Microsoft Docs
+title: Назначение меток чувствительности группам — Azure AD | Документация Майкрософт
 description: Сведения о создании правил членства для автоматического заполнения групп и о ссылках на эти правила.
 services: active-directory
 documentationcenter: ''
@@ -21,23 +21,23 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74404805"
 ---
-# <a name="assign-sensitivity-labels-to-office-365-groups-in-azure-active-directory-preview"></a>Assign sensitivity labels to Office 365 groups in Azure Active Directory (preview)
+# <a name="assign-sensitivity-labels-to-office-365-groups-in-azure-active-directory-preview"></a>Назначение меток чувствительности группам Office 365 в Azure Active Directory (Предварительная версия)
 
-Azure Active Directory (Azure AD) supports applying sensitivity labels published by the [Microsoft 365 compliance center](https://sip.protection.office.com/homepage) to Office 365 groups. Sensitivity labels apply to group across services like Outlook, Microsoft Teams, and SharePoint. Эта функция сейчас доступна в виде общедоступной предварительной версии.
+Azure Active Directory (Azure AD) поддерживает применение меток чувствительности, опубликованных [центром соответствия Microsoft 365](https://sip.protection.office.com/homepage) , в группах Office 365. Метки чувствительности применяются к группам в разных службах, например Outlook, Microsoft Teams и SharePoint. Эта функция сейчас доступна в виде общедоступной предварительной версии.
 
 > [!IMPORTANT]
-> Using Azure AD sensitivity labels for Office 365 groups requires an Azure Active Directory Premium P1 license.
+> Для использования меток чувствительности Azure AD для групп Office 365 требуется лицензия Azure Active Directory Premium P1.
 
-## <a name="group-settings-controlled-by-labels"></a>Group settings controlled by labels
+## <a name="group-settings-controlled-by-labels"></a>Параметры группы, управляемые метками
 
-There are two settings that can be associated with a label:
+С меткой можно связать два параметра:
 
-- **Privacy**: Admins can associate a privacy setting with the label to control whether a group is public or private.
-- **Guest access**: Admins can enforce the guest policy for all groups that have the label assigned. This policy specifies whether guests can be added as members or not. If the guest policy is configured for a label, any groups that you assign the label to won't allow the AllowToAddGuests setting to be changed.
+- **Конфиденциальность**. Администраторы могут связать параметр конфиденциальности с меткой, чтобы определить, является ли группа общедоступной или частной.
+- **Гостевой доступ**. Администраторы могут принудительно применять гостевую политику для всех групп, которым назначена метка. Эта политика указывает, можно ли добавлять гостей в качестве членов. Если гостевая политика настроена для метки, все группы, которым назначена метка, не допускают изменения параметра Алловтоаддгуестс.
 
-## <a name="enable-sensitivity-label-support-in-powershell"></a>Enable sensitivity label support in PowerShell
+## <a name="enable-sensitivity-label-support-in-powershell"></a>Включение поддержки меток чувствительности в PowerShell
 
-To apply published labels to groups, you must first enable the feature. These steps enable the feature in Azure AD.
+Чтобы применить опубликованные метки к группам, сначала необходимо включить эту функцию. Эти действия включают функцию в Azure AD.
 
 1. Откройте окно Windows PowerShell на компьютере. Его можно открыть без более высокого уровня привилегий.
 1. Выполните следующие команды, чтобы подготовить среду к выполнению командлетов.
@@ -47,127 +47,127 @@ To apply published labels to groups, you must first enable the feature. These st
     Connect-AzureAD
     ```
 
-    In the **Sign in to your account** page, enter your admin account and password to connect you to your service, and select **Sign in**.
-1. Fetch the current group settings for the Azure AD organization.
+    На странице **входа в учетную запись** введите учетную запись администратора и пароль, чтобы подключиться к службе, и выберите **Вход**.
+1. Получение текущих параметров группы для Организации Azure AD.
 
     ```PowerShell
     $Setting = Get-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
     ```
 
     > [!NOTE]
-    > If no group settings have been created for this Azure AD organization, you must first create the settings. Follow the steps in [Azure Active Directory cmdlets for configuring group settings](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-settings-cmdlets) to create group settings for this Azure AD organization.
+    > Если для этой Организации Azure AD не были созданы параметры группы, необходимо сначала создать параметры. Выполните действия, описанные в [Azure Active Directory командлетах для настройки параметров группы](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-settings-cmdlets) , чтобы создать параметры группы для этой Организации Azure AD.
 
-1. Next, display the current group settings.
+1. Затем отобразите текущие параметры группы.
 
     ```PowerShell
     $Setting.Values
     ```
 
-1. Then enable the feature:
+1. Затем включите эту функцию:
 
     ```PowerShell
     $Setting["EnableMIPLabels"] = "True"
     ```
 
-1. Then save the changes and apply the settings:
+1. Затем сохраните изменения и примените параметры.
 
     ```PowerShell
     Set-AzureADDirectorySetting -Id $Setting.Id -DirectorySetting $Setting
     ```
 
-Готово! You've enabled the feature and you can apply published labels to groups.
+Вот и все. Вы включили функцию и можете применить опубликованные метки к группам.
 
-## <a name="assign-a-label-to-a-new-group-in-azure-portal"></a>Assign a label to a new group in Azure portal
+## <a name="assign-a-label-to-a-new-group-in-azure-portal"></a>Назначение метки новой группе в портал Azure
 
-1. Sign in to the [Azure AD admin center](https://aad.portal.azure.com).
-1. Select **Groups**, and then select **New group**.
-1. On the **New Group** page, select **Office 365**, and then fill out the required information for the new group and select a sensitivity label from the list.
+1. Войдите в [центр администрирования Azure AD](https://aad.portal.azure.com).
+1. Выберите **группы**и щелкните **Новая группа**.
+1. На странице **Новая группа** выберите **Office 365**, а затем введите необходимые сведения для новой группы и выберите в списке метку с учетом конфиденциальности.
 
-   ![Assign a sensitivity label in the New groups page](./media/groups-assign-sensitivity-labels/new-group-page.png)
+   ![Назначение метки чувствительности на странице «Создание групп»](./media/groups-assign-sensitivity-labels/new-group-page.png)
 
-1. Save your changes and select **Create**.
+1. Сохраните изменения и нажмите кнопку **создать**.
 
-Your group is created and the policies associated with the selected label are then automatically enforced.
+Ваша группа будет создана, а политики, связанные с выбранной меткой, будут автоматически применены.
 
-## <a name="assign-a-label-to-an-existing-group-in-azure-portal"></a>Assign a label to an existing group in Azure portal
+## <a name="assign-a-label-to-an-existing-group-in-azure-portal"></a>Назначение метки существующей группе в портал Azure
 
-1. Sign in to the [Azure AD admin center](https://aad.portal.azure.com) with a Global admin or Groups admin account, or as a group owner.
+1. Войдите в [центр администрирования Azure AD](https://aad.portal.azure.com) с помощью учетной записи администратора глобального администратора или группы или владельца группы.
 1. Выберите **Группы**.
-1. From the **All groups** page, select the group that you want to label.
-1. On the selected group's page, select **Properties** and select a sensitivity label from the list.
+1. На странице **все группы** выберите группу, для которой нужно добавить метку.
+1. На странице выбранной группы выберите **Свойства** и в списке выберите метку чувствительности.
 
-   ![Assign a sensitivity label on the overview page for a group](./media/groups-assign-sensitivity-labels/assign-to-existing.png)
+   ![Назначение метки чувствительности на странице обзора для группы](./media/groups-assign-sensitivity-labels/assign-to-existing.png)
 
 1. Выберите **Сохранить**, чтобы сохранить изменения.
 
-## <a name="remove-a-label-from-an-existing-group-in-azure-portal"></a>Remove a label from an existing group in Azure portal
+## <a name="remove-a-label-from-an-existing-group-in-azure-portal"></a>Удаление метки из существующей группы в портал Azure
 
-1. Sign in to the [Azure AD admin center](https://aad.portal.azure.com) with a Global admin or Groups admin account, or as a group owner.
+1. Войдите в [центр администрирования Azure AD](https://aad.portal.azure.com) с помощью учетной записи администратора глобального администратора или группы или владельца группы.
 1. Выберите **Группы**.
-1. From the **All groups** page, select the group that you want to remove the label from.
-1. On the **Group** page, select **Properties**.
+1. На странице **все группы** выберите группу, из которой нужно удалить метку.
+1. На странице **Группа** выберите **свойства**.
 1. Щелкните **Удалить**.
 1. Щелкните **Сохранить**, чтобы применить изменения.
 
-## <a name="office-365-app-support-for-sensitivity-labels"></a>Office 365 app support for sensitivity labels
+## <a name="office-365-app-support-for-sensitivity-labels"></a>Поддержка приложений Office 365 для меток чувствительности
 
-The following Office 365 apps and services support the sensitivity labels in this preview:
+Следующие приложения и службы Office 365 поддерживают метки конфиденциальности в этой предварительной версии:
 
-- Azure AD admin center
-- Microsoft 365 compliance center
+- Центр администрирования Azure AD
+- Центр соответствия Microsoft 365
 - SharePoint
-- Outlook on the web
+- Outlook в Интернете
 - Команды
-- SharePoint admin center
+- Центр администрирования SharePoint
 
-For more information about Office 365 apps support, see [Office 365 support for sensitivity labels](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-teams-groups-sites#support-for-the-new-sensitivity-labels).
+Дополнительные сведения о поддержке приложений Office 365 см. в разделе [Поддержка меток конфиденциальности в office 365](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-teams-groups-sites#support-for-the-new-sensitivity-labels).
 
-## <a name="using-classic-azure-ad-classifications"></a>Using classic Azure AD classifications
+## <a name="using-classic-azure-ad-classifications"></a>Использование классических классификаций Azure AD
 
-After you enable this feature, Office 365 no longer supports the “classic” classifications for new groups. Classic classifications are the old classifications you set up by defining values for the `ClassificationList` setting in Azure AD PowerShell. When this feature is enabled, those classifications will not be applied to groups.
+После включения этой функции Office 365 больше не поддерживает "классические" классификации для новых групп. Классические классификации — это старые классификации, которые можно настроить, определив значения параметров `ClassificationList` в Azure AD PowerShell. Если эта функция включена, эти классификации не будут применяться к группам.
 
-## <a name="troubleshooting-issues"></a>Troubleshooting issues
+## <a name="troubleshooting-issues"></a>Устранение неполадок
 
-### <a name="sensitivity-labels-are-not-available-for-assignment-on-a-group"></a>Sensitivity labels are not available for assignment on a group
+### <a name="sensitivity-labels-are-not-available-for-assignment-on-a-group"></a>Метки чувствительности недоступны для назначения в группе
 
-The sensitivity label option is only displayed for groups when all the following conditions are met:
+Параметр метка конфиденциальности отображается только для групп при соблюдении всех следующих условий.
 
-1. Labels are published in the Microsoft 365 Compliance Center for this tenant.
-1. The feature is enabled, EnableMIPLabels is set to True in PowerShell.
-1. The group is an Office 365 group.
-1. The tenant has an active Azure Active Directory Premium P1 license.
-1. The current signed-in user has access to published labels.
-1. The current signed-in user has sufficient privileges to assign labels. The user must be either a Global Administrator, Group Administrator, or the group owner.
-1. The current signed-in user has an Office 365 license assigned. For more information about license requirements, see [Sensitivity labels in Office apps](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-office-apps).
+1. Метки публикуются в центре соответствия Microsoft 365 для этого клиента.
+1. Эта функция включена, в PowerShell для Енаблемиплабелс задано значение true.
+1. Группа является группой Office 365.
+1. У клиента есть активная лицензия Azure Active Directory Premium P1.
+1. Текущий пользователь, выполнивший вход, имеет доступ к опубликованным меткам.
+1. Текущий пользователь, выполнивший вход, имеет достаточные привилегии для назначения меток. Пользователь должен быть либо глобальным администратором, либо администратором группы, либо владельцем группы.
+1. Для текущего пользователя, выполнившего вход, назначена лицензия Office 365. Дополнительные сведения о требованиях к лицензиям см. [в статье метки чувствительности в приложениях Office](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-office-apps).
 
-Please make sure all the conditions are met in order to assign labels to a group.
+Убедитесь, что выполнены все условия для назначения меток группе.
 
-### <a name="the-label-i-want-to-assign-is-not-in-the-list"></a>The label I want to assign is not in the list
+### <a name="the-label-i-want-to-assign-is-not-in-the-list"></a>Метка, которую требуется назначить, отсутствует в списке
 
-If the label you are looking for is not in the list, this could be the case for one of the following reasons:
+Если искомая метка отсутствует в списке, это может быть вызвано одной из следующих причин:
 
-- The label might not be published in the Microsoft 365 Compliance Center. This could also apply to labels that are no longer published. Please check with your administrator for more information.
-- The label may be published, however, it is not available to the user that is signed-in. Please check with your administrator for more information on how to get access to the label.
+- Метка может не публиковаться в центре соответствия Microsoft 365. Это также может применяться к меткам, которые больше не публикуются. Для получения дополнительных сведений обратитесь к администратору.
+- Метка может быть опубликована, однако она недоступна для пользователя, выполнившего вход. Обратитесь к администратору за дополнительными сведениями о том, как получить доступ к метке.
 
-### <a name="how-can-i-change-the-label-on-a-group"></a>How can I change the label on a group?
+### <a name="how-can-i-change-the-label-on-a-group"></a>Как изменить метку для группы?
 
-Labels can be swapped at any time using the same steps as assigning a label to an existing group, as follows:
+Метки можно переключать в любое время, используя те же действия, что и при назначении метки существующей группе, следующим образом:
 
-1. Sign in to the [Azure AD admin center](https://aad.portal.azure.com) with a Global or Group administrator account or as group owner.
+1. Войдите в [центр администрирования Azure AD](https://aad.portal.azure.com) с помощью учетной записи глобального пользователя или администратора группы или владельца группы.
 1. Выберите **Группы**.
-1. From the **All groups** page, select the group that you want to label.
-1. On the selected group's page, select **Properties** and select a new sensitivity label from the list.
+1. На странице **все группы** выберите группу, для которой нужно добавить метку.
+1. На странице выбранной группы выберите **Свойства** и выберите в списке новую метку чувствительности.
 1. Щелкните **Сохранить**.
 
-### <a name="group-setting-changes-to-published-labels-are-not-updated-on-the-groups"></a>Group setting changes to published labels are not updated on the groups
+### <a name="group-setting-changes-to-published-labels-are-not-updated-on-the-groups"></a>Изменения параметров группы для опубликованных меток не обновлены в группах
 
-As a best practice, we don't recommend that you change group settings for a label after the label is applied to groups. When you make changes to group settings associated with published labels in [Microsoft 365 compliance center](https://sip.protection.office.com/homepage), those policy changes aren't automatically applied on the impacted groups.
+Рекомендуется изменять параметры группы для метки после применения метки к группам, как рекомендуется. При внесении изменений в параметры групп, связанные с опубликованными метками в [Microsoft 365 центре соответствия требованиям](https://sip.protection.office.com/homepage), эти изменения политики не применяются к затронутым группам автоматически.
 
-If you must make a change, use an [Azure AD PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1) to manually apply updates to the impacted groups. This method makes sure that all existing groups enforce the new setting.
+Если необходимо внести изменения, используйте [Скрипт Azure AD PowerShell](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1) , чтобы вручную применить обновления к затронутым группам. Этот метод гарантирует, что все существующие группы применяют новый параметр.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- [Use sensitivity labels with Microsoft Teams, Office 365 groups, and SharePoint sites](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-teams-groups-sites)
-- [Update groups after label policy change manually with Azure AD PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1)
+- [Используйте метки чувствительности к Microsoft Teams, группам Office 365 и сайтам SharePoint](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-teams-groups-sites)
+- [Обновление групп после изменения политики меток вручную с помощью скрипта Azure AD PowerShell](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1)
 - [Изменение параметров группы](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-settings-azure-portal)
 - [Управление группами с помощью команд PowerShell](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-settings-v2-cmdlets)

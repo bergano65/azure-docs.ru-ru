@@ -69,7 +69,7 @@ ms.locfileid: "74305433"
 
 ## <a name="access-the-grafana-dashboard"></a>Доступ к панели мониторинга Grafana
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 
 2. Щелкните **Кластеры HDInsight**, а затем выберите имя кластера, созданного в предыдущем разделе.
 
@@ -77,7 +77,7 @@ ms.locfileid: "74305433"
 
     ![Портал панели мониторинга кластера HDInsight](./media/hdinsight-grafana/hdinsight-portal-cluster-dashboard.png "Панель мониторинга кластера HDInsight на портале")
 
-4. На панели мониторинга щелкните плитку **Grafana**. Вы можете также перейти по пути `/grafana/` URL-адреса кластера. Например, `https://<clustername>.azurehdinsight.net/grafana/`.
+4. На панели мониторинга щелкните плитку **Grafana**. Вы можете также перейти по пути `/grafana/` URL-адреса кластера. Пример: `https://<clustername>.azurehdinsight.net/grafana/`.
 
 5. Введите учетные данные пользователя кластера Hadoop.
 

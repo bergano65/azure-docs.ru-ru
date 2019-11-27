@@ -12,12 +12,12 @@ ms.locfileid: "74231226"
 ---
 # <a name="durable-functions-unit-testing"></a>Модульное тестирование устойчивых функций
 
-Модульное тестирование является важной частью современных способов разработки программного обеспечения. Модульные тесты позволяют проверить поведение бизнес-логики и предотвратить внедрение незамеченных критических изменений в будущем. Степень сложности устойчивых функций может быстро увеличиться, поэтому использование модульных тестов поможет предотвращать внесение критических изменений. The following sections explain how to unit test the three function types - Orchestration client, orchestrator, and activity functions.
+Модульное тестирование является важной частью современных способов разработки программного обеспечения. Модульные тесты позволяют проверить поведение бизнес-логики и предотвратить внедрение незамеченных критических изменений в будущем. Степень сложности устойчивых функций может быстро увеличиться, поэтому использование модульных тестов поможет предотвращать внесение критических изменений. В следующих разделах объясняется, как выполнить модульное тестирование трех типов функций: клиент оркестрации, Orchestrator и функции действий.
 
 > [!NOTE]
-> This article provides guidance for unit testing for Durable Functions apps targeting Durable Functions 1.x. It has not yet been updated to account for changes introduced in Durable Functions 2.x. For more information about the differences between versions, see the [Durable Functions versions](durable-functions-versions.md) article.
+> В этой статье приводятся рекомендации по модульному тестированию для Устойчивые функции приложений, предназначенных для Устойчивые функции 1. x. Она еще не обновлена, чтобы учитывать изменения, появившиеся в Устойчивые функции 2. x. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Для выполнения примеров в этой статье нужно ознакомиться со следующими понятиями и платформами.
 
@@ -31,7 +31,7 @@ ms.locfileid: "74231226"
 
 ## <a name="base-classes-for-mocking"></a>Базовые классы для имитации
 
-Mocking is supported via three abstract classes in Durable Functions 1.x:
+Макетирование поддерживается через три абстрактных класса в Устойчивые функции 1. x:
 
 * `DurableOrchestrationClientBase`
 
@@ -39,9 +39,9 @@ Mocking is supported via three abstract classes in Durable Functions 1.x:
 
 * `DurableActivityContextBase`
 
-These classes are base classes for `DurableOrchestrationClient`, `DurableOrchestrationContext`, and `DurableActivityContext` that define Orchestration Client, Orchestrator, and Activity methods. В процессе имитирования устанавливается ожидаемое поведение методов базового класса. Таким образом модульный тест может проверить бизнес-логику. При модульном тестировании бизнес-логики в клиенте оркестрации и оркестраторе выполняется двухэтапный рабочий процесс.
+Эти классы являются базовыми классами для `DurableOrchestrationClient`, `DurableOrchestrationContext`и `DurableActivityContext`, определяющих клиент оркестрации, Orchestrator и методы действий. В процессе имитирования устанавливается ожидаемое поведение методов базового класса. Таким образом модульный тест может проверить бизнес-логику. При модульном тестировании бизнес-логики в клиенте оркестрации и оркестраторе выполняется двухэтапный рабочий процесс.
 
-1. Use the base classes instead of the concrete implementation when defining orchestration client and orchestrator function signatures.
+1. Используйте базовые классы вместо конкретной реализации при определении сигнатур клиента оркестрации и функции Orchestrator.
 2. Настройте модульные тесты, выполняющие имитирование поведения базовых классов и проверку бизнес-логики.
 
 Подробные сведения по функциям тестирования, использующим привязку клиента оркестрации и триггера оркестратора, изложены в следующих разделах.
@@ -52,9 +52,9 @@ These classes are base classes for `DurableOrchestrationClient`, `DurableOrchest
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HttpStart.cs)]
 
-Модульному тесту необходимо проверить заголовок `Retry-After` в полезных данных ответа. So the unit test will mock some of `DurableOrchestrationClientBase` methods to ensure predictable behavior.
+Модульному тесту необходимо проверить заголовок `Retry-After` в полезных данных ответа. Поэтому модульный тест будет подмакетирование некоторые из `DurableOrchestrationClientBase` методов, чтобы обеспечить предсказуемое поведение.
 
-First, a mock of the base class is required, `DurableOrchestrationClientBase`. The mock can be a new class that implements `DurableOrchestrationClientBase`. Однако, использование платформы имитированной реализации наподобие [moq](https://github.com/moq/moq4) упрощает данный процесс.
+Во-первых, требуется макет базового класса `DurableOrchestrationClientBase`. Макет может быть новым классом, реализующим `DurableOrchestrationClientBase`. Однако, использование платформы имитированной реализации наподобие [moq](https://github.com/moq/moq4) упрощает данный процесс.
 
 ```csharp
     // Mock DurableOrchestrationClientBase
@@ -172,11 +172,11 @@ First, a mock of the base class is required, `DurableOrchestrationClientBase`. T
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HelloSequence.cs)]
 
-Кроме того, модульный тест позволяет проверить формат выходных данных. The unit tests can use the parameter types directly or mock `DurableActivityContextBase` class:
+Кроме того, модульный тест позволяет проверить формат выходных данных. Модульные тесты могут использовать типы параметров непосредственно или макетирование `DurableActivityContextBase` класса:
 
 [!code-csharp[Main](~/samples-durable-functions/samples/VSSample.Tests/HelloSequenceActivityTests.cs)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о xUnit](https://xunit.github.io/docs/getting-started-dotnet-core)

@@ -22,7 +22,7 @@ ms.locfileid: "74230286"
 * **Предварительная версия** — языки, которые еще не поддерживаются, но в будущем станут общедоступными.
 * **Экспериментальные** — языки, которые не поддерживаются и могут быть удалены в будущем. Нет гарантии, что они будут поддерживаться в качестве общедоступных.
 
-## <a name="languages-by-runtime-version"></a>Languages by runtime version 
+## <a name="languages-by-runtime-version"></a>Языки по версии среды выполнения 
 
 Доступны [две версии среды выполнения в решении "Функции Azure"](functions-versions.md). В следующей таблице показаны поддерживаемые языки для каждой версии среды выполнения.
 
@@ -38,16 +38,16 @@ ms.locfileid: "74230286"
 
 ### <a name="language-extensibility"></a>Расширяемость языка
 
-Starting with version 2.x, the runtime is designed to offer [language extensibility](https://github.com/Azure/azure-webjobs-sdk-script/wiki/Language-Extensibility). Языки JavaScript и Java в среде выполнения 2.x поддерживают эту расширяемость.
+Начиная с версии 2. x среда выполнения разработана таким образом, чтобы обеспечить [расширяемость языка](https://github.com/Azure/azure-webjobs-sdk-script/wiki/Language-Extensibility). Языки JavaScript и Java в среде выполнения 2.x поддерживают эту расширяемость.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-To learn more about how to develop functions in the supported languages, see the following resources:
+Дополнительные сведения о разработке функций на поддерживаемых языках см. в следующих ресурсах:
 
-+ [C# class library developer reference](functions-dotnet-class-library.md)
-+ [C# script developer reference](functions-reference-csharp.md)
-+ [Java developer reference](functions-reference-java.md)
-+ [JavaScript developer reference](functions-reference-node.md)
-+ [PowerShell developer reference](functions-reference-powershell.md)
-+ [Python developer reference](functions-reference-python.md)
-+ [TypeScript developer reference](functions-reference-node.md#typescript)
++ [C#Справочник разработчика библиотеки классов](functions-dotnet-class-library.md)
++ [C#Справочник разработчика скриптов](functions-reference-csharp.md)
++ [Справочник разработчика Java](functions-reference-java.md)
++ [Справочник разработчика JavaScript](functions-reference-node.md)
++ [Справочник разработчика по PowerShell](functions-reference-powershell.md)
++ [Справочник разработчика Python](functions-reference-python.md)
++ [Справочник разработчика TypeScript](functions-reference-node.md#typescript)

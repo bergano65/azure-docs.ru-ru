@@ -17,7 +17,7 @@ ms.locfileid: "74231483"
 
 > [!NOTE]
 > 
-> * If you are developing durable functions in C#, you should instead consider [Visual Studio 2019 development](durable-functions-create-first-csharp.md).
+> * Если вы разрабатываете устойчивые C#функции в, вместо этого следует подумать о [разработке Visual Studio 2019](durable-functions-create-first-csharp.md).
 > * Если вы разрабатываете Устойчивые функции на языке JavaScript, вместо этого рассмотрите возможность [разработки с помощью Visual Studio Code](./quickstart-js-vscode.md).
 
 ## <a name="create-a-function-app"></a>Создание приложения-функции
@@ -130,7 +130,7 @@ ms.locfileid: "74231483"
 
 Ваша первая устойчивая функция создана и успешно работает в Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о распространенных шаблонах устойчивых функций](durable-functions-overview.md#application-patterns)

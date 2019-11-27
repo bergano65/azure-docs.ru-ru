@@ -1,19 +1,14 @@
 ---
-title: Обновление контейнеров в службе "Экземпляры контейнеров Azure"
+title: Обновить группу контейнеров
 description: Сведения об обновлении запущенных контейнеров в службе "Экземпляры контейнеров Azure"
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: article
 ms.date: 09/03/2019
-ms.author: danlep
-ms.openlocfilehash: 3103fe7fbf7dcd587f43b673ef53f32893908ecb
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: f57ebcf050b5563b45f10af57c1721338df88ff9
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70307713"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533303"
 ---
 # <a name="update-containers-in-azure-container-instances"></a>Обновление контейнеров в службе "Экземпляры контейнеров Azure"
 
@@ -71,12 +66,12 @@ IP-адрес контейнера обычно не изменяется меж
 * Тип ОС
 * ЦП
 * Память
-* Политика перезагрузки
-* Порты
+* Политика перезапуска
+* порты;
 
 При удалении группы контейнеров и создании ее повторно, происходит не "повторное развертывание" объекта, а создается новый. Все слои образа заново извлекаются из реестра, а не из кэша предыдущего развертывания. IP-адрес контейнера также может измениться из-за его развертывания на другом основном узле.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 **Группа контейнеров** упоминается несколько раз в этой статье. Каждый контейнер в Экземплярах контейнеров Azure развертывается в группе, которая может содержать более одного контейнера.
 

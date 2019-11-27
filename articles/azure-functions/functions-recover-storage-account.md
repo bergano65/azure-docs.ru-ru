@@ -20,10 +20,10 @@ ms.locfileid: "74226764"
 
 `Error: Azure Functions Runtime is unreachable. Click here for details on storage configuration`
 
-### <a name="summary"></a>Резюме
+### <a name="summary"></a>summary
 Эта проблема возникает, когда среду выполнения Функций Azure не удается запустить. Наиболее распространенная причина возникновения этой ошибки связана с тем, что приложение-функция теряет доступ к учетной записи хранения. Дополнительные сведения см. в разделе [Требования к учетной записи хранения](https://docs.microsoft.com/azure/azure-functions/functions-create-function-app-portal#storage-account-requirements).
 
-### <a name="troubleshooting"></a>Устранение неисправностей
+### <a name="troubleshooting"></a>Устранение неполадок
 Мы рассмотрим четыре наиболее часто встречающиеся ошибки, метод их определения и способы устранения в каждом случае.
 
 1. Учетная запись хранения удалена.
@@ -48,7 +48,7 @@ ms.locfileid: "74226764"
 
 ### <a name="required-application-settings"></a>Необходимые параметры приложения
 
-* Обязательно для заполнения
+* обязательные
     * [`AzureWebJobsStorage`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings#azurewebjobsstorage)
 * Обязательные для Функций плана потребления:
     * [`WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings)
@@ -59,7 +59,7 @@ ms.locfileid: "74226764"
 ### <a name="guidance"></a>Руководство
 
 * Не устанавливайте флажок "Параметр слота" для любого из этих параметров. При переключении слотов развертывания Функция будет нарушена.
-* Do not modify these settings as part of automated deployments.
+* Не изменяйте эти параметры как часть автоматизированных развертываний.
 * Эти параметры должны быть указаны и допустимы во время создания. Если в автоматическом развертывании нет этих параметров, это приведет к неработоспособности приложения, даже если параметры будут добавлены позже.
 
 ## <a name="storage-account-credentials-invalid"></a>Недопустимые учетные данные учетной записи хранения
@@ -81,7 +81,7 @@ ms.locfileid: "74226764"
     * `The Function App has reached daily usage quota and has been stopped until the next 24 hours time frame.`
 * Удалите квоту и перезапустите приложение, чтобы устранить проблему.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда приложение-функция опять работоспособно, ознакомьтесь с нашими справочниками для разработчиков, чтобы продолжить работу приложения.
 
@@ -89,8 +89,8 @@ ms.locfileid: "74226764"
   Приступите к созданию первой функции с помощью быстрой настройки Функций Azure. 
 * [Справочник разработчика по функциям Azure](functions-reference.md)  
   Дополнительные технические сведения о среде выполнения Функций Azure, а также справочник по программированию функций и определению триггеров и привязок.
-* [Testing Azure Functions](functions-test-a-function.md)  
-  Описание различных средств и методов тестирования функций.
+* [Тестирование функций Azure](functions-test-a-function.md)  
+  (Тестирование функций Azure) Описание различных средств и методов тестирования функций.
 * [Масштабирование функций Azure](functions-scale.md)  
   Обсуждение планов обслуживания, доступных для использования с функциями Azure (включая план потребления), а также выбор подходящего плана. 
 * [Дополнительные сведения о службе приложений Azure](../app-service/overview.md)  

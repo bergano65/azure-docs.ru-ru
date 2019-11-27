@@ -61,6 +61,8 @@
   items:
     - name: Масштабирование
       items:
+        - name: Единственный экземпляр
+          href: signalr-howto-scale-signalr.md
         - name: Выполнение на нескольких экземплярах
           href: signalr-howto-scale-multi-instances.md
     - name: Безопасность

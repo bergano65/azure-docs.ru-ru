@@ -22,15 +22,15 @@ ms.locfileid: "74325443"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В этой статье предполагается, что у вас есть кластер AKS. If you need an AKS cluster, see the AKS quickstart [using the Azure CLI][aks-quickstart-cli] or [using the Azure portal][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, ознакомьтесь с кратким руководством по AKS, [используя Azure CLI][aks-quickstart-cli] или [с помощью портал Azure][aks-quickstart-portal].
 
-You also need the Azure CLI version 2.0.59 or later installed and configured. Чтобы узнать версию, выполните команду  `az --version`. If you need to install or upgrade, see [Install Azure CLI][install-azure-cli].
+Также требуется Azure CLI версии 2.0.59 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если необходимо установить или обновить, см. раздел [install Azure CLI][install-azure-cli].
 
-This article covers using a *Standard* SKU IP with a *Standard* SKU load balancer. For more information, see [IP address types and allocation methods in Azure][ip-sku].
+В этой статье рассматривается использование *стандартного* IP-адреса SKU с подсистемой балансировки нагрузки *стандартного* SKU. Дополнительные сведения см. [в разделе Типы IP-адресов и методы распределения в Azure][ip-sku].
 
 ## <a name="create-a-static-ip-address"></a>Создание статического IP-адреса
 
-Create a static public IP address with the [az network public ip create][az-network-public-ip-create] command. The following creates a static IP resource named *myAKSPublicIP* in the *myResourceGroup* resource group:
+Создайте статический общедоступный IP-адрес с помощью команды [AZ Network public IP Create][az-network-public-ip-create] . В следующем примере создается ресурс статического IP-адреса с именем *мякспублиЦип* в группе ресурсов *myResourceGroup* :
 
 ```azurecli-interactive
 az network public-ip create \
@@ -41,9 +41,9 @@ az network public-ip create \
 ```
 
 > [!NOTE]
-> If you are using a *Basic* SKU load balancer in your AKS cluster, use *Basic* for the *sku* parameter when defining a public IP. Only *Basic* SKU IPs work with the *Basic* SKU load balancer and only *Standard* SKU IPs work with *Standard* SKU load balancers. 
+> При использовании подсистемы балансировки нагрузки уровня " *базовый* " в кластере AKS используйте параметр " *базовый* " для параметра *SKU* при определении общедоступного IP-адреса. Только *основные* IP-адреса SKU работают с подсистемой балансировки нагрузки уровня " *базовый* " и поддерживаются только *стандартные* IP-адреса SKU с подсистемами балансировки нагрузки " *стандартный* " 
 
-The IP address is displayed, as shown in the following condensed example output:
+Отобразится IP-адрес, как показано в приведенном ниже примере вывода с уплотнением:
 
 ```json
 {
@@ -55,7 +55,7 @@ The IP address is displayed, as shown in the following condensed example output:
 }
 ```
 
-You can later get the public IP address using the [az network public-ip list][az-network-public-ip-list] command. Укажите имя группы ресурсов узла и созданный вами общедоступный IP-адрес, а затем запросите *ipAddress*, как показано в следующем примере:
+Позже можно получить общедоступный IP-адрес с помощью команды [AZ Network public-IP List][az-network-public-ip-list] . Укажите имя группы ресурсов узла и созданный вами общедоступный IP-адрес, а затем запросите *ipAddress*, как показано в следующем примере:
 
 ```azurecli-interactive
 $ az network public-ip show --resource-group myResourceGroup --name myAKSPublicIP --query ipAddress --output tsv
@@ -65,7 +65,7 @@ $ az network public-ip show --resource-group myResourceGroup --name myAKSPublicI
 
 ## <a name="create-a-service-using-the-static-ip-address"></a>Создание службы со статическим IP-адресом
 
-Before creating a service, ensure the service principal used by the AKS cluster has delegated permissions to the other resource group. Пример.
+Перед созданием службы убедитесь, что субъект-служба, используемый кластером AKS, имеет делегированные разрешения на доступ к другой группе ресурсов. Например,
 
 ```azurecli-interactive
 az role assignment create \
@@ -74,7 +74,7 @@ az role assignment create \
     --scope /subscriptions/<subscription id>/resourceGroups/<resource group name>
 ```
 
-To create a *LoadBalancer* service with the static public IP address, add the `loadBalancerIP` property and the value of the static public IP address to the YAML manifest. Создайте файл `load-balancer-service.yaml` и скопируйте в него следующий код YAML. Укажите собственный общедоступный IP-адрес, созданный на предыдущем шаге. The following example also sets the annotation to the resource group named *myResourceGroup*. Provide your own resource group name.
+Чтобы создать службу *балансировки нагрузки* со статическим общедоступным IP-адресом, добавьте свойство `loadBalancerIP` и значение статического общедоступного IP-адреса в манифест YAML. Создайте файл `load-balancer-service.yaml` и скопируйте в него следующий код YAML. Укажите собственный общедоступный IP-адрес, созданный на предыдущем шаге. В следующем примере также задается заметка для группы ресурсов с именем *myResourceGroup*. Укажите собственное имя группы ресурсов.
 
 ```yaml
 apiVersion: v1
@@ -100,7 +100,7 @@ kubectl apply -f load-balancer-service.yaml
 
 ## <a name="troubleshoot"></a>Устранение неполадок
 
-If the static IP address defined in the *loadBalancerIP* property of the Kubernetes service manifest does not exist, or has not been created in the node resource group and no additional delegations configured, the load balancer service creation fails. To troubleshoot, review the service creation events with the [kubectl describe][kubectl-describe] command. Введите имя службы, указанное в манифесте YAML, как показано в следующем примере:
+Если статический IP-адрес, определенный в свойстве *лоадбаланцерип* манифеста службы Kubernetes, не существует или не был создан в группе ресурсов узла и не настроены дополнительные делегирования, то создание службы балансировщика нагрузки завершится ошибкой. Чтобы устранить неполадки, изучите события создания службы с помощью команды [kubectl описывают][kubectl-describe] . Введите имя службы, указанное в манифесте YAML, как показано в следующем примере:
 
 ```console
 kubectl describe service azure-load-balancer
@@ -130,9 +130,9 @@ Events:
   Warning  CreatingLoadBalancerFailed  6s (x2 over 12s)  service-controller  Error creating load balancer (will retry): Failed to create load balancer for service default/azure-load-balancer: user supplied IP Address 40.121.183.52 was not found
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-For additional control over the network traffic to your applications, you may want to instead [create an ingress controller][aks-ingress-basic]. You can also [create an ingress controller with a static public IP address][aks-static-ingress].
+Чтобы получить дополнительный контроль над сетевым трафиком к приложениям, можно вместо этого [создать контроллер][aks-ingress-basic]входящего трафика. Также можно [создать входной контроллер с статическим общедоступным IP-адресом][aks-static-ingress].
 
 <!-- LINKS - External -->
 [kubectl-describe]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#describe

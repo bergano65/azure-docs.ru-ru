@@ -1,5 +1,5 @@
 ---
-title: Microsoft identity platform and OAuth2.0 On-Behalf-Of flow | Azure
+title: Потоковая платформа Microsoft Identity и OAuth 2.0 от имени пользователя | Службы
 description: В этой статье описывается, как использовать HTTP-сообщения для проверки подлинности между службами с помощью потока On-Behalf-Of в OAuth 2.0.
 services: active-directory
 documentationcenter: ''
@@ -25,17 +25,17 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74207514"
 ---
-# <a name="microsoft-identity-platform-and-oauth-20-on-behalf-of-flow"></a>Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow
+# <a name="microsoft-identity-platform-and-oauth-20-on-behalf-of-flow"></a>Платформа Microsoft Identity и OAuth 2,0 от имени потока
 
 [!INCLUDE [active-directory-develop-applies-v2](../../../includes/active-directory-develop-applies-v2.md)]
 
-Поток On-Behalf-Of (OBO) в OAuth 2.0 используется в том случае, когда приложение вызывает службу или веб-API, который, в свою очередь, должен вызывать другую службу или веб-API. Идея состоит в том, чтобы распространить делегированное удостоверение пользователя и разрешения с помощью цепочки запросов. For the middle-tier service to make authenticated requests to the downstream service, it needs to secure an access token from the Microsoft identity platform, on behalf of the user.
+Поток On-Behalf-Of (OBO) в OAuth 2.0 используется в том случае, когда приложение вызывает службу или веб-API, который, в свою очередь, должен вызывать другую службу или веб-API. Идея состоит в том, чтобы распространить делегированное удостоверение пользователя и разрешения с помощью цепочки запросов. Чтобы служба среднего уровня выполняла запросы с проверкой подлинности к подчиненной службе, ей необходимо защитить маркер доступа от платформы Microsoft Identity, от имени пользователя.
 
-This article describes how to program directly against the protocol in your application.  When possible, we recommend you use the supported Microsoft Authentication Libraries (MSAL) instead to [acquire tokens and call secured web APIs](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows).  Also take a look at the [sample apps that use MSAL](sample-v2-code.md).
+В этой статье описывается, как программировать непосредственно по протоколу в приложении.  По возможности рекомендуется использовать поддерживаемые библиотеки проверки подлинности Майкрософт (MSAL) вместо [получения маркеров и вызова защищенных веб-API](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows).  Также ознакомьтесь с [примерами приложений, которые используют MSAL](sample-v2-code.md).
 
 > [!NOTE]
 >
-> - The Microsoft identity platform endpoint doesn't support all scenarios and features. To determine whether you should use the Microsoft identity platform endpoint, read about [Microsoft identity platform limitations](active-directory-v2-limitations.md). Specifically, known client applications aren't supported for apps with Microsoft account (MSA) and Azure AD audiences. Поэтому общий шаблон согласия для потока OBO не будет работать для клиентов, которые выполняют вход с личными и рабочими или учебными учетными записями. Чтобы узнать больше о том, как выполнять этот шаг потока, ознакомьтесь с разделом [Получение согласия для приложения среднего уровня](#gaining-consent-for-the-middle-tier-application).
+> - Конечная точка платформы Microsoft Identity не поддерживает все сценарии и функции. Чтобы определить, следует ли использовать конечную точку платформы идентификации Майкрософт, ознакомьтесь с [ограничениями платформы удостоверений Майкрософт](active-directory-v2-limitations.md). В частности, известные клиентские приложения не поддерживаются для приложений с помощью учетная запись Майкрософт (MSA) и аудитории Azure AD. Поэтому общий шаблон согласия для потока OBO не будет работать для клиентов, которые выполняют вход с личными и рабочими или учебными учетными записями. Чтобы узнать больше о том, как выполнять этот шаг потока, ознакомьтесь с разделом [Получение согласия для приложения среднего уровня](#gaining-consent-for-the-middle-tier-application).
 > - По состоянию на май 2018 года какой-либо производный маркер неявного потока `id_token` не может использоваться для потока OBO. Вместо этого одностраничные приложения (SPA) должны передавать свои маркеры **доступа** в конфиденциальный клиент среднего уровня для выполнения потоков OBO. Дополнительные сведения о том, какие клиенты могут выполнять вызовы OBO, см. в разделе об [ограничениях](#client-limitations).
 
 ## <a name="protocol-diagram"></a>Схема протокола
@@ -44,11 +44,11 @@ This article describes how to program directly against the protocol in your appl
 
 Последующие шаги образуют поток OBO. Эти шаги поясняются на следующей схеме.
 
-![Shows the OAuth2.0 On-Behalf-Of flow](./media/v2-oauth2-on-behalf-of-flow/protocols-oauth-on-behalf-of-flow.png)
+![Показывает поток от имени по протоколу OAuth 2.0](./media/v2-oauth2-on-behalf-of-flow/protocols-oauth-on-behalf-of-flow.png)
 
 1. Клиентское приложение отправляет запрос к API A с маркером A (с утверждением `aud` API А).
-1. API A authenticates to the Microsoft identity platform token issuance endpoint and requests a token to access API B.
-1. The Microsoft identity platform token issuance endpoint validates API A's credentials with token A and issues the access token for API B (token B).
+1. API A выполняет проверку подлинности конечной точки выдачи маркера платформы идентификации Майкрософт и запрашивает маркер для доступа к API B.
+1. Конечная точка выдачи маркера платформы идентификации Майкрософт проверяет учетные данные API а с токеном а и выдает маркер доступа для API B (маркер B).
 1. Маркер B задается в заголовке авторизации запроса к API B.
 1. API B возвращает данные из защищенного ресурса.
 
@@ -57,7 +57,7 @@ This article describes how to program directly against the protocol in your appl
 
 ## <a name="service-to-service-access-token-request"></a>Запрос маркера взаимного доступа между службами
 
-To request an access token, make an HTTP POST to the tenant-specific Microsoft identity platform token endpoint with the following parameters.
+Чтобы запросить маркер доступа, выполните HTTP-запрос POST к конечной точке маркера платформы Microsoft Identity для конкретного клиента со следующими параметрами.
 
 ```
 https://login.microsoftonline.com/<tenant>/oauth2/v2.0/token
@@ -69,14 +69,14 @@ https://login.microsoftonline.com/<tenant>/oauth2/v2.0/token
 
 При использовании общего секрета запрос маркера взаимного доступа между службами содержит следующие параметры:
 
-| Параметр |  | Описание |
+| Параметр |  | ОПИСАНИЕ |
 | --- | --- | --- |
-| `grant_type` | Обязательно для заполнения | Тип запроса маркера. Для запроса с использованием JWT нужно указать значение `urn:ietf:params:oauth:grant-type:jwt-bearer`. |
-| `client_id` | Обязательно для заполнения | The application (client) ID that [the Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page has assigned to your app. |
-| `client_secret` | Обязательно для заполнения | The client secret that you generated for your app in the Azure portal - App registrations page. |
-| `assertion` | Обязательно для заполнения | Значение токена, используемого в запросе. |
-| `scope` | Обязательно для заполнения | Список областей для запроса токена, разделенный пробелами. Дополнительные сведения см. в разделе [Области](v2-permissions-and-consent.md). |
-| `requested_token_use` | Обязательно для заполнения | Указывает, как должен быть обработан запрос. В потоке OBO нужно указать значение `on_behalf_of`. |
+| `grant_type` | обязательные | Тип запроса маркера. Для запроса с использованием JWT нужно указать значение `urn:ietf:params:oauth:grant-type:jwt-bearer`. |
+| `client_id` | обязательные | Идентификатор приложения (клиента), назначенный приложению [портал Azure регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) странице. |
+| `client_secret` | обязательные | Секрет клиента, созданный для приложения на странице портал Azure-Регистрация приложений. |
+| `assertion` | обязательные | Значение токена, используемого в запросе. |
+| `scope` | обязательные | Список областей для запроса токена, разделенный пробелами. Дополнительные сведения см. в разделе [Области](v2-permissions-and-consent.md). |
+| `requested_token_use` | обязательные | Указывает, как должен быть обработан запрос. В потоке OBO нужно указать значение `on_behalf_of`. |
 
 #### <a name="example"></a>Пример
 
@@ -101,15 +101,15 @@ grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
 
 Запрос маркера взаимного доступа между службами с помощью сертификата содержит следующие параметры:
 
-| Параметр |  | Описание |
+| Параметр |  | ОПИСАНИЕ |
 | --- | --- | --- |
-| `grant_type` | Обязательно для заполнения | Тип запроса токена. Для запроса с использованием JWT нужно указать значение `urn:ietf:params:oauth:grant-type:jwt-bearer`. |
-| `client_id` | Обязательно для заполнения |  The application (client) ID that [the Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page has assigned to your app. |
-| `client_assertion_type` | Обязательно для заполнения | Значение должно быть равно `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`. |
-| `client_assertion` | Обязательно для заполнения | Утверждение (JSON Web Token), которое необходимо создать и подписать с помощью сертификата, зарегистрированного как учетные данные для приложения. Ознакомьтесь с информацией об [учетных данных сертификата](active-directory-certificate-credentials.md), чтобы узнать, как зарегистрировать сертификат и задать формат утверждения. |
-| `assertion` | Обязательно для заполнения | Значение токена, используемого в запросе. |
-| `requested_token_use` | Обязательно для заполнения | Указывает, как должен быть обработан запрос. В потоке OBO нужно указать значение `on_behalf_of`. |
-| `scope` | Обязательно для заполнения | Список областей для запроса маркера, разделенный пробелами. Дополнительные сведения см. в разделе [Области](v2-permissions-and-consent.md).|
+| `grant_type` | обязательные | Тип запроса токена. Для запроса с использованием JWT нужно указать значение `urn:ietf:params:oauth:grant-type:jwt-bearer`. |
+| `client_id` | обязательные |  Идентификатор приложения (клиента), назначенный приложению [портал Azure регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) странице. |
+| `client_assertion_type` | обязательные | Значение должно быть `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`. |
+| `client_assertion` | обязательные | Утверждение (веб-токен JSON), которое необходимо создать и подписать с помощью сертификата, зарегистрированного как учетные данные для приложения. Ознакомьтесь с информацией об [учетных данных сертификата](active-directory-certificate-credentials.md), чтобы узнать, как зарегистрировать сертификат и задать формат утверждения. |
+| `assertion` | обязательные | Значение токена, используемого в запросе. |
+| `requested_token_use` | обязательные | Указывает, как должен быть обработан запрос. В потоке OBO нужно указать значение `on_behalf_of`. |
+| `scope` | обязательные | Список областей для запроса маркера, разделенный пробелами. Дополнительные сведения см. в разделе [Области](v2-permissions-and-consent.md).|
 
 Обратите внимание на то, что параметры являются почти такими же, как и при использовании запроса с помощью общего секрета, за исключением параметра `client_secret`, который заменяется двумя параметрами: `client_assertion_type` и `client_assertion`.
 
@@ -137,9 +137,9 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 
 Если доступ предоставлен, ответ будет содержать JSON-файл OAuth 2.0 со следующими параметрами.
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 | --- | --- |
-| `token_type` | Указывает значение типа маркера. The only type that Microsoft identity platform supports is `Bearer`. For more info about bearer tokens, see the [OAuth 2.0 Authorization Framework: Bearer Token Usage (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
+| `token_type` | Указывает значение типа токена. Единственным типом, поддерживаемым платформой Microsoft Identity, является `Bearer`. Дополнительные сведения о токенах носителя см. в разделе [инфраструктура авторизации OAuth 2,0: использование токена носителя (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
 | `scope` | Область доступа, предоставляемая токеном. |
 | `expires_in` | Срок действия маркера доступа (в секундах). |
 | `access_token` | Запрашиваемый маркер доступа. Вызывающая служба может использовать этот токен для проверки подлинности принимающей службы. |
@@ -161,11 +161,11 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 ```
 
 > [!NOTE]
-> Маркер доступа выше имеет формат версии 1.0. Причина этого в том, что маркер предоставляется в соответствии с ресурсом, к которому осуществляется доступ. The Microsoft Graph requests v1.0 tokens, so Microsoft identity platform produces v1.0 access tokens when a client requests tokens for Microsoft Graph. Только приложениям следует просматривать маркеры доступа. Клиентам не нужно их проверять.
+> Маркер доступа выше имеет формат версии 1.0. Причина этого в том, что маркер предоставляется в соответствии с ресурсом, к которому осуществляется доступ. Microsoft Graph запрашивает маркеры версии 1.0, поэтому платформа Microsoft Identity создает маркеры доступа v 1.0, когда клиент запрашивает маркеры для Microsoft Graph. Только приложениям следует просматривать маркеры доступа. Клиентам не нужно их проверять.
 
 ### <a name="error-response-example"></a>Пример ответа с сообщением об ошибке
 
-An error response is returned by the token endpoint when trying to acquire an access token for the downstream API, if the downstream API has a Conditional Access policy (such as multi-factor authentication) set on it. The middle-tier service should surface this error to the client application so that the client application can provide the user interaction to satisfy the Conditional Access policy.
+Ответ об ошибке возвращается конечной точкой токена при попытке получить маркер доступа для подчиненного API, если для подчиненного API задана политика условного доступа (например, многофакторная проверка подлинности). Служба среднего уровня должна отображать эту ошибку в клиентском приложении, чтобы клиентское приложение могла обеспечить взаимодействие с пользователем в соответствии с политикой условного доступа.
 
 ```
 {
@@ -193,19 +193,19 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJub25jZSI6IkFRQUJBQUFBQUFCbmZpRy1tQTZOVG
 
 ## <a name="gaining-consent-for-the-middle-tier-application"></a>Получение согласия для приложения среднего уровня
 
-Depending on the audience for your application, you may consider different strategies for ensuring that the OBO flow is successful. Во всех случаях конечная цель — обеспечить предоставление соответствующего согласия. А как это происходит — зависит от пользователей, для которых предназначено ваше приложение.
+В зависимости от аудитории для вашего приложения можно использовать различные стратегии для обеспечения успешного выполнения потока OBO. Во всех случаях конечная цель — обеспечить предоставление соответствующего согласия. А как это происходит — зависит от пользователей, для которых предназначено ваше приложение.
 
 ### <a name="consent-for-azure-ad-only-applications"></a>Согласие для приложений Azure AD
 
 #### <a name="default-and-combined-consent"></a>Область /.default и объединенное согласие
 
-Для приложений, которым требуется только вход с рабочими или учебными учетными записями, достаточно использовать традиционный подход "известных клиентских приложений". Приложение среднего уровня добавляет клиент в список известных клиентских приложений в своем манифесте, после чего клиент может активировать поток объединенного согласия как для себя, так и для приложения среднего уровня. On the Microsoft identity platform endpoint, this is done using the [`/.default` scope](v2-permissions-and-consent.md#the-default-scope). При активации процесса известных клиентских приложений и `/.default` на экране получения согласия отображаются разрешения клиента и API среднего уровня и запрос разрешений, необходимых для API среднего уровня. Пользователь дает согласие для обоих приложений, после чего выполняется поток OBO.
+Для приложений, которым требуется только вход с рабочими или учебными учетными записями, достаточно использовать традиционный подход "известных клиентских приложений". Приложение среднего уровня добавляет клиент в список известных клиентских приложений в своем манифесте, после чего клиент может активировать поток объединенного согласия как для себя, так и для приложения среднего уровня. На конечной точке платформы идентификации Майкрософт это делается с помощью [области`/.default`](v2-permissions-and-consent.md#the-default-scope). При активации процесса известных клиентских приложений и `/.default` на экране получения согласия отображаются разрешения клиента и API среднего уровня и запрос разрешений, необходимых для API среднего уровня. Пользователь дает согласие для обоих приложений, после чего выполняется поток OBO.
 
 В настоящее время системы, использующие личные учетные записи Майкрософт, не поддерживают объединенное согласие. Поэтому этот метод не подходит для приложений, требующих использовать для входа специальные личные учетные записи. Личные учетные записи Майкрософт, используемые в качестве гостевых учетных записей в клиенте, обрабатываются системой Azure AD и могут использоваться в механизме объединенного согласия.
 
 #### <a name="pre-authorized-applications"></a>Предварительно авторизованные приложения
 
-A feature of the application portal is "pre-authorized applications". С ее помощью ресурс может указать, что у заданного приложения всегда есть разрешение на прием определенных областей. Это особенно удобно для упрощения подключений между интерфейсным клиентом и внутренним ресурсом. Ресурс может объявить несколько предварительно авторизованных приложений. Любое из них может запросить соответствующие разрешения в потоке OBO и получить их без согласия пользователя.
+Компонент портала приложения — это "предварительно разрешенные приложения". С ее помощью ресурс может указать, что у заданного приложения всегда есть разрешение на прием определенных областей. Это особенно удобно для упрощения подключений между интерфейсным клиентом и внутренним ресурсом. Ресурс может объявить несколько предварительно авторизованных приложений. Любое из них может запросить соответствующие разрешения в потоке OBO и получить их без согласия пользователя.
 
 #### <a name="admin-consent"></a>Согласие администратора
 
@@ -213,7 +213,7 @@ A feature of the application portal is "pre-authorized applications". С ее п
 
 ### <a name="consent-for-azure-ad--microsoft-account-applications"></a>Согласие для Azure AD и приложений, использующих учетные записи Майкрософт
 
-Because of restrictions in the permissions model for personal accounts and the lack of a governing tenant, the consent requirements for personal accounts are a bit different from Azure AD. Нет клиента, который может дать согласие на уровне клиента, как нет и возможности использовать объединенное согласие. Это порождает другие стратегии. Обратите внимание на то, что они подходят и для приложений, которым достаточно поддержки учетных записей Azure AD.
+Из-за ограничений в модели разрешений для личных учетных записей и отсутствия управляющего клиента требования к согласия для личных учетных записей немного отличаются от Azure AD. Нет клиента, который может дать согласие на уровне клиента, как нет и возможности использовать объединенное согласие. Это порождает другие стратегии. Обратите внимание на то, что они подходят и для приложений, которым достаточно поддержки учетных записей Azure AD.
 
 #### <a name="use-of-a-single-application"></a>Использование одного приложения
 
@@ -221,12 +221,12 @@ Because of restrictions in the permissions model for personal accounts and the l
 
 ## <a name="client-limitations"></a>Ограничения клиентов
 
-If a client uses the implicit flow to get an id_token, and that client also has wildcards in a reply URL, the id_token can't be used for an OBO flow.  Тем не менее, конфиденциальный клиент может активировать маркеры доступа, полученные с помощью потока неявного предоставления, даже если для инициирующего клиента зарегистрирован URL-адрес ответа с подстановочными знаками.
+Если клиент использует неявный поток для получения id_token и этот клиент также имеет подстановочные знаки в URL-адресе ответа, id_token нельзя использовать для потока OBO.  Тем не менее, конфиденциальный клиент может активировать маркеры доступа, полученные с помощью потока неявного предоставления, даже если для инициирующего клиента зарегистрирован URL-адрес ответа с подстановочными знаками.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о протоколе OAuth 2.0 и другом способе проверки подлинности между службами с использованием учетных данных клиента.
 
-* [OAuth 2.0 client credentials grant in Microsoft identity platform](v2-oauth2-client-creds-grant-flow.md)
-* [OAuth 2.0 code flow in Microsoft identity platform](v2-oauth2-auth-code-flow.md)
+* [Предоставление учетных данных клиента OAuth 2,0 на платформе Microsoft Identity](v2-oauth2-client-creds-grant-flow.md)
+* [Поток кода OAuth 2,0 на платформе Microsoft Identity](v2-oauth2-auth-code-flow.md)
 * [Использование области `/.default`](v2-permissions-and-consent.md#the-default-scope)

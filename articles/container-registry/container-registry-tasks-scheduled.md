@@ -1,19 +1,14 @@
 ---
-title: Планирование задач реестра контейнеров Azure
+title: Руководство по планированию задачи записи контроля доступа
 description: В этом руководстве описано, как запустить задачу реестра контейнеров Azure по заданному расписанию, задав один или несколько триггеров таймера.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 06/27/2019
-ms.author: danlep
-ms.openlocfilehash: ae36b8d67d02f8cae0007b7b06485932db851af5
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 37247289ef11873ac37dc78ad56548994220f894
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74148641"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74454674"
 ---
 # <a name="run-an-acr-task-on-a-defined-schedule"></a>Выполнение задачи записи контроля доступа по определенному расписанию
 

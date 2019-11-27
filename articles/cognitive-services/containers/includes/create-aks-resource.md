@@ -1,7 +1,7 @@
 ---
-title: Create an Azure Kubernetes Service cluster resource
+title: Создание ресурса кластера Azure Kubernetes Service
 titleSuffix: Azure Cognitive Services
-description: Learn how to create an Azure Kubernetes Service (AKS) resource.
+description: Узнайте, как создать ресурс Azure Kubernetes Service (AKS).
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -16,36 +16,36 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74383422"
 ---
-## <a name="create-an-azure-kubernetes-service-cluster-resource"></a>Create an Azure Kubernetes Service cluster resource
+## <a name="create-an-azure-kubernetes-service-cluster-resource"></a>Создание ресурса кластера Azure Kubernetes Service
 
-1. Go to [Azure Kubernetes Service](https://ms.portal.azure.com/#create/microsoft.aks), and select **Create**.
+1. Перейдите в [Azure Kubernetes Service](https://ms.portal.azure.com/#create/microsoft.aks)и выберите **создать**.
 
-1. On the **Basics** tab, enter the following information:
+1. На вкладке **основы** введите следующие сведения.
 
-    |Параметр|Value|
+    |Настройка|Значение|
     |--|--|
-    |Subscription|Выберите соответствующую подписку.|
-    |группа ресурсов.|Select an available resource group.|
-    |Kubernetes cluster name|Enter a name (lowercase).|
-    |Регион|Select a nearby location.|
-    |Kubernetes version|Whatever value is marked as **(default)** .|
-    |DNS name prefix|Created automatically, but you can override.|
-    |Node size|Standard DS2 v2:<br>`2 vCPUs`, `7 GB`|
-    |Node count|Leave the slider at the default value.|
+    |подписку|Выберите соответствующую подписку.|
+    |Группа ресурсов|Выберите доступную группу ресурсов.|
+    |Имя кластера Kubernetes|Введите имя (в нижнем регистре).|
+    |Регион|Выберите ближайшее расположение.|
+    |Версия Kubernetes|Любое значение помечено как **(по умолчанию)** .|
+    |Префикс DNS-имени|Создается автоматически, но можно переопределить.|
+    |Размер узла|Стандартные DS2 v2:<br>`2 vCPUs`, `7 GB`|
+    |Число узлов|Оставьте ползунок в значении по умолчанию.|
 
-1. On the **Scale** tab, leave **Virtual nodes** and **VM scale sets** set to their default values.
-1. On the **Authentication** tab, leave **Service principal** and **Enable RBAC** set to their default values.
-1. On the **Networking** tab, enter the following selections:
+1. На вкладке **масштаб** оставьте значения по умолчанию для **виртуальных узлов** и **масштабируемых наборов виртуальных машин** .
+1. На вкладке **Проверка подлинности** оставьте **субъект-служба** и включите для параметра **RBAC** значения по умолчанию.
+1. На вкладке **Сетевые подключения** введите следующие параметры.
 
-    |Параметр|Value|
+    |Настройка|Значение|
     |--|--|
     |Маршрутизация приложений HTTP|Нет|
-    |Конфигурация сети|"Базовый"|
+    |Конфигурация сети|базовая;|
 
-1. On the **Monitoring** tab, make sure that **Enable container monitoring** is set to **Yes**, and leave **Log Analytics workspace** as the default value.
-1. On the **Tags** tab, leave the name/value pairs blank for now.
-1. Select **Review and Create**.
-1. After validation passes, select **Create**.
+1. На вкладке **мониторинг** убедитесь, что для параметра **включить мониторинг контейнеров** задано значение **Да**, и оставьте **log Analytics рабочей области** в качестве значения по умолчанию.
+1. На вкладке **теги** оставьте в поле пары имя-значение пустыми.
+1. Выберите **Проверка и создать**.
+1. После завершения проверки выберите **создать**.
 
 > [!NOTE]
-> If validation fails, it might be because of a "Service principal" error. Go back to the **Authentication** tab and then go back to **Review + create**, where validation should run and then pass.
+> Если проверка завершится неудачей, это может быть вызвано ошибкой субъекта-службы. Вернитесь на вкладку **Проверка подлинности** , а затем вернитесь к разделу Проверка и **Создание**, где необходимо выполнить проверку и передать.

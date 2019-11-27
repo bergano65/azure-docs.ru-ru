@@ -8,12 +8,12 @@ ms.author: dobett
 ms.date: 10/02/2019
 ms.topic: conceptual
 manager: philmea
-ms.openlocfilehash: c9a8ed6d55fbbfcf59c98a86ac98cb4264d31ee4
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 2133819ce7c298e2f73fdc5a68b80b64f9e72ea7
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74278817"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74480415"
 ---
 # <a name="manage-iot-central-from-the-azure-portal"></a>Управление IoT Central на портале Azure
 
@@ -41,10 +41,14 @@ ms.locfileid: "74278817"
 
 Заполните все поля в форме. Эта форма аналогична форме, которую вы заполнили для создания приложений на веб-сайте [Azure IOT Central Application Manager](https://aka.ms/iotcentral) . Дополнительные сведения см. в кратком руководстве [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
 
+Вы можете создать IoT Central приложение с общими функциями, выбрав **Пример Contoso**, **настраиваемое приложение** и **Пример девкитс** в качестве шаблонов приложений. все остальные шаблоны приложений используют общедоступные функции предварительной версии.
+
+![Создание IoT Central формы](media/howto-manage-iot-central-from-portal/image6a.png)
+
 **Расположение** — это [География](https://azure.microsoft.com/global-infrastructure/geographies/) , где вы хотите создать приложение. Как правило, для достижения оптимальной производительности следует выбирать расположение, расположенное рядом с вашими устройствами. Azure IoT Central в настоящее время доступна в **США**, **Австралии**, **Азиатско-Тихоокеанский регион**или в **Европе**.  После выбора расположения вы не сможете переместить приложение в другое расположение позже.
 
 > [!NOTE]
-> Шаблон **предварительной версии приложения** доступен только в **странах Европы** и **США** .
+> В настоящее время шаблоны приложений предварительной версии доступны только в **странах Европы** и **США** .
 
 ![Портал управления: создание ресурса IoT Central](media/howto-manage-iot-central-from-portal/image1a.png)  
 

@@ -10,14 +10,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 11/04/2019
+ms.date: 11/22/2019
 ms.author: apimpm
-ms.openlocfilehash: 1a8fb8140fd2f58556e4a64bca0f4a052a84c2bb
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: 2b69fdd7abefca360433fc9fb090569cba23febe
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74285595"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74454386"
 ---
 # <a name="azure-api-management-developer-portal-overview"></a>Обзор портала разработчика управления API Azure
 
@@ -93,9 +93,11 @@ ms.locfileid: "74285595"
 
 Новый портал разработчика не поддерживает *приложения* и *проблемы*. Если вы использовали *проблемы* на старом портале и потребуюте их в новой, опубликуйте комментарий в [выделенной ошибке GitHub](https://github.com/Azure/api-management-developer-portal/issues/122).
 
+Проверка подлинности с помощью OAuth в интерактивной консоли разработчика пока не поддерживается. Ход выполнения можно отслеживать с помощью [проблемы GitHub](https://github.com/Azure/api-management-developer-portal/issues/208).
+
 ### <a name="has-the-old-portal-been-deprecated"></a>Устарел ли старый портал?
 
-Старые порталы для разработчиков и издателей теперь являются *устаревшими* компонентами — они будут получать только обновления для системы безопасности. Новые функции будут реализованы только на новом портале разработчика.
+Старые порталы для разработчиков и издателей теперь являются *устаревшими* компонентами — они будут получать только обновления для системы безопасности. Новые возможности будут внедрены только на новом портале разработчика.
 
 Устаревшие устаревшие порталы будут объявлены отдельно. Если у вас есть вопросы, проблемы или комментарии, их следует вызывать [в выделенной проблемы GitHub](https://github.com/Azure/api-management-developer-portal/issues/121).
 
@@ -107,15 +109,33 @@ API описан в [разделе вики репозитория GitHub][2]. 
 
 ### <a name="does-the-portal-support-azure-resource-manager-templates-andor-is-it-compatible-with-api-management-devops-resource-kit"></a>Поддерживает ли портал Azure Resource Manager шаблоны и/или является ли он совместимым с набором средств API Management DevOps Resource Kit?
 
-Нет.
+Нет
 
-### <a name="do-i-need-to-enable-additional-vnet-connectivity-for-the-managed-portal-dependencies"></a>Нужно ли включать дополнительное подключение к виртуальной сети для зависимостей управляемого портала?
+### <a name="do-i-need-to-enable-additional-vnet-connectivity-for-the-new-managed-portal-dependencies"></a>Нужно ли включать дополнительное подключение к виртуальной сети для новых зависимостей управляемого портала?
 
-Нет.
+В большинстве случаев — нет.
 
-### <a name="im-getting-a-cors-error-when-using-the-interactive-console-what-should-i-do"></a>При использовании интерактивной консоли я получаю ошибку CORS. Что делать?
+Если служба управления API находится во внутренней виртуальной сети, портал разработчика доступен только в пределах сети. Имя узла конечной точки управления должно разрешаться во внутренний виртуальный IP-адрес службы с компьютера, используемого для доступа к административному интерфейсу портала. Убедитесь, что конечная точка управления зарегистрирована в DNS. В случае неявной настройки отображается сообщение об ошибке: `Unable to start the portal. See if settings are specified correctly in the configuration (...)`.
 
-Интерактивная консоль выполняет клиентский запрос API из браузера. Проблему CORS можно устранить, добавив [политику CORS](https://docs.microsoft.com/azure/api-management/api-management-cross-domain-policies#CORS) в API-интерфейсы. Можно указать все параметры вручную или использовать `*` подстановочных знаков. Например,
+### <a name="i-have-assigned-a-custom-api-management-domain-and-the-published-portal-doesnt-work"></a>Я назначил пользовательский домен управления API, и опубликованный портал не работает
+
+После обновления домена необходимо [повторно опубликовать портал](api-management-howto-developer-portal-customize.md#publish) , чтобы изменения вступили в силу.
+
+### <a name="i-have-added-an-identity-provider-and-i-cant-see-it-in-the-portal"></a>Я добавил поставщик удостоверений и не вижу его на портале.
+
+После настройки поставщика удостоверений (например, AAD, AAD B2C) необходимо [повторно опубликовать портал](api-management-howto-developer-portal-customize.md#publish) , чтобы изменения вступили в силу.
+
+### <a name="i-have-set-up-delegation-and-the-portal-doesnt-use-it"></a>Я настроил делегирование, и портал не использует его
+
+После настройки делегирования необходимо [повторно опубликовать портал](api-management-howto-developer-portal-customize.md#publish) , чтобы изменения вступили в силу.
+
+### <a name="my-other-api-management-configuration-changes-havent-been-propagated-in-the-developer-portal"></a>Изменения конфигурации управления API не были распространены на портале разработчика
+
+Для большинства изменений конфигурации (например, для виртуальной сети, входа и условий продукта) требуется [Повторная публикация портала](api-management-howto-developer-portal-customize.md#publish).
+
+### <a name="im-getting-a-cors-error-when-using-the-interactive-console"></a>При использовании интерактивной консоли возникает ошибка CORS
+
+Интерактивная консоль выполняет клиентский запрос API из браузера. Проблему CORS можно устранить, добавив [политику CORS](api-management-cross-domain-policies.md#CORS) в API-интерфейсы. Можно указать все параметры вручную или использовать `*` подстановочных знаков. Например,
 
 ```XML
 <cors>
@@ -148,6 +168,46 @@ API описан в [разделе вики репозитория GitHub][2]. 
 > Браузер автоматически выдает HTTP-запрос OPTIONS, который не содержит заголовок с ключом подписки. Из-за отсутствующего ключа подписки службе управления API не удается связать параметры вызова с продуктом, поэтому невозможно применить политику CORS.
 >
 > В качестве обходного решения можно передать ключ подписки в параметре запроса.
+
+### <a name="what-permissions-do-i-need-to-edit-the-developer-portal"></a>Какие разрешения требуются для изменения портала разработчика?
+
+Если вы видите ошибку `Oops. Something went wrong. Please try again later.` при открытии портала в административном режиме, возможно, отсутствуют необходимые разрешения (RBAC).
+
+Устаревшие порталы требовали разрешения `Microsoft.ApiManagement/service/getssotoken/action` в области службы (`/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.ApiManagement/service/<apim-service-name>`), чтобы разрешить администратору пользователей доступ к порталам. Для нового портала требуется разрешение `Microsoft.ApiManagement/service/users/token/action` в области `/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.ApiManagement/service/<apim-service-name>/users/1`.
+
+Чтобы создать роль с требуемым разрешением, можно использовать следующий сценарий PowerShell. Не забудьте изменить параметр `<subscription-id>`. 
+
+```PowerShell
+#New Portals Admin Role 
+Import-Module Az 
+Connect-AzAccount 
+$contributorRole = Get-AzRoleDefinition "API Management Service Contributor" 
+$customRole = $contributorRole 
+$customRole.Id = $null
+$customRole.Name = "APIM New Portal Admin" 
+$customRole.Description = "This role gives the user ability to log in to the new Developer portal as administrator" 
+$customRole.Actions = "Microsoft.ApiManagement/service/users/token/action" 
+$customRole.IsCustom = $true 
+$customRole.AssignableScopes.Clear() 
+$customRole.AssignableScopes.Add('/subscriptions/<subscription-id>') 
+New-AzRoleDefinition -Role $customRole 
+```
+ 
+После создания роли она может быть предоставлена любому пользователю из раздела **управления доступом (IAM)** в портал Azure. Назначение этой роли пользователю приведет к назначению разрешения в области службы. Пользователь сможет создавать маркеры SAS от имени *любого* пользователя в службе. Как минимум, эта роль должна быть назначена администратору службы. Следующая команда PowerShell демонстрирует назначение роли пользователю, `user1` в самой нижней области, чтобы избежать предоставления пользователю ненужных разрешений: 
+
+```PowerShell
+New-AzRoleAssignment -SignInName "user1@contoso.com" -RoleDefinitionName "APIM New Portal Admin" -Scope "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.ApiManagement/service/<apim-service-name>/users/1" 
+```
+
+После предоставления разрешений пользователю пользователь должен выйти из портал Azure и снова войти в него, чтобы новые разрешения вступили в силу.
+
+### <a name="im-seeing-the-unable-to-start-the-portal-see-if-settings-are-specified-correctly--error"></a>Я вижу ошибку `Unable to start the portal. See if settings are specified correctly (...)`
+
+Эта ошибка возникает при сбое вызова `GET` для `https://<management-endpoint-hostname>/subscriptions/xxx/resourceGroups/xxx/providers/Microsoft.ApiManagement/service/xxx/contentTypes/document/contentItems/configuration?api-version=2018-06-01-preview`. Вызов выполняется из браузера через административный интерфейс портала.
+
+Если служба управления API находится в виртуальной сети, см. описанный выше вопрос о подключении к виртуальной сети.
+
+Сбой вызова также может быть вызван сертификатом SSL, который назначается пользовательскому домену и не является доверенным для браузера. Для устранения этой проблемы можно удалить пользовательскую конечную точку управления. Управление доменными API будет возвращаться к конечной точке по умолчанию с доверенным сертификатом.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -1,25 +1,20 @@
 ---
-title: Номера SKU реестра контейнеров Azure
+title: Уровни служб и номера SKU
 description: Сведения о функциях и ограничениях для уровней обслуживания "базовый", "Стандартный" и "Премиум" для реестра контейнеров Azure.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 11/05/2019
-ms.author: danlep
-ms.openlocfilehash: 19b1fb78413f82d422779b12227b4a5e2361d813
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 1ebe5339b7523a4463dee45b126244d7ec5b2e4b
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73681808"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456270"
 ---
 # <a name="azure-container-registry-skus"></a>Номера SKU реестра контейнеров Azure
 
 Реестр контейнеров Azure (ACR) доступен на нескольких уровнях служб, известных как номера SKU. Эти номера SKU предоставляют прогнозируемые цены и несколько вариантов, относящихся к согласованию с емкостью и шаблонами потребления частного реестра Docker в Azure.
 
-| SKU | Description (Описание) |
+| Sku | ОПИСАНИЕ |
 | --- | ----------- |
 | **базовая;** | Недорогой начальный уровень для разработчиков, изучающих реестр контейнеров Azure. Основные реестры имеют те же программные возможности, что и стандартные и Premium (например, [интеграция Azure Active Directory проверки подлинности](container-registry-authentication.md#individual-login-with-azure-ad), [Удаление образа][container-registry-delete]и [веб-перехватчики][container-registry-webhook]). Тем не менее поставляемые хранилище и пропускная способность образов подходят для сценариев с меньшим коэффициентом использования. |
 | **Стандартный** | Реестры уровня "Стандартный" предоставляют те же возможности, что и реестры уровня "Базовый", но больший размер хранилища и более высокую пропускную способность образов. Реестры уровня "Стандартный" подходят для большинства рабочих сценариев. |
@@ -37,7 +32,7 @@ ms.locfileid: "73681808"
 
 Номер SKU реестра можно изменить с помощью Azure CLI или на портале Azure. Можно свободно перемещаться между номерами SKU при условии, что номер SKU, к которому осуществляется переключение, требует максимального объема хранилища. 
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Интерфейс командной строки Azure
 
 Для перехода между номерами SKU в Azure CLI используйте команду [AZ контроля обновления][az-acr-update] . Например, чтобы перейти на уровень обслуживания "Премиум":
 
@@ -45,7 +40,7 @@ ms.locfileid: "73681808"
 az acr update --name myregistry --sku Premium
 ```
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="azure-portal"></a>портале Azure
 
 В колонке **Обзор** реестра контейнеров на портале Azure выберите **Обновить**, а затем выберите новый **номер SKU** из раскрывающегося списка номеров SKU.
 
@@ -57,7 +52,7 @@ az acr update --name myregistry --sku Premium
 
 Дополнительные сведения о стоимости передачи данных см. на [странице цен на пропускную способность](https://azure.microsoft.com/pricing/details/bandwidth/). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 **Схема развития реестра контейнеров Azure**
 

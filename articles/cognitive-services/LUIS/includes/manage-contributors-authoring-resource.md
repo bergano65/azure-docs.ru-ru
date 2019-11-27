@@ -17,13 +17,13 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74451481"
 ---
-If your apps need to be authored by other people, you need to add the associated email addresses in the Azure portal's authoring resource.
+Если приложения должны быть созданы другими людьми, необходимо добавить соответствующие адреса электронной почты в ресурс создания портал Azure.
 
-If you are the **owner or administrator of your Azure subscription**, you can add a contributor to the resource. 
+Если вы являетесь **владельцем или администратором подписки Azure**, вы можете добавить участника к ресурсу. 
 
-If you are **not the owner or administrator of your Azure subscription**, your Azure account needs to have `Microsoft.Authorization/roleAssignments/write` permissions.
+Если вы **не являетесь владельцем или администратором подписки Azure**, ваша учетная запись Azure должна иметь разрешения `Microsoft.Authorization/roleAssignments/write`.
 
-If you have trouble with this role assignment, review: 
+Если у вас возникли проблемы с этим назначением роли, ознакомьтесь с: 
 
-* [Azure role assignments](../../../role-based-access-control/role-assignments-portal.md)
- * [Azure access control troubleshooting](../../../role-based-access-control/troubleshooting.md#problems-with-rbac-role-assignments)
+* [Назначения ролей Azure](../../../role-based-access-control/role-assignments-portal.md)
+ * [Устранение неполадок контроля доступа Azure](../../../role-based-access-control/troubleshooting.md#problems-with-rbac-role-assignments)

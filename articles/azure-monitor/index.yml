@@ -25,7 +25,7 @@ landingContent:
       url: overview.md
     - text: Что представляют собой журналы Azure Monitor и Log Analytics?
       url: overview.md
-    - text: Страница центра документации по Log Analytics и журналах Azure Monitor
+    - text: Страница центра документации по Log Analytics и журналам Azure Monitor
       url: azure-monitor-log-hub.md
     - text: Что такое Azure Application Insights?
       url: app/app-insights-overview.md

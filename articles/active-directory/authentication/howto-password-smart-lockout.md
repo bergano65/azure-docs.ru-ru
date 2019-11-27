@@ -1,5 +1,5 @@
 ---
-title: Preventing attacks using smart lockout - Azure Active Directory
+title: Предотвращение атак с помощью интеллектуальной блокировки Azure Active Directory
 description: Смарт-блокировка Azure Active Directory помогает защитить вашу организацию от атак методом подбора
 services: active-directory
 ms.service: active-directory
@@ -29,11 +29,11 @@ ms.locfileid: "74381528"
  > [!NOTE]
  > Функция отслеживания хэшей недоступна для клиентов, использующих сквозную аутентификацию, так как аутентификация выполняется локально, а не в облаке.
 
-Federated deployments using AD FS 2016 and AF FS 2019 can enable similar benefits using [AD FS Extranet Lockout and Extranet Smart Lockout](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-smart-lockout-protection).
+Федеративные развертывания, использующие AD FS 2016 и AF FS 2019, могут обеспечить аналогичные преимущества с помощью [AD FS блокировки экстрасети и Smart-блокировки экстрасети](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-smart-lockout-protection).
 
-Для всех клиентов Azure AD, у которых установлены эти настройки по умолчанию, обеспечивающие оптимальное сочетание безопасности и удобства в использовании, смарт-блокировка всегда включена. Customization of the smart lockout settings, with values specific to your organization, requires paid Azure AD licenses for your users.
+Для всех клиентов Azure AD, у которых установлены эти настройки по умолчанию, обеспечивающие оптимальное сочетание безопасности и удобства в использовании, смарт-блокировка всегда включена. Настройка параметров смарт-блокировки со значениями, характерными для вашей организации, требует платных лицензий Azure AD для пользователей.
 
-Using smart lockout does not guarantee that a genuine user will never be locked out. When smart lockout locks a user account, we try our best to not lockout the genuine user. Служба блокировки пытается ограничить доступ злоумышленников к учетной записи настоящего пользователя.  
+Использование интеллектуальной блокировки не гарантирует, что подлинное пользователь никогда не будет заблокирован. Если при интеллектуальной блокировке учетная запись пользователя блокируется, мы пытаемся не блокировать подлинного пользователя. Служба блокировки пытается ограничить доступ злоумышленников к учетной записи настоящего пользователя.  
 
 * Каждый центр обработки данных Azure Active Directory отслеживает блокировку независимо друг от друга. У пользователя есть определенное число попыток (threshold_limit * datacenter_count) для каждого центра обработки данных.
 * Смарт-блокировка различает злоумышленников и подлинных пользователей по расположению (неизвестное и известное). Для каждого типа расположения будут предусмотрены отдельные счетчики блокировки.
@@ -43,12 +43,12 @@ Using smart lockout does not guarantee that a genuine user will never be locked 
 При использовании [сквозной аутентификации](../hybrid/how-to-connect-pta.md) необходимо убедиться, что:
 
 * Пороговое значение блокировки Azure AD должно быть **меньше**, чем пороговое значение блокировки учетных записей Active Directory. Необходимо, чтобы пороговое значение блокировки учетных записей Active Directory как минимум в два-три раза превышало пороговое значение блокировки Azure AD. 
-* The Azure AD lockout duration must be set longer than the Active Directory reset account lockout counter after duration. Be aware that the Azure AD duration is set in seconds, while the AD duration is set in minutes. 
+* Длительность блокировки Azure AD должна быть задана дольше, чем счетчик блокировки Active Directory сброса учетной записи после длительности. Имейте в виду, что длительность Azure AD задается в секундах, а длительность рекламы задается в минутах. 
 
-For example, if you want your Azure AD counter to be higher than AD, then Azure AD would be 120 seconds (2 minutes) while your on-premises AD is set to 1 minute (60 seconds).
+Например, если вы хотите, чтобы значение счетчика Azure AD было выше, чем AD, то Azure AD будет 120 секунд (2 минуты), а локальная служба AD — 1 минута (60 секунд).
 
 > [!IMPORTANT]
-> Currently, an administrator can't unlock the users' cloud accounts if they have been locked out by the Smart Lockout capability. Администраторы должны подождать, пока не завершится срок действия блокировки. However, the user can unlock by using self-service password reset (SSPR) from a trusted device or location.
+> В настоящее время администратор не может разблокировать облачные учетные записи пользователей, если они были заблокированы с помощью функции смарт-блокировки. Администраторы должны подождать, пока не завершится срок действия блокировки. Тем не менее пользователь может разблокировать с помощью самостоятельного сброса пароля (SSPR) из доверенного устройства или расположения.
 
 ## <a name="verify-on-premises-account-lockout-policy"></a>Проверка локальных политик блокировки учетных записей
 
@@ -59,16 +59,16 @@ For example, if you want your Azure AD counter to be higher than AD, then Azure 
 3. Последовательно выберите **Конфигурация компьютера** > **Политики** > **Параметры Windows** > **Параметры безопасности** > **Политики учетных записей** > **Политика блокировки учетной записи**.
 4. Проверьте **пороговое значение блокировки учетных записей** и **время до сброса счетчика блокировки учетных записей**.
 
-![Modify the on-premises Active Directory account lockout policy](./media/howto-password-smart-lockout/active-directory-on-premises-account-lockout-policy.png)
+![Изменение политики блокировки локальной учетной записи Active Directory](./media/howto-password-smart-lockout/active-directory-on-premises-account-lockout-policy.png)
 
 ## <a name="manage-azure-ad-smart-lockout-values"></a>Управление значениями смарт-блокировки Azure AD
 
-Исходя из требований организации, возможно потребуется настроить значение смарт-блокировки. Customization of the smart lockout settings, with values specific to your organization, requires paid Azure AD licenses for your users.
+Исходя из требований организации, возможно потребуется настроить значение смарт-блокировки. Настройка параметров смарт-блокировки со значениями, характерными для вашей организации, требует платных лицензий Azure AD для пользователей.
 
 Чтобы проверить или изменить значения смарт-блокировки для организации, выполните следующие действия.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-1. Найдите и выберите *Azure Active Directory*. Select **Authentication methods** > **Password protection**.
+1. Найдите и выберите *Azure Active Directory*. Выберите **методы проверки Подлинности** > **защиту паролем**.
 1. В зависимости от того, сколько попыток неудачного входа разрешено до первой блокировки учетной записи, установите **пороговое значение блокировки**. По умолчанию задано значение 10.
 1. Чтобы указать время для каждой блокировки (в секундах), установите параметр **Длительность блокировки в секундах**. Значение по умолчанию — 60 секунд (одна минута).
 
@@ -77,13 +77,13 @@ For example, if you want your Azure AD counter to be higher than AD, then Azure 
 
 ![Настройка политики смарт-блокировки Azure AD на портале Azure](./media/howto-password-smart-lockout/azure-active-directory-custom-smart-lockout-policy.png)
 
-## <a name="how-to-determine-if-the-smart-lockout-feature-is-working-or-not"></a>How to determine if the Smart lockout feature is working or not
+## <a name="how-to-determine-if-the-smart-lockout-feature-is-working-or-not"></a>Как определить, работает ли функция смарт-блокировки
 
-When the smart lockout threshold is triggered, you will get the following message while the account is locked:
+При активации порога Smart-блокировки при блокировке учетной записи будет получено следующее сообщение:
 
-**Your account is temporarily locked to prevent unauthorized use. Try again later, and if you still have trouble, contact your admin.**
+**Ваша учетная запись временно заблокирована, чтобы предотвратить несанкционированное использование. Повторите попытку позже. Если у вас по-прежнему возникают проблемы, обратитесь к администратору.**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Настройка пользовательского списка заблокированных паролей](howto-password-ban-bad.md)
 * [Быстрое развертывание самостоятельного сброса пароля в Azure AD](quickstart-sspr.md)

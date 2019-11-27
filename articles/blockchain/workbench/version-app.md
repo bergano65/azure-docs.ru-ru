@@ -1,6 +1,6 @@
 ---
-title: Blockchain app versioning - Azure Blockchain Workbench
-description: How to use application versions in Azure Blockchain Workbench Preview.
+title: Управление версиями приложений блокчейн — Azure Блокчейн Workbench
+description: Использование версий приложений в предварительной версии Azure Блокчейн Workbench.
 ms.date: 11/20/2019
 ms.topic: article
 ms.reviewer: brendal
@@ -11,13 +11,13 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74323912"
 ---
-# <a name="azure-blockchain-workbench-preview-application-versioning"></a>Azure Blockchain Workbench Preview application versioning
+# <a name="azure-blockchain-workbench-preview-application-versioning"></a>Управление версиями в предварительной версии приложения Azure Блокчейн Workbench
 
-You can create and use multiple versions of an Azure Blockchain Workbench Preview app. Если передано несколько версий одного и того же приложения, доступен журнал версий и пользователи могут выбирать версию, которую они хотят использовать.
+Вы можете создать и использовать несколько версий приложения Azure Блокчейн Workbench Preview. Если передано несколько версий одного и того же приложения, доступен журнал версий и пользователи могут выбирать версию, которую они хотят использовать.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 * Развертывание Blockchain Workbench. Дополнительные сведения о развертывании Azure Blockchain Workbench см. в [этой статье](deploy.md).
 * Развернутое блокчейн-приложение в Blockchain Workbench. Сведения см. в статье [Создание блокчейн-приложения в Azure Blockchain Workbench](create-app.md).
@@ -54,6 +54,6 @@ You can create and use multiple versions of an Azure Blockchain Workbench Previe
 
     Вы можете создать новые контракты или выполнять действия с контрактами предыдущих версий. Версия приложения отображается после имени приложения. При использовании старой версии отображается соответствующее предупреждение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Устранение неполадок в Azure Blockchain Workbench](troubleshooting.md)

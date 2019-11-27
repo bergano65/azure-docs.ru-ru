@@ -1,14 +1,14 @@
 ---
 title: Пример схемы зоны размещения для миграции в соответствии с CAF — общие сведения
-description: Обзор и описание архитектуры примера схемы зоны размещения для миграции в соответствии с CAF.
+description: Обзор и описание архитектуры Cloud Adoption Framework (CAF) с примером схемы целевой зоны для службы "Миграция Azure".
 ms.date: 08/20/2019
 ms.topic: sample
-ms.openlocfilehash: cba1eb6d4761ae8e236f22fa22ff08c129d9637e
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: e007c7af4d788016d74f085ba39b63ee218d6de0
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74038466"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74404757"
 ---
 # <a name="overview-of-the-microsoft-cloud-adoption-framework-for-azure-migration-landing-zone-blueprint-sample"></a>Общие сведения об использовании Microsoft Cloud Adoption Framework с примером схемы зоны размещения для миграции в соответствии с CAF
 
@@ -43,7 +43,7 @@ ms.locfileid: "74038466"
 Вы ознакомились с обзором и описанием архитектуры примера схемы зоны размещения для миграции в соответствии с CAF.
 
 > [!div class="nextstepaction"]
->  [Схема зоны размещения для миграции в соответствии с CAF — инструкции по развертыванию](./deploy.md)
+> [Схема зоны размещения для миграции в соответствии с CAF — инструкции по развертыванию](./deploy.md)
 
 Дополнительные статьи о схемах и способах их использования:
 

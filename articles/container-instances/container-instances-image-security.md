@@ -1,20 +1,15 @@
 ---
-title: Вопросы безопасности для службы "экземпляры контейнеров Azure"
+title: Безопасность для экземпляров контейнеров
 description: Рекомендации по защите образов и секретов для экземпляров контейнеров Azure, а также общие вопросы безопасности для любой платформы контейнеров
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: article
 ms.date: 04/29/2019
-ms.author: danlep
 ms.custom: ''
-ms.openlocfilehash: 618d3a901698e46760d970f6d4fbc4157c5d2ea3
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: b25cb4178ba211ff819ba512c9820165e0efbbf1
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325924"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74481702"
 ---
 # <a name="security-considerations-for-azure-container-instances"></a>Вопросы безопасности для экземпляров контейнеров Azure
 
@@ -115,7 +110,7 @@ ms.locfileid: "68325924"
 
 * [Azure Monitor для контейнеров](../azure-monitor/insights/container-insights-overview.md) , чтобы отслеживать производительность рабочих нагрузок, развернутых в Kubernetes средах, размещенных в службе Kubernetes Azure (AKS). С помощью Azure Monitor для контейнеров можно отслеживать производительность, собирая данные метрик памяти и процессора из контроллеров, узлов и контейнеров, доступных в Kubernetes, используя API метрик. 
 
-* [Решение для мониторинга контейнеров Azure](../azure-monitor/insights/containers.md) помогает просматривать другие узлы контейнеров DOCKER и Windows и управлять ими в одном расположении. Пример:
+* [Решение для мониторинга контейнеров Azure](../azure-monitor/insights/containers.md) помогает просматривать другие узлы контейнеров DOCKER и Windows и управлять ими в одном расположении. Например,
 
   * Просмотр подробных сведений аудита, показывающих команды, используемые с контейнерами. 
   * Устранение неполадок в контейнерах путем просмотра и поиска централизованных журналов без необходимости удаленного просмотра узлов DOCKER или Windows.  
@@ -136,7 +131,7 @@ ms.locfileid: "68325924"
 
 Поддерживайте точный журнал аудита административного доступа к экосистеме контейнеров, реестру контейнеров и образам контейнеров. Эти журналы могут потребоваться в целях аудита и будут полезны в качестве судебных доказательств после любых инцидентов безопасности. Для достижения этой цели можно использовать [решение для мониторинга контейнеров Azure](../azure-monitor/insights/containers.md) . 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Узнайте больше об управлении уязвимостями контейнеров с помощью решений от [Twistlock](https://www.twistlock.com/solutions/microsoft-azure-container-security/) и [голубого уровня безопасности](https://www.aquasec.com/solutions/azure-container-security/).
 
