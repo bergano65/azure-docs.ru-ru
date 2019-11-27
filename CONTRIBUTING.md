@@ -10,18 +10,18 @@ ms.locfileid: "63759507"
 
 Спасибо, что уделили время участию в разработке документации к Microsoft Azure.
 
-В этом руководстве рассматриваются некоторые общие темы, касающиеся вашего участия в проектах Microsoft с открытым кодом [руководство для участников](https://docs.microsoft.com/contribute) более подробно.
+В этом руководстве рассматриваются некоторые общие темы, касающиеся участия в проектах Майкрософт с открытым кодом. Оно также ссылается на [Руководство для участников](https://docs.microsoft.com/contribute), где необходимы более подробные разъяснения.
 
 ## <a name="code-of-conduct"></a>Правила поведения
 
-Правила поведения при участии в проектах Microsoft с открытым кодом собраны здесь [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-Дополнительные сведения см. в разделе [Правила поведения, часто задаваемые вопросы о](https://opensource.microsoft.com/codeofconduct/faq/), или обратитесь в службу [opencode@microsoft.com ](mailto:opencode@microsoft.com) с вопросом или комментариями
+В этом проекте используются правила [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+Дополнительные сведения см. в вопросах и ответах [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/). Вы также можете обращаться с вопросами или комментариями по адресу [opencode@microsoft.com](mailto:opencode@microsoft.com).
 
 ## <a name="how-can-i-contribute"></a>Участие в разработке
 
 Существует множество способов участия в разработке документации, ознакомьтесь с разделами ниже, чтобы узнать, какой из них подходит вам.
 
-### <a name="reporting-bugs-and-suggesting-enhancements"></a>Сообщения об ошибках и с предложениями усовершенствования
+### <a name="reporting-bugs-and-suggesting-enhancements"></a>Сообщение об ошибках и предложения по усовершенствованию
 
 Чтобы отправлять ошибки и предложения используйте средство обратной связи в нижней части статьи.
 
@@ -29,8 +29,8 @@ ms.locfileid: "63759507"
 
 ### <a name="editing-in-github"></a>Редактирование в GitHub
 
-Следуйте указаниям для [Быстрого редактирование существующих документов](https://docs.microsoft.com/contribute/#quick-edits-to-existing-documents) в нашем руководстве для участников.
+Следуйте указаниям по [Быстрому редактированию существующей документации](https://docs.microsoft.com/contribute/#quick-edits-to-existing-documents) из нашего руководства для участников.
 
-### <a name="pull-request"></a>Pull Request
+### <a name="pull-request"></a>Запрос на вытягивание
 
-Просмотрите руководство по [Pull Request](https://docs.microsoft.com/contribute/how-to-write-workflows-major#pull-request-processing) в нашем руководстве для участников.
+См. указания по [запросам на вытягивание](https://docs.microsoft.com/contribute/how-to-write-workflows-major#pull-request-processing) в нашем руководстве для участников.
