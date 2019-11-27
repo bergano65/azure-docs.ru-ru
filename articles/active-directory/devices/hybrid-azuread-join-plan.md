@@ -1,5 +1,5 @@
 ---
-title: Как планировать реализацию присоединения к гибридной Azure Active Directory (Azure AD) | Документация Майкрософт
+title: Планирование гибридного Azure Active Directory соединение Azure Active Directory
 description: Сведения о настройке гибридных устройств, присоединенных к Azure Active Directory.
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a188349e15c5e4c486d37daed9f8b611a325dcf
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 3a4f85aeaf2fb263ba2df8f34a51f9e25c212aff
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74167329"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74379317"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Руководство. Планирование реализации гибридного Azure Active Directory Join
 
@@ -81,7 +81,7 @@ ms.locfileid: "74167329"
 
 Гибридное присоединение к Azure AD не поддерживается для Windows Server, на котором работает роль контроллера домена (DC).
 
-Гибридное присоединение к Azure AD не поддерживается на устройствах Windows нижнего уровня при использовании роуминга учетных данных или роуминга профиля пользователя.
+Гибридное присоединение к Azure AD не поддерживается на устройствах Windows нижнего уровня при использовании роуминга учетных данных или перемещаемого или обязательного профиля пользователя.
 
 Если вы используете средство подготовки системы (Sysprep) и если вы используете предварительно установленный образ **Windows 10 1809** , убедитесь, что образ не относится к устройству, которое уже зарегистрировано в Azure AD как гибридное присоединение к Azure AD.
 

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 11/12/2019
+ms.date: 11/21/2019
 ms.author: aahi
-ms.openlocfilehash: 5933c7ec56ded971e4daf96ea6d4302c04921f2f
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: ae5222dcd05740ecb9747037b315c4e920b3eabd
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74031427"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74326629"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованных сущностей в Анализ текста
 
@@ -25,7 +25,7 @@ ms.locfileid: "74031427"
 
 Конечная точка `entities` Анализ текста "поддерживает распознавание имен сущностей (NER) и связывание сущностей.
 
-### <a name="entity-linking"></a>Связывание сущностей
+### <a name="entity-linking"></a>API связывания сущностей
 Связывание сущностей позволяет идентифицировать сущности, обнаруженные в тексте, и устранить неоднозначности (например, упоминание слова "Марс" может обозначать планету или римского бога войны). Этот процесс требует наличия базы знаний, с которыми будут связываться распознанные сущности. Например, конечная точка `entities` Текстовой аналитики использует в качестве такой базы знаний сайт Википедии.
 
 ### <a name="named-entity-recognition-ner"></a>Распознавание именованных сущностей (NER)
@@ -33,7 +33,7 @@ ms.locfileid: "74031427"
 
 ## <a name="named-entity-recognition-v3-public-preview"></a>Общедоступная Предварительная версия распознавания имен сущностей v3
 
-[Следующая версия распознавания имен сущностей]( https://cognitiveusw2ppe.portal.azure-api.net/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesRecognitionGeneral) теперь доступна для общедоступной предварительной версии. Он предоставляет обновления для связывания сущностей и распознавания именованных сущностей. 
+Следующая версия распознавания имен сущностей теперь доступна для общедоступной предварительной версии. Он предоставляет обновления для связывания сущностей и распознавания именованных сущностей. Попробуйте использовать [консоль тестирования API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesRecognitionGeneral).
 
 :::row:::
     :::column span="":::
@@ -120,6 +120,8 @@ NER
 | DateTime      | Set           | "каждый вторник"     |
 | URL-адрес           | Недоступно\*         | "https:\//www.bing.com"    |
 | Email         | Недоступно\*         | "support@contoso.com" |
+| Номер телефона США  | Недоступно\*         | (Только номера телефонов США) "(312) 555-0176" |
+| IP-адрес    | Недоступно\*         | "10.0.0.100" |
 
 \* Некоторые сущности могут опускать `SubType` в зависимости от входных и извлеченных сущностей.  Все поддерживаемые типы сущностей доступны только для английского, упрощенного, французского, немецкого и испанского языков.
 

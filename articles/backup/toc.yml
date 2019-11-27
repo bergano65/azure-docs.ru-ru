@@ -28,6 +28,8 @@
       href: tutorial-restore-files.md
     - name: "Резервное копирование SQL\_Server на виртуальной машине Azure"
       href: tutorial-sql-backup.md
+    - name: Резервное копирование баз данных SAP HANA на виртуальных машинах Azure
+      href: tutorial-backup-sap-hana-db.md
     - name: Резервное копирование общих папок в службе Файлы Azure
       href: tutorial-backup-azure-files.md
     - name: Резервное копирование Windows Server
@@ -52,6 +54,8 @@
           href: backup-support-matrix-mabs-dpm.md
         - name: Таблица поддержки агента Служб восстановления Microsoft Azure
           href: backup-support-matrix-mars-agent.md
+        - name: Матрица поддержки резервного копирования SAP HANA
+          href: sap-hana-backup-support-matrix.md
     - name: Безопасность
       items:
         - name: Управление доступом на основе ролей
@@ -74,6 +78,8 @@
           href: backup-azure-files-faq.md
         - name: "Вопросы и ответы: резервное копирование баз данных SQL\_Server на виртуальных машинах Azure"
           href: faq-backup-sql-server.md
+        - name: Вопросы и ответы. Резервное копирование баз данных SAP HANA на виртуальных машинах Azure
+          href: sap-hana-faq-backup-azure-vm.md
         - name: Вопросы и ответы об Azure Backup Server и DPM
           href: backup-azure-dpm-azure-server-faq.md
         - name: 'Вопросы и ответы: оповещения мониторинга Azure Backup'
@@ -228,8 +234,14 @@
           href: restore-sql-database-azure-vm.md
         - name: "Управление резервными копиями баз данных SQL\_Server"
           href: manage-monitor-sql-database-backup.md
-    - name: Резервное копирование баз данных SAP HANA на виртуальных машинах Azure
-      href: backup-azure-sap-hana-database.md
+    - name: Использование баз данных SAP HANA на виртуальных машинах Azure
+      items:
+        - name: Резервное копирование баз данных SAP HANA на виртуальных машинах Azure
+          href: backup-azure-sap-hana-database.md
+        - name: Восстановление баз данных SAP HANA на виртуальных машинах Azure
+          href: sap-hana-db-restore.md
+        - name: Управление резервными копиями баз данных SAP HANA
+          href: sap-hana-db-manage.md
     - name: Windows Server
       items:
         - name: Резервное копирование файлов и папок Windows Server

@@ -7,12 +7,12 @@ ms.date: 10/02/2019
 ms.topic: quickstart
 ms.service: azure-functions
 manager: gwallace
-ms.openlocfilehash: 2307a296453247a5deee082aadb474f3641cce88
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: da3fb604bfb65f67e50d56a4520620cabc292b93
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72329734"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74082825"
 ---
 # <a name="add-an-azure-storage-queue-binding-to-your-python-function"></a>Добавление привязки очереди службы хранилища Azure к функции Python
 
@@ -91,7 +91,7 @@ curl https://myfunctionapp.azurewebsites.net/api/httptrigger?code=cCr8sAxfBiow54
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Вы обновили функцию, активируемую HTTP, которую теперь можно использовать для записи данных в очередь службы хранилища. Чтобы получить дополнительные сведения о разработке Функций Azure с помощью Python, обратитесь к статьям [Справочник разработчика Python. Функции Azure](functions-reference-python.md) и [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md). Полные примеры проектов Функций в Python см. в [этой статье](/samples/browse/?products=azure-functions&languages=python). 
+Вы обновили функцию, активируемую HTTP, которую теперь можно использовать для записи данных в очередь службы хранилища. Чтобы получить дополнительные сведения о разработке Функций Azure с помощью Python, обратитесь к статьям [Справочник разработчика Python. Функции Azure](functions-reference-python.md) и [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md). Полные примеры проектов Функций в Python см. в [этой статье](/samples/browse/?products=azure-functions&languages=python). Дополнительные сведения о ценообразовании см. на [странице цен на Функции](https://azure.microsoft.com/pricing/details/functions/) и в статье [Estimating Consumption plan costs](functions-consumption-costs.md) (Оценка стоимости плана потребления).
 
 Затем для мониторинга приложения-функции следует включить Application Insights.
 

@@ -1,249 +1,249 @@
 ---
-title: Self-service password reset deployment plan - Azure Active Directory
-description: Strategy for successful implementation of Azure AD self-service password reset
+title: Самостоятельное развертывание сброса пароля — Azure Active Directory
+description: Стратегия успешной реализации самостоятельного сброса пароля в Azure AD
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 06/24/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb79c6dd0358d0360c320cd67a46779b183ef21e
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: b9f340ad12fbf26190a17bc4df97bfc95473093c
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74208498"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74381291"
 ---
 # <a name="deploy-azure-ad-self-service-password-reset"></a>Развертывание самостоятельного сброса пароля Azure AD
 
 > [!NOTE]
-> This guide explains self-service password reset and how to deploy it. If you are looking for the self service password reset tool to get back into your account, go to [https://aka.ms/sspr](https://aka.ms/sspr). 
+> В этом руководство объясняется самостоятельный сброс пароля и его развертывание. Если вы ищете средство самостоятельного сброса пароля для возврата в учетную запись, перейдите на страницу [https://aka.ms/sspr](https://aka.ms/sspr). 
 
-Self-service password reset (SSPR) is an Azure Active Directory feature that enables employees to reset their passwords without needing to contact IT staff. Employees must register for or be registered for self-service password reset before using the service. During registration, the employee chooses one or more authentication methods enabled by their organization.
+Самостоятельный сброс пароля (SSPR) — это Azure Active Directory функция, которая позволяет сотрудникам сбрасывать пароли без необходимости обращения к ИТ-специалистам. Прежде чем использовать службу, сотрудникам необходимо зарегистрироваться в службе самостоятельного сброса пароля или зарегистрировать ее. Во время регистрации сотрудник выбирает один или несколько методов проверки подлинности, включенных в Организации.
 
-SSPR enables employees to quickly get unblocked and continue working no matter where they are or the time of day. By allowing users to unblock themselves, your organization can reduce the non-productive time and high support costs for most common password-related issues.
+SSPR позволяет сотрудникам быстро подключаться и продолжать работу вне зависимости от того, где они находятся, или на время суток. Разрешая разблокирование пользователей, Организация может сократить непроизводительное время и высокую стоимость поддержки для большинства распространенных проблем, связанных с паролями.
 
-Help users get registered quickly by deploying SSPR alongside another application or service in your organization. This action will generate a large volume of sign-ins and will drive registration.
+Помогите пользователям быстро получить регистрацию, развернув SSPR вместе с другим приложением или службой в Организации. Это действие создаст большой объем входов и будет выполнять регистрацию.
 
-Before deploying SSPR, organizations may want to determine how many password reset related help desk calls happen over time and the average cost of each call. They can use this data post deployment to show the value SSPR is bringing to your organization.  
+Перед развертыванием SSPR организациям может потребоваться определить, сколько обращений в службу поддержки, связанных с сбросом пароля, происходит с течением времени, а также от средней стоимости каждого вызова. Они могут использовать эти данные после развертывания, чтобы отобразить значение SSPR в вашей организации.  
 
-## <a name="how-sspr-works"></a>How SSPR works
+## <a name="how-sspr-works"></a>Как работает SSPR
 
-1. When a user attempts to reset a password, they must verify their previously registered authentication method or methods to prove their identity.
-1. Then the user enters a new password.
-   1. For cloud-only users, the new password is stored in Azure Active Directory. For more information, see the article [How SSPR works](concept-sspr-howitworks.md#how-does-the-password-reset-portal-work).
-   1. For hybrid users, the password is written back to the on-premises Active Directory via the Azure AD Connect service. For more information, see the article [What is password writeback](concept-sspr-writeback.md#how-password-writeback-works).
+1. Когда пользователь пытается сбросить пароль, он должен проверить ранее зарегистрированный метод проверки подлинности или методы для подтверждения их личности.
+1. Затем пользователь вводит новый пароль.
+   1. Для облачных пользователей новый пароль хранится в Azure Active Directory. Дополнительные сведения см. в статье [как работает SSPR](concept-sspr-howitworks.md#how-does-the-password-reset-portal-work).
+   1. Для гибридных пользователей пароль записывается обратно в локальную Active Directory через службу Azure AD Connect. Дополнительные сведения см. в статье [что такое обратная запись паролей](concept-sspr-writeback.md#how-password-writeback-works).
 
-## <a name="licensing-considerations"></a>Licensing considerations
+## <a name="licensing-considerations"></a>Вопросы лицензирования
 
-Azure Active Directory is licensed per-user meaning each user has to have an appropriate license for the features they utilize.
+Azure Active Directory является лицензированным для каждого пользователя, то есть каждый пользователь должен иметь соответствующую лицензию для используемых функций.
 
-More information about licensing can be found on the [Azure Active Directory pricing page](https://azure.microsoft.com/pricing/details/active-directory/)
+Дополнительные сведения о лицензировании можно найти на [странице цен на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/) .
 
-## <a name="enable-combined-registration-for-sspr-and-mfa"></a>Enable combined registration for SSPR and MFA
+## <a name="enable-combined-registration-for-sspr-and-mfa"></a>Включение Объединенной регистрации для SSPR и MFA
 
-Microsoft recommends that organizations enable the combined registration experience for SSPR and multi-factor authentication. When you enable this combined registration experience, users need only select their registration information once to enable both features.
+Корпорация Майкрософт рекомендует организациям включить Объединенный процесс регистрации для SSPR и многофакторной идентификации. При включении Объединенных возможностей регистрации пользователям необходимо только один раз выбрать сведения о регистрации, чтобы включить обе функции.
 
-![Combined security information registration](./media/howto-sspr-deployment/combined-security-info.png)
+![Объединенная регистрация сведений о безопасности](./media/howto-sspr-deployment/combined-security-info.png)
 
-The combined registration experience does not require organizations to enable both SSPR and Azure Multi-Factor Authentication to use. The combined registration experience provides organizations a better user experience compared to the traditional individual components. More information about combined registration, and how to enable, can be found in the article [Combined security information registration (preview)](concept-registration-mfa-sspr-combined.md)
+Объединенная регистрация не требует, чтобы организации включили SSPR и многофакторную идентификацию Azure для использования. Объединенная процедура регистрации позволяет организациям улучшить взаимодействие с пользователями по сравнению с традиционными отдельными компонентами. Дополнительные сведения об Объединенной регистрации и о том, как включить, можно найти в статье [Объединенная регистрация сведений о безопасности (Предварительная версия)](concept-registration-mfa-sspr-combined.md) .
 
-## <a name="plan-the-configuration"></a>Plan the configuration
+## <a name="plan-the-configuration"></a>Планирование конфигурации
 
-The following settings are required to enable SSPR along with recommended values.
+Для включения SSPR вместе с рекомендуемыми значениями необходимы следующие параметры.
 
-| Область | Параметр | Value |
+| Область | Настройка | Значение |
 | --- | --- | --- |
-| **SSPR Properties** | Self-service password reset enabled | **Selected** group for pilot / **All** for production |
-| **Методы аутентификации** | Authentication methods required to register | Always 1 more than required for reset |
-|   | Authentication methods required to reset | One or two |
-| **Регистрация** | "Требовать регистрацию пользователей при входе" | ДА |
-|   | Number of days before users are asked to re-confirm their authentication information | 90 – 180 days |
-| **Уведомления** | "Уведомлять пользователей о сбросе пароля" | ДА |
-|   | "Уведомлять всех администраторов, если другие администраторы сбрасывают свои пароли". | ДА |
-| **Настройка** | Customize helpdesk link | ДА |
-|   | Custom helpdesk email or URL | Support site or email address |
-| **Интеграция с локальной средой** | Write back passwords to on-premises AD | ДА |
-|   | Allow users to unlock account without resetting password | ДА |
+| **Свойства SSPR** | Самостоятельный сброс пароля включен | **Выбранная** группа для пилотной или **всей** рабочей среды |
+| **Методы аутентификации** | Методы проверки подлинности, необходимые для регистрации | Всегда 1 больше, чем требуется для сброса |
+|   | Методы проверки подлинности, необходимые для сброса | Один или два |
+| **Регистрация** | "Требовать регистрацию пользователей при входе" | Yes |
+|   | Число дней, по истечении которых пользователям будет предложено повторно подтвердить сведения о проверке подлинности | 90 – 180 дней |
+| **Notifications** | "Уведомлять пользователей о сбросе пароля"; | Yes |
+|   | "Уведомлять всех администраторов, если другие администраторы сбрасывают свои пароли". | Yes |
+| **Настройка** | Настройка ссылки на службу поддержки | Yes |
+|   | Настраиваемая электронная почта или URL-адрес службы поддержки | Сайт поддержки или адрес электронной почты |
+| **Интеграция с локальной средой** | Обратная запись паролей в локальную службу AD | Yes |
+|   | Разрешить пользователям разблокировать учетную запись без сброса пароля | Yes |
 
-### <a name="sspr-properties-recommendations"></a>SSPR properties recommendations
+### <a name="sspr-properties-recommendations"></a>Рекомендации по свойствам SSPR
 
-When enabling Self-service password reset, choose a security group to be used during the pilot.
+При включении самостоятельного сброса пароля выберите группу безопасности, которая будет использоваться во время пилотного развертывания.
 
-When you plan to launch the service more broadly, we recommend using the All option to enforce SSPR for everyone in the organization. If you cannot set to all, select the appropriate Azure AD Security group or AD group synced to Azure AD.
+При планировании более широкого запуска службы рекомендуется использовать параметр ALL для применения SSPR для всех пользователей в Организации. Если вы не можете задать значение "все", выберите соответствующую группу безопасности Azure AD или группу AD, синхронизированную с Azure AD.
 
 ### <a name="authentication-methods"></a>Методы проверки подлинности
 
-Set Authentication methods required to register to at least one more than the number required to reset. Allowing multiple gives users flexibility when they need to reset.
+Задайте методы проверки подлинности, необходимые для регистрации по крайней мере на один больше, чем число, необходимое для сброса. Возможность нескольких пользователей предоставляет пользователям гибкие возможности, когда они нуждаются в сбросе.
 
-Set **Number of methods required to reset** to a level appropriate to your organization. One requires the least friction, while two may increase your security posture.
+Задайте **число методов, необходимых для сброса** до уровня, соответствующего вашей организации. Одна из них требует наименьшего трения, тогда как два могут повысить уровень безопасности.
 
-See [What are authentication methods](concept-authentication-methods.md) for detailed information on which authentication methods are available for SSPR, pre-defined security questions, and how to create customized security questions.
+Дополнительные сведения о методах проверки подлинности, доступных для SSPR, заранее определенных контрольных вопросов и о создании настраиваемых контрольных вопросов см. в статье [что такое методы проверки подлинности](concept-authentication-methods.md) .
 
 ### <a name="registration-settings"></a>Параметры регистрации
 
-Set **Require users to register when signing in** to **Yes**. This setting means that the users are forced to register when signing in, ensuring that all users are protected.
+Установите параметр **требовать регистрацию пользователей при входе** **в систему.** Этот параметр означает, что пользователи вынуждены регистрироваться при входе в систему, обеспечивая защиту всех пользователей.
 
-Set **Number of days before users are asked to re-confirm their authentication information** to between **90** and **180** days, unless your organization has a business need for a shorter time frame.
+Задайте **число дней, по истечении которых пользователям будет предложено повторно подтвердить сведения о проверке подлинности** в диапазоне от **90** до **180** дней, если ваша организация не нуждается в более коротком периоде времени.
 
-### <a name="notifications-settings"></a>Notifications settings
+### <a name="notifications-settings"></a>Параметры уведомлений
 
-Configure both the **Notify users on password resets** and the **Notify all admins when other admins reset their password** to **Yes**. Selecting **Yes** on both increases security by ensuring that users are aware when their password has been reset, and that all admins are aware when an admin changes a password. If users or admins receive such a notification and they have not initiated the change, they can immediately report a potential security breach.
+Настройте оба **уведомления: уведомлять пользователей при сбросе пароля** и **уведомлять всех администраторов, когда другие администраторы сбрасывают свой пароль** на **Да**. Выбор параметра **Да** в обоих случаях повышает безопасность, гарантируя, что пользователи знают, когда пароль был сброшен, и что все администраторы знают, когда администратор изменяет пароль. Если пользователи или Администраторы получают такое уведомление и не инициировали изменение, они могут немедленно сообщить о потенциальном нарушении безопасности.
 
 ### <a name="customization"></a>Настройка
 
-It’s critical to customize the **helpdesk email or URL** to ensure users who experience problems can quickly get help. Set this option to a common helpdesk email address or web page that your users are familiar with.
+Крайне важно настроить **электронную почту или URL-адрес службы технической поддержки** , чтобы пользователи, которые испытывают проблемы, могли быстро получить помощь. Задайте для этого параметра общий адрес электронной почты службы поддержки или веб-страницу, с которыми пользователи знакомы.
 
 ### <a name="on-premises-integration"></a>Интеграция с локальной средой
 
-If you have a hybrid environment, ensure that **Write back passwords to on-premises AD** is set to **Yes**. Also set the Allow users to unlock account without resetting password to Yes, as it gives them more flexibility.
+При наличии гибридной среды Убедитесь, что для параметра **обратная запись паролей в локальную службу AD** задано значение **Да**. Также установите флажок Разрешить пользователям разблокировать учетную запись без сброса пароля в значение Да, так как он обеспечивает большую гибкость.
 
-### <a name="changingresetting-passwords-of-administrators"></a>Changing/Resetting passwords of administrators
+### <a name="changingresetting-passwords-of-administrators"></a>Изменение и сброс паролей администраторов
 
-Administrator accounts are special accounts with elevated permissions. To secure them, the following restrictions apply to changing passwords of administrators:
+Учетные записи администратора — это специальные учетные записи с повышенными разрешениями. Для их защиты применяются следующие ограничения на изменение паролей администраторов.
 
-- On-premises enterprise administrators or domain administrators cannot reset their password through SSPR. They can only change their password in their on-premises environment. Thus, we recommend not syncing on-prem AD admin accounts to Azure AD.
-- An administrator cannot use secret Questions & Answers as a method to reset password.
+- Локальные администраторы предприятия или Администраторы домена не могут сбросить свой пароль через SSPR. Они могут изменять только свои пароли в локальной среде. Поэтому мы не рекомендуем синхронизировать учетные записи локального администратора AD с Azure AD.
+- Администратор не может использовать секретные вопросы & ответы в качестве метода сброса пароля.
 
-### <a name="environments-with-multiple-identity-management-systems"></a>Environments with multiple identity management systems
+### <a name="environments-with-multiple-identity-management-systems"></a>Среды с несколькими системами управления удостоверениями
 
-If there are multiple identity management systems within an environment such as on-premises identity managers like Oracle AM, SiteMinder, or other systems, then passwords written to Active Directory may need to be synchronized to the other systems using a tool like the Password Change Notification Service (PCNS) with Microsoft Identity Manager (MIM). To find information on this more complex scenario, see the article [Deploy the MIM Password Change Notification Service on a domain controller](https://docs.microsoft.com/microsoft-identity-manager/deploying-mim-password-change-notification-service-on-domain-controller).
+Если в среде есть несколько систем управления удостоверениями, таких как локальные диспетчеры удостоверений, такие как Oracle AM, SiteMinder или другие системы, то пароли, записываемые в Active Directory, могут быть синхронизированы с другими системами с помощью такого средства, как Служба уведомлений о смене паролей (PCNS) с Microsoft Identity Manager (MIM). Дополнительные сведения об этом более сложном сценарии см. в статье [развертывание службы уведомлений о смене ПАРОЛЕЙ MIM на контроллере домена](https://docs.microsoft.com/microsoft-identity-manager/deploying-mim-password-change-notification-service-on-domain-controller).
 
-## <a name="plan-deployment-and-support-for-sspr"></a>Plan deployment and support for SSPR
+## <a name="plan-deployment-and-support-for-sspr"></a>Планирование развертывания и поддержки SSPR
 
-### <a name="engage-the-right-stakeholders"></a>Engage the right stakeholders
+### <a name="engage-the-right-stakeholders"></a>Привлечение нужных заинтересованных лиц
 
-When technology projects fail, they typically do so due to mismatched expectations on impact, outcomes, and responsibilities. To avoid these pitfalls, ensure that you are engaging the right stakeholders, and that stakeholder roles in the project are well understood by documenting the stakeholders and their project input and accountability.
+При сбое технологических проектов они обычно делают это из-за несовпадения ожидания, результатов и обязанностей. Чтобы избежать этих трудностей, убедитесь, что вы знакомы с нужными заинтересованными сторонами, и что роли заинтересованных лиц в проекте хорошо понятны путем документирования заинтересованных лиц, а также их ввода и отчетности.
 
-### <a name="communications-plan"></a>Communications plan
+### <a name="communications-plan"></a>План взаимодействия
 
-Communication is critical to the success of any new service. Proactively communicate with your users how to use the service and what they can do to get help if something doesn’t work as expected. Review the [Self-service password reset rollout materials on the Microsoft download center](https://www.microsoft.com/download/details.aspx?id=56768) for ideas on how to plan your end-user communication strategy.
+Связь важна для успеха любой новой службы. Заблаговременное взаимодействие с пользователями, как использовать службу и что они могут сделать для получения справки, если что-то не работает должным образом. Ознакомьтесь с [материалами по самостоятельному сбросу пароля в центре загрузки Майкрософт,](https://www.microsoft.com/download/details.aspx?id=56768) чтобы узнать, как спланировать стратегию взаимодействия конечных пользователей.
 
-### <a name="testing-plan"></a>Testing plan
+### <a name="testing-plan"></a>План тестирования
 
-To ensure that your deployment works as expected, you should plan out a set of test cases you will use to validate the implementation. The following table includes some useful test scenarios you can use to document your organizations expected results based on your policies.
+Чтобы убедиться, что развертывание работает должным образом, необходимо спланировать набор тестовых случаев, которые будут использоваться для проверки реализации. В следующей таблице приведены некоторые полезные сценарии тестирования, которые можно использовать для документирования ожидаемых результатов в организациях на основе политик.
 
 | Экономическое обоснование | Ожидаемый результат |
 | --- | --- |
-| SSPR portal is accessible from within the corporate network | Determined by your organization |
-| SSPR portal is accessible from outside the corporate network | Determined by your organization |
-| Reset user password from browser when user is not enabled for password reset | User is not able to access the password reset flow |
-| Reset user password from browser when user has not registered for password reset | User is not able to access the password reset flow |
-| User signs in when password reset registration is enforced | User is prompted to register security information |
-| User signs in when password reset registration has been completed | User is not prompted to register security information |
-| SSPR portal is accessible when the user does not have a license | Is accessible |
-| Reset user password from Windows 10 Azure AD joined or hybrid Azure AD joined device lock screen after user has registered | User can reset password |
-| SSPR registration and usage data are available to administrators in near real time | Is available via audit logs |
+| Портал SSPR доступен в корпоративной сети. | Определяется вашей организацией |
+| Портал SSPR доступен за пределами корпоративной сети | Определяется вашей организацией |
+| Сбросить пароль пользователя из браузера, когда пользователь не включил сброс пароля | Пользователь не может получить доступ к потоку сброса пароля |
+| Сбросить пароль пользователя из браузера, если пользователь не зарегистрировался для сброса пароля | Пользователь не может получить доступ к потоку сброса пароля |
+| Пользователь входит в систему при принудительной регистрации сброса пароля | Пользователю предлагается зарегистрировать сведения о безопасности |
+| Пользователь входит в систему после завершения регистрации сброса пароля | Пользователю не предлагается зарегистрировать сведения о безопасности |
+| Портал SSPR доступен, если у пользователя нет лицензии | Доступен |
+| Сброс пароля пользователя с присоединенного к Azure AD или гибридного экрана блокировки устройства с Windows 10 после регистрации пользователя | Пользователь может сбросить пароль |
+| Данные о регистрации и использовании SSPR доступны администраторам почти в режиме реального времени | Доступно через журналы аудита |
 
 ### <a name="support-plan"></a>План поддержки
 
-While SSPR does not typically create user issues, it is important to have support staff prepared to deal with issues that may arise.
+Хотя SSPR обычно не создает проблем пользователя, важно иметь персонал поддержки, подготовленный для решения проблем, которые могут возникнуть.
 
-While an administrator can change or reset the password for end users through the Azure AD portal, it is better to help resolve the issue via a self-service support process.
+Хотя Администратор может изменить или сбросить пароль для конечных пользователей на портале Azure AD, лучше решить эту проблему с помощью процесса самостоятельной поддержки.
 
-In the operational guide section of this document, create a list of support cases and their likely causes, and create a guide for resolution.
+В разделе "операционное правило" этого документа вы создадите список вариантов поддержки и их вероятные причины, а также создадите рекомендации по устранению проблемы.
 
 ### <a name="auditing-and-reporting"></a>Аудит и создание отчетов
 
 После развертывания многие организации хотят знать, как использовать самостоятельный сброс пароля (SSPR) и действительно ли используется эта функция. Функция создания отчетов, предоставляемая Azure Active Directory (Azure AD), поможет ответить на вопросы с помощью готовых отчетов.
 
-Audit logs for registration and password reset are available for 30 days. Therefore, if security auditing within a corporation requires longer retention, the logs need to be exported and consumed into a SIEM tool such as [Azure Sentinel](../../sentinel/connect-azure-active-directory.md), Splunk, or ArcSight.
+Журналы аудита для регистрации и сброса пароля доступны в течение 30 дней. Таким образом, если аудит безопасности в Организации требует более длительного хранения, необходимо экспортировать и использовать журналы в SIEM средстве, например [Azure Sentinel](../../sentinel/connect-azure-active-directory.md), Splunk или ArcSight.
 
-In a table, like the one below, document the backup schedule, the system, and the responsible parties. You may not need separate auditing and reporting backups, but you should have a separate backup from which you can recover from an issue.
+В таблице, как показано ниже, задокументируйте расписание резервного копирования, систему и ответственные лица. Вам может не понадобиться отдельное средство аудита и создание резервных копий отчетов, но у вас должна быть отдельная резервная копия, из которой можно восстановиться после возникновения проблемы.
 
-|   | Frequency of download | Target system | Ответственное лицо |
+|   | Частота загрузки | Целевая система | Ответственное лицо |
 | --- | --- | --- | --- |
-| Auditing backup |   |   |   |
-| Reporting backup |   |   |   |
-| Disaster recovery backup |   |   |   |
+| Аудит резервного копирования |   |   |   |
+| Резервное копирование отчетов |   |   |   |
+| Резервное копирование аварийного восстановления |   |   |   |
 
 ## <a name="implementation"></a>Реализация
 
-Implementation occurs in three stages:
+Реализация выполняется в три этапа:
 
-- Configure users and licenses
-- Configure Azure AD SSPR for registration and self-service
-- Configure Azure AD Connect for password writeback
+- Настройка пользователей и лицензий
+- Настройка Azure AD SSPR для регистрации и самообслуживания
+- Настройка Azure AD Connect для обратной записи паролей
 
-### <a name="communicate-the-change"></a>Communicate the change
+### <a name="communicate-the-change"></a>Передача изменений
 
-Begin implementation of the communications plan that you developed in the planning phase.
+Приступите к реализации плана взаимодействия, разработанного на этапе планирования.
 
-### <a name="ensure-groups-are-created-and-populated"></a>Ensure groups are created and populated
+### <a name="ensure-groups-are-created-and-populated"></a>Обеспечение создания и заполнения групп
 
-Reference the Planning password authentication methods section and ensure the group(s) for the pilot or production implementation are available, and all appropriate users are added to the groups.
+В разделе Планирование методов проверки подлинности с помощью пароля и убедитесь, что группы для пилотной или рабочей реализации доступны, а все соответствующие пользователи добавлены в группы.
 
-### <a name="apply-licenses"></a>Apply licenses
+### <a name="apply-licenses"></a>Применить лицензии
 
-The groups you are going to implement must have the Azure AD premium license assigned to them. You can assign licenses directly to the group, or you can use existing license policies such as through PowerShell or Group-Based Licensing.
+Для групп, которые вы собираетесь реализовать, должна быть назначена лицензия Azure AD Premium. Вы можете назначать лицензии непосредственно группе или использовать существующие политики лицензирования, например с помощью PowerShell или группового лицензирования.
 
-Information about assigning licenses to groups of users can be found in the article, [Assign licenses to users by group membership in Azure Active Directory](../users-groups-roles/licensing-groups-assign.md).
+Сведения о назначении лицензий группам пользователей можно найти в статье [Назначение лицензий пользователям с помощью членства в Azure Active Directory](../users-groups-roles/licensing-groups-assign.md).
 
-### <a name="configure-sspr"></a>Configure SSPR
+### <a name="configure-sspr"></a>Настройка SSPR
 
-#### <a name="enable-groups-for-sspr"></a>Enable groups for SSPR
+#### <a name="enable-groups-for-sspr"></a>Включение групп для SSPR
 
-1. Access the Azure portal with an administrator account.
-1. Select All Services, and in the Filter box, type Azure Active Directory, and then select Azure Active Directory.
-1. On the Active Directory blade, select Password reset.
-1. In the properties pane, select Selected. If you want all users enabled, Select All.
-1. In the Default password reset policy blade, type the name of the first group, select it, and then click Select at the bottom of the screen, and select Save at the top of the screen.
-1. Repeat this process for each group.
+1. Доступ к портал Azure с учетной записью администратора.
+1. Выберите все службы и в поле Фильтр введите Azure Active Directory, а затем выберите Azure Active Directory.
+1. В колонке Active Directory выберите Сброс пароля.
+1. На панели Свойства выберите выбрано. Если вы хотите, чтобы все пользователи были включены, выберите все.
+1. В колонке политика сброса паролей по умолчанию введите имя первой группы, выберите ее, а затем нажмите кнопку выбрать в нижней части экрана и выберите сохранить в верхней части экрана.
+1. Повторите эту процедуру для каждой группы.
 
-#### <a name="configure-the-authentication-methods"></a>Configure the authentication methods
+#### <a name="configure-the-authentication-methods"></a>Настройка методов проверки подлинности
 
-Reference your planning from the Planning Password Authentication Methods section of this document.
+Сослаться на планирование в разделе способы планирования проверки подлинности паролей этого документа.
 
-1. Select Registration, under Require user to register when signing in, select Yes, and then set the number of days before expiration, and then select Save.
-1. Select Notification, and configure per your plan, and then select Save.
-1. Select Customization, and configure per your plan, and then select Save.
-1. Select On-premises integration, and configure per your plan, and then select Save.
+1. Выберите регистрация, в разделе требовать регистрацию пользователя при входе, выберите Да, а затем задайте число дней до истечения срока действия, а затем нажмите кнопку Сохранить.
+1. Выберите уведомление и настройте в соответствии с планом, а затем нажмите кнопку Сохранить.
+1. Выберите Настройка и настройте в соответствии с планом, а затем нажмите кнопку Сохранить.
+1. Выберите локальную интеграцию и настройте в соответствии с планом, а затем нажмите кнопку Сохранить.
 
-### <a name="enable-sspr-in-windows"></a>Enable SSPR in Windows
+### <a name="enable-sspr-in-windows"></a>Включение SSPR в Windows
 
-Windows 10 devices running version 1803 or higher that are either Azure AD joined or hybrid Azure AD joined can reset their passwords at the Windows login screen. Information and steps to configure this capability can be found in the article [Azure AD password reset from the login screen](tutorial-sspr-windows.md)
+Устройства Windows 10 с версией 1803 или более поздней версии, присоединенной к Azure AD или гибридной службе Azure AD, могут сбрасывать свои пароли на экране входа в Windows. Сведения и действия по настройке этой возможности можно найти в статье [Сброс пароля Azure AD на экране входа в систему](tutorial-sspr-windows.md) .
 
 ### <a name="configure-password-writeback"></a>Настройка компонента обратной записи паролей
 
-Steps to configure password writeback for your organization can be found in the article [How-to: Configure password writeback](howto-sspr-writeback.md).
+Инструкции по настройке обратной записи паролей для организации см. в статье [Настройка обратной записи паролей](howto-sspr-writeback.md).
 
-## <a name="manage-sspr"></a>Manage SSPR
+## <a name="manage-sspr"></a>Управление SSPR
 
-Required roles to manage features associated with self-service password reset.
+Необходимые роли для управления функциями, связанными с самостоятельным сбросом пароля.
 
-| Business role/persona | Azure AD Role (if necessary) |
+| Бизнес-роль или персонаж | Роль Azure AD (при необходимости) |
 | :---: | :---: |
-| Level 1 Helpdesk | Администратор паролей |
-| Level 2 Helpdesk | Администратор пользователей |
-| SSPR Administrator | Глобальный администратор. |
+| Служба технической поддержки уровня 1 | Администратор паролей |
+| Служба технической поддержки уровня 2 | Администратор пользователей |
+| Администратор SSPR | Глобальный администратор |
 
-### <a name="support-scenarios"></a>Support scenarios
+### <a name="support-scenarios"></a>Сценарии поддержки
 
-To enable your support team success, you can create an FAQ based on questions you receive from your users. The following table contains common support scenarios.
+Чтобы обеспечить успешное выполнение команды поддержки, можно создать вопросы и ответы на вопросы, полученные от пользователей. В следующей таблице содержатся распространенные сценарии поддержки.
 
-| Сценарии | Описание |
+| Сценарии | ОПИСАНИЕ |
 | --- | --- |
-| User does not have any registered authentication methods available | A user is trying to reset their password but does not have any of the authentication methods that they registered available (Example: they left their cell phone at home and can’t access email) |
-| User is not receiving a text or call on their office or mobile phone | A user is trying to verify their identity via text or call but is not receiving a text/call. |
-| User cannot access the password reset portal | A user wants to reset their password but is not enabled for password reset and therefore cannot access the page to update passwords. |
-| User cannot set a new password | A user completes verification during the password reset flow but cannot set a new password. |
-| User does not see a Reset Password link on a Windows 10 device | A user is trying to reset password from the Windows 10 lock screen, but the device is either not joined to Azure AD, or the Intune device policy is not enabled |
+| У пользователя нет доступных зарегистрированных методов проверки подлинности | Пользователь пытается сбросить свой пароль, но не содержит методы проверки подлинности, которые были зарегистрированы (например: они находятся на мобильном телефоне дома и недоступны для доступа к электронной почте) |
+| Пользователь не получает текст или вызов на своем офисе или на мобильном телефоне | Пользователь пытается проверить свою личность с помощью текста или вызова, но не получает текст или вызов. |
+| Пользователь не может получить доступ к порталу сброса пароля | Пользователь хочет сбросить пароль, но не включил сброс пароля, и поэтому не может получить доступ к странице для обновления паролей. |
+| Пользователь не может задать новый пароль | Пользователь завершает проверку во время потока сброса пароля, но не может задать новый пароль. |
+| Пользователь не увидит ссылку сброса пароля на устройстве с Windows 10 | Пользователь пытается сбросить пароль с экрана блокировки Windows 10, но устройство либо не присоединено к Azure AD, либо политика устройств Intune не включена. |
 
-You may also want to include information such as the following for additional troubleshooting.
+Для устранения неполадок также можно включить следующие сведения.
 
-- Which groups are enabled for SSPR.
-- Which authentication methods are configured.
-- The access policies related to on or of the corporate network.
-- Troubleshooting steps for common scenarios.
+- Какие группы включены для SSPR.
+- Какие методы проверки подлинности настроены.
+- Политики доступа, связанные с или в корпоративной сети.
+- Действия по устранению распространенных сценариев.
 
-You can also refer to our online documentation on troubleshooting self-service password reset to understand general troubleshooting steps for the most common SSPR scenarios.
+Вы также можете ознакомиться с документацией по устранению неполадок самостоятельного сброса пароля, чтобы узнать об общих действиях по устранению неполадок для наиболее распространенных сценариев SSPR.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- [Consider implementing Azure AD password protection](concept-password-ban-bad.md)
+- [Попробуйте реализовать защиту паролей Azure AD](concept-password-ban-bad.md)
 
-- [Consider implementing Azure AD Smart Lockout](howto-password-smart-lockout.md)
+- [Попробуйте реализовать интеллектуальную блокировку Azure AD](howto-password-smart-lockout.md)

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 10/12/2019
+ms.date: 11/22/2019
 ms.author: diberry
-ms.openlocfilehash: 8f00ffeff4eb353fa70aa7df60b14c97d4b8e724
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 0190b94cc6195163de4d428c2cae0de3620bdb01
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72554875"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74422702"
 ---
 # <a name="get-an-answer-with-the-generateanswer-api-and-metadata"></a>Получение ответа с помощью API и метаданных Женератеансвер
 
@@ -48,7 +48,7 @@ QnA Maker позволяет добавлять метаданные в виде
 Вот как это можно сделать.
 1. Войдите на портал [https://www.qnamaker.ai](https://www.qnamaker.ai).
 1. В окне **Мои базы знаний**выберите **Просмотреть код** для своей базы знаний.
-    ![Screenshot баз знаний ](../media/qnamaker-how-to-metadata-usage/my-knowledge-bases.png)
+    ![снимок экрана с базами знаний](../media/qnamaker-how-to-metadata-usage/my-knowledge-bases.png)
 1. Получите сведения о конечной точке GenerateAnswer.
 
     ![Снимок экрана сведений о конечной точке](../media/qnamaker-how-to-metadata-usage/view-code.png)
@@ -232,7 +232,7 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 
 По умолчанию QnA Maker выполняет поиск по вопросам и ответам. Если вы хотите выполнять поиск только по вопросам, то для получения ответа используйте `RankerType=QuestionOnly` в тексте сообщения запроса Женератеансвер.
 
-Вы можете выполнять поиск в опубликованной базе знаний, используя `isTest=false` или в тесте базы знаний с помощью `isTest=true`.
+Вы можете выполнять поиск в опубликованной базе знаний, используя `isTest=false`или в тесте базы знаний с помощью `isTest=true`.
 
 ```json
 {
@@ -255,9 +255,9 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 |404|База знаний не существует|
 |410|Этот API устарел и больше недоступен|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-На странице **Публикация** также содержатся сведения для создания ответа с помощью [POST](../Quickstarts/get-answer-from-kb-using-postman.md) и [перелистывания](../Quickstarts/get-answer-from-kb-using-curl.md). 
+На странице **Публикация** также содержатся сведения для [создания ответа](../Quickstarts/get-answer-from-knowledge-base-using-url-tool.md) с помощью POST-или перелистывания.
 
 > [!div class="nextstepaction"]
 > [Создание программы-робота в базе знаний](../tutorials/integrate-qnamaker-luis.md)

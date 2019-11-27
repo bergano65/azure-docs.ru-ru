@@ -1,22 +1,21 @@
 ---
-title: Настройка облака для службы подготовки устройств для Центра Интернета вещей Azure на портале | Документация Майкрософт
-description: Автоматическая подготовка устройств Центра Интернета вещей на портале Azure
+title: Руководство по настройке облака для Службы подготовки устройств к добавлению в Центр Интернета вещей Azure на портале
+description: Руководство по настройке облачных ресурсов для подготовки устройств на [портале Azure](https://portal.azure.com) с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей
 author: wesmc7777
 ms.author: wesmc
-ms.date: 09/05/2017
+ms.date: 11/12/2019
 ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
-manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 41689b7596c9da350a9e0fec619e49d332a36d5b
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: e91627f934357cd67965ea8880db37ff9bfb3fb2
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826192"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74112795"
 ---
-# <a name="configure-cloud-resources-for-device-provisioning-with-the-iot-hub-device-provisioning-service"></a>Настройка облачных ресурсов для подготовки устройств с помощью службы подготовки устройств для Центра Интернета вещей
+# <a name="tutorial-configure-cloud-resources-for-device-provisioning-with-the-iot-hub-device-provisioning-service"></a>Руководство по Настройка облачных ресурсов для подготовки устройств с помощью службы подготовки устройств для Центра Интернета вещей
 
 В этом руководстве показано, как настроить облако для автоматической подготовки устройств с помощью службы подготовки устройств для Центра Интернета вещей. Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -48,7 +47,7 @@ ms.locfileid: "73826192"
    | ------------ | ------------------ | ------------------------------------------------- | 
    | **Имя** | Любое уникальное имя. | -- | 
    | **подписка** | Ваша подписка  | Дополнительные сведения о подписках см. [здесь](https://account.windowsazure.com/Subscriptions). |
-   | **Группа ресурсов** | myResourceGroup | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging). |
+   | **Группа ресурсов** | myResourceGroup | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming). |
    | **Местоположение.** | Любое допустимое расположение | Дополнительные сведения о регионах Azure см. [здесь](https://azure.microsoft.com/regions/). |   
 
    ![Ввод основных сведений о службе подготовки устройств на портале](./media/tutorial-set-up-cloud/create-iot-dps-portal.png)

@@ -1,19 +1,14 @@
 ---
-title: Доверие к содержимому в Реестре контейнеров Azure
+title: Управление подписанными образами
 description: Узнайте, как включить доверие содержимого для реестра контейнеров Azure, а затем отправить и получить подписанные изображения.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 09/06/2019
-ms.author: danlep
-ms.openlocfilehash: f14d4d32d2423b12786095da17305af605088fb7
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: 0418b13c352dc3b81d34501e7e76be6c54615a83
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71300424"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456454"
 ---
 # <a name="content-trust-in-azure-container-registry"></a>Доверие к содержимому в Реестре контейнеров Azure
 
@@ -81,7 +76,7 @@ docker build --disable-content-trust -t myacr.azurecr.io/myimage:v1 .
 
 Далее описано, как назначить роль `AcrImageSigner` на портале Azure и в инфраструктуре Azure CLI.
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>портале Azure
 
 Перейдите в свой реестр на портале Azure и последовательно выберите **Управление доступом (IAM)**  > **Добавление назначения ролей**. В разделе **Добавление назначения ролей** выберите `AcrImageSigner` в поле **Роль**, затем одного или нескольких пользователей либо один или несколько субъектов-служб в поле **Выбрать** и выберите **Сохранить**.
 
@@ -89,7 +84,7 @@ docker build --disable-content-trust -t myacr.azurecr.io/myimage:v1 .
 
 ![Включение доверия к содержимому в реестре на портале Azure][content-trust-02-portal]
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Интерфейс командной строки Azure
 
 Чтобы выдать разрешение на подписывание с помощью Azure CLI, назначьте роль `AcrImageSigner` пользователю из вашего реестра. Команда имеет следующий формат.
 
@@ -197,7 +192,7 @@ umask 077; tar -zcvf docker_private_keys_backup.tar.gz ~/.docker/trust/private; 
 
 ![Отключение доверия к содержимому в реестре на портале Azure][content-trust-03-portal]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Подробные сведения о функции доверия к содержимому см. в статье [Content trust in Docker][docker-content-trust] (Функция доверия к содержимому в Docker). В этой статье мы затронули лишь ключевые моменты обширной темы доверия к содержимому, которая более подробно рассматривается в документации Docker.
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 11/18/2019
-ms.openlocfilehash: 97aad6f3853de07a3c4d2fc694c1dcefbd0e82a4
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.openlocfilehash: 12860d70cad2dbcfa3d06bf4df6939dd27ab3ab3
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74195117"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74279631"
 ---
 # <a name="azure-monitor-for-containers-overview"></a>Обзор службы "Azure Monitor для контейнеров"
 
@@ -47,6 +47,10 @@ Azure Monitor для контейнеров — это комплексный п
 
 * Мониторинг рабочих нагрузок контейнера, [развернутых в локальной среде AKS Engine](https://github.com/microsoft/OMS-docker/tree/aks-engine) и [подсистеме AKS на Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-kubernetes-aks-engine-overview?view=azs-1908).
 * Мониторинг рабочих нагрузок контейнера [, развернутых в Azure Red Hat OpenShift](../../openshift/intro-openshift.md).
+
+    >[!NOTE]
+    >Поддержка Red Hat OpenShift в настоящее время является функцией в общедоступной предварительной версии.
+    >
 
 Ознакомьтесь со следующим видео, в котором приведен подробный обзор промежуточного уровня, который поможет вам узнать о мониторинге кластера AKS с помощью Azure Monitor для контейнеров.
 

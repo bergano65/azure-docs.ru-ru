@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 11/15/2019
 ms.author: diberry
-ms.openlocfilehash: 7de1a1e24c2863b90fe5f1f3ff19124318912cff
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 1f2b293acdc77e25e6b932c47d466cc28a04a2b6
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74132686"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74383684"
 ---
 # <a name="add-entities-to-extract-data"></a>Добавление сущностей для извлечения данных 
 
@@ -66,7 +66,7 @@ ms.locfileid: "74132686"
 |--|--|
 |[Сущность списка](#add-list-entities-for-exact-matches)|Список канонических имен вместе с синонимами в качестве альтернативных форм|
 |Сущность регулярного выражения|Сопоставление текста с помощью сущности регулярного выражения|
-|[Предварительно созданная сущность](tutorial-machine-learned-entity.md#add-prebuilt-number-to-app-to-help-extract-data)|Сопоставление общих типов данных, таких как число, электронная почта, Дата|
+|[Предварительно созданная сущность](tutorial-machine-learned-entity.md#add-prebuilt-number-to-help-extract-data)|Сопоставление общих типов данных, таких как число, электронная почта, Дата|
 |Предварительно созданная сущность домена|сопоставление с использованием выбранных доменов субъектов|
 |[Pattern.Any](#add-a-patternany-entity)| для сопоставления сущностей, которые могут быть легко путают с окружающим текстом|  
 
@@ -179,14 +179,18 @@ ms.locfileid: "74132686"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о шаблонах:
+> [!div class="nextstepaction"] 
+> [Использование предварительно созданных моделей](howto-add-prebuilt-models.md) 
 
-* [Основные понятия шаблонов](luis-concept-patterns.md)
-* [Синтаксис шаблонов](reference-pattern-syntax.md)
+См. также:
+* [Обучение](luis-how-to-train.md)
+* [Тестирование](luis-interactive-test.md)
+* Как [опубликовать](luis-how-to-publish-app.md)
+* Закономерно
+    * [Основные понятия](luis-concept-patterns.md)
+    * [Синтаксис](reference-pattern-syntax.md)
+* [Репозиторий GitHub с предварительно созданными сущностями](https://github.com/Microsoft/Recognizers-Text)
+* [Основные понятия извлечения данных](luis-concept-data-extraction.md)
 
-Дополнительные сведения о предварительно созданных сущностях см. в проекте [Распознаватели текста](https://github.com/Microsoft/Recognizers-Text). 
 
-Сведения о том, как сущность отображается в ответе на запрос конечной точки JSON, см. в разделе [Извлечение данных](luis-concept-data-extraction.md).
-
-Теперь, когда добавлены намерения, выражения и сущности, вы получаете базовое приложение LUIS. Узнайте, как [обучать](luis-how-to-train.md), [тестировать](luis-interactive-test.md) и [опубликовать](luis-how-to-publish-app.md) приложение.
  

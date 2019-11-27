@@ -1,19 +1,19 @@
 ---
-title: Машинное обучение Azure в Azure IoT Edge. Настройка устройства IoT Edge | Документация Майкрософт
-description: Узнайте, как настроить виртуальную машину Azure под управлением Linux как устройство Azure IoT Edge, которое выполняет функцию прозрачного шлюза.
+title: Руководство по настройке устройства IoT Edge — Машинное обучение Azure в Azure IoT Edge
+description: Руководство по Узнайте, как настроить виртуальную машину Azure под управлением Linux как устройство Azure IoT Edge, которое выполняет функцию прозрачного шлюза.
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 06/13/2019
+ms.date: 11/11/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 6d8f67cf94e143cd67a525fa2cc675650fb59e65
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 714f0c335e2871fa1afe2f99d08870f0e39c488e
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73494022"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74113969"
 ---
 # <a name="tutorial-configure-an-iot-edge-device"></a>Руководство по Настройка устройства IoT Edge
 

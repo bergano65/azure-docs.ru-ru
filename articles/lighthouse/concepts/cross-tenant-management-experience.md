@@ -2,13 +2,13 @@
 title: Интерфейсы управления для различных клиентов
 description: Делегированное управление ресурсами Azure предоставляет интерфейсы управления для различных клиентов.
 ms.date: 11/7/2019
-ms.topic: overview
-ms.openlocfilehash: 0d04a7a77a3f92cffb185ff829f0d678dac2a9ff
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
-ms.translationtype: HT
+ms.topic: conceptual
+ms.openlocfilehash: 2db1cfd7cc8145ff3020bf232021b4f1a63b2ddd
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74131919"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74464032"
 ---
 # <a name="cross-tenant-management-experiences"></a>Интерфейсы управления для различных клиентов
 
@@ -64,7 +64,7 @@ ms.locfileid: "74131919"
 
 - Просмотр оповещений для делегированных подписок с возможностью просмотра оповещений во всех подписках.
 - Просмотр сведений журнала действий для делегированных подписок.
-- Анализ журналов: запрос данных из удаленных рабочих областей для клиентов в нескольких клиентах.
+- Log Analytics: запрос данных из удаленных рабочих областей клиентов в нескольких клиентах
 - Создание оповещений в арендаторах клиентов, которые инициируют автоматизацию (например, Runbook службы автоматизации Azure или Функции Azure) в арендаторе поставщика службы через веб-перехватчики.
 
 [Политика Azure](https://docs.microsoft.com/azure/governance/policy/).
@@ -105,7 +105,7 @@ ms.locfileid: "74131919"
 - Мониторинг работоспособности ресурсов клиента с помощью службы "Работоспособность ресурсов Azure".
 - Отслеживание работоспособности служб Azure, которые используют клиенты.
 
-[Azure Site Recovery.](https://docs.microsoft.com/azure/site-recovery/)
+[Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/).
 
 - Управление параметрами аварийного восстановления для виртуальных машин Azure в пользовательских клиентах (обратите внимание, что учетные записи RunAs нельзя использовать для копирования расширений виртуальных машин).
 

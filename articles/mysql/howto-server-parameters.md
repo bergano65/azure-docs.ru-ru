@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 11/19/2019
-ms.openlocfilehash: 6b5d48a1d198b62af853a6334de41bad01b3c98c
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: d589800f62f96510a09d23cb6e8794177121c6dd
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74232551"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74419713"
 ---
 # <a name="how-to-configure-server-parameters-in-azure-database-for-mysql-by-using-the-azure-portal"></a>Как настроить параметры сервера в базе данных Azure для MySQL с помощью портала Azure
 
@@ -35,29 +35,29 @@ ms.locfileid: "74232551"
 
 ## <a name="non-configurable-server-parameters"></a>Ненастраиваемые параметры сервера
 
-The InnoDB Buffer Pool size is not configurable and tied to your [pricing tier](concepts-service-tiers.md).
+Размер пула буферов InnoDB нельзя настроить и привязать к [ценовой категории](concepts-service-tiers.md).
 
-|**Ценовая категория**|**Виртуальные ядра**|**InnoDB Buffer Pool size in MB <br>(servers supporting up to 4 TB storage)**| **InnoDB Buffer Pool size in MB <br>(servers supporting up to 16 TB storage)**|
+|**Ценовая категория**|**Виртуальные ядра**|**Размер InnoDB буферного пула в МБ <br>(серверы, поддерживающие до 4 ТБ хранилища)**| **Размер InnoDB буферного пула в МБ <br>(серверы, поддерживающие до 16 ТБ хранилища)**|
 |:---|---:|---:|---:|
-|"Базовый"| 1| 960| |
-|"Базовый"| 2| 2560| |
-|Универсальные| 2| 3584| 7168|
-|Универсальные| 4| 7680| 15360|
-|Универсальные| 8| 15360| 30720|
-|Универсальные| 16| 31232| 62464|
-|Универсальные| 32| 62976| 125952|
-|Универсальные| 64| 125952| 251904|
-|Оптимизированная память| 2| 7168| 14336|
-|Оптимизированная память| 4| 15360| 30720|
-|Оптимизированная память| 8| 30720| 61440|
-|Оптимизированная память| 16| 62464| 124928|
-|Оптимизированная память| 32| 125952| 251904|
+|базовая;| 1| 832| |
+|базовая;| 2| 2560| |
+|Общего назначения| 2| 3584| 7168|
+|Общего назначения| 4\.| 7680| 15360|
+|Общего назначения| 8| 15360| 30720|
+|Общего назначения| 16| 31232| 62464|
+|Общего назначения| 32| 62976| 125952|
+|Общего назначения| 64| 125952| 251904|
+|С оптимизацией для операций в памяти| 2| 7168| 14336|
+|С оптимизацией для операций в памяти| 4\.| 15360| 30720|
+|С оптимизацией для операций в памяти| 8| 30720| 61440|
+|С оптимизацией для операций в памяти| 16| 62464| 124928|
+|С оптимизацией для операций в памяти| 32| 125952| 251904|
 
 Эти дополнительные параметры сервера нельзя настроить в системе:
 
 |**Параметр**|**Фиксированное значение**|
 | :------------------------ | :-------- |
-|innodb_file_per_table для уровня "Базовый"|ВЫКЛ.|
+|innodb_file_per_table для уровня "Базовый"|ВЫКЛ|
 |innodb_flush_log_at_trx_commit|1|
 |sync_binlog|1|
 |innodb_log_file_size|512 МБ|
@@ -99,6 +99,6 @@ SET time_zone = 'US/Pacific';
 
 Описание [функций даты и времени](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_convert-tz) можно прочитать в документации по MySQL.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Библиотеки подключений для базы данных Azure для MySQL](concepts-connection-libraries.md).

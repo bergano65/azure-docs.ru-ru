@@ -8,13 +8,12 @@ ms.date: 08/20/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.custom: seodec18
-ms.openlocfilehash: 1dc4065540256c8af0856b0e156053f7c2097c1f
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 85f77d1132af63681ee92cfd2bde82a71d8ed999
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72755849"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74457242"
 ---
 # <a name="continuous-integration-and-continuous-deployment-to-azure-iot-edge"></a>Непрерывная интеграция и непрерывное развертывание в Azure IoT Edge
 
@@ -28,7 +27,7 @@ ms.locfileid: "72755849"
    - **Azure IOT Edge — создание манифеста развертывания** принимает файл Deployment. Template. JSON и переменные, а затем создает окончательный файл манифеста развертывания IOT Edge.
    - **Azure IOT Edge-Deploy to IOT Edge Devices** помогает создавать IOT Edge развертывания на одном или нескольких IOT Edge устройствах.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 * Репозиторий Azure Repos. Если у вас его нет, вы можете [создать репозиторий Git в проекте](https://docs.microsoft.com/azure/devops/repos/git/create-new-repo?view=vsts&tabs=new-nav).
 * Решение IoT Edge, зафиксированное и отправленное в репозиторий. Если вы хотите создать пример решения для тестирования инструкций в этой статье, следуйте шагам, изложенным в статье [Использование Visual Studio Code для разработки и отладки модулей для Azure IoT Edge](how-to-vs-code-develop-module.md) или [Сведения об использовании Visual Studio 2017 для разработки и отладки модулей C# для Azure IoT Edge (предварительная версия)](how-to-visual-studio-develop-csharp-module.md).
@@ -50,7 +49,7 @@ ms.locfileid: "72755849"
 >
 >Дополнительные сведения см. в разделе о [создании конвейера сборки](https://docs.microsoft.com/azure/devops/pipelines/create-first-pipeline).
 
-1. Войдите в свою организацию Azure DevOps (**https: \//дев.Азуре.ком/{йоур Organization}/** ) и откройте проект, содержащий репозиторий IOT Edge решений.
+1. Войдите в свою организацию Azure DevOps (**https:\//дев.Азуре.ком/{йоур Organization}/** ) и откройте проект, содержащий репозиторий IOT Edge решений.
 
    В этой статье мы создали репозиторий, который называется **IoTEdgeRepo**. Этот репозиторий содержит **IoTEdgeSolution** с кодом для модуля под названием **filtermodule**. 
 
@@ -171,11 +170,11 @@ ms.locfileid: "72755849"
     * **Действие**: Используйте раскрывающийся список, чтобы выбрать **создать манифест развертывания**. В случае изменения значения действия для соответствия также обновляется отображаемое имя задачи.
     * **. Template. JSON файл**: вставьте путь `$(System.DefaultWorkingDirectory)/Drop/drop/deployment.template.json`. Путь публикуется из конвейера сборки.
     * **Платформа по умолчанию**: выберите то же значение при создании образов модулей.
-    * **Путь вывода**: вставьте `$(System.DefaultWorkingDirectory)/Drop/drop/configs/deployment.json` пути. Этот путь является окончательным файлом манифеста развертывания IoT Edge.
+    * **Путь вывода**: вставьте `$(System.DefaultWorkingDirectory)/Drop/drop/configs/deployment.json`пути. Этот путь является окончательным файлом манифеста развертывания IoT Edge.
 
     Эти конфигурации помогают заменить URL-адреса образа модуля в файле `deployment.template.json`. **Манифест создания развертывания** также помогает заменить переменные на точные значения, определенные в файле `deployment.template.json`. В VS/VS Code Вы указываете фактическое значение в `.env`ном файле. В Azure Pipelines значение задается на вкладке Переменные конвейера выпуска. Перейдите на вкладку Переменные и настройте имя и значение следующим образом.
 
-    * **ACR_ADDRESS**: ваш адрес реестра контейнеров Azure. 
+    * **ACR_ADDRESS**. ваш адрес реестра контейнеров Azure. 
     * **ACR_PASSWORD**: пароль реестра контейнеров Azure.
     * **ACR_USER**: имя пользователя реестра контейнеров Azure.
 
@@ -220,7 +219,7 @@ ms.locfileid: "72755849"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * IoT Edge рекомендации по DevOps в [проекте DevOps Azure для IOT Edge](how-to-devops-project.md)
 * Основные сведения о развертывании IoT Edge см. в статье [Understand IoT Edge deployments for single devices or at scale](module-deployment-monitoring.md) (Основные сведения о развертываниях IoT Edge для отдельных устройств или в требуемом масштабе).
 * Ознакомьтесь со статьей [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-monitor.md), чтобы узнать, как создавать, обновлять или удалять развертывание.

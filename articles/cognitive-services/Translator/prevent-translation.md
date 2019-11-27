@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
-ms.date: 11/18/2019
+ms.date: 11/21/2019
 ms.author: swmachan
-ms.openlocfilehash: dd3684cbd7c03851bfcc75293a9690f77b4652b2
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 15a36451c18d65df6667f24284f3f69f3d1c06b8
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74184817"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74326761"
 ---
 # <a name="how-to-prevent-translation-of-content-with-the-translator-text-api"></a>Запрет перевода содержимого с помощью API перевода текстов
 
@@ -24,10 +24,15 @@ API перевода текстов позволяет помечать соде
 ## <a name="methods-for-preventing-translation"></a>Способы запрета перевода
 1. Для экранирования используйте тег Twitter @somethingtopassthrough или #somethingtopassthrough. Отмените экранирование после перевода. Это регулярное выражение для допустимых тегов Twitter: `\B@[A-Za-z]+[A-Za-z0-9_]+)`. Тег должен начинаться с символа "@", за которым следует символ, а затем один или несколько символов, цифр или символ подчеркивания. Рекомендуется, чтобы теги были короткими, а открывающим тегом — пробел.
 
-2. Пометьте содержимое с помощью `notranslate`.
+2. Пометьте содержимое с помощью `notranslate`. Это можно сделать, только если входные Тексттипе заданы в формате HTML.
 
    Пример:
 
+   ```html
+   <span class="notranslate">This will not be translated.</span>
+   <span>This will be translated. </span>
+   ```
+   
    ```html
    <div class="notranslate">This will not be translated.</div>
    <div>This will be translated. </div>

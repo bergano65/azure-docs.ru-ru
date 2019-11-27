@@ -7,14 +7,14 @@ author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 09/19/2019
+ms.date: 11/21/2019
 ms.author: dapine
-ms.openlocfilehash: e3051a72a115e711a99ecd68756967e2cef0cc04
-ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+ms.openlocfilehash: c39df1e6af292d3774c6cba62663454bd2d8ad28
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71130050"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74383443"
 ---
 ### <a name="deploy-the-language-detection-container-to-an-aks-cluster"></a>Развертывание контейнера распознавание языка в кластере AKS
 
@@ -24,7 +24,7 @@ ms.locfileid: "71130050"
     az login
     ```
 
-1. Войдите в кластер AKS. Замените `your-cluster-name` и`your-resource-group` соответствующими значениями.
+1. Войдите в кластер AKS. Замените `your-cluster-name` и `your-resource-group` соответствующими значениями.
 
     ```azurecli
     az aks get-credentials -n your-cluster-name -g -your-resource-group
@@ -37,7 +37,7 @@ ms.locfileid: "71130050"
     ```
 
     > [!WARNING]
-    > Если в учетной записи Azure доступно несколько подписок, а `az aks get-credentials` команда возвращает ошибку, то распространенной проблемой является то, что вы используете неправильную подписку. Задайте контекст сеанса Azure CLI, чтобы использовать ту же подписку, в которой были созданы ресурсы, и повторите попытку.
+    > Если в учетной записи Azure доступно несколько подписок, а команда `az aks get-credentials` возвращает ошибку, то распространенная проблема заключается в том, что вы используете неправильную подписку. Задайте контекст сеанса Azure CLI, чтобы использовать ту же подписку, в которой были созданы ресурсы, и повторите попытку.
     > ```azurecli
     >  az account set -s subscription-id
     > ```
@@ -66,6 +66,13 @@ ms.locfileid: "71130050"
             image: mcr.microsoft.com/azure-cognitive-services/language
             ports:
             - containerPort: 5000
+            resources:
+              requests:
+                memory: 2Gi
+                cpu: 1
+              limits:
+                memory: 4Gi
+                cpu: 1
             env:
             - name: EULA
               value: "accept"
@@ -91,7 +98,7 @@ ms.locfileid: "71130050"
 1. Выполните команду Kubernetes `apply` с файлом *Language. YAML* в качестве целевого объекта:
 
     ```console
-    kuberctl apply -f language.yaml
+    kubectl apply -f language.yaml
     ```
 
     После того как команда успешно применит конфигурацию развертывания, появится сообщение следующего вида:

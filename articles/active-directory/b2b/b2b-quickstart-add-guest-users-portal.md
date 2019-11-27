@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: quickstart
-ms.date: 07/02/2018
+ms.date: 11/12/2019
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b91ec337a3237e1bde54b42463d97a803f113c7c
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 064af4f54f3d3069c7e04a66cc7248dbfaa7ba0b
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65813135"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74008553"
 ---
 # <a name="quickstart-add-guest-users-to-your-directory-in-the-azure-portal"></a>Краткое руководство. Добавление гостевых пользователей в каталог на портале Azure
 
@@ -46,9 +46,13 @@ ms.locfileid: "65813135"
 
     ![Снимок экрана с подсказкой, где выбрать параметр "Новый гостевой пользователь"](media/quickstart-add-users-portal/quickstart-users-portal-user-3.png)
 
-5.  В колонке **Имя пользователя** введите адрес электронной почты внешнего пользователя. В разделе **Include a personal message with the invitation** (Добавить личное сообщение в приглашение) введите приветственное сообщение. 
+5. На странице **Новый пользователь** выберите **Пригласить пользователя**, а затем добавьте сведения о пользователе-госте. 
 
-    ![Снимок экрана с подсказкой, куда вводить текст приглашения гостевого пользователя](media/quickstart-add-users-portal/quickstart-users-portal-user-4.png)
+   - **Name** (Имя). Имя и фамилия пользователя-гостя.
+   - **Адрес электронной почты (обязательно для заполнения)** . Адрес электронной почты пользователя-гостя.
+   - **Личное сообщение (необязательно)** . Добавьте личное сообщение-приветствие гостя.
+   - **Группы**. Пользователя-гостя можно добавить в одну или несколько имеющихся групп (это можно сделать и позже).
+   - **Роль каталога**. Чтобы предоставить пользователю права администратора Azure AD, ему можно присвоить роль Azure AD. 
 
 6. Чтобы автоматически отправить приглашение гостевому пользователю, нажмите кнопку **Пригласить**. В правом верхнем углу сообщения отобразится сообщение **Пользователь успешно приглашен**. 
 7.  После отправки приглашения учетная запись пользователя автоматически добавляется в каталог в качестве гостя.

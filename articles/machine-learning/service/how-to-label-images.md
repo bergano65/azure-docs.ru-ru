@@ -7,16 +7,16 @@ ms.author: laobri
 ms.service: machine-learning
 ms.topic: tutorial
 ms.date: 11/04/2019
-ms.openlocfilehash: af12361ed11d0a16e5a5d0cfe5989bb3918ce154
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 9cbebb905ba39dabaf905be2fa741702bd1a0088
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73585590"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73838938"
 ---
 # <a name="how-to-tag-images-in-a-labeling-project"></a>Расстановка тегов для изображений в проекте маркировки
 
-После того, как администратор проекта создаст проект маркировки в Студии Машинного обучения Azure, вы можете применить средство добавления меток для быстрой подготовки данных для проекта машинного обучения. 
+После того, как администратор проекта создаст проект маркировки в AML, вы можете применить средство добавления меток для быстрой подготовки данных для проекта машинного обучения. 
 
 > [!div class="checklist"]
 > * Доступ к проектам маркировки

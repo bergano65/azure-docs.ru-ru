@@ -1,5 +1,5 @@
 ---
-title: Security guidance for Azure Multi-Factor Authentication - Azure Active Directory
+title: Руководство по безопасности для многофакторной идентификации Azure — Azure Active Directory
 description: Этот документ содержит указания по использованию Azure MFA с учетными записями Azure.
 services: multi-factor-authentication
 ms.service: active-directory
@@ -31,7 +31,7 @@ ms.locfileid: "74208432"
 
 ### <a name="licenses"></a>Лицензии
 
-![Apply licenses to users, enable, notify](./media/multi-factor-authentication-security-best-practices/ems.png)
+![Применение лицензий для пользователей, включение, уведомление](./media/multi-factor-authentication-security-best-practices/ems.png)
 
 При наличии лицензий Azure AD Premium или Enterprise Mobility + Security вы уже можете использовать Azure MFA. Вашей организации не требуются дополнительные компоненты или действия для распространения двухфакторной проверки подлинности на всех пользователей. Вам достаточно назначить пользователю лицензию и включить MFA.
 
@@ -41,9 +41,9 @@ ms.locfileid: "74208432"
 * Если вам не хватает лицензий на всех пользователей, можно создать поставщик Многофакторной идентификации на уровне пользователя, чтобы охватить остальную часть организации. 
 * Azure AD Connect требуется только при синхронизации локальной среды Active Directory с каталогом Azure AD. Если вы используете только каталог Azure AD, который не синхронизируется с локальным экземпляром Active Directory, вам не обязательно использовать Azure AD Connect.
 
-### <a name="multi-factor-auth-provider"></a>поставщик Multi-Factor Authentication.
+### <a name="multi-factor-auth-provider"></a>Поставщик Multi-Factor Authentication
 
-![Multi-Factor Authentication Provider](./media/multi-factor-authentication-security-best-practices/authprovider.png)
+![Поставщик многофакторной идентификации](./media/multi-factor-authentication-security-best-practices/authprovider.png)
 
 Если у вас нет лицензий, которые включают в себя Azure MFA, то вы можете [создать поставщик аутентификации Azure MFA](concept-mfa-authprovider.md).
 
@@ -52,7 +52,7 @@ ms.locfileid: "74208432"
 * Для создания поставщика Многофакторной идентификации не требуется каталог Azure AD, однако он расширяет функциональные возможности. Связывание поставщика аутентификации с каталогом Azure AD обеспечивает следующие возможности:
   * распространение двухфакторной проверки подлинности на всех пользователей;
   * предоставление глобальным администраторам дополнительных функций, таких как портал управления, настраиваемые приветствия и отчеты.
-* If you synchronize your on-premises Active Directory environment with an Azure AD directory, you need DirSync or Azure AD Sync. If you use an Azure AD directory that is not synchronized with an on-premises instance of Active Directory, you do not need DirSync or Azure AD Sync.
+* Если вы синхронизируете локальную среду Active Directory с каталогом Azure AD, требуется DirSync или Azure AD Sync. Если вы используете каталог Azure AD, который не синхронизирован с локальным экземпляром Active Directory, не требуется DirSync или Azure AD Sync.
 * Выберите модель использования, наиболее подходящую для вашей организации. Выбрав модель использования, ее нельзя будет изменить. Доступны две модели.
   * По количеству событий аутентификации: плата взимается за каждую проверку. Эта модель удобна, если двухфакторная проверка подлинности будет использоваться для всех, кто использует приложение, а не для конкретных пользователей.
   * По количеству включенных пользователей: оплата взимается за каждого пользователя, для которого включена служба Azure MFA. Эту модель лучше использовать, если у одних пользователей есть лицензии Azure AD Premium или Enterprise Mobility Suite, а у других — нет.
@@ -68,7 +68,7 @@ ms.locfileid: "74208432"
 
 Если ваша компания использует собственную инфраструктуру для поддержки MFA, необходимо [развернуть сервер Многофакторной идентификации Azure в локальной среде](howto-mfaserver-deploy.md). На приведенной ниже схеме показаны компоненты сервера MFA.
 
-![The default MFA Server components](./media/multi-factor-authentication-security-best-practices/server.png) \*Not installed by default \**Installed but not enabled by default
+![компоненты сервера MFA по умолчанию](./media/multi-factor-authentication-security-best-practices/server.png) \*не установлены по умолчанию \** установлен, но не включен по умолчанию
 
 Сервер Многофакторной идентификации Azure может защитить облачные и локальные ресурсы с помощью федерации. Для этого необходимы службы федерации Active Directory (AD FS) и федерация с клиентом Azure AD.
 При настройке сервера Многофакторной идентификации необходимо учесть следующие сведения.
@@ -110,7 +110,7 @@ ms.locfileid: "74208432"
 * [Развертывание веб-службы мобильных приложений сервера Многофакторной идентификации Azure](howto-mfaserver-deploy-mobileapp.md).
 * [Расширенная настройка VPN с Многофакторной идентификацией Azure](howto-mfaserver-nps-vpn.md) для устройств Cisco ASA, Citrix Netscaler и Juniper/Pulse Secure VPN, использующих LDAP или RADIUS.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Хотя в данной статье приводятся некоторые рекомендации по работе с Azure MFA, существуют другие ресурсы, которые также можно использовать при планировании развертывания MFA. Ниже приведен список ключевых статей, которые могут помочь вам в этом процессе.
 

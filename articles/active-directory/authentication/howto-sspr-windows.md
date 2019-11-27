@@ -1,22 +1,22 @@
 ---
-title: Самостоятельный сброс пароля Azure AD для Windows — Azure Active Directory
+title: Самостоятельный сброс пароля для Windows — Azure Active Directory
 description: Как включить самостоятельный сброс пароля с помощью функции "Забытый пароль" на экране входа в Windows
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/28/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 519993be873e7864dab4de4f66919c56aebfc379
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 44e25efcb068fe51f05dbbde50e8a96da492a735
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73171870"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74381228"
 ---
 # <a name="how-to-enable-password-reset-from-the-windows-login-screen"></a>Как включить сброс пароля с экрана входа в Windows
 
@@ -76,9 +76,9 @@ ms.locfileid: "73171870"
       - Для параметра **OMA-URI** укажите значение `./Vendor/MSFT/Policy/Config/Authentication/AllowAadPasswordReset`.
       - Для параметра **Тип данных** задайте значение **Целое число**.
       - Для параметра **Значение** установите значение **1**.
-      - Щелкните **ОК**
-   - Щелкните **ОК**
-1. Нажмите кнопку **Создать**.
+      - Нажмите кнопку **ОК**
+   - Нажмите кнопку **ОК**
+1. Нажмите кнопку **Создать**
 1. Эту политику можно назначить конкретным пользователям, устройствам или группам. Дополнительные сведения можно найти в статье [Назначение профилей пользователей и устройств в Microsoft Intune](https://docs.microsoft.com/intune/device-profile-assign).
 
 ### <a name="enable-for-windows-10-using-the-registry"></a>Включение для Windows 10 с помощью реестра
@@ -113,7 +113,7 @@ ms.locfileid: "73171870"
 > [!WARNING]
 > Необходимо включить TLS 1,2, а не только установить автоматическое согласование
 
-### <a name="install"></a>Установка
+### <a name="install"></a>Установить
 
 1. Скачайте соответствующий установщик для версии Windows, в которой следует включить этот протокол.
    - Программное обеспечение доступно в Центре загрузки Майкрософт по адресу [https://aka.ms/sspraddin](https://aka.ms/sspraddin).
@@ -152,7 +152,7 @@ ms.locfileid: "73171870"
 
 Инструкции по использованию этой функции пользователи могут найти в статье [Я не помню свой пароль Azure AD](../user-help/active-directory-passwords-update-your-own-password.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Планирование способов проверки подлинности](concept-authentication-methods.md)
 

@@ -1,5 +1,5 @@
 ---
-title: Обзор двухфакторной проверки рабочей и вашей рабочей или учебной учетной записи — Azure Active Directory | Документация Майкрософт
+title: Проверка безопасности и рабочая или учебная учетная запись — Azure AD
 description: Узнайте, как настроить методы проверки безопасности, чтобы использовать двухфакторную проверку для рабочей или учебной учетной записи.
 services: active-directory
 author: eross-msft
@@ -13,14 +13,14 @@ ms.date: 08/05/2019
 ms.author: lizross
 ms.reviewer: richagi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f10f3b272978ea24b515e39a8a8cc1fd0bea73a4
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: e8cda4b04a4555ed7747bb9444c2a5ec2e266573
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69616000"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74028464"
 ---
-# <a name="overview-for-two-factor-verification-and-your-work-or-school-account"></a>Обзор двухфакторной проверки и вашей рабочей или учебной учетной записи
+# <a name="two-factor-verification-and-your-work-or-school-account"></a>Двухфакторная проверка и рабочая или учебная учетная запись
 
 Вы получили сообщение электронной почты от сотрудника ИТ-отдела или даже от самого начальника о том, что для вашей учетной записи будет действовать дополнительная проверка безопасности. Что это значит? Это значит, что ваша организация принимает дополнительные меры, чтобы исключить вероятность того, что кто-то другой может выполнить вход от вашего имени. Эта дополнительная проверка, также известная как двухфакторная проверка подлинности, выполняется с использованием имени пользователя, пароля, мобильного устройства или телефона.
 

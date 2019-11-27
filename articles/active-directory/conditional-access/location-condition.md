@@ -1,23 +1,23 @@
 ---
-title: Каково условие расположения в Azure Active Directory условном доступе? | Документация Майкрософт
+title: Условие расположения в условном доступе Azure Active Directory
 description: Узнайте, как использовать условие расположения для управления доступом к облачным приложениям на основе расположения пользователя в сети.
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: article
 ms.workload: identity
-ms.date: 04/12/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 799a994e1351f62fac9f5a07060658cea60c9274
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 915675af1e646f2cb77e36c0018ed372ff9496fc
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74065728"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74380295"
 ---
 # <a name="what-is-the-location-condition-in-azure-active-directory-conditional-access"></a>Каково условие расположения в Azure Active Directory условном доступе? 
 

@@ -1,6 +1,6 @@
 ---
-title: Source transformation in mapping data flow
-description: Learn how to set up a source transformation in mapping data flow.
+title: Преобразование источника в потоке данных сопоставления
+description: Узнайте, как настроить преобразование источника в потоке данных сопоставления.
 author: kromerm
 ms.author: makromer
 manager: anandsub
@@ -15,176 +15,176 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74217734"
 ---
-# <a name="source-transformation-for-mapping-data-flow"></a>Source transformation for mapping data flow 
+# <a name="source-transformation-for-mapping-data-flow"></a>Преобразование источника для потока данных сопоставления 
 
-A source transformation configures your data source for the data flow. When designing data flows, your first step will always be configuring a source transformation. To add a source, click on the **Add Source** box in the data flow canvas.
+Преобразование «источник» настраивает источник данных для потока данных. При проектировании потоков данных первым шагом всегда будет настройка преобразования «источник». Чтобы добавить источник, щелкните поле **Добавить источник** на холсте потока данных.
 
-Every data flow requires at least one source transformation, but you can add as many sources as necessary to complete your data transformations. You can join those sources together with a join, lookup, or a union transformation.
+Для каждого потока данных требуется по крайней мере одно преобразование источника, но при необходимости можно добавить столько источников, сколько необходимо для выполнения преобразований данных. Вы можете объединить эти источники вместе с преобразованием «соединение», «уточняющий запрос» или «объединение».
 
-Each source transformation is associated with exactly one Data Factory dataset. The dataset defines the shape and location of the data you want to write to or read from. If using a file-based dataset, you can use wildcards and file lists in your source to work with more than one file at a time.
+Каждое преобразование источника связано ровно с одним набором данных фабрики данных. Набор данных определяет форму и расположение данных, которые необходимо записать или прочитать. При использовании файлового набора данных можно использовать подстановочные знаки и списки файлов в источнике для работы с несколькими файлами за раз.
 
-## <a name="supported-connectors-in-mapping-data-flow"></a>Supported connectors in mapping data flow
+## <a name="supported-connectors-in-mapping-data-flow"></a>Поддерживаемые соединители в потоке данных сопоставления
 
-Mapping Data Flow follows an extract, load, transform (ELT) approach and works with *staging* datasets that are all in Azure. Currently the following datasets can be used in a source transformation:
+Поток данных сопоставления соответствует подходу "извлечь", "Загрузка", "преобразование" (ELT) и работает с *промежуточными* наборами DataSet, которые находятся в Azure. В настоящее время в преобразовании источника можно использовать следующие наборы данных:
     
-* Azure Blob Storage (JSON, Avro, Text, Parquet)
-* Azure Data Lake Storage Gen1 (JSON, Avro, Text, Parquet)
-* Azure Data Lake Storage Gen2 (JSON, Avro, Text, Parquet)
-* Хранилище данных SQL Azure
-* Базы данных SQL Azure
+* Хранилище BLOB-объектов Azure (JSON, Avro, Text, Parquet)
+* Azure Data Lake Storage 1-го поколения (JSON, Avro, Text, Parquet)
+* Azure Data Lake Storage 2-го поколения (JSON, Avro, Text, Parquet)
+* Хранилище данных SQL Azure
+* База данных SQL Azure
 * Azure CosmosDB
 
-Azure Data Factory has access to over 80 native connectors. To include data from those other sources in your data flow, use the Copy Activity to load that data into one of the supported staging areas.
+Фабрика данных Azure имеет доступ к более чем 80 собственным соединителям. Чтобы включить данные из других источников в потоке данных, используйте действие копирования для загрузки этих данных в одну из поддерживаемых промежуточных областей.
 
 ## <a name="source-settings"></a>Параметры источника
 
-Once you have added a source, configure via the **Source Settings** tab. Here you can pick or create the dataset your source points at. You can also select schema and sampling options for your data.
+После добавления источника настройте его с помощью вкладки **Параметры источника** . Здесь можно выбрать или создать набор данных, на котором находятся исходные точки. Можно также выбрать схему и параметры выборки для данных.
 
-![Source settings tab](media/data-flow/source1.png "Source settings tab")
+![Вкладка "Параметры источника"](media/data-flow/source1.png "Вкладка "Параметры источника"")
 
-**Schema drift:** [Schema Drift](concepts-data-flow-schema-drift.md) is data factory's ability to natively handle flexible schemas in your data flows without needing to explicitly define column changes.
+Отклонение **схемы.** [смещение схемы](concepts-data-flow-schema-drift.md) — это способность фабрики данных в собственном коде управлять гибкими схемами в потоках данных без необходимости явно определять изменения столбцов.
 
-* Check the **Allow schema drift** box if the source columns will change often. This setting allows all incoming source fields to flow through the transformations to the sink.
+* Установите флажок **Разрешить смещение схемы** , если исходные столбцы будут часто меняться. Этот параметр позволяет всем входящим полям источника проходить через преобразования в приемник.
 
-* Choosing **Infer drifted column types** will instruct data factory to detect and define data types for each new column discovered. With this feature turned off, all drifted columns will be of type string.
+* Выбор **типов столбцов с несмещенными типами** позволит фабрике данных обнаруживать и определять типы данных для каждого обнаруженного нового столбца. Если эта функция отключена, все смещенные столбцы будут иметь строковый тип.
 
-**Validate schema:** If validate schema is selected, the data flow will fail to run if the incoming source data doesn't match the defined schema of the dataset.
+**Проверить схему:** Если выбран параметр проверить схему, поток данных не будет выполняться, если входящие исходные данные не соответствуют определенной схеме набора данных.
 
-**Skip line count:** The skip line count field specifies how many lines to ignore at the beginning of the dataset.
+**Пропустить число строк:** В поле пропустить число строк указывается, сколько строк следует игнорировать в начале набора данных.
 
-**Sampling:** Enable sampling to limit the number of rows from your source. Use this setting when you test or sample data from your source for debugging purposes.
+**Выборка:** Включите выборку, чтобы ограничить количество строк в источнике. Используйте этот параметр при тестировании или выборки данных из источника для отладки.
 
-**Multiline rows:** Select multiline rows if your source text file contains string values that span multiple rows, i.e. newlines inside a value.
+**Многострочные строки:** Выберите многострочные строки, если исходный текстовый файл содержит строковые значения, охватывающие несколько строк, то есть символы новой строки в значении.
 
-To validate your source is configured correctly, turn on debug mode and fetch a data preview. For more information, see [Debug mode](concepts-data-flow-debug-mode.md).
+Чтобы проверить правильность настройки источника, включите режим отладки и получите предварительную версию данных. Дополнительные сведения см. в разделе [режим отладки](concepts-data-flow-debug-mode.md).
 
 > [!NOTE]
-> When debug mode is turned on, the row limit configuration in debug settings will overwrite the sampling setting in the source during data preview.
+> Когда режим отладки включен, конфигурация ограничения строк в параметрах отладки будет перезаписывать параметр выборки в источнике при предварительном просмотре данных.
 
-## <a name="file-based-source-options"></a>File-based source options
+## <a name="file-based-source-options"></a>Параметры источника на основе файлов
 
-If you're using a file-based dataset such as Azure Blob Storage or Azure Data Lake Storage, the **Source options** tab lets you manage how your source reads files.
+Если вы используете файловый набор данных, например хранилище BLOB-объектов Azure или Azure Data Lake Storage, вкладка **Параметры источника** позволяет управлять тем, как источник считывает файлы.
 
-![Source options](media/data-flow/sourceOPtions1.png "Source options")
+![Параметры источника](media/data-flow/sourceOPtions1.png "Параметры источника")
 
-**Wildcard path:** Using a wildcard pattern will instruct ADF to loop through each matching folder and file in a single Source transformation. This is an effective way to process multiple files within a single flow. Add multiple wildcard matching patterns with the + sign that appears when hovering over your existing wildcard pattern.
+**Путь с подстановочными знаками:** Использование шаблона с подстановочными знаками даст указание потоку ADF перебрать каждую соответствующую папку и файл в одном преобразовании источника. Это эффективный способ обработки нескольких файлов в одном потоке. Добавьте несколько шаблонов сопоставления с подстановочными знаками с символом +, который появляется при наведении указателя мыши на существующий шаблон шаблона.
 
-From your source container, choose a series of files that match a pattern. Only container can be specified in the dataset. Your wildcard path must therefore also include your folder path from the root folder.
+В исходном контейнере выберите ряд файлов, соответствующих шаблону. В наборе данных можно указать только контейнер. Путь к шаблону должен также включать путь к папке из корневой папки.
 
-Wildcard examples:
+Примеры подстановочных знаков:
 
-* ```*``` Represents any set of characters
-* ```**``` Represents recursive directory nesting
-* ```?``` Replaces one character
-* ```[]``` Matches one of more characters in the brackets
+* ```*``` представляет любой набор символов
+* ```**``` представляет рекурсивную вложенность каталога
+* ```?``` заменяет один символ
+* ```[]``` соответствует одному из символов в квадратных скобках
 
-* ```/data/sales/**/*.csv``` Gets all csv files under /data/sales
-* ```/data/sales/20??/**``` Gets all files in the 20th century
-* ```/data/sales/2004/*/12/[XY]1?.csv``` Gets all csv files in 2004 in December starting with X or Y prefixed by a two-digit number
+* ```/data/sales/**/*.csv``` получает все CSV-файлы в/Дата/Салес
+* ```/data/sales/20??/**``` получает все файлы в 20 века
+* ```/data/sales/2004/*/12/[XY]1?.csv``` получает все CSV-файлы в 2004 в декабре, начиная с префикса X или Y и заканчивая двузначным числом
 
-**Partition Root Path:** If you have partitioned folders in your file source with  a ```key=value``` format (for example, year=2019), then you can assign the top level of that partition folder tree to a column name in your data flow data stream.
+**Корневой путь к разделу:** Если в источнике файлов имеются секционированные папки с форматом ```key=value``` (например, Year = 2019), то верхний уровень этого дерева папок секционирования можно назначить имени столбца в потоке данных потока.
 
-First, set a wildcard to include all paths that are the partitioned folders plus the leaf files that you wish to read.
+Во-первых, задайте подстановочный знак, чтобы включить все пути, которые являются секционированными папками, а также конечные файлы, которые вы хотите прочитать.
 
-![Partition source file settings](media/data-flow/partfile2.png "Partition file setting")
+![Параметры исходного файла секции](media/data-flow/partfile2.png "Параметр файла секционирования")
 
-Use the Partition Root Path setting to define what the top level of the folder structure is. When you view the contents of your data via a data preview, you'll see that ADF will add the resolved partitions found in each of your folder levels.
+Для определения верхнего уровня структуры папок используйте параметр путь к корневому каталогу секции. При просмотре содержимого данных с помощью предварительного просмотра данных вы увидите, что ADF добавит разрешенные секции, найденные на каждом уровне папок.
 
-![Partition root path](media/data-flow/partfile1.png "Partition root path preview")
+![Корневой путь к разделу](media/data-flow/partfile1.png "Предварительный просмотр корневого пути к разделу")
 
-**List of files:** This is a file set. Create a text file that includes a list of relative path files to process. Point to this text file.
+**Список файлов:** Это набор файлов. Создайте текстовый файл, содержащий список файлов относительных путей для обработки. Наведите указатель на этот текстовый файл.
 
-**Column to store file name:** Store the name of the source file in a column in your data. Enter a new column name here to store the file name string.
+**Столбец для хранения имени файла:** Сохраните имя исходного файла в столбце данных. Введите имя нового столбца, чтобы сохранить строку имени файла.
 
-**After completion:** Choose to do nothing with the source file after the data flow runs, delete the source file, or move the source file. The paths for the move are relative.
+**После завершения:** Выберите не выполнять никаких действий с исходным файлом после выполнения потока данных, удалите исходный файл или переместите исходный файл. Пути для перемещения являются относительными.
 
-To move source files to another location post-processing, first select "Move" for file operation. Then, set the "from" directory. If you're not using any wildcards for your path, then the "from" setting will be the same folder as your source folder.
+Чтобы переместить исходные файлы в другое расположение после обработки, сначала выберите "Переместить" для операции с файлом. Затем задайте каталог "from". Если вы не используете подстановочные знаки для своего пути, параметр "от" будет иметь ту же папку, что и исходная папка.
 
-If you have a source path with wildcard, your syntax will look like this below:
+Если у вас есть исходный путь с подстановочным знаком, синтаксис будет выглядеть следующим образом:
 
 ```/data/sales/20??/**/*.csv```
 
-You can specify "from" as
+Можно указать "от" в качестве
 
 ```/data/sales```
 
-And "to" as
+И "to" как
 
 ```/backup/priorSales```
 
-In this case, all files that were sourced under /data/sales are moved to /backup/priorSales.
+В этом случае все файлы, источником которых является/дата/Салес, перемещаются в/Баккуп/приорсалес.
 
 > [!NOTE]
-> File operations run only when you start the data flow from a pipeline run (a pipeline debug or execution run) that uses the Execute Data Flow activity in a pipeline. File operations *do not* run in Data Flow debug mode.
+> Операции с файлами выполняются только при запуске потока данных из запуска конвейера (Отладка или выполнение конвейера), в котором используется действие «выполнение потока данных» в конвейере. Операции с файлами *не* выполняются в режиме отладки потока данных.
 
-**Filter by last modified:** You can filter which files you process by specifying a date range of when they were last modified. All date-times are in UTC. 
+**Фильтровать по дате последнего изменения:** Вы можете отфильтровать обрабатываемые файлы, указав диапазон дат последнего изменения. Все значения даты и времени указаны в формате UTC. 
 
 ### <a name="add-dynamic-content"></a>Добавление динамического содержимого
 
-All source settings can be specified as expressions using the [Mapping Data flow's transformation expression language](data-flow-expression-functions.md). To add dynamic content, click or hover inside of the fields in the settings panel. Click the hyperlink for **Add dynamic content**. This will launch the expression builder where you can set values dynamically using expressions, static literal values, or parameters.
+Все параметры источника могут быть заданы в виде выражений с помощью [языка выражений преобразования потока данных сопоставления](data-flow-expression-functions.md). Чтобы добавить динамическое содержимое, щелкните или наведите указатель мыши внутри полей на панели параметры. Щелкните гиперссылку, чтобы **добавить динамическое содержимое**. Запустится построитель выражений, где можно задать значения динамически с помощью выражений, статических литеральных значений или параметров.
 
-![Параметры](media/data-flow/params6.png "Параметры")
+![Параметры](media/data-flow/params6.png "parameters")
 
-## <a name="sql-source-options"></a>SQL source options
+## <a name="sql-source-options"></a>Параметры источника SQL
 
-If your source is in SQL Database or SQL Data Warehouse, additional SQL-specific settings are available in the **Source Options** tab. 
+Если источник находится в базе данных SQL или хранилище данных SQL, на вкладке **Параметры источника** доступны дополнительные параметры, относящиеся к SQL. 
 
-**Input:** Select whether you point your source at a table (equivalent of ```Select * from <table-name>```) or enter a custom SQL query.
+**Входные данные:** Укажите, следует ли указывать источник в таблице (эквивалентно ```Select * from <table-name>```) или введите пользовательский SQL-запрос.
 
-**Query**: If you select Query in the input field, enter a SQL query for your source. This setting overrides any table that you've chosen in the dataset. **Order By** clauses aren't supported here, but you can set a full SELECT FROM statement. You can also use user-defined table functions. **select * from udfGetData()** is a UDF in SQL that returns a table. This query will produce a source table that you can use in your data flow. Using queries is also a great way to reduce rows for testing or for lookups. Пример: ```Select * from MyTable where customerId > 1000 and customerId < 2000```
+**Запрос**: при выборе запроса в поле ввода введите SQL-запрос для источника. Этот параметр переопределяет любую таблицу, выбранную в наборе данных. Предложения **ORDER BY** не поддерживаются здесь, но можно задать полную инструкцию SELECT FROM. Можно также использовать определяемые пользователем табличные функции. **SELECT * FROM удфжетдата ()** — это определяемая пользователем функция в SQL, возвращающая таблицу. Этот запрос приведет к созданию исходной таблицы, которую можно использовать в потоке данных. Использование запросов также является отличным способом сокращения количества строк для тестирования или поиска. Пример: ```Select * from MyTable where customerId > 1000 and customerId < 2000```
 
-**Batch size**: Enter a batch size to chunk large data into reads.
+**Размер пакета**: введите размер пакета для фрагментов больших данных в операциях чтения.
 
-**Isolation Level**: The default for SQL sources in mapping data flow is read uncommitted. You can change the isolation level here to one of these values:
-* Read Committed
-* Read Uncommitted
+**Уровень изоляции**: значение по умолчанию для источников SQL в потоке данных сопоставления — READ UNCOMMITTED. Здесь можно изменить уровень изоляции на одно из следующих значений:
+* Чтение зафиксировано
+* Незафиксированное чтение
 * Повторяющаяся операция чтения
-* Serializable
-* None (ignore isolation level)
+* Сериализует
+* Нет (пропускать уровень изоляции)
 
-![Isolation Level](media/data-flow/isolationlevel.png "Isolation Level")
+![Уровень изоляции](media/data-flow/isolationlevel.png "Уровень изоляции")
 
 ## <a name="projection"></a>Проекция
 
-Like schemas in datasets, the projection in a source defines the data columns, types, and formats from the source data. For most dataset types such as SQL and Parquet, the projection in a source is fixed to reflect the schema defined in a dataset. When your source files aren't strongly typed (for example, flat csv files rather than Parquet files), you can define the data types for each field in the source transformation.
+Подобно схемам в наборах данных, проекция в источнике определяет столбцы данных, типы и форматы из исходных. Для большинства типов наборов данных, таких как SQL и Parquet, проекция в источнике исправлена в соответствии со схемой, определенной в наборе данных. Если исходные файлы не являются строго типизированными (например, плоскими CSV-файлами, а не файлами Parquet), можно определить типы данных для каждого поля в преобразовании «источник».
 
-![Settings on the Projection tab](media/data-flow/source3.png "Проекция")
+![Параметры на вкладке "Проекция"](media/data-flow/source3.png "Проекция")
 
-If your text file has no defined schema, select **Detect data type** so that Data Factory will sample and infer the data types. Select **Define default format** to autodetect the default data formats. 
+Если в текстовом файле не определена схема, выберите команду **определить тип данных** , чтобы фабрика данных выработала выборку и вывести типы данных. Выберите параметр **определить формат по умолчанию** , чтобы автоматически определить форматы данных по умолчанию. 
 
-You can modify the column data types in a down-stream derived-column transformation. Use a select transformation to modify the column names.
+Типы данных столбца можно изменить в некотором преобразовании «Производный столбец». Используйте преобразование SELECT, чтобы изменить имена столбцов.
 
-### <a name="import-schema"></a>Import schema
+### <a name="import-schema"></a>Импорт схемы
 
-Datasets like Avro and CosmosDB that support complex data structures do not require schema definitions to exist in the dataset. Therefore, you will be able to click the "Import Schema" button the Projection tab for these types of sources.
+Для наборов данных, таких как Avro и CosmosDB, которые поддерживают сложные структуры, определения схем не должны существовать в наборе данных. Таким образом, вы сможете нажать кнопку "Импорт схемы" на вкладке "Проекция" для этих типов источников.
 
-## <a name="cosmosdb-specific-settings"></a>CosmosDB specific settings
+## <a name="cosmosdb-specific-settings"></a>Специальные параметры CosmosDB
 
-When using CosmosDB as a source type, there are a few options to consider:
+При использовании CosmosDB в качестве типа источника необходимо учитывать несколько параметров.
 
-* Include system columns: If you check this, ```id```, ```_ts```, and other system columns will be included in your data flow metadata from CosmosDB. When updating collections, it is important to include this so that you can grab the existing row id.
-* Page size: The number of documents per page of the query result. Default is "-1" which uses the service dynamic page up to 1000.
-* Throughput: Set an optional value for the number of RUs you'd like to apply to your CosmosDB collection for each execution of this data flow during the read operation. Minimum is 400.
-* Preferred regions: You can choose the preferred read regions for this process.
+* Включить системные столбцы: Если этот флажок установлен, ```id```, ```_ts```и другие системные столбцы будут включены в метаданные потока данных из CosmosDB. При обновлении коллекций важно включить этот параметр, чтобы можно было взять существующий идентификатор строки.
+* Размер страницы: количество документов на страницу результата запроса. Значение по умолчанию — "-1", которое использует динамическую страницу службы до 1000.
+* Пропускная способность. задайте необязательное значение для числа RUs, которое вы хотите применить к коллекции CosmosDB для каждого выполнения потока данных во время операции чтения. Минимум — 400.
+* Предпочтительные регионы: для этого процесса можно выбрать предпочтительные регионы чтения.
 
-## <a name="optimize-the-source-transformation"></a>Optimize the source transformation
+## <a name="optimize-the-source-transformation"></a>Оптимизация преобразования источника
 
-On the **Optimize** tab for the source transformation, you might see a **Source** partition type. This option is available only when your source is Azure SQL Database. This is because Data Factory tries to make connections parallel to run large queries against your SQL Database source.
+На вкладке **Оптимизация** для преобразования источник может отображаться тип **исходной** секции. Этот параметр доступен, только если источником является база данных SQL Azure. Это связано с тем, что фабрика данных пытается сделать подключения параллельными для выполнения больших запросов к источнику базы данных SQL.
 
-![Source partition settings](media/data-flow/sourcepart3.png "Секционирование")
+![Параметры исходной секции](media/data-flow/sourcepart3.png "Секционирование")
 
-You don't have to partition data on your SQL Database source, but partitions are useful for large queries. You can base your partition on a column or a query.
+Вам не нужно секционировать данные в источнике базы данных SQL, но секции полезны для больших запросов. Вы можете создать секцию на основе столбца или запроса.
 
-### <a name="use-a-column-to-partition-data"></a>Use a column to partition data
+### <a name="use-a-column-to-partition-data"></a>Использование столбца для секционирования данных
 
-From your source table, select a column to partition on. Also set the number of partitions.
+В исходной таблице выберите столбец для секционирования. Также задайте количество секций.
 
-### <a name="use-a-query-to-partition-data"></a>Use a query to partition data
+### <a name="use-a-query-to-partition-data"></a>Использование запроса для секционирования данных
 
-You can choose to partition the connections based on a query. Enter the contents of a WHERE predicate. For example, enter year > 1980.
+Можно выбрать секционирование соединений на основе запроса. Введите содержимое предиката WHERE. Например, введите year > 1980.
 
-For more information on optimization within mapping data flow, see the [Optimize tab](concepts-data-flow-overview.md#optimize).
+Дополнительные сведения о оптимизации в потоке данных сопоставления см. на [вкладке "оптимизация"](concepts-data-flow-overview.md#optimize).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Begin building a [derived-column transformation](data-flow-derived-column.md) and a [select transformation](data-flow-select.md).
+Начните создавать [Преобразование «Производный столбец](data-flow-derived-column.md) » и [Преобразование «выбор](data-flow-select.md)».

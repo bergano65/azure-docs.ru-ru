@@ -3,18 +3,22 @@ title: Модель данных журналов Azure Monitor
 description: В этой статье содержатся сведения о Azure Monitor Log Analytics сведения о модели данных для Azure Backup данных.
 ms.topic: conceptual
 ms.date: 02/26/2019
-ms.openlocfilehash: 055a36fb2aa8e9048089a338f57555242e8eb754
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: eed3f66c1743bb21118a2d90343989d2b6a081de
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74173031"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74278491"
 ---
 # <a name="log-analytics-data-model-for-azure-backup-data"></a>Модель данных Log Analytics для данных Azure Backup
 
 Используйте Log Analyticsную модель данных для создания настраиваемых оповещений из Log Analytics.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
+
+> [!NOTE]
+>
+> Эта модель данных является ссылкой на система диагностики Azure режим отправки диагностических событий в Log Analytics (LA). Чтобы узнать модель данных для нового режима, относящегося к ресурсу, см. следующую статью: [модель данных для Azure Backup событий диагностики](https://aka.ms/diagnosticsdatamodel) .
 
 ## <a name="using-azure-backup-data-model"></a>Использование модели данных Azure Backup
 

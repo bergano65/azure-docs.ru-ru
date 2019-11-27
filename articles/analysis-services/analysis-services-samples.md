@@ -41,7 +41,7 @@ ms.locfileid: "73572310"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Руководство по Adventure Works](https://docs.microsoft.com/analysis-services/tutorial-tabular-1400/as-adventure-works-tutorial)   
 [Локальный шлюз данных Azure](analysis-services-gateway.md)  

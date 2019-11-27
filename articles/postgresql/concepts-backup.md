@@ -1,6 +1,6 @@
 ---
-title: Backup and restore in Azure Database for PostgreSQL - Single Server
-description: Learn about automatic backups and restoring your Azure Database for PostgreSQL server - Single Server.
+title: Резервное копирование и восстановление в базе данных Azure для PostgreSQL — один сервер
+description: Сведения об автоматическом резервном копировании и восстановлении сервера базы данных Azure для PostgreSQL на одном сервере.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
@@ -13,17 +13,17 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74209644"
 ---
-# <a name="backup-and-restore-in-azure-database-for-postgresql---single-server"></a>Backup and restore in Azure Database for PostgreSQL - Single Server
+# <a name="backup-and-restore-in-azure-database-for-postgresql---single-server"></a>Резервное копирование и восстановление в базе данных Azure для PostgreSQL — один сервер
 
 Служба "База данных Azure для PostgreSQL" автоматически создает резервные копии для сервера и сохраняет их в локальном избыточном или геоизбыточном хранилище, настроенном пользователем. Резервные копии можно использовать для восстановления сервера до точки во времени. Резервное копирование и восстановление данных являются важной частью любой стратегии непрерывности бизнес-процессов. Таким образом данные защищаются от случайного повреждения или удаления.
 
 ## <a name="backups"></a>Резервные копии
 
-Azure Database for PostgreSQL takes backups of the data files and the transaction log. Depending on the supported maximum storage size, we either take full and differential backups (4 TB max storage servers) or snapshot backups (up to 16 TB max storage servers). При помощи этих резервных копий вы можете восстановить сервер до любой точки во времени в пределах заданного срока хранения резервных копий. По умолчанию срок хранения резервных копий составляет 7 дней. При необходимости вы увеличить его вплоть до 35 дней. Все резервные копии шифруются с помощью 256-битового шифрования AES.
+База данных Azure для PostgreSQL создает резервные копии файлов данных и журнала транзакций. В зависимости от поддерживаемого максимального размера хранилища мы будем использовать полные и разностные резервные копии (максимум 4 ТБ серверов хранения) или резервные копии моментальных снимков (до 16 ТБ серверов хранилища). При помощи этих резервных копий вы можете восстановить сервер до любой точки во времени в пределах заданного срока хранения резервных копий. По умолчанию срок хранения резервных копий составляет 7 дней. При необходимости вы увеличить его вплоть до 35 дней. Все резервные копии шифруются с помощью 256-битового шифрования AES.
 
 ### <a name="backup-frequency"></a>Частота резервного копирования
 
-Generally, full backups occur weekly, differential backups occur twice a day for servers with a max supported storage of 4 TB. Snapshot backups happen at least once a day for servers that support up to 16 TB of storage. Transaction log backups in both cases occur every five minutes. The first snapshot of full backup is scheduled immediately after a server is created. The initial full backup can take longer on a large restored server. Самая ранняя точка во времени, до которой можно восстановить новый сервер, — это время, в которое завершилось создание полной резервной копии. As snapshots are instantanious, servers with support up to 16 TB of storage can be restored all the way back to the create time.
+Как правило, полное резервное копирование выполняется еженедельно, а разностное резервное копирование выполняется дважды в день для серверов с максимальным поддерживаемым объемом хранения в 4 ТБ. Резервное копирование моментальных снимков выполняется по крайней мере один раз в день для серверов, которые поддерживают до 16 ТБ хранилища. Резервные копии журналов транзакций в обоих случаях происходят каждые пять минут. Первый моментальный снимок полной резервной копии планируется сразу же после создания сервера. Начальная полная архивация может занять больше времени на большом восстановленном сервере. Самая ранняя точка во времени, до которой можно восстановить новый сервер, — это время, в которое завершилось создание полной резервной копии. Так как моментальные снимки являются инстантаниаус, серверы с поддержкой до 16 ТБ хранилища можно восстановить вплоть до момента создания.
 
 ### <a name="backup-redundancy-options"></a>Типы избыточности для резервного копирования
 
@@ -62,7 +62,7 @@ Generally, full backups occur weekly, differential backups occur twice a day for
 
 ### <a name="geo-restore"></a>Геовосстановление
 
-Вы можете восстановить сервер в другом регионе Azure, где доступна служба, если вы настроили для сервера геоизбыточное хранилище. Servers that support up to 4 TB of storage can be restored to the geo-paired region, or to any region that supports up to 16 TB of storage. For servers that support up to 16 TB of storage, geo-backups can be restored in any region that support 16 TB servers as well. Review [Azure Database for PostgeSQL pricing tiers](concepts-pricing-tiers.md) for the list of supported regions.
+Вы можете восстановить сервер в другом регионе Azure, где доступна служба, если вы настроили для сервера геоизбыточное хранилище. Серверы, поддерживающие до 4 ТБ хранилища, можно восстановить в геопарный регион или в любой регион, поддерживающий хранилище объемом до 16 ТБ. Для серверов, поддерживающих до 16 ТБ хранилища, георезервное копирование можно также восстановить в любом регионе, поддерживающем серверы размером 16 ТБ. Проверьте [ценовую категорию базы данных Azure для постжескл](concepts-pricing-tiers.md) в списке поддерживаемых регионов.
 
 Геовосстановление используется по умолчанию, когда сервер недоступен из-за аварии в регионе, в котором он размещен. Если из-за масштабной аварии в регионе приложение базы данных станет недоступным, сервер можно будет восстановить из геоизбыточных резервных копий на сервер в любом другом регионе. Между созданием резервной копии и ее репликацией в другом регионе может пройти некоторое время. Эта задержка может длиться до часа, поэтому в случае аварии возможна потеря данных за час или менее.
 
@@ -77,8 +77,8 @@ Generally, full backups occur weekly, differential backups occur twice a day for
 - Убедитесь, что заданы соответствующие данные для входа и разрешений уровня базы данных.
 - Настройте оповещения соответствующим образом.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- Learn how to restore using [the Azure portal](howto-restore-server-portal.md).
-- Learn how to restore using [the Azure CLI](howto-restore-server-cli.md).
+- Узнайте, как выполнить восстановление с помощью [портал Azure](howto-restore-server-portal.md).
+- Узнайте, как выполнить восстановление с помощью [Azure CLI](howto-restore-server-cli.md).
 - Дополнительные сведения о непрерывности бизнес-процессов см. в  [этой статье](concepts-business-continuity.md).

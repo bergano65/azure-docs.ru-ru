@@ -4,14 +4,14 @@ description: Получите ответы на часто задаваемые 
 author: snehaamicrosoft
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 11/19/2019
+ms.date: 11/21/2019
 ms.author: snehaa
-ms.openlocfilehash: a622a5793e817be2445e60d925354ab37bb8e331
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: dc7dff0119ec849b447754ae54a45911038f6c48
+ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185783"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74284467"
 ---
 # <a name="azure-migrate-common-questions"></a>Служба "миграция Azure": распространенные вопросы
 
@@ -118,16 +118,10 @@ ms.locfileid: "74185783"
 
 ### <a name="whats-the-difference-between-server-assessment-and-the-site-recovery-deployment-planner"></a>В чем разница между оценкой сервера и Планировщик развертыванияом Site Recovery?
 
-Оценка сервера — это средство планирования миграции. Планировщик развертывания Site Recovery — это средство планирования аварийного восстановления. 
+Оценка сервера — это средство планирования миграции. Планировщик развертывания Site Recovery — это средство планирования аварийного восстановления.
 
 - Планирование **локальной миграции в Azure**. Если вы планируете перенести локальные серверы в Azure, используйте оценку сервера для планирования миграции. Он оценивает локальные рабочие нагрузки и предоставляет рекомендации и средства, помогающие выполнить миграцию. После выполнения плана миграции можно использовать средства, включая миграцию Azure Migration Server, для переноса компьютеров в Azure.
 - **Планирование аварийного восстановления в Azure**. Если вы планируете настроить аварийное восстановление из локальной среды в Azure с помощью Site Recovery, используйте Site Recovery планировщик развертывания. Планировщик развертывания обеспечивает глубокую Site Recoveryную оценку локальной среды в целях аварийного восстановления. Он предоставляет рекомендации по аварийному восстановлению, например репликацию и отработку отказа.
-
-### <a name="does-azure-migrate-estimate-costs-for-the-enterprise-agreement-ea-program"></a>Переносит ли Azure затраты на оценку для программы Соглашение Enterprise (EA)?
-
-Оценка сервера "миграция Azure" сейчас не поддерживает оценку затрат для [Соглашение Enterprise программы](https://azure.microsoft.com/offers/enterprise-agreement-support/). В качестве обходного решения при создании оценки можно указать **предложение**с **оплатой по мере** использования и вручную добавить процент скидки (применимо к подписке) в качестве **скидки** в свойствах оценки:
-
-  ![Свойства оценки](./media/resources-faq/discount.png)
 
 ### <a name="whats-the-difference-between-as-on-premises-and-performance-based-sizing"></a>В чем разница между локальной средой и определением размера на основе производительности?
 
@@ -182,7 +176,7 @@ ms.locfileid: "74185783"
 
 ### <a name="can-i-use-an-existing-workspace-for-dependency-visualization"></a>Можно ли использовать существующую рабочую область для визуализации зависимостей?
 
-Да, можно подключить существующую рабочую область к проекту миграции и использовать ее для визуализации зависимостей. [Дополнительные сведения](concepts-dependency-visualization.md#how-does-it-work)
+Да, можно подключить существующую рабочую область к проекту миграции и использовать ее для визуализации зависимостей. [Подробнее](concepts-dependency-visualization.md#how-does-it-work).
 
 ### <a name="can-i-export-the-dependency-visualization-report"></a>Можно ли экспортировать отчет о визуализации зависимостей?
 

@@ -1,20 +1,21 @@
 ---
-title: Руководство по созданию записи псевдонима Azure DNS для ссылки на запись ресурса в зоне.
+title: Руководство по созданию записи псевдонима для ссылки на запись ресурса в зоне
+titleSuffix: Azure DNS
 description: В этом руководстве описывается процесс создания записи псевдонима Azure DNS для ссылки на запись ресурса в зоне.
 services: dns
-author: vhorne
+author: asudbring
 ms.service: dns
 ms.topic: tutorial
 ms.date: 9/25/2018
-ms.author: victorh
-ms.openlocfilehash: 3b4ee688d6a5606ab6008b459fcf6331c24afaae
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.author: allensu
+ms.openlocfilehash: 59ffe9781d97880044da5eedbdf84181bf1b2fa1
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50091646"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74082890"
 ---
-# <a name="tutorial-create-an-alias-record-to-refer-to-a-zone-resource-record"></a>Руководство по созданию записи псевдонима для ссылки на запись ресурса в зоне
+# <a name="tutorial-create-an-alias-record-to-refer-to-a-zone-resource-record"></a>Руководство по Создание записи псевдонима для ссылки на запись ресурса в зоне
 
 Записи псевдонимов могут ссылаться на другие наборы записей одного типа. Например, вы можете иметь набор записей DNS CNAME, как псевдоним для другого набора записей CNAME того же типа. Эта возможность полезна, если вы хотите иметь некоторые наборы записей в качестве псевдонимов, а другие не как псевдонимы по поведению.
 
@@ -57,7 +58,7 @@ ms.locfileid: "50091646"
 ## <a name="test-the-alias-record"></a>Тестирование записи псевдонима
 
 1. Запустите предпочитаемый инструмент nslookup. Один из вариантов — перейдите к [ https://network-tools.com/nslook ](https://network-tools.com/nslook).
-2. Задайте тип запроса для записей A и найдите **test.\<ваше доменное имя\>**. Ответ: **10.10.10.10**.
+2. Задайте тип запроса для записей A и найдите **test.\<ваше доменное имя\>** . Ответ: **10.10.10.10**.
 3. На портале Azure измените запись для **server** A на **10.11.11.11**.
 4. Подождите несколько минут, а затем снова используйте nslookup для записи **test**. Ответ: **10.11.11.11**.
 

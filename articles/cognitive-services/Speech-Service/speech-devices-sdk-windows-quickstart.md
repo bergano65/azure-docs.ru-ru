@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Запуск пакета SDK для устройств, подключаемых к службе "Речь", в Windows — служба "Речь"
+title: Краткое руководство. Запуск пакета SDK для устройств, подключаемых к службе "Речь", в Windows
 titleSuffix: Azure Cognitive Services
 description: Предварительные требования и инструкции по началу работы с Windows Speech Devices SDK.
 services: cognitive-services
@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 07/10/2019
+ms.date: 11/13/2019
 ms.author: erhopf
-ms.openlocfilehash: b1f23ffac26cb48493f013290654189162861a27
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: e4da99d895ba7a6d9ce537ab513ce4cc248aff7a
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73468734"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74111668"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-windows"></a>Краткое руководство. Запустите пример приложения Speech Devices SDK в Windows
 
-В этом кратком руководстве вы узнаете, как использовать пакет Speech Devices SDK для Windows для создания устройства с поддержкой речевых функций или его использования в качестве устройства [Транскрипция диалога](conversation-transcription-service.md) (Conversation Transcription). Сейчас поддерживается только [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/).
+В этом кратком руководстве вы узнаете, как использовать пакет Speech Devices SDK для Windows для создания устройства с поддержкой речевых функций или его использования в качестве устройства [Транскрипция диалога](conversation-transcription-service.md) (Conversation Transcription). Для транскрибирования бесед поддерживается только [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/). Для других речевых функций используются линейные микрофонные решетки, обеспечивающие геометрию микрофонной решетки.
 
 Приложение создается с использованием пакета SDK для распознавания речи и интегрированной среды разработки Eclipse Java (версия 4) в 64-разрядной версии Windows. Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
 
@@ -32,7 +32,7 @@ ms.locfileid: "73468734"
 Для работы с этим кратким руководством вам понадобится:
 
 * Операционная система: 64-разрядная версия Windows
-* [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/)
+* Микрофонная решетка, например [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/)
 * [Eclipse Java IDE](https://www.eclipse.org/downloads/)
 * Только [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) или [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 * [распространяемые компоненты Microsoft Visual C++.](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads)
@@ -65,6 +65,29 @@ ms.locfileid: "73468734"
 
    ![Снимок экрана обозревателя пакетов](media/speech-devices-sdk/eclipse-convert-to-maven.png)
 
+1. Откройте файл pom.xml и измените его.
+
+    В конце файла перед закрывающим тегом `</project>` создайте элементы `repositories` и `dependencies`, как показано здесь, и убедитесь, что `version` соответствует текущей версии:
+    ```xml    
+    <repositories>
+         <repository>
+             <id>maven-cognitiveservices-speech</id>
+             <name>Microsoft Cognitive Services Speech Maven Repository</name>
+             <url>https://csspeechstorage.blob.core.windows.net/maven/</url>
+         </repository>
+    </repositories>
+ 
+    <dependencies>
+        <dependency>
+             <groupId>com.microsoft.cognitiveservices.speech</groupId>
+             <artifactId>client-sdk</artifactId>
+             <version>1.7.0</version>
+        </dependency>
+    </dependencies>
+   ```
+
+1. Скопируйте содержимое **Windows-x64** в расположение проекта Java, например **C:\SDSDK\JRE-Sample-Release**
+
 1. Скопируйте `kws.table`,`participants.properties` и `Microsoft.CognitiveServices.Speech.extension.pma.dll` в папку проекта **target/classes**.
 
 ## <a name="configure-the-sample-application"></a>Настройка примера приложения
@@ -82,27 +105,25 @@ ms.locfileid: "73468734"
     private static String LuisAppId = "<enter your LUIS AppId>";
    ```
 
-    Если вы пользуетесь транскрибированием бесед, информация о вашем речевом ключе и регионе также должна быть в файле `Cts.java`:
+   Если вы пользуетесь транскрибированием бесед, информация о вашем речевом ключе и регионе также должна быть в файле `Cts.java`:
 
    ```java
     private static final String CTSKey = "<Conversation Transcription Service Key>";
     private static final String CTSRegion="<Conversation Transcription Service Region>";// Region may be "centralus" or "eastasia"
-    ```
+   ```
 
 1. Ключевое слово по умолчанию — "Компьютер". Можно также попробовать одно из других предоставленных ключевых слов — "Машина" или "Помощник". Файлы ресурсов для этих альтернативных ключевых слов находятся в пакете SDK для речевых устройств в папке keyword. Например, `C:\SDSDK\JRE-Sample-Release\keyword\Computer` содержит файлы, используемые для ключевого слова "Компьютер".
 
-   > [!TIP]
-   > Кроме того, вы можете [создать пользовательское ключевое слово](speech-devices-sdk-create-kws.md).
+    > [!TIP]
+    > Кроме того, вы можете [создать пользовательское ключевое слово](speech-devices-sdk-create-kws.md).
 
-    Для использования нового ключевого слова обновите следующие две строки в файле `FunctionsList.java` и скопируйте пакет ключевых слов в приложение. Например, чтобы использовать ключевое слово "Машина" из файла `kws-machine.zip` пакета ключевых слов, сделайте следующее.
+    Для использования нового ключевого слова обновите следующую строку в файле `FunctionsList.java` и скопируйте ключевое слово в приложение. Например, чтобы использовать ключевое слово "Машина" из файла `machine.zip` пакета ключевых слов, сделайте следующее.
 
-   * Скопируйте пакет ключевых слов в папку проекта **target/classes**.
-
-   * Укажите в файле `FunctionsList.java` ключевое слово и имя пакета:
+   * Скопируйте файл `kws.table` из ZIP-пакета слов в папку проекта **target/classes**.
+   * Укажите в файле `FunctionsList.java` имя ключевого слова:
 
      ```java
      private static final String Keyword = "Machine";
-     private static final String KeywordModel = "kws-machine.zip" // set your own keyword package name.
      ```
 
 ## <a name="run-the-sample-application-from-eclipse"></a>Запуск примера приложения из Eclipse
@@ -121,23 +142,23 @@ ms.locfileid: "73468734"
 
 ## <a name="create-and-run-a-standalone-application"></a>Создание и запуск автономного приложения
 
-1. В **обозревателе пакетов** щелкните проект правой кнопкой мыши. Выберите **Export** (Экспорт). 
+1. В **обозревателе пакетов** щелкните проект правой кнопкой мыши. Выберите **Export** (Экспорт).
 
 1. Появится окно **Export** (Экспорт). Разверните узел **Java** и выберите **Runnable JAR file** (Готовый к запуску JAR-файл), а затем нажмите кнопку **Next** (Далее).
 
-   ![Снимок экрана: окно экспорта](media/speech-devices-sdk/eclipse-export-windows.png) 
+   ![Снимок экрана: окно экспорта](media/speech-devices-sdk/eclipse-export-windows.png)
 
 1. Появится окно **Runnable JAR File Export** (Экспорт готовых к запуску JAR-файлов). Выберите **назначение экспорта** для приложения, а затем нажмите кнопку **Finish** (Готово).
- 
+
    ![Снимок экрана: экспорт готовых к запуску JAR-файлов](media/speech-devices-sdk/eclipse-export-jar-windows.png)
 
 1. Поместите `kws.table`, `participants.properties`, `unimic_runtime.dll`, `pma.dll` и `Microsoft.CognitiveServices.Speech.extension.pma.dll` в папку назначения, выбранную выше, так как эти файлы необходимы для приложения.
 
 1. Чтобы запустить автономное приложение, выполните следующую команду:
 
-     ```powershell
-     java -jar SpeechDemo.jar
-     ```
+   ```powershell
+   java -jar SpeechDemo.jar
+   ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 

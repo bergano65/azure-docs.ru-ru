@@ -1,5 +1,5 @@
 ---
-title: Единый вход SAML для локальных приложений с помощью прокси-сервера Azure AD App | Документация Майкрософт
+title: Единый вход SAML для локальных приложений с помощью прокси-сервера Azure AD App
 description: Узнайте, как обеспечить единый вход для локальных приложений, защищенных с помощью проверки подлинности SAML. Предоставление удаленного доступа к локальным приложениям с помощью прокси приложения.
 services: active-directory
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d004d1183c9f5c1aec2dae7ab2d638528f164cd9
-ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
+ms.openlocfilehash: 59e4e527f25a32c8a5274db5eab5d33a7843bc3c
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73062500"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74275586"
 ---
 # <a name="saml-single-sign-on-for-on-premises-applications-with-application-proxy"></a>Единый вход SAML для локальных приложений с помощью прокси приложения
 
@@ -41,7 +41,7 @@ ms.locfileid: "73062500"
 
 1. В портал Azure выберите **Azure Active Directory > корпоративные приложения** и выберите **новое приложение**.
 
-2. В разделе **локальные приложения** выберите **Добавить локальное приложение**.
+2. В разделе **Локальные приложения** выберите **Добавление локального приложения**.
 
 3. Введите отображаемое имя нового приложения, а затем нажмите кнопку **Добавить**.
 
@@ -97,7 +97,7 @@ ms.locfileid: "73062500"
 1. Откройте браузер и перейдите по **внешнему URL-адресу** , созданному при публикации приложения. 
 1. Войдите с помощью тестовой учетной записи, назначенной приложению. Вы сможете загрузить приложение и использовать единый вход в приложение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Как прокси приложения Azure AD предоставляет единый вход?](application-proxy-single-sign-on.md)
 - [Устранение неполадок прокси-сервера приложений](application-proxy-troubleshoot.md)

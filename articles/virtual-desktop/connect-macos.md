@@ -14,7 +14,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/05/2019
 ms.locfileid: "73605801"
 ---
-# <a name="connect-with-the-macos-client"></a>Подключение к клиенту macOS
+# <a name="connect-with-the-macos-client"></a>Подключение с помощью клиента macOS
 
 > Применимо к: macOS 10,12 или более поздней версии
 
@@ -44,6 +44,6 @@ ms.locfileid: "73605801"
 
 После того как вы подписались на веб-канал, содержимое веб-канала автоматически обновляется на регулярной основе. Ресурсы можно добавлять, изменять или удалять в зависимости от изменений, внесенных администратором.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о клиенте macOS см. в статье [Приступая к работе с клиентской](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac) документацией по macOS.

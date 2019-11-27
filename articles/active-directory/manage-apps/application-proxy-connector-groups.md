@@ -1,5 +1,5 @@
 ---
-title: Публикация приложений в отдельных сетях с помощью групп соединителей Azure AD App прокси-сервера | Документация Майкрософт
+title: Публикация приложений в отдельных сетях через группы соединителей (Azure AD)
 description: Этот раздел описывает создание групп соединителей в прокси приложения Azure AD и управление ими.
 services: active-directory
 author: msmimart
@@ -14,12 +14,12 @@ ms.date: 11/08/2018
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dae4eea3e08818d43482c995595cc9fbc3f91910
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 22fa1de0a0e3bb91480212381e07b17875bf0bf4
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68381487"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74275564"
 ---
 # <a name="publish-applications-on-separate-networks-and-locations-using-connector-groups"></a>Публикация приложений в отдельных сетях и расположениях с помощью групп соединителей
 
@@ -32,7 +32,7 @@ ms.locfileid: "68381487"
 > [!TIP]
 > При наличии большого развертывания прокси приложения не назначайте какие-либо приложения в группу соединителей по умолчанию. Таким образом новые соединители не будут принимать текущий трафик, пока вы не добавите их в активную группу соединителей. Такая конфигурация позволяет переводить соединители в режим простоя, перемещая их в группу по умолчанию, чтобы можно было выполнить обслуживание без ущерба для работы пользователей.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Чтобы сгруппировать соединители, необходимо убедиться, что вы [установили несколько соединителей](application-proxy-add-on-premises-application.md). При установке нового соединителя он автоматически присоединяется к группе соединителей **по умолчанию** .
 
@@ -126,7 +126,7 @@ ms.locfileid: "68381487"
 
 ![Пример компании с 2 центрами обработки данных и 2 соединителями](./media/application-proxy-connector-groups/application-proxy-sample-config-3.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Сведения о соединителях прокси приложения Azure AD](application-proxy-connectors.md)
 * [Включение единого входа](what-is-single-sign-on.md)

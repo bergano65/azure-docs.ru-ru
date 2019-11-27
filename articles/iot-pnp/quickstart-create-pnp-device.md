@@ -1,5 +1,5 @@
 ---
-title: Создание устройства IoT Plug and Play (предварительная версия) | Документация Майкрософт
+title: Создание устройства IoT Plug and Play (предварительная версия) в Windows | Документация Майкрософт
 description: Используйте модель возможностей устройства для создания кода устройства. Затем запустите код устройства и проверьте, подключено ли устройство к Центру Интернета вещей.
 author: miagdp
 ms.author: miag
@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 019dbe8b977932c6a806f7efca8c0724597718d8
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 4ee9bf218765ea4c3966e7f0a8b20a8108de7655
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73818050"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73931910"
 ---
 # <a name="quickstart-use-a-device-capability-model-to-create-an-iot-plug-and-play-preview-device-windows"></a>Краткое руководство. Создание устройства IoT Plug and Play (предварительная версия) в Windows с помощью модели возможностей устройства
 
@@ -48,42 +48,34 @@ _Строку подключения к репозиторию моделей к
 
 ## <a name="prepare-an-iot-hub"></a>Подготовка Центра Интернета вещей
 
-Для выполнения инструкций, приведенных в этом кратком руководстве, также необходим Центр Интернета вещей Azure в подписке Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Для выполнения инструкций, приведенных в этом кратком руководстве, также необходим Центр Интернета вещей Azure в подписке Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. Если у вас нет Центра Интернета вещей, создайте его, выполнив инструкции, указанные в [этой статье](../iot-hub/iot-hub-create-using-cli.md).
 
-> [!NOTE]
+> [!IMPORTANT]
 > На этапе общедоступной предварительной версии функции IoT Plug and Play доступны только в центрах Интернета вещей, созданных в таких регионах, как **Центральная часть США**, **Северная Европа** и **Восточная Япония**.
 
-Добавьте расширение Интернета вещей Microsoft Azure в интерфейсе командной строки Azure:
+Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell:
 
 ```azurecli-interactive
 az extension add --name azure-cli-iot-ext
 ```
 
-Выполните приведенную ниже команду, чтобы создать удостоверение устройства в Центре Интернета вещей. Замените заполнители **YourIoTHubName** и **YourDevice** фактическими именами. Если у вас нет Центра Интернета вещей, создайте его, выполнив инструкции, указанные в [этой статье](../iot-hub/iot-hub-create-using-cli.md).
+Выполните приведенную ниже команду, чтобы создать удостоверение устройства в Центре Интернета вещей. Замените заполнители **YourIoTHubName** и **YourDevice** фактическими именами.
 
 ```azurecli-interactive
-az iot hub device-identity create --hub-name [YourIoTHubName] --device-id [YourDevice]
+az iot hub device-identity create --hub-name <YourIoTHubName> --device-id <YourDevice>
 ```
 
-Выполните приведенные ниже команды, чтобы получить _строку подключения к только что зарегистрированному устройству_:
+Выполните следующую команду, чтобы получить _строку подключения устройства_ для зарегистрированного устройства:
 
 ```azurecli-interactive
-az iot hub device-identity show-connection-string --hub-name [YourIoTHubName] --device-id [YourDevice] --output table
+az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --device-id <YourDevice> --output table
 ```
 
-Выполните приведенные ниже команды, чтобы получить _строку подключения к вашему Центру Интернета вещей_:
+Выполните следующую команду, чтобы получить _строку подключения к вашему Центру Интернета вещей_:
 
 ```azurecli-interactive
-az iot hub show-connection-string --hub-name [YourIoTHubName] --output table
+az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
 ```
-
-Запишите строку подключения устройства, которая выглядит так:
-
-```json
-HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyCDevice;SharedAccessKey={YourSharedAccessKey}
-```
-
-Это значение понадобится позже при работе с этим кратким руководством.
 
 ## <a name="prepare-the-development-environment"></a>Подготовка среды разработки
 
@@ -116,9 +108,9 @@ HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyCDevice;SharedAccessKey={
 
 В этом кратком руководстве используется имеющийся пример модели возможностей устройства и связанные интерфейсы.
 
-1. На локальном диске создайте каталог `pnp_app`.
+1. На локальном диске создайте каталог `pnp_app`. Эта папка используется для файлов модели устройства и заглушки кода устройства.
 
-1. Скачайте [модель возможностей устройства](https://github.com/Azure/IoTPlugandPlay/blob/master/samples/SampleDevice.capabilitymodel.json) и [пример интерфейса](https://github.com/Azure/IoTPlugandPlay/blob/master/samples/EnvironmentalSensor.interface.json) и сохраните файлы в папке `pnp_app`.
+1. Скачайте [модель возможностей устройства, файлы примеров интерфейса](https://github.com/Azure/IoTPlugandPlay/blob/master/samples/SampleDevice.capabilitymodel.json) и [пример интерфейса](https://github.com/Azure/IoTPlugandPlay/blob/master/samples/EnvironmentalSensor.interface.json) в папку `pnp_app`.
 
     > [!TIP]
     > Чтобы скачать файл с сайта GitHub, перейдите к файлу, щелкните правой кнопкой мыши **Необработанный**, а затем выберите **Сохранить ссылку как**.
@@ -133,14 +125,14 @@ HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyCDevice;SharedAccessKey={
 
 Теперь у вас есть модель DCM и связанные с ней интерфейсы, и вы можете сгенерировать код устройства, который реализует модель. Чтобы создать заглушку кода C в VS Code, сделайте следующее.
 
-1. В открытой папке с файлами DCM нажмите сочетание клавиш **CTRL+SHIFT+P**, чтобы открыть палитру команд, введите **IoT Plug and Play** и выберите **Generate Device Code Stub** (Создать заглушку кода устройства).
+1. Откройте папку `pnp_app` в VS Code, нажмите клавиши **CTRL+SHIFT+P**, чтобы открыть палитру команд, введите **IoT Plug and Play** и выберите **Generate Device Code Stub** (Создать заглушку кода устройства).
 
     > [!NOTE]
     > При первом использовании интерфейса командной строки CodGen для IoT Plug and Play скачивание и автоматическая установка занимают несколько секунд.
 
-1. Выберите файл DCM, который будет использоваться для создания заглушки кода устройства.
+1. Выберите файл **SampleDevice.capabilitymodel.json**, который будет использоваться для создания заглушки кода устройства.
 
-1. Введите название проекта **sample_device**. Это будет именем вашего устройства приложения.
+1. Введите название проекта **sample_device**. Это будет именем вашего устройства.
 
 1. Выберите **ANSI C** в качестве языка.
 
@@ -153,9 +145,9 @@ HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyCDevice;SharedAccessKey={
 1. Новая папка **sample_device** создается в том же расположении, что и файл DCM, и в ней создаются файлы заглушки кода устройства. VS Code открывает новое окно для их отображения.
     ![Код устройства](media/quickstart-create-pnp-device/device-code.png)
 
-## <a name="build-the-code"></a>Сборка кода
+## <a name="build-and-run-the-code"></a>Сборка и выполнение кода
 
-Вы используете пакет SDK для устройств для сборки созданной заглушки кода устройства. Создаваемое приложение имитирует устройство, которое подключается к Центру Интернета вещей. Оно отправляет данные телеметрии и свойства, а также получает команды.
+Вы используете исходный код пакета SDK для устройств для сборки созданной заглушки кода устройства. Создаваемое приложение имитирует устройство, которое подключается к Центру Интернета вещей. Оно отправляет данные телеметрии и свойства, а также получает команды.
 
 1. Создайте подкаталог `cmake` в папке `sample_device` и перейдите в эту папку.
 
@@ -167,7 +159,7 @@ HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyCDevice;SharedAccessKey={
 1. Выполните приведенные ниже команды, чтобы выполнить сборку заглушки кода (заменив заполнитель каталогом репозитория Vcpkg).
 
     ```cmd\sh
-    cmake .. -G "Visual Studio 16 2019" -A Win32 -Duse_prov_client=ON -Dhsm_type_symm_key:BOOL=ON -DCMAKE_TOOLCHAIN_FILE="{directory of your Vcpkg repo}\scripts\buildsystems\vcpkg.cmake"
+    cmake .. -G "Visual Studio 16 2019" -A Win32 -Duse_prov_client=ON -Dhsm_type_symm_key:BOOL=ON -DCMAKE_TOOLCHAIN_FILE="<directory of your Vcpkg repo>\scripts\buildsystems\vcpkg.cmake"
 
     cmake --build .
     ```
@@ -187,7 +179,7 @@ HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyCDevice;SharedAccessKey={
 1. После успешного выполнения сборки запустите приложение, передав в качестве параметра строку подключения к устройству центра Интернета вещей.
 
     ```cmd\sh
-    .\Debug\sample_device.exe "[IoT Hub device connection string]"
+    .\Debug\sample_device.exe "<device connection string>"
     ```
 
 1. Приложение устройства начнет отправку данных в Центр Интернета вещей.
@@ -200,7 +192,7 @@ HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyCDevice;SharedAccessKey={
 
 Чтобы проверить код устройства с помощью **обозревателя Интернета вещей Azure**, необходимо опубликовать файлы в репозитории моделей.
 
-1. В открытой папке с файлами DCM в VS Code нажмите клавиши **CTRL+SHIFT+P**, чтобы открыть палитру команд, введите и выберите **IoT Plug & Play: Submit files to Model Repository** (Отправка файлов в репозиторий моделей IoT Plug and Play).
+1. В открытой папке `pnp_app` нажмите клавиши **CTRL+SHIFT+P**, чтобы открыть палитру команд, введите и выберите **IoT Plug & Play: Submit files to Model Repository** (Отправка файлов в репозиторий моделей IoT Plug and Play).
 
 1. Выберите файлы `SampleDevice.capabilitymodel.json` и `EnvironmentalSensor.interface.json`.
 
@@ -216,9 +208,9 @@ HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyCDevice;SharedAccessKey={
 
 ### <a name="use-the-azure-iot-explorer-to-validate-the-code"></a>Проверка кода с помощью обозревателя Azure IoT
 
-1. Откройте обозреватель Центра Интернета вещей Azure. Отобразится страница **конфигураций приложения**.
+1. Откройте обозреватель Azure IoT. Отобразится страница **конфигураций приложения**.
 
-1. Введите строку подключения к Центру Интернета вещей и щелкните **Подключить**.
+1. Введите _строку подключения к Центру Интернета вещей_ и щелкните **Подключить**.
 
 1. После подключения откроется страница обзора устройства.
 
@@ -242,13 +234,13 @@ HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyCDevice;SharedAccessKey={
 
 1. Разверните команду **​​blink** и установите новый интервал времени мигания. Выберите **Send command** (Отправить команду), чтобы вызвать команду на устройстве.
 
-1. Перейдите к имитированному устройству, чтобы проверить, выполнена ли команда должным образом.
+1. Перейдите к командной строке имитированного устройства и просмотрите подтверждающие сообщения, чтобы проверить, выполнена ли команда должным образом.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Из этого краткого руководства вы узнали, как создать устройство IoT Plug and Play с помощью DCM.
 
-Чтобы узнать больше о Plug and Play IoT, перейдите к учебнику по
+Чтобы узнать больше о DCM и о том, как создавать собственные модели, перейдите к следующему руководству:
 
 > [!div class="nextstepaction"]
-> [созданию и тестированию модели возможностей устройства с помощью Visual Studio Code](tutorial-pnp-visual-studio-code.md)
+> [Руководство. Создание и тестирование моделей возможностей устройства с помощью Visual Studio Code](tutorial-pnp-visual-studio-code.md)

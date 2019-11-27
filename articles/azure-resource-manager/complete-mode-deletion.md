@@ -14,169 +14,169 @@ ms.locfileid: "74232691"
 
 В этой статье описывается, как процесс удаления будет обрабатываться различными типами, когда он не происходит в шаблоне, развернутом в завершенном режиме.
 
-The resource types marked with **Yes** are deleted when the type isn't in the template deployed with complete mode.
+Типы ресурсов, помеченные **Да** , удаляются, если тип не находится в шаблоне, развернутом в полном режиме.
 
-The resource types marked with **No** aren't automatically deleted when not in the template; however, they're deleted if the parent resource is deleted. Чтобы получить полное описание поведения см. статью [Режимы развертывания в Azure Resource Manager](deployment-modes.md).
+Типы ресурсов, помеченные как " **нет** ", не удаляются автоматически при отсутствии в шаблоне. Однако они удаляются, если родительский ресурс удаляется. Чтобы получить полное описание поведения см. статью [Режимы развертывания в Azure Resource Manager](deployment-modes.md).
 
-If you deploy to [more than one resource group in a template](resource-manager-cross-resource-group-deployment.md), resources in the resource group specified in the deployment operation are eligible to be deleted. Resources in the secondary resource groups aren't deleted.
+Если развернуть в [шаблоне несколько групп ресурсов](resource-manager-cross-resource-group-deployment.md), то ресурсы в группе ресурсов, указанной в операции развертывания, могут быть удалены. Ресурсы во вторичных группах ресурсов не удаляются.
 
-Jump to a resource provider namespace:
+Переход к пространству имен поставщика ресурсов:
 > [!div class="op_single_selector"]
-> - [Microsoft.AAD](#microsoftaad)
-> - [Microsoft.Addons](#microsoftaddons)
-> - [Microsoft.ADHybridHealthService](#microsoftadhybridhealthservice)
-> - [Microsoft.Advisor](#microsoftadvisor)
-> - [Microsoft.AlertsManagement](#microsoftalertsmanagement)
-> - [Microsoft.AnalysisServices](#microsoftanalysisservices)
+> - [Microsoft. AAD](#microsoftaad)
+> - [Надстройки Microsoft.](#microsoftaddons)
+> - [Microsoft. Адхибридхеалссервице](#microsoftadhybridhealthservice)
+> - [Microsoft. Advisor](#microsoftadvisor)
+> - [Microsoft. Алертсманажемент](#microsoftalertsmanagement)
+> - [Microsoft. AnalysisServices](#microsoftanalysisservices)
 > - [Microsoft.ApiManagement](#microsoftapimanagement)
-> - [Microsoft.AppConfiguration](#microsoftappconfiguration)
-> - [Microsoft.AppPlatform](#microsoftappplatform)
-> - [Microsoft.Attestation](#microsoftattestation)
+> - [Microsoft. Аппконфигуратион](#microsoftappconfiguration)
+> - [Microsoft. Аппплатформ](#microsoftappplatform)
+> - [Microsoft. Аттестация](#microsoftattestation)
 > - [Microsoft.Authorization](#microsoftauthorization)
 > - [Microsoft.Automation](#microsoftautomation)
-> - [Microsoft.Azconfig](#microsoftazconfig)
-> - [Microsoft.Azure.Geneva](#microsoftazuregeneva)
-> - [Microsoft.AzureActiveDirectory](#microsoftazureactivedirectory)
-> - [Microsoft.AzureData](#microsoftazuredata)
-> - [Microsoft.AzureStack](#microsoftazurestack)
-> - [Microsoft.Batch](#microsoftbatch)
-> - [Microsoft.Billing](#microsoftbilling)
-> - [Microsoft.BingMaps](#microsoftbingmaps)
-> - [Microsoft.Blockchain](#microsoftblockchain)
-> - [Microsoft.Blueprint](#microsoftblueprint)
-> - [Microsoft.BotService](#microsoftbotservice)
+> - [Microsoft. Азконфиг](#microsoftazconfig)
+> - [Microsoft. Azure. Geneva](#microsoftazuregeneva)
+> - [Microsoft. AzureActiveDirectory](#microsoftazureactivedirectory)
+> - [Microsoft. Азуредата](#microsoftazuredata)
+> - [Microsoft. AzureStack](#microsoftazurestack)
+> - [Microsoft. Batch](#microsoftbatch)
+> - [Microsoft. выставление счетов](#microsoftbilling)
+> - [Microsoft. BingMaps](#microsoftbingmaps)
+> - [Microsoft. Блокчейн](#microsoftblockchain)
+> - [Microsoft. чертеж](#microsoftblueprint)
+> - [Microsoft. Ботсервице](#microsoftbotservice)
 > - [Microsoft.Cache](#microsoftcache)
-> - [Microsoft.Capacity](#microsoftcapacity)
+> - [Microsoft. Capacity](#microsoftcapacity)
 > - [Microsoft.Cdn](#microsoftcdn)
-> - [Microsoft.CertificateRegistration](#microsoftcertificateregistration)
-> - [Microsoft.ClassicCompute](#microsoftclassiccompute)
-> - [Microsoft.ClassicInfrastructureMigrate](#microsoftclassicinfrastructuremigrate)
-> - [Microsoft.ClassicNetwork](#microsoftclassicnetwork)
-> - [Microsoft.ClassicStorage](#microsoftclassicstorage)
-> - [Microsoft.CognitiveServices](#microsoftcognitiveservices)
-> - [Microsoft.Commerce](#microsoftcommerce)
-> - [Microsoft.Compute](#microsoftcompute)
-> - [Microsoft.Consumption](#microsoftconsumption)
-> - [Microsoft.ContainerInstance](#microsoftcontainerinstance)
+> - [Microsoft. Цертификатерегистратион](#microsoftcertificateregistration)
+> - [Microsoft. ClassicCompute](#microsoftclassiccompute)
+> - [Microsoft. КлассиЦинфраструктуремиграте](#microsoftclassicinfrastructuremigrate)
+> - [Microsoft. ClassicNetwork](#microsoftclassicnetwork)
+> - [Microsoft. Классикстораже](#microsoftclassicstorage)
+> - [Microsoft. CognitiveServices](#microsoftcognitiveservices)
+> - [Microsoft. Commerce](#microsoftcommerce)
+> - [Microsoft. COMPUTE](#microsoftcompute)
+> - [Microsoft. потребление](#microsoftconsumption)
+> - [Microsoft. Контаинеринстанце](#microsoftcontainerinstance)
 > - [Microsoft.ContainerRegistry](#microsoftcontainerregistry)
 > - [Microsoft.ContainerService](#microsoftcontainerservice)
-> - [Microsoft.CortanaAnalytics](#microsoftcortanaanalytics)
-> - [Microsoft.CostManagement](#microsoftcostmanagement)
-> - [Microsoft.CustomerLockbox](#microsoftcustomerlockbox)
-> - [Microsoft.CustomProviders](#microsoftcustomproviders)
-> - [Microsoft.DataBox](#microsoftdatabox)
-> - [Microsoft.DataBoxEdge](#microsoftdataboxedge)
-> - [Microsoft.Databricks](#microsoftdatabricks)
-> - [Microsoft.DataCatalog](#microsoftdatacatalog)
+> - [Microsoft. Кортанааналитикс](#microsoftcortanaanalytics)
+> - [Microsoft. Костманажемент](#microsoftcostmanagement)
+> - [Microsoft. Кустомерлоккбокс](#microsoftcustomerlockbox)
+> - [Microsoft. Кустомпровидерс](#microsoftcustomproviders)
+> - [Microsoft. Датабокс](#microsoftdatabox)
+> - [Microsoft. Датабокседже](#microsoftdataboxedge)
+> - [Microsoft. кирпичы](#microsoftdatabricks)
+> - [Каталог Microsoft.](#microsoftdatacatalog)
 > - [Microsoft.DataFactory](#microsoftdatafactory)
 > - [Microsoft.DataLakeAnalytics](#microsoftdatalakeanalytics)
 > - [Microsoft.DataLakeStore](#microsoftdatalakestore)
-> - [Microsoft.DataMigration](#microsoftdatamigration)
-> - [Microsoft.DataShare](#microsoftdatashare)
-> - [Microsoft.DBforMariaDB](#microsoftdbformariadb)
-> - [Microsoft.DBforMySQL](#microsoftdbformysql)
-> - [Microsoft.DBforPostgreSQL](#microsoftdbforpostgresql)
-> - [Microsoft.DeploymentManager](#microsoftdeploymentmanager)
-> - [Microsoft.DesktopVirtualization](#microsoftdesktopvirtualization)
+> - [Microsoft. Перенос](#microsoftdatamigration)
+> - [Общая папка Microsoft.](#microsoftdatashare)
+> - [Microsoft. Дбформариадб](#microsoftdbformariadb)
+> - [Microsoft. Дбформискл](#microsoftdbformysql)
+> - [Microsoft. Дбфорпостгрескл](#microsoftdbforpostgresql)
+> - [Microsoft. Деплойментманажер](#microsoftdeploymentmanager)
+> - [Microsoft. Десктопвиртуализатион](#microsoftdesktopvirtualization)
 > - [Microsoft.Devices](#microsoftdevices)
-> - [Microsoft.DevOps](#microsoftdevops)
-> - [Microsoft.DevSpaces](#microsoftdevspaces)
+> - [Microsoft. DevOps](#microsoftdevops)
+> - [Microsoft. Девспацес](#microsoftdevspaces)
 > - [Microsoft.DevTestLab](#microsoftdevtestlab)
 > - [Microsoft.DocumentDB](#microsoftdocumentdb)
-> - [Microsoft.DomainRegistration](#microsoftdomainregistration)
-> - [Microsoft.DynamicsLcs](#microsoftdynamicslcs)
-> - [Microsoft.EnterpriseKnowledgeGraph](#microsoftenterpriseknowledgegraph)
-> - [Microsoft.EventGrid](#microsofteventgrid)
+> - [Microsoft. Домаинрегистратион](#microsoftdomainregistration)
+> - [Microsoft. Динамикслкс](#microsoftdynamicslcs)
+> - [Microsoft. Ентерприсекновледжеграф](#microsoftenterpriseknowledgegraph)
+> - [Microsoft. EventGrid](#microsofteventgrid)
 > - [Microsoft.EventHub](#microsofteventhub)
-> - [Microsoft.Features](#microsoftfeatures)
-> - [Microsoft.Gallery](#microsoftgallery)
-> - [Microsoft.Genomics](#microsoftgenomics)
+> - [Microsoft. Features](#microsoftfeatures)
+> - [Коллекция Microsoft. Gallery](#microsoftgallery)
+> - [Microsoft. Genomics](#microsoftgenomics)
 > - [Microsoft.GuestConfiguration](#microsoftguestconfiguration)
-> - [Microsoft.HanaOnAzure](#microsofthanaonazure)
-> - [Microsoft.HardwareSecurityModules](#microsofthardwaresecuritymodules)
+> - [Microsoft. Ханаоназуре](#microsofthanaonazure)
+> - [Microsoft. Хардваресекуритимодулес](#microsofthardwaresecuritymodules)
 > - [Microsoft.HDInsight](#microsofthdinsight)
-> - [Microsoft.HealthcareApis](#microsofthealthcareapis)
+> - [Microsoft. Хеалскареапис](#microsofthealthcareapis)
 > - [Microsoft.HybridCompute](#microsofthybridcompute)
-> - [Microsoft.HybridData](#microsofthybriddata)
-> - [Microsoft.Hydra](#microsofthydra)
-> - [Microsoft.ImportExport](#microsoftimportexport)
-> - [Microsoft.Intune](#microsoftintune)
-> - [Microsoft.IoTCentral](#microsoftiotcentral)
-> - [Microsoft.IoTSpaces](#microsoftiotspaces)
+> - [Microsoft. Хибриддата](#microsofthybriddata)
+> - [Microsoft. Hydra](#microsofthydra)
+> - [Microsoft. ImportExport](#microsoftimportexport)
+> - [Microsoft. Intune](#microsoftintune)
+> - [Microsoft. Иотцентрал](#microsoftiotcentral)
+> - [Microsoft. Иотспацес](#microsoftiotspaces)
 > - [Microsoft.KeyVault](#microsoftkeyvault)
-> - [Microsoft.Kusto](#microsoftkusto)
-> - [Microsoft.LabServices](#microsoftlabservices)
+> - [Microsoft. Kusto](#microsoftkusto)
+> - [Microsoft. Лабсервицес](#microsoftlabservices)
 > - [Microsoft.Logic](#microsoftlogic)
-> - [Microsoft.MachineLearning](#microsoftmachinelearning)
-> - [Microsoft.MachineLearningServices](#microsoftmachinelearningservices)
-> - [Microsoft.ManagedIdentity](#microsoftmanagedidentity)
-> - [Microsoft.ManagedServices](#microsoftmanagedservices)
-> - [Microsoft.Management](#microsoftmanagement)
-> - [Microsoft.Maps](#microsoftmaps)
-> - [Microsoft.Marketplace](#microsoftmarketplace)
-> - [Microsoft.MarketplaceApps](#microsoftmarketplaceapps)
-> - [Microsoft.MarketplaceOrdering](#microsoftmarketplaceordering)
+> - [Microsoft. MachineLearning](#microsoftmachinelearning)
+> - [Microsoft. Мачинелеарнингсервицес](#microsoftmachinelearningservices)
+> - [Microsoft. ManagedIdentity](#microsoftmanagedidentity)
+> - [Microsoft. ManagedServices](#microsoftmanagedservices)
+> - [Microsoft. Management](#microsoftmanagement)
+> - [Microsoft. Maps](#microsoftmaps)
+> - [Microsoft. Marketplace](#microsoftmarketplace)
+> - [Microsoft. Маркетплацеаппс](#microsoftmarketplaceapps)
+> - [Microsoft. Маркетплацеордеринг](#microsoftmarketplaceordering)
 > - [Microsoft.Media](#microsoftmedia)
-> - [Microsoft.Microservices4Spring](#microsoftmicroservices4spring)
-> - [Microsoft.Migrate](#microsoftmigrate)
-> - [Microsoft.MixedReality](#microsoftmixedreality)
-> - [Microsoft.NetApp](#microsoftnetapp)
-> - [Microsoft.Network](#microsoftnetwork)
+> - [Microsoft. Microservices4Spring](#microsoftmicroservices4spring)
+> - [Microsoft. migrate](#microsoftmigrate)
+> - [Microsoft. Микседреалити](#microsoftmixedreality)
+> - [Microsoft. NetApp](#microsoftnetapp)
+> - [Microsoft. Network](#microsoftnetwork)
 > - [Microsoft.NotificationHubs](#microsoftnotificationhubs)
-> - [Microsoft.ObjectStore](#microsoftobjectstore)
-> - [Microsoft.OffAzure](#microsoftoffazure)
-> - [Microsoft.OperationalInsights](#microsoftoperationalinsights)
-> - [Microsoft.OperationsManagement](#microsoftoperationsmanagement)
-> - [Microsoft.Peering](#microsoftpeering)
+> - [Microsoft. Обжектсторе](#microsoftobjectstore)
+> - [Microsoft. Оффазуре](#microsoftoffazure)
+> - [Microsoft. OperationalInsights](#microsoftoperationalinsights)
+> - [Microsoft. OperationsManagement](#microsoftoperationsmanagement)
+> - [Microsoft. пиринг](#microsoftpeering)
 > - [Microsoft.PolicyInsights](#microsoftpolicyinsights).
-> - [Microsoft.Portal](#microsoftportal)
-> - [Microsoft.PowerBI](#microsoftpowerbi)
-> - [Microsoft.PowerBIDedicated](#microsoftpowerbidedicated)
+> - [Microsoft. Portal](#microsoftportal)
+> - [Microsoft. PowerBI](#microsoftpowerbi)
+> - [Microsoft. Повербидедикатед](#microsoftpowerbidedicated)
 > - [Microsoft.RecoveryServices](#microsoftrecoveryservices)
-> - [Microsoft.Relay](#microsoftrelay)
-> - [Microsoft.RemoteApp](#microsoftremoteapp)
-> - [Microsoft.ResourceGraph](#microsoftresourcegraph)
-> - [Microsoft.ResourceHealth](#microsoftresourcehealth)
+> - [Microsoft. Relay](#microsoftrelay)
+> - [Microsoft. RemoteApp](#microsoftremoteapp)
+> - [Microsoft. Ресаурцеграф](#microsoftresourcegraph)
+> - [Microsoft. Ресаурцехеалс](#microsoftresourcehealth)
 > - [Microsoft.Resources](#microsoftresources)
-> - [Microsoft.SaaS](#microsoftsaas)
+> - [Microsoft. SaaS](#microsoftsaas)
 > - [Microsoft.Scheduler](#microsoftscheduler)
 > - [Microsoft.Search](#microsoftsearch)
 > - [Microsoft.Security](#microsoftsecurity)
-> - [Microsoft.SecurityGraph](#microsoftsecuritygraph)
-> - [Microsoft.SecurityInsights](#microsoftsecurityinsights)
+> - [Microsoft. Секуритиграф](#microsoftsecuritygraph)
+> - [Microsoft. Секуритинсигхтс](#microsoftsecurityinsights)
 > - [Microsoft.ServiceBus](#microsoftservicebus)
 > - [Microsoft.ServiceFabric](#microsoftservicefabric)
-> - [Microsoft.ServiceFabricMesh](#microsoftservicefabricmesh)
-> - [Microsoft.Services](#microsoftservices)
-> - [Microsoft.SignalRService](#microsoftsignalrservice)
-> - [Microsoft.SiteRecovery](#microsoftsiterecovery)
-> - [Microsoft.SoftwarePlan](#microsoftsoftwareplan)
-> - [Microsoft.Solutions](#microsoftsolutions)
-> - [Microsoft.SQL](#microsoftsql)
-> - [Microsoft.SqlVirtualMachine](#microsoftsqlvirtualmachine)
+> - [Microsoft. Сервицефабрикмеш](#microsoftservicefabricmesh)
+> - [Microsoft. Services](#microsoftservices)
+> - [Microsoft. Сигналрсервице](#microsoftsignalrservice)
+> - [Microsoft. SiteRecovery](#microsoftsiterecovery)
+> - [Microsoft. Софтвареплан](#microsoftsoftwareplan)
+> - [Microsoft. Solutions](#microsoftsolutions)
+> - [Microsoft. SQL](#microsoftsql)
+> - [Microsoft. Склвиртуалмачине](#microsoftsqlvirtualmachine)
 > - [Microsoft.Storage](#microsoftstorage)
-> - [Microsoft.StorageCache](#microsoftstoragecache)
-> - [Microsoft.StorageReplication](#microsoftstoragereplication)
-> - [Microsoft.StorageSync](#microsoftstoragesync)
-> - [Microsoft.StorageSyncDev](#microsoftstoragesyncdev)
-> - [Microsoft.StorageSyncInt](#microsoftstoragesyncint)
-> - [Microsoft.StorSimple](#microsoftstorsimple)
-> - [Microsoft.StreamAnalytics](#microsoftstreamanalytics)
-> - [Microsoft.Subscription](#microsoftsubscription)
-> - [Microsoft.TimeSeriesInsights](#microsofttimeseriesinsights)
-> - [Microsoft.VMwareCloudSimple](#microsoftvmwarecloudsimple)
+> - [Microsoft. Сторажекаче](#microsoftstoragecache)
+> - [Microsoft. Сторажерепликатион](#microsoftstoragereplication)
+> - [Microsoft. StorageSync](#microsoftstoragesync)
+> - [Microsoft. Сторажесинкдев](#microsoftstoragesyncdev)
+> - [Microsoft. СторажесинЦинт](#microsoftstoragesyncint)
+> - [Microsoft. StorSimple](#microsoftstorsimple)
+> - [Microsoft. StreamAnalytics](#microsoftstreamanalytics)
+> - [Microsoft. Subscription](#microsoftsubscription)
+> - [Microsoft. TimeSeriesInsights](#microsofttimeseriesinsights)
+> - [Microsoft. Вмвареклаудсимпле](#microsoftvmwarecloudsimple)
 > - [Microsoft.Web](#microsoftweb)
-> - [Microsoft.WindowsDefenderATP](#microsoftwindowsdefenderatp)
-> - [Microsoft.WindowsIoT](#microsoftwindowsiot)
-> - [Microsoft.WorkloadMonitor](#microsoftworkloadmonitor)
+> - [Microsoft. WindowsDefenderATP](#microsoftwindowsdefenderatp)
+> - [Microsoft. Виндовсиот](#microsoftwindowsiot)
+> - [Microsoft. WorkloadMonitor](#microsoftworkloadmonitor)
 
 ## <a name="microsoftaad"></a>Microsoft.AAD
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | DomainServices | ДА |
-> | DomainServices / oucontainer | Нет |
+> | DomainServices | Yes |
+> | DomainServices/ауконтаинер | Нет |
 
 ## <a name="microsoftaddons"></a>Microsoft.Addons
 
@@ -216,14 +216,14 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | actionRules | ДА |
+> | actionRules | Yes |
 > | оповещения | Нет |
 > | alertsList | Нет |
-> | alertsMetaData | Нет |
+> | алертсметадата | Нет |
 > | alertsSummary | Нет |
 > | alertsSummaryList | Нет |
-> | feedback | Нет |
-> | smartDetectorAlertRules | ДА |
+> | Оставлять | Нет |
+> | smartDetectorAlertRules | Yes |
 > | smartDetectorRuntimeEnvironments | Нет |
 > | smartGroups | Нет |
 
@@ -232,7 +232,7 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | серверы | ДА |
+> | servers | Yes |
 
 ## <a name="microsoftapimanagement"></a>Microsoft.ApiManagement
 
@@ -240,23 +240,23 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | reportFeedback | Нет |
-> | Служба | ДА |
+> | Служба | Yes |
 > | validateServiceName | Нет |
 
-## <a name="microsoftappconfiguration"></a>Microsoft.AppConfiguration
+## <a name="microsoftappconfiguration"></a>Microsoft. Аппконфигуратион
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | configurationStores | ДА |
-> | configurationStores / eventGridFilters | Нет |
+> | конфигуратионсторес | Yes |
+> | Конфигуратионсторес/Евентгридфилтерс | Нет |
 
-## <a name="microsoftappplatform"></a>Microsoft.AppPlatform
+## <a name="microsoftappplatform"></a>Microsoft. Аппплатформ
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | Spring | ДА |
+> | Spring | Yes |
 
 ## <a name="microsoftattestation"></a>Microsoft.Attestation
 
@@ -271,10 +271,10 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | classicAdministrators | Нет |
-> | dataAliases | Нет |
+> | Псевдонимы | Нет |
 > | denyAssignments | Нет |
 > | elevateAccess | Нет |
-> | findOrphanRoleAssignments | Нет |
+> | финдорфанролеассигнментс | Нет |
 > | locks | Нет |
 > | permissions | Нет |
 > | policyAssignments | Нет |
@@ -289,20 +289,20 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | automationAccounts | ДА |
-> | automationAccounts / configurations | ДА |
-> | automationAccounts / jobs | Нет |
-> | automationAccounts / runbooks | ДА |
-> | automationAccounts / softwareUpdateConfigurations | Нет |
-> | automationAccounts / webhooks | Нет |
+> | automationAccounts | Yes |
+> | automationAccounts и конфигурации | Yes |
+> | automationAccounts и задания | Нет |
+> | automationAccounts и модули Runbook | Yes |
+> | automationAccounts/Софтвареупдатеконфигуратионс | Нет |
+> | automationAccounts/веб-перехватчики | Нет |
 
-## <a name="microsoftazconfig"></a>Microsoft.Azconfig
+## <a name="microsoftazconfig"></a>Microsoft. Азконфиг
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | configurationStores | ДА |
-> | configurationStores / eventGridFilters | Нет |
+> | конфигуратионсторес | Yes |
+> | Конфигуратионсторес/Евентгридфилтерс | Нет |
 
 ## <a name="microsoftazuregeneva"></a>Microsoft.Azure.Geneva
 
@@ -310,46 +310,46 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | environments | Нет |
-> | environments / accounts | Нет |
-> | environments / accounts / namespaces | Нет |
-> | environments / accounts / namespaces / configurations | Нет |
+> | среды и учетные записи | Нет |
+> | среды, учетные записи и пространства имен | Нет |
+> | среды, учетные записи, пространства имен и конфигурации | Нет |
 
 ## <a name="microsoftazureactivedirectory"></a>Microsoft.AzureActiveDirectory
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | b2cDirectories | ДА |
+> | b2cDirectories | Yes |
 > | b2ctenants | Нет |
 
-## <a name="microsoftazuredata"></a>Microsoft.AzureData
+## <a name="microsoftazuredata"></a>Microsoft. Азуредата
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | hybridDataManagers | ДА |
-> | postgresInstances | ДА |
-> | sqlBigDataClusters | ДА |
-> | sqlInstances | ДА |
-> | sqlServerRegistrations | ДА |
-> | sqlServerRegistrations / sqlServers | Нет |
+> | хибриддатаманажерс | Yes |
+> | постгресинстанцес | Yes |
+> | склбигдатаклустерс | Yes |
+> | склинстанцес | Yes |
+> | склсерверрегистратионс | Yes |
+> | Склсерверрегистратионс и sqlServer | Нет |
 
 ## <a name="microsoftazurestack"></a>Microsoft.AzureStack
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | registrations | ДА |
-> | registrations / customerSubscriptions | Нет |
-> | registrations / products | Нет |
-> | verificationKeys | Нет |
+> | registrations | Yes |
+> | регистрации и Кустомерсубскриптионс | Нет |
+> | регистрации и продукты | Нет |
+> | верификатионкэйс | Нет |
 
 ## <a name="microsoftbatch"></a>Microsoft.Batch
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | batchAccounts | ДА |
+> | batchAccounts | Yes |
 
 ## <a name="microsoftbilling"></a>Microsoft.Billing
 
@@ -357,93 +357,93 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | billingAccounts | Нет |
-> | billingAccounts / agreements | Нет |
-> | billingAccounts / billingPermissions | Нет |
-> | billingAccounts / billingProfiles | Нет |
-> | billingAccounts / billingProfiles / billingPermissions | Нет |
-> | billingAccounts / billingProfiles / billingRoleAssignments | Нет |
-> | billingAccounts / billingProfiles / billingRoleDefinitions | Нет |
-> | billingAccounts / billingProfiles / billingSubscriptions | Нет |
-> | billingAccounts / billingProfiles / createBillingRoleAssignment | Нет |
-> | billingAccounts / billingProfiles / customers | Нет |
-> | billingAccounts / billingProfiles / invoices | Нет |
-> | billingAccounts / billingProfiles / invoices / pricesheet | Нет |
-> | billingAccounts / billingProfiles / invoiceSections | Нет |
-> | billingAccounts / billingProfiles / invoiceSections / billingPermissions | Нет |
-> | billingAccounts / billingProfiles / invoiceSections / billingRoleAssignments | Нет |
-> | billingAccounts / billingProfiles / invoiceSections / billingRoleDefinitions | Нет |
-> | billingAccounts / billingProfiles / invoiceSections / billingSubscriptions | Нет |
-> | billingAccounts / billingProfiles / invoiceSections / createBillingRoleAssignment | Нет |
-> | billingAccounts / billingProfiles / invoiceSections / initiateTransfer | Нет |
-> | billingAccounts / billingProfiles / invoiceSections / products | Нет |
-> | billingAccounts / billingProfiles / invoiceSections / products / transfer | Нет |
-> | billingAccounts / billingProfiles / invoiceSections / products / updateAutoRenew | Нет |
-> | billingAccounts / billingProfiles / invoiceSections / transactions | Нет |
-> | billingAccounts / billingProfiles / invoiceSections / transfers | Нет |
-> | billingAccounts / BillingProfiles / patchOperations | Нет |
-> | billingAccounts / billingProfiles / paymentMethods | Нет |
-> | billingAccounts / billingProfiles / policies | Нет |
-> | billingAccounts / billingProfiles / pricesheet | Нет |
-> | billingAccounts / billingProfiles / pricesheetDownloadOperations | Нет |
-> | billingAccounts / billingProfiles / products | Нет |
-> | billingAccounts / billingProfiles / transactions | Нет |
-> | billingAccounts / billingRoleAssignments | Нет |
-> | billingAccounts / billingRoleDefinitions | Нет |
-> | billingAccounts / billingSubscriptions | Нет |
-> | billingAccounts / billingSubscriptions / invoices | Нет |
-> | billingAccounts / createBillingRoleAssignment | Нет |
-> | billingAccounts / createInvoiceSectionOperations | Нет |
-> | billingAccounts / customers | Нет |
-> | billingAccounts / customers / billingPermissions | Нет |
-> | billingAccounts / customers / billingSubscriptions | Нет |
-> | billingAccounts / customers / initiateTransfer | Нет |
-> | billingAccounts / customers / policies | Нет |
-> | billingAccounts / customers / products | Нет |
-> | billingAccounts / customers / transactions | Нет |
-> | billingAccounts / customers / transfers | Нет |
-> | billingAccounts / departments | Нет |
-> | billingAccounts / enrollmentAccounts | Нет |
-> | billingAccounts / invoices | Нет |
-> | billingAccounts / invoiceSections | Нет |
-> | billingAccounts / invoiceSections / billingSubscriptionMoveOperations | Нет |
-> | billingAccounts / invoiceSections / billingSubscriptions | Нет |
-> | billingAccounts / invoiceSections / billingSubscriptions / transfer | Нет |
-> | billingAccounts / invoiceSections / elevate | Нет |
-> | billingAccounts / invoiceSections / initiateTransfer | Нет |
-> | billingAccounts / invoiceSections / patchOperations | Нет |
-> | billingAccounts / invoiceSections / productMoveOperations | Нет |
-> | billingAccounts / invoiceSections / products | Нет |
-> | billingAccounts / invoiceSections / products / transfer | Нет |
-> | billingAccounts / invoiceSections / products / updateAutoRenew | Нет |
-> | billingAccounts / invoiceSections / transactions | Нет |
-> | billingAccounts / invoiceSections / transfers | Нет |
-> | billingAccounts / lineOfCredit | Нет |
-> | billingAccounts / patchOperations | Нет |
-> | billingAccounts / paymentMethods | Нет |
-> | billingAccounts / products | Нет |
-> | billingAccounts / transactions | Нет |
+> | Биллингаккаунтс и соглашения | Нет |
+> | Биллингаккаунтс/Биллингпермиссионс | Нет |
+> | Биллингаккаунтс/Биллингпрофилес | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Биллингпермиссионс | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Биллингролеассигнментс | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Биллингроледефинитионс | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Биллингсубскриптионс | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Креатебиллингролеассигнмент | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/клиенты | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/счета | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/счета/прайс-лист | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/Биллингпермиссионс | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/Биллингролеассигнментс | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/Биллингроледефинитионс | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/Биллингсубскриптионс | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/Креатебиллингролеассигнмент | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/Инитиатетрансфер | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/Products | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/Products/перемещение | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/Products/Упдатеауторенев | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/транзакции | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/передача | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Патчоператионс | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Пайментмесодс | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/политики | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/прайс-лист | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Прицешитдовнлоадоператионс | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/Products | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/транзакции | Нет |
+> | Биллингаккаунтс/Биллингролеассигнментс | Нет |
+> | Биллингаккаунтс/Биллингроледефинитионс | Нет |
+> | Биллингаккаунтс/Биллингсубскриптионс | Нет |
+> | Биллингаккаунтс/Биллингсубскриптионс/счета | Нет |
+> | Биллингаккаунтс/Креатебиллингролеассигнмент | Нет |
+> | Биллингаккаунтс/Креатеинвоицесектионоператионс | Нет |
+> | Биллингаккаунтс и клиенты | Нет |
+> | Биллингаккаунтс/Customers/Биллингпермиссионс | Нет |
+> | Биллингаккаунтс/Customers/Биллингсубскриптионс | Нет |
+> | Биллингаккаунтс/Customers/Инитиатетрансфер | Нет |
+> | Биллингаккаунтс, клиенты и политики | Нет |
+> | Биллингаккаунтс/Customers/Products | Нет |
+> | Биллингаккаунтс/Customers/Transactions | Нет |
+> | Биллингаккаунтс/Customers/Transfers | Нет |
+> | Биллингаккаунтс и отделы | Нет |
+> | Биллингаккаунтс/Енроллментаккаунтс | Нет |
+> | Биллингаккаунтс/счета | Нет |
+> | Биллингаккаунтс/Инвоицесектионс | Нет |
+> | Биллингаккаунтс/Инвоицесектионс/Биллингсубскриптионмовеоператионс | Нет |
+> | Биллингаккаунтс/Инвоицесектионс/Биллингсубскриптионс | Нет |
+> | Биллингаккаунтс/Инвоицесектионс/Биллингсубскриптионс/перемещение | Нет |
+> | Биллингаккаунтс/Инвоицесектионс/повышение прав | Нет |
+> | Биллингаккаунтс/Инвоицесектионс/Инитиатетрансфер | Нет |
+> | Биллингаккаунтс/Инвоицесектионс/Патчоператионс | Нет |
+> | Биллингаккаунтс/Инвоицесектионс/Продуктмовеоператионс | Нет |
+> | Биллингаккаунтс/Инвоицесектионс/Products | Нет |
+> | Биллингаккаунтс/Инвоицесектионс/продукты/перемещение | Нет |
+> | Биллингаккаунтс/Инвоицесектионс/Products/Упдатеауторенев | Нет |
+> | Биллингаккаунтс/Инвоицесектионс/транзакции | Нет |
+> | Биллингаккаунтс/Инвоицесектионс/передача | Нет |
+> | Биллингаккаунтс/Линеофкредит | Нет |
+> | Биллингаккаунтс/Патчоператионс | Нет |
+> | Биллингаккаунтс/Пайментмесодс | Нет |
+> | Биллингаккаунтс и продукты | Нет |
+> | Биллингаккаунтс/транзакции | Нет |
 > | billingPeriods | Нет |
-> | billingPermissions | Нет |
+> | биллингпермиссионс | Нет |
 > | billingProperty | Нет |
-> | billingRoleAssignments | Нет |
-> | billingRoleDefinitions | Нет |
-> | createBillingRoleAssignment | Нет |
+> | биллингролеассигнментс | Нет |
+> | биллингроледефинитионс | Нет |
+> | креатебиллингролеассигнмент | Нет |
 > | departments | Нет |
 > | enrollmentAccounts | Нет |
 > | invoices | Нет |
 > | transfers | Нет |
-> | transfers / acceptTransfer | Нет |
-> | transfers / declineTransfer | Нет |
-> | transfers / operationStatus | Нет |
-> | transfers / validateTransfer | Нет |
-> | validateAddress | Нет |
+> | передачи/Акцепттрансфер | Нет |
+> | передачи/Деклинетрансфер | Нет |
+> | передачи/значение operationstatus | Нет |
+> | передачи/Валидатетрансфер | Нет |
+> | валидатеаддресс | Нет |
 
 ## <a name="microsoftbingmaps"></a>Microsoft.BingMaps
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | mapApis | ДА |
+> | mapApis | Yes |
 > | updateCommunicationPreference | Нет |
 
 ## <a name="microsoftblockchain"></a>Microsoft.Blockchain
@@ -451,9 +451,9 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | blockchainMembers | ДА |
-> | cordaMembers | ДА |
-> | наблюдатели | ДА |
+> | блоккчаинмемберс | Yes |
+> | кордамемберс | Yes |
+> | наблюдатели | Yes |
 
 ## <a name="microsoftblueprint"></a>Microsoft.Blueprint
 
@@ -461,21 +461,21 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | blueprintAssignments | Нет |
-> | blueprintAssignments / assignmentOperations | Нет |
-> | blueprintAssignments / operations | Нет |
+> | Блуепринтассигнментс/Ассигнментоператионс | Нет |
+> | Блуепринтассигнментс/операции | Нет |
 > | blueprints | Нет |
-> | blueprints / artifacts | Нет |
-> | blueprints / versions | Нет |
-> | blueprints / versions / artifacts | Нет |
+> | схемы и артефакты | Нет |
+> | проекты и версии | Нет |
+> | схемы, версии и артефакты | Нет |
 
 ## <a name="microsoftbotservice"></a>Microsoft.BotService
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | botServices | ДА |
-> | botServices / channels | Нет |
-> | botServices / connections | Нет |
+> | botServices | Yes |
+> | Ботсервицес и каналы | Нет |
+> | Ботсервицес и подключения | Нет |
 > | языки | Нет |
 > | шаблоны | Нет |
 
@@ -484,7 +484,7 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | Redis | ДА |
+> | Redis | Yes |
 > | RedisConfigDefinition | Нет |
 
 ## <a name="microsoftcapacity"></a>Microsoft.Capacity
@@ -493,21 +493,21 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | appliedReservations | Нет |
-> | calculateExchange | Нет |
+> | калкулатиксчанже | Нет |
 > | calculatePrice | Нет |
-> | calculatePurchasePrice | Нет |
+> | калкулатепурчасеприце | Нет |
 > | catalogs | Нет |
 > | commercialReservationOrders | Нет |
-> | exchange | Нет |
-> | placePurchaseOrder | Нет |
+> | обмен валюты | Нет |
+> | плацепурчасеордер | Нет |
 > | reservationOrders | Нет |
-> | reservationOrders / calculateRefund | Нет |
-> | reservationOrders / merge | Нет |
-> | reservationOrders / reservations | Нет |
-> | reservationOrders / reservations / revisions | Нет |
-> | reservationOrders / return | Нет |
-> | reservationOrders / split | Нет |
-> | reservationOrders / swap | Нет |
+> | Ресерватионордерс/Калкулатерефунд | Нет |
+> | Ресерватионордерс/Merge | Нет |
+> | Ресерватионордерс/резервирования | Нет |
+> | Ресерватионордерс/резервирования/редакции | Нет |
+> | Ресерватионордерс/Return | Нет |
+> | Ресерватионордерс/Split | Нет |
+> | Ресерватионордерс/swap | Нет |
 > | reservations | Нет |
 > | ресурсов | Нет |
 > | validateReservationOrder | Нет |
@@ -517,13 +517,13 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | CdnWebApplicationFirewallManagedRuleSets | Нет |
-> | CdnWebApplicationFirewallPolicies | ДА |
+> | кднвебаппликатионфиреваллманажедрулесетс | Нет |
+> | кднвебаппликатионфиреваллполиЦиес | Yes |
 > | edgenodes | Нет |
-> | профили | ДА |
-> | profiles / endpoints | ДА |
-> | profiles / endpoints / customdomains | Нет |
-> | profiles / endpoints / origins | Нет |
+> | профили | Yes |
+> | профили и конечные точки | Yes |
+> | профили, конечные точки/кустомдомаинс | Нет |
+> | профили, конечные точки и источники | Нет |
 > | validateProbe | Нет |
 
 ## <a name="microsoftcertificateregistration"></a>Microsoft.CertificateRegistration
@@ -531,8 +531,8 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | certificateOrders | ДА |
-> | certificateOrders / certificates | Нет |
+> | certificateOrders | Yes |
+> | Certificateorder и сертификаты | Нет |
 > | validateCertificateRegistrationInformation | Нет |
 
 ## <a name="microsoftclassiccompute"></a>Microsoft.ClassicCompute
@@ -541,24 +541,24 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | capabilities | Нет |
-> | domainNames | ДА |
-> | domainNames / capabilities | Нет |
-> | domainNames / internalLoadBalancers | Нет |
-> | domainNames / serviceCertificates | Нет |
-> | domainNames / slots | Нет |
-> | domainNames / slots / roles | Нет |
-> | domainNames / slots / roles / metricDefinitions | Нет |
-> | domainNames / slots / roles / metrics | Нет |
+> | domainNames | Yes |
+> | имя_домена/возможности | Нет |
+> | имя_домена/Интерналлоадбаланцерс | Нет |
+> | имя_домена/Сервицецертификатес | Нет |
+> | имя_домена/слоты | Нет |
+> | Доменные имя, слоты и роли | Нет |
+> | имя_домена/слоты/роли/metricDefinitions | Нет |
+> | имя_домена/слоты/роли/метрики | Нет |
 > | moveSubscriptionResources | Нет |
 > | operatingSystemFamilies | Нет |
 > | operatingSystems | Нет |
 > | quotas | Нет |
 > | resourceTypes | Нет |
 > | validateSubscriptionMoveAvailability | Нет |
-> | virtualMachines | ДА |
-> | virtualMachines / diagnosticSettings | Нет |
-> | virtualMachines / metricDefinitions | Нет |
-> | virtualMachines / metrics | Нет |
+> | virtualMachines | Yes |
+> | virtualMachines/diagnosticSettings | Нет |
+> | virtualMachines/metricDefinitions | Нет |
+> | virtualMachines/метрики | Нет |
 
 ## <a name="microsoftclassicinfrastructuremigrate"></a>Microsoft.ClassicInfrastructureMigrate
 
@@ -574,14 +574,14 @@ Jump to a resource provider namespace:
 > | ------------- | ----------- |
 > | capabilities | Нет |
 > | expressRouteCrossConnections | Нет |
-> | expressRouteCrossConnections / peerings | Нет |
+> | Експрессраутекроссконнектионс и пиринг | Нет |
 > | gatewaySupportedDevices | Нет |
-> | networkSecurityGroups | ДА |
+> | networkSecurityGroups | Yes |
 > | quotas | Нет |
-> | reservedIps | ДА |
-> | virtualNetworks | ДА |
-> | virtualNetworks / remoteVirtualNetworkPeeringProxies | Нет |
-> | virtualNetworks / virtualNetworkPeerings | Нет |
+> | reservedIps | Yes |
+> | virtualNetworks | Yes |
+> | virtualNetworks/Ремотевиртуалнетворкпирингпроксиес | Нет |
+> | virtualNetworks/Виртуалнетворкпирингс | Нет |
 
 ## <a name="microsoftclassicstorage"></a>Microsoft.ClassicStorage
 
@@ -595,18 +595,18 @@ Jump to a resource provider namespace:
 > | osPlatformImages | Нет |
 > | publicImages | Нет |
 > | quotas | Нет |
-> | storageAccounts | ДА |
-> | storageAccounts / blobServices | Нет |
-> | storageAccounts / fileServices | Нет |
-> | storageAccounts / metricDefinitions | Нет |
-> | storageAccounts / metrics | Нет |
-> | storageAccounts / queueServices | Нет |
-> | storageAccounts / services | Нет |
-> | storageAccounts / services / diagnosticSettings | Нет |
-> | storageAccounts / services / metricDefinitions | Нет |
-> | storageAccounts / services / metrics | Нет |
-> | storageAccounts / tableServices | Нет |
-> | storageAccounts / vmImages | Нет |
+> | storageAccounts | Yes |
+> | storageAccounts/Блобсервицес | Нет |
+> | storageAccounts/Филесервицес | Нет |
+> | storageAccounts/metricDefinitions | Нет |
+> | storageAccounts/метрики | Нет |
+> | storageAccounts/Куеуесервицес | Нет |
+> | storageAccounts и службы | Нет |
+> | storageAccounts/Services/diagnosticSettings | Нет |
+> | storageAccounts/Services/metricDefinitions | Нет |
+> | storageAccounts/Services/метрики | Нет |
+> | storageAccounts/Таблесервицес | Нет |
+> | storageAccounts/Вмимажес | Нет |
 > | vmImages | Нет |
 
 ## <a name="microsoftcognitiveservices"></a>Microsoft.CognitiveServices
@@ -614,7 +614,7 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | accounts | ДА |
+> | accounts | Yes |
 
 ## <a name="microsoftcommerce"></a>Microsoft.Commerce
 
@@ -629,32 +629,32 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | availabilitySets | ДА |
-> | diskEncryptionSets | ДА |
-> | disks | ДА |
-> | galleries | ДА |
-> | galleries / applications | Нет |
-> | galleries / applications / versions | Нет |
-> | galleries / images | Нет |
-> | galleries / images / versions | Нет |
-> | hostGroups | ДА |
-> | hostGroups / hosts | ДА |
-> | images | ДА |
-> | proximityPlacementGroups | ДА |
-> | restorePointCollections | ДА |
-> | restorePointCollections / restorePoints | Нет |
-> | sharedVMImages | ДА |
-> | sharedVMImages / versions | Нет |
-> | snapshots | ДА |
-> | virtualMachines | ДА |
-> | virtualMachines / extensions | ДА |
-> | virtualMachines / metricDefinitions | Нет |
-> | virtualMachineScaleSets | ДА |
-> | virtualMachineScaleSets / extensions | Нет |
-> | virtualMachineScaleSets / networkInterfaces | Нет |
-> | virtualMachineScaleSets / publicIPAddresses | Нет |
-> | virtualMachineScaleSets / virtualMachines | Нет |
-> | virtualMachineScaleSets / virtualMachines / networkInterfaces | Нет |
+> | availabilitySets | Yes |
+> | дискенкриптионсетс | Yes |
+> | disks | Yes |
+> | galleries | Yes |
+> | коллекции и приложения | Нет |
+> | коллекции, приложения и версии | Нет |
+> | коллекции и изображения | Нет |
+> | коллекции, изображения и версии | Нет |
+> | хостграупс | Yes |
+> | Хостграупс и узлы | Yes |
+> | images | Yes |
+> | проксимитиплацементграупс | Yes |
+> | restorePointCollections | Yes |
+> | Ресторепоинтколлектионс/Ресторепоинтс | Нет |
+> | sharedVMImages | Yes |
+> | Шаредвмимажес и версии | Нет |
+> | snapshots | Yes |
+> | virtualMachines | Yes |
+> | virtualMachines и расширения | Yes |
+> | virtualMachines/metricDefinitions | Нет |
+> | virtualMachineScaleSets | Yes |
+> | virtualMachineScaleSets и расширения | Нет |
+> | virtualMachineScaleSets/networkInterfaces | Нет |
+> | virtualMachineScaleSets/publicIPAddresses | Нет |
+> | virtualMachineScaleSets/virtualMachines | Нет |
+> | virtualMachineScaleSets/virtualMachines/networkInterfaces | Нет |
 
 ## <a name="microsoftconsumption"></a>Microsoft.Consumption
 
@@ -663,7 +663,7 @@ Jump to a resource provider namespace:
 > | ------------- | ----------- |
 > | AggregatedCost | Нет |
 > | сведения о балансе. | Нет |
-> | Расходы | Нет |
+> | Бюджеты | Нет |
 > | Расходы | Нет |
 > | CostTags | Нет |
 > | credits | Нет |
@@ -687,7 +687,7 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | containerGroups | ДА |
+> | containerGroups | Yes |
 > | serviceAssociationLinks | Нет |
 
 ## <a name="microsoftcontainerregistry"></a>Microsoft.ContainerRegistry
@@ -695,48 +695,48 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | registries | ДА |
-> | registries / builds | Нет |
-> | registries / builds / cancel | Нет |
-> | registries / builds / getLogLink | Нет |
-> | registries / buildTasks | ДА |
-> | registries / buildTasks / steps | Нет |
-> | registries / eventGridFilters | Нет |
-> | registries / generateCredentials | Нет |
-> | registries / getBuildSourceUploadUrl | Нет |
-> | registries / GetCredentials | Нет |
-> | registries / importImage | Нет |
-> | registries / queueBuild | Нет |
-> | registries / regenerateCredential | Нет |
-> | registries / regenerateCredentials | Нет |
-> | registries / replications | ДА |
-> | registries / runs | Нет |
-> | registries / runs / cancel | Нет |
-> | registries / scheduleRun | Нет |
-> | registries / scopeMaps | Нет |
-> | registries / taskRuns | ДА |
-> | registries / tasks | ДА |
-> | registries / tokens | Нет |
-> | registries / updatePolicies | Нет |
-> | registries / webhooks | ДА |
-> | registries / webhooks / getCallbackConfig | Нет |
-> | registries / webhooks / ping | Нет |
+> | registries | Yes |
+> | реестры и сборки | Нет |
+> | реестры/сборки/Отмена | Нет |
+> | реестры/сборки/Жетлоглинк | Нет |
+> | реестры и Буилдтаскс | Yes |
+> | реестры, Буилдтаскс и шаги | Нет |
+> | реестры и Евентгридфилтерс | Нет |
+> | реестры и Женератекредентиалс | Нет |
+> | реестры и Жетбуилдсаурцеуплоадурл | Нет |
+> | реестры и учетные данные | Нет |
+> | реестры и Импортимаже | Нет |
+> | реестры и Куеуебуилд | Нет |
+> | реестры и Реженератекредентиал | Нет |
+> | реестры и Реженератекредентиалс | Нет |
+> | реестры и репликации | Yes |
+> | реестры и запуски | Нет |
+> | реестры/запуски/Отмена | Нет |
+> | реестры и Счедулерун | Нет |
+> | реестры и Скопемапс | Нет |
+> | реестры и Таскрунс | Yes |
+> | реестры и задачи | Yes |
+> | реестры и маркеры | Нет |
+> | реестры и УпдатеполиЦиес | Нет |
+> | реестры и веб-перехватчики | Yes |
+> | реестры/веб-перехватчики/Жеткаллбаккконфиг | Нет |
+> | реестры, веб-перехватчики и проверка связи | Нет |
 
 ## <a name="microsoftcontainerservice"></a>Microsoft.ContainerService
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | containerServices | ДА |
-> | managedClusters | ДА |
-> | openShiftManagedClusters | ДА |
+> | containerServices | Yes |
+> | managedClusters | Yes |
+> | опеншифтманажедклустерс | Yes |
 
 ## <a name="microsoftcortanaanalytics"></a>Microsoft.CortanaAnalytics
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | accounts | ДА |
+> | accounts | Yes |
 
 ## <a name="microsoftcostmanagement"></a>Microsoft.CostManagement
 
@@ -745,252 +745,252 @@ Jump to a resource provider namespace:
 > | ------------- | ----------- |
 > | Оповещения | Нет |
 > | BillingAccounts | Нет |
-> | Расходы | Нет |
-> | CloudConnectors | Нет |
-> | Коннекторы | ДА |
+> | Бюджеты | Нет |
+> | клаудконнекторс | Нет |
+> | Соединители | Yes |
 > | Departments | Нет |
 > | Измерения | Нет |
 > | EnrollmentAccounts | Нет |
 > | Экспорт | Нет |
-> | ExternalBillingAccounts | Нет |
-> | ExternalBillingAccounts / Alerts | Нет |
-> | ExternalBillingAccounts / Dimensions | Нет |
-> | ExternalBillingAccounts / Forecast | Нет |
-> | ExternalBillingAccounts / Query | Нет |
-> | ExternalSubscriptions | Нет |
-> | ExternalSubscriptions / Alerts | Нет |
-> | ExternalSubscriptions / Dimensions | Нет |
-> | ExternalSubscriptions / Forecast | Нет |
-> | ExternalSubscriptions / Query | Нет |
-> | Forecast | Нет |
+> | екстерналбиллингаккаунтс | Нет |
+> | Екстерналбиллингаккаунтс и оповещения | Нет |
+> | Екстерналбиллингаккаунтс и измерения | Нет |
+> | Екстерналбиллингаккаунтс/прогноз | Нет |
+> | Екстерналбиллингаккаунтс/запрос | Нет |
+> | екстерналсубскриптионс | Нет |
+> | Екстерналсубскриптионс и оповещения | Нет |
+> | Екстерналсубскриптионс и измерения | Нет |
+> | Екстерналсубскриптионс/прогноз | Нет |
+> | Екстерналсубскриптионс/запрос | Нет |
+> | Грешно | Нет |
 > | Запрос | Нет |
 > | регистрация | Нет |
 > | Reportconfigs | Нет |
 > | Отчеты | Нет |
-> | Настройки | Нет |
-> | showbackRules | Нет |
-> | Представления | Нет |
+> | данных | Нет |
+> | шовбаккрулес | Нет |
+> | Views | Нет |
 
-## <a name="microsoftcustomerlockbox"></a>Microsoft.CustomerLockbox
+## <a name="microsoftcustomerlockbox"></a>Microsoft. Кустомерлоккбокс
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | requests | Нет |
 
-## <a name="microsoftcustomproviders"></a>Microsoft.CustomProviders
+## <a name="microsoftcustomproviders"></a>Microsoft. Кустомпровидерс
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | associations | Нет |
-> | resourceProviders | ДА |
+> | связи | Нет |
+> | ресаурцепровидерс | Yes |
 
 ## <a name="microsoftdatabox"></a>Microsoft.DataBox
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | jobs | ДА |
+> | jobs | Yes |
 
 ## <a name="microsoftdataboxedge"></a>Microsoft.DataBoxEdge
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | DataBoxEdgeDevices | ДА |
+> | DataBoxEdgeDevices | Yes |
 
 ## <a name="microsoftdatabricks"></a>Microsoft.Databricks
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | workspaces | ДА |
-> | workspaces / virtualNetworkPeerings | Нет |
+> | workspaces | Yes |
+> | рабочие области и Виртуалнетворкпирингс | Нет |
 
 ## <a name="microsoftdatacatalog"></a>Microsoft.DataCatalog
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | catalogs | ДА |
-> | datacatalogs | ДА |
-> | datacatalogs / datasources | Нет |
-> | datacatalogs / datasources / scans | Нет |
-> | datacatalogs / datasources / scans / datasets | Нет |
-> | datacatalogs / datasources / scans / triggers | Нет |
+> | catalogs | Yes |
+> | каталоги | Yes |
+> | каталоги данных и источники данных | Нет |
+> | каталоги данных, источники данных и проверки | Нет |
+> | каталоги данных/DataSources/scans/DataSets | Нет |
+> | каталоги данных, источники данных, проверки и триггеры | Нет |
 
 ## <a name="microsoftdatafactory"></a>Microsoft.DataFactory
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | dataFactories | ДА |
-> | dataFactories / diagnosticSettings | Нет |
-> | dataFactories / metricDefinitions | Нет |
+> | dataFactories | Yes |
+> | Коэффициенты и diagnosticSettings | Нет |
+> | Коэффициенты и metricDefinitions | Нет |
 > | dataFactorySchema | Нет |
-> | factories | ДА |
-> | factories / integrationRuntimes | Нет |
+> | factories | Yes |
+> | фабрики/Интегратионрунтимес | Нет |
 
 ## <a name="microsoftdatalakeanalytics"></a>Microsoft.DataLakeAnalytics
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | accounts | ДА |
-> | accounts / dataLakeStoreAccounts | Нет |
-> | accounts / storageAccounts | Нет |
-> | accounts / storageAccounts / containers | Нет |
-> | accounts / transferAnalyticsUnits | Нет |
+> | accounts | Yes |
+> | Accounts/Даталакестореаккаунтс | Нет |
+> | Accounts/storageAccounts | Нет |
+> | Accounts/storageAccounts/Containers | Нет |
+> | Accounts/Трансфераналитиксунитс | Нет |
 
 ## <a name="microsoftdatalakestore"></a>Microsoft.DataLakeStore
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | accounts | ДА |
-> | accounts / eventGridFilters | Нет |
-> | accounts / firewallRules | Нет |
+> | accounts | Yes |
+> | Accounts/Евентгридфилтерс | Нет |
+> | Accounts/Фиреваллрулес | Нет |
 
 ## <a name="microsoftdatamigration"></a>Microsoft.DataMigration
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | services; | ДА |
-> | services / projects | ДА |
+> | services; | Yes |
+> | службы и проекты | Yes |
 
-## <a name="microsoftdatashare"></a>Microsoft.DataShare
+## <a name="microsoftdatashare"></a>Общая папка Microsoft.
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | accounts | ДА |
-> | accounts / shares | Нет |
-> | accounts / shares / datasets | Нет |
-> | accounts / shares / invitations | Нет |
-> | accounts / shares / providersharesubscriptions | Нет |
-> | accounts / shares / synchronizationSettings | Нет |
-> | accounts / sharesubscriptions | Нет |
-> | accounts / sharesubscriptions / consumerSourceDataSets | Нет |
-> | accounts / sharesubscriptions / datasetmappings | Нет |
-> | accounts / sharesubscriptions / triggers | Нет |
+> | accounts | Yes |
+> | учетные записи и общие папки | Нет |
+> | учетные записи, общие ресурсы и наборы данных | Нет |
+> | учетные записи, общие ресурсы и приглашения | Нет |
+> | Accounts/shares/провидершаресубскриптионс | Нет |
+> | Accounts/shares/Синчронизатионсеттингс | Нет |
+> | Accounts/шаресубскриптионс | Нет |
+> | Accounts/шаресубскриптионс/Консумерсаурцедатасетс | Нет |
+> | Accounts/шаресубскриптионс/датасетмаппингс | Нет |
+> | учетные записи/шаресубскриптионс/триггеры | Нет |
 
 ## <a name="microsoftdbformariadb"></a>Microsoft.DBforMariaDB
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | серверы | ДА |
-> | servers / advisors | Нет |
-> | servers / privateEndpointConnectionProxies | Нет |
-> | servers / privateEndpointConnections | Нет |
-> | servers / privateLinkResources | Нет |
-> | servers / queryTexts | Нет |
-> | servers / recoverableServers | Нет |
-> | servers / topQueryStatistics | Нет |
-> | servers / virtualNetworkRules | Нет |
-> | servers / waitStatistics | Нет |
+> | servers | Yes |
+> | серверы и помощники | Нет |
+> | серверы и Приватиндпоинтконнектионпроксиес | Нет |
+> | серверы и Приватиндпоинтконнектионс | Нет |
+> | серверы и Привателинкресаурцес | Нет |
+> | серверы и Куеритекстс | Нет |
+> | серверы и Рековераблесерверс | Нет |
+> | серверы и Топкуеристатистикс | Нет |
+> | серверы и Виртуалнетворкрулес | Нет |
+> | серверы и Ваитстатистикс | Нет |
 
 ## <a name="microsoftdbformysql"></a>Microsoft.DBforMySQL
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | серверы | ДА |
-> | servers / advisors | Нет |
-> | servers / privateEndpointConnectionProxies | Нет |
-> | servers / privateEndpointConnections | Нет |
-> | servers / privateLinkResources | Нет |
-> | servers / queryTexts | Нет |
-> | servers / recoverableServers | Нет |
-> | servers / topQueryStatistics | Нет |
-> | servers / virtualNetworkRules | Нет |
-> | servers / waitStatistics | Нет |
+> | servers | Yes |
+> | серверы и помощники | Нет |
+> | серверы и Приватиндпоинтконнектионпроксиес | Нет |
+> | серверы и Приватиндпоинтконнектионс | Нет |
+> | серверы и Привателинкресаурцес | Нет |
+> | серверы и Куеритекстс | Нет |
+> | серверы и Рековераблесерверс | Нет |
+> | серверы и Топкуеристатистикс | Нет |
+> | серверы и Виртуалнетворкрулес | Нет |
+> | серверы и Ваитстатистикс | Нет |
 
 ## <a name="microsoftdbforpostgresql"></a>Microsoft.DBforPostgreSQL
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | serverGroups | ДА |
-> | серверы | ДА |
-> | servers / advisors | Нет |
-> | servers / keys | Нет |
-> | servers / privateEndpointConnectionProxies | Нет |
-> | servers / privateEndpointConnections | Нет |
-> | servers / privateLinkResources | Нет |
-> | servers / queryTexts | Нет |
-> | servers / recoverableServers | Нет |
-> | servers / topQueryStatistics | Нет |
-> | servers / virtualNetworkRules | Нет |
-> | servers / waitStatistics | Нет |
-> | serversv2 | ДА |
+> | серверграупс | Yes |
+> | servers | Yes |
+> | серверы и помощники | Нет |
+> | серверы и ключи | Нет |
+> | серверы и Приватиндпоинтконнектионпроксиес | Нет |
+> | серверы и Приватиндпоинтконнектионс | Нет |
+> | серверы и Привателинкресаурцес | Нет |
+> | серверы и Куеритекстс | Нет |
+> | серверы и Рековераблесерверс | Нет |
+> | серверы и Топкуеристатистикс | Нет |
+> | серверы и Виртуалнетворкрулес | Нет |
+> | серверы и Ваитстатистикс | Нет |
+> | serversv2 | Yes |
 
 ## <a name="microsoftdeploymentmanager"></a>Microsoft.DeploymentManager
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | artifactSources | ДА |
-> | rollouts | ДА |
-> | serviceTopologies | ДА |
-> | serviceTopologies / services | ДА |
-> | serviceTopologies / services / serviceUnits | ДА |
-> | steps | ДА |
+> | артифактсаурцес | Yes |
+> | rollouts | Yes |
+> | сервицетопологиес | Yes |
+> | Сервицетопологиес и службы | Yes |
+> | Сервицетопологиес/Services/Сервицеунитс | Yes |
+> | steps | Yes |
 
-## <a name="microsoftdesktopvirtualization"></a>Microsoft.DesktopVirtualization
+## <a name="microsoftdesktopvirtualization"></a>Microsoft. Десктопвиртуализатион
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | applicationgroups | ДА |
-> | applicationgroups / applications | Нет |
-> | applicationgroups / desktops | Нет |
-> | applicationgroups / startmenuitems | Нет |
-> | hostpools | ДА |
-> | hostpools / sessionhosts | Нет |
-> | hostpools / sessionhosts / usersessions | Нет |
-> | hostpools / usersessions | Нет |
-> | workspaces | ДА |
+> | аппликатионграупс | Yes |
+> | аппликатионграупс и приложения | Нет |
+> | аппликатионграупс и настольные системы | Нет |
+> | аппликатионграупс/стартменуитемс | Нет |
+> | хостпулс | Yes |
+> | хостпулс/сессионхостс | Нет |
+> | хостпулс/сессионхостс/усерсессионс | Нет |
+> | хостпулс/усерсессионс | Нет |
+> | workspaces | Yes |
 
 ## <a name="microsoftdevices"></a>Microsoft.Devices
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | ElasticPools | ДА |
-> | ElasticPools / IotHubTenants | ДА |
-> | IotHubs | ДА |
-> | IotHubs / eventGridFilters | Нет |
-> | ProvisioningServices | ДА |
+> | еластикпулс | Yes |
+> | Еластикпулс/Иосубтенантс | Yes |
+> | IotHubs | Yes |
+> | IotHubs/Евентгридфилтерс | Нет |
+> | ProvisioningServices | Yes |
 > | usages | Нет |
 
-## <a name="microsoftdevops"></a>Microsoft.DevOps
+## <a name="microsoftdevops"></a>Microsoft. DevOps
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | pipelines | ДА |
+> | конвейеров | Yes |
 
 ## <a name="microsoftdevspaces"></a>Microsoft.DevSpaces
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | controllers | ДА |
+> | controllers | Yes |
 
 ## <a name="microsoftdevtestlab"></a>Microsoft.DevTestLab
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | labcenters | ДА |
-> | labs | ДА |
-> | labs / environments | ДА |
-> | labs / serviceRunners | ДА |
-> | labs / virtualMachines | ДА |
-> | schedules | ДА |
+> | labcenters | Yes |
+> | labs | Yes |
+> | лаборатории и среды | Yes |
+> | Labs и Сервицеруннерс | Yes |
+> | Labs и virtualMachines | Yes |
+> | schedules | Yes |
 
 ## <a name="microsoftdocumentdb"></a>Microsoft.DocumentDB
 
@@ -998,15 +998,15 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | databaseAccountNames | Нет |
-> | databaseAccounts | ДА |
+> | databaseAccounts | Yes |
 
 ## <a name="microsoftdomainregistration"></a>Microsoft.DomainRegistration
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | domains | ДА |
-> | domains / domainOwnershipIdentifiers | Нет |
+> | domains | Yes |
+> | домены/Домаиновнершипидентифиерс | Нет |
 > | generateSsoRequest | Нет |
 > | topLevelDomains | Нет |
 > | validateDomainRegistrationInformation | Нет |
@@ -1017,26 +1017,26 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | lcsprojects | Нет |
-> | lcsprojects / clouddeployments | Нет |
-> | lcsprojects / connectors | Нет |
+> | лкспрожектс/клауддеплойментс | Нет |
+> | лкспрожектс и соединители | Нет |
 
-## <a name="microsoftenterpriseknowledgegraph"></a>Microsoft.EnterpriseKnowledgeGraph
+## <a name="microsoftenterpriseknowledgegraph"></a>Microsoft. Ентерприсекновледжеграф
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | services; | ДА |
+> | services; | Yes |
 
 ## <a name="microsofteventgrid"></a>Microsoft.EventGrid
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | domains | ДА |
-> | domains / topics | Нет |
+> | domains | Yes |
+> | домены и темы | Нет |
 > | eventSubscriptions | Нет |
 > | extensionTopics | Нет |
-> | topics | ДА |
+> | topics | Yes |
 > | topicTypes | Нет |
 
 ## <a name="microsofteventhub"></a>Microsoft.EventHub
@@ -1044,21 +1044,21 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | clusters | ДА |
-> | namespaces | ДА |
-> | namespaces / authorizationrules | Нет |
-> | namespaces / disasterrecoveryconfigs | Нет |
-> | namespaces / eventhubs | Нет |
-> | namespaces / eventhubs / authorizationrules | Нет |
-> | namespaces / eventhubs / consumergroups | Нет |
-> | namespaces / networkrulesets | Нет |
+> | clusters | Yes |
+> | namespaces | Yes |
+> | пространства имен/authorizationrules | Нет |
+> | пространства имен/дисастеррековериконфигс | Нет |
+> | пространства имен/eventhubs | Нет |
+> | пространства имен/eventhubs/authorizationrules | Нет |
+> | пространства имен/eventhubs/eventhub | Нет |
+> | пространства имен/нетворкрулесетс | Нет |
 
 ## <a name="microsoftfeatures"></a>Microsoft.Features
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | эластичной базы данных | Нет |
+> | features | Нет |
 > | providers | Нет |
 
 ## <a name="microsoftgallery"></a>Microsoft.Gallery
@@ -1070,11 +1070,11 @@ Jump to a resource provider namespace:
 > | galleryitems | Нет |
 > | generateartifactaccessuri | Нет |
 > | myareas | Нет |
-> | myareas / areas | Нет |
-> | myareas / areas / areas | Нет |
-> | myareas / areas / areas / galleryitems | Нет |
-> | myareas / areas / galleryitems | Нет |
-> | myareas / galleryitems | Нет |
+> | мяреас/области | Нет |
+> | мяреас/области/области | Нет |
+> | мяреас/области/области/галлеритемс | Нет |
+> | мяреас/области/галлеритемс | Нет |
+> | мяреас/галлеритемс | Нет |
 > | регистрация | Нет |
 > | ресурсов | Нет |
 > | retrieveresourcesbyid | Нет |
@@ -1084,78 +1084,78 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | accounts | ДА |
+> | accounts | Yes |
 
 ## <a name="microsoftguestconfiguration"></a>Microsoft.GuestConfiguration
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | configurationProfileAssignments | Нет |
+> | конфигуратионпрофилеассигнментс | Нет |
 > | guestConfigurationAssignments | Нет |
 > | software | Нет |
-> | softwareUpdateProfile | Нет |
-> | softwareUpdates | Нет |
+> | софтвареупдатепрофиле | Нет |
+> | софтвареупдатес | Нет |
 
 ## <a name="microsofthanaonazure"></a>Microsoft.HanaOnAzure
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | hanaInstances | ДА |
-> | sapMonitors | ДА |
+> | hanaInstances | Yes |
+> | сапмониторс | Yes |
 
 ## <a name="microsofthardwaresecuritymodules"></a>Microsoft.HardwareSecurityModules
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | dedicatedHSMs | ДА |
+> | дедикатедхсмс | Yes |
 
 ## <a name="microsofthdinsight"></a>Microsoft.HDInsight
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | clusters | ДА |
-> | clusters / applications | Нет |
+> | clusters | Yes |
+> | кластеры и приложения | Нет |
 
-## <a name="microsofthealthcareapis"></a>Microsoft.HealthcareApis
-
-> [!div class="mx-tableFixed"]
-> | Тип ресурса | Удаление ресурсов в полном режиме |
-> | ------------- | ----------- |
-> | services; | ДА |
-
-## <a name="microsofthybridcompute"></a>Microsoft.HybridCompute
+## <a name="microsofthealthcareapis"></a>Microsoft. Хеалскареапис
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | machines | ДА |
-> | machines / extensions | ДА |
+> | services; | Yes |
+
+## <a name="microsofthybridcompute"></a>Microsoft. Хибридкомпуте
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Удаление ресурсов в полном режиме |
+> | ------------- | ----------- |
+> | виртуальных | Yes |
+> | Компьютеры и расширения | Yes |
 
 ## <a name="microsofthybriddata"></a>Microsoft.HybridData
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | dataManagers | ДА |
+> | Диспетчеры | Yes |
 
-## <a name="microsofthydra"></a>Microsoft.Hydra
+## <a name="microsofthydra"></a>Microsoft. Hydra
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | components | ДА |
-> | networkScopes | ДА |
+> | components | Yes |
+> | нетворкскопес | Yes |
 
 ## <a name="microsoftimportexport"></a>Microsoft.ImportExport
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | jobs | ДА |
+> | jobs | Yes |
 
 ## <a name="microsoftintune"></a>Microsoft.Intune
 
@@ -1170,15 +1170,15 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | appTemplates | Нет |
-> | IoTApps | ДА |
+> | апптемплатес | Нет |
+> | IoTApps | Yes |
 
 ## <a name="microsoftiotspaces"></a>Microsoft.IoTSpaces
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | Граф | ДА |
+> | График | Yes |
 
 ## <a name="microsoftkeyvault"></a>Microsoft.KeyVault
 
@@ -1186,61 +1186,61 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | deletedVaults | Нет |
-> | hsmPools | ДА |
-> | vaults | ДА |
-> | vaults / accessPolicies | Нет |
-> | vaults / eventGridFilters | Нет |
-> | vaults / secrets | Нет |
+> | хсмпулс | Yes |
+> | vaults | Yes |
+> | хранилища и accessPolicies | Нет |
+> | хранилища и Евентгридфилтерс | Нет |
+> | хранилища и секреты | Нет |
 
 ## <a name="microsoftkusto"></a>Microsoft.Kusto
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | clusters | ДА |
-> | clusters / attacheddatabaseconfigurations | Нет |
-> | clusters / databases | Нет |
-> | clusters / databases / dataconnections | Нет |
-> | clusters / databases / eventhubconnections | Нет |
-> | clusters / sharedidentities | Нет |
+> | clusters | Yes |
+> | кластеры/аттачеддатабасеконфигуратионс | Нет |
+> | кластеры и базы данных | Нет |
+> | кластеры/базы данных/подключения | Нет |
+> | кластеры/базы данных/евенсубконнектионс | Нет |
+> | кластеры/шаредидентитиес | Нет |
 
 ## <a name="microsoftlabservices"></a>Microsoft.LabServices
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | labaccounts | ДА |
-> | пользователей | Нет |
+> | labaccounts | Yes |
+> | пользователи | Нет |
 
 ## <a name="microsoftlogic"></a>Microsoft.Logic
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | hostingEnvironments | ДА |
-> | integrationAccounts | ДА |
-> | integrationServiceEnvironments | ДА |
-> | integrationServiceEnvironments / managedApis | ДА |
-> | isolatedEnvironments | ДА |
-> | workflows | ДА |
+> | hostingEnvironments | Yes |
+> | integrationAccounts | Yes |
+> | интегратионсервицеенвиронментс | Yes |
+> | Интегратионсервицеенвиронментс/Манажедапис | Yes |
+> | исолатеденвиронментс | Yes |
+> | workflows | Yes |
 
 ## <a name="microsoftmachinelearning"></a>Microsoft.MachineLearning
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | commitmentPlans | ДА |
-> | webServices | ДА |
-> | Рабочие области | ДА |
+> | commitmentPlans | Yes |
+> | webServices | Yes |
+> | Рабочие области | Yes |
 
 ## <a name="microsoftmachinelearningservices"></a>Microsoft.MachineLearningServices
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | workspaces | ДА |
-> | workspaces / computes | Нет |
-> | workspaces / eventGridFilters | Нет |
+> | workspaces | Yes |
+> | рабочие области и расчеты | Нет |
+> | рабочие области и Евентгридфилтерс | Нет |
 
 ## <a name="microsoftmanagedidentity"></a>Microsoft.ManagedIdentity
 
@@ -1248,16 +1248,16 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | Identities | Нет |
-> | userAssignedIdentities | ДА |
+> | userAssignedIdentities | Yes |
 
-## <a name="microsoftmanagedservices"></a>Microsoft.ManagedServices
+## <a name="microsoftmanagedservices"></a>Microsoft. ManagedServices
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | marketplaceRegistrationDefinitions | Нет |
-> | registrationAssignments | Нет |
-> | registrationDefinitions | Нет |
+> | маркетплацерегистратиондефинитионс | Нет |
+> | регистратионассигнментс | Нет |
+> | регистратиондефинитионс | Нет |
 
 ## <a name="microsoftmanagement"></a>Microsoft.Management
 
@@ -1275,8 +1275,8 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | accounts | ДА |
-> | accounts / eventGridFilters | Нет |
+> | accounts | Yes |
+> | Accounts/Евентгридфилтерс | Нет |
 
 ## <a name="microsoftmarketplace"></a>Microsoft.Marketplace
 
@@ -1285,24 +1285,24 @@ Jump to a resource provider namespace:
 > | ------------- | ----------- |
 > | offers | Нет |
 > | offerTypes | Нет |
-> | offerTypes / publishers | Нет |
-> | offerTypes / publishers / offers | Нет |
-> | offerTypes / publishers / offers / plans | Нет |
-> | offerTypes / publishers / offers / plans / agreements | Нет |
-> | offerTypes / publishers / offers / plans / configs | Нет |
-> | offerTypes / publishers / offers / plans / configs / importImage | Нет |
+> | Оффертипес и издатели | Нет |
+> | Оффертипес, издатели и предложения | Нет |
+> | Оффертипес, издатели, предложения и планы | Нет |
+> | Оффертипес/Publishers/Offers/Plans/Agreement | Нет |
+> | Оффертипес/Publishers/предложения, планы и конфигурации | Нет |
+> | Оффертипес/Publishers/Offers/Plans/Configurations/Импортимаже | Нет |
 > | privategalleryitems | Нет |
 > | products | Нет |
-> | publishers | Нет |
-> | publishers / offers | Нет |
-> | publishers / offers / amendments | Нет |
+> | издателя | Нет |
+> | издатели и предложения | Нет |
+> | издатели, предложения и поправки | Нет |
 
 ## <a name="microsoftmarketplaceapps"></a>Microsoft.MarketplaceApps
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | classicDevServices | ДА |
+> | classicDevServices | Yes |
 > | updateCommunicationPreference | Нет |
 
 ## <a name="microsoftmarketplaceordering"></a>Microsoft.MarketplaceOrdering
@@ -1318,183 +1318,183 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | mediaservices | ДА |
-> | mediaservices / accountFilters | Нет |
-> | mediaservices / assets | Нет |
-> | mediaservices / assets / assetFilters | Нет |
-> | mediaservices / contentKeyPolicies | Нет |
-> | mediaservices / eventGridFilters | Нет |
-> | mediaservices / liveEventOperations | Нет |
-> | mediaservices / liveEvents | ДА |
-> | mediaservices / liveEvents / liveOutputs | Нет |
-> | mediaservices / liveOutputOperations | Нет |
-> | mediaservices / mediaGraphs | Нет |
-> | mediaservices / streamingEndpointOperations | Нет |
-> | mediaservices / streamingEndpoints | ДА |
-> | mediaservices / streamingLocators | Нет |
-> | mediaservices / streamingPolicies | Нет |
-> | mediaservices / transforms | Нет |
-> | mediaservices / transforms / jobs | Нет |
+> | mediaservices | Yes |
+> | mediaservices/Аккаунтфилтерс | Нет |
+> | mediaservices и активы | Нет |
+> | mediaservices/активы/Ассетфилтерс | Нет |
+> | mediaservices/КонтенткэйполиЦиес | Нет |
+> | mediaservices/Евентгридфилтерс | Нет |
+> | mediaservices/Лививентоператионс | Нет |
+> | mediaservices/Лививентс | Yes |
+> | mediaservices/Лививентс/Ливеаутпутс | Нет |
+> | mediaservices/Ливеаутпутоператионс | Нет |
+> | mediaservices/Медиаграфс | Нет |
+> | mediaservices/Стреаминжендпоинтоператионс | Нет |
+> | mediaservices/Streamingendpoint | Yes |
+> | mediaservices/Стреаминглокаторс | Нет |
+> | mediaservices/СтреамингполиЦиес | Нет |
+> | mediaservices/преобразования | Нет |
+> | mediaservices/преобразования/задания | Нет |
 
-## <a name="microsoftmicroservices4spring"></a>Microsoft.Microservices4Spring
+## <a name="microsoftmicroservices4spring"></a>Microsoft. Microservices4Spring
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | appClusters | ДА |
+> | аппклустерс | Yes |
 
 ## <a name="microsoftmigrate"></a>Microsoft.Migrate
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | assessmentProjects | ДА |
-> | migrateprojects | ДА |
-> | projects | ДА |
+> | ассессментпрожектс | Yes |
+> | migrateprojects | Yes |
+> | projects | Yes |
 
-## <a name="microsoftmixedreality"></a>Microsoft.MixedReality
+## <a name="microsoftmixedreality"></a>Microsoft. Микседреалити
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | holographicsBroadcastAccounts | ДА |
-> | objectUnderstandingAccounts | ДА |
-> | remoteRenderingAccounts | ДА |
-> | spatialAnchorsAccounts | ДА |
-> | surfaceReconstructionAccounts | ДА |
+> | холографиксброадкастаккаунтс | Yes |
+> | обжектундерстандингаккаунтс | Yes |
+> | ремотерендерингаккаунтс | Yes |
+> | спатиаланчорсаккаунтс | Yes |
+> | сурфацереконструктионаккаунтс | Yes |
 
 ## <a name="microsoftnetapp"></a>Microsoft.NetApp
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | netAppAccounts | ДА |
-> | netAppAccounts / capacityPools | ДА |
-> | netAppAccounts / capacityPools / volumes | ДА |
-> | netAppAccounts / capacityPools / volumes / mountTargets | ДА |
-> | netAppAccounts / capacityPools / volumes / snapshots | ДА |
+> | нетаппаккаунтс | Yes |
+> | Нетаппаккаунтс/КапаЦитипулс | Yes |
+> | Нетаппаккаунтс/КапаЦитипулс/тома | Yes |
+> | Нетаппаккаунтс/КапаЦитипулс/Volumes/Маунттаржетс | Yes |
+> | Нетаппаккаунтс/КапаЦитипулс/тома/моментальные снимки | Yes |
 ## <a name="microsoftnetwork"></a>Microsoft.Network.
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | applicationGateways | ДА |
-> | applicationGatewayWebApplicationFirewallPolicies | ДА |
-> | applicationSecurityGroups | ДА |
+> | applicationGateways | Yes |
+> | аппликатионгатевайвебаппликатионфиреваллполиЦиес | Yes |
+> | applicationSecurityGroups | Yes |
 > | azureFirewallFqdnTags | Нет |
-> | azureFirewalls | ДА |
-> | bastionHosts | ДА |
+> | azureFirewalls | Yes |
+> | бастионхостс | Yes |
 > | bgpServiceCommunities | Нет |
-> | connections | ДА |
-> | ddosCustomPolicies | ДА |
-> | ddosProtectionPlans | ДА |
+> | connections | Yes |
+> | ddosCustomPolicies | Yes |
+> | ddosProtectionPlans | Yes |
 > | dnsOperationStatuses | Нет |
-> | dnszones | ДА |
-> | dnszones / A | Нет |
-> | dnszones / AAAA | Нет |
-> | dnszones / all | Нет |
-> | dnszones / CAA | Нет |
-> | dnszones / CNAME | Нет |
-> | dnszones / MX | Нет |
-> | dnszones / NS | Нет |
-> | dnszones / PTR | Нет |
-> | dnszones / recordsets | Нет |
-> | dnszones / SOA | Нет |
-> | dnszones / SRV | Нет |
-> | dnszones / TXT | Нет |
-> | expressRouteCircuits | ДА |
-> | expressRouteCrossConnections | ДА |
-> | expressRouteGateways | ДА |
-> | expressRoutePorts | ДА |
+> | dnszones | Yes |
+> | днсзонес/A | Нет |
+> | днсзонес/AAAA | Нет |
+> | днсзонес/все | Нет |
+> | днсзонес/CAA | Нет |
+> | днсзонес и CNAME | Нет |
+> | днсзонес/MX | Нет |
+> | днсзонес/NS | Нет |
+> | днсзонес/PTR | Нет |
+> | днсзонес и наборы записей | Нет |
+> | днсзонес/SOA | Нет |
+> | днсзонес/SRV | Нет |
+> | днсзонес/TXT | Нет |
+> | expressRouteCircuits | Yes |
+> | expressRouteCrossConnections | Yes |
+> | експрессраутегатевайс | Yes |
+> | експрессраутепортс | Yes |
 > | expressRouteServiceProviders | Нет |
-> | firewallPolicies | ДА |
-> | frontdoors | ДА |
-> | frontdoorWebApplicationFirewallManagedRuleSets | Нет |
-> | frontdoorWebApplicationFirewallPolicies | ДА |
+> | фиреваллполиЦиес | Yes |
+> | frontdoors | Yes |
+> | фронтдурвебаппликатионфиреваллманажедрулесетс | Нет |
+> | frontdoorWebApplicationFirewallPolicies | Yes |
 > | getDnsResourceReference | Нет |
 > | internalNotify | Нет |
-> | loadBalancers | ДА |
-> | localNetworkGateways | ДА |
-> | natGateways | ДА |
-> | networkIntentPolicies | ДА |
-> | networkInterfaces | ДА |
-> | networkProfiles | ДА |
-> | networkSecurityGroups | ДА |
-> | networkWatchers | ДА |
-> | networkWatchers / connectionMonitors | ДА |
-> | networkWatchers / lenses | ДА |
-> | networkWatchers / pingMeshes | ДА |
-> | p2sVpnGateways | ДА |
-> | privateDnsOperationStatuses | Нет |
-> | privateDnsZones | ДА |
-> | privateDnsZones / A | Нет |
-> | privateDnsZones / AAAA | Нет |
-> | privateDnsZones / all | Нет |
-> | privateDnsZones / CNAME | Нет |
-> | privateDnsZones / MX | Нет |
-> | privateDnsZones / PTR | Нет |
-> | privateDnsZones / SOA | Нет |
-> | privateDnsZones / SRV | Нет |
-> | privateDnsZones / TXT | Нет |
-> | privateDnsZones / virtualNetworkLinks | ДА |
-> | privateEndpoints | ДА |
-> | privateLinkServices | ДА |
-> | publicIPAddresses | ДА |
-> | publicIPPrefixes | ДА |
-> | routeFilters | ДА |
-> | routeTables | ДА |
-> | serviceEndpointPolicies | ДА |
+> | loadBalancers | Yes |
+> | localNetworkGateways | Yes |
+> | natGateways | Yes |
+> | networkIntentPolicies | Yes |
+> | networkInterfaces | Yes |
+> | networkProfiles | Yes |
+> | networkSecurityGroups | Yes |
+> | networkWatchers | Yes |
+> | Нетворкватчерс/Коннектионмониторс | Yes |
+> | Нетворкватчерс/lenses | Yes |
+> | Нетворкватчерс/Пингмешес | Yes |
+> | p2sVpnGateways | Yes |
+> | приватеднсоператионстатусес | Нет |
+> | приватеднсзонес | Yes |
+> | Приватеднсзонес/A | Нет |
+> | Приватеднсзонес/AAAA | Нет |
+> | Приватеднсзонес/все | Нет |
+> | Приватеднсзонес и CNAME | Нет |
+> | Приватеднсзонес/MX | Нет |
+> | Приватеднсзонес/PTR | Нет |
+> | Приватеднсзонес/SOA | Нет |
+> | Приватеднсзонес/SRV | Нет |
+> | Приватеднсзонес/TXT | Нет |
+> | Приватеднсзонес/Виртуалнетворклинкс | Yes |
+> | приватиндпоинтс | Yes |
+> | privateLinkServices | Yes |
+> | publicIPAddresses | Yes |
+> | publicIPPrefixes | Yes |
+> | routeFilters | Yes |
+> | routeTables | Yes |
+> | serviceEndpointPolicies | Yes |
 > | trafficManagerGeographicHierarchies | Нет |
-> | trafficmanagerprofiles | ДА |
-> | trafficmanagerprofiles / heatMaps | Нет |
-> | trafficManagerUserMetricsKeys | Нет |
-> | virtualHubs | ДА |
-> | virtualNetworkGateways | ДА |
-> | virtualNetworks | ДА |
-> | virtualNetworkTaps | ДА |
-> | virtualWans | ДА |
-> | vpnGateways | ДА |
-> | vpnSites | ДА |
-> | webApplicationFirewallPolicies | ДА |
+> | trafficmanagerprofiles | Yes |
+> | trafficmanagerprofiles/тепловые карты | Нет |
+> | траффикманажерусерметрикскэйс | Нет |
+> | virtualHubs | Yes |
+> | virtualNetworkGateways | Yes |
+> | virtualNetworks | Yes |
+> | virtualNetworkTaps | Yes |
+> | virtualWans | Yes |
+> | vpnGateways | Yes |
+> | vpnSites | Yes |
+> | webApplicationFirewallPolicies | Yes |
 
 ## <a name="microsoftnotificationhubs"></a>Microsoft.NotificationHubs
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | namespaces | ДА |
-> | namespaces / notificationHubs | ДА |
+> | namespaces | Yes |
+> | пространства имен/notificationHubs | Yes |
 
-## <a name="microsoftobjectstore"></a>Microsoft.ObjectStore
+## <a name="microsoftobjectstore"></a>Microsoft. Обжектсторе
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | osNamespaces | ДА |
+> | оснамеспацес | Yes |
 
 ## <a name="microsoftoffazure"></a>Microsoft.OffAzure
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | HyperVSites | ДА |
-> | ImportSites | ДА |
-> | ServerSites | ДА |
-> | VMwareSites | ДА |
+> | хипервситес | Yes |
+> | импортситес | Yes |
+> | серверситес | Yes |
+> | вмвареситес | Yes |
 
 ## <a name="microsoftoperationalinsights"></a>Microsoft.OperationalInsights
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | clusters | ДА |
+> | clusters | Yes |
 > | устройства | Нет |
 > | linkTargets | Нет |
 > | storageInsightConfigs | Нет |
-> | workspaces | ДА |
-> | workspaces / dataSources | Нет |
-> | workspaces / linkedServices | Нет |
-> | workspaces / query | Нет |
+> | workspaces | Yes |
+> | рабочие области и источники данных | Нет |
+> | рабочие области и linkedServices | Нет |
+> | рабочие области и запросы | Нет |
 
 ## <a name="microsoftoperationsmanagement"></a>Microsoft.OperationsManagement
 
@@ -1502,20 +1502,20 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | managementassociations | Нет |
-> | managementconfigurations | ДА |
-> | solutions | ДА |
-> | узел "Представления" | ДА |
+> | managementconfigurations | Yes |
+> | solutions | Yes |
+> | узел "Представления" | Yes |
 
-## <a name="microsoftpeering"></a>Microsoft.Peering
+## <a name="microsoftpeering"></a>Microsoft. пиринг
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | legacyPeerings | Нет |
-> | peerAsns | Нет |
-> | peerings | ДА |
-> | peeringServiceProviders | Нет |
-> | peeringServices | ДА |
+> | легаципирингс | Нет |
+> | пираснс | Нет |
+> | пиринги | Yes |
+> | пирингсервицепровидерс | Нет |
+> | пирингсервицес | Yes |
 
 ## <a name="microsoftpolicyinsights"></a>Microsoft.PolicyInsights
 
@@ -1523,7 +1523,7 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | policyEvents | Нет |
-> | policyMetadata | Нет |
+> | полициметадата | Нет |
 > | policyStates | Нет |
 > | policyTrackedResources | Нет |
 > | remediations | Нет |
@@ -1534,7 +1534,7 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | consoles | Нет |
-> | dashboards | ДА |
+> | dashboards | Yes |
 > | userSettings | Нет |
 
 ## <a name="microsoftpowerbi"></a>Microsoft.PowerBI
@@ -1542,14 +1542,14 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | workspaceCollections | ДА |
+> | workspaceCollections | Yes |
 
 ## <a name="microsoftpowerbidedicated"></a>Microsoft.PowerBIDedicated
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | capacities | ДА |
+> | capacities | Yes |
 
 ## <a name="microsoftrecoveryservices"></a>Microsoft.RecoveryServices
 
@@ -1557,41 +1557,41 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | backupProtectedItems | Нет |
-> | vaults | ДА |
+> | vaults | Yes |
 
 ## <a name="microsoftrelay"></a>Microsoft.Relay
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | namespaces | ДА |
-> | namespaces / authorizationrules | Нет |
-> | namespaces / hybridconnections | Нет |
-> | namespaces / hybridconnections / authorizationrules | Нет |
-> | namespaces / wcfrelays | Нет |
-> | namespaces / wcfrelays / authorizationrules | Нет |
+> | namespaces | Yes |
+> | пространства имен/authorizationrules | Нет |
+> | пространства имен/хибридконнектионс | Нет |
+> | пространства имен/хибридконнектионс/authorizationrules | Нет |
+> | пространства имен/вкфрелайс | Нет |
+> | пространства имен/вкфрелайс/authorizationrules | Нет |
 
-## <a name="microsoftremoteapp"></a>Microsoft.RemoteApp
+## <a name="microsoftremoteapp"></a>Microsoft. RemoteApp
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | accounts | Нет |
-> | collections | ДА |
-> | collections / applications | Нет |
-> | collections / securityprincipals | Нет |
-> | templateImages | Нет |
+> | семейства | Yes |
+> | коллекции и приложения | Нет |
+> | Collections/секуритипринЦипалс | Нет |
+> | темплатеимажес | Нет |
 
 ## <a name="microsoftresourcegraph"></a>Microsoft.ResourceGraph
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | запросы | ДА |
-> | resourceChangeDetails | Нет |
-> | resourceChanges | Нет |
+> | Запросы | Yes |
+> | ресаурцечанжедетаилс | Нет |
+> | ресаурцечанжес | Нет |
 > | ресурсов | Нет |
-> | resourcesHistory | Нет |
+> | ресаурцешистори | Нет |
 > | subscriptionsStatus | Нет |
 
 ## <a name="microsoftresourcehealth"></a>Microsoft.ResourceHealth
@@ -1613,19 +1613,19 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | deployments | Нет |
-> | deployments / operations | Нет |
-> | deploymentScripts | ДА |
-> | deploymentScripts / logs | Нет |
+> | развертывания и операции | Нет |
+> | deploymentScripts | Yes |
+> | deploymentScripts и журналы | Нет |
 > | links | Нет |
 > | notifyResourceJobs | Нет |
 > | providers | Нет |
 > | resourceGroups | Нет |
 > | ресурсов | Нет |
 > | subscriptions | Нет |
-> | subscriptions / providers | Нет |
-> | subscriptions / resources | Нет |
-> | subscriptions / tagnames | Нет |
-> | subscriptions / tagNames / tagValues | Нет |
+> | подписки и поставщики | Нет |
+> | подписки и ресурсы | Нет |
+> | подписки и имена | Нет |
+> | Subscriptions/имена/Тагвалуес | Нет |
 > | tenants | Нет |
 
 ## <a name="microsoftsaas"></a>Microsoft.SaaS
@@ -1633,7 +1633,7 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | приложений | ДА |
+> | веб-масштабированием; | Yes |
 > | saasresources | Нет |
 
 ## <a name="microsoftscheduler"></a>Microsoft.Scheduler
@@ -1641,7 +1641,7 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | jobcollections | ДА |
+> | jobcollections | Yes |
 
 ## <a name="microsoftsearch"></a>Microsoft.Search
 
@@ -1649,48 +1649,48 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | resourceHealthMetadata | Нет |
-> | searchServices | ДА |
+> | searchServices | Yes |
 
 ## <a name="microsoftsecurity"></a>Microsoft.Security
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | adaptiveNetworkHardenings | Нет |
+> | адаптивенетворкхарденингс | Нет |
 > | advancedThreatProtectionSettings | Нет |
 > | оповещения | Нет |
 > | allowedConnections | Нет |
 > | applicationWhitelistings | Нет |
-> | assessmentMetadata | Нет |
-> | assessments | Нет |
-> | autoDismissAlertsRules | Нет |
-> | automations | ДА |
+> | ассессментметадата | Нет |
+> | оценки | Нет |
+> | аутодисмиссалертсрулес | Нет |
+> | инструментах автоматизации Composer | Yes |
 > | AutoProvisioningSettings | Нет |
 > | Compliances | Нет |
 > | dataCollectionAgents | Нет |
-> | deviceSecurityGroups | Нет |
+> | девицесекуритиграупс | Нет |
 > | discoveredSecuritySolutions | Нет |
 > | externalSecuritySolutions | Нет |
 > | InformationProtectionPolicies | Нет |
-> | iotSecuritySolutions | ДА |
-> | iotSecuritySolutions / analyticsModels | Нет |
-> | iotSecuritySolutions / analyticsModels / aggregatedAlerts | Нет |
-> | iotSecuritySolutions / analyticsModels / aggregatedRecommendations | Нет |
+> | иотсекуритисолутионс | Yes |
+> | Иотсекуритисолутионс/Аналитиксмоделс | Нет |
+> | Иотсекуритисолутионс/Аналитиксмоделс/Аггрегатедалертс | Нет |
+> | Иотсекуритисолутионс/Аналитиксмоделс/Аггрегатедрекоммендатионс | Нет |
 > | jitNetworkAccessPolicies | Нет |
 > | networkData | Нет |
 > | политики | Нет |
 > | pricings | Нет |
-> | regulatoryComplianceStandards | Нет |
-> | regulatoryComplianceStandards / regulatoryComplianceControls | Нет |
-> | regulatoryComplianceStandards / regulatoryComplianceControls / regulatoryComplianceAssessments | Нет |
+> | регулаторикомплианцестандардс | Нет |
+> | Регулаторикомплианцестандардс/Регулаторикомплианцеконтролс | Нет |
+> | Регулаторикомплианцестандардс/Регулаторикомплианцеконтролс/Регулаторикомплианцеассессментс | Нет |
 > | securityContacts | Нет |
 > | securitySolutions | Нет |
 > | securitySolutionsReferenceData | Нет |
 > | securityStatuses | Нет |
 > | securityStatusesSummaries | Нет |
-> | serverVulnerabilityAssessments | Нет |
+> | сервервулнерабилитяссессментс | Нет |
 > | Параметры | Нет |
-> | subAssessments | Нет |
+> | подоценка | Нет |
 > | задачи; | Нет |
 > | topologies | Нет |
 > | workspaceSettings | Нет |
@@ -1703,20 +1703,20 @@ Jump to a resource provider namespace:
 > | diagnosticSettings | Нет |
 > | diagnosticSettingsCategories | Нет |
 
-## <a name="microsoftsecurityinsights"></a>Microsoft.SecurityInsights
+## <a name="microsoftsecurityinsights"></a>Microsoft. Секуритинсигхтс
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | aggregations | Нет |
+> | Агрегаты | Нет |
 > | alertRules | Нет |
-> | alertRuleTemplates | Нет |
-> | bookmarks | Нет |
+> | алертрулетемплатес | Нет |
+> | закладки | Нет |
 > | cases | Нет |
-> | dataConnectors | Нет |
+> | Подключения к компонентам | Нет |
 > | Сущности | Нет |
-> | entityQueries | Нет |
-> | officeConsents | Нет |
+> | ентитикуериес | Нет |
+> | оффицеконсентс | Нет |
 > | Параметры | Нет |
 
 ## <a name="microsoftservicebus"></a>Microsoft.ServiceBus
@@ -1724,17 +1724,17 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | namespaces | ДА |
-> | namespaces / authorizationrules | Нет |
-> | namespaces / disasterrecoveryconfigs | Нет |
-> | namespaces / eventgridfilters | Нет |
-> | namespaces / networkrulesets | Нет |
-> | namespaces / queues | Нет |
-> | namespaces / queues / authorizationrules | Нет |
-> | namespaces / topics | Нет |
-> | namespaces / topics / authorizationrules | Нет |
-> | namespaces / topics / subscriptions | Нет |
-> | namespaces / topics / subscriptions / rules | Нет |
+> | namespaces | Yes |
+> | пространства имен/authorizationrules | Нет |
+> | пространства имен/дисастеррековериконфигс | Нет |
+> | пространства имен/евентгридфилтерс | Нет |
+> | пространства имен/нетворкрулесетс | Нет |
+> | пространства имен и очереди | Нет |
+> | пространства имен/очереди/authorizationrules | Нет |
+> | пространства имен и разделы | Нет |
+> | пространства имен/разделы/authorizationrules | Нет |
+> | пространства имен, разделы и подписки | Нет |
+> | пространства имен, разделы, подписки и правила | Нет |
 > | premiumMessagingRegions | Нет |
 
 ## <a name="microsoftservicefabric"></a>Microsoft.ServiceFabric
@@ -1742,196 +1742,196 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | приложений | ДА |
-> | clusters | ДА |
-> | clusters / applications | Нет |
-> | containerGroups | ДА |
-> | containerGroupSets | ДА |
-> | edgeclusters | ДА |
-> | edgeclusters / applications | Нет |
-> | networks | ДА |
-> | secretstores | ДА |
-> | secretstores / certificates | Нет |
-> | secretstores / secrets | Нет |
-> | volumes. | ДА |
+> | веб-масштабированием; | Yes |
+> | clusters | Yes |
+> | кластеры и приложения | Нет |
+> | containerGroups | Yes |
+> | контаинерграупсетс | Yes |
+> | edgeclusters | Yes |
+> | еджеклустерс и приложения | Нет |
+> | networks | Yes |
+> | secretstores | Yes |
+> | секретсторес и сертификаты | Нет |
+> | секретсторес/секреты | Нет |
+> | volumes. | Yes |
 
 ## <a name="microsoftservicefabricmesh"></a>Microsoft.ServiceFabricMesh
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | приложений | ДА |
-> | containerGroups | ДА |
-> | gateways | ДА |
-> | networks | ДА |
-> | секретные коды | ДА |
-> | volumes. | ДА |
+> | веб-масштабированием; | Yes |
+> | containerGroups | Yes |
+> | gateways | Yes |
+> | networks | Yes |
+> | секретные коды | Yes |
+> | volumes. | Yes |
 
-## <a name="microsoftservices"></a>Microsoft.Services
+## <a name="microsoftservices"></a>Microsoft. Services
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | providerRegistrations | Нет |
-> | providerRegistrations / resourceTypeRegistrations | Нет |
-> | rollouts | ДА |
+> | Провидеррегистратионс/Ресаурцетиперегистратионс | Нет |
+> | rollouts | Yes |
 
 ## <a name="microsoftsignalrservice"></a>Microsoft.SignalRService
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | SignalR | ДА |
-> | SignalR / eventGridFilters | Нет |
+> | SignalR | Yes |
+> | SignalR/Евентгридфилтерс | Нет |
 
 ## <a name="microsoftsiterecovery"></a>Microsoft.SiteRecovery
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | SiteRecoveryVault | ДА |
+> | SiteRecoveryVault | Yes |
 
-## <a name="microsoftsoftwareplan"></a>Microsoft.SoftwarePlan
+## <a name="microsoftsoftwareplan"></a>Microsoft. Софтвареплан
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | hybridUseBenefits | Нет |
+> | хибридусебенефитс | Нет |
 
 ## <a name="microsoftsolutions"></a>Microsoft.Solutions
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | applicationDefinitions | ДА |
-> | приложений | ДА |
-> | jitRequests | ДА |
+> | applicationDefinitions | Yes |
+> | веб-масштабированием; | Yes |
+> | jitRequests | Yes |
 
 ## <a name="microsoftsql"></a>Microsoft.SQL
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | managedInstances | ДА |
-> | managedInstances / databases | ДА |
-> | managedInstances / databases / backupShortTermRetentionPolicies | Нет |
-> | managedInstances / databases / schemas / tables / columns / sensitivityLabels | Нет |
-> | managedInstances / databases / vulnerabilityAssessments | Нет |
-> | managedInstances / databases / vulnerabilityAssessments / rules / baselines | Нет |
-> | managedInstances / encryptionProtector | Нет |
-> | managedInstances / keys | Нет |
-> | managedInstances / restorableDroppedDatabases / backupShortTermRetentionPolicies | Нет |
-> | managedInstances / vulnerabilityAssessments | Нет |
-> | серверы | ДА |
-> | servers / administrators | Нет |
-> | servers / communicationLinks | Нет |
-> | servers / databases | ДА |
-> | servers / encryptionProtector | Нет |
-> | servers / firewallRules | Нет |
-> | servers / keys | Нет |
-> | servers / restorableDroppedDatabases | Нет |
-> | servers / serviceobjectives | Нет |
-> | servers / tdeCertificates | Нет |
-> | virtualClusters | Нет |
+> | managedInstances | Yes |
+> | Манажединстанцес и базы данных | Yes |
+> | Манажединстанцес/databases/БаккупшорттермретентионполиЦиес | Нет |
+> | Манажединстанцес/базы данных, схемы, таблицы, столбцы и Сенситивитилабелс | Нет |
+> | Манажединстанцес/databases/Вулнерабилитяссессментс | Нет |
+> | Манажединстанцес/базы данных/Вулнерабилитяссессментс/правила и базовые планы | Нет |
+> | Манажединстанцес/Енкриптионпротектор | Нет |
+> | Манажединстанцес и ключи | Нет |
+> | Манажединстанцес/Ресторабледроппеддатабасес/БаккупшорттермретентионполиЦиес | Нет |
+> | Манажединстанцес/Вулнерабилитяссессментс | Нет |
+> | servers | Yes |
+> | серверы и администраторы | Нет |
+> | серверы и Коммуникатионлинкс | Нет |
+> | серверы и базы данных | Yes |
+> | серверы и Енкриптионпротектор | Нет |
+> | серверы и Фиреваллрулес | Нет |
+> | серверы и ключи | Нет |
+> | серверы и Ресторабледроппеддатабасес | Нет |
+> | серверы и сервицеобжективес | Нет |
+> | серверы и Тдецертификатес | Нет |
+> | виртуалклустерс | Нет |
 
 ## <a name="microsoftsqlvirtualmachine"></a>Microsoft.SqlVirtualMachine
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | SqlVirtualMachineGroups | ДА |
-> | SqlVirtualMachineGroups / AvailabilityGroupListeners | Нет |
-> | SqlVirtualMachines | ДА |
+> | SqlVirtualMachineGroups | Yes |
+> | Склвиртуалмачинеграупс/Аваилабилитиграуплистенерс | Нет |
+> | SqlVirtualMachines | Yes |
 
 ## <a name="microsoftstorage"></a>Microsoft.Storage;
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | storageAccounts | ДА |
-> | storageAccounts / blobServices | Нет |
-> | storageAccounts / fileServices | Нет |
-> | storageAccounts / queueServices | Нет |
-> | storageAccounts / services | Нет |
-> | storageAccounts / services / metricDefinitions | Нет |
-> | storageAccounts / tableServices | Нет |
+> | storageAccounts | Yes |
+> | storageAccounts/Блобсервицес | Нет |
+> | storageAccounts/Филесервицес | Нет |
+> | storageAccounts/Куеуесервицес | Нет |
+> | storageAccounts и службы | Нет |
+> | storageAccounts/Services/metricDefinitions | Нет |
+> | storageAccounts/Таблесервицес | Нет |
 > | usages | Нет |
 
-## <a name="microsoftstoragecache"></a>Microsoft.StorageCache
+## <a name="microsoftstoragecache"></a>Microsoft. Сторажекаче
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | caches | ДА |
-> | caches / storageTargets | Нет |
-> | usageModels | Нет |
+> | кэширует | Yes |
+> | кэши/Сторажетаржетс | Нет |
+> | усажемоделс | Нет |
 
-## <a name="microsoftstoragereplication"></a>Microsoft.StorageReplication
+## <a name="microsoftstoragereplication"></a>Microsoft. Сторажерепликатион
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | replicationGroups | Нет |
+> | репликатионграупс | Нет |
 
 ## <a name="microsoftstoragesync"></a>Microsoft.StorageSync
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | storageSyncServices | ДА |
-> | storageSyncServices / registeredServers | Нет |
-> | storageSyncServices / syncGroups | Нет |
-> | storageSyncServices / syncGroups / cloudEndpoints | Нет |
-> | storageSyncServices / syncGroups / serverEndpoints | Нет |
-> | storageSyncServices / workflows | Нет |
+> | storageSyncServices | Yes |
+> | Сторажесинксервицес/Регистередсерверс | Нет |
+> | Сторажесинксервицес/Синкграупс | Нет |
+> | Сторажесинксервицес/Синкграупс/Клаудендпоинтс | Нет |
+> | Сторажесинксервицес/Синкграупс/Серверендпоинтс | Нет |
+> | Сторажесинксервицес и рабочие процессы | Нет |
 
 ## <a name="microsoftstoragesyncdev"></a>Microsoft.StorageSyncDev
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | storageSyncServices | ДА |
-> | storageSyncServices / registeredServers | Нет |
-> | storageSyncServices / syncGroups | Нет |
-> | storageSyncServices / syncGroups / cloudEndpoints | Нет |
-> | storageSyncServices / syncGroups / serverEndpoints | Нет |
-> | storageSyncServices / workflows | Нет |
+> | storageSyncServices | Yes |
+> | Сторажесинксервицес/Регистередсерверс | Нет |
+> | Сторажесинксервицес/Синкграупс | Нет |
+> | Сторажесинксервицес/Синкграупс/Клаудендпоинтс | Нет |
+> | Сторажесинксервицес/Синкграупс/Серверендпоинтс | Нет |
+> | Сторажесинксервицес и рабочие процессы | Нет |
 
 ## <a name="microsoftstoragesyncint"></a>Microsoft.StorageSyncInt
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | storageSyncServices | ДА |
-> | storageSyncServices / registeredServers | Нет |
-> | storageSyncServices / syncGroups | Нет |
-> | storageSyncServices / syncGroups / cloudEndpoints | Нет |
-> | storageSyncServices / syncGroups / serverEndpoints | Нет |
-> | storageSyncServices / workflows | Нет |
+> | storageSyncServices | Yes |
+> | Сторажесинксервицес/Регистередсерверс | Нет |
+> | Сторажесинксервицес/Синкграупс | Нет |
+> | Сторажесинксервицес/Синкграупс/Клаудендпоинтс | Нет |
+> | Сторажесинксервицес/Синкграупс/Серверендпоинтс | Нет |
+> | Сторажесинксервицес и рабочие процессы | Нет |
 
 ## <a name="microsoftstorsimple"></a>Microsoft.StorSimple
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | managers | ДА |
+> | managers | Yes |
 
 ## <a name="microsoftstreamanalytics"></a>Microsoft.StreamAnalytics
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | streamingjobs | ДА |
+> | streamingjobs | Yes |
 
 ## <a name="microsoftsubscription"></a>Microsoft.Subscription
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | cancel | Нет |
+> | Отмена | Нет |
 > | CreateSubscription | Нет |
 > | enable | Нет |
-> | rename | Нет |
+> | имени | Нет |
 > | SubscriptionDefinitions | Нет |
 > | SubscriptionOperations | Нет |
 
@@ -1940,19 +1940,19 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | environments | ДА |
-> | environments / accessPolicies | Нет |
-> | environments / eventsources | ДА |
-> | environments / referenceDataSets | ДА |
+> | environments | Yes |
+> | среды и accessPolicies | Нет |
+> | среды и классов EventSource | Yes |
+> | среды и Референцедатасетс | Yes |
 
-## <a name="microsoftvmwarecloudsimple"></a>Microsoft.VMwareCloudSimple
+## <a name="microsoftvmwarecloudsimple"></a>Microsoft. Вмвареклаудсимпле
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | dedicatedCloudNodes | ДА |
-> | dedicatedCloudServices | ДА |
-> | virtualMachines | ДА |
+> | дедикатедклауднодес | Yes |
+> | дедикатедклаудсервицес | Yes |
+> | virtualMachines | Yes |
 
 ## <a name="microsoftweb"></a>Microsoft.Web
 
@@ -1960,41 +1960,41 @@ Jump to a resource provider namespace:
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | apiManagementAccounts | Нет |
-> | apiManagementAccounts / apiAcls | Нет |
-> | apiManagementAccounts / apis | Нет |
-> | apiManagementAccounts / apis / apiAcls | Нет |
-> | apiManagementAccounts / apis / connectionAcls | Нет |
-> | apiManagementAccounts / apis / connections | Нет |
-> | apiManagementAccounts / apis / connections / connectionAcls | Нет |
-> | apiManagementAccounts / apis / localizedDefinitions | Нет |
-> | apiManagementAccounts / connectionAcls | Нет |
-> | apiManagementAccounts / connections | Нет |
+> | Апиманажементаккаунтс/списков ACL для | Нет |
+> | Апиманажементаккаунтс/API | Нет |
+> | Апиманажементаккаунтс/API/списков ACL для | Нет |
+> | Апиманажементаккаунтс/API/списков ACL для | Нет |
+> | Апиманажементаккаунтс/API/подключения | Нет |
+> | Апиманажементаккаунтс/API/Connections/списков ACL для | Нет |
+> | Апиманажементаккаунтс/API/Локализеддефинитионс | Нет |
+> | Апиманажементаккаунтс/списков ACL для | Нет |
+> | Апиманажементаккаунтс и подключения | Нет |
 > | billingMeters | Нет |
-> | certificates | ДА |
-> | connectionGateways | ДА |
-> | connections | ДА |
-> | customApis | ДА |
+> | certificates | Yes |
+> | connectionGateways | Yes |
+> | connections | Yes |
+> | customApis | Yes |
 > | deletedSites | Нет |
-> | функции | Нет |
-> | hostingEnvironments | ДА |
-> | hostingEnvironments / multiRolePools | Нет |
-> | hostingEnvironments / workerPools | Нет |
+> | functions | Нет |
+> | hostingEnvironments | Yes |
+> | hostingEnvironments/Мултиролепулс | Нет |
+> | hostingEnvironments/внешнего размещения | Нет |
 > | publishingUsers | Нет |
 > | к просмотру фильмов | Нет |
 > | resourceHealthMetadata | Нет |
 > | runtimes | Нет |
-> | serverFarms | ДА |
-> | serverFarms / eventGridFilters | Нет |
-> | sites | ДА |
-> | sites/config  | Нет |
-> | sites / eventGridFilters | Нет |
-> | sites / hostNameBindings | Нет |
-> | sites / networkConfig | Нет |
-> | sites / premieraddons | ДА |
-> | sites / slots | ДА |
-> | sites / slots / eventGridFilters | Нет |
-> | sites / slots / hostNameBindings | Нет |
-> | sites / slots / networkConfig | Нет |
+> | serverFarms | Yes |
+> | serverFarms/Евентгридфилтерс | Нет |
+> | sites | Yes |
+> | сайты и конфигурация  | Нет |
+> | Sites/Евентгридфилтерс | Нет |
+> | Sites/Хостнамебиндингс | Нет |
+> | Sites/файл networkconfig | Нет |
+> | Sites/премиераддонс | Yes |
+> | сайты и слоты | Yes |
+> | сайты/слоты/Евентгридфилтерс | Нет |
+> | сайты/слоты/Хостнамебиндингс | Нет |
+> | сайты/слоты/файл networkconfig | Нет |
 > | sourceControls | Нет |
 > | validate | Нет |
 > | verifyHostingEnvironmentVnet | Нет |
@@ -2012,7 +2012,7 @@ Jump to a resource provider namespace:
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | DeviceServices | ДА |
+> | DeviceServices | Yes |
 
 ## <a name="microsoftworkloadmonitor"></a>Microsoft.WorkloadMonitor
 
@@ -2026,6 +2026,6 @@ Jump to a resource provider namespace:
 > | monitors | Нет |
 > | notificationSettings | Нет |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Чтобы получить данные, идентичные значению файла с разделителями-запятыми, необходимо скачать [complete-mode-deletion.csv](https://github.com/tfitzmac/resource-capabilities/blob/master/complete-mode-deletion.csv).

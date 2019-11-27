@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: sstein, carlrab
 ms.date: 06/03/2019
-ms.openlocfilehash: 1f47b01c4a9227d0e2ee45b17645b2ae97e4ba3d
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: f111b19eb07c218a9f3250ef3ffdb8a97cf07542
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73821228"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74420729"
 ---
 # <a name="use-read-only-replicas-to-load-balance-read-only-query-workloads"></a>Использование реплик только для чтения для балансировки нагрузки рабочих нагрузок запросов только для чтения
 
@@ -35,7 +35,7 @@ ms.locfileid: "73821228"
 Если вы хотите убедиться, что приложение подключается к первичной реплике независимо от параметра `ApplicationIntent` в строке подключения SQL, необходимо явно отключить горизонтальное масштабирование чтения при создании базы данных или при изменении ее конфигурации. Например, если вы обновите базу данных с уровня "Стандартный" или "общего назначения" на "Премиум", критически важный для бизнеса или "Масштаб" и хотите убедиться, что все подключения продолжают работать с первичной репликой, отключите горизонтальное масштабирование чтения. Дополнительные сведения о том, как ее отключить, см. в разделе [Включение и отключение горизонтального масштабирования для чтения](#enable-and-disable-read-scale-out).
 
 > [!NOTE]
-> Хранилище данных запросов, расширенные события, функции SQL Profiler и аудита не поддерживаются в репликах только для чтения. 
+> Хранилище данных запросов, расширенные события, функции SQL Profiler и аудита не поддерживаются в репликах только для чтения.
 
 ## <a name="data-consistency"></a>Согласованность данных
 
@@ -50,13 +50,13 @@ ms.locfileid: "73821228"
 
 Например, следующая строка подключения позволяет подключить клиента к реплике только для чтения (замените элементы в угловых скобках правильными значениями для среды и удалите угловые скобки):
 
-```SQL
+```sql
 Server=tcp:<server>.database.windows.net;Database=<mydatabase>;ApplicationIntent=ReadOnly;User ID=<myLogin>;Password=<myPassword>;Trusted_Connection=False; Encrypt=True;
 ```
 
 Обе приведенные ниже строки подключения подключают подключить клиента к реплике для чтения и записи (замените элементы в угловых скобках правильными значениями для среды и удалите угловые скобки):
 
-```SQL
+```sql
 Server=tcp:<server>.database.windows.net;Database=<mydatabase>;ApplicationIntent=ReadWrite;User ID=<myLogin>;Password=<myPassword>;Trusted_Connection=False; Encrypt=True;
 
 Server=tcp:<server>.database.windows.net;Database=<mydatabase>;User ID=<myLogin>;Password=<myPassword>;Trusted_Connection=False; Encrypt=True;
@@ -66,7 +66,7 @@ Server=tcp:<server>.database.windows.net;Database=<mydatabase>;User ID=<myLogin>
 
 Можно проверить, подключены ли вы к реплике только для чтения, выполнив приведенный ниже запрос. Он возвращает READ_ONLY при подключении к реплике только для чтения.
 
-```SQL
+```sql
 SELECT DATABASEPROPERTYEX(DB_NAME(), 'Updateability')
 ```
 
@@ -80,54 +80,55 @@ SELECT DATABASEPROPERTYEX(DB_NAME(), 'Updateability')
 > [!NOTE]
 > `sys.resource_stats` динамического административного представления в логической базе данных Master возвращает данные об использовании ЦП и хранилища первичной реплики.
 
-
 ## <a name="enable-and-disable-read-scale-out"></a>Включение и отключение горизонтального масштабирования для чтения
 
-Горизонтальное масштабирование чтения включено по умолчанию для уровней служб Premium, критически важный для бизнеса и Scale. Невозможно включить горизонтальное масштабирование чтения на уровнях служб "базовый", "Стандартный" или "общего назначения". Горизонтальное масштабирование чтения автоматически отключается в базах данных масштаба, настроенных с 0 репликами. 
+Горизонтальное масштабирование чтения включено по умолчанию для уровней служб Premium, критически важный для бизнеса и Scale. Невозможно включить горизонтальное масштабирование чтения на уровнях служб "базовый", "Стандартный" или "общего назначения". Горизонтальное масштабирование чтения автоматически отключается в базах данных масштаба, настроенных с 0 репликами.
 
 Вы можете отключить и снова включить горизонтальное масштабирование чтения для отдельных баз данных и баз данных эластичного пула на уровне Premium или критически важный для бизнеса, используя следующие методы.
 
 > [!NOTE]
 > Возможность отключения горизонтального масштабирования для чтения предоставляется для обеспечения обратной совместимости.
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="azure-portal"></a>портале Azure
 
-Вы можете управлять параметром масштабирования чтения в колонке **Настройка** базы данных. 
+Вы можете управлять параметром масштабирования чтения в колонке **Настройка** базы данных.
 
 ### <a name="powershell"></a>PowerShell
 
+> [!IMPORTANT]
+> Модуль PowerShell Azure Resource Manager (RM) по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Модуль AzureRM продолжит принимать исправления ошибок до 2020 декабря.  Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны. Дополнительные сведения о совместимости см. [в разделе Введение в новый модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az).
+
 Для управления горизонтальным масштабированием для чтения в Azure PowerShell требуется выпуск Azure PowerShell за декабрь 2016 года или более поздней версии. Последнюю версию Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/azure/install-az-ps).
 
-Можно отключить или повторно включить горизонтальное масштабирование чтения в Azure PowerShell, вызвав командлет [Set-азсклдатабасе](/powershell/module/az.sql/set-azsqldatabase) и передав нужное значение — `Enabled` или `Disabled`--для параметра `-ReadScale`. 
+Можно отключить или повторно включить горизонтальное масштабирование чтения в Azure PowerShell, вызвав командлет [Set-азсклдатабасе](/powershell/module/az.sql/set-azsqldatabase) и передав нужное значение — `Enabled` или `Disabled`--для параметра `-ReadScale`.
 
 Чтобы отключить горизонтальное масштабирование чтения в существующей базе данных (замените элементы в угловых скобках правильными значениями для вашей среды и удалите угловые скобки):
 
 ```powershell
-Set-AzSqlDatabase -ResourceGroupName <myresourcegroup> -ServerName <myserver> -DatabaseName <mydatabase> -ReadScale Disabled
+Set-AzSqlDatabase -ResourceGroupName <resourceGroupName> -ServerName <serverName> -DatabaseName <databaseName> -ReadScale Disabled
 ```
+
 Чтобы отключить горизонтальное масштабирование чтения в новой базе данных (замените элементы в угловых скобках правильными значениями для вашей среды и удалите угловые скобки):
 
 ```powershell
-New-AzSqlDatabase -ResourceGroupName <myresourcegroup> -ServerName <myserver> -DatabaseName <mydatabase> -ReadScale Disabled -Edition Premium
+New-AzSqlDatabase -ResourceGroupName <resourceGroupName> -ServerName <serverName> -DatabaseName <databaseName> -ReadScale Disabled -Edition Premium
 ```
 
 Чтобы повторно включить горизонтальное масштабирование чтения в существующей базе данных (заменив элементы в угловых скобках на правильные значения для вашей среды и удалив угловые скобки):
 
 ```powershell
-Set-AzSqlDatabase -ResourceGroupName <myresourcegroup> -ServerName <myserver> -DatabaseName <mydatabase> -ReadScale Enabled
+Set-AzSqlDatabase -ResourceGroupName <resourceGroupName> -ServerName <serverName> -DatabaseName <databaseName> -ReadScale Enabled
 ```
 
-### <a name="rest-api"></a>REST API
+### <a name="rest-api"></a>Интерфейс REST API
 
 Чтобы создать базу данных с отключенным горизонтальным масштабированием чтения или изменить параметр для существующей базы данных, используйте следующий метод со свойством `readScale`, для которого задано значение `Enabled`, или `Disabled`, как показано в примере запроса ниже.
 
 ```rest
 Method: PUT
 URL: https://management.azure.com/subscriptions/{SubscriptionId}/resourceGroups/{GroupName}/providers/Microsoft.Sql/servers/{ServerName}/databases/{DatabaseName}?api-version= 2014-04-01-preview
-Body:
-{
-   "properties":
-   {
+Body: {
+   "properties": {
       "readScale":"Disabled"
    }
 }
@@ -137,7 +138,7 @@ Body:
 
 ## <a name="using-tempdb-on-read-only-replica"></a>Использование базы данных TempDB в реплике только для чтения
 
-База данных TempDB не реплицируется в реплики только для чтения. Каждая реплика имеет собственную версию базы данных TempDB, созданную при создании реплики. Это гарантирует, что база данных TempDB будет обновлена и может быть изменена во время выполнения запроса. Если Рабочая нагрузка только для чтения зависит от использования объектов TempDB, следует создать эти объекты в рамках скрипта запроса. 
+База данных TempDB не реплицируется в реплики только для чтения. Каждая реплика имеет собственную версию базы данных TempDB, созданную при создании реплики. Это гарантирует, что база данных TempDB будет обновлена и может быть изменена во время выполнения запроса. Если Рабочая нагрузка только для чтения зависит от использования объектов TempDB, следует создать эти объекты в рамках скрипта запроса.
 
 ## <a name="using-read-scale-out-with-geo-replicated-databases"></a>Использование горизонтального масштабирования для чтения с геореплицированными базами данных
 
@@ -146,6 +147,6 @@ Body:
 > [!NOTE]
 > Циклический перебор или любая другая маршрутизация с балансировкой нагрузки между локальными репликами базы данных-получателя не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения о предложении для масштабирования базы данных SQL см. в разделе [уровень служб в масштабе](./sql-database-service-tier-hyperscale.md).

@@ -1,19 +1,15 @@
 ---
 title: Шаблоны токенов Azure Блокчейн
 description: Шаблоны токенов Azure Блокчейн — это стандартизированные и многократно используемые шаблоны, упрощающие создание и развертывание маркеров на основе главной книги.
-services: azure-blockchain
-author: PatAltimore
-ms.author: patricka
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.service: azure-blockchain
 ms.reviewer: brendal
-ms.openlocfilehash: 5b8fc2bd4d2cedadb4c50f7ec11def8bea7b37c4
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 9600a6a251552acd319cc68d2bd281584d65546d
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73577290"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74324986"
 ---
 # <a name="azure-blockchain-tokens-templates"></a>Шаблоны токенов Azure Блокчейн
 
@@ -90,6 +86,6 @@ ms.locfileid: "73577290"
 
 Маркеры билетов обычно имеют дату окончания срока действия, которая делает их отличными от обычного маркера товара. Например, билет на самолет, концертный билет или спортивный запрос имеют параметры назначенных участников с конкретными датами использования. Вы не можете легко осуществлять обмен билетами между датами или областями.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Если вам требуется дополнительная гибкость для вашего сценария, Узнайте о создании собственных шаблонов маркеров с помощью [Token компонуемости](composability.md).

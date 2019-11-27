@@ -1,6 +1,6 @@
 ---
-title: Management concepts for Azure AD Domain Services | Microsoft Docs
-description: Learn about how to administer an Azure Active Directory Domain Services managed domain and the behavior of user accounts and passwords
+title: Основные понятия управления для доменных служб Azure AD | Документация Майкрософт
+description: Узнайте, как администрировать управляемый домен доменных служб Azure Active Directory и поведение учетных записей и паролей пользователей.
 services: active-directory-ds
 author: iainfoulds
 manager: daveba
@@ -10,70 +10,73 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 10/08/2019
 ms.author: iainfou
-ms.openlocfilehash: a5a08bddb53afe8f698b0d96621cc116ee866070
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: f239bab48e732755361fe734fdc24b37d3823c63
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74209178"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74481016"
 ---
-# <a name="management-concepts-for-user-accounts-passwords-and-administration-in-azure-active-directory-domain-services"></a>Management concepts for user accounts, passwords, and administration in Azure Active Directory Domain Services
+# <a name="management-concepts-for-user-accounts-passwords-and-administration-in-azure-active-directory-domain-services"></a>Основные понятия управления учетными записями пользователей, паролями и администрированием в доменных службах Azure Active Directory
 
-When you create and run an Azure Active Directory Domain Services (AD DS) managed domain, there are some differences in behavior compared to a traditional on-premises AD DS environment. You use the same administrative tools in Azure AD DS as a self-managed domain, but you can't directly access the domain controllers (DC). There's also some differences in behavior for password policies and password hashes depending on the source of the user account creation.
+При создании и запуске управляемого домена Azure Active Directory доменных служб (AD DS) существуют некоторые различия в поведении по сравнению с традиционной локальной средой AD DS. Вы используете те же средства администрирования в AD DS Azure, что и самостоятельно управляемый домен, но не можете напрямую обращаться к контроллерам домена. Также есть некоторые различия в поведении политик паролей и хэшей паролей в зависимости от источника создания учетной записи пользователя.
 
-This conceptual article details how to administer an Azure AD DS managed domain and the different behavior of user accounts depending on the way they're created.
+В этой статье описывается, как администрировать управляемый домен Azure AD DS и различное поведение учетных записей пользователей в зависимости от способа их создания.
 
-## <a name="domain-management"></a>Domain management
+## <a name="domain-management"></a>Управление доменами
 
-In Azure AD DS, the domain controllers (DCs) that contain all the resources like users and groups, credentials, and policies are part of the managed service. For redundancy, two DCs are created as part of an Azure AD DS managed domain. You can't sign in to these DCs to perform management tasks. Instead, you create a management VM that's joined to the Azure AD DS managed domain, then install your regular AD DS management tools. You can use the Active Directory Administrative Center or Microsoft Management Console (MMC) snap-ins like DNS or Group Policy objects, for example.
+В AD DS Azure контроллеры домена, которые содержат все ресурсы, такие как пользователи и группы, учетные данные и политики, являются частью управляемой службы. Для обеспечения избыточности в составе управляемого домена AD DS Azure создаются два DCs. Вы не можете войти в эти контроллеры домена для выполнения задач управления. Вместо этого создайте виртуальную машину управления, присоединенную к управляемому домену Azure AD DS, а затем установите стандартные средства управления AD DS. Например, можно использовать оснастки центр администрирования Active Directory или консоли управления Майкрософт (MMC), такие как DNS или групповая политика объекты.
 
-## <a name="user-account-creation"></a>User account creation
+## <a name="user-account-creation"></a>Создание учетной записи пользователя
 
-User accounts can be created in Azure AD DS in multiple ways. Most user accounts are synchronized in from Azure AD, which can also include user account synchronized from an on-premises AD DS environment. You can also manually create accounts directly in Azure AD DS. Some features, like initial password synchronization or password policy, behave differently depending on how and where user accounts are created.
+Учетные записи пользователей можно создавать в AD DS Azure несколькими способами. Большинство учетных записей пользователей синхронизируются в из Azure AD, что также может включать учетную запись пользователя, синхронизированную из локальной среды AD DS. Вы также можете вручную создать учетные записи непосредственно в Azure AD DS. Некоторые функции, такие как начальная синхронизация паролей или политика паролей, ведут себя по-разному в зависимости от того, как и где создаются учетные записи пользователей.
 
-* The user account can be synchronized in from Azure AD. This includes cloud-only user accounts created directly in Azure AD, and hybrid user accounts synchronized from an on-premises AD DS environment using Azure AD Connect.
-    * The majority of user accounts in Azure AD DS are created through the synchronization process from Azure AD.
-* The user account can be manually created in an Azure AD DS managed domain, and doesn't exist in Azure AD.
-    * If you need to create service accounts for applications that only run in Azure AD DS, you can manually create them in the managed domain. As synchronization is one-way from Azure AD, user accounts created in Azure AD DS aren't synchronized back to Azure AD.
+* Учетную запись пользователя можно синхронизировать в Azure AD. Сюда входят только облачные учетные записи пользователей, созданные непосредственно в Azure AD, а также гибридные учетные записи пользователей, синхронизированные из локальной среды AD DS с помощью Azure AD Connect.
+    * Большинство учетных записей пользователей в Azure AD DS создаются с помощью процесса синхронизации из Azure AD.
+* Учетную запись пользователя можно создать вручную в управляемом домене Azure AD DS и не существует в Azure AD.
+    * Если необходимо создать учетные записи служб для приложений, которые работают только в Azure AD DS, их можно создать вручную в управляемом домене. Так как синхронизация выполняется односторонним из Azure AD, учетные записи пользователей, созданные в AD DS Azure, не синхронизируются с Azure AD.
 
 ## <a name="password-policy"></a>Политика паролей
 
-Azure AD DS includes a default password policy that defines settings for things like account lockout, maximum password age, and password complexity. Settings like account lockout policy apply to all users in Azure AD DS, regardless of how the user was created as outlined in the previous section. A few settings, like minimum password length and password complexity, only apply to users created directly in Azure AD DS.
+AD DS Azure включает политику паролей по умолчанию, которая определяет параметры блокировки учетной записи, максимального срока действия пароля и сложности пароля. Такие параметры, как политика блокировки учетных записей, применяются ко всем пользователям в AD DS Azure независимо от того, как был создан пользователь, как описано в предыдущем разделе. Некоторые параметры, такие как минимальная длина пароля и сложность пароля, применяются только к пользователям, созданным непосредственно в AD DS Azure.
 
-You can create your own custom password policies to override the default policy in Azure AD DS. These custom policies can then be applied to specific groups of users as needed.
+Вы можете создать собственные политики паролей, чтобы переопределить политику по умолчанию в AD DS Azure. Эти пользовательские политики можно затем применять к конкретным группам пользователей по мере необходимости.
 
-For more information on the differences in how password policies are applied depending on the source of user creation, see [Password and account lockout policies on managed domains][password-policy].
+Дополнительные сведения о различиях в применении политик паролей в зависимости от источника создания пользователей см. в статье [политики блокировки паролей и учетных записей в управляемых доменах][password-policy].
 
-## <a name="password-hashes"></a>Password hashes
+## <a name="password-hashes"></a>Хэши паролей
 
 Чтобы выполнять аутентификацию пользователей в управляемом домене, Azure AD DS использует хэши паролей в формате, требуемом для аутентификации NTLM и Kerberos. Пока вы не включите Azure AD DS для клиента, Azure AD не будет создавать и хранить хэши паролей в формате, требуемом для аутентификации NTLM или Kerberos. Из соображений безопасности Azure AD никогда не хранит пароли в виде открытого текста. Поэтому Azure AD не может автоматически создать хэши паролей в формате NTLM или Kerberos по уже существующим учетным данным пользователей.
 
 При использовании облачных учетных записей пользователям нужно сменить пароль, чтобы получить доступ к Azure AD DS. При смене пароля хэши паролей автоматически создаются и сохраняются в Azure AD для аутентификации Kerberos и NTLM.
 
-For users synchronized from an on-premises AD DS environment using Azure AD Connect, [enable synchronization of password hashes][hybrid-phs].
+Для пользователей, синхронизированных из локальной среды AD DS с помощью Azure AD Connect, [включите синхронизацию хэшей паролей][hybrid-phs].
 
 > [!IMPORTANT]
-> Azure AD Connect only synchronizes legacy password hashes when you enable Azure AD DS for your Azure AD tenant. Legacy password hashes aren't used if you only use Azure AD Connect to synchronize an on-premises AD DS environment with Azure AD.
+> Azure AD Connect синхронизирует только хэши устаревших паролей при включении AD DS Azure для клиента Azure AD. Устаревшие хэши паролей не используются, если вы используете только Azure AD Connect для синхронизации локальной AD DS среды с Azure AD.
 >
-> If your legacy applications don't use NTLM authentication or LDAP simple binds, we recommend that you disable NTLM password hash synchronization for Azure AD DS. For more information, see [Disable weak cipher suites and NTLM credential hash synchronization][secure-domain].
+> Если устаревшие приложения не используют проверку подлинности NTLM или простые привязки LDAP, рекомендуется отключить синхронизацию хэша паролей NTLM для Azure AD DS. Дополнительные сведения см. в разделе [Отключение ненадежных наборов шифров и синхронизация хэша учетных данных NTLM][secure-domain].
 
-После настройки хэши паролей в требуемом формате сохраняются в управляемом домене Azure AD DS. Если вы удалите управляемый домен Azure AD DS, вместе с ним будут удалены все сохраненные хэши паролей. Synchronized credential information in Azure AD can't be reused if you later create an Azure AD DS managed domain - you must reconfigure the password hash synchronization to store the password hashes again. Ранее присоединенные к домену виртуальные машины и пользователи не смогут сразу выполнить аутентификацию, пока Azure AD не создаст и не сохранит хэши паролей в новом управляемом домене Azure AD DS. См. сведения о [синхронизации хэшей паролей в Azure AD DS и Azure AD Connect][azure-ad-password-sync].
+После настройки хэши паролей в требуемом формате сохраняются в управляемом домене Azure AD DS. Если вы удалите управляемый домен Azure AD DS, вместе с ним будут удалены все сохраненные хэши паролей. Синхронизированные учетные данные в Azure AD нельзя использовать повторно, если позже вы создадите управляемый домен AD DS Azure. необходимо повторно настроить синхронизацию хэша паролей, чтобы снова сохранить хэши паролей. Ранее присоединенные к домену виртуальные машины и пользователи не смогут сразу выполнить аутентификацию, пока Azure AD не создаст и не сохранит хэши паролей в новом управляемом домене Azure AD DS. См. сведения о [синхронизации хэшей паролей в Azure AD DS и Azure AD Connect][azure-ad-password-sync].
 
-## <a name="forests-and-trusts"></a>Forests and trusts
+> [!IMPORTANT]
+> Azure AD Connect следует устанавливать и настраивать только для синхронизации с локальными средами AD DS. Установка Azure AD Connect в управляемом домене Azure AD DS для синхронизации объектов обратно в Azure AD не поддерживается.
 
-A *forest* is a logical construct used by Active Directory Domain Services (AD DS) to group one or more *domains*. The domains then store objects for user or groups, and provide authentication services.
+## <a name="forests-and-trusts"></a>Леса и отношения доверия
 
-In Azure AD DS, the forest only contains one domain. On-premises AD DS forests often contain many domains. In large organizations, especially after mergers and acquisitions, you may end up with multiple on-premises forests that each then contain multiple domains.
+*Лес* — это логическая конструкция, используемая службами домен Active Directory Services (AD DS) для группирования одного или нескольких *доменов*. Затем домены сохраняют объекты для пользователей или групп и предоставляют службы проверки подлинности.
 
-By default, an Azure AD DS managed domain is created as a *user* forest. This type of forest synchronizes all objects from Azure AD, including any user accounts created in an on-premises AD DS environment. User accounts can directly authenticate against the Azure AD DS managed domain, such as to sign in to a domain-joined VM. A user forest works when the password hashes can be synchronized and users aren't using exclusive sign-in methods like smart card authentication.
+В AD DS Azure лес содержит только один домен. Локальные AD DSные леса часто содержат много доменов. В больших организациях, особенно после слияния и приобретения, вы можете получить несколько локальных лесов, каждый из которых будет содержать несколько доменов.
 
-In an Azure AD DS *resource* forest, users authenticate over a one-way forest *trust* from their on-premises AD DS. With this approach, the user objects and password hashes aren't synchronized to Azure AD DS. The user objects and credentials only exist in the on-premises AD DS. This approach lets enterprises host resources and application platforms in Azure that depend on classic authentication such LDAPS, Kerberos, or NTLM, but any authentication issues or concerns are removed. Azure AD DS resource forests are currently in preview.
+По умолчанию управляемый домен Azure AD DS создается в качестве леса *пользователя* . Лес этого типа синхронизирует все объекты из Azure AD, включая учетные записи пользователей, созданные в локальной среде AD DS. Учетные записи пользователей могут напрямую проходить проверку подлинности в управляемом домене Azure AD DS, например для входа в виртуальную машину, присоединенную к домену. Пользовательский лес работает, когда хэши паролей могут быть синхронизированы, и пользователи не используют эксклюзивные методы входа, такие как проверка подлинности с помощью смарт-карты.
 
-For more information about forest types in Azure AD DS, see [What are resource forests?][concepts-forest] and [How do forest trusts work in Azure AD DS?][concepts-trust]
+В лесу *ресурсов* Azure AD DS пользователи проходят проверку подлинности одностороннего *доверия* между лесами из локальной AD DS. При таком подходе пользовательские объекты и хэши паролей не синхронизируются с Azure AD DS. Пользовательские объекты и учетные данные существуют только в локальной AD DS. Такой подход позволяет предприятиям размещать ресурсы и платформы приложений в Azure, которые зависят от классической проверки подлинности, таких как LDAPs, Kerberos или NTLM, но все проблемы проверки подлинности или неполадки удаляются. В настоящее время доступны предварительные версии лесов ресурсов Azure AD DS.
 
-## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные сведения о типах лесов в Azure AD DS см. в статье [что такое леса ресурсов?][concepts-forest] и [как работают отношения доверия лесов в Azure AD DS?][concepts-trust]
 
-To get started, [create an Azure AD DS managed domain][create-instance].
+## <a name="next-steps"></a>Дополнительная информация
+
+Чтобы приступить к работе, [создайте управляемый домен AD DS Azure][create-instance].
 
 <!-- INTERNAL LINKS -->
 [password-policy]: password-policy.md

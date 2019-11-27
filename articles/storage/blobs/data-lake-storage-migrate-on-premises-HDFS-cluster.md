@@ -1,21 +1,21 @@
 ---
-title: Использование Azure Data Box для переноса данных из локального хранилища HDFS в службу хранилища Azure
+title: Перенос из локального хранилища HDFS в службу хранилища Azure с помощью Azure Data Box
 description: Перенос данных из локального хранилища HDFS в службу хранилища Azure
 author: normesta
 ms.service: storage
-ms.date: 06/11/2019
+ms.date: 11/19/2019
 ms.author: normesta
 ms.topic: conceptual
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: jamesbak
-ms.openlocfilehash: 508c67f73bc0e11330b5772b1c1ba3f9bee5e231
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: 3360209e9de54d6011a2a430cd2c1fb54a315c43
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72255672"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327606"
 ---
-# <a name="use-azure-data-box-to-migrate-data-from-an-on-premises-hdfs-store-to-azure-storage"></a>Использование Azure Data Box для переноса данных из локального хранилища HDFS в службу хранилища Azure
+# <a name="migrate-from-on-prem-hdfs-store-to-azure-storage-with-azure-data-box"></a>Перенос из локального хранилища HDFS в службу хранилища Azure с помощью Azure Data Box
 
 Вы можете перенести данные из локального хранилища HDFS кластера Hadoop в службу хранилища Azure (хранилище BLOB-объектов или Data Lake Storage 2-го поколения) с помощью устройства Data Box. Вы можете выбрать один из 80 Data Box ТБ или 770-ТБ Data Box Heavy.
 
@@ -27,7 +27,7 @@ ms.locfileid: "72255672"
 > * Отправьте устройство обратно в корпорацию Майкрософт.
 > * Переместите данные на Data Lake Storage 2-го поколения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Эти действия необходимы для завершения миграции.
 
@@ -57,13 +57,13 @@ ms.locfileid: "72255672"
 
     ![Страница "подключение и копирование"](media/data-lake-storage-migrate-on-premises-HDFS-cluster/data-box-connect-rest.png)
 
-2. В диалоговом окне доступ к учетной записи хранения и отправка данных скопируйте **конечную точку службы BLOB-объектов** и **ключ учетной записи хранения**. В конечной точке службы BLOB-объектов опустите значение @no__t – 0 и косую черту в конце.
+2. В диалоговом окне доступ к учетной записи хранения и отправка данных скопируйте **конечную точку службы BLOB-объектов** и **ключ учетной записи хранения**. В конечной точке службы BLOB-объектов опустите `https://` и косую черту в конце.
 
     В этом случае конечной точкой является: `https://mystorageaccount.blob.mydataboxno.microsoftdatabox.com/`. Часть URI, которую вы будете использовать, имеет следующие узлы: `mystorageaccount.blob.mydataboxno.microsoftdatabox.com`. Пример см. в разделе [Подключение к оставшимся по протоколу HTTP](/azure/databox/data-box-deploy-copy-data-via-rest). 
 
      ![Диалоговое окно "доступ к учетной записи хранения и передача данных"](media/data-lake-storage-migrate-on-premises-HDFS-cluster/data-box-connection-string-http.png)
 
-3. Добавьте конечную точку и Data Box или Data Box Heavy IP-адрес узла в `/etc/hosts` на каждом узле.
+3. Добавьте конечную точку и Data Box или Data Box Heavy IP-адрес узла для `/etc/hosts` на каждом узле.
 
     ```    
     10.128.5.42  mystorageaccount.blob.mydataboxno.microsoftdatabox.com
@@ -71,9 +71,9 @@ ms.locfileid: "72255672"
 
     Если вы используете другой механизм для DNS, следует убедиться, что конечная точка Data Box может быть разрешена.
 
-4. Установите переменную оболочки `azjars` в расположение JAR-файлов @no__t 1 и `azure-storage`. Эти файлы можно найти в каталоге установки Hadoop.
+4. Задайте для переменной оболочки `azjars` расположение JAR-файлов `hadoop-azure` и `azure-storage`. Эти файлы можно найти в каталоге установки Hadoop.
 
-    Чтобы определить, существуют ли эти файлы, используйте следующую команду: `ls -l $<hadoop_install_dir>/share/hadoop/tools/lib/ | grep azure`. Замените заполнитель `<hadoop_install_dir>` путем к каталогу, в котором установлен Hadoop. Обязательно используйте полные пути.
+    Чтобы определить, существуют ли эти файлы, используйте следующую команду: `ls -l $<hadoop_install_dir>/share/hadoop/tools/lib/ | grep azure`. Замените заполнитель `<hadoop_install_dir>` на путь к каталогу, в котором установлен Hadoop. Обязательно используйте полные пути.
 
     Примеры:
 
@@ -88,7 +88,7 @@ ms.locfileid: "72255672"
     -mkdir -p  wasb://<container_name>@<blob_service_endpoint>/<destination_directory>
     ```
 
-    * Замените заполнитель `<blob_service_endpoint>` именем конечной точки службы больших двоичных объектов.
+    * Замените заполнитель `<blob_service_endpoint>` именем конечной точки службы BLOB-объектов.
 
     * Замените заполнитель `<account_key>` ключом доступа вашей учетной записи.
 
@@ -105,7 +105,7 @@ ms.locfileid: "72255672"
     -ls -R  wasb://<container_name>@<blob_service_endpoint>/
     ```
 
-   * Замените заполнитель `<blob_service_endpoint>` именем конечной точки службы больших двоичных объектов.
+   * Замените заполнитель `<blob_service_endpoint>` именем конечной точки службы BLOB-объектов.
 
    * Замените заполнитель `<account_key>` ключом доступа вашей учетной записи.
 
@@ -123,19 +123,19 @@ ms.locfileid: "72255672"
            wasb://<container_name>@<blob_service_endpoint>/<destination_directory>
     ```
 
-    * Замените заполнитель `<blob_service_endpoint>` именем конечной точки службы больших двоичных объектов.
+    * Замените заполнитель `<blob_service_endpoint>` именем конечной точки службы BLOB-объектов.
 
     * Замените заполнитель `<account_key>` ключом доступа вашей учетной записи.
 
     * Замените заполнитель `<container-name>` именем своего контейнера.
 
-    * Замените заполнитель `<exlusion_filelist_file>` именем файла, содержащего список исключений файлов.
+    * Замените заполнитель `<exlusion_filelist_file>` именем файла, который содержит список исключений файлов.
 
     * Замените заполнитель `<source_directory>` именем каталога, содержащего данные, которые необходимо скопировать.
 
     * Замените заполнитель `<destination_directory>` именем каталога, в который необходимо скопировать данные.
 
-    Параметр `-libjars` позволяет сделать `hadoop-azure*.jar` и зависимыми файлами `azure-storage*.jar` доступными для `distcp`. Это может быть уже для некоторых кластеров.
+    Параметр `-libjars` используется для предоставления `hadoop-azure*.jar` и зависимых `azure-storage*.jar` файлов, доступных для `distcp`. Это может быть уже для некоторых кластеров.
 
     В следующем примере показано, как команда `distcp` используется для копирования данных.
 
@@ -153,7 +153,7 @@ ms.locfileid: "72255672"
 
     * Попробуйте изменить число модулей сопоставления. (В приведенном выше примере используются модули сопоставления `m` = 4).
 
-    * Попробуйте выполнить несколько `distcp` параллельно.
+    * Попробуйте параллельно запустить несколько `distcp`.
 
     * Помните, что большие файлы работают лучше, чем небольшие файлы.
 
@@ -206,7 +206,7 @@ ms.locfileid: "72255672"
 
 ### <a name="create-a-service-principal-for-your-azure-data-lake-storage-gen2-account"></a>Создание субъекта-службы для учетной записи Azure Data Lake Storage 2-го поколения
 
-Сведения о создании субъекта-службы см. в статье @no__t 0How: Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
+Сведения о создании субъекта-службы см. в статье [как использовать портал для создания приложения Azure AD и субъекта-службы, которые могут получать доступ к ресурсам](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
 
 * При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role) этой статьи, не забудьте назначить субъекту-службе роль **участника данных BLOB-объектов хранилища**.
 
@@ -237,11 +237,11 @@ sudo -u hdfs ./copy-acls.sh -s /{hdfs_path} > ./filelist.json
    ./copy-acls.py -s ./filelist.json -i ./id_map.json -g
    ```
 
-   Этот скрипт создает файл с именем `id_map.json`, который содержит удостоверения, которые необходимо сопоставлять с удостоверениями на основе надстроек.
+   Этот скрипт создает файл с именем `id_map.json`, содержащий удостоверения, которые необходимо сопоставлять с удостоверениями на основе надстроек.
 
 3. Откройте файл `id_map.json` в текстовом редакторе.
 
-4. Для каждого объекта JSON, который отображается в файле, обновите атрибут `target` либо имя участника пользователя AAD (UPN), либо ObjectId (OID) с соответствующим сопоставленным удостоверением. Когда все будет готово, сохраните файл. Этот файл потребуется на следующем шаге.
+4. Для каждого объекта JSON, который отображается в файле, обновите атрибут `target` либо имя участника-пользователя AAD (UPN), либо ObjectId (OID) с соответствующим сопоставленным удостоверением. Когда все будет готово, сохраните файл. Этот файл потребуется на следующем шаге.
 
 ### <a name="apply-permissions-to-copied-files-and-apply-identity-mappings"></a>Применить разрешения к скопированным файлам и применить сопоставления удостоверений
 
@@ -255,9 +255,9 @@ sudo -u hdfs ./copy-acls.sh -s /{hdfs_path} > ./filelist.json
 
 * Замените заполнитель `<container-name>` именем своего контейнера.
 
-* Замените заполнители `<application-id>` и `<client-secret>` ИДЕНТИФИКАТОРом приложения и секретом клиента, собранным при создании субъекта-службы.
+* Замените заполнители `<application-id>` и `<client-secret>` ИДЕНТИФИКАТОРом приложения и секретом клиента, собранными при создании субъекта-службы.
 
-## <a name="appendix-split-data-across-multiple-data-box-devices"></a>Приложение. Разбиение данных на несколько устройств Data Box
+## <a name="appendix-split-data-across-multiple-data-box-devices"></a>Приложение. разбиение данных между несколькими Data Box устройствами
 
 Перед переносом данных на устройство Data Box необходимо скачать некоторые вспомогательные скрипты, убедиться, что данные упорядочены в соответствии с устройством Data Box, и исключить все ненужные файлы.
 
@@ -352,6 +352,6 @@ sudo -u hdfs ./copy-acls.sh -s /{hdfs_path} > ./filelist.json
 .*/hbase/data/WALs.*
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте, как Data Lake Storage 2-го поколения работает с кластерами HDInsight. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight).

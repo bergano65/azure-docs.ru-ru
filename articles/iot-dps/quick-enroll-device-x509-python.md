@@ -1,21 +1,21 @@
 ---
-title: В этом кратком руководстве показана регистрация устройств X.509 в Службе подготовки устройств Azure с помощью Python | Документация Майкрософт
+title: Краткое руководство. Регистрация устройств X.509 в Службе подготовки устройств Azure с помощью Python
 description: В этом кратком руководстве используется групповая регистрация. В этом кратком руководстве описана регистрация устройств X.509 в Службе подготовки устройств к добавлению в Центр Интернета вещей Azure с помощью Python
 author: wesmc7777
 ms.author: wesmc
-ms.date: 04/10/2019
+ms.date: 11/08/2019
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 manager: philmea
 ms.devlang: python
 ms.custom: mvc
-ms.openlocfilehash: d9ed0cb82f8ad1c19f95299b3dd651fc099368b8
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.openlocfilehash: 23ae0bd9e66cbb592db0ec9adea5e4332a9aa19b
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59500776"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73904720"
 ---
 # <a name="quickstart-enroll-x509-devices-to-the-device-provisioning-service-using-python"></a>Краткое руководство. Регистрация устройств X.509 в Службе подготовки устройств с помощью Python
 
@@ -148,4 +148,4 @@ ms.locfileid: "59500776"
 В рамках работы с этим кратким руководством вы зарегистрировали группу имитированных устройств X.509 в службе подготовки устройств. Дополнительные сведения о подготовке устройств см. в руководстве по настройке службы подготовки устройств на портале Azure. 
 
 > [!div class="nextstepaction"]
-> [Руководства по службе подготовки устройств к добавлению в Центр Интернета вещей Azure](./tutorial-set-up-cloud.md)
+> [Руководства по службе подготовки устройств для Центра Интернета вещей Azure](./tutorial-set-up-cloud.md)

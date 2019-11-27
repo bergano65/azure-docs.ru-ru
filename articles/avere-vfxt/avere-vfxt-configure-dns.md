@@ -41,7 +41,8 @@ ms.locfileid: "72256263"
 
 Слева отображается кластер vserver, а IP-адреса отображаются в центре и справа. Укажите для каждой точки доступа клиента записи и указатели A, как показано на рисунке.
 
-Схема DNS для 0Avere кластера @no__t-no__t-1<!--- separate text description file provided  [diagram text description](avere-vfxt-rrdns-alt-text.md) -->
+](media/avere-vfxt-rrdns-diagram.png) 
+ схемы DNS ![кластера Авере с циклическим перебором<!--- separate text description file provided  [diagram text description](avere-vfxt-rrdns-alt-text.md) -->
 
 Каждый IP-адрес, обращенный к клиенту, должен иметь уникальное имя для внутреннего использования кластером. (На этой схеме клиентские IP-адреса называются vs1-client-IP-* для ясности, но в рабочей среде вам, вероятно, следует использовать более точное определение, например, client*.)
 

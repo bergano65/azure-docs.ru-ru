@@ -17,12 +17,12 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e71e9ef72e7b6caaa3894bb30c6e7e9cf762232a
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: bd144f1922456520075c1863ec347e85eb3889db
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72802714"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74379859"
 ---
 # <a name="use-microsoft-authenticator-or-microsoft-intune-company-portal-on-xamarin-applications"></a>Использование Microsoft Authenticator или Microsoft Intune корпоративный портал в приложениях Xamarin
 
@@ -83,11 +83,11 @@ public override bool OpenUrl(UIApplication app, NSUrl url,
 
 **Например:**
 
-В `App.cs` добавьте:
+В `App.cs`добавьте:
 ```CSharp
    public static object RootViewController { get; set; }
 ```
-В `AppDelegate.cs` добавьте:
+В `AppDelegate.cs`добавьте:
 ```CSharp
    LoadApplication(new App());
    App.RootViewController = new UIViewController();
@@ -180,8 +180,10 @@ public static string redirectUriOnIos = "msauth.com.yourcompany.XForms://auth";
 
 ## <a name="brokered-authentication-for-android"></a>Аутентификация через посредника для Android
 
-Поддержка брокера недоступна для Android.
+В данный момент MSAL.NET поддерживает только платформу Xamarin. iOS. Он еще не поддерживает брокеры для платформы Xamarin. Android.
 
-## <a name="next-steps"></a>Дальнейшие действия
+Собственная библиотека MSAL Android уже поддерживает ее. Дополнительные сведения см. [в разделе Проверка подлинности через посредника в Android](https://docs.microsoft.com/azure/active-directory/develop/brokered-auth.md) .
+
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о [конкретных универсальная платформа Windowsх в MSAL.NET](msal-net-uwp-considerations.md).

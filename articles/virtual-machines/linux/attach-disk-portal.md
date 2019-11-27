@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/12/2018
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: 78604a4f6fd5a6bcd21d0adc80c1c60278068836
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 9b0602f526991be37b7a9cce1d621dc2138dec48
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74037049"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74279135"
 ---
 # <a name="use-the-portal-to-attach-a-data-disk-to-a-linux-vm"></a>Подключение диска данных к виртуальной машине Linux с помощью портала 
 В этой статье показано, как подключить новый и существующий диски к виртуальной машине Linux на портале Azure. Вы также можете [подключить диск данных к виртуальной машине Windows на портале Azure](../windows/attach-managed-disk-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
@@ -33,7 +33,7 @@ ms.locfileid: "74037049"
 
 
 ## <a name="find-the-virtual-machine"></a>Поиск виртуальной машины
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портале Azure](https://portal.azure.com/).
 2. В меню слева щелкните **Виртуальные машины**.
 3. Затем выберите виртуальную машину из списка.
 4. На странице "Виртуальные машины" в разделе **Основные компоненты** щелкните **Диски**.
@@ -183,6 +183,15 @@ Writing inode tables: done
 Creating journal (32768 blocks): done
 Writing superblocks and filesystem accounting information: done
 ```
+
+#### <a name="alternate-method-using-parted"></a>Альтернативный метод, использующий составной
+Служебной программе fdisk требуется интерактивный ввод, поэтому он не идеально подходит для использования в скриптах автоматизации. Тем не менее, [часть](https://www.gnu.org/software/parted/) служебной программы может быть написана в скрипте и, следовательно, лучше в сценариях автоматизации. Частную служебную программу можно использовать для секционирования и форматирования диска данных. В этом пошаговом руководстве мы используем новый диск данных/Dev/SDC и отформатим его с помощью файловой системы [XFS](https://xfs.wiki.kernel.org/) .
+```bash
+sudo parted /dev/sdc --script mklabel gpt mkpart xfspart xfs 0% 100%
+partprobe /dev/sdc1
+```
+Как показано выше, мы используем служебную программу [партпробе](https://linux.die.net/man/8/partprobe) , чтобы убедиться, что ядро немедленно знает о новом разделе и файловой системе. Невозможность использовать партпробе может привести к тому, что команды blkid или лслбк не возвращали UUID для новой файловой системы немедленно.
+
 ### <a name="mount-the-disk"></a>Подключение диска
 Создайте каталог для подключения файловой системы, используя `mkdir`. В следующем примере создается каталог в */datadrive*:
 

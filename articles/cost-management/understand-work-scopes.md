@@ -1,6 +1,6 @@
 ---
-title: Understand and work with Azure Cost Management scopes
-description: This article helps you understand billing and resource management scopes available in Azure and how to use the scopes in Cost Management and APIs.
+title: Общие сведения и работа с областями управления затратами Azure
+description: Эта статья поможет вам понять области выставления счетов и управления ресурсами, доступные в Azure, а также как использовать области в управлении затратами и API-интерфейсах.
 services: cost-management
 keywords: ''
 author: bandersmsft
@@ -19,237 +19,237 @@ ms.locfileid: "74218874"
 ---
 # <a name="understand-and-work-with-scopes"></a>Общие сведения об областях и работа с ними
 
-This article helps you understand billing and resource management scopes available in Azure and how to use the scopes in Cost Management and APIs.
+Эта статья поможет вам понять области выставления счетов и управления ресурсами, доступные в Azure, а также как использовать области в управлении затратами и API-интерфейсах.
 
 ## <a name="scopes"></a>Области действия
 
-A _scope_ is a node in the Azure resource hierarchy where Azure AD users access and manage services. Most Azure resources are created and deployed into resource groups, which are part of subscriptions. Microsoft also offers two hierarchies above Azure subscriptions that have specialized roles to manage billing data:
-- Billing data, such as payments and invoices
-- Cloud services, such as cost and policy governance
+_Область_ — это узел в иерархии ресурсов Azure, где пользователи Azure AD получают доступ к службам и управляют ими. Большинство ресурсов Azure создаются и развертываются в группах ресурсов, которые являются частью подписок. Корпорация Майкрософт также предлагает две иерархии для подписок Azure, которые имеют специализированные роли для управления данными о выставлении счетов.
+- Данные выставления счетов, такие как платежи и счета
+- Облачные службы, такие как управление затратами и политиками
 
-Scopes are where you manage billing data, have roles specific to payments, view invoices, and conduct general account management. Billing and account roles are managed separately from those used for resource management, which use [Azure RBAC](../role-based-access-control/overview.md). To clearly distinguish the intent of the separate scopes, including the access control differences, these are referred to as _billing scopes_ and _RBAC scopes_, respectively.
+Области — это место, где вы управляете данными для выставления счетов, имеете роли, относящиеся к платежам, просматривайте счета и проводите общее управление учетными записями. Управление выставлением счетов и учетными записями осуществляется отдельно от тех, которые используются для управления ресурсами и используют [Azure RBAC](../role-based-access-control/overview.md). Чтобы четко отличать назначение отдельных областей, включая различия в управлении доступом, они называются _областью выставления счетов_ и _областями RBAC_соответственно.
 
-## <a name="how-cost-management-uses-scopes"></a>How Cost Management uses scopes
+## <a name="how-cost-management-uses-scopes"></a>Как в управлении затратами используются области
 
-Cost Management works at all scopes above resources to allow organizations to manage costs at the level at which they have access, whether that's the entire billing account or a single resource group. Although billing scopes differ based on your Microsoft agreement (subscription type), the RBAC scopes do not.
+Управление затратами работает во всех областях, находящегося над ресурсами, чтобы позволить организациям управлять затратами на уровне, на котором они имеют доступ, будь то учетная запись выставления счетов или одна группа ресурсов. Хотя области выставления счетов отличаются в зависимости от соглашения Майкрософт (типа подписки), области RBAC не имеют.
 
-## <a name="azure-rbac-scopes"></a>Azure RBAC scopes
+## <a name="azure-rbac-scopes"></a>Области Azure RBAC
 
-Azure supports three scopes for resource management. Each scope supports managing access and governance, including but not limited to, cost management.
+Azure поддерживает три области для управления ресурсами. Каждая область поддерживает управление доступом и управлением, включая управление затратами, но не ограничиваясь ими.
 
-- [**Management groups**](../governance/management-groups/overview.md) - Hierarchical containers, up to eight levels, to organize Azure subscriptions.
+- [**Группы управления**](../governance/management-groups/overview.md) — иерархические контейнеры (до восьми уровней) для организации подписок Azure.
 
-    Resource type: [Microsoft.Management/managementGroups](/rest/api/resources/managementgroups)
+    Тип ресурса: [Microsoft. Management/манажементграупс](/rest/api/resources/managementgroups)
 
-- **Subscriptions** - Primary containers for Azure resources.
+- **Подписки** — основные контейнеры для ресурсов Azure.
 
-    Resource type: [Microsoft.Resources/subscriptions](/rest/api/resources/subscriptions)
+    Тип ресурса: [Microsoft. Resources/Subscriptions](/rest/api/resources/subscriptions)
 
-- [**Resource groups**](../azure-resource-manager/resource-group-overview.md#resource-groups) - Logical groupings of related resources for an Azure solution that share the same lifecycle. For example resources that are deployed and deleted together.
+- [**Группы ресурсов**](../azure-resource-manager/resource-group-overview.md#resource-groups) — это логические группы связанных ресурсов для решения Azure, которые используют один жизненный цикл. Например, ресурсы, которые развертываются и удаляются вместе.
 
-    Resource type: [Microsoft.Resources/subscriptions/resourceGroups](/rest/api/resources/resourcegroups)
+    Тип ресурса: [Microsoft. Resources/Subscriptions/resourceGroups](/rest/api/resources/resourcegroups)
 
-Management groups allow you to organize subscriptions into a hierarchy. For example, you might create a logical organization hierarchy using management groups. Then, give teams subscriptions for production and dev/test workloads. And then create resource groups in the subscriptions to manage each sub-system or component.
+Группы управления позволяют организовывать подписки в иерархии. Например, вы можете создать логическую иерархию организации с помощью групп управления. Затем предоставьте рабочие группы подписок для рабочих нагрузок рабочей среды и разработки и тестирования. А затем создать группы ресурсов в подписках для управления каждой подсистемой или компонентом.
 
-Creating an organizational hierarchy allows cost and policy compliance roll-up organizationally. Then, each leader can view and analyze their current costs. And then they can create budgets to curb bad spending patterns and optimize costs with Advisor recommendations at the lowest level.
+Создание организационной иерархии обеспечивает организацию затрат и соблюдение политик в Организации. Затем каждый лидер может просматривать и анализировать текущие затраты. Затем они могут создавать бюджеты с неправильными шаблонами расходов и оптимизировать затраты с рекомендациями помощника на самом низком уровне.
 
-Granting access to view costs and optionally manage cost configuration, such as budgets and exports, is performed on governance scopes using Azure RBAC. You use Azure RBAC to grant Azure AD users and groups access to perform a predefined set of actions that are defined in a role on a specific scope and below. For instance, a role assigned to a management group scope also grants the same permissions to nested subscriptions and resource groups.
+Предоставление доступа для просмотра затрат и при необходимости управления конфигурацией затрат, например бюджетами и экспортами, выполняется в областях управления с помощью Azure RBAC. Azure RBAC используется для предоставления пользователям и группам Azure AD доступа к предопределенному набору действий, определенных в роли в определенной области и ниже. Например, роль, назначенная области группы управления, также предоставляет те же разрешения для вложенных подписок и групп ресурсов.
 
-Cost Management supports the following built-in roles for each of the following scopes:
+Управление затратами поддерживает следующие встроенные роли для каждой из следующих областей:
 
-- [**Owner**](../role-based-access-control/built-in-roles.md#owner) – Can view costs and manage everything, including cost configuration.
-- [**Contributor**](../role-based-access-control/built-in-roles.md#contributor) – Can view costs and manage everything, including cost configuration, but excluding access control.
-- [**Reader**](../role-based-access-control/built-in-roles.md#reader) – Can view everything, including cost data and configuration, but cannot make any changes.
-- [**Cost Management Contributor**](../role-based-access-control/built-in-roles.md#cost-management-contributor) – Can view costs, manage cost configuration, and view recommendations.
-- [**Cost Management Reader**](../role-based-access-control/built-in-roles.md#cost-management-reader) – Can view cost data, cost configuration, and view recommendations.
+- [**Владелец**](../role-based-access-control/built-in-roles.md#owner) — может просматривать затраты и управлять всеми, включая настройку затрат.
+- [**Участник**](../role-based-access-control/built-in-roles.md#contributor) — может просматривать затраты и управлять всеми, включая настройку затрат, но без контроля доступа.
+- [**Читатель**](../role-based-access-control/built-in-roles.md#reader) — может просматривать все, включая данные о затратах и конфигурацию, но не может вносить какие-либо изменения.
+- [**Участник управления затратами**](../role-based-access-control/built-in-roles.md#cost-management-contributor) — может просматривать затраты, управлять конфигурацией затрат и просматривать рекомендации.
+- [**Читатель управления затратами**](../role-based-access-control/built-in-roles.md#cost-management-reader) — может просматривать данные о затратах, конфигурацию затрат и рекомендации по просмотру.
 
-Cost Management Contributor is the recommended least-privilege role. It allows people access to create and manage budgets and exports to more effectively monitor and report on costs. Cost Management Contributors might also require additional roles to support end-to-end cost management scenarios. Рассмотрим следующие сценарии.
+Участник управления затратами является рекомендуемой ролью с минимальными привилегиями. Она позволяет пользователям создавать и контролировать бюджеты и экспорты для более эффективного мониторинга и создания отчетов о затратах. Участники службы "Управление затратами" могут также требовать дополнительных ролей для поддержки комплексных сценариев управления затратами. Рассмотрим следующие сценарии.
 
-- **Act when budgets are exceeded** – Cost Management Contributors also need access to create and/or manage action groups to automatically react to overages. Consider granting [Monitoring Contributor](../role-based-access-control/built-in-roles.md#monitoring-contributor) to a resource group that contains the action group to use when budget thresholds are exceeded. Automating specific actions requires additional roles for the specific services used, such as Automation and Azure Functions.
-- **Schedule cost data export** – Cost Management Contributors also need access to manage storage accounts to schedule an export to copy data into a storage account. Consider granting [Storage Account Contributor](../role-based-access-control/built-in-roles.md#storage-account-contributor) to a resource group that contains the storage account where cost data is exported.
-- **Viewing cost-saving recommendations** – Cost Management Readers and Cost Management Contributors have access to *view* cost recommendations by default. However, access to act on the cost recommendations requires access to individual resources. Consider granting a [service-specific role](../role-based-access-control/built-in-roles.md#built-in-role-descriptions) if you want to act on a cost-based recommendation.
+- **Действует при превышении бюджетов** — участники управления затратами также должны иметь доступ для создания и/или управления группами действий, чтобы автоматически реагировать на превышение времени. Рассмотрите возможность предоставления [участнику мониторинга](../role-based-access-control/built-in-roles.md#monitoring-contributor) группы ресурсов, которая содержит группу действий, которая будет использоваться при превышении пороговых значений бюджета. Для автоматизации определенных действий требуются дополнительные роли для конкретных используемых служб, таких как автоматизация и функции Azure.
+- **Экспорт данных о затратах** . Участники службы "Управление затратами" также должны иметь доступ к управлению учетными записями хранения, чтобы запланировать экспорт для копирования данных в учетную запись хранения. Рекомендуется предоставить [участнику учетной записи хранения](../role-based-access-control/built-in-roles.md#storage-account-contributor) группу ресурсов, содержащую учетную запись хранения, в которую экспортируются данные о затратах.
+- **Просмотр рекомендаций по экономии затрат** — средства чтения и управления затратами по умолчанию имеют доступ для *просмотра* рекомендаций по затратам. Однако для использования рекомендаций по затратам требуется доступ к отдельным ресурсам. Рекомендуется предоставлять [роль конкретной службы](../role-based-access-control/built-in-roles.md#built-in-role-descriptions) , если вы хотите использовать рекомендацию на основе стоимости.
 
-## <a name="enterprise-agreement-scopes"></a>Enterprise Agreement scopes
+## <a name="enterprise-agreement-scopes"></a>Области Соглашение Enterprise
 
-Enterprise Agreement (EA) billing accounts, also called enrollments, have the following scopes:
+Соглашение Enterprise (EA) учетные записи выставления счетов, также называемые регистрациями, имеют следующие области.
 
-- [**Billing account**](../billing/billing-view-all-accounts.md) - Represents an EA enrollment. Invoices are generated at this scope. Purchases that aren't usage-based, such as Marketplace and reservations, are only available at this scope. They aren't represented in departments or enrollment accounts.
+- [**Счет выставления счетов**](../billing/billing-view-all-accounts.md) — представляет регистрацию EA. В этой области создаются счета. Покупки, не основанные на использовании, например Marketplace и резервирования, доступны только в этой области. Они не представлены в подразделениях или учетных записях регистрации.
 
-    Resource type: `Microsoft.Billing/billingAccounts (accountType = Enrollment)`
-- **Department** - Optional grouping of enrollment accounts.
+    Тип ресурса: `Microsoft.Billing/billingAccounts (accountType = Enrollment)`
+- **Отдел** — необязательное группирование учетных записей регистрации.
 
-    Resource type: `Billing/billingAccounts/departments`
+    Тип ресурса: `Billing/billingAccounts/departments`
 
-- **Enrollment account** - Represents a single account owner. Doesn't support granting access to multiple people.
+- **Учетная запись регистрации** — представляет одного владельца учетной записи. Не поддерживает предоставление доступа нескольким людям.
 
-    Resource type: `Microsoft.Billing/billingAccounts/enrollmentAccounts`
+    Тип ресурса: `Microsoft.Billing/billingAccounts/enrollmentAccounts`
 
-Although governance scopes are bound to a single directory, EA billing scopes aren't. An EA billing account may have subscriptions across any number of Azure AD directories.
+Хотя области управления привязаны к одному каталогу, области выставления счетов EA нет. Учетная запись выставления счетов EA может иметь подписки в любом количестве каталогов Azure AD.
 
-EA billing scopes support the following roles:
+Области выставления счетов EA поддерживают следующие роли:
 
-- **Enterprise admin** – Can manage billing account settings and access, can view all costs, and can manage cost configuration. For example, budgets and exports. In function, the EA billing scope is the same as [Cost Management Contributor Azure RBAC role](../role-based-access-control/built-in-roles.md#cost-management-contributor).
-- **Enterprise read-only user** – Can view billing account settings, cost data, and cost configuration. For example, budgets and exports. In function, the EA billing scope is the same as the [Cost Management Reader Azure RBAC role](../role-based-access-control/built-in-roles.md#cost-management-reader).
-- **Department admin** – Can manage department settings, such as cost center, and can access, view all costs, and manage cost configuration. For example, budgets and exports.  The **DA view charges** billing account setting must be enabled for department admins and read-only users to see costs. If **DA view charges** is disabled, department users can't see costs at any level, even if they are an account or subscription owner.
-- **Department read-only user** – Can view department settings, cost data, and cost configuration. For example, budgets and exports. If **DA view charges** is disabled, department users can't see costs at any level, even if they are an account or subscription owner.
-- **Account owner** – Can manage enrollment account settings (such as cost center), view all costs, and manage cost configuration (such as budgets and exports) for the enrollment account. The **AO view charges** billing account setting must be enabled for account owners and RBAC users to see costs.
+- **Администратор предприятия** — может управлять параметрами и доступом к учетной записи выставления счетов, может просматривать все затраты и управлять конфигурацией затрат. Например, бюджеты и экспорты. В функции, область выставления счетов EA является той же, что и [роль Azure RBAC участника "Управление затратами](../role-based-access-control/built-in-roles.md#cost-management-contributor)".
+- **Корпоративный доступ только для чтения** — может просматривать параметры учетной записи выставления счетов, данные о затратах и конфигурацию затрат. Например, бюджеты и экспорты. В функции, область выставления счетов EA совпадает с [ролью Azure RBAC для чтения управления затратами](../role-based-access-control/built-in-roles.md#cost-management-reader).
+- **Администратор отдела** — может управлять параметрами отдела, такими как центр затрат, а также получать доступ, просматривать все затраты и управлять конфигурацией затрат. Например, бюджеты и экспорты.  Для учетных записей администраторов отдела и пользователей, доступных только для чтения, необходимо включить параметр счета для выставления счетов за **представление Da** . Если **плата за представление Da** отключена, пользователи отдела не смогут просматривать затраты на любом уровне, даже если они являются владельцами учетной записи или подписки.
+- **Пользователь только для чтения в отделе** — может просматривать параметры отдела, данные о затратах и конфигурацию затрат. Например, бюджеты и экспорты. Если **плата за представление Da** отключена, пользователи отдела не смогут просматривать затраты на любом уровне, даже если они являются владельцами учетной записи или подписки.
+- **Владелец учетной записи** — может управлять параметрами учетной записи регистрации (например, центром затрат), просматривать все затраты и управлять конфигурацией затрат (например, бюджетами и экспортами) для учетной записи регистрации. Для учетных записей владельцев учетных записей и пользователей RBAC для просмотра затрат необходимо включить параметр счета для выставления счетов на **Просмотр AO** .
 
-EA billing account users don't have direct access to invoices. Invoices are available from an external volume licensing system.
+Пользователи счета выставления счетов EA не имеют прямого доступа к счетам. Счета доступны из внешней системы корпоративного лицензирования.
 
-Azure subscriptions are nested under enrollment accounts. Billing users have access to cost data for the subscriptions and resource groups which are under their respective scopes. They don't have access to see or manage resources in the Azure portal. Billing users can view costs by navigating to **Cost Management + Billing** in the Azure portal list of services. Then, they can filter costs to the specific subscriptions and resource groups they need to report on.
+Подписки Azure вложены в учетные записи регистрации. Пользователи выставления счетов имеют доступ к данным о затратах для подписок и групп ресурсов, которые находятся в соответствующих областях. У них нет доступа для просмотра ресурсов или управления ими в портал Azure. Пользователи выставления счетов могут просматривать затраты, перейдя к " **Управление затратами + выставление счетов** " в портал Azure списке служб. Затем они могут отфильтровать затраты для конкретных подписок и групп ресурсов, по которым они должны быть включены в отчет.
 
-Billing users don't have access to management groups because they don't fall explicitly under a specific billing account. Access must be granted to management groups explicitly. Management groups roll-up costs from all nested subscriptions. However, they only include usage-based purchases. They don't include purchases such as reservations and third-party Marketplace offerings. To view these costs, use the EA billing account.
+Пользователи выставления счетов не имеют доступа к группам управления, так как они не относятся к определенной учетной записи выставления счетов. Доступ к группам управления должен быть предоставлен явным образом. Группы управления суммируют затраты из всех вложенных подписок. Однако они включают только покупки на основе использования. Они не включают такие покупки, как резервирование и сторонние предложения Marketplace. Чтобы просмотреть эти затраты, используйте счет выставления счетов EA.
 
-## <a name="individual-agreement-scopes"></a>Individual agreement scopes
+## <a name="individual-agreement-scopes"></a>Индивидуальные области соглашения
 
-Azure subscriptions created from individual offers like pay-as-you-go and related types like Free Trial and dev/test offers, don't have an explicit billing account scope. Instead, each subscription has an account owner or account admin, like the EA account owner.
+Подписки Azure, созданные на основе индивидуальных предложений, таких как бесплатная пробная версия, предложения по разработке и тестированию, не имеют явной области счета выставления счетов. Вместо этого у каждой подписки есть владелец учетной записи или администратор учетной записи, например владелец учетной записи EA.
 
-- [**Billing account**](../billing/billing-view-all-accounts.md) - Represents a single account owner for one or more Azure subscriptions. It doesn't currently support granting access to multiple people or access to aggregated cost views.
+- [**Счет выставления счетов**](../billing/billing-view-all-accounts.md) — представляет одного владельца учетной записи для одной или нескольких подписок Azure. В настоящее время он не поддерживает предоставление доступа нескольким людям или доступ к сводным представлениям затрат.
 
-    Resource type: Not applicable
+    Тип ресурса: неприменимо
 
-Individual Azure subscription account admins can view and manage billing data, such as invoices and payments, from the [Azure Account Center](https://account.azure.com/subscriptions). However, they can't view cost data or manage resources in the Azure portal. To grant access to the account admin, use the Cost Management roles mentioned previously.
+Отдельные администраторы учетных записей подписки Azure могут просматривать и управлять данными о выставлении счетов, например счета и платежи, из [центр управления учетной записью Azure](https://account.azure.com/subscriptions). Однако они не могут просматривать данные о затратах или управлять ресурсами в портал Azure. Чтобы предоставить доступ администратору учетной записи, используйте роли управления затратами, упомянутые выше.
 
-Unlike EA, individual Azure subscription account admins can see their invoices in the Azure portal. Keep in mind that Cost Management Reader and Cost Management Contributor roles don't provide access to invoices. For more information, see [How to grant access to invoices](../billing/billing-manage-access.md##give-read-only-access-to-billing).
+В отличие от EA, индивидуальные администраторы учетных записей подписки Azure могут просматривать свои счета в портал Azure. Не забывайте, что роли участников "читатель управления затратами" и "Управление затратами" не предоставляют доступ к счетам. Дополнительные сведения см. [в разделе как предоставить доступ к счетам](../billing/billing-manage-access.md##give-read-only-access-to-billing).
 
-## <a name="microsoft-customer-agreement-scopes"></a>Microsoft Customer Agreement scopes
+## <a name="microsoft-customer-agreement-scopes"></a>Области соглашения клиента Майкрософт
 
-Microsoft Customer Agreement billing accounts have the following scopes:
+Учетные записи выставления счетов для клиентов Майкрософт имеют следующие области.
 
-- **Billing account** - Represents a customer agreement for multiple Microsoft products and services. Customer Agreement billing accounts aren't functionally the same as EA enrollments. EA enrollments are more closely aligned to billing profiles.
+- **Счет выставления счетов** — представляет клиентское соглашение для нескольких продуктов и служб Майкрософт. Счета на оплату заказчиков не функционально совпадают с регистрацией EA. Регистрация EA более тесно соответствует профилям выставления счетов.
 
-    Resource type: `Microsoft.Billing/billingAccounts (accountType = Organization)`
+    Тип ресурса: `Microsoft.Billing/billingAccounts (accountType = Organization)`
 
-- **Billing profile** - Defines the subscriptions that are included in an invoice. Billing profiles are the functional equivalent of an EA enrollment, since that's the scope that invoices are generated at. Similarly, purchases that aren't usage-based (such as Marketplace and reservations) are only available at this scope. They aren't included in invoice sections.
+- **Профиль выставления счетов** — определяет подписки, которые включены в счет. Профили выставления счетов являются функциональным аналогом регистрации EA, так как это область, на которой создаются счета. Аналогичным образом, покупки, не основанные на использовании (например, Marketplace и резервирования), доступны только в этой области. Они не включаются в разделы счета.
 
-    Resource type: `Microsoft.Billing/billingAccounts/billingProfiles`
+    Тип ресурса: `Microsoft.Billing/billingAccounts/billingProfiles`
 
-- **Invoice section** - Represents a group of subscriptions in an invoice or billing profile. Invoice sections are like departments—multiple people can have access to an invoice section.
+- **Раздел "счет** " — представляет группу подписок в счете или профиле выставления счетов. Разделы накладных — это как отделы — несколько людей могут иметь доступ к разделу счета.
 
-    Resource type: `Microsoft.Billing/billingAccounts/invoiceSections`
+    Тип ресурса: `Microsoft.Billing/billingAccounts/invoiceSections`
 
-- **Customer** - Represents a group of subscriptions that are associated to a specific customer that is onboarded to a Microsoft Customer Agreement by partner. This scope is specific to CSP.
+- **Клиент** — представляет группу подписок, связанных с конкретным клиентом и подключенных к соглашению клиента Майкрософт по партнерам. Эта область относится только к CSP.
 
-Unlike EA billing scopes, Customer Agreement billing accounts _are_ bound to a single directory and can't have subscriptions across multiple Azure AD directories.
+В отличие от областей выставления счетов EA, счета для клиентских _соглашений привязаны к одному_ каталогу и не могут иметь подписки на несколько каталогов Azure AD.
 
-Customer Agreement billing scopes don't apply to partners. Partner roles and permissions are documented at [Assign users roles and permissions](/partner-center/permissions-overview).
+Области выставления счетов соглашения клиента не применяются к партнерам. Роли и разрешения партнеров описаны в статье [Назначение пользователей ролями и](/partner-center/permissions-overview)разрешениями.
 
-Customer Agreement billing scopes support the following roles:
+Области выставления счетов соглашения клиента поддерживают следующие роли:
 
-- **Owner** – Can manage billing settings and access, view all costs, and manage cost configuration. For example, budgets and exports. In function, this Customer Agreement billing scope is the same as the [Cost Management Contributor Azure RBAC role](../role-based-access-control/built-in-roles.md#cost-management-contributor).
-- **Contributor** – Can manage billing settings except access, view all costs, and manage cost configuration. For example, budgets and exports. In function, this Customer Agreement billing scope is the same as the [Cost Management Contributor Azure RBAC role](../role-based-access-control/built-in-roles.md#cost-management-contributor).
-- **Reader** – Can view billing settings, cost data, and cost configuration. For example, budgets and exports. In function, this Customer Agreement billing scope is the same as the [Cost Management Reader Azure RBAC role](../role-based-access-control/built-in-roles.md#cost-management-reader).
-- **Invoice manager** – Can view and pay invoices and can view cost data and configuration. For example, budgets and exports. In function, this Customer Agreement billing scope is the same as the [Cost Management Reader Azure RBAC role](../role-based-access-control/built-in-roles.md#cost-management-reader).
-- **Azure subscription creator** – Can create Azure subscriptions, view costs, and manage cost configuration. For example, budgets and exports. In function, this Customer Agreement billing scope is the same as the EA enrollment account owner role.
+- **Owner** — может управлять параметрами выставления счетов и доступом, просматривать все затраты и настраивать конфигурацию затрат. Например, бюджеты и экспорты. В функции эта область выставления счетов для этого соглашения клиента совпадает с [ролью Azure RBAC участника управления затратами](../role-based-access-control/built-in-roles.md#cost-management-contributor).
+- **Участник** — может управлять параметрами выставления счетов, за исключением доступа, просматривать все затраты и управлять конфигурацией затрат. Например, бюджеты и экспорты. В функции эта область выставления счетов для этого соглашения клиента совпадает с [ролью Azure RBAC участника управления затратами](../role-based-access-control/built-in-roles.md#cost-management-contributor).
+- **Читатель** — может просматривать параметры выставления счетов, данные о затратах и конфигурацию затрат. Например, бюджеты и экспорты. В функции эта область выставления счетов для этого соглашения клиента совпадает с [ролью Azure RBAC для чтения управления затратами](../role-based-access-control/built-in-roles.md#cost-management-reader).
+- **Менеджер по накладным** — может просматривать и оплачивать счета, а также просматривать данные о затратах и конфигурацию. Например, бюджеты и экспорты. В функции эта область выставления счетов для этого соглашения клиента совпадает с [ролью Azure RBAC для чтения управления затратами](../role-based-access-control/built-in-roles.md#cost-management-reader).
+- **Создатель подписки Azure** — может создавать подписки Azure, просматривать затраты и управлять конфигурацией затрат. Например, бюджеты и экспорты. В функции эта область выставления счетов для этого соглашения клиента совпадает с ролью владельца учетной записи регистрации EA.
 
-Azure subscriptions are nested under invoice sections, like how they are under EA enrollment accounts. Billing users have access to cost data for the subscriptions and resource groups that are under their respective scopes. However, they don't have access to see or manage resources in the Azure portal. Billing users can view costs by navigating to **Cost Management + Billing** in the Azure portal list of services. Then, filter costs to the specific subscriptions and resource groups they need to report on.
+Подписки Azure вкладываются в разделы счета, например на учетные записи регистрации EA. Пользователи выставления счетов имеют доступ к данным о затратах для подписок и групп ресурсов, которые находятся в соответствующих областях. Однако у них нет доступа к просмотру или управлению ресурсами в портал Azure. Пользователи выставления счетов могут просматривать затраты, перейдя к " **Управление затратами + выставление счетов** " в портал Azure списке служб. Затем отфильтруйте затраты для конкретных подписок и групп ресурсов, по которым они должны быть включены в отчет.
 
-Billing users don't have access to management groups because they don't explicitly fall under the billing account. However, when management groups are enabled for the organization, all subscription costs are rolled-up to the billing account and to the root management group because they are both constrained to a single directory. Management groups only include purchases that are usage-based. Purchases like reservations and third-party Marketplace offerings aren't included in management groups. So, the billing account and root management group may report different totals. To view these costs, use the billing account or respective billing profile.
+Пользователи выставления счетов не имеют доступа к группам управления, так как они не относятся к учетной записи выставления счетов явным образом. Однако, если для организации включены группы управления, все затраты на подписку будут сведены к учетной записи выставления счетов и к корневой группе управления, так как они оба ограничены одним каталогом. Группы управления включают только покупки, основанные на использовании. Покупки, такие как резервирования и сторонние предложения Marketplace, не включаются в группы управления. Таким образом, учетная запись выставления счетов и корневая группа управления могут сообщать о различных итогах. Чтобы просмотреть эти затраты, используйте счет выставления счетов или соответствующий профиль выставления счетов.
 
-## <a name="aws-scopes"></a>AWS scopes
+## <a name="aws-scopes"></a>Области AWS
 
-After AWS integration is complete, see [setup and configure AWS integration](aws-integration-set-up-configure.md). The following scopes are available:
+После завершения интеграции AWS см. статью [Установка и настройка интеграции AWS](aws-integration-set-up-configure.md). Доступны следующие области:
 
-- **External Billing account** - Represents a customer agreement with a third-party vendor. This is similar to the EA billing account.
+- **Внешняя учетная запись выставления счетов** — представляет клиентское соглашение со сторонним поставщиком. Это похоже на счет выставления счетов EA.
 
-    Resource type: `Microsoft.CostManagement/externalBillingAccounts`
+    Тип ресурса: `Microsoft.CostManagement/externalBillingAccounts`
 
-- **External subscription** - Represents a customer operational account with a third-party vendor. This is similar to an Azure subscription.
+- **Внешняя подписка** — представляет операционную учетную запись клиента со сторонним поставщиком. Это похоже на подписку Azure.
 
-    Resource type: `Microsoft.CostManagement/externalSubscriptions`
+    Тип ресурса: `Microsoft.CostManagement/externalSubscriptions`
 
-## <a name="cloud-solution-provider-csp-scopes"></a>Cloud Solution Provider (CSP) scopes
+## <a name="cloud-solution-provider-csp-scopes"></a>Области поставщика облачных решений (CSP)
 
-The following scopes are supported for CSPs with customers on a Microsoft Customer Agreement:
+Следующие области поддерживаются CSP с клиентами по соглашению для клиентов Майкрософт:
 
-- **Billing account** - Represents a customer agreement for multiple Microsoft products and services. Customer Agreement billing accounts aren't functionally the same as EA enrollments. EA enrollments are more closely aligned to billing profiles.
+- **Счет выставления счетов** — представляет клиентское соглашение для нескольких продуктов и служб Майкрософт. Счета на оплату заказчиков не функционально совпадают с регистрацией EA. Регистрация EA более тесно соответствует профилям выставления счетов.
 
-    Resource type: `Microsoft.Billing/billingAccounts (accountType = Organization)`
+    Тип ресурса: `Microsoft.Billing/billingAccounts (accountType = Organization)`
 
-- **Billing profile** - Defines the subscriptions that are included in an invoice. Billing profiles are the functional equivalent of an EA enrollment, since that's the scope that invoices are generated at. Similarly, purchases that aren't usage-based (such as Marketplace and reservations) are only available at this scope.
+- **Профиль выставления счетов** — определяет подписки, которые включены в счет. Профили выставления счетов являются функциональным аналогом регистрации EA, так как это область, на которой создаются счета. Аналогичным образом, покупки, не основанные на использовании (например, Marketplace и резервирования), доступны только в этой области.
 
-    Resource type: `Microsoft.Billing/billingAccounts/billingProfiles`
+    Тип ресурса: `Microsoft.Billing/billingAccounts/billingProfiles`
 
-- **Customer** - Represents a group of subscriptions that are associated to a specific customer that is onboarded to a Microsoft Customer Agreement by a partner.
+- **Клиент** — представляет группу подписок, связанных с конкретным клиентом, который подключен к соглашению клиента Майкрософт партнеру.
 
-Only the users with *Global admin* and *Admin agent* roles can manage and view costs for billing accounts, billing profiles, and customers directly in the partner's Azure tenant. For more information about partner center roles, see [Assign users roles and permissions](/partner-center/permissions-overview).
+Только пользователи с ролями *глобального администратора* и *агента администратора* могут управлять и просматривать затраты для счетов выставления счетов, профилей выставления счетов и клиентов непосредственно в клиенте Azure партнера. Дополнительные сведения о ролях центров партнеров см. в разделе [назначение ролей и разрешений пользователей](/partner-center/permissions-overview).
 
-Azure Cost Management only supports CSP partner customers if the customers have a Microsoft Customer Agreement. For CSP supported customers who are not yet on a Microsoft Customer Agreement, see [Partner Center](https://docs.microsoft.com/azure/cloud-solution-provider/overview/partner-center-overview).
+Служба "Управление затратами Azure" поддерживает клиентов-партнеров CSP только в том случае, если у клиентов есть соглашение с клиентами Майкрософт. Для клиентов, поддерживающих CSP, которые еще не включены в соглашение клиента Майкрософт, см. статью [Центр партнеров](https://docs.microsoft.com/azure/cloud-solution-provider/overview/partner-center-overview).
 
-## <a name="switch-between-scopes-in-cost-management"></a>Switch between scopes in Cost Management
+## <a name="switch-between-scopes-in-cost-management"></a>Переключение между областями в управлении затратами
 
-All Cost Management views in the Azure portal include a **Scope** selection pill at the top-left of the view. Use it to quickly change scope. Click the **Scope** pill to open the scope picker. It shows billing accounts, the root management group, and any subscriptions that aren't nested under the root management group. To select a scope, click the background to highlight it and then click **Select** at the bottom. To drill-in to nested scopes, like resource groups in a subscription, click the scope name link. To select the parent scope at any nested level, click **Select this &lt;scope&gt;** at the top of the scope picker.
+Все представления управления затратами в портал Azure включают выделение **области** пилюля в верхнем левом углу представления. Используйте его для быстрого изменения области. Щелкните **область** пилюля, чтобы открыть средство выбора области. Здесь отображаются учетные записи выставления счетов, корневая группа управления и все подписки, не вложенные в корневую группу управления. Чтобы выбрать область, щелкните фон, чтобы выделить ее, а затем нажмите кнопку **выбрать** внизу. Для детализации вложенных областей, например групп ресурсов в подписке, щелкните ссылку имя области. Чтобы выбрать родительскую область на любом вложенном уровне, щелкните **выбрать этот &lt;область&gt;** в верхней части средства выбора области.
 
-## <a name="identify-the-resource-id-for-a-scope"></a>Identify the resource ID for a scope
+## <a name="identify-the-resource-id-for-a-scope"></a>Определение идентификатора ресурса для области
 
-When working with Cost Management APIs, knowing the scope is critical. Use the following information to build the proper scope URI for Cost Management APIs.
+При работе с API-интерфейсами управления затратами знание области является критически важным. Используйте следующие сведения, чтобы создать правильный URI области для API-интерфейсов управления затратами.
 
-### <a name="billing-accounts"></a>Billing accounts
+### <a name="billing-accounts"></a>Счета выставления счетов
 
-1. Open the Azure portal and then navigate to **Cost Management + Billing** in the list of services.
-2. Select **Properties** in the billing account menu.
-3. Copy the billing account ID.
-4. Your scope is: `"/providers/Microsoft.Billing/billingAccounts/{billingAccountId}"`
+1. Откройте портал Azure а затем в списке служб выберите пункт **Управление затратами и выставление счетов** .
+2. В меню учетной записи выставления счетов выберите пункт **Свойства** .
+3. Скопируйте идентификатор счета выставления счетов.
+4. Ваша область: `"/providers/Microsoft.Billing/billingAccounts/{billingAccountId}"`
 
 ### <a name="billing-profiles"></a>Профили выставления счетов
 
-1. Open the Azure portal and then navigate to **Cost Management + Billing** in the list of services.
-2. Select **Billing profiles** in the billing account menu.
-3. Click the name of the desired billing profile.
-4. Select **Properties** in the billing profile menu.
-5. Copy the billing account and billing profile IDs.
-6. Your scope is: `"/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}"`
+1. Откройте портал Azure а затем в списке служб выберите пункт **Управление затратами и выставление счетов** .
+2. В меню учетной записи выставления счетов выберите **Профили выставления счетов** .
+3. Щелкните имя нужного профиля выставления счетов.
+4. В меню Профиль выставления счетов выберите пункт **Свойства** .
+5. Скопируйте учетную запись выставления счетов и идентификаторы профилей выставления счетов.
+6. Ваша область: `"/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}"`
 
 ### <a name="invoice-sections"></a>Разделы счетов
 
-1. Open the Azure portal and then navigate to **Cost Management + Billing** in the list of services.
-2. Select **Invoice sections** in the billing account menu.
-3. Click the name of the desired invoice section.
-4. Select **Properties** in the invoice section menu.
-5. Copy the billing account and invoice section IDs.
-6. Your scope is: `"/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}"`
+1. Откройте портал Azure а затем в списке служб выберите пункт **Управление затратами и выставление счетов** .
+2. Выберите **раздел счета** в меню счета выставления счетов.
+3. Щелкните имя нужного раздела счета.
+4. В меню раздела счета выберите пункт **Свойства** .
+5. Скопируйте учетную запись выставления счетов и идентификаторы разделов накладных.
+6. Ваша область: `"/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}"`
 
-### <a name="ea-departments"></a>EA departments
+### <a name="ea-departments"></a>Отделы EA
 
-1. Open the Azure portal and then navigate to **Cost Management + Billing** in the list of services.
-2. Select **Departments** in the billing account menu.
-3. Click the name of the desired department.
-4. Select **Properties** in the department menu.
-5. Copy the billing account and department IDs.
-6. Your scope is: `"/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}"`
+1. Откройте портал Azure а затем в списке служб выберите пункт **Управление затратами и выставление счетов** .
+2. В меню учетной записи выставления счетов выберите **отделы** .
+3. Щелкните имя нужного отдела.
+4. В меню отдел выберите пункт **Свойства** .
+5. Скопируйте учетную запись выставления счетов и идентификаторы отделов.
+6. Ваша область: `"/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}"`
 
-### <a name="ea-enrollment-account"></a>EA enrollment account
+### <a name="ea-enrollment-account"></a>Учетная запись регистрации EA
 
-1. Open the Azure portal and navigate to **Cost Management + Billing** in the list of services.
-2. Select **Enrollment accounts** in the billing account menu.
-3. Click the name of the desired enrollment account.
-4. Select **Properties** in the enrollment account menu.
-5. Copy the billing account and enrollment account IDs.
-6. Your scope is: `"/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}"`
+1. Откройте портал Azure и выберите **Управление затратами + выставление счетов** в списке служб.
+2. Выберите **учетные записи регистрации** в меню Учетная запись выставления счетов.
+3. Щелкните имя нужной учетной записи регистрации.
+4. В меню учетной записи регистрации выберите пункт **Свойства** .
+5. Скопируйте учетную запись выставления счетов и идентификаторы учетной записи регистрации.
+6. Ваша область: `"/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}"`
 
 ### <a name="management-group"></a>группа управления;
 
-1. Open the Azure portal and navigate to **Management groups** in the list of services.
-2. Navigate to the desired management group.
-3. Copy the management group ID from the table.
-4. Your scope is: `"/providers/Microsoft.Management/managementGroups/{id}"`
+1. Откройте портал Azure и выберите **группы управления** в списке служб.
+2. Перейдите к нужной группе управления.
+3. Скопируйте идентификатор группы управления из таблицы.
+4. Ваша область: `"/providers/Microsoft.Management/managementGroups/{id}"`
 
-### <a name="subscription"></a>Subscription
+### <a name="subscription"></a>подписку
 
-1. Open the Azure portal and navigate to **Subscriptions** in the list of services.
-2. Copy the subscription ID from the table.
-3. Your scope is: `"/subscriptions/{id}"`
+1. Откройте портал Azure и перейдите к пункту **подписки** в списке служб.
+2. Скопируйте идентификатор подписки из таблицы.
+3. Ваша область: `"/subscriptions/{id}"`
 
 ### <a name="resource-groups"></a>Группы ресурсов
 
-1. Open the Azure portal and navigate to **Resource groups** in the list of services.
-2. Click the name of the desired resource group.
-3. Select **Properties** in the resource group menu.
-4. Copy the resource ID field value.
-5. Your scope is: `"/subscriptions/{id}/resourceGroups/{name}"`
+1. Откройте портал Azure и перейдите к **группе ресурсов** в списке служб.
+2. Щелкните имя нужной группы ресурсов.
+3. В меню Группа ресурсов выберите пункт **Свойства** .
+4. Скопируйте значение поля идентификатор ресурса.
+5. Ваша область: `"/subscriptions/{id}/resourceGroups/{name}"`
 
-Cost Management is currently supported in [Azure Global](https://management.azure.com) and [Azure Government](https://management.usgovcloudapi.net). For more information about Azure Government, see [Azure Global and Government API endpoints](../azure-government/documentation-government-developer-guide.md#endpoint-mapping) _._
+В настоящее время Управление затратами поддерживается в [Azure](https://management.azure.com) для [государственных организаций и Azure](https://management.usgovcloudapi.net). Дополнительные сведения об Azure для государственных организаций см. в статье [глобальные и правительственные конечные точки API Azure](../azure-government/documentation-government-developer-guide.md#endpoint-mapping) _._
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - См. первое краткое руководство по [работе с Управлением затратами](quick-acm-cost-analysis.md).

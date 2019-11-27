@@ -57,7 +57,7 @@ ms.locfileid: "74229291"
 
 Получив шаблон, вы можете включить службу DNS следующим образом.
 
-1. Убедитесь, что версия `apiversion` ресурса `Microsoft.ServiceFabric/clusters` имеет значение `2017-07-01-preview`. В противном случае обновите ее, как показано в примере ниже:
+1. Убедитесь, что версия `apiversion` ресурса `2017-07-01-preview` имеет значение `Microsoft.ServiceFabric/clusters`. В противном случае обновите ее, как показано в примере ниже:
 
     ```json
     {
@@ -114,10 +114,10 @@ ms.locfileid: "74229291"
 3. После обновления шаблона кластера примените изменения и дождитесь завершения обновления. По завершении обновления в кластере запустится системная служба DNS. Имя этой службы — `fabric:/System/DnsService`, и ее можно найти в разделе служб **Система** в обозревателе Service Fabric. 
 
 > [!NOTE]
-> When upgrading DNS from disabled to enabled, Service Fabric Explorer may not reflect the new state. To solve, restart the nodes by modifying the UpgradePolicy in your Azure Resource Manager template. See the [Service Fabric Template Reference](https://docs.microsoft.com/azure/templates/microsoft.servicefabric/2019-03-01/clusters/applications) for more.
+> При обновлении DNS с отключенного на включено Service Fabric Explorer может не отражать новое состояние. Чтобы устранить эту проблему, перезапустите узлы, изменив UpgradePolicy в шаблоне Azure Resource Manager. Дополнительные сведения см. в [справочнике по шаблону Service Fabric](https://docs.microsoft.com/azure/templates/microsoft.servicefabric/2019-03-01/clusters/applications) .
 
 > [!NOTE]
-> Enabling DNS service when developing on a local machine will override some DNS settings. If you experience issues connecting to the internet, check your DNS settings.
+> Включение службы DNS при разработке на локальном компьютере приведет к переопределению некоторых параметров DNS. Если возникают проблемы с подключением к Интернету, проверьте параметры DNS.
 
 ## <a name="setting-the-dns-name-for-your-service"></a>Настройка DNS-имени для службы
 DNS-имена для служб можно задать декларативно для служб по умолчанию в файле ApplicationManifest.xml или с помощью команд PowerShell.
@@ -181,10 +181,10 @@ DNS-имя службы можно задать при ее создании с 
 ```
     <First-Label-Of-Partitioned-Service-DNSName><PartitionPrefix><Target-Partition-Name>< PartitionSuffix>.<Remaining- Partitioned-Service-DNSName>
 ```
-Где:
+Описание
 
 - *First-Label-Of-Partitioned-Service-DNSName* — это первая часть DNS-имени службы.
-- *PartitionPrefix* — это значение, которое можно задать в разделе DnsService манифеста кластера или с помощью шаблона Resource Manager кластера. The default value is "--". Дополнительные сведения см. в разделе [параметров служб DNS](./service-fabric-cluster-fabric-settings.md#dnsservice).
+- *PartitionPrefix* — это значение, которое можно задать в разделе DnsService манифеста кластера или с помощью шаблона Resource Manager кластера. Значение по умолчанию — "--". Дополнительные сведения см. в разделе [параметров служб DNS](./service-fabric-cluster-fabric-settings.md#dnsservice).
 - *Target-Partition-Name* — это имя секции. 
 - *PartitionSuffix* — это значение, которое можно задать в разделе DnsService манифеста кластера или с помощью шаблона Resource Manager кластера. Значение по умолчанию — пустая строка. Дополнительные сведения см. в разделе [параметров служб DNS](./service-fabric-cluster-fabric-settings.md#dnsservice).
 - *Remaining-Partitioned-Service-DNSName* — это оставшаяся часть DNS-имени службы.
@@ -262,6 +262,6 @@ public class ValuesController : Controller
 
 * Служба DNS для служб Service Fabric пока что не поддерживается на платформе Linux. Служба DNS поддерживается для контейнеров в Linux. В качестве альтернативы можете выполнить разрешение вручную с помощью клиента Fabric или ServicePartitionResolver.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения о взаимодействии служб в кластере см. в статье [Подключение к службам в Service Fabric и взаимодействие с ними](service-fabric-connect-and-communicate-with-services.md).
 

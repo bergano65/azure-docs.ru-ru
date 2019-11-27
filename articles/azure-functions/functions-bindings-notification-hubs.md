@@ -21,9 +21,9 @@ ms.locfileid: "74231139"
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
 > [!IMPORTANT]
-> Google has [deprecated Google Cloud Messaging (GCM) in favor of Firebase Cloud Messaging (FCM)](https://developers.google.com/cloud-messaging/faq). This output binding doesn't support FCM. To send notifications using FCM, use the [Firebase API](https://firebase.google.com/docs/cloud-messaging/server#choosing-a-server-option) directly in your function or use [template notifications](../notification-hubs/notification-hubs-templates-cross-platform-push-messages.md).
+> В Google используется [устаревший Google Cloud Messaging (gcm) в пользу Firebase Cloud Messaging (FCM)](https://developers.google.com/cloud-messaging/faq). Эта выходная привязка не поддерживает FCM. Чтобы отправлять уведомления с помощью FCM, используйте [API Firebase](https://firebase.google.com/docs/cloud-messaging/server#choosing-a-server-option) непосредственно в функции или используйте [уведомления шаблона](../notification-hubs/notification-hubs-templates-cross-platform-push-messages.md).
 
-## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
+## <a name="packages---functions-1x"></a>Пакеты — Функции 1.x
 
 Привязки Центров уведомлений доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.NotificationHubs](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.NotificationHubs) версии 1.х. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk-extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/tree/v2.x/src/WebJobs.Extensions.NotificationHubs).
 
@@ -243,15 +243,15 @@ public static async Task Run(string myQueueItem, IAsyncCollector<Notification> n
 
 Параметры конструктора атрибута и его свойства описаны в разделе [конфигурации](#configuration).
 
-## <a name="configuration"></a>Настройка
+## <a name="configuration"></a>Параметр Configuration
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `NotificationHub`:
 
-|свойство function.json | Свойство атрибута |Описание|
+|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
 |---------|---------|----------------------|
-|**type** |Н/Д| Нужно задать значение `notificationHub`. |
-|**direction** |Н/Д| Нужно задать значение `out`. | 
-|**name** |Н/Д| Имя переменной, используемой в коде функции для сообщения Центра уведомлений. |
+|**type** |Недоступно| Нужно задать значение `notificationHub`. |
+|**direction** |Недоступно| Нужно задать значение `out`. | 
+|**name** |Недоступно| Имя переменной, используемой в коде функции для сообщения Центра уведомлений. |
 |**tagExpression** |**TagExpression** | Выражения тегов позволяют указать, что уведомления должны отправляться на устройства, зарегистрированные для получения уведомлений, соответствующих выражению тега.  Дополнительные сведения см. в статье [Маршрутизация и выражения тегов](../notification-hubs/notification-hubs-tags-segment-push-message.md). |
 |**hubName** | **HubName** | Имя ресурса Центра уведомлений на портале Azure. |
 |**подключение** | **ConnectionStringSetting** | Имя параметра приложения, содержащего строку подключения Центров уведомлений.  Для нее необходимо задать значение *DefaultFullSharedAccessSignature* для Центра уведомлений. Ознакомьтесь с разделом [Настройка строки подключения](#connection-string-setup) далее в этой статье.|
@@ -294,13 +294,13 @@ public static async Task Run(string myQueueItem, IAsyncCollector<Notification> n
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
-## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
+## <a name="exceptions-and-return-codes"></a>Коды возврата и исключений
 
 | Привязка | Справочные материалы |
 |---|---|
-| Концентратор уведомлений | [Руководство по операциям](https://docs.microsoft.com/rest/api/notificationhubs/) |
+| Центр уведомлений | [Руководство по операциям](https://docs.microsoft.com/rest/api/notificationhubs/) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

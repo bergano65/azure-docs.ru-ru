@@ -59,6 +59,8 @@
       href: linux-recovery-cannot-start-file-system-errors.md
     - name: 'Устранение проблем с загрузкой, связанных с ядром'
       href: 'https://support.microsoft.com/help/4091524'
+    - name: Восстановление виртуальных машин с настроенным диспетчером логических томов (виртуальная машина не загружается)
+      href: chroot-logical-volume-manager.md
     - name: Устранение ошибок fstab
       href: linux-virtual-machine-cannot-start-fstab-errors.md
     - name: Подробные сведения об устранении неполадок с SSH
@@ -114,6 +116,8 @@
           href: serial-console-grub-single-user-mode.md
         - name: Немаскируемое прерывание в последовательной консоли / SysRq
           href: serial-console-nmi-sysrq.md
+        - name: Заблаговременная настройка GRUB и Серийной консоли
+          href: serial-console-grub-proactive-configuration.md
     - name: Последовательная консоль для Windows
       href: serial-console-windows.md
       items:
@@ -125,8 +129,6 @@
       href: serial-console-power-options.md
     - name: Распространенные ошибки последовательностей консоли
       href: serial-console-errors.md
-    - name: Заблаговременная настройка GRUB и Серийной консоли
-      href: serial-console-grub-proactive-configuration.md
 - name: Ошибки при удалении ресурсов хранилища
   href: storage-resource-deletion-errors.md
 - name: Ошибки при удалении ресурсов классического хранилища
@@ -173,11 +175,14 @@
           href: troubleshoot-recovery-disks-linux.md
         - name: Портал Azure
           href: troubleshoot-recovery-disks-portal-linux.md
-- name: Ошибки при загрузке
-  href: boot-error-troubleshoot.md
+- name: Ошибки при загрузке Linux
+  href: boot-error-troubleshoot-linux.md
   items:
     - name: Ошибка Grub Rescue
       href: troubleshoot-vm-boot-error.md
+- name: Ошибки при загрузке Windows
+  href: boot-error-troubleshoot.md
+  items:
     - name: Диагностика загрузки
       href: boot-diagnostics.md
     - name: Ошибки BitLocker

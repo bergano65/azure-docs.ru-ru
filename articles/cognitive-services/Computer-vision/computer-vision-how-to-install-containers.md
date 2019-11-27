@@ -8,33 +8,33 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 11/19/2019
+ms.date: 11/21/2019
 ms.author: dapine
 ms.custom: seodec18
-ms.openlocfilehash: d63108159b0880fb4b7bc3e8d78ba89ac96b47a9
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: c65ed214747fd6a3729c2e9acff5489f5fa1b9d7
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74222207"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74323629"
 ---
-# <a name="install-and-run-read-containers"></a>Install and run Read containers
+# <a name="install-and-run-read-containers-preview"></a>Установка и запуск контейнеров чтения (Предварительная версия)
 
-Containers enable you to run the Computer Vision APIs in your own environment. Containers are great for specific security and data governance requirements. In this article you'll learn how to download, install, and run a Computer Vision container.
+Контейнеры позволяют запускать Компьютерное зрение API в собственной среде. Контейнеры отлично подходят для конкретных требований к безопасности и управлению данными. В этой статье вы узнаете, как скачать, установить и запустить контейнер Компьютерное зрение.
 
-A single Docker container, *Read*, is available for Computer Vision. The *Read* container allows you to detect and extract *printed text* from images of various objects with different surfaces and backgrounds, such as receipts, posters, and business cards. Additionally, the *Read* container detects *handwritten text* in images and provides PDF, TIFF, and multi-page file support. For more information, see the [Read API](concept-recognizing-text.md#read-api) documentation.
+Для Компьютерное зрение доступен один контейнер DOCKER, доступный для *чтения*. Контейнер *Read* позволяет обнаруживать и извлекать *печатный текст* из изображений различных объектов с разными поверхностями и фонами, такими как уведомления, плакаты и визитные карточки. Кроме того, контейнер *Read (чтение* ) обнаруживает *рукописный текст* в изображениях и предоставляет поддержку файлов PDF, TIFF и нескольких страниц. Дополнительные сведения см. в документации по [API чтения](concept-recognizing-text.md#read-api) .
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-You must meet the following prerequisites before using the containers:
+Перед использованием контейнеров необходимо выполнить следующие предварительные требования:
 
-|Обязательно для заполнения|Цель|
+|обязательные|Назначение|
 |--|--|
-|Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
+|Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). См. [общие сведения о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
-|Computer Vision resource |Для использования контейнера необходимо следующее:<br><br>An Azure **Computer Vision** resource and the associated API key the endpoint URI. Both values are available on the Overview and Keys pages for the resource and are required to start the container.<br><br>**{API_KEY}** : One of the two available resource keys on the **Keys** page<br><br>**{ENDPOINT_URI}** : The endpoint as provided on the **Overview** page|
+|Ресурс Компьютерное зрение |Для использования контейнера необходимо следующее:<br><br>Ресурс Azure **компьютерное зрение** и соответствующий ключ API для конечной точки. Оба значения доступны на страницах обзора и ключей для ресурса и необходимы для запуска контейнера.<br><br>**{API_KEY}** : один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}** : конечная точка, указанная на странице **обзора**|
 
 ## <a name="request-access-to-the-private-container-registry"></a>Запрос доступа к частному реестру контейнеров
 
@@ -52,15 +52,15 @@ You must meet the following prerequisites before using the containers:
 
 ## <a name="get-the-container-image-with-docker-pull"></a>Получение образа контейнера с помощью `docker pull`
 
-Container images for Read are available.
+Доступны образы контейнеров для чтения.
 
-| Контейнер | Container Registry / Repository / Image Name |
+| Контейнер | Реестр контейнеров, имя репозитория или образа |
 |-----------|------------|
-| Чтение | `containerpreview.azurecr.io/microsoft/cognitive-services-read:latest` |
+| чтение | `containerpreview.azurecr.io/microsoft/cognitive-services-read:latest` |
 
 Воспользуйтесь командой [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/), чтобы скачать образ контейнера.
 
-### <a name="docker-pull-for-the-read-container"></a>Docker pull for the Read container
+### <a name="docker-pull-for-the-read-container"></a>Извлечение DOCKER для контейнера чтения
 
 ```bash
 docker pull containerpreview.azurecr.io/microsoft/cognitive-services-read:latest
@@ -77,9 +77,9 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-read:latest
 
 ## <a name="run-the-container-with-docker-run"></a>Запуск контейнера с помощью команды `docker run`
 
-Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Refer to [gathering required parameters](#gathering-required-parameters) for details on how to get the `{ENDPOINT_URI}` and `{API_KEY}` values.
+Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Сведения о том, как получить значения `{ENDPOINT_URI}` и `{API_KEY}`, см. в разделе [сбор обязательных параметров](#gathering-required-parameters) .
 
-[Examples](computer-vision-resource-container-config.md#example-docker-run-commands) of the `docker run` command are available.
+Доступны [примеры](computer-vision-resource-container-config.md#example-docker-run-commands) команды `docker run`.
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 16g --cpus 8 \
@@ -91,15 +91,15 @@ ApiKey={API_KEY}
 
 Эта команда:
 
-* Runs the Read container from the container image.
-* Allocates 8 CPU core and 16 gigabytes (GB) of memory.
+* Запускает контейнер чтения из образа контейнера.
+* Выделяет 8 ядер ЦП и 16 гигабайт (ГБ) памяти.
 * предоставляет TCP-порт 5000 и выделяет псевдотелетайп для контейнера;
 * автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере.
 
 Доступны дополнительные [примеры](./computer-vision-resource-container-config.md#example-docker-run-commands) команды `docker run`. 
 
 > [!IMPORTANT]
-> Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
+> Для выполнения контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
 
 [!INCLUDE [Running multiple containers on the same host](../../../includes/cognitive-services-containers-run-multiple-same-host.md)]
 
@@ -113,15 +113,15 @@ ApiKey={API_KEY}
 
 Используйте узел `http://localhost:5000` для API контейнера.
 
-### <a name="asynchronous-read"></a>Asynchronous read
+### <a name="asynchronous-read"></a>Асинхронное чтение
 
-You can use the `POST /vision/v2.0/read/core/asyncBatchAnalyze` and `GET /vision/v2.0/read/operations/{operationId}` operations in concert to asynchronously read an image, similar to how the Computer Vision service uses those corresponding REST operations. The asynchronous POST method will return an `operationId` that is used as the identifer to the HTTP GET request.
+Операции `POST /vision/v2.0/read/core/asyncBatchAnalyze` и `GET /vision/v2.0/read/operations/{operationId}` можно использовать совместно для асинхронного чтения образа, аналогично тому, как служба Компьютерное зрение использует соответствующие операции RESTFUL. Асинхронный метод POST возвратит `operationId`, который используется в качестве идентификатора для HTTP-запроса GET.
 
-From the swagger UI, select the `asyncBatchAnalyze` to expand it in the browser. Then select **Try it out** > **Choose file**. In this example, we'll use the following image:
+В пользовательском интерфейсе Swagger выберите `asyncBatchAnalyze`, чтобы развернуть его в браузере. Затем выберите **испытать** > **выберите файл**. В этом примере мы будем использовать следующее изображение:
 
-![tabs vs spaces](media/tabs-vs-spaces.png)
+![символы табуляции и пробелы](media/tabs-vs-spaces.png)
 
-When the asynchronous POST has run successfully, it returns an **HTTP 202** status code. As part of the response, there is an `operation-location` header that holds the result endpoint for the request.
+После успешного выполнения асинхронной отправки возвращается код состояния **HTTP 202** . В качестве части ответа имеется заголовок `operation-location`, содержащий конечную точку результата для запроса.
 
 ```http
  content-length: 0
@@ -130,7 +130,7 @@ When the asynchronous POST has run successfully, it returns an **HTTP 202** stat
  server: Kestrel
 ```
 
-The `operation-location` is the fully qualified URL and is accessed via an HTTP GET. Here is the JSON response from executing the `operation-location` URL from the preceding image:
+`operation-location` является полным URL-адресом, доступ к которому осуществляется через HTTP GET. Ниже приведен ответ JSON, посвященный выполнению URL-адреса `operation-location` из предыдущего образа:
 
 ```json
 {
@@ -219,9 +219,9 @@ The `operation-location` is the fully qualified URL and is accessed via an HTTP 
 }
 ```
 
-### <a name="synchronous-read"></a>Synchronous read
+### <a name="synchronous-read"></a>Синхронное чтение
 
-You can use the `POST /vision/v2.0/read/core/Analyze` operation to synchronously read an image. When the image is read in its entirety, then and only then does the API return a JSON response. The only exception to this is if an error occurs. When an error occurs the following JSON is returned:
+Для синхронного чтения изображения можно использовать операцию `POST /vision/v2.0/read/core/Analyze`. Когда изображение считывается целиком, тогда API возвращает ответ JSON. Единственное исключение — при возникновении ошибки. При возникновении ошибки возвращается следующий код JSON:
 
 ```json
 {
@@ -229,7 +229,7 @@ You can use the `POST /vision/v2.0/read/core/Analyze` operation to synchronously
 }
 ```
 
-The JSON response object has the same object graph as the asynchronous version. If you're a JavaScript user and want type safety, the following types could be used to cast the JSON response as an `AnalyzeResult` object.
+Объект ответа JSON имеет тот же граф объектов, что и асинхронная версия. Если вы являетесь пользователем JavaScript и хотите обеспечить безопасность типов, можно использовать следующие типы для приведения ответа JSON в качестве объекта `AnalyzeResult`.
 
 ```typescript
 export interface AnalyzeResult {
@@ -276,13 +276,13 @@ export interface Word {
 }
 ```
 
-For an example use-case, see the <a href="https://aka.ms/ts-read-api-types" target="_blank" rel="noopener noreferrer">TypeScript sandbox here <span class="docon docon-navigate-external x-hidden-focus"></span></a> and select **Run** to visualize its ease-of-use.
+В качестве примера варианта использования ознакомьтесь с <a href="https://aka.ms/ts-read-api-types" target="_blank" rel="noopener noreferrer">песочницей <span class="docon docon-navigate-external x-hidden-focus"></span> TypeScript</a> и выберите Run ( **запустить** ), чтобы визуализировать простоту использования.
 
 ## <a name="stop-the-container"></a>Остановка контейнера
 
 [!INCLUDE [How to stop the container](../../../includes/cognitive-services-containers-stop.md)]
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Если контейнер запускается с выходным [подключением](./computer-vision-resource-container-config.md#mount-settings) и включенным ведением журнала, контейнер создает файлы журнала, которые удобно использовать для устранения неполадок, возникающих во время запуска или работы контейнера.
 
@@ -290,32 +290,32 @@ For an example use-case, see the <a href="https://aka.ms/ts-read-api-types" targ
 
 ## <a name="billing"></a>Выставление счетов
 
-The Cognitive Services containers send billing information to Azure, using the corresponding resource on your Azure account.
+Контейнеры Cognitive Services отправляют сведения о выставлении счетов в Azure, используя соответствующий ресурс в учетной записи Azure.
 
 [!INCLUDE [Container's Billing Settings](../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 
-Дополнительные сведения об этих параметрах см. в разделе [Настройка контейнеров](./computer-vision-resource-container-config.md).
+Дополнительные сведения об этих параметрах см. в статье [Настройка контейнеров](./computer-vision-resource-container-config.md).
 
 <!--blogs/samples/video course -->
 
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="summary"></a>Резюме
+## <a name="summary"></a>summary
 
-Из этой статьи вы узнали основные понятия и рабочий процесс, позволяющий скачивать, устанавливать и запускать контейнеры компьютерного зрения. В разделе "Сводка" сделайте следующее.
+Из этой статьи вы узнали основные понятия и рабочий процесс, позволяющий скачивать, устанавливать и запускать контейнеры компьютерного зрения. Краткая сводка.
 
-* Computer Vision provides a Linux container for Docker, encapsulating Read.
-* Container images are downloaded from the "Container Preview" container registry in Azure.
-* Образы контейнеров выполняются в Docker.
-* You can use either the REST API or SDK to call operations in Read containers by specifying the host URI of the container.
-* При создании экземпляра контейнера нужно указать данные для выставления счетов.
+* Компьютерное зрение предоставляет контейнер Linux для DOCKER, инкапсулирующий чтение.
+* Образы контейнеров загружаются из реестра контейнеров "предварительный просмотр контейнера" в Azure.
+* Образы контейнеров, которые выполняются в Docker.
+* Вы можете использовать REST API или пакет SDK для вызова операций в контейнерах чтения, указав универсальный код ресурса (URI) узла контейнера.
+* При создании контейнера необходимо указать данные для выставления счетов.
 
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например анализируемые изображения или тексты).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-* Ознакомьтесь со статьей о [конфигурации контейнеров](computer-vision-resource-container-config.md).
+* Ознакомьтесь со статьей о [параметрах конфигурации](computer-vision-resource-container-config.md).
 * Дополнительные сведения о распознавании печатного и рукописного текста см. в статье [Обзор компьютерного зрения](Home.md).
 * Дополнительные сведения о методах, поддерживаемых контейнером, см. в статье [API компьютерного зрения](//westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa).
 * Чтобы разрешать проблемы, связанные с функциональностью Компьютерного зрения, ознакомьтесь с [часто задаваемыми вопросами](FAQ.md).

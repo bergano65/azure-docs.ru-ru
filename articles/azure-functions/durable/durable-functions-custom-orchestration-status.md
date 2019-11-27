@@ -18,7 +18,7 @@ ms.locfileid: "74232954"
 ## <a name="sample-use-cases"></a>Примеры вариантов использования
 
 > [!NOTE]
-> The following samples show how to use custom status feature in C# and JavaScript. The C# examples are written for Durable Functions 2.x and are not compatible with Durable Functions 1.x. For more information about the differences between versions, see the [Durable Functions versions](durable-functions-versions.md) article.
+> В следующих примерах показано, как использовать пользовательскую функцию C# состояния в и JavaScript. C# Примеры написаны для устойчивые функции 2. x и не совместимы с устойчивые функции 1. x. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 ### <a name="visualize-progress"></a>Визуализация прогресса
 
@@ -278,7 +278,7 @@ module.exports = df.orchestrator(function*(context) {
 });
 ```
 
-## <a name="sample"></a>Пример
+## <a name="sample"></a>Образец
 
 В следующем примере пользовательское состояние показано первым.
 
@@ -333,9 +333,9 @@ GET /runtime/webhooks/durabletask/instances/instance123
 ```
 
 > [!WARNING]
-> Полезные данные настраиваемого значения состояния не должны превышать 16 КБ JSON-текста в кодировке UTF-16, так как они должны поместиться в столбец хранилища таблиц Azure. We recommend you use external storage if you need a larger payload.
+> Полезные данные настраиваемого значения состояния не должны превышать 16 КБ JSON-текста в кодировке UTF-16, так как они должны поместиться в столбец Хранилища таблиц Azure. Если требуются большие полезные данные, рекомендуется использовать внешнее хранилище.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Learn about durable timers](durable-functions-timers.md)
+> [Сведения о устойчивых таймерах](durable-functions-timers.md)

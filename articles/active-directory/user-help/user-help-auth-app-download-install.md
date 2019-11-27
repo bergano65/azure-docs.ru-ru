@@ -1,6 +1,6 @@
 ---
 title: Скачайте и установите приложение Microsoft Authenticator — Azure AD.
-description: Как скачать, установить и использовать приложение Microsoft Authenticator для двухфакторной проверки подлинности.
+description: Скачайте и установите приложение Microsoft Authenticator, чтобы проверить удостоверение при использовании двухфакторной проверки подлинности.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -13,12 +13,12 @@ ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ebe80d44d52ffa348413e51cd5e82e8468537479
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 86bbe9560a4c3520bce5aa006c18f794c8298a54
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820227"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74266932"
 ---
 # <a name="download-and-install-the-microsoft-authenticator-app"></a>Скачивание и установка приложения Microsoft Authenticator
 
@@ -54,6 +54,6 @@ ms.locfileid: "73820227"
 >[!Important]
 >Если вы не находитесь на мобильном устройстве, вы по-прежнему можете получить Microsoft Authenticatorное приложение, отправив на [странице Microsoft Authenticator](https://www.microsoft.com/en-us/account/authenticator)ссылку для скачивания.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - После скачивания и установки приложения необходимо добавить различные учетные записи. Дополнительные сведения см. в статье о [добавлении учетных записей](user-help-auth-app-add-account-overview.md).

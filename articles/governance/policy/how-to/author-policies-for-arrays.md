@@ -1,14 +1,14 @@
 ---
 title: Создание политик для свойств массива в ресурсах
-description: Научитесь создавать параметры массива, создавать правила для выражений языка массива, оценивать псевдоним [*] и добавлять элементы в существующий массив с помощью правил определения политики Azure.
+description: Научитесь работать с параметрами массива и выражениями языка массива, оценивать псевдоним [*] и добавлять элементы с помощью правил определения политики Azure.
 ms.date: 03/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: f28cffcf928f9c4da6b2dae2a0811200397c1f0d
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 96598918f0dbcc2f56e8ccc316844ee768306b75
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73959713"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463500"
 ---
 # <a name="author-policies-for-array-properties-on-azure-resources"></a>Создание политик для свойств массива в ресурсах Azure
 
@@ -177,7 +177,7 @@ Azure Resource Manager свойства обычно определяются к
 ]
 ```
 
-Для каждого примера условия ниже замените `<field>` на `"field": "Microsoft.Storage/storageAccounts/networkAcls.ipRules[*].value"`.
+Для каждого примера условия ниже замените `<field>` `"field": "Microsoft.Storage/storageAccounts/networkAcls.ipRules[*].value"`.
 
 Следующие результаты являются результатом сочетания условия, а также правила для примера политики и массива существующих значений, приведенных выше.
 

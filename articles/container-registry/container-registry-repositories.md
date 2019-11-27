@@ -1,19 +1,14 @@
 ---
-title: Репозитории Реестра контейнеров Azure на портале Azure
+title: Просмотр репозиториев на портале
 description: Используйте портал Azure для просмотра репозиториев реестра контейнеров Azure, в которых размещены образы контейнеров DOCKER и другие поддерживаемые артефакты.
-services: container-registry
-author: cristy
-manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 01/05/2018
-ms.author: jeconnoc
-ms.openlocfilehash: 793d8e82ca78c6055a6e956d4f41b7991d5fd700
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 1da72706d2554610a685f71199ab14af5e30ce1a
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73931529"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456290"
 ---
 # <a name="view-container-registry-repositories-in-the-azure-portal"></a>Просмотр списка репозиториев реестра контейнеров на портале Azure
 

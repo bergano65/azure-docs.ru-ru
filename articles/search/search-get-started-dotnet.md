@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание индекса службы "Поиск Azure" с помощью C# и пакета SDK .NET
+title: Краткое руководство. Создание индекса службы "Поиск Azure" с помощью .NET
 titleSuffix: Azure Cognitive Search
 description: Описание процессов создания индекса, загрузки данных и выполнения запросов с помощью C# и пакета SDK .NET для службы "Когнитивный поиск Azure".
 manager: nitinme
@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 11/04/2019
-ms.openlocfilehash: cb52ebc4cfdb6f62e9e68bf007cadc20cd565fad
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 45d24286a511ff60db33e149627932b0768c543b
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72792822"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74112026"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-c-using-the-net-sdk"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" с помощью C# и пакета SDK .NET
 > [!div class="op_single_selector"]

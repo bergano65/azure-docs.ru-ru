@@ -14,12 +14,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 09/19/2019
 ms.author: cephalin
-ms.openlocfilehash: f9b1af14bd986f1fa6fb5feb398a7f1fdf982f77
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 7f98ba9851216737712b6be1ec29156ba0b1a68b
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73669096"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74382271"
 ---
 # <a name="set-up-staging-environments-in-azure-app-service"></a>Настройка промежуточных сред в службе приложений Azure
 <a name="Overview"></a>
@@ -249,6 +250,10 @@ ms.locfileid: "73669096"
 
 После того как клиент автоматически направляется в конкретный слот, он прикрепляется к этому слоту в течение жизненного цикла этого клиентского сеанса. Вы можете проверить, к какому слоту прикреплен клиент, просмотрев значение параметра cookie `x-ms-routing-name` в заголовках HTTP средствами браузера. Если запросы направляются в промежуточный слот, этот параметр имеет значение `x-ms-routing-name=staging`. Если запросы направляются в рабочий слот, этот параметр имеет значение `x-ms-routing-name=self`.
 
+   > [!NOTE]
+   > Рядом с порталом Azure можно также использовать команду [`az webapp traffic-routing set`](/cli/azure/webapp/traffic-routing#az-webapp-traffic-routing-set) в Azure CLI, чтобы задать проценты маршрутизации из средств CI/CD, таких как конвейеры DevOps или другие системы автоматизации.
+   > 
+
 ### <a name="route-production-traffic-manually"></a>Маршрутизация рабочего трафика вручную
 
 Кроме автоматической маршрутизации трафика, Служба приложений поддерживает направление запросов в конкретные слоты. Это полезно, если вы хотите, чтобы пользователи могли принять участие в вашей бета-версии приложения или отказаться от него. Для маршрутизации рабочего трафика вручную применяется параметр запроса `x-ms-routing-name`.
@@ -426,5 +431,5 @@ Remove-AzResource -ResourceGroupName [resource group name] -ResourceType Microso
 
 - После переключения слотов приложение может столкнуться с неожиданным перезапуском. Это обусловлено тем, что после переключения конфигурация привязки имени узла не синхронизирована, что сама по себе не приводит к перезапуску. Однако некоторые базовые события хранилища (такие как отказоустойчивость тома хранилища) могут обнаружить эти расхождения и принудительно перезапустить все рабочие процессы. Чтобы избежать перезагрузки этих типов, задайте [параметр приложения`WEBSITE_ADD_SITENAME_BINDINGS_IN_APPHOST_CONFIG=1`](https://github.com/projectkudu/kudu/wiki/Configurable-settings#disable-the-generation-of-bindings-in-applicationhostconfig) во *всех слотах*. Однако этот параметр приложения *не* работает с приложениями Windows Communication Foundation (WCF).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 [Ограничения статических IP-адресов в службе приложений Azure](app-service-ip-restrictions.md)

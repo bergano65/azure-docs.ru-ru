@@ -1,5 +1,5 @@
 ---
-title: Отправка метрик ОС для виртуальной машины Windows (классическая) в хранилище данных Azure Monitor
+title: Отправка метрик виртуальной машины классической системы Windows в базу данных метрик Azure Monitor
 description: Отправка метрик ОС для виртуальной машины Windows (классическая) в хранилище данных Azure Monitor
 author: anirudhcavale
 services: azure-monitor
@@ -8,26 +8,26 @@ ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: ''
-ms.openlocfilehash: cc0c7c4928fb03cb60bb51f74d74fdc1ab914348
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: af99bd8ea619d17bdc40ea025f0bfcb1c095db52
+ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70844920"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74286146"
 ---
-# <a name="send-guest-os-metrics-to-the-azure-monitor-data-store-for-a-windows-virtual-machine-classic"></a>Отправка метрик ОС для виртуальной машины Windows (классическая) в хранилище данных Azure Monitor
+# <a name="send-guest-os-metrics-to-the-azure-monitor-metrics-database-for-a-windows-virtual-machine-classic"></a>Отправка метрик гостевой ОС в базу данных метрик Azure Monitor для виртуальной машины Windows (классическая модель)
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 [Расширение диагностики](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) Azure Monitor (также известное как WAD или "Диагностика") позволяет собирать метрики и журналы из гостевой операционной системы (гостевой ОС), работающей на виртуальной машине, в облачной службе или в кластере Service Fabric. Это расширение может отправлять данные телеметрии во [множество различных расположений](https://docs.microsoft.com/azure/monitoring/monitoring-data-collection?toc=/azure/azure-monitor/toc.json).
 
-В этой статье описывается отправка метрик производительности из гостевой ОС на виртуальной машине под управлением Windows (классическая) в хранилище метрик Azure Monitor. Начиная с версии 1.11 расширение диагностики позволяет записывать метрики напрямую в хранилище метрик Azure Monitor, где уже собраны стандартные метрики платформы. 
+В этой статье описывается процесс отправки метрик производительности гостевой ОС для виртуальной машины Windows (классической) в базу данных метрик Azure Monitor. Начиная с версии 1.11 расширение диагностики позволяет записывать метрики напрямую в хранилище метрик Azure Monitor, где уже собраны стандартные метрики платформы. 
 
 Хранение их в этом расположении позволяет получить доступ к тем же действиям, которые доступны для метрик платформы. К этим действиям относятся оповещения практически в реальном времени, построение диаграмм, маршрутизация, доступ из REST API и многое другое. Ранее расширение диагностики записывало данные в службу хранилища Azure, а не в хранилище данных Azure Monitor. 
 
 Процесс, описанный в этой статье, применим только к классическим виртуальным машинам под управлением ОС Windows.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 - Вам необходимы права [администратора службы или соадминистратора](../../billing/billing-add-change-azure-subscription-administrator.md) в подписке Azure. 
 
@@ -203,6 +203,6 @@ ms.locfileid: "70844920"
    ![График метрик](./media/collect-custom-metrics-guestos-vm-classic/plot-metrics.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
 

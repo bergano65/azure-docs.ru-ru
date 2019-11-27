@@ -6,17 +6,15 @@ ms.author: tarcher
 ms.service: jenkins
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 07/31/2019
-ms.openlocfilehash: 3d5e8ba8a29481a6f37ffd10f577d354fc5fbf0a
-ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
+ms.date: 10/23/2019
+ms.openlocfilehash: 7bc2bb63f1382d1c7fd7e436dd5ddfa278262526
+ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71161496"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72881882"
 ---
-<!-- GMinchAQ, 06/18/19 -->
-
-# <a name="tutorial-using-the-azure-dev-spaces-plugin-for-jenkins-with-azure-kubenetes-service"></a>Руководство по Использование подключаемого модуля Azure Dev Spaces для Jenkins со службой Azure Kubenetes 
+# <a name="tutorial-using-the-azure-dev-spaces-plug-in-for-jenkins-with-azure-kubernetes-service"></a>Руководство по Использование подключаемого модуля Azure Dev Spaces для Jenkins со службой Azure Kubenetes 
 
 Azure Dev Spaces позволяет тестировать и итеративно разрабатывать приложение микрослужб, выполняемое в Службе Azure Kubernetes (AKS), без необходимости реплицировать или имитировать зависимости. Подключаемый модуль Azure Dev Spaces для Jenkins помогает использовать Azure Dev Spaces в конвейере непрерывной интеграции и непрерывной доставки (CI/CD).
 

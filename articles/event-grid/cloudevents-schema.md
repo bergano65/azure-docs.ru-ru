@@ -3,17 +3,16 @@ title: Использование службы "Сетка событий Azure"
 description: В этой статье описана установка схемы CloudEvents для событий в службе "Сетка событий Azure".
 services: event-grid
 author: banisadr
-manager: timlt
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 11/07/2018
+ms.date: 11/18/2019
 ms.author: babanisa
-ms.openlocfilehash: 8925110511f6c63a42dd9b121429ac7264cd4aa4
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 6a0e24ce7fa11c6373fbaada40cd9f1b1e7f55a2
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74170249"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325475"
 ---
 # <a name="use-cloudevents-v10-schema-with-event-grid"></a>Использование схемы Клаудевентс v 1.0 со службой "Сетка событий"
 
@@ -94,7 +93,7 @@ az eventgrid topic create \
   --name <topic_name> \
   -l westcentralus \
   -g gridResourceGroup \
-  --input-schema cloudeventv01schema
+  --input-schema cloudeventschemav1_0
 ```
 
 Для PowerShell используйте команду:
@@ -108,7 +107,7 @@ New-AzureRmEventGridTopic `
   -ResourceGroupName gridResourceGroup `
   -Location westcentralus `
   -Name <topic_name> `
-  -InputSchema CloudEventV01Schema
+  -InputSchema CloudEventSchemaV1_0
 ```
 
 Текущая версия CloudEvents не поддерживает пакетную обработку событий. При публикации в разделе с помощью схемы CloudEvent необходимо публиковать каждое событие отдельно.
@@ -126,7 +125,7 @@ az eventgrid event-subscription create \
   --name <event_subscription_name> \
   --source-resource-id $topicID \
   --endpoint <endpoint_URL> \
-  --event-delivery-schema cloudeventv01schema
+  --event-delivery-schema cloudeventschemav1_0
 ```
 
 Для PowerShell используйте команду:
@@ -137,10 +136,14 @@ New-AzureRmEventGridSubscription `
   -ResourceId $topicid `
   -EventSubscriptionName <event_subscription_name> `
   -Endpoint <endpoint_URL> `
-  -DeliverySchema CloudEventV01Schema
+  -DeliverySchema CloudEventSchemaV1_0
 ```
 
  Сейчас, если событие доставляется в схему CloudEvents, триггер службы "Сетка событий" нельзя использовать в приложении "Функции Azure". Используйте триггер HTTP. Примеры реализации триггера HTTP, который получает события в схеме CloudEvents, см. в разделе [Использование триггера HTTP в качестве триггера службы "Сетка событий"](../azure-functions/functions-bindings-event-grid.md#use-an-http-trigger-as-an-event-grid-trigger).
+
+ ## <a name="endpoint-validation-with-cloudevents-v10"></a>Проверка конечной точки с помощью Клаудевентс v 1.0
+
+Если вы уже знакомы со службой "Сетка событий", то, возможно, знаете, что подтверждение конечной точки сетки событий не позволяет избежать нарушения. Клаудевентс v 1.0 реализует собственную [семантику защиты от](security-authentication.md#webhook-event-delivery) нарушений с помощью метода HTTP Options. Подробнее об этом можно прочитать [здесь](https://github.com/cloudevents/spec/blob/v1.0/http-webhook.md#4-abuse-protection). При использовании схемы Клаудевентс для вывода в службе "Сетка событий" используется с защитой Клаудевентс v 1.0 вместо механизма событий проверки сетки событий.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

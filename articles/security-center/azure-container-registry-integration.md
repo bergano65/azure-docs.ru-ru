@@ -1,6 +1,6 @@
 ---
-title: Azure Security Center and Azure Container Registry
-description: Learn about Azure Security Center's integration with Azure Container Registry
+title: Центр безопасности Azure и реестр контейнеров Azure
+description: Сведения об интеграции центра безопасности Azure с реестром контейнеров Azure
 services: security-center
 documentationcenter: na
 author: memildin
@@ -19,35 +19,35 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74229321"
 ---
-# <a name="azure-container-registry-integration-with-security-center-preview"></a>Azure Container Registry integration with Security Center (Preview)
+# <a name="azure-container-registry-integration-with-security-center-preview"></a>Интеграция реестра контейнеров Azure с центром безопасности (Предварительная версия)
 
-Azure Container Registry (ACR) is a managed, private Docker registry service that stores and manages your container images for Azure deployments in a central registry. It's based on the open-source Docker Registry 2.0.
+Реестр контейнеров Azure (запись контроля доступа) — это управляемая частная служба реестра DOCKER, которая хранит образы контейнеров для развертываний Azure и управляет ими в центральном реестре. Он основан на реестре DOCKER с открытым кодом 2,0.
 
-For deeper visibility into your registry and images' vulnerabilities, users of Azure Security Center's standard tier can enable the optional Container Registries bundle. Дополнительные сведения см. на странице [цен](security-center-pricing.md). With the bundle enabled, Security Center automatically scans images in your registry whenever an image is pushed to the registry.
+Для более глубокого ознакомления с уязвимостями реестра и образов пользователи уровня "Стандартный" центра безопасности Azure могут включить дополнительный пакет реестров контейнеров. Дополнительные сведения см. на странице [цен](security-center-pricing.md). При включенном наборе центр безопасности автоматически сканирует изображения в реестре каждый раз, когда в реестр помещается образ.
 
 > [!NOTE]
-> Security Center's first scan of a registry will only occur after the Container Registries bundle is enabled and an image is pushed to the registry.
+> Первый Просмотр реестра в центре безопасности выполняется только после включения набора реестров контейнеров и передачи образа в реестр.
 
-When the scan completes (typically after approximately 10 minutes), findings are available in Security Center recommendations like this:
+По завершении сканирования (обычно через 10 минут) результаты доступны в рекомендациях центра безопасности следующим образом:
 
-[![Sample Azure Security Center recommendation about vulnerabilities discovered in an Azure Container Registry (ACR) hosted image](media/azure-container-registry-integration/container-security-acr-page.png)](media/azure-container-registry-integration/container-security-acr-page.png#lightbox)
+[![пример рекомендации центра безопасности Azure об уязвимостях, обнаруженных в размещенном образе реестра контейнеров Azure (записи контроля доступа)](media/azure-container-registry-integration/container-security-acr-page.png)](media/azure-container-registry-integration/container-security-acr-page.png#lightbox)
 
 ## <a name="benefits-of-integration"></a>Преимущества интеграции
 
-Security Center identifies ACR registries in your subscription and seamlessly provides:
+Центр безопасности определяет реестры записей контроля доступа в подписке и позволяет легко предоставить следующие сведения:
 
-* **Azure-native vulnerability scanning** for all pushed Linux images. Security Center scans the image using a scanner from the industry-leading vulnerability scanning vendor, Qualys. This native solution is seamlessly integrated by default.
+* **Поиск уязвимостей** для всех отправленных образов Linux в Azure. Центр безопасности сканирует образ с помощью сканера, который является ведущим в отрасли для проверки уязвимостей поставщика, Qualys. Это собственное решение по умолчанию тесно интегрировано.
 
-* **Security recommendations** for Linux images with known vulnerabilities. Security Center provides details of each reported vulnerability and a  severity classification. Additionally, it gives guidance for how to  remediate the specific vulnerabilities found on each image pushed to registry.
+* **Рекомендации по безопасности** для образов Linux с известными уязвимостями. Центр безопасности предоставляет подробные сведения о каждой обнаруженной уязвимости и классификации серьезности. Кроме того, он предоставляет рекомендации по исправлению конкретных уязвимостей, обнаруженных в каждом образе, отправленном в реестр.
 
-![Azure Security Center and Azure Container Registry (ACR) high-level overview](./media/azure-container-registry-integration/aks-acr-integration-detailed.png)
+![Общий обзор центра безопасности Azure и реестра контейнеров Azure (записи контроля доступа)](./media/azure-container-registry-integration/aks-acr-integration-detailed.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-To learn more about Security Center's container security features, see:
+Дополнительные сведения о функциях безопасности контейнеров центра безопасности см. в следующих статьях:
 
-* [Azure Security Center and container security](container-security.md)
+* [Центр безопасности Azure и безопасность контейнеров](container-security.md)
 
-* [Integration with Azure Kubernetes Service](azure-kubernetes-service-integration.md)
+* [Интеграция со службой Kubernetes Azure](azure-kubernetes-service-integration.md)
 
-* [Virtual Machine protection](security-center-virtual-machine-protection.md) - Describes Security Center's recommendations
+* [Защита виртуальных машин](security-center-virtual-machine-protection.md) . описание рекомендаций центра безопасности

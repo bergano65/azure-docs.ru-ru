@@ -1,5 +1,5 @@
 ---
-title: Перенос виртуальных машин IaaS Azure в другой регион Azure с помощью службы Azure Site Recovery | Документация Майкрософт
+title: Перемещение виртуальных машин Azure в другой регион с помощью Azure Site Recovery
 description: Используйте службу Azure Site Recovery для переноса виртуальных машин IaaS Azure из одного региона Azure в другой.
 services: site-recovery
 author: rajani-janaki-ram
@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.date: 01/28/2019
 ms.author: rajanaki
 ms.custom: MVC
-ms.openlocfilehash: ec78e4c260c2ca5e0469f9373f60d8bca29ada7f
-ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
+ms.openlocfilehash: 92388c54804d85d2825a25abd0c234081670e8d4
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70375717"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74092179"
 ---
-# <a name="move-azure-vms-to-another-region"></a>Перенос виртуальных машин Azure в другой регион
+# <a name="move-azure-vms-to-another-azure-region"></a>Перемещение виртуальных машин Azure в другой регион Azure
 
 Чтобы повысить надежность, доступность, управление или систему управления, вам также потребуется переместить виртуальные машины Azure инфраструктуры как услуги (IaaS) из одного региона в другой. В этом руководстве показано, как выполнить перенос виртуальных машин в другой регион с помощью Azure Site Recovery. Вы узнаете, как:
 

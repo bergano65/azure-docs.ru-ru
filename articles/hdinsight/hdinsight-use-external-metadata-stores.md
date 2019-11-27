@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/29/2019
-ms.openlocfilehash: 18e03b6828922b3444d9461bef394b5c6682c238
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 14b36a391778649e96694f1cb1d3a1b4e7ee89ba
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73930318"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327370"
 ---
 # <a name="use-external-metadata-stores-in-azure-hdinsight"></a>Использование внешних хранилищ метаданных в Azure HDInsight
 
@@ -74,10 +74,6 @@ HDInsight также поддерживает пользовательские �
 При создании кластеру можно указать ранее созданную базу данных Azure SQL или настроить базу данных SQL после его создания. Этот параметр указывается с помощью **параметров Storage > хранилище метаданных** при создании нового кластера Hadoop, Spark или Interactive Hive из портал Azure.
 
 ![Хранилище метаданных Hive HDInsight на портале Azure](./media/hdinsight-use-external-metadata-stores/azure-portal-cluster-storage-metastore.png)
-
-Кроме того, вы можете добавлять дополнительные кластеры из пользовательского хранилища метаданных с портала Azure или из конфигураций Ambari ("Hive > Расширенный").
-
-![Хранилище метаданных Ambari Hive HDInsight](./media/hdinsight-use-external-metadata-stores/metadata-store-ambari.png)
 
 ## <a name="hive-metastore-best-practices"></a>Рекомендации по хранилищу метаданных Hive
 

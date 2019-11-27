@@ -1,14 +1,14 @@
 ---
 title: Руководство по регулируемым запросам
-description: Узнайте, как создавать более совершенные запросы, чтобы избежать регулирования запросов к графу ресурсов Azure.
-ms.date: 10/18/2019
+description: Узнайте, как выполнять пакетную обработку, разбивать на страницы и выполнять запросы параллельно, чтобы избежать запросов, регулируемых графом ресурсов Azure.
+ms.date: 11/21/2019
 ms.topic: conceptual
-ms.openlocfilehash: 651a5daa9e7e19a5dc157ba0cfa17da2c8abe3db
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 4405cce567a75f83823cc2d441b2a59985c196ad
+ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74038324"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74304665"
 ---
 # <a name="guidance-for-throttled-requests-in-azure-resource-graph"></a>Руководство по регулируемым запросам в графе ресурсов Azure
 
@@ -237,4 +237,4 @@ async Task ExecuteQueries(IEnumerable<string> queries)
 
 - См. язык, используемый в [начальных запросах](../samples/starter.md).
 - См. Дополнительные сведения о расширенном использовании в [расширенных запросах](../samples/advanced.md).
-- Узнайте больше о том, как [исследовать ресурсы](explore-resources.md).
+- Узнайте больше о том, как [изучать ресурсы](explore-resources.md).

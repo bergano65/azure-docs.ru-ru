@@ -1,5 +1,5 @@
 ---
-title: Как исследовать риски в Защита идентификации Azure Active Directory
+title: Исследование рисков Защита идентификации Azure Active Directory
 description: Узнайте, как исследовать рискованных пользователей, обнаружения и входа в Защита идентификации Azure Active Directory
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e04cadef1f6a4aee7d8f807fc7aaa999ba6da8d7
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: 27753d965949d3e677606111139a5d86ccf26dbf
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72887095"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74382120"
 ---
 # <a name="how-to-investigate-risk"></a>Как исследовать риски
 
@@ -88,8 +88,8 @@ ms.locfileid: "72887095"
 
 Затем администраторы могут вернуться к отчету о рисках или входе пользователя для выполнения действий на основе собранных данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- [Политики, доступные для снижения рисков](concept-identity-protection-policies.md)
+- [Identity Protection policies](concept-identity-protection-policies.md) (Политики защиты идентификации)
 
 - [Включение политик входа и риска для пользователей](howto-identity-protection-configure-risk-policies.md)

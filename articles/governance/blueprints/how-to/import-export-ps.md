@@ -1,14 +1,14 @@
 ---
-title: Импорт и экспорт определений схем с помощью PowerShell
+title: Импорт и экспорт схем с помощью PowerShell
 description: Узнайте, как работать с определениями схем в виде кода. Совместное использование, управление исходным кодом и управление ими с помощью команд экспорта и импорта.
 ms.date: 09/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: ca756ed093d5d423f6f83e5ca3953a8ecfce7d5a
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 2822fd1aea1911ba264113d43595346a612ebc50
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73960372"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406351"
 ---
 # <a name="import-and-export-blueprint-definitions-with-powershell"></a>Импорт и экспорт определений схем с помощью PowerShell
 

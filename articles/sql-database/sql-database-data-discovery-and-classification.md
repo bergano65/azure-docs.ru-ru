@@ -12,12 +12,12 @@ author: barmichal
 ms.author: mibar
 ms.reviewer: vanto
 ms.date: 08/22/2019
-ms.openlocfilehash: b5f839cc6216eb12bfd0a86009ec49e987279d6e
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 922a2eb910a99a899bdb9f2b3e2392559ec9b0f3
+ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73889831"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74548403"
 ---
 # <a name="azure-sql-database-and-sql-data-warehouse-data-discovery--classification"></a>Классификация & базы данных SQL Azure и хранилища данных SQL
 
@@ -128,8 +128,9 @@ ms.locfileid: "73889831"
 
 ![Журнал аудита](./media/sql-data-discovery-and-classification/11_data_classification_audit_log.png)
 
-## <a id="subheading-4"></a>Управление классификацией данных с помощью T-SQL
+### <a name="manage-classifications"></a>Управление классификациями
 
+# <a name="t-sqltabazure-t-sql"></a>[T-SQL](#tab/azure-t-sql)
 Используйте T-SQL, чтобы добавить или удалить классификацию столбца или извлечь все классификации для целой базы данных.
 
 > [!NOTE]
@@ -139,8 +140,7 @@ ms.locfileid: "73889831"
 - Удаление классификации одного или нескольких столбцов: [DROP SENSITIVITY CLASSIFICATION](https://docs.microsoft.com/sql/t-sql/statements/drop-sensitivity-classification-transact-sql)
 - Просмотр всех классификаций в базе данных: [sys.sensitivity_classifications](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-sensitivity-classifications-transact-sql)
 
-### <a name="manage-classifications-using-rest-apis"></a>Управление классификациями с помощью API-интерфейсов RESTful
-
+# <a name="rest-apistabazure-rest-api"></a>[Интерфейсы API-интерфейсов RESTful](#tab/azure-rest-api)
 Также интерфейсы REST API можно использовать для программного управления классификациями. Опубликованные интерфейсы REST API поддерживают следующие операции:
 
 - [CREATE или Update](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/createorupdate) — создает или обновляет метку чувствительности данного столбца.
@@ -152,12 +152,8 @@ ms.locfileid: "73889831"
 
 - [List, рекомендованный базой данных](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/listrecommendedbydatabase) — получение рекомендуемых меток чувствительности для заданной базы данных.
 
-## <a name="manage-data-discovery-and-classification-using-azure-powershell"></a>Управление обнаружением и классификацией данных с помощью Azure PowerShell
-
-Вы можете использовать PowerShell для получения всех рекомендуемых столбцов в базе данных SQL Azure и управляемом экземпляре.
-
-### <a name="powershell-cmdlets-for-azure-sql-database"></a>Командлеты PowerShell для базы данных SQL Azure
-
+# <a name="powershell-cmdlet-for-azure-sqltabazure-portal-sqldb"></a>[Командлет PowerShell для SQL Azure](#tab/azure-portal-sqldb)
+Вы можете использовать PowerShell для получения всех рекомендуемых столбцов в базе данных SQL Azure.
 - [Get-Азсклдатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasesensitivityclassification)
 - [Set-Азсклдатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabasesensitivityclassification)
 - [Remove-Азсклдатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqldatabasesensitivityclassification)
@@ -165,8 +161,8 @@ ms.locfileid: "73889831"
 - [Enable-Азсклдатабасесенситивитирекоммендатион](https://docs.microsoft.com/powershell/module/az.sql/enable-azsqldatabasesensitivityrecommendation)
 - [Disable-Азсклдатабасесенситивитирекоммендатион](https://docs.microsoft.com/powershell/module/az.sql/disable-azsqldatabasesensitivityrecommendation)
 
-### <a name="powershell-cmdlets-for-managed-instance"></a>Командлеты PowerShell для управляемого экземпляра
-
+# <a name="powershell-cmdlets-for-managed-instancetabazure-powershell-mi"></a>[Командлеты PowerShell для Управляемый экземпляр](#tab/azure-powershell-mi)
+Вы можете использовать PowerShell для получения всех рекомендуемых столбцов в управляемом экземпляре.
 - [Get-Азсклинстанцедатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlinstancedatabasesensitivityclassification)
 - [Set-Азсклинстанцедатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlinstancedatabasesensitivityclassification)
 - [Remove-Азсклинстанцедатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlinstancedatabasesensitivityclassification)

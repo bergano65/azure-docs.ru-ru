@@ -1,21 +1,18 @@
 ---
 title: 'Пример: хранилища ключей без конечных точек для виртуальных сетей'
 description: В этом примере определения политики выполняется проверка хранилищ Key Vault с целью обнаружить экземпляры без конечных точек служб для виртуальной сети.
-author: DCtheGeek
-ms.service: azure-policy
-ms.topic: sample
 ms.date: 01/26/2019
-ms.author: dacoulte
-ms.openlocfilehash: 7bcbcdf68b3c8f882a1e0fbb9953fea575f96556
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.topic: sample
+ms.openlocfilehash: 078a781ca96df421d52179f5e8d25650def8a2f3
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72255725"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74076204"
 ---
 # <a name="sample---key-vault-vaults-with-no-virtual-network-endpoints"></a>Пример — хранилища Key Vault без конечных точек виртуальной сети
 
-Эта политика проверяет хранилища Key Vault для обнаружения экземпляров без конечных точек виртуальной сети. Используйте эту политику, чтобы обеспечить соблюдение требований к безопасности. Дополнительные сведения см. в статье [Конечные точки служб для виртуальной сети для Azure Key Vault](../../../key-vault/key-vault-overview-vnet-service-endpoints.md).
+На этом примере показано, как [интегрировать в Key Vault аудиты Политики Azure](../../../key-vault/azure-policy.md), если у хранилищ ключей нет конечных точек в виртуальной сети. Используйте эту политику, чтобы обеспечить соблюдение требований к безопасности. Дополнительные сведения см. в статье [Конечные точки служб для виртуальной сети для Azure Key Vault](../../../key-vault/key-vault-overview-vnet-service-endpoints.md).
 
 Развернуть этот образец политики можно с помощью следующих средств.
 
@@ -187,4 +184,5 @@ az policy definition delete --name `echo $definition | jq '.name' -r`
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Просмотр дополнительных [примеров для Политики Azure](index.md)
+- Ознакомление со статьей [Интеграция Azure Key Vault с Политикой Azure](../../../key-vault/azure-policy.md)
 - Просмотр [Структура определения службы "Политика Azure"](../concepts/definition-structure.md)

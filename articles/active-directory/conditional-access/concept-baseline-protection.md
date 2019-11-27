@@ -1,22 +1,22 @@
 ---
-title: Политики условного доступа с базовой защитой — Azure Active Directory
+title: Базовые политики условного доступа — Azure Active Directory
 description: Базовые политики условного доступа для защиты организаций от распространенных атак
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 10/15/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ecd46b8cb734355a8394b7480c6def341cf9700d
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: a9bb384045c8b2e0a5743fdc301a829792639b7e
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72430328"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74420565"
 ---
 # <a name="what-are-baseline-policies"></a>Что такое базовые политики?
 
@@ -26,7 +26,7 @@ ms.locfileid: "72430328"
 
 ## <a name="baseline-policies"></a>Базовые политики
 
-![Базовые политики условного доступа в портал Azure](./media/concept-baseline-protection/conditional-access-baseline-policies.png)
+![Базовые политики условного доступа в портал Azure](./media/concept-baseline-protection/conditional-access-policies.png)
 
 Существует четыре базовые политики:
 
@@ -43,7 +43,7 @@ ms.locfileid: "72430328"
 
 Требовать MFA для администраторов (Предварительная версия) — это базовая политика, требующая многофакторную проверку подлинности (MFA) для следующих ролей каталога, которая считается наиболее привилегированными ролями Azure AD:
 
-* Глобальный администратор.
+* Глобальный администратор
 * администратор SharePoint;
 * администратор Exchange;
 * Администратор условного доступа
@@ -75,18 +75,18 @@ ms.locfileid: "72430328"
 
 Организации используют различные службы Azure и управляют ими на основе Azure Resource Managerных средств, таких как:
 
-* портала Azure
+* портале Azure
 * Azure PowerShell
-* Azure CLI
+* Интерфейс командной строки Azure
 
 Использование любого из этих средств для управления ресурсами является действием с высоким уровнем привилегий. Эти средства могут изменять конфигурации на уровне подписки, такие как параметры службы и выставление счетов по подписке.
 
 Для защиты привилегированных действий это **требует** использования многофакторной проверки подлинности для всех пользователей, обращающихся к портал Azure, Azure PowerShell или Azure CLI.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения см. здесь:
+Дополнительные сведения см. в следующих источниках.
 
 * [Общие политики условного доступа](concept-conditional-access-policy-common.md)
 * [Пять шагов по защите инфраструктуры удостоверений](../../security/fundamentals/steps-secure-identity.md)
-* [Что представляет собой условный доступ в Azure Active Directory?](overview.md)
+* [Что такое условный доступ в Azure Active Directory?](overview.md)

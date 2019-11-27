@@ -1,14 +1,14 @@
 ---
 title: Изучение аудита содержимого виртуальных машин
-description: Узнайте, как политика Azure использует гостевую конфигурацию для аудита параметров на компьютере Azure.
+description: Узнайте, как политика Azure использует агент гостевой конфигурации для аудита параметров в виртуальных машинах.
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5148ecb2f10a2ac517c5cf6c7f682a0f25808910
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: f68bbc64ee8f0da02d213895a70e4c533b9a5f63
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73959780"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463797"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 
@@ -61,7 +61,7 @@ Register-AzResourceProvider -ProviderNamespace 'Microsoft.GuestConfiguration'
 
 |операционная система|Инструмент проверки|Примечания|
 |-|-|-|
-|Windows|[Конфигурация требуемого состояния Майкрософт](/powershell/dsc) версии 2| |
+|Windows|[Настройка требуемого состояния Windows PowerShell](/powershell/scripting/dsc/overview/overview) v2| |
 |Linux|[Chef InSpec](https://www.chef.io/inspec/)| Ruby и Python устанавливаются с помощью расширения гостевой конфигурации. |
 
 ### <a name="validation-frequency"></a>Частота проверки
@@ -79,7 +79,7 @@ Register-AzResourceProvider -ProviderNamespace 'Microsoft.GuestConfiguration'
 |Microsoft|Windows Server|2012 Datacenter, 2012 R2 Datacenter, 2016 Datacenter, 2019 Datacenter|
 |Microsoft|Клиент Windows|Windows 10|
 |OpenLogic|CentOS|7.3, 7.4, 7.5|
-|Red Hat|Red Hat Enterprise Linux|7.4, 7.5|
+|Red Hat|Red Hat Enterprise Linux.|7.4, 7.5|
 |SUSE|SLES|12 с пакетом обновления 3|
 
 > [!IMPORTANT]
@@ -113,7 +113,7 @@ Windows Server Nano Server не поддерживается ни в одной 
 
 После того как назначение **DeployIfNotExists** соответствует требованиям, назначение политики **помощью параметров auditifnotexists** использует средства локальной проверки, чтобы определить, является ли назначение конфигурации совместимым или несоответствующим. Средство проверки предоставляет результаты клиенту гостевой конфигурации. Клиент перенаправляет результаты в гостевое расширение, чтобы сделать их доступными через поставщик ресурсов гостевой конфигурации.
 
-Служба "Политика Azure" использует свойство поставщиков ресурсов **complianceStatus**, чтобы сообщить о совместимости в узле **Compliance**. Дополнительные сведения см. в руководстве по [получению данных соответствия](../how-to/getting-compliance-data.md).
+Служба "Политика Azure" использует свойство поставщиков ресурсов **complianceStatus**, чтобы сообщить о совместимости в узле **Compliance**. Дополнительные сведения см. в руководстве по [получению данных соответствия](../how-to/get-compliance-data.md).
 
 > [!NOTE]
 > Политика **DeployIfNotExists** необходима, чтобы политика **помощью параметров auditifnotexists** возвращала результаты. Без **DeployIfNotExists**политика **помощью параметров auditifnotexists** показывает ресурсы "0 из 0" в качестве состояния.
@@ -198,6 +198,6 @@ egrep -B $linesToIncludeBeforeMatch -A $linesToIncludeAfterMatch 'DSCEngine|DSCM
 - Изучите статью о [структуре определения Политики Azure](definition-structure.md).
 - См. дополнительные сведения о [действиях политик](effects.md).
 - Узнайте, как [программно создавать политики](../how-to/programmatically-create.md).
-- Узнайте, как [получить данные о соответствии](../how-to/getting-compliance-data.md).
+- Узнайте, как [получить данные о соответствии](../how-to/get-compliance-data.md).
 - Узнайте, как [исправлять несоответствующие ресурсы](../how-to/remediate-resources.md).
 - Дополнительные сведения о группе управления см. в статье [Упорядочивание ресурсов с помощью групп управления Azure](../../management-groups/overview.md).

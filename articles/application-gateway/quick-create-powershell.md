@@ -1,21 +1,22 @@
 ---
-title: Краткое руководство. Направление веб-трафика с помощью шлюза приложений Azure в Azure PowerShell | Документация Майкрософт
+title: Краткое руководство. Направление веб-трафика с помощью PowerShell
+titleSuffix: Azure Application Gateway
 description: Узнайте, как с помощью Azure PowerShell создать шлюз приложений Azure, который направляет веб-трафик к виртуальным машинам в серверном пуле.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: quickstart
-ms.date: 07/17/2019
+ms.date: 11/14/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: a55f602833cacd27cd82adafd888c67c544564c2
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: d5b0ebc2d1b64dd4be677c38de30af7f7a954637
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359979"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74075103"
 ---
-# <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-powershell"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure в Azure PowerShell
+# <a name="quickstart-direct-web-traffic-with-azure-application-gateway-using-azure-powershell"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure в Azure PowerShell
 
 В этом кратком руководстве показано, как быстро создать шлюз приложений с помощью Azure PowerShell.  Создав шлюз приложений, протестируйте его, чтобы убедиться в том, что он работает правильно. Шлюз приложений Azure позволяет направлять веб-трафик приложения к определенным ресурсам. Для этого портам назначаются прослушиватели, создаются определенные правила и в серверный пул добавляются соответствующие ресурсы. Чтобы упростить восприятие, в этой статье используется простая настройка с открытым интерфейсным IP-адресом, базовый прослушиватель для размещения одного сайта на этом шлюзе приложений, две виртуальные машины, используемые для серверного пула, и базовое правило маршрутизации запросов.
 
@@ -34,7 +35,7 @@ ms.locfileid: "68359979"
 1. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). 
 2. Чтобы создать подключение к Azure, выполните команду `Login-AzAccount`.
 
-### <a name="resource-group"></a>Resource group
+### <a name="resource-group"></a>группа ресурсов.
 
 В Azure выделите связанные ресурсы группе ресурсов. Вы можете выбрать существующую группу ресурсов или создать новую. В этом примере вы создадите группу ресурсов с помощью командлета [New-AzResourceGroup](/powershell/module/Az.resources/new-Azresourcegroup). 
 

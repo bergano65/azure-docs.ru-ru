@@ -2,7 +2,7 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Обзор Azure Blueprints
+    - name: Что такое Azure Blueprint?
       displayName: 'templates, policy, definition, assignment, rbac'
       href: overview.md
 - name: Краткие руководства
@@ -203,7 +203,7 @@
 - name: Устранение неполадок
   displayName: 'errors, violation'
   href: ./troubleshoot/general.md
-- name: Ссылки
+- name: Справочные материалы
   items:
     - name: Azure PowerShell
       href: '/powershell/module/az.blueprint/#blueprint'

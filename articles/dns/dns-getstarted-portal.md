@@ -1,18 +1,19 @@
 ---
-title: Краткое руководство. Создание зоны и записи Azure DNS с помощью портала Azure
+title: Краткое руководство. Создание зоны и записи DNS — портал Azure
+titleSuffix: Azure DNS
 description: Используйте это пошаговое руководство, чтобы узнать, как создать зону Azure DNS и осуществить запись с помощью портала Azure.
 services: dns
-author: vhorne
+author: asudbring
 ms.service: dns
 ms.topic: quickstart
 ms.date: 3/11/2019
-ms.author: victorh
-ms.openlocfilehash: feb46114b3cf1b04e6a181f84bcdc41c17f1c0ba
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.author: allensu
+ms.openlocfilehash: cb81b0ec2b5283ba242dd7c2dd549c330e230f0a
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58119077"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74082926"
 ---
 # <a name="quickstart-create-an-azure-dns-zone-and-record-using-the-azure-portal"></a>Краткое руководство. Создание зоны и записи Azure DNS с помощью портала Azure
 
@@ -88,7 +89,7 @@ You can also perform these steps using [Azure PowerShell](dns-getstarted-powersh
    nslookup www.contoso.xyz <name server name>
    ```
 
-   Например: 
+   Например:
 
    ```
    nslookup www.contoso.xyz ns1-08.azure-dns.com.

@@ -1,25 +1,25 @@
 ---
 title: Синхронизация пользователей Azure Active Directory с кластером HDInsight
 description: Синхронизация пользователей, прошедших проверку подлинности, от Azure Active Directory к кластеру HDInsight.
-ms.service: hdinsight
 author: ashishthaps
 ms.author: ashishth
 ms.reviewer: jasonh
-ms.custom: hdinsightactive
+ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: b6252e99e69f849e2e988819f38dcccc5a7a73e0
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.custom: hdinsightactive
+ms.date: 11/21/2019
+ms.openlocfilehash: acacb9c10250d43e22b5b5b1d073b18461561512
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73498156"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406830"
 ---
 # <a name="synchronize-azure-active-directory-users-to-an-hdinsight-cluster"></a>Синхронизация пользователей Azure Active Directory с кластером HDInsight
 
-[Кластеры HDInsight с Корпоративным пакетом безопасности (ESP)](hdinsight-domain-joined-introduction.md) могут использовать строгую аутентификацию пользователей Azure Active Directory (Azure AD), а также политики *управления доступом на основе ролей* (RBAC). При добавлении пользователей и групп в Azure AD вы можете синхронизировать пользователей, которым необходим доступ к кластеру.
+[Кластеры HDInsight с Корпоративным пакетом безопасности (ESP)](hdinsight-domain-joined-introduction.md) могут использовать строгую аутентификацию пользователей Azure Active Directory (Azure AD), а также политики *управления доступом на основе ролей* (RBAC). При добавлении пользователей и групп в Azure AD можно синхронизировать пользователей, которым необходим доступ к кластеру.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Если вы еще этого не сделали, [создайте кластер HDInsight с Корпоративным пакетом безопасности](hdinsight-domain-joined-configure.md).
 
@@ -27,7 +27,7 @@ ms.locfileid: "73498156"
 
 Чтобы просмотреть узлы, откройте веб-интерфейс Ambari. Для каждого узла будут заданы новые параметры автоматического обновления.
 
-1. На [портале Azure](https://portal.azure.com) перейдите в каталог Azure AD, связанный с кластером ESP.
+1. В [портал Azure](https://portal.azure.com)перейдите к каталогу Azure AD, связанному с кластером ESP.
 
 2. Выберите **All users** (Все пользователи) в левом меню, а затем щелкните **New user** (Новый пользователь).
 
@@ -45,20 +45,20 @@ ms.locfileid: "73498156"
 
 Следующий метод использует POST с REST API Ambari. Дополнительные сведения см. в статье [Управление кластерами HDInsight с помощью REST API Ambari](hdinsight-hadoop-manage-ambari-rest-api.md).
 
-1. [Подключитесь к кластеру, используя протокол SSH](hdinsight-hadoop-linux-use-ssh-unix.md). В области обзора для кластера на портале Azure нажмите кнопку **Безопасная оболочка (SSH)** .
+1. Используйте [команду SSH](hdinsight-hadoop-linux-use-ssh-unix.md) для подключения к кластеру. Измените приведенную ниже команду, заменив `CLUSTERNAME` именем своего кластера, а затем введите команду:
 
-    ![Значок Secure Shell HDInsight (SSH)](./media/hdinsight-sync-aad-users-to-cluster/hdinsight-secure-shell.png)
+    ```cmd
+    ssh sshuser@CLUSTERNAME-ssh.azurehdinsight.net
+    ```
 
-2. Скопируйте отображаемую команду `ssh` и вставьте ее в клиент SSH. При появлении запроса введите пользовательский пароль SSH.
-
-3. После аутентификации введите следующую команду:
+1. После аутентификации введите следующую команду:
 
     ```bash
-    curl -u admin:<YOUR PASSWORD> -sS -H "X-Requested-By: ambari" \
+    curl -u admin:PASSWORD -sS -H "X-Requested-By: ambari" \
     -X POST -d '{"Event": {"specs": [{"principal_type": "groups", "sync_type": "existing"}]}}' \
-    "https://<YOUR CLUSTER NAME>.azurehdinsight.net/api/v1/ldap_sync_events"
+    "https://CLUSTERNAME.azurehdinsight.net/api/v1/ldap_sync_events"
     ```
-    
+
     Результат должен выглядеть следующим образом.
 
     ```json
@@ -74,14 +74,14 @@ ms.locfileid: "73498156"
     }
     ```
 
-4. Чтобы просмотреть состояние синхронизации, выполните новую команду `curl`:
+1. Чтобы просмотреть состояние синхронизации, выполните новую команду `curl`:
 
     ```bash
-    curl -u admin:<YOUR PASSWORD> https://<YOUR CLUSTER NAME>.azurehdinsight.net/api/v1/ldap_sync_events/1
+    curl -u admin:PASSWORD https://CLUSTERNAME.azurehdinsight.net/api/v1/ldap_sync_events/1
     ```
-    
+
     Результат должен выглядеть следующим образом.
-    
+
     ```json
     {
       "href" : "http://hn0-hadoop.YOURDOMAIN.com:8080/api/v1/ldap_sync_events/1",
@@ -120,14 +120,14 @@ ms.locfileid: "73498156"
     }
     ```
 
-5. В этом результате показано, что состояние — **COMPLETE** (Завершено) (был создан один пользователь, и ему было назначено членство). В этом примере пользователь назначен для группы HiveUsers, синхронизированной по протоколу LDAP, так как он был добавлен в ту же группу в Azure AD.
+1. В результате отобразится состояние " **завершено**", был создан один пользователь, и ему было назначено членство. В этом примере пользователь назначен для группы HiveUsers, синхронизированной по протоколу LDAP, так как он был добавлен в ту же группу в Azure AD.
 
-> [!NOTE]  
-> В предыдущем методе выполняется синхронизация только тех групп Azure AD, которые указаны в свойстве **Access user group** (Доступ к группе пользователей) параметров домена при создании кластера. Дополнительные сведения см. в статье [Настройка среды с присоединенной к домену песочницей HDInsight](domain-joined/apache-domain-joined-configure.md).
+    > [!NOTE]  
+    > Предыдущий метод синхронизирует только группы Azure AD, указанные в свойстве **доступа к группе пользователей** параметров домена во время создания кластера. Дополнительные сведения см. в статье [Настройка среды с присоединенной к домену песочницей HDInsight](domain-joined/apache-domain-joined-configure.md).
 
 ## <a name="verify-the-newly-added-azure-ad-user"></a>Проверка только что добавленного пользователя Azure AD
 
-Откройте [веб-интерфейс Apache Ambari](hdinsight-hadoop-manage-ambari.md) и убедитесь, что новый пользователь Azure AD добавлен. Получите доступ к веб-интерфейсу Ambari, перейдя к **`https://<YOUR CLUSTER NAME>.azurehdinsight.net`** . Укажите имя администратора и пароль кластера.
+Откройте [веб-интерфейс Apache Ambari](hdinsight-hadoop-manage-ambari.md) и убедитесь, что новый пользователь Azure AD добавлен. Получите доступ к веб-интерфейсу Ambari, перейдя к **`https://CLUSTERNAME.azurehdinsight.net`** . Укажите имя администратора и пароль кластера.
 
 1. На панели мониторинга Ambari выберите **Manage Ambari** (Управление Ambari) в меню **admin**.
 
@@ -143,9 +143,10 @@ ms.locfileid: "73498156"
 
 ## <a name="log-in-to-ambari-as-the-new-user"></a>Вход в Ambari в качестве нового пользователя
 
-Когда новый пользователь (или любой другой пользователь домена) входит в Ambari, он использует полное имя пользователя и учетные данные домена Azure AD.  В Ambari показан псевдоним пользователя, являющийся отображаемым именем пользователя в Azure AD. В новом примере имя пользователя — `hiveuser3@contoso.com`. В Ambari этот пользователь отображается как `hiveuser3`, но он входит в Ambari как `hiveuser3@contoso.com`.
+Когда новый пользователь (или любой другой пользователь домена) входит в Ambari, он использует полное имя пользователя и учетные данные домена Azure AD.  В Ambari показан псевдоним пользователя, являющийся отображаемым именем пользователя в Azure AD.
+В новом примере имя пользователя — `hiveuser3@contoso.com`. В Ambari этот пользователь отображается как `hiveuser3`, но он входит в Ambari как `hiveuser3@contoso.com`.
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 * [Настройка политик Apache Hive в кластере HDInsight с ESP](hdinsight-domain-joined-run-hive.md)
 * [Управление кластерами HDInsight с помощью корпоративного пакета безопасности](hdinsight-domain-joined-manage.md)

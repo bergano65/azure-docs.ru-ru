@@ -1,6 +1,6 @@
 ---
-title: Отправка метрик гостевых ОС в хранилище метрик Azure Monitor для классических облачных служб
-description: Отправка метрик гостевых ОС в хранилище метрик Azure Monitor для облачных служб
+title: Отправка метрик классических облачных служб в базу данных метрик Azure Monitor
+description: Описание процесса отправки метрик производительности гостевой ОС для классических облачных служб Azure в хранилище метрик Azure Monitor.
 author: anirudhcavale
 services: azure-monitor
 ms.service: azure-monitor
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 56138277866d3b2bf02733a2c595a5a232faed8c
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 1c742daf29cbbef5e6f51af5363be7fd949aaebf
+ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70844929"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74304775"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-classic-cloud-services"></a>Отправка метрик гостевых ОС в хранилище метрик Azure Monitor для классических облачных служб 
 
@@ -27,7 +27,7 @@ ms.locfileid: "70844929"
 
 Процесс, описанный в этой статье, выполняется только для счетчиков производительности в облачных службах Azure. Он не подходит для других пользовательских метрик. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 - Вам необходимы права [администратора службы или соадминистратора](~/articles/billing/billing-add-change-azure-subscription-administrator.md) в подписке Azure. 
 
@@ -190,7 +190,7 @@ Set-AzureServiceDiagnosticsExtension -ServiceName <classicCloudServiceName> -Sto
 
  ![Метрики портала Azure](./media/collect-custom-metrics-guestos-vm-cloud-service-classic/metrics-graph.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
 

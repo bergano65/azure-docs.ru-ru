@@ -4,14 +4,35 @@ ms.service: spatial-anchors
 ms.topic: include
 ms.date: 1/30/2019
 ms.author: rgarcia
-ms.openlocfilehash: 1007533df077c58d9e4d57f9e86b035730ea917f
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: ec8fb6efab126dcf5556a9abfdf58d1fd69d4212
+ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69904038"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72882309"
 ---
-## <a name="set-up-your-device-in-unity"></a>Настройка устройства в Unity
+## <a name="androidtabandroid"></a>[Android](#tab/Android)
+
+Пример Java для Android поддерживает совместное использование на разных устройствах.
+Откройте файл `SharedActivity.java` из папки с примерами в Android Studio. Введите URL-адрес, полученный на предыдущем шаге (из развертывания ASP.NET веб-приложения Azure) в качестве значения для `SharingAnchorsServiceUrl` в файле `SharedActivity.java`. Измените `index.html` в URL-адресе на `api/anchors`. Результат будет выглядеть так: `https://<app_name>.azurewebsites.net/api/anchors`.
+
+[!INCLUDE [Run shared sample](spatial-anchors-run-sample.md)]
+
+## <a name="iostabios"></a>[iOS](#tab/iOS)
+
+Пример Objective-C для iOS поддерживает совместное использование на разных устройствах.
+Откройте файл `SharedDemoViewController.m` в папке с примерами. Введите URL-адрес, полученный на предыдущем шаге (из развертывания ASP.NET веб-приложения Azure) в качестве значения для `SharingAnchorsServiceUrl` в файле `SharedActivity.java`. Измените `index.html` в URL-адресе на `api/anchors`. Результат будет выглядеть так: `https://<app_name>.azurewebsites.net/api/anchors`.
+
+[!INCLUDE [Run shared sample](spatial-anchors-run-sample.md)]
+
+## <a name="xamarintabxamarin"></a>[Xamarin](#tab/Xamarin)
+
+Примеры для Xamarin Android и iOS поддерживают совместное использование на разных устройствах.
+Откройте файл `AccountDetails.cs` в папке с примерами. Введите URL-адрес, полученный на предыдущем шаге (из развертывания ASP.NET веб-приложения Azure) в качестве значения для `AnchorSharingServiceUrl` в файле `SharedActivity.java`. Измените `index.html` в URL-адресе на `api/anchors`. Результат будет выглядеть так: `https://<app_name>.azurewebsites.net/api/anchors`.
+
+[!INCLUDE [Run shared sample](spatial-anchors-run-sample.md)]
+
+## <a name="unitytabunity"></a>[Unity](#tab/Unity)
 
 [!INCLUDE [Open Unity Project](spatial-anchors-open-unity-project.md)]
 
@@ -45,10 +66,7 @@ ms.locfileid: "69904038"
 
 Убедитесь, что флажок **Export Project** (Экспорт проекта) не установлен. Выберите **Build And Run** (Сборка и запуск). Появится запрос на сохранение файла `.apk`. Вы можете выбрать для него любое имя.
 
-После запуска приложения в диалоговом окне **Choose A Demo** (Выбор демонстрации) используйте стрелки влево или вправо, чтобы выбрать параметр **LocalShare**, а затем нажмите кнопку**Go!** (Вперед!). Следуйте указаниям в приложении. Вы можете выбрать **Create & Share Anchor** (Создать привязку и предоставить к ней общий доступ) или **Locate Shared Anchor** (Найти общую привязку).
-
-Первый сценарий позволяет создать привязку, которая впоследствии может быть обнаружена на том же или на другом устройстве.
-Второй сценарий позволяет найти привязки, к которым уже был предоставлен общий доступ, если вы ранее запускали приложение на том же устройстве либо на другом. Когда вы выберете сценарий, в приложении отобразятся дальнейшие пошаговые инструкции. Например, вам будет предложено переместить устройство, чтобы собрать информацию о среде. Затем вам нужно будет разместить привязку к окружающей среде, подождать, пока она сохраниться, и так далее.
+[!INCLUDE [Run shared sample](spatial-anchors-run-sample.md)]
 
 ### <a name="deploy-to-an-ios-device"></a>Развертывание на устройстве с iOS
 
@@ -58,9 +76,6 @@ ms.locfileid: "69904038"
 
 [!INCLUDE [Configure Xcode](spatial-anchors-unity-ios-xcode.md)]
 
-После запуска приложения в диалоговом окне **Choose A Demo** (Выбор демонстрации) используйте стрелки влево или вправо, чтобы выбрать параметр **LocalShare**, а затем нажмите кнопку**Go!** (Вперед!). Следуйте указаниям в приложении. Вы можете выбрать **Create & Share Anchor** (Создать привязку и предоставить к ней общий доступ) или **Locate Shared Anchor** (Найти общую привязку).
-
-Первый сценарий позволяет создать привязку, которая впоследствии может быть обнаружена на том же или на другом устройстве.
-Второй сценарий позволяет найти привязки, к которым уже был предоставлен общий доступ, если вы ранее запускали приложение на том же устройстве либо на другом. Когда вы выберете сценарий, в приложении отобразятся дальнейшие пошаговые инструкции. Например, вам будет предложено переместить устройство, чтобы собрать информацию о среде. Затем вам нужно будет разместить привязку к окружающей среде, подождать, пока она сохраниться, и так далее.
+[!INCLUDE [Run shared sample](spatial-anchors-run-sample.md)]
 
 В Xcode остановите приложение, нажав кнопку **Stop** (Остановить).

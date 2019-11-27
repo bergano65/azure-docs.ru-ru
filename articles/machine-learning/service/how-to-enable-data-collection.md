@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: laobri
 ms.author: copeters
 author: lostmygithubaccount
-ms.date: 10/15/2019
+ms.date: 11/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 20bc148e392900aecb63ad393ec6e90cda65585a
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 18b92fe090895c3aa08c3c931dfa8bd12db0f2d3
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73839103"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406452"
 ---
 # <a name="collect-data-for-models-in-production"></a>Сбор данных для моделей в рабочей среде
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -55,9 +55,9 @@ ms.locfileid: "73839103"
 >[!Note]
 > В версиях пакета SDK до `0.1.0a16` аргумент `designation` был назван `identifier`. Если код был разработан с использованием более ранней версии, необходимо соответствующим образом обновить.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
-- Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня
+- Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Попробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) прямо сейчас.
 
 - Должны быть установлены рабочая область машинного обучения Azure, локальный каталог со сценариями и пакет SDK машинного обучения Azure для Python. Узнайте, как выполнить эти предварительные требования с помощью документа [Настройка среды разработки](how-to-configure-environment.md) .
 

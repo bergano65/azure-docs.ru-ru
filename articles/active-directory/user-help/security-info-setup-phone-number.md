@@ -1,6 +1,6 @@
 ---
-title: Set up your phone number as your authentication method - Azure AD
-description: How to set up the Security info page to verify your identity using your phone number and mobile device as your authentication method.
+title: Настройка номера телефона в качестве метода проверки — Azure AD
+description: Настройка страницы сведений о безопасности (Предварительная версия) для проверки личности с использованием номера телефона и мобильного устройства в качестве метода проверки.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -12,14 +12,14 @@ ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74a0c0d374e9a3bc58a62ba72a0c934ed0c6eff2
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
-ms.translationtype: HT
+ms.openlocfilehash: 6bb7d811b1d622fb14935b4d5ddf0cb60e44daa8
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74233153"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74278961"
 ---
-# <a name="set-up-your-phone-number-as-your-authentication-method-from-the-security-info-preview-page"></a>Set up your phone number as your authentication method from the Security info (preview) page
+# <a name="set-up-a-phone-number-as-your-verification-method"></a>Настройка номера телефона в качестве метода проверки
 
 Чтобы добавить двухфакторную проверку и методы сброса пароля, выполните следующие действия. После первоначальной настройки вы можете вернуться к странице **Сведения для защиты**, чтобы добавить, обновить или удалить сведения для защиты.
 
@@ -96,7 +96,7 @@ ms.locfileid: "74233153"
 
     Теперь по умолчанию будет использоваться новый метод входа в систему: **Phone - call (Телефон — вызов) ( *_номер_телефона_* )** .
 
-## <a name="additional-security-info-methods"></a>Дополнительные методы в сведениях для защиты
+## <a name="additional-security-info-methods"></a>Дополнительные методы проверки сведений для защиты
 
 Чтобы подтвердить вашу личность, ваша организация может связаться с вами различными способами, в зависимости от того, что именно вы пытаетесь выполнить. Эти способы могут быть следующими:
 
@@ -104,7 +104,7 @@ ms.locfileid: "74233153"
 
 - **Тестовое сообщение на мобильное устройство.** Введите номер своего мобильного устройства и получите сообщение с кодом, необходимым для двухфакторной проверки подлинности или сброса пароля. Пошаговые инструкции по проверке личности с помощью текстового сообщения (SMS) см. в статье о [настройке использования текстовых сообщений (SMS) в сведениях для защиты](security-info-setup-text-msg.md).
 
-- **Security key.** Register your Microsoft-compatible security key and use it along with a PIN for two-step verification or password reset. For step-by-step instructions about how to verify your identity with a security key, see [Set up security info to use a security key](security-info-setup-security-key.md).
+- **Ключ безопасности.** Зарегистрируйте ключ безопасности, совместимый с Майкрософт, и используйте его вместе с ПИН-кодом для двухфакторной проверки подлинности или сброса пароля. Пошаговые инструкции по проверке удостоверения с помощью ключа безопасности см. [в разделе Настройка сведений о безопасности для использования ключа безопасности](security-info-setup-security-key.md).
 
 - **Адрес электронной почты.** Введите рабочий или учебный адрес электронной почты, чтобы получить электронное письмо для сброса пароля. Этот вариант недоступен для двухфакторной проверки подлинности. Пошаговые инструкции о том, как настроить адрес электронной почты, см. в статье о [настройке использования электронной почты в сведениях для защиты](security-info-setup-email.md).
 
@@ -113,7 +113,7 @@ ms.locfileid: "74233153"
     >[!Note]
     >Если некоторые из этих параметров отсутствуют, скорее всего, ваша организация не разрешает данные методы. Если это так, вам нужно выбрать доступный метод или обратиться за помощью к администратору.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Если вы забыли свой пароль, сбросьте его на [портале сброса пароля](https://passwordreset.microsoftonline.com/) или выполните действия, описанные в статье о [сбросе пароля рабочей или учебной учетной записи](active-directory-passwords-update-your-own-password.md).
 

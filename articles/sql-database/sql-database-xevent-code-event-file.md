@@ -11,12 +11,12 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: jrasnik
 ms.date: 03/12/2019
-ms.openlocfilehash: 3b1e8881b2e2004a94064e472690ee40414ea02d
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 00f31bdf147c4711715cd600fa8a8fd4bac2162a
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73822387"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74422476"
 ---
 # <a name="event-file-target-code-for-extended-events-in-sql-database"></a>Код целевого файла событий для расширенных событий в Базе данных SQL
 
@@ -28,30 +28,33 @@ ms.locfileid: "73822387"
 
 В этом разделе представлен пример двухэтапного кода.
 
-* PowerShell: создание контейнера хранилища Azure в облаке.
-* Transact-SQL:
+- PowerShell: создание контейнера хранилища Azure в облаке.
+- Transact-SQL:
   
-  * назначение контейнера хранилища Azure для целевого файла событий;
-  * создание и запуск сеанса событий и т. д.
+  - назначение контейнера хранилища Azure для целевого файла событий;
+  - создание и запуск сеанса событий и т. д.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 > [!IMPORTANT]
 > Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
-* Учетная запись и подписка Azure. Вы можете зарегистрироваться, чтобы получить [бесплатную пробную версию](https://azure.microsoft.com/pricing/free-trial/).
-* Любая база данных, позволяющая создать таблицу.
+- Учетная запись и подписка Azure. Вы можете зарегистрироваться, чтобы получить [бесплатную пробную версию](https://azure.microsoft.com/pricing/free-trial/).
+- Любая база данных, позволяющая создать таблицу.
   
-  * При необходимости вы можете быстро [создать демонстрационную базу данных **AdventureWorksLT**](sql-database-get-started.md).
-* SQL Server Management Studio (ssms.exe), в идеале — последняя ежемесячная версия обновления. 
+  - При необходимости вы можете быстро [создать демонстрационную базу данных **AdventureWorksLT**](sql-database-get-started.md).
+
+- SQL Server Management Studio (ssms.exe), в идеале — последняя ежемесячная версия обновления.
   Ресурсы для загрузки последней версии файла ssms.exe:
   
-  * Статья [Скачивание SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/mt238290.aspx).
-  * [Прямая ссылка на загрузку.](https://go.microsoft.com/fwlink/?linkid=616025)
-* Установленные [модули Azure PowerShell](https://go.microsoft.com/?linkid=9811175) .
-  
-  * Модули предоставляют команды, такие как- **New-азсторажеаккаунт**.
+  - Статья [Скачивание SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/mt238290.aspx).
+  - [Прямая ссылка на загрузку.](https://go.microsoft.com/fwlink/?linkid=616025)
+
+- Установленные [модули Azure PowerShell](https://go.microsoft.com/?linkid=9811175) .
+
+  - Модули предоставляют команды, такие как- **New-азсторажеаккаунт**.
 
 ## <a name="phase-1-powershell-code-for-azure-storage-container"></a>Этап 1. Код PowerShell для контейнера хранилища Azure
 
@@ -64,8 +67,8 @@ ms.locfileid: "73822387"
 3. В командной строке введите<br/>`Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser`<br/>и нажмите клавишу ВВОД.
 4. В PowerShell ISE откройте свой файл **PS1** . Выполните скрипт.
 5. Сначала сценарий запускает новое окно, в котором необходимо войти в Azure.
-   
-   * При повторном выполнении сценария без прерывания работы сеанса появляется удобная функция комментирования команды **Add-AzureAccount** .
+
+   - При повторном выполнении сценария без прерывания работы сеанса появляется удобная функция комментирования команды **Add-AzureAccount** .
 
 ![PowerShell ISE с установленным модулем Azure, готовый к выполнению сценария.][30_powershell_ise]
 
@@ -123,8 +126,7 @@ Select-AzSubscription -Subscription $subscriptionName;
 Clean up the old Azure Storage Account after any previous run, 
 before continuing this new run.';
 
-If ($storageAccountName)
-{
+if ($storageAccountName) {
     Remove-AzStorageAccount `
         -Name              $storageAccountName `
         -ResourceGroupName $resourceGroupName;
@@ -196,15 +198,13 @@ New-AzStorageContainerStoredAccessPolicy `
 '
 Generate a SAS token for the container.
 ';
-Try
-{
+try {
     $sasTokenWithPolicy = New-AzStorageContainerSASToken `
         -Name    $containerName `
         -Context $context `
         -Policy  $policySasToken;
 }
-Catch 
-{
+catch {
     $Error[0].Exception.ToString();
 }
 
@@ -230,13 +230,12 @@ Now shift to the Transact-SQL portion of the two-part code sample!';
 # EOFile
 ```
 
-
 Обратите внимание на ряд именованных значений, которые выводятся на экран по завершении сценария PowerShell. Эти значения нужно будет внести в сценарий Transact-SQL, работа с которым составляет второй этап.
 
 ## <a name="phase-2-transact-sql-code-that-uses-azure-storage-container"></a>Этап 2. Код Transact-SQL, использующий контейнер хранилища Azure
 
-* На первом этапе работы с примером кода вы выполнили сценарий PowerShell, создающий контейнер службы хранилища Azure.
-* На втором этапе этот контейнер используется в сценарии Transact-SQL.
+- На первом этапе работы с примером кода вы выполнили сценарий PowerShell, создающий контейнер службы хранилища Azure.
+- На втором этапе этот контейнер используется в сценарии Transact-SQL.
 
 Сценарий начинается с команд, предназначенных для очистки данных после его предыдущего выполнения, и является многоразовым.
 
@@ -249,10 +248,8 @@ Now shift to the Transact-SQL portion of the two-part code sample!';
 5. Найти в сценарии все случаи использования параметра **TODO** и внесите соответствующие изменения.
 6. Сохраните и выполните сценарий.
 
-
 > [!WARNING]
 > Значение ключа SAS, созданное предыдущим сценарием PowerShell, может начинаться с вопросительного знака ("?"). При использовании ключа SAS в приведенном ниже сценарии T-SQL *этот вопросительный знак нужно удалить*. В противном случае система безопасности может заблокировать ваши действия.
-
 
 ### <a name="transact-sql-code"></a>Код Transact-SQL
 
@@ -262,14 +259,11 @@ Now shift to the Transact-SQL portion of the two-part code sample!';
 
 ---- Transact-SQL code for Event File target on Azure SQL Database.
 
-
 SET NOCOUNT ON;
 GO
 
-
 ----  Step 1.  Establish one little table, and  ---------
 ----  insert one row of data.
-
 
 IF EXISTS
     (SELECT * FROM sys.objects
@@ -278,7 +272,6 @@ BEGIN
     DROP TABLE gmTabEmployee;
 END
 GO
-
 
 CREATE TABLE gmTabEmployee
 (
@@ -289,15 +282,12 @@ CREATE TABLE gmTabEmployee
 );
 GO
 
-
 INSERT INTO gmTabEmployee ( EmployeeDescr )
     VALUES ( 'Jane Doe' );
 GO
 
-
 ------  Step 2.  Create key, and  ------------
 ------  Create credential (your Azure Storage container must already exist).
-
 
 IF NOT EXISTS
     (SELECT * FROM sys.symmetric_keys
@@ -306,7 +296,6 @@ BEGIN
     CREATE MASTER KEY ENCRYPTION BY PASSWORD = '0C34C960-6621-4682-A123-C7EA08E3FC46' -- Or any newid().
 END
 GO
-
 
 IF EXISTS
     (SELECT * FROM sys.database_scoped_credentials
@@ -318,7 +307,6 @@ BEGIN
         [https://gmstorageaccountxevent.blob.core.windows.net/gmcontainerxevent] ;
 END
 GO
-
 
 CREATE
     DATABASE SCOPED
@@ -332,7 +320,6 @@ CREATE
         SECRET = 'sv=2014-02-14&sr=c&si=gmpolicysastoken&sig=EjAqjo6Nu5xMLEZEkMkLbeF7TD9v1J8DNB2t8gOKTts%3D'
     ;
 GO
-
 
 ------  Step 3.  Create (define) an event session.  --------
 ------  The event session has an event with an action,
@@ -348,7 +335,6 @@ BEGIN
         ON DATABASE;
 END
 GO
-
 
 CREATE
     EVENT SESSION
@@ -375,7 +361,6 @@ CREATE
     ;
 GO
 
-
 ------  Step 4.  Start the event session.  ----------------
 ------  Issue the SQL Update statements that will be traced.
 ------  Then stop the session.
@@ -390,7 +375,6 @@ ALTER
     STATE = START;
 GO
 
-
 SELECT 'BEFORE_Updates', EmployeeKudosCount, * FROM gmTabEmployee;
 
 UPDATE gmTabEmployee
@@ -404,14 +388,12 @@ UPDATE gmTabEmployee
 SELECT 'AFTER__Updates', EmployeeKudosCount, * FROM gmTabEmployee;
 GO
 
-
 ALTER
     EVENT SESSION
         gmeventsessionname240b
     ON DATABASE
     STATE = STOP;
 GO
-
 
 -------------- Step 5.  Select the results. ----------
 
@@ -427,7 +409,6 @@ SELECT
                 null, null, null
             );
 GO
-
 
 -------------- Step 6.  Clean up. ----------
 
@@ -450,7 +431,6 @@ PRINT 'Use PowerShell Remove-AzStorageAccount to delete your Azure Storage accou
 GO
 ```
 
-
 Если при выполнении сценария целевой объект не подхватывается, остановите и перезапустите сеанс события:
 
 ```sql
@@ -460,13 +440,11 @@ ALTER EVENT SESSION ... STATE = START;
 GO
 ```
 
-
 ## <a name="output"></a>Выходные данные
 
 После того как сценарий Transact-SQL будет выполнен, щелкните ячейку под заголовком столбца **event_data_XML**. Отображается один элемент **> события\<** , в котором показана одна инструкция UPDATE.
 
 Ниже приведен один **\<элемент > события** , созданный во время тестирования:
-
 
 ```xml
 <event name="sql_statement_starting" package="sqlserver" timestamp="2015-09-22T19:18:45.420Z">
@@ -507,40 +485,34 @@ SELECT 'AFTER__Updates', EmployeeKudosCount, * FROM gmTabEmployee;
 </event>
 ```
 
-
 В приведенном выше сценарии Transact-SQL для чтения event_file была использована следующая системная функция.
 
-* [sys.fn_xe_file_target_read_file (Transact-SQL)](https://msdn.microsoft.com/library/cc280743.aspx)
+- [sys.fn_xe_file_target_read_file (Transact-SQL)](https://msdn.microsoft.com/library/cc280743.aspx)
 
 Описание дополнительных параметров для просмотра данных из расширенных событий доступно в следующей статье.
 
-* [Advanced Viewing of Target Data from Extended Events in SQL Server (Дополнительные параметры просмотра целевых данных из расширенных событий в SQL Server)](https://msdn.microsoft.com/library/mt752502.aspx)
-
+- [Advanced Viewing of Target Data from Extended Events in SQL Server (Дополнительные параметры просмотра целевых данных из расширенных событий в SQL Server)](https://msdn.microsoft.com/library/mt752502.aspx)
 
 ## <a name="converting-the-code-sample-to-run-on-sql-server"></a>Преобразование примера кода для выполнения на SQL Server
 
 Предположим, что приведенный выше пример сценария Transact-SQL нужно выполнить на Microsoft SQL Server.
 
-* Проще всего будет полностью заменить контейнер службы хранилища Azure простым файлом, например **C:\myeventdata.xel**. Этот файл будет записан на локальный жесткий диск компьютера, где находится SQL Server.
-* Инструкции Transact-SQL **CREATE MASTER KEY** и **CREATE CREDENTIAL** в этом случае не понадобятся.
-* В предложении **ADD TARGET** оператора **CREATE EVENT SESSION** измените значение Http, заменив **filename=** на полную строку пути, например **C:\myfile.xel**.
+- Проще всего будет полностью заменить контейнер службы хранилища Azure простым файлом, например *C:\myeventdata.xel*. Этот файл будет записан на локальный жесткий диск компьютера, где находится SQL Server.
+- Инструкции Transact-SQL **CREATE MASTER KEY** и **CREATE CREDENTIAL** в этом случае не понадобятся.
+- В предложении **ADD TARGET** оператора **CREATE EVENT SESSION** измените значение Http, заменив **filename=** на полную строку пути, например *C:\myfile.xel*.
   
-  * Учетная запись хранения Azure при этом не нужна.
+  - Учетная запись хранения Azure при этом не нужна.
 
 ## <a name="more-information"></a>Дополнительные сведения
 
 Дополнительные сведения об учетных записях и контейнерах в службе хранилища Azure см. в следующих статьях:
 
-* [Использование хранилища BLOB-объектов из .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md)
-* [Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них](https://msdn.microsoft.com/library/azure/dd135715.aspx)
-* [Работа с корневым контейнером](https://msdn.microsoft.com/library/azure/ee395424.aspx)
-* [Урок 1. Создание хранимой политики доступа и подписанного URL-адреса для контейнера Azure](https://msdn.microsoft.com/library/dn466430.aspx)
-  * [Урок 2. Создание учетных данных SQL Server с использованием подписанного URL-адреса](https://msdn.microsoft.com/library/dn466435.aspx)
-* [Расширенные события](https://docs.microsoft.com/sql/relational-databases/extended-events/extended-events)
+- [Использование хранилища BLOB-объектов из .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md)
+- [Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них](https://msdn.microsoft.com/library/azure/dd135715.aspx)
+- [Работа с корневым контейнером](https://msdn.microsoft.com/library/azure/ee395424.aspx)
+- [Урок 1. Создание хранимой политики доступа и подписанного URL-адреса для контейнера Azure](https://msdn.microsoft.com/library/dn466430.aspx)
+  - [Урок 2. Создание учетных данных SQL Server с использованием подписанного URL-адреса](https://msdn.microsoft.com/library/dn466435.aspx)
+- [Расширенные события](https://docs.microsoft.com/sql/relational-databases/extended-events/extended-events)
 
-<!--
-Image references.
--->
-
+<!-- Image references. -->
 [30_powershell_ise]: ./media/sql-database-xevent-code-event-file/event-file-powershell-ise-b30.png
-

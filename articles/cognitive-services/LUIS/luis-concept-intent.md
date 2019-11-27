@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 10/10/2019
 ms.author: diberry
-ms.openlocfilehash: 3d2895fa8d45ad594963d3f26cbe04fd968f5fcc
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 309a2592dbac2918aeb532fbe91e33d296f4e5a5
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73487533"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74280891"
 ---
 # <a name="intents-in-your-luis-app"></a>Целей в приложении LUIS
 
@@ -29,7 +29,7 @@ ms.locfileid: "73487533"
  BookFlight     |   "Book me a flight to Rio next week" ("Забронировать авиаперелет в Рио на следующей неделе") <br/> "Fly me to Rio on the 24th" ("Найти авиаперелет в Рио 24-го числа") <br/> "I need a plane ticket next Sunday to Rio de Janeiro" ("Мне нужен билет на самолет в Рио-де-Жанейро на следующее воскресенье")    |
  Greeting     |   "Hi" ("Привет") <br/>"Hello" ("Привет") <br/>"Good morning" ("Доброе утро")  |
  CheckWeather | "What's the weather like in Boston?" ("Какая сейчас погода в Бостоне?") <br/> "Show me the forecast for this weekend" ("Покажите мне прогноз на эту неделю") |
- None         | "Get me a cookie recipe" ("Рецепт печенья")<br>"Did the Lakers win?" ("Лейкерс победили?") |
+ Нет         | "Get me a cookie recipe" ("Рецепт печенья")<br>"Did the Lakers win?" ("Лейкерс победили?") |
 
 Все приложения поставляются с предопределенной намерением «None» ([нет](#none-intent)), что является резервным условием. 
 
@@ -47,13 +47,13 @@ ms.locfileid: "73487533"
 |V3|`show-all-intents=true`|
 
 ## <a name="intent-compared-to-entity"></a>Сравнение намерения и сущности
-Цель представляет собой действие, которое должен предпринять робот для пользователя и основан на целом utterance. Высказывание может иметь только одно намерение с максимальной оценкой и может иметь несколько сущностей. 
+Цель представляет собой действие, которое приложение должно предпринять для пользователя и которое основано на всей utterance. Высказывание может иметь только одно намерение с максимальной оценкой и может иметь несколько сущностей. 
 
 <a name="how-do-intents-relate-to-entities"></a>
 
 Создайте намерение, когда пользователь _намеренно_ запустит действие в клиентском приложении, например вызов функции чекквеасер (). Затем создайте сущности для представления параметров, необходимых для выполнения действия. 
 
-|Намерение   | Сущность | Пример высказывания   | 
+|Намерение   | Сущность | Пример фразы   | 
 |------------------|------------------------------|------------------------------|
 | CheckWeather | { "type": "location", "entity": "seattle" }<br>{ "type": "builtin.datetimeV2.date","entity": "tomorrow","resolution":"2018-05-23" } | What's the weather like in (Какая сейчас погода в) `Seattle` `tomorrow`? |
 | CheckWeather | { "type": "date_range", "entity": "this weekend" } | Show me the forecast for (Покажите мне прогноз на) `this weekend` | 
@@ -100,7 +100,7 @@ ms.locfileid: "73487533"
 ### <a name="request-help-for-apps-with-significant-number-of-intents"></a>Если намерений слишком много, обратитесь в службу поддержки
 Если уменьшение числа намерений или разделение намерений на несколько приложений не помогает добиться цели, обратитесь в службу поддержки. Если ваша подписка Azure включает службы поддержки, обратитесь в службу [технической поддержки Azure](https://azure.microsoft.com/support/options/). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Ознакомьтесь с дополнительными сведениями о [сущностях](luis-concept-entity-types.md), важных словах, относящихся к намерениям
 * Узнайте, как [добавить намерения в приложение LUIS и управлять ими](luis-how-to-add-intents.md).

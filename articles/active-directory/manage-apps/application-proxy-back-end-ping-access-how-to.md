@@ -1,5 +1,5 @@
 ---
-title: Настройка приложения прокси приложения для использования PingAccess | Документы Майкрософт
+title: Настройка приложения прокси приложения для использования PingAccess
 description: Сведения об использовании PingAccess для предоставления преимуществ прокси приложения в приложениях, использующих проверку подлинности на основе заголовков.
 services: active-directory
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.date: 05/21/2018
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d555aaf99470588bb3ed2b328adb3e99f6c4a50e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c852c69b6f64b59845b551202bd1a25646a49eb6
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65783984"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74275656"
 ---
 # <a name="how-to-configure-an-application-proxy-application-to-use-pingaccess"></a>Настройка приложения прокси приложения для использования PingAccess
 

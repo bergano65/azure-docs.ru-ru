@@ -1,6 +1,6 @@
 ---
-title: Ensure application high availability when running in VMware on Azure
-description: Describes CloudSimple high availability features to address common application failure scenarios for applications running in a CloudSimple Private Cloud
+title: Обеспечение высокой доступности приложений при работе в VMware в Azure
+description: Описание функций высокой доступности Клаудсимпле для решения распространенных сценариев сбоев приложений, выполняемых в частном облаке Клаудсимпле
 author: sharaths-cs
 ms.author: b-shsury
 ms.date: 08/20/2019
@@ -15,52 +15,52 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74206527"
 ---
-# <a name="ensure-application-high-availability-when-running-in-vmware-on-azure"></a>Ensure application high availability when running in VMware on Azure
+# <a name="ensure-application-high-availability-when-running-in-vmware-on-azure"></a>Обеспечение высокой доступности приложений при работе в VMware в Azure
 
-The CloudSimple solution provides high availability for your applications running on VMware in the Azure environment. The following table lists failure scenarios and the associated high availability features.
+Решение Клаудсимпле обеспечивает высокий уровень доступности для приложений, работающих в VMware в среде Azure. В следующей таблице перечислены сценарии сбоев и связанные с ними функции обеспечения высокого уровня доступности.
 
-| Failure scenario | Application protected? | Platform HA feature | VMware HA feature | Azure HA feature |
+| Сценарий сбоя | Приложение защищено? | Функция высокой доступности платформы | Функция высокой доступности VMware | Функция высокой доступности Azure |
 ------------ | ------------- | ------------ | ------------ | ------------- |
-| Disk Failure | ДА | Fast replacement of failed node | [About the vSAN Default Storage Policy](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.virtualsan.doc/GUID-C228168F-6807-4C2A-9D74-E584CAF49A2A.html) |
-| Fan Failure | ДА | Redundant fans, fast replacement of failed node |  |  |
-| NIC Failure | ДА | Redundant NIC, fast replacement of failed node
-| Host Power Failure | ДА | Redundant power supply |  |  |
-| ESXi Host Failure | ДА | fast replacement of failed node | [VMware vSphere High Availability](https://www.vmware.com/products/vsphere/high-availability.html) |  |  |
-| VM Failure | ДА | [Подсистемы балансировки нагрузки](load-balancers.md)  | [VMware vSphere High Availability](https://www.vmware.com/products/vsphere/high-availability.html) | Azure Load Balancer for stateless VMware VMs |
-| Leaf Switch Port Failure | ДА | Redundant NIC |  |  |
-| Leaf Switch Failure | ДА | Redundant leaf switches |  |  |
-| Rack Failure | ДА | Группы размещения |  |  |
-| Network Connectivity to on-premises DC | ДА  | Redundant networking services |  | Redundant ER circuits |
-| Network Connectivity to Azure | ДА | |  | Redundant ER circuits |
-| Datacenter Failure | ДА |  |  | Зоны доступности |
-| Regional Failure | ДА  |  |  | Регионы Azure |
+| Сбой диска | ДА | Быстрая замена сбойного узла | [О политике хранилища vSAN по умолчанию](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.virtualsan.doc/GUID-C228168F-6807-4C2A-9D74-E584CAF49A2A.html) |
+| Сбой вентилятора | ДА | Избыточные вентиляторы, Быстрая замена неисправных узлов |  |  |
+| Сбой сетевого адаптера | ДА | Избыточный сетевой адаптер, Быстрая замена сбойного узла
+| Сбой питания узла | ДА | Избыточный источник питания |  |  |
+| Сбой узла ESXi | ДА | Быстрая замена сбойного узла | [Высокая доступность VMware vSphere](https://www.vmware.com/products/vsphere/high-availability.html) |  |  |
+| Сбой виртуальной машины | ДА | [Балансировка нагрузки](load-balancers.md)  | [Высокая доступность VMware vSphere](https://www.vmware.com/products/vsphere/high-availability.html) | Azure Load Balancer для виртуальных машин VMware без отслеживания состояния |
+| Сбой порта конечного коммутатора | ДА | Избыточная сетевая карта |  |  |
+| Сбой конечного параметра | ДА | Избыточные конечные коммутаторы |  |  |
+| Сбой в стойке | ДА | Группы размещения |  |  |
+| Сетевое подключение к локальному контроллеру домена | ДА  | Избыточные сетевые службы |  | Избыточные цепи ER |
+| Сетевое подключение к Azure | ДА | |  | Избыточные цепи ER |
+| Сбой центра обработки данных | ДА |  |  | Зоны доступности |
+| Региональный сбой | ДА  |  |  | Регионы Azure |
 
-Azure VMware Solution by CloudSimple provides the following high availability features.
+Решение Azure VMware с помощью Клаудсимпле предоставляет следующие функции обеспечения высокого уровня доступности.
 
-## <a name="fast-replacement-of-failed-node"></a>Fast replacement of failed node
+## <a name="fast-replacement-of-failed-node"></a>Быстрая замена сбойного узла
 
-The CloudSimple control plane software continuously monitors the health of VMware clusters and detects when an ESXi node fails. It then automatically adds a new ESXi host to the affected VMware cluster from its pool of readily available nodes and takes the failed node out of the cluster. This functionality ensures that the spare capacity in the VMware cluster is restored quickly so that the cluster’s resiliency provided by vSAN and VMware HA is restored.
+Программное обеспечение плоскости управления Клаудсимпле постоянно отслеживает работоспособность кластеров VMware и обнаруживает сбой узла ESXi. Затем он автоматически добавляет новый узел ESXi в затронутый кластер VMware из пула общедоступных узлов и переводит неисправный узел в кластер. Эта функция гарантирует быстрое восстановление запасных емкости в кластере VMware, чтобы восстановить устойчивость кластера, обеспечиваемую vSAN и VMware HA.
 
 ## <a name="placement-groups"></a>Группы размещения
 
-A user who creates a Private Cloud can select an Azure region and a placement group within the selected region. A placement group is a set of nodes spread across multiple racks but within the same spine network segment. Nodes within the same placement group can reach each other with a maximum of two extra switch hops. A placement group is always within a single Azure availability zone and spans multiple racks. The CloudSimple control plane distributes nodes of a Private Cloud across multiple racks based on best effort. Nodes in different placement groups are guaranteed to be placed in different racks.
+Пользователь, создающий частное облако, может выбрать регион Azure и группу размещения в пределах выбранного региона. Группа размещения — это набор узлов, распределенных по нескольким стойкам, но в пределах одного сегмента сети корешков. Узлы в одной группе размещения могут достигать друг друга, не более чем два дополнительных прыжка коммутатора. Группа размещения всегда находится в пределах одной зоны доступности Azure и охватывает несколько стоек. Плоскость управления Клаудсимпле распределяет узлы частного облака по нескольким стойкам в соответствии с наилучшими усилиями. Узлы в разных группах размещения гарантированно помещаются в разные стойки.
 
 ## <a name="availability-zones"></a>Зоны доступности
 
-Availability zones are a high-availability offering that protects your applications and data from datacenter failures. Availability zones are special physical locations within an Azure region. Каждая зона состоит из одного или нескольких центров обработки данных, оснащенных независимыми системами электроснабжения, охлаждения и сетевого взаимодействия. Each region has one availability zone. For more information, see [What are Availability Zones in Azure?](../availability-zones/az-overview.md).
+Зоны доступности — это высокодоступное предложение, защищающее приложения и данные от сбоев центров обработки данных. Зоны доступности — это специальные физические расположения в регионе Azure. Каждая зона состоит из одного или нескольких центров обработки данных, оснащенных независимыми системами электроснабжения, охлаждения и сетевого взаимодействия. У каждого региона есть одна зона доступности. Дополнительные сведения см. [в статье что такое зоны доступности в Azure?](../availability-zones/az-overview.md).
 
-## <a name="redundant-azure-expressroute-circuits"></a>Redundant Azure ExpressRoute circuits
+## <a name="redundant-azure-expressroute-circuits"></a>Избыточные каналы ExpressRoute Azure
 
-Data center connectivity to Azure vNet using ExpressRoute has redundant circuits to provide highly available network connectivity link.
+Подключение центра обработки данных к виртуальной сети Azure с помощью ExpressRoute имеет избыточные цепи для обеспечения связи высокой доступности сети.
 
-## <a name="redundant-networking-services"></a>Redundant networking services
+## <a name="redundant-networking-services"></a>Избыточные сетевые службы
 
-All the CloudSimple networking services for the Private Cloud (including VLAN, firewall, public IP addresses, Internet, and VPN) are designed to be highly available and able to support the service SLA.
+Все сетевые службы Клаудсимпле для частного облака (включая VLAN, брандмауэр, общедоступные IP-адреса, Интернет и VPN) обеспечивают высокую доступность и возможность поддержки соглашения об уровне обслуживания.
 
-## <a name="azure-layer-7-load-balancer-for-stateless-vmware-vms"></a>Azure Layer 7 Load Balancer for stateless VMware VMs
+## <a name="azure-layer-7-load-balancer-for-stateless-vmware-vms"></a>Load Balancer уровня Azure 7 для виртуальных машин VMware без отслеживания состояния
 
-Users can put an Azure Layer 7 Load Balancer in front of the stateless web tier VMs running in the VMware environment to achieve high availability for the web tier.
+Пользователи могут разместить Load Balancer уровня Azure 7 перед виртуальными машинами веб-уровня без отслеживания состояния, работающими в среде VMware, чтобы обеспечить высокий уровень доступности для веб-уровня.
 
 ## <a name="azure-regions"></a>Регионы Azure
 
-An Azure region is a set of data centers deployed within a latency-defined perimeter and connected through a dedicated regional low-latency network. For details, see [Azure Regions](https://azure.microsoft.com/global-infrastructure/regions).
+Регион Azure — это набор центров обработки данных, развернутый в пределах периметра, определяемого заданной задержкой, который подключается через выделенную региональную сеть с низкой задержкой. Дополнительные сведения см. в разделе [регионы Azure](https://azure.microsoft.com/global-infrastructure/regions).

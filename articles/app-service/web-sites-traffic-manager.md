@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 02/25/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: bb63b25ee9257a402a9887bc8ed8aa83370f3ea0
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 2cd53c3c0b3e9acbb8a5a88c7696e8b3089c50c9
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70066410"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483375"
 ---
 # <a name="controlling-azure-app-service-traffic-with-azure-traffic-manager"></a>Управление трафиком службы приложений Azure с помощью диспетчера трафика Azure
 > [!NOTE]
@@ -34,7 +34,7 @@ ms.locfileid: "70066410"
 ## <a name="routing-methods"></a>Методы маршрутизации
 Диспетчер трафика Azure использует четыре разных метода маршрутизации. Эти методы и их применение к службе приложений Azure описаны в следующем списке.
 
-* **[По приоритету](../traffic-manager/traffic-manager-routing-methods.md#priority)** . Основное приложение получает весь трафик, а резервные копии создаются на тот случай, если основное или резервное приложения будут недоступны.
+* **[По приоритету](../traffic-manager/traffic-manager-routing-methods.md#priority-traffic-routing-method)** . Основное приложение получает весь трафик, а резервные копии создаются на тот случай, если основное или резервное приложения будут недоступны.
 * **[Со взвешиванием](../traffic-manager/traffic-manager-routing-methods.md#weighted)** . Трафик распределяется между несколькими приложениями равномерно или в соответствии с весовыми коэффициентами, которые вы можете настроить.
 * **[По производительности](../traffic-manager/traffic-manager-routing-methods.md#performance)** . Если используется несколько приложений, размещенных в разных географических регионах, трафик направляется к ближайшему из них в соответствии со статистикой задержек в сети.
 * **[Географический](../traffic-manager/traffic-manager-routing-methods.md#geographic)** . Пользователи направляются к конкретному приложению в соответствии с настройками для географических расположений, из которых получены соответствующие запросы DNS. 
@@ -54,8 +54,7 @@ ms.locfileid: "70066410"
 * Имена личных доменов будут работать как обычно, но нужно не только добавить их в приложение, но и настроить для них сопоставление DNS с URL-адресом диспетчера трафика. Сведения о том, как настроить личный домен для приложения службы приложений, см. в разделе [Сопоставление существующего настраиваемого DNS-имени со службой приложений Azure](app-service-web-tutorial-custom-domain.md).
 * В профиль диспетчера трафика Azure можно добавлять только приложения, использующие уровень "Стандартный" или "Премиум".
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Общие и технические сведения о диспетчере трафика Azure см. в разделе [Обзор диспетчера трафика](../traffic-manager/traffic-manager-overview.md).
 
-Дополнительные сведения об использовании диспетчера трафика со службой приложений, см. в записях блогов [Using Azure Traffic Manager with Azure Web Sites](https://blogs.msdn.com/b/waws/archive/2014/03/18/using-windows-azure-traffic-manager-with-waws.aspx) (Использование диспетчера трафика Azure c веб-сайтами Azure) и [Azure Traffic Manager can now integrate with Azure Web Sites](https://azure.microsoft.com/blog/2014/03/27/azure-traffic-manager-can-now-integrate-with-azure-web-sites/) (Диспетчер трафика Azure теперь можно интегрировать с веб-сайтами Azure).
 

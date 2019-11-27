@@ -1,22 +1,18 @@
 ---
 title: Развертывание политики, которую можно исправить
 description: Узнайте, как подключить клиента к системе делегированного управления ресурсами Azure, предоставив доступ к ресурсам и возможность управления ими через собственный клиент.
-author: JnHs
-ms.author: jenhayes
-ms.service: lighthouse
 ms.date: 10/11/2019
-ms.topic: overview
-manager: carmonm
-ms.openlocfilehash: 3bc85d202b9ba230130716aad34ce233037a3346
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
-ms.translationtype: HT
+ms.topic: conceptual
+ms.openlocfilehash: 4522c9ebad741f5ec0cb7e56e68467312ef8f037
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72301960"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463876"
 ---
 # <a name="deploy-a-policy-that-can-be-remediated-within-a-delegated-subscription"></a>Развертывание политики, которую можно исправить в рамках делегированной подписки
 
-Azure Lighthouse позволяет поставщикам служб создавать и редактировать определения политики в рамках делегированной подписки. Однако для развертывания политик, использующих [задачу исправления](https://docs.microsoft.com/azure/governance/policy/how-to/remediate-resources) (то есть политики с эффектом [deployIfNotExists](https://docs.microsoft.com/azure/governance/policy/concepts/effects#deployifnotexists) или [modify](https://docs.microsoft.com/azure/governance/policy/concepts/effects#modify)), в клиенте клиента необходимо создать [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview). Это управляемое удостоверение может использоваться политикой Azure для развертывания шаблона в политике. Для включения этого сценария, как при подключении клиента к управлению делегированными ресурсами Azure, так и при развертывании самой политики необходимо выполнять некоторые шаги.
+[Azure Lighthouse](../overview.md) позволяет поставщикам служб создавать и редактировать определения политики в рамках делегированной подписки. Однако для развертывания политик, использующих [задачу исправления](https://docs.microsoft.com/azure/governance/policy/how-to/remediate-resources) (то есть политики с эффектом [deployIfNotExists](https://docs.microsoft.com/azure/governance/policy/concepts/effects#deployifnotexists) или [modify](https://docs.microsoft.com/azure/governance/policy/concepts/effects#modify)), в клиенте клиента необходимо создать [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview). Это управляемое удостоверение может использоваться политикой Azure для развертывания шаблона в политике. Для включения этого сценария, как при подключении клиента к управлению делегированными ресурсами Azure, так и при развертывании самой политики необходимо выполнять некоторые шаги.
 
 ## <a name="create-a-user-who-can-assign-roles-to-a-managed-identity-in-the-customer-tenant"></a>Создание пользователя, который может назначать роли управляемому удостоверению в клиенте клиента
 
@@ -26,7 +22,7 @@ Azure Lighthouse позволяет поставщикам служб созда
 
 После подключения клиента **principalId**, созданный в этой авторизации, сможет назначать эти встроенные роли управляемым удостоверениям в клиенте клиента. Однако у них не будет никаких других разрешений, обычно связанных с ролью администратора доступа пользователей.
 
-В следующем примере показан **principalId**, которому будет назначена роль администратора доступа пользователей. Этот пользователь сможет назначить две встроенные роли для управляемых удостоверений в клиенте клиента: участник и участник Log Analytics.
+В следующем примере показан **principalId**, которому будет назначена роль администратора доступа пользователей. Этот пользователь будет иметь возможность назначать две встроенные роли управляемым удостоверениям в клиенте клиента: участник и Log Analytics участник.
 
 ```json
 {

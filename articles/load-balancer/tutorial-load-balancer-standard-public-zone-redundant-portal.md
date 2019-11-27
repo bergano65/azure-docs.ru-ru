@@ -1,5 +1,5 @@
 ---
-title: Руководство. Виртуальные машины Load Balancer в пределах зон доступности на портале Azure
+title: Руководство по балансировке нагрузки виртуальных машин в пределах зон доступности на портале Azure
 titlesuffix: Azure Load Balancer
 description: В этом руководстве показано, как создать подсистему балансировки нагрузки уровня "Стандартный" с избыточным между зонами внешним интерфейсом для балансировки нагрузки виртуальных машин между зонами доступности с помощью портала Azure
 services: load-balancer
@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 02/27/2019
 ms.author: allensu
 ms.custom: seodec18
-ms.openlocfilehash: 5b024321a18c6dec4f56a7cbc12c5a8fa748f903
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 2079ec95b582ed724583112f7af4865af66eef9d
+ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68273474"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74048865"
 ---
 # <a name="tutorial-load-balance-vms-across-availability-zones-with-a-standard-load-balancer-using-the-azure-portal"></a>Руководство. Распределение нагрузки виртуальных машин в пределах зон доступности с помощью Load Balancer уровня "Стандартный" и портала Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "68273474"
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
     | Subscription               | Выберите свою подписку.    |    
-    | Resource group         | Выберите **Создать** и введите *MyResourceGroupLBAZ* в текстовом поле.|
+    | группа ресурсов.         | Выберите **Создать** и введите *MyResourceGroupLBAZ* в текстовом поле.|
     | ИМЯ                   | *myLoadBalancer*                                   |
     | Регион         | Выберите **Западная Европа**.                                        |
     | type          | Щелкните **Общедоступный**.                                        |

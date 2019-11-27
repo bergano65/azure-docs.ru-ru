@@ -1,22 +1,22 @@
 ---
-title: Включение входа с помощью ключа безопасности без пароля для Azure AD (Предварительная версия) — Azure Active Directory
+title: Вход с защитой паролем в Windows — Azure Active Directory
 description: Включение входа с использованием ключа безопасности без пароля в Azure AD с помощью ключей безопасности FIDO2 (Предварительная версия)
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 08/05/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b3aa2add128cfc11a638fe6c7e03cfb25189afc
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 5343387da7b2027e1071b19be826e329494cdd3e
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74081565"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74452945"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-windows-10-devices-preview"></a>Включение входа с помощью ключа безопасности без пароля на устройствах Windows 10 (Предварительная версия)
 
@@ -45,6 +45,7 @@ ms.locfileid: "74081565"
 - "Запуск от имени" **не поддерживается** с помощью ключа безопасности.
 - Вход на сервер с помощью ключа безопасности **не поддерживается**.
 - Если вы не использовали ключ безопасности для входа на устройство в режиме "в сети", вы не сможете использовать его для входа или разблокировки в автономном режиме.
+- Вход или разблокировка устройства Windows 10 с ключом безопасности, содержащим несколько учетных записей Azure AD. В этом сценарии будет использоваться последняя учетная запись, добавленная к ключу безопасности. Процесс WebAuthN позволит пользователям выбрать учетную запись, которую хотите использовать.
 
 ## <a name="prepare-devices-for-preview"></a>Подготовка устройств для предварительной версии
 

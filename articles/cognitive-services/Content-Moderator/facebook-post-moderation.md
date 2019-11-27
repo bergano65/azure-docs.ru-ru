@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: tutorial
-ms.date: 07/03/2019
+ms.date: 10/24/2019
 ms.author: pafarley
-ms.openlocfilehash: bd2ed09294ad122b7e8af045f01d3c6f63fcc510
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 5aa4cc24484a4ba1da608da9676ade492db35b6c
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564936"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72936008"
 ---
 # <a name="tutorial-moderate-facebook-posts-and-commands-with-azure-content-moderator"></a>Руководство по Модерация записей и команд Facebook с помощью Azure Content Moderator
 
@@ -72,7 +72,7 @@ ms.locfileid: "68564936"
     | -------------------- |-------------|
     | cm:TeamId   | Идентификатор команды Content Moderator.  | 
     | cm:SubscriptionKey | Ключ подписки Content Moderator (см. раздел [Учетные данные](review-tool-user-guide/credentials.md)). |
-    | cm:Region | Имя региона Content Moderator без пробелов. |
+    | cm:Region | Имя региона Content Moderator без пробелов. Его можно найти в поле **Расположение** на вкладке **Обзор** для ресурса Azure.|
     | cm:ImageWorkflow | Имя рабочего процесса для изображений. |
     | cm:TextWorkflow | Имя рабочего процесса для текста. |
     | cm:CallbackEndpoint | URL-адрес приложения-функции CMListener, которое будет создано позже в этом руководстве. |

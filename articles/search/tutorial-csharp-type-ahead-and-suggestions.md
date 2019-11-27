@@ -1,19 +1,19 @@
 ---
 title: Учебник по C# для функции автозаполнения и предложений
 titleSuffix: Azure Cognitive Search
-description: Этот учебник основан на проекте "Разбиение результатов поиска на страницы (Когнитивный поиск Azure)" для добавления автозаполнения и предложений. Целью является предоставление улучшенных возможностей для пользователя. Узнайте, как объединить раскрывающийся список предложений с функцией встроенного автозаполнения.
+description: В этом учебнике показаны автозаполнение и предложения в качестве способа получения входных данных условий поиска при использовании раскрывающегося списка. В основе учебника лежит имеющийся проект гостиниц.
 manager: nitinme
 author: PeterTurcan
 ms.author: v-pettur
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 11/04/2019
-ms.openlocfilehash: 959ae749f9ab8a025ec9c78d75640e2108868372
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: b542476ac1c9b6d4368d97eb4db76518eb2dba03
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72786504"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74114561"
 ---
 # <a name="c-tutorial-add-autocompletion-and-suggestions---azure-cognitive-search"></a>Руководство по C#. Добавление функции автозаполнения и предложений — Когнитивный поиск Azure
 

@@ -1,5 +1,6 @@
 ---
-title: Начало работы с Azure AD версии 2.0 и веб-сервером ASP.NET | Документация Майкрософт
+title: Начало работы с Azure AD версии 2.0 и веб-сервером ASP.NET
+titleSuffix: Microsoft identity platform
 description: Реализация входа в решение ASP.NET с использованием учетной записи Майкрософт, традиционного браузерного приложения и стандарта OpenID Connect
 services: active-directory
 documentationcenter: dev-center-name
@@ -16,12 +17,12 @@ ms.date: 08/28/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1ce7197a195b37787d1a43a44efd8438154e9f9
-ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
+ms.openlocfilehash: b66d2a9a958afd536dcffeca211a3fc56cf09ef8
+ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70113651"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72803724"
 ---
 # <a name="add-sign-in-to-microsoft-to-an-aspnet-web-app"></a>Реализация входа в веб-приложение ASP.NET с использованием учетной записи Майкрософт.
 
@@ -269,7 +270,7 @@ ms.locfileid: "70113651"
 
 <!--start-collapse-->
 > ### <a name="more-information"></a>Дополнительные сведения
-> С помощью этой страницы можно добавить кнопку входа в формате SVG с черным фоном:<br/>![Войдите с помощью учетной записи Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-use/aspnetsigninbuttonsample.png)<br/> Дополнительные кнопки входа можно найти на странице [Рекомендации по фирменной символике для приложений](https://docs.microsoft.com/azure/active-directory/develop/active-directory-branding-guidelines "Branding guidelines").
+> С помощью этой страницы можно добавить кнопку входа в формате SVG с черным фоном:<br/>![Войдите с помощью учетной записи Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-use/aspnetsigninbuttonsample.png)<br/> См. расширенный список кнопок входа в [рекомендациях по использованию фирменной символики](https://docs.microsoft.com/azure/active-directory/develop/active-directory-branding-guidelines "BРекомендации по использованию фирменной символики).
 <!--end-collapse-->
 
 ## <a name="add-a-controller-to-display-users-claims"></a>Добавление контроллера для отображения утверждений пользователя
@@ -410,7 +411,7 @@ ms.locfileid: "70113651"
 >  > - Разработчик приложения добавил дополнительные разрешения, для которых требуется **согласие администратора**.
 >  > - Клиент настроен (в разделе **Корпоративные приложения -> Параметры пользователя**) так, что пользователи не могут разрешать приложениям доступ к корпоративным данным от своего имени.
 >
-> См. сведения о [разрешениях и согласии для конечной точки платформы удостоверений Майкрософт](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent).
+> См. сведения о [разрешениях и согласии для конечной точки платформы удостоверений Майкрософт](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent).
 <!--end-collapse-->
 
 #### <a name="view-application-results"></a>Просмотр результатов приложения

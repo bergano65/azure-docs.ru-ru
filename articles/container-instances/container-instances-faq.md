@@ -1,19 +1,15 @@
 ---
-title: Службы "экземпляры контейнеров Azure" — часто задаваемые вопросы
+title: Часто задаваемые вопросы
 description: Ответы на часто задаваемые вопросы, связанные со службой "экземпляры контейнеров Azure"
-services: container-instances
 author: dkkapur
-manager: gwallace
-ms.service: container-instances
 ms.topic: article
 ms.date: 4/25/2019
-ms.author: dekapur
-ms.openlocfilehash: 29d31e2076e0ff5ddf4f84df13ac2eede482c052
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: b5888efe210ab0f3794895d350c5647b6f685880
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325996"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74484129"
 ---
 # <a name="frequently-asked-questions-about-azure-container-instances"></a>Часто задаваемые вопросы о службе "экземпляры контейнеров Azure"
 
@@ -39,17 +35,17 @@ ms.locfileid: "68325996"
 
 #### <a name="windows-server-2016-base-images"></a>Базовые образы Windows Server 2016
 
-* [Сервер Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver): `10.0.14393.x`,`sac2016`
-* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2016`,`10.0.14393.x`
+* [Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver): `10.0.14393.x`, `sac2016`
+* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2016`, `10.0.14393.x`
 
 > [!NOTE]
 > Образы Windows на основе полугодовых каналов выпуска 1709 или 1803 не поддерживаются.
 
 #### <a name="windows-server-2019-and-client-base-images-preview"></a>Windows Server 2019 и базовые образы клиента (Предварительная версия)
 
-* [Сервер Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver): `1809`,`10.0.17763.x`
-* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2019`, `1809`,`10.0.17763.x`
-* [Windows](https://hub.docker.com/_/microsoft-windows): `1809`,`10.0.17763.x` 
+* [Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver): `1809`, `10.0.17763.x`
+* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2019`, `1809`, `10.0.17763.x`
+* [Windows](https://hub.docker.com/_/microsoft-windows): `1809`, `10.0.17763.x` 
 
 ### <a name="what-net-or-net-core-image-layer-should-i-use-in-my-container"></a>Какой уровень образа .NET или .NET Core следует использовать в моем контейнере? 
 
@@ -99,7 +95,7 @@ ms.locfileid: "68325996"
 
 Счетчики останавливаются после остановки всей группы контейнеров. Пока контейнер в группе контейнеров работает, мы содержали ресурсы на случай, если вы хотите запустить контейнеры снова. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные [сведения](container-instances-overview.md) о службе "экземпляры контейнеров Azure".
 * [Устранение распространенных](container-instances-troubleshooting.md) неполадок в службе "экземпляры контейнеров Azure".

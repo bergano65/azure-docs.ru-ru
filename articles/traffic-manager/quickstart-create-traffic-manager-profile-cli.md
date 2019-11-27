@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание профиля диспетчера трафика для обеспечения высокого уровня доступности приложений с помощью Azure CLI
+title: Краткое руководство. Создание профиля для обеспечения высокого уровня доступности приложений с помощью Azure CLI — диспетчер трафика Azure
 description: В этом кратком руководстве описано, как создать профиль диспетчера трафика для сборки высокодоступного веб-приложения.
 services: traffic-manager
 author: asudbring
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/29/2019
 ms.author: allensu
-ms.openlocfilehash: dc7e555eb95cf88ecf57a6df4999672bb721b8cf
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.openlocfilehash: 8b8880e10f9b920a2ec077d4cc4c2239e6ea7438
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68618794"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74034218"
 ---
 # <a name="quickstart-create-a-traffic-manager-profile-for-a-highly-available-web-application-using-azure-cli"></a>Краткое руководство. Создание профиля диспетчера трафика для высокодоступного веб-приложения с помощью Azure CLI
 

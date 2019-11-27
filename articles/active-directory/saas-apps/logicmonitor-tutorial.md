@@ -8,6 +8,7 @@ manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 496156c3-0e22-4492-b36f-2c29c055e087
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 468d55b2b96979658bc8f3e226da36dc4af1c174
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 463a8981689614d96100e03965117c9344aa5d50
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67097952"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73159514"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-logicmonitor"></a>Руководство по Интеграция Azure Active Directory с LogicMonitor
 
@@ -211,13 +212,13 @@ ms.locfileid: "67097952"
 
 2. В меню вверху щелкните **Settings** (Параметры), а затем выберите **Roles and Users** (Роли и пользователи).
 
-    ![Roles and Users](./media/logicmonitor-tutorial/ic790056.png "Roles and Users") (Роли и пользователи)
+    ![Роли и пользователи](./media/logicmonitor-tutorial/ic790056.png "Роли и пользователи")
 
 3. Щелкните **Добавить**.
 
 4. В разделе **Добавить учетную запись** выполните следующие действия.
 
-    ![Add an account](./media/logicmonitor-tutorial/ic790057.png "Add an account") (Добавление учетной записи)
+    ![Добавление учетной записи](./media/logicmonitor-tutorial/ic790057.png "Добавить учетную запись")
 
     a. В соответствующие текстовые поля введите значения **имени пользователя**, **адреса электронной почты**, **пароля** и **подтверждения пароля** пользователя Azure Active Directory, которого требуется подготовить.
 
@@ -240,5 +241,5 @@ ms.locfileid: "67097952"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

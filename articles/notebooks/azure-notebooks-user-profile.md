@@ -1,23 +1,14 @@
 ---
 title: Профиль и идентификатор пользователя в службе "Записные книжки Azure"
 description: Как создать профиль пользователя и идентификатор пользователя и управлять им с помощью записных книжек Azure, которые становятся частью URL-адреса общих записных книжек.
-services: app-service
-documentationcenter: ''
-author: kraigb
-manager: barbkess
-ms.assetid: 7d069d86-660f-4c94-b6e3-0c0f38c52d0e
-ms.service: azure-notebooks
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 02/25/2019
-ms.author: kraigb
-ms.openlocfilehash: 3985e3d5fbe6e24014694665557f13bcc9a35a25
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 0874fe8223ae9c49ccfe4e8efedf2620117a0f8c
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72598205"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74277610"
 ---
 # <a name="your-profile-and-user-id-for-azure-notebooks"></a>Профиль и идентификатор пользователя в службе "Записные книжки Azure"
 
@@ -30,7 +21,7 @@ ms.locfileid: "72598205"
 - `https://notebooks.azure.com/<user_id>`: страница профиля.
 - `https://notebooks.azure.com/<user_id>/projects`: ваши проекты. Вы видите все проекты, в то время как другие пользователи видят только общие.
 - `https://notebooks.azure.com/<user_id>/projects/<project_id>`: файлы проекта.
-- `https://notebooks.azure.com/<user_id>/projects/<project_id>/clones` — клоны конкретных проектов.
+- `https://notebooks.azure.com/<user_id>/projects/<project_id>/clones`— клоны конкретных проектов.
 - `https://notebooks.azure.com/<user_id>/projects/<project_id>/html/<notebook>.ipynb`: предварительный просмотр HTML конкретной записной книжки или файла.
 
 ## <a name="your-user-id"></a>Идентификатор пользователя
@@ -56,7 +47,7 @@ ms.locfileid: "72598205"
 
 Чтобы изменить профиль, воспользуйтесь командой **Edit Profile Information** (Изменить сведения профиля) на странице профиля. Ниже приведены разделы профиля.
 
-| Section | Контент |
+| Раздел | Оглавление |
 | --- | --- |
 | Profile photo (Фотография профиля) | Изображение, отображаемое на странице профиля. |
 | Сведения об учетной записи | Отображаемое имя, идентификатор пользователя и публичная учетная запись электронной почты. Учетная запись электронной почты предоставляет другим пользователям способ связи с вами и может отличаться от почты [учетной записи](azure-notebooks-user-account.md), которую вы используете для входа в службу "Записные книжки Azure". |
@@ -65,7 +56,7 @@ ms.locfileid: "72598205"
 | Параметры конфиденциальности | Предоставляются две команды:<ul><li>**Export My Profile** (Экспортировать мой профиль): создает и скачивает *ZIP*-файл, содержащий все данные, которые хранятся в профиле Записных книжек Azure, включая фотографию, данные профиля и журналы безопасности.</li><li>**Удалить мою учетную запись**: окончательно удаляет все персональные данные, хранящиеся в записных книжках Azure.</li></ul> |
 | Enable Site Features (Включение функций сайта) | Позволяет управлять аспектами поведения Записных книжек Azure:<ul><li>**Unified Frontend for Notebooks** (Унифицированный интерфейс для записных книжек): обеспечивает более быстрый запуск записной книжки и лучшую сохраняемость.</li><li>**Выполните команду в JupyterLab по умолчанию**. по умолчанию в записных книжках Azure предусмотрен простой пользовательский интерфейс, подходящий для большинства пользователей. JupyterLab предоставляет более расширенный, но и более сложный интерфейс, подходящий для опытных пользователей.</li><li>**VNext Website** (Веб-сайт VNext): включает модернизированный веб-макет, показанный в этой документации.</li></ul> |
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дополнительная информация  
 
 > [!div class="nextstepaction"]
 > [Руководство по созданию и запуску записной книжки Jupyter для выполнения линейной регрессии](tutorial-create-run-jupyter-notebook.md)

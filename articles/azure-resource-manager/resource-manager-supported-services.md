@@ -3,12 +3,12 @@ title: Поставщики ресурсов и типы ресурсов
 description: Описывает поставщиков ресурсов, которые поддерживают диспетчер ресурсов, их схемы и доступные версии API, а также регионы, допускающие размещение ресурсов.
 ms.topic: conceptual
 ms.date: 08/29/2019
-ms.openlocfilehash: 01550adbce51e3498f1167f6a4ebfd846ec316f3
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 73cc053ab2ca19f42e3c45b8350d1e2baedfcc7a
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74149398"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74422198"
 ---
 # <a name="azure-resource-providers-and-types"></a>Поставщики и типы ресурсов Azure
 
@@ -34,9 +34,10 @@ ms.locfileid: "74149398"
 Чтобы просмотреть всех поставщиков ресурсов, а также состояние регистрации для подписки, сделайте следующее:
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Выбор пункта **Все службы**.
+2. В меню портал Azure выберите **все службы**.
 
-    ![выбор подписок](./media/resource-manager-supported-services/select-subscriptions.png)
+    ![выбор подписок](./media/resource-manager-supported-services/select-all-services.png)
+
 3. В поле **Все службы** введите **подписка**, а затем выберите **Подписки**.
 4. Выберите подписку из списка подписок для просмотра.
 5. Выберите **Поставщики ресурсов**, а затем просмотрите список доступных поставщиков ресурсов.
@@ -50,11 +51,11 @@ ms.locfileid: "74149398"
 Чтобы просмотреть сведения для конкретного поставщика ресурсов, сделайте следующее:
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Выбор пункта **Все службы**.
-
-    ![Пункт "Все службы"](./media/resource-manager-supported-services/more-services.png)
-
+2. В меню портал Azure выберите **все службы**.
 3. В поле **Все службы** введите **обозреватель ресурсов** и выберите **Обозреватель ресурсов**.
+
+    ![Пункт "Все службы"](./media/resource-manager-supported-services/select-resource-explorer.png)
+
 4. Разверните список **Поставщики**, щелкнув стрелку вправо.
 
     ![выбор поставщиков](./media/resource-manager-supported-services/select-providers.png)

@@ -1,5 +1,5 @@
 ---
-title: Настройка и включение политик риска в Защита идентификации Azure Active Directory
+title: Политики риска — Защита идентификации Azure Active Directory
 description: Включение и Настройка политик риска в Защита идентификации Azure Active Directory
 services: active-directory
 ms.service: active-directory
@@ -11,18 +11,18 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 79f919633f6b1912ef07b7ff636eb60fb3d5859f
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: 37091b2551d68e241c7179949c3eb1db9a381de6
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72886965"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74382177"
 ---
 # <a name="how-to-configure-and-enable-risk-policies"></a>Как настроить и включить политики риска
 
 Как было сказано в предыдущей статье, [политики защиты идентификации](concept-identity-protection-policies.md) включают две политики риска, которые можно включить в нашем каталоге. 
 
-- Политика риска входа
+- Sign-in risk policy
 - Политика риска пользователя
 
 ![Страница "Общие сведения о безопасности" для включения политик риска для пользователей и входа](./media/howto-identity-protection-configure-risk-policies/identity-protection-security-overview.png)
@@ -31,7 +31,7 @@ ms.locfileid: "72886965"
 
 > [!VIDEO https://www.youtube.com/embed/zEsbbik-BTE]
 
-## <a name="prerequisites"></a>Технические условия 
+## <a name="prerequisites"></a>предварительным требованиям 
 
 Если организация хочет разрешить пользователям самостоятельно устранять неполадки, пользователи должны быть зарегистрированы для самостоятельного сброса пароля и многофакторной идентификации Azure. Мы рекомендуем [включить общий способ регистрации сведений о безопасности](../authentication/howto-registration-mfa-sspr-combined.md) для достижения оптимальной производительности. Предоставление пользователям возможности самостоятельного восстановления повышает эффективность работы, не требуя вмешательства администратора. Администраторы по-прежнему могут просматривать эти события и исследовать их после фактического. 
 
@@ -72,7 +72,7 @@ ms.locfileid: "72886965"
    1. **Принудительное применение политики** ** - **
    1. **Сохранить**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Включение политики регистрации многофакторной идентификации Azure](howto-identity-protection-configure-mfa-policy.md)
 

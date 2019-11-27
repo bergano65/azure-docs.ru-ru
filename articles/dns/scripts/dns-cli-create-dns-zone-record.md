@@ -1,5 +1,5 @@
 ---
-title: Пример скрипта в Azure CLI. Создание зоны и записи DNS для имени домена
+title: Создание зоны и записи DNS для доменного имени — Azure CLI — Azure DNS
 description: В этом примере скрипта Azure CLI показано, как создать зону и запись DNS для имени домена
 services: dns
 author: vhorne
@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: sample
 ms.date: 09/20/2019
 ms.author: victorh
-ms.openlocfilehash: 691eeebf61ffd4ea7bee6b5ac6c60cafb076e11d
-ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
+ms.openlocfilehash: 8ae4e8c515b658ac3f0bb4eb0d88706814993355
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71156499"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74037153"
 ---
 # <a name="azure-cli-script-example-create-a-dns-zone-and-record"></a>Пример скрипта Azure CLI. Создание зоны и записи DNS
 

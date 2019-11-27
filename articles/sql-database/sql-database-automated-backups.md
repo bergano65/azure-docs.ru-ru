@@ -12,12 +12,12 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab, danil
 manager: craigg
 ms.date: 09/26/2019
-ms.openlocfilehash: 1cdd8fdac03c25bf28db94867891fef4c2846fcd
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.openlocfilehash: 77442eda6c8b2aae71c5d647127ead9f851ec485
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74196566"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74421417"
 ---
 # <a name="automated-backups"></a>Автоматическое резервное копирование
 
@@ -33,10 +33,10 @@ ms.locfileid: "74196566"
 
 - **Восстановите существующую базу данных до точки во времени в прошлом** в течение срока хранения с помощью портал Azure, Azure PowerShell, Azure CLI или REST API. В одной базе данных и эластичных пулах эта операция создаст новую базу данных на том же сервере, что и исходная база данных. В Управляемый экземпляр эта операция может создать копию базы данных или ту же или другую Управляемый экземпляр в той же подписке.
   - Чтобы настроить политику архивации, **[измените срок хранения резервных копий](#how-to-change-the-pitr-backup-retention-period)** с 7 до 35 дней.
-  - **Измените политику долгосрочного хранения до 10 лет** на отдельная база данных и эластичных пулах с помощью [портал Azure](sql-database-long-term-backup-retention-configure.md#configure-long-term-retention-policies) или [Azure PowerShell](sql-database-long-term-backup-retention-configure.md#use-powershell-to-manage-long-term-backups).
+  - **Измените политику долгосрочного хранения до 10 лет** на отдельная база данных и эластичных пулах с помощью [портал Azure](sql-database-long-term-backup-retention-configure.md#configure-long-term-retention-policies) или [Azure PowerShell](sql-database-long-term-backup-retention-configure.md#using-powershell).
 - **Восстановление удаленной базы данных до момента ее удаления** или в любое время в течение срока хранения. Удаленную базу данных можно восстановить только на том же логическом сервере или Управляемый экземпляр, где была создана исходная база данных.
 - **Восстановление базы данных в другой географический регион**. Геовосстановление позволяет выполнить восстановление после сбоя в регионе при отсутствии доступа к серверу и базе данных. В результате создается база данных на любом существующем сервере в любой точке мира.
-- **Восстановление базы данных из определенной долгосрочной резервной копии** на отдельная база данных или эластичный пул, если для базы данных настроена политика долгосрочного хранения (LTR). LTR позволяет восстановить старую версию базы данных с помощью [портал Azure](sql-database-long-term-backup-retention-configure.md#view-backups-and-restore-from-a-backup-using-azure-portal) или [Azure PowerShell](sql-database-long-term-backup-retention-configure.md#use-powershell-to-manage-long-term-backups) для удовлетворения запроса на соответствие или запуска старой версии приложения. Дополнительные сведения см. в статье [Long-term retention](sql-database-long-term-retention.md) (Длительный период удержания).
+- **Восстановление базы данных из определенной долгосрочной резервной копии** на отдельная база данных или эластичный пул, если для базы данных настроена политика долгосрочного хранения (LTR). LTR позволяет восстановить старую версию базы данных с помощью [портал Azure](sql-database-long-term-backup-retention-configure.md#using-azure-portal) или [Azure PowerShell](sql-database-long-term-backup-retention-configure.md#using-powershell) для удовлетворения запроса на соответствие или запуска старой версии приложения. Дополнительные сведения см. в статье [Long-term retention](sql-database-long-term-retention.md) (Длительный период удержания).
 - Инструкции по восстановлению см. в статье о [восстановлении базы данных из резервной копии](sql-database-recovery-using-backups.md).
 
 > [!NOTE]
@@ -47,7 +47,7 @@ ms.locfileid: "74196566"
 | | Портал Azure | Azure PowerShell |
 |---|---|---|
 | Изменение срока хранения резервной копии | [отдельная база данных](sql-database-automated-backups.md?tabs=managed-instance#change-pitr-backup-retention-period-using-azure-portal) <br/> [Управляемый экземпляр](sql-database-automated-backups.md?tabs=managed-instance#change-pitr-backup-retention-period-using-azure-portal) | [отдельная база данных](sql-database-automated-backups.md#change-pitr-backup-retention-period-using-powershell) <br/>[Управляемый экземпляр](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlinstancedatabasebackupshorttermretentionpolicy) |
-| Изменение долгосрочного хранения резервных копий | [Отдельная база данных](sql-database-long-term-backup-retention-configure.md#configure-long-term-retention-policies)<br/>Управляемый экземпляр-н/д  | [отдельная база данных](sql-database-long-term-backup-retention-configure.md#use-powershell-to-manage-long-term-backups)<br/>Управляемый экземпляр-н/д  |
+| Изменение долгосрочного хранения резервных копий | [Отдельная база данных](sql-database-long-term-backup-retention-configure.md#configure-long-term-retention-policies)<br/>Управляемый экземпляр-н/д  | [отдельная база данных](sql-database-long-term-backup-retention-configure.md)<br/>Управляемый экземпляр-н/д  |
 | Восстановление базы данных с точки во времени | [Отдельная база данных](sql-database-recovery-using-backups.md#point-in-time-restore) | [Отдельная база данных](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase) <br/> [Управляемый экземпляр](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqlinstancedatabase) |
 | Восстановление удаленной базы данных | [Отдельная база данных](sql-database-recovery-using-backups.md) | [Отдельная база данных](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldeleteddatabasebackup) <br/> [Управляемый экземпляр](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldeletedinstancedatabasebackup)|
 | Восстановление базы данных из хранилища BLOB-объектов Azure | Отдельная база данных — н/д <br/>Управляемый экземпляр-н/д  | Отдельная база данных — н/д <br/>[Управляемый экземпляр](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-get-started-restore) |
@@ -88,7 +88,7 @@ ms.locfileid: "74196566"
 
 ![Анализ затрат на хранилище резервных копий](./media/sql-database-automated-backup/check-backup-storage-cost-sql-mi.png)
 
-Если вы перейдете в свою подписку и открыли колонку анализ затрат, вы можете выбрать Подкатегория счетчика **pitr резервное хранилище** , чтобы просмотреть текущую стоимость резервного копирования и прогноз расходов. Можно также включить другие подкатегории измерения, такие как **Общее** назначение для хранилища или **управляемого экземпляра общее назначение — хранилище** для сравнения стоимости хранения резервных копий с другими категориями затрат.
+Если вы перейдете в свою подписку и открыли колонку анализ затрат, вы можете выбрать Подкатегория счетчика **pitr резервное хранилище** , чтобы просмотреть текущую стоимость резервного копирования и прогноз расходов. Можно также включить другие подкатегории измерения, такие как **Общее назначение управляемого экземпляра — хранилище** или **управляемый экземпляр общее назначение — COMPUTE го поколения** для сравнения стоимости хранения резервных копий с другими категориями затрат.
 
 > [!Note]
 > Вы можете [изменить срок хранения на 7 дней](#change-pitr-backup-retention-period-using-azure-portal) , чтобы снизить затраты на хранение резервных копий.

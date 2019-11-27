@@ -1,21 +1,15 @@
 ---
 title: Безопасность службы Блокчейн Azure
 description: Основные понятия безопасности и доступа к данным службы Блокчейн Azure
-services: azure-blockchain
-keywords: ''
-author: PatAltimore
-ms.author: patricka
-ms.date: 05/02/2019
+ms.date: 11/22/2019
 ms.topic: conceptual
-ms.service: azure-blockchain
-ms.reviewer: seal
-manager: femila
-ms.openlocfilehash: 63e61844ddb5bd0f0ed52b67e26ea5bf1857fd2b
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.reviewer: janders
+ms.openlocfilehash: e1a40acfec6b0dc5cdf21fb84b341b6b4987797a
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73579921"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74455717"
 ---
 # <a name="azure-blockchain-service-security"></a>Безопасность службы Блокчейн Azure
 
@@ -31,7 +25,7 @@ ms.locfileid: "73579921"
 
 Пользовательские данные хранятся в службе хранилища Azure. Пользовательские данные шифруются при перемещении и неактивных данных для обеспечения безопасности и конфиденциальности. Дополнительные сведения см. в статье [руководство по безопасности службы хранилища Azure](../../storage/common/storage-security-guide.md).
 
-## <a name="authentication"></a>Аутентификация
+## <a name="authentication"></a>Проверка подлинности
 
 Транзакции можно отправлять в узлы блокчейн через конечную точку RPC. Клиенты взаимодействуют с узлом транзакции, используя обратный прокси-сервер, который обрабатывает проверку подлинности пользователя и шифрует данные по протоколу SSL.
 
@@ -63,6 +57,6 @@ Azure Active Directory (Azure AD) использует механизм пров
 
 Ключи несчастливых используются для уникальной идентификации узла кворума. Ключи несчастливых создаются во время подготовки узла и указываются в параметре Приватефор закрытой транзакции в кворуме.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-[Настройка узлов транзакций службы Azure Блокчейн](configure-transaction-nodes.md)
+См. статью [настройка Azure Active Directoryного доступа для службы Azure блокчейн](configure-aad.md).

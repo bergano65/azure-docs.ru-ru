@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настройка Pingboard для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Учебник. подготовка пользователей для Pingboard — Azure AD
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в Pingboard.
 services: active-directory
 documentationcenter: ''
@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 03/27/2019
 ms.author: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f7e2fabc86374f7fe055303d056ae8e00f33389
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 81988f2643fd9acb911e6f70765cedbb4786f14c
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65964370"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74278256"
 ---
-# <a name="tutorial-configure-pingboard-for-automatic-user-provisioning"></a>Руководство по Настройка Pingboard для автоматической подготовки пользователей
+# <a name="tutorial-configure-pingboard-for-automatic-user-provisioning"></a>Руководство по настройке Pingboard для автоматической подготовки учетных записей пользователей
 
 Цель этого руководства — показать, как настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure Active Directory (Azure AD) в Pingboard.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -72,7 +72,7 @@ ms.locfileid: "65964370"
 
     a. В поле **URL-адрес клиента** введите `https://your_domain.pingboard.com/scim/v2`, заменив ваш_домен фактическим именем домена.
 
-    2\. Войдите в [Pingboard](https://pingboard.com/) с помощью учетной записи администратора.
+    b. Войдите в [Pingboard](https://pingboard.com/) с помощью учетной записи администратора.
 
     c. Выберите **Add-Ons** > **Integrations** > **Azure Active Directory** (Надстройки > Интеграции > Azure Active Directory).
 

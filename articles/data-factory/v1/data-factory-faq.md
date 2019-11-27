@@ -51,9 +51,9 @@ ms.locfileid: "70139818"
 
 * **Visual Studio.** Фабрику данных Azure можно создать с помощью Visual Studio. Дополнительные сведения см. в разделе [Создание первой фабрики данных Azure с помощью Microsoft Visual Studio](data-factory-build-your-first-pipeline-using-vs.md).
 * **Azure PowerShell.** В разделе [Создание первой фабрики данных Azure с помощью Azure PowerShell](data-factory-build-your-first-pipeline-using-powershell.md) приведено пошаговое руководство по созданию фабрики данных с помощью PowerShell. Подробную документацию по командлетам фабрики данных см. в справочном материале по [командлетам фабрики данных][adf-powershell-reference] в библиотеке MSDN.
-* **Библиотека классов .NET.** Фабрики данных можно создавать программными средствами с помощью пакета SDK .NET для фабрик данных. Пошаговое руководство по созданию фабрики данных с помощью пакета SDK для .NET см. в разделе [Создание, мониторинг фабрик данных и управление ими с помощью пакета SDK для .NET](data-factory-create-data-factories-programmatically.md). Исчерпывающую документацию по пакету SDK .NET для фабрик данных см. в справочнике по [библиотеке классов фабрики данных][msdn-class-library-reference] .
-* Для создания и развертывания фабрик данных можно также использовать **REST API**, предоставляемый службой фабрики данных Azure. Подробную документацию по фабрике данных REST API см. в справочнике по [фабрике данных REST API][msdn-rest-api-reference] .
-* Дополнительные сведения о **шаблоне Azure Resource Manager** см. в статье [Tutorial: Build your first Azure data factory using Azure Resource Manager template](data-factory-build-your-first-pipeline-using-arm.md) (Создание фабрики данных Azure с помощью шаблона Azure Resource Manager).
+* **Библиотека классов .NET.** Фабрики данных можно создавать программными средствами с помощью пакета SDK .NET для фабрик данных. Пошаговое руководство по созданию фабрики данных с помощью пакета SDK для .NET см. в разделе [Создание, мониторинг фабрик данных и управление ими с помощью пакета SDK для .NET](data-factory-create-data-factories-programmatically.md). Исчерпывающую документацию по пакету SDK .NET для фабрик данных см. в [справочнике по библиотеке классов фабрики данных][msdn-class-library-reference] .
+* Для создания и развертывания фабрик данных можно также использовать **REST API**, предоставляемый службой фабрики данных Azure. Подробную документацию по фабрике данных REST API см. в [справочнике по фабрике данных REST API][msdn-rest-api-reference] .
+* **Шаблон Azure Resource Manager.** Дополнительные сведения см. в статье [Руководство. Создание фабрики данных Azure с помощью шаблона Azure Resource Manager](data-factory-build-your-first-pipeline-using-arm.md).
 
 ### <a name="can-i-rename-a-data-factory"></a>Можно ли переименовать фабрику данных?
 Нет. Как и для других ресурсов Azure, имя фабрики данных Azure изменить нельзя.
@@ -70,12 +70,12 @@ ms.locfileid: "70139818"
 | --- | --- |
 | [Кластер HDInsight по запросу](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) или [собственный кластер HDInsight](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) |[DotNet](data-factory-use-custom-activities.md), [Hive](data-factory-hive-activity.md), [Pig](data-factory-pig-activity.md), [MapReduce](data-factory-map-reduce.md), [потоковая передача Hadoop](data-factory-hadoop-streaming-activity.md) |
 | [Пакетная служба Azure](data-factory-compute-linked-services.md#azure-batch-linked-service) |[DotNet](data-factory-use-custom-activities.md) |
-| [машинное обучение Azure](data-factory-compute-linked-services.md#azure-machine-learning-linked-service) |[Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](data-factory-azure-ml-batch-execution-activity.md) |
+| [машинное обучение Azure](data-factory-compute-linked-services.md#azure-machine-learning-linked-service) |[Действия машинного обучения: выполнение пакета и обновление ресурса](data-factory-azure-ml-batch-execution-activity.md) |
 | [Аналитика озера данных Azure](data-factory-compute-linked-services.md#azure-data-lake-analytics-linked-service) |[Аналитика озера данных U-SQL](data-factory-usql-activity.md) |
 | [Azure SQL](data-factory-compute-linked-services.md#azure-sql-linked-service), [хранилище данных Azure SQL](data-factory-compute-linked-services.md#azure-sql-data-warehouse-linked-service), [SQL Server](data-factory-compute-linked-services.md#sql-server-linked-service) |[Хранимая процедура](data-factory-stored-proc-activity.md) |
 
 ### <a name="how-does-azure-data-factory-compare-with-sql-server-integration-services-ssis"></a>Чем отличаются возможности фабрики данных Azure и SQL Server Integration Services (SSIS)? 
-Просмотрите презентацию [Azure Data Factory vs. SSIS](https://www.sqlbits.com/Sessions/Event15/Azure_Data_Factory_vs_SSIS) (Сравнение фабрики данных Azure и SSIS), которую создал один из наших MVP (Most Valued Professional) Реза Рад (Reza Rad). Некоторые из последних изменений в фабрике данных могут отсутствовать в наборе слайдов. Мы постоянно добавляем в фабрику данных Azure дополнительные возможности. Мы постоянно добавляем в фабрику данных Azure дополнительные возможности. Мы внесем эти обновления в сравнение технологий интеграции данных от корпорации Майкрософт позже в этом году.   
+Ознакомьтесь с представлением [фабрики данных Azure и служб SSIS](https://www.sqlbits.com/Sessions/Event15/Azure_Data_Factory_vs_SSIS) от одного из наших MVP (наиболее ценных специалистов): Рэд Reza RAD. Некоторые из последних изменений в фабрике данных могут отсутствовать в наборе слайдов. Мы постоянно добавляем в фабрику данных Azure дополнительные возможности. Мы постоянно добавляем в фабрику данных Azure дополнительные возможности. Мы внесем эти обновления в сравнение технологий интеграции данных от корпорации Майкрософт позже в этом году.   
 
 ## <a name="activities---faq"></a>Действия — вопросы и ответы
 ### <a name="what-are-the-different-types-of-activities-you-can-use-in-a-data-factory-pipeline"></a>Какие типы действий использовать в конвейере фабрики данных Azure?
@@ -170,7 +170,7 @@ ms.locfileid: "70139818"
 
 * Запустите окно действия или срез повторно с помощью приложения для мониторинга и управления. Инструкции см. в разделе [Повторное выполнение выбранных окон действий](data-factory-monitor-manage-app.md#perform-batch-actions).   
 * Щелкните **Выполнить** в командной строке в колонке **Срез данных** для среза на портале Azure.
-* Выполните командлет **Set-аздатафакторислицестатус** с параметром status , имеющим значение ожидание среза.   
+* Выполните командлет **Set-аздатафакторислицестатус** с параметром status, имеющим значение **Ожидание** среза.   
 
     ```powershell
     Set-AzDataFactorySliceStatus -Status Waiting -ResourceGroupName $ResourceGroup -DataFactoryName $df -TableName $table -StartDateTime "02/26/2015 19:00:00" -EndDateTime "02/26/2015 20:00:00"

@@ -1,22 +1,22 @@
 ---
-title: Устранение неполадок с Объединенной регистрацией для Azure AD SSPR и многофакторной идентификации (Предварительная версия) — Azure Active Directory
+title: Устранение неполадок при объединении регистрации Azure Active Directory
 description: Устранение неполадок многофакторной идентификации Azure AD и общей регистрации для самостоятельного сброса пароля (Предварительная версия)
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 02/20/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e586105d8b2ec85e4ebd85046185ddc21112f0e0
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: f3f2a60367a8b76464611878e850fff0c4ba8803
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74167825"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74381389"
 ---
 # <a name="troubleshooting-combined-security-information-registration-preview"></a>Устранение неполадок при общей регистрации сведений о безопасности (Предварительная версия)
 

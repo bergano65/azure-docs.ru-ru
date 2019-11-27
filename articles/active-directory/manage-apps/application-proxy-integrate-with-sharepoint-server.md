@@ -1,5 +1,5 @@
 ---
-title: Настройка удаленного доступа к SharePoint с помощью прокси приложения Azure AD | Документы Майкрософт
+title: Включение удаленного доступа к SharePoint AD Application Proxy Azure
 description: Рассматриваются основные сведения об интеграции локального сервера SharePoint с прокси приложения Azure AD.
 services: active-directory
 documentationcenter: ''
@@ -16,18 +16,18 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4f1351a2ebe6a23dc4d1e31f30f1c69ac862b21
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 8d8f1bbd79e6dcbbd75e1ea1b98bd211d77ed1a9
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72595435"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74275450"
 ---
 # <a name="enable-remote-access-to-sharepoint-with-azure-ad-application-proxy"></a>Настройка удаленного доступа к SharePoint с помощью прокси приложения Azure AD
 
 В этом пошаговом руководство объясняется, как интегрировать локальную ферму SharePoint с прокси приложения Azure Active Directory (Azure AD).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Для выполнения настройки необходимы следующие ресурсы:
 - Ферма SharePoint 2013 или более поздняя версия.
@@ -198,9 +198,9 @@ ms.locfileid: "72595435"
 
 ## <a name="troubleshoot-sign-in-errors"></a>Устранение ошибок входа
 
-Если вход на сайт не работает, можно получить дополнительные сведения о данной ошибке в журналах соединителя: с компьютера, на котором выполняется соединитель, открыть средство просмотра событий, перейти к **журналам приложений и служб**  > **Microsoft**  >  **AadApplicationProxy**  > **Connector**и проверьте журнал **администратора** .
+Если вход на сайт не работает, можно получить дополнительные сведения о данной ошибке в журналах соединителя: с компьютера, на котором выполняется соединитель, открыть средство просмотра событий, перейти к **журналам приложений и служб** > **Microsoft** > **AadApplicationProxy** > **Connector**и проверить журнал **администратора** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Работа с пользовательскими доменами в прокси приложения Azure AD](application-proxy-configure-custom-domain.md)
 * [Сведения о соединителях прокси приложения Azure AD](application-proxy-connectors.md)

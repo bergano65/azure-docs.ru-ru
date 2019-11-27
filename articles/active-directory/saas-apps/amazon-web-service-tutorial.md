@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/17/2019
+ms.date: 10/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ed1f1b6973d96fdc0bce560877720adfc5e33081
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: f2fea3bca40d8a5783448e68ea89c3b238a0104d
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71170891"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74074036"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-amazon-web-services-aws"></a>Руководство по Интеграция единого входа Azure Active Directory с Amazon Web Services (AWS)
 
@@ -81,7 +81,6 @@ ms.locfileid: "71170891"
 1. В разделе **Добавление из коллекции** в поле поиска введите **Amazon Web Services (AWS)** .
 1. Выберите **Amazon Web Services (AWS)** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-amazon-web-services-aws"></a>Настройка и проверка единого входа Azure AD для Amazon Web Services (AWS)
 
 Настройте и проверьте единый вход Azure AD в Amazon Web Services (AWS) с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем во Amazon Web Services (AWS).
@@ -93,6 +92,7 @@ ms.locfileid: "71170891"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Amazon Web Services (AWS)](#configure-amazon-web-services-aws-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя Amazon Web Services (AWS)](#create-amazon-web-services-aws-test-user)** требуется для того, чтобы в Amazon Web Services (AWS) существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
+    1. **[Настройка подготовки ролей в Amazon Web Services (AWS)](#how-to-configure-role-provisioning-in-amazon-web-services-aws)**
 1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
@@ -312,11 +312,13 @@ ms.locfileid: "71170891"
 
     c. Нажмите кнопку **Закрыть**.
 
-21. На портале управления Azure AD откройте раздел **Подготовка** для AWS.
+### <a name="how-to-configure-role-provisioning-in-amazon-web-services-aws"></a>Настройка подготовки ролей в Amazon Web Services (AWS)
+
+1. На портале управления Azure AD откройте раздел **Подготовка** для AWS.
 
     ![Снимок экрана: приложение AWS с выделенным пунктом "Подготовка"](./media/amazon-web-service-tutorial/provisioning.png)
 
-22. Введите ключ доступа и секрет в поля **clientsecret** и **Секретный токен** соответственно.
+2. Введите ключ доступа и секрет в поля **clientsecret** и **Секретный токен** соответственно.
 
     ![Снимок экрана: диалоговое окно "Учетные данные администратора"](./media/amazon-web-service-tutorial/provisioning1.png)
 
@@ -328,7 +330,7 @@ ms.locfileid: "71170891"
 
     d. Сохраните параметры, щелкнув **Сохранить**.
 
-23. В разделе **Параметры** выберите для параметра **Состояние подготовки** значение **Вкл.** Затем нажмите кнопку **Save** (Сохранить).
+3. В разделе **Параметры** выберите для параметра **Состояние подготовки** значение **Вкл.** Затем нажмите кнопку **Save** (Сохранить).
 
     ![Снимок экрана: раздел "Параметры" с выделенным пунктом "Включено"](./media/amazon-web-service-tutorial/provisioning2.png)
 

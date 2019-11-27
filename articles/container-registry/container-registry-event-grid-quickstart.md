@@ -1,22 +1,17 @@
 ---
-title: Краткое руководство. Отправка событий Реестра контейнеров Azure в Сетку событий
+title: Краткое руководство. Отправка событий в сетку событий
 description: В этом кратком руководстве описано, как включить события Сетки событий для реестра контейнеров, передать образ контейнера, отправить события в пример приложения и удалить их из него.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 08/23/2018
-ms.author: danlep
 ms.custom: seodec18
-ms.openlocfilehash: 49ee9a7f12601b0d93e320ab797be4a1ada41c04
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 1ff9572cf8614e3eb5d015a602ca3f878875a0a4
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68309803"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74455342"
 ---
-# <a name="quickstart-send-events-from-private-container-registry-to-event-grid"></a>Краткое руководство. Отправка событий из частного реестра контейнеров в службу "Сетка событий"
+# <a name="quickstart-send-events-from-private-container-registry-to-event-grid"></a>Краткое руководство. Отправка событий из закрытого реестра контейнеров в сетку событий
 
 Сетка событий Azure — это полностью управляемая служба маршрутизации событий, которая обеспечивает равномерное потребление событий с помощью модели "публикация — подписка". В этом кратком руководстве вы создадите реестр контейнеров, подпишитесь на события реестра, а затем развернете пример веб-приложения для получения событий, используя Azure CLI. Наконец, вы запускаете образ контейнера `push` и `delete` и просматриваете полезную нагрузку события в примере приложения.
 
@@ -24,7 +19,7 @@ ms.locfileid: "68309803"
 
 ![Веб-браузер, где отображается пример веб-приложения с тремя полученными событиями][sample-app-01]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][azure-account], прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][azure-account] , прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -42,7 +37,7 @@ az group create --name $RESOURCE_GROUP_NAME --location eastus
 
 ## <a name="create-a-container-registry"></a>Создание реестра контейнеров
 
-Затем разверните реестр контейнеров в группе ресурсов с помощью следующих команд. Перед выполнением команды [AZ запись контроля][az-acr-create] доступа укажите `ACR_NAME` имя реестра. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов.
+Затем разверните реестр контейнеров в группе ресурсов с помощью следующих команд. Перед выполнением команды [AZ запись контроля][az-acr-create] доступа присвойте параметру `ACR_NAME` имя реестра. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов.
 
 ```azurecli-interactive
 ACR_NAME=<acrName>
@@ -186,7 +181,7 @@ $ az acr repository show-tags --name $ACR_NAME --repository myimage
 
 ### <a name="delete-the-image"></a>Удаление образа
 
-Теперь создайте `ImageDeleted` событие, удалив образ с помощью команды [AZ контроля репозитория Delete][az-acr-repository-delete] :
+Теперь создайте событие `ImageDeleted`, удалив образ с помощью команды [AZ контроля репозитория Delete][az-acr-repository-delete] :
 
 ```azurecli-interactive
 az acr repository delete --name $ACR_NAME --image myimage:v1
@@ -226,7 +221,7 @@ az group delete --name $RESOURCE_GROUP_NAME
 
 [Схема событий службы "Сетка событий Azure" для Реестра контейнеров](../event-grid/event-schema-container-registry.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 В этом кратком руководстве вы развернули реестр контейнеров, создали образ с помощью задач ACR, удалили его и использовали события реестра из Сетки событий с помощью примера приложения. Теперь перейдите к руководству по задачам ACR, чтобы узнать больше о создании образов контейнеров в облаке, включая автоматическую сборку при обновлении базового образа:
 

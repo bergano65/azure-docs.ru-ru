@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 11/15/2019
+ms.date: 11/21/2019
 ms.author: dapine
-ms.openlocfilehash: 4170db596d3d4f4b197120770afa2f6e8b0f8a1c
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 3d9373067c78f1fe0fa0b414886c30f2ed3c1c9f
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74132598"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325865"
 ---
-# <a name="install-and-run-speech-service-containers"></a>Установка и запуск контейнеров речевых служб
+# <a name="install-and-run-speech-service-containers-preview"></a>Установка и запуск контейнеров речевых служб (Предварительная версия)
 
 Контейнеры позволяют запускать некоторые API речевых служб в собственной среде. Контейнеры отлично подходят для конкретных требований к безопасности и управлению данными. В этой статье вы узнаете, как скачать, установить и запустить речевой контейнер.
 
@@ -155,10 +155,10 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-t
 
 #### <a name="speech-to-text-locales"></a>Языки перевода речи в текст
 
-Все теги, кроме `latest`, имеют следующий формат, где `<culture>` указывает на контейнер языкового стандарта:
+Все теги, кроме `latest`, имеют следующий формат и чувствительны к регистру:
 
 ```
-<major>.<minor>.<patch>-<platform>-<culture>-<prerelease>
+<major>.<minor>.<patch>-<platform>-<locale>-<prerelease>
 ```
 
 Следующий тег является примером формата:
@@ -197,10 +197,10 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-text-to-spe
 
 #### <a name="text-to-speech-locales"></a>Языки перевода текста в речь
 
-Все теги, кроме `latest`, имеют следующий формат, где `<culture>` обозначает языковой стандарт, а `<voice>` указывает голоса контейнера:
+Все теги, кроме `latest`, имеют следующий формат и чувствительны к регистру:
 
 ```
-<major>.<minor>.<patch>-<platform>-<culture>-<voice>-<prerelease>
+<major>.<minor>.<patch>-<platform>-<locale>-<voice>-<prerelease>
 ```
 
 Следующий тег является примером формата:

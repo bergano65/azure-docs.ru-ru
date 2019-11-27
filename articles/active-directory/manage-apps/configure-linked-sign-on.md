@@ -1,5 +1,5 @@
 ---
-title: Связанный вход для приложений Azure AD — платформа Microsoft Identity | Документация Майкрософт
+title: Связанный вход для приложений Azure AD — платформа Microsoft Identity
 description: Настройка связанного единого входа (SSO) для корпоративных приложений Azure на платформе удостоверений Microsoft Identity (Azure AD)
 services: active-directory
 author: msmimart
@@ -12,16 +12,16 @@ ms.date: 05/08/2019
 ms.author: mimart
 ms.reviewer: arvinh,luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc1e26a3c7d284a60b830f6f66cdcecef97db4d6
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 2c4547bddeea8b67bd3377124b1c299662fea3e6
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68834611"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74274167"
 ---
 # <a name="configure-linked-sign-on"></a>Настройка связанного единого входа
 
-При добавлении коллекции или веб-приложения не из коллекции можно использовать один из вариантов единого входа, [связанный](what-is-single-sign-on.md)с входом. Выберите этот параметр, чтобы добавить ссылку на приложение на панели доступа Azure AD в вашей организации или на портале Office 365. Этот метод можно использовать для добавления ссылок на пользовательские веб-приложения, которые в настоящее время используют службы федерации Active Directory (AD FS) (или другую службу федерации) вместо Azure AD для проверки подлинности. Еще он позволяет просто добавить глубокие ссылки на определенные страницы SharePoint или другие веб-сайты. Они появятся на панели доступа пользователя.
+При добавлении коллекции или веб-приложения не из коллекции можно использовать один из вариантов единого входа, [связанный с входом](what-is-single-sign-on.md). Выберите этот параметр, чтобы добавить ссылку на приложение на панели доступа Azure AD в вашей организации или на портале Office 365. Этот метод можно использовать для добавления ссылок на пользовательские веб-приложения, которые в настоящее время используют службы федерации Active Directory (AD FS) (или другую службу федерации) вместо Azure AD для проверки подлинности. Еще он позволяет просто добавить глубокие ссылки на определенные страницы SharePoint или другие веб-сайты. Они появятся на панели доступа пользователя.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -47,7 +47,7 @@ ms.locfileid: "68834611"
 
 1. Щелкните **Сохранить**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Assign users and groups to an application in Azure Active Directory](methods-for-assigning-users-and-groups.md) (Назначение пользователей и групп для приложения в Azure Active Directory)
 - [Managing user account provisioning for enterprise apps in the Azure portal](configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)

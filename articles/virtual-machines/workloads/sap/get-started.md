@@ -13,15 +13,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 11/12/2019
+ms.date: 11/21/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 777fe1a62002a765460617cd69f3d518d78ed331
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 9db368b634d79e66275b43196ed133ced331ce38
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74150883"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74328014"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и запуска сценариев рабочей нагрузки SAP
 
@@ -120,6 +120,7 @@ ms.locfileid: "74150883"
 
 
 ## <a name="change-log"></a>Журнал изменений
+- 11/21/2019: изменения [SAP HANA горизонтальном масштабировании с резервным узлом на виртуальных машинах Azure с Azure NetApp Files на SUSE Linux Enterprise Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-scale-out-standby-netapp-files-suse) , чтобы упростить настройку сопоставления идентификаторов NFS и изменить Рекомендуемый основной сетевой интерфейс для упрощения маршрутизации.
 - 11/15/2019: незначительные изменения в [высоком уровне доступности SAP NetWeaver на SUSE Linux Enterprise Server с Azure NetApp Files для приложений SAP](high-availability-guide-suse-netapp-files.md) и [высокий уровень доступности для sap NetWeaver на Red Hat Enterprise Linux с Azure NETAPP Files для приложений SAP](high-availability-guide-rhel-netapp-files.md) , чтобы уточнить ограничения размера пула ресурсов и удалить инструкцию, так как поддерживается только NFSv3 версия.
 - 11/12/2019: выпуск [высокого уровня доступности для SAP NetWeaver в Windows с Azure NetApp Files (SMB)](high-availability-guide-windows-netapp-files-smb.md)
 - 11/08/2019: изменения в [высоком уровне доступности SAP HANA на виртуальных машинах Azure на SUSE Linux Enterprise Server](sap-hana-high-availability.md), [настройка репликации системы SAP HANA на виртуальные машины Azure](sap-hana-high-availability-rhel.md), [Высокая доступность виртуальных машин azure для SAP NETWEAVER на SUSE Linux Enterprise Server для приложений SAP](high-availability-guide-suse.md), высокая доступность виртуальных машин Azure для SAP NetWeaver на SUSE Linux Enterprise Server [с Azure NetApp Files](high-availability-guide-suse-netapp-files.md), [Высокая доступность виртуальных машин Azure для SAP NetWeaver на Red Hat Enterprise Linux ](high-availability-guide-rhel.md), [Высокая доступность виртуальных машин Azure для SAP NetWeaver на Red Hat Enterprise Linux с Azure NetApp Files](high-availability-guide-rhel-netapp-files.md), [высокий уровень доступности для NFS на виртуальных машинах Azure на SUSE Linux Enterprise Server](high-availability-guide-suse-nfs.md), [глустерфс на виртуальных машинах Azure на Red Hat Enterprise Linux для SAP NetWeaver](high-availability-guide-rhel-glusterfs.md) , чтобы рекомендовать Стандартный балансировщик нагрузки Azure.  

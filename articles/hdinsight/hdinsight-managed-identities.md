@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 03/12/2019
-ms.openlocfilehash: 02ea164a1fa29b494801623d418be73fc47d069c
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.custom: hdinsightactive
+ms.date: 11/20/2019
+ms.openlocfilehash: e7be8fbf5f6c2c59e93d48729785dd34bae5955e
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71077083"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327373"
 ---
 # <a name="managed-identities-in-azure-hdinsight"></a>Управляемые удостоверения в Azure HDInsight
 
@@ -46,6 +46,6 @@ ms.locfileid: "71077083"
 * [Пакет безопасности корпоративного уровня](domain-joined/apache-domain-joined-configure-using-azure-adds.md#create-and-authorize-a-managed-identity)
 * [Создание собственных ключей Kafka (BYOK)](kafka/apache-kafka-byok.md#get-started-with-byok)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md)

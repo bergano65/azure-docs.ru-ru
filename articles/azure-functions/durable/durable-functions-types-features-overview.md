@@ -1,6 +1,6 @@
 ---
-title: Function types in the Durable Functions extension of Azure Functions
-description: Learn about the types of functions and roles that support function-to-function communication in a Durable Functions orchestration in Azure Functions.
+title: Типы функций в Устойчивые функции расширении функций Azure
+description: Сведения о типах функций и ролей, которые поддерживают обмен данными между функциями в Устойчивые функции оркестрации в функциях Azure.
 author: cgillum
 ms.topic: conceptual
 ms.date: 08/22/2019
@@ -12,56 +12,56 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74232770"
 ---
-# <a name="durable-functions-types-and-features-azure-functions"></a>Durable Functions types and features (Azure Functions)
+# <a name="durable-functions-types-and-features-azure-functions"></a>Типы и функции Устойчивые функции (функции Azure)
 
-Устойчивые функции — это расширение [Функций Azure](../functions-overview.md). You can use Durable Functions for stateful orchestration of function execution. A durable function app is a solution that's made up of different Azure functions. Functions can play different roles in a durable function orchestration. 
+Устойчивые функции — это расширение [Функций Azure](../functions-overview.md). Устойчивые функции можно использовать для согласования состояния выполнения функций. Устойчивое приложение-функция — это решение, которое состоит из различных функций Azure. Функции могут играть различные роли в устойчивой функции оркестрации. 
 
-There are currently four durable function types in Azure Functions: activity, orchestrator, entity, and client. The rest of this section goes into more details about the types of functions involved in an orchestration.
+В функциях Azure в настоящее время существует четыре типа устойчивых функций: Activity, Orchestrator, Entity и Client. В оставшейся части этого раздела приводятся дополнительные сведения о типах функций, участвующих в оркестрации.
 
 ## <a name="orchestrator-functions"></a>Функции оркестратора
 
-Orchestrator functions describe how actions are executed and the order in which actions are executed. Orchestrator functions describe the orchestration in code (C# or JavaScript) as shown in [Durable Functions application patterns](durable-functions-overview.md#application-patterns). An orchestration can have many different types of actions, including [activity functions](#activity-functions), [sub-orchestrations](durable-functions-orchestrations.md#sub-orchestrations), [waiting for external events](durable-functions-orchestrations.md#external-events), [HTTP](durable-functions-http-features.md), and [timers](durable-functions-orchestrations.md#durable-timers). Orchestrator functions can also interact with [entity functions](#entity-functions).
+Функции Orchestrator описывают выполнение действий и порядок выполнения действий. Функции Orchestrator описывают согласование в коде (C# или JavaScript), как показано в [устойчивые функции шаблонах приложений](durable-functions-overview.md#application-patterns). Оркестрации может иметь множество различных типов действий, включая [функции действий](#activity-functions), [подсистемы взаимодействия](durable-functions-orchestrations.md#sub-orchestrations), [ожидание внешних событий](durable-functions-orchestrations.md#external-events), [http](durable-functions-http-features.md)и [таймеров](durable-functions-orchestrations.md#durable-timers). Функции Orchestrator также могут взаимодействовать с [функциями сущностей](#entity-functions).
 
 > [!NOTE]
-> Orchestrator functions are written using ordinary code, but there are strict requirements on how to write the code. Specifically, orchestrator function code must be *deterministic*. Failing to follow these determinism requirements can cause orchestrator functions to fail to run correctly. Detailed information on these requirements and how to work around them can be found in the [code constraints](durable-functions-code-constraints.md) topic.
+> Функции Orchestrator пишутся с помощью обычного кода, но существуют и некоторые требования к написанию кода. В частности, код функции Orchestrator должен быть *детерминированным*. Несоблюдение этих требований к детерминированным данным может привести к сбою в работе функций Orchestrator. Подробные сведения об этих требованиях и способах их решения можно найти в разделе [ограничения кода](durable-functions-code-constraints.md) .
 
-For more detailed information on orchestrator functions and their features, see the [Durable orchestrations](durable-functions-orchestrations.md) article.
+Более подробные сведения о функциях Orchestrator и их функциях см. в статье [согласование устойчивых оркестрации](durable-functions-orchestrations.md) .
 
 ## <a name="activity-functions"></a>Функции действий
 
-Activity functions are the basic unit of work in a durable function orchestration. Activity functions are the functions and tasks that are orchestrated in the process. For example, you might create an orchestrator function to process an order. The tasks involve checking the inventory, charging the customer, and creating a shipment. Each task would be a separate activity function. These activity functions may be executed serially, in parallel, or some combination of both.
+Функции действий — это базовая единица работы в устойчивой функции оркестрации. Функции действий — это функции и задачи, управляемые в процессе. Например, вы можете создать функцию Orchestrator для обработки заказа. Задачи подразумевают проверку запасов, оплату клиента и создание отгрузки. Каждая задача будет отдельной функцией действия. Эти функции действий могут выполняться последовательно, параллельно или в любом сочетании.
 
-Unlike orchestrator functions, activity functions aren't restricted in the type of work you can do in them. Activity functions are frequently used to make network calls or run CPU intensive operations. An activity function can also return data back to the orchestrator function. The Durable Task Framework guarantees that each called activity function will be executed *at least once* during an orchestration's execution.
-
-> [!NOTE]
-> Because activity functions only guarantee *at least once* execution, we recommend you make your activity function logic *idempotent* whenever possible.
-
-Use an [activity trigger](durable-functions-bindings.md#activity-trigger) to define an activity function. .NET functions receive a `DurableActivityContext` as a parameter. You can also bind the trigger to any other JSON-serializeable object to pass in inputs to the function. In JavaScript, you can access an input via the `<activity trigger binding name>` property on the [`context.bindings` object](../functions-reference-node.md#bindings). Activity functions can only have a single value passed to them. To pass multiple values, you must use tuples, arrays, or complex types.
+В отличие от функций Orchestrator, функции действий не ограничиваются типом работы, которую можно выполнять в них. Функции действий часто используются для выполнения сетевых вызовов или запуска ресурсоемких операций. Функция действия также может вернуть данные обратно в функцию Orchestrator. Платформа устойчивых задач гарантирует, что каждая вызванная функция действия будет выполняться *по крайней мере один раз* во время выполнения оркестрации.
 
 > [!NOTE]
-> You can trigger an activity function only from an orchestrator function.
+> Поскольку функции действий гарантируют только *однократное* выполнение, мы рекомендуем сделать логику функции действия *идемпотентными* по возможности.
+
+Используйте [триггер действия](durable-functions-bindings.md#activity-trigger) для определения функции действия. Функции .NET получают `DurableActivityContext` в качестве параметра. Можно также привязать триггер к любому другому сериализуемым в JSON объекту для передачи входных данных функции. В JavaScript можно получить доступ к входным данным через свойство `<activity trigger binding name>` [объекта`context.bindings`](../functions-reference-node.md#bindings). Функциям действий может быть передано только одно значение. Для передачи нескольких значений необходимо использовать кортежи, массивы или сложные типы.
+
+> [!NOTE]
+> Функцию действия можно активировать только из функции Orchestrator.
 
 ## <a name="entity-functions"></a>Функции сущностей
 
-Entity functions define operations for reading and updating small pieces of state. We often refer to these stateful entities as *durable entities*. Как и функции оркестратора, функции сущностей — это функции с особым типом триггера, *триггером сущности*. They can also be invoked from client functions or from orchestrator functions. Unlike orchestrator functions, entity functions do not have any specific code constraints. Функции сущностей также управляют состоянием явным образом, а не неявно представляют состояние с помощью потока управления.
+Функции сущностей определяют операции чтения и обновления мелких частей состояния. Мы часто будем ссылаться на эти сущности с отслеживанием состояния как на *устойчивые сущности*. Как и функции оркестратора, функции сущностей — это функции с особым типом триггера, *триггером сущности*. Они также могут вызываться из клиентских функций или из функций Orchestrator. В отличие от функций Orchestrator, функции сущностей не имеют конкретных ограничений кода. Функции сущностей также управляют состоянием явным образом, а не неявно представляют состояние с помощью потока управления.
 
 > [!NOTE]
 > Функции сущностей и связанные функции доступны только в Устойчивых функциях версии 2.0 и более поздних версиях.
 
-For more information about entity functions, see the [Durable Entities](durable-functions-entities.md) article.
+Дополнительные сведения о функциях сущностей см. в статье о [устойчивых сущностях](durable-functions-entities.md) .
 
 ## <a name="client-functions"></a>Клиентские функции
 
-Orchestrator functions are triggered by an [orchestration trigger binding](durable-functions-bindings.md#orchestration-trigger) and entity functions are triggered by an [entity trigger binding](durable-functions-bindings.md#entity-trigger). Both of these triggers work by reacting to messages that are enqueued into a [task hub](durable-functions-task-hubs.md). The primary way to deliver these messages is by using an [orchestrator client binding](durable-functions-bindings.md#orchestration-client) or an [entity client binding](durable-functions-bindings.md#entity-client) from within a *client function*. Any non-orchestrator function can be a *client function*. For example, You can trigger the orchestrator from an HTTP-triggered function, an Azure Event Hub triggered function, etc. What makes a function a *client function* is its use of the durable client output binding.
+Функции Orchestrator запускаются с помощью [привязки триггера оркестрации](durable-functions-bindings.md#orchestration-trigger) , а функции сущностей вызываются [привязкой триггера сущности](durable-functions-bindings.md#entity-trigger). Оба триггера работают путем реагирования на сообщения, которые ставятся в очередь в [Центр задач](durable-functions-task-hubs.md). Основным способом доставки этих сообщений является использование [привязки клиента Orchestrator](durable-functions-bindings.md#orchestration-client) или [привязки клиента сущности](durable-functions-bindings.md#entity-client) в *клиентской функции*. Любая функция, не относящаяся к Orchestrator, может быть *клиентской функцией*. Например, вы можете активировать Orchestrator из функции, активируемой HTTP, функции, активируемой концентратором событий Azure, и т. д. Функция, которая делает функцию *клиентской* , использует выходную привязку долговременного клиента.
 
 > [!NOTE]
-> Unlike other function types, orchestrator and entity functions cannot be triggered directly using the buttons in the Azure Portal. If you want to test an orchestrator or entity function in the Azure Portal, you must instead run a *client function* that starts an orchestrator or entity function as part of its implementation. For the simplest testing experience, a *manual trigger* function is recommended.
+> В отличие от других типов функций, Orchestrator и функции сущностей нельзя активировать напрямую с помощью кнопок на портале Azure. Если вы хотите протестировать Orchestrator или функцию сущности на портале Azure, необходимо запустить *клиентскую функцию* , которая запускает функцию Orchestrator или Entity в рамках своей реализации. Для простейшего тестирования рекомендуется использовать функцию *триггера вручную* .
 
-In addition to triggering orchestrator or entity functions, the *durable client* binding can be used to interact with running orchestrations and entities. For example, orchestrations can be queried, terminated, and can have events raised to them. For more information on managing orchestrations and entities, see the [Instance management](durable-functions-instance-management.md) article.
+Помимо активации функций Orchestrator или Entity, для взаимодействия с запущенными оркестрации и сущностями можно использовать *устойчивую клиентскую* привязку. Например, оркестрации могут запрашиваться, завершаться и получать события. Дополнительные сведения об управлении согласованиями и сущностями см. в статье [Управление экземплярами](durable-functions-instance-management.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-To get started, create your first durable function in [C#](durable-functions-create-first-csharp.md) or [JavaScript](quickstart-js-vscode.md).
+Чтобы приступить к работе, создайте свою первую устойчивую функцию в [C#](durable-functions-create-first-csharp.md) или [JavaScript](quickstart-js-vscode.md).
 
 > [!div class="nextstepaction"]
-> [Read more about Durable Functions orchestrations](durable-functions-orchestrations.md)
+> [Дополнительные сведения об оркестрациих Устойчивые функции](durable-functions-orchestrations.md)

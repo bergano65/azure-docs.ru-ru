@@ -1,5 +1,5 @@
 ---
-title: Учебник. Мониторинг виртуальных машин Windows в Azure | Документация Майкрософт
+title: Учебник. Мониторинг виртуальных машин Windows в Azure
 description: Из этого учебника вы узнаете, как отслеживать производительность и обнаруживать компоненты приложений, работающих на виртуальных машинах Windows.
 services: virtual-machines-windows
 documentationcenter: virtual-machines
@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 09/27/2018
 ms.author: magoedte
 ms.custom: mvc
-ms.openlocfilehash: a2f4083841c801db3edf1b2838b8d3271b700731
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: 9e807927a10399b02c2c89359c2ffffaf87ba57b
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71679344"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74112486"
 ---
 # <a name="tutorial-monitor-a-windows-virtual-machine-in-azure"></a>Руководство по Мониторинг виртуальной машины Windows в Azure
 
@@ -91,7 +91,7 @@ Get-AzVMBootDiagnosticsData -ResourceGroupName "myResourceGroupMonitor" -Name "m
 
 3. На странице **Аналитические сведения (предварительная версия)** выберите **Попробовать**.
 
-    ![Включение Azure Monitor для виртуальной машины](../../azure-monitor/insights/media/vminsights-enable-single-vm/enable-vminsights-vm-portal-01.png)
+    ![Включение Azure Monitor для виртуальной машины](../../azure-monitor/insights/media/vminsights-enable-single-vm/enable-vminsights-vm-portal.png)
 
 4. Если имеющаяся рабочая область Log Analytics расположена в той же подписке, что и кластер, выберите ее из раскрывающегося списка на странице **Azure Monitor Insights Onboarding** (Подключение к службе аналитических сведений Azure Monitor).  
 

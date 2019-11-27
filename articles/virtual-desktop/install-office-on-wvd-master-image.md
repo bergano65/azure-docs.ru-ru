@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: helohr
-ms.openlocfilehash: 378be7ebc1cc04433d42b6a05d7eafc73a515568
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: 059748f6f08b1c73d56aa3a127aa785f55eb63ee
+ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71679519"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539135"
 ---
 # <a name="install-office-on-a-master-vhd-image"></a>Установка Office в главный образ VHD
 
@@ -23,24 +23,23 @@ ms.locfileid: "71679519"
 Кроме того, в этой статье предполагается, что у вас есть повышенный доступ к виртуальной машине, будь то ее подготовка в Azure или диспетчере Hyper-V. Если нет, см. статью [повышение уровня доступа для управления всеми подписками Azure и группами управления](https://docs.microsoft.com/azure/role-based-access-control/elevate-access-global-admin).
 
 >[!NOTE]
->Эти инструкции предназначены для настройки виртуальных рабочих столов Windows, которые можно использовать с существующими процессами Организации.
+>Эти инструкции предназначены для конфигурации Виртуального рабочего стола Windows, которую можно использовать в имеющихся процессах вашей организации.
 
 ## <a name="install-office-in-shared-computer-activation-mode"></a>Установить Office в режиме активации общего компьютера
 
 Активация на общем компьютере позволяет развернуть Office 365 профессиональный плюс на компьютере в Организации, к которому обращается несколько пользователей. Дополнительные сведения об активации общего компьютера см. в разделе [Обзор активации общего компьютера для Office 365 профессиональный плюс](https://docs.microsoft.com/DeployOffice/overview-of-shared-computer-activation-for-office-365-proplus).
 
 Используйте [средство развертывания Office](https://www.microsoft.com/download/details.aspx?id=49117) для установки Office. Многосеансовая поддержка Windows 10 Enterprise поддерживает только следующие версии Office:
-- Office 365 профессиональный плюс.
+- Office 365 профессиональный плюс
 - Office 365 Business, входящий в состав подписки Microsoft 365 бизнес
 
 Средству развертывания Office требуется XML-файл конфигурации. Чтобы настроить следующий пример, см. раздел [Параметры конфигурации средства развертывания Office](https://docs.microsoft.com/deployoffice/configuration-options-for-the-office-2016-deployment-tool).
 
 Этот пример XML-файла конфигурации, который мы предоставили, выполняет следующие действия:
 
-- Установите Office из канала предварительной оценки и доставьте обновления из канала предварительной оценки при их выполнении.
+- Установка Office из ежемесячного канала и доставка обновлений из ежемесячного канала при их выполнении.
 - Используйте архитектуру x64.
 - Отключение автоматического обновления.
-- Установите Visio и Project.
 - Удалите все существующие установки Office и перенесите их параметры.
 - Включите активацию общего компьютера.
 
@@ -53,7 +52,7 @@ ms.locfileid: "71679519"
 - Установите OneDrive в режиме "на пользователя". Дополнительные сведения см. в статье [Установка OneDrive в режиме "на компьютер](#install-onedrive-in-per-machine-mode)".
 
 >[!NOTE]
->Активацию на общем компьютере можно настроить с помощью групповая политика объектов (GPO) или параметров реестра. Объект групповой политики находится в папке **Computer Configuration @ no__t-1Policies @ no__t-2Administrative Templates @ no__t-3Microsoft Office 2016 (Machine) \\Licensing Settings**
+>Активацию на общем компьютере можно настроить с помощью групповая политика объектов (GPO) или параметров реестра. Объект групповой политики находится в папке **Конфигурация компьютера\\политики\\административные шаблоны\\Microsoft Office 2016 (компьютер)\\параметры лицензирования** .
 
 Средство развертывания Office содержит файл Setup. exe. Чтобы установить Office, выполните в командной строке следующую команду:
 
@@ -63,40 +62,26 @@ Setup.exe /configure configuration.xml
 
 #### <a name="sample-configurationxml"></a>Пример файла Configuration. XML
 
-В следующем образце XML будет установлен выпуск для участников программы предварительной оценки.
+В следующем примере XML будет установлен ежемесячный выпуск.
 
 ```xml
 <Configuration>
-    <Add OfficeClientEdition="64" SourcePath="https://officecdn.microsoft.com/pr/5440fd1f-7ecb-4221-8110-145efaa6372f">
-        <Product ID="O365ProPlusRetail">
-            <Language ID="en-US" />
-            <Language ID="MatchOS" Fallback = "en-US"/>
-            <Language ID="MatchPreviousMSI" />
-            <ExcludeApp ID="Groove" />
-            <ExcludeApp ID="Lync" />
-            <ExcludeApp ID="OneDrive" />
-            <ExcludeApp ID="Teams" />
-        </Product>
-        <Product ID="VisioProRetail">
-            <Language ID="en-US" />
-            <Language ID="MatchOS" Fallback = "en-US"/>
-            <Language ID="MatchPreviousMSI" />
-            <ExcludeApp ID="Teams" /> 
-        </Product>
-        <Product ID="ProjectProRetail">
-            <Language ID="en-US" />
-            <Language ID="MatchOS" Fallback = "en-US"/>
-            <Language ID="MatchPreviousMSI" />
-            <ExcludeApp ID="Teams" />
-        </Product>
-    </Add>
-    <RemoveMSI All="True" />
-    <Updates Enabled="FALSE" UpdatePath="https://officecdn.microsoft.com/pr/5440fd1f-7ecb-4221-8110-145efaa6372f" />
-    <Display Level="None" AcceptEULA="TRUE" />
-    <Logging Level="Verbose" Path="%temp%\WVDOfficeInstall" />
-    <Property Value="TRUE" Name="FORCEAPPSHUTDOWN"/>
-    <Property Value="1" Name="SharedComputerLicensing"/>
-    <Property Value="TRUE" Name="PinIconsToTaskbar"/>
+  <Add OfficeClientEdition="64" Channel="Monthly">
+    <Product ID="O365ProPlusRetail">
+      <Language ID="en-US" />
+      <Language ID="MatchOS" />
+      <ExcludeApp ID="Groove" />
+      <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="OneDrive" />
+      <ExcludeApp ID="Teams" />
+    </Product>
+  </Add>
+  <RemoveMSI/>
+  <Updates Enabled="FALSE"/>
+  <Display Level="None" AcceptEULA="TRUE" />
+  <Logging Level=" Standard" Path="%temp%\WVDOfficeInstall" />
+  <Property Name="FORCEAPPSHUTDOWN" Value="TRUE"/>
+  <Property Name="SharedComputerLicensing" Value="1"/>
 </Configuration>
 ```
 
@@ -130,11 +115,11 @@ reg add HKLM\SOFTWARE\Policies\Microsoft\office\16.0\common\officeupdate /v hide
 
 Вот как можно установить OneDrive в режиме "на компьютер":
 
-1. Сначала создайте расположение для размещения установщика OneDrive. Расположение папки локального диска или [\\ @ no__t-1unc] (file://unc) отлично.
+1. Сначала создайте расположение для размещения установщика OneDrive. Папка локального диска или расположение [\\\\UNC] (file://unc) имеют хорошее значение.
 
-2. Скачайте Онедривесетуп. exe в промежуточное расположение, используя следующую ссылку: <https://aka.ms/OneDriveWVD-Installer>
+2. Скачайте Онедривесетуп. exe в промежуточное расположение с помощью этой ссылки: <https://aka.ms/OneDriveWVD-Installer>
 
-3. Если вы установили Office в OneDrive, опустив **\<EXCLUDEAPP ID = "OneDrive"/\>** , удалите все существующие установки OneDrive для каждого пользователя из командной строки с повышенными привилегиями, выполнив следующую команду:
+3. Если вы установили Office в OneDrive, опустив **\<ЕКСКЛУДЕАПП ID = "OneDrive"/\>** , удалите все существующие установки OneDrive для каждого пользователя из командной строки с повышенными привилегиями, выполнив следующую команду:
     
     ```batch
     "[staged location]\OneDriveSetup.exe" /uninstall
@@ -174,6 +159,6 @@ reg add HKLM\SOFTWARE\Policies\Microsoft\office\16.0\common\officeupdate /v hide
 
 Виртуальный рабочий стол Windows не поддерживает Skype для бизнеса и команды.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы добавили Office в образ, вы можете продолжить настройку главного образа VHD. См. раздел [Подготовка и настройка главного образа VHD](set-up-customize-master-image.md).

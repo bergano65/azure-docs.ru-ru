@@ -1,6 +1,6 @@
 ---
-title: Standard Contract | Azure
-description: Standard Contract for Azure Marketplace and AppSource
+title: Стандартный контракт | Службы
+description: Стандартный контракт для Azure Marketplace и AppSource
 services: Azure, Marketplace, Compute, Storage, Networking
 author: ChJenk
 ms.service: marketplace
@@ -15,40 +15,40 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74228212"
 ---
-# <a name="standard-contract-for-the-microsoft-commercial-marketplace"></a>Standard Contract for the Microsoft commercial marketplace
+# <a name="standard-contract-for-the-microsoft-commercial-marketplace"></a>Стандартный контракт для коммерческого рынка Майкрософт
 
-To simplify the procurement process for customers and reduce legal complexity for software vendors, Microsoft offers a Standard Contract for the Microsoft commercial marketplace in order to help facilitate transactions in the marketplace. Rather than crafting custom terms and conditions, commercial marketplace publishers can choose to offer their software under the Standard Contract, which customers only need to vet and accept once. The Standard Contract can be found here: [https://go.microsoft.com/fwlink/?linkid=2041178](https://go.microsoft.com/fwlink/?linkid=2041178).
+Чтобы упростить процесс приобретения клиентов и снизить юридическую сложность для поставщиков программного обеспечения, корпорация Майкрософт предлагает стандартный контракт для коммерческого рынка Майкрософт, который поможет упростить транзакции в Marketplace. Вместо того чтобы создавать собственные условия, издатели коммерческих магазинов могут предлагать программное обеспечение в соответствии со стандартным контрактом, который клиенты должны венесуэльскому и принимать только один раз. Стандартный контракт можно найти здесь: [https://go.microsoft.com/fwlink/?linkid=2041178](https://go.microsoft.com/fwlink/?linkid=2041178).
 
-The terms and conditions for an offer are defined when creating the offer in Partner Center or in the Cloud Partner Portal. You can select to use the Standard Contract for the Microsoft commercial marketplace instead of providing your own custom terms and conditions.
-
->[!Note]
->Once you publish an offer using the Standard contract for the Microsoft commercial marketplace, you are not able to use your own custom terms and conditions. It is an “or” scenario. You either offer your solution under the Standard Contract *or* your own terms and conditions. If you would like to modify the terms of the Standard Contract you can do so through Standard Contract Amendments.
-
-## <a name="standard-contract-amendments"></a>Standard Contract Amendments
-
-Standard Contract Amendments allow publishers to select the Standard Contract for simplicity, and with customized terms for their product or business. Customers only need to review the amendments to the contract, if they have already reviewed and accepted the Microsoft Standard Contract.
-
-There are two kinds of amendments available for commercial marketplace publishers:
-
-* Universal Amendments: These amendments are applied universally to the Standard Contract for all customers. Universal amendments are shown to every customer of the offer in the purchase flow. Customers must accept the terms of the Standard Contract and the amendment before they can use your offer.
-
-* Custom Amendments: These amendments are special amendments to the Standard Contract that are targeted to specific customers only via Azure tenant IDs. Publishers can choose the tenant they want to target. Only customers from the tenant will be presented with the custom amendment terms in the offer’s purchase flow.  Customers must accept the terms of the Standard Contract and the amendment(s) before they can use your offer.
+Условия предложения определяются при создании предложения в центре партнеров или в Портал Cloud Partner. Вы можете использовать стандартный контракт для коммерческого рынка Майкрософт вместо того, чтобы предоставлять собственные пользовательские условия.
 
 >[!Note]
->These two types of amendments stack on top of each other. Customers targeted with custom amendments will also get the universal amendment to the Standard Contract during purchase.
+>После публикации предложения с помощью стандартного контракта для коммерческого рынка Майкрософт вы не сможете использовать собственные условия. Это сценарий «или». Вы либо предлагаете свое решение в соответствии со стандартным контрактом, *либо* ваши собственные условия. Если вы хотите изменить условия стандартного контракта, это можно сделать с помощью стандартных поправок контракта.
 
-You can leverage the Standard Contract for the Microsoft commercial marketplace for the following offer types:  Azure Applications (Solution Templates and Managed Applications), Virtual Machines, Containers, Container Applications, IoT Edge Modules, and SaaS.
+## <a name="standard-contract-amendments"></a>Поправки стандартного контракта
 
-## <a name="customer-experience"></a>Customer experience
+Поправка стандартного контракта позволяет издателям выбрать стандартный контракт для простоты и настроить условия для их продукта или бизнеса. Клиентам необходимо только просмотреть внесенные в контракте поправки, если они уже проверили и приняли Соглашение Microsoft Standard.
 
-During the discovery experience in Azure marketplace or AppSource, customers will be able to see the terms associated with the offer as the Standard Contract for the Microsoft commercial marketplace and any universal amendments.
+Для коммерческих издателей Marketplace доступно два вида поправности:
 
-![The Azure portal customer discovery experience.](media/marketplace-publishers-guide/azure-discovery-process.png)
+* Универсальные поправки. Эти действия применяются к стандартному контракту для всех клиентов. Универсальные поправки отображаются для каждого клиента предложения в потоке покупки. Клиенты должны принять условия стандартного контракта и поправки, прежде чем они смогут использовать ваше предложение.
 
-During the purchase process in the Azure portal, customers will be able to see the terms associated with the offer as the Standard Contract for the Microsoft commercial marketplace and any universal and/or tenant-specific amendments.
+* Пользовательские поправки. Эти действия являются специальными для стандартных контрактов, которые предназначены для конкретных клиентов только через идентификаторы клиентов Azure. Издатели могут выбрать целевой клиент. Только клиенты из клиента будут представлены с условиями пользовательской переправки в потоке покупки предложения.  Клиенты должны принять условия стандартного контракта и поправки, прежде чем они смогут использовать ваше предложение.
 
-![The Azure portal customer purchase experience.](media/marketplace-publishers-guide/azure-purchase-process.png)
+>[!Note]
+>Эти два типа стека поправки поверх других. Клиенты, нацеленные на пользовательскую поправку, также получат универсальную поправку на стандартный контракт во время покупки.
+
+Вы можете использовать стандартный контракт для коммерческого рынка Майкрософт для следующих типов предложений: приложения Azure (шаблоны решений и управляемые приложения), виртуальные машины, контейнеры, приложения-контейнеры, IoT Edge модули и SaaS. .
+
+## <a name="customer-experience"></a>Взаимодействие с пользователем
+
+Во время обнаружения в Azure Marketplace или AppSource клиенты смогут просматривать термины, связанные с предложением, как стандартный контракт для коммерческого рынка Майкрософт и любые универсальные поправки.
+
+![Портал Azureный процесс обнаружения клиентов.](media/marketplace-publishers-guide/azure-discovery-process.png)
+
+В ходе процесса покупки в портал Azure клиенты смогут видеть условия, связанные с предложением, как стандартный контракт для коммерческого рынка Майкрософт и любые специальные и/или зависящие от клиента поправки.
+
+![Портал Azure покупатель.](media/marketplace-publishers-guide/azure-purchase-process.png)
 
 ## <a name="api"></a>API
 
-Customers may use Get-AzureRmMarketplaceTerms to retrieve the terms of an offer and accept it. The Standard Contract and associated amendments will be returned in the output of the cmdlet.
+Клиенты могут использовать Get-AzureRmMarketplaceTerms, чтобы получить условия предложения и принять его. Стандартный контракт и связанные с ним поправки будут возвращены в выходных данных командлета.

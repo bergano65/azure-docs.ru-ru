@@ -9,16 +9,16 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: conceptual
-ms.date: 11/18/2019
+ms.date: 11/21/2019
 ms.author: dapine
-ms.openlocfilehash: 97b1fd27e91823594d972bdd49184d2b0f5d320b
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 574f6bead9cac384c72d2d0cd35353eb571a9490
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74171692"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327044"
 ---
-# <a name="install-and-run-face-containers"></a>Установка и запуск контейнеров лиц
+# <a name="install-and-run-face-containers-preview"></a>Установка и запуск контейнеров лиц (Предварительная версия)
 
 Лицо Cognitive Services Azure предоставляет стандартизированный контейнер Linux для DOCKER, который обнаруживает людей в образах. Он также определяет атрибуты, которые включают ориентиры для лиц, такие как нос и глаза, пол, возраст и другие функции, прогнозируемые с точки зрения машинного лица. Кроме обнаружения, лицо может проверить, совпадают ли два лица в одном или разных изображениях с помощью оценки достоверности. Кроме того, лицо может сравнить лица с базой данных, чтобы узнать, существует ли уже похожий или аналогичный лицом. Он также может организовывать схожие лица в группы с помощью общих визуальных характеристик.
 

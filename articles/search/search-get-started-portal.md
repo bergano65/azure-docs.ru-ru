@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 11/04/2019
-ms.openlocfilehash: 366986f989fdd8d76b1707451c2a7cca2aa554cf
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: ee4e9bd5487382ebb6f57996aac5d3de1ff6162a
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73719974"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73890032"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-the-azure-portal"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" на портале Azure
 > [!div class="op_single_selector"]
@@ -68,9 +68,7 @@ ms.locfileid: "73719974"
 
 3. Перейдите к следующей странице.
 
-   ![Кнопка следующей страницы для когнитивного поиска](media/search-get-started-portal/next-button-add-cog-search.png)
-
-### <a name="step-2---skip-cognitive-skills"></a>Шаг 2. Пропуск когнитивных навыков
+### <a name="step-2---skip-the-enrich-content-page"></a>Шаг 2. Пропуск страницы Enrich content (Обогащение содержимого)
 
 Мастер поддерживает создание [конвейера обогащения с помощью ИИ](cognitive-search-concept-intro.md), что позволяет внедрить в индексирование алгоритмы искусственного интеллекта Cognitive Services. 
 
@@ -104,7 +102,6 @@ ms.locfileid: "73719974"
 
 2. Перейдите к следующей странице.
 
-   ![Следующая страница, создание индексатора](media/search-get-started-portal/next-button-create-indexer.png)
 
 ### <a name="step-4---configure-indexer"></a>Шаг 4. Настройка индексатора
 
@@ -127,6 +124,8 @@ ms.locfileid: "73719974"
 ## <a name="view-the-index"></a>Просмотр индекса
 
 На основной странице службы содержатся ссылки на ресурсы, созданные в службе "Когнитивный поиск Azure".  Для просмотра индекса, который вы только что создали, щелкните **Индексы** в списке ссылок. 
+
+Дождитесь обновления страницы портала. Через несколько минут вы увидите индекс с количеством документов и размером хранилища.
 
    ![Список индексов на панели мониторинга службы](media/search-get-started-portal/indexes-list.png)
 
@@ -154,7 +153,7 @@ ms.locfileid: "73719974"
 
    ![Команда обозревателя поиска](media/search-get-started-portal/search-explorer-cmd.png)
 
-2. В раскрывающемся списке **Индекс** выберите *hotels-sample*. Щелкните раскрывающийся список **Версия API**, чтобы просмотреть доступные REST API. Для приведенных ниже запросов используйте общедоступную версию (2019-05-06).
+2. В раскрывающемся списке **Индекс** выберите *hotels-sample-index*. Щелкните раскрывающийся список **Версия API**, чтобы просмотреть доступные REST API. Для приведенных ниже запросов используйте общедоступную версию (2019-05-06).
 
    ![Команды индекса и API](media/search-get-started-portal/search-explorer-changeindex.png)
 

@@ -7,13 +7,13 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 10/09/2019
-ms.openlocfilehash: de9088333f69a22246fe5873d6e09ddb7ba3044a
-ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
+ms.date: 10/23/2019
+ms.openlocfilehash: 4f528a667a7b498cadb15a441f9d9321259fffde
+ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72249405"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72882082"
 ---
 # <a name="deploy-to-azure-kubernetes-service-aks-by-using-jenkins-and-the-bluegreen-deployment-pattern"></a>Развертывание в службе Azure Kubernetes (AKS) с помощью Jenkins и сине-зеленого шаблона развертывания
 
@@ -218,7 +218,7 @@ ms.locfileid: "72249405"
     1. Выберите **Управление Jenkins > Управление подключаемыми модулями > Доступно**.
     1. Выполните поиск и установите подключаемый модуль службы контейнеров Azure.
 
-1. Добавьте учетные данные для управления ресурсами в Azure. Если у вас еще нет подключаемого модуля, установите подключаемый модуль **Учетные данные Azure**.
+1. Добавьте учетные данные для управления ресурсами в Azure. Если у вас еще нет подключаемого модуля, установите подключаемый модуль **учетных данных Azure**.
 
 1. Добавьте учетные данные субъекта-службы Azure в качестве типа **субъекта-службы Microsoft Azure**.
 

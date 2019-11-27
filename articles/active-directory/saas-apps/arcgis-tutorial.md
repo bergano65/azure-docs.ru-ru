@@ -8,6 +8,7 @@ manager: daveba
 ms.reviewer: barbkess
 ms.assetid: a9e132a4-29e7-48bf-beb9-4148e617c8a9
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db56cd7551ef8179aeff575fdd1f2578cbee74ee
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f4afd7697272775b8d5558d9c091eeea0d2b9adf
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67106708"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73158024"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-arcgis-online"></a>Руководство. Интеграция Azure Active Directory с ArcGIS Online
 
@@ -128,7 +129,7 @@ ms.locfileid: "67106708"
 
 2. Щелкните **EDIT SETTINGS** (Изменить параметры).
 
-    ![Изменение параметров](./media/arcgis-tutorial/ic784742.png "Изменение параметров")
+    ![Изменить параметры](./media/arcgis-tutorial/ic784742.png "Изменить параметры")
 
 3. Щелкните **Security**(Безопасность).
 
@@ -136,11 +137,11 @@ ms.locfileid: "67106708"
 
 4. В разделе **Enterprise Logins** (Корпоративные имена для входа) установите флажок **Set Identity Provider** (Задать поставщик удостоверений).
 
-    ![Корпоративные имена входа](./media/arcgis-tutorial/ic784744.png "Корпоративные имена входа")
+    ![Корпоративные имена для входа](./media/arcgis-tutorial/ic784744.png "Корпоративные имена входа")
 
 5. На странице **Назначение поставщика удостоверений** выполните следующие действия.
 
-    ![Назначение поставщика удостоверений](./media/arcgis-tutorial/ic784745.png "Назначение поставщика удостоверений")
+    ![Назначить поставщика удостоверений](./media/arcgis-tutorial/ic784745.png "Назначить поставщика удостоверений")
 
     a. В текстовое поле **Name** (Имя) введите название своей организации.
 
@@ -212,22 +213,22 @@ ms.locfileid: "67106708"
 
 2. Щелкните **INVITE MEMBERS** (Пригласить участников).
    
-    ![Приглашение участников](./media/arcgis-tutorial/ic784747.png "Приглашение участников")
+    ![Пригласить участников](./media/arcgis-tutorial/ic784747.png "Пригласить участников")
 
 3. Щелкните переключатель **Add members automatically without sending an email** (Добавлять участников автоматически без отправки электронного сообщения) и нажмите кнопку **NEXT** (Далее).
    
-    ![Автоматическое добавление участников](./media/arcgis-tutorial/ic784748.png "Автоматическое добавление участников")
+    ![Добавлять участников автоматически](./media/arcgis-tutorial/ic784748.png "Добавлять участников автоматически")
 
 4. На странице диалогового окна **Участники** выполните следующие действия.
    
-     ![Добавление и просмотр](./media/arcgis-tutorial/ic784749.png "Добавление и просмотр")
+     ![Добавить и просмотреть](./media/arcgis-tutorial/ic784749.png "Добавить и просмотреть")
     
      a. Введите в поля **Email** (Адрес электронной почты), **First name** (Имя) и **Last name** (Фамилия) соответствующие данные действующей учетной записи Azure AD, которую необходимо подготовить.
   
      b. Нажмите кнопку **ADD AND REVIEW** (Добавить и просмотреть).
 5. Просмотрите введенные данные и нажмите кнопку **ADD MEMBERS** (Добавить участников).
    
-    ![Добавление участника](./media/arcgis-tutorial/ic784750.png "Добавление участника")
+    ![Добавить участника](./media/arcgis-tutorial/ic784750.png "Добавить участника")
         
     > [!NOTE]
     > Владелец учетной записи Azure Active Directory получит по электронной почте сообщение со ссылкой для активации учетной записи.
@@ -244,5 +245,5 @@ ms.locfileid: "67106708"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

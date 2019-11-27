@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 07/10/2019
+ms.date: 11/13/2019
 ms.author: erhopf
-ms.openlocfilehash: 5c881551648e8fc6078405e34fa3280723009b20
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 18b96e9afbf2a83b917d6848b419fb76518035de
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73490963"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74090426"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-linux"></a>Краткое руководство. Запуск примера приложения пакета SDK для речевых устройств в Linux
 
@@ -80,11 +80,34 @@ ms.locfileid: "73490963"
 
    ![Снимок экрана обозревателя пакетов](media/speech-devices-sdk/eclipse-convert-to-maven.png)
 
+1. Откройте файл pom.xml и измените его.
+
+    В конце файла перед закрывающим тегом `</project>` создайте элементы `repositories` и `dependencies`, как показано здесь, и убедитесь, что `version` соответствует текущей версии:
+    ```xml    
+    <repositories>
+         <repository>
+             <id>maven-cognitiveservices-speech</id>
+             <name>Microsoft Cognitive Services Speech Maven Repository</name>
+             <url>https://csspeechstorage.blob.core.windows.net/maven/</url>
+         </repository>
+    </repositories>
+ 
+    <dependencies>
+        <dependency>
+             <groupId>com.microsoft.cognitiveservices.speech</groupId>
+             <artifactId>client-sdk</artifactId>
+             <version>1.7.0</version>
+        </dependency>
+    </dependencies>
+   ```
+
 1. В **обозревателе пакетов** щелкните проект правой кнопкой мыши. Выберите **Properties** (Свойства), а затем — **Run/Debug Settings** (Параметры отладки/запуска) > **New…** (Создать…) > **Java Application** (Приложение Java). 
 
 1. Появится окно **Edit Configuration** (Изменение конфигурации). В поле **Name** (Имя) введите **Main** и используйте кнопку **Search** (Поиск) в разделе **Main Class** (Класс Main), чтобы найти и выбрать **com.microsoft.cognitiveservices.speech.samples.FunctionsList**.
 
    ![Снимок экрана: изменение конфигурации запуска](media/speech-devices-sdk/eclipse-edit-launch-configuration-linux.png)
+
+1. Скопируйте двоичные файлы аудио для целевой архитектуры из **Linux-arm** или **Linux-x64** в расположение проекта Java, например в **/home/wcaltest/JRE-Sample-Release**.
 
 1. В окне **Edit Configuration** (Изменение конфигурации) выберите страницу **Environment** (Среда) и **New** (Новая). Появится окно переменной **New Environment Variable** (Новая переменная среды). В поле **Name** (Имя) введите **LD_LIBRARY_PATH** и в поле **Value** (Значение) введите папку, содержащую файлы *.so, например **/home/wcaltest/JRE-Sample-Release**.
 
@@ -118,15 +141,14 @@ ms.locfileid: "73490963"
    > [!TIP]
    > Кроме того, вы можете [создать пользовательское ключевое слово](speech-devices-sdk-create-kws.md).
 
-    Для использования нового ключевого слова обновите следующие две строки в файле `FunctionsList.java` и скопируйте пакет ключевых слов в приложение. Например, чтобы использовать ключевое слово "Машина" из файла `kws-machine.zip` пакета ключевых слов:
+    Для использования нового ключевого слова обновите следующую строку в файле `FunctionsList.java` и скопируйте ключевое слово в приложение. Например, чтобы использовать ключевое слово "Машина" из файла `machine.zip` пакета ключевых слов, сделайте следующее.
 
-   * Скопируйте пакет ключевых слов в папку проекта **target/classes**.
+   * Скопируйте файл `kws.table` из ZIP-пакета слов в папку проекта **target/classes**.
 
-   * Укажите в файле `FunctionsList.java` ключевое слово и имя пакета:
+   * Укажите в файле `FunctionsList.java` имя ключевого слова:
 
      ```java
      private static final String Keyword = "Machine";
-     private static final String KeywordModel = "kws-machine.zip" // set your own keyword package name.
      ```
 
 ## <a name="run-the-sample-application-from-eclipse"></a>Запуск примера приложения из Eclipse

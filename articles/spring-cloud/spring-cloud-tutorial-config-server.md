@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.author: jeconnoc
 author: jpconnock
 ms.date: 10/18/2019
-ms.openlocfilehash: 6cf7b4a52ba3a7dbda5fa3fa558c4b68d09f4eb2
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: 6742e1a5924fdcd1fe00f49ac790209a907d1bac
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73646722"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74132795"
 ---
 # <a name="tutorial-set-up-a-spring-cloud-config-server-for-your-service"></a>Руководство по настройке сервера конфигурации Spring Cloud для службы
 
@@ -95,7 +95,7 @@ spring.application.name
 | `password`      | `no`     | Пароль используется для доступа к `Git`серверу репозитория; когда `Git`сервер репозитория`Http Basic Authentication` __поддерживается__. |
 
 > [!NOTE]
-> Некоторые серверы репозитория `Git`, такие как GitHub, поддерживают маркер personal-token или access-token в качестве пароля для `HTTP Basic Authentication`. Здесь в качестве пароля также можно использовать маркер такого типа, и срок действия personal-token или access-token не истечет. Однако для серверов репозитория Git, таких как BitBucket и Azure DevOps, срок действия маркера истекает через один или два часа, что делает эту опцию бесполезной для Azure Spring Cloud.
+> Многие серверы репозитория `Git` поддерживают для `HTTP Basic Authentication` использование токенов, а не паролей. Некоторые репозитории, например GitHub, позволяют сохранять токены в течение неограниченного времени. Однако на некоторых серверах репозитория Git, включая Azure DevOps, срок действия токенов может заканчиваться через несколько часов. Репозитории, на которые истекает срока действия токенов, не должны использовать проверку подлинности на основе токенов в Azure Spring Cloud.
 
 ### <a name="git-repositories-with-pattern"></a>Репозитории Git с шаблоном
 
@@ -127,7 +127,9 @@ spring.application.name
 
 1. Перейдите на страницу **обзора** Azure Spring Cloud.
 
-1. Перейдите на вкладку **Config Server** (Сервер конфигурации) под заголовком **Параметры** в меню с левой стороны.
+1. Выберите службу для настройки.
+
+1. На странице службы выберите вкладку **Config Server** (Сервер конфигурации) под заголовком **Параметры** в меню с левой стороны.
 
 ![снимок экрана окна](media/spring-cloud-tutorial-config-server/portal-config-server.png)
 

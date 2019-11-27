@@ -11,21 +11,22 @@ ms.topic: quickstart
 ms.date: 10/28/2019
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: a54d01aa78ad77c9328f79f31d21da570e7f5676
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 6cb970a59118a93c7a9023cc7c0448019dc77362
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73505926"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74125593"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure](../../../../get-started.md).
-> * [Настроить приложение LUIS и получить ключ конечной точки](../../../../quickstarts/create-luis.md).
-> * [Настроить среду разработки](../../../../quickstarts/setup-platform.md?tabs=dotnet).
+>
+> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
+> * [Создать приложение LUIS и получить ключ конечной точки](../../../../quickstarts/create-luis.md).
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=dotnet)
 > * [Создать пустой пример проекта](../../../../quickstarts/create-project.md?tabs=dotnet).
 
 ## <a name="open-your-project-in-visual-studio"></a>Откройте проект в Visual Studio.
@@ -35,7 +36,7 @@ ms.locfileid: "73505926"
 1. Запустите Visual Studio 2019.
 2. Загрузите проект и откройте `Program.cs`.
 
-## <a name="start-with-some-boilerplate-code"></a>Использование стандартного кода
+## <a name="start-with-some-boilerplate-code"></a>Добавление стандартного кода
 
 Добавим код, который выступает в качестве основы для нашего проекта. Имейте в виду, что вы создали асинхронный метод `RecognizeIntentAsync()`.
 [!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/dotnet/intent-recognition/helloworld/Program.cs?range=7-17,77-86)]
@@ -47,11 +48,11 @@ ms.locfileid: "73505926"
 В этом примере для создания `SpeechConfig` используется метод `FromSubscription()`. Полный список доступных методов см. в статье [SpeechConfig Class](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?view=azure-dotnet) (Класс SpeechConfig).
 
 > [!NOTE]
-> Очень важно использовать ключ конечной точки LUIS, а не ключи для начала работы или разработки, так как только ключ конечной точки допустим для распознавания преобразования речи в намерения. Инструкции по получению правильного ключа конечной точки для приложения LUIS см. в [этой статье](~/articles/cognitive-services/Speech-Service/quickstarts/create-luis.md).
+> Очень важно использовать ключ конечной точки LUIS, а не ключи для начала работы или разработки, так как только ключ конечной точки допустим для распознавания с преобразованием речи в намерения. Инструкции по получению правильного ключа см. в статье [Создание приложения LUIS и получение ключа конечной точки](~/articles/cognitive-services/Speech-Service/quickstarts/create-luis.md) (Создание приложения LUIS и получение ключа конечной точки).
 
 [!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/dotnet/intent-recognition/helloworld/Program.cs?range=26)]
 
-## <a name="initialize-a-intentrecognizer"></a>Инициализация объекта IntentRecognizer
+## <a name="initialize-an-intentrecognizer"></a>Инициализация объекта IntentRecognizer
 
 Теперь создадим объект `IntentRecognizer`. Этот объект создается внутри оператора using для обеспечения надлежащего выпуска неуправляемых ресурсов. Вставьте этот код в метод `RecognizeIntentAsync()` непосредственно под конфигурацией службы "Речь".
 [!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/dotnet/intent-recognition/helloworld/Program.cs?range=28-30,76)]
@@ -75,7 +76,8 @@ ms.locfileid: "73505926"
 
 ## <a name="check-your-code"></a>Проверка кода
 
-На этом этапе код должен выглядеть так: (Мы добавили несколько комментариев к этой версии.) [!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/dotnet/intent-recognition/helloworld/Program.cs?range=5-86)]
+На этом этапе код должен выглядеть так:  
+(Мы добавили несколько комментариев к этой версии.) [!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/dotnet/intent-recognition/helloworld/Program.cs?range=5-86)]
 
 ## <a name="build-and-run-your-app"></a>Создание и запуск приложения
 

@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: overview
 ms.date: 4/30/2019
 ms.author: victorh
-ms.openlocfilehash: 5ae7aa2dfbab5ff62f9ce56bc3a790294e369529
-ms.sourcegitcommit: 6013bacd83a4ac8a464de34ab3d1c976077425c7
+ms.openlocfilehash: b2e7b9f28c84b769fe64be82f91418cc2a7d634f
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686824"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73044375"
 ---
 # <a name="whats-new-in-azure-application-gateway"></a>Новые возможности в службе "Шлюз приложений Azure"
 
@@ -27,6 +27,7 @@ ms.locfileid: "71686824"
 
 |Функция  |ОПИСАНИЕ  |Дата добавления  |
 |---------|---------|---------|
+|Усовершенствования пробы |Используя расширенные улучшения пробы в SKU Шлюза приложений версии 2, мы упростили [настройки пробы](https://docs.microsoft.com/azure/application-gateway/application-gateway-create-probe-portal#create-probe-for-application-gateway-v2-sku), упростили [тесты работоспособности серверной части по запросу](https://docs.microsoft.com/azure/application-gateway/application-gateway-create-probe-portal#test-backend-health-with-the-probe) и добавили [дополнительные диагностические сведения](https://docs.microsoft.com/azure/application-gateway/application-gateway-backend-health-troubleshooting#error-messages), помогающие устранять проблемы с работоспособностью серверной части.  |Октябрь 2019 г. |
 |Дополнительные метрики |Мы добавили следующие метрики, которые помогут вам отслеживать SKU Шлюза приложений v2: [связанные со временем метрики](https://docs.microsoft.com/azure/application-gateway/application-gateway-metrics#timing-metrics), состояние ответа внутренней службы, байт получено, байт отправлено, TLS-протокол клиента и текущие единицы вычислений. См. раздел [Metrics supported by Application Gateway V2 SKU](https://docs.microsoft.com/azure/application-gateway/application-gateway-metrics#metrics-supported-by-application-gateway-v2-sku) (Метрики, поддерживаемые SKU Шлюза приложений V2). |Август 2019 г. |
 |Настраиваемые правила WAF |WAF_v2 Шлюза приложений теперь поддерживает создание настраиваемых правил. См. сведения о [настраиваемых правилах Шлюза приложений](custom-waf-rules-overview.md). |Июнь 2019 г. |
 |Автомасштабирование, избыточность между зонами, поддержка статического виртуального IP-адреса (общедоступная версия) |Номер SKU общедоступной версии v2, который поддерживает автоматическое масштабирование, избыточность между зонами, обеспечивает повышенную производительность и поддерживает статические виртуальные IP-адреса, Key Vault, повторное создание заголовков. См. [документацию по автомасштабированию Шлюза приложений](application-gateway-autoscaling-zone-redundant.md). |Апрель 2019 г. |

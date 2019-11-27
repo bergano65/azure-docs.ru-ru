@@ -1,6 +1,6 @@
 ---
-title: Manage your connected devices from the My Account portal - Azure AD
-description: How to view and disable devices connected to your work or school account from the Devices page of the My Account portal.
+title: Управление подключенными устройствами на портале "Моя учетная запись" — Azure AD
+description: Просмотр и отключение устройств, подключенных к рабочей или учебной учетной записи, со страницы устройства на портале "Моя учетная запись".
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -19,13 +19,13 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74233218"
 ---
-# <a name="manage-devices-connected-to-your-work-or-school-account-from-the-devices-page"></a>Manage devices connected to your work or school account from the Devices page
+# <a name="manage-devices-connected-to-your-work-or-school-account-from-the-devices-page"></a>Управление устройствами, подключенными к рабочей или учебной учетной записи, со страницы устройства
 
-From the **Devices** page of the **My Account** portal, you can:
+На странице **устройства** портала " **Моя учетная запись** " можно:
 
-- View your work or school account-connected devices.
+- Просмотрите рабочую или учебную учетную запись — подключенные устройства.
 
-- Disable any devices you no longer own, have lost, or that have been stolen.
+- Отключите все устройства, которые больше не являются владельцами, потеряны или были украдены.
 
 ## <a name="view-your-connected-devices"></a>Обзор подключенных устройств
 
@@ -33,7 +33,7 @@ From the **Devices** page of the **My Account** portal, you can:
 
 2. На левой навигационной панели выберите **Устройства** или выберите ссылку **Управление устройствами** в блоке **Устройства**.
 
-    ![My Account page, showing highlighted Devices links](media/my-account-portal/my-account-portal-devices.png)
+    ![Страница "Моя учетная запись", в которой отображаются ссылки на выделенные устройства](media/my-account-portal/my-account-portal-devices.png)
 
 3. Просмотрите информацию о подключенных устройствах и убедитесь, что вы их все узнали.
 
@@ -41,7 +41,7 @@ From the **Devices** page of the **My Account** portal, you can:
 
 ## <a name="disable-a-device"></a>Отключение устройства
 
-Любое из подключенных устройств вы можете отключить в любое время. Это особенно важно в тех случаях, если устройство вам не знакомо, потеряно или украдено. After you disable a device, it can no longer be authenticated by your organization, and will be unable to access any of your organization's resources.
+Любое из подключенных устройств вы можете отключить в любое время. Это особенно важно в тех случаях, если устройство вам не знакомо, потеряно или украдено. После отключения устройство не сможет пройти проверку подлинности в Организации и не сможет получить доступ к ресурсам вашей организации.
 
 >[!Important]
 >Если вы отключите устройство по ошибке, отменить это действие невозможно. Вам нужно будет связаться с администратором вашей организации, чтобы снова добавить устройство.
@@ -52,24 +52,24 @@ From the **Devices** page of the **My Account** portal, you can:
 
 2. Выберите **Да** для подтверждения отключения устройства.
 
-## <a name="view-a-bitlocker-key"></a>View a BitLocker key
+## <a name="view-a-bitlocker-key"></a>Просмотр ключа BitLocker
 
-If you're locked out of your device or have a fatal error, you can go to another device and view your BitLocker key from the **My Account** portal.
+Если вы блокируете устройство или можете получить неустранимую ошибку, можно перейти на другое устройство и просмотреть ключ BitLocker на портале " **Моя учетная запись** ".
 
-1. On another device, where you're not locked out, go to the **Devices** page of the **My Account** portal.
+1. На другом устройстве, где вы не заблокированы, перейдите на страницу **устройства** портала " **Моя учетная запись** ".
 
-    ![Device page with BitLocker key option](media/my-account-portal/my-account-portal-devices-bitlocker.png)
+    ![Страница устройства с параметром ключа BitLocker](media/my-account-portal/my-account-portal-devices-bitlocker.png)
 
-2. Select **View Bitlocker Keys** for the locked out device and write down the BitLocker key for your locked device.
+2. Выберите **Просмотреть ключи BitLocker** для заблокированного устройства и запишите ключ BitLocker для заблокированного устройства.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-After viewing your connected devices, you can:
+После просмотра подключенных устройств вы можете:
 
-- Select to view or manage your [security info](user-help-security-info-overview.md).
+- Выберите для просмотра или управления [сведениями о безопасности](user-help-security-info-overview.md).
 
-- View and manage your [organizations](my-account-portal-organizations-page.md).
+- Просматривайте свои [Организации](my-account-portal-organizations-page.md)и управляйте ими.
 
-- View your [sign-in activity](my-account-portal-sign-ins-page.md).
+- Просмотр [действий входа](my-account-portal-sign-ins-page.md).
 
-- View how your organization [uses your privacy-related data](my-account-portal-privacy-page.md).
+- Посмотрите, как ваша организация [использует данные, связанные с конфиденциальностью](my-account-portal-privacy-page.md).

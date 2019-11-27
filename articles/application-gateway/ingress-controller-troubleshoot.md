@@ -111,7 +111,7 @@ I0927 22:34:51.282342       1 process.go:171] END AppGateway deployment
 - Правило маршрутизации: ![routing_rule](./media/application-gateway-ingress-controller-troubleshooting/tsg--rule.png)
 
 - Внутренний пул:
-  - В серверном пуле адресов будет один IP-адрес, который будет соответствовать IP-адресу модуля, который мы наблюдали ранее с `kubectl get pods -o wide`
+  - В серверном пуле адресов будет один IP-адрес, который будет соответствовать IP-адресу Pod, который мы наблюдали ранее с `kubectl get pods -o wide`
 ![backend_pool](./media/application-gateway-ingress-controller-troubleshooting/tsg--backendpools.png)
 
 
@@ -236,7 +236,7 @@ I0927 22:34:51.282342       1 process.go:171] END AppGateway deployment
 Сообщество Kubernetes установило 9 уровней ведения журнала для средства [kubectl](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-output-verbosity-and-debugging) . В этом репозитории используется три из этих трех вариантов с аналогичной семантикой:
 
 
-| Уровень детализации | Description (Описание) |
+| Уровень детализации | ОПИСАНИЕ |
 |-----------|-------------|
 |  1        | Уровень ведения журнала по умолчанию; отображаются сведения о запуске, предупреждения и ошибки |
 |  3        | Расширенные сведения о событиях и изменениях; списки созданных объектов |

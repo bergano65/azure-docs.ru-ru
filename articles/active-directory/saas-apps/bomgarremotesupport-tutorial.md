@@ -1,6 +1,6 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Bomgar Remote Support | Документация Майкрософт
-description: Узнайте, как настроить единый вход Azure Active Directory в Bomgar Remote Support.
+title: Руководство по интеграции единого входа Azure Active Directory с BeyondTrust Remote Support | Документация Майкрософт
+description: Узнайте, как настроить единый вход Azure Active Directory в BeyondTrust Remote Support.
 services: active-directory
 documentationCenter: na
 author: jeevansd
@@ -13,193 +13,193 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 02/07/2019
+ms.date: 10/30/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93ea2fb15c426da1198c655efb38c9a298a998d0
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 8ff21c3ee7721c82232e668ddb9645895080cf79
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73158804"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74082053"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-bomgar-remote-support"></a>Руководство по Интеграция Azure Active Directory с Bomgar Remote Support
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-beyondtrust-remote-support"></a>Руководство по интеграции единого входа Azure Active Directory с BeyondTrust Remote Support
 
-В этом руководстве описано, как интегрировать Bomgar Remote Support с Azure Active Directory (Azure AD).
-Интеграция Bomgar Remote Support c Azure AD обеспечивает следующие преимущества.
+В этом учебнике описано, как интегрировать BeyondTrust Remote Support с Azure Active Directory (Azure AD). Интеграция BeyondTrust Remote Support с Azure AD обеспечивает следующие возможности:
 
-* Вы можете контролировать доступ к Bomgar Remote Support помощью Azure AD.
-* Вы можете включить автоматический вход пользователей в Bomgar Remote Support (единый вход) с использованием учетной записи Azure Active Directory.
-* Вы можете управлять учетными записями централизованно на портале Azure.
+* Контроль доступа к BeyondTrust Remote Support с помощью Azure AD.
+* Обеспечение автоматического входа пользователей в BeyondTrust Remote Support с помощью учетных записей Azure AD.
+* Централизованное управление учетными записями через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы настроить интеграцию Azure AD с приложением Bomgar Remote Support, вам потребуется:
+Чтобы приступить к работе, потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
-* подписка Bomgar Remote Support с поддержкой единого входа.
+* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка BeyondTrust Remote Support с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* Bomgar Remote Support поддерживает единый вход, инициированный **поставщиком услуг**.
-* Bomgar Remote Support поддерживает **JIT**-подготовку пользователей.
+* BeyondTrust Remote Support поддерживает единый вход, инициированный **поставщиком услуг**.
+* BeyondTrust Remote Support поддерживает **JIT**-подготовку пользователей.
 
-## <a name="adding-bomgar-remote-support-from-the-gallery"></a>Добавление поддержки удаленного Bomgar Remote Support из коллекции
+## <a name="adding-beyondtrust-remote-support-from-the-gallery"></a>Добавление BeyondTrust Remote Support из коллекции
 
-Чтобы настроить интеграцию Bomgar Remote Support с Azure AD, необходимо добавить Bomgar Remote Support из коллекции в список управляемых приложений SaaS.
+Чтобы настроить интеграцию BeyondTrust Remote Support с Azure AD, необходимо добавить BeyondTrust Remote Support из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Bomgar Remote Support из коллекции, выполните следующие действия.**
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. В области навигации слева выберите службу **Azure Active Directory**.
+1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+1. Чтобы добавить новое приложение, выберите **Новое приложение**.
+1. В разделе **Добавление из коллекции** в поле поиска введите **BeyondTrust Remote Support**.
+1. Выберите **BeyondTrust Remote Support** на панели результатов, а затем добавьте приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
+## <a name="configure-and-test-azure-ad-single-sign-on-for-beyondtrust-remote-support"></a>Настройка и проверка единого входа Azure AD для BeyondTrust Remote Support
 
-    ![Кнопка Azure Active Directory](common/select-azuread.png)
+Настройте и проверьте единый вход Azure AD в BeyondTrust Remote Support с помощью тестового пользователя **B. Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в BeyondTrust Remote Support.
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+Чтобы настроить и проверить единый вход Azure AD в BeyondTrust Remote Support, выполните действия в следующих стандартных блоках:
 
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
+    * **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+1. **[Настройка единого входа в BeyondTrust Remote Support](#configure-beyondtrust-remote-support-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    * **[Создание тестового пользователя BeyondTrust Remote Support](#create-beyondtrust-remote-support-test-user)** требуется для того, чтобы в BeyondTrust Remote Support существовал пользователь B. Simon, связанный с одноименным пользователем в Azure Active Directory.
+1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
-    ![Кнопка "Создать приложение"](common/add-new-app.png)
+Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-4. Чтобы добавить это приложение, в поле поиска введите **Bomgar Remote Support**, выберите **Bomgar Remote Support** на панели результатов и нажмите кнопку **Добавить**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **BeyondTrust Remote Support** найдите раздел **Управление** и выберите **Единый вход**.
+1. На странице **Выбрать метод единого входа** выберите **SAML**.
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-     ![Поддержка удаленного Bomgar Remote Support в списке результатов](common/search-new-app.png)
+   ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
+1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-В этом разделе описана настройка и проверка единого входа Azure Active Directory в Bomgar Remote Support с использованием тестового пользователя **Britta Simon**.
-Для обеспечения работы единого входа необходимо установить связь между пользователем Azure Active Directory и соответствующим пользователем в Bomgar Remote Support.
+    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<HOSTNAME>.bomgar.com/saml`.
 
-Чтобы настроить и проверить единый вход Azure AD с помощью Bomgar Remote Support, потребуется выполнить действия в следующих стандартных блоках.
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<HOSTNAME>.bomgar.com`.
 
-1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в Bomgar Remote Support](#configure-bomgar-remote-support-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя Bomgar Remote Support](#create-bomgar-remote-support-test-user)** требуется для того, чтобы в Bomgar Remote Support существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure Active Directory.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
-
-### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
-
-В этом разделе описано включение единого входа Azure AD на портале Azure.
-
-Чтобы настроить единый вход Azure Active Directory в Bomgar Remote Support, выполните следующие действия.
-
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Bomgar Remote Support** выберите **Единый вход**.
-
-    ![Ссылка "Настройка единого входа"](common/select-sso.png)
-
-2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
-
-    ![Режим выбора единого входа](common/select-saml-option.png)
-
-3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
-
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
-
-4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
-
-    ![Сведения о домене и URL-адресах единого входа для приложения Bomgar Remote Support](common/sp-identifier.png)
-
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.trafficmanager.net/saml`.
-
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.trafficmanager.net`.
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<HOSTNAME>.bomgar.com/saml/sso`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки Bomgar Remote Support](https://www.bomgar.com/docs/index.htm#support). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Они объяснены далее в этом учебнике.
 
-5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
+1. Для приложения BeyondTrust Remote Support проверочные утверждения SAML должны иметь определенный формат. Для этого необходимо добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов маркера SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
+
+    ![image](common/default-attributes.png)
+
+1. В дополнение к описанному выше приложение BeyondTrust Remote Support ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
+
+    | ИМЯ |  Исходный атрибут|
+    | ---------------| ----------|
+    | Заданное имя | user.givenname |
+    | Адрес электронной почты | user.mail |
+    | ИМЯ | user.userprincipalname |
+    | Имя пользователя | user.userprincipalname |
+    | Группы | user.groups |
+    | Уникальный идентификатор пользователя | user.userprincipalname |
+
+    > [!NOTE]
+    > При назначении групп Azure AD для приложения BeyondTrust Remote Support необходимо изменить значение параметра "Группы, возвращенные в утверждении" с None на SecurityGroup. Группы будут импортированы в приложение в качестве идентификаторов объектов. Идентификатор объекта группы Azure AD можно найти в разделе свойств в интерфейсе Azure Active Directory. Он потребуется для ссылки и назначения групп Azure AD правильным групповым политикам.
+
+1. При установке уникального идентификатора пользователя нужно задать формат идентификатора имени: **Постоянный**. Нам требуется постоянный идентификатор, чтобы идентифицировать пользователя и сопоставлять его с правильными групповыми политиками, определяющими разрешения. Щелкните значок "Изменить". Откроется диалоговое окно **Утверждения и атрибуты пользователя**, где можно изменить значение уникального идентификатора пользователя.
+
+1. В разделе **Управление утверждением** щелкните **Выбор формата идентификатора имени**, задайте значение **Постоянный** и нажмите кнопку **Сохранить**.
+
+    ![Утверждения и атрибуты пользователя](./media/bomgarremotesupport-tutorial/attribute-unique-user-identifier.png)
+
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-6. Скопируйте требуемый URL-адрес из раздела **Настройка Bomgar Remote Support**.
+1. Скопируйте требуемый URL-адрес из раздела **Настройка BeyondTrust Remote Support**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
-
-    б) Идентификатор Azure AD.
-
-    в) URL-адрес выхода.
-
-### <a name="configure-bomgar-remote-support-single-sign-on"></a>Настройка единого входа в Bomgar Remote Support
-
-Чтобы настроить единый вход на стороне **Bomgar Remote Support**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки Bomgar Remote Support](https://www.bomgar.com/docs/index.htm#support). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
-
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
-
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
-
-2. В верхней части экрана выберите **Новый пользователь**.
-
-    ![Кнопка "Новый пользователь"](common/new-user.png)
-
-3. В разделе свойств пользователя сделайте следующее:
-
-    ![Диалоговое окно "Пользователь"](common/user-properties.png)
-
-    а. В поле **Имя** введите **BrittaSimon**.
-  
-    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
-    Например BrittaSimon@contoso.com.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
-
-    d. Нажмите кнопку **Создать**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. В верхней части экрана выберите **Новый пользователь**.
+1. В разделе **Свойства пользователя** выполните следующие действия.
+   1. В поле **Имя** введите `B.Simon`.  
+   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
+   1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+   1. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Bomgar Remote Support.
+В этом разделе описано, как включить единый вход Azure для пользователя B. Simon, предоставив этому пользователю доступ к BeyondTrust Remote Support.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Bomgar Remote Support**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. В списке приложений выберите **BeyondTrust Remote Support**.
+1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-2. В списке приложений выберите **Bomgar Remote Support**.
+1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Ссылка на Bomgar Remote Support в списке приложений](common/all-applications.png)
+    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+## <a name="configure-beyondtrust-remote-support-sso"></a>Настройка единого входа для BeyondTrust Remote Support
 
-4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. В другом окне веб-браузера войдите в клиент BeyondTrust Remote Support с правами администратора.
 
-    ![Область "Добавление назначения"](common/add-assign-user.png)
+1. Перейдите в меню **STATUS** (Состояние), скопируйте **идентификатор**, **URL-адрес ответа** и **URL-адрес входа** и используйте эти значения в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+    ![Настройка BeyondTrust Remote Support](./media/bomgarremotesupport-tutorial/config-url-values.png)
 
-6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. Перейдите в `https://support.example.com/login`интерфейс входа в BeyondTrust Remote Support, где **support.example.com** — это основное имя устройства, и выполните проверку подлинности с использованием учетных данных администратора.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. Перейдите в раздел **Users & Security** > **Security Providers** (Пользователи и безопасность > Поставщики безопасности).
 
-### <a name="create-bomgar-remote-support-test-user"></a>Создание тестового пользователя в Bomgar Remote Support
+1. В раскрывающемся меню выберите **SAML** и нажмите кнопку **Create Provider** (Создать поставщик).
 
-В этом разделе вы создадите в Bomgar Remote Support пользователя с именем Britta Simon. Приложение Bomgar Remote Support поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Bomgar Remote Support, он создается после проверки подлинности.
+1. В разделе Identity Provider Settings (Параметры поставщика удостоверений) можно отправить метаданные поставщика удостоверений. Перейдите к XML-файлу метаданных, скачанному на портале Azure, и нажмите кнопку **Upload** (Отправить). **Идентификатор сущности**, **URL-адрес службы единого входа** и сертификат будут автоматически отправлены, а для параметра **Protocol Binding** (Привязка протокола) потребуется изменить значение на **HTTP POST**. Просмотрите указанный ниже снимок экрана.
 
-> [!Note]
-> Чтобы создать пользователя вручную, обратитесь к [группе поддержки Bomgar Remote Support](https://www.bomgar.com/docs/index.htm#support).
+    ![Настройка BeyondTrust Remote Support](./media/bomgarremotesupport-tutorial/config-uploadfile.png)
 
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="create-beyondtrust-remote-support-test-user"></a>Создание тестового пользователя в BeyondTrust Remote Support
+
+В этом разделе вы настроите параметры подготовки пользователей. Используемые здесь значения будут упомянуты в разделе **Утверждения и атрибуты пользователя** на портале Azure. Мы оставили значения по умолчанию, которые уже импортированы во время создания, однако при необходимости их можно настроить.
+
+![Создание пользователя](./media/bomgarremotesupport-tutorial/config-user1.png)
+
+> [!NOTE]
+> Для этой реализации атрибуты "Группы" и "Электронная почта" не требуются. Если вы используете группы Azure AD и назначаете им групповые политики BeyondTrust Remote Support для предоставления разрешений, необходимо ссылаться на идентификатор объекта этой группы с помощью его свойств на портале Azure и поместить эту группу в раздел "Доступные группы". После завершения идентификатор объекта и группа AD будут доступны для назначения групповой политике, определяющей разрешения.
+
+![Создание пользователя](./media/bomgarremotesupport-tutorial/config-user2.png)
+
+![Создание пользователя](./media/bomgarremotesupport-tutorial/config-user3.png)
+
+> [!NOTE]
+> Кроме того, можно настроить групповую политику по умолчанию для поставщика безопасности SAML2. Если задать этот параметр, всем пользователям, прошедшим проверку подлинности через SAML, будут назначены разрешения, указанные в групповой политике. Политика General Members (Общие участники) включена в группу привилегированного удаленного доступа к BeyondTrust Remote Support с ограниченными разрешениями, которые можно использовать для проверки подлинности и назначения пользователям правильных политик. Пользователи не попадут в список пользователей SAML2, выполнив вход на вкладке Users & Security (Пользователи и безопасность), пока не совершат первую успешную попытку проверки подлинности. Дополнительные сведения о групповых политиках см. по следующей ссылке: `https://www.beyondtrust.com/docs/remote-support/getting-started/admin/group-policies.htm`
+
+## <a name="test-sso"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Bomgar Remote Support на Панели доступа, вы автоматически войдете в приложение Bomgar Remote Support, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку BeyondTrust Remote Support на Панели доступа, вы автоматически войдете в приложение BeyondTrust Remote Support, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+
+- [Попробуйте использовать BeyondTrust Remote Support с Azure AD](https://aad.portal.azure.com/)

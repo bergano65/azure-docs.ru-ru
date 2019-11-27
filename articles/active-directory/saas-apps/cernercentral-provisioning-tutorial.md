@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настройка Cerner Central для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство. подготовка пользователей для службы CERN Central — Azure AD
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки пользователей и их добавления в список в Cerner Central.
 services: active-directory
 documentationcenter: ''
@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 03/27/2019
 ms.author: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 61e88e0fe7e6eec5b3cdfd03755a186744b77b47
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2e80373fa28f1ea24d6a2d5fc2c147bf81b2b279
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65964201"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74276516"
 ---
-# <a name="tutorial-configure-cerner-central-for-automatic-user-provisioning"></a>Руководство по Настройка Cerner Central для автоматической подготовки пользователей
+# <a name="tutorial-configure-cerner-central-for-automatic-user-provisioning"></a>Руководство по настройке Cerner Central для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как настроить автоматическую подготовку и отзыв учетных записей пользователей Azure AD в списке пользователей в Cerner Central.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -57,7 +57,7 @@ ms.locfileid: "65964201"
 В этом разделе мы подключим Azure AD к списку пользователей Cerner Central с помощью API подготовки учетных записей Cerner (через протокол SCIM), а также настроим службу подготовки для создания, изменения и отключения назначенных учетных записей пользователей в Cerner Central на основе назначения пользователей и групп в Azure AD.
 
 > [!TIP]
-> Кроме того, можно включить на основе SAML единого входа, для Cerner Central, следуйте инструкциям, указанным в [портала Azure](https://portal.azure.com). Единый вход можно настроить независимо от автоматической подготовки, хотя две эти функции дополняют друг друга. Дополнительные сведения см. в [руководстве по настройке единого входа в Cerner Central](cernercentral-tutorial.md).
+> Вы также можете включить единый вход на основе SAML для CERN Central, следуя инструкциям, приведенным в [портал Azure](https://portal.azure.com). Единый вход можно настроить независимо от автоматической подготовки, хотя две эти функции дополняют друг друга. Дополнительные сведения см. в [руководстве по настройке единого входа в Cerner Central](cernercentral-tutorial.md).
 
 ### <a name="to-configure-automatic-user-account-provisioning-to-cerner-central-in-azure-ad"></a>Настройка автоматической подготовки учетных записей пользователей Azure AD в Cerner Central
 
@@ -125,11 +125,11 @@ ms.locfileid: "65964201"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Cerner Central: Publishing identity data using Azure AD](https://wiki.ucern.com/display/public/reference/Publishing+Identity+Data+Using+Azure+AD) (Cerner Central: публикация данных удостоверений с помощью Azure Active Directory)
-* [Учебник. Интеграция Azure Active Directory с Cerner Central](cernercentral-tutorial.md)
+* [Cerner Central: публикация данных удостоверений с помощью Azure AD](https://wiki.ucern.com/display/public/reference/Publishing+Identity+Data+Using+Azure+AD)
+* [Руководство. Интеграция Azure Active Directory с Cerner Central](cernercentral-tutorial.md)
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](https://docs.microsoft.com/azure/active-directory/active-directory-saas-provisioning-reporting).

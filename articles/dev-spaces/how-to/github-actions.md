@@ -1,21 +1,17 @@
 ---
 title: Действия GitHub & службы Azure Kubernetes
-titleSuffix: Azure Dev Spaces
-author: zr-msft
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
-ms.author: zarhoads
 ms.date: 11/04/2019
 ms.topic: conceptual
 description: Изучите и протестируйте изменения из запроса на вытягивание непосредственно в службе Azure Kubernetes, используя действия GitHub и Azure Dev Spaces.
 keywords: DOCKER, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, действия GitHub, Helm, сеть службы, маршрутизация в сети службы, kubectl, K8S
 manager: gwallace
-ms.openlocfilehash: 09dc9440628ac5d808f90d086bd88e4f90765c28
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: e20efc6b109eeef234dcd621374d25b812cdc0ce
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73889732"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483938"
 ---
 # <a name="github-actions--azure-kubernetes-service-preview"></a>Действия GitHub & службы Azure Kubernetes (Предварительная версия)
 
@@ -35,7 +31,7 @@ Azure Dev Spaces предоставляет рабочий процесс с п�
 
 * Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 * [Установленный Azure CLI][azure-cli-installed].
-* [Установленный Helm 2.13 или более поздней версии][helm-installed].
+* [Helm 2,13-2,16 установлен][helm-installed].
 * Учетная запись GitHub с [включенными действиями GitHub][github-actions-beta-signup].
 * [Пример приложения для Azure dev Spacesного использования велосипеда](https://github.com/Azure/dev-spaces/tree/master/samples/BikeSharingApp/README.md) , работающего в кластере AKS.
 
@@ -184,7 +180,7 @@ az group delete --name MyResourceGroup --yes --no-wait
 [github-actions-beta-signup]: https://github.com/features/actions
 [github-action-yaml]: https://github.com/Azure/dev-spaces/blob/master/.github/workflows/bikes.yml
 [github-action-bikesharing-yaml]: https://github.com/Azure/dev-spaces/blob/master/.github/workflows/bikesharing.yml
-[helm-installed]: https://helm.sh/docs/using_helm/#installing-helm
+[helm-installed]: https://v2.helm.sh/docs/using_helm/#installing-helm
 [tiller-rbac]: https://helm.sh/docs/using_helm/#role-based-access-control
 [supported-regions]: ../about.md#supported-regions-and-configurations
 [sp-acr]: ../../container-registry/container-registry-auth-service-principal.md

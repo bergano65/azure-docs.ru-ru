@@ -1,5 +1,5 @@
 ---
-title: Пример скрипта Azure PowerShell. Фильтрация сетевого трафика виртуальной машины | Документация Майкрософт
+title: Пример скрипта Azure PowerShell. Фильтрация сетевого трафика виртуальной машины
 description: Пример скрипта Azure PowerShell для фильтрации входящего и исходящего сетевого трафика виртуальной машины.
 services: virtual-network
 documentationcenter: virtual-network
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 03/20/2018
 ms.author: kumud
-ms.openlocfilehash: 1bebb81670b4e8cac5fb6f9ea1b60ef1cc6b60fe
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: c11a2249b66d56706783c865a77c14a276d870ed
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64717867"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74091368"
 ---
 # <a name="filter-inbound-and-outbound-vm-network-traffic-script-sample"></a>Пример скрипта для фильтрации входящего и исходящего сетевого трафика виртуальной машины
 

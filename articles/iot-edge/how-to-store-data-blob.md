@@ -9,13 +9,12 @@ ms.date: 08/07/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.custom: seodec18
-ms.openlocfilehash: 55edc69e706fad8888146e9d97541a1c2bae821d
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 0dd999d7c7e42f4b881465c8473e0069952561ba
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73163799"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456775"
 ---
 # <a name="store-data-at-the-edge-with-azure-blob-storage-on-iot-edge"></a>Хранение данных на границе с помощью хранилища BLOB-объектов Azure на IoT Edge
 
@@ -55,19 +54,19 @@ ms.locfileid: "73163799"
 - Выберите возможность хранения большого двоичного объекта при его отправке, если срок действия Делетеафтерминутес истечет.
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-Устройство Azure IoT Edge.
+Устройство Azure IoT Edge:
 
 - Вы можете использовать компьютер разработки или виртуальную машину в качестве IoT Edge устройства, выполнив действия, описанные в кратком руководстве для устройств [Linux](quickstart-linux.md) или [Windows](quickstart.md).
 
 - Список поддерживаемых операционных систем и архитектур см. в [Azure IOT Edge поддерживаемых системах](support.md#operating-systems) . Хранилище BLOB-объектов Azure в модуле IoT Edge поддерживает следующие архитектуры:
     - Windows AMD64;
-    - Linux AMD64;
-    - Linux ARM32;
+    - Linux AMD64
+    - Linux ARM32
     - ARM64 Linux (Предварительная версия)
 
-Облачные ресурсы.
+Облачные ресурсы:
 
 [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) цен. категории "Стандартный" в Azure.
 
@@ -207,7 +206,7 @@ sudo chmod -R 700 <blob-dir>
 
 Так как хранилище BLOB-объектов Azure поддерживает не все операции хранилища BLOB-объектов Azure на IoT Edge, в этом разделе перечислены состояния каждого из них.
 
-### <a name="account"></a>Учетная запись.
+### <a name="account"></a>Учетная запись
 
 Поддерживается:
 
@@ -234,7 +233,7 @@ sudo chmod -R 700 <blob-dir>
 
 - Аренда контейнера
 
-### <a name="blobs"></a>Большие двоичные объекты
+### <a name="blobs"></a>BLOB-объекты
 
 Поддерживается:
 
@@ -250,7 +249,7 @@ sudo chmod -R 700 <blob-dir>
 - Отмена удаления BLOB-объекта
 - Установка уровня BLOB-объекта
 
-### <a name="block-blobs"></a>Блочные BLOB-объекты
+### <a name="block-blobs"></a>Blob-блоки
 
 Поддерживается:
 
@@ -271,13 +270,13 @@ sudo chmod -R 700 <blob-dir>
 
 [Заметки о выпуске в центре DOCKER](https://hub.docker.com/_/microsoft-azure-blob-storage) для этого модуля
 
-## <a name="feedback"></a>Обратная связь
+## <a name="feedback"></a>Отзыв
 
 Ваши отзывы важны для нас, чтобы сделать этот модуль и его компоненты полезными и простыми в использовании. Поделитесь своим мнением и сообщите нам, как можно улучшить.
 
 Вы можете связаться с нами по адресу absiotfeedback@microsoft.com
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте, как [развертывать хранилище BLOB-объектов Azure на IOT Edge](how-to-deploy-blob.md)
 

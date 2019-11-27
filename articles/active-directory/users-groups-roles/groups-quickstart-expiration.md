@@ -1,25 +1,25 @@
 ---
-title: Краткое руководство о политике срока действия для групп Office 365 — Azure Active Directory | Документация Майкрософт
+title: Краткое руководство по политике срока действия групп — Azure AD | Документация Майкрософт
 description: Срок действия групп Office 365 в Azure Active Directory
 services: active-directory
 documentationcenter: ''
 author: curtand
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: quickstart
-ms.date: 05/06/2019
+ms.date: 11/08/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01cedadc115496fcf00df986b4ad4b9c5aab5139
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: 16b6e4f521568c89e415e6e9fa621175052cf34d
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65606177"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74026899"
 ---
 # <a name="quickstart-set-office-365-groups-to-expire-in-azure-active-directory"></a>Краткое руководство. Задание срока действия групп Office 365 в Azure Active Directory
 
@@ -27,9 +27,13 @@ ms.locfileid: "65606177"
 
 Политика срока действия простая:
 
-* Владельцы группы получают уведомления, чтобы обновить группу с истекающим сроком действия
-* Группа, которая не была обновлена, удаляется.
-* Владелец группы или администратор Azure AD может восстановить удаленную группу Office 365 в течение 30 дней
+- Группы с действиями пользователей автоматически обновляются по истечении срока действия
+- Владельцы группы получают уведомления, чтобы обновить группу с истекающим сроком действия
+- Группа, которая не была обновлена, удаляется.
+- Владелец группы или администратор Azure AD может восстановить удаленную группу Office 365 в течение 30 дней
+
+> [!NOTE]
+> Теперь группы используют средства искусственного интеллекта Azure AD для автоматического продления в зависимости от того, использовались ли они в последнее время. Это решение об обновлении основано на активности пользователя в группах служб Office 365, таких как Outlook, SharePoint, Teams, Yammer и другие.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 

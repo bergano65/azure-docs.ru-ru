@@ -13,12 +13,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 02/24/2019
 ms.author: apimpm
-ms.openlocfilehash: 6a1ae2966e8d5535a5fd9aeffb5ddc3a788f85ee
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: bae762b4603b2f5f80447a16671fed4e37e62b95
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70072099"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74108539"
 ---
 # <a name="import-and-publish-your-first-api"></a>Импорт и публикация первого API 
 
@@ -75,7 +75,7 @@ ms.locfileid: "70072099"
 > [!TIP]
 > Если вы столкнулись с проблемами при импорте собственного определения API, [см. список известных проблем и ограничений](api-management-api-import-restrictions.md).
 
-## <a name="test-the-new-apim-api-in-the-azure-portal"></a>Проверка нового API службы управления API на портале Azure
+## <a name="test-the-new-api-in-the-azure-portal"></a>Проверка нового API на портале Azure
 
 ![Карта тестирования API](./media/api-management-get-started/01-import-first-api-01.png)
 
@@ -88,23 +88,6 @@ ms.locfileid: "70072099"
 
     Служба серверной части вернет ответ **200 — ОК** и другие данные.
 
-## <a name="call-operation"> </a>Вызов операции с портала разработчика
-
-Также операции можно вызвать через **портал разработчиков**, чтобы проверить API.
-
-1. Перейдите на **портал разработчика**.
-
-    ![Developer portal](./media/api-management-get-started/developer-portal.png)
-
-2. Выберите **API**, щелкните **Demo Conference API** и выберите **GetSpeakers**.
-
-    Эта страница отображает поля для параметров запроса (в нашем примере параметры не используются) и заголовки. Один из заголовков, Ocp-Apim-Subscription-Key, содержит ключ подписки для продукта, связанного с этим API. Как создатель экземпляра службы управления API, вы автоматически являетесь администратором, поэтому сведения о ключе будут заполнены автоматически.
-
-3. Щелкните **Попробовать**.
-4. Нажмите кнопку **Отправить**.
-
-    После вызова операции на портале разработчиков отображаются ответы.  
-
 ## <a name="next-steps"> </a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
@@ -112,7 +95,6 @@ ms.locfileid: "70072099"
 > [!div class="checklist"]
 > * импорт API;
 > * проверка API на портале Azure;
-> * проверка API на портале разработчика.
 
 Перейдите к следующему руководству:
 

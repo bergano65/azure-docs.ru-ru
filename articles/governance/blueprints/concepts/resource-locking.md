@@ -1,14 +1,14 @@
 ---
 title: Концепция блокировки ресурсов
-description: Узнайте о возможности блокировки для защиты ресурсов при назначении схемы.
+description: Сведения о вариантах блокировки в схемах Azure для защиты ресурсов при назначении схемы.
 ms.date: 04/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 754b9d7f73c6111abf7505e222a1ca5a8712ae45
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 50f506cc57f67ca2ae2b07e342750d6c5099e739
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73960485"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406406"
 ---
 # <a name="understand-resource-locking-in-azure-blueprints"></a>Общие сведения о блокировке ресурсов в Azure Blueprint
 
@@ -61,8 +61,7 @@ ms.locfileid: "73960485"
 
 ## <a name="exclude-a-principal-from-a-deny-assignment"></a>Исключение участника из назначения Deny
 
-В некоторых сценариях проектирования или безопасности может потребоваться исключить субъект из [назначения «Deny](../../../role-based-access-control/deny-assignments.md) », создаваемого назначением схемы. Это выполняется в REST API путем добавления до пяти значений в массив **ексклудедпринЦипалс** в свойстве **locks** при [создании назначения](/rest/api/blueprints/assignments/createorupdate).
-Вот пример текста запроса, который содержит **ексклудедпринЦипалс**:
+В некоторых сценариях проектирования или безопасности может потребоваться исключить субъект из [назначения «Deny](../../../role-based-access-control/deny-assignments.md) », создаваемого назначением схемы. Это выполняется в REST API путем добавления до пяти значений в массив **ексклудедпринЦипалс** в свойстве **locks** при [создании назначения](/rest/api/blueprints/assignments/createorupdate). Вот пример текста запроса, который содержит **ексклудедпринЦипалс**:
 
 ```json
 {

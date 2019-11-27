@@ -337,7 +337,7 @@
     - name: Сценарии
       items:
         - name: Центры обработки вызовов
-          href: get-started.md
+          href: call-center-transcription.md
           displayName: 'IVRs, IVR, Telephony Data, Transcription for Telephony Data, Real-time Transcription for Call Centers'
     - name: Руководства
       items:
@@ -374,8 +374,6 @@
               href: rest-speech-to-text.md
             - name: REST API преобразования текста в речь.
               href: rest-text-to-speech.md
-            - name: REST API для веб-перехватчиков
-              href: webhooks.md
         - name: Документация по Swagger
           href: swagger-documentation.md
 - name: Пакет SDK для службы "Речь"
@@ -468,6 +466,8 @@
   items:
     - name: Поддержка
       href: support.md
+    - name: Регионы
+      href: regions.md
     - name: Цены и ограничения
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/'
     - name: Соответствие нормативным требованиям

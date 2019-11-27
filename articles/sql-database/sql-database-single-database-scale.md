@@ -11,20 +11,16 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 04/26/2019
-ms.openlocfilehash: 2a16735e65201314328d2315479ccc467b9d555e
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 8d4917bb8956185e0cb557368fbb0c64343c0ac6
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820985"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74422537"
 ---
 # <a name="scale-single-database-resources-in-azure-sql-database"></a>Масштабирование ресурсов отдельной базы данных в Базе данных SQL Azure
 
 В этой статье описывается, как масштабировать ресурсы вычислений и хранения, доступные для базы данных SQL Azure, на подготовленном уровне вычислений. Кроме того, [уровень вычислений "бессерверный](sql-database-serverless.md) " обеспечивает автоматическое масштабирование вычислений и счета за секунду для используемых вычислений.
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-> [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
 ## <a name="change-compute-size-vcores-or-dtus"></a>Изменение размера вычислений (виртуальных ядер или DTU)
 
@@ -33,7 +29,6 @@ ms.locfileid: "73820985"
 В следующем видео показано динамическое изменение уровня служб и объема вычислительных ресурсов для увеличения количества доступных единиц DTU отдельной базы данных.
 
 > [!VIDEO https://channel9.msdn.com/Blogs/Azure/Azure-SQL-Database-dynamically-scale-up-or-scale-down/player]
->
 
 > [!IMPORTANT]
 > Иногда требуется сжать базу данных, чтобы освободить неиспользуемое пространство. Дополнительные сведения см. в статье об [управлении файловым пространством в Базе данных SQL Azure](sql-database-file-space-management.md).
@@ -70,7 +65,7 @@ ms.locfileid: "73820985"
 
 Операция изменения или масштабирования уровня службы может быть отменена.
 
-#### <a name="azure-portal"></a>Портал Azure
+#### <a name="azure-portal"></a>портале Azure
 
 В колонке обзор базы данных перейдите к разделу **уведомления** и щелкните плитку, указывающую на текущую операцию:
 
@@ -82,19 +77,17 @@ ms.locfileid: "73820985"
 
 #### <a name="powershell"></a>PowerShell
 
-В командной строке PowerShell задайте `$ResourceGroupName`, `$ServerName`и `$DatabaseName`, а затем выполните следующую команду:
+В командной строке PowerShell задайте `$resourceGroupName`, `$serverName`и `$databaseName`, а затем выполните следующую команду:
 
-```PowerShell
-$OperationName = (az sql db op list --resource-group $ResourceGroupName --server $ServerName --database $DatabaseName --query "[?state=='InProgress'].name" --out tsv)
-if(-not [string]::IsNullOrEmpty($OperationName))
-    {
-        (az sql db op cancel --resource-group $ResourceGroupName --server $ServerName --database $DatabaseName --name $OperationName)
-        "Operation " + $OperationName + " has been canceled"
-    }
-    else
-    {
-        "No service tier change or compute rescaling operation found"
-    }
+```powershell
+$operationName = (az sql db op list --resource-group $resourceGroupName --server $serverName --database $databaseName --query "[?state=='InProgress'].name" --out tsv)
+if (-not [string]::IsNullOrEmpty($operationName)) {
+    (az sql db op cancel --resource-group $resourceGroupName --server $serverName --database $databaseName --name $operationName)
+        "Operation " + $operationName + " has been canceled"
+}
+else {
+    "No service tier change or compute rescaling operation found"
+}
 ```
 
 ### <a name="additional-considerations-when-changing-service-tier-or-rescaling-compute-size"></a>Дополнительные рекомендации при изменении уровня служб или масштабировании размера вычислений
@@ -142,6 +135,6 @@ if(-not [string]::IsNullOrEmpty($OperationName))
   - Обновление базы данных-источника в отношениях георепликации. При изменении максимального размера и указании значения больше 1 ТБ в базе данных-источнике такие же изменения произойдут в базе данных-получателе. Чтобы изменения в базе данных-источнике вступили в силу, оба обновления должны быть успешными. При этом применяются ограничения по регионам для максимального размера больше 1 ТБ. Если база данных-получатель находится в регионе, не поддерживающем максимальный размер больше 1 TB, то база данных-источник не обновляется.
 - Использование службы импорта и экспорта для загрузки баз данных P11 и P15 с максимальным размером больше 1 ТБ не поддерживается. Для [импорта](sql-database-import.md) и [экспорта](sql-database-export.md) данных используйте файл SqlPackage.exe.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Сведения об общих ограничениях ресурсов см. в статьях [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер (предварительная версия)](sql-database-vcore-resource-limits-single-databases.md) и [SQL Database DTU-based resource limits - elastic pools](sql-database-dtu-resource-limits-single-databases.md) (Ограничения ресурсов для эластичных пулов в Базе данных SQL при использовании модели приобретения на основе единиц DTU).

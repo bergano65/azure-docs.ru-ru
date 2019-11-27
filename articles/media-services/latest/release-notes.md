@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 10/07/2019
 ms.author: juliako
-ms.openlocfilehash: 34d68974366eb17704b4ea1291bd1d29a0eea95a
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: 50c28f86a1ba36ac44a25e047800d14fe314f9bf
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72168632"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74420035"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -42,7 +42,7 @@ ms.locfileid: "72168632"
 
 Службы мультимедиа v3 сообщают о предварительной версии в 24 часа x 365 дней в реальном времени в реальном времени.
 
-###  <a name="media-services-v2"></a>Службы мультимедиа версии 2  
+###  <a name="media-services-v2"></a>Службы мультимедиа версии 2  
 
 #### <a name="deprecation-of-media-processors"></a>Устаревшие обработчики мультимедиа
 
@@ -60,15 +60,15 @@ ms.locfileid: "72168632"
 
 Дополнительные сведения см. [в разделе облака и регионы, в которых существует версия 3 служб мультимедиа](azure-clouds-regions.md).
 
-###  <a name="media-services-v2"></a>Службы мультимедиа версии 2  
+###  <a name="media-services-v2"></a>Службы мультимедиа версии 2  
 
 #### <a name="deprecation-of-media-processors"></a>Устаревшие обработчики мультимедиа
 
-Мы сообщаем о прекращении использования *Windows Azure Media Encoder* (Ваме) и обработчиков мультимедиа *кодировщика мультимедиа Azure* (\ Media Encoder), которые выводятся на выходе 30 ноября 2019.
+Мы сообщаем о прекращении использования *Windows Azure Media Encoder* (Ваме) и обработчиков мультимедиа *кодировщика мультимедиа Azure* (\), которые выпускают 31 марта 2020 г.
 
 Дополнительные сведения см. в статье [Миграция Ваме в Media Encoder Standard](https://go.microsoft.com/fwlink/?LinkId=2101334) и [перенос в Media Encoder Standard](https://go.microsoft.com/fwlink/?LinkId=2101335).
  
-## <a name="july-2019"></a>2019 июля
+## <a name="july-2019"></a>Июль 2019 г.
 
 ### <a name="content-protection"></a>Защита содержимого
 
@@ -82,7 +82,7 @@ ms.locfileid: "72168632"
 
 Теперь можно обрезать или подрезать видео при кодировании с помощью [задания](https://docs.microsoft.com/rest/api/media/jobs). 
 
-Эта функция работает с любым [преобразованием](https://docs.microsoft.com/rest/api/media/transforms), построенным с помощью предустановок [BuiltInStandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset). 
+Эта функция работает с любым [преобразованием](https://docs.microsoft.com/rest/api/media/transforms) , построенным с помощью предустановок [буилтинстандарденкодерпресет](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [стандарденкодерпресет](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset) . 
 
 См. примеры:
 
@@ -144,7 +144,7 @@ ms.locfileid: "72168632"
 
 Не следует изменять или удалять MPI-файл, а также ваша служба не должна зависеть от существования (или отсутствия) такого файла.
 
-## <a name="december-2018"></a>Декабрь 2018 г.
+## <a name="december-2018"></a>Декабрь 2018 г.
 
 Обновления от выпуска общедоступной версии API V3 включают:
        
@@ -276,7 +276,7 @@ ms.locfileid: "72168632"
 
 ## <a name="may-2018---preview"></a>Май 2018 г. Предварительная версия
 
-### <a name="net-sdk"></a>Пакет SDK для .NET
+### <a name="net-sdk"></a>ПАКЕТ SDK .NET
 
 В пакете SDK для .NET имеются следующие возможности.
 
@@ -295,7 +295,7 @@ ms.locfileid: "72168632"
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Обзор](media-services-overview.md)
 - [Заметки о выпуске служб мультимедиа версии 2](../previous/media-services-release-notes.md)

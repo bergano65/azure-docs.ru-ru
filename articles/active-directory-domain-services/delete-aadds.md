@@ -1,6 +1,6 @@
 ---
-title: Отключение Azure Active Directory доменных служб | Документация Майкрософт "
-description: Узнайте, как отключить Azure Active Directory доменных служб с помощью портал Azure
+title: Удаление Azure Active Directory доменных служб | Документация Майкрософт
+description: Узнайте, как отключить или удалить управляемый домен доменных служб Azure Active Directory с помощью портал Azure
 services: active-directory-ds
 author: iainfoulds
 manager: daveba
@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 11/26/2019
 ms.author: iainfou
-ms.openlocfilehash: 05c4e73c56b79c6e313ea15124bd0f3d17b2fc70
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 9f0b8a438a7c236c5e016673a59bfb691e9c2152
+ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70842607"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74546298"
 ---
-# <a name="disable-azure-active-directory-domain-services-using-the-azure-portal"></a>Отключение доменных служб Azure Active Directory с помощью портала Azure
+# <a name="delete-an-azure-active-directory-domain-services-managed-domain-using-the-azure-portal"></a>Удаление управляемого домена Azure Active Directory доменных служб с помощью портал Azure
 
 Если управляемый домен больше не нужен, можно удалить экземпляр Azure Active Directory доменных служб (Azure AD DS). Нет возможности отключить или временно отключить управляемый домен AD DS Azure. Удаление управляемого домена AD DS Azure не приводит к удалению или иным образом отрицательно скажется на клиенте Azure AD. В этой статье показано, как с помощью портал Azure удалить управляемый домен AD DS Azure.
 
@@ -40,7 +40,7 @@ ms.locfileid: "70842607"
 
 Удаление управляемого домена AD DS Azure может занять 15-20 минут или более.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Рассмотрите возможность [предоставления отзывов][feedback] о функциях, которые вы хотели бы увидеть в AD DS Azure.
 

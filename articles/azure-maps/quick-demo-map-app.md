@@ -1,22 +1,22 @@
 ---
-title: Поиск интерактивной карты с помощью службы Azure Maps | Документация Майкрософт
+title: Краткое руководство. Поиск интерактивной карты с помощью службы Azure Maps
 description: Краткое руководство Azure. Создание демоверсии поиска интерактивной карты с помощью службы Azure Maps
 author: walsehgal
 ms.author: v-musehg
-ms.date: 03/07/2019
+ms.date: 11/08/2019
 ms.topic: quickstart
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 092da53c3179d939ebf0472219338b8d8392fda6
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 1b9d8c98391e7e2bac3492dcf696f098f5c6cf57
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72554281"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73903177"
 ---
-# <a name="create-an-interactive-search-map-by-using-azure-maps"></a>Создание карты с интерактивным поиском с помощью службы Azure Maps
+# <a name="quickstart-create-an-interactive-search-map-by-using-azure-maps"></a>Краткое руководство. Создание карты с интерактивным поиском с помощью службы Azure Maps
 
 В этой статье демонстрируются возможности службы "Карты Azure" для создания карты, которая предоставляет пользователям функции интерактивного поиска. В этом руководстве описывается:
 * создание учетной записи службы Azure Maps;

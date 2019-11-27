@@ -2,19 +2,19 @@
 title: Общие сведения о результатах проверки агента Windows в службе "Управление обновлениями Azure"
 description: Подробные сведения об устранении неполадок c помощью агента службы "Управление обновлениями".
 services: automation
-author: bobbytreed
-ms.author: robreed
-ms.date: 04/22/2019
+author: mgoedtel
+ms.author: magoedte
+ms.date: 11/25/2019
 ms.topic: conceptual
 ms.service: automation
 ms.subservice: update-management
 manager: carmonm
-ms.openlocfilehash: d3099498c3abea428e04d94ca0fcd553e6a0fec6
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 72fdfe912a5560ce0c0e3886dd3c56cf9534dc22
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73886401"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74480783"
 ---
 # <a name="understand-the-windows-agent-check-results-in-update-management"></a>Общие сведения о результатах проверки агента Windows в службе "Управление обновлениями"
 
@@ -55,11 +55,11 @@ ms.locfileid: "73886401"
 |операционная система  |Примечания  |
 |---------|---------|
 |Windows Server 2008 R2 RTM, Windows Server 2008 | Поддерживает только оценки обновлений.         |
-|Windows Server 2008 R2 с пакетом обновления 1 и более поздней версии |Требуется .NET Framework 4.6.1 или более поздней версии. ([Скачать .NET Framework](/dotnet/framework/install/guide-for-developers))<br/> Требуется Windows PowerShell 5,1.  ([Скачать Windows Management Framework 5.1](https://www.microsoft.com/download/details.aspx?id=54616))        |
+|Windows Server 2008 R2 с пакетом обновления 1 и более поздней версии |Требуется .NET Framework 4,6 или более поздней версии. ([Скачать .NET Framework](/dotnet/framework/install/guide-for-developers))<br/> Требуется Windows PowerShell 5,1.  ([Скачать Windows Management Framework 5.1](https://www.microsoft.com/download/details.aspx?id=54616))        |
 
-### <a name="net-461"></a>.NET 4.6.1 +
+### <a name="net-462"></a>4\.6.2 .NET
 
-Проверка .NET Framework проверяет, установлен ли в системе минимум [.NET Framework 4.6.1](https://www.microsoft.com/en-us/download/details.aspx?id=49981) .
+Проверка .NET Framework проверяет, установлен ли в системе минимум [.NET Framework 4.6.2](https://www.microsoft.com/en-us/download/details.aspx?id=53345) .
 
 ### <a name="wmf-51"></a>WMF 5.1
 

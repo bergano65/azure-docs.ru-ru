@@ -11,12 +11,12 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74224454"
 ---
-| Ресурс | Ограничение по умолчанию |
+| Resource (Ресурс) | Ограничение по умолчанию |
 | --- | --- |
-| Azure Content Delivery Network profiles |25 |
-| Content Delivery Network endpoints per profile |25 |
+| Профили сети доставки содержимого Azure |25 |
+| Конечные точки сети доставки содержимого на профиль |25 |
 | Количество личных доменов на конечную точку |25 |
 
-A Content Delivery Network subscription can contain one or more Content Delivery Network profiles. A Content Delivery Network profile can contain one or more Content Delivery Network endpoints. You might want to use multiple profiles to organize your Content Delivery Network endpoints by internet domain, web application, or some other criteria. 
+Подписка сети доставки содержимого может содержать один или несколько профилей сети доставки содержимого. Профиль сети доставки содержимого может содержать одну или несколько конечных точек сети доставки содержимого. Вы можете использовать несколько профилей для Организации конечных точек сети доставки содержимого по домену Интернета, веб-приложению или другим критериям. 
 
 

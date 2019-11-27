@@ -280,6 +280,6 @@ ms.locfileid: "70078042"
   * [Start/Stop SAP along with your Unix Server Start/Stop](https://scn.sap.com/community/unix/blog/2012/08/07/startstop-sap-along-with-your-unix-server-startstop) (Запуск и остановка SAP одновременно с запуском и остановкой сервера UNIX)
   * [Starting and Stopping SAP NetWeaver Management Agents](https://help.sap.com/saphelp_nwpi711/helpdata/en/49/9a15525b20423ee10000000a421938/content.htm) (Запуск и остановка агентов управления SAP NetWeaver)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о высоком уровне доступности, поддерживающем приложения SAP NetWeaver, см. в статье о [высоком уровне доступности приложений SAP в Azure IaaS][sap-high-availability-architecture-scenarios-sap-app-ha].

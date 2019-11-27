@@ -1,28 +1,28 @@
 ---
-title: Администраторы управляют пользователями и устройствами. Azure MFA — Azure Active Directory
+title: Управление пользователями и устройствами Azure MFA — Azure Active Directory
 description: Как администраторы могут изменить параметры пользователя, например, заставить пользователей снова выполнять проверку.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/28/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 808faaed76ff63d69feb8170eaac72021c7bd49d
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: 5fd03ea807e48f6f0e287bb4497e4d20268995db
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73042108"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74404162"
 ---
 # <a name="manage-user-settings-with-azure-multi-factor-authentication-in-the-cloud"></a>Управление параметрами пользователей с помощью Многофакторной идентификации Azure в облаке
 
 Как администратор вы можете управлять следующими параметрами пользователей и устройств.
 
-* Параметр "Требовать у выбранных пользователей сообщать о способах связи еще раз"
+* Требовать у пользователей сообщать о способах связи еще раз.
 * Удалять пароли приложений.
 * Требовать Многофакторную идентификацию на всех доверенных устройствах.
 
@@ -55,7 +55,7 @@ ms.locfileid: "73042108"
 7. Щелкните **Сохранить**.
 8. Щелкните **Закрыть**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения см. в разделе о [сохранении данных проверки подлинности для устройств, которым доверяют пользователи](howto-mfa-mfasettings.md).
 - Если пользователям требуется помощь, попросите их ознакомиться со статьей [Что для меня означает Azure Multi-Factor Authentication](../user-help/multi-factor-authentication-end-user.md)

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание виртуальной машины Linux с помощью Azure PowerShell | Документация Майкрософт
+title: Краткое руководство. Создание виртуальной машины Linux с помощью Azure PowerShell
 description: Из этого краткого руководства вы узнаете, как с помощью Azure PowerShell создать виртуальную машину Linux.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 10/17/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 88d028f48b75238e2123d939a832e3fa70fc0056
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 1e336ad05d70341365b63d806b249740113724d3
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72300880"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74035196"
 ---
 # <a name="quickstart-create-a-linux-virtual-machine-in-azure-with-powershell"></a>Краткое руководство. Создание виртуальной машины Linux в Azure с помощью PowerShell
 

@@ -1,22 +1,18 @@
 ---
-title: Использование Azure Dev Spaces для взаимодействия с контейнерами Windows
-titleSuffix: Azure Dev Spaces
+title: Взаимодействие с контейнерами Windows
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
-author: zr-msft
-ms.author: zarhoads
 ms.date: 07/25/2019
 ms.topic: conceptual
 description: Узнайте, как запускать Azure Dev Spaces в существующем кластере с контейнерами Windows
 keywords: Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, контейнеры Windows
-ms.openlocfilehash: 90d7c8e5fc08405178ab6596b765f289b9bd716f
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 7410c0e38b84979f0977973b2d6ccf588e2b1230
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73582773"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74484004"
 ---
-# <a name="use-azure-dev-spaces-to-interact-with-windows-containers"></a>Использование Azure Dev Spaces для взаимодействия с контейнерами Windows
+# <a name="interact-with-windows-containers-using-azure-dev-spaces"></a>Взаимодействие с контейнерами Windows с помощью Azure Dev Spaces
 
 Можно включить Azure Dev Spaces как для новых, так и для существующих пространств имен Kubernetes. Azure Dev Spaces будут запускать и инструментированные службы, работающие в контейнерах Linux. Эти службы также могут взаимодействовать с приложениями, которые работают в контейнерах Windows, в одном пространстве имен. В этой статье показано, как использовать пространства разработки для запуска служб в пространстве имен с существующими контейнерами Windows.
 
@@ -64,7 +60,7 @@ git clone https://github.com/Azure/dev-spaces
 cd dev-spaces/samples/existingWindowsBackend/mywebapi-windows
 ```
 
-Пример приложения использует [Helm][helm-installed] для запуска службы Windows в кластере. Установите Helm в кластер и предоставьте ему правильные разрешения:
+Пример приложения использует [Helm 2][helm-installed] для запуска службы Windows в кластере. Установите Helm в кластер и предоставьте ему правильные разрешения:
 
 ```console
 helm init --wait
@@ -172,7 +168,7 @@ Service 'webfrontend' port 80 (http) is available via port forwarding at http://
 
 ![Пример приложения, в котором отображается версия Windows из mywebapi](../media/run-dev-spaces-windows-containers/sample-app.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах.
 
@@ -181,7 +177,7 @@ Service 'webfrontend' port 80 (http) is available via port forwarding at http://
 
 [kubectl]: https://kubernetes.io/docs/user-guide/kubectl/
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
-[helm-installed]: https://helm.sh/docs/using_helm/#installing-helm
+[helm-installed]: https://v2.helm.sh/docs/using_helm/#installing-helm
 [sample-application]: https://github.com/Azure/dev-spaces/tree/master/samples/existingWindowsBackend
 [sample-application-toleration-example]: https://github.com/Azure/dev-spaces/blob/master/samples/existingWindowsBackend/mywebapi-windows/charts/templates/deployment.yaml#L24-L27
 [team-development-qs]: ../quickstart-team-development.md

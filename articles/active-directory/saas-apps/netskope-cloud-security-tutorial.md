@@ -1,6 +1,6 @@
 ---
-title: Руководство по интеграции единого входа Azure Active Directory с Netskope Cloud Security | Документация Майкрософт
-description: Узнайте, как настроить единый вход Azure Active Directory в Netskope Cloud Security.
+title: Руководство по интеграции единого входа Azure Active Directory с консолью администрирования Netskope Administrator Console | Документация Майкрософт
+description: Узнайте, как настроить единый вход между Azure Active Directory и консолью администрирования Netskope Administrator Console.
 services: active-directory
 documentationCenter: na
 author: jeevansd
@@ -13,22 +13,22 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 10/18/2019
+ms.date: 10/31/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 853c186155fe5cff3dcf2907246920a43048f65d
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: dec8f8065114b89dfa7bcaceee3f26855953dde2
+ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72599767"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74081789"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-netskope-cloud-security"></a>Руководство по интеграции единого входа Azure Active Directory с Netskope Cloud Security
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-netskope-administrator-console"></a>Руководство по интеграции единого входа Azure Active Directory с консолью администрирования Netskope Administrator Console
 
-В этом учебнике описано, как интегрировать Netskope Cloud Security с Azure Active Directory (Azure AD). Интеграция Netskope Cloud Security с Azure AD обеспечивает следующие возможности:
+В этом учебнике описано, как интегрировать консоль администрирования Netskope Administrator Console с Azure Active Directory (Azure AD). Интеграция консоли администрирования Netskope Administrator Console с Azure AD обеспечивает следующие возможности:
 
-* С помощью Azure AD вы можете контролировать доступ к Netskope Cloud Security.
-* Вы можете включить автоматический вход пользователей в Netskope Cloud Security с помощью учетных записей Azure AD.
+* Контроль доступа к консоли администрирования Netskope Administrator Console с помощью Azure AD.
+* Включение автоматического входа пользователей в консоль администрирования Netskope Administrator Console с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
@@ -38,43 +38,43 @@ ms.locfileid: "72599767"
 Чтобы приступить к работе, потребуется следующее:
 
 * подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Подписка с поддержкой единого входа на Netskope Cloud Security.
+* Подписка консоли администрирования Netskope Administrator Console с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* Netskope Cloud Security поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
+* Консоль администрирования Netskope Administrator Console поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**
 
-## <a name="adding-netskope-cloud-security-from-the-gallery"></a>Добавление Netskope Cloud Security из коллекции
+## <a name="adding-netskope-administrator-console-from-the-gallery"></a>Добавление консоли администрирования Netskope Administrator Console из коллекции
 
-Чтобы настроить интеграцию Netskope Cloud Security с Azure AD, нужно добавить Netskope Cloud Security из коллекции в список управляемых приложений SaaS.
+Чтобы настроить интеграцию консоли администрирования Netskope Administrator Console с Azure AD, нужно добавить консоль администрирования Netskope Administrator Console из коллекции в список управляемых приложений SaaS.
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 1. В области навигации слева выберите службу **Azure Active Directory**.
 1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 1. Чтобы добавить новое приложение, выберите **Новое приложение**.
-1. В разделе **Добавление из коллекции** в поле поиска введите **Netskope Cloud Security**.
-1. Выберите **Netskope Cloud Security** на панели результатов, а затем добавьте приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
+1. В разделе **Добавление из коллекции** в поле поиска введите **Netskope Administrator Console**.
+1. Выберите **Netskope Administrator Console** на панели результатов, а затем добавьте приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-netskope-cloud-security"></a>Настройка и проверка единого входа Azure AD для Netskope Cloud Security
+## <a name="configure-and-test-azure-ad-single-sign-on-for-netskope-administrator-console"></a>Настройка и проверка единого входа Azure AD для консоли администрирования Netskope Administrator Console
 
-Настройте и проверьте единый вход Azure AD в Netskope Cloud Security с помощью тестового пользователя **B. Simon**. Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Netskope Cloud Security.
+Настройте и проверьте единый вход Azure AD в консоли администрирования Netskope Administrator Console с помощью тестового пользователя **B. Simon**. Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в консоли администрирования Netskope Administrator Console.
 
-Чтобы настроить и проверить единый вход Azure AD в Netskope Cloud Security, выполните действия в следующих стандартных блоках.
+Чтобы настроить и проверить единый вход Azure AD в консоли администрирования Netskope Administrator Console, выполните действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
     * **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
-1. **[Настройка единого входа в Netskope Cloud Security](#configure-netskope-cloud-security-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-    * **[Создание тестового пользователя Netskope Cloud Security](#create-netskope-cloud-security-test-user)** требуется для того, чтобы в Netskope Cloud Security существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Настройка единого входа в консоль администрирования Netskope Administrator Console](#configure-netskope-administrator-console-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    * **[Создание тестового пользователя консоли администрирования Netskope Administrator Console](#create-netskope-administrator-console-test-user)** требуется для того, чтобы в этой консоли существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
 1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Netskope Cloud Security** найдите раздел **Управление** и выберите **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Netskope Administrator Console** найдите раздел **Управление** и выберите **Единый вход**.
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
@@ -86,31 +86,34 @@ ms.locfileid: "72599767"
 
     б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<tenant_host_name>/saml/acs`.
 
+    > [!NOTE]
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Они объяснены далее в этом учебнике.
+
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<tenantname>.goskope.com`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов Netskope Cloud Security](mailto:support@netskope.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Значение URL-адреса для входа приведено для примера. Замените его фактическим URL-адресом для входа. Чтобы получить значение URL-адреса входа, обратитесь в [службу поддержки клиентов Netskope Administrator Console](mailto:support@netskope.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. Приложение Netskope Cloud Security ожидает проверочные утверждения SAML в определенном формате, который требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
+1. Приложение консоли администрирования Netskope Administrator Console ожидает утверждения SAML в определенном формате, который требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
     ![image](common/default-attributes.png)
 
-1. В дополнение к описанному выше приложение Netskope Cloud Security ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
+1. В дополнение к описанному выше приложение Netskope Administrator Console ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
     | ИМЯ |  Исходный атрибут|
     | ---------| --------- |
     | admin-role | user.assignedroles |
 
     > [!NOTE]
-    > Перейдите по [этой ссылке](https://docs.microsoft.com/en-gb/azure/active-directory/develop/active-directory-enterprise-app-role-management), чтобы понять, как создать роли в Azure AD.
+    > Перейдите по [этой ссылке](https://docs.microsoft.com/azure/active-directory/develop/active-directory-enterprise-app-role-management), чтобы понять, как создать роли в Azure AD.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-1. Скопируйте требуемый URL-адрес из раздела **Настройка Netskope Cloud Security**.
+1. Скопируйте требуемый URL-адрес из раздела **Настройка Netskope Administrator Console**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -128,10 +131,10 @@ ms.locfileid: "72599767"
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как включить единый вход в Azure для пользователя B. Simon, предоставив этому пользователю доступ к Netskope Cloud Security.
+В этом разделе описано, как включить единый вход Azure для пользователя B. Simon, предоставив этому пользователю доступ к Netskope Administrator Console.
 
 1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
-1. Из списка приложений выберите **Netskope Cloud Security**.
+1. Из списка приложений выберите **Netskope Administrator Console**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
@@ -144,19 +147,81 @@ ms.locfileid: "72599767"
 1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-## <a name="configure-netskope-cloud-security-sso"></a>Настройка единого входа Netskope Cloud Security
+## <a name="configure-netskope-administrator-console-sso"></a>Настройка единого входа в Netskope Administrator Console
 
-Чтобы настроить единый вход на стороне **Netskope Cloud Security**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки Netskope Cloud Security](mailto:support@netskope.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Откройте новую вкладку в браузере и войдите на корпоративный сайт Netskope Administrator Console с правами администратора.
 
-### <a name="create-netskope-cloud-security-test-user"></a>Создание тестового пользователя Netskope Cloud Security
+1. Перейдите на вкладку **Settings** (Параметры) в области навигации слева.
 
-В этом разделе описано, как создать пользователя B. Simon в приложении Netskope Cloud Security. Чтобы добавить пользователей на платформу Netskope Cloud Security, обратитесь в  [группу поддержки Netskope Cloud Security](mailto:support@netskope.com). Перед использованием единого входа необходимо создать и активировать пользователей.
+    ![Настройка Netskope Administrator Console](./media/netskope-cloud-security-tutorial/config-settings.png)
+
+1. Перейдите на вкладку **Administration** (Администрирование).
+
+    ![Настройка Netskope Administrator Console](./media/netskope-cloud-security-tutorial/config-administration.png)
+
+1. Перейдите на вкладку **SSO** (Единый вход).
+
+    ![Настройка Netskope Administrator Console](./media/netskope-cloud-security-tutorial/config-sso.png)
+
+1. В разделе **Network Settings** (Параметры сети) сделайте следующее:
+    
+    ![Настройка Netskope Administrator Console](./media/netskope-cloud-security-tutorial/config-pasteurls.png)
+
+    a. Скопируйте значение **Assertion Consumer Service URL** (URL-адрес службы обработчика утверждений) и вставьте его в поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
+
+    b. Скопируйте значение **Service Provider Entity ID** (Идентификатор сущности поставщика услуг) и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
+
+1. Нажмите кнопку **EDIT SETTINGS** (ИЗМЕНИТЬ ПАРАМЕТРЫ) в разделе **SSO/SLO Settings** (Параметры единого входа или цели уровня обслуживания).
+
+    ![Настройка Netskope Administrator Console](./media/netskope-cloud-security-tutorial/config-editsettings.png)
+
+1. Во всплывающем окне **Settings** (Параметры) выполните следующие действия:
+
+    ![Настройка Netskope Administrator Console](./media/netskope-cloud-security-tutorial/configuration.png)
+
+    a. Выберите **Enable SSO** (Включить единый вход).
+
+    b. В текстовое поле **IDP URL** (URL-АДРЕС ПОСТАВЩИКА УДОСТОВЕРЕНИЙ) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+
+    c. В текстовое поле **IDP ENTITY ID** (ИДЕНТИФИКАТОР СУЩНОСТИ ПОСТАВЩИКА УДОСТОВЕРЕНИЙ) вставьте значение **Идентификатора Azure AD**, скопированное на портале Azure.
+
+    d. Откройте скачанный сертификат в кодировке Base64 с помощью блокнота, скопируйте содержимое файла в буфер обмена, а затем вставьте его в текстовое поле **IDP CERTIFICATE** (СЕРТИФИКАТ ПОСТАВЩИКА УДОСТВОРЕНИЙ).
+
+    д. Выберите **Enable SSO** (Включить единый вход).
+
+    Е. В текстовое поле **IDP SLO URL** (URL-адрес целевого уровня обслуживания поставщика удостоверений) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
+
+    ж. Нажмите кнопку **SUBMIT** (Отправить).
+
+### <a name="create-netskope-administrator-console-test-user"></a>Создание тестового пользователя в Netskope Administrator Console
+
+1. Откройте новую вкладку в браузере и войдите на корпоративный сайт Netskope Administrator Console с правами администратора.
+
+1. Перейдите на вкладку **Settings** (Параметры) в области навигации слева.
+
+    ![Создание пользователя в Netskope Administrator Console](./media/netskope-cloud-security-tutorial/config-settings.png)
+
+1. Перейдите на вкладку **Active Platform** (Активная платформа).
+
+    ![Создание пользователя в Netskope Administrator Console](./media/netskope-cloud-security-tutorial/user1.png)
+
+1. Откройте вкладку **Пользователи**.
+
+    ![Создание пользователя в Netskope Administrator Console](./media/netskope-cloud-security-tutorial/add-user.png)
+
+1. Нажмите кнопку **ADD USERS** (ДОБАВИТЬ ПОЛЬЗОВАТЕЛЕЙ).
+
+    ![Создание пользователя в Netskope Administrator Console](./media/netskope-cloud-security-tutorial/user-add.png)
+
+1. Введите адрес электронной почты пользователя, которого требуется добавить, и нажмите кнопку **ADD** (ДОБАВИТЬ).
+
+    ![Создание пользователя в Netskope Administrator Console](./media/netskope-cloud-security-tutorial/add-user-popup.png)
 
 ## <a name="test-sso"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент Netskope Cloud Security на Панели доступа, вы автоматически войдете в приложение Netskope Cloud Security, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку Netskope Administrator Console на Панели доступа, вы автоматически войдете в приложение консоли администрирования Netskope Administrator Console, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
@@ -166,4 +231,4 @@ ms.locfileid: "72599767"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-- [Попробуйте использовать Netskope Cloud Security с Azure AD](https://aad.portal.azure.com/)
+- [Попробовать использовать консоль администрирования Netskope Administrator Console с Azure AD](https://aad.portal.azure.com/)

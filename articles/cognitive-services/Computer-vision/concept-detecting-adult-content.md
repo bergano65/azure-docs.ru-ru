@@ -35,7 +35,7 @@ ms.locfileid: "71718510"
 
 ## <a name="use-the-api"></a>Использование API
 
-Вы можете обнаружить содержимое для взрослых с помощью API [анализа изображений](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) . При добавлении значения `Adult` в параметр запроса **ВИСУАЛФЕАТУРЕС** API возвращает три логических свойства @ no__t-2 @ no__t-3, `isRacyContent` и `isGoryContent` @ no__t-6in свой ответ JSON. Метод также возвращает соответствующие свойства @ no__t-0 @ no__t-1, `racyScore`, а `goreScore` @ no__t-4which представляют показатели достоверности от нуля до одной для каждой соответствующей категории.
+Вы можете обнаружить содержимое для взрослых с помощью API [анализа изображений](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) . При добавлении значения `Adult` в параметр запроса **висуалфеатурес** API-интерфейс возвращает три логических свойства&mdash;`isAdultContent`, `isRacyContent`и `isGoryContent`в ответе JSON.&mdash; Метод также возвращает соответствующие свойства&mdash;`adultScore`, `racyScore`и `goreScore`&mdash;, которые представляют оценки достоверности от нуля до одного для каждой соответствующей категории.
 
-- [Краткое руководство Анализ изображений с помощью пакета SDK для .NET](./quickstarts-sdk/csharp-analyze-sdk.md)
-- [Краткое руководство Анализ изображений с помощью REST API](./quickstarts/csharp-analyze.md)
+- [Краткое руководство. анализ образа (пакет SDK для .NET)](./quickstarts-sdk/csharp-analyze-sdk.md)
+- [Краткое руководство. Анализ изображения (REST API)](./quickstarts/csharp-analyze.md)

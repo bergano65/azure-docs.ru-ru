@@ -3,12 +3,12 @@ title: Определение причин несоответствия треб
 description: Если ресурс не соответствует требованиям, существует множество возможных причин. Узнайте, что привело к несоответствию.
 ms.date: 04/26/2019
 ms.topic: conceptual
-ms.openlocfilehash: 6f113080ab84fe7d159766e6543ff61b28f4ead2
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 839e6c61c4a44ba7c7581290408bb997b53b8f96
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73959617"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74279413"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Определение причин несоответствия требованиям
 
@@ -216,6 +216,6 @@ _Отличия между визуальными элементами_ позв
 - Изучите статью о [структуре определения Политики Azure](../concepts/definition-structure.md).
 - См. дополнительные сведения о [действиях политик](../concepts/effects.md).
 - Узнайте, как [программно создавать политики](programmatically-create.md).
-- Узнайте, как [получить данные о соответствии](getting-compliance-data.md).
+- Узнайте, как [получить данные о соответствии](get-compliance-data.md).
 - Узнайте, как [исправлять несоответствующие ресурсы](remediate-resources.md).
 - Дополнительные сведения о группе управления см. в статье [Упорядочивание ресурсов с помощью групп управления Azure](../../management-groups/overview.md).

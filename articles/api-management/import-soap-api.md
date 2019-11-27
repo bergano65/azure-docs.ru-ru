@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/22/2017
 ms.author: apimpm
-ms.openlocfilehash: 22b7b79426829b57f15263f7792dca6596c6641f
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 359b90cc434dad04fc0296c54fcc762f3a75062d
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70073247"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74107658"
 ---
 # <a name="import-soap-api"></a>Импорт SOAP API
 
@@ -60,7 +60,7 @@ ms.locfileid: "70073247"
     * **Unlimited**   
 10. Нажмите кнопку **Создать**.
 
-### <a name="test-the-new-apim-api-in-the-administrative-portal"></a>Проверка нового API службы управления API на портале администрирования
+### <a name="test-the-new-api-in-the-administrative-portal"></a>Проверка нового API на портале администрирования
 
 Операции можно вызывать непосредственно с портала администрирования, где предоставляется удобный способ для просмотра и проверки операций API.  
 
@@ -72,21 +72,6 @@ ms.locfileid: "70073247"
 1. Нажмите кнопку **Отправить**.
 
     Служба серверной части вернет ответ **200 — ОК** и другие данные.
-
-### <a name="call-operation"> </a>Вызов операции с портала разработчика
-
-Также операции можно вызвать через **портал разработчиков**, чтобы проверить API. 
-
-1. Выберите API, который вы создали на шаге "Импорт и публикация API серверной части".
-2. Щелкните **Портал разработчика**.
-
-    Откроется сайт портала разработчика.
-3. Выберите созданный **API**.
-4. Выберите операцию, которую необходимо проверить.
-5. Щелкните **Попробовать**.
-6. Нажмите кнопку **Отправить**.
-    
-    После вызова операции портал разработчика отображает **состояние ответа**, **заголовки ответа** и **содержимое ответа**.
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-append-apis.md)]
 

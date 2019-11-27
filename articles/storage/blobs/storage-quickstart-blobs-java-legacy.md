@@ -27,7 +27,7 @@ ms.locfileid: "73825370"
 * перечисление всех больших двоичных объектов в контейнере;
 * Удаление контейнера
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
@@ -93,7 +93,7 @@ Deleting the source, and downloaded files
 
 ## <a name="understand-the-sample-code"></a>Разбор примера кода
 
-Давайте разберем пример кода, чтобы понять, как он работает.
+Разберем пример кода, чтобы понять, как он работает.
 
 ### <a name="get-references-to-the-storage-objects"></a>Получение ссылок на объекты хранилища
 
@@ -204,7 +204,7 @@ if(sourceFile != null)
 sourceFile.deleteOnExit();
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этом кратком руководстве описано, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure с помощью Java. Чтобы узнать подробнее о работе с Java, перейдите в репозиторий исходного кода на GitHub.
 

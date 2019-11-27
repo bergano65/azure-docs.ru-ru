@@ -1,6 +1,6 @@
 ---
-title: Добавление не учетная запись Майкрософт в приложение для проверки подлинности — Azure AD
-description: Сведения о добавлении учетных записей сторонних поставщиков, таких как Google, Facebook или GitHub, в приложение Microsoft Authenticator для двухфакторной проверки подлинности.
+title: Добавление учетных записей сторонних производителей в приложение Microsoft Authenticator — Azure AD
+description: Добавьте учетные записи сторонних производителей, например для Google или Facebook, в Microsoft Authenticator приложение, чтобы проверить удостоверение при использовании двухфакторной проверки подлинности.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -12,14 +12,14 @@ ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 62d866e9bf543577887ee99173a52202fcfec632
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: c01377280c4e4c97b729e27c22496c388652924f
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73803662"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74278880"
 ---
-# <a name="add-your-non-microsoft-accounts"></a>Добавление учетных записей сторонних поставщиков
+# <a name="add-non-microsoft-accounts-to-the-microsoft-authenticator-app"></a>Добавление учетных записей сторонних производителей в приложение Microsoft Authenticator
 
 Сведения о добавлении учетных записей сторонних поставщиков, таких как Google, Facebook или GitHub, в приложение Microsoft Authenticator для двухфакторной проверки подлинности. Приложение Microsoft Authenticator работает с любым приложением, использующим двухфакторную проверку подлинности, и с любой учетной записью, поддерживающей стандарты одноразовых паролей с ограниченным сроком действия (TOTP).
 
@@ -194,7 +194,7 @@ ms.locfileid: "73803662"
     >[!NOTE]
     >Дополнительные сведения о двухфакторной проверке подлинности и учетной записи Amazon см. в статьях [About Two-Step Verification](https://www.amazon.com/gp/help/customer/display.html?nodeId=201596330) (О двухфакторной проверке подлинности) и [Signing in with Two-Step Verification](https://www.amazon.com/gp/help/customer/display.html?nodeId=201962440) (Вход с использованием двухфакторной проверки подлинности).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Добавив учетные записи в приложение, вы можете использовать их для входа с помощью приложения Authenticator на мобильном устройстве. Дополнительные сведения см. в статье [Вход с использованием телефона вместо ввода пароля](user-help-auth-app-sign-in.md).
 

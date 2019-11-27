@@ -1,5 +1,5 @@
 ---
-title: How to use Batch Transcription - Speech Service
+title: Как использовать транскрипции пакетной службы — речь
 titleSuffix: Azure Cognitive Services
 description: Пакетное транскрибирование идеально подходит, если вам нужно расшифровать большой объем аудиоматериала в хранилище, например в хранилище BLOB-объектов Azure. Используя выделенный REST API, вы можете указывать аудиофайлы с помощью URI подписанного URL-адреса (SAS) и асинхронно получать транскрипции.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: panosper
-ms.openlocfilehash: 5418b378c2c3cff09dbccbaa7b7240c61bbb583e
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 158a99b1691e59fa58207f3c9291ca9d37a6679c
+ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74221531"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74538114"
 ---
 # <a name="why-use-batch-transcription"></a>Преимущества пакетного транскрибирования
 
@@ -82,31 +82,25 @@ API пакетного транскрибирования разделяет л�
 
 ### <a name="configuration-properties"></a>Свойства конфигурации
 
-Use these optional properties to configure transcription:
+Используйте эти необязательные свойства для настройки транскрипции:
 
 | Параметр | Описание |
 |-----------|-------------|
 | `ProfanityFilterMode` | Указывает, как обрабатывать ненормативную лексику в результатах распознавания. Допустимые значения: `None` — отключает фильтрацию ненормативной лексики, `masked` — заменяет ненормативную лексику звездочками, `removed` — удаляет всю ненормативную лексику из результата, `tags` — добавляет теги, указывающие на ненормативную лексику. Значение по умолчанию — `masked`. |
 | `PunctuationMode` | Указывает, как обрабатывать знаки препинания в результатах распознавания. Допустимые значения: `None` — отключает знаки препинания, `dictated` — обозначает явные знаки препинания, `automatic` — передает знаки препинания для определения декодеру, `dictatedandautomatic` — определяет продиктованные знаки препинания или передает их декодеру. |
  | `AddWordLevelTimestamps` | Указывает, следует ли добавлять к выводимым данным метки времени на уровне слова. Допустимые значения: `true` — включает метки времени на уровне слова, `false` — (значение по умолчанию) отключает их. |
- | `AddSentiment` | Specifies sentiment should be added to the utterance. Accepted values are `true` which enables sentiment per utterance and `false` (the default value) to disable it. |
- | `AddDiarization` | Specifies that diarization analysis should be carried out on the input which is expected to be mono channel containing two voices. Accepted values are `true` which enables diarization and `false` (the default value) to disable it. It also requires `AddWordLevelTimestamps` to be set to true.|
+ | `AddSentiment` | Указывает, что тональности должен быть добавлен в utterance. Допустимые значения: `true`, которые позволяют тональности на utterance и `false` (значение по умолчанию), чтобы отключить его. |
+ | `AddDiarization` | Указывает, что необходимо выполнить анализ диаризатион на входе, который должен быть каналом Mono, содержащим два голоса. Допустимые значения: `true`, которые позволяют диаризатион и `false` (значение по умолчанию) отключить его. Также требуется, чтобы `AddWordLevelTimestamps` было установлено значение true.|
 
 ### <a name="storage"></a>Storage
 
-Batch transcription supports [Azure Blob storage](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview) for reading audio and writing transcriptions to storage.
+Транскрипция пакетов поддерживает [хранилище BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview) для чтения звука и записи записанных данных в хранилище.
 
-## <a name="webhooks"></a>Веб-перехватчики
+## <a name="speaker-separation-diarization"></a>Разделение докладчика (Диаризатион)
 
-Polling for transcription status may not be the most performant, or provide the best user experience. To poll for status, you can register callbacks, which will notify the client when long-running transcription tasks have completed.
+Диаризатион — это процесс отделения динамиков от звука. Наш пакетный конвейер поддерживает Диаризатион и способен распознать два динамика в записях каналов Mono.
 
-For more details, see [Webhooks](webhooks.md).
-
-## <a name="speaker-separation-diarization"></a>Speaker Separation (Diarization)
-
-Diarization is the process of separating speakers in a piece of audio. Our Batch pipeline supports Diarization and is capable of recognizing two speakers on mono channel recordings.
-
-To request that your audio transcription request is processed for diarization, you simply have to add the relevant parameter in the HTTP request as shown below.
+Чтобы запросить обработку запроса на расшифровку звука для диаризатион, необходимо просто добавить соответствующий параметр в HTTP-запросе, как показано ниже.
 
  ```json
 {
@@ -122,30 +116,30 @@ To request that your audio transcription request is processed for diarization, y
 }
 ```
 
-Word level timestamps would also have to be 'turned on' as the parameters in the above request indicate.
+Метки времени уровня Word также должны быть включены в качестве параметров в приведенном выше запросе. 
 
-The corresponding audio will contain the speakers identified by a number (currently we support only two voices, so the speakers will be identified as 'Speaker 1 'and 'Speaker 2') followed by the transcription output.
+Соответствующий звук будет содержать динамики, обозначенные числом (в настоящее время поддерживаются только два голоса, поэтому динамики будут идентифицированы как "динамика 1" и "динамик 2"), а затем выводятся выходные данные для расшифровки.
 
-Also note that Diarization is not available in Stereo recordings. Furthermore, all JSON output will contain the Speaker tag. If diarization is not used, it will show 'Speaker: Null' in the JSON output.
+Также обратите внимание, что Диаризатион недоступен в стерео-записях. Кроме того, все выходные данные JSON будут содержать тег динамика. Если диаризатион не используется, в выходных данных JSON отобразится значение "динамика: null".
 
 > [!NOTE]
-> Diarization is available in all regions and for all locales!
+> Диаризатион доступен во всех регионах и для всех языков.
 
 ## <a name="sentiment"></a>Мнение
 
-Sentiment is a new feature in Batch Transcription API and is an important feature in the call center domain. Customers can use the `AddSentiment` parameters to their requests to
+Тональности — это новая функция в API-интерфейсе для записи пакетов, которая является важной функцией в домене центра обработки вызовов. Клиенты могут использовать параметры `AddSentiment` для их запросов к
 
-1.  Get insights on customer satisfaction
-2.  Get insight on the performance of the agents (team taking the calls)
-3.  Pinpoint the exact point in time when a call took a turn in a negative direction
-4.  Pinpoint what went well when turning negative calls to positive
-5.  Identify what customers like and what they dislike about a product or a service
+1.  Получение ценной информации о удовлетворенности клиентов
+2.  Получение сведений о производительности агентов (команда, принимающая вызовы)
+3.  Точное определение точного момента времени, когда вызов потребовался в отрицательном направлении
+4.  Точное определение того, что хорошо при отключении отрицательных вызовов
+5.  Указание клиентов и их отличий о продукте или службе
 
-Sentiment is scored per audio segment where an audio segment is defined as the time lapse between the start of the utterance (offset) and the detection silence of end of byte stream. The entire text within that segment is used to calculate sentiment. We DO NOT calculate any aggregate sentiment values for the entire call or the entire speech of each channel. These aggregations are left to the domain owner to further apply.
+Тональности оценивается на каждом сегменте звука, где сегмент звука определен в качестве промежутка времени между началом utterance (смещение) и обнаружением конца байтового потока. Весь текст внутри этого сегмента используется для вычисления тональности. Мы не вычисляем статистические значения тональности для всего вызова или всех речевых функций каждого канала. Эти агрегаты оставлены владельцу домена для дальнейшего применения.
 
-Sentiment is applied on the lexical form.
+Тональности применяется к лексической форме.
 
-A JSON output sample looks like below:
+Пример выходных данных JSON выглядит следующим образом:
 
 ```json
 {
@@ -180,17 +174,17 @@ A JSON output sample looks like below:
   ]
 }
 ```
-The feature uses a Sentiment model, which is currently in Beta.
+Эта функция использует модель тональности, которая в настоящее время находится в бета-версии.
 
 ## <a name="sample-code"></a>Пример кода
 
-Complete samples are available in the [GitHub sample repository](https://aka.ms/csspeech/samples) inside the `samples/batch` subdirectory.
+Полные примеры доступны в [репозитории примера GitHub](https://aka.ms/csspeech/samples) внутри подкаталога `samples/batch`.
 
 Чтобы использовать настраиваемую акустическую или языковую модель, необходимо добавить в пример кода сведения о подписке, регион службы, URI SAS с указанием на аудиофайл для транскрибирования и идентификаторы моделей.
 
 [!code-csharp[Configuration variables for batch transcription](~/samples-cognitive-services-speech-sdk/samples/batch/csharp/program.cs#batchdefinition)]
 
-Пример кода настроит клиент и отправит запрос на транскрибирование. Затем он запросит информацию о состоянии и выведет сведения о ходе выполнения транскрибирования.
+Пример кода настроит клиент и отправит запрос на расшифровку. Затем он запросит информацию о состоянии и выведет сведения о ходе выполнения транскрибирования.
 
 [!code-csharp[Code to check batch transcription status](~/samples-cognitive-services-speech-sdk/samples/batch/csharp/program.cs#batchstatus)]
 

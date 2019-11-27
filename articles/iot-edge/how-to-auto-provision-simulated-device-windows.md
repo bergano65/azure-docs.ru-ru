@@ -8,13 +8,12 @@ ms.date: 01/09/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.custom: seodec18
-ms.openlocfilehash: 5842d6fcb5f03754fc8f5922e299d0d9c30d21db
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: ad92d4cf0d5b61c778b87114d4be6c23557f8e26
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900836"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74457136"
 ---
 # <a name="create-and-provision-a-simulated-iot-edge-device-with-a-virtual-tpm-on-windows"></a>Создание и инициализация имитации устройства IoT Edge с помощью виртуального доверенного платформенного модуля в Windows
 
@@ -35,7 +34,7 @@ ms.locfileid: "72900836"
 > [!TIP]
 > В этой статье описывается тестирование автоматической подготовки с помощью аттестации TPM на виртуальных устройствах, но многие из них применяются и при использовании физического аппаратного обеспечения TPM.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 * Компьютер для разработки Windows. В этой статье используется Windows 10.
 * Действующий Центр Интернета вещей.
@@ -129,6 +128,6 @@ Get-Service iotedge
 iotedge list
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Процесс регистрации Службы подготовки устройств к добавлению в Центр Интернета вещей позволяет задать идентификатор устройства и теги двойников устройств параллельно с подготовкой нового устройства. Эти значения можно использовать для указания отдельных устройств или групп устройств с помощью автоматического управления устройствами. См. дополнительные сведения о развертывании и мониторинге модулей IoT Edge с поддержкой масштабирования с помощью [портала Azure](how-to-deploy-monitor.md) или [Azure CLI](how-to-deploy-monitor-cli.md).

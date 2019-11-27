@@ -1,46 +1,40 @@
 ---
-title: Использование REST API Azure Blockchain Workbench
-description: Scenarios for how to use the Azure Blockchain Workbench Preview REST API
-services: azure-blockchain
-keywords: ''
-author: PatAltimore
-ms.author: patricka
+title: Использование интерфейсов API службы Azure Блокчейн Workbench
+description: Сценарии использования предварительной версии Azure Блокчейн Workbench REST API
 ms.date: 10/14/2019
 ms.topic: article
-ms.service: azure-blockchain
-ms.reviewer: zeyadr
-manager: femila
-ms.openlocfilehash: 457c09aa2b235f30bd1f995c90429bdf9acb85ba
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.reviewer: brendal
+ms.openlocfilehash: 188bbb9a9f6d289a7950ff74596352dff36e79f2
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74222295"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74324204"
 ---
-# <a name="using-the-azure-blockchain-workbench-preview-rest-api"></a>Using the Azure Blockchain Workbench Preview REST API
+# <a name="using-the-azure-blockchain-workbench-preview-rest-api"></a>Использование предварительной версии Azure Блокчейн Workbench REST API
 
-Azure Blockchain Workbench Preview REST API provides developers and information workers a way to build rich integrations to blockchain applications. В этом документе рассматриваются несколько основных методов REST API Workbench. Например, предположим, что разработчику необходимо создать пользовательский клиент на базе блокчейна. Этот клиент на базе блокчейна разрешает зарегистрированным пользователям просматривать назначенные блокчейн-приложения и взаимодействовать с ними. Клиент позволяет пользователям просматривать экземпляры контрактов и выполнять действия со смарт-контрактами. Клиент использует REST API Workbench в контексте зарегистрированного пользователя для выполнения таких действий:
+Azure Блокчейн Workbench Preview REST API предоставляет разработчикам и информационным работникам способ создания богатой интеграции с приложениями блокчейн. В этом документе рассматриваются несколько основных методов REST API Workbench. Например, предположим, что разработчику необходимо создать пользовательский клиент на базе блокчейна. Этот клиент на базе блокчейна разрешает зарегистрированным пользователям просматривать назначенные блокчейн-приложения и взаимодействовать с ними. Клиент позволяет пользователям просматривать экземпляры контрактов и выполнять действия со смарт-контрактами. Клиент использует REST API Workbench в контексте зарегистрированного пользователя для выполнения таких действий:
 
 * Список приложений
-* Вывести список рабочих процессов для приложения.
+* Получение списка рабочих процессов для приложения
 * Вывести список экземпляров смарт-контракта для рабочего процесса.
-* Получение списка доступных действий для контракта
-* Выполнить действия для контракта.
+* Вывести список доступных действий для контракта.
+* Выполнение действия для контракта
 
 Примеры блокчейн-приложений, используемых в этих сценариях, можно [скачать с портала GitHub](https://github.com/Azure-Samples/blockchain).
 
-## <a name="blockchain-workbench-api-endpoint"></a>Blockchain Workbench API endpoint
+## <a name="blockchain-workbench-api-endpoint"></a>Конечная точка API блокчейн Workbench
 
-Blockchain Workbench APIs are accessed through an endpoint for your deployment. To get the API endpoint URL for your deployment:
+Доступ к API-интерфейсам блокчейн Workbench осуществляется через конечную точку развертывания. Чтобы получить URL-адрес конечной точки API для развертывания, выполните следующие действия.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-1. In the left-hand navigation pane, select **Resource groups**.
-1. Choose the resource group name your deployed Blockchain Workbench.
+1. В области навигации слева выберите **группы ресурсов**.
+1. Выберите имя группы ресурсов, в которой развернута Блокчейн Workbench.
 1. Щелкните заголовок столбца **Тип**, чтобы отсортировать список в алфавитном порядке.
-1. Существует два ресурса с типом **Служба приложений**. Select the resource of type **App Service** *with* the "-api" suffix.
-1. In the App Service **Overview**, copy the **URL** value, which represents the API endpoint URL to your deployed Blockchain Workbench.
+1. Существует два ресурса с типом **Служба приложений**. Выберите ресурс типа **служба приложений** *с* суффиксом-API.
+1. В разделе **Обзор**службы приложений скопируйте значение **URL-адреса** , которое представляет URL-адрес конечной точки API для развернутого блокчейн Workbench.
 
-    ![App service API endpoint URL](media/use-api/app-service-api.png)
+    ![URL-адрес конечной точки API службы приложений](media/use-api/app-service-api.png)
 
 ## <a name="list-applications"></a>Список приложений
 
@@ -88,7 +82,7 @@ Content-type: application/json
 }
 ```
 
-## <a name="list-workflows-for-an-application"></a>Вывести список рабочих процессов для приложения.
+## <a name="list-workflows-for-an-application"></a>Получение списка рабочих процессов для приложения
 
 Когда пользователь выбирает применимое приложение на базе блокчейна (такое как **Asset Transfer**), клиент на базе блокчейна извлекает все рабочие процессы конкретного приложения. Затем пользователи могут выбрать применимый рабочий процесс, прежде чем отобразятся все экземпляры смарт-контракта для рабочего процесса. Для каждого приложения на базе блокчейна доступен один или несколько рабочих процессов, и для каждого рабочего процесса могут быть доступны экземпляры смарт-контракта. Для клиентского приложения на базе блокчейна, у которого есть только один рабочий процесс, мы рекомендуем пропустить поток взаимодействия с пользователем, позволяющий пользователям выбрать соответствующий рабочий процесс. В этом случае для **Asset Transfer** доступен только один рабочий процесс, также называемый **Asset Transfer**.
 
@@ -219,7 +213,7 @@ Content-type: application/json
 }
 ```
 
-## <a name="list-available-actions-for-a-contract"></a>Получение списка доступных действий для контракта
+## <a name="list-available-actions-for-a-contract"></a>Вывести список доступных действий для контракта.
 
 Если пользователь решает изучить контракт, клиент на базе блокчейна может показать доступные пользователю действия, учитывая состояние контракта. В этом примере пользователь просматривает все доступные действия для созданного смарт-контракта.
 
@@ -286,7 +280,7 @@ Content-type: application/json
 }
 ```
 
-## <a name="execute-an-action-for-a-contract"></a>Выполнить действия для контракта.
+## <a name="execute-an-action-for-a-contract"></a>Выполнение действия для контракта
 
 Затем пользователь может предпринять действия для указанного экземпляра смарт-контракта. В этом случае рассмотрим сценарий, в котором пользователь хочет изменить описание и цену ресурса на следующие значения:
 
@@ -320,7 +314,7 @@ HTTP/1.1 200 OK
 Content-type: application/json
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Azure Blockchain Workbench REST API](https://docs.microsoft.com/rest/api/azure-blockchain-workbench) (REST API Azure Blockchain Workbench)

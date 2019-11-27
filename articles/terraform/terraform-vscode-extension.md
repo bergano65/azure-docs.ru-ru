@@ -1,29 +1,26 @@
 ---
-title: Установка и использование расширения Visual Studio Code для Azure Terraform
+title: Руководство. Настройка расширения Visual Studio Code для Azure Terraform
 description: Сведения о том, как установить и использовать расширение Azure Terraform в Visual Studio Code.
-services: terraform
-ms.service: azure
-keywords: terraform, azure, devops, visual studio code, extension
+ms.service: terraform
 author: tomarchermsft
-manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 09/20/2019
-ms.openlocfilehash: 7dd87f38ca5dfb1c2fdd38b56b314e0cbbe3ce12
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.date: 10/26/2019
+ms.openlocfilehash: 93ec85a2e37350ef56ff8c2e1a0ea16bb3be355e
+ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71169929"
+ms.lasthandoff: 10/27/2019
+ms.locfileid: "72969304"
 ---
-# <a name="install-and-use-the-azure-terraform-visual-studio-code-extension"></a>Установка и использование расширения Visual Studio Code для Azure Terraform
+# <a name="tutorial-configure-the-azure-terraform-visual-studio-code-extension"></a>Руководство по Настройка расширения Visual Studio Code для Azure Terraform
 
-Расширение Microsoft Azure Terraform для Visual Studio Code повышает производительность разработчиков при создании, тестировании и использовании Terraform в Azure. Это расширение реализует поддержку команд Terraform, визуализацию графиков ресурсов и интеграцию с Azure Cloud Shell из Visual Studio Code.
+Расширение Visual Studio Code для Azure Terraform позволяет работать с Terraform в редакторе. С помощью этого расширения можно создавать, тестировать и выполнять конфигурации Terraform. Это расширение также поддерживает визуализацию графа ресурсов.
 
 В этой статье раскрываются следующие темы:
 > [!div class="checklist"]
-> * использование Terraform для автоматизации и упрощения подготовки служб Azure;
-> * установка и использование расширения Visual Studio Code Microsoft Terraform для служб Azure;
+> * автоматизация подготовки служб Azure с помощью Terraform;
+> * установка и использование расширения Visual Studio Code Terraform для служб Azure;
 > * использование Visual Studio Code для разработки, проектирования и выполнения планов Terraform.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -144,7 +141,7 @@ ms.locfileid: "71169929"
 
     ![Запрос на открытие Cloud Shell](media/terraform-vscode-extension/tf-do-you-want-to-open-cloud-shell.png)
 
-1. При первом запуске Cloud Shell из новой папки вам будет предложено настроить веб-приложение. Щелкните **Open**(Открыть).
+1. При первом запуске Cloud Shell из новой папки вам будет предложено создать веб-приложение. Щелкните **Open**(Открыть).
 
     ![Первый запуск Cloud Shell](media/terraform-vscode-extension/tf-first-launch-of-cloud-shell.png)
 
@@ -287,7 +284,7 @@ ms.locfileid: "71169929"
 
 ![Результаты теста Lint](media/terraform-vscode-extension/tf-lint-test-results.png)
 
-### <a name="module-test-end-to-end"></a>Тестирование модуля: *end-to-end*
+### <a name="test-the-module"></a>Тестирование модуля
 
 1. В строке меню выберите **Просмотр > Палитра команд > Azure Terraform: execute test**.
 
@@ -304,7 +301,7 @@ ms.locfileid: "71169929"
 
 Через некоторое время вы увидите на панели терминала список, который выглядит примерно так:
 
-![Результаты сквозной проверки](media/terraform-vscode-extension/tf-end-to-end-test-results.png)
+![Результаты проверки](media/terraform-vscode-extension/tf-end-to-end-test-results.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"]

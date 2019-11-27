@@ -8,16 +8,16 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 26f6c651b78099eff80b6af57d2047cc8696f4c2
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: f35fcc2604866c2ff5a330b65ae844be0eed9476
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112205"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74422391"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Новые возможности Azure Когнитивный поиск
 
-Узнайте о новых возможностях службы. Создайте закладку для этой страницы, чтобы получать последние сведения об обновлениях службы.
+Узнайте о новых возможностях службы. Добавьте на эту страницу закладку, чтобы иметь актуальную версию службы.
 
 <a name="new-service-name"></a>
 
@@ -31,7 +31,7 @@ ms.locfileid: "74112205"
 
 4 ноября 2019-Ignite Конференция
 
-+ [Добавочное индексирование (Предварительная версия)](cognitive-search-incremental-indexing-conceptual.md) позволяет обрабатывать или повторно обрабатывать только те шаги, которые абсолютно необходимы при внесении изменений в конвейер обогащения. Это особенно полезно при наличии ранее проанализированного содержимого. Выходные данные дорогостоящего анализа хранятся, а затем используются в качестве базиса для дополнительного индексирования или дополнения.
++ [Добавочное индексирование (Предварительная версия)](cognitive-search-incremental-indexing-conceptual.md) позволяет выбрать, какие шаги следует обработать при внесении изменений в конвейер обогащения. Добавочное индексирование полезно при наличии ранее проанализированного содержимого. Выходные данные дорогостоящего анализа хранятся, а затем используются в качестве базиса для дополнительного индексирования или дополнения.
 
 <!-- 
 + Custom Entity Lookup is a cognitive skill used during indexing that allows you to provide a list of custom entities (such as part numbers, diseases, or names of locations you care about) that should be found within the text. It supports fuzzy matching, case-insensitive matching, and entity synonyms. -->
@@ -43,6 +43,10 @@ ms.locfileid: "74112205"
 + [Шаблоны Power BI](https://github.com/Azure-Samples/cognitive-search-templates/blob/master/README.md) могут быстро приступить к визуализациям и анализу расширенного содержимого в хранилище знаний в Power BI Desktop. Этот шаблон предназначен для проектов таблиц Azure, созданных с помощью [мастера импорта данных](knowledge-store-create-portal.md).
 
 + [Azure Data Lake Storage 2-го поколения (Предварительная версия)](search-howto-index-azure-data-lake-storage.md), [Cosmos DB API Gremlin (Предварительная](search-howto-index-cosmosdb.md)версия) и [Cosmos DB API Cassandra (Предварительная версия)](search-howto-index-cosmosdb.md) теперь поддерживаются в индексаторах. Вы можете зарегистрироваться, используя [эту форму](https://aka.ms/azure-cognitive-search/indexer-preview). После того как вы примете предварительную версию программы, вы получите сообщение электронной почты с подтверждением.
+
+24 2019 июля
+
++ Общедоступно в [облаке Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/documentation-government-services-webandmobile.md#azure-cognitive-search).
 
 ## <a name="service-updates"></a>Обновления службы
 

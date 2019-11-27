@@ -1,20 +1,15 @@
 ---
-title: Группы контейнеров в службе "Экземпляры контейнеров Azure"
+title: Общие сведения о группах контейнеров
 description: Сведения о группах контейнеров в службе "экземпляры контейнеров Azure", коллекции экземпляров, которые совместно используют жизненный цикл и ресурсы, такие как хранилище и сеть.
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: article
 ms.date: 11/01/2019
-ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: ef6745e18a0df3ee0a572f106d1507d0fca32ac2
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 9fbf9fea7da0896ee6c0e248d18e18d52798fbd7
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74150204"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74482105"
 ---
 # <a name="container-groups-in-azure-container-instances"></a>Группы контейнеров в службе "Экземпляры контейнеров Azure"
 
@@ -37,7 +32,7 @@ ms.locfileid: "74150204"
 * Включает два общих файловых ресурса Azure в качестве подключенных томов. При этом к каждому контейнеру локально подключен один из общих ресурсов.
 
 > [!NOTE]
-> В настоящее время группы с несколькими контейнерами поддерживают только контейнеры Linux. Для контейнеров Windows служба "экземпляры контейнеров Azure" поддерживает только развертывание одного экземпляра. Пока мы работаем над переносом всех компонентов в контейнеры Windows, в [обзоре](container-instances-overview.md#linux-and-windows-containers) службы можно найти различия в текущих платформах.
+> В настоящее время группы с несколькими контейнерами поддерживают только контейнеры Linux. Для контейнеров Windows служба "экземпляры контейнеров Azure" поддерживает только развертывание одного экземпляра. Пока мы работаем над переносом всех компонентов в контейнеры Windows, в [обзоре](container-instances-overview.md#linux-and-windows-containers)службы можно найти различия в текущих платформах.
 
 ## <a name="deployment"></a>Развертывание
 

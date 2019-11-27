@@ -49,6 +49,8 @@
           href: routing-coverage.md
         - name: Наличие информации о мобильности
           href: mobility-coverage.md
+        - name: Наличие информации о погоде
+          href: weather-coverage.md
     - name: Поддержка локализации
       href: supported-languages.md
     - name: Поддерживаемые стили карт
@@ -57,6 +59,8 @@
       href: zoom-levels-and-tile-grid.md
     - name: Структура данных Службы мобильности
       href: mobility-service-data-structure.md
+    - name: Основные понятия службы погоды
+      href: weather-services-concepts.md
 - name: Руководства
   items:
     - name: Управление учетными записями службы Maps
@@ -123,7 +127,7 @@
               href: map-add-custom-html.md
             - name: Отображение трафика
               href: map-show-traffic.md
-            - name: Взаимодействие с событиями мыши
+            - name: Реагирование на события
               href: map-events.md
             - name: Добавление специальных возможностей в приложение
               href: map-accessibility.md
@@ -185,6 +189,8 @@
           href: 'https://docs.microsoft.com/rest/api/maps/mobility'
         - name: Служба отрисовки
           href: 'https://docs.microsoft.com/rest/api/maps/render'
+        - name: Служба отрисовки версии 2
+          href: 'https://docs.microsoft.com/rest/api/maps/renderv2'
         - name: Служба построения маршрутов
           href: 'https://docs.microsoft.com/rest/api/maps/route'
         - name: Служба поиска
@@ -195,6 +201,8 @@
           href: 'https://docs.microsoft.com/rest/api/maps/timezone'
         - name: Служба отслеживания дорожного движения
           href: 'https://docs.microsoft.com/rest/api/maps/traffic'
+        - name: Служба погоды
+          href: 'https://docs.microsoft.com/rest/api/maps/weather'
         - name: Управление учетными записями службы Maps
           href: 'https://docs.microsoft.com/rest/api/maps-management'
     - name: JavaScript

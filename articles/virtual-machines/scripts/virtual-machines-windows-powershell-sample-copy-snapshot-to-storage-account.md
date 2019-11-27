@@ -1,5 +1,5 @@
 ---
-title: Пример сценария Azure PowerShell. Экспорт или копирование моментального снимка в виде VHD в учетную запись хранения в другом регионе | Документация Майкрософт
+title: Пример скрипта Azure PowerShell для экспорта или копирования моментального снимка в виде VHD в учетную запись хранения в другом регионе
 description: Пример сценария Azure PowerShell для экспорта или копирования моментального снимка в виде VHD в учетную запись хранения в другом регионе.
 services: virtual-machines-windows
 documentationcenter: storage
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 06/05/2017
 ms.author: ramankum
-ms.openlocfilehash: 73aab0c94dc126ceb8bdce9a7d32bca6587aaa8d
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 5041261943ef8ff5c0ae64f45ea9008a538dae36
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73748729"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74039771"
 ---
 # <a name="exportcopy-managed-snapshots-as-vhd-to-a-storage-account-in-different-region-with-powershell"></a>Экспорт или копирование управляемых моментальных снимков в виде VHD в учетную запись хранения в другом регионе с помощью PowerShell
 

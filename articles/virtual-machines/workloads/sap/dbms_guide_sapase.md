@@ -22,7 +22,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 08/28/2019
 ms.locfileid: "70101322"
 ---
-# <a name="sap-ase-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Развертывание СУБД на Виртуальных машинах Azure в SAP ASE для рабочей нагрузки SAP
+# <a name="sap-ase-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Развертывание СУБД на виртуальных машинах Azure в SAP ASE для рабочей нагрузки SAP
 
 [767598]:https://launchpad.support.sap.com/#/notes/767598
 [773830]: https://launchpad.support.sap.com/#/notes/773830
@@ -378,9 +378,9 @@ SAP в настоящее время поддерживает версию SAP A
 
 Ссылки, создаваемые в DBACockpit для транзакции, выглядят так:
 
-> HTTPS:\//фулликуалифиедхостнаме>:44300/SAP/BC/Webdynpro\</SAP/dba_cockpit
+> HTTPS:\//\<фулликуалифиедхостнаме >: 44300/SAP/BC/Webdynpro/SAP/dba_cockpit
 > 
-> http:\//фулликуалифиедхостнаме>:8000/SAP/BC/Webdynpro\</SAP/dba_cockpit
+> http:\//\<фулликуалифиедхостнаме >: 8000/SAP/BC/Webdynpro/SAP/dba_cockpit
 > 
 > 
 
@@ -396,9 +396,9 @@ SAP в настоящее время поддерживает версию SAP A
 
 Если для параметра профиля SAP icm/host_name_full задать DNS-имя виртуальной машины Azure, ссылка может выглядеть так:
 
-> HTTPS:\//mydomainlabel.westeurope.cloudapp.NET:44300/SAP/BC/Webdynpro/SAP/dba_cockpit
+> HTTPS:\//mydomainlabel.westeurope.cloudapp.net:44300/sap/bc/webdynpro/sap/dba_cockpit
 > 
-> http:\//mydomainlabel.westeurope.cloudapp.NET:8000/SAP/BC/Webdynpro/SAP/dba_cockpit
+> http:\//mydomainlabel.westeurope.cloudapp.net:8000/sap/bc/webdynpro/sap/dba_cockpit
 
 В таком случае необходимо:
 
@@ -531,9 +531,9 @@ SAP в настоящее время поддерживает версию SAP A
 
 Ссылки, создаваемые в DBACockpit для транзакции, будут выглядеть примерно так:
 
-> HTTPS:\//фулликуалифиедхостнаме>:44300/SAP/BC/Webdynpro\</SAP/dba_cockpit
+> HTTPS:\//\<фулликуалифиедхостнаме >: 44300/SAP/BC/Webdynpro/SAP/dba_cockpit
 > 
-> http:\//фулликуалифиедхостнаме>:8000/SAP/BC/Webdynpro\</SAP/dba_cockpit
+> http:\//\<фулликуалифиедхостнаме >: 8000/SAP/BC/Webdynpro/SAP/dba_cockpit
 > 
 > 
 
@@ -549,9 +549,9 @@ SAP в настоящее время поддерживает версию SAP A
 
 Если для параметра профиля SAP icm/host_name_full задать DNS-имя виртуальной машины Azure, ссылка может выглядеть так:
 
-> HTTPS:\//mydomainlabel.westeurope.cloudapp.NET:44300/SAP/BC/Webdynpro/SAP/dba_cockpit
+> HTTPS:\//mydomainlabel.westeurope.cloudapp.net:44300/sap/bc/webdynpro/sap/dba_cockpit
 > 
-> http:\//mydomainlabel.westeurope.cloudapp.NET:8000/SAP/BC/Webdynpro/SAP/dba_cockpit
+> http:\//mydomainlabel.westeurope.cloudapp.net:8000/sap/bc/webdynpro/sap/dba_cockpit
 
 В таком случае необходимо:
 

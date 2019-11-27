@@ -1,25 +1,25 @@
 ---
-title: Настройка взвешенного циклического перебора трафика для диспетчера трафика Azure
-description: В этой статье объясняется, как балансировать нагрузку трафика методом циклического перебора в диспетчере трафика.
+title: Руководство. Настройка взвешенной маршрутизации трафика с циклическим перебором с помощью диспетчера трафика Azure
+description: В этом учебнике объясняется, как балансировать нагрузку трафика методом циклического перебора в диспетчере трафика
 services: traffic-manager
 documentationcenter: ''
 author: asudbring
 manager: twooley
 ms.service: traffic-manager
 ms.devlang: na
-ms.topic: article
+ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/20/2017
 ms.author: allensu
-ms.openlocfilehash: 0bfed558ec8db0ef715dad044c3965c1b1d8052b
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
-ms.translationtype: MT
+ms.openlocfilehash: 06bb86e635b7b3377e1f313ef3aa3487e1c215bc
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74040333"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74422768"
 ---
-# <a name="configure-the-weighted-traffic-routing-method-in-traffic-manager"></a>Настройка метода взвешенной маршрутизации трафика в диспетчере трафика
+# <a name="tutorial-configure-the-weighted-traffic-routing-method-in-traffic-manager"></a>Руководство по Настройка метода взвешенной маршрутизации трафика в диспетчере трафика
 
 Общепринятый подход к методу маршрутизации трафика состоит в предоставлении набора идентичных конечных точек (облачных служб и веб-сайтов) и равномерной отправке трафика в каждую из них. Ниже приведены инструкции по настройке такого метода маршрутизации трафика.
 

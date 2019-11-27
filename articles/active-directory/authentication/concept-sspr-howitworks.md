@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9fcac058a510b8b7fed5b3967bbbf439dd4c0f71
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: e88669b5453069d9f6bb64e803adc65baf8afc6b
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72786735"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74420704"
 ---
 # <a name="how-it-works-azure-ad-self-service-password-reset"></a>Как это работает: самостоятельный сброс пароля в Azure AD
 
@@ -58,7 +58,7 @@ ms.locfileid: "72786735"
 
 * Уведомление от мобильного приложения
 * Код мобильного приложения
-* Эл. почта
+* Email
 * Мобильный телефон
 * Рабочий телефон
 * Контрольные вопросы
@@ -126,8 +126,8 @@ ms.locfileid: "72786735"
 
 Включение этого параметра позволяет требовать, чтобы пользователь завершил регистрацию для сброса пароля, если для входа в приложения он использует Azure AD. К этому рабочему процессу относятся следующие приложения:
 
-* Office 365
-* портала Azure
+* Office 365
+* портале Azure
 * Панель доступа
 * федеративные приложения;
 * пользовательские приложения, использующие Azure AD.
@@ -147,7 +147,7 @@ ms.locfileid: "72786735"
 
 ## <a name="notifications"></a>Уведомления
 
-### <a name="notify-users-on-password-resets"></a>"Уведомлять пользователей о сбросе пароля"
+### <a name="notify-users-on-password-resets"></a>"Уведомлять пользователей о сбросе пароля";
 
 Если для этого параметра задать значение **Да**, пользователи, сбрасывающие пароль, получат письмо, в котором указано, что пароль изменен. Электронное письмо отправляется через портал SSPR на основной и запасной адрес электронной почты, указанные в Azure AD. Больше это уведомление никому не отправляется.
 
@@ -203,22 +203,22 @@ ms.locfileid: "72786735"
 > [!NOTE]
 > Учетные записи Майкрософт, которым предоставлен гостевой доступ к вашему клиенту Azure AD, например адреса из Hotmail.com, Outlook.com или другие личные адреса электронной почты, не могут использовать SSPR в Azure AD. Им потребуется сбросить свой пароль, как описано в статье [Не удается войти в учетную запись Майкрософт](https://support.microsoft.com/help/12429/microsoft-account-sign-in-cant).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о сбросе пароля с помощью Azure AD см. в следующих статьях:
 
-* [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
+* [Как развернуть самостоятельный сброс пароля](howto-sspr-deployment.md)
 * [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)
 * [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md)
 * [Требования к лицензированию самостоятельного сброса пароля в Azure AD](concept-sspr-licensing.md)
-* [Какие данные используются для SSPR и какие сведения нужно указывать для пользователей](howto-sspr-authenticationdata.md)
-* [Доступные пользователям методы проверки подлинности](concept-sspr-howitworks.md#authentication-methods)
+* [Какие данные используются для SSPR и какие сведения нужно указывать пользователям](howto-sspr-authenticationdata.md)
+* [Доступные пользователям методы проверки подлинности](concept-sspr-howitworks.md#authentication-methods).
 * [Параметры политики для SSPR](concept-sspr-policy.md)
-* [Что такое обратная запись паролей и каково ее назначение](howto-sspr-writeback.md)
+* [Обзор обратной записи паролей](howto-sspr-writeback.md).
 * [Как сообщать о действиях в SSPR](howto-sspr-reporting.md)
-* [Обзор всех параметров SSPR и их значение](concept-sspr-howitworks.md)
+* [Руководство по самостоятельному сбросу пароля в Azure AD](concept-sspr-howitworks.md).
 * [Думаю, что что-то не так. Разделы справки устранить неполадки SSPR?](active-directory-passwords-troubleshoot.md)
 * [Вопросы, не вошедшие в другие статьи](active-directory-passwords-faq.md)
 
-[Authentication]: ./media/concept-sspr-howitworks/sspr-authentication-methods.png "Доступные методы проверки подлинности Azure AD и требуемое число методов"
-[Writeback]: ./media/concept-sspr-howitworks/troubleshoot-writeback-running.png "Настройка локальной интеграции компонента обратной записи паролей и сведения об устранении неполадок"
+[Authentication]: ./media/concept-sspr-howitworks/manage-authentication-methods-for-password-reset.png "Доступные методы проверки подлинности Azure AD и требуемое число методов"
+[Writeback]: ./media/concept-sspr-howitworks/troubleshoot-on-premises-integration-writeback.png "Настройка локальной интеграции компонента обратной записи паролей и сведения об устранении неполадок"

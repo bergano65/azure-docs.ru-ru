@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b1b44a7df499dc0b6ce4370bf74ece35c99a4493
-ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
+ms.openlocfilehash: 6c8e94a1b15ad8cd55019f9351c82f58130e472d
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73200243"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74420604"
 ---
 # <a name="manage-device-identities-using-the-azure-portal"></a>Управление удостоверениями устройств с помощью портал Azure
 
@@ -27,14 +27,13 @@ ms.locfileid: "73200243"
 - Предполагается, что вы знакомы с [введением в Управление удостоверениями устройств в Azure Active Directory](overview.md)
 - Содержит сведения об управлении удостоверениями устройств с помощью портала Azure AD.
 
-## <a name="manage-device-identities"></a>Управление удостоверениями устройства
+## <a name="manage-device-identities"></a>Управление удостоверениями устройств
 
 Портал Azure AD предоставляет централизованное управление удостоверениями устройств. Сюда можно перейти по [прямой ссылке](https://portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/Devices) или с помощью следующих действий:
 
 1. Войдите на [портал Azure](https://portal.azure.com) с учетной записью администратора.
-2. На панели навигации слева щелкните **Active Directory**.
 
-   ![Настройка параметров устройства](./media/device-management-azure-portal/01.png)
+2. Найдите и выберите **Azure Active Directory** или выберите его на **домашней** странице.
 
 3. В разделе **Управление** щелкните **Устройства**.
 
@@ -215,13 +214,13 @@ ms.locfileid: "73200243"
 - Тип ресурса действия
 - Действие
 - диапазон дат;
-- Выбор пути миграции
+- Цель
 - "Кем инициировано (субъект)".
 
 Помимо применения фильтров можно выполнить поиск конкретных записей.
 
 ![Журналы аудита](./media/device-management-azure-portal/65.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Как управлять устаревшими устройствами в Azure AD](manage-stale-devices.md)

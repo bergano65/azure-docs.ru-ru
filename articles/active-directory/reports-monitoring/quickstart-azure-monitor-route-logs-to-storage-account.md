@@ -1,9 +1,9 @@
 ---
-title: Руководство. Архивация журналов Azure Active Directory в учетную запись хранения | Документация Майкрософт
+title: Учебник. Архивация журналов каталога в учетную запись хранения | Документация Майкрософт
 description: Узнайте, как настроить службу "Диагностика Azure" для принудительной отправки журналов Azure Active Directory в учетную запись хранения.
 services: active-directory
 documentationcenter: ''
-author: cawrites
+author: MarkusVi
 manager: daveba
 editor: ''
 ms.assetid: 045f94b3-6f12-407a-8e9c-ed13ae7b43a3
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 04/18/2019
-ms.author: chadam
+ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d98fb0677b864fccfb5abd2b08381db1bd1c9c8f
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: fa2cac7c89a2cb1bd99675727bcd51e82c4a18ef
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68989739"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74007863"
 ---
 # <a name="tutorial-archive-azure-ad-logs-to-an-azure-storage-account"></a>Руководство по Архивация журналов Azure AD в учетную запись хранения Azure
 

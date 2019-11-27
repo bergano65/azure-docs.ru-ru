@@ -1,19 +1,14 @@
 ---
-title: Развертывание экземпляров контейнеров с поддержкой GPU в Azure
+title: Развернуть экземпляр контейнера с поддержкой GPU
 description: Узнайте, как развертывать экземпляры контейнеров Azure для запуска приложений-контейнеров с ресурсоемкими вычислениями с помощью ресурсов GPU.
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: article
 ms.date: 04/17/2019
-ms.author: danlep
-ms.openlocfilehash: 08a3cd8841b6b867a2dd22078fca3543d2067830
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: ea3b0ccba2d84487356f4bbd404cec3af1d0979a
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74147894"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74484181"
 ---
 # <a name="deploy-container-instances-that-use-gpu-resources"></a>Развертывание экземпляров контейнеров, использующих ресурсы GPU
 

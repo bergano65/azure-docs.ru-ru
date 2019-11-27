@@ -1,6 +1,6 @@
 ---
-title: Create a premium Azure file share
-description: In this article, you learn how to create a premium Azure file share.
+title: Создание файлового ресурса Azure уровня "Премиум"
+description: В этой статье вы узнаете, как создать файловый ресурс Azure уровня "Премиум".
 author: roygara
 ms.service: storage
 ms.topic: conceptual
@@ -14,30 +14,30 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74209537"
 ---
-# <a name="how-to-create-an-premium-azure-file-share"></a>How to create an premium Azure file share
-Premium file shares are offered on solid-state disk (SSD) storage media and are useful for IO-intensive workloads, including hosting databases and high-performance computing (HPC). Premium file shares are hosted in a special purpose storage account kind, called a FileStorage account. Premium file shares are designed for high performance and enterprise scale applications, providing consistent low latency, high IOPS, and high throughput shares.
+# <a name="how-to-create-an-premium-azure-file-share"></a>Создание файлового ресурса Azure уровня "Премиум"
+Общие файловые ресурсы уровня "Премиум" предоставляются на носителях с твердотельным накопителем (SSD) и полезны для рабочих нагрузок, интенсивно использующих ввод-вывод, включая размещение баз данных и высокопроизводительных вычислений (HPC). Общие файловые ресурсы уровня "Премиум" размещаются в специальном типе учетной записи хранения, который называется учетной записью Филестораже. Файловые ресурсы уровня "Премиум" предназначены для высокопроизводительных и масштабируемых приложений, обеспечивая постоянную задержку, высокую скорость операций ввода-вывода и высокую пропускную способность.
 
-This article shows you how to create this new account type using [Azure portal](https://portal.azure.com/), Azure PowerShell, and Azure CLI.
+В этой статье показано, как создать новый тип учетной записи с помощью [портал Azure](https://portal.azure.com/), Azure PowerShell и Azure CLI.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-To access Azure resources including premium Azure file shares, you'll need an Azure subscription. Если у вас еще нет подписки, вы можете [создать бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Чтобы получить доступ к ресурсам Azure, включая общие файловые ресурсы Azure уровня "Премиум", вам потребуется подписка Azure. Если у вас еще нет подписки, вы можете [создать бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="create-a-premium-file-share-using-the-azure-portal"></a>Create a premium file share using the Azure portal
+## <a name="create-a-premium-file-share-using-the-azure-portal"></a>Создайте общую папку уровня "Премиум" с помощью портал Azure
 
-### <a name="sign-in-to-azure"></a>Войдите в Azure
+### <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на [портале Azure](https://portal.azure.com/).
 
-### <a name="create-a-filestorage-storage-account"></a>Create a filestorage storage account
+### <a name="create-a-filestorage-storage-account"></a>Создание учетной записи хранения филестораже
 
-Now you're ready to create your storage account.
+Теперь все готово для создания учетной записи хранения.
 
-Каждая учетная запись хранения должна принадлежать группе ресурсов Azure. Группа ресурсов — это логический контейнер для группирования служб Azure. При создании учетной записи хранения у вас есть возможность создать новую или использовать существующую группу ресурсов. This article shows how to create a new resource group.
+Каждая учетная запись хранения должна принадлежать группе ресурсов Azure. Группа ресурсов — это логический контейнер для группирования служб Azure. При создании учетной записи хранения у вас есть возможность создать новую или использовать существующую группу ресурсов. В этой статье показано, как создать новую группу ресурсов.
 
-1. In the Azure portal, select **Storage Accounts** on the left menu.
+1. В портал Azure выберите **учетные записи хранения** в меню слева.
 
-    ![Azure portal main page select storage account](media/storage-how-to-create-premium-fileshare/azure-portal-storage-accounts.png)
+    ![портал Azure главной страницы выберите учетную запись хранения](media/storage-how-to-create-premium-fileshare/azure-portal-storage-accounts.png)
 
 1. В появившемся окне **Учетные записи хранения** выберите **добавить**.
 1. Выберите подписку, в которой будет создана учетная запись хранения.
@@ -45,33 +45,33 @@ Now you're ready to create your storage account.
 
 1. Далее введите имя своей учетной записи хранения. Выбранное вами имя должно быть уникальным в Azure. Также имя должно содержать от 3 до 24 символов и может состоять только из цифр и строчных букв.
 1. Выберите расположение учетной записи хранения или используйте расположение по умолчанию.
-1. For **Performance** select **Premium**.
-1. Select **Account kind** and choose **FileStorage**.
-1. Leave **Replication** set to its default value of **Locally-redundant storage (LRS)** .
+1. Для **повышения производительности** выберите **Premium**.
+1. Выберите **тип учетной записи** и щелкните **филестораже**.
+1. Оставьте для параметра **репликация** значение по умолчанию **локально избыточное хранилище (LRS)** .
 
-    ![How to create a storage account for a premium file share](media/storage-how-to-create-premium-fileshare/create-filestorage-account.png)
+    ![Создание учетной записи хранения для файлового ресурса уровня "Премиум"](media/storage-how-to-create-premium-fileshare/create-filestorage-account.png)
 
 1. Выберите **Просмотр и создание**, чтобы просмотреть настройки учетной записи хранения и создать учетную запись.
 1. Нажмите кнопку **Создать**.
 
-Once your storage account resource has been created, navigate to it.
+После создания ресурса учетной записи хранения перейдите к нему.
 
 ### <a name="create-a-premium-file-share"></a>Создание общей папки (цен. категория "Премиум")
 
-1. In the left menu for the storage account, scroll to the **File service** section, then select **Files**.
-1. Select **File share** to create a premium file share.
-1. Enter a name and a desired quota for your file share, then select **Create**.
+1. В меню слева для учетной записи хранения перейдите к разделу **Файловая служба** , а затем выберите **файлы**.
+1. Выберите Общая **Папка** , чтобы создать общую папку Premium.
+1. Введите имя и требуемую квоту для общей папки, а затем нажмите кнопку **создать**.
 
 > [!NOTE]
-> Provisioned share sizes is specified by the share quota, file shares are billed on the provisioned size, refer to the [pricing page](https://azure.microsoft.com/pricing/details/storage/files/) for more details.
+> Подготовленные размеры общих ресурсов задаются квотой общего доступа. Общие ресурсы выставляются по подготовленному размеру. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/storage/files/) .
 
    ![Создание общей папки (цен. категория "Премиум")](media/storage-how-to-create-premium-fileshare/create-premium-file-share.png)
 
 ### <a name="clean-up-resources"></a>Очистка ресурсов
 
-If you would like to clean up the resources created in this article, you can simply delete the resource group. Deleting the resource group also deletes the associated storage account as well as any other resources associated with the resource group.
+Если вы хотите очистить ресурсы, созданные в этой статье, можно просто удалить группу ресурсов. При удалении группы ресурсов также удаляется связанная учетная запись хранения, а также другие ресурсы, связанные с группой ресурсов.
 
-## <a name="create-a-premium-file-share-using-powershell"></a>Create a premium file share using PowerShell
+## <a name="create-a-premium-file-share-using-powershell"></a>Создание общей папки Premium с помощью PowerShell
 
 ### <a name="create-an-account-using-powershell"></a>Создание учетной записи с помощью PowerShell
 
@@ -79,13 +79,13 @@ If you would like to clean up the resources created in this article, you can sim
 
 Затем обновите модуль PowerShell, войдите в подписку Azure, создайте группу ресурсов и учетную запись хранения.
 
-### <a name="upgrade-your-powershell-module"></a>Upgrade your PowerShell module
+### <a name="upgrade-your-powershell-module"></a>Обновление модуля PowerShell
 
-To interact with a premium file share from with PowerShell, you'll need to install an Az.Storage module version 1.4.0, or the latest Az.Storage module.
+Для взаимодействия с файловым ресурсом уровня "Премиум" из с помощью PowerShell необходимо установить модуль AZ. Storage версии 1.4.0 или последний модуль AZ. Storage.
 
 Сначала откройте сеанс PowerShell с повышенными разрешениями.
 
-Install the Az.Storage module:
+Установите модуль AZ. Storage.
 
 ```powershell
 Install-Module Az.Storage -Repository PSGallery -AllowClobber -Force
@@ -111,9 +111,9 @@ $location = "westus2"
 New-AzResourceGroup -Name $resourceGroup -Location $location
 ```
 
-### <a name="create-a-filestorage-storage-account"></a>Create a FileStorage storage account
+### <a name="create-a-filestorage-storage-account"></a>Создание учетной записи хранения Филестораже
 
-To create a filestorage storage account from PowerShell, use the [New-AzStorageAccount](/powershell/module/az.storage/New-azStorageAccount) command:
+Чтобы создать учетную запись хранения филестораже из PowerShell, используйте команду [New-азсторажеаккаунт](/powershell/module/az.storage/New-azStorageAccount) :
 
 ```powershell
 $storageAcct = New-AzStorageAccount -ResourceGroupName $resourceGroup -Name "fileshowto" -SkuName "Premium_LRS" -Location "westus2" -Kind "FileStorage"
@@ -121,10 +121,10 @@ $storageAcct = New-AzStorageAccount -ResourceGroupName $resourceGroup -Name "fil
 
 ### <a name="create-a-premium-file-share"></a>Создание общей папки (цен. категория "Премиум")
 
-Now that you have a FileStorage account, you can create a premium file share. Use the [New-AzStorageShare](/powershell/module/az.storage/New-AzStorageShare) cmdlet to create one.
+Теперь, когда у вас есть учетная запись Филестораже, можно создать файловый ресурс уровня "Премиум". Используйте командлет [New-азсторажешаре](/powershell/module/az.storage/New-AzStorageShare) , чтобы создать его.
 
 > [!NOTE]
-> Provisioned share sizes is specified by the share quota, file shares are billed on the provisioned size, refer to the [pricing page](https://azure.microsoft.com/pricing/details/storage/files/) for more details.
+> Подготовленные размеры общих ресурсов задаются квотой общего доступа. Общие ресурсы выставляются по подготовленному размеру. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/storage/files/) .
 
 ```powershell
 New-AzStorageShare `
@@ -140,11 +140,11 @@ New-AzStorageShare `
 Remove-AzResourceGroup -Name $resourceGroup
 ```
 
-## <a name="create-a-premium-file-share-using-azure-cli"></a>Create a premium file share using Azure CLI
+## <a name="create-a-premium-file-share-using-azure-cli"></a>Создание общей папки Premium с помощью Azure CLI
 
 Чтобы запустить Azure Cloud Shell, войдите на [портал Azure](https://portal.azure.com).
 
-If you want to log into your local installation of the CLI, first make sure you have the latest version, then run the login command:
+Если вы хотите войти в локальную установку интерфейса командной строки, сначала убедитесь, что у вас установлена последняя версия, а затем выполните команду Login:
 
 ```cli
 az login
@@ -160,9 +160,9 @@ az group create `
     --location westus2
 ```
 
-### <a name="create-a-filestorage-storage-account"></a>Create a FileStorage storage account
+### <a name="create-a-filestorage-storage-account"></a>Создание учетной записи хранения Филестораже
 
-To create a FileStorage storage account from the Azure CLI, use the [az storage account create](/cli/azure/storage/account) command.
+Чтобы создать учетную запись хранения Филестораже из Azure CLI, используйте команду [AZ Storage Account Create](/cli/azure/storage/account) .
 
 ```azurecli-interactive
 az storage account create `
@@ -175,7 +175,7 @@ az storage account create `
 
 ### <a name="get-the-storage-account-key"></a>Получение ключа учетной записи хранения
 
-Storage account keys control access to resources in a storage account, in this article, we use the key in order to create a premium file share. Эти ключи автоматически создаются при создании учетной записи хранения. Ключи учетной записи хранения можно получить с помощью команды [az storage account keys list](/cli/azure/storage/account/keys).
+Ключи учетной записи хранения контролируют доступ к ресурсам в учетной записи хранения. в этой статье мы используем ключ, чтобы создать файловый ресурс уровня "Премиум". Эти ключи автоматически создаются при создании учетной записи хранения. Ключи учетной записи хранения можно получить с помощью команды [az storage account keys list](/cli/azure/storage/account/keys).
 
 ```azurecli-interactive 
 STORAGEKEY=$(az storage account keys list \
@@ -186,10 +186,10 @@ STORAGEKEY=$(az storage account keys list \
 
 ### <a name="create-a-premium-file-share"></a>Создание общей папки (цен. категория "Премиум")
 
-Now that you have a filestorage account, you can create a premium file share. Use the [az storage share create](/cli/azure/storage/share) command to create one.
+Теперь, когда у вас есть учетная запись филестораже, можно создать файловый ресурс уровня "Премиум". Чтобы создать его, используйте команду [AZ Storage Share Create](/cli/azure/storage/share) .
 
 > [!NOTE]
-> Provisioned share sizes is specified by the share quota, file shares are billed on the provisioned size, refer to the [pricing page](https://azure.microsoft.com/pricing/details/storage/files/) for more details.
+> Подготовленные размеры общих ресурсов задаются квотой общего доступа. Общие ресурсы выставляются по подготовленному размеру. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/storage/files/) .
 
 ```azurecli-interactive
 az storage share create \
@@ -206,9 +206,9 @@ az storage share create \
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-In this article, you've created a premium file share. To learn about the performance this account offers, continue to the performance tier section of the planning guide.
+В этой статье вы создали файловый ресурс уровня "Премиум". Чтобы узнать о производительности, предлагаемой этой учетной записью, перейдите к разделу "уровень производительности" в разделе "планирование по планированию".
 
 > [!div class="nextstepaction"]
-> [File share performance tiers](storage-files-planning.md#file-share-performance-tiers)
+> [Уровни производительности файловых ресурсов](storage-files-planning.md#file-share-performance-tiers)

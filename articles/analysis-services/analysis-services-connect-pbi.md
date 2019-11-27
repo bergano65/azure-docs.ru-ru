@@ -46,7 +46,7 @@ ms.locfileid: "73573106"
 1. Создайте файл Power BI Desktop с возможностью активного подключения к нужной модели на сервере.
 2. В [Power BI](https://powerbi.microsoft.com) выберите **Get Data (Получить данные)**  > **Файлы**, а затем найдите и выберите PBIX-файл.
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 [Подключение к службам Azure Analysis Services](analysis-services-connect.md)   
 [Клиентские библиотеки](analysis-services-data-providers.md)
 

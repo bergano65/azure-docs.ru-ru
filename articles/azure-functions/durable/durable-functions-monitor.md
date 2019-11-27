@@ -48,13 +48,13 @@ ms.locfileid: "74232857"
 
 ## <a name="the-functions"></a>Функции
 
-В этой статье описываются следующие функции в примере приложения:
+В этой статье описаны следующие функции в примере приложения:
 
 * `E3_Monitor`: функция оркестрации, которая периодически вызывает `E3_GetIsClear`. Она вызывает `E3_SendGoodWeatherAlert`, если `E3_GetIsClear` возвращает значение true.
 * `E3_GetIsClear`: функция действия, которая проверяет текущие погодные условия для местоположения.
 * `E3_SendGoodWeatherAlert`: функция действия, которая отправляет SMS-сообщение через Twilio.
 
-The following sections explain the configuration and code that is used for C# scripting and JavaScript. Код для разработки с помощью Visual Studio представлен в конце этой статьи.
+В следующих разделах описывается конфигурация и код, используемые для C# написания сценариев и JavaScript. Код для разработки с помощью Visual Studio представлен в конце этой статьи.
 
 ## <a name="the-weather-monitoring-orchestration-visual-studio-code-and-azure-portal-sample-code"></a>Оркестрация мониторинга погоды (пример кода Visual Studio Code и портала Azure).
 
@@ -79,13 +79,13 @@ The following sections explain the configuration and code that is used for C# sc
 3. Вызывает **E3_GetIsClear**, чтобы определить, ясное ли небо в запрашиваемом местоположении.
 4. Если погода хорошая, вызывается **E3_SendGoodWeatherAlert**, чтобы отправить SMS-уведомление на запрошенный номер телефона.
 5. Создает устойчивый таймер для возобновления оркестрации во время следующего интервала опроса. Для краткости в образце используется жестко заданное значение.
-6. Continues running until the `CurrentUtcDateTime` (.NET) or `currentUtcDateTime` (JavaScript) passes the monitor's expiration time, or an SMS alert is sent.
+6. Продолжит выполнение до тех пор, пока `CurrentUtcDateTime` (.NET) или `currentUtcDateTime` (JavaScript) не пройдет срок действия монитора или не будет отправлено оповещение SMS.
 
 Несколько экземпляров оркестрации могут выполняться одновременно, отправляя несколько запросов **MonitorRequests**. Можно указать местоположение для мониторинга и номер телефона для отправки SMS-оповещения.
 
 ## <a name="strongly-typed-data-transfer-net-only"></a>Строго типизированная передача данных (только .NET)
 
-The orchestrator requires multiple pieces of data, so [shared POCO objects](../functions-reference-csharp.md#reusing-csx-code) are used for strongly-typed data transfer in C# and C# script:  
+Orchestrator требует несколько фрагментов данных, поэтому [Общие объекты POCO](../functions-reference-csharp.md#reusing-csx-code) используются для строго типизированного обмена данными в C# скрипте и C# :  
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/shared/MonitorRequest.csx)]
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/shared/Location.csx)]
@@ -178,7 +178,7 @@ POST https://{host}/runtime/webhooks/durabletask/instances/f6893f25acf64df2ab53a
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/Monitor.cs)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этом примере показано, как использовать устойчивые функции для контроля состояния внешнего источника с помощью [устойчивых таймеров](durable-functions-timers.md) и условной логики. В приведенном ниже примере показано, как использовать внешние события и [устойчивые таймеры](durable-functions-timers.md) для обработки действий человека.
 

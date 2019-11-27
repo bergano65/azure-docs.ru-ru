@@ -5,14 +5,14 @@ services: container-service
 author: mlearned
 ms.service: container-service
 ms.topic: article
-ms.date: 03/04/2019
+ms.date: 11/06/2019
 ms.author: mlearned
-ms.openlocfilehash: 9e32715766734bcbb150d70aeed2dc5b06a4bcbb
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 8457f1c0c5b6107c4b44f6f00236a33f7c67452a
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67614469"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325443"
 ---
 # <a name="use-a-static-public-ip-address-with-the-azure-kubernetes-service-aks-load-balancer"></a>Использование статического общедоступного IP-адреса с подсистемой балансировки нагрузки Службы Azure Kubernetes (AKS)
 
@@ -26,40 +26,31 @@ ms.locfileid: "67614469"
 
 Также требуется Azure CLI версии 2.0.59 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если необходимо установить или обновить, см. раздел [install Azure CLI][install-azure-cli].
 
-Сейчас поддерживается только *Базовый номер SKU IP*. Выполняется работа для поддержки SKU стандартного ресурса *IP* . Дополнительные сведения см. [в разделе Типы IP-адресов и методы распределения в Azure][ip-sku].
+В этой статье рассматривается использование *стандартного* IP-адреса SKU с подсистемой балансировки нагрузки *стандартного* SKU. Дополнительные сведения см. [в разделе Типы IP-адресов и методы распределения в Azure][ip-sku].
 
 ## <a name="create-a-static-ip-address"></a>Создание статического IP-адреса
 
-Статический общедоступный IP-адрес для использования с AKS нужно создать в группе ресурсов **узла**. Если вы хотите отделить ресурсы, см. следующий раздел, чтобы [использовать статический IP-адрес за пределами группы ресурсов узла](#use-a-static-ip-address-outside-of-the-node-resource-group).
-
-Сначала получите имя группы ресурсов узла с помощью команды [AZ AKS показывать][az-aks-show] и добавьте `--query nodeResourceGroup` параметр запроса. В следующем примере возвращается группа ресурсов узла для имени кластера AKS *myAKSCluster* в группе ресурсов *myResourceGroup*.
-
-```azurecli-interactive
-$ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
-
-MC_myResourceGroup_myAKSCluster_eastus
-```
-
-Теперь создайте статический общедоступный IP-адрес с помощью команды [AZ Network public IP Create][az-network-public-ip-create] . Укажите имя группы ресурсов узла, полученное в предыдущей команде, а затем имя ресурса IP-адреса, например *myAKSPublicIP*:
+Создайте статический общедоступный IP-адрес с помощью команды [AZ Network public IP Create][az-network-public-ip-create] . В следующем примере создается ресурс статического IP-адреса с именем *мякспублиЦип* в группе ресурсов *myResourceGroup* :
 
 ```azurecli-interactive
 az network public-ip create \
-    --resource-group MC_myResourceGroup_myAKSCluster_eastus \
+    --resource-group myResourceGroup \
     --name myAKSPublicIP \
+    --sku Standard \
     --allocation-method static
 ```
+
+> [!NOTE]
+> При использовании подсистемы балансировки нагрузки уровня " *базовый* " в кластере AKS используйте параметр " *базовый* " для параметра *SKU* при определении общедоступного IP-адреса. Только *основные* IP-адреса SKU работают с подсистемой балансировки нагрузки уровня " *базовый* " и поддерживаются только *стандартные* IP-адреса SKU с подсистемами балансировки нагрузки " *стандартный* " 
 
 Отобразится IP-адрес, как показано в приведенном ниже примере вывода с уплотнением:
 
 ```json
 {
   "publicIp": {
-    "dnsSettings": null,
-    "etag": "W/\"6b6fb15c-5281-4f64-b332-8f68f46e1358\"",
-    "id": "/subscriptions/<SubscriptionID>/resourceGroups/MC_myResourceGroup_myAKSCluster_eastus/providers/Microsoft.Network/publicIPAddresses/myAKSPublicIP",
-    "idleTimeoutInMinutes": 4,
+    ...
     "ipAddress": "40.121.183.52",
-    [...]
+    ...
   }
 }
 ```
@@ -67,47 +58,23 @@ az network public-ip create \
 Позже можно получить общедоступный IP-адрес с помощью команды [AZ Network public-IP List][az-network-public-ip-list] . Укажите имя группы ресурсов узла и созданный вами общедоступный IP-адрес, а затем запросите *ipAddress*, как показано в следующем примере:
 
 ```azurecli-interactive
-$ az network public-ip show --resource-group MC_myResourceGroup_myAKSCluster_eastus --name myAKSPublicIP --query ipAddress --output tsv
+$ az network public-ip show --resource-group myResourceGroup --name myAKSPublicIP --query ipAddress --output tsv
 
 40.121.183.52
 ```
 
 ## <a name="create-a-service-using-the-static-ip-address"></a>Создание службы со статическим IP-адресом
 
-Чтобы создать службу со статическим общедоступным IP-адресом, добавьте свойство `loadBalancerIP` и значение статического общедоступного IP-адреса в манифест YAML. Создайте файл `load-balancer-service.yaml` и скопируйте в него следующий код YAML. Укажите собственный общедоступный IP-адрес, созданный на предыдущем шаге.
-
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: azure-load-balancer
-spec:
-  loadBalancerIP: 40.121.183.52
-  type: LoadBalancer
-  ports:
-  - port: 80
-  selector:
-    app: azure-load-balancer
-```
-
-Выполните команду `kubectl apply` для создания службы и развертывания.
-
-```console
-kubectl apply -f load-balancer-service.yaml
-```
-
-## <a name="use-a-static-ip-address-outside-of-the-node-resource-group"></a>Использование статического IP-адреса, который не входит в группу ресурсов узла
-
-С помощью Kubernetes 1.10 (или более поздней версии) можно использовать статический IP-адрес, который создается за пределами группы ресурсов узла. Субъекту-службе, используемой кластером AKS, необходимо делегированное разрешение для другой группы ресурсов, как показано в следующем примере.
+Перед созданием службы убедитесь, что субъект-служба, используемый кластером AKS, имеет делегированные разрешения на доступ к другой группе ресурсов. Например,
 
 ```azurecli-interactive
-az role assignment create\
+az role assignment create \
     --assignee <SP Client ID> \
-    --role "Network Contributor" \
+    --role "Contributor" \
     --scope /subscriptions/<subscription id>/resourceGroups/<resource group name>
 ```
 
-Чтобы использовать IP-адрес за пределами группы ресурсов узла, добавьте заметку к определению службы. В следующем примере создается группа ресурсов с именем *myResourceGroup*. Укажите имя группы ресурсов.
+Чтобы создать службу *балансировки нагрузки* со статическим общедоступным IP-адресом, добавьте свойство `loadBalancerIP` и значение статического общедоступного IP-адреса в манифест YAML. Создайте файл `load-balancer-service.yaml` и скопируйте в него следующий код YAML. Укажите собственный общедоступный IP-адрес, созданный на предыдущем шаге. В следующем примере также задается заметка для группы ресурсов с именем *myResourceGroup*. Укажите собственное имя группы ресурсов.
 
 ```yaml
 apiVersion: v1
@@ -123,6 +90,12 @@ spec:
   - port: 80
   selector:
     app: azure-load-balancer
+```
+
+Выполните команду `kubectl apply` для создания службы и развертывания.
+
+```console
+kubectl apply -f load-balancer-service.yaml
 ```
 
 ## <a name="troubleshoot"></a>Устранение неполадок
@@ -157,7 +130,7 @@ Events:
   Warning  CreatingLoadBalancerFailed  6s (x2 over 12s)  service-controller  Error creating load balancer (will retry): Failed to create load balancer for service default/azure-load-balancer: user supplied IP Address 40.121.183.52 was not found
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Чтобы получить дополнительный контроль над сетевым трафиком к приложениям, можно вместо этого [создать контроллер][aks-ingress-basic]входящего трафика. Также можно [создать входной контроллер с статическим общедоступным IP-адресом][aks-static-ingress].
 

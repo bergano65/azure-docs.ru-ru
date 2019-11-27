@@ -1,22 +1,22 @@
 ---
-title: Что такое зависимости служб в Azure Active Directory условном доступе? | Документы Майкрософт
+title: Зависимости службы условного доступа — Azure Active Directory
 description: Узнайте, как условия используются в Azure Active Directory условном доступе для активации политики.
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: article
-ms.date: 03/18/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c7f2abda282d0219dd8787a9f6a2b6c1cda15df
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: b39238575c05d35a2d87999e08c49c0c77e99bfb
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71257908"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74380009"
 ---
 # <a name="what-are-service-dependencies-in-azure-active-directory-conditional-access"></a>Что такое зависимости служб в Azure Active Directory условном доступе? 
 
@@ -24,7 +24,7 @@ ms.locfileid: "71257908"
 
 При непосредственном доступе к сайту или службе влияние связанной политики обычно легко оценивается. Например, если имеется политика, требующая настройки MFA для SharePoint Online, для каждого входа на веб-портал SharePoint применяется MFA. Однако это не всегда прямо вперед, чтобы оценить влияние политики, поскольку существуют облачные приложения с зависимостями от других облачных приложений. Например, Microsoft Teams может предоставить доступ к ресурсам в SharePoint Online. Таким образом, при обращении к Microsoft Teams в нашем текущем сценарии вы также налагаетесь на политику MFA SharePoint.   
 
-## <a name="policy-enforcement"></a>Применение политик 
+## <a name="policy-enforcement"></a>Принудительное применение политики 
 
 При наличии настроенной зависимости службы политику можно применить с помощью принудительного применения ранней или поздней привязки. 
 
@@ -41,10 +41,10 @@ ms.locfileid: "71257908"
 
 | Клиентские приложения         | Подчиненная служба                          | Стиль |
 | :--                 | :--                                         | ---         | 
-| Azure Data Lake     | Управление Microsoft Azure (портал и API) | Раннее связывание |
+| Озеро данных Azure     | Управление Microsoft Azure (портал и API) | Раннее связывание |
 | Аудитория Майкрософт | Exchange                                    | Раннее связывание |
 |                     | SharePoint                                  | Раннее связывание |
-| Microsoft Teams     | Exchange                                    | Раннее связывание |
+| Microsoft Teams     | Exchange                                    | Раннее связывание |
 |                     | Планировщик MS                                  | Позднее связывание  |
 |                     | SharePoint                                  | Раннее связывание |
 |                     | Skype для бизнеса Online                   | Раннее связывание |
@@ -52,15 +52,15 @@ ms.locfileid: "71257908"
 |                     | SharePoint                                  | Позднее связывание  |
 | Группы Outlook      | Exchange                                    | Раннее связывание |
 |                     | SharePoint                                  | Раннее связывание |
-| PowerApps           | Управление Microsoft Azure (портал и API) | Раннее связывание |
+| PowerApps.           | Управление Microsoft Azure (портал и API) | Раннее связывание |
 |                     | Microsoft Azure Active Directory              | Раннее связывание |
-| Проект             | Dynamics CRM                                | Раннее связывание |
+| Project             | Dynamics CRM                                | Раннее связывание |
 | Skype для бизнеса  | Exchange                                    | Раннее связывание |
 | Visual Studio       | Управление Microsoft Azure (портал и API) | Раннее связывание |
 | Microsoft Forms     | Exchange                                    | Раннее связывание |
 |                     | SharePoint                                  | Раннее связывание |
 | Microsoft To-Do     | Exchange                                    | Раннее связывание |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Сведения о реализации условного доступа см.в статье [How To: Plan your Conditional Access deployment in Azure Active Directory](plan-conditional-access.md) (Практическое руководство. Планирование развертывания с условным доступом в Azure Active Directory).

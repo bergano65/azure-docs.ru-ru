@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание кластеров Apache Hadoop с помощью Resource Manager в Azure HDInsight
+title: Краткое руководство. Использование Apache Hadoop и диспетчера ресурсов в Azure HDInsight
 description: В этом кратком руководстве вы создадите кластер Apache Hadoop в Azure HDInsight с помощью шаблонов Resource Manager
 keywords: начало работы с hadoop, hadoop под управлением linux, краткое руководство по hadoop, начало работы с hive, краткое руководство по hive
 ms.service: hdinsight
@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive,hdiseo17may2017,mvc,seodec18
 ms.topic: quickstart
 ms.date: 06/12/2019
-ms.openlocfilehash: 6c4ff1df0ec56339721b3cdab9bb62b0ee8ba94f
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: b554fcd4d4175aeac88df14eebbbaf4a8ba49f4c
+ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71067677"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73044799"
 ---
 # <a name="quickstart-create-apache-hadoop-cluster-in-azure-hdinsight-using-resource-manager-template"></a>Краткое руководство. Создание кластеров Apache Hadoop в Azure HDInsight с помощью шаблонов Resource Manager
 
@@ -50,7 +50,7 @@ ms.locfileid: "71067677"
     > [!NOTE]  
     > Необходимо указать уникальные значения, соответствующие правилам именования. Шаблон не выполняет проверки. Если введенные значения уже используются или не соответствуют правилам именования, после отправки шаблона произойдет ошибка.  
 
-    ![Шаблон Resource Manager для начала работы с HDInsight под управлением Linux на портале](./media/apache-hadoop-linux-tutorial-get-started/hdinsight-linux-get-started-arm-template-on-portal.png "Развертывание кластера Hadoop в HDInsight с помощью портала Azure и шаблона диспетчера групп ресурсов")
+    ![HDInsight в Linux. Шаблон Resource Manager на портале для начала работы](./media/apache-hadoop-linux-tutorial-get-started/hdinsight-linux-get-started-arm-template-on-portal.png "Развертывание кластера Hadoop в HDInsight с помощью портала Azure и шаблона диспетчера групп ресурсов")
 
 3. Установите флажок **Я принимаю указанные выше условия** и выберите **Приобрести**. Вы получите уведомление о выполнении развертывания.  Процесс создания кластера занимает около 20 минут.
 

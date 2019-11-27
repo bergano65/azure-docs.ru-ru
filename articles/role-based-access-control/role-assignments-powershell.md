@@ -1,6 +1,6 @@
 ---
 title: Управление доступом к ресурсам Azure с помощью RBAC и Azure PowerShell | Документация Майкрософт
-description: Узнайте, как управлять доступом к ресурсам Azure для пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) и Azure PowerShell. Сюда также входят сведения о том, как перечислять, предоставлять и удалять права доступа.
+description: Узнайте, как управлять доступом к ресурсам Azure для пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) и Azure PowerShell. Здесь содержатся инструкции по выводу списка доступа, предоставлению и запрету доступа.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -11,23 +11,23 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 10/22/2019
+ms.date: 11/21/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 5de62fd52360511fe660255dc023721a2837fe85
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: c92cf6ae8777a343432d9d54dd7fcbedbb6b210c
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72819780"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74384018"
 ---
 # <a name="manage-access-to-azure-resources-using-rbac-and-azure-powershell"></a>Управление доступом к ресурсам Azure с помощью RBAC и Azure PowerShell
 
-[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам Azure. В этой статье объясняется, как управлять доступом пользователей, групп и приложений, используя RBAC и Azure PowerShell.
+[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этой статье объясняется, как управлять доступом пользователей, групп и приложений, используя RBAC и Azure PowerShell.
 
 [!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Для управления доступом необходим один из следующих инструментов:
 
@@ -273,33 +273,40 @@ PS C:\> Get-AzRoleAssignment -Scope /providers/Microsoft.Management/managementGr
 Get-AzRoleAssignment -IncludeClassicAdministrators
 ```
 
-## <a name="grant-access"></a>Предоставление доступа
+## <a name="get-object-ids"></a>Получение идентификаторов объектов
 
-При использовании RBAC, чтобы предоставить доступ, нужно создать назначение ролей.
+Чтобы вывести список, добавить или удалить назначения ролей, может потребоваться указать уникальный идентификатор объекта. Идентификатор имеет формат: `11111111-1111-1111-1111-111111111111`. Идентификатор можно получить с помощью портал Azure или Azure PowerShell.
 
-### <a name="search-for-object-ids"></a>Поиск идентификаторов объектов
+### <a name="user"></a>Пользователь
 
-Чтобы назначить роль, необходимо определить объект (пользователя, группу или приложение) и область.
-
-Чтобы получить идентификатор подписки, его можно найти в колонке **подписки** в портал Azure или воспользоваться [Get-азсубскриптион](/powershell/module/Az.Accounts/Get-AzSubscription).
-
-Чтобы получить идентификатор объекта для пользователя Azure AD, используйте [Get-азадусер](/powershell/module/az.resources/get-azaduser).
+Чтобы получить идентификатор объекта для пользователя Azure AD, можно использовать [Get-азадусер](/powershell/module/az.resources/get-azaduser).
 
 ```azurepowershell
 Get-AzADUser -StartsWith <string_in_quotes>
+(Get-AzADUser -DisplayName <name_in_quotes>).id
 ```
 
-Чтобы получить идентификатор объекта для группы Azure AD, используйте [Get-азадграуп](/powershell/module/az.resources/get-azadgroup).
+### <a name="group"></a>Группа
+
+Чтобы получить идентификатор объекта для группы Azure AD, можно использовать [Get-азадграуп](/powershell/module/az.resources/get-azadgroup).
 
 ```azurepowershell
 Get-AzADGroup -SearchString <group_name_in_quotes>
+(Get-AzADGroup -DisplayName <group_name_in_quotes>).id
 ```
 
-Чтобы получить идентификатор объекта для субъекта-службы или приложения Azure AD, используется команда [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal).
+### <a name="application"></a>Приложение
+
+Чтобы получить идентификатор объекта для субъекта-службы Azure AD (удостоверения, используемого приложением), можно использовать [Get-азадсервицепринЦипал](/powershell/module/az.resources/get-azadserviceprincipal). Для субъекта-службы используйте идентификатор объекта, а **не** идентификатор приложения.
 
 ```azurepowershell
 Get-AzADServicePrincipal -SearchString <service_name_in_quotes>
+(Get-AzADServicePrincipal -DisplayName <service_name_in_quotes>).id
 ```
+
+## <a name="grant-access"></a>Предоставление доступа
+
+Чтобы в RBAC предоставить доступ, нужно создать назначение ролей.
 
 ### <a name="create-a-role-assignment-for-a-user-at-a-resource-group-scope"></a>Создание назначения роли для пользователя в области действия группы ресурсов
 
@@ -344,7 +351,7 @@ CanDelegate        : False
 New-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionId <role_id> -ResourceGroupName <resource_group_name>
 ```
 
-В следующем примере роль [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) назначается *alain@example.com* пользователю в области группы ресурсов *Pharma-Sales* . Чтобы получить уникальный идентификатор роли, можно использовать [Get-азроледефинитион](/powershell/module/az.resources/get-azroledefinition) или ознакомиться со [встроенными ролями для ресурсов Azure](built-in-roles.md).
+В следующем примере роль [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) назначается *(Alain\@example.com* User в области группы ресурсов *Pharma-Sales* . Чтобы получить уникальный идентификатор роли, можно использовать [Get-азроледефинитион](/powershell/module/az.resources/get-azroledefinition) или ознакомиться со [встроенными ролями для ресурсов Azure](built-in-roles.md).
 
 ```Example
 PS C:\> New-AzRoleAssignment -ObjectId 44444444-4444-4444-4444-444444444444 -RoleDefinitionId 9980e02c-c2be-4d73-94e8-173b1dc7cf3c -Scope /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales
@@ -362,7 +369,7 @@ CanDelegate        : False
 
 ### <a name="create-a-role-assignment-for-a-group-at-a-resource-scope"></a>Создание назначения роли для группы в области действия ресурса
 
-Чтобы предоставить доступ к группе в области действия ресурса, используйте [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment).
+Чтобы предоставить доступ к группе в области действия ресурса, используйте [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment). Сведения о том, как получить идентификатор объекта группы, см. в разделе [получение идентификаторов объектов](#get-object-ids).
 
 ```azurepowershell
 New-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionName <role_name> -ResourceName <resource_name> -ResourceType <resource_type> -ParentResource <parent resource> -ResourceGroupName <resource_group_name>
@@ -393,10 +400,10 @@ CanDelegate        : False
 
 ### <a name="create-a-role-assignment-for-an-application-at-a-subscription-scope"></a>Создание назначения роли для приложения в области действия подписки
 
-Чтобы предоставить доступ к приложению в области действия подписки, используйте [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment).
+Чтобы предоставить доступ к приложению в области действия подписки, используйте [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment). Сведения о том, как получить идентификатор объекта приложения, см. в разделе [получение идентификаторов объектов](#get-object-ids).
 
 ```azurepowershell
-New-AzRoleAssignment -ObjectId <application_id> -RoleDefinitionName <role_name> -Scope /subscriptions/<subscription_id>
+New-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionName <role_name> -Scope /subscriptions/<subscription_id>
 ```
 
 ```Example
@@ -439,7 +446,7 @@ CanDelegate        : False
 
 Для удаления доступа в RBAC нужно удалить назначение ролей с помощью командлета [Remove-AzRoleAssignment](/powershell/module/az.resources/remove-azroleassignment).
 
-В следующем примере удаляется назначение роли *участника виртуальной машины* из пользователя *(Alain \@example. com* в группе ресурсов *Pharma-Sales* .
+В следующем примере удаляется назначение роли *участника виртуальной машины* из пользователя *(Alain\@example.com* в группе ресурсов *Pharma-Sales* .
 
 ```Example
 PS C:\> Remove-AzRoleAssignment -SignInName alain@example.com -RoleDefinitionName "Virtual Machine Contributor" -ResourceGroupName pharma-sales
@@ -459,7 +466,7 @@ Remove-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionName <role_name> -S
 
 При появление сообщения об ошибке "предоставленные сведения не сопоставлены с назначением ролей" убедитесь, что также заданы параметры `-Scope` или `-ResourceGroupName`. Дополнительные сведения см. в статье [Устранение неполадок RBAC для ресурсов Azure](troubleshooting.md#role-assignments-with-unknown-security-principal).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Руководство. Предоставление группе доступа к ресурсам Azure с помощью RBAC и Azure PowerShell](tutorial-role-assignments-group-powershell.md)
 - [Руководство. Создание настраиваемой роли для ресурсов Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)

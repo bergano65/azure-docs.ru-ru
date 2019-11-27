@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 11/04/2019
 ms.author: jeconnoc
-ms.openlocfilehash: 3bc1bfcf58d622151f0af9c6da693c5533bcf966
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 9751435636519100ea13fd850508c99faeb87a92
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73721612"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74133259"
 ---
 # <a name="quickstart-launch-a-java-spring-application-using-the-azure-cli"></a>Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI
 
@@ -146,7 +146,16 @@ az spring-cloud app update -n gateway --is-public true
 az spring-cloud app show --name gateway | grep url
 ```
 
-Перейдите по URL-адресу, указанному в предыдущей команде, чтобы увидеть работающее приложение PiggyMetrics.
+Перейдите по URL-адресу, указанному в предыдущей команде, чтобы запустить приложение PiggyMetrics.
+    ![Снимок экрана выполнения PiggyMetrics](media/spring-cloud-quickstart-launch-app-cli/launch-app.png)
+
+URL-адрес можно найти на портале Azure. 
+1. Перейдите к службе.
+1. Выберите **Приложения**.
+1. Выберите **шлюз**.
+
+    ![Снимок экрана выполнения PiggyMetrics](media/spring-cloud-quickstart-launch-app-cli/navigate-app1.png)
+1. Найдите URL-адрес на странице **общих сведений о шлюзе**. ![Снимок экрана выполнения PiggyMetrics](media/spring-cloud-quickstart-launch-app-cli/navigate-app2-url.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

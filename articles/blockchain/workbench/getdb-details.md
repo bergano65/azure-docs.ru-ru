@@ -1,23 +1,17 @@
 ---
-title: Получение сведений о базе данных Azure Блокчейн Workbench Preview
+title: Получение подробных сведений о базе данных Azure Blockchain Workbench
 description: Узнайте, как получить сведения о базе данных и сервере базы данных Azure Блокчейн Workbench Preview.
-services: azure-blockchain
-keywords: ''
-author: PatAltimore
-ms.author: patricka
 ms.date: 09/05/2019
 ms.topic: article
-ms.service: azure-blockchain
 ms.reviewer: mmercuri
-manager: femila
-ms.openlocfilehash: f4a4eaab9a03aeed27e29eb645b6e22a028b243b
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 2b3190a9d042be8ead1ff3d5ef48d4a2a19e8963
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70845077"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74324693"
 ---
-# <a name="get-information-about-your-azure-blockchain-workbench-preview-database"></a>Получение сведений о базе данных Azure Блокчейн Workbench Preview
+# <a name="get-information-about-your-azure-blockchain-workbench-database"></a>Получение сведений о базе данных Azure Blockchain Workbench
 
 В этой статье показано, как получить подробные сведения о базе данных Azure Блокчейн Workbench Preview.
 
@@ -47,7 +41,7 @@ ms.locfileid: "70845077"
 
 Имя сервера базы данных и имя базы данных позволяют подключиться к базе данных Blockchain Workbench с помощью средства разработки или отчетности.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Database views in Azure Blockchain Workbench](database-views.md) (Представления базы данных в Azure Blockchain Workbench)

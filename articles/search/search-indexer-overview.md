@@ -8,12 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 1fd667e14501355f2567712d13b10dd7fbc7ee19
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 2719bba0e88ba3125bd5ba163804e31885b286a2
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112689"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74534526"
 ---
 # <a name="indexers-in-azure-cognitive-search"></a>Индексаторы в Azure Когнитивный поиск
 
@@ -31,7 +32,7 @@ ms.locfileid: "74112689"
 
 * [Мастер импорта данных > портала](search-import-data-portal.md)
 * [API REST службы](https://docs.microsoft.com/rest/api/searchservice/Indexer-operations)
-* [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.iindexersoperations)
+* [ПАКЕТ SDK .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.iindexersoperations)
 
 Изначально новый индексатор объявляется в качестве предварительной версии функции. Предварительные версии функций добавляют в API (REST и .NET), а затем после выхода общедоступной версии интегрируются на портале. При оценке нового индексатора следует запланировать написание кода.
 
@@ -46,7 +47,8 @@ ms.locfileid: "74112689"
 Данные о сканировании, выполненном индексаторами, хранятся в Azure.
 
 * [Хранилище BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
-* [Хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
+* [Azure Data Lake Storage 2-го поколения](search-howto-index-azure-data-lake-storage.md) (Предварительная версия)
+* [хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
 * [Azure Cosmos DB](search-howto-index-cosmosdb.md)
 * [база данных SQL Azure;](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 * [SQL Server на виртуальных машинах Azure](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
@@ -67,7 +69,7 @@ ms.locfileid: "74112689"
 > Хотя индексаторы не могут создавать индексы, вы можете это сделать с помощью мастера **импорта данных**. В большинстве случаев мастер может определить схему индекса на основе существующих метаданных в источнике, предоставляя предварительную схему, которую можно изменить в мастере во время его работы. После создания индекса в службе последующие изменения на портале ограничиваются добавлением новых полей. Используйте мастер для создания индекса, но не для изменения. Чтобы пройти практическое обучение, перейдите к [пошаговому руководству по порталу](search-get-started-portal.md).
 
 ### <a name="step-3-create-and-schedule-the-indexer"></a>Шаг 3. Создание и планирование индексатора
-Определение индексатора — это конструкция, которая объединяет все элементы, связанные с приемом данных. Обязательные элементы включают источник данных и индекс. Необязательные элементы включают в себя расписание и сопоставления полей. Сопоставление полей необязательно, если поля источника и поля индекса четко соответствуют друг другу. Индексатор может ссылаться на источник данных из другой службы, если этот источник данных принадлежит к той же подписке. Дополнительные сведения о структурировании индексатора см. в статье [Создание индексатора (REST API когнитивный Поиск Azure)](https://docs.microsoft.com/rest/api/searchservice/Create-Indexer).
+Определение индексатора — это конструкция, которая объединяет все элементы, связанные с приемом данных. Обязательные элементы включают источник данных и индекс. Необязательные элементы включают в себя расписание и сопоставления полей. Сопоставление полей необязательно, если поля источника и поля индекса четко соответствуют друг другу. Дополнительные сведения о структурировании индексатора см. в статье [Создание индексатора (REST API когнитивный Поиск Azure)](https://docs.microsoft.com/rest/api/searchservice/Create-Indexer).
 
 <a id="RunIndexer"></a>
 
@@ -123,12 +125,12 @@ ms.locfileid: "74112689"
 
 История выполнения включает не более 50 последних завершенных выполнений, которые сортируются в обратном хронологическом порядке (то есть в ответе первым отображается последнее выполнение).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы ознакомились с основной идеей, можно переходить к изучению требований и задач, связанных с каждым типом источника данных.
 
 * [База данных Azure SQL (или SQL Server на виртуальных машинах Azure);](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 * [Azure Cosmos DB](search-howto-index-cosmosdb.md)
 * [Хранилище BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
-* [Хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
+* [хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
 * [Индексирование больших двоичных объектов CSV с помощью индексатора больших двоичных объектов Azure Когнитивный поиск](search-howto-index-csv-blobs.md)
 * [Индексирование больших двоичных объектов JSON с помощью индексатора BLOB-объектов Когнитивный поиск Azure](search-howto-index-json-blobs.md)

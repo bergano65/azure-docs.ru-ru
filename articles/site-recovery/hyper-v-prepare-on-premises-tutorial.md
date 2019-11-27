@@ -1,18 +1,18 @@
 ---
-title: Подготовка локальных серверов Hyper-V для аварийного восстановления виртуальных машин Hyper-V в Azure
-description: Сведения о подготовке локальных виртуальных машин Hyper-V для аварийного восстановления в Azure с помощью службы Azure Site Recovery.
+title: Подготовка к аварийному восстановлению виртуальных машин Hyper-V в Azure с помощью Azure Site Recovery
+description: Сведения о подготовке локальных виртуальных машин Hyper-V для аварийного восстановления в Azure с помощью Azure Site Recovery.
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 09/09/2019
+ms.date: 11/12/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: b17e42378daf51543a2664315f2971d15c288611
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: b36e4688ebd6e929a56869a6bb191d98b2f1f432
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813726"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73954004"
 ---
 # <a name="prepare-on-premises-hyper-v-servers-for-disaster-recovery-to-azure"></a>Подготовка локальных серверов Hyper-V для аварийного восстановления в Azure
 

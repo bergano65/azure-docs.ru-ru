@@ -1,7 +1,7 @@
 ---
-title: 'Designer: Predict credit risk example'
+title: 'Конструктор: пример прогнозируемого кредитного риска'
 titleSuffix: Azure Machine Learning
-description: Build a classifier and use custom Python scripts to predict credit risk using Azure Machine Learning designer.
+description: Создание классификатора и использование пользовательских скриптов Python для прогнозирования кредитных рисков с помощью Машинное обучение Azure конструктора.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -17,61 +17,61 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74214287"
 ---
-# <a name="build-a-classifier--use-python-scripts-to-predict-credit-risk-using-azure-machine-learning-designer"></a>Build a classifier & use Python scripts to predict credit risk using Azure Machine Learning designer
+# <a name="build-a-classifier--use-python-scripts-to-predict-credit-risk-using-azure-machine-learning-designer"></a>Создание классификатора & использование скриптов Python для прогнозирования кредитных рисков с помощью конструктора Машинное обучение Azure
 
-**Designer (preview) sample 4**
+**Конструктор (Предварительная версия) — пример 4**
 
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
 
-This article shows you how to build a complex machine learning pipeline using the designer (preview). You'll learn how to implement custom logic using Python scripts and compare multiple models to choose the best option.
+В этой статье показано, как создать сложный конвейер машинного обучения с помощью конструктора (Предварительная версия). Вы узнаете, как реализовать пользовательскую логику с помощью скриптов Python и сравнить несколько моделей, чтобы выбрать наилучший вариант.
 
-This sample trains a classifier to predict credit risk using credit application information such as credit history, age, and number of credit cards. However, you can apply the concepts in this article to tackle your own machine learning problems.
+В этом примере демонстрируется обучение классификатора для прогнозирования кредитного риска с помощью таких сведений о кредитных приложениях, как история кредита, возраст и количество кредитных карт. Однако вы можете применить основные понятия, описанные в этой статье, чтобы решить свои проблемы машинного обучения.
 
-Here's the completed graph for this pipeline:
+Вот завершенный граф для этого конвейера:
 
-[![Graph of the pipeline](media/how-to-designer-sample-classification-predict-credit-risk-cost-sensitive/graph.png)](media/how-to-designer-sample-classification-predict-credit-risk-cost-sensitive/graph.png#lightbox)
+[![граф конвейера](media/how-to-designer-sample-classification-predict-credit-risk-cost-sensitive/graph.png)](media/how-to-designer-sample-classification-predict-credit-risk-cost-sensitive/graph.png#lightbox)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 
-4. Click sample 4 to open it.
+4. Щелкните пример 4, чтобы открыть его.
 
 ## <a name="data"></a>Данные
 
-This sample uses the German Credit Card dataset from the UC Irvine repository. It contains 1,000 samples with 20 features and one label. Each sample represents a person. The 20 features include numerical and categorical features. For more information about the dataset, see the [UCI website](https://archive.ics.uci.edu/ml/datasets/Statlog+%28German+Credit+Data%29). The last column is the label, which denotes the credit risk and has only two possible values: high credit risk = 2, and low credit risk = 1.
+В этом примере используется набор данных с кредитными картами для Германии из репозитория Ирвин UC. Он содержит 1 000 примеров с 20 функциями и одной меткой. Каждый пример представляет человека. 20 функций включают в себя числовые и функции категорий. Дополнительные сведения о наборе данных см. на [веб-сайте UCI](https://archive.ics.uci.edu/ml/datasets/Statlog+%28German+Credit+Data%29). Последний столбец — это метка, которая обозначает кредитный риск и имеет только два возможных значения: высокий кредитный риск = 2 и низкий кредитный риск = 1.
 
-## <a name="pipeline-summary"></a>Pipeline summary
+## <a name="pipeline-summary"></a>Сводка по конвейеру
 
-In this pipeline, you compare two different approaches for generating models to solve this problem:
+В этом конвейере вы сравниваете два разных подхода к созданию моделей для решения этой проблемы:
 
-- Training with the original dataset.
-- Training with a replicated dataset.
+- Обучение с помощью исходного набора данных.
+- Обучение с помощью реплицируемого набора данных.
 
-With both approaches, you evaluate the models by using the test dataset with replication to ensure that results are aligned with the cost function. Test two classifiers with both approaches: **Two-Class Support Vector Machine** and **Two-Class Boosted Decision Tree**.
+С обоими подходами вы оцениваете модели с помощью тестового набора данных с репликацией, чтобы обеспечить согласованность результатов с функцией cost. Протестируйте два классификатора с обоими способами: с **двумя классами** и с **повышенным деревом принятия решений в двух классах**.
 
-The cost of misclassifying a low-risk example as high is 1, and the cost of misclassifying a high-risk example as low is 5. We use an **Execute Python Script** module to account for this misclassification cost.
+Стоимость неверной классификации в примере с низким риском — 1, а стоимость неверной классификации примера с высоким риском — 5. Для учета этой неправильной классификации мы используем модуль **выполнить сценарий Python** .
 
-Here's the graph of the pipeline:
+Вот граф конвейера:
 
-[![Graph of the pipeline](media/how-to-designer-sample-classification-predict-credit-risk-cost-sensitive/graph.png)](media/how-to-designer-sample-classification-predict-credit-risk-cost-sensitive/graph.png#lightbox)
+[![граф конвейера](media/how-to-designer-sample-classification-predict-credit-risk-cost-sensitive/graph.png)](media/how-to-designer-sample-classification-predict-credit-risk-cost-sensitive/graph.png#lightbox)
 
 ## <a name="data-processing"></a>Обработка данных
 
-Start by using the **Metadata Editor** module to add column names to replace the default column names with more meaningful names, obtained from the dataset description on the UCI site. Provide the new column names as comma-separated values in the **New column** name field of the **Metadata Editor**.
+Начните с использования модуля **редактора метаданных** , чтобы добавить имена столбцов, чтобы заменить имена столбцов по умолчанию более понятными именами, полученными из описания набора данных на сайте UCI. Укажите новые имена столбцов в качестве значений, разделенных запятыми, в поле имя **нового столбца** в **редакторе метаданных**.
 
-Next, generate the training and test sets used to develop the risk prediction model. Split the original dataset into training and test sets of the same size by using the **Split Data** module. To create sets of equal size, set the **Fraction of rows in the first output dataset** option to 0.7.
+Затем создайте обучающие и проверочные наборы, используемые для разработки модели прогнозирования рисков. Разделите исходный набор данных на обучающие и проверочные наборы с тем же размером с помощью модуля **Split Data (разделение данных** ). Чтобы создать наборы одинакового размера, задайте в качестве **доли строк в первом параметре выходного набора данных** значение 0,7.
 
-### <a name="generate-the-new-dataset"></a>Generate the new dataset
+### <a name="generate-the-new-dataset"></a>Создать новый набор данных
 
-Because the cost of underestimating risk is high, set the cost of misclassification like this:
+Так как затраты на недооценку имеют высокий уровень, установите стоимость неправильной классификации следующим образом:
 
-- For high-risk cases misclassified as low risk: 5
-- For low-risk cases misclassified as high risk: 1
+- Для случаев с высоким риском, неклассифицированных с низким риском: 5
+- Для случаев с низким риском, не классифицированных как высокий риск: 1
 
-To reflect this cost function, generate a new dataset. In the new dataset, each high-risk example is replicated five times, but the number of low-risk examples doesn't change. Split the data into training and test datasets before replication to prevent the same row from being in both sets.
+Чтобы отразить эту функцию затрат, создайте новый набор данных. В новом наборе данных каждый пример с высоким риском реплицируется пять раз, но количество примеров с низким риском не меняется. Разбейте данные на обучающие и проверочные наборы данных перед репликацией, чтобы предотвратить появление одной и той же строки в обоих наборах.
 
-To replicate the high-risk data, put this Python code into an **Execute Python Script** module:
+Чтобы реплицировать данные с высоким риском, поставьте этот код Python в модуль **выполнения сценария Python** :
 
 ```Python
 import pandas as pd
@@ -85,42 +85,42 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
     return result,
 ```
 
-The **Execute Python Script** module replicates both the training and test datasets.
+Модуль **выполнение скрипта Python** реплицирует и обучающие, и проверочные наборы данных.
 
 ### <a name="feature-engineering"></a>Проектирование признаков
 
-The **Two-Class Support Vector Machine** algorithm requires normalized data. So use the **Normalize Data** module to normalize the ranges of all numeric features with a `tanh` transformation. A `tanh` transformation converts all numeric features to values within a range of 0 and 1 while preserving the overall distribution of values.
+Для алгоритма **векторного компьютера поддержки двух классов** требуются Нормализованные данные. Поэтому используйте модуль **нормализация данных** для нормализации диапазонов всех числовых функций с помощью преобразования `tanh`. Преобразование «`tanh`» преобразует все числовые функции в значения в диапазоне от 0 до 1 с сохранением общего распределения значений.
 
-The **Two-Class Support Vector Machine** module handles string features, converting them to categorical features and then to binary features with a value of zero or one. So you don't need to normalize these features.
+Модуль **векторной поддержки с двумя классами** обрабатывает строковые функции, преобразуя их в функции категорий, а затем в двоичные функции со значением 0 или 1. Поэтому вам не нужно нормализовать эти функции.
 
 ## <a name="models"></a>Модели
 
-Because you applied two classifiers, **Two-Class Support Vector Machine** (SVM) and **Two-Class Boosted Decision Tree**, and two datasets, you generate a total of four models:
+Поскольку вы применили два классификатора, **два класса** (SVM) и **высококлассное дерево принятия решений**, а также два набора данных, вы создадите всего четыре модели:
 
-- SVM trained with original data.
-- SVM trained with replicated data.
-- Boosted Decision Tree trained with original data.
-- Boosted Decision Tree trained with replicated data.
+- SVM, обученные исходными данными.
+- SVM, обученные с помощью реплицированных данных.
+- Увеличивающееся дерево решений обучено исходными данными.
+- Повышенное дерево принятия решений, обученное с помощью реплицированных данных.
 
-This sample uses the standard data science workflow to create, train, and test the models:
+В этом примере используется стандартный рабочий процесс обработки и анализа данных для создания, обучения и тестирования моделей.
 
-1. Initialize the learning algorithms, using **Two-Class Support Vector Machine** and **Two-Class Boosted Decision Tree**.
-1. Use **Train Model** to apply the algorithm to the data and create the actual model.
-1. Use **Score Model** to produce scores by using the test examples.
+1. Инициализируйте алгоритмы обучения, используя **два класса Векторный компьютер поддержки** и **высококлассное дерево принятия решений**.
+1. Используйте **обучение модели** , чтобы применить алгоритм к данным и создать фактическую модель.
+1. Используйте **модель оценки** для формирования оценок с помощью примеров тестов.
 
-The following diagram shows a portion of this pipeline, in which the original and replicated training sets are used to train two different SVM models. **Train Model** is connected to the training set, and **Score Model** is connected to the test set.
+На следующей диаграмме показана часть конвейера, в которой исходные и реплицированные обучающие наборы используются для обучения двух различных моделей SVM. **Обучение модели** подключено к обучающему набору, а **модель оценки** подключена к тестовому набору.
 
-![Pipeline graph](media/how-to-designer-sample-classification-predict-credit-risk-cost-sensitive/score-part.png)
+![Граф конвейера](media/how-to-designer-sample-classification-predict-credit-risk-cost-sensitive/score-part.png)
 
-In the evaluation stage of the pipeline, you compute the accuracy of each of the four models. For this pipeline, use **Evaluate Model** to compare examples that have the same misclassification cost.
+На этапе оценки конвейера вы Вычислите точность каждой из четырех моделей. Для этого конвейера используйте функцию " **вычислить модель** ", чтобы сравнить примеры с одинаковыми затратами на классификацию.
 
-The **Evaluate Model** module can compute the performance metrics for as many as two scored models. So you can use one instance of **Evaluate Model** to evaluate the two SVM models and another instance of **Evaluate Model** to evaluate the two Boosted Decision Tree models.
+Модуль « **Оценка модели** » может вычислять метрики производительности столько же, сколько в двух оцененных моделях. Поэтому можно использовать один экземпляр **Evaluate Model** для вычисления двух моделей SVM и другой экземпляр **Evaluate Model** для вычисления двух моделей увеличивающегося дерева принятия решений.
 
-Notice that the replicated test dataset is used as the input for **Score Model**. In other words, the final accuracy scores include the cost for getting the labels wrong.
+Обратите внимание на то, что в качестве входных данных для **модели оценки**используется реплицированный набор тестов. Иными словами, окончательные оценки точности включают стоимость неправильного получения меток.
 
-## <a name="combine-multiple-results"></a>Combine multiple results
+## <a name="combine-multiple-results"></a>Объединение нескольких результатов
 
-The **Evaluate Model** module produces a table with a single row that contains various metrics. To create a single set of accuracy results, we first use **Add Rows** to combine the results into a single table. We then use the following Python script in the **Execute Python Script** module to add the model name and training approach for each row in the table of results:
+Модуль « **Анализ модели** » создает таблицу с одной строкой, содержащей различные метрики. Чтобы создать единый набор результатов точности, мы сначала используем **Добавление строк** , чтобы объединить результаты в одну таблицу. Затем мы используем следующий скрипт Python в модуле **выполнение скрипта Python** , чтобы добавить имя модели и подход к обучению для каждой строки в таблице результатов:
 
 ```Python
 import pandas as pd
@@ -142,29 +142,29 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
 ## <a name="results"></a>Результаты
 
-To view the results of the pipeline, you can right-click the Visualize output of the last **Select Columns in Dataset** module.
+Для просмотра результатов конвейера можно щелкнуть правой кнопкой мыши визуализацию выходных данных последнего **столбца выбор столбцов в наборе данных** .
 
-![Visualize output](media/how-to-designer-sample-classification-predict-credit-risk-cost-sensitive/result.png)
+![Визуализация выходных данных](media/how-to-designer-sample-classification-predict-credit-risk-cost-sensitive/result.png)
 
-The first column lists the machine learning algorithm used to generate the model.
+В первом столбце перечисляются алгоритмы машинного обучения, используемые для создания модели.
 
-The second column indicates the type of the training set.
+Во втором столбце указывается тип обучающего набора.
 
-The third column contains the cost-sensitive accuracy value.
+Третий столбец содержит значение точности с учетом стоимости.
 
-From these results, you can see that the best accuracy is provided by the model that was created with **Two-Class Support Vector Machine** and trained on the replicated training dataset.
+Из этих результатов можно увидеть, что наилучшая точность обеспечивается моделью, созданной с помощью **векторной машины поддержки двух классов** , и обучена по реплицированному набору данных для обучения.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [aml-ui-cleanup](../../../includes/aml-ui-cleanup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Explore the other samples available for the designer:
+Изучите другие примеры, доступные для конструктора:
 
-- [Sample 1 - Regression: Predict an automobile's price](how-to-designer-sample-regression-automobile-price-basic.md)
-- [Sample 2 - Regression: Compare algorithms for automobile price prediction](how-to-designer-sample-regression-automobile-price-compare-algorithms.md)
-- [Sample 3 - Classification with feature selection: Income Prediction](how-to-designer-sample-classification-predict-income.md)
-- [Sample 5 - Classification: Predict churn](how-to-designer-sample-classification-churn.md)
-- [Sample 6 - Classification: Predict flight delays](how-to-designer-sample-classification-flight-delay.md)
-- [Sample 7 - Text Classification: Wikipedia SP 500 Dataset](how-to-designer-sample-text-classification.md)
+- [Пример 1. регрессия: прогнозирование цены автомобиля](how-to-designer-sample-regression-automobile-price-basic.md)
+- [Пример 2. регрессия. алгоритмы сравнения для прогнозирования цен автомобилей](how-to-designer-sample-regression-automobile-price-compare-algorithms.md)
+- [Пример 3. Классификация с выбором компонентов: прогноз дохода](how-to-designer-sample-classification-predict-income.md)
+- [Пример 5. Классификация: обработка прогнозов](how-to-designer-sample-classification-churn.md)
+- [Пример 6. Классификация: прогнозы задержек полета](how-to-designer-sample-classification-flight-delay.md)
+- [Пример 7. Классификация текста: набор данных Википедии SP 500](how-to-designer-sample-text-classification.md)

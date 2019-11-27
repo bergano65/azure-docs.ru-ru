@@ -1,26 +1,21 @@
 ---
-title: Подключение тома gitRepo в службе "Экземпляры контейнеров Azure"
+title: Подключить том gitRepo к группе контейнеров
 description: Сведения о подключении тома gitRepo для клонирования репозитория в экземпляры контейнеров
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: article
 ms.date: 06/15/2018
-ms.author: danlep
-ms.openlocfilehash: e8afa9e14941920cdcfb984e6660bdc666240716
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 708fca185227292e7cdf33952bde6f42b3d4951f
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325440"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533214"
 ---
 # <a name="mount-a-gitrepo-volume-in-azure-container-instances"></a>Подключение тома gitRepo в службе "Экземпляры контейнеров Azure"
 
 Узнайте, как подключить том *gitRepo*, чтобы клонировать репозиторий в экземпляры контейнеров.
 
 > [!NOTE]
-> Подключение тома *gitRepo* сейчас поддерживается только для контейнеров Linux. Пока мы работаем над переносом всех компонентов в контейнеры Windows, в [обзоре](container-instances-overview.md#linux-and-windows-containers) можно найти различия в текущих платформах.
+> Подключение тома *gitRepo* сейчас поддерживается только для контейнеров Linux. Пока мы работаем над переносом всех компонентов в контейнеры Windows, в [обзоре](container-instances-overview.md#linux-and-windows-containers)можно найти различия в текущих платформах.
 
 ## <a name="gitrepo-volume"></a>Том gitRepo
 
@@ -30,15 +25,15 @@ ms.locfileid: "68325440"
 
 | Свойство | Обязательно для заполнения | Описание |
 | -------- | -------- | ----------- |
-| `repository` | Да | Полный URL-адрес (включая `http://` или `https://`) репозитория Git, который будет клонирован.|
+| `repository` | ДА | Полный URL-адрес (включая `http://` или `https://`) репозитория Git, который будет клонирован.|
 | `directory` | Нет | Каталог, в который необходимо клонировать репозиторий. Значение пути не должно содержать знак `..` или начинаться с него.  Если указан знак `.`, репозиторий клонируется в каталог тома. В противном случае репозиторий Git клонируется в подкаталог с указанным именем в каталоге томов. |
 | `revision` | Нет | Зафиксированный хэш версии, которая будет клонирована. Если не указан, клонируется версия `HEAD`. |
 
-## <a name="mount-gitrepo-volume-azure-cli"></a>Подключить том gitRepo: Инфраструктура CLI Azure
+## <a name="mount-gitrepo-volume-azure-cli"></a>Подключение тома gitRepo: Azure CLI
 
-Чтобы подключить том gitRepo при развертывании экземпляров контейнера с [Azure CLI](/cli/azure), укажите `--gitrepo-url` параметры и `--gitrepo-mount-path` для команды [AZ Container Create][az-container-create] . При необходимости можно указать каталог тома, в который будет осуществляться клонирование (`--gitrepo-dir`) и хэш фиксации редакции, которая будет клонирована (`--gitrepo-revision`).
+Чтобы подключить том gitRepo при развертывании экземпляров контейнера с [Azure CLI](/cli/azure), укажите параметры `--gitrepo-url` и `--gitrepo-mount-path` команды [AZ Container Create][az-container-create] . При необходимости можно указать каталог тома, в который будет осуществляться клонирование (`--gitrepo-dir`) и хэш фиксации редакции, которая будет клонирована (`--gitrepo-revision`).
 
-`/mnt/aci-helloworld` В этом примере команда копирует пример приложения Microsoft [ACI-HelloWorld][aci-helloworld] в в экземпляре контейнера:
+В этом примере команда копирует пример приложения Microsoft [ACI-HelloWorld][aci-helloworld] в `/mnt/aci-helloworld` в экземпляре контейнера:
 
 ```azurecli-interactive
 az container create \
@@ -63,7 +58,7 @@ total 16
 drwxr-xr-x    2 root     root          4096 Apr 16 16:35 app
 ```
 
-## <a name="mount-gitrepo-volume-resource-manager"></a>Подключить том gitRepo: Resource Manager
+## <a name="mount-gitrepo-volume-resource-manager"></a>Подключение тома gitRepo: Resource Manager
 
 Чтобы подключить том gitRepo при развертывании экземпляров контейнера с помощью [шаблона Azure Resource Manager](/azure/templates/microsoft.containerinstance/containergroups), в шаблоне сначала нужно заполнить массив `volumes` в разделе `properties` группы контейнеров. Затем для каждого контейнера в группе контейнеров, в которой нужно подключить том *gitRepo*, нужно заполнить массив `volumeMounts` в разделе `properties` определения контейнера.
 
@@ -99,15 +94,15 @@ drwxr-xr-x    2 root     root          4096 Apr 16 16:35 app
 
 Дополнительные сведения о личных маркерах доступа для GitHub и Azure Repos:
 
-GitHub [Создание личного маркера доступа для командной строки][pat-github]
+GitHub: [Создание личного маркера доступа для командной строки][pat-github]
 
 Azure Repos: [Создание личных маркеров доступа для проверки подлинности доступа][pat-repos]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о подключении других типов томов в службе "Экземпляры контейнеров Azure" см. в следующих статьях:
 
-* [Подключение общего файлового ресурса Azure с помощью службы "Экземпляры контейнеров Azure"](container-instances-volume-azure-files.md)
+* [Mount an Azure file share in Azure Container Instances](container-instances-volume-azure-files.md) (Подключение файлового ресурса Azure с помощью службы "Экземпляры контейнеров Azure")
 * [Mount an emptyDir volume in Azure Container Instances](container-instances-volume-emptydir.md) (Подключение тома emptyDir в службе "Экземпляры контейнеров Azure")
 * [Подключение тома secret в службе "Экземпляры контейнеров Azure"](container-instances-volume-secret.md)
 

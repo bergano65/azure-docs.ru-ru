@@ -1,5 +1,5 @@
 ---
-title: Не удается найти рабочую группу соединителей для приложения прокси приложения | Документы Майкрософт
+title: Не найдена Рабочая группа соединителей для приложения прокси приложения
 description: В этой статье описаны проблемы, которые могут возникнуть при отсутствии рабочего соединителя или группы соединителей для приложения прокси приложения.
 services: active-directory
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.date: 05/21/2018
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f829b8e8a4bc08b43d3c30a6333771ccd4e26e8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 96ab0d1b3bbab9c97c04da4f918f3aaa2f1d07e4
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65783612"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74275620"
 ---
 # <a name="no-working-connector-group-found-for-an-application-proxy-application"></a>Не удается найти рабочую группу соединителей для приложения прокси приложения
 
@@ -32,7 +32,7 @@ ms.locfileid: "65783612"
 
 -   При отсутствии соединителей в группе можно выполнить следующие действия:
 
-    -   Скачайте новый соединитель справа на локальный сервер и назначьте его этой группе
+    -   Скачайте новый соединитель справа на локальном сервере и назначьте его этой группе.
 
     -   Переместите активный соединитель в группу
 
@@ -68,7 +68,7 @@ ms.locfileid: "65783612"
 
 Дополнительные сведения о решении этой проблемы см. в документе "Решение проблем с портами".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 [Сведения о соединителях прокси приложения Azure AD](application-proxy-connectors.md)
 
 

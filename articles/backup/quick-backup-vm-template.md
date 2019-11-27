@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 05/14/2019
 ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: 7075e127192635c08aa2da2b4798dea6d6abb13b
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 5f027926a7b90ac99b04456ad3635466a6e27655
+ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68639416"
+ms.lasthandoff: 10/27/2019
+ms.locfileid: "72968790"
 ---
 # <a name="back-up-a-virtual-machine-in-azure-with-resource-manager-template"></a>Резервное копирование виртуальной машины в Azure с помощью шаблона Resource Manager
 
@@ -58,7 +58,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri
 
 Если вам больше не требуется резервная копия виртуальной машины, ее можно удалить.
 
-- Если вы хотите попытаться восстановить виртуальною машину, пропустите удаление.
+- Если вы хотите восстановить виртуальною машину, пропустите процедуру очистки.
 - Если вы использовали имеющуюся виртуальную машину, можете пропустить последний командлет [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup), чтобы оставить группу ресурсов и виртуальную машину.
 
 Отключите защиту, удалите точки восстановления и хранилище. Затем удалите группу ресурсов и связанные ресурсы виртуальной машины следующим образом:

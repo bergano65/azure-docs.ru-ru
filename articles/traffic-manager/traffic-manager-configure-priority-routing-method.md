@@ -1,25 +1,25 @@
 ---
-title: Настройка маршрутизации трафика с приоритетом — диспетчер трафика Azure
-description: В этой статье объясняется, как настроить метод маршрутизации трафика по приоритету с помощью диспетчера трафика Azure.
+title: Руководство по настройке приоритетной маршрутизации трафика с помощью диспетчера трафика Azure
+description: В этом учебнике объясняется, как настроить метод маршрутизации трафика по приоритету в диспетчере трафика.
 services: traffic-manager
 documentationcenter: ''
 author: asudbring
 manager: kumudD
 ms.service: traffic-manager
 ms.devlang: na
-ms.topic: article
+ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/20/2017
 ms.author: allensu
-ms.openlocfilehash: f9954c7733c30efaea4a74e04949556a3a8617fd
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
-ms.translationtype: MT
+ms.openlocfilehash: d5d58ec39841274b78ababf9f73f00a262cc37be
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74040355"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74420303"
 ---
-# <a name="configure-priority-traffic-routing-method-in-traffic-manager"></a>Настройка метода маршрутизации трафика по приоритету в диспетчере трафика
+# <a name="tutorial-configure-priority-traffic-routing-method-in-traffic-manager"></a>Учебник. Настройка метода маршрутизации трафика по приоритету в диспетчере трафика
 
 Независимо от режима веб-сайта веб-сайты Azure уже обеспечивают отработку отказов для веб-сайтов в центре данных (регионе). Диспетчер трафика обеспечивает отработку отказа для веб-сайтов в различных центрах данных.
 

@@ -1,23 +1,23 @@
 ---
-title: Регистрация устройств TPM в службе подготовки устройств Azure с помощью Java | Документация Майкрософт
+title: Краткое руководство. Регистрация устройств TPM в службе подготовки устройств Azure с помощью Java
 description: Краткое руководство по Azure. Регистрация устройств TPM в Служба подготовки устройств к добавлению в Центр Интернета вещей с помощью пакета SDK службы для Java В этом кратком руководстве используется индивидуальная регистрация.
 author: wesmc7777
 ms.author: wesmc
-ms.date: 12/20/2017
+ms.date: 11/08/2019
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.devlang: java
 ms.custom: mvc
-ms.openlocfilehash: ae1fbd93b26838b262dc6f07081f20b63e853d5c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 88ce16a658e760f69cdf17c9bb4de78fceca927a
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58104749"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73903468"
 ---
-# <a name="enroll-tpm-device-to-iot-hub-device-provisioning-service-using-java-service-sdk"></a>Регистрация устройств TPM в службе подготовки устройств Центра Интернета вещей с помощью пакета SDK для службы Java
+# <a name="quickstart-enroll-tpm-device-to-iot-hub-device-provisioning-service-using-java-service-sdk"></a>Краткое руководство. Регистрация устройств TPM в службе подготовки устройств Центра Интернета вещей с помощью пакета SDK для службы Java
 
 [!INCLUDE [iot-dps-selector-quick-enroll-device-tpm](../../includes/iot-dps-selector-quick-enroll-device-tpm.md)]
 
@@ -32,7 +32,7 @@ ms.locfileid: "58104749"
 
 1. Убедитесь, что на вашем компьютере установлен [пакет SDK 8 для Java SE](https://aka.ms/azure-jdks). 
 
-2. Настройте переменные среды для установки Java. Переменная `PATH` должна содержать полный путь к каталогу *jdk1.8.x\bin*. Если это первая установка Java на этом компьютере, создайте новую переменную среды с именем `JAVA_HOME` и сохраните в ней полный путь к каталогу *jdk1.8.x*. На компьютере Windows этот каталог находится в папке *C:\\Program Files\\Java\\*. Для создания и редактирования переменных среды вам нужно выполнить поиск по строке **Изменение переменных среды** на **панели управления**. 
+2. Настройте переменные среды для установки Java. Переменная `PATH` должна содержать полный путь к каталогу *jdk1.8.x\bin*. Если это первая установка Java на этом компьютере, создайте новую переменную среды с именем `JAVA_HOME` и сохраните в ней полный путь к каталогу *jdk1.8.x*. На компьютере Windows этот каталог находится в папке *C:\\Program Files\\Java\\* . Для создания и редактирования переменных среды вам нужно выполнить поиск по строке **Изменение переменных среды** на **панели управления**. 
 
    Чтобы проверить, правильно ли настроена среда Java на компьютере, выполните в окне командной строки следующую команду:
 
@@ -63,7 +63,7 @@ ms.locfileid: "58104749"
     git clone https://github.com/Azure/azure-iot-sdk-java.git --recursive
     ```
 
-2. В полученном исходном коде найдите папку с примером **_azure-iot-sdk-java/provisioning/provisioning-samples/service-enrollment-sample_**. Откройте файл **_/src/main/java/samples/com/microsoft/azure/sdk/iot/ServiceEnrollmentSample.java_** в любом удобном текстовом редакторе и добавьте следующие данные:
+2. В полученном исходном коде найдите папку с примером **_azure-iot-sdk-java/provisioning/provisioning-samples/service-enrollment-sample_** . Откройте файл **_/src/main/java/samples/com/microsoft/azure/sdk/iot/ServiceEnrollmentSample.java_** в любом удобном текстовом редакторе и добавьте следующие данные:
 
    1. В службу подготовки добавьте `[Provisioning Connection String]` с портала следующим образом:
        1. Откройте службу подготовки на [портале Azure](https://portal.azure.com). 
@@ -80,7 +80,7 @@ ms.locfileid: "58104749"
 
    2. Добавление сведений об устройстве TPM
        1. Получите *идентификатор регистрации* и *ключ подтверждения TPM* для имитированного устройства TPM, выполнив подготовительные действия для выполнения инструкций по [имитации устройства TPM](quick-create-simulated-device.md#simulatetpm).
-       2. Используйте **_идентификатор регистрации_** и **_ключ подтверждения_** из выходных данных на предыдущем шаге, чтобы заменить `[RegistrationId]` и `[TPM Endorsement Key]` в файле с примером кода **_ServiceEnrollmentSample.java_**:
+       2. Используйте **_идентификатор регистрации_** и **_ключ подтверждения_** из выходных данных на предыдущем шаге, чтобы заменить `[RegistrationId]` и `[TPM Endorsement Key]` в файле с примером кода **_ServiceEnrollmentSample.java_** :
         
            ```Java
            private static final String REGISTRATION_ID = "[RegistrationId]";
@@ -117,7 +117,7 @@ ms.locfileid: "58104749"
 
 ## <a name="build-and-run-the-java-sample-code"></a>Соберите и запустите пример кода Java
 
-1. Откройте окно командной строки и перейдите к папке **_azure-iot-sdk-java/provisioning/provisioning-samples/service-enrollment-sample_**.
+1. Откройте окно командной строки и перейдите к папке **_azure-iot-sdk-java/provisioning/provisioning-samples/service-enrollment-sample_** .
 
 2. Соберите пример кода с помощью следующей команды:
 

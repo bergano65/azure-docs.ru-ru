@@ -8,6 +8,7 @@ manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: d437b5ab-4d71-4c13-96d0-79018cebbbd4
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: tutorial
 ms.date: 01/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19b14b060cc37f94e51ceb902f8b4158120d4d02
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 233ddde25645cbdd9073011eeec2a20e42c8e9a8
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67105294"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73157408"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clicktime"></a>Руководство по Интеграция Azure Active Directory с ClickTime
 
@@ -211,15 +212,15 @@ ms.locfileid: "67105294"
 
 1. На панели инструментов в верхней части экрана щелкните **Company** (Компания), а затем — **People** (Пользователи).
    
-    ![Люди](./media/clicktime-tutorial/tic777282.png "Люди")
+    ![Пользователи](./media/clicktime-tutorial/tic777282.png "Люди")
 
 1. Нажмите кнопку **Добавить пользователя**.
    
-    ![Добавление пользователя](./media/clicktime-tutorial/tic777283.png "Добавление пользователя")
+    ![Добавление пользователя](./media/clicktime-tutorial/tic777283.png "Добавить пользователя")
 
 1. В разделе "Новый пользователь" выполните следующие действия.
    
-    ![Люди](./media/clicktime-tutorial/tic777284.png "Люди")
+    ![Пользователи](./media/clicktime-tutorial/tic777284.png "Люди")
    
     a.  В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например **Britta Simon**. 
   
@@ -242,5 +243,5 @@ ms.locfileid: "67105294"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

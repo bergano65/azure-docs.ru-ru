@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/04/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: ffa072f593a06a38e6e3d121fb76806e41bf568e
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 28705ea8a552f4d2e6653857c69ebb8d5f87b962
+ms.sourcegitcommit: 6dec090a6820fb68ac7648cf5fa4a70f45f87e1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73605548"
+ms.lasthandoff: 11/11/2019
+ms.locfileid: "73907110"
 ---
 # <a name="migrate-physical-or-virtualized-servers-to-azure"></a>Перенос физических и виртуализированных серверов в Azure 
 
@@ -123,7 +123,7 @@ ms.locfileid: "73605548"
 > [!NOTE]
 > Миграция на основе агентов с помощью средства "Миграция сервера" службы "Миграция Azure" основана на функциях службы Azure Site Recovery. Некоторые требования могут ссылаться на документацию Site Recovery.
 
-1. [Проверьте](migrate-support-matrix-vmware.md#agent-based-migration-vmware-server-requirements) соответствие требованиям сервера VMware.
+1. [Проверьте](migrate-support-matrix-vmware.md#agent-based-migration-vmware-server-requirements) соответствие требованиям к серверу.
 2. [Проверьте](migrate-support-matrix-vmware.md#agent-based-migration-vmware-vm-requirements) требования к виртуальным машинам для миграции.
 3. Проверьте настройки виртуальной машины. Локальные виртуальные машины, которые реплицируются в Azure, должны соответствовать [требованиям к виртуальным машинам Azure](migrate-support-matrix-vmware.md#azure-vm-requirements).
 
@@ -265,7 +265,7 @@ ms.locfileid: "73605548"
 
     ![Репликация виртуальных машин](./media/tutorial-migrate-physical-virtual-machines/select-replicate.png)
 
-2. В разделе **Реплицировать** выберите **Параметры исходного кода** > **Ваши компьютеры виртуализированы?** и **Yes, with VMware vSphere Hypervisor** (Да, с помощью гипервизора VMware vSphere).
+2. В разделе **Репликация** выберите **Параметры исходного кода** > **Ваши компьютеры виртуализированы?**  > **Not virtualized/Other** (Без виртуализации или иное).
 3. В разделе **Локальное устройство** выберите имя устройства Миграции Azure, которое вы настроили.
 4. В разделе **vCenter Server** укажите имя сервера vCenter, управляющего виртуальными машинами, или сервера vSphere, на котором размещены виртуальные машины.
 5. В разделе **Сервер обработки** выберите имя устройства репликации.

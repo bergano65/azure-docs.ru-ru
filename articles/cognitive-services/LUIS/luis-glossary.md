@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 10/25/2019
 ms.author: diberry
-ms.openlocfilehash: 22e8fa8fb6999828076ea5f8f34b1f601b920013
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 4f78b4c50f4cd65f3dc32c48cea81b705dc44de1
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73499571"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325948"
 ---
 # <a name="language-understanding-glossary-of-common-vocabulary-and-concepts"></a>Основные понятия и определения глоссария Интеллектуальной службы распознавания речи (LUIS)
 В глоссарии Интеллектуальной службы распознавания речи (LUIS) объясняются термины, с которыми вы можете столкнуться при работе со службой API LUIS.
@@ -30,17 +30,16 @@ ms.locfileid: "73499571"
 
 ## <a name="authoring-key"></a>Ключ разработки
 
-Прежнее название — программный ключ. Используется для разработки приложения. Не используется для запросов конечной точки рабочего уровня. Дополнительные сведения см. в разделе об [ограничениях ключа](luis-boundaries.md#key-limits).   
+Прежнее название — программный ключ. Используется для разработки приложения. Не используется для запросов конечной точки рабочего уровня. Дополнительные сведения см. в разделе об [ограничениях ключа](luis-boundaries.md#key-limits).
 
-## <a name="batch-test-json-file"></a>Пакетный текстовый JSON-файл
+## <a name="batch-test-json-file"></a>JSON-файл пакетного теста
 
 Пакетное тестирование — это возможность проверить модель текущего приложения LUIS с помощью единообразного и известного тестового набора пользователей фразы продолжительностью. Пакетный тест определяется в [отформатированном файле JSON](luis-concept-batch-test.md#batch-file-format).
 
-См. также: 
+См. также:
 * [Основные понятия](luis-concept-batch-test.md)
 * [Практические руководства](luis-how-to-batch-test.md)
 * [Руководство](luis-tutorial-batch-testing.md)
-
 
 ## <a name="collaborator"></a>Участник совместной работы
 

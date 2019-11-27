@@ -1,19 +1,14 @@
 ---
-title: Общие сведения о задачах реестра контейнеров Azure
+title: Обзор Задач ACR
 description: Общие сведения о задачах записи контроля доступа — наборе функций в реестре контейнеров Azure, который обеспечивает безопасную автоматическую сборку, управление и исправление образов контейнеров в облаке.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 09/05/2019
-ms.author: danlep
-ms.openlocfilehash: 45fdd68273ed2cd5cfccf37765935ce9f7bfdc13
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: b4710591dfd78f0633d5071c78d80e300349f498
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73931474"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456154"
 ---
 # <a name="automate-container-image-builds-and-maintenance-with-acr-tasks"></a>Автоматизация сборки и обслуживание образов контейнеров с помощью задач контроля доступа
 

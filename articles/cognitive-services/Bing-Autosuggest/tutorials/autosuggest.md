@@ -1,7 +1,7 @@
 ---
 title: Руководство по Получение результатов автоматических рекомендаций с помощью API Автозаполнения Bing
 titleSuffix: Azure Cognitive Services
-description: Демонстрация использования API автозаполнения Bing.
+description: В рамках работы с этим учебником мы создадим веб-страницу, которая позволит пользователям запрашивать API "Автозаполнение Bing" и просматривать результаты.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: bing-autosuggest
 ms.topic: tutorial
 ms.date: 09/13/2019
 ms.author: aahi
-ms.openlocfilehash: d208187b7ba61fc0d217cef05a1bda559ca0c42b
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 1408faf09ef8950fb0d86f8a036269da2963e3d4
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70996791"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74072837"
 ---
 # <a name="tutorial-get-search-suggestions-on-a-web-page"></a>Руководство по Получение результатов поиска на веб-странице
 

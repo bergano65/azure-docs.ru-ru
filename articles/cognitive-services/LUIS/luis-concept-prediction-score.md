@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 10/10/2019
 ms.author: diberry
-ms.openlocfilehash: 5b8d97005d8f404a296ddb45e92b65e4aa811aa3
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b360bc82b80e834492b524acc5c4535b0409eda1
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73486773"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74280829"
 ---
 # <a name="prediction-scores-indicate-prediction-accuracy-for-intent-and-entities"></a>Оценки прогнозирования отражают точность прогнозирования намерения и сущностей
 
@@ -68,7 +68,7 @@ ms.locfileid: "73486773"
 
 ## <a name="e-exponent-notation"></a>Запись E (экспоненциальная запись)
 
-Оценки прогнозирования можно записывать в форме экспоненциальной записи, *над* диапазоном 0–1, например `9.910309E-07`. Эта оценка свидетельствует об очень **маленьком** числе.
+Оценки прогнозирования можно записывать в форме экспоненциальной записи, _над_ диапазоном 0–1, например `9.910309E-07`. Эта оценка свидетельствует об очень **маленьком** числе.
 
 |Экспоненциальная запись оценки |Фактическая оценка|
 |--|--|
@@ -78,6 +78,6 @@ ms.locfileid: "73486773"
 
 Дополнительные [сведения](luis-concept-utterance.md#punctuation-marks) об использовании и игнорировании знаков препинания. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о добавлении сущностей в приложение LUIS см. в статье [Добавление сущностей](luis-how-to-add-entities.md).

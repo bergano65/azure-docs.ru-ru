@@ -1,20 +1,20 @@
 ---
-title: Подготовка имитированного устройства доверенного платформенного модуля в Центре Интернета вещей Azure с помощью C | Документация Майкрософт
+title: Краткое руководство. Подготовка имитированного устройства доверенного платформенного модуля в Центре Интернета вещей Azure с помощью C
 description: В этом кратком руководстве используется индивидуальная регистрация. В этом кратком руководстве вы создадите и подготовите к работе имитированное устройство доверенного платформенного модуля с помощью пакета SDK C для Службы подготовки устройств к добавлению в Центр Интернета вещей Azure.
 author: wesmc7777
 ms.author: wesmc
-ms.date: 04/10/2019
+ms.date: 11/08/2019
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: ca6914967d855123c70bf746a9d68d2e045e76d9
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 3df1bd879c10411800596ce7157be4554fcffaf6
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65908672"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73903494"
 ---
 # <a name="quickstart-provision-a-simulated-tpm-device-using-the-azure-iot-c-sdk"></a>Краткое руководство. Подготовка имитированного устройства TPM с помощью пакета SDK Интернета вещей Azure для C
 
@@ -220,4 +220,3 @@ ms.locfileid: "65908672"
 
 > [!div class="nextstepaction"]
 > [Краткое руководство по Azure. Регистрация устройств доверенного платформенного модуля в службе подготовки устройств Центра Интернета вещей](quick-enroll-device-tpm-java.md)
-

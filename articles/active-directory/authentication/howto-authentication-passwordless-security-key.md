@@ -1,22 +1,22 @@
 ---
-title: Включение входа с помощью ключа безопасности без пароля для Azure AD (Предварительная версия) — Azure Active Directory
+title: Подписывание ключа безопасности без пароля (Предварительная версия) — Azure Active Directory
 description: Включение входа с использованием ключа безопасности без пароля в Azure AD с помощью ключей безопасности FIDO2 (Предварительная версия)
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 08/05/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50af82e79e7ba8b979ab28a1b3f608ec7e41bfb2
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 9f87f1b2561b65590dfe29d7d2c8d1318e3d35e1
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73603434"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74381854"
 ---
 # <a name="enable-passwordless-security-key-sign-in-preview"></a>Включение входа в систему с паролем без пароля (Предварительная версия)
 
@@ -50,7 +50,7 @@ ms.locfileid: "73603434"
 
 ### <a name="enable-fido2-security-key-method"></a>Включить метод ключа безопасности FIDO2
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 1. Выберите **Azure Active Directory** > **Безопасность** > **методы проверки** подлинности > **политики метода проверки подлинности (Предварительная версия)** .
 1. В разделе метод **FIDO2 ключ безопасности**выберите следующие параметры.
    1. **Включить** -да или нет
@@ -97,7 +97,7 @@ ms.locfileid: "73603434"
 
 При изменении имени участника-пользователя вы больше не сможете изменить ключи безопасности FIDO2, чтобы учитывать изменения. Решением является сброс устройства, и пользователь должен повторно зарегистрировать свои ключи безопасности FIDO2.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [FIDO2 безопасность ключ безопасности Windows 10 вход](howto-authentication-passwordless-security-key-windows.md)
 

@@ -1,5 +1,5 @@
 ---
-title: Учебник — Мониторинг виртуальных машин Linux в Azure | Документация Майкрософт
+title: Учебник. Мониторинг виртуальных машин Linux в Azure
 description: В этом руководстве вы узнаете, как отслеживать производительность и обнаруживать компоненты приложений, работающих на ваших виртуальных машинах Linux.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 09/30/2019
 ms.author: magoedte
 ms.custom: mvc
-ms.openlocfilehash: 9c6458eea2b1352e7d13ea6691eac4498182ecd3
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 4d338708b143c88f8f416185e351531e74963bba
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "71679402"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74111988"
 ---
 # <a name="tutorial-monitor-a-linux-virtual-machine-in-azure"></a>Руководство по мониторингу виртуальных машин Linux в Azure
 
@@ -133,7 +133,7 @@ az vm boot-diagnostics get-boot-log --resource-group myResourceGroupMonitor --na
 
 3. На странице **Аналитические сведения (предварительная версия)** выберите **Попробовать**.
 
-    ![Включение Azure Monitor для виртуальной машины](../../azure-monitor/insights/media/vminsights-enable-single-vm/enable-vminsights-vm-portal-01.png)
+    ![Включение Azure Monitor для виртуальной машины](../../azure-monitor/insights/media/vminsights-enable-single-vm/enable-vminsights-vm-portal.png)
 
 4. Если имеющаяся рабочая область Log Analytics расположена в той же подписке, что и кластер, выберите ее из раскрывающегося списка на странице **Azure Monitor Insights Onboarding** (Подключение к службе аналитических сведений Azure Monitor).  
 

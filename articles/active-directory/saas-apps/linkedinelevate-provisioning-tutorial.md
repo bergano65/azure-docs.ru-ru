@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настройка LinkedIn Elevate для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство. подготовка пользователей к повышению прав для LinkedIn — Azure AD
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в LinkedIn Elevate.
 services: active-directory
 documentationcenter: ''
@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: adefb0c88e88a8bfb4b896c0788654e478ff4555
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ea6f9923062d960f18203b081702e69a30dd3c9e
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65963688"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74276845"
 ---
-# <a name="tutorial-configure-linkedin-elevate-for-automatic-user-provisioning"></a>Руководство по Руководство по настройке LinkedIn Elevate для автоматической подготовки пользователей
+# <a name="tutorial-configure-linkedin-elevate-for-automatic-user-provisioning"></a>Руководство по настройке LinkedIn Elevate для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как настроить автоматическую подготовку и отмену подготовки учетных записей пользователей Azure AD в LinkedIn Elevate.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -55,7 +55,7 @@ ms.locfileid: "65963688"
 
 В этом разделе описывается подключение Azure AD к API подготовки учетных записей SCIM в LinkedIn Elevate, а также настройка службы подготовки для создания, изменения и отмены назначения учетных записей пользователей в LinkedIn Elevate на основе пользователей и групп в Azure AD.
 
-**Подсказка.** Для LinkedIn Elevate вы можете включить единый вход на основе SAML. Для этого следуйте инструкциям, указанным на [портале Azure](https://portal.azure.com). Единый вход можно настроить независимо от автоматической подготовки, хотя две эти функции дополняют друг друга.
+**Совет.** Для LinkedIn Elevate также можно включить единый вход на основе SAML. Для этого следуйте инструкциям, указанным на [портале Azure](https://portal.azure.com). Единый вход можно настроить независимо от автоматической подготовки, хотя две эти функции дополняют друг друга.
 
 ### <a name="to-configure-automatic-user-account-provisioning-to-linkedin-elevate-in-azure-ad"></a>Настройка автоматической подготовки учетных записей пользователей Azure AD в LinkedIn Elevate:
 
@@ -84,7 +84,7 @@ ms.locfileid: "65963688"
 
 5. Щелкните **Создать токен**. Токен доступа должен появиться в поле **Токен доступа**.
 
-6. Перед выходом из страницы, сохраните токен доступа в буфере обмена или компьютера.
+6. Сохраните маркер доступа в буфере обмена или на компьютере, прежде чем покинуть страницу.
 
 7. Затем войдите на [портал Azure](https://portal.azure.com) и перейдите в раздел **Azure Active Directory > Корпоративные приложения > Все приложения**.
 
@@ -120,7 +120,7 @@ ms.locfileid: "65963688"
 
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../manage-apps/check-status-user-account-provisioning.md).
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="additional-resources"></a>дополнительные ресурсы.
 
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)

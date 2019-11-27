@@ -6,16 +6,16 @@ ms.author: cshoe
 ms.topic: reference
 ms.date: 11/21/2017
 ms.custom: seodec18
-ms.openlocfilehash: 9946994f21e19bd2ac0b53054cbb2181f1558bd3
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 18bbfd1b54947bb88ba8f06c65a17b90430b38a3
+ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74227345"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74305231"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-1x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 1.х
 
-> [!div class="op_single_selector" title1="Select the version of the Azure Functions runtime you are using: "]
+> [!div class="op_single_selector" title1="Выберите версию используемой среды выполнения функций Azure: "]
 > * [Версия 1](functions-bindings-cosmosdb.md)
 > * [Версия 2](functions-bindings-cosmosdb-v2.md)
 
@@ -31,7 +31,7 @@ ms.locfileid: "74227345"
 > [!NOTE]
 > Привязки Azure Cosmos DB поддерживаются только для использования с API SQL. Для всех других API Azure Cosmos DB доступ к базе данных из функции должен осуществляться с использованием статического клиента для API, включая [API базы данны Azure Cosmos для MongoDB](../cosmos-db/mongodb-introduction.md), [API Cassandra](../cosmos-db/cassandra-introduction.md), [API Gremlin](../cosmos-db/graph-introduction.md) и [API таблиц](../cosmos-db/table-introduction.md).
 
-## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
+## <a name="packages---functions-1x"></a>Пакеты — Функции 1.x
 
 Привязки Azure Cosmos DB для Функций 1.x доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.DocumentDB](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DocumentDB) версии 1.х. Исходный код для привязок находится в репозитории GitHub [azure-webjobs-sdk-extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/tree/v2.x/src/WebJobs.Extensions.DocumentDB).
 
@@ -43,15 +43,7 @@ ms.locfileid: "74227345"
 
 ## <a name="trigger---example"></a>Пример триггера
 
-Языковой пример см. в разделах:
-
-* [C#](#trigger---c-example)
-* [Сценарий C# (CSX)](#trigger---c-script-example)
-* [JavaScript](#trigger---javascript-example)
-
-[Пропустить примеры триггеров](#trigger---attributes)
-
-### <a name="trigger---c-example"></a>Пример C# в триггере
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), вызываемая при вставке или обновлении в указанной базе данных и коллекции.
 
@@ -84,9 +76,7 @@ namespace CosmosDBSamplesV1
 }
 ```
 
-[Пропустить примеры триггеров](#trigger---attributes)
-
-### <a name="trigger---c-script-example"></a>Пример скрипта C# в триггере
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
 В следующем примере показаны привязка триггера Cosmos DB в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. При изменении записей в Cosmos DB функция записывает сообщения в журнале.
 
@@ -122,9 +112,7 @@ namespace CosmosDBSamplesV1
     }
 ```
 
-[Пропустить примеры триггеров](#trigger---attributes)
-
-### <a name="trigger---javascript-example"></a>Пример JavaScript в триггере
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показаны привязка триггера Cosmos DB в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. При изменении записей в Cosmos DB функция записывает сообщения в журнале.
 
@@ -153,7 +141,11 @@ namespace CosmosDBSamplesV1
     }
 ```
 
+---
+
 ## <a name="trigger---attributes"></a>Атрибуты триггера
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [CosmosDBTrigger](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.CosmosDB/Trigger/CosmosDBTriggerAttribute.cs).
 
@@ -170,13 +162,23 @@ namespace CosmosDBSamplesV1
     }
 ```
 
-Полный пример см. в разделе [Пример C# в триггере](#trigger---c-example).
+Полный пример см. в разделе [Пример C# в триггере](#trigger).
+
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+Атрибуты не поддерживаются C# сценарием.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Атрибуты не поддерживаются в JavaScript.
+
+---
 
 ## <a name="trigger---configuration"></a>Конфигурация триггера
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `CosmosDBTrigger`.
 
-|свойство function.json | Свойство атрибута |Описание|
+|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
 |---------|---------|----------------------|
 |**type** || Нужно задать значение `cosmosDBTrigger`. |
 |**direction** || Нужно задать значение `in`. Этот параметр задается автоматически при создании триггера на портале Azure. |
@@ -213,18 +215,7 @@ namespace CosmosDBSamplesV1
 
 Входная привязка Azure Cosmos DB извлекает один или несколько документов из Azure Cosmos DB и передает их входному параметру функции через API SQL. Идентификатор документа или параметры запроса можно определить по триггеру, который вызывает функцию.
 
-## <a name="input---examples"></a>Примеры входных данных
-
-См. примеры (для разных языков), в которых для считывания одного документа указывается значение идентификатора:
-
-* [C#](#input---c-examples)
-* [Сценарий C# (CSX)](#input---c-script-examples)
-* [JavaScript](#input---javascript-examples)
-* [F#](#input---f-examples)
-
-[Пропустить примеры входных данных](#input---attributes)
-
-### <a name="input---c-examples"></a>Примеры входных данных C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В этом разделе содержатся следующие примеры:
 
@@ -248,9 +239,9 @@ namespace CosmosDBSamplesV1
 }
 ```
 
-[Пропустить примеры входных данных](#input---attributes)
+<a id="queue-trigger-look-up-id-from-json-c"></a>
 
-#### <a name="queue-trigger-look-up-id-from-json-c"></a>Триггер очереди, поисковый идентификатор из JSON (C#)
+### <a name="queue-trigger-look-up-id-from-json"></a>Триггер очереди, поиск идентификатора из JSON
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция активируется сообщением из очереди, который содержит объект JSON. Очередь триггера анализирует JSON в объект с именем `ToDoItemLookup`, который содержит идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
@@ -297,9 +288,9 @@ namespace CosmosDBSamplesV1
 }
 ```
 
-[Пропустить примеры входных данных](#input---attributes)
+<a id="http-trigger-look-up-id-from-query-string-c"></a>
 
-#### <a name="http-trigger-look-up-id-from-query-string-c"></a>Триггер HTTP, поисковый идентификатор из строки запроса (C#)
+### <a name="http-trigger-look-up-id-from-query-string"></a>Триггер HTTP, поиск идентификатора из строки запроса
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция инициируется HTTP-запросом, который в строке запроса указывает идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
@@ -339,9 +330,9 @@ namespace CosmosDBSamplesV1
 }
 ```
 
-[Пропустить примеры входных данных](#input---attributes)
+<a id="http-trigger-look-up-id-from-route-data-c"></a>
 
-#### <a name="http-trigger-look-up-id-from-route-data-c"></a>Триггер HTTP, поисковый идентификатор из данных маршрута (C#)
+### <a name="http-trigger-look-up-id-from-route-data"></a>Триггер HTTP, поиск идентификатора из данных маршрута
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция инициируется HTTP-запросом, в котором с помощью данных маршрута указывается идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
@@ -386,7 +377,9 @@ namespace CosmosDBSamplesV1
 
 [Пропустить примеры входных данных](#input---attributes)
 
-#### <a name="http-trigger-look-up-id-from-route-data-using-sqlquery-c"></a>Триггер HTTP, поисковый идентификатор из данных маршрута, используется SqlQuery (C#)
+<a id="http-trigger-look-up-id-from-route-data-using-sqlquery-c"></a>
+
+### <a name="http-trigger-look-up-id-from-route-data-using-sqlquery"></a>Триггер HTTP, поиск идентификатора из данных маршрута с помощью SqlQuery
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция инициируется HTTP-запросом, в котором с помощью данных маршрута указывается идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
@@ -426,7 +419,9 @@ namespace CosmosDBSamplesV1
 
 [Пропустить примеры входных данных](#input---attributes)
 
-#### <a name="http-trigger-get-multiple-docs-using-sqlquery-c"></a>Триггер HTTP, получение нескольких документов, используется SqlQuery (C#)
+<a id="http-trigger-get-multiple-docs-using-sqlquery-c"></a>
+
+### <a name="http-trigger-get-multiple-docs-using-sqlquery"></a>Триггер HTTP, получение нескольких документов с помощью SqlQuery
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает список документов. Функция активируется с помощью HTTP-запроса. Запрос указывается в свойстве атрибута `SqlQuery`.
 
@@ -467,7 +462,9 @@ namespace CosmosDBSamplesV1
 
 [Пропустить примеры входных данных](#input---attributes)
 
-#### <a name="http-trigger-get-multiple-docs-using-documentclient-c"></a>Триггер HTTP, получение нескольких документов, используется DocumentClient (C#)
+<a id="http-trigger-get-multiple-docs-using-documentclient-c"></a>
+
+### <a name="http-trigger-get-multiple-docs-using-documentclient-c"></a>Триггер HTTP, получение нескольких документов, используется DocumentClient (C#)
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает список документов. Функция активируется с помощью HTTP-запроса. Код использует экземпляр `DocumentClient`, предоставленный привязкой Azure Cosmos DB для считывания списка документов. Экземпляр `DocumentClient` может также использоваться для операций записи.
 
@@ -526,9 +523,7 @@ namespace CosmosDBSamplesV1
 }
 ```
 
-[Пропустить примеры входных данных](#input---attributes)
-
-### <a name="input---c-script-examples"></a>Примеры входных данных скрипта C#
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
 В этом разделе содержатся следующие примеры:
 
@@ -552,9 +547,9 @@ namespace CosmosDBSamplesV1
 }
 ```
 
-[Пропустить примеры входных данных](#input---attributes)
+<a id="queue-trigger-look-up-id-from-string-c-script"></a>
 
-#### <a name="queue-trigger-look-up-id-from-string-c-script"></a>Триггер очереди, поисковый идентификатор из строки (скрипт C#)
+### <a name="queue-trigger-look-up-id-from-string"></a>Триггер очереди, поиск идентификатора из строки
 
 В следующем примере показаны входная привязка Cosmos DB в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. Функция считывает один документ и обновляет текстовое значение в документе.
 
@@ -572,6 +567,7 @@ namespace CosmosDBSamplesV1
     "direction": "in"
 }
 ```
+
 В разделе [Конфигурация](#input---configuration) описываются эти свойства.
 
 Ниже приведен код скрипта C#.
@@ -586,9 +582,9 @@ namespace CosmosDBSamplesV1
     }
 ```
 
-[Пропустить примеры входных данных](#input---attributes)
+<a id="queue-trigger-get-multiple-docs-using-sqlquery-c-script"></a>
 
-#### <a name="queue-trigger-get-multiple-docs-using-sqlquery-c-script"></a>Триггер очереди, получение нескольких документов, используется SqlQuery (скрипт C#)
+### <a name="queue-trigger-get-multiple-docs-using-sqlquery"></a>Триггер очереди, получение нескольких документов, использование SqlQuery
 
 В следующем примере показана входная привязка Azure Cosmos DB в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. Функция извлекает несколько документов, указанных SQL-запросом, используя триггер очереди для настройки параметров запроса.
 
@@ -627,9 +623,9 @@ namespace CosmosDBSamplesV1
     }
 ```
 
-[Пропустить примеры входных данных](#input---attributes)
+<a id="http-trigger-look-up-id-from-query-string-c-script"></a>
 
-#### <a name="http-trigger-look-up-id-from-query-string-c-script"></a>Триггер HTTP, поисковый идентификатор из строки запроса (скрипт C#)
+### <a name="http-trigger-look-up-id-from-query-string"></a>Триггер HTTP, поиск идентификатора из строки запроса
 
 В следующем примере показана [функция скрипта C#](functions-reference-csharp.md), которая получает один документ. Функция инициируется HTTP-запросом, который в строке запроса указывает идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
@@ -688,9 +684,9 @@ public static HttpResponseMessage Run(HttpRequestMessage req, ToDoItem toDoItem,
 }
 ```
 
-[Пропустить примеры входных данных](#input---attributes)
+<a id="http-trigger-look-up-id-from-route-data-c-script"></a>
 
-#### <a name="http-trigger-look-up-id-from-route-data-c-script"></a>Триггер HTTP, поисковый идентификатор из данных маршрута (скрипт C#)
+### <a name="http-trigger-look-up-id-from-route-data"></a>Триггер HTTP, поиск идентификатора из данных маршрута
 
 В следующем примере показана [функция скрипта C#](functions-reference-csharp.md), которая получает один документ. Функция инициируется HTTP-запросом, в котором с помощью данных маршрута указывается идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
@@ -750,9 +746,9 @@ public static HttpResponseMessage Run(HttpRequestMessage req, ToDoItem toDoItem,
 }
 ```
 
-[Пропустить примеры входных данных](#input---attributes)
+<a id="http-trigger-get-multiple-docs-using-sqlquery-c-script"></a>
 
-#### <a name="http-trigger-get-multiple-docs-using-sqlquery-c-script"></a>Триггер HTTP, получение нескольких документов, используется SqlQuery (скрипт C#)
+### <a name="http-trigger-get-multiple-docs-using-sqlquery"></a>Триггер HTTP, получение нескольких документов с помощью SqlQuery
 
 В следующем примере показана [функция скрипта C#](functions-reference-csharp.md), которая получает список документов. Функция активируется с помощью HTTP-запроса. Запрос указывается в свойстве атрибута `SqlQuery`.
 
@@ -807,9 +803,9 @@ public static HttpResponseMessage Run(HttpRequestMessage req, IEnumerable<ToDoIt
 }
 ```
 
-[Пропустить примеры входных данных](#input---attributes)
+<a id="http-trigger-get-multiple-docs-using-documentclient-c-script"></a>
 
-#### <a name="http-trigger-get-multiple-docs-using-documentclient-c-script"></a>Триггер HTTP, получение нескольких документов, используется DocumentClient (скрипт C#)
+### <a name="http-trigger-get-multiple-docs-using-documentclient"></a>Триггер HTTP, получение нескольких документов с помощью DocumentClient
 
 В следующем примере показана [функция скрипта C#](functions-reference-csharp.md), которая получает список документов. Функция активируется с помощью HTTP-запроса. Код использует экземпляр `DocumentClient`, предоставленный привязкой Azure Cosmos DB для считывания списка документов. Экземпляр `DocumentClient` может также использоваться для операций записи.
 
@@ -885,9 +881,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, Docume
 }
 ```
 
-[Пропустить примеры входных данных](#input---attributes)
-
-### <a name="input---javascript-examples"></a>Примеры входных данных JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 В этом разделе содержатся следующие примеры:
 
@@ -896,9 +890,10 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, Docume
 * [Триггер HTTP, поисковый идентификатор из данных маршрута](#http-trigger-look-up-id-from-route-data-javascript)
 * [Триггер очереди, получение нескольких документов, используется SqlQuery](#queue-trigger-get-multiple-docs-using-sqlquery-javascript)
 
-[Пропустить примеры входных данных](#input---attributes)
 
-#### <a name="queue-trigger-look-up-id-from-json-javascript"></a>Триггер очереди, поисковый идентификатор из JSON (JavaScript)
+<a id="queue-trigger-look-up-id-from-json-javascript"></a>
+
+### <a name="queue-trigger-look-up-id-from-json"></a>Триггер очереди, поиск идентификатора из JSON
 
 В следующем примере показана входная привязка Cosmos DB в файле *function.json* и функция [JavaScript](functions-reference-node.md), которая использует привязку. Функция считывает один документ и обновляет текстовое значение в документе.
 
@@ -926,6 +921,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, Docume
     "direction": "out"
 }
 ```
+
 В разделе [Конфигурация](#input---configuration) описываются эти свойства.
 
 Ниже показан код JavaScript.
@@ -939,9 +935,9 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, Docume
     };
 ```
 
-[Пропустить примеры входных данных](#input---attributes)
+<a id="http-trigger-look-up-id-from-query-string-javascript"></a>
 
-#### <a name="http-trigger-look-up-id-from-query-string-javascript"></a>Триггер HTTP, поисковый идентификатор из строки запроса (JavaScript)
+### <a name="http-trigger-look-up-id-from-query-string"></a>Триггер HTTP, поиск идентификатора из строки запроса
 
 В следующем примере показана [функция JavaScript](functions-reference-node.md), которая получает один документ. Функция инициируется HTTP-запросом, который в строке запроса указывает идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
@@ -997,9 +993,9 @@ module.exports = function (context, req, toDoItem) {
 };
 ```
 
-[Пропустить примеры входных данных](#input---attributes)
+<a id="http-trigger-look-up-id-from-route-data-javascript"></a>
 
-#### <a name="http-trigger-look-up-id-from-route-data-javascript"></a>Триггер HTTP, поисковый идентификатор из данных маршрута (JavaScript)
+### <a name="http-trigger-look-up-id-from-route-data"></a>Триггер HTTP, поиск идентификатора из данных маршрута
 
 В следующем примере показана [функция JavaScript](functions-reference-node.md), которая получает один документ. Функция инициируется HTTP-запросом, который в строке запроса указывает идентификатор для поиска. Этот идентификатор используется для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
@@ -1056,11 +1052,9 @@ module.exports = function (context, req, toDoItem) {
 };
 ```
 
-[Пропустить примеры входных данных](#input---attributes)
+<a id="queue-trigger-get-multiple-docs-using-sqlquery-javascript"></a>
 
-
-
-#### <a name="queue-trigger-get-multiple-docs-using-sqlquery-javascript"></a>Триггер очереди, получение нескольких документов, используется SqlQuery (JavaScript)
+### <a name="queue-trigger-get-multiple-docs-using-sqlquery"></a>Триггер очереди, получение нескольких документов, использование SqlQuery
 
 В следующем примере показана входная привязка Azure Cosmos DB в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует привязку. Функция извлекает несколько документов, указанных SQL-запросом, используя триггер очереди для настройки параметров запроса.
 
@@ -1095,67 +1089,31 @@ module.exports = function (context, req, toDoItem) {
     };
 ```
 
-[Пропустить примеры входных данных](#input---attributes)
-
-<a name="infsharp"></a>
-
-### <a name="input---f-examples"></a>Примеры входных данных F#
-
-В следующем примере показаны привязка Cosmos DB в файле *function.json* и [функция F#](functions-reference-fsharp.md), которая использует эту привязку. Функция считывает один документ и обновляет текстовое значение в документе.
-
-Данные привязки в файле *function.json*:
-
-```json
-{
-    "name": "inputDocument",
-    "type": "documentDB",
-    "databaseName": "MyDatabase",
-    "collectionName": "MyCollection",
-    "id" : "{queueTrigger}",
-    "connection": "MyAccount_COSMOSDB",
-    "direction": "in"
-}
-```
-
-В разделе [Конфигурация](#input---configuration) описываются эти свойства.
-
-Ниже показан код F#.
-
-```fsharp
-    (* Change input document contents using Azure Cosmos DB input binding *)
-    open FSharp.Interop.Dynamic
-    let Run(myQueueItem: string, inputDocument: obj) =
-    inputDocument?text <- "This has changed."
-```
-
-Для этого примера нужен файл `project.json`, указывающий зависимости NuGet `FSharp.Interop.Dynamic` и `Dynamitey`:
-
-```json
-{
-    "frameworks": {
-        "net46": {
-            "dependencies": {
-                "Dynamitey": "1.0.2",
-                "FSharp.Interop.Dynamic": "3.0.0"
-            }
-        }
-    }
-}
-```
-
-Чтобы добавить файл `project.json`, см. раздел [об управлении пакетом F#](functions-reference-fsharp.md#package).
+---
 
 ## <a name="input---attributes"></a>Входные атрибуты
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [DocumentDB](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions.DocumentDB/DocumentDBAttribute.cs).
 
 Конструктор атрибута принимает имя базы данных и имя коллекции. Дополнительные сведения о параметрах и других свойствах, которые можно настроить, см. в следующем разделе о [настройке](#input---configuration).
 
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+Атрибуты не поддерживаются C# сценарием.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Атрибуты не поддерживаются в JavaScript.
+
+---
+
 ## <a name="input---configuration"></a>Входная конфигурация
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `DocumentDB`.
 
-|свойство function.json | Свойство атрибута |Описание|
+|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
 |---------|---------|----------------------|
 |**type**     || Нужно задать значение `documentdb`.        |
 |**direction**     || Нужно задать значение `in`.         |
@@ -1171,33 +1129,30 @@ module.exports = function (context, req, toDoItem) {
 
 ## <a name="input---usage"></a>Использование входной привязки
 
-В функциях C# и F# любые изменения, внесенные во входной документ посредством именованных входных параметров, сохраняются автоматически после успешного выхода из функции.
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-В функциях JavaScript изменения не обрабатываются автоматически при выходе из функции. Для внесения изменений используйте `context.bindings.<documentName>In` и `context.bindings.<documentName>Out`. Ознакомьтесь с [примером на языке JavaScript](#input---javascript-examples).
+После успешного выхода из функции все изменения, внесенные во входной документ с помощью именованных входных параметров, сохраняются автоматически.
+
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+После успешного выхода из функции все изменения, внесенные во входной документ с помощью именованных входных параметров, сохраняются автоматически.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Обновления не выполняются автоматически после выхода из функции. Для внесения изменений используйте `context.bindings.<documentName>In` и `context.bindings.<documentName>Out`. См. [Пример входных данных](#input).
+
+---
 
 ## <a name="output"></a>Выходные данные
 
 Выходная привязка Azure Cosmos DB позволяет записать новый документ в базу данных Azure Cosmos DB с помощью API SQL.
 
-## <a name="output---examples"></a>Примеры выходных данных
-
-Языковой пример см. в разделах:
-
-* [C#](#output---c-examples)
-* [Сценарий C# (CSX)](#output---c-script-examples)
-* [JavaScript](#output---javascript-examples)
-* [F#](#output---f-examples)
-
-См. также [пример входных данных](#input---c-examples), в котором используется `DocumentClient`.
-
-[Пропустить примеры вывода](#output---attributes)
-
-### <a name="output---c-examples"></a>Примеры выходных данных C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В этом разделе содержатся следующие примеры:
 
 * Триггер очереди, запись одного документа
-* Триггер очереди, запись документов при помощи IAsyncCollector
+* Триггер очереди, запись документов с помощью `IAsyncCollector`
 
 В примерах используется `ToDoItem` простого типа:
 
@@ -1212,9 +1167,7 @@ namespace CosmosDBSamplesV1
 }
 ```
 
-[Пропустить примеры вывода](#output---attributes)
-
-#### <a name="queue-trigger-write-one-doc-c"></a>Триггер очереди, запись одного документа (C#)
+### <a name="queue-trigger-write-one-doc"></a>Триггер очереди, запись одного документа
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая добавляет документ в базу данных, используя данные, полученные из сообщения хранилища очередей.
 
@@ -1245,9 +1198,7 @@ namespace CosmosDBSamplesV1
 }
 ```
 
-[Пропустить примеры вывода](#output---attributes)
-
-#### <a name="queue-trigger-write-docs-using-iasynccollector-c"></a>Триггер очереди, запись документов с помощью IAsyncCollector (C#)
+### <a name="queue-trigger-write-docs-using-iasynccollector"></a>Триггер очереди, запись документов при помощи IAsyncCollector
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая добавляет коллекцию документов в базу данных с помощью данных, полученных из JSON сообщения очереди.
 
@@ -1282,18 +1233,14 @@ namespace CosmosDBSamplesV1
 }
 ```
 
-[Пропустить примеры вывода](#output---attributes)
-
-### <a name="output---c-script-examples"></a>Примеры выходных данных скрипта C#
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
 В этом разделе содержатся следующие примеры:
 
 * Триггер очереди, запись одного документа
-* Триггер очереди, запись документов при помощи IAsyncCollector
+* Триггер очереди, запись документов с помощью `IAsyncCollector`
 
-[Пропустить примеры вывода](#output---attributes)
-
-#### <a name="queue-trigger-write-one-doc-c-script"></a>Триггер очереди, запись одного документа (скрипт C#)
+### <a name="queue-trigger-write-one-doc"></a>Триггер очереди, запись одного документа
 
 В следующем примере показаны выходная привязка Azure Cosmos DB в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. Функция использует входную привязку очереди для очереди, которую получает JSON в следующем формате:
 
@@ -1355,7 +1302,7 @@ namespace CosmosDBSamplesV1
     }
 ```
 
-#### <a name="queue-trigger-write-docs-using-iasynccollector"></a>Триггер очереди, запись документов при помощи IAsyncCollector
+### <a name="queue-trigger-write-docs-using-iasynccollector"></a>Триггер очереди, запись документов при помощи IAsyncCollector
 
 Для создания нескольких документов можно выполнить привязку к `ICollector<T>` или к `IAsyncCollector<T>`, где `T` — любой из поддерживаемых типов.
 
@@ -1414,9 +1361,7 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 }
 ```
 
-[Пропустить примеры вывода](#output---attributes)
-
-### <a name="output---javascript-examples"></a>Примеры выходных данных JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показана выходная привязка Azure Cosmos DB в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. Функция использует входную привязку очереди для очереди, которую получает JSON в следующем формате:
 
@@ -1471,87 +1416,11 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
     };
 ```
 
-[Пропустить примеры вывода](#output---attributes)
-
-### <a name="output---f-examples"></a>Примеры выходных данных F#
-
-В следующем примере показаны выходная привязка Azure Cosmos DB в файле *function.json* и [функция F#](functions-reference-fsharp.md), которая использует эту привязку. Функция использует входную привязку очереди для очереди, которую получает JSON в следующем формате:
-
-```json
-{
-    "name": "John Henry",
-    "employeeId": "123456",
-    "address": "A town nearby"
-}
-```
-
-Функция создает документы Azure Cosmos DB для каждой записи в следующем формате:
-
-```json
-{
-    "id": "John Henry-123456",
-    "name": "John Henry",
-    "employeeId": "123456",
-    "address": "A town nearby"
-}
-```
-
-Данные привязки в файле *function.json*:
-
-```json
-{
-    "name": "employeeDocument",
-    "type": "documentDB",
-    "databaseName": "MyDatabase",
-    "collectionName": "MyCollection",
-    "createIfNotExists": true,
-    "connection": "MyAccount_COSMOSDB",
-    "direction": "out"
-}
-```
-В разделе [Конфигурация](#output---configuration) описываются эти свойства.
-
-Ниже показан код F#.
-
-```fsharp
-    open FSharp.Interop.Dynamic
-    open Newtonsoft.Json
-
-    type Employee = {
-      id: string
-      name: string
-      employeeId: string
-      address: string
-    }
-
-    let Run(myQueueItem: string, employeeDocument: byref<obj>, log: TraceWriter) =
-      log.Info(sprintf "F# Queue trigger function processed: %s" myQueueItem)
-      let employee = JObject.Parse(myQueueItem)
-      employeeDocument <-
-        { id = sprintf "%s-%s" employee?name employee?employeeId
-          name = employee?name
-          employeeId = employee?employeeId
-          address = employee?address }
-```
-
-Для этого примера нужен файл `project.json`, указывающий зависимости NuGet `FSharp.Interop.Dynamic` и `Dynamitey`:
-
-```json
-{
-    "frameworks": {
-        "net46": {
-          "dependencies": {
-            "Dynamitey": "1.0.2",
-            "FSharp.Interop.Dynamic": "3.0.0"
-           }
-        }
-    }
-}
-```
-
-Чтобы добавить файл `project.json`, см. раздел [об управлении пакетом F#](functions-reference-fsharp.md#package).
+---
 
 ## <a name="output---attributes"></a>Выходные атрибуты
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [DocumentDB](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions.DocumentDB/DocumentDBAttribute.cs).
 
@@ -1567,13 +1436,23 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
     }
 ```
 
-Полный пример см. в разделе [Пример выходных данных C#](#output---c-examples).
+Полный пример см. в разделе [Output](#output).
+
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+Атрибуты не поддерживаются C# сценарием.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Атрибуты не поддерживаются в JavaScript.
+
+---
 
 ## <a name="output---configuration"></a>Выходная конфигурация
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `DocumentDB`.
 
-|свойство function.json | Свойство атрибута |Описание|
+|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
 |---------|---------|----------------------|
 |**type**     || Нужно задать значение `documentdb`.        |
 |**direction**     || Нужно задать значение `out`.         |
@@ -1594,13 +1473,13 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 > [!Note]
 > Если указать идентификатор существующего документа, он перезаписывается новым выходным документом.
 
-## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
+## <a name="exceptions-and-return-codes"></a>Коды возврата и исключений
 
 | Привязка | Справочные материалы |
 |---|---|
-| Cosmos DB; | [Коды ошибок Cosmos DB](https://docs.microsoft.com/rest/api/cosmos-db/http-status-codes-for-cosmosdb) |
+| Cosmos DB | [Коды ошибок Cosmos DB](https://docs.microsoft.com/rest/api/cosmos-db/http-status-codes-for-cosmosdb) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Azure Cosmos DB: обработка данных бессерверных баз данных с помощью службы "Функции Azure"](../cosmos-db/serverless-computing-database.md)
 * [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

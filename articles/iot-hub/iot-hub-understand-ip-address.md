@@ -1,39 +1,30 @@
 ---
-title: Understanding the IP address of your IoT hub | Microsoft Docs
-description: Understand how to query your IoT hub IP address and its properties. The IP address of your IoT hub can change during certain scenarios such as disaster recovery or regional failover.
+title: Основные сведения об IP-адресе центра Интернета вещей | Документация Майкрософт
+description: Узнайте, как выполнять запросы к IP-адресу центра Интернета вещей и его свойствам. IP-адрес центра Интернета вещей может изменяться в определенных сценариях, таких как аварийное восстановление или региональная отработка отказа.
 author: philmea
 ms.author: philmea
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 07/29/2019
-ms.openlocfilehash: 3370442b29bc04ac2ba68d7346ac1c0a881cc080
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.date: 11/21/2019
+ms.openlocfilehash: 5c77fb30ef60c1ad82d0a87442bc8af186c54321
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74215443"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74383911"
 ---
-# <a name="understanding-the-ip-address-of-your-iot-hub"></a>Understanding the IP address of your IoT hub
+# <a name="iot-hub-ip-addresses"></a>IP-адреса центра Интернета вещей
 
-The IP address of your IoT hub is a load-balanced public endpoint for your hub and NOT a dedicated IP address. The address is determined by the network address range of the Azure region where it is deployed. This IP address is subject to change without notice. Datacenter network updates, datacenter disaster recovery, or regional failover of an IoT hub can change your IoT hub IP address. See [IoT Hub high availability and disaster recovery](iot-hub-ha-dr.md) for more detail on Azure IoT Hub regional failover and availability.
+Префиксы IP-адресов центра Интернета вещей периодически публикуются в [теге службы](../virtual-network/service-tags-overview.md) *азуреиосуб* . Чтобы обеспечить правильную работу, устройства Интернета вещей должны иметь исходящее подключение к префиксам адресов, указанным в разделе Тег службы *азуреиосуб* . Службы приложений IoT должны дополнительно иметь исходящее подключение к префиксам адресов, указанным в теге службы *EventHub* .
 
-The IP address of your IoT hub changes after a failover to another region. You can test this functionality by following the tutorial [Perform a manual failover of an IoT hub](tutorial-manual-failover.md).
 
-## <a name="discover-your-iot-hub-ip-address"></a>Discover your IoT hub IP address
+## <a name="best-practices"></a>Рекомендации
 
-Your IoT Hub IP address can be discovered by using a DNS lookup on the CNAME ([*iot-hub-name*].azure-devices.net). You can use **nslookup** to verify the IP address of an IoT hub instance:
+* Префиксы IP-адресов центра Интернета вещей могут быть изменены. Эти изменения публикуются периодически с помощью тегов службы, прежде чем они вступают в действие. Поэтому важно разрабатывать процессы для регулярного получения и использования последних версий тегов служб. Этот процесс можно автоматизировать с помощью [API обнаружения тегов служб](../virtual-network/service-tags-overview.md#service-tags-in-on-premises).
+* Используйте *азуреиосуб. [ Region]* тег для обозначения префиксов IP-адресов, используемых конечными точками центра Интернета вещей в определенном регионе. Для учета аварийного восстановления центра обработки данных или для [региональной отработки отказа](iot-hub-ha-dr.md) убедитесь, что также включена возможность подключения к префиксам IP-адресов в регионе геопар центра Интернета вещей.
 
-```cmd/sh
-nslookup {YourIoTHubName}.azure-devices.net
-```
 
-This IP address can change without notice. In a failover or disaster recovery scenario, you'll have to poll your IoT hub IP address in the secondary region.
+## <a name="support-for-ipv6"></a>Поддержка IPv6 
 
-## <a name="outbound-firewall-rules-for-iot-hub"></a>Outbound firewall rules for IoT hub
-
-Try to create firewall rules and filtering based on the IoT hub host name or domain. If you can only allow outbound traffic to specific addresses, poll your IoT hub IP address regularly and update your firewall rules.
-
-## <a name="support-for-ipv6"></a>Support for IPv6 
-
-IPv6 is currently not supported on IoT Hub.
+IPv6 сейчас не поддерживается в центре Интернета вещей.

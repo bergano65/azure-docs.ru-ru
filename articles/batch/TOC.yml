@@ -45,6 +45,8 @@
       href: batch-api-basics.md
     - name: API-интерфейсы и средства
       href: batch-apis-tools.md
+    - name: Рекомендации
+      href: best-practices.md
     - name: Квоты и ограничения
       href: batch-quota-limit.md
     - name: Поддерживаемые размеры виртуальных машин

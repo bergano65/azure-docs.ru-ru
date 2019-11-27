@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: conceptual
-ms.date: 10/18/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 61fe0e14fbb6c6251b3bf19843b9c065df60dd86
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: 350e7b37d36be70cea345db52cdfb639b2f1c1a8
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72887524"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74382099"
 ---
 # <a name="remediate-risks-and-unblock-users"></a>Устранение рисков и разблокирование пользователей
 
@@ -89,6 +89,6 @@ ms.locfileid: "72887524"
 1. **Исключите пользователя из политики** . Если вы думаете, что текущая конфигурация политики входа вызывает проблемы для конкретных пользователей, вы можете исключить пользователей из нее. Дополнительные сведения см. в разделе исключения в статье [как настроить и включить политики риска](howto-identity-protection-configure-risk-policies.md#exclusions).
 1. **Отключение политики**. Если вы считаете, что конфигурация политики является причиной проблем всех пользователей, то ее можно отключить. Дополнительные сведения см. в статье [Настройка и включение политик риска](howto-identity-protection-configure-risk-policies.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Для получения общих сведений о защите идентификации Azure AD см. руководство по [Защите идентификации Azure AD](overview-identity-protection.md).
+Общие сведения о службе "Защита идентификации Azure Active Directory" см. в [этом обзоре](overview-identity-protection.md).

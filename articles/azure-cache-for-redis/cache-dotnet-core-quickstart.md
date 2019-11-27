@@ -1,26 +1,19 @@
 ---
-title: Краткое руководство. Использование кэша Azure для Redis в приложениях .NET Core | Документация Майкрософт
+title: Краткое руководство. Использование кэша Azure для Redis в приложениях .NET Core
 description: В этом кратком руководстве описано, как обращаться к кэшу Azure для Redis из приложений .NET Core
-services: cache,app-service
-documentationcenter: ''
 author: yegu-ms
-manager: jhubbard
-editor: ''
-ms.assetid: ''
 ms.service: cache
-ms.workload: tbd
-ms.tgt_pltfrm: cache
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 05/18/2018
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: deef63c07dedbff0ae914b09558a2771adba19ff
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: ce50ecac9a7b676386ce893a19391a63ffeed108
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72755478"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74122450"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-a-net-core-app"></a>Краткое руководство. Использование кэша Azure для Redis в приложениях .NET Core
 

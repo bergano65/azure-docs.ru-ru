@@ -3,12 +3,12 @@ title: Сведения о политике Azure для AKS Engine
 description: Узнайте, как политика Azure использует Кустомресаурцедефинитионс и открывает агент политики из привратника v3 для управления кластерами с помощью AKS Engine.
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: 904575680b62233ad5ec7422abbf66cf57dc4e11
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 2d1ae33755dcb52c5fe65ec46f0d02e090f6f417
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74072063"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74267256"
 ---
 # <a name="understand-azure-policy-for-aks-engine"></a>Общие сведения о политике Azure для AKS Engine
 
@@ -282,6 +282,6 @@ kubectl logs gatekeeper-controller-manager-0 -n $NAMESPACE
 - См. дополнительные сведения о [структуре определения Политики Azure](definition-structure.md).
 - См. дополнительные сведения о [действиях политик](effects.md).
 - Узнайте, как [программно создавать политики](../how-to/programmatically-create.md).
-- Узнайте, как [получить данные о соответствии](../how-to/getting-compliance-data.md).
+- Узнайте, как [получить данные о соответствии](../how-to/get-compliance-data.md).
 - Узнайте, как [исправлять несоответствующие ресурсы](../how-to/remediate-resources.md).
 - Дополнительные сведения о группе управления см. в статье [Упорядочивание ресурсов с помощью групп управления Azure](../../management-groups/overview.md).

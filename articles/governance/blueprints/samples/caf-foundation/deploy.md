@@ -1,18 +1,14 @@
 ---
 title: Пример схемы CAF Foundation. Процедура развертывания
-description: Шаги по развертыванию примера схемы CAF Foundation.
-author: DCtheGeek
-ms.author: dacoulte
+description: Процедура развертывания для образца схемы CAF Foundation и сведения о параметрах артефактов схемы.
 ms.date: 08/20/2019
 ms.topic: sample
-ms.service: blueprints
-ms.custom: fasttrack-new
-ms.openlocfilehash: a7daf460e65c294b464f9a5deb5d9676b762c5f7
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: afb7b19a2e5ad1f1b115526ac85d63a724101f9b
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73163588"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74128702"
 ---
 # <a name="deploy-the-microsoft-cloud-adoption-framework-for-azure-foundation-blueprint-sample"></a>Развертывание примера схемы Microsoft Cloud Adoption Framework для Azure Foundation
 

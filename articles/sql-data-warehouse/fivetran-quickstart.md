@@ -1,5 +1,5 @@
 ---
-title: Fivetran quickstart
+title: Краткое руководство по фиветран
 description: Быстро приступите к работе с Fivetran и хранилищем данных SQL Azure.
 services: sql-data-warehouse
 author: mlee3gsd
@@ -80,6 +80,6 @@ ms.locfileid: "74229090"
 
 * узел (имя вашего сервера);
 * порт;
-* База данных.
-* User (the user name should be **fivetran\@_server_name_** where *server_name* is part of your Azure host URI: ***server_name*.database.windows.net**).
+* база данных;
+* Пользователь (имя пользователя должно быть **фиветран\@_server_name_**  , где *server_name* является частью URI узла Azure: ***server_name *. Database. Windows. NET**).
 * Пароль.

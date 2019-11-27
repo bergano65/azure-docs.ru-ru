@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: iainfou
-ms.openlocfilehash: 7d4546a6d2de01575825154ab30a909b76b3fc89
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: a0c9a654d0ee49dc2bdb6efb7370a3ad2b199e10
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73474468"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74481303"
 ---
 # <a name="how-objects-and-credentials-are-synchronized-in-an-azure-ad-domain-services-managed-domain"></a>Синхронизация объектов и учетных данных в управляемом домене доменных служб Azure AD
 
@@ -99,6 +99,9 @@ ms.locfileid: "73474468"
 
 Azure AD Connect используется для синхронизации учетных записей пользователей, членства в группах и хэшей учетных данных из локальной AD DS среды в Azure AD. Атрибуты учетных записей пользователей, таких как UPN и локальный идентификатор безопасности (SID), синхронизируются. Для входа с использованием доменных служб Azure AD устаревшие хэши паролей, необходимые для проверки подлинности NTLM и Kerberos, также синхронизируются с Azure AD.
 
+> [!IMPORTANT]
+> Azure AD Connect следует устанавливать и настраивать только для синхронизации с локальными средами AD DS. Установка Azure AD Connect в управляемом домене Azure AD DS для синхронизации объектов обратно в Azure AD не поддерживается.
+
 При настройке обратной записи изменения из Azure AD синхронизируются с локальной AD DSой средой. Например, если пользователь изменяет пароль с помощью функции самостоятельного управления паролями Azure AD, пароль обновляется в локальной среде AD DS.
 
 > [!NOTE]
@@ -131,7 +134,7 @@ Azure AD имеет гораздо более простое и неструкт
 
 Для гибридных учетных записей пользователей, синхронизированных из локальной среды AD DS с помощью Azure AD Connect, необходимо [настроить Azure AD Connect для синхронизации хэшей паролей в форматах, совместимых с NTLM и Kerberos](tutorial-configure-password-hash-sync.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об особенностях синхронизации паролей см. в статье [как работает синхронизация хэшей паролей с Azure AD Connect](../active-directory/hybrid/how-to-connect-password-hash-synchronization.md?context=/azure/active-directory-domain-services/context/azure-ad-ds-context).
 

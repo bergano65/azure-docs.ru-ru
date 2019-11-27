@@ -1,5 +1,5 @@
 ---
-title: Руководство. Развертывание приложения из геореплицированного реестра Docker в Azure
+title: Учебник. Развертывание приложения из геореплицированного Реестра контейнеров Azure
 description: Развертывание веб-приложения на основе Linux в два разных региона Azure с помощью образа контейнера из геореплицированного реестра контейнеров Azure. Вторая часть руководства из трех частей.
 services: container-registry
 author: dlepow
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 08/20/2018
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: ac4d78147820c2cf56549abbec7e1fbc873ea260
-ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
+ms.openlocfilehash: 0aebc31e1b8e6849d4cc0aeccc0e0a79edf0e65d
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71146939"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73931413"
 ---
 # <a name="tutorial-deploy-a-web-app-from-a-geo-replicated-azure-container-registry"></a>Руководство. Развертывание веб-приложения из геореплицированного реестра контейнеров Azure
 

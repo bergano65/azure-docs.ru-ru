@@ -1,22 +1,19 @@
 ---
-title: Проверка сети со звездообразной топологией с помощью Terraform в Azure
+title: Руководство. Проверка периферийной сети и концентратора в Azure с помощью Terraform
 description: Учебник по проверке звездообразной топологии сети со всеми виртуальными сетями, подключенными друг к другу.
-services: terraform
-ms.service: azure
-keywords: terraform, hub and spoke, networks, hybrid networks, devops, virtual machine, azure, vnet peering,
-author: VaijanathB
-manager: jeconnoc
-ms.author: vaangadi
+ms.service: terraform
+author: tomarchermsft
+ms.author: tarcher
 ms.topic: tutorial
-ms.date: 09/20/2019
-ms.openlocfilehash: e35af0fcf4a8f1f8f0446be44fe5b0bb6eeec693
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.date: 10/26/2019
+ms.openlocfilehash: b0b761fcd79f7129befefa37ce11d9c70cf7cb96
+ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71169720"
+ms.lasthandoff: 10/27/2019
+ms.locfileid: "72969334"
 ---
-# <a name="tutorial-validate-a-hub-and-spoke-network-with-terraform-in-azure"></a>Руководство по Проверка сети со звездообразной топологией с помощью Terraform в Azure
+# <a name="tutorial-validate-a-hub-and-spoke-network-in-azure-using-terraform"></a>Руководство по Проверка периферийной сети и концентратора в Azure с помощью Terraform
 
 В этой статье вы выполните файлы Terraform, созданные в рамках предыдущей статьи этой серии. Результатом является проверка возможности подключения между демонстрационными виртуальными сетями.
 

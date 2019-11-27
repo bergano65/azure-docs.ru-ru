@@ -1,19 +1,14 @@
 ---
-title: Развертывание экземпляров контейнеров в виртуальной сети Azure
+title: Развертывание группы контейнеров в виртуальной сети Azure
 description: Сведения о том, как развернуть группы контейнеров в новой или существующей виртуальной сети Azure.
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: article
 ms.date: 07/11/2019
-ms.author: danlep
-ms.openlocfilehash: 05f1bcd5e80d7c06fbaca1abe89c84f6743a5979
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.openlocfilehash: f211924eb74035f4bb30db2d2b848e0a2591de09
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72034969"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533267"
 ---
 # <a name="deploy-container-instances-into-an-azure-virtual-network"></a>Развертывание экземпляров контейнеров в виртуальной сети Azure
 
@@ -186,11 +181,11 @@ index.html           100% |*******************************|  1663   0:00:00 ETA
 
 Группу контейнеров можно также развернуть в существующей виртуальной сети с помощью YAML-файла. Для развертывания в подсети виртуальной сети следует указать несколько дополнительных свойств в YAML:
 
-* `ipAddress`. параметры IP-адреса для группы контейнеров.
-  * `ports`. открываемые порты, если таковые имеются.
-  * `protocol`. протокол (TCP или UDP) для открытого порта.
-* `networkProfile`. позволяет задать параметры сети, например, виртуальную сеть и подсеть для ресурса Azure.
-  * `id`. полный идентификатор ресурса Resource Manager для `networkProfile`.
+* `ipAddress` — параметры IP-адреса для группы контейнеров.
+  * `ports` — открываемые порты, если таковые имеются.
+  * `protocol` — протокол (TCP или UDP) для открытого порта.
+* `networkProfile` — позволяет задать параметры сети, такие как виртуальная сеть и подсеть для ресурса Azure.
+  * `id` — полный идентификатор ресурса Resource Manager для `networkProfile`.
 
 Чтобы развернуть группу контейнеров в виртуальной сети с помощью файла YAML, сначала необходимо получить идентификатор сетевого профиля. Выполните команду [AZ Network Profile List][az-network-profile-list] , указав имя группы ресурсов, которая содержит виртуальную сеть и делегированную подсеть.
 
@@ -290,7 +285,7 @@ az network profile delete --id $NETWORK_PROFILE_ID -y
 az network vnet delete --resource-group $RES_GROUP --name aci-vnet
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы развернуть новую виртуальную сеть, подсеть, сетевой профиль и группу контейнеров с помощью шаблона Resource Manager, см. страницу [создания группы контейнеров Azure с виртуальной сетью](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-vnet
 ).

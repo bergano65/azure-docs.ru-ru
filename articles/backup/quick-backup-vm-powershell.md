@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 04/16/2019
 ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: 268cac453ed68903c73b597ffeff2569c13e9db7
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 741c6c1f937988dcce41603417a1bc7dc95091cb
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747089"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74073980"
 ---
 # <a name="back-up-a-virtual-machine-in-azure-with-powershell"></a>Резервное копирование виртуальной машины в Azure с помощью PowerShell
 
@@ -106,18 +106,18 @@ ms.locfileid: "73747089"
 
 ## <a name="start-a-backup-job"></a>Запуск задания резервного копирования
 
-Резервные копии создаются в соответствии с расписанием, заданным в политике резервного копирования. Вы также можете выполнить внеплановое резервное копирование.
+Резервные копии выполняются в соответствии с расписанием, заданным в политике резервного копирования. Вы также можете выполнить резервное копирование по запросу:
 
 - В ходе первого задания резервного копирования создается точка полного восстановления.
 - Во всех заданиях после начального резервного копирования создаются добавочные точки восстановления.
 - Добавочные точки восстановления требуют мало места и времени, так как они позволяют передать только изменения, внесенные с момента последнего резервного копирования.
 
-Чтобы выполнить внеплановое резервное копирование, используйте командлет [Backup-AzRecoveryServicesBackupItem](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem).
+Чтобы выполнить резервное копирование по запросу, используйте командлет [Backup-AzRecoveryServicesBackupItem](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem).
 
 - Укажите контейнер в хранилище, которое содержит данные резервного копирования, с помощью командлета [Get-AzRecoveryServicesBackupContainer](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupcontainer).
 - Каждая виртуальная машина для резервного копирования обрабатывается как элемент. Чтобы запустить задание резервного копирования, получите сведения о виртуальной машине с помощью командлета [Get-AzRecoveryServicesBackupItem](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem).
 
-Запустите задание внепланового резервного копирования следующим образом:
+Чтобы выполнить резервное копирование по запросу, сделайте следующее:
 
 1. Укажите контейнер, получите сведения о виртуальной машине и запустите резервное копирование.
 

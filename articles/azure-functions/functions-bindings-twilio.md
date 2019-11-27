@@ -19,7 +19,7 @@ ms.locfileid: "74230948"
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
-## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
+## <a name="packages---functions-1x"></a>Пакеты — Функции 1.x
 
 Привязки Twilio доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.Twilio](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.Twilio), версия 1.х. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions.Twilio/).
 
@@ -389,11 +389,11 @@ public static CreateMessageOptions Run(
 
 Полный пример см. в разделе [Пример C#](#c-example).
 
-## <a name="configuration"></a>Настройка
+## <a name="configuration"></a>Параметр Configuration
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `TwilioSms`.
 
-| Свойство function.json версии 1 | Свойство function.json версии 2 | Свойство атрибута |Описание|
+| Свойство function.json версии 1 | Свойство function.json версии 2 | Свойство атрибута |ОПИСАНИЕ|
 |---------|---------|---------|----------------------|
 |**type**|**type**| Нужно задать значение `twilioSms`.|
 |**direction**|**direction**| Нужно задать значение `out`.|
@@ -406,7 +406,7 @@ public static CreateMessageOptions Run(
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

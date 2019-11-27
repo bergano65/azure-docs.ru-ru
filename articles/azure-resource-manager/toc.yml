@@ -177,15 +177,35 @@
           displayName: DevOps
     - name: Экспорт шаблона
       href: export-template-portal.md
-    - name: Move (Переместить)
+    - name: Перемещение регионов
       items:
-        - name: Перемещение ресурсов
+        - name: Перемещение между регионами
+          href: resource-group-move-region.md
+        - name: Поддерживаемые службы
+          href: region-move-support.md
+        - name: Службы
+          items:
+            - name: Виртуальные машины Azure
+              href: ../site-recovery/azure-to-azure-tutorial-migrate.md?toc=/azure/azure-resource-manager/toc.json
+            - name: Хранилище Azure
+              href: ../storage/common/storage-account-move.md?toc=/azure/azure-resource-manager/toc.json
+            - name: Azure SQL
+              href: ../sql-database/sql-database-move-resources-across-regions.md?toc=/azure/azure-resource-manager/toc.json
+            - name: Виртуальная сеть
+              href: ../virtual-network/move-across-regions-nsg-portal.md?toc=/azure/azure-resource-manager/toc.json
+            - name: Группа безопасности сети (NSG)
+              href: ../virtual-network/move-across-regions-nsg-portal.md?toc=/azure/azure-resource-manager/toc.json
+            - name: Общедоступные IP-адреса
+              href: ../virtual-network/move-across-regions-publicip-portal.md?toc=/azure/azure-resource-manager/toc.json
+    - name: Перемещение групп ресурсов и подписок
+      items:
+        - name: Перемещение между группами ресурсов и подписками
           href: resource-group-move-resources.md
-        - name: Поддержка ресурсов
+        - name: Поддерживаемые службы
           href: move-support-resources.md
         - name: Устранение неполадок при перемещении
           href: troubleshoot-move.md
-        - name: Руководство по перемещению для служб
+        - name: Службы
           items:
             - name: Служба приложений
               href: ./move-limitations/app-service-move-limitations.md

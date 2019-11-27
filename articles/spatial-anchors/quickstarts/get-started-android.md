@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 40969362e339770f18374ff22af5b3fe63908e65
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 248b66a928d373678d3058be488e226ee51bbcae
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68845731"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74092126"
 ---
 # <a name="quickstart-create-an-android-app-with-azure-spatial-anchors"></a>Краткое руководство. Создание приложения Android с помощью Пространственных привязок Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "68845731"
   - Чтобы создать пример NDK, вам также необходимо установить пакет NDK и SDK Tools CMake 3.6 (или более поздней версии) в Android Studio.
 - Устройство Android с включенным <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">режимом разработчика</a> и поддержкой <a href="https://developers.google.com/ar/discover/supported-devices" target="_blank">ARCore</a>.
   - Для взаимодействия компьютера с устройством Android могут потребоваться дополнительные драйверы устройств. Дополнительные сведения и инструкции см. [здесь](https://developer.android.com/studio/run/device.html).
-- Целевой ОС для вашего приложения должна быть ARCore **1.8**.
+- Целевой ОС для вашего приложения должна быть ARCore **1.11.0**.
 
 [!INCLUDE [Create Spatial Anchors resource](../../../includes/spatial-anchors-get-started-create-resource.md)]
 
@@ -52,7 +52,7 @@ ms.locfileid: "68845731"
 
 [!INCLUDE [Clone Sample Repo](../../../includes/spatial-anchors-clone-sample-repository.md)]
 
-Загрузите файл `arcore_c_api.h` [отсюда](https://raw.githubusercontent.com/google-ar/arcore-android-sdk/v1.8.0/libraries/include/arcore_c_api.h) и поместите его в папку `Android\NDK\libraries\include`.
+Загрузите файл `arcore_c_api.h` [отсюда](https://raw.githubusercontent.com/google-ar/arcore-android-sdk/v1.11.0/libraries/include/arcore_c_api.h) и поместите его в папку `Android\NDK\libraries\include`.
 
 Из нового клонированного репозитория инициализируйте подмодули, выполнив следующую команду:
 

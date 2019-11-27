@@ -2,7 +2,7 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Общие сведения о Политике Azure
+    - name: Что такое служба "Политика Azure"?
       displayName: 'rbac, assign, initiative, parameters, count'
       href: overview.md
 - name: Краткие руководства

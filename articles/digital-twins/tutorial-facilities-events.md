@@ -1,5 +1,5 @@
 ---
-title: Руководство по Регистрация событий пространства Azure Digital Twins | Документация Майкрософт
+title: Руководство по Регистрация событий пространства Azure Digital Twins
 description: В этом руководстве вы узнаете, как получать уведомления от пространств, интегрировав Azure Digital Twins с Logic Apps.
 services: digital-twins
 ms.author: alinast
@@ -8,13 +8,13 @@ manager: bertvanhoof
 ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
-ms.date: 09/23/2019
-ms.openlocfilehash: 26976956722d77e2dfb8c17734c207b2667c0126
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.date: 11/12/2019
+ms.openlocfilehash: 545e1757f4f3669957d8f6755cdbd9a2b29513b6
+ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71949176"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74129132"
 ---
 # <a name="tutorial-receive-notifications-from-your-azure-digital-twins-spaces-by-using-logic-apps"></a>Руководство по Получение уведомлений от пространств Azure Digital Twins с использованием Logic Apps
 
@@ -38,7 +38,7 @@ ms.locfileid: "71949176"
 - Работающий экземпляр Digital Twins.
 - [Примеры Digital Twins на C#](https://github.com/Azure-Samples/digital-twins-samples-csharp), скачанные и извлеченные на ваш рабочий компьютер.
 - [Пакет SDK для .NET Core версии 2.1.403 или более поздней](https://www.microsoft.com/net/download) на компьютере разработки. Он нужен для запуска примера. Выполните команду `dotnet --version`, чтобы проверить, установлена ли необходимая версия.
-- Учетная запись Office 365 для отправки уведомлений по электронной почте.
+- Учетная запись [Office 365](https://products.office.com/home) для отправки уведомлений по электронной почте.
 
 > [!TIP]
 > При подготовке нового экземпляра присвойте уникальное имя экземпляру Digital Twins.
@@ -63,7 +63,7 @@ ms.locfileid: "71949176"
 
 1. Перейдите в раздел сетки событий из группы ресурсов, выберите пункт **Обзор** и скопируйте значение **конечной точки раздела** во временный файл. Вам понадобится этот URL-адрес в следующих разделах. 
 
-1. Выберите **Ключи доступа** и скопируйте **YOUR_KEY_1** и **YOUR_KEY_2** во временный файл. Вам потребуются эти значения для создания конечной точки в следующем разделе.
+1. Выберите **Ключи доступа** и скопируйте **Ключ 1** и **Ключ 2** во временный файл. Вам потребуются эти значения для создания конечной точки в следующем разделе.
 
     [![Ключи службы "Сетка событий"](./media/tutorial-facilities-events/event-grid-keys.png)](./media/tutorial-facilities-events/event-grid-keys.png#lightbox)
 
@@ -85,9 +85,9 @@ ms.locfileid: "71949176"
       path: <Event Grid Topic Name without https:// and /api/events, e.g. eventgridname.region.eventgrid.azure.net>
     ```
 
-1. Замените заполнитель `<Primary connection string for your Event Grid>` значением **YOUR_KEY_1**.
+1. Замените заполнитель `<Primary connection string for your Event Grid>` значением **Ключ 1**.
 
-1. Замените заполнитель `<Secondary connection string for your Event Grid>` значением **YOUR_KEY_2**.
+1. Замените заполнитель `<Secondary connection string for your Event Grid>` значением **Ключ 2**.
 
 1. Замените заполнитель **путем** к разделу сетки событий. Вы можете получить этот путь, удалив **https://** и пути к ресурсам в конце из URL-адреса **конечной точки раздела**. Он должен быть похожим на следующий формат: *имя вашей сетки событий.ваше расположение.eventgrid.azure.net*.
 
@@ -178,7 +178,7 @@ ms.locfileid: "71949176"
 
    a. Выберите **Добавить действие** и **Office 365 Outlook**.
 
-   b. Из списка **Действия** выберите **Отправить электронное письмо**. Выберите **Вход** и используйте данные учетной записи электронной почты. При появлении запроса выберите **Разрешить доступ**.
+   b. В списке **Действия** выберите действие **Отправка электронной почты (V2)** . Выберите **Вход** и используйте данные учетной записи электронной почты. При появлении запроса выберите **Разрешить доступ**.
 
    c. В поле **Кому** введите свой идентификатор электронной почты для получения уведомлений. В поле **Тема** введите текст **Уведомление Digital Twins о плохом качестве воздуха в пространстве**. Затем выберите **TopologyObjectId** из списка **Динамическое содержимое** в окне **Анализ JSON**.
 

@@ -9,13 +9,12 @@ ms.topic: conceptual
 ms.reviewer: menchi
 ms.service: iot-edge
 services: iot-edge
-ms.custom: seodec18
-ms.openlocfilehash: 65fb55a16e358624dceb42a268b035f826576f63
-ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+ms.openlocfilehash: 793ddcb9f218248c396e10f23201dfe905545ceb
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72966259"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456850"
 ---
 # <a name="register-an-azure-iot-edge-device"></a>Регистрация устройства Azure IoT Edge
 
@@ -123,7 +122,7 @@ VS Code позволяет выполнять большинство опера�
 
 ### <a name="create-an-iot-edge-device-with-the-azure-cli"></a>Создание IoT Edge устройства с Azure CLI
 
-Чтобы создать удостоверение устройства в центре Интернета вещей, используйте команду [AZ IOT Hub Device-Identity Create](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-device-identity-create) . Пример.
+Чтобы создать удостоверение устройства в центре Интернета вещей, используйте команду [AZ IOT Hub Device-Identity Create](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-device-identity-create) . Например,
 
    ```cli
    az iot hub device-identity create --device-id [device id] --hub-name [hub name] --edge-enabled
@@ -139,7 +138,7 @@ VS Code позволяет выполнять большинство опера�
 
 ### <a name="view-iot-edge-devices-with-the-azure-cli"></a>Просмотр IoT Edge устройств с Azure CLI
 
-Чтобы просмотреть все устройства в центре Интернета вещей, используйте команду [AZ IOT Hub Device-Identity List](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-device-identity-list) . Пример.
+Чтобы просмотреть все устройства в центре Интернета вещей, используйте команду [AZ IOT Hub Device-Identity List](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-device-identity-list) . Например,
 
    ```cli
    az iot hub device-identity list --hub-name [hub name]
@@ -157,7 +156,7 @@ VS Code позволяет выполнять большинство опера�
 
 В параметре `device-id` учитывается регистр. Копируйте строку подключения без кавычек.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Теперь, когда удостоверение устройства зарегистрировано в центре Интернета вещей, вы можете установить среду выполнения IoT Edge на устройствах. Установите среду выполнения в соответствии с операционной системой устройства:
 

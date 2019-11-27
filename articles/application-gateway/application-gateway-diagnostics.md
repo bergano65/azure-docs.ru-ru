@@ -6,14 +6,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 11/14/2019
+ms.date: 11/22/2019
 ms.author: victorh
-ms.openlocfilehash: 448e5bf798f5b1c3006888f846722e54fec46ef8
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: bfae540af1c501c09ec026b97ac11e8a14b177a9
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74075304"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74326545"
 ---
 # <a name="back-end-health-and-diagnostic-logs-for-application-gateway"></a>Журналы работоспособности и диагностики серверной части для шлюза приложений
 
@@ -303,7 +303,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 |ruleSetVersion     | Используемая версия набора правил. Возможные значения: 2.2.9 и 3.0.     |
 |ruleId     | Идентификатор правила события-триггера.        |
 |message     | Понятное сообщение для события-триггера. Дополнительные сведения приведены в разделе details.        |
-|action     |  Действие, выполняемое с запросом. Возможные значения: Blocked и Allowed.      |
+|action     |  Действие, выполняемое с запросом. Доступные значения сопоставлены и блокируются.      |
 |site     | Сайт, для которого создан журнал. В нашем случае возможно только значение Global, так как применяются глобальные правила.|
 |сведения     | Сведения о событии-триггере.        |
 |details.message     | Описание правила.        |

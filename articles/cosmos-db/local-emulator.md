@@ -6,12 +6,12 @@ ms.topic: tutorial
 author: markjbrown
 ms.author: mjbrown
 ms.date: 07/26/2019
-ms.openlocfilehash: 4c26431ee0d506dda547fb4027845baa15c9a134
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.openlocfilehash: 773e55bd1908c04e1c73d998348d36b685524715
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69997884"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74075661"
 ---
 # <a name="use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде
 
@@ -416,6 +416,24 @@ cd $env:LOCALAPPDATA\CosmosDBEmulator\bind-mount
 Чтобы открыть обозреватель данных, перейдите по приведенному ниже URL-адресу в браузере. Конечная точка эмулятора отобразится в сообщении ответа, приведенном выше.
 
     https://<emulator endpoint provided in response>/_explorer/index.html
+
+Если клиентское приложение .NET выполняется в контейнере docker для Linux и вы используете эмулятор Azure Cosmos на хост-компьютере, выполнить подключение к учетной записи Azure Cosmos из эмулятора не удастся. Так как приложение не работает на хост-компьютере, зарегистрированный в контейнере Linux сертификат, который соответствует конечной точке эмулятора, не возможно добавить. 
+
+В качестве обходного решения можно отключить проверку SSL-сертификата сервера в клиентском приложении, передав экземпляр `HttpClientHandler`, как показано в следующем примере кода .NET. Это решение применимо только при использовании пакета Nuget `Microsoft.Azure.DocumentDB`, но не поддерживается для пакета Nuget `Microsoft.Azure.Cosmos`.
+ 
+ ```csharp
+var httpHandler = new HttpClientHandler()
+{
+    ServerCertificateCustomValidationCallback = (req,cert,chain,errors) => true
+};
+ 
+using (DocumentClient client = new DocumentClient(new Uri(strEndpoint), strKey, httpHandler))
+{
+    RunDatabaseDemo(client).GetAwaiter().GetResult();
+}
+```
+
+Помимо отключения проверки SSL-сертификата, важно, чтобы вы запустили эмулятор с параметром `/allownetworkaccess` и чтобы конечная точка эмулятора была доступна с IP-адреса узла, а не DNS `host.docker.internal`.
 
 ## Запуск на компьютере Mac или Linux<a id="mac"></a>
 

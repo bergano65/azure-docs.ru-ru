@@ -1,19 +1,14 @@
 ---
-title: Ограничение доступа к реестру контейнеров Azure с помощью виртуальной сети
+title: Ограничение доступа с помощью виртуальной сети
 description: Разрешите доступ к реестру контейнеров Azure только из ресурсов в виртуальной сети Azure или из диапазонов общедоступных IP-адресов.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 07/01/2019
-ms.author: danlep
-ms.openlocfilehash: 5ba5c180def9539c486fb8727a0a78b4f98fa185
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: a6b89b074c25ea0948597ede7e5681b100c7f429
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73931335"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74454334"
 ---
 # <a name="restrict-access-to-an-azure-container-registry-using-an-azure-virtual-network-or-firewall-rules"></a>Ограничение доступа к реестру контейнеров Azure с помощью виртуальной сети или правил брандмауэра Azure
 
@@ -64,7 +59,7 @@ ms.locfileid: "73931335"
 
 Службы с несколькими клиентами, такие как реестр контейнеров Azure, используют один набор IP-адресов для всех клиентов. Конечная точка службы назначает конечную точку для доступа к реестру. Эта конечная точка предоставляет трафику оптимальный маршрут к ресурсу через магистральную сеть Azure. В каждом запросе также передаются удостоверения виртуальной сети и подсети.
 
-### <a name="firewall-rules"></a>Правила брандмауэра
+### <a name="firewall-rules"></a>Правила файрволла
 
 Для правил IP-сети укажите разрешенные диапазоны адресов Интернета, используя нотацию CIDR, например *16.17.18.0/24* , или отдельные IP-адреса, например *16.17.18.19*. Правила IP-сети разрешены только для *общедоступных* IP-адресов Интернета. Диапазоны IP-адресов, зарезервированные для частных сетей (как определено в RFC 1918), не разрешены в правилах IP-адресов.
 

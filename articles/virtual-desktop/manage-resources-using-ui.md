@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: tutorial
-ms.date: 06/04/2019
+ms.date: 11/09/2019
 ms.author: helohr
-ms.openlocfilehash: 175c5173091bee85a5c9fc4a50e9df5d3f73da13
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: c7ef648dd2610c337bc9146e7a52c04d91907c8e
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72300914"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73904909"
 ---
 # <a name="tutorial-deploy-a-management-tool"></a>Руководство по Развертывание средства управления
 
@@ -103,9 +103,14 @@ ms.locfileid: "72300914"
 1. Выберите ресурс Служб приложений Azure с именем, которое вы указали в шаблоне (например, Apr3UX), и перейдите по связанному с ним URL-адресу (например, <https://rdmimgmtweb-210520190304.azurewebsites.net>).
 2. Войдите в систему, используя свои учетные данные для Виртуального рабочего стола Windows.
 3. При появлении запроса на выбор группы клиентов выберите **Default Tenant Group** (Группа клиентов по умолчанию) из раскрывающегося списка.
+4. После этого в правой части окна должно появиться меню. В этом меню найдите и выберите имя группы клиентов.
 
 > [!NOTE]
 > Если у вас есть настраиваемая группа клиентов, введите имя вручную вместо выбора из раскрывающегося списка.
+
+## <a name="report-issues"></a>Сообщение о проблемах
+
+Если у вас возникли проблемы со средством управления или другими средствами Виртуального рабочего стола Windows, следуйте указаниям в [шаблонах ARM для службы удаленных рабочих столов](https://github.com/Azure/RDS-Templates/blob/master/README.md), чтобы сообщить о них в GitHub.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

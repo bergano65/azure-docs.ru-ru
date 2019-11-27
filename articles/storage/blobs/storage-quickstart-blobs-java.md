@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: a7cd61854176dc702f213211b14c2361b3e433ad
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 5196dbbfb52ce75031a53764b371d6d34b43fba7
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73825360"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74091418"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v12-for-java"></a>Краткое руководство. Использование клиентской библиотеки хранилища BLOB-объектов Azure версии 12 для Java
 
@@ -201,11 +201,11 @@ export CONNECT_STR="<yourconnectionstring>"
 
 Используйте следующие классы Java для взаимодействия с этими ресурсами.
 
-* [BlobServiceClient](/java/api/com.azure.storage.blob.blobserviceclient). Класс `BlobServiceClient` позволяет управлять ресурсами службы хранилища Azure и контейнерами больших двоичных объектов. Учетная запись хранения предоставляет пространство имен верхнего уровня для службы BLOB-объектов.
-* [BlobServiceClientBuilder](/java/api/com.azure.storage.blob.blobserviceclientbuilder). Класс `BlobServiceClientBuilder` предоставляет API гибкого конструктора для упрощения настройки и создания экземпляров объектов `BlobServiceClient`.
-* [BlobContainerClient](/java/api/com.azure.storage.blob.blobcontainerclient). Класс `BlobContainerClient` позволяет управлять контейнерами службы хранилища Azure и содержащимися в них большими двоичными объектами.
-* [BlobClient](/java/api/com.azure.storage.blob.blobclient). Класс `BlobClient` позволяет управлять большими двоичными объектами службы хранилища Azure.
-* [BlobItem](/java/api/com.azure.storage.blob.blobitem). Класс `BlobItem` представляет отдельные большие двоичные объекты, возвращаемые при вызове `listBlobsFlat`.
+* [BlobServiceClient](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/com/azure/storage/blob/BlobServiceClient.html). Класс `BlobServiceClient` позволяет управлять ресурсами службы хранилища Azure и контейнерами больших двоичных объектов. Учетная запись хранения предоставляет пространство имен верхнего уровня для службы BLOB-объектов.
+* [BlobServiceClientBuilder](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/com/azure/storage/blob/BlobServiceClientBuilder.html). Класс `BlobServiceClientBuilder` предоставляет API гибкого конструктора для упрощения настройки и создания экземпляров объектов `BlobServiceClient`.
+* [BlobContainerClient](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/com/azure/storage/blob/BlobContainerClient.html). Класс `BlobContainerClient` позволяет управлять контейнерами службы хранилища Azure и содержащимися в них большими двоичными объектами.
+* [BlobClient](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/com/azure/storage/blob/BlobClient.html). Класс `BlobClient` позволяет управлять большими двоичными объектами службы хранилища Azure.
+* [BlobItem](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/com/azure/storage/blob/models/BlobItem.html). Класс `BlobItem` представляет отдельные большие двоичные объекты, возвращаемые при вызове `listBlobsFlat`.
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -243,7 +243,7 @@ String connectStr = System.getenv("CONNECT_STR");
 > [!IMPORTANT]
 > Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
 
-Затем создайте экземпляр класса [BlobContainerClient](/java/api/com.azure.storage.blob.blobcontainerclient) и вызовите метод [create](/java/api/com.azure.storage.blob.blobcontainerclient.create), чтобы создать контейнер в учетной записи хранения.
+Затем создайте экземпляр класса [BlobContainerClient](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/com/azure/storage/blob/BlobContainerClient.html) и вызовите метод [create](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/com/azure/storage/blob/BlobContainerClient.html#create--), чтобы создать контейнер в учетной записи хранения.
 
 Добавьте следующий код в конец метода `Main`.
 
@@ -263,8 +263,8 @@ BlobContainerClient containerClient = blobServiceClient.createBlobContainer(cont
 Приведенный ниже фрагмент кода:
 
 1. Создает текстовый файл в локальном каталоге *data*.
-1. Возвращает ссылку на объект [BlobClient](/java/api/com.azure.storage.blob.blobclient), вызывая метод [getBlobClient](/java/api/com.azure.storage.blob.blobcontainerclient.getblobclient) для контейнера из раздела [Создание контейнера](#create-a-container).
-1. Передает локальный текстовый файл в большой двоичный объект, вызывая метод [uploadFromFile](/java/api/com.azure.storage.blob.blobclient.uploadfromfile). С помощью этого метода создается большой двоичный объект, если он не был создан ранее, или же, если он имеется, происходит его замещение.
+1. Возвращает ссылку на объект [BlobClient](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/com/azure/storage/blob/BlobClient.html), вызывая метод [getBlobClient](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/com/azure/storage/blob/BlobContainerClient.html#getBlobClient-java.lang.String-) для контейнера из раздела [Создание контейнера](#create-a-container).
+1. Передает локальный текстовый файл в большой двоичный объект, вызывая метод [uploadFromFile](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/com/azure/storage/blob/BlobClient.html#uploadFromFile-java.lang.String-). С помощью этого метода создается большой двоичный объект, если он не был создан ранее. Если он имеется, замещение не происходит.
 
 Добавьте следующий код в конец метода `Main`.
 
@@ -290,7 +290,7 @@ blobClient.uploadFromFile(localPath + fileName);
 
 ### <a name="list-the-blobs-in-a-container"></a>Перечисление BLOB-объектов в контейнере
 
-Выведите список больших двоичных объектов в контейнере, вызвав метод [listBlobsFlat](/java/api/com.azure.storage.blob.blobcontainerclient.listblobsflat). В этом случае в контейнер был добавлен лишь один большой двоичный объект, поэтому операция перечисления возвращает только его.
+Выведите список больших двоичных объектов в контейнере, вызвав метод [listBlobs](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/com/azure/storage/blob/BlobContainerClient.html#listBlobs--). В этом случае в контейнер был добавлен лишь один большой двоичный объект, поэтому операция перечисления возвращает только его.
 
 Добавьте следующий код в конец метода `Main`.
 
@@ -305,7 +305,7 @@ for (BlobItem blobItem : containerClient.listBlobs()) {
 
 ### <a name="download-blobs"></a>Скачивание больших двоичных объектов
 
-Скачайте созданный ранее большой двоичный объект, вызвав метод [downloadToFile](/java/api/com.azure.storage.blob.blobclient.downloadtofile). Пример кода добавляет суффикс "DOWNLOAD" к имени файла, чтобы в локальной файловой системе можно было просмотреть оба файла.
+Скачайте созданный ранее большой двоичный объект, вызвав метод [downloadToFile](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/com/azure/storage/blob/specialized/BlobClientBase.html#downloadToFile-java.lang.String-). Пример кода добавляет суффикс "DOWNLOAD" к имени файла, чтобы в локальной файловой системе можно было просмотреть оба файла.
 
 Добавьте следующий код в конец метода `Main`.
 
@@ -322,7 +322,7 @@ blobClient.downloadToFile(localPath + downloadFileName);
 
 ### <a name="delete-a-container"></a>Удаление контейнера
 
-Следующий код очищает созданные приложением ресурсы, полностью удаляя контейнер с помощью метода [delete](/java/api/com.azure.storage.blob.blobcontainerclient.delete). Он также удаляет локальные файлы, созданные приложением.
+Следующий код очищает созданные приложением ресурсы, полностью удаляя контейнер с помощью метода [delete](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/com/azure/storage/blob/BlobContainerClient.html#delete--). Он также удаляет локальные файлы, созданные приложением.
 
 Приложение приостанавливается для ввода пользователя, вызывая `System.console().readLine()`, перед удалением большого двоичного объекта, контейнера и локальных файлов. Это хорошая возможность проверить правильность создания ресурсов перед их удалением.
 

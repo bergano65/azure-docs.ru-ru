@@ -1,22 +1,22 @@
 ---
-title: Планирование и выполнение развертывания многофакторной идентификации Azure — Azure Active Directory
+title: Развертывание многофакторной идентификации Azure Azure Active Directory
 description: Планирование развертывания Многофакторная идентификация Microsoft Azure
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/15/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 22e3131a204589a506b2d5f1e2508c37ad3b4100
-ms.sourcegitcommit: 16c5374d7bcb086e417802b72d9383f8e65b24a7
+ms.openlocfilehash: cab4b57513f90a5cbe80724d4937f8d0f87b5517
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73847218"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74381788"
 ---
 # <a name="planning-a-cloud-based-azure-multi-factor-authentication-deployment"></a>Планирование развертывания многофакторной идентификации Azure на основе облачных служб
 
@@ -24,7 +24,7 @@ ms.locfileid: "73847218"
 
 [Многофакторная идентификация Azure (MFA)](concept-mfa-howitworks.md) помогает защитить доступ к данным и приложениям. Он обеспечивает дополнительный уровень безопасности, используя вторую форму проверки подлинности. Организации могут использовать [Условный доступ](../conditional-access/overview.md) для того, чтобы решение соответствовало конкретным потребностям.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Перед началом развертывания многофакторной идентификации Azure необходимо учитывать необходимые компоненты.
 
@@ -240,7 +240,7 @@ Get-MsolUser -All | Set-MfaState -State Disabled
     * Нажмите кнопку **Выбрать**.
 1. Пропустите раздел **Сеанс**.
 1. Для переключателя **Включить политику** установите значение **Вкл.**
-1. Щелкните **Создать**.
+1. Нажмите кнопку **Создать**.
 
 ## <a name="plan-integration-with-on-premises-systems"></a>Планирование интеграции с локальными системами
 
@@ -283,7 +283,7 @@ Get-MsolUser -All | Set-MfaState -State Disabled
 
 Этот параметр определяет, что нужно делать при проверке подлинности пользователя, не зарегистрированного для MFA. Последствия изменения этого параметра перечислены в таблице ниже.
 
-| Параметры | Состояние пользователя MFA | Параметров |
+| данных | Состояние пользователя MFA | Параметров |
 | --- | --- | --- |
 | Ключ не существует | Не зарегистрировано | Запрос MFA не выполнен |
 | Значение true/Not Set | Не зарегистрировано | Запрос MFA не выполнен |
@@ -347,7 +347,7 @@ Get-MsolUser -All | Set-MfaState -State Disabled
 
 Многофакторная идентификация Azure предоставляет отчеты с помощью портал Azure:
 
-| Отчет | Расположение | Description (Описание) |
+| Отчет | Место проведения | ОПИСАНИЕ |
 | --- | --- | --- |
 | Предупреждения об использовании и о мошенничестве | "Azure AD > События входа" | Сведения об общем использовании, сводка пользователей, сведения о пользователях, а также история предупреждений о мошенничестве, отправленных в течение указанного диапазона дат. |
 
@@ -355,7 +355,7 @@ Get-MsolUser -All | Set-MfaState -State Disabled
 
 Найдите решения для распространенных проблем с Azure MFA в [статье Устранение неполадок многофакторной идентификации Azure](https://support.microsoft.com/help/2937344/troubleshooting-azure-multi-factor-authentication-issues) в центре служба поддержки Майкрософт.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Какие методы проверки подлинности доступны?](concept-authentication-methods.md)
 * [Включение конвергентной регистрации для Многофакторной идентификации Azure и самостоятельного сброса пароля в Azure AD](concept-registration-mfa-sspr-converged.md)

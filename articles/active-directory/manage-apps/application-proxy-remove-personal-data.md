@@ -1,5 +1,5 @@
 ---
-title: Удаление персональных данных в Azure Active Directory Application Proxy | Документация Майкрософт
+title: Удалить персональные данные — Azure Active Directory Application Proxy
 description: Удаление персональных данных из соединителей, установленных на устройствах для Azure Active Directory Application Proxy.
 documentationcenter: ''
 author: msmimart
@@ -15,12 +15,12 @@ ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ebb2a38e520c988ee7ca9a234aadd6ae2de4f0cb
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: fe97956d99bd5c677e499b532ef85a1bb4d324ef
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67807751"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74275413"
 ---
 # <a name="remove-personal-data-for-azure-active-directory-application-proxy"></a>Удаление персональных данных в Azure Active Directory Application Proxy
 
@@ -77,8 +77,8 @@ ms.locfileid: "67807751"
 
 Один из способов обеспечить отсутствие персональных данных в журналах соединителя — отключить ведение журнала. Чтобы остановить создание журналов соединителя, удалите выделенную ниже строку из `C:\Program Files\Microsoft AAD App Proxy Connector\ApplicationProxyConnectorService.exe.config`.
 
-![Показан фрагмент кода с выделенным кодом для удаления](./media/application-proxy-remove-personal-data/01.png)
+![Отображает фрагмент кода с выделенным кодом для удаления](./media/application-proxy-remove-personal-data/01.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Общие сведения о прокси приложения см. в статье [Как обеспечить безопасный удаленный доступ к локальным приложениям](application-proxy.md).

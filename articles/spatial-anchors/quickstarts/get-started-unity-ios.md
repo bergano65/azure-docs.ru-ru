@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: be478a3f77996276f248d9b385954af813ac0397
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: a121cc7bcb9fba3a01c1e71c7b9e6fc67dce0572
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562472"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74092165"
 ---
 # <a name="quickstart-create-a-unity-ios-app-with-azure-spatial-anchors"></a>Краткое руководство. Создание приложения iOS в Unity с помощью Пространственных привязок Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "68562472"
 
 В рамках этого краткого руководства вам потребуются:
 
-- Компьютер macOS с установленными компонентами <a href="https://unity3d.com/get-unity/download" target="_blank">Unity версии 2019.1 и выше</a>, <a href="https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12" target="_blank">Xcode 10</a> и <a href="https://cocoapods.org" target="_blank">CocoaPods</a>.
+- Компьютер под управлением macOS с установленными компонентами <a href="https://unity3d.com/get-unity/download" target="_blank">Unity 2019.1+</a>, последней версией <a href="https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12" target="_blank">Xcode</a>, <a href="https://cocoapods.org" target="_blank">CocoaPods</a>.
 - Система Git, установленная с помощью HomeBrew. В терминале ведите такую команду в одну строку: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`. Затем выполните `brew install git`.
 - Устройство для разработки на iOS, <a href="https://developer.apple.com/documentation/arkit/verifying_device_support_and_user_permission" target="_blank">совместимое с ARKit</a>.
 
@@ -68,7 +68,19 @@ ms.locfileid: "68562472"
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
+### <a name="rendering-issues"></a>Проблемы отрисовки
+
 Если во время запуска приложения вы не видите камеру как фон (к примеру, вы видите вместо этого пустой, синий фон или фон с другой текстурой), то вам нужно повторно импортировать файлы в Unity. Остановите приложение. В верхнем меню в Unity выберите **Assets -> Re-import all** (Ресурсы -> Повторно импортировать все). Затем снова запустите приложение.
+
+### <a name="cocoapods-issues-on-macos-catalina-1015"></a>Проблемы с CocoaPods в macOS Catalina (10.15)
+
+Если вы недавно установили обновление macOS Catalina (10.15), а до этого — CocoaPods, то CocoaPods может перестать работать и не сможет правильно настроить модули pod и файлы проекта `.xcworkspace`. Чтобы устранить эту проблему, необходимо переустановить CocoaPods, выполнив следующие команды:
+
+```shell
+brew update
+brew install cocoapods --build-from-source
+brew link --overwrite cocoapods
+```
 
 [!INCLUDE [Clean-up section](../../../includes/clean-up-section-portal.md)]
 

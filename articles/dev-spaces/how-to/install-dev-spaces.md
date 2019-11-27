@@ -1,20 +1,16 @@
 ---
-title: Установка Azure Dev Spaces в AKS и клиентские средства на стороне клиента
-titleSuffix: Azure Dev Spaces
+title: Установка Azure Dev Spaces в AKS & средств на стороне клиента
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
-author: zr-msft
-ms.author: zarhoads
 ms.date: 07/24/2019
 ms.topic: conceptual
 description: Узнайте, как установить Azure Dev Spaces в кластере AKS и установить клиентские средства.
-keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: 642d4406840f1748c3b6cbb4441227fff0c6d721
-ms.sourcegitcommit: 5604661655840c428045eb837fb8704dca811da0
+keywords: Docker, Kubernetes, Azure, служба контейнеров Azure, служба Azure Kubernetes, контейнеры, Helm, сетка службы, сетка службы маршрутизации, kubectl, k8s
+ms.openlocfilehash: 2649b36c96313d4a7d878a1c72c3b175ad0f4d30
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68494849"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325777"
 ---
 # <a name="install-azure-dev-spaces-on-aks-and-the-client-side-tooling"></a>Установка Azure Dev Spaces в AKS и клиентские средства на стороне клиента
 
@@ -25,7 +21,7 @@ ms.locfileid: "68494849"
 Прежде чем можно будет установить модули разработки с помощью интерфейса командной строки, вам потребуется:
 * Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись][az-portal-create-account].
 * [Azure CLI установлен][install-cli].
-* [Кластер AKS][create-aks-cli] в поддерживаемом [регионе][supported-regions].
+* [Кластер AKS][create-aks-cli] в [поддерживаемом регионе][supported-regions].
 
 С помощью команды `use-dev-spaces` включите Dev Spaces в кластере AKS и следуйте инструкциям на экране.
 
@@ -53,13 +49,13 @@ Configuring and selecting dev space 'default'...3s
 Managed Kubernetes cluster 'myAKSCluster' in resource group 'myResourceGroup' is ready for development in dev space 'default'. Type `azds prep` to prepare a source directory for use with Azure Dev Spaces and `azds up` to run.
 ```
 
-`use-dev-spaces` Команда также устанавливает интерфейс командной строки Azure dev Spaces.
+Команда `use-dev-spaces` также устанавливает интерфейс командной строки Azure Dev Spaces.
 
 ## <a name="install-azure-dev-spaces-using-the-azure-portal"></a>Установка Azure Dev Spaces с помощью портал Azure
 
 Прежде чем можно будет установить модули разработки с помощью портал Azure, вам потребуется:
 * Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись][az-portal-create-account].
-* [Кластер AKS][create-aks-portal] в поддерживаемом [регионе][supported-regions].
+* [Кластер AKS][create-aks-portal] в [поддерживаемом регионе][supported-regions].
 
 Чтобы установить Azure Dev Spaces с помощью портал Azure, выполните следующие действия.
 1. Войдите на [портале Azure][az-portal].
@@ -80,7 +76,7 @@ Managed Kubernetes cluster 'myAKSCluster' in resource group 'myResourceGroup' is
 * В Visual Studio 2017 установите рабочую нагрузку веб-разработки и [средства Visual Studio для Kubernetes][visual-studio-k8s-tools].
 * Скачайте и установите интерфейс командной строки [Windows][cli-win], [Mac][cli-mac]или [Linux][cli-linux] .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах.
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 55a9cbcfdb9766c6adc6d10f975fa4d074ec3aaf
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: d6e7c04cbd5a7f1ed509b27cf87ac3f692c28d9f
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74011664"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74454468"
 ---
 # <a name="how-to-authorize-developer-accounts-by-using-azure-active-directory-b2c-in-azure-api-management"></a>Как авторизовать учетные записи разработчиков с помощью Azure Active Directory B2C в службе управления API Azure
 
@@ -92,6 +92,9 @@ Azure Active Directory B2C — это облачное решение, позв
 ![Мини-приложение кнопок AAD](./media/api-management-howto-aad/portal-oauth-widget.png)
 
 Несмотря на то что новая учетная запись будет создана автоматически при входе нового пользователя с AAD B2C, вы можете добавить это же мини-приложение на страницу регистрации.
+
+> [!IMPORTANT]
+> Чтобы изменения AAD вступили в силу, необходимо [повторно опубликовать портал](api-management-howto-developer-portal-customize.md#publish) .
 
 ## <a name="legacy-developer-portal---how-to-sign-up-with-azure-ad-b2c"></a>Устаревший портал разработчика. Регистрация с помощью Azure AD B2C
 

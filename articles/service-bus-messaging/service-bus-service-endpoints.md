@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/22/2018
 ms.author: aschhab
-ms.openlocfilehash: 7d31dd004c879fd3e689f4ba7a8ae58cb223ae70
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 99a705c3923821739ddc1dedd8f7c079dc534a1a
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73484931"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74277305"
 ---
 # <a name="use-virtual-network-service-endpoints-with-azure-service-bus"></a>Использование конечных точек служб для виртуальной сети со Служебной шиной Azure
 
@@ -31,7 +31,6 @@ ms.locfileid: "73484931"
 > Доверенные службы Майкрософт не поддерживаются, если реализованы виртуальные сети.
 >
 > Распространенные сценарии Azure, которые не работают с виртуальными сетями (обратите внимание, что список **НЕ** является исчерпывающим):
-> - Azure Monitor
 > - Azure Stream Analytics
 > - Интеграция со службой "Сетка событий Azure".
 > - Маршруты Центра Интернета вещей Azure.
@@ -68,13 +67,13 @@ ms.locfileid: "73484931"
 
 Следующий шаблон Resource Manager позволяет добавить правило виртуальной сети в пространство имен существующей Служебной шины.
 
-Параметры шаблона.
+Параметры шаблона:
 
 * **namespaceName**: пространство имен служебной шины;
 * **virtualNetworkingSubnetId**: полный путь Resource Manager для подсети виртуальной сети, например `/subscriptions/{id}/resourceGroups/{rg}/providers/Microsoft.Network/virtualNetworks/{vnet}/subnets/default` для подсети виртуальной сети по умолчанию.
 
 > [!NOTE]
-> Хотя запрещающие правила отсутствуют, в шаблоне Azure Resource Manager для действия по умолчанию установлено значение **Разрешить**, которое не ограничивает подключения.
+> Хотя запрещающие правила отсутствуют, в шаблоне Azure Resource Manager для действия по умолчанию установлено значение **Allow**, которое не ограничивает подключения.
 > При создании правил виртуальной сети или брандмауэров необходимо изменить значение параметра ***defaultAction***.
 > 
 > from
@@ -189,7 +188,7 @@ ms.locfileid: "73484931"
 
 Чтобы развернуть шаблон, следуйте инструкциям по [Azure Resource Manager][lnk-deploy].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о виртуальных сетях см. по следующим ссылкам:
 

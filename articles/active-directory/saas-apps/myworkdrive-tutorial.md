@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 05/20/2019
+ms.date: 06/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 03998d214c1fb977741976eca7b878d0c6b577aa
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: c733873a5545bb01f03abd8178ed2f371e2dd3aa
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73160388"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74074084"
 ---
 # <a name="tutorial-integrate-myworkdrive-with-azure-active-directory"></a>Руководство по Интеграция MyWorkDrive с Azure Active Directory
 
@@ -100,9 +100,17 @@ ms.locfileid: "73160388"
 
 ### <a name="configure-myworkdrive-sso"></a>Настройка единого входа в MyWorkDrive
 
-1. В другом окне веб-браузера войдите в MyWorkDrive с правами администратора безопасности.
+1. Для автоматизации настройки в MyWorkDrive необходимо установить **расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
 
-2. На сервере MyWorkDrive на панели администрирования щелкните **ENTERPRISE** (Корпоративное приложение) и выполните следующие действия:
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+1. Чтобы перейти к приложению MyWorkDrive после добавления расширения в браузер, щелкните **Настройка MyWorkDrive**. После этого укажите учетные данные администратора для входа в MyWorkDrive. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–4.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+1. Если вы хотите настроить MyWorkDrive вручную, то в другом окне веб-браузера войдите в MyWorkDrive с правами администратора безопасности.
+
+1. На сервере MyWorkDrive на панели администрирования щелкните **ENTERPRISE** (Корпоративное приложение) и выполните следующие действия:
 
     ![Администратор](./media/myworkdrive-tutorial/tutorial_myworkdrive_admin.png)
 

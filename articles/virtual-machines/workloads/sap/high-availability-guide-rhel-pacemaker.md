@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/17/2018
 ms.author: sedusch
-ms.openlocfilehash: 954ff23997e56249859dd8d35f124324432f2b22
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.openlocfilehash: ee67c811835d99bf2f4c00dc59b43e29f63c81d6
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71673002"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533816"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "71673002"
 [2243692]: https://launchpad.support.sap.com/#/notes/2243692
 [1999351]: https://launchpad.support.sap.com/#/notes/1999351
 
-[virtual-machines-linux-maintenance]:../../linux/maintenance-and-updates.md#maintenance-that-doesnt-require-a-reboot
+[virtual-machines-linux-maintenance]:../../maintenance-and-updates.md#maintenance-that-doesnt-require-a-reboot
 
 
 Прежде всего прочитайте следующие примечания и документы SAP:
@@ -108,9 +108,9 @@ ms.locfileid: "71673002"
 
    > [!IMPORTANT]
    > Мы рекомендуем использовать следующие версии агента ограждения Azure (или более поздней версии), чтобы клиенты могли использовать преимущества более быстрого перехода на другой ресурс, если происходит сбой ресурса или узлы кластера не могут обмениваться данными друг с другом.  
-   > RHEL 7,6: фенце-ажентс-4.2.1 -11. el7 _ 6.8  
-   > RHEL 7,5: фенце-ажентс-4.0.11 -86. el7 _ 5.8  
-   > RHEL 7,4: фенце-ажентс-4.0.11 -66. el7 _ 4.12  
+   > RHEL 7,6: ограждение-Agents-4.2.1-11. el7_6.8  
+   > RHEL 7,5: ограждение-Agents-4.0.11-86. el7_5.8  
+   > RHEL 7,4: ограждение-Agents-4.0.11-66. el7_4.12  
    > Дополнительные сведения см. в разделе [Виртуальная машина Azure, работающая в качестве члена кластера высокой доступности RHEL, может занять очень много времени, а также не удается установить или уменьшить ограждение перед завершением работы виртуальной машины](https://access.redhat.com/solutions/3408711).
 
    Проверьте версию агента ограждения Azure. При необходимости обновите его до версии, равной или более поздней, чем указано выше.
@@ -206,7 +206,7 @@ ms.locfileid: "71673002"
 1. Щелкните "Регистрация приложений".
 1. Нажмите кнопку "создать регистрацию"
 1. Введите имя, выберите "учетные записи только в каталоге организации" 
-2. Выберите тип приложения "Интернет", введите URL-адрес входа (например, http:/ЛОКАЛХОСТ\/) и нажмите кнопку "Добавить".  
+2. Выберите тип приложения "Интернет", введите URL-адрес входа (например, http:\//ЛОКАЛХОСТ) и нажмите кнопку "Добавить".  
    URL-адрес входа не используется и может быть любым допустимым URL-адресом.
 1. Выберите Сертификаты и секреты, а затем — новый секрет клиента.
 1. Введите описание нового ключа, выберите "никогда не истекает" и нажмите кнопку "Добавить".
@@ -274,7 +274,7 @@ sudo pcs property set stonith-timeout=900
 <pre><code>sudo pcs property set stonith-enabled=true
 </code></pre>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]

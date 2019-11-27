@@ -2,13 +2,13 @@
 title: Просмотр клиентов и делегированных ресурсов, а также управление ими
 description: Вы, как поставщик услуг, использующий делегированное управление ресурсами, можете просматривать все делегированные ресурсы и подписки пользователя, перейдя в раздел "Мои клиенты" на портале Azure.
 ms.date: 10/23/2019
-ms.topic: overview
-ms.openlocfilehash: ed1f2e5044fe5058acc4f8b155b346dd46c51b28
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
-ms.translationtype: HT
+ms.topic: conceptual
+ms.openlocfilehash: f115ecad09b01869a465f50485e191671970d521
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74131237"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463821"
 ---
 # <a name="view-and-manage-customers-and-delegated-resources"></a>Просмотр клиентов и делегированных ресурсов, а также управление ими
 

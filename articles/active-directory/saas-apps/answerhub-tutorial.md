@@ -8,6 +8,7 @@ manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 818b91d7-01df-4b36-9706-f167c710a73c
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ccf3894daf71be0defe4271a08ec5e8d963e0d34
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: a124832bd42a0a144ebc6000b818fb825aa422ef
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68227486"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73152991"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-answerhub"></a>Руководство по Интеграция Azure Active Directory с AnswerHub
 
@@ -144,7 +145,7 @@ ms.locfileid: "68227486"
 
 4. На вкладке **IDP Config** (Настройка поставщика удостоверений) выполните следующие действия.
 
-    ![Вкладка Users & Groups (Пользователи и группы)](./media/answerhub-tutorial/ic785172.png "SAML Setup (Настройка SAML)")  
+    ![Вкладка "Пользователи и группы"](./media/answerhub-tutorial/ic785172.png "Настройка SAML")  
   
     a. В поле **IDP Login URL** (URL-адрес для входа через поставщик удостоверений) вставьте **URL-адрес входа**, скопированный на портале Azure.
   
@@ -156,7 +157,7 @@ ms.locfileid: "68227486"
 
 5. В разделе **Keys and Certificates** (Ключи и сертификаты) выполните следующие действия.
 
-    ![Раздел Keys and Certificates (Ключи и сертификаты)](./media/answerhub-tutorial/ic785173.png "Keys and Certificates (Ключи и сертификаты)")  
+    ![Раздел "Ключи и сертификаты"](./media/answerhub-tutorial/ic785173.png "Ключи и сертификаты")  
 
     a. Откройте в Блокноте скачанный на портале Azure сертификат в кодировке Base64, скопируйте его содержимое и вставьте его в поле **IDP Public Key (x509 Format)** (Открытый ключ поставщика удостоверений в формате x509).
   
@@ -235,7 +236,7 @@ ms.locfileid: "68227486"
 
 4. На панели слева, в области **Manage Users** (Управление пользователями) выберите **Create or import users** (Создать или импортировать пользователей), а затем **Users and groups** (Пользователи и группы).
 
-   ![Вкладка Users & Groups (Пользователи и группы)](./media/answerhub-tutorial/ic785175.png "Users & Groups")
+   ![Вкладка "Пользователи и группы"](./media/answerhub-tutorial/ic785175.png "Users & Groups")
 
 5. В соответствующих полях введите **адрес электронной почты**, **имя пользователя** и **пароль** существующей учетной записи AAD, которую вы хотите добавить, а затем щелкните **Save** (Сохранить).
 

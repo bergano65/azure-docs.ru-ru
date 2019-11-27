@@ -1,5 +1,5 @@
 ---
-title: PowerShell V2 examples for managing groups - Azure AD  | Microsoft Docs
+title: Примеры PowerShell v2 для управления группами в Azure AD | Документация Майкрософт
 description: На этой странице представлены примеры командлетов PowerShell, которые помогут вам управлять группами в Azure Active Directory.
 keywords: Azure AD, Azure Active Directory, PowerShell, группы, управление группами
 services: active-directory
@@ -24,7 +24,7 @@ ms.locfileid: "74233114"
 # <a name="azure-active-directory-version-2-cmdlets-for-group-management"></a>Командлеты Azure Active Directory версии 2 для управления группами
 
 > [!div class="op_single_selector"]
-> - [Портал Azure](../fundamentals/active-directory-groups-create-azure-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
+> - [портал Azure](../fundamentals/active-directory-groups-create-azure-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
 > - [PowerShell](groups-settings-v2-cmdlets.md)
 >
 >
@@ -170,7 +170,7 @@ ms.locfileid: "74233114"
     PS C:\Windows\system32> Set-AzureADGroup -ObjectId 31f1ff6c-d48c-4f8a-b2e1-abca7fd399df -Description "Intune Device Administrators"
 ```
 
-Now, if we find the group again, we see the Description property is updated to reflect the new value:
+Теперь при повторном обнаружении группы мы видим, что свойство Description Обновлено, чтобы отразить новое значение:
 
 ```powershell
     PS C:\Windows\system32> Get-AzureADGroup -Filter "DisplayName eq 'Intune Administrators'"
@@ -284,7 +284,7 @@ Now, if we find the group again, we see the Description property is updated to r
     PS C:\Windows\system32> Add-AzureADGroupOwner -ObjectId 31f1ff6c-d48c-4f8a-b2e1-abca7fd399df -RefObjectId 72cd4bbd-2594-40a2-935c-016f3cfeeeea
 ```
 
-The -ObjectId parameter is the ObjectID of the group to which we want to add an owner, and the -RefObjectId is the ObjectID of the user or service principal we want to add as an owner of the group.
+Параметр-ObjectId — это идентификатор объекта группы, к которой нужно добавить владельца, а параметр-RefObjectId — идентификатор объекта пользователя или субъекта службы, который нужно добавить в качестве владельца группы.
 
 Для получения сведений о владельцах группы используйте командлет Get-AzureADGroupOwner:
 
@@ -292,7 +292,7 @@ The -ObjectId parameter is the ObjectID of the group to which we want to add an 
     PS C:\Windows\system32> Get-AzureADGroupOwner -ObjectId 31f1ff6c-d48c-4f8a-b2e1-abca7fd399df
 ```
 
-The cmdlet returns the list of owners (users and service principals) for the specified group:
+Командлет возвращает список владельцев (пользователей и субъектов-служб) для указанной группы:
 
 ```powershell
     DeletionTimeStamp ObjectId                             ObjectType
@@ -308,7 +308,7 @@ The cmdlet returns the list of owners (users and service principals) for the spe
 
 ## <a name="reserved-aliases"></a>Зарезервированные псевдонимы
 
-После создания группы определенные конечные точки позволяют пользователю указать mailNickname или псевдоним, который можно использовать как часть адреса электронной почты группы. Groups with the following highly privileged email aliases can only be created by an Azure AD global administrator. 
+После создания группы определенные конечные точки позволяют пользователю указать mailNickname или псевдоним, который можно использовать как часть адреса электронной почты группы. Группы со следующими псевдонимами электронной почты с высоким уровнем привилегий могут создаваться только глобальным администратором Azure AD. 
   
 * abuse
 * admin
@@ -317,22 +317,22 @@ The cmdlet returns the list of owners (users and service principals) for the spe
 * majordomo
 * postmaster
 * root
-* Безопасность
-* безопасность
+* secure
+* security
 * ssl-admin
 * webmaster
 
-## <a name="group-writeback-to-on-premises-preview"></a>Group writeback to on-premises (preview)
+## <a name="group-writeback-to-on-premises-preview"></a>Обратная запись групп в локальную среду (Предварительная версия)
 
-Today, many groups are still managed in on-premises Active Directory. To answer requests to sync cloud groups back to on-premises, Office 365 groups writeback feature for Azure AD is now available for preview.
+Сегодня многие группы по-прежнему управляются в локальной Active Directory. Чтобы ответить на запросы на синхронизацию облачных групп обратно в локальную среду, теперь доступна предварительная версия функции обратной записи в группах Office 365 для Azure AD.
 
-Office 365 groups are created and managed in the cloud. The writeback capability allows you to write back Office 365 groups as distribution groups to an Active Directory forest with Exchange installed. Users with on-premises Exchange mailboxes can then send and receive emails from these groups. The group writeback feature doesn't support Azure AD security groups or distribution groups.
+Группы Office 365 создаются и управляются в облаке. Возможность обратной записи позволяет записывать резервные группы Office 365 в качестве групп рассылки в лес Active Directory с установленным Exchange. Пользователи с локальными почтовыми ящиками Exchange могут отправлять и получать сообщения электронной почты из этих групп. Функция обратной записи групп не поддерживает группы безопасности Azure AD или группы рассылки.
 
-For more details, please refer to documentation for the [Azure AD Connect sync service](../hybrid/how-to-connect-syncservice-features.md).
+Дополнительные сведения см. в документации по [службе синхронизации Azure AD Connect](../hybrid/how-to-connect-syncservice-features.md).
 
-Office 365 group writeback is a public preview feature of Azure Active Directory (Azure AD) and is available with any paid Azure AD license plan. For some legal information about previews, see [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+Обратная запись групп Office 365 — это общедоступная Предварительная версия функции Azure Active Directory (Azure AD) и доступна с любым платным планом лицензирования Azure AD. Некоторые юридические сведения о предварительных версиях см. в разделе Дополнительные [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительную документацию по PowerShell Azure Active Directory см. в разделе [Azure Active Directory Cmdlets](/powershell/azure/install-adv2?view=azureadps-2.0) (Командлеты Azure Active Directory).
 

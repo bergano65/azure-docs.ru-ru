@@ -66,7 +66,7 @@ ms.locfileid: "73669385"
 
 Чтобы настроить среду научной обработки данных в Azure, выполните следующие действия.
 
-1. [создать учетную запись хранения;](../../storage/common/storage-quickstart-create-account.md)
+1. [Создание учетной записи хранения](../../storage/common/storage-quickstart-create-account.md)
 2. [Создание рабочей области машинного обучения Azure](../studio/create-workspace.md)
 3. [Подготовьте виртуальную машину для обработки и анализа данных](../data-science-virtual-machine/setup-sql-server-virtual-machine.md), которая будет служить сервером SQL Server и сервером IPython Notebook.
    
@@ -163,7 +163,7 @@ ms.locfileid: "73669385"
     -- Report number of columns in table nyctaxi_trip
     SELECT COUNT(*) FROM information_schema.columns WHERE table_name = 'nyctaxi_trip'
 
-#### <a name="exploration-trip-distribution-by-medallion"></a>Просмотр: распределение поездок по параметру medallion
+#### <a name="exploration-trip-distribution-by-medallion"></a>Просмотр: Распределение поездок по параметру medallion
 В этом примере определяются медальоны (номера такси) с более чем 100 поездками за заданный период времени. Запрос будет использовать секционированный доступ к таблице, так как он обусловлен схемой секционирования **pickup\_datetime**. При запросе к полному набору данных также будет задействовано сканирование секционированной таблицы и/или индекса.
 
     SELECT medallion, COUNT(*)

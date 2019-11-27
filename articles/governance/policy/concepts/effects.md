@@ -3,12 +3,12 @@ title: Принцип работы эффектов
 description: Определения политик Azure имеют различные эффекты, которые определяют, как Управление соответствием и о них сообщается.
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: c345f96ef5176c4afb3d46aaca2e9903c7911fb1
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 8338f3bf965f121a553a56c551d2095bf60e4880
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73959904"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74279507"
 ---
 # <a name="understand-azure-policy-effects"></a>Сведения о действии политик Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "73959904"
 - [Помощью параметров auditifnotexists](#auditifnotexists)
 - [Deny](#deny)
 - [DeployIfNotExists](#deployifnotexists)
-- [отключено](#disabled).
+- [Disabled](#disabled)
 - [Енфорцеопаконстраинт](#enforceopaconstraint) (Предварительная версия)
 - [Енфорцерегополици](#enforceregopolicy) (Предварительная версия)
 - [Изменений](#modify)
@@ -571,6 +571,6 @@ ms.locfileid: "73959904"
 - Просмотрите примеры в [примерах политики Azure](../samples/index.md).
 - Изучите статью о [структуре определения Политики Azure](definition-structure.md).
 - Узнайте, как [программно создавать политики](../how-to/programmatically-create.md).
-- Узнайте, как [получить данные о соответствии](../how-to/getting-compliance-data.md).
+- Узнайте, как [получить данные о соответствии](../how-to/get-compliance-data.md).
 - Узнайте, как [исправлять несоответствующие ресурсы](../how-to/remediate-resources.md).
 - Дополнительные сведения о группе управления см. в статье [Упорядочивание ресурсов с помощью групп управления Azure](../../management-groups/overview.md).

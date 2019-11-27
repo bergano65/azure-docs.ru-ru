@@ -2,7 +2,7 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Обзор Azure Resource Graph
+    - name: Что такое Azure Resource Graph?
       displayName: 'Resource Manager, query language, rbac, permissions'
       href: overview.md
 - name: Краткие руководства

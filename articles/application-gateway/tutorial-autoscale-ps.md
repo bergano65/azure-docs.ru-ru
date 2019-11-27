@@ -1,19 +1,19 @@
 ---
-title: Руководство. Создание автоматически масштабируемого, избыточного в пределах зоны шлюза приложений с зарезервированным IP-адресом с помощью Azure PowerShell
+title: Руководство по улучшению доступа к веб-приложениям — Шлюз приложений Azure
 description: В этом руководстве вы узнаете, как создать автоматически масштабируемый, избыточный в пределах зоны шлюз приложений с зарезервированным IP-адресом с помощью Azure PowerShell.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: tutorial
-ms.date: 2/14/2019
+ms.date: 11/13/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 8ee43a54df019b862d1f8698363d8b0a022bdcb4
-ms.sourcegitcommit: ed66a704d8e2990df8aa160921b9b69d65c1d887
+ms.openlocfilehash: e07fc34c7177e3a1dace34ab298b64dc3aa6a06a
+ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64947145"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74011362"
 ---
 # <a name="tutorial-create-an-application-gateway-that-improves-web-application-access"></a>Руководство. Создание шлюза приложений, который улучшает доступ к веб-приложениям
 
@@ -87,7 +87,7 @@ Export-PfxCertificate `
   -Password $pwd
 ```
 
-## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 Создайте виртуальную сеть с одной выделенной подсетью для автоматически масштабируемого шлюза приложений. В настоящее время в каждой выделенной подсети можно развернуть только один автоматически масштабируемый шлюз приложений.
 

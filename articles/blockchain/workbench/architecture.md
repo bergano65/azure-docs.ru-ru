@@ -1,23 +1,17 @@
 ---
-title: Архитектура Azure Блокчейн Workbench Preview
+title: Архитектура Azure Blockchain Workbench
 description: Обзор архитектуры Azure Блокчейн Workbench Preview и ее компонентов.
-services: azure-blockchain
-keywords: ''
-author: PatAltimore
-ms.author: patricka
 ms.date: 09/05/2019
 ms.topic: conceptual
-ms.service: azure-blockchain
 ms.reviewer: brendal
-manager: femila
-ms.openlocfilehash: 4613d441fd0d363654073d4832de19139a7781e7
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: aa972e8ae486d181f0c48df72ec89c925c940451
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73579742"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74324897"
 ---
-# <a name="azure-blockchain-workbench-preview-architecture"></a>Архитектура Azure Блокчейн Workbench Preview
+# <a name="azure-blockchain-workbench-architecture"></a>Архитектура Azure Blockchain Workbench
 
 Предварительная версия Azure Блокчейн Workbench упрощает разработку приложений блокчейн, предоставляя решение с помощью нескольких компонентов Azure. Blockchain Workbench можно развернуть с помощью шаблона решения в Azure Marketplace. Шаблон позволяет выбрать модули и компоненты для развертывания, включая блокчейн-стек, тип клиентского приложения и поддержку интеграции Интернета вещей. После развертывания Blockchain Workbench предоставляет доступ к веб-приложению, iOS-приложению и Android-приложению.
 
@@ -119,7 +113,7 @@ Workbench обеспечивает ведение журналов прилож�
 
 Azure Monitor предоставляет информацию о работоспособности сети блокчейн. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Развертывание Azure Blockchain Workbench](../../blockchain-workbench/blockchain-workbench-deploy.md)

@@ -1,22 +1,22 @@
 ---
-title: Настройка службы подготовки устройств с помощью Azure CLI | Документация Майкрософт
+title: Краткое руководство. Настройка службы подготовки устройств с помощью Azure CLI
 description: Краткое руководство Azure. Настройка службы "Подготовка устройств к добавлению в Центр Интернета вещей" с помощью Azure CLI
 author: wesmc7777
 ms.author: wesmc
-ms.date: 02/26/2018
+ms.date: 11/08/2019
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 3062fb640985498ba35e23f6310828a2bd59bfed
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: ef40d0df630fc369705a1365aa8d95317aa54cb3
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "60363722"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73904705"
 ---
-# <a name="set-up-the-iot-hub-device-provisioning-service-with-azure-cli"></a>Настройка службы подготовки устройств к добавлению в Центр Интернета вещей с помощью Azure CLI
+# <a name="quickstart-set-up-the-iot-hub-device-provisioning-service-with-azure-cli"></a>Краткое руководство. Настройка службы подготовки устройств к добавлению в Центр Интернета вещей с помощью Azure CLI
 
 Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этом кратком руководстве описано создание Центра Интернета вещей и службы "Подготовка устройств к добавлению в Центр Интернета вещей" с помощью Azure CLI, а также связывание этих двух служб. 
 
@@ -137,4 +137,3 @@ az group delete --name my-sample-resource-group
 
 > [!div class="nextstepaction"]
 > [Краткое руководство по созданию виртуального устройства](./quick-create-simulated-device.md)
-

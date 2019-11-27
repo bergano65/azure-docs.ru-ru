@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Создание частного реестра Docker в Azure с помощью PowerShell
-description: Быстрый способ изучить создание частного реестра контейнеров Docker в Azure с помощью Azure PowerShell.
+title: Краткое руководство. Создание реестра с помощью Powershell — реестр контейнеров Azure
+description: Быстрый способ изучить создание частного реестра Docker в Реестре контейнеров Azure с помощью PowerShell.
 services: container-registry
 author: dlepow
 manager: gwallace
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 01/22/2019
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: f99b4ee6dd11a109d1c563c84debc2157cb03337
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: b337c28efc3db7d4bec4408b5da1f8a5e1d87094
+ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68309494"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73931608"
 ---
 # <a name="quickstart-create-a-private-container-registry-using-azure-powershell"></a>Краткое руководство. Создание частного реестра контейнеров Docker с помощью Azure PowerShell
 

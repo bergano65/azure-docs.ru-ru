@@ -1,19 +1,19 @@
 ---
-title: Настройка аварийного восстановления виртуальной машины IaaS Azure в дополнительный регион Azure
-description: В этом кратком руководстве приведены инструкции по аварийному восстановлению виртуальной машины IaaS Azure в другой регион Azure с помощью службы Azure Site Recovery.
+title: Настройка аварийного восстановления виртуальной машины Azure в дополнительный регион с помощью Azure Site Recovery
+description: Быстрая настройка аварийного восстановления виртуальной машины Azure в другой регион Azure с помощью службы Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: quickstart
-ms.date: 08/28/2019
+ms.date: 11/12/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: b06cae5bcb07831ba79b805802a7851c2b6ad2b3
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 91674d6335ae95993bcdd59250658d562302b1dc
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73467966"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73954133"
 ---
 # <a name="set-up-disaster-recovery-to-a-secondary-azure-region-for-an-azure-vm"></a>Настройка аварийного восстановления виртуальной машины Azure в дополнительный регион Azure        
 

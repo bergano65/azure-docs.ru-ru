@@ -39,7 +39,7 @@ ms.locfileid: "72674929"
         * IPv4-адрес, например `10.1.12.24` 
         * IPv4-адрес и маска подсети, выраженная количеством бит, например `10.1.12.10/4`
 
-    * **Доступ**  
+    * **Access**  
         Выберите одно из следующих типов доступа.  
         * Нет доступа 
         * Чтение и запись
@@ -48,7 +48,7 @@ ms.locfileid: "72674929"
     ![Экспортировать политику](../media/azure-netapp-files/azure-netapp-files-export-policy.png) 
 
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дополнительная информация 
 * [Управление томами](azure-netapp-files-manage-volumes.md)
 * [Подключение и отключение тома для виртуальных машин](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
 * [Управление моментальными снимками](azure-netapp-files-manage-snapshots.md)

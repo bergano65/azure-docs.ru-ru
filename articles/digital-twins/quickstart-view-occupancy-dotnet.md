@@ -1,5 +1,5 @@
 ---
-title: Поиск свободных помещений — Azure Digital Twins | Документация Майкрософт
+title: Краткое руководство. Поиск свободных помещений — Azure Digital Twins
 description: В этом кратком руководстве вы запустите два примера приложения .NET Core для отправки смоделированных данных телеметрии движения и уровня углекислого газа в пространство Digital Twins. Цель — найти свободные помещения со свежим воздухом с помощью API управления после выполнения вычислительных процессов в облаке.
 ms.author: alinast
 author: alinamstanciu
@@ -9,13 +9,13 @@ services: digital-twins
 ms.devlang: csharp
 ms.topic: quickstart
 ms.custom: mvc seodec18
-ms.date: 10/03/2019
-ms.openlocfilehash: 3c9a806b936b9f167d1700c95b1e769926abb17b
-ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
+ms.date: 11/12/2019
+ms.openlocfilehash: 44ef646328f5f55d16dfa2d6906b78866292ebd9
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71958913"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74123195"
 ---
 # <a name="quickstart-find-available-rooms-by-using-azure-digital-twins"></a>Краткое руководство. Поиск свободных помещений с помощью Azure Digital Twins
 
@@ -59,6 +59,8 @@ ms.locfileid: "71958913"
     - **Tenant:** введите идентификатор каталога клиента Azure AD, записанный при работе с предыдущим разделом.
     - **BaseUrl:** URL-адрес API управления экземпляра Digital Twins в формате `https://yourDigitalTwinsName.yourLocation.azuresmartspaces.net/management/api/v1.0/`. Замените заполнители в этом URL-адресе значениями для своего экземпляра из предыдущего раздела.
 
+    Сохраните обновленный файл.
+
 ## <a name="provision-graph"></a>Подготовка графа
 
 На этом шаге подготавливается пространственный граф Digital Twins со следующими элементами:
@@ -81,23 +83,25 @@ ms.locfileid: "71958913"
 
 1. Шаг по подготовке может занять несколько минут. В экземпляре Digital Twins будет также подготовлен Центр Интернета вещей. Он проходит цикл, пока Центр Интернета вещей не перейдет в состояние `Running`.
 
-    [![Пример подготовки](media/quickstart-view-occupancy-dotnet/digital-twins-provision-sample1.png)](media/quickstart-view-occupancy-dotnet/digital-twins-provision-sample1.png#lightbox)
+    [![Подготавливается пример — Состояние=выполняется.](media/quickstart-view-occupancy-dotnet/digital-twins-provision-sample.png)](media/quickstart-view-occupancy-dotnet/digital-twins-provision-sample.png#lightbox)
 
 1. В конце выполнения скопируйте строку устройства `ConnectionString`, чтобы использовать ее в примере симулятора устройства. Скопируйте только ту строку, которая выделена на этом рисунке.
 
-    [![Копирование строки подключения](media/quickstart-view-occupancy-dotnet/digital-twins-provision-sample.png)](media/quickstart-view-occupancy-dotnet/digital-twins-provision-sample.png#lightbox)
+    [![Копирование строки подключения](media/quickstart-view-occupancy-dotnet/digital-twins-connection-string.png)](media/quickstart-view-occupancy-dotnet/digital-twins-connection-string.png#lightbox)
 
     >[!TIP]
     > Вы можете просмотреть и изменить пространственный граф с помощью [средства просмотра графов Azure Digital Twins](https://github.com/Azure/azure-digital-twins-graph-viewer).
 
+Не закрывайте окно консоли. Вы будете использовать его позже.
+
 ## <a name="send-sensor-data"></a>Отправка данных датчиков
 
-Создайте и запустите приложение симулятора датчика, выполнив приведенные ниже шаги.
+Создайте и запустите приложение устройства симулятора датчика, выполнив приведенные ниже шаги.
 
-1. Откройте новую командную строку. Перейдите к скачанному проекту в папке digital-twins-samples-csharp-master.
+1. Откройте новую командную строку. Перейдите к скачанному проекту в папке `digital-twins-samples-csharp-master`.
 1. Запустите `cd device-connectivity`.
 1. Запустите `dotnet restore`.
-1. Измените файл [appsettings.json](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/device-connectivity/appsettings.json), чтобы обновить строку **DeviceConnectionString** строкой `ConnectionString`, приведенной выше.
+1. Измените файл [appsettings.json](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/device-connectivity/appsettings.json), чтобы обновить строку **DeviceConnectionString** строкой `ConnectionString`, приведенной выше. Сохраните обновленный файл.
 1. Запустите `dotnet run`, чтобы начать отправку данных датчиков. Отправка в службу Digital Twins должна выполняться, как показано ниже.
 
      [![Взаимодействие устройств](media/quickstart-view-occupancy-dotnet/digital-twins-device-connectivity.png)](media/quickstart-view-occupancy-dotnet/digital-twins-device-connectivity.png#lightbox)
@@ -115,21 +119,21 @@ ms.locfileid: "71958913"
 1. Запустите `dotnet run GetAvailableAndFreshSpaces`.
 1. Разместите эту командную строку и командную строку данных датчиков рядом.
 
-    В одной командной строке отправляются смоделированные данные о движении и углекислом газе в Digital Twins каждые пять секунд. В другой командной строке в режиме реального времени считывается граф для поиска свободных помещений со свежим воздухом на основе случайных смоделированных данных. В зависимости от того, какие данные датчиков были отправлены последними, в этой строке в режиме реального времени отобразится одно из следующих условий:
-   - свободные помещения со свежим воздухом;
-   - занятая комната или комната с плохим качеством воздуха.
+    Командная строка данных датчика отправляет смоделированные данные о движении и углекислом газе в Digital Twins каждые пять секунд. В другой командной строке в режиме реального времени считывается граф для поиска свободных помещений со свежим воздухом на основе случайных смоделированных данных. В зависимости от того, какие данные датчиков были отправлены последними, в этой строке в режиме реального времени отобразится одно из следующих условий:
+   - `Room is available and air is fresh`
+   - `Room is not available or air quality is poor`
 
      [![Получение свободного пространства со свежим воздухом](media/quickstart-view-occupancy-dotnet/digital-twins-get-available.png)](media/quickstart-view-occupancy-dotnet/digital-twins-get-available.png#lightbox)
 
-Чтобы понять, что описано в этом кратком руководстве и какие API-интерфейсы были вызваны, откройте [Visual Studio Code](https://code.visualstudio.com/Download) с проектом рабочей области кода, доступным в digital-twins-samples-csharp. Используйте следующую команду:
+Чтобы понять, что описано в этом кратком руководстве и какие API-интерфейсы были вызваны, откройте [Visual Studio Code](https://code.visualstudio.com/Download) с проектом рабочей области кода, доступным в `digital-twins-samples-csharp`. Используйте следующую команду:
 
-```plaintext
+```cmd
 <path>\occupancy-quickstart\src>code ..\..\digital-twins-samples.code-workspace
 ```
 
 Код подробно рассматривается в руководствах этой серии. В них объясняется, как изменить данные конфигурации и какие API можно вызвать. Чтобы лучше ознакомиться с API-интерфейсами управления, перейдите на страницу Digital Twins Swagger:
 
-```plaintext
+```URL
 https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/swagger
 ```
 
@@ -153,11 +157,11 @@ https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/swagger
 1. В меню слева на [портале Azure](https://portal.azure.com) щелкните **Все ресурсы**. Выберите свой ресурс Digital Twins. В верхней части области **Все ресурсы** выберите **Удалить**.
 
     > [!TIP]
-    > Если при удалении экземпляра Digital Twins у вас возникла проблема, запустите обновление службы, в котором эта проблема исправлена. Затем повторите попытку удалить свой экземпляр.
+    > Если ранее при удалении экземпляра Digital Twins у вас возникла проблема, запустите обновление службы, в котором эта проблема исправлена. Затем повторите попытку удалить свой экземпляр.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве на примере простого сценария показано, как искать помещения с оптимальными эксплуатационными условиями. Для глубокого анализа этого сценария перейдите к этому руководству:
+В этом кратком руководстве использовался простой сценарий и примеры приложений, чтобы продемонстрировать использование Digital Twins для поиска комнат с хорошими рабочими условиями. Для глубокого анализа этого сценария перейдите к этому руководству:
 
 >[!div class="nextstepaction"]
 >[Руководство по развертыванию Azure Digital Twins и настройке пространственного графа](tutorial-facilities-setup.md)

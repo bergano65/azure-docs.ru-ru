@@ -1,6 +1,6 @@
 ---
-title: Use GitHub Actions to make code updates in Azure Functions
-description: Learn how to use GitHub Actions to define a workflow to build and deploy Azure Functions projects in GitHub.
+title: Использование действий GitHub для внесения обновлений в код в функциях Azure
+description: Узнайте, как использовать действия GitHub, чтобы определить рабочий процесс для создания и развертывания проектов функций Azure в GitHub.
 author: ahmedelnably
 ms.topic: conceptual
 ms.date: 09/16/2019
@@ -12,68 +12,68 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74226912"
 ---
-# <a name="continuous-delivery-by-using-github-action"></a>Continuous delivery by using GitHub Action
+# <a name="continuous-delivery-by-using-github-action"></a>Непрерывная поставка с помощью действия GitHub
 
-[GitHub Actions](https://github.com/features/actions) lets you define a workflow to automatically build and deploy your functions code to function app in Azure. 
+[Действия GitHub](https://github.com/features/actions) позволяют определить рабочий процесс для автоматической сборки и развертывания кода функций в приложении-функции в Azure. 
 
-In GitHub Actions, a [workflow](https://help.github.com/articles/about-github-actions#workflow) is an automated process that you define in your GitHub repository. This process tells GitHub how to build and deploy your functions app project on GitHub. 
+В действиях GitHub [Рабочий процесс](https://help.github.com/articles/about-github-actions#workflow) — это автоматизированный процесс, который определяется в репозитории GitHub. Этот процесс говорит GitHub о том, как создать и развернуть проект приложения функций на GitHub. 
 
-A workflow is defined by a YAML (.yml) file in the `/.github/workflows/` path in your repository. This definition contains the various steps and parameters that make up the workflow. 
+Рабочий процесс определяется файлом YAML (yml) в `/.github/workflows/` пути в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс. 
 
-For an Azure Functions workflow, the file has three sections: 
+Для рабочего процесса функций Azure файл содержит три раздела: 
 
-| Section | Задачи |
+| Раздел | Задачи |
 | ------- | ----- |
-| **Authentication** (Аутентификация) | <ol><li>Define a service principal.</li><li>Download publishing profile.</li><li>Create a GitHub secret.</li></ol>|
-| **Сборка** | <ol><li>Set up the environment.</li><li>Создайте приложение-функцию.</li></ol> |
-| **Развертывание** | <ol><li>Deploy the function app.</li></ol>|
+| **Аутентификация** | <ol><li>Определите субъект-службу.</li><li>Скачивание профиля публикации.</li><li>Создайте секрет GitHub.</li></ol>|
+| **Сборка** | <ol><li>Настройте среду.</li><li>Создайте приложение-функцию.</li></ol> |
+| **Развертывание** | <ol><li>Разверните приложение функции.</li></ol>|
 
 > [!NOTE]
-> You do not need to create a service principal if you decide to use publishing profile for authentication.
+> Не нужно создавать субъект-службу, если вы решили использовать профиль публикации для проверки подлинности.
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
-You can create a [service principal](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) by using the [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) command in the [Azure CLI](/cli/azure/). You can run this command using [Azure Cloud Shell](https://shell.azure.com) in the Azure portal or by selecting the **Try it** button.
+Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [AZ AD SP Create/for-RBAC](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) в [Azure CLI](/cli/azure/). Эту команду можно выполнить с помощью [Azure Cloud Shell](https://shell.azure.com) в портал Azure или нажав кнопку **попробовать** .
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP>/providers/Microsoft.Web/sites/<APP_NAME> --sdk-auth
 ```
 
-In this example, replace the placeholders in the resource with your subscription ID, resource group, and function app name. The output is the role assignment credentials that provides access to your function app. Copy this JSON object, which you can use to authenticate from GitHub.
+В этом примере Замените заполнители в ресурсе ИДЕНТИФИКАТОРом подписки, группой ресурсов и именем приложения функции. Выходные данные — это учетные данные назначения роли, которые обеспечивают доступ к приложению-функции. Скопируйте этот объект JSON, который можно использовать для проверки подлинности из GitHub.
 
 > [!IMPORTANT]
-> It is always a good practice to grant minimum access. This is why the scope in the previous example is limited to the specific function app and not the entire resource group.
+> Всегда рекомендуется предоставлять минимальный доступ. Именно поэтому область в предыдущем примере ограничена конкретным приложением-функцией, а не всей группой ресурсов.
 
-## <a name="download-the-publishing-profile"></a>Download the publishing profile
+## <a name="download-the-publishing-profile"></a>Скачивание профиля публикации
 
-You can download the publishing profile of your functionapp, by going to the **Overview** page of your app and clicking **Get publish profile**.
+Вы можете скачать профиль публикации functionapp, перейдя на страницу **обзора** приложения и выбрав **получить профиль публикации**.
 
    ![Загрузить профиль публикации](media/functions-how-to-github-actions/get-publish-profile.png)
 
-Copy the content of the file.
+Скопируйте содержимое файла.
 
-## <a name="configure-the-github-secret"></a>Configure the GitHub secret
+## <a name="configure-the-github-secret"></a>Настройка секрета GitHub
 
-1. In [GitHub](https://github.com), browse your repository, select **Settings** > **Secrets** > **Add a new secret**.
+1. В [GitHub](https://github.com)найдите репозиторий, выберите **параметры** > **секреты** > **Добавить новый секрет**.
 
-   ![Add Secret](media/functions-how-to-github-actions/add-secret.png)
+   ![Добавить секрет](media/functions-how-to-github-actions/add-secret.png)
 
-1. Use `AZURE_CREDENTIALS` for the **Name** and the copied command output for **Value**, if you then select **Add secret**. If you are using publishing profile, use `SCM_CREDENTIALS` for the **Name** and the file content for **Value**.
+1. Используйте `AZURE_CREDENTIALS` для параметра **имя** и скопированный результат команды в поле **значение**, если затем выберите **Добавить секрет**. Если используется профиль публикации, используйте `SCM_CREDENTIALS` для **имени** и содержимого файла в поле **значение**.
 
-GitHub can now authenticate to your function app in Azure.
+Теперь GitHub может проходить проверку подлинности в приложении функции в Azure.
 
 ## <a name="set-up-the-environment"></a>Настройка среды 
 
-Setting up the environment can be done using one of the publish setup actions.
+Настройка среды может быть выполнена с помощью одного из действий программы установки публикации.
 
-|Язык | Setup Action |
+|Язык | Действие установки |
 |---------|---------|
 |**.NET**     | `actions/setup-dotnet` |
 |**Java**    | `actions/setup-java` |
 |**JavaScript**     | `actions/setup-node` |
 |**Python**   | `actions/setup-python` |
 
-The following examples show the part of the workflow that sets up the environment for the various supported languages:
+В следующих примерах показана часть рабочего процесса, которая настраивает среду для различных поддерживаемых языков:
 
 **JavaScript**
 
@@ -129,11 +129,11 @@ The following examples show the part of the workflow that sets up the environmen
         java-version: '1.8.x'
 ```
 
-## <a name="build-the-function-app"></a>Build the function app
+## <a name="build-the-function-app"></a>Создание приложения функции
 
-This depends on the language and for languages supported by Azure Functions, this section should be the standard build steps of each language.
+Это зависит от языка и языков, поддерживаемых функциями Azure. Этот раздел должен быть стандартным этапом сборки каждого языка.
 
-The following examples show the part of the workflow that builds the function app, in the various supported languages.:
+В следующих примерах показана часть рабочего процесса, который строит приложение-функцию на различных поддерживаемых языках.
 
 **JavaScript**
 
@@ -193,15 +193,15 @@ The following examples show the part of the workflow that builds the function ap
 
 ## <a name="deploy-the-function-app"></a>Развертывание приложения-функции
 
-To deploy your code to a function app, you will need to use the `Azure/functions-action` action. This action has two parameters:
+Чтобы развернуть код в приложении-функции, необходимо использовать действие `Azure/functions-action`. Это действие имеет два параметра:
 
 |Параметр |Пояснение  |
 |---------|---------|
-|**_app-name_** | (Mandatory) The name of your function app. |
-|_**slot-name**_ | (Optional) The name of the [deployment slot](functions-deployment-slots.md) you want to deploy to. The slot must already be defined in your function app. |
+|**_имя приложения_** | Заполнен Имя приложения функции. |
+|_**имя слота**_ | Используемых Имя [слота развертывания](functions-deployment-slots.md) , в который требуется выполнить развертывание. Слот уже должен быть определен в приложении функции. |
 
 
-The following example uses version 1 of the `functions-action`:
+В следующем примере используется версия 1 `functions-action`:
 
 ```yaml
     - name: 'Run Azure Functions Action'
@@ -211,9 +211,9 @@ The following example uses version 1 of the `functions-action`:
         app-name: PLEASE_REPLACE_THIS_WITH_YOUR_FUNCTION_APP_NAME
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-To view a complete workflow .yaml, see one of the files in the [Azure GitHub Actions workflow samples repo](https://aka.ms/functions-actions-samples) that have `functionapp` in the name. You can use these samples a starting point for your workflow.
+Чтобы просмотреть полный рабочий процесс. YAML, ознакомьтесь с одним из файлов в [репозитории примеров рабочих процессов Azure GitHub](https://aka.ms/functions-actions-samples) , которые имеют `functionapp` в имени. Эти примеры можно использовать в качестве отправной точки для рабочего процесса.
 
 > [!div class="nextstepaction"]
-> [Learn more about GitHub Actions](https://help.github.com/en/articles/about-github-actions)
+> [Дополнительные сведения о действиях GitHub](https://help.github.com/en/articles/about-github-actions)

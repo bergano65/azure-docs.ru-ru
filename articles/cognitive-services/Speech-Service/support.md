@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: jhakulin
-ms.openlocfilehash: f8793975d920e24924fca7c2ae366f70972e6ab7
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 925d21d22806ab2854be29b9648aab78138741ec
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73468617"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74422611"
 ---
 # <a name="support-and-help-options"></a>Возможности получения поддержки и справки
 
@@ -37,7 +37,7 @@ ms.locfileid: "73468617"
 
 [Заметки о выпуске](https://aka.ms/csspeech/whatsnew) обновляются, как только будет доступен новый выпуск. Заметки содержат сведения о новых возможностях, улучшениях и исправлениях ошибок.
 
-## <a name="search"></a>Поиск
+## <a name="search"></a>поиска
 
 Ответ можно найти в документации, наших примерах или ответах на вопросы, заданные на сайте [Stack Overflow](https://www.stackoverflow.com).
 
@@ -62,16 +62,7 @@ ms.locfileid: "73468617"
 
 Stack Overflow — это идеальное место для вопросов, связанных с разработкой. Члены сообщества и команда Майкрософт постараются решить ваши проблемы.
 
-Если вы не нашли решение своей проблемы с помощью функции поиска, отправьте вопрос на сайт Stack Overflow. При формулировании вопроса используйте один из следующих тегов:
-
-|Компонент или область  |Теги  |
-|---------|---------|
-|Распознавание речи |[[microsoft-cognitive+speech-to-text]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+speech-to-text)|
-|Синтез речи |[[microsoft-cognitive+text-to-speech]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+text-to-speech)|
-|Перевод речи |[[microsoft-cognitive+translation]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+translation)|
-|Намерения говорящего |[[microsoft-cognitive+luis]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+luis)|
-|Общий пакет SDK для службы "Речь" |[[microsoft-cognitive+microsoft-speech-api]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+microsoft-speech-api)|
-|Речевые помощники | [[Microsoft-программа + Virtual-Assistant + botframework]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+virtual-assistant+botframework) |
+Если вы не можете найти ответ на проблему с помощью поиска, отправьте новый вопрос, чтобы Stack Overflow с помощью тега [Microsoft-распознавания речи](https://stackoverflow.com/questions/tagged/microsoft-cognitive-speech) .
 
 > [!TIP]
 > Указанные ниже публикации на Stack Overflow содержат советы о том, как формулировать вопросы и добавлять исходный код. Следуйте этим рекомендациям, чтобы повысить вероятность того, что участники сообщества быстро отреагируют на ваш вопрос:  

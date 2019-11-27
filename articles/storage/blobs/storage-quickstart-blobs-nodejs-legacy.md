@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure версии 2 для JavaScript
-description: Создайте учетную запись хранения и контейнер в хранилище объектов (больших двоичных объектов). Затем с помощью клиентской библиотеки Службы хранилища Azure для Node.js версии 2 передайте BLOB-объект в Службу хранилища Azure, скачайте его и перечислите все BLOB-объекты в контейнере.
+description: Создайте учетную запись хранения и контейнер в хранилище объектов (больших двоичных объектов). Используйте клиентскую библиотеку службы хранилища Azure для Node. js версии 2 для отправки большого двоичного объекта, скачайте большой двоичный объект и перечислите большие двоичные объекты в контейнере.
 author: mhopkins-msft
 ms.author: mhopkins
 ms.date: 02/04/2019
@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 12078300b36412a1507991507a39654acdeb7c69
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 7300d4eccec5b1e4b3b5b7dc292cf6150a42e7b4
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73825345"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74269688"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v2-for-javascript"></a>Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure версии 2 для JavaScript
 
@@ -22,9 +22,9 @@ ms.locfileid: "73825345"
 > [!TIP]
 > Последняя версия клиентской библиотеки службы хранилища для Node.js — версия 10. Корпорация Майкрософт рекомендует по возможности использовать последнюю версию клиентской библиотеки. Чтобы приступить к работе с V10, см. раздел [Краткое руководство. Отправка, скачивание, перечисление и удаление BLOB-объектов с помощью клиентской библиотеки службы хранилища Azure для JavaScript V10 (Предварительная версия)](storage-quickstart-blobs-nodejs-v10.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
 
 Создайте на [портале Azure](https://portal.azure.com/#create/Microsoft.StorageAccount-ARM) учетную запись хранения Azure. Инструкции по созданию учетной записи хранения см. в статье [Создайте учетную запись хранения](../common/storage-quickstart-create-account.md).
 
@@ -276,7 +276,7 @@ async function execute() {
 
 execute().then(() => console.log("Done")).catch((e) => console.log(e));
 ```
-Весь следующий код выполняется внутри функции execute, где размещается комментарий `// commands`.
+Весь следующий код выполняется внутри функции "execute", где размещается комментарий `// commands`.
 
 Сперва объявляются соответствующие переменные для назначения имен, примера содержимого и указания локального файла для передачи в хранилище BLOB-объектов.
 
@@ -356,7 +356,7 @@ console.log(`Container "${containerName}" is deleted`);
 - Подробные сведения о клиентской библиотеке Node.js см. в [справочнике по API-интерфейсу Node.js](https://docs.microsoft.com/javascript/api/overview/azure/storage).
 - Изучите [примеры для хранилища BLOB-объектов](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=nodejs&term=blob), написанные с использованием клиентской библиотеки Node.js.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Из этой статьи вы узнали, как передавать файл между локальным диском и хранилищем BLOB-объектов Azure с помощью Node.js. Дополнительные сведения о работе с хранилищем BLOB-объектов см. в соответствующем репозитории GitHub.
 

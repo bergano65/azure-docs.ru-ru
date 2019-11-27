@@ -8,18 +8,19 @@ manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: bdf91993-aaaa-4598-89b7-77ef8ca065d5
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 97e38c62da74444f1f229f12e42d98e75a6e5073
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a7e7498411e68b83f8c05d50f52f73f97df9f797
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67097199"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73160592"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mindflash"></a>Руководство по Интеграция Azure Active Directory с Mindflash
 
@@ -196,7 +197,7 @@ ms.locfileid: "67097199"
 
 1. В разделе **Add New Users** (Добавление новых пользователей) введите соответствующие данные действующей учетной записи Azure AD, которую необходимо подготовить.
    
-    ![Add New Users](./media/mindflash-tutorial/ic787141.png "Add New Users") (Добавление новых пользователей)
+    ![Добавление новых пользователей](./media/mindflash-tutorial/ic787141.png "Добавление новых пользователей")
    
     a. В текстовое поле **First Name** (Имя) введите **имя пользователя**, например **Britta**.
 
@@ -222,5 +223,5 @@ ms.locfileid: "67097199"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

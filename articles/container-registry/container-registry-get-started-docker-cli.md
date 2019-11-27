@@ -1,20 +1,15 @@
 ---
-title: Отправка образа Docker в частный реестр контейнеров Azure
+title: Образ DOCKER & для отправки по запросу
 description: Отправка образов Docker в частный реестр контейнеров в Azure и их получение с помощью интерфейса командной строки Docker
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 01/23/2019
-ms.author: danlep
 ms.custom: seodec18, H1Hack27Feb2017
-ms.openlocfilehash: 6944755619ea5e8e63af04b9b3bca6f7376e29a9
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 6751a04c3c1bfe826334161704c20c1ba2e5a6d2
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68309444"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456355"
 ---
 # <a name="push-your-first-image-to-a-private-docker-container-registry-using-the-docker-cli"></a>Отправка первого образа в частный реестр контейнеров Docker с помощью интерфейса командной строки Docker
 
@@ -22,10 +17,10 @@ ms.locfileid: "68309444"
 
 Выполняя следующие действия, вы скачаете официальный [образ Nginx](https://store.docker.com/images/nginx) из общедоступного реестра Docker Hub, поместите его в частный реестр контейнеров Azure, отправите его в свой реестр, а затем извлечете его от туда.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 * **Реестр контейнеров Azure.** Создайте реестр контейнеров в своей подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
-* **Docker CLI**. Также необходим локально установленный модуль Docker. DOCKER предоставляет пакеты, которые легко настраивают DOCKER в любой системе [macOS][docker-mac], [Windows][docker-windows]или [Linux][docker-linux] .
+* **Docker CLI**. Также необходим локально установленный модуль Docker. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в системе под управлением [macOS][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
 
 ## <a name="log-in-to-a-registry"></a>Вход в раздел реестра
 
@@ -62,7 +57,7 @@ docker pull nginx
 docker run -it --rm -p 8080:80 nginx
 ```
 
-Перейдите к `http://localhost:8080` , чтобы просмотреть веб-страницу по умолчанию, обслуживаемую nginx в работающем контейнере. Вы должны увидеть страницу, аналогичную показанной ниже:
+Перейдите к `http://localhost:8080`, чтобы просмотреть веб-страницу по умолчанию, обслуживаемую nginx в работающем контейнере. Вы должны увидеть страницу, аналогичную показанной ниже:
 
 ![Nginx на локальном компьютере](./media/container-registry-get-started-docker-cli/nginx.png)
 
@@ -104,7 +99,7 @@ docker pull myregistry.azurecr.io/samples/nginx
 docker run -it --rm -p 8080:80 myregistry.azurecr.io/samples/nginx
 ```
 
-Перейдите к `http://localhost:8080` , чтобы просмотреть выполняющийся контейнер.
+Перейдите к `http://localhost:8080`, чтобы просмотреть выполняющийся контейнер.
 
 Чтобы остановить и удалить контейнер, нажмите `Control`+`C`.
 
@@ -122,7 +117,7 @@ docker rmi myregistry.azurecr.io/samples/nginx
 az acr repository delete --name myregistry --image samples/nginx:latest
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Теперь, когда вы знаете основы, можно приступать к использованию реестра. Например, можно развернуть образы контейнера из реестра в следующие службы:
 

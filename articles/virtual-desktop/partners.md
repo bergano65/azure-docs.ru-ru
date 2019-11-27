@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 11/14/2019
+ms.date: 11/22/2019
 ms.author: helohr
-ms.openlocfilehash: c482291e665656bf16f28cd114a9cb8141ae77c3
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 6b4e1a5024fec07ca73c79d2742933b7b115e6c2
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74084010"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74384296"
 ---
 # <a name="windows-virtual-desktop-partner-integrations"></a>Интеграция с партнерами по виртуальным рабочим столам Windows
 
@@ -28,6 +28,15 @@ Citrix расширяет ценность виртуальных рабочих
 
 - [Перейдите на веб-сайт партнера](https://more.citrix.com/wvd).
 
+## <a name="cloudhouse"></a>клаудхаусе
+
+![Логотип клаудхаусе](./media/partners/cloudhouse.png)
+
+Клаудхаусе — это добавленный в Windows виртуальный рабочий стол поставщик услуг, который предоставляет клиентам готовую службу миграции приложений, которая может перемещать все приложения, в том числе те, которые несовместимы с современными операционными системами Windows, в Windows. Среда виртуальных рабочих столов, позволяющая клиентам использовать несколько сеансов Windows 10. 
+
+Используя проверенную Клаудхаусе технологию контейнеров, служба Клаудхаусе принимает все приложения, в том числе разработанные для Windows XP, Windows 7 или Windows 8, и развертывает их на современном виртуальном рабочем столе Windows без необходимости изменять код или влияние на взаимодействие с пользователем. Клаудхаусе дополнительно добавляет к значению виртуального рабочего стола Windows, изолируя приложения из базовой операционной системы, что позволяет развернуть обновления для Windows, не влияя на контейнерное приложение. 
+
+- [Перейдите на веб-сайт партнера](https://cloudhouse.com/resources/migrate-everything-to-windows-10-on-microsoft-windows-virtua).
 
 ## <a name="vmware"></a>VMware
 

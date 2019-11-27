@@ -1,21 +1,21 @@
 ---
-title: В этом кратком руководстве показано, как регистрировать устройства X.509 в службе подготовки устройств Azure с помощью Java | Документация Майкрософт
+title: Краткое руководство. Регистрация устройств X.509 в Службе подготовки устройств Azure с помощью Java
 description: В этом кратком руководстве используется групповая и индивидуальная регистрация. В этом кратком руководстве вы зарегистрируете устройства X.509 в Службе подготовки устройств к добавлению в Центр Интернета вещей Azure с помощью Java.
 author: wesmc7777
 ms.author: wesmc
-ms.date: 12/20/2017
+ms.date: 11/08/2019
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.devlang: java
 ms.custom: mvc
-ms.openlocfilehash: 3eec6628ca7dbc16e0cc01701620f1699ba8d368
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 8a1accf232b022bc3028f91d2151c00b98969f1f
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50412777"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73904779"
 ---
 # <a name="quickstart-enroll-x509-devices-to-the-device-provisioning-service-using-java"></a>Краткое руководство. Регистрация устройств X.509 в Службе подготовки устройств с помощью Java
 
@@ -58,7 +58,7 @@ ms.locfileid: "50412777"
     git clone https://github.com/Azure/azure-iot-sdk-java.git --recursive
     ```
 
-2. В загруженном исходном коде найдите папку **_azure-iot-sdk-java/provisioning/provisioning-samples/service-enrollment-group-sample_**. Откройте файл **_/src/main/java/samples/com/microsoft/azure/sdk/iot/ServiceEnrollmentGroupSample.java_** в любом удобном текстовом редакторе и добавьте следующие данные:
+2. В загруженном исходном коде найдите папку **_azure-iot-sdk-java/provisioning/provisioning-samples/service-enrollment-group-sample_** . Откройте файл **_/src/main/java/samples/com/microsoft/azure/sdk/iot/ServiceEnrollmentGroupSample.java_** в любом удобном текстовом редакторе и добавьте следующие данные:
 
     1. В службу подготовки добавьте `[Provisioning Connection String]` с портала следующим образом:
         1. Откройте службу подготовки на [портале Azure](https://portal.azure.com). 
@@ -74,7 +74,7 @@ ms.locfileid: "50412777"
             ```
 
     2. Добавьте корневой сертификат для группы устройств. Если вам нужен пример корневого сертификата, примените _генератор сертификатов X.509_ следующим образом:
-        1. В окне командной строки перейдите в папку  **_azure-iot-sdk-java/provisioning/provisioning-tools/provisioning-x509-cert-generator_**.
+        1. В окне командной строки перейдите в папку  **_azure-iot-sdk-java/provisioning/provisioning-tools/provisioning-x509-cert-generator_** .
         2. Выполните сборку средства с помощью этой команды:
 
                 ```cmd\sh
@@ -90,7 +90,7 @@ ms.locfileid: "50412777"
 
         5. (Необязательно.) Введите _общее имя_ для сертификатов, когда появится соответствующий запрос.
         6. Это средство локально создает **сертификат клиента**, **закрытый ключ сертификата клиента** и **корневой сертификат**.
-        7. Скопируйте полученный **корневой сертификат**, включая строки **_-----BEGIN CERTIFICATE-----_** и **_-----END CERTIFICATE-----_**. 
+        7. Скопируйте полученный **корневой сертификат**, включая строки **_-----BEGIN CERTIFICATE-----_** и **_-----END CERTIFICATE-----_** . 
         8. Присвойте значение **корневого сертификата** параметру **PUBLIC_KEY_CERTIFICATE_STRING**, как показано ниже:
 
                 ```Java
@@ -142,7 +142,7 @@ ms.locfileid: "50412777"
 
 ## <a name="build-and-run-sample-group-enrollment"></a>Сборка и запуск примера для регистрации группы
 
-1. Откройте окно командной строки и перейдите к папке **_azure-iot-sdk-java/provisioning/provisioning-samples/service-enrollment-group-sample_**.
+1. Откройте окно командной строки и перейдите к папке **_azure-iot-sdk-java/provisioning/provisioning-samples/service-enrollment-group-sample_** .
 
 2. Соберите пример кода с помощью следующей команды:
 

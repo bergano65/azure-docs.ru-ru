@@ -1,19 +1,14 @@
 ---
-title: Многошаговая задача для сборки, тестирования образа & исправления в реестре контейнеров Azure
+title: Многошаговая задача для сборки, тестирования & образа исправления
 description: Общие сведения о многошаговых задачах, функции записей контроля доступа в реестре контейнеров Azure, которая предоставляет рабочие процессы на основе задач для создания, тестирования и исправления образов контейнеров в облаке.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
 ms.topic: article
 ms.date: 03/28/2019
-ms.author: danlep
-ms.openlocfilehash: 06bdcc1cd4f9bfcb1a77140d70435545fbe01079
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 3ed071fa2027e91ee5bc6c07738dc66763454847
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74148771"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456176"
 ---
 # <a name="run-multi-step-build-test-and-patch-tasks-in-acr-tasks"></a>Выполнение многошаговых задач сборки, тестирования и исправления в службе "Задачи ACR"
 

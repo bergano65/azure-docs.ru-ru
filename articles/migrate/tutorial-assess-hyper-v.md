@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 08/11/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: b93d9ee65850749e79714b632584f1977ca88c81
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 1ff46ec437de671d5804eeb31a5d1fb0284a8946
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69639985"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74123518"
 ---
 # <a name="assess-hyper-v-vms-with-azure-migrate-server-assessment"></a>Оценка виртуальных машин Hyper-V с помощью средства "Оценка сервера" службы "Миграция Azure"
 
@@ -223,7 +223,7 @@ Enable-WSManCredSSP -Role Client -DelegateComputer HyperVHost1.contoso.com Hyper
     - Вы можете добавить кластер, даже если возникли проблемы с конкретными узлами в кластере.
 4. После проверки щелкните **Сохранить и начать обнаружение**, чтобы начать процесс обнаружения.
 
-Запустится обнаружение. Чтобы метаданные обнаруженных виртуальных машин отобразились на портале Azure, потребуется около 15 минут.
+Запустится обнаружение. Чтобы метаданные обнаруженных серверов отобразились на портале Azure, потребуется около 1,5 минут на узел. 
 
 ### <a name="verify-vms-in-the-portal"></a>Проверка виртуальных машин на портале
 

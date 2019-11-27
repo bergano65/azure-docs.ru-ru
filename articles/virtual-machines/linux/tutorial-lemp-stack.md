@@ -1,5 +1,5 @@
 ---
-title: Руководство. Развертывание LEMP на виртуальной машине Linux в Azure | Документация Майкрософт
+title: Учебник. Развертывание LEMP на виртуальной машине Linux в Azure
 description: В этом руководстве описано, как установить стек LEMP на виртуальной машине Linux в Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 01/30/2019
 ms.author: cynthn
-ms.openlocfilehash: 06a009978d85f2ba0f10030aeb1344a1b84bf3c3
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 1de2e70ccafbbde49e764437bfe8ce94602747b6
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72299376"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74034453"
 ---
 # <a name="tutorial-install-a-lemp-web-server-on-a-linux-virtual-machine-in-azure"></a>Руководство по Установка веб-сервера LEMP на виртуальной машине Linux в Azure
 

@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Запрос конечной точки прогнозирования с помощью пакета SDK для C# — LUIS
 titleSuffix: Azure Cognitive Services
-description: Использование пакета SDK для C# для отправки речевого фрагмента пользователя LUIS и получения прогноза.
+description: В этой статье показано, как с помощью пакета SDK для C# отправить речевой фрагмент пользователя в приложение "Распознавание речи" Azure Cognitive Services и получить прогноз.
 author: diberry
 manager: nitinme
 ms.service: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: d7cf46add464a089f15a5bd15a20cea7d17eed37
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: f4612f7b3f76cbbfc0deac98668770f92ff054bc
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73488677"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73953428"
 ---
 # <a name="quickstart-query-v2-prediction-endpoint-with-c-net-sdk"></a>Краткое руководство. Запрос конечной точки прогнозирования версии 2 с помощью пакета SDK .NET для C#
 
@@ -77,7 +77,7 @@ using Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime.Models;
 
 ## <a name="create-a-new-method-for-the-prediction"></a>Создание метода для прогноза
 
-Создайте метод `GetPrediction` для отправки запроса к конечной точке прогнозирующих запросов. Метод создаст и настроит все необходимые объекты, а затем возвратит файл `Task` с результатами прогнозирования [`LuisResult`](https://docs.microsoft.com/en-us/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.runtime.models.luisresult?view=azure-python). 
+Создайте метод `GetPrediction` для отправки запроса к конечной точке прогнозирующих запросов. Метод создаст и настроит все необходимые объекты, а затем возвратит файл `Task` с результатами прогнозирования [`LuisResult`](/python/api/azure-cognitiveservices-language-luis/azure.cognitiveservices.language.luis.runtime.models.luisresult). 
 
 ```csharp
 static async  Task<LuisResult> GetPrediction() {

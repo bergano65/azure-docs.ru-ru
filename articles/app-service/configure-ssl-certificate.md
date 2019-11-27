@@ -13,12 +13,12 @@ ms.date: 10/25/2019
 ms.author: cephalin
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: 12b8d6dff571c074d1f1422f75e33a8b12761bd9
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 48c8390eff52466d11f781447c448d04ba567f31
+ms.sourcegitcommit: 6dec090a6820fb68ac7648cf5fa4a70f45f87e1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73572157"
+ms.lasthandoff: 11/11/2019
+ms.locfileid: "73907137"
 ---
 # <a name="add-an-ssl-certificate-in-azure-app-service"></a>Добавление SSL-сертификата в Службу приложений Azure
 
@@ -68,6 +68,10 @@ ms.locfileid: "73572157"
 - Не поддерживает групповые сертификаты.
 - не поддерживает незащищенные домены;
 - не может быть экспортирован.
+
+> [!NOTE]
+> Бесплатный сертификат выдается DigiCert. Для некоторых доменов верхнего уровня необходимо явно разрешить DigiCert как издателя сертификата, создав [запись домена CAA](https://wikipedia.org/wiki/DNS_Certification_Authority_Authorization) со значением: `0 issue digicert.com`.
+> 
 
 Вот как можно создать бесплатный управляемый сертификат Службы приложений.
 
@@ -325,7 +329,7 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 
 ### <a name="export-certificate"></a>Экспорт сертификата
 
-Так как сертификат Службы приложений представляет собой секрет [Key Vault](../key-vault/about-keys-secrets-and-certificates.md#key-vault-secrets), вы можете экспортировать его копию в PFX-файл и использовать его для других служб Azure или за пределами Azure.
+Так как Сертификаты службы приложений представляют собой [секрет Key Vault](../key-vault/about-keys-secrets-and-certificates.md#key-vault-secrets), вы можете экспортировать его копию в PFX-файл и использовать его для других служб Azure или за пределами Azure.
 
 Чтобы экспортировать сертификат Службы приложений в виде PFX-файла, выполните приведенные ниже команды в [Cloud Shell](https://shell.azure.com). Вы можете также выполнить их локально, если [установлен Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli). Замените заполнители именами, которые использовались при [создании сертификата Службы приложений](#start-certificate-order).
 
@@ -344,7 +348,7 @@ az keyvault secret download \
     --encoding base64
 ```
 
-Скачанный файл *appservicecertificate.pfx* — это необработанный файл PKCS12, содержащий открытый и закрытый сертификаты. При появлении запросов в качестве пароля импорта и парольной фразы PEM используется пустая строка.
+Скачанный файл *appservicecertificate.pfx* — это необработанный файл PKCS12, содержащий открытый и закрытый сертификаты. В каждом запросе используйте пустую строку для пароля импорта и парольной фразы PEM.
 
 ### <a name="delete-certificate"></a>Удаление сертификата 
 

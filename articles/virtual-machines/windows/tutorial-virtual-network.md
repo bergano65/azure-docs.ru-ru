@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание и администрирование виртуальных сетей Azure для виртуальных машин Windows | Документация Майкрософт
+title: Учебник. Создание и администрирование виртуальных сетей Azure для виртуальных машин Windows
 description: В этом руководстве описано, как с помощью Azure PowerShell создать и администрировать виртуальные сети Azure для виртуальных машин Windows.
 services: virtual-machines-windows
 documentationcenter: virtual-machines
@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 12/04/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: d5a780617b8f46c5ec5f00fbfc45b7d91c29a836
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 67cfb04f67e3454bde25969b634116f2871cbeb5
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100212"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74064745"
 ---
 # <a name="tutorial-create-and-manage-azure-virtual-networks-for-windows-virtual-machines-with-azure-powershell"></a>Руководство по Создание и администрирование виртуальных сетей Azure для виртуальных машин Windows с помощью Azure PowerShell
 

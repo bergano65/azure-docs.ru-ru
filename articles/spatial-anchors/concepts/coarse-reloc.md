@@ -1,5 +1,5 @@
 ---
-title: Грубая локализация | Документация Майкрософт
+title: Грубая перелокализация
 description: Краткое руководство по грубой локализации.
 author: bucurb
 manager: dacoghl
@@ -8,14 +8,14 @@ ms.author: bobuc
 ms.date: 09/18/2019
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 1d9e58f2d7eda818665a6253a8d0508104b17405
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.openlocfilehash: f03d2fba01dadc443da19416871a93a72289c0c6
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74093882"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74270148"
 ---
-# <a name="coarse-relocalization"></a>Грубая перелокализация
+# <a name="coarse-relocalization"></a>Простое уточнение расположения
 
 Грубая Локализация — это функция, которая предоставляет исходный ответ на вопрос: *где мое устройство сейчас и какое содержимое следует наблюдать?* Ответ не является точным, а в форме: *близко к этим привязкам попробуйте найти один из них*.
 

@@ -1,21 +1,15 @@
 ---
 title: Управление версиями приложений блокчейн — Azure Блокчейн Workbench
 description: Использование версий приложений в предварительной версии Azure Блокчейн Workbench.
-services: azure-blockchain
-keywords: ''
-author: PatAltimore
-ms.author: patricka
-ms.date: 10/14/2019
+ms.date: 11/20/2019
 ms.topic: article
-ms.service: azure-blockchain
 ms.reviewer: brendal
-manager: femila
-ms.openlocfilehash: f6edbb54962ff11b5ed1497b6a202b9010c67aae
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 45219790cf0cd064e0fcd456e262b2f93aa03ac9
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72328825"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74323912"
 ---
 # <a name="azure-blockchain-workbench-preview-application-versioning"></a>Управление версиями в предварительной версии приложения Azure Блокчейн Workbench
 
@@ -23,7 +17,7 @@ ms.locfileid: "72328825"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 * Развертывание Blockchain Workbench. Дополнительные сведения о развертывании Azure Blockchain Workbench см. в [этой статье](deploy.md).
 * Развернутое блокчейн-приложение в Blockchain Workbench. Сведения см. в статье [Создание блокчейн-приложения в Azure Blockchain Workbench](create-app.md).
@@ -60,6 +54,6 @@ ms.locfileid: "72328825"
 
     Вы можете создать новые контракты или выполнять действия с контрактами предыдущих версий. Версия приложения отображается после имени приложения. При использовании старой версии отображается соответствующее предупреждение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Устранение неполадок в Azure Blockchain Workbench](troubleshooting.md)

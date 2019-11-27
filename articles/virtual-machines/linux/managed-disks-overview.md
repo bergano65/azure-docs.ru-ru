@@ -1,5 +1,5 @@
 ---
-title: Обзор управляемого диска Хранилища дисков Azure для виртуальных машин на платформе Linux | Документация Майкрософт
+title: Обзор управляемого диска Хранилища дисков Azure для виртуальных машин на платформе Linux
 description: Обзор управляемых дисков Azure, которые отвечают за управление учетными записями хранения, используемыми для виртуальных машин Linux.
 author: roygara
 ms.service: virtual-machines-linux
@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 11/06/2019
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: de6ac88d5619266d049f0dc5bd4b54d674f00df7
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: 7e9a5e1b1e1b0c879a1264573e7073e70a1e95fc
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73796272"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74035865"
 ---
 # <a name="introduction-to-azure-managed-disks"></a>Общие сведения об управляемых дисках Azure
 

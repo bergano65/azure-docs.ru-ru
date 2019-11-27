@@ -9,18 +9,21 @@ manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 10/10/2019
+ms.date: 11/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: f49567b8060be2bf2a9ca2b8a1bdee23f58fdd6b
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: b79ca1d93baf1941d5de8db0c314f9cd21e51056
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012686"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74328071"
 ---
 # <a name="grant-data-access-to-an-environment"></a>Предоставление доступа к данным в среде
 
 В этой статье рассматриваются два типа политик доступа службы "Аналитика временных рядов Azure" (предварительная версия).
+
+> [!TIP]
+> Шаги [проверки подлинности и авторизации](time-series-insights-authentication-and-authorization.md) для Azure Active Directory регистрации приложений.
 
 ## <a name="sign-in-to-time-series-insights"></a>Вход в службу "аналитика временных рядов"
 
@@ -34,11 +37,11 @@ ms.locfileid: "74012686"
 
 1. Выберите **Политики доступа к данным**, а затем нажмите кнопку **+ Добавить**.
 
-    [![доступ к данным — один](media/data-access/data-access-one.png)](media/data-access/data-access-one.png#lightbox)
+    [![выбрать и добавить политику доступа к данным](media/data-access/data-access-select-add-button.png)](media/data-access/data-access-select-add-button.png#lightbox)
 
 1. Выберите **Выбор пользователя**. Выполните поиск по имени пользователя или адресу электронной почты, чтобы найти пользователя, которого следует добавить. Нажмите **кнопку Выбрать** , чтобы подтвердить выбор.
 
-    [доступ к данным ![-два](media/data-access/data-access-two.png)](media/data-access/data-access-two.png#lightbox)
+    [![выбрать пользователя для добавления](media/data-access/data-access-select-user-to-confirm.png)](media/data-access/data-access-select-user-to-confirm.png#lightbox)
 
 1. Выберите **Выбор ролей**. Выберите соответствующую роль доступа для пользователя.
 
@@ -48,17 +51,17 @@ ms.locfileid: "74012686"
 
    Нажмите кнопку **ОК**, чтобы подтвердить выбор роли.
 
-    [![доступ к данным — три](media/data-access/data-access-three.png)](media/data-access/data-access-three.png#lightbox)
+    [![подтвердить выбранную роль](media/data-access/data-access-select-a-role.png)](media/data-access/data-access-select-a-role.png#lightbox)
 
 1. На странице **Выбор роли пользователя** нажмите кнопку **ОК**.
 
-    [доступ к данным ![-4](media/data-access/data-access-four.png)](media/data-access/data-access-four.png#lightbox)
+    [![нажмите кнопку ОК на странице Выбор роли пользователя.](media/data-access/data-access-confirm-user-and-role.png)](media/data-access/data-access-confirm-user-and-role.png#lightbox)
 
 1. Убедитесь, что на странице **Политики доступа к данным** перечислены пользователи и соответствующие роли.
 
-    [доступ к данным ![-пять](media/data-access/data-access-five.png)](media/data-access/data-access-five.png#lightbox)
+    [![проверить правильные пользователи и роли](media/data-access/data-access-verify-and-confirm-assignments.png)](media/data-access/data-access-verify-and-confirm-assignments.png#lightbox)
 
-## <a name="provide-guest-access-from-another-aad-tenant"></a>Предоставление гостевого доступа из другого клиента AAD
+## <a name="provide-guest-access-from-another-azure-ad-tenant"></a>Предоставление гостевого доступа из другого клиента Azure AD
 
 Роль `Guest` не является ролью управления. Это термин, используемый для учетной записи, приглашенной из одного клиента в другой. После того как гостевая учетная запись приглашена в каталог клиента, к ней могут быть применены те же права управления доступом, что и в любой другой учетной записи. Предоставить доступ для управления к среде "Аналитика временных рядов Azure" можно с помощью колонки "Управление доступом (IAM)". Кроме того, предоставить доступ к данным в среде можно в колонке "Политики доступа к данным". Дополнительные сведения о гостевом доступе к клиенту Azure Active Directory см. в статье [Добавление пользователей службы совместной работы B2B на портале Azure](https://docs.microsoft.com/azure/active-directory/b2b/add-users-administrator).
 
@@ -66,19 +69,19 @@ ms.locfileid: "74012686"
 
 1. Выберите **Политики доступа к данным**, а затем нажмите кнопку **+ Пригласить**.
 
-    [доступ к данным ![-шесть](media/data-access/data-access-six.png)](media/data-access/data-access-six.png#lightbox)
+    [![выберите политики доступа к данным, а затем + пригласить](media/data-access/data-access-invite-another-aad-tenant.png)](media/data-access/data-access-invite-another-aad-tenant.png#lightbox)
 
 1. Введите адрес электронной почты пользователя, которого вы хотите пригласить. Этот адрес электронной почты должен быть связан с Azure AD. Вы также можете добавить к приглашению личное сообщение.
 
-    [![доступ к данным — семь](media/data-access/data-access-seven.png)](media/data-access/data-access-seven.png#lightbox)
+    [![введите адрес электронной почты для поиска выбранного пользователя](media/data-access/data-access-invite-guest-by-email.png)](media/data-access/data-access-invite-guest-by-email.png#lightbox)
 
 1. Найдите всплывающее окно с подтверждением, которое отображается на экране.
 
-    [доступ к данным ![-восемь](media/data-access/data-access-eight.png)](media/data-access/data-access-eight.png#lightbox)
+    [![искать Отображение всплывающего окна подтверждения](media/data-access/data-access-confirmation-bubble.png)](media/data-access/data-access-confirmation-bubble.png#lightbox)
 
 1. Выберите **Выбор пользователя**. Найдите адрес электронной почты приглашенного гостевого пользователя, чтобы найти пользователя, которого необходимо добавить. Затем **выберите** , чтобы подтвердить выбор.
 
-    [доступ к данным ![-девять](media/data-access/data-access-nine.png)](media/data-access/data-access-nine.png#lightbox)
+    [![выбрать пользователя и подтвердить выбор](media/data-access/data-access-select-invited-person-confirmation.png)](media/data-access/data-access-select-invited-person-confirmation.png#lightbox)
 
 1. Выберите **Выбор ролей**. Выберите соответствующую роль гостевого пользователя.
 
@@ -88,31 +91,38 @@ ms.locfileid: "74012686"
 
    Нажмите кнопку **ОК**, чтобы подтвердить выбор роли.
 
-    [доступ к данным ![-десять](media/data-access/data-access-ten.png)](media/data-access/data-access-ten.png#lightbox)
+    [![подтвердить вариант роли](media/data-access/data-access-select-ok-and-confirm.png)](media/data-access/data-access-select-ok-and-confirm.png#lightbox)
 
 1. На странице **Выбор роли пользователя** нажмите кнопку **ОК**.
 
 1. Убедитесь, что на странице **Политики доступа к данным** перечислены гостевые пользователи и соответствующие роли.
 
-    [доступ к данным ![-одиннадцать](media/data-access/data-access-eleven.png)](media/data-access/data-access-eleven.png#lightbox)
+    [![проверить, правильно ли назначены пользователи и роли](media/data-access/data-access-confirm-invited-users-and-roles.png)](media/data-access/data-access-confirm-invited-users-and-roles.png#lightbox)
 
-1. Теперь гостевой пользователь должен выполнить определенные действия, чтобы получить доступ к среде, находящейся в клиенте Azure, в которую вы его пригласили. Сначала этот пользователь принимает отправленное ему приглашение. Это приглашение отправляется по адресу электронной почты, использованной в приглашении на шаге 5. Он выбирает **Начало работы**, чтобы принять приглашение.
+1. Теперь гостевой пользователь получит приглашение по электронной почте по указанному выше адресу. Гостевой пользователь наберет кнопку "начать **работу** ", чтобы подтвердить свое согласие и подключиться к облаку Azure.
 
-    [доступ к данным ![— двенадцать](media/data-access/data-access-twelve.png)](media/data-access/data-access-twelve.png#lightbox)
+    [![гость выбирает Приступая к приему](media/data-access/data-access-email-invitation.png)](media/data-access/data-access-email-invitation.png#lightbox)
 
-1. Затем гостевой пользователь принимает разрешения, связанные с организацией администратора.
+1. После выбора пункта " **начать работу** " Гостевой пользователь будет иметь поле разрешений, связанное с Организацией администратора. При предоставлении разрешения, выбрав **принять**, они будут входить в.
 
-    [![Data-Access-тринадцать](media/data-access/data-access-thirteen.png)](media/data-access/data-access-thirteen.png#lightbox)
+    [!["гость" проверяет разрешения и принимает](media/data-access/data-access-grant-permission-sign-in.png)](media/data-access/data-access-grant-permission-sign-in.png#lightbox)
 
-1. Когда гостевой пользователь войдет в учетную запись электронной почты, куда вы отправили приглашение, и примет это приглашение, он перейдет на сайт insights.azure.com. После этого ему понадобится щелкнуть аватар рядом с его адресом электронной почты в правом верхнем углу экрана.
+1. Администратор [совместно использует URL-адрес среды](time-series-insights-parameterized-urls.md) со своей гостевой учетной записью.
 
-    [![Data-Access-четырнадцать](media/data-access/data-access-fourteen.png)](media/data-access/data-access-fourteen.png#lightbox)
+1. После входа гостевого пользователя на адрес электронной почты, который использовался для приглашения, и принятия приглашения, они будут направлены на портал Azure. 
 
-1. Затем гостевой пользователь выбирает клиент Azure из раскрывающегося меню каталога. Это тот клиент, в который вы пригласили пользователя.
+1. Теперь гостевой компьютер может получить доступ к общей среде, используя URL-адрес среды, предоставленный администратором. Они могут ввести этот URL-адрес в свой браузер для немедленного доступа.
 
-    [доступ к данным ![-пятнадцать](media/data-access/data-access-fifteen.png)](media/data-access/data-access-fifteen.png#lightbox)
+1. Гостевой пользователь увидит клиента администратора, щелкнув значок профиля в правом верхнем углу обозревателя временных рядов.
 
-После выбора клиента для гостевого пользователя станет доступной среда службы "Аналитика временных рядов", к которой вы предоставили ему доступ. Теперь у них есть все возможности, связанные с ролью, которую вы указали на **шаге 5**.
+    [![выбранного аватара в insights.azure.com](media/data-access/data-access-select-tenant-and-instance.png)](media/data-access/data-access-select-tenant-and-instance.png#lightbox)
+
+
+    После того как гостевой пользователь выберет клиента администратора, у него будет возможность выбрать общую среду "аналитика временных рядов". 
+    
+    Теперь у них есть все возможности, связанные с ролью, которую вы указали на **шаге 5**.
+
+    [![гостевой пользователь выбирает клиент Azure из раскрывающегося списка](media/data-access/data-access-all-capabilities.png)](media/data-access/data-access-all-capabilities.png#lightbox)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

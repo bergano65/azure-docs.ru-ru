@@ -29,7 +29,7 @@ ms.locfileid: "70012570"
 
 Кроме того, необходимо зарегистрировать подписку для использования поставщика ресурсов NetApp. См. раздел [Регистрация поставщика ресурсов NetApp](azure-netapp-files-register.md#resource-provider).
 
-## <a name="steps"></a>Шаги 
+## <a name="steps"></a>Действия 
 
 1. Войдите на портал Azure. 
 2. Подключитесь к колонке Azure NetApp Files, используя один из следующих способов.  
@@ -44,17 +44,17 @@ ms.locfileid: "70012570"
 4. Укажите следующие сведения для учетной записи NetApp. 
    * **Имя учетной записи**  
      Укажите уникальное имя для подписки.
-   * **подписка**  
+   * **Подписка**  
      Выберите подписку из существующих подписок.
    * **Группа ресурсов**   
      Используйте имеющуюся группу ресурсов или создайте новую.
-   * **Location**  
+   * **Местоположение.**  
      Выберите регион, где нужно разместить учетную запись и ее дочерние ресурсы.  
 
      ![Новая учетная запись NetApp](../media/azure-netapp-files/azure-netapp-files-new-netapp-account.png)
 
 
-5. Нажмите кнопку **Создать**.     
+5. Щелкните **Создать**.     
    Созданная учетная запись NetApp теперь отображается в колонке Azure NetApp Files. 
 
 > [!NOTE] 
@@ -62,7 +62,7 @@ ms.locfileid: "70012570"
 >
 > `{"code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.","details":[{"code":"NotFound","message":"{\r\n \"error\": {\r\n \"code\": \"InvalidResourceType\",\r\n \"message\": \"The resource type could not be found in the namespace 'Microsoft.NetApp' for api version '2017-08-15'.\"\r\n }\r\n}"}]}`
 
-## <a name="next-steps"></a>Следующие шаги  
+## <a name="next-steps"></a>Дополнительная информация  
 
 [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)
 

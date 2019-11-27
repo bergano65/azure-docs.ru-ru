@@ -21,16 +21,16 @@ ms.locfileid: "71802613"
 >[!NOTE]
 >Следующие рекомендации применяются к сетям с количеством потерь менее 0,1%.
 
-## <a name="applications"></a>Приложения
+## <a name="applications"></a>ПРИЛОЖЕНИЯ
 
 В следующей таблице приведена минимальная рекомендуемая пропускная способность для плавного взаимодействия с пользователем. 
 
 |Рабочая нагрузка        |Примеры приложений                                                                                           |Рекомендуемая пропускная способность|
 |----------------|--------------------------------------------------------------------------------------------------------------|---------------------|
-|Работник, выполняющий отдельные задачи     |Microsoft Word, Outlook, Excel, Adobe Reader                                                                  |1,5 @ no__t-0Mbps        |
-|Рабочий процесс Office   |Microsoft Word, Outlook, Excel, Adobe Reader, PowerPoint, средство просмотра фотографий                                        |3 @ no__t-0Mbps          |
-|Рабочая роль для базы знаний|Microsoft Word, Outlook, Excel, Adobe Reader, PowerPoint, средство просмотра фотографий, Java                                  |5 @ no__t-0Mbps          |
-|Power Worker    |Microsoft Word, Outlook, Excel, Adobe Reader, PowerPoint, средство просмотра фотографий, Java, CAD, Камера, Иллюстрация и публикация|15 @ no__t-0Mbps         |
+|Работник, выполняющий отдельные задачи     |Microsoft Word, Outlook, Excel, Adobe Reader                                                                  |1,5&nbsp;Мбит/с        |
+|Рабочий процесс Office   |Microsoft Word, Outlook, Excel, Adobe Reader, PowerPoint, средство просмотра фотографий                                        |3&nbsp;Мбит/с          |
+|Рабочая роль для базы знаний|Microsoft Word, Outlook, Excel, Adobe Reader, PowerPoint, средство просмотра фотографий, Java                                  |5&nbsp;Мбит/с          |
+|Power Worker    |Microsoft Word, Outlook, Excel, Adobe Reader, PowerPoint, средство просмотра фотографий, Java, CAD, Камера, Иллюстрация и публикация|15&nbsp;Мбит/с         |
 
 >[!NOTE]
 >Эти рекомендации применяются независимо от количества пользователей в сеансе.

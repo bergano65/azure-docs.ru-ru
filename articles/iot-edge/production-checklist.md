@@ -8,13 +8,12 @@ ms.date: 08/09/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.custom: seodec18
-ms.openlocfilehash: 610e0088fe97bdda1dce7f7391530c5128428b29
-ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
+ms.openlocfilehash: 1d8ba8452f5f2d4ab05083e1a97fa0b9ba75017f
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73096962"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74457303"
 ---
 # <a name="prepare-to-deploy-your-iot-edge-solution-in-production"></a>Подготовка к развертыванию решения IoT Edge в рабочей среде
 
@@ -64,8 +63,8 @@ ms.locfileid: "73096962"
 
 У двух модулей среды выполнения есть переменная среды **UpstreamProtocol**. Допустимые значения переменной: 
 
-* MQTT;
-* AMQP;
+* MQTT
+* AMQP
 * MQTTWS
 * AMQPWS
 
@@ -73,7 +72,7 @@ ms.locfileid: "73096962"
 
 После подключения устройства IoT Edge обязательно настраивайте переменную UpstreamProtocol для обоих модулей среды выполнения в будущих развертываниях. Пример этого процесса представлен в статье [Настройка устройства IoT Edge для обмена данными через прокси-сервер](how-to-configure-proxy-support.md).
 
-## <a name="deployment"></a>Развертывание.
+## <a name="deployment"></a>Развертывание
 
 * **Полезное**
     * Согласование с вышестоящим протоколом
@@ -149,7 +148,7 @@ ms.locfileid: "73096962"
 
 Пример соглашения о тегах представлен в разделе [Сведения о тегах IoT Edge](how-to-update-iot-edge.md#understand-iot-edge-tags). Он поможет вам понять, как IoT Edge использует последовательные и конкретные теги для отслеживания версий. 
 
-## <a name="networking"></a>Работа в сети
+## <a name="networking"></a>Сеть
 
 * **Полезное**
     * Просмотр конфигурации исходящих и входящих подключений
@@ -225,7 +224,7 @@ ms.locfileid: "73096962"
 
 Добавьте (или добавьте) эти сведения в файл с именем `daemon.json` и поместите его в нужное расположение для платформы устройства.
 
-| платформа | Location |
+| платформа | Место проведения |
 | -------- | -------- |
 | Linux | `/etc/docker/` |
 | Windows | `C:\ProgramData\iotedge-moby\config\` |
@@ -234,7 +233,7 @@ ms.locfileid: "73096962"
 
 **Параметр: Настройка параметров журнала для каждого модуля контейнера**
 
-Это можно сделать в **креатеоптионс** каждого модуля. Пример.
+Это можно сделать в **креатеоптионс** каждого модуля. Например,
 
 ```yml
 "createOptions": {
@@ -272,7 +271,7 @@ ms.locfileid: "73096962"
 
 Для максимально эффективного развертывания IoT Edge рекомендуем интегрировать рабочую среду с конвейерами CI/CD и тестирования. Azure IoT Edge поддерживает множество платформ CI/CD, включая Azure DevOps. Дополнительные сведения см. в статье [Непрерывная интеграция и непрерывное развертывание в Azure IoT Edge](how-to-ci-cd.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения см. в статье об [автоматическом развертывании IoT Edge](module-deployment-monitoring.md).
 * Узнайте о поддержке [непрерывных интеграции и развертывания](how-to-ci-cd.md) в IoT Edge.

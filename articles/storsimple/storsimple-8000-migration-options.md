@@ -23,7 +23,7 @@ ms.locfileid: "74227769"
 # <a name="options-to-migrate-data-from-storsimple-5000-7000-series"></a>Варианты переноса данных с устройств StorSimple серий 5000–7000 
 
 > [!IMPORTANT]
-> On July 9, 2019 the StorSimple 5000/7000 series will reach end of support (EOS) status. Мы рекомендуем клиентам устройств StorSimple серий 5000 и 7000 перейти на один из альтернативных вариантов, описанных в этом документе.
+> 9 июля 2019. Серия StorSimple 5000/7000 получит состояние прекращения поддержки (EOS). Мы рекомендуем клиентам устройств StorSimple серий 5000 и 7000 перейти на один из альтернативных вариантов, описанных в этом документе.
 
 [Поддержка](https://support.microsoft.com/lifecycle/search?alpha=StorSimple%205000%2F7000%20Series) устройств StorSimple серий 5000–7000 будет прекращена в июле 2019 г. Клиенты, использующие StorSimple серий 5000–7000, имеют возможность перейти на другие гибридные службы Azure. В этой статье описываются гибридные варианты, доступные для переноса данных в Azure. 
 
@@ -39,7 +39,7 @@ ms.locfileid: "74227769"
 
 Дополнительные сведения о том, как перенести данные на устройство StorSimple серии 8000, см. в статье [Перенос данных с устройства StorSimple серий 5000–7000 на устройство серии 8000](storsimple-8000-migrate-from-5000-7000.md).
 
-#### <a name="migrate-to-azure-file-sync"></a>Миграция в службу "Синхронизация файлов Azure"
+#### <a name="migrate-to-azure-file-sync"></a>Перенос в службу "Синхронизацию файлов Azure"
 
 Это совершенно новый вариант миграции, который позволяет клиентам хранить файловые ресурсы организации в службе "Синхронизация файлов Azure". Затем эти файловые ресурсы централизуются для локального доступа с помощью службы "Синхронизация файлов Azure" (AFS). AFS можно развернуть на узле Windows Server. Фактический перенос данных выполняется с помощью средства миграции или путем перемещения копии узла.
 
@@ -57,19 +57,19 @@ ms.locfileid: "74227769"
 
 Cohesity позволяет выполнять миграцию данных из текущего хранилища StorSimple 5000–7000 на платформу данных Cohesity в Azure. Платформа данных Cohesity является программно-определяемым решением в масштабах Интернета, которое объединяет в себе файлы, резервные копии, объекты и виртуальные машины в одно облачное решение. После миграции на платформу данных можно выполнять управление, защиту, подготовку данных и приложений из облака в ядро с помощью панели из стекла. С помощью Cohesity появляется возможность начать сразу с трех узлов. 
 
-Learn more on [migration to the Cohesity Data Platform](https://info.cohesity.com/migrate-from-storsimple-to-cohesity.html).
+Дополнительные сведения о [миграции на платформу данных Cohesity](https://info.cohesity.com/migrate-from-storsimple-to-cohesity.html).
 
-#### <a name="migrate-to-nasuni"></a>Migrate to Nasuni
+#### <a name="migrate-to-nasuni"></a>Переход на Nasuni
 
-Nasuni makes it easy for StorSimple 5000-7000 customers to migrate and keep their data in Azure.  Nasuni is a leading Azure-based NAS storage solution, giving customers the performance and security they expect from on-prem solutions, with cloud economics and scale.  In addition to high performance file storage, Nasuni and Azure handle backup and DR, while allowing you to share and collaborate on your data around the globe with centralized file storage management. 
+Nasuni упрощает миграцию и защиту данных в Azure для пользователей StorSimple 5000-7000.  Nasuni — это ведущее решение для хранения данных NAS на основе Azure, предоставляющее клиентам производительность и безопасность, которые они хотят получить от локальных решений с учетом экономики и масштабируемости облака.  В дополнение к высокопроизводительному хранилищу файлов, Nasuni и Azure можно выполнять резервное копирование и аварийное восстановление, одновременно позволяя обмениваться данными по всему миру с централизованным управлением хранилищем файлов. 
 
-Nasuni has the experience to make your migration easy – get started today: https://info.nasuni.com/nasuni-storsimple-migration
+Nasuni позволяет упростить миграцию — Начните работу уже сегодня: https://info.nasuni.com/nasuni-storsimple-migration
 
-#### <a name="migrate-to-talon-fast"></a>Migrate to Talon FAST
+#### <a name="migrate-to-talon-fast"></a>Миграция в Talon FAST
 
-Talon makes it easy for StorSimple 5000-7000 customers to continue to leverage the benefits they valued so much in the StorSimple platform (small on-site footprint backed by unlimited cloud resources) with even greater function.  With the Talon FAST solution, customers can migrate and keep their data in Azure, while now having an even smaller software-only onsite footprint and adding benefits such as global file locking, global namespace, and multi-site collaboration.  Talon is a leading Azure ecosystem solution, working with global customers to migrate their on-premises file server workloads into a consolidated, Azure-based footprint without compromising user workflow or experience.  
+Talon упрощает клиентам StorSimple 5000-7000 использовать преимущества, которые они затронули настолько много, что и на платформе StorSimple (небольшой объем на месте, поддерживаемый неограниченными облачными ресурсами), с более высокой функцией.  Благодаря БЫСТРОму решению Talon клиенты могут выполнять миграцию и сохранение своих данных в Azure, в то же время выполняя даже меньшее место на уровне программного обеспечения и добавляя такие преимущества, как Глобальная блокировка файлов, глобальное пространство имен и совместная работа с несколькими сайтами.  Talon — это ведущие решения экосистемы Azure, работающие с глобальными клиентами для переноса своих локальных рабочих нагрузок файлового сервера в Объединенный объем, основанный на Azure, без ущерба для рабочего процесса или взаимодействия с пользователем.  
 
-Learn more about how to evolve to a cloud-consolidated enterprise at https://www.talonstorage.com/alliances/microsoft-storsimple.
+Узнайте больше о том, как развиваться с консолидированным предприятием на https://www.talonstorage.com/alliances/microsoft-storsimple.
 
 
 ## <a name="migration---frequently-asked-questions"></a>Часто задаваемые вопросы о переносе
@@ -125,6 +125,6 @@ Learn more about how to evolve to a cloud-consolidated enterprise at https://www
 О. Даты окончания поддержки StorSimple серии 8000 публикуется [здесь](https://support.microsoft.com/lifecycle/search?alpha=Azure%20StorSimple%208000%20Series).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
  - [Перенос данных с устройства StorSimple серий 5000–7000 на устройство серии 8000](storsimple-8000-migrate-from-5000-7000.md).
  - [Migrate data from StorSimple 5000-7000 series to Azure File Sync](storsimple-5000-7000-afs-migration.md) (Перенос данных с устройств StorSimple серий 5000–7000 в службу "Синхронизация файлов Azure")

@@ -8,13 +8,12 @@ ms.date: 09/23/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.custom: seodec18
-ms.openlocfilehash: 1e184691ebbd34de0f69e93419d9c34ab18edbe6
-ms.sourcegitcommit: d47a30e54c5c9e65255f7ef3f7194a07931c27df
+ms.openlocfilehash: 922654a6947a21eeee945762100abe086c552ad7
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025949"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74457227"
 ---
 # <a name="authenticate-a-downstream-device-to-azure-iot-hub"></a>Аутентификация подчиненного устройства в Центре Интернета вещей
 
@@ -30,7 +29,7 @@ ms.locfileid: "73025949"
 
 Действия, описанные в этой статье, показывают подготовку устройств вручную, а не автоматическую подготовку с помощью службы подготовки устройств для центра Интернета вещей Azure. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Выполните действия, описанные в разделе [Настройка устройства IOT Edge для работы в качестве прозрачного шлюза](how-to-create-transparent-gateway.md). Если вы используете проверку подлинности X. 509 для подчиненного устройства, необходимо использовать тот же сценарий создания сертификата, который вы настроили в статье о прозрачном шлюзе. 
 
@@ -83,7 +82,7 @@ az iot hub device-identity create -n {iothub name} -d {device ID} --pd {gateway 
 HostName=myiothub.azure-devices.net;DeviceId=myDownstreamDevice;SharedAccessKey=xxxyyyzzz;GatewayHostName=myGatewayDevice
 ```
 
-Если для этого подчиненного устройства установлена связь "родители-потомки", можно упростить строку подключения, вызвав шлюз непосредственно в качестве узла подключения. Пример. 
+Если для этого подчиненного устройства установлена связь "родители-потомки", можно упростить строку подключения, вызвав шлюз непосредственно в качестве узла подключения. Например, 
 
 ```
 HostName=myGatewayDevice;DeviceId=myDownstreamDevice;SharedAccessKey=xxxyyyzzz
@@ -248,7 +247,7 @@ catch (Exception ex)
 
 #### <a name="c"></a>C
 
-Пример программы на языке C, выполняющей проверку подлинности в центре Интернета вещей с помощью сертификатов X. 509, см. в примере [iotedge_downstream_device_sample](https://github.com/Azure/azure-iot-sdk-c/tree/x509_edge_bugbash/iothub_client/samples/iotedge_downstream_device_sample) для пакета SDK для IOT. Некоторые ключевые строки этого примера приведены здесь, чтобы продемонстрировать процесс проверки подлинности.
+Пример программы на языке C, выполняющей проверку подлинности в центре Интернета вещей с помощью сертификатов X. 509, см. в примере [iotedge_downstream_device_sample](https://github.com/Azure/azure-iot-sdk-c/tree/x509_edge_bugbash/iothub_client/samples/iotedge_downstream_device_sample) пакета SDK для IOT. Некоторые ключевые строки этого примера приведены здесь, чтобы продемонстрировать процесс проверки подлинности.
 
 При определении строки подключения для подчиненного устройства используйте имя узла устройства шлюза IoT Edge для параметра **HostName** . Имя узла можно найти в файле config. YAML устройства шлюза. 
 
@@ -296,7 +295,7 @@ int main(void)
 
 #### <a name="nodejs"></a>Node.js
 
-Пример программы Node. js, выполняющей проверку подлинности в центре Интернета вещей с помощью сертификатов X. 509, см. в разделе пример [simple_sample_device_x509. js](https://github.com/Azure/azure-iot-sdk-node/blob/master/device/samples/simple_sample_device_x509.js) пакета SDK для центра Интернета вещей для Node. js. Некоторые ключевые строки этого примера приведены здесь, чтобы продемонстрировать процесс проверки подлинности.
+Пример программы Node. js, выполняющей проверку подлинности в центре Интернета вещей с помощью сертификатов X. 509, см. в примере для пакета SDK [simple_sample_device_x509](https://github.com/Azure/azure-iot-sdk-node/blob/master/device/samples/simple_sample_device_x509.js) для IOT на Node. js. Некоторые ключевые строки этого примера приведены здесь, чтобы продемонстрировать процесс проверки подлинности.
 
 При определении строки подключения для подчиненного устройства используйте имя узла устройства шлюза IoT Edge для параметра **HostName** . Имя узла можно найти в файле config. YAML устройства шлюза. 
 
@@ -386,6 +385,6 @@ private static String privateKeyString =
 DeviceClient client = new DeviceClient(connectionString, protocol, publicKeyCertificateString, false, privateKeyString, false);
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Выполнив эту статью, вы должны иметь устройство IoT Edge, работающее в качестве прозрачного шлюза и подчиненного устройства, зарегистрированного в центре Интернета вещей. Далее необходимо настроить подчиненные устройства, чтобы доверять устройству шлюза и отправить в него сообщения. Дополнительные сведения см. в статье [Connect a downstream device to an Azure IoT Edge gateway](how-to-connect-downstream-device.md) (Подключение подчиненного устройства к шлюзу Azure IoT Edge).

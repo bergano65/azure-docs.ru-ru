@@ -4,12 +4,12 @@ ms.service: azure-spatial-anchors
 ms.topic: include
 ms.date: 1/29/2019
 ms.author: rgarcia
-ms.openlocfilehash: d8b6b1bfcbceb1168d0f74c73e72bd42b41bb2ec
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: b052772bbfe9d69e430d9f722d8db56b48db7610
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562506"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72933473"
 ---
 Выберите **Build** (Сборка). В открывшемся диалоговом окне выберите папку, в которую необходимо экспортировать проект Xcode.
 
@@ -33,7 +33,7 @@ open ./Unity-iPhone.xcworkspace
 ```
 
 > [!NOTE]
-> Если у вас возникнет ошибка `library not found for -lPods-Unity-iPhone`, скорее всего, вы открыли файл `.xcodeproj` вместо `.xcworkspace`. 
+> См. [руководство по устранению неполадок с CocoaPod после обновления до macOS Catalina (10.15)](../articles/spatial-anchors/quickstarts/get-started-unity-ios.md#cocoapods-issues-on-macos-catalina-1015).
 
 Выберите корневой узел **Unity iPhone**, чтобы просмотреть параметры проекта, а затем — вкладку **General** (Общие).
 
@@ -50,3 +50,6 @@ open ./Unity-iPhone.xcworkspace
 Выберите параметр **Build and then run the current scheme** (Сборка, а затем запуск текущей схемы).
 
 ![Развертывание и запуск](./media/spatial-anchors-unity/deploy-run.png)
+
+> [!NOTE]
+> Если у вас возникнет ошибка `library not found for -lPods-Unity-iPhone`, скорее всего, вы открыли файл `.xcodeproj` вместо `.xcworkspace`.

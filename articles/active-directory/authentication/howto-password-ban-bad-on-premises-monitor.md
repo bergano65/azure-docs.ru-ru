@@ -1,22 +1,22 @@
 ---
-title: Мониторинг и ведение журнала в службе защиты паролей Azure AD. Azure Active Directory
+title: Монитор защиты паролем и ведение журнала — Azure Active Directory
 description: Общие сведения о мониторинге и ведении журнала защиты паролем Azure AD
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/01/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a763f15b57bf7f23eeb52c81dd48de7f02adc5e4
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 77f1ac530fe4e20fe26f3a6b7d0111b0bd432928
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68853558"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74381678"
 ---
 # <a name="azure-ad-password-protection-monitoring-and-logging"></a>Мониторинг и ведение журнала защиты паролем Azure AD
 
@@ -65,7 +65,7 @@ ms.locfileid: "68853558"
 
 |   |Изменение пароля |Настройка пароля|
 | --- | :---: | :---: |
-|Этап |10014 |10015|
+|Pass; |10014 |10015|
 |Ошибка (из-за политики паролей клиента)| 10016, 30002| 10017, 30003|
 |Ошибка (из-за политики паролей Майкрософт)| 10016, 30004| 10017, 30005|
 |Ошибка (из-за совокупности политики паролей клиента и политики паролей Майкрософт)| 10016, 30026| 10017, 30027|
@@ -235,7 +235,7 @@ HKLM\System\CurrentControlSet\Services\AzureADPasswordProtectionDCAgent\Paramete
 
 Программное обеспечение службы агента контроллера домена устанавливает объект счетчика производительности с именем **Azure AD Password Protection**. В настоящее время доступны следующие счетчики производительности:
 
-|Имя счетчика производительности | Описание|
+|Имя счетчика производительности | ОПИСАНИЕ|
 | --- | --- |
 |Обработано паролей |Этот счетчик отображает общее количество обработанных паролей (принятых или отклоненных) с момента последнего перезапуска.|
 |Принято паролей |Этот счетчик отображает общее количество принятых паролей с момента последнего перезапуска.|
@@ -382,7 +382,7 @@ Current version: 1.2.116.0
 
 Это событие будет выдаваться, даже если прокси-агент настроен с включенным автообновлением.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 [Предварительный просмотр: мониторинг, отчетность и устранение неполадок защиты паролем Azure AD](howto-password-ban-bad-on-premises-troubleshoot.md)
 

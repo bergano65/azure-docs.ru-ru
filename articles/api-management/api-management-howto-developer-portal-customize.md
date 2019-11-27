@@ -10,14 +10,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 11/04/2019
+ms.date: 11/22/2019
 ms.author: apimpm
-ms.openlocfilehash: c8aa3fb124420c933e17b0e9f7e52b7f114a7f61
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 8629d07830622770c3b30dacdd1fabc8417d7f52
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012902"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74454421"
 ---
 # <a name="access-and-customize-developer-portal"></a>Доступ и Настройка портала разработчика
 
@@ -35,10 +35,6 @@ ms.locfileid: "74012902"
 Дополнительные сведения можно найти на портале разработчика на [портале разработчика управления API Azure](api-management-howto-developer-portal.md).
 
 ![Портал разработчика управления API — режим администратора](media/api-management-howto-developer-portal-customize/cover.png)
-
-> [!WARNING]
-> На портале разработчика в настоящее время выполняется развертывание в службах управления API.
-> Если служба была только что создана или является службой уровня разработчика, у вас уже должна быть последняя версия. В противном случае могут возникнуть проблемы (например, с помощью функции публикации). Ожидается, что развертывание функции будет завершено до пятницы ноября 22, 2019. 
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
@@ -115,13 +111,16 @@ ms.locfileid: "74012902"
 
 > [!VIDEO https://www.youtube.com/embed/5mMtUSmfUlw]
 
-## <a name="publish-the-portal"></a>Публикация портала
+## <a name="publish"> </a>Публикация портала
 
 Чтобы сделать портал и его последние изменения доступными для посетителей, необходимо опубликовать его.
 
 1. Убедитесь, что изменения сохранены, щелкнув значок **сохранить** .
 1. Щелкните **Опубликовать веб-сайт** в разделе **операции** меню. Это может занять несколько минут.  
     ![опубликовать портал](media/api-management-howto-developer-portal-customize/publish-portal.png)
+
+> [!NOTE]
+> После изменения конфигурации службы управления API необходимо повторно опубликовать портал, например назначить личный домен, обновить поставщики удостоверений, задать делегирование, указать условия входа и продукта, а также многое другое.
 
 ## <a name="visit-the-published-portal"></a>Посетите опубликованный портал
 

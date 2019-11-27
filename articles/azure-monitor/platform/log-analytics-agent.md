@@ -6,13 +6,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: MGoedtel
 ms.author: magoedte
-ms.date: 10/07/2019
-ms.openlocfilehash: 8070abad675acc69f5b1da232b60179078adbc57
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.date: 11/21/2019
+ms.openlocfilehash: 33ba07ac8d89546856666cc7ab94fae650020001
+ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72932240"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74306532"
 ---
 # <a name="collect-log-data-with-the-log-analytics-agent"></a>Получение данных журнала с помощью агента Log Analytics
 
@@ -20,7 +20,7 @@ ms.locfileid: "72932240"
 
 В этой статье предоставлен подробный обзор требований к агенту, системе и сети, а также различных методов развертывания.
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 ![Схема связей агента Log Analytics](./media/log-analytics-agent/log-analytics-agent-01.png)
 
@@ -40,7 +40,7 @@ ms.locfileid: "72932240"
 * Компьютеры Linux, передающие данные в группу управления, должны быть настроены для отправки отчетов непосредственно в Log Analytics рабочую область. Если компьютеры Linux уже отправляют отчеты непосредственно в рабочую область и вы хотите отслеживать их с помощью Operations Manager, выполните следующие действия, чтобы [Отправить отчет в группу управления Operations Manager](agent-manage.md#configure-agent-to-report-to-an-operations-manager-management-group).
 * Вы можете установить агент Log Analytics Windows на компьютере Windows и сообщить о том, что Operations Manager интегрированы с рабочей областью, и с другой рабочей областью.
 
-Агент для Linux и Windows не только подключается к Azure Monitor, но также поддерживает службу автоматизации Azure для размещения гибридной рабочей роли Runbook и других служб, таких как [Отслеживание изменений](../../automation/change-tracking.md), [Управление обновлениями](../../automation/automation-update-management.md)и [Центр безопасности Azure. ](../../security-center/security-center-intro.md). Дополнительные сведения о гибридной рабочей роли Runbook см. в разделе [Общие сведения об архитектуре автоматизации](../../automation/automation-hybrid-runbook-worker.md).  
+Агент для Linux и Windows не только подключается к Azure Monitor, но также поддерживает службу автоматизации Azure для размещения гибридной рабочей роли Runbook и других служб, таких как [Отслеживание изменений](../../automation/change-tracking.md), [Управление обновлениями](../../automation/automation-update-management.md)и [Центр безопасности Azure](../../security-center/security-center-intro.md). Дополнительные сведения о гибридной рабочей роли Runbook см. в разделе [Общие сведения об архитектуре автоматизации](../../automation/automation-hybrid-runbook-worker.md).  
 
 ## <a name="supported-windows-operating-systems"></a>Поддерживаемые операционные системы Windows
 
@@ -85,7 +85,7 @@ ms.locfileid: "72932240"
 
 В следующей таблице перечислены пакеты, необходимые для поддерживаемых дистрибутивов Linux, на которых будет установлен агент.
 
-|Требуемый пакет |Описание |Минимальная версия |
+|Требуемый пакет |ОПИСАНИЕ |Минимальная версия |
 |-----------------|------------|----------------|
 |Glibc |    Библиотека C GNU | 2.5-12 
 |Openssl    | Библиотеки OpenSSL | 1.0. x или 1.1. x |
@@ -106,14 +106,13 @@ ms.locfileid: "72932240"
 
 |Ресурс агента|порты; |Направление |Обход проверки HTTPS|
 |------|---------|--------|--------|   
-|*.ods.opinsights.azure.com |Порт 443 |Исход.|ДА |  
-|*.oms.opinsights.azure.com |Порт 443 |Исход.|ДА |  
-|*.blob.core.windows.net |Порт 443 |Исход.|ДА |  
-|*.azure-automation.net |Порт 443 |Исход.|ДА |  
+|*.ods.opinsights.azure.com |Порт 443 |Исходящие|Yes |  
+|*.oms.opinsights.azure.com |Порт 443 |Исходящие|Yes |  
+|*.blob.core.windows.net |Порт 443 |Исходящие|Yes |  
 
 Сведения о брандмауэре, необходимые для Azure для государственных организаций, см. в статье [Управление Azure](../../azure-government/documentation-government-services-monitoringandmanagement.md#azure-monitor-logs)для государственных организаций. 
 
-Если планируется использование Azure Automation Hybrid Runbook Worker для подключения к службе автоматизации и регистрации в ней, чтобы применить runbook в вашей среде, они должны иметь доступ к номеру порта и URL-адресам, описанным в разделе [Настройка сети для Hybrid Runbook Worker](../../automation/automation-hybrid-runbook-worker.md#network-planning). 
+Если вы планируете использовать гибридную рабочую роль Runbook службы автоматизации Azure для подключения и регистрации в службе автоматизации для использования модулей Runbook или решений для управления в вашей среде, у нее должен быть доступ к номеру порта и URL-адресам, описанным в разделе [Настройка сети для гибридной рабочей роли Runbook](../../automation/automation-hybrid-runbook-worker.md#network-planning). 
 
 Агент Windows и Linux поддерживает связь через прокси-сервер или шлюз Log Analytics для Azure Monitor по протоколу HTTPS.  Поддерживается анонимная и базовая аутентификация (с именем пользователя и паролем).  Для агента Windows, подключенного непосредственно к службе, конфигурация прокси-сервера указывается во время установки или [после развертывания](agent-manage.md#update-proxy-settings) — в панели управления или с помощью PowerShell.  
 
@@ -124,11 +123,11 @@ ms.locfileid: "72932240"
 > [!NOTE]
 > Если прокси-сервер не требует аутентификацию, для агента Linux все равно необходимо указать псевдо-имя пользователя или пароль. Вы можете указать любое имя пользователя или пароль.
 
-|Свойство| Описание |
+|Свойство| ОПИСАНИЕ |
 |--------|-------------|
-|Протокол | https |
+|Протокол | HTTPS |
 |user | Необязательное имя пользователя для аутентификации прокси-сервера |
-|пароль | Необязательный пароль для аутентификации прокси-сервера |
+|password | Необязательный пароль для аутентификации прокси-сервера |
 |proxyhost | Адрес или полное доменное имя прокси-сервера или шлюза Log Analytics |
 |порт | Необязательный номер порта прокси-сервера или шлюза Log Analytics |
 
@@ -141,14 +140,14 @@ ms.locfileid: "72932240"
 
 Подключение компьютеров в подписке Azure или гибридной среде напрямую с журналами Azure Monitor можно выполнить с помощью различных методов в зависимости от требований. В следующей таблице описан каждый метод. Эти данные помогут вам определить, какой из методов наиболее подходящий для вашей организации.
 
-|Источник | Метод | Описание|
+|Источник | Метод | ОПИСАНИЕ|
 |-------|-------------|-------------|
-|Виртуальная машина Azure| Расширение виртуальной машины Log Analytics для [Windows](../../virtual-machines/extensions/oms-windows.md) или [Linux](../../virtual-machines/extensions/oms-linux.md) с использованием Azure CLI или шаблона Azure Resource Manager<br>- [вручную из портал Azure](../../azure-monitor/learn/quick-collect-azurevm.md?toc=/azure/azure-monitor/toc.json)<br>- [автоматической подготовки центра безопасности Azure](../../security-center/security-center-enable-data-collection.md)| — Расширение устанавливает агент Log Analytics на виртуальных машинах Azure и регистрирует их в существующей Azure Monitor рабочей области.<br>— Центр безопасности Azure может подготавливать агент Log Analytics на всех поддерживаемых виртуальных машинах Azure и всех новых, созданных, если включить его для отслеживания уязвимостей и угроз безопасности. Если этот флажок установлен, будет подготовлена любая новая или Существующая виртуальная машина без установленного агента.|
+|Azure| Расширение виртуальной машины Log Analytics для [Windows](../../virtual-machines/extensions/oms-windows.md) или [Linux](../../virtual-machines/extensions/oms-linux.md) с использованием Azure CLI или шаблона Azure Resource Manager<br>- [вручную из портал Azure](../../azure-monitor/learn/quick-collect-azurevm.md?toc=/azure/azure-monitor/toc.json)<br>- [автоматической подготовки центра безопасности Azure](../../security-center/security-center-enable-data-collection.md)| — Расширение устанавливает агент Log Analytics на виртуальных машинах Azure и регистрирует их в существующей Azure Monitor рабочей области.<br>— Центр безопасности Azure может подготавливать агент Log Analytics на всех поддерживаемых виртуальных машинах Azure и всех новых, созданных, если включить его для отслеживания уязвимостей и угроз безопасности. Если этот флажок установлен, будет подготовлена любая новая или Существующая виртуальная машина без установленного агента.|
 | Гибридные компьютеры Windows|- [Установка вручную](agent-windows.md)<br>- [DSC службы автоматизации Azure](agent-windows.md#install-the-agent-using-dsc-in-azure-automation)<br>- [Шаблон Resource Manager с Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/MicrosoftMonitoringAgent-ext-win) |Установка агента Microsoft Monitoring Agent из командной строки или автоматически, например с помощью DSC службы автоматизации Azure, [System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/deploy-use/deploy-applications) или шаблона Azure Resource Manager, если Microsoft Azure Stack уже развернут в центре обработки данных.| 
 | Гибридные компьютеры Linux| [Установка вручную](../../azure-monitor/learn/quick-collect-linux-computer.md)|Установка агента для Linux путем вызова сценария-оболочки, размещенного в GitHub. | 
 | System Center Operations Manager|[Интеграция Operations Manager с Log Analytics](../../azure-monitor/platform/om-agents.md) | Настройте интеграцию между журналами Operations Manager и Azure Monitor, чтобы пересылать собранные данные с компьютеров Windows, отправляют отчеты в группу управления.|  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения об источниках данных, доступных для сбора данных из операционных систем Windows или Linux, см. в статье [Data sources in Log Analytics](../../azure-monitor/platform/agent-data-sources.md) (Источники данных в Log Analytics). 
 

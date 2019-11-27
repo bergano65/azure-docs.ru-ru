@@ -1,6 +1,6 @@
 ---
-title: Перемещение конфигурации Azure Site Recovery в другой регион Azure | Документация Майкрософт
-description: Руководство по перемещению конфигурации Site Recovery в другой регион Azure
+title: Перемещение хранилища Azure Site Recovery в другой регион
+description: Описание того, как переместить хранилище Служб восстановления (Azure Site Recovery) в другой регион Azure
 services: site-recovery
 author: rajani-janaki-ram
 ms.service: site-recovery
@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/31/2019
 ms.author: rajanaki
 ms.custom: MVC
-ms.openlocfilehash: 2cf06a0c4e35d22cbad260201183516db2f07436
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: 32dff9a165125ab1949560ce36438ae266cd3036
+ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70013465"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74090296"
 ---
 # <a name="move-a-recovery-services-vault-and-azure-site-recovery-configuration-to-another-azure-region"></a>Перемещение хранилища Служб восстановления и конфигурации Azure Site Recovery в другой регион Azure
 

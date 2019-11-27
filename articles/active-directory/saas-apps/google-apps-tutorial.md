@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 09/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e4449ac3519757bb9670d2d7fec53cb5f3ce152
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: 66d8e13a4e042146ef2b99728e41e14f1dcb3435
+ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71948296"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73885375"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-g-suite"></a>Руководство по интеграции единого входа Azure Active Directory с G Suite
 
@@ -250,7 +250,9 @@ ms.locfileid: "71948296"
 
 ### <a name="create-g-suite-test-user"></a>Создание тестового пользователя G Suite
 
-Цель этого раздела — создать пользователя с именем B.Simon в G Suite. G Suite поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь в G Suite еще не существует, он создается при попытке доступа к G Suite.
+Цель этого раздела — [создать пользователя в G Suite](https://support.google.com/a/answer/33310?hl=en) с именем B.Simon. После того как пользователь будет создан в G Suite вручную, он сможет войти в систему, используя учетные данные для входа в Office 365.
+
+G Suite также поддерживает автоматическую подготовку пользователей. Чтобы настроить автоматическую подготовку пользователей, сначала необходимо [настроить G Suite для автоматической подготовки пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/google-apps-provisioning-tutorial).
 
 > [!NOTE]
 > Если выполнять проверку единого входа, когда подготовка в Azure AD еще не включена, необходимо убедиться, что пользователь уже существует в G Suite.

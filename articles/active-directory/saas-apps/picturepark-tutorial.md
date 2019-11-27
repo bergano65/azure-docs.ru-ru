@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/18/2019
 ms.author: jeedes
-ms.openlocfilehash: 32af532fcb3b3c5a294590bb7a1fa610d1068e25
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 08c5bd8da0dda74156b2d44c8106ed345ef749dd
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67094454"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73177018"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-picturepark"></a>Руководство по Интеграция Azure Active Directory с Picturepark
 
@@ -117,7 +117,7 @@ ms.locfileid: "67094454"
     | |
 
     > [!NOTE]
-    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Picturepark](https://picturepark.com/about/contact/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Picturepark](https://picturepark.com/company/picturepark-customer-support). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. В разделе **Сертификат подписи SAML** щелкните кнопку **Правка**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
 
@@ -238,7 +238,7 @@ ms.locfileid: "67094454"
 
 1. В диалоговом окне **Create User** (Создание пользователя) введите приведенные ниже данные действительной учетной записи Azure AD, которую необходимо подготовить.
    
-    ![Создание пользователя](./media/picturepark-tutorial/ic795069.png "Создание пользователя")
+    ![Создание пользователя](./media/picturepark-tutorial/ic795069.png "Создать пользователя")
    
     a. В текстовое поле **Email Address** (Адрес электронной почты) введите **адрес электронной почты** пользователя, `BrittaSimon@contoso.com`.  
    
@@ -276,5 +276,5 @@ ms.locfileid: "67094454"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

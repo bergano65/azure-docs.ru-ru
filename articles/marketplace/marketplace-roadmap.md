@@ -43,6 +43,6 @@ ms.locfileid: "73826427"
 ) / [Обновление существующего предложения](https://docs.microsoft.com/azure/marketplace/partner-center-portal/update-existing-offer) / [предложения аналитики](https://docs.microsoft.com/azure/marketplace/partner-center-portal/analytics)
 * [Получение поддержки Marketplace в центре партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/support)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Посетите страницу [руководства по публикации в Azure Marketplace и AppSource](https://docs.microsoft.com/azure/marketplace/marketplace-publishers-guide).
+Посетите страницу [руководства по Azure Marketplace и AppSource Publisher](https://docs.microsoft.com/azure/marketplace/marketplace-publishers-guide).

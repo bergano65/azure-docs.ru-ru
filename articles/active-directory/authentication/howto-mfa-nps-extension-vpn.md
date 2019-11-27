@@ -1,22 +1,22 @@
 ---
-title: Интеграция VPN с Azure MFA с помощью расширения сервера политики сети — Azure Active Directory
+title: VPN с Azure MFA с помощью расширения NPS — Azure Active Directory
 description: Интеграция инфраструктуры VPN с Azure MFA с помощью расширения сервера политики сети для Microsoft Azure.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 08/05/2019
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bdf841738296f0d23bec5d68a0ad1ca0401facfb
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: fa0158b99d10b426efb02ca31cef2bc0053a976f
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68812387"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74404692"
 ---
 # <a name="integrate-your-vpn-infrastructure-with-azure-mfa-by-using-the-network-policy-server-extension-for-azure"></a>Интеграция инфраструктуры VPN с Azure MFA с помощью расширения сервера политики сети для Azure
 
@@ -72,19 +72,19 @@ ms.locfileid: "68812387"
 7. После аутентификации и авторизации подключения сервер политики сети, на котором установлено расширение NPS, отправляет сообщение *Access-Accept* RADIUS на VPN-сервер (клиент RADIUS).
 8. Пользователю предоставляется доступ к виртуальному порту на VPN-сервере, и создается зашифрованный VPN-туннель.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 В этом разделе описаны предварительные требования, которые необходимо выполнить, прежде чем можно будет интегрировать MFA с VPN. Прежде чем приступить к работе, следует подготовить приведенные ниже необходимые компоненты:
 
-* Инфраструктура VPN
+* инфраструктура VPN;
 * роль "Службы политики сети и доступа";
 * лицензия Azure MFA;
 * программное обеспечение Windows Server;
 * Библиотеки
 * синхронизация Azure Active Directory (Azure AD) с локальной службой Active Directory;
-* идентификатор GUID Azure Active Directory.
+* Идентификатор GUID Azure Active Directory
 
-### <a name="vpn-infrastructure"></a>Инфраструктура VPN
+### <a name="vpn-infrastructure"></a>инфраструктура VPN;
 
 В этой статье предполагается наличие рабочей инфраструктуры VPN на основе Microsoft Windows Server 2016. Также предполагается, что VPN-сервер не настроен для пересылки запросов на подключение на сервер RADIUS. В этой статье вы настроите инфраструктуру VPN для использования центрального сервера RADIUS.
 
@@ -119,7 +119,7 @@ ms.locfileid: "68812387"
 
 Дополнительные сведения об Azure AD Connect см. в статье [История выпусков версий соединителей](../hybrid/whatis-hybrid-identity.md).
 
-### <a name="azure-active-directory-guid-id"></a>идентификатор GUID Azure Active Directory.
+### <a name="azure-active-directory-guid-id"></a>Идентификатор GUID Azure Active Directory
 
 Чтобы установить расширение NPS, необходимо знать идентификатор GUID Azure Active Directory. Инструкции по поиску идентификатора GUID Azure Active Directory приведены в следующем разделе.
 
@@ -178,7 +178,7 @@ ms.locfileid: "68812387"
 
     ![Укажите окно групп пользователей, чтобы разрешить или запретить доступ](./media/howto-mfa-nps-extension-vpn/image7.png)
 
-9. Щелкните **Далее**.
+9. Нажмите кнопку **Далее**.
 
 10. В окне **Задайте IP-фильтры** щелкните **Далее**.
 
@@ -240,11 +240,11 @@ ms.locfileid: "68812387"
 
 7. В окне **Добавление RADIUS-сервера** выполните следующие действия.
 
-    1\. В поле **Имя сервера** добавьте имя или IP-адрес сервера RADIUS, настроенного в предыдущем разделе.
+    a. В поле **Имя сервера** добавьте имя или IP-адрес сервера RADIUS, настроенного в предыдущем разделе.
 
-    2\. В разделе **Общий секрет** щелкните **Изменить** и введите общий секретный пароль, который вы создали и записали ранее.
+    b. В разделе **Общий секрет** щелкните **Изменить** и введите общий секретный пароль, который вы создали и записали ранее.
 
-    В. В поле **время ожидания (секунды)** введите значение **30**.  
+    c. В поле **время ожидания (секунды)** введите значение **30**.  
     Это необходимо, чтобы предоставить достаточно времени для второго фактора аутентификации.
 
     ![Окно добавления сервера RADIUS, которое настраивает время ожидания](./media/howto-mfa-nps-extension-vpn/image16.png)
@@ -302,7 +302,7 @@ ms.locfileid: "68812387"
 
 ## <a name="configure-multi-factor-authentication"></a>Настройка Многофакторной идентификации
 
-Дополнительные сведения о настройке пользователей для многофакторной проверки подлинности см. в статьях [Планирование развертывания многофакторной идентификации Azure](howto-mfa-getstarted.md#create-conditional-access-policy) с помощью облачной [службы и настройка учетной записи для двухфакторной проверки](../user-help/multi-factor-authentication-end-user-first-time.md) подлинности.
+Дополнительные сведения о настройке пользователей для многофакторной проверки подлинности см. в статьях [Планирование развертывания многофакторной идентификации Azure с помощью облачной](howto-mfa-getstarted.md#create-conditional-access-policy) [службы и настройка учетной записи для двухфакторной проверки](../user-help/multi-factor-authentication-end-user-first-time.md) подлинности.
 
 ## <a name="install-and-configure-the-nps-extension"></a>Установка и настройка расширения NPS
 
@@ -392,7 +392,7 @@ ms.locfileid: "68812387"
 
 6. Перезагрузите сервер.
 
-### <a name="verify-the-configuration"></a>Проверьте конфигурацию
+### <a name="verify-the-configuration"></a>Проверка конфигурации
 
 Чтобы проверить конфигурацию, необходимо установить новое VPN-подключение к VPN-серверу. После успешного ввода учетных данных для основной аутентификации VPN-подключение ожидает прохождения дополнительной аутентификации, прежде чем подключение будет установлено, как показано ниже.
 
@@ -450,7 +450,7 @@ ms.locfileid: "68812387"
 
 Дополнительные сведения см. в разделе [Интеграция существующей инфраструктуры NPS с Многофакторной идентификацией Azure](howto-mfa-nps-extension.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 [Как получить службу Azure Multi-Factor Authentication](concept-mfa-licensing.md)
 

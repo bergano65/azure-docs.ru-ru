@@ -32,7 +32,7 @@ ms.locfileid: "73473316"
 
 * Развертывание Azure AD Connect на сервере, присоединенном к домену, и ограничение административного доступа к администраторам домена или другим жестко управляемым группам безопасности
 
-Дополнительные сведения см. на следующих ресурсах: 
+Дополнительные сведения см. в следующих статьях: 
 
 * [Защита групп администраторов](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-g--securing-administrators-groups-in-active-directory)
 

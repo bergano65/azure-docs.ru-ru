@@ -1,6 +1,6 @@
 ---
-title: Azure Functions diagnostics Overview
-description: Learn how you can troubleshoot issues with your function app with Azure Functions diagnostics.
+title: Обзор диагностики функций Azure
+description: Узнайте, как устранять неполадки в приложении функции с помощью диагностики функций Azure.
 author: yunjchoi
 ms.topic: article
 ms.date: 11/01/2019
@@ -13,46 +13,46 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74227017"
 ---
-# <a name="azure-functions-diagnostics-overview"></a>Azure Functions diagnostics overview
+# <a name="azure-functions-diagnostics-overview"></a>Обзор диагностики функций Azure
 
-When you’re running a function app, you want to be prepared for any issues that may arise, from 4xx errors to trigger failures. Azure Functions diagnostics is an intelligent and interactive experience to help you troubleshoot your function app with no configuration or extra cost. When you do run into issues with your function app, Azure Functions diagnostics points out what’s wrong to guide you to the right information to more easily and quickly troubleshoot and resolve the issue. This article shows you the basics of how to use Azure Functions diagnostics to more quickly diagnose and solve common function app issues.
+При запуске приложения-функции необходимо подготовиться к возникновению любых проблем, возникающих из-за ошибок 4xx, чтобы активировать сбои. Диагностика функций Azure — это интеллектуальный и интерактивный интерфейс, помогающий устранять неполадки в приложении-функции без какой-либо настройки или дополнительной стоимости. Когда вы выполняете проблемы с приложением функции, диагностика функций Azure указывает, что не так, чтобы упростить и быстро устранить проблему и устранить ее. В этой статье приведены основные сведения об использовании диагностики функций Azure для более быстрой диагностики и устранения распространенных проблем с приложениями функций.
 
-## <a name="start-azure-functions-diagnostics"></a>Start Azure Functions diagnostics
+## <a name="start-azure-functions-diagnostics"></a>Запуск диагностики функций Azure
 
-To access Azure Functions diagnostics:
+Чтобы получить доступ к диагностике функций Azure, сделайте следующее:
 
-1. Navigate to your function app in the [Azure portal](https://portal.azure.com).
-2. Select the **Platform features** tab.
-3. Select **Diagnose and solve problems** under **Resource Management**, which opens Azure Functions diagnostics.
-4. Choose a category that best describes the issue of your function app by using the keywords in the homepage tile. You can also type a keyword that best describes your issue in the search bar. For example, you could type `execution` to see a list of diagnostic reports related to your function app execution and open them directly from the homepage.
+1. Перейдите к приложению функции в [портал Azure](https://portal.azure.com).
+2. Перейдите на вкладку **функции платформы** .
+3. Выберите **Диагностика и решение проблем** в разделе **Управление ресурсами**, в результате чего откроется средство диагностики функций Azure.
+4. Выберите категорию, которая наилучшим образом описывает проблемы в приложении-функции, используя ключевые слова на плитке домашней страницы. Можно также ввести ключевое слово, наиболее точно описывающее вашу ошибку на панели поиска. Например, можно ввести `execution`, чтобы просмотреть список диагностических отчетов, связанных с выполнением приложения-функции, и открыть их непосредственно из домашней страницы.
 
 ![Домашняя страница](./media/functions-diagnostics/homepage.png)
 
-## <a name="use-the-interactive-interface"></a>Use the Interactive interface
+## <a name="use-the-interactive-interface"></a>Использование интерактивного интерфейса
 
-Once you select a homepage category that best aligns with your function app's problem, Azure Functions diagnostics' interactive interface, Genie, can guide you through diagnosing and solving problem of your app. You can use the tile shortcuts provided by Genie to view the full diagnostic report of the problem category that you are interested. The tile shortcuts provide you a direct way of accessing your diagnostic metrics.
+После выбора категории домашней страницы, которая наилучшим образом соответствует проблеме приложения-функции, интерактивный интерфейс диагностики функций Azure, Genie, поможет вам выполнить диагностику и устранение проблем приложения. Вы можете использовать ярлыки плиток, предоставляемые Genie, для просмотра полного диагностического отчета интересующей вас категории проблем. Ярлыки плиток обеспечивают прямой доступ к метрикам диагностики.
 
 ![Genie](./media/functions-diagnostics/genie.png)
 
-After selecting a tile, you can see a list of topics related to the issue described in the tile. These topics provide snippets of notable information from the full report. You can select any of these topics to investigate the issues further. Also, you can select **View Full Report** to explore all the topics on a single page.
+После выбора плитки можно просмотреть список разделов, связанных с проблемой, описанной в плитке. Эти разделы содержат важные сведения из полного отчета. Для дальнейшего изучения проблем можно выбрать любой из этих разделов. Кроме того, можно выбрать **Просмотреть полный отчет** , чтобы просмотреть все разделы на одной странице.
 
-![Preview of diagnostic report](./media/functions-diagnostics/preview-of-diagnostic-report.png)
+![Предварительный просмотр диагностического отчета](./media/functions-diagnostics/preview-of-diagnostic-report.png)
 
-## <a name="view-a-diagnostic-report"></a>View a diagnostic report
+## <a name="view-a-diagnostic-report"></a>Просмотр диагностического отчета
 
-After you choose a topic, you can view a diagnostic report specific to your function app. Diagnostic reports use status icons to indicate if any specific issues with your app. You see detailed description of the issue, recommended actions, related-metrics, and helpful docs. Customized diagnostic reports are generated from a series of checks run on your function app. Diagnostic reports can be a useful tool for pinpointing problems in your function app and guiding you towards resolving the issue.
+После выбора раздела можно просмотреть диагностический отчет, относящийся к приложению-функции. В диагностических отчетах используются значки состояния для указания на наличие конкретных проблем с приложением. Вы увидите подробное описание проблемы, Рекомендуемые действия, связанные метрики и полезные документы. Настроенные диагностические отчеты создаются на основе ряда проверок, выполняемых в приложении-функции. Диагностические отчеты могут быть полезным средством для выявления проблем в приложении-функции и разрешения этой проблемы с помощью GUID.
 
-## <a name="find-the-problem-code"></a>Find the problem code 
+## <a name="find-the-problem-code"></a>Поиск кода проблемы 
 
-For script-based functions, you can use **Function Execution** and **Errors under Function App Down or Reporting Errors** to narrow down on the line of code causing exceptions or errors. This feature can be a useful tool for getting to the root cause and fixing issues from a specific line of code. This option isn't available for precompiled C# and Java functions.
+Для функций, основанных на сценариях, можно использовать **выполнение функции** и **ошибки в разделе приложение-функция Down или сообщения об ошибках** , чтобы уменьшить количество строк кода, вызывающих исключения или ошибки. Эта функция может оказаться полезным инструментом для получения основных причин и устранения проблем из определенной строки кода. Этот параметр недоступен для предкомпилированных C# и функций Java.
 
-![Diagnostic report on function execution errors](./media/functions-diagnostics/diagnostic-report-on-function-execution-errors.png)
+![Диагностический отчет об ошибках выполнения функций](./media/functions-diagnostics/diagnostic-report-on-function-execution-errors.png)
 
-![Function exception](./media/functions-diagnostics/function-exception.png)
+![Исключение функции](./media/functions-diagnostics/function-exception.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-You can ask questions or provide feedback on Azure Functions diagnostics at [UserVoice](https://feedback.azure.com/forums/355860-azure-functions). Please include `[Diag]` in the title of your feedback.
+Вы можете задать вопросы или отправить отзыв о диагностике функций Azure в [UserVoice](https://feedback.azure.com/forums/355860-azure-functions). Добавьте `[Diag]` в заголовок вашего отзыва.
 
 > [!div class="nextstepaction"]
-> [Monitor your function apps](functions-monitoring.md)
+> [Мониторинг приложений функций](functions-monitoring.md)

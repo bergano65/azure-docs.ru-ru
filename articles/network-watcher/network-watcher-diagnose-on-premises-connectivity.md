@@ -1,5 +1,6 @@
 ---
-title: Диагностика локального подключения через VPN-шлюз с помощью Наблюдателя за сетями Azure | Документация Майкрософт
+title: Диагностика локального подключения через VPN-шлюз
+titleSuffix: Azure Network Watcher
 description: В этой статье описывается диагностика локальных подключений через VPN-шлюз при помощи устранения неполадок ресурса Наблюдателя за сетями Azure.
 services: network-watcher
 documentationcenter: na
@@ -14,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: kumud
-ms.openlocfilehash: 05335cb6949928244e10641ebe82008275830e67
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c3300338ab37d502646c55411d658ad30581019f
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66754067"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74531829"
 ---
 # <a name="diagnose-on-premises-connectivity-via-vpn-gateways"></a>Диагностика локальных подключений через VPN-шлюзы
 
@@ -39,9 +40,9 @@ VPN-шлюз Azure позволяет создать гибридное реше
 1. Подключение типа "сеть — сеть" (на основе маршрута) — [подключение между VPN-шлюзом и локальным маршрутизатором](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal#CreateConnection).
 1. [Configuring FortiGate](https://github.com/Azure/Azure-vpn-config-samples/blob/master/Fortinet/Current/Site-to-Site_VPN_using_FortiGate.md) (Настройка FortiGate)
 
-Подробные пошаговые инструкции по настройке конфигурации "сеть — сеть" см. в статье: [Создание подключения типа "сеть — сеть" на портале Azure](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md).
+Подробное пошаговое руководство по настройке конфигурации "сеть — сеть" можно найти в статье [Создание виртуальной сети с подключением типа "сеть — сеть" с помощью портала Azure](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md).
 
-Один из важных этапов — настройка параметров связи IPsec. Любая ошибка в настройках приведет к потере подключения между локальной сетью и Azure. В настоящее время VPN-шлюзы Azure настроены для поддержки приведенных ниже параметров IPsec на этапе 1. Обратите внимание, что, как упоминалось ранее, эти параметры нельзя изменить.  Как можно видеть в таблице ниже, алгоритмы шифрования, поддерживаемые VPN-шлюзом Azure, это AES256, AES128 и 3DES.
+Один из важных этапов — настройка параметров связи IPsec. Любая ошибка в настройках приведет к потере подключения между локальной сетью и Azure. В настоящее время VPN-шлюзы Azure настроены для поддержки приведенных ниже параметров IPsec на этапе 1. Как можно видеть в таблице ниже, алгоритмы шифрования, поддерживаемые VPN-шлюзом Azure, это AES256, AES128 и 3DES.
 
 ### <a name="ike-phase-1-setup"></a>Этап 1 настройки протокола IKE
 
@@ -52,7 +53,7 @@ VPN-шлюз Azure позволяет создать гибридное реше
 | Метод проверки подлинности |Общий ключ |Общий ключ |
 | Алгоритмы шифрования |AES256 AES128 3DES |AES256 3DES |
 | Алгоритм хэширования |SHA1(SHA128) |SHA1(SHA128), SHA2(SHA256) |
-| Время существования сопоставления безопасности первого этапа (время) |28 800 сек |10 800 секунд |
+| Время существования сопоставления безопасности первого этапа (время) |28 800 сек |28 800 сек |
 
 Как пользователю, вам потребуется настроить FortiGate. Пример конфигурации можно найти на сайте [GitHub](https://github.com/Azure/Azure-vpn-config-samples/blob/master/Fortinet/Current/fortigate_show%20full-configuration.txt). Невольно вы настроили FortiGate для использования SHA-512 в качестве алгоритма хэширования. Так как этот алгоритм не поддерживается для подключений на основе политик, VPN-подключение не будет работать.
 
@@ -83,7 +84,7 @@ Error: On-premises device rejected Quick Mode settings. Check values.
 
 | Тип ошибки | Причина | Журнал|
 |---|---|---|
-| NoFault | Ошибка не обнаружена. |Да|
+| NoFault | Ошибка не обнаружена. |ДА|
 | GatewayNotFound | Не удается найти шлюз или шлюз не подготовлен. |Нет|
 | PlannedMaintenance |  Выполняется обслуживание экземпляра шлюза.  |Нет|
 | UserDrivenUpdate | Идет обновление, инициированное пользователем. Это может быть операция изменения размера. | Нет |
@@ -91,26 +92,26 @@ Error: On-premises device rejected Quick Mode settings. Check values.
 | PlatformInActive | Существует проблема с платформой. | Нет|
 | ServiceNotRunning | Базовая служба не выполняется. | Нет|
 | NoConnectionsFoundForGateway | У шлюза нет подключений. Это всего лишь предупреждение.| Нет|
-| ConnectionsNotConnected | Ни одно из подключений не установлено. Это всего лишь предупреждение.| Да|
-| GatewayCPUUsageExceeded | Текущее использование ЦП шлюза превышает 95 %. | Да |
+| ConnectionsNotConnected | Ни одно из подключений не установлено. Это всего лишь предупреждение.| ДА|
+| GatewayCPUUsageExceeded | Текущее использование ЦП шлюза превышает 95 %. | ДА |
 
 ### <a name="connection"></a>Подключение
 
 | Тип ошибки | Причина | Журнал|
 |---|---|---|
-| NoFault | Ошибка не обнаружена. |Да|
+| NoFault | Ошибка не обнаружена. |ДА|
 | GatewayNotFound | Не удается найти шлюз или шлюз не подготовлен. |Нет|
 | PlannedMaintenance | Выполняется обслуживание экземпляра шлюза.  |Нет|
 | UserDrivenUpdate | Идет обновление, инициированное пользователем. Это может быть операция изменения размера.  | Нет |
 | VipUnResponsive | Не удается связаться с первичным экземпляром шлюза. Это происходит при сбое пробы работоспособности. | Нет |
 | ConnectionEntityNotFound | Отсутствует конфигурация подключения. | Нет |
 | ConnectionIsMarkedDisconnected | Подключение отмечено как "разъединенное". |Нет|
-| ConnectionNotConfiguredOnGateway | Для базовой службы не настроено подключение. | Да |
-| ConnectionMarkedStandby | Базовая служба помечена как ждущая.| Yes|
-| Authentication | Несоответствие предварительного ключа. | Да|
-| PeerReachability | Одноранговый шлюз недоступен. | Yes|
-| IkePolicyMismatch | У однорангового шлюза имеются политики IKE, которые не поддерживаются в Azure. | Yes|
-| WfpParse Error | Ошибка при анализе журнала WFP. |Да|
+| ConnectionNotConfiguredOnGateway | Для базовой службы не настроено подключение. | ДА |
+| ConnectionMarkedStandby | Базовая служба помечена как ждущая.| ДА|
+| Authentication | Несоответствие предварительного ключа. | ДА|
+| PeerReachability | Одноранговый шлюз недоступен. | ДА|
+| IkePolicyMismatch | У однорангового шлюза имеются политики IKE, которые не поддерживаются в Azure. | ДА|
+| WfpParse Error | Ошибка при анализе журнала WFP. |ДА|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

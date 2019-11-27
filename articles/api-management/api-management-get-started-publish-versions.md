@@ -11,14 +11,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.custom: mvc
 ms.topic: tutorial
-ms.date: 06/15/2018
+ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 1be70d3eb74d3a8f0eddb1e5c22e4234987276b3
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: d0c837ac376f9d496baaf1ed67d0ec80c996804a
+ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70073687"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73176831"
 ---
 # <a name="publish-multiple-versions-of-your-api"></a>Публикация нескольких версий API 
 
@@ -94,11 +94,10 @@ ms.locfileid: "70073687"
 ## <a name="browse-the-developer-portal-to-see-the-version"></a>Обзор портала разработчика для просмотра версии
 
 1. Выберите **Портал разработчика** в верхнем меню.
-2. Выберите **Интерфейсы API**. Обратите внимание, что для **Demo Conference API** отображаются версии **Original** и **v1**.
-3. Выберите **v1**.
-4. Обратите внимание на **URL-адрес запроса** первой операции в списке. В нем видно, что путь URL-адреса API содержит **v1**.
-
-    ![Контекстное меню API: добавление версии](media/api-management-getstarted-publish-versions/developer_portal.png)
+2. Выберите **API**, а затем — **Demo Conference API**.
+3. Появится раскрывающийся список с несколькими версиями рядом с именем API.
+4. Выберите **v1**.
+5. Обратите внимание на **URL-адрес запроса** первой операции в списке. В нем видно, что путь URL-адреса API содержит **v1**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

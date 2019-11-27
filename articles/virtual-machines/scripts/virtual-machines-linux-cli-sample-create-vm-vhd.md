@@ -1,5 +1,5 @@
 ---
-title: Пример скрипта Azure CLI. Создание виртуальной машины Linux с помощью виртуального жесткого диска | Документы Майкрософт
+title: Пример скрипта Azure CLI. Создание виртуальной машины с помощью виртуального жесткого диска
 description: Пример скрипта Azure CLI. Создание виртуальной машины с помощью виртуального жесткого диска.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 03/09/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 93a94e9a32b33ffd1f52231546d6aa6a71c78df0
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 16f4e3e153cbc02f8626199d168d069add48e4b6
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68841415"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74037667"
 ---
 # <a name="create-a-vm-with-a-virtual-hard-disk"></a>Создание виртуальной машины с помощью виртуального жесткого диска
 

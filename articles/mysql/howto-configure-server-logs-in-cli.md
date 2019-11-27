@@ -17,14 +17,14 @@ ms.locfileid: "72030636"
 # <a name="configure-and-access-slow-query-logs-by-using-azure-cli"></a>Настройка и доступ к журналам запросов с высокой занесением с помощью Azure CLI
 Вы можете скачать журналы запросов к базе данных Azure для MySQL с помощью Azure CLI, служебной программы командной строки Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - [сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-cli.md).
 - [Azure CLI](/cli/azure/install-azure-cli) или Azure Cloud Shell в браузере.
 
 ## <a name="configure-logging"></a>Настройка журнала
 Можно настроить на сервере доступ к журналу медленных запросов MySQL, выполнив следующие действия:
-1. Включите занесение в журнал запросов, установив для параметра **замедляют @ no__t-1query @ no__t-2log** значение ON.
+1. Включите ведение журнала запросов, установив для параметра **\_query\_параметр log** значение ON.
 2. Настройте другие параметры, такие как **long\_query\_time** и **log\_slow\_admin\_statements**.
 
 Ознакомьтесь со статьей [Настройка параметров конфигурации сервера с помощью Azure CLI](howto-configure-server-parameters-using-cli.md), чтобы узнать, как задать значение этих параметров с помощью Azure CLI.
@@ -52,5 +52,5 @@ az mysql server-logs list --resource-group myresourcegroup --server mydemoserver
 az mysql server-logs download --name 20170414-mydemoserver-mysql.log --resource-group myresourcegroup --server mydemoserver
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 - Сведения о [очень низких журналах запросов в базе данных Azure для MySQL](concepts-server-logs.md).

@@ -1,25 +1,14 @@
 ---
-title: Журналы ресурсов для реестра контейнеров Azure | Документация Майкрософт
+title: Собирайте & анализа журналов ресурсов
 description: Записывайте и анализируйте события журнала ресурсов для реестра контейнеров Azure, такие как проверка подлинности, отправка образа и извлечение образа.
-services: container-registry
-documentationcenter: ''
-author: dlepow
-manager: gwallace
-editor: ''
-ms.assetid: ''
-ms.service: container-registry
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: multiple
-ms.workload: ''
 ms.date: 10/30/2019
-ms.author: danlep
-ms.openlocfilehash: e419f8c5cf06efc93294f9c428e9102c1f81b36a
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: ada8502724c1779b9bdab2e8ac7e8ea61c256e44
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73180820"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456428"
 ---
 # <a name="azure-container-registry-logs-for-diagnostic-evaluation-and-auditing"></a>Журналы реестра контейнеров Azure для диагностической оценки и аудита
 
@@ -110,7 +99,7 @@ ContainerRegistryRepositoryEvents
 
 Вы также можете выполнять потоковую передачу событий журнала диагностики в [концентратор событий Azure](../event-hubs/event-hubs-what-is-event-hubs.md). Центры событий способны принимать миллионы событий в секунду, позволяя преобразовать и сохранять их с помощью любого поставщика аналитики в реальном времени. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения об использовании [log Analytics](../azure-monitor/log-query/get-started-portal.md) и создании [запросов журналов](../azure-monitor/log-query/get-started-queries.md).
 * Сведения о журналах платформы, доступных на разных уровнях Azure, см. в статье [Обзор журналов платформы Azure](../azure-monitor/platform/platform-logs-overview.md) .

@@ -1,7 +1,7 @@
 ---
-title: 'Multiclass Boosted Decision Tree: Module Reference'
+title: 'Многоклассическое дерево принятия решений: Справочник по модулям'
 titleSuffix: Azure Machine Learning
-description: Learn how to use the Multiclass Boosted Decision Tree module in Azure Machine Learning to create a classifier using labeled data.
+description: Узнайте, как использовать модуль многоклассовых деревьев решений в Машинное обучение Azure для создания классификатора с помощью помеченных данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -18,46 +18,46 @@ ms.locfileid: "74232609"
 ---
 # <a name="multiclass-boosted-decision-tree"></a>Мультиклассовое увеличивающееся дерево принятия решений
 
-This article describes a module in Azure Machine Learning designer (preview).
+В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
 
-Use this module to create a machine learning model that is based on the boosted decision trees algorithm.
+Этот модуль используется для создания модели машинного обучения на основе алгоритма повышенного дерева принятия решений.
 
-A boosted decision tree is an ensemble learning method in which the second tree corrects for the errors of the first tree, the third tree corrects for the errors of the first and second trees, and so forth. Predictions are based on the ensemble of trees together.
+Увеличивающееся дерево принятия решений — это метод обучения ансамблей, в котором второе дерево исправляет ошибки первого дерева, а третье дерево исправляет ошибки первого и второго деревьев и т. д. Прогнозы основываются на ансамблейе деревьев.
 
 ## <a name="how-to-configure"></a>Процесс настройки 
 
-This module creates an untrained classification model. Because classification is a supervised learning method, you need a *labeled dataset* that includes a label column with a value for all rows.
+Этот модуль создает обученную модель классификации. Поскольку классификация является контролируемым методом обучения, необходим *набор данных с меткой* , содержащий столбец меток со значением для всех строк.
 
-You can train this type of model by using the [Train Model](././train-model.md). 
+Этот тип модели можно обучить с помощью [модели обучения](././train-model.md). 
 
-1.  Add the **Multiclass Boosted Decision Tree** module to your pipeline.
+1.  Добавьте в конвейер модуль **многоклассовых деревьев решений с повышенными классами** .
 
-1.  Specify how you want the model to be trained by setting the **Create trainer mode** option.
+1.  Укажите, как должна быть обучена модель, установив параметр " **создать режим инструктора** ".
 
-    + **Single Parameter**: If you know how you want to configure the model, you can provide a specific set of values as arguments.
+    + **Один параметр**. Если вы умеете настраивать модель, вы можете указать конкретный набор значений в качестве аргументов.
 
 
-    *  **Maximum number of leaves per tree** limits the maximum number of terminal nodes (leaves) that can be created in any tree.
+    *  **Максимальное число конечных объектов на дерево** ограничивает максимальное количество узлов терминалов (листья), которые могут быть созданы в любом дереве.
     
-        By increasing this value, you potentially increase the size of the tree and achieve higher precision, at the risk of overfitting and longer training time.
+        Увеличивая это значение, вы потенциально увеличиваете размер дерева и достигаете более высокой точности, с риском перегонки и длительного обучения.
   
-    * **Minimum number of samples per leaf node** indicates the number of cases required to create any terminal node (leaf) in a tree.  
+    * **Минимальное число выборок на конечный узел** указывает количество вариантов, необходимых для создания любого узла терминала (конечного) в дереве.  
 
-         By increasing this value, you increase the threshold for creating new rules. For example, with the default value of 1, even a single case can cause a new rule to be created. If you increase the value to 5, the training data would have to contain at least five cases that meet the same conditions.
+         Увеличивая это значение, вы увеличиваете порог для создания новых правил. Например, значение по умолчанию, равное 1, может привести к созданию нового правила. Если увеличить значение до 5, то обучающие данные должны содержать не менее пяти вариантов, отвечающих тем же условиям.
 
-    * **Learning rate** defines the step size while learning. Enter a number between 0 and 1.
+    * **Скорость обучения** определяет размер шага во время обучения. Введите число от 0 до 1.
 
-         The learning rate determines how fast or slow the learner converges on an optimal solution. If the step size is too large, you might overshoot the optimal solution. If the step size is too small, training takes longer to converge on the best solution.
+         Скорость обучения определяет, насколько быстро или медленнее выполняется схождение на оптимальном решении. Если размер шага слишком велик, вы можете отклонение оптимальное решение. Если размер шага слишком мал, обучение на лучшее решение занимает больше времени.
 
-    * **Number of trees constructed** indicates the total number of decision trees to create in the ensemble. By creating more decision trees, you can potentially get better coverage, but training time will increase.
+    * **Число построенных деревьев** указывает общее число деревьев принятия решений, создаваемых в ансамблей. Создавая больше деревьев принятия решений, вы можете получить более эффективное покрытие, но время обучения увеличится.
 
-    *  **Random number seed** optionally sets a non-negative integer to use as the random seed value. Specifying a seed ensures reproducibility across runs that have the same data and parameters.  
+    *  **Начальное число случайных чисел** дополнительно задает неотрицательное целое число, используемое в качестве значения случайного заполнения. Указание начального значения обеспечивает воспроизводимость между запусками с одинаковыми данными и параметрами.  
 
-         The random seed is set by default to 42. Successive runs using different random seeds can have different results.
+         Случайное начальное значение устанавливается по умолчанию равным 42. Последовательные запуски, использующие разные случайные начальные значения, могут иметь разные результаты.
 
 > [!Note]
-> If you set **Create trainer mode** to **Single Parameter**, connect a tagged dataset and the [Train Model](./train-model.md) module.
+> Если присвоить **параметру** **создать режим инструктора** значение Single, подключить набор данных с тегами и модуль [обучение модели](./train-model.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-See the [set of modules available](module-reference.md) to Azure Machine Learning. 
+См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 

@@ -13,21 +13,26 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: javascript
 ms.topic: quickstart
-ms.date: 09/24/2018
+ms.date: 10/25/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 20c62d379006382d4208e4b111202581bc75454f
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: c239b88a67e1be19e3a95130839ab6fd4598fe77
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68380753"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73150043"
 ---
 # <a name="quickstart-build-an-angularjs-single-page-app-for-sign-in-and-sign-out-with-azure-active-directory"></a>Краткое руководство. Создание одностраничного приложения AngularJS для входа и выхода с помощью Azure Active Directory
 
 [!INCLUDE [active-directory-develop-applies-v1-adal](../../../includes/active-directory-develop-applies-v1-adal.md)]
+
+> [!IMPORTANT]
+> [Платформа удостоверений Майкрософт](v2-overview.md) — это решение на основе платформы для разработчиков Azure Active Directory (Azure AD). С ее помощью разработчики могут создавать приложения, которые обеспечивают вход с использованием любых удостоверений Майкрософт и получение маркеров для вызова таких программных API-интерфейсов Майкрософт, как Microsoft Graph или других программных интерфейсов, созданных разработчиками.
+> Если вы планируете включить вход для личных учетных записей помимо рабочих и учебных учетных записей, можно использовать *[конечную точку платформы удостоверений Майкрософт](azure-ad-endpoint-comparison.md)* .
+> Это краткое руководство предназначено для более старой конечной точки Azure AD версии 1.0. Для новых проектов рекомендуется использовать конечную точку версии 2.0. Дополнительные сведения приведены в [этом руководстве по JavaScript SPA](tutorial-v2-javascript-spa.md), а также [в этой статье](active-directory-v2-limitations.md) о *конечной точке платформы удостоверений Майкрософт*.
 
 Используя Azure Active Directory (Azure AD), разработчики могут не только легко реализовать процедуры входа и выхода пользователей, но и защищать вызовы к API одностраничных приложений по протоколу OAuth. Также разработчик сможет осуществлять аутентификацию пользователей по учетным записям Active Directory Windows Server и использовать любые веб-интерфейсы API, защищенные в Azure AD, включая API Office 365 или API Azure.
 
@@ -45,9 +50,6 @@ ms.locfileid: "68380753"
 1. Зарегистрировать приложения в Azure AD.
 2. Установить библиотеку ADAL и настроить одностраничное приложение.
 3. Применить ADAL для защиты страниц одностраничного приложения.
-
-> [!NOTE]
-> Если вы планируете включить вход для личных учетных записей помимо рабочих и учебных учетных записей, можно использовать *[конечную точку платформы удостоверений Майкрософт](azure-ad-endpoint-comparison.md)* . Дополнительные сведения приведены в [этом руководстве по JavaScript SPA](tutorial-v2-javascript-spa.md), а также [в этой статье](active-directory-v2-limitations.md) о *конечной точке платформы удостоверений Майкрософт*. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/17/2018
 ms.author: tomfitz
 ms.custom: include file
-ms.openlocfilehash: ab55441650085f6ca89f05613fe74dd4ae3cba54
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: b1252c455c2dfad2963f914ee746bcb932e59aa9
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185673"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74451595"
 ---
 1. Чтобы просмотреть теги для ресурса или группы ресурсов, ищите существующие теги в обзоре. Если теги ранее не применялись, то список будет пустым.
    
@@ -52,9 +52,9 @@ ms.locfileid: "67185673"
 
 Чтобы просмотреть все ресурсы с тегом, сделайте следующее.
 
-1. Выберите **Все службы** > **Теги**.
+1. В меню портал Azure выберите **все службы**. Выберите **Общие**, а затем — **теги**.
 
-     ![Поиск по тегу](./media/resource-manager-tag-resources/find-tags.png)
+     ![Поиск по тегу](./media/resource-manager-tag-resources/find-tags-general.png)
 
 1. Выберите тег для просмотра ресурсов.
 
@@ -66,8 +66,8 @@ ms.locfileid: "67185673"
 
 1. Закрепите представление на панели мониторинга, чтобы всегда иметь его под рукой.
 
-     ![Закрепить на панели мониторинга](./media/resource-manager-tag-resources/pin-to-dashboard.png)
+     ![Закрепление на панели мониторинга](./media/resource-manager-tag-resources/pin-to-dashboard.png)
 
 1. Представление доступно на панели мониторинга.
 
-     ![панель мониторинга](./media/resource-manager-tag-resources/dashboard.png)
+     ![Панель мониторинга](./media/resource-manager-tag-resources/dashboard-with-view.png)

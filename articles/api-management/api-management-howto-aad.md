@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: b0c3487bb77f32483d6d65cd0a4b1f637267eabf
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 067d4488b064ede572a4b3ad94c94fb1552c827d
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74144358"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74454452"
 ---
 # <a name="authorize-developer-accounts-by-using-azure-active-directory-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью Azure Active Directory в управлении API Azure
 
@@ -109,6 +109,9 @@ ms.locfileid: "74144358"
 ![Мини-приложение кнопок AAD](./media/api-management-howto-aad/portal-oauth-widget.png)
 
 Хотя новая учетная запись будет автоматически создана всякий раз, когда новый пользователь входит в состав AAD, вы можете добавить то же мини-приложение на страницу регистрации.
+
+> [!IMPORTANT]
+> Чтобы изменения AAD вступили в силу, необходимо [повторно опубликовать портал](api-management-howto-developer-portal-customize.md#publish) .
 
 ## <a name="legacy-developer-portal---how-to-sign-in-with-azure-ad"></a>Устаревший портал разработчика. как войти с помощью Azure AD
 

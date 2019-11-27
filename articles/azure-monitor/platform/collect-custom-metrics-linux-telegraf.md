@@ -1,6 +1,6 @@
 ---
 title: Получение пользовательских метрик для виртуальной машины Linux с помощью агента Инфлуксдата Telegraf
-description: Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf InfluxData
+description: инструкции по развертыванию агента Инфлуксдата Telegraf на виртуальной машине Linux в Azure и настройке агента для публикации метрик в Azure Monitor.
 author: anirudhcavale
 services: azure-monitor
 ms.service: azure-monitor
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 05cc1dcb2a6fa4e7790fa57cd2136d21d94b8a0b
-ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
+ms.openlocfilehash: 4e8783d500ed7dd6e8e5d518d2a4fbe5e5e1e276
+ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73200523"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74305289"
 ---
 # <a name="collect-custom-metrics-for-a-linux-vm-with-the-influxdata-telegraf-agent"></a>Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf InfluxData
 
@@ -41,7 +41,7 @@ Azure Monitor позволяет собирать пользовательски
 1. В качестве **типа проверки подлинности**выберите **пароль**. Затем введите пароль, который будет использоваться позже для SSH в этой виртуальной машине. 
 1. Выберите **Создание новой группы ресурсов**. Затем укажите имя, например **myResourceGroup**. Выберите свое **Расположение**. Нажмите кнопку **ОК**. 
 
-    ![Создание виртуальной машины Ubuntu.](./media/collect-custom-metrics-linux-telegraf/create-vm.png)
+    ![создание виртуальной машины Ubuntu;](./media/collect-custom-metrics-linux-telegraf/create-vm.png)
 
 1. Выберите размер виртуальной машины. Вы можете установить фильтр, например по **типу вычислений** или **типу диска**. 
 
@@ -130,7 +130,7 @@ sudo systemctl start telegraf
 
 Если группа ресурсов, виртуальная машина и все связанные с ними ресурсы вам больше не требуются, их можно удалить. Для этого выберите группу ресурсов для виртуальной машины и нажмите кнопку **Удалить**. Затем подтвердите имя удаляемой группы ресурсов. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
 
 

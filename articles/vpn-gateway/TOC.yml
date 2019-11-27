@@ -156,7 +156,7 @@
           href: vpn-gateway-howto-always-on-user-tunnel.md
         - name: Объявление пользовательских маршрутов для P2S-клиентов
           href: vpn-gateway-p2s-advertise-custom-routes.md
-    - name: Создание избыточного между зонами шлюза виртуальной сети в Зонах доступности Azure
+    - name: Создание избыточного между зонами шлюза
       href: create-zone-redundant-vnet-gateway.md
     - name: Настройка политик IPsec/IKE для подключений
       href: vpn-gateway-ipsecikepolicy-rm-powershell.md

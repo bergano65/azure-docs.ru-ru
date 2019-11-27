@@ -11,16 +11,16 @@ ms.service: virtual-machines-sql
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: infrastructure-services
-ms.date: 05/04/2018
+ms.date: 11/07/2019
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 68fda45038da48660da0c29787b3a86e00d9b129
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 28f00db3b604534be5ff9cee79c0aacc41f066b5
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74033585"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74464148"
 ---
 # <a name="how-to-provision-a-windows-sql-server-virtual-machine-in-the-azure-portal"></a>Как подготовить виртуальную машину SQL Server на платформе Windows на портале Azure
 
@@ -140,7 +140,7 @@ ms.locfileid: "74033585"
 | [Конфигурация хранилища](#storage-configuration) |
 | [Автоматическое исправление](#automated-patching) |
 | [Автоматическое резервное копирование](#automated-backup) |
-| [Службы R Services (Расширенная аналитика)](#r-services-advanced-analytics) |
+| [Службы машинного обучения](#machine-learning-services) |
 
 
 ### <a name="connectivity"></a>Соединение
@@ -242,9 +242,9 @@ ms.locfileid: "74033585"
 Дополнительную информацию см. в статье [Автоматическая архивация SQL Server на виртуальных машинах Azure (Resource Manager)](virtual-machines-windows-sql-automated-backup.md).
 
 
-### <a name="r-services-advanced-analytics"></a>Службы R Services (Расширенная аналитика)
+### <a name="machine-learning-services"></a>Службы машинного обучения
 
-Имеется возможность включить [SQL Server R Services (Расширенная аналитика)](/sql/advanced-analytics/r/sql-server-r-services/). Этот параметр позволяет использовать в SQL Server 2017 расширенные средства аналитики. Выберите **включить** в окне **параметры SQL Server** .
+Имеется возможность включить [службы машинного обучения](/sql/advanced-analytics/). Этот параметр позволяет использовать машинное обучение с Python и R в SQL Server 2017. Выберите **включить** в окне **параметры SQL Server** .
 
 
 ## <a name="4-review--create"></a>4. Проверка и создание

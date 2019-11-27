@@ -1,6 +1,6 @@
 ---
-title: Azure Active Directory security defaults
-description: Security default policies that help protect organizations from common attacks
+title: Azure Active Directory параметры безопасности по умолчанию
+description: Политики безопасности по умолчанию, помогающие защитить организации от распространенных атак
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
@@ -18,116 +18,116 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74208401"
 ---
-# <a name="what-are-security-defaults"></a>What are security defaults?
+# <a name="what-are-security-defaults"></a>Что такое параметры безопасности по умолчанию?
 
-Managing security can be difficult when common identity-related attacks are becoming more and more popular. These attacks include password spray, replay, and phishing.
+Управление безопасностью может быть затруднительным, если распространенные атаки, связанные с удостоверениями, становятся все более популярными. К таким атакам относятся распыление паролей, воспроизведение и фишинг.
 
-Security defaults in Azure Active Directory (Azure AD) make it easier to be secure and help protect your organization. Security defaults contain preconfigured security settings for common attacks. 
+Параметры безопасности по умолчанию в Azure Active Directory (Azure AD) упрощают защиту и защиту Организации. Параметры безопасности по умолчанию содержат предварительно настроенные настройки безопасности для распространенных атак. 
 
-Microsoft is making security defaults available to everyone. The goal is to ensure that all organizations have a basic level of security enabled at no extra cost. You turn on security defaults in the Azure portal.
+Корпорация Майкрософт делает параметры безопасности по умолчанию доступными для всех. Цель состоит в том, чтобы гарантировать, что все организации имеют базовый уровень безопасности без дополнительной оплаты. Вы включаете параметры безопасности по умолчанию в портал Azure.
 
-![Screenshot of the Azure portal with the toggle to enable security defaults](./media/concept-conditional-access-security-defaults/security-defaults-azure-ad-portal.png)
+![Снимок экрана портал Azure с переключателем для включения параметров безопасности по умолчанию](./media/concept-conditional-access-security-defaults/security-defaults-azure-ad-portal.png)
  
-The following security configurations will be turned on in your tenant. 
+В клиенте будут включены следующие конфигурации безопасности. 
 
-## <a name="unified-multi-factor-authentication-registration"></a>Unified Multi-Factor Authentication registration
+## <a name="unified-multi-factor-authentication-registration"></a>Регистрация единой многофакторной проверки подлинности
 
-All users in your tenant must register for multi-factor authentication (MFA) in the form of the Azure Multi-Factor Authentication service. Users have 14 days to register for Multi-Factor Authentication by using the Microsoft Authenticator app. After the 14 days have passed, the user won't be able to sign in until Multi-Factor Authentication registration is finished.
+Все пользователи в клиенте должны зарегистрироваться для использования многофакторной идентификации (MFA) в форме службы многофакторной идентификации Azure. У пользователей есть 14 дней для регистрации многофакторной проверки подлинности с помощью Microsoft Authenticator приложения. По истечении 14 дней пользователь не сможет войти в систему, пока не завершится регистрация многофакторной проверки подлинности.
 
-We understand that some users might be out of office or won't sign in during the 14 days immediately after enabling security defaults. To ensure that every user has ample time to register for Multi-Factor Authentication, the 14-day period is unique for each user. A user's 14-day period begins after their first successful interactive sign-in after you enable security defaults.
+Мы понимаем, что некоторые пользователи могут выйти из офиса или не войти в течение 14 дней сразу после включения параметров безопасности по умолчанию. Чтобы каждый пользователь получил достаточно времени для регистрации многофакторной идентификации, 14-дневный период уникален для каждого пользователя. 14-дневный период пользователя начинается после первого успешного интерактивного входа после включения параметров безопасности по умолчанию.
 
-## <a name="multi-factor-authentication-enforcement"></a>Multi-Factor Authentication enforcement
+## <a name="multi-factor-authentication-enforcement"></a>Применение многофакторной проверки подлинности
 
-### <a name="protecting-administrators"></a>Protecting administrators
+### <a name="protecting-administrators"></a>Защита администраторов
 
-Users with access to privileged accounts have increased access to your environment. Из-за возможностей этих учетных записей при работе с ними следует соблюдать осторожность. One common method to improve the protection of privileged accounts is to require a stronger form of account verification for sign-in. In Azure AD, you can get a stronger account verification by requiring Multi-Factor Authentication.
+Пользователи с доступом к привилегированным учетным записям имеют повышенный доступ к вашей среде. Из-за возможностей этих учетных записей при работе с ними следует соблюдать осторожность. Одним из распространенных способов улучшения защиты привилегированных учетных записей является требование более надежной проверки учетной записи для входа. В Azure AD можно получить более надежную проверку учетной записи, запросив многофакторную проверку подлинности.
 
-After registration with Multi-Factor Authentication is finished, the following nine Azure AD administrator roles will be required to perform additional authentication every time they sign in:
+После завершения регистрации с многофакторной проверкой подлинности необходимо выполнить следующие девять ролей администратора Azure AD, чтобы выполнять дополнительную проверку подлинности при каждом входе:
 
-- Глобальный администратор.
+- Глобальный администратор
 - администратор SharePoint;
 - администратор Exchange;
 - Администратор условного доступа
 - Администратор безопасности
-- Helpdesk administrator or password administrator
+- Администратор службы технической поддержки или администратор паролей
 - Администратор выставления счетов
 - Администратор пользователей
-- Authentication administrator
+- Администратор проверки подлинности
 
-### <a name="protecting-all-users"></a>Protecting all users
+### <a name="protecting-all-users"></a>Защита всех пользователей
 
-We tend to think that administrator accounts are the only accounts that need extra layers of authentication. Administrators have broad access to sensitive information and can make changes to subscription-wide settings. But attackers tend to target end users. 
+Мы будем думать, что учетные записи администратора являются единственными учетными записями, требующими дополнительных уровней проверки подлинности. Администраторы имеют широкие возможности доступа к конфиденциальным сведениям и могут вносить изменения в параметры, относящиеся к подписке. Но злоумышленники обычно предназначены для конечных пользователей. 
 
-After these attackers gain access, they can request access to privileged information on behalf of the original account holder. They can even download the entire directory to perform a phishing attack on your whole organization. 
+После того, как злоумышленники получат доступ, они смогут запросить доступ к привилегированным сведениям от имени владельца исходной учетной записи. Они могут даже скачать весь каталог, чтобы выполнить фишинговую атаку для всей Организации. 
 
-One common method to improve protection for all users is to require a stronger form of account verification, such as Multi-Factor Authentication, for everyone. After users finish Multi-Factor Authentication registration, they'll be prompted for additional authentication whenever necessary.
+Одним из распространенных способов улучшения защиты для всех пользователей является требование более надежной проверки учетной записи, например многофакторной проверки подлинности, для всех. После завершения регистрации многофакторной проверки подлинности пользователи будут получать запрос на дополнительную проверку подлинности при необходимости.
 
-### <a name="blocking-legacy-authentication"></a>Blocking legacy authentication
+### <a name="blocking-legacy-authentication"></a>Блокирование устаревшей проверки подлинности
 
-To give your users easy access to your cloud apps, Azure AD supports a variety of authentication protocols, including legacy authentication. *Legacy authentication* is a term that refers to an authentication request made by:
+Чтобы предоставить пользователям простой доступ к облачным приложениям, Azure AD поддерживает различные протоколы проверки подлинности, включая устаревшую проверку подлинности. *Устаревшая проверка подлинности* — это термин, который ссылается на запрос проверки подлинности, сделанный:
 
-- Older Office clients that don't use modern authentication (for example, an Office 2010 client).
-- Any client that uses older mail protocols such as IMAP, SMTP, or POP3.
+- Более старые клиенты Office, которые не используют современную проверку подлинности (например, клиент Office 2010).
+- Любой клиент, использующий более старые почтовые протоколы, такие как IMAP, SMTP или POP3.
 
-Today, the majority of compromising sign-in attempts come from legacy authentication. Legacy authentication does not support Multi-Factor Authentication. Even if you have a Multi-Factor Authentication policy enabled on your directory, an attacker can authenticate by using an older protocol and bypass Multi-Factor Authentication. 
+Сегодня большинство попыток входа в систему поступили от устаревшей проверки подлинности. Устаревшая проверка подлинности не поддерживает многофакторную проверку подлинности. Даже если в каталоге включена политика многофакторной проверки подлинности, злоумышленник может пройти проверку подлинности с помощью старого протокола и обойти многофакторную проверку подлинности. 
 
-After security defaults are enabled in your tenant, all authentication requests made by an older protocol will be blocked. Security defaults don't block Exchange ActiveSync.
+После включения параметров безопасности по умолчанию в клиенте все запросы проверки подлинности, созданные с помощью старого протокола, будут заблокированы. Параметры безопасности по умолчанию не блокируют Exchange ActiveSync.
 
-### <a name="protecting-privileged-actions"></a>Protecting privileged actions
+### <a name="protecting-privileged-actions"></a>Защита привилегированных действий
 
-Organizations use a variety of Azure services managed through the Azure Resource Manager API, including:
+Организации используют различные службы Azure, управляемые через API Azure Resource Manager, в том числе:
 
-- портала Azure 
+- портале Azure 
 - Azure PowerShell 
-- Azure CLI
+- Интерфейс командной строки Azure
 
-Using Azure Resource Manager to manage your services is a highly privileged action. Azure Resource Manager can alter tenant-wide configurations, such as service settings and subscription billing. Single-factor authentication is vulnerable to a variety of attacks like phishing and password spray. 
+Использование Azure Resource Manager для управления службами — это действие с высоким уровнем привилегий. Azure Resource Manager может изменять конфигурации на уровне клиента, такие как параметры службы и выставление счетов по подписке. Однофакторная проверка подлинности уязвима для различных атак, таких как фишинг и распыление паролей. 
 
-It's important to verify the identity of users who want to access Azure Resource Manager and update configurations. You verify their identity by requiring additional authentication before you allow access.
+Важно проверить подлинность пользователей, которым требуется доступ к Azure Resource Manager и конфигурациям обновления. Удостоверение проверяется путем потребовать дополнительной проверки подлинности перед тем, как разрешить доступ.
 
-After you enable security defaults in your tenant, any user who's accessing the Azure portal, Azure PowerShell, or the Azure CLI will need to complete additional authentication. This policy applies to all users who are accessing Azure Resource Manager, whether they're an administrator or a user. 
+После включения параметров безопасности по умолчанию в клиенте любой пользователь, обращающийся к портал Azure, Azure PowerShell или Azure CLI потребуется выполнить дополнительную проверку подлинности. Эта политика применяется ко всем пользователям, обращающимся к Azure Resource Manager, будь это администратор или пользователь. 
 
-If the user isn't registered for Multi-Factor Authentication, the user will be required to register by using the Microsoft Authenticator app in order to proceed. No 14-day Multi-Factor Authentication registration period will be provided.
+Если пользователь не зарегистрирован для многофакторной проверки подлинности, для продолжения пользователю потребуется зарегистрироваться с помощью Microsoft Authenticator приложения. Не будет указан 14-дневный период регистрации многофакторной проверки подлинности.
 
 ## <a name="deployment-considerations"></a>Рекомендации по развертыванию
 
-The following additional considerations are related to deployment of security defaults for your tenant.
+Следующие дополнительные рекомендации относятся к развертыванию параметров безопасности по умолчанию для клиента.
 
-### <a name="older-protocols"></a>Older protocols
+### <a name="older-protocols"></a>Старые протоколы
 
-Mail clients use older authentication protocols (like IMAP, SMTP, and POP3) to make authentication requests. These protocols don't support Multi-Factor Authentication. Most of the account compromises that Microsoft sees are from attacks against older protocols that are trying to bypass Multi-Factor Authentication. 
+Почтовые клиенты используют старые протоколы проверки подлинности (например, IMAP, SMTP и POP3) для выполнения запросов проверки подлинности. Эти протоколы не поддерживают многофакторную проверку подлинности. Большая часть учетной записи нарушает атаки, которые видит Корпорация Майкрософт, от атак на более старые протоколы, которые пытаются обойти многофакторную проверку подлинности. 
 
-To ensure that Multi-Factor Authentication is required for signing in to an administrative account and that attackers can't bypass it, security defaults block all authentication requests made to administrator accounts from older protocols.
+Чтобы убедиться, что для входа в учетную запись администратора требуется многофакторная проверка подлинности и что злоумышленники не могут обходить ее, по умолчанию параметры безопасности блокируют все запросы проверки подлинности, выполненные учетным записям администратора из старых протоколов.
 
 > [!WARNING]
-> Before you enable this setting, make sure your administrators aren't using older authentication protocols. For more information, see [How to move away from legacy authentication](concept-conditional-access-block-legacy-authentication.md).
+> Перед включением этого параметра убедитесь, что администраторы не используют старые протоколы проверки подлинности. Дополнительные сведения см. [в разделе как удалить устаревшую проверку подлинности](concept-conditional-access-block-legacy-authentication.md).
 
-### <a name="conditional-access"></a>Условный доступ
+### <a name="conditional-access"></a>условный доступ;
 
-You can use Conditional Access to configure policies that provide the same behavior enabled by security defaults. If you're using Conditional Access and have Conditional Access policies enabled in your environment, security defaults won't be available to you. If you have a license that provides Conditional Access but don't have any Conditional Access policies enabled in your environment, you are welcome to use security defaults until you enable Conditional Access policies.
+Условный доступ можно использовать для настройки политик, обеспечивающих то же поведение, что и параметры безопасности по умолчанию. Если вы используете условный доступ и в вашей среде включены политики условного доступа, параметры безопасности по умолчанию не будут доступны. Если у вас есть лицензия, которая предоставляет условный доступ, но в вашей среде не включены политики условного доступа, вы можете использовать параметры безопасности по умолчанию, пока не будут включены политики условного доступа.
 
-![Warning message that you can have security defaults or Conditional Access not both](./media/concept-conditional-access-security-defaults/security-defaults-conditional-access.png)
+![Предупреждающее сообщение о том, что можно настроить параметры безопасности по умолчанию или условный доступ не одновременно](./media/concept-conditional-access-security-defaults/security-defaults-conditional-access.png)
 
-Here are step-by-step guides on how you can use Conditional Access to configure equivalent policies:
+Ниже приведены пошаговые инструкции по использованию условного доступа для настройки эквивалентных политик.
 
-- [Require MFA for administrators](howto-conditional-access-policy-admin-mfa.md)
-- [Require MFA for Azure management](howto-conditional-access-policy-azure-management.md)
-- [Block legacy authentication](howto-conditional-access-policy-block-legacy.md)
-- [Require MFA for all users](howto-conditional-access-policy-all-users-mfa.md)
-- [Require Azure MFA registration](../identity-protection/howto-identity-protection-configure-mfa-policy.md) - Requires Azure AD Identity Protection
+- [Требовать MFA для администраторов](howto-conditional-access-policy-admin-mfa.md)
+- [Требовать MFA для управления Azure](howto-conditional-access-policy-azure-management.md)
+- [Блокировать устаревшую проверку подлинности](howto-conditional-access-policy-block-legacy.md)
+- [Требовать MFA для всех пользователей](howto-conditional-access-policy-all-users-mfa.md)
+- [Требовать регистрацию Azure MFA](../identity-protection/howto-identity-protection-configure-mfa-policy.md) — требуется защита идентификации Azure AD
 
-## <a name="enabling-security-defaults"></a>Enabling security defaults
+## <a name="enabling-security-defaults"></a>Включение параметров безопасности по умолчанию
 
-To enable security defaults in your directory:
+Чтобы включить параметры безопасности по умолчанию в каталоге, выполните следующие действия.
 
-1. Sign in to the [Azure portal](https://portal.azure.com) as a security administrator, Conditional Access administrator, or global administrator.
-1. Browse to **Azure Active Directory** > **Properties**.
-1. Select **Manage security defaults**.
-1. Set the **Enable security defaults** toggle to **Yes**.
+1. Войдите в [портал Azure](https://portal.azure.com) в качестве администратора безопасности, администратора условного доступа или глобального администратора.
+1. Перейдите к **Azure Active Directory** > **свойства**.
+1. Выберите **Управление параметрами безопасности по умолчанию**.
+1. Установите переключатель **включить параметры безопасности по умолчанию** в положение **Да**.
 1. Щелкните **Сохранить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-[Common Conditional Access policies](concept-conditional-access-policy-common.md)
+[Общие политики условного доступа](concept-conditional-access-policy-common.md)
 
-[What is Conditional Access?](overview.md)
+[Что такое условный доступ?](overview.md)

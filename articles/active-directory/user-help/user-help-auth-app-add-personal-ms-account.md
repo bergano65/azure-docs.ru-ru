@@ -1,6 +1,6 @@
 ---
-title: Добавление персонального учетная запись Майкрософт в приложение для проверки подлинности Azure AD
-description: Сведения о добавлении личных учетных записей, предоставленных корпорацией Майкрософт, например Outlook.com или Xbox LIVE, в приложение Microsoft Authenticator для двухфакторной проверки подлинности.
+title: Добавление личного учетная запись Майкрософт в приложение Microsoft Authenticator — Azure AD
+description: Добавьте личные учетные записи Майкрософт, например для Outlook.com или Xbox LIVE, в приложение Microsoft Authenticator, чтобы проверить удостоверение при использовании двухфакторной проверки подлинности.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -12,14 +12,14 @@ ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ca01aad76bfbeba0cf56be8ee74287a79f6346e
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 28fd29c1f3f393c37c9e9a8d0995766258c2eb45
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820245"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74278903"
 ---
-# <a name="add-your-personal-microsoft-accounts"></a>Добавление личных учетных записей Майкрософт
+# <a name="add-personal-microsoft-accounts-to-the-microsoft-authenticator-app"></a>Добавление личных учетных записей Майкрософт в приложение Microsoft Authenticator
 
 Добавьте личные учетные записи Майкрософт, например Outlook.com и Xbox LIVE, в приложение Microsoft Authenticator как для стандартного двухфакторного процесса проверки подлинности, так и для входа в систему без пароля.
 
@@ -66,7 +66,7 @@ ms.locfileid: "73820245"
 
     Ваша личная учетная запись добавлена в приложение Microsoft Authenticator.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Добавив учетные записи в приложение, вы можете использовать их для входа с помощью приложения Authenticator на мобильном устройстве. Дополнительные сведения см. в статье [Вход с использованием телефона вместо ввода пароля](user-help-auth-app-sign-in.md).
 

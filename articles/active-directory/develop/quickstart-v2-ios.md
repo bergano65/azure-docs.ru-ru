@@ -15,18 +15,18 @@ ms.workload: identity
 ms.date: 09/24/2019
 ms.author: twhitney
 ms.reviewer: jmprieur, saeeda
-ms.custom: aaddev, identityplatformtop40
+ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:iOS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dce3fea1427632f37d826b79016e3aa3e22dad5f
-ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
+ms.openlocfilehash: b515a7954d82cdd377cec72fa8525fbd9691351d
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72264169"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73149511"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>Краткое руководство. Вход пользователей и вызов Microsoft API Graph из приложения iOS или macOS
 
-В этом кратком руководстве содержится пример кода, который демонстрирует, как собственное приложение iOS или macOS может входить в личные, рабочие и школьные учетные записи, получать маркер доступа и вызывать Microsoft Graph API.
+В этом кратком руководстве содержится пример кода, который демонстрирует, как собственное приложение iOS или macOS может использовать платформу удостоверений Майкрософт, чтобы входить в личные, рабочие и школьные учетные записи, получать маркер доступа и вызывать API Microsoft Graph.
 
 Это краткое руководство распространяется на приложения iOS и macOS. Некоторые шаги необходимы только для приложений iOS. Эти действия обращают внимание на то, что они предназначены только для iOS.
 

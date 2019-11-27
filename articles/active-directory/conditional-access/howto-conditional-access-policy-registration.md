@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 771e4e0ecbda4baf1f38aacd1f39397875bbd0dc
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 5864424f003ce9254a6452d8374d78c54516f2bc
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73150761"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74322738"
 ---
 # <a name="conditional-access-require-trusted-location-for-mfa-registration"></a>Условный доступ: требовать надежное расположение для регистрации MFA
 
@@ -45,9 +45,9 @@ ms.locfileid: "73150761"
    1. Щелкните **блокировать доступ**.
    1. Затем щелкните **Выбрать**.
 1. Установите для **параметра включить политику** значение **вкл**.
-1. Затем щелкните **Создать**.
+1. Нажмите кнопку **Сохранить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 [Общие политики условного доступа](concept-conditional-access-policy-common.md)
 

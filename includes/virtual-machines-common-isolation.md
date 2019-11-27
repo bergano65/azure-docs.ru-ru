@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/18/2019
 ms.author: azcspmt;ayshak;cynthn
 ms.custom: include file
-ms.openlocfilehash: d85ea932a62718d04e0c0aff1eeae80472a410f1
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 2251725597e44a15e421f33cc315be3fb1c7846f
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74173944"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74485446"
 ---
 Служба вычислений Azure предлагает размеры виртуальных машин, которые используют оборудование определенного типа и выделяются отдельному клиенту.  Эти размеры лучше всего подходят для рабочих нагрузок, требующих высокого уровня изоляции от других клиентов. Это могут быть рабочие нагрузки, включающие в себя такие элементы, как соблюдение соответствия и нормативных требований.  Клиенты также могут разделить ресурсы этих изолированных виртуальных машин благодаря [поддержке вложенных виртуальных машин в Azure](https://azure.microsoft.com/blog/nested-virtualization-in-azure/).
 
@@ -62,7 +62,7 @@ ms.locfileid: "74173944"
 Ответ **. Если**вы являетесь текущим клиентом d/DS15_v2 и хотите использовать новые размеры d и DS15i_v2, заполните эту [форму](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0FTPNXHdWpJlO27GE-bHitUMkZUWEFPNjFPNVgyMkhZS05FSzlPTzRIOS4u) .
 
 ### <a name="q-why-i-am-not-seeing-any-quota-for-the-new-dds15i_v2-sizes"></a>Вопрос. Почему я не вижу квот для новых размеров D/DS15i_v2?
-Ответ **. Если**вы являетесь текущим клиентом d/DS15_v2 и хотите использовать новые размеры d и DS15i_v2, заполните эту [форму](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0FTPNXHdWpJlO27GE-bHitUMkZUWEFPNjFPNVgyMkhZS05FSzlPTzRIOS4u) .
+Ответ **. Если**вы являетесь текущим клиентом d/DS15_v2 и хотите использовать новые размеры d и DS15i_v2, заполните эту [форму](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0FTPNXHdWpJlO27GE-bHitUNU1XUkhZWkNXQUFMNEJWUk9VWkRRVUJPMy4u) .
 
 ### <a name="q-when-are-the-other-isolated-sizes-going-to-retire"></a>Вопрос. когда следует снять с учета другие изолированные размеры?
 Ответ **. Мы**будем предоставлять напоминания за 12 месяцев до официального списания размеров.
@@ -101,3 +101,6 @@ ms.locfileid: "74173944"
  
 ### <a name="q-can-i-move-my-existing-d15_v2ds15_v2-reserve-instance-to-an-isolated-size-reserved-instance"></a>Вопрос. можно ли переместить существующий экземпляр D15_v2 или DS15_v2 в зарезервированный экземпляр изолированного размера?
 Ответ **. это**необязательно, поскольку преимущество будет применяться к изолированным и неизолированным размерам. Но Azure будет поддерживать изменение существующих зарезервированных экземпляров D15_v2 и DS15_v2 для D15i_v2 и DS15i_v2. Для всех остальных зарезервированных экземпляров Dv2/Dsv2 используйте существующий зарезервированный экземпляр или купите новые зарезервированные экземпляры для изолированных размеров.
+
+### <a name="q-im-a-azure-service-fabric-customer-relying-on-the-silver-or-gold-durability-tiers-does-this-change-impact-me"></a>Вопрос. я использую Azure Service Fabric, который полагается на уровни устойчивости "серебро" или "Gold". Влияет ли это изменение на меня?
+**Ответ**. Нет. Гарантии, предоставляемые [уровнями устойчивости](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#the-durability-characteristics-of-the-cluster) Service Fabric, продолжат функционировать даже после этого изменения. Если требуется физическая изоляция оборудования по другим причинам, может потребоваться выполнить одно из описанных выше действий. 

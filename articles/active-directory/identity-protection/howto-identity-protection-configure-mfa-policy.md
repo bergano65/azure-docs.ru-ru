@@ -1,5 +1,5 @@
 ---
-title: Настройка политики регистрации многофакторной проверки подлинности в Защита идентификации Azure Active Directory
+title: Настройка политики регистрации MFA — Защита идентификации Azure Active Directory
 description: Сведения о настройке политики регистрации с многофакторной проверкой подлинности в службе "Защита идентификации Azure Active Directory".
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc98f645c6b24069e090560a049ccb4fcd03dfec
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: 2fa6a4cf184b426355f62117ea51642127eee529
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72887576"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74382144"
 ---
 # <a name="how-to-configure-the-azure-multi-factor-authentication-registration-policy"></a>Как настроить политику регистрации многофакторной идентификации Azure
 
@@ -53,7 +53,7 @@ ms.locfileid: "72887576"
 
 - [Процедуры входа с защитой идентификации Azure AD](concept-identity-protection-user-experience.md).  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Включение политик входа и риска для пользователей](howto-identity-protection-configure-risk-policies.md)
 

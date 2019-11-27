@@ -1,19 +1,14 @@
 ---
-title: Мониторинг контейнеров в службе "Экземпляры контейнеров Azure"
+title: Мониторинг экземпляров контейнеров
 description: Как отслеживать потребление контейнерами вычислительных ресурсов, таких как ЦП и память, в службе "Экземпляры контейнеров Azure".
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: article
 ms.date: 04/24/2019
-ms.author: danlep
-ms.openlocfilehash: a26789bb41fb3fb1e7dec376b7e187f45745ea65
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: bd86161bc7840be599eb5ee9a20f6dbf143f5f22
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70172258"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533642"
 ---
 # <a name="monitor-container-resources-in-azure-container-instances"></a>Мониторинг ресурсов контейнеров в службе "Экземпляры контейнеров Azure"
 
@@ -49,7 +44,7 @@ Azure Monitor предоставляет следующие [метрики дл
 1. На странице **Обзор** выберите одну из диаграмм метрик, таких как **ЦП**. 
 1. Нажмите кнопку **Применить разделение**, а затем выберите **Имя контейнера**.
 
-![измерение][dimension]
+![Измерение][dimension]
 
 ## <a name="get-metrics---azure-cli"></a>Получение метрик через Azure CLI
 
@@ -135,7 +130,7 @@ Timestamp            Name          Containername             Average
 2019-04-23 23:10:00  Memory Usage  aci-tutorial-sidecar  847872.0
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Подробные сведения о мониторинге в Azure вы найдете [в этой статье][azure-monitoring].
 

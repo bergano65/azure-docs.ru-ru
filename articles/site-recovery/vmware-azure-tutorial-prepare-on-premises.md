@@ -1,19 +1,19 @@
 ---
-title: Подготовка локальных серверов VMware для аварийного восстановления виртуальных машин VMware в Azure | Документация Майкрософт
+title: Подготовка к аварийному восстановлению виртуальных машин VMware с помощью Azure Site Recovery
 description: Узнайте, как подготовить локальные сервера VMware для аварийного восстановления виртуальных машин VMware в Azure с помощью службы Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 08/22/2019
+ms.date: 11/12/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 0f62ee1a79126f456b993c7caf2de3741637f710
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: c82f8130340dfc3848159a6f88db0a304a3ab149
+ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147807"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73953745"
 ---
 # <a name="prepare-on-premises-vmware-servers-for-disaster-recovery-to-azure"></a>Подготовка локальных серверов VMware для аварийного восстановления в Azure
 

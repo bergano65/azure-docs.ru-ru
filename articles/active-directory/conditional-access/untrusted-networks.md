@@ -1,22 +1,22 @@
 ---
-title: Как требовать многофакторную проверку подлинности (MFA) для доступа из ненадежных сетей с условным доступом к Azure Active Directory (Azure AD) | Документация Майкрософт
+title: Требовать MFA из ненадежных сетей — Azure Active Directory
 description: Узнайте, как настроить политику условного доступа в Azure Active Directory (Azure AD) для доступа к попыткам получить доступ из ненадежных сетей.
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: article
-ms.date: 12/10/2018
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39ec09c1ecb94a5ae189317d89cce4bc8f279b48
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 4cedec7f0bd51460796d8138f8d481d2982098f4
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73175682"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74379991"
 ---
 # <a name="how-to-require-mfa-for-access-from-untrusted-networks-with-conditional-access"></a>Как запросить MFA для доступа из ненадежных сетей с помощью условного доступа   
 
@@ -24,7 +24,7 @@ Azure Active Directory (Azure AD) обеспечивает единый вход
 
 Эта статья содержит сведения, необходимые для настройки политики условного доступа, которая требует MFA для доступа из ненадежных сетей. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 В данной статье предполагается, что вы знакомы с: 
 
@@ -57,16 +57,16 @@ Azure Active Directory (Azure AD) обеспечивает единый вход
 
 - Включить все расположения 
 
-   ![Условный доступ](./media/untrusted-networks/02.png)
+   ![условный доступ;](./media/untrusted-networks/02.png)
 
 - Исключить все надежные расположения. 
 
-   ![Условный доступ](./media/untrusted-networks/01.png)
+   ![условный доступ;](./media/untrusted-networks/01.png)
 
 ## <a name="policy-deployment"></a>Развертывание политики
 
 С помощью подхода, описанного в этой статье, можно настроить политику условного доступа для ненадежных расположений. Чтобы убедиться, что политика работает должным образом, рекомендуется протестировать ее перед развертыванием в рабочей среде. В идеале для проверки правильности работы новой политики следует использовать тестовый клиент. Дополнительные сведения см. в разделе [Как развертывать новую политику?](best-practices.md#how-should-you-deploy-a-new-policy) 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об условном доступе см [. в разделе что такое условный доступ в Azure Active Directory?](../active-directory-conditional-access-azure-portal.md)

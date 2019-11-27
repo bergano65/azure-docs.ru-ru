@@ -8,6 +8,7 @@ manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 47f27746-9057-4b9c-991e-3abf77710f73
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: tutorial
 ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f7b4db749d1191179b3f4f1d9bb13d77925697f2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 031a88bb8a8832fbe7acb124436cce6aaeb02e21
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67104547"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73159316"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-coupa"></a>Руководство по Интеграция Azure Active Directory с Coupa
 
@@ -146,11 +147,11 @@ ms.locfileid: "67104547"
 
 2. Последовательно выберите **Setup \> Security Control** (Настройка > Управление безопасностью).
 
-    ![Security Controls](./media/coupa-tutorial/ic791900.png "Security Controls") (Средства управления безопасностью)
+    ![Средства управления безопасностью](./media/coupa-tutorial/ic791900.png "Средства управления безопасностью")
 
 3. В разделе **Вход с использованием учетных данных Coupa** выполните следующие действия.
 
-    ![Метаданные Coupa SP](./media/coupa-tutorial/ic791901.png "Метаданные Coupa SP")
+    ![Метаданные поставщика услуг Coupa](./media/coupa-tutorial/ic791901.png "Метаданные поставщика услуг Coupa")
 
     a. Выберите **Вход с помощью SAML**.
 
@@ -254,5 +255,5 @@ ms.locfileid: "67104547"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

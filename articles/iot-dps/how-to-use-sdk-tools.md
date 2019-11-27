@@ -1,5 +1,5 @@
 ---
-title: Use Azure IoT Hub Device Provisioning Service SDKs tools
+title: Использование средств пакета SDK для службы подготовки устройств для центра Интернета вещей Azure
 description: В этом документе рассматривается использование для разработки инструментов, предоставляемых в пакетах SDK для службы подготовки устройств к добавлению в Центр Интернета вещей.
 author: robinsh
 ms.author: robinsh
@@ -65,5 +65,5 @@ ms.locfileid: "74229669"
 
 Корневой или промежуточный сертификат можно использовать для создания группы регистраций или индивидуальной регистрации [программным образом](https://docs.microsoft.com/azure/iot-dps/how-to-manage-enrollments-sdks) или с помощью [портала](https://docs.microsoft.com/azure/iot-dps/how-to-manage-enrollments).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * Разработка с использованием [пакета SDK для Azure IoT]( https://github.com/Azure/azure-iot-sdks) для Центра Интернета Azure и службы подготовки устройств к добавлению в Центр Интернета вещей

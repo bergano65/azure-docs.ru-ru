@@ -1,21 +1,21 @@
 ---
-title: Обновление решений для аналитики больших данных с Azure Data Lake Storage 1-го поколения до Azure Data Lake Storage 2-го поколения
-description: Обновление решения для использования Azure Data Lake Storage 2-го поколения
+title: Обновление Azure Data Lake Storage с GEN1 на Gen2
+description: Обновление Azure Data Lake Storage с GEN1 на Gen2.
 author: normesta
 ms.topic: conceptual
 ms.author: normesta
-ms.date: 11/01/2019
+ms.date: 11/19/2019
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: rugopala
-ms.openlocfilehash: d86e2cca31487a73e089124e9552b574bcc9166f
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 41074561b4805fef1889bd889b625e1a59d57d91
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73584396"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327867"
 ---
-# <a name="upgrade-your-big-data-analytics-solutions-from-azure-data-lake-storage-gen1-to-azure-data-lake-storage-gen2"></a>Обновление решений для аналитики больших данных с Azure Data Lake Storage 1-го поколения до Azure Data Lake Storage 2-го поколения
+# <a name="upgrade-azure-data-lake-storage-from-gen1-to-gen2"></a>Обновление Azure Data Lake Storage с GEN1 на Gen2
 
 Если вы используете Azure Data Lake Storage 1-го поколения в решениях для аналитики больших данных, это руководство поможет вам обновить эти решения, чтобы использовать Azure Data Lake Storage 2-го поколения. С помощью этого документа можно оценить зависимости вашего решения от Azure Data Lake Storage 1-го поколения. Также в этом руководстве показано, как запланировать и выполнить обновление.
 
@@ -27,7 +27,7 @@ ms.locfileid: "73584396"
 
 : heavy_check_mark: выполнение обновления
 
-## <a name="assess-your-upgrade-readiness"></a>Оценка готовности к обновлению
+## <a name="assess-your-upgrade-readiness"></a>оценка готовности к обновлению;
 
 Наша цель заключается в том, чтобы все возможности Data Lake Storage 1-го поколения стали доступны в Data Lake Storage 2-го поколения. Способ предоставления этих возможностей, например с помощью SDK, CLI и т. д., в 1-м и 2-м поколении Data Lake Storage может различаться. Приложениям и службам, которые работают с Data Lake Storage 1-го поколения, требуется возможность работать аналогичным образом с Data Lake Storage 2-го поколения. Наконец, некоторые возможности не будут доступны в Data Lake Storage 2-го поколения прямо сейчас. Мы будем объявлять об их добавлении в этом документе.
 
@@ -53,7 +53,7 @@ ms.locfileid: "73584396"
 
 : heavy_check_mark: возможности платформы
 
-: heavy_check_mark: интерфейсы программирования
+: heavy_check_mark: программные интерфейсы
 
 : heavy_check_mark: экосистема Azure
 
@@ -67,7 +67,7 @@ ms.locfileid: "73584396"
 
 В этом разделе описано, какие возможности платформы Data Lake Storage 1-го поколения сейчас доступны в Data Lake Storage 2-го поколения.
 
-| | Data Lake Storage 1-го поколения | Data Lake Storage 2-го поколения — цель | Data Lake Storage 2-го поколения — состояние доступности  |
+| | Data Lake Storage Gen1 | Data Lake Storage 2-го поколения — цель | Data Lake Storage 2-го поколения — состояние доступности  |
 |-|------------------------|-------------------------------|-----------------------------------------------|
 | Упорядочение данных| Поддерживает данные, хранящиеся в виде папок и файлов | Поддерживает данные, хранящиеся в виде объектов и больших двоичных объектов, а также папок и файлов — [ссылка](https://docs.microsoft.com/azure/storage/data-lake-storage/namespace) | Поддерживает данные, хранящиеся в виде папок и файлов. *Доступно сейчас*. <br><br> Поддерживает данные, хранящиеся в виде объектов и больших двоичных объектов. *Пока недоступно*. |
 | Пространство имен| Иерархическая сущность | Иерархическая сущность |  *Доступно сейчас*  |
@@ -75,7 +75,7 @@ ms.locfileid: "73584396"
 | API серверной части| [REST API, совместимый с WebHDFS](https://msdn.microsoft.com/library/azure/mt693424.aspx) | REST API службы BLOB-объектов Azure. [REST API Data Lake Storage 2-го поколения](https://docs.microsoft.com/rest/api/storageservices/data-lake-storage-gen2) | REST API Data Lake Storage 2-го поколения. *Доступно сейчас*. <br><br> Служба BLOB-объектов Azure REST API *доступна сейчас*       |
 | Клиент файловой системы Hadoop | Да ([Azure Data Lake Storage](https://hadoop.apache.org/docs/current/hadoop-azure-datalake/index.html)) | Да ([ABFS](https://jira.apache.org/jira/browse/HADOOP-15407))  | *Доступно сейчас*  |  
 | Операции с данными — авторизация  | Списки управления доступом (ACL) POSIX на уровне файлов и папок на основе удостоверений Azure Active Directory  | Списки ACL POSIX на уровне файлов и папок на основе удостоверений Azure Active Directory. [Общий ключ](https://docs.microsoft.com/rest/api/storageservices/authorize-with-shared-key) для авторизации на уровне учетных записей. Управление доступом на основе ролей ([RBAC](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac)) для доступа к контейнерам | *Доступно сейчас* |
-| Операции с данными — журналы  | Да | Да | *Доступно сейчас* (Предварительная версия). См. [Известные проблемы](data-lake-storage-known-issues.md).<br><br> Интеграция со службой мониторинга Azure. *Пока недоступно*. |
+| Операции с данными — журналы  | Yes | Yes | *Доступно сейчас* (Предварительная версия). См. [Известные проблемы](data-lake-storage-known-issues.md).<br><br> Интеграция со службой мониторинга Azure. *Пока недоступно*. |
 | Шифрование неактивных данных | Прозрачное, на стороне сервера с использованием управляемых службой ключей и управляемых пользователем ключей в хранилище ключей Azure | Прозрачное, на стороне сервера с использованием управляемых службой ключей и управляемых пользователем ключей в хранилище ключей Azure | Ключи, управляемые службой. *Доступно сейчас*.<br><br> Ключи, управляемые клиентом. *Доступно сейчас*.  |
 | Операции управления (например, создание учетной записи) | [Контроль доступа на основе ролей](https://docs.microsoft.com/azure/role-based-access-control/overview) (RBAC), предоставляемый Azure для управления учетными записями | [Контроль доступа на основе ролей](https://docs.microsoft.com/azure/role-based-access-control/overview) (RBAC), предоставляемый Azure для управления учетными записями | *Доступно сейчас*|
 | Пакеты SDK для разработчиков | .NET, Java, Python, Node.js  | .NET, Java, Python, Node.js, C++, Ruby, PHP, Go, Android, iOS| Пакет SDK для BLOB-объектов *доступен сейчас*. Пакет SDK для Azure Data Lake Storage 2-го поколения *еще не доступен*  |
@@ -88,17 +88,17 @@ ms.locfileid: "73584396"
 | Соглашение об уровне обслуживания относительно доступности                            | [См. соглашение об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/data-lake-store/v1_0/)                                                                   | [См. соглашение об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/storage/v1_3/)                                                                                                                                                                                                                                                                                                                                                | *Доступно сейчас*                                                                                                                           |
 | Управление данными                             | Срок действия файлов                                                                                                                                        | Политики жизненного цикла                                                                                                                                                                                                                                                                                                                                                                                                          | Политики жизненного цикла *доступны сейчас* (Предварительная версия). См. [Известные проблемы](data-lake-storage-known-issues.md).                                                                                                                     |
 
-### <a name="programming-interfaces"></a>Программные интерфейсы
+### <a name="programming-interfaces"></a>"Программные интерфейсы"
 
 В этой таблице описаны наборы API, доступные для пользовательских приложений. Поддержка пакета SDK для ACL и операций уровня каталога пока не поддерживается.
 
-|  Набор API                           |  Data Lake Storage 1-го поколения                                                                                                                                                                                                                                                                                                   | Доступность для Data Lake Storage 2-го поколения — с проверкой подлинности на основе общего ключа | Доступность для Data Lake Storage 2-го поколения — с проверкой подлинности на основе OAuth                                                                                                  |
+|  Набор API                           |  Data Lake Storage Gen1                                                                                                                                                                                                                                                                                                   | Доступность для Data Lake Storage 2-го поколения — с проверкой подлинности на основе общего ключа | Доступность для Data Lake Storage 2-го поколения — с проверкой подлинности на основе OAuth                                                                                                  |
 |----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ПАКЕТ SDK .NET                  | [Ссылка](https://docs.microsoft.com/dotnet/api/overview/azure/datalakestore/management?view=azure-dotnet) | *Доступно сейчас* | *Доступно сейчас* |
 | Пакет SDK для Java                | [Ссылка](https://docs.microsoft.com/java/api/overview/azure/datalakestore/management)                                                                                                                                                                                                                                     | *Доступно сейчас*                                                      | *Доступно сейчас*                                     |
 | Node.js                | [Ссылка](https://www.npmjs.com/package/azure-arm-datalake-store)                                                                                                                                                                                                                                                                | *Доступно сейчас*                                                     | *Доступно сейчас*                                                                                           |
 | Пакет SDK для Python                   | [Ссылка](https://docs.microsoft.com/python/api/overview/azure/datalakestore/management?view=azure-python)                                                                                                                                                                                                                 | *Доступно сейчас*                                                      | *Доступно сейчас*                                        |
-| REST API                 | [Ссылка](https://docs.microsoft.com/rest/api/datalakestore/accounts)                                                                                                                                                                                                                                                      | *Доступно сейчас*                                                      | *Доступно сейчас*                                                                                                                                               |
+| Интерфейс REST API                 | [Ссылка](https://docs.microsoft.com/rest/api/datalakestore/accounts)                                                                                                                                                                                                                                                      | *Доступно сейчас*                                                      | *Доступно сейчас*                                                                                                                                               |
 | PowerShell | [Ссылка](https://docs.microsoft.com/powershell/module/az.datalakestore)                                                                                                                                                                                                                        | *Доступно сейчас* |
 | Интерфейс командной строки                 | [Ссылка](https://docs.microsoft.com/cli/azure/dls/account?view=azure-cli-latest)                                                                                                                                                                                                                                          | *Доступно сейчас*                                                      | *Доступно сейчас*                                                               |
 | Шаблоны Azure Resource Manager — управление             | [Шаблон1](https://azure.microsoft.com/resources/templates/101-data-lake-store-no-encryption/)  [Шаблон2](https://azure.microsoft.com/resources/templates/101-data-lake-store-encryption-adls/)  [Шаблон3](https://azure.microsoft.com/resources/templates/101-data-lake-store-encryption-key-vault/)  | *Доступно сейчас*                                                      | *Доступно сейчас*                                          |
@@ -119,7 +119,7 @@ ms.locfileid: "73584396"
 |                      | [Каталог данных](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-with-data-catalog)                                                                       | *Пока недоступно*                                                                                                                                                          | *Пока недоступно*                                                                                                                             |
 |                      | [Logic Apps](https://docs.microsoft.com/connectors/azuredatalake/)                                                                                                      | *Доступно сейчас*                                                                                                                                                          | *Доступно сейчас*                                                                                                                             |
 | Интернет вещей                  | [Центры событий — функция "Сбор"](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-archive-eventhub-capture)                                                       | *Доступно сейчас*                                                                                                                                                          | *Доступно сейчас*                                                                                                                             |
-|                      | [Stream Analytics](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-stream-analytics)                                                                   | *Доступно сейчас*                                                                                                                                                          | *Доступно сейчас*                                                                                                                             |
+|                      | [Анализ потока](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-stream-analytics)                                                                   | *Доступно сейчас*                                                                                                                                                          | *Доступно сейчас*                                                                                                                             |
 | Потребление          | [Power BI Desktop](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-power-bi)                                                                           | *Доступно сейчас*                                                                                                                                                          | *Доступно сейчас*                                                                                                                             |
 |                      | [Excel](https://techcommunity.microsoft.com/t5/Excel-Blog/Announcing-the-Azure-Data-Lake-Store-Connector-in-Excel/ba-p/91677)                                                 | *Пока недоступно*                                                                                                                                                          | *Пока недоступно*                                                                                                                             |
 |                      | [Службы Analysis Services](https://blogs.msdn.microsoft.com/analysisservices/2017/09/05/using-azure-analysis-services-on-top-of-azure-data-lake-storage/)                            | *Пока недоступно*                                                                                                                                                          | *Пока недоступно*                                                                                                                             |
@@ -145,7 +145,7 @@ ms.locfileid: "73584396"
 |                     | ImanisData   |                      | [Ссылка](https://www.imanisdata.com/expansion-azure-support-azure-data-lake-store-integration/)                                                                                             | *Пока недоступно*                                                                                                  | *Пока недоступно*                                                                                                  |
 |                     | WANdisco     |                      | [Ссылка](https://azure.microsoft.com/blog/globally-replicated-data-lakes-with-livedata-using-wandisco-on-azure/)                                                                      | [Ссылка](https://azure.microsoft.com/blog/globally-replicated-data-lakes-with-livedata-using-wandisco-on-azure/) | [Ссылка](https://azure.microsoft.com/blog/globally-replicated-data-lakes-with-livedata-using-wandisco-on-azure/) |
 
-### <a name="operational-information"></a>"Эксплуатационные данные"
+### <a name="operational-information"></a>Эксплуатационные данные
 
 Data Lake Storage 1-го поколения передает определенную информацию и данные в другие службы, что помогает вводить в эксплуатацию конвейеры. В этой таблице показана доступность соответствующей поддержки в Data Lake Storage 2-го поколения.
 

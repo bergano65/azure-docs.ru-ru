@@ -11,16 +11,18 @@ author: srinia
 ms.author: srinia
 ms.reviewer: sstein
 ms.date: 12/18/2018
-ms.openlocfilehash: f5eaed807e69dcc1a0b7ad426bab91abd2f8309a
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 283b4004f34372104eb083496400772884f5965e
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73827261"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74420376"
 ---
 # <a name="create-configure-and-manage-elastic-jobs"></a>Создание, настройка и управление заданиями обработки эластичных баз данных
 
-В этой статье вы узнаете, как создавать, настраивать задания обработки эластичных баз данных и управлять ими. Если вы не использовали задания обработки эластичных баз данных, изучите статью [Automate management tasks using database jobs](sql-database-job-automation-overview.md) (Автоматизация управления задачами с помощью заданий базы данных).
+В этой статье вы узнаете, как создавать, настраивать задания обработки эластичных баз данных и управлять ими.
+
+Если вы не использовали задания обработки эластичных баз данных, изучите статью [Automate management tasks using database jobs](sql-database-job-automation-overview.md) (Автоматизация управления задачами с помощью заданий базы данных).
 
 ## <a name="create-and-configure-the-agent"></a>Создание и настройка агента
 
@@ -31,15 +33,15 @@ ms.locfileid: "73827261"
 
 ## <a name="create-run-and-manage-jobs"></a>Создание, запуск заданий и управление ими
 
-1. Создайте учетные данные для выполнения задания в *базе данных заданий*, используя [PowerShell](elastic-jobs-powershell.md#create-job-credentials-so-that-jobs-can-execute-scripts-on-its-targets) или [T-SQL](elastic-jobs-tsql.md#create-a-credential-for-job-execution).
-2. Определите целевую группу (базы данных, в которых вы хотите запустить задание) с помощью [PowerShell](elastic-jobs-powershell.md#define-the-target-databases-you-want-to-run-the-job-against) или [T-SQL](elastic-jobs-tsql.md#create-a-target-group-servers).
-3. Создайте учетные данные агента заданий в каждой базе данных, где будет запущено задание [(добавьте пользователя (или роль) в каждую базу данных в группе)](sql-database-control-access.md). Пример см. в [руководстве по PowerShell](elastic-jobs-powershell.md#create-job-credentials-so-that-jobs-can-execute-scripts-on-its-targets).
-4. Создайте задание с помощью [PowerShell](elastic-jobs-powershell.md#create-a-job) или [T-SQL](elastic-jobs-tsql.md#deploy-new-schema-to-many-databases).
-5. Добавьте шаги задания с помощью [PowerShell](elastic-jobs-powershell.md#create-a-job-step) или [T-SQL](elastic-jobs-tsql.md#deploy-new-schema-to-many-databases).
+1. Создание учетных данных для выполнения заданий в *базе данных заданий* с помощью [PowerShell](elastic-jobs-powershell.md) или [T-SQL](elastic-jobs-tsql.md#create-a-credential-for-job-execution).
+2. Определите целевую группу (базы данных, для которой требуется выполнить задание) с помощью [PowerShell](elastic-jobs-powershell.md) или [T-SQL](elastic-jobs-tsql.md#create-a-target-group-servers).
+3. Создайте учетные данные агента заданий в каждой базе данных, где будет запущено задание [(добавьте пользователя (или роль) в каждую базу данных в группе)](sql-database-control-access.md). Пример см. в [руководстве по PowerShell](elastic-jobs-powershell.md).
+4. Создайте задание с помощью [PowerShell](elastic-jobs-powershell.md) или [T-SQL](elastic-jobs-tsql.md#deploy-new-schema-to-many-databases).
+5. Добавьте шаги задания с помощью [PowerShell](elastic-jobs-powershell.md) или [T-SQL](elastic-jobs-tsql.md#deploy-new-schema-to-many-databases).
 6. Запустите задание с помощью [PowerShell](elastic-jobs-powershell.md#run-the-job) или [T-SQL](elastic-jobs-tsql.md#begin-ad-hoc-execution-of-a-job).
-7. Отслеживайте состояние выполнения задания на портале с использованием [PowerShell](elastic-jobs-powershell.md#monitor-status-of-job-executions) или [T-SQL](elastic-jobs-tsql.md#monitor-job-execution-status).
+7. Отслеживайте состояние выполнения заданий с помощью портала, [PowerShell](elastic-jobs-powershell.md#monitor-status-of-job-executions) или [T-SQL](elastic-jobs-tsql.md#monitor-job-execution-status).
 
-   ![Microsoft Azure](media/elastic-jobs-overview/elastic-job-executions-overview.png)
+   ![Портал](media/elastic-jobs-overview/elastic-job-executions-overview.png)
 
 ## <a name="credentials-for-running-jobs"></a>Учетные данные для выполнения заданий
 
@@ -95,7 +97,7 @@ IF NOT EXIST (some_object)
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Создание заданий обработки эластичных баз данных и управление ими с помощью PowerShell](elastic-jobs-powershell.md)
 - [Use Transact-SQL (T-SQL) to create and manage Elastic Database Jobs](elastic-jobs-tsql.md) (Создание заданий обработки эластичных БД и управление ими с использованием Transact-SQL (T-SQL))

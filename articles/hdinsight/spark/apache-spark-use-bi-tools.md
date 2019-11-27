@@ -1,5 +1,5 @@
 ---
-title: 'Руководство по Анализ данных Apache Spark с использованием Power BI в Azure HDInsight '
+title: Руководство по Анализ данных Apache Spark Azure HDInsight с помощью Power BI
 description: 'Учебник: визуализация хранимых данных Apache Spark в кластерах HDInsight с помощью Microsoft Power BI'
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
 ms.date: 10/03/2019
-ms.openlocfilehash: fe7560f68690233d7a333724274a259d693123d0
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.openlocfilehash: c2d6a5acba304d7421b000cab2ee5cee5b85e5ce
+ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72035688"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73241356"
 ---
 # <a name="tutorial-analyze-apache-spark-data-using-power-bi-in-hdinsight"></a>Руководство по Анализ данных Apache Spark с использованием Power BI в HDInsight
 
@@ -78,7 +78,7 @@ ms.locfileid: "72035688"
 
 2. Перейдите с вкладки **Домашняя страница** к элементу **Получение данных** > **Дополнительно...**
 
-    ![Получение данных в Power BI Desktop из HDInsight Apache Spark](./media/apache-spark-use-bi-tools/hdinsight-spark-power-bi-desktop-get-data.png "Get data into Power BI from Apache Spark BI")
+    ![Получение данных в Power BI Desktop из HDInsight Apache Spark](./media/apache-spark-use-bi-tools/hdinsight-spark-power-bi-desktop-get-data.png "Получение данных в Power BI из Apache Spark BI")
 
 3. Введите в поле поиска `Spark` и выберите **Azure HDInsight Spark**, а затем щелкните **Подключиться**.
 
@@ -104,21 +104,21 @@ ms.locfileid: "72035688"
 
     2. Перетащите поле **BuildingID** в раздел **Ось**, а поля **ActualTemp** и **TargetTemp** в раздел **значений**.
 
-        ![Добавление столбцов со значениями](./media/apache-spark-use-bi-tools/apache-spark-bi-add-value-columns.png "Добавление столбцов со значениями")
+        ![Добавление столбцов значений](./media/apache-spark-use-bi-tools/apache-spark-bi-add-value-columns.png "Добавление столбцов значений")
 
         Схема выглядит следующим образом.
 
-        ![Область с диаграммой сводки](./media/apache-spark-use-bi-tools/apache-spark-bi-area-graph-sum.png "Область с диаграммой сводки")
+        ![Сумма диаграммы с областями](./media/apache-spark-use-bi-tools/apache-spark-bi-area-graph-sum.png "Сумма диаграммы с областями")
 
         По умолчанию представление показывает сумму для **фактической температуры** и **целевой температуры**. Выберите направленную вниз стрелку рядом с полями **ActualTemp** и **TragetTemp** на панели визуализации, и вы увидите выбранную **сумму**.
 
     3. Щелкните направленную вниз стрелку рядом с полями **ActualTemp** и **TragetTemp** на панели визуализации, выберите **Среднее**, чтобы получить среднее значение фактической и целевой температуры для каждого здания.
 
-        ![Средние значения](./media/apache-spark-use-bi-tools/apache-spark-bi-average-of-values.png "Средние значения")
+        ![Среднее значение](./media/apache-spark-use-bi-tools/apache-spark-bi-average-of-values.png "Среднее значение")
 
         Визуализация данных должна выглядеть примерно так, как показано на снимке экрана ниже. Наведите указатель мыши на визуализацию, чтобы отобразить всплывающие подсказки с соответствующими данными.
 
-        ![Область с диаграммой](./media/apache-spark-use-bi-tools/apache-spark-bi-area-graph.png "Область с диаграммой")
+        ![Диаграмма с областями](./media/apache-spark-use-bi-tools/apache-spark-bi-area-graph.png "Диаграмма с областями")
 
 9. Выберите **Файл** > **Сохранить**, введите имя `BuildingTemperature` для файла, а затем выберите **Сохранить**.
 
@@ -130,7 +130,7 @@ ms.locfileid: "72035688"
 
 1. На вкладке **Home** (Главная) щелкните **Publish** (Опубликовать).
 
-    ![Публикация из Power BI Desktop](./media/apache-spark-use-bi-tools/apache-spark-bi-publish.png "Публикация из Power BI Desktop")
+    ![Publish from Power BI Desktop](./media/apache-spark-use-bi-tools/apache-spark-bi-publish.png "Публикация из Power BI Desktop") (Публикация из Power BI Desktop)
 
 1. Выберите рабочую область, в которой вы хотите опубликовать набор данных и отчет, а затем нажмите кнопку **Выбор**. На рисунке ниже выбран параметр по умолчанию **Моя рабочая область**.
 
@@ -138,7 +138,7 @@ ms.locfileid: "72035688"
 
 1. Когда публикация успешно завершится, нажмите кнопку **Open 'BuildingTemperature.pbix' in Power BI** (Открыть BuildingTemperature.pbix в Power BI).
 
-    ![Публикация завершилась успешно, щелкните, чтобы ввести учетные данные](./media/apache-spark-use-bi-tools/apache-spark-bi-publish-success.png "Публикация завершилась успешно, щелкните, чтобы ввести учетные данные") 
+    ![Успешная публикация и ввод учетных данных](./media/apache-spark-use-bi-tools/apache-spark-bi-publish-success.png "Успешная публикация и ввод учетных данных") 
 
 1. В службе Power BI щелкните ссылку, чтобы **ввести учетные данные**.
 
@@ -154,7 +154,7 @@ ms.locfileid: "72035688"
 
 1. В левой области выберите **Рабочие области** > **Моя рабочая область** > **Отчеты**, а затем щелкните **BuildingTemperature**.
 
-    ![Отчет в списке раздела отчетов в левой области](./media/apache-spark-use-bi-tools/apache-spark-bi-service-left-pane.png "Отчет в списке раздела отчетов в левой области")
+    ![Отчет в списке отчетов в области слева](./media/apache-spark-use-bi-tools/apache-spark-bi-service-left-pane.png "Отчет в списке отчетов в области слева")
 
     Вы также увидите **BuildingTemperature** в списке раздела **Наборы данных** в левой области.
 
@@ -162,11 +162,11 @@ ms.locfileid: "72035688"
 
 1. Наведите курсор на визуализацию и щелкните значок булавки в правом верхнем углу.
 
-    ![Отчет в службе Power BI](./media/apache-spark-use-bi-tools/apache-spark-bi-service-report.png "Отчет в службе Power BI")
+    ![Создание отчетов в службе Power BI](./media/apache-spark-use-bi-tools/apache-spark-bi-service-report.png "Создание отчетов в службе Power BI")
 
 1. Выберите "Новая информационная панель", введите имя `Building temperature`, а затем нажмите кнопку **Pin** (Закрепить).
 
-    ![Закрепление на новой информационной панели](./media/apache-spark-use-bi-tools/apache-spark-bi-pin-dashboard.png "Закрепление на новой информационной панели")
+    ![Закрепление на новой панели мониторинга](./media/apache-spark-use-bi-tools/apache-spark-bi-pin-dashboard.png "Закрепление на новой панели мониторинга")
 
 1. В отчете нажмите кнопку **Перейти к информационной панели**.
 

@@ -53,18 +53,18 @@ ms.locfileid: "72677632"
 3. Выполните поиск по запросу «Application Insights».
 4. Выберите один из следующих пакетов.
 
-   - Для ILogger: [Microsoft. Extensions. Logging. ApplicationInsights](https://www.nuget.org/packages/Microsoft.Extensions.Logging.ApplicationInsights/) 
-[ ![NuGet](https://img.shields.io/nuget/vpre/Microsoft.Extensions.Logging.ApplicationInsights.svg)](https://www.nuget.org/packages/Microsoft.Extensions.Logging.ApplicationInsights/)
-   - Для NLog: [Microsoft. ApplicationInsights. нлогтаржет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.NLogTarget/) 
-[ ![NuGet](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.NLogTarget.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.NLogTarget/)
-   - Для Log4Net: [Microsoft. ApplicationInsights. Log4NetAppender](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Log4NetAppender/) 
-[ ![NuGet](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.Log4NetAppender.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Log4NetAppender/)
-   - Для System. Diagnostics: [Microsoft. ApplicationInsights. TraceListener](https://www.nuget.org/packages/Microsoft.ApplicationInsights.TraceListener/) 
-[ ![NuGet](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.TraceListener.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.TraceListener/)
-   - [@No__t_3NuGet](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.DiagnosticSourceListener.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DiagnosticSourceListener/) 
- [Microsoft. ApplicationInsights. диагностиксаурцелистенер](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DiagnosticSourceListener/)
-   - [@No__t_3NuGet](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.EtwCollector.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EtwCollector/) 
- [Microsoft. ApplicationInsights. етвколлектор](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EtwCollector/)
+   - Для ILogger: [Microsoft. Extensions. Logging. ApplicationInsights](https://www.nuget.org/packages/Microsoft.Extensions.Logging.ApplicationInsights/)
+[![NuGet](https://img.shields.io/nuget/vpre/Microsoft.Extensions.Logging.ApplicationInsights.svg)](https://www.nuget.org/packages/Microsoft.Extensions.Logging.ApplicationInsights/)
+   - Для NLog: [Microsoft. ApplicationInsights. нлогтаржет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.NLogTarget/)
+[![NuGet](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.NLogTarget.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.NLogTarget/)
+   - Для Log4Net: [Microsoft. ApplicationInsights. Log4NetAppender](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Log4NetAppender/)
+[![NuGet](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.Log4NetAppender.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Log4NetAppender/)
+   - Для System. Diagnostics: [Microsoft. ApplicationInsights. TraceListener](https://www.nuget.org/packages/Microsoft.ApplicationInsights.TraceListener/)
+[![NuGet](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.TraceListener.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.TraceListener/)
+   - [Microsoft. ApplicationInsights. диагностиксаурцелистенер](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DiagnosticSourceListener/)
+[![NuGet](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.DiagnosticSourceListener.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DiagnosticSourceListener/)
+   - [Microsoft. ApplicationInsights. етвколлектор](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EtwCollector/)
+[![NuGet](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.EtwCollector.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EtwCollector/)
    - [Microsoft.ApplicationInsights.EventSourceListener](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EventSourceListener/)
 [![Nuget](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.EventSourceListener.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EventSourceListener/)
 
@@ -135,14 +135,14 @@ ms.locfileid: "72677632"
 ## <a name="use-the-trace-api-directly"></a>Использование API трассировки напрямую
 API трассировки в Application Insights можно вызывать напрямую. Адаптеры ведения журналов используют этот API.
 
-Пример.
+Пример:
 
     var telemetry = new Microsoft.ApplicationInsights.TelemetryClient();
     telemetry.TrackTrace("Slow response - database01");
 
 Преимуществом TrackTrace является возможность добавления в сообщения относительно длинных данных, например данных POST.
 
-Можно также добавить уровень серьезности к сообщению. И, как и другие данные телеметрии, можно добавить значения свойств, чтобы помочь фильтровать или искать различные наборы трассировок. Пример.
+Можно также добавить уровень серьезности к сообщению. И, как и другие данные телеметрии, можно добавить значения свойств, чтобы помочь фильтровать или искать различные наборы трассировок. Пример:
 
     var telemetry = new Microsoft.ApplicationInsights.TelemetryClient();
     telemetry.TrackTrace("Slow database response",
@@ -184,18 +184,18 @@ logger.warning('Hello, World!')
 >Если приложение отправляет большой объем данных и вы используете Application Insights пакет SDK для ASP.NET версии 2.0.0-beta3 или более поздней, функция *адаптивной выборки* может выполнять работу и отправлять только часть вашей телеметрии. [Дополнительная информация о выборке.](../../azure-monitor/app/sampling.md)
 >
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 ### <a name="how-do-i-do-this-for-java"></a>Как это сделать в Java?
 Используйте [адаптеры журналов Java](../../azure-monitor/app/java-trace-logs.md).
 
 ### <a name="theres-no-application-insights-option-on-the-project-context-menu"></a>В контекстном меню проекта нет пункта для Application Insights
-* Убедитесь, что на компьютере разработки установлен Developer Analytics Tools. В Visual Studio **tools** > **расширения и обновления**найдите **Developer Analytics Tools**. Если она отсутствует на вкладке **установлен** , откройте вкладку в **сети** и установите ее.
+* Убедитесь, что на компьютере разработки установлен Developer Analytics Tools. В Visual Studio **tools** > **Extensions and Updates**(поиск **Developer Analytics Tools**). Если она отсутствует на вкладке **установлен** , откройте вкладку в **сети** и установите ее.
 * Это может быть тип проекта, который не поддерживает средства аналитики Девлопер. Используйте [установку вручную](#manual-installation).
 
 ### <a name="theres-no-log-adapter-option-in-the-configuration-tool"></a>В средстве настройки отсутствует параметр "адаптер журнала"
 * Сначала установите платформу ведения журнала.
 * Если вы используете System. Diagnostics. Trace, убедитесь, что он [настроен в *файле Web. config*](https://msdn.microsoft.com/library/system.diagnostics.eventlogtracelistener.aspx).
-* Убедитесь, что у вас установлена последняя версия Application Insights. В Visual Studio последовательно выберите **инструменты** > **расширения и обновления**, а затем откройте вкладку **обновления** . Если **Developer Analytics Tools** , выберите его, чтобы обновить.
+* Убедитесь, что у вас установлена последняя версия Application Insights. В Visual Studio последовательно выберите **сервис** > **расширения и обновления**, а затем откройте вкладку **обновления** . Если **Developer Analytics Tools** , выберите его, чтобы обновить.
 
 ### <a name="emptykey"></a>Я получаю сообщение об ошибке "ключ инструментирования не может быть пустым"
 Возможно, вы установили пакет NuGet для адаптера ведения журнала без установки Application Insights. В обозреватель решений щелкните правой кнопкой мыши *файл ApplicationInsights. config*и выберите **Update Application Insights (обновить**). Вам будет предложено войти в Azure и создать Application Insights ресурс или повторно использовать существующий. Это устранит проблему.

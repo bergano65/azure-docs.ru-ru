@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 8/1/2019
 ms.author: arya
-ms.openlocfilehash: cfe212a150da0e5828f48de3bf2692ab2a44c672
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: c415739934e2318ea5287d5eed9f8235029b666f
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69657168"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74405622"
 ---
 # <a name="configure-repository-credentials-for-your-application-to-download-container-images"></a>Настройка учетных данных репозитория для приложения для скачивания образов контейнеров
 
@@ -44,7 +44,7 @@ ms.locfileid: "69657168"
 
 Service Fabric позволяет настроить учетные данные для всего кластера, которые могут использоваться приложениями как учетные данные репозитория по умолчанию.
 
-Эту функцию можно включить или отключить, добавив `UseDefaultRepositoryCredentials` `ContainerHostPolicies` атрибут в в `true` ApplicationManifest. XML со значением или `false` .
+Эту функцию можно включить или отключить, добавив атрибут `UseDefaultRepositoryCredentials` в `ContainerHostPolicies` в ApplicationManifest. XML со значением `true` или `false`.
 
 ```xml
 <ServiceManifestImport>
@@ -58,14 +58,14 @@ Service Fabric позволяет настроить учетные данные
 </ServiceManifestImport>
 ```
 
-Затем Service Fabric использует учетные данные репозитория по умолчанию, которые можно указать в ClusterManifest `Hosting` в разделе.  Если `UseDefaultRepositoryCredentials` — `true`, Service Fabric считывает следующие значения с ClusterManifest:
+Затем Service Fabric использует учетные данные репозитория по умолчанию, которые можно указать в ClusterManifest в разделе `Hosting`.  Если `UseDefaultRepositoryCredentials` — `true`, Service Fabric считывает следующие значения с ClusterManifest:
 
 * DefaultContainerRepositoryAccountName (строка).
 * DefaultContainerRepositoryPassword (строка).
 * IsDefaultContainerRepositoryPasswordEncrypted (логическое значение).
 * DefaultContainerRepositoryPasswordType (строка) — поддерживается, начиная со среды выполнения 6.4.
 
-Ниже приведен пример того, что можно добавить `Hosting` в раздел файла клустерманифесттемплате. JSON. Этот `Hosting` раздел можно добавить при создании кластера или позднее при обновлении конфигурации. Дополнительные сведения см. в статьях [Настройка параметров кластера Service Fabric](service-fabric-cluster-fabric-settings.md) и [Управление секретами в приложениях Service Fabric](service-fabric-application-secret-management.md).
+Ниже приведен пример того, что можно добавить в раздел `Hosting` в файле Клустерманифесттемплате. JSON. Раздел `Hosting` можно добавить при создании кластера или позднее при обновлении конфигурации. Дополнительные сведения см. в статьях [Настройка параметров кластера Service Fabric](service-fabric-cluster-fabric-settings.md) и [Управление секретами в приложениях Service Fabric](service-fabric-application-secret-management.md).
 
 ```json
 "fabricSettings": [
@@ -112,7 +112,7 @@ Service Fabric поддерживает использование маркер�
 
 3.  После выполнения описанных выше действий измените файл applicationmanifest. XML.  Найдите тег с меткой "ContainerHostPolicies" и добавьте атрибут `‘UseTokenAuthenticationCredentials=”true”`.
 
-    ```json
+    ```xml
       <ServiceManifestImport>
           <ServiceManifestRef ServiceManifestName="NodeServicePackage" ServiceManifestVersion="1.0"/>
       <Policies>
@@ -125,8 +125,8 @@ Service Fabric поддерживает использование маркер�
     ```
 
     > [!NOTE]
-    > Флаг `UseDefaultRepositoryCredentials` , установленный в true `UseTokenAuthenticationCredentials` , в то время как имеет значение true, вызовет ошибку во время развертывания.
+    > Флаг `UseDefaultRepositoryCredentials` установлен равным true, тогда как `UseTokenAuthenticationCredentials` имеет значение true, вызовет ошибку во время развертывания.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * См. Дополнительные сведения о [проверке подлинности реестра контейнеров](/azure/container-registry/container-registry-authentication).

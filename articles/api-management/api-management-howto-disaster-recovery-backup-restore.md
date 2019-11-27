@@ -54,7 +54,7 @@ ms.locfileid: "71958527"
 
 ### <a name="create-an-azure-active-directory-application"></a>Создание приложения Azure Active Directory
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Используя подписку, включающую экземпляр службы управления API, перейдите на вкладку **Регистрация приложений** в **Azure Active Directory** (Azure Active Directory > Управление/Регистрация приложений).
 
     > [!NOTE]
@@ -66,10 +66,10 @@ ms.locfileid: "71958527"
 
 4. Введите имя приложения.
 5. Выберите тип приложения **Машинный код**.
-6. Введите в поле **URI перенаправления** любой URL-адрес, например `http://resources`. Это поле является обязательным, но введенное значение впоследствии не используется. Установите флажок, чтобы сохранить приложение.
-7. Нажмите кнопку **Создать**.
+6. Введите в поле `http://resources`URI перенаправления**любой URL-адрес, например**. Это поле является обязательным, но введенное значение впоследствии не используется. Установите флажок, чтобы сохранить приложение.
+7. Щелкните **Создать**.
 
-### <a name="add-an-application"></a>Добавить приложение
+### <a name="add-an-application"></a>Добавление приложения
 
 1. После создания приложения щелкните **Параметры**.
 2. Теперь щелкните **Требуемые разрешения**.
@@ -117,14 +117,14 @@ namespace GetTokenResourceManagerRequests
 
 1. Замените `{tenant id}` идентификатором клиента для созданного приложения Azure Active Directory. Чтобы узнать этот идентификатор, выберите **Регистрация приложений** -> **Конечные точки**.
 
-    ![Конечные точки][api-management-endpoint]
+    ![конечные точки;][api-management-endpoint]
 
 2. Замените `{application id}` значением, которое представлено на странице **Параметры**.
 3. Замените значение `{redirect uri}` на значение с вкладки **URI перенаправления** приложения Azure Active Directory.
 
     Когда все значения будут указаны, этот пример кода должен вернуть примерно такой маркер:
 
-    ![Токен][api-management-arm-token]
+    ![Маркер][api-management-arm-token]
 
     > [!NOTE]
     > Срок действия маркера может истечь после определенного периода. Выполнить образец кода снова, чтобы создать новый маркер.
@@ -147,7 +147,7 @@ request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + token);
 POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/backup?api-version={api-version}
 ```
 
-где:
+Описание:
 
 -   `subscriptionId` — идентификатор подписки, содержащей службу управления API, для которой вы пытаетесь выполнить резервное копирование;
 -   `resourceGroupName` — имя группы ресурсов службы управления API Azure
@@ -188,7 +188,7 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/restore?api-version={api-version}
 ```
 
-где:
+Описание:
 
 -   `subscriptionId` — идентификатор подписки, включающей в себя службу управления API, которую нужно восстановить из резервной копии;
 -   `resourceGroupName` — имя группы ресурсов, включающей в себя службу управления API Azure, в которую нужно восстановить резервную копию;
@@ -220,7 +220,7 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 > [!NOTE]
 > Операции резервного копирования и восстановления также можно выполнять с помощью команд PowerShell [_BACKUP-азапиманажемент_](/powershell/module/az.apimanagement/backup-azapimanagement) и [_RESTORE-азапиманажемент_](/powershell/module/az.apimanagement/restore-azapimanagement) соответственно.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Чтобы ознакомиться с другими способами резервного копирования и восстановления, ознакомьтесь со следующими ресурсами.
 

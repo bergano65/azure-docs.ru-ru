@@ -9,12 +9,12 @@ author: ecfan
 ms.author: estfan
 ms.topic: conceptual
 ms.date: 07/26/2019
-ms.openlocfilehash: 960733b7423ad1e22bd05a75d9b994cd85b1d30c
-ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
+ms.openlocfilehash: de184b189c00cce64932a3ab17d41ed84e197a7e
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72680371"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74534089"
 ---
 # <a name="create-and-manage-integration-accounts-for-b2b-enterprise-integrations-in-azure-logic-apps"></a>Создание учетных записей интеграции для интеграции B2B Enterprise в Azure Logic Apps и управление ими
 
@@ -40,7 +40,7 @@ ms.locfileid: "72680371"
 
 ## <a name="create-integration-account"></a>Создание учетной записи интеграции
 
-Для этой задачи можно использовать либо портал Azure, выполнив действия, описанные в этом разделе, [Azure PowerShell](https://docs.microsoft.com//powershell/module/azurerm.logicapp/New-AzureRmIntegrationAccount)или [Azure CLI](https://docs.microsoft.com/cli/azure/resource?view=azure-cli-latest#az-resource-create).
+Для этой задачи можно использовать либо портал Azure, выполнив действия, описанные в этом разделе, [Azure PowerShell](/powershell/module/Az.LogicApp/New-AzIntegrationAccount)или [Azure CLI](https://docs.microsoft.com/cli/azure/resource?view=azure-cli-latest#az-resource-create).
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетных данных учетной записи Azure.
 
@@ -61,7 +61,7 @@ ms.locfileid: "72680371"
    | **Имя** | ДА | <*integration-account-name*> | Имя учетной записи интеграции, которое может содержать только буквы, цифры, дефисы (`-`), символы подчеркивания (`_`), круглые скобки (`(`, `)`) и точки (`.`). В этом примере используется "Fabrikam-Integration". |
    | **подписка** | ДА | <*Azure-subscription-name*> | Имя подписки Azure. |
    | **группа ресурсов** | ДА | <*имя_группы_ресурсов_Azure*> | Имя [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md) , используемой для организации связанных ресурсов. В этом примере создайте новую группу ресурсов с именем "Фабрикаминтегратион-RG". |
-   | **Ценовая категория** | ДА | < >*уровня ценообразования* | Ценовая категория для учетной записи интеграции, которую можно изменить позже. В этом примере выберите **Free (бесплатный**). Дополнительные сведения см. в следующих статьях: <p>[модель ценообразования для Logic Apps](../logic-apps/logic-apps-pricing.md#integration-accounts) -  <p>[ограничения и конфигурация -  Logic Apps](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits) <p>[цены на Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps/) -  |
+   | **Ценовая категория** | ДА | <> *уровня ценообразования* | Ценовая категория для учетной записи интеграции, которую можно изменить позже. В этом примере выберите **Free (бесплатный**). Дополнительные сведения см. в следующих статьях: <p>[модель ценообразования для Logic Apps](../logic-apps/logic-apps-pricing.md#integration-accounts) -  <p>[ограничения и конфигурация - Logic Apps](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits) <p>[цены на Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps/) -  |
    | **Расположение** | ДА | <*Azure-Region*> | Регион, в котором хранятся метаданные учетной записи интеграции. Выберите то же расположение, что и приложение логики, или создайте приложения логики в том же расположении, что и учетная запись интеграции. В этом примере используйте "Западная часть США". <p>**Примечание**. чтобы создать учетную запись интеграции в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md), выберите эту интегрированную среду сценариев в качестве расположения. Дополнительные сведения см. [в разделе Создание учетных записей интеграции в интегрированной среде сценариев](../logic-apps/add-artifacts-integration-service-environment-ise.md#create-integration-account-environment). |
    | **Служба Log Analytics** | Нет | Выкл., вкл. | Для этого примера не устанавливайте параметр **Off** . |
    |||||
@@ -255,7 +255,7 @@ ms.locfileid: "72680371"
 
 ## <a name="delete-integration-account"></a>Удаление учетной записи интеграции
 
-Для этой задачи можно использовать либо портал Azure, выполнив действия, описанные в этом разделе, [Azure CLI](https://docs.microsoft.com/cli/azure/resource?view=azure-cli-latest#az-resource-delete)или [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.logicapp/Remove-AzureRmIntegrationAccount).
+Для этой задачи можно использовать либо портал Azure, выполнив действия, описанные в этом разделе, [Azure CLI](https://docs.microsoft.com/cli/azure/resource?view=azure-cli-latest#az-resource-delete)или [Azure PowerShell](/powershell/module/az.logicapp/remove-azintegrationaccount).
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетных данных учетной записи Azure.
 

@@ -194,4 +194,4 @@ ms.locfileid: "74014297"
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Отчеты о действиях входа на портале Azure Active Directory](concept-sign-ins.md).
-* [Программный доступ к отчетам Azure Active Directory](concept-reporting-api.md).
+* [Начало работы с API отчетов Azure Active Directory](concept-reporting-api.md).

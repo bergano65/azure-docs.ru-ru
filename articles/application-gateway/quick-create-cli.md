@@ -1,19 +1,20 @@
 ---
-title: Краткое руководство. Направление веб-трафика с помощью шлюза приложений Azure и Azure CLI | Документация Майкрософт
+title: Краткое руководство. Направление веб-трафика с помощью CLI
+titleSuffix: Azure Application Gateway
 description: Узнайте, как с помощью Azure CLI создать Шлюз приложений Azure, который направляет веб-трафик к виртуальным машинам в серверном пуле.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: quickstart
-ms.date: 07/19/2019
+ms.date: 11/14/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: dd68f4a565c28f1dbac7e94442a8f8231af01328
-ms.sourcegitcommit: da0a8676b3c5283fddcd94cdd9044c3b99815046
+ms.openlocfilehash: de1f30d949509ab48999d0080ccc4df74321ce01
+ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314894"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74075198"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-cli"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure и Azure CLI.
 
@@ -29,7 +30,7 @@ ms.locfileid: "68314894"
 
 Если вы решили установить и использовать CLI локально, вам потребуется Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду **az --version**. Дополнительные сведения об установке или обновлении см. [здесь]( /cli/azure/install-azure-cli).
 
-### <a name="resource-group"></a>Resource group
+### <a name="resource-group"></a>группа ресурсов.
 
 В Azure выделите связанные ресурсы группе ресурсов. Создайте группу ресурсов, используя команду [az group create](/cli/azure/group#az-group-create). 
 

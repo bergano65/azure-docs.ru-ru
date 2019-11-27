@@ -21,7 +21,7 @@ ms.locfileid: "73685782"
 # <a name="get-started-with-transparent-data-encryption-tde-in-sql-data-warehouse"></a>Начало работы с прозрачным шифрованием данных (TDE) в хранилище данных SQL
 > [!div class="op_single_selector"]
 > * [Обзор безопасности](sql-data-warehouse-overview-manage-security.md)
-> * [Проверка подлинности](sql-data-warehouse-authentication.md)
+> * [Authentication](sql-data-warehouse-authentication.md)
 > * [Шифрование (портал)](sql-data-warehouse-encryption-tde.md)
 > * [Шифрование (T-SQL)](sql-data-warehouse-encryption-tde-tsql.md)
 > 

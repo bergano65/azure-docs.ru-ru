@@ -5,14 +5,14 @@ author: msmbaldwin
 ms.service: security
 ms.topic: article
 ms.author: mbaldwin
-ms.date: 06/05/2019
+ms.date: 11/01/2019
 ms.custom: seodec18
-ms.openlocfilehash: 98ab9ea67ceb1d965e248c93d27cb801ab8c7483
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: ea2a66a6b012664a9596a02ea32c1a0b677ee3ea
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74033321"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74384264"
 ---
 # <a name="azure-disk-encryption-for-windows-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин Windows
 
@@ -98,7 +98,17 @@ ms.locfileid: "74033321"
 
 ## <a name="what-encryption-method-does-azure-disk-encryption-use"></a>Какой метод шифрования используется в шифровании дисков Azure?
 
-Шифрование дисков Azure использует метод шифрования BitLocker AES256 (AES256WithDiffuser в версиях до Windows Server 2012). 
+Шифрование дисков Azure выбирает метод шифрования в BitLocker на основе версии Windows следующим образом.
+
+| Версии Windows                 | Версия | Метод шифрования        |
+|----------------------------------|--------|--------------------------|
+| Windows Server 2012, Windows 10 или более поздней версии  | > = 1511 |XTS-AES 256 bit           |
+| Windows Server 2012, Windows 8, 8,1, 10 | < 1511 |AES 256 bit *              |
+| Windows Server 2008 R2            |        |Бит AES 256 с диффузором |
+
+\* AES 256 bit с диффузором не поддерживается в Windows 2012 и более поздних версиях.
+
+Чтобы определить версию ОС Windows, запустите на виртуальной машине средство winver.
 
 ## <a name="if-i-use-encryptformatall-and-specify-all-volume-types-will-it-erase-the-data-on-the-data-drives-that-we-already-encrypted"></a>Если используется параметр EncryptFormatAll и указаны все типы томов, удалятся ли данные из уже зашифрованных дисков?
 Нет. Данные не удаляются из дисков, которые уже зашифрованы с помощью службы шифрования дисков Azure. Так же как и в случае с диском ОС, параметр EncryptFormatAll не шифрует повторно уже зашифрованные диски данных. 

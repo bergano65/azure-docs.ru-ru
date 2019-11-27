@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 960f6f0de94c6bb4fc6b03c31740b63270cf9e14
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: f4ce3cd0db20f76aa6169f15254cf36ee64151a5
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74132930"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406747"
 ---
 # <a name="filters-in-azure-cognitive-search"></a>Фильтры в Когнитивный поиск Azure 
 
@@ -61,7 +61,6 @@ ms.locfileid: "74132930"
 Фильтрация выполняется в сочетании с поиском, определяющим, какие документы следует включить в подчиненную обработку для получения документа и оценки релевантности. При связывании со строкой поиска фильтр эффективно сокращает набор отзывов последующей операции поиска. При использовании отдельно (например, когда строка запроса пуста, где `search=*`), критерием фильтра являются только входные данные. 
 
 ## <a name="defining-filters"></a>Определение фильтров
-
 Фильтры — это выражения OData, сформулированные с помощью [подмножества синтаксиса OData версии 4, поддерживаемого в когнитивный Поиск Azure](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search). 
 
 Можно указать один фильтр для каждой операции **поиска** , но сам фильтр может включать несколько полей, несколько условий, а при использовании функции **Match** — несколько выражений полнотекстового поиска. В выражении фильтра из нескольких частей можно указать предикаты в любом порядке (в соответствии с правилами приоритета операторов). Попытка поставить предикаты в определенной последовательности не даст значительного прироста производительности.
@@ -72,14 +71,14 @@ ms.locfileid: "74132930"
 
 ```http
 # Option 1:  Use $filter for GET
-GET https://[service name].search.windows.net/indexes/hotels/docs?search=*&$filter=baseRate lt 150&$select=hotelId,description&api-version=2019-05-06
+GET https://[service name].search.windows.net/indexes/hotels/docs?api-version=2019-05-06&search=*&$filter=Rooms/any(room: room/BaseRate lt 150.0)&$select=HotelId, HotelName, Rooms/Description, Rooms/BaseRate
 
 # Option 2: Use filter for POST and pass it in the request body
 POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-version=2019-05-06
 {
     "search": "*",
-    "filter": "baseRate lt 150",
-    "select": "hotelId,description"
+    "filter": "Rooms/any(room: room/BaseRate lt 150.0)",
+    "select": "HotelId, HotelName, Rooms/Description, Rooms/BaseRate"
 }
 ```
 
@@ -87,8 +86,8 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
     parameters =
         new SearchParameters()
         {
-            Filter = "baseRate lt 150",
-            Select = new[] { "hotelId", "description" }
+            Filter = "Rooms/any(room: room/BaseRate lt 150.0)",
+            Select = new[] { "HotelId", "HotelName", "Rooms/Description" ,"Rooms/BaseRate"}
         };
 
     var results = searchIndexClient.Documents.Search("*", parameters);
@@ -101,31 +100,31 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 + Автономный параметр **$filter** без строки запроса полезен, когда выражение фильтра может полностью определить интересующие документы. Без строки запроса не выполняется лексический или лингвистический анализ, нет оценки и рейтинга. Обратите внимание, что строка поиска — это просто звездочка, что означает "сопоставить все документы".
 
    ```
-   search=*&$filter=(baseRate ge 60 and baseRate lt 300) and accommodation eq 'Hotel' and city eq 'Nogales'
+   search=*&$filter=Rooms/any(room: room/BaseRate ge 60 and room/BaseRate lt 300) and Address/City eq 'Honolulu'
    ```
 
-+ Сочетание строки запроса и **$filter**, где фильтр создает подмножество, а строка запроса предоставляет термины для полнотекстового поиска по отфильтрованному подмножеству. Использование фильтра с строкой запроса является наиболее распространенным шаблоном использования.
++ Сочетание строки запроса и **$filter**, где фильтр создает подмножество, а строка запроса предоставляет термины для полнотекстового поиска по отфильтрованному подмножеству. Добавление терминов («театров расстояний») приводит к получению оценок в результатах поиска, где документы, которые лучше соответствуют условиям, ранжированы выше. Использование фильтра с строкой запроса является наиболее распространенным шаблоном использования.
 
    ```
-   search=hotels ocean$filter=(baseRate ge 60 and baseRate lt 300) and city eq 'Los Angeles'
+  search=walking distance theaters&$filter=Rooms/any(room: room/BaseRate ge 60 and room/BaseRate lt 300) and Address/City eq 'Seattle'&$count=true
    ```
 
 + Составные запросы, разделенные с помощью логического оператора or, каждый со своими критериями фильтра (например, beagles в категории dog или siamese в категории cat). Выражения, Объединенные с `or`, оцениваются по отдельности с объединением документов, соответствующих каждому выражению, отправляемому обратно в ответе. Этот шаблон использования достигается с помощью функции `search.ismatchscoring`. Можно также использовать версию без оценки `search.ismatch`.
 
    ```
    # Match on hostels rated higher than 4 OR 5-star motels.
-   $filter=search.ismatchscoring('hostel') and rating ge 4 or search.ismatchscoring('motel') and rating eq 5
+   $filter=search.ismatchscoring('hostel') and Rating ge 4 or search.ismatchscoring('motel') and Rating eq 5
 
    # Match on 'luxury' or 'high-end' in the description field OR on category exactly equal to 'Luxury'.
-   $filter=search.ismatchscoring('luxury | high-end', 'description') or category eq 'Luxury'
+   $filter=search.ismatchscoring('luxury | high-end', 'Description') or Category eq 'Luxury'&$count=true
    ```
 
   Можно также объединить полнотекстовый поиск с помощью `search.ismatchscoring` с фильтрами `and` вместо `or`, но это функционально эквивалентно использованию параметров `search` и `$filter` в запросе поиска. Например, следующие два запроса дают одинаковый результат:
 
   ```
-  $filter=search.ismatchscoring('pool') and rating ge 4
+  $filter=search.ismatchscoring('pool') and Rating ge 4
 
-  search=pool&$filter=rating ge 4
+  search=pool&$filter=Rating ge 4
   ```
 
 Исчерпывающие сведения о конкретных вариантах использования см. в следующих статьях:

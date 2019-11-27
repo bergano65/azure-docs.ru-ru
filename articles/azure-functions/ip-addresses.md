@@ -128,6 +128,6 @@ az webapp show --resource-group <group_name> --name <app_name> --query sku --out
 
 Номер `sku` среды службы приложений — `Isolated`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Распространенная причина изменения IP-адреса — изменение масштаба приложения-функции. [Узнайте больше о масштабировании приложений-функций](functions-scale.md).

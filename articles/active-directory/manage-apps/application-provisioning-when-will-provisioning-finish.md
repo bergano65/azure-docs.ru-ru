@@ -1,5 +1,5 @@
 ---
-title: Подготовка пользователей для приложения в коллекции Azure AD выполняется час и более | Документация Майкрософт
+title: Подготовка пользователей к приложению из коллекции Azure AD занимает несколько часов или больше
 description: Как узнать, почему подготовка для приложения может выполняться дольше, чем ожидалось
 services: active-directory
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.date: 07/11/2017
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca2257a46815dd5e685b9cc746a64cede510d10a
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 7425731a8d4adde11cd3f15df2cd27cd8541f615
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71034189"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74275697"
 ---
 # <a name="user-provisioning-to-an-azure-ad-gallery-application-is-taking-hours-or-more"></a>Подготовка пользователей для приложения в коллекции Azure AD выполняется час и более
 
@@ -35,6 +35,6 @@ ms.locfileid: "71034189"
 
 -   **Фильтры области.** Фильтры области позволяют точно настроить данные, которые служба подготовки получает из Azure AD, за счет фильтрации пользователей по значению конкретного атрибута. Дополнительные сведения о фильтрах области см. в статье [Подготовка приложений на основе атрибутов с использованием фильтров области](https://docs.microsoft.com/azure/active-directory/active-directory-saas-scoping-filters).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](user-provisioning.md)
 

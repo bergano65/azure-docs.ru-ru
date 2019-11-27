@@ -1,26 +1,18 @@
 ---
-title: Руководство по созданию веб-приложения с кэшем Azure для Redis, использующим шаблон "Кэш на стороне" | Документация Майкрософт
+title: Учебник по созданию веб-приложения с помощью Кэша Azure для Redis, использующего шаблон "Кэш на стороне"
 description: Узнайте, как создать веб-приложение с кэшем Azure для Redis, использующим шаблон "Кэш на стороне"
-services: cache
-documentationcenter: ''
 author: yegu-ms
-manager: jhubbard
-editor: ''
-ms.assetid: ''
 ms.service: cache
-ms.workload: tbd
-ms.tgt_pltfrm: cache
-ms.devlang: na
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 03/30/2018
 ms.author: yegu
-ms.openlocfilehash: 8ca24e8556ee53e9d12eaea8fd9eddb07ebed490
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: dbd8250da46e640aaa9403430ae0fbfaa9b181c8
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826398"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74121509"
 ---
 # <a name="tutorial-create-a-cache-aside-leaderboard-on-aspnet"></a>Руководство. Создание списка лидеров с применением шаблона "Кэш на стороне" в ASP.NET
 
@@ -671,7 +663,7 @@ ms.locfileid: "73826398"
 
    | Параметр       | Рекомендуемое значение | ОПИСАНИЕ |
    | ------------ | ------------------ | ------------------------------------------------- |
-   | **Server name** (Имя сервера) | Любое глобально уникальное имя | Допустимые имена серверов см. в статье о [правилах и ограничениях именования](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging). |
+   | **Server name** (Имя сервера) | Любое глобально уникальное имя | Допустимые имена серверов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming). |
    | **Имя для входа администратора сервера** | Любое допустимое имя | Допустимые имена входа см. в статье об [идентификаторах базы данных](https://docs.microsoft.com/sql/relational-databases/databases/database-identifiers). |
    | **Пароль** | Любой допустимый пароль | Длина пароля должна составлять минимум 8 символов. Пароль должен содержать символы трех категорий из перечисленных: прописные буквы, строчные буквы, цифры и символы, не являющиеся буквами или цифрами. |
    | **Местоположение.** | *Восточная часть США* | Выберите тот же регион, в котором вы создали кэш и службу приложений. |

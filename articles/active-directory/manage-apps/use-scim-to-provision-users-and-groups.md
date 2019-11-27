@@ -1,5 +1,5 @@
 ---
-title: Подготовка пользователей SCIM с помощью Azure Active Directory | Документация Майкрософт
+title: Автоматизация подготовки приложений с помощью SCIM в Azure AD
 description: Узнайте, как создать конечную точку SCIM, интегрировать API SCIM с Azure Active Directory и начать автоматизировать подготовку пользователей и групп в приложениях.
 services: active-directory
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: arvinh
 ms.custom: aaddev;it-pro;seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d8bb9b507763c935ab244c42584120a279063954
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.openlocfilehash: 1d4694dfa92d282e1dc098a510ac82dd9c703c1e
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74195463"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74276491"
 ---
 # <a name="scim-user-provisioning-with-azure-active-directory-azure-ad"></a>Подготовка пользователей SCIM с помощью Azure Active Directory (Azure AD)
 
@@ -280,7 +280,7 @@ SCIM — это стандартизированное определение д
 
 ##### <a name="request-2"></a>Получения
 
-*GET /Users?filter=userName eq "Test_User_dfeef4c5-5681-4387-b016-bdf221e82081"*
+*ПОЛУЧИТЬ/Users? Filter = userName EQ "Test_User_dfeef4c5-5681 -4387-B016-bdf221e82081"*
 
 ##### <a name="response-2"></a>Ответ
 
@@ -606,7 +606,7 @@ SCIM — это стандартизированное определение д
 
 ##### <a name="request-13"></a>Получения
 
-*DELETE /Groups/cdb1ce18f65944079d37 HTTP/1.1*
+*Удаление/Groups/cdb1ce18f65944079d37 HTTP/1.1*
 
 ##### <a name="response-13"></a>Ответ
 
@@ -826,7 +826,7 @@ netsh http add sslcert ipport=0.0.0.0:443 certhash=0000000000003ed9cd0c315bbb6dc
 
 ### <a name="handling-endpoint-authentication"></a>Обработка аутентификации на конечной точке
 
-Запросы от Azure Active Directory содержат токен носителя OAuth 2.0.   Любая служба, получающая запрос, должна проверять подлинность издателя как Azure Active Directory ожидаемого Azure Active Directory клиента для доступа к веб-службе Azure Active Directory Graph.  В токене издатель обозначается утверждением iss, например «iss»:"https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/".  В этом примере базовый адрес значения утверждения, https://sts.windows.net, определяет Azure Active Directory в качестве издателя, а сегмент относительных адресов, (cbb1a5ac-f33b-45fa-9bf5-f37db0fed422), является уникальным идентификатором Azure Active Directory клиента, для которого был выдан маркер. Аудитория для маркера будет ИДЕНТИФИКАТОРом шаблона приложения для приложения в коллекции. Идентификатор шаблона приложения для всех пользовательских приложений — 8adf8e6e-67b2-4cf2-A259-e3dc5476c621. Идентификатор шаблона приложения для каждого приложения в коллекции изменяется. Обратитесь в ProvisioningFeedback@microsoft.com для получения вопросов по ИДЕНТИФИКАТОРу шаблона приложения для приложения из коллекции. Каждое приложение, зарегистрированное в одном клиенте, может получить одно и то же `iss` заявки с запросами SCIM.
+Запросы от Azure Active Directory содержат токен носителя OAuth 2.0.   Любая служба, получающая запрос, должна проверять подлинность издателя как Azure Active Directory ожидаемого Azure Active Directory клиента для доступа к веб-службе Azure Active Directory Graph.  В маркере поставщик идентифицируется по утверждению ISS, например "ISS": "https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/".  В этом примере базовый адрес значения утверждения, https://sts.windows.net, определяет Azure Active Directory в качестве издателя, а сегмент относительных адресов, (cbb1a5ac-f33b-45fa-9bf5-f37db0fed422), является уникальным идентификатором Azure Active Directory клиента, для которого был выдан маркер. Аудитория для маркера будет ИДЕНТИФИКАТОРом шаблона приложения для приложения в коллекции. Идентификатор шаблона приложения для всех пользовательских приложений — 8adf8e6e-67b2-4cf2-A259-e3dc5476c621. Идентификатор шаблона приложения для каждого приложения в коллекции изменяется. Обратитесь в ProvisioningFeedback@microsoft.com для получения вопросов по ИДЕНТИФИКАТОРу шаблона приложения для приложения из коллекции. Каждое приложение, зарегистрированное в одном клиенте, может получить одно и то же `iss` заявки с запросами SCIM.
 
 Разработчики, использующие библиотеки CLI, предоставляемые корпорацией Майкрософт для создания службы SCIM, могут проверять подлинность запросов от Azure Active Directory с помощью пакета Microsoft. Owin. Security. ActiveDirectory. для этого выполните следующие действия. 
 

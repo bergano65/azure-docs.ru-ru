@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: tutorial
-ms.date: 07/03/2019
+ms.date: 10/24/2019
 ms.author: pafarley
-ms.openlocfilehash: b118a509f72af2146abf854b881fa34d8de302a1
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: e3c4f1c641865fa8aa1d01d370063c03bbc0680c
+ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564928"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72936050"
 ---
 # <a name="tutorial-moderate-e-commerce-product-images-with-azure-content-moderator"></a>Руководство по Модерация изображений товаров для электронной коммерции с помощью Azure Content Moderator
 
@@ -65,7 +65,9 @@ ms.locfileid: "68564928"
 
 [!code-csharp[define API keys and endpoint URIs](~/samples-eCommerceCatalogModeration/Fusion/Program.cs?range=21-29)]
 
-В полях `___Key` следует указать реальные значения ключей подписки (значение `CustomVisionKey` вы получите позже), а поля `___Uri` нужно изменить, чтобы они содержали правильные идентификаторы регионов. В сегменте `YOURTEAMID` поля `ReviewUri` поместите идентификатор ранее созданной команды проверки. Заключительную часть поля `CustomVisionUri` вы заполните позже.
+Вам нужно указать в полях `___Key` значения ключей своей подписки, а также изменить поля `___Uri` на правильные URL-адреса конечных точек (ключ и конечную точку Пользовательского визуального распознавания вы получите позже). Эти значения можно найти на вкладках **Быстрый запуск** каждого ресурса Azure. В сегменте `YOURTEAMID` поля `ReviewUri` поместите идентификатор ранее созданной команды проверки. Заключительную часть поля `CustomVisionUri` вы заполните позже.
+
+[!INCLUDE [subdomains note](../../../includes/cognitive-services-custom-subdomains-note.md)]
 
 ## <a name="primary-method-calls"></a>Вызовы основных методов
 

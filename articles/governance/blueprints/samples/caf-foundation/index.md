@@ -1,14 +1,14 @@
 ---
 title: Пример схемы CAF Foundation — общие сведения
-description: Обзор и описание архитектуры примера схемы CAF Foundation.
+description: Обзор и описание архитектуры Cloud Adoption Framework (CAF) с примером схемы для Azure Foundation.
 ms.date: 08/20/2019
 ms.topic: sample
-ms.openlocfilehash: a353f92be995412702a93219c8fb1af967368beb
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 2943d3327fe6ea3c935694118aaa995b8e96ace6
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74038491"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74404782"
 ---
 # <a name="overview-of-the-microsoft-cloud-adoption-framework-for-azure-foundation-blueprint-sample"></a>Общие сведения об использовании Microsoft Cloud Adoption Framework с примером схемы CAF Foundation
 
@@ -30,7 +30,7 @@ ms.locfileid: "74038491"
   - добавление ресурсов в группу ресурсов с помощью тега CostCenter;
   - использование разрешенного региона Azure для ресурсов и групп ресурсов;
   - использование разрешенных номеров SKU учетной записи хранения (выбираются при развертывании);
-  - использование разрешенных номеров SKU виртуальной машины Azure (выбираются при развертывании);
+  - использование разрешенных номеров SKU виртуальных машин Azure (выбираются при развертывании);
   - развертывание Наблюдателя за сетями; 
   - включение шифрования безопасной передачи учетной записи хранения Azure;
   - запрет на использование типов ресурсов (выбираются при развертывании).  
@@ -50,7 +50,7 @@ ms.locfileid: "74038491"
 Вы ознакомились с описанием архитектуры и обзором примера схемы CAF Foundation.
 
 > [!div class="nextstepaction"]
->  [Схема CAF Foundation. Шаги по развертыванию](./deploy.md)
+> [Схема CAF Foundation. Шаги по развертыванию](./deploy.md)
 
 Дополнительные статьи о схемах и способах их использования:
 

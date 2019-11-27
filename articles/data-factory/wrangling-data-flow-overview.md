@@ -7,12 +7,12 @@ ms.reviewer: gamal
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/01/2019
-ms.openlocfilehash: 7b46b1108246f0b83fcfce69844d19d01b1994c4
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 56c2d96e6e4a5900770aaefcabb424eddb1cbde6
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73665649"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74531377"
 ---
 # <a name="what-are-wrangling-data-flows"></a>Что такое потоки данных структурирование?
 
@@ -24,7 +24,7 @@ ms.locfileid: "73665649"
 
 Потоки данных структурирование особенно полезны для инженеров по работе с данными или "интеграторов данных".
 
-## <a name="use-cases"></a>Варианты использования
+## <a name="use-cases"></a>Примеры использования
 
 ### <a name="fast-interactive-data-exploration-and-preparation"></a>Быстрое исследование и подготовка данных в интерактивном режиме
 
@@ -37,6 +37,30 @@ ms.locfileid: "73665649"
 ### <a name="data-validation"></a>Проверка данных
 
 Визуальная проверка данных в целях удаления выбросов, аномалий и их согласования с формой для быстрой аналитики.
+
+## <a name="supported-sources"></a>Поддерживаемые источники
+
+| Соединитель | Формат данных | Authentication type (Тип проверки подлинности) |
+| -- | -- | --|
+| [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md) | - | Ключ учетной записи |
+| [Хранилище Azure Data Lake Gen1](connector-azure-data-lake-store.md) | - | Субъект-служба |
+| [Хранилище Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | - | Ключ учетной записи, субъект-служба |
+| [база данных SQL Azure;](connector-azure-sql-database.md) | - | Аутентификация SQL |
+| [Azure синапсе Analytics](connector-azure-sql-data-warehouse.md) | - | Аутентификация SQL |
+
+## <a name="the-mashup-editor"></a>Редактор гибридных приложений
+
+При создании потока данных структурирование все исходные наборы данных становятся запросами набора DataSet и помещаются в папку **адфресаурце** . По умолчанию Усеркуери будет указывать на первый запрос набора данных. Все преобразования должны выполняться в Усеркуери, так как изменения в запросах к набору данных не поддерживаются и не сохраняются. Переименование, Добавление и удаление запросов в настоящее время не поддерживается.
+
+![Структурирование](media/wrangling-data-flow/editor.png)
+
+В настоящее время не все функции Power Query M поддерживаются для структурирование данных, несмотря на то, что они доступны во время разработки. При построении потоков данных структурирование вам будет предложено следующее сообщение об ошибке, если функция не поддерживается:
+
+`The wrangling data flow is invalid. Expression.Error: The transformation logic isn't supported. Please try a simpler expression`
+
+Дополнительные сведения о поддерживаемых преобразованиях см. в разделе [структурирование Data Flow functions](wrangling-data-flow-functions.md).
+
+В настоящее время поток данных структурирование поддерживает запись только в один приемник.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,7 +1,7 @@
 ---
 title: Руководство по Получение результатов проверки орфографии с помощью API Bing для проверки орфографии
 titleSuffix: Azure Cognitive Services
-description: Сведения об использовании Проверки орфографии Bing.
+description: В рамках работы с этим учебником мы создадим веб-страницу, с помощью которой пользователи смогут запрашивать API Проверки орфографии Bing и отображать результаты.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: bing-spell-check
 ms.topic: tutorial
 ms.date: 09/13/2019
 ms.author: aahi
-ms.openlocfilehash: 73466b80915d5eb7228eef397d5aad68d27faa15
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 4ef45d0d67d44ee1bcf0f06f41425ca5366ce46d
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70996851"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74111450"
 ---
 # <a name="tutorial-build-a-web-page-spell-check-client"></a>Руководство по Создание веб-страницы клиента для проверки орфографии
 

@@ -24,14 +24,14 @@ Analysis Services также поддерживает операции, выпо
 
 ## <a name="create-service-principals"></a>Создание субъектов-служб
  
-Субъекты-службы можно создать на портале Azure или с помощью PowerShell. Дополнительные сведения см. на следующих ресурсах:
+Субъекты-службы можно создать на портале Azure или с помощью PowerShell. Дополнительные сведения см. в следующих статьях:
 
-[Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md)   
+[Создание субъекта-службы с помощью портала Azure](../active-directory/develop/howto-create-service-principal-portal.md)   
 [Создание субъекта-службы с помощью PowerShell](../active-directory/develop/howto-authenticate-service-principal-powershell.md)
 
 ## <a name="store-credential-and-certificate-assets-in-azure-automation"></a>Хранение учетных данных и сертификатов в службе автоматизации Azure
 
-Учетные данные и сертификаты субъектов-служб могут храниться в службе автоматизации Azure для выполнения операций с модулями runbook. Дополнительные сведения см. на следующих ресурсах:
+Учетные данные и сертификаты субъектов-служб могут храниться в службе автоматизации Azure для выполнения операций с модулями runbook. Дополнительные сведения см. в следующих статьях:
 
 [Ресурсы учетных данных в службе автоматизации Azure](../automation/automation-credentials.md)   
 [Сертификация активов в службе автоматизации Azure](../automation/automation-certificates.md)
@@ -48,7 +48,7 @@ Analysis Services также поддерживает операции, выпо
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-#### <a name="a-nameazmodule-using-azanalysisservices-module"></a><a name="azmodule" />Using AZ. AnalysisServices Module
+#### <a name="a-nameazmodule-using-azanalysisservices-module"></a><a name="azmodule" />использовании модуля AZ. AnalysisServices
 
 При использовании субъекта-службы для операций управления ресурсами с помощью модуля [AZ. AnalysisServices](/powershell/module/az.analysisservices) используйте командлет `Connect-AzAccount`. 
 
@@ -108,6 +108,6 @@ tbl.RequestRefresh(RefreshType.Full);
 db.Model.SaveChanges();
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 [Sign in with Azure PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps)  (Вход в Azure PowerShell)  
 [Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md)   

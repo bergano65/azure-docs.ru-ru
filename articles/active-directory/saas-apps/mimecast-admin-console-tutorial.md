@@ -8,6 +8,7 @@ manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 81c50614-f49b-4bbc-97d5-3cf77154305f
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0bbbd73d1856ba5d3dc19873c56fce622b272939
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9edadd6462052f82f92c05c1678f845ece856cfb
+ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67097346"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73160650"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mimecast-admin-console"></a>Руководство по Интеграция Azure Active Directory с консолью администрирования Mimecast
 
@@ -135,19 +136,19 @@ ms.locfileid: "67097346"
 
 2. Выберите **Services \> Application** (Службы > Приложение).
 
-    ![Services](./media/mimecast-admin-console-tutorial/ic794998.png "Services") (Службы)
+    ![Службы](./media/mimecast-admin-console-tutorial/ic794998.png "Службы")
 
 3. Щелкните **Профили проверки подлинности**.
 
-    ![Authentication Profiles](./media/mimecast-admin-console-tutorial/ic794999.png "Authentication Profiles") (Профили аутентификации)
+    ![Профили проверки подлинности](./media/mimecast-admin-console-tutorial/ic794999.png "Профили проверки подлинности")
     
 4. Щелкните **Новый профиль проверки подлинности**.
 
-    ![New Authentication Profile](./media/mimecast-admin-console-tutorial/ic795000.png "New Authentication Profile") (Создать профиль аутентификации)
+    ![Создание профиля проверки подлинности](./media/mimecast-admin-console-tutorial/ic795000.png "Новые профили проверки подлинности")
 
 5. В разделе **Профиль проверки подлинности** сделайте следующее:
 
-    ![Authentication Profile](./media/mimecast-admin-console-tutorial/ic795015.png "Authentication Profile") (Профиль аутентификации)
+    ![Профиль проверки подлинности](./media/mimecast-admin-console-tutorial/ic795015.png "Профиль проверки подлинности")
     
     a. В текстовом поле **Описание** введите имя конфигурации.
     
@@ -233,15 +234,15 @@ ms.locfileid: "67097346"
 
 2. Выберите **Directories \> Internal** (Каталоги > Внутренние).
    
-    ![Directories](./media/mimecast-admin-console-tutorial/ic795003.png "Directories") (Каталоги)
+    ![Directories](./media/mimecast-admin-console-tutorial/ic795003.png "Каталоги")
 
 3. Щелкните **Зарегистрировать новый домен**.
    
-    ![Register New Domain](./media/mimecast-admin-console-tutorial/ic795004.png "Register New Domain") (Зарегистрировать новый домен)
+    ![Регистрация нового домена](./media/mimecast-admin-console-tutorial/ic795004.png "Зарегистрировать новый домен")
 
 4. После создания нового домена щелкните **Новый адрес**.
    
-    ![New Address](./media/mimecast-admin-console-tutorial/ic795005.png "New Address") (Новый адрес)
+    ![Новый адрес](./media/mimecast-admin-console-tutorial/ic795005.png "Новый адрес")
 
 5. В окне нового адреса выполните следующие действия.
    
@@ -266,5 +267,5 @@ ms.locfileid: "67097346"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

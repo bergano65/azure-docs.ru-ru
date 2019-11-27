@@ -29,7 +29,7 @@ Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1)
 Перед началом необходимо настроить пул емкости.   
 [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)   
 Подсеть должна быть делегирована службе Azure NetApp Files.  
-[Делегирование подсети в Azure NetApp Files](azure-netapp-files-delegate-subnet.md)
+[Делегирование подсети службе Azure NetApp Files](azure-netapp-files-delegate-subnet.md)
 
 ## <a name="considerations"></a>Рекомендации 
 
@@ -119,4 +119,4 @@ Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1)
 * [Подключение или отключение тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
 * [Configure export policy for an NFS volume](azure-netapp-files-configure-export-policy.md) (Настройка политики экспорта для тома NFS)
 * [Ограничения ресурсов для службы Azure NetApp Files](azure-netapp-files-resource-limits.md)
-* [Подробнее об интеграции виртуальной сети для служб Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)
+* [Узнайте об интеграции виртуальной сети для служб Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)

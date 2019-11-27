@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: quickstart
 ms.date: 6/7/2017
-ms.openlocfilehash: 6bc0d8a1e938f2b8a97cab486d4679bfc445f6fb
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 531199303f7b00083bcd7139ac00ac36bde5c583
+ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58004076"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73837522"
 ---
 # <a name="create-a-jenkins-server-on-an-azure-linux-vm-from-the-azure-portal"></a>Создание сервера Jenkins на виртуальной машине Azure под управлением Linux на портале Azure
 
@@ -33,7 +33,7 @@ Jenkins поддерживает модель, в которой делегат�
 
 ## <a name="connect-to-jenkins"></a>Подключение к Jenkins
 
-Перейдите к виртуальной машине (например, http://jenkins2517454.eastus.cloudapp.azure.com/) в веб-браузере. Консоль Jenkins недоступна по незащищенному протоколу HTTP, поэтому на странице приведены инструкции по безопасному доступу к консоли Jenkins с компьютера с использованием туннеля SSH.
+Перейдите к виртуальной машине (например, `http://jenkins2517454.eastus.cloudapp.azure.com/`) в веб-браузере. Консоль Jenkins недоступна по незащищенному протоколу HTTP, поэтому на странице приведены инструкции по безопасному доступу к консоли Jenkins с компьютера с использованием туннеля SSH.
 
 ![Разблокировка Jenkins](./media/install-jenkins-solution-template/jenkins-ssh-instructions.png)
 

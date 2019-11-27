@@ -1,6 +1,6 @@
 ---
-title: Connectivity set up from virtual network to SAP HANA on Azure (large instances) | Microsoft Docs
-description: Connectivity set up from virtual network to use SAP HANA on Azure (large instances).
+title: Подключение, настроенное из виртуальной сети для SAP HANA в Azure (крупные экземпляры) | Документация Майкрософт
+description: Подключение, настроенное из виртуальной сети для использования SAP HANA в Azure (крупные экземпляры).
 services: virtual-machines-linux
 documentationcenter: ''
 author: RicksterCDN
@@ -22,20 +22,20 @@ ms.locfileid: "74206742"
 ---
 # <a name="connect-a-virtual-network-to-hana-large-instances"></a>Подключение виртуальной сети к крупным экземплярам HANA
 
-После создания виртуальной сети Azure, вы можете подключить сеть к SAP HANA в крупных экземплярах Azure. Создайте шлюз Azure ExpressRoute в виртуальной сети. This gateway enables you to link the virtual network to the ExpressRoute circuit that connects to the customer tenant on the HANA Large Instance stamp.
+После создания виртуальной сети Azure, вы можете подключить сеть к SAP HANA в крупных экземплярах Azure. Создайте шлюз Azure ExpressRoute в виртуальной сети. Этот шлюз позволяет связать виртуальную сеть с каналом ExpressRoute, который подключается к клиенту клиента в отметке крупных экземпляров HANA.
 
 > [!NOTE] 
 > Этот шаг может занять до 30 минут, так как при этом создается шлюз в обозначенной подписке Azure, который затем подключается к указанной виртуальной сети Azure.
 
 [!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 
-Если шлюз уже существует, проверьте, является ли он шлюзом ExpressRoute. If it is not an ExpressRoute gateway, delete the gateway, and re-create it as an ExpressRoute gateway. Если шлюз ExpressRoute уже установлен, обратитесь к разделу данной статьи "Связывание виртуальных сетей". 
+Если шлюз уже существует, проверьте, является ли он шлюзом ExpressRoute. Если это не шлюз ExpressRoute, удалите шлюз и создайте его повторно в качестве шлюза ExpressRoute. Если шлюз ExpressRoute уже установлен, обратитесь к разделу данной статьи "Связывание виртуальных сетей". 
 
 - Используйте [портал Azure](https://portal.azure.com/) или PowerShell, чтобы создать VPN-шлюз ExpressRoute, подключенный к виртуальной сети.
   - Если вы используете портал Azure, добавьте новый **шлюз виртуальной сети**, а затем, в качестве типа шлюза выберите **ExpressRoute**.
   - Если вы используете PowerShell, сначала загрузите и используйте последнюю версию [Пакета SDK для Azure PowerShell](https://azure.microsoft.com/downloads/). 
  
-Следующие команды создают шлюз ExpressRoute. The texts preceded by a _$_ are user-defined variables that should be updated with your specific information.
+Следующие команды создают шлюз ExpressRoute. Тексты, предшествующие _$_ , представляют собой определяемые пользователем переменные, которые должны быть обновлены с учетом конкретной информации.
 
 ```powershell
 # These Values should already exist, update to match your environment
@@ -70,9 +70,9 @@ New-AzVirtualNetworkGateway -Name $myGWName -ResourceGroupName $myGroupName -Loc
 
 ## <a name="link-virtual-networks"></a>Связывание виртуальных сетей
 
-Теперь, когда для виртуальной сети Azure создан шлюз ExpressRoute, Use the authorization information provided by Microsoft to connect the ExpressRoute gateway to the SAP HANA Large Instances ExpressRoute circuit. Вы можете подключиться с помощью портала Azure или PowerShell. The PowerShell instructions are as follows. 
+Теперь, когда для виртуальной сети Azure создан шлюз ExpressRoute, Используйте сведения об авторизации, предоставляемые корпорацией Майкрософт, для подключения шлюза ExpressRoute к каналу SAP HANA (крупные экземпляры) ExpressRoute. Вы можете подключиться с помощью портала Azure или PowerShell. Ниже приведены инструкции PowerShell. 
 
-Run the following commands for each ExpressRoute gateway by using a different AuthGUID for each connection. Первые две записи, приведенные в сценарии ниже, получены из сведений, предоставленных корпорацией Майкрософт. Кроме того, каждый AuthGUID связан с конкретной виртуальной сетью и шлюзом. If you want to add another Azure virtual network, you need to get another AuthID for your ExpressRoute circuit that connects HANA large instances into Azure from Microsoft. 
+Выполните следующие команды для каждого шлюза ExpressRoute, используя разные AuthGUID для каждого подключения. Первые две записи, приведенные в сценарии ниже, получены из сведений, предоставленных корпорацией Майкрософт. Кроме того, каждый AuthGUID связан с конкретной виртуальной сетью и шлюзом. Если вы хотите добавить другую виртуальную сеть Azure, необходимо получить еще одну AuthID для канала ExpressRoute, который подключает крупные экземпляры HANA к Azure от Майкрософт. 
 
 ```powershell
 # Populate with information provided by Microsoft Onboarding team
@@ -96,12 +96,12 @@ New-AzVirtualNetworkGatewayConnection -Name $myConnectionName `
 ```
 
 > [!NOTE]
-> The last parameter in the command New-AzVirtualNetworkGatewayConnection, **ExpressRouteGatewayBypass** is a new parameter that enables ExpressRoute Fast Path. A functionality that reduces network latency between your HANA Large Instance units and Azure VMs. The functionality got added in May 2019. For more details, check the article [SAP HANA (Large Instances) network architecture](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-network-architecture). Make sure that you are running the latest version of PowerShell cmdlets before running the commands.
+> Последний параметр в команде New-Азвиртуалнетворкгатевайконнектион, **експрессраутегатевайбипасс** — это новый параметр, включающий быстрый путь ExpressRoute. Функция, которая сокращает задержку в сети между единицами крупных экземпляров HANA и виртуальными машинами Azure. Функциональные возможности добавлены в 2019 мая. Дополнительные сведения см. в статье [SAP HANA (крупные экземпляры) сетевая архитектура](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-network-architecture). Перед выполнением команд убедитесь, что вы используете последнюю версию командлетов PowerShell.
 
 Возможно, вам потребуется сделать это несколько раз, чтобы подключить шлюз к нескольким каналам ExpressRoute, связанным с вашей подпиской. Например, скорее всего, вам потребуется подключить тот же шлюз виртуальной сети к каналу ExpressRoute, с помощью которого виртуальная сеть подключается к локальной сети.
 
-## <a name="applying-expressroute-fast-path-to-existing-hana-large-instance-expressroute-circuits"></a>Applying ExpressRoute Fast Path to existing HANA Large Instance ExpressRoute circuits
-The documentation so far explained how to connect a new ExpressRoute circuit that got created with a HANA Large Instance deployment to an Azure ExpressRoute gateway of one of your Azure virtual networks. But many customers already have their ExpressRoute circuits setup already and have their virtual networks connected to HANA Large Instances already. As the new ExpressRoute Fast Path is reducing network latency, it is recommended that you apply the change to use this functionality. The commands to connect a new ExpreesRoute circuit and to change an existing ExpressRoute Circuit are the same. As a result you need to run this sequence of PowerShell commands to change an existing circuit to use 
+## <a name="applying-expressroute-fast-path-to-existing-hana-large-instance-expressroute-circuits"></a>Применение быстрого пути ExpressRoute к существующим каналам ExpressRoute крупного экземпляра HANA
+В документации мы объяснили, как подключить новый канал ExpressRoute, созданный с помощью развертывания крупных экземпляров HANA, в шлюз Azure ExpressRoute одной из виртуальных сетей Azure. Но у многих клиентов уже есть настроенные каналы ExpressRoute, и виртуальные сети уже подключены к крупным экземплярам HANA. Так как новый быстрый путь ExpressRoute сокращает задержку в сети, рекомендуется применить изменения для использования этой функции. Команды для подключения нового канала Експрисрауте и изменения существующего канала ExpressRoute одинаковы. В результате необходимо выполнить эту последовательность команд PowerShell, чтобы изменить существующий канал для использования. 
 
 ```powershell
 # Populate with information provided by Microsoft Onboarding team
@@ -124,39 +124,39 @@ New-AzVirtualNetworkGatewayConnection -Name $myConnectionName `
 -PeerId $PeerID -ConnectionType ExpressRoute -AuthorizationKey $AuthGUID -ExpressRouteGatewayBypass
 ```
 
-It is important that you add the last parameter as displayed above to enable the ExpressRoute Fast Path functionality
+Важно добавить последний параметр, как показано выше, чтобы включить функцию быстрого пути ExpressRoute.
 
 
 ## <a name="expressroute-global-reach"></a>Global Reach ExpressRoute
-As you want to enable Global Reach for one or both of the two scenarios:
+Если вы хотите включить Global Reach для одного или обоих из двух сценариев:
 
- - HANA System Replication without any additional proxies or firewalls
- - Copying backups between HANA Large Instance units in two different regions to perform system copies or system refreshes
+ - Репликация системы HANA без дополнительных прокси-серверов или брандмауэров
+ - Копирование резервных копий между единицами крупных экземпляров HANA в двух разных регионах для выполнения системных копий или обновлений системы
 
-you need consider that:
+необходимо учитывать следующее:
 
-- You need to provide an address space range of a /29 address space. That address range may not overlap with any of the other address space ranges that you used so far connecting HANA Large Instances to Azure and may not overlap with any of your IP address ranges you used somewhere else in Azure or on-premises.
-- There is a limitation on the ASNs (Autonomous System Number) that can be used to advertise your on-premises routes to HANA Large Instances. Your on-premises must not advertise any routes with private ASNs in the range of 65000 – 65020 or 65515. 
-- For the scenario of connecting on-premises direct access to HANA Large instances, you need to calculate a fee for the circuit that connects you to Azure. For prices, check the prices for [Global Reach Add-On](https://azure.microsoft.com/pricing/details/expressroute/).
+- Необходимо указать диапазон адресного пространства для адресного пространства/29. Этот диапазон адресов может не перекрывать любые другие диапазоны адресного пространства, которые использовались для подключения крупных экземпляров HANA к Azure и могут не перекрываться с любым диапазоном IP-адресов, который вы использовали в Azure или локальной среде.
+- Существует ограничение на ASN (номер автономной системы), которое можно использовать для объявления локальных маршрутов для крупных экземпляров HANA. В локальной среде не должны объявляться маршруты с частными ASN в диапазоне 65000 – 65020 или 65515. 
+- В случае подключения локального прямого доступа к крупным экземплярам HANA необходимо рассчитать плату за канал, который подключает вас к Azure. Для цен ознакомьтесь с ценами на [Global REACH надстройку](https://azure.microsoft.com/pricing/details/expressroute/).
 
-To get one or both of the scenarios applied to your deployment, open a support message with Azure as described in [Open a support request for HANA large Instances](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-li-portal#open-a-support-request-for-hana-large-instances)
+Чтобы получить один или оба сценария, применяемые к развертыванию, откройте сообщение поддержки в Azure, как описано в разделе [Открытие запроса на поддержку для крупных экземпляров Hana](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-li-portal#open-a-support-request-for-hana-large-instances) .
 
-Data that is needed and keywords that you need to use for Microsoft to be able to route and execute on your request, looks like:
+Необходимые данные и ключевые слова, которые необходимо использовать для маршрутизации и выполнения запроса в Майкрософт, выглядят следующим образом:
 
-- Service: SAP HANA Large Instance
-- Problem type: Configuration and Setup
-- Problem subtype: My problem is not listed above
-- Subject 'Modify my Network - add Global Reach'
-- Details: 'Add Global Reach to HANA Large Instance to HANA Large Instance tenant or 'Add Global Reach to on-premises to HANA Large Instance tenant.
-- Additional details for the HANA Large Instance to HANA Large Instance tenant case: You need to define the **two Azure regions** where the two tenants to connect are located **AND** you need to submit the **/29 IP address range**
-- Additional details for the on-premises to HANA Large Instance tenant case: You need to define the **Azure Region** where the HANA Large Instance tenant is deployed you want to connect to directly. Additionally you need to provide the **Auth GUID** and **Circuit Peer ID** that you received when you established your ExpressRoute circuit between on-premises and Azure. Additionally, you need to name your **ASN**. The last deliverable is a **/29 IP address range** for ExpressRoute Global Reach.
+- Служба: SAP HANA крупные экземпляры
+- Тип проблемы: Конфигурация и настройка
+- Подтип проблемы: Моя проблема не указана выше
+- Тема "изменить мою сеть — добавить Global Reach"
+- Сведения: "Добавление Global Reach к крупному экземпляру HANA в клиенте крупных экземпляров HANA или" Добавление Global Reach в локальную среду в клиенте крупных экземпляров HANA.
+- Дополнительные сведения о крупном экземпляре HANA для клиента крупного экземпляра HANA: необходимо определить **два региона Azure** , где находятся два клиента для подключения, **и** необходимо отправить **диапазон IP-адресов/29** .
+- Дополнительные сведения о клиенте крупного экземпляра HANA в локальной среде: необходимо определить **регион Azure** , в котором развернут клиент крупных экземпляров Hana, к которому вы хотите подключиться напрямую. Кроме того, необходимо указать идентификатор **GUID проверки подлинности** и **ИД однорангового узла канала** , полученные при установлении канала ExpressRoute между локальной средой и Azure. Кроме того, необходимо присвоить имя **ASN**. Последний доставке — это **диапазон IP-адресов** для ExpressRoute Global REACH.
 
 > [!NOTE]
-> If you want to have both cases handled, you need to supply two different /29 IP address ranges that do not overlap with any other IP address range used so far. 
+> Если вы хотите, чтобы оба варианта обрабатывались, необходимо предоставить два разных или 29 диапазонов IP-адресов, которые не перекрываются с любым другим диапазоном IP-адресов, использованным до сих пор. 
 
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Дополнительные требования к сети для крупных экземпляров HANA](hana-additional-network-requirements.md)

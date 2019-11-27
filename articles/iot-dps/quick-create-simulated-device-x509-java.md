@@ -1,23 +1,23 @@
 ---
-title: Подготовка имитированного устройства X.509 в Центре Интернета вещей Azure с помощью Java | Документация Майкрософт
+title: Краткое руководство. Подготовка имитированного устройства X.509 в Центре Интернета вещей Azure с помощью Java
 description: Краткое руководство по Azure. Создание и подготовка имитированного устройства X.509 с использованием пакета SDK Java для службы "Подготовка устройств к добавлению в Центр Интернета вещей". В этом руководстве используется индивидуальная регистрация.
 author: wesmc7777
 ms.author: wesmc
-ms.date: 04/09/2018
+ms.date: 11/08/2018
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.devlang: java
 ms.custom: mvc
-ms.openlocfilehash: 52fbef24e8a1b9fd7e0ade404c23a587c81d6b0a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: eb7df108492d73e79b7f456a4c64063a2c6943de
+ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58106004"
+ms.lasthandoff: 11/10/2019
+ms.locfileid: "73904828"
 ---
-# <a name="create-and-provision-a-simulated-x509-device-using-java-device-sdk-for-iot-hub-device-provisioning-service"></a>Создание и подготовка имитированного устройства X.509 с помощью пакета Java SDK для службы подготовки устройств Центра Интернета вещей
+# <a name="quickstart-create-and-provision-a-simulated-x509-device-using-java-device-sdk-for-iot-hub-device-provisioning-service"></a>Краткое руководство. Создание и подготовка имитированного устройства X.509 с помощью пакета Java SDK для службы подготовки устройств Центра Интернета вещей
 [!INCLUDE [iot-dps-selector-quick-create-simulated-device-x509](../../includes/iot-dps-selector-quick-create-simulated-device-x509.md)]
 
 В этом руководстве показано, как имитировать устройство X.509 на компьютере разработки под управлением ОС Windows, а также как с помощью примера кода подключить имитированное устройство к службе подготовки устройств и Центру Интернета вещей. 
@@ -73,11 +73,11 @@ ms.locfileid: "58106004"
     java -jar ./provisioning-x509-cert-generator-{version}-with-deps.jar
     ```
 
-2. Введите **N** в ответ на запрос _Do you want to input common name_ (Хотите ли вы ввести общее имя). Скопируйте в буфер обмена выходные данные команды `Client Cert`, начиная со строки *-----BEGIN CERTIFICATE-----* и заканчивая строкой *-----END CERTIFICATE-----*.
+2. Введите **N** в ответ на запрос _Do you want to input common name_ (Хотите ли вы ввести общее имя). Скопируйте в буфер обмена выходные данные команды `Client Cert`, начиная со строки *-----BEGIN CERTIFICATE-----* и заканчивая строкой *-----END CERTIFICATE-----* .
 
    ![Генератор отдельного сертификата](./media/java-quick-create-simulated-device-x509/individual.png)
 
-3. На компьютере с ОС Windows создайте файл **_X509individual.pem_**, откройте его в любом удобном редакторе и скопируйте в него содержимое буфера обмена. Сохраните файл и закройте редактор.
+3. На компьютере с ОС Windows создайте файл **_X509individual.pem_** , откройте его в любом удобном редакторе и скопируйте в него содержимое буфера обмена. Сохраните файл и закройте редактор.
 
 4. Введите в командной строке **N** в ответ на запрос _Do you want to input Verification Code_ (Хотите ли вы ввести код проверки?) и не закрывайте выходные данные программы, так как они понадобятся позже при работе с этим руководством. Позже вы скопируете значения `Client Cert` и `Client Cert Private Key` для использования в следующем разделе.
 
