@@ -72,8 +72,6 @@
           href: how-to-enable-remote-desktop-linux.md
         - name: Включение вложенной виртуализации в шаблоне виртуальной машины
           href: how-to-enable-nested-virtualization-template-vm.md
-        - name: Создание среды с несколькими виртуальными машинами в шаблоне виртуальной машины
-          href: how-to-enable-multi-vm-environment.md
     - name: Подключение к виртуальным машинам в лабораториях для аудитории (учащийся)
       items:
         - name: Доступ к лабораториям для аудитории
