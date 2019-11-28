@@ -5,19 +5,19 @@ keywords: счет на оплату,скачать счет,счет azure,ис
 author: bandersmsft
 manager: jureid
 tags: billing
-ms.service: billing
+ms.service: cost-management-billing
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/01/2019
 ms.author: banders
-ms.openlocfilehash: 80ec40a7411a370460d663084f9f7034b28e1a2e
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: 7d52a589ee7fcb8891f5ea839b2baeb5e4b30733
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72375758"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74224030"
 ---
 # <a name="view-and-download-your-microsoft-azure-invoice"></a>Просмотр и скачивание счета Microsoft Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "72375758"
 - Читатель
 - Менеджер счетов
 
-Если у вас есть Соглашение с партнером Майкрософт (MPA), для просмотра и скачивания счетов Azure вы должны иметь роль глобального администратора или агента администратора в партнерской организации. [Проверьте тип учетной записи выставления счетов](#check-your-billing-account-type), чтобы узнать, какие разрешения нужны. 
+Если у вас есть Соглашение с партнером Майкрософт (MPA), для просмотра и скачивания счетов Azure вы должны иметь роль глобального администратора или агента администратора в партнерской организации. [Проверьте тип учетной записи выставления счетов](#check-your-billing-account-type), чтобы узнать, какие разрешения нужны.
 
 <!-- For more information about billing roles for Microsoft Customer Agreements, see [Billing profile roles and tasks](billing-understand-mca-roles.md#billing-profile-roles-and-tasks). -->
 
@@ -46,7 +46,7 @@ ms.locfileid: "72375758"
 
 - У вас нет разрешения на просмотр счетов. Если у вас есть MCA или MPA, необходимо быть владельцем, участником, читателем профиля выставления счетов или менеджером по счетам. Для других подписок вы можете не видеть старые счета, если не являетесь администратором учетной записи. Дополнительные сведения о доступе к сведениям о выставлении счетов см. в статье [Управление доступом для выставления счетов Azure с помощью ролей](billing-manage-access.md).
 
-- Если у вас есть бесплатная пробная версия или ежемесячный кредит с подпиской, вы получите счет только при превышении ежемесячной суммы кредита. Если у вас есть Клиентское соглашение Майкрософт или Соглашение с партнером Майкрософт, вы всегда получаете счет. 
+- Если у вас есть бесплатная пробная версия или ежемесячный кредит с подпиской, вы получите счет только при превышении ежемесячной суммы кредита. Если у вас есть Клиентское соглашение Майкрософт или Соглашение с партнером Майкрософт, вы всегда получаете счет.
 
 ## <a name="download-invoices-in-the-azure-portal"></a>Скачивание счетов на портале Azure
 

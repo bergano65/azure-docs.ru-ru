@@ -1,17 +1,14 @@
 ---
-title: Общие сведения об Azure Resource Manager | Документация Майкрософт
+title: Обзор
 description: Описывает, как использовать диспетчер ресурсов Azure для развертывания, контроля ресурсов в Azure и управления доступом к ним.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: overview
 ms.date: 08/29/2019
-ms.author: tomfitz
-ms.openlocfilehash: 525271fdc94e0fd1b2cafe4a5a222ce9100156ef
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 29691739bb0e42b293bf4730917087496ad2fd69
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73888476"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74150753"
 ---
 # <a name="azure-resource-manager-overview"></a>Общие сведения о диспетчере ресурсов Azure
 

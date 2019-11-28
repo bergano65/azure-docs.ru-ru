@@ -2,19 +2,15 @@
 title: Выставление счетов за устойчивые функции — Функции Azure
 description: Узнайте о внутренних поведениях Устойчивых функций и о том, как они влияют на выставление счетов за использование Функций Azure.
 author: cgillum
-manager: jeconnoc
-keywords: ''
-ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: overview
 ms.date: 08/31/2019
 ms.author: azfuncdf
-ms.openlocfilehash: f2de6bdf24aa1a0a11349c8f0ec9b3995b026a47
-ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
+ms.openlocfilehash: 504ef93a0002895bc5662d95ad269c8593170ee2
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71694884"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74233018"
 ---
 # <a name="durable-functions-billing"></a>Выставление счетов за Устойчивые функции
 

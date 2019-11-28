@@ -2,18 +2,18 @@
 title: Подключение к хранилищу знаний (предварительная версия) с помощью Power BI
 titleSuffix: Azure Cognitive Search
 description: Подключение к хранилищу знаний (предварительная версия) службы "Когнитивный поиск Azure" с помощью Power BI для анализа и исследования.
-author: lisaleib
+author: HeidiSteen
+ms.author: heidist
 manager: nitinme
-ms.author: v-lilei
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 11/04/2019
-ms.openlocfilehash: 7b12f0f14003389d36e2df5bcffe7828c135cf2b
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: d1e836e0f463d1d2ce2b71d689ed590239cfb607
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73715492"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406584"
 ---
 # <a name="connect-a-knowledge-store-with-power-bi"></a>Подключение хранилища знаний с помощью Power BI
 

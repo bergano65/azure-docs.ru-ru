@@ -1,18 +1,14 @@
 ---
 title: Подключение функций к службе хранилища Azure с помощью Visual Studio Code
 description: Сведения о добавлении выходной привязки для подключения функций к очереди службы хранилища Azure с помощью Visual Studio Code.
-author: ggailey777
-ms.author: glenga
 ms.date: 06/25/2019
 ms.topic: quickstart
-ms.service: azure-functions
-manager: gwallace
-ms.openlocfilehash: 951e48e591f490ea6321329352fd798fea58855d
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: baddb6f02fe3d9c66e3c52d826ffe70c151d313e
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72329699"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227438"
 ---
 # <a name="connect-functions-to-azure-storage-using-visual-studio-code"></a>Подключение функций к службе хранилища Azure с помощью Visual Studio Code
 

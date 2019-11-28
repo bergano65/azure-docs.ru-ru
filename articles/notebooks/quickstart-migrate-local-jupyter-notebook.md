@@ -1,23 +1,14 @@
 ---
 title: Перенос локальной записной книжки Jupyter в Записные книжки Azure
 description: Узнайте, как быстро перенести записную книжку Jupyter в Записные книжки Azure с локального компьютера или URL-адреса, а затем предоставить ее для совместной работы.
-services: app-service
-documentationcenter: ''
-author: kraigb
-manager: barbkess
-ms.assetid: 2e935425-3923-4a33-89b2-0f2100b0c0c4
-ms.service: azure-notebooks
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: quickstart
 ms.date: 12/04/2018
-ms.author: kraigb
-ms.openlocfilehash: 2151d5b04b0fe5d47e8e2ddfb750ac279b6f74fa
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: 3b7d5aab05923fb4356e0d45aaf21a77076a870a
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71970185"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74277465"
 ---
 # <a name="quickstart-migrate-a-local-jupyter-notebook"></a>Краткое руководство. Перенос локальной записной книжки Jupyter
 

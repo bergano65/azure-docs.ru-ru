@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: event-hubs
 ms.custom: seodec18
 ms.date: 11/05/2019
-ms.openlocfilehash: 0cfff0196ebc20b9b01bc966b3590470d349e86e
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 3e228fb9d4223ad1d6d906b44ab63c35600faa56
+ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73717998"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74307350"
 ---
 # <a name="tutorial-visualize-data-anomalies-in-real-time-events-sent-to-azure-event-hubs"></a>Руководство по визуализации аномальных данных в событиях реального времени, отправляемых в Центры событий Azure
 
@@ -156,7 +156,7 @@ Write-Host "Connection string is " $eventHubKey.PrimaryConnectionString
 
 ## <a name="run-app-to-produce-test-event-data"></a>Запуск приложения для формирования тестовых данных событий
 
-[Примеры для Центров событий на GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet) включают [приложение для обнаружения аномалий](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/AnomalyDetector), которое генерирует тестовые данные. Оно имитирует работу с кредитными картами, записывая в концентратор событий транзакции, включая время от времени несколько транзакций по одной и той же карте в нескольких местах одновременно, таким образом, чтобы они отмечались как аномалии. Чтобы запустить это приложение, сделайте следующее: 
+[Примеры для Центров событий на GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet) включают [приложение для обнаружения аномалий](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/AnomalyDetector), которое генерирует тестовые данные. Оно имитирует работу с кредитными картами, записывая в концентратор событий транзакции, включая время от времени несколько транзакций по одной и той же карте в нескольких местах одновременно, таким образом, чтобы они отмечались как аномалии. Чтобы запустить это приложение, сделайте следующее: 
 
 1. Скачайте [примеры Центров событий Azure](https://github.com/Azure/azure-event-hubs/archive/master.zip) из GitHub и распакуйте их на локальной системе.
 

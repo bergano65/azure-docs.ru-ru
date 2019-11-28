@@ -1,19 +1,15 @@
 ---
 title: Создание Функций Azure на Linux с помощью пользовательского образа
 description: Узнайте, как создавать функции Azure под управлением пользовательского образа Linux.
-author: ggailey777
-ms.author: glenga
 ms.date: 09/27/2019
 ms.topic: tutorial
-ms.service: azure-functions
 ms.custom: mvc
-manager: gwallace
-ms.openlocfilehash: b8d82868788d831d4db68a35c032d3f81b545417
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 7bf079f84978539735f3bbf5bb13b18130871fb1
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74082834"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74484393"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-image"></a>Создание функции на Linux с помощью пользовательского образа
 
@@ -36,7 +32,6 @@ ms.locfileid: "74082834"
 > * Включение непрерывного развертывания.
 > * Включите SSH-подключения к контейнеру.
 > * Добавьте выходную привязку Хранилища очередей. 
-> * Включение мониторинга Application Insights.
 
 Описанные далее действия можно выполнять на компьютерах с Mac, Windows или Linux. 
 

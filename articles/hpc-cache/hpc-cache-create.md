@@ -4,14 +4,14 @@ description: Создание экземпляра Azure HPC Cache
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: tutorial
-ms.date: 10/30/2019
+ms.date: 11/11/2019
 ms.author: rohogue
-ms.openlocfilehash: 1b9d2d3c46aab2096dd9208e0bea7f7776c0e429
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 07aba1b1536635e414fc5fab4ece148683909188
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73582708"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74168594"
 ---
 # <a name="create-an-azure-hpc-cache"></a>Создание Azure HPC Cache
 
@@ -64,6 +64,7 @@ Azure HPC Cache определяет, какие файлы необходимо
 ![Снимок экрана со страницами создания кэша и уведомлений на портале](media/hpc-cache-deploy-status.png)
 
 По завершении создания появится уведомление со ссылкой на новый экземпляр Azure HPC Cache, а кэш отобразится в списке **Ресурсы** в подписке.
+<!-- double check on notification -->
 
 ![снимок экрана: экземпляр Azure HPC Cache на портале Azure](media/hpc-cache-new-overview.png)
 

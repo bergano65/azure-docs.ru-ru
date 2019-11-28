@@ -3,7 +3,7 @@ title: Руководство по созданию инфраструктуры
 description: В этом руководстве содержатся сведения о настройке инфраструктуры виртуальных машин Azure для запуска кластера Service Fabric.
 services: service-fabric
 documentationcenter: .net
-author: v-vasuke
+author: jpconnock
 manager: jpconnock
 editor: ''
 ms.assetid: ''
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 07/22/2019
-ms.author: v-vasuke
+ms.author: jeconnoc
 ms.custom: mvc
-ms.openlocfilehash: c9dd9cf0f0fb6d20d6837b07ab46d376e379ca25
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: b24b4d95827dbd398c0eba43dcbad9fbfeb51469
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73177724"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74166275"
 ---
 # <a name="tutorial-create-azure-vm-infrastructure-to-host-a-service-fabric-cluster"></a>Руководство по созданию инфраструктуры виртуальных машин Azure для размещения кластера Service Fabric
 
@@ -90,12 +90,18 @@ ms.locfileid: "73177724"
  
 4. Откройте RDP-файл и при появлении запроса введите имя пользователя и пароль, указанные в программе установки виртуальной машины.
 
-5. После подключения к экземпляру вам нужно будет проверить, запущен ли удаленный реестр и открыты ли необходимые порты.
+5. После подключения к экземпляру вам нужно будет проверить, запущен ли удаленный реестр, включен ли SMB и открыты ли необходимые порты для SMB и удаленного реестра.
+
+   Включить SMB можно с помощью команды PowerShell:
+
+   ```powershell
+   netsh advfirewall firewall set rule group="File and Printer Sharing" new enable=Yes
+   ```
 
 6. Чтобы открыть порты в брандмауэре, выполните команду PowerShell:
 
    ```powershell
-   New-NetFirewallRule -DisplayName "Service Fabric Ports" -Direction Inbound -Action Allow -RemoteAddress LocalSubnet -Protocol TCP -LocalPort 135, 137-139
+   New-NetFirewallRule -DisplayName "Service Fabric Ports" -Direction Inbound -Action Allow -RemoteAddress LocalSubnet -Protocol TCP -LocalPort 135, 137-139, 445
    ```
 
 7. Повторите этот процесс для других экземпляров, снова отметив частные IP-адреса.
@@ -111,6 +117,15 @@ ms.locfileid: "73177724"
    ```
 
    Если ваш результат выглядит следующим образом `Reply from 172.31.20.163: bytes=32 time<1ms TTL=128` и повторяется четыре раза, это означает, что ваше соединение между экземплярами работает.
+
+3. Теперь с помощью следующей команды проверьте, работает ли SMB:
+
+   ```
+   net use * \\172.31.20.163\c$
+   ```
+
+   Она должна возвратить следующие выходные данные: `Drive Z: is now connected to \\172.31.20.163\c$.`.
+
 
    Теперь экземпляры правильно подготовлены для Service Fabric.
 

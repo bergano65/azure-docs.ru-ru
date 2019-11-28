@@ -8,7 +8,7 @@ manager: amberb
 editor: ''
 tags: billing
 ms.assetid: e4c4d136-2826-4938-868f-a7e67ff6b025
-ms.service: billing
+ms.service: cost-management-billing
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -16,18 +16,18 @@ ms.topic: conceptual
 ms.date: 10/01/2018
 ms.author: banders
 ms.custom: seodec18
-ms.openlocfilehash: 035d2e567b6aad23801ff043652ea143e3f6105b
-ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
+ms.openlocfilehash: c1f9ef78431b6b293972d4adbc0f64dc49d5c4b7
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71709621"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74223818"
 ---
 # <a name="manage-access-to-billing-information-for-azure"></a>Управление доступом к данным для выставления счетов в Azure
 
 Можно предоставить другим пользователям доступ к данным для выставления счетов для вашей учетной записи на портале Azure. Тип ролей выставления счетов и инструкции по предоставлению доступа к данным для выставлении счетов зависят от типа учетной записи выставления счетов. Чтобы определить тип учетной записи выставления счетов, см. раздел [Проверка типа учетной записи для выставления счетов](#check-the-type-of-your-billing-account).
 
-В этой статье раскрываются сведения для клиентов с учетными записями программы Microsoft Online Service. Если вы являетесь клиентом Azure с соглашением Enterprise (EA) и выполняете функции корпоративного администратора, вы можете предоставлять разрешения администраторам отделов и владельцам учетной записи на корпоративном портале. Дополнительные сведения см. в описании [административных ролей в Azure при использовании Соглашения Azure Enterprise](billing-understand-ea-roles.md). Если вы являетесь клиентом с Клиентским соглашением Майкрософт, см. статью [Сведения об административных ролях клиентских соглашений Майкрософт в Azure](billing-understand-mca-roles.md). 
+В этой статье раскрываются сведения для клиентов с учетными записями программы Microsoft Online Service. Если вы являетесь клиентом Azure с соглашением Enterprise (EA) и выполняете функции корпоративного администратора, вы можете предоставлять разрешения администраторам отделов и владельцам учетной записи на корпоративном портале. Дополнительные сведения см. в описании [административных ролей в Azure при использовании Соглашения Azure Enterprise](billing-understand-ea-roles.md). Если вы являетесь клиентом с Клиентским соглашением Майкрософт, см. статью [Сведения об административных ролях клиентских соглашений Майкрософт в Azure](billing-understand-mca-roles.md).
 
 ## <a name="account-administrators-for-microsoft-online-service-program-accounts"></a>Администраторы учетной записи для учетных записей программы Microsoft Online Service
 
@@ -60,9 +60,9 @@ ms.locfileid: "71709621"
 1. Выполните поиск по **Управление затратами + выставление счетов**.
 
     ![Снимок экрана, показывающий поиск на портале Azure](./media/billing-manage-access/billing-search-cost-management-billing.png)
- 
+
 1. На панели слева выберите **Подписки**. В зависимости от типа доступа может потребоваться выбрать область выставления счетов, затем щелкните **Подписки**.
- 
+
     ![Снимок экрана: выбор подписок](./media/billing-manage-access/billing-select-subscriptions.png)
 
 1. Выберите **Счета** и затем **Доступ к счету**.
@@ -88,7 +88,7 @@ ms.locfileid: "71709621"
     ![Снимок экрана, показывающий поиск на портале Azure](./media/billing-manage-access/billing-search-cost-management-billing.png)
 
 1. На панели слева выберите **Подписки**. В зависимости от типа доступа может потребоваться выбрать область выставления счетов, затем щелкните **Подписки**.
- 
+
     ![Снимок экрана: выбор подписок](./media/billing-manage-access/billing-select-subscriptions.png)
 
 1. Выберите **Управление доступом (IAM)** .

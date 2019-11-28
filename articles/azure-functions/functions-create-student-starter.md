@@ -1,22 +1,17 @@
 ---
-title: Создание функции с помощью службы "Начальный набор Microsoft Azure для учащихся" | Документация Майкрософт
+title: Создание функции с помощью службы "Начальный набор Microsoft Azure для учащихся"
 description: Узнайте, как создать функцию Azure в подписке на службу "Начальный набор Microsoft Azure для учащихся"
 Customer intent: As a student, I want to be able to create a HTTP triggered Function App within the Student Starter plan so that I can easily add APIs to any project.
-services: functions
-documentationcenter: na
 author: alexkarcher-msft
-manager: ggailey777
-ms.assetid: ''
-ms.service: azure-functions
 ms.topic: quickstart
 ms.date: 02/22/2019
 ms.author: alkarche
-ms.openlocfilehash: b4a143f14dc4e443570e8eca9ce6ce9e81b1d783
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: b86ea2367a17baa8c57b8d0c0331c0cd3cfbb481
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70096640"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227106"
 ---
 # <a name="create-a-function-using-azure-for-students-starter"></a>Создание функции с помощью службы "Начальный набор Microsoft Azure для учащихся"
 
@@ -51,7 +46,7 @@ ms.locfileid: "70096640"
     | Параметр      | Рекомендуемое значение  | ОПИСАНИЕ                                        |
     | ------------ |  ------- | -------------------------------------------------- |
     | **Имя приложения** | Глобально уникальное имя | Имя, которое идентифицирует ваше новое приложение-функцию. Допустимые символы: `a-z`, `0-9` и `-`.  | 
-    | **Подписка** | Ваша подписка | Подписка, в которой создано приложение-функция. | 
+    | **подписка** | Ваша подписка | Подписка, в которой создано приложение-функция. | 
     | **[Группа ресурсов](../azure-resource-manager/resource-group-overview.md)** |  myResourceGroup | Имя новой группы ресурсов, в которой создается приложение-функция. |
    | **[Расположение или план службы приложений](./functions-scale.md)** | Создать | План размещения, который управляет регионом, куда было развернуто приложение-функция, и плотностью ресурсов. Несколько приложений-функций, развернутых в одном плане, будут иметь один общий бесплатный экземпляр. Таковым является ограничение плана "Начальный набор Microsoft Azure для учащихся". Все варианты размещения [описаны здесь.](./functions-scale.md)|
     | **Стек среды выполнения** | Предпочитаемый язык | Выберите среду выполнения, которая поддерживает нужный функциональный язык программирования. Выберите **.NET** для функций C# и F#. |
