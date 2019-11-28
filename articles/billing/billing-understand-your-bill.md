@@ -4,19 +4,19 @@ description: Узнайте, как просматривать и интерпр
 author: bandersmsft
 manager: dougeby
 tags: billing
-ms.service: billing
+ms.service: cost-management-billing
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2019
 ms.author: banders
-ms.openlocfilehash: ceeacf216b1d3258aa73d86c613d28e00e9480bb
-ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
+ms.openlocfilehash: 9486d56a723bb311c05ab7aa776060dfa9561aae
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71718616"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74223025"
 ---
 # <a name="understand-your-microsoft-azure-bill"></a>Расшифровка счета за использование Microsoft Azure
 Чтобы расшифровать счет Azure, сравните счет и файл с подробными данными о ежедневном использовании, а также отчеты об управлении затратами на портале Azure.

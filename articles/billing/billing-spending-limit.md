@@ -4,19 +4,19 @@ description: В этой статье описывается, как работ�
 author: bandersmsft
 manager: amberb
 tags: billing
-ms.service: billing
+ms.service: cost-management-billing
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/28/2019
 ms.author: banders
-ms.openlocfilehash: 97e6e04bf7fab3a48f1ce0552e1b653b208be77b
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: 0983e21e5ab2e895b2c12fe7cc45c5b9c9f0a405
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72375434"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74223581"
 ---
 # <a name="azure-spending-limit"></a>Предельная сумма расходов Azure
 

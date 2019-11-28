@@ -6,14 +6,14 @@ author: bandersmsft
 ms.author: banders
 ms.date: 11/07/2019
 ms.topic: conceptual
-ms.service: billing
+ms.service: cost-management-billing
 manager: boalcsva
-ms.openlocfilehash: 6bd70a58552a0217cff82cad10b11783aec64347
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 2e9611995a233f9890aebb90fc3b8deaeed8efc2
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73888406"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74226327"
 ---
 # <a name="azure-enterprise-enrollment-invoices"></a>Счета по Соглашению о регистрации Azure Enterprise
 
@@ -596,9 +596,9 @@ Power BI Pro теперь доступна для клиентов EA. С пом
     - Рабочая или учебная учетная запись может быть той же или отличаться от используемой для доступа к регистрации через Azure EA Portal.
  1. На панели мониторинга служб выберите **Microsoft Azure Enterprise** и щелкните **Подключить**.
  1. На экране Connect to Azure Enterprise (Подключение к Azure Enterprise) выберите:
-    - URL-адрес среды Azure: [https://ea.azure.com](https://ea.azure.com/).
-    - Число месяцев: выберите значение от 1 до 36.
-    - Номер регистрации: введите номер регистрации.
+    - Выберите URL-адрес окружения Azure: [https://ea.azure.com](https://ea.azure.com/).
+    - Укажите число месяцев: от 1 до 36.
+    - Введите номер регистрации.
     - Щелкните **Далее**.
  1. В поле "Ключ проверки подлинности" введите ключ API. Вы можете получить ключ API на портале Azure Enterprise на вкладке "Загрузить использование" выше, щелкнув "Ключ доступа к API".
     - Скопируйте и вставьте ключ в поле "Ключ учетной записи".

@@ -5,19 +5,19 @@ author: v-miegge
 manager: na
 editor: v-jesits
 tags: billing
-ms.service: billing
+ms.service: cost-management-billing
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/12/2019
 ms.author: v-miegge
-ms.openlocfilehash: 5032762c1275d3f1c8d1a020a54d20555f8ba3fe
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 95358d7171db14ea44f5baee211d26e8f00492ad
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70242436"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74223540"
 ---
 # <a name="troubleshoot-azure-sign-up"></a>Устранение неполадок при регистрации в Azure
 
@@ -124,7 +124,7 @@ ms.locfileid: "70242436"
  
 ## <a name="additional-help-resources"></a>Дополнительные справочные ресурсы
 
-Другие статьи по устранению неполадок при выставлении счетов и подписках Azure
+Другие статьи по устранению проблем при выставлении счетов и с подписками Azure
 
 - [Карта не принимается](billing-troubleshoot-declined-card.md)
 - [Проблемы со входом в подписку](billing-troubleshoot-sign-in-issue.md)

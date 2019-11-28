@@ -2,17 +2,17 @@
 title: Что собой представляет Приватный канал Azure?
 description: Сведения об использовании приватного канала Azure для доступа к службам Azure PaaS (например, к службе хранилища Azure и Базе данных SQL), а также размещенным в Azure службам, которые принадлежат клиенту или партнеру, через частную конечную точку виртуальной сети.
 services: private-link
-author: KumudD
+author: asudbring
 ms.service: private-link
 ms.topic: overview
 ms.date: 11/04/2019
-ms.author: kumud
-ms.openlocfilehash: aa176cb5ffc67ebba826cf13a1a66608301af5e5
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.author: allensu
+ms.openlocfilehash: e33fce7b3fc19d6dfa83f95b6a9bcb43588945d1
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73601536"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74228078"
 ---
 # <a name="what-is-azure-private-link-preview"></a>Что собой представляет Приватный канал Azure? (предварительная версия)
 Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure, Azure Cosmos DB и Базе данных SQL), а также размещенным в Azure службам клиентов или партнеров через [частную конечную точку](private-endpoint-overview.md) виртуальной сети. Трафик между виртуальной сетью и службой проходит через магистральную сеть Майкрософт, что позволяет избежать рисков общедоступного Интернета. Кроме того, вы можете создать в своей виртуальной сети (VNet) собственную службу [Приватный канал](private-link-service-overview.md) и предоставлять ее клиентам в частном порядке. Настройка и потребление с использованием Приватного канала Azure согласованы между службами Azure PaaS, владельцами и общими партнерскими службами.

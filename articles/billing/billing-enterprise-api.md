@@ -8,19 +8,19 @@ manager: mumami
 editor: ''
 tags: billing
 ms.assetid: 3e817b43-0696-400c-a02e-47b7817f9b77
-ms.service: billing
+ms.service: cost-management-billing
 ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: billing
 ms.date: 10/01/2019
 ms.author: banders
-ms.openlocfilehash: f5d549006961f3108bf7155610dfb3a9ea78422a
-ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
+ms.openlocfilehash: 513dac3a1cdcefa7a49116ea02af5410265af3ec
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71719776"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74226253"
 ---
 # <a name="overview-of-reporting-apis-for-enterprise-customers"></a>Обзор API- интерфейсов отчетов для корпоративных клиентов
 Интерфейсы API отчетов позволяют корпоративным клиентам Azure извлекать данные о потреблении и выставлении счетов программным способом и передавать их в предпочитаемые средства анализа данных. Клиенты, которые принадлежат к типу Enterprise, подписали [Соглашение Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/) с Azure и тем самым приняли согласованные денежные обязательства, и получили доступ к пользовательским тарифам на ресурсы Azure.
@@ -31,20 +31,20 @@ ms.locfileid: "71719776"
 
 |Ключ заголовка запроса | Значение|
 |-|-|
-|Авторизация| Укажите значение в следующем формате: **bearer {API_KEY}** <br/> Пример: bearer eyr....09| 
+|Авторизация| Укажите значение в следующем формате: **bearer {API_KEY}** <br/> Пример: bearer eyr....09|
 
 ## <a name="consumption-apis"></a>Интерфейсы API потребления
-[Здесь](https://consumption.azure.com/swagger/ui/index) вы можете найти конечную точку Swagger для интерфейсов API, описанных ниже. С ее помощью можно упростить самоанализ API и создать клиентские пакеты SDK, используя [AutoRest](https://github.com/Azure/AutoRest) или [Swagger CodeGen](https://swagger.io/swagger-codegen/). С 1 мая 2014 г. данные доступны через этот API. 
+[Здесь](https://consumption.azure.com/swagger/ui/index) вы можете найти конечную точку Swagger для интерфейсов API, описанных ниже. С ее помощью можно упростить самоанализ API и создать клиентские пакеты SDK, используя [AutoRest](https://github.com/Azure/AutoRest) или [Swagger CodeGen](https://swagger.io/swagger-codegen/). С 1 мая 2014 г. данные доступны через этот API.
 
 * **Баланс и сводка**. [Интерфейс API для управления балансом и просмотра сводки](/rest/api/billing/enterprise/billing-enterprise-api-balance-summary) отображает ежемесячную сводку о состоянии баланса, новых покупках, расходах на службу Azure Marketplace, корректировках и оплате за избыток.
 
-* **Сведения об использовании**. [Интерфейс API сведений об использовании](/rest/api/billing/enterprise/billing-enterprise-api-usage-detail) предоставляет сводку об израсходованных объемах и предполагаемых расходах для каждой регистрации с разбивкой по дням. Результаты также содержат сведения об экземплярах, метриках и отделах. Запрашивать данные в API можно по расчетному периоду или по дате начала и окончания. 
+* **Сведения об использовании**. [Интерфейс API сведений об использовании](/rest/api/billing/enterprise/billing-enterprise-api-usage-detail) предоставляет сводку об израсходованных объемах и предполагаемых расходах для каждой регистрации с разбивкой по дням. Результаты также содержат сведения об экземплярах, метриках и отделах. Запрашивать данные в API можно по расчетному периоду или по дате начала и окончания.
 
 * **Платежи в Marketplace**. [Интерфейс API платежей в Marketplace](/rest/api/billing/enterprise/billing-enterprise-api-marketplace-storecharge) отображает сводку о расходах в Marketplace с разбивкой по дням. Данные основаны на фактическом использовании и отображаются для указанного расчетного периода или дат начала и окончания (однократные сборы не включаются).
 
 * **Прейскурант**. [API прейскуранта](/rest/api/billing/enterprise/billing-enterprise-api-pricesheet) предоставляет соответствующий тариф для каждой метрики в отдельной регистрации и за определенный расчетный период.
 
-* **Сведения о зарезервированных экземплярах.** [API использования зарезервированных экземпляров](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-usage) возвращает данные о покупках использования зарезервированных экземпляров. [API расходов на зарезервированные экземпляры](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-usage) отображает данные о выставленных счетах. 
+* **Сведения о зарезервированных экземплярах.** [API использования зарезервированных экземпляров](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-usage) возвращает данные о покупках использования зарезервированных экземпляров. [API расходов на зарезервированные экземпляры](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-usage) отображает данные о выставленных счетах.
 
 ## <a name="data-freshness"></a>Актуальность данных
 Теги ETag возвращаются в ответе API, упомянутого выше. Изменение ETag означает, что данные обновлены.  В последующих вызовах этого же API с теми же параметрами передайте записанный ETag с ключом If-None-Match в заголовке HTTP-запроса. Код состояния будет содержать ответ NotModified, если данные больше не обновлялись, и данные не будут возвращены. API будет возвращать полный набор данных за требуемый период при каждом изменении ETag.
@@ -60,13 +60,4 @@ ms.locfileid: "71719776"
 |401| Не авторизовано| Ключ API не найден, недопустимый формат, срок действия истек и т. д.|
 |404| Рекомендации недоступны| Не найдена конечная точка отчетов|
 |400| Ошибка запроса| Недопустимые параметры — диапазоны дат, числа EA и т. д.|
-|500| Ошибка сервера| Непредвиденная ошибка при обработке запроса| 
-
-
-
-
-
-
-
-
-
+|500| Ошибка сервера| Непредвиденная ошибка при обработке запроса|

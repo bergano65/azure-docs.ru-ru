@@ -3,17 +3,13 @@ title: Учебник. Создание виртуальной машины ил
 description: Узнайте, как с помощью Ansible создать виртуальную машину или масштабируемый набор виртуальных машин на основе универсального образа из Общей коллекции образов.
 keywords: Ansible, Azure, DevOps, Bash, сборник схем, виртуальная машина, масштабируемый набор виртуальных машин, Общая коллекция образов
 ms.topic: tutorial
-ms.service: ansible
-author: tomarchermsft
-manager: jeconnoc
-ms.author: tarcher
 ms.date: 10/14/2019
-ms.openlocfilehash: 4b4190ddabe90af135ea64a8ba3d5905f23c457e
-ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
+ms.openlocfilehash: f784419736854095cc1bc5da14f3867ac3f7eb12
+ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72808945"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74155835"
 ---
 # <a name="tutorial-create-a-vm-or-virtual-machine-scale-set-from-the-azure-shared-image-gallery-using-ansible"></a>Руководство по созданию виртуальной машины или масштабируемого набора виртуальных машин из Общей коллекции образов Azure с помощью Ansible
 
