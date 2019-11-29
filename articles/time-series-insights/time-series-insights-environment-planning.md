@@ -9,14 +9,14 @@ manager: cshankar
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 10/10/2019
+ms.date: 11/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2dd3b79e931464e83264433a923e9078b2f62525
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: f75c84aeb1893008832635cf93cd634d96653dd3
+ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74006952"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74561538"
 ---
 # <a name="plan-your-azure-time-series-insights-ga-environment"></a>Планирование общедоступной среды службы "аналитика временных рядов Azure"
 
@@ -60,15 +60,15 @@ ms.locfileid: "74006952"
 > [!IMPORTANT]
 > В среде Azure Time Series Insights можно настроить не более 400 дней хранения данных.
 
-### <a name="configure-data-retention"></a>Настройка времени хранения данных
+### <a name="configure-data-retention"></a>Настройка срока хранения данных
 
 1. Выберите нужную среду Аналитики временных рядов на [портале Azure](https://portal.azure.com).
 
-1. В области **Среда "аналитика временных рядов** " в разделе " **Параметры**" выберите **настроить**.
+1. В области **Среда "аналитика временных рядов** " в разделе " **Параметры**" выберите **Конфигурация хранилища**.
 
 1. В поле **время хранения данных (в днях)** введите значение от 1 до 400.
 
-   [Настройка хранения ![](media/environment-mitigate-latency/configure-retention.png)](media/environment-mitigate-latency/configure-retention.png#lightbox)
+   [Настройка хранения ![](media/data-retention/1-configure-data-retention.png)](media/data-retention/1-configure-data-retention.png#lightbox)
 
 > [!TIP]
 > Дополнительные сведения о реализации соответствующей политики хранения данных см. в разделе [Настройка хранения](./time-series-insights-how-to-configure-retention.md).
@@ -123,7 +123,7 @@ ms.locfileid: "74006952"
 
 [!INCLUDE [business-disaster-recover](../../includes/time-series-insights-business-recovery.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Начните с создания [новой среды "аналитика временных рядов" в портал Azure](time-series-insights-get-started.md).
 

@@ -1,5 +1,5 @@
 ---
-title: Индексирование содержимого из хранилища таблиц Azure для полнотекстового поиска
+title: Поиск содержимого хранилища таблиц Azure
 titleSuffix: Azure Cognitive Search
 description: Узнайте, как индексировать данные, хранящиеся в хранилище таблиц Azure, с помощью индексатора Azure Когнитивный поиск.
 manager: nitinme
@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: ae99145178fba8e204267546dc1cedf42df412eb
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: e8f6c0454497b1cb1d62417e566e9662469c56d0
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72793751"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74113004"
 ---
 # <a name="how-to-index-tables-from-azure-table-storage-with-azure-cognitive-search"></a>Как индексировать таблицы из хранилища таблиц Azure с помощью Azure Когнитивный поиск
 
@@ -24,7 +24,7 @@ ms.locfileid: "72793751"
 
 Вы можете настроить индексатор хранилища таблиц Azure с помощью следующих ресурсов:
 
-* [Портал Azure](https://ms.portal.azure.com)
+* [портал Azure](https://ms.portal.azure.com)
 * [REST API](https://docs.microsoft.com/rest/api/searchservice/Indexer-operations) когнитивный Поиск Azure
 * [Пакет SDK](https://aka.ms/search-sdk) Azure когнитивный Поиск для .NET
 
@@ -126,7 +126,7 @@ ms.locfileid: "72793751"
 Поскольку строки таблицы имеют составной ключ, Azure Когнитивный поиск создает искусственное поле с именем `Key`, которое представляет собой объединение значений ключа секции и ключей строк. Например, если PartitionKey равен `PK1` и RowKey равен `RK1`, то значение поля `Key` равно `PK1RK1`.
 
 > [!NOTE]
-> Значение `Key` может содержать знаки, недопустимые в ключах документов, например дефисы. С недопустимыми знаками можно работать с помощью [функции сопоставления полей](search-indexer-field-mappings.md#base64EncodeFunction) `base64Encode`. В этом случае при передаче ключей документов в вызовах API (например, при поиске) необходимо также использовать безопасное кодирование строки входных данных в Base64.
+> Значение `Key` может содержать знаки, недопустимые в ключах документов, например дефисы. С недопустимыми знаками можно работать с помощью `base64Encode`функции сопоставления полей[ ](search-indexer-field-mappings.md#base64EncodeFunction). В этом случае при передаче ключей документов в вызовах API (например, при поиске) необходимо также использовать безопасное кодирование строки входных данных в Base64.
 >
 >
 

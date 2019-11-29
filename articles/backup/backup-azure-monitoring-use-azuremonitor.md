@@ -4,12 +4,12 @@ description: Отслеживайте Azure Backup рабочие нагрузк
 ms.topic: conceptual
 ms.date: 06/04/2019
 ms.assetid: 01169af5-7eb0-4cb0-bbdb-c58ac71bf48b
-ms.openlocfilehash: 66417071190fa45a746ce0b80a9de12968198bda
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: bdb59e5ec461288c89e4c7d036488b5eaeb9472a
+ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74278268"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74554883"
 ---
 # <a name="monitor-at-scale-by-using-azure-monitor"></a>Мониторинг в масштабе с помощью Azure Monitor
 
@@ -37,7 +37,7 @@ Azure Resource Manager ресурсы, такие как хранилище сл
 
 ![Параметр диагностики для хранилища служб восстановления, нацеливание на Log Analytics](media/backup-azure-monitoring-laworkspace/diagnostic-setting-new.png)
 
-Вы можете выбрать рабочую область Log Analytics из другой подписки. Чтобы отслеживать хранилища в рамках одной подписки в одном месте, выберите одну и ту же рабочую область Log Analytics для нескольких хранилищ служб восстановления. Чтобы настроить канал для всех сведений, связанных с Azure Backup, в рабочую область Log Analytics, выберите пункт **конкретные ресурсы** в появившемся переключателе и выберите следующие события: **кореазуребаккуп**, **аддоназуребаккупжобс**, **аддоназуребаккупалертс**, **аддоназуребаккупполици**, **AddonAzureBackupStorage**, **AddonAzureBackupProtectedInstance**. Дополнительные сведения о настройке параметров необязательной диагностики см. в [этой статье](https://aka.ms/AA6jkus) .
+Вы можете выбрать рабочую область Log Analytics из другой подписки. Чтобы отслеживать хранилища в рамках одной подписки в одном месте, выберите одну и ту же рабочую область Log Analytics для нескольких хранилищ служб восстановления. Чтобы настроить канал для всех сведений, связанных с Azure Backup, в рабочую область Log Analytics, выберите пункт **конкретные ресурсы** в появившемся переключателе и выберите следующие события: **кореазуребаккуп**, **аддоназуребаккупжобс**, **аддоназуребаккупалертс**, **аддоназуребаккупполици**, **AddonAzureBackupStorage**, **AddonAzureBackupProtectedInstance**. Дополнительные сведения о настройке параметров необязательной диагностики см. в [этой статье](backup-azure-diagnostic-events.md) .
 
 > [!IMPORTANT]
 > После завершения настройки необходимо подождать 24 часа, чтобы начальная отправка данных завершилась. После первоначальной отправки данных все события помещаются, как описано далее в этой статье, в [разделе Frequency](#diagnostic-data-update-frequency).
@@ -221,6 +221,6 @@ Azure Resource Manager ресурсы, такие как хранилище сл
 
 Используйте рабочую область Log Analytics для мониторинга и оповещения в масштабе для всех рабочих нагрузок, защищенных Azure Backup.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о создании настраиваемых запросов см. в разделе [log Analytics Data Model](backup-azure-log-analytics-data-model.md).

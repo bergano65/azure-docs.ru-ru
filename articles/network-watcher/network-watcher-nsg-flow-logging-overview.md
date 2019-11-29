@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: kumud
-ms.openlocfilehash: 490f2e7bb394d6593e51438c1e484a4677c963a3
-ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
+ms.openlocfilehash: 1da1bc330af9d2b652c44114e44dc6d6c9f0d575
+ms.sourcegitcommit: b5d59c6710046cf105236a6bb88954033bd9111b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539347"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74559173"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Общие сведения о ведении журнала потоков для групп безопасности сети
 
@@ -93,6 +93,7 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
 1. Расположение. используемая учетная запись хранения должна находиться в том же регионе, что и NSG.
 2. Нет брандмауэра: журналы потоков NSG не подключены как [надежная служба Майкрософт для службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-network-security#trusted-microsoft-services). См. [разделы справки отключить брандмауэр в учетной записи хранения?](https://docs.microsoft.com/azure/network-watcher/frequently-asked-questions#how-do-i-disable-the--firewall-on-my-storage-account) , чтобы отключить брандмауэр. 
 3. Нет конечных точек службы. из-за текущего ограничения журналы можно создавать только в учетных записях хранения, а не через конечные точки службы. Дополнительные сведения об удалении существующих конечных точек служб см. в статье [разделы справки Использование журналов потоков NSG с конечными точками службы](https://docs.microsoft.com/azure/network-watcher/frequently-asked-questions#how-do-i-use-nsg-flow-logs-with-service-endpoints) .
+4. Самостоятельное управление ключами. при изменении или вращении ключей доступа в учетную запись хранения журналы потоков NSG перестанут работать. Чтобы устранить эту проблему, необходимо отключить и снова включить журналы потоков NSG.
 
 **Включение ведения журнала потоков NSG для всех группы безопасности сети, подключенных к ресурсу**. ведение журнала потоков в Azure настроено для ресурса NSG. Поток будет связан только с одним правилом группы безопасности сети. В сценариях, где используются несколько групп безопасности сети, мы рекомендуем включить ведение журнала потоков для всех групп безопасности сети, к которым применены подсеть или сетевой интерфейс ресурса, чтобы убедиться, что весь трафик записывается. Дополнительные сведения о группах безопасности сети см. в разделе [Оценка трафика](../virtual-network/security-overview.md#how-traffic-is-evaluated). 
 

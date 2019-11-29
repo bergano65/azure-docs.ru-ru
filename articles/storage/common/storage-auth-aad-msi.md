@@ -9,12 +9,12 @@ ms.date: 11/25/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 66d867d33060aa931dbe42c534166e61ee7692fe
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: ea1d286d00564587a9692dac1b04c5bbb04742cc
+ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74534520"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74561477"
 ---
 # <a name="authorize-access-to-blobs-and-queues-with-azure-active-directory-and-managed-identities-for-azure-resources"></a>Авторизация доступа к BLOB-объектам и очередям с Azure Active Directory и управляемыми удостоверениями для ресурсов Azure
 
@@ -122,14 +122,13 @@ Install-Package Azure.Identity
 Добавьте в код следующие директивы `using` для использования Azure Identity и клиентских библиотек службы хранилища Azure.
 
 ```csharp
+using Azure;
+using Azure.Identity;
+using Azure.Storage.Blobs;
 using System;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
-using Azure.Identity;
-using Azure.Storage;
-using Azure.Storage.Sas;
-using Azure.Storage.Blobs;
-using Azure.Storage.Blobs.Models;
 ```
 
 Чтобы получить учетные данные маркера, которые ваш код может использовать для авторизации запросов в службе хранилища Azure, создайте экземпляр класса [дефаултазурекредентиал](/dotnet/api/azure.identity.defaultazurecredential) . В следующем примере кода показано, как получить учетные данные маркера, прошедшего проверку подлинности, и использовать его для создания объекта клиента службы, а затем использовать клиент службы для отправки нового большого двоичного объекта:
@@ -160,7 +159,7 @@ async static Task CreateBlockBlobAsync(string accountName, string containerName,
             await containerClient.UploadBlobAsync(blobName, stream);
         }
     }
-    catch (StorageRequestFailedException e)
+    catch (RequestFailedException e)
     {
         Console.WriteLine(e.Message);
         Console.ReadLine();

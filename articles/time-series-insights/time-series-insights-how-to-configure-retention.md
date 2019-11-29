@@ -8,20 +8,20 @@ ms.author: dpalled
 manager: cshankar
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 10/10/2019
+ms.date: 11/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: aa905d1686939346827d07419a62fd6f299387ec
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 954e61aec5b622d44435a8a5b196fdbfed33c564
+ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012597"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74561207"
 ---
 # <a name="configuring-retention-in-time-series-insights"></a>Настройка периода удержания в службе "Аналитика временных рядов"
 
 В этой статье описывается, как настроить **время хранения данных** и **поведение при превышении размера хранилища** в службе "Аналитика временных рядов Azure".
 
-## <a name="summary"></a>summary
+## <a name="summary"></a>Резюме
 
 Каждая среда "аналитика временных рядов Azure" имеет параметр для настройки **времени хранения данных**. Это значение охватывает период от 1 до 400 дней. Данные удаляются по емкости хранилища среды или длительности хранения (1–400) в зависимости от того, какое из ограничений будет превышено первым.
 
@@ -32,13 +32,13 @@ ms.locfileid: "74012597"
 
 Дополнительные сведения об этих параметрах см. в статье, посвященной [обзору периода удержания в службе "Аналитика временных рядов"](time-series-insights-concepts-retention.md).  
 
-## <a name="configure-data-retention"></a>Настройка времени хранения данных
+## <a name="configure-data-retention"></a>Настройка срока хранения данных
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 
-1. Найдите существующую среду "Аналитика временных рядов". На портале Azure щелкните **Все ресурсы** в меню слева. Выберите среду Time Series Insights.
+1. Найдите существующую среду Аналитики временных рядов. На портале Azure щелкните **Все ресурсы** в меню слева. Выберите среду Time Series Insights.
 
-1. В разделе **Параметры** выберите **Свойства**.
+1. В разделе **Параметры** выберите **Конфигурация хранилища**.
 
     [![выберите параметры, а затем настройте.](media/data-retention/1-configure-data-retention.png)](media/data-retention/1-configure-data-retention.png#lightbox)
 
@@ -50,9 +50,9 @@ ms.locfileid: "74012597"
 
     [![хранение данных — примите и сохраните.](media/data-retention/2-accept-and-save.png)](media/data-retention/2-accept-and-save.png#lightbox)
 
-1. Примите флажок, указывающий, что вы проверили документацию и понимаете потенциальные риски потери данных. Нажмите кнопку **Сохранить**, чтобы сохранить изменения.
+1. Изучите документацию, чтобы понять потенциальные риски потери данных. Нажмите кнопку **Сохранить**, чтобы сохранить изменения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье, посвященной [обзору периода удержания данных в службе "Аналитика временных рядов"](time-series-insights-concepts-retention.md).
 

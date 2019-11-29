@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 11/21/2019
 ms.author: helohr
-ms.openlocfilehash: c5d6c671890f5e036d3f4cce6e880230c01048ed
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 54f2c39260ecaf643b0f2add8758ceb866e71afe
+ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74483816"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74561121"
 ---
 # <a name="set-up-msix-app-attach"></a>Настройка присоединения приложения MSIX
 
@@ -184,8 +184,8 @@ sc config wuauserv start=disabled
 
 Присоединение приложения MSIX состоит из четырех отдельных этапов, которые необходимо выполнить в следующем порядке:
 
-1. Этап
-2. регистрация;
+1. Stage
+2. Зарегистрироваться
 3. Отмена регистрации
 4. Отмена размещения
 
@@ -307,8 +307,7 @@ sc config wuauserv start=disabled
 
     $packageManager = [Windows.Management.Deployment.PackageManager]::new()
 
-    $path = $msixJunction + $parentFolder + $packageName # needed if we do the
-    pbisigned.vhd
+    $path = $msixJunction + $parentFolder + $packageName # needed if we do the pbisigned.vhd
 
     $path = ([System.Uri]$path).AbsoluteUri
 
@@ -448,7 +447,7 @@ catch [Exception]
 }  
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В настоящее время эта функция не поддерживается, но вы можете задать вопросы в сообществе на странице [виртуальных рабочих столов Windows течкоммунити](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop).
 

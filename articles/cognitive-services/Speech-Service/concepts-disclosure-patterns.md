@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/10/2019
 ms.author: angle
-ms.openlocfilehash: dfa05ff114ea0976cb8d57f711eaacc016ea53cc
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: e0cb73f224f53441ad4f23298a035f95d59b9f7c
+ms.sourcegitcommit: b5d59c6710046cf105236a6bb88954033bd9111b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73836993"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74559011"
 ---
-# <a name="disclosure-design-patterns"></a>Шаблоны проектирования раскрытия
+# <a name="disclosure-design-patterns"></a>Конструктивные шаблоны для раскрытия информации
 Теперь, когда&#39;вы определили правильный [уровень разглашения](concepts-disclosure-guidelines.md#disclosure-assessment) искусственного голоса, мы&#39;очень хорошо рассмотрю потенциальные конструктивные шаблоны.
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 Существует спектр шаблонов проектирования раскрытия, которые можно применять к искусственному речевому интерфейсу. Если результат оценки раскрытия был "высокий раскрытие", рекомендуется [**явно раскрытие**](#explicit-disclosure), что означает связь между источниками искусственного голоса. [**Неявное раскрытие**](#implicit-disclosure) включает в себя подсказки и шаблоны взаимодействия, которые выдают льготный опыт независимо от того, являются ли требуемые уровни раскрытия высоким или низким
 ![спектр шаблонов раскрытия](media/responsible-ai/disclosure-patterns/affordances.png)
 
@@ -167,7 +167,7 @@ ms.locfileid: "73836993"
 
 ![Согласованность неявных подсказок](media/responsible-ai/disclosure-patterns/consistency.png)
 
-### <a name="implicit-cues-amp-feedback"></a>Неявные подсказки &amp; Отзывы
+### <a name="implicit-cues--feedback"></a>Неявные подсказки & Отзывы
 
 Ансропоморфисм может переявляться различными способами, от фактического визуального представления агента до голоса, звуков, узоров освещения, отскоков и даже вибрации устройства. При определении персонажа используйте неявные подсказки и шаблоны отзывов вместо того, чтобы использовать его для человеческого аватара. Это один из способов снижения необходимости более явного раскрытия.
 
@@ -245,7 +245,7 @@ ms.locfileid: "73836993"
 - [Рекомендации по проектированию речи Microsoft Windows UWP](https://docs.microsoft.com/windows/uwp/design/input/speech-interactions)
 - [Рекомендации по голосовым командам Microsoft Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/voice-design#top-things-users-should-know-about-speech-in-mixed-reality)
 
-## <a name="reference-docs"></a>Справочная документация
+## <a name="reference-docs"></a>Справочные документы
 
 * [Раскрытие голоса для речи](https://aka.ms/disclosure-voice-talent)
 * [Рекомендации для ответственного развертывания технологии искусственного голоса](concepts-guidelines-responsible-deployment-synthetic.md)

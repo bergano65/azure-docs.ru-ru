@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bdc178661cf4db8505a444d1f5575bb3d0375979
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: 3b85c5c6c5642d10c8d917ed9785d0fcf48a5e68
+ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74547529"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74554132"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -185,7 +185,7 @@ ms.locfileid: "74547529"
 
 Пользователи с этой ролью могут читать основные сведения о каталоге. Эта роль должна использоваться для:
 * Предоставление определенному набору гостевых пользователей доступа на чтение вместо предоставления его всем гостевым пользователям.
-* Предоставление определенного набора пользователей, не являющихся администраторами, доступа к порталу Azure, если параметр "ограничить доступ к порталу Azure AD только администраторам" имеет значение "Да".
+* Предоставление определенному набору пользователей, не являющихся администраторами, доступа к портал Azure, если параметр "ограничить доступ к порталу Azure AD только администраторам" имеет значение "Да".
 * Предоставление субъектам-службам доступа к каталогу, где Directory. Read. ALL, не является параметром.
 
 ### <a name="directory-synchronization-accountsdirectory-synchronization-accounts-permissions"></a>[Учетные записи синхронизации каталогов](#directory-synchronization-accounts-permissions)
@@ -238,7 +238,7 @@ ms.locfileid: "74547529"
 >- [Портал Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/) . Глобальный считыватель не может прочитать режим подготовки для корпоративного приложения.
 >- [Центр администрирования M365](https://admin.microsoft.com/Adminportal/Home#/homepage) — глобальный модуль чтения не может читать запросы на хранилище клиентов. **На левой** панели центра администрирования M365 не находится вкладка " **запросы к защищенному хранилищем для клиентов** ".
 >- [M365 Security Center](https://security.microsoft.com/homepage) -Global Reader не может читать метки чувствительности и хранения. На левой панели центра безопасности M365 не найдены **метки конфиденциальности**, **метки хранения**и **аналитика меток** .
->- [Office Центр безопасности и соответствия требованиям](https://protection.microsoft.com) — глобальный считыватель не может читать журналы аудита SCC или выполнять поиск содержимого.
+>- [Office Центр безопасности и соответствия требованиям](https://sip.protection.office.com/homepage) — глобальный считыватель не может читать журналы аудита SCC или выполнять поиск содержимого.
 >- [Центр администрирования групп](https://admin.teams.microsoft.com) — глобальный модуль чтения не может читать **жизненный цикл групп**, **аналитические отчеты &** , **Управление устройствами с IP-телефонами** и **Каталог приложений**.
 >- [Privileged Access Management (PAM)](https://docs.microsoft.com/office365/securitycompliance/privileged-access-management-overview) не поддерживает роль глобального читателя.
 >- [Azure Information Protection](https://docs.microsoft.com/azure/information-protection/what-is-information-protection) -Global Reader поддерживается только [для централизованной отчетности](https://docs.microsoft.com/azure/information-protection/reports-aip) , и если ваша организация Azure AD не находится на [единой платформе меток](https://docs.microsoft.com/azure/information-protection/faqs#how-can-i-determine-if-my-tenant-is-on-the-unified-labeling-platform).
@@ -248,7 +248,7 @@ ms.locfileid: "74547529"
 
 ### <a name="group-administratorgroup-administrator"></a>[Администратор группы](#group-administrator)
 
-Пользователи с этой ролью могут создавать группы и ее параметры, такие как политики именования и истечения срока действия, и управлять ими. Важно понимать, что назначение пользователю этой роли дает им возможность управлять всеми группами в клиенте на различных рабочих нагрузках, таких как команды, SharePoint, Yammer в дополнение к Outlook. Кроме того, пользователь сможет управлять параметрами различных групп на различных порталах администрирования, например в центре администрирования Майкрософт, на портале Azure, а также в конкретных рабочих нагрузках, таких как команды и центры администрирования SharePoint.
+Пользователи с этой ролью могут создавать группы и ее параметры, такие как политики именования и истечения срока действия, и управлять ими. Важно понимать, что назначение пользователю этой роли дает им возможность управлять всеми группами в клиенте на различных рабочих нагрузках, таких как команды, SharePoint, Yammer в дополнение к Outlook. Кроме того, пользователь сможет управлять параметрами различных групп на различных порталах администрирования, таких как центр администрирования Майкрософт, портал Azure, а также с конкретными рабочими нагрузками, такими как команды и центры администрирования SharePoint.
 
 ### <a name="guest-inviterguest-inviter-permissions"></a>[Приглашенный докладчик](#guest-inviter-permissions)
 

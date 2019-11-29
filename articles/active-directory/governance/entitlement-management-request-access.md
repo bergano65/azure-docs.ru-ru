@@ -16,12 +16,12 @@ ms.date: 10/26/2019
 ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ddc0a3788075701fb4633895e7b22fff2c15f60b
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 81697293be235c12ca009c76a9fd9d3975e232fc
+ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73173697"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74554107"
 ---
 # <a name="request-access-to-an-access-package-in-azure-ad-entitlement-management"></a>Запрос доступа к пакету Access в управлении назначением Azure AD
 
@@ -80,6 +80,30 @@ ms.locfileid: "73173697"
 Если вы запрашиваете доступ к пакету Access с несколькими применяемыми политиками, вам может быть предложено выбрать политику. Например, диспетчер пакетов Access может настроить пакет Access с двумя политиками для двух групп внутренних сотрудников. Первая политика может разрешить доступ в течение 60 дней и требует утверждения. Вторая политика может разрешить доступ в течение 2 дней и не требует утверждения. Если вы столкнулись с этим сценарием, необходимо выбрать политику, которую вы хотите использовать.
 
 ![Мой портал доступа — запрос доступа — несколько политик](./media/entitlement-management-request-access/my-access-multiple-policies.png)
+
+## <a name="resubmit-a-request"></a>Повторная отправка запроса
+
+При запросе доступа к пакету Access запрос может быть отклонен, или срок действия запроса может истечь, если утверждающие не отвечают вовремя. Если вам требуется доступ, повторите попытку и отправьте запрос повторно. В следующей процедуре объясняется, как повторно отправить запрос на доступ.
+
+**Предварительная роль:** Запрашивающей стороны
+
+1. Войдите на портал **доступа** .
+
+1. Щелкните **журнал запросов** в меню навигации слева.
+
+1. Найдите пакет Access, для которого отправляется запрос.
+
+1. Щелкните галочку, чтобы выбрать пакет Access.
+
+1. Щелкните ссылку "синий **вид** " справа от выбранного пакета Access.
+    
+    ![Щелкните ссылку "доступ к пакету и просмотру"](./media/entitlement-management-request-access/resubmit-request-select-request-and-view.png)
+
+    Откроется панель справа с журналом запросов для пакета Access.
+    
+    ![Нажмите кнопку повторно отправить.](./media/entitlement-management-request-access/resubmit-request-select-resubmit.png)
+
+1. Нажмите кнопку **повторно отправить** в нижней части панели.
 
 ## <a name="cancel-a-request"></a>Отмена запроса
 

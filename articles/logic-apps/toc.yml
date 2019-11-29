@@ -103,6 +103,20 @@
               href: logic-apps-custom-api-host-deploy-call.md
         - name: Устранение неполадок
           href: logic-apps-diagnosing-failures.md
+    - name: Доступ к виртуальным сетям Azure
+      items:
+        - name: Подключение к виртуальным сетям с средами служб интеграции
+          href: connect-virtual-network-vnet-isolated-environment.md
+        - name: Настройка доступа для нескольких сред служб интеграции
+          href: connect-virtual-network-vnet-set-up-single-ip-address.md
+        - name: Добавление артефактов в среды службы интеграции
+          href: add-artifacts-integration-service-environment-ise.md
+    - name: Доступ к локальным данным
+      items:
+        - name: Установка шлюза данных
+          href: logic-apps-gateway-install.md
+        - name: Подключение к локальным данным
+          href: logic-apps-gateway-connection.md
     - name: Разработка для сценариев B2B
       items:
         - name: Создание учетной записи интеграции
@@ -159,16 +173,6 @@
           href: logic-apps-enterprise-integration-b2b-list-errors-solutions.md
         - name: Планирование аварийного восстановления
           href: logic-apps-enterprise-integration-b2b-business-continuity.md
-    - name: Подключение к виртуальным сетям с изолированными средами
-      href: connect-virtual-network-vnet-isolated-environment.md
-    - name: Добавление артефактов в среды службы интеграции
-      href: add-artifacts-integration-service-environment-ise.md
-    - name: Доступ к локальным данным
-      items:
-        - name: Установка шлюза данных
-          href: logic-apps-gateway-install.md
-        - name: Подключение к локальным данным
-          href: logic-apps-gateway-connection.md
     - name: 'Соединители: подробные сведения'
       items:
         - name: AS2

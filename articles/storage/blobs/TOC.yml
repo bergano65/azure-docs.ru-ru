@@ -276,6 +276,8 @@
               href: storage-blob-containers-list.md
             - name: Управление свойствами и метаданными (.NET)
               href: storage-blob-container-properties-metadata.md
+            - name: Настройка и администрирование политик неизменяемости
+              href: storage-blob-immutability-policies-manage.md
         - name: Создание больших двоичных объектов (BLOB-объектов) и управление ими
           items:
             - name: Отображение списка больших двоичных объектов (.NET)

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/15/2019
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: 84cb2b465735532ff44e35ab7a2fe4e9bb224e61
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: f282fce8070d440bdd3a518b4444eb0e67110961
+ms.sourcegitcommit: b5d59c6710046cf105236a6bb88954033bd9111b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74150017"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74559067"
 ---
 # <a name="stream-azure-monitoring-data-to-an-event-hub"></a>Потоковая передача данных мониторинга Azure в концентратор событий
 Azure Monitor предоставляет полное решение для мониторинга стека для приложений и служб в Azure, в других облаках и в локальной среде. В дополнение к использованию Azure Monitor для анализа этих данных и использования их в различных сценариях мониторинга, может потребоваться отправить его другим средствам мониторинга в вашей среде. Наиболее эффективный способ потоковой передачи данных мониторинга на внешние средства в большинстве случаев заключается в использовании [концентраторов событий Azure](/azure/event-hubs/). Эта статья содержит краткое описание того, как можно выполнить потоковую передачу данных мониторинга из разных источников в концентратор событий и получить ссылки на подробные инструкции.
@@ -50,7 +50,7 @@ Azure Monitor предоставляет полное решение для мо
 
 Маршрутизация данных мониторинга в концентратор событий с помощью Azure Monitor позволяет легко интегрироваться с внешними средствами SIEM и мониторинга. Примерами средств интеграции Azure Monitor являются следующие:
 
-| Средство | ОПИСАНИЕ |
+| Средство | Описание |
 |:---|:---|
 |  IBM QRadar | Модуль устройства (DSM) Microsoft Azure и протокол концентратора событий Microsoft Azure доступны для загрузки на [веб-сайте поддержки IBM](https://www.ibm.com/support). Дополнительные сведения об интеграции с Azure можно узнать в [конфигурации DSM QRadar](https://www.ibm.com/support/knowledgecenter/SS42VS_DSM/c_dsm_guide_microsoft_azure_overview.html?cp=SS42VS_7.3.0). |
 | Splunk | [Azure Monitor надстройка для Splunk](https://splunkbase.splunk.com/app/3534/) — это проект с открытым исходным кодом, доступный в Splunkbase. Документация доступна по адресу [Azure Monitor надстройки для Splunk](https://github.com/Microsoft/AzureMonitorAddonForSplunk/wiki/Azure-Monitor-Addon-For-Splunk).<br><br> Если вы не можете установить надстройку в экземпляре Splunk, например, вы используете прокси-сервер или работаете в облаке Splunk, вы можете перенаправить эти события в сборщик событий Splunk HTTP с помощью [функции Azure для Splunk](https://github.com/Microsoft/AzureFunctionforSplunkVS), которая активируется новыми сообщениями в концентраторе событий. |
@@ -60,7 +60,7 @@ Azure Monitor предоставляет полное решение для мо
 | логрхисм | Инструкции по настройке Логрхисм для получения журналов из концентратора событий доступны [здесь](https://logrhythm.com/six-tips-for-securing-your-azure-cloud-environment/). 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Архивация журнала действий в учетную запись хранения](../../azure-monitor/platform/archive-activity-log.md)
 * [Ознакомьтесь с обзором журнала действий Azure.](../../azure-monitor/platform/activity-logs-overview.md)
 * [Настройка оповещения на основе события журнала действий](../../azure-monitor/platform/alerts-log-webhook.md)

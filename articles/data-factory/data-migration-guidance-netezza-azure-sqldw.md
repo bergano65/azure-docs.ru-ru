@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 9/03/2019
-ms.openlocfilehash: 2844b48b3d832e8d9ec659ba657879d683016aee
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 762e7d4a7356c11171355b5325e77569e9acb1e2
+ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74217678"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74555098"
 ---
 # <a name="use-azure-data-factory-to-migrate-data-from-an-on-premises-netezza-server-to-azure"></a>Перенос данных с локального сервера Netezza в Azure с помощью фабрики данных Azure 
 
@@ -26,13 +26,13 @@ ms.locfileid: "74217678"
 Эта статья содержит следующие сведения для инженеров и разработчиков данных:
 
 > [!div class="checklist"]
-> * Производительность 
+> * Ориентированное на производительность 
 > * Устойчивость к копированию
 > * Безопасность сети
 > * Архитектура высокого уровня решения 
 > * Рекомендации по реализации  
 
-## <a name="performance"></a>Производительность
+## <a name="performance"></a>Ориентированное на производительность
 
 Фабрика данных Azure предлагает бессерверную архитектуру, обеспечивающую параллелизм на различных уровнях. Если вы являетесь разработчиком, это означает, что вы можете создавать конвейеры для полного использования полосы пропускания сети и базы данных, чтобы максимально увеличить пропускную способность перемещения данных для вашей среды.
 
@@ -156,7 +156,7 @@ ms.locfileid: "74217678"
 
 Отслеживайте использование ЦП и памяти на автономном IR-компьютере и будьте готовы к увеличению масштаба компьютера или масштабированию на нескольких компьютерах, когда вы видите, что ЦП и память полностью используются. 
 
-При возникновении ошибок регулирования, о которых сообщает действие копирования фабрики данных Azure, сократите значение параметра параллелизма или `parallelCopies` в фабрике данных Azure или попробуйте увеличить ограничения пропускной способности сети и данных в секунду (операций ввода-вывода). сохраняют. 
+При возникновении ошибок регулирования, о которых сообщает действие копирования фабрики данных Azure, следует либо уменьшить параллелизм или `parallelCopies` параметр в фабрике данных Azure, либо увеличить ограничения пропускной способности или операций ввода-вывода в секунду, а также ограничений сети и хранилищ данных. 
 
 
 ### <a name="estimate-your-pricing"></a>Оценка цен 
@@ -190,7 +190,7 @@ ms.locfileid: "74217678"
 
 Дополнительные сведения см. в следующих статьях и руководствах:
 
-- [Перенос данных из локальной базы данных реляционного хранилища данных в Azure с помощью фабрики данных Azure](https://azure.microsoft.com/mediahandler/files/resourcefiles/data-migration-from-on-premises-relational-data-warehouse-to-azure-data-lake-using-azure-data-factory/Data_migration_from_on-prem_RDW_to_ADLS_using_ADF.pdf)
+- [Перенос данных из локальной базы данных реляционного хранилища данных в Azure с помощью фабрики данных Azure](https://azure.microsoft.com/resources/data-migration-from-on-premise-relational-data-warehouse-to-azure-data-lake-using-azure-data-factory/)
 - [Соединитель Netezza](https://docs.microsoft.com/azure/data-factory/connector-netezza)
 - [Соединитель ODBC](https://docs.microsoft.com/azure/data-factory/connector-odbc)
 - [Соединитель хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage)
@@ -205,6 +205,6 @@ ms.locfileid: "74217678"
 - [Добавочное копирование данных из нескольких таблиц](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-multiple-tables-portal)
 - [Страница с ценами на фабрику данных Azure](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Копирование файлов из нескольких контейнеров с помощью фабрики данных Azure](solution-template-copy-files-multiple-containers.md)

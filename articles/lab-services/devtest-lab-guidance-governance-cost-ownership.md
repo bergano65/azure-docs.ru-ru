@@ -1,6 +1,6 @@
 ---
-title: Система управления инфраструктурой Azure DevTest Labs
-description: Эта статья содержит рекомендации по управлению инфраструктурой Azure DevTest Labs.
+title: Управление затратами и владением в Azure DevTest Labs
+description: В этой статье содержатся сведения, которые помогут вам оптимизировать затраты и распределить владение в среде.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -10,15 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/11/2019
+ms.date: 11/26/2019
 ms.author: spelluru
 ms.reviewer: christianreddington,anthdela,juselph
-ms.openlocfilehash: 7832691812d8f10342dc7df20a7cfab7265f2d9d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b82d338f85f1b43712296ac7f27bdad55f8f1919
+ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60775718"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74561662"
 ---
 # <a name="governance-of-azure-devtest-labs-infrastructure---manage-cost-and-ownership"></a>Система управления инфраструктурой Azure DevTest Labs — контроль затрат и владение
 Затраты и владение являются основными сложностями при создании собственных сред разработки и тестирования. В этом разделе приведены сведения, которые помогут оптимизировать затраты и согласовать владельца в средах.
@@ -37,7 +37,7 @@ ms.locfileid: "60775718"
 
 - особые низкие тарифы для разработки и тестирования на виртуальные машины Windows, облачные службы, HDInsight, Службу приложений и Logic Apps;
 - отличные тарифы на другие службы Azure в рамках Соглашения Enterprise;
-- доступ к эксклюзивным образам разработки и тестирования в коллекции, включая Windows 8.1 и Windows 10.
+- доступ к эксклюзивным образам разработки и тестирования в коллекции, включая Windows 8.1 и Windows 10;
  
 Только активные подписчики Visual Studio (стандартные подписки, годовые облачные подписки и месячные облачные подписки) могут использовать ресурсы Azure, запущенные в подписке "Enterprise — разработка и тестирование". Пользователи также могут получить доступ к приложению, чтобы предоставить отзыв об опыте использования и выполнить приемочное тестирование. Использование ресурсов в рамках этой подписки ограничивается разработкой и тестированием приложений, и гарантия безотказной работы не предоставляется.
 

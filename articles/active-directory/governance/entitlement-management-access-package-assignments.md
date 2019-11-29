@@ -16,12 +16,12 @@ ms.date: 10/15/2019
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f06da43e758c24da65664b34dd83f876a00e3a0
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 0501da153567f3b95804d8a8a6576d8cf199762c
+ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73174912"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74553990"
 ---
 # <a name="view-add-and-remove-assignments-for-an-access-package-in-azure-ad-entitlement-management"></a>Просмотр, Добавление и удаление назначений для пакета Access в управлении назначением Azure AD
 
@@ -76,6 +76,24 @@ ms.locfileid: "73174912"
 1. Нажмите кнопку **Добавить** , чтобы напрямую назначить выбранных пользователей пакету доступа.
 
     Через несколько секунд нажмите кнопку " **Обновить** ", чтобы увидеть пользователей в списке назначений.
+
+## <a name="remove-an-assignment"></a>Удаление назначения
+
+**Предварительная роль:** Глобальный администратор, администратор пользователей, владелец каталога или диспетчер пакетов Access
+
+1. На портале Azure щелкните **Azure Active Directory** и выберите **Управление удостоверениями**.
+
+1. В меню слева щелкните **доступ к пакетам** и откройте пакет Access.
+
+1. В меню слева щелкните **назначения**.
+ 
+1. Установите флажок рядом с пользователем, назначение которого необходимо удалить из пакета доступа. 
+
+1. Нажмите кнопку **Удалить** в верхней части левой панели. 
+ 
+    ![Назначения — удаление пользователя из пакета Access](./media/entitlement-management-access-package-assignments/remove-assignment-select-remove-assignment.png)
+
+    Появится уведомление о том, что назначение удалено. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

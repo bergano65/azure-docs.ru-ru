@@ -4,22 +4,22 @@ description: В этой статье вы узнаете, как создава
 ms.topic: conceptual
 ms.date: 08/21/2018
 ms.assetid: 5ffc4115-0ae5-4b85-a18c-8a942f6d4870
-ms.openlocfilehash: b6e665b5c71dc5f2e8ebc22e00e1a71237f48bfc
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: a086fc9c8be22f177d7fb1205e3545ddc52f5c83
+ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74173436"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74554886"
 ---
 # <a name="create-azure-recovery-services-backup-policies-using-rest-api"></a>Создание политик резервного копирования Служб восстановления Azure с помощью REST API
 
-Шаги по созданию политики резервного копирования для хранилища Служб восстановления Azure описаны в [документе о политике REST API](https://docs.microsoft.com/rest/api/backup/protectionpolicies(2019-05-13)/createorupdate). Мы используем этот документ в качестве ссылки для создания политики для резервной копии виртуальной машины Azure.
+Шаги по созданию политики резервного копирования для хранилища Служб восстановления Azure описаны в [документе о политике REST API](/rest/api/backup/protectionpolicies/createorupdate). Мы используем этот документ в качестве ссылки для создания политики для резервной копии виртуальной машины Azure.
 
 ## <a name="backup-policy-essentials"></a>Основные компоненты политики резервного копирования
 
 - Политика резервного копирования создается в каждом хранилище.
 - Политику резервного копирования можно создать для резервного копирования следующих рабочих нагрузок
-  - Azure
+  - Виртуальная машина Azure
   - SQL на виртуальной машине Azure
   - Общая папка Azure
 - Политики могут назначаться нескольким ресурсам. Политику резервного копирования виртуальной машины Azure можно использовать для защиты нескольких виртуальных машин Azure.
@@ -44,12 +44,12 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 Например, чтобы создать политику для восстановления диска из резервной копии виртуальной машины Azure, выполните компоненты текста запроса.
 
-|имя  |обязательные  |введите  |ОПИСАНИЕ  |
+|Name  |Обязательно для заполнения  |Тип  |Описание  |
 |---------|---------|---------|---------|
-|properties     |   True,      |  ProtectionPolicy:[AzureIaaSVMProtectionPolicy](https://docs.microsoft.com/rest/api/backup/protectionpolicies(2019-05-13)/createorupdate#azureiaasvmprotectionpolicy)      | Свойства ProtectionPolicyResource        |
-|Теги     |         | Объект.        |  Теги ресурсов       |
+|properties     |   Да      |  ProtectionPolicy:[AzureIaaSVMProtectionPolicy](/rest/api/backup/protectionpolicies/createorupdate#azureiaasvmprotectionpolicy)      | Свойства ProtectionPolicyResource        |
+|tags     |         | Объекты        |  Теги ресурсов       |
 
-Полный список определений в тексте запроса см. в [документе REST API о политике резервного копирования](https://docs.microsoft.com/rest/api/backup/protectionpolicies(2019-05-13)/createorupdate).
+Полный список определений в тексте запроса см. в [документе REST API о политике резервного копирования](/rest/api/backup/protectionpolicies/createorupdate).
 
 ### <a name="example-request-body"></a>Примеры текста запроса
 
@@ -148,13 +148,13 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 ## <a name="responses"></a>Ответы
 
-Создание и обновление политики резервного копирования является [асинхронной операцией](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что эта операция создает другую операцию, которая должна отслеживаться отдельно.
+Создание и обновление политики резервного копирования является [асинхронной операцией](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
 Он возвращает два ответа: 202 (принято) при создании другой операции, а затем 200 (ОК) после завершения этой операции.
 
-|имя  |введите  |ОПИСАНИЕ  |
+|Name  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     |    [ProtectionPolicyResource](https://docs.microsoft.com/rest/api/backup/protectionpolicies(2019-05-13)/createorupdate#protectionpolicyresource)     |  ОК       |
+|200 ОК     |    [ProtectionPolicyResource](/rest/api/backup/protectionpolicies/createorupdate#protectionpolicyresource)     |  ОК       |
 |202 — принято     |         |     Принято    |
 
 ### <a name="example-responses"></a>Примеры ответов
@@ -179,7 +179,7 @@ Location: https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000
 X-Powered-By: ASP.NET
 ```
 
-Затем отследите итоговую операцию, используя заголовок location или Azure-AsyncOperation с помощью простой команды *GET*.
+Отследите итоговую операцию, используя заголовки location или Azure-AsyncOperation с помощью простой команды *GET*.
 
 ```http
 GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/SwaggerTestRg/providers/Microsoft.RecoveryServices/vaults/testVault/backupPolicies/testPolicy1/operationResults/00000000-0000-0000-0000-000000000000?api-version=2019-05-13
@@ -275,7 +275,7 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Если политика уже используется для защиты элемента, любое обновление в политике приведет к [изменению защиты](backup-azure-arm-userestapi-backupazurevms.md#changing-the-policy-of-protection) всех связанных элементов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Включите защиту для незащищенной виртуальной машины Azure](backup-azure-arm-userestapi-backupazurevms.md).
 

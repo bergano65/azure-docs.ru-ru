@@ -11,12 +11,12 @@ author: MladjoA
 ms.author: mlandzic
 ms.reviewer: carlrab, jovanpop
 ms.date: 04/25/2019
-ms.openlocfilehash: 6ef8d49ba7c9ac2c3c60197c11b9bf5936171f9e
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 0f6e379287323d9353acd887cf30d5c9c0065959
+ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74420743"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74555390"
 ---
 # <a name="migrate-certificate-of-tde-protected-database-to-azure-sql-database-managed-instance"></a>Перенос сертификата защищенной TDE базы данных в Управляемый экземпляр Базы данных SQL Azure
 
@@ -32,12 +32,12 @@ ms.locfileid: "74420743"
 > [!IMPORTANT]
 > Перенесенный сертификат используется только для восстановления базы данных, защищенной TDE. Вскоре после восстановления перенесенный сертификат заменяется другим предохранителем, либо управляемым службой сертификатом, либо асимметричным ключом из хранилища ключей в зависимости от типа прозрачного шифрования данных, заданного для экземпляра.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
 
 - Средство командной строки[Pvk2Pfx](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx), установленное на локальном сервере или другом компьютере с доступом к сертификату, экспортированному как файл. Средство Pvk2Pfx является частью [набора драйверов Windows Корпоративный](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk), изолированной автономной среды командной строки.
-- [Windows PowerShell](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell) версии 5.0 или более поздней.
+- [Windows PowerShell](/powershell/scripting/install/installing-windows-powershell) версии 5.0 или более поздней.
 
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -58,7 +58,7 @@ Install-Module -Name Az.Sql
 Update-Module -Name Az.Sql
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
 
@@ -156,7 +156,7 @@ Update-Module -Name Az.Sql
        -ManagedInstanceName "<managedInstanceName>" -PrivateBlob $securePrivateBlob -Password $securePassword
    ```
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Сначала необходимо [настроить Azure Key Vault](/azure/key-vault/key-vault-manage-with-cli2) с *PFX* -файлом.
 
@@ -184,7 +184,7 @@ Update-Module -Name Az.Sql
 
 Теперь сертификат доступен для указанного управляемого экземпляра и резервная копия соответствующей базы данных, защищенной TDE, может быть успешно восстановлена.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье описано, как перенести сертификат, защищающий ключ шифрования базы данных с помощью прозрачного шифрования данных, из локального или IaaS SQL Server в Управляемый экземпляр Базы данных SQL Azure.
 
