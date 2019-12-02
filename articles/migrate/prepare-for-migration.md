@@ -1,19 +1,19 @@
 ---
-title: Подготовка локальных компьютеров к миграции в Azure с помощью службы "Миграция Azure"
-description: В этой статье описывается подготовка локальных компьютеров к миграции в Azure с помощью службы "Миграция Azure".
+title: Подготовка компьютеров к миграции с помощью Миграции Azure
+description: Подготовка локальных компьютеров к миграции в Azure с помощью службы "Миграция Azure"
 author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 10/03/2019
+ms.date: 11/19/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 61b4f41a0b36945413e45a357a5ca73ac75ceb98
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 2c13bc79fccc74da431ba1a6399870b261b24c57
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73480117"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74196426"
 ---
 # <a name="prepare-on-premises-machines-for-migration-to-azure"></a>Подготовка локальных компьютеров к миграции в Azure
 
@@ -46,8 +46,7 @@ ms.locfileid: "73480117"
 
 - Для виртуальных машин VMware миграция сервера службы "Миграция Azure" поддерживает [миграцию без агентов или на основе агентов](server-migrate-overview.md). Проверьте требования и поддерживаемые функции виртуальной машины VMware для [миграции без агентов](migrate-support-matrix-vmware.md#migration---limitations) и [на основе агентов](migrate-support-matrix-vmware.md#agent-based-migration-vmware-vm-requirements).
 - Проверьте [требования к миграции и поддерживаемые функции](migrate-support-matrix-hyper-v.md#migration-hyper-v-vm-requirements) для виртуальных машин Hyper-V.
-- Проверьте [требования к миграции и поддерживаемые функции](migrate-support-matrix-vmware.md#agent-based-migration-vmware-vm-requirements) для локальных физических компьютеров или других виртуализированных серверов. Эти требования аналогичны требованиям для виртуальных машин VMware.
-
+- Проверьте [требования к миграции и поддерживаемые функции](migrate-support-matrix-physical.md) для локальных физических компьютеров или других виртуализированных серверов. 
 
 
 

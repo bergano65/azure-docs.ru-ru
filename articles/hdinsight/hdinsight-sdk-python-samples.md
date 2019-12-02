@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: sample
 ms.date: 11/08/2019
-ms.openlocfilehash: 14d7c6c6352528207a20071908c31ea684dde19d
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: 64e1f172a947cb08795272fe2a022e9d7beac7a6
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73903639"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74215725"
 ---
 # <a name="azure-hdinsight-python-samples"></a>Azure HDInsight: Примеры для Python
 
@@ -21,6 +21,9 @@ ms.locfileid: "73903639"
 > * [Примеры .NET](hdinsight-sdk-dotnet-samples.md)
 > * [Примеры Java](hdinsight-sdk-java-samples.md)
 <!-- * [Go Examples](hdinsight-sdk-go-samples.md)-->
+
+> [!Important]
+> Версия Python 2.7 будет объявлена устаревшей 1 января 2020 г. Если вы по-прежнему используете Python 2.7, обновите его до версии 3.7, чтобы использовать пакет SDK для HDInsight для Python.  
 
 Эта статья содержит:
 

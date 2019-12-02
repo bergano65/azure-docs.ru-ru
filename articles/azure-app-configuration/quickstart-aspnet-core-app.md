@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ASP.NET Core
 ms.workload: tbd
 ms.date: 10/11/2019
 ms.author: yegu
-ms.openlocfilehash: 4e08192788329e7a835ddb0b6b3f1aa01b2c73e1
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 91712b3f730317e65cda7b48c8f5636b2fb9ab2c
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72299934"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74185090"
 ---
 # <a name="quickstart-create-an-aspnet-core-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения ASP.NET Core с помощью службы "Конфигурация приложений Azure"
 
@@ -30,7 +30,7 @@ ms.locfileid: "72299934"
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - [Базовый пакет SDK для .NET](https://dotnet.microsoft.com/download)
 
-## <a name="create-an-app-configuration-store"></a>Создание хранилища конфигураций приложений
+## <a name="create-an-app-configuration-store"></a>Создание хранилища Конфигурации приложений
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
@@ -81,7 +81,7 @@ ms.locfileid: "72299934"
 
 Инструмент "Диспетчер секретов" хранит конфиденциальные данные для разработки вне вашего дерева проектов. Этот подход помогает предотвратить случайный обмен секретами приложений в исходном коде. См. сведения о диспетчере секретов в руководстве по [безопасному хранению секретов приложений при разработке с помощью ASP.NET Core](https://docs.microsoft.com/aspnet/core/security/app-secrets).
 
-## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу конфигураций приложений
+## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
 
 1. Добавьте ссылку на пакет NuGet `Microsoft.Azure.AppConfiguration.AspNetCore`, выполнив следующую команду:
 
@@ -95,7 +95,7 @@ ms.locfileid: "72299934"
     ```
 3. Добавьте секрет с именем *ConnectionStrings:AppConfig* в диспетчер секретов.
 
-    Этот секрет содержит строку подключения для получения доступа к хранилищу конфигураций приложений. Замените значение в следующей команде строкой подключения для вашего хранилища конфигураций приложений.
+    Этот секрет содержит строку подключения для получения доступа к хранилищу Конфигурации приложений. Замените значение в следующей команде строкой подключения к своему хранилищу Конфигурации приложений.
 
     Эта команда должна выполняться в том же каталоге, что и файл *CSPROJ*.
 
@@ -216,7 +216,7 @@ ms.locfileid: "72299934"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы создали хранилище конфигураций приложения и использовали его с веб-приложением ASP.NET Core с помощью [поставщика Конфигурации приложений](https://go.microsoft.com/fwlink/?linkid=2074664). См. сведения об использовании Конфигурации приложений в следующем руководстве, где описано, как сделать так, чтобы веб-приложение динамически обновляло параметры конфигурации.
+В этом кратком руководстве вы создали хранилище Конфигурации приложений и использовали его с веб-приложением ASP.NET Core с помощью [поставщика Конфигурации приложений](https://go.microsoft.com/fwlink/?linkid=2074664). Чтобы узнать, как настроить приложение ASP.NET Core для динамического обновления параметров конфигурации, перейдите к следующему учебнику.
 
 > [!div class="nextstepaction"]
-> [Использование динамической конфигурации в приложении ASP.NET Core](./enable-dynamic-configuration-aspnet-core.md)
+> [Включение динамической конфигурации](./enable-dynamic-configuration-aspnet-core.md)

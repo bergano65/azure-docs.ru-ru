@@ -1,14 +1,14 @@
 ---
-title: Пример схемы SWIFT CSP-CSCF v2020 — сопоставление элементов управления
+title: Элементы управления примера схемы SWIFT CSP-CSCF v2020
 description: Сопоставление элементов управления на примере схемы SWIFT CSP-CSCF v2020. Каждый элемент управления сопоставляется с одной или несколькими политиками Azure, которые помогают выполнять оценку.
 ms.date: 09/24/2019
 ms.topic: sample
-ms.openlocfilehash: 0e5b45ec86acbe7c55aed0aa1611f499316e9118
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 1826e4820f06fc3a858ce6cd5f8906baaa9808cc
+ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74037836"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74546528"
 ---
 # <a name="control-mapping-of-the-swift-csp-cscf-v2020-blueprint-sample"></a>Сопоставление элементов управления для примера схемы SWIFT CSP-CSCF v2020
 

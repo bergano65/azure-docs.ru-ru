@@ -1,18 +1,16 @@
 ---
-title: 'Учебник: добавление ресурсов в шаблон Azure Resource Manager'
+title: Учебник. Добавление ресурса в шаблон
 description: Описание создания первого шаблона Azure Resource Manager Вы узнаете о синтаксисе файла шаблона и о том, как развернуть учетную запись хранения.
 author: mumian
-manager: carmonmills
-ms.service: azure-resource-manager
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 6b8bd73a1248168ff8f434afa0a9317a8fe0c618
-ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
+ms.openlocfilehash: 924c369465bf53ea5f58de906bd0894ce822cac3
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71963581"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74148199"
 ---
 # <a name="tutorial-add-a-resource-to-your-resource-manager-template"></a>Руководство по добавлению ресурсов в шаблон Azure Resource Manager
 

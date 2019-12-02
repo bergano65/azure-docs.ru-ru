@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
-ms.openlocfilehash: 0f1aca75045f674fa45f5ad00c14a37c1abe7aea
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 7d3b7f8982a24856818cbb6ce86060beac969fc2
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73160417"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74233499"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mozy-enterprise"></a>Руководство по Интеграция Azure Active Directory с Mozy Enterprise
 
@@ -208,7 +208,7 @@ ms.locfileid: "73160417"
 Чтобы дать возможность пользователям Azure AD входить в Mozy Enterprise, необходимо в Mozy Enterprise подготовить для них учетные записи. В случае с Mozy Enterprise подготовка выполняется вручную.
 
 >[!NOTE]
->Вы можете использовать любые другие инструменты создания учетных записей пользователей Mozy Enterprise или API, предоставляемые Mozy Enterprise для подготовки учетных записей пользователей AAD.
+>Вы можете использовать любые другие средства создания учетной записи пользователя Mozy Enterprise или API, предоставляемые Mozy Enterprise, для подготовки учетных записей пользователей AAD.
 
 **Чтобы подготовить учетные записи пользователей, выполните следующие действия.**
 

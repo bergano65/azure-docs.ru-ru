@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: 50f6762c8046850da1e4541f2ccb7688542f7d54
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1fb1a1bc7bfd8b3cc9d7758bf8e80d8759f9357e
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67098474"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227486"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kudos"></a>Руководство по Интеграция Azure Active Directory с Kudos
 
@@ -134,7 +134,7 @@ ms.locfileid: "67098474"
 
 1. Щелкните **Интеграция > Единый вход** и выполните следующие действия.
 
-    ![SSO](./media/kudos-tutorial/ic787807.png "SSO")
+    ![Единый вход](./media/kudos-tutorial/ic787807.png "Единый вход")
 
     a. В текстовое поле **URL-адрес для входа** вставьте значение **URL-адрес входа**, скопированное с портала Azure.
 
@@ -213,18 +213,18 @@ ms.locfileid: "67098474"
 
 1. Откройте вкладку **Пользователи** и щелкните **Добавить пользователя**.
 
-   ![User Admin](./media/kudos-tutorial/ic787809.png "User Admin") (Администратор пользователей)
+   ![Администратор пользователей](./media/kudos-tutorial/ic787809.png "Администратор пользователей")
 
 1. В разделе **Добавление пользователя** сделайте следующее:
 
-    ![Добавление пользователя](./media/kudos-tutorial/ic787810.png "Добавление пользователя")
+    ![Добавление пользователей](./media/kudos-tutorial/ic787810.png "Добавление пользователя")
 
     a. В соответствующие текстовые поля введите атрибуты **First Name** (Имя), **Last Name** (Фамилия), **Email** (Адрес электронной почты) и другие данные действующей учетной записи Azure Active Directory, которую вы хотите подготовить.
 
     b. Нажмите кнопку **Создать пользователя**.
 
 > [!NOTE]
-> Вы можете использовать любые другие средства создания учетной записи пользователя Kudos или API, предоставляемые Kudos для подготовки учетных записей пользователя AAD.
+> Вы можете использовать любые другие средства создания учетной записи пользователя Kudos или API, предоставляемые Kudos, для подготовки учетных записей пользователя AAD.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
@@ -238,4 +238,4 @@ ms.locfileid: "67098474"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -1,6 +1,6 @@
 ---
-title: Просмотр клиентских приложений в Azure Active Directory | Документация Майкрософт
-description: Использование портала Azure для просмотра приложений в клиенте Azure Active Directory (Azure AD).
+title: Краткое руководство. Просмотр клиентских приложений в Azure Active Directory
+description: В этом кратком руководстве используется портал Azure для просмотра приложений в клиенте Azure Active Directory (Azure AD).
 services: active-directory
 documentationcenter: ''
 author: msmimart
@@ -16,14 +16,14 @@ ms.author: mimart
 ms.reviewer: arvinh
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 764c7c048dd0398b495ee31421a8e2bc9f8169ee
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 1d40e968bb7079d50e3fa18889ae996c9b59c90f
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68477196"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74421813"
 ---
-# <a name="view-your-azure-active-directory-tenant-applications"></a>Просмотр клиентских приложений в Azure Active Directory
+# <a name="quickstart-view-your-azure-active-directory-tenant-applications"></a>Краткое руководство. Просмотр клиентских приложений в Azure Active Directory
 
 В этом кратком руководстве используется портал Azure для просмотра приложений в клиенте Azure Active Directory (Azure AD).
 

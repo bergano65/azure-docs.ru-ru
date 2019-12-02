@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK для Пользовательского визуального распознавания для C#
+title: Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK для C# — Пользовательское визуальное распознавание
 titleSuffix: Azure Cognitive Services
 description: Создайте проект, добавьте теги, загрузите изображения, обучите проект и удаляйте объекты с помощью .NET SDK с C#.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: quickstart
 ms.date: 08/08/2019
 ms.author: areddish
-ms.openlocfilehash: de8858b1b47e36a4d8b86f317f7471118fa4a772
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 7baa3e2de00997496edb5b445f8426d899ac65a4
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "73519491"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74383723"
 ---
 # <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-net-sdk"></a>Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK для Пользовательской службы визуального распознавания для .NET
 

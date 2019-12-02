@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f605398896c93d15b7475c05c79361fdcefcfcab
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: ea9c88f8eb8ac7b72f11ff286d2294df8cb70860
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442773"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232062"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bonusly"></a>Руководство по Интеграция Azure Active Directory с Bonusly
 
@@ -219,7 +219,7 @@ ms.locfileid: "67442773"
 
 1. Откройте вкладку **Users and bonuses** (Пользователи и бонусы).
 
-    ![Пользователи и бонусы](./media/bonus-tutorial/ic781042.png "Пользователи и бонусы")
+    ![Пользователи и бонусы](./media/bonus-tutorial/ic781042.png "Users and bonuses")
 
 1. Выберите **Manage Users**(Управление пользователями).
 
@@ -227,11 +227,11 @@ ms.locfileid: "67442773"
 
 1. Нажмите кнопку **Add User**(Добавить пользователя).
 
-    ![Добавление пользователя](./media/bonus-tutorial/ic781044.png "Добавление пользователя")
+    ![Добавление пользователя](./media/bonus-tutorial/ic781044.png "Добавить пользователя")
 
 1. На странице **Добавление пользователя** выполните следующие действия.
 
-    ![Добавление пользователя](./media/bonus-tutorial/ic781045.png "Добавление пользователя")  
+    ![Добавление пользователя](./media/bonus-tutorial/ic781045.png "Добавить пользователя")  
 
     a. В текстовое поле **First name** (Имя) введите имя пользователя, например **Britta**.
 
@@ -256,4 +256,4 @@ ms.locfileid: "67442773"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

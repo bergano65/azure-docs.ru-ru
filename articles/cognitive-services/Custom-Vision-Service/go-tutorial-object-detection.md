@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK Пользовательского визуального распознавания для Go
+title: Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK для Go в Пользовательском визуальном распознавании
 titleSuffix: Azure Cognitive Services
 description: Создайте проект, добавьте теги, загрузите изображения, обучите проект и найдите объекты с помощью пакета SDK для Go.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
 ms.date: 08/08/2019
-ms.openlocfilehash: 050d0593f64c939c687601eb25677f2356f4ba51
-ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
+ms.openlocfilehash: d0734763ca1dd5ab3162ca00748361bee29cefc1
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73519087"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74378743"
 ---
 # <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-go-sdk"></a>Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK Пользовательского визуального распознавания для Go
 

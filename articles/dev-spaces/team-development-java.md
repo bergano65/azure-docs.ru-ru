@@ -1,8 +1,6 @@
 ---
-title: Коллективная разработка с помощью Azure Dev Spaces, Java и VS Code
-titleSuffix: Azure Dev Spaces
+title: Коллективная разработка с помощью Java Core и Visual Studio Code
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
 author: stepro
 ms.author: stephpr
 ms.date: 08/01/2018
@@ -10,14 +8,14 @@ ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
 manager: gwallace
-ms.openlocfilehash: 08155dec072b6ce82eae62443712350ee5f70890
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 400aec21d028011523fc5b441ed8ba77a1a46074
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74132078"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325522"
 ---
-# <a name="team-development-with-azure-dev-spaces-using-java-and-vs-code"></a>Коллективная разработка с помощью Azure Dev Spaces, Java и VS Code
+# <a name="team-development-using-java-and-visual-studio-code-with-azure-dev-spaces"></a>Коллективная разработка с помощью Azure Dev Spaces в Java и Visual Studio Code
 
 Из этого руководства вы узнаете, как команда разработчиков может одновременно работать в одном кластере Kubernetes с помощью сред Dev Spaces.
 

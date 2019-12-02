@@ -1,19 +1,15 @@
 ---
-title: Пример сценария Azure PowerShell. Резервное копирование виртуальной машины Azure
+title: Пример скрипта PowerShell. Резервное копирование виртуальной машины Azure
 description: В этой статье вы узнаете, как с помощью примера сценария Azure PowerShell выполнить резервное копирование виртуальной машины Azure.
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: sample
 ms.date: 03/05/2019
-ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: fe2fa6d77f7ec59ef73ac0e8779dcfbd660c0680
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: ad4d290961bd39659283795f6a58ccb815b639b0
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747120"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74171807"
 ---
 # <a name="back-up-an-encrypted-azure-virtual-machine-with-powershell"></a>Резервное копирование зашифрованной виртуальной машины Azure с помощью PowerShell
 

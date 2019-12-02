@@ -1,5 +1,5 @@
 ---
-title: 'Виртуальная глобальная сеть Azure: создание подключений ExpressRoute'
+title: Учебник. Создание подключений ExpressRoute с помощью Виртуальной глобальной сети Azure
 description: Из этого руководства вы узнаете, как с помощью Виртуальной глобальной сети Azure создать подключение ExpressRoute к Azure и локальным средам.
 services: virtual-wan
 author: cherylmc
@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/24/2019
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect my corporate on-premises network(s) to my VNets using Virtual WAN and ExpressRoute.
-ms.openlocfilehash: 5a394f93c5cc606c26ffa1cc64bf1d61617b05b8
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: f9277fae00471bf67682015e017ae6dfa351ad65
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74014931"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74422864"
 ---
 # <a name="tutorial-create-an-expressroute-association-using-azure-virtual-wan"></a>Руководство по созданию связи ExpressRoute с помощью Виртуальной глобальной сети Azure
 

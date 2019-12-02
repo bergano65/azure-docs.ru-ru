@@ -1,27 +1,19 @@
 ---
 title: Что такое Microsoft Flow, Logic Apps, Функции и Веб-задания? — Azure
 description: 'Сравнение облачных служб Майкрософт, которые оптимизированы для выполнения задач интеграции: Microsoft Flow, Logic Apps, Функции и Веб-задания.'
-services: functions, logic-apps
-documentationcenter: na
-author: ggailey777
-manager: jeconnoc
-keywords: microsoft flow, поток, logic apps, функции azure, функции, веб-задания azure, веб-задания, обработка событий, динамическое вычисление, независимая от сервера архитектура
-ms.service: azure-functions
 ms.topic: overview
 ms.date: 04/09/2018
-ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: e599ff280481549f68822d96f97b85f2516b1593
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: a20729e7c47e6bf2ad77e47fa228495d8b482aab
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74082744"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74278628"
 ---
 # <a name="what-are-microsoft-flow-logic-apps-functions-and-webjobs"></a>Что такое Microsoft Flow, Logic Apps, Функции и Веб-задания?
 
-В этой статье сравниваются следующие облачные службы Майкрософт:
-
+В этой статье сравниваются следующие облачные службы Майкрософт: 
 * [Microsoft Flow](https://flow.microsoft.com/)
 * [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/)
 * [Функции Azure](https://azure.microsoft.com/services/functions/)
@@ -57,7 +49,7 @@ Microsoft Flow и Logic Apps спроектированы в рамках под
 Для Функций Azure оркестрации разрабатываются путем написания кода и использования [расширения "Устойчивые функции"](durable/durable-functions-overview.md). Для Logic Apps оркестрации можно создавать с помощью графического пользовательского интерфейса или изменения файлов конфигурации.
 
 Вы можете комбинировать и сопоставлять служба при создании оркестраций, вызывая функции из приложений логики и приложения логики из функций. Выберите способ создания оркестраций с учетом ваших предпочтений и возможностей, предоставляемых каждой службой. В следующей таблице представлены некоторые основные различия между этими службами:
- 
+
 |  | Устойчивые функции | Logic Apps |
 | --- | --- | --- |
 | Разработка | Code-first (императивный подход) | Designer-first (декларативный подход) |

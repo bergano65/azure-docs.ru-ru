@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Поиск изображений с помощью REST API Bing для поиска изображений и Node.js
+title: Краткое руководство. Поиск изображений с помощью REST API и Node.js — Поиск изображений Bing
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как отправлять запросы в REST API Bing для поиска изображений с помощью JavaScript и получать ответы в формате JSON.
 services: cognitive-services
@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 08/26/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 737927aa725c117158ea867e007ecc0cedde50aa
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: fe6289ce893f959ca958096db80f4b2295f6dd43
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70034649"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327090"
 ---
 # <a name="quickstart-search-for-images-using-the-bing-image-search-rest-api-and-nodejs"></a>Краткое руководство. Поиск изображений с помощью REST API Bing для поиска изображений и Node.js
 

@@ -1,19 +1,19 @@
 ---
-title: Руководство. Совместное использование Пространственных привязок Azure между сеансами и устройствами с помощью серверной части службы Azure Cosmos DB | Документация Майкрософт
+title: Руководство по совместному использованию привязок с помощью Azure Cosmos DB
 description: Из этого учебника вы узнаете, как обеспечить совместное использование идентификаторов Пространственных привязок Azure между устройствами Android или iOS в Unity с помощью серверной службы и Azure Cosmos DB.
 author: ramonarguelles
-manager: vicenterivera
+manager: vriveras
 services: azure-spatial-anchors
 ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 7ddbff563f79992f21aef5182177f4fb60c61dab
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: 57bf9c9752cf2203ffcac08c213373fd71a79148
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72882163"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74276880"
 ---
 # <a name="tutorial-sharing-azure-spatial-anchors-across-sessions-and-devices-with-an-azure-cosmos-db-back-end"></a>Руководство по Совместное использование Пространственных привязок Azure между сеансами и устройствами с помощью серверной части службы Azure Cosmos DB
 
@@ -25,7 +25,7 @@ ms.locfileid: "72882163"
 
 ## <a name="create-a-database-account"></a>Создание учетной записи базы данных
 
-Добавьте базу данных Azure Cosmos в созданную ранее группу ресурсов. 
+Добавьте базу данных Azure Cosmos в созданную ранее группу ресурсов.
 
 [!INCLUDE [cosmos-db-create-dbaccount-table](../../../includes/cosmos-db-create-dbaccount-table.md)]
 

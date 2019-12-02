@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 08/20/2019
 ms.author: pafarley
-ms.openlocfilehash: 1848f7230ed189f139a223020f08db150295132d
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: 2b095f76eb2c2c9ca420e0049ced3e7af1e742c4
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73647487"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74405919"
 ---
 # <a name="quickstart-face-client-library-for-net"></a>Краткое руководство. Клиентская библиотека Распознавания лиц для .NET
 
@@ -53,13 +53,13 @@ ms.locfileid: "73647487"
 
 В окне консоли (cmd, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение с именем `face-quickstart`. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: *Program.cs*. 
 
-```console
+```dotnetcli
 dotnet new console -n face-quickstart
 ```
 
 Измените каталог на созданную папку приложения. Чтобы создать приложение, выполните следующую команду:
 
-```console
+```dotnetcli
 dotnet build
 ```
 
@@ -85,7 +85,7 @@ Build succeeded.
 
 В каталоге приложения установите клиентскую библиотеку Распознавания лиц для .NET с помощью следующей команды:
 
-```console
+```dotnetcli
 dotnet add package Microsoft.Azure.CognitiveServices.Vision.Face --version 2.5.0-preview.1
 ```
 
@@ -287,7 +287,7 @@ dotnet add package Microsoft.Azure.CognitiveServices.Vision.Face --version 2.5.0
 
 Запустите приложение из каталога приложения с помощью команды `dotnet run`.
 
-```dotnet
+```dotnetcli
 dotnet run
 ```
 

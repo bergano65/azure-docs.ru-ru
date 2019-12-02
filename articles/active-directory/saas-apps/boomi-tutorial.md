@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 10/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1044a78d9bf1b52a7b0dd9e47d7db6d98b45299c
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 2469745edb5b8b3696478603cfe874bcabc8c1ff
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74081967"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74231949"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-boomi"></a>Руководство по интеграции единого входа Azure Active Directory с Boomi
 
@@ -189,7 +189,7 @@ ms.locfileid: "74081967"
     Е. Последовательно выберите **ОК**.
 
     > [!NOTE]
-    > Пользователь не получит по электронной почте сообщение с паролем для входа с учетной записью AtomSphere. Вместо этого управление паролем осуществляется через поставщик удостоверений. Вы можете использовать для создания учетной записи Boomi любые другие средства или интерфейсы API, которые Boomi предоставляет для подготовки учетных записей AAD.
+    > Пользователь не получит по электронной почте сообщение с паролем для входа с учетной записью AtomSphere. Вместо этого управление паролем осуществляется через поставщик удостоверений. Вы можете использовать для создания учетной записи Boomi любые другие средства или интерфейсы API, предоставляемые Boomi, для подготовки учетных записей AAD.
 
 ## <a name="test-sso"></a>Проверка единого входа
 

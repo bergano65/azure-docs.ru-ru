@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: overview
 ms.date: 10/30/2019
 ms.author: iainfou
-ms.openlocfilehash: 3d4ac9ed9b8d5162f820f7e981d3380b95cf41e4
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: e5e6a2fe856915a3625f22bffa91403e3c036a22
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73172808"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74481363"
 ---
 # <a name="what-is-azure-active-directory-domain-services"></a>Что такое "Доменные службы Azure Active Directory"?
 
@@ -94,6 +94,9 @@ Azure AD DS предлагает альтернативные решения, у
     * Среди прочего синхронизируются учетные записи пользователей и сведения о членстве в группах.
 * ИТ-группа Litware включает Azure AD DS для клиента Azure AD в той же виртуальной сети или в другой, подключенной к ней через пиринг.
 * Приложения и виртуальные машины, развернутые в виртуальной сети Azure, могут использовать такие функции, как присоединение к домену, чтение LDAP, привязка LDAP, проверка подлинности NTLM и Kerberos, а также использование групповой политики.
+
+> [!IMPORTANT]
+> Azure AD Connect следует устанавливать и настраивать только для синхронизации с локальными средами AD DS. Установка Azure AD Connect в управляемом домене Azure AD DS для синхронизации объектов обратно в Azure AD не поддерживается.
 
 ### <a name="azure-ad-ds-for-cloud-only-organizations"></a>Azure AD DS для полностью облачных организаций
 

@@ -1,22 +1,22 @@
 ---
-title: Краткое руководство. Требование принятия условий использования перед доступом к облачным приложениям, которые защищены условным доступом Azure Active Directory | Документация Майкрософт
+title: Требование принятия условий использования для предоставления условного доступа с помощью Azure Active Directory
 description: В этом кратком руководстве описано, как можно требовать принять условия использования до того, как будет предоставлен условный доступ с помощью Azure Active Directory к выбранным облачным приложениям.
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: quickstart
-ms.date: 12/14/2018
+ms.date: 11/21/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba684209b497792cd2f520f6b530168959e62d7f
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: 3dd1b4cf554e773f49a15ac5cedcbcc5b3e710b9
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67506910"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74380108"
 ---
 # <a name="quickstart-require-terms-of-use-to-be-accepted-before-accessing-cloud-apps"></a>Краткое руководство. Требование принятия условий использования перед доступом к облачным приложениям
 

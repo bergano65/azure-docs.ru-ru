@@ -8,13 +8,13 @@ ms.author: kgremban
 ms.date: 04/04/2019
 ms.topic: tutorial
 ms.service: iot-edge
-ms.custom: mvc, seodec18
-ms.openlocfilehash: 1aebe97b27902d37587ec6ac7009a5076b732f0f
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.custom: mvc
+ms.openlocfilehash: fbf03dd6d585f1357f8f3cebf08de25e437286ac
+ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68840128"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74560985"
 ---
 # <a name="tutorial-develop-a-java-iot-edge-module-for-linux-devices"></a>Руководство по Разработка модуля IoT Edge на языке Java для устройств Linux
 
@@ -289,7 +289,9 @@ ms.locfileid: "68840128"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве вы создали модуль IoT Edge, который содержит код для фильтрации необработанных данных, созданных вашим устройством IoT Edge. Дополнительные сведения см. в статьях о [разработке модулей IoT Edge](module-development.md) и [разработке модулей с помощью Visual Studio Code](how-to-vs-code-develop-module.md). Перейдите к следующим руководствам, чтобы узнать, как Azure IoT Edge поможет развернуть облачные службы Azure для обработки данных на пограничном устройстве.
+В этом руководстве вы создали модуль IoT Edge, который содержит код для фильтрации необработанных данных, созданных вашим устройством IoT Edge. Дополнительные сведения см. в статьях о [разработке модулей IoT Edge](module-development.md) и [разработке модулей с помощью Visual Studio Code](how-to-vs-code-develop-module.md). Примеры модулей IoT Edge, включая смоделированный модуль температуры, см. в [этой статье](https://github.com/Azure/iotedge/tree/master/edge-modules). 
+
+Перейдите к следующим руководствам, чтобы узнать, как Azure IoT Edge поможет развернуть облачные службы Azure для обработки данных на пограничном устройстве.
 
 > [!div class="nextstepaction"]
 > [Функции](tutorial-deploy-function.md)

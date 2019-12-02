@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Поиск видео с помощью REST API Bing для поиска видео и PHP
+title: Краткое руководство. Поиск видео с помощью REST API и PHP — Поиск видео Bing
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как отправлять запросы в REST API Bing для поиска видео с помощью PHP.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: bing-video-search
 ms.topic: quickstart
 ms.date: 06/26/2019
 ms.author: aahi
-ms.openlocfilehash: 8ecbba5ef046a284e9b4134f8703580021adb9d8
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: 481bc700f86dfd8a28c074134fd5dcc85bb748c4
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68500105"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74378618"
 ---
 # <a name="quickstart-search-for-videos-using-the-bing-video-search-rest-api-and-php"></a>Краткое руководство. Поиск видео с помощью REST API Bing для поиска видео и PHP
 

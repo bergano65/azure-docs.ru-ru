@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: overview
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 12882860b8a9beadd4e56cbb151d670fac4da43b
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: ff28ae7dbff40910ac0431fb47f7f0be3e1569c0
+ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73797160"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74538146"
 ---
 # <a name="overview-of-azure-farmbeats"></a>Общие сведения об Azure FarmBeats
 
@@ -40,7 +40,7 @@ Azure FarmBeats обеспечивает надежный и простой сп
 
 ## <a name="data-hub"></a>Центр данных
 
-Уровень API, который обеспечивает агрегирование, нормализацию и контекстуализацию различных наборов сельскохозяйственных данных от разных поставщиков. В этой предварительной версии можно использовать два поставщика датчиков, [Davis Instruments](https://www.davisinstruments.com/product/enviromonitor-gateway/) и [Teralytic](https://teralytic.com/), один поставщик спутниковых изображений, [Sentinel-2](https://sentinel.esa.int/web/sentinel/home), и два поставщика изображений дронов, [senseFly](https://www.sensefly.com/) и [SlantRange](https://slantrange.com/). Центр данных разработан как платформа API, и мы работаем со многими другими поставщиками над интеграцией с Azure FarmBeats, поэтому при создании решения вам предоставляется более широкий выбор.
+Центр данных Azure FarmBeats является уровнем API, который обеспечивает агрегирование, нормализацию и контекстуализацию различных наборов сельскохозяйственных данных от разных поставщиков. В этой предварительной версии можно использовать два поставщика датчиков, [Davis Instruments](https://www.davisinstruments.com/product/enviromonitor-gateway/) и [Teralytic](https://teralytic.com/), один поставщик спутниковых изображений [Sentinel-2](https://sentinel.esa.int/web/sentinel/home) и три поставщика изображений дронов [senseFly](https://www.sensefly.com/), [SlantRange](https://slantrange.com/) и [DJI](https://dji.com/). Центр данных разработан как платформа API, и мы работаем со многими другими поставщиками над интеграцией с Azure FarmBeats, поэтому при создании решения вам предоставляется более широкий выбор.
 
 ## <a name="accelerator"></a>Accelerator
 
@@ -48,8 +48,8 @@ Azure FarmBeats обеспечивает надежный и простой сп
 
 ## <a name="resources"></a>Ресурсы
 
-Посетите [блог](https://aka.ms/AzureFarmBeats) и [форумы](https://aka.ms/FarmBeatsMSDN) по FarmBeats.
+Посетите [блог](https://aka.ms/AzureFarmBeats) и [форумы](https://aka.ms/FarmBeatsMSDN) Azure FarmBeats, чтобы получить дополнительные сведения.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Чтобы приступить к работе с Azure FarmBeats и развернуть свой экземпляр этой службы, перейдите на сайт [Azure Marketplace](https://aka.ms/FarmBeatsMarketplace).
+Чтобы приступить к работе с Azure FarmBeats и начать процесс развертывания, перейдите на сайт [Azure Marketplace](https://aka.ms/FarmBeatsMarketplace).

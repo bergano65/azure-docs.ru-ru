@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a144bec0a610a5a47e8a9bf3ff6a5de05b239ed
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: fd7cfe93aa39982836944230f860c603c7117ceb
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73159976"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74233437"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-humanity"></a>Руководство по Интеграция Azure Active Directory с Humanity
 
@@ -229,7 +229,7 @@ ms.locfileid: "73159976"
 
     ![Сохранение сотрудников](./media/shiftplanning-tutorial/iC786625.png "Сохранить сотрудников")
 
-    a. Заполните текстовые поля **Имя**, **Фамилия** и **Email** (Электронная почта) данными действующей учетной записи AAD, которую необходимо подготовить.
+    a. Заполните текстовые поля **Имя**, **Фамилия** и **Адрес электронной почты** данными действующей учетной записи AAD, которую необходимо подготовить.
 
     b. Щелкните **Сохранить сотрудников**.
 

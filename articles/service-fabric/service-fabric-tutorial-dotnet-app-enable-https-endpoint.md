@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 07/22/2019
 ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: 69aa140fcecae13aae0d7a165c9f7bea0ab87ca1
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: e38822e1d774cc32590a13239edb34d7a15e2d02
+ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71301024"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74545766"
 ---
 # <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service-using-kestrel"></a>Руководство по Добавление конечной точки HTTPS в интерфейсную службу веб-API ASP.NET Core с использованием Kestrel
 
@@ -362,47 +362,10 @@ if ($cert -eq $null)
 
 В окне мастера экспорта выберите **Да, экспортировать закрытый ключ** и выберите формат PFX.  Экспортируйте файл в *C:\Users\sfuser\votingappcert.pfx*.
 
-Затем установите сертификат в удаленный кластер, используя командлет [Add-AzServiceFabricApplicationCertificate](/powershell/module/az.servicefabric/Add-azServiceFabricApplicationCertificate).
+Затем установите сертификат в удаленном кластере, используя [указанные скрипты PowerShell](./scripts/service-fabric-powershell-add-application-certificate.md).
 
 > [!Warning]
 > Самозаверяющего сертификата достаточно для разработки и тестирования приложений. Для рабочих приложений вместо самозаверяющего сертификата в качестве сертификата нужно использовать сертификат [из центра сертификации (ЦС)](https://wikipedia.org/wiki/Certificate_authority).
-
-```powershell
-Connect-AzAccount
-
-$vaultname="sftestvault"
-$certname="VotingAppPFX"
-$certpw="!Password321#"
-$groupname="voting_RG"
-$clustername = "votinghttps"
-$ExistingPfxFilePath="C:\Users\sfuser\votingappcert.pfx"
-
-$appcertpwd = ConvertTo-SecureString -String $certpw -AsPlainText -Force
-
-Write-Host "Reading pfx file from $ExistingPfxFilePath"
-$cert = new-object System.Security.Cryptography.X509Certificates.X509Certificate2 $ExistingPfxFilePath, $certpw
-
-$bytes = [System.IO.File]::ReadAllBytes($ExistingPfxFilePath)
-$base64 = [System.Convert]::ToBase64String($bytes)
-
-$jsonBlob = @{
-   data = $base64
-   dataType = 'pfx'
-   password = $certpw
-   } | ConvertTo-Json
-
-$contentbytes = [System.Text.Encoding]::UTF8.GetBytes($jsonBlob)
-$content = [System.Convert]::ToBase64String($contentbytes)
-
-$secretValue = ConvertTo-SecureString -String $content -AsPlainText -Force
-
-# Upload the certificate to the key vault as a secret
-Write-Host "Writing secret to $certname in vault $vaultname"
-$secret = Set-AzureKeyVaultSecret -VaultName $vaultname -Name $certname -SecretValue $secretValue
-
-# Add a certificate to all the VMs in the cluster.
-Add-AzServiceFabricApplicationCertificate -ResourceGroupName $groupname -Name $clustername -SecretIdentifier $secret.Id -Verbose
-```
 
 ## <a name="open-port-443-in-the-azure-load-balancer"></a>Открытие порта 443 в подсистеме балансировки нагрузки Azure
 

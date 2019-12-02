@@ -1,24 +1,16 @@
 ---
-title: Непрерывная интеграция с Azure Pipelines | Документация Майкрософт
+title: Непрерывная интеграция с Azure Pipelines
 description: Узнайте, как непрерывно создавать, тестировать и развертывать шаблоны Azure Resource Manager.
-services: azure-resource-manager
-documentationcenter: ''
 author: mumian
-manager: carmonm
-editor: ''
-ms.service: azure-resource-manager
-ms.workload: multiple
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.date: 10/29/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: daf1e85835401f618d2804285cdb9579360aef15
-ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
+ms.openlocfilehash: 457d2a8868283eed2e211ff26ce77156eee68e01
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73052207"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74326410"
 ---
 # <a name="tutorial-continuous-integration-of-azure-resource-manager-templates-with-azure-pipelines"></a>Руководство по Непрерывная интеграция шаблонов Azure Resource Manager с Azure Pipelines
 
@@ -50,7 +42,7 @@ Azure DevOps предоставляет сервисы для разработч
 * **Учетная запись GitHub** — где ее можно использовать для репозитория шаблонов. Если у вас ее нет, вы можете [создать ее бесплатно](https://github.com). Подробнее об использовании репозиториев GitHub см. в статье [Сборка репозиториев GitHub](/azure/devops/pipelines/repos/github).
 * **Установка Git**. В этой инструкции руководства используется *Git Bash* или *Git Shell*. Инструкции см. в разделе [Установка Git]( https://www.atlassian.com/git/tutorials/install-git).
 * **Организация Azure DevOps**. Если у вас ее нет, вы можете создать ее бесплатно. См. статью [Создание организации или коллекции проектов]( https://docs.microsoft.com/azure/devops/organizations/accounts/create-organization?view=azure-devops).
-* **[Visual Studio Code](https://code.visualstudio.com/) с расширением средств диспетчера ресурсов**. См. в разделе [Краткое руководство. Создание шаблона Azure Resource Manager c помощью Visual Studio Code](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#prerequisites).
+* Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](./resource-manager-tools-vs-code.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
 
 ## <a name="prepare-a-github-repository"></a>Подготовка репозитория GitHub
 

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Развертывание контейнера Docker в службу "Экземпляры контейнеров Azure" (PowerShell)
+title: Краткое руководство. Развертывание контейнера Docker в экземпляр контейнера (PowerShell)
 description: В этом кратком руководстве описано, как с помощью Azure PowerShell быстро развернуть контейнерное веб-приложение, которое выполняется в изолированном экземпляре контейнера Azure
 services: container-instances
 author: dlepow
@@ -7,14 +7,13 @@ manager: gwallace
 ms.service: container-instances
 ms.topic: quickstart
 ms.date: 03/21/2019
-ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 7fe199d2ac228ddb0ccfd1e5bc980e680e160acf
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 9901b3f18973365dc9ceb8c85ff8587b6c2ea894
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325827"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533609"
 ---
 # <a name="quickstart-deploy-a-container-instance-in-azure-using-azure-powershell"></a>Краткое руководство. Развертывание экземпляра контейнера в Azure с помощью Azure PowerShell
 

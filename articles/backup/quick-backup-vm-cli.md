@@ -1,21 +1,16 @@
 ---
-title: Краткое руководство по Azure. Резервное копирование виртуальной машины с помощью Azure CLI
+title: Краткое руководство. Резервное копирование виртуальной машины с помощью Azure CLI
 description: В этом кратком руководстве вы узнаете, как создать хранилище Служб восстановления, включить защиту на виртуальной машине и создать начальную точку восстановления с помощью Azure CLI.
-author: dcurwin
-manager: carmonm
-tags: azure-resource-manager, virtual-machine-backup
-ms.service: backup
 ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 01/31/2019
-ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: 0d16237e0d5dc0e2176a2a9f600ca0be96328717
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: a359e47a70f6a1a9e0957b4e1c3965c8db12339a
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747142"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74171994"
 ---
 # <a name="back-up-a-virtual-machine-in-azure-with-the-cli"></a>Резервное копирование виртуальной машины в Azure с помощью интерфейса командной строки
 

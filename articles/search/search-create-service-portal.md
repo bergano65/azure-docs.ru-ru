@@ -1,19 +1,19 @@
 ---
 title: Краткое руководство. Создание службы "Когнитивный поиск Azure" на портале
 titleSuffix: Azure Cognitive Search
-description: Подготовьте ресурс службы "Когнитивный поиск Azure" на портале Azure. Выберите группы ресурсов, регионы, а также номер SKU или ценовую категорию.
+description: В этом кратком руководстве по порталу вы узнаете, как создать ресурс "Когнитивный поиск Azure" на портале Azure. Выберите группы ресурсов, регионы, а также номер SKU или ценовую категорию.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 11/04/2019
-ms.openlocfilehash: 75a7cce55627a981d0d0b0f23a119fac6de920ef
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: ec794f66866f9773f8b7c0fc57b644d8a13d697a
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112119"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74534564"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-service-in-the-portal"></a>Краткое руководство. Создание службы "Когнитивный поиск Azure" на портале
 
@@ -41,7 +41,7 @@ ms.locfileid: "74112119"
 
 ## <a name="choose-a-subscription"></a>Выберите подписку.
 
-Первым шагом является настройка идентификатора подписки и группы ресурсов. Если у вас несколько подписок, выберите ту, которая также содержит службы хранилища данных или файлов. Служба "Когнитивный поиск Azure" может автоматически определить хранилище таблиц Azure и хранилище BLOB-объектов Azure, базу данных SQL и Azure Cosmos DB для индексирования с помощью [*индексаторов*](search-indexer-overview.md), но только для служб в одной подписке.
+Если у вас есть несколько подписок, выберите ту, которую будете использовать.
 
 ## <a name="set-a-resource-group"></a>Настройка группы ресурсов
 

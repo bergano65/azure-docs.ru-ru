@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: a9245ab5a2d51ee3995ff0c614cafaebdc20d00f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6786b44aca9ceed3cec5daf0f858a51e2dd12833
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67098808"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227577"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kintone"></a>Руководство по Интеграция Azure Active Directory с Kintone
 
@@ -141,19 +141,19 @@ ms.locfileid: "67098808"
 
 1. Щелкните **Users & System Administration** (Администрирование пользователей и системы).
 
-    ![Users & System Administration](./media/kintone-tutorial/ic785880.png "Users & System Administration") (Администрирование пользователей и системы)
+    ![Администрирование пользователей и системы](./media/kintone-tutorial/ic785880.png "Администрирование пользователей и системы")
 
 1. Перейдите в раздел **System Administration \> Security** (Системное администрирование > Безопасность) и щелкните **Login** (Вход).
 
-    ![Login](./media/kintone-tutorial/ic785881.png "Login") (Вход)
+    ![Имя входа](./media/kintone-tutorial/ic785881.png "Вход")
 
 1. Установите флажок **Включить проверку подлинности SAML**.
 
-    ![Аутентификация SAML](./media/kintone-tutorial/ic785882.png "Аутентификация SAML")
+    ![Проверка подлинности SAML](./media/kintone-tutorial/ic785882.png "Проверка подлинности SAML")
 
 1. В разделе «Проверка подлинности SAML» выполните следующие действия.
 
-    ![Аутентификация SAML](./media/kintone-tutorial/ic785883.png "Аутентификация SAML")
+    ![Проверка подлинности SAML](./media/kintone-tutorial/ic785883.png "Проверка подлинности SAML")
 
     a. В текстовое поле **Login URL** (URL-адрес входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
@@ -228,11 +228,11 @@ ms.locfileid: "67098808"
 
 1. Щелкните **Users & System Administration** (Администрирование пользователей и системы).
 
-    ![Users & System Administration](./media/kintone-tutorial/ic785880.png "Users & System Administration") (Администрирование пользователей и системы)
+    ![Администрирование пользователей и системы](./media/kintone-tutorial/ic785880.png "Администрирование пользователей и системы")
 
 1. В разделе **User Administration** (Администрирование пользователей) щелкните **Departments & Users** (Отделы и пользователи).
 
-    ![Department & Users](./media/kintone-tutorial/ic785888.png "Department & Users") (Отделы и пользователи)
+    ![Отделы и пользователи](./media/kintone-tutorial/ic785888.png "Отделы и пользователи")
 
 1. Щелкните **Новый пользователь**.
 
@@ -261,4 +261,4 @@ ms.locfileid: "67098808"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

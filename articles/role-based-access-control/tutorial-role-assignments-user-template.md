@@ -1,5 +1,5 @@
 ---
-title: Учебник. Предоставление доступа пользователям к ресурсам Azure с помощью RBAC и шаблона Resource Manager | Документация Майкрософт
+title: Учебник по предоставлению доступа к ресурсам Azure с помощью RBAC и шаблона Resource Manager
 description: Узнайте, как предоставить пользователям доступ к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и шаблона Azure Resource Manager.
 services: role-based-access-control,azure-resource-manager
 documentationCenter: ''
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 05/15/2019
 ms.author: rolyon
-ms.openlocfilehash: edb20221862e6439b3bc574995f4037cbc95f8f9
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: ed143f85b4372348baa1d74b4ec7a7447943a74f
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67668887"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74418486"
 ---
 # <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-resource-manager-template"></a>Руководство по предоставлению доступа к ресурсам Azure с помощью RBAC и шаблона Resource Manager
 

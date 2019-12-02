@@ -6,14 +6,14 @@ author: vhorne
 ms.service: application-gateway
 ms.topic: overview
 ms.custom: mvc
-ms.date: 11/05/2019
+ms.date: 11/23/2019
 ms.author: victorh
-ms.openlocfilehash: a51276cd54a88c5e566afef0d06673f14b5862cf
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: a61b1a44419ac35efa5888de2b5a6e4988dfb512
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73572033"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74422312"
 ---
 # <a name="what-is-azure-application-gateway"></a>Что такое шлюз приложений Azure?
 
@@ -26,6 +26,11 @@ ms.locfileid: "73572033"
 ![imageURLroute](./media/application-gateway-url-route-overview/figure1-720.png)
 
 Этот тип маршрутизации называется балансировкой нагрузки на уровне приложения (уровень 7 OSI). Шлюз приложений Azure может выполнять маршрутизацию на основе URL-адреса и многие другие действия.
+
+>[!NOTE]
+> Azure предоставляет набор полностью управляемых решений балансировки нагрузки для пользовательских сценариев. Если вам нужна высокая производительность, низкая задержка, балансировка нагрузки уровня 4, см. статью [Что такое Azure Load Balancer](../load-balancer/load-balancer-overview.md). Если вам нужна глобальная балансировка нагрузки DNS, ознакомьтесь со статьей [Что такое диспетчер трафика](../traffic-manager/traffic-manager-overview.md). В комплексных сценариях может быть целесообразно объединить эти решения.
+>
+> Сравнение параметров балансировки нагрузки Azure см. в статье [Overview of load-balancing options in Azure](https://docs.microsoft.com/azure/architecture/guide/technology-choices/load-balancing-overview) (Общие сведения о параметрах балансировки нагрузки в Azure).
 
 Шлюз приложений Azure включает описанные ниже возможности.
 

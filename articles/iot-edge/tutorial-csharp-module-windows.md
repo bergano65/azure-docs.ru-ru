@@ -9,12 +9,12 @@ ms.date: 04/23/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 88ff026ea56e5f41b3b124c2d5594822ffeb6830
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: 3f37f0f3fe57015cc733d67f16e64bdf58a8a6b7
+ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72529286"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74561006"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство по Разработка модулей IoT Edge на языке C# для устройств Windows
 
@@ -359,7 +359,10 @@ ms.locfileid: "72529286"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве вы создали модуль IoT Edge с кодом для фильтрации необработанных данных, созданных устройством IoT Edge. Дополнительные сведения о создании собственных модулей см. в статьях [о разработке модулей IoT Edge](module-development.md) и [о разработке модулей с помощью Visual Studio](how-to-visual-studio-develop-module.md). Ознакомьтесь со следующими учебниками, чтобы узнать, как развернуть облачные службы Azure для обработки и анализа данных на пограничном устройстве с помощью Azure IoT Edge.
+В этом руководстве вы создали модуль IoT Edge с кодом для фильтрации необработанных данных, созданных устройством IoT Edge. Дополнительные сведения о создании собственных модулей см. в статьях [о разработке модулей IoT Edge](module-development.md) и [о разработке модулей с помощью Visual Studio](how-to-visual-studio-develop-module.md). Примеры модулей IoT Edge, включая смоделированный модуль температуры, см. в [этой статье](https://github.com/Azure/iotedge/tree/master/edge-modules). 
+
+
+Перейдите к следующим руководствам, чтобы узнать, как Azure IoT Edge поможет развернуть облачные службы Azure для обработки данных на пограничном устройстве.
 
 > [!div class="nextstepaction"]
 > [Функции](tutorial-deploy-function.md)

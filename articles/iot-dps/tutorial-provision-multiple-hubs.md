@@ -1,20 +1,19 @@
 ---
-title: Руководство по подготовке устройств в Центрах Интернета вещей с балансировкой нагрузки с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей Azure
-description: Руководство по Автоматическая подготовка устройств с помощью службы подготовки устройств в Центрах Интернета вещей с балансировкой нагрузки на портале Azure
-author: sethmanheim
-ms.author: sethm
+title: Подготовка устройств в центрах с балансировкой нагрузки с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей
+description: Учебник. Автоматическая подготовка устройств с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей в Центрах Интернета вещей с балансировкой нагрузки на портале Azure
+author: wesmc7777
+ms.author: wesmc
 ms.date: 11/12/2019
 ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
-manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 6cd5dcb1fd96ac0fda75bf89dcf7259695cf971d
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: fb3002e5f195bd3dca32a3500c6789f90e9ea0d6
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112776"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74229457"
 ---
 # <a name="tutorial-provision-devices-across-load-balanced-iot-hubs"></a>Руководство по Подготовка устройств в Центрах Интернета вещей с балансировкой нагрузки
 

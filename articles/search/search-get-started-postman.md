@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Создание индекса службы поиска в Postman с помощью REST API
 titleSuffix: Azure Cognitive Search
-description: Из этой статьи вы узнаете, как вызывать REST API Когнитивного поиска Azure с помощью Postman, определений и примера данных.
+description: Из этого краткого руководства вы узнаете, как вызывать REST API Когнитивного поиска Azure с помощью Postman, определений и примера данных.
 author: HeidiSteen
 manager: nitinme
 ms.author: heidist
@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: quickstart
 ms.devlang: rest-api
 ms.date: 11/04/2019
-ms.openlocfilehash: 00d1122a8b56237eeb20892ad05cdbbcbe247510
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 9014a83596a3eee71f43d12a73188c1c43b832af
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72792283"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406945"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-postman-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Postman с помощью REST API
 > [!div class="op_single_selector"]
@@ -288,7 +288,7 @@ https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/indexes/hotels-quickstart/
 
 Обратите внимание, что синтаксис api-version отличается. Для этого запроса используйте `?` для добавления api-version. `?` отделяет URL-адрес от строки запроса, а символ & отделяет каждую пару имя=значение в строке запроса. Для этого запроса api-version — первый и единственный элемент в строке запроса.
 
-## <a name="clean-up"></a>Очистка
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Если вы работаете в своей подписке, по окончании проекта рекомендуем решить, нужны ли вам созданные ресурсы. Работающие ресурсы могут означать лишние затраты. Можно удалить отдельные ресурсы или удалить группу ресурсов, что позволит удалить весь набор ресурсов.
 

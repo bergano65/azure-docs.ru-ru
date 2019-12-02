@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 07874988c97044ede59c18b8f85a425483679431
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7548d7d7b808472b3f5446fadfe800584f61b1df
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67089528"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74233353"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sumologic"></a>Руководство по Интеграция Azure Active Directory с SumoLogic
 
@@ -148,11 +148,11 @@ ms.locfileid: "67089528"
 
 1. В списке **Select a configuration or create a new one** (Выберите настройку или создайте новую) выберите **Azure AD**, а затем щелкните **Configure** (Настройка).
 
-    ![Настройка SAML 2.0](./media/sumologic-tutorial/ic778558.png "Настройка SAML 2.0")
+    ![Настройка SAML 2.0](./media/sumologic-tutorial/ic778558.png "Настройка SAML 2.0")
 
 1. В диалоговом окне **Настройка SAML 2.0** сделайте следующее:
 
-    ![Настройка SAML 2.0](./media/sumologic-tutorial/ic778559.png "Настройка SAML 2.0")
+    ![Настройка SAML 2.0](./media/sumologic-tutorial/ic778559.png "Настройка SAML 2.0")
 
     a. В текстовом поле **Configuration Name** (Имя конфигурации) введите **Azure AD**.
 
@@ -250,7 +250,7 @@ ms.locfileid: "67089528"
     d. Выберите команду **Сохранить**.
 
 > [!NOTE]
-> Вы можете использовать любые другие средства создания учетной записи пользователя SumoLogic или API-интерфейсы, предоставляемые SumoLogic для подготовки учетных записей пользователя AAD.
+> Вы можете использовать любые другие средства создания учетной записи пользователя SumoLogic или API-интерфейсы, предоставляемые SumoLogic, для подготовки учетных записей пользователя AAD.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
@@ -264,5 +264,5 @@ ms.locfileid: "67089528"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

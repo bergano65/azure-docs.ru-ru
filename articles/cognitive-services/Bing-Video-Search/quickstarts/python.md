@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Поиск видео с помощью REST API и Python API Bing для поиска видео
+title: Краткое руководство. Поиск видео с помощью REST API и Python — Поиск видео Bing
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как отправлять запросы в REST API Bing для поиска видео с помощью Python.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: bing-video-search
 ms.topic: quickstart
 ms.date: 06/26/2019
 ms.author: aahi
-ms.openlocfilehash: 36d4035913b8e9b7c3e4a12fa208608ffa55151e
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: 270117430b997921e0df486b1760db317bcb1611
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68500684"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74383770"
 ---
 # <a name="quickstart-search-for-videos-using-the-bing-video-search-rest-api-and-python"></a>Краткое руководство. Поиск видео с помощью REST API и Python API Bing для поиска видео
 

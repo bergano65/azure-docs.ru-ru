@@ -14,25 +14,25 @@ ms.workload: azure-app-configuration
 ms.date: 02/24/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: a8a60f23511f71128bea4cc560ad8401b238732d
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: 9b9d4c6447b8030c2ae5f7dc22857f77b57f91ea
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58223654"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74185309"
 ---
-# <a name="azure-cli-samples"></a>Примеры Azure CLI
+# <a name="azure-cli-samples"></a>Примеры для Azure CLI
 
 В следующей таблице содержатся ссылки на скрипты Bash для Azure App Configuration, выполняемые с помощью Azure CLI.
 
 | | |
 |-|-|
 |**Создание**||
-| [Создание хранилища конфигураций приложений](./scripts/cli-create-service.md) | Создает группу ресурсов и экземпляр хранилища конфигураций приложений.  |
+| [Создание хранилища Конфигурации приложений](./scripts/cli-create-service.md) | Создает группу ресурсов и экземпляр хранилища Конфигураций приложений.  |
 |**Использование**||
 | [Работа с парами "ключ-значение"](./scripts/cli-work-with-keys.md) | Создает, просматривает, обновляет и удаляет пары "ключ-значение". |
 | [Импорт пар "ключ-значение"](./scripts/cli-import.md) | Импортирует пары "ключ-значение" из других источников. |
 | [Экспорт пар "ключ-значение"](./scripts/cli-export.md) | Экспортирует пары "ключ-значение" в другие назначения. |
-|**Удалить**||
-| [Удаление хранилища конфигураций приложений](./scripts/cli-delete-service.md) | Удаляет экземпляр хранилища конфигураций приложений.  |
+|**Удаление**||
+| [Удаление хранилища Конфигурации приложений](./scripts/cli-delete-service.md) | Удаляет экземпляр хранилища Конфигураций приложений.  |
 | | |

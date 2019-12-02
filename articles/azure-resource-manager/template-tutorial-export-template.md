@@ -1,19 +1,16 @@
 ---
-title: Учебник. Экспорт шаблона Azure Resource Manager из портала Azure
+title: Учебник. Экспорт шаблона из портала Azure
 description: Узнайте, как использовать экспортированный шаблон для разработки шаблона.
-services: azure-resource-manager
 author: mumian
-manager: carmonmills
-ms.service: azure-resource-manager
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 6e4f246cac0ecc1ab5942e522595f59c3625db8f
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 6c22a8e2b479ed7d3a225bc649d89f5302d0f536
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72243209"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406011"
 ---
 # <a name="tutorial-use-exported-template-from-the-azure-portal"></a>Руководство по использованию экспортированного шаблона из портала Azure
 
@@ -25,7 +22,7 @@ ms.locfileid: "72243209"
 
 Вам понадобится Visual Studio Code с расширением инструментов Resource Manager и либо Azure PowerShell, либо Azure CLI. Дополнительные сведения см. в разделе об [инструментах шаблона](template-tutorial-create-first-template.md#get-tools).
 
-## <a name="review-your-template"></a>Проверка шаблона
+## <a name="review-template"></a>Проверка шаблона
 
 В конце предыдущего учебника шаблон содержал следующий код JSON:
 
@@ -52,7 +49,7 @@ ms.locfileid: "72243209"
 1. Выберите **Просмотреть и создать**.
 1. Нажмите кнопку **Создать**. Создание ресурса занимает несколько секунд.
 
-## <a name="export-the-template"></a>Экспорт шаблона
+## <a name="export-template"></a>Экспорт шаблона
 
 1. Выберите **Перейти к ресурсу**.
 
@@ -71,7 +68,7 @@ ms.locfileid: "72243209"
 > [!IMPORTANT]
 > Обычно экспортированный шаблон подробнее, чем может потребоваться при создании шаблона. Например, объект SKU в экспортированном шаблоне имеет пять свойств. Этот шаблон работает, но вы можете просто использовать свойство **name**. Вы можете начать с экспортированного шаблона, а затем изменить его в соответствии со своими требованиями.
 
-## <a name="revise-the-existing-template"></a>Изменение имеющегося шаблона
+## <a name="revise-existing-template"></a>Изменение имеющегося шаблона
 
 Экспортированный шаблон предоставляет большую часть необходимого кода JSON, но его нужно настроить для шаблона. Обратите особое внимание на различия в параметрах и переменных между своим шаблоном и экспортированным. Очевидно, что в процессе экспорта неизвестны параметры и переменные, которые вы уже определили в своем шаблоне.
 
@@ -81,7 +78,7 @@ ms.locfileid: "72243209"
 
 [!code-json[](~/resourcemanager-templates/get-started-with-templates/export-template/azuredeploy.json?range=1-77&highlight=28-31,50-69)]
 
-## <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-template"></a>Развертывание шаблона
 
 Для развертывания шаблона используйте Azure CLI или Azure PowerShell.
 

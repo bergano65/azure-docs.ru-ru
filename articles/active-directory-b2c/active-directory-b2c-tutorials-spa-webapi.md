@@ -1,6 +1,6 @@
 ---
 title: Учебник. Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения. Azure Active Directory B2C
-description: Узнайте, как использовать Active Directory B2C для защиты веб-API .NET Core и вызова API из одностраничного приложения Node.js.
+description: В этом учебнике вы узнаете, как с помощью Active Directory B2C обеспечить защиту веб-API .NET Core и выполнить вызов API из одностраничного приложения Node.js.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 30e7059605ef86e6afd86251db0e416c9143a9ec
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 7dae8bb552fe12d1cdf1f3d8a5fe124491933a87
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73475104"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74420322"
 ---
 # <a name="tutorial-grant-access-to-an-aspnet-core-web-api-from-a-single-page-application-using-azure-active-directory-b2c"></a>Руководство по Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения с помощью Azure Active Directory B2C
 

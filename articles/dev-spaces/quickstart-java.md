@@ -1,23 +1,19 @@
 ---
-title: Отладка и итерация с помощью Visual Studio Code, Java и Azure Dev Spaces в Kubernetes
-titleSuffix: Azure Dev Spaces
-author: zr-msft
+title: 'Отладка и итерация в Kubernetes: Visual Studio Code и Java'
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
-ms.author: zarhoads
 ms.date: 07/08/2019
 ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров, микрослужб и Java в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Java, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 2154ec3ae99ae816b970c96ffde435f1a3366e99
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.openlocfilehash: 5f0f9991ae8718b60221c3f291b6169f677b59c5
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71815861"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325635"
 ---
-# <a name="quickstart-debug-and-iterate-with-visual-studio-code-and-java-on-kubernetes-using-azure-dev-spaces"></a>Краткое руководство. Отладка и итерация с помощью Visual Studio Code, Java и Azure Dev Spaces в Kubernetes
+# <a name="quickstart-debug-and-iterate-on-kubernetes-with-visual-studio-code-and-java---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация с помощью Visual Studio Code, Java и Azure Dev Spaces в Kubernetes
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 
@@ -28,7 +24,7 @@ ms.locfileid: "71815861"
 Azure Dev Spaces также позволяет выполнять отладку и итерацию с помощью:
 - [Node.js и Visual Studio Code](quickstart-nodejs.md)
 - [.NET Core и Visual Studio Code](quickstart-netcore.md)
-- [.NET Core и Visual Studio](quickstart-netcore-visualstudio.md)
+- [.NET Core и Visual Studio](quickstart-netcore-visualstudio.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

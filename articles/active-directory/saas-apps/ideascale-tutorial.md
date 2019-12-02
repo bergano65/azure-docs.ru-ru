@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9307bbe58afc45468f222f5b510585d528de532a
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 81594e6a21372f2b4dacedbda638cc87bad966db
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73158038"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227562"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ideascale"></a>Руководство. Интеграция Azure Active Directory с IdeaScale
 
@@ -241,7 +241,7 @@ ms.locfileid: "73158038"
     > Владелец учетной записи Azure Active Directory получит электронное сообщение со ссылкой для подтверждения учетной записи перед ее активацией.
 
 > [!NOTE]
-> Вы можете использовать любые другие средства создания учетной записи пользователя IdeaScale или API, предоставляемые IdeaScale для подготовки учетных записей пользователя AAD.
+> Вы можете использовать любые другие средства создания учетной записи пользователя IdeaScale или API, предоставляемые IdeaScale, для подготовки учетных записей пользователя AAD.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

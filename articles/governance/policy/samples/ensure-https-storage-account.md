@@ -1,14 +1,14 @@
 ---
 title: 'Пример: использование HTTPS-трафика для учетных записей хранения'
-description: В этом примере определения политики требуется, чтобы учетные записи хранения использовали протокол HTTPS.
+description: В этом примере определения политики требуется, чтобы все учетные записи хранения Azure использовали протокол HTTPS.
 ms.date: 01/23/2019
 ms.topic: sample
-ms.openlocfilehash: c61ccecb72d568ff3a1f4bfce542a2cbbf7d8330
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 4d6b6f7e494d2f8c5278c546ead1f9697f245f38
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74076243"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463592"
 ---
 # <a name="sample---ensure-https-traffic-only-for-storage-account"></a>Пример: использование HTTPS-трафика для учетной записи хранения
 

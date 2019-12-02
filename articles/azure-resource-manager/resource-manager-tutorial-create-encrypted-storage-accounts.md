@@ -1,25 +1,17 @@
 ---
-title: Использование справочника по шаблонам Azure Resource Manager | Документация Майкрософт
+title: Использование справочной документации по шаблонам
 description: Создание шаблона для развертывания зашифрованной учетной записи хранения с помощью справочника по шаблонам Azure Resource Manager.
-services: azure-resource-manager
-documentationcenter: ''
 author: mumian
-manager: dougeby
-editor: tysonn
-ms.service: azure-resource-manager
-ms.workload: multiple
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.date: 03/04/2019
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: 81c02c5e39e23b49291561821b0732227feb5c05
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 99ec64529b90c7a80aea62090f80c55cf4e23510
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62103654"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74326482"
 ---
 # <a name="tutorial-utilize-the-azure-resource-manager-template-reference"></a>Руководство. Использование шаблонов Azure Resource Manager
 
@@ -44,7 +36,7 @@ ms.locfileid: "62103654"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* [Visual Studio Code](https://code.visualstudio.com/) с [расширением Resource Manager Tools](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#prerequisites).
+* Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](./resource-manager-tools-vs-code.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 
@@ -80,13 +72,13 @@ ms.locfileid: "62103654"
 
 1. Перейти к [справочнику по шаблонам Azure](https://docs.microsoft.com/azure/templates/).
 2. В поле **Фильтр по названию** введите **учетные записи хранения**.
-3. Последовательно выберите **"Справочник", "Справочник по шаблонам", "Хранилище", &lt;"Версия">"Учетные записи хранения"**, как показано на приведенном ниже снимке экрана.
+3. Последовательно выберите **"Справочник", "Справочник по шаблонам", "Хранилище", &lt;"Версия">"Учетные записи хранения"** , как показано на приведенном ниже снимке экрана.
 
     ![Учетная запись хранения ссылки на шаблон Resource Manager](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-resources-reference-storage-accounts.png)
 
     Если вы не знаете, какую выбрать версию, используйте последнюю.
 
-4. Найдите информацию о шифровании в определениях.  
+4. Найдите информацию о шифровании в определениях.
 
     ```json
     "encryption": {
@@ -159,4 +151,4 @@ ms.locfileid: "62103654"
 В этом руководстве описано, как использовать справочник по шаблонам для настройки существующего шаблона. Узнайте, как создать несколько экземпляров учетной записи хранения
 
 > [!div class="nextstepaction"]
-> [Развертывание нескольких экземпляров ресурсов в шаблонах Azure Resource Manager](./resource-manager-tutorial-create-multiple-instances.md)
+> [Развертывание нескольких экземпляров](./resource-manager-tutorial-create-multiple-instances.md)

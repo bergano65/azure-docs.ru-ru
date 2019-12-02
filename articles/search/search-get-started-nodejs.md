@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Создание индекса службы "Поиск" в Node.js с помощью интерфейсов REST API
 titleSuffix: Azure Cognitive Search
-description: Пример для службы "Когнитивный поиск Azure" на Node.js, который демонстрирует создание, загрузку данных и выполнение запросов из JavaScript.
+description: В этом кратком руководстве по Node.js вы узнаете, как создать индекс, загрузку данных и выполнение запросов Когнитивного поиска Azure с помощью REST API и JavaScript.
 author: HeidiSteen
 manager: nitinme
 ms.author: heidist
@@ -9,12 +9,12 @@ ms.devlang: nodejs
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 11/04/2019
-ms.openlocfilehash: 8b7308b5289ba747dba90716b495ca1ba6afb209
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: fd8a053eb4ff0805b95dc11db4206e1dd2edb184
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73719988"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406940"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-nodejs-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Node.js с помощью REST API
 > [!div class="op_single_selector"]
@@ -684,11 +684,12 @@ async queryAsync(searchTerm) {
 
 Общее поведение функции `run` заключается в том, чтобы удалить индекс службы "Когнитивный поиск Azure", если он существует, затем создать индекс, добавить данные и выполнить несколько запросов.  
 
-## <a name="clean-up"></a>Очистка 
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Если вы работаете в своей подписке, по окончании проекта рекомендуем решить, нужны ли вам созданные ресурсы. Работающие ресурсы могут означать лишние затраты. Можно удалить отдельные ресурсы или удалить группу ресурсов, что позволит удалить весь набор ресурсов.
 
 Просматривать ресурсы и управлять ими можно на портале с помощью ссылок **Все ресурсы** или **Группы ресурсов** на панели навигации слева.
+
 При работе с бесплатной версией службы помните о том, что вам доступно максимум три индекса, индексатора и источника данных. Вы можете удалить отдельные элементы на портале, чтобы не превысить лимит. 
 
 ## <a name="next-steps"></a>Дополнительная информация

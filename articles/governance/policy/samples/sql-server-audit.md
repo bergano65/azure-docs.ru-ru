@@ -1,14 +1,14 @@
 ---
 title: 'Пример: проверка параметров аудита SQL Server'
-description: В этом примере определения политики выполняется проверка параметров аудита SQL Server с помощью auditIfNotExists.
+description: В этом примере определения политики выполняется проверка указанных в параметре настроек аудита SQL Server с помощью auditIfNotExists.
 ms.date: 01/23/2019
 ms.topic: sample
-ms.openlocfilehash: 5a0d758bd96937ca443d434b76d22aaefc618687
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 7eba24c0916297dba0649024874aed7ba0fac2f6
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74069795"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463110"
 ---
 # <a name="sample---audit-sql-server-audit-settings"></a>Пример проверки параметров аудита SQL Server
 

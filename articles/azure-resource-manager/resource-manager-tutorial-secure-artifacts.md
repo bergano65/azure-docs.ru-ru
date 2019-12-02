@@ -1,24 +1,16 @@
 ---
-title: Защита артефактов с помощью шаблонов Azure Resource Manager
+title: Защита артефактов в шаблонах
 description: Узнайте, как защитить артефакты, которые используются в шаблонах Azure Resource Manager.
-services: azure-resource-manager
-documentationcenter: ''
 author: mumian
-manager: dougeby
-editor: ''
-ms.service: azure-resource-manager
-ms.workload: multiple
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.date: 10/08/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: d9570c30e2870a136bd97ed5fc2304d6f0d280c9
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: b37f7e284b655a362c5a4231a7c1da3719762644
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72528275"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74326440"
 ---
 # <a name="tutorial-secure-artifacts-in-azure-resource-manager-template-deployments"></a>Руководство. Защита артефактов в развертываниях шаблонов Azure Resource Manager
 
@@ -41,7 +33,7 @@ ms.locfileid: "72528275"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* [Visual Studio Code](https://code.visualstudio.com/) с расширением средств Resource Manager. См. в разделе [Краткое руководство. Создание шаблона Azure Resource Manager c помощью Visual Studio Code](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#prerequisites).
+* Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](./resource-manager-tools-vs-code.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
 * Просмотрите статью [Руководство. Импорт BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager](./resource-manager-tutorial-deploy-sql-extensions-bacpac.md). В этом руководстве используется шаблон, созданный здесь ранее. Ссылка для скачивания завершенного шаблона предоставляется в этой статье.
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора SQL Server. Ниже приведен пример создания пароля.
 

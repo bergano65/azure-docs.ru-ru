@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 07/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9f0a684c6a38ba3a95438941f668b36b23d278df
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: 772b37816b83c275bae927d825434dc3ca76a35c
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68227574"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74231995"
 ---
 # <a name="tutorial-integrate-airwatch-with-azure-active-directory"></a>Руководство по Интеграция AirWatch с Azure Active Directory
 
@@ -130,7 +130,7 @@ ms.locfileid: "68227574"
 
 1. Откройте вкладку **User** (Пользователь), введите в текстовое поле **Base DN** (Базовое доменное имя) используемое доменное имя и щелкните **Save** (Сохранить).
 
-   ![Пользователь](./media/airwatch-tutorial/ic791922.png "Пользователь")
+   ![User](./media/airwatch-tutorial/ic791922.png "Пользователь")
 
 1. Откройте вкладку **Server** (Сервер).
 
@@ -138,7 +138,7 @@ ms.locfileid: "68227574"
 
 1. В разделе **LDAP** выполните следующие действия:
 
-    ![Отправка](./media/airwatch-tutorial/ic791924.png "LDAP")   
+    ![Передача](./media/airwatch-tutorial/ic791924.png "LDAP")   
 
     a. Для параметра **Directory Type** (Тип каталога) выберите значение **None** (Нет).
 
@@ -146,7 +146,7 @@ ms.locfileid: "68227574"
 
 1. В разделе **SAML 2.0** нажмите **Upload** (Отправить).
 
-    ![Передача](./media/airwatch-tutorial/ic791932.png "Передача")
+    ![Передача](./media/airwatch-tutorial/ic791932.png "Передать")
 
 1. В разделе **Request** (Запрос) выполните следующие действия.
 
@@ -164,7 +164,7 @@ ms.locfileid: "68227574"
 
 1. Снова откройте вкладку **Пользователь** .
 
-    ![Пользователь](./media/airwatch-tutorial/ic791926.png "Пользователь")
+    ![User](./media/airwatch-tutorial/ic791926.png "Пользователь")
 
 1. В разделе **Атрибут** выполните следующие действия.
 
@@ -228,18 +228,18 @@ ms.locfileid: "68227574"
 
 3. В меню **Users** (Пользователи) выберите пункт **List View** (Представление списка), а затем щелкните **Add > Add User** (Добавить > Добавить пользователя).
   
-   ![Добавление пользователя](./media/airwatch-tutorial/ic791930.png "Добавление пользователя")
+   ![Добавление пользователя](./media/airwatch-tutorial/ic791930.png "Добавить пользователя")
 
 4. В диалоговом окне **Add / Edit User** (Добавление или изменение пользователя) выполните следующие действия.
 
-   ![Добавление пользователя](./media/airwatch-tutorial/ic791931.png "Добавление пользователя")
+   ![Добавление пользователя](./media/airwatch-tutorial/ic791931.png "Добавить пользователя")
 
    a. В текстовых полях **Username** (Имя пользователя), **Password** (Пароль), **Confirm Password** (Подтверждение пароля), **First Name** (Имя), **Last Name** (Фамилия) и **Email Address** (Адрес электронной почты) введите соответствующие данные действующей учетной записи Azure Active Directory, которую вы хотите подготовить.
 
    b. Выберите команду **Сохранить**.
 
 > [!NOTE]
-> Вы можете использовать любые другие средства создания учетной записи пользователя AirWatch или API, предоставляемые AirWatch для подготовки учетных записей пользователя AAD.
+> Вы можете использовать любые другие средства создания учетной записи пользователя AirWatch или API, предоставляемые AirWatch, для подготовки учетных записей пользователя AAD.
 
 ### <a name="test-sso"></a>Проверка единого входа
 

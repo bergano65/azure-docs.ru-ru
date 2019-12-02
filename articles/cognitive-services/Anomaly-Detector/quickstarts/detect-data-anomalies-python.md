@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: quickstart
-ms.date: 10/14/2019
+ms.date: 11/19/2019
 ms.author: aahi
-ms.openlocfilehash: 571626da0f3f43c8c2a2e33e1147418158c5473b
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: e24436cef11cc07571adb55bca63add5bda783c4
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72754220"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483399"
 ---
 # <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-python"></a>Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием REST API Детектора аномалий и Python
 
@@ -26,12 +26,12 @@ ms.locfileid: "72754220"
 | Обнаружение аномалий в пакетном режиме                        | Ответ в формате JSON содержит информацию о состоянии аномалий (и другие данные) для каждой точки в данных временного ряда, а также положения всех обнаруженных аномалий. |
 | Обнаружение состояний аномалии последней точки данных | В ответе JSON содержится состояние аномалии (и другие данные) для последней точки данных в данных временных рядов.                                                                                                                                         |
 
- Хотя это приложение создается на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+ Хотя это приложение создается на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/AnomalyDetector/blob/master/quickstarts/python-detect-anomalies.py).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 - [Python версии 2.x или 3.x](https://www.python.org/downloads/)
-
+- Конечная точка и ключ Детектора аномалий
 - [Библиотека запросов](https://pypi.org/project/requests/) для Python
 
 - JSON-файл содержит точки данных временного ряда. Пример данных для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/request-data.json).
@@ -68,7 +68,7 @@ ms.locfileid: "72754220"
 
 3. Отправьте запрос с помощью `requests.post()`. Объедините конечную точку и URL-адрес обнаружения аномалии для полного запроса URL-адреса (включая заголовки и данные запроса в формате JSON). А затем получите ответ.
 
-[!code-python[request method](~/samples-anomaly-detector/quickstarts/python-detect-anomalies.py?name=request)]
+    [!code-python[request method](~/samples-anomaly-detector/quickstarts/python-detect-anomalies.py?name=request)]
 
 ## <a name="detect-anomalies-as-a-batch"></a>Обнаружение аномальных действий в пакетном режиме
 
@@ -80,7 +80,7 @@ ms.locfileid: "72754220"
 
 4. В противном случае найдите позиции аномалий в наборе данных. Поле ответа `isAnomaly` содержит логическое значение, которое зависит от того, является ли заданная точка данных аномалией. Пройдите по списку, а затем выведите перечень любых `True` значений. Эти значения соответствуют индексу аномальных точек данных, если они были найдены.
 
-[!code-python[detection as a batch](~/samples-anomaly-detector/quickstarts/python-detect-anomalies.py?name=detectBatch)]
+    [!code-python[detection as a batch](~/samples-anomaly-detector/quickstarts/python-detect-anomalies.py?name=detectBatch)]
 
 ## <a name="detect-the-anomaly-status-of-the-latest-data-point"></a>Обнаружение состояний аномалии последней точки данных
 
@@ -88,11 +88,11 @@ ms.locfileid: "72754220"
 
 2. Чтобы отформатировать `json.dumps()`, вызовите его в результате и выведите его в консоль.
 
-[!code-python[Latest point detection](~/samples-anomaly-detector/quickstarts/python-detect-anomalies.py?name=detectLatest)]
+    [!code-python[Latest point detection](~/samples-anomaly-detector/quickstarts/python-detect-anomalies.py?name=detectLatest)]
 
 ## <a name="send-the-request"></a>Отправка запроса
 
-1. Вызовите методы обнаружения аномалий, созданные ранее.
+Вызовите методы обнаружения аномалий, созданные ранее.
 
 [!code-python[Method calls](~/samples-anomaly-detector/quickstarts/python-detect-anomalies.py?name=methodCalls)]
 
@@ -102,11 +102,4 @@ ms.locfileid: "72754220"
 * [Пример ответа при пакетном обнаружении](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/batch-response.json)
 * [Пример ответа при обнаружении последней точки](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/latest-point-response.json)
 
-## <a name="next-steps"></a>Дополнительная информация
-
-> [!div class="nextstepaction"]
->[Обнаружение аномалий при потоковой передаче данных с помощью Azure Databricks](../tutorials/anomaly-detection-streaming-databricks.md)
-
-* [Общие сведения об API Детектора аномалий](../overview.md)
-* [Рекомендации по использованию API Детектора аномалий](../concepts/anomaly-detection-best-practices.md)
-* Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/AnomalyDetector/blob/master/quickstarts/sdk/csharp-sdk-sample.cs).
+[!INCLUDE [anomaly-detector-next-steps](../includes/quickstart-cleanup-next-steps.md)]

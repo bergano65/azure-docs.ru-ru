@@ -14,12 +14,12 @@ ms.workload: azure-app-configuration
 ms.date: 11/08/2019
 ms.author: lcozzens
 ms.custom: mvc
-ms.openlocfilehash: d89fa4c067e511e6210e8c1473bf1856297fc1de
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: 51697aa426a638ad536390c4114df5faa18a41ef
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73904071"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74184864"
 ---
 # <a name="work-with-key-values-in-an-azure-app-configuration-store"></a>Использование пар "ключ-значение" в хранилище конфигураций приложения Azure
 
@@ -84,16 +84,16 @@ az appconfig kv list --name $appConfigName
 
 ## <a name="script-explanation"></a>Описание скрипта
 
-В этом скрипте используются приведенные ниже команды для работы с парами "ключ-значение" в хранилище конфигураций приложения. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
+В этом скрипте используются приведенные ниже команды для работы с парами "ключ —значение" в хранилище Конфигурации приложений. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
 | Команда | Примечания |
 |---|---|
-| [az appconfig kv set](/cli/azure/ext/appconfig/appconfig) | Создает или обновляет пары "ключ-значение". |
-| [az appconfig kv list](/cli/azure/ext/appconfig/appconfig) | Выводит список пар "ключ-значение" в хранилище конфигураций приложения. |
-| [az appconfig kv delete](/cli/azure/ext/appconfig/appconfig) | Удаляет пару "ключ-значение". |
+| [az appconfig kv set](/cli/azure/ext/appconfig/appconfig/kv#ext-appconfig-az-appconfig-kv-set) | Создает или обновляет пары "ключ-значение". |
+| [az appconfig kv list](/cli/azure/ext/appconfig/appconfig/kv#ext-appconfig-az-appconfig-kv-list) | Выводит список пар "ключ —значение" в хранилище Конфигурации приложений. |
+| [az appconfig kv delete](/cli/azure/ext/appconfig/appconfig/kv#ext-appconfig-az-appconfig-kv-delete) | Удаляет пару "ключ-значение". |
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
-Дополнительные примеры скриптов Azure CLI для службы "Конфигурации приложений" см. в [документации по службе "Конфигурация приложений Azure"](../cli-samples.md).
+Дополнительные примеры скриптов Azure CLI для службы "Конфигурация приложений" см. в [этой статье](../cli-samples.md).

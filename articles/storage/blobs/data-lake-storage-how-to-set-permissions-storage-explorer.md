@@ -1,21 +1,21 @@
 ---
-title: Установка разрешений для Data Lake Storage 2-го поколения с помощью Обозревателя службы хранилища Azure
+title: Обозреватель службы хранилища Azure Управление доступом в Azure Data Lake Storage 2-го поколения
 description: В этом пошаговом руководстве описывается, как с помощью Обозревателя службы хранилища Azure задавать разрешения для файлов и каталогов в учетной записи хранения с поддержкой Azure Data Lake Storage 2-го поколения.
 author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: quickstart
-ms.date: 12/11/2018
+ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 2cc93ad9ae1d9d6d21064a2a80c3d62bf661dabc
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.openlocfilehash: b34103e521def678acce17e3292e04fca95b5e6e
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69992276"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327967"
 ---
-# <a name="set-file-and-directory-level-permissions-using-azure-storage-explorer-with-azure-data-lake-storage-gen2"></a>Установка разрешений на уровне файлов и каталогов в Azure Data Lake Storage 2-го поколения с помощью Обозревателя службы хранилища Azure
+# <a name="use-azure-storage-explorer-to-manage-access-in-azure-data-lake-storage-gen2"></a>Управление доступом в Azure Data Lake Storage 2-го поколения с помощью Обозревателя службы хранилища Azure
 
 Файлы, хранящиеся в Azure Data Lake Storage 2-го поколения, поддерживают детально настроенные разрешения и управление списком управления доступом (ACL). Детальные разрешения и управление ACL позволяют вам контролировать доступ к своим данным на очень детальном уровне.
 

@@ -1,22 +1,16 @@
 ---
-title: Развертывание расширений виртуальных машин с помощью шаблонов Azure Resource Manager
+title: Развертывание расширений виртуальной машины с помощью шаблона
 description: Узнайте, как можно развернуть расширения виртуальной машины с помощью шаблонов Azure Resource Manager
-services: azure-resource-manager
-documentationcenter: ''
 author: mumian
-ms.service: azure-resource-manager
-ms.workload: multiple
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.date: 11/13/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 5eb7a8d82f7f61e18afc49c61444354dcde77b5e
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.openlocfilehash: c18e5959a1ec52d9f10f27f456a466669e7b99c9
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72533435"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325375"
 ---
 # <a name="tutorial-deploy-virtual-machine-extensions-with-azure-resource-manager-templates"></a>Руководство по Развертывание расширений виртуальной машины с помощью шаблонов Azure Resource Manager
 
@@ -37,7 +31,7 @@ ms.locfileid: "72533435"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* [Visual Studio Code](https://code.visualstudio.com/) с расширением средств Resource Manager. Дополнительные сведения см. в разделе [об установке расширения](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#prerequisites).
+* Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](./resource-manager-tools-vs-code.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
 
     ```azurecli-interactive

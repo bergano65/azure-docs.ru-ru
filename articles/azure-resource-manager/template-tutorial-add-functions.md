@@ -1,19 +1,16 @@
 ---
-title: 'Руководство: добавление функций шаблона в шаблон Azure Resource Manager'
+title: Учебник по добавлению функций шаблона
 description: Добавьте функции шаблона в шаблон Azure Resource Manager для создания значений.
-services: azure-resource-manager
 author: mumian
-manager: carmonmills
-ms.service: azure-resource-manager
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: ca6e7f326ba67eac33e4dee5fa844d7676ab864b
-ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
+ms.openlocfilehash: 03a38178ec66c1c1a10934975d20778369d80dbe
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71963661"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74405962"
 ---
 # <a name="tutorial-add-template-functions-to-your-resource-manager-template"></a>Руководство по добавлению функций шаблона в шаблон Azure Resource Manager
 
@@ -25,7 +22,7 @@ ms.locfileid: "71963661"
 
 Вам понадобится Visual Studio Code с расширением инструментов Resource Manager и либо Azure PowerShell, либо Azure CLI. Дополнительные сведения см. в разделе об [инструментах шаблона](template-tutorial-create-first-template.md#get-tools).
 
-## <a name="review-your-template"></a>Проверка шаблона
+## <a name="review-template"></a>Проверка шаблона
 
 В конце предыдущего учебника шаблон содержал следующий код JSON:
 
@@ -73,7 +70,7 @@ az group deployment create \
 
 ---
 
-## <a name="verify-the-deployment"></a>Проверка развертывания
+## <a name="verify-deployment"></a>Проверка развертывания
 
 Чтобы проверить развертывание, просмотрите группу ресурсов на портале Azure.
 

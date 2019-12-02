@@ -1,32 +1,26 @@
 ---
-title: Создание схемы с помощью PowerShell
-description: Служба Azure Blueprints позволяет создавать, определять и развертывать артефакты с помощью PowerShell.
-ms.date: 08/21/2019
+title: Краткое руководство. Создание схемы с помощью PowerShell
+description: В этом кратком руководстве вы создадите, определите и развернете артефакты с помощью PowerShell и Azure Blueprints.
+ms.date: 11/21/2019
 ms.topic: quickstart
-ms.openlocfilehash: 4cc181a7e0b07448d6dd538cfb1621d1efa43a80
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: ed337fa040804159dae3194de1befc43ff2b698f
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73960427"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327463"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-powershell"></a>Краткое руководство. Определение и назначение схемы Azure с помощью PowerShell
 
 Зная, как создавать и присваивать схемы, вы сможете определять распространенные шаблоны для разработки многоразовых и быстро развертываемых конфигураций, основанных на шаблонах Resource Manager, политике, правилах безопасности и других элементах. В этом руководстве вы научитесь использовать службу Azure Blueprint для выполнения некоторых общих задач, связанных с созданием, публикацией и назначением схемы в вашей организации, таких как:
 
-> [!div class="checklist"]
-> - создание схемы и добавление различных поддерживаемых артефактов;
-> - внесение изменений в существующую схему на стадии **черновика**;
-> - обозначение схемы как готовой к назначению с помощью **публикации**;
-> - назначение схемы существующей подписке;
-> - проверка состояния и хода выполнения назначенной схемы;
-> - удаление схемы, назначенной подписке.
+## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
-
 Выполните инструкции из [этой статьи](./how-to/manage-assignments-ps.md#add-the-azblueprint-module), чтобы установить модуль **Az.Blueprint** из коллекции PowerShell и проверить его работу.
+
+[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 ## <a name="create-a-blueprint"></a>Создание схемы
 
@@ -397,9 +391,7 @@ Remove-AzBlueprintAssignment -Name 'assignMyBlueprint'
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Ознакомьтесь со сведениями о [жизненном цикле схем](./concepts/lifecycle.md).
-- Узнайте, как использовать [статические и динамические параметры](./concepts/parameters.md).
-- Научитесь настраивать [последовательность схемы](./concepts/sequencing-order.md).
-- Узнайте, как применять [блокировку ресурсов схемы](./concepts/resource-locking.md).
-- Узнайте, как [обновлять существующие назначения](./how-to/update-existing-assignments.md).
-- Устраняйте проблемы, возникающие во время назначения схемы, с помощью [общих инструкций по устранению неполадок](./troubleshoot/general.md).
+В рамках этого краткого руководства вы создали, назначили и удалили схему с помощью PowerShell. Чтобы узнать больше о схемах Azure, перейдите к статье о жизненном цикле схемы.
+
+> [!div class="nextstepaction"]
+> [Ознакомьтесь со сведениями о жизненном цикле схем](./concepts/lifecycle.md)

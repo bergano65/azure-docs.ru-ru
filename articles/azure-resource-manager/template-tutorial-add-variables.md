@@ -1,19 +1,16 @@
 ---
-title: 'Руководство: добавление переменной в шаблон Azure Resource Manager'
+title: Учебник. Добавление переменной в шаблон
 description: Добавьте переменные в шаблон Azure Resource Manager, чтобы упростить синтаксис.
-services: azure-resource-manager
 author: mumian
-manager: carmonmills
-ms.service: azure-resource-manager
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: fb577c0c0f00da3735da98fc2e94f3610c9bd80d
-ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
+ms.openlocfilehash: 0598da3c060b8a8055ffb045fe4aae60b3806060
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72001468"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406052"
 ---
 # <a name="tutorial-add-variables-to-your-resource-manager-template"></a>Руководство по добавлению переменных в шаблон Azure Resource Manager
 
@@ -25,7 +22,7 @@ ms.locfileid: "72001468"
 
 Вам понадобится Visual Studio Code с расширением инструментов Resource Manager и либо Azure PowerShell, либо Azure CLI. Дополнительные сведения см. в разделе об [инструментах шаблона](template-tutorial-create-first-template.md#get-tools).
 
-## <a name="review-your-template"></a>Проверка шаблона
+## <a name="review-template"></a>Проверка шаблона
 
 В конце предыдущего учебника шаблон содержал следующий код JSON:
 
@@ -53,7 +50,7 @@ ms.locfileid: "72001468"
 
 Наконец, обратите внимание, что в качестве имени хранилища теперь задана переменная, а не параметр.
 
-## <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-template"></a>Развертывание шаблона
 
 Давайте развернем шаблон. Развернуть этот шаблон проще, чем предыдущие, так как вы предоставляете только префикс для имени хранилища.
 
@@ -82,7 +79,7 @@ az group deployment create \
 
 ---
 
-## <a name="verify-the-deployment"></a>Проверка развертывания
+## <a name="verify-deployment"></a>Проверка развертывания
 
 Чтобы проверить развертывание, просмотрите группу ресурсов на портале Azure.
 

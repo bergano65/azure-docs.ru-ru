@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 10/01/2019
 ms.author: diberry
-ms.openlocfilehash: 80dab733d5a4e7c04ee75e289a0bc33b88cc811f
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 1c403d4d9b5c95c1cb1079b951a26dcaabb805fe
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72597172"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74405871"
 ---
 # <a name="quickstart-qna-maker-client-library-for-net"></a>Краткое руководство. Клиентская библиотека QnA Maker для .NET
 
@@ -49,15 +49,15 @@ ms.locfileid: "72597172"
 
 Создайте консольное приложение .NET Core на C# в предпочитаемой интегрированной среде разработки или редакторе. 
 
-В окне консоли (cmd, PowerShell или Bash) выполните команду dotnet `new`, чтобы создать консольное приложение с именем `qna-maker-quickstart`. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: `Program.cs`. 
+В окне консоли (cmd, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение с именем `qna-maker-quickstart`. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: *Program.cs*. 
 
-```console
+```dotnetcli
 dotnet new console -n qna-maker-quickstart
 ```
 
 Измените каталог на созданную папку приложения. Чтобы создать приложение, выполните следующую команду:
 
-```console
+```dotnetcli
 dotnet build
 ```
 
@@ -75,7 +75,7 @@ Build succeeded.
 
 В каталоге приложения установите клиентскую библиотеку QnA Maker для .NET с помощью следующей команды:
 
-```console
+```dotnetcli
 dotnet add package Microsoft.Azure.CognitiveServices.Knowledge.QnAMaker --version 1.0.0
 ```
 
@@ -189,11 +189,11 @@ _loop_ и _Task.Delay_ в следующем блоке кода использ�
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
-Перейдите к каталогу приложения и запустите приложение с помощью команды dotnet `run`.
+Запустите приложение с помощью команды `dotnet run` из каталога приложения.
 
 Все фрагменты кода из этой статьи [доступны для скачивания](https://github.com/Azure-Samples/cognitive-services-qnamaker-python/blob/master/documentation-samples/quickstarts/knowledgebase_quickstart/knowledgebase_quickstart.py) и могут выполняться как один файл.
 
-```console
+```dotnetcli
 dotnet run
 ```
 

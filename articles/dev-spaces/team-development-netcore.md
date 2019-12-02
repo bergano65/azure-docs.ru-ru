@@ -1,22 +1,18 @@
 ---
-title: Коллективная разработка с помощью Azure Dev Spaces, .NET Core и VS Code
-titleSuffix: Azure Dev Spaces
+title: Коллективная разработка с помощью .NET Core и Visual Studio Code
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
-author: zr-msft
-ms.author: zarhoads
 ms.date: 07/09/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: bccbcf6665fa08ba940e3d4c9ad6099fffe96d3e
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 30d132b78279e9ae1ca190c0037c962a7cbd8e6f
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74132037"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325505"
 ---
-# <a name="team-development-with-azure-dev-spaces-using-net-core-and-vs-code"></a>Коллективная разработка с помощью Azure Dev Spaces, .NET Core и VS Code
+# <a name="team-development-using-net-core-and-visual-studio-code-with-azure-dev-spaces"></a>Коллективная разработка с помощью Azure Dev Spaces в .NET Core и Visual Studio Code
 
 Из этого руководства вы узнаете, как команда разработчиков может одновременно работать в одном кластере Kubernetes с помощью сред Dev Spaces.
 

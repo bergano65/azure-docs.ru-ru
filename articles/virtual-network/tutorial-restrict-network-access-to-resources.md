@@ -1,10 +1,10 @@
 ---
-title: Руководство. Ограничение сетевого доступа к ресурсам PaaS с помощью портала Azure | Документация Майкрософт
+title: Учебник. Ограничение доступа к ресурсам PaaS с помощью портала Azure
 description: В этом руководстве описано, как ограничить сетевой доступ к ресурсам Azure, таким как служба хранилища Azure и База данных SQL Azure, с помощью конечных точек служб для виртуальной сети и портала Azure.
 services: virtual-network
 documentationcenter: virtual-network
 author: KumudD
-manager: twooley
+manager: mtillman
 editor: ''
 tags: azure-resource-manager
 Customer intent: I want only resources in a virtual network subnet to access an Azure PaaS resource, such as an Azure Storage account.
@@ -16,12 +16,12 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 08/23/2018
 ms.author: kumud
-ms.openlocfilehash: 34cb2b6c5a770aa9ec38ce02a97d976fe28251ac
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 85fc5687b82947ed16bde0c30ca2b947514ba958
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69638752"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74186373"
 ---
 # <a name="tutorial-restrict-network-access-to-paas-resources-with-virtual-network-service-endpoints-using-the-azure-portal"></a>Руководство по Ограничение сетевого доступа к ресурсам PaaS посредством конечных точек служб для виртуальной сети с помощью портала Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "69638752"
    |ИМЯ| myVirtualNetwork |
    |Пространство адресов| 10.0.0.0/16|
    |Subscription| Выберите свою подписку.|
-   |Resource group | Выберите **Создать новую**, а затем введите *myResourceGroup*.|
+   |группа ресурсов. | Выберите **Создать новую**, а затем введите *myResourceGroup*.|
    |Location| Выберите **Восточная часть США**. |
    |Имя подсети| Общедоступные|
    |Диапазон адресов подсети| 10.0.0.0/24|
@@ -96,7 +96,7 @@ ms.locfileid: "69638752"
     |----|----|
     |ИМЯ| myNsgPrivate |
     |Subscription| Выберите свою подписку.|
-    |Resource group | Щелкните **Использовать существующую** и выберите *myResourceGroup*.|
+    |группа ресурсов. | Щелкните **Использовать существующую** и выберите *myResourceGroup*.|
     |Location| Выберите **Восточная часть США**. |
 
 4. После создания группы безопасности сети введите *myNsgPrivate* в поле **Search resources, services, and docs** (Поиск ресурсов, служб и документов) в верхней части портала. При появлении **myNsgPrivate** в результатах поиска выберите этот пункт.
@@ -167,7 +167,7 @@ ms.locfileid: "69638752"
     |Location| Выберите **Восточная часть США**. |
     |Репликация| Локально избыточное хранилище (LRS)|
     |Subscription| Выберите свою подписку.|
-    |Resource group | Щелкните **Использовать существующую** и выберите *myResourceGroup*.|
+    |группа ресурсов. | Щелкните **Использовать существующую** и выберите *myResourceGroup*.|
 
 ### <a name="create-a-file-share-in-the-storage-account"></a>Создание файлового ресурса в учетной записи хранения
 
@@ -221,7 +221,7 @@ ms.locfileid: "69638752"
    |Имя пользователя|Введите выбранное имя пользователя.|
    |Пароль| Введите выбранный пароль. Пароль должен включать минимум 12 символов и соответствовать [определенным требованиям к сложности](../virtual-machines/windows/faq.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm).|
    |Subscription| Выберите свою подписку.|
-   |Resource group| Щелкните **Использовать существующую** и выберите **myResourceGroup**.|
+   |группа ресурсов.| Щелкните **Использовать существующую** и выберите **myResourceGroup**.|
    |Location| Выберите **Восточная часть США**.|
 
    ![Ввод базовых сведений о виртуальной машине](./media/tutorial-restrict-network-access-to-resources/virtual-machine-basics.png)

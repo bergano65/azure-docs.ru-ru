@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: quickstart
-ms.date: 10/15/2019
+ms.date: 11/19/2019
 ms.author: aahi
-ms.openlocfilehash: 926d7043ea6f56c1ba6d13fd4586fc6f6d59cfa8
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: f58f4f9c89e2c0bfb7d9eca6d39dab3f25b21990
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72554700"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483343"
 ---
 # <a name="quickstart-anomaly-detector-client-library-for-python"></a>Краткое руководство. Клиентская библиотека Детектора аномалий для Python
 
@@ -26,11 +26,12 @@ ms.locfileid: "72554700"
 * Обнаружение аномалий в наборе данных временного ряда с использованием пакетного запроса.
 * Обнаружение состояния аномалии последней точки данных во временном ряду.
 
-[Справочная документация по библиотеке](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-anomalydetector) | [Пакет (PyPi)](https://pypi.org/project/azure-cognitiveservices-anomalydetector/) | [Примеры кода](https://github.com/Azure-Samples/anomalydetector)
+[Справочная документация по библиотеке](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-anomalydetector) | [Пакет (PyPi)](https://pypi.org/project/azure-cognitiveservices-anomalydetector/) | [Поиск примера кода на GitHub](https://github.com/Azure-Samples/AnomalyDetector/blob/master/quickstarts/sdk/python-sdk-sample.py)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Конечная точка и ключ Детектора аномалий
 * [Python 3.x](https://www.python.org/)
 * [Библиотека анализа данных Pandas](https://pandas.pydata.org/).
  
@@ -114,18 +115,4 @@ pip install --upgrade azure-cognitiveservices-anomalydetector
 
 Запустите приложение, выполнив команду `python` и используя имя файла.
  
-## <a name="clean-up-resources"></a>Очистка ресурсов
-
-Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с этой группой ресурсов.
-
-* [Портал](../../cognitive-services-apis-create-account.md#clean-up-resources)
-* [Интерфейс командной строки Azure](../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
-
-## <a name="next-steps"></a>Дополнительная информация
-
-> [!div class="nextstepaction"]
->[Обнаружение аномалий при потоковой передаче данных с помощью Azure Databricks](../tutorials/anomaly-detection-streaming-databricks.md)
-
-* [Общие сведения об API Детектора аномалий](../overview.md)
-* [Рекомендации по использованию API Детектора аномалий](../concepts/anomaly-detection-best-practices.md)
-* Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/AnomalyDetector/blob/master/quickstarts/sdk/csharp-sdk-sample.cs).
+[!INCLUDE [anomaly-detector-next-steps](../includes/quickstart-cleanup-next-steps.md)]

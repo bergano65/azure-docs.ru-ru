@@ -1,24 +1,16 @@
 ---
-title: Шаблон Azure Resource Manager с зависимыми ресурсами
+title: Шаблон с зависимыми ресурсами
 description: Узнайте, как создавать шаблон Azure Resource Manager с несколькими ресурсами, а также, как развертывать его, используя портал Azure
-services: azure-resource-manager
-documentationcenter: ''
 author: mumian
-manager: dougeby
-editor: tysonn
-ms.service: azure-resource-manager
-ms.workload: multiple
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.date: 03/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 0eb4b29ffb8ae0269dbc7efd7e9ef6b720188bce
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.openlocfilehash: ef26074b0dd6450895c6aa81d5ab8853e652b41e
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72533502"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325391"
 ---
 # <a name="tutorial-create-azure-resource-manager-templates-with-dependent-resources"></a>Руководство по Создание шаблонов Azure Resource Manager с зависимыми ресурсами
 
@@ -41,7 +33,7 @@ ms.locfileid: "72533502"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* [Visual Studio Code](https://code.visualstudio.com/) с расширением средств Resource Manager.  См. в разделе [Краткое руководство. Создание шаблона Azure Resource Manager c помощью Visual Studio Code](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#prerequisites).
+* Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](./resource-manager-tools-vs-code.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
 
     ```azurecli-interactive
@@ -92,7 +84,7 @@ ms.locfileid: "72533502"
 3. Разверните второй ресурс. В качестве типа ресурса используйте `Microsoft.Network/publicIPAddresses`. Сравните определение ресурса с определением в [справочнике по шаблону](https://docs.microsoft.com/azure/templates/microsoft.network/publicipaddresses).
 
     ![Определение общедоступного IP-адреса для шаблонов Azure Resource Manager в Visual Studio Code](./media/resource-manager-tutorial-create-templates-with-dependent-resources/resource-manager-template-public-ip-address-definition.png)
-4. Разверните четвертый ресурс: В качестве типа ресурса используйте `Microsoft.Network/networkInterfaces`.  
+4. Разверните четвертый ресурс: В качестве типа ресурса используйте `Microsoft.Network/networkInterfaces`.
 
     ![Шаблоны Azure Resource Manager в Visual Studio Code для элемента dependsOn](./media/resource-manager-tutorial-create-templates-with-dependent-resources/resource-manager-template-visual-studio-code-dependson.png)
 
@@ -118,14 +110,14 @@ ms.locfileid: "72533502"
 
 Существует множество методов по развертыванию шаблонов.  В этом руководстве используется Cloud Shell на портале Azure.
 
-1. Войдите в [Cloud Shell](https://shell.azure.com). 
+1. Войдите в [Cloud Shell](https://shell.azure.com).
 2. Выберите **PowerShell** в верхнем левом углу Cloud Shell и нажмите **Confirm** (Подтвердить).  В этом руководстве используется PowerShell.
 3. Выберите **Отправить файл** из Cloud Shell.
 
     ![Файл отправки Cloud Shell портале Azure](./media/resource-manager-tutorial-create-templates-with-dependent-resources/azure-portal-cloud-shell-upload-file.png)
 4. Выберите шаблон, сохраненный ранее при выполнении этого руководства. **azuredeploy.json** — имя по умолчанию.  Если файл с тем же именем уже существует, он будет перезаписан без уведомления.
 
-    При необходимости можно использовать команды **ls $HOME** и **cat $HOME/azuredeploy.json**, чтобы проверить отправку файлов. 
+    При необходимости можно использовать команды **ls $HOME** и **cat $HOME/azuredeploy.json**, чтобы проверить отправку файлов.
 
 5. Выполните следующие команды PowerShell в командной строке Cloud Shell. Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. См. раздел [Предварительные требования](#prerequisites).
 

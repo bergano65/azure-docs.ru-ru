@@ -8,17 +8,17 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 11/06/2019
+ms.date: 11/19/2019
 ms.author: aahi
 zone_pivot_groups: programming-languages-set-five
-ms.openlocfilehash: 8b07e6b08e34e701aa4c3b254aee7245926085b6
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 93912ef93ab1065bf3b7c5010c485f99229a06a6
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73750143"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74220783"
 ---
-# <a name="quickstart-use-the-text-analytics-client-library-for-detecting-language"></a>Краткое руководство. Определение языка с помощью клиентской библиотеки Анализа текста
+# <a name="quickstart-use-the-text-analytics-client-library"></a>Краткое руководство. Использование клиентской библиотеки Анализа текста
 
 Начните работу с клиентской библиотекой Анализа текста. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач.
 

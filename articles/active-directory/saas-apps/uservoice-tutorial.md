@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
-ms.openlocfilehash: c0c259d3d05232aa70016771e2a2bce7622730a0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7a3302f1ca615fe5005be9ed1f09995ebf432eb7
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67087636"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232006"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-uservoice"></a>Руководство по Интеграция Azure Active Directory с UserVoice
 
@@ -136,7 +136,7 @@ ms.locfileid: "67087636"
 
 2. На панели инструментов в меню в верхней части экрана щелкните **Параметры**, а затем — **Веб-портал**.
    
-    ![Раздел параметров на стороне приложения](./media/uservoice-tutorial/ic777519.png "Параметры")
+    ![Раздел Settings (Параметры) на стороне приложения](./media/uservoice-tutorial/ic777519.png "Параметры")
 
 3. На вкладке **Web portal** (Веб-портал) в разделе **User authentication** (Аутентификация пользователя) щелкните **Edit** (Изменить), чтобы открыть диалоговую страницу **Edit User Authentication** (Изменение аутентификации пользователя).
    
@@ -226,7 +226,7 @@ ms.locfileid: "67087636"
 
 5. Нажмите кнопку **Добавить администраторов**.
    
-    ![Добавление администраторов](./media/uservoice-tutorial/ic777813.png "Добавление администраторов")
+    ![Добавить администраторов](./media/uservoice-tutorial/ic777813.png "Добавить администраторов")
 
 6. В диалоговом окне **Пригласить администраторов** выполните следующие действия.
    
@@ -251,5 +251,5 @@ ms.locfileid: "67087636"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

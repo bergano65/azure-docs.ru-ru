@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/08/2019
+ms.date: 11/23/2019
 ms.author: sharadag
-ms.openlocfilehash: 96dae96e16ce033ce15a8f1e9386e5252562654a
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: e92e51e8aabf24f1c5c4db31e2e203f391620ecc
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73796226"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74423488"
 ---
 # <a name="what-is-azure-front-door-service"></a>Что такое Azure Front Door Service?
 Azure Front Door Service позволяет определять, управлять и отслеживать глобальную маршрутизацию для вашего веб-трафика посредством оптимизации для обеспечения наилучшей производительности и мгновенной глобальной отработки отказа для обеспечения высокой доступности. С помощью службы Front Door вы можете преобразовать глобальные (с поддержкой нескольких регионов) пользовательские и корпоративные приложения в современные, надежные, высокопроизводительные и персонализированные приложения, интерфейсы API и содержимое, которые охватывают глобальную аудиторию с помощью Azure.
@@ -26,6 +26,8 @@ Azure Front Door Service позволяет определять, управля
 
 >[!NOTE]
 > Azure предоставляет набор полностью управляемых решений балансировки нагрузки для пользовательских сценариев. Если вам необходима глобальная маршрутизация на основе DNS и вам **не** нужны обработка подключений по протоколу TLS (разгрузка SSL) или обработка прикладного уровня HTTP- или HTTPS-запросов, вам стоит обратить внимание на [Диспетчер трафика](../traffic-manager/traffic-manager-overview.md). Если вам необходима балансировка нагрузки между серверами в регионе на прикладном уровне, присмотритесь к [Шлюзу приложений](../application-gateway/application-gateway-introduction.md), а для балансировки нагрузки на сетевом уровне обратите внимание на [Load Balancer](../load-balancer/load-balancer-overview.md). В комплексных сценариях может быть целесообразно объединить эти решения.
+>
+> Сравнение параметров балансировки нагрузки Azure см. в статье [Overview of load-balancing options in Azure](https://docs.microsoft.com/azure/architecture/guide/technology-choices/load-balancing-overview) (Общие сведения о параметрах балансировки нагрузки в Azure).
 
 Служба Front Door включает следующие функции.
 

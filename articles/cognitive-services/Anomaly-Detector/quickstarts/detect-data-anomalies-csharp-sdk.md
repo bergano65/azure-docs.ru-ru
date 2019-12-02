@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: quickstart
-ms.date: 10/15/2019
+ms.date: 11/19/2019
 ms.author: aahi
-ms.openlocfilehash: 67d6bb0bf880de0b4bf6878128e2ed27e130b18d
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 62cf9a03960e895f403ec8fa09407ff61252ecb2
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73719006"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483065"
 ---
 # <a name="quickstart-anomaly-detector-client-library-for-net"></a>Краткое руководство. Клиентская библиотека Детектора аномалий для .NET
 
@@ -26,12 +26,13 @@ ms.locfileid: "73719006"
 * Обнаружение аномалий в наборе данных временного ряда с использованием пакетного запроса.
 * Обнаружение состояния аномалии последней точки данных во временном ряду.
 
-[Справочная документация по библиотеке](https://docs.microsoft.com/dotnet/api/Microsoft.Azure.CognitiveServices.AnomalyDetector?view=azure-dotnet-preview) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/AnomalyDetector) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.AnomalyDetector/) | [Примеры кода](https://github.com/Azure-Samples/anomalydetector)
+[Справочная документация по библиотеке](https://docs.microsoft.com/dotnet/api/Microsoft.Azure.CognitiveServices.AnomalyDetector?view=azure-dotnet-preview) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/AnomalyDetector) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.AnomalyDetector/) | [Поиск кода на GitHub](https://github.com/Azure-Samples/AnomalyDetector/blob/master/quickstarts/sdk/csharp-sdk-sample.cs)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Текущая версия [.NET Core](https://dotnet.microsoft.com/download/dotnet-core).
+* Конечная точка и ключ Детектора аномалий
 
 ## <a name="setting-up"></a>Настройка
 
@@ -41,15 +42,15 @@ ms.locfileid: "73719006"
 
 ### <a name="create-a-new-net-core-application"></a>Создание приложения .NET Core
 
-В окне консоли (cmd, PowerShell или Bash) выполните команду dotnet `new`, чтобы создать консольное приложение с именем `anomaly-detector-quickstart`. Эта команда создает простой проект Hello World с одним исходным файлом на языке C#: *Program.cs*. 
+В окне консоли (cmd, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение с именем `anomaly-detector-quickstart`. Эта команда создает простой проект Hello World с одним исходным файлом на языке C#: *Program.cs*. 
 
-```console
+```dotnetcli
 dotnet new console -n anomaly-detector-quickstart
 ```
 
 Измените каталог на созданную папку приложения. Чтобы создать приложение, выполните следующую команду:
 
-```console
+```dotnetcli
 dotnet build
 ```
 
@@ -67,7 +68,7 @@ Build succeeded.
 
 В каталоге приложения установите клиентскую библиотеку Детектора аномалий для .NET с помощью следующей команды:
 
-```console
+```dotnetcli
 dotnet add package Microsoft.Azure.CognitiveServices.AnomalyDetector --version 0.8.0-preview
 ```
 
@@ -131,24 +132,10 @@ dotnet add package Microsoft.Azure.CognitiveServices.AnomalyDetector --version 0
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
-Перейдите к каталогу приложения и запустите приложение с помощью команды dotnet `run`.
+Запустите приложение с помощью команды `dotnet run` из каталога приложения.
 
-```dotnet
+```dotnetcli
 dotnet run
 ```
 
-## <a name="clean-up-resources"></a>Очистка ресурсов
-
-Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с этой группой ресурсов.
-
-* [Портал](../../cognitive-services-apis-create-account.md#clean-up-resources)
-* [Интерфейс командной строки Azure](../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
-
-## <a name="next-steps"></a>Дополнительная информация
-
-> [!div class="nextstepaction"]
->[Обнаружение аномалий при потоковой передаче данных с помощью Azure Databricks](../tutorials/anomaly-detection-streaming-databricks.md)
-
-* [Общие сведения об API Детектора аномалий](../overview.md)
-* [Рекомендации по использованию API Детектора аномалий](../concepts/anomaly-detection-best-practices.md)
-* Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/AnomalyDetector/blob/master/quickstarts/sdk/csharp-sdk-sample.cs).
+[!INCLUDE [anomaly-detector-next-steps](../includes/quickstart-cleanup-next-steps.md)]

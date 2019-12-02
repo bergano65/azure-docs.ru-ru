@@ -1,19 +1,19 @@
 ---
-title: Миграция локальных виртуальных машин Hyper-V в Azure с помощью средства "Миграция сервера" в службе "Миграция Azure" | Документация Майкрософт
-description: В этой статье описывается, как перенести локальные виртуальные машины Hyper-V в Azure с помощью средства "Миграция сервера" в службе "Миграция Azure".
+title: Миграция виртуальных машин Hyper-V в Azure с помощью средства "Миграция сервера" в службе "Миграция Azure"
+description: Сведения о миграции локальных виртуальных машин Hyper-V в Azure с помощью средства "Миграция сервера" в службе "Миграция Azure"
 author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 09/04/2019
+ms.date: 11/18/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 755bb6d019418cf9dae22ebf7ee6a3c94af3c750
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: be5d519269739f09b4a4264292f578b1d7051d26
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70309447"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74196304"
 ---
 # <a name="migrate-hyper-v-vms-to-azure"></a>Перенос виртуальных машин Hyper-V в Azure 
 
@@ -27,7 +27,7 @@ ms.locfileid: "70309447"
 > [!div class="checklist"]
 > * Подготовка Azure и локальной среды Hyper-V.
 > * Настройка исходной среды и развертывание устройства репликации.
-> * Настройка целевой среды.
+> * Настройте целевую среду.
 > * Включите репликацию.
 > * Выполнение тестовой миграции, позволяющей убедиться в правильной работе всех компонентов.
 > * Выполнение полной миграции в Azure.
@@ -39,7 +39,7 @@ ms.locfileid: "70309447"
 
 Для работы с этим руководством вам потребуется:
 
-1. [Просмотрите](migrate-architecture.md) архитектуру миграции Hyper-V.
+1. [Просмотрите](hyper-v-migration-architecture.md) архитектуру миграции Hyper-V.
 2. [Ознакомьтесь с первым руководством](tutorial-prepare-hyper-v.md) из этой серии, чтобы настроить Azure и Hyper-V для миграции. Из первого руководства вы узнаете следующее.
     - [Подготовка Azure](tutorial-prepare-hyper-v.md#prepare-azure) к миграции.
     - [Подготовка локальной среды](tutorial-prepare-hyper-v.md#prepare-for-hyper-v-migration) к миграции.

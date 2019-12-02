@@ -1,6 +1,6 @@
 ---
-title: Руководство. Предоставление доступа пользователям с помощью RBAC и Azure PowerShell | Документация Microsoft
-description: Узнайте, как предоставить пользователям доступ к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и Azure PowerShell.
+title: Учебник. Предоставление доступа пользователю к ресурсам Azure с помощью RBAC и Azure PowerShell
+description: Узнайте, как предоставить пользователю доступ к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и Azure PowerShell.
 services: active-directory
 documentationCenter: ''
 author: rolyon
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/02/2019
 ms.author: rolyon
-ms.openlocfilehash: b9aefc8eae733d9f43d1f5399c1464b40367f09e
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
+ms.openlocfilehash: c5570c6b1d2cdd168dbaeb0a91d80a61e171e5d1
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56343482"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74418633"
 ---
-# <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-azure-powershell"></a>Руководство. Предоставление доступа пользователям с помощью RBAC и Azure PowerShell
+# <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-azure-powershell"></a>Руководство по Предоставление доступа пользователям с помощью RBAC и Azure PowerShell
 
 [Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом руководстве описано, как предоставлять пользователям доступ для просмотра любого содержимого в рамках подписки и обеспечивать полное управление в группе ресурсов с помощью Azure PowerShell.
 
@@ -48,8 +48,8 @@ ms.locfileid: "56343482"
 
 | Субъект безопасности | Определение роли | Область |
 | --- | --- | --- |
-| Пользователь<br>(Пользователь из руководства по RBAC) | [Читатель](built-in-roles.md#reader) | Подписка |
-| Пользователь<br>(Пользователь из руководства по RBAC)| [Участник](built-in-roles.md#contributor) | Группа ресурсов<br>(группа-ресурсов-из-руководства-по-rbac) |
+| Пользователь<br>(Пользователь из руководства по RBAC) | [Читатель](built-in-roles.md#reader) | Subscription |
+| Пользователь<br>(Пользователь из руководства по RBAC)| [Участник](built-in-roles.md#contributor) | группа ресурсов.<br>(группа-ресурсов-из-руководства-по-rbac) |
 
    ![Назначения ролей для пользователя](./media/tutorial-role-assignments-user-powershell/rbac-role-assignments-user.png)
 

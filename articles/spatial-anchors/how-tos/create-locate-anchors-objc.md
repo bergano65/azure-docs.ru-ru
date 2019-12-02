@@ -1,19 +1,19 @@
 ---
-title: Создание и поиск привязок с помощью Пространственных привязок Azure в Objective-C | Документация Майкрософт
+title: Создание и поиск привязок в Objective-C
 description: В этой статье подробно рассказывается о том, как создавать и находить привязки с помощью Пространственных привязок Azure в Objective-C.
 author: ramonarguelles
-manager: vicenterivera
+manager: vriveras
 services: azure-spatial-anchors
 ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: d9638c96c06c06bd92690e568364551bdc299c80
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 119cf971a18ce7a9c2f2c22aba18d4dd3d9642ec
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67672046"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74277329"
 ---
 # <a name="how-to-create-and-locate-anchors-using-azure-spatial-anchors-in-objective-c"></a>Создание и поиск привязок с помощью Пространственных привязок Azure в Objective-C
 

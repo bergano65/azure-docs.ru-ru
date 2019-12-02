@@ -1,14 +1,14 @@
 ---
-title: Создание среды из образца схемы
-description: Используйте образец схемы для создания определения схемы, с помощью которого настраиваются две группы ресурсов и назначения роли для каждой из них.
-ms.date: 03/05/2019
+title: Руководство по Пример схемы для новой среды
+description: В этом учебнике вы используете пример схемы для создания определения схемы, с помощью которого настраиваются две группы ресурсов и назначения роли для каждой из них.
+ms.date: 11/21/2019
 ms.topic: tutorial
-ms.openlocfilehash: d23e9b7242c58e4da5fcfe5ef4d29d9f9df6f754
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: f9cc892ab8feadacbdfd00e55fab9f40d7cb2397
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73960267"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74321740"
 ---
 # <a name="tutorial-create-an-environment-from-a-blueprint-sample"></a>Руководство по Создание среды из образца схемы
 
@@ -183,9 +183,7 @@ ms.locfileid: "73960267"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Ознакомьтесь со сведениями о [жизненном цикле схем](../concepts/lifecycle.md)
-- Узнайте, как использовать [статические и динамические параметры](../concepts/parameters.md)
-- Узнайте, как применять [блокировку ресурсов схемы](../concepts/resource-locking.md)
-- Научитесь настраивать [последовательность схемы](../concepts/sequencing-order.md)
-- Узнайте, как [обновлять существующие назначения](../how-to/update-existing-assignments.md)
-- Устраняйте проблемы, возникающие во время назначения схемы, с помощью [общих инструкций по устранению неполадок](../troubleshoot/general.md)
+В этом учебнике вы узнали, как создать схему на основе примера определения. Чтобы узнать больше о схемах Azure, перейдите к статье о жизненном цикле схемы.
+
+> [!div class="nextstepaction"]
+> [Ознакомьтесь со сведениями о жизненном цикле схем](../concepts/lifecycle.md)

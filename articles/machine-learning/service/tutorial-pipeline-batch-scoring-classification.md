@@ -10,14 +10,14 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 11/04/2019
-ms.openlocfilehash: ccd29952693ecbc1db5927d5deabae874b6e9933
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: 11d57031405939e37afade9a9452c5d3a8b9e1e4
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73796691"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483302"
 ---
-# <a name="build--use-an-azure-machine-learning-pipeline-for-batch-scoring"></a>Создание и использование конвейеров Машинного обучения Azure для пакетной оценки
+# <a name="tutorial-build-an-azure-machine-learning-pipeline-for-batch-scoring"></a>Руководство по Создание конвейеров Машинного обучения Azure для пакетной оценки
 
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 

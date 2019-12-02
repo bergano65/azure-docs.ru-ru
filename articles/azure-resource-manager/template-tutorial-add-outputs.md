@@ -1,19 +1,16 @@
 ---
-title: 'Руководство: добавление выходных данных в шаблон Azure Resource Manager'
+title: Учебник. Добавление выходных данных в шаблон
 description: Добавьте выходные данные в шаблон Azure Resource Manager, чтобы упростить синтаксис.
-services: azure-resource-manager
 author: mumian
-manager: carmonmills
-ms.service: azure-resource-manager
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 458833372d5bd03a04e4df7d6e915cddb4bb05c7
-ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
+ms.openlocfilehash: 654d3f7cbf6362d982549c86e6f54fea1e890cfc
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72001541"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74405997"
 ---
 # <a name="tutorial-add-outputs-to-your-resource-manager-template"></a>Руководство по добавлению выходных данных в шаблон Azure Resource Manager
 
@@ -25,7 +22,7 @@ ms.locfileid: "72001541"
 
 Вам понадобится Visual Studio Code с расширением инструментов Resource Manager и либо Azure PowerShell, либо Azure CLI. Дополнительные сведения см. в разделе об [инструментах шаблона](template-tutorial-create-first-template.md#get-tools).
 
-## <a name="review-your-template"></a>Проверка шаблона
+## <a name="review-template"></a>Проверка шаблона
 
 В конце предыдущего учебника шаблон содержал следующий код JSON:
 
@@ -49,7 +46,7 @@ ms.locfileid: "72001541"
 
 Наконец, значение возвращает свойство **primaryEndpoints** из учетной записи хранения.
 
-## <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-template"></a>Развертывание шаблона
 
 Вы готовы к развертыванию шаблона и просмотру возвращенного значения.
 

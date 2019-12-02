@@ -6,12 +6,12 @@ ms.topic: tutorial
 author: markjbrown
 ms.author: mjbrown
 ms.date: 07/26/2019
-ms.openlocfilehash: 773e55bd1908c04e1c73d998348d36b685524715
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: df662353f7c9c788158ce2dfe05385f022289466
+ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74075661"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539097"
 ---
 # <a name="use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде
 
@@ -27,7 +27,7 @@ ms.locfileid: "74075661"
 
 Вы можете переносить данные между эмулятором Azure Cosmos и службой Azure Cosmos DB с помощью [средства миграции данных Azure Cosmos DB](https://github.com/azure/azure-documentdb-datamigrationtool).
 
-Вы можете запустить эмулятор Azure Cosmos для контейнера Docker в Windows. Команда docker pull описана в [Центре Docker](https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/), а исходный код эмулятора размещен в репозитории [GitHub](https://github.com/Azure/azure-cosmos-db-emulator-docker).
+Вы можете запустить эмулятор Azure Cosmos для контейнера Docker в Windows. Команда docker pull описана в [Центре Docker](https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/), а исходный код эмулятора размещен в репозитории [GitHub](https://github.com/Azure/azure-cosmos-db-emulator-docker) для `Dockerfile` вместе с дополнительными сведениями.
 
 ## <a name="differences-between-the-emulator-and-the-service"></a>Различия между эмулятором и службой
 

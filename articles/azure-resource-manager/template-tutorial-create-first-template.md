@@ -1,18 +1,16 @@
 ---
-title: Учебник. Создание и развертывание шаблона Azure Resource Manager
+title: Учебник. Создание шаблона и его развертывание
 description: Создайте свой первый шаблон Azure Resource Manager. В этом учебнике вы узнаете о синтаксисе файла шаблона и о том, как развернуть учетную запись хранения.
 author: mumian
-manager: carmonmills
-ms.service: azure-resource-manager
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 463f9a54648a9e6950f839bd856ccf42bc66dca0
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 9650b8c67e3fd5c786b066c53e78b106935e11e1
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74074371"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406038"
 ---
 # <a name="tutorial-create-and-deploy-your-first-azure-resource-manager-template"></a>Руководство по Создание и развертывание первого шаблона Azure Resource Manager
 
@@ -96,7 +94,7 @@ az login
 ---
 ## <a name="create-resource-group"></a>Создать группу ресурсов
 
-При развертывании шаблона необходимо указать группу ресурсов, которая будет содержать развернутые ресурсы. Перед выполнением команды развертывания создайте группу ресурсов с помощью Azure CLI или Azure PowerShell. Выберите вкладки в следующем разделе кода, чтобы выбрать между Azure PowerShell и Azure CLI.
+При развертывании шаблона необходимо указать группу ресурсов, которая будет содержать развернутые ресурсы. Перед выполнением команды развертывания создайте группу ресурсов с помощью Azure CLI или Azure PowerShell. Выберите вкладки в следующем разделе кода, чтобы выбрать между Azure PowerShell и Azure CLI. Примеры интерфейса командной строки в этой статье написаны для оболочки bash.
 
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -133,7 +131,7 @@ New-AzResourceGroupDeployment `
 # <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
 
 ```azurecli
-$templateFile="{provide-the-path-to-the-template-file}"
+templateFile="{provide-the-path-to-the-template-file}"
 az group deployment create \
   --name blanktemplate \
   --resource-group myResourceGroup \

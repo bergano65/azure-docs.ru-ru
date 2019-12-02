@@ -3,12 +3,12 @@ title: 'Пример: запрет на распределение по холо
 description: В этом примере определения политики налагается запрет на распределение по холодным уровням доступа для учетных записей хранения больших двоичных объектов.
 ms.date: 01/23/2019
 ms.topic: sample
-ms.openlocfilehash: 6e22519eecc6db8ddccccbdb7f6bbbee622cc803
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: cbee14edffb79ed3261bf65776b41017a30276fc
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74076316"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463365"
 ---
 # <a name="sample---deny-cool-access-tiering-for-storage-accounts"></a>Пример: запрет на распределение по холодным уровням доступа для учетных записей хранения
 

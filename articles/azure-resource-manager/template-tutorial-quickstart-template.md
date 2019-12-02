@@ -1,19 +1,16 @@
 ---
-title: Руководство. Использование шаблонов быстрого запуска Azure | Документация Майкрософт
+title: Учебник. Использование шаблонов быстрого запуска
 description: Узнайте, как использовать шаблоны быстрого запуска Azure для разработки шаблонов.
-services: azure-resource-manager
 author: mumian
-manager: carmonmills
-ms.service: azure-resource-manager
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: a29d86d105579dda7c12b885e2977406f7b598a4
-ms.sourcegitcommit: be344deef6b37661e2c496f75a6cf14f805d7381
+ms.openlocfilehash: 1ddae445fb912b4bb60f257f667784b17b0d6ea5
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72001485"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74405950"
 ---
 # <a name="tutorial-use-azure-quickstart-templates"></a>Руководство по Tutorial: Use Azure Quickstart templates (Учебник. Использование шаблонов быстрого запуска)
 
@@ -25,7 +22,7 @@ ms.locfileid: "72001485"
 
 Вам понадобится Visual Studio Code с расширением инструментов Resource Manager и либо Azure PowerShell, либо Azure CLI. Дополнительные сведения см. в разделе об [инструментах шаблона](template-tutorial-create-first-template.md#get-tools).
 
-## <a name="review-your-template"></a>Проверка шаблона
+## <a name="review-template"></a>Проверка шаблона
 
 В конце предыдущего учебника шаблон содержал следующий код JSON:
 
@@ -33,7 +30,7 @@ ms.locfileid: "72001485"
 
 Этот шаблон подходит для развертывания учетных записей хранения и планов службы приложений, но может потребоваться добавить в него веб-сайт. Вы можете использовать готовые шаблоны для быстрого обнаружения JSON, необходимого для развертывания ресурса.
 
-## <a name="find-a-template"></a>Поиск шаблона
+## <a name="find-template"></a>Поиск шаблона
 
 1. Откройте [шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/)
 1. В поле **Поиск** введите **deploy linux web app**.
@@ -44,7 +41,7 @@ ms.locfileid: "72001485"
 
     ![Веб-сайт краткого руководства по шаблону Resource Manager](./media/template-tutorial-quickstart-template/resource-manager-template-quickstart-template-web-site.png)
 
-## <a name="revise-the-existing-template"></a>Изменение имеющегося шаблона
+## <a name="revise-existing-template"></a>Изменение имеющегося шаблона
 
 Объедините шаблон быстрого запуска с существующим шаблоном:
 
@@ -60,7 +57,7 @@ ms.locfileid: "72001485"
 
 Свойство **serverFarmId** использует функцию [resourceId](resource-group-template-functions-resource.md#resourceid). Эта функция возвращает уникальный идентификатор ресурса. Здесь она получает уникальный идентификатор для плана службы приложений. Веб-приложение связано с одним определенным планом службы приложений.
 
-## <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-template"></a>Развертывание шаблона
 
 Для развертывания шаблона используйте Azure CLI или Azure PowerShell.
 

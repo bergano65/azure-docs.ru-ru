@@ -1,24 +1,16 @@
 ---
-title: Устранение неполадок развертываний в Resource Manager | Документация Майкрософт
+title: Устранение неполадок развертываний
 description: Узнайте, как контролировать развертывания шаблонов Azure Resource Manager и устранять неполадки, связанные с ними. Узнайте также, как использовать журналы действий и журнал развертывания.
-services: azure-resource-manager
-documentationcenter: ''
 author: mumian
-manager: dougeby
-editor: tysonn
-ms.service: azure-resource-manager
-ms.workload: multiple
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.date: 01/15/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 4ad32ed83d731a26b6bb72fca230d00d5465c45a
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 32f3f55df2b87b35672d811c63a21b956a8a4b52
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72390210"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325354"
 ---
 # <a name="tutorial-troubleshoot-resource-manager-template-deployments"></a>Руководство по Устранение неполадок развертывания шаблонов Resource Manager
 
@@ -26,7 +18,7 @@ ms.locfileid: "72390210"
 
 Существует два типа ошибок, связанных с развертыванием шаблона.
 
-- **Ошибки проверки** возникают в сценариях, которые можно определить перед развертыванием. Это синтаксические ошибки в шаблоне или попытки развертывания ресурсов, которые приведут к превышению квот для подписки. 
+- **Ошибки проверки** возникают в сценариях, которые можно определить перед развертыванием. Это синтаксические ошибки в шаблоне или попытки развертывания ресурсов, которые приведут к превышению квот для подписки.
 - **Ошибки развертывания** возникают из-за условий, возникающих во время развертывания. Это попытки получить доступ к ресурсу, который развертывается параллельно.
 
 Ошибки обоих типов возвращают код ошибки, с помощью которого можно устранить неполадки развертывания. Ошибки обоих типов отображаются в журнале действий. Однако ошибки проверки не отображаются в журнале развертывания, так как при их наличии развертывание не запускается.
@@ -47,7 +39,7 @@ ms.locfileid: "72390210"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-- [Visual Studio Code](https://code.visualstudio.com/) с [расширением Resource Manager Tools](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#prerequisites).
+* Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](./resource-manager-tools-vs-code.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
 
 ## <a name="create-a-problematic-template"></a>Создание проблемного шаблона
 

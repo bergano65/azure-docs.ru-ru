@@ -1,22 +1,18 @@
 ---
-title: Выполнение нескольких зависимых служб с использованием Java и Visual Studio Code
-titleSuffix: Azure Dev Spaces
+title: 'Выполнение нескольких зависимых служб: Java и Visual Studio Code'
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
-author: zr-msft
-ms.author: zarhoads
 ms.date: 11/21/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: a93bda3392962a1c35e2bb2433d285ed497075d2
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: 3fe19997ab54f02b6a5f029abbdb69d5ea6532f7
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67503128"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325713"
 ---
-# <a name="multi-service-development-with-azure-dev-spaces"></a>Разработка с использованием нескольких служб с помощью Azure Dev Spaces
+# <a name="running-multiple-dependent-services-java-and-visual-studio-code-with-azure-dev-spaces"></a>Выполнение нескольких зависимых служб: Использование Java и Visual Studio Code в Azure Dev Spaces
 
 Из этого руководства вы узнаете, как разрабатывать приложения на базе нескольких служб с помощью Azure Dev Spaces. Также здесь описываются некоторые дополнительные преимущества использования Dev Spaces.
 

@@ -1,14 +1,14 @@
 ---
-title: Выполнение запроса с помощью PowerShell
-description: Эта статья поможет выполнить шаги по включению модуля "График ресурсов" для Azure PowerShell и выполнению первого запроса.
-ms.date: 10/18/2019
+title: Краткое руководство. Первый запрос PowerShell
+description: В этом кратком руководстве вы выполняете шаги по включению модуля Resource Graph для Azure PowerShell и выполнению первого запроса.
+ms.date: 11/21/2019
 ms.topic: quickstart
-ms.openlocfilehash: 6aaddcfc6cae16501ba6544f9789aa3ac1d13136
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: dd96324671f46f98d5b6c8bae1839a5b02d38b23
+ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73958776"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74304138"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-azure-powershell"></a>Краткое руководство. Выполните первый запрос графика ресурсов с помощью Azure PowerShell
 
@@ -16,7 +16,11 @@ ms.locfileid: "73958776"
 
 В конце этого процесса вы добавите модуль к установке Azure PowerShell на свой выбор и выполните первый запрос Resource Graph.
 
+## <a name="prerequisites"></a>Предварительные требования
+
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+
+[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 ## <a name="add-the-resource-graph-module"></a>Добавить модуль "График ресурсов"
 
@@ -28,7 +32,7 @@ ms.locfileid: "73958776"
 
 - Azure PowerShell 1.0.0 или более поздней версии. Если она еще не установлена, выполните [эти инструкции](/powershell/azure/install-az-ps).
 
-- Модуль PowerShellGet 2.0.1 или более поздней версии. Если он еще не установлен или не обновлен, выполните [эти инструкции](/powershell/gallery/installing-psget).
+- Модуль PowerShellGet 2.0.1 или более поздней версии. Если он еще не установлен или не обновлен, выполните [эти инструкции](/powershell/scripting/gallery/installing-psget).
 
 ### <a name="install-the-module"></a>Установка модуля
 
@@ -103,10 +107,7 @@ Uninstall-Module -Name 'Az.ResourceGraph'
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Получите более подробную информацию о [языке запросов](./concepts/query-language.md).
-- Узнайте больше о том, как [изучать ресурсы](./concepts/explore-resources.md).
-- Выполните свой первый запрос с помощью [портала Azure](first-query-portal.md).
-- Выполните первый запрос с помощью [Azure CLI](first-query-azurecli.md).
-- Ознакомьтесь с примерами [начальных запросов](./samples/starter.md).
-- Ознакомьтесь с примерами [усложненных запросов](./samples/advanced.md).
-- Оставьте отзыв с помощью [UserVoice](https://feedback.azure.com/forums/915958-azure-governance).
+При работе с этим кратким руководством вы добавили модуль Resource Graph в среду Azure PowerShell и выполнили первый запрос. Чтобы узнать больше о языке Resource Graph, перейдите на страницу сведений о языке запросов.
+
+> [!div class="nextstepaction"]
+> [Получите более подробную информацию о языке запросов](./concepts/query-language.md).

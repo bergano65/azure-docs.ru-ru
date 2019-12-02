@@ -1,20 +1,15 @@
 ---
-title: Учебник по сборке образа при фиксации кода. Задачи Реестра контейнеров Azure
+title: Учебник. Сборка образа на основе фиксации кода
 description: Из этого руководства вы узнаете, как настроить задачу Реестра контейнеров Azure, чтобы автоматически активировать сборки образов контейнера в облаке при фиксации исходного кода в репозитории Git.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
 ms.topic: tutorial
 ms.date: 05/04/2019
-ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: d01863979f4cf74d544ef2b1ff121022abb8d4f6
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 8af8daa4233fe6461b4e129f56a063e7cc212245
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73931425"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74454753"
 ---
 # <a name="tutorial-automate-container-image-builds-in-the-cloud-when-you-commit-source-code"></a>Руководство. Автоматизация создания образов контейнеров в облаке при фиксации исходного кода
 

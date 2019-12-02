@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 4ee9bf218765ea4c3966e7f0a8b20a8108de7655
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 72927dd89a81d2440bf78ba24402f5ce283006da
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73931910"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74405811"
 ---
 # <a name="quickstart-use-a-device-capability-model-to-create-an-iot-plug-and-play-preview-device-windows"></a>Краткое руководство. Создание устройства IoT Plug and Play (предварительная версия) в Windows с помощью модели возможностей устройства
 
@@ -46,46 +46,15 @@ _Строку подключения к репозиторию моделей к
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="prepare-an-iot-hub"></a>Подготовка Центра Интернета вещей
-
-Для выполнения инструкций, приведенных в этом кратком руководстве, также необходим Центр Интернета вещей Azure в подписке Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. Если у вас нет Центра Интернета вещей, создайте его, выполнив инструкции, указанные в [этой статье](../iot-hub/iot-hub-create-using-cli.md).
-
-> [!IMPORTANT]
-> На этапе общедоступной предварительной версии функции IoT Plug and Play доступны только в центрах Интернета вещей, созданных в таких регионах, как **Центральная часть США**, **Северная Европа** и **Восточная Япония**.
-
-Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell:
-
-```azurecli-interactive
-az extension add --name azure-cli-iot-ext
-```
-
-Выполните приведенную ниже команду, чтобы создать удостоверение устройства в Центре Интернета вещей. Замените заполнители **YourIoTHubName** и **YourDevice** фактическими именами.
-
-```azurecli-interactive
-az iot hub device-identity create --hub-name <YourIoTHubName> --device-id <YourDevice>
-```
-
-Выполните следующую команду, чтобы получить _строку подключения устройства_ для зарегистрированного устройства:
-
-```azurecli-interactive
-az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --device-id <YourDevice> --output table
-```
-
-Выполните следующую команду, чтобы получить _строку подключения к вашему Центру Интернета вещей_:
-
-```azurecli-interactive
-az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
-```
+[!INCLUDE [iot-pnp-prepare-iot-hub-windows.md](../../includes/iot-pnp-prepare-iot-hub-windows.md)]
 
 ## <a name="prepare-the-development-environment"></a>Подготовка среды разработки
 
-### <a name="get-azure-iot-device-sdk-for-c"></a>Получение пакета SDK для устройств Azure IoT для C
-
-С помощью этого краткого руководства вы подготовите среду разработки, установив пакет SDK для устройств Azure IoT для C с помощью [Vcpkg](https://github.com/microsoft/vcpkg).
+В этом кратком руководстве используется диспетчер библиотек [Vcpkg](https://github.com/microsoft/vcpkg) для установки пакета SDK для устройств Azure IoT для C в среде разработки.
 
 1. Откройте окно командной строки. Выполните указанную ниже команду, чтобы установить Vcpkg.
 
-    ```cmd/sh
+    ```cmd
     git clone https://github.com/Microsoft/vcpkg.git
     cd vcpkg
 
@@ -94,13 +63,13 @@ az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
 
     Затем, чтобы подключить [интеграцию](https://github.com/microsoft/vcpkg/blob/master/docs/users/integration.md) на уровне пользователя, выполните следующую команду (примечание: при первом использовании требуются привилегии администратора).
 
-    ```cmd/sh
+    ```cmd
     .\vcpkg.exe integrate install
     ```
 
 1. Установите Vcpkg для пакета SDK для устройств Azure IoT для C.
 
-    ```cmd/sh
+    ```cmd
     .\vcpkg.exe install azure-iot-sdk-c[public-preview,use_prov_client]
     ```
 
@@ -151,14 +120,14 @@ az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
 
 1. Создайте подкаталог `cmake` в папке `sample_device` и перейдите в эту папку.
 
-    ```cmd\sh
+    ```cmd
     mkdir cmake
     cd cmake
     ```
 
 1. Выполните приведенные ниже команды, чтобы выполнить сборку заглушки кода (заменив заполнитель каталогом репозитория Vcpkg).
 
-    ```cmd\sh
+    ```cmd
     cmake .. -G "Visual Studio 16 2019" -A Win32 -Duse_prov_client=ON -Dhsm_type_symm_key:BOOL=ON -DCMAKE_TOOLCHAIN_FILE="<directory of your Vcpkg repo>\scripts\buildsystems\vcpkg.cmake"
 
     cmake --build .
@@ -166,7 +135,7 @@ az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
     
     > [!NOTE]
     > При использовании Visual Studio 2017 или Visual Studio 2015 необходимо указать генератор CMake в соответствии с используемыми средствами сборки.
-    >```cmd\sh
+    >```cmd
     ># Either
     >cmake .. -G "Visual Studio 15 2017" -Duse_prov_client=ON -Dhsm_type_symm_key:BOOL=ON -DCMAKE_TOOLCHAIN_FILE="{directory of your Vcpkg repo}\scripts\buildsystems\vcpkg.cmake"
     ># or
@@ -178,7 +147,7 @@ az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
 
 1. После успешного выполнения сборки запустите приложение, передав в качестве параметра строку подключения к устройству центра Интернета вещей.
 
-    ```cmd\sh
+    ```cmd
     .\Debug\sample_device.exe "<device connection string>"
     ```
 
@@ -212,11 +181,11 @@ az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
 
 1. Введите _строку подключения к Центру Интернета вещей_ и щелкните **Подключить**.
 
-1. После подключения откроется страница обзора устройства.
+1. После подключения откроется **страница обзора устройства**.
 
 1. Чтобы добавить репозиторий своей компании, выберите **Settings** (Параметры), затем — **+ Add module definition source** (Добавить источник определений модулей), а затем — **Company repository** (Корпоративный репозиторий). Добавьте строку подключения к репозиторию моделей компании и выберите **Save and Connect** (Сохранить и подключиться).
 
-1. На странице обзора устройства найдите и выберите созданное ранее удостоверение устройства, чтобы просмотреть более подробную информацию.
+1. На странице обзора **устройства** найдите созданное ранее удостоверение устройства. Если приложение устройства по-прежнему выполняется в командной строке, убедитесь, что **состояние подключения устройства** в обозревателе Интернета вещей Azure — _Подключено_ (в противном случае нажимайте кнопку **Refresh** (Обновить), пока это состояние не появится). Выберите устройство, чтобы просмотреть дополнительные сведения.
 
 1. Разверните интерфейс с идентификатором **urn:<ИМЯ_ИНТЕРФЕЙСА>:EnvironmentSensor:1**, чтобы увидеть примитивы IoT Plug and Play: свойства, команды и данные телеметрии. Отображаемое имя интерфейса — это имя, которое вы ввели при создании модели.
 
@@ -226,7 +195,7 @@ az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
 
 1. Выберите страницу **Properties(writable)** (Свойства (доступные для записи)), чтобы просмотреть доступные для записи свойства, которые можно обновить.
 
-1. Разверните свойство **name**, укажите в качестве его значения новое имя и выберите **Update writeable property** (Обновить свойство, доступное для записи).
+1. Разверните свойство **name**, укажите в качестве его значения новое имя и выберите **Update writeable property** (Обновить свойство, доступное для записи). 
 
 1. Чтобы увидеть новое имя в столбце **Передаваемое свойство**, нажмите кнопку **Обновить** в верхней части страницы.
 
@@ -235,6 +204,8 @@ az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
 1. Разверните команду **​​blink** и установите новый интервал времени мигания. Выберите **Send command** (Отправить команду), чтобы вызвать команду на устройстве.
 
 1. Перейдите к командной строке имитированного устройства и просмотрите подтверждающие сообщения, чтобы проверить, выполнена ли команда должным образом.
+
+[!INCLUDE [iot-pnp-clean-resources.md](../../includes/iot-pnp-clean-resources.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 08/11/2019
+ms.date: 11/18/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 1ff46ec437de671d5804eeb31a5d1fb0284a8946
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: d8a4a6d650684cd5c8c0f22ad683c3952e2f6d08
+ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74123518"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74158382"
 ---
 # <a name="assess-hyper-v-vms-with-azure-migrate-server-assessment"></a>Оценка виртуальных машин Hyper-V с помощью средства "Оценка сервера" службы "Миграция Azure"
 
@@ -119,10 +119,8 @@ ms.locfileid: "74123518"
 
   **Алгоритм** | **Значение хэша**
   --- | ---
-  MD5 | d0a68e76ea24ba4e4a494c0dab95e90e
-  SHA256 | 0551221d2a9de75c352c201ccc88f7f10e87e5df1ecda42bfd4ec6c8defc57c0
-
-
+  MD5 | 29a7531f32bcf69f32d964fa5ae950bc
+  SHA256 | 37b3f27bc44f475872e355f04fcb8f38606c84534c117d1609f2d12444569b31
 
 ### <a name="create-the-appliance-vm"></a>Создание виртуальной машины устройства
 
@@ -223,7 +221,7 @@ Enable-WSManCredSSP -Role Client -DelegateComputer HyperVHost1.contoso.com Hyper
     - Вы можете добавить кластер, даже если возникли проблемы с конкретными узлами в кластере.
 4. После проверки щелкните **Сохранить и начать обнаружение**, чтобы начать процесс обнаружения.
 
-Запустится обнаружение. Чтобы метаданные обнаруженных серверов отобразились на портале Azure, потребуется около 1,5 минут на узел. 
+Запустится обнаружение. Чтобы метаданные обнаруженных серверов отобразились на портале Azure, потребуется около 1,5 минут на узел.
 
 ### <a name="verify-vms-in-the-portal"></a>Проверка виртуальных машин на портале
 

@@ -9,13 +9,13 @@ manager: cshankar
 ms.topic: quickstart
 ms.workload: big-data
 ms.custom: mvc seodec18
-ms.date: 09/23/2019
-ms.openlocfilehash: 0253a46cd73679c7c2f50a1e37d26d67578e342e
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.date: 11/15/2019
+ms.openlocfilehash: 7bccc75b4a70e98f069d1ffb86909368105b9a32
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74006425"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74167596"
 ---
 # <a name="quickstart-explore-azure-time-series-insights"></a>Краткое руководство. Знакомство со службой "Аналитика временных рядов Azure"
 
@@ -38,45 +38,47 @@ ms.locfileid: "74006425"
 
 1. Откроется страница краткого обзора Аналитики временных рядов. Нажмите кнопку **Далее**, чтобы начать изучение краткого обзора.
 
-   [![Щелкните "Далее"](media/quickstart/quickstart1.png)](media/quickstart/quickstart1.png#lightbox)
+   [![Сообщение приветствия в кратком руководстве. Нажмите кнопку "Далее"](media/quickstart/quickstart-welcome.png)](media/quickstart/quickstart-welcome.png#lightbox)
 
 ## <a name="explore-the-demo-environment"></a>Изучение демонстрационной среды
 
 1. Откроется **панель выбора времени**. На этой панели можно выбрать интервал времени для визуализации.
 
-   [![Панель выбора времени](media/quickstart/quickstart2.png)](media/quickstart/quickstart2.png#lightbox)
+   [![Панель выбора времени](media/quickstart/quickstart-time-selection-panel.png)](media/quickstart/quickstart-time-selection-panel.png#lightbox)
 
 1. Выберите интервал времени и перетащите его в область. Затем щелкните **Найти**.
 
-   [![Выбор интервала времени](media/quickstart/quickstart3.png)](media/quickstart/quickstart3.png#lightbox)
+   [![Выбор интервала времени](media/quickstart/quickstart-select-time.png)](media/quickstart/quickstart-select-time.png#lightbox)
 
    Служба "Аналитика временных рядов" отображает визуализацию диаграммы для указанного интервала времени. На графике можно выполнять различные действия. Например, можно фильтровать, закреплять, сортировать и распределять элементы.
 
    Чтобы вернуться к **панели выбора времени**, щелкните стрелку вниз, как показано ниже.
 
-   [![Диаграмма](media/quickstart/quickstart4.png)](media/quickstart/quickstart4.png#lightbox)
+   [![Диаграмма](media/quickstart/quickstart-select-down-arrow.png)](media/quickstart/quickstart-select-down-arrow.png#lightbox)
 
 1. Нажмите кнопку **Добавить** на **панели условий**, чтобы добавить новое условие поиска.
 
-   [![Добавление элемента](media/quickstart/quickstart5.png)](media/quickstart/quickstart5.png#lightbox)
+   [![Панель добавления условий поиска](media/quickstart/quickstart-add-terms.png)](media/quickstart/quickstart-add-terms.png#lightbox)
 
 1. В диаграмме можно выбрать область, щелкнуть ее правой кнопкой мыши и выбрать **Explore Events** (Исследовать события).
 
-   [![Исследование событий](media/quickstart/quickstart6.png)](media/quickstart/quickstart6.png#lightbox)
+   [![Исследование событий](media/quickstart/quickstart-explore-events.png)](media/quickstart/quickstart-explore-events.png#lightbox)
 
    Отобразится сетка необработанных данных по исследуемой области.
 
-   [![Представление сетки](media/quickstart/quickstart7.png)](media/quickstart/quickstart7.png#lightbox)
+   [![Просмотр событий — представление данных сетки](media/quickstart/quickstart-explore-events-grid-data.png)](media/quickstart/quickstart-explore-events-grid-data.png#lightbox)
 
 ## <a name="select-and-filter-data"></a>Выбор и фильтрация данных
 
 1. Измените условия, чтобы изменить значения на диаграмме. Добавьте еще одно условие для перекрестной корреляции значений разных типов.
 
-   [![Добавление условия](media/quickstart/quickstart8.png)](media/quickstart/quickstart8.png#lightbox)
+   [![Добавление условия](media/quickstart/quickstart-add-a-term.png)](media/quickstart/quickstart-add-a-term.png#lightbox)
 
-1. Введите условие фильтра в поле **Фильтровать ряды…** для импровизированной фильтрации рядов. Для начала введите **Station5**, чтобы выполнить перекрестную корреляцию температуры и давления для соответствующей станции.
+1. Оставьте поле **Фильтровать ряды** пустым, чтобы просмотреть все выбранные условия поиска, или введите условие фильтра в поле **Фильтровать ряды** для импровизированной фильтрации рядов.
 
-   [![Фильтр рядов](media/quickstart/quickstart9.png)](media/quickstart/quickstart9.png#lightbox)
+   [![Фильтр рядов](media/quickstart/quickstart-filter-series.png)](media/quickstart/quickstart-filter-series.png#lightbox)
+
+   Для начала введите **Station5**, чтобы выполнить перекрестную корреляцию температуры и давления для соответствующей станции.
 
 После завершения работы с кратким руководством можно поэкспериментировать с примером набора данных, создавая различные визуализации.
 

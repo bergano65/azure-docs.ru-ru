@@ -1,19 +1,16 @@
 ---
-title: 'Руководство: использование файла параметров для развертывания шаблона Azure Resource Manager'
+title: Учебник. Развертывание шаблона с помощью файла параметров
 description: Используйте файлы параметров, которые содержат значения, используемые для развертывания шаблона Azure Resource Manager.
-services: azure-resource-manager
 author: mumian
-manager: carmonmills
-ms.service: azure-resource-manager
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: fa29ea3d2f6edbbb016ce5c0c74415a5e765e85a
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: 1b01e9ece2d194d76c7184a676f17d626c41a011
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72177550"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74405977"
 ---
 # <a name="tutorial-use-parameter-files-to-deploy-your-resource-manager-template"></a>Руководство по использованию файлов параметров для развертывания шаблона Resource Manager
 
@@ -25,7 +22,7 @@ ms.locfileid: "72177550"
 
 Вам понадобится Visual Studio Code с расширением инструментов Resource Manager и либо Azure PowerShell, либо Azure CLI. Дополнительные сведения см. в разделе об [инструментах шаблона](template-tutorial-create-first-template.md#get-tools).
 
-## <a name="review-your-template"></a>Проверка шаблона
+## <a name="review-template"></a>Проверка шаблона
 
 Шаблон содержит множество параметров, которые можно указать во время развертывания. В конце предыдущего учебника шаблон выглядел следующим образом:
 
@@ -49,7 +46,7 @@ ms.locfileid: "72177550"
 
 Это файл параметров для рабочей среды. Обратите внимание, что он использует Standard_GRS для учетной записи хранения, именует ресурсы с применением префикса **contoso** и задает для тега **Environment** значение **Production**. В реальной рабочей среде также необходимо использовать службу приложений с номером SKU, отличным от "Бесплатный", но мы продолжим использовать его в рамках этого учебника.
 
-## <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-template"></a>Развертывание шаблона
 
 Для развертывания шаблона используйте либо Azure CLI, либо Azure PowerShell.
 
@@ -119,7 +116,7 @@ az group deployment create \
 
 ---
 
-## <a name="verify-the-deployment"></a>Проверка развертывания
+## <a name="verify-deployment"></a>Проверка развертывания
 
 Чтобы проверить развертывание, просмотрите группы ресурсов на портале Azure.
 

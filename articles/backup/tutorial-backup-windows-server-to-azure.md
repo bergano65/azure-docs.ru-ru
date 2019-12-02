@@ -1,20 +1,15 @@
 ---
-title: Архивация Windows Server в Azure
+title: Учебник. Резервное копирование Windows Server в Azure
 description: В этом руководстве представлены сведения об архивации локальных серверов Windows Server в хранилище служб восстановления.
-author: dcurwin
-manager: carmonm
-keywords: архивация windows server; резервное копирование windows server; архивация и аварийное восстановление
-ms.service: backup
 ms.topic: tutorial
 ms.date: 08/22/2018
-ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: d57d25eff9548bea9d29f8aa908e9e1721495bd9
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 906901ce4792e8b363a3a9b77c9bf6bb4b59aec5
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74073948"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74226478"
 ---
 # <a name="back-up-windows-server-to-azure"></a>Архивация Windows Server в Azure
 
@@ -28,7 +23,7 @@ ms.locfileid: "74073948"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите на портал Azure по адресу <https://portal.azure.com.>.
+Войдите на портал Azure по адресу https://portal.azure.com.
 
 ## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
 

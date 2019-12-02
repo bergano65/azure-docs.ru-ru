@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: d2c03143eca9f335c440dfcaee766e205b5c0730
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7a683923ba48b1f354f90ac94d746cb92f359e7a
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67087151"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74233320"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-wikispaces"></a>Руководство по Интеграция Azure Active Directory с Wikispaces
 
@@ -194,11 +194,11 @@ ms.locfileid: "67087151"
 
 3. Щелкните **Пригласить пользователей**.
    
-    ![Приглашение участников](./media/wikispaces-tutorial/ic787194.png "приглашение участников")
+    ![Приглашение пользователей](./media/wikispaces-tutorial/ic787194.png "Приглашение пользователей")
 
 4. В разделе **Пригласить пользователей** выполните следующие действия.
    
-    ![Приглашение участников](./media/wikispaces-tutorial/ic787208.png "приглашение участников")
+    ![Приглашение пользователей](./media/wikispaces-tutorial/ic787208.png "Приглашение пользователей")
    
     a. Введите **имя пользователя или электронный адрес** для действующей учетной записи AAD, которую вы хотите подготовить, в соответствующие текстовые поля.
    
@@ -222,5 +222,5 @@ ms.locfileid: "67087151"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 09/04/2019
-ms.openlocfilehash: b2705f209b2acf1198ea555a5de2f79987a4d0e3
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b417823d0ec7ed838186d53c1bb25400a148e0e9
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73494242"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533917"
 ---
 # <a name="tutorial-use-azure-toolkit-for-intellij-to-create-apache-spark-applications-for-hdinsight-cluster"></a>Руководство по Использование Azure Toolkit for IntelliJ для создания приложений Apache Spark для кластера HDInsight
 
@@ -336,8 +336,6 @@ ms.locfileid: "73494242"
 
 ### <a name="spark-livy-interactive-session-consolescala"></a>Консоль (Scala) Spark в интерактивном режиме Livy
 
-Она поддерживается только на IntelliJ 2018.2 и 2018.3.
-
 1. В строке меню перейдите к **Run** (Запуск) > **Edit Configurations...** (Изменить конфигурацию...).
 
 2. В левой панели окна **Run/Debug Configurations** (Конфигурации запуска или отладки) перейдите к **Apache Spark on HDInsight** (Apache Spark в HDInsight) >  **[Spark on HDInsight] myApp** (myApp [Spark в HDInsight]).
@@ -366,6 +364,25 @@ ms.locfileid: "73494242"
 Удобно предвидеть результат сценария, отправив код в локальную консоль или консоль интерактивного сеанса Livy(Scala). Вы можете выделить код в файле Scala, а затем щелкнуть правой кнопкой мыши **Send Selection To Spark Console** (Отправка выделенного фрагмента в консоль Spark). Выбранный код будет отправлен в консоль и выполнен. Результат появится после кода в консоли. Консоль проверит ошибки, если они существуют.  
 
    ![Отправка выделенного фрагмента в консоль Spark](./media/apache-spark-intellij-tool-plugin/send-selection-to-console.png)
+
+## <a name="integrate-with-hdinsight-identity-broker-hib"></a>Интеграция с брокером удостоверений HDInsight (HIB) 
+
+### <a name="connect-to-your-hdinsight-esp-cluster-with-id-broker-hib"></a>Подключение к кластеру HDInsight ESP с брокером удостоверений (HIB)
+Вы можете выполнить обычный вход в подписку Azure, чтобы подключиться к кластеру HDInsight ESP с брокером удостоверений (HIB). После входа вы увидите список кластеров в Azure Explorer. Указания см. в разделе [Подключение к кластеру HDInsight](#connect-to-your-hdinsight-cluster).
+
+### <a name="run-a-spark-scala-application-on-an-hdinsight-esp-cluster-with-id-broker-hib"></a>Запуск приложения Spark Scala в кластере HDInsight ESP с брокером удостоверений (HIB)
+Отправку задания в кластер HDInsight ESP с брокером удостоверений (HIB) можно выполнить обычным образом. Указания см. в разделе [Запуск приложения Spark Scala в кластере HDInsight Spark](#run-a-spark-scala-application-on-an-hdinsight-spark-cluster).
+
+Отправим необходимые файлы в папку с именем вашей учетной записи входа, и вы сможете увидеть путь отправки в файле конфигурации.
+
+   ![путь отправки в конфигурации](./media/apache-spark-intellij-tool-plugin/upload-path-in-the-configuration.png)
+
+### <a name="spark-console-on-an-hdinsight-esp-cluster-with-id-broker-hib"></a>Консоль Spark в кластере HDInsight ESP с брокером удостоверений (HIB)
+В кластере HDInsight ESP с брокером удостоверений (HIB) можно запустить консоль (Scala) Spark в локальном режиме или в интерактивном режиме Livy. Дополнительные инструкции см. в разделе [Консоль Spark](#spark-console).
+
+   > [!NOTE]  
+   > Для кластера HDInsight ESP с брокером удостоверений (HIB) [связь кластера](#link-a-cluster) и [удаленная отладка приложений Apache Spark](#debug-apache-spark-applications-locally-or-remotely-on-an-hdinsight-cluster) в настоящее время не поддерживается.
+
 
 ## <a name="reader-only-role"></a>Роль только для чтения
 

@@ -1,24 +1,16 @@
 ---
-title: Использование условия в шаблонах Azure Resource Manager | Документация Майкрософт
+title: Использование условия в шаблонах
 description: Узнайте, как развернуть ресурсы Azure на основе условий. В этой статье также объясняется, как развернуть новый ресурс либо использовать существующий.
-services: azure-resource-manager
-documentationcenter: ''
 author: mumian
-manager: dougeby
-editor: tysonn
-ms.service: azure-resource-manager
-ms.workload: multiple
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.date: 05/21/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 5fa1db5131f555c92aa12fc01a109469c2cf819e
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 7aecc25daed8f73e903b181d782e53c0ea5acd74
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72390191"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325331"
 ---
 # <a name="tutorial-use-condition-in-azure-resource-manager-templates"></a>Руководство по Использование условия в шаблонах Azure Resource Manager
 
@@ -49,7 +41,7 @@ ms.locfileid: "72390191"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* [Visual Studio Code](https://code.visualstudio.com/) с [расширением Resource Manager Tools](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#prerequisites).
+* Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](./resource-manager-tools-vs-code.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
 
     ```azurecli-interactive

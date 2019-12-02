@@ -1,5 +1,5 @@
 ---
-title: Самостоятельная регистрация на портале для службы "Совместная работа B2B" — Azure Active Directory | Документация Майкрософт
+title: Самостоятельная регистрация на портале для службы "Совместная работа B2B" — Azure AD
 description: Служба совместной работы Azure Active Directory B2B поддерживает взаимодействие между компаниями, позволяя предоставлять бизнес-партнерам выборочный доступ к вашим корпоративным приложениям.
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28db43a345fb29a7529136ddfb929f5a48ccb1f8
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 794a13a3f863c732d4e7ed8cedcbd73f7cbc0d0b
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65785431"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74272107"
 ---
 # <a name="self-service-portal-for-azure-ad-b2b-collaboration-sign-up"></a>Самостоятельная регистрация на портале для службы совместной работы Azure AD B2B
 

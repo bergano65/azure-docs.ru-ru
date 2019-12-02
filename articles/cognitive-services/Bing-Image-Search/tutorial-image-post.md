@@ -1,5 +1,5 @@
 ---
-title: Руководство. Извлечение сведений об изображении с помощью API Bing для поиска изображений и C#
+title: Руководство по Извлечение сведений об изображении с помощью REST API Поиска изображений Bing и C#
 titleSuffix: Azure Cognitive Services
 description: Воспользуйтесь этой статьей, чтобы создать приложение C#, извлекающее сведения об изображении с помощью API Bing для поиска изображений.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: bing-image-search
 ms.topic: tutorial
 ms.date: 05/15/2019
 ms.author: aahi
-ms.openlocfilehash: 995ccc8ffeb436526608803362cc361c74a75316
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: e9ba5925ce562e53dbc415d66bbb529c32a725a7
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65790033"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327010"
 ---
 # <a name="tutorial-extract-image-details-using-the-bing-image-search-api-and-c"></a>Руководство. Извлечение сведений об изображении с помощью API Bing для поиска изображений и C#
 
@@ -98,7 +98,7 @@ var searchResult = new SearchResult()
 
 ## <a name="use-an-image-insights-token-in-a-request"></a>Использование токена аналитических сведений изображения в запросе
 
-Для использования токена `ImageInsightsToken`, возвращенного с результатами запроса `POST`, его можно добавить в запрос `GET`. Например: 
+Для использования токена `ImageInsightsToken`, возвращенного с результатами запроса `POST`, его можно добавить в запрос `GET`. Например:
 
 ```
 https://api.cognitive.microsoft.com/bing/v7.0/images/details?InsightsToken="bcid_A2C4BB81AA2C9EF8E049C5933C546449*ccid_osS7gaos*mid_BF7CC4FC4A882A3C3D56E644685BFF7B8BACEAF2

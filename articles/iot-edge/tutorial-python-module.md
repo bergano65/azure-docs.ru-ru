@@ -9,13 +9,13 @@ ms.author: xshi
 ms.date: 10/14/2019
 ms.topic: tutorial
 ms.service: iot-edge
-ms.custom: mvc, seodec18
-ms.openlocfilehash: 99df85800c48585098a9df5bcc35d6b9ce9a8903
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.custom: mvc
+ms.openlocfilehash: c37d778fe9ad7d21943ed92452fae34b4b8771e7
+ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72331636"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74560923"
 ---
 # <a name="tutorial-develop-and-deploy-a-python-iot-edge-module-for-linux-devices"></a>Руководство по разработке модуля IoT Edge на языке Python и его развертыванию на устройствах Linux
 
@@ -269,7 +269,9 @@ ms.locfileid: "72331636"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве вы создали модуль IoT Edge, который содержит код для фильтрации необработанных данных, созданных вашим устройством IoT Edge. Дополнительные сведения см. в статьях о [разработке модулей IoT Edge](module-development.md) и [разработке модулей с помощью Visual Studio Code](how-to-vs-code-develop-module.md). Перейдите к следующим руководствам, чтобы узнать, как Azure IoT Edge поможет развернуть облачные службы Azure для обработки данных на пограничном устройстве.
+В этом руководстве вы создали модуль IoT Edge, который содержит код для фильтрации необработанных данных, созданных вашим устройством IoT Edge. Дополнительные сведения см. в статьях о [разработке модулей IoT Edge](module-development.md) и [разработке модулей с помощью Visual Studio Code](how-to-vs-code-develop-module.md). Примеры модулей IoT Edge, включая смоделированный модуль температуры, см. в этой [статье](https://github.com/Azure/iotedge/tree/master/edge-modules) и на [странице примеров пакета SDK Azure IoT для Python](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/advanced-edge-scenarios). 
+
+Перейдите к следующим руководствам, чтобы узнать, как Azure IoT Edge поможет развернуть облачные службы Azure для обработки данных на пограничном устройстве.
 
 > [!div class="nextstepaction"]
 > [Функции](tutorial-deploy-function.md)

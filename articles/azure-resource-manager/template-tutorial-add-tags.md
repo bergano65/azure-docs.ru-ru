@@ -1,19 +1,16 @@
 ---
-title: Учебник. добавление тегов в ресурсы в шаблоне Azure Resource Manager
+title: Учебник. Добавление тегов к ресурсам в шаблоне
 description: Добавьте теги к ресурсам, развертываемым в шаблоне Azure Resource Manager. Теги позволяют логически упорядочивать ресурсы.
-services: azure-resource-manager
 author: mumian
-manager: carmonmills
-ms.service: azure-resource-manager
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 8b6ff50f7254a51bcdf37ecb0afd8f0041a2c5da
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: 078d85b3120baf5b8bea9c305fb1f97763f8df59
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72177569"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406067"
 ---
 # <a name="tutorial-add-tags-in-your-resource-manager-template"></a>Руководство по Добавление тегов в шаблон Resource Manager
 
@@ -25,7 +22,7 @@ ms.locfileid: "72177569"
 
 Вам понадобится Visual Studio Code с расширением инструментов Resource Manager и либо Azure PowerShell, либо Azure CLI. Дополнительные сведения см. в разделе об [инструментах шаблона](template-tutorial-create-first-template.md#get-tools).
 
-## <a name="review-your-template"></a>Проверка шаблона
+## <a name="review-template"></a>Проверка шаблона
 
 Предыдущий шаблон развернул учетную запись хранения, план службы приложений и веб-приложение.
 
@@ -41,7 +38,7 @@ ms.locfileid: "72177569"
 
 [!code-json[](~/resourcemanager-templates/get-started-with-templates/add-tags/azuredeploy.json?range=1-118&highlight=46-52,64,78,100)]
 
-## <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-template"></a>Развертывание шаблона
 
 Пора развернуть шаблон и просмотреть результаты.
 
@@ -71,7 +68,7 @@ az group deployment create \
 
 ---
 
-## <a name="verify-the-deployment"></a>Проверка развертывания
+## <a name="verify-deployment"></a>Проверка развертывания
 
 Чтобы проверить развертывание, просмотрите группу ресурсов на портале Azure.
 

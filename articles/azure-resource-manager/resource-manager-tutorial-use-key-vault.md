@@ -1,25 +1,17 @@
 ---
-title: Использование Azure Key Vault в шаблоне Resource Manager
+title: Использование Azure Key Vault в шаблонах
 description: Узнайте, как использовать Azure Key Vault для передачи значений безопасного параметра во время развертывания шаблона Resource Manager
-services: azure-resource-manager
-documentationcenter: ''
 author: mumian
-manager: dougeby
-editor: tysonn
-ms.service: azure-resource-manager
-ms.workload: multiple
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.date: 05/23/2019
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: 5dfc186e5d047de76e16ec145f5f0afe94b8d2f4
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.openlocfilehash: ebb61bfd0fd1d39a9c1b17126fdd0e576e5629a2
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72533597"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74326393"
 ---
 # <a name="tutorial-integrate-azure-key-vault-in-your-resource-manager-template-deployment"></a>Руководство по интеграции Azure Key Vault в развертывание шаблона Resource Manager
 
@@ -47,7 +39,7 @@ ms.locfileid: "72533597"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* [Visual Studio Code](https://code.visualstudio.com/) с [расширением средств Resource Manager](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#prerequisites).
+* Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](./resource-manager-tools-vs-code.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
 * С целью повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
 
     ```azurecli-interactive

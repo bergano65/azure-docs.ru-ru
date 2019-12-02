@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Проверка орфографии с REST API "Проверка орфографии Bing" и PHP
+title: Краткое руководство. Проверка орфографии с помощью REST API и PHP — Проверка орфографии Bing
 titleSuffix: Azure Cognitive Services
 description: Это простое приложение PHP отправляет запрос к API Проверки орфографии Bing и возвращает список предлагаемых исправлений.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: bing-spell-check
 ms.topic: quickstart
 ms.date: 02/20/2019
 ms.author: aahi
-ms.openlocfilehash: 4437297c99e346209cf1f7a8973ea0f6f81894af
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 8c95f0960c098ad56affc641996f1b52681d473e
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74110794"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74383853"
 ---
 # <a name="quickstart-check-spelling-with-the-bing-spell-check-rest-api-and-php"></a>Краткое руководство. Проверка орфографии с REST API "Проверка орфографии Bing" и PHP
 

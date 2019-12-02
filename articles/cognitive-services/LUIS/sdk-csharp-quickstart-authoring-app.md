@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 08/30/2019
 ms.author: diberry
-ms.openlocfilehash: 6af076f585e7fc9afe870acada744ead2d2e9118
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 49a28fb779b7a48b598059e9494cb28e9ec57a6e
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73672089"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74405903"
 ---
 # <a name="quickstart-language-understanding-luis-authoring-client-library-for-net"></a>Краткое руководство. Клиентская библиотека для разработки Распознавания речи (LUIS) для .NET
 
@@ -35,11 +35,51 @@ ms.locfileid: "73672089"
 * Учетную запись на портале LUIS [можно создать бесплатно](https://www.luis.ai).
 * Текущая версия [.NET Core](https://dotnet.microsoft.com/download/dotnet-core).
 
+
 ## <a name="setting-up"></a>Настройка
 
 ### <a name="get-your-language-understanding-luis-starter-key"></a>Получение начального ключа LUIS
 
-Получите [начальный ключ](luis-how-to-azure-subscription.md#starter-key) и [создайте переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа с именем `COGNITIVESERVICE_AUTHORING_KEY`.
+Получите [ключ для начала работы](luis-how-to-azure-subscription.md#starter-key), создав ресурс разработки LUIS. Сохраните ключ и регион ключа для следующего шага.
+
+### <a name="create-an-environment-variable"></a>Создание переменной среды
+
+Используя ключ и регион для ключа, создайте две переменные среды для проверки подлинности:
+
+* `COGNITIVESERVICE_AUTHORING_KEY` — ключ ресурса для проверки подлинности запросов.
+* `COGNITIVESERVICE_REGION` — регион, связанный с ключом. Пример: `westus`.
+
+Используйте инструкции для своей операционной системы.
+
+#### <a name="windowstabwindows"></a>[Windows](#tab/windows)
+
+```console
+setx COGNITIVESERVICE_AUTHORING_KEY <replace-with-your-authoring-key>
+setx COGNITIVESERVICE_REGION <replace-with-your-authoring-region>
+```
+
+Добавив переменную среды, перезапустите окно консоли.
+
+#### <a name="linuxtablinux"></a>[Linux](#tab/linux)
+
+```bash
+export COGNITIVESERVICE_AUTHORING_KEY=<replace-with-your-authoring-key>
+export COGNITIVESERVICE_REGION=<replace-with-your-authoring-region>
+```
+
+После добавления переменной среды запустите `source ~/.bashrc` из окна консоли, чтобы применить изменения.
+
+#### <a name="macostabunix"></a>[macOS](#tab/unix)
+
+Измените `.bash_profile` и добавьте переменную среды:
+
+```bash
+export COGNITIVESERVICE_AUTHORING_KEY=<replace-with-your-authoring-key> 
+export COGNITIVESERVICE_REGION=<replace-with-your-authoring-region>
+```
+
+После добавления переменной среды запустите `source .bash_profile` из окна консоли, чтобы применить изменения.
+***
 
 ### <a name="create-a-new-c-application"></a>Создание нового приложения C#
 
@@ -47,7 +87,7 @@ ms.locfileid: "73672089"
 
 1. В окне консоли (cmd, PowerShell или Bash) выполните команду dotnet `new`, чтобы создать консольное приложение с именем `language-understanding-quickstart`. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: `Program.cs`. 
 
-    ```console
+    ```dotnetcli
     dotnet new console -n language-understanding-quickstart
     ```
 
@@ -55,7 +95,7 @@ ms.locfileid: "73672089"
 
 1. Чтобы создать приложение, выполните следующую команду:
 
-    ```console
+    ```dotnetcli
     dotnet build
     ```
 
@@ -74,7 +114,7 @@ ms.locfileid: "73672089"
 
 В каталоге приложения установите клиентскую библиотеку для разработки LUIS для .NET с помощью следующей команды:
 
-```console
+```dotnetcli
 dotnet add package Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring --version 3.0.0
 ```
 
@@ -109,7 +149,7 @@ dotnet add package Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring --v
 
 ## <a name="add-the-dependencies"></a>Добавление зависимостей
 
-В каталоге проекта откройте файл **Program.cs** в предпочитаемом редакторе или интегрированной среде разработки. Замените существующий код `using` следующими директивами `using`.
+В каталоге проекта откройте файл *Program.cs* в предпочитаемом редакторе или интегрированной среде разработки. Замените существующий код `using` следующими директивами `using`.
 
 [!code-csharp[Using statements](~/cognitive-services-dotnet-sdk-samples/documentation-samples/quickstarts/LUIS/LUIS.cs?name=Dependencies)]
 
@@ -188,9 +228,9 @@ dotnet add package Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring --v
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
-Перейдите к каталогу приложения и запустите приложение с помощью команды dotnet `run`.
+Запустите приложение с помощью команды `dotnet run` из каталога приложения.
 
-```console
+```dotnetcli
 dotnet run
 ```
 

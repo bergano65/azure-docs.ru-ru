@@ -1,23 +1,16 @@
 ---
-title: Пример сценария Azure CLI. Создание приложения-функции в плане службы приложений | Документация Майкрософт
+title: Создание приложения-функции в плане службы приложений с помощью Azure CLI
 description: Пример сценария Azure CLI для создания приложения-функции в плане службы приложений.
-services: functions
-documentationcenter: functions
-author: ggailey777
-manager: jeconnoc
 ms.assetid: 0e221db6-ee2d-4e16-9bf6-a456cd05b6e7
-ms.service: azure-functions
-ms.devlang: azurecli
 ms.topic: sample
 ms.date: 07/03/2018
-ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: 85fe8e567cd00decbefe79c77c11f777820080ee
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 77e026e12d14745c308e1d02fade13f318d9e532
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60325686"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74532839"
 ---
 # <a name="create-a-function-app-in-an-app-service-plan"></a>Создание приложения-функции в плане службы приложений
 
@@ -43,13 +36,13 @@ ms.locfileid: "60325686"
 
 | Команда | Примечания |
 |---|---|
-| [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az storage account create](https://docs.microsoft.com/cli/azure/storage/account#az-storage-account-create) | Создает учетную запись хранения Azure. |
-| [az appservice plan create](https://docs.microsoft.com/cli/azure/appservice/plan#az-appservice-plan-create) | Создает план службы приложений. |
-| [az functionapp create](https://docs.microsoft.com/cli/azure/functionapp#az-functionapp-create) | Создает приложение-функцию в плане службы приложений. |
+| [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [az storage account create](/cli/azure/storage/account#az-storage-account-create) | Создает учетную запись хранения Azure. |
+| [az functionapp plan create](/cli/azure/functionapp/plan#az-functionapp-plan-create) | Создает план "Премиум". |
+| [az functionapp create](/cli/azure/functionapp#az-functionapp-create) | Создает приложение-функцию в плане службы приложений. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
 Дополнительные примеры сценариев Azure CLI для Функций Azure см. в [документации по Функциям Azure](../functions-cli-samples.md).

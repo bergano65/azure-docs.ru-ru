@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/08/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e1d1973dd51068e6f3e0746ee988a51f375899f
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 9bd9ea5565ea64415c00a458236456bed04b6c38
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67588019"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74233385"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-springcm"></a>Руководство. Интеграция Azure Active Directory с SpringCM
 
@@ -210,7 +210,7 @@ ms.locfileid: "67588019"
 
 1. Щелкните **GO TO** (Перейти), а затем — **ADDRESS BOOK** (Адресная книга).
    
-    ![Создание пользователя](./media/spring-cm-tutorial/ic797054.png "Создание пользователя")
+    ![Создание пользователя](./media/spring-cm-tutorial/ic797054.png "Создать пользователя")
 
 1. Нажмите кнопку **Создать пользователя**.
 
@@ -225,7 +225,7 @@ ms.locfileid: "67588019"
 1. Выберите команду **Сохранить**.
 
    > [!NOTE]
-   > Вы можете использовать любые другие инструменты создания учетных записей пользователей SpringCM или API, предоставляемые SpringCM для подготовки учетных записей пользователей AAD.
+   > Вы можете использовать любые другие инструменты создания учетных записей пользователей SpringCM или API, предоставляемые SpringCM, для подготовки учетных записей пользователей AAD.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -239,5 +239,5 @@ ms.locfileid: "67588019"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

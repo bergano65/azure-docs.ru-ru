@@ -1,17 +1,14 @@
 ---
-title: Создание и развертывание проектов группы ресурсов Azure в Visual Studio
+title: Создание и развертывание проектов группы ресурсов в Visual Studio
 description: Использование Visual Studio для создания проекта группы ресурсов Azure и развертывания ресурсов в Azure.
-author: tfitzmac
-ms.service: azure-resource-manager
 ms.topic: quickstart
 ms.date: 10/16/2019
-ms.author: tomfitz
-ms.openlocfilehash: ae7ff9370bd289dfdec578e6daeb471bbd53a072
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 39ee16ac81ee1b163a4ed4c80152a063f7ee619c
+ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72597665"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74149242"
 ---
 # <a name="creating-and-deploying-azure-resource-groups-through-visual-studio"></a>Создание и развертывание групп ресурсов Azure с помощью Visual Studio
 

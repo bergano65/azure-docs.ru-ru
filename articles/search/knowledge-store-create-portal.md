@@ -2,23 +2,23 @@
 title: Создание хранилища знаний (предварительная версия) на портале Azure
 titleSuffix: Azure Cognitive Search
 description: Используйте мастер импорта данных, чтобы создать хранилище знаний для сохранения обогащенного содержимого. Подключитесь к хранилищу знаний для анализа из других приложений или отправьте обогащенное содержимое в нисходящие процессы. Эта функция сейчас доступна в виде общедоступной предварительной версии.
-author: lisaleib
+author: HeidiSteen
+ms.author: heidist
 manager: nitinme
-ms.author: v-lilei
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 11/04/2019
-ms.openlocfilehash: 56053a942604a6f1cb935e6bddcae85ffc5a9e54
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: a8cc368b2949d9a65034ee4f989b8603dfa01027
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73720104"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533953"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-knowledge-store-in-the-azure-portal"></a>Краткое руководство. Создание хранилища знаний службы "Когнитивный поиск Azure" на портале Azure
 
 > [!IMPORTANT] 
-> Сейчас хранилище знаний доступно в виде общедоступной предварительной версии. Предварительная версия функции предоставляется без соглашения об уровне обслуживания, и мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). 
+> Сейчас хранилище знаний доступно в виде общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). 
 
 Хранилище знаний — это компонент Когнитивного поиска Azure, который сохраняет выходные данные конвейера когнитивных навыков для последующего анализа или обработки. 
 
@@ -56,7 +56,7 @@ ms.locfileid: "73720104"
 
 <!-- 1. You are almost done with this resource, but before you leave these pages, use a link on the left navigation pane to open the **Access Keys** page. Get a connection string to retrieve data from Blob storage. A connection string looks similar to the following example: `DefaultEndpointsProtocol=https;AccountName=<YOUR-ACCOUNT-NAME>;AccountKey=<YOUR-ACCOUNT-KEY>;EndpointSuffix=core.windows.net` -->
 
-1. [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве.
+1. [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices). Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве.
 
 Теперь можно перейти к мастеру импорта данных.
 

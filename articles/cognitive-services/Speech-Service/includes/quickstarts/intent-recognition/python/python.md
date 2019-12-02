@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 10/28/2019
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 4efa535118d075addf78b2e9be6a645c458d6bb4
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: f39ddc8a3460bc026bdac96c18b5bea4d6ecfc0f
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74125591"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74280413"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 

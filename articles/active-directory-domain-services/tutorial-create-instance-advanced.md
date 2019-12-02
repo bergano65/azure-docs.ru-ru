@@ -7,14 +7,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/30/2019
+ms.date: 11/19/2019
 ms.author: iainfou
-ms.openlocfilehash: 7bafcb1508cdb01c4fe27a9d02db63c4f00efd74
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 334a5c3c76f1ebaf4c8c36020110ef9c0bcc8d69
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73172564"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74208693"
 ---
 # <a name="tutorial-create-and-configure-an-azure-active-directory-domain-services-instance-with-advanced-configuration-options"></a>Руководство по созданию и настройке экземпляра доменных служб Azure Active Directory с помощью расширенных параметров конфигурации
 
@@ -56,7 +56,7 @@ ms.locfileid: "73172564"
 
 Чтобы запустить мастер **включения доменных служб Azure AD**, выполните указанные ниже действия.
 
-1. Щелкните **+ Создать ресурс** в верхнем левом углу окна портала Azure.
+1. На **домашней странице** или в меню портала Azure выберите команду **Создать ресурс**.
 1. В строке поиска введите *Доменные службы* и выберите *Доменные службы Azure AD* в списке вариантов.
 1. На странице "Доменные службы Azure AD" щелкните **Создать**. Запустится мастер **включения доменных служб Azure AD**.
 1. Выберите **подписку** Azure, в которой следует создать управляемый домен.
@@ -75,7 +75,7 @@ ms.locfileid: "73172564"
 >
 > В этих руководствах и инструкциях в качестве примера используется личный домен *contoso.com*. Используйте во всех командах собственное доменное имя, которое может включать уникальный префикс.
 >
-> Дополнительные сведения см. в инструкции [по выбору префикса именования для домена][naming-prefix].
+> Дополнительные сведения см. в инструкции по [выбору префикса именования для домена].
 
 Также применимы следующие ограничения в отношении DNS:
 
@@ -93,6 +93,10 @@ ms.locfileid: "73172564"
     Зоны доступности — уникальные физические расположения в пределах одного региона Azure. Каждая зона состоит из одного или нескольких центров обработки данных, оснащенных независимыми системами электроснабжения, охлаждения и сетевого взаимодействия. Чтобы обеспечить отказоустойчивость, во всех включенных регионах используются минимум три отдельные зоны.
 
     Вы не можете настроить распределение Azure AD DS между зонами. Платформа Azure автоматически обрабатывает распределение ресурсов зоны. Дополнительные сведения о зонах доступности и регионах см. в статье [Что такое зоны доступности в Azure?][availability-zones].
+
+1. *Лес* — это логическая конструкция, используемая доменными службами Active Directory для группирования одного или нескольких доменов. По умолчанию управляемый домен AD DS Azure создается как лес *пользователей*. Лес этого типа синхронизирует все объекты из Azure AD, включая учетные записи пользователей, созданные в локальной среде AD DS. Лес *ресурсов* синхронизирует только пользователей и группы, созданные непосредственно в Azure AD. Леса ресурсов в настоящее время доступны в предварительной версии. Дополнительные сведения о лесах *ресурсов*, в том числе об их предназначении и о создании доверия между лесами и локальными доменами AD DS, см. в [этой статье][resource-forests].
+
+    Для работы с этим учебником создайте лес *пользователей*.
 
     ![Настройка базовых параметров для экземпляра доменных служб Azure AD](./media/tutorial-create-instance-advanced/basics-window.png)
 
@@ -242,7 +246,7 @@ ms.locfileid: "73172564"
 [on-prem-sync]: tutorial-configure-password-hash-sync.md
 [configure-sspr]: ../active-directory/authentication/quickstart-sspr.md
 [password-hash-sync-process]: ../active-directory/hybrid/how-to-connect-password-hash-synchronization.md#password-hash-sync-process-for-azure-ad-domain-services
+[resource-forests]: concepts-resource-forest.md
 [availability-zones]: ../availability-zones/az-overview.md
 
 <!-- EXTERNAL LINKS -->
-[naming-prefix]: /windows-server/identity/ad-ds/plan/selecting-the-forest-root-domain#selecting-a-prefix

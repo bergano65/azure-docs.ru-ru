@@ -1,21 +1,15 @@
 ---
 title: Подключение MetaMask к сети службы "Блокчейн Azure"
 description: Подключение к сети службы "Блокчейн Azure" с помощью MetaMask и развертывание смарт-контракта.
-services: azure-blockchain
-keywords: ''
-author: PatAltimore
-ms.author: patricka
 ms.date: 09/12/2019
 ms.topic: quickstart
-ms.service: azure-blockchain
-ms.reviewer: jackyhsu
-manager: femila
-ms.openlocfilehash: b89e75d406a738fb685bb3294dca8d79a2b9170c
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.reviewer: janders
+ms.openlocfilehash: 21e45b80a9a08dd6bdeefb0ab01fadabaa08cbce
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70966524"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74456013"
 ---
 # <a name="quickstart-use-metamask-to-connect-and-deploy-a-smart-contract"></a>Краткое руководство. Подключение и развертывание смарт-контрактов с использованием MetaMask
 
@@ -144,4 +138,4 @@ Remix — это среда разработки на языке Solidity, за
 При работе с этим кратким руководством вы подключились к узлу транзакций службы "Блокчейн Azure", развернули смарт-контракт и отправили транзакцию в блокчейн с помощью расширения браузера MetaMask. В следующем руководстве описано, как с помощью комплекта SDK службы "Блокчейн Azure" для Ethereum и Truffle создать, собрать, развернуть и выполнить функцию смарт-контракта путем совершения транзакции.
 
 > [!div class="nextstepaction"]
-> [Создание и развертывание смарт-контрактов с помощью Visual Studio Code](send-transaction.md)
+> [Создание, сборка и развертывание смарт-контрактов в службе "Блокчейн Azure"](send-transaction.md)

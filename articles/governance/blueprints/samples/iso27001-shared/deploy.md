@@ -1,14 +1,14 @@
 ---
-title: 'Пример схема "ISO 27001: общие службы". Процедура развертывания'
+title: 'Развертывание примера схемы "ISO 27001: общие службы"'
 description: 'Процедура развертывания для примера схемы "ISO 27001: общие службы" и сведения о параметрах артефактов схемы.'
-ms.date: 03/14/2019
+ms.date: 11/18/2019
 ms.topic: sample
-ms.openlocfilehash: 54f53e13e6d4561cb46f62318203c41c504ee60b
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 1ef96a3ccffa705290a90caf436fe1857d9442a7
+ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74037338"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74546712"
 ---
 # <a name="deploy-the-iso-27001-shared-services-blueprint-sample"></a>Развертывание примера схемы "ISO 27001: общие службы"
 

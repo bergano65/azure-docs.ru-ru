@@ -1,19 +1,19 @@
 ---
-title: Краткое руководство по созданию приложения Android в Xamarin с использованием службы "Пространственные привязки Azure" |Документация Майкрософт
+title: Краткое руководство. Создание приложения Xamarin.Android
 description: В этом кратком руководстве вы узнаете, как создать приложение Android с Xamarin с помощью Пространственных привязок.
 author: craigktreasure
-manager: virivera
+manager: vriveras
 services: azure-spatial-anchors
 ms.author: crtreasu
 ms.date: 07/22/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 0958961f1e66be130dd2be816f6002dd34465dc6
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 2976104c72179fede3b39816663ac8196d7539ec
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68931425"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74277005"
 ---
 # <a name="quickstart-create-a-xamarin-android-app-with-azure-spatial-anchors"></a>Краткое руководство. Создание приложения Android в Xamarin с помощью Пространственных привязок Azure
 
@@ -77,11 +77,11 @@ ms.locfileid: "68931425"
 
 ![Настройка Visual Studio](./media/get-started-xamarin-android/visual-studio-macos-configuration.jpg)
 
-Выберите **Запустить** > **Запуск без отладки**, чтобы развернуть и запустить приложение.
+Выберите **Выполнить** > **Запустить без отладки**, чтобы развернуть и запустить свое приложение.
 
 ---
 
-В приложении выберите **Базовый**, чтобы запустить демонстрацию, и следуйте инструкциям по размещению и отзыву привязки.
+В приложении выберите **Базовый**, чтобы запустить демонстрацию, и следуйте инструкциям для размещения и вызова привязки.
 
 > ![Снимок экрана 1](./media/get-started-xamarin-android/screenshot-1.jpg)
 > ![Снимок экрана 2](./media/get-started-xamarin-android/screenshot-2.jpg)

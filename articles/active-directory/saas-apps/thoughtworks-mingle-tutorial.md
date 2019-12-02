@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 4ea2a88c92dcd52e99bb98563cf76d2c5501ef6d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a12d4dca61734275ef0e56dfe2a800c64dc52540
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67088753"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74233291"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-thoughtworks-mingle"></a>Руководство по Интеграция Azure Active Directory с Thoughtworks Mingle
 
@@ -130,11 +130,11 @@ ms.locfileid: "67088753"
 
 2. Откройте вкладку **Admin** (Администратор), а затем щелкните **SSO Config** (Конфигурация единого входа).
    
-    ![Вкладка Admin](./media/thoughtworks-mingle-tutorial/ic785157.png "Настройка единого входа")
+    ![Вкладка администратора](./media/thoughtworks-mingle-tutorial/ic785157.png "Конфигурация единого входа")
 
 3. В разделе **Конфигурация единого входа** выполните следующие действия.
    
-    ![Настройка единого входа](./media/thoughtworks-mingle-tutorial/ic785158.png "Настройка единого входа")
+    ![Конфигурация единого входа](./media/thoughtworks-mingle-tutorial/ic785158.png "Конфигурация единого входа")
     
     a. Чтобы отправить файл метаданных, нажмите кнопку **Выбрать файл**. 
 
@@ -236,5 +236,5 @@ ms.locfileid: "67088753"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

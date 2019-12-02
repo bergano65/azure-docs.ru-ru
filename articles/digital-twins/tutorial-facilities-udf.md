@@ -1,5 +1,5 @@
 ---
-title: Руководство по мониторингу пространства с помощью Azure Digital Twins
+title: Руководство по Мониторинг пространства устройств Интернета вещей с помощью Azure Digital Twins | Документация Майкрософт
 description: Сведения о подготовке пространственных ресурсов и контроле условий работы с помощью Azure Digital Twins.
 services: digital-twins
 ms.author: alinast
@@ -9,12 +9,12 @@ ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
 ms.date: 11/13/2019
-ms.openlocfilehash: 6c9403f8355d2f842226c9c7257803edd3215829
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 80fd1275f3bf9585ff8e40a94d0de2d422baec71
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74107495"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74383221"
 ---
 # <a name="tutorial-provision-your-building-and-monitor-working-conditions-with-azure-digital-twins-preview"></a>Руководство по Подготовка примера здания и мониторинг условий работы с помощью Azure Digital Twins (предварительная версия)
 

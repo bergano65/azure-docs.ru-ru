@@ -9,12 +9,12 @@ ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 07/29/2019
-ms.openlocfilehash: 12e6d292779d497d907bb68eece3fc2338f072fd
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 13afdf4d6c45927c60e8de9fd228f70b7c0a3c68
+ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73602061"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74286541"
 ---
 # <a name="tutorial-sentiment-analysis-on-streaming-data-using-azure-databricks"></a>Руководство по оценке тональности сообщений при потоковой передаче данных с использованием Azure Databricks
 
@@ -102,7 +102,7 @@ ms.locfileid: "73602061"
     Для всех остальных параметров, кроме следующих, примите значения по умолчанию:
 
    * Введите имя кластера.
-   * В рамках этой статьи создайте кластер со средой выполнения **5.2**.
+   * В рамках этой статьи создайте кластер со средой выполнения ***6.0**.
    * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of activity** (Завершить через \_\_ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
 
    Выберите рабочий кластер и размер узла драйвера, соответствующие своим техническим критериям и [бюджету](https://azure.microsoft.com/pricing/details/databricks/?WT.mc_id=sparkeventhubs-docs-alehall).

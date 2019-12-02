@@ -7,14 +7,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/30/2019
+ms.date: 11/19/2019
 ms.author: iainfou
-ms.openlocfilehash: 2a1fbe8d47af8a2215b0d0a3d81fbe67a62d4755
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 84272336a9f70f663e134e16fe88c7e43bb73548
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73474420"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74208606"
 ---
 # <a name="tutorial-create-and-configure-an-azure-active-directory-domain-services-instance"></a>Руководство по Создание и настройка экземпляра доменных служб Azure Active Directory
 
@@ -92,6 +92,10 @@ ms.locfileid: "73474420"
     Зоны доступности — уникальные физические расположения в пределах одного региона Azure. Каждая зона состоит из одного или нескольких центров обработки данных, оснащенных независимыми системами электроснабжения, охлаждения и сетевого взаимодействия. Чтобы обеспечить отказоустойчивость, во всех включенных регионах используются минимум три отдельные зоны.
 
     Вы не можете настроить распределение Azure AD DS между зонами. Платформа Azure автоматически обрабатывает распределение ресурсов зоны. Дополнительные сведения о зонах доступности и регионах см. в статье [Что такое зоны доступности в Azure?][availability-zones].
+
+1. *Лес* — это логическая конструкция, используемая доменными службами Active Directory для группирования одного или нескольких доменов. По умолчанию управляемый домен AD DS Azure создается как лес *пользователей*. Лес этого типа синхронизирует все объекты из Azure AD, включая учетные записи пользователей, созданные в локальной среде AD DS. Лес *ресурсов* синхронизирует только пользователей и группы, созданные непосредственно в Azure AD. Леса ресурсов в настоящее время доступны в предварительной версии. Дополнительные сведения о лесах *ресурсов*, в том числе об их предназначении и о создании доверия между лесами и локальными доменами AD DS, см. в [этой статье][resource-forests].
+
+    Для работы с этим учебником создайте лес *пользователей*.
 
     ![Настройка базовых параметров для экземпляра доменных служб Azure AD](./media/tutorial-create-instance/basics-window.png)
 
@@ -192,6 +196,9 @@ ms.locfileid: "73474420"
 [on-prem-sync]: tutorial-configure-password-hash-sync.md
 [configure-sspr]: ../active-directory/authentication/quickstart-sspr.md
 [password-hash-sync-process]: ../active-directory/hybrid/how-to-connect-password-hash-synchronization.md#password-hash-sync-process-for-azure-ad-domain-services
+[tutorial-create-instance-advanced]: tutorial-create-instance-advanced.md
+[skus]: overview.md
+[resource-forests]: concepts-resource-forest.md
 [availability-zones]: ../availability-zones/az-overview.md
 
 <!-- EXTERNAL LINKS -->

@@ -1,26 +1,22 @@
 ---
 title: Выполнение нескольких зависимых служб с использованием .NET Core и Visual Studio
-titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
 ms.custom: vs-azure
 ms.workload: azure-vs
-author: zr-msft
-ms.author: zarhoads
 ms.date: 07/09/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: dd90dee2f973bb26a43706eb77f15778cb9116a0
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: 9fb6993c913454d67e2118cd3ff5a4b8fea6464b
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67502973"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325698"
 ---
-# <a name="multi-service-development-with-azure-dev-spaces"></a>Разработка с использованием нескольких служб с помощью Azure Dev Spaces
+# <a name="running-multiple-dependent-services-net-core-and-visual-studio-with-azure-dev-spaces"></a>Выполнение нескольких зависимых служб с использованием .NET Core и Visual Studio с Azure Dev Spaces
 
-В этом руководстве вы узнаете, как разрабатывать мультисервисные приложения в Azure Dev Spaces, а также о некоторых дополнительных преимуществах, предоставляемых Dev Spaces.
+Из этого руководства вы узнаете, как разрабатывать приложения на базе нескольких служб с помощью Azure Dev Spaces. Также здесь описываются некоторые дополнительные преимущества использования Dev Spaces.
 
 ## <a name="call-another-container"></a>Вызов другого контейнера
 В этом разделе вы создадите вторую службу, `mywebapi`, к которой будет обращаться `webfrontend`. Каждая служба будет выполняться в отдельных контейнерах. Затем вы выполните отладку в обоих контейнерах.

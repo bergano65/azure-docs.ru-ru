@@ -1,24 +1,15 @@
 ---
-title: Хранение неструктурированных данных с помощью Azure Cosmos DB и службы "Функции" | Документация Майкрософт
+title: Хранение неструктурированных данных с помощью Azure Cosmos DB и службы "Функции"
 description: Хранение неструктурированных данных с помощью служб Функции Azure и Cosmos DB
-services: functions
-documentationcenter: functions
-author: ggailey777
-manager: jeconnoc
-keywords: функции azure, функции, обработка событий, Cosmos DB, динамические вычисления, бессерверная архитектура
-ms.assetid: ''
-ms.service: azure-functions
-ms.devlang: csharp
 ms.topic: quickstart
 ms.date: 10/01/2018
-ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: cdae0a04d09b7985935bee0ae636d7f88fbff541
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
+ms.openlocfilehash: bae5e82bfe9091c2b2003b4f1735f51e3d37222d
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54903661"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74230564"
 ---
 # <a name="store-unstructured-data-using-azure-functions-and-azure-cosmos-db"></a>Хранение неструктурированных данных с помощью Azure Cosmos DB и службы "Функции Azure"
 
@@ -29,7 +20,7 @@ ms.locfileid: "54903661"
 
 В Функциях Azure входные и выходные привязки предоставляют декларативный способ подключения данных внешних служб к функции. В этой статье вы узнаете, как обновить имеющуюся функцию, чтобы добавить выходную привязку, которая сохраняет неструктурированные данные в документе Azure Cosmos DB.
 
-![База данных Cosmos](./media/functions-integrate-store-unstructured-data-cosmosdb/functions-cosmosdb.png)
+![Cosmos DB](./media/functions-integrate-store-unstructured-data-cosmosdb/functions-cosmosdb.png)
 
 ## <a name="prerequisites"></a>Предварительные требования
 

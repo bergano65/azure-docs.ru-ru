@@ -1,6 +1,6 @@
 ---
 title: Настройка сведений для защиты (предварительная версия) в запросе на вход в Azure AD
-description: Сведения о том, как настроить сведения для защиты для рабочей или учебной учетной записи, если появится приглашение со страницы входа в вашу организацию.
+description: Информация о том, как настроить сведения для защиты (предварительная версия) для рабочей или учебной учетной записи после того, как появится запрос со страницы входа в вашу организацию.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -12,14 +12,14 @@ ms.topic: overview
 ms.date: 08/05/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ae1856c7934c658bd244445306b4bb78c666e38
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 710e43aec82c5d154b2e17a20abb2ce4dd481129
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820290"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74278983"
 ---
-# <a name="set-up-your-security-info-preview-from-the-sign-in-page-prompt"></a>Настройка сведений для защиты (предварительная версия) в приглашении на странице входа
+# <a name="set-up-your-security-info-preview-from-a-sign-in-prompt"></a>Настройка сведений для защиты (предварительная версия) в запросе на вход
 
 Вы можете выполнить следующие действия при получении приглашения настроить сведения для защиты сразу после входа в рабочую или учебную учетную запись.
 

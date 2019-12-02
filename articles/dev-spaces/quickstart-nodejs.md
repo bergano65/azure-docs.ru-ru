@@ -1,23 +1,19 @@
 ---
-title: Отладка и итерация с помощью Visual Studio Code, Node.js и Azure Dev Spaces в Kubernetes
-titleSuffix: Azure Dev Spaces
-author: zr-msft
+title: 'Отладка и итерация в Kubernetes: Visual Studio Code и Node.js'
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
-ms.author: zarhoads
 ms.date: 07/08/2019
 ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров, микрослужб и Node.js в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: b53e18d4b759bc86dd0bc8f913e02b9523fb328b
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.openlocfilehash: 8f3ffb6a539937b6d4a03b8fdc808c033c371697
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71815812"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325581"
 ---
-# <a name="quickstart-debug-and-iterate-with-visual-studio-code-and-nodejs-on-kubernetes-using-azure-dev-spaces"></a>Краткое руководство. Отладка и итерация с помощью Visual Studio Code, Node.js и Azure Dev Spaces в Kubernetes
+# <a name="quickstart-debug-and-iterate-on-kubernetes-with-visual-studio-code-and-nodejs---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация с помощью Visual Studio Code, Node.js и Azure Dev Spaces в Kubernetes
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Добавление гостевого пользователя с помощью PowerShell — Azure Active Directory | Документация Майкрософт
+title: Краткое руководство. Добавление гостевого пользователя с помощью PowerShell — Azure AD
 description: В этом кратком руководстве вы узнаете, как использовать PowerShell для отправки приглашения внешнему пользователю службы совместной работы Azure AD B2B.
 services: active-directory
 ms.service: active-directory
@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5325529acb66735db0c27c0f5bdfca819e8ec4d8
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 50c283122fe707e922275b6c1a6c576009964855
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65812302"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74273357"
 ---
 # <a name="quickstart-add-a-guest-user-with-powershell"></a>Краткое руководство. Добавление гостевого пользователя с помощью PowerShell
 

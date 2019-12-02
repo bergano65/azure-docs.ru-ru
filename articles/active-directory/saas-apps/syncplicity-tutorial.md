@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 06/10/2019
 ms.author: jeedes
-ms.openlocfilehash: e6a8a25e88d4193562c818f30efd5eb017c372fd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 663958ae367162eaeb336c819d1d219dc74a2cbe
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67089295"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74233282"
 ---
-# <a name="tutorial-integrate-syncplicity-with-azure-active-directory"></a>Руководство. Интеграция Syncplicity с Azure Active Directory
+# <a name="tutorial-integrate-syncplicity-with-azure-active-directory"></a>Руководство по Интеграция Syncplicity с Azure Active Directory
 
 В этом руководстве описано, как интегрировать Syncplicity с Azure Active Directory (Azure AD). Интеграция Syncplicity с Azure AD обеспечивает следующие возможности.
 
@@ -146,13 +146,13 @@ ms.locfileid: "67089295"
 
     ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
-1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** из списка пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
 1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ### <a name="create-syncplicity-test-user"></a>Создание тестового пользователя Syncplicity
 
-Чтобы пользователи AAD могли входить систему, их необходимо подготовить для Syncplicity. В этом разделе описывается порядок создания учетных записей пользователей AAD в Syncplicity.
+Чтобы пользователи Azure AD могли входить систему, их необходимо подготовить для Syncplicity. В этом разделе описывается порядок создания учетных записей пользователей Azure AD в Syncplicity.
 
 **Чтобы подготовить учетную запись пользователя в Syncplicity, выполните следующее.**
 
@@ -167,11 +167,11 @@ ms.locfileid: "67089295"
     ![Сведения об учетной записи](./media/syncplicity-tutorial/ic769765.png "Сведения об учетной записи")
 
     > [!NOTE]
-    > Владелец учетной записи AAD получит электронное сообщение, содержащее ссылку для подтверждения и активации учетной записи.
+    > Владелец учетной записи Azure AD получит электронное сообщение, содержащее ссылку для подтверждения и активации учетной записи.
 
 1. Выберите группу в организации, в которую будет входить новый пользователь, а затем нажмите кнопку **Далее**.
 
-    ![Участие в группах](./media/syncplicity-tutorial/ic769772.png "Участие в группах")
+    ![Членство в группе](./media/syncplicity-tutorial/ic769772.png "Членство в группе")
 
     > [!NOTE]
     > Если список групп пуст, просто нажмите кнопку **Далее**.
@@ -181,7 +181,7 @@ ms.locfileid: "67089295"
     ![Папки Syncplicity](./media/syncplicity-tutorial/ic769773.png "Папки Syncplicity")
 
 > [!NOTE]
-> Вы можете использовать любые другие средства создания учетной записи пользователя Syncplicity или API-интерфейсы, предоставляемые Syncplicity для подготовки учетных записей пользователя AAD.
+> Вы можете использовать любые другие средства создания учетной записи пользователя Syncplicity или API-интерфейсы, предоставляемые Syncplicity для подготовки учетных записей пользователей Azure AD.
 
 ### <a name="test-sso"></a>Проверка единого входа
 
@@ -193,4 +193,4 @@ ms.locfileid: "67089295"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

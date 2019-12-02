@@ -1,21 +1,17 @@
 ---
-title: Использование Visual Studio Code для службы "Блокчейн Azure"
+title: Учебник по созданию, сборке и развертыванию смарт-контрактов в службе "Блокчейн Azure"
 description: Руководство по использованию комплекта SDK Блокчейн Azure для расширения Ethereum в Visual Studio Code для создания, сборки и развертывания смарт-контракта в службе Azure Блокчейн.
-services: azure-blockchain
-author: PatAltimore
-ms.author: patricka
-ms.date: 10/14/2019
+ms.date: 11/20/2019
 ms.topic: tutorial
-ms.service: azure-blockchain
 ms.reviewer: chrisseg
-ms.openlocfilehash: 13a5993a14e386dc7d24c7464610bbf1ace4b9cb
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 2d2cb174656f5ed8f13d4463d416455ebb3f9ec9
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72329239"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325169"
 ---
-# <a name="tutorial-usevisual-studio-code-to-create-buildanddeploysmartcontracts"></a>Руководство по Создание и развертывание смарт-контрактов с помощью Visual Studio Code
+# <a name="tutorial-create-buildanddeploysmartcontracts-on-azure-blockchain-service"></a>Руководство по Создание, сборка и развертывание смарт-контрактов в службе "Блокчейн Azure"
 
 В этом руководстве показано использование комплекта SDK Блокчейн Azure для расширения Ethereum в Visual Studio Code для создания, сборки и развертывания смарт-контракта в службе "Блокчейн Azure". Truffle также используется для выполнения функции смарт-контракта путем транзакции.
 
@@ -32,6 +28,21 @@ ms.locfileid: "72329239"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * См. подробнее об [использовании Подключение к сети консорциума службы "Блокчейн Azure" с помощью Visual Studio Code](connect-vscode.md)
+* [Visual Studio Code](https://code.visualstudio.com/Download)
+* [расширение "Комплект SDK Блокчейна Azure для Ethereum"](https://marketplace.visualstudio.com/items?itemName=AzBlockchain.azure-blockchain);
+* [Node.js 10.15.x или более поздней версии](https://nodejs.org/download).
+* [Git 2.10.x или более поздней версии](https://git-scm.com).
+* [Python 2.7.15](https://www.python.org/downloads/release/python-2715/). Добавьте в путь файл python.exe. Python версии 2.7.15 необходим для комплекта SDK службы "Блокчейн Azure".
+* [Truffle 5.0.0](https://www.trufflesuite.com/docs/truffle/getting-started/installation).
+* [Ganache CLI 6.0.0](https://github.com/trufflesuite/ganache-cli).
+
+В Windows для модуля node-gyp должен быть установлен компилятор C++. Вы можете использовать средства MSBuild:
+
+* Если установлен Visual Studio 2017, настройте NPM для использования средств MSBuild с помощью команды `npm config set msvs_version 2017 -g`.
+* Если установлен Visual Studio 2019, задайте путь к средствам сборки MS для NPM. Например `npm config set msbuild_path "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe"`.
+* В противном случае установите автономные средства сборки VS, используя `npm install --global windows-build-tools` в командной оболочке с повышенными правами *от имени администратора*.
+
+Дополнительные сведения о node-gyp см. в репозитории [node-gyp на сайте GitHub](https://github.com/node-gyp).
 
 ## <a name="create-a-smart-contract"></a>Создание смарт-контракта
 
@@ -165,7 +176,7 @@ Truffle выполнит скрипт для сети блокчейн.
 
 ![Выходные данные скрипта](./media/send-transaction/execute-get.png)
 
-Обратите внимание, что возвращается не значение **Hello, blockchain!** , а заполнитель. При изменении и развертывании контракт получает новый адрес контракта, а переменным состояния присваиваются значения в конструкторе смарт-контрактов. Скрипт миграции Truffle **2_deploy_contracts.js** развертывает смарт-контракт и передает значение заполнителя в качестве аргумента. Конструктор задает для переменной состояния **RequestMessage** значение заполнителя, которое и возвращается.
+Обратите внимание, что возвращается не значение **Hello, blockchain!** , а заполнитель. При изменении и развертывании контракт получает новый адрес, а переменным состояния присваиваются значения в конструкторе смарт-контрактов. Скрипт миграции Truffle **2_deploy_contracts.js** развертывает смарт-контракт и передает значение заполнителя в качестве аргумента. Конструктор задает для переменной состояния **RequestMessage** значение заполнителя, которое и возвращается.
 
 1. Чтобы задать значение для переменной состояния **RequestMessage** и запросить его, выполните еще раз скрипты **sendrequest.js** и **getmessage.js**.
 

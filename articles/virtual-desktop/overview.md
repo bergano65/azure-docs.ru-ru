@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: overview
-ms.date: 08/07/2019
+ms.date: 11/19/2019
 ms.author: helohr
-ms.openlocfilehash: 4db9e1e812390f173da89a508c1dbc6782f4454f
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 5ae6c30c595c2e3c4c7ce90d6ab208e50722bfc2
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74120000"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227702"
 ---
 # <a name="what-is-windows-virtual-desktop"></a>Что такое Виртуальный рабочий стол Windows 
 
@@ -124,7 +124,7 @@ ms.locfileid: "74120000"
 * Windows Server 2016
 * Windows Server 2012 R2
 
-Виртуальный рабочий стол Windows не поддерживает образы 86-разрядных (32-разрядных) операционных систем.
+Виртуальный рабочий стол Windows не поддерживает образы операционных систем x86 (32-разрядная), Windows 10 Корпоративная N или Windows 10 Корпоративная KN.
 
 Доступные варианты автоматизации и развертывания зависят от выбранной ОС и версии, как показано в приведенной ниже таблице. 
 

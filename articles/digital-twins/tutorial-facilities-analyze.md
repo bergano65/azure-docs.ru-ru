@@ -1,5 +1,5 @@
 ---
-title: Руководство по анализу событий экземпляра установки Azure Digital Twins
+title: Руководство по Анализ событий в службе "Аналитика временных рядов" — Azure Digital Twins | Документация Майкрософт
 description: В этом руководстве вы узнаете, как визуализировать и анализировать события из пространств Azure Digital Twins с помощью Аналитики временных рядов Azure.
 services: digital-twins
 ms.author: alinast
@@ -9,12 +9,12 @@ ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
 ms.date: 11/12/2019
-ms.openlocfilehash: 3df0fa448e320cba6dd3aaba1bb1be09c1a8b49b
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: c52bf372f21d9c2ef3d1a148aadd899435ad4181
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74107681"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74383062"
 ---
 # <a name="tutorial-visualize-and-analyze-events-from-azure-digital-twins-by-using-time-series-insights"></a>Руководство по визуализации и анализу событий Azure Digital Twins с помощью Аналитики временных рядов
 
@@ -54,6 +54,8 @@ ms.locfileid: "74107681"
 
 1. Найдите и выберите **Центры событий**. Нажмите кнопку **Создать**.
 
+    [![Создайте пространство имен Центров событий.](./media/tutorial-facilities-analyze/create-event-hubs.png)](./media/tutorial-facilities-analyze/create-event-hubs.png#lightbox)
+
 1. Введите **имя** для пространства имен концентраторов событий. Выберите **ценовую категорию** **Стандартный**, укажите **подписку**, **группу ресурсов**, используемую для экземпляра Digital Twins, и **расположение**. Нажмите кнопку **Создать**.
 
 1. В развертывании пространства имен Центров событий выберите панель **Обзор**, а затем щелкните **Перейти к ресурсу**.
@@ -77,7 +79,10 @@ ms.locfileid: "74107681"
 
     [![Строки подключения концентратора событий](./media/tutorial-facilities-analyze/event-hub-connection-strings.png)](./media/tutorial-facilities-analyze/event-hub-connection-strings.png#lightbox)
 
-1. Откройте созданную политику ManageSend и скопируйте значения **Строка подключения — первичный ключ** и **Строка подключения — вторичный ключ** во временный файл. Эти значения потребуются, чтобы создать конечную точку для концентратора событий в следующем разделе.
+    > [!TIP]
+    > Убедитесь, что вы создаете политику SAS для экземпляра концентратора событий, а не пространства имен.
+
+1. Откройте созданную политику **ManageSend** и скопируйте значения **Строка подключения — первичный ключ** и **Строка подключения — вторичный ключ** во временный файл. Эти значения потребуются, чтобы создать конечную точку для концентратора событий в следующем разделе.
 
 ### <a name="create-an-endpoint-for-the-event-hub"></a>Создание конечной точки для концентратора событий
 
@@ -105,13 +110,13 @@ ms.locfileid: "74107681"
 
 1. Замените заполнители `Primary_connection_string_for_your_event_hub` значением **Строка подключения — первичный ключ** для концентратора событий. Убедитесь, что формат строки подключения выглядит следующим образом:
 
-   ```plaintext
+   ```ConnectionString
    Endpoint=sb://nameOfYourEventHubNamespace.servicebus.windows.net/;SharedAccessKeyName=ManageSend;SharedAccessKey=yourShareAccessKey1GUID;EntityPath=nameOfYourEventHub
    ```
 
 1. Замените заполнители `Secondary_connection_string_for_your_event_hub` значением **Строка подключения — вторичный ключ** для концентратора событий. Убедитесь, что формат строки подключения выглядит следующим образом: 
 
-   ```plaintext
+   ```ConnectionString
    Endpoint=sb://nameOfYourEventHubNamespace.servicebus.windows.net/;SharedAccessKeyName=ManageSend;SharedAccessKey=yourShareAccessKey2GUID;EntityPath=nameOfYourEventHub
    ```
 

@@ -8,12 +8,12 @@ ms.topic: overview
 author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
-ms.openlocfilehash: 7e07419115a6e9709879c71dfac1234408bda0ee
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 488616ab2068337331d589bbf5c61ae06b299f5d
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824060"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74173972"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -54,7 +54,6 @@ ms.locfileid: "73824060"
 
 Вы можете даже использовать [MLflow для мониторинга метрик и развертывания моделей](how-to-use-mlflow.md) или Kubeflow для [создания конвейеров сквозных рабочих процессов](https://www.kubeflow.org/docs/azure/).
 
-
 ## <a name="build-ml-models-in-python-or-r"></a>Создание моделей машинного обучения на языке Python или R
 
 Начните обучение на локальном компьютере с помощью <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK для Python</a> или <a href="https://azure.github.io/azureml-sdk-for-r/reference/index.html" target="_blank">пакета SDK для R</a> для службы "Машинное обучение Microsoft Azure". Затем можно выполнить развертывание в облаке. 
@@ -69,7 +68,7 @@ ms.locfileid: "73824060"
 
 + **Конструктор Машинного обучения Azure (предварительная версия).**
 
-  Используйте конструктор для подготовки данных, обучения, тестирования, развертывания, мониторинга моделей машинного обучения и управления ими без написания кода. Никакое программирование не требуется. Выполните визуальное соединение наборов данных и модулей, чтобы создать модель.   Ознакомьтесь с [учебником по конструктору](tutorial-designer-automobile-price-train-score.md).
+  Используйте конструктор для подготовки данных, обучения, тестирования, развертывания, мониторинга моделей машинного обучения и управления ими без написания кода. Никакое программирование не требуется. Выполните визуальное соединение наборов данных и модулей, чтобы создать модель. Ознакомьтесь с [учебником по конструктору](tutorial-designer-automobile-price-train-score.md).
 
   Дополнительные сведения см. в [статье с обзором конструктора Машинного обучение Azure](concept-designer.md). 
 
@@ -98,6 +97,24 @@ ms.locfileid: "73824060"
 Если вы хотите автоматизировать рабочий процесс машинного обучения с помощью скриптов, можно использовать [CLI машинного обучения](reference-azure-machine-learning-cli.md), который предоставляет средства командной строки, выполняющие стандартные задачи, такие как отправка запуска на выполнение обучения или развертывание модели.
 
 Чтобы начать работу с Машинным обучением Azure, перейдите к разделу [Дальнейшие действия](#next-steps).
+
+## <a name="integration-with-other-services"></a>Интеграция с другими службами
+
+Машинное обучение Azure работает с другими службами на платформе Azure, а также интегрируется со средствами на основе открытого кода, такими как Git и MLFlow.
+
++ Целевые объекты вычислений, такие как __Служба Azure Kubernetes__, __Экземпляры контейнеров Azure__, __Azure Databricks__, __Azure Data Lake Analytics__ и __Azure HDInsight__. Дополнительные сведения о целевых объектах вычислений см. в [этой статье](concept-compute-target.md).
++ __Сетка событий Azure__. Дополнительную информацию см. в статье [Consume Azure Machine Learning events (Preview)](concept-event-grid-integration.md) (Использование событий Машинного обучения Azure (предварительная версия)).
++ __Azure Monitor__. Дополнительную информацию см. в статье [Monitoring Azure Machine Learning](monitor-azure-machine-learning.md) (Мониторинг Машинного обучения Azure).
++ Хранилища данных, такие как __учетные записи хранения Azure__, __Azure Data Lake Storage__, __База данных SQL Azure__, __База данных Azure для PostgreSQL__, а также __Открытые наборы данных Azure__. Дополнительные сведения см. в статье [Access data in Azure storage services](how-to-access-data.md) (Доступ к данным в службах хранилища Azure) и разделе [Create datasets with Azure Open Datasets](how-to-create-register-datasets.md#create-datasets-with-azure-open-datasets) (Создание наборов данных с помощью Открытых наборов данных Azure).
++ __Виртуальные сети Azure__ Дополнительные сведения см. в статье [Secure Azure ML experimentation and inference jobs within an Azure Virtual Network](how-to-enable-virtual-network.md) (Защита заданий экспериментирования и вывода Машинного обучения Azure в виртуальной сети Azure).
++ __Azure Pipelines__. Дополнительные сведения см. в статье [Train and deploy machine learning models](/azure/devops/pipelines/targets/azure-machine-learning) (Обучение и развертывание моделей машинного обучения).
++ __Журналы репозитория Git__. Дополнительные сведения см. в статье [Git integration for Azure Machine Learning](concept-train-model-git-integration.md) (Интеграция с Git для Машинного обучения Azure).
++ __MLflow__ Дополнительные сведения см. в статье [Track metrics and deploy models with MLflow and Azure Machine Learning (preview)](how-to-use-mlflow.md) (Отслеживание метрик и развертывание моделей с помощью MLflow и Машинного обучения Azure (предварительная версия)). 
++ __Kubeflow__. Дополнительные сведения см. в на странице [Kubeflow в Azure](https://www.kubeflow.org/docs/azure/).
+
+### <a name="secure-communications"></a>Безопасное соединение
+
+Учетную запись хранения Azure, целевые объекты вычислений и другие ресурсы можно безопасно использовать в виртуальной сети для обучения моделей и выполнения их вывода. Дополнительные сведения см. в статье [Secure Azure ML experimentation and inference jobs within an Azure Virtual Network](how-to-enable-virtual-network.md) (Защита заданий экспериментирования и вывода Машинного обучения Azure в виртуальной сети Azure).
 
 ## <a name="sku"></a>Выпуски "Базовый" и "Корпоративный"
 

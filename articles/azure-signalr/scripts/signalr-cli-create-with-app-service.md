@@ -1,19 +1,19 @@
 ---
-title: Пример скрипта Azure CLI. Создание службы SignalR с использованием Службы приложений Azure
-description: Пример скрипта Azure CLI. Создание службы SignalR с использованием Службы приложений Azure
+title: Создание Службы SignalR с использованием Службы приложений и Azure CLI
+description: Сведения о создании Службы SignalR с использованием Службы приложений и Azure CLI. Сведения обо всех командах интерфейса командной строки для Службы Azure SignalR.
 author: sffamily
 ms.service: signalr
 ms.devlang: azurecli
 ms.topic: sample
-ms.date: 04/20/2018
+ms.date: 11/13/2018
 ms.author: zhshang
 ms.custom: mvc
-ms.openlocfilehash: 09855c45f0a621ef1f51ba7c87443c40b02e00bd
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: eb45adb699ef0f97782e6cdb8e141e254b3993f9
+ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73578850"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74158023"
 ---
 # <a name="create-a-signalr-service-with-an-app-service"></a>Создание службы SignalR с использованием Службы приложений Azure
 

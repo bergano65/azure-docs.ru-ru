@@ -1,6 +1,7 @@
 ---
-title: Руководство по диагностике проблем с обменом данными между сетями на портале Azure | Документация Майкрософт
-description: Дополнительные сведения о диагностике проблем с обменом данными между виртуальной сетью Azure, подключенной к локальной или другой виртуальной сети через шлюз виртуальной сети Azure, с помощью функции диагностики VPN службы "Наблюдатель за сетями".
+title: Учебник по диагностике проблем с обменом данными между сетями на портале Azure
+titleSuffix: Azure Network Watcher
+description: В этом учебнике вы узнаете о диагностике проблем с обменом данными между виртуальной сетью Azure, подключенной к локальной или другой виртуальной сети через шлюз виртуальной сети Azure, с помощью функции диагностики VPN службы "Наблюдатель за сетями".
 services: network-watcher
 documentationcenter: na
 author: KumudD
@@ -15,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 04/27/2018
 ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: e4dc66a5ca6e18b12586b5b03742fba3d6c3d6c4
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: e2ec59cf609fcde79d289e321331ca5018401a5e
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64704219"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74419734"
 ---
 # <a name="tutorial-diagnose-a-communication-problem-between-networks-using-the-azure-portal"></a>Руководство по Диагностика проблем с обменом данными между сетями на портале Azure
 

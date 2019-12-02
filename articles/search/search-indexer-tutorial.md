@@ -1,21 +1,21 @@
 ---
-title: Руководство по C#. Индексирование данных из баз данных SQL Azure
+title: Руководство по Индексирование данных на языке C# из баз данных SQL Azure
 titleSuffix: Azure Cognitive Search
-description: В примере кода C# описано, как подключить базу данных SQL Azure, извлечь доступные для поиска данные и отправить их в индекс в службе "Когнитивный поиск Azure".
+description: В этом учебнике по C# описано, как подключить базу данных SQL Azure, извлечь доступные для поиска данные и отправить их в индекс в службе "Когнитивный поиск Azure".
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 11/04/2019
-ms.openlocfilehash: 4e8097eeb07420bee4ba30eb0fedbe5d4db2db9d
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 36215403f99cc86ab4fb111ce95a6b3190063d7b
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74113322"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406713"
 ---
-# <a name="c-tutorial-import-azure-sql-database-using-azure-cognitive-search-indexers"></a>Руководство по C#. Импорт базы данных SQL Azure с помощью индексаторов в службе "Когнитивный поиск Azure"
+# <a name="tutorial-import-azure-sql-database-in-c-using-azure-cognitive-search-indexers"></a>Руководство по Импорт базы данных SQL Azure на языке C# с помощью индексаторов в службе "Когнитивный поиск Azure"
 
 Вы узнаете, как настроить индексатор для извлечения доступных для поиска данных из примера базы данных SQL Azure. [Индексатор](search-indexer-overview.md) — это компонент службы "Когнитивный поиск Azure", который сканирует внешние источники данных и заполняет [индекс поиска](search-what-is-an-index.md) содержимым. Чаще всего используется индексатор для Базы данных SQL Azure. 
 

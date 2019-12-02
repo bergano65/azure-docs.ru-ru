@@ -14,12 +14,12 @@ ms.tgt_pltfrm: .NET Core
 ms.workload: tbd
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: 149542965737b2703bc18e985bfaf4d90c8dab29
-ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
+ms.openlocfilehash: 986bda4ab95985820e61c93bbe82431fb50c983b
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71709418"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74185014"
 ---
 # <a name="quickstart-create-a-net-core-app-with-app-configuration"></a>Краткое руководство. Создание приложения .NET Core с помощью службы "Конфигурация приложений"
 
@@ -30,7 +30,7 @@ ms.locfileid: "71709418"
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - [Базовый пакет SDK для .NET](https://dotnet.microsoft.com/download)
 
-## <a name="create-an-app-configuration-store"></a>Создание хранилища конфигураций приложений
+## <a name="create-an-app-configuration-store"></a>Создание хранилища Конфигурации приложений
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
@@ -52,7 +52,7 @@ ms.locfileid: "71709418"
 
         dotnet new console
 
-## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу конфигураций приложений
+## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
 
 1. Добавьте ссылку на пакет NuGet `Microsoft.Extensions.Configuration.AzureAppConfiguration`, выполнив следующую команду:
 
@@ -84,7 +84,7 @@ ms.locfileid: "71709418"
 
 ## <a name="build-and-run-the-app-locally"></a>Создание и запуск приложения локально
 
-1. Задайте переменную среды с именем **ConnectionString** и укажите для нее ключ доступа к хранилищу конфигураций приложений. Если вы используете командную строку Windows, выполните следующую команду и перезапустите командную строку, чтобы изменения вступили в силу:
+1. Задайте переменную среды с именем **ConnectionString** и укажите для нее ключ доступа к хранилищу службы "Конфигурация приложений". Если вы используете командную строку Windows, выполните следующую команду и перезапустите командную строку, чтобы изменения вступили в силу:
 
         setx ConnectionString "connection-string-of-your-app-configuration-store"
 
@@ -110,7 +110,7 @@ ms.locfileid: "71709418"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы создали хранилище конфигураций приложения и использовали его с консольным приложением .NET Core с помощью [поставщика Конфигурации приложений](https://go.microsoft.com/fwlink/?linkid=2074664). Ознакомьтесь с дополнительными сведениями об использовании службы "Конфигурация приложений" в следующем учебнике, посвященном проверке подлинности.
+В рамках этого краткого руководства вы создали хранилище Конфигурации приложений и использовали его с консольным приложением .NET Core с помощью [поставщика Конфигурации приложений](https://go.microsoft.com/fwlink/?linkid=2074664). Чтобы узнать, как настроить приложение .NET Core для динамического обновления параметров конфигурации, перейдите к следующему учебнику.
 
 > [!div class="nextstepaction"]
-> [Руководство по интеграции с управляемыми удостоверениями Azure](./howto-integrate-azure-managed-service-identity.md)
+> [Включение динамической конфигурации](./enable-dynamic-configuration-dotnet-core.md)

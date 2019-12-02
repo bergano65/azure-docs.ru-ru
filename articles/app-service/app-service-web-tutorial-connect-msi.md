@@ -11,15 +11,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 09/16/2019
+ms.date: 11/18/2019
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: b39c1596dd16f8ec6235878abdbf37492abd1ea8
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: f10d3ee78dffb32db01a48ccf935e5443fae08b6
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72177072"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227468"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство по Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
@@ -33,8 +33,8 @@ ms.locfileid: "72177072"
 > [!NOTE]
 > Шаги, описанные в этом руководстве, поддерживаются в следующих версиях:
 > 
-> - .NET Framework 4.7.2 и выше;
-> - .NET Core 2.2 и выше.
+> - .NET Framework 4.7.2.
+> - .NET Core 2.2
 >
 
 Освещаются следующие темы:
@@ -113,7 +113,7 @@ az login --allow-no-subscriptions
 В Visual Studio откройте консоль диспетчера пакетов и добавьте пакет NuGet [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication):
 
 ```powershell
-Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.3.0
+Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.3.1
 ```
 
 Работая в верхней части файла в *Web.config*, внесите следующие изменения:
@@ -145,7 +145,7 @@ Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.3.0
 В Visual Studio откройте консоль диспетчера пакетов и добавьте пакет NuGet [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication):
 
 ```powershell
-Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.3.0
+Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.3.1
 ```
 
 В [руководстве по созданию приложения ASP.NET Core и Базы данных SQL](app-service-web-tutorial-dotnetcore-sqldb.md) строка подключения `MyDbConnection` вообще не применяется, так как локальная среда разработки использует файл базы данных Sqlite, а производственная среда Azure — строку подключения из Службы приложений. При проверке подлинности Active Directory обе среды должны использовать одну и ту же строку подключения. В файле *appsettings.json* замените значение строки подключения `MyDbConnection` на следующий фрагмент кода:
@@ -184,8 +184,8 @@ var conn = (System.Data.SqlClient.SqlConnection)Database.GetDbConnection();
 conn.AccessToken = (new Microsoft.Azure.Services.AppAuthentication.AzureServiceTokenProvider()).GetAccessTokenAsync("https://database.windows.net/").Result;
 ```
 
-> [!TIP]
-> Этот демонстрационный код является синхронным для ясности. Дополнительные сведения об асинхронных операциях для конструкторов см. в [этой статье](https://github.com/davidfowl/AspNetCoreDiagnosticScenarios/blob/master/AsyncGuidance.md#constructors).
+> [!NOTE]
+> Этот демонстрационный код является синхронным для ясности и простоты.
 
 Это все, что необходимо для подключения к Базе данных SQL. При отладке в Visual Studio ваш код использует имя пользователя Azure AD, указанное в разделе [Настройка Visual Studio](#set-up-visual-studio). Позже вы настроите сервер Базы данных SQL, чтобы разрешить установку подключения с использованием управляемого удостоверения вашего приложения Службы приложений. Класс `AzureServiceTokenProvider` кэширует токен в памяти и извлекает его из Azure AD прямо перед истечением срока действия. Для обновления токена не требуется пользовательский код.
 
@@ -217,20 +217,18 @@ az webapp identity assign --resource-group myResourceGroup --name <app-name>
 }
 ```
 
-### <a name="add-managed-identity-to-an-azure-ad-group"></a>Добавление управляемого удостоверения в группу Azure AD
+### <a name="grant-permissions-to-managed-identity"></a>Предоставление разрешений управляемому удостоверению
 
-Чтобы предоставить идентификацию и доступ к базе данных SQL, необходимо добавить его в [группу Azure AD](../active-directory/fundamentals/active-directory-manage-groups.md). В Cloud Shell добавьте его в новую группу с именем _myAzureSQLDBAccessGroup_, показанную в следующем сценарии:
-
-```azurecli-interactive
-groupid=$(az ad group create --display-name myAzureSQLDBAccessGroup --mail-nickname myAzureSQLDBAccessGroup --query objectId --output tsv)
-msiobjectid=$(az webapp identity show --resource-group myResourceGroup --name <app-name> --query principalId --output tsv)
-az ad group member add --group $groupid --member-id $msiobjectid
-az ad group member list -g $groupid
-```
-
-Если вы хотите увидеть полные выходные данные JSON для каждой команды, удалите параметры `--query objectId --output tsv`.
-
-### <a name="grant-permissions-to-azure-ad-group"></a>Предоставление разрешений в группе Azure AD
+> [!NOTE]
+> При необходимости можно добавить удостоверение в [группу Azure AD](../active-directory/fundamentals/active-directory-manage-groups.md), а затем предоставить доступ к Базе данных SQL группе Azure AD, а не удостоверению. Например, следующие команды добавляют управляемое удостоверение из предыдущего шага в новую группу с именем _myAzureSQLDBAccessGroup_:
+> 
+> ```azurecli-interactive
+> groupid=$(az ad group create --display-name myAzureSQLDBAccessGroup --mail-nickname myAzureSQLDBAccessGroup --query objectId --output tsv)
+> msiobjectid=$(az webapp identity show --resource-group myResourceGroup --name <app-name> --query principalId --output tsv)
+> az ad group member add --group $groupid --member-id $msiobjectid
+> az ad group member list -g $groupid
+> ```
+>
 
 В Cloud Shell войдите в базу данных SQL с помощью команды SQLCMD. Замените _\<server-name>_ именем сервера базы данных SQL, _\<db-name>_ , а _\<aad-user-name>_ и _\<aad-password>_  — учетными данными пользователя Azure AD.
 
@@ -241,12 +239,14 @@ sqlcmd -S <server-name>.database.windows.net -d <db-name> -U <aad-user-name> -P 
 В командной строке SQL нужной базы данных выполните следующие команды, чтобы добавить группу Azure AD и предоставить приложению требуемые разрешения. Например, 
 
 ```sql
-CREATE USER [myAzureSQLDBAccessGroup] FROM EXTERNAL PROVIDER;
-ALTER ROLE db_datareader ADD MEMBER [myAzureSQLDBAccessGroup];
-ALTER ROLE db_datawriter ADD MEMBER [myAzureSQLDBAccessGroup];
-ALTER ROLE db_ddladmin ADD MEMBER [myAzureSQLDBAccessGroup];
+CREATE USER [<identity-name>] FROM EXTERNAL PROVIDER;
+ALTER ROLE db_datareader ADD MEMBER [<identity-name>];
+ALTER ROLE db_datawriter ADD MEMBER [<identity-name>];
+ALTER ROLE db_ddladmin ADD MEMBER [<identity-name>];
 GO
 ```
+
+*\<Identity-name>*  — имя управляемого удостоверения в Azure AD. Так как оно назначено системой, оно всегда совпадает с именем приложения службы приложений. Чтобы предоставить разрешения для группы Azure AD, используйте отображаемое имя группы (например, *myAzureSQLDBAccessGroup*).
 
 Введите `EXIT`, чтобы вернуться в командную строку Cloud Shell.
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
-ms.openlocfilehash: a7e7498411e68b83f8c05d50f52f73f97df9f797
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 78d4f44e9fe2310fab485804e0aaf70aa0dfbdb0
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73160592"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74233537"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mindflash"></a>Руководство по Интеграция Azure Active Directory с Mindflash
 
@@ -208,7 +208,7 @@ ms.locfileid: "73160592"
     b. Щелкните **Добавить**.
 
 >[!NOTE]
->Для подготовки учетных записей пользователей AAD можно использовать любые другие средства создания учетных записей Mindflash или API, предоставляемое Mindflash. 
+>Для подготовки учетных записей пользователей AAD можно использовать любые другие средства создания учетных записей Mindflash или API, предоставляемые Mindflash. 
 > 
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 

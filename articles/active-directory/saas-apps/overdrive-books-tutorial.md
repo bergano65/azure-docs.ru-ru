@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 5a6d3c53206d917b5b87f26b7fb351bc5acf5937
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 391ae72a9e2bc78ed120cf4f5fdf844a6248566a
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67095214"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74233466"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-overdrive"></a>Руководство по Интеграция Azure Active Directory с Overdrive
 
@@ -186,7 +186,7 @@ ms.locfileid: "67095214"
 В этом разделе вы создадите в Overdrive пользователя с именем Britta Simon. Приложение Overdrive поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Overdrive, он создается после проверки подлинности.
 
 >[!NOTE]
->Вы можете использовать любые другие инструменты создания учетных записей пользователя OverDrive или API, предоставляемые OverDrive для подготовки учетных записей пользователя AAD.
+>Вы можете использовать любые другие инструменты создания учетных записей пользователя OverDrive или API, предоставляемые OverDrive, для подготовки учетных записей пользователя AAD.
 >
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
@@ -201,5 +201,5 @@ ms.locfileid: "67095214"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

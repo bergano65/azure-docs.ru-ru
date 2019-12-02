@@ -1,5 +1,5 @@
 ---
-title: Использование назначаемого системой управляемого удостоверения виртуальной машины Linux для доступа к службе хранилища Azure при помощи учетных данных SAS
+title: Руководство по Доступ к службе хранилища Azure с помощью учетных данных SAS для Linux в Azure AD
 description: В этом руководстве показано, как использовать назначаемое системой управляемое удостоверение виртуальной машины Linux для доступа к службе хранилища Azure при помощи учетных данных SAS (подписанного URL-адреса) вместо ключа доступа к учетной записи хранения.
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 11/20/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06fa483a34efa3a9486e04d894a3139d17b157b4
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 670ae329943610ba16411da3782bc1da079c6490
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59273963"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74183196"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-identity-to-access-azure-storage-via-a-sas-credential"></a>Руководство по Использование назначаемого системой управляемого удостоверения виртуальной машины Linux для доступа к службе хранилища Azure при помощи учетных данных SAS
 

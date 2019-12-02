@@ -1,22 +1,17 @@
 ---
-title: Краткое руководство по Azure. Резервное копирование виртуальной машины с помощью портала Azure
+title: Краткое руководство. Резервное копирование виртуальной машины с помощью портала Azure
 description: В этом кратком руководстве вы узнаете, как создать хранилище Служб восстановления, включить защиту на виртуальной машине Azure и выполнить резервное копирование виртуальной машины с помощью портала Azure.
 ms.reviewer: saurse
-author: dcurwin
-manager: carmonm
-tags: azure-resource-manager, virtual-machine-backup
-ms.service: backup
 ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 07/17/2018
-ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: 2d740c8d078770267669a0be749ca8d5d210bb72
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 430a560f3ae8e9abc6c5e7a34c24d9d2f262fd79
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083179"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74172004"
 ---
 # <a name="back-up-a-virtual-machine-in-azure"></a>Резервное копирование виртуальной машины в Azure
 

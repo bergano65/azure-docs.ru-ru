@@ -1,20 +1,15 @@
 ---
-title: Руководство по подготовке реестра контейнеров для службы "Экземпляры контейнеров Azure"
+title: Учебник. Подготовка реестра контейнеров для развертывания образа
 description: Руководство по службе "Экземпляры контейнеров Azure" — часть 2 из 3. Подготовка реестра контейнеров Azure и отправка образа
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: tutorial
 ms.date: 03/21/2018
-ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: b3c907eacb14ed65410a60fcf22ebe99fd8cc3bb
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: d8a14acb196b257d96792444fe41e7e9f6b73592
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325604"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533323"
 ---
 # <a name="tutorial-deploy-an-azure-container-registry-and-push-a-container-image"></a>Руководство. Развертывание реестра контейнеров Azure и отправка образа контейнера
 

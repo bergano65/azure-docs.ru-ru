@@ -1,24 +1,16 @@
 ---
-title: Создание нескольких экземпляров ресурса с помощью Azure Resource Manager
+title: Создание нескольких экземпляров ресурсов
 description: Узнайте, как создать шаблон Azure Resource Manager для создания нескольких экземпляров ресурса Azure.
-services: azure-resource-manager
-documentationcenter: ''
 author: mumian
-manager: dougeby
-editor: tysonn
-ms.service: azure-resource-manager
-ms.workload: multiple
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.date: 03/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: b1233ff4695a1f715801d78d70ea80ab84be2a36
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: df41094d163b8e3ecb78827df1a52dafab0aec1f
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72528266"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74326520"
 ---
 # <a name="tutorial-create-multiple-resource-instances-with-resource-manager-templates"></a>Руководство по Создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager
 
@@ -39,7 +31,7 @@ ms.locfileid: "72528266"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* [Visual Studio Code](https://code.visualstudio.com/) с [расширением Resource Manager Tools](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#prerequisites).
+* Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](./resource-manager-tools-vs-code.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 
@@ -57,7 +49,7 @@ ms.locfileid: "72528266"
 
 ## <a name="edit-the-template"></a>Изменение шаблона
 
-С помощью существующего шаблона можно создать одну учетную запись хранения. Можно настроить шаблон, чтобы создать три учетные записи хранения.  
+С помощью существующего шаблона можно создать одну учетную запись хранения. Можно настроить шаблон, чтобы создать три учетные записи хранения.
 
 Внесите следующие четыре изменения в Visual Studio Code.
 

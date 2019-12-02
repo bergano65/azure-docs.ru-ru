@@ -1,20 +1,20 @@
 ---
-title: Управление частными конечными точками в Azure
+title: Краткое руководство. Управление частными конечными точками в Azure
 description: Сведения о создании частной конечной точки с помощью портала Azure
 services: private-link
-author: KumudD
+author: asudbring
 ms.service: private-link
 ms.topic: quickstart
 ms.date: 09/16/2019
-ms.author: kumud
-ms.openlocfilehash: d8d7c0232110d3d5b040debc3a24941988d4ee29
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.author: allensu
+ms.openlocfilehash: 2cb3c1d798e48017604d72d8a438d6a1071199ea
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72372244"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74419765"
 ---
-# <a name="create-a-private-endpoint-using-azure-portal"></a>Создание частной конечной точки с помощью портала Azure
+# <a name="quickstart-create-a-private-endpoint-using-azure-portal"></a>Краткое руководство. Создание частной конечной точки с помощью портала Azure
 
 Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки. В этом кратком руководстве вы узнаете, как создать виртуальную машину в виртуальной сети Azure и сервер Базы данных SQL с частной конечной точкой Azure, используя портал Azure. Затем вы сможете безопасно получить доступ к серверу Базы данных SQL с виртуальной машины.
 
@@ -241,4 +241,3 @@ ms.locfileid: "72372244"
 ## <a name="next-steps"></a>Дополнительная информация
 
 В этом кратком руководстве вы создали виртуальную машину в виртуальной сети, сервер базы данных SQL и частную конечную точку для закрытого доступа. Вы подключились к одной виртуальной машине из Интернета и безопасно взаимодействовали с сервером базы данных SQL с помощью частной ссылки. Дополнительные сведения о частных конечных точках см. в разделе [Что такое частная конечная точка Azure?](private-endpoint-overview.md).
-

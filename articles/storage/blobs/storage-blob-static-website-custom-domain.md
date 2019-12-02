@@ -1,20 +1,20 @@
 ---
-title: Руководство. Включение личного домена с использованием протокола SSL на статическом веб-сайте с помощью Azure CDN — служба хранилища Azure
+title: Руководство по включению пользовательского домена и SSL для статического веб-сайта в Azure
 description: Сведения о настройке личного домена для размещения статического веб-сайта.
 author: normesta
 ms.service: storage
 ms.topic: tutorial
-ms.date: 05/22/2019
+ms.date: 11/19/2019
 ms.author: normesta
 ms.reviewer: dineshm
-ms.openlocfilehash: a65c0e677182eb224f6bfa7ed834740458b97098
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 893ac53dc9f0b6b162c5ec22e478cd15706e50fb
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68847011"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327496"
 ---
-# <a name="tutorial-use-azure-cdn-to-enable-a-custom-domain-with-ssl-for-a-static-website"></a>Руководство. Включение личного домена с использованием протокола SSL для статического веб-сайта с помощью Azure CDN
+# <a name="tutorial-enable-custom-domain--ssl-for-a-static-website-in-azure"></a>Руководство по включению пользовательского домена и SSL для статического веб-сайта в Azure
 
 Это руководство представляет собой вторую часть цикла. В нем вы узнаете, как включить конечную точку личного домена с использованием протокола SSL для вашего статического веб-сайта. 
 

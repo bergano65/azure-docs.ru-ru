@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: 341383c232718349f091a9c92207bb27cf87cc48
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: e6415c9e8e0ab8743042891a2d0d422dffe37bdb
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083018"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74279114"
 ---
 # <a name="tutorial-access-storage-blobs-using-an-azure-cdn-custom-domain-over-https"></a>Руководство по доступу к большим двоичным объектам хранилища с помощью личного домена Azure CDN по протоколу HTTPS
 
@@ -43,11 +43,15 @@ Azure CDN игнорирует ограничения, добавленные в
 При создании нескольких подписанных URL-адресов для одной и той же конечной точки BLOB-объектов рекомендуется включить кэширование строк запросов. Это гарантирует, что каждый URL-адрес будет рассматриваться как уникальная сущность. Дополнительные сведения см. в статье [Управление режимом кэширования Azure CDN с помощью строк запросов (ценовая категория "Стандартный")](cdn-query-string.md).
 
 ## <a name="http-to-https-redirection"></a>Перенаправление из HTTP в HTTPS
-Можно выбрать перенаправление трафика HTTP в HTTPS, создав [правило перенаправления URL-адресов](cdn-verizon-premium-rules-engine-reference-features.md#url-redirect) с помощью [обработчика правил Azure CDN](cdn-verizon-premium-rules-engine.md). Для использования этого параметра нужен профиль **Azure CDN уровня "Премиум" от Verizon**.
+Можно выбрать перенаправление трафика HTTP в HTTPS, создав правило перенаправления URL-адресов с помощью [стандартного обработчика правил](cdn-standard-rules-engine.md) или [обработчика правил Verizon категории "Премиум"](cdn-verizon-premium-rules-engine.md). Стандартный обработчик правил доступен только для Azure CDN из профилей Майкрософт, а обработчик правил Verizon категории "Премиум" доступен только для Azure CDN из профилей Verizon категории "Премиум".
 
-![Правило перенаправления URL-адресов](./media/cdn-storage-custom-domain-https/cdn-url-redirect-rule.png)
+![Правило перенаправления Майкрософт](./media/cdn-storage-custom-domain-https/cdn-standard-redirect-rule.png)
 
-В этом правиле *Cdn-endpoint-name* — это имя, которое вы настроили для конечной точки CDN. Его можно выбрать из раскрывающегося списка. Значение *origin-path* — это путь в вашей исходной учетной записи хранения, в которой размещается статическое содержимое. Если все статическое содержимое размещается в одном контейнере, замените *origin-path* именем этого контейнера.
+В приведенном выше правиле при отсутствии значений имени узла, пути, строки запроса и фрагмента в перенаправлении будут использоваться входящие значения. 
+
+![Правило перенаправления Verizon](./media/cdn-storage-custom-domain-https/cdn-url-redirect-rule.png)
+
+В приведенном выше правиле *Cdn-endpoint-name* — это имя, которое вы настроили для конечной точки CDN. Его можно выбрать из раскрывающегося списка. Значение *origin-path* — это путь в вашей исходной учетной записи хранения, в которой размещается статическое содержимое. Если все статическое содержимое размещается в одном контейнере, замените *origin-path* именем этого контейнера.
 
 ## <a name="pricing-and-billing"></a>Цены и выставление счетов
 При доступе к большим двоичным объектам через Azure CDN вы оплачиваете трафик между серверами POP и источником (хранилищем BLOB-объектов) по [расценкам хранилища BLOB-объектов](https://azure.microsoft.com/pricing/details/storage/blobs/), а данные, доступ к которым получаете с серверов POP, — по [расценкам Azure CDN](https://azure.microsoft.com/pricing/details/cdn/).

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/20/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 28666aaac4ec221acca00d937d54a753a4e6a055
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: 1c375370ec6bae2775ad758688825b92cbbbca50
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71172682"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74407037"
 ---
 ::: zone target="docs"
 
@@ -123,28 +123,7 @@ ms.locfileid: "71172682"
 2. Убедитесь, что копирование данных на устройство завершено и **Подготовка к отправке** прошла успешно.
 3. Выключите устройство и отсоедините кабели.
 4. Смотайте и аккуратно разместите шнур питания, входящий в комплект устройства, на задней панели устройства.
-5. Чтобы запросить возврат устройства, отправьте электронное письмо в компанию Quantium Solutions. Укажите номер запроса на обслуживание, указанный на портале Azure. Используйте следующий шаблон электронной почты: *Запрос возвратной транспортной маркировки с кодом TAU*. В запросе укажите следующие сведения: 
-
-    ```
-    To: Azure@quantiumsolutions.com
-    Subject: Pickup request for Azure｜Reference number：XXX XXX XXX
-    Body: 
-    - Company name：
-    - Address:
-    - Contact name:
-    - Contact number:
-    - Requested pickup date: mm/dd
-    ```
-6. Компания Quantium Solutions Australia отправит вам транспортную. этикетку для возврата по электронной почте.
-7. Распечатайте этикетку для возврата и закрепите ее на коробке.
-8. Передайте коробку курьеру.
-
-При необходимости вы можете отправить электронное письмо в компанию Quantium Solution по адресу Azure@quantiumsolutions.com или по телефону.
-
-Для отправки запроса по телефону:
-
-- Отправьте электронное письмо для создания запроса на вывоз.
-- Сообщите название заказа по телефону.
+5. Закажите через Интернет возврат по ссылке [DHL](https://mydhl.express.dhl/au/en/schedule-pickup.html#/schedule-pickup#label-reference).
 
 ::: zone target="chromeless"
 

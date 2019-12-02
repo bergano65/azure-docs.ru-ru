@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 11/04/2019
-ms.openlocfilehash: 724a38cb516e5689f817e9ddeaa867b17274971b
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 31b06f3ad102f39d1a9f95dee2bd98b5d0a3b310
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73932048"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483310"
 ---
 # <a name="tutorial-deploy-a-machine-learning-model-with-the-designer-preview"></a>Руководство по развертыванию модели машинного обучения с помощью конструктора (предварительная версия)
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "73932048"
 
     Теперь этот конвейер будет выглядеть следующим образом: 
 
-   ![Снимок экрана: ожидаемая конфигурация конвейера после его подготовки к развертыванию](./media/ui-tutorial-automobile-price-deploy/real-time-inference-pipeline.png)
+   ![Снимок экрана: ожидаемая конфигурация конвейера после его подготовки к развертыванию](./media/tutorial-designer-automobile-price-deploy/real-time-inference-pipeline.png)
 
     При нажатии кнопки **Create inference pipeline** (Создать конвейер вывода) произойдет несколько вещей:
     
@@ -70,7 +70,7 @@ ms.locfileid: "73932048"
 
 1. В ленте навигации выберите **Inference Clusters** (Кластеры вывода)  >  **+ Создать**.
 
-    ![Снимок экрана, показывающий, как переходить в новую область кластера вывода](./media/ui-tutorial-automobile-price-deploy/new-inference-cluster.png)
+    ![Снимок экрана, показывающий, как переходить в новую область кластера вывода](./media/tutorial-designer-automobile-price-deploy/new-inference-cluster.png)
 
 1. В области кластера вывода настройте новую службу Kubernetes.
 
@@ -96,7 +96,7 @@ ms.locfileid: "73932048"
 
 1. Выберите **Развернуть**.
 
-    ![Снимок экрана, показывающий, как настроить новую конечную точку для прогнозирования в реальном времени](./media/ui-tutorial-automobile-price-deploy/setup-endpoint.png)
+    ![Снимок экрана, показывающий, как настроить новую конечную точку для прогнозирования в реальном времени](./media/tutorial-designer-automobile-price-deploy/setup-endpoint.png)
 
     После завершения развертывания в приложении на основе холста появится уведомление об успешном выполнении. Это может занять несколько минут.
 
@@ -106,7 +106,7 @@ ms.locfileid: "73932048"
 
 1. На странице **Конечные точки** выберите развернутую конечную точку.
 
-    ![Снимок экрана, показывающий вкладку конечных точек для прогнозирования в реальном времени с выделенной недавно созданной конечной точкой](./media/ui-tutorial-automobile-price-deploy/endpoints.png)
+    ![Снимок экрана, показывающий вкладку конечных точек для прогнозирования в реальном времени с выделенной недавно созданной конечной точкой](./media/tutorial-designer-automobile-price-deploy/endpoints.png)
 
 1. Выберите **Тест**.
 
@@ -114,7 +114,7 @@ ms.locfileid: "73932048"
 
     С портала отправляется тестовый запрос в конечную точку. Затем отображаются результаты. Значение цены формируется на основе входных данных, но при расчете прогнозируемого значения они не используются.
 
-    ![Снимок экрана, показывающий, как протестировать конечную точку для прогнозирования в реальном времени с выделенной оценочной меткой для цены](./media/ui-tutorial-automobile-price-deploy/test-endpoint.png)
+    ![Снимок экрана, показывающий, как протестировать конечную точку для прогнозирования в реальном времени с выделенной оценочной меткой для цены](./media/tutorial-designer-automobile-price-deploy/test-endpoint.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

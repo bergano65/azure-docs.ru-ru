@@ -1,31 +1,24 @@
 ---
-title: Создание в Azure приложения-функции, которое развертывается из Azure DevOps | Документация Майкрософт
+title: Создание приложения-функции с помощью развертывания DevOps — Azure CLI
 description: Создание приложения-функции и развертывание кода функции из Azure DevOps.
-services: functions
-keywords: ''
-author: ggailey777
-ms.author: glenga
 ms.date: 07/03/2018
 ms.topic: sample
-ms.service: azure-functions
 ms.custom: mvc
-ms.openlocfilehash: 7fe68090773902248dbcdd63fbbdbbdb06b307cf
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 3fa11d5cd81d93b89b6e8ae63fd491842be78633
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57852395"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74532790"
 ---
-# <a name="create-a-function-app-and-deploy-function-code-from-azure-devops"></a>Создание приложения-функции и развертывание кода функции из Azure DevOps
+# <a name="create-a-function-in-azure-that-is-deployed-from-azure-devops"></a>Создание в Azure приложения-функции, которое развертывается из Azure DevOps
 
 В этом разделе показано, как при помощи решения "Функции Azure" создать [бессерверное](https://azure.microsoft.com/solutions/serverless/) приложение-функцию с использованием [плана потребления](../functions-scale.md#consumption-plan). Приложение-функция, которое представляет собой контейнер для функций, непрерывно развертывается из репозитория Azure DevOps. 
-
-[!INCLUDE [upgrade runtime](../../../includes/functions-cli-version-note.md)]
 
 Для работы с этой статьей требуется:
 
 * репозиторий Azure DevOps с проектом приложения-функции и разрешением администратора на доступ к такому репозиторию;
-* [личный маркер доступа](https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate) для доступа к репозиторию Azure DevOps.
+* [личный маркер доступа](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate) для доступа к репозиторию Azure DevOps.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -47,13 +40,13 @@ ms.locfileid: "57852395"
 
 | Команда | Примечания |
 |---|---|
-| [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az storage account create](https://docs.microsoft.com/cli/azure/storage/account#az-storage-account-create) | Создает учетную запись хранения, необходимую для приложения-функции. |
-| [az functionapp create](https://docs.microsoft.com/cli/azure/functionapp#az-functionapp-create) | Создает приложение-функцию в бессерверном [плане потребления](../functions-scale.md#consumption-plan). |
-| [az functionapp deployment source config](https://docs.microsoft.com/cli/azure/functionapp/deployment/source#az-functionapp-deployment-source-config) | Связывает приложение-функцию с репозиторием Git или Mercurial. |
+| [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [az storage account create](/cli/azure/storage/account#az-storage-account-create) | Создает учетную запись хранения, необходимую для приложения-функции. |
+| [az functionapp create](/cli/azure/functionapp#az-functionapp-create) | Создает приложение-функцию в бессерверном [плане потребления](../functions-scale.md#consumption-plan). |
+| [az functionapp deployment source config](/cli/azure/functionapp/deployment/source#az-functionapp-deployment-source-config) | Связывает приложение-функцию с репозиторием Git или Mercurial. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
 Дополнительные примеры сценариев Azure CLI для Функций Azure см. в [документации по Функциям Azure](../functions-cli-samples.md).

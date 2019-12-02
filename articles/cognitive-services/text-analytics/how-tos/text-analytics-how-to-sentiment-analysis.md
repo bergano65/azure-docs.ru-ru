@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 09/23/2019
+ms.date: 11/21/2019
 ms.author: aahi
-ms.openlocfilehash: f7a62d1d2b695726421ba990d0f118eb3ae199da
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 33c9c708adcc196bc7d9b2e8a066d18e4dd20608
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74031458"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74326620"
 ---
 # <a name="example-detect-sentiment-with-text-analytics"></a>Пример: Определение тональности в службе "Анализ текста"
 
@@ -36,7 +36,7 @@ ms.locfileid: "74031458"
 
 ## <a name="sentiment-analysis-v3-public-preview"></a>Общедоступная предварительная версия 3 анализа тональности
 
-Теперь доступна общедоступная предварительная [следующая версия анализа тональности](https://cognitiveusw2ppe.portal.azure-api.net/docs/services/TextAnalytics-v3-0-Preview-1/operations/Sentiment). Это значительно улучшает точность и детализацию классификации и оценки текста API.
+Теперь доступна общедоступная предварительная следующая версия анализа тональности. Это значительно улучшает точность и детализацию классификации и оценки текста API. Попробуйте использовать [консоли тестирования API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1/operations/Sentiment).
 
 > [!NOTE]
 > * Формат запроса и [ограничения данных](../overview.md#data-limits) для анализа тональности версии 3 по сравнению с предыдущей версией не изменились.
