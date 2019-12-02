@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 8a5ea692bfdec7f676a80cc670f686af66152e6f
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 17312840b0081056ad04723f2b2c241c47902021
+ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73606605"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74667295"
 ---
 # <a name="create-database-and-table-policies-for-azure-data-explorer-by-using-c"></a>Создание политик базы данных и таблиц для обозреватель данных Azure с помощьюC#
 
@@ -23,25 +23,20 @@ ms.locfileid: "73606605"
 
 Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. В этой статье вы создадите политики базы данных и таблиц для обозреватель данных Azure с помощью C#.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-* Visual Studio 2019. Если у вас нет Visual Studio 2019, вы можете скачать и использовать *бесплатную* версию [visual Studio Community 2019](https://www.visualstudio.com/downloads/). Не забудьте выбрать **разработку Azure** во время установки Visual Studio.
-
+* Visual Studio 2019. Если у вас нет Visual Studio 2019, вы можете скачать и использовать *бесплатную* версию [visual Studio Community 2019](https://www.visualstudio.com/downloads/). Не забудьте выбрать **разработку Azure** во время установки Visual Studio.
 * Подписка Azure. Если вам нужно, можно создать [бесплатную учетную запись Azure](https://azure.microsoft.com/free/) перед началом работы.
-
 * [Тестовый кластер и база данных](create-cluster-database-csharp.md).
-
 * [Тестовая таблица](net-standard-ingest-data.md#create-a-table-on-your-test-cluster).
 
 ## <a name="install-c-nuget"></a>Установка C# NuGet
 
 * Установите [пакет NuGet для Azure обозреватель данных (Kusto)](https://www.nuget.org/packages/Microsoft.Azure.Management.Kusto/).
-
 * Установите [пакет NuGet Microsoft. Azure. Kusto. Data. NETStandard](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Data.NETStandard/). (Необязательно, для изменения политик таблиц.)
-
 * Установите [пакет NuGet Microsoft. IdentityModel. Clients. ActiveDirectory](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/)для проверки подлинности.
 
-## <a name="authentication"></a>Аутентификация
+## <a name="authentication"></a>Authentication
 Для выполнения примеров в этой статье вам потребуется приложение Azure Active Directory (Azure AD) и субъект-служба, которые могут получить доступ к ресурсам. Вы можете использовать одно и то же приложение Azure AD для проверки подлинности из [тестового кластера и базы данных](create-cluster-database-csharp.md#authentication). Если вы хотите использовать другое приложение Azure AD, см. раздел [Создание приложения Azure AD](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) для создания бесплатного приложения Azure AD и Добавление назначения роли в области подписки. В этой статье также показано, как получить `Directory (tenant) ID`, `Application ID`и `Client secret`. Может потребоваться добавить новое приложение Azure AD в качестве участника в базу данных. Дополнительные сведения см. в статье [Управление разрешениями для базы данных Azure обозреватель данных](https://docs.microsoft.com/azure/data-explorer/manage-database-permissions).
 
 ## <a name="alter-database-retention-policy"></a>Изменение политики хранения базы данных

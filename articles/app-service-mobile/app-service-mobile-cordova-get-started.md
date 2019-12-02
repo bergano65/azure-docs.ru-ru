@@ -1,27 +1,18 @@
 ---
-title: Создание мобильного приложения Cordova в службе мобильных приложений Azure | Документация Майкрософт
+title: Создание приложения Cordova
 description: Изучите этот учебник, чтобы начать работу с серверными частями мобильных приложений Azure для разработки программ Apache Cordova.
-services: app-service\mobile
-documentationcenter: javascript
-author: elamalani
-manager: crdun
-editor: ''
-tags: ''
 keywords: cordova, javascript, мобильный, клиент
 ms.assetid: 0b08fc12-0a80-42d3-9cc1-9b3f8d3e3a3f
-ms.service: app-service-mobile
-ms.workload: na
 ms.tgt_pltfrm: mobile-html
 ms.devlang: javascript
 ms.topic: conceptual
 ms.date: 06/25/2019
-ms.author: emalani
-ms.openlocfilehash: a1baa26fee46a4bba5db9652cf1e65e9d473284a
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 35670543b9716cad8165d5b5ea48f3888786f0a2
+ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72388825"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74668883"
 ---
 # <a name="create-an-apache-cordova-app"></a>Создание приложения Apache Cordova
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]

@@ -7,22 +7,22 @@ ms.reviewer: oflipman
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/26/2019
-ms.openlocfilehash: 49c55b580abdaea6c876a0fac4e7dd4e73d496af
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: eddfb9a8f2e3c034e50dc3bc1cdf4983a6163079
+ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73643829"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74667859"
 ---
 # <a name="create-an-azure-data-explorer-cluster-and-database-by-using-an-azure-resource-manager-template"></a>Создание кластера и базы данных Azure обозреватель данных с помощью шаблона Azure Resource Manager
 
 > [!div class="op_single_selector"]
-> * [Портал](create-cluster-database-portal.md)
-> * [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](create-cluster-database-cli.md)
+> * [Microsoft Azure](create-cluster-database-portal.md)
+> * [CLI](create-cluster-database-cli.md)
 > * [PowerShell](create-cluster-database-powershell.md)
 > * [C#](create-cluster-database-csharp.md)
 > * [Python](create-cluster-database-python.md)
-> * [Шаблон ARM](create-cluster-database-resource-manager.md)
+> * [Шаблон Azure Resource Manager](create-cluster-database-resource-manager.md)
 
 Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Чтобы использовать обозреватель данных Azure, сначала нужно создать кластер и одну или несколько баз данных в этом кластере. Затем вы должны принять (загрузить) данные в базы данных, чтобы к ним можно было выполнять запросы. 
 
@@ -94,7 +94,7 @@ ms.locfileid: "73643829"
 }
 ```
 
-Дополнительные примеры шаблонов см. в статье [шаблоны](https://azure.microsoft.com/resources/templates/)быстрого запуска Azure.
+См. [примеры шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/).
 
 ## <a name="deploy-the-template-and-verify-template-deployment"></a>Развертывание шаблона и проверка развертывания шаблона
 
@@ -108,7 +108,7 @@ ms.locfileid: "73643829"
 
     Кнопка **Развернуть в Azure** выполняет переход на портал Azure для заполнения формы развертывания.
 
-    ![Развертывание в Azure](media/create-cluster-database-resource-manager/deploy-2-azure.png)
+    ![Развернуть в Azure](media/create-cluster-database-resource-manager/deploy-2-azure.png)
 
     Шаблон можно [изменить и развернуть в портал Azure](/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal#edit-and-deploy-the-template) с помощью формы.
 
@@ -121,7 +121,7 @@ ms.locfileid: "73643829"
 
 #### <a name="deploy-the-template-using-powershell"></a>Развертывание шаблона с помощью PowerShell
 
-1. Выберите вариант **попробовать** в следующем блоке кода, а затем следуйте инструкциям по входу в Azure Cloud Shell.
+1. Выберите **Попробовать** в следующем блоке кода и следуйте инструкциям, чтобы войти в Azure Cloud Shell.
 
     ```azurepowershell-interactive
     $projectName = Read-Host -Prompt "Enter a project name that is used for generating resource names"
@@ -137,7 +137,7 @@ ms.locfileid: "73643829"
     ```
 
 1. Нажмите кнопку **Копировать**, чтобы скопировать сценарий PowerShell.
-1. Щелкните правой кнопкой мыши консоль оболочки и выберите команду **Вставить**.
+1. Щелкните правой кнопкой в консоли оболочки и выберите **Вставить**.
 Создание кластера Azure обозреватель данных и базы данных занимает несколько минут.
 
 #### <a name="verify-the-deployment-using-powershell"></a>Проверка развертывания с помощью PowerShell
@@ -155,26 +155,7 @@ Get-AzKustoCluster -ResourceGroupName $resourceGroupName -Name $clusterName
 Write-Host "Press [ENTER] to continue ..."
 ```
 
-## <a name="clean-up-resources"></a>Очистка ресурсов
-
-Если ресурсы Azure больше не нужны, их можно удалить. Для этого необходимо удалить группу ресурсов. 
-
-### <a name="clean-up-resources-using-the-azure-portal"></a>Очистка ресурсов с помощью портал Azure
-
-Удалите ресурсы в портал Azure, выполнив действия, описанные в разделе [Очистка ресурсов](create-cluster-database-portal.md#clean-up-resources).
-
-### <a name="clean-up-resources-using-powershell"></a>Очистка ресурсов с помощью PowerShell
-
-Если Cloud Shell по-прежнему открыт, вам не нужно копировать или запускать первую строку (Read-Host).
-
-```azurepowershell-interactive
-$projectName = Read-Host -Prompt "Enter the same project name that you used in the last procedure"
-$resourceGroupName = "${projectName}rg"
-
-Remove-AzResourceGroup -ResourceGroupName $resourceGroupName
-
-Write-Host "Press [ENTER] to continue ..."
-```
+[!INCLUDE [data-explorer-clean-resources](../../includes/data-explorer-clean-resources.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

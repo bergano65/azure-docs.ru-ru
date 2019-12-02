@@ -7,30 +7,28 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 08/27/2019
-ms.openlocfilehash: 9f1bd795af2802af642d48b4a16a55425c5f4c7f
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: cbad0e5409dfaa25eda040e3c7409b49728a4169
+ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72028468"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74667424"
 ---
 # <a name="ingest-data-from-iot-hub-into-azure-data-explorer-preview"></a>Прием данных из центра Интернета вещей в обозреватель данных Azure (Предварительная версия)
 
 > [!div class="op_single_selector"]
-> * [Портал](ingest-data-iot-hub.md)
+> * [Microsoft Azure](ingest-data-iot-hub.md)
 > * [C#](data-connection-iot-hub-csharp.md)
 > * [Python](data-connection-iot-hub-python.md)
+> * [Шаблон Azure Resource Manager](data-connection-iot-hub-resource-manager.md)
 
 Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Azure обозреватель данных обеспечивает прием (загрузку данных) из центра Интернета вещей, платформы потоковой передачи больших данных и службы приема Интернета вещей.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
-
 * Создайте [тестовый кластер и базу данных](create-cluster-database-portal.md) с именем базы данных *TestDB*.
-
 * [Пример приложения](https://github.com/Azure-Samples/azure-iot-samples-csharp) и документация по моделированию устройства.
-
 * [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) для запуска примера приложения.
 
 ## <a name="create-an-iot-hub"></a>Создание центра Интернета вещей
@@ -97,7 +95,7 @@ ms.locfileid: "72028468"
 
      **Параметр** | **Рекомендуемое значение** | **Описание поля**
     |---|---|---|
-    | Таблица | *TestTable* | Таблица, созданная в **TestDB**. |
+    | Таблицы | *TestTable* | Таблица, созданная в **TestDB**. |
     | Формат данных | *JSON* | Поддерживаются форматы Avro, CSV, JSON, многострочные JSON, ПСВ, СОХСВ, СКСВ, TSV, ТСВЕ и TXT. |
     | Сопоставление столбцов | *TestMapping* | [Сопоставление](/azure/kusto/management/mappings) , созданное в **TestDB**, которое сопоставляет входящие данные JSON с именами столбцов и типами данных **TestDB**. Требуется для JSON, многострочного JSON и AVRO, а для других форматов — необязательно.|
     | | |
@@ -116,7 +114,7 @@ ms.locfileid: "72028468"
 
 1. Откройте файл **SimulatedDevice.cs** в любом текстовом редакторе.
 
-    Замените значение переменной `s_connectionString` строкой подключения устройства из раздела [Регистрация устройства в центре Интернета вещей](#register-a-device-to-the-iot-hub). Сохраните изменения в файле **SimulatedDevice.cs**.
+    Замените значение переменной `s_connectionString` строкой подключения устройства, [зарегистрируйте устройство в центре Интернета вещей](#register-a-device-to-the-iot-hub). Сохраните изменения в файле **SimulatedDevice.cs**.
 
 1. Установите необходимые пакеты приложения имитированного устройства, выполнив в окне терминала на локальном компьютере следующие команды:
 
@@ -177,6 +175,6 @@ ms.locfileid: "72028468"
 
 1. В новом окне введите имя удаляемой группы ресурсов (*test-hub-rg*) и нажмите кнопку **Удалить**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Запрос данных в обозреватель данных Azure](web-query-data.md)

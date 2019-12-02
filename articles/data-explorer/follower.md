@@ -7,12 +7,12 @@ ms.reviewer: gabilehner
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 11/07/2019
-ms.openlocfilehash: 61cfcfc41a1d9caeaded475511dd69ebc48756e2
-ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
+ms.openlocfilehash: dd2c29632d70da64251c5e1736a9cb7d82f5d0dc
+ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74462023"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74667350"
 ---
 # <a name="use-follower-database-to-attach-databases-in-azure-data-explorer"></a>Использование базы данных следующих служб для присоединения баз данных в Azure обозреватель данных
 
@@ -26,7 +26,7 @@ ms.locfileid: "74462023"
 * Один кластер может следовать за базами данных из нескольких серверов-заполнителей. 
 * Кластер может содержать как базы данных, так и лидерическую базу данных
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 1. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 1. [Создайте кластер и базу данных](/azure/data-explorer/create-cluster-database-portal) для лидера и последующих результатов.
@@ -38,11 +38,12 @@ ms.locfileid: "74462023"
 
 ### <a name="attach-a-database-using-c"></a>Присоединение базы данных с помощьюC#
 
-**Необходимые NuGet**
+#### <a name="needed-nugets"></a>Необходимые NuGet
 
 * Установите [Microsoft. Azure. Management. kusto](https://www.nuget.org/packages/Microsoft.Azure.Management.Kusto/).
 * Установите [Microsoft. RESTful. ClientRuntime. Azure. Authentication для проверки подлинности](https://www.nuget.org/packages/Microsoft.Rest.ClientRuntime.Azure.Authentication).
 
+#### <a name="code-example"></a>Пример кода
 
 ```Csharp
 var tenantId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";//Directory (tenant) ID
@@ -74,6 +75,54 @@ AttachedDatabaseConfiguration attachedDatabaseConfigurationProperties = new Atta
 };
 
 var attachedDatabaseConfigurations = resourceManagementClient.AttachedDatabaseConfigurations.CreateOrUpdate(followerResourceGroupName, followerClusterName, attachedDatabaseConfigurationName, attachedDatabaseConfigurationProperties);
+```
+
+### <a name="attach-a-database-using-python"></a>Присоединение базы данных с помощью Python
+
+#### <a name="needed-modules"></a>Необходимые модули
+
+```
+pip install azure-common
+pip install azure-mgmt-kusto
+```
+
+#### <a name="code-example"></a>Пример кода
+
+```python
+from azure.mgmt.kusto import KustoManagementClient
+from azure.mgmt.kusto.models import AttachedDatabaseConfiguration
+from azure.common.credentials import ServicePrincipalCredentials
+import datetime
+
+#Directory (tenant) ID
+tenant_id = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx"
+#Application ID
+client_id = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx"
+#Client Secret
+client_secret = "xxxxxxxxxxxxxx"
+follower_subscription_id = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx"
+leader_subscription_id = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx"
+credentials = ServicePrincipalCredentials(
+        client_id=client_id,
+        secret=client_secret,
+        tenant=tenant_id
+    )
+kusto_management_client = KustoManagementClient(credentials, follower_subscription_id)
+
+follower_resource_group_name = "followerResouceGroup"
+leader_resouce_group_name = "leaderResouceGroup"
+follower_cluster_name = "follower"
+leader_cluster_name = "leader"
+attached_database_Configuration_name = "adc"
+database_name  = "db" # Can be specific database name or * for all databases
+default_principals_modification_kind  = "Union"
+location = "North Central US"
+cluster_resource_id = "/subscriptions/" + leader_subscription_id + "/resourceGroups/" + leader_resouce_group_name + "/providers/Microsoft.Kusto/Clusters/" + leader_cluster_name
+
+attached_database_configuration_properties = AttachedDatabaseConfiguration(cluster_resource_id = cluster_resource_id, database_name = database_name, default_principals_modification_kind = default_principals_modification_kind, location = location)
+
+#Returns an instance of LROPoller, see https://docs.microsoft.com/python/api/msrest/msrest.polling.lropoller?view=azure-python
+poller = kusto_management_client.attached_database_configurations.create_or_update(follower_resource_group_name, follower_cluster_name, attached_database_Configuration_name, attached_database_configuration_properties)
 ```
 
 ### <a name="attach-a-database-using-an-azure-resource-manager-template"></a>Присоединение базы данных с помощью шаблона Azure Resource Manager
@@ -173,7 +222,7 @@ var attachedDatabaseConfigurations = resourceManagementClient.AttachedDatabaseCo
 |Имя базы данных     |      Имя базы данных, которая будет следовать. Если вы хотите следовать всем базам данных лидера, используйте "*".   |
 |Идентификатор ресурса кластера лидера    |   Идентификатор ресурса для кластера лидера.      |
 |Тип изменения участников по умолчанию    |   Тип изменения субъекта по умолчанию. Может быть `Union`, `Replace` или `None`. Дополнительные сведения об изменении типа субъекта по умолчанию см. в разделе [команда управления типа изменения основного сервера](/azure/kusto/management/cluster-follower?branch=master#alter-follower-database-principals-modification-kind).      |
-|Место проведения   |   Расположение всех ресурсов. Лидер и след должны находиться в одном расположении.       |
+|Location   |   Расположение всех ресурсов. Лидер и след должны находиться в одном расположении.       |
  
 ### <a name="verify-that-the-database-was-successfully-attached"></a>Проверка успешного присоединения базы данных
 
@@ -195,7 +244,7 @@ var attachedDatabaseConfigurations = resourceManagementClient.AttachedDatabaseCo
 
 ### <a name="detach-the-attached-follower-database-from-the-follower-cluster"></a>Отсоединение присоединенной базы данных последующих действий от кластера
 
-Кластер следов может отключить любую присоединенную базу данных следующим образом:
+Кластер последующих действий может отключить любую присоединенную базу данных следующим образом:
 
 ```csharp
 var tenantId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";//Directory (tenant) ID
@@ -247,6 +296,78 @@ var followerDatabaseDefinition = new FollowerDatabaseDefinition()
 resourceManagementClient.Clusters.DetachFollowerDatabases(leaderResourceGroupName, leaderClusterName, followerDatabaseDefinition);
 ```
 
+## <a name="detach-the-follower-database-using-python"></a>Отключение базы данных последующих действий с помощью Python
+
+### <a name="detach-the-attached-follower-database-from-the-follower-cluster"></a>Отсоединение присоединенной базы данных последующих действий от кластера
+
+Кластер последующих действий может отключить любую присоединенную базу данных следующим образом:
+
+```python
+from azure.mgmt.kusto import KustoManagementClient
+from azure.common.credentials import ServicePrincipalCredentials
+import datetime
+
+#Directory (tenant) ID
+tenant_id = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx"
+#Application ID
+client_id = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx"
+#Client Secret
+client_secret = "xxxxxxxxxxxxxx"
+follower_subscription_id = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx"
+credentials = ServicePrincipalCredentials(
+        client_id=client_id,
+        secret=client_secret,
+        tenant=tenant_id
+    )
+kusto_management_client = KustoManagementClient(credentials, follower_subscription_id)
+
+follower_resource_group_name = "followerResouceGroup"
+follower_cluster_name = "follower"
+attached_database_configurationName = "adc"
+
+#Returns an instance of LROPoller, see https://docs.microsoft.com/python/api/msrest/msrest.polling.lropoller?view=azure-python
+poller = kusto_management_client.attached_database_configurations.delete(follower_resource_group_name, follower_cluster_name, attached_database_configurationName)
+```
+
+### <a name="detach-the-attached-follower-database-from-the-leader-cluster"></a>Отсоединение присоединенной базы данных следующих серверов от ведущего кластера
+
+Кластер лидера может отключить любую присоединенную базу данных следующим образом:
+
+```python
+
+from azure.mgmt.kusto import KustoManagementClient
+from azure.mgmt.kusto.models import FollowerDatabaseDefinition
+from azure.common.credentials import ServicePrincipalCredentials
+import datetime
+
+#Directory (tenant) ID
+tenant_id = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx"
+#Application ID
+client_id = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx"
+#Client Secret
+client_secret = "xxxxxxxxxxxxxx"
+follower_subscription_id = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx"
+leader_subscription_id = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx"
+credentials = ServicePrincipalCredentials(
+        client_id=client_id,
+        secret=client_secret,
+        tenant=tenant_id
+    )
+kusto_management_client = KustoManagementClient(credentials, follower_subscription_id)
+
+follower_resource_group_name = "followerResourceGroup"
+leader_resource_group_name = "leaderResourceGroup"
+follower_cluster_name = "follower"
+leader_cluster_name = "leader"
+attached_database_configuration_name = "adc"
+location = "North Central US"
+cluster_resource_id = "/subscriptions/" + follower_subscription_id + "/resourceGroups/" + follower_resource_group_name + "/providers/Microsoft.Kusto/Clusters/" + follower_cluster_name
+
+
+#Returns an instance of LROPoller, see https://docs.microsoft.com/python/api/msrest/msrest.polling.lropoller?view=azure-python
+poller = kusto_management_client.clusters.detach_follower_databases(resource_group_name = leader_resource_group_name, cluster_name = leader_cluster_name, cluster_resource_id = cluster_resource_id, attached_database_configuration_name = attached_database_configuration_name)
+```
+
 ## <a name="manage-principals-permissions-and-caching-policy"></a>Управление участниками, разрешениями и политикой кэширования
 
 ### <a name="manage-principals"></a>Управление участниками
@@ -277,6 +398,6 @@ resourceManagementClient.Clusters.DetachFollowerDatabases(leaderResourceGroupNam
 * Невозможно удалить кластер с базой данных, присоединенной к другому кластеру, прежде чем отсоединить его.
 * Невозможно прикрепить к кластеру, присоединенному к исполнению или выполнительу базы данных. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о конфигурации кластера ниже см. в разделе [управляющие команды для управления кластером последующих действий](/azure/kusto/management/cluster-follower).

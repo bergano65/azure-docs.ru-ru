@@ -1,25 +1,17 @@
 ---
-title: Создание универсальной платформы Windows (UWP) для использования мобильных приложений Azure | Документация Майкрософт
+title: Создание приложения UWP
 description: Следуйте указаниям этого руководства, чтобы начать работу с серверной частью мобильных приложений Azure для разработки приложений универсальной платформы Windows (UWP) на C#, Visual Basic или JavaScript.
-services: app-service\mobile
-documentationcenter: windows
-author: elamalani
-manager: crdun
-editor: ''
 ms.assetid: 47124296-2908-4d92-85e0-05c4aa6db916
-ms.service: app-service-mobile
-ms.workload: mobile
 ms.tgt_pltfrm: mobile-windows
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 06/25/2019
-ms.author: emalani
-ms.openlocfilehash: 3ddd5ef197740315add2960971c978addb7fe62a
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: a0f78239406567513c1eb94b48bf1090165d9185
+ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72388563"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74668689"
 ---
 # <a name="create-a-windows-app-with-an-azure-backend"></a>Создание приложения Windows с серверной частью Azure
 
@@ -60,7 +52,7 @@ ms.locfileid: "72388563"
 
 1. Откройте проект UWP.
 
-2. Перейдите к [портал Azure](https://portal.azure.com/) и перейдите к созданному вами мобильному приложению. В колонке `Overview` найдите URL-адрес, который является общедоступной конечной точкой для мобильного приложения. Пример. имя сайта для имени моего приложения "test123" будет https://test123.azurewebsites.net.
+2. Перейдите к [портал Azure](https://portal.azure.com/) и перейдите к созданному вами мобильному приложению. В колонке `Overview` найдите URL-адрес, который является общедоступной конечной точкой для мобильного приложения. Пример. имя сайта для имени приложения "test123" будет https://test123.azurewebsites.net.
 
 3. Откройте файл `App.xaml.cs` в этой папке — Windows-UWP-CS/ЗУМОАППНАМЕ/. Имя приложения — `ZUMOAPPNAME`.
 

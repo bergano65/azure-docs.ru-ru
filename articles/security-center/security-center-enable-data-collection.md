@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: 4b67e7a2ee9f2d734d927b3488cc15ca310f4295
-ms.sourcegitcommit: b5d59c6710046cf105236a6bb88954033bd9111b
+ms.openlocfilehash: ae645f15672693466ba87f2364c756ed164ce629
+ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74559063"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74669170"
 ---
 # <a name="data-collection-in-azure-security-center"></a>Сбор данных в центре безопасности Azure
 Центр безопасности собирает данные из виртуальных машин Azure, масштабируемых наборов виртуальных машин, контейнеров IaaS и не Azure (включая локальные компьютеры) для отслеживания уязвимостей и угроз безопасности. Сбор данных выполняется с помощью агента Log Analytics, который считывает различные конфигурации, связанные с безопасностью, и журналы событий с компьютера и копирует данные в рабочую область для анализа. К примерам таких данных относятся тип и версия операционной системы, журналы операционной системы (журналы событий Windows), выполняющиеся процессы, имя компьютера, IP-адреса и имя вошедшего пользователя. Агент Log Analytics также копирует файлы аварийного дампа в рабочую область.
@@ -211,7 +211,7 @@ ms.locfileid: "74559063"
 - Расширение виртуальной машины уже установлено<br>
     - Если агент мониторинга установлен как расширение, конфигурация расширения позволяет создавать отчеты только для одной рабочей области. Центр безопасности не переопределяет установленные подключения к рабочим областям пользователя. Центр безопасности будет хранить данные безопасности с виртуальной машины в уже подключенной рабочей области при условии, что на нем установлено решение "безопасность" или "Секуритифри". Центр безопасности может обновить версию расширения до последней версии в этом процессе.  
     - Чтобы узнать, в какую рабочую область отправляет данные имеющееся расширение, выполните тест для [проверки соединения с центром безопасности Azure](https://blogs.technet.microsoft.com/yuridiogenes/2017/10/13/validating-connectivity-with-azure-security-center/). Кроме того, можно открыть Log Analytics рабочие области, выбрать рабочую область, выбрать виртуальную машину и просмотреть соединение агента Log Analytics. 
-    - Если у вас есть среда, в которой агент Log Analytics установлен на клиентских рабочих станциях и модуль отчетов в существующей Log Analytics рабочей области, ознакомьтесь со списком [операционных систем, поддерживаемых центром безопасности Azure](security-center-os-coverage.md) , чтобы убедиться, что ваша операционная система поддерживается. Дополнительные сведения см. в разделе [существующие клиенты log Analytics](security-center-faq.md#existingloganalyticscust).
+    - Если у вас есть среда, в которой агент Log Analytics установлен на клиентских рабочих станциях и модуль создания отчетов в существующей Log Analytics рабочей области, ознакомьтесь со списком [операционных систем, поддерживаемых центром безопасности Azure](security-center-os-coverage.md) , чтобы убедиться, что операционная система поддерживается. Дополнительные сведения см. в разделе [существующие клиенты log Analytics](security-center-faq.md#existingloganalyticscust).
  
 ### Отключение автоматической подготовки <a name="offprovisioning"></a>
 Отключить автоматическую подготовку ресурсов можно в любое время, отключив этот параметр в политике безопасности. 
@@ -288,7 +288,7 @@ ms.locfileid: "74559063"
 
       - При установке на виртуальной машине Windows:
         
-            Set-AzVMExtension -ResourceGroupName $vm.ResourceGroupName -VMName $vm.Name -Name "MicrosoftMonitoringAgent" -Publisher "Microsoft.EnterpriseCloud.Monitoring" -ExtensionType "MicrosoftMonitoringAgent" -TypeHandlerVersion '1.0' -Location $vm.Location -Settingstring $PublicConf -ProtectedSettingString $PrivateConf -ForceRerun True 
+            Set-AzVMExtension -ResourceGroupName $vm.ResourceGroupName -VMName $vm.Name -Name "MicrosoftMonitoringAgent" -Publisher "Microsoft.EnterpriseCloud.Monitoring" -ExtensionType "MicrosoftMonitoringAgent" -TypeHandlerVersion '1.0' -Location $vm.Location -settings $PublicConf -ProtectedSettingString $PrivateConf -ForceRerun True 
     
       - При установке на виртуальной машине Linux:
         

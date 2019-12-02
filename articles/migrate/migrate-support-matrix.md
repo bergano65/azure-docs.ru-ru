@@ -8,12 +8,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: raynew
-ms.openlocfilehash: 13a4fbb119ae9aceb8731e53f7123375a6e5c106
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.openlocfilehash: fa6ea1ec1992c94d44531cda9802290edf8db301
+ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
-ms.locfileid: "74666279"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74669152"
 ---
 # <a name="azure-migrate-support-matrix"></a>Матрица поддержки службы "миграция Azure"
 
@@ -54,7 +54,7 @@ ms.locfileid: "74666279"
 [DMS](https://docs.microsoft.com/azure/dms/dms-overview) | Нет данных | Миграция SQL Server, Oracle, MySQL, PostgreSQL, MongoDB. 
 [Lakeside](https://go.microsoft.com/fwlink/?linkid=2104908) | Оценка инфраструктуры виртуальных рабочих столов (VDI) | Нет данных
 [Movere](https://go.microsoft.com/fwlink/?linkid=2109528) | Оценка виртуальных машин VMWare, виртуальных машин Hyper-V, виртуальных машин Xen, физических компьютеров, рабочих станций (включая VDI), рабочих нагрузок в общедоступном облаке | Нет данных
-[RackWare](https://www.rackwareinc.com/cloud-migration) | Нет данных | Перенос виртуальных машин VMWare, виртуальных машин Hyper-V, виртуальных машин Xen, виртуальных машин KVM, физических компьютеров, рабочих нагрузок в общедоступном облаке 
+[RackWare](https://go.microsoft.com/fwlink/?linkid=2102735) | Нет данных | Перенос виртуальных машин VMWare, виртуальных машин Hyper-V, виртуальных машин Xen, виртуальных машин KVM, физических компьютеров, рабочих нагрузок в общедоступном облаке 
 [Turbonomic](https://go.microsoft.com/fwlink/?linkid=2094295)  | Оцените виртуальные машины VMware, виртуальные машины Hyper-V, физические серверы, рабочие нагрузки общедоступных облаков. | Нет данных
 [UnifyCloud](https://go.microsoft.com/fwlink/?linkid=2097195) | Оцените виртуальные машины VMware, виртуальные машины Hyper-V, физические серверы, рабочие нагрузки общедоступных облачных служб и базы данных SQL Server. | Нет данных
 [Webapp Помощник по миграции](https://appmigration.microsoft.com/) | Оценка веб-приложений | Перенос веб-приложений.

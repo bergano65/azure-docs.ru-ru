@@ -7,34 +7,30 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 10/07/2019
-ms.openlocfilehash: bcc80000be5e061a37601f05a2a245aac031fc15
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: 0cac03e50bf46910f8430b745803107b60905769
+ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72031660"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74667384"
 ---
 # <a name="create-an-iot-hub-data-connection-for-azure-data-explorer-by-using-c-preview"></a>Создание подключения к данным центра Интернета вещей для Azure обозреватель данных с C# помощью (Предварительная версия)
 
 > [!div class="op_single_selector"]
-> * [Портал](ingest-data-iot-hub.md)
+> * [Microsoft Azure](ingest-data-iot-hub.md)
 > * [C#](data-connection-iot-hub-csharp.md)
 > * [Python](data-connection-iot-hub-python.md)
+> * [Шаблон Azure Resource Manager](data-connection-iot-hub-resource-manager.md)
 
 Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Azure обозреватель данных обеспечивает прием (загрузку данных) из концентраторов событий, центров Интернета вещей и больших двоичных объектов, записанных в контейнеры больших двоичных объектов. В этой статье вы создадите подключение к данным центра Интернета вещей для Azure обозреватель данных с помощью C#.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Если вы еще не установили Visual Studio 2019, вы можете скачать и использовать **бесплатный** [выпуск Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**.
-
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
-
 * Создание [кластера и базы данных](create-cluster-database-csharp.md)
-
 * Создание [сопоставления таблиц и столбцов](net-standard-ingest-data.md#create-a-table-on-your-test-cluster)
-
 * Задание [политик базы данных и таблиц](database-table-policies-csharp.md) (необязательно)
-
 * Создайте [центр Интернета вещей с настроенной политикой общего доступа](ingest-data-iot-hub.md#create-an-iot-hub).
 
 [!INCLUDE [data-explorer-data-connection-install-nuget-csharp](../../includes/data-explorer-data-connection-install-nuget-csharp.md)]
@@ -84,9 +80,9 @@ await kustoManagementClient.DataConnections.CreateOrUpdate(resourceGroupName, cl
 |---|---|---|
 | tenantId | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор клиента. Также известен как идентификатор каталога.|
 | subscriptionId | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор подписки, используемый для создания ресурсов.|
-| clientId | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор клиента приложения, которое может получать доступ к ресурсам в клиенте.|
+| clientid | *xxxxxxxx-XXXXX-XXXX-XXXX-XXXXXXXXX* | Идентификатор клиента приложения, которое может получать доступ к ресурсам в клиенте.|
 | clientSecret | *кскскскскскскскскскскскскскс* | Секрет клиента приложения, которое может получить доступ к ресурсам в клиенте. |
-| resourceGroupName | *testrg* | Имя группы ресурсов, содержащей кластер.|
+| имя_группы_ресурсов | *testrg* | Имя группы ресурсов, содержащей кластер.|
 | clusterName | *mykustocluster* | Имя кластера.|
 | databaseName | *mykustodatabase* | Имя целевой базы данных в кластере.|
 | датаконнектионнаме | *мевенсубконнект* | Требуемое имя подключения к данным.|

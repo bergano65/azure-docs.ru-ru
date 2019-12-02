@@ -1,25 +1,17 @@
 ---
-title: Добавление проверки подлинности в приложение универсальной платформы Windows (UWP) | Документация Майкрософт
-description: Узнайте, как использовать мобильные приложения службы приложений Azure, чтобы выполнять аутентификацию пользователей приложения универсальной платформы Windows (UWP) с помощью разных поставщиков удостоверений, включая AAD, Google, Facebook, Twitter и Майкрософт.
-services: app-service\mobile
-documentationcenter: windows
-author: elamalani
-manager: panarasi
-editor: ''
+title: Добавление проверки подлинности в приложение UWP
+description: Узнайте, как использовать мобильные приложения службы приложений Azure для проверки подлинности пользователей приложения универсальная платформа Windows (UWP) с помощью поставщиков удостоверений, таких как AAD, Google, Facebook, Twitter и Майкрософт.
 ms.assetid: 6cffd951-893e-4ce5-97ac-86e3f5ad9466
-ms.service: app-service-mobile
-ms.workload: mobile
 ms.tgt_pltfrm: mobile-windows
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 06/25/2019
-ms.author: emalani
-ms.openlocfilehash: d5012ccc503e48785e23ff00564bbc9f6735eea8
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 23d3c897f227dd49253abfcc6d3a84d477341c13
+ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72388537"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74668379"
 ---
 # <a name="add-authentication-to-your-windows-app"></a>Добавление проверки подлинности в приложение Windows
 [!INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]
