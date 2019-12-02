@@ -1,26 +1,26 @@
 ---
-title: Настройка ключей, управляемых клиентом, для шифрования службы хранилища Azure от Azure CLI
-description: Узнайте, как использовать Azure CLI для настройки ключей, управляемых клиентом, для шифрования службы хранилища Azure. Ключи, управляемые клиентом, позволяют создавать, поворачивать, отключать и отзывать элементы управления доступом.
+title: Настройка ключей, управляемых клиентом, с Azure Key Vault с помощью Azure CLI в службе хранилища Azure
+description: Узнайте, как использовать Azure CLI для настройки ключей, управляемых клиентом, с помощью Azure Key Vault для шифрования службы хранилища Azure. Ключи, управляемые клиентом, позволяют создавать, поворачивать, отключать и отзывать элементы управления доступом.
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: conceptual
-ms.date: 10/15/2019
+ms.topic: how-to
+ms.date: 11/20/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 18209816b5b73f58a8112efca0363b31dd47bd91
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: df65267924cfbfdc856b81928c4b6d7029f61184
+ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72374272"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74665973"
 ---
-# <a name="configure-customer-managed-keys-for-azure-storage-encryption-from-azure-cli"></a>Настройка ключей, управляемых клиентом, для шифрования службы хранилища Azure от Azure CLI
+# <a name="configure-customer-managed-keys-for-azure-storage-by-using-azure-cli"></a>Настройка ключей, управляемых клиентом, для службы хранилища Azure с помощью Azure CLI
 
 [!INCLUDE [storage-encryption-configure-keys-include](../../../includes/storage-encryption-configure-keys-include.md)]
 
-В этой статье показано, как настроить хранилище ключей с управляемыми клиентом ключами с помощью Azure CLI.
+В этой статье показано, как настроить Azure Key Vault с управляемыми клиентом ключами с помощью Azure CLI. Сведения о создании хранилища ключей с помощью Azure CLI см. в разделе [Краткое руководство. Установка и извлечение секрета из Azure Key Vault с помощью Azure CLI](../../key-vault/quick-create-cli.md).
 
 > [!IMPORTANT]
 > Для использования управляемых клиентом ключей с шифрованием службы хранилища Azure необходимо, чтобы в хранилище ключей были установлены два свойства: **обратимое удаление** и **не очищать**. По умолчанию эти свойства отключены. Чтобы включить эти свойства, используйте либо PowerShell, либо Azure CLI.

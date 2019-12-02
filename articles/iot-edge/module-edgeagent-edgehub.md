@@ -1,5 +1,5 @@
 ---
-title: Справочник по требуемым свойствам EdgeAgent и EdgeHub (Azure IoT Edge) | Документация Майкрософт
+title: Свойства агента и модуля концентратора двойников-Azure IoT Edge
 description: Обзор определенных свойств и их значений для двойников модулей EdgeAgent и EdgeHub
 author: kgremban
 manager: philmea
@@ -8,12 +8,12 @@ ms.date: 06/17/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 1ab45a6bde9ead69a7ea23dd095de84b8ff01334
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 731c51894126a6de75c9fc25e4e7bdb3dfa4dd03
+ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74456704"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74665803"
 ---
 # <a name="properties-of-the-iot-edge-agent-and-iot-edge-hub-module-twins"></a>Свойства двойников модулей агента IoT Edge и центра IoT Edge
 
@@ -31,31 +31,31 @@ ms.locfileid: "74456704"
 
 Двойник модуля для агента IoT Edge называется `$edgeAgent`. Он координирует взаимодействие между агентом IoT Edge, выполняющимся на устройстве, и Центром Интернета вещей. Требуемые свойства задаются при применении манифеста развертывания на конкретном устройстве в ходе развертывания на одно устройство или несколько. 
 
-| Свойство | ОПИСАНИЕ | обязательные |
+| Свойство | Описание | Обязательно для заполнения |
 | -------- | ----------- | -------- |
-| schemaVersion | Должно быть "1.0". | Yes |
-| runtime.type | Должно быть "docker". | Yes |
-| runtime.settings.minDockerVersion | Задайте минимальную версию Docker, которая требуется для этого манифеста развертывания. | Yes |
+| schemaVersion | Должно быть "1.0". | ДА |
+| runtime.type | Должно быть "docker". | ДА |
+| runtime.settings.minDockerVersion | Задайте минимальную версию Docker, которая требуется для этого манифеста развертывания. | ДА |
 | runtime.settings.loggingOptions | Переведенные в строку JSON, содержащую параметры ведения журнала для контейнера агента IoT Edge. [Параметры ведения журнала Docker](https://docs.docker.com/engine/admin/logging/overview/) | Нет |
 | runtime.settings.registryCredentials<br>.{registryId}.username | Имя пользователя для реестра контейнеров. Для Реестра контейнеров Azure именем пользователя обычно является имя реестра.<br><br> Учетные данные реестра необходимы для любых образов модулей, не являющихся общедоступными. | Нет |
 | runtime.settings.registryCredentials<br>.{registryId}.password | Пароль для реестра контейнеров. | Нет |
 | runtime.settings.registryCredentials<br>.{registryId}.address | Адрес для реестра контейнеров. Для Реестра контейнеров Azure адрес обычно имеет вид *{имя реестра}.azurecr.io*. | Нет |  
-| systemModules.edgeAgent.type | Должно быть "docker". | Yes |
-| systemModules.edgeAgent.settings.image | Универсальный код ресурса (URI) образа агента IoT Edge. В настоящее время агент IoT Edge не может обновить себя сам. | Yes |
+| systemModules.edgeAgent.type | Должно быть "docker". | ДА |
+| systemModules.edgeAgent.settings.image | Универсальный код ресурса (URI) образа агента IoT Edge. В настоящее время агент IoT Edge не может обновить себя сам. | ДА |
 | systemModules.edgeAgent.settings<br>.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера агента IoT Edge. [Параметры создания Docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | Нет |
 | systemModules.edgeAgent.configuration.id | Идентификатор развертывания, которое развернуло этот модуль. | Центр Интернета вещей задает свойство при применении этого манифеста с помощью развертывания. Не является частью манифеста развертывания. |
-| systemModules.edgeHub.type | Должно быть "docker". | Yes |
-| systemModules.edgeHub.status | Должно быть "running". | Yes |
-| systemModules.edgeHub.restartPolicy | Должно быть "always". | Yes |
-| systemModules.edgeHub.settings.image | Универсальный код ресурса (URI) образа центра IoT Edge. | Yes |
+| systemModules.edgeHub.type | Должно быть "docker". | ДА |
+| systemModules.edgeHub.status | Должно быть "running". | ДА |
+| systemModules.edgeHub.restartPolicy | Должно быть "always". | ДА |
+| systemModules.edgeHub.settings.image | Универсальный код ресурса (URI) образа центра IoT Edge. | ДА |
 | systemModules.edgeHub.settings<br>.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера центра IoT Edge. [Параметры создания Docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | Нет |
 | systemModules.edgeHub.configuration.id | Идентификатор развертывания, которое развернуло этот модуль. | Центр Интернета вещей задает свойство при применении этого манифеста с помощью развертывания. Не является частью манифеста развертывания. |
-| modules.{ИД_модуля}.version | Определяемая пользователем строка, представляющая версию этого модуля. | Yes |
-| modules.{ИД_модуля}.type | Должно быть "docker". | Yes |
-| modules.{Ид_модуля}.status | {"running" \| "stopped"} | Yes |
-| modules.{ИД_модуля}.restartPolicy | {"никогда" \| "on-Failure" \| "on-неработоспособное" \| "Always"} | Yes |
+| modules.{ИД_модуля}.version | Определяемая пользователем строка, представляющая версию этого модуля. | ДА |
+| modules.{ИД_модуля}.type | Должно быть "docker". | ДА |
+| modules.{Ид_модуля}.status | {"running" \| "stopped"} | ДА |
+| modules.{ИД_модуля}.restartPolicy | {"никогда" \| "on-Failure" \| "on-неработоспособное" \| "Always"} | ДА |
 | модуле. {moduleId}. Имажепуллполици | {"on-Create" \| "никогда"} | Нет |
-| modules.{ИД_модуля}.settings.image | Универсальный код ресурса (URI) для образа модуля. | Yes |
+| modules.{ИД_модуля}.settings.image | Универсальный код ресурса (URI) для образа модуля. | ДА |
 | modules.{ИД_модуля}.settings.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера модуля. [Параметры создания Docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | Нет |
 | modules.{ИД_модуля}.configuration.id | Идентификатор развертывания, которое развернуло этот модуль. | Центр Интернета вещей задает свойство при применении этого манифеста с помощью развертывания. Не является частью манифеста развертывания. |
 
@@ -74,7 +74,7 @@ ms.locfileid: "74456704"
 
 Следующая таблица не включает сведения, которые копируются из требуемых свойств.
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 | -------- | ----------- |
 | lastDesiredVersion | Это целое число относится к последней версии требуемых свойств, обрабатываемых агентом IoT Edge. |
 | lastDesiredStatus.code | Этот код состояния ссылается на последние требуемые свойства, наблюдаемые агентом IoT Edge. Допустимые значения: `200` — успех, `400` — недопустимая конфигурация,`412` — недопустимая версия схемы, `417` — нужные свойства пусты, `500` — сбой. |
@@ -104,15 +104,15 @@ ms.locfileid: "74456704"
 
 Двойник модуля центра IoT Edge называется `$edgeHub`. Он координирует взаимодействие между центром IoT Edge, выполняющимся на устройстве, и Центром Интернета вещей. Требуемые свойства задаются при применении манифеста развертывания на конкретном устройстве в ходе развертывания на одно устройство или несколько. 
 
-| Свойство | ОПИСАНИЕ | Требуется в манифесте развертывания |
+| Свойство | Описание | Требуется в манифесте развертывания |
 | -------- | ----------- | -------- |
-| schemaVersion | Должно быть "1.0". | Yes |
+| schemaVersion | Должно быть "1.0". | ДА |
 | routes.{имя_маршрута} | Строка, представляющая маршрут центра IoT Edge. Дополнительные сведения см. в разделе [объявление маршрутов](module-composition.md#declare-routes). | Элемент `routes` может присутствовать, но быть пустым. |
-| storeAndForwardConfiguration.timeToLiveSecs | Время в секундах, в течение которого центр IoT Edge хранит сообщения при отключении от конечных точек маршрутизации, будь то центр Интернета вещей или локальный модуль. Значением может быть любое положительное целое число. | Yes |
+| storeAndForwardConfiguration.timeToLiveSecs | Время в секундах, в течение которого центр IoT Edge хранит сообщения при отключении от конечных точек маршрутизации, будь то центр Интернета вещей или локальный модуль. Значением может быть любое положительное целое число. | ДА |
 
 ## <a name="edgehub-reported-properties"></a>Отображаемые в отчете свойства EdgeHub
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 | -------- | ----------- |
 | lastDesiredVersion | Это целое число относится к последней версии требуемых свойств, обрабатываемых центром IoT Edge. |
 | lastDesiredStatus.code | Код состояния, ссылающийся на последние требуемые свойства, отображаемые центром IoT Edge. Допустимые значения: `200` — успех, `400` — недопустимая конфигурация, `500` — сбой. |
@@ -121,6 +121,6 @@ ms.locfileid: "74456704"
 | clients.{идентификатор устройства или модуля}.lastConnectTime | Время последнего подключения устройства или модуля. |
 | clients.{идентификатор устройства или модуля}.lastDisconnectTime | Время последнего отключения устройства или модуля. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о том, как использовать эти свойства для создания манифестов развертывания, см. в статье [Сведения об использовании, настройке и повторном использовании модулей Azure IoT Edge (предварительная версия)](module-composition.md).

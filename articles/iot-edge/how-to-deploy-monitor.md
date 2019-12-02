@@ -1,5 +1,5 @@
 ---
-title: Создание задачи автоматического развертывания на портале Azure — Azure IoT Edge | Документация Майкрософт
+title: Развертывание модулей в масштабе в портал Azure Azure IoT Edge
 description: Создание задач автоматического развертывания для групп устройств IoT Edge с помощью портала Azure
 keywords: ''
 author: kgremban
@@ -9,12 +9,12 @@ ms.date: 06/17/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 286bab7b7fdbe42190c32dabb42c59d6fc094b2a
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 068845bf8cda7ce6abf11eefad0ed176688b34c5
+ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74457366"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74665854"
 ---
 # <a name="deploy-and-monitor-iot-edge-modules-at-scale-using-the-azure-portal"></a>Развертывание и мониторинг большого числа модулей IoT Edge с помощью портала Azure
 
@@ -103,7 +103,7 @@ ms.locfileid: "74457366"
 
 1. Введите запрос для параметра **Metric Criteria** (Критерии метрики). Запрос основан на [переданных свойствах](module-edgeagent-edgehub.md#edgehub-reported-properties) двойников модуля центра IoT Edge. Метрика представляет количество строк, возвращаемых запросом.
 
-   Например,
+   Пример.
 
    ```sql
    SELECT deviceId FROM devices
@@ -209,6 +209,6 @@ Azure Marketplace — это интернет-магазин приложени
 1. Нажмите кнопку **Удалить**.
 1. Появится запрос с сообщением о том, что это действие удалит развертывание и будут возвращены предыдущие состояния всех устройств.  Это означает, что будет применено развертывание с более низким приоритетом.  Если другие развертывания не предназначены, модули не удаляются. Чтобы удалить все модули из устройства, создайте развертывание без модулей и разверните его на этом устройстве. Нажмите кнопку **Да** , чтобы продолжить. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [развертывании модулей на IOT Edge устройствах](module-deployment-monitoring.md).

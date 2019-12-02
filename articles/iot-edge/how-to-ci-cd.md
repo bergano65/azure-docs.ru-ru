@@ -1,5 +1,5 @@
 ---
-title: Непрерывная интеграция и непрерывное развертывание в Azure IoT Edge | Документация Майкрософт
+title: Непрерывная интеграция & непрерывное развертывание — Azure IoT Edge
 description: Настройка непрерывной интеграции и непрерывного развертывания в Azure IoT Edge с использованием Azure DevOps, Azure Pipelines
 author: shizn
 manager: philmea
@@ -8,12 +8,12 @@ ms.date: 08/20/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 85f77d1132af63681ee92cfd2bde82a71d8ed999
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 463de1f49ad8fd21c355395bec3a55d9d40474e6
+ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74457242"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74666364"
 ---
 # <a name="continuous-integration-and-continuous-deployment-to-azure-iot-edge"></a>Непрерывная интеграция и непрерывное развертывание в Azure IoT Edge
 
@@ -27,7 +27,7 @@ ms.locfileid: "74457242"
    - **Azure IOT Edge — создание манифеста развертывания** принимает файл Deployment. Template. JSON и переменные, а затем создает окончательный файл манифеста развертывания IOT Edge.
    - **Azure IOT Edge-Deploy to IOT Edge Devices** помогает создавать IOT Edge развертывания на одном или нескольких IOT Edge устройствах.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * Репозиторий Azure Repos. Если у вас его нет, вы можете [создать репозиторий Git в проекте](https://docs.microsoft.com/azure/devops/repos/git/create-new-repo?view=vsts&tabs=new-nav).
 * Решение IoT Edge, зафиксированное и отправленное в репозиторий. Если вы хотите создать пример решения для тестирования инструкций в этой статье, следуйте шагам, изложенным в статье [Использование Visual Studio Code для разработки и отладки модулей для Azure IoT Edge](how-to-vs-code-develop-module.md) или [Сведения об использовании Visual Studio 2017 для разработки и отладки модулей C# для Azure IoT Edge (предварительная версия)](how-to-visual-studio-develop-csharp-module.md).
@@ -219,7 +219,7 @@ ms.locfileid: "74457242"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * IoT Edge рекомендации по DevOps в [проекте DevOps Azure для IOT Edge](how-to-devops-project.md)
 * Основные сведения о развертывании IoT Edge см. в статье [Understand IoT Edge deployments for single devices or at scale](module-deployment-monitoring.md) (Основные сведения о развертываниях IoT Edge для отдельных устройств или в требуемом масштабе).
 * Ознакомьтесь со статьей [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-monitor.md), чтобы узнать, как создавать, обновлять или удалять развертывание.

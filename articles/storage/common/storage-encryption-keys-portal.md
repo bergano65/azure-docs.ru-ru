@@ -1,26 +1,26 @@
 ---
-title: Настройка ключей, управляемых клиентом, для шифрования службы хранилища Azure из портал Azure
-description: Узнайте, как использовать портал Azure для настройки ключей, управляемых клиентом, для шифрования службы хранилища Azure. Ключи, управляемые клиентом, позволяют создавать, поворачивать, отключать и отзывать элементы управления доступом.
+title: Настройка ключей, управляемых клиентом, с Azure Key Vault с помощью портал Azure службы хранилища Azure
+description: Узнайте, как использовать портал Azure для настройки ключей, управляемых клиентом, с помощью Azure Key Vault для шифрования службы хранилища Azure. Ключи, управляемые клиентом, позволяют создавать, поворачивать, отключать и отзывать элементы управления доступом.
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: article
-ms.date: 10/15/2019
+ms.topic: how-to
+ms.date: 11/20/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 74ca6f15baeeb9fe8adad4bda80e313a4b4cf03a
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: b72f30a636d0177edb8b3254d14be941b2d4e6bc
+ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72376242"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74665919"
 ---
-# <a name="configure-customer-managed-keys-for-azure-storage-encryption-from-the-azure-portal"></a>Настройка ключей, управляемых клиентом, для шифрования службы хранилища Azure из портал Azure
+# <a name="configure-customer-managed-keys-for-azure-storage-by-using-the-azure-portal"></a>Настройка ключей, управляемых клиентом, для службы хранилища Azure с помощью портал Azure
 
 [!INCLUDE [storage-encryption-configure-keys-include](../../../includes/storage-encryption-configure-keys-include.md)]
 
-В этой статье показано, как настроить хранилище ключей с управляемыми клиентом ключами с помощью [портал Azure](https://portal.azure.com/). Сведения о создании хранилища ключей с помощью портал Azure см. в разделе [Краткое руководство. Установка и извлечение секрета из Azure Key Vault с помощью портал Azure](../../key-vault/quick-create-portal.md). 
+В этой статье показано, как настроить Azure Key Vault с управляемыми клиентом ключами с помощью [портал Azure](https://portal.azure.com/). Сведения о создании хранилища ключей с помощью портал Azure см. в разделе [Краткое руководство. Установка и извлечение секрета из Azure Key Vault с помощью портал Azure](../../key-vault/quick-create-portal.md).
 
 > [!IMPORTANT]
 > Для использования управляемых клиентом ключей с шифрованием службы хранилища Azure необходимо, чтобы в хранилище ключей были установлены два свойства: **обратимое удаление** и **не очищать**. По умолчанию эти свойства отключены. Чтобы включить эти свойства, используйте либо PowerShell, либо Azure CLI.

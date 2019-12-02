@@ -8,17 +8,17 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/22/2019
-ms.openlocfilehash: 5cc473635543a22fd7e7223f4a5715f78457a897
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.openlocfilehash: 5a8e641c8a1b29d657fe8b0eabf7657ab5973516
+ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74561749"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74666041"
 ---
 # <a name="automatically-scale-azure-hdinsight-clusters"></a>Автоматическое масштабирование кластеров Azure HDInsight
 
 > [!Important]
-> Функция автомасштабирования работает только для кластеров Spark, Hive и MapReduce, созданных после 8 мая 2019. 
+> Функция автомасштабирования работает только для кластеров Spark, Hive, LLAP и HBase, созданных после 8 мая 2019. 
 
 Функция автомасштабирования кластера Azure HDInsight автоматически масштабирует количество рабочих узлов в кластере. В настоящее время невозможно масштабировать другие типы узлов в кластере.  Во время создания кластера HDInsight можно задать минимальное и максимальное количество рабочих узлов. Затем Автомасштабирование отслеживает требования к ресурсам для аналитической загрузки и масштабирует количество рабочих узлов. Для этой функции дополнительная плата не взимается.
 
