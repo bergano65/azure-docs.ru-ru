@@ -1,5 +1,5 @@
 ---
-title: Использование назначаемого системой управляемого удостоверения на виртуальной машине Linux для доступа к Azure Cosmos DB
+title: Учебник. Получение доступа к Azure Cosmos DB для Linux в Azure AD с помощью управляемого удостоверения
 description: Из этого руководства вы узнаете, как получить доступ к Azure Cosmos DB с помощью назначаемого системой управляемого удостоверения на виртуальной машине Linux.
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 04/09/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b79c4e1ddb84213ce9000236727d9bca298a0cd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8eb77802a4d6c29bb16912f1d74d950b6461b598
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66231885"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74183347"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-cosmos-db"></a>Руководство по Использование назначаемого системой управляемого удостоверения на виртуальной машине Linux для доступа к Azure Cosmos DB 
 

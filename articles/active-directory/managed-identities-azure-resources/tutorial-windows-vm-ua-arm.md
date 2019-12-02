@@ -1,5 +1,5 @@
 ---
-title: Получение доступа к Azure Resource Manager с помощью назначаемого пользователем управляемого удостоверения на виртуальной машине Windows
+title: Учебник. Получение доступа к Azure Resource Manager для Windows в Azure AD с помощью управляемого удостоверения
 description: Из этого руководства вы узнаете, как получить доступ к Azure Resource Manager с помощью назначаемого пользователем управляемого удостоверения на виртуальной машине Windows.
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 04/10/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a6fc7e13cf5ea3991f81d53edcabe0980d799cb0
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: 0999492f0d9c7d28da3ac896792fb2d7b898fd18
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59520871"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74224219"
 ---
 # <a name="tutorial-use-a-user-assigned-managed-identity-on-a-windows-vm-to-access-azure-resource-manager"></a>Руководство по Получение доступа к Azure Resource Manager с помощью назначаемого пользователем управляемого удостоверения на виртуальной машине Windows
 
@@ -50,7 +50,7 @@ ms.locfileid: "59520871"
 - Для выполнения требуемых операций по созданию ресурсов и управлению ролями учетной записи в этом руководстве нужно предоставить учетной записи разрешения "Владелец" в соответствующей области (подписка или группа ресурсов). Прочитайте раздел [Использование управления доступом на основе ролей для контроля доступа к ресурсам в подписке Azure](/azure/role-based-access-control/role-assignments-portal), если нуждаетесь в помощи с назначением ролей.
 - [Установите модуль Azure PowerShell последней версии](/powershell/azure/install-az-ps). 
 - Выполните команду `Connect-AzAccount`, чтобы создать подключение к Azure.
-- Установите [PowerShellGet последней версии](/powershell/gallery/installing-psget#for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget).
+- Установите [PowerShellGet последней версии](/powershell/scripting/gallery/installing-psget#for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget).
 - Выполните `Install-Module -Name PowerShellGet -AllowPrerelease`, чтобы получить предварительную версию модуля `PowerShellGet` (может потребоваться `Exit` из текущего сеанса PowerShell после выполнения этой команды для установки модуля `Az.ManagedServiceIdentity`).
 - Выполните команду `Install-Module -Name Az.ManagedServiceIdentity -AllowPrerelease`, чтобы установить предварительную версию модуля `Az.ManagedServiceIdentity` для выполнения операций назначаемого пользователем удостоверения в рамках этой статьи.
 

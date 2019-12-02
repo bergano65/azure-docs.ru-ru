@@ -1,5 +1,5 @@
 ---
-title: Как получить доступ к Azure Data Lake Storage с помощью назначаемого системой управляемого удостоверения на виртуальной машине Windows
+title: Учебник. Получение доступа к Azure Data Lake Store для Windows в Azure AD с помощью управляемого удостоверения
 description: В этом руководстве описано, как получить доступ к Azure Data Lake Storage с помощью назначаемого системой управляемого удостоверения на виртуальной машине Windows.
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 11/13/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6cd03ccdab6a7120dc59e42ab62c1d3b2d1e5bc3
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: f3909e80ea36ed7aab638d717ecf8404d80beb59
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58444684"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74181898"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-data-lake-store"></a>Руководство по Получение доступа к Azure Data Lake Storage с помощью назначаемого системой управляемого удостоверения на виртуальной машине Windows
 
@@ -179,4 +179,4 @@ ms.locfileid: "58444684"
 Из этого руководства вы узнали, как получить доступ к Azure Data Lake Storage с помощью назначаемого системой управляемого удостоверения на виртуальной машине Windows. Дополнительные сведения об Azure Data Lake Store см. здесь:
 
 > [!div class="nextstepaction"]
->[Хранилище озера данных Azure](/azure/data-lake-store/data-lake-store-overview)
+>[Azure Data Lake Storage](/azure/data-lake-store/data-lake-store-overview)

@@ -1,5 +1,5 @@
 ---
-title: Использование назначаемого системой управляемого удостоверения на виртуальной машине Linux для доступа к API Graph AAD
+title: Учебник. Доступ к API Graph для Azure AD с помощью управляемого удостоверения виртуальной машины Linux
 description: Из этого руководства вы узнаете, как получить доступ к API Graph AAD с помощью назначаемого системой управляемого удостоверения на виртуальной машине Linux.
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 08/20/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 481cb560daa26e59de2c78cc64bab9fb168eed58
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 68d560e7d326cc2ddc47ed9f689dc8e31f8ab9ff
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58445397"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74183650"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-ad-graph-api"></a>Руководство по Использование назначаемого системой управляемого удостоверения на виртуальной машине Linux для доступа к API Graph AAD
 

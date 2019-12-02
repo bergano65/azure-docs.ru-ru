@@ -134,14 +134,18 @@
                   href: ../common/storage-configure-connection-string.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
                 - name: Использование REST API службы хранилища Azure
                   href: ../common/storage-rest-api-auth.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
-        - name: Использование управляемых пользователем ключей для шифрования
-          items:
-            - name: Портал
-              href: ../common/storage-encryption-keys-portal.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
-            - name: PowerShell
-              href: ../common/storage-encryption-keys-powershell.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
-            - name: Azure CLI
-              href: ../common/storage-encryption-keys-cli.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
+            - name: Управление шифрованием службы хранилища Azure
+              items:
+                - name: Проверка модели ключа шифрования для учетной записи
+                  href: ../common/storage-encryption-key-model-get.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
+                - name: Настройка управляемых пользователем ключей шифрования
+                  items:
+                    - name: Портал
+                      href: ../common/storage-encryption-keys-portal.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
+                    - name: PowerShell
+                      href: ../common/storage-encryption-keys-powershell.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
+                    - name: Azure CLI
+                      href: ../common/storage-encryption-keys-cli.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
         - name: Настройка шифрования на стороне клиента
           items:
             - name: .NET
@@ -250,13 +254,13 @@
         - name: Скачивание Обозревателя службы хранилища
           href: 'https://azure.microsoft.com/features/storage-explorer/'
         - name: Начало работы с Обозревателем службы хранилища
-          href: ../../vs-azure-tools-storage-manage-with-storage-explorer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+          href: ../../vs-azure-tools-storage-manage-with-storage-explorer.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
         - name: Заметки о выпуске Обозревателя службы хранилища
-          href: ../../vs-azure-tools-storage-explorer-relnotes.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+          href: ../../vs-azure-tools-storage-explorer-relnotes.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
         - name: Устранение неполадок с Обозревателем службы хранилища
-          href: ../common/storage-explorer-troubleshooting.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+          href: ../common/storage-explorer-troubleshooting.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
         - name: Специальные возможности Обозревателя службы хранилища
-          href: ../../vs-azure-tools-storage-explorer-accessibility.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+          href: ../../vs-azure-tools-storage-explorer-accessibility.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
     - name: Форум службы хранилища Azure
       href: 'https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazuredata'
     - name: Служба хранилища Azure на форуме Stack Overflow
