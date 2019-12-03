@@ -1,24 +1,21 @@
 ---
-title: Настройка приложений Java для Linux — служба приложений Azure | Документация Майкрософт
-description: Сведения о настройке приложений Java, работающих в службе приложений Azure в Linux.
+title: Настройка приложений Java для Linux
+description: Узнайте, как настроить предварительно созданный контейнер Java для приложения. В этой статье приведены наиболее распространенные задачи настройки.
 keywords: служба приложений Azure, веб-приложение, Linux, OSS, Java, Java EE, JEE, Java
-services: app-service
 author: bmitchell287
 manager: barbkess
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.devlang: java
 ms.topic: article
 ms.date: 06/26/2019
 ms.author: brendm
+ms.reviewer: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 9625870132d088bf1de6df06f05f0cac41a1e7fa
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
-ms.translationtype: MT
+ms.openlocfilehash: a3e0bbb414dd1f47e70de6b7a25a84a2b27c0dc7
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74144231"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74671856"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Настройка приложения Java для Linux для службы приложений Azure
 
@@ -316,7 +313,7 @@ public int getServerPort()
 |------------|-----------------------------------------------|------------------------------------------------------------------------------------------|
 | PostgreSQL | `org.postgresql.Driver`                        | [Загрузить](https://jdbc.postgresql.org/download.html)                                    |
 | MySQL      | `com.mysql.jdbc.Driver`                        | [Скачать](https://dev.mysql.com/downloads/connector/j/) (выберите "Platform Independent" (Независимо от платформы)) |
-| SQL Server; | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
+| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
 
 Чтобы настроить Tomcat для использования Java Database Connectivity (JDBC) или API сохраняемости Java (JPA), сначала настройте переменную среды `CATALINA_OPTS`, которая считывается в Tomcat при запуске. Задайте эти значения с помощью параметра приложения в [подключаемом модуле Maven для службы приложений](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
 
@@ -716,7 +713,7 @@ xsltproc --output /usr/local/tomcat/conf/server.xml /home/tomcat/conf/transfo
 
 1. Откройте терминал Bash и используйте `export <variable>=<value>`, чтобы задать каждую из следующих переменных среды.
 
-    | Переменная                 | Значение                                                                      |
+    | Переменная                 | Value                                                                      |
     |--------------------------|----------------------------------------------------------------------------|
     | RESOURCEGROUP_NAME       | Имя группы ресурсов, содержащей экземпляр службы приложений.       |
     | WEBAPP_NAME              | Имя экземпляра службы приложений.                                     |
@@ -851,7 +848,7 @@ xsltproc --output /usr/local/tomcat/conf/server.xml /home/tomcat/conf/transfo
 
 Если планируется прекращение использования какой-либо поддерживаемой среды выполнения Java, то разработчики для Azure, использующие эту среду выполнения, получат соответствующее уведомление по крайней мере за шесть месяцев до прекращения использования.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Посетите центр [Azure для разработчиков Java](/java/azure/), чтобы найти краткие руководства Azure, руководства и справочную документацию по Java.
 

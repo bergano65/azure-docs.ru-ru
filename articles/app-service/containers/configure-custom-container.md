@@ -1,24 +1,14 @@
 ---
-title: Настройка настраиваемого контейнера в службе приложений Azure | Документация Майкрософт
-description: Узнайте, как настроить приложения Node. js для работы в службе приложений Azure.
-services: app-service
-documentationcenter: ''
-author: cephalin
-manager: jpconnock
-editor: ''
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: dotnet
+title: Настройка пользовательского контейнера Linux
+description: Узнайте, как настроить пользовательский контейнер Linux в службе приложений Azure. В этой статье приведены наиболее распространенные задачи настройки.
 ms.topic: article
 ms.date: 03/28/2019
-ms.author: cephalin
-ms.openlocfilehash: 7290e2b09c316a97bfb88744307e185aef72852a
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: d9d6311e69ba4e3893da81a16b06c8baed78cdcd
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73668985"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74671865"
 ---
 # <a name="configure-a-custom-linux-container-for-azure-app-service"></a>Настройка пользовательского контейнера Linux для службы приложений Azure
 
@@ -28,7 +18,7 @@ ms.locfileid: "73668985"
 
 ## <a name="configure-port-number"></a>Настройка номера порта
 
-Веб-сервер в пользовательском образе может использовать порт, отличный от 80. Вы сообщаете Azure о порте, который использует настраиваемый контейнер, с помощью параметра приложения `WEBSITES_PORT`. На странице GitHub с [примером кода Python в этом руководстве](https://github.com/Azure-Samples/docker-django-webapp-linux) показано, что для параметра `WEBSITES_PORT` необходимо задать значение _8000_. Его можно задать, выполнив команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. Например:
+Веб-сервер в пользовательском образе может использовать порт, отличный от 80. Вы сообщаете Azure о порте, который использует настраиваемый контейнер, с помощью параметра приложения `WEBSITES_PORT`. На странице GitHub с [примером кода Python в этом руководстве](https://github.com/Azure-Samples/docker-django-webapp-linux) показано, что для параметра `WEBSITES_PORT` необходимо задать значение _8000_. Его можно задать, выполнив команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. Пример.
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <resource-group-name> --name <app-name> --settings WEBSITES_PORT=8000
@@ -36,7 +26,7 @@ az webapp config appsettings set --resource-group <resource-group-name> --name <
 
 ## <a name="configure-environment-variables"></a>Настройка переменных среды
 
-Пользовательский контейнер может использовать переменные среды, которые необходимо предоставить извне. Их можно передать в, выполнив команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. Например:
+Пользовательский контейнер может использовать переменные среды, которые необходимо предоставить извне. Их можно передать в, выполнив команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. Пример.
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <resource-group-name> --name <app-name> --settings WORDPRESS_DB_HOST="myownserver.mysql.database.azure.com"
@@ -50,7 +40,7 @@ az webapp config appsettings set --resource-group <resource-group-name> --name <
 
 Если постоянное хранилище отключено, запись в каталог `/home` не сохраняется между перезапусками приложений или несколькими экземплярами. Единственным исключением является каталог `/home/LogFiles`, который используется для хранения журналов DOCKER и контейнеров. Если постоянное хранилище включено, все операции записи в каталог `/home` сохраняются и доступны для всех экземпляров масштабируемого приложения.
 
-По умолчанию постоянное хранилище *включено* и параметр не отображается в параметрах приложения. Чтобы отключить его, задайте параметр приложения `WEBSITES_ENABLE_APP_SERVICE_STORAGE`, выполнив команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. Например:
+По умолчанию постоянное хранилище *включено* и параметр не отображается в параметрах приложения. Чтобы отключить его, задайте параметр приложения `WEBSITES_ENABLE_APP_SERVICE_STORAGE`, выполнив команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. Пример.
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <resource-group-name> --name <app-name> --settings WEBSITES_ENABLE_APP_SERVICE_STORAGE=false
@@ -75,7 +65,7 @@ SSH обеспечивает безопасный обмен данными ме
 
     Эта конфигурация не разрешает внешние подключения к контейнеру. Протокол SSH доступен только для `https://<app-name>.scm.azurewebsites.net` и аутентификации с учетными данными публикации.
 
-- Добавьте [этот файл sshd_config](https://github.com/Azure-App-Service/node/blob/master/10.14/sshd_config) в репозиторий образов и скопируйте файл в каталог *каталог/etc/SSH/* с помощью инструкции [копирования](https://docs.docker.com/engine/reference/builder/#copy) . Дополнительные сведения о файлах *sshd_config* см. в [документации по OpenBSD](https://man.openbsd.org/sshd_config).
+- Добавьте [этот файл sshd_config](https://github.com/Azure-App-Service/node/blob/master/10.14/sshd_config) в репозиторий образов и скопируйте файл в каталог *каталог/etc/SSH/* с помощью инструкции [Copy](https://docs.docker.com/engine/reference/builder/#copy) . Дополнительные сведения о *sshd_config* файлах см. в [документации по OpenBSD](https://man.openbsd.org/sshd_config).
 
     ```Dockerfile
     COPY sshd_config /etc/ssh/
@@ -122,7 +112,7 @@ az webapp config appsettings set --resource-group <resource-group-name> --name <
 
 В файле *DOCKER-Compose. yml* сопоставьте параметр `volumes` для `${WEBAPP_STORAGE_HOME}`. 
 
-`WEBAPP_STORAGE_HOME` — это переменная среды в Службе приложений, которая сопоставляется с постоянным хранилищем для вашего приложения. Например:
+`WEBAPP_STORAGE_HOME` — это переменная среды в Службе приложений, которая сопоставляется с постоянным хранилищем для вашего приложения. Пример.
 
 ```yaml
 wordpress:
@@ -149,7 +139,7 @@ wordpress:
 - command
 - entrypoint;
 - Среда
-- изображение
+- image
 - ports;
 - restart
 - services;

@@ -7,18 +7,18 @@ ms.reviewer: tzgitlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 10/31/2019
-ms.openlocfilehash: 98598a28e14dfd8175cbb019ff1b001c65503580
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: c4ee4ed81cd4cc443a8f412462a5a7f204c91898
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73644590"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74688192"
 ---
 # <a name="use-one-click-ingestion-to-ingest-data-into-azure-data-explorer"></a>Использование приема одним щелчком для приема данных в Azure обозреватель данных
 
-В этой статье показано, как использовать прием одним щелчком для быстрого приема новой таблицы в форматах JSON или CSV из хранилища в обозреватель данных Azure. После приема данных можно изменить таблицу и выполнить запросы с помощью веб-интерфейса.
+В этой статье показано, как использовать прием одним щелчком для быстрого приема новой таблицы в форматах JSON или CSV из хранилища или локального файла в существующую таблицу или новую таблицу в обозреватель данных Azure. Используйте интуитивно понятный мастер и в течение нескольких минут данные принимаются, можно изменить таблицу и выполнить запросы с помощью веб-интерфейса.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 * Выполните [вход в приложение](https://dataexplorer.azure.com/).
@@ -72,7 +72,7 @@ ms.locfileid: "73644590"
 
     ![Схема формата JSON для приема одного щелчка](media/ingest-data-one-click/one-click-json-format.png) 
  
-## <a name="query-data"></a>Запрос данных
+## <a name="query-data"></a>Запрашивание данных
 
 1. В окне **приема данных завершено** все три шага будут отмечены зелеными флажками, если прием данных успешно завершился. 
  

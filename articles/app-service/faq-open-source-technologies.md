@@ -1,26 +1,20 @@
 ---
-title: Часто задаваемые вопросы о технологиях с открытым кодом в Службе приложений Azure | Документация Майкрософт
-description: Ответы на часто задаваемые вопросы о технологиях с открытым кодом в веб-приложениях службы приложений Azure.
-services: app-service\web
-documentationcenter: ''
+title: Вопросы и ответы по технологиям с открытым кодом
+description: Получите ответы на часто задаваемые вопросы о технологиях с открытым кодом в службе приложений Azure.
 author: genlin
 manager: dcscontentpm
-editor: ''
 tags: top-support-issue
 ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
-ms.service: app-service-web
-ms.workload: web
-ms.tgt_pltfrm: ibiza
 ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
 ms.custom: seodec18
-ms.openlocfilehash: b92fe0a8073437d2cf0e908b4e734a0c01c342eb
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: 33590f9fc7e6c4d46123cbc7088086a3197d52ae
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72169686"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74672427"
 ---
 # <a name="open-source-technologies-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о технологиях с открытым кодом в веб-приложениях Azure
 
@@ -113,7 +107,7 @@ ms.locfileid: "72169686"
 
 Для развертываний Microsoft Azure Marketplace и пользовательских развертываний:
 
-* Расположение папки: D:\home\site\wwwroot\bin\apache-tomcat-8.0.33\logs
+* Расположение папки: D:\home\site\wwwroot\bin\apache-tomcat-8.0.33\logs.
 * Необходимые файлы:
     * catalina.*ГГГГ-ММ-ДД*.log
     * host-manager.*ГГГГ-ММ-ДД*.log
@@ -124,7 +118,7 @@ ms.locfileid: "72169686"
 
 Для развертываний из меню **Параметры приложения** портала:
 
-* Расположение папки: D:\home\LogFiles
+* Расположение папки: D:\home\LogFiles.
 * Необходимые файлы:
     * catalina.*ГГГГ-ММ-ДД*.log
     * host-manager.*ГГГГ-ММ-ДД*.log
@@ -189,7 +183,7 @@ The process cannot access the file because it is being used by another process.
 
 WordPress Buddy+ — это расширение сайта Azure, с помощью которого можно обновить URL-адрес перенаправления непосредственно в базе данных. Дополнительные сведения об использовании WordPress Buddy+ см. в записи блога [WordPress tools and MySQL migration with WordPress Buddy+](https://sharepointforum.org/threads/wordpress-tools-and-mysql-migration-with-wordpress-buddy.82929/) (Средства WordPress и перенос базы данных MySQL с помощью WordPress Buddy+).
 
-Кроме того, если вы предпочитаете вручную обновить URL-адрес перенаправления с помощью SQL-запросов или PHPMyAdmin, ознакомьтесь с записью блога [WordPress: Redirecting to wrong URL](https://blogs.msdn.microsoft.com/azureossds/2016/07/12/wordpress-redirecting-to-wrong-url/) (WordPress: перенаправление на неправильный URL-адрес).
+Кроме того, если вы предпочитаете вручную обновить URL-адрес перенаправления с помощью SQL-запросов или PHPMyAdmin, см. запись блога [WordPress: Redirecting to wrong URL](https://blogs.msdn.microsoft.com/azureossds/2016/07/12/wordpress-redirecting-to-wrong-url/) (WordPress: перенаправление на неправильный URL-адрес).
 
 ## <a name="how-do-i-change-my-wordpress-sign-in-password"></a>Как изменить пароль для входа в WordPress?
 
@@ -203,8 +197,8 @@ WordPress Buddy+ — это расширение сайта Azure, с помо�
 
 Базу данных MySQL, подключенную к веб-сайту WordPress, можно перенести несколькими способами:
 
-* разработчики: с помощью [командной строки или PHPMyAdmin](https://blogs.msdn.microsoft.com/azureossds/2016/03/02/migrating-data-between-mysql-databases-using-kudu-console-azure-app-service/);
-* не разработчики: с помощью [WordPress Buddy+](https://sharepointforum.org/threads/wordpress-tools-and-mysql-migration-with-wordpress-buddy.82929/).
+* с помощью [командной строки или PHPMyAdmin](https://blogs.msdn.microsoft.com/azureossds/2016/03/02/migrating-data-between-mysql-databases-using-kudu-console-azure-app-service/) (для разработчиков);
+* с помощью [WordPress Buddy+](https://sharepointforum.org/threads/wordpress-tools-and-mysql-migration-with-wordpress-buddy.82929/) (остальные пользователи).
 
 ## <a name="how-do-i-help-make-wordpress-more-secure"></a>Как повысить уровень защиты WordPress?
 

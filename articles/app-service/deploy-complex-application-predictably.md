@@ -1,25 +1,16 @@
 ---
-title: Предсказуемые подготовка и развертывание микрослужб в Службе приложений Azure
-description: Узнайте, как с помощью шаблонов групп ресурсов JSON и скриптов PowerShell предсказуемо подготовить и развернуть приложение, состоящее из микрослужб, в службу приложений Azure как единое целое.
-services: app-service
-documentationcenter: ''
-author: cephalin
-manager: erikre
-editor: jimbe
+title: Предсказуемое развертывание приложений с помощью ARM
+description: Узнайте, как развертывать несколько приложений службы приложений Azure как единое целое и прогнозируемым способом с помощью шаблонов управления ресурсами Azure и сценариев PowerShell.
 ms.assetid: bb51e565-e462-4c60-929a-2ff90121f41d
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/06/2016
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: b13bc43595c09b3700798935f70c401c9311651c
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 9ec3a6b39a857f888514b0a3872ae411e1819f3a
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70070879"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74671830"
 ---
 # <a name="provision-and-deploy-microservices-predictably-in-azure"></a>Предсказуемые подготовка и развертывание микрослужб в Azure
 В этом руководстве описано, как предсказуемо с помощью шаблонов групп ресурсов JSON и скриптов PowerShell подготовить и развернуть приложение, состоящее из [микрослужб](https://en.wikipedia.org/wiki/Microservices), в [службу приложений Azure](https://azure.microsoft.com/services/app-service/) как единое целое. 
@@ -51,7 +42,7 @@ ms.locfileid: "70070879"
 Дополнительные сведения см. в статье [Использование Azure PowerShell с Azure Resource Manager](../powershell-azure-resource-manager.md).
 
 ### <a name="azure-resource-explorer"></a>Обозреватель ресурсов Azure
-Этот [инструмент предварительного просмотра](https://resources.azure.com) позволяет изучать определения JSON всех групп ресурсов в подписке и отдельных ресурсов. Этот инструмент предназначен для изменения определений JSON ресурса, удаления всей иерархии ресурсов и создания новых ресурсов.  Информация, которая уже доступна в этом инструменте, особенно полезна при создании шаблонов, так как она показывает, какие свойства необходимо задать для ресурса определенного типа, правильных значений и т. д. Вы даже можете создать группу ресурсов на [портале Azure](https://portal.azure.com/) и проверить ее определения JSON в инструменте обозревателя, чтобы упростить разработку шаблона группы ресурсов.
+Этот [инструмент предварительного просмотра](https://resources.azure.com) позволяет изучать определения JSON всех групп ресурсов в подписке и отдельных ресурсов. Этот инструмент предназначен для изменения определений JSON ресурса, удаления всей иерархии ресурсов и создания новых ресурсов.  Сведения, доступные в этом средстве, очень полезны для создания шаблонов, так как они показывают, какие свойства необходимо задать для конкретного типа ресурса, правильные значения и т. д. Вы даже можете создать группу ресурсов на [портале Azure](https://portal.azure.com/), а затем проверить определения JSON в средстве обозревателя, чтобы помочь вам темплатизе группу ресурсов.
 
 ### <a name="deploy-to-azure-button"></a>Кнопка "Развертывание в Azure"
 При использовании GitHub для управления версиями можно поместить кнопку [Deploy to Azure](https://azure.microsoft.com/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/) (Развернуть в Azure) в свой файл README.MD, которая обеспечивает готовый пользовательский интерфейс развертывания в Azure. Хотя это можно сделать для любого простого приложения, этот параметр можно расширить, чтобы организовать развертывание группы ресурсов как единого целого, помещая файл azuredeploy.json в корневой репозиторий. Этот файл JSON, который содержит шаблон группы ресурсов, используется кнопкой "Развертывание в Azure" для создания группы ресурсов. Например, см. образец [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp), который будет использоваться в этом руководстве.
@@ -102,7 +93,7 @@ ms.locfileid: "70070879"
 ### <a name="resources"></a>Ресурсы
 В узле "Ресурсы" можно видеть, что определены четыре ресурса верхнего уровня, включая экземпляр SQL Server, план службы приложений и два приложения. 
 
-#### <a name="app-service-plan"></a>план службы приложений
+#### <a name="app-service-plan"></a>План службы приложений
 Начнем с простого ресурса корневого уровня в JSON. В структуре JSON щелкните план службы приложений с именем **[hostingPlanName]** , чтобы выделить соответствующий код JSON. 
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-3-appserviceplan.png)
@@ -114,7 +105,7 @@ ms.locfileid: "70070879"
 > 
 > 
 
-#### <a name="sql-server"></a>SQL Server
+#### <a name="sql-server"></a>SQL Server
 Затем щелкните ресурс SQL Server с именем **SQLServer** в структуре JSON.
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-4-sqlserver.png)
@@ -139,7 +130,7 @@ ms.locfileid: "70070879"
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-5-webapproot.png)
 
-##### <a name="app-settings"></a>Параметры приложений
+##### <a name="app-settings"></a>Параметры приложения
 Параметры приложения также определены в качестве вложенного ресурса.
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-6-webappsettings.png)
@@ -157,7 +148,7 @@ ms.locfileid: "70070879"
 В элементе `properties` для `config/connectionstrings` каждая строка подключения также определяется как пара "имя:значение" с определенным форматом `"<name>" : {"value": "…", "type": "…"}`. Возможные значения для элемента `type`: `MySql`, `SQLServer`, `SQLAzure` и `Custom`.
 
 > [!TIP]
-> Чтобы открыть полный список типов строк подключения, выполните следующую команду в Azure PowerShell: \[Enum]::GetNames("Microsoft.WindowsAzure.Commands.Utilities.Websites.Services.WebEntities.DatabaseType")
+> Чтобы открыть полный список типов строк подключения, выполните следующую команду в Azure PowerShell: \[Enum]::GetNames("Microsoft.WindowsAzure.Commands.Utilities.Websites.Services.WebEntities.DatabaseType").
 > 
 > 
 
@@ -253,20 +244,20 @@ ms.locfileid: "70070879"
 
 Именно последний командлет `New-AzureResourceGroup`выполняет это действие. Все это должно показать вам, как с помощью соответствующего инструментария сравнительно легко выполнить предсказуемое развертывание приложения в облаке. Каждый раз при запуске командлета с тем же шаблоном и тем же файлом параметров вы получите тот же результат.
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Резюме
 В DevOps повторяемость и предсказуемость являются ключевыми факторами для любого успешного развертывания крупномасштабных приложений, состоящих из микрослужб. В этой статье рассматривалось развертывание приложения, состоящего из двух микрослужб, в Azure как отдельной группы ресурсов с помощью шаблона диспетчера ресурсов Azure. Надеемся, что вы смогли узнать все, что необходимо для преобразования приложения в Azure в шаблон, и сможете предсказуемо подготовить его и развернуть в Azure. 
 
 <a name="resources"></a>
 
-## <a name="more-resources"></a>Другие ресурсы
+## <a name="more-resources"></a>Дополнительные ресурсы
 * [Язык шаблонов в диспетчере ресурсов Azure](../azure-resource-manager/resource-group-authoring-templates.md)
 * [Создание шаблонов диспетчера ресурсов Azure](../azure-resource-manager/resource-group-authoring-templates.md)
 * [Функции шаблонов в диспетчере ресурсов Azure](../azure-resource-manager/resource-group-template-functions.md)
 * [Развертывание приложения с использованием шаблона диспетчера ресурсов Azure](../azure-resource-manager/resource-group-template-deploy.md)
-* [Использование Azure PowerShell с диспетчером ресурсов Azure](../azure-resource-manager/powershell-azure-resource-manager.md)
+* [Использование Azure PowerShell с Azure Resource Manager](../azure-resource-manager/powershell-azure-resource-manager.md)
 * [Устранение неполадок при развертывании групп ресурсов в Azure](../azure-resource-manager/resource-manager-common-deployment-errors.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о синтаксисе JSON и свойствах для типов ресурсов, развертываемых в этой статье, см. таких справочниках:
 

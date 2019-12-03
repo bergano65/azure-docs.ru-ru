@@ -1,26 +1,19 @@
 ---
-title: Рекомендации и методы устранения неполадок для Node.js в Службе приложений Azure
-description: Представлены рекомендации и способы устранения неполадок в приложениях Node.js в Службе приложений Azure.
-services: app-service\web
-documentationcenter: nodejs
+title: Рекомендации по использованию и устранению неполадок в Node. js
+description: Ознакомьтесь с рекомендациями и действиями по устранению неполадок для приложений Node. js, работающих в службе приложений Azure.
 author: ranjithr
-manager: wadeh
-editor: ''
 ms.assetid: 387ea217-7910-4468-8987-9a1022a99bef
-ms.service: app-service-web
-ms.workload: web
-ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 11/09/2017
 ms.author: bwren
 ms.custom: seodec18
-ms.openlocfilehash: 5ef0cf691ae3a199ea82cb8cfa23c386d30551dc
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 75195bd7ad228bb66dfd21d2c65997cc8c02680e
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74024226"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74672043"
 ---
 # <a name="best-practices-and-troubleshooting-guide-for-node-applications-on-azure-app-service-windows"></a>Рекомендации и руководство по устранению неполадок в приложениях Node.js в Службе приложений Azure (Windows)
 
@@ -258,7 +251,7 @@ Node.exe может завершать работу случайным обра�
 
 ## <a name="iisnode-http-status-and-substatus"></a>Состояние и подсостояние HTTP обработчика iisnode
 
-В этом `cnodeconstants`исходном файле[ ](https://github.com/Azure/iisnode/blob/master/src/iisnode/cnodeconstants.h) перечислены все возможные сочетания состояний и подсостояний, которые iisnode может возвратить в случае ошибок.
+В этом [исходном файле](https://github.com/Azure/iisnode/blob/master/src/iisnode/cnodeconstants.h) `cnodeconstants` перечислены все возможные сочетания состояний и подсостояний, которые iisnode может возвратить в случае ошибок.
 
 Чтобы отобразить код ошибки Win32, включите для своего приложения FREB (для обеспечения производительности FREB рекомендуется включать только на нерабочих сайтах).
 

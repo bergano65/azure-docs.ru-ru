@@ -1,26 +1,16 @@
 ---
-title: Управление трафиком Службы приложений Azure с помощью диспетчера трафика
-description: В этой статье представлена сводная информация об использовании диспетчера трафика Azure со службой приложений Azure.
-services: app-service\web
-documentationcenter: ''
-author: cephalin
-writer: cephalin
-manager: erikre
-editor: mollybos
+title: Управление трафиком с помощью диспетчера трафика
+description: Ознакомьтесь с рекомендациями по настройке диспетчера трафика Azure при его интеграции со службой приложений Azure.
 ms.assetid: dabda633-e72f-4dd4-bf1c-6e945da456fd
-ms.service: app-service-web
-ms.workload: web
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 02/25/2016
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 2cd53c3c0b3e9acbb8a5a88c7696e8b3089c50c9
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 200effab70b369d69b4e89b1901578ecfe1a1b87
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74483375"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74684108"
 ---
 # <a name="controlling-azure-app-service-traffic-with-azure-traffic-manager"></a>Управление трафиком службы приложений Azure с помощью диспетчера трафика Azure
 > [!NOTE]
@@ -28,7 +18,7 @@ ms.locfileid: "74483375"
 > 
 > 
 
-## <a name="introduction"></a>Введение
+## <a name="introduction"></a>Общие сведения
 С помощью диспетчера трафика Azure можно управлять распределением запросов от веб-клиентов между приложениями в службе приложений Azure. После добавления конечных точек службы приложений в профиль диспетчера трафика Azure этот компонент отслеживает состояние ваших приложений службы приложений (запущены, остановлены или удалены). На основании этой информации диспетчер трафика принимает решение о том, на какие из этих конечных точек нужно перенаправлять трафик.
 
 ## <a name="routing-methods"></a>Методы маршрутизации
@@ -54,7 +44,7 @@ ms.locfileid: "74483375"
 * Имена личных доменов будут работать как обычно, но нужно не только добавить их в приложение, но и настроить для них сопоставление DNS с URL-адресом диспетчера трафика. Сведения о том, как настроить личный домен для приложения службы приложений, см. в разделе [Сопоставление существующего настраиваемого DNS-имени со службой приложений Azure](app-service-web-tutorial-custom-domain.md).
 * В профиль диспетчера трафика Azure можно добавлять только приложения, использующие уровень "Стандартный" или "Премиум".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Общие и технические сведения о диспетчере трафика Azure см. в разделе [Обзор диспетчера трафика](../traffic-manager/traffic-manager-overview.md).
 
 

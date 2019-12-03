@@ -3,12 +3,12 @@ title: Выходные данные в шаблонах
 description: Описывает, как определить выходные значения в шаблоне Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 09/05/2019
-ms.openlocfilehash: b4c652d71436202b9b6e551f9c582e5c98508259
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 61120b9941a6a20812ea046265ecbe13014d769e
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74149189"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74689146"
 ---
 # <a name="outputs-in-azure-resource-manager-template"></a>Выходные данные в шаблоне Azure Resource Manager
 
@@ -77,7 +77,7 @@ ms.locfileid: "74149189"
   -Name <deployment-name>).Outputs.resourceID.value
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az group deployment show \
@@ -92,13 +92,12 @@ az group deployment show \
 
 В следующих примерах демонстрируются сценарии использования выходных данных.
 
-|шаблона  |ОПИСАНИЕ  |
+|Шаблон  |Описание  |
 |---------|---------|
 |[Копирование переменных](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/copyvariables.json) | Позволяет создать сложные переменные и вывести эти значения. Не используется для развертывания ресурсов. |
 |[Общедоступный IP-адрес](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip.json) | Позволяет создать общедоступный IP-адрес и вывести идентификатор ресурса. |
-|[Балансировщик нагрузки](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json) | Позволяет создать ссылку на предыдущий шаблон. При создании подсистемы балансировки нагрузки использует идентификатор ресурса в выходных данных. |
+|[Подсистема балансировки нагрузки](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json) | Позволяет создать ссылку на предыдущий шаблон. При создании подсистемы балансировки нагрузки использует идентификатор ресурса в выходных данных. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о доступных свойствах выходных данных см. в разделе Общие сведения о [структуре и синтаксисе шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
-* Рекомендации по созданию выходов см. в разделе "рекомендации [-выходные данные](template-best-practices.md#outputs)".

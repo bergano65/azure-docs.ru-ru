@@ -1,24 +1,17 @@
 ---
-title: Развертывание кода из конвейера CI/CD с помощью действий GitHub в службе приложений Azure | Документация Майкрософт
-description: Узнайте, как использовать действия GitHub для развертывания кода в службе приложений.
-services: app-service
-documentationcenter: ''
-author: cephalin
-manager: gwallace
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
+title: Настройка CI/CD с помощью действий GitHub
+description: Узнайте, как развернуть код в службе приложений Azure из конвейера CI/CD с помощью действий GitHub. Настройка задач сборки и выполнение сложных развертываний.
 ms.devlang: na
 ms.topic: article
 ms.date: 10/25/2019
 ms.author: jafreebe
 ms.reviewer: ushan
-ms.openlocfilehash: 9842057a590b08f2207a1ea166e0ce0d457e4381
-ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
+ms.openlocfilehash: e3d6e730846388c4b74cfa0b6361629e836b0517
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73620515"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74670196"
 ---
 # <a name="deploy-to-app-service-using-github-actions"></a>Развертывание в службе приложений с помощью действий GitHub
 
@@ -28,13 +21,13 @@ ms.locfileid: "73620515"
 > Действия GitHub в настоящее время находятся в бета-версии. Сначала необходимо [зарегистрироваться, чтобы присоединиться к предварительной версии](https://github.com/features/actions) с помощью учетной записи GitHub.
 > 
 
-Рабочий процесс определяется файлом YAML (yml) в пути `/.github/workflows/` в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс.
+Рабочий процесс определяется файлом YAML (yml) в `/.github/workflows/` пути в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс.
 
 Для рабочего процесса службы приложений Azure файл содержит три раздела:
 
-|Раздел  |Задачи  |
+|Section  |Задачи  |
 |---------|---------|
-|**Проверка подлинности** | 1. Определение субъекта-службы <br /> 2. Создание секрета GitHub |
+|**Authentication** (Аутентификация) | 1. Определение субъекта-службы <br /> 2. Создание секрета GitHub |
 |**Сборка** | 1. Настройка среды <br /> 2. Создание веб-приложения |
 |**Развертывание** | 1. Развертывание веб-приложения |
 

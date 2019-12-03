@@ -1,24 +1,17 @@
 ---
-title: Использование пакета SDK WebJobs Azure
-description: Ознакомьтесь со сведениями о написании кода для пакета SDK WebJobs. Создание заданий фоновой обработки, управляемых событиями, которые обращаются к данным в службах Azure и службах сторонних поставщиков.
-services: app-service\web, storage
-documentationcenter: .net
+title: Использование пакета SDK для веб-заданий
+description: Ознакомьтесь со сведениями о написании кода для пакета SDK WebJobs. Создание заданий фоновой обработки, управляемых событиями, которые обращаются к данным в Azure и службах сторонних поставщиков.
 author: ggailey777
-manager: jeconnoc
-editor: ''
-ms.service: app-service-web
-ms.workload: web
-ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: 67cd7f82597d306c8bf3c463d11457199aec7277
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.openlocfilehash: 8e29c632ff3920c77a757fe45475a12c212cf579
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71815738"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74684006"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK WebJobs Azure для фоновой обработки на основе событий
 
@@ -151,7 +144,7 @@ static void Main(string[] args)
 }
 ```
 
-## <a name="triggers"></a>Триггеры
+## <a name="triggers"></a>триггеры;
 
 Функции должны быть открытыми методами и должны иметь один атрибут триггера или атрибут [`NoAutomaticTrigger`](#manual-triggers) .
 
@@ -840,8 +833,8 @@ public static void RemoveItem([QueueTrigger("remove-item")] string message)
 |Отладка       | 1 |
 |Информация | 2 |
 |Предупреждение     | 3 |
-|Ошибка       | 4\. |
-|критические ошибки.    | 5 |
+|Ошибка       | 4 |
+|Критический    | 5 |
 |Нет        | 6 |
 
 Каждую категорию можно независимо отфильтровать с определенным [`LogLevel`](/dotnet/api/microsoft.extensions.logging.loglevel). Например, вы можете просмотреть все журналы для обработки триггера большого двоичного объекта, но только `Error` и выше для всего остального.
@@ -1007,7 +1000,7 @@ config.LoggerFactory = new LoggerFactory()
     .AddApplicationInsights(clientFactory);
 ```
 
-## <a id="nextsteps"></a> Дальнейшие действия
+## <a id="nextsteps"></a>Дальнейшие действия
 
 В этой статье приведены фрагменты кода, демонстрирующие способы решения распространенных сценариев работы с пакетом SDK для веб-заданий. Полные примеры см. на странице с примерами [azure-webjobs-sdk-samples](https://github.com/Azure/azure-webjobs-sdk/tree/dev/sample/SampleHost).
 

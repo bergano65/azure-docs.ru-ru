@@ -1,22 +1,15 @@
 ---
-title: Подготовка к изменению исходящего IP-адреса SSL в Службе приложений Azure
+title: Подготовка к изменению IP-адреса SSL
 description: Если ваш IP-адрес SSL будет изменен, узнайте, что необходимо сделать, чтобы ваше приложение продолжало работать после этого.
-services: app-service\web
-author: cephalin
-manager: cfowler
-editor: ''
-ms.service: app-service-web
-ms.workload: web
 ms.topic: article
 ms.date: 06/28/2018
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 6c8c86ff6212acc31e961d6ae62836ca2b7b7380
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 34f35eb67cada6066e35227fcd6a0eaf425ac007
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61268916"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74672408"
 ---
 # <a name="how-to-prepare-for-an-ssl-ip-address-change"></a>Подготовка к изменению IP-адреса SSL
 

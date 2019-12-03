@@ -1,5 +1,5 @@
 ---
-title: Apache Hadoop & безопасное хранилище относительных данных в Azure HDInsight
+title: Apache Hadoop & безопасное хранилище транфсер в Azure HDInsight
 description: Узнайте, как создать кластеры HDInsight с помощью учетных записей хранения Azure с включенной безопасной передачей.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 07/24/2018
-ms.openlocfilehash: b8a5d48e977009cf592f271760232a3b0138c8c5
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: ed8e20509c4a3f941d6f215dfc476c87e9a813a7
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73044947"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74687785"
 ---
 # <a name="create-apache-hadoop-cluster-with-secure-transfer-storage-accounts-in-azure-hdinsight"></a>Создание кластера Apache Hadoop с помощью учетных записей хранения с безопасной передачей в Azure HDInsight
 
@@ -24,7 +24,7 @@ ms.locfileid: "73044947"
 Прежде чем приступать к этой статье, необходимо:
 
 * **Подписка Azure**: чтобы создать бесплатную пробную учетную запись (на один месяц), перейдите по адресу [azure.microsoft.com/free](https://azure.microsoft.com/free).
-* **Учетная запись хранения Azure с включенной безопасной передачей**. Инструкции см. в статье [Об учетных записях хранения Azure](../storage/common/storage-quickstart-create-account.md) и [Требование безопасной передачи](../storage/common/storage-require-secure-transfer.md).
+* **Учетная запись хранения Azure с включенной безопасной передачей**. Инструкции см. в статье [Об учетных записях хранения Azure](../storage/common/storage-quickstart-create-account.md) и [Требование безопасной передачи](../storage/common/storage-require-secure-transfer.md). Включение безопасного обмена хранилищами после создания кластера требует дополнительных действий, не описанных в этой статье.
 * **Контейнер больших двоичных объектов в учетной записи хранения**.
 
 ## <a name="create-cluster"></a>Создание кластера

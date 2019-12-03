@@ -1,40 +1,31 @@
 ---
-title: Настройка приложения PHP — служба приложений Azure | Документация Майкрософт
-description: Узнайте, как настроить приложения PHP на работу в службе приложений Azure
-services: app-service
-documentationcenter: ''
-author: cephalin
-manager: jpconnock
-editor: ''
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: dotnet
+title: Настройка приложений PHP
+description: Узнайте, как настроить предварительно построенный контейнер PHP для приложения. В этой статье приведены наиболее распространенные задачи настройки.
+ms.devlang: php
 ms.topic: article
 ms.date: 03/28/2019
-ms.author: cephalin
-ms.openlocfilehash: 279660d903b3b0e893c3ccddb89da7c6dc42fa09
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: a3de4769193d95a3ef483924c4d65c4fa1cc9f8d
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205079"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74671836"
 ---
-# <a name="configure-a-linux-php-app-for-azure-app-service"></a>Настройка приложения Linux PHP для службы приложений Azure
+# <a name="configure-a-linux-php-app-for-azure-app-service"></a>Настройка приложения PHP для Linux для службы приложений Azure
 
-В этом руководстве показано, как настроить встроенную среду выполнения PHP для веб-приложения, серверные части мобильных устройств и приложений API в службе приложений Azure.
+В этом руководство показано, как настроить встроенную среду выполнения PHP для веб-приложений, мобильных серверных интерфейсов и приложений API в службе приложений Azure.
 
-Это руководство содержит основные понятия и инструкции для разработчиков на PHP, которые используют встроенный контейнер Linux в службе приложений. Если вы раньше не использовали службы приложений Azure, выполните [быстрого запуска PHP](quickstart-php.md) и [PHP с MySQL руководством](tutorial-php-mysql-app.md) первого.
+Это краткое описание содержит основные понятия и инструкции для разработчиков PHP, использующих встроенный контейнер Linux в службе приложений. Если вы никогда не использовали службу приложений Azure, сначала следуйте указаниям в руководстве по [PHP](quickstart-php.md) и [PHP с MySQL](tutorial-php-mysql-app.md) .
 
-## <a name="show-php-version"></a>Показать версию PHP
+## <a name="show-php-version"></a>Показывать версию PHP
 
-Чтобы отобразить текущую версию PHP, выполните следующую команду [Cloud Shell](https://shell.azure.com):
+Чтобы отобразить текущую версию PHP, выполните следующую команду в [Cloud Shell](https://shell.azure.com):
 
 ```azurecli-interactive
 az webapp config show --resource-group <resource-group-name> --name <app-name> --query linuxFxVersion
 ```
 
-Чтобы отобразить все поддерживаемые версии PHP, выполните следующую команду [Cloud Shell](https://shell.azure.com):
+Чтобы отобразить все поддерживаемые версии PHP, выполните следующую команду в [Cloud Shell](https://shell.azure.com):
 
 ```azurecli-interactive
 az webapp list-runtimes --linux | grep PHP
@@ -42,17 +33,17 @@ az webapp list-runtimes --linux | grep PHP
 
 ## <a name="set-php-version"></a>как установить версию PHP;
 
-Выполните следующую команду [Cloud Shell](https://shell.azure.com) присвоить версию PHP 7.2:
+Выполните следующую команду в [Cloud Shell](https://shell.azure.com) , чтобы установить версию PHP 7,2:
 
 ```azurecli-interactive
 az webapp config set --name <app-name> --resource-group <resource-group-name> --linux-fx-version "PHP|7.2"
 ```
 
-## <a name="run-composer"></a>Запустите Composer
+## <a name="run-composer"></a>Запуск Composer
 
-По умолчанию не выполняются Kudu [Composer](https://getcomposer.org/). Для включения автоматизации Composer во время развертывания Kudu, необходимо предоставить [пользовательский скрипт развертывания](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script).
+По умолчанию KUDU не запускает [Composer](https://getcomposer.org/). Чтобы включить автоматизацию Composer во время развертывания KUDU, необходимо предоставить [Пользовательский скрипт развертывания](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script).
 
-В локальном окне терминала измените каталог на корневой папке репозитория. Выполните [шаги установки из командной строки](https://getcomposer.org/download/) для загрузки *composer.phar*.
+В локальном окне терминала перейдите в каталог корневого каталога репозитория. Чтобы скачать *Composer. Phar*, следуйте инструкциям по [установке из командной строки](https://getcomposer.org/download/) .
 
 Выполните следующие команды:
 
@@ -61,9 +52,9 @@ npm install kuduscript -g
 kuduscript --php --scriptType bash --suppressPrompt
 ```
 
-Корень репозитория сейчас содержит два новых файла, в дополнение к *composer.phar*: *.deployment* и *deploy.sh*. Эти файлы работают как для Windows и Linux версии службы приложений.
+Корневой каталог репозитория теперь содержит два новых файла, помимо *Composer. Phar*: *. Deployment* и *deploy.sh*. Эти файлы работают как для Windows, так и для Linux в службе приложений.
 
-Откройте *deploy.sh* и найти `Deployment` раздел. Весь раздел, замените следующий код:
+Откройте *deploy.sh* и найдите раздел `Deployment`. Замените весь раздел следующим кодом:
 
 ```bash
 ##################################################################################################################################
@@ -93,11 +84,11 @@ fi
 ##################################################################################################################################
 ```
 
-Зафиксируйте все изменения и повторно развернуть свой код. Будет запущен как часть развертывания автоматизации Composer.
+Зафиксируйте все изменения и разверните код еще раз. Теперь компоновщик должен работать как часть автоматизации развертывания.
 
 ## <a name="customize-start-up"></a>Настройка запуска
 
-По умолчанию встроенный контейнер PHP запустите сервер Apache. При запуске он выполняется `apache2ctl -D FOREGROUND"`. Вы можете запустить другую команду при запуске, выполнив следующую команду в [Cloud Shell](https://shell.azure.com):
+По умолчанию встроенный контейнер PHP запускает сервер Apache. При запуске он выполняется `apache2ctl -D FOREGROUND"`. При необходимости можно выполнить другую команду при запуске, выполнив следующую команду в [Cloud Shell](https://shell.azure.com):
 
 ```azurecli-interactive
 az webapp config set --resource-group <resource-group-name> --name <app-name> --startup-file "<custom-command>"
@@ -105,17 +96,17 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 ## <a name="access-environment-variables"></a>Доступ к переменным среды
 
-В Службе приложений можно [задать параметры приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) вне кода приложения. Вы сможете обращаться к их с использованием стандарта [getenv()](https://secure.php.net/manual/function.getenv.php) шаблон. Например, для доступа к параметру приложения с именем `DB_HOST` используйте следующий код:
+В Службе приложений можно [задать параметры приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) вне кода приложения. Затем вы можете получить доступ к ним с помощью стандартного шаблона [getenv ()](https://secure.php.net/manual/function.getenv.php) . Например, для доступа к параметру приложения с именем `DB_HOST` используйте следующий код:
 
 ```php
 getenv("DB_HOST")
 ```
 
-## <a name="change-site-root"></a>Изменение корневого каталога сайта
+## <a name="change-site-root"></a>Изменить корень сайта
 
-Веб-платформу по своему усмотрению может использовать подкаталог в корневом узле. Например [Laravel](https://laravel.com/), использует `public/` подкаталог в корневом узле.
+Выбранная вами веб-платформа может использовать подкаталог в качестве корня сайта. Например, [Laravel](https://laravel.com/)использует подкаталог `public/` в качестве корневого каталога сайта.
 
-Образ PHP по умолчанию для службы приложений использует Apache и не позволяет настраивать корневой каталог сайта для вашего приложения. Чтобы обойти это ограничение, добавьте *.htaccess* файл в корневой папке репозитория со следующим содержимым:
+Используемый по умолчанию образ PHP для службы приложений использует Apache и не позволяет настраивать корневой каталог сайта для приложения. Чтобы обойти это ограничение, добавьте в корень репозитория файл *. htaccess* со следующим содержимым:
 
 ```
 <IfModule mod_rewrite.c>
@@ -139,19 +130,19 @@ if (isset($_SERVER['X-Forwarded-Proto']) && $_SERVER['X-Forwarded-Proto'] === 'h
 
 Популярные веб-платформы позволяют получить доступ к информации `X-Forwarded-*` в стандартном шаблоне приложения. В [CodeIgniter](https://codeigniter.com/) функция [is_https()](https://github.com/bcit-ci/CodeIgniter/blob/master/system/core/Common.php#L338-L365) по умолчанию проверяет значение `X_FORWARDED_PROTO`.
 
-## <a name="customize-phpini-settings"></a>Настройка параметров php.ini
+## <a name="customize-phpini-settings"></a>Настройка параметров PHP. ini
 
-Если вам нужно внести изменения в установку PHP, можно изменить любой из [директив php.ini](https://www.php.net/manual/ini.list.php) , выполнив следующие действия.
+Если необходимо внести изменения в установку PHP, можно изменить любые [директивы PHP. ini](https://www.php.net/manual/ini.list.php) , выполнив следующие действия.
 
 > [!NOTE]
-> Оптимальный способ увидеть версию PHP и текущий *php.ini* конфигурации заключается в вызове [phpinfo()](https://php.net/manual/function.phpinfo.php) в вашем приложении.
+> Лучший способ увидеть версию PHP и текущую конфигурацию *PHP. ini* — вызвать [функцию phpinfo ()](https://php.net/manual/function.phpinfo.php) в приложении.
 >
 
-### <a name="Customize-non-PHP_INI_SYSTEM directives"></a>Настройка без PHP_INI_SYSTEM директивы
+### <a name="Customize-non-PHP_INI_SYSTEM directives"></a>Настройка-не PHP_INI_SYSTEM директивы
 
-Для настройки PHP_INI_USER PHP_INI_PERDIR и PHP_INI_ALL директивы (см. в разделе [директив php.ini](https://www.php.net/manual/ini.list.php)), добавьте *.htaccess* файл в корневой каталог приложения.
+Чтобы настроить директивы PHP_INI_USER, PHP_INI_PERDIR и PHP_INI_ALL (см [. раздел директивы PHP. ini](https://www.php.net/manual/ini.list.php)), добавьте *htaccess* -файл в корневой каталог приложения.
 
-В *.htaccess* добавьте с помощью директивы `php_value <directive-name> <value>` синтаксис. Пример:
+В файле *htaccess* добавьте директивы, используя синтаксис `php_value <directive-name> <value>`. Пример.
 
 ```
 php_value upload_max_filesize 1000M
@@ -163,28 +154,28 @@ php_value display_errors On
 php_value upload_max_filesize 10M
 ```
 
-Повторное развертывание приложения с помощью изменения и перезапустите его. При развертывании с использованием Kudu (например, с помощью [Git](../deploy-local-git.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)), оно автоматически перезапускается после развертывания.
+Повторно разверните приложение с изменениями и перезапустите его. Если развернуть его с помощью KUDU (например, с помощью [Git](../deploy-local-git.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)), он будет автоматически перезапущен после развертывания.
 
-В качестве альтернативы использованию *.htaccess*, можно использовать [ini_set()](https://www.php.net/manual/function.ini-set.php) в вашем приложении, чтобы настроить эти директивы не PHP_INI_SYSTEM.
+В качестве альтернативы использованию *. htaccess*можно использовать в приложении [ini_set ()](https://www.php.net/manual/function.ini-set.php) , чтобы настроить эти директивы, не относящиеся к PHP_INI_SYSTEM.
 
-### <a name="customize-php_ini_system-directives"></a>Настройка PHP_INI_SYSTEM директивы
+### <a name="customize-php_ini_system-directives"></a>Настройка директив PHP_INI_SYSTEM
 
-Чтобы настроить PHP_INI_SYSTEM директивы (см. в разделе [директив php.ini](https://www.php.net/manual/ini.list.php)), нельзя использовать *.htaccess* подход. Служба приложений предоставляет отдельный механизм, с помощью `PHP_INI_SCAN_DIR` параметр приложения.
+Чтобы настроить директивы PHP_INI_SYSTEM (см [. раздел директивы PHP. ini](https://www.php.net/manual/ini.list.php)), нельзя использовать подход *. htaccess* . Служба приложений предоставляет отдельный механизм, используя параметр приложения `PHP_INI_SCAN_DIR`.
 
-Во-первых, выполните следующую команду [Cloud Shell](https://shell.azure.com) добавить параметр приложения `PHP_INI_SCAN_DIR`:
+Сначала выполните следующую команду в [Cloud Shell](https://shell.azure.com) , чтобы добавить параметр приложения с именем `PHP_INI_SCAN_DIR`:
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings PHP_INI_SCAN_DIR="/usr/local/etc/php/conf.d:/home/site/ini"
 ```
 
-`/usr/local/etc/php/conf.d` — Это каталог по умолчанию где *php.ini* существует. `/home/site/ini` является пользовательском каталоге, в котором вы добавите пользовательский *INI-файле* файл. Разделяйте значения с `:`.
+`/usr/local/etc/php/conf.d` является каталогом по умолчанию, где существует *PHP. ini* . `/home/site/ini` — это пользовательский каталог, в который добавляется настраиваемый *ini* -файл. Значения разделяются `:`.
 
-Перейдите к web сеанс SSH с Linux контейнера (`https://cephalin-container.scm.azurewebsites.net/webssh/host`).
+Перейдите к сеансу веб-SSH с вашим контейнером Linux (`https://<app-name>.scm.azurewebsites.net/webssh/host`).
 
-Создайте каталог в `/home/site` вызывается `ini`, создайте *INI-файле* файл в `/home/site/ini` каталог (например, *settings.ini)* с директивы, которую нужно настроить. Используется тот же синтаксис, который будет использоваться в *php.ini* файл. 
+Создайте каталог в `/home/site` с именем `ini`, а затем создайте *ini* -файл в каталоге `/home/site/ini` (например, *Settings. ini)* с директивами, которые требуется настроить. Используйте тот же синтаксис, который используется в файле *PHP. ini* . 
 
 > [!TIP]
-> В контейнерах Linux, встроенные в службе приложений */home* используется в качестве постоянного общего хранилища. 
+> В встроенных контейнерах Linux в службе приложений */Home* используется в качестве постоянного общего хранилища. 
 >
 
 Например, чтобы изменить значение [expose_php](https://php.net/manual/ini.core.php#ini.expose-php) выполните следующие команды:
@@ -195,30 +186,30 @@ mkdir ini
 echo "expose_php = Off" >> ini/setting.ini
 ```
 
-Чтобы изменения вступили в силу перезапустите приложение.
+Чтобы изменения вступили в силу, перезапустите приложение.
 
-## <a name="enable-php-extensions"></a>Включение расширений PHP
+## <a name="enable-php-extensions"></a>Включить расширения PHP
 
-Встроенные установке PHP содержит наиболее часто используемых расширений. Вы можете включить дополнительные расширения, в том же способом, которые [настроить директив php.ini](#customize-php_ini_system-directives).
+Встроенные установки PHP содержат наиболее часто используемые расширения. Можно включить дополнительные расширения так же, как и [директивы PHP. ini](#customize-php_ini_system-directives).
 
 > [!NOTE]
-> Оптимальный способ увидеть версию PHP и текущий *php.ini* конфигурации заключается в вызове [phpinfo()](https://php.net/manual/function.phpinfo.php) в вашем приложении.
+> Лучший способ увидеть версию PHP и текущую конфигурацию *PHP. ini* — вызвать [функцию phpinfo ()](https://php.net/manual/function.phpinfo.php) в приложении.
 >
 
 Чтобы включить дополнительные расширения, выполните следующие действия.
 
-Добавить `bin` каталог в корневой каталог приложения и put `.so` расширения файлов в нем (например, *mongodb.so*). Убедитесь, что расширения совместимы с версией PHP в Azure и совместимы с VC9 и не поддерживающей многопоточное (nts).
+Добавьте `bin` каталог в корневой каталог приложения и вставьте в него файлы расширения `.so` (например, *MongoDB.so*). Убедитесь, что расширения совместимы с версией PHP в Azure и не совместимы с VC9 и непотокобезопасным (NTS).
 
 Разверните изменения.
 
-Выполните действия, описанные в [директивы настроить PHP_INI_SYSTEM](#customize-php_ini_system-directives), добавления расширений в пользовательский *INI-файле* файл с [расширение](https://www.php.net/manual/ini.core.php#ini.extension) или [zend_extension ](https://www.php.net/manual/ini.core.php#ini.zend-extension) директивы.
+Выполните действия, описанные в разделе [Настройка директив PHP_INI_SYSTEM](#customize-php_ini_system-directives), добавьте расширения в пользовательский *ini* -файл с помощью директив [расширения](https://www.php.net/manual/ini.core.php#ini.extension) или [zend_extension](https://www.php.net/manual/ini.core.php#ini.zend-extension) .
 
 ```ini
 extension=/home/site/wwwroot/bin/mongodb.so
 zend_extension=/home/site/wwwroot/bin/xdebug.so
 ```
 
-Чтобы изменения вступили в силу перезапустите приложение.
+Чтобы изменения вступили в силу, перезапустите приложение.
 
 ## <a name="access-diagnostic-logs"></a>Доступ к журналам диагностики
 
@@ -228,31 +219,31 @@ zend_extension=/home/site/wwwroot/bin/xdebug.so
 
 [!INCLUDE [Open SSH session in browser](../../../includes/app-service-web-ssh-connect-builtin-no-h.md)]
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
-При работающем приложении PHP работает по-разному, в службе приложений или содержит ошибки, попробуйте сделайте следующее:
+Если рабочее приложение PHP работает иначе в службе приложений или содержит ошибки, попробуйте выполнить следующие действия.
 
 - [Получите доступ к потоку журнала](#access-diagnostic-logs).
-- Тестирование приложения локально в рабочем режиме. Служба приложений запускает приложения Node.js в рабочем режиме, поэтому необходимо убедиться, что проект работает надлежащим образом в рабочем режиме локально. Пример:
-    - В зависимости от вашей *composer.json*, разные пакеты могут быть установлены для рабочий режим (`require` и `require-dev`).
-    - Некоторые веб-платформы может развернуть статические файлы по-разному в рабочем режиме.
-    - Некоторые веб-платформы может использовать специальные сценарии, при выполнении в рабочем режиме.
-- Запустите приложение в службе приложений в режиме отладки. Например, в [Laravel](https://meanjs.org/), можно настроить приложение для вывода сообщения отладки в производственной среде с [параметр `APP_DEBUG` параметр приложения для `true` ](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings).
+- Протестируйте приложение локально в рабочем режиме. Служба приложений запускает приложения Node. js в рабочем режиме, поэтому необходимо убедиться, что проект работает в режиме рабочей среды локально. Пример.
+    - В зависимости от версии *Composer. JSON*различные пакеты могут быть установлены для рабочего режима (`require` и `require-dev`).
+    - Некоторые веб-платформы могут развертывать статические файлы в рабочем режиме по-разному.
+    - При работе в рабочем режиме некоторые веб-платформы могут использовать пользовательские сценарии запуска.
+- Запустите приложение в службе приложений в режиме отладки. Например, в [Laravel](https://meanjs.org/)можно настроить приложение для вывода отладочных сообщений в рабочей среде, [задав для параметра приложения `APP_DEBUG` значение `true`](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings).
 
 ### <a name="robots933456"></a>robots933456
 
-Может появиться следующее сообщение в журнале контейнера:
+В журналах контейнеров может появиться следующее сообщение:
 
 ```
 2019-04-08T14:07:56.641002476Z "-" - - [08/Apr/2019:14:07:56 +0000] "GET /robots933456.txt HTTP/1.1" 404 415 "-" "-"
 ```
 
-Это сообщение можно игнорировать. `/robots933456.txt` Это фиктивный путь URL-адрес, который служба приложений использует для проверки, если контейнер способен обслуживать запросы. Ответ 404 просто указывает, что путь не существует, но он позволяет службе приложений, которые знаете, что контейнер работоспособен и готов отвечать на запросы.
+Это сообщение можно спокойно проигнорировать. `/robots933456.txt` — это фиктивный URL-путь, который служба приложений использует для проверки того, способен ли контейнер обслуживать запросы. Ответ 404 означает, что путь не существует, но он позволяет службе приложений определить, что контейнер работоспособен и готов к реагированию на запросы.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство. по приложению PHP с MySQL](tutorial-php-mysql-app.md)
+> [Учебник. приложение PHP с MySQL](tutorial-php-mysql-app.md)
 
 > [!div class="nextstepaction"]
 > [Служба приложений под управлением Linux: вопросы и ответы](app-service-linux-faq.md)

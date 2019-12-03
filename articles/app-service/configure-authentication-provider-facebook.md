@@ -1,25 +1,16 @@
 ---
-title: Настройка проверки подлинности Facebook в Службе приложений Azure
-description: Узнайте, как настроить проверку подлинности Facebook для приложения службы приложений.
-services: app-service
-documentationcenter: ''
-author: mattchenderson
-manager: syntaxc4
-editor: ''
+title: Настройка проверки подлинности Facebook
+description: Узнайте, как настроить проверку подлинности Facebook в качестве поставщика удостоверений для приложения службы приложений.
 ms.assetid: b6b4f062-fcb4-47b3-b75a-ec4cb51a62fd
-ms.service: app-service-mobile
-ms.workload: mobile
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 06/06/2019
-ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: fb8497f3b9b887e2fd06b350bcc25ac8faaa7b43
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: cd9c8a1bab3616b9b4eb1fe97ee3a9b2307ba77b
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72177014"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74671941"
 ---
 # <a name="configure-your-app-service-app-to-use-facebook-login"></a>Настройка приложения службы приложений для использования имени для входа Facebook
 
@@ -31,7 +22,7 @@ ms.locfileid: "72177014"
 
 ## <a name="register"> </a>Регистрация приложения с помощью Facebook
 
-1. Перейдите на веб-сайт [разработчиков для Facebook] и выполните вход с использованием учетных данных Facebook.
+1. Перейдите на веб-сайт [разработчиков Facebook] и выполните вход с использованием учетных данных Facebook.
 
    Если у вас нет учетной записи Facebook for Developers, щелкните начало **работы** и выполните действия по регистрации.
 1. Выберите **Мои приложения** > **Добавить новое приложение**.
@@ -84,7 +75,7 @@ ms.locfileid: "72177014"
 [0]: ./media/app-service-mobile-how-to-configure-facebook-authentication/mobile-app-facebook-settings.png
 
 <!-- URLs. -->
-[разработчиков для Facebook]: https://go.microsoft.com/fwlink/p/?LinkId=268286
+[разработчиков Facebook]: https://go.microsoft.com/fwlink/p/?LinkId=268286
 [facebook.com]: https://go.microsoft.com/fwlink/p/?LinkId=268285
 [Get started with authentication]: /en-us/develop/mobile/tutorials/get-started-with-users-dotnet/
-[портал Azure]: https://portal.azure.com/
+[Портал Azure]: https://portal.azure.com/

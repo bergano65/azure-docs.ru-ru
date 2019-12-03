@@ -1,32 +1,23 @@
 ---
-title: Устранение неполадок приложения в Службе приложений Azure с помощью Visual Studio
+title: Поиск и исправление неисправностей с помощью Visual Studio
 description: Узнайте, как устранять неполадки в работе приложения Cлужбы приложений с помощью удаленной отладки, трассировки и средств ведения журналов, которые встроены в Visual Studio 2013.
-services: app-service
-documentationcenter: .net
-author: cephalin
-manager: cfowler
-editor: ''
 ms.assetid: def8e481-7803-4371-aa55-64025d116c97
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/29/2016
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 13ba1ced2d14ed22c89e7df594f3b2a44eea983f
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 5c0a236dc6ebf02c859d9db3f25f0e9016ac35ab
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359954"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74688386"
 ---
 # <a name="troubleshoot-an-app-in-azure-app-service-using-visual-studio"></a>Устранение неполадок приложения в Cлужбе приложений Azure с помощью Visual Studio
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 В этом руководстве показано, как использовать инструменты Visual Studio, которые позволяют отлаживать работу приложения в [Cлужбе приложений](https://go.microsoft.com/fwlink/?LinkId=529714) путем запуска приложения удаленно в [режиме отладки](https://docs.microsoft.com/visualstudio/debugger/) или путем просмотра журналов приложения и журналов веб-сервера.
 
-Вы узнаете:
+Вы узнаете следующее:
 
 * Какие функции управления приложением доступны в среде Visual Studio.
 * Как использовать удаленное представление Visual Studio для быстрого изменения удаленного приложения.
@@ -70,7 +61,7 @@ Visual Studio обеспечивает доступ к сокращенному 
 
     В этом руководстве используются раскрывающиеся списки ведения журналов и трассировки. Для удаленной отладки вы будете использовать другой метод.
 
-    Сведения о полях параметров приложения и строк подключения в этом окне см. в записи блога [Windows Azure Web Sites: How Application Strings and Connection Strings Work](https://azure.microsoft.com/blog/windows-azure-web-sites-how-application-strings-and-connection-strings-work/) (Веб-сайты Microsoft Azure: как работают строки приложения и строки подключения).
+    Сведения о полях параметры приложения и строки подключения в этом окне см. в разделе [служба приложений Azure: как работают строки приложения и строки подключения](https://azure.microsoft.com/blog/windows-azure-web-sites-how-application-strings-and-connection-strings-work/).
 
     Если необходимо выполнить задачу по управлению приложением, которую невозможно выполнить в этом окне, щелкните **Открыть на портале управления**, чтобы открыть портал Azure в браузере.
 
@@ -144,7 +135,7 @@ Visual Studio обеспечивает доступ к сокращенному 
 
     ![Публикация в режиме отладки](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-publishdebug.png)
 
-1. Нажмите кнопку **Опубликовать**. Когда завершится развертывание и откроется URL-адрес Azure вашего приложения, закройте браузер.
+1. Щелкните **Опубликовать**. Когда завершится развертывание и откроется URL-адрес Azure вашего приложения, закройте браузер.
 
 1. В **обозревателе сервера** щелкните правой кнопкой мыши приложение и выберите **Подключить отладчик**.
 
@@ -346,7 +337,7 @@ Visual Studio обеспечивает доступ к сокращенному 
     ```
 
 1. Для запуска приложения нажмите сочетание клавиш CTRL+F5.
-1. В адресной строке окна браузера добавьте *Trace. axd* к URL-адресу и нажмите клавишу ВВОД (URL-адрес похож на `http://localhost:53370/trace.axd`).
+1. В адресной строке окна браузера добавьте в URL-адрес *Trace. axd* и нажмите клавишу ВВОД (URL-адрес похож на `http://localhost:53370/trace.axd`).
 1. На странице **Трассировка приложения** щелкните **Просмотр сведений** в первой строке (не в строке BrowserLink).
 
     ![trace.axd](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-traceaxd1.png)

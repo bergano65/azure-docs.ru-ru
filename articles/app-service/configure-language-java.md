@@ -1,25 +1,20 @@
 ---
-title: Настройка приложений Windows на Java — служба приложений Azure | Документация Майкрософт
-description: Узнайте, как настроить приложения Java для запуска на экземплярах Windows по умолчанию в службе приложений Azure.
+title: Настройка приложений Java для Windows
+description: Узнайте, как настроить приложения Java для запуска в экземплярах виртуальных машин Windows в службе приложений Azure. В этой статье приведены наиболее распространенные задачи настройки.
 keywords: служба приложений Azure, веб-приложение, Windows, OSS, Java
-services: app-service
 author: jasonfreeberg
-manager: jeconnock
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.devlang: java
 ms.topic: article
 ms.date: 04/12/2019
 ms.author: jafreebe
 ms.reviewer: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: ad9ee8a21390126f20da4037a438a2655b8b5d47
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: dec5d1c7c7664bf72d92e5aca4333ba64db26d02
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012257"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74671908"
 ---
 # <a name="configure-a-windows-java-app-for-azure-app-service"></a>Настройка приложения Windows Java для службы приложений Azure
 
@@ -218,7 +213,7 @@ public int getServerPort()
 |------------|-----------------------------------------------|------------------------------------------------------------------------------------------|
 | PostgreSQL | `org.postgresql.Driver`                        | [Загрузить](https://jdbc.postgresql.org/download.html)                                    |
 | MySQL      | `com.mysql.jdbc.Driver`                        | [Скачать](https://dev.mysql.com/downloads/connector/j/) (выберите "Platform Independent" (Независимо от платформы)) |
-| SQL Server; | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
+| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
 
 Чтобы настроить Tomcat для использования Java Database Connectivity (JDBC) или API сохраняемости Java (JPA), сначала настройте переменную среды `CATALINA_OPTS`, которая считывается в Tomcat при запуске. Задайте эти значения с помощью параметра приложения в [подключаемом модуле Maven для службы приложений](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
 
@@ -322,7 +317,7 @@ Azure поддерживает пакет Java Development Kit (JDK) [Zulu](http
 
 Разработчики могут [сообщить о проблеме](/azure/azure-supportability/how-to-create-azure-support-request) с Azul Zulu JDK в службу поддержки Azure при наличии [соответствующего плана поддержки](https://azure.microsoft.com/support/plans/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом разделе содержится инструкция поддержки Java для службы приложений Azure в Windows.
 

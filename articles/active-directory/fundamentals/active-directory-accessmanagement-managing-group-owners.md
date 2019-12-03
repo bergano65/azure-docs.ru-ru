@@ -12,15 +12,15 @@ ms.date: 09/11/2018
 ms.author: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d259be0c04af0fcf3628a9f296730749404610cb
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 3ee4b452d087bfef0e9f5f7c820870da0df8dc3e
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562077"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74683934"
 ---
 # <a name="add-or-remove-group-owners-in-azure-active-directory"></a>Добавление или удаление владельцев группы в Azure Active Directory
-Группы Azure Active Directory (Azure AD) управляются владельцами группы. Владельцы групп могут быть пользователями или субъектами-службами и могут управлять группой, включая членство. Только существующие владельцы групп или администраторы групп могут назначать онверс группы. Владельцы группы не должны быть участниками группы.
+Группы Azure Active Directory (Azure AD) управляются владельцами группы. Владельцы групп могут быть пользователями или субъектами-службами и могут управлять группой, включая членство. Назначать владельцев групп могут только существующие владельцы групп или администраторы групп. Владельцы группы не должны быть участниками группы.
 
 Если у группы нет владельца, администраторы групп по-прежнему могут управлять группой.
 
@@ -34,7 +34,7 @@ ms.locfileid: "68562077"
 
 3. На странице обзора группы **Политика управления мобильными устройствами — Запад** выберите **Владельцы**.
 
-    ![Страница обзора группы "Политика управления мобильными устройствами — Запад" с выделенным параметром "Владельцы"](media/active-directory-accessmanagement-managing-group-owners/add-owners-option-overview-blade.png)
+    ![Страница обзора группы "Политика управления мобильными устройствами — Запад" с выделенным параметром "Владельцы"](media/active-directory-accessmanagement-managing-group-owners/add-owners-option-overview-blade.png)
 
 4. На странице **Политика управления мобильными устройствами — Запад — Владельцы** выберите **Добавить владельцев**, а затем найдите и выберите пользователя, который станет новым владельцем группы, и нажмите **Выбрать**.
 
@@ -60,13 +60,13 @@ ms.locfileid: "68562077"
 
     После удаления владельца вернитесь на страницу **Владельцы** — имя будет удалено из списка владельцев.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Управление доступом к ресурсам с помощью групп Azure Active Directory](active-directory-manage-groups.md)
 
-- [Настройка параметров групп с помощью командлетов Azure Active Directory](../users-groups-roles/groups-settings-cmdlets.md)
+- [Azure Active Directory cmdlets for configuring group settings](../users-groups-roles/groups-settings-cmdlets.md)
 
 - [Использование групп для назначения доступа к интегрированному приложению SaaS](../users-groups-roles/groups-saasapps.md)
 
 - [Интеграция локальных удостоверений с Azure Active Directory](../hybrid/whatis-hybrid-identity.md)
 
-- [Настройка параметров групп с помощью командлетов Azure Active Directory](../users-groups-roles/groups-settings-v2-cmdlets.md)
+- [Azure Active Directory cmdlets for configuring group settings](../users-groups-roles/groups-settings-v2-cmdlets.md)

@@ -7,26 +7,26 @@ ms.service: container-service
 ms.topic: article
 ms.date: 06/20/2019
 ms.author: zarhoads
-ms.openlocfilehash: bd099b9d76e17eda36be1650ef5081e5aaa7e53a
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 9338f0e26595c1ab25ab51578880daf8c0c5bbc4
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "67303542"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74672449"
 ---
-# <a name="quickstart-develop-on-azure-kubernetes-service-aks-with-draft"></a>Краткое руководство. Разработка в Azure Kubernetes Service (AKS) с черновиком
+# <a name="quickstart-develop-on-azure-kubernetes-service-aks-with-draft"></a>Краткое руководство. Разработка в службе Azure Kubernetes Service (AKS) с черновиком
 
 Черновик — это средство с открытым исходным кодом, которое помогает упаковывать и запускать контейнеры приложений в кластере Kubernetes. С помощью черновика можно быстро выполнить повторное развертывание приложения в Kubernetes по мере внесения изменений в код без фиксации изменений в системе управления версиями. Дополнительные сведения о черновике см. в [документации по черновику на сайте GitHub][draft-documentation].
 
 В этой статье показано, как использовать черновик пакета и запускать приложение в AKS.
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 * [Установленный Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
-* DOCKER установлен и настроен. DOCKER предоставляет пакеты, которые настраивают DOCKER в системе [Mac][docker-for-mac], [Windows][docker-for-windows]или [Linux][docker-for-linux] .
-* [Helm установлен](https://github.com/helm/helm/blob/master/docs/install.md).
+* DOCKER установлен и настроен. Docker предоставляет пакеты, которые позволяют настроить Docker в системе [Mac][docker-for-mac], [Windows][docker-for-windows] или [Linux][docker-for-linux].
+* [Helm установлен](https://github.com/helm/helm#install).
 * [Установленный черновик][draft-documentation].
 
 ## <a name="create-an-azure-kubernetes-service-cluster"></a>Создание кластера Службы Azure Kubernetes
@@ -143,7 +143,7 @@ kubectl apply -f helm-rbac.yaml
 ```
 
 ## <a name="configure-helm"></a>Настройка Helm
-Чтобы развернуть базовый ящик в кластере AKS, используйте команду [Helm init][helm-init] . Если в кластере не включен RBAC, удалите `--service-account` аргумент и значение.
+Чтобы развернуть базовый ящик в кластере AKS, используйте команду [Helm init][helm-init] . Если в кластере не включен RBAC, удалите аргумент `--service-account` и значение.
 
 ```console
 helm init --service-account tiller --node-selectors "beta.kubernetes.io/os"="linux"
@@ -151,7 +151,7 @@ helm init --service-account tiller --node-selectors "beta.kubernetes.io/os"="lin
 
 ## <a name="configure-draft"></a>Настройка Draft
 
-Если вы еще не настроили черновик на локальном компьютере `draft init`, выполните:
+Если вы еще не настроили черновик на локальном компьютере, выполните `draft init`:
 
 ```console
 $ draft init
@@ -172,7 +172,7 @@ draft config set registry mydraftacr.azurecr.io
 
 ## <a name="download-the-sample-application"></a>Загрузка примера приложения
 
-В этом кратком руководстве используется [пример приложения Java из черновика репозитория GitHub][example-java]. Клонирование приложения из GitHub и переход к `draft/examples/example-java/` каталогу.
+В этом кратком руководстве используется [пример приложения Java из черновика репозитория GitHub][example-java]. Клонирование приложения из GitHub и переход к каталогу `draft/examples/example-java/`.
 
 ```console
 git clone https://github.com/Azure/draft
@@ -181,7 +181,7 @@ cd draft/examples/example-java/
 
 ## <a name="run-the-sample-application-with-draft"></a>Запуск примера приложения с черновиком
 
-Для подготовки приложения используйте команду.`draft create`
+Для подготовки приложения используйте команду `draft create`.
 
 ```console
 draft create
@@ -235,13 +235,13 @@ Connect to java:4567 on localhost:49804
 [java]: >> Listening on 0.0.0.0:4567
 ```
 
-Перейдите к приложению в браузере `localhost` по URL-адресу, чтобы просмотреть пример приложения. В приведенном выше примере URL-адрес `http://localhost:49804`имеет значение. Останавливает подключение с помощью `Ctrl+c`.
+Перейдите к приложению в браузере, используя URL-адрес `localhost`, чтобы просмотреть пример приложения. В приведенном выше примере URL-адрес `http://localhost:49804`. Останавливает подключение с помощью `Ctrl+c`.
 
 ## <a name="access-the-application-on-the-internet"></a>Доступ к приложению через Интернет
 
-На предыдущем шаге было создано прокси-подключение к модулю pod приложения в кластере AKS. При разработке и тестировании приложения можно предоставить доступ к приложению через Интернет. Чтобы предоставить доступ к приложению через Интернет, можно создать службу Kubernetes с типом подсистемы балансировки [нагрузки][kubernetes-service-loadbalancer].
+На предыдущем шаге было создано прокси-подключение к модулю pod приложения в кластере AKS. При разработке и тестировании приложения можно предоставить доступ к приложению через Интернет. Чтобы предоставить доступ к приложению через Интернет, можно создать службу Kubernetes с типом подсистемы [балансировки нагрузки][kubernetes-service-loadbalancer].
 
-Обновите `charts/example-java/values.yaml` , чтобы создать службу *балансировки нагрузки* . Измените значение *Service. Type* с *кластера* на подсистему *балансировки нагрузки*.
+Обновите `charts/example-java/values.yaml`, чтобы создать службу *балансировки нагрузки* . Измените значение *Service. Type* с *кластера* на подсистему *балансировки нагрузки*.
 
 ```yaml
 ...
@@ -253,7 +253,7 @@ service:
 ...
 ```
 
-Сохраните изменения, закройте файл и выполните команду `draft up` , чтобы повторно запустить приложение.
+Сохраните изменения, закройте файл и запустите `draft up` для повторного запуска приложения.
 
 ```console
 draft up
@@ -270,11 +270,11 @@ example-java-java   LoadBalancer  10.0.141.72   <pending>     80:32150/TCP   2m
 example-java-java   LoadBalancer   10.0.141.72   52.175.224.118  80:32150/TCP   7m
 ```
 
-Перейдите к подсистеме балансировки нагрузки приложения в браузере с помощью *внешнего IP-адреса* , чтобы просмотреть пример приложения. В приведенном выше примере это IP- `52.175.224.118`адрес.
+Перейдите к подсистеме балансировки нагрузки приложения в браузере с помощью *внешнего IP-адреса* , чтобы просмотреть пример приложения. В приведенном выше примере IP-адрес `52.175.224.118`.
 
 ## <a name="iterate-on-the-application"></a>Выполнение итерации приложения
 
-Вы можете выполнить итерацию приложения, внеся изменения локально и `draft up`после выполнения.
+Вы можете выполнить итерацию приложения, внеся изменения локально и перезапуская `draft up`.
 
 Обновите сообщение, возвращенное в [строке 7 из src/Main/Java/HelloWorld/Hello. Java.][example-java-hello-l7]
 
@@ -309,7 +309,7 @@ az group delete --name MyResourceGroup --yes --no-wait
 > [!NOTE]
 > Когда вы удаляете кластер, субъект-служба Azure Active Directory, используемый в кластере AKS, не удаляется. Инструкции по удалению субъекта-службы см. в разделе с [дополнительными замечаниями][sp-delete].
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Draft см. в документации Draft на GitHub.
 

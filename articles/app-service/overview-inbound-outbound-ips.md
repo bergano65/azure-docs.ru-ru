@@ -1,24 +1,15 @@
 ---
-title: Входящие и исходящие IP-адреса в Службе приложений Azure | Документация Майкрософт
-description: Правила использования входящих и исходящих IP-адресов в Службе приложений, а также способ поиска сведений о них для вашего приложения.
-services: app-service
-documentationcenter: ''
-author: cephalin
-manager: cfowler
-editor: ''
-ms.service: app-service
-ms.workload: web
-ms.tgt_pltfrm: na
+title: Входящие и исходящие IP-адреса
+description: Узнайте, как входящие и исходящие IP-адреса используются в службе приложений Azure при их изменении, а также о том, как найти адреса для приложения.
 ms.topic: article
 ms.date: 06/06/2019
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 26033192ee841262345b0fc7f6aec76872379070
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: aebce04fe2f1b055a4d498021dcd25144cd122a9
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73470178"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74671608"
 ---
 # <a name="inbound-and-outbound-ip-addresses-in-azure-app-service"></a>Входящие и исходящие IP-адреса в Службе приложений Azure
 

@@ -1,24 +1,17 @@
 ---
-title: Начало работы с пакетом SDK WebJobs в Azure
+title: Начало работы с пакетом SDK WebJobs
 description: Знакомство с пакетом SDK WebJobs для фоновой обработки на основе событий. Получение доступа к данным в службах Azure и службах сторонних разработчиков.
-services: app-service\web, storage
-documentationcenter: .net
 author: ggailey777
-manager: jeconnoc
-editor: ''
-ms.service: app-service-web
-ms.workload: web
-ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: 2b2b8fe383ff4ee3d4b23c2c6e555b44e0cc088c
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 33ae3f9f928a55f50f4ecd0c6c98790a384e880b
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72390074"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74684177"
 ---
 # <a name="get-started-with-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK для Веб-заданий Azure для фоновой обработки на основе событий
 
@@ -44,7 +37,7 @@ ms.locfileid: "72390074"
 
 ## <a name="webjobs-nuget-packages"></a>Пакеты NuGet веб-заданий
 
-1. Установите последнюю стабильную версию 3. x пакета NuGet `Microsoft.Azure.WebJobs.Extensions`, которая включает `Microsoft.Azure.WebJobs`.
+1. Установите последнюю стабильную версию 3. x пакета `Microsoft.Azure.WebJobs.Extensions` NuGet, которая включает `Microsoft.Azure.WebJobs`.
 
      Ниже приведена команда **консоли диспетчера пакетов** для версии 3.0.2:
 
@@ -54,7 +47,7 @@ ms.locfileid: "72390074"
 
 ## <a name="create-the-host"></a>Создание узла
 
-Узел является контейнером среды выполнения для функций, которые прослушивают триггеры и вызывают функции. Следующие шаги создают узел, который реализует [`IHost`](/dotnet/api/microsoft.extensions.hosting.ihost), являющийся универсальным узлом в ASP.NET Core.
+Узел является контейнером среды выполнения для функций, которые прослушивают триггеры и вызывают функции. Следующие шаги создают узел, реализующий [`IHost`](/dotnet/api/microsoft.extensions.hosting.ihost), который является универсальным узлом в ASP.NET Core.
 
 1. В *Program.cs* добавьте инструкцию `using`:
 
@@ -80,13 +73,13 @@ ms.locfileid: "72390074"
     }
     ```
 
-В ASP.NET Core конфигурации узла настраиваются путем вызова методов в экземпляре [`HostBuilder`](/dotnet/api/microsoft.extensions.hosting.hostbuilder). Дополнительные сведения можно найти в статье [Универсальный узел .NET](/aspnet/core/fundamentals/host/generic-host). Метод расширения `ConfigureWebJobs` инициализирует узел веб-заданий. В `ConfigureWebJobs` вы инициализируют конкретные расширения для заданий и устанавливаете свойства этих расширений.  
+В ASP.NET Core конфигурации узла настраиваются путем вызова методов в экземпляре [`HostBuilder`](/dotnet/api/microsoft.extensions.hosting.hostbuilder). Дополнительные сведения можно найти в статье [Универсальный узел .NET](/aspnet/core/fundamentals/host/generic-host). Метод расширения `ConfigureWebJobs` инициализирует узел веб-заданий. В `ConfigureWebJobs`можно инициализировать конкретные расширения веб-заданий и задать свойства этих расширений.  
 
 ## <a name="enable-console-logging"></a>Включение журналирования консоли
 
 В этом разделе описано, как настроить ведение журнала консоли, использующее [платформу ведения журнала ASP.NET Core](/aspnet/core/fundamentals/logging).
 
-1. Установите последнюю стабильную версию пакета NuGet `Microsoft.Extensions.Logging.Console`, которая включает `Microsoft.Extensions.Logging`.
+1. Установите последнюю стабильную версию пакета NuGet `Microsoft.Extensions.Logging.Console`, который включает `Microsoft.Extensions.Logging`.
 
    Команда **Консоли диспетчера пакетов** для версии 2.2.0:
 
@@ -218,9 +211,9 @@ ms.locfileid: "72390074"
 
 Пакет SDK веб-заданий ищет строку подключения в параметрах приложения в Azure. При локальном запуске он ищет это значение в локальном файле конфигурации или среди переменных среды.
 
-1. Щелкните проект правой кнопкой мыши, выберите **добавить** > **новый элемент...** , выберите **JavaScript JSON File (файл конфигурации**), введите имя нового файла *appSettings. JSON* и нажмите кнопку **Добавить**. 
+1. Щелкните проект правой кнопкой мыши, выберите **добавить** > **новый элемент...** , выберите **JavaScript JSON-файл конфигурации**, назовите новый файл *appSettings. JSON* и нажмите кнопку **Добавить**. 
 
-1. В новом файле добавьте поле `AzureWebJobsStorage`, как показано в следующем примере:
+1. В новом файле добавьте `AzureWebJobsStorage` поле, как показано в следующем примере:
 
     ```json
     {

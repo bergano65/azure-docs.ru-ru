@@ -11,12 +11,12 @@ ms.date: 10/12/2018
 ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 715f891484458f3bf3febc6807c3490b88062d50
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: c9b4a15cd6cbae80d80407ba929bfbfa1402eeb5
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74229090"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74689231"
 ---
 # <a name="get-started-quickly-with-fivetran-and-sql-data-warehouse"></a>Быстрое начало работы с Fivetran и хранилищем данных SQL
 
@@ -80,6 +80,6 @@ ms.locfileid: "74229090"
 
 * узел (имя вашего сервера);
 * порт;
-* база данных;
-* Пользователь (имя пользователя должно быть **фиветран\@_server_name_**  , где *server_name* является частью URI узла Azure: ***server_name *. Database. Windows. NET**).
+* База данных.
+* Пользователь (имя пользователя должно быть **фиветран\@_server_name_**  , где *server_name* является частью URI узла Azure:  **_Server\_Name_. Database.Windows.NET**).
 * Пароль.

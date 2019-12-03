@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 06/20/2019
-ms.openlocfilehash: 5f3b1890901eac510086a64cc2ccd341d0b23e00
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 4d6997475099420319c52abbbce34b2756e215ed
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74420824"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74687666"
 ---
 # <a name="quickstart-import-a-bacpac-file-to-a-database-in-azure-sql-database"></a>Краткое руководство. импорт BACPAC-файла в базу данных в базе данных SQL Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "74420824"
 
 Просмотрите это видео, чтобы узнать, как импортировать данные из BACPAC-файла в портал Azure или продолжить чтение ниже:
 
-> [!VIDEO hhttps://channel9.msdn.com/Shows/Data-Exposed/Its-just-SQL-Restoring-a-database-to-Azure-SQL-DB-from-backup/player?WT.mc_id=dataexposed-c9-niner]
+> [!VIDEO https://channel9.msdn.com/Shows/Data-Exposed/Its-just-SQL-Restoring-a-database-to-Azure-SQL-DB-from-backup/player?WT.mc_id=dataexposed-c9-niner]
 
 [Портал Azure](https://portal.azure.com) поддерживает создание *только* отдельной базы данных в Базе данных SQL Azure и *только* из файла BACPAC, который хранится в хранилище BLOB-объектов Azure.
 
@@ -51,7 +51,7 @@ ms.locfileid: "74420824"
 
    ![База данных import2](./media/sql-database-import/import2.png)
 
-1. Нажмите кнопку **ОК**.
+1. Последовательно выберите **ОК**.
 
 1. Чтобы отслеживать ход выполнения импорта, откройте страницу сервера базы данных. В разделе **Параметры** выберите **Журнал импорта и экспорта**. При успешном выполнении импорта отображается состояние **Завершено**.
 
@@ -80,7 +80,7 @@ sqlpackage.exe /a:import /tcs:"Data Source=<serverName>.database.windows.net;Ini
 sqlpackage.exe /a:Import /sf:testExport.bacpac /tdn:NewDacFX /tsn:apptestserver.database.windows.net /ua:True /tid:"apptest.onmicrosoft.com"
 ```
 
-## <a name="using-powershell"></a>с использованием PowerShell.
+## <a name="using-powershell"></a>Использование PowerShell
 
 > [!NOTE]
 > В настоящее время [управляемый экземпляр](sql-database-managed-instance.md) не поддерживает миграцию базы данных в экземпляр базы данных из BACPAC-файла с помощью Azure PowerShell. Чтобы импортировать в управляемый экземпляр, используйте SQL Server Management Studio или SQLPackage.
@@ -123,7 +123,7 @@ while ($importStatus.Status -eq "InProgress") {
 $importStatus
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Используйте команду [AZ-SQL-DB-Import](/cli/azure/sql/db#az-sql-db-import) , чтобы отправить запрос на импорт базы данных в службу базы данных SQL Azure. Операция импорта может занять некоторое время в зависимости от размера базы данных.
 
@@ -153,7 +153,7 @@ az sql db import --resource-group "<resourceGroupName>" --server "<serverName>" 
 - [мастер импорта приложения уровня данных в SQL Server Management Studio](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database#using-the-import-data-tier-application-wizard);
 - [мастер импорта и экспорта SQL Server](https://docs.microsoft.com/sql/integration-services/import-export-data/start-the-sql-server-import-and-export-wizard).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о подключении к импортированной базе данных SQL и выполнении запросов к ней см. в разделе [Краткое руководство по базе данных SQL Azure: использование SQL Server Management Studio для подключения и запроса данных](sql-database-connect-query-ssms.md).
 - Сведения о миграции из SQL Server в Базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://techcommunity.microsoft.com/t5/DataCAT/Migrating-from-SQL-Server-to-Azure-SQL-Database-using-Bacpac/ba-p/305407).

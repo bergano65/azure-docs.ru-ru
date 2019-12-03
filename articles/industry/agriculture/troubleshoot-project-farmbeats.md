@@ -1,18 +1,18 @@
 ---
-title: Устранение неполадок
+title: Устранение неисправностей
 description: Устранение неполадок Azure Фармбеатс.
 author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: ad1cb3b08f92923ef45b48d79ad8bbdc3277d370
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 88a1280fb4a91d7ba45f2d0cfe92e604cd66ff0b
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74131977"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74672580"
 ---
-# <a name="troubleshooting"></a>Устранение неполадок
+# <a name="troubleshooting"></a>Устранение неисправностей
 
 В следующих разделах описаны распространенные проблемы Azure Фармбеатс и способы их устранения.
 
@@ -39,7 +39,17 @@ ms.locfileid: "74131977"
 3. Если нет **входящих сообщений**, обратитесь к партнеру по устройствам.  
 4. Если имеются **Входящие сообщения**, обратитесь в службу farmbeatssupport@microsoft.com с помощью концентратора данных и журналов ускорителя и захваченных данных телеметрии.
 
-Сведения о загрузке журналов см. в [разделе "журналы](#collect-logs-manually) " документа.    
+Сведения о загрузке журналов см. в [разделе "журналы](#collect-logs-manually) " документа.  
+
+### <a name="dont-have-the-eventhub-connection-string"></a>Нет строки подключения Eventhub
+
+**Корректирующее действие**. Посетите Swagger датахуб и выполните следующие действия:
+1. Перейдите к API партнера
+2. Щелкните GET-> попробуйте сделать это, > выполнить.
+3. Запишите идентификатор партнера, который вас интересует.
+4. Вернитесь к API-партнеру и щелкните GET/{ID}.
+5. Укажите идентификатор из шага 3 и нажмите кнопку выполнить.
+6. Ответ API должен иметь строку подключения EventHub
 
 ### <a name="device-appears-offline"></a>Устройство отображается в автономном режиме
 
@@ -84,7 +94,7 @@ ms.locfileid: "74131977"
 
 ## <a name="accelerator-troubleshooting"></a>Устранение неполадок ускорителя
 
-### <a name="access-control"></a>Контроль доступа
+### <a name="access-control"></a>Access Control
 
 **Ошибка при добавлении назначения роли**
 
@@ -278,6 +288,6 @@ ms.locfileid: "74131977"
 2.  Выберите службу приложений.  
 3.  Перейдите к разделу Увеличение масштаба (план службы приложений) и выберите соответствующую [ценовую категорию](https://azure.microsoft.com/pricing/details/app-service/windows/) .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы по-прежнему сталкиваетесь с проблемами, свяжитесь с нами на нашем [форуме поддержки](https://social.msdn.microsoft.com/Forums/home?forum=ProjectFarmBeats).

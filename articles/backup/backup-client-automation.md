@@ -2,13 +2,13 @@
 title: Использование PowerShell для архивации Windows Server в Azure
 description: В этой статье описано, как использовать PowerShell для настройки Azure Backup в Windows Server или клиенте Windows, а также для управления резервным копированием и восстановлением.
 ms.topic: conceptual
-ms.date: 08/20/2019
-ms.openlocfilehash: 6285b7fc6493090ab0bead5f00124a6eaa02dc7e
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.date: 12/2/2019
+ms.openlocfilehash: 54cfbb4a550ff14705d8d02b0589ee023cf9c225
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74172451"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74689187"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-windows-serverwindows-client-using-powershell"></a>Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell
 
@@ -111,7 +111,7 @@ MARSAgentInstaller.exe /?
 
 Доступны следующие параметры.
 
-| Параметр | Подробная информация | значение по умолчанию |
+| Вариант | Сведения | значение по умолчанию |
 | --- | --- | --- |
 | /q |Позволяет выполнить тихую установку. |- |
 | /p:"расположение" |Путь к папке установки для агента архивации Azure. |C:\Program Files\Microsoft Azure Recovery Services Agent |
@@ -223,7 +223,7 @@ Server properties updated successfully
 >
 >
 
-## <a name="back-up-files-and-folders"></a>Резервное копирование файлов и папок
+## <a name="back-up-files-and-folders"></a>Создание резервных копий файлов и папок
 
 Для управления всеми резервными копиями с серверов и рабочих станций Windows, которые имеются в службе резервного копирования Azure, применяется соответствующая политика. Политика состоит из трех частей:
 
@@ -411,7 +411,7 @@ PolicyState     : Valid
 $sched = New-OBSchedule -DaysOfWeek Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday -TimesOfDay 2:00
 ```
 
-### <a name="retention"></a>Сохранение
+### <a name="retention"></a>Хранение
 
 ```powershell
 $rtn = New-OBRetentionPolicy -RetentionDays 32 -RetentionWeeklyPolicy -RetentionWeeks 13 -WeekDaysOfWeek Sunday -WeekTimesOfDay 2:00  -RetentionMonthlyPolicy -RetentionMonths 13 -MonthDaysOfMonth 1 -MonthTimesOfDay 2:00
@@ -569,7 +569,7 @@ The backup operation completed successfully.
 
 1. Выбор исходного тома
 2. Выбор точки резервного копирования для восстановления
-3. Выбор элемента для восстановления
+3. Укажите восстанавливаемый элемент
 4. Запуск процесса восстановления
 
 ### <a name="picking-the-source-volume"></a>Выбор исходного тома
@@ -593,95 +593,61 @@ ServerName : myserver.microsoft.com
 
 ### <a name="choosing-a-backup-point-from-which-to-restore"></a>Выбор точки резервного копирования для восстановления
 
-Чтобы получить список точек резервного копирования, выполните командлет [Get-OBRecoverableItem](https://technet.microsoft.com/library/hh770399.aspx) с соответствующими параметрами. В нашем примере мы выберем последнюю точку резервного копирования для исходного тома *D:* и используем его для восстановления определенного файла.
+Чтобы получить список точек резервного копирования, выполните командлет [Get-OBRecoverableItem](https://technet.microsoft.com/library/hh770399.aspx) с соответствующими параметрами. В нашем примере мы выберем последнюю точку резервного копирования для исходного тома *C:* и используем ее для восстановления определенного файла.
 
 ```powershell
-$Rps = Get-OBRecoverableItem -Source $Source[1]
+$Rps = Get-OBRecoverableItem $Source[0]
+$Rps
 ```
 
 ```Output
-IsDir : False
-ItemNameFriendly : D:\
-ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\
-LocalMountPoint : D:\
-MountPointName : D:\
-Name : D:\
-PointInTime : 18-Jun-15 6:41:52 AM
-ServerName : myserver.microsoft.com
-ItemSize :
+
+IsDir                : False
+ItemNameFriendly     : C:\
+ItemNameGuid         : \\?\Volume{297cbf7a-0000-0000-0000-401f00000000}\
+LocalMountPoint      : C:\
+MountPointName       : C:\
+Name                 : C:\
+PointInTime          : 10/17/2019 7:52:13 PM
+ServerName           : myserver.microsoft.com
+ItemSize             :
 ItemLastModifiedTime :
 
-IsDir : False
-ItemNameFriendly : D:\
-ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\
-LocalMountPoint : D:\
-MountPointName : D:\
-Name : D:\
-PointInTime : 17-Jun-15 6:31:31 AM
-ServerName : myserver.microsoft.com
-ItemSize :
+IsDir                : False
+ItemNameFriendly     : C:\
+ItemNameGuid         : \\?\Volume{297cbf7a-0000-0000-0000-401f00000000}\
+LocalMountPoint      : C:\
+MountPointName       : C:\
+Name                 : C:\
+PointInTime          : 10/16/2019 7:00:19 PM
+ServerName           : myserver.microsoft.com
+ItemSize             :
 ItemLastModifiedTime :
 ```
 
 Объект `$Rps` представляет собой массив точек резервного копирования. Первый элемент является последней точкой, а n-й элемент — самой старой. Чтобы выбрать последнюю точку, мы будем использовать `$Rps[0]`.
 
-### <a name="choosing-an-item-to-restore"></a>Выбор элемента для восстановления
+### <a name="specifying-an-item-to-restore"></a>Указание восстанавливаемого элемента
 
-Чтобы определить точный файл или папку для восстановления, рекурсивно воспользуйтесь командлетом [Get-OBRecoverableItem](https://technet.microsoft.com/library/hh770399.aspx) . В этом случае иерархию папок можно просматривать только с помощью `Get-OBRecoverableItem`.
-
-В этом примере, если нужно восстановить файл *finances.xls*, его можно найти, используя объект `$FilesFolders[1]`.
+Чтобы восстановить конкретный файл, укажите имя файла относительно корневого тома. Например, чтобы получить К:\тест\кат.Жоб, выполните следующую команду. 
 
 ```powershell
-$FilesFolders = Get-OBRecoverableItem $Rps[0]
-$FilesFolders
+$Item = New-OBRecoverableItem $Rps[0] "Test\cat.jpg" $FALSE
+$Item
 ```
 
 ```Output
-IsDir : True
-ItemNameFriendly : D:\MyData\
-ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\
-LocalMountPoint : D:\
-MountPointName : D:\
-Name : MyData
-PointInTime : 18-Jun-15 6:41:52 AM
-ServerName : myserver.microsoft.com
-ItemSize :
-ItemLastModifiedTime : 15-Jun-15 8:49:29 AM
-```
-
-```powershell
-$FilesFolders = Get-OBRecoverableItem $FilesFolders[0]
-$FilesFolders
-```
-
-```Output
-IsDir : False
-ItemNameFriendly : D:\MyData\screenshot.oxps
-ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\screenshot.oxps
-LocalMountPoint : D:\
-MountPointName : D:\
-Name : screenshot.oxps
-PointInTime : 18-Jun-15 6:41:52 AM
-ServerName : myserver.microsoft.com
-ItemSize : 228313
-ItemLastModifiedTime : 21-Jun-14 6:45:09 AM
-
-IsDir : False
-ItemNameFriendly : D:\MyData\finances.xls
-ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\finances.xls
-LocalMountPoint : D:\
-MountPointName : D:\
-Name : finances.xls
-PointInTime : 18-Jun-15 6:41:52 AM
-ServerName : myserver.microsoft.com
-ItemSize : 96256
+IsDir                : False
+ItemNameFriendly     : C:\Test\cat.jpg
+ItemNameGuid         :
+LocalMountPoint      : C:\
+MountPointName       : C:\
+Name                 : cat.jpg
+PointInTime          : 10/17/2019 7:52:13 PM
+ServerName           : myserver.microsoft.com
+ItemSize             :
 ItemLastModifiedTime : 21-Jun-14 6:43:02 AM
-```
 
-Для поиска элементов для восстановления также можно использовать командлет ```Get-OBRecoverableItem``` . В нашем примере, чтобы найти файл *finances.xls* можно получить его дескриптор, выполнив следующую команду:
-
-```powershell
-$Item = Get-OBRecoverableItem -RecoveryPoint $Rps[0] -Location "D:\MyData" -SearchString "finance*"
 ```
 
 ### <a name="triggering-the-restore-process"></a>Запуск процесса восстановления
@@ -767,7 +733,7 @@ $Session = New-PSSession -ComputerName REMOTESERVER01
 Invoke-Command -Session $Session -Script { param($D, $A) Start-Process -FilePath $D $A -Wait } -ArgumentList $Agent, $Args
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure Backup для Windows Server и клиента:
 

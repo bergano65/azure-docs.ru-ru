@@ -566,8 +566,10 @@
             - name: 4. Перенос данных
               displayName: import
               href: cassandra-import-data.md
-        - name: Инструкции
+        - name: Руководства
           items:
+            - name: Канал изменений
+              href: cassandra-change-feed.md
             - name: Хранение данных и управление ими с помощью Spring Data
               href: /java/azure/spring-framework/configure-spring-data-apache-cassandra-with-cosmos-db
               maintainContext: true

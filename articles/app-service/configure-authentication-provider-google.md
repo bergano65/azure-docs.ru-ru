@@ -1,25 +1,16 @@
 ---
-title: Настройка проверки подлинности Google в Службе приложений Azure
-description: Узнайте, как настроить проверку подлинности Google для приложения службы приложений.
-services: app-service
-documentationcenter: ''
-author: cephalin
-manager: gwallace
-editor: ''
+title: Настройка проверки подлинности Google
+description: Узнайте, как настроить аутентификацию Google в качестве поставщика удостоверений для приложения службы приложений.
 ms.assetid: 2b2f9abf-9120-4aac-ac5b-4a268d9b6e2b
-ms.service: app-service-mobile
-ms.workload: mobile
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 09/02/2019
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 917fa87a0cd0f7b0615a5139a7c15311f866739a
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: 81ce3e393d308323c8d5a3d688c16c9b45e7be9d
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72176968"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74670811"
 ---
 # <a name="configure-your-app-service-app-to-use-google-login"></a>Настройка приложения службы приложений для использования имени входа Google
 
@@ -27,12 +18,12 @@ ms.locfileid: "72176968"
 
 В этом разделе показано, как настроить службу приложений Azure для использования Google в качестве поставщика проверки подлинности.
 
-Чтобы выполнить процедуру, описанную в этом разделе, необходимо иметь учетную запись Google с проверенным адресом электронной почты. Чтобы создать новую учетную запись Google, перейдите по ссылке [accounts.google.com](https://go.microsoft.com/fwlink/p/?LinkId=268302).
+Чтобы выполнить процедуру, описанную в этом разделе, необходимо иметь учетную запись Google с проверенным адресом электронной почты. Чтобы создать учетную запись Google, перейдите по ссылке [accounts.google.com](https://go.microsoft.com/fwlink/p/?LinkId=268302).
 
 ## <a name="register"> </a>Регистрация приложения с помощью Google
 
 1. Чтобы создать идентификатор клиента и секрет клиента, следуйте инструкциям в документации Google по [входу в Google для серверных приложений](https://developers.google.com/identity/sign-in/web/server-side-flow) . Нет необходимости вносить изменения в код. Просто используйте следующую информацию:
-    - Для **полномочных источников JavaScript**используйте `https://<app-name>.azurewebsites.net` с именем приложения в *\<app-name >* .
+    - Для **полномочных источников JavaScript**используйте `https://<app-name>.azurewebsites.net` с именем приложения в *\<имя приложения >* .
     - Для **разрешения URI перенаправления**используйте `https://<app-name>.azurewebsites.net/.auth/login/google/callback`.
 1. Скопируйте идентификатор приложения и значения секрета приложения.
 
@@ -72,5 +63,5 @@ ms.locfileid: "72176968"
 
 [Google apis]: https://go.microsoft.com/fwlink/p/?LinkId=268303
 
-[портал Azure]: https://portal.azure.com/
+[Портал Azure]: https://portal.azure.com/
 

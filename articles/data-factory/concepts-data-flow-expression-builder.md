@@ -6,12 +6,12 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/17/2019
-ms.openlocfilehash: 3664a7c311e15ce3aa61fc71f98a46e3f2618143
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 0eb2c2692ed2444a85e7253c6fdd8734385ff881
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74184671"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74672269"
 ---
 # <a name="mapping-data-flow-expression-builder"></a>Построитель выражений потока данных сопоставления
 
@@ -104,7 +104,13 @@ regex_replace('100 and 200', '(\\d+)', 'digits')
 
 ```toString(toTimestamp('12/31/2016T00:12:00', 'MM/dd/yyyy\'T\'HH:mm:ss'), 'MM/dd /yyyy\'T\'HH:mm:ss')```
 
-Обратите внимание, что для включения строковых литералов в выходные данные отметок времени необходимо заключить преобразование внутрь метода toString ().
+Обратите внимание, что для включения строковых литералов в выходные данные отметок времени необходимо заключить преобразование в ```toString()```.
+
+Вот как можно преобразовать секунды из эпохи в дату или отметку времени:
+
+```toTimestamp(1574127407*1000l)```
+
+Обратите внимание на конечную «l» в конце выражения выше. , Который обозначает преобразование в long в виде встроенного синтаксиса.
 
 ## <a name="handling-column-names-with-special-characters"></a>Обработка имен столбцов с помощью специальных символов
 
@@ -112,6 +118,6 @@ regex_replace('100 and 200', '(\\d+)', 'digits')
 
 ```{[dbo].this_is my complex name$$$}```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Начало создания выражений преобразования данных](data-flow-expression-functions.md)

@@ -1,17 +1,17 @@
 ---
 title: Доступ к каналу изменений в Azure Cosmos DB
 description: В этой статье описываются различные варианты, с помощью которых можно получать доступ к каналу изменений и читать его в Azure Cosmos DB.
-author: markjbrown
-ms.author: mjbrown
+author: TheovanKraay
+ms.author: thvankra
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 07/23/2019
-ms.openlocfilehash: 3d30c9f946f97f06c1a3ba1cd2e77e1ab151a572
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.date: 11/25/2019
+ms.openlocfilehash: fc7e78a44d03af8952c1e178a3e92b1ee0c6fe66
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72754885"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74688120"
 ---
 # <a name="reading-azure-cosmos-db-change-feed"></a>Чтение канала изменений Azure Cosmos DB
 
@@ -31,7 +31,13 @@ ms.locfileid: "72754885"
 
 ## <a name="using-the-azure-cosmos-db-sql-api-sdk"></a>Использование пакета SDK для API SQL Azure Cosmos DB
 
-С помощью пакета SDK вы получаете низкоуровневый контроль над каналом изменений. Вы можете управлять контрольной точкой, обращаться к конкретному ключу логической секции и т. д. Если у вас несколько читателей, можно использовать `ChangeFeedOptions` для распределения нагрузки чтения в разные потоки или разные клиенты. 
+С помощью пакета SDK вы получаете низкоуровневый контроль над каналом изменений. Вы можете управлять контрольной точкой, обращаться к конкретному ключу логической секции и т. д. Если у вас несколько читателей, можно использовать `ChangeFeedOptions` для распределения нагрузки чтения в разные потоки или разные клиенты.
+
+## <a name="change-feed-in-apis-for-cassandra-and-mongodb"></a>Веб-канал изменений в API для Cassandra и MongoDB
+
+Функция веб-канала изменений отображается как поток изменений в API MongoDB и запрос с предикатом в API Cassandra. Дополнительные сведения о реализации API MongoDB см. в статье [потоки изменений в api Azure Cosmos DB для MongoDB](mongodb-change-streams.md).
+
+Собственная технология Apache Cassandra предоставляет систему отслеживания измененных данных (CDC), механизм пометки определенных таблиц для архивации, а также отклонять операции записи в эти таблицы после достижения настраиваемого размера на диске для журнала CDC. Функция веб-канала изменений в Azure Cosmos DB API для Cassandra расширяет возможность запроса изменений с помощью предиката через CQL. Дополнительные сведения о реализации см. в статье [веб-канал изменений в Azure Cosmos DB API для Cassandra](cassandra-change-feed.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

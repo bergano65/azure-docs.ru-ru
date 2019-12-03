@@ -1,25 +1,16 @@
 ---
-title: Настройка проверки подлинности Twitter в Службе приложений Azure
-description: Узнайте, как настроить проверку подлинности Twitter для приложения службы приложений.
-services: app-service
-documentationcenter: ''
-author: mattchenderson
-manager: syntaxc4
-editor: ''
+title: Настройка проверки подлинности Twitter
+description: Узнайте, как настроить аутентификацию Twitter в качестве поставщика удостоверений для приложения службы приложений.
 ms.assetid: c6dc91d7-30f6-448c-9f2d-8e91104cde73
-ms.service: app-service-mobile
-ms.workload: mobile
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 04/19/2018
-ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: 02008b7dc1609a5f28ac6ba2a582933a96428198
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: b5ec17c18cec8053f0732366c0cc5d0c5003e4de
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72176952"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74670804"
 ---
 # <a name="configure-your-app-service-app-to-use-twitter-login"></a>Настройка приложения службы приложений для использования имени для входа Twitter
 
@@ -32,8 +23,8 @@ ms.locfileid: "72176952"
 ## <a name="register"> </a>Регистрация приложения в Twitter
 
 1. Войдите в [портал Azure] и перейдите к своему приложению. Скопируйте свой **URL-адрес**. Вы будете использовать его для настройки приложения Twitter.
-1. Перейдите на веб-сайт [Twitter Developers] , войдите с помощью учетной записи Twitter и выберите **создать новое приложение**.
-1. Введите **имя** и **Описание** нового приложения. Вставьте **URL-адрес** приложения в поле **веб-сайт** . В поле **URL-адрес обратного вызова** введите URL-адрес приложения службы приложений и добавьте путь `/.auth/login/aad/callback`. Например, `https://contoso.azurewebsites.net/.auth/login/twitter/callback`. Обязательно используйте схему HTTPS.
+1. Перейдите на веб-сайт [разработчиков Twitter] , войдите с помощью учетной записи Twitter и выберите **создать новое приложение**.
+1. Введите **имя** и **Описание** нового приложения. Вставьте **URL-адрес** приложения в поле **веб-сайт** . В поле **URL-адрес обратного вызова** введите URL-адрес приложения службы приложений и добавьте путь `/.auth/login/aad/callback`. Пример: `https://contoso.azurewebsites.net/.auth/login/twitter/callback`. Обязательно используйте схему HTTPS.
 1. В нижней части страницы прочтите и примите условия. Выберите **создать приложение Twitter**. Отобразятся сведения о приложении.
 1. Перейдите на вкладку **Параметры** , установите флажок **Разрешить использование этого приложения для входа с помощью Twitter**и нажмите кнопку **обновить параметры**.
 1. Откройте вкладку **Ключи и токены доступа** .
@@ -77,7 +68,7 @@ ms.locfileid: "72176952"
 
 <!-- URLs. -->
 
-[Twitter Developers]: https://go.microsoft.com/fwlink/p/?LinkId=268300
+[разработчиков Twitter]: https://go.microsoft.com/fwlink/p/?LinkId=268300
 [twitter.com]: https://go.microsoft.com/fwlink/p/?LinkID=268287
-[портал Azure]: https://portal.azure.com/
+[Портал Azure]: https://portal.azure.com/
 [xamarin]: ../app-services-mobile-app-xamarin-ios-get-started-users.md

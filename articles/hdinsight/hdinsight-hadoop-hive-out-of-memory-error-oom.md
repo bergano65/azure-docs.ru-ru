@@ -3,18 +3,18 @@ title: Устранение ошибки нехватки памяти Hive в A
 description: Устраните ошибку нехватки памяти Hive в HDInsight. Пользовательский сценарий представляет собой запрос ко множеству больших таблиц.
 keywords: ошибка нехватки памяти, OOM, параметры Hive
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
+ms.topic: troubleshooting
 ms.custom: hdinsightactive
-ms.topic: conceptual
-ms.date: 05/14/2018
-ms.author: hrasheed
-ms.openlocfilehash: 2e7328b95aecc8e644d7b9e2ec407a62551fff79
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 11/28/2019
+ms.openlocfilehash: add55c29bb93d8dce9ad69bd9850a1db02ea5afe
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64712792"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74687765"
 ---
 # <a name="fix-an-apache-hive-out-of-memory-error-in-azure-hdinsight"></a>Устранение ошибки нехватки памяти Apache Hive в Azure HDInsight
 
@@ -24,26 +24,28 @@ ms.locfileid: "64712792"
 
 Клиент выполнил запрос Hive.
 
-    SELECT
-        COUNT (T1.COLUMN1) as DisplayColumn1,
-        …
-        …
-        ….
-    FROM
-        TABLE1 T1,
-        TABLE2 T2,
-        TABLE3 T3,
-        TABLE5 T4,
-        TABLE6 T5,
-        TABLE7 T6
-    where (T1.KEY1 = T2.KEY1….
-        …
-        …
+```sql
+SELECT
+    COUNT (T1.COLUMN1) as DisplayColumn1,
+    …
+    …
+    ….
+FROM
+    TABLE1 T1,
+    TABLE2 T2,
+    TABLE3 T3,
+    TABLE5 T4,
+    TABLE6 T5,
+    TABLE7 T6
+where (T1.KEY1 = T2.KEY1….
+    …
+    …
+```
 
 Некоторые особенности этого запроса:
 
-* T1 является псевдонимом для большой таблицы TABLE1, которая содержит множество столбцов типа STRING.
-* Другие таблицы не так велики, но имеют большое число столбцов.
+* T1 является псевдонимом для большой таблицы TABLE1, имеющей множество типов СТРОКОВЫХ столбцов.
+* Другие таблицы не имеют большого размера, но имеют много столбцов.
 * Все таблицы соединяются друг с другом, в некоторых случаях с несколькими столбцами в TABLE1 и др.
 
 На выполнение запроса Hive в кластере HDInsight A3 с 24 узлами ушло 26 минут. Клиент заметил следующие предупреждения:
@@ -79,12 +81,11 @@ ms.locfileid: "64712792"
 
 Ошибка не устраняется при использовании виртуальной машины большего размера (например, D12).
 
-
 ## <a name="debug-the-out-of-memory-error"></a>Отладка ошибки нехватки памяти
 
 Наша инженерная команда и команда поддержки обнаружили, что одна из проблем, которые приводят к ошибке нехватки памяти, представляет собой [известную проблему, описанную в Apache JIRA](https://issues.apache.org/jira/browse/HIVE-8306).
 
-    When hive.auto.convert.join.noconditionaltask = true we check noconditionaltask.size and if the sum  of tables sizes in the map join is less than noconditionaltask.size the plan would generate a Map join, the issue with this is that the calculation doesn't take into account the overhead introduced by different HashTable implementation as results if the sum of input sizes is smaller than the noconditionaltask size by a small margin queries will hit OOM.
+"When Hive. Auto. Convert. Join. noconditionaltask = true мы проверяем noconditionaltask. size и если сумма размеров таблиц в соединении Map меньше noconditionaltask. размер, который план создает соединение с картой, заключается в том, что вычисления не принимаются с учетом накладных расходов, представленных в разных реализациях HashTable, в качестве результатов, если сумма входных размеров меньше, чем размер noconditionaltask по небольшим запросам, может попасть в память ".
 
 Для свойства **hive.auto.convert.join.noconditionaltask** в файле hive-site.xml задано значение **true**:
 
@@ -100,18 +101,16 @@ ms.locfileid: "64712792"
 </property>
 ```
 
-Вполне вероятно, что источником ошибки нехватки памяти в пространстве кучи Java был Map Join. Как описано в записи блога [Hadoop Yarn memory settings in HDInsight](https://blogs.msdn.com/b/shanyu/archive/2014/07/31/hadoop-yarn-memory-settings-in-hdinsigh.aspx) (Параметры памяти Hadoop Yarn в HDInsight), при использовании модуля Tez используемое пространство кучи на самом деле принадлежит контейнеру Tez. Описание памяти контейнера Tez см. на рисунке ниже.
+Скорее всего, соединение с картой не является причиной ошибки нехватки памяти в куче. Как описано в записи блога [Hadoop Yarn memory settings in HDInsight](https://blogs.msdn.com/b/shanyu/archive/2014/07/31/hadoop-yarn-memory-settings-in-hdinsigh.aspx) (Параметры памяти Hadoop Yarn в HDInsight), при использовании модуля Tez используемое пространство кучи на самом деле принадлежит контейнеру Tez. Описание памяти контейнера Tez см. на рисунке ниже.
 
-![Схема памяти контейнера Tez: Ошибка нехватки памяти в Hive](./media/hdinsight-hadoop-hive-out-of-memory-error-oom/hive-out-of-memory-error-oom-tez-container-memory.png)
+![Схема памяти контейнера Tez: ошибка нехватки памяти Hive](./media/hdinsight-hadoop-hive-out-of-memory-error-oom/hive-out-of-memory-error-oom-tez-container-memory.png)
 
-Как следует из записи блога, два следующих параметра памяти определяют контейнер памяти для кучи: **hive.tez.container.size** и **hive.tez.java.opts**. Согласно нашему опыту, исключение нехватки памяти не означает, что размер контейнера слишком мал. Оно означает, что размер кучи Java (hive.tez.java.opts) слишком мал. Поэтому каждый раз, когда вы видите ошибку нехватки памяти, можно попытаться увеличить **hive.tez.java.opts**. При необходимости может потребоваться увеличение параметра **hive.tez.container.size**. Параметр **Java.opts** должен составлять около 80 % от **container.size**.
+Как следует из записи блога, два следующих параметра памяти определяют контейнер памяти для кучи: **hive.tez.container.size** и **hive.tez.java.opts**. Из нашего опыта исключение нехватки памяти не означает, что размер контейнера слишком мал. Оно означает, что размер кучи Java (hive.tez.java.opts) слишком мал. Поэтому каждый раз, когда вы видите ошибку нехватки памяти, можно попытаться увеличить **hive.tez.java.opts**. При необходимости может потребоваться увеличение параметра **hive.tez.container.size**. Параметр **Java.opts** должен составлять около 80 % от **container.size**.
 
 > [!NOTE]  
 > Параметр **hive.tez.java.opts** всегда должен быть меньше, чем **hive.tez.container.size**.
-> 
-> 
 
-Так как виртуальная машина размера D12 имеет 28 ГБ памяти, мы решили использовать контейнер размером 10 ГБ (10 240 МБ) и назначить 80 % от этого размера параметру java.opts.
+Поскольку компьютер D12 имеет 28 ГБ памяти, мы решили использовать размер контейнера 10 ГБ (10240 МБ) и назначить 80% для Java. назначайте:
 
     SET hive.tez.container.size=10240
     SET hive.tez.java.opts=-Xmx8192m

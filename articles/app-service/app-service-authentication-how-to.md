@@ -1,24 +1,15 @@
 ---
-title: Расширенное использование аутентификации и авторизации в Службе приложений Azure | Документация Майкрософт
-description: В этой статье показано, как настроить проверку подлинности и авторизацию в службе приложений и получить утверждения пользователей, а также различные токены.
-services: app-service
-documentationcenter: ''
-author: cephalin
-manager: gwallace
-editor: ''
-ms.service: app-service
-ms.workload: mobile
-ms.tgt_pltfrm: na
+title: Расширенное использование AuthN и Аусо
+description: Научитесь настраивать функцию проверки подлинности и авторизации в службе приложений для различных сценариев, а также получать утверждения пользователей и различные токены.
 ms.topic: article
 ms.date: 10/24/2019
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: f453a0276a3448273964a589112e21ca5665c2d2
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: d57b196bf95ebdf31bc459ad4b9d718fd32ca495
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900139"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74672235"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Расширенное использование проверки подлинности и авторизации в Службе приложений Azure
 
@@ -42,7 +33,7 @@ ms.locfileid: "72900139"
 
 В раскрывающемся списке **Action to take when request is not authenticated** (Предпринимаемое действие, если проверка подлинности для запроса не выполнена) выберите **Разрешить анонимные запросы (нет действия)** .
 
-На странице входа, на панели навигации или в любом другом расположении приложения добавьте ссылку входа для каждого включенного поставщика (`/.auth/login/<provider>`). Пример:
+На странице входа, на панели навигации или в любом другом расположении приложения добавьте ссылку входа для каждого включенного поставщика (`/.auth/login/<provider>`). Пример.
 
 ```HTML
 <a href="/.auth/login/aad">Log in with Azure AD</a>
@@ -64,7 +55,7 @@ ms.locfileid: "72900139"
 
 При входе с помощью клиента приложение входит в систему поставщика вручную, а затем отправляет токен проверки подлинности службе приложений для проверки (см. [Поток проверки подлинности](overview-authentication-authorization.md#authentication-flow)). Эта проверка сама по себе не предоставляет вам доступ к требуемым ресурсам приложения, но успешная проверка даст вам токен сеанса, который вы можете использовать для доступа к ресурсам приложений. 
 
-Чтобы проверить токен поставщика, для приложения службы приложений сначала нужно настроить требуемый поставщик. Получив токен проверки подлинности у своего поставщика, во время выполнения отправьте токен по адресу `/.auth/login/<provider>` для проверки. Пример: 
+Чтобы проверить токен поставщика, для приложения службы приложений сначала нужно настроить требуемый поставщик. Получив токен проверки подлинности у своего поставщика, во время выполнения отправьте токен по адресу `/.auth/login/<provider>` для проверки. Пример. 
 
 ```
 POST https://<appname>.azurewebsites.net/.auth/login/aad HTTP/1.1
@@ -95,7 +86,7 @@ Content-Type: application/json
 }
 ```
 
-Получив этот токен сеанса, вы можете получить доступ к защищенным ресурсам приложений, добавив заголовок `X-ZUMO-AUTH` к HTTP-запросам. Пример: 
+Получив этот токен сеанса, вы можете получить доступ к защищенным ресурсам приложений, добавив заголовок `X-ZUMO-AUTH` к HTTP-запросам. Пример. 
 
 ```
 GET https://<appname>.azurewebsites.net/api/products/1
@@ -116,7 +107,7 @@ X-ZUMO-AUTH: <authenticationToken_value>
 <a href="/.auth/logout">Sign out</a>
 ```
 
-После успешного выхода клиент по умолчанию перенаправляется на URL-адрес `/.auth/logout/done`. Можно изменить страницу перенаправления после выхода, добавив параметр запроса `post_logout_redirect_uri`. Пример:
+После успешного выхода клиент по умолчанию перенаправляется на URL-адрес `/.auth/logout/done`. Можно изменить страницу перенаправления после выхода, добавив параметр запроса `post_logout_redirect_uri`. Пример.
 
 ```
 GET /.auth/logout?post_logout_redirect_uri=/index.html
@@ -232,7 +223,7 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 Учетные записи Майкрософт и Azure Active Directory позволяют выполнять вход из нескольких доменов. Например, учетная запись Майкрософт позволяет выполнять вход с помощью учетных записей _outlook.com_, _live.com_ и _hotmail.com_. Azure AD позволяет любому числу пользовательских доменов для учетных записей входа. Тем не менее, вам может потребоваться ускорить работу пользователей с вашей собственной фирменной страницей входа в Azure AD (например, `contoso.com`). Чтобы предложить доменное имя учетных записей входа, выполните следующие действия.
 
-В разделе [https://resources.azure.com](https://resources.azure.com) перейдите к **subscriptions** >  **_\<имя\_подписки_**  > **resourceGroups** >  **_\<имя\_группы\_ресурсов>_**  > **providers** > **Microsoft.Web** > **sites** >  **_\<имя\_приложения>_**  > **config** > **authsettings**. 
+В разделе [https://resources.azure.com](https://resources.azure.com) перейдите к **subscriptions** >  **_\< имя\_ подписки_**  > **resourceGroups** >  **_\< имя\_ группы\_ ресурсов>_**  > **providers** > **Microsoft.Web** > **sites** >  **_\< имя\_ приложения>_**  > **config** > **authsettings**. 
 
 Щелкните **Edit** (Изменить), измените следующее свойство и выберите **Put**. Обязательно замените _\<domain\_имя>_ необходимым доменом.
 
@@ -278,7 +269,7 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 ### <a name="identity-provider-level"></a>Уровень поставщика удостоверений
 
-Поставщик удостоверений может предоставить некоторую проверку подлинности с помощью ключа. Пример:
+Поставщик удостоверений может предоставить некоторую проверку подлинности с помощью ключа. Пример.
 
 - Для [службы приложений Azure](configure-authentication-provider-aad.md)вы можете [управлять доступом на уровне предприятия](../active-directory/manage-apps/what-is-access-management.md) непосредственно в Azure AD. Инструкции см. [в разделе Удаление доступа пользователя к приложению](../active-directory/manage-apps/methods-for-removing-user-access.md).
 - Для [Google](configure-authentication-provider-google.md), проектов Google API, входящих в [организацию](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#organizations) , можно настроить разрешение доступа только для пользователей в вашей организации (см. [страницу поддержки **OAuth 2,0** в Google](https://support.google.com/cloud/answer/6158849?hl=en)).
@@ -287,7 +278,7 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 Если любой из других уровней не обеспечивает необходимую авторизацию или если ваша платформа или поставщик удостоверений не поддерживается, необходимо написать пользовательский код для авторизации пользователей на основе [утверждений пользователей](#access-user-claims).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Windows)](app-service-web-tutorial-auth-aad.md)
