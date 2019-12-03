@@ -150,9 +150,9 @@
         - name: Настраиваемое действие .NET
           href: data-factory-use-custom-activities.md
         - name: Вызов сценариев R
-          href: 'https://github.com/Azure/Azure-DataFactory/tree/master/Samples/RunRScriptUsingADFSample'
+          href: 'https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/RunRScriptUsingADFSample'
         - name: Повторная обработка моделей в службах Azure Analysis Services
-          href: 'https://github.com/Azure/Azure-DataFactory/tree/master/Samples/AzureAnalysisServicesProcessSample'
+          href: 'https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/AzureAnalysisServicesProcessSample'
         - name: Связанные службы вычислений
           href: data-factory-compute-linked-services.md
     - name: Разработка

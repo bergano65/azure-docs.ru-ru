@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 11/26/2019
 ms.author: iainfou
-ms.openlocfilehash: cd0e77d1534bf540376fd397ee3e6d45bf8c424a
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: 140edb3162d4f76c741a5692faa19325581a3ba7
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74546256"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74704490"
 ---
 # <a name="configure-email-notifications-for-issues-in-azure-active-directory-domain-services"></a>Настройка уведомлений по электронной почте для проблем в Azure Active Directory доменных служб
 
@@ -58,7 +58,7 @@ AD DS Azure не отправляет сообщения электронной 
 Чтобы проверить существующие получатели уведомлений по электронной почте или добавить дополнительных получателей, выполните следующие действия.
 
 1. В портал Azure найдите и выберите **доменные службы Azure AD**.
-1. Выберите управляемый домен Azure AD DS, например *contoso.com*.
+1. Выберите управляемый домен Azure AD DS, например *aadds.contoso.com*.
 1. В левой части окна ресурсов Azure AD DS выберите **Параметры уведомлений**. Будут показаны существующие получатели уведомлений по электронной почте.
 1. Чтобы добавить получателя электронной почты, введите адрес электронной почты в таблице дополнительные получатели.
 1. По завершении нажмите кнопку **сохранить** в верхней части окна навигации.

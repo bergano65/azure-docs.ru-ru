@@ -8,12 +8,12 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 06/25/2018
 ms.author: menchi
-ms.openlocfilehash: e33a7a1360a837df08725b2e592973b465dff38c
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.openlocfilehash: 4443d1117d0dd08cbe2fe89b8ca8465c0c7083f8
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73954223"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74706940"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-c"></a>Начало работы с удостоверениями модулей центра Интернета вещей и двойника модуля (C)
 
@@ -31,7 +31,7 @@ ms.locfileid: "73954223"
 > [!NOTE]
 > Дополнительные сведения о различных пакетах SDK, которые можно использовать для создания приложений, которые будут работать на устройствах и в серверной части решения, см. в статье [Пакеты SDK для Центра Интернета вещей Azure](iot-hub-devguide-sdks.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * Активная учетная запись Azure. (Если ее нет, всего за несколько минут можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/).)
 
@@ -190,7 +190,9 @@ int main(void)
 
     ![Сведения о модуле на портале Azure](./media/iot-hub-c-c-module-twin-getstarted/module-detail.png)
 
-2. **Создайте приложение UpdateModuleTwinReportedProperties**. В начало файла `using`Program.cs**добавьте следующие инструкции**:
+2. **Создание приложения Упдатемодулетвинрепортедпропертиес**
+   
+   Добавьте следующий фрагмент в файл C:
 
     ```C
     #include <stdio.h>
@@ -381,7 +383,7 @@ int main(void)
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы продолжить знакомство с центром IoT и изучить другие сценарии IoT, см. следующие ресурсы:
 

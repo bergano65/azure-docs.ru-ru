@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: conceptual
 ms.date: 10/16/2019
 ms.author: cherylmc
-ms.openlocfilehash: 24279ff81daf0a350aa5234e78f27a99b7e4a03e
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: 4b64c420290bec687388690f1c901c2ae789a3c8
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72528020"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707561"
 ---
 # <a name="working-with-nsg-access-and-azure-bastion"></a>Работа с NSG Access и Azure бастиона
 
@@ -58,7 +58,7 @@ Azure бастиона развертывается специально для 
 * **Ведение журнала диагностики и другие:** Исходящий трафик с 443 по AzureCloud. Региональные теги в этом теге службы пока не поддерживаются.
 * **Целевая виртуальная машина:** Исходящий трафик для 3389 и 22 в VirtualNetwork
 
-Пример правила NSG доступен для справки в этом [шаблоне](https://github.com/Azure/azure-quickstart-templates/tree/master/101-azure-bastion)быстрого запуска.
+Пример правила NSG доступен для справки в этом [шаблоне](https://github.com/Azure/azure-quickstart-templates/tree/master/101-azure-bastion-nsg)быстрого запуска.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

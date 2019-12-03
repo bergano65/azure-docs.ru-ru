@@ -6,12 +6,12 @@ ms.author: kirillg
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 584fedc2ebe93b2a3cfd8a3b538a410d29aebe9d
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 2259343d2c7bca1f60a5256efcd572e6cc21b565
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74383090"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74706034"
 ---
 # <a name="create-azure-cosmos-containers-and-databases-in-autopilot-mode-preview"></a>Создание контейнеров и баз данных Azure Cosmos в режиме автопилотного режима (Предварительная версия)
 
@@ -102,11 +102,11 @@ Azure Cosmos DB позволяет подготавливать пропускн
 |---------|---------|
 |4000 единиц запросов в секунду  |   50 ГБ    |
 |20 000 единиц запросов в секунду  |  200 ГБ  |
-|100 000 единиц запросов в секунду    |  1 TБ   |
+|100 000 единиц запросов в секунду    |  1 ТБ   |
 |500 000 единиц запросов в секунду    |  5 ТБ  |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Подробнее о [логических секциях](partition-data.md).
+* Подробнее о [логических разделах](partition-data.md).
 * Подробнее о [подготовке пропускной способности для контейнера Azure Cosmos](how-to-provision-container-throughput.md).
 * Подробнее о [подготовке пропускной способности для базы данных Azure Cosmos](how-to-provision-database-throughput.md).

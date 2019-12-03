@@ -12,12 +12,12 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: aaf59de2425e0725958847477f1043a5b7fac68a
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 77be6d8518774a1e2656e23024490dd9c1431865
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73839347"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707252"
 ---
 # <a name="onboarding-and-installing"></a>Подключение и установка
 
@@ -53,7 +53,8 @@ ms.locfileid: "73839347"
 
 1. После того как расширение будет предоставлено для вашей организации Azure DevOps, перейдите на страницу Организации Azure DevOps. Примером URL-адреса для такой страницы является `https://dev.azure.com/contoso`.
 1. Щелкните значок "набор покупок" в правом верхнем углу рядом с именем, а затем выберите **Управление расширениями**.
-1. Выберите расширение "анализ кода безопасности Microsoft", а затем откройте мастер пользовательского интерфейса Azure DevOps, чтобы начать установку.
+1. Выберите **Общий**.
+1. Выберите расширение "анализ кода безопасности Microsoft" и нажмите кнопку **установить**.
 1. В раскрывающемся списке выберите организацию Azure DevOps для установки расширения.
 1. Щелкните **Установить**. После завершения установки можно приступить к использованию расширения.
 

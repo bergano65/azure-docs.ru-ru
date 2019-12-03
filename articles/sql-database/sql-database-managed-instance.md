@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: sstein, carlrab, vanto
 ms.date: 11/27/2019
-ms.openlocfilehash: db5ac9465e6b897690c54484de25fde462741fb3
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: 1a9c24846606c53fefa1ffc1de59f358524020c4
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74548392"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707623"
 ---
 # <a name="what-is-azure-sql-database-managed-instance"></a>Что такое управляемый экземпляр базы данных SQL Azure?
 
@@ -250,7 +250,7 @@ ms.locfileid: "74548392"
 
 При перемещении используются резервные копии SQL, сохраненные в хранилище BLOB-объектов Azure. Резервные копии, хранимые в хранилище BLOB-объектов Azure, можно восстановить непосредственно в управляемый экземпляр с помощью [команды T-SQL RESTORE](https://docs.microsoft.com/sql/t-sql/statements/restore-statements-transact-sql?view=azuresqldb-mi-current).
 
-- Краткое руководство по восстановлению стандартного файла резервной копии базы данных Wide World Importers см. в статье [Краткое руководство. Восстановление базы данных в Управляемый экземпляр](sql-database-managed-instance-get-started-restore.md). В этом кратком руководстве показано, как передать файл резервной копии в хранилище BLOB-объектов Azure и обеспечить его защиту, используя ключ подписанного URL-адреса (SAS).
+- Краткое руководство по восстановлению стандартного файла резервной копии базы данных Wide World Importers см. в статье [Краткое руководство. Восстановление базы данных в Управляемый экземпляр](sql-database-managed-instance-get-started-restore.md). В этом кратком руководстве показано, как передать файл резервной копии в хранилище BLOB-объектов Azure и защитить его с помощью ключа подписанного URL-адрес (SAS).
 - Сведения о восстановлении из URL-адреса см. в разделе [Исходное восстановление из URL-адреса](sql-database-managed-instance-migrate.md#native-restore-from-url).
 
 > [!IMPORTANT]

@@ -6,17 +6,20 @@ ms.service: event-hubs
 documentationcenter: ''
 author: spelluru
 ms.topic: conceptual
-ms.date: 08/13/2019
+ms.date: 12/02/2019
 ms.author: spelluru
-ms.openlocfilehash: 63fe6c4a2d02489b5e25100aa6aa23407bbe6bc7
-ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
+ms.openlocfilehash: 3af951d120282767bd71bc569d8c0bfe39dafffe
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72809368"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74705465"
 ---
-# <a name="configure-customer-managed-keys-for-encrypting-azure-event-hubs-data-at-rest-by-using-the-azure-portal"></a>Настройка управляемых клиентом ключей для шифрования неактивных данных концентраторов событий Azure с помощью портал Azure
+# <a name="configure-customer-managed-keys-for-encrypting-azure-event-hubs-data-at-rest-by-using-the-azure-portal-preview"></a>Настройка управляемых клиентом ключей для шифрования неактивных данных концентраторов событий Azure с помощью портал Azure (Предварительная версия)
 Концентраторы событий Azure обеспечивают шифрование неактивных данных с помощью Azure Шифрование службы хранилища (Azure SSE). Концентраторы событий используют хранилище Azure для хранения данных. по умолчанию все данные, хранящиеся в службе хранилища Azure, шифруются с помощью ключей, управляемых корпорацией Майкрософт. 
+
+>[!NOTE]
+> Эта функция в настоящее время находится на стадии предварительной версии. Не рекомендуется использовать в рабочей среде.
 
 ## <a name="overview"></a>Краткое описание
 Концентраторы событий Azure теперь поддерживают возможность шифрования неактивных данных с помощью ключей, управляемых корпорацией Майкрософт, или ключей, управляемых клиентом (создание собственных ключей – BYOK). Эта функция позволяет создавать, поворачивать, отключать и отменять доступ к управляемым клиентом ключам, которые используются для шифрования неактивных данных концентраторов событий Azure.

@@ -10,28 +10,28 @@ ms.subservice: design
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: f7b4f926bb9611d87c67276f754a6b596850b59d
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: 9e64d184ef0fd120d1bc64ce274ee882b7938df0
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73645591"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74708644"
 ---
 # <a name="azure-synapse-analytics-formerly-sql-dw-frequently-asked-questions"></a>Azure синапсе Analytics (ранее SQL DW) часто задаваемые вопросы
 
 ## <a name="general"></a>Общие сведения
 
-В. Что такое Azure синапсе?
+В. Что такое Azure Synapse?
 
-О. Azure синапсе — это неограниченная служба аналитики, которая объединяет хранилища данных и аналитику больших данных. Она дает вам возможность запрашивать данные на своих условиях, используя для этого бессерверные или подготовленные ресурсы — в масштабе. Azure синапсе объединяет эти две возможности вместе с единым интерфейсом для приема, подготовки, управления и обслуживания данных для немедленных потребностей в бизнес-аналитике и машинного обучения. Дополнительные сведения см. в статье [что такое Azure синапсе Analytics](sql-data-warehouse-overview-what-is.md).
+О. Azure синапсе — это неограниченная служба аналитики, которая объединяет хранилища данных и аналитику больших данных. Она дает вам возможность запрашивать данные на своих условиях, используя для этого бессерверные или подготовленные ресурсы — в масштабе. Azure Synapse объединяет эти две возможности, предоставляя единый интерфейс для приема, подготовки, контроля и обслуживания данных для насущных потребностей бизнес-аналитики и машинного обучения. Дополнительные сведения см. в статье [что такое Azure синапсе Analytics](sql-data-warehouse-overview-what-is.md).
 
-В. Что произошло с хранилищем данных SQL Azure?
+В. Что случилось с Хранилищем данных SQL Azure?
 
 О. Azure синапсе — это хранилище данных SQL Azure (SQL DW). Мы воспользовались одним и тем же ведущим хранилищем данных на весь новый уровень производительности и возможностей. Вы можете продолжить выполнение существующих рабочих нагрузок хранилища данных в рабочей среде на сегодняшний день с помощью Azure синапсе и автоматически получить преимущества от новых возможностей, доступных в предварительной версии. Дополнительные сведения см. в статье [что такое Azure синапсе Analytics](sql-data-warehouse-overview-what-is.md).
 
 В. Что такое аналитика SQL?
 
-О. SQL Analytics относится к функциям хранения корпоративных данных, которые общедоступны в Azure синапсе. Дополнительные сведения см. в статье [что такое Azure синапсе Analytics](sql-data-warehouse-overview-what-is.md).
+О. Название SQL Analytics относится к функциям хранения корпоративных данных, которые стали общедоступны в Azure Synapse. Дополнительные сведения см. в статье [что такое Azure синапсе Analytics](sql-data-warehouse-overview-what-is.md).
 
 В. Разделы справки начать работу с Azure синапсе?
 
@@ -47,7 +47,7 @@ ms.locfileid: "73645591"
 
 В. Можно ли подключиться Power BI?
 
-О. Да! Хотя Power BI поддерживает прямой запрос с помощью Azure синапсе, он не предназначен для большого числа пользователей или данных в режиме реального времени. Чтобы оптимизировать производительность Power BI, рассмотрите возможность использования Power BI на основе Azure Analysis Services или служб Analysis Service IaaS.
+О. Да. Хотя Power BI поддерживает прямой запрос с помощью Azure синапсе, он не предназначен для большого числа пользователей или данных в режиме реального времени. Чтобы оптимизировать производительность Power BI, рассмотрите возможность использования Power BI на основе Azure Analysis Services или служб Analysis Service IaaS.
 
 В. Что такое ограничения емкости SQL Analytics?
 
@@ -83,10 +83,6 @@ ms.locfileid: "73645591"
 
 ## <a name="tooling-and-administration"></a>Инструментарий и администрирование
 
-В. Поддерживается ли создание проектов Базы данных в Visual Studio?
-
-О. В настоящее время проекты баз данных в Visual Studio не поддерживаются. Если вы хотите проголосовать за то, чтобы поддержка проектов Базы данных была добавлена, то посетите нашу страницу UserVoice и [Запрос на функцию поддержки проектов Базы данных].
-
 В. Поддерживает ли SQL Analytics API-интерфейсы RESTFUL?
 
 О. Да. Большинство функций RESTFUL, которые можно использовать с базой данных SQL, также доступны в SQL Analytics. Сведения об API можно найти в документации REST или на сайте [MSDN].
@@ -104,7 +100,7 @@ ms.locfileid: "73645591"
 
 Вопрос. Какие источники данных можно подключить с помощью Polybase? 
 
-О. К [Хранилище озера данных Azure] и [Большие двоичные объекты службы хранилища Azure].
+О. К [Azure Data Lake Storage] и [Большие двоичные объекты службы хранилища Azure].
 
 Вопрос. можно ли включение вычисления при подключении к BLOB-объектам службы хранилища Azure или ADLS? 
 
@@ -123,13 +119,13 @@ ms.locfileid: "73645591"
 [Строки подключения]: ./sql-data-warehouse-connection-strings.md
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/azure-sqldw
 [Запросы в службу поддержки]: ./sql-data-warehouse-get-started-create-support-ticket.md
-[безопасность]: ./sql-data-warehouse-overview-manage-security.md
+[Безопасность]: ./sql-data-warehouse-overview-manage-security.md
 [Соответствие требованиям корпорации Майкрософт]: https://www.microsoft.com/en-us/trustcenter/compliance/complianceofferings
 [Ограничения емкости]: ./sql-data-warehouse-service-capacity-limits.md
 [Типы данных]: ./sql-data-warehouse-tables-data-types.md
 [Неподдерживаемые функции таблиц]: ./sql-data-warehouse-tables-overview.md#unsupported-table-features
-[Хранилище озера данных Azure]: ./sql-data-warehouse-load-from-azure-data-lake-store.md
+[Azure Data Lake Storage]: ./sql-data-warehouse-load-from-azure-data-lake-store.md
 [Большие двоичные объекты службы хранилища Azure]: ./sql-data-warehouse-load-from-azure-blob-storage-with-polybase.md
-[Запрос на функцию поддержки проектов Базы данных]: https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/13313247-database-project-from-visual-studio-to-support-azu
+[Database projects feature request]: https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/13313247-database-project-from-visual-studio-to-support-azu
 [MSDN]: https://msdn.microsoft.com/library/azure/mt163685.aspx
 [Обзор]: ./sql-data-warehouse-overview-faq.md

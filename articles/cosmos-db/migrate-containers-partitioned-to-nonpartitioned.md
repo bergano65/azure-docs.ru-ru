@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/25/2019
 ms.author: mjbrown
-ms.openlocfilehash: 3a13f8928ba243195c30200dae0525e72c1c161b
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.openlocfilehash: 1afca920a8146ce5501900bcc9e36bdebcccca09
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71844408"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74706076"
 ---
 # <a name="migrate-non-partitioned-containers-to-partitioned-containers"></a>Перенос несекционированных контейнеров в секционированные контейнеры
 
@@ -24,7 +24,7 @@ Azure Cosmos DB поддерживает создание контейнеров
 
 ## <a name="migrate-container-using-the-system-defined-partition-key"></a>Миграция контейнера с помощью системного ключа секции
 
-Для поддержки миграции Azure Cosmos DB предоставляет определенный системой ключ раздела с именем `/_partitionkey` во всех контейнерах, у которых нет ключа секции. Определение ключа секции нельзя изменить после миграции контейнеров. Например, определение контейнера, перенесенного в секционированный контейнер, будет выглядеть следующим образом:
+Для поддержки миграции Azure Cosmos DB предоставляет системный ключ раздела с именем `/_partitionkey` для всех контейнеров, у которых нет ключа секции. Определение ключа секции нельзя изменить после миграции контейнеров. Например, определение контейнера, перенесенного в секционированный контейнер, будет выглядеть следующим образом:
 
 ```json
 {
@@ -38,7 +38,7 @@ Azure Cosmos DB поддерживает создание контейнеров
 }
 ```
 
-После переноса контейнера можно создать документы, заполнив `_partitionKey` свойство вместе с другими свойствами документа. `_partitionKey` Свойство представляет ключ раздела ваших документов.
+После переноса контейнера можно создавать документы, заполняя свойство `_partitionKey` вместе с другими свойствами документа. Свойство `_partitionKey` представляет ключ раздела ваших документов.
 
 Выбор правильного ключа секции важен для оптимального использования подготовленной пропускной способности. Дополнительные сведения см. [в статье Выбор ключа секции](partitioning-overview.md) .
 
@@ -91,11 +91,11 @@ ItemResponse<DeviceInformationItem> readResponse =
 
 ```
 
-Полный пример см. в репозитории [кода](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/CodeSamples) GitHub для .NET.
+Полный пример см. в репозитории [кода][1] GitHub для .NET.
                       
 ## <a name="migrate-the-documents"></a>Перенос документов
 
-Хотя определение контейнера дополнено свойством ключа секции, документы в контейнере не переносятся в автоматическом режиме. Это означает, что путь к свойству `/_partitionKey` ключа системного раздела не добавляется автоматически в существующие документы. Необходимо выполнить повторное `_partitionKey` секционирование существующих документов, прочитав документы, созданные без ключа секции, и перезаписать их свойством в документах.
+Хотя определение контейнера дополнено свойством ключа секции, документы в контейнере не переносятся в автоматическом режиме. Это означает, что свойство ключа системного раздела `/_partitionKey` путь не добавляется автоматически в существующие документы. Необходимо выполнить повторное секционирование существующих документов, прочитав документы, созданные без ключа секции, и перезаписать их с помощью свойства `_partitionKey` в документах.
 
 ## <a name="access-documents-that-dont-have-a-partition-key"></a>Доступ к документам, у которых нет ключа секции
 
@@ -110,7 +110,7 @@ await migratedContainer.Items.ReadItemAsync<DeviceInformationItem>(
 
 ```
 
-Полный пример повторного секционирования документов см. в репозитории [примеров .NET](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/CodeSamples) на сайте GitHub. 
+Полный пример повторного секционирования документов см. в репозитории [примеров .NET][1] на сайте GitHub. 
 
 ## <a name="compatibility-with-sdks"></a>Совместимость с пакетами SDK
 
@@ -118,9 +118,11 @@ await migratedContainer.Items.ReadItemAsync<DeviceInformationItem>(
 
 Если перенесенный контейнер используется последней версией пакета SDK или версии v3 и вы начинаете заполнять системный ключ раздела в новых документах, вы больше не сможете получать доступ к документам (чтение, обновление, удаление, запрос), таким как документы из предыдущих пакетов SDK.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Partitioning in Azure Cosmos DB](partitioning-overview.md) (Секционирование в Azure Cosmos DB)
 * [Единицы запросов в Azure Cosmos DB](request-units.md)
 * [Обеспечение необходимой пропускной способности для контейнеров и баз данных](set-throughput.md)
 * [Использование учетной записи Azure Cosmos](account-overview.md)
+
+[1]: https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/NonPartitionContainerMigration

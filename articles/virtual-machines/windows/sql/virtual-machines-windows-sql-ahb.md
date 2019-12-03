@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 08/05/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: aac20034fb4a528e48d5b383f39205a952878539
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 06d7b7abe7741c465f3d40a90340e03b2c24f258
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900695"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707504"
 ---
 # <a name="change-the-license-model-for-a-sql-server-virtual-machine-in-azure"></a>Изменение модели лицензирования для SQL Server виртуальной машины в Azure
 В этой статье описывается, как изменить модель лицензии для SQL Server виртуальной машины в Azure с помощью нового поставщика ресурсов виртуальной машины SQL ( **Microsoft. склвиртуалмачине**).
@@ -37,16 +37,17 @@ ms.locfileid: "72900695"
 
 - Подведите виртуальную машину с помощью собственного образа SQL Server с лицензией из Azure Marketplace. Этот параметр доступен только для клиентов, у которых есть Соглашение Enterprise.
 - Подготавливаете виртуальную машину с помощью образа SQL Server с оплатой по мере использования из Azure Marketplace и активируйте Преимущество гибридного использования Azure.
-- Самостоятельная установка SQL Server на виртуальной машине Azure, [регистрация SQL Server виртуальной машины](virtual-machines-windows-sql-register-with-resource-provider.md)вручную и активация преимущество гибридного использования Azure.
+- Самостоятельная установка SQL Server на виртуальной машине Azure, ручная [Регистрация в поставщике ресурсов виртуальной машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md)и активация преимущество гибридного использования Azure.
 
-Тип лицензии SQL Server задается при подготовке виртуальной машины. Его можно изменить в любое время. Переключение между моделями лицензий не приводит к простою, не перезапускает виртуальную машину, не добавляет дополнительных затрат и вступает в силу немедленно. На самом деле, активация Преимущество гибридного использования Azure *сокращает* затраты.
+Тип лицензии SQL Server задается при подготовке виртуальной машины. Его можно изменить в любое время. Переключение между моделями лицензий не приводит к простою, не перезапускает виртуальную машину или службу SQL Server, не добавляет никаких дополнительных затрат и вступает в силу немедленно. На самом деле, активация Преимущество гибридного использования Azure *сокращает* затраты.
 
 ## <a name="prerequisites"></a>Технические условия
 
-Для использования поставщика ресурсов виртуальной машины SQL требуется расширение IaaS SQL Server. Таким образом, вам потребуется следующее:
+Изменение модели лицензирования SQL Server виртуальной машины имеет следующие требования. 
+
 - [Подписка Azure](https://azure.microsoft.com/free/).
-- [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default). 
 - [SQL Server виртуальную машину](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision) , зарегистрированную в [ПОСТАВЩИКЕ ресурсов виртуальной машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md).
+- [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default) является обязательным требованием для использования [преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/). 
 
 
 ## <a name="change-the-license-for-vms-already-registered-with-the-resource-provider"></a>Изменение лицензии для виртуальных машин, уже зарегистрированных в поставщике ресурсов 

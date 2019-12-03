@@ -1,6 +1,6 @@
 ---
-title: Управление доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager | Документация Майкрософт
-description: Узнайте, как управлять доступом к ресурсам Azure пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) и шаблонов Azure Resource Manager.
+title: Добавление назначений ролей с помощью Azure RBAC и шаблонов Azure Resource Manager
+description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, субъектов-служб или управляемых удостоверений с помощью управления доступом на основе ролей (RBAC) Azure и шаблонов Azure Resource Manager.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -10,19 +10,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/21/2019
+ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 268913fb7aebd1d6c8b377b95939c3bc1f77daca
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: a183dc3b318cb9d740fe91bf553dc9f0c7ec99c4
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74383988"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707803"
 ---
-# <a name="manage-access-to-azure-resources-using-rbac-and-azure-resource-manager-templates"></a>Управление доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager
+# <a name="add-role-assignments-using-azure-rbac-and-azure-resource-manager-templates"></a>Добавление назначений ролей с помощью Azure RBAC и шаблонов Azure Resource Manager
 
-[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. Помимо использования Azure PowerShell или Azure CLI вы можете управлять доступом к ресурсам Azure с помощью [шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md). Шаблоны могут быть полезны для согласованного и многократного развертывания ресурсов. В этой статье описывается, как управлять доступом с помощью RBAC и шаблонов.
+[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)] в дополнение к использованию Azure PowerShell или Azure CLI можно назначать роли с помощью [шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md). Шаблоны могут быть полезны для согласованного и многократного развертывания ресурсов. В этой статье описывается назначение ролей с помощью шаблонов.
 
 ## <a name="get-object-ids"></a>Получение идентификаторов объектов
 
@@ -64,9 +64,13 @@ $objectid = (Get-AzADServicePrincipal -DisplayName "{name}").id
 objectid=$(az ad sp list --display-name "{name}" --query [].objectId --output tsv)
 ```
 
-## <a name="create-a-role-assignment-at-a-resource-group-scope-without-parameters"></a>Создание назначения роли в области группы ресурсов (без параметров)
+## <a name="add-a-role-assignment"></a>Добавление назначения роли
 
-Чтобы в RBAC предоставить доступ, нужно создать назначение ролей. В следующем шаблоне показан базовый способ создания назначения роли. Некоторые значения указываются в шаблоне. Приведенный ниже шаблон демонстрирует:
+В RBAC для предоставления доступа необходимо добавить назначение роли.
+
+### <a name="resource-group-without-parameters"></a>Группа ресурсов (без параметров)
+
+В следующем шаблоне показан базовый способ добавления назначения роли. Некоторые значения указываются в шаблоне. Приведенный ниже шаблон демонстрирует:
 
 -  Назначение роли [читателя](built-in-roles.md#reader) пользователю, группе или приложению в области группы ресурсов
 
@@ -107,7 +111,7 @@ az group deployment create --resource-group ExampleGroup --template-file rbac-te
 
 ![Назначение ролей в области группы ресурсов](./media/role-assignments-template/role-assignment-template.png)
 
-## <a name="create-a-role-assignment-at-a-resource-group-or-subscription-scope"></a>Создание назначения роли в группе ресурсов или области подписки
+### <a name="resource-group-or-subscription"></a>Группа ресурсов или подписка
 
 Предыдущий шаблон не очень гибок. В следующем шаблоне используются параметры, и их можно использовать в разных областях. Приведенный ниже шаблон демонстрирует:
 
@@ -191,9 +195,9 @@ New-AzDeployment -Location centralus -TemplateFile rbac-test.json -principalId $
 az deployment create --location centralus --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Reader
 ```
 
-## <a name="create-a-role-assignment-at-a-resource-scope"></a>Создание назначения роли в области действия ресурса
+### <a name="resource"></a>Ресурс
 
-Если необходимо создать назначение роли на уровне ресурса, то формат назначения роли отличается. Укажите пространство имен поставщика ресурсов и тип ресурса для назначения роли. Вы также включаете имя ресурса в имя назначения роли.
+Если необходимо добавить назначение роли на уровне ресурса, то формат назначения роли отличается. Укажите пространство имен поставщика ресурсов и тип ресурса для назначения роли. Вы также включаете имя ресурса в имя назначения роли.
 
 Для типа и имени назначения роли используйте следующий формат:
 
@@ -287,7 +291,7 @@ az group deployment create --resource-group ExampleGroup --template-file rbac-te
 
 ![Назначение ролей в области действия ресурса](./media/role-assignments-template/role-assignment-template-resource.png)
 
-## <a name="create-a-role-assignment-for-a-new-service-principal"></a>Создание назначения роли для нового субъекта-службы
+### <a name="new-service-principal"></a>Новый субъект-служба
 
 Если создать новый субъект-службу и сразу же попытаться назначить роль этому субъекту-службе, в некоторых случаях такое назначение роли может завершиться ошибкой. Например, если создать новое управляемое удостоверение и затем попытаться назначить роль этому субъекту-службе в том же шаблоне Azure Resource Manager, то назначение роли может завершиться ошибкой. Причиной этого сбоя может быть задержка репликации. Субъект-служба создается в одном регионе; Однако назначение роли может происходить в другом регионе, который еще не реплицирует субъект-службу. Для решения этой ситуации следует задать для свойства `principalType` значение `ServicePrincipal` при создании назначения роли.
 
@@ -355,9 +359,9 @@ az group deployment create --resource-group ExampleGroup2 --template-file rbac-t
 
 ![Назначение ролей для нового субъекта-службы управляемого удостоверения](./media/role-assignments-template/role-assignment-template-msi.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Краткое руководство по созданию и развертыванию шаблонов Azure Resource Manager с помощью портала Azure](../azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal.md)
 - [Описание структуры и синтаксиса шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md)
 - [Создание групп ресурсов и ресурсов на уровне подписки](../azure-resource-manager/deploy-to-subscription.md)
-- [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?term=rbac)
+- [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?term=rbac)

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: iainfou
-ms.openlocfilehash: 7d651849f5c8d930d99e87931eed5b823e90113c
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: e202eed8e3694245b5b4527578c02cfb518723f4
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73474741"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74705346"
 ---
 # <a name="create-an-organizational-unit-ou-in-an-azure-ad-domain-services-managed-domain"></a>Создание подразделения (OU) в управляемом домене доменных служб Azure AD
 
@@ -37,7 +37,7 @@ ms.locfileid: "73474741"
 * Активная подписка Azure.
     * Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
-    * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure Active Directory со своей учетной записью][associate-azure-ad-tenant].
+    * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
 * Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте AAD.
     * При необходимости выполните инструкции из руководства по [созданию и настройке Azure Active Directory экземпляра доменных служб][create-azure-ad-ds-instance].
 * Виртуальная машина управления Windows Server, присоединенная к управляемому домену AD DS Azure.
@@ -66,11 +66,11 @@ ms.locfileid: "73474741"
 1. Войдите на виртуальную машину управления. Инструкции по подключению с помощью портал Azure см. в разделе [Подключение к виртуальной машине Windows Server][connect-windows-server-vm].
 1. На начальном экране выберите **Администрирование**. Отобразится список доступных средств управления, которые были установлены в руководстве по [созданию виртуальной машины управления][tutorial-create-management-vm].
 1. Чтобы создать подразделения и управлять ими, выберите **центр администрирования Active Directory** в списке средств администрирования.
-1. В левой области выберите управляемый домен Azure AD DS, например *contoso.com*. Отобразится список имеющихся подразделений и ресурсов:
+1. В левой области выберите управляемый домен Azure AD DS, например *aadds.contoso.com*. Отобразится список имеющихся подразделений и ресурсов:
 
     ![Выберите управляемый домен Azure AD DS в центр администрирования Active Directory](./media/active-directory-domain-services-admin-guide/create-ou-adac-overview.png)
 
-1. Область **задачи** отображается в правой части центр администрирования Active Directory. В домене, например *contoso.com*, выберите **Создать > подразделение**.
+1. Область **задачи** отображается в правой части центр администрирования Active Directory. В домене, например *aadds.contoso.com*, выберите **Создать > подразделение**.
 
     ![Выберите этот параметр, чтобы создать новое подразделение в центр администрирования Active Directory](./media/active-directory-domain-services-admin-guide/create-ou-adac-new-ou.png)
 

@@ -9,12 +9,12 @@ ms.date: 11/26/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 28a387b77c9a4db4be151dffc853617c426c6927
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.openlocfilehash: 5cef0e94a43b3ef16d45f7f43658f962e07b5345
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
-ms.locfileid: "74666563"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707600"
 ---
 # <a name="check-the-encryption-status-of-a-blob"></a>Проверка состояния шифрования большого двоичного объекта
 
@@ -72,7 +72,7 @@ az storage blob show \
 
 ---
 
-### <a name="force-encryption-of-a-blob"></a>Принудительное шифрование большого двоичного объекта
+## <a name="force-encryption-of-a-blob"></a>Принудительное шифрование большого двоичного объекта
 
 Если большой двоичный объект, созданный до 20 октября, 2017 еще не зашифрован фоновым процессом, можно принудительно включить шифрование, загрузив и повторно отгрузив большой двоичный объект. Простой способ сделать это — с помощью AzCopy.
 

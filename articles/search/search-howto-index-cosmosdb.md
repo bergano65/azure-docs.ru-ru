@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: f1e1ae76c44e66c04baaad110b87264279dfdaf1
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 33c26ff15095928d6050a77794b74480e364bfb6
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74530997"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707757"
 ---
 # <a name="how-to-index-cosmos-db-data-using-an-indexer-in-azure-cognitive-search"></a>Индексирование Cosmos DB данных с помощью индексатора в Azure Когнитивный поиск 
 
@@ -246,7 +246,7 @@ ms.locfileid: "74530997"
 > [!NOTE]
 > Для секционированных коллекций ключ документа по умолчанию — это свойство `_rid` Azure Cosmos DB, которое Azure Когнитивный поиск автоматически переименовывается в `rid`, поскольку имена полей не могут начинаться с символа подчеркивания. Кроме того, Azure Cosmos DB `_rid` значения содержат символы, недопустимые в ключах Azure Когнитивный поиск. Поэтому значения `_rid` представлены в кодировке Base64.
 > 
-> Для коллекций MongoDB Azure Когнитивный поиск автоматически переименовывает свойство `_id` в `doc_id`.  
+> Для коллекций MongoDB Azure Когнитивный поиск автоматически переименовывает свойство `_id` в `id`.  
 
 ### <a name="mapping-between-json-data-types-and-azure-cognitive-search-data-types"></a>Сопоставление типов данных JSON и типов данных Когнитивный поиск Azure
 | Тип данных JSON | Совместимые типы полей целевого индекса |

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/26/2019
 ms.author: iainfou
-ms.openlocfilehash: 9f0b8a438a7c236c5e016673a59bfb691e9c2152
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: ee4c41ca3179eead0e4fd470a02a5cdfa4a6d43a
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74546298"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74705233"
 ---
 # <a name="delete-an-azure-active-directory-domain-services-managed-domain-using-the-azure-portal"></a>Удаление управляемого домена Azure Active Directory доменных служб с помощью портал Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "74546298"
 Чтобы удалить управляемый домен AD DS Azure, выполните следующие действия.
 
 1. В портал Azure найдите и выберите **доменные службы Azure AD**.
-1. Выберите имя управляемого домена Azure AD DS, например *contoso.com*.
+1. Выберите имя управляемого домена Azure AD DS, например *aadds.contoso.com*.
 1. На странице **Обзор** выберите **Удалить**. Чтобы подтвердить удаление, введите доменное имя управляемого домена еще раз, а затем выберите **Удалить**.
 
 Удаление управляемого домена AD DS Azure может занять 15-20 минут или более.

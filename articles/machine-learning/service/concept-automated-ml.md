@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 author: cartacioS
 ms.author: sacartac
 ms.date: 11/04/2019
-ms.openlocfilehash: f8a83fccefe3310fe1a582ef44d72cfbef7e9469
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 1320448b88fa3851196a3dfcb3107921721d364d
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74133071"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707681"
 ---
 # <a name="what-is-automated-machine-learning"></a>Что такое автоматическое машинное обучение?
 
@@ -38,7 +38,7 @@ ms.locfileid: "74133071"
 
 В следующей таблице перечислены распространенные сценарии автоматического использования ML. 
 
-Классификация| регрессия; | Прогнозирование временных рядов
+классификация;| Регрессия | Прогнозирование временных рядов
 ---|---|---
 [Обнаружение мошенничества](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-credit-card-fraud/auto-ml-classification-credit-card-fraud.ipynb)|[Прогноз производительности ЦП](https://github.com/Azure/MachineLearningNotebooks/blob/37541b10714f9337dbbae721bea494272dc7d151/how-to-use-azureml/automated-machine-learning/regression-hardware-performance-explanation-and-featurization/auto-ml-regression-hardware-performance-explanation-and-featurization.ipynb) |[Прогнозирование спроса](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand/auto-ml-forecasting-energy-demand.ipynb)|
 [Прогноз маркетинга](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb)|[Прогноз устойчивости материалов](https://github.com/Azure/MachineLearningNotebooks/blob/37541b10714f9337dbbae721bea494272dc7d151/how-to-use-azureml/automated-machine-learning/regression-concrete-strength/auto-ml-regression-concrete-strength.ipynb)|[Прогнозирование продаж](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-orange-juice-sales/auto-ml-forecasting-orange-juice-sales.ipynb)
@@ -82,7 +82,7 @@ ms.locfileid: "74133071"
 
 В каждом автоматическом эксперименте машинного обучения данные автоматически масштабируются или нормализованы, что способствует эффективному выполнению алгоритмов.  Во время обучения модели для каждой модели будет применен один из следующих методов масштабирования или нормализации.
 
-|Масштабирование&nbsp;&&nbsp;нормализация| ОПИСАНИЕ |
+|Масштабирование&nbsp;&&nbsp;нормализация| Описание |
 | ------------- | ------------- |
 | [стандардскалевраппер](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)  | Стандартизация функций путем удаления среднего и масштабирования в дисперсию единиц  |
 | [минмаксскалар](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)  | Преобразует функции путем масштабирования каждой функции по минимальному и максимальному столбцам.  |
@@ -98,7 +98,7 @@ ms.locfileid: "74133071"
 
 + Машинное обучение Azure Studio: выбор параметра **View Добавление признаков Settings (просмотреть параметры** ) в разделе **Run Configuration (выполнение конфигурации** ) [с этими шагами](how-to-create-portal-experiments.md).
 
-+ Пакет SDK для Python: указание `"feauturization": auto' / 'off' / FeaturizationConfig` для [класса`AutoMLConfig`](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig?view=azure-ml-py).
++ Пакет SDK для Python: указание `"feauturization": auto' / 'off' / FeaturizationConfig` для [класса`AutoMLConfig`](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py).
 
 
 ## <a name="time-series-forecasting"></a>Прогнозирование временных рядов
@@ -142,7 +142,7 @@ ms.locfileid: "74133071"
 
 Кроме того, автоматические запуски ML автоматически создают следующие диаграммы, которые помогут понять правильность классификаций модели и определить модели, потенциально влияющие на несбалансированные данные.
 
-Диаграмма| ОПИСАНИЕ
+Диаграмма| Описание
 ---|---
 [Матрица путаницы](how-to-understand-automated-ml.md#confusion-matrix)| Оценивает правильно классифицированные метки относительно фактических меток данных. 
 [Точность и отзыв](how-to-understand-automated-ml.md#precision-recall-chart)| Оценивает отношение правильных меток относительно соотношения найденных экземпляров меток данных 
@@ -164,14 +164,14 @@ ms.locfileid: "74133071"
 
 Автоматизированный язык ML также доступен в других решениях Майкрософт, таких как:
 
-|Интеграции|ОПИСАНИЕ|
+|Интеграции|Описание|
 |------------|-----------|
 |[ML.NET](https://docs.microsoft.com/dotnet/machine-learning/automl-overview)|Автоматическое выделение и обучение моделей в приложениях .NET с использованием Visual Studio и Visual Studio Code с помощью ML.NET автоматизированного ML (Предварительная версия).|
 |[HDInsight](../../hdinsight/spark/apache-spark-run-machine-learning-automl.md)|Параллельное развертывание автоматизированных заданий обучения ML в Spark в кластерах HDInsight.|
 |[Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-automated)|Вызывайте модели машинного обучения непосредственно в Power BI (Предварительная версия).|
 |[SQL Server](https://cloudblogs.microsoft.com/sqlserver/2019/01/09/how-to-automate-machine-learning-on-sql-server-2019-big-data-clusters/)|Создавайте новые модели машинного обучения для данных в кластерах больших данных SQL Server 2019.|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. примеры и научитесь создавать модели с помощью автоматизированного машинного обучения.
 

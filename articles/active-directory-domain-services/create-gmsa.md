@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/26/2019
 ms.author: iainfou
-ms.openlocfilehash: a943d2a8453cb727e9d01e35b12ca90d939ee5e8
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: 9dc7e6341f77fc17ae26f34ea029b3eb5414dcbc
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74546312"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74705318"
 ---
 # <a name="create-a-group-managed-service-account-gmsa-in-azure-ad-domain-services"></a>Создание групповой управляемой учетной записи службы (gMSA) в доменных службах Azure AD
 
@@ -65,7 +65,7 @@ ms.locfileid: "74546312"
 > [!TIP]
 > Чтобы выполнить эти действия для создания gMSA, [Используйте виртуальную машину управления][tutorial-create-management-vm]. Эта виртуальная машина управления уже должна иметь необходимые командлеты AD PowerShell и подключение к управляемому домену.
 
-В следующем примере создается пользовательское подразделение с именем *миневау* в управляемом домене AD DS Azure с именем *contoso.com*. Используйте собственное подразделение и управляемое доменное имя:
+В следующем примере создается пользовательское подразделение с именем *миневау* в управляемом домене AD DS Azure с именем *aadds.contoso.com*. Используйте собственное подразделение и управляемое доменное имя:
 
 ```powershell
 New-ADOrganizationalUnit -Name "myNewOU" -Path "DC=contoso,DC=COM"
@@ -75,20 +75,20 @@ New-ADOrganizationalUnit -Name "myNewOU" -Path "DC=contoso,DC=COM"
 
 * Параметр **-Name** имеет значение *вебфармсвк* .
 * Параметр **-path** задает настраиваемое подразделение для gMSA, созданного на предыдущем шаге.
-* Записи DNS и имена субъектов-служб заданы для *WebFarmSvc.contoso.com*
+* Записи DNS и имена субъектов-служб заданы для *WebFarmSvc.aadds.contoso.com*
 * Субъектам в *contoso-Server $* разрешено получать пароль, используя удостоверение.
 
 Укажите собственные имена и доменные имена.
 
 ```powershell
 New-ADServiceAccount -Name WebFarmSvc `
-    -DNSHostName WebFarmSvc.contoso.com `
+    -DNSHostName WebFarmSvc.aadds.contoso.com `
     -Path "OU=MYNEWOU,DC=contoso,DC=com" `
     -KerberosEncryptionType AES128, AES256 `
     -ManagedPasswordIntervalInDays 30 `
-    -ServicePrincipalNames http/WebFarmSvc.contoso.com/contoso.com, `
-        http/WebFarmSvc.contoso.com/contoso, `
-        http/WebFarmSvc/contoso.com, `
+    -ServicePrincipalNames http/WebFarmSvc.aadds.contoso.com/aadds.contoso.com, `
+        http/WebFarmSvc.aadds.contoso.com/contoso, `
+        http/WebFarmSvc/aadds.contoso.com, `
         http/WebFarmSvc/contoso `
     -PrincipalsAllowedToRetrieveManagedPassword CONTOSO-SERVER$
 ```

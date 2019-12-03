@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/13/2019
-ms.openlocfilehash: 3d55e0e7ecbd52b6d96c657e333c5557388f2721
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: 9f49a9224ed123b76f4d300c27a8dd5822e50ea3
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406511"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74706017"
 ---
 # <a name="migrate-azure-hdinsight-36-hive-workloads-to-hdinsight-40"></a>Перенос рабочих нагрузок Hive Azure HDInsight 3,6 в HDInsight 4,0
 
@@ -73,13 +73,13 @@ ms.locfileid: "74406511"
 
 Используйте значения в таблице ниже. Замените `SQLSERVERNAME DATABASENAME USERNAME PASSWORD` соответствующими значениями **копируемых** хранилище метаданных Hive, разделенных пробелами. При указании имени SQL Server не включайте ". database.windows.net".
 
-|Свойство | Значение |
+|Свойство | Value |
 |---|---|
 |Тип скрипта|- Custom|
-|имя|Обновление Hive|
+|Name|Обновление Hive|
 |URI bash-скрипта|`https://hdiconfigactions.blob.core.windows.net/hivemetastoreschemaupgrade/launch-schema-upgrade.sh`|
-|Типы узлов|Головной узел|
-|parameters|SQLSERVERNAME ИМЯ ПОЛЬЗОВАТЕЛЯ, ПАРОЛЬ|
+|Типы узлов|Head|
+|Параметры|SQLSERVERNAME ИМЯ ПОЛЬЗОВАТЕЛЯ, ПАРОЛЬ|
 
 > [!Warning]  
 > Обновление, преобразующее схему метаданных HDInsight 3,6 в схему HDInsight 4,0, не может быть отменено.
@@ -174,14 +174,14 @@ alter table myacidtable compact 'major';
 
 В HDInsight 4,0 Хивекли был заменен на Beeline. Хивекли — это Thrift клиент для Hiveserver 1, а Beeline — клиент JDBC, предоставляющий доступ к Hiveserver 2. Beeline также можно использовать для подключения к любой другой конечной точке базы данных, совместимой с JDBC. Beeline доступен в HDInsight 4,0 без необходимости установки.
 
-В HDInsight 3,6 клиент GUI для взаимодействия с сервером Hive является представлением Hive Ambari. HDInsight 4,0 заменяет представление Hive на Hortonworks Data Analytics Studio (DAS). DAS не поставляется с кластерами HDInsight и не является официально поддерживаемым пакетом. Однако DAS можно установить в кластере с помощью [действия сценария](../hdinsight-hadoop-customize-cluster-linux.md) следующим образом:
+В HDInsight 3,6 клиент GUI для взаимодействия с сервером Hive является представлением Hive Ambari. HDInsight 4,0 не поставляется с Ambari представлением. Мы предоставили нашим клиентам способ использования Data Analytics Studio (DAS), который не является основной службой HDInsight. DAS не поставляется с кластерами HDInsight и не является официально поддерживаемым пакетом. Однако DAS можно установить в кластере с помощью [действия сценария](../hdinsight-hadoop-customize-cluster-linux.md) следующим образом:
 
-|Свойство | Значение |
+|Свойство | Value |
 |---|---|
 |Тип скрипта|- Custom|
-|имя|DAS|
+|Name|DAS|
 |URI bash-скрипта|`https://hdiconfigactions.blob.core.windows.net/dasinstaller/LaunchDASInstaller.sh`|
-|Типы узлов|Головной узел|
+|Типы узлов|Head|
 
 Подождите 5 – 10 минут, а затем запустите Data Analytics Studio с помощью этого URL-адреса: `https://CLUSTERNAME.azurehdinsight.net/das/`.
 
@@ -193,7 +193,7 @@ alter table myacidtable compact 'major';
     * `tez.history.logging.proto-base-dir`
 3. Перезапустите HDFS, Hive, TEZ и DAS в обоих головных узлах.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Объявление о HDInsight 4,0](../hdinsight-version-release.md)
 * [HDInsight 4,0. подробное углубление](https://azure.microsoft.com/blog/deep-dive-into-azure-hdinsight-4-0/)

@@ -182,8 +182,6 @@
           href: service-bus-end-to-end-tracing.md
         - name: Создание многоуровневого приложения Служебной шины
           href: service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
-        - name: Перенос приложения Java Enterprise Edition в Azure
-          href: migrate-java-apps-wild-fly.md
     - name: Управление
       items:
         - name: Подготовка сущностей с помощью Azure PowerShell

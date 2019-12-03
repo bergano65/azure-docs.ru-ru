@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b85c5c6c5642d10c8d917ed9785d0fcf48a5e68
-ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
+ms.openlocfilehash: 5d4bdd554fb7c8817ada80a294f3ecb1c6c85b00
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74554132"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707026"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -246,7 +246,7 @@ ms.locfileid: "74554132"
 > В настоящее время эти функции находятся в разработке.
 >
 
-### <a name="group-administratorgroup-administrator"></a>[Администратор группы](#group-administrator)
+### <a name="group-administratorgroup-administrator-permissions"></a>[Администратор группы](#group-administrator-permissions)
 
 Пользователи с этой ролью могут создавать группы и ее параметры, такие как политики именования и истечения срока действия, и управлять ими. Важно понимать, что назначение пользователю этой роли дает им возможность управлять всеми группами в клиенте на различных рабочих нагрузках, таких как команды, SharePoint, Yammer в дополнение к Outlook. Кроме того, пользователь сможет управлять параметрами различных групп на различных порталах администрирования, таких как центр администрирования Майкрософт, портал Azure, а также с конкретными рабочими нагрузками, такими как команды и центры администрирования SharePoint.
 
@@ -279,7 +279,9 @@ ms.locfileid: "74554132"
 
 ### <a name="intune-administratorintune-service-administrator-permissions"></a>[Администратор Intune](#intune-service-administrator-permissions)
 
-пользователи с этой ролью имеют глобальные разрешения в Microsoft Intune Online (если служба используется). Кроме того, администраторы этой роли могут управлять пользователями и устройствами, чтобы связать политику, а также создавать группы и управлять ими. Дополнительные сведения см. в статье [Управление доступом на основе ролей (RBAC) с помощью Microsoft Intune](https://docs.microsoft.com/intune/role-based-access-control).
+пользователи с этой ролью имеют глобальные разрешения в Microsoft Intune Online (если служба используется). Кроме того, администраторы этой роли могут управлять пользователями и устройствами, чтобы связать политику, а также создавать группы и управлять ими. Дополнительные сведения об [управлении ролевым администрированием (RBAC) с помощью Microsoft Intune](https://docs.microsoft.com/intune/role-based-access-control).
+
+Эта роль может создавать все группы безопасности и управлять ими. Однако у администратора Intune нет прав администратора на группы Office. Это означает, что администратор не может обновить владельцев или членство всех групп Office в клиенте. Тем не менее, он может управлять группой Office, которую он создает, которая входит в состав своих привилегий конечного пользователя. Таким образом, любая группа Office (не группа безопасности), которую он создает, должна быть рассчитана на его квоту 250.
 
 > [!NOTE]
 > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Intune". На [портале Azure](https://portal.azure.com) она называется "Администратор Intune".
@@ -1081,7 +1083,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
 | Microsoft. Office 365. Аллентитиес/Standard/Read   | Чтение стандартных свойств для всех ресурсов в Microsoft. Office 365. Port. |
 
-### <a name="group-administrator"></a>Администратор группы
+### <a name="group-administrator-permissions"></a>Разрешения администратора группы
 Может управлять всеми аспектами групп и параметров групп, таких как политики именования и истечения срока действия.
 
 | **Действия** | **Описание** |

@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 11/27/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8419ce5c5c7144008027a93f985d1f6ffdc1ced4
-ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
+ms.openlocfilehash: 26994c3488feb5f2c1522960ba4d2664bdbc80f4
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74669109"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707473"
 ---
 # <a name="sap-hana-azure-virtual-machine-storage-configurations"></a>Конфигурации хранилища виртуальных машин SAP HANA в Azure
 
@@ -65,7 +65,7 @@ Azure предлагает два метода развертывания вир
 Кроме того, при выборе виртуальной машины или изменении ее размера учитывайте пропускную способность ввода-вывода. Общие сведения о пропускной способности хранилища виртуальной машины см. в статье [Размеры виртуальных машин, оптимизированных для операций в памяти](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-memory).
 
 ## <a name="linux-io-scheduler-mode"></a>Режим планировщика операций ввода–вывода для Linux
-Linux имеет несколько разных режимов планирования операций ввода-вывода. Распространенная рекомендация по поставщикам Linux и SAP — перенастройка режима планировщика ввода-вывода для томов дисков из режима **CFQ** в режим **NOOP** . Дополнительные сведения см. в [примечании к SAP № 1984798](https://launchpad.support.sap.com/#/notes/1984787). 
+Linux имеет несколько разных режимов планирования операций ввода-вывода. Распространенная рекомендация по поставщикам Linux и SAP — перенастройка режима планировщика ввода-вывода для томов дисков из режима **CFQ** в режим **NOOP** . Дополнительные сведения содержатся в [примечании SAP #1984787](https://launchpad.support.sap.com/#/notes/1984787). 
 
 
 ## <a name="solutions-with-premium-storage-and-azure-write-accelerator-for-azure-m-series-virtual-machines"></a>Решения с хранилищем класса Premium и Ускоритель записи Azure для виртуальных машин Azure серии M

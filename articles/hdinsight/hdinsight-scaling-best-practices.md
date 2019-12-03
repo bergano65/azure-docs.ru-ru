@@ -6,19 +6,19 @@ ms.author: ashish
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 06/10/2019
-ms.openlocfilehash: 4a1d835ebe47ec36bb839da8dcbcd107ffcb9c4c
-ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
+ms.date: 11/22/2019
+ms.openlocfilehash: 15d44f95cccf15fd0f7615655f5bbac1b0c35127
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71161959"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74706058"
 ---
 # <a name="scale-azure-hdinsight-clusters"></a>Масштабирование кластеров Azure HDInsight
 
 HDInsight обеспечивает гибкость, предоставляя возможность увеличивать и уменьшать масштаб определенного количества рабочих узлов в кластерах. Эта эластичность позволяет сжимать кластер после часов или выходных дней и увеличивать его во время пиковых бизнес-требований.
 
-Если имеется периодическая Пакетная обработка, кластер HDInsight может быть увеличен до этой операции несколько минут, чтобы кластер имел достаточный объем памяти и ЦП.  Позже после обработки, когда кластер HDInsight не требует интенсивного использования, можно уменьшить его масштаб для меньшего количества рабочих узлов.
+Если имеется периодическая Пакетная обработка, кластер HDInsight может быть увеличен до этой операции несколько минут, чтобы кластер имел достаточный объем памяти и ЦП.  Позже, после завершения обработки и использования, можно уменьшить масштаб кластера HDInsight до меньшего количества рабочих узлов.
 
 Вы можете масштабировать кластер вручную с помощью одного из описанных ниже методов или использовать параметры [автомасштабирования](hdinsight-autoscale-clusters.md) для автоматического увеличения и уменьшения масштаба в ответ на ЦП, память и другие метрики.
 
@@ -31,11 +31,11 @@ HDInsight обеспечивает гибкость, предоставляя в
 
 |Программой | Описание|
 |---|---|
-|[PowerShell AZ](https://docs.microsoft.com/powershell/azure)|[Set-аздинсигхтклустерсизе](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightclustersize) -имя_кластера \<имя кластера >-таржетинстанцекаунт \<newSize >|
-|[AzureRM PowerShell](https://docs.microsoft.com/powershell/azure/azurerm) |[Set-азурермхдинсигхтклустерсизе](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/set-azurermhdinsightclustersize) -имя_кластера \<имя кластера >-таржетинстанцекаунт \<newSize >|
-|[Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)| [AZ hdinsight изменение размера](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) -- \<группа ресурсов Группа ресурсов >--Name \<имя кластера >--target-instance-Count \<newSize >|
-|[Интерфейс командной строки Azure](hdinsight-administer-use-command-line.md)|размер \<кластера Azure hdinsight имя_кластера > \<число целевых экземпляров > |
-|[портал Azure](https://portal.azure.com)|Откройте панель кластера HDInsight, выберите **Размер кластера** в меню слева, затем на панели размер кластера введите число рабочих узлов и нажмите кнопку Сохранить.|  
+|[PowerShell AZ](https://docs.microsoft.com/powershell/azure)|[Set-аздинсигхтклустерсизе](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightclustersize) -имя_кластера \<имя кластера >-Таржетинстанцекаунт \<newSize >|
+|[AzureRM PowerShell](https://docs.microsoft.com/powershell/azure/azurerm) |[Set-азурермхдинсигхтклустерсизе](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/set-azurermhdinsightclustersize) -имя_кластера \<имя кластера >-Таржетинстанцекаунт \<newSize >|
+|[Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)| [AZ hdinsight изменение размера](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) — группа ресурсов \<группа ресурсов >--Name \<имя кластера >--target-instance-Count \<newSize >|
+|[Azure CLI](hdinsight-administer-use-command-line.md)|Размер кластера Azure hdinsight \<имя_кластера > \<целевое число экземпляров > |
+|[Портал Azure](https://portal.azure.com)|Откройте панель кластера HDInsight, выберите **Размер кластера** в меню слева, затем на панели размер кластера введите число рабочих узлов и нажмите кнопку Сохранить.|  
 
 ![Параметр масштабирования кластера портал Azure](./media/hdinsight-scaling-best-practices/scale-cluster-blade1.png)
 
@@ -108,7 +108,7 @@ HDInsight обеспечивает гибкость, предоставляя в
 Чтобы просмотреть список ожидающих и выполняющихся заданий, можно использовать **Пользовательский интерфейс YARN диспетчер ресурсов**, выполнив следующие действия.
 
 1. В [портал Azure](https://portal.azure.com/)выберите свой кластер.  Инструкции см. в разделе [Отображение кластеров](./hdinsight-administer-use-portal-linux.md#showClusters). Кластер открывается на новой странице портала.
-2. В главном представлении перейдите к **панели мониторинга** > кластера**Ambari Домашняя страница**. Введите учетные данные кластера.
+2. В главном представлении перейдите к **панели мониторинга кластера** > **Ambari Home**. Введите учетные данные кластера.
 3. В пользовательском интерфейсе Ambari выберите **YARN** в списке служб в меню слева.  
 4. На странице YARN выберите **быстрые ссылки** и наведите указатель мыши на активный головной узел, а затем выберите элемент **Пользовательский интерфейс ResourceManager**.
 
@@ -126,7 +126,7 @@ HDInsight обеспечивает гибкость, предоставляя в
 yarn application -kill <application_id>
 ```
 
-Пример:
+Пример.
 
 ```bash
 yarn application -kill "application_1499348398273_0003"
@@ -136,7 +136,7 @@ yarn application -kill "application_1499348398273_0003"
 
 При уменьшении масштаба кластера HDInsight использует интерфейсы управления Apache Ambari, чтобы сначала списать дополнительные рабочие узлы, которые реплицируют их блоки HDFS на другие сетевые рабочие узлы. После этого HDInsight будет безопасно масштабировать кластер. HDFS переходит в защищенный режим во время операции масштабирования и должен быть получен после завершения масштабирования. Однако в некоторых случаях HDFS зависает в защищенном режиме во время операции масштабирования из-за блокирования файла при репликации.
 
-По умолчанию HDFS настроен с `dfs.replication` параметром 3, который определяет, сколько копий каждого блока файлов доступно. Каждая копия блока файла хранится на другом узле кластера.
+По умолчанию HDFS настраивается с параметром `dfs.replication` 1, который определяет, сколько копий каждого блока файлов доступно. Каждая копия блока файла хранится на другом узле кластера.
 
 Когда HDFS обнаруживает, что ожидаемое число блочных копий недоступно, HDFS переходит в защищенный режим, а Ambari создает предупреждения. Если HDFS переходит в защищенный режим для операции масштабирования, но не может выйти из безопасного режима из-за того, что для репликации не обнаружено необходимое число узлов, кластер может зависнуть в защищенном режиме.
 
@@ -175,7 +175,7 @@ org.apache.http.conn.HttpHostConnectException: Connect to hn0-clustername.server
 
 Если при работе Hive остались временные файлы, их можно вручную очистить, а затем выполнить уменьшение масштаба, чтобы избежать активации безопасного режима.
 
-1. Проверьте, какое расположение используется для временных файлов Hive, просмотрев `hive.exec.scratchdir` свойство конфигурации. Этот параметр задается `/etc/hive/conf/hive-site.xml`в:
+1. Проверьте, какое расположение используется для временных файлов Hive, просмотрев свойство конфигурации `hive.exec.scratchdir`. Этот параметр задается в `/etc/hive/conf/hive-site.xml`:
 
     ```xml
     <property>
@@ -185,7 +185,7 @@ org.apache.http.conn.HttpHostConnectException: Connect to hn0-clustername.server
     ```
 
 1. Остановите службы Hive и убедитесь, что выполнены все задания и запросы.
-2. Список содержимого вспомогательного каталога, найденного выше, `hdfs://mycluster/tmp/hive/` чтобы узнать, содержит ли он какие либо файлы:
+2. Перечислите содержимое каталога временных файлов, найденного выше, `hdfs://mycluster/tmp/hive/`, чтобы узнать, содержит ли он какие либо файлы:
 
     ```bash
     hadoop fs -ls -R hdfs://mycluster/tmp/hive/hive
@@ -243,7 +243,7 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode leave
     balancer
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Автоматическое масштабирование кластеров Azure HDInsight](hdinsight-autoscale-clusters.md)
-* [Введение в Azure HDInsight](hadoop/apache-hadoop-introduction.md)
+* [Общие сведения об Azure HDInsight и стеке технологий Hadoop и Spark](hadoop/apache-hadoop-introduction.md)
