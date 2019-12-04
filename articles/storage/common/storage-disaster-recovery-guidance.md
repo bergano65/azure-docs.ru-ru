@@ -9,12 +9,12 @@ ms.date: 02/25/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: b265ff8831275a9f4b84f7dac28b82ae75630f8b
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: d9daff390aa1678c25f4bf9c29b0293d96c43f48
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73889790"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74775934"
 ---
 # <a name="disaster-recovery-and-storage-account-failover-preview-in-azure-storage"></a>Аварийное восстановление и отработка отказа учетной записи хранения (предварительная версия) в службе хранилища Azure
 
@@ -120,9 +120,9 @@ ms.locfileid: "73889790"
 Отработка отказа учетной записи доступна в предварительной версии для всех клиентов, использующих GRS или RA-GRS с Azure Resource Manager развертываниями. Поддерживаются учетные записи хранения следующих типов: общего назначения версии 1, общего назначения версии 2 и BLOB-объектов. Сейчас отработка отказа учетной записи доступна в следующих регионах.
 
 - Восточная Азия
-- Юго-восточная Азия
-- Восточная часть Австралии
-- Юго-Восточная часть Австралии
+- Юго-Восточная часть Азии
+- Восточная Австралия
+- Юго-Восточная Австралия
 - Центральная часть США
 - Восточная часть США 2
 - Центрально-западная часть США
@@ -139,7 +139,7 @@ Connect-AzAccount -SubscriptionId <subscription-id>
 Register-AzProviderFeature -FeatureName CustomerControlledFailover -ProviderNamespace Microsoft.Storage
 ```
 
-Подтверждение регистрации для предварительного просмотра может потребовать 1–2 дня. Чтобы проверить подтверждение регистрации, выполните следующую команду:
+Получение утверждения для предварительной версии может занять 5-7 дней. Чтобы проверить подтверждение регистрации, выполните следующую команду:
 
 ```powershell
 Get-AzProviderFeature -FeatureName CustomerControlledFailover -ProviderNamespace Microsoft.Storage
@@ -186,7 +186,7 @@ Get-AzProviderFeature -FeatureName CustomerControlledFailover -ProviderNamespace
 
 В экстренных ситуациях, когда значительная авария приводит к неработоспособности целого региона, корпорация Майкрософт может инициировать отработку отказа между регионами. В этом случае вам не нужно предпринимать какие-либо действия. До завершения отработки отказа под управлением корпорации Майкрософт вы не получите доступ на запись к учетной записи хранения. Приложения смогут считывать данные из дополнительного региона, если для учетной записи хранения настроен режим RA-GRS. 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
 * [Initiate a storage account failover (preview)](storage-initiate-account-failover.md) (Запуск отработки отказа учетной записи (предварительная версия))
 * [Проектирование высокодоступных приложений с использованием RA-GRS](storage-designing-ha-apps-with-ragrs.md)

@@ -2,21 +2,18 @@
 title: Экспорт потоков из Power Автоматизация в Azure Logic Apps
 description: Перенесите потоки из Power Автоматизация в Azure Logic Apps, экспортировав их как шаблоны Azure Resource Manager
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 07/10/2019
-ms.openlocfilehash: e0dda5c2097243143d18851c47e7006c81769c87
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 4512fd8a236c888937eb60a75d01cfb0ef2c1913
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73583253"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74792641"
 ---
-# <a name="export-flows-from-power-automate-and-deploy-to-azure-logic-apps"></a>Экспорт потоков из Power Автоматизация и развертывание в Azure Logic Apps
+# <a name="export-flows-from-power-automate-and-deploy-to-azure-logic-apps"></a>Экспорт потоков из Power Automate и их развертывание в Azure Logic Apps
 
 Чтобы расширить и расширить возможности потока, можно перенести этот поток из [Power Автоматизация](https://flow.microsoft.com) в [Azure Logic Apps](../logic-apps/logic-apps-overview.md). Вы можете экспортировать последовательность в качестве шаблона Azure Resource Manager для приложения логики, развернуть шаблон приложения логики в группе ресурсов Azure, а затем открыть это приложение логики в конструкторе приложений логики.
 
@@ -25,7 +22,7 @@ ms.locfileid: "73583253"
 >
 > Потоки на основе OpenAPI, экспортированные из Power автоматизирующие, в настоящее время не поддерживаются для развертывания в качестве шаблонов приложений логики. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -59,7 +56,7 @@ ms.locfileid: "73583253"
 
 1. После того как в редакторе отобразятся JSON, параметры и ресурсы в шаблоне, выберите **сохранить**.
   
-   ![Сохранение шаблона](./media/export-from-microsoft-flow-logic-app-template/save-template.png)
+   ![Сохранить шаблон](./media/export-from-microsoft-flow-logic-app-template/save-template.png)
 
 1. Теперь укажите эти входные параметры для шаблона:
 
@@ -144,7 +141,7 @@ ms.locfileid: "73583253"
 
    ![Изменить параметры развертывания](./media/export-from-microsoft-flow-logic-app-template/edit-parameters-deployment.png)
 
-   При запуске развертывания его состояние отобразится в окне **Выходные данные** Visual Studio. Если состояние не отображается, откройте список **Показать вывод из** и выберите свою группу ресурсов Azure. Например:
+   При запуске развертывания его состояние отобразится в окне **Выходные данные** Visual Studio. Если состояние не отображается, откройте список **Показать вывод из** и выберите свою группу ресурсов Azure. Пример.
 
    ![Окно вывода](./media/export-from-microsoft-flow-logic-app-template/output-window.png)
 

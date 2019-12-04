@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 9/27/2018
 ms.author: harelbr
 ms.subservice: alerts
-ms.openlocfilehash: 3bc17830a4852aa3af1a22f53e54c86ee002150d
-ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
+ms.openlocfilehash: 0d3cbe8c3d2d7931e3e4cc052eedc844a296ccf0
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73099754"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74775796"
 ---
 # <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Создание оповещения о метриках с помощью шаблона Resource Manager
 
@@ -22,7 +22,7 @@ ms.locfileid: "73099754"
 В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) для настройки [новых оповещений метрик](../../azure-monitor/platform/alerts-metric-near-real-time.md) в Azure Monitor. Шаблоны Resource Manager позволяют программно настроить оповещения согласованным и воспроизводимым образом в разных средах. Сейчас в [этом наборе типов ресурсов](../../azure-monitor/platform/alerts-metric-near-real-time.md#metrics-and-dimensions-supported) доступны новые оповещения метрик.
 
 > [!IMPORTANT]
-> Шаблон ресурса для создания оповещений метрик для типа ресурса. Рабочая область Azure Log Analytics (т. е.) `Microsoft.OperationalInsights/workspaces` требует дополнительных действий. См. дополнительные сведения о [шаблоне ресурсов для создания оповещения метрик для журналов](../../azure-monitor/platform/alerts-metric-logs.md#resource-template-for-metric-alerts-for-logs).
+> Шаблон ресурса для создания оповещений метрик для типа ресурса: Azure Log Analytics Workspace (т. е.) `Microsoft.OperationalInsights/workspaces`, требует дополнительных действий. См. дополнительные сведения о [шаблоне ресурсов для создания оповещения метрик для журналов](../../azure-monitor/platform/alerts-metric-logs.md#resource-template-for-metric-alerts-for-logs).
 
 Основные этапы:
 
@@ -551,9 +551,11 @@ az group deployment create \
 >
 > Хотя оповещение метрики можно создать в группе ресурсов, отличной от целевого ресурса, рекомендуется использовать ту же группу ресурсов, что и целевой ресурс.
 
-## <a name="template-for-a-more-advanced-static-threshold-metric-alert"></a>Шаблон для более сложного оповещения о метрике со статическим пороговым значением
+## <a name="template-for-a-static-threshold-metric-alert-that-monitors-multiple-criteria"></a>Шаблон для предупреждения о статическом пороге метрики, отслеживающем несколько критериев
 
-Новые оповещения метрик поддерживают оповещения о многомерных метриках, а также несколько критериев. Приведенный ниже шаблон можно использовать для создания более сложного оповещения для многомерной метрики и указания нескольких критериев.
+Новые оповещения метрик поддерживают оповещения о многомерных метриках, а также несколько критериев. Следующий шаблон можно использовать для создания более расширенного правила генерации оповещений метрики в метриках измерений и указания нескольких критериев.
+
+Обратите внимание, что если правило генерации оповещений содержит несколько критериев, использование измерений ограничивается одним значением для каждого измерения в пределах каждого критерия.
 
 В целях данного пошагового руководства сохраните приведенный ниже JSON в виде файла advancedstaticmetricalert.json.
 
@@ -784,13 +786,243 @@ az group deployment create \
 
 >[!NOTE]
 >
-> Хотя оповещение метрики можно создать в группе ресурсов, отличной от целевого ресурса, рекомендуется использовать ту же группу ресурсов, что и целевой ресурс.
+> Если правило генерации оповещений содержит несколько критериев, использование измерений ограничено одним значением для каждого измерения в пределах каждого критерия.
 
-## <a name="template-for-a-more-advanced-dynamic-thresholds-metric-alert"></a>Шаблон для более сложного оповещения о метрике с динамическим пороговым значением
+## <a name="template-for-a-static-metric-alert-that-monitors-multiple-dimensions"></a>Шаблон для статического оповещения метрики, отслеживающего несколько измерений
 
-Приведенный ниже шаблон можно использовать для создания более сложного оповещения о многомерной метрике с динамическим пороговым значением. Указание нескольких критериев в настоящее время не поддерживается.
+Следующий шаблон можно использовать для создания статического правила генерации оповещений метрики в метриках измерений.
 
-Правило генерации оповещений с динамическим пороговым значением может создать точно настроенные пороги для нескольких сотен метрик (различных типов) одновременно, что приведет к управлению небольшим числом правил генерации оповещений.
+Одно правило генерации оповещений может отслеживать несколько временных рядов за один раз, что приводит к меньшему числу правил генерации оповещений.
+
+В приведенном ниже примере правило оповещения будет отслеживать сочетания измерений **ResponseType** и **ApiName** для метрики **транзакций** .
+1. **Респонстипе** — использование подстановочного знака "\*" означает, что для каждого значения измерения **ResponseType** , включая будущие значения, отдельный временной ряд будет отслеживаться отдельно.
+2. **ApiName** — различные временные ряды будут отслеживаться только для значений измерений **типа данных BLOB** и **PutBlob** .
+
+Например, несколько возможных временных рядов, которые будут отслеживаться этим правилом оповещения:
+- Метрика = *Transactions*, ResponseType = *Success*, ApiName = *BLOB*
+- Метрика = *Transactions*, ResponseType = *Success*, ApiName = *PutBlob*
+- Метрика = *транзакции*, ResponseType = *время ожидания сервера*, ApiName = *большой двоичный объект*
+- Метрика = *транзакции*, ResponseType = *время ожидания сервера*, ApiName = *PutBlob*
+
+Сохраните пример JSON ниже как мултидименсионалстатикметрикалерт. JSON в целях этого пошагового руководства.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "alertName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the alert"
+            }
+        },
+        "alertDescription": {
+            "type": "string",
+            "defaultValue": "This is a metric alert",
+            "metadata": {
+                "description": "Description of alert"
+            }
+        },
+        "alertSeverity": {
+            "type": "int",
+            "defaultValue": 3,
+            "allowedValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ],
+            "metadata": {
+                "description": "Severity of alert {0,1,2,3,4}"
+            }
+        },
+        "isEnabled": {
+            "type": "bool",
+            "defaultValue": true,
+            "metadata": {
+                "description": "Specifies whether the alert is enabled"
+            }
+        },
+        "resourceId": {
+            "type": "string",
+            "defaultValue": "",
+            "metadata": {
+                "description": "Resource ID of the resource emitting the metric that will be used for the comparison."
+            }
+        },
+        "criterion":{
+            "type": "object",
+            "metadata": {
+                "description": "Criterion includes metric name, dimension values, threshold and an operator. The alert rule fires when ALL criteria are met"
+            }
+        },
+        "windowSize": {
+            "type": "string",
+            "defaultValue": "PT5M",
+            "allowedValues": [
+                "PT1M",
+                "PT5M",
+                "PT15M",
+                "PT30M",
+                "PT1H",
+                "PT6H",
+                "PT12H",
+                "PT24H"
+            ],
+            "metadata": {
+                "description": "Period of time used to monitor alert activity based on the threshold. Must be between one minute and one day. ISO 8601 duration format."
+            }
+        },
+        "evaluationFrequency": {
+            "type": "string",
+            "defaultValue": "PT1M",
+            "allowedValues": [
+                "PT1M",
+                "PT5M",
+                "PT15M",
+                "PT30M",
+                "PT1H"
+            ],
+            "metadata": {
+                "description": "how often the metric alert is evaluated represented in ISO 8601 duration format"
+            }
+        },
+        "actionGroupId": {
+            "type": "string",
+            "defaultValue": "",
+            "metadata": {
+                "description": "The ID of the action group that is triggered when the alert is activated or deactivated"
+            }
+        }
+    },
+    "variables": { 
+        "criteria": "[array(parameters('criterion'))]"
+     },
+    "resources": [
+        {
+            "name": "[parameters('alertName')]",
+            "type": "Microsoft.Insights/metricAlerts",
+            "location": "global",
+            "apiVersion": "2018-03-01",
+            "tags": {},
+            "properties": {
+                "description": "[parameters('alertDescription')]",
+                "severity": "[parameters('alertSeverity')]",
+                "enabled": "[parameters('isEnabled')]",
+                "scopes": ["[parameters('resourceId')]"],
+                "evaluationFrequency":"[parameters('evaluationFrequency')]",
+                "windowSize": "[parameters('windowSize')]",
+                "criteria": {
+                    "odata.type": "Microsoft.Azure.Monitor.SingleResourceMultipleMetricCriteria",
+                    "allOf": "[variables('criteria')]"
+                },
+                "actions": [
+                    {
+                        "actionGroupId": "[parameters('actionGroupId')]"
+                    }
+                ]
+            }
+        }
+    ]
+}
+```
+
+Приведенный выше шаблон можно использовать вместе с файлом параметров, указанным ниже. 
+
+Сохраните и измените JSON ниже как мултидименсионалстатикметрикалерт. parameters. JSON в целях этого пошагового руководства.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "alertName": {
+            "value": "New multi-dimensional metric alert rule (replace with your alert name)"
+        },
+        "alertDescription": {
+            "value": "New multi-dimensional metric alert rule created via template (replace with your alert description)"
+        },
+        "alertSeverity": {
+            "value":3
+        },
+        "isEnabled": {
+            "value": true
+        },
+        "resourceId": {
+            "value": "/subscriptions/replace-with-subscription-id/resourceGroups/replace-with-resourcegroup-name/providers/Microsoft.Storage/storageAccounts/replace-with-storage-account"
+        },
+        "criterion": {
+            "value": {
+                    "name": "Criterion",
+                    "metricName": "Transactions",
+                    "dimensions": [
+                        {
+                            "name":"ResponseType",
+                            "operator": "Include",
+                            "values": ["*"]
+                        },
+                        {
+                "name":"ApiName",
+                            "operator": "Include",
+                            "values": ["GetBlob", "PutBlob"]    
+                        }
+                    ],
+                    "operator": "GreaterThan",
+                    "threshold": "5",
+                    "timeAggregation": "Total"
+                }
+        },
+        "actionGroupId": {
+            "value": "/subscriptions/replace-with-subscription-id/resourceGroups/replace-with-resource-group-name/providers/Microsoft.Insights/actionGroups/replace-with-actiongroup-name"
+        }
+    }
+}
+```
+
+
+Вы можете создать оповещение метрики с помощью шаблона и файла параметров, используя PowerShell или Azure CLI из текущего рабочего каталога.
+
+Использование Azure PowerShell
+```powershell
+Connect-AzAccount
+
+Select-AzSubscription -SubscriptionName <yourSubscriptionName>
+ 
+New-AzResourceGroupDeployment -Name AlertDeployment -ResourceGroupName ResourceGroupofTargetResource `
+  -TemplateFile multidimensionalstaticmetricalert.json -TemplateParameterFile multidimensionalstaticmetricalert.parameters.json
+```
+
+
+
+Использование Azure CLI
+```azurecli
+az login
+
+az group deployment create \
+    --name AlertDeployment \
+    --resource-group ResourceGroupofTargetResource \
+    --template-file multidimensionalstaticmetricalert.json \
+    --parameters @multidimensionalstaticmetricalert.parameters.json
+```
+
+
+## <a name="template-for-a-dynamic-thresholds-metric-alert-that-monitors-multiple-dimensions"></a>Шаблон оповещения метрики динамических пороговых значений, который наблюдает за несколькими измерениями
+
+Следующий шаблон можно использовать для создания более сложных правил генерации оповещений метрики динамических порогов в метриках измерений.
+
+Одно правило генерации оповещений о динамических пороговых значениях может создавать собственные пороговые значения для сотен временных рядов (даже разных типов) за раз, что приводит к меньшему числу правил генерации оповещений.
+
+В приведенном ниже примере правило оповещения будет отслеживать сочетания измерений **ResponseType** и **ApiName** для метрики **транзакций** .
+1. **Респонстипе** — для каждого значения измерения **ResponseType** , включая будущие значения, отдельный временной ряд будет отслеживаться отдельно.
+2. **ApiName** — различные временные ряды будут отслеживаться только для значений измерений **типа данных BLOB** и **PutBlob** .
+
+Например, несколько возможных временных рядов, которые будут отслеживаться этим правилом оповещения:
+- Метрика = *Transactions*, ResponseType = *Success*, ApiName = *BLOB*
+- Метрика = *Transactions*, ResponseType = *Success*, ApiName = *PutBlob*
+- Метрика = *транзакции*, ResponseType = *время ожидания сервера*, ApiName = *большой двоичный объект*
+- Метрика = *транзакции*, ResponseType = *время ожидания сервера*, ApiName = *PutBlob*
 
 В целях данного пошагового руководства сохраните приведенный ниже JSON в виде файла advanceddynamicmetricalert.json.
 
@@ -936,7 +1168,7 @@ az group deployment create \
         "resourceId": {
             "value": "/subscriptions/replace-with-subscription-id/resourceGroups/replace-with-resourcegroup-name/providers/Microsoft.Storage/storageAccounts/replace-with-storage-account"
         },
-        "criterion1": {
+        "criterion": {
             "value": {
                     "criterionType": "DynamicThresholdCriterion",
                     "name": "1st criterion",
@@ -945,12 +1177,12 @@ az group deployment create \
                         {
                             "name":"ResponseType",
                             "operator": "Include",
-                            "values": ["Success"]
+                            "values": ["*"]
                         },
                         {
                             "name":"ApiName",
                             "operator": "Include",
-                            "values": ["GetBlob"]
+                            "values": ["GetBlob", "PutBlob"]
                         }
                     ],
                     "operator": "GreaterOrLessThan",
@@ -961,7 +1193,7 @@ az group deployment create \
                     },
                     "timeAggregation": "Total"
                 }
-        }
+        },
         "actionGroupId": {
             "value": "/subscriptions/replace-with-subscription-id/resourceGroups/replace-with-resource-group-name/providers/Microsoft.Insights/actionGroups/replace-with-actiongroup-name"
         }
@@ -997,11 +1229,11 @@ az group deployment create \
 
 >[!NOTE]
 >
-> Хотя оповещение метрики можно создать в группе ресурсов, отличной от целевого ресурса, рекомендуется использовать ту же группу ресурсов, что и целевой ресурс.
+> В настоящее время несколько критериев не поддерживаются для правил оповещений метрик, использующих динамические пороговые значения.
 
-## <a name="template-for-metric-alert-that-monitors-multiple-resources"></a>Шаблон для оповещения о метрике с возможностью мониторинга нескольких ресурсов
+## <a name="template-for-a-metric-alert-that-monitors-multiple-resources"></a>Шаблон для оповещения метрики, отслеживающего несколько ресурсов
 
-В предыдущих разделах описаны примеры шаблонов Azure Resource Manager для создания оповещений на основе метрик, которые отслеживают один ресурс. Теперь Azure Monitor поддерживает мониторинг нескольких ресурсов с одним правилом генерации оповещений о метриках. Сейчас эта функция поддерживается только в общедоступном облаке Azure и только для виртуальных машин и Датабокс пограничных устройств.
+В предыдущих разделах описаны примеры шаблонов Azure Resource Manager для создания оповещений на основе метрик, которые отслеживают один ресурс. Теперь Azure Monitor поддерживает мониторинг нескольких ресурсов с одним правилом генерации оповещений о метриках. В настоящее время эта функция поддерживается только в общедоступном облаке Azure и только для виртуальных машин, баз данных SQL, эластичных пулов SQL и Датабокс пограничных устройств.
 
 Правило генерации оповещений с динамическим пороговым значением также может помочь в создании точно настроенных порогов для нескольких сотен метрик (различных типов) одновременно, что приведет к управлению небольшим числом правил генерации оповещений.
 
@@ -1836,6 +2068,7 @@ az group deployment create \
             "type": "string",
             "defaultValue": "PT1M",
             "allowedValues": [
+                "PT1M",
                 "PT5M",
                 "PT15M",
                 "PT30M",

@@ -1,22 +1,18 @@
 ---
-title: Подключение к хранилищу BLOB-объектов Azure — Azure Logic Apps
+title: Подключение к хранилищу BLOB-объектов Azure
 description: Создание больших двоичных объектов и управление ими в учетных записях хранения Azure с помощью Azure Logic Apps
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-manager: carmonm
-ms.reviewer: klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 10/28/2019
 tags: connectors
-ms.openlocfilehash: c431f917f6fc1ac080b13184bd9ce205a20afbaa
-ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
+ms.openlocfilehash: 86e8415cf2076819e23226e5e7878a2c96343f69
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73199664"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74789917"
 ---
 # <a name="create-and-manage-blobs-in-azure-blob-storage-by-using-azure-logic-apps"></a>Создание больших двоичных объектов и управление ими в хранилище BLOB-объектов Azure с помощью Azure Logic Apps
 

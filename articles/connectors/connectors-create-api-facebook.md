@@ -1,22 +1,18 @@
 ---
-title: Подключение к Facebook — Azure Logic Apps
+title: Подключение к Facebook
 description: Управляйте своей временной шкалой и страницей с помощью интерфейсов REST API Facebook и Azure Logic Apps
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-manager: carmonm
-ms.reviewer: klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 11/07/2016
 tags: connectors
-ms.openlocfilehash: 83431184d7e9c5970ece6af143ee9b5166da96d5
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 1aa936f902dc17c9a401959c19824f6c581547b1
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70050952"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74789847"
 ---
 # <a name="manage-your-facebook-timeline-and-page-by-using-azure-logic-apps"></a>Управляйте временной шкалой и страницей Facebook с помощью Azure Logic Apps
 
@@ -41,8 +37,8 @@ ms.locfileid: "70050952"
 
 ## <a name="connector-reference"></a>Справочник по соединителям
 
-Для получения технических сведений, таких как триггеры, действия и ограничения, как описано в файле OpenAPI (ранее Swagger) соединителя, см. [страницу справочника](/connectors/facebook/)по соединителю.
+Для получения технических сведений, таких как триггеры, действия и ограничения, как описано в файле OpenAPI (ранее Swagger) соединителя, см. [страницу справочника по соединителю](/connectors/facebook/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

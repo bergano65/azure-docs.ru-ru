@@ -1,22 +1,18 @@
 ---
-title: Подключение к базе данных Oracle Database с помощью Azure Logic Apps | Документация Майкрософт
+title: Подключение к Oracle Database
 description: Вставляйте записи и управляйте ими с помощью интерфейсов REST API Oracle Database и Azure Logic Apps.
-author: ecfan
-manager: jeconnoc
-ms.author: estfan
-ms.date: 03/29/2017
-ms.topic: article
-ms.service: logic-apps
 services: logic-apps
-ms.reviewer: klam, LADocs
 ms.suite: integration
+ms.reviewer: klam, logicappspm
+ms.topic: article
+ms.date: 03/29/2017
 tags: connectors
-ms.openlocfilehash: 06f65aef203b4f0d765f21b9d17b90081de85c94
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 99abd48bde97c2a2e085688cdfbb365e5e4cfd56
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60453646"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74789432"
 ---
 # <a name="get-started-with-the-oracle-database-connector"></a>Начало работы с соединителем базы данных Oracle
 
@@ -36,9 +32,9 @@ ms.locfileid: "60453646"
 * Установите локальный шлюз данных. Этот процесс описан в статье [Подключение к локальным данным из приложений логики](../logic-apps/logic-apps-gateway-connection.md). Шлюз является обязательным компонентом для подключения к локальной базе данных Oracle или виртуальной машине Azure, на которой установлена база данных Oracle. 
 
     > [!NOTE]
-    > Локальный шлюз данных используется как мост для передачи данных между приложением логики и локальными (не расположенными в облаке) источниками. Один шлюз может использоваться с несколькими службами и источниками данных. Поэтому, как правило, шлюз устанавливается один раз.
+    > Локальный шлюз данных используется как мост для передачи данных между приложением логики и локальными (не расположенными в облаке) источниками. Один шлюз может использоваться с несколькими службами и источниками данных. Поэтому шлюз может потребоваться установить только один раз.
 
-* Установите клиент Oracle на компьютере, где установлен локальный шлюз данных. Не забудьте установить 64-разрядный поставщик данных Oracle для .NET, который предоставляется Oracle:  
+* Установите клиент Oracle на компьютере, где установлен локальный шлюз данных. Не забудьте установить 64-разрядный поставщик данных Oracle для .NET из Oracle:  
 
   [ODAC 12c, 64-разрядная версия 4 (12.1.0.2.4) для Windows x64](https://www.oracle.com/technetwork/database/windows/downloads/index-090165.html)
 
@@ -95,23 +91,23 @@ ms.locfileid: "60453646"
 
 ## <a name="common-errors"></a>Распространенные ошибки
 
-#### <a name="error-cannot-reach-the-gateway"></a>**Ошибка**: Шлюз недоступен
+#### <a name="error-cannot-reach-the-gateway"></a>**Ошибка.** Не удается связаться со шлюзом.
 
 **Причина.** Локальный шлюз данных не может подключиться к облаку. 
 
-**Устранение.** Убедитесь, что шлюз работает на локальной машине, где он установлен, и что он может подключаться к Интернету.  Мы рекомендуем не устанавливать шлюза на компьютере, который может быть выключен или переведен в спящий режим. Можно также попытаться перезапустить локальную службу шлюза данных (PBIEgwService).
+**Устранение.** Убедитесь, что шлюз работает на локальной машине, где он установлен, и что он может подключаться к Интернету.  Не рекомендуется устанавливать шлюз на компьютере, который может быть выключен или находится в спящем режиме. Также можно перезапустить службу локального шлюза данных (PBIEgwService).
 
-#### <a name="error-the-provider-being-used-is-deprecated-systemdataoracleclient-requires-oracle-client-software-version-817-or-greater-see-httpsgomicrosoftcomfwlinkplinkid272376httpsgomicrosoftcomfwlinkplinkid272376-to-install-the-official-provider"></a>**Ошибка**: Используемый поставщик является устаревшим. Для System.Data.OracleClient требуется клиентское программное обеспечение Oracle версии 8.1.7 или более поздней. Перейдите по ссылке [https://go.microsoft.com/fwlink/p/?LinkID=272376](https://go.microsoft.com/fwlink/p/?LinkID=272376), чтобы установить официальный поставщик.
+#### <a name="error-the-provider-being-used-is-deprecated-systemdataoracleclient-requires-oracle-client-software-version-817-or-greater-see-httpsgomicrosoftcomfwlinkplinkid272376httpsgomicrosoftcomfwlinkplinkid272376-to-install-the-official-provider"></a>**Ошибка.** Используемый поставщик является устаревшим: "System.Data.OracleClient требует версию клиента программного обеспечения Oracle 8.1.7 или более поздней версии.". Перейдите по ссылке [https://go.microsoft.com/fwlink/p/?LinkID=272376](https://go.microsoft.com/fwlink/p/?LinkID=272376), чтобы установить официальный поставщик.
 
 **Причина.** На компьютере, где выполняется локальный шлюз данных, не установлен пакет SDK для клиента Oracle.  
 
-**Решение**. Скачайте и установите пакет SDK для клиента Oracle на компьютере, где установлен локальный шлюз данных.
+**Решение.** Скачайте и установите пакет SDK для клиента Oracle на компьютере, где установлен локальный шлюз данных.
 
-#### <a name="error-table-tablename-does-not-define-any-key-columns"></a>**Ошибка**: В таблице [Имя_таблицы] не определены ключевые столбцы.
+#### <a name="error-table-tablename-does-not-define-any-key-columns"></a>**Ошибка.** В таблице [Имя_таблицы] не определены ключевые столбцы.
 
 **Причина.** В таблице отсутствует первичный ключ.  
 
-**Решение**. Соединитель базы данных Oracle можно использовать только с таблицей, в которой есть столбец первичного ключа.
+**Решение.** Соединитель базы данных Oracle можно использовать только с таблицей, в которой есть столбец первичного ключа.
 
 #### <a name="currently-not-supported"></a>Сейчас не поддерживаются:
 

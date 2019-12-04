@@ -1,24 +1,24 @@
 ---
-title: Автоматическое расширение хранилища с помощью портал Azure в базе данных Azure для PostgreSQL — один сервер
-description: В этой статье описывается, как включить автоматическое расширение хранилища с помощью портал Azure в базе данных Azure для PostgreSQL — Single Server.
+title: Автоматическое увеличение хранилища портал Azure — база данных Azure для PostgreSQL — один сервер
+description: В этой статье описывается, как можно настроить автоматическое увеличение хранилища с помощью портал Azure в базе данных Azure для PostgreSQL — Single Server.
 author: ambhatna
 ms.author: ambhatna
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/29/2019
-ms.openlocfilehash: 1d028093b030e1f2cf00ceae9297563c36c314c5
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 5e4f9d68d02edf456394d4ce10b7b6af5f8643d9
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142866"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74769240"
 ---
 # <a name="auto-grow-storage-using-the-azure-portal-in-azure-database-for-postgresql---single-server"></a>Автоматическое расширение хранилища с помощью портал Azure в базе данных Azure для PostgreSQL — один сервер
 В этой статье описывается, как можно настроить расширение хранилища базы данных Azure для PostgreSQL, не влияя на рабочую нагрузку.
 
 Когда сервер достигает предельного размера выделенного хранилища, сервер помечается как доступный только для чтения. Однако если включить автоматическое увеличение размера хранилища, серверное хранилище будет увеличиваться в соответствии с растущими данными. Для серверов с подготовленным хранилищем объемом менее 100 ГБ размер подготовленного хранилища увеличивается на 5 ГБ, как только объем свободного хранилища превысит 1 ГБ или 10% подготовленного хранилища. Для серверов с более чем 100 ГБ подготовленного хранилища размер подготовленного хранилища увеличивается на 5%, если объем свободного пространства превышает 5% от подготовленного объема хранилища. Максимальный объем хранилища, указанный [здесь](https://docs.microsoft.com/azure/postgresql/concepts-pricing-tiers#storage) , применим.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 - [сервер базы данных Azure для PostgreSQL](quickstart-create-server-database-portal.md);
 
@@ -32,7 +32,7 @@ ms.locfileid: "70142866"
 
 3. В разделе **Автоматическое увеличение** выберите **Да** , чтобы включить автоматическое увеличение размера хранилища.
 
-    ![База данных Azure для PostgreSQL-Settings_Pricing_tier-автоматическое увеличение](./media/howto-auto-grow-storage-portal/3-auto-grow.png)
+    ![База данных Azure для PostgreSQL-Settings_Pricing_tier — автоматическое увеличение](./media/howto-auto-grow-storage-portal/3-auto-grow.png)
 
 4. Нажмите кнопку **Сохранить** , чтобы сохранить изменения.
 
@@ -40,6 +40,6 @@ ms.locfileid: "70142866"
 
     ![База данных Azure для PostgreSQL — успешное выполнение автоматического роста](./media/howto-auto-grow-storage-portal/5-auto-grow-successful.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте [, как создавать оповещения по метрикам](howto-alert-on-metric.md).

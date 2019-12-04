@@ -2,19 +2,16 @@
 title: Управление средами службы интеграции в Azure Logic Apps
 description: Проверьте работоспособность сети и управляйте приложениями логики, подключениями, пользовательскими соединителями и учетными записями интеграции в среде службы интеграции (ISE) для Azure Logic Apps
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 08/01/2019
-ms.openlocfilehash: 6a6b096911ac8596fe29aeb4596f1da6d5266794
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: 1d91813e0f39207bcf7768de89600a6bdee0fc53
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70967814"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74792619"
 ---
 # <a name="manage-your-integration-service-environment-ise-in-azure-logic-apps"></a>Управление средой службы интеграции (ISE) в Azure Logic Apps
 
@@ -100,6 +97,6 @@ ms.locfileid: "70967814"
 
 1. Чтобы удалить учетные записи интеграции из интегрированной среды сценариев, если они больше не нужны, выберите эти учетные записи интеграции и нажмите кнопку **Удалить**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [подключаться к виртуальным сетям Azure из изолированных приложений логики](../logic-apps/connect-virtual-network-vnet-isolated-environment.md).

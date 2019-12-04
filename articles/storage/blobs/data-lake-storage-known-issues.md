@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/03/2019
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 3ea77eb5dd8a03f877164179e3accc3a6f6d0aef
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: 7fac09ff236e4bb2c63691f9dc1ad41bb49edae4
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74548315"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74793359"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -48,14 +48,12 @@ API-интерфейсы RESTFUL для больших двоичных объе
 
 <a id="api-scope-data-lake-client-library" />
 
-## <a name="api-scope-for-data-lake-storage-client-library-for-sdk-powershell-and-cli"></a>Область API для клиентской библиотеки Data Lake Storage для SDK, PowerShell и CLI
-
-### <a name="filesystem-support-in-sdks"></a>Поддержка файловой системы в пакетах SDK
+## <a name="filesystem-support-in-sdks"></a>Поддержка файловой системы в пакетах SDK
 
 - .NET, Java и Python доступны в общедоступной предварительной версии. Другие пакеты SDK в настоящее время не поддерживаются.
 - Операции получения и установки списков управления доступом в настоящее время не являются рекурсивными.
 
-### <a name="filesystem-support-in-powershell-and-azure-cli"></a>Поддержка файловой системы в PowerShell и Azure CLI
+## <a name="filesystem-support-in-powershell-and-azure-cli"></a>Поддержка файловой системы в PowerShell и Azure CLI
 
 Операции получения и установки списков управления доступом в настоящее время не являются рекурсивными.
 
@@ -77,7 +75,6 @@ API-интерфейсы RESTFUL для больших двоичных объе
 | **Журнал ведения диагностики** |Журналы диагностики поддерживаются (Предварительная версия).<br><br>Включение журналов в портал Azure в настоящее время не поддерживается. Ниже приведен пример того, как включить журналы с помощью PowerShell. <br><br>`$storageAccount = Get-AzStorageAccount -ResourceGroupName <resourceGroup> -Name <storageAccountName>`<br><br>`Set-AzStorageServiceLoggingProperty -Context $storageAccount.Context -ServiceType Blob -LoggingOperations read,write,delete -RetentionDays <days>`. <br><br>Убедитесь, что в качестве значения параметра `-ServiceType` указан `Blob`, как показано в этом примере. <br><br>В настоящее время Обозреватель службы хранилища Azure не может использоваться для просмотра журналов диагностики. Чтобы просмотреть журналы, используйте AzCopy или пакеты SDK.
 | **Неизменяемое хранилище** |Еще не поддерживается <br><br>Неизменяемое хранилище дает возможность хранить данные в [черве (запись один раз, чтение из множества)](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutable-storage) .|
 | **Уровни уровня объектов** |Поддерживаются уровни "крутой" и "Архив". Уровень архива находится на этапе предварительной версии. Все остальные уровни доступа пока не поддерживаются. <br><br> В настоящее время некоторые ошибки влияют на уровень доступа к архиву.  Зарегистрируйтесь для получения предварительной версии уровня доступа к архиву [здесь](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2EUNXd_ZNJCq_eDwZGaF5VURjFLTDRGS0Q4VVZCRFY5MUVaTVJDTkROMi4u).|
-| **Поддержка PowerShell и интерфейса командной строки** | Ограниченная функциональность <br><br>Поддерживаются операции с BLOB-объектами. Работа с каталогами и Настройка списков управления доступом (ACL) пока не поддерживаются. |
 | **Статические веб-сайты** |Еще не поддерживается <br><br>В частности, возможность обслуживания файлов для [статических веб-сайтов](https://docs.microsoft.com/azure/storage/blobs/storage-blob-static-website).|
 | **Сторонние приложения** | Ограниченная поддержка <br><br>Сторонние приложения, использующие API-интерфейсы RESTFUL для работы, будут продолжать работать, если вы используете их с Data Lake Storage 2-го поколения. <br>Приложения, которые вызывают API больших двоичных объектов, скорее всего, будут работать.|
 |**обратимое удаление** |Еще не поддерживается|

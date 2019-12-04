@@ -2,19 +2,16 @@
 title: Соединители для Azure Logic Apps
 description: Автоматизация рабочих процессов с помощью соединителей для Azure Logic Apps, включая встроенную, управляемую, локальную, корпоративную учетную запись интеграции и корпоративные соединители
 services: logic-apps
-ms.service: logic-apps
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
 ms.suite: integration
+ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 05/08/2019
-ms.openlocfilehash: 3d828e6e365864c2c23e1d9f178a556ff3c07515
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: 642eef8b804a7b71ec16f5834e4989cb7299c408
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72430179"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74789973"
 ---
 # <a name="connectors-for-azure-logic-apps"></a>Соединители для Azure Logic Apps
 
@@ -128,7 +125,7 @@ Logic Apps предоставляет эти популярные стандар
 
 |   |   |   |   |   | 
 |---|---|---|---|---| 
-| ![Значок API][biztalk-server-icon]<br/>**BizTalk**</br> **Server** | [значок API ![][file-system-icon]<br/>**файл</br> система**][file-system-doc] | [значок API ![][ibm-db2-icon]<br/>**IBM DB2**][ibm-db2-doc] | [значок API ![][ibm-informix-icon]<br/>**IBM**</br> **Informix**][ibm-informix-doc] | ![Значок API][mysql-icon]<br/>**MySQL** | 
+| ![Значок API][biztalk-server-icon]<br/>**BizTalk**</br> **Сервер** | [значок API ![][file-system-icon]<br/>**файл</br> система**][file-system-doc] | [значок API ![][ibm-db2-icon]<br/>**IBM DB2**][ibm-db2-doc] | [значок API ![][ibm-informix-icon]<br/>**IBM**</br> **Informix**][ibm-informix-doc] | ![Значок API][mysql-icon]<br/>**MySQL** | 
 | [значок API ![][oracle-db-icon]<br/>**Oracle DB**][oracle-db-doc] | ![Значок API][postgre-sql-icon]<br/>**PostgreSQL** | [значок API ![][sharepoint-server-icon]<br/>**SharePoint</br> Server**][sharepoint-server-doc] | [значок API ![][sql-server-icon]<br/>**SQL</br> Server**][sql-server-doc] | ![Значок API][teradata-icon]<br/>**Teradata** | 
 |||||
 
@@ -198,7 +195,7 @@ Logic Apps предоставляет эти соединители предпр
 >
 > Дополнительные сведения о создании Исес см. в статье [Подключение к виртуальным сетям Azure из Azure Logic Apps](../logic-apps/connect-virtual-network-vnet-isolated-environment.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Найдите [полный список соединителей](https://docs.microsoft.com/connectors).
 * [Создание приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md)

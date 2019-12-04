@@ -1,21 +1,20 @@
 ---
-title: Подключение к системам SAP — Azure Logic Apps
+title: Подключение к системам SAP
 description: Доступ к ресурсам SAP и управление ими путем автоматизации рабочих процессов с помощью Azure Logic Apps
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: divswa, LADocs
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 08/30/2019
 tags: connectors
-ms.openlocfilehash: 90348ad05879aff75dadab85af4e905d92228a2d
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: a9cf818e8b31ea2efb2f2ef2f0848a759e017dfa
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74287126"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74790873"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Подключение к системам SAP из Azure Logic Apps
 
@@ -40,7 +39,7 @@ ms.locfileid: "74287126"
 
 <a name="pre-reqs"></a>
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить действия, описанные в этой статье, потребуется следующее:
 
@@ -195,7 +194,7 @@ ms.locfileid: "74287126"
 
 1. Если приложение логики еще не включено, в меню приложения логики выберите **Обзор**. На панели инструментов выберите **включить**.
 
-1. На панели инструментов конструктора выберите **выполнить**. Так приложение логики будет запущено вручную.
+1. На панели инструментов конструктора выберите **выполнить**. При этом приложение логики автоматически перезапустится.
 
 1. Активируйте приложение логики, отправив запрос HTTP POST по URL-адресу в триггере HTTP-запроса.
 Включите содержимое сообщения в запрос. Для отправки запроса можно использовать, например, средство [Postman](https://www.getpostman.com/apps).
@@ -301,7 +300,7 @@ ms.locfileid: "74287126"
 
 1. Прежде чем начать, вам потребуется приложение логики с триггером SAP. Если у вас еще нет этого приложения логики, выполните описанные выше действия в этом разделе, чтобы [настроить приложение логики с помощью триггера SAP](#receive-from-sap).
 
-   Например,
+   Пример.
 
    ![Добавление триггера SAP в приложение логики](./media/logic-apps-using-sap-connector/first-step-trigger.png)
 
@@ -465,7 +464,7 @@ ms.locfileid: "74287126"
 
    ![Настройка SAP SNC в подключении](media/logic-apps-using-sap-connector/configure-sapsnc.png)
 
-   | Свойство | ОПИСАНИЕ |
+   | Свойство | Описание |
    |----------| ------------|
    | **Путь к библиотеке SNC** | Имя библиотеки SNC или путь относительно расположения установки NCo или абсолютного пути. Примеры: `sapsnc.dll` или `.\security\sapsnc.dll` или `c:\security\sapsnc.dll`. |
    | **ЕДИНЫЙ ВХОД SNC** | При подключении через SNC для проверки подлинности вызывающего объекта обычно используется удостоверение SNC. Другой вариант — переопределить, чтобы данные пользователя и пароля можно было использовать для проверки подлинности вызывающего объекта, но строка по-прежнему шифруется. |
@@ -559,7 +558,7 @@ ms.locfileid: "74287126"
 
 Технические сведения о триггерах, действиях и ограничениях, которые описаны в описании OpenAPI (ранее — Swagger) соединителя, см. на [странице справочника по соединителю](/connectors/sap/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подключитесь к локальным системам](../logic-apps/logic-apps-gateway-connection.md) с Azure Logic Apps.
 * Узнайте, как проверять, преобразовывать и использовать другие операции с сообщениями с [пакет интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md).

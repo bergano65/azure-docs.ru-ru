@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: c16abd02dfef5fb8b74cd5c0cafa97e5f29cc6b2
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: 3563b56e596f5c79f2107bdbf74219a19c6c0d06
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74286984"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74784618"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning"></a>Известные проблемы и устранение неполадок Машинное обучение Azure
 
@@ -159,7 +159,7 @@ displayHTML("<a href={} target='_blank'>Azure Portal: {}</a>".format(local_run.g
 * Добавьте `azureml-dataprep` версии 1.1.8 или более поздней.
 * Добавьте `pyarrow` версии 0,11 или более поздней.
 
-## <a name="azure-portal"></a>портале Azure
+## <a name="azure-portal"></a>портала Azure
 
 При переходе непосредственно к просмотру рабочей области с помощью ссылки для общего доступа из пакета SDK или на портале невозможно будет отобразить обычную страницу обзора со сведениями о подписке в расширении. Кроме того, вы не сможете переключиться на другую рабочую область. Если вам нужно просмотреть другую рабочую область, это решение поможет перейти непосредственно к [машинное обучение Azure Studio](https://ml.azure.com) и найти имя рабочей области.
 
@@ -278,10 +278,10 @@ kubectl get secret/azuremlfessl -o yaml
 
 Обновите страницу вручную. Инициализация должна продолжаться примерно 20 точек на секунду. Отсутствие автообновления является известной проблемой. 
 
-### <a name="bounding-box-cannot-be-drawn-all-the-way-to-right-edge-of-image"></a>Ограничивающий прямоугольник не может быть нарисован до правого края изображения 
-
-Попробуйте изменить размер окна браузера. Мы изучаем, как определить причину этого поведения. 
-
 ### <a name="when-reviewing-images-newly-labeled-images-are-not-shown"></a>При просмотре изображений недавно помеченные изображения не отображаются
 
 Чтобы загрузить все помеченные изображения, нажмите **первую** кнопку. **Первая** кнопка вернет вас к началу списка, но загрузит все помеченные данные.
+
+### <a name="pressing-esc-key-while-labeling-for-object-detection-creates-a-zero-size-label-on-the-top-left-corner-submitting-labels-in-this-state-fails"></a>Нажатие клавиши ESC при пометке для обнаружения объектов создает метку нулевого размера в левом верхнем углу. Отправка меток в этом состоянии завершается ошибкой.
+
+Удалите метку, щелкнув рядом с ней крестик.

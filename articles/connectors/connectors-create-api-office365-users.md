@@ -1,22 +1,18 @@
 ---
-title: Подключение к службе "Пользователи Office 365" с помощью Azure Logic Apps | Документация Майкрософт
+title: Подключение к пользователям Office 365
 description: Управляйте профилями пользователей с помощью интерфейсов REST API службы "Пользователи Office 365" и Azure Logic Apps.
-author: ecfan
-manager: jeconnoc
-ms.author: estfan
+services: logic-apps
+ms.suite: integration
+ms.reviewer: klam, logicappspm
 ms.date: 08/18/2016
 ms.topic: article
-ms.service: logic-apps
-services: logic-apps
-ms.reviewer: klam, LADocs
-ms.suite: integration
 tags: connectors
-ms.openlocfilehash: 3865fbc4fbc39da0860218565b0a8956b2dad8ee
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: addb64a9b43c51af8363caa6f0fb3261a618e893
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62105877"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74789531"
 ---
 # <a name="get-started-with-the-office-365-users-connector"></a>Начало работы с соединителем Office 365 Пользователи
 Подключившись к Office 365 Пользователи, вы сможете получать профили, искать пользователей и выполнять многие другие действия. С помощью Office 365 Пользователи вы можете:

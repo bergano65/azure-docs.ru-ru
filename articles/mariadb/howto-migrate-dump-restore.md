@@ -1,17 +1,17 @@
 ---
-title: Перенос базы данных MariaDB в базу данных Azure для MariaDB с помощью дампа и восстановления
+title: Миграция с помощью дампа и восстановления — база данных Azure для MariaDB
 description: В этой статье описываются два распространенных способа архивации и восстановления баз данных в базе данных Azure для MariaDB с помощью таких средств, как mysqldump, MySQL Workbench и PHPMyAdmin.
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: 05626535a2ab2d8da29b8c817ebfe84c257c76aa
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.date: 12/02/2019
+ms.openlocfilehash: 660b39a063496eb6566d51dbef2c914499dc70c9
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70845062"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74776011"
 ---
 # <a name="migrate-your-mariadb-database-to-azure-database-for-mariadb-using-dump-and-restore"></a>Перенос базы данных MariaDB в базу данных Azure для MariaDB с помощью резервного копирования и восстановления
 В этой статье описываются два распространенных способа архивации и восстановления баз данных в базе данных Azure для MariaDB.
@@ -119,7 +119,7 @@ $ mysql -h mydemoserver.mariadb.database.azure.com -u myadmin@mydemoserver -p te
 5. Нажмите кнопку **обзора**, чтобы найти файл базы данных. 
 6. Нажмите кнопку **Перейти**, чтобы экспортировать резервную копию, выполнить команды SQL и повторно создать базу данных.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Подключение приложений к базе данных Azure для MariaDB](./howto-connection-string.md).
  
 <!--

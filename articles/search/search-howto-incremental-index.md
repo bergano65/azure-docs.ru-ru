@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 09defe9648208e2300594169add990d4bcbd7a39
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 348bc2d92f636d1f3c3b50ea31334355da59a60f
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112569"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74790498"
 ---
 # <a name="how-to-set-up-incremental-indexing-of-enriched-documents-in-azure-cognitive-search"></a>Как настроить добавочное индексирование обогащенных документов в Azure Когнитивный поиск
 
@@ -41,13 +41,32 @@ api-key: [admin key]
 
 ### <a name="step-2-add-the-cache-property"></a>Шаг 2. Добавление свойства Cache
 
-Измените ответ запроса GET, чтобы добавить свойство `cache` в индексатор. Для объекта кэша требуется только одно свойство, а это строка подключения к учетной записи хранения Azure.
+< < < < < < < HEAD. Отредактируйте ответ от запроса GET, чтобы добавить свойство `cache` в индексатор. Для объекта кэша требуется только одно свойство, `storageConnectionString` которого является строкой подключения к учетной записи хранения. = = = = = = = Отредактируйте ответ от запроса GET, чтобы добавить свойство `cache` в индексатор. Для объекта кэша требуется только одно свойство, а это строка подключения к учетной записи хранения Azure.
+>>>>>>> 3519a330aa86b6827d31403690529105825b1b16
 
 ```json
-    "cache": {
-        "storageConnectionString": "[your storage connection string]"
+{
+    "name": "myIndexerName",
+    "targetIndexName": "myIndex",
+    "dataSourceName": "myDatasource",
+    "skillsetName": "mySkillset",
+    "cache" : {
+        "storageConnectionString" : "Your storage account connection string",
+        "enableReprocessing": true,
+        "id" : "Auto generated Id you do not need to set"
+    },
+    "fieldMappings" : [],
+    "outputFieldMappings": [],
+    "parameters": {
+        "configuration": {
+            "enableAnnotationCache": true
+        }
     }
+}
 ```
+#### <a name="enable-reporocessing"></a>Включить репороцессинг
+
+При необходимости можно задать логическое свойство `enableReprocessing` в кэше, значение которого по умолчанию равно true. Флаг `enableReprocessing` позволяет управлять поведением индексатора. В сценариях, где требуется, чтобы индексатор настроил Добавление новых документов в индекс, установите для флага значение false. После того как индексатор будет обнаружен с помощью новых документов, при отметке этого флага на значение true в индексаторе будет начато переключение существующих документов в окончательную согласованность. В течение периода, когда флаг `enableReprocessing` установлен в значение false, индексатор записывает данные в кэш, но не будет обрабатывать существующие документы на основе определенных изменений в конвейере обогащения.
 
 ### <a name="step-3-reset-the-indexer"></a>Шаг 3. Сброс индексатора
 
@@ -103,7 +122,7 @@ api-key: [admin key]
 
 В экземпляре, когда необходимо, чтобы конвейер индексирования распознал изменение во внешней сущности, например развертывание новой версии пользовательского навыка, необходимо обновить набор навыков и "коснуться" конкретного навыка, изменив определение навыка, а именно URL-адрес для принудительного выполнения. Обнаружение изменений и недействительность кэша для этого навыка.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье описывается добавочное индексирование для индексаторов, включающих навыков. Для дальнейшего округления знаний ознакомьтесь со статьями о повторной индексации в целом, применимых ко всем сценариям индексирования в Azure Когнитивный поиск.
 

@@ -1,19 +1,19 @@
 ---
-title: Безопасность в базе данных Azure для MariaDB — один сервер
-description: Обзор функций безопасности в базе данных Azure для MariaDB — Single Server.
+title: Безопасность — база данных Azure для MariaDB
+description: Общие сведения о функциях безопасности в базе данных Azure для MariaDB.
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 11/25/2019
-ms.openlocfilehash: 1a2d7ac449c131519473afaa80eb3a57c287eb28
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.date: 12/02/2019
+ms.openlocfilehash: d23eabdacc57a3f5a10d9e3b132a6daac42fbd4d
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74485189"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74772157"
 ---
-# <a name="security-in-azure-database-for-mariadb---single-server"></a>Безопасность в базе данных Azure для MariaDB — один сервер
+# <a name="security-in-azure-database-for-mariadb"></a>Безопасность в Базе данных Azure для MariaDB
 
 Существует несколько уровней безопасности, которые можно использовать для защиты данных на сервере базы данных Azure для MariaDB. В этой статье описываются эти возможности безопасности.
 
@@ -50,5 +50,5 @@ ms.locfileid: "74485189"
 [Ведение журнала аудита](concepts-audit-logs.md) доступно для наблюдения за действиями в базах данных. 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Включение правил брандмауэра для [IP-адресов](concepts-firewall-rules.md) или [виртуальных сетей](concepts-data-access-security-vnet.md)

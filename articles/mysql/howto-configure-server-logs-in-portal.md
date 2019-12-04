@@ -1,29 +1,29 @@
 ---
-title: Настройка и доступ к журналам запросов в службе "база данных Azure для MySQL" из портал Azure
+title: Доступ к журналам запросов с высокой производительностью. портал Azure — база данных Azure для MySQL
 description: В этой статье описывается, как настроить и получить доступ к журналам службы "база данных Azure для MySQL" из портал Azure.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 09/30/2019
-ms.openlocfilehash: 7eeeb729973e484e9acb26f3ac8cc42693f72eea
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.date: 12/02/2019
+ms.openlocfilehash: 52d219a94676e0f1ce4ceac31b0b50c9d36665ba
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71841581"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74770583"
 ---
 # <a name="configure-and-access-slow-query-logs-from-the-azure-portal"></a>Настройка и доступ к журналам запросов с высокой занесением портал Azure
 
 Вы можете настроить, перечислить и скачать [журналы запросов к базе данных Azure для MySQL](concepts-server-logs.md) с портал Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 Для выполнения действий, описанных в этой статье, требуется [сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md).
 
 ## <a name="configure-logging"></a>Настройка журнала
 Настройте доступ к журналу медленных запросов MySQL. 
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
 2. Выберите сервер базы данных Azure для MySQL.
 
@@ -78,7 +78,7 @@ ms.locfileid: "71841581"
 
 1. Получите доступ к журналам запросов с задержкой, изучив их в настроенных приемниках данных. Для отображения журналов может потребоваться до 10 минут.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Сведения о том, как программно скачивать журналы запросов, см. [в статье доступ к журналам запросов с помощью интерфейса командной строки](howto-configure-server-logs-in-cli.md) .
 - Дополнительные сведения о [медленных журналах запросов](concepts-server-logs.md) в базе данных Azure для MySQL.
 - Дополнительные сведения об определениях параметров и ведении журнала MySQL см. в документации MySQL по [журналам](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html).

@@ -1,20 +1,17 @@
 ---
-title: Добавление циклов к действиям повтора — Azure Logic Apps
+title: Добавление циклов к действиям повторения
 description: Создание циклов, которые повторяют действия рабочих процессов или обрабатывают массивы в Azure Logic Apps
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 01/05/2019
-ms.openlocfilehash: 31885749a7194a94a403e5c156220b3fceab951d
-ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
+ms.openlocfilehash: 5f6c04c9a57dc8c250d99f2fa944203d2d73c404
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72680454"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791743"
 ---
 # <a name="create-loops-that-repeat-workflow-actions-or-process-arrays-in-azure-logic-apps"></a>Создание циклов, которые повторяют действия рабочих процессов или обрабатывают массивы в Azure Logic Apps
 
@@ -235,7 +232,7 @@ ms.locfileid: "72680454"
 
       | Свойство | Value | Описание |
       | -------- | ----- | ----------- | 
-      | **To** | *\<email \@domain адреса >* | Адрес электронной почты получателя. Для тестировании используйте свой адрес электронной почты. | 
+      | **To** | *\<адрес электронной почты\@> домена* | Адрес электронной почты получателя. Для тестировании используйте свой адрес электронной почты. | 
       | **Тема** | Текущее значение для переменной Limit — это **Limit**. | Укажите тему сообщения. Для этого примера обязательно добавьте переменную **Limit**. | 
       | **Текст** | <*email-content*> | Укажите содержимое сообщения, которое требуется отправить. Для этого примера введите любой текст. | 
       |||| 

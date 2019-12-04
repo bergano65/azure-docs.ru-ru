@@ -1,24 +1,24 @@
 ---
-title: Управление репликами чтения для базы данных Azure для PostgreSQL-Single Server из портал Azure
+title: Управление репликами чтения — портал Azure — база данных Azure для PostgreSQL — один сервер
 description: Узнайте, как управлять репликами чтения базы данных Azure для PostgreSQL-Single Server из портал Azure.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: 0ff6cd50a5a6cb1599a2248fbc61b0b6b307e791
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 5e031354d4695a1d7eb6f199e23e74b796273230
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70995457"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74770226"
 ---
 # <a name="create-and-manage-read-replicas-in-azure-database-for-postgresql---single-server-from-the-azure-portal"></a>Создание реплик чтения и управление ими в базе данных Azure для PostgreSQL — один сервер из портал Azure
 
 В этой статье описано, как создавать реплики чтения и управлять ими в службе "База данных Azure для PostgreSQL" с помощью портала Azure. Дополнительные сведения о репликах чтения см. в [этой статье](concepts-read-replicas.md).
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 [Сервер службы "База данных Azure для PostgreSQL"](quickstart-create-server-database-portal.md) в качестве главного.
 
 ## <a name="prepare-the-master-server"></a>Подготовка главного сервера
@@ -81,7 +81,7 @@ ms.locfileid: "70995457"
 ![Просмотр новой реплики в окне "Репликация"](./media/howto-read-replicas-portal/list-replica.png)
  
 
-## <a name="stop-replication"></a>Остановить репликацию
+## <a name="stop-replication"></a>Остановка репликации
 Вы можете остановить репликацию между главным сервером и репликой чтения.
 
 > [!IMPORTANT]
@@ -177,6 +177,6 @@ ms.locfileid: "70995457"
  
 3. Для параметра **агрегирования** установите значение **Макс.** 
  
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * См. дополнительные сведения о [репликах чтения в Базе данных Azure для PostgreSQL](concepts-read-replicas.md).
 * Узнайте, как [создавать реплики чтения и управлять ими в Azure CLI и REST API](howto-read-replicas-cli.md).

@@ -1,17 +1,17 @@
 ---
-title: Журналы сервера в базе данных Azure для MariaDB
+title: Журналы запросов с высокой производительностью — база данных Azure для MariaDB
 description: Описание журналов, доступных в базе данных Azure для MariaDB, и параметров для включения различных уровней ведения журналов.
 author: rachel-msft
 ms.author: raagyema
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 06/12/2019
-ms.openlocfilehash: 10dbd4d7fa838ee7f8a3f70b3caadb570877d685
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.date: 12/02/2019
+ms.openlocfilehash: 8a451b06c8166b48fd892050e53204e2b65856c3
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71259971"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74772110"
 ---
 # <a name="slow-query-logs-in-azure-database-for-mariadb"></a>Журналы запросов в базе данных Azure для MariaDB
 В базе данных Azure для MariaDB пользователям доступен журнал медленных запросов. Доступ к журналам транзакций не поддерживается. Журнал медленных запросов можно использовать для выявления проблем с производительностью при устранении неполадок.
@@ -38,7 +38,7 @@ ms.locfileid: "71259971"
 - **long_query_time.** Если запрос занимает больше времени, чем задано значением long_query_time (в секундах), информация о нем заносится в журнал. По умолчанию это 10 секунд.
 - **log_slow_admin_statements.** Указывает, нужно ли сохранять в журнал slow_query_log административные инструкции, например ALTER_TABLE и ANALYZE_TABLE.
 - **log_queries_not_using_indexes**. Указывает, нужно ли сохранять в журнал slow_query_log запросы, не использующие индексы.
-- **log_throttle_queries_not_using_indexes**: Ограничивает число не использующих индексы запросов, сохраняемых в журнале медленных запросов. Этот параметр применяется, только если log_queries_not_using_indexes имеет значение "ON" (Включено).
+- **log_throttle_queries_not_using_indexes.** Ограничивает число не использующих индексы запросов, сохраняемых в журнале медленных запросов. Этот параметр применяется, только если log_queries_not_using_indexes имеет значение "ON" (Включено).
 
 Полное описание параметров журнала медленных запросов см. в [соответствующей документации к MariaDB](https://mariadb.com/kb/en/library/slow-query-log-overview/).
 
@@ -54,7 +54,7 @@ ms.locfileid: "71259971"
 |---|---|
 | `TenantId` | Идентификатор клиента |
 | `SourceSystem` | `Azure` |
-| `TimeGenerated`ФОРМАТА | Метка времени, когда журнал был записан в формате UTC |
+| `TimeGenerated` [UTC] | Метка времени, когда журнал был записан в формате UTC |
 | `Type` | Тип журнала Всегда `AzureDiagnostics` |
 | `SubscriptionId` | Идентификатор GUID для подписки, принадлежащей серверу |
 | `ResourceGroup` | Имя группы ресурсов, принадлежащей серверу |
@@ -65,7 +65,7 @@ ms.locfileid: "71259971"
 | `Category` | `MySqlSlowLogs` |
 | `OperationName` | `LogEvent` |
 | `Logical_server_name_s` | Имя сервера |
-| `start_time_t`ФОРМАТА | Время начала запроса. |
+| `start_time_t` [UTC] | Время начала запроса. |
 | `query_time_s` | Общее время, которое потребовалось для выполнения запроса. |
 | `lock_time_s` | Общее время блокировки запроса. |
 | `user_host_s` | Имя пользователя |
@@ -78,5 +78,5 @@ ms.locfileid: "71259971"
 | `thread_id_s` | Идентификатор потока |
 | `\_ResourceId` | Универсальный код ресурса (URI) |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройка и использование журналов сервера с помощью портала Azure](howto-configure-server-logs-portal.md).

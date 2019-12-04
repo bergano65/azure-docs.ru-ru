@@ -1,22 +1,18 @@
 ---
-title: Подключение к Twitter из Azure Logic Apps | Документация Майкрософт
+title: Подключение к Twitter из Azure Logic Apps
 description: Автоматизируйте задачи и рабочие процессы, которые отслеживают твиты и управляют ими, а также получайте данные о подписчиках, пользователях, на которых вы подписаны, временных шкалах и многом другом из вашей учетной записи Twitter с помощью Azure Logic Apps.
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
-ms.assetid: 8bce2183-544d-4668-a2dc-9a62c152d9fa
+ms.reviewer: klam, logicappspm
 ms.topic: article
-tags: connectors
 ms.date: 08/25/2018
-ms.openlocfilehash: 22b75b2d2b47dbd496eda06c09b418ae66f6403a
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+tags: connectors
+ms.openlocfilehash: 8ffd0fd558cf759fadd912de9dff4acf49d9659f
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70050689"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74789092"
 ---
 # <a name="monitor-and-manage-twitter-by-using-azure-logic-apps"></a>Мониторинг Twitter и управление им с помощью Azure Logic Apps
 
@@ -27,7 +23,7 @@ ms.locfileid: "70050689"
 
 Вы можете использовать триггеры, которые получают ответы из учетной записи Twitter и делают выходные данные доступными для других действий. Можно использовать действия, которые выполняют задачи с вашей учетной записью Twitter. Кроме того, выходные данные от действий Twitter могут использоваться другими действиями. Например, при появлении нового твита с определенным хэштегом можно отправлять сообщения с помощью соединителя Slack. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
@@ -76,9 +72,9 @@ ms.locfileid: "70050689"
 
 При желании можно включить условие, согласно которому подходящие твиты должны поступать от пользователей по крайней мере с минимально определенным количеством подписчиков.
 
-**Пример Enterprise**. Этот триггер можно использовать для отслеживания твитов о компании и передачи содержимого твитов в базу данных SQL.
+**Корпоративный пример**. Этот триггер можно использовать для мониторинга твитов о вашей компании и передачи содержимого твитов в базу данных SQL.
 
-### <a name="twitter-action-post-a-tweet"></a>Действие Twitter: Опубликовать твит
+### <a name="twitter-action-post-a-tweet"></a>Действие Twitter: Post a tweet (Публикация твита)
 
 Это действие публикует твит. Однако действие можно настроить таким образом, чтобы твит имел содержимое из твитов, найденных с помощью описанного выше триггера. 
 
@@ -86,11 +82,11 @@ ms.locfileid: "70050689"
 
 Дополнительные технические сведения о триггерах, действиях и ограничениях, которые приведены в описании OpenAPI соединителя (прежнее название — Swagger), можно найти на [странице справки](/connectors/twitterconnector/) соединителя.
 
-## <a name="get-support"></a>Поддержка
+## <a name="get-support"></a>Получение поддержки
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

@@ -1,22 +1,18 @@
 ---
-title: Подключение к FTP-серверу — Azure Logic Apps
+title: Подключение к FTP-серверу
 description: Создавайте, контролируйте файлы на сервере FTP и управляйте ими с помощью Azure Logic Apps.
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-manager: carmonm
-ms.reviewer: divswa, klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 06/19/2019
 tags: connectors
-ms.openlocfilehash: ac6ae1a3b00a4e7568bd7967105f202fbf2e4f9b
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: c7b8c1ac94fd35a4a0cb30ad32d8c6ce39edc058
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74547487"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74789781"
 ---
 # <a name="create-monitor-and-manage-ftp-files-by-using-azure-logic-apps"></a>Создание и отслеживание FTP-файлов, а также управление ими с помощью Azure Logic Apps
 

@@ -1,22 +1,18 @@
 ---
-title: Подключение к OneDrive для бизнеса с помощью Azure Logic Apps | Документация Майкрософт
+title: Подключение к OneDrive для бизнеса
 description: Передавайте файлы и управляйте ими с помощью интерфейсов REST API OneDrive для бизнеса и Azure Logic Apps.
-author: ecfan
-manager: jeconnoc
-ms.author: estfan
-ms.date: 08/18/2016
-ms.topic: article
-ms.service: logic-apps
 services: logic-apps
-ms.reviewer: klam, LADocs
 ms.suite: integration
+ms.reviewer: klam, logicappspm
+ms.topic: article
+ms.date: 08/18/2016
 tags: connectors
-ms.openlocfilehash: 87a162338cc67a3f2d2fc425bbcbefe2976661e5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 48c819566db43e2f997309d1bea55a9436ec7085
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62104924"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74789463"
 ---
 # <a name="get-started-with-the-onedrive-for-business-connector"></a>Начало работы с соединителем OneDrive для бизнеса
 Подключитесь к OneDrive для бизнеса, чтобы управлять файлами. Вы можете выполнять различные действия, такие как отправка, обновление, получение и удаление файлов.
@@ -28,7 +24,7 @@ ms.locfileid: "62104924"
 
 | Свойство | Обязательно для заполнения | Описание |
 | --- | --- | --- |
-| по маркеру |Да |Укажите учетные данные OneDrive для бизнеса |
+| по маркеру |ДА |Укажите учетные данные OneDrive для бизнеса |
 
 Созданное подключение можно использовать для выполнения действий и прослушивания триггеров, описанных в этой статье.
 

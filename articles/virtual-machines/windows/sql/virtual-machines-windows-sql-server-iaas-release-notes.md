@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 08/01/2019
-ms.openlocfilehash: 2f89b57257088b0b647fd5f0159a58c2ac03bda7
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: c122baa21c5d94b57f29cb0530f0a2655faa87d0
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72897258"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74790382"
 ---
 # <a name="documentation-changes-for-sql-server-on-azure-virtual-machines"></a>Изменения документации для SQL Server на виртуальных машинах Azure
 
@@ -56,7 +56,7 @@ Azure позволяет развернуть виртуальную машин�
 | --- | --- |
 | **Новые режимы установки IaaS SQL** | Теперь можно установить расширение SQL Server IaaS в [упрощенном режиме](virtual-machines-windows-sql-server-agent-extension.md) , чтобы избежать перезапуска службы SQL Server.  |
 | **Изменение выпуска SQL Server** | Теперь можно изменить [свойство Edition](virtual-machines-windows-sql-change-edition.md) для виртуальной машины SQL Server. |
-| **Изменения в поставщике ресурсов виртуальной машины SQL** | Вы можете [зарегистрировать SQL Server виртуальную машину с помощью поставщика ресурсов виртуальной машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md) , используя новые режимы SQL IaaS. Эта возможность включает [образы Windows 2008](virtual-machines-windows-sql-register-with-resource-provider.md#register-sql-server-2008-or-2008-r2-on-windows-server-2008-vms).|
+| **Изменения в поставщике ресурсов виртуальной машины SQL** | Вы можете [зарегистрировать SQL Server виртуальную машину с помощью поставщика ресурсов виртуальной машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md) , используя новые режимы SQL IaaS. Эта возможность включает в себя образы [Windows Server 2008](virtual-machines-windows-sql-register-with-resource-provider.md#management-modes) .|
 | **Использование собственных образов лицензий с помощью Преимущество гибридного использования Azure** | Образы с собственными лицензиями, развернутые из Azure Marketplace, теперь могут переключить [тип лицензии на "Оплата по мере использования"](virtual-machines-windows-sql-ahb.md#remarks).| 
 | &nbsp; | &nbsp; |
 

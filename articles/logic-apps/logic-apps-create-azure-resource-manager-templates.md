@@ -1,24 +1,21 @@
 ---
-title: Создание шаблонов приложений логики для развертывания Azure Logic Apps
+title: Создание шаблонов приложений логики для развертывания
 description: Узнайте, как создавать шаблоны Azure Resource Manager для автоматизации развертывания в Azure Logic Apps
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 07/26/2019
-ms.openlocfilehash: 57e9cec16326068cc7de74b8f7266fbe47808fed
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: d9b2dc7432ee1b847c8c7900a3e91daa71b5a771
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70845449"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74793204"
 ---
 # <a name="create-azure-resource-manager-templates-to-automate-deployment-for-azure-logic-apps"></a>Создание шаблонов Azure Resource Manager для автоматизации развертывания Azure Logic Apps
 
-Чтобы помочь вам автоматизировать создание и развертывание приложения логики, в этой статье описываются способы создания [шаблона Azure Resource Manager](../azure-resource-manager/resource-group-overview.md) для приложения логики. Общие сведения о структуре и синтаксисе шаблона, содержащего определение рабочего процесса и другие ресурсы, необходимые для развертывания, см. в [разделе Обзор: Автоматизируйте развертывание приложений логики с помощью](logic-apps-azure-resource-manager-templates-overview.md)шаблонов Azure Resource Manager.
+Чтобы помочь вам автоматизировать создание и развертывание приложения логики, в этой статье описываются способы создания [шаблона Azure Resource Manager](../azure-resource-manager/resource-group-overview.md) для приложения логики. Общие сведения о структуре и синтаксисе шаблона, содержащего определение рабочего процесса и другие ресурсы, необходимые для развертывания, см. в разделе [Обзор: Автоматизация развертывания для приложений логики с помощью шаблонов Azure Resource Manager](logic-apps-azure-resource-manager-templates-overview.md).
 
 Azure Logic Apps предоставляет [готовый шаблон приложения логики Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/blob/master/101-logic-app-create/azuredeploy.json) , который можно повторно использовать, не только для создания приложений логики, но и для определения ресурсов и параметров, используемых для развертывания. Вы можете использовать этот шаблон для собственных бизнес-сценариев или настроить его в соответствии со своими требованиями.
 
@@ -52,10 +49,10 @@ Azure Logic Apps предоставляет [готовый шаблон при�
 
 В этих примерах показано, как создавать и развертывать приложения логики с помощью шаблонов Azure Resource Manager, Azure Pipelines в Azure DevOps и Azure PowerShell.
 
-* [Пример. Подключение к очередям служебной шины Azure из Azure Logic Apps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-service-bus-queues-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
-* [Пример. Подключение к учетным записям хранения Azure из Azure Logic Apps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-storage-accounts-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
-* [Пример. Настройка действия приложения-функции для Azure Logic Apps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/set-up-an-azure-function-app-action-for-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
-* [Пример. Подключение к учетной записи интеграции из Azure Logic Apps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-an-integration-account-from-azure-logic-apps-and-deploy-by-using-azure-devops-pipelines/)
+* [Пример: подключение к очередям служебной шины Azure из Azure Logic Apps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-service-bus-queues-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
+* [Пример. подключение к учетным записям хранения Azure из Azure Logic Apps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-storage-accounts-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
+* [Пример: Настройка действия приложения-функции для Azure Logic Apps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/set-up-an-azure-function-app-action-for-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
+* [Пример. подключение к учетной записи интеграции из Azure Logic Apps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-an-integration-account-from-azure-logic-apps-and-deploy-by-using-azure-devops-pipelines/)
 
 ### <a name="install-powershell-modules"></a>Установка модулей PowerShell
 
@@ -79,7 +76,7 @@ Azure Logic Apps предоставляет [готовый шаблон при�
 
 Чтобы модуль Логикапптемплате работал с любым маркером доступа клиента и подписки Azure, установите [средство клиента Azure Resource Manager](https://github.com/projectkudu/ARMClient), которое является простым средством командной строки, которое вызывает API Azure Resource Manager.
 
-При выполнении `Get-LogicAppTemplate` команды с помощью этого средства команда сначала получает маркер доступа через средство ARMClient, передает маркер в сценарий PowerShell и создает его в виде JSON-файла. Дополнительные сведения о средстве см. в этой [статье о средстве клиента Azure Resource Manager](https://blog.davidebbo.com/2015/01/azure-resource-manager-client.html).
+При выполнении команды `Get-LogicAppTemplate` с помощью этого средства команда сначала получает маркер доступа через средство ARMClient, передает маркер в сценарий PowerShell и создает его в виде JSON-файла. Дополнительные сведения о средстве см. в этой [статье о средстве клиента Azure Resource Manager](https://blog.davidebbo.com/2015/01/azure-resource-manager-client.html).
 
 ### <a name="generate-template-with-powershell"></a>Создание шаблона с помощью PowerShell
 
@@ -89,7 +86,7 @@ Azure Logic Apps предоставляет [готовый шаблон при�
 PS> Get-LogicAppTemplate -Token (az account get-access-token | ConvertFrom-Json).accessToken -LogicApp <logic-app-name> -ResourceGroup <Azure-resource-group-name> -SubscriptionId $SubscriptionId -Verbose | Out-File C:\template.json
 ```
 
-Чтобы следовать рекомендациям по конвейеру в маркере из [средства клиента Azure Resource Manager](https://github.com/projectkudu/ARMClient), выполните следующую команду, где `$SubscriptionId` — это идентификатор подписки Azure:
+Чтобы следовать рекомендациям по конвейеру в маркере из [средства клиента Azure Resource Manager](https://github.com/projectkudu/ARMClient), выполните следующую команду, где `$SubscriptionId` является идентификатором подписки Azure:
 
 ```text
 PS> armclient token $SubscriptionId | Get-LogicAppTemplate -LogicApp <logic-app-name> -ResourceGroup <Azure-resource-group-name> -SubscriptionId $SubscriptionId -Verbose | Out-File C:\template.json
@@ -107,13 +104,13 @@ PS> Get-ParameterTemplate -TemplateFile $filename | Out-File '<parameters-file-n
 PS> Get-ParameterTemplate -TemplateFile $filename -KeyVault Static | Out-File $fileNameParameter
 ```
 
-| Параметры | Обязательное значение | Описание |
+| Параметры | Обязательно для заполнения | Описание |
 |------------|----------|-------------|
-| TemplateFile | Да | Путь к файлу шаблона |
-| Хранилище ключей | Нет | Перечисление, описывающее способ управления возможными значениями хранилища ключей. Значение по умолчанию — `None`. |
+| TemplateFile | ДА | Путь к файлу шаблона |
+| Key Vault | Нет | Перечисление, описывающее способ управления возможными значениями хранилища ключей. Значение по умолчанию — `None`. |
 ||||
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Развертывание шаблонов приложений логики](../logic-apps/logic-apps-deploy-azure-resource-manager-templates.md)

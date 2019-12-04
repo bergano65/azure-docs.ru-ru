@@ -1,20 +1,19 @@
 ---
-title: Подключение к файловым системам в локальной среде Azure Logic Apps
+title: Подключение к локальным файловым системам
 description: Автоматизация задач и рабочих процессов, которые подключаются к локальным файловым системам, используя соединитель файловой системы, через локальный шлюз данных в Azure Logic Apps.
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
 author: derek1ee
 ms.author: deli
-ms.reviewer: klam, estfan, LADocs
+ms.reviewer: klam, estfan, logicappspm
 ms.topic: article
 ms.date: 01/13/2019
-ms.openlocfilehash: 1b5cf27c49a003042086cd9452f288c7f348d343
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: bc2067dbde1e99619fb6e384be4e70f606c8518d
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72799700"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74792770"
 ---
 # <a name="connect-to-on-premises-file-systems-with-azure-logic-apps"></a>Подключение к локальной файловой системе с помощью Azure Logic Apps
 

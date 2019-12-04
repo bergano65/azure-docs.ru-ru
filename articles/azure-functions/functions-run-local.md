@@ -5,12 +5,12 @@ ms.assetid: 242736be-ec66-4114-924b-31795fd18884
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: 8604df894367ccc25d7e9ffae4453a6b3080b7d8
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 24bee8ffe23d524553143b2097560979a39329d7
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74226700"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74784720"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -171,7 +171,7 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 
 `func init` поддерживает следующие параметры, которые подходят только для версии 2.x, если не указано иное:
 
-| Параметр     | ОПИСАНИЕ                            |
+| Вариант     | Описание                            |
 | ------------ | -------------------------------------- |
 | **`--csharp`**<br/> **`--dotnet`** | Инициализирует [ C# проект библиотеки классов (CS)](functions-dotnet-class-library.md). |
 | **`--csx`** | Инициализирует [ C# проект скрипта (. CSX)](functions-reference-csharp.md). Необходимо указать `--csx` в последующих командах. |
@@ -194,7 +194,7 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 
 [!INCLUDE [functions-local-settings-file](../../includes/functions-local-settings-file.md)]
 
-По умолчанию эти параметры не переносятся автоматически при публикации проекта в Azure. `--publish-local-settings`При публикации[ используйте параметр ](#publish), чтобы добавить эти параметры в приложение-функцию в Azure. Обратите внимание, что значения **ConnectionStrings** никогда не публикуются.
+По умолчанию эти параметры не переносятся автоматически при публикации проекта в Azure. [При публикации](#publish) используйте параметр `--publish-local-settings`, чтобы добавить эти параметры в приложение-функцию в Azure. Обратите внимание, что значения **ConnectionStrings** никогда не публикуются.
 
 Эти значения параметров приложения-функции также могут считываться в коде как переменные среды. Дополнительные сведения см. в разделе о переменных среды в этих справочниках для определенного языка:
 
@@ -272,7 +272,7 @@ Writing C:\myfunctions\myMyFunctionProj\MyQueueTrigger\function.json
 
 Эти параметры можно также задать в команде, указав следующие аргументы.
 
-| Аргумент     | ОПИСАНИЕ                            |
+| Аргумент     | Описание                            |
 | ------------------------------------------ | -------------------------------------- |
 | **`--csx`** | (Версия 2.x). Создаются те же шаблоны сценариев C# (.csx), которые используются в версии 1.x и на портале. |
 | **`--language -l`**| Язык программирования шаблона, например C#, F# или JavaScript. Этот параметр необходим в версии 1.x. Не используйте этот параметр в версии 2.x или выберите язык, который совпадает со средой выполнения рабочей роли. |
@@ -328,7 +328,7 @@ func host start
 
 `func start` имеет указанные ниже параметры.
 
-| Параметр     | ОПИСАНИЕ                            |
+| Вариант     | Описание                            |
 | ------------ | -------------------------------------- |
 | **`--no-build`** | Не выполняйте сборку текущего проекта перед запуском. Только для проектов .NET. По умолчанию установлено значение false. Только версия 2.x. |
 | **`--cert`** | Путь к PFX-файлу, который содержит закрытый ключ. Используется только с `--useHttps`. Только версия 2.x. |
@@ -418,7 +418,7 @@ curl --request POST -H "Content-Type:application/json" --data '{"input":"sample 
 
 `func run` имеет указанные ниже параметры.
 
-| Параметр     | ОПИСАНИЕ                            |
+| Вариант     | Описание                            |
 | ------------ | -------------------------------------- |
 | **`--content -c`** | Встроенное содержимое. |
 | **`--debug -d`** | Подключение отладчика к хост-процессу перед выполнением функции.|
@@ -454,14 +454,14 @@ func azure functionapp publish <FunctionAppName>
 
 Следующие параметры публикации применяются к обеим версиям, 1. x и 2. x:
 
-| Параметр     | ОПИСАНИЕ                            |
+| Вариант     | Описание                            |
 | ------------ | -------------------------------------- |
 | **`--publish-local-settings -i`** |  Публикация параметров из файла local.settings.json в Azure с запросом на перезапись, если параметр уже существует. Если вы используете эмулятор хранения, сначала измените параметр приложения на [реальное подключение к хранилищу](#get-your-storage-connection-strings). |
 | **`--overwrite-settings -y`** | Отключите запрос на перезапись параметров приложения при использовании `--publish-local-settings -i`.|
 
 Следующие параметры публикации поддерживаются только в версии 2.x:
 
-| Параметр     | ОПИСАНИЕ                            |
+| Вариант     | Описание                            |
 | ------------ | -------------------------------------- |
 | **`--publish-settings-only -o`** |  Только публикует параметры и пропускает содержимое. Значение по умолчанию — запрос. |
 |**`--list-ignored-files`** | Отображает основанный на файле FUNCIGNORE список файлов, которые будут проигнорированы во время публикации. |
@@ -485,7 +485,7 @@ func deploy
 
 Для пользовательского контейнера доступны следующие параметры развертывания:
 
-| Параметр     | ОПИСАНИЕ                            |
+| Вариант     | Описание                            |
 | ------------ | -------------------------------------- |
 | **`--registry`** | Имя реестра Docker, в который вошел текущий пользователь. |
 | **`--platform`** | Платформа размещения для приложения-функции. Допустимые параметры: `kubernetes`. |
@@ -515,15 +515,15 @@ func deploy
 Для этого типа журналов потоковой передачи необходимо [включить интеграцию Application Insights](#enable-application-insights-integration) для приложения функции.   
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Основные инструменты службы "Функции Azure" [имеют открытый код и размещаются на GitHub](https://github.com/azure/azure-functions-cli).  
+Узнайте, как разрабатывать, тестировать и публиковать функции Azure с помощью Azure Functions Core Tools [модуль обучения майкрософт](https://docs.microsoft.com/learn/modules/develop-test-deploy-azure-functions-with-core-tools/) Azure functions Core Tools является [открытым исходным кодом и размещается на GitHub](https://github.com/azure/azure-functions-cli).  
 Чтобы зарегистрировать ошибку или отправить запрос на функцию, [откройте вопрос на GitHub](https://github.com/azure/azure-functions-cli/issues).
 
 <!-- LINKS -->
 
 [Основные инструменты службы "Функции Azure"]: https://www.npmjs.com/package/azure-functions-core-tools
-[портал Azure]: https://portal.azure.com 
+[Портал Azure]: https://portal.azure.com 
 [Node.js]: https://docs.npmjs.com/getting-started/installing-node#osx-or-windows
 [`FUNCTIONS_WORKER_RUNTIME`]: functions-app-settings.md#functions_worker_runtime
 [AzureWebJobsStorage]: functions-app-settings.md#azurewebjobsstorage
