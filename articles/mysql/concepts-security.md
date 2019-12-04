@@ -1,19 +1,19 @@
 ---
-title: Безопасность в базе данных Azure для MySQL — одиночный сервер
-description: Общие сведения о функциях безопасности в базе данных Azure для MySQL — один сервер.
+title: Безопасность — база данных Azure для MySQL
+description: Общие сведения о функциях безопасности в службе "база данных Azure для MySQL".
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 11/25/2019
-ms.openlocfilehash: 06f895d2e8cd7936141c9f35c5ed0c81fb7e3e15
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.date: 12/02/2019
+ms.openlocfilehash: 421604bcec5277d337b7e7f73a869f40fa73158a
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74485059"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74764973"
 ---
-# <a name="security-in-azure-database-for-mysql---single-server"></a>Безопасность в базе данных Azure для MySQL — одиночный сервер
+# <a name="security-in-azure-database-for-mysql"></a>Безопасность в Базе данных Azure для MySQL
 
 Существует несколько уровней безопасности, которые можно использовать для защиты данных на сервере базы данных Azure для MySQL. В этой статье описываются эти возможности безопасности.
 
@@ -50,5 +50,5 @@ ms.locfileid: "74485059"
 [Ведение журнала аудита](concepts-audit-logs.md) доступно для наблюдения за действиями в базах данных. 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Включение правил брандмауэра для [IP-адресов](concepts-firewall-rules.md) или [виртуальных сетей](concepts-data-access-and-security-vnet.md)

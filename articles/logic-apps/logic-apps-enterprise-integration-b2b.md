@@ -1,21 +1,19 @@
 ---
-title: Создание интеграции с предприятием B2B в Azure Logic Apps | Документация Майкрософт
+title: Создание интеграции B2B Enterprise
 description: Получение данных B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
 author: divyaswarnkar
 ms.author: divswa
-ms.reviewer: jonfan, estfan, LADocs
+ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
-ms.assetid: 20fc3722-6f8b-402f-b391-b84e9df6fcff
 ms.date: 07/08/2016
-ms.openlocfilehash: 05368f627c5e9482a43d5e30b0e16b1d47f6217c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 39966b8171296a8608b9436485f7682d114c8410
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60999182"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74793102"
 ---
 # <a name="receive-b2b-data-with-azure-logic-apps-and-enterprise-integration-pack"></a>Получение данных B2B с помощью Azure Logic Apps и Пакета интеграции Enterprise
 
@@ -109,5 +107,5 @@ ms.locfileid: "60999182"
 * Действия B2B упрощают создание партнеров и соглашений в учетной записи интеграции и их использование в приложениях логики.
 * Вы можете дополнительно расширить возможности приложения логики, настроив обмен данными с другими приложениями и службами, например Salesforce.
 
-## <a name="learn-more"></a>Подробнее
-[Обзор Пакета интеграции Enterprise](logic-apps-enterprise-integration-overview.md)
+## <a name="learn-more"></a>Дополнительные сведения
+[Дополнительные сведения о Пакете интеграции Enterprise](logic-apps-enterprise-integration-overview.md)

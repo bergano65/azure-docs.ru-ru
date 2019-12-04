@@ -1,20 +1,17 @@
 ---
-title: Добавление операторов switch в рабочие процессы с помощью Azure Logic Apps | Документация Майкрософт
+title: Добавление операторов switch в рабочие процессы
 description: Создание операторов switch, которые управляют действиями рабочего процесса на основе определенных значений в Azure Logic Apps
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/08/2018
-ms.openlocfilehash: 2a3f8ee5cba3110d392555fad78c1cb2513b5d4e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5c40feec2dca65e4bc9617a71a6d0a8e4c872a3a
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60683180"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74793231"
 ---
 # <a name="create-switch-statements-that-run-workflow-actions-based-on-specific-values-in-azure-logic-apps"></a>Создание операторов switch, которые запускают действия рабочего процесса на основе определенных значений в Azure Logic Apps
 
@@ -32,7 +29,7 @@ ms.locfileid: "60683180"
 
 * Чтобы выполнить действия, указанные в данной статье, [создайте этот пример приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md), используя учетную запись Outlook.com или Office 365 Outlook.
 
-  1. Когда вы добавляете действие для отправки электронной почты, найдите и выберите действие, вместо этого: **Отправить письмо с утверждением**
+  1. Когда вы добавляете действие для отправки сообщения, найдите и выберите действие **Send an approval email** (Отправить сообщение с утверждением)
 
      ![Выбор Send an approval email (Отправить сообщение с утверждением)](./media/logic-apps-control-flow-switch-statement/send-approval-email-action.png)
 
@@ -47,7 +44,7 @@ ms.locfileid: "60683180"
 
    Если вы хотите добавить оператор switch между шагами, наведите указатель мыши на стрелку, где его нужно добавить. Щелкните появившийся знак **плюс** ( **+** ), затем выберите **Добавить действие**.
 
-1. В поле поиска введите слово "switch" в качестве фильтра. Выбор действия **Параметр — элемент управления**
+1. В поле поиска введите слово "switch" в качестве фильтра. Выберите действие: **Switch — Элемент управления**
 
    ![Добавление switch](./media/logic-apps-control-flow-switch-statement/add-switch-statement.png)
 
@@ -66,7 +63,7 @@ ms.locfileid: "60683180"
 
 1. Добавьте следующие действия в соответствующие варианты:
 
-   | № варианта | **SelectedOption** | Действие |
+   | № варианта | **SelectedOption** | Действия |
    |--------|--------------------|--------|
    | Вариант 1 | **Утвердить** | Добавьте действие Outlook **Send an email** (Отправить сообщение), чтобы отправить сведения об элементе RSS только после того, как утверждающий выбрал **Утвердить**. |
    | Вариант 2 | **Отклонить** | Добавьте действие Outlook **Send an email** (Отправить сообщение), чтобы уведомить других утверждающих о том, что элемент RSS был отклонен. |

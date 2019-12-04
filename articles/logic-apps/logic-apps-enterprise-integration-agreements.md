@@ -1,20 +1,19 @@
 ---
-title: Соглашения для торговых партнеров — Azure Logic Apps
+title: Торговые партнерские соглашения
 description: Создавайте и управляйте соглашениями между торговыми партнерами с помощью Azure Logic Apps и Пакет интеграции Enterprise
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
 author: divyaswarnkar
 ms.author: divswa
-ms.reviewer: jonfan, estfan, LADocs
+ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 06/22/2019
-ms.openlocfilehash: 35ebaab47edd110258f537dbbb044387515ed6c4
-ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
+ms.openlocfilehash: 521a0ef4053be55e6c7322da5af26ccfc6c844e5
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72680416"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74790736"
 ---
 # <a name="create-and-manage-trading-partner-agreements-in-azure-logic-apps"></a>Создавайте торговые партнерские соглашения и управляйте ими в Azure Logic Apps
 
@@ -29,7 +28,7 @@ ms.locfileid: "72680416"
 
 Сведения о создании соглашений для обмена сообщениями RosettaNet см. в разделе [Exchange RosettaNet messages](../logic-apps/logic-apps-enterprise-integration-rosettanet.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -41,7 +40,7 @@ ms.locfileid: "72680416"
 
 ## <a name="create-agreements"></a>Создание соглашений
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 В главном меню Azure выберите **Все службы**. В поле поиска введите "Интеграция" в качестве фильтра. В результатах выберите этот ресурс: **учетные записи интеграции** .
 
    ![Поиск учетной записи интеграции](./media/logic-apps-enterprise-integration-agreements/find-integration-accounts.png)
@@ -58,14 +57,14 @@ ms.locfileid: "72680416"
 
    ![Кнопка "Добавить"](./media/logic-apps-enterprise-integration-agreements/agreement-2.png)
 
-   | Свойство | обязательные | Значение | ОПИСАНИЕ |
+   | Свойство | Обязательно для заполнения | Value | Описание |
    |----------|----------|-------|-------------|
-   | **имя** | Yes | <*имя соглашения*> | Имя соглашения |
-   | **Тип соглашения** | Yes | **AS2**, **X12**или **EDIFACT** | Тип протокола для вашего соглашения. При создании файла соглашения содержимое этого файла должно соответствовать типу соглашения. | |  
-   | **Главный партнер** | Yes | <*Host-Partner-name*> | Главный партнер представляет организацию, в которой указано соглашение. |
-   | **Удостоверение узла** | Yes | <*узел-участник — идентификатор*> | Идентификатор партнера узла |
-   | **Гостевой партнер** | Yes | <*гость-Partner-name*> | Гостевой партнер представляет организацию, у которой есть деловые отношения с главным партнером. |
-   | **Удостоверение гостя** | Yes | <*гостевой партнер — идентификатор*> | Идентификатор гостевого партнера |
+   | **Имя** | ДА | <*имя соглашения*> | Имя соглашения |
+   | **Тип соглашения** | ДА | **AS2**, **X12**или **EDIFACT** | Тип протокола для вашего соглашения. При создании файла соглашения содержимое этого файла должно соответствовать типу соглашения. | |  
+   | **Главный партнер** | ДА | <*Host-Partner-name*> | Главный партнер представляет организацию, в которой указано соглашение. |
+   | **Удостоверение узла** | ДА | <*узел-участник — идентификатор*> | Идентификатор партнера узла |
+   | **Гостевой партнер** | ДА | <*гость-Partner-name*> | Гостевой партнер представляет организацию, у которой есть деловые отношения с главным партнером. |
+   | **Удостоверение гостя** | ДА | <*гостевой партнер — идентификатор*> | Идентификатор гостевого партнера |
    | **Параметры получения** | Varies | Varies | Эти свойства определяют, как главный партнер получает все входящие сообщения от гостевого партнера в соглашении. Дополнительные сведения см. в соответствующем типе соглашения: <p>[Параметры сообщений - AS2](../logic-apps/logic-apps-enterprise-integration-as2-message-settings.md) <br>[Параметры сообщения - EDIFACT](logic-apps-enterprise-integration-edifact.md) <br>[Параметры сообщения - X12](logic-apps-enterprise-integration-x12.md) |
    | **Параметры отправки** | Varies | Varies | Эти свойства определяют, как главный партнер отправляет все исходящие сообщения гостевому партнеру в рамках соглашения. Дополнительные сведения см. в соответствующем типе соглашения: <p>[Параметры сообщений - AS2](../logic-apps/logic-apps-enterprise-integration-as2-message-settings.md) <br>[Параметры сообщения - EDIFACT](logic-apps-enterprise-integration-edifact.md) <br>[Параметры сообщения - X12](logic-apps-enterprise-integration-x12.md) |
    |||||
@@ -102,7 +101,7 @@ ms.locfileid: "72680416"
 
 1. Подтвердите удаление соглашения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обмен сообщениями AS2](logic-apps-enterprise-integration-as2.md)
 * [Обмен сообщениями EDIFACT](logic-apps-enterprise-integration-edifact.md)

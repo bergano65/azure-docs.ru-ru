@@ -1,17 +1,17 @@
 ---
-title: Сведения о непрерывности бизнес-процессов в базе данных Azure для MariaDB
+title: Непрерывность бизнес-процессов — база данных Azure для MariaDB
 description: Сведения о непрерывности бизнес-процессов (восстановление на момент времени, сбой центра обработки данных, геовосстановление) при использовании службы "база данных Azure для MariaDB".
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: d364c3a5fafaca514baade25cd3f5b4c0f10dc26
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.date: 12/02/2019
+ms.openlocfilehash: 76e749b26be5a5204b247d294f26da169f84094c
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71973607"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74773023"
 ---
 # <a name="understand-business-continuity-in-azure-database-for-mariadb"></a>Сведения о непрерывности бизнес-процессов в базе данных Azure для MariaDB
 
@@ -48,7 +48,7 @@ ms.locfileid: "71973607"
 > [!IMPORTANT]
 > Геовосстановление возможно только в том случае, если сервер был подготовлен с геоизбыточным хранилищем резервных копий.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об автоматическом создании резервных копий см. в статье о [резервном копировании в службе "База данных Azure для MariaDB"](concepts-backup.md).
 - Сведения о восстановлении базы данных до точки во времени с помощью портала Azure см. в  [этой статье](howto-restore-server-portal.md).

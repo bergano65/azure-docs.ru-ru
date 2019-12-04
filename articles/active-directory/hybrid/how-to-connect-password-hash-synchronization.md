@@ -15,12 +15,12 @@ ms.author: billmath
 search.appverid:
 - MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e77368c7c0c104e777595a16735a7cf1e797a48
-ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
+ms.openlocfilehash: dfb4b7d2cb34855208eb54c6d30b29e4bbff636b
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539019"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74766622"
 ---
 # <a name="implement-password-hash-synchronization-with-azure-ad-connect-sync"></a>Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
 В этой статье содержатся сведения о том, как синхронизировать пароли пользователей локального экземпляра службы Active Directory (AD) и облачного экземпляра службы Azure Active Directory (Azure AD).
@@ -123,13 +123,9 @@ Azure AD поддерживает отдельную политику срока
   
 Функция временного пароля позволяет гарантировать, что перенаправление владения учетными данными выполняется при первом использовании, чтобы снизить время, в течение которого несколько человек имеют знания об этих учетных данных.
 
-Для поддержки временных паролей в Azure AD для синхронизированных пользователей можно включить функцию *форцепассвордресетонлогонфеатуре* , выполнив следующую команду на сервере Azure AD Connect, заменив <AAD Connector Name> именем соединителя, характерным для вашей среды:
+Для поддержки временных паролей в Azure AD для синхронизированных пользователей можно включить функцию *форцепассвордресетонлогонфеатуре* , выполнив следующую команду на сервере Azure AD Connect:
 
-`Set-ADSyncAADCompanyFeature -ConnectorName "<AAD Connector name>" -ForcePasswordResetOnLogonFeature $true`
-
-Для определения имени соединителя можно использовать следующую команду:
-
-`(Get-ADSyncConnector | where{$_.ListName -eq "Windows Azure Active Directory (Microsoft)"}).Name`
+`Set-ADSyncAADCompanyFeature  -ForcePasswordResetOnLogonFeature $true`
 
 Предостережение. Принудительное изменение пароля при следующем входе в систему требует смены пароля.  AD Connect не установит флаг принудительной смены пароля самостоятельно, он дойдет до обнаруженной смены пароля, которая происходит во время синхронизации хэша паролей.
 

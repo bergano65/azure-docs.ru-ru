@@ -11,15 +11,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
-ms.date: 08/05/2019
+ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 06d7b7abe7741c465f3d40a90340e03b2c24f258
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 0aa2cbad75319de93c34128a09f94971e5c70216
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/03/2019
-ms.locfileid: "74707504"
+ms.locfileid: "74790610"
 ---
 # <a name="change-the-license-model-for-a-sql-server-virtual-machine-in-azure"></a>Изменение модели лицензирования для SQL Server виртуальной машины в Azure
 В этой статье описывается, как изменить модель лицензии для SQL Server виртуальной машины в Azure с помощью нового поставщика ресурсов виртуальной машины SQL ( **Microsoft. склвиртуалмачине**).
@@ -95,29 +95,16 @@ az sql vm update -n <VMName> -g <ResourceGroupName> --license-type PAYG
 
 ```powershell-interactive
 # Switch your SQL Server VM license from pay-as-you-go to bring-your-own
-#example: $SqlVm = Get-AzResource -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines -ResourceGroupName AHBTest -ResourceName AHBTest
-$SqlVm = Get-AzResource -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines -ResourceGroupName <resource_group_name> -ResourceName <VM_name>
-$SqlVm.Properties.sqlServerLicenseType="AHUB"
-<# the following code snippet is only necessary if using Azure Powershell version > 4
-$SqlVm.Kind= "LicenseChange"
-$SqlVm.Plan= [Microsoft.Azure.Management.ResourceManager.Models.Plan]::new()
-$SqlVm.Sku= [Microsoft.Azure.Management.ResourceManager.Models.Sku]::new() #>
-$SqlVm | Set-AzResource -Force 
+Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -LicenseType AHUB
 ```
 
 В следующем фрагменте кода переключается модель лицензирования с оплатой по мере использования:
 
 ```powershell-interactive
 # Switch your SQL Server VM license from bring-your-own to pay-as-you-go
-#example: $SqlVm = Get-AzResource -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines -ResourceGroupName AHBTest -ResourceName AHBTest
-$SqlVm = Get-AzResource -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines -ResourceGroupName <resource_group_name> -ResourceName <VM_name>
-$SqlVm.Properties.sqlServerLicenseType="PAYG"
-<# the following code snippet is only necessary if using Azure Powershell version > 4
-$SqlVm.Kind= "LicenseChange"
-$SqlVm.Plan= [Microsoft.Azure.Management.ResourceManager.Models.Plan]::new()
-$SqlVm.Sku= [Microsoft.Azure.Management.ResourceManager.Models.Sku]::new() #>
-$SqlVm | Set-AzResource -Force 
+Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -LicenseType PAYG
 ```
+
 ---
 
 ## <a name="change-the-license-for-vms-not-registered-with-the-resource-provider"></a>Изменение лицензии для виртуальных машин, не зарегистрированных в поставщике ресурсов
@@ -138,44 +125,29 @@ $SqlVm | Set-AzResource -Force
 
 ## <a name="limitations"></a>Ограничения
 
-- Изменение модели лицензии доступно только клиентам, имеющим участие в программе Software Assurance.
-- Изменение модели лицензии поддерживается только для выпусков Standard и Enterprise SQL Server. Изменения лицензий для Express, Web и Developer не поддерживаются. 
-- Изменение модели лицензии поддерживается только для виртуальных машин, развернутых с помощью модели Azure Resource Manager. Виртуальные машины, развернутые с помощью классической модели, не поддерживаются. Вы можете перенести виртуальную машину из классической модели в модель диспетчер ресурсов и зарегистрировать ее с помощью поставщика ресурсов виртуальной машины SQL. После регистрации виртуальной машины в поставщике ресурсов виртуальной машины SQL на виртуальной машине будут доступны изменения модели лицензии.
-- Изменение модели лицензии включено только для установок общедоступного облака.
-- Изменение модели лицензии поддерживается только на виртуальных машинах с одним сетевым АДАПТЕРом (сетевой интерфейс). На виртуальных машинах, имеющих несколько сетевых интерфейсов, сначала необходимо удалить одну из сетевых карт (с помощью портал Azure), прежде чем выполнять процедуру. В противном случае вы получите сообщение об ошибке следующего вида: 
-   
-  `The virtual machine '\<vmname\>' has more than one NIC associated.` 
-   
-  Хотя вы можете добавить сетевой адаптер обратно к виртуальной машине после изменения модели лицензии, операции, выполненные на странице настройки SQL Server в портал Azure, например автоматическое исправление и резервное копирование, больше не будут считаться поддерживаемыми.
+Изменение модели лицензии:
+   - Доступно только для клиентов с [Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-overview).
+   - Поддерживается только для выпусков Standard и Enterprise SQL Server. Изменения лицензий для Express, Web и Developer не поддерживаются. 
+   - Поддерживается только для виртуальных машин, развернутых с помощью модели Azure Resource Manager. Виртуальные машины, развернутые с помощью классической модели, не поддерживаются. 
+   - Доступно только для установок общедоступного облака. 
+   - Поддерживается только на виртуальных машинах с одним сетевым интерфейсом (NIC). 
+
 
 ## <a name="known-errors"></a>Известные ошибки
 
 ### <a name="the-resource-microsoftsqlvirtualmachinesqlvirtualmachinesresource-group-under-resource-group-resource-group-was-not-found"></a>Ресурс "Microsoft. Склвиртуалмачине/Склвиртуалмачинес/\<Resource-Group >" в группе ресурсов "\<ресурс-группа >" не найден.
+
 Эта ошибка возникает при попытке изменить модель лицензии на SQL Server виртуальной машине, которая не зарегистрирована в поставщике ресурсов виртуальной машины SQL:
 
 `The Resource 'Microsoft.SqlVirtualMachine/SqlVirtualMachines/\<resource-group>' under resource group '\<resource-group>' was not found. The property 'sqlServerLicenseType' cannot be found on this object. Verify that the property exists and can be set.`
 
 Вам потребуется зарегистрировать подписку в поставщике ресурсов, а затем [зарегистрировать SQL Server виртуальную машину с помощью поставщика ресурсов](virtual-machines-windows-sql-register-with-resource-provider.md). 
 
-### <a name="cannot-validate-argument-on-parameter-sku"></a>Не удается проверить аргумент в параметре "Sku"
-Эта ошибка может возникать при попытке изменить модель лицензии SQL Server виртуальной машины с помощью Azure PowerShell версий, более поздних, чем 4,0:
 
-`Set-AzResource: Cannot validate argument on parameter 'Sku'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.`
+## <a name="the-virtual-machine-vmname-has-more-than-one-nic-associated"></a>С виртуальной машиной "\<vmname\>" связано более одной сетевой карты.
 
-Чтобы устранить эту ошибку, раскомментируйте эти строки в приведенном выше фрагменте кода PowerShell при переключении модели лицензии:
+Эта ошибка возникает на виртуальных машинах, имеющих более одного сетевого адаптера. Удалите одну из сетевых карт перед изменением модели лицензирования. Хотя сетевую карту можно добавить обратно в виртуальную машину после изменения модели лицензирования, операции в портал Azure, такие как автоматическое резервное копирование и установка исправлений, больше не будут поддерживаться. 
 
-  ```powershell-interactive
-  # the following code snippet is necessary if using Azure Powershell version > 4
-  $SqlVm.Kind= "LicenseChange"
-  $SqlVm.Plan= [Microsoft.Azure.Management.ResourceManager.Models.Plan]::new()
-  $SqlVm.Sku= [Microsoft.Azure.Management.ResourceManager.Models.Sku]::new()
-  ```
-  
-Чтобы проверить версию Azure PowerShell, используйте следующий код:
-  
-  ```powershell-interactive
-  Get-Module -ListAvailable -Name Azure -Refresh
-  ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

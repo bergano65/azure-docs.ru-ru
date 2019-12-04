@@ -1,20 +1,17 @@
 ---
-title: Установка локального шлюза данных — Azure Logic Apps
+title: Установка локального шлюза данных
 description: Чтобы получить доступ к данным в локальной среде из Azure Logic Apps, нужно скачать и установить локальный шлюз данных.
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: arthii, LADocs
+ms.reviewer: arthii, logicappspm
 ms.topic: article
 ms.date: 11/06/2019
-ms.openlocfilehash: e1e56d18b0874a724849e28092ed46892a1b5519
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 9f933a9ad63af11bcfee7c90f17318f5a237b962
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74326376"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74792093"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
@@ -29,7 +26,7 @@ ms.locfileid: "74326376"
 
 <a name="requirements"></a>
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * Учетная запись и подписка Azure. Если у вас нет учетной записи Azure с подпиской, зарегистрируйтесь, чтобы [получить бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 
@@ -51,7 +48,7 @@ ms.locfileid: "74326376"
 
   **Минимальные требования**
 
-  * .NET Framework 4.7.2
+  * .NET Framework 4.7.2.
   * 64-разрядная версия Windows 7 или Windows Server 2008 R2 (или более поздняя версия).
 
   **Рекомендуемые требования**
@@ -276,7 +273,7 @@ ms.locfileid: "74326376"
 * [Устранение неполадок локального шлюза данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-tshoot)
 * [Мониторинг и оптимизация производительности шлюза](https://docs.microsoft.com/data-integration/gateway/service-gateway-performance)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подключение к локальным данным из приложений логики](../logic-apps/logic-apps-gateway-connection.md)
 * [Возможности интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md)

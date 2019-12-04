@@ -1,17 +1,17 @@
 ---
-title: Подключение приложений к базе данных Azure для MariaDB
+title: Строки подключения — база данных Azure для MariaDB
 description: В этом документе перечислены все поддерживаемые в настоящее время строки подключения приложений к базе данных Azure для MariaDB, включая ADO.NET (C#), JDBC, Node.js, ODBC, PHP, Python и Ruby.
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: 70cd25ff63101fa2a477cde2502d5d286b289366
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 12/02/2019
+ms.openlocfilehash: 1b598385d533b3fc157a7a90ecc34c3cb18df4ac
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61039684"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74767285"
 ---
 # <a name="how-to-connect-applications-to-azure-database-for-mariadb"></a>Подключение приложений к базе данных Azure для MariaDB
 В этой статье перечислены типы строк подключения, поддерживаемые базой данных Azure для MariaDB, а также шаблоны и примеры. Строка подключения может содержать различные параметры и настройки.
@@ -62,7 +62,7 @@ client = Mysql2::Client.new(username: "{username@servername}", password: {your_p
 ```
 
 ## <a name="get-the-connection-string-details-from-the-azure-portal"></a>Получение сведений о строке подключения на портале Azure
-На [портале Azure](https://portal.azure.com) перейдите к серверу базы данных Azure для MariaDB и щелкните **Строки подключения**, чтобы получить список строк для своего экземпляра: ![Область строк подключения на портале Azure](./media/howto-connection-strings/connection-strings-on-portal.png).
+На [портале Microsoft Azure](https://portal.azure.com) перейдите к своему серверу базы данных Azure для MariaDB и щелкните **Строки подключения**, чтобы получить список строк для своего экземпляра: ![область строк подключения на портале Microsoft Azure](./media/howto-connection-strings/connection-strings-on-portal.png)
 
 Строка содержит такие сведения, как драйвер, сервер и другие параметры подключения к базе данных. Измените эти примеры, чтобы использовать собственные параметры, такие как имя базы данных, пароль и т. д. Тогда вы сможете использовать эту строку для подключения к серверу из своего кода и приложений.
 

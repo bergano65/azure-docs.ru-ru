@@ -1,19 +1,19 @@
 ---
-title: 'Оптимизировать операции массовой вставки в базу данных Azure для PostgreSQL: один сервер'
-description: 'В этой статье описывается, как можно оптимизировать операции массовой вставки для базы данных Azure для PostgreSQL: один сервер.'
+title: Оптимизация операций вставки в базу данных Azure для PostgreSQL — один сервер
+description: В этой статье описывается, как оптимизировать операции с массовыми вставками в базе данных Azure для PostgreSQL-Single Server.
 author: dianaputnam
 ms.author: dianas
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: c1ae29f7c498a79af09aaaf6d7aeae29561aa500
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4c4bac16917be0064ebb111328753d378d462a2a
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65067034"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74770141"
 ---
-# <a name="optimize-bulk-inserts-and-use-transient-data-on-an-azure-database-for-postgresql---single-server"></a>Оптимизировать операции массовой вставки и использовать временных данных на базе данных Azure для PostgreSQL: один сервер 
+# <a name="optimize-bulk-inserts-and-use-transient-data-on-an-azure-database-for-postgresql---single-server"></a>Оптимизация операций вставки и использования временных данных в базе данных Azure для PostgreSQL — один сервер 
 В этой статье описывается оптимизация операций массовой вставки и использование временных данных на сервере службы "База данных Azure для PostgreSQL".
 
 ## <a name="use-unlogged-tables"></a>Использование нерегистрируемых таблиц

@@ -1,17 +1,17 @@
 ---
-title: Журналы в базе данных Azure для PostgreSQL — один сервер
-description: Основные сведения о конфигурации ведения журнала, хранении и анализе в базе данных Azure для PostgreSQL — один сервер
+title: Журналы — база данных Azure для PostgreSQL — один сервер
+description: Описание конфигурации ведения журнала, хранилища и анализа в базе данных Azure для PostgreSQL — Single Server
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/25/2019
-ms.openlocfilehash: 9e8b1d08e950849773c9d8413c3ba4188d257d5b
-ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+ms.openlocfilehash: 87f79f0ed21ec1f6a550c47f9f60d18511883300
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72965931"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74768220"
 ---
 # <a name="logs-in-azure-database-for-postgresql---single-server"></a>Журналы в базе данных Azure для PostgreSQL — один сервер
 База данных Azure для PostgreSQL позволяет настраивать и получать доступ к стандартным журналам postgres. Журналы могут использоваться для обнаружения, устранения и исправления ошибок конфигурации и неоптимальной производительности. Сведения о ведении журнала, которые можно настроить и получить доступ, включают ошибки, сведения о запросах, записи автоочистки, подключения и контрольные точки. (Доступ к журналам транзакций недоступен).

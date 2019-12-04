@@ -1,24 +1,21 @@
 ---
-title: Подключение к Google Диск с помощью Azure Logic Apps | Документация Майкрософт
+title: Подключение к Google Drive
 description: Создавайте файлы и управляйте ими с помощью интерфейсов REST API Google Диск и Azure Logic Apps.
-author: ecfan
-manager: jeconnoc
-ms.author: estfan
-ms.date: 11/07/2016
-ms.topic: article
-ms.service: logic-apps
 services: logic-apps
-ms.reviewer: klam, LADocs
 ms.suite: integration
+ms.reviewer: klam, logicappspm
+ms.topic: article
+ms.date: 11/07/2016
 tags: connectors
-ms.openlocfilehash: 43bd5248f1bb80c71a85935c585deac6152be78b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6310c3b7e5b84915fa336708bc702e94317ad04c
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62105095"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74789718"
 ---
 # <a name="get-started-with-the-google-drive-connector"></a>Начало работы с соединителем Google-диска
+
 Подключитесь к Google-диску, чтобы создавать файлы, получать строки и выполнять множество других действий. С помощью Google-диска вы можете: 
 
 * формировать бизнес-процессы на основе данных, получаемых в результате поиска; 
@@ -27,11 +24,10 @@ ms.locfileid: "62105095"
 Для начала можно создать приложение логики, как описано [здесь](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
 ## <a name="create-the-connection-to-google-drive"></a>Создание подключения к Google-диску
+
 При добавлении соединителя в приложения логики эти приложения необходимо авторизовать для подключения к Google-диску.
 
 > [!INCLUDE [Steps to create a connection to googledrive](../../includes/connectors-create-api-googledrive.md)]
-> 
-> 
 
 После создания подключения укажите свойства Google-диска, такие как путь к папке или имя файла. 
 
@@ -40,4 +36,5 @@ ms.locfileid: "62105095"
 Информацию о существующих ограничениях, а также о триггерах и действиях, определенных в Swagger, см. в статье со [сведениями о соединителях](/connectors/googledrive/).
 
 ## <a name="more-connectors"></a>Дополнительные сведения о соединителях
+
 Вы можете вернуться к [списку интерфейсов API](apis-list.md).

@@ -1,21 +1,18 @@
 ---
-title: Подключение к Box — Azure Logic Apps
+title: Подключить к Box
 description: Создавайте файлы и управляйте ими с помощью интерфейсов REST API Box и Azure Logic Apps.
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 11/07/2016
 tags: connectors
-ms.openlocfilehash: 5fbc64194182c41a70eb27a4049234973c39fffe
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 38e061e918d445de07961af1789891f44c59090a
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70050933"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74789864"
 ---
 # <a name="create-and-manage-files-in-box-with-azure-logic-apps"></a>Создание файлов в Box и управление ими с помощью Azure Logic Apps
 
@@ -30,7 +27,7 @@ ms.locfileid: "70050933"
   Когда эти действия получают ответ, они делают выходные данные доступными для использования другими действиями. 
   Например, при изменении файла в Box можно отправить измененный файл по электронной почте с помощью Office 365.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Учетная запись [Box](https://www.box.com/home).
 
@@ -43,8 +40,8 @@ ms.locfileid: "70050933"
 
 ## <a name="connector-reference"></a>Справочник по соединителям
 
-Для получения технических сведений, таких как триггеры, действия и ограничения, как описано в файле OpenAPI (ранее Swagger) соединителя, см. [страницу справочника](/connectors/box/)по соединителю.
+Для получения технических сведений, таких как триггеры, действия и ограничения, как описано в файле OpenAPI (ранее Swagger) соединителя, см. [страницу справочника по соединителю](/connectors/box/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

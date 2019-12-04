@@ -1,21 +1,19 @@
 ---
-title: Проверка XML со схемами в Azure Logic Apps | Документация Майкрософт
+title: Проверка XML с помощью схем
 description: Добавление схем, которые проверяют документы XML в Azure Logic Apps с помощью Пакета интеграции Enterprise
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
 author: divyaswarnkar
 ms.author: divswa
-ms.reviewer: jonfan, estfan, LADocs
+ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
-ms.assetid: 56c5846c-5d8c-4ad4-9652-60b07aa8fc3b
 ms.date: 02/06/2019
-ms.openlocfilehash: 3cca995b353b88cc481cbda68df4211a724f7f09
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6cde620b4949da8a6cff4ad89a863c80f0514f1c
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60846371"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74792405"
 ---
 # <a name="validate-xml-with-schemas-in-azure-logic-apps-with-enterprise-integration-pack"></a>Проверка XML с помощью схем в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
@@ -46,7 +44,7 @@ ms.locfileid: "60846371"
 
     * [Скачайте и установите версию Azure Storage Explorer](https://www.storageexplorer.com/) для рабочего стола. 
     Затем подключите Обозреватель службы хранилища к учетной записи хранения, следуя шагам из статьи [Начало работы с Обозревателем службы хранилища](../vs-azure-tools-storage-manage-with-storage-explorer.md). 
-    Дополнительные сведения см. в статье [ Краткое руководство. Использование Обозревателя службы хранилища Azure для создания большого двоичного объекта в хранилище объекта](../storage/blobs/storage-quickstart-blobs-storage-explorer.md).
+    Дополнительные сведения см. в разделе [Краткое руководство. Создание большого двоичного объекта в хранилище объектов с помощью обозреватель службы хранилища Azure](../storage/blobs/storage-quickstart-blobs-storage-explorer.md).
 
 Приложение логики при создании и добавлении схем не требуется. Чтобы использовать схему, приложению логики необходимо связаться с учетной записью интеграции, в которой хранится эта схема. Узнайте, как [связать приложения логики с учетными записями интеграции](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md#link-account). Если у вас еще нет приложения логики, узнайте, как [его создать](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
@@ -54,7 +52,7 @@ ms.locfileid: "60846371"
 
 1. Войдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> с помощью учетных данных учетной записи Azure.
 
-1. Чтобы найти и открыть учетную запись интеграции, в главном меню Azure выберите **Все службы**. В поле поиска введите "учетная запись интеграции". Щелкните **Учетные записи интеграции**.
+1. Чтобы найти и открыть учетную запись интеграции, в главном меню Azure выберите **Все службы**. В поле поиска введите "учетная запись интеграции". Выберите **Учетные записи интеграции**.
 
    ![Поиск учетной записи интеграции](./media/logic-apps-enterprise-integration-schemas/find-integration-account.png)
 
@@ -89,7 +87,7 @@ ms.locfileid: "60846371"
 
 ### <a name="add-schemas-more-than-2-mb"></a>Добавление схем более 2 МБ
 
-Чтобы добавить объемные схемы, отправьте свою схему в контейнер больших двоичных объектов в учетной записи хранения Azure. Ваши действия по добавлению схемы зависят от ли контейнер больших двоичных объектов имеет общий доступ на чтение. Поэтому сначала проверьте, имеет ли контейнер больших двоичных объектов общий доступ на чтение, сделав следующее: [Настройка уровня общего доступа для контейнера больших двоичных объектов](../vs-azure-tools-storage-explorer-blobs.md#set-the-public-access-level-for-a-blob-container)
+Чтобы добавить объемные схемы, отправьте свою схему в контейнер больших двоичных объектов в учетной записи хранения Azure. Действия по добавлению схем различаются в зависимости от того, имеет ли контейнер больших двоичных объектов общий доступ на чтение. Сначала проверьте, имеет ли ваш контейнер больших двоичных объектов общий доступ на чтение, выполнив следующие действия: [Установка общего уровня доступа для контейнера больших двоичных объектов](../vs-azure-tools-storage-explorer-blobs.md#set-the-public-access-level-for-a-blob-container)
 
 #### <a name="check-container-access-level"></a>Проверка уровня доступа к контейнеру
 
@@ -99,11 +97,11 @@ ms.locfileid: "60846371"
 
 1. В контекстном меню контейнера больших двоичных объектов выберите **Set Public Access Level** (Настроить уровень общего доступа).
 
-   * Если контейнер больших двоичных объектов имеет по крайней мере общий доступ, выберите **Отменить** и выполните указанные ниже на странице шаги: [Отправка в контейнеры с общим доступом](#public-access)
+   * Если у контейнера больших двоичных объектов есть по крайней мере открытый доступ, нажмите **кнопку Отмена**и выполните следующие действия далее на этой странице: [Отправка в контейнеры с открытым доступом](#public-access)
 
      ![Открытый доступ](media/logic-apps-enterprise-integration-schemas/azure-blob-container-public-access.png)
 
-   * Если в контейнере больших двоичных объектов нет общего доступа, щелкните **Отменить** и следуйте указанным шагам на этой странице: [Отправка в контейнеры без общего доступа](#public-access)
+   * Если контейнер больших двоичных объектов не имеет общего доступа, нажмите кнопку **Отмена**и выполните следующие действия далее на этой странице: [Отправка в контейнеры без общего доступа](#public-access)
 
      ![Без открытого доступа](media/logic-apps-enterprise-integration-schemas/azure-blob-container-no-public-access.png)
 

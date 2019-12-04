@@ -1,17 +1,17 @@
 ---
-title: анализ производительности запросов в базе данных Azure для MySQL
+title: Анализ производительности запросов — База данных Azure для MySQL
 description: В этой статье описывается функция анализ производительности запросов в базе данных Azure для MySQL.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: 38299a8ffd72722c2d2c1dda9227b7fbf76c0386
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.date: 12/02/2019
+ms.openlocfilehash: 762353cbc276eb78868c46bbfde4789e792f6d85
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73603114"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74775994"
 ---
 # <a name="query-performance-insight-in-azure-database-for-mysql"></a>анализ производительности запросов в базе данных Azure для MySQL
 
@@ -19,7 +19,7 @@ ms.locfileid: "73603114"
 
 Этот компонент помогает быстро определить наиболее медленно выполняющиеся запросы, их изменение со временем и ожидания каких действий влияют на них.
 
-## <a name="common-scenarios"></a>Распространенные сценарии
+## <a name="common-scenarios"></a>Стандартные сценарии
 
 ### <a name="long-running-queries"></a>Долго выполняющиеся запросы
 
@@ -35,7 +35,7 @@ ms.locfileid: "73603114"
 
 Чтобы просматривать текст запросов в анализе производительности запросов, требуются разрешения **Владельца** или **Участника**. **Модуль чтения** может просматривать графики и таблицы, но не текст запросов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы компонент "Анализ производительности запросов" работал, данные должны находиться в [хранилище запросов](concepts-query-store.md).
 

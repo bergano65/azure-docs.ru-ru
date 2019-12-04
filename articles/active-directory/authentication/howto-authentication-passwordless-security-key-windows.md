@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/21/2019
+ms.date: 12/02/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5343387da7b2027e1071b19be826e329494cdd3e
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 05230e39175e71f4eec2c99cd6cbd2f44f05df30
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74452945"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74766367"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-windows-10-devices-preview"></a>Включение входа с помощью ключа безопасности без пароля на устройствах Windows 10 (Предварительная версия)
 
@@ -56,7 +56,7 @@ ms.locfileid: "74452945"
 Организации могут использовать один или несколько из следующих методов, чтобы включить использование ключей безопасности для входа в Windows в соответствии с требованиями Организации.
 
 - [Включение с помощью Intune](#enable-with-intune)
-   - [Целевое развертывание Intune](#targeted-intune-deployment)
+- [Целевое развертывание Intune](#targeted-intune-deployment)
 - [Включить с помощью пакета подготовки](#enable-with-a-provisioning-package)
 
 ### <a name="enable-with-intune"></a>Включение с помощью Intune
@@ -67,7 +67,7 @@ ms.locfileid: "74452945"
 
 Настройка ключей безопасности для входа в систему не зависит от настройки Windows Hello для бизнеса.
 
-#### <a name="targeted-intune-deployment"></a>Целевое развертывание Intune
+### <a name="targeted-intune-deployment"></a>Целевое развертывание Intune
 
 Чтобы включить поставщик учетных данных для конкретных групп устройств, используйте следующие пользовательские параметры через Intune.
 
@@ -94,7 +94,7 @@ ms.locfileid: "74452945"
 1. Запустите конструктор конфигураций Windows.
 1. Выберите **файл** > **Новый проект**.
 1. Присвойте проекту имя и запишите путь, по которому создан проект.
-1. Нажмите кнопку **Далее**.
+1. Щелкните **Далее**.
 1. Оставьте выбранный в качестве **рабочего процесса проекта** **пакет подготовки** и нажмите кнопку **Далее**.
 1. Выберите **все выпуски Windows Desktop** в разделе **Выбор параметров для просмотра и настройки** и нажмите кнопку **Далее**.
 1. Выберите **Готово**.
@@ -155,7 +155,7 @@ ms.locfileid: "74452945"
 
 Вы можете удалить ключи из портал Azure, перейдя на страницу сведений о безопасности и удалив ключ безопасности.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о регистрации устройств](../devices/overview.md)
 

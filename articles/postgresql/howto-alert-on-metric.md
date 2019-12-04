@@ -1,19 +1,19 @@
 ---
-title: Настройка оповещений на основе метрик для базы данных Azure для PostgreSQL - отдельного сервера на портале Azure
-description: 'Этой статье описываются способы настройки и доступа оповещения метрик для базы данных Azure для PostgreSQL: один сервер на портале Azure.'
+title: Настройка оповещений. портал Azure. база данных Azure для PostgreSQL — один сервер
+description: В этой статье описывается, как настроить оповещения метрик для базы данных Azure для PostgreSQL-Single Server и получить доступ к ним из портал Azure.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: 000dfe2d3e594c71f9c7ebbff7bce7141243668a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fe099dcb49d176d27466c08749a5873904d1ae2f
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65067299"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74766843"
 ---
-# <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-postgresql---single-server"></a>Настройка оповещений на основе метрик для базы данных Azure для PostgreSQL — один сервер с помощью портала Azure
+# <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-postgresql---single-server"></a>Используйте портал Azure, чтобы настроить оповещения о метриках для базы данных Azure для PostgreSQL — один сервер.
 
 В этой статье показано, как настроить оповещения для базы данных Azure для PostgreSQL с помощью портала Azure. Вы можете получать оповещения на основе метрик мониторинга для служб Azure.
 
@@ -25,8 +25,8 @@ ms.locfileid: "65067299"
 * вызов веб-перехватчика.
 
 Для настройки правил генерации оповещений и получения сведений о них можно использовать:
-* [портал Azure](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
-* [Интерфейс командной строки Azure](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
+* [Портал Azure](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
+* [Azure CLI](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
 * [Azure Monitor REST API](https://docs.microsoft.com/rest/api/monitor/metricalerts)
 
 ## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Создание правила генерации оповещений на основе метрики на портале Azure

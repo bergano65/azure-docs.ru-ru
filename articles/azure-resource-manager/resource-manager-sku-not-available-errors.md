@@ -3,12 +3,12 @@ title: Ошибки недоступности SKU
 description: В этой статье описывается, как устранить ошибку недоступности номера SKU при развертывании ресурсов с помощью Azure Resource Manager.
 ms.topic: troubleshooting
 ms.date: 10/19/2018
-ms.openlocfilehash: 56afca6b6a59ca08f3fd59c4d9b3ebf12bda415a
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 0b3696d3207a88d87b11e65f4697473963f960d5
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74150491"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74769155"
 ---
 # <a name="resolve-errors-for-sku-not-available"></a>Устранение ошибок, связанных с недоступностью номера SKU
 
@@ -29,6 +29,8 @@ for subscription '<subscriptionID>'. Please try another tier or deploy to a diff
 ## <a name="cause"></a>Причина:
 
 Эта ошибка возникает, когда выбранный номер SKU ресурса (например, размер виртуальной машины) не доступен для указанного расположения.
+
+Если вы развертываете экземпляр виртуальной машины Azure или экземпляра смесевой масштабируемого набора, в этом расположении нет никакой емкости для точки Azure. Дополнительные сведения см. в разделе [сообщения об ошибках](../virtual-machines/error-codes-spot.md).
 
 ## <a name="solution-1---powershell"></a>Решение 1 — PowerShell
 

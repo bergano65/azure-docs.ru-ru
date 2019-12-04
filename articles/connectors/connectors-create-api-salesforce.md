@@ -1,22 +1,18 @@
 ---
-title: Подключение к Salesforce из Azure Logic Apps | Документация Майкрософт
+title: Подключение к Salesforce из Azure Logic Apps
 description: Автоматизация задач и рабочих процессов, которые отслеживают и создают записи и задания Salesforce, а также управляют ими с помощью Azure Logic Apps.
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
-ms.assetid: 54fe5af8-7d2a-4da8-94e7-15d029e029bf
+ms.reviewer: klam, logicappspm
 ms.topic: article
-tags: connectors
 ms.date: 08/24/2018
-ms.openlocfilehash: e3e9f7c841d25fa988ae7e0c97adf64a51d8ef87
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+tags: connectors
+ms.openlocfilehash: 000f4381ef2a7c0a2099a021b991087725ff2070
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70050822"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74789296"
 ---
 # <a name="monitor-create-and-manage-salesforce-resources-by-using-azure-logic-apps"></a>Мониторинг и создание ресурсов Salesforce, а также управление ими с помощью Azure Logic Apps
 
@@ -27,7 +23,7 @@ ms.locfileid: "70050822"
 
 Вы можете использовать триггеры Salesforce, которые получают ответы из Salesforce и делают выходные данные доступными для других действий. Вы можете использовать действия в своих приложениях логики для выполнения задач с ресурсами Salesforce. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
@@ -62,11 +58,11 @@ ms.locfileid: "70050822"
 
 Дополнительные технические сведения о триггерах, действиях и ограничениях, которые приведены в описании OpenAPI соединителя (прежнее название — Swagger), можно найти на [странице справки](/connectors/salesforce/) соединителя.
 
-## <a name="get-support"></a>Поддержка
+## <a name="get-support"></a>Получение поддержки
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

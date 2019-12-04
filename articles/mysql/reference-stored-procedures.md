@@ -1,17 +1,17 @@
 ---
-title: Хранимые процедуры управления базой данных Azure для MySQL
+title: Хранимые процедуры управления — база данных Azure для MySQL
 description: Сведения о том, какие хранимые процедуры в базе данных Azure для MySQL полезны для настройки репликации данных, настройки часового пояса и уничтожения запросов.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 09/19/2019
-ms.openlocfilehash: 34598278ac7f432c5976de86eaf5dcf477c7e81a
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.date: 12/02/2019
+ms.openlocfilehash: 7ab77f822ace61ccb023dffe6d79fb1d08278d11
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71970341"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74774946"
 ---
 # <a name="azure-database-for-mysql-management-stored-procedures"></a>Хранимые процедуры управления базой данных Azure для MySQL
 
@@ -39,10 +39,10 @@ ms.locfileid: "71970341"
 
 |**Имя хранимой процедуры**|**Входные параметры**|**Выходные параметры**|**Примечание об использовании**|
 |-----|-----|-----|-----|
-|*MySQL. az _kill*|processlist_id|Н/Д|Эквивалентно команде [`KILL CONNECTION`](https://dev.mysql.com/doc/refman/8.0/en/kill.html) . Прекратит подключение, связанное с предоставленной processlist_id, после завершения любой инструкции, когда соединение выполняется.|
-|*MySQL. az _kill_query*|processlist_id|Н/Д|Эквивалентно команде [`KILL QUERY`](https://dev.mysql.com/doc/refman/8.0/en/kill.html) . Прекратит выполнение инструкции, в которой выполняется подключение. Оставляет подключение активным.|
-|*MySQL. az _load_timezone*|Н/Д|Н/Д|Загружает таблицы часовых поясов, чтобы параметр `time_zone` был установлен в именованные значения (например, "США/тихоокеанское").|
+|*MySQL. az_kill*|processlist_id|Н/Д|Эквивалентно команде [`KILL CONNECTION`](https://dev.mysql.com/doc/refman/8.0/en/kill.html) . Будет завершать подключение, связанное с указанным processlist_id после завершения любой инструкции, когда соединение выполняется.|
+|*MySQL. az_kill_query*|processlist_id|Н/Д|Эквивалентно команде [`KILL QUERY`](https://dev.mysql.com/doc/refman/8.0/en/kill.html) . Прекратит выполнение инструкции, в которой выполняется подключение. Оставляет подключение активным.|
+|*MySQL. az_load_timezone*|Н/Д|Н/Д|Загружает таблицы часовых поясов, чтобы можно было задать для параметра `time_zone` именованные значения (например, "США/тихоокеанское").|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте, как настроить [репликация входных данных](howto-data-in-replication.md)
 - Сведения об использовании [таблиц часовых поясов](howto-server-parameters.md#working-with-the-time-zone-parameter)

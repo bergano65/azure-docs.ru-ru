@@ -1,22 +1,22 @@
 ---
-title: Создание правил брандмауэра MariaDB в Базе данных Azure для MariaDB и управление ими
+title: Управление правилами брандмауэра — портал Azure — база данных Azure для MariaDB
 description: Создание правил брандмауэра MariaDB в Базе данных Azure для MariaDB и управление ими на портале Azure
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 04/09/2019
-ms.openlocfilehash: e9ab243692f5a4a1ec7de25774f5bad867698fc3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 12/02/2019
+ms.openlocfilehash: 70e6611cc3006424bcd1bc3a0f0838ad40c09634
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60746407"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74766027"
 ---
 # <a name="create-and-manage-azure-database-for-mariadb-firewall-rules-by-using-the-azure-portal"></a>Создание правил брандмауэра MariaDB в Базе данных Azure для MariaDB и управление ими на портале Azure
-Правила брандмауэра уровня сервера можно использовать для управления доступом к базе данных Azure для MariaDB сервера с указанного IP-адреса или диапазон IP-адресов.
+Правила брандмауэра уровня сервера можно использовать для управления доступом к серверу базы данных Azure для MariaDB с указанного IP-адреса или диапазона IP-адресов.
 
-Правилами виртуальных сетей (VNet) также может использоваться для обеспечения безопасного доступа к серверу. Дополнительные сведения о [Создание и управление виртуальной сетью на базе службы конечных точек и правил, с помощью портала Azure](howto-manage-vnet-portal.md).
+Правила виртуальной сети (VNet) также можно использовать для защиты доступа к серверу. Дополнительные сведения о [создании конечных точек и правил виртуальных сетевых служб и управлении ими с помощью портал Azure](howto-manage-vnet-portal.md).
 
 ## <a name="create-a-server-level-firewall-rule-in-the-azure-portal"></a>Создание правила брандмауэра на уровне сервера с помощью портала Azure
 
@@ -55,5 +55,5 @@ ms.locfileid: "60746407"
 * Чтобы удалить существующее правило, щелкните многоточие [...] и выберите **Удалить**. Щелкните **Сохранить** , чтобы сохранить изменения.
 
 ## <a name="next-steps"></a>Дальнейшие действия
- - Вы можете аналогичным образом [создать и управлять базой данных Azure для MariaDB правил брандмауэра, с помощью Azure CLI](howto-manage-firewall-cli.md).
- - Дополнительно обеспечить безопасность доступа к серверу с [Создание и управление виртуальной сетью на базе службы конечных точек и правил, с помощью портала Azure](howto-manage-vnet-portal.md).
+ - Аналогичным образом вы можете [создавать правила брандмауэра базы данных Azure для MariaDB и управлять ими с помощью Azure CLI](howto-manage-firewall-cli.md).
+ - Более безопасный доступ к серверу путем [создания конечных точек и правил службы виртуальной сети и управления ими с помощью портал Azure](howto-manage-vnet-portal.md).

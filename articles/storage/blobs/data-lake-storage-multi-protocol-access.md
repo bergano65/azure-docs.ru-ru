@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/01/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 3470e27f64a672db0165b0132996db91a1447c08
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: aebd7b58a2107ac109a03d3ce12f27d65ba0ab90
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74033978"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74769818"
 ---
 # <a name="multi-protocol-access-on-azure-data-lake-storage"></a>Доступ с несколькими протоколами на Azure Data Lake Storage
 
@@ -48,14 +48,17 @@ API-интерфейсы больших двоичных объектов и API
 |Функция хранилища BLOB-объектов | Уровень поддержки |
 |---|---|
 |[Стильный уровень доступа](storage-blob-storage-tiers.md)|Общедоступная версия|
+|API-интерфейсы RESTFUL для BLOB-объектов|Общедоступная версия|
 |Пакеты SDK для BLOB-объектов |Общедоступная версия|
-|API-интерфейсы RESTFUL для BLOB-объектов|Общедоступно|
-|[PowerShell](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-powershell) |Общедоступная версия|
-|[ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-cli) |Общедоступная версия|
-|[Журналы диагностики](../common/storage-analytics-logging.md)| Предварительная версия|
-|[Политики управления жизненным циклом](storage-lifecycle-management-concepts.md)| Предварительная версия|
-|[Уведомления через службу "Сетка событий Azure"](data-lake-storage-events.md)|Предварительная версия|
-|[Архивный уровень доступа](storage-blob-storage-tiers.md)| Предварительная версия|
+|[PowerShell (BLOB-объект)](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-powershell) |Общедоступная версия|
+|[Интерфейс командной строки (BLOB)](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-cli) |Общедоступная версия|
+|Пакеты SDK для BLOB-объектов с семантикой файловой системы ([.net](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-dotnet) &vert; [Python](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-python) &vert; [Java](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-java))|Preview (Предварительный просмотр)|
+|[PowerShell с семантикой файловой системы](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-powershell)|Preview (Предварительный просмотр)|
+|[Интерфейс командной строки с семантикой файловой системы](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-cli)|Preview (Предварительный просмотр)|
+|[Журналы диагностики](../common/storage-analytics-logging.md)| Preview (Предварительный просмотр)|
+|[Политики управления жизненным циклом](storage-lifecycle-management-concepts.md)| Preview (Предварительный просмотр)|
+|[Уведомления через службу "Сетка событий Azure"](data-lake-storage-events.md)|Preview (Предварительный просмотр)|
+|[Архивный уровень доступа](storage-blob-storage-tiers.md)| Preview (Предварительный просмотр)|
 |[blobfuse](storage-how-to-mount-container-linux.md)|Еще не поддерживается|
 |[Неизменяемое хранилище](storage-blob-immutable-storage.md)|Еще не поддерживается|
 |[Моментальные снимки](storage-blob-snapshots.md)|Еще не поддерживается|
@@ -80,13 +83,13 @@ API-интерфейсы больших двоичных объектов и API
 |[Azure Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-quick-create-portal)|Общедоступная версия|
 |[Центр Интернета вещей](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-d2c)|Общедоступная версия|
 |[Приложения логики](https://azure.microsoft.com/services/logic-apps/)|Общедоступная версия|
-|[Когнитивный поиск Azure](https://docs.microsoft.com/azure/search/search-howto-index-azure-data-lake-storage)|Предварительная версия|
+|[Когнитивный поиск Azure](https://docs.microsoft.com/azure/search/search-howto-index-azure-data-lake-storage)|Preview (Предварительный просмотр)|
 
 Полный список поддержки для Data Lake Storage 2-го поколения в службе экосистемы Azure см. в статье [интеграция Azure Data Lake Storage со службами Azure](data-lake-storage-integrate-with-azure-services.md).
 
 Дополнительные сведения об общих проблемах и ограничениях, связанных с Azure Data Lake Storage 2-го поколения, см. в разделе [Известные проблемы](data-lake-storage-known-issues.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. [Известные проблемы](data-lake-storage-known-issues.md)
 

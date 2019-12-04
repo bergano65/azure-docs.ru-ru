@@ -13,14 +13,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/26/2019
+ms.date: 12/02/2019
 ms.author: rkarlin
-ms.openlocfilehash: 02d87ed5f26d36b7cd438b0d818c7bdcce43520d
-ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
+ms.openlocfilehash: cf02708ae4ba3f203448398fdf954e8f48cce614
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74464110"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74762708"
 ---
 # <a name="permissions-in-azure-sentinel"></a>Разрешения в Azure Sentinel
 
@@ -30,9 +30,9 @@ ms.locfileid: "74464110"
 
 Существует три определенные встроенные роли-Sentinel Azure.  
 **Все встроенные роли Azure Sentinel предоставляют доступ на чтение данных в рабочей области Sentinel Azure.**
-- **Читатель Sentinel Azure**: Дополнительные сведения см. [в разделе Встроенные роли](../role-based-access-control/built-in-roles.md#azure-sentinel-reader) .
-- **Ответчик Sentinel Azure**. Дополнительные сведения см. [в разделе Встроенные роли](../role-based-access-control/built-in-roles.md#azure-sentinel-responder) .
-- **Участник Sentinel Azure**. Дополнительные сведения см. [в разделе Встроенные роли](../role-based-access-control/built-in-roles.md#azure-sentinel-contributor) .
+- [Читатель маркеров Azure](../role-based-access-control/built-in-roles.md#azure-sentinel-reader)
+- [Ответчик Sentinel Azure](../role-based-access-control/built-in-roles.md#azure-sentinel-responder)
+- [Участник Sentinel Azure](../role-based-access-control/built-in-roles.md#azure-sentinel-contributor)
 
 Помимо ролей RBAC, выделенных на основе маркеров Azure, существуют роли Azure и Log Analytics RBAC, которые могут предоставлять более широкий набор разрешений, включая доступ к рабочей области Azure Sentinel и другим ресурсам:
 
@@ -76,7 +76,7 @@ ms.locfileid: "74464110"
   
 Вы можете использовать Log Analytics расширенный контроль доступа на основе ролей для данных в рабочей области Sentinel Azure. Сюда входят Управление доступом на основе ролей для каждого типа данных и управление доступом на основе ролей. Дополнительные сведения о ролях Log Analytics см. [в статье Управление данными и рабочими областями в Azure Monitor](../azure-monitor/platform/manage-access.md#manage-access-using-workspace-permissions).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как работать с ролями в Azure Sentinel Users и какую роль разрешает выполнять пользователи.
 
 * [Блог Sentinel Azure](https://aka.ms/azuresentinelblog). Записи блога, посвященные безопасности и соответствию требованиям в Azure.

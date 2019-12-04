@@ -1,17 +1,17 @@
 ---
-title: Подключение существующей службы приложений Azure к службе "База данных Azure для MySQL"
+title: Подключение к службе приложений Azure с базой данных Azure для MySQL
 description: Инструкции по правильному подключению существующей службы приложений Azure к базе данных Azure для MySQL
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 5/21/2019
-ms.openlocfilehash: 3fbffc805afb540499e38f1c0853260968228b22
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 12/02/2019
+ms.openlocfilehash: 63ef9ac55fcfaebfd58ae1ccdb34107d41900be5
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66002008"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74770549"
 ---
 # <a name="connect-an-existing-azure-app-service-to-azure-database-for-mysql-server"></a>Подключение существующей службы приложений Azure к базе данных Azure для сервера MySQL
 В этом разделе объясняется, как подключить имеющуюся службу приложений Azure к базе данных Azure для сервера MySQL.
@@ -49,7 +49,7 @@ ms.locfileid: "66002008"
 ## <a name="ssl-configuration"></a>Настройка SSL
 Протокол SSL по умолчанию включен для базы данных Azure для MySQL. Если приложение не использует SSL для подключения к базе данных, необходимо отключить SSL для сервера MySQL. Дополнительные сведения о настройке SSL см. в статье [Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MySQL](howto-configure-ssl.md).
 
-### <a name="django-pymysql"></a>Django (PyMySQL)
+### <a name="django-pymysql"></a>Django (Пимискл)
 ```python
 DATABASES = {
     'default': {

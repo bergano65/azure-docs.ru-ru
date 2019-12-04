@@ -1,20 +1,20 @@
 ---
-title: 'Настройка параметров службы в базе данных Azure для PostgreSQL: один сервер'
-description: В этой статье описывается настройка параметров службы в базе данных Azure для PostgreSQL - отдельного сервера с помощью командной строки Azure.
+title: Настройка параметров — база данных Azure для PostgreSQL — один сервер
+description: В этой статье описывается, как настроить параметры postgres в базе данных Azure для PostgreSQL-Single Server с помощью Azure CLI.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 06/19/2019
-ms.openlocfilehash: f276247076438a03973148b5cf65ddbeb409b024
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 4e029428a3709bacdbcd50a6ac3714e730377242
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67274777"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74763629"
 ---
-# <a name="customize-server-configuration-parameters-for-azure-database-for-postgresql---single-server-using-azure-cli"></a>Настройка параметров конфигурации сервера для базы данных Azure для PostgreSQL - отдельного сервера с помощью интерфейса командной строки Azure
+# <a name="customize-server-configuration-parameters-for-azure-database-for-postgresql---single-server-using-azure-cli"></a>Настройка параметров конфигурации сервера для базы данных Azure для PostgreSQL — один сервер с помощью Azure CLI
 С помощью интерфейса командной строки (Azure CLI) можно вывести список параметров конфигурации для сервера Azure PostgreSQL, а также отобразить и обновить их. Только подмножество конфигураций ядра предоставляется на уровне сервера и может быть изменено. 
 
 ## <a name="prerequisites"></a>Технические условия
@@ -50,5 +50,5 @@ az postgres server configuration set --name log_min_messages --resource-group my
 Данная команда восстановит значение по умолчанию **WARNING** для параметра конфигурации **log\_min\_messages**. Дополнительные сведения о конфигурации сервера и допустимых значениях приведены в документации PostgreSQL по [конфигурации сервера](https://www.postgresql.org/docs/9.6/static/runtime-config.html).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Узнайте, как перезапуск сервера](howto-restart-server-cli.md)
+- [Сведения о перезагрузке сервера](howto-restart-server-cli.md)
 - Чтобы настроить журналы сервера и получать к ним доступ, ознакомьтесь с разделом [Журналы сервера в базе данных Azure для PostgreSQL](concepts-server-logs.md).

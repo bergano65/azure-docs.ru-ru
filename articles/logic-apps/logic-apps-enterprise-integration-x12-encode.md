@@ -1,21 +1,19 @@
 ---
-title: Кодирование сообщений X12 в Azure Logic Apps | Документация Майкрософт
+title: Кодирование сообщений X12
 description: Проверка EDI и преобразование XML-сообщений с помощью кодировщика сообщений X12 в Azure Logic Apps с помощью Пакета интеграции Enterprise.
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: jonfan, divswa, LADocs
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, logicappspm
 ms.topic: article
-ms.assetid: a01e9ca9-816b-479e-ab11-4a984f10f62d
 ms.date: 01/27/2017
-ms.openlocfilehash: 871d6d2b2019372bd258f8909ed0feeeddac4af7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c87a61dc77e656a1cfe667ce87f852303a0cc486
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64705703"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74792345"
 ---
 # <a name="encode-x12-messages-in-azure-logic-apps-with-enterprise-integration-pack"></a>Кодирование сообщений X12 в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
@@ -58,7 +56,7 @@ ms.locfileid: "64705703"
 
     Подключение создано.
 
-    ![сведения о подключении к учетной записи интеграции](./media/logic-apps-enterprise-integration-x12-encode/x12encodeimage3.png) 
+    ![Сведения о подключении к учетной записи интеграции](./media/logic-apps-enterprise-integration-x12-encode/x12encodeimage3.png) 
 
 #### <a name="encode-x12-messages-by-agreement-name"></a>Кодирование сообщений X12 по имени соглашения
 
@@ -93,5 +91,5 @@ ms.locfileid: "64705703"
 Ознакомьтесь с [дополнительными сведениями о Swagger](/connectors/x12/). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Узнайте больше о пакете интеграции Enterprise](logic-apps-enterprise-integration-overview.md "Узнайте о пакете интеграции Enterprise.") 
+[Дополнительные сведения о Пакете интеграции Enterprise](logic-apps-enterprise-integration-overview.md "Дополнительные сведения о Пакет интеграции Enterprise") 
 

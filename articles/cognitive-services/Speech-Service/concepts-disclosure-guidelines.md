@@ -3,21 +3,21 @@ title: Рекомендации по проектированию раскрыт
 titleSuffix: Azure Cognitive Services
 description: Введение в рекомендации по проектированию раскрытия и оценка уровня раскрытия.
 services: cognitive-services
-author: angle
+author: sharonlo101
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 10/09/2019
+ms.date: 12/03/2019
 ms.author: angle
-ms.openlocfilehash: 7dffa3d9f6e96adc6146a1059e7360c77926ece3
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: fe38c6b7cfb1abbaf3f1079dd8bff66b51b98091
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73837376"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74776391"
 ---
-# <a name="disclosure-design-guidelines"></a>Рекомендации по проектированию раскрытия
+# <a name="disclosure-design-guidelines"></a>Рекомендации по проектированию для раскрытия информации
 Узнайте, как создавать и обслуживать отношения доверия с клиентами, прозрачными относительно искусственного характера вашего голоса.
 
 ## <a name="what-is-disclosure"></a>Что такое раскрытие?
@@ -74,7 +74,7 @@ ms.locfileid: "73837376"
 
   ![Схема оценки раскрытия](media/responsible-ai/disclosure-guidelines/flowchart.png)
 
-## <a name="reference-docs"></a>Справочная документация
+## <a name="reference-docs"></a>Справочные документы
 
 * [Раскрытие голоса для речи](https://aka.ms/disclosure-voice-talent)
 * [Рекомендации для ответственного развертывания технологии искусственного голоса](concepts-guidelines-responsible-deployment-synthetic.md)

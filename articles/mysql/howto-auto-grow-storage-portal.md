@@ -1,24 +1,24 @@
 ---
-title: Автоматическое увеличение объема хранилища в базе данных Azure для MySQL с помощью портал Azure
+title: Автоматическое увеличение хранилища портал Azure — база данных Azure для MySQL
 description: В этой статье описывается, как включить автоматическое увеличение хранилища для базы данных Azure для MySQL с помощью портал Azure
 author: ambhatna
 ms.author: ambhatna
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 5/29/2019
-ms.openlocfilehash: 864bfaefba783d93e795e8780cc02dcf991e38f1
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.date: 12/02/2019
+ms.openlocfilehash: 7be3e7e1a0d2e48b37c319f67e3b382f825469df
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142034"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74770617"
 ---
 # <a name="auto-grow-storage-in-azure-database-for-mysql-using-the-azure-portal"></a>Автоматическое увеличение объема хранилища в базе данных Azure для MySQL с помощью портал Azure
 В этой статье описывается, как можно настроить расширение хранилища базы данных Azure для MySQL, не влияя на рабочую нагрузку.
 
 Когда сервер достигает предельного размера выделенного хранилища, сервер помечается как доступный только для чтения. Однако если включить автоматическое увеличение размера хранилища, серверное хранилище будет увеличиваться в соответствии с растущими данными. Для серверов с подготовленным хранилищем объемом менее 100 ГБ размер подготовленного хранилища увеличивается на 5 ГБ, как только объем свободного хранилища превысит 1 ГБ или 10% подготовленного хранилища. Для серверов с более чем 100 ГБ подготовленного хранилища размер подготовленного хранилища увеличивается на 5%, если объем свободного пространства превышает 5% от подготовленного объема хранилища. Максимальный объем хранилища, указанный [здесь](https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers#storage) , применим.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 - [Сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md)
 
@@ -32,7 +32,7 @@ ms.locfileid: "70142034"
 
 3. В разделе Автоматическое увеличение выберите **Да** , чтобы включить автоматическое увеличение размера хранилища.
 
-    ![База данных Azure для MySQL-Settings_Pricing_tier — автоматическое увеличение](./media/howto-auto-grow-storage-portal/3-auto-grow.png)
+    ![База данных Azure для MySQL — Settings_Pricing_tier — автоматическое увеличение](./media/howto-auto-grow-storage-portal/3-auto-grow.png)
 
 4. Нажмите кнопку **Сохранить** , чтобы сохранить изменения.
 
@@ -40,6 +40,6 @@ ms.locfileid: "70142034"
 
     ![База данных Azure для MySQL — успешное выполнение автоматического роста](./media/howto-auto-grow-storage-portal/5-auto-grow-success.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте [, как создавать оповещения по метрикам](howto-alert-on-metric.md).

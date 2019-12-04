@@ -16,12 +16,12 @@ ms.date: 04/24/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e95b230d4f9699f15296ba94946c7063cabd0516
-ms.sourcegitcommit: 16c5374d7bcb086e417802b72d9383f8e65b24a7
+ms.openlocfilehash: 6a82766be01476890bbf18b518ce21febe0d07f1
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73847192"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74766095"
 ---
 # <a name="azure-ad-connect-sync-attributes-synchronized-to-azure-active-directory"></a>Службы синхронизации Azure AD Connect: атрибуты, синхронизируемые с Azure Active Directory
 В этой статье перечислены атрибуты, которые синхронизируются при помощи служб синхронизации Azure AD Connect.  
@@ -38,7 +38,7 @@ ms.locfileid: "73847192"
 >
 >
 
-## <a name="office-365-proplus"></a>Office 365 профессиональный плюс.
+## <a name="office-365-proplus"></a>Office 365 профессиональный плюс
 | Имя атрибута | Пользователь | Комментарий |
 | --- |:---:| --- |
 | AccountEnabled |X |Определяет, включена ли учетная запись. |
@@ -52,7 +52,7 @@ ms.locfileid: "73847192"
 | userPrincipalName |X |Имя участника-пользователя является именем для входа. Чаще всего соответствует значению [mail]. |
 
 ## <a name="exchange-online"></a>Exchange Online
-| Имя атрибута | Пользователь | Контакт | Группа | Комментарий |
+| Имя атрибута | Пользователь | Связь | Группа | Комментарий |
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
 | assistant |X |X | | |
@@ -64,7 +64,7 @@ ms.locfileid: "73847192"
 | company |X |X | | |
 | countryCode |X |X | | |
 | department |X |X | | |
-| description | | |X | |
+| Description (Описание) | | |X | |
 | displayName |X |X |X | |
 | dLMemRejectPerms |X |X |X | |
 | dLMemSubmitPerms |X |X |X | |
@@ -175,7 +175,7 @@ ms.locfileid: "73847192"
 | wWWHomePage |X |X | | |
 
 ## <a name="sharepoint-online"></a>SharePoint Online
-| Имя атрибута | Пользователь | Контакт | Группа | Комментарий |
+| Имя атрибута | Пользователь | Связь | Группа | Комментарий |
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
 | authOrig |X |X |X | |
@@ -185,7 +185,7 @@ ms.locfileid: "73847192"
 | company |X |X | | |
 | countryCode |X |X | | |
 | department |X |X | | |
-| description |X |X |X | |
+| Description (Описание) |X |X |X | |
 | displayName |X |X |X | |
 | dLMemRejectPerms |X |X |X | |
 | dLMemSubmitPerms |X |X |X | |
@@ -257,7 +257,7 @@ ms.locfileid: "73847192"
 | wWWHomePage |X |X | | |
 
 ## <a name="teams-and-skype-for-business-online"></a>Команды и Skype для бизнеса Online
-| Имя атрибута | Пользователь | Контакт | Группа | Комментарий |
+| Имя атрибута | Пользователь | Связь | Группа | Комментарий |
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
 | c |X |X | | |
@@ -265,7 +265,7 @@ ms.locfileid: "73847192"
 | co |X |X | | |
 | company |X |X | | |
 | department |X |X | | |
-| description |X |X |X | |
+| Description (Описание) |X |X |X | |
 | displayName |X |X |X | |
 | facsimiletelephonenumber |X |X |X | |
 | givenName |X |X | | |
@@ -305,7 +305,7 @@ ms.locfileid: "73847192"
 | wWWHomePage |X |X | | |
 
 ## <a name="azure-rms"></a>Azure RMS
-| Имя атрибута | Пользователь | Контакт | Группа | Комментарий |
+| Имя атрибута | Пользователь | Связь | Группа | Комментарий |
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
 | cn |X | |X |Общее имя или псевдоним. Чаще всего префикс значения [mail]. |
@@ -320,12 +320,12 @@ ms.locfileid: "73847192"
 | userPrincipalName |X | | |Это имя участника-пользователя является именем пользователя для входа. Чаще всего соответствует значению [mail]. |
 
 ## <a name="intune"></a>Intune
-| Имя атрибута | Пользователь | Контакт | Группа | Комментарий |
+| Имя атрибута | Пользователь | Связь | Группа | Комментарий |
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
 | c |X |X | | |
 | cn |X | |X | |
-| description |X |X |X | |
+| Description (Описание) |X |X |X | |
 | displayName |X |X |X | |
 | mail |X |X |X | |
 | mailNickname |X |X |X | |
@@ -338,7 +338,7 @@ ms.locfileid: "73847192"
 | userPrincipalName |X | | |Имя участника-пользователя является именем для входа. Чаще всего соответствует значению [mail]. |
 
 ## <a name="dynamics-crm"></a>Dynamics CRM
-| Имя атрибута | Пользователь | Контакт | Группа | Комментарий |
+| Имя атрибута | Пользователь | Связь | Группа | Комментарий |
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
 | c |X |X | | |
@@ -346,7 +346,7 @@ ms.locfileid: "73847192"
 | co |X |X | | |
 | company |X |X | | |
 | countryCode |X |X | | |
-| description |X |X |X | |
+| Description (Описание) |X |X |X | |
 | displayName |X |X |X | |
 | facsimiletelephonenumber |X |X | | |
 | givenName |X |X | | |
@@ -377,7 +377,7 @@ ms.locfileid: "73847192"
 
 Ниже приведена группа атрибутов, которые можно использовать, если каталог Azure AD не используется для поддержки Office 365, Dynamics или Intune. Это небольшой набор основных атрибутов.
 
-| Имя атрибута | Пользователь | Контакт | Группа | Комментарий |
+| Имя атрибута | Пользователь | Связь | Группа | Комментарий |
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
 | cn |X | |X | |
@@ -386,7 +386,7 @@ ms.locfileid: "73847192"
 | givenName |X |X | | |
 | mail |X | |X | |
 | managedBy | | |X | |
-| mailNickname |X |X |X | |
+| mailNickName |X |X |X | |
 | member | | |X | |
 | objectSID |X | | |Механическое свойство. Идентификатор пользователя AD, используемый для обеспечения синхронизации между Azure AD и AD. |
 | proxyAddresses |X |X |X | |
@@ -396,7 +396,7 @@ ms.locfileid: "73847192"
 | usageLocation |X | | |Механическое свойство. Страна или регион пользователя. Используется для назначения лицензии. |
 | userPrincipalName |X | | |Имя участника-пользователя является именем для входа. Чаще всего соответствует значению [mail]. |
 
-## <a name="windows-10"></a>Windows 10
+## <a name="windows-10"></a>Windows 10
 Компьютер (устройство), присоединенное к домену Windows 10, синхронизирует некоторые атрибуты с Azure AD. Дополнительные сведения о сценариях см. в статье [Подключение присоединенных к домену устройств к Azure AD для работы в Windows 10](../active-directory-azureadjoin-devices-group-policy.md). Эти атрибуты всегда синхронизируются, и Windows 10 отображается как приложение, выбор которого нельзя отменить. Компьютер, присоединенный к домену Windows 10, определяется заполненным атрибутом userCertificate.
 
 | Имя атрибута | Устройство | Комментарий |
@@ -422,7 +422,7 @@ ms.locfileid: "73847192"
 ## <a name="exchange-hybrid-writeback"></a>Гибридная обратная запись Exchange
 Эти атрибуты записываются из Azure AD в локальную службу Active Directory при активации **гибридного развертывания Exchange**. В зависимости от установленной версии Exchange может синхронизироваться меньшее количество атрибутов.
 
-| Имя атрибута (локальная служба AD) | Имя атрибута (пользовательский интерфейс Connect) | Пользователь | Контакт | Группа | Комментарий |
+| Имя атрибута (локальная служба AD) | Имя атрибута (пользовательский интерфейс Connect) | Пользователь | Связь | Группа | Комментарий |
 | --- |:---:|:---:|:---:| --- |---|
 | msDS-ExternalDirectoryObjectID| ms-DS-External-Directory-Object-Id |X | | |Производный от cloudAnchor в Azure AD. Это новый атрибут в Exchange 2016 и Windows Server 2016 AD. |
 | msExchArchiveStatus| ms-Exch-ArchiveStatus |X | | |Серверный архив: позволяет клиентам архивировать почту. |
@@ -430,7 +430,7 @@ ms.locfileid: "73847192"
 | msExchSafeRecipientsHash| MS-Exch-SafeRecipientsHash  |X | | |Фильтрация: записывает обратно данные локальной фильтрации и сетевые данные о безопасных и заблокированных отправителях от клиентов. |
 | msExchSafeSendersHash| ms-Exch-SafeSendersHash  |X | | |Фильтрация: записывает обратно данные локальной фильтрации и сетевые данные о безопасных и заблокированных отправителях от клиентов. |
 | msExchUCVoiceMailSettings| ms-Exch-UCVoiceMailSettings |X | | |Включение единой системы обмена сообщениями (сетевая голосовая почта): используется при интеграции сервера Microsoft Lync Server, указывая локальному серверу Lync Server, что у пользователя в онлайн-службах есть голосовая почта. |
-| msExchUserHoldPolicies| ms-Exc-hUserHoldPolicies |X | | |Хранение для судебного разбирательства: позволяет облачным службам определять, на каких пользователей действует хранение для судебного разбирательства. |
+| msExchUserHoldPolicies| MS-дов-УсерхолдполиЦиес |X | | |Хранение для судебного разбирательства: позволяет облачным службам определять, на каких пользователей действует хранение для судебного разбирательства. |
 | proxyAddresses| proxyAddresses |X |X |X |Вставляется только адрес x500 из Exchange Online. |
 | publicDelegates| ms-Exch-Public-Delegates  |X | | |Позволяет в почтовом ящике Exchange Online предоставлять права SendOnBehalfTo пользователям с локальными почтовыми ящиками Exchange. Требуется Azure AD Connect сборки 1.1.552.0 или более поздних версий. |
 
@@ -466,7 +466,7 @@ ms.locfileid: "73847192"
 | msDS-IsManaged |X | |
 | msDS-RegisteredOwner |X | |
 
-## <a name="notes"></a>Примечания
+## <a name="notes"></a>Заметки
 * Если используется альтернативный идентификатор, то локальный атрибут userPrincipalName синхронизируется с атрибутом Azure AD onPremisesUserPrincipalName. Атрибут "Альтернативный идентификатор", например почта, синхронизируется с атрибутом Azure AD userPrincipalName.
 * В списках выше тип объекта **User** также относится к типу объекта **iNetOrgPerson**.
 
