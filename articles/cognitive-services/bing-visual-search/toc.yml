@@ -1,5 +1,5 @@
 - name: Документация по API Визуального поиска
-  href: index.yml
+  href: ../Bing-Web-Search/index.yml
 - name: Обзор
   items:
     - name: Что такое API Визуального поиска?
