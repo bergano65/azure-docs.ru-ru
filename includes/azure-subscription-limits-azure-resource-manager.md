@@ -8,17 +8,18 @@ ms.topic: include
 ms.date: 07/22/2019
 ms.author: jroth
 ms.custom: include file
-ms.openlocfilehash: a01455da36e8ab573773fec2a6da1f7903b8ea20
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: eb2d663a56084fc625c95f1f1a6236385880180d
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74224486"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74795803"
 ---
-| Resource (Ресурс) | Ограничение по умолчанию | Максимальное ограничение |
+| Ресурс | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
 | Число ВМ на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |25 000<sup>1</sup> на регион. |25 000. США за регион. |
 | Общее количество ядер виртуальных машин на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |20<sup>1</sup> на регион. | Обратитесь в службу поддержки. |
+| Общее число ядер виртуальной машины Azure на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |20<sup>1</sup> на регион. | Обратитесь в службу поддержки. |
 | Виртуальная машина на ряд, например Dv2 и F, количество ядер на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |20<sup>1</sup> на регион. | Обратитесь в службу поддержки. |
 | [Соадминистраторов](../articles/billing-add-change-azure-subscription-administrator.md) на подписку |Без ограничений. |Без ограничений. |
 | [Учетные записи хранения](../articles/storage/common/storage-quickstart-create-account.md) на подписку в каждом регионе |250 |250 |
