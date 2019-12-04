@@ -168,7 +168,7 @@
           href: configure-customer-managed-key.md
     - name: Устранение неполадок
       items:
-        - name: Исключения
+        - name: Руководство по устранению неполадок
           href: event-hubs-messaging-exceptions.md
 - name: Справочные материалы
   items:

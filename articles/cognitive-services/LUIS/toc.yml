@@ -46,10 +46,10 @@
         - name: 2. Извлечение данных пользователя
           href: tutorial-machine-learned-entity.md
           displayName: 'n-depth, constraint, descriptor, phrase list, entity'
+        - name: 3. Определение тональности высказываний пользователя
+          href: tutorial-publish-settings.md
     - name: Создание приложения
       items:
-        - name: Определение тональности высказываний пользователя
-          href: luis-quickstart-intent-and-sentiment-analysis.md
         - name: Получение данных в правильном формате с помощью регулярных выражений
           href: luis-quickstart-intents-regex-entity.md
         - name: Получение точных текстовых совпадений с помощью списков
