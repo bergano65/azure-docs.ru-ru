@@ -231,8 +231,8 @@
           href: virtual-machine-scale-sets-placement-groups.md
         - name: Преобразование шаблона масштабируемого набора для использования управляемого диска
           href: virtual-machine-scale-sets-convert-template-to-md.md
-        - name: Использование виртуальных машин с низким приоритетом
-          href: virtual-machine-scale-sets-use-low-priority.md
+        - name: Использование точечного экземпляра
+          href: use-spot.md
     - name: Управление
       items:
         - name: Общие задачи управления

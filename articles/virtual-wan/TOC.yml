@@ -40,6 +40,8 @@
       href: virtual-wan-custom-ipsec-portal.md
     - name: "Настройка сертификатов для пользовательского VPN-подключения (точка\_— сеть)"
       href: certificates-point-to-site.md
+    - name: Настройка аутентификации Azure AD для VPN пользователя (предварительная версия)
+      href: virtual-wan-point-to-site-azure-ad.md
     - name: Настройка автоматизации (участники Виртуальной глобальной сети)
       href: virtual-wan-configure-automation-providers.md
     - name: Настройка маршрутизации

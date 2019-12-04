@@ -28,15 +28,31 @@
       href: tutorial-custom-role-cli.md
 - name: Основные понятия
   items:
-    - name: Об определении ролей
-      href: role-definitions.md
     - name: PIM для ресурсов Azure
       href: pim-azure-resource.md
     - name: Условный доступ для управления Azure
       href: conditional-access-azure-management.md
 - name: Руководства
   items:
-    - name: Управление доступом
+    - name: Вывод списка определений роли
+      items:
+        - name: Обзор
+          href: role-definitions.md
+        - name: Вывод списка определений роли
+          href: role-definitions-list.md
+        - name: Встроенные роли
+          href: built-in-roles.md
+    - name: Список назначений ролей
+      items:
+        - name: Портал
+          href: role-assignments-list-portal.md
+        - name: PowerShell
+          href: role-assignments-list-powershell.md
+        - name: CLI
+          href: role-assignments-list-cli.md
+        - name: REST API
+          href: role-assignments-list-rest.md
+    - name: Добавление или удаление назначений ролей
       items:
         - name: Портал
           href: role-assignments-portal.md
@@ -50,9 +66,9 @@
           href: role-assignments-rest.md
         - name: Шаблон
           href: role-assignments-template.md
-    - name: Запрет доступа
+    - name: Отображение списка запрещенных назначений
       items:
-        - name: Запрет назначений
+        - name: Обзор
           href: deny-assignments.md
         - name: Портал
           href: deny-assignments-portal.md
@@ -60,7 +76,7 @@
           href: deny-assignments-powershell.md
         - name: REST API
           href: deny-assignments-rest.md
-    - name: Пользовательские роли
+    - name: Создание настраиваемых ролей
       items:
         - name: Обзор
           href: custom-roles.md
@@ -72,7 +88,7 @@
           href: custom-roles-rest.md
     - name: Просмотр журналов действий
       href: change-history-report.md
-    - name: Повышение прав доступа для управления всеми подписками
+    - name: Повышение прав доступа
       href: elevate-access-global-admin.md
     - name: Администраторы классической подписки
       href: classic-administrators.md
@@ -80,8 +96,6 @@
       href: troubleshooting.md
 - name: Справочные материалы
   items:
-    - name: Встроенные роли
-      href: built-in-roles.md
     - name: Операции с поставщиками ресурсов
       href: resource-provider-operations.md
     - name: Ограничения доступа на основе ролей
