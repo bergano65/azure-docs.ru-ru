@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: sample
-ms.date: 04/15/2019
-ms.openlocfilehash: 4a9bfe83c9fc1ccbc496ec97822305720dc52c10
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.date: 11/29/2019
+ms.openlocfilehash: e277814bda41a70f9ac8ff02b6e8018fba4b6f52
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71076836"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74775369"
 ---
 # <a name="azure-hdinsight-java-samples"></a>Azure HDInsight: Примеры для Java
 
@@ -27,11 +27,11 @@ ms.locfileid: "71076836"
 * Ссылки на примеры для задач создания кластера.
 * Ссылки на справочные материалы для других задач управления.
 
-## <a name="prerequisites"></a>Предварительные требования
-
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-- [Пакет SDK Azure HDInsight для Java](https://docs.microsoft.com/java/api/overview/azure/hdinsight#sdk-installation)
+## <a name="prerequisites"></a>Предварительные требования
+
+[Пакет SDK Azure HDInsight для Java](https://docs.microsoft.com/java/api/overview/azure/hdinsight#sdk-installation)
 
 ## <a name="cluster-management---creation"></a>Управление кластерами: создание кластера
 

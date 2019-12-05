@@ -14,12 +14,12 @@ ms.tgt_pltfrm: .NET
 ms.workload: tbd
 ms.date: 10/09/2019
 ms.author: lcozzens
-ms.openlocfilehash: 36cfe79f5c2735e6d6737d471430deb989905cdc
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: f1fd1c21789c272bf8deae72ef64f2bbb1c6b3cb
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185058"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707440"
 ---
 # <a name="quickstart-create-a-net-framework-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения на .NET Framework с помощью службы конфигурации приложений Azure
 
@@ -112,7 +112,7 @@ ms.locfileid: "74185058"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве описано, как создать хранилище службы "Конфигурация приложений" и использовать его с консольным приложением на основе .NET Framework. После запуска приложения значение `AppSettings` параметра `ConfiguratoinManager` не изменится. Однако в приложении .NET Framework также может использоваться библиотека поставщика конфигурации .NET Standard службы "Конфигурация приложений". Чтобы узнать, как включить в приложении .NET Framework динамическое обновление параметров конфигурации, перейдите к следующему учебнику.
+В этом кратком руководстве описано, как создать хранилище службы "Конфигурация приложений" и использовать его с консольным приложением на основе .NET Framework. После запуска приложения значение `AppSettings` параметра `ConfigurationManager` не изменится. Однако в приложении .NET Framework также может использоваться библиотека поставщика конфигурации .NET Standard службы "Конфигурация приложений". Чтобы узнать, как включить в приложении .NET Framework динамическое обновление параметров конфигурации, перейдите к следующему учебнику.
 
 > [!div class="nextstepaction"]
 > [Включение динамической конфигурации](./enable-dynamic-configuration-dotnet.md)

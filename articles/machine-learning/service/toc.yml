@@ -69,6 +69,8 @@
   items:
     - name: Рабочая область
       href: concept-workspace.md
+    - name: Данные
+      href: concept-data.md
     - name: Обучение модели
       displayName: 'run config, estimator, machine learning pipeline, ml pipeline, train model'
       href: concept-train-machine-learning-model.md

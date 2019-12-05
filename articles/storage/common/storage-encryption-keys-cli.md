@@ -5,16 +5,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 11/20/2019
+ms.date: 12/03/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: df65267924cfbfdc856b81928c4b6d7029f61184
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.openlocfilehash: fd3b7767bad104f4074b2460ecba3fe89d5a23e1
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
-ms.locfileid: "74665973"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74806632"
 ---
 # <a name="configure-customer-managed-keys-for-azure-storage-by-using-azure-cli"></a>Настройка ключей, управляемых клиентом, для службы хранилища Azure с помощью Azure CLI
 
@@ -91,7 +91,7 @@ az keyvault key create
 
 По умолчанию шифрование службы хранилища Azure использует ключи, управляемые корпорацией Майкрософт. Настройте учетную запись хранения Azure для ключей, управляемых клиентом, и укажите ключ, связываемый с учетной записью хранения.
 
-Чтобы обновить параметры шифрования учетной записи хранения, вызовите команду [AZ Storage учетная запись Update](/cli/azure/storage/account#az-storage-account-update). Этот пример также запрашивает универсальный код ресурса (URI) хранилища ключей и версию ключа, значения которого необходимы для связывания ключа с учетной записью хранения. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями.
+Чтобы обновить параметры шифрования учетной записи хранения, вызовите команду [AZ Storage учетная запись Update](/cli/azure/storage/account#az-storage-account-update). В этом примере также запрашиваются универсальный код ресурса (URI) хранилища ключей и последняя версия ключа. Эти значения необходимы для связывания ключа с учетной записью хранения. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями.
 
 ```azurecli-interactive
 key_vault_uri=$(az keyvault show \
@@ -102,7 +102,7 @@ key_vault_uri=$(az keyvault show \
 key_version=$(az keyvault key list-versions \
     --name <key> \
     --vault-name <key-vault> \
-    --query [].kid \
+    --query [-1].kid \
     --output tsv | cut -d '/' -f 6)
 az storage account update 
     --name <storage-account> \

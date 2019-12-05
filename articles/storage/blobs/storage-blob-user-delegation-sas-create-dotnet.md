@@ -9,12 +9,12 @@ ms.date: 12/03/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
-ms.openlocfilehash: 32bcb12f39d65d63af1c6595c0d57c695ce0533f
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: dada27f1fa08cdaa6c2495246375869ea5a8ab9e
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74792213"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74806938"
 ---
 # <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-net-preview"></a>Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с помощью .NET (Предварительная версия)
 
@@ -24,35 +24,13 @@ ms.locfileid: "74792213"
 
 [!INCLUDE [storage-auth-user-delegation-include](../../../includes/storage-auth-user-delegation-include.md)]
 
-## <a name="authenticate-with-the-azure-identity-library"></a>Проверка подлинности с помощью библиотеки удостоверений Azure
-
-Клиентская библиотека удостоверений Azure для .NET выполняет проверку подлинности субъекта безопасности. Когда код выполняется в Azure, участник безопасности является управляемым удостоверением для ресурсов Azure.
-
-Если код выполняется в среде разработки, проверка подлинности может выполняться автоматически, или в зависимости от используемых инструментов может потребоваться вход в браузер. Microsoft Visual Studio поддерживает единый вход (SSO), чтобы активная учетная запись пользователя Azure AD автоматически использовалась для проверки подлинности. Дополнительные сведения об единого входа см. [в статье единый вход в приложения](../../active-directory/manage-apps/what-is-single-sign-on.md).
-
-Другие средства разработки могут предложить вам войти в систему через веб-браузер. Можно также использовать субъект-службу для проверки подлинности из среды разработки. Дополнительные сведения см. [в статье Создание удостоверения для приложения Azure на портале](../../active-directory/develop/howto-create-service-principal-portal.md).
-
-После проверки подлинности клиентская библиотека удостоверений Azure получает учетные данные маркера. Затем эти учетные данные маркера инкапсулируются в объекте клиента службы, который вы создадите для выполнения операций с хранилищем Azure. Библиотека полностью обрабатывает это, получая соответствующие учетные данные маркера.
-
-Дополнительные сведения о клиентской библиотеке удостоверений Azure см. в статье [Клиентская библиотека удостоверений Azure для .NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/identity/Azure.Identity).
-
 ## <a name="assign-rbac-roles-for-access-to-data"></a>Назначение ролей RBAC для доступа к данным
 
 Когда субъект безопасности Azure AD пытается получить доступ к данным большого двоичного объекта, этот субъект безопасности должен иметь разрешения для ресурса. Независимо от того, является ли участник безопасности управляемым удостоверением в Azure или учетной записью пользователя Azure AD, выполняющего код в среде разработки, участнику безопасности должна быть назначена роль RBAC, которая предоставляет доступ к данным большого двоичного объекта в службе хранилища Azure. Сведения о назначении разрешений через RBAC см. в разделе **назначение РОЛЕЙ RBAC для прав доступа** в статье [авторизация доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](../common/storage-auth-aad.md#assign-rbac-roles-for-access-rights).
 
-## <a name="install-the-packages"></a>Установка пакетов
+[!INCLUDE [storage-install-packages-blob-and-identity-include](../../../includes/storage-install-packages-blob-and-identity-include.md)]
 
-В примерах, приведенных в этой статье, используется последняя версия [клиентской библиотеки службы хранилища Azure для хранилища BLOB-объектов](https://www.nuget.org/packages/Azure.Storage.Blobs). Чтобы установить пакет, выполните следующую команду в консоли диспетчера пакетов NuGet:
-
-```powershell
-Install-Package Azure.Storage.Blobs
-```
-
-Примеры в этой статье также используют последнюю версию [клиентской библиотеки удостоверений Azure для .NET](https://www.nuget.org/packages/Azure.Identity/) для аутентификации с помощью учетных данных Azure AD. Чтобы установить пакет, выполните следующую команду в консоли диспетчера пакетов NuGet:
-
-```powershell
-Install-Package Azure.Identity
-```
+Дополнительные сведения о проверке подлинности с помощью клиентской библиотеки удостоверений Azure из службы хранилища Azure см. в разделе **Проверка подлинности с помощью библиотеки удостоверений Azure** в статье [авторизация доступа к BLOB-объектам и очередям с Azure Active Directory и управляемыми удостоверениями для ресурсов Azure](../common/storage-auth-aad-msi.md?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json#authenticate-with-the-azure-identity-library).
 
 ## <a name="add-using-directives"></a>Добавление директив using
 
@@ -258,5 +236,6 @@ private static async Task ReadBlobWithSasAsync(Uri sasUri)
 
 ## <a name="see-also"></a>Дополнительные материалы
 
+- [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](../common/storage-sas-overview.md)
 - [Операция получения ключа делегирования пользователя](/rest/api/storageservices/get-user-delegation-key)
 - [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-user-delegation-sas)

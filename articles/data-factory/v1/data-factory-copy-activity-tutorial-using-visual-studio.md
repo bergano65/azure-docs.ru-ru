@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 3d14b4a821f91486c396d5dae516d3a545c02321
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 49f08721c0459e6bc74d440d63090fd8bad55a36
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73682867"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74703607"
 ---
 # <a name="tutorial-create-a-pipeline-with-copy-activity-using-visual-studio"></a>Руководство по Создание конвейера с действием копирования с помощью Visual Studio
 > [!div class="op_single_selector"]
@@ -508,7 +508,7 @@ ms.locfileid: "73682867"
 При развертывании значения из файла конфигурации используются, чтобы задать значения свойств в JSON-файлах, после чего сущности будут развернуты в службе фабрики данных Azure.   
 
 ## <a name="use-azure-key-vault"></a>Использование хранилища ключей Azure
-Фиксировать конфиденциальные данные, например строки подключения, в репозитории кода не рекомендуется и часто противоречит политике безопасности. См. пример [ADF Secure Publish](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/ADFSecurePublish) на портале GitHub, чтобы узнать о хранении конфиденциальных сведений в Azure Key Vault и их использовании при публикации сущностей фабрики данных. Расширение Secure Publish для Visual Studio позволяет хранить секреты в службе Key Vault, определяя в конфигурациях связанных служб и развертываний только ссылки на них. Эти ссылки разрешаются при публикации сущностей фабрики данных в Azure. Эти файлы затем можно зафиксировать в репозитории, не раскрывая конфиденциальные сведения.
+Фиксировать конфиденциальные данные, например строки подключения, в репозитории кода не рекомендуется и часто противоречит политике безопасности. См. пример [ADF Secure Publish](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/ADFSecurePublish) на портале GitHub, чтобы узнать о хранении конфиденциальных сведений в Azure Key Vault и их использовании при публикации сущностей фабрики данных. Расширение Secure Publish для Visual Studio позволяет хранить секреты в службе Key Vault, определяя в конфигурациях связанных служб и развертываний только ссылки на них. Эти ссылки разрешаются при публикации сущностей фабрики данных в Azure. Эти файлы затем можно зафиксировать в репозитории, не раскрывая конфиденциальные сведения.
 
 
 ## <a name="next-steps"></a>Дополнительная информация

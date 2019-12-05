@@ -10,12 +10,12 @@ keywords: служба автоматизации Azure, DSC, PowerShell, нас
 ms.date: 11/04/2019
 ms.custom: mvc
 ms.topic: quickstart
-ms.openlocfilehash: ddade9472517d080d01b04c853db9dd1848fe0f3
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 7fb24d53876ab8c06fca4fbfe929c06a889335f3
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73668471"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74786356"
 ---
 # <a name="quickstart-connect-machines-to-azure-using-azure-arc-for-servers---powershell"></a>Краткое руководство. Подключение компьютеров к Azure с помощью Azure Arc для серверов в PowerShell
 
@@ -175,7 +175,7 @@ azcmagent connect \
 Если в **Linux** серверу требуется прокси-сервер, можно выполнить одно из следующих действий.
 
 * Запустите скрипт `install_linux_hybrid_agent.sh`, работая с разделом об [установке агента](#download-and-install-the-agent) выше, с использованием `--proxy`.
-* Если агент уже установлен, выполните команду `/opt/azcmagent/bin/hybridrp_proxy add https://{proxy-url}:{proxy-port}`, которая настраивает прокси-сервер и перезапускает агент.
+* Если агент уже установлен, выполните команду `/opt/azcmagent/bin/hybridrp_proxy add http://{proxy-url}:{proxy-port}`, которая настраивает прокси-сервер и перезапускает агент.
 
 #### <a name="windows"></a>Windows
 
@@ -183,7 +183,7 @@ azcmagent connect \
 
 ```powershell
 # If a proxy server is needed, execute these commands with actual proxy URL
-[Environment]::SetEnvironmentVariable("https_proxy", "{https:\\proxy-url:proxyport}", "Machine")
+[Environment]::SetEnvironmentVariable("https_proxy", "http://{proxy-url}:{proxy-port}", "Machine")
 $env:https_proxy = [System.Environment]::GetEnvironmentVariable("https_proxy","Machine")
 # The agent service needs to be restarted after the proxy environment variable is set in order for the changes to take effect.
 Restart-Service -Name himds

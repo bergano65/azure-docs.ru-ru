@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: erhopf
-ms.openlocfilehash: 7630659deeece7fbf8d0ca1fd00b539a8de83b0e
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 0f28d984cfc29e67c3b5c3a90137ee09868b471c
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74072502"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74806034"
 ---
 # <a name="train-a-model-for-custom-speech"></a>Обучение модели для Пользовательское распознавание речи
 
@@ -58,7 +58,7 @@ ms.locfileid: "74072502"
 
 Если выбрана проверка точности, важно выбрать набор данных для акустических элементов, отличный от того, который использовался в модели, чтобы получить реалистичное представление о производительности модели.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Развертывание модели](how-to-custom-speech-deploy-model.md)
 

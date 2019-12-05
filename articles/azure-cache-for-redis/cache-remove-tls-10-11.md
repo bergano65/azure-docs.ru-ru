@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 10/22/2019
 ms.author: yegu
-ms.openlocfilehash: 585828855cdbd3a585ced1aa6803482c3f26f0f4
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 74fcce412b2673a3ec9e4809cef018f1afbc3530
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74121576"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812834"
 ---
 # <a name="remove-tls-10-and-11-from-use-with-azure-cache-for-redis"></a>Удаление TLS 1,0 и 1,1 из использования с кэшем Azure для Redis
 
@@ -33,7 +33,7 @@ ms.locfileid: "74121576"
 
 Клиенты Redis .NET по умолчанию используют самую раннюю версию TLS в .NET Framework 4.5.2 или более ранней версии и используют последнюю версию TLS на .NET Framework 4,6 или более поздней версии. Если вы используете более старую версию .NET Framework, TLS 1,2 можно включить вручную.
 
-* **StackExchange. Redis:** Задайте `ssl=true` и `sslprotocls=tls12` в строке подключения.
+* **StackExchange. Redis:** Задайте `ssl=true` и `sslprotocols=tls12` в строке подключения.
 * **ServiceStack. Redis:** Следуйте [инструкциям по ServiceStack. Redis](https://github.com/ServiceStack/ServiceStack.Redis/pull/247).
 
 ### <a name="net-core"></a>.NET Core
@@ -92,6 +92,6 @@ Redis-копировать по умолчанию использует TLS 1,2.
 
 По умолчанию редиго использует TLS 1,2.
 
-## <a name="additional-information"></a>Дополнительная информация
+## <a name="additional-information"></a>Дополнительные сведения
 
 - [Настройка кэша Azure для Redis](cache-configure.md)

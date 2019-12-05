@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 04/26/2018
 ms.author: menchi
-ms.openlocfilehash: b6ab1e3e01f66e071e3d16b196b3ecdcd30c2620
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 064bfd7a51f3ccb0252f37fbaa11ebc122a4b97f
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74701812"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74807431"
 ---
 # <a name="understand-and-use-module-twins-in-iot-hub"></a>Общие сведения о двойниках модулей и их использование в Центре Интернета вещей
 
@@ -186,7 +186,7 @@ ms.locfileid: "74701812"
     moduleId | Идентификатор модуля |
     hubName | Имя центра Интернета вещей |
     operationTimestamp | Метка времени операции по стандарту [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) |
-    iothub-message-schema | deviceLifecycleNotification |
+    iothub-message-schema | твинчанженотификатион |
     opType | "replaceTwin" или "updateTwin" |
 
     Системные свойства сообщений начинаются с символов `$`.

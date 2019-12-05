@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 10/12/2019
+ms.date: 12/01/2019
 ms.author: b-juche
-ms.openlocfilehash: 06ebe8ed22453289fa02c238d9b2e6ef13191f2a
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 912fd6bde4d00cca304a1506465a524cda947a07
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73888551"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74769852"
 ---
 # <a name="quickstart-set-up-azure-netapp-files-and-create-an-nfs-volume"></a>Краткое руководство. Настройка Azure NetApp Files и создание тома NFS 
 
@@ -257,9 +257,6 @@ ms.locfileid: "73888551"
     * Выберите версию NFS (**NFSv3** или **NFSv4.1**) для тома.  
       Сведения о версиях NFS см. в разделах [Сonsiderations](azure-netapp-files-create-volumes.md#considerations) (Рекомендации) и [Best practice](azure-netapp-files-create-volumes.md#best-practice) (Лучшая методика). 
       
-> [!IMPORTANT] 
-> Для доступа к функции NFS версии 4.1 требуется внесение в список разрешений.  Чтобы запросить внесение в список разрешений, отправьте запрос по адресу <anffeedback@microsoft.com>. 
-
   ![Чтобы сразу же начать работу, выберите протокол NFS](../media/azure-netapp-files/azure-netapp-files-quickstart-protocol-nfs.png)
 
 5. Щелкните **Review + create** (Просмотреть и создать).

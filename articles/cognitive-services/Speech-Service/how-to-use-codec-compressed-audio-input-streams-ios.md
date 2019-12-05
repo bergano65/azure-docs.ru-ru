@@ -1,7 +1,7 @@
 ---
 title: Потоковая передача сжатого аудио кодека с помощью пакета SDK для распознавания речи в iOS
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как выполнять потоковую передачу сжатых аудио в службы речевого обучения Azure с помощью речевого пакета SDK в iOS.
+description: Узнайте, как выполнять потоковую передачу сжатых аудио в службу речи с помощью речевого пакета SDK в iOS.
 services: cognitive-services
 author: chlandsi
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.author: chlandsi
-ms.openlocfilehash: 1d78c690fd07eb974418f0ea17d71d1f394d863d
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 2089f4191ddd57fa8dc19862bd195756c166f2d4
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74109583"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74805864"
 ---
 # <a name="how-to-use-codec-compressed-audio-input-with-the-speech-sdk-on-ios"></a>Как использовать сжатый аудиокодек для речевого ввода с помощью пакета SDK для распознавания речи в iOS
 
@@ -32,7 +32,7 @@ ms.locfileid: "74109583"
 - АЛАВ в контейнере WAV
 - МУЛАВ в контейнере WAV
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Обработка сжатого аудио-сигнала реализуется с помощью [гстреамер](https://gstreamer.freedesktop.org). В целях лицензирования эти функции не могут поставляться вместе с пакетом SDK, но библиотека оболочек, содержащая эти функции, должна быть создана разработчиками приложений и поставляется с приложениями с помощью пакета SDK.
 
@@ -42,7 +42,7 @@ ms.locfileid: "74109583"
 
 На этапе сборки создается динамический пакет платформы с динамической библиотекой для всех необходимых архитектур с именем `GStreamerWrapper.framework`.
 
-Эта платформа должна быть включена во все приложения, использующие сжатые звуковые потоки с пакетом SDK для речевых служб.
+Эта платформа должна быть включена во все приложения, использующие сжатые звуковые потоки с пакетом SDK для службы распознавания речи.
 
 Для этого примените следующие параметры в проекте Xcode:
 
@@ -54,7 +54,7 @@ ms.locfileid: "74109583"
 
 ## <a name="example-code-using-codec-compressed-audio-input"></a>Пример кода, использующий сжатые звуковые входные кодеки
 
-Чтобы выполнить потоковую передачу в сжатом аудио формате в речевые службы, создайте `SPXPullAudioInputStream` или `SPXPushAudioInputStream`.
+Чтобы выполнить потоковую передачу в сжатом аудио формате в службу распознавания речи, создайте `SPXPullAudioInputStream` или `SPXPushAudioInputStream`.
 
 В следующем фрагменте кода показано, как создать `SPXAudioConfiguration` из экземпляра `SPXPushAudioInputStream`, указав MP3 в качестве формата сжатия потока.
 
@@ -64,7 +64,7 @@ ms.locfileid: "74109583"
 
 [!code-objectivec[Push compressed audio data into the stream](~/samples-cognitive-services-speech-sdk/samples/objective-c/ios/compressed-streams/CompressedStreamsSample/CompressedStreamsSample/ViewController.m?range=105-151&highlight=19-44)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Получение пробной версии службы "Речь"](https://azure.microsoft.com/try/cognitive-services/)
+- [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
 - [Узнайте, как распознать речь в Java](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-java)

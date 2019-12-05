@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/06/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 7ceff623c6559ef5e929d6d5bff9e07cca9039d2
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: 05e4dc5bc96ef654006a98f27ff4a12e924250b4
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73796288"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74828820"
 ---
 ## <a name="benefits-of-managed-disks"></a>Преимущества управляемых дисков
 
@@ -37,7 +37,7 @@ ms.locfileid: "73796288"
 
 ### <a name="azure-backup-support"></a>Поддержка резервного копирования Azure
 
-Чтобы обеспечить защиту от региональных сбоев, можно использовать [Azure Backup](../articles/backup/backup-overview.md), чтобы создать задание резервного копирования, выполняющее резервное копирование по расписанию и с учетом политик хранения резервных копий. Это позволит легко восстанавливать виртуальные машины при необходимости. Служба Azure Backup сейчас поддерживает диски размером до 4 ТиБ.  Служба Azure Backup сейчас поддерживает резервное копирование и восстановление управляемых дисков. [Подробнее](../articles/backup/backup-support-matrix-iaas.md) о поддержке резервного копирования виртуальной машины Azure.
+Чтобы обеспечить защиту от региональных сбоев, можно использовать [Azure Backup](../articles/backup/backup-overview.md), чтобы создать задание резервного копирования, выполняющее резервное копирование по расписанию и с учетом политик хранения резервных копий. Это позволит легко восстанавливать виртуальные машины при необходимости. Служба Azure Backup сейчас поддерживает резервное копирование и восстановление управляемых дисков. [Подробнее](../articles/backup/backup-support-matrix-iaas.md) о поддержке резервного копирования виртуальной машины Azure.
 
 ### <a name="granular-access-control"></a>Детальный контроль доступа
 

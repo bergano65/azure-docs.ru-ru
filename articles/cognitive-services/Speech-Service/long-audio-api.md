@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/26/2019
 ms.author: erhopf
-ms.openlocfilehash: f03e32eb17c7c02d8969ea6f79663a5c99196d7b
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: ed00a9df46660cc6bfb4ec5fd9a93c80f5d6653e
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73931925"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74815332"
 ---
 # <a name="long-audio-api-preview"></a>Длинный аудио API (Предварительная версия)
 
@@ -66,7 +66,7 @@ API длинного звука поддерживает следующие фо
 * Audio-24khz-96kbitrate-Mono-MP3
 * Audio-24khz-160kbitrate-Mono-MP3
 
-## <a name="quickstarts"></a>Быстрое начало работы
+## <a name="quickstarts"></a>Краткие руководства
 
 Мы предлагаем самые краткие руководства, которые помогут вам успешно запустить длинный аудио API. В этой таблице содержится список длинных кратких руководств по API аудио, упорядоченных по языку.
 
