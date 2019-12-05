@@ -10,12 +10,12 @@ ms.date: 11/22/2019
 ms.author: brendm
 ms.reviewer: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: edb8f25ff1e4fa01e905c3ae5c7d0ec7ab58f8bb
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 571d4cd395cd0cec0982fedf267a88143fd73872
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74705933"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74805745"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Настройка приложения Java для Linux для службы приложений Azure
 
@@ -54,11 +54,11 @@ ms.locfileid: "74705933"
 
 Если приложение использует [Logback](https://logback.qos.ch/) или [Log4j](https://logging.apache.org/log4j) для трассировки, то эти данные трассировки можно передать в Azure Application Insights для просмотра, выполнив инструкции по настройке платформы ведения журнала в разделе [Просмотр журналов трассировки Java в Application Insights](/azure/application-insights/app-insights-java-trace-logs).
 
-### <a name="troubleshooting-tools"></a>Средства устранения неполадок
+### <a name="troubleshooting-tools"></a>Средства диагностики
 
 Встроенные образы Java основаны на операционной системе [Alpine Linux](https://alpine-linux.readthedocs.io/en/latest/getting_started.html) . Используйте диспетчер пакетов `apk`, чтобы установить любые средства или команды для устранения неполадок.
 
-### <a name="flight-recorder"></a>Черный ящик
+### <a name="flight-recorder"></a>«Черный ящик»
 
 Все образы Linux Java в службе приложений имеют установленный Zulu "черного ящика", чтобы вы могли легко подключаться к ВИРТУАЛЬНОЙ машины Java и запускать запись профилировщика или создавать дамп кучи.
 
@@ -247,6 +247,9 @@ public int getServerPort()
 - [PostgreSQL](https://jdbc.postgresql.org/documentation/head/ssl-client.html)
 - [SQL Server](https://docs.microsoft.com/sql/connect/jdbc/connecting-with-ssl-encryption?view=sql-server-ver15)
 - [MySQL](https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-using-ssl.html)
+- [MongoDB](https://mongodb.github.io/mongo-java-driver/3.4/driver/tutorials/ssl/)
+- [Cassandra](https://docs.datastax.com/developer/java-driver/4.3/)
+
 
 #### <a name="manually-initialize-and-load-the-key-store"></a>Инициализация и загрузка хранилища ключей вручную
 
@@ -616,7 +619,7 @@ xsltproc --output /usr/local/tomcat/conf/server.xml /home/tomcat/conf/transfo
 
 6. Используйте Azure CLI, чтобы добавить параметры в службу приложений, которые содержат сведения о подключении к базе данных. Замените `<resource group>` и `<webapp name>` значениями, используемыми службой приложений. Замените `<database server name>`, `<database name>`, `<admin name>`и `<admin password>` сведениями о подключении к базе данных. Вы можете получить сведения о службе приложений и базе данных из портал Azure.
 
-    **PostgreSQL**
+    **PostgreSQL:**
 
     ```bash
     az webapp config appsettings set \

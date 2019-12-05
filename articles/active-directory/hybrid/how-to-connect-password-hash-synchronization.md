@@ -15,12 +15,12 @@ ms.author: billmath
 search.appverid:
 - MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dfb4b7d2cb34855208eb54c6d30b29e4bbff636b
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 0c903e3378e06734a8785531c1a16c695d4b6c21
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74766622"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74814939"
 ---
 # <a name="implement-password-hash-synchronization-with-azure-ad-connect-sync"></a>Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
 В этой статье содержатся сведения о том, как синхронизировать пароли пользователей локального экземпляра службы Active Directory (AD) и облачного экземпляра службы Azure Active Directory (Azure AD).
@@ -127,7 +127,8 @@ Azure AD поддерживает отдельную политику срока
 
 `Set-ADSyncAADCompanyFeature  -ForcePasswordResetOnLogonFeature $true`
 
-Предостережение. Принудительное изменение пароля при следующем входе в систему требует смены пароля.  AD Connect не установит флаг принудительной смены пароля самостоятельно, он дойдет до обнаруженной смены пароля, которая происходит во время синхронизации хэша паролей.
+> [!NOTE]
+> Принудительное изменение пароля пользователем при следующем входе в систему требует смены пароля.  AD Connect не установит флаг принудительного изменения пароля самостоятельно. это дополнение к обнаруженным изменениям паролей, происходящим во время синхронизации хэша паролей.
 
 > [!CAUTION]
 > Если вы не включите самостоятельный сброс пароля (SSPR) в Azure AD, то при сбросе пароля в Azure AD и последующей попытке войти в Active Directory с новым паролем, так как новый пароль недействителен в Active Directory . Эту функцию следует использовать, только если в клиенте включена функция обратной записи SSPR и пароля.

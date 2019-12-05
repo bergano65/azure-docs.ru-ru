@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/09/2019
 ms.author: donkim
-ms.openlocfilehash: 2da8ef2c29bd6afdaf49e000bf964d119f1e99f1
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 39e0a512e42dd861c0ee2c833501c7594204cb8b
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74110075"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74806156"
 ---
 # <a name="how-to-fulfill-commands-on-the-client-with-the-speech-sdk-preview"></a>Как выполнять команды на клиенте с помощью пакета SDK для распознавания речи (Предварительная версия)
 
@@ -26,10 +26,10 @@ ms.locfileid: "74110075"
 - Определение и Отправка пользовательских полезных данных JSON из приложения пользовательских команд
 - Получение и визуализация содержимого настраиваемой полезной нагрузки JSON из C# клиентского приложения SDK для обработки речи UWP
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 - [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
-- Ключ подписки Azure для речевых служб
+- Ключ подписки Azure для службы речи
   - [Получите его бесплатно](get-started.md) или создайте его на [портал Azure](https://portal.azure.com)
 - Ранее созданное приложение пользовательских команд
   - [Краткое руководство. Создание настраиваемой команды с параметрами (Предварительная версия)](./quickstart-custom-speech-commands-create-parameters.md)
@@ -49,7 +49,7 @@ ms.locfileid: "74110075"
    > [!div class="mx-imgBorder"]
    > ](media/custom-speech-commands/fulfill-sdk-completion-rule.png) правило завершения действия ![отправки
 
-   | Настройка | Рекомендуемое значение | ОПИСАНИЕ |
+   | Параметр | Рекомендуемое значение | Описание |
    | ------- | --------------- | ----------- |
    | Имя правила | упдатедевицестате | Имя, описывающее назначение правила. |
    | Условия | Обязательный параметр — `OnOff` и `SubjectDevice` | Условия, определяющие, когда может выполняться правило |
@@ -131,7 +131,7 @@ connector.ActivityReceived += async (sender, activityReceivedEventArgs) =>
 };
 ```
 
-## <a name="try-it-out"></a>Попробовать
+## <a name="try-it-out"></a>Попробуйте в деле
 
 1. Запуск приложения
 1. Выберите включить микрофон
@@ -139,7 +139,7 @@ connector.ActivityReceived += async (sender, activityReceivedEventArgs) =>
 1. Скажем `turn on the tv`
 1. Визуальное состояние телевизора должно измениться на "вкл."
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Как добавить проверки в пользовательские параметры команды (Предварительная версия)](./how-to-custom-speech-commands-validations.md)

@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 10/23/2019
+ms.date: 12/03/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5864424f003ce9254a6452d8374d78c54516f2bc
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 08c1db1a8e377edd1bf9b8f1b942e65b970edf56
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74322738"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74803688"
 ---
 # <a name="conditional-access-require-trusted-location-for-mfa-registration"></a>Условный доступ: требовать надежное расположение для регистрации MFA
 
@@ -26,7 +26,7 @@ ms.locfileid: "74322738"
 
 Следующая политика применяется ко всем выбранным пользователям, которые пытаются зарегистрироваться с помощью Объединенной функции регистрации, и блокирует доступ, если они не подключены из расположения, помеченного как Доверенная сеть.
 
-1. В **портал Azure**перейдите к **Azure Active Directory** > **Условный доступ**.
+1. В **портал Azure**перейдите к **Azure Active Directory** > **Безопасность** > **Условный доступ**.
 1. Выберите **Новая политика**.
 1. В списке Имя введите имя политики. Например, **Объединенная регистрация сведений о безопасности в доверенных сетях**.
 1. В разделе **назначения**щелкните **Пользователи и группы**и выберите пользователей и группы, к которым должна применяться эта политика.
@@ -44,10 +44,10 @@ ms.locfileid: "74322738"
 1. В разделе **элементы управления доступом** > **предоставить**.
    1. Щелкните **блокировать доступ**.
    1. Затем щелкните **Выбрать**.
-1. Установите для **параметра включить политику** значение **вкл**.
+1. Для параметра **Включить политику** задайте **Вкл**.
 1. Нажмите кнопку **Сохранить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие политики условного доступа](concept-conditional-access-policy-common.md)
 

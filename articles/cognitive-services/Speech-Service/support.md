@@ -1,7 +1,7 @@
 ---
 title: Параметры поддержки и справки — служба речи
 titleSuffix: Azure Cognitive Services
-description: Как получить справку и поддержку по вопросам и проблемам, возникающим при создании приложения, которое интегрируется со службой "Речь"
+description: Получение справки и поддержки по вопросам и проблемам при создании приложений, которые интегрируются со службой речи
 services: cognitive-services
 author: jhakulin
 manager: nitinme
@@ -10,34 +10,34 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: jhakulin
-ms.openlocfilehash: 925d21d22806ab2854be29b9648aab78138741ec
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 741217cde5068468a7063a64361df8425346b590
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74422611"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74815452"
 ---
 # <a name="support-and-help-options"></a>Возможности получения поддержки и справки
 
-Вы только начинаете изучать функциональные возможности речевых служб? Или вы реализуете в приложении новую функцию? Вот несколько подсказок, как получить справку для разработчика.
+Вы только начинаете изучать возможности службы "Речь"? Или вы реализуете в приложении новую функцию? Вот несколько подсказок, как получить справку для разработчика.
 
 > [!div class="checklist"]
-> * Будьте в курсе последних разработок в *Azure Cognitive Services* и следите за последними новостями о *службе "Речь"* .
+> * Получайте сведения о новых разработках в *Azure Cognitive Services*или Узнайте о последних новостях, связанных со *службой речи*.
 > * Заметки о выпуске содержат сведения обо всех выпусках.
 > * Попробуйте найти вашу проблему в обсуждении сообщества или поищите документацию по нужной вам функции.
 > * Если не удается найти удовлетворительный ответ, задайте вопрос в *Stack Overflow*.
 > * Если возникла проблема с одним из примеров, опубликованных на сайте GitHub, создайте запрос на сайте *GitHub*.
 > * Поищите решение на форуме *UserVoice*.
 
-## <a name="stay-informed"></a>Следите за новостями
+## <a name="stay-informed"></a>Будьте в курсе
 
-Новости о Cognitive Services собраны в [блоге по Cognitive Services](https://azure.microsoft.com/blog/topics/cognitive-services/). Последние сведения о речевых службах см. в [блоге по голосовым службам](https://azure.microsoft.com/blog/tag/speech-service/).
+Новости о Cognitive Services собраны в [блоге по Cognitive Services](https://azure.microsoft.com/blog/topics/cognitive-services/). Последние сведения о службе распознавания речи см. в блоге по [голосовым службам](https://azure.microsoft.com/blog/tag/speech-service/).
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
 [Заметки о выпуске](https://aka.ms/csspeech/whatsnew) обновляются, как только будет доступен новый выпуск. Заметки содержат сведения о новых возможностях, улучшениях и исправлениях ошибок.
 
-## <a name="search"></a>поиска
+## <a name="search"></a>служба поиска.
 
 Ответ можно найти в документации, наших примерах или ответах на вопросы, заданные на сайте [Stack Overflow](https://www.stackoverflow.com).
 
@@ -55,7 +55,7 @@ ms.locfileid: "74422611"
 
 Клиенты Azure могут создавать запросы на получение поддержки и управлять ими на портале Azure.
 
-* [портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
+* [Портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
 * [Портал Azure для государственных учреждений США](https://portal.azure.us)
 
 ## <a name="post-a-question-to-stack-overflow"></a>Публикация вопроса на сайте Stack Overflow

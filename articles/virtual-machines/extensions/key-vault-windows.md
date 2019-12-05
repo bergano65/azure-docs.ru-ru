@@ -3,22 +3,23 @@ title: Расширение виртуальной машины Azure Key Vault 
 description: С помощью расширения виртуальной машины вы можете развернуть агент, выполняющий автоматическое обновление секретов Key Vault на виртуальных машинах.
 services: virtual-machines-windows
 author: msmbaldwin
+tags: keyvault
 ms.service: virtual-machines-windows
 ms.topic: article
-ms.date: 09/23/2018
+ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 03351e964fc7247f87d0b823fae06fc03ff18de7
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 1d2606296ba55c0ef66d118091f6764f7a285137
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74152099"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74806785"
 ---
 # <a name="key-vault-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Key Vault для Windows
 
 Расширение Key Vault VM обеспечивает автоматическое обновление сертификатов, хранящихся в хранилище ключей Azure. В частности, расширение отслеживает список наблюдаемых сертификатов, хранящихся в хранилищах ключей, и при обнаружении изменения извлекает и устанавливает соответствующие сертификаты. В этом документе подробно описаны поддерживаемые платформы, конфигурации и параметры развертывания для расширения виртуальной машины Key Vault для Windows. 
 
-### <a name="operating-system"></a>операционная система
+### <a name="operating-system"></a>Операционная система
 
 Расширение Key Vault VM поддерживает следующие версии Windows:
 
@@ -40,20 +41,20 @@ ms.locfileid: "74152099"
           "[concat('Microsoft.Compute/virtualMachines/', <vmName>)]"
       ],
       "properties": {
-            "publisher": "Microsoft.Azure.KeyVault",
-            "type": "KeyVaultForWindows",
-            "typeHandlerVersion": "1.0",
-            "autoUpgradeMinorVersion": true,
-            "settings": {
-                "secretsManagementSettings": {
-                    "pollingIntervalInS": <polling interval in seconds>,
-                    "certificateStoreName": <certificate store name, e.g.: "MY">,
-                    "linkOnRenewal": <Only Windows. This feature enables auto-rotation of SSL certificates, without necessitating a re-deployment or binding.  e.g.: false>,
-                    "certificateStoreLocation": <certificate store location, currently it works locally only e.g.: "LocalMachine">,
-                    "requireInitialSync": <initial synchronization of certificates e..g: true>,
-                    "observedCertificates": <list of KeyVault URIs representing monitored certificates, e.g.: "https://myvault.vault.azure.net/secrets/mycertificate"
-                }         
-            }
+      "publisher": "Microsoft.Azure.KeyVault",
+      "type": "KeyVaultForWindows",
+      "typeHandlerVersion": "1.0",
+      "autoUpgradeMinorVersion": true,
+      "settings": {
+        "secretsManagementSettings": {
+          "pollingIntervalInS": <polling interval in seconds, e.g: "3600">,
+          "certificateStoreName": <certificate store name, e.g.: "MY">,
+          "linkOnRenewal": <Only Windows. This feature enables auto-rotation of SSL certificates, without necessitating a re-deployment or binding.  e.g.: false>,
+          "certificateStoreLocation": <certificate store location, currently it works locally only e.g.: "LocalMachine">,
+          "requireInitialSync": <initial synchronization of certificates e..g: true>,
+          "observedCertificates": <list of KeyVault URIs representing monitored certificates, e.g.: "https://myvault.vault.azure.net/secrets/mycertificate"
+        }      
+      }
       }
     }
 ```
@@ -65,17 +66,17 @@ ms.locfileid: "74152099"
 
 ### <a name="property-values"></a>Значения свойств
 
-| имя | Значение и пример | Тип данных |
+| Name | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| версия_API | 2019-07-01 | дата |
-| publisher | Microsoft.Azure.KeyVault| строка |
-| type | KeyVaultForWindows | строка |
+| версия_API | 2019-07-01 | date |
+| publisher | Microsoft.Azure.KeyVault | string |
+| Тип | KeyVaultForWindows | string |
 | typeHandlerVersion | 1.0 | int |
-| pollingIntervalInS | 3600 | строка |
-| certificateStoreName | MY | строка |
-| линконреневал | нет | логическое значение |
-| certificateStoreLocation  | LocalMachine | строка |
-| рекуирединитиалсинк | true | логическое значение |
+| pollingIntervalInS | 3600 | string |
+| certificateStoreName | MY | string |
+| линконреневал | false | Логическое |
+| certificateStoreLocation  | LocalMachine | string |
+| рекуирединитиалсинк | true | Логическое |
 | observedCertificates  | ["https://myvault.vault.azure.net/secrets/mycertificate"] | массив строк
 
 
@@ -95,17 +96,17 @@ ms.locfileid: "74152099"
           "[concat('Microsoft.Compute/virtualMachines/', <vmName>)]"
       ],
       "properties": {
-            "publisher": "Microsoft.Azure.KeyVault",
-            "type": "KeyVaultForWindows",
-            "typeHandlerVersion": "1.0",
-            "autoUpgradeMinorVersion": true,
-            "settings": {
-                    "pollingIntervalInS": <polling interval in seconds>,
-                    "certificateStoreName": <certificate store name, e.g.: "MY">,
-                    "certificateStoreLocation": <certificate store location, currently it works locally only e.g.: "LocalMachine">,
-                    "observedCertificates": <list of KeyVault URIs representing monitored certificates, e.g.: "https://myvault.vault.azure.net/secrets/mycertificate"
-                }         
-            }
+      "publisher": "Microsoft.Azure.KeyVault",
+      "type": "KeyVaultForWindows",
+      "typeHandlerVersion": "1.0",
+      "autoUpgradeMinorVersion": true,
+      "settings": {
+          "pollingIntervalInS": <polling interval in seconds, e.g: "3600">,
+          "certificateStoreName": <certificate store name, e.g.: "MY">,
+          "certificateStoreLocation": <certificate store location, currently it works locally only e.g.: "LocalMachine">,
+          "observedCertificates": <list of KeyVault URIs representing monitored certificates, e.g.: "https://myvault.vault.azure.net/secrets/mycertificate"
+        }      
+      }
       }
     }
 ```
@@ -120,10 +121,10 @@ Azure PowerShell можно использовать для развертыва
     ```powershell
         # Build settings
         $settings = '{"secretsManagementSettings": 
-            { "pollingIntervalInS": "' + <pollingInterval> + 
-            '", "certificateStoreName": "' + <certStoreName> + 
-            '", "certificateStoreLocation": "' + <certStoreLoc> + 
-            '", "observedCertificates": ["' + <observedCerts> + '"] } }'
+        { "pollingIntervalInS": "' + <pollingInterval> + 
+        '", "certificateStoreName": "' + <certStoreName> + 
+        '", "certificateStoreLocation": "' + <certStoreLoc> + 
+        '", "observedCertificates": ["' + <observedCerts> + '"] } }'
         $extName =  "KeyVaultForWindows"
         $extPublisher = "Microsoft.Azure.KeyVault"
         $extType = "KeyVaultForWindows"
@@ -140,10 +141,10 @@ Azure PowerShell можно использовать для развертыва
     
         # Build settings
         $settings = '{"secretsManagementSettings": 
-            { "pollingIntervalInS": "' + <pollingInterval> + 
-            '", "certificateStoreName": "' + <certStoreName> + 
-            '", "certificateStoreLocation": "' + <certStoreLoc> + 
-            '", "observedCertificates": ["' + <observedCerts> + '"] } }'
+        { "pollingIntervalInS": "' + <pollingInterval> + 
+        '", "certificateStoreName": "' + <certStoreName> + 
+        '", "certificateStoreLocation": "' + <certStoreLoc> + 
+        '", "observedCertificates": ["' + <observedCerts> + '"] } }'
         $extName = "KeyVaultForWindows"
         $extPublisher = "Microsoft.Azure.KeyVault"
         $extType = "KeyVaultForWindows"
@@ -185,8 +186,8 @@ Azure CLI можно использовать для развертывания 
 
 Ознакомьтесь со следующими ограничениями и требованиями.
 - Ограничения, касающиеся решения Key Vault:
-    - оно должно существовать во время развертывания; 
-    - Политика доступа Key Vault настроена для удостоверения виртуальной машины или VMSS с помощью MSI
+  - оно должно существовать во время развертывания; 
+  - Политика доступа Key Vault настроена для удостоверения виртуальной машины или VMSS с помощью MSI
 
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
@@ -200,7 +201,7 @@ Azure CLI можно использовать для развертывания 
 Get-AzVMExtension -VMName <vmName> -ResourceGroupname <resource group name>
 ```
 
-## <a name="azure-cli"></a>Интерфейс командной строки Azure
+## <a name="azure-cli"></a>Azure CLI
 ```azurecli
  az vm get-instance-view --resource-group <resource group name> --name  <vmName> --query "instanceView.extensions"
 ```
@@ -208,7 +209,7 @@ Get-AzVMExtension -VMName <vmName> -ResourceGroupname <resource group name>
 Выходные данные выполнения расширения регистрируются в следующем файле:
 
 ```
-%windrive%\WindowsAzure\Logs\Plugins\Microsoft.Azure.KeyVault.Edp.KeyVaultForWindows\<version>\akvvm_service_<date>.log
+%windrive%\WindowsAzure\Logs\Plugins\Microsoft.Azure.KeyVault.KeyVaultForWindows\<version>\akvvm_service_<date>.log
 ```
 
 

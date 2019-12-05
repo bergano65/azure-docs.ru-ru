@@ -9,12 +9,12 @@ ms.date: 09/25/2019
 ms.author: santoshc
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: e9781d9c277d19257d9b00bea3106adb3b04ffd6
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: fff92057bc9812a5ef1488a46ed469382ad3ace3
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74672520"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74806887"
 ---
 # <a name="using-private-endpoints-for-azure-storage-preview"></a>Использование частных конечных точек для службы хранилища Azure (Предварительная версия)
 
@@ -25,14 +25,14 @@ ms.locfileid: "74672520"
 - Увеличьте уровень безопасности для виртуальной сети, позволяя блокировать утечка данных из сети.
 - Безопасное подключение к учетным записям хранения из локальных сетей, подключающихся к виртуальной сети с помощью [VPN](../../vpn-gateway/vpn-gateway-about-vpngateways.md) или [которыми](../../expressroute/expressroute-locations.md) с частными пиринга.
 
-## <a name="conceptual-overview"></a>Обзор концепции
+## <a name="conceptual-overview"></a>Общие сведения
 ![Общие сведения о частных конечных точках для службы хранилища Azure](media/storage-private-endpoints/storage-private-endpoints-overview.jpg)
 
 Частная конечная точка — это специальный сетевой интерфейс для службы Azure в [виртуальной сети](../../virtual-network/virtual-networks-overview.md) (VNet). При создании частной конечной точки для учетной записи хранения обеспечивается безопасное подключение между клиентами в виртуальной сети и хранилищем. Частной конечной точке назначается IP-адрес из диапазона IP-адресов виртуальной сети. Соединение между частной конечной точкой и службой хранилища использует защищенную закрытую ссылку.
 
 Приложения в виртуальной сети могут легко подключаться к службе хранилища через закрытую конечную точку, **используя те же строки подключения и механизмы авторизации, которые используются в противном случае**. Частные конечные точки можно использовать со всеми протоколами, поддерживаемыми учетной записью хранения, включая остальные и SMB.
 
-Частные конечные точки можно создавать в подсетях, использующих [конечные точки служб](/azure/virtual-network/virtual-network-service-endpoints-overview.md). Таким образом клиенты в подсети могут подключаться к одной учетной записи хранения с помощью частной конечной точки, а также использовать конечные точки службы для доступа к другим пользователям.
+Частные конечные точки можно создавать в подсетях, использующих [конечные точки служб](../../virtual-network/virtual-network-service-endpoints-overview.md). Таким образом клиенты в подсети могут подключаться к одной учетной записи хранения с помощью частной конечной точки, а также использовать конечные точки службы для доступа к другим пользователям.
 
 Когда вы создаете в виртуальной сети частную конечную точку для службы хранилища, соответствующий запрос на предоставление согласия отправляется владельцу учетной записи хранения. Если пользователь, запрашивающий создание частной конечной точки, также является владельцем учетной записи хранения, этот запрос на согласие автоматически утверждается.
 
@@ -107,7 +107,7 @@ ms.locfileid: "74672520"
 | Служба BLOB-объектов           | `privatelink.blob.core.windows.net`  |
 | Data Lake Storage 2-го поколения | `privatelink.dfs.core.windows.net`   |
 | Служба файлов           | `privatelink.file.core.windows.net`  |
-| служба очередей          | `privatelink.queue.core.windows.net` |
+| Служба очередей          | `privatelink.queue.core.windows.net` |
 | Служба таблиц          | `privatelink.table.core.windows.net` |
 | Статические веб-сайты        | `privatelink.web.core.windows.net`   |
 
@@ -115,8 +115,8 @@ ms.locfileid: "74672520"
 
 Дополнительные сведения о настройке собственного DNS-сервера для поддержки частных конечных точек см. в следующих статьях:
 
-- [Разрешение имен ресурсов в виртуальных сетях Azure](/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances#name-resolution-that-uses-your-own-dns-server)
-- [Конфигурация DNS для частных конечных точек](/private-link/private-endpoint-overview#dns-configuration)
+- [Разрешение имен ресурсов в виртуальных сетях Azure](/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances#name-resolution-that-uses-your-own-dns-server)
+- [Конфигурация DNS для частных конечных точек](/azure/private-link/private-endpoint-overview#dns-configuration)
 
 ## <a name="pricing"></a>Стоимость
 

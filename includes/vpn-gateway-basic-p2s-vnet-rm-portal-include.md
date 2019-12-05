@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 3d9826e3eae2a60b217df1406d26d83c78fbdefb
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: a826bb01a906153b4ca2a3c854623c83b6192aec
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "67673504"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74828874"
 ---
 Чтобы создать виртуальную сеть на основе модели развертывания Resource Manager, используя портал Azure, следуйте инструкциям ниже. Снимки экрана приведены в качестве примеров. Обязательно подставьте собственные значения. Дополнительные сведения о работе с виртуальными сетями см. в статье [Обзор виртуальной сети](../articles/virtual-network/virtual-networks-overview.md).
 
@@ -22,10 +22,12 @@ ms.locfileid: "67673504"
 >
 >
 
-1. В браузере откройте [портал Azure](https://portal.azure.com) и при необходимости войдите с помощью учетной записи Azure.
-2. В нижней части страницы нажмите кнопку **+** . В поле **Поиск по Marketplace** введите "Виртуальная сеть". Найдите **Виртуальная сеть** в результатах поиска и щелкните ее, чтобы открыть страницу **Виртуальная сеть**.
+1. Войдите на [портале Azure](https://portal.azure.com).  В меню портал Azure или на **домашней** странице выберите **создать ресурс**. Откроется страница **создания**.
 
-   ![Страница "Обзор ресурсов виртуальной сети"](./media/vpn-gateway-basic-p2s-vnet-rm-portal-include/newvnetportal700.png "Страница "Обзор ресурсов виртуальной сети"")
+2. В поле **Поиск в Marketplace**введите *Виртуальная сеть* и выберите в списке результатов пункт **Виртуальная сеть** .
+
+   ![Страница "Обзор ресурсов виртуальной сети"](./media/vpn-gateway-basic-p2s-vnet-rm-portal-include/search-marketplace-for-virtual-network.png "Страница "Обзор ресурсов виртуальной сети"")
+
 3. В нижней части страницы "Виртуальная сеть" из списка **Выберите модель развертывания** выберите **Resource Manager** и щелкните **Создать**.
 
    ![Выберите диспетчер ресурсов](./media/vpn-gateway-basic-p2s-vnet-rm-portal-include/resourcemanager250.png "Выбор Resource Manager")

@@ -2,13 +2,13 @@
 title: Условное развертывание с помощью шаблонов
 description: Описание условного развертывания ресурса в шаблоне Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 09/03/2019
-ms.openlocfilehash: e3d78f875e39628194ac30310314e59e2ef19fdb
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.date: 12/03/2019
+ms.openlocfilehash: ec2337686f92bb631ae4b08ce125eb576cd8bd69
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74147172"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74806479"
 ---
 # <a name="conditional-deployment-in-resource-manager-templates"></a>Условное развертывание в шаблонах диспетчер ресурсов
 
@@ -79,11 +79,13 @@ ms.locfileid: "74147172"
 
 Используйте функцию [If](resource-group-template-functions-logical.md#if) , чтобы убедиться, что функция вычисляется только для условий при развертывании ресурса. См. [функцию if](resource-group-template-functions-logical.md#if) для примера шаблона, который использует оператор If и ссылку с условно развернутым ресурсом.
 
+Ресурс задается [как зависимый](resource-group-define-dependencies.md) от условного ресурса точно так же, как любой другой ресурс. Если условный ресурс не развернут, Azure Resource Manager автоматически удаляет его из необходимых зависимостей.
+
 ## <a name="condition-with-complete-mode"></a>Условие с полным режимом
 
 Если вы развертываете шаблон с [полным режимом](deployment-modes.md) , а ресурс не развернут, так как условие принимает значение false, результат зависит от того, какая REST API версия используется для развертывания шаблона. Если вы используете более раннюю версию, чем 2019-05-10, ресурс **не удаляется**. В 2019-05-10 или более поздней версии ресурс **удаляется**. Последние версии Azure PowerShell и Azure CLI удаляют ресурс, если условие имеет значение false.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные рекомендации по созданию шаблонов см. в статье [Рекомендации по работе с шаблонами Azure Resource Manager](template-best-practices.md).
 * Сведения о создании нескольких экземпляров ресурса см. [в разделе ресурс, свойство или итерация переменной в шаблонах Azure Resource Manager](resource-group-create-multiple.md).

@@ -14,18 +14,18 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: 75edb385a86be849ec7c165759d3b451eab804f6
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: fec81e843753656d651c6d5d0b73077a964be9d4
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71828511"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74807448"
 ---
 # <a name="azure-service-fabric-security"></a>Безопасность Azure Service Fabric 
 
 Дополнительные сведения о [рекомендациях по безопасности Azure](https://docs.microsoft.com/azure/security/) см. в [этой статье](https://docs.microsoft.com/azure/security/fundamentals/service-fabric-best-practices).
 
-## <a name="key-vault"></a>Хранилище ключей
+## <a name="key-vault"></a>Key Vault
 
 [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/) — это рекомендуемая служба управления секретами для приложений и кластеров Azure Service Fabric.
 > [!NOTE]
@@ -166,7 +166,7 @@ user@linux:$ openssl smime -encrypt -in plaintext_UTF-16.txt -binary -outform de
 ```
 ## <a name="authenticate-service-fabric-applications-to-azure-resources-using-managed-service-identity-msi"></a>Аутентификация приложений Service Fabric в ресурсах Azure с помощью Управляемого удостоверения службы (MSI)
 
-Дополнительные сведения об управляемых удостоверениях в ресурсах Azure см. в разделе [Принцип работы управляемых удостоверений для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview#how-does-it-work).
+Дополнительные сведения об управляемых удостоверениях в ресурсах Azure см. в разделе [Принцип работы управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md#how-does-the-managed-identities-for-azure-resources-work).
 Кластеры Azure Service Fabric размещаются в масштабируемых наборах виртуальных машин, которые поддерживают [Управляемое удостоверение службы](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-msi#azure-services-that-support-managed-identities-for-azure-resources).
 Список служб, для аутентификации которых можно использовать MSI, см. в разделе [Службы Azure, поддерживающие аутентификацию Azure AD](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-msi#azure-services-that-support-azure-ad-authentication).
 
@@ -213,7 +213,7 @@ access_token=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-v
 ```bash
 cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBSCRIPTION>/resourceGroups/<YOUR RG>/providers/Microsoft.DocumentDB/databaseAccounts/<YOUR ACCOUNT>/listKeys?api-version=2016-03-31' -X POST -d "" -H "Authorization: Bearer $access_token" | python -c "import sys, json; print(json.load(sys.stdin)['primaryMasterKey'])")
 ```
-## <a name="windows-security-baselines"></a>Базовые показатели безопасности Windows
+## <a name="windows-security-baselines"></a>Базовые параметры безопасности Windows
 [Мы рекомендуем реализовать стандартную промышленную конфигурацию, которая широко известна и хорошо тестируется, например базовые планы безопасности Майкрософт, а не самостоятельное создание базовых показателей](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines). параметр для подготовки этих данных в масштабируемых наборах виртуальных машин заключается в использовании обработчика расширения Desired State Configuration (DSC) Azure для настройки виртуальных машин в режиме «в сети», чтобы они выполняли рабочее программное обеспечение.
 
 ## <a name="azure-firewall"></a>Брандмауэр Azure
@@ -274,7 +274,7 @@ cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBS
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Создайте кластер на виртуальных машинах или компьютерах под управлением Windows Server: [Service Fabric создания кластера для Windows Server](service-fabric-cluster-creation-for-windows-server.md).
 * Создание кластера на виртуальных машинах или компьютерах под управлением Linux: [Создание кластера Linux](service-fabric-cluster-creation-via-portal.md).

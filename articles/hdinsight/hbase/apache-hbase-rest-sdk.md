@@ -2,22 +2,22 @@
 title: Использование пакета SDK для .NET HBase в Azure HDInsight
 description: Пакет SDK для .NET HBase позволяет создавать и удалять таблицы, а также считывать и записывать данные.
 author: ashishthaps
+ms.author: ashishth
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 12/13/2017
-ms.author: ashishth
-ms.openlocfilehash: d998ff44804a2dcd2b3282679a9cb53f893991e3
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.custom: hdinsightactive
+ms.date: 12/02/2019
+ms.openlocfilehash: eba7d7ad009b2ef0442a916983489489eb5cceb8
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71077173"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74806666"
 ---
 # <a name="use-the-net-sdk-for-apache-hbase"></a>Использование пакета SDK для .NET для Apache HBase
 
-[Apache HBase](apache-hbase-overview.md) предоставляет два основных варианта работы с данными: [Apache Hive запросы и вызовы к API RESTful HBase](apache-hbase-tutorial-get-started-linux.md). Можно работать непосредственно с REST API, используя команду `curl` или подобную программу.
+[Apache HBase](apache-hbase-overview.md) предоставляет два основных способа работы с данными: [запросы Apache Hive и вызовы REST API HBase](apache-hbase-tutorial-get-started-linux.md). Можно работать непосредственно с REST API, используя команду `curl` или подобную программу.
 
 Для приложений C# и .NET [клиентская библиотека Microsoft HBase REST для .NET](https://www.nuget.org/packages/Microsoft.HBase.Client/) предоставляет клиентскую библиотеку на платформе REST API HBase.
 
@@ -38,7 +38,7 @@ client = new HBaseClient(credentials);
 
 Замените CLUSTERNAME именем кластера HDInsight HBase, а USERNAME и PASSWORD — учетными данными Apache Hadoop, указанными при создании кластера. Имя пользователя Hadoop по умолчанию — **admin**.
 
-## <a name="create-a-new-table"></a>Создать таблицу
+## <a name="create-a-new-table"></a>Создание таблицы
 
 В HBase данные хранятся в таблицах. Таблица состоит из *Rowkey* — первичного ключа — и одной или нескольких групп столбцов, называемых *семействами столбцов*. Данные в каждой таблице горизонтально распределяются по диапазонам ключей Rowkey на *области*. У каждой области есть ключ начала и окончания. Таблица может содержать одну или несколько областей. По мере роста данных в таблице HBase большие области разбиваются на меньшие. Области хранятся на *серверах областей*. На одном сервере могут храниться несколько областей.
 
@@ -58,9 +58,9 @@ if (!client.ListTablesAsync().Result.name.Contains("RestSDKTable"))
 }
 ```
 
-Эта новая таблица содержит два семейства столбцов — t1 и t2. Так как семейства столбцов хранятся отдельно в разных файлах HFile, есть смысл создать отдельное семейство столбцов для часто запрашиваемых данных. В следующем примере [вставки данных](#insert-data) столбцы добавляются в семейство столбцов t1.
+Эта новая таблица имеет два семейства столбцов: T1 и T2. Так как семейства столбцов хранятся отдельно в разных файлах HFile, есть смысл создать отдельное семейство столбцов для часто запрашиваемых данных. В следующем примере [вставки данных](#insert-data) столбцы добавляются в семейство столбцов t1.
 
-## <a name="delete-a-table"></a>Удалить таблицу
+## <a name="delete-a-table"></a>Удаление таблицы
 
 Чтобы удалить таблицу, выполните следующую команду:
 
@@ -112,11 +112,11 @@ set.rows.Add(row);
 await client.StoreCellsAsync("RestSDKTable", set);
 ```
 
-В HBase используется [Cloud BigTable](https://cloud.google.com/bigtable/), поэтому формат данных выглядит следующим образом:
+HBase реализует [Cloud Bigtable](https://cloud.google.com/bigtable/), поэтому формат данных выглядит как на следующем рисунке:
 
 ![Выходные данные образца Apache HBase](./media/apache-hbase-rest-sdk/hdinsight-table-roles.png)
 
-## <a name="select-data"></a>Выбрать данные
+## <a name="select-data"></a>Выбор данных
 
 Для чтения данных из таблицы HBase передайте имя таблицы и ключ строки в метод `GetCellsAsync`, который возвращает `CellSet`.
 
@@ -185,7 +185,7 @@ finally
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Начало работы с примером Apache HBase в HDInsight](apache-hbase-tutorial-get-started-linux.md)
 * Создание полнофункционального приложения на основе руководства по [анализу тональности в Twitter в режиме реального времени с помощью Apache HBase](../hdinsight-hbase-analyze-twitter-sentiment.md)

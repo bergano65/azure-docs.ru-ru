@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 01/14/2019
-ms.openlocfilehash: 14cb4f02bc18bda24f022f1ccf41a06776a5136b
-ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
+ms.openlocfilehash: 4e6b648ed70f6ff57a2d11cde43b8168b800fcb3
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73241483"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74806921"
 ---
 # <a name="run-azure-machine-learning-workloads-with-automated-machine-learning-on-apache-spark-in-hdinsight"></a>Запуск Машинное обучение Azure рабочих нагрузок с помощью автоматического машинного обучения на Apache Spark в HDInsight
 
@@ -71,7 +71,7 @@ dataflow_with_token = dprep.read_csv(
 
 ## <a name="experiment-submission"></a>Отправка эксперимента
 
-В [автоматической конфигурации машинного обучения](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig)свойству `spark_context` должно быть присвоено значение, чтобы пакет был запущен в распределенном режиме. Свойство `concurrent_iterations`, которое является максимальным числом параллельно выполняемых итераций, должно быть меньше количества ядер исполнителя для приложения Spark.
+В [автоматической конфигурации машинного обучения](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig)свойству `spark_context` должно быть присвоено значение, чтобы пакет был запущен в распределенном режиме. Свойство `concurrent_iterations`, которое является максимальным числом параллельно выполняемых итераций, должно быть меньше количества ядер исполнителя для приложения Spark.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,5 +1,5 @@
 ---
-title: Группы размещения службы "близость" Azure для оптимальной задержки в сети с приложениями SAP | Документация Майкрософт
+title: Группы размещения Azure для приложений SAP | Документация Майкрософт
 description: Описание сценариев развертывания SAP с группами размещения с учетом расположения в Azure
 services: virtual-machines-linux,virtual-machines-windows
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 10/01/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: deffcb81a4f66783fedc89c3e21ea46b15ad1c64
-ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
+ms.openlocfilehash: cef5058936a45badd700a573611c82398ca4d546
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71719996"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74805711"
 ---
 # <a name="azure-proximity-placement-groups-for-optimal-network-latency-with-sap-applications"></a>Группы размещения службы "близость" Azure для оптимальной сетевой задержки с приложениями SAP
 Приложения SAP на основе архитектуры SAP NetWeaver или SAP S/4HANA чувствительны к задержке в сети между уровнем приложений SAP и уровнем базы данных SAP. Эта чувствительность является результатом большей части бизнес-логики, выполняемой на уровне приложения. Поскольку уровень приложений SAP выполняет бизнес-логику, он отправляет запросы на уровень базы данных с высокой частотой в тысячах или десятках тысяч в секунду. В большинстве случаев характер этих запросов прост. Они часто могут выполняться на уровне базы данных за 500 МКС или менее.
@@ -159,7 +159,7 @@ New-AzVm -ResourceGroupName "myfirstppgexercise" -Name "myppgavsetappvm" -Locati
 Если вы уже развернули системы SAP, может потребоваться оптимизировать сетевую задержку некоторых критических систем и выбрать уровень приложения и уровень СУБД в одном центре обработки данных. Во время общедоступной предварительной версии групп размещения с учетом расположения необходимо удалить виртуальные машины и создать новые, чтобы переместить систему в группы размещения близости. Сейчас невозможно просто завершить работу виртуальных машин и назначить их группам размещения.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с документацией:
 
 - [Рабочие нагрузки SAP в Azure: контрольный список для планирования и развертывания](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-deployment-checklist)

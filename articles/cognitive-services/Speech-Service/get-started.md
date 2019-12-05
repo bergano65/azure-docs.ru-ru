@@ -1,5 +1,5 @@
 ---
-title: Попробуйте службу распознавания речи бесплатно
+title: Бесплатная пробная подписка на службу "Речь"
 titleSuffix: Azure Cognitive Services
 description: Начало работы со службой речи — это простой и доступный способ. Существует два варианта, которые можно бесплатно получить, чтобы узнать, что может сделать служба, и решить, подходит ли она для ваших нужд.
 services: cognitive-services
@@ -11,14 +11,14 @@ ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
 ms.custom: seodec18, seo-javascript-october2019
-ms.openlocfilehash: 30bdbf9fa0ea346892622c3e7f24f9f31652a650
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 3ddba414ef1801b812d157ad734847099a8a9f25
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74280496"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74806190"
 ---
-# <a name="try-the-speech-service-for-free"></a>Попробуйте службу распознавания речи бесплатно
+# <a name="try-the-speech-service-for-free"></a>Бесплатная пробная подписка на службу "Речь"
 
 Использование службы распознавания речи — это простой и доступный способ. Существует два варианта, которые можно бесплатно получить, чтобы узнать, что может сделать служба, и решить, подходит ли она для ваших нужд:
 
@@ -32,7 +32,7 @@ ms.locfileid: "74280496"
 >
 > Если вы используете уровень службы речевого режима "бесплатный", вы можете оставаться бесплатной подпиской даже после истечения срока действия бесплатной пробной версии или кредита на обслуживание.
 >
-> Дополнительные сведения см. в статье [Cognitive Services цены — службы речи](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/).
+> Дополнительные сведения см. в статье [Cognitive Services цены — служба речи](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/).
 
 ## <a name="try-the-speech-service-without-credit-card-info"></a>Попробуйте службу распознавания речи без сведений о кредитных картах
 
@@ -100,7 +100,7 @@ ms.locfileid: "74280496"
 - Если приложение использует один из [REST API](rest-apis.md) службы "Речь", регион является частью URI конечной точки, которую вы используете при выполнении запросов.
 - Ключи, созданные для региона, допустимы только в нем. Попытка использовать их в других регионах приведет к ошибкам проверки подлинности.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Выполните одно из 10-минутных руководств или ознакомьтесь с примерами пакета SDK.
 

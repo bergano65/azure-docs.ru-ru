@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: panosper
-ms.openlocfilehash: 158a99b1691e59fa58207f3c9291ca9d37a6679c
-ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
+ms.openlocfilehash: 2cccd17ce04b3954a7d0720d9ba25bbe792da3b6
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74538114"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74806343"
 ---
 # <a name="why-use-batch-transcription"></a>Преимущества пакетного транскрибирования
 
@@ -28,7 +28,7 @@ ms.locfileid: "74538114"
 Как и для всех функций службы "Речь", вам необходимо создать ключ подписки на [портале Azure](https://portal.azure.com), следуя [руководству по началу работы](get-started.md). Если вы планируете получать расшифровки из наших базовых моделей, то вам нужно всего лишь создать ключ.
 
 >[!NOTE]
-> Для использования пакетного транскрибирования необходима стандартная подписка (S0) для Служб речи. Ключи бесплатной подписки (F0) не подходят. Дополнительные сведения см. на странице с [ценами и ограничениями](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/).
+> Для использования записи пакетов требуется стандартная подписка (S0) для службы речи. Ключи бесплатной подписки (F0) не подходят. Дополнительные сведения см. на странице с [ценами и ограничениями](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/).
 
 ### <a name="custom-models"></a>Настраиваемые модели
 

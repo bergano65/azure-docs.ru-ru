@@ -9,12 +9,12 @@ author: v-miegge
 ms.author: ramakoni
 ms.reviewer: ''
 ms.date: 09/27/2019
-ms.openlocfilehash: 29edd7da42a5eb4586cd52cc0f913a56e199a5ba
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: e1638c9779ca50507a1ce30dd3bbc9c18248964a
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73808282"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74807074"
 ---
 # <a name="azure-sql-database-importexport-service-takes-a-long-time-to-import-or-export-a-database"></a>Служба импорта и экспорта базы данных SQL Azure занимает много времени для импорта или экспорта базы данных.
 
@@ -22,7 +22,7 @@ ms.locfileid: "73808282"
 
 ## <a name="azure-sql-database-importexport-service"></a>Служба импорта и экспорта базы данных SQL Azure
 
-Служба импорта и экспорта базы данных SQL Azure — это веб-служба на основе RESTFUL, которая выполняется в каждом центре обработки данных Azure. Эта служба вызывается при использовании параметра [импорта базы данных](https://docs.microsoft.com/azure/sql-database/sql-database-import#import-from-a-bacpac-file-in-the-azure-portal) или [экспорта](https://docs.microsoft.com/azure/sql-database/sql-database-export#export-to-a-bacpac-file-using-the-azure-portal) для перемещения базы данных SQL в портал Azure. Служба предоставляет бесплатные службы очереди запросов и вычислений для выполнения импорта и экспорта между базой данных SQL Azure и хранилищем BLOB-объектов Azure.
+Служба импорта и экспорта базы данных SQL Azure — это веб-служба на основе RESTFUL, которая выполняется в каждом центре обработки данных Azure. Эта служба вызывается при использовании параметра [импорта базы данных](sql-database-import.md#using-azure-portal) или [экспорта](https://docs.microsoft.com/azure/sql-database/sql-database-export#export-to-a-bacpac-file-using-the-azure-portal) для перемещения базы данных SQL в портал Azure. Служба предоставляет бесплатные службы очереди запросов и вычислений для выполнения импорта и экспорта между базой данных SQL Azure и хранилищем BLOB-объектов Azure.
 
 Операции импорта и экспорта не представляют традиционную физическую резервную копию базы данных, а представляют собой логическую резервную копию базы данных, использующую Специальный формат BACPAC. Формат BACPAC позволяет избежать использования физического формата, который может отличаться в зависимости от версии Microsoft SQL Server и базы данных SQL Azure. Таким образом, его можно использовать для безопасного восстановления базы данных в базу данных SQL Server и в базу данных SQL.
 
@@ -39,7 +39,7 @@ ms.locfileid: "73808282"
 
 * [Экспорт в BACPAC-файл с помощью служебной программы SqlPackage](https://docs.microsoft.com/azure/sql-database/sql-database-export#export-to-a-bacpac-file-using-the-sqlpackage-utility).
 * [Экспорт в BACPAC-файл с помощью SQL Server Management Studio (SSMS)](https://docs.microsoft.com/azure/sql-database/sql-database-export#export-to-a-bacpac-file-using-sql-server-management-studio-ssms).
-* Выполните импорт или экспорт BACPAC непосредственно в код с помощью API Microsoft SQL Server Data-Tier Application Framework (DacFx). Дополнительные сведения см. в следующих статьях:
+* Выполните импорт или экспорт BACPAC непосредственно в код с помощью API Microsoft SQL Server Data-Tier Application Framework (DacFx). Дополнительные сведения см. в следующих источниках:
   * [Экспорт приложения уровня данных](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/export-a-data-tier-application)
   * [Пространство имен Microsoft. SqlServer. DAC](https://docs.microsoft.com/dotnet/api/microsoft.sqlserver.dac)
   * [Скачать DACFx](https://www.microsoft.com/download/details.aspx?id=55713)

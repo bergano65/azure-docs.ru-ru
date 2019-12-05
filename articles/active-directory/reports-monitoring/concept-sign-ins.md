@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 10/28/2019
+ms.date: 12/03/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e7b0c379783af2f9131d487f45c0f4e2009e258
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 706cc38c997c91efc890b213444ff779eb86d5c1
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74232146"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74805266"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях входа на портале Azure Active Directory
 
@@ -33,11 +33,11 @@ ms.locfileid: "74232146"
     - **Журналы аудита** - [журналы аудита](concept-audit-logs.md) предоставляют сведения о системных действиях для пользователей и управления группами, управляемых приложений и действий с каталогами.
 - **Безопасность** 
     - **Рискованные входы** . [рискованный вход](concept-risky-sign-ins.md) — это индикатор попытки входа, которая не является законным владельцем учетной записи пользователя.
-    - **Пользователи, находящиеся в группе риска**. [Такая пометка](concept-user-at-risk.md) означает, что конфиденциальность учетной записи пользователя, возможно, нарушена.
+    - **Пользователи, находящиеся в группе риска**. [Пользователи, находящиеся в группе риска](concept-user-at-risk.md) означает, что конфиденциальность учетной записи пользователя, возможно, нарушена.
 
 В этой статье приводятся общие сведения о отчете о входе в систему.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 ### <a name="who-can-access-the-data"></a>Кто может получить доступ к данным?
 
@@ -47,7 +47,7 @@ ms.locfileid: "74232146"
 
 ### <a name="what-azure-ad-license-do-you-need-to-access-sign-in-activity"></a>Какие лицензии Azure AD требуются для доступа к действию входа?
 
-* Для просмотра отчета обо всех действиях входа с клиентом должна быть связана лицензия Azure AD Premium. Чтобы обновить выпуск Azure Active Directory, ознакомьтесь со статьей [Регистрация для работы с выпусками Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md). Для отображения данных в отчетах после обновления до лицензии Premium без действий с данными до обновления может потребоваться несколько дней.
+* Для просмотра отчета обо всех действиях входа с клиентом должна быть связана лицензия Azure AD Premium. Дополнительные сведения об обновлении выпуска Azure Active Directory см. в статье [Приступая к работе с Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md) . Для отображения данных в отчетах после обновления до лицензии Premium без действий с данными до обновления может потребоваться несколько дней.
 
 ## <a name="sign-ins-report"></a>Отчет о входе
 
@@ -81,7 +81,7 @@ ms.locfileid: "74232146"
 
 Отображение дополнительных полей или удаление уже отображаемых полей.
 
-![Действие входа](./media/concept-sign-ins/02.png "Действия при входе")
+![Действие входа](./media/concept-sign-ins/columns.png "Действия при входе")
 
 Чтобы получить более подробную информацию, выберите элемент в списке.
 
@@ -140,20 +140,20 @@ ms.locfileid: "74232146"
 - **Другие клиенты**
     - **ОШИБОЧ**  
         Устаревший почтовый клиент, использующий IMAP для получения электронной почты.
-    - **ДЕЙСТВУЕТ**  
+    - **MAPI**  
         Office 2013, где ADAL включена и использует MAPI.
     - **Старые клиенты Office**  
         Office 2013 в конфигурации по умолчанию, в которой не включена библиотека ADAL и используется MAPI, или Office 2016, где ADAL отключено.
     - **Рор**  
         Устаревший почтовый клиент, использующий POP3 для получения электронной почты.
-    - **SMTP-**  
+    - **Протокол SMTP**  
         Устаревший почтовый клиент, использующий протокол SMTP для отправки электронной почты.
 
 ## <a name="download-sign-in-activities"></a>Скачивание данных о действиях входа
 
 Щелкните " **скачать** ", чтобы создать CSV-файл или формат JSON для последних 250 000 записей. Начните с [загрузки данных входа,](quickstart-download-sign-in-report.md) если вы хотите работать с ним за пределами портал Azure.  
 
-![Загрузить](./media/concept-sign-ins/71.png "Скачивание")
+![Загрузить](./media/concept-sign-ins/71.png "Download (Скачать)")
 
 > [!IMPORTANT]
 > На число записей, которые можно скачать, влияют особенности [политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).  
@@ -164,7 +164,7 @@ ms.locfileid: "74232146"
 Azure AD и портал Azure предоставляют дополнительные точки входа для данных входа.
 
 - Обзор защиты удостоверений
-- Users
+- Пользователи
 - Группы
 - корпоративные приложения.
 
@@ -191,7 +191,7 @@ Azure AD и портал Azure предоставляют дополнитель
 - Идентификатор приложения
 - Приложение
 - Клиент
-- Место проведения
+- Location
 - IP-адрес
 - Дата
 - Требуется многофакторная идентификация
@@ -234,7 +234,7 @@ Azure AD и портал Azure предоставляют дополнитель
 
 Вы также можете получить доступ к журналам действий Office 365 программным путем с помощью [API-интерфейсов управления office 365](https://docs.microsoft.com/office/office-365-management-api/office-365-management-apis-overview).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Коды ошибок в отчете о действиях входа](reference-sign-ins-error-codes.md)
 * [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md)

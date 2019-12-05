@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/26/2019
 ms.author: tamram
 ms.custom: include
-ms.openlocfilehash: 0adf1280fa50e9ee594f3025dff70786f5ba2199
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.openlocfilehash: de79ea50d12ab322d1e28d0ad650df30ecc0c222
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
-ms.locfileid: "74666174"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74806594"
 ---
 ## <a name="install-client-library-packages"></a>Установка пакетов клиентской библиотеки
 
@@ -31,5 +31,3 @@ Install-Package Azure.Storage.Blobs
 ```powershell
 Install-Package Azure.Identity
 ```
-
-Дополнительные сведения о проверке подлинности с помощью клиентской библиотеки удостоверений Azure из службы хранилища Azure см. в разделе **Проверка подлинности с помощью библиотеки удостоверений Azure** в статье [авторизация доступа к BLOB-объектам и очередям с Azure Active Directory и управляемыми удостоверениями для ресурсов Azure](/azure/storage/common/storage-auth-aad-msi?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json#authenticate-with-the-azure-identity-library).
