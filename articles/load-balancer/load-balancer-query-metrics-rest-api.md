@@ -1,7 +1,7 @@
 ---
 title: Извлечение метрик через REST API
 titleSuffix: Azure Load Balancer
-description: In this article, get started using the Azure REST APIs to collect health and usage metrics for Azure Load Balancer.
+description: В этой статье приступите к работе с API-интерфейсами Azure для сбора метрик работоспособности и использования для Azure Load Balancer.
 services: sql-database
 author: asudbring
 manager: KumudD
@@ -17,9 +17,9 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74225260"
 ---
-# <a name="get-load-balancer-usage-metrics-using-the-rest-api"></a>Get Load Balancer usage metrics using the REST API
+# <a name="get-load-balancer-usage-metrics-using-the-rest-api"></a>Получение метрик использования Load Balancer с помощью REST API
 
-Collect the number of bytes processed by a [Standard Load Balancer](/azure/load-balancer/load-balancer-standard-overview) for an interval of time using the [Azure REST API](/rest/api/azure/).
+Собирайте количество байтов, обработанных [Load Balancer (цен. Категория "Стандартный")](/azure/load-balancer/load-balancer-standard-overview) , в течение интервала времени с помощью [REST API Azure](/rest/api/azure/).
 
 Полная справочная документация и дополнительные образцы для REST API можно найти в [Azure Monitor REST API reference](/rest/api/monitor) (Справочник по REST API Azure Monitor). 
 
@@ -35,24 +35,24 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Ниже приведены обязательные заголовки. 
 
-|Заголовок запроса|Описание|  
+|Заголовок запроса|ОПИСАНИЕ|  
 |--------------------|-----------------|  
-|*Content-Type:*|Обязательный параметр. Задайте значение `application/json`.|  
-|*Authorization:*|Обязательный параметр. Задайте в качестве значения [допустимый токен доступа](/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |  
+|*Content-Type:*|обязательный параметр. Задайте значение `application/json`.|  
+|*Authorization:*|обязательный параметр. Задайте в качестве значения `Bearer`допустимый токен доступа[ ](/rest/api/azure/#authorization-code-grant-interactive-clients). |  
 
 ### <a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
 
-| Name | Описание |
+| имя | ОПИСАНИЕ |
 | :--- | :---------- |
 | subscriptionId | Идентификатор подписки Azure. Если у вас несколько подписок, см. раздел [Использование нескольких подписок](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). |
 | имя_группы_ресурсов | Имя группы ресурсов, к которой относится ресурс. Это значение можно получить с помощью API-интерфейса Azure Resource Manager, CLI или портала. |
 | loadBalancerName | Имя Azure Load Balancer. |
-| metric names | Разделенный запятыми список допустимых [метрик Load Balancer](/azure/load-balancer/load-balancer-standard-diagnostics). |
+| имена метрик | Разделенный запятыми список допустимых [метрик Load Balancer](/azure/load-balancer/load-balancer-standard-diagnostics). |
 | api-version | Версия API для использования в запросе.<br /><br /> В этом документе рассматривается API версии `2018-01-01`, которая включена в приведенный выше URL-адрес.  |
-| интервал времени | Временной диапазон запроса. It's a string with the following format `startDateTime_ISO/endDateTime_ISO`. Этот необязательный параметр имеет значение для возврата суточных данных в примере. |
+| интервал времени | Временной диапазон запроса. Это строка со следующим форматом `startDateTime_ISO/endDateTime_ISO`. Этот необязательный параметр имеет значение для возврата суточных данных в примере. |
 | &nbsp; | &nbsp; |
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Для этой операции текст запроса не требуется.
 
