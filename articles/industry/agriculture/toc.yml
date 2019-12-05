@@ -21,6 +21,8 @@
   items:
     - name: Развертывание FarmBeats
       href: prepare-for-deployment.md
+    - name: Управление пользователями
+      href: manage-users.md
     - name: Управление фермами
       href: manage-farms.md
     - name: Получение данных от датчиков
