@@ -68,6 +68,8 @@
           href: devtest-lab-configure-cost-management.md
         - name: Отправка уведомлений об автоматическом завершении работы
           href: devtest-lab-auto-shutdown.md
+        - name: Настройка автозапуска для виртуальных машин лаборатории
+          href: devtest-lab-auto-startup-vm.md
         - name: Масштабирование лаборатории
           href: devtest-lab-scale-lab.md
         - name: Управление резервными копиями виртуальной машины
@@ -193,6 +195,8 @@
           href: add-artifact-repository.md
         - name: Указание обязательных артефактов
           href: devtest-lab-mandatory-artifacts.md
+        - name: Устранение неполадок при применении артефактов
+          href: devtest-lab-troubleshoot-apply-artifacts.md
     - name: Интеграция с помощью CI/CD
       items:
         - name: Интеграция лабораторий в конвейер CI/CD в Azure Pipelines
