@@ -126,9 +126,6 @@
         - name: Инициализация узлов кластера
           href: /azure/databricks/clusters/init-scripts
           maintainContext: true
-        - name: Пользовательские контейнеры
-          href: /azure/databricks/clusters/custom-containers
-          maintainContext: true
         - name: Кластеры с поддержкой GPU
           href: /azure/databricks/clusters/gpu
           maintainContext: true
@@ -226,9 +223,6 @@
       maintainContext: true
     - name: Данные
       items:
-        - name: Файловая система Databricks (DBFS)
-          href: /azure/databricks/data/databricks-file-system
-          maintainContext: true
         - name: Базы данных и таблицы
           href: /azure/databricks/data/tables
           maintainContext: true
@@ -317,6 +311,9 @@
             - name: ZIP-файлы
               href: /azure/databricks/data/data-sources/zip-files
               maintainContext: true
+        - name: Файловая система Databricks (DBFS)
+          href: /azure/databricks/data/databricks-file-system
+          maintainContext: true
         - name: FileStore
           href: /azure/databricks/data/filestore
           maintainContext: true
@@ -829,8 +826,8 @@
             - name: Вывод модели с использованием TensorFlow
               href: /azure/databricks/applications/deep-learning/inference/resnet-model-inference-tensorflow
               maintainContext: true
-            - name: Настройка производительности вывода модели
-              href: /azure/databricks/applications/deep-learning/inference/model-inference-performance
+            - name: Эталонное решение для вывода модели распределенного изображения
+              href: /azure/databricks/applications/deep-learning/reference-solutions/images-etl-inference
               maintainContext: true
     - name: MLflow
       items:
@@ -1066,9 +1063,6 @@
             - name: Общие сведения о конфигурации кластера
               href: /azure/databricks/administration-guide/clusters/index
               maintainContext: true
-            - name: Включение служб контейнеров
-              href: /azure/databricks/administration-guide/clusters/container-services
-              maintainContext: true
             - name: Включение Databricks Runtime for Genomics
               href: /azure/databricks/administration-guide/clusters/genomics-runtime
               maintainContext: true
@@ -1137,9 +1131,6 @@
               maintainContext: true
             - name: Параметр конфигурации переопределяет параметры по умолчанию
               href: /azure/databricks/kb/clusters/conf-overwrites-default-settings
-              maintainContext: true
-            - name: Запуск библиотек JNI в одноядерных исполнителях
-              href: /azure/databricks/kb/clusters/multiple-executors-single-worker
               maintainContext: true
             - name: Переопределение конфигураций log4j
               href: /azure/databricks/kb/clusters/overwrite-log4j-logs
@@ -1544,6 +1535,9 @@
           items:
             - name: Заметки о выпуске платформы
               href: /azure/databricks/release-notes/product/index
+              maintainContext: true
+            - name: "Декабрь 2019\_г."
+              href: /azure/databricks/release-notes/product/2019/december
               maintainContext: true
             - name: "Ноябрь 2019\_г."
               href: /azure/databricks/release-notes/product/2019/november

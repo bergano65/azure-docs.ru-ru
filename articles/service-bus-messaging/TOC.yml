@@ -203,6 +203,10 @@
               href: service-bus-resource-manager-namespace-auth-rule.md
             - name: 'Создание пространства имен с разделом, подпиской и правилом'
               href: service-bus-resource-manager-namespace-topic-with-rule.md
+    - name: Безопасность
+      items:
+        - name: Настройка управляемых пользователем ключей для шифрования неактивных данных (предварительная версия)
+          href: configure-customer-managed-key.md
     - name: Устранение неполадок
       items:
         - name: Руководство по устранению неполадок

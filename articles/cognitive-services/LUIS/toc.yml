@@ -48,13 +48,13 @@
           displayName: 'n-depth, constraint, descriptor, phrase list, entity'
         - name: 3. Определение тональности высказываний пользователя
           href: tutorial-publish-settings.md
-    - name: Создание приложения
+    - name: Создание и использование сущностей
       items:
-        - name: Получение данных в правильном формате с помощью регулярных выражений
-          href: luis-quickstart-intents-regex-entity.md
-        - name: Получение точных текстовых совпадений с помощью списков
-          href: luis-quickstart-intent-and-list-entity.md
-        - name: Получение связанных данных с использованием ролей сущностей
+        - name: Сущности регулярного выражения
+          href: tutorial-regex-entity.md
+        - name: Отображение сущностей
+          href: tutorial-list-entity.md
+        - name: Роли сущности
           href: tutorial-entity-roles.md
           displayName: 'roles, geographyV2, context'
         - name: Группирование и извлечение связанных данных с помощью составных сущностей

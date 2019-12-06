@@ -113,6 +113,8 @@
           href: batch-user-accounts.md
         - name: Отправка большого числа задач
           href: large-number-tasks.md
+        - name: Проверка на наличие ошибок заданий и задач
+          href: batch-job-task-error-checking.md
     - name: Создание файлов ресурсов
       href: resource-files.md
     - name: Сохранение пакетных заданий и выходных данных задач

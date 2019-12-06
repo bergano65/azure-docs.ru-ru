@@ -10,12 +10,8 @@
       href: app-based-mfa.md
     - name: Обеспечение принятия условий использования
       href: require-tou.md
-    - name: Блокировка доступа при обнаружении риска безопасности сеанса
+    - name: Блокировка доступа при обнаружении риска для безопасности сеанса
       href: app-sign-in-risk.md
-- name: Руководства
-  items:
-    - name: Перенос классических политик MFA
-      href: policy-migration-mfa.md
 - name: Основные понятия
   expanded: false
   items:
@@ -37,6 +33,8 @@
       href: service-dependencies.md
     - name: Средство "Что если"
       href: what-if-tool.md
+    - name: Перенос классической политики
+      href: policy-migration.md
     - name: Базовые политики защиты
       href: concept-baseline-protection.md
 - name: Руководства
@@ -83,7 +81,7 @@
     - name: Элементы управления сохраняемости браузера и частотой входов
       href: howto-conditional-access-session-lifetime.md
     - name: Перенос классических политик
-      href: policy-migration.md
+      href: policy-migration-mfa.md
     - name: Включение условного доступа
       href: howto-conditional-access-adoption-kit.md
     - name: Устранение неполадок

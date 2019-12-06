@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac52fa7eab055a2b2e9154481019d49acdca65d9
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: ba8f4f715856538b9555b1bcb8c8a812503fabd2
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74420537"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74842413"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
 
@@ -33,7 +33,7 @@ ms.locfileid: "74420537"
 - Больше не требуется управлять учетными записями локального администратора.
 - Azure RBAC позволяет предоставлять соответствующий доступ к виртуальным машинам в зависимости от необходимости и удалять его, если он больше не нужен.
 - Перед предоставлением доступа к виртуальной машине условный доступ Azure AD может применять дополнительные требования, например: 
-   - Многофакторная проверка подлинности
+   - Многофакторная Идентификация
    - Проверка риска при входе
 - Автоматизируйте и масштабируйте присоединение Azure AD к виртуальным машинам Windows Azure, которые являются частью развертывания VDI.
 
@@ -43,7 +43,7 @@ ms.locfileid: "74420537"
 
 В настоящее время в предварительной версии этой функции поддерживаются следующие дистрибутивы Windows:
 
-- Windows Server 2019 Datacenter
+- Windows Server 2019 Datacenter
 - Windows 10 1809 и более поздние версии
 
 В режиме предварительной версии этой функции сейчас поддерживаются следующие регионы Azure:
@@ -116,6 +116,9 @@ az vm create \
     --admin-username azureuser \
     --admin-password yourpassword
 ```
+
+> [!NOTE]
+> Перед установкой расширения виртуальной машины для входа в Azure AD необходимо включить управляемое удостоверение, назначенное системой, на виртуальной машине.
 
 Создание виртуальной машины и вспомогательных ресурсов занимает несколько минут.
 
@@ -230,24 +233,24 @@ az role assignment create \
 
    | Команда для запуска | Ожидаемые выходные данные |
    | --- | --- |
-   | Перелистывание метаданных: true "http://169.254.169.254/metadata/instance?api-version=2017-08-01" | Правильные сведения о виртуальной машине Azure |
-   | Перелистывание метаданных: true "http://169.254.169.254/metadata/identity/info?api-version=2018-02-01" | Допустимый идентификатор клиента, связанный с подпиской Azure |
-   | Перелистывание метаданных: true "http://169.254.169.254/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01" | Допустимый маркер доступа, выданный Azure Active Directory для управляемого удостоверения, назначенного этой виртуальной машине |
+   | Перелистывание метаданных: true "http://169.254.169.254/metadata/instance?api-version=2017-08-01 " | Правильные сведения о виртуальной машине Azure |
+   | Перелистывание метаданных: true "http://169.254.169.254/metadata/identity/info?api-version=2018-02-01 " | Допустимый идентификатор клиента, связанный с подпиской Azure |
+   | Перелистывание метаданных: true "http://169.254.169.254/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01 " | Допустимый маркер доступа, выданный Azure Active Directory для управляемого удостоверения, назначенного этой виртуальной машине |
 
    > [!NOTE]
    > Маркер доступа можно декодировать с помощью такого средства, как [http://calebb.net/](http://calebb.net/). Проверьте, что идентификатор AppID в маркере доступа соответствует управляемому удостоверению, назначенному виртуальной машине.
 
 1. Убедитесь, что необходимые конечные точки доступны из виртуальной машины с помощью командной строки:
    
-   - фигурная https://login.microsoftonline.com/-D —
-   - Перелистывание https://login.microsoftonline.com/`<TenantID>`/-D —
+   - фигурная https://login.microsoftonline.com/ -D —
+   - Перелистывание https://login.microsoftonline.com/`<TenantID>` /-D —
 
    > [!NOTE]
    > Замените `<TenantID>` ИДЕНТИФИКАТОРом клиента Azure AD, связанным с подпиской Azure.
 
-   - фигурная https://enterpriseregistration.windows.net/-D-
-   - фигурная https://device.login.microsoftonline.com/-D-
-   - фигурная https://pas.windows.net/-D-
+   - фигурная https://enterpriseregistration.windows.net/ -D-
+   - фигурная https://device.login.microsoftonline.com/ -D-
+   - фигурная https://pas.windows.net/ -D-
 
 1. Состояние устройства можно просмотреть, выполнив `dsregcmd /status`. Цель — это состояние устройства, которое будет отображаться как `AzureAdJoined : YES`.
 
@@ -274,15 +277,15 @@ az role assignment create \
 
 1. Убедитесь, что необходимые конечные точки доступны из виртуальной машины с помощью командной строки:
 
-   - фигурная https://login.microsoftonline.com/-D —
-   - Перелистывание https://login.microsoftonline.com/`<TenantID>`/-D —
+   - фигурная https://login.microsoftonline.com/ -D —
+   - Перелистывание https://login.microsoftonline.com/`<TenantID>` /-D —
    
    > [!NOTE]
    > Замените `<TenantID>` ИДЕНТИФИКАТОРом клиента Azure AD, связанным с подпиской Azure. Если необходимо найти идентификатор клиента, можно навести указатель мыши на имя учетной записи, чтобы получить идентификатор каталога или клиента, или выбрать Azure Active Directory > Свойства > идентификатор каталога в портал Azure.
 
-   - фигурная https://enterpriseregistration.windows.net/-D-
-   - фигурная https://device.login.microsoftonline.com/-D-
-   - фигурная https://pas.windows.net/-D-
+   - фигурная https://enterpriseregistration.windows.net/ -D-
+   - фигурная https://device.login.microsoftonline.com/ -D-
+   - фигурная https://pas.windows.net/ -D-
 
 1. Если какая-либо из команд завершается с ошибкой "не удалось разрешить узел `<URL>`", попробуйте выполнить эту команду, чтобы определить сервер DNS, используемый виртуальной машиной.
    
@@ -355,5 +358,5 @@ az role assignment create \
 
 Поделитесь своими отзывами об этой предварительной версии функции или сообщите о проблемах с ее помощью на [форуме обратной связи Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis).

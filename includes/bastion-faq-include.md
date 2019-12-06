@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/15/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: ada64d6bbce4fe7401bbfc078ba0903a28f06971
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: d31e30991056cc891e63347a2c88e7fc4caeab28
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74795777"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74875473"
 ---
 ### <a name="regions"></a>Какие регионы доступны?
 
@@ -59,3 +59,7 @@ ms.locfileid: "74795777"
 
 № Определяемые пользователем маршруты не поддерживаются в подсети Бастиона Azure.
 В сценариях, в которых Бастион Azure и Брандмауэр Azure или виртуальный сетевой модуль (NVA) находятся в одной виртуальной сети, не нужно принудительно перенаправлять трафик из подсети Бастиона Azure в Брандмауэр Azure, так как обмен данными между Бастионом Azure и виртуальными машинами выполняется по частному каналу. Дополнительные сведения см. в статье [Accessing VMs behind Azure Firewall with Bastion](https://azure.microsoft.com/blog/accessing-virtual-machines-behind-azure-firewall-with-azure-bastion/) (Доступ к виртуальным машинам за Брандмауэром Azure с помощью Бастиона).
+
+### <a name="filetransfer"></a>Поддерживается ли перенос файлов с помощью сеанса RDP Бастиона Azure?
+
+Мы работаем над добавлением новых функций. Сейчас перенос файлов не поддерживается, но мы планируем реализовать эту возможность. Вы можете поделиться своими отзывами о новых возможностях на странице, посвященной [Бастиону Azure](https://feedback.azure.com/forums/217313-networking?category_id=367303).
