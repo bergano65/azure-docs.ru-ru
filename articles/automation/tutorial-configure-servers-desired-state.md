@@ -4,17 +4,17 @@ description: Руководство по управлению настройка
 services: automation
 ms.service: automation
 ms.subservice: dsc
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 manager: carmonm
 ms.topic: conceptual
 ms.date: 08/08/2018
-ms.openlocfilehash: 72e5018dc1212e57dc190c05cc54158d37ca7fe1
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 0339796f028a0cc0b19533be06127544db396f92
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231502"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74850097"
 ---
 # <a name="configure-servers-to-a-desired-state-and-manage-drift"></a>Настройка требуемого состояния серверов и управление смещением
 
@@ -23,11 +23,11 @@ ms.locfileid: "74231502"
 > [!div class="checklist"]
 > - Подключение виртуальной машины для управления с помощью DSC службы автоматизации Azure.
 > - Передача конфигурации в службу автоматизации Azure.
-> - Компиляция конфигурации в конфигурации узла.
-> - Назначение конфигурации узла управляемому узлу.
-> - Проверка состояния соответствия управляемого узла.
+> - Компиляция конфигурации в конфигурации узла
+> - Назначение конфигурации узла управляемому узлу
+> - Проверка состояния соответствия управляемого узла
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим учебником требуется:
 
@@ -73,7 +73,7 @@ configuration TestConfig {
  Import-AzureRmAutomationDscConfiguration -SourcePath 'C:\DscConfigs\TestConfig.ps1' -ResourceGroupName 'MyResourceGroup' -AutomationAccountName 'myAutomationAccount' -Published
 ```
 
-## <a name="compile-a-configuration-into-a-node-configuration"></a>Компиляция конфигурации в конфигурации узла.
+## <a name="compile-a-configuration-into-a-node-configuration"></a>Компиляция конфигурации в конфигурации узла
 
 Прежде чем назначать конфигурацию DSC узлу, ее нужно скомпилировать в конфигурации узла.
 
@@ -118,7 +118,7 @@ Register-AzureRmAutomationDscNode -ResourceGroupName 'MyResourceGroup' -Automati
 
 Дополнительные сведения о настройках конфигурации DSC см. в статье [Настройка локального диспетчера конфигураций](/powershell/scripting/dsc/managing-nodes/metaConfig).
 
-## <a name="assign-a-node-configuration-to-a-managed-node"></a>Назначение конфигурации узла управляемому узлу.
+## <a name="assign-a-node-configuration-to-a-managed-node"></a>Назначение конфигурации узла управляемому узлу
 
 Теперь можно назначить конфигурации скомпилированного узла для виртуальной машины, которую необходимо настроить.
 
@@ -145,7 +145,7 @@ Set-AzureRmAutomationDscNode -ResourceGroupName 'MyResourceGroup' -AutomationAcc
 
 Дополнительные сведения о совместной работе групп для совместного управления серверами с помощью конфигурации в качестве кода см. [в разделе Основные сведения о роли DSC в конвейере CI/CD](/powershell/scripting/dsc/overview/authoringadvanced).
 
-## <a name="check-the-compliance-status-of-a-managed-node"></a>Проверка состояния соответствия управляемого узла.
+## <a name="check-the-compliance-status-of-a-managed-node"></a>Проверка состояния соответствия управляемого узла
 
 Отчеты о состоянии соответствия управляемого узла можно получить, вызвав командлет `Get-AzureRmAutomationDscNodeReport`.
 
@@ -170,7 +170,7 @@ $reports[0]
 > Это не влияет на конфигурацию, которая в настоящее время применяется к узлу.
 > Чтобы удалить текущую конфигурацию, используйте [PowerShell](https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument?view=powershell-5.1) или удалите локальный файл конфигурации (это единственный вариант для узлов Linux).
 
-### <a name="azure-portal"></a>портале Azure
+### <a name="azure-portal"></a>портала Azure
 
 Из службы автоматизации Azure щелкните **Конфигурация состояния (DSC)** в содержании.
 Затем щелкните **узлы** , чтобы просмотреть список узлов, зарегистрированных в службе.
@@ -181,7 +181,7 @@ $reports[0]
 
 Чтобы отменить регистрацию узла в службе настройки состояния службы автоматизации Azure с помощью PowerShell, следуйте указаниям в документации командлета [Unregister-азаутоматиондскноде](https://docs.microsoft.com/powershell/module/az.automation/unregister-azautomationdscnode?view=azps-2.0.0).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы приступить к работе со службой "Настройка состояния службы автоматизации Azure", см. сведения в [этой статье](automation-dsc-getting-started.md).
 - Дополнительные сведения о подключении узлов см. в статье [Подключение компьютеров для управления с помощью Azure Automation DSC](automation-dsc-onboarding.md).

@@ -2,13 +2,13 @@
 title: Исправление несоответствующих ресурсов
 description: В этом руководстве описывается исправление ресурсов, которые не соответствуют политикам в политике Azure.
 ms.date: 09/09/2019
-ms.topic: conceptual
-ms.openlocfilehash: 8f1d263286a7504e7a8234ebd944bbbee69c5303
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.topic: how-to
+ms.openlocfilehash: 341a325aa7a82c8b1f6366c3a674848c60a8fb5e
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74267357"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873052"
 ---
 # <a name="remediate-non-compliant-resources-with-azure-policy"></a>Исправление несоответствующих ресурсов с помощью службы "Политика Azure"
 
@@ -181,11 +181,11 @@ Start-AzPolicyRemediation -Name 'myRemedation' -PolicyAssignmentId '/subscriptio
 
 Другие командлеты и примеры исправления см. в разделе [AZ. полициинсигхтс](/powershell/module/az.policyinsights/#policy_insights) Module.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Просмотрите примеры в [примерах политики Azure](../samples/index.md).
 - Изучите статью о [структуре определения Политики Azure](../concepts/definition-structure.md).
-- См. дополнительные сведения о [действиях политик](../concepts/effects.md).
+- Изучите [сведения о действии политик](../concepts/effects.md).
 - Узнайте, как [программно создавать политики](programmatically-create.md).
 - Узнайте, как [получить данные о соответствии](get-compliance-data.md).
 - Дополнительные сведения о группе управления см. в статье [Упорядочивание ресурсов с помощью групп управления Azure](../../management-groups/overview.md).

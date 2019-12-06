@@ -1,18 +1,18 @@
 ---
 title: Язык запросов ABS в Azure Cosmos DB
-description: Сведения о функции ABS системы SQL в Azure Cosmos DB.
+description: Сведения о том, как абсолютная (ABS) системная функция SQL в Azure Cosmos DB возвращает положительное значение указанного числового выражения
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 12/02/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 480c5ffcfaccfac5061e53612a2ee57235cfa626
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 70648dcf28d760c3a81c0cb426cd9b2d3ce96fff
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71348756"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74871862"
 ---
 # <a name="abs-azure-cosmos-db"></a>ABS (Azure Cosmos DB)
  Возвращает модуль (положительное значение) указанного числового выражения.  
@@ -34,7 +34,7 @@ ABS (<numeric_expr>)
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показаны результаты использования функции `ABS` для трех различных чисел.  
+  В следующем примере показаны результаты применения функции `ABS` к трем различным числам.  
   
 ```sql
 SELECT ABS(-1) AS abs1, ABS(0) AS abs2, ABS(1) AS abs3 
@@ -47,7 +47,7 @@ SELECT ABS(-1) AS abs1, ABS(0) AS abs2, ABS(1) AS abs3
 ```  
   
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

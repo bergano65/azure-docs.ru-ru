@@ -1,18 +1,18 @@
 ---
-title: ARRAY_LENGTH на языке запросов Azure Cosmos DB
-description: Дополнительные сведения о функции SQL System ARRAY_LENGTH в Azure Cosmos DB.
+title: ARRAY_LENGTH языка запросов Azure Cosmos DB
+description: Сведения о том, как системная функция SQL Length массива в Azure Cosmos DB возвращает число элементов указанного выражения массива
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: b27b3f09212047e2e8937a4bf649fa3335e15cb2
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 9a8bf33befdd842a2979151fef3d54679ee03de1
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71348675"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74871777"
 ---
 # <a name="array_length-azure-cosmos-db"></a>ARRAY_LENGTH (Azure Cosmos DB)
  Возвращает число элементов массива, указанного в выражении.  
@@ -47,7 +47,7 @@ SELECT ARRAY_LENGTH(["apples", "strawberries", "bananas"]) AS len
 ```  
   
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Функции массива Azure Cosmos DB](sql-query-array-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

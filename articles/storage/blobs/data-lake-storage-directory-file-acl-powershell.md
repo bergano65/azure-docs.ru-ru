@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 11/24/2019
 ms.author: normesta
 ms.reviewer: prishet
-ms.openlocfilehash: 71f90fb361e8fc45ee2ce8672990965fca801a49
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 5eac6b112b46d1b2c80321bdeeee7f4e1fc5f4ac
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74533929"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873919"
 ---
 # <a name="use-powershell-for-files--acls-in-azure-data-lake-storage-gen2-preview"></a>Использование PowerShell для файлов & ACL в Azure Data Lake Storage 2-го поколения (Предварительная версия)
 
@@ -29,7 +29,7 @@ ms.locfileid: "74533929"
 
 > [!div class="checklist"]
 > * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-> * Учетная запись хранения, в которой включено иерархическое пространство имен (HNS). Чтобы создать его [, выполните следующие](data-lake-storage-quickstart-create-account.md) инструкции.
+> * Учетная запись хранения, в которой включено иерархическое пространство имен (HNS). Чтобы создать его, выполните [следующие](data-lake-storage-quickstart-create-account.md) инструкции.
 > * .NET Framework установлен или больше 4.7.2. См. раздел [Download .NET Framework](https://dotnet.microsoft.com/download/dotnet-framework).
 > * Версия PowerShell `5.1` или более поздняя.
 
@@ -371,14 +371,17 @@ Get-AzDataLakeGen2ChildItem -Context $ctx -FileSystem $filesystemName -Recurse |
 
 В следующей таблице показано, как командлеты, используемые для Data Lake Storage 1-го поколения сопоставляться с командлетами для Data Lake Storage 2-го поколения.
 
-|Командлет Data Lake Storage 1-го поколения| Командлет Data Lake Storage 2-го поколения|
-|--------|---------|
-|Get-Аздаталакесторечилдитем|Get-AzDataLakeGen2ChildItem|
-|Get-Аздаталакестореитем <br>Get-Аздаталакестореитемаклентри<br>Get-Аздаталакестореитемовнер<br>Get-Аздаталакестореитемпермиссион<br>Get-Аздаталакестореитемконтент<br>New-Аздаталакестореитем|Get-AzDataLakeGen2Item|
-|Get-Аздаталакестореитемконтент|New-AzDataLakeGen2Item|
-|Move-Аздаталакестореитем|Move-AzDataLakeGen2Item|
-|Remove-Аздаталакестореитем|Remove-AzDataLakeGen2Item|
-|Set-Аздаталакестореитемовнер <br>Set-Аздаталакестореитемпермиссион<br>Set-Аздаталакестореитемпермиссион<br>Set-Аздаталакестореитемакл|Update-AzDataLakeGen2Item|
+|Командлет Data Lake Storage 1-го поколения| Командлет Data Lake Storage 2-го поколения| Заметки |
+|--------|---------|-----|
+|Get-Аздаталакесторечилдитем|Get-AzDataLakeGen2ChildItem|По умолчанию командлет Get-AzDataLakeGen2ChildItem перечисляет только дочерние элементы первого уровня. Параметр-recursive Рекурсивно перечисляет дочерние элементы. |
+|Get-Аздаталакестореитем<br>Get-Аздаталакестореитемаклентри<br>Get-Аздаталакестореитемовнер<br>Get-Аздаталакестореитемпермиссион|Get-AzDataLakeGen2Item|Выходные элементы командлета Get-AzDataLakeGen2Item имеют свойства следующие свойства: ACL, владелец, группа, разрешение.|
+|Get-Аздаталакестореитемконтент|Get-AzDataLakeGen2FileContent|Командлет Get-AzDataLakeGen2FileContent скачивает содержимое файла в локальный файл.|
+|Move-Аздаталакестореитем|Move-AzDataLakeGen2Item||
+|New-Аздаталакестореитем|New-AzDataLakeGen2Item|Этот командлет передает содержимое нового файла из локального файла.|
+|Set-Аздаталакестореитемовнер<br>Set-Аздаталакестореитемпермиссион<br>Set-Аздаталакестореитемакл|Update-AzDataLakeGen2Item|Командлет Update-AzDataLakeGen2Item обновляет только один элемент, а не рекурсивно. Если требуется выполнить рекурсивное обновление, перечислите элементы с помощью командлета Get-Аздаталакесторечилдитем, а затем выполните конвейер для командлета Update-AzDataLakeGen2Item.|
+|Test-Аздаталакестореитем|Get-AzDataLakeGen2Item|Если элемент не существует, командлет Get-AzDataLakeGen2Item сообщит об ошибке.|
+
+
 
 ## <a name="see-also"></a>Дополнительные материалы
 

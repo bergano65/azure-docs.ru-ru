@@ -4,17 +4,17 @@ description: В этой статье содержатся сведения об
 services: automation
 ms.service: automation
 ms.subservice: process-automation
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 04/05/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: c10905c283619e6008dbe6ab8c4e721888b8b786
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.openlocfilehash: 7329d32c01f005f4f5a727f80c6af0b58982b41f
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70743798"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74850267"
 ---
 # <a name="automate-resources-in-your-datacenter-or-cloud-by-using-hybrid-runbook-worker"></a>Автоматизация ресурсов в центре обработки данных или в облаке с помощью использования гибридной рабочей роли Runbook
 
@@ -34,7 +34,7 @@ ms.locfileid: "70743798"
 
 Ниже описаны два метода установки и настройки гибридной рабочей роли Runbook для Windows. Рекомендуется использовать модуль Runbook службы автоматизации для полностью автоматической настройки компьютера Windows. Второй метод заключается в пошаговом выполнении инструкций по ручной установке и настройке роли. Для компьютеров с Linux для установки агента запустите скрипт Python.
 
-|OS  |Типы развертывания  |
+|ОС  |Типы развертывания  |
 |---------|---------|
 |Windows     | [PowerShell](automation-windows-hrw-install.md#automated-deployment)<br>[Вручную](automation-windows-hrw-install.md#manual-deployment)        |
 |Linux     | [Python](automation-linux-hrw-install.md#installing-a-linux-hybrid-runbook-worker)        |
@@ -46,7 +46,7 @@ ms.locfileid: "70743798"
 
 Перед началом развертывания гибридной рабочей роли Runbook ознакомьтесь со следующими [сведениями о подготовке сети](#network-planning). После успешного развертывания рабочей роли ознакомьтесь с [запуском модулей Runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md), чтобы узнать, как настроить модули Runbook для автоматизации процессов в локальном центре обработки данных или в другой облачной среде.
 
-Его можно добавить в группу гибридных рабочих ролей Runbook в учетной записи службы автоматизации, чтобы обеспечить поддержку модулей Runbook службы автоматизации при условии, что вы используете одну и ту же учетную запись для решения и для членства в группе гибридных рабочих ролей Runbook. Эта функция добавлена в версии 7.2.12024.0 гибридной рабочей роли Runbook.
+Его можно добавить в группу гибридных рабочих ролей Runbook в учетной записи службы автоматизации, чтобы обеспечить поддержку модулей Runbook службы автоматизации при условии, что вы используете одну и ту же учетную запись для решения и для членства в группе гибридных рабочих ролей Runbook. Эта функция добавлена в версии 7.2.12024.0 гибридной рабочей роли Runbook.
 
 ## <a name="remove-a-hybrid-runbook-worker"></a>Удаление гибридной рабочей роли Runbook Worker
 
@@ -107,7 +107,7 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 
 Для обмена данными между гибридной рабочей ролью Runbook и службой автоматизации необходимы следующие порт и URL-адрес:
 
-* Порт: только исходящий интернет-трафик через TCP-порт 443.
+* порт: только исходящий трафик Интернета через TCP-порт 443.
 * Глобальный URL-адрес: *.azure-automation.net.
 * Глобальный URL-адрес US Gov (Вирджиния): *.azure automation.us
 * Служба агента: https://\<ИД рабочей области\>.agentsvc.azure-automation.net
@@ -121,7 +121,7 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 | Центрально-западная часть США | wcus-jobruntimedata-prod-su1.azure-automation.net</br>wcus-agentservice-prod-1.azure-automation.net |
 | Центрально-южная часть США |scus-jobruntimedata-prod-su1.azure-automation.net</br>scus-agentservice-prod-1.azure-automation.net |
 | Восточная часть США 2 |eus2-jobruntimedata-prod-su1.azure-automation.net</br>eus2-agentservice-prod-1.azure-automation.net |
-| Западная часть США 2 |wus2-jobruntimedata-prod-su1.azure-automation.net</br>wus2-agentservice-prod-su1.azure-automation.net |
+| Западная часть США 2 |wus2-jobruntimedata-prod-su1.azure-automation.net</br>wus2-agentservice-prod-su1.azure-automation.net |
 | Центральная Канада |cc-jobruntimedata-prod-su1.azure-automation.net</br>cc-agentservice-prod-1.azure-automation.net |
 | Западная Европа |we-jobruntimedata-prod-su1.azure-automation.net</br>we-agentservice-prod-1.azure-automation.net |
 | Северная Европа |ne-jobruntimedata-prod-su1.azure-automation.net</br>ne-agentservice-prod-1.azure-automation.net |
@@ -152,7 +152,7 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 |*.oms.opinsights.azure.com     | *.oms.opinsights.azure.us        |
 |*.blob.core.windows.net|*.blob.core.usgovcloudapi.net|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде, см. статью [Запуск модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md).
 * Дополнительные сведения об устранении неполадок с гибридными рабочими ролями Runbook см. в разделе [Troubleshooting Hybrid Runbook Workers](troubleshoot/hybrid-runbook-worker.md#general) (Поиск и устранение неисправностей гибридных рабочих ролей Runbook).

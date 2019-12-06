@@ -3,28 +3,24 @@ title: Учетные данные сертификата в Azure AD
 titleSuffix: Microsoft identity platform
 description: В этой статье рассматривается регистрация и использование учетных данных сертификата для аутентификации приложения.
 services: active-directory
-documentationcenter: .net
 author: rwike77
 manager: CelesteDG
-editor: ''
 ms.assetid: 88f0c64a-25f7-4974-aca2-2acadc9acbd8
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: ryanwi
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3fca872d639ab5c2d4053656cdd3e68a59fdc1e6
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 4b0dd42aeaa8a7a5d9f1cc28b409a8d8dbf92304
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73473970"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74845371"
 ---
 # <a name="certificate-credentials-for-application-authentication"></a>Учетные данные сертификата для аутентификации приложения
 
@@ -101,7 +97,7 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 При регистрации приложения Azure для клиентского приложения сделайте следующее.
 1. Выберите **Сертификаты и секреты**. 
 2. Щелкните **отправить сертификат** и выберите файл сертификата для отправки.
-3. Нажмите кнопку **Добавить**.
+3. Щелкните **Добавить**.
   После отправки сертификата отображаются отпечаток, Дата начала и срок действия. 
 
 ### <a name="updating-the-application-manifest"></a>Обновление манифеста приложения

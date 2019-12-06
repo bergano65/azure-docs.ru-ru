@@ -2,13 +2,13 @@
 title: Обновление существующего назначения на портале
 description: Сведения о механизме обновления существующего назначения схемы на портале в проекте Azure.
 ms.date: 11/21/2019
-ms.topic: conceptual
-ms.openlocfilehash: b4cf03d88103b85bc00dbd815816ead2740f2093
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.topic: how-to
+ms.openlocfilehash: 3cce84127475b2f11388b4ad4eb48dedec19cd1d
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406394"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873171"
 ---
 # <a name="how-to-update-an-existing-blueprint-assignment"></a>Обновление существующего назначения схемы
 
@@ -50,7 +50,7 @@ ms.locfileid: "74406394"
   - Если изменяется определение назначения политики, создается новое назначение политики.
     Ранее развернутые назначения политик сохраняются.
   - Если артефакт назначения политики удаляется из схемы, развернутое назначение политики сохраняется.
-- Шаблоны диспетчера ресурсов Azure
+- Шаблоны Azure Resource Manager
   - Шаблон обрабатывается с помощью Resource Manager как **PUT**. Так как каждый тип ресурсов обрабатывает это действие по-разному, просмотрите документацию для каждого включенного ресурса, чтобы определить влияние этого действия при его выполнении схемой.
 
 ## <a name="possible-errors-on-updating-assignments"></a>Возможные ошибки при обновлении назначений
@@ -63,7 +63,7 @@ ms.locfileid: "74406394"
 - объект уже существует;
 - Azure Resource Manager не поддерживает запрошенное изменение.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь со сведениями о [жизненном цикле схем](../concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](../concepts/parameters.md).

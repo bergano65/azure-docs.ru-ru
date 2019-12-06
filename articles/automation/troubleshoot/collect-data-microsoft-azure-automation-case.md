@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 09/23/2019
 ms.author: v-miegge
-ms.openlocfilehash: 83ee78d369af7fe99de8e7236fe1eb0bc63a942f
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 4839ce7a0188c782656fd3a4c42cbdd116b165e9
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72301754"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849383"
 ---
 # <a name="data-to-collect-when-you-open-a-case-for-microsoft-azure-automation"></a>Данные, которые необходимо собрать для отправки запроса в службу автоматизации Microsoft Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "72301754"
 
 1. Экспортируйте следующие журналы событий в формат EVTX:
 
-   * системный;
+   * Система
    * Приложение
    * Безопасность
    * Operations Manager
@@ -102,7 +102,7 @@ ms.locfileid: "72301754"
 * Снимок экрана любых сообщений об ошибках.
 * Снимок экрана текущих модулей и их номеров версий.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вам нужна дополнительная помощь в любой момент в этой статье, обратитесь к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/).
 

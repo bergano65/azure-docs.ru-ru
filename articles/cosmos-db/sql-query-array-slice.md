@@ -1,18 +1,18 @@
 ---
-title: ARRAY_SLICE на языке запросов Azure Cosmos DB
-description: Дополнительные сведения о функции SQL System ARRAY_SLICE в Azure Cosmos DB.
+title: ARRAY_SLICE языка запросов Azure Cosmos DB
+description: Узнайте, как системная функция среза массива SQL в Azure Cosmos DB возвращает часть выражения массива.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 1df4177bb8b56bc98977af0f5180e8df5affb257
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 3c65886eabfa87f729e18fb854aca6662d1d6fac
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71348545"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74871794"
 ---
 # <a name="array_slice-azure-cosmos-db"></a>ARRAY_SLICE (Azure Cosmos DB)
  Возвращает часть выражения массива.
@@ -67,7 +67,7 @@ SELECT
 }]  
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Функции массива Azure Cosmos DB](sql-query-array-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

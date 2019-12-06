@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/12/2018
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: 9b0602f526991be37b7a9cce1d621dc2138dec48
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 3071effeb2d5eeaafc48fd742559b093a0517c1c
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74279135"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74851678"
 ---
 # <a name="use-the-portal-to-attach-a-data-disk-to-a-linux-vm"></a>Подключение диска данных к виртуальной машине Linux с помощью портала 
 В этой статье показано, как подключить новый и существующий диски к виртуальной машине Linux на портале Azure. Вы также можете [подключить диск данных к виртуальной машине Windows на портале Azure](../windows/attach-managed-disk-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
@@ -33,10 +33,9 @@ ms.locfileid: "74279135"
 
 
 ## <a name="find-the-virtual-machine"></a>Поиск виртуальной машины
-1. Войдите на [портале Azure](https://portal.azure.com/).
-2. В меню слева щелкните **Виртуальные машины**.
-3. Затем выберите виртуальную машину из списка.
-4. На странице "Виртуальные машины" в разделе **Основные компоненты** щелкните **Диски**.
+1. Перейдите в [портал Azure](https://portal.azure.com/) , чтобы найти виртуальную машину. Найдите и выберите **виртуальные машины**.
+2. Выберите виртуальную машину из списка.
+3. На боковой панели страницы **виртуальных машин** в разделе **Параметры**выберите **диски**.
    
     ![Открытие параметров диска](./media/attach-disk-portal/find-disk-settings.png)
 
@@ -265,5 +264,5 @@ UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext4   defaults,nofail 
     sudo fstrim /datadrive
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Вы можете также [подключить диск данных](add-disk.md) с помощью Azure CLI.

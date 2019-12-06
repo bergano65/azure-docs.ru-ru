@@ -4,17 +4,17 @@ description: Эта статья содержит сведения о выпол
 services: automation
 ms.service: automation
 ms.subservice: process-automation
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 01/29/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 9c7084954fe58351a6f9af40552714faa34685ad
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: c8da5736869a39815d9abf33cf4a03353681b193
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73887043"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849723"
 ---
 # <a name="running-runbooks-on-a-hybrid-runbook-worker"></a>Запуск модулей runbook в гибридной рабочей роли Runbook
 
@@ -310,7 +310,7 @@ gpg –-clear-sign <runbook name>
 
 Теперь подписанный модуль runbook можно отправить в службу автоматизации Azure и выполнять как обычный модуль runbook.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о разных методах запуска модуля см. в статье [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).
 * Описание разных методов работы с модулями Runbook PowerShell в службе автоматизации Azure с использованием текстового редактора см. в статье [Изменение модулей Runbook в службе автоматизации Azure](automation-edit-textual-runbook.md).

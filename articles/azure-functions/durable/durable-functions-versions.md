@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 93c35eb4f69cc4f9b16f669d96c2df53f50bcf84
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 789af25cc37183e9eeae253e1e8529615abdd308
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231194"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849808"
 ---
 # <a name="durable-functions-versions-overview"></a>Обзор версий Устойчивые функции
 
@@ -55,7 +55,7 @@ ms.locfileid: "74231194"
 Устойчивые функции 2. x использует новую схему Host. JSON. Основные изменения из 1. x включают:
 
 * `"storageProvider"` (и подраздела `"azureStorage"`) для конфигурации, относящейся к хранилищу.
-* `"tracking"` для настройки отслеживания и ведения журнала.
+* `"tracing"` для настройки трассировки и ведения журнала.
 * `"notifications"` (и подраздела `"eventGrid"`) для конфигурации уведомлений сетки событий.
 
 Дополнительные сведения см. в [справочной документации по устойчивые функции Host. JSON](durable-functions-bindings.md#durable-functions-2-0-host-json) .

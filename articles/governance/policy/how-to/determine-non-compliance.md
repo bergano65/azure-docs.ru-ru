@@ -2,13 +2,13 @@
 title: Определение причин несоответствия требованиям
 description: Если ресурс не соответствует требованиям, существует множество возможных причин. Узнайте, что привело к несоответствию.
 ms.date: 04/26/2019
-ms.topic: conceptual
-ms.openlocfilehash: 839e6c61c4a44ba7c7581290408bb997b53b8f96
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.topic: how-to
+ms.openlocfilehash: 213797a1eafda10d5e97fbc60fc143de975fe221
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74279413"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873137"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Определение причин несоответствия требованиям
 
@@ -111,7 +111,7 @@ ms.locfileid: "74279413"
 
 У вас также может не быть доступа для входа на виртуальную машину напрямую, но необходимо сообщить о том, почему виртуальная машина не _соответствует требованиям_.
 
-### <a name="azure-portal"></a>портале Azure
+### <a name="azure-portal"></a>портала Azure
 
 Сначала выполните действия, описанные в предыдущем разделе, чтобы просмотреть сведения о соответствии политике.
 
@@ -210,11 +210,11 @@ _Отличия между визуальными элементами_ позв
 
 Данные журнала изменений предоставляются [графом ресурсов Azure](../../resource-graph/overview.md). Сведения о запросе этих сведений за пределами портал Azure см. в разделе [Получение изменений ресурсов](../../resource-graph/how-to/get-resource-changes.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Просмотрите примеры в [примерах политики Azure](../samples/index.md).
 - Изучите статью о [структуре определения Политики Azure](../concepts/definition-structure.md).
-- См. дополнительные сведения о [действиях политик](../concepts/effects.md).
+- Изучите [сведения о действии политик](../concepts/effects.md).
 - Узнайте, как [программно создавать политики](programmatically-create.md).
 - Узнайте, как [получить данные о соответствии](get-compliance-data.md).
 - Узнайте, как [исправлять несоответствующие ресурсы](remediate-resources.md).

@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 10/16/2019
+ms.date: 12/04/2019
 ms.topic: conceptual
 ms.service: cost-management-billing
 manager: adwise
 ms.custom: ''
-ms.openlocfilehash: 01087f3e40e278490abb87d0ab3b7b6ab5052b6b
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 4798b6908069af229c2bed4a2e5f38fa60e0d554
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74219486"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849111"
 ---
 # <a name="common-cost-analysis-uses"></a>Использование анализа общих затрат
 
@@ -65,6 +65,8 @@ ms.locfileid: "74219486"
 
 Многие пользователи Azure применяют теги к своим ресурсам, таким как центр затрат или среда разработки (Рабочая и тестовая), для лучшей классификации расходов. Теги отображаются в виде измерения в анализе затрат. Измерение можно использовать для получения ценных сведений о настраиваемых классификациях тегов.
 
+Поддержка тегов применяется к сообщению об использовании *после* применения тега к ресурсу. Теги не применяются задним числом для свертки затрат.
+
 1. В портал Azure перейдите к анализу затрат для вашей области. Например: **Управление затратами + выставление счетов** > **управление затратами** > **анализ затрат**.
 1. Выберите **Группировать по** для тега.
 
@@ -111,6 +113,6 @@ ms.locfileid: "74219486"
 
 ![Накопленные затраты на регистрацию](./media/cost-analysis-common-uses/cost-analysis-enrollment.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - См. первое краткое руководство по [работе с Управлением затратами](quick-acm-cost-analysis.md).
 - Ознакомьтесь с [документацией по управлению затратами](index.yml).

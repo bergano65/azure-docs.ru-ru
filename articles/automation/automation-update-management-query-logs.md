@@ -4,17 +4,17 @@ description: В этой статье описывается, как выпол�
 services: automation
 ms.service: automation
 ms.subservice: update-management
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 09/26/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: d53e41fc902241d796cf8b10ae35c50c090a803a
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: 4797e3a348b057fa21677649e4cb7de78de0d8b9
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72377542"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74850624"
 ---
 # <a name="query-update-records-for-update-management-in-log-analytics"></a>Запрос на обновление записей для Управление обновлениями в Log Analytics
 
@@ -63,7 +63,7 @@ Heartbeat
 
 ### <a name="single-azure-vm-assessment-queries-windows"></a>Запросы оценки одной виртуальной машины Azure (Windows)
 
-Замените значение VMUUID на GUID запрашиваемой виртуальной машины. Вы можете найти ВМУУИД, который следует использовать, выполнив следующий запрос в журналах Azure Monitor: `Update | where Computer == "<machine name>" | summarize by Computer, VMUUID`.
+Замените значение VMUUID на GUID запрашиваемой виртуальной машины. Вы можете найти ВМУУИД, который следует использовать, выполнив следующий запрос в журналах Azure Monitor: `Update | where Computer == "<machine name>" | summarize by Computer, VMUUID`
 
 #### <a name="missing-updates-summary"></a>Сводка об отсутствующих обновлениях
 
@@ -93,7 +93,7 @@ Update
 ### <a name="single-azure-vm-assessment-queries-linux"></a>Запросы оценки одной виртуальной машины Azure (Linux)
 
 Для некоторых дистрибутивов Linux существует несоответствие [порядок следования байтов](https://en.wikipedia.org/wiki/Endianness) со значением вмууид, которое берется из Azure Resource Manager и что хранится в журналах Azure Monitor. Следующий запрос проверяет совпадение по порядку байтов. Чтобы вернулись правильные результаты, замените значения VMUUID форматом GUID с прямым и обратным порядком. Вы можете найти ВМУУИД, который следует использовать, выполнив следующий запрос в журналах Azure Monitor: `Update | where Computer == "<machine name>"
-| summarize by Computer, VMUUID`.
+| summarize by Computer, VMUUID`
 
 #### <a name="missing-updates-summary"></a>Сводка об отсутствующих обновлениях
 

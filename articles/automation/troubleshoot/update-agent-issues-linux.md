@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: automation
 ms.subservice: update-management
 manager: carmonm
-ms.openlocfilehash: def0ac11edfa5a17a8e506c79d91885dd3c9ab66
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 924c2fd176b5b8e45352d616d226f484e814450d
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74770405"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849265"
 ---
 # <a name="understand-the-linux-hybrid-runbook-worker-health-in-update-management"></a>Общие сведения о работоспособности гибридной рабочей роли Runbook Linux в Управление обновлениями
 
@@ -179,4 +179,4 @@ Passed: TCP test for {ods.systemcenteradvisor.com} (port 443) succeeded
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы устранить другие неполадки, ознакомьтесь со статьей [Устранение неполадок с гибридными рабочими ролями Runbook](hybrid-runbook-worker.md).
+Сведения об устранении дополнительных проблем с гибридными рабочими ролями Runbook см. в разделе [Устранение неполадок гибридных рабочих ролей Runbook](hybrid-runbook-worker.md).

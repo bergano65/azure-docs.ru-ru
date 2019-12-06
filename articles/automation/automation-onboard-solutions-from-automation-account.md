@@ -3,18 +3,18 @@ title: Сведения о том, как подключить решения д
 description: Сведения о том, как на виртуальной машине Azure подключить решения для управления обновлениями, отслеживания изменений и инвентаризации, входящие в состав службы автоматизации Azure
 services: automation
 ms.service: automation
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 4/11/2019
 ms.topic: conceptual
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: e117c6f8aa8526392678f37a05ec61b55983a1c7
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: ab934db026b598e80541f98d74df70c893692120
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72374437"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849706"
 ---
 # <a name="onboard-update-management-change-tracking-and-inventory-solutions"></a>Подключение решений для управления обновлениями, отслеживания изменений и инвентаризации
 

@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 066c4cb598d9a8c14ab5d6ee893376266e104d15
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 30006d0dcccdd1b160289c72769340d141198d3c
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74381528"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74847598"
 ---
 # <a name="azure-active-directory-smart-lockout"></a>Смарт-блокировка Azure Active Directory
 
@@ -83,7 +83,7 @@ ms.locfileid: "74381528"
 
 **Ваша учетная запись временно заблокирована, чтобы предотвратить несанкционированное использование. Повторите попытку позже. Если у вас по-прежнему возникают проблемы, обратитесь к администратору.**
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка пользовательского списка заблокированных паролей](howto-password-ban-bad.md)
 * [Быстрое развертывание самостоятельного сброса пароля в Azure AD](quickstart-sspr.md)

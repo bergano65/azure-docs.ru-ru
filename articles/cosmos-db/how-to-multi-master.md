@@ -1,17 +1,17 @@
 ---
 title: Настройка нескольких источников в Azure Cosmos DB
-description: Сведения о том, как настроить несколько источников в приложениях в Azure Cosmos DB.
+description: Узнайте, как настроить несколько хозяев для приложений с помощью разных пакетов SDK в Azure Cosmos DB.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 07/03/2019
+ms.date: 12/02/2019
 ms.author: mjbrown
-ms.openlocfilehash: e86cacbd76a70c8b114d65a77ff013d32327a2d0
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 654baed649093add2aa62f4ba81bf6ce7c3e0df5
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70093103"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873647"
 ---
 # <a name="configure-multi-master-in-your-applications-that-use-azure-cosmos-db"></a>Настройка нескольких источников в приложениях, использующих Azure Cosmos DB
 
@@ -102,7 +102,7 @@ client = cosmos_client.CosmosClient(self.account_endpoint, {
                                     'masterKey': self.account_key}, connection_policy, documents.ConsistencyLevel.Session)
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь со следующими статьями:
 
@@ -114,4 +114,4 @@ client = cosmos_client.CosmosClient(self.account_endpoint, {
 * [Компромиссы согласованности, доступности и производительности](consistency-levels-tradeoffs.md)
 * [Достижение компромисса между доступностью и быстродействием для разных уровней согласованности](consistency-levels-tradeoffs.md)
 * [Масштабирование пропускной способности в Azure Cosmos DB](scaling-throughput.md)
-* [Глобальное распределение: работы Azure RMS](global-dist-under-the-hood.md)
+* [Глобальное распределение. внутри](global-dist-under-the-hood.md)

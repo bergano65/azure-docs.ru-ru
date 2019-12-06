@@ -1,5 +1,5 @@
 ---
-title: Программное управление книгами Azure Monitor с помощью шаблонов Azure Resource Manager | Документация Майкрософт
+title: Azure Monitor книг и шаблонов Azure Resource Manager
 description: Упрощение сложных отчетов с помощью предварительно созданных и настраиваемых параметризованных Azure Monitor книг, развернутых с помощью шаблонов Azure Resource Manager
 services: azure-monitor
 author: mrbullwinkle
@@ -10,12 +10,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
-ms.openlocfilehash: d5e22093fa796a9fbd60dc2bc242f37a6cac7cf0
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: e3d29beab7b1d82f73c706897af9650b68be11f5
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73166113"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74872916"
 ---
 # <a name="programmatically-manage-workbooks"></a>Программное управление книгами
 

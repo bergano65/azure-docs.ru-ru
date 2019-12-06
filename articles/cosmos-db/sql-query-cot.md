@@ -1,18 +1,18 @@
 ---
 title: COT на языке запросов Azure Cosmos DB
-description: Дополнительные сведения о функции SQL System COT в Azure Cosmos DB.
+description: Сведения о том, как системная функция SQL котангенса (COT) в Azure Cosmos DB возвращает тригонометрический котангенс указанного угла в радианах в указанном числовом выражении
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: d980319730e69fdcb529272ba1b8fb48d2b5b230
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: f049d1295eef3e6a45abeaafe8c22d376f90abe1
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71351243"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74871505"
 ---
 # <a name="cot-azure-cosmos-db"></a>COT (Azure Cosmos DB)
  Возвращает тригонометрический котангенс указанного угла в радианах в указанном числовом выражении.  
@@ -47,7 +47,7 @@ SELECT COT(124.1332) AS cot
 ```  
   
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

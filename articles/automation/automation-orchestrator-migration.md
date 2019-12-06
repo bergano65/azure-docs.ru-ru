@@ -4,17 +4,17 @@ description: Описывает способ миграции пакетов Run
 services: automation
 ms.service: automation
 ms.subservice: process-automation
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: eb5a77668cce96ef45a960908612b502f1520e25
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: b34554798130d9741318e0f518c32a41f82a17e3
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67477589"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849672"
 ---
 # <a name="migrating-from-orchestrator-to-azure-automation-beta"></a>Миграция из Orchestrator в службу автоматизации Azure (бета-версия)
 Модули Runbook в [System Center Orchestrator](https://technet.microsoft.com/library/hh237242.aspx) основаны на действиях из пакетов интеграции, которые созданы специально для Orchestrator, а модули Runbook службы автоматизации Azure основаны на рабочих процессах Windows PowerShell.  [Графические модули Runbook](automation-runbook-types.md#graphical-runbooks) в службе автоматизации Azure имеют сходный вид с модулями Runbook в Orchestrator, при этом действия представляют собой командлеты PowerShell, зависимые модули Runbook и ресурсы-контейнеры.
@@ -31,10 +31,10 @@ ms.locfileid: "67477589"
 6. Создавайте обязательные активы Orchestrator в службе автоматизации Azure вручную, так как преобразователь модулей Runbook не преобразует такие ресурсы.
 7. Настройте [гибридный компонент Runbook Worker](#hybrid-runbook-worker) в локальном центре обработки данных для запуска преобразованных модулей Runbook, которым будет предоставлен доступ к локальным ресурсам.
 
-## <a name="service-management-automation"></a>Автоматизация управления службами
+## <a name="service-management-automation"></a>Service Management Automation
 [Автоматизация управления службами](https://technet.microsoft.com/library/dn469260.aspx) (SMA) сохраняет и запускает модули Runbook в локальном центре обработки данных, как и Orchestrator, и использует те же модули интеграции в качестве службы автоматизации Azure. [Runbook Converter](#runbook-converter) преобразует модули Runbook для Orchestrator в графические модули Runbook, которые, однако, не поддерживаются в SMA.  Вы все еще сможете установить [модуль стандартных действий](#standard-activities-module) и [модули интеграции System Center Orchestrator](#system-center-orchestrator-integration-modules) в SMA, однако [модули Runbook придется перезаписать вручную](https://technet.microsoft.com/library/dn469262.aspx).
 
-## <a name="hybrid-runbook-worker"></a>Гибридная рабочая роль Runbook
+## <a name="hybrid-runbook-worker"></a>Гибридная рабочая роль runbook
 Модули Runbook для Orchestrator сохраняются на сервере базы данных и работают на серверах модулей Runbook, которые оба размещаются в вашем локальном центре обработки данных.  Модули Runbook в службе автоматизации Azure сохраняются в облаке Azure и могут работать в локальном центре обработки данных при помощи [гибридного компонента Runbook Worker](automation-hybrid-runbook-worker.md).  Именно так вы обычно будете запускать модули Runbook, преобразованные из Orchestrator, поскольку они разработаны для запуска на локальных серверах.
 
 ## <a name="integration-pack-converter"></a>Преобразователь пакета интеграции
@@ -96,7 +96,7 @@ ConvertFrom-SCORunbook -RunbookPath "c:\runbooks\MyRunbooks.ois_export" -Module 
 ### <a name="log-files"></a>Файлы журналов
 В том же расположении, где находится преобразованный модуль Runbook, преобразователь модулей Runbook создаст указанные ниже файлы журналов.  Если файлы уже существуют, они будут перезаписаны данными из последнего преобразования.
 
-| Файл | Оглавление |
+| Файлы | Контент |
 |:--- |:--- |
 | Преобразователь модулей Runbook — Progress.log |Подробные шаги преобразования, включая сведения о каждом успешно преобразованном действии и предупреждения о каждом непреобразованном действии. |
 | Преобразователь модулей Runbook — Summary.log |Результаты последнего преобразования, включая все предупреждения и дополнительные задачи, такие как создание переменной, необходимой для преобразованного модуля Runbook. |

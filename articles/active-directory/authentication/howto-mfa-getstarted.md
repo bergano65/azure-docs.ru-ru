@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e91a82442b2d436736719d629f70c8dec0e5a6c
-ms.sourcegitcommit: b5d59c6710046cf105236a6bb88954033bd9111b
+ms.openlocfilehash: ccffe8d104792d9723c1541466067de3ea2c2e66
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74558554"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74848397"
 ---
 # <a name="planning-a-cloud-based-azure-multi-factor-authentication-deployment"></a>Планирование развертывания многофакторной идентификации Azure на основе облачных служб
 
@@ -283,12 +283,12 @@ Get-MsolUser -All | Set-MfaState -State Disabled
 
 Этот параметр определяет, что нужно делать при проверке подлинности пользователя, не зарегистрированного для MFA. Последствия изменения этого параметра перечислены в таблице ниже.
 
-| Настройки | Состояние пользователя MFA | Параметров |
+| Настройки | Состояние пользователя MFA | Произведенный эффект |
 | --- | --- | --- |
 | Ключ не существует | Не зарегистрировано | Запрос MFA не выполнен |
 | Значение true/Not Set | Не зарегистрировано | Запрос MFA не выполнен |
 | Для ключа задано значение false | Не зарегистрировано | Проверка подлинности без MFA |
-| Для ключа задано значение false или true | Зарегистрированных | Необходимо пройти проверку подлинности с помощью MFA |
+| Для ключа задано значение false или true | Зарегистрировано | Необходимо пройти проверку подлинности с помощью MFA |
 
 ### <a name="integrate-with-active-directory-federation-services"></a>Интеграция с службы федерации Active Directory (AD FS)
 

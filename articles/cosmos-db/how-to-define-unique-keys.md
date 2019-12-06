@@ -1,17 +1,17 @@
 ---
 title: Определение уникальных ключей для контейнера Azure Cosmos
-description: Узнайте, как определить уникальные ключи для контейнера Azure Cosmos
+description: Узнайте, как определить уникальные ключи для контейнера Azure Cosmos с помощью портал Azure, PowerShell, .NET, Java и других пакетов SDK.
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/28/2019
+ms.date: 12/02/2019
 ms.author: thweiss
-ms.openlocfilehash: 2f61afd12a50b1b135419585bfada52d7ef98f3a
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.openlocfilehash: fa62495a7b51c9a06a91102299378c15e811eae0
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71811643"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74872117"
 ---
 # <a name="define-unique-keys-for-an-azure-cosmos-container"></a>Определение уникальных ключей для контейнера Azure Cosmos
 
@@ -35,7 +35,7 @@ ms.locfileid: "71811643"
 
     ![Снимок экрана записи ограничения уникального ключа на портале Azure](./media/how-to-define-unique-keys/unique-keys-portal.png)
 
-## <a name="use-powershell"></a>С использованием PowerShell
+## <a name="use-powershell"></a>Использование PowerShell
 
 Чтобы создать контейнер с уникальными ключами, см. раздел [Создание контейнера Azure Cosmos с уникальным ключом и TTL](manage-with-powershell.md#create-container-unique-key-ttl)
 
@@ -145,7 +145,7 @@ client.CreateContainer('dbs/' + config['DATABASE'], {
 })
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Подробнее о [секционировании](partition-data.md)
 - [Как работает индексация](index-overview.md)

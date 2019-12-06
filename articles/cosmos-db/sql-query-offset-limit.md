@@ -1,17 +1,17 @@
 ---
 title: Предложение ЛИМИТа смещения в Azure Cosmos DB
-description: Сведения о предложении предельного значения смещения для Azure Cosmos DB.
+description: Узнайте, как использовать предложение СМЕЩ LIMIT для пропуска и получения определенных значений при запросе в Azure Cosmos DB
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 06/10/2019
 ms.author: mjbrown
-ms.openlocfilehash: 7aae56783f83f13b50321c88d69f07d910e589dd
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 68515c51862ada0b1aa794c09b3a6730504a57ee
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72326876"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873256"
 ---
 # <a name="offset-limit-clause-in-azure-cosmos-db"></a>Предложение ЛИМИТа смещения в Azure Cosmos DB
 

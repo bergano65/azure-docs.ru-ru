@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 11/22/2019
 ms.author: helohr
-ms.openlocfilehash: 6b4e1a5024fec07ca73c79d2742933b7b115e6c2
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 3347cfee8b54efa9c52b23deff8c44387195fd63
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74384296"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74851185"
 ---
 # <a name="windows-virtual-desktop-partner-integrations"></a>Интеграция с партнерами по виртуальным рабочим столам Windows
 
@@ -28,16 +28,6 @@ Citrix расширяет ценность виртуальных рабочих
 
 - [Перейдите на веб-сайт партнера](https://more.citrix.com/wvd).
 
-## <a name="cloudhouse"></a>клаудхаусе
-
-![Логотип клаудхаусе](./media/partners/cloudhouse.png)
-
-Клаудхаусе — это добавленный в Windows виртуальный рабочий стол поставщик услуг, который предоставляет клиентам готовую службу миграции приложений, которая может перемещать все приложения, в том числе те, которые несовместимы с современными операционными системами Windows, в Windows. Среда виртуальных рабочих столов, позволяющая клиентам использовать несколько сеансов Windows 10. 
-
-Используя проверенную Клаудхаусе технологию контейнеров, служба Клаудхаусе принимает все приложения, в том числе разработанные для Windows XP, Windows 7 или Windows 8, и развертывает их на современном виртуальном рабочем столе Windows без необходимости изменять код или влияние на взаимодействие с пользователем. Клаудхаусе дополнительно добавляет к значению виртуального рабочего стола Windows, изолируя приложения из базовой операционной системы, что позволяет развернуть обновления для Windows, не влияя на контейнерное приложение. 
-
-- [Перейдите на веб-сайт партнера](https://cloudhouse.com/resources/migrate-everything-to-windows-10-on-microsoft-windows-virtua).
-
 ## <a name="vmware"></a>VMware
 
 ![Логотип VMware](./media/partners/vmware.png)
@@ -48,6 +38,17 @@ Citrix расширяет ценность виртуальных рабочих
 
 - [Зарегистрируйтесь для использования ознакомительной версии Technical Preview на Microsoft Azure](https://www.vmware.com/learn/323526_TECH_PREVIEW_REG.html).
 - [Перейдите на веб-сайт партнера](https://www.vmware.com/products/horizon-cloud-virtual-desktops.html).
+
+
+## <a name="cloudhouse"></a>клаудхаусе
+
+![Логотип клаудхаусе](./media/partners/cloudhouse.png)
+
+Клаудхаусе — это добавленный в Windows виртуальный рабочий стол поставщик услуг, который предоставляет клиентам готовую службу миграции приложений, которая может перемещать все приложения, в том числе те, которые несовместимы с современными операционными системами Windows, в Windows. Среда виртуальных рабочих столов, позволяющая клиентам использовать несколько сеансов Windows 10. 
+
+Используя проверенную Клаудхаусе технологию контейнеров, служба Клаудхаусе принимает все приложения, в том числе разработанные для Windows XP, Windows 7 или Windows 8, и развертывает их на современном виртуальном рабочем столе Windows без необходимости изменять код или влияние на взаимодействие с пользователем. Клаудхаусе дополнительно добавляет к значению виртуального рабочего стола Windows, изолируя приложения из базовой операционной системы, что позволяет развернуть обновления для Windows, не влияя на контейнерное приложение. 
+
+- [Перейдите на веб-сайт партнера](https://cloudhouse.com/resources/migrate-everything-to-windows-10-on-microsoft-windows-virtua).
 
 ## <a name="cloudjumper"></a>клауджумпер
 
@@ -225,7 +226,7 @@ Printix — это дополнительный поставщик услуг Wi
 - [Ознакомьтесь с кратким](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3oL8P)обзорным решением.
 - [Перейдите на веб-сайт партнера](https://www.workspot.com/wvd).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Дополнительные сведения о виртуальных рабочих столах Windows](overview.md).
 - [Создание клиента в виртуальном рабочем столе Windows](tenant-setup-azure-active-directory.md).

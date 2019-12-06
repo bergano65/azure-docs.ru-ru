@@ -1,22 +1,22 @@
 ---
-title: Azure AD SSPR требования к данным — Azure Active Directory
+title: Требования к данным Azure AD SSPR — Azure Active Directory
 description: Требования к данным для самостоятельного сброса пароля Azure AD и информация о том, как их выполнить
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 07/11/2018
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a0d7edb6c7faafcad55e827c2d9e3d2eeea40f5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c1c00d0f4ba365442762df6e041f02ea0a39f099
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60358045"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74847309"
 ---
 # <a name="deploy-password-reset-without-requiring-end-user-registration"></a>Развертывание сброса пароля без регистрации пользователя
 
@@ -47,7 +47,7 @@ ms.locfileid: "60358045"
 
 Глобальный администратор может вручную задать контактные данные пользователя для проверки подлинности, как показано на следующем снимке экрана.
 
-![Проверка подлинности контактные данные пользователя в Azure AD][Contact]
+![Контактная информация для проверки подлинности пользователя в Azure AD][Contact]
 
 Если в поле "Телефон" указан номер и использование мобильного телефона предусмотрено в политике SSPR, пользователь увидит этот номер на странице регистрации для сброса пароля, а также во время сброса пароля.
 
@@ -77,7 +77,7 @@ ms.locfileid: "60358045"
 
 * **Запасной адрес электронной почты**;
 * **Мобильный телефон**;
-* **Рабочий телефон** — его можно указать, только если это значение не синхронизируется с локальным каталогом.
+* **Рабочий телефон** — его можно указать, только если это значение не синхронизируется с локальным каталогом.
 
 ### <a name="use-powershell-version-1"></a>Использование PowerShell версии 1
 
@@ -164,7 +164,7 @@ Get-AzureADUser | select DisplayName,UserPrincipalName,otherMails,Mobile,Telepho
 * [Что такое обратная запись паролей и каково ее назначение](howto-sspr-writeback.md)
 * [Как сообщать о действиях в SSPR](howto-sspr-reporting.md)
 * [Обзор всех параметров SSPR и их значение](concept-sspr-howitworks.md)
-* [Как устранить неполадки самостоятельного сброса пароля](active-directory-passwords-troubleshoot.md)
+* [Думаю, что что-то не так. Разделы справки устранить неполадки SSPR?](active-directory-passwords-troubleshoot.md)
 * [Вопросы, не вошедшие в другие статьи](active-directory-passwords-faq.md)
 
 [Contact]: ./media/howto-sspr-authenticationdata/user-authentication-contact-info.png "Глобальные администраторы могут изменять контактные данные для аутентификации пользователя"

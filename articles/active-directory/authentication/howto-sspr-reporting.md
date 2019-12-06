@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 02/01/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 55ef15bd1fe922aa44227d2fea3d882d4320146f
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: d3b05c45d218c0f85817b4b5023ac22401879f81
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72786709"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74847224"
 ---
 # <a name="reporting-options-for-azure-ad-password-management"></a>Параметры отчетов для управления паролями Azure AD
 
@@ -81,7 +81,7 @@ ms.locfileid: "72786709"
 * [Reset password (by admin)](#activity-type-reset-password-by-admin) (Сброс пароля (администратор)). Указывает, что администратор сбросил пароль от имени пользователя на портале Azure.
 * [Reset password (self-service)](#activity-type-reset-password-self-service) (Сброс пароля (самостоятельный)). Указывает, что пользователь успешно сбросил пароль на [портале сброса пароля Azure AD](https://passwordreset.microsoftonline.com).
 * [Ход выполнения самостоятельного сброса пароля](#activity-type-self-serve-password-reset-flow-activity-progress). Указывает каждый этап, выполняемый пользователем в рамках процесса сброса пароля (например, прохождение определенного этапа аутентификации для сброса пароля).
-* [Разблокировать учетную запись пользователя (Self-Service)](#activity-type-unlock-a-user-account-self-service)). указывает, что пользователь успешно разблокировал свою учетную запись Active Directory без сброса пароля на [портале сброса пароля Azure AD](https://passwordreset.microsoftonline.com) с помощью Active Directory функции разблокировки учетной записи. без сброса.
+* Разблокировка [учетной записи пользователя (Self-Service)](#activity-type-unlock-a-user-account-self-service)). указывает, что пользователь успешно разблокировал свою учетную запись Active Directory без сброса пароля на [портале сброса пароля Azure AD](https://passwordreset.microsoftonline.com) с помощью Active Directory функции разблокировки учетной записи, которая не сбрасывается.
 * [User registered for self-service password reset](#activity-type-user-registered-for-self-service-password-reset) (Регистрация пользователей для самостоятельного сброса пароля). Указывает, что пользователь зарегистрировал всю информацию, необходимую для сброса пароля в соответствии с указанной политикой сброса пароля клиента.
 
 ### <a name="activity-type-blocked-from-self-service-password-reset"></a>Тип действия: Blocked from self-service password reset (Блокировка самостоятельного сброса пароля)

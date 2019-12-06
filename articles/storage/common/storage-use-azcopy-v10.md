@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: af24a6b6d165ba60a0d88a4ddf74a4f18836e813
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 0572a18e530eaff2b5a2d8aa8ced5af26f762aa8
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74111756"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873936"
 ---
 # <a name="get-started-with-azcopy"></a>Начало работы с AzCopy
 
@@ -98,8 +98,8 @@ tar -xf azcopy.tar.gz
 
 - Контейнер (файловая система)
 - Учетная запись хранения
-- Группа ресурсов
-- подписку
+- группа ресурсов.
+- Subscription
 
 Сведения о проверке и назначении ролей см. [в разделе Предоставление доступа к данным BLOB-объектов и очередей Azure с помощью RBAC в портал Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
@@ -278,7 +278,7 @@ azcopy copy "C:\local\path" "https://account.blob.core.windows.net/mycontainer1/
 
 Чтобы получить ссылку, выполните следующую команду:
 
-| операционная система  | Команда |
+| Операционная система  | Команда |
 |--------|-----------|
 | **Linux** | `curl -v https://aka.ms/downloadazcopy-v10-linux` |
 | **Windows** | `(curl https://aka.ms/downloadazcopy-v10-windows -MaximumRedirection 0 -ErrorAction silentlycontinue).RawContent` |
@@ -288,7 +288,7 @@ azcopy copy "C:\local\path" "https://account.blob.core.windows.net/mycontainer1/
 
 URL-адрес отображается в выходных данных этой команды. Затем скрипт может скачать AzCopy с помощью этого URL-адреса.
 
-| операционная система  | Команда |
+| Операционная система  | Команда |
 |--------|-----------|
 | **Linux** | `wget -O azcopy_v10.tar.gz https://aka.ms/downloadazcopy-v10-linux && tar -xf azcopy_v10.tar.gz --strip-components=1` |
 | **Windows** | `Invoke-WebRequest https://azcopyvnext.azureedge.net/release20190517/azcopy_windows_amd64_10.1.2.zip -OutFile azcopyv10.zip <<Unzip here>>` |
@@ -325,6 +325,6 @@ URL-адрес отображается в выходных данных это�
 
 См. раздел [Настройка, оптимизация и устранение неполадок AzCopy](storage-use-azcopy-configure.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас есть вопросы, проблемы или общие отзывы, отправьте их [на страницу GitHub](https://github.com/Azure/azure-storage-azcopy) .

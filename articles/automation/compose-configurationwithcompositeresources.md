@@ -5,17 +5,17 @@ keywords: powershell dsc, desired state configuration, powershell dsc для azu
 services: automation
 ms.service: automation
 ms.subservice: dsc
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 08/21/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: d9d16d9d9967af5bf8f9e13406e13d5637325f52
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: e9552adad1f15422eb60c34f2548324aeb03ee74
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72243364"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849570"
 ---
 # <a name="composing-dsc-configurations-in-azure-automation-state-configuration-dsc-using-composite-resources"></a>Составление конфигураций DSC в службе "Настройка состояния службы автоматизации Azure" с помощью составных ресурсов
 
@@ -41,9 +41,9 @@ ms.locfileid: "72243364"
 
 После сохранения новой конфигурации она отправляется на компиляцию. Состояние задания компиляции можно просмотреть так же, как для любой импортируемой конфигурации. Дополнительные сведения см. в разделе [Просмотр задания компиляции](automation-dsc-getting-started.md#viewing-a-compilation-job).
 
-После успешного завершения компиляции новая конфигурация появляется на вкладке **Составленные конфигурации**. После того как она становится доступна на этой вкладке, ее можно назначить управляемому узлу, выполнив инструкции в разделе [Переназначение узла другой конфигурации](automation-dsc-getting-started.md#reassigning-a-node-to-a-different-node-configuration).
+После успешного завершения компиляции новая конфигурация отображается на вкладке **скомпилированные конфигурации** . После отображения на этой вкладке ее можно назначить управляемому узлу, выполнив действия, описанные в разделе [перераспределение узла с другой конфигурацией узла](automation-dsc-getting-started.md#reassigning-a-node-to-a-different-node-configuration).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы приступить к работе со службой "Настройка состояния службы автоматизации Azure", см. сведения в [этой статье](automation-dsc-getting-started.md).
 - Дополнительные сведения о подключении узлов см. в статье [Подключение компьютеров для управления с помощью Azure Automation DSC](automation-dsc-onboarding.md).

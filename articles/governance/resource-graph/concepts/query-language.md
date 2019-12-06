@@ -1,14 +1,14 @@
 ---
 title: Основные сведения о языке запросов
 description: Описывает таблицы графа ресурсов и доступные типы данных, операторы и функции Kusto, которые можно использовать с графом ресурсов Azure.
-ms.date: 10/21/2019
+ms.date: 12/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: baef46f4ba6f899c2c0a1392f87006223d75a4e1
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: a3503ce8d83b5bd47872db4b1de0eadb88be432c
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73959053"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74851219"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Общие сведения о языке запросов графика ресурсов Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "73959053"
 
 Граф ресурсов предоставляет несколько таблиц для хранения данных о диспетчер ресурсов типах ресурсов и их свойствах. Эти таблицы можно использовать с операторами `join` или `union` для получения свойств из связанных типов ресурсов. Ниже приведен список таблиц, доступных в диаграмме ресурсов.
 
-|Таблицы графов ресурсов |ОПИСАНИЕ |
+|Таблицы графов ресурсов |Описание |
 |---|---|
 |Ресурсы |Таблица по умолчанию, если в запросе не определено значение None. Большинство диспетчер ресурсов типов и свойств ресурсов. |
 |ресаурцеконтаинерс |Включает подписку (в предварительной версии — `Microsoft.Resources/subscriptions`) и типы ресурсов и данные группы ресурсов (`Microsoft.Resources/subscriptions/resourcegroups`). |
@@ -65,14 +65,15 @@ Resources
 
 Ниже приведен список табличных операторов ККЛ, поддерживаемых графиком ресурсов с конкретными примерами.
 
-|ккл |Пример запроса к диаграмме ресурсов |Примечания |
+|ккл |Пример запроса к диаграмме ресурсов |Заметки |
 |---|---|---|
 |[count](/azure/kusto/query/countoperator) |[Подсчет ключевых хранилищ](../samples/starter.md#count-keyvaults) | |
 |[distinct](/azure/kusto/query/distinctoperator) |[Отображение уникальных значений для конкретного псевдонима](../samples/starter.md#distinct-alias-values) | |
 |[extend](/azure/kusto/query/extendoperator) |[Подсчет виртуальных машин по типу ОС](../samples/starter.md#count-os) | |
 |[join](/azure/kusto/query/joinoperator) |[Хранилище ключей с именем подписки](../samples/advanced.md#join) |Поддерживаемые флаги соединений: [иннеруникуе](/azure/kusto/query/joinoperator#default-join-flavor), [inner](/azure/kusto/query/joinoperator#inner-join), [leftouter](/azure/kusto/query/joinoperator#left-outer-join). Ограничение в 3 `join` в одном запросе. Пользовательские стратегии подключения, такие как широковещательное соединение, не допускаются. Может использоваться в одной таблице или между таблицами _Resources_ и _ресаурцеконтаинерс_ . |
 |[limit](/azure/kusto/query/limitoperator) |[Вывод списка общедоступных IP-адресов](../samples/starter.md#list-publicip) |Синоним `take` |
-|[MV — развернуть](/azure/kusto/query/mvexpandoperator) |[Список Cosmos DB с конкретным указанием расположений записи](../samples/advanced.md#mvexpand-cosmosdb) |_Ровлимит_ максимум 400 |
+|[mvexpand](/azure/kusto/query/mvexpandoperator) | | Устаревший оператор используйте вместо этого `mv-expand`. _Ровлимит_ максимум 400. Значение по умолчанию — 128. |
+|[MV — развернуть](/azure/kusto/query/mvexpandoperator) |[Список Cosmos DB с конкретным указанием расположений записи](../samples/advanced.md#mvexpand-cosmosdb) |_Ровлимит_ максимум 400. Значение по умолчанию — 128. |
 |[порядок](/azure/kusto/query/orderoperator) |[Вывод списка ресурсов, отсортированных по имени](../samples/starter.md#list-resources) |Синоним `sort` |
 |[project](/azure/kusto/query/projectoperator) |[Вывод списка ресурсов, отсортированных по имени](../samples/starter.md#list-resources) | |
 |[project-away](/azure/kusto/query/projectawayoperator) |[Удаление столбцов из результатов](../samples/advanced.md#remove-column) | |
@@ -115,8 +116,8 @@ Resources
     where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.`$type
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. язык, используемый в [начальных запросах](../samples/starter.md).
 - См. Дополнительные сведения о расширенном использовании в [расширенных запросах](../samples/advanced.md).
-- Узнайте больше о том, как [исследовать ресурсы](explore-resources.md).
+- Дополнительные сведения об [исследовании ресурсов](explore-resources.md).

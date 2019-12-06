@@ -1,17 +1,17 @@
 ---
 title: Работа с массивами и объектами в Azure Cosmos DB
-description: Сведения о синтаксисе SQL для создания массивов и объектов для Azure Cosmos DB.
+description: Сведения о синтаксисе SQL для создания массивов и объектов в Azure Cosmos DB. В этой статье также приведены некоторые примеры выполнения операций с объектами Array.
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 06/21/2019
+ms.date: 12/02/2019
 ms.author: tisande
-ms.openlocfilehash: 17a0e4ddf5acd267a4cfbb68c218fe9409a91d57
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 5b2801b0a71f04803955e9d8bc18a97133019996
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71003921"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74870927"
 ---
 # <a name="working-with-arrays-and-objects-in-azure-cosmos-db"></a>Работа с массивами и объектами в Azure Cosmos DB
 
@@ -54,7 +54,7 @@ FROM f
 
 ## <a id="Iteration"></a>Итерация
 
-API SQL обеспечивает поддержку итерации по массивам JSON с новой конструкцией, добавленной с помощью [ключевого слова in](sql-query-keywords.md#in) из источника from. В следующем примере:
+API SQL обеспечивает поддержку итерации по массивам JSON с новой конструкцией, добавленной с помощью [ключевого слова in](sql-query-keywords.md#in) из источника from. В приведенном ниже примере выполняется следующее:
 
 ```sql
     SELECT *
@@ -90,7 +90,7 @@ API SQL обеспечивает поддержку итерации по мас
     ]
 ```
 
-Следующий запрос выполняет итерацию `children` `Families` в контейнере. Выходной массив отличается от предыдущего запроса. В этом примере показано `children`разбиение и сведение результатов в один массив:  
+Следующий запрос выполняет итерацию `children` в контейнере `Families`. Выходной массив отличается от предыдущего запроса. В этом примере разбивается `children`и происходит сведение результатов в один массив:  
 
 ```sql
     SELECT *
@@ -155,7 +155,7 @@ API SQL обеспечивает поддержку итерации по мас
     ]
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Начало работы](sql-query-getting-started.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)

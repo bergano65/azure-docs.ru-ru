@@ -4,17 +4,17 @@ description: В этой статье приводятся сведения об
 services: automation
 ms.service: automation
 ms.subservice: ''
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 04/16/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: ab9a39cfba082ea4c4d1cc6c29764619011d8cb8
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 1a45ed90b2b2c4a3a4f8eb11c4618c11e6d66761
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231550"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849366"
 ---
 # <a name="troubleshoot-desired-state-configuration-dsc"></a>Устранение неполадок с платформой Desired State Configuration (DSC)
 
@@ -59,7 +59,7 @@ An error occurred while deleting the DSC configuration '<name>'.  Error-details:
 
 Эта ошибка является временной проблемой, которая планируется разрешить.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 * Чтобы удалить конфигурацию, используйте командлет AZ "Remove-Азаутоматиондскконфигуратион".
 * Документация для этого командлета еще не обновлена.  До этого момента обратитесь к документации по модулю AzureRM.
@@ -86,7 +86,7 @@ ps://<location>-agentservice-prod-1.azure-automation.net/accounts/00000000-0000-
 
 Эта ошибка обычно вызвана брандмауэром, компьютером, который находится за прокси-сервером, или другими сетевыми ошибками.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Убедитесь, что компьютер имеет доступ к соответствующим конечным точкам Azure Automation DSC и повторите попытку. Список требуемых портов и адресов см. в разделе [планирование сети](../automation-dsc-overview.md#network-planning) .
 
@@ -104,7 +104,7 @@ The attempt to get the action from server https://<url>//accounts/<account-id>/N
 
 Эта ошибка обычно возникает из-за того, что узлу назначается имя конфигурации (например, ABC) вместо имени конфигурации узла (например, ABC.WebServer).
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 * Убедитесь, что вы назначаете узлу имя конфигурации узла, а не "имя конфигурации".
 * Конфигурацию узла можно назначить узлу с помощью портала Azure или с помощью командлета PowerShell.
@@ -126,7 +126,7 @@ Compilation completed successfully, but no node configuration.mofs were generate
 
 Если выражение, указанное в конфигурации DSC рядом с ключевым словом **Node**, возвращает результат `$null`, конфигурация узла не создается.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Эту проблему можно устранить одним из следующих способов.
 
@@ -147,7 +147,7 @@ No instance found with given property values
 
 Вы обновили версию WMF, что привело к повреждению WMI.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Чтобы устранить эту проблему, следуйте инструкциям в статье об [известных проблемах и ограничениях DSC](https://docs.microsoft.com/powershell/scripting/wmf/known-issues/known-issues-dsc) .
 
@@ -165,7 +165,7 @@ System.InvalidOperationException error processing property 'Credential' of type 
 
 Вы использовали учетные данные в конфигурации, но не предоставили правильно **ConfigurationData** , чтобы установить **PSDscAllowPlainTextPassword** в значение true для каждой конфигурации узла.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 * Обязательно передавайте подходящую **ConfigurationData** , чтобы установить **PSDscAllowPlainTextPassword** в значение true для каждой конфигурации узла, указанной в конфигурации. См. дополнительные сведения о [ресурсах в службе Automation DSC Azure](../automation-dsc-compile.md#working-with-assets-in-azure-automation-during-compilation).
 
@@ -183,7 +183,7 @@ VM has reported a failure when processing extension 'Microsoft.Powershell.DSC'. 
 
 Эта ошибка обычно возникает, когда узлу назначено имя конфигурации узла, которое не существует в службе.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 * Убедитесь, что вы назначаете узлу имя конфигурации узла, которое точно соответствует имени в службе.
 * Можно выбрать не включать имя конфигурации узла, что приведет к адаптации узла, но не назначению конфигурации узла.
@@ -202,7 +202,7 @@ This event indicates that failure happens when LCM is processing the configurati
 
 Клиенты обнаружили, что если `/tmp` расположение имеет значение `noexec`, текущая версия DSC не сможет применить конфигурации.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 * Удалите параметр `noexec` из расположения `/tmp`.
 
@@ -218,11 +218,11 @@ This event indicates that failure happens when LCM is processing the configurati
 
 Известная ошибка службы компиляции.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Лучшим решением является компиляция локально или в конвейере CI/CD и передача файлов MOF непосредственно в службу.  Если компиляция в службе является требованием, то в следующем лучшем случае следует разделить задания компиляции так, чтобы имена не перекрывались.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

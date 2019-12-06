@@ -1,18 +1,18 @@
 ---
 title: EXP на языке запросов Azure Cosmos DB
-description: Дополнительные сведения о функции SQL System с функцией EXP в Azure Cosmos DB.
+description: Сведения о функции SQL System экспоненты (EXP) в Azure Cosmos DB, возвращающей экспоненциальное значение указанного числового выражения
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 21c7ae63f46f2acd961245c59805220174c106f1
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 76d614264124e1ce4138663b702ff6d899b3aa4e
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71351046"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873324"
 ---
 # <a name="exp-azure-cosmos-db"></a>EXP (Azure Cosmos DB)
  Возвращает значение экспоненты для указанного числового выражения.  
@@ -38,7 +38,7 @@ EXP (<numeric_expr>)
   
   Экспонента числа — это константа **e** степени числа. Например, EXP(1.0) = e^1.0 = 2,71828182845905 и EXP(10) = e^10 = 22026,4657948067.  
   
-  Экспонента натурального логарифма числа — это само число. Например, EXP (LOG (n)) = n. Натуральный логарифм экспоненты числа — это само число. Например, LOG (EXP (n)) = n.  
+  Экспонента натурального логарифма числа — это само число. Например, EXP (LOG (n)) = n. Натуральный логарифм экспоненты числа также является числом. Например, LOG (EXP (n)) = n.  
   
 ## <a name="examples"></a>Примеры
   
@@ -66,7 +66,7 @@ SELECT EXP(LOG(20)) AS exp1, LOG(EXP(20)) AS exp2
 [{exp1: 19.999999999999996, exp2: 20}]  
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

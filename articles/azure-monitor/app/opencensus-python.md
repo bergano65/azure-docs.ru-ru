@@ -8,20 +8,20 @@ author: reyang
 ms.author: reyang
 ms.date: 10/11/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: ca34a92dc69cb500efb55f575420d47607cd1a46
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 2114e60b5ed684063ed100279ea19f561bd335ea
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74132210"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849791"
 ---
 # <a name="set-up-azure-monitor-for-your-python-application-preview"></a>Настройка Azure Monitor для приложения Python (Предварительная версия)
 
 Azure Monitor поддерживает распределенную трассировку, сбор метрик и ведение журнала приложений Python с помощью интеграции с [опенценсус](https://opencensus.io). В этой статье описывается процесс настройки Опенценсус для Python и отправки данных мониторинга в Azure Monitor.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
-- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/) , прежде чем начинать работу.
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 - Установка Python. В этой статье используется [Python 3.7.0](https://www.python.org/downloads/), хотя более ранние версии, скорее всего, будут работать с незначительными изменениями.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
@@ -38,11 +38,11 @@ Azure Monitor поддерживает распределенную трасси
 
 1. Появится окно конфигурации. Используйте следующую таблицу для заполнения полей ввода.
 
-   | Настройка        | Значение           | ОПИСАНИЕ  |
+   | Параметр        | Value           | Описание  |
    | ------------- |:-------------|:-----|
-   | **имя**      | Глобальное уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
+   | **Имя**      | Глобальное уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
    | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных Application Insights |
-   | **Местоположение.** | Восточная часть США | Расположение рядом с вами или рядом с размещением приложения |
+   | **Расположение** | Восточная часть США | Расположение рядом с вами или рядом с размещением приложения |
 
 1. Нажмите кнопку **Создать**.
 
@@ -268,7 +268,7 @@ python -m pip install opencensus-ext-azure
     90
     ```
 
-3. Хотя ввод значений полезен в демонстрационных целях, в конечном счете мы хотим выдавать данные метрики Azure Monitor. Измените код с предыдущего шага на основе следующего примера кода:
+3. Хотя ввод значений полезен в демонстрационных целях, в конечном счете, мы хотим выдавать данные журнала в Azure Monitor. Измените код с предыдущего шага на основе следующего примера кода:
 
     ```python
     import logging
@@ -295,7 +295,53 @@ python -m pip install opencensus-ext-azure
 
 4. Программа экспорта отправляет данные журнала в Azure Monitor. Данные можно найти в разделе `traces`.
 
-5. Дополнительные сведения о том, как расширить журналы с помощью данных контекста трассировки, см. в разделе [Интеграция журналов](https://docs.microsoft.com/azure/azure-monitor/app/correlation#logs-correlation)опенценсус Python.
+5. Чтобы отформатировать сообщения журнала, можно использовать `formatters` в встроенном [API ведения журнала](https://docs.python.org/3/library/logging.html#formatter-objects)Python.
+
+    ```python
+    import logging
+    from opencensus.ext.azure.log_exporter import AzureLogHandler
+    
+    logger = logging.getLogger(__name__)
+    
+    format_str = '%(asctime)s - %(levelname)-8s - %(message)s'
+    date_format = '%Y-%m-%d %H:%M:%S'
+    formatter = logging.Formatter(format_str, date_format)
+    # TODO: replace the all-zero GUID with your instrumentation key.
+    handler = AzureLogHandler(
+        connection_string='InstrumentationKey=00000000-0000-0000-0000-000000000000')
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+    
+    def valuePrompt():
+        line = input("Enter a value: ")
+        logger.warning(line)
+    
+    def main():
+        while True:
+            valuePrompt()
+    
+    if __name__ == "__main__":
+        main()
+    ```
+
+6. В журналы можно также добавить пользовательские измерения. Они будут отображаться в виде пар "ключ-значение" в `customDimensions` в Azure Monitor.
+> [!NOTE]
+> Чтобы эта функция работала, необходимо передать словарь в качестве аргумента в журналы, любая другая структура данных будет пропущена. Чтобы сохранить форматирование строки, сохраните их в словаре и передайте их в качестве аргументов.
+
+    ```python
+    import logging
+    
+    from opencensus.ext.azure.log_exporter import AzureLogHandler
+    
+    logger = logging.getLogger(__name__)
+    # TODO: replace the all-zero GUID with your instrumentation key.
+    logger.addHandler(AzureLogHandler(
+        connection_string='InstrumentationKey=00000000-0000-0000-0000-000000000000')
+    )
+    logger.warning('action', {'key-1': 'value-1', 'key-2': 'value2'})
+    ```
+
+7. Дополнительные сведения о том, как расширить журналы с помощью данных контекста трассировки, см. в разделе [Интеграция журналов](https://docs.microsoft.com/azure/azure-monitor/app/correlation#logs-correlation)опенценсус Python.
 
 ## <a name="view-your-data-with-queries"></a>Просмотр данных с помощью запросов
 
@@ -320,7 +366,7 @@ python -m pip install opencensus-ext-azure
 * [Интеграция MySQL](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-mysql)
 * [PostgreSQL](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-postgresql)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сопоставление приложений](./../../azure-monitor/app/app-map.md)
 * [Поиск и диагностика проблем производительности с помощью Azure Application Insights](./../../azure-monitor/learn/tutorial-performance.md)

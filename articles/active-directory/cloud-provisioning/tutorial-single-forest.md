@@ -7,16 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/03/2019
+ms.date: 12/05/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 33b7db8d08c285056e637eb962b28eef0e74fc94
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: 691c8e8d2f2c6c8e9472ba7a4ae83d8b76f2850c
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74814099"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74868734"
 ---
 # <a name="tutorial-integrate-a-single-forest-with-a-single-azure-ad-tenant"></a>Руководство. Интеграция одного леса с одним клиентом Azure AD
 
@@ -43,7 +43,7 @@ ms.locfileid: "74814099"
      | --- | --- |
      | **80** | Скачивание списков отзыва сертификатов при проверке SSL-сертификата. |
      | **443** | Обработка всего исходящего трафика для службы. |
-     | **8080** (необязательно) | Агенты сообщают о своем состоянии каждые 10 минут через порт 8080, если порт 443 недоступен. Это данные о состоянии отображаются на портале Azure AD. Порт 8080 _не_ используется для входа пользователей в систему. |
+     | **8080** (необязательно) | Агенты сообщают о своем состоянии каждые 10 минут через порт 8080, если порт 443 недоступен. Это данные о состоянии отображаются на портале Azure AD. |
      
      Если брандмауэр применяет правила в соответствии с отправляющими трафик пользователями, откройте эти порты для трафика, поступающего от служб Windows, которые работают как сетевая служба.
    - Если брандмауэр или прокси-сервер позволяет указать надежные суффиксы, добавьте соединения t в **\*. msappproxy.NET** и **\*. servicebus.Windows.NET**. Если нет, разрешите доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.

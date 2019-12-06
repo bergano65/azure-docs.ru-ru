@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 27aec53fd2e92e19f1c749e833217fb8b5deae57
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 0ab2ba2c49dd0d0f946358c8f52a6daaf7428dd1
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74672576"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74851423"
 ---
 # <a name="ingest-historical-telemetry-data"></a>Прием архивных данных телеметрии
 
@@ -27,7 +27,7 @@ ms.locfileid: "74672576"
 
 Необходимо включить интеграцию партнера с экземпляром Azure Фармбеатс. На этом шаге создается клиент, который будет иметь доступ к Фармбеатс Azure в качестве партнера по устройствам, и предоставляет следующие значения, необходимые для последующих шагов.
 
-- Конечная точка API — это URL-адрес концентратора данных, например https://<datahub>. azurewebsites.net
+- Конечная точка API — это URL-адрес концентратора данных, например https://\<датахуб >. azurewebsites. NET.
 - Tenant ID
 - Идентификатор клиента
 - Секрет клиента
@@ -87,7 +87,7 @@ ms.locfileid: "74672576"
 |    **Устройство**             |                      |
 |   девицемоделид     |     ИДЕНТИФИКАТОР связанной модели устройства  |
 |  хардвареид          | Уникальный идентификатор устройства, например MAC-адрес и т. д.
-|  репортингинтервал        |   Интервал составления отчета в секундах
+|  ReportingInterval        |   Интервал составления отчета в секундах
 |  Location            |  Широта устройства (от-90 до + 90)/Лонгитуде (от-180 до 180)/Елеватион (в метрах)   
 |парентдевицеид       |    Идентификатор родительского устройства, к которому подключено это устройство. Например, узел, подключенный к шлюзу. Узел будет иметь Парентдевицеид в качестве шлюза.  |
 |    Name            | Имя, идентифицирующее ресурс. Партнеры устройств должны отправить имя, которое согласуется с именем устройства на стороне партнера. Если имя устройства партнера определено пользователем, то такое же определяемое пользователем имя должно распространяться на Фармбеатс.|
@@ -119,7 +119,7 @@ ms.locfileid: "74672576"
 
 **Запрос API для создания метаданных**
 
-Для выполнения запроса API вы объединяете метод HTTP (POST), URL-адрес службы API, URI ресурса для запроса, отправляете данные для создания или удаления запроса и добавляете один или несколько заголовков HTTP-запроса. URL-адрес службы API — это конечная точка API, т. е. URL-адрес концентратора данных (https://<yourdatahub>. azurewebsites.net).  
+Для выполнения запроса API вы объединяете метод HTTP (POST), URL-адрес службы API, URI ресурса для запроса, отправляете данные для создания или удаления запроса и добавляете один или несколько заголовков HTTP-запроса. URL-адрес службы API — это конечная точка API, т. е. URL-адрес концентратора данных (https://\<йоурдатахуб >. azurewebsites. NET).  
 
 **Аутентификация**.
 
@@ -135,11 +135,33 @@ ms.locfileid: "74672576"
 headers = *{"Authorization": "Bearer " + access_token, …}*
 ```
 
+Ниже приведен пример кода Python, который предоставляет маркер доступа, который можно использовать для последующих вызовов API к Фармбеатс: 
+
+```python
+import azure 
+
+from azure.common.credentials import ServicePrincipalCredentials 
+import adal 
+#FarmBeats API Endpoint 
+ENDPOINT = "https://<yourdatahub>.azurewebsites.net" [Azure website](https://<yourdatahub>.azurewebsites.net)
+CLIENT_ID = "<Your Client ID>"   
+CLIENT_SECRET = "<Your Client Secret>"   
+TENANT_ID = "<Your Tenant ID>" 
+AUTHORITY_HOST = 'https://login.microsoftonline.com' 
+AUTHORITY = AUTHORITY_HOST + '/' + TENANT_ID 
+#Authenticating with the credentials 
+context = adal.AuthenticationContext(AUTHORITY) 
+token_response = context.acquire_token_with_client_credentials(ENDPOINT, CLIENT_ID, CLIENT_SECRET) 
+#Should get an access token here 
+access_token = token_response.get('accessToken') 
+```
+
+
 **Заголовки HTTP-запросов**:
 
 Ниже приведены наиболее распространенные заголовки запросов, которые необходимо указать при вызове API в Фармбеатс Data Hub:
 
-- Тип содержимого: Application/JSON
+- Content-Type: application/json
 - Авторизация: носитель < доступ — токен >
 - Принять: приложение/JSON
 
@@ -271,6 +293,26 @@ curl -X POST "https://<datahub>.azurewebsites.net/Device" -H
 **Отправка сообщения телеметрии в качестве клиента**
 
 После установки соединения в качестве клиента EventHub можно отправить сообщения в EventHub в виде JSON.  
+
+Ниже приведен пример кода Python, который отправляет данные телеметрии в качестве клиента в указанный концентратор событий:
+
+```python
+import azure
+from azure.eventhub import EventHubClient, Sender, EventData, Receiver, Offset
+EVENTHUBCONNECTIONSTRING = "<EventHub Connection String provided by customer>"
+EVENTHUBNAME = "<EventHub Name provided by customer>"
+
+write_client = EventHubClient.from_connection_string(EVENTHUBCONNECTIONSTRING, eventhub=EVENTHUBNAME, debug=False)
+sender = write_client.add_sender(partition="0")
+write_client.run()
+for i in range(5):
+    telemetry = "<Canonical Telemetry message>"
+    print("Sending telemetry: " + telemetry)
+    sender.send(EventData(telemetry))
+write_client.stop()
+
+```
+
 Преобразуйте формат исторических данных датчика в канонический формат, распознаваемый Azure Фармбеатс. Канонический формат сообщений:  
 
 ```json

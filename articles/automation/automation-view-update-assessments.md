@@ -4,17 +4,17 @@ description: В этой статье описывается Просмотр о
 services: automation
 ms.service: automation
 ms.subservice: update-management
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 05/17/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: d4e20b2924504b714dff9f5ba650f9b25c1c26c3
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: d27df57e9371f16a15d3a18b7722598062377d88
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72690863"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74850522"
 ---
 # <a name="view-azure-update-management-update-assessments"></a>Просмотр оценок центра обновления Azure Управление обновлениями
 
@@ -30,7 +30,7 @@ ms.locfileid: "72690863"
 
 Выберите **Отсутствующие обновления**, чтобы просмотреть список обновлений, отсутствующих на ваших компьютерах. Каждое обновление перечислено и может быть выбрано. Сведения о количестве компьютеров, для которых требуется обновление, сведения об операционной системе и ссылка для получения дополнительных сведений. На панели **поиска по журналам** также отображаются дополнительные сведения об обновлениях.
 
-![Отсутствующие обновления](./media/automation-view-update-assessments/automation-view-update-assessments-missing-updates.png)
+![отсутствующие обновления.](./media/automation-view-update-assessments/automation-view-update-assessments-missing-updates.png)
 
 ## <a name="update-classifications"></a>Классификации обновлений
 

@@ -2,13 +2,13 @@
 title: Создание политик конфигурации гостя
 description: Узнайте, как создать политику гостевой конфигурации политики Azure для виртуальных машин Windows или Linux с Azure PowerShell.
 ms.date: 11/21/2019
-ms.topic: conceptual
-ms.openlocfilehash: 2e653d07e783425afdcd71f9d58e3569692faaf9
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.topic: how-to
+ms.openlocfilehash: d31c03f05f3a27207eb4c184b78cb531f8bb43d6
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74407059"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873086"
 ---
 # <a name="how-to-create-guest-configuration-policies"></a>Создание политик конфигурации гостя
 
@@ -188,7 +188,7 @@ New-GuestConfigurationPackage -Name '{PackageName}' -Configuration '{PathToMOF}'
 
 1. Наконец, в настраиваемом ресурсе используйте идентификатор клиента, созданный выше, для доступа к Key Vault с помощью маркера, доступного на компьютере.
 
-   `client_id` и URL-адрес экземпляра Key Vault можно передать в ресурс в качестве [свойств](/powershell/scripting/dsc/resources/authoringresourcemof#creating-the-mof-schema) , чтобы ресурс не обновлялся для нескольких сред или если значения необходимо изменить.
+   `client_id` и URL-адрес экземпляра Key Vault можно передать в ресурс в качестве [свойств](/powershell/scripting/dsc/resources/authoringresourcemof#creating-the-mof-schema), чтобы ресурс не обновлялся для нескольких сред или если значения необходимо изменить.
 
 Следующий пример кода можно использовать в настраиваемом ресурсе для получения секретов из Key Vault с помощью назначенного пользователем удостоверения. Значение, возвращаемое из запроса в Key Vault, является обычным текстом. Рекомендуется хранить его в объекте учетных данных.
 
@@ -296,7 +296,7 @@ New-GuestConfigurationPolicy
     -Verbose
 ```
 
-Для политик Linux Включите свойство **аттрибутесимлконтент** в конфигурацию и запишите соответствующие значения. Агент конфигурации гостя автоматически создает файл YaML, используемый в параметре спец для хранения атрибутов. См. пример ниже.
+Для политик Linux Включите свойство **аттрибутесимлконтент** в конфигурацию и запишите соответствующие значения. Агент конфигурации гостя автоматически создает файл YaML, используемый в параметре спец для хранения атрибутов. Ознакомьтесь с примером ниже.
 
 ```azurepowershell-interactive
 Configuration FirewalldEnabled {
@@ -409,7 +409,7 @@ $Cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 
 Для получения дополнительных сведений о командлетах в этом средстве используйте команду Get-Help в PowerShell, чтобы отобразить встроенные инструкции. Так как средство получает частые обновления, это лучший способ получить самую свежую информацию.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как проводить аудит виртуальных машин с помощью [гостевой конфигурации](../concepts/guest-configuration.md).
 - Узнайте, как [программно создавать политики](programmatically-create.md).

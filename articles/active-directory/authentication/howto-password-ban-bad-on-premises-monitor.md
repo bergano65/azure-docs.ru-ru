@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77f1ac530fe4e20fe26f3a6b7d0111b0bd432928
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: c74ea99d3a0e39729bb4d89f012d7b790bf0568b
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74381678"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74847717"
 ---
 # <a name="azure-ad-password-protection-monitoring-and-logging"></a>Мониторинг и ведение журнала защиты паролем Azure AD
 
@@ -235,7 +235,7 @@ HKLM\System\CurrentControlSet\Services\AzureADPasswordProtectionDCAgent\Paramete
 
 Программное обеспечение службы агента контроллера домена устанавливает объект счетчика производительности с именем **Azure AD Password Protection**. В настоящее время доступны следующие счетчики производительности:
 
-|Имя счетчика производительности | ОПИСАНИЕ|
+|Имя счетчика производительности | Описание|
 | --- | --- |
 |Обработано паролей |Этот счетчик отображает общее количество обработанных паролей (принятых или отклоненных) с момента последнего перезапуска.|
 |Принято паролей |Этот счетчик отображает общее количество принятых паролей с момента последнего перезапуска.|
@@ -382,7 +382,7 @@ Current version: 1.2.116.0
 
 Это событие будет выдаваться, даже если прокси-агент настроен с включенным автообновлением.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Предварительный просмотр: мониторинг, отчетность и устранение неполадок защиты паролем Azure AD](howto-password-ban-bad-on-premises-troubleshoot.md)
 

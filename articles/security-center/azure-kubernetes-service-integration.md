@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 4fc0654aab1c68888e86dc95de658bc69a01e02d
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 2a5d01978d8a4883d760e7ecf84afa381dfd563d
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74123981"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74868564"
 ---
 # <a name="azure-kubernetes-services-integration-with-security-center-preview"></a>Интеграция Azure Kubernetes Services с центром безопасности (Предварительная версия)
 Служба Azure Kubernetes Service (AKS) — это управляемая служба Майкрософт для разработки и развертывания контейнерных приложений и управления ими. 
@@ -41,7 +41,7 @@ ms.locfileid: "74123981"
 
 * **Усиление защиты окружения** . Центр безопасности постоянно отслеживает конфигурацию кластеров Kubernetes и создает рекомендации по безопасности, отражающие отраслевые стандарты.
 
-* **Защита во время выполнения** . Благодаря непрерывному анализу следующих источников AKS центр безопасности предупреждает об угрозах и вредоносных действиях, обнаруженных на уровне узла *и* кластера AKS (Дополнительные сведения см. в статье [Служба контейнеров Azure. ](https://docs.microsoft.com/azure/security-center/security-center-alerts-compute#azure-containers-)):
+* **Защита во время выполнения** . Благодаря непрерывному анализу следующих источников AKS центр безопасности предупреждает об угрозах и вредоносных действиях, обнаруженных на уровне узла *и* AKS (Дополнительные сведения см. в разделе [обнаружение угроз для контейнеров Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-compute#azure-containers-)).
     * Необработанные события безопасности, такие как данные сети и создание процессов;
     * Журнал аудита Kubernetes
 
@@ -50,7 +50,7 @@ ms.locfileid: "74123981"
 > [!NOTE]
 > Некоторые данные, проверенные центром безопасности Azure из среды Kubernetes, могут содержать конфиденциальные сведения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о функциях безопасности контейнеров центра безопасности см. в следующих статьях:
 

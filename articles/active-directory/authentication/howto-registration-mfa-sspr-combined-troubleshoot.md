@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: troubleshooting
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f3f2a60367a8b76464611878e850fff0c4ba8803
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: ab7c38d23cb1f05e07488810640aeb791ded3d4a
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74381389"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74847394"
 ---
 # <a name="troubleshooting-combined-security-information-registration-preview"></a>Устранение неполадок при общей регистрации сведений о безопасности (Предварительная версия)
 
@@ -35,7 +35,7 @@ ms.locfileid: "74381389"
 
 В следующей таблице перечислены все события аудита, создаваемые Объединенной регистрацией.
 
-| Действие | Состояние | Причина | ОПИСАНИЕ |
+| Действие | Status | Причина | Описание |
 | --- | --- | --- | --- |
 | Пользователь зарегистрировал все необходимые сведения для защиты | Успешно | Пользователь зарегистрировал все необходимые сведения о безопасности. | Это событие возникает, когда пользователь успешно завершил регистрацию.|
 | Пользователь зарегистрировал все необходимые сведения для защиты | Сбой | Пользователь отменил регистрацию сведений о безопасности. | Это событие возникает, когда пользователь отменяет регистрацию из режима прерывания.|
@@ -73,7 +73,7 @@ ms.locfileid: "74381389"
 
 Приведенные ниже действия помогут вам выполнить откат пользователя или группы пользователей.
 
-#### <a name="prerequisites"></a>предварительным требованиям
+#### <a name="prerequisites"></a>Технические условия
 
 1. Установите соответствующие модули Azure AD PowerShell. В окне PowerShell выполните следующие команды для установки модулей:
 
@@ -160,6 +160,6 @@ ms.locfileid: "74381389"
 
 Пользователи больше не будут получать запрос на регистрацию с помощью предварительной версии.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Узнайте больше о общедоступной предварительной версии Объединенной регистрации для самостоятельного сброса пароля и службы многофакторной идентификации Azure.](concept-registration-mfa-sspr-combined.md)

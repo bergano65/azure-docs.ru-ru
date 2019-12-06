@@ -2,13 +2,13 @@
 title: Программное создание политик
 description: В этой статье описывается программное создание политик и управление ими для политики Azure с помощью Azure CLI, Azure PowerShell и REST API.
 ms.date: 01/31/2019
-ms.topic: conceptual
-ms.openlocfilehash: 98af714e5aaf8e103b81e77c9960589fa0ee6b77
-ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
+ms.topic: how-to
+ms.openlocfilehash: e81f0ca43788d8f36dde0a58d2ecd4b1604fd77e
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74463540"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873069"
 ---
 # <a name="programmatically-create-policies"></a>Программное создание политик
 
@@ -16,7 +16,7 @@ ms.locfileid: "74463540"
 
 Сведения о соответствии см. в статье [Получение данных о соответствии](get-compliance-data.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Прежде чем приступить к работе, убедитесь, что у вас есть следующие необходимые компоненты.
 
@@ -237,7 +237,7 @@ az policy definition show --name 'Audit Storage Accounts with Open Public Networ
 
 Дополнительные сведения об управлении политиками ресурсов с помощью Azure CLI см. в [этой статье](/cli/azure/policy?view=azure-cli-latest).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о командах и запросах, используемых в этой статье, см. в следующих ресурсах.
 

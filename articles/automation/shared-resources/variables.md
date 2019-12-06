@@ -4,17 +4,17 @@ description: Ресурсы-контейнеры переменных — эт�
 services: automation
 ms.service: automation
 ms.subservice: shared-capabilities
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 05/14/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 3fe008d20ab43636b59861bcc5a7914ba0fca17e
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.openlocfilehash: e56a1c9a158974266b810d31a0e9bb898262761a
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910063"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849434"
 ---
 # <a name="variable-assets-in-azure-automation"></a>Средства переменных в службе автоматизации Azure
 
@@ -41,11 +41,11 @@ ms.locfileid: "70910063"
 
 Ниже перечислены типы переменных, которые доступны в службе автоматизации.
 
-* Строковое
-* Integer
-* DateTime
-* логический
-* NULL
+* Строка
+* Целое число
+* Дата и время
+* Логический
+* Null
 
 ## <a name="azurerm-powershell-cmdlets"></a>Командлеты PowerShell для AzureRM
 

@@ -2,28 +2,23 @@
 title: Узнайте, как предоставлять необязательные утверждения для приложения Azure AD.
 titleSuffix: Microsoft identity platform
 description: Руководство по добавлению пользовательских или дополнительных утверждений в токены SAML 2.0 и JSON Web Token (JWT), выдаваемых службой Azure Active Directory.
-documentationcenter: na
 author: rwike77
-services: active-directory
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/03/2019
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b74e680979ccbcc94f8a49e993c6d64797ab80b1
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: a1364a491122ae15f86bec98afbfd4e5110e8e07
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72803408"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74844725"
 ---
 # <a name="how-to-provide-optional-claims-to-your-azure-ad-app"></a>Руководство. предоставление необязательных утверждений для приложения Azure AD
 
@@ -35,7 +30,7 @@ ms.locfileid: "72803408"
 - изменить поведение определенных утверждений в токенах, возвращаемых Azure AD;
 - добавлять пользовательские утверждения для приложения и обращаться к ним.
 
-Список стандартных утверждений см. в документации по [маркерам доступа](access-tokens.md) и утверждениям [id_token](id-tokens.md) . 
+Список стандартных утверждений см. в документации [маркер доступа](access-tokens.md) и [id_token](id-tokens.md) утверждений. 
 
 Хотя необязательные утверждения поддерживаются в маркерах формата v 1.0 и v 2.0, а также в маркерах SAML, они предоставляют большую часть их значений при переходе с версии 1.0 на версию 2.0. Одной из целей [конечной точки платформы идентификации Майкрософт версии 2.0](active-directory-appmodel-v2-overview.md) являются меньшие размеры маркеров для обеспечения оптимальной производительности клиентов. В результате нескольких утверждений, ранее включенных в маркеры доступа и идентификаторов, больше нет в токенах версии 2.0 и их нужно запрашивать специально для каждого приложения.
 
@@ -220,7 +215,7 @@ ms.locfileid: "72803408"
 
    Допустимые значения:
 
-   - Каждого
+   - "All"
    - SecurityGroup
    - "Дистрибутионлист"
    - DirectoryRole
@@ -262,9 +257,9 @@ ms.locfileid: "72803408"
    | **очень** | Не используется. Опустить или укажите значение false |
    | **AdditionalProperties** | Список дополнительных свойств.  Допустимые значения: "sam_account_name", "dns_domain_and_sam_account_name", "netbios_domain_and_sam_account_name", "emit_as_roles" |
 
-   В additionalProperties требуется только один из "sam_account_name", "dns_domain_and_sam_account_name", "netbios_domain_and_sam_account_name".  Если указано более одного, используется первый, а остальные игнорируются.
+   В additionalProperties требуется только один из них: "sam_account_name", "dns_domain_and_sam_account_name", "netbios_domain_and_sam_account_name".  Если указано более одного, используется первый, а остальные игнорируются.
 
-   Некоторые приложения занимают сведения о группе пользователя в утверждении роли.  Чтобы изменить тип утверждения с утверждения группы на утверждение роли, добавьте "emit_as_roles" в дополнительные свойства.  Значения группы будут выдаваться в заявке роли.
+   Некоторые приложения занимают сведения о группе пользователя в утверждении роли.  Чтобы изменить тип утверждения с утверждения группы на утверждение роли, добавьте "emit_as_roles" к дополнительным свойствам.  Значения группы будут выдаваться в заявке роли.
 
    > [!NOTE]
    > Если используется "emit_as_roles", все роли приложения, настроенные для назначения пользователя, не будут отображаться в заявке роли

@@ -1,18 +1,18 @@
 ---
-title: ARRAY_CONCAT на языке запросов Azure Cosmos DB
-description: Дополнительные сведения о функции SQL System ARRAY_CONCAT в Azure Cosmos DB.
+title: ARRAY_CONCAT языка запросов Azure Cosmos DB
+description: Узнайте, как системная функция Concat массива SQL в Azure Cosmos DB возвращает массив, являющийся результатом сцепления двух или более значений массива.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: ad973650ac205313f9045c170f99e15e385a82d1
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 10370e16c95f4fc747dd3a66a56794da38562972
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71348715"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74871828"
 ---
 # <a name="array_concat-azure-cosmos-db"></a>ARRAY_CONCAT (Azure Cosmos DB)
  Возвращает массив, который является результатом объединения значений двух или более массивов.  
@@ -26,7 +26,7 @@ ARRAY_CONCAT (<arr_expr1>, <arr_expr2> [, <arr_exprN>])
 ## <a name="arguments"></a>Аргументы
   
 *arr_expr*  
-   Выражение массива для сцепления с другими значениями. Функции `ARRAY_CONCAT` требуются по крайней мере два аргумента *arr_expr* .  
+   Выражение массива для сцепления с другими значениями. Для функции `ARRAY_CONCAT` требуется по крайней мере два аргумента *arr_expr* .  
   
 ## <a name="return-types"></a>Возвращаемые типы
   
@@ -47,7 +47,7 @@ SELECT ARRAY_CONCAT(["apples", "strawberries"], ["bananas"]) AS arrayConcat
 ```  
   
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Функции массива Azure Cosmos DB](sql-query-array-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

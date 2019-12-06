@@ -4,17 +4,17 @@ description: Настройка компьютеров для управлени
 services: automation
 ms.service: automation
 ms.subservice: dsc
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.topic: conceptual
 ms.date: 08/08/2018
 manager: carmonm
-ms.openlocfilehash: cf95a66cf68cf0b33444a17cf762bae79db4b50c
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 80038cf5fba18eca4fbbe1405df2a76cfc84e2db
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72243437"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74850335"
 ---
 # <a name="onboarding-machines-for-management-by-azure-automation-state-configuration"></a>Подключение компьютеров для управления с помощью службы "Настройка состояния службы автоматизации Azure"
 
@@ -48,7 +48,7 @@ ms.locfileid: "72243437"
 Служба "Настройка состояния службы автоматизации Azure" позволяет легко подключать виртуальные машины Azure для управления конфигурацией с помощью портала Azure, шаблонов Azure Resource Manager или PowerShell. В процессе работы расширение DSC регистрирует виртуальную машину в службе "Настройка состояния службы автоматизации Azure", исключая необходимость выполнения администратором удаленного входа на виртуальную машину.
 Так как с виртуальными машинами Azure расширение DSC работает асинхронно, можно воспользоваться алгоритмом отслеживания хода выполнения и устранения неполадок, который приведен ниже в разделе [**Устранение неполадок при подключении виртуальной машины Azure**](#troubleshooting-azure-virtual-machine-onboarding).
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="azure-portal"></a>портала Azure
 
 На [портале Azure](https://portal.azure.com/)перейдите к учетной записи службы автоматизации Azure, чтобы подключить виртуальные машины. На странице State Configuration на вкладке **Узлы** щелкните **+ Добавить**.
 
@@ -323,7 +323,7 @@ ms.locfileid: "72243437"
 
 Повторная регистрация узла выполняется аналогично первоначальной, то есть с помощью любого из средств, описанных в этом документе. Перед повторной регистрацией отменять регистрацию узла в "Настройка состояния службы автоматизации Azure" не нужно.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы приступить к работе со службой "Настройка состояния службы автоматизации Azure", см. сведения в [этой статье](automation-dsc-getting-started.md).
 - Сведения о компилировании конфигураций DSC, которые затем можно назначить целевым узлам, см. в статье [Компилирование конфигураций в Azure Automation DSC](automation-dsc-compile.md).

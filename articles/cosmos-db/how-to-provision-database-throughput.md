@@ -1,17 +1,17 @@
 ---
 title: Подготовка пропускной способности базы данных в Azure Cosmos DB
-description: Узнайте, как подготовить пропускную способность на уровне базы данных в Azure Cosmos DB
+description: Узнайте, как подготавливать пропускную способность на уровне базы данных в Azure Cosmos DB с помощью портал Azure, CLI, PowerShell и других пакетов SDK.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/28/2019
 ms.author: mjbrown
-ms.openlocfilehash: 64a8bc9f4c9f5192dad22cb55cb4d2c4816d4fa5
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 8b64d933057b3ddb07f5f99889c7d7c23c74f545
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73575146"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873664"
 ---
 # <a name="provision-throughput-on-a-database-in-azure-cosmos-db"></a>Подготовка пропускной способности для базы данных в Azure Cosmos DB
 
@@ -21,7 +21,7 @@ ms.locfileid: "73575146"
 
 ### <a id="portal-sql"></a>API SQL (Core)
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
 1. [Создайте новую учетную запись Azure Cosmos](create-sql-api-dotnet.md#create-account) или выберите существующую.
 

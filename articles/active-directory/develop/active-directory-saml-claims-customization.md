@@ -3,27 +3,24 @@ title: Настройка утверждений токена SAML для кор
 titleSuffix: Microsoft identity platform
 description: Узнайте, как настраивать утверждения, выпущенные в токене SAML для корпоративных приложений в Azure AD.
 services: active-directory
-documentationcenter: ''
 author: rwike77
 manager: CelesteDG
 ms.assetid: f1daad62-ac8a-44cd-ac76-e97455e47803
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/22/2019
 ms.author: ryanwi
 ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1490a25e69ff22fde1f5c870868f20ea6f9a1cf7
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.openlocfilehash: f5e9dd48695ab28879b151c4b3a37b72c551f9c2
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74046984"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74844793"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Как настроить утверждения, выданные в токене SAML для корпоративных приложений
 
@@ -59,7 +56,7 @@ ms.locfileid: "74046984"
 
 В раскрывающемся списке **Выбор формата идентификатора имени** можно выбрать один из следующих вариантов.
 
-| Формат NameID | ОПИСАНИЕ |
+| Формат NameID | Описание |
 |---------------|-------------|
 | **По умолчанию** | Azure AD будет использовать исходный формат по умолчанию. |
 | **Надежно** | Azure AD будет использовать persistent в качестве формата NameID. |
@@ -73,9 +70,9 @@ ms.locfileid: "74046984"
 
 Выберите нужный источник для утверждения `NameIdentifier` (или NameID). Вы можете выбирать из следующих параметров.
 
-| имя | ОПИСАНИЕ |
+| Name | Описание |
 |------|-------------|
-| Email | Адрес электронной почты пользователя |
+| Эл. почта | Адрес электронной почты пользователя |
 | userprincipalName | Имя участника-пользователя (UPN) пользователя |
 | onpremisessamaccount | Имя учетной записи SAM, синхронизированное из локального Azure AD |
 | objectid | ObjectID пользователя в Azure AD |
@@ -103,7 +100,7 @@ ms.locfileid: "74046984"
 
 Можно также использовать функции преобразования утверждений.
 
-| Функция | ОПИСАНИЕ |
+| Функция | Описание |
 |----------|-------------|
 | **ExtractMailPrefix()** | Удаляет суффикс домена либо из адреса электронной почты, либо из имени участника-пользователя. В таком случае будет извлекаться только первая часть передаваемого имени пользователя (например, joe_smith вместо joe_smith@contoso.com). |
 | **Join ()** | Присоединяет атрибут к проверенному домену. Если выбранное значение идентификатора пользователя имеет домен, он извлечет имя пользователя для добавления выбранного проверенного домена. Например, если в качестве значения идентификатора пользователя вы выберите адрес электронной почты (joe_smith@contoso.com), а в качестве проверенного домена выберите contoso.onmicrosoft.com, то в результате получите joe_smith@contoso.onmicrosoft.com. |
@@ -130,7 +127,7 @@ ms.locfileid: "74046984"
 
 Для преобразования утверждений можно использовать следующие функции.
 
-| Функция | ОПИСАНИЕ |
+| Функция | Описание |
 |----------|-------------|
 | **ExtractMailPrefix()** | Удаляет суффикс домена либо из адреса электронной почты, либо из имени участника-пользователя. В таком случае будет извлекаться только первая часть передаваемого имени пользователя (например, joe_smith вместо joe_smith@contoso.com). |
 | **Join ()** | Создает новое значение путем соединения двух атрибутов. При необходимости можно использовать разделитель между двумя атрибутами. Для преобразования утверждения NameID соединение ограничено проверенным доменом. Если выбранное значение идентификатора пользователя имеет домен, он извлечет имя пользователя для добавления выбранного проверенного домена. Например, если в качестве значения идентификатора пользователя вы выберите адрес электронной почты (joe_smith@contoso.com), а в качестве проверенного домена выберите contoso.onmicrosoft.com, то в результате получите joe_smith@contoso.onmicrosoft.com. |
@@ -180,7 +177,7 @@ ms.locfileid: "74046984"
 
 ![Условная конфигурация утверждений](./media/active-directory-saml-claims-customization/sso-saml-user-conditional-claims.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление приложениями с помощью Azure Active Directory](../manage-apps/what-is-application-management.md)
 * [Настройка федеративного единого входа для приложения не из коллекции](../manage-apps/configure-federated-single-sign-on-non-gallery-applications.md)

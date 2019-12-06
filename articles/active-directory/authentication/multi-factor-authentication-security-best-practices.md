@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 07/11/2018
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2756d39a93751271c8c7bf2a51108b9fe5b09b1e
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: e42234e9fcdcfe3ee5ce975babbe03b64a750e36
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74208432"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74846833"
 ---
 # <a name="security-guidance-for-using-azure-multi-factor-authentication-with-azure-ad-accounts"></a>Руководство по безопасности для использования Многофакторной идентификации Azure с учетными записями Azure AD
 
@@ -41,7 +41,7 @@ ms.locfileid: "74208432"
 * Если вам не хватает лицензий на всех пользователей, можно создать поставщик Многофакторной идентификации на уровне пользователя, чтобы охватить остальную часть организации. 
 * Azure AD Connect требуется только при синхронизации локальной среды Active Directory с каталогом Azure AD. Если вы используете только каталог Azure AD, который не синхронизируется с локальным экземпляром Active Directory, вам не обязательно использовать Azure AD Connect.
 
-### <a name="multi-factor-auth-provider"></a>Поставщик Multi-Factor Authentication
+### <a name="multi-factor-auth-provider"></a>поставщик Multi-Factor Authentication.
 
 ![Поставщик многофакторной идентификации](./media/multi-factor-authentication-security-best-practices/authprovider.png)
 
@@ -110,7 +110,7 @@ ms.locfileid: "74208432"
 * [Развертывание веб-службы мобильных приложений сервера Многофакторной идентификации Azure](howto-mfaserver-deploy-mobileapp.md).
 * [Расширенная настройка VPN с Многофакторной идентификацией Azure](howto-mfaserver-nps-vpn.md) для устройств Cisco ASA, Citrix Netscaler и Juniper/Pulse Secure VPN, использующих LDAP или RADIUS.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Хотя в данной статье приводятся некоторые рекомендации по работе с Azure MFA, существуют другие ресурсы, которые также можно использовать при планировании развертывания MFA. Ниже приведен список ключевых статей, которые могут помочь вам в этом процессе.
 

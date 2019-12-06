@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44e25efcb068fe51f05dbbde50e8a96da492a735
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: be1c0e93a51064870635d4f06bd5b365bbfe517a
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74381228"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74847292"
 ---
 # <a name="how-to-enable-password-reset-from-the-windows-login-screen"></a>Как включить сброс пароля с экрана входа в Windows
 
@@ -45,12 +45,12 @@ ms.locfileid: "74381228"
 
 ## <a name="windows-10-password-reset"></a>Сброс пароля Windows 10
 
-### <a name="windows-10-prerequisites"></a>Предварительные требования для Windows 10
+### <a name="windows-10-prerequisites"></a>Необходимые компоненты для Windows 10
 
 - Администратор должен включить самостоятельный сброс пароля Azure AD из портал Azure.
 - **Пользователи должны зарегистрироваться для SSPR перед использованием этой функции**
 - Требования к сетевому прокси
-   - Устройства с Windows 10 
+   - Устройства Windows 10 
        - Порт 443 для `passwordreset.microsoftonline.com` и `ajax.aspnetcdn.com`
        - Устройства Windows 10 поддерживают только конфигурацию прокси-сервера на уровне компьютера
 - Запустите Windows 10 с обновлением 2018 (v1803), а устройства должны быть либо:
@@ -76,9 +76,9 @@ ms.locfileid: "74381228"
       - Для параметра **OMA-URI** укажите значение `./Vendor/MSFT/Policy/Config/Authentication/AllowAadPasswordReset`.
       - Для параметра **Тип данных** задайте значение **Целое число**.
       - Для параметра **Значение** установите значение **1**.
-      - Нажмите кнопку **ОК**
-   - Нажмите кнопку **ОК**
-1. Нажмите кнопку **Создать**
+      - Щелкните **ОК**
+   - Щелкните **ОК**
+1. Нажмите кнопку **Создать**.
 1. Эту политику можно назначить конкретным пользователям, устройствам или группам. Дополнительные сведения можно найти в статье [Назначение профилей пользователей и устройств в Microsoft Intune](https://docs.microsoft.com/intune/device-profile-assign).
 
 ### <a name="enable-for-windows-10-using-the-registry"></a>Включение для Windows 10 с помощью реестра
@@ -113,7 +113,7 @@ ms.locfileid: "74381228"
 > [!WARNING]
 > Необходимо включить TLS 1,2, а не только установить автоматическое согласование
 
-### <a name="install"></a>Установить
+### <a name="install"></a>Установка
 
 1. Скачайте соответствующий установщик для версии Windows, в которой следует включить этот протокол.
    - Программное обеспечение доступно в Центре загрузки Майкрософт по адресу [https://aka.ms/sspraddin](https://aka.ms/sspraddin).
@@ -152,7 +152,7 @@ ms.locfileid: "74381228"
 
 Инструкции по использованию этой функции пользователи могут найти в статье [Я не помню свой пароль Azure AD](../user-help/active-directory-passwords-update-your-own-password.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Планирование способов проверки подлинности](concept-authentication-methods.md)
 

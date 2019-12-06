@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e751c7aefe888d16e6d86a0184a1a59437d665f
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: 11a0dbd28dc798342a24180af430187ac69f61b8
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74404250"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74848142"
 ---
 # <a name="getting-started-with-the-azure-multi-factor-authentication-server"></a>Приступая к работе с сервером Многофакторной идентификации Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "74404250"
 
 Чтобы определить необходимый объем памяти, исходите из предполагаемого количества пользователей, которые будут регулярно выполнять проверку подлинности.
 
-| Users | ОЗУ |
+| Пользователи | ОЗУ |
 | ----- | --- |
 | 1–10 000 | 4 ГБ |
 | 10 001–50 000 | 8 ГБ |
@@ -54,10 +54,10 @@ ms.locfileid: "74404250"
 
 Убедитесь, что сервер, используемый для Многофакторной идентификации Azure, соответствует следующим требованиям:
 
-| Требования к серверу Многофакторной идентификации Azure | ОПИСАНИЕ |
+| Требования к серверу Многофакторной идентификации Azure | Описание |
 |:--- |:--- |
 | Оборудование |<li>200 МБ места на жестком диске</li><li>32- или 64-разрядный процессор</li><li>Не менее 1 ГБ ОЗУ</li> |
-| Программное обеспечение |<li>Windows Server 2016</li><li>Windows Server 2012 R2</li><li>Windows Server 2012</li><li>Windows Server 2008 R2</li><li>Windows Server 2008 с пакетом обновления 1 (SP1) и 2 (SP2)</li><li>Windows Server 2003 R2</li><li>Windows Server 2003 с пакетом обновления 1 (SP1) и 2 (SP2)</li><li>Windows 10</li><li>Windows 8.1, все выпуски</li><li>Windows 8, все выпуски</li><li>Windows 7, все выпуски</li><li>Windows Vista, все выпуски, а также выпуски с пакетом обновления 1 (SP1) и 2 (SP2)</li><li>Microsoft .NET Framework 4.0</li><li>IIS 7.0 или более поздняя версия, если вы устанавливаете SDK для пользовательского портала или веб-службы</li> |
+| Программное обеспечение |<li>Windows Server 2016</li><li>Windows Server 2012 R2</li><li>Windows Server 2012</li><li>Windows Server 2008 R2</li><li>Windows Server 2008 с пакетом обновления 1 (SP1) и 2 (SP2)</li><li>Windows Server 2003 R2</li><li>Windows Server 2003 с пакетом обновления 1 (SP1) и 2 (SP2)</li><li>Windows 10</li><li>Windows 8.1, все выпуски</li><li>Windows 8, все выпуски</li><li>Windows 7, все выпуски</li><li>Windows Vista, все выпуски, а также выпуски с пакетом обновления 1 (SP1) и 2 (SP2)</li><li>Microsoft .NET Framework 4.0</li><li>IIS 7.0 или более поздняя версия, если вы устанавливаете SDK для пользовательского портала или веб-службы</li> |
 | Разрешения | Учетная запись администратора домена или администратора предприятия для регистрации в Active Directory |
 
 ### <a name="azure-mfa-server-components"></a>Компоненты сервера Azure MFA
@@ -202,7 +202,7 @@ ms.locfileid: "74404250"
 
 После установки сервера MFA 8.x или более поздней версии (либо обновления до этой версии) рекомендуется отключить или удалить прежние, менее надежные комплекты шифров (если они не требуются в организации). Соответствующие инструкции см. в статье, посвященной [управлению протоколами SSL и TLS, а также комплектами шифров для AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/manage-ssl-protocols-in-ad-fs).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Установка и настройка [пользовательского портала](howto-mfaserver-deploy-userportal.md) для самообслуживания пользователей.
 - Установите и настройте сервер Azure MFA со [службой федерации Active Directory](multi-factor-authentication-get-started-adfs.md), [проверкой подлинности RADIUS](howto-mfaserver-dir-radius.md) или [проверкой подлинности LDAP](howto-mfaserver-dir-ldap.md).

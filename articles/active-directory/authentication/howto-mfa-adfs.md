@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 07/11/2018
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 20e9f0b9a993d2a8af9b9d91399fdd49f9a06eaa
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: f1cc696e6351281ec9bd84cc6611d81d9148cda1
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74381836"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74848431"
 ---
 # <a name="securing-cloud-resources-with-azure-multi-factor-authentication-and-ad-fs"></a>Защита облачных ресурсов с помощью Многофакторной идентификации Azure и AD FS
 
@@ -43,7 +43,7 @@ ms.locfileid: "74381836"
 6. Укажите имя правила. 
 7. Выберите **Ссылки на методы проверки подлинности** в качестве типа входящего утверждения.
 8. Щелкните **Пройти по всем значениям утверждений**.
-    ![Мастер добавления правил преобразования утверждений](./media/howto-mfa-adfs/configurewizard.png)
+    ![Мастер добавления правила преобразования утверждений](./media/howto-mfa-adfs/configurewizard.png)
 9. Нажмите кнопку **Готово** Закройте консоль управления AD FS.
 
 ## <a name="trusted-ips-for-federated-users"></a>Доверенные IP-адреса для федеративных пользователей
@@ -58,12 +58,12 @@ ms.locfileid: "74381836"
 
 1. Откройте оснастку управления AD FS.
 2. В левой части выберите **Отношения доверия проверяющей стороны**.
-3. Щелкните правой кнопкой мыши **Microsoft Office 365 на платформе удостоверений** и выберите пункт **изменить правила утверждений...** 
-   ![консоли ADFS — изменение правил утверждений](./media/howto-mfa-adfs/trustedip1.png)
+3. Щелкните правой кнопкой мыши **платформы удостоверений Microsoft Office 365** и выберите **изменение правил для утверждений...** 
+   ![Консоль служб федерации Active Directory — изменить правила утверждений](./media/howto-mfa-adfs/trustedip1.png)
 4. В правилах преобразования выдачи нажмите кнопку **Добавить правило.** 
    ![добавить правило утверждения](./media/howto-mfa-adfs/trustedip2.png)
 5. В мастере добавления правила преобразования утверждения выберите **Проход через входящее утверждение или его фильтрация** в раскрывающемся списке и нажмите кнопку **Далее**.
-   ![Мастер добавления правил преобразования утверждений](./media/howto-mfa-adfs/trustedip3.png)
+   ![Мастер добавления правила преобразования утверждений](./media/howto-mfa-adfs/trustedip3.png)
 6. В поле рядом с именем правила утверждения укажите имя правила. Пример: InsideCorpNet.
 7. В раскрывающемся списке "Тип входящего утверждения" выберите **В корпоративной сети**.
    ![Добавление в утверждение корпоративной сети](./media/howto-mfa-adfs/trustedip4.png)

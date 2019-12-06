@@ -7,16 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/02/2019
+ms.date: 12/05/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e88f6f344c77109ee01cd6b0332138518f70270d
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 903551bfcaae3ffa7ccee72b1a5d781413864b32
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74793787"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74868462"
 ---
 # <a name="what-is-azure-ad-connect-cloud-provisioning"></a>Что такое Azure AD Connect подготовки облака?
 Azure AD Connect подготовка облачных облаков — это новый агент Майкрософт, предназначенный для удовлетворения и выполнения целей гибридной идентификации для синхронизации пользователей, групп и контактов с Azure AD.  Его можно использовать вместе с Azure AD Connect Sync и предоставляет следующие преимущества:
@@ -59,8 +59,9 @@ Azure AD Connect подготовка облачных облаков — это
 | Разрешение удаления атрибутов из потока из AD в Azure AD |● |● |
 | Разрешение дополнительной настройки потоков атрибутов |● | |
 | Поддержка обратной записи (пароли, устройства, группы) |● | |
+| Поддержка доменных служб Azure AD|● | |
 
 ## <a name="next-steps"></a>Дальнейшие действия 
 
 - [Что такое подготовка?](what-is-provisioning.md)
-- [Что такое Azure AD Connect подготовки облака?](what-is-cloud-provisioning.md)
+- [Установка подготовки облака](how-to-install.md)

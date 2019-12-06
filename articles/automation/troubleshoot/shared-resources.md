@@ -2,18 +2,18 @@
 title: Устранение неполадок c общими ресурсами службы автоматизации Azure
 description: Узнайте, как устранять неполадки c общими ресурсами службы автоматизации Azure
 services: automation
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 03/12/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: a2836f40b55a71e080288fce7e48275747962c16
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 9313b042433489307a2bd2822a96d1e0e127362b
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231535"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849298"
 ---
 # <a name="troubleshoot-errors-with-shared-resources"></a>Устранение неполадок c общими ресурсами
 
@@ -31,7 +31,7 @@ ms.locfileid: "74231535"
 
 Импорт модулей PowerShell — это сложный многоэтапный процесс. При этом существует вероятность, что модуль не будет импортирован правильно. В таком случае импортируемый модуль может застопориться в переходном состоянии. Дополнительные сведения об этом процессе см. в статье [Importing a PowerShell Module](/powershell/scripting/developer/module/importing-a-powershell-module#the-importing-process) (Импорт модуля PowerShell).
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Чтобы устранить эту проблему, необходимо удалить модуль, застопорившийся в состоянии **Импорт**, с помощью командлета [Remove-AzureRmAutomationModule](/powershell/module/azurerm.automation/remove-azurermautomationmodule). Затем можно повторить импорт модуля.
 
@@ -53,7 +53,7 @@ Azure modules are being updated
 
 Существует известная ошибка при обновлении модулей AzureRM в учетной записи службы автоматизации, которая находится в группе ресурсов с числовым именем, начинающимся с 0.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Чтобы обновить модули Azure в учетной записи службы автоматизации, она должна находиться в группе ресурсов с буквенно-цифровым именем. Группы ресурсов с числовыми именами, начинающимися с 0, не могут обновить модули AzureRM в данный момент.
 
@@ -72,7 +72,7 @@ Azure modules are being updated
 * В папке отсутствуют зависимости модуля.
 * Командлет `New-AzureRmAutomationModule` используется для передачи модуля, при этом полный путь для хранения не указан или модуль не загружен с помощью общедоступного URL-адреса.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Эту проблему можно устранить одним из следующих способов.
 
@@ -90,7 +90,7 @@ Azure modules are being updated
 
 Значение по умолчанию для определения количества одновременно обновляемых модулей — 10 при использовании сценария `Update-AzureModule.ps1`. Процесс обновления подвержен ошибкам, если одновременно обновляются слишком много модулей.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Очень редко все модули AzureRM требуются в одной учетной записи службы автоматизации. Мы рекомендуем импортировать только необходимые модули AzureRM.
 
@@ -132,7 +132,7 @@ You do not have permissions to create…
 
 У вас нет разрешений, необходимых для создания или обновления учетной записи запуска от имени, или ресурс заблокирован на уровне группы ресурсов.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Чтобы создать или обновить учетную запись запуска от имени, необходимо иметь соответствующие разрешения на различные ресурсы, используемые для запуска. Дополнительные сведения о разрешениях, необходимых для создания или обновления учетной записи запуска от имени, см. в разделе [Разрешения для запуска от имени учетной записи](../manage-runas-account.md#permissions).
 
@@ -152,7 +152,7 @@ Unable to find an entry point named 'GetPerAdapterInfo' in DLL 'iplpapi.dll'
 
 Скорее всего, эта ошибка вызвана неправильно настроенной [учетной записью запуска от имени](../manage-runas-account.md).
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Убедитесь, что [учетная запись запуска от имени](../manage-runas-account.md) настроена правильно. После правильной настройки убедитесь, что у вас есть правильный код в модуле Runbook для проверки подлинности в Azure. В следующем примере показан фрагмент кода для проверки подлинности в Azure в модуле Runbook с помощью учетной записи запуска от имени.
 
@@ -162,7 +162,7 @@ Connect-AzureRmAccount -ServicePrincipal -Tenant $connection.TenantID `
 -ApplicationID $connection.ApplicationID -CertificateThumbprint $connection.CertificateThumbprint
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

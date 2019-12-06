@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 61deb5361c9857956318f8b9b4ca836fcfa65d48
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: e11f560c2b101d86d41feb3f6c93cffe7c1a748d
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73798132"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74851457"
 ---
 # <a name="generate-soil-moisture-heatmap"></a>Создать почвы влажность тепловой карты
 
@@ -24,7 +24,7 @@ ms.locfileid: "73798132"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Убедитесь в следующем:  
+Убедитесь, что:  
 
 - Подписка Azure.
 - Работающий экземпляр Azure Фармбеатс.
@@ -85,7 +85,7 @@ ms.locfileid: "73798132"
 
 1. На странице **задания** проверьте **состояние** задания, созданного в последней процедуре.
 2. Когда состояние задания отобразится *удачно*, щелкните **Maps (карты** ) в меню.
-3. Найдите карту по дате создания в формате < почвы-moisture_MyFarm_YYYY-MM-DD >.
+3. Найдите карту по дню создания в формате < почвы-moisture_MyFarm_YYYY-MM-ДД >.
 4. Выберите карту в столбце **имя** . появится всплывающее окно с предварительной версией выбранной схемы.
 5. Выберите **Скачать**. Эта схема загружается и сохраняется в локальной папке компьютера.
 
@@ -93,4 +93,4 @@ ms.locfileid: "73798132"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы успешно создали почвы влажность тепловой карты, Узнайте, как [создавать расположение датчиков](generate-maps.md#sensor-placement-maps) и получать [исторические данные телеметрии](ingest-historical-telemetry-data.md). 
+Теперь, когда вы успешно создали почвы влажность тепловой карты, Узнайте, как [создавать расположение датчиков](generate-maps.md#sensor-placement-map) и получать [исторические данные телеметрии](ingest-historical-telemetry-data.md). 

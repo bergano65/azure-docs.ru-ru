@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf338ad0c555038cd99c3604d69ab80371d6ea22
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: e3d85850fb18b80490bba44b293ece7765124133
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74804980"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74846119"
 ---
 # <a name="common-conditional-access-policies"></a>Распространенные политики условного доступа
 
@@ -44,4 +44,5 @@ ms.locfileid: "74804980"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)
+- [Моделирование поведения входа с помощью средства What If условного доступа.](troubleshoot-conditional-access-what-if.md)
+- [Используйте режим "только отчет" для условного доступа, чтобы определить влияние новых политик.](concept-conditional-access-report-only.md)

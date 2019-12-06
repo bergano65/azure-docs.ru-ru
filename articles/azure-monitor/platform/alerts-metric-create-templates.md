@@ -5,15 +5,15 @@ author: harelbr
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 9/27/2018
+ms.date: 12/5/2019
 ms.author: harelbr
 ms.subservice: alerts
-ms.openlocfilehash: 0d3cbe8c3d2d7931e3e4cc052eedc844a296ccf0
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 496e8673e1cbf31f4c71db00b7eaf1c0618e509f
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74775796"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74872950"
 ---
 # <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Создание оповещения о метриках с помощью шаблона Resource Manager
 
@@ -794,11 +794,11 @@ az group deployment create \
 
 Одно правило генерации оповещений может отслеживать несколько временных рядов за один раз, что приводит к меньшему числу правил генерации оповещений.
 
-В приведенном ниже примере правило оповещения будет отслеживать сочетания измерений **ResponseType** и **ApiName** для метрики **транзакций** .
-1. **Респонстипе** — использование подстановочного знака "\*" означает, что для каждого значения измерения **ResponseType** , включая будущие значения, отдельный временной ряд будет отслеживаться отдельно.
-2. **ApiName** — различные временные ряды будут отслеживаться только для значений измерений **типа данных BLOB** и **PutBlob** .
+В приведенном ниже примере правило генерации оповещений отслеживает сочетания измерений **ResponseType** и **ApiName** для метрики **транзакций** .
+1. **Респонстипе** — использование подстановочного знака "\*" означает, что для каждого значения измерения **ResponseType** , включая будущие значения, отдельный временный ряд отслеживается отдельно.
+2. **ApiName** — различные временные ряды отслеживаются только для значений измерений **типа данных BLOB** и **PutBlob** .
 
-Например, несколько возможных временных рядов, которые будут отслеживаться этим правилом оповещения:
+Например, несколько возможных временных рядов, которые отслеживаются этим правилом оповещения:
 - Метрика = *Transactions*, ResponseType = *Success*, ApiName = *BLOB*
 - Метрика = *Transactions*, ResponseType = *Success*, ApiName = *PutBlob*
 - Метрика = *транзакции*, ResponseType = *время ожидания сервера*, ApiName = *большой двоичный объект*
@@ -1014,11 +1014,11 @@ az group deployment create \
 
 Одно правило генерации оповещений о динамических пороговых значениях может создавать собственные пороговые значения для сотен временных рядов (даже разных типов) за раз, что приводит к меньшему числу правил генерации оповещений.
 
-В приведенном ниже примере правило оповещения будет отслеживать сочетания измерений **ResponseType** и **ApiName** для метрики **транзакций** .
-1. **Респонстипе** — для каждого значения измерения **ResponseType** , включая будущие значения, отдельный временной ряд будет отслеживаться отдельно.
-2. **ApiName** — различные временные ряды будут отслеживаться только для значений измерений **типа данных BLOB** и **PutBlob** .
+В приведенном ниже примере правило генерации оповещений отслеживает сочетания измерений **ResponseType** и **ApiName** для метрики **транзакций** .
+1. **Респонстипе** — для каждого значения измерения **ResponseType** , включая будущие значения, отдельный временный ряд отслеживается отдельно.
+2. **ApiName** — различные временные ряды отслеживаются только для значений измерений **типа данных BLOB** и **PutBlob** .
 
-Например, несколько возможных временных рядов, которые будут отслеживаться этим правилом оповещения:
+Например, несколько возможных временных рядов, которые отслеживаются этим правилом оповещения:
 - Метрика = *Transactions*, ResponseType = *Success*, ApiName = *BLOB*
 - Метрика = *Transactions*, ResponseType = *Success*, ApiName = *PutBlob*
 - Метрика = *транзакции*, ResponseType = *время ожидания сервера*, ApiName = *большой двоичный объект*
@@ -1230,6 +1230,270 @@ az group deployment create \
 >[!NOTE]
 >
 > В настоящее время несколько критериев не поддерживаются для правил оповещений метрик, использующих динамические пороговые значения.
+
+
+## <a name="template-for-a-static-threshold-metric-alert-that-monitors-a-custom-metric"></a>Шаблон для предупреждения о статическом пороге метрики, отслеживающем пользовательскую метрику
+
+Следующий шаблон можно использовать для создания более расширенного правила генерации оповещений о метриках статического порога для пользовательской метрики.
+
+Дополнительные сведения о пользовательских метриках в Azure Monitor см. в разделе [пользовательские метрики в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-custom-overview).
+
+При создании правила генерации оповещений для пользовательской метрики необходимо указать как имя метрики, так и пространство имен метрики.
+
+Сохраните пример JSON ниже как кустомстатикметрикалерт. JSON в целях этого пошагового руководства.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "alertName": {
+            "type": "string",
+            "minLength": 1,
+            "metadata": {
+                "description": "Name of the alert"
+            }
+        },
+        "alertDescription": {
+            "type": "string",
+            "defaultValue": "This is a metric alert",
+            "metadata": {
+                "description": "Description of alert"
+            }
+        },
+        "alertSeverity": {
+            "type": "int",
+            "defaultValue": 3,
+            "allowedValues": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ],
+            "metadata": {
+                "description": "Severity of alert {0,1,2,3,4}"
+            }
+        },
+        "isEnabled": {
+            "type": "bool",
+            "defaultValue": true,
+            "metadata": {
+                "description": "Specifies whether the alert is enabled"
+            }
+        },
+        "resourceId": {
+            "type": "string",
+            "minLength": 1,
+            "metadata": {
+                "description": "Full Resource ID of the resource emitting the metric that will be used for the comparison. For example /subscriptions/00000000-0000-0000-0000-0000-00000000/resourceGroups/ResourceGroupName/providers/Microsoft.compute/virtualMachines/VM_xyz"
+            }
+        },
+        "metricName": {
+            "type": "string",
+            "minLength": 1,
+            "metadata": {
+                "description": "Name of the metric used in the comparison to activate the alert."
+            }
+        },
+        "metricNamespace": {
+            "type": "string",
+            "minLength": 1,
+            "metadata": {
+                "description": "Namespace of the metric used in the comparison to activate the alert."
+            }
+        },
+        "operator": {
+            "type": "string",
+            "defaultValue": "GreaterThan",
+            "allowedValues": [
+                "Equals",
+                "NotEquals",
+                "GreaterThan",
+                "GreaterThanOrEqual",
+                "LessThan",
+                "LessThanOrEqual"
+            ],
+            "metadata": {
+                "description": "Operator comparing the current value with the threshold value."
+            }
+        },
+        "threshold": {
+            "type": "string",
+            "defaultValue": "0",
+            "metadata": {
+                "description": "The threshold value at which the alert is activated."
+            }
+        },
+        "timeAggregation": {
+            "type": "string",
+            "defaultValue": "Average",
+            "allowedValues": [
+                "Average",
+                "Minimum",
+                "Maximum",
+                "Total",
+                "Count"
+            ],
+            "metadata": {
+                "description": "How the data that is collected should be combined over time."
+            }
+        },
+        "windowSize": {
+            "type": "string",
+            "defaultValue": "PT5M",
+            "allowedValues": [
+                "PT1M",
+                "PT5M",
+                "PT15M",
+                "PT30M",
+                "PT1H",
+                "PT6H",
+                "PT12H",
+                "PT24H"
+            ],
+            "metadata": {
+                "description": "Period of time used to monitor alert activity based on the threshold. Must be between one minute and one day. ISO 8601 duration format."
+            }
+        },
+        "evaluationFrequency": {
+            "type": "string",
+            "defaultValue": "PT1M",
+            "allowedValues": [
+                "PT1M",
+                "PT5M",
+                "PT15M",
+                "PT30M",
+                "PT1H"
+            ],
+            "metadata": {
+                "description": "How often the metric alert is evaluated represented in ISO 8601 duration format"
+            }
+        },
+        "actionGroupId": {
+            "type": "string",
+            "defaultValue": "",
+            "metadata": {
+                "description": "The ID of the action group that is triggered when the alert is activated or deactivated"
+            }
+        }
+    },
+    "variables": {  },
+    "resources": [
+        {
+            "name": "[parameters('alertName')]",
+            "type": "Microsoft.Insights/metricAlerts",
+            "location": "global",
+            "apiVersion": "2018-03-01",
+            "tags": {},
+            "properties": {
+                "description": "[parameters('alertDescription')]",
+                "severity": "[parameters('alertSeverity')]",
+                "enabled": "[parameters('isEnabled')]",
+                "scopes": ["[parameters('resourceId')]"],
+                "evaluationFrequency":"[parameters('evaluationFrequency')]",
+                "windowSize": "[parameters('windowSize')]",
+                "criteria": {
+                    "odata.type": "Microsoft.Azure.Monitor.SingleResourceMultipleMetricCriteria",
+                    "allOf": [
+                        {
+                            "name" : "1st criterion",
+                            "metricName": "[parameters('metricName')]",
+                            "metricNamespace": "[parameters('metricNamespace')]",
+                            "dimensions":[],
+                            "operator": "[parameters('operator')]",
+                            "threshold" : "[parameters('threshold')]",
+                            "timeAggregation": "[parameters('timeAggregation')]"
+                        }
+                    ]
+                },
+                "actions": [
+                    {
+                        "actionGroupId": "[parameters('actionGroupId')]"
+                    }
+                ]
+            }
+        }
+    ]
+}
+```
+
+Приведенный выше шаблон можно использовать вместе с файлом параметров, указанным ниже. 
+
+Сохраните и измените JSON ниже как кустомстатикметрикалерт. parameters. JSON в целях этого пошагового руководства.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "alertName": {
+            "value": "New alert rule on a custom metric"
+        },
+        "alertDescription": {
+            "value": "New alert rule on a custom metric created via template"
+        },
+        "alertSeverity": {
+            "value":3
+        },
+        "isEnabled": {
+            "value": true
+        },
+        "resourceId": {
+            "value": "/subscriptions/replace-with-subscription-id/resourceGroups/replace-with-resourceGroup-name/providers/microsoft.insights/components/replace-with-application-insights-resource-name"
+        },
+        "metricName": {
+            "value": "The custom metric name"
+        },
+        "metricNamespace": {
+            "value": "Azure.ApplicationInsights"
+        },
+        "operator": {
+          "value": "GreaterThan"
+        },
+        "threshold": {
+            "value": "80"
+        },
+        "timeAggregation": {
+            "value": "Average"
+        },
+        "actionGroupId": {
+            "value": "/subscriptions/replace-with-subscription-id/resourceGroups/resource-group-name/providers/Microsoft.Insights/actionGroups/replace-with-action-group"
+        }
+    }
+}
+```
+
+
+Вы можете создать оповещение метрики с помощью шаблона и файла параметров, используя PowerShell или Azure CLI из текущего рабочего каталога.
+
+Использование Azure PowerShell
+```powershell
+Connect-AzAccount
+
+Select-AzSubscription -SubscriptionName <yourSubscriptionName>
+ 
+New-AzResourceGroupDeployment -Name AlertDeployment -ResourceGroupName ResourceGroupOfTargetResource `
+  -TemplateFile customstaticmetricalert.json -TemplateParameterFile customstaticmetricalert.parameters.json
+```
+
+
+
+Использование Azure CLI
+```azurecli
+az login
+
+az group deployment create \
+    --name AlertDeployment \
+    --resource-group ResourceGroupOfTargetResource \
+    --template-file customstaticmetricalert.json \
+    --parameters @customstaticmetricalert.parameters.json
+```
+
+>[!NOTE]
+>
+> Пространство имен метрик определенной пользовательской метрики можно найти, [просмотрев пользовательские метрики с помощью портал Azure](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-custom-overview#browse-your-custom-metrics-via-the-azure-portal)
+
 
 ## <a name="template-for-a-metric-alert-that-monitors-multiple-resources"></a>Шаблон для оповещения метрики, отслеживающего несколько ресурсов
 
@@ -3180,7 +3444,7 @@ az group deployment create \
     --parameters @list-of-vms-dynamic.parameters.json
 ```
 
-## <a name="template-for-a-availability-test-along-with-availability-test-alert"></a>Шаблон для теста доступности вместе с предупреждением теста доступности
+## <a name="template-for-an-availability-test-along-with-a-metric-alert"></a>Шаблон для теста доступности вместе с оповещением метрики
 
 [Application Insights тесты доступности](../../azure-monitor/app/monitor-web-app-availability.md) помогают отслеживать доступность веб-сайта или приложения из различных расположений по всему миру. Оповещения о тестировании доступности уведомляют о том, что тесты доступности завершились ошибкой из определенного числа расположений.
 Оповещения о доступности для тех же типов ресурсов, что и оповещения метрик (Microsoft. Insights/Метрикалертс). Следующий пример шаблона Azure Resource Manager можно использовать для настройки простого теста доступности и связанного оповещения.

@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: article
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 98668fc836aa21bdd14831c4a801557cdab5a202
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 24fa03fe12f584e9da32b547f0d8128e5ff28803
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74381664"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74847734"
 ---
 # <a name="azure-ad-password-protection-operational-procedures"></a>операционные процедуры службы защиты паролем Azure AD
 
@@ -62,6 +62,6 @@ ms.locfileid: "74381664"
 
 Этот параметр должен оставаться в состоянии включено (да) по умолчанию. Если отключить этот параметр (то есть выбрать значение "Нет"), то все развернутые агенты контроллера домена защиты паролем Azure AD перейдут в режим бездействия, в котором все пароли принимаются "как есть" и какие-либо действия проверки не выполняются ни при каких обстоятельствах (например, даже не создаются события аудита).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Preview: Azure AD Password Protection monitoring and logging](howto-password-ban-bad-on-premises-monitor.md) (Предварительная версия. Мониторинг и ведение журнала службы защиты паролем Azure AD)

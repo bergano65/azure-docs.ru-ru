@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d4b89f7416847e01cad8cb4f9bc52248d09170d
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 57ac23bbb0465be2f15e0a35bb4fd7c331e83988
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74382006"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74848720"
 ---
 # <a name="when-to-use-an-azure-multi-factor-authentication-provider"></a>Когда следует использовать поставщик службы Многофакторной идентификации Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "74382006"
 - cert
 - граупкацерт
 - groupKey
-- Группа
+- groupName
 - Ключ лицензии
 - PKEY
 
@@ -72,6 +72,6 @@ ms.locfileid: "74382006"
 > [!NOTE]
 > Пользователям с более старыми версиями приложения Microsoft Authenticator и Azure MFA может потребоваться повторная регистрация приложения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка параметров Многофакторной идентификации](howto-mfa-mfasettings.md)
