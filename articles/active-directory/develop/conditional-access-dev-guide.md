@@ -2,7 +2,6 @@
 title: Руководство разработчика по Azure Active Directory условному доступу
 description: Руководство разработчика и сценарии для условного доступа Azure AD
 services: active-directory
-keywords: ''
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
@@ -11,17 +10,15 @@ ms.date: 02/28/2019
 ms.service: active-directory
 ms.subservice: develop
 ms.custom: aaddev
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91947c243b521e970a89152f76abe9a99142b89d
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: 69fcb50cb8273fa9e6606e1d071249ed17c78786
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72373999"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74843739"
 ---
 # <a name="developer-guidance-for-azure-active-directory-conditional-access"></a>Руководство разработчика по Azure Active Directory условному доступу
 
@@ -114,7 +111,7 @@ claims={"access_token":{"polids":{"essential":true,"Values":["<GUID>"]}}}
 Azure AD возвращает ответ HTTP с некоторыми полезными данными:
 
 > [!NOTE]
-> В этом экземпляре это описание ошибки многофакторной проверки подлинности, но существует широкий диапазон `interaction_required`, имеющих отношение к условному доступу.
+> В этом экземпляре это описание ошибки многофакторной проверки подлинности, но существует широкий спектр `interaction_required`, которые могут быть связаны с условным доступом.
 
 ```
 HTTP 400; Bad Request
@@ -146,7 +143,7 @@ claims={"access_token":{"polids":{"essential":true,"Values":["<GUID>"]}}}
 
 ![Приложение, получающее доступ к нескольким службам, запрашивающим новый маркер](./media/conditional-access-dev-guide/app-accessing-multiple-services-new-token.png)
 
-Если приложение использует библиотеку ADAL, при сбое получения маркера всегда осуществляется повторная попытка в интерактивном режиме. При выполнении этого интерактивного запроса у конечного пользователя есть возможность соответствовать условному доступу. Это верно, если запрос не является `AcquireTokenSilentAsync` или `PromptBehavior.Never`. в этом случае приложению требуется выполнить интерактивный запрос ```AcquireToken```, чтобы предоставить конечному пользователю возможность соответствовать политике.
+Если приложение использует библиотеку ADAL, при сбое получения маркера всегда осуществляется повторная попытка в интерактивном режиме. При выполнении этого интерактивного запроса у конечного пользователя есть возможность соответствовать условному доступу. Это справедливо, если запрос не является `AcquireTokenSilentAsync` или `PromptBehavior.Never` в этом случае приложению требуется выполнить интерактивный ```AcquireToken``` запрос, чтобы предоставить конечному пользователю возможность соответствовать политике.
 
 ## <a name="scenario-single-page-app-spa-using-adaljs"></a>Сценарий. Одностраничное приложение (SPA), использующее ADAL.js
 

@@ -4,17 +4,17 @@ description: Вы можете устанавливать и использов�
 services: automation
 ms.service: automation
 ms.subservice: process-automation
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 03/20/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 86eebf33f870780871e4c873936e491772c73b63
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 94910d0f42ad6b208cac54dd2826cbd2d917504b
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231610"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74850726"
 ---
 # <a name="runbook-and-module-galleries-for-azure-automation"></a>Коллекции модулей Runbook и других модулей для службы автоматизации Azure
 
@@ -50,7 +50,7 @@ Runbook и [модули](#modules-in-powershell-gallery) PowerShell можно 
 
 ### <a name="adding-a-powershell-runbook-to-the-gallery"></a>Добавление модуля Runbook PowerShell в коллекцию
 
-Корпорация Майкрософт рекомендует добавлять модули Runbook в коллекция PowerShell, которые вы считаете полезными для других клиентов. Коллекция PowerShell принимает модули PowerShell и сценарии PowerShell. Модуль Runbook можно добавить, [загружая его в коллекция PowerShell](/powershell/scripting/gallery/how-to/publishing-packages/publishing-a-package).
+Корпорация Майкрософт рекомендует добавлять модули Runbook в коллекция PowerShell, которые вы считаете полезными для других клиентов. Коллекция PowerShell принимает модули PowerShell и скрипты PowerShell. Модуль Runbook можно добавить, [загружая его в коллекция PowerShell](/powershell/scripting/gallery/how-to/publishing-packages/publishing-a-package).
 
 > [!NOTE]
 > Графические модули Runbook не поддерживаются в коллекция PowerShell.
@@ -109,7 +109,7 @@ Runbook и [модули](#modules-in-powershell-gallery) PowerShell можно 
 * [Copy-итемфромазуревм](https://www.powershellgallery.com/packages/Copy-ItemFromAzureVM/) — этот модуль Runbook копирует удаленный файл из виртуальной машины Windows Azure.
 * [Copy-итемфромазуревм](https://www.powershellgallery.com/packages/Copy-ItemToAzureVM/) — этот модуль Runbook копирует локальный файл на виртуальную машину Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о том, как начать работу с модулями Runbook, см. в статье [Управление модулями runbook в службе автоматизации Azure](manage-runbooks.md).
 * Чтобы понять различия между PowerShell и рабочим процессом PowerShell с модулями Runbook, см. статью [Изучение рабочего процесса Windows PowerShell](automation-powershell-workflow.md).

@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d6a87b5797ea5c8f4ac116d6df9e6a48204f1fd
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: b448e6ce7c8b4522d5e7bdbafb39eccca982fdee
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74381901"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74848516"
 ---
 # <a name="authentication-methods-usage--insights-preview"></a>Использование методов проверки подлинности & Insights (Предварительная версия)
 
@@ -33,7 +33,7 @@ ms.locfileid: "74381901"
 
 Для доступа к использованию и аналитике не требуется никаких дополнительных лицензий. Сведения о лицензировании Azure для многофакторной идентификации и самостоятельного сброса пароля (SSPR) можно найти на [сайте цен на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 
-## <a name="how-it-works"></a>Принцип работы
+## <a name="how-it-works"></a>Принципы работы
 
 Для доступа к использованию и анализу методов проверки подлинности:
 
@@ -65,7 +65,7 @@ ms.locfileid: "74381901"
 
 В отчете сведения о регистрации отображаются следующие сведения для каждого пользователя:
 
-- имя
+- Name
 - Имя пользователя
 - Состояние регистрации (все, зарегистрировано, не зарегистрировано)
 - Включенное состояние (все, включено, не включено)
@@ -80,7 +80,7 @@ ms.locfileid: "74381901"
 
 В отчете о сбросе отображаются события регистрации и сброса за последние 30 дней, включая:
 
-- имя
+- Name
 - Имя пользователя
 - Функция (все, регистрация, сброс)
 - Метод проверки подлинности (уведомление приложения, код приложения, телефонный звонок, вызов Office, SMS, электронная почта, контрольные вопросы)
@@ -94,7 +94,7 @@ ms.locfileid: "74381901"
 
 Данные об использовании и аналитике не заменяют отчеты о действиях многофакторной идентификации Azure или сведения, содержащиеся в отчете о входе в Azure AD.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Работа с API отчетов по использованию методов проверки подлинности](https://docs.microsoft.com/graph/api/resources/authenticationmethods-usage-insights-overview?view=graph-rest-beta)
 - [Выбор методов проверки подлинности для Организации](concept-authentication-methods.md)

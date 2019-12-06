@@ -1,22 +1,22 @@
 ---
-title: Проверка подлинности на основе сертификата в iOS — Azure Active Directory
+title: Аутентификация на основе сертификата в iOS — Azure Active Directory
 description: Узнайте о поддерживаемых сценариях и требованиях к настройке аутентификации на основе сертификата в решениях на устройствах iOS.
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: article
 ms.date: 01/15/2018
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: annaba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cda1b1c2a484f3aa627b8b9cf486528d13f27be8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d2f9e7d71ab660c4df6f65d6bebe1d3854086bdd
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60416011"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74848805"
 ---
 # <a name="azure-active-directory-certificate-based-authentication-on-ios"></a>Аутентификация на основе сертификата в Azure Active Directory на устройстве iOS
 
@@ -35,16 +35,16 @@ ms.locfileid: "60416011"
 
 | Приложения | Поддержка |
 | --- | --- |
-| Приложение Azure Information Protection |![Флажок, означающую, что поддержка этого приложения][1] |
-| Корпоративный портал Intune |![Флажок, означающую, что поддержка этого приложения][1] |
-| Microsoft Teams |![Флажок, означающую, что поддержка этого приложения][1] |
-| OneNote |![Флажок, означающую, что поддержка этого приложения][1] |
-| OneDrive |![Флажок, означающую, что поддержка этого приложения][1] |
-| Outlook |![Флажок, означающую, что поддержка этого приложения][1] |
-| Power BI |![Флажок, означающую, что поддержка этого приложения][1] |
-| Skype для бизнеса |![Флажок, означающую, что поддержка этого приложения][1] |
-| Word/Excel/PowerPoint |![Флажок, означающую, что поддержка этого приложения][1] |
-| Yammer |![Флажок, означающую, что поддержка этого приложения][1] |
+| Приложение Azure Information Protection |![Установите флажок, обозначающий поддержку для этого приложения][1] |
+| Корпоративный портал Intune |![Установите флажок, обозначающий поддержку для этого приложения][1] |
+| Microsoft Teams |![Установите флажок, обозначающий поддержку для этого приложения][1] |
+| OneNote |![Установите флажок, обозначающий поддержку для этого приложения][1] |
+| OneDrive |![Установите флажок, обозначающий поддержку для этого приложения][1] |
+| Outlook |![Установите флажок, обозначающий поддержку для этого приложения][1] |
+| Power BI |![Установите флажок, обозначающий поддержку для этого приложения][1] |
+| Skype для бизнеса |![Установите флажок, обозначающий поддержку для этого приложения][1] |
+| Word/Excel/PowerPoint |![Установите флажок, обозначающий поддержку для этого приложения][1] |
+| Yammer |![Установите флажок, обозначающий поддержку для этого приложения][1] |
 
 ## <a name="requirements"></a>Требования
 

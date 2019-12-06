@@ -4,17 +4,17 @@ description: В этой статье описывается, как компи�
 services: automation
 ms.service: automation
 ms.subservice: dsc
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 09/10/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 6d3cca9d8954d9ac158d88b393c46672da3faa19
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: fdea8ed9a9e59a169a6ffb525ed286eb7d1ada53
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231718"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74850913"
 ---
 # <a name="compiling-dsc-configurations-in-azure-automation-state-configuration"></a>Компилирование конфигураций DSC в службе "Настройка состояния службы автоматизации Azure"
 
@@ -33,7 +33,7 @@ ms.locfileid: "74231718"
 
 ## <a name="compiling-a-dsc-configuration-in-azure-state-configuration"></a>Компиляция конфигурации DSC в конфигурации состояния Azure
 
-### <a name="portal"></a>Портал
+### <a name="portal"></a>Microsoft Azure
 
 1. В учетной записи службы автоматизации нажмите кнопку**Конфигурации DSC**.
 1. Нажмите кнопку**Конфигурации**, а затем щелкните имя конфигурации для компилирования.
@@ -101,7 +101,7 @@ Configuration ParametersExample
 
 Вы можете компилировать конфигурации DSC, которые используют базовые параметры, на портале службы "Настройка состояния службы автоматизации Azure" или с помощью Azure PowerShell:
 
-#### <a name="portal"></a>Портал
+#### <a name="portal"></a>Microsoft Azure
 
 Чтобы ввести значения параметров на портале, нажмите кнопку **Компилировать**.
 
@@ -134,7 +134,7 @@ Start-AzureRmAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -A
 
 ### <a name="managing-configurationdata-when-compiling-configuration-in-azure-automation"></a>Управление ConfigurationData при компиляции конфигурации в службе автоматизации Azure
 
-Параметр **ConfigurationData** позволяет при использовании PowerShell DSC отделить конфигурацию структуры от любой конфигурации среды. Дополнительные сведения о [ConfigurationData](https://blogs.msdn.com/b/powershell/archive/2014/01/09/continuous-deployment-using-dsc-with-minimal-change.aspx) см. в публикации блога **Separating "What" from "Where" in PowerShell DSC** (Разница между "что" и "где" в DSC PowerShell).
+Параметр **ConfigurationData** позволяет при использовании PowerShell DSC отделить конфигурацию структуры от любой конфигурации среды. Дополнительные сведения о **ConfigurationData** см. в публикации блога [Separating "What" from "Where" in PowerShell DSC](https://blogs.msdn.com/b/powershell/archive/2014/01/09/continuous-deployment-using-dsc-with-minimal-change.aspx) (Разница между "что" и "где" в DSC PowerShell).
 
 > [!NOTE]
 > Вы можете использовать **ConfigurationData** при компиляции в конфигурации состояния службы автоматизации Azure с помощью Azure PowerShell, но не в портал Azure.
@@ -277,7 +277,7 @@ MOF-файл или файлы, созданные при компиляции �
    ![Поиск локального файла](./media/automation-dsc-compile/import-browse.png)
 
 1. В текстовом поле **Configuration Name** (Имя конфигурации) введите имя. Это имя должно совпадать с именем конфигурации, из которой была скомпилирована данная конфигурация узла.
-1. Нажмите кнопку **ОК**.
+1. Последовательно выберите **ОК**.
 
 ### <a name="importing-a-node-configuration-with-azure-powershell"></a>Импорт конфигурации узла с Azure PowerShell
 
@@ -287,7 +287,7 @@ MOF-файл или файлы, созданные при компиляции �
 Import-AzureRmAutomationDscNodeConfiguration -AutomationAccountName 'MyAutomationAccount' -ResourceGroupName 'MyResourceGroup' -ConfigurationName 'MyNodeConfiguration' -Path 'C:\MyConfigurations\TestVM1.mof'
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы приступить к работе со службой "Настройка состояния службы автоматизации Azure", см. сведения в [этой статье](automation-dsc-getting-started.md).
 - Сведения о компилировании конфигураций DSC, которые затем можно назначить целевым узлам, см. в статье [Компилирование конфигураций в Azure Automation DSC](automation-dsc-compile.md).
