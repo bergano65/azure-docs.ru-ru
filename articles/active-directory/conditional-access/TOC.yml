@@ -64,8 +64,6 @@
           href: howto-conditional-access-policy-compliant-device.md
     - name: Блокировка устаревших методов проверки подлинности
       href: block-legacy-authentication.md
-    - name: Условный доступ для регистрации MFA
-      href: '../authentication/howto-registration-mfa-sspr-combined.md#conditional-access-policies-for-combined-registration'
     - name: Требование доступа из утвержденных клиентских приложений
       href: app-based-conditional-access.md
     - name: Требование политики защиты приложений

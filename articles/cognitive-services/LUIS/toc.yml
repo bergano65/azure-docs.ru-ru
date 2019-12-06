@@ -60,9 +60,6 @@
         - name: Группирование и извлечение связанных данных с помощью составных сущностей
           href: luis-tutorial-composite-entity.md
           displayName: roles
-        - name: Извлечение имен с помощью простых сущностей
-          href: luis-quickstart-primary-and-secondary-data.md
-          displayName: roles
     - name: Улучшение приложения
       items:
         - name: Исправление неточных прогнозов

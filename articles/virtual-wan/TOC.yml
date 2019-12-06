@@ -24,8 +24,6 @@
           href: migrate-from-hub-spoke-topology.md
         - name: Архитектура глобальной транзитной сети
           href: virtual-wan-global-transit-network-architecture.md
-        - name: Уровень управления Office 365 в Виртуальной глобальной сети
-          href: virtual-wan-office365-overview.md
 - name: Руководства
   items:
     - name: Подключение шлюза виртуальной сети к Виртуальной глобальной сети
