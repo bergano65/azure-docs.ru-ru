@@ -1,17 +1,17 @@
 ---
 title: Сведения об управлении конфликтами между регионами в Azure Cosmos DB
-description: Сведения об управлении конфликтами в Azure Cosmos DB
+description: Узнайте, как управлять конфликтами в Azure Cosmos DB путем создания последней или пользовательской политики разрешения конфликтов.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 10/15/2019
+ms.date: 12/03/2019
 ms.author: mjbrown
-ms.openlocfilehash: 4c62fcc81eb3b045d3b4233e1bb3770ecb9865b3
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 9aab8f9bd202728f8882377f8249f6ebb99f3362
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72388082"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873698"
 ---
 # <a name="manage-conflict-resolution-policies-in-azure-cosmos-db"></a>Управление политиками разрешения конфликтов в Azure Cosmos DB
 

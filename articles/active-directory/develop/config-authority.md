@@ -3,27 +3,23 @@ title: Настройка MSAL для iOS и macOS для использован
 titleSuffix: Microsoft identity platform
 description: Узнайте, как использовать различные центры, такие как B2C, облака независимых и гостевые пользователи, с MSAL для iOS и macOS.
 services: active-directory
-documentationcenter: ''
 author: tylermsft
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/28/2019
 ms.author: twhitney
-ms.reviewer: ''
+ms.reviewer: oldalton
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4df5067317170e18a52fbac53bc02a2ba7d35aba
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: feea11dfa8e199d4c1c01ba7ec09003233574fbe
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73473792"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74843637"
 ---
 # <a name="how-to-configure-msal-for-ios-and-macos-to-use-different-identity-providers"></a>Как настроить MSAL для iOS и macOS для использования разных поставщиков удостоверений
 
@@ -185,7 +181,7 @@ do{
 
 Если URL-адрес центра имеет значение `"login.microsoftonline.com/common"`, пользователь будет входить в его домашний клиент. Однако некоторым приложениям может потребоваться подписать пользователя в другом клиенте, и некоторые приложения работают только с одним клиентом.
 
-Чтобы подписать пользователя в определенном клиенте, настройте `MSALPublicClientApplication` с помощью определенного центра. Например:
+Чтобы подписать пользователя в определенном клиенте, настройте `MSALPublicClientApplication` с помощью определенного центра. Пример.
 
 `https://login.microsoftonline.com/469fdeb4-d4fd-4fde-991e-308a78e4bea4`
 
@@ -253,4 +249,4 @@ do{
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о [потоках проверки подлинности и сценариях приложений](authentication-flows-app-scenarios.md)
+Дополнительные сведения см. в [Потоки проверки подлинности и сценарии приложений](authentication-flows-app-scenarios.md)

@@ -1,20 +1,20 @@
 ---
 title: Техническая документация по основным понятиям Azure Cosmos DB
-description: В этой технической документации подробно описаны основные понятия Azure Cosmos DB.
+description: Получите список технических документов по Azure Cosmos DB, эти технические документы подробно описывают концепции.
 ms.service: cosmos-db
 author: SnehaGunda
 ms.author: sngun
 ms.topic: conceptual
-ms.date: 05/28/2019
+ms.date: 12/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 69e75af8481b21929b8d36a14a2ce72ec3f9f5f2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: adbbdf39875e67552de2f797b94eae89e0aba409
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66257165"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74869788"
 ---
-# <a name="azure-cosmos-db-whitepapers"></a>Техническая документация по Azure Cosmos DB 
+# <a name="azure-cosmos-db-whitepapers"></a>Техническая документация по Azure Cosmos DB
 
 Техническая документация позволяет более подробно изучить основные понятия Azure Cosmos DB. В этой статье представлен список доступных технических документов по Azure Cosmos DB.
 

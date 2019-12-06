@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 791821fbfe5854c27b7e3e6927a56a66ac1f1dc2
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: b91e235824085977f1570e664b43d028a905407b
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819088"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74869805"
 ---
 # <a name="access-azure-cosmos-db-from-virtual-networks-vnet"></a>Доступ к Azure Cosmos DB из виртуальных сетей
 
@@ -40,6 +40,12 @@ ms.locfileid: "73819088"
 
 После того как конечная точка службы для Azure Cosmos DB будет включена в подсети, источник трафика, подключающийся к учетной записи, переключится с общего IP-адреса на виртуальную сеть и подсеть. Если ваша учетная запись Azure Cosmos имеет только брандмауэр на основе IP-адреса, трафик из подсети с поддержкой службы больше не будет соответствовать правилам брандмауэра для IP-адресов и, следовательно, будет отклонен. Выполните действия, чтобы прозрачно выполнить миграцию из брандмауэра на основе IP-адресов в виртуальную сеть с управлением доступом.
 
+### <a name="are-additional-rbac-permissions-needed-for-azure-cosmos-accounts-with-vnet-service-endpoints"></a>Требуются ли дополнительные разрешения RBAC, необходимые для учетных записей Azure Cosmos с конечными точками службы виртуальной сети?
+
+После добавления конечных точек службы виртуальной сети в учетную запись Azure Cosmos для внесения изменений в параметры учетной записи вам потребуется доступ к действию `Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action` для всех виртуальных сетей, настроенных в учетной записи Azure Cosmos. Это действие является обязательным, так как процесс авторизации проверяет наличие действий, соответствующих ресурсам базы данных и виртуальной сети, перед оценкой каких-либо свойств.
+ 
+Авторизация проверяется на наличие действий, даже если пользователь не указал списки ACL виртуальной сети с помощью Azure CLI. В настоящее время плоскость управления учетной записью Azure Cosmos поддерживает установку полного состояния учетной записи Azure Cosmos. Одним из параметров для вызовов плоскости управления является `virtualNetworkRules`. Если этот параметр не указан, Azure CLI вызывает получение базы данных для извлечения `virtualNetworkRules` и использует это значение в вызове Update.
+
 ### <a name="do-the-peered-virtual-networks-also-have-access-to-azure-cosmos-account"></a>У одноранговых виртуальных сетей также есть доступ к учетной записи Azure Cosmos? 
 Доступ имеют только виртуальные сети и их подсети, добавленные к учетной записи Azure Cosmos. Одноранговые виртуальные сети не могут получить доступ к учетной записи, пока подсети в одноранговых виртуальных сетях не будут добавлены в учетную запись.
 
@@ -62,5 +68,5 @@ ms.locfileid: "73819088"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получение доступа к ресурсам Azure Cosmos DB из виртуальных сетей](how-to-configure-vnet-service-endpoint.md)
-* [How-to configure IP firewall for your Azure Cosmos account](how-to-configure-firewall.md) (Настройка брандмауэра IP-адресов для учетной записи Azure Cosmos)
+* [How-to configure IP firewall for your Azure Cosmos account](how-to-configure-firewall.md) (Инструкции по настройке брандмауэра IP-адресов для учетной записи Azure Cosmos)
 

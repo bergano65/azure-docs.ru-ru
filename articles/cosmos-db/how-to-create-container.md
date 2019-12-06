@@ -1,17 +1,17 @@
 ---
 title: Создание контейнеров в Azure Cosmos DB
-description: Узнайте, как создать контейнеры в Azure Cosmos DB
+description: Узнайте, как создать контейнер в Azure Cosmos DB с помощью портал Azure, .NET, Java, Python, Node. js и других пакетов SDK.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/28/2019
+ms.date: 12/02/2019
 ms.author: mjbrown
-ms.openlocfilehash: 911f56cef58e5d9c161a3ba947850bcfff073200
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 4eaa2974817bfcd8bef83e5139d75a2d4c2ec107
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72242406"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873715"
 ---
 # <a name="create-an-azure-cosmos-container"></a>Создание контейнера Azure Cosmos
 
@@ -116,7 +116,7 @@ ms.locfileid: "72242406"
 * [Создание графа Gremlin с Azure CLI](./scripts/cli/gremlin/create.md)
 * [Создание API таблиц таблицы с Azure CLI](./scripts/cli/table/create.md)
 
-## Создание контейнера с помощью PowerShell<a id="ps-sql"></a><a id="ps-mongodb"><a id="ps-cassandra"></a><a id="ps-gremlin"><a id="ps-table"></a>
+## Создание контейнера с помощью PowerShell<a id="ps-sql"> </a><a id="ps-mongodb"><a id="ps-cassandra"></a><a id="ps-gremlin"><a id="ps-table"></a>
 
 В приведенных ниже ссылках показано, как создать ресурсы контейнера для Azure Cosmos DB с помощью PowerShell.
 
@@ -164,7 +164,7 @@ session.Execute(CREATE TABLE myKeySpace.myTable(
     lastName text) WITH cosmosdb_provisioned_throughput=1000);
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Partitioning in Azure Cosmos DB](partitioning-overview.md) (Секционирование в Azure Cosmos DB)
 * [Единицы запросов в Azure Cosmos DB](request-units.md)
