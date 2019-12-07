@@ -1,5 +1,5 @@
 ---
-title: Перемещение файлов между файловым хранилищем с помощью фабрики данных Azure
+title: Перемещение файлов между файловым хранилищем
 description: Узнайте, как использовать шаблон решения для перемещения файлов между файловым хранилищем с помощью фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 7/12/2019
-ms.openlocfilehash: f6f83917e84a880fb86b5f592c4d51b03462753d
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: e0f9179918016b9eaec04b0d559e25ed7973f18a
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73684081"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74896204"
 ---
 # <a name="move-files-with-azure-data-factory"></a>Перемещение файлов с помощью фабрики данных Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "73684081"
 
     ![Создание нового подключения к целевому хранилищу](media/solution-template-move-files/move-files2.png)
 
-3. Выберите **использовать этот шаблон**.
+3. Выберите **Использовать этот шаблон**.
 
     ![Использование шаблона](media/solution-template-move-files/move-files3.png)
     
