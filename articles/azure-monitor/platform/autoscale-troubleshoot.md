@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/4/2019
 ms.author: robb
 ms.subservice: autoscale
-ms.openlocfilehash: 14e2f79383aa45125ce6955f3611a75ece1df10d
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 410c182075d0aa288ad05195958c396f1a357ff1
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74152948"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74893575"
 ---
 # <a name="troubleshooting-azure-autoscale"></a>Устранение неполадок автоматического масштабирования Azure
  
@@ -115,7 +115,7 @@ Azure Monitor Автомасштабирование позволяет полу
 
 ![Параметры диагностики автомасштабирования](media/autoscale-troubleshoot/diagnostic-settings.png)
 
-На предыдущем рисунке показан портал Azure параметры диагностики автомасштабирования. Здесь можно выбрать вкладку Журналы диагностики и включить сбор журналов и маршрутизацию. Вы также можете выполнить то же действие с помощью REST API, интерфейса командной строки, PowerShell диспетчер ресурсов шаблонов для параметров диагностики, выбрав тип ресурса *Microsoft. Insights/AutoscaleSettings*. 
+На предыдущем рисунке показан портал Azure параметры диагностики автомасштабирования. Здесь можно выбрать вкладку "Диагностика и журналы ресурсов" и включить сбор журналов и маршрутизацию. Вы также можете выполнить то же действие с помощью REST API, интерфейса командной строки, PowerShell диспетчер ресурсов шаблонов для параметров диагностики, выбрав тип ресурса *Microsoft. Insights/AutoscaleSettings*. 
 
 ## <a name="troubleshooting-using-autoscale-logs"></a>Устранение неполадок с помощью журналов автомасштабирования 
 
@@ -209,5 +209,5 @@ AutoscaleScaleActionsLog
 
 Дополнительные сведения см. в статье [Автомасштабирование журналов ресурсов](autoscale-resource-log-schema.md) .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со сведениями о рекомендациях по [автомасштабированию](autoscale-best-practices.md). 

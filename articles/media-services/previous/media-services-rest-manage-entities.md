@@ -1,6 +1,6 @@
 ---
 title: Управление сущностями служб мультимедиа с помощью REST | Документация Майкрософт
-description: Сведения о том, как управлять сущностями служб мультимедиа с помощью REST API.
+description: В этой статье показано, как управлять сущностями служб мультимедиа с помощью REST API.
 author: juliako
 manager: femila
 editor: ''
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: ffbf30f2bfdf0a175513a8d2b9182b35c39f6aae
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1ecbca99a65d99cc3b8d842a7b61d858398a80ff
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60761715"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74885710"
 ---
 # <a name="managing-media-services-entities-with-rest"></a>Управление сущностями служб мультимедиа с помощью REST  
 
@@ -34,7 +34,7 @@ ms.locfileid: "60761715"
 В этой статье показано, как управлять сущностями служб мультимедиа с помощью REST.
 
 >[!NOTE]
-> Начиная с 1 апреля 2017 г. все записи задания в вашей учетной записи и связанные с ней записи задач старше 90 дней будут автоматически удалены, даже если общее число записей не превышает значение максимальной квоты. Например, 1 апреля 2017 г. будет автоматически удалена любая запись задания в вашей учетной записи, созданная ранее 31 декабря 2016 г. Если необходимо архивировать данные задания или задачи, то можно использовать код, описанный в этой статье.
+> Начиная с 1 апреля 2017 г. все записи задания в вашей учетной записи и связанные с ней записи задач старше 90 дней будут автоматически удалены, даже если общее число записей не превышает значение максимальной квоты. Например, 1 апреля 2017 г. будет автоматически удалена любая запись задания в вашей учетной записи, созданная ранее 31 декабря 2016 г. Если необходимо архивировать данные задания или задачи, то можно использовать код, описанный в этой статье.
 
 ## <a name="considerations"></a>Рекомендации  
 
@@ -42,7 +42,7 @@ ms.locfileid: "60761715"
 
 ## <a name="connect-to-media-services"></a>Подключение к службам мультимедиа
 
-Сведения о подключении к API AMS см. в разделе [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md). 
+См. дополнительные сведения о [получении доступа к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md). 
 
 ## <a name="adding-entities"></a>Добавление сущностей
 Каждая сущность в службах мультимедиа добавляется в набор сущностей, например активы (Assets), посредством запроса HTTP POST.
@@ -172,6 +172,6 @@ ms.locfileid: "60761715"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

@@ -6,13 +6,13 @@ ms.author: andrela
 ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 6616bd8172e9bc049a6e0e2c687390197de2f391
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 12/05/2019
+ms.openlocfilehash: 707f4eca440c0e8461420ff0bbc5e67f8e5ad69d
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74767319"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74888518"
 ---
 # <a name="customize-server-configuration-parameters-by-using-azure-cli"></a>Настройка параметров конфигурации сервера с помощью Azure CLI
 С помощью служебной программы командной строки (Azure CLI) можно вывести список параметров конфигурации для сервера Базы данных Azure для MariaDB, а также отобразить и обновить их. Только подмножество конфигураций ядра предоставляется на уровне сервера и может быть изменено.
@@ -67,6 +67,9 @@ az mariadb server configuration set --name slow_query_log --resource-group myres
 ```sql
 CALL mysql.az_load_timezone();
 ```
+
+> [!IMPORTANT]
+> Необходимо перезапустить сервер, чтобы убедиться, что таблицы часовых поясов заполнены правильно. Чтобы перезапустить сервер, используйте [портал Azure](howto-restart-server-portal.md) или [CLI](howto-restart-server-cli.md).
 
 Чтобы просмотреть доступные значения часового пояса, выполните следующую команду.
 

@@ -1,6 +1,6 @@
 ---
 title: 'Предустановка Media Encoder Standard в Azure: H264 Multiple Bitrate 4K | Документация Майкрософт'
-description: Этот раздел содержит общие сведения о предустановке задачи **H264 Multiple Bitrate 4K**.
+description: В этой статье приводятся общие сведения о предустановке Media Encoder Standard **H264 Single bitrate Multiple скоростью 4 КБ** .
 author: Juliako
 manager: femila
 editor: ''
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: e2c5339731267a00e3423e79bc25b9d03d274bfd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cec0fa3bd059cd31d9bd94773b0cce42d0f12a75
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61129590"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74887023"
 ---
 # <a name="h264-multiple-bitrate-4k"></a>H264 Multiple Bitrate 4K
 `Media Encoder Standard` определяет набор предустановок кодирования, которые можно использовать при создании заданий кодирования. Можно также использовать `preset name`, чтобы указать, в какой формат нужно закодировать файл мультимедиа. Или можно создать собственные предустановки в формате JSON или XML (с использованием кодировки UTF-8 или UTF-16). Затем следует передавать пользовательскую предустановку в кодировщик. Список предустановок, поддерживаемых данным кодировщиком `Media Encoder Standard`, приведен в разделе [Предустановки задач для Media Encoder Standard](media-services-mes-presets-overview.md).  
@@ -32,7 +32,7 @@ ms.locfileid: "61129590"
 >  Для кодирования в формат 4K необходимы зарезервированные единицы типа "Премиум". Дополнительные сведения см. в статье [Масштабирование кодирования](https://azure.microsoft.com/documentation/articles/media-services-portal-encoding-units).  
   
 > [!NOTE]
->  При изменении значений `Width` и `Height` слоев убедитесь в сохранении пропорций. Пример: 1920x1080, 1280x720, 1080x576, 640x360. Не следует использовать смешанные сочетания пропорций, например 1280x720, 720x480, 640x360.  
+>  При изменении значений `Width` и `Height` слоев убедитесь в сохранении пропорций. Например: 1920x1080, 1280x720, 1080x576, 640x360. Не следует использовать смешанные сочетания пропорций, например: 1280x720, 720x480, 640x360.  
   
  XML  
   

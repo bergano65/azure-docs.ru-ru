@@ -1,6 +1,6 @@
 ---
 title: Реагирование на события Служб мультимедиа Azure | Документация Майкрософт
-description: Подпишитесь на события хранилища Служб мультимедиа с помощью службы "Сетка событий Azure".
+description: В этой статье описывается, как подписываться на события служб мультимедиа с помощью службы "Сетка событий Azure".
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 08/08/2019
 ms.author: juliako
-ms.openlocfilehash: 07ad39bdcec6e4b00d3b47553930fc05694ca2af
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: e24bacb0ea7ab406442022915872fc77e9cc1a5e
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72026615"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74887890"
 ---
 # <a name="handling-event-grid-events"></a>Обработка событий Сетки событий
 
@@ -42,7 +42,7 @@ ms.locfileid: "72026615"
 > [!NOTE]
 > События подчиняются Соглашение об уровне обслуживанияу "Сетка событий" [(SLA)](https://azure.microsoft.com/support/legal/sla/event-grid/v1_0/). Если вы хотите получать уведомления о событиях с помощью интерфейсов API, см. примеры использования событий с [пакетом](https://github.com/Azure-Samples/media-services-v3-dotnet) SDK для .NET или [Java](https://github.com/Azure-Samples/media-services-v3-java).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Мониторинг событий — портал](monitor-events-portal-how-to.md)
 * [События монитора — CLI](job-state-events-cli-how-to.md)

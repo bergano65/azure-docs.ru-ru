@@ -1,5 +1,5 @@
 ---
-title: Копирование новых и измененных файлов с помощью LastModifiedDate с фабрикой данных Azure
+title: Копировать новые и измененные файлы по LastModifiedDate
 description: Узнайте, как использовать шаблон решения для копирования новых и измененных файлов с помощью LastModifiedDate с фабрикой данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 3/8/2019
-ms.openlocfilehash: aaa7114113d5f0330d2dc7d656b0d91963931512
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: ca752fb75b8e151de925d3b5604a7e7182d82e92
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73684236"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74896297"
 ---
 # <a name="copy-new-and-changed-files-by-lastmodifieddate-with-azure-data-factory"></a>Копирование новых и измененных файлов с помощью LastModifiedDate с фабрикой данных Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "73684236"
 -  *FolderPath_Source* — это путь к папке, в которой можно считывать файлы из исходного хранилища. Необходимо заменить значение по умолчанию на собственный путь к папке.
 -  *FolderPath_Destination* — путь к папке, в которую необходимо скопировать файлы в целевое хранилище. Необходимо заменить значение по умолчанию на собственный путь к папке.
 -  *LastModified_From* используется для выбора файлов, атрибут LastModifiedDate которых равен значению DateTime или равен ему.  Чтобы выбрать только новые файлы, которые не были скопированы в последний раз, это значение даты и времени может быть временем, когда конвейер был активирован в последний раз. Вы можете заменить значение по умолчанию "2019-02-01T00:00:00Z" ожидаемым LastModifiedDate в часовом поясе UTC. 
--  *LastModified_To* используется для выбора файлов, атрибут LastModifiedDate которых находится перед этим значением DateTime. Чтобы выбрать только новые файлы, которые не были скопированы в последний раз, это значение даты и времени может быть текущим временем.  Вы можете заменить значение по умолчанию "2019-02-01T00:00:00Z" ожидаемым LastModifiedDate в часовом поясе UTC. 
+-  *LastModified_To* используется для выбора файлов, атрибут LastModifiedDate которых предшествует этому значению DateTime. Чтобы выбрать только новые файлы, которые не были скопированы в последний раз, это значение даты и времени может быть текущим временем.  Вы можете заменить значение по умолчанию "2019-02-01T00:00:00Z" ожидаемым LastModifiedDate в часовом поясе UTC. 
 
 ## <a name="how-to-use-this-solution-template"></a>Использование шаблона решения
 
@@ -51,7 +51,7 @@ ms.locfileid: "73684236"
 
     ![Создание нового подключения к целевому хранилищу](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate3.png)
 
-4. Выберите **использовать этот шаблон**.
+4. Выберите **Использовать этот шаблон**.
 
     ![Использование шаблона](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate4.png)
     

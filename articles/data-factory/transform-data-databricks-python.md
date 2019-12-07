@@ -1,5 +1,5 @@
 ---
-title: Преобразование данных с помощью кирпичей Python в Azure
+title: Преобразование данных с помощью кирпичей Python
 description: Сведения об обработке или преобразовании данных с помощью Databricks Python.
 services: data-factory
 documentationcenter: ''
@@ -12,12 +12,12 @@ author: djpmsft
 ms.author: daperlov
 ms.reviewer: maghan
 manager: craigg
-ms.openlocfilehash: 47654e8183dab120376f94df63d7664ead5dd580
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 1acc484b8843fc1fe1acae5759a24f923396e003
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73683937"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74893949"
 ---
 # <a name="transform-data-by-running-a-python-activity-in-azure-databricks"></a>Преобразование данных с помощью выполнения действий Python в Azure Databricks
 
@@ -62,14 +62,14 @@ ms.locfileid: "73683937"
 
 В следующей таблице приведено описание свойств, используемых в определении JSON.
 
-|Свойство|ОПИСАНИЕ|обязательные|
+|Свойство|Описание|Обязательно для заполнения|
 |---|---|---|
-|Имя|Имя действия в конвейере.|Yes|
-|Описание|Описание действия.|Нет|
-|type|Тип действия Python в Databricks — DatabricksSparkPython.|Yes|
-|linkedServiceName (имя связанной службы)|Имя связанной службы Databricks, в которой выполняется действие Python. Дополнительные сведения об этой связанной службе см. в статье  [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md) .|Yes|
-|pythonFile|URI файла Python, который будет выполнен. Поддерживаются только пути DBFS.|Yes|
-|Параметры|Параметры командной строки, которые будут переданы в файл Python. Массив строк.|Нет|
+|name|Имя действия в конвейере.|ДА|
+|Description (Описание)|Описание действия.|Нет|
+|Тип|Тип действия Python в Databricks — DatabricksSparkPython.|ДА|
+|linkedServiceName|Имя связанной службы Databricks, в которой выполняется действие Python. Дополнительные сведения об этой связанной службе см. в статье  [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md) .|ДА|
+|pythonFile|URI файла Python, который будет выполнен. Поддерживаются только пути DBFS.|ДА|
+|parameters|Параметры командной строки, которые будут переданы в файл Python. Массив строк.|Нет|
 |libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Массив объектов <строка, объект>|Нет|
 
 ## <a name="supported-libraries-for-databricks-activities"></a>Поддерживаемые библиотеки для действий Databricks

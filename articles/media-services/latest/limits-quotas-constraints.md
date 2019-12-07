@@ -1,6 +1,6 @@
 ---
 title: Квоты и ограничения платформы "Службы мультимедиа Azure" версии 3 | Документация Майкрософт
-description: В этом разделе описываются квоты и ограничения платформы "Службы мультимедиа Azure" версии 3.
+description: В этом разделе описываются квоты и ограничения в Cлужбы мультимедиа Microsoft Azure v3.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 10/17/2019
 ms.author: juliako
-ms.openlocfilehash: 2a530d6a1a447ccde448259623da6faeaa6a4d72
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 5a4f7e31cb17f47e8796ab99c1f8a089339903df
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72598361"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74888433"
 ---
 # <a name="quotas-and-limitations-in-azure-media-services-v3"></a>Квоты и ограничения платформы "Службы мультимедиа Azure" версии 3
 

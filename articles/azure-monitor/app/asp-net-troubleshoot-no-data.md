@@ -7,14 +7,15 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 07/23/2018
-ms.openlocfilehash: 857188ebb5ddc3c24f6a225819c47fc1643417e6
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: a1e299f195a148ebd1bdbda91e5a56e297f34d31
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73887530"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74889181"
 ---
-# <a name="troubleshooting-no-data---application-insights-for-net"></a>Устранение неполадок, связанных с тем, что в Application Insights для .NET не отображаются данные
+# <a name="troubleshooting-no-data---application-insights-for-netnet-core"></a>Устранение неполадок без Application Insights данных для .NET и .NET Core
+
 ## <a name="some-of-my-telemetry-is-missing"></a>Некоторая телеметрия отсутствует
 *В Application Insights отображается только часть событий, создаваемых приложением.*
 
@@ -113,7 +114,7 @@ ms.locfileid: "73887530"
 
 Исправление:
 
-* В обозревателе решений щелкните проект правой кнопкой мыши и выберите пункт Application Insights, а затем — "Настроить Application Insights". В открывшемся диалоговом окне можно отправить данные телеметрии в существующий ресурс или создать новый. Или:
+* В обозревателе решений щелкните проект правой кнопкой мыши и выберите пункт Application Insights, а затем — "Настроить Application Insights". В открывшемся диалоговом окне можно отправить данные телеметрии в существующий ресурс или создать новый. Или сделайте так:
 * Откройте ресурс напрямую. Войдите на [портал Azure](https://portal.azure.com), выберите пункт Application Insights на панели навигации слева и выберите приложение.
 
 ## <a name="where-do-i-find-my-telemetry"></a>Где найти мои данные телеметрии
@@ -181,7 +182,7 @@ ms.locfileid: "73887530"
 Город, область и страна определяются по IP-адресу и не всегда являются точными. Эти IP-адреса сначала обрабатываются для расположения, а затем изменяются на IP-адрес 0.0.0.0 для хранения.
 
 ## <a name="exception-method-not-found-on-running-in-azure-cloud-services"></a>Исключение "метод не найден" при выполнении в облачных службах Azure
-Выполняется сборка для .NET 4.6? Версия 4.6 не поддерживается автоматически в ролях облачных служб Azure. [Установите версию 4.6 в каждой роли](../../cloud-services/cloud-services-dotnet-install-dotnet.md) , прежде чем запустить приложение.
+Выполняется сборка для .NET 4.6? Версия 4.6 не поддерживается автоматически в ролях облачных служб Azure. [установите версию 4.6 в каждой роли](../../cloud-services/cloud-services-dotnet-install-dotnet.md) .
 
 ## <a name="troubleshooting-logs"></a>Журналы для устранения неполадок
 
@@ -212,7 +213,7 @@ ms.locfileid: "73887530"
 
 1. Установите пакет [Microsoft.AspNet.ApplicationInsights.HostingStartup](https://www.nuget.org/packages/Microsoft.AspNet.ApplicationInsights.HostingStartup) из NuGet. Устанавливаемая версия должна соответствовать текущей установленной версии `Microsoft.ApplicationInsights`
 
-Последняя версия Microsoft. ApplicationInsights. AspNetCore — 2.7.1, и она ссылается на Microsoft. ApplicationInsights версии 2,10. Таким образом, устанавливаемая версия Microsoft. AspNet. ApplicationInsights. Хостингстартуп должна быть 2.10.0
+Последняя версия Microsoft. ApplicationInsights. AspNetCore — 2.8.2, и она ссылается на Microsoft. ApplicationInsights версии 2.11.2. Таким образом, устанавливаемая версия Microsoft. AspNet. ApplicationInsights. Хостингстартуп должна быть 2.11.2
 
 2. Изменить `ConfigureServices` метод в вашем `Startup.cs` классе:
 

@@ -1,6 +1,6 @@
 ---
 title: Подключение к API служб мультимедиа Azure v3 — Node. js
-description: Узнайте, как подключиться к API служб мультимедиа v3 с помощью Node. js.
+description: В этой статье показано, как подключиться к API служб мультимедиа v3 с помощью Node. js.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -13,18 +13,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/25/2019
 ms.author: juliako
-ms.openlocfilehash: 5361a820da0caa336ccc95ae657407889443268c
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.openlocfilehash: 0381a2e2b8fd2a8b60e7cb702e0336a5678df057
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74048420"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74896100"
 ---
 # <a name="connect-to-media-services-v3-api---nodejs"></a>Подключение к службам мультимедиа v3 API-Node. js
 
 В этой статье показано, как подключиться к пакету SDK для Node. js служб мультимедиа Azure с помощью метода входа субъекта-службы.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 - Установите [Node.js](https://nodejs.org/en/download/).
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи служб мультимедиа.
@@ -54,7 +54,7 @@ ms.locfileid: "74048420"
 
 Должны быть указаны следующие пакеты:
 
-|Package|ОПИСАНИЕ|
+|Package|Описание|
 |---|---|
 |`azure-arm-mediaservices`|Пакет SDK служб мультимедиа Azure. <br/>Чтобы убедиться, что используется последний пакет служб мультимедиа Azure, установите флажок [NPM Install Azure-ARM-mediaservices](https://www.npmjs.com/package/azure-arm-mediaservices/).|
 |`azure-storage`|Пакет SDK для службы хранилища. Используется при отправке файлов в активы.|
@@ -123,12 +123,12 @@ npm install
 node index.js
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
 - [Основные понятия служб мультимедиа Azure](concepts-overview.md)
 - [NPM install azure-arm-mediaservices](https://www.npmjs.com/package/azure-arm-mediaservices/)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучите справочную документацию [Node.js](/javascript/api/overview/azure/mediaservices/management) Служб мультимедиа и ознакомьтесь с [примерами](https://github.com/Azure-Samples/media-services-v3-node-tutorials), показывающими как использовать API Служб мультимедиа с Node.js.
 

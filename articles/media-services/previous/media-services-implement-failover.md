@@ -1,6 +1,6 @@
 ---
 title: Реализация потоковой передачи отработки отказа с помощью служб мультимедиа Azure | Документация Майкрософт
-description: В этой статье описывается реализация сценария потоковой передачи отработки отказа.
+description: В этой статье показано, как реализовать сценарий потоковой передачи для отработки отказа с помощью служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: ea5238df50ff050140453ce655ea041669f6080c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 195f7f089b84e1665f4dd078a7da141d531c2185
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67051655"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74887192"
 ---
-# <a name="implement-failover-streaming-with-media-services"></a>Реализация отработки отказа потоковой передачи с помощью служб мультимедиа 
+# <a name="implement-failover-streaming-with-media-services"></a>Реализация потоковой передачи отработки отказа с помощью служб мультимедиа 
 
 В этом пошаговом руководстве показано, как скопировать содержимое (большие двоичные объекты) из одного ресурса в другой для обработки избыточности потокового воспроизведения по запросу. В этом сценарии можно получить сведения о настройке сети доставки содержимого Azure для выполнения отработки отказа между двумя центрами обработки данных в случае сбоя в работе одного из них. В этом пошаговом руководстве пакет SDK и REST API служб мультимедиа Azure, а также пакет SDK службы хранилища Azure используются для демонстрации следующих задач:
 
@@ -52,7 +52,7 @@ ms.locfileid: "67051655"
 
 ## <a name="prerequisites"></a>Технические условия
 * Две учетные записи служб мультимедиа в новой или существующей подписке Azure. См. статью [Создание учетной записи служб мультимедиа](media-services-portal-create-account.md).
-* Операционная система: Windows 7, Windows 2008 R2 или Windows 8.
+* Операционные системы: Windows 7, Windows 2008 R2 или Windows 8.
 * .NET Framework 4.5 или .NET Framework 4.
 * Visual Studio 2010 с пакетом обновления 1 или более поздней версии (Professional, Premium, Ultimate или Express).
 
@@ -936,6 +936,6 @@ ms.locfileid: "67051655"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

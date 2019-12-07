@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: arthii, logicappspm
 ms.topic: article
-ms.date: 11/06/2019
-ms.openlocfilehash: 9f933a9ad63af11bcfee7c90f17318f5a237b962
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.date: 12/05/2019
+ms.openlocfilehash: 4fbfb31feb2183e3175a96023cbb3b08c4d18027
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74792093"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74893701"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
@@ -86,14 +86,6 @@ ms.locfileid: "74792093"
 
 1. [Скачайте и запустите установщик шлюза на локальном компьютере](https://aka.ms/on-premises-data-gateway-installer).
 
-1. После открытия установщика нажмите кнопку **Далее**.
-
-   ![Начальный экран для установщика шлюза](./media/logic-apps-gateway-install/gateway-intro-screen.png)
-
-1. Выберите **локальный шлюз данных (рекомендуется)** , который является стандартным режимом, и нажмите кнопку **Далее**.
-
-   ![Выбор режима выполнения для шлюза данных](./media/logic-apps-gateway-install/select-gateway-running-mode.png)
-
 1. Просмотрите минимальные требования, оставьте путь установки по умолчанию, примите условия использования и нажмите кнопку **установить**.
 
    ![Проверка требований и принятие условий использования](./media/logic-apps-gateway-install/review-and-accept-terms-of-use.png)
@@ -104,7 +96,7 @@ ms.locfileid: "74792093"
 
    Установка шлюза может ссылаться только на одну учетную запись Azure.
 
-1. Выберите **зарегистрировать новый шлюз на этом компьютере** > **Далее**. Этот шаг регистрирует установку шлюза в [облачной службе шлюза](#gateway-cloud-service).
+1. Последовательно выберите **Регистрация нового шлюза на этом компьютере** > **Далее**. Этот шаг регистрирует установку шлюза в [облачной службе шлюза](#gateway-cloud-service).
 
    ![Регистрация шлюза на локальном компьютере](./media/logic-apps-gateway-install/register-gateway-local-computer.png)
 
@@ -246,7 +238,7 @@ ms.locfileid: "74792093"
 
 Если вы не являетесь администратором домена, возможно, вы не знаете имя участника-пользователя. Чтобы найти имя участника-пользователя для своей учетной записи, выполните команду `whoami /upn` на рабочей станции. Хотя результат выглядит как адрес электронной почты, результатом является имя участника-пользователя для учетной записи локального домена.
 
-### <a name="synchronize-an-on-premises-active-directory-with-azure-ad"></a>Синхронизация локальной Active Directory с Azure AD
+### <a name="synchronize-an-on-premises-active-directory-with-azure-ad"></a>Синхронизация локального каталога Active Directory с Azure AD
 
 Имя участника-пользователя для локальных учетных записей Active Directory и учетных записей Azure AD должно быть одинаковым. Убедитесь, что каждая локальная учетная запись Active Directory соответствует учетной записи Azure AD. Облачные службы узнают только об учетных записях в Azure AD. Поэтому вам не нужно добавлять учетную запись в локальный Active Directory. Если учетная запись не существует в Azure AD, эту учетную запись использовать нельзя.
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/08/2019
 ms.author: juliako
-ms.openlocfilehash: 42724ae3619312c2cc172be0e143291cd7fa2a70
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 786aefbd8657046f18042defd71dfcb38528eecf
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71261106"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74887957"
 ---
 # <a name="monitor-media-services-diagnostic-logs"></a>Мониторинг журналов диагностики служб мультимедиа
 
@@ -26,7 +26,7 @@ ms.locfileid: "71261106"
 
 В этой статье показано, как перенаправлять данные в учетную запись хранения и просматривать их. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
 - Ознакомьтесь с разделом [мониторинг метрик и журналов диагностики служб мультимедиа](media-services-metrics-diagnostic-logs.md).
@@ -49,13 +49,13 @@ ms.locfileid: "71261106"
 
    ![Раздел параметров диагностики](media/media-services-diagnostic-logs/logs02.png)
 1. Задайте для ползунка **Хранение (в днях)** значение 30. Этот ползунок задает количество дней хранения данных мониторинга в учетной записи хранения. Azure Monitor автоматически удаляет данные, которые хранятся дольше заданного количества дней. Нулевое значение для периода хранения означает, что данные будут храниться неограниченно долго.
-1. Нажмите кнопку **Сохранить**.
+1. В нижней части страницы нажмите кнопку **Save**.
 
 Данные мониторинга из ресурса теперь поступают в учетную запись хранения.
 
 ## <a name="route-data-to-the-storage-account-using-the-cli"></a>Маршрутизация данных в учетную запись хранения с помощью интерфейса командной строки
 
-Чтобы включить хранение журналов диагностики в учетной записи хранения, выполните следующую `az monitor diagnostic-settings` команду интерфейса командной строки: 
+Чтобы включить хранение журналов диагностики в учетной записи хранения, выполните следующую команду `az monitor diagnostic-settings` CLI: 
 
 ```cli
 az monitor diagnostic-settings create --name <diagnostic name> \
@@ -73,7 +73,7 @@ az monitor diagnostic-settings create --name <diagnostic name> \
     }]'
 ```
 
-Пример:
+Пример.
 
 ```cli
 az monitor diagnostic-settings create --name amsv3diagnostic \
@@ -174,12 +174,12 @@ az monitor diagnostic-settings create --name amsv3diagnostic \
 }
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
 * [Метрики Azure Monitor](../../azure-monitor/platform/data-platform.md)
 * [Журналы диагностики Azure Monitor](../../azure-monitor/platform/resource-logs-overview.md)
 * [Как получить и использовать данные журнала из ресурсов Azure](../../azure-monitor/platform/resource-logs-overview.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Мониторинг метрик](media-services-metrics-howto.md)

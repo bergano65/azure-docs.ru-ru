@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.date: 10/26/2017
 ms.author: tomfitz
-ms.openlocfilehash: 21f4e0aa339eb0c746f9b9b06f8aaada6c4d4b71
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7f00a99a31a4543ef45c90a86820e627134d8963
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61043456"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74888705"
 ---
 # <a name="work-with-resources-in-the-managed-resource-group-for-azure-managed-application"></a>Работа с ресурсами в управляемой группе ресурсов для управляемого приложения Azure
 
 В этой статье объясняется, как обновлять ресурсы, развернутые в рамках управляемого приложения. Издатель управляемого приложения имеет доступ к ресурсам в управляемой группе ресурсов. Чтобы обновить эти ресурсы, найдите управляемую группу ресурсов, которая связана с управляемым приложением, и перейдите к ресурсу в этой группе.
 
-В этой статье предполагается, что вы уже развернули управляемое приложение в примере проекта [Managed Web Application (IaaS) with Azure management services](https://github.com/Azure/azure-managedapp-samples/tree/master/samples/201-managed-web-app) (Управляемое веб-приложение (IaaS) и службы управления Azure). Это управляемое приложение развертывается с виртуальной машиной **Standard_D1_v2**. Если вы не развернули это управляемое приложение, можете продолжить ознакомление с этой статьей, чтобы понять, как обновляется управляемая группа ресурсов.
+В этой статье предполагается, что вы уже развернули управляемое приложение в примере проекта [Managed Web Application (IaaS) with Azure management services](https://github.com/Azure/azure-managedapp-samples/tree/master/Managed%20Application%20Sample%20Packages/201-managed-web-app) (Управляемое веб-приложение (IaaS) и службы управления Azure). Это управляемое приложение развертывается с виртуальной машиной **Standard_D1_v2**. Если вы не развернули это управляемое приложение, можете продолжить ознакомление с этой статьей, чтобы понять, как обновляется управляемая группа ресурсов.
 
 На рисунке ниже показано развернутое управляемое приложение.
 
