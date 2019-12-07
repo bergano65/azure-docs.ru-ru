@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/18/2019
-ms.openlocfilehash: 8b40d89920208eaf15e01b3519b667a77baf8671
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: bd6590ebbd33dc5c9b65fc193679f4bf99760c3a
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72932577"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74894153"
 ---
 # <a name="log-data-ingestion-time-in-azure-monitor"></a>Время приема данных журнала в Azure Monitor
 Azure Monitor — это высокомасштабируемая служба, которая обслуживает тысячи клиентов, ежемесячно отправляющих стремительными темпами терабайты данных. Часто возникают вопросы о времени, в течение которого собранные данные журнала становятся доступными. В этой статье объясняются факторы, влияющие на эту задержку.
@@ -40,10 +40,10 @@ Azure Monitor — это высокомасштабируемая служба,
 ### <a name="agent-upload-frequency"></a>Частота отправки данных агентом
 Подтверждая простоту своего функционала, агент Log Analytics помещает журналы в буфер и периодически отправляет их в Azure Monitor. В зависимости от типа данных частота отправки меняется от 30 секунд до 2 минут. Большая часть данных отправляется меньше чем через минуту. Состояние сети может отрицательно повлиять на задержку при достижении этими данными точки приема Azure Monitor.
 
-### <a name="azure-activity-logs-diagnostic-logs-and-metrics"></a>Журналы действий Azure, журналы диагностики и метрики
+### <a name="azure-activity-logs-resource-logs-and-metrics"></a>Журналы действий Azure, журналы ресурсов и метрики
 Отправка данных Azure для обработки в точку приема Log Analytics занимает некоторое время:
 
-- Получение данных из журналов диагностики занимает от 2 до 15 минут, в зависимости от службы Azure. Ознакомьтесь с [запросом ниже](#checking-ingestion-time), чтобы изучить задержку в своей среде.
+- В зависимости от службы Azure данные из журналов ресурсов занимают 2-15 минут. Ознакомьтесь с [запросом ниже](#checking-ingestion-time), чтобы изучить задержку в своей среде.
 - Отправка метрик платформы Azure в точку приема Log Analytics занимает 3 минуты.
 - Отправка данных журнала действий в точку приема данных Log Analytics займет от 10 до 15 минут.
 
@@ -80,7 +80,7 @@ Azure Monitor — это высокомасштабируемая служба,
 |:---|:---|:---|
 | Запись, созданная в источнике данных | [TimeGenerated](log-standard-properties.md#timegenerated-and-timestamp) <br>Если источник данных не задает это значение, он будет установлен в то же время, что и _TimeReceived. |
 | Запись, полученная конечной точкой приема Azure Monitor | [_TimeReceived](log-standard-properties.md#_timereceived) | |
-| Запись, сохраненная в рабочей области и доступная для запросов | [ingestion_time()](/azure/kusto/query/ingestiontimefunction) | |
+| Запись, сохраненная в рабочей области и доступная для запросов | [ingestion_time ()](/azure/kusto/query/ingestiontimefunction) | |
 
 ### <a name="ingestion-latency-delays"></a>Задержки приема данных
 Можно измерять задержку конкретной записи, сравнивая результат функции [ingestion_time ()](/azure/kusto/query/ingestiontimefunction) со свойством _timegenerated_ . Эти данные можно использовать в различных агрегатах, чтобы определить поведение при задержке приема данных. Изучите некоторый процентиль времени приема для получения аналитических сведений по большому объему данных. 

@@ -2,13 +2,13 @@
 title: Теги ресурсов для логической организации
 description: Здесь описано, как применить теги, чтобы организовать ресурсы Azure для выставления счетов и управления.
 ms.topic: conceptual
-ms.date: 12/04/2019
-ms.openlocfilehash: c0a34204b5eb7080c6444e69def9d82d0193783b
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.date: 12/05/2019
+ms.openlocfilehash: a0ba5ba89b966de4aa1d1394f7d90c99f8352115
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74850607"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74893031"
 ---
 # <a name="use-tags-to-organize-your-azure-resources"></a>Организация ресурсов Azure с помощью тегов
 
@@ -62,34 +62,34 @@ Dept                           IT
 Environment                    Test
 ```
 
-Чтобы просмотреть существующие теги для *ресурса с указанным идентификатором ресурса*, используйте:
-
-```azurepowershell-interactive
-(Get-AzResource -ResourceId /subscriptions/<subscription-id>/resourceGroups/<rg-name>/providers/Microsoft.Storage/storageAccounts/<storage-name>).Tags
-```
-
-Или чтобы просмотреть существующие теги для *ресурса с указанным именем и группой ресурсов*, используйте:
+Чтобы просмотреть существующие теги для *ресурса с указанным именем и группой ресурсов*, используйте:
 
 ```azurepowershell-interactive
 (Get-AzResource -ResourceName examplevnet -ResourceGroupName examplegroup).Tags
 ```
 
-Чтобы получить *группы ресурсов с определенным тегом*, используйте:
+Если у вас есть идентификатор ресурса для ресурса, можно передать этот идентификатор ресурса для получения тегов.
 
 ```azurepowershell-interactive
-(Get-AzResourceGroup -Tag @{ Dept="Finance" }).ResourceGroupName
+(Get-AzResource -ResourceId /subscriptions/<subscription-id>/resourceGroups/<rg-name>/providers/Microsoft.Storage/storageAccounts/<storage-name>).Tags
+```
+
+Чтобы получить *группы ресурсов с указанными именем и значением тега*, используйте:
+
+```azurepowershell-interactive
+(Get-AzResourceGroup -Tag @{ "Dept"="Finance" }).ResourceGroupName
+```
+
+Чтобы получить *ресурсы с указанными именем и значением тега*, используйте:
+
+```azurepowershell-interactive
+(Get-AzResource -Tag @{ "Dept"="Finance"}).Name
 ```
 
 Чтобы получить *ресурсы с определенным тегом*, используйте:
 
 ```azurepowershell-interactive
-(Get-AzResource -Tag @{ Dept="Finance"}).Name
-```
-
-Чтобы получить *ресурсы с определенным тегом*, используйте:
-
-```azurepowershell-interactive
-(Get-AzResource -TagName Dept).Name
+(Get-AzResource -TagName "Dept").Name
 ```
 
 Каждый раз, когда вы добавляете теги к ресурсу или группе ресурсов, вы перезаписываете существующие теги в этом ресурсе или группе. Поэтому необходимо использовать другой подход, исходя из того, имеются ли теги в ресурсе или в группе ресурсов.
@@ -97,7 +97,7 @@ Environment                    Test
 Чтобы добавить теги в *группу ресурсов без тегов*, используйте этот командлет:
 
 ```azurepowershell-interactive
-Set-AzResourceGroup -Name examplegroup -Tag @{ Dept="IT"; Environment="Test" }
+Set-AzResourceGroup -Name examplegroup -Tag @{ "Dept"="IT"; "Environment"="Test" }
 ```
 
 Чтобы добавить теги в *группу ресурсов с существующими тегами*, извлеките их, добавьте новый тег и повторно примените теги:
@@ -111,32 +111,36 @@ Set-AzResourceGroup -Tag $tags -Name examplegroup
 Чтобы добавить теги в *ресурс без тегов*, используйте этот командлет:
 
 ```azurepowershell-interactive
-$r = Get-AzResource -ResourceName examplevnet -ResourceGroupName examplegroup
-Set-AzResource -Tag @{ Dept="IT"; Environment="Test" } -ResourceId $r.ResourceId -Force
+$resource = Get-AzResource -ResourceName examplevnet -ResourceGroupName examplegroup
+Set-AzResource -Tag @{ "Dept"="IT"; "Environment"="Test" } -ResourceId $resource.ResourceId -Force
+```
+
+В группе ресурсов может быть несколько ресурсов с одним и тем же именем. В этом случае можно задать каждый ресурс с помощью следующих команд:
+
+```azurepowershell-interactive
+$resource = Get-AzResource -ResourceName sqlDatabase1 -ResourceGroupName examplegroup
+$resource | ForEach-Object { Set-AzResource -Tag @{ "Dept"="IT"; "Environment"="Test" } -ResourceId $_.ResourceId -Force }
 ```
 
 Чтобы добавить теги в *ресурс с существующими тегами*, используйте:
 
 ```azurepowershell-interactive
-$r = Get-AzResource -ResourceName examplevnet -ResourceGroupName examplegroup
-$r.Tags.Add("Status", "Approved")
-Set-AzResource -Tag $r.Tags -ResourceId $r.ResourceId -Force
+$resource = Get-AzResource -ResourceName examplevnet -ResourceGroupName examplegroup
+$resource.Tags.Add("Status", "Approved")
+Set-AzResource -Tag $resource.Tags -ResourceId $resource.ResourceId -Force
 ```
 
 Чтобы применить все теги из группы ресурсов к его ресурсам и *не сохранить существующие теги в ресурсах*, используйте следующий скрипт:
 
 ```azurepowershell-interactive
-$groups = Get-AzResourceGroup
-foreach ($g in $groups)
-{
-    Get-AzResource -ResourceGroupName $g.ResourceGroupName | ForEach-Object {Set-AzResource -ResourceId $_.ResourceId -Tag $g.Tags -Force }
-}
+$group = Get-AzResourceGroup -Name examplegroup
+Get-AzResource -ResourceGroupName $group.ResourceGroupName | ForEach-Object {Set-AzResource -ResourceId $_.ResourceId -Tag $group.Tags -Force }
 ```
 
 Чтобы применить все теги из группы ресурсов к своим ресурсам и *сохранить существующие теги на ресурсах, которые не являются повторяющимися*, используйте следующий скрипт:
 
 ```azurepowershell-interactive
-$group = Get-AzResourceGroup "examplegroup"
+$group = Get-AzResourceGroup -Name examplegroup
 if ($null -ne $group.Tags) {
     $resources = Get-AzResource -ResourceGroupName $group.ResourceGroupName
     foreach ($r in $resources)

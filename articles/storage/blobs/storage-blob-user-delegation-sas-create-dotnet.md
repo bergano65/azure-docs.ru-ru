@@ -1,20 +1,21 @@
 ---
-title: Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с помощью .NET (Предварительная версия) — служба хранилища Azure
-description: Узнайте, как создать SAS для делегирования пользователей (Предварительная версия) с помощью учетных данных Azure Active Directory в службе хранилища Azure с помощью клиентской библиотеки .NET.
+title: Использование .NET для создания SAS делегирования пользователя для контейнера или большого двоичного объекта
+titleSuffix: Azure Storage
+description: Узнайте, как создать SAS для делегирования пользователей (Предварительная версия) с учетными данными Azure Active Directory с помощью клиентской библиотеки .NET для службы хранилища Azure.
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: conceptual
-ms.date: 12/03/2019
+ms.topic: how-to
+ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
-ms.openlocfilehash: dada27f1fa08cdaa6c2495246375869ea5a8ab9e
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 915f2895fbc1e543fbbfbb408ba27eb758a40515
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74806938"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892538"
 ---
 # <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-net-preview"></a>Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с помощью .NET (Предварительная версия)
 

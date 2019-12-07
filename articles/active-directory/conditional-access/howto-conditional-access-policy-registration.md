@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08c1db1a8e377edd1bf9b8f1b942e65b970edf56
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 866b682c9e1ebcb1b3458d26c638237905d06b05
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74803688"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74889740"
 ---
 # <a name="conditional-access-require-trusted-location-for-mfa-registration"></a>Условный доступ: требовать надежное расположение для регистрации MFA
 
-Теперь, когда и как пользователи регистрируются в службе многофакторной идентификации Azure и самостоятельного сброса пароля, вы можете использовать действия пользователя в политике условного доступа. Эта предварительная версия функции доступна для организаций, которые включили [объединенную предварительную версию регистрации](../authentication/concept-registration-mfa-sspr-combined.md). Эта функция может быть включена в организациях, где пользователи должны зарегистрироваться для использования многофакторной идентификации Azure и SSPR из центрального расположения, такого как надежное сетевое расположение во время адаптации персонала. Дополнительные сведения о создании надежных расположений в условном доступе см. в статье [что такое условие расположения в Azure Active Directory условном доступе?](../conditional-access/location-condition.md#named-locations)
+Теперь, когда и как пользователи регистрируются в службе многофакторной идентификации Azure и самостоятельного сброса пароля, вы можете использовать действия пользователя в политике условного доступа. Эта предварительная версия функции доступна для организаций, которые включили [объединенную предварительную версию регистрации](../authentication/concept-registration-mfa-sspr-combined.md). Эта функция может быть включена в организациях, где они хотят использовать такие условия, как доверенное сетевое расположение, чтобы ограничить доступ для регистрации в службе многофакторной идентификации Azure и SSPR. Дополнительные сведения о создании надежных расположений в условном доступе см. в статье [что такое условие расположения в Azure Active Directory условном доступе?](../conditional-access/location-condition.md#named-locations)
 
 ## <a name="create-a-policy-to-require-registration-from-a-trusted-location"></a>Создание политики, требующей регистрации из надежного расположения
 

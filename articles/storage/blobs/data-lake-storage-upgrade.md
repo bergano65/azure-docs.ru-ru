@@ -8,12 +8,12 @@ ms.date: 11/19/2019
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: rugopala
-ms.openlocfilehash: 158d92c6b0527f24d12044fe3038c1cd7f3f45ac
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 9302cb8c78766611518139437abd666394c6206c
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74850998"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74894238"
 ---
 # <a name="upgrade-azure-data-lake-storage-from-gen1-to-gen2"></a>Обновление Azure Data Lake Storage с GEN1 на Gen2
 
@@ -137,7 +137,7 @@ ms.locfileid: "74850998"
 | Платформа аналитики | Cloudera     | CDH                  | [Ссылка](https://www.cloudera.com/documentation/enterprise/5-11-x/topics/admin_adls_config.html)                                                                                            | *Пока недоступно*                                                                                                  | [Ссылка](https://www.cloudera.com/documentation/enterprise/latest/topics/admin_adls2_config.html)                                                                                                  |
 |                     | Cloudera     | Altus                | [Ссылка](https://www.cloudera.com/more/news-and-blogs/press-releases/2017-09-27-cloudera-introduces-altus-data-engineering-microsoft-azure-hybrid-multi-cloud-data-analytic-workflows.html) | *Не поддерживаются*                                                                                                                  | *Пока недоступно*                                                                                                  |
 |                     | HortonWorks  | HDP 3.0              | [Ссылка](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.3/bk_cloud-data-access/content/adls-get-started.html)                                                                       | *Пока недоступно*                                                                                                  | *Пока недоступно*                                                                                                  |
-|                     | Qubole       |                      | [Ссылка](https://www.qubole.com/blog/big-data-analytics-microsoft-azure-data-lake-store-qubole/)                                                                                            | *Пока недоступно*                                                                                                  | *Пока недоступно*                                                                                                  |
+|                     | Qubole       |                      | [Ссылка](https://www.qubole.com/blog/big-data-analytics-microsoft-azure-data-lake-store-qubole/)                                                                                            | [Ссылка](https://docs.qubole.com/en/latest/quick-start-guide/Azure-quick-start-guide/QuboleConnect/detailed-azure-qubole-steps/azure-Azure-setup.html#step-4c-configure-azure-data-lake-gen-2-storage-with-keys)                                                                                                  | [Ссылка](https://docs.qubole.com/en/latest/quick-start-guide/Azure-quick-start-guide/QuboleConnect/detailed-azure-qubole-steps/azure-Azure-setup.html#step-4d-configure-azure-data-lake-gen-2-storage-with-tokens)                                                                                                 |
 | Извлечение, преобразование и загрузка                 | Наборы потоков   |                      | [Ссылка](https://streamsets.com/blog/ingest-data-azure)                                                                                                                                     | *Пока недоступно*                                                                                                  | *Пока недоступно*                                                                                                  |
 |                     | Informatica  |                      | [Ссылка](https://kb.informatica.com/proddocs/Product%20Documentation/6/IC_Spring2017_MicrosoftAzureDataLakeStoreV2ConnectorGuide_en.pdf)                                                    | *Пока недоступно*                                                                                                  | *Пока недоступно*                                                                                                  |
 |                     | Attunity     |                      | [Ссылка](https://www.attunity.com/company/press-releases/microsoft-and-attunity-announce-strategic-partnership-for-data-migration/)                                                         | *Пока недоступно*                                                                                                  | *Пока недоступно*                                                                                                  |

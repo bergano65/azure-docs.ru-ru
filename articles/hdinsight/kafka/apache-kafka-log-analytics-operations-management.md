@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 05/02/2019
-ms.openlocfilehash: 5739883984d4087d2b2a1bda66c01ff3cfa10eb0
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.custom: hdinsightactive
+ms.date: 12/04/2019
+ms.openlocfilehash: d4263b8b338f057893c9dfcda1541fc338c2577f
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71122600"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74894260"
 ---
 # <a name="analyze-logs-for-apache-kafka-on-hdinsight"></a>Анализ журналов для Apache Kafka в HDInsight
 
@@ -56,7 +56,7 @@ ms.locfileid: "71122600"
     | summarize AggregatedValue = avg(CounterValue) by Computer, bin(TimeGenerated, 1h)
     ```
 
-* Входящих сообщений в секунду:
+* Входящих сообщений в секунду: (замените `your_kafka_cluster_name` именем кластера.)
 
     ```kusto
     metrics_kafka_CL 
@@ -64,7 +64,7 @@ ms.locfileid: "71122600"
     | summarize AggregatedValue = avg(kafka_BrokerTopicMetrics_MessagesInPerSec_Count_value_d) by HostName_s, bin(TimeGenerated, 1h)
     ```
 
-* Входящих байт в секунду:
+* Входящих байт в секунду: (замените `wn0-kafka` именем узла рабочего узла.)
 
     ```kusto
     metrics_kafka_CL 
@@ -72,16 +72,13 @@ ms.locfileid: "71122600"
     | summarize AggregatedValue = avg(kafka_BrokerTopicMetrics_BytesInPerSec_Count_value_d) by bin(TimeGenerated, 1h)
     ```
 
-* Исходящих байт в секунду:
+* Исходящих байт в секунду: (замените `your_kafka_cluster_name` именем кластера.)
 
     ```kusto
     metrics_kafka_CL 
     | where ClusterName_s == "your_kafka_cluster_name" and InstanceName_s == "kafka-BrokerTopicMetrics-BytesOutPerSec-Count" 
     | summarize AggregatedValue = avg(kafka_BrokerTopicMetrics_BytesOutPerSec_Count_value_d) by bin(TimeGenerated, 1h)
     ```
-
-    > [!IMPORTANT]  
-    > Замените значения запроса своими сведениями об определенном кластере. Например, для параметра `ClusterName_s` укажите имя кластера. `HostName_s` должно быть присвоено доменное имя рабочего узла в кластере.
 
     Кроме того, вы можете ввести `*` для поиска всех типов данных журнала. В настоящее время для запросов доступны следующие журналы:
 
@@ -93,13 +90,13 @@ ms.locfileid: "71122600"
 
     ![Использование ЦП в службе log Analytics для Apache Kafka](./media/apache-kafka-log-analytics-operations-management/apache-kafka-cpu-usage.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure Monitor см. в статьях [обзор Azure Monitor](../../log-analytics/log-analytics-get-started.md)и [запрос Azure Monitor журналов для мониторинга кластеров HDInsight](../hdinsight-hadoop-oms-log-analytics-use-queries.md).
 
 Дополнительные сведения о работе с Apache Kafka см. в следующих документах:
 
 * [Зеркальное отображение Apache Kafka в кластерах HDInsight](apache-kafka-mirroring.md)
-* [Повышение уровня масштабируемости Apache Kafka в HDInsight](apache-kafka-scalability.md)
+* [Увеличение масштаба Apache Kafka в HDInsight](apache-kafka-scalability.md)
 * [Использование потоковой передачи Apache Spark (DStream) с Apache Kafka](../hdinsight-apache-spark-with-kafka.md)
 * [Использование структурированной потоковой передачи Apache Spark с Apache Kafka](../hdinsight-apache-kafka-spark-structured-streaming.md)

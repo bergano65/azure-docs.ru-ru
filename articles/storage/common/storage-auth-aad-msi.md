@@ -1,22 +1,23 @@
 ---
-title: Авторизация доступа к BLOB-объектам и очередям с помощью Azure Active Directory и управляемых удостоверений для ресурсов Azure в службе хранилища Azure
-description: Хранилище BLOB-объектов и очередей Azure поддерживает авторизацию доступа к ресурсам с помощью Azure Active Directory и управляемых удостоверений для ресурсов Azure. Управляемые удостоверения для ресурсов Azure можно использовать для авторизации доступа к BLOB-объектам и очередям из приложений, работающих на виртуальных машинах Azure, в приложениях-функциях, масштабируемых наборах виртуальных машин и других.
+title: Авторизация доступа к данным с помощью управляемого удостоверения
+titleSuffix: Azure Storage
+description: Узнайте, как использовать управляемые удостоверения для ресурсов Azure для авторизации доступа к данным BLOB-объектов и очередей из приложений, работающих на виртуальных машинах Azure, в приложениях-функциях, масштабируемых наборах виртуальных машин и других.
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: conceptual
-ms.date: 11/25/2019
+ms.topic: how-to
+ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 3bb3b632a184985f9a3a27d0e56e940ec7c30885
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: c0b07cc001f65ff369f87954779634b8b49ba4ec
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74806595"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892057"
 ---
-# <a name="authorize-access-to-blobs-and-queues-with-azure-active-directory-and-managed-identities-for-azure-resources"></a>Авторизация доступа к BLOB-объектам и очередям с Azure Active Directory и управляемыми удостоверениями для ресурсов Azure
+# <a name="authorize-access-to-blob-and-queue-data-with-managed-identities-for-azure-resources"></a>Авторизация доступа к данным BLOB-объектов и очередей с помощью управляемых удостоверений для ресурсов Azure
 
 Хранилище BLOB-объектов и очередей поддерживают проверку подлинности Azure Active Directory (Azure AD) с использованием [управляемых удостоверений для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md). Управляемые удостоверения для ресурсов Azure могут авторизовать доступ к данным большого двоичного объекта и очереди с помощью учетных данных Azure AD из приложений, работающих на виртуальных машинах Azure, приложений-функций, масштабируемых наборов виртуальных машин и других служб. Используя управляемые удостоверения для ресурсов Azure вместе с проверкой подлинности Azure AD, можно избежать хранения учетных данных в приложениях, выполняемых в облаке.  
 

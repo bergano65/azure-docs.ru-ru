@@ -1,7 +1,7 @@
 ---
 title: Используйте сдвиги времени и динамические выходные данные, чтобы создать воспроизведение видео по запросу
 titleSuffix: Azure Media Services
-description: Узнайте, как использовать сдвиги времени и динамические выходные данные для записи динамических потоков и создания воспроизведения по запросу.
+description: В этой статье описывается, как использовать сдвиги времени и динамические выходные данные для записи динамических потоков и создания воспроизведения по запросу.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -14,12 +14,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 08/27/2019
 ms.author: juliako
-ms.openlocfilehash: acba251a57f39c07d690d0c55665b8914feaf06c
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 4c7618b60e5fd86a9b8b3f22fb3333c00cfdfa61
+ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74186232"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74899801"
 ---
 # <a name="use-time-shifting-and-live-outputs-to-create-on-demand-video-playback"></a>Используйте сдвиги времени и динамические выходные данные, чтобы создать воспроизведение видео по запросу
 
@@ -45,7 +45,7 @@ ms.locfileid: "74186232"
 
 Если вы опубликовали ресурс в режиме реального времени с помощью указателя потоковой передачи, событие в реальном времени (до длины окна DVR) будет по-прежнему отображаться до истечения срока действия указателя потоковой передачи или удаления, в зависимости от того, что происходит раньше.
 
-Дополнительные сведения см. в следующих источниках.
+Дополнительные сведения см. здесь:
 
 - [Потоковая трансляция в Службах мультимедиа Azure версии 3](live-streaming-overview.md)
 - [Руководство по потоковой трансляции](stream-live-tutorial-with-api.md)
@@ -53,7 +53,7 @@ ms.locfileid: "74186232"
 > [!NOTE]
 > Когда вы удаляете динамический выход, вы не удаляете базовый ресурс и содержимое в ресурсе.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подрежьте видео](subclip-video-rest-howto.md).
 * [Определите фильтры для своих ресурсов](filters-dynamic-manifest-rest-howto.md).

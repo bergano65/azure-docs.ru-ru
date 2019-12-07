@@ -1,6 +1,6 @@
 ---
 title: Обзор кодировщиков мультимедиа Azure по запросу | Документация Майкрософт
-description: В этом разделе приводятся общие сведения о кодировщиках мультимедиа Azure по запросу.
+description: Службы мультимедиа Azure предоставляют несколько вариантов для кодирования мультимедиа в облаке. В этой статье приводятся общие сведения о кодировщиках мультимедиа Azure по запросу.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/25/2019
 ms.author: juliako
-ms.openlocfilehash: 5c55b419b88a66d2e1acf1687478ab35d9f0a059
-ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
+ms.openlocfilehash: d5d5b8a7328ee82e94d494795617832cb0258667
+ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70019029"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74901516"
 ---
 # <a name="overview-of-azure-on-demand-media-encoders"></a>Обзор кодировщиков мультимедиа Azure по запросу 
 
@@ -37,13 +37,13 @@ ms.locfileid: "70019029"
 Службы мультимедиа поддерживают следующие кодировщики по запросу, описанные в этом разделе.
 
 * [Стандартный кодировщик служб мультимедиа](media-services-encode-asset.md#media-encoder-standard)
-* [Расширенный рабочий процесс кодировщика мультимедиа](media-services-encode-asset.md#media-encoder-premium-workflow)
+* [Media Encoder Premium Workflow](media-services-encode-asset.md#media-encoder-premium-workflow)
 
 В этом разделе предоставлен краткий обзор кодировщиков мультимедиа по запросу, а также приведены ссылки на разделы с подробными сведениями. В этой статье также приводится сравнение кодировщиков.
 
 По умолчанию каждая учетная запись служб мультимедиа может выполнять одну активную задачу кодирования в текущий момент. Можно зарезервировать единицы кодирования, которые позволят выполнять несколько задач кодирования одновременно, по одной для каждой приобретенной единицы. Дополнительные сведения см. в статье [Обзор масштабирования обработка мультимедиа](media-services-scale-media-processing-overview.md).
 
-## <a name="media-encoder-standard"></a>Media Encoder Standard
+## <a name="media-encoder-standard"></a>Стандартный кодировщик служб мультимедиа
 
 ### <a name="how-to-use"></a>Использование
 [Кодирование с помощью стандартного кодировщика мультимедиа](media-services-dotnet-encode-with-media-encoder-standard.md)
@@ -68,11 +68,11 @@ ms.locfileid: "70019029"
 ### <a name="create-overlays"></a>Создание наложений
 Дополнительные сведения см. в разделе о [создании наложения с помощью стандартного кодировщика мультимедиа](media-services-advanced-encoding-with-mes.md#overlay).
 
-### <a name="see-also"></a>См. также
+### <a name="see-also"></a>Дополнительные материалы
 [Блог, посвященный службам мультимедиа](https://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/)
 
 ## <a name="media-encoder-premium-workflow"></a>Media Encoder Premium Workflow
-### <a name="overview"></a>Обзор
+### <a name="overview"></a>Краткое описание
 [Знакомство со Службой кодирования категории "Премиум" в службах мультимедиа Azure](https://azure.microsoft.com/blog/2015/03/05/introducing-premium-encoding-in-azure-media-services/)
 
 ### <a name="how-to-use"></a>Использование
@@ -86,7 +86,7 @@ ms.locfileid: "70019029"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Оставить отзыв
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-articles"></a>Связанные статьи

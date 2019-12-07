@@ -3,17 +3,17 @@ title: Настройка правил и действий в Azure IoT Central 
 description: В этом пошаговом руководстве показано, как настроить правила и действия на основе телеметрии в приложении IoT Central Azure.
 author: vavilla
 ms.author: vavilla
-ms.date: 11/11/2019
+ms.date: 11/27/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: 76a9d8302d53d50bc3c1e306e31fbb26ed230436
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 987e8d9e667339d7526e8acbc3164e58abcd3e4d
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74484916"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74895751"
 ---
 # <a name="configure-rules-preview-features"></a>Настройка правил (Предварительная версия компонентов)
 
@@ -41,13 +41,13 @@ ms.locfileid: "74484916"
 
 Правила оценивают совокупное время в виде окон "переворачивающегося". На следующем снимке экрана интервал времени составляет 5 минут. Каждые пять минут правило оценивается за последние пять минут данных. Данные оцениваются только один раз в окне, к которому они соответствуют.
 
-!["Переворачивающегося" Windows](media/howto-configure-rules/tumbling-window.png)
+![Переворачивающиеся окна](media/howto-configure-rules/tumbling-window.png)
 
 ## <a name="use-rules-with-iot-edge-modules"></a>Использование правил с модулями IoT Edge
 
 Ограничение применяется к правилам, применяемым к IoT Edgeным модулям. Правила для телеметрии из разных модулей не оцениваются как допустимые правила. В качестве примера возьмем следующий пример. Первое условие правила находится в телеметрии температуры из модуля а. Второе условие правила находится на телеметрии влажности на модуле B. Так как два условия относятся к разным модулям, это недопустимый набор условий. Правило недопустимо, и при попытке сохранить правило будет выдано сообщение об ошибке.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как настроить правило в приложении IoT Central Azure, вы можете:
 

@@ -1,5 +1,5 @@
 ---
-title: Преобразование данных с помощью Databricks в Фабрике данных Azure
+title: Преобразование данных с помощью кирпичей
 description: Сведения об использовании шаблона решения для преобразования данных с помощью записной книжки Databricks в Фабрике данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 12/10/2018
 ms.author: abnarain
 ms.reviewer: douglasl
-ms.openlocfilehash: 471c1d9610fa346b0eac44c73fe02f4510bd2889
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 5b39e354d503910d20141ce19c625eb79b4a7353
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73684250"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74891003"
 ---
 # <a name="transform-data-by-using-databricks-in-azure-data-factory"></a>Преобразование данных с помощью Databricks в Фабрике данных Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "73684250"
 
 ![1](media/solution-template-Databricks-notebook/Databricks-tutorial-image01.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 1.  Создайте **учетную запись хранения больших двоичных объектов** и контейнер с именем `sinkdata` для использования в качестве **приемника**. Сохраните **имя учетной записи хранения**, **имя контейнера** и **ключ доступа**, так как они понадобятся позже в шаблоне.
 
@@ -71,7 +71,7 @@ ms.locfileid: "73684250"
 
 1.  Создайте **маркер доступа Databricks**, чтобы Фабрика данных могла получать доступ к Databricks. **Сохраните маркер доступа** для дальнейшего использования при создании связанной службы Databricks. Он выглядит примерно так: "dapi32db32cbb4w6eee18b7d87e45exxxxxx".
 
-    ![4\.](media/solution-template-Databricks-notebook/Databricks-tutorial-image04.png)
+    ![4](media/solution-template-Databricks-notebook/Databricks-tutorial-image04.png)
 
     ![5](media/solution-template-Databricks-notebook/Databricks-tutorial-image05.png)
 
@@ -125,9 +125,9 @@ ms.locfileid: "73684250"
 
 1.  Создайте действие копирования **file-to-blob** (файл в большой двоичный объект) для копирования набора данных из источника в приемник. В этом случае данные — это двоичный файл. Настройки источника и приемника в действии копирования см. на снимках экрана ниже.
 
-    ![13.](media/solution-template-Databricks-notebook/Databricks-tutorial-image13.png)
+    ![13](media/solution-template-Databricks-notebook/Databricks-tutorial-image13.png)
 
-    ![14.](media/solution-template-Databricks-notebook/Databricks-tutorial-image14.png)
+    ![14](media/solution-template-Databricks-notebook/Databricks-tutorial-image14.png)
 
 1.  Определите **параметры конвейера**.
 

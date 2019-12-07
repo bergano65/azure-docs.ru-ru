@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
-ms.openlocfilehash: d9967b6f1177281759dd66122ffd0183bb2b813d
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: e3a9b733b055469e22d3b107c0f9f49b768756c4
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74775839"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74895247"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Руководство по устранению неполадок в обозревателе хранилищ Azure
 
@@ -301,7 +301,7 @@ snap connect storage-explorer:password-manager-service :password-manager-service
 
 Эти пакеты являются наиболее распространенными требованиями для Обозреватель службы хранилища в Linux:
 
-* [Среда выполнения .NET Core 2,0](https://docs.microsoft.com/dotnet/core/linux-prerequisites?tabs=netcore2x)
+* [Среда выполнения .NET Core 2,2](https://docs.microsoft.com/en-us/dotnet/core/install/dependencies?tabs=netcore22&pivots=os-linux)
 * `libgconf-2-4`
 * `libgnome-keyring0` или `libgnome-keyring-dev`
 * `libgnome-keyring-common`

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/21/2018
-ms.openlocfilehash: 8a8a2f32de905ab7c12f4886d889b2a6fc20c449
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 5cce4ccd3acd9df896f6c28bd010a92ed4ec1a7a
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899151"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74893320"
 ---
 # <a name="azure-networking-monitoring-solutions-in-azure-monitor"></a>Решения мониторинга сетей Azure в Azure Monitor
 
@@ -45,7 +45,7 @@ Azure Monitor предлагает следующие решения для мо
 
 Диагностику и соответствующее решение можно включить как для одного, так и для обоих компонентов (шлюз приложений и группы безопасности сети).
 
-Если не включить ведение журналов диагностики для определенного типа ресурсов, но установить решение, то колонки панели мониторинга для этого ресурса будут пустыми, а также появится сообщение об ошибке.
+Если не включить ведение журнала диагностики ресурсов для определенного типа ресурса, но установить решение, колонки панели мониторинга для этого ресурса будут пустыми и отобразится сообщение об ошибке.
 
 > [!NOTE]
 > В январе 2017 поддерживаемый способ отправки журналов из шлюзов приложений и групп безопасности сети в Log Analytics рабочую область изменился. Если отобразится устаревшее решение **Анализ сетевой активности Azure (не рекомендуется)** , то выполните действия, описанные в разделе [Миграция из устаревшего решения для анализа сетевой активности](#migrating-from-the-old-networking-analytics-solution).
@@ -100,7 +100,7 @@ Azure Monitor предлагает следующие решения для мо
 
 #### <a name="enable-azure-network-diagnostics-using-powershell"></a>Включение диагностики сети Azure с помощью PowerShell
 
-Следующий сценарий PowerShell приведен в качестве примера того, как включить ведение журналов диагностики для шлюзов приложений:
+Приведенный ниже сценарий PowerShell содержит пример включения ведения журнала ресурсов для шлюзов приложений.
 
 ```powershell
 $workspaceId = "/subscriptions/d2e37fee-1234-40b2-5678-0b2199de3b50/resourcegroups/oi-default-east-us/providers/microsoft.operationalinsights/workspaces/rollingbaskets"
@@ -141,7 +141,7 @@ Set-AzDiagnosticSetting -ResourceId $gateway.ResourceId  -WorkspaceId $workspace
 > Решение для анализа групп безопасности сети переходит на поддержку сообщества, так как оно было заменено на [Аналитику трафика](../../network-watcher/traffic-analytics.md).
 > - Это решение теперь доступно в [Шаблонах быстрого запуска Azure](https://azure.microsoft.com/resources/templates/oms-azurensg-solution/) и скоро перестанет быть доступным в Azure Marketplace.
 > - Для существующих клиентов, которые уже добавили решение в свою рабочую область, решение продолжит работать без изменений.
-> - Корпорация Майкрософт продолжит поддерживать отправку журналов диагностики групп безопасности сети в вашу рабочую область с использованием параметров диагностики.
+> - Корпорация Майкрософт продолжит поддерживать отправку журналов ресурсов NSG в рабочую область с помощью параметров диагностики.
 
 Группы безопасности сети поддерживают следующие журналы:
 
@@ -171,7 +171,7 @@ Set-AzDiagnosticSetting -ResourceId $gateway.ResourceId  -WorkspaceId $workspace
 
 ### <a name="enable-azure-network-diagnostics-using-powershell"></a>Включение диагностики сети Azure с помощью PowerShell
 
-Следующий сценарий PowerShell приведен в качестве примера того, как включить ведение журналов диагностики для групп безопасности сети:
+Приведенный ниже сценарий PowerShell содержит пример включения ведения журнала ресурсов для групп безопасности сети.
 ```powershell
 $workspaceId = "/subscriptions/d2e37fee-1234-40b2-5678-0b2199de3b50/resourcegroups/oi-default-east-us/providers/microsoft.operationalinsights/workspaces/rollingbaskets"
 
@@ -215,8 +215,8 @@ Set-AzDiagnosticSetting -ResourceId $nsg.ResourceId  -WorkspaceId $workspaceId -
 
      | Используйте такую замену: | Используйте следующую команду: |
      | --- | --- |
-     | NetworkApplicationgateways &#124; where OperationName=="ApplicationGatewayAccess" | AzureDiagnostics &#124; , где ResourceType = = "аппликатионгатевайс" и OperationName = = "аппликатионгатевайакцесс" |
-     | NetworkApplicationgateways &#124; where OperationName=="ApplicationGatewayPerformance" | AzureDiagnostics &#124; , где ResourceType = = "аппликатионгатевайс" и OperationName = = "аппликатионгатевайперформанце" |
+     | NetworkApplicationgateways &#124; where OperationName=="ApplicationGatewayAccess" | AzureDiagnostics &#124; where ResourceType=="APPLICATIONGATEWAYS" and OperationName=="ApplicationGatewayAccess" |
+     | NetworkApplicationgateways &#124; where OperationName=="ApplicationGatewayPerformance" | AzureDiagnostics &#124; where ResourceType=="APPLICATIONGATEWAYS" and OperationName=="ApplicationGatewayPerformance" |
      | NetworkSecuritygroups | AzureDiagnostics &#124; where ResourceType=="NETWORKSECURITYGROUPS" |
 
    + Для любого поля, имя которого содержит суффикс \_s, \_d или \_g, переведите первый знак в нижний регистр.

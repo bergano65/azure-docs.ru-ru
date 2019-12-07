@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: bd3e33fde3f4249064bfbe1973ee95f680630673
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 2a2a96a823867ea7700933c8253a0ba500b0e1cf
+ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74851168"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74899809"
 ---
 # <a name="connect-privately-to-a-storage-account-using-azure-private-endpoint"></a>Подключение в частном порядке к учетной записи хранения с помощью частной конечной точки Azure
 Частная конечная точка Azure — это фундаментальный Стандартный блок для частной ссылки в Azure. Она позволяет ресурсам Azure, таким как виртуальные машины, обмениваться данными с частными ресурсами.
@@ -132,7 +132,7 @@ ms.locfileid: "74851168"
     | Подсеть | Выберите *mySubnet*. |
     | **ЧАСТНАЯ ИНТЕГРАЦИЯ DNS**|  |
     | Интеграция с частной зоной DNS  | Оставьте значение по умолчанию **Да**. |
-    | Частная зона DNS  | Оставьте значение по умолчанию * * (новое) privatelink.blob.core.windows.net * *. |
+    | Частная зона DNS  | Оставьте значение по умолчанию **(New) privatelink.BLOB.Core.Windows.NET**. |
     |||
 7. Нажмите кнопку **ОК**. 
 8. Выберите **Review + create** (Просмотреть и создать). Вы будете перенаправлены на страницу **Просмотр и создание**, где Azure проверит вашу конфигурацию. 
@@ -151,7 +151,7 @@ ms.locfileid: "74851168"
 
 1. Щелкните **Скачать RDP-файл**. Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола (*RDP*).
 
-1. Откройте скачанный RDP-файл*.
+1. Откройте *скачанный RDP* -файл.
 
     1. При появлении запроса выберите **Подключиться**.
 

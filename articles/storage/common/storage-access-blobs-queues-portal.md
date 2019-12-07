@@ -1,20 +1,21 @@
 ---
-title: Использование портал Azure для доступа к данным большого двоичного объекта или очереди в службе хранилища Azure
+title: Использование портал Azure для доступа к данным BLOB-объектов или очередей
+titleSuffix: Azure Storage
 description: Когда вы обращаетесь к данным большого двоичного объекта или очереди с помощью портал Azure, портал выполняет запросы к службе хранилища Azure, как описано в этой статье. Эти запросы к службе хранилища Azure могут пройти проверку подлинности и авторизоваться с помощью учетной записи Azure AD или ключа доступа к учетной записи хранения.
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/19/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 3d5d5bd6400fdf09216124665b6b236b4da2583b
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.openlocfilehash: 89816e3640c0afad6290e77faa3904c691df4318
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71673295"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892403"
 ---
 # <a name="use-the-azure-portal-to-access-blob-or-queue-data"></a>Использование портал Azure для доступа к данным BLOB-объектов или очередей
 
@@ -48,11 +49,11 @@ ms.locfileid: "71673295"
 
 Встроенные роли, поддерживающие доступ к данным большого двоичного объекта или очереди, включают:
 
-- [Владелец данных BLOB-объекта хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner): Для управления доступом POSIX для Azure Data Lake Storage 2-го поколения.
-- [Участник данных BLOB-объекта хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor): Разрешения на чтение, запись и удаление для больших двоичных объектов.
-- [Модуль чтения данных BLOB-объекта хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-reader): Разрешения только на чтение для больших двоичных объектов.
-- [Участник данных очереди хранилища](../../role-based-access-control/built-in-roles.md#storage-queue-data-contributor): Разрешения на чтение, запись и удаление для очередей.
-- [Модуль чтения данных очереди хранилища](../../role-based-access-control/built-in-roles.md#storage-queue-data-reader): Разрешения только на чтение для очередей.
+- [Владелец данных большого двоичного объекта службы хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner): для управления доступом POSIX для Azure Data Lake Storage 2-го поколения.
+- [Участник данных BLOB-объектов хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor): разрешения на чтение, запись и удаление для больших двоичных объектов.
+- [Модуль чтения данных большого двоичного объекта хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-reader): разрешения только на чтение для больших двоичных объектов.
+- [Участник данных очереди хранилища](../../role-based-access-control/built-in-roles.md#storage-queue-data-contributor): разрешения на чтение, запись и удаление для очередей.
+- [Модуль чтения очереди хранилища](../../role-based-access-control/built-in-roles.md#storage-queue-data-reader): разрешения только на чтение для очередей.
     
 Пользовательские роли могут поддерживать различные сочетания тех же разрешений, которые предоставляются встроенными ролями. Дополнительные сведения о создании настраиваемых ролей RBAC см. в статьях [пользовательские роли для ресурсов Azure](../../role-based-access-control/custom-roles.md) и [Определение ролей для ресурсов Azure](../../role-based-access-control/role-definitions.md).
 
@@ -95,7 +96,7 @@ ms.locfileid: "71673295"
 
 Обратите внимание, что в списке нет BLOB-объектов, если у вас нет доступа к ключам учетной записи. Щелкните ссылку **Переключение на учетную запись пользователя Azure AD** , чтобы снова использовать учетную запись Azure AD для проверки подлинности.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Проверка подлинности доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](storage-auth-aad.md)
 - [Предоставление доступа к контейнерам и очередям Azure с RBAC в портал Azure](storage-auth-aad-rbac-portal.md)

@@ -1,6 +1,6 @@
 ---
 title: Скрытие лиц с помощью аналитики мультимедиа Azure | Документация Майкрософт
-description: В этой статье описана функция скрытия лиц с помощью медиа-аналитики Azure.
+description: Azure Media Redactor — это Аналитика мультимедиа Azureный обработчик мультимедиа, который обеспечивает масштабируемую оттенок в облаке. В этой статье показано, как исправить лица с помощью Azure Media Analytics.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -13,15 +13,15 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: e350b6ed90324e7ed645d85c046fd74c0a089452
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 6a1b7a76ef1efda51f09ac733b3d434235ff40ef
+ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "69016017"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74900295"
 ---
 # <a name="redact-faces-with-azure-media-analytics"></a>Скрытие лиц с помощью аналитики мультимедиа Azure 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 **Редактор мультимедиа Azure** — это обработчик [медиа-аналитики Azure ](media-services-analytics-overview.md) с возможностью масштабируемого скрытия лиц в облаке. Функция скрытия лиц позволяет изменять видео, размывая изображения лиц выбранных пользователей. Вы можете использовать функцию скрытия лиц в ситуациях, требующих соблюдения общественной безопасности, а также при работе с новостями. Редактирование короткого материала с несколькими лицами вручную может занять несколько часов, тогда как при использовании функции скрытия лиц достаточно выполнить несколько простых действий. Дополнительные сведения см. в [этом блоге](https://azure.microsoft.com/blog/azure-media-redactor/).
 
 Эта статья посвящена **Azure Media Redactor** и способам его использования с пакетом SDK служб мультимедиа для .NET.
@@ -34,7 +34,7 @@ ms.locfileid: "69016017"
 ### <a name="combined-mode"></a>Объединенный режим
 В результате вы получаете MP4-файл с автоматическим скрытием, который не нужно править вручную.
 
-| Этап | Имя файла | Примечания |
+| Stage | Имя файла | Заметки |
 | --- | --- | --- |
 | Входной ресурс-контейнер |foo.bar |Видео в формате WMV, MOV или MP4 |
 | Входная конфигурация |Конфигурация задания (предустановка) |{'version':'1.0', 'options': {'mode':'combined'}} |
@@ -49,7 +49,7 @@ ms.locfileid: "69016017"
 ### <a name="analyze-mode"></a>Режим анализа
 В режиме **анализа** двухэтапный рабочий процесс принимает входное видео и создает JSON-файл с регистрацией расположения лиц, а также изображения всех обнаруженных лиц в формате JPG.
 
-| Этап | Имя файла | Примечания |
+| Stage | Имя файла | Заметки |
 | --- | --- | --- |
 | Входной ресурс-контейнер |foo.bar |Видео в формате WMV, MPV или MP4 |
 | Входная конфигурация |Конфигурация задания (предустановка) |{'version':'1.0', 'options': {'mode':'analyze'}} |
@@ -114,7 +114,7 @@ ms.locfileid: "69016017"
 
 Выходные данные этапа анализа не включают исходное видео. Видео необходимо передать во входной ресурс-контейнер, чтобы задача режима скрытия обработала его, а затем выбрать в качестве первичного файла.
 
-| Этап | Имя файла | Примечания |
+| Stage | Имя файла | Заметки |
 | --- | --- | --- |
 | Входной ресурс-контейнер |foo.bar |Видео в формате WMV, MPV или MP4. То же видео, что и на этапе 1. |
 | Входной ресурс-контейнер |foo_annotations.json |Файл аннотации с метаданными, полученными на этапе 1, с необязательными изменениями. |
@@ -135,7 +135,7 @@ ms.locfileid: "69016017"
 
 ## <a name="blur-types"></a>Типы размытия
 
-В режиме **Combined** (Объединенный) или **Redact** (Скрытие) существует 5 различных режимов размытия, которые можно выбирать с помощью входной конфигурации JSON: **Low** (Слабо), **Med** (Средне), **High** (Сильно), **Box** (Рамка) и **Black** (Затемнение). По умолчанию используется режим **Med** (Средний).
+В режиме **Combined** (Объединенный) или **Redact** (Скрытие) существует 5 различных режимов размытия, которые можно выбирать с помощью входной конфигурации JSON: **Low** (Низкий), **Med** (Средний), **High** (Высокий), **Box** (Рамка) и **Black** (Черный). По умолчанию используется режим **Med** (Средний).
 
 Примеры типов размытия можно просмотреть ниже.
 
@@ -145,21 +145,21 @@ ms.locfileid: "69016017"
     {'version':'1.0', 'options': {'Mode': 'Combined', 'BlurType': 'High'}}
 ```
 
-#### <a name="low"></a>Низкий
+#### <a name="low"></a>Низкая
 
-![Низкий](./media/media-services-face-redaction/blur1.png)
+![Низкая](./media/media-services-face-redaction/blur1.png)
  
 #### <a name="med"></a>Средний
 
 ![Средний](./media/media-services-face-redaction/blur2.png)
 
-#### <a name="high"></a>Высокий
+#### <a name="high"></a>Высокая
 
-![Высокий](./media/media-services-face-redaction/blur3.png)
+![Высокая](./media/media-services-face-redaction/blur3.png)
 
-#### <a name="box"></a>Рамка
+#### <a name="box"></a>Box
 
-![Рамка](./media/media-services-face-redaction/blur4.png)
+![Box](./media/media-services-face-redaction/blur4.png)
 
 #### <a name="black"></a>Черный
 
@@ -363,11 +363,11 @@ namespace FaceRedaction
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Оставить отзыв
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки

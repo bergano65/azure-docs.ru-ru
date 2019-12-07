@@ -3,12 +3,12 @@ title: Справочник по YAML для группы контейнеров
 description: Справочник по файлу YAML, поддерживаемому экземплярами контейнеров Azure для настройки группы контейнеров
 ms.topic: article
 ms.date: 08/12/2019
-ms.openlocfilehash: 5603f2e0f63c4f83a6d3761feb540abb8b8b7d5c
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 8497330a327201c4c64e9f7ae57e6fc4225b52de
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74533493"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74896572"
 ---
 # <a name="yaml-reference-azure-container-instances"></a>Справочник по YAML: экземпляры контейнеров Azure
 
@@ -38,7 +38,7 @@ properties: # Properties of container group
       image: string # Container image used to create the instance
       command:
       - string
-      ports: # Exposed ports on the instance
+      ports: # External-facing ports exposed on the instance, must also be set in group ipAddress property 
       - protocol: string
         port: integer
       environmentVariables:
@@ -141,7 +141,7 @@ properties: # Properties of container group
 |  ---- | ---- | ---- | ---- |
 |  name | string | ДА | Имя группы контейнеров. |
 |  версия_API | enum | ДА | 2018-10-01 |
-|  location | string | Нет | Расположение ресурса. |
+|  location | string | Нет | Местоположение ресурса. |
 |  tags | object | Нет | Теги ресурсов. |
 |  удостоверение | object | Нет | Удостоверение группы контейнеров, если оно настроено. - [объект контаинерграупидентити](#ContainerGroupIdentity) |
 |  properties | object | ДА | [Объект Контаинерграуппропертиес](#ContainerGroupProperties) |
@@ -166,7 +166,7 @@ properties: # Properties of container group
 |  контейнеры | array | ДА | Контейнеры в группе контейнеров. - [объект контейнера](#Container) |
 |  imageRegistryCredentials | array | Нет | Учетные данные реестра образов, по которым создается группа контейнеров. - [объект имажерегистрикредентиал](#ImageRegistryCredential) |
 |  restartPolicy | enum | Нет | Перезапустите политику для всех контейнеров в группе контейнеров. - `Always` Always Restart-`OnFailure` перезапуск при сбое — `Never` никогда не перезапускать. Всегда, onFailure, никогда |
-|  IP | object | Нет | Тип IP-адреса группы контейнеров. - [IPAddress-объект](#IpAddress) |
+|  ipAddress | object | Нет | Тип IP-адреса группы контейнеров. - [IPAddress-объект](#IpAddress) |
 |  osType | enum | ДА | Тип операционной системы, необходимый контейнерам в группе контейнеров. — Windows или Linux |
 |  volumes. | array | Нет | Список томов, которые могут быть подключены контейнерами в этой группе контейнеров.Объект  - ого [тома](#Volume) |
 |  диагностика | object | Нет | Диагностические сведения для группы контейнеров. - [объект контаинерграупдиагностикс](#ContainerGroupDiagnostics) |
@@ -272,7 +272,7 @@ properties: # Properties of container group
 |  Name | Тип | Обязательно для заполнения | Value |
 |  ---- | ---- | ---- | ---- |
 |  protocol | enum | Нет | Протокол, связанный с портом. -TCP или UDP |
-|  порт | целое число | ДА | Номер порта. |
+|  порт | целое число | ДА | номер порта. |
 
 
 <a id="AzureFileVolume" />
@@ -358,7 +358,7 @@ properties: # Properties of container group
 
 |  Name | Тип | Обязательно для заполнения | Value |
 |  ---- | ---- | ---- | ---- |
-|  Exec | object | Нет | Команда выполнения для проверки [объекта контаинерексек](#ContainerExec) |
+|  exec | object | Нет | Команда выполнения для проверки [объекта контаинерексек](#ContainerExec) |
 |  httpGet | object | Нет | Объект HTTP Get Settings to зонд- [контаинерхттпжет](#ContainerHttpGet) |
 |  инитиалделайсекондс | целое число | Нет | Начальная задержка в секундах. |
 |  периодсекондс | целое число | Нет | Период в секундах. |

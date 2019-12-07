@@ -1,20 +1,21 @@
 ---
-title: Создание SAS службы для контейнера или большого двоичного объекта с помощью .NET в службе хранилища Azure
+title: Создание SAS службы для контейнера или большого двоичного объекта с помощью .NET
+titleSuffix: Azure Storage
 description: Узнайте, как создать подписанный URL-адрес службы (SAS) для контейнера или большого двоичного объекта с помощью клиентской библиотеки .NET.
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: conceptual
-ms.date: 08/09/2019
+ms.topic: how-to
+ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
-ms.openlocfilehash: 6840b65dd63422db38759ee01703155088215fd2
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.openlocfilehash: fd215fe864a3cff7944defef0ecb4e591e7d501c
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71673360"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74894187"
 ---
 # <a name="create-a-service-sas-for-a-container-or-blob-with-net"></a>Создание SAS службы для контейнера или большого двоичного объекта с помощью .NET
 
@@ -119,7 +120,7 @@ private static string GetBlobSasUri(CloudBlobContainer container, string blobNam
 
 [!INCLUDE [storage-blob-dotnet-resources-include](../../../includes/storage-blob-dotnet-resources-include.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](../common/storage-sas-overview.md)
-- [Создание SAS службы](/rest/api/storageservices/create-service-sas)
+- [Create a service SAS](/rest/api/storageservices/create-service-sas) (Создание SAS на уровне службы)

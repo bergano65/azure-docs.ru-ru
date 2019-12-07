@@ -1,7 +1,7 @@
 ---
 title: Использование Индексатора видео Azure для настройки модели торговых марок
 titleSuffix: Azure Media Services
-description: В этой статье описана настройка модели торговых марок с помощью Индексатора видео Azure.
+description: В этой статье показано, как настроить модель торговых марок с помощью индексатора видео Azure.
 services: media-services
 author: anikaz
 manager: johndeu
@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: anzaman
-ms.openlocfilehash: 4289c592644d7570ff0dd9ce6aed0cd77f51f25e
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 804cc7b2b0b51312ed756723fff5150b02f324cc
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838340"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892810"
 ---
 # <a name="customize-a-brands-model-with-the-video-indexer-api"></a>Настройка модели торговых марок с помощью API Индексатора видео
 
@@ -35,15 +35,15 @@ ms.locfileid: "73838340"
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands?accessToken={accessToken}
 ```
 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Create-Brand).
+[Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Create-Brand).
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-|**имя**|**Тип**|**Обязательный**|**Описание**|
+|**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|строка|Да|Глобальный уникальный идентификатор для учетной записи|
-|accessToken|строка|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|location|string|ДА|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountId|string|ДА|Глобальный уникальный идентификатор этой учетной записи|
+|accessToken|string|ДА|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Тело запроса
 
@@ -97,16 +97,16 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands/{id}?accessToken={accessToken}
 ```
 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-Brand?).
+[Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-Brand?).
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-|**имя**|**Тип**|**Обязательный**|**Описание**|
+|**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|строка|Да|Глобальный уникальный идентификатор для учетной записи|
-|id|целое число|Да|Идентификатор торговой марки (сгенерированный во время создания торговой марки).|
-|accessToken|строка|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|location|string|ДА|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountId|string|ДА|Глобальный уникальный идентификатор этой учетной записи|
+|id|целое число|ДА|Идентификатор торговой марки (сгенерированный во время создания торговой марки).|
+|accessToken|string|ДА|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Тело запроса
 
@@ -126,16 +126,16 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands?accessToken={accessToken}
 ```
 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Brand?).
+[Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Brand?).
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-|**имя**|**Тип**|**Обязательный**|**Описание**|
+|**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|строка|Да|Глобальный уникальный идентификатор для учетной записи|
-|id|целое число|Да|Идентификатор торговой марки (сгенерированный во время создания торговой марки).|
-|accessToken|строка|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|location|string|ДА|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountId|string|ДА|Глобальный уникальный идентификатор этой учетной записи|
+|id|целое число|ДА|Идентификатор торговой марки (сгенерированный во время создания торговой марки).|
+|accessToken|string|ДА|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Тело запроса
 
@@ -176,16 +176,16 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands/{id}?accessToken={accessToken}
 ```
 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Brand?).
+[Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Brand?).
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-|**имя**|**Тип**|**Обязательный**|**Описание**|
+|**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|строка|Да|Глобальный уникальный идентификатор для учетной записи|
-|id|целое число|Да|Идентификатор торговой марки (сгенерированный во время создания торговой марки).|
-|accessToken|строка|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|location|string|ДА|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountId|string|ДА|Глобальный уникальный идентификатор этой учетной записи|
+|id|целое число|ДА|Идентификатор торговой марки (сгенерированный во время создания торговой марки).|
+|accessToken|string|ДА|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Тело запроса
 
@@ -239,15 +239,15 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands?accessToken={accessToken}
 ```
 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Brands?).
+[Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Brands?).
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-|**имя**|**Тип**|**Обязательный**|**Описание**|
+|**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|строка|Да|Глобальный уникальный идентификатор для учетной записи|
-|accessToken|строка|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|location|string|ДА|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountId|string|ДА|Глобальный уникальный идентификатор этой учетной записи|
+|accessToken|string|ДА|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Тело запроса
 
@@ -299,15 +299,15 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands?accessToken={accessToken}
 ```
 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Brands).
+[Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Brands).
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-|**имя**|**Тип**|**Обязательный**|**Описание**|
+|**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|строка|Да|Глобальный уникальный идентификатор для учетной записи|
-|accessToken|строка|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|location|string|ДА|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountId|string|ДА|Глобальный уникальный идентификатор этой учетной записи|
+|accessToken|string|ДА|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Тело запроса
 
@@ -336,15 +336,15 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/BrandsModelSettings?accessToken={accessToken}
 ```
 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Brands-Model-Settings?).
+[Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Brands-Model-Settings?).
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-|**имя**|**Тип**|**Обязательный**|**Описание**|
+|**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|строка|Да|Глобальный уникальный идентификатор для учетной записи|
-|accessToken|строка|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|location|string|ДА|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountId|string|ДА|Глобальный уникальный идентификатор этой учетной записи|
+|accessToken|string|ДА|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Тело запроса
 

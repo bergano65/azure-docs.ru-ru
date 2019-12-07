@@ -9,14 +9,14 @@ manager: cshankar
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 10/10/2019
+ms.date: 12/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: cdcd64b5281ce16002720072db3b5f29f1978cac
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 1dfd9a8d2723136ef68d983eb99bf2391fb87879
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74014829"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74894900"
 ---
 # <a name="send-events-to-a-time-series-insights-environment-by-using-an-event-hub"></a>Отправка событий в среду службы "Аналитика временных рядов" с помощью концентратора событий
 
@@ -29,14 +29,14 @@ ms.locfileid: "74014829"
 1. Выберите свой концентратор событий.
 1. При создании концентратора событий создается пространство имен концентратора событий. Если вы еще не создали концентратор событий в пространстве имен, в меню в разделе **сущности**создайте концентратор событий.  
 
-    [![списка концентраторов событий](media/send-events/1-event-hub-namespace.png)](media/send-events/1-event-hub-namespace.png#lightbox)
+    [![списка концентраторов событий](media/send-events/tsi-connect-event-hub-namespace.png)](media/send-events/tsi-connect-event-hub-namespace.png#lightbox)
 
 1. После создания концентратора событий выберите его в списке.
 1. В меню **сущности**выберите **концентраторы событий**.
 1. Выберите имя концентратора событий, чтобы настроить его.
 1. В разделе **Обзор**выберите **группы потребителей**, а затем выберите **Группа потребителей**.
 
-    [![создания группы потребителей](media/send-events/2-consumer-group.png)](media/send-events/2-consumer-group.png#lightbox)
+    [![создания группы потребителей](media/send-events/add-event-hub-consumer-group.png)](media/send-events/add-event-hub-consumer-group.png#lightbox)
 
 1. Убедитесь, что создана группа потребителей, которая используется исключительно источником событий "аналитика временных рядов".
 
@@ -45,17 +45,17 @@ ms.locfileid: "74014829"
 
 1. В меню в разделе **Параметры**выберите **политики общего доступа**, а затем нажмите кнопку **добавить**.
 
-    [![выберите политики общего доступа, а затем нажмите кнопку Добавить.](media/send-events/3-shared-access-policy.png)](media/send-events/3-shared-access-policy.png#lightbox)
+    [![выберите политики общего доступа, а затем нажмите кнопку Добавить.](media/send-events/add-shared-access-policy.png)](media/send-events/add-shared-access-policy.png#lightbox)
 
 1. На панели **Добавить новую политику общего доступа** создайте политику общего доступа с именем **MySendPolicy**. Эта политика общего доступа используется для отправки событий в C# примерах далее в этой статье.
 
-    [![в поле Имя политики введите MySendPolicy.](media/send-events/4-shared-access-policy-confirm.png)](media/send-events/4-shared-access-policy-confirm.png#lightbox)
+    [![в поле Имя политики введите MySendPolicy.](media/send-events/configure-shared-access-policy-confirm.png)](media/send-events/configure-shared-access-policy-confirm.png#lightbox)
 
 1. В разделе **утверждение**установите флажок **Отправить** .
 
 ## <a name="add-a-time-series-insights-instance"></a>Добавление экземпляра службы "Аналитика временных рядов"
 
-При обновлении службы "Аналитика временных рядов" используются экземпляры для добавления контекстных данных ко входящим данным телеметрии. Данные объединяются во время выполнения запроса на основе **идентификатора временного ряда**. **Идентификатор временных рядов** для примера проекта Виндмиллс, который мы используем далее в этой статье, `id`. Дополнительные сведения об экземплярах службы "Аналитика временных рядов" и **идентификаторе временного ряда** см. в [этой статье](./time-series-insights-update-tsm.md).
+При обновлении службы "Аналитика временных рядов" используются экземпляры для добавления контекстных данных ко входящим данным телеметрии. Данные объединяются во время выполнения запроса на основе **идентификатора временного ряда**. **Идентификатор временных рядов** для примера проекта Виндмиллс, который мы используем далее в этой статье, `id`. Дополнительные сведения об экземплярах Time Series Insights и **идентификаторах временных рядов**см. в статье [модели временных рядов](./time-series-insights-update-tsm.md).
 
 ### <a name="create-a-time-series-insights-event-source"></a>Создание источника событий службы "Аналитика временных рядов"
 
@@ -71,18 +71,18 @@ ms.locfileid: "74014829"
 
 1. Перейдите к **политикам общего доступа** > **MySendPolicy**. Скопируйте значение для параметра **строка подключения — первичный ключ**.
 
-    [![скопировать значение для строки подключения по первичному ключу](media/send-events/5-sample-code-connection-string.png)](media/send-events/5-sample-code-connection-string.png#lightbox)
+    [![скопировать значение для строки подключения по первичному ключу](media/send-events/configure-sample-code-connection-string.png)](media/send-events/configure-sample-code-connection-string.png#lightbox)
 
 1. Перейдите на сайт https://tsiclientsample.azurewebsites.net/windFarmGen.html. После перехода по этому URL-адресу будут запущены имитированные устройства ветряных мельниц.
 1. В поле **строка подключения концентратора событий** на веб-странице вставьте строку подключения, скопированную в [поле ввода Виндмилл](#push-events-to-windmills-sample).
   
-    [![вставить строку подключения первичного ключа в поле Строка подключения к концентратору событий](media/send-events/6-wind-mill-sim.png)](media/send-events/6-wind-mill-sim.png#lightbox)
+    [![вставить строку подключения первичного ключа в поле Строка подключения к концентратору событий](media/send-events/configure-wind-mill-sim.png)](media/send-events/configure-wind-mill-sim.png#lightbox)
 
 1. Выберите **Click to start** (Запустить). Симулятор создаст JSON-файл экземпляра, который вы можете использовать напрямую.
 
 1. Перейдите к концентратору событий на портале Azure. На странице **Обзор** отображаются новые события, получаемые концентратором событий.
 
-    [![страницы обзора концентратора событий, в которой отображаются метрики для концентратора событий.](media/send-events/7-telemetry.png)](media/send-events/7-telemetry.png#lightbox)
+    [![страницы обзора концентратора событий, в которой отображаются метрики для концентратора событий.](media/send-events/review-windmill-telemetry.png)](media/send-events/review-windmill-telemetry.png#lightbox)
 
 ## <a name="supported-json-shapes"></a>Поддерживаемые формы JSON
 
@@ -195,7 +195,7 @@ ms.locfileid: "74014829"
     |WestUs|manufacturer1|EastUs|device1|2016-01-08T01:08:00Z|pressure|psi|108.09|
     |WestUs|manufacturer1|EastUs|device2|2016-01-08T01:17:00Z|vibration|abs G|217.09|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Просмотр среды](https://insights.timeseries.azure.com) в обозревателе "аналитика временных рядов".
 

@@ -1,6 +1,6 @@
 ---
 title: Воспроизведение с помощью Проигрывателя мультимедиа Azure | Документация Майкрософт
-description: В этом разделе приводится краткий обзор Проигрывателя мультимедиа Azure.
+description: Проигрыватель мультимедиа Azure — это веб-проигрыватель, созданный для воспроизведения мультимедийного содержимого из Служб мультимедиа Microsoft Azure в разных браузерах и на разных устройствах.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 07/17/2019
 ms.author: juliako
-ms.openlocfilehash: 6157f59d96770298d947a1cf6ca28aa343e1a0d4
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 8f1639a21e3783f587904c2a8085fd2f555ff5b8
+ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68311823"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74900351"
 ---
 # <a name="azure-media-player-overview"></a>Обзор Проигрывателя мультимедиа Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "68311823"
 
 Проигрыватель мультимедиа Azure можно легко настроить. Для базового воспроизведения мультимедийного содержимого из учетной записи Служб мультимедиа потребуется всего несколько минут. Дополнительные сведения о настройке Проигрывателя мультимедиа Azure см. в [документации по Проигрывателю мультимедиа Azure](https://aka.ms/ampdocs). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Документация по Проигрывателю мультимедиа Azure](https://aka.ms/ampdocs)
 - [Примеры Проигрывателя мультимедиа Azure](https://aka.ms/ampsamples)

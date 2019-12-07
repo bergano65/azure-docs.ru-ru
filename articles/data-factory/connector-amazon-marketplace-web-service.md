@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из Amazon Marketplace Web Service
+title: Копирование данных из AWS Marketplace
 description: Узнайте, как копировать данные из Amazon Marketplace Web Service на поддерживаемые приемники хранилища данных с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 ms.service: data-factory
@@ -10,12 +10,12 @@ author: linda33wj
 manager: shwang
 ms.reviewer: douglasl
 ms.date: 08/01/2018
-ms.openlocfilehash: 24e0de3efec4e2d442f746e19f4c30363f0b4bfa
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 9a647f0597fa9a0d521eedf1942ee8f61b804fd3
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74218759"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74891513"
 ---
 # <a name="copy-data-from-amazon-marketplace-web-service-using-azure-data-factory"></a>Копирование данных из Amazon Marketplace Web Service с помощью Фабрики данных Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "74218759"
 
 Фабрика данных Azure имеет встроенный драйвер для настройки подключения. Поэтому с использованием этого соединителя вам не нужно устанавливать драйверы вручную.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -42,20 +42,20 @@ ms.locfileid: "74218759"
 
 Для связанной службы Amazon Marketplace Web Service поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | обязательные |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **AmazonMWS**. | Yes |
-| endpoint | Конечная точка сервера Amazon MWS (то есть mws.amazonservices.com).  | Yes |
-| marketplaceID | Идентификатор Amazon Marketplace, из которого нужно получать данные. Для получения данных из нескольких идентификаторов Marketplace, разделите их запятой (`,`). (То есть A2EUQ1WTGCTBG2.)  | Yes |
-| sellerID | Идентификатор продавца Amazon.  | Yes |
-| mwsAuthToken | Маркер проверки подлинности Amazon MWS. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
-| accessKeyId | Идентификатор ключа доступа, используемый для доступа к данным.  | Yes |
-| secretKey | Секретный ключ, используемый для доступа к данным. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
+| Тип | Для свойства type необходимо задать значение **AmazonMWS**. | ДА |
+| endpoint | Конечная точка сервера Amazon MWS (то есть mws.amazonservices.com).  | ДА |
+| marketplaceID | Идентификатор Amazon Marketplace, из которого нужно получать данные. Для получения данных из нескольких идентификаторов Marketplace, разделите их запятой (`,`). (То есть A2EUQ1WTGCTBG2.)  | ДА |
+| sellerID | Идентификатор продавца Amazon.  | ДА |
+| mwsAuthToken | Маркер проверки подлинности Amazon MWS. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
+| accessKeyId | Идентификатор ключа доступа, используемый для доступа к данным.  | ДА |
+| secretKey | Секретный ключ, используемый для доступа к данным. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет |
 | useHostVerification | Указывает, следует ли требовать, чтобы имя узла в сертификате сервера совпадало с именем узла сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет |
 | usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет |
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -86,9 +86,9 @@ ms.locfileid: "74218759"
 
 Чтобы скопировать данные из Amazon Marketplace Web Service, установите для свойства type набора данных значение **AmazonMWSObject**. Поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | обязательные |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство Type набора данных должно иметь значение **амазонмвсобжект** . | Yes |
+| Тип | Свойство Type набора данных должно иметь значение **амазонмвсобжект** . | ДА |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -117,12 +117,12 @@ ms.locfileid: "74218759"
 
 Чтобы скопировать данные из Amazon Marketplace Web Service, задайте тип источника **AmazonMWSSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | обязательные |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство type источника действия копирования должно иметь значение **AmazonMWSSource**. | Yes |
-| запрос | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Orders where  Amazon_Order_Id = 'xx'"`. | Нет (если для набора данных задано свойство tableName) |
+| Тип | Свойство type источника действия копирования должно иметь значение **AmazonMWSSource**. | ДА |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Orders where  Amazon_Order_Id = 'xx'"`. | Нет (если для набора данных задано свойство tableName) |
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[
@@ -158,5 +158,5 @@ ms.locfileid: "74218759"
 
 Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

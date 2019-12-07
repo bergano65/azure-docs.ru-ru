@@ -1,6 +1,6 @@
 ---
 title: Общие сведения о журналах платформы Azure | Документация Майкрософт
-description: Общие сведения о журналах диагностики в Azure, которые предоставляют обширные, часто встречающиеся данные о работе ресурсов Azure.
+description: Общие сведения о журналах в Azure Monitor, которые предоставляют Многофункциональные и часто встречающиеся данные о работе ресурса Azure.
 author: bwren
 services: azure-monitor
 ms.service: azure-monitor
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/20/2019
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: c1602b9beb5e667caf1688901c7ae4e67e5f5839
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 480c028f11de9a7c44168b217ad3553d721d01e1
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71262574"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74894549"
 ---
 # <a name="overview-of-azure-platform-logs"></a>Общие сведения о журналах платформы Azure
 Журналы платформы предоставляют подробные сведения о диагностике и аудите для ресурсов Azure и платформы Azure, от которых они зависят. Они создаются автоматически, хотя необходимо настроить определенные журналы платформы для перенаправления в одно или несколько назначений, которые должны быть сохранены. В этой статье приводятся общие сведения о журналах платформы, включая сведения, которые они предоставляют, а также о том, как их настроить для сбора и анализа.
@@ -37,11 +37,11 @@ ms.locfileid: "71262574"
 ## <a name="destinations"></a>Destinations
 Журналы платформы можно отправить в одно или несколько целевых объектов в следующей таблице в зависимости от требований к мониторингу. 
 
-| Destination | Сценарий | Ссылки |
+| Место назначения | Сценарий | Справочники |
 |:---|:---|:---|:---|
 | Рабочая область Log Analytics | Анализируйте журналы с помощью других данных мониторинга и используйте Azure Monitor функции, такие как запросы журнала и оповещения. | [Журналы ресурсов](resource-logs-collect-storage.md)<br>[Журнал действий](activity-log-collect.md)<br>[Журналы каталога действий Azure](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md) |
-| Служба хранилища Azure | Архивируйте журналы для аудита, статического анализа или резервного копирования. |[Журналы ресурсов](archive-diagnostic-logs.md)<br>[Журнал действий](activity-log-export.md)<br>[Журналы каталога действий Azure](../../active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account.md) |
-| Концентратор событий | Потоковая передача журналов в сторонние системы ведения журналов и телеметрии.  |[Журналы ресурсов](resource-logs-stream-event-hubs.md)<br>[Журнал действий](activity-log-export.md)<br>[Журналы каталога действий Azure](../../active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md) |
+| Хранилище Azure | Архивируйте журналы для аудита, статического анализа или резервного копирования. |[Журналы ресурсов](archive-diagnostic-logs.md)<br>[Журнал действий](activity-log-export.md)<br>[Журналы каталога действий Azure](../../active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account.md) |
+| концентратор событий; | Потоковая передача журналов в сторонние системы ведения журналов и телеметрии.  |[Журналы ресурсов](resource-logs-stream-event-hubs.md)<br>[Журнал действий](activity-log-export.md)<br>[Журналы каталога действий Azure](../../active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md) |
 
 
 ## <a name="diagnostic-settings-and-log-profiles"></a>Параметры диагностики и профили журналов
@@ -55,7 +55,7 @@ ms.locfileid: "71262574"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения о журнале действий](activity-logs-overview.md)
 * [Дополнительные сведения о журналах ресурсов](resource-logs-overview.md)

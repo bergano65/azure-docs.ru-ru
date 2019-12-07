@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/26/2019
+ms.date: 12/06/2019
 ms.author: cabailey
-ms.openlocfilehash: e72b9012b41f50b36ba7d92582d0c697e6db0683
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: 5b347848c9c6a58a70ab1093a6f9c70b62f3f769
+ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74546868"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74900458"
 ---
 # <a name="use-hunting-livestream-in-azure-sentinel-to-detect-threats"></a>Использование поиска облаку в Azure Sentinel для обнаружения угроз
 
@@ -70,7 +70,7 @@ ms.locfileid: "74546868"
 
 5. Выберите **воспроизвести** на панели команд.
     
-    Строка состояния на панели команд указывает, выполняется ли облаку или приостановлена. В следующем примере выполняется сеанс:
+    В строке состояния на панели команд указывается, работает ли сеанс облаку или приостановлен. В следующем примере выполняется сеанс:
     
     > [!div class="mx-imgBorder"]
     > ![создать сеанс облаку из службы Поиск меток Azure](./media/livestream/livestream-session.png)
@@ -110,7 +110,6 @@ ms.locfileid: "74546868"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как использовать поиск облаку в Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
-
 
 - [Упреждающее слежение за угрозами](hunting.md)
 - [Использование записных книжек для выполнения автоматизированного поисковых кампаний](notebooks.md)

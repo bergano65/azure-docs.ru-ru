@@ -1,22 +1,23 @@
 ---
-title: Настройка ключей, управляемых клиентом, с Azure Key Vault с помощью PowerShell в службе хранилища Azure
+title: Использование PowerShell для настройки ключей, управляемых клиентом
+titleSuffix: Azure Storage
 description: Узнайте, как использовать PowerShell для настройки ключей, управляемых клиентом, для шифрования службы хранилища Azure. Ключи, управляемые клиентом, позволяют создавать, поворачивать, отключать и отзывать элементы управления доступом.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 11/20/2019
+ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: bd723787d9cea2d3b9d81ae9db63c70a21190854
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.openlocfilehash: 87ee96b0f6ad27fc34709f3fc20a2dd69be49089
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
-ms.locfileid: "74666228"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74895271"
 ---
-# <a name="configure-customer-managed-keys-for-azure-storage-by-using-powershell"></a>Настройка ключей, управляемых клиентом, для службы хранилища Azure с помощью PowerShell
+# <a name="configure-customer-managed-keys-with-azure-key-vault-by-using-powershell"></a>Настройка ключей, управляемых клиентом, с Azure Key Vault с помощью PowerShell
 
 [!INCLUDE [storage-encryption-configure-keys-include](../../../includes/storage-encryption-configure-keys-include.md)]
 

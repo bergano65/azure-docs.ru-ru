@@ -1,7 +1,7 @@
 ---
 title: Управление учетной записью Индексатора видео
 titleSuffix: Azure Media Services
-description: В этой статье объясняется, как управлять учетной записью Индексатора видео, подключенной к Azure.
+description: В этой статье показано, как управлять учетной записью индексатора видео, подключенной к Azure.
 services: media-services
 author: Juliako
 manager: femila
@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: juliako
-ms.openlocfilehash: a8221cdcf7afe82ee969f645d7f459c69519711d
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 4f8491e31747eda9cbe8689ba7db3026df0ff3ad
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838983"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892776"
 ---
 # <a name="manage-a-video-indexer-account-connected-to-azure"></a>Управление учетной записью Индексатора видео, подключенной к Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "73838983"
 > [!NOTE]
 > Чтобы вносить изменения в конфигурацию учетной записи, описанные в этой статье, вам необходимо быть владельцем учетной записи Индексатора видео.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Подключите свою учетную запись Индексатора видео к Azure, как описано в статье [Создание учетной записи Индексатора видео, подключенной к Azure](connect-to-azure.md). 
 
@@ -38,7 +38,7 @@ ms.locfileid: "73838983"
 
 1. Щелкните значок пользователя в верхнем правом углу и выберите **Параметры**.
 
-    ![Параметры](./media/manage-account-connected-to-azure/select-settings.png)
+    ![Настройки](./media/manage-account-connected-to-azure/select-settings.png)
 
 2. На странице **Параметры** выберите вкладку **Учетная запись**.
 
@@ -56,13 +56,13 @@ ms.locfileid: "73838983"
 
 Автомасштабирование не выполняется, если количество ЕЗ меньше 1 или выше лимита по умолчанию для учетной записи Служб мультимедиа Azure. Чтобы увеличить лимит, создайте запрос на обслуживание. Сведения о квотах и ограничениях, а также о том, как отправить запрос в службу поддержки, см. в разделе [Квоты и ограничения](../../media-services/previous/media-services-quotas-and-limitations.md).
 
-![Регистрация](./media/manage-account-connected-to-azure/autoscale-reserved-units.png)
+![Зарегистрироваться](./media/manage-account-connected-to-azure/autoscale-reserved-units.png)
 
 ## <a name="errors-and-warnings"></a>Ошибки и предупреждения
 
 Если для вашей учетной записи необходима корректировка, вы увидите соответствующие ошибки и предупреждения о конфигурации учетной записи на странице **Параметры**. Сообщения содержат ссылки на точные места на портале Azure, где необходимо внести изменения. В этом разделе содержатся дополнительные сведения о сообщениях про ошибки и предупреждающих сообщениях.
 
-* Сетка событий
+* Служба "Сетка событий Azure"
 
     Вам необходимо зарегистрировать поставщик ресурсов Сетки событий с помощью портала Azure. На [портале Azure](https://portal.azure.com/) последовательно выберите **Подписки** > [подписка] > **ResourceProviders** > **Microsoft.EventGrid**. Если не отображается состояние **Зарегистрировано**, щелкните **Зарегистрировать**. Регистрация займет несколько минут. 
 

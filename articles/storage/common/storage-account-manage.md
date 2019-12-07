@@ -1,24 +1,25 @@
 ---
-title: Служба хранилища Azure. Управление параметрами учетной записи хранения на портале Azure | Документация Майкрософт
+title: Управление параметрами учетной записи хранения на портале Azure
+titleSuffix: Azure Storage
 description: Узнайте, как управлять параметрами учетной записи хранения на портале Azure, включая настройку параметров управления доступом, повторное создание ключей доступа к учетной записи, изменение уровня доступа или изменения типа репликации, используемой учетной записью. Также узнайте, как удалить учетную запись хранения на портале.
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: conceptual
-ms.date: 11/06/2019
+ms.topic: how-to
+ms.date: 12/04/2019
 ms.author: tamram
-ms.openlocfilehash: 3c01cc870b20c8256b215eb700548e6cd69ad0d5
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 93d3bf3d17348a0f5ad62118fcb9c9a0c6f2f656
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73748984"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892385"
 ---
 # <a name="manage-storage-account-settings-in-the-azure-portal"></a>Управление параметрами учетной записи хранения на портале Azure
 
 На [портале Azure](https://portal.azure.com) доступны различные параметры учетной записи хранения. В данной статье описываются некоторые из этих параметров и их применение.
 
-## <a name="access-control"></a>управление доступом;
+## <a name="access-control"></a>Управление доступом
 
 Служба хранилища Azure поддерживает авторизацию с Azure Active Directory для хранилища BLOB-объектов и хранилища очередей с помощью управления доступом на основе ролей (RBAC). Дополнительные сведения об авторизации в Azure AD см. в статье [авторизация доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](storage-auth-aad.md).
 
@@ -77,4 +78,4 @@ ms.locfileid: "73748984"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения об учетной записи хранения](storage-account-overview.md)
-- [создать учетную запись хранения;](storage-quickstart-create-account.md)
+- [Создайте учетную запись хранения](storage-quickstart-create-account.md)

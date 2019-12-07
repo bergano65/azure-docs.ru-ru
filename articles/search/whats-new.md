@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 247378461a99d42f21a67a2c0aebc7019727f3a0
-ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
+ms.openlocfilehash: b1df328f151a4085ec0aadd1b880048f81483a51
+ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74555142"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74901325"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Новые возможности Azure Когнитивный поиск
 
@@ -29,7 +29,11 @@ ms.locfileid: "74555142"
 
 ## <a name="feature-announcements"></a>Объявления о функциях
 
-4 ноября 2019-Ignite Конференция
+### <a name="december-2019"></a>Декабрь 2019 г.
+
++ [Создание приложения (Предварительная версия)](search-create-app-portal.md) — это новый мастер на портале, который создает загружаемый HTML-файл. Файл включает внедренный скрипт, который отображает рабочее веб-приложение типа localhost, привязанное к индексу в службе поиска. Страницы настраиваются в мастере и могут содержать панель поиска, область результатов, навигацию по боковой панели и поддержку запросов typeahead. Можно изменить HTML в автономном режиме, чтобы расширить или настроить рабочий процесс или внешний вид.
+
+### <a name="november-2019---ignite-conference"></a>Ноябрь 2019-Ignite Конференция
 
 + [Добавочное индексирование (Предварительная версия)](cognitive-search-incremental-indexing-conceptual.md) позволяет выбрать, какие шаги следует обработать при внесении изменений в конвейер обогащения. Добавочное индексирование полезно при наличии ранее проанализированного содержимого. Выходные данные дорогостоящего анализа хранятся, а затем используются в качестве базиса для дополнительного индексирования или дополнения.
 
@@ -44,7 +48,7 @@ ms.locfileid: "74555142"
 
 + [Azure Data Lake Storage 2-го поколения (Предварительная версия)](search-howto-index-azure-data-lake-storage.md), [Cosmos DB API Gremlin (Предварительная](search-howto-index-cosmosdb.md)версия) и [Cosmos DB API Cassandra (Предварительная версия)](search-howto-index-cosmosdb.md) теперь поддерживаются в индексаторах. Вы можете зарегистрироваться, используя [эту форму](https://aka.ms/azure-cognitive-search/indexer-preview). После того как вы примете предварительную версию программы, вы получите сообщение электронной почты с подтверждением.
 
-24 2019 июля
+### <a name="july-2019"></a>Июль 2019 г.
 
 + Общедоступно в [облаке Azure для государственных организаций](../azure-government/documentation-government-services-webandmobile.md#azure-cognitive-search).
 

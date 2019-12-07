@@ -1,23 +1,22 @@
 ---
-title: Копирование данных из SAP Cloud для клиента и обратно в него с помощью фабрики данных Azure
+title: Копирование данных из SAP Cloud для клиента и обратно в него
 description: Узнайте, как копировать данные SAP Cloud for Customer в поддерживаемые хранилища данных-приемники или из поддерживаемых исходных хранилищ данных в SAP Cloud for Customer с помощью фабрики данных.
 services: data-factory
 documentationcenter: ''
+ms.author: jingwang
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/02/2019
-ms.author: jingwang
-ms.openlocfilehash: 5c47eead8bc8428f533374b2d4892ed684c1f3c7
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 56f4c8094e8b1e763a10cef3a87a5801d72794b4
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73680265"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74896324"
 ---
 # <a name="copy-data-from-sap-cloud-for-customer-c4c-using-azure-data-factory"></a>Копирование данных из SAP Cloud for Customer (C4C) с помощью фабрики данных Azure
 
@@ -37,7 +36,7 @@ ms.locfileid: "73680265"
 
 В частности, этот соединитель позволяет фабрике данных Azure копировать данные из SAP Cloud for Customer или в SAP Cloud for Customer, включая решения SAP Cloud for Sales, SAP Cloud for Service и SAP Cloud for Social Engagement.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -47,18 +46,18 @@ ms.locfileid: "73680265"
 
 Для связанной службы SAP Cloud for Customer поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства type нужно задать значение **SapCloudForCustomer**. | Да |
-| URL-адрес | URL-адрес службы SAP C4C OData. | Да |
-| Имя пользователя | Укажите имя пользователя для подключения к SAP C4C. | Да |
-| пароль | Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| Тип | Для свойства type нужно задать значение **SapCloudForCustomer**. | ДА |
+| URL-адрес | URL-адрес службы SAP C4C OData. | ДА |
+| Имя пользователя | Укажите имя пользователя для подключения к SAP C4C. | ДА |
+| пароль | Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | "Нет" для источника, "Да" для приемника |
 
 >[!IMPORTANT]
 >Чтобы копировать данные в SAP Cloud for Customer, [создайте Azure IR](create-azure-integration-runtime.md#create-azure-ir) явным образом в расположении, близком к вашей системе SAP Cloud for Customer, и сопоставьте его в связанной службе, как показано в следующем примере:
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -87,12 +86,12 @@ ms.locfileid: "73680265"
 
 Чтобы скопировать данные из SAP Cloud for Customer, задайте для свойства type набора данных значение **SapCloudForCustomerResource**. Поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство type для набора данных должно иметь значение **SapCloudForCustomerResource**. |Да |
-| path | Укажите путь к сущности SAP C4C OData. |Да |
+| Тип | Свойство type для набора данных должно иметь значение **SapCloudForCustomerResource**. |ДА |
+| path | Укажите путь к сущности SAP C4C OData. |ДА |
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -119,14 +118,14 @@ ms.locfileid: "73680265"
 
 Чтобы скопировать данные из SAP Cloud for Customer, задайте тип источника в действии копирования как **SapCloudForCustomerSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства type нужно задать значение **SapCloudForCustomerSource**.  | Да |
-| запрос | Укажите пользовательский запрос OData для чтения данных. | Нет |
+| Тип | Для свойства type нужно задать значение **SapCloudForCustomerSource**.  | ДА |
+| query | Укажите пользовательский запрос OData для чтения данных. | Нет |
 
 Образец запроса для получения данных за определенный день: `"query": "$filter=CreatedOn ge datetimeoffset'2017-07-31T10:02:06.4202620Z' and CreatedOn le datetimeoffset'2017-08-01T10:02:06.4202620Z'"`
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[
@@ -162,13 +161,13 @@ ms.locfileid: "73680265"
 
 Чтобы скопировать данные в SAP Cloud for Customer, задайте тип приемника в действии копирования как **SapCloudForCustomerSink**. В разделе **sink** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства type нужно задать значение **SapCloudForCustomerSink**.  | Да |
+| Тип | Для свойства type нужно задать значение **SapCloudForCustomerSink**.  | ДА |
 | writeBehavior | Поведение операции при записи. Может иметь значение "Insert", "Update". | Нет. По умолчанию "Insert". |
 | writeBatchSize | Размер пакета операции записи. Размер пакета для обеспечения максимальной производительности может различаться для разных таблиц или серверов. | Нет. По умолчанию 10. |
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[
@@ -216,18 +215,18 @@ ms.locfileid: "73680265"
 | Edm.Binary | Byte[] |
 | Edm.Boolean | Bool |
 | Edm.Byte | Byte[] |
-| Edm.DateTime | DateTime |
-| Edm.Decimal | DECIMAL |
-| Edm.Double | Double |
-| Edm.Single | Single |
-| Edm.Guid | Guid |
+| Edm.DateTime | Дата и время |
+| Edm.Decimal | Decimal |
+| Edm.Double | DOUBLE |
+| Edm.Single | Отдельная |
+| Edm.Guid | GUID |
 | Edm.Int16 | Int16 |
 | Edm.Int32 | Int32 |
 | Edm.Int64 | Int64 |
 | Edm.SByte | Int16 |
-| Edm.String | string |
-| Edm.Time | TimeSpan |
-| Edm.DateTimeOffset | Datetimeoffset |
+| Edm.String | Строка |
+| Edm.Time | Интервал времени |
+| Edm.DateTimeOffset | DateTimeOffset |
 
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска

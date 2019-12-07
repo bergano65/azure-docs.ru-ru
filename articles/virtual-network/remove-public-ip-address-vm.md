@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/04/2019
 ms.author: kumud
-ms.openlocfilehash: beb2655b0796adbe289b0af104dead2d15e584db
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 1c27af30f97ea967d170b2cccaefb2e95f8fedaf
+ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74852163"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74900747"
 ---
 # <a name="dissociate-a-public-ip-address-from-an-azure-vm"></a>Отмена связи общедоступного IP-адреса с виртуальной машиной Azure 
 
@@ -51,7 +51,7 @@ ms.locfileid: "74852163"
     --name ipconfigmyVM \
     --resource-group myResourceGroup \
     --nic-name myVMVMNic \
-    --remove PublicIpAdress
+    --remove PublicIpAddress
    ```
 
    Если вы не знакомы с именем сетевого интерфейса, подключенного к виртуальной машине, используйте команду [AZ VM NIC List](/cli/azure/vm/nic?view=azure-cli-latest#az-vm-nic-list) , чтобы просмотреть их. Например, следующая команда выводит список имен сетевых интерфейсов, подключенных к виртуальной машине с именем *myVM* в группе ресурсов с именем *myResourceGroup*:
@@ -68,11 +68,18 @@ ms.locfileid: "74852163"
 
      В предыдущем примере *myVMVMNic* — это имя сетевого интерфейса.
 
-   - Если имя IP-конфигурации для сетевого интерфейса неизвестно, воспользуйтесь командой [AZ Network NIC IP-config list](/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-list) , чтобы получить их. Например, следующая команда выводит список имен IP-конфигураций для сетевого интерфейса с именем *myVMVMNic* в группе ресурсов с именем *myResourceGroup*:
+   - Если имя IP-конфигурации для сетевого интерфейса неизвестно, воспользуйтесь командой [AZ Network NIC IP-config list](/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-list) , чтобы получить их. Например, следующая команда перечисляет имена общедоступных IP-конфигураций для сетевого интерфейса с именем *myVMVMNic* в группе ресурсов с именем *myResourceGroup*:
 
      ```azurecli-interactive
      az network nic ip-config list --nic-name myVMVMNic --resource-group myResourceGroup --out table
      ```
+
+   - Если вы не знакомы с именем общедоступной IP-конфигурации для сетевого интерфейса, воспользуйтесь командой [AZ Network NIC IP-config показывать](/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-show) , чтобы получить их. Например, следующая команда перечисляет имена общедоступных IP-конфигураций для сетевого интерфейса с именем *myVMVMNic* в группе ресурсов с именем *myResourceGroup*:
+
+     ```azurecli-interactive
+     az network nic ip-config show --name ipconfigmyVM --nic-name myVMVMNic --resource-group myResourceGroup --query publicIPAddress.id
+     ```
+
 
 ## <a name="powershell"></a>PowerShell
 
@@ -106,13 +113,13 @@ ms.locfileid: "74852163"
 
      ```azurepowershell-interactive
      $nic = Get-AzNetworkInterface -Name myVMVMNic -ResourceGroupName myResourceGroup
-     $nic.IPConfigurations
+     $nic.IPConfigurations.id
      ```
 
      Выходные данные включают одну или несколько строк, которые похожи на приведенный ниже пример. В примере выходных данных *ипконфигмивм* — это имя IP-конфигурации.
   
      ```
-     Id     : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/myVMVMNic/ipConfigurations/ipconfigmyVM
+     "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/myVMVMNic/ipConfigurations/ipconfigmyVM"
      ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
