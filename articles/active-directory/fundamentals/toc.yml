@@ -17,6 +17,14 @@
   items:
     - name: Оценка безопасности удостоверений
       href: identity-secure-score.md
+    - name: Безопасность
+      items:
+        - name: Включение MFA
+          href: concept-fundamentals-mfa-get-started.md
+        - name: Параметры безопасности по умолчанию
+          href: concept-fundamentals-security-defaults.md
+        - name: Блокировка устаревших методов проверки подлинности
+          href: concept-fundamentals-block-legacy-authentication.md
     - name: Управление группами и доступом
       href: active-directory-manage-groups.md
     - name: Групповое лицензирование

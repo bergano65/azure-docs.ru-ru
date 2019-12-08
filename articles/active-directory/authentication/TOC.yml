@@ -43,8 +43,6 @@
       items:
         - name: Принципы работы MFA
           href: concept-mfa-howitworks.md
-        - name: Включение MFA
-          href: concept-mfa-get-started.md
         - name: Лицензирование пользователей
           href: concept-mfa-licensing.md
         - name: Управление поставщиком аутентификации

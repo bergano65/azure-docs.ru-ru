@@ -152,7 +152,7 @@
     - name: Работа с данными
       items:
         - name: Получение данных из хранилища данных
-          displayName: 'blob, get, fileshare, access storage'
+          displayName: 'blob, get, fileshare, access storage, mount, download'
           href: how-to-access-data.md
         - name: Добавление и регистрация наборов данных
           displayName: 'data, dataset'

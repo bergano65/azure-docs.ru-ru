@@ -17,8 +17,6 @@
   items:
     - name: Распространенные политики условного доступа
       href: concept-conditional-access-policy-common.md
-    - name: Параметры безопасности по умолчанию
-      href: concept-conditional-access-security-defaults.md
     - name: Компоненты политики условного доступа
       href: concept-conditional-access-policies.md
     - name: Условия
