@@ -10,12 +10,12 @@ ms.subservice: integration
 ms.date: 08/28/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: fd03072f4e69fac43874e822ebb06063436ef72c
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: e8d7e7764a01dbd0169efae093bac4d984982108
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73646146"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74708665"
 ---
 # <a name="continuous-integration-and-deployment-for-azure-sql-data-warehouse"></a>Непрерывная интеграция и развертывание в Хранилище данных SQL Azure
 
@@ -25,12 +25,8 @@ ms.locfileid: "73646146"
 
 - Изучите [учебник по интеграции системы управления версиями](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-source-control-integration).
 
-- Создайте [локальный агент](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops#install) с SSDT Preview Bits (предварительная версия 16.3 версии 2 и более поздней), установленными для Хранилища данных SQL (предварительная версия).
-
 - Настройка и подключение к Azure DevOps
 
-  > [!NOTE]
-  > SSDT сейчас находится на этапе предварительной версии, поэтому вам придется использовать локальный агент. Агенты, размещенные в Майкрософт, будут обновлены в течение следующих нескольких месяцев.
 
 ## <a name="continuous-integration-with-visual-studio-build"></a>Непрерывная интеграция с использованием сборки Visual Studio
 
@@ -49,9 +45,9 @@ ms.locfileid: "73646146"
 На этом этапе у вас есть простая среда, в которой в результате любого возврата к главной ветви репозитория системы управления версиями автоматически активируется успешная сборка проекта базы данных в Visual Studio. Убедитесь, что автоматизация работает комплексно, внеся изменение в проект локальной базы данных и возвратив это изменение в главную ветвь.
 
 
-## <a name="continuous-deployment-with-the-azure-sql-database-deployment-task"></a>Непрерывное развертывание с помощью задачи развертывания Базы данных SQL Azure
+## <a name="continuous-deployment-with-the-azure-sql-data-warehouse-or-database-deployment-task"></a>Непрерывное развертывание с помощью задачи развертывания Data Warehouse (или Базы данных) SQL Azure
 
-1. Добавьте новую задачу с помощью [задачи развертывания Базы данных SQL Azure](https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/sql-azure-dacpac-deployment?view=azure-devops) и заполните необходимые поля, чтобы подключиться к целевому хранилищу данных. При запуске этой задачи DACPAC, созданный в результате предыдущего процесса сборки, развертывается в целевом хранилище данных.
+1. Добавьте новую задачу с помощью [задачи развертывания Базы данных SQL Azure](https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/sql-azure-dacpac-deployment?view=azure-devops) и заполните необходимые поля, чтобы подключиться к целевому хранилищу данных. При запуске этой задачи DACPAC, созданный в результате предыдущего процесса сборки, развертывается в целевом хранилище данных. Вы также можете использовать [задачу развертывания Хранилища данных SQL Azure](https://marketplace.visualstudio.com/items?itemName=ms-sql-dw.SQLDWDeployment) 
 
       ![Задача развертывания](media/sql-data-warehouse-continuous-integration-and-deployment/4-deployment-task.png "Задача развертывания")
 

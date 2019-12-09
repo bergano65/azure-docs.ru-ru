@@ -1,26 +1,19 @@
 ---
-title: созданию и запуску настраиваемого образа в Службе приложений из частного реестра
-description: Использование пользовательского образа Docker для платформы "Веб-приложения для контейнеров".
+title: Руководство по сборке и запуску пользовательского образа
+description: Сведения о создании пользовательского образа Linux, который можно запустить в Службе приложений Azure, развернуть в Реестры контейнеров Azure и запустить в Службе приложений.
 keywords: служба приложений azure, веб-приложение, docker, контейнер
-services: app-service
-documentationcenter: ''
-author: msangapu
-manager: jeconnoc
-editor: ''
+author: msangapu-msft
 ms.assetid: b97bd4e6-dff0-4976-ac20-d5c109a559a8
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 07d5b718cb96a938cb6e796e1cf4864851433516
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: d960af01eed9fae0fec2566772799e4972053d7b
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70070938"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74687502"
 ---
 # <a name="tutorial-build-a-custom-image-and-run-in-app-service-from-a-private-registry"></a>Руководство по созданию и запуску настраиваемого образа в Службе приложений из частного реестра
 

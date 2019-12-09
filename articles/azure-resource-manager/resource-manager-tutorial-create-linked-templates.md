@@ -2,15 +2,15 @@
 title: Создание связанных шаблонов
 description: Сведения о создании связанных шаблонов Azure Resource Manager для создания виртуальной машины
 author: mumian
-ms.date: 10/04/2019
+ms.date: 12/03/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 9764edb986b2ee847e3fcecda228f53551b462c3
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: e8964335d8c436cc590c36c3ea01fac02ed2280a
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74325424"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74815274"
 ---
 # <a name="tutorial-create-linked-azure-resource-manager-templates"></a>Руководство. Создание связанных шаблонов Azure Resource Manager
 
@@ -45,6 +45,7 @@ ms.locfileid: "74325424"
     ```azurecli-interactive
     openssl rand -base64 32
     ```
+
     Для защиты криптографических ключей и других секретов используйте Azure Key Vault. Дополнительные сведения см. в статье [Руководство. Интеграция с Azure Key Vault при развертывании шаблона Resource Manager](./resource-manager-tutorial-use-key-vault.md). Мы также рекомендуем обновлять пароль каждые три месяца.
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
@@ -55,42 +56,46 @@ ms.locfileid: "74325424"
 * **связанный шаблон** — создает учетную запись хранения.
 
 1. В Visual Studio Code выберите **Файл**>**Открыть файл**.
-2. Скопируйте приведенный ниже URL-адрес и вставьте его в поле **Имя файла**.
+1. Скопируйте приведенный ниже URL-адрес и вставьте его в поле **Имя файла**.
 
     ```url
     https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-windows/azuredeploy.json
     ```
-3. Чтобы открыть файл, выберите **Открыть**.
-4. Шаблоном определено пять ресурсов:
+
+1. Чтобы открыть файл, выберите **Открыть**.
+1. Шаблоном определено шесть ресурсов:
 
    * [`Microsoft.Storage/storageAccounts`](https://docs.microsoft.com/azure/templates/Microsoft.Storage/storageAccounts)
    * [`Microsoft.Network/publicIPAddresses`](https://docs.microsoft.com/azure/templates/microsoft.network/publicipaddresses)
+   * [`Microsoft.Network/networkSecurityGroups`](https://docs.microsoft.com/azure/templates/microsoft.network/networksecuritygroups)
    * [`Microsoft.Network/virtualNetworks`](https://docs.microsoft.com/azure/templates/microsoft.network/virtualnetworks)
    * [`Microsoft.Network/networkInterfaces`](https://docs.microsoft.com/azure/templates/microsoft.network/networkinterfaces)
    * [`Microsoft.Compute/virtualMachines`](https://docs.microsoft.com/azure/templates/microsoft.compute/virtualmachines)
 
      Прежде чем настраивать шаблон, рекомендуется ознакомиться с основными возможностями схемы шаблонов.
-5. Выберите **Файл**>**Сохранить как**, чтобы сохранить файл на локальный компьютер с именем **azuredeploy.json**.
-6. Для создания другой копии файла с именем **linkedTemplate.json** выберите **Файл**>**Сохранить как**.
+1. Выберите **Файл**>**Сохранить как**, чтобы сохранить файл на локальный компьютер с именем **azuredeploy.json**.
+1. Для создания другой копии файла с именем **linkedTemplate.json** выберите **Файл**>**Сохранить как**.
 
 ## <a name="create-the-linked-template"></a>Создание связанного шаблона
 
 Связанный шаблон создает учетную запись хранения. Связанный шаблон можно использовать в качестве автономного шаблона, чтобы создать учетную запись хранения. В этом руководстве связанный шаблон получает два параметра и передает значение обратно основному шаблону. Такое "возвращаемое" значение определено в элементе `outputs`.
 
 1. Откройте файл **linkedTemplate.json** в Visual Studio Code (если он еще не открыт).
-2. Выполните следующие изменения:
+1. Выполните следующие изменения:
 
     * Удалите все параметры, кроме **location**.
     * Добавьте параметр с именем **storageAccountName**.
-        ```json
-        "storageAccountName":{
-          "type": "string",
-          "metadata": {
-              "description": "Azure Storage account name."
-          }
-        },
-        ```
-        Имя учетной записи хранения и расположение передаются из основного в связанный шаблон в качестве параметров.
+
+      ```json
+      "storageAccountName":{
+        "type": "string",
+        "metadata": {
+            "description": "Azure Storage account name."
+        }
+      },
+      ```
+
+      Имя учетной записи хранения и расположение передаются из основного в связанный шаблон в качестве параметров.
 
     * Удалите элемент **variables** и все определения переменных.
     * Удалите все ресурсы, за исключением учетной записи хранения. Удаляются всего четыре ресурса.
@@ -110,6 +115,7 @@ ms.locfileid: "74325424"
             }
         }
         ```
+
        Для определения ресурсов виртуальной машины в основном шаблоне необходим **storageUri**.  В качестве значения выходных данных передайте значения обратно в основной шаблон.
 
         Когда все готово, шаблон должен выглядеть, как показано ниже.
@@ -138,7 +144,7 @@ ms.locfileid: "74325424"
               "type": "Microsoft.Storage/storageAccounts",
               "name": "[parameters('storageAccountName')]",
               "location": "[parameters('location')]",
-              "apiVersion": "2018-07-01",
+              "apiVersion": "2018-11-01",
               "sku": {
                 "name": "Standard_LRS"
               },
@@ -154,7 +160,8 @@ ms.locfileid: "74325424"
           }
         }
         ```
-3. Сохраните изменения.
+
+1. Сохраните изменения.
 
 ## <a name="upload-the-linked-template"></a>Передача связанного шаблона
 
@@ -208,9 +215,10 @@ $templateURI = New-AzStorageBlobSASToken `
     -ExpiryTime (Get-Date).AddHours(8.0) `
     -FullUri
 
-echo "You need the following values later in the tutorial:"
-echo "Resource Group Name: $resourceGroupName"
-echo "Linked template URI with SAS token: $templateURI"
+Write-Host "You need the following values later in the tutorial:"
+Write-Host "Resource Group Name: $resourceGroupName"
+Write-Host "Linked template URI with SAS token: $templateURI"
+Write-Host "Press [ENTER] to continue ..."
 ```
 
 1. Нажмите зеленую кнопку **Попробовать**, чтобы открыть панель Azure Cloud Shell.
@@ -226,22 +234,7 @@ echo "Linked template URI with SAS token: $templateURI"
 Основной шаблон находится в файле с именем azuredeploy.json.
 
 1. Откройте файл **azuredeploy.json** в Visual Studio Code (если он еще не открыт).
-2. Удалите определение ресурса учетной записи хранения из шаблона:
-
-    ```json
-    {
-      "type": "Microsoft.Storage/storageAccounts",
-      "name": "[variables('storageAccountName')]",
-      "location": "[parameters('location')]",
-      "apiVersion": "2018-07-01",
-      "sku": {
-        "name": "Standard_LRS"
-      },
-      "kind": "Storage",
-      "properties": {}
-    },
-    ```
-3. К тому месту, где необходимо определение учетной записи хранения, добавьте приведенный ниже фрагмент кода JSON.
+1. Замените определение ресурса учетной записи хранения следующим фрагментом кода JSON:
 
     ```json
     {
@@ -251,7 +244,7 @@ echo "Linked template URI with SAS token: $templateURI"
       "properties": {
           "mode": "Incremental",
           "templateLink": {
-              "uri":"https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-linked-templates/linkedStorageAccount.json"
+              "uri":""
           },
           "parameters": {
               "storageAccountName":{"value": "[variables('storageAccountName')]"},
@@ -268,8 +261,8 @@ echo "Linked template URI with SAS token: $templateURI"
     * Для обоих связанного и вложенного шаблонов можно использовать только [добавочный](./deployment-modes.md) режим развертывания.
     * `templateLink/uri` содержит URI связанного шаблона. Обновите это значение, указав URI, полученный при отправке связанного шаблона (тот, который с маркером SAS).
     * Чтобы передать значение из основного шаблона в связанный, используйте `parameters`.
-4. Укажите для элемента `uri` значение, полученное при отправке связанного шаблона (тот, который с маркером SAS). На практике вам необходимо указать параметр для универсального кода ресурса (URI).
-5. Сохраните измененный шаблон.
+1. Укажите для элемента `uri` значение, полученное при отправке связанного шаблона (тот, который с маркером SAS). На практике вам необходимо указать параметр для универсального кода ресурса (URI).
+1. Сохраните измененный шаблон.
 
 ## <a name="configure-dependency"></a>Настройка зависимостей
 
@@ -290,6 +283,7 @@ echo "Linked template URI with SAS token: $templateURI"
             }
     }
     ```
+
     Основной шаблон требует это значение.
 
 1. Откройте файл azuredeploy.json в Visual Studio Code, если он еще не открыт.

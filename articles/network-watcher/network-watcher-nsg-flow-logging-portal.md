@@ -18,12 +18,12 @@ ms.workload: infrastructure-services
 ms.date: 04/30/2018
 ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: a5d600e761ce3c3cebbe155c6be7e0f5a377eb32
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: afa1d2ca59bacec2695aaff0cacb119a8fbf787b
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74419629"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74766605"
 ---
 # <a name="tutorial-log-network-traffic-to-and-from-a-virtual-machine-using-the-azure-portal"></a>Руководство по Регистрация потока входящего и исходящего сетевого трафика виртуальной машины с помощью портала Azure
 
@@ -127,7 +127,7 @@ ms.locfileid: "74419629"
    ![Скачивание журналов потоков](./media/network-watcher-nsg-flow-logging-portal/download-flow-logs.png)
 
 3. Выберите учетную запись хранения, настроенную на шаге 2 в разделе о [включении журнала потоков NSG](#enable-nsg-flow-log).
-4. В разделе **Служба BLOB-объектов** выберите **BLOB-объекты**, а затем —контейнер **insights-logs-networksecuritygroupflowevent**.
+4. В разделе **Служба BLOB-объектов** выберите **Контейнеры**, а затем —контейнер **insights-logs-networksecuritygroupflowevent**.
 5. В контейнере перейдите к иерархии папок и найдите файл PT1H.json, как показано на следующем изображении. Файлы журналов записываются в иерархию папок, которая соответствует следующему соглашению об именовании: https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecuritygroupflowevent/resourceId=/SUBSCRIPTIONS/{subscriptionID}/RESOURCEGROUPS/{resourceGroupName}/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/{nsgName}/y={year}/m={month}/d={day}/h={hour}/m=00/macAddress={macAddress}/PT1H.json
 
    ![Журнал потока](./media/network-watcher-nsg-flow-logging-portal/log-file.png)

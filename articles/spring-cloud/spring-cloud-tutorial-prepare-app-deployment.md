@@ -1,17 +1,17 @@
 ---
-title: Подготовка приложения Spring к развертыванию в Azure Spring Cloud | Документация Майкрософт
-description: В рамках этого краткого руководства вы подготовите приложение Java Spring для развертывания.
+title: Учебник. Подготовка приложения Spring для развертывания в Azure Spring Cloud
+description: В рамках этого учебника вы подготовите приложение Java Spring для развертывания.
 author: jpconnock
 ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 10/06/2019
 ms.author: jeconnoc
-ms.openlocfilehash: 6c3048fd27c3d3d4fdba0841fb4ab21bd10e15fe
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 3c567c54f887afe9ac112970a682b9466515d949
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73721252"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74708727"
 ---
 # <a name="tutorial-prepare-a-java-spring-application-for-deployment-in-azure-spring-cloud"></a>Руководство по подготовке приложения Java Spring для развертывания в Azure Spring Cloud
 
@@ -176,4 +176,3 @@ Azure Spring Cloud размещает компоненты Spring Cloud, так�
 
 > [!div class="nextstepaction"]
 > [Узнайте, как настроить сервер конфигурации](spring-cloud-tutorial-config-server.md).
-

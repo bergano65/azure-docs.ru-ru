@@ -9,12 +9,12 @@ ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
 ms.date: 11/12/2019
-ms.openlocfilehash: c52bf372f21d9c2ef3d1a148aadd899435ad4181
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: cab13fd65e9fdbd7179e6ba759b1aa696ef95fa1
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74383062"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74790330"
 ---
 # <a name="tutorial-visualize-and-analyze-events-from-azure-digital-twins-by-using-time-series-insights"></a>Руководство по визуализации и анализу событий Azure Digital Twins с помощью Аналитики временных рядов
 
@@ -82,7 +82,7 @@ ms.locfileid: "74383062"
     > [!TIP]
     > Убедитесь, что вы создаете политику SAS для экземпляра концентратора событий, а не пространства имен.
 
-1. Откройте созданную политику **ManageSend** и скопируйте значения **Строка подключения — первичный ключ** и **Строка подключения — вторичный ключ** во временный файл. Эти значения потребуются, чтобы создать конечную точку для концентратора событий в следующем разделе.
+1. Откройте созданную политику **ManageSend** и скопируйте значения **Строка подключения — первичный ключ** и **Строка подключения — вторичный ключ** во временный файл. Эти значения потребуются, чтобы создать конечную точку для концентратора событий в следующем разделе.
 
 ### <a name="create-an-endpoint-for-the-event-hub"></a>Создание конечной точки для концентратора событий
 
@@ -108,13 +108,13 @@ ms.locfileid: "74383062"
       path: Name_of_your_Event_Hub
     ```
 
-1. Замените заполнители `Primary_connection_string_for_your_event_hub` значением **Строка подключения — первичный ключ** для концентратора событий. Убедитесь, что формат строки подключения выглядит следующим образом:
+1. Замените заполнители `Primary_connection_string_for_your_event_hub` значением **Строка подключения — первичный ключ** для концентратора событий. Убедитесь, что формат строки подключения выглядит следующим образом:
 
    ```ConnectionString
    Endpoint=sb://nameOfYourEventHubNamespace.servicebus.windows.net/;SharedAccessKeyName=ManageSend;SharedAccessKey=yourShareAccessKey1GUID;EntityPath=nameOfYourEventHub
    ```
 
-1. Замените заполнители `Secondary_connection_string_for_your_event_hub` значением **Строка подключения — вторичный ключ** для концентратора событий. Убедитесь, что формат строки подключения выглядит следующим образом: 
+1. Замените заполнители `Secondary_connection_string_for_your_event_hub` значением **Строка подключения — вторичный ключ** для концентратора событий. Убедитесь, что формат строки подключения выглядит следующим образом: 
 
    ```ConnectionString
    Endpoint=sb://nameOfYourEventHubNamespace.servicebus.windows.net/;SharedAccessKeyName=ManageSend;SharedAccessKey=yourShareAccessKey2GUID;EntityPath=nameOfYourEventHub
@@ -145,7 +145,7 @@ ms.locfileid: "74383062"
 
     [![Выделенные элементы для создания экземпляра Аналитики временных рядов](./media/tutorial-facilities-analyze/create-tsi.png)](./media/tutorial-facilities-analyze/create-tsi.png#lightbox)
 
-1. На вкладке **Источник события** введите **имя**, выберите **Концентратор событий** в качестве **типа источника** и проверьте, правильно ли выбраны другие значения. Выберите **ManageSend** в качестве **имени политики доступа концентратора событий**, а затем в качестве **группы потребителей концентратора событий** выберите ту, которую создали в предыдущем разделе. Выберите **Review + create** (Просмотреть и создать).
+1. На вкладке **Источник события** введите **имя**, выберите **Концентратор событий** в качестве **типа источника** и проверьте, правильно ли выбраны другие значения для ссылки на созданный концентратор событий. Выберите **ManageSend** в качестве **имени политики доступа концентратора событий**, а затем в качестве **группы потребителей концентратора событий** выберите ту, которую создали в предыдущем разделе. Выберите **Review + create** (Просмотреть и создать).
 
     [![Выделенные элементы для создания источника событий](./media/tutorial-facilities-analyze/tsi-event-source.png)](./media/tutorial-facilities-analyze/tsi-event-source.png#lightbox)
 

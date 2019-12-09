@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Синтез речи с помощью Objective-C — служба "Речь"
+title: Краткое руководство. Синтез речи с помощью Objective-C в службе "Речь"
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как синтезировать речь в iOS с помощью Objective-C и пакета SDK службы "Речь".
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 09/20/2019
 ms.author: yulili
-ms.openlocfilehash: 460d2069bea8809b7d453bbe1cf27284109df9b5
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 09ee7f0918bce469186688a5d0e82441bb2e5457
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73505526"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74817772"
 ---
 # <a name="quickstart-synthesize-speech-in-objective-c-on-ios-using-the-speech-sdk"></a>Краткое руководство. Синтез речи в iOS с помощью Objective-C и пакета SDK службы "Речь"
 

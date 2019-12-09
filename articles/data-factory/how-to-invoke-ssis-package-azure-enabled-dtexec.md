@@ -5,19 +5,18 @@ services: data-factory
 documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/21/2019
 author: swinarko
 ms.author: sawinark
+manager: mflasko
 ms.reviewer: douglasl
-manager: craigg
-ms.openlocfilehash: 9ab308d0e2145a0d0b40e8b37c8c5be07b55dac6
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: a5540eea91937319a6ac947b50698ccaa8b25847
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73673553"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74931702"
 ---
 # <a name="run-sql-server-integration-services-packages-with-the-azure-enabled-dtexec-utility"></a>Выполнение пакетов SQL Server Integration Services с помощью служебной программы dtexec с поддержкой Azure
 В этой статье описывается программа командной строки dtexec (Азуредтексек) с поддержкой Azure. Он используется для запуска пакетов SQL Server Integration Services (SSIS) на Azure-SSIS Integration Runtime (IR) в фабрике данных Azure.
@@ -30,7 +29,7 @@ ms.locfileid: "73673553"
 
 Азуредтексек можно настроить с помощью среды SSMS, чтобы использовать приложение Azure Active Directory (Azure AD), которое создает конвейеры в фабрике данных. Кроме того, его можно настроить для доступа к файловым системам, файловым ресурсам или файлам Azure, где хранятся пакеты. В зависимости от значений, которые вы присваиваете параметрам вызова, Азуредтексек создает и выполняет уникальный конвейер фабрики данных с действием выполнить пакет служб SSIS. Вызов Азуредтексек с теми же значениями параметров перезапускает существующий конвейер.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Чтобы использовать Азуредтексек, скачайте и установите последнюю версию SSMS, которая имеет версию 18,3 или более позднюю. Скачайте его с [этого веб-сайта](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017).
 
 ## <a name="configure-the-azuredtexec-utility"></a>Настройка служебной программы Азуредтексек
@@ -80,7 +79,7 @@ ms.locfileid: "73673553"
   /De MyEncryptionPassword
 ```
 
-Вызов Азуредтексек предлагает аналогичные параметры, такие как вызов dtexec. Дополнительные сведения см. в разделе [dtexec Utility](https://docs.microsoft.com/sql/integration-services/packages/dtexec-utility?view=sql-server-2017). В настоящее время поддерживаются следующие параметры:
+Вызов Азуредтексек предлагает аналогичные параметры, такие как вызов dtexec. Дополнительные сведения см. в статье [dtexec Utility](https://docs.microsoft.com/sql/integration-services/packages/dtexec-utility?view=sql-server-2017). В настоящее время поддерживаются следующие параметры:
 
 - **/F [ILE]** : Загрузка пакета, хранящегося в файловой системе, общей папке или службе файлов Azure. В качестве значения этого параметра можно указать UNC-путь к файлу пакета в файловой системе, общей папке или службе файлов Azure с расширением DTSX. Если указанный UNC-путь содержит пробелы, заключите весь путь в кавычки.
 - **/Conf [igFile]** : определяет файл конфигурации, из которого извлекаются значения. С помощью этого параметра можно задать конфигурацию времени выполнения для пакета, отличающуюся от указанной во время разработки. Можно сохранить различные параметры в XML-файле конфигурации, а затем загрузить их перед выполнением пакета. Дополнительные сведения см. в разделе [конфигурации пакетов служб SSIS](https://docs.microsoft.com/sql/integration-services/packages/package-configurations?view=sql-server-2017). Чтобы указать значение этого параметра, используйте UNC-путь к файлу конфигурации в файловой системе, общей папке или службе файлов Azure с расширением dtsConfig. Если указанный UNC-путь содержит пробелы, заключите весь путь в кавычки.

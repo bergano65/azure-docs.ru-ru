@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 10/28/2019
 ms.author: erhopf
-ms.openlocfilehash: 9c150afaf26345be5bd552784dac26e9bce9a081
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 3054ba5b654d678a90a26d050de037569fb78e8c
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73506422"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74819206"
 ---
 > [!div class="nextstepaction"]
 > [Примеры для Java на сайте GitHub](https://aka.ms/speech/github-java)

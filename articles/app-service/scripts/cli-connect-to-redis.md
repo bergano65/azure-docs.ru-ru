@@ -1,27 +1,20 @@
 ---
-title: Пример сценария Azure CLI. Подключение приложения к кэшу Azure для Redis | Документация Майкрософт
-description: Пример сценария Azure CLI. Подключение приложения к кэшу Azure для Redis
-services: appservice
-documentationcenter: appservice
-author: msangapu
-manager: jeconnoc
-editor: ''
+title: 'CLI: подключение приложения к Redis'
+description: Сведения об использовании Azure CLI для автоматизации развертывания приложения Службы приложений и управления им. В этом примере показано, как подключить приложение к Кэшу Azure для Redis.
+author: msangapu-msft
 tags: azure-service-management
 ms.assetid: bc8345b2-8487-40c6-a91f-77414e8688e6
-ms.service: app-service
 ms.devlang: azurecli
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.workload: web
 ms.date: 12/11/2017
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 87e4e56e429039d943d85fe74003edb8cb148cac
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a5654ea8c0333e21421e0f9c55cc00d70a7be567
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66136867"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74688428"
 ---
 # <a name="connect-an-app-service-app-to-an-azure-cache-for-redis-using-cli"></a>Подключение приложения Службы приложений к кэшу Azure для Redis с помощью CLI
 

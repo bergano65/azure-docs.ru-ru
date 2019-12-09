@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Настройка платформы для пакета SDK службы "Речь" для C# (Xamarin) — служба "Речь"
 titleSuffix: Azure Cognitive Services
-description: В этом руководстве показано, как настроить платформу для использования C# (Xamarin) с пакетом SDK для службы "Речь",
+description: В этом руководстве показано, как настроить платформу для использования C# (Xamarin) с пакетом SDK службы "Речь",
 services: cognitive-services
 author: markamos
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 10/10/2019
 ms.author: erhopf
-ms.openlocfilehash: 3a86e1ffa581e1a8677e0a5d6db4b47b206e5490
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 498aaa03544acc5a7c8399f1928129b70a7114e9
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73504358"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74816537"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для [Xamarin](https://docs.microsoft.com/xamarin/get-started/what-is-xamarin), платформы с открытым кодом, позволяющей создавать современные производительные приложения для iOS, Android и Windows с .NET. 
 

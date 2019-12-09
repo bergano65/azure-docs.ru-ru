@@ -385,6 +385,10 @@
           href: functions-for-customizing-application-data.md
         - name: Выбор метода подготовки
           href: isv-automatic-provisioning-multi-tenant-apps.md
+    - name: Подготовка к управлению кадрами
+      items:
+        - name: Справочник по атрибутам SuccessFactors
+          href: sap-successfactors-attribute-reference.md
     - name: "Агент подготовки Azure\_AD Connect"
       items:
         - name: Журнал версий агента подготовки

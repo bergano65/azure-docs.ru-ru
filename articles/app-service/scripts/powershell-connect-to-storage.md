@@ -1,26 +1,17 @@
 ---
-title: Пример сценария Azure PowerShell. Подключение приложения к учетной записи хранения | Документация Майкрософт
-description: Пример сценария Azure PowerShell для подключения приложения Службы приложений к учетной записи хранения.
-services: app-service\web
-documentationcenter: ''
-author: syntaxc4
-manager: erikre
-editor: ''
+title: 'PowerShell: подключение к учетной записи хранения'
+description: Сведения об использовании Azure PowerShell для автоматизации процессов развертывания и управления в Службе приложений. В этом примере показано, как подключить приложение к учетной записи хранения.
 tags: azure-service-management
 ms.assetid: e4831bdc-2068-4883-9474-0b34c2e3e255
-ms.service: app-service
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.workload: web
 ms.date: 03/20/2017
-ms.author: cfowler
 ms.custom: mvc
-ms.openlocfilehash: 1eae5c4b94a59b09e73454fdfcea4e9f041652f2
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: d1c8951445c0be6a3d4b9c4763d719fc7d79d2d5
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70098354"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74685329"
 ---
 # <a name="connect-an-app-service-app-to-a-storage-account"></a>Подключение приложения Службы приложений к учетной записи хранения
 

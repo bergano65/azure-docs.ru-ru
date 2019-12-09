@@ -22,6 +22,8 @@
   items:
     - name: Вопросы и ответы об Анализаторе Интернета
       href: internet-analyzer-faq.md
+    - name: Устранение неполадок с Анализатором Интернета
+      href: troubleshoot.md
     - name: Справочник по интерфейсу командной строки службы "Анализатор Интернета"
       href: 'https://docs.microsoft.com/cli/azure/ext/internet-analyzer/internet-analyzer?view=azure-cli-latest'
     - name: Стратегия развития Azure

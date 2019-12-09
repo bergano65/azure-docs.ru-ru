@@ -1,23 +1,18 @@
 ---
-title: Примеры шаблонов Azure Resource Manager для службы приложений | Документация Майкрософт
-description: Примеры шаблонов Azure Resource Manager для Службы приложений
-services: app-service
-documentationcenter: app-service
+title: Примеры шаблонов Azure Resource Manager
+description: В этой статье приведены примеры шаблонов Azure Resource Manager для некоторых распространенных сценариев Службы приложений. Узнайте, как автоматизировать задачи развертывания и управления в Службе приложений.
 author: tfitzmac
 tags: azure-service-management
-ms.service: app-service
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.workload: app-service
 ms.date: 01/04/2019
 ms.author: tomfitz
 ms.custom: mvc
-ms.openlocfilehash: 83bb357544d9069da1c86f583eaca5a470953ce8
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 58871035eac89931dce0c1cd289cf3fab97c0c3e
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70066487"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74688420"
 ---
 # <a name="azure-resource-manager-templates-for-app-service"></a>Шаблоны Azure Resource Manager для Службы приложений
 

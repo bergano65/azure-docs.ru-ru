@@ -1,28 +1,19 @@
 ---
-title: Руководство по Размещение интерфейсов API RESTful с использованием CORS в Службе приложений Azure
-description: Узнайте, как служба приложений Azure помогает размещать API-интерфейсы RESTful с поддержкой CORS.
-services: app-service\api
-documentationcenter: dotnet
-author: cephalin
-manager: cfowler
-editor: ''
+title: Руководство по размещению REST API с CORS
+description: Узнайте, как служба приложений Azure помогает размещать API-интерфейсы RESTful с поддержкой CORS. В Службе приложений могут размещаться интерфейсные веб-приложения и API-интерфейсы серверной части.
 ms.assetid: a820e400-06af-4852-8627-12b3db4a8e70
-ms.service: app-service
-ms.workload: web
-ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 11/21/2018
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: f13b390047ea4d8280b106f3b02a8f18944a6f99
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: e2eca624fabf30eae86c480ede6c4bdffc2226bc
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72255175"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74671121"
 ---
-# <a name="tutorial-host-a-restful-api-with-cors-in-azure-app-service"></a>Руководство. Размещение API-интерфейсов RESTful с поддержкой CORS в службе приложений Azure
+# <a name="tutorial-host-a-restful-api-with-cors-in-azure-app-service"></a>Руководство по Размещение API-интерфейсов RESTful с поддержкой CORS в службе приложений Azure
 
 [Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. Кроме того, служба приложений включает встроенную поддержку [общего доступа к ресурсам независимо от источника (CORS)](https://wikipedia.org/wiki/Cross-Origin_Resource_Sharing) для API-интерфейсов RESTful. В этом руководстве рассматривается развертывание приложения API ASP.NET Core в службу приложений с поддержкой CORS. Вы настроите приложение с помощью программ командной строки и развернете его с помощью Git. 
 

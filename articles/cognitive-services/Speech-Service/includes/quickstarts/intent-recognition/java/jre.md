@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 10/28/2019
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: c9aa4200dc217e9c79290ca91b03810f0769bdc2
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 49aac37d298a1d2cd52e815ae6fa5e08e6cc80c2
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74280451"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74816171"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -43,6 +43,7 @@ ms.locfileid: "74280451"
 Перед инициализацией объекта `IntentRecognizer` необходимо создать конфигурацию, использующую ключ и регион конечной точки LUIS. Вставьте этот код в блок try/catch в методе main
 
 В этом примере для создания `SpeechConfig` используется метод `FromSubscription()`. Полный список доступных методов см. в статье [SpeechConfig Class](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?view=azure-dotnet) (Класс SpeechConfig).
+Пакет SDK для распознавания речи по умолчанию распознает использование языкового стандарта en-us. Дополнительные сведения о выборе исходного языка см. в разделе [Specify source language for speech to text](../../../../how-to-specify-source-language.md) (Указание исходного языка для преобразования речи в текст).
 
 > [!NOTE]
 > Очень важно использовать ключ конечной точки LUIS, а не ключи для начала работы или разработки, так как только ключ конечной точки допустим для распознавания с преобразованием речи в намерения. Инструкции по получению правильного ключа см. в статье [Создание приложения LUIS и получение ключа конечной точки](~/articles/cognitive-services/Speech-Service/quickstarts/create-luis.md) (Создание приложения LUIS и получение ключа конечной точки).

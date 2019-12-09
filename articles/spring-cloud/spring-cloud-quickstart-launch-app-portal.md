@@ -1,17 +1,17 @@
 ---
 title: Краткое руководство. Запуск приложения Azure Spring Cloud с помощью портала Azure
-description: Развертывание примера приложения в Azure Spring Cloud с помощью портала Azure.
+description: В этом руководстве содержатся сведения о развертывании примера приложения в Azure Spring Cloud с помощью портала Azure.
 author: jpconnock
 ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 11/4/2019
 ms.author: jeconnoc
-ms.openlocfilehash: 8a34dcd31ba15ed949fa0a50ec904da96a048a7d
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.openlocfilehash: 891952000f633d7d873c6d76c475916acc8ac4ec
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74560064"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74708846"
 ---
 # <a name="quickstart-launch-an-azure-spring-cloud-application-using-the-azure-portal"></a>Краткое руководство. Запуск приложения Azure Spring Cloud с помощью портала Azure
 
@@ -72,7 +72,11 @@ az extension add --name spring-cloud
 
 1. Перейдите на страницу **Обзор** службы и выберите **Config Server** (Сервер конфигурации).
 
-1. В разделе **Репозиторий по умолчанию** задайте для параметра **URI** значение "https\://github.com/Azure-Samples/piggymetrics", для параметра **Метка** — значение "config" и щелкните **Применить**, чтобы сохранить изменения.
+1. В разделе **Репозиторий по умолчанию** задайте для параметра **URI** значение "https\://github.com/Azure-Samples/piggymetrics".
+
+1. Задайте для параметра **Метка** значение "config".
+
+1. Щелкните **Применить**, чтобы сохранить изменения.
 
     ![Снимок экрана, где отображается окно портала ASC](media/spring-cloud-quickstart-launch-app-portal/portal-config.png)
 
@@ -123,7 +127,7 @@ az extension add --name spring-cloud
 
 1. Выберите приложение `gateway`, чтобы отобразить страницу **Обзор**.
 
-1. Выберите **Назначить домен**, чтобы назначить общедоступную конечную точку шлюзу. Для этого может потребоваться несколько минут.
+1. Выберите **Назначить домен**, чтобы назначить общедоступную конечную точку шлюзу. Это может занять несколько минут.
 
     ![Снимок экрана, где отображается окно портала ASC](media/spring-cloud-quickstart-launch-app-portal/portal-endpoint.png)
 

@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Настройка платформы для пакета SDK службы "Речь" для C++ (Linux) — служба "Речь"
 titleSuffix: Azure Cognitive Services
-description: В этом руководстве показано, как настроить платформу для использования C++ в Linux с пакетом SDK для службы "Речь",
+description: В этом руководстве показано, как настроить платформу для использования C++ в Linux с пакетом SDK службы "Речь".
 services: cognitive-services
 author: markamos
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 10/14/2019
 ms.author: erhopf
-ms.openlocfilehash: 96e4c12d7b0aaceea3d652a81f2df8721c43954c
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 03aafb133f1d4a18ffe2b46ae5ec36225865a239
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73504550"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74819030"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для Linux.
 

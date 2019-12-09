@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: sample
 ms.date: 05/20/2019
-ms.openlocfilehash: 677ea48244f8417670a2645ab67fa08c1f869f1a
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 11179d6adc676ae99257442b186a15e69dcc4a03
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142586"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74764479"
 ---
 # <a name="get-started-with-azure-cosmos-db-table-api-and-azure-table-storage-using-the-net-sdk"></a>Начало работы с API таблиц Azure Cosmos DB и хранилищем таблиц Azure с помощью пакета SDK для .NET
 
@@ -23,7 +23,7 @@ ms.locfileid: "70142586"
 
 API таблиц Azure Cosmos DB или хранилище таблиц Azure можно использовать для хранения структурированных NoSQL-данных в облаке, предоставляя хранилище для ключей и атрибутов с бессхемной структурой. Так как API таблиц Azure Cosmos DB и хранилище таблиц являются бессхемными, это позволяет легко адаптировать данные по мере роста приложения. API таблиц Azure Cosmos DB или хранилище таблиц можно использовать для хранения гибких наборов данных, например пользовательских данных для веб-приложений, адресных книг, сведений об устройстве или метаданных любого другого типа, которые требуются вашей службе. 
 
-В этом руководстве описано, как использовать [библиотеки таблиц Azure Cosmos DB для .NET](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table) в сценариях работы с API таблиц Azure Cosmos DB и хранилища таблиц Azure. Необходимо использовать подключение, связанное с определенной службой Azure. Эти сценарии рассматриваются с использованием примеров на C#, которые демонстрируют методы создания таблиц, вставки и обновления данных, запроса данных и удаления таблиц.
+В этом учебнике описано, как использовать [библиотеки таблиц Azure Cosmos DB для .NET](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table) в сценариях работы с API таблиц Azure Cosmos DB и Хранилищем таблиц Azure. Необходимо использовать подключение, связанное с определенной службой Azure. Эти сценарии рассматриваются с использованием примеров на C#, которые демонстрируют методы создания таблиц, вставки и обновления данных, запроса данных и удаления таблиц.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

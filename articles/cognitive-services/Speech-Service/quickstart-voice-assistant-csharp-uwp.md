@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 11/05/2019
 ms.author: travisw
-ms.openlocfilehash: 75ecbe8351e68b77a59b40709a2beb15d09b16df
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 25d74b640f1bf567792c317626da0178ead7e34f
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73506230"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74816231"
 ---
 # <a name="quickstart-create-a-voice-assistant-with-the-speech-sdk-uwp"></a>Краткое руководство. Создание голосового помощника с помощью пакета SDK службы "Речь" на UWP
 
@@ -31,7 +31,7 @@ ms.locfileid: "73506230"
 Для работы с этим кратким руководством вам понадобится:
 
 * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/).
-* Ключ подписки Azure для служб "Речь". [Получите бесплатно](get-started.md) или создайте его на [портале Azure](https://portal.azure.com).
+* Ключ подписки Azure для службы "Речь". [Получите бесплатно](get-started.md) или создайте его на [портале Azure](https://portal.azure.com).
 * Ранее созданный бот, настроенный с помощью[канала "Речь Direct Line"](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech).
 
   > [!NOTE]
@@ -292,7 +292,7 @@ ms.locfileid: "73506230"
 1. Добавьте следующий фрагмент кода в текст метода `InitializeDialogServiceConnector`. Этот код создает `DialogServiceConnector` с помощью сведений о подписке.
 
     ```csharp
-    // Create a BotFrameworkConfig by providing a Speech Service subscription key
+    // Create a BotFrameworkConfig by providing a Speech service subscription key
     // the RecoLanguage property is optional (default en-US)
     const string speechSubscriptionKey = "YourSpeechSubscriptionKey"; // Your subscription key
     const string region = "YourServiceRegion"; // Your subscription service region.
@@ -422,7 +422,7 @@ ms.locfileid: "73506230"
 ## <a name="see-also"></a>См. также
 
 - [Сведения о голосовых помощниках](voice-assistants.md)
-- [Получите ключ подписки для Служб речи бесплатно](get-started.md)
+- [Try the Speech service for free](get-started.md) (Бесплатное использование службы "Речь")
 - [Пользовательские ключевые слова](speech-devices-sdk-create-kws.md)
 - [Подключение бота к каналу Direct Line Speech (предварительная версия)](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
 - [Примеры для C# на сайте GitHub](https://aka.ms/csspeech/samples)

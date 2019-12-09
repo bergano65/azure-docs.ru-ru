@@ -1,26 +1,17 @@
 ---
-title: Сквозная проверка подлинности и авторизация в Службе приложений Azure | Документация Майкрософт
+title: Руководство по сквозной проверке подлинности AuthN/AuthO
 description: Сведения об использовании проверки подлинности и авторизации в службе приложений для защиты приложений службы приложений, включая доступ к удаленным API.
 keywords: app service, azure app service, authN, authZ, secure, security, multi-tiered, azure active directory, azure ad
-services: app-service\web
-documentationcenter: dotnet
-author: cephalin
-manager: cfowler
-editor: ''
-ms.service: app-service-web
-ms.workload: web
-ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 08/14/2019
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 55ba5a193e15ac4e8bd83ac046deeac1f12d61d0
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 6c243839e59038d439e177847df4427d253dbe98
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73961958"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74672057"
 ---
 # <a name="tutorial-authenticate-and-authorize-users-end-to-end-in-azure-app-service"></a>Руководство. Сквозная проверка подлинности и авторизации в Службе приложений Azure
 

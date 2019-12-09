@@ -10,21 +10,21 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 08/28/2019
 ms.author: erhopf
-ms.openlocfilehash: b93cd87a354bf327628d97a3796b3e51d7c508cc
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 8ebf289f22e9bffe926a641a12a0497fc7db0d9f
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73504862"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74817384"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы нужно:
+Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure](../../../../get-started.md).
-> * [Настроить среду разработки](../../../../quickstarts/setup-platform.md?tabs=dotnet).
-> * [Создать пустой пример проекта](../../../../quickstarts/create-project.md?tabs=dotnet).
+> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=dotnet)
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=dotnet)
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 

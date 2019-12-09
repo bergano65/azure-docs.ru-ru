@@ -1,24 +1,20 @@
 ---
-title: Разработка веб-приложения Java Enterprise в Службе приложений Azure на платформе Linux | Документация Майкрософт
-description: Сведения о создании приложения Java Enterprise, работающего в Wildfly в Службе приложений Azure на платформе Linux.
+title: Руководство по Приложение Java Enterprise на Linux
+description: Узнайте, как создать приложение Java Enterprise, работающее в Wildfly в Службе приложений Azure в Linux, с подключением к базе данных PostgreSQL в Azure.
 author: JasonFreeberg
-manager: routlaw
-ms.service: app-service-web
-ms.workload: web
-ms.tgt_pltfrm: na
 ms.devlang: java
 ms.topic: tutorial
 ms.date: 11/13/2018
 ms.author: jafreebe
 ms.custom: seodec18
-ms.openlocfilehash: 2d26d9e145030e5972289c224dc2f76078d67527
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: 84f22d52e9a92707a26a4e64f194e82cca87757d
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68498483"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74687441"
 ---
-# <a name="tutorial-build-a-java-ee-and-postgres-web-app-in-azure"></a>Руководство. Создание веб-приложения Java EE с подключением к базе данных Postgres в Azure
+# <a name="tutorial-build-a-java-ee-and-postgres-web-app-in-azure"></a>Руководство по Создание веб-приложения Java EE с подключением к базе данных Postgres в Azure
 
 В этом руководстве приведены сведения о создании веб-приложения Java Enterprise Edition (EE) в Службе приложений Azure, а также подключении его к базе данных Postgres. Когда вы выполните инструкции из руководства, у вас будет приложение [WildFly](https://www.wildfly.org/about/), данные которого хранятся в [базе данных Azure для Postgres](https://azure.microsoft.com/services/postgresql/), работающей в [Службе приложений Azure в Linux](app-service-linux-intro.md).
 

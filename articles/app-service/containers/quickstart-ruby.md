@@ -1,26 +1,17 @@
 ---
-title: Создание веб-приложения Ruby в Службе приложений Azure на платформе Linux | Документация Майкрософт
-description: Узнайте, как создать приложения Ruby on Rails с помощью Службы приложений на платформе Linux.
+title: Краткое руководство. Создание приложения Ruby для Linux
+description: Начните работу с приложениями Linux в Службе приложений Azure, развернув первое приложение Ruby в контейнере Linux в Службе приложений.
 keywords: azure app service, linux, oss, ruby, rails
-services: app-service
-documentationcenter: ''
-author: cephalin
-manager: jeconnoc
-editor: ''
 ms.assetid: 6d00c73c-13cb-446f-8926-923db4101afa
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: quickstart
 ms.date: 07/11/2019
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: cfcea4c4450ea806b36d1d46c17c6676f7d92893
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 17c81ab71352f57731d9b36138c88c34421e374c
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70071071"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74689030"
 ---
 # <a name="create-a-ruby-on-rails-app-in-app-service-on-linux"></a>Создание приложения Ruby on Rails в Службе приложений на платформе Linux
 

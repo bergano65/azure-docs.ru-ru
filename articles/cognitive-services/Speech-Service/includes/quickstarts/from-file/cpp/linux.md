@@ -10,21 +10,23 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: wolfma
-ms.openlocfilehash: 4d03c0f8e8aa387bae68dda6aeb974efe155366d
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 2372e04ed7e20757cc0a3cbb9aae5e7597f17c3f
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73506326"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74819395"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure](../../../../get-started.md).
-> * [Настроить среду разработки](../../../../quickstarts/setup-platform.md?tabs=linux).
-> * [Создать пустой пример проекта](../../../../quickstarts/create-project.md?tabs=linux).
+> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=linux)
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=linux)
+
+[!INCLUDE [Audio input format](~/articles/cognitive-services/speech-service/includes/audio-input-format-chart.md)]
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
@@ -74,11 +76,14 @@ ms.locfileid: "73506326"
 
    ````
 
-1. В этом новом файле замените строку `YourSubscriptionKey` на ключ подписки службы "Речь".
+1. В этом новом файле замените строку `YourSubscriptionKey` на ваш ключ подписки службы "Речь".
 
 1. Замените строку `YourServiceRegion` значением [региона](~/articles/cognitive-services/Speech-Service/regions.md), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
 
 1. Замените строку `whatstheweatherlike.wav` собственным именем файла.
+
+> [!NOTE]
+> Пакет SDK для распознавания речи по умолчанию распознает использование языкового стандарта en-us. Дополнительные сведения о выборе исходного языка см. в разделе [Specify source language for speech to text](../../../../how-to-specify-source-language.md) (Указание исходного языка для преобразования речи в текст).
 
 ## <a name="build-the-app"></a>Сборка приложения
 

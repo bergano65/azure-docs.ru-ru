@@ -10,22 +10,22 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: chlandsi
-ms.openlocfilehash: 7fe11876a7ba20981f784bc41ce8094178591371
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: a417c2a269ce66c291eda3c4c76f8d48f0ebad95
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73505774"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74818667"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы нужно:
+Необходимые условия:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure](../../../../get-started.md).
-> * [Создать приложение LUIS и получить ключ конечной точки](../../../../quickstarts/create-luis.md).
-> * [Настроить среду разработки](../../../../quickstarts/setup-platform.md).
-> * [Создать пустой пример проекта](../../../../quickstarts/create-project.md).
+> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md)
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md)
+> * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 
 ## <a name="support-and-updates"></a>Поддержка и обновления
 
@@ -49,6 +49,9 @@ python quickstart.py
 
 ### <a name="sample-code"></a>Пример кода
 
+> [!NOTE]
+> Пакет SDK для распознавания речи по умолчанию распознает использование языкового стандарта en-us. Дополнительные сведения о выборе исходного языка см. в разделе [Specify source language for speech to text](../../../../how-to-specify-source-language.md) (Указание исходного языка для преобразования речи в текст).
+
 [!code-python[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/python/from-microphone/quickstart.py#code)]
 
 ### <a name="install-and-use-the-speech-sdk-with-visual-studio-code"></a>Установка и использование пакета SDK для службы "Речь" с помощью Visual Studio Code
@@ -69,7 +72,7 @@ python quickstart.py
    ![Создание файла](~/articles/cognitive-services/Speech-Service/media/sdk/qs-python-vscode-python-newfile.png)
 
 1. Скопируйте, вставьте и сохраните [код Python](#sample-code) в созданный файл.
-1. Вставьте сведения о подписках на службы речи
+1. Вставьте сведения о подписке службы "Речь".
 1. Если интерпретатор Python выбран, он отображается в левой части строки состояния в нижней части окна.
    В противном случае откроется список доступных интерпретаторов Python. Откройте палитру команд (CTRL+SHIFT+P) и введите **Python: Select Interpreter** (Python: выбор интерпретатора). Выберите соответствующий интерпретатор.
 1. Вы можете установить пакет SDK службы "Речь" для Python в Visual Studio Code. Сделайте это, если он еще не установлен для выбранного интерпретатора Python.

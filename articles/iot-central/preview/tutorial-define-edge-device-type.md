@@ -1,5 +1,5 @@
 ---
-title: Определение нового типа устройства Azure IoT Edge в Azure IoT Central | Документация Майкрософт
+title: Учебник. Определение нового типа устройства Azure IoT Edge в Azure IoT Central
 description: В этом учебнике показано, как сборщики могут создать устройство Azure IoT Edge в приложении Azure IoT Central. Вы определите данные телеметрии, состояние, свойства и команды для своего типа.
 author: rangv
 ms.author: rangv
@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: 0a293d74c9e37a6771c5bb246b74bda38db3b7c3
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: 97bfd2b1e8b571f44c0b782459567f5677dd36a7
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406470"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74702795"
 ---
 # <a name="tutorial-define-a-new-azure-iot-edge-device-type-in-your-azure-iot-central-application-preview-features"></a>Руководство по определению нового типа устройства Azure IoT Edge в приложении Azure IoT Central (предварительная версия функций)
 

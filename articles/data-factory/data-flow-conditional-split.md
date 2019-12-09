@@ -1,24 +1,25 @@
 ---
-title: Преобразование "Условное разбиение" в потоке данных сопоставления фабрики данных Azure
+title: Преобразование «Условное разбиение» в потоке данных сопоставления
 description: Разбиение данных на разные потоки с помощью преобразования "Условное разбиение" в потоке данных сопоставления фабрики данных Azure
 author: kromerm
 ms.author: makromer
 ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
+ms.custom: seo-lt-2019
 ms.date: 10/16/2019
-ms.openlocfilehash: 9ace415aa725a82d8feda5702d25d7e5ff9875d9
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: d7e2af6c98951e685192656b37226716e4340bfe
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73676809"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930446"
 ---
 # <a name="conditional-split-transformation-in-mapping-data-flow"></a>Преобразование «Условное разбиение» в потоке данных сопоставления
 
 Преобразование «Условное разбиение» направляет строки данных в различные потоки на основе условий сопоставления. Преобразование «Условное разбиение» похоже на структуру принятия решений в языке программирования. Преобразование вычисляет выражения, и на основе результатов направляет строку данных в указанный поток.
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Настройка
 
 Параметр **Split on** определяет, будет ли строка данных передаваться первому соответствующему потоку или каждому потоку, которому он соответствует.
 
@@ -26,7 +27,7 @@ ms.locfileid: "73676809"
 
 ![Условное разбиение](media/data-flow/conditionalsplit1.png "Параметры условного разбиения")
 
-## <a name="data-flow-script"></a>Сценарий потока данных
+## <a name="data-flow-script"></a>Скрипт потока данных
 
 ### <a name="syntax"></a>Синтаксис
 

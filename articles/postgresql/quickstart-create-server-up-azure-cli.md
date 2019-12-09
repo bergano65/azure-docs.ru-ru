@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью команды Azure CLI az postgres up
+title: Краткое руководство. Создание базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью команды az postgres up
 description: Краткое руководство по созданию базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью команды Azure CLI up.
 author: rachel-msft
 ms.author: raagyema
@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 05/06/2019
-ms.openlocfilehash: 49f71c199a2832d763bb3c19d878fade47dfb8e4
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: fe15c02286223ec0829b31664811b7f589cf16aa
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65069069"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74774838"
 ---
 # <a name="quickstart-use-an-azure-cli-command-az-postgres-up-preview-to-create-an-azure-database-for-postgresql---single-server"></a>Краткое руководство. Создание базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью команды Azure CLI az postgres up (предварительная версия)
 
@@ -39,7 +39,7 @@ az login
 az account set --subscription <subscription id>
 ```
 
-## <a name="create-an-azure-database-for-postgresql-server"></a>Создание сервера базы данных Azure для PostgreSQL
+## <a name="create-an-azure-database-for-postgresql-server"></a>Создание сервера Базы данных Azure для PostgreSQL
 
 Чтобы использовать команды, установите расширение [db-up](/cli/azure/ext/db-up). Если возникает ошибка, убедитесь, что вы установили последнюю версию Azure CLI. Дополнительные сведения см. в статье [Установка Azure CLI](/cli/azure/install-azure-cli).
 

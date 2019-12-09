@@ -7,13 +7,13 @@ ms.service: mysql
 ms.custom: mvc
 ms.devlang: ruby
 ms.topic: quickstart
-ms.date: 02/28/2018
-ms.openlocfilehash: 5dbb2226e33928d9d79358a84192b57c44841de4
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.date: 12/02/2019
+ms.openlocfilehash: dc8c7352856b11cb6cc4c9c404eb567cb72b720d
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351641"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74770651"
 ---
 # <a name="azure-database-for-mysql-use-ruby-to-connect-and-query-data"></a>База данных Azure для MySQL: подключение и запрос данных с помощью Ruby
 В этом кратком руководстве объясняется, как подключиться к базе данных Azure для MySQL с помощью приложения [Ruby](https://www.ruby-lang.org) и пакета [Mysql2](https://rubygems.org/gems/mysql2) на платформе Windows, Ubuntu Linux и Mac. Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на Ruby и вы только начали работу с базой данных Azure для MySQL.
@@ -26,7 +26,7 @@ ms.locfileid: "58351641"
 ## <a name="install-ruby"></a>Установка Ruby
 Установите Ruby, Gem и библиотеку MySQL2 на своем компьютере. 
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 1. Скачайте и установите [Ruby](https://rubyinstaller.org/downloads/) версии 2.3.
 2. Запустите новую командную строку (cmd) из меню "Пуск".
 3. Перейдите в каталог Ruby версии 2.3. `cd c:\Ruby23-x64\bin`
@@ -109,7 +109,7 @@ ensure
 end
 ```
 
-## <a name="read-data"></a>Считывание данных
+## <a name="read-data"></a>Чтение данных
 Используйте указанный ниже код с инструкцией SQL **SELECT** для подключения и чтения данных. 
 
 Код использует класс [mysql2::client](https://www.rubydoc.info/gems/mysql2/0.4.8) и метод .new(), чтобы подключиться к базе данных Azure для MySQL. Затем он вызывает метод [query()](https://www.rubydoc.info/gems/mysql2/0.4.8#Usage) для выполнения команды SELECT. После этого вызывается метод [close()](https://www.rubydoc.info/gems/mysql2/0.4.8/Mysql2/Client#close-instance_method), чтобы разорвать подключение перед завершением работы.

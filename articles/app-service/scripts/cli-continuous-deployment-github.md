@@ -1,27 +1,20 @@
 ---
-title: Пример скрипта Azure CLI. Создание приложения с непрерывным развертыванием из GitHub | Документация Майкрософт
-description: Пример сценария Azure CLI. Создание приложения и непрерывное развертывание из GitHub
-services: app-service\web
-documentationcenter: ''
-author: msangapu
-manager: jeconnoc
-editor: ''
+title: 'CLI: непрерывное развертывание из GitHub'
+description: Сведения об использовании Azure CLI для автоматизации развертывания приложения Службы приложений и управления им. В этом примере показано, как создать приложение с CI/CD из GitHub.
+author: msangapu-msft
 tags: azure-service-management
 ms.assetid: 0205c991-0989-4ca3-bb41-237dcc964460
-ms.service: app-service-web
-ms.workload: web
 ms.devlang: azurecli
-ms.tgt_pltfrm: na
 ms.topic: sample
 ms.date: 09/02/2019
-ms.author: cephalin
+ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 02853186a1f28d8c6db6b5421c6ebba0640461cb
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 829f1507bdf69522f1baf5af1c8d92455608334f
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "71057891"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74688484"
 ---
 # <a name="create-an-app-service-app-with-continuous-deployment-from-github-using-cli"></a>Создание приложения Службы приложений с непрерывным развертыванием из GitHub с помощью интерфейса командной строки
 

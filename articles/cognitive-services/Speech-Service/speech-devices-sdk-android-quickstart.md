@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Запуск пакета SDK для устройств, подключаемых к службе "Речь", в Android
+title: Краткое руководство. Запуск пакета SDK для устройств, подключаемых к службе "Речь", в Android — служба "Речь"
 titleSuffix: Azure Cognitive Services
 description: Предварительные требования и инструкции для начала работы с пакетом SDK для речевых устройств в Android.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: c3eb6ec28879a7c53feb270e33857cd67dc06b0b
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: ccc6c2554576d91d2236fb84f81c8aeccdc07be7
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74111686"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74815339"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-android"></a>Краткое руководство. Запуск примера приложения на базе пакета SDK для речевых устройств в Android
 
@@ -36,11 +36,11 @@ ms.locfileid: "74111686"
   > [!NOTE]
   > Файл Android-Sample-Release.zip содержит пример приложения для Android. В этом кратком руководстве предполагается, что приложение распаковано в папку "C:\SDSDK\Android-Sample-Release".
 
-- Получить [ключ подписки Azure для служб речи](get-started.md).
+- Получение [ключа подписки Azure для службы "Речь"](get-started.md)
 
 - Если планируется применять транскрибирование бесед, следует использовать [всенаправленный микрофон](get-speech-devices-sdk.md). В настоящее время эта функция доступна только для языков "en-US" и "zh-CN" в регионах "centralus" и "eastasia". Для использования транскрибирования бесед вам понадобится речевой ключ в одном из упомянутых регионов.
 
-- Если планируется использование служб речи для определения намерений (или действий) в высказываниях пользователей, потребуется подписка на службу [Language Understanding Service (LUIS)](https://docs.microsoft.com/azure/cognitive-services/luis/azureibizasubscription). Дополнительные сведения о службе распознавания речи и распознавании намерений см. в статье [Распознавание намерений в речи с помощью пакета SDK службы распознавания речи для C#](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-recognize-intents-from-speech-csharp).
+- Если планируется использовать службу "Речь" для определения намерений (или действий) в речевых фрагментах пользователей, потребуется подписка на службу [Language Understanding Service (LUIS)](https://docs.microsoft.com/azure/cognitive-services/luis/azureibizasubscription). Дополнительные сведения о службе распознавания речи и распознавании намерений см. в статье [Распознавание намерений в речи с помощью пакета SDK службы распознавания речи для C#](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-recognize-intents-from-speech-csharp).
 
   Вы можете [создать простую модель LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/) или использовать пример такой модели — LUIS-example.json, доступный в пакете [SDK для речевых устройств на сайте скачивания](https://aka.ms/sdsdk-luis). Чтобы отправить файл JSON модели на [портал LUIS](https://www.luis.ai/home), выберите **Import new app** (Импорт нового приложения) и затем файл JSON.
 

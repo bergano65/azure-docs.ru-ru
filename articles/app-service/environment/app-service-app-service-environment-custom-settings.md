@@ -1,25 +1,18 @@
 ---
-title: Пользовательские параметры для сред службы приложений в Azure
-description: Настраиваемые параметры конфигурации для сред службы приложений
-services: app-service
-documentationcenter: ''
+title: Настройка пользовательских параметров
+description: Настройте параметры, которые применяются ко всей среде Службы приложений Azure. Узнайте, как это сделать с помощью шаблонов Azure Resource Manager.
 author: stefsch
-manager: nirma
-editor: ''
 ms.assetid: 1d1d85f3-6cc6-4d57-ae1a-5b37c642d812
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/16/2018
 ms.author: stefsch
 ms.custom: seodec18
-ms.openlocfilehash: 768e354281aeb5e2143ddb0e190b0f27bf4f4e24
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 36208b4662242b37c135eaffc745a819c11fa015
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73470707"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74687330"
 ---
 # <a name="custom-configuration-settings-for-app-service-environments"></a>Настраиваемые параметры конфигурации для сред службы приложений
 ## <a name="overview"></a>Обзор

@@ -1,26 +1,18 @@
 ---
-title: Создание приложения .NET Core на платформе Linux — Служба приложений Azure | Документация Майкрософт
-description: Быстрое развертывание первого приложения Hello World на .NET Core в службе приложений на платформе Linux.
+title: Краткое руководство. Запуск приложения ASP.NET Core Linux
+description: Начало работы с приложениями Linux в Службе приложений Azure, развернув первое приложение ASP.NET Core в контейнере Linux в Службе приложений.
 keywords: служба приложений azure, веб-приложение, dotnet, core, linux, oss
-services: app-service
-documentationCenter: ''
-author: cephalin
-manager: jeconnoc
-editor: ''
 ms.assetid: c02959e6-7220-496a-a417-9b2147638e2e
-ms.service: app-service
-ms.workload: web
 ms.tgt_pltfrm: linux
 ms.topic: quickstart
 ms.date: 03/27/2019
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 43771392adcbf49c9103ee7ebc4b3febbac11b05
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: ea9449a89bcfbdb1378f0cceb31a07a288661bf7
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70071215"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74687560"
 ---
 # <a name="create-an-aspnet-core-app-in-app-service-on-linux"></a>Создание приложения .NET Core в Службе приложений в Linux
 
@@ -131,7 +123,7 @@ remote:   ...
 remote: Finished successfully.
 remote: Running post deployment command(s)...
 remote: Deployment successful.
-To https://cephalin-dotnetcore.scm.azurewebsites.net/cephalin-dotnetcore.git
+To https://<app-name>.scm.azurewebsites.net/<app-name>.git
  * [new branch]      master -> master
 ```
 

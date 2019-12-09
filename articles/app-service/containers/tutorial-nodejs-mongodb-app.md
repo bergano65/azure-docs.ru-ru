@@ -1,26 +1,17 @@
 ---
-title: Node.js (MEAN.js) с MongoDB в Linux — Служба приложений Azure | Документация Майкрософт
-description: Узнайте, как разработать приложение Node.js с подключением к базе данных Cosmos DB и строкой подключения MongoDB в службе приложений Azure на платформе Linux. В этом руководстве используется MEAN.js.
-services: app-service\web
-documentationcenter: nodejs
-author: cephalin
-manager: jeconnoc
-editor: ''
+title: Руководство по приложению Node.js в Linux с MongoDB
+description: Узнайте, как создать приложение Node.js для Linux, работающее в Службе приложений Azure, с подключением к Базе данных MongoDB в Azure (Cosmos DB). В этом руководстве используется MEAN.js.
 ms.assetid: 0b4d7d0e-e984-49a1-a57a-3c0caa955f0e
-ms.service: app-service-web
-ms.workload: web
-ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 03/27/2019
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: cf145e04ca0e0ddf336521e72f6dc230dc8fc86b
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: ca73c7e610b8bd818355f30b9d08bceffeddfc73
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72024955"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74688887"
 ---
 # <a name="build-a-nodejs-and-mongodb-app-in-azure-app-service-on-linux"></a>Разработка приложения на основе Node.js и MongoDB в Службе приложений Azure в Linux
 

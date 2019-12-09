@@ -1,6 +1,6 @@
 ---
-title: Подключение устройства IoT Plug and Play (предварительная версия) к Azure IoT Central | Документация Майкрософт
-description: Используйте модель возможностей устройства для создания кода устройства. Затем запустите код устройства, убедитесь, что устройство подключено к приложению IoT Central, и используйте автоматически сформированные представления.
+title: Учебник. Подключение устройства IoT Plug and Play (предварительная версия) к Azure IoT Central
+description: В этом учебнике показано, как использовать модель возможностей устройства для создания кода устройства. Затем запустите код устройства, убедитесь, что устройство подключено к приложению IoT Central, и используйте автоматически сформированные представления.
 author: dominicbetts
 ms.author: dobett
 ms.date: 08/08/2019
@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
-ms.openlocfilehash: be03684f89382f198c13540bbdfb3de5bf8513a6
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: 59261d6a1cea034df58bd7e8d53439cdf1fbae6b
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74404554"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74702861"
 ---
 # <a name="tutorial-use-a-device-capability-model-to-create-an-iot-plug-and-play-device-and-connect-it-to-your-iot-central-application"></a>Руководство по Использование модели возможностей устройства для создания устройства IoT Plug and Play и его подключения к приложению IoT Central
 

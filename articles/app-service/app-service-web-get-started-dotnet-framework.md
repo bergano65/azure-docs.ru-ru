@@ -1,24 +1,16 @@
 ---
-title: Создание веб-приложения C# с помощью ASP.NET в Службе приложений Azure | Документация Майкрософт
-description: Узнайте, как запустить веб-приложение в службе приложений Azure, развернув веб-приложение C# ASP.NET по умолчанию.
-services: app-service\web
-documentationcenter: ''
-author: cephalin
-manager: gwallace
+title: Краткое руководство. Создание приложения ASP.NET на C#
+description: Узнайте, как запускать веб-приложения в Службе приложений Azure, развертывая шаблон веб-приложения ASP.NET на C# по умолчанию в Visual Studio.
 ms.assetid: 04a1becf-7756-4d4e-92d8-d9471c263d23
-ms.service: app-service-web
-ms.workload: web
-ms.tgt_pltfrm: na
 ms.topic: quickstart
 ms.date: 10/21/2019
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 04dd7cb55f9a6d4ceb722606f0eb90792413e414
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: f2e31723dc2761007994f652d9d6c28ab3f7d47d
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73471751"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74671389"
 ---
 # <a name="create-an-aspnet-framework-web-app-in-azure"></a>Создание веб-приложения ASP.NET Framework в Azure
 

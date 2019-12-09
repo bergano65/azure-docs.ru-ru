@@ -1,25 +1,20 @@
 ---
-title: Пример сценария Azure CLI. Резервное копирование по расписанию для приложения | Документация Майкрософт
-description: Пример сценария Azure CLI. Резервное копирование по расписанию для приложения
-services: app-service\web
-documentationcenter: ''
-author: msangapu
-manager: jeconnoc
-editor: ''
+title: 'CLI: создание задания запланированного резервного копирования'
+description: Сведения об использовании Azure CLI для автоматизации развертывания приложения Службы приложений и управления им. В этом примере показано, как создать задание резервного копирования по расписанию для приложения.
+author: msangapu-msft
 tags: azure-service-management
-ms.service: app-service-web
-ms.workload: web
+ms.devlang: azurecli
 ms.topic: sample
 ms.date: 12/11/2017
 ms.author: msangapu
 ms.reviewer: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: c16a5c3cb51ab8ca571eb99acbe6a3034cb8ee21
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: e301b5503cee939846bdcfd1d0c4e755f3debe21
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70088114"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74686771"
 ---
 # <a name="create-a-scheduled-backup-for-an-app-service-app-using-cli"></a>Создание резервной копии приложения Службы приложений по расписанию в интерфейсе командной строки
 

@@ -14,7 +14,7 @@
               href: per-vm-quota-requests.md
             - name: Общее региональное увеличение лимита виртуальных ЦП
               href: regional-quota-requests.md
-            - name: Увеличение квоты на низкоприоритетные виртуальные машины
+            - name: Увеличение квоты на точечные виртуальные машины
               href: low-priority-quota.md
         - name: Классическая модель развертывания
           href: classic-deployment-model-quota-increase-requests.md

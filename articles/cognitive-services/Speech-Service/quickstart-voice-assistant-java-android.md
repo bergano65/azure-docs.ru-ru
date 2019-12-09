@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: travisw
-ms.openlocfilehash: 58bc33c54a7bd878d717b2c6e44d9ac8657c245f
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 077f34e94423918d324eb41b56ab84c64a0db719
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74111790"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74816194"
 ---
 # <a name="quickstart-create-a-voice-assistant-in-java-on-android-by-using-the-speech-sdk"></a>Краткое руководство. Создание голосового помощника в Java на Android с помощью пакета SDK службы "Речь"
 
@@ -30,7 +30,7 @@ ms.locfileid: "74111790"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Ключ подписки Azure для служб "Речь". [Получите бесплатно](get-started.md) или создайте его на [портале Azure](https://portal.azure.com).
+- Ключ подписки Azure для службы "Речь". [Получите бесплатно](get-started.md) или создайте его на [портале Azure](https://portal.azure.com).
 - Ранее созданный бот, настроенный с помощью[канала "Речь Direct Line"](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech).
 - [Android Studio](https://developer.android.com/studio/) версии 3.3 или более поздней.
 
@@ -260,7 +260,7 @@ ms.locfileid: "74111790"
 
     * Замените `YourSpeechSubscriptionKey` ключом своей подписки.
 
-    * Замените `YourServiceRegion` [регионом](regions.md), связанным с вашей подпиской. Служба "Речь Direct Line" сейчас поддерживается только в ряде регионов служб распознавания речи. Дополнительные сведения см. в разделе [Регионы](regions.md#voice-assistants).
+    * Замените `YourServiceRegion` [регионом](regions.md), связанным с вашей подпиской. Канал Direct Line Speech сейчас поддерживается только в ряде регионов службы "Речь". Дополнительные сведения см. в разделе [Регионы](regions.md#voice-assistants).
 
 ## <a name="build-and-run-the-app"></a>Создание и запуск приложения
 
@@ -285,7 +285,7 @@ ms.locfileid: "74111790"
 
 ## <a name="see-also"></a>См. также
 - [Сведения о голосовых помощниках](voice-assistants.md)
-- [Получите ключ подписки для Служб речи бесплатно](get-started.md)
+- [Try the Speech service for free](get-started.md) (Бесплатное использование службы "Речь")
 - [Пользовательские ключевые слова](speech-devices-sdk-create-kws.md)
 - [Подключение бота к каналу Direct Line Speech (предварительная версия)](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
 - [Примеры для Java на сайте GitHub](https://aka.ms/csspeech/samples)

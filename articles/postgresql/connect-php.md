@@ -8,12 +8,12 @@ ms.custom: mvc
 ms.devlang: php
 ms.topic: quickstart
 ms.date: 2/28/2018
-ms.openlocfilehash: c6320eabd4d5808e8cfe1d39ec4a72bbbce42f77
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 6e453201eb499f65ee7f3b8c17cbf0e5127182b0
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65067354"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74766384"
 ---
 # <a name="azure-database-for-postgresql---single-server-use-php-to-connect-and-query-data"></a>База данных Azure для PostgreSQL — отдельный сервер: использование PHP для подключения и создания запросов данных
 В этом кратком руководстве объясняется, как подключиться к базе данных Azure для PostgreSQL с помощью приложения [PHP](https://secure.php.net/manual/intro-whatis.php). Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на PHP и вы только начали работу с базой данных Azure для PostgreSQL.
@@ -26,7 +26,7 @@ ms.locfileid: "65067354"
 ## <a name="install-php"></a>Установка PHP
 Установите PHP на своем сервере или создайте [веб-приложение](../app-service/overview.md) Azure с PHP.
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 - Скачайте [PHP 7.1.4 (x64) непотокобезопасной версии](https://windows.php.net/download#php-7.1).
 - Установите PHP и выполните настройку согласно инструкциям в [руководстве по PHP](https://secure.php.net/manual/install.windows.php).
 - В коде используется класс **pgsql** (ext/php_pgsql.dll), который устанавливается с PHP. 
@@ -109,7 +109,7 @@ ms.locfileid: "65067354"
 ?>
 ```
 
-## <a name="read-data"></a>Считывание данных
+## <a name="read-data"></a>Чтение данных
 Используйте указанный ниже код с инструкцией SQL **SELECT** для подключения и чтения данных. 
 
  Код вызывает метод [pg_connect()](https://secure.php.net/manual/en/function.pg-connect.php), чтобы подключиться к базе данных Azure для PostgreSQL. Затем он вызывает метод [pg_query()](https://secure.php.net/manual/en/function.pg-query.php) для выполнения команды SELECT, сохраняя результаты в результирующем наборе, и метод [pg_last_error()](https://secure.php.net/manual/en/function.pg-last-error.php), чтобы проверить сведения, если произошла ошибка.  Чтобы считать данные результирующего набора, в цикле вызывается метод [pg_fetch_row()](https://secure.php.net/manual/en/function.pg-fetch-row.php) для каждой строки. Данные строки извлекаются в виде массива `$row` с одним значением данных для каждого столбца в каждой позиции массива.  Чтобы освободить результирующий набор, вызывается метод [pg_free_result()](https://secure.php.net/manual/en/function.pg-free-result.php). После этого вызывается метод [mysqli_close](https://secure.php.net/manual/en/function.pg-close.php), чтобы разорвать подключение.

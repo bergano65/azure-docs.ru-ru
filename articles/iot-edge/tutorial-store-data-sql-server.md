@@ -1,6 +1,6 @@
 ---
-title: Руководство по хранению данных с помощью модуля SQL — Azure IoT Edge | Документация Майкрософт
-description: Узнайте, как хранить данные локально на устройстве IoT Edge, используя модуль SQL Server
+title: Учебник по хранению данных с помощью модуля SQL в Azure IoT Edge
+description: В этом учебнике показано, как хранить данные локально на устройстве IoT Edge с помощью модуля SQL Server
 services: iot-edge
 author: kgremban
 manager: philmea
@@ -9,14 +9,14 @@ ms.date: 03/28/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 5a3133100621cee2e786c4001df02f2316b1e4ec
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: dc8e3e92a9b843291643fe3a43092a6ac9b9c7cb
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74457049"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74701912"
 ---
-# <a name="tutorial-store-data-at-the-edge-with-sql-server-databases"></a>Руководство. Хранение данных в граничной системе с помощью баз данных SQL Server
+# <a name="tutorial-store-data-at-the-edge-with-sql-server-databases"></a>Руководство по Хранение данных в граничной системе с помощью баз данных SQL Server
 
 Развертывание модуля SQL Server для хранения данных на устройстве с Linux, где используется Azure IoT Edge.
 

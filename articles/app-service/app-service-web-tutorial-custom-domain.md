@@ -1,27 +1,18 @@
 ---
-title: Сопоставление существующего настраиваемого DNS-имени в Службе приложений Azure | Документация Майкрософт
+title: Руководство по сопоставлению существующих настраиваемых DNS-имен
 description: Узнайте, как добавить имеющееся DNS-имя личного домена (именного домена) для веб-приложения, серверной части мобильного приложения или приложения API в службе приложений Azure.
 keywords: служба приложений, служба приложений Azure, сопоставление доменов, доменное имя, существующий домен, имя узла
-services: app-service\web
-documentationcenter: nodejs
-author: cephalin
-manager: erikre
-editor: ''
 ms.assetid: dc446e0e-0958-48ea-8d99-441d2b947a7c
-ms.service: app-service-web
-ms.workload: web
-ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 06/06/2019
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: fa8acbab8179eea752607c4410851d74ae4e9444
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 37bb1193056894ea824f4aa1723fb327f54bccae
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73835873"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74672074"
 ---
 # <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>Руководство по Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure
 

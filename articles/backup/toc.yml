@@ -244,6 +244,8 @@
           href: sap-hana-db-manage.md
     - name: Windows Server
       items:
+        - name: Сведения об агенте MARS
+          href: backup-azure-about-mars.md
         - name: Резервное копирование файлов и папок Windows Server
           href: backup-configure-vault.md
         - name: Резервное копирование состояния системы Windows Server

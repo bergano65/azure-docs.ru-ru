@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 11/05/2019
 ms.author: bidishac
-ms.openlocfilehash: 54a5be769ace97ffa9a4f5f38a9227d9565abfd1
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 29f6596408a825a571682d14aceca01fa8108515
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74111714"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74815854"
 ---
 # <a name="quickstart-create-a-voice-assistant-with-the-speech-sdk-java-preview"></a>Краткое руководство. Создание помощника по обработке голоса с помощью пакета SDK службы "Речь", Java (предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "74111714"
 - Операционная система: Windows (64-разрядная версия), Ubuntu Linux 16.04 или 18.04 (64-разрядная версия), а также macOS 10.13 или более поздней версии.
 - [Eclipse Java IDE](https://www.eclipse.org/downloads/).
 - [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) или [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
-- Ключ подписки Azure для служб "Речь". [Получите бесплатно](get-started.md) или создайте его на [портале Azure](https://portal.azure.com).
+- Ключ подписки Azure для службы "Речь". [Получите бесплатно](get-started.md) или создайте его на [портале Azure](https://portal.azure.com).
 - Предварительно настроенный бот, созданный с помощью Bot Framework версии 4.2 или более поздней. Для получения речевого ввода бот необходимо подписать на новый канал "Речь Direct Line".
 
   > [!NOTE]
@@ -477,7 +477,7 @@ sudo apt-get install build-essential libssl1.0.0 libasound2 wget
 ## <a name="see-also"></a>См. также
 
 - [Сведения о голосовых помощниках](voice-assistants.md)
-- [Получите ключ подписки для Служб речи бесплатно](get-started.md)
+- [Try the Speech service for free](get-started.md) (Бесплатное использование службы "Речь")
 - [Пользовательские ключевые слова](speech-devices-sdk-create-kws.md)
 - [Подключение бота к каналу Direct Line Speech (предварительная версия)](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
 - [Примеры для Java на сайте GitHub](https://aka.ms/csspeech/samples)

@@ -10,21 +10,21 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 07/05/2019
 ms.author: yinhew
-ms.openlocfilehash: ba0e04d4dadd9d3a4bea41aeb0a66b37f454f030
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: fc5d0e0a7f693df87e754383a123dc1cebfdd94c
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73505278"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74818373"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы нужно:
+Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure](../../../../get-started.md).
-> * [Настроить среду разработки](../../../../quickstarts/setup-platform.md?tabs=linux).
-> * [Создать пустой пример проекта](../../../../quickstarts/create-project.md?tabs=linux).
+> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=linux)
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=linux)
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
@@ -32,7 +32,7 @@ ms.locfileid: "73505278"
 
    [!code-cpp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/cpp/linux/text-to-speech/helloworld.cpp#code)]
 
-1. В этом новом файле замените строку `YourSubscriptionKey` на ключ подписки службы "Речь".
+1. В этом новом файле замените строку `YourSubscriptionKey` на ваш ключ подписки службы "Речь".
 
 1. Замените строку `YourServiceRegion` значением [региона](~/articles/cognitive-services/Speech-Service/regions.md), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
 
@@ -87,7 +87,7 @@ ms.locfileid: "73505278"
    ./helloworld
    ```
 
-1. В окне консоли отобразится запрос на ввод текста. Введите несколько слов или предложение. Введенный текст передается в службы "Речь" и синтезируется в речь, которая воспроизводится через динамик.
+1. В окне консоли отобразится запрос на ввод текста. Введите несколько слов или предложение. Введенный текст передается в службу "Речь" и синтезируется в речь, которая воспроизводится через динамик.
 
    ```text
    Type some text that you want to speak...

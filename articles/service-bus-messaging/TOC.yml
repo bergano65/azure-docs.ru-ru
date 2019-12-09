@@ -211,6 +211,8 @@
       items:
         - name: Руководство по устранению неполадок
           href: service-bus-messaging-exceptions.md
+        - name: Исключения Resource Manager
+          href: service-bus-resource-manager-exceptions.md
 - name: Справочные материалы
   items:
     - name: .NET

@@ -1,19 +1,19 @@
 ---
 title: Краткое руководство. Запуск приложения Spring Cloud из исходного кода
-description: Сведения о запуске приложения Azure Spring Cloud непосредственно из исходного кода
+description: В этом кратком руководстве вы узнаете, как запустить приложение Azure Spring Cloud непосредственно из исходного кода
 author: jpconnock
 ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 10/30/2019
 ms.author: jeconnoc
-ms.openlocfilehash: 7ca80966ccab83991246f0ed7ea35cf2c9524b1d
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 6e18ac6c0fa97125b89ea5760a5d7da6c1545393
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73721289"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74708890"
 ---
-# <a name="launch-your-spring-cloud-application-from-source-code"></a>Запуск приложения Spring Cloud из исходного кода
+# <a name="quickstart-launch-your-spring-cloud-application-from-source-code"></a>Краткое руководство. Запуск приложения Spring Cloud из исходного кода
 
 Azure Spring Cloud позволяет легко выполнять приложения микрослужб Spring Cloud в Azure.
 

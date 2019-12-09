@@ -5,12 +5,12 @@ author: mumian
 ms.date: 03/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: ef26074b0dd6450895c6aa81d5ab8853e652b41e
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 61f9ff575c927cdafa4aa26fbad0ebb6e257b010
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74325391"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74815252"
 ---
 # <a name="tutorial-create-azure-resource-manager-templates-with-dependent-resources"></a>Руководство по Создание шаблонов Azure Resource Manager с зависимыми ресурсами
 
@@ -111,15 +111,15 @@ ms.locfileid: "74325391"
 Существует множество методов по развертыванию шаблонов.  В этом руководстве используется Cloud Shell на портале Azure.
 
 1. Войдите в [Cloud Shell](https://shell.azure.com).
-2. Выберите **PowerShell** в верхнем левом углу Cloud Shell и нажмите **Confirm** (Подтвердить).  В этом руководстве используется PowerShell.
-3. Выберите **Отправить файл** из Cloud Shell.
+1. Выберите **PowerShell** в верхнем левом углу Cloud Shell и нажмите **Confirm** (Подтвердить).  В этом руководстве используется PowerShell.
+1. Выберите **Отправить файл** из Cloud Shell.
 
     ![Файл отправки Cloud Shell портале Azure](./media/resource-manager-tutorial-create-templates-with-dependent-resources/azure-portal-cloud-shell-upload-file.png)
-4. Выберите шаблон, сохраненный ранее при выполнении этого руководства. **azuredeploy.json** — имя по умолчанию.  Если файл с тем же именем уже существует, он будет перезаписан без уведомления.
+1. Выберите шаблон, сохраненный ранее при выполнении этого руководства. **azuredeploy.json** — имя по умолчанию.  Если файл с тем же именем уже существует, он будет перезаписан без уведомления.
 
     При необходимости можно использовать команды **ls $HOME** и **cat $HOME/azuredeploy.json**, чтобы проверить отправку файлов.
 
-5. Выполните следующие команды PowerShell в командной строке Cloud Shell. Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. См. раздел [Предварительные требования](#prerequisites).
+1. Выполните следующие команды PowerShell в командной строке Cloud Shell. Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. См. раздел [Предварительные требования](#prerequisites).
 
     ```azurepowershell
     $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
@@ -135,18 +135,20 @@ ms.locfileid: "74325391"
         -adminPassword $adminPassword `
         -dnsLabelPrefix $dnsLabelPrefix `
         -TemplateFile "$HOME/azuredeploy.json"
+    Write-Host "Press [ENTER] to continue ..."
     ```
 
-8. Для отображения вновь созданной виртуальной машины выполните следующую команду PowerShell.
+1. Для отображения вновь созданной виртуальной машины выполните следующую команду PowerShell.
 
     ```azurepowershell
     $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
     Get-AzVM -Name SimpleWinVM -ResourceGroupName $resourceGroupName
+    Write-Host "Press [ENTER] to continue ..."
     ```
 
     Имя виртуальной машины внутри шаблона жестко закодировано как **SimpleWinVM**.
 
-9. RDP-подключение к виртуальной машине для ее проверки успешно установлено.
+1. RDP-подключение к виртуальной машине для ее проверки успешно установлено.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

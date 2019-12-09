@@ -1,25 +1,19 @@
 ---
-title: Пример скрипта Azure PowerShell. Восстановление веб-приложения из резервной копии | Документация Майкрософт
-description: Пример скрипта Azure PowerShell. Восстановление веб-приложения из резервной копии
-services: app-service\web
-documentationcenter: ''
-author: msangapu
-manager: jeconnoc
-editor: ''
+title: 'PowerShell: восстановление резервной копии приложения'
+description: Сведения об использовании Azure PowerShell для автоматизации процессов развертывания и управления в Службе приложений. В этом примере показано, как восстановить приложение из резервной копии.
+author: msangapu-msft
 tags: azure-service-management
 ms.assetid: a2a27d94-d378-4c17-a6a9-ae1e69dc4a72
-ms.service: app-service-web
-ms.workload: web
 ms.topic: sample
 ms.date: 11/21/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 85cbcb4b01161e0004d38f08ae8c30fd398727ff
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 026c275ce4bc85ff3f964bfbb175cc01ff611df0
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70087890"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74685768"
 ---
 # <a name="restore-a-web-app-from-a-backup-using-azure-powershell"></a>Восстановление веб-приложения из резервной копии с помощью Azure PowerShell
 

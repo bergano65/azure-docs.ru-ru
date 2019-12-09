@@ -1,27 +1,20 @@
 ---
-title: Пример скрипта Azure CLI. Создание веб-приложения ASP.NET Core из Docker Hub | Документация Майкрософт
-description: Пример сценария Azure CLI. Создание приложения ASP.NET Core в Службе приложений из Docker Hub
-services: appservice
-documentationcenter: appservice
-author: msangapu
-manager: jeconnoc
-editor: ''
+title: 'CLI: создание приложения ASP.NET Core из Docker'
+description: Сведения об использовании Azure CLI для автоматизации развертывания приложения Службы приложений и управления им. В этом примере показано, как создать приложение ASP.NET Core из Docker Hub.
+author: msangapu-msft
 tags: azure-service-management
 ms.assetid: 3a2d1983-ff7b-476a-ac44-49ec2aabb31a
-ms.service: app-service
 ms.devlang: azurecli
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.workload: web
 ms.date: 12/11/2017
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 136d0d6976b046244ee9e6a24e68d5304a5c352b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 80190fa767da6c593b99d79a71ebce661d561253
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66136702"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74685981"
 ---
 # <a name="create-an-aspnet-core-app-in-a-docker-container-from-docker-hub-using-azure-cli"></a>Создание приложения ASP.NET Core в контейнере Docker из Docker Hub с помощью Azure CLI
 

@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Создание настраиваемых оповещений Центра безопасности Azure для Интернета вещей
-description: В этом кратком руководстве приведены сведения о создании и назначении настраиваемых оповещений устройств в Центре безопасности Azure для Интернета вещей.
+description: Общие сведения о создании и назначении настраиваемых оповещений устройств в службе безопасности Центра безопасности Azure для Интернета вещей.
 services: asc-for-iot
 ms.service: asc-for-iot
 documentationcenter: na
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/08/2019
 ms.author: mlottner
-ms.openlocfilehash: eca5d69efb04cf8210b0b2aa502bcee5cd4f5264
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: 992dd7b85dee0774b8388ae22fe18377ca9e5691
+ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73904124"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74664842"
 ---
 # <a name="quickstart-create-custom-alerts"></a>Краткое руководство. Создание настраиваемых оповещений
 

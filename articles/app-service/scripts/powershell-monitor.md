@@ -1,26 +1,17 @@
 ---
-title: Пример сценария Azure PowerShell для мониторинга веб-приложения с помощью журналов веб-сервера | Документация Майкрософт
-description: Пример сценария Azure PowerShell для мониторинга веб-приложения с помощью журналов веб-сервера
-services: app-service\web
-documentationcenter: ''
-author: syntaxc4
-manager: erikre
-editor: ''
+title: 'PowerShell: мониторинг с помощью журналов веб-сервера'
+description: Сведения об использовании Azure PowerShell для автоматизации процессов развертывания и управления в Службе приложений. В этом примере показано, как отслеживать приложение с помощью журналов веб-сервера.
 tags: azure-service-management
 ms.assetid: 5805d7cd-9e56-4eba-bd85-75b013690ff5
-ms.service: app-service
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.workload: web
 ms.date: 03/20/2017
-ms.author: cfowler
 ms.custom: mvc
-ms.openlocfilehash: e9e376de3356a23df648f77738fd2c84cb26d97f
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 79b5ef411abde3a4ef293516a43adaa1e669b6d9
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70098298"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74684626"
 ---
 # <a name="monitor-a-web-appwith-web-server-logs"></a>Мониторинг веб-приложения с помощью журналов веб-сервера
 

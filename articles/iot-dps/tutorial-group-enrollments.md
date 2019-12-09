@@ -1,6 +1,6 @@
 ---
-title: Подготовка имитированного устройства X.509 в Центре Интернета вещей Azure с помощью Java и групп регистрации
-description: Учебник. Создание и подготовка имитированного устройства X.509 с помощью Java устройства, SDK службы и групп регистрации для Службы подготовки устройств к добавлению в Центр Интернета вещей
+title: Учебник. Подготовка имитированного устройства X.509 в Центре Интернета вещей Azure с помощью Java и групп регистрации
+description: Работая с этим учебником, вы создадите и подготовите имитированное устройство X.509 с помощью устройства Java, пакета SDK службы и групп регистрации для службы подготовки устройств Центра Интернета вещей
 author: wesmc7777
 ms.author: wesmc
 ms.date: 11/12/2019
@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: java
 ms.custom: mvc
-ms.openlocfilehash: a903997c6548aad3638ba5785d23ee7642d403fc
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 28cb37ad4fcd41818c3dfc18925ec65b04dddd00
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74228334"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74702458"
 ---
 # <a name="tutorial-create-and-provision-a-simulated-x509-device-using-java-device-and-service-sdk-and-group-enrollments-for-iot-hub-device-provisioning-service"></a>Руководство по Создание и подготовка имитированного устройства X.509 с помощью Java устройства, SDK службы и групп регистрации для службы подготовки устройств Центра Интернета вещей
 

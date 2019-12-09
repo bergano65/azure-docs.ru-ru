@@ -1,6 +1,6 @@
 ---
 title: Руководство по созданию и развертыванию пользовательских модулей — Машинное обучение в Azure IoT Edge
-description: Руководство по Узнайте, как создавать и развертывать модули IoT Edge, которые обрабатывают данные от конечных устройств с использованием модели машинного обучения, а затем отправляют аналитические сведения в Центр Интернета вещей.
+description: В этом учебнике показано, как создавать и развертывать модули IoT Edge, которые обрабатывают данные от конечных устройств с использованием модели машинного обучения, а затем отправляют аналитические сведения в Центр Интернета вещей.
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -8,12 +8,12 @@ ms.date: 11/12/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 7bfe620510d5ff88a20c518be1f4dd1fb422daa2
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: d9890a393d9b2955c1eb0c9894d454a774af68ef
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74106564"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74701848"
 ---
 # <a name="tutorial-create-and-deploy-custom-iot-edge-modules"></a>Руководство по Создание и развертывание пользовательских модулей IoT Edge
 

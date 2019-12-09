@@ -1,17 +1,17 @@
 ---
-title: Настройка экземпляра сервера конфигурации в Azure Spring Cloud | Документация Майкрософт
+title: Учебник по настройке экземпляра сервера конфигурации в Azure Spring Cloud
 description: В этом учебнике описывается настройка экземпляра сервера конфигурации Spring Cloud для службы Azure Spring Cloud на портале Azure.
 ms.service: spring-cloud
 ms.topic: tutorial
 ms.author: jeconnoc
 author: jpconnock
 ms.date: 10/18/2019
-ms.openlocfilehash: 7589a3a750e2fe04736bb3c8fc072c7a2c0a7358
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 186ba771d2df3b08244a05e349beea8dad2af93b
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74147557"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74708798"
 ---
 # <a name="tutorial-set-up-a-spring-cloud-config-server-instance-for-your-service"></a>Руководство по настройке экземпляра сервера конфигурации Spring Cloud для службы
 

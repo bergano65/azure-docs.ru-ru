@@ -1,5 +1,5 @@
 ---
-title: Руководство по разработке модулей C# для Windows (Azure IoT Edge) | Документация Майкрософт
+title: Учебник по разработке модулей C# для Windows с помощью Azure IoT Edge
 description: В этом руководстве показано, как создать модуль IoT Edge c кодом C# и развернуть его на устройстве Windows IoT Edge.
 services: iot-edge
 author: kgremban
@@ -9,12 +9,12 @@ ms.date: 04/23/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 3f37f0f3fe57015cc733d67f16e64bdf58a8a6b7
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.openlocfilehash: 041efc62b32e8d8c0c477d9d5715882fd7899cd9
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74561006"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74701943"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство по Разработка модулей IoT Edge на языке C# для устройств Windows
 

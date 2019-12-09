@@ -1,24 +1,17 @@
 ---
-title: Защита настраиваемого DNS-имени с помощью привязки SSL в Службе приложений Azure | Документация Майкрософт
-description: Узнайте, как приобрести сертификат службы приложений и привязать его к приложению службы приложений.
-services: app-service
-author: cephalin
-manager: gwallace
+title: Защита настраиваемого DNS с помощью привязки SSL
+description: Обеспечьте защищенный доступ по протоколу HTTPS к пользовательскому домену, создав привязку TLS/SSL с сертификатом. Повышение безопасности веб-сайта за счет применения протокола HTTPS или TLS 1.2.
 tags: buy-ssl-certificates
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 10/25/2019
-ms.author: cephalin
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: 259a4d33ba6e8c072f8df906da4784119b299822
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b967e4cfad2444e39c7df8cfddcc2154bd48367d
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73509058"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74670677"
 ---
 # <a name="secure-a-custom-dns-name-with-an-ssl-binding-in-azure-app-service"></a>Защита настраиваемого DNS-имени с помощью привязки SSL в Службе приложений Azure
 

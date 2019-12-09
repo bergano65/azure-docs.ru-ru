@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: tutorial
 ms.date: 09/27/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 7c31c04137a8d36adfe41a18cbc276a45483b05b
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 10445aba9c52c5367a8ea03729462d14e2d51085
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73467174"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707182"
 ---
 # <a name="provide-key-vault-authentication-with-an-access-control-policy"></a>Обеспечение проверки подлинности Azure Key Vault с помощью политики управления доступом
 
@@ -220,6 +220,7 @@ Add-AzADGroupMember -TargetGroupObjectId <groupId> -MemberObjectId <objectId>
 
 Наконец, предоставьте разрешения группе AD для хранилища ключей с помощью команды Azure CLI [az keyvault set-policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy) или командлета Azure PowerShell [Set-AzKeyVaultAccessPolicy](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy?view=azps-2.7.0). Примеры см. в разделе [Предоставление приложению, группе Azure AD или пользователю доступа к хранилищу ключей](#give-the-principal-access-to-your-key-vault) выше.
 
+Приложению также требуется по крайней мере одна роль Системы управления идентификацией и доступом (IAM), назначенная хранилищу ключей. В противном случае оно не сможет войти в систему и завершится ошибкой о недостаточных правах доступа к подписке.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

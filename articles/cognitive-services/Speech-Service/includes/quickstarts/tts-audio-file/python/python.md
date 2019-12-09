@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: chlandsi
-ms.openlocfilehash: d6f6519ea5df630a914243046e74c315b4bd7db9
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 314a5302c76157810557036370a18ad6fb605033
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73505398"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74817889"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Ключ подписки Azure для служб речи. [Получить бесплатно](~/articles/cognitive-services/Speech-Service/get-started.md).
+* Ключ подписки Azure для службы "Речь". [Получить бесплатно](~/articles/cognitive-services/Speech-Service/get-started.md).
 * [Python 3.5 или более поздней версии](https://www.python.org/downloads/).
 * Пакет SDK службы "Речь" для Python доступен для таких операционных систем:
     * Windows x64 или x86.
@@ -127,7 +127,7 @@ elif result.reason == speechsdk.ResultReason.Canceled:
    ![Создание файла](~/articles/cognitive-services/Speech-Service/media/sdk/qs-python-vscode-python-newfile.png)
 
 1. Скопируйте, вставьте и сохраните [код Python](#sample-code) в созданный файл.
-1. Вставьте сведения о подписках на службы речи
+1. Вставьте сведения о подписке службы "Речь".
 1. Если интерпретатор Python выбран, он отображается в левой части строки состояния в нижней части окна.
    В противном случае откроется список доступных интерпретаторов Python. Откройте палитру команд (CTRL+SHIFT+P) и введите **Python: Select Interpreter** (Python: выбор интерпретатора). Выберите соответствующий интерпретатор.
 1. Вы можете установить пакет SDK службы "Речь" для Python в Visual Studio Code. Сделайте это, если он еще не установлен для выбранного интерпретатора Python.

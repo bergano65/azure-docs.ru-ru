@@ -5,12 +5,12 @@ ms.date: 09/26/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: 2d863fbb5cb14d3a5e61d7b493bca45f21c597db
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: fa7b4b4dcd1883c7619faa6fcfe014f4fc8c036f
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74325818"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74708580"
 ---
 # <a name="create-a-kubernetes-dev-space-visual-studio-code-and-net-core-with-azure-dev-spaces"></a>Создание пространства разработки Kubernetes: Использование Visual Studio Code и .NET Core с Azure Dev Spaces
 
@@ -40,9 +40,10 @@ az login
 Можно просматривать свои подписки, выполнив следующую команду: 
 
 ```cmd
-az account list
+az account list --output table
 ```
-Найдите подписку с `isDefault: true` в выходных данных JSON.
+
+Найдите подписку со значением *True* для параметра *IsDefault*.
 Если это не та подписка, которую нужно использовать, вы можете изменить подписку по умолчанию:
 
 ```cmd

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Преобразование текста в речь на Python — служба "Речь"
+title: Краткое руководство. Преобразование текста в речь на Python в службе "Речь"
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как преобразовать текст в речь с помощью Python и REST API преобразования текста в речь. В это руководство включен пример текста, оформленный по стандарту разметки SSML (Speech Synthesis Markup Language). Этот стандарт позволяет выбрать голос и язык для речевого ответа.
 services: cognitive-services
@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: a66835d605b9005b8f94eb79a3c266f735f0a3b6
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 23f3a6b030b477d3dcc06317a545064da95100ff
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73467214"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74816214"
 ---
 # <a name="quickstart-convert-text-to-speech-using-python"></a>Краткое руководство. Преобразование текста в речь с использованием Python
 
 В этом кратком руководстве описано, как преобразовать текст в речь с помощью Python и REST API преобразования текста в речь. Текст запроса в этом руководстве оформлен по стандарту разметки [SSML (Speech Synthesis Markup Language)](speech-synthesis-markup.md), который позволяет выбрать голос и язык для ответа.
 
-Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом служб "Речь". Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](get-started.md), чтобы получить ключ подписки.
+Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом службы "Речь". Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](get-started.md), чтобы получить ключ подписки.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -29,7 +29,7 @@ ms.locfileid: "73467214"
 
 * Python 2.7.x или 3.x;
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
-* ключ подписки Azure для служб "Речь".
+* ключ подписки Azure для службы "Речь".
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
 
@@ -94,7 +94,7 @@ def get_token(self):
 
 ## <a name="make-a-request-and-save-the-response"></a>Выполнение запроса и сохранение ответа
 
-Здесь вы создадите запрос и сохраните ответ службы "Речь". Прежде всего задайте значения `base_url` и `path`. В этом примере предполагается, что вы используете конечную точку в регионе "Западная часть США". Если ресурс зарегистрирован в другом регионе, обновите значение `base_url`. Подробные сведения см. в [списке регионов служб "Речь"](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#text-to-speech).
+Здесь вы создадите запрос и сохраните ответ службы "Речь". Прежде всего задайте значения `base_url` и `path`. В этом примере предполагается, что вы используете конечную точку в регионе "Западная часть США". Если ресурс зарегистрирован в другом регионе, обновите значение `base_url`. Дополнительные сведения см. в [списке регионов службы "Речь"](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#text-to-speech).
 
 Теперь следует добавить в запрос обязательные заголовки. Обязательно сохраните в `User-Agent` имя ресурса (размещенного на портале Azure), а в `X-Microsoft-OutputFormat` укажите нужный аудиовыход. См. [полный список форматов аудиовыхода](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis).
 

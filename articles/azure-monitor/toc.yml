@@ -563,7 +563,7 @@
                           href: platform/collect-custom-metrics-guestos-vm-classic.md
                         - name: облачная служба
                           href: platform/collect-custom-metrics-guestos-vm-cloud-service-classic.md
-                    - name: Формат журналов диагностики JSON Lines
+                    - name: Формат JSON Lines для журналов ресурсов
                       href: platform/diagnostic-logs-append-blobs.md
                     - name: Устранение неполадок
                       href: platform/diagnostics-extension-troubleshooting.md
@@ -1163,7 +1163,7 @@
           href: platform/metrics-supported.md
         - name: Поддерживаемые метрики для новых оповещений
           href: platform/alerts-metric-near-real-time.md
-    - name: 'Службы, категории и схемы для журналов ресурсов'
+    - name: 'Службы, категории и схемы для журналов платформ'
       href: platform/diagnostic-logs-schema.md
     - name: Инфраструктура CLI Azure
       href: /cli/azure/monitor?view=azure-cli-latest

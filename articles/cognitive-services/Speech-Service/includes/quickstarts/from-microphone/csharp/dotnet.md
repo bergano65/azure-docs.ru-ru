@@ -10,21 +10,22 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 10/28/2019
 ms.author: erhopf
-ms.openlocfilehash: 88ac0f05bf937af19a0bd6bf3cf2253fd3052f4c
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: c4aee9604df98fbf5fbd18f527c4d40cff044bb9
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73505542"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74818837"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы нужно:
+Необходимые условия:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure](../../../../get-started.md).
-> * [Настроить среду разработки](../../../../quickstarts/setup-platform.md?tabs=dotnet).
-> * [Создать пустой пример проекта](../../../../quickstarts/create-project.md?tabs=dotnet).
+> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=dotnet)
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=dotnet)
+> * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 
 ## <a name="open-your-project-in-visual-studio"></a>Откройте проект в Visual Studio.
 
@@ -45,6 +46,7 @@ ms.locfileid: "73505542"
 > [!NOTE]
 > В этом примере для создания `SpeechConfig` используется метод `FromSubscription()`. Полный список доступных методов см. в статье [SpeechConfig Class](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?view=azure-dotnet) (Класс SpeechConfig).
 [!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/dotnet/from-microphone/helloworld/Program.cs?range=16)]
+> Пакет SDK для распознавания речи по умолчанию распознает использование языкового стандарта en-us. Дополнительные сведения о выборе исходного языка см. в разделе [Specify source language for speech to text](../../../../how-to-specify-source-language.md) (Указание исходного языка для преобразования речи в текст).
 
 ## <a name="initialize-a-speechrecognizer"></a>Инициализация SpeechRecognizer
 

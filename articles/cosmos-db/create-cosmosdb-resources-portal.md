@@ -1,6 +1,6 @@
 ---
-title: Создайте базу данных Azure Cosmos на портале Azure.
-description: Создайте базу данных, контейнер и элементы Azure Cosmos на портале Azure.
+title: Краткое руководство. Создание базы данных Azure Cosmos на портале Azure
+description: В этом кратком руководстве показано, как создать базу данных, контейнер и элементы Azure Cosmos с помощью портала Azure.
 author: SnehaGunda
 ms.author: sngun
 ms.service: cosmos-db
@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 09/01/2019
-ms.openlocfilehash: b42a442564812f4386eb94b9bd7b7c9aff9e9f29
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 0f7102081d5ccd29507917068893b484902a4fb3
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74220732"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74708186"
 ---
 # <a name="quickstart-create-an-azure-cosmos-account-database-container-and-items-from-the-azure-portal"></a>Краткое руководство. Создание учетной записи, базы данных, контейнера и элементов Azure Cosmos на портале Azure
 

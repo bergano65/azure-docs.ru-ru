@@ -1,5 +1,5 @@
 ---
-title: Создание облачного задания Azure Stream Analytics в Visual Studio Code
+title: Краткое руководство. Создание облачного задания Azure Stream Analytics в Visual Studio Code
 description: В этом кратком руководстве по началу работы показано, как с помощью Visual Studio Code создать задание Stream Analytics, настроить для него входы и выходы, а затем определить запрос.
 ms.service: stream-analytics
 author: mamccrea
@@ -7,12 +7,12 @@ ms.author: mamccrea
 ms.date: 09/16/2019
 ms.topic: quickstart
 ms.custom: mvc
-ms.openlocfilehash: 35e2711bbb3cd6dc0662146a566014dd65d879bc
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 1deb042ecffe8a46c70374a0ee15344a31043be8
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72935083"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707413"
 ---
 # <a name="quickstart-create-an-azure-stream-analytics-cloud-job-in-visual-studio-code-preview"></a>Краткое руководство. Создание облачного задания Azure Stream Analytics в Visual Studio Code (предварительная версия)
 

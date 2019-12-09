@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Распознавание речи из звукового файла с использованием Python и службы "Речь"
+title: Краткое руководство. Распознавание речи из звукового файла в службе "Речь" с помощью Python
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве объясняется, как создать консольное приложение для преобразования речи в текст, использующее пакет SDK службы "Речь" для Python. После завершения вы сможете преобразовывать речь в текст в режиме реального времени с использованием микрофона компьютера.
 services: cognitive-services
@@ -10,22 +10,24 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: chlandsi
-ms.openlocfilehash: 91b136b7986dc3551ebc28b7e35bfe206b273497
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 8a5652f6cb8b42200e24221921868b084bd6e62f
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73506446"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74819308"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure](../../../../get-started.md).
-> * [Настроить приложение LUIS и получить ключ конечной точки](../../../../quickstarts/create-luis.md).
-> * [Настроить среду разработки](../../../../quickstarts/setup-platform.md).
+> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
+> * [Создать приложение LUIS и получить ключ конечной точки](../../../../quickstarts/create-luis.md).
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md)
 > * [Создать пустой пример проекта](../../../../quickstarts/create-project.md).
+
+[!INCLUDE [Audio input format](~/articles/cognitive-services/speech-service/includes/audio-input-format-chart.md)]
 
 ## <a name="support-and-updates"></a>Поддержка и обновления
 
@@ -48,6 +50,9 @@ python quickstart.py
 Кроме того, можно скачать это краткое руководство как записную книжку [Jupyter](https://jupyter.org) из [репозитория с примером пакета SDK для службы "Речь"](https://github.com/Azure-Samples/cognitive-services-speech-sdk/) и запустить его как записную книжку.
 
 ### <a name="sample-code"></a>Пример кода
+
+> [!NOTE]
+> Пакет SDK для распознавания речи по умолчанию распознает использование языкового стандарта en-us. Дополнительные сведения о выборе исходного языка см. в разделе [Specify source language for speech to text](../../../../how-to-specify-source-language.md) (Указание исходного языка для преобразования речи в текст).
 
 ````Python
 
@@ -108,7 +113,7 @@ elif result.reason == speechsdk.ResultReason.Canceled:
    ![Создание файла](~/articles/cognitive-services/Speech-Service/media/sdk/qs-python-vscode-python-newfile.png)
 
 1. Скопируйте, вставьте и сохраните [код Python](#sample-code) в созданный файл.
-1. Вставьте сведения о подписках на службы речи
+1. Вставьте сведения о подписке службы "Речь".
 1. Если интерпретатор Python выбран, он отображается в левой части строки состояния в нижней части окна.
    В противном случае откроется список доступных интерпретаторов Python. Откройте палитру команд (CTRL+SHIFT+P) и введите **Python: Select Interpreter** (Python: выбор интерпретатора). Выберите соответствующий интерпретатор.
 1. Вы можете установить пакет SDK службы "Речь" для Python в Visual Studio Code. Сделайте это, если он еще не установлен для выбранного интерпретатора Python.

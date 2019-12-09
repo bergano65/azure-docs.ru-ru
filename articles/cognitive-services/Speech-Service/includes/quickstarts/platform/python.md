@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Настройка платформы для использования пакета SDK службы "Речь" для Python — служба "Речь"
 titleSuffix: Azure Cognitive Services
-description: В этом руководстве показано, как настроить платформу для использования Python с пакетом SDK для службы "Речь",
+description: В этом руководстве показано, как настроить платформу для использования Python с пакетом SDK службы "Речь".
 services: cognitive-services
 author: markamos
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 10/09/2019
 ms.author: erhopf
-ms.openlocfilehash: d4a81c6dd2b44efd432345627e78bb69fff1688d
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 095c591f63cb228b48681ffc67499820631bbaf5
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73504334"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74816476"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для Python.
 

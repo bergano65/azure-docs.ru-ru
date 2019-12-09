@@ -10,12 +10,12 @@ metadata:
   author: megan-beatty
   ms.author: mebeatty
   ms.date: 10/16/2019
-  ms.openlocfilehash: d7c9b0c848087048d676a2e30bba40e182e8e673
-  ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+  ms.openlocfilehash: f1d8bc4bafe140a8522591e57bf2aa6665120d1f
+  ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/19/2019
-  ms.locfileid: "74185647"
+  ms.lasthandoff: 12/06/2019
+  ms.locfileid: "74896500"
 landingContent:
 - title: Сведения об Анализаторе Интернета
   linkLists:
@@ -37,13 +37,15 @@ landingContent:
       url: internet-analyzer-embed-client.md
     - text: Настройка пользовательской конечной точки
       url: internet-analyzer-custom-endpoint.md
+    - text: Интерпретация системы показателей
+      url: internet-analyzer-scorecard.md
 - title: Ресурсы
   linkLists:
   - linkListType: reference
     links:
     - text: Вопросы и ответы об Анализаторе Интернета
       url: internet-analyzer-faq.md
-    - text: Интерпретация системы показателей
-      url: internet-analyzer-scorecard.md
+    - text: Устранение неполадок с Анализатором Интернета
+      url: troubleshoot.md
     - text: Справочник по интерфейсу командной строки службы "Анализатор Интернета"
       url: https://docs.microsoft.com/cli/azure/ext/internet-analyzer/internet-analyzer?view=azure-cli-latest

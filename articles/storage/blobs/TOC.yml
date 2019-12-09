@@ -91,7 +91,7 @@
           items:
             - name: "1.\_Обеспечение высокого уровня доступности для приложения"
               href: storage-create-geo-redundant-storage.md
-            - name: "2.\_Имитация сбоя в хранилище RA-GRS"
+            - name: 2. Моделирование сбоя при чтении данных в основном регионе
               href: storage-simulate-failure-ragrs-account-app.md
         - name: Шифрование и расшифровка больших двоичных объектов с помощью Azure Key Vault
           href: storage-encrypt-decrypt-blobs-key-vault.md
@@ -151,7 +151,7 @@
               href: ../common/storage-redundancy-gzrs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Аварийное восстановление и отработка отказа
               href: ../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Разработка высокодоступных приложений c помощью RA-GRS
+            - name: Разработка высокодоступных приложений
               href: ../common/storage-designing-ha-apps-with-ragrs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Уровни доступа и производительности
           items:
@@ -406,6 +406,8 @@
               href: ../../data-factory/connector-azure-blob-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Подключение хранилища BLOB-объектов как файловой системы в Linux
               href: storage-how-to-mount-container-linux.md
+            - name: Перенос данных с помощью библиотеки перемещения данных
+              href: ../common/storage-use-data-movement-library.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: 'Миграция хранилища: часто задаваемые вопросы'
               href: ../common/storage-migration-faq.md
         - name: Разработка с использованием больших двоичных объектов

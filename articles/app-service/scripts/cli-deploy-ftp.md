@@ -1,26 +1,19 @@
 ---
-title: Пример сценария Azure CLI. Создание приложения и развертывания файлов с помощью протокола FTP | Документация Майкрософт
-description: Пример сценария Azure CLI. Создание приложения Службы приложений и развертывания файлов с помощью протокола FTP
-services: app-service\web
-documentationcenter: ''
-author: msangapu
-manager: jeconnoc
-editor: ''
+title: 'CLI: развертывание файлов приложения с помощью FTP'
+description: Сведения об использовании Azure CLI для автоматизации развертывания приложения Службы приложений и управления им. В этом примере показано, как создать приложение и развернуть файлы с помощью FTP.
+author: msangapu-msft
 tags: azure-service-management
-ms.service: app-service-web
-ms.workload: web
 ms.devlang: azurecli
-ms.tgt_pltfrm: sample
 ms.topic: sample
 ms.date: 12/12/2017
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 7bca306911dc72a2f8ec31d2ac80f99b4925c9fd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 320f293073ce0a97cf4b73b420f38d91c5206013
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66136812"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74688360"
 ---
 # <a name="create-an-app-service-app-and-deploy-files-with-ftp-using-azure-cli"></a>Создание приложения Службы приложений и развертывание файлов с помощью протокола FTP в интерфейсе командной строки Azure
 

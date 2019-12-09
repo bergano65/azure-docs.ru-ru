@@ -1,25 +1,17 @@
 ---
-title: Пример сценария Azure PowerShell. Передача файлов в веб-приложение с помощью FTP | Документация Майкрософт
-description: Пример сценария Azure PowerShell для передачи файлов в веб-приложение с помощью протокола FTP.
-services: app-service\web
-documentationcenter: ''
-author: cephalin
-manager: erikre
-editor: ''
+title: 'PowerShell: отправка файлов по FTP'
+description: Сведения об использовании Azure PowerShell для автоматизации процессов развертывания и управления в Службе приложений. В этом примере показано, как отправлять файлы в приложение с помощью FTP.
 tags: azure-service-management
 ms.assetid: b7d46d6f-44fd-454c-8008-87dab6eefbc1
-ms.service: app-service-web
-ms.workload: web
 ms.topic: sample
 ms.date: 03/20/2017
-ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: fa5bc2b05f4bf34bdefd2291f10e0f69d1cd634f
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 1dfcbec9530a66570244e8168faa84bfe0759038
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70098314"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74685094"
 ---
 # <a name="upload-files-to-a-web-app-using-ftp"></a>Передача файлов в веб-приложение с помощью протокола FTP
 

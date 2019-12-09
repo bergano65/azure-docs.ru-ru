@@ -1,6 +1,6 @@
 ---
-title: Руководство по Настройка устройства для службы "Подготовка устройств к добавлению в Центр Интернета вещей"
-description: Руководство по Настройка устройства для подготовки через службу подготовки устройств для Центра Интернета вещей во время производства устройства.
+title: Учебник. Настройка устройства для Службы подготовки устройств к добавлению в Центр Интернета вещей Azure
+description: В этом учебнике показано, как настроить устройство для подготовки через Службу подготовки устройств к добавлению в Центр Интернета вещей во время производства устройства.
 author: wesmc7777
 ms.author: wesmc
 ms.date: 11/12/2019
@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: e7f6151968fb14d44f1e330fb6ddc06fabad3ee6
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: bdda46a89fc2bcf8b16b2ce771c6540c9ceaa3e0
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112753"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74701985"
 ---
 # <a name="tutorial-set-up-a-device-to-provision-using-the-azure-iot-hub-device-provisioning-service"></a>Руководство по Настройка устройства для подготовки с помощью службы подготовки устройств для Центра Интернета вещей
 
@@ -212,4 +212,3 @@ PROV_DEVICE_RESULT Prov_Device_LL_SetOption(PROV_DEVICE_LL_HANDLE handle, const 
 
 > [!div class="nextstepaction"]
 > [Provision the device to an IoT hub using the Azure IoT Hub Device Provisioning Service](tutorial-provision-device-to-hub.md) (Подготовка устройства в Центре Интернета вещей с помощью службы подготовки устройств для Центра Интернета вещей).
-

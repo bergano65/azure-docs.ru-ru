@@ -1,6 +1,6 @@
 ---
-title: Подготовка устройства с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей (.NET)
-description: Учебник. Подготовка устройства в одном Центре Интернета вещей с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей (.NET)
+title: Учебник. Подготовка устройства с помощью службы подготовки устройств к добавлению в Центр Интернета вещей (.NET)
+description: В этом учебнике показано, как подготовить устройство в одном Центре Интернета вещей с помощью службы подготовки устройств к добавлению в Центр Интернета вещей (.NET).
 author: wesmc7777
 ms.author: wesmc
 ms.date: 11/12/2019
@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: a19774a163c8725e0232e955a7be907420ce8249
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 98b2ef05a1abb6ebea8dac073fbf7671ed79c06e
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74229478"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74701991"
 ---
 # <a name="tutorial-enroll-the-device-to-an-iot-hub-using-the-azure-iot-hub-provisioning-service-client-net"></a>Руководство по Регистрация устройства в Центре Интернета вещей с помощью клиента службы подготовки для Центра Интернета вещей Azure (.NET)
 
