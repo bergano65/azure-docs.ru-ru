@@ -1,5 +1,5 @@
 ---
-title: Изучение журналов трассировки .NET в Azure Application Insights с помощью ILogger
+title: Изучение журналов трассировки .NET с помощью ILogger Azure Application Insights
 description: Примеры использования поставщика Azure Application Insights ILogger с ASP.NET Core и консольными приложениями.
 ms.service: azure-monitor
 ms.subservice: application-insights
@@ -8,12 +8,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 02/19/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: c561ecf8e47a6792626353fef65ce94f1fd0330a
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 86ed494d3a6005ae74ee3f1aa4d5aa53ffc3098e
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74893337"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74931155"
 ---
 # <a name="applicationinsightsloggerprovider-for-net-core-ilogger-logs"></a>Аппликатионинсигхтслогжерпровидер для журналов ILogger для .NET Core
 

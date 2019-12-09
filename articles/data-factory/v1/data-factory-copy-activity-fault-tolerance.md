@@ -4,20 +4,19 @@ description: Обеспечение отказоустойчивости для 
 services: data-factory
 documentationcenter: ''
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 84f5cdff72abe210ac1e39234b455e506d52ba5e
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 8ffaee75154fd5fe025bdb683c89f16799d6e86b
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73682957"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74926151"
 ---
 # <a name="add-fault-tolerance-in-copy-activity-by-skipping-incompatible-rows"></a>Обеспечение отказоустойчивости для действия копирования с помощью пропуска несовместимых строк
 
@@ -51,7 +50,7 @@ ms.locfileid: "73682957"
 >[!NOTE]
 >Эта функция не применяется, если действие копирования вызывает механизм загрузки внешних данных, включая [PolyBase хранилища данных SQL Azure](data-factory-azure-sql-data-warehouse-connector.md#use-polybase-to-load-data-into-azure-sql-data-warehouse) или [Amazon Redshift Unload](data-factory-amazon-redshift-connector.md#use-unload-to-copy-data-from-amazon-redshift). Чтобы загрузить данные в хранилище данных SQL с помощью PolyBase, воспользуйтесь встроенной в PolyBase поддержкой отказоустойчивости, указав [polyBaseSettings](data-factory-azure-sql-data-warehouse-connector.md#sqldwsink) в действии копирования.
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Настройка
 В следующем примере приводится определение JSON для настройки пропуска несовместимых строк в действии копирования:
 
 ```json
@@ -70,7 +69,7 @@ ms.locfileid: "73682957"
 }
 ```
 
-| Свойство | Description (Описание) | Допустимые значения | Обязательно |
+| Свойство | Описание | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
 | **enableSkipIncompatibleRow** | Включить или отключить пропуск несовместимых строк во время копирования. | Да<br/>False (по умолчанию) | Нет |
 | **redirectIncompatibleRowSettings** | Группа свойств, которые можно указать, если вы хотите записать несовместимые строки в журнал. | &nbsp; | Нет |

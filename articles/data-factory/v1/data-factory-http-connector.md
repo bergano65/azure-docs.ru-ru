@@ -4,20 +4,19 @@ description: Узнайте о перемещении данных из лока
 services: data-factory
 documentationcenter: ''
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 4133393b7b21394ea397598a5e1651ee370f92f0
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: e668f44bbc3d2e381edeb80c568a41355584a4ee
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73682509"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74924177"
 ---
 # <a name="move-data-from-an-http-source-by-using-azure-data-factory"></a>Перемещение данных из источника HTTP с помощью фабрики данных Azure
 
@@ -39,7 +38,7 @@ ms.locfileid: "73682509"
 
 При копировании данных из локальной конечной точки HTTP вы должны установить шлюз управления данными в локальной среде или на виртуальной машине Azure. См. дополнительные сведения о шлюзе управления данными и пошаговые инструкции по его настройке в статье [Перемещение данных между локальными источниками и облаком с помощью шлюза управления данными](data-factory-move-data-between-onprem-and-cloud.md).
 
-## <a name="get-started"></a>Приступая к работе
+## <a name="get-started"></a>Начать
 
 Вы можете создать конвейер с действием копирования, которое перемещает данные из источника HTTP с помощью разных инструментов и интерфейсов API:
 
@@ -51,11 +50,11 @@ ms.locfileid: "73682509"
 
 В приведенной ниже таблице описываются элементы JSON, которые относятся к связанной службе HTTP:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 | --- | --- | --- |
-| type | Свойству **Тип** необходимо задать значение **Http**. | Да |
-| URL-адрес | Базовый URL-адрес веб-сервера. | Да |
-| authenticationType | Указывает тип проверки подлинности. Допустимые значения **Anonymous**, **Basic** , **Digest**, **Windows** и **ClientCertificate**. <br><br> С дополнительными свойствами и примерами JSON этих типов проверки подлинности ознакомьтесь в последующих разделах этой статьи. | Да |
+| Тип | Свойству **Тип** необходимо задать значение **Http**. | ДА |
+| URL-адрес | Базовый URL-адрес веб-сервера. | ДА |
+| authenticationType | Указывает тип проверки подлинности. Допустимые значения **Anonymous**, **Basic** , **Digest**, **Windows** и **ClientCertificate**. <br><br> С дополнительными свойствами и примерами JSON этих типов проверки подлинности ознакомьтесь в последующих разделах этой статьи. | ДА |
 | enableServerCertificateValidation | Указывает, следует ли включать проверку SSL-сертификата на сервере, если источником является веб-сервер HTTPS. Если ваш сервер HTTPS использует самозаверенный сертификат, установите значение **false**. | Нет<br /> (значение по умолчанию **true**) |
 | gatewayName | Имя экземпляра шлюза управления данными для подключения к локальному источнику HTTP. | Да, если вы копируете данные из локального источника HTTP |
 | encryptedCredential | Зашифрованные учетные данные для доступа к конечной точке HTTP. Значение создается автоматически при настройке сведений для проверки подлинности в мастере копирования или в диалоговом окне **ClickOnce**. | Нет<br /> (применимо, только когда копирование данных выполняется с локального HTTP-сервера) |
@@ -66,10 +65,10 @@ ms.locfileid: "73682509"
 
 Задайте параметру **authenticationType** значение **Basic**, **Digest** или **Windows**. В дополнение к общим свойствам соединителя HTTP, описанных в предыдущих разделах, установите следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 | --- | --- | --- |
-| userName | Имя пользователя для доступа к конечной точке HTTP. | Да |
-| пароль | Пароль пользователя (**username**). | Да |
+| userName | Имя пользователя для доступа к конечной точке HTTP. | ДА |
+| пароль | Пароль пользователя (**username**). | ДА |
 
 **Пример: использование проверки подлинности типов Basic, Digest или Windows**
 
@@ -94,7 +93,7 @@ ms.locfileid: "73682509"
 
 Чтобы использовать базовую проверку подлинности установите **authenticationType** на **ClientCertificate**. В дополнение к общим свойствам соединителя HTTP, описанных в предыдущих разделах, установите следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 | --- | --- | --- |
 | embeddedCertData | Содержимое двоичных данных PFX-файла с кодировкой Base64. | Укажите либо **embeddedCertData** или **certThumbprint** |
 | certThumbprint | Отпечаток сертификата, который был установлен в хранилище сертификатов на компьютере шлюза. Применимо, только когда копирование данных выполняется из локального источника HTTP. | Укажите либо **embeddedCertData** или **certThumbprint** |
@@ -158,14 +157,14 @@ ms.locfileid: "73682509"
 
 Разделы **typeProperties** для каждого типа набора данных отличаются. Раздел **typeProperties** содержит сведения о расположении данных в хранилище. Раздел **typeProperties** набора данных типа **Http** содержит перечисленные ниже свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство **type** для набора данных должно иметь значение **Http**. | Да |
+| Тип | Свойство **type** для набора данных должно иметь значение **Http**. | ДА |
 | relativeUrl | Относительный URL-адрес ресурса, который содержит данные. Если путь не задан, используется только URL-адрес, указанный в определении связанной службы. <br><br> Для создания динамического URL-адреса можно использовать [функции фабрики данных и системные переменные](data-factory-functions-variables.md). Пример: **relativeUrl**: **$$Text.Format('/my/report?month={0:yyyy}-{0:MM}&fmt=csv', SliceStart)** . | Нет |
 | requestMethod | Метод HTTP. Допустимые значения: **GET** и **POST**. | Нет <br />(значение по умолчанию — **GET**) |
 | additionalHeaders | Дополнительные заголовки HTTP-запроса. | Нет |
 | requestBody | Текст HTTP-запроса. | Нет |
-| format | Если вы хотите *извлечь данные из конечной точки HTTP "как есть"*  — без анализа, пропустите параметр **format**. <br><br> Поддерживаемые форматы для выполнения анализа содержимого ответа HTTP в процессе выполнения операции копирования: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Дополнительные сведения см. в разделах о [Текстовый формат](data-factory-supported-file-and-compression-formats.md#text-format), [Формат JSON](data-factory-supported-file-and-compression-formats.md#json-format), [Формат Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Формат ORC](data-factory-supported-file-and-compression-formats.md#orc-format) и [Формат Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). |Нет |
+| свойства | Если вы хотите *извлечь данные из конечной точки HTTP "как есть"*  — без анализа, пропустите параметр **format**. <br><br> Поддерживаемые форматы для выполнения анализа содержимого ответа HTTP в процессе выполнения операции копирования: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Дополнительные сведения см. в разделах о [Текстовый формат](data-factory-supported-file-and-compression-formats.md#text-format), [Формат JSON](data-factory-supported-file-and-compression-formats.md#json-format), [Формат Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Формат ORC](data-factory-supported-file-and-compression-formats.md#orc-format) и [Формат Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). |Нет |
 | compression | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Optimal** и **Fastest**. См. дополнительные сведения о [форматах файлов и сжатия данных в фабрике данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет |
 
 **Пример: использование метода GET (по умолчанию)**
@@ -221,7 +220,7 @@ ms.locfileid: "73682509"
 
 В настоящее время, если источник в действии копирования относится к типу **HttpSource**, то поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 | -------- | ----------- | -------- |
 | httpRequestTimeout | Время ожидания (значение **Временной диапазон**) ответа для HTTP-запроса. Это интервал времени для получения ответа, а не считывания данных ответа. | Нет<br />(значение по умолчанию  — **00:01:40**) |
 

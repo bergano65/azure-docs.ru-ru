@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: jhakulin
-ms.openlocfilehash: 16729c23483e715177a7c73b3fc5c9bda6ee41a4
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 7017c3065e41befab6b5d7cdea47e2e3e6720173
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74872287"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74928646"
 ---
 # <a name="support-and-help-options"></a>Возможности получения поддержки и справки
 
@@ -62,7 +62,7 @@ ms.locfileid: "74872287"
 
 Stack Overflow — это идеальное место для вопросов, связанных с разработкой. Члены сообщества и команда Майкрософт постараются решить ваши проблемы.
 
-Если вы не можете найти ответ на проблему с помощью поиска, отправьте новый вопрос, чтобы Stack Overflow с помощью тега [Microsoft-Speech +](https://stackoverflow.com/questions/tagged/microsoft-cognitive+speech) .
+Если вы не можете найти ответ на проблему с помощью поиска, отправьте новый вопрос, чтобы Stack Overflow с помощью тегов [\[\]\[\]речи от Майкрософт ](https://stackoverflow.com/questions/tagged/microsoft-cognitive+speech).
 
 > [!TIP]
 > Указанные ниже публикации на Stack Overflow содержат советы о том, как формулировать вопросы и добавлять исходный код. Следуйте этим рекомендациям, чтобы повысить вероятность того, что участники сообщества быстро отреагируют на ваш вопрос:  

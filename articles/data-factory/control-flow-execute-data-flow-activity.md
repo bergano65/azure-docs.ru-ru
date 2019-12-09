@@ -6,16 +6,15 @@ documentationcenter: ''
 author: kromerm
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.author: makromer
 ms.date: 10/07/2019
-ms.openlocfilehash: 3f05b9ae490ea2b9d8e7b89ce02c7c1eb818bb0a
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 47126d1cf51f4b27863bb0b11e73cfe5592b8d57
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74769581"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74929885"
 ---
 # <a name="data-flow-activity-in-azure-data-factory"></a>Действие потока данных в фабрике данных Azure
 
@@ -91,7 +90,7 @@ DataFlow | Ссылка на выполняемый поток данных | д
 
 Для выполнения конвейера отладки, выполняемого с действием потока данных, необходимо переключиться в режим отладки потока данных с помощью ползунка **отладки потока данных** на верхней панели. Режим отладки позволяет запускать поток данных в активном кластере Spark. Дополнительные сведения см. в разделе [режим отладки](concepts-data-flow-debug-mode.md).
 
-![Кнопка "Отладка"](media/data-flow/debugbutton.png "Кнопка "Отладка"")
+![Кнопка "Отладка"](media/data-flow/debugbutton.png "Кнопка отладки")
 
 Конвейер отладки выполняется для активного кластера отладки, а не для среды выполнения интеграции, указанной в параметрах действия потока данных. При запуске режима отладки можно выбрать среду вычислений для отладки.
 

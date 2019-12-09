@@ -9,19 +9,18 @@ ms.reviewer: ''
 manager: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 9/12/2019
-ms.openlocfilehash: 6ea9134085812b99d59ad64aa2c9ec1b2ff827d9
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 38010e3aaa2d0544dfbfe19135d25250d2b021a2
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73684400"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74929776"
 ---
 # <a name="ssis-migration-with-azure-sql-database-managed-instance-as-the-database-workload-destination"></a>Миграция служб SSIS с управляемым экземпляром базы данных SQL Azure в качестве назначения рабочей нагрузки базы данных
 
-При переносе рабочих нагрузок базы данных из локальной SQL Server в управляемый экземпляр базы данных SQL Azure вы должны быть знакомы со [службой миграции данных Azure](https://docs.microsoft.com/azure/dms/dms-overview)(DMS) и [сетевыми топологиями для миграций управляемого экземпляра базы данных SQL Azure. Использование DMS](https://docs.microsoft.com/azure/dms/resource-network-topologies).
+При переносе рабочих нагрузок базы данных из локальной SQL Server в управляемый экземпляр базы данных SQL Azure необходимо ознакомиться со [службой миграции данных Azure](https://docs.microsoft.com/azure/dms/dms-overview)(DMS) и [сетевыми топологиями для миграции управляемого экземпляра базы данных SQL Azure с помощью DMS](https://docs.microsoft.com/azure/dms/resource-network-topologies).
 
 Эта статья посвящена миграции пакетов служб интеграции SQL Server (SSIS), хранящихся в каталоге SSIS (SSISDB), и агент SQL Server заданий, планирующих выполнение пакетов служб SSIS.
 

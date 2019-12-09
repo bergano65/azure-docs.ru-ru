@@ -1,5 +1,5 @@
 ---
-title: Настройка преобразования приемника в функции потока данных сопоставления
+title: Настройка преобразования приемника в потоке данных сопоставления
 description: Узнайте, как настроить преобразование приемника в потоке данных сопоставления.
 author: kromerm
 ms.author: makromer
@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 02/03/2019
-ms.openlocfilehash: 707c0e93b88f34d4663d3dbe20bb2e9e4991a332
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 828487aba651d10e5c906050dab544c097b49762
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74217925"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930271"
 ---
 # <a name="sink-transformation-for-a-data-flow"></a>Преобразование приемника для потока данных
 
@@ -115,5 +115,5 @@ ms.locfileid: "74217925"
 * Ключ раздела: это обязательное поле. Введите строку, представляющую ключ секции для коллекции. Пример: ```/movies/title```
 * Пропускная способность. задайте необязательное значение для числа RUs, которое вы хотите применить к коллекции CosmosDB для каждого выполнения этого потока данных. Минимум — 400.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы создали поток данных, добавьте [в конвейер действие потока данных](concepts-data-flow-overview.md).

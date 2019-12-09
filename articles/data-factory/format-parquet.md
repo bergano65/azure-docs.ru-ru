@@ -2,34 +2,34 @@
 title: Формат Parquet в фабрике данных Azure
 description: В этом разделе описывается, как работать с форматом Parquet в фабрике данных Azure.
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/29/2019
 ms.author: jingwang
-ms.openlocfilehash: 9047e82713b709027275c75b17eb955877c62f08
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 72b001ada98ecd768cd39fea012a20f2ada466d2
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73674769"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74931274"
 ---
 # <a name="parquet-format-in-azure-data-factory"></a>Формат Parquet в фабрике данных Azure
 
 Если вы хотите **проанализировать файлы Parquet или записать данные в формат Parquet**, следуйте этой статье. 
 
-Формат Parquet поддерживается для следующих соединителей: [Amazon S3](connector-amazon-simple-storage-service.md), [большой двоичный объект Azure](connector-azure-blob-storage.md), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md), [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md), [хранилище файлов Azure](connector-azure-file-storage.md), [Файловая система](connector-file-system.md), [FTP](connector-ftp.md), [Google Облачное хранилище](connector-google-cloud-storage.md), [HDFS](connector-hdfs.md), [http](connector-http.md)и [SFTP](connector-sftp.md).
+Формат Parquet поддерживается для следующих соединителей: [Amazon S3](connector-amazon-simple-storage-service.md), [большой двоичный объект Azure](connector-azure-blob-storage.md), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md), [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md), [хранилище файлов Azure](connector-azure-file-storage.md), [Файловая система](connector-file-system.md), [FTP](connector-ftp.md), [Google Cloud Storage](connector-google-cloud-storage.md), [HDFS](connector-hdfs.md), [http](connector-http.md)и [SFTP](connector-sftp.md).
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). В этом разделе содержится список свойств, поддерживаемых набором данных Parquet.
 
-| Свойство         | Description (Описание)                                                  | Обязательно |
+| Свойство         | Описание                                                  | Обязательно для заполнения |
 | ---------------- | ------------------------------------------------------------ | -------- |
-| type             | Свойство Type набора данных должно иметь значение **Parquet**. | Да      |
-| location         | Параметры расположения файлов. Каждый файловый соединитель имеет собственный тип расположения и поддерживаемые свойства в разделе `location`. **См. сведения в статье о соединителе. раздел свойств набора данных >** . | Да      |
+| Тип             | Свойство Type набора данных должно иметь значение **Parquet**. | ДА      |
+| location         | Параметры расположения файлов. Каждый файловый соединитель имеет собственный тип расположения и поддерживаемые свойства в разделе `location`. **См. сведения в статье о соединителе. раздел свойств набора данных >** . | ДА      |
 | компрессионкодек | Кодек сжатия, используемый при записи в файлы Parquet. При чтении из файлов Parquet фабрика данных автоматически определяет кодек сжатия на основе метаданных файла.<br>Поддерживаются следующие типы: "**нет**", "**gzip**", "**Привязка**" (по умолчанию) и "**LZO**". Примечание. в настоящее время действие копирования не поддерживает LZO. | Нет       |
 
 > [!NOTE]
@@ -67,18 +67,18 @@ ms.locfileid: "73674769"
 
 Следующие свойства поддерживаются в разделе действие копирования ***\*источник\**** .
 
-| Свойство      | Description (Описание)                                                  | Обязательно |
+| Свойство      | Описание                                                  | Обязательно для заполнения |
 | ------------- | ------------------------------------------------------------ | -------- |
-| type          | Свойство Type источника действия копирования должно иметь значение **паркуетсаурце**. | Да      |
+| Тип          | Свойство Type источника действия копирования должно иметь значение **паркуетсаурце**. | ДА      |
 | сторесеттингс | Группа свойств для чтения данных из хранилища данных. Каждый файловый соединитель имеет собственные Поддерживаемые параметры чтения в разделе `storeSettings`. Дополнительные **сведения см. в статье о соединителе — > свойства действия копирования**. | Нет       |
 
 ### <a name="parquet-as-sink"></a>Parquet в качестве приемника
 
 В разделе\*действия копирования ***\*приемника*** поддерживаются следующие свойства.
 
-| Свойство      | Description (Описание)                                                  | Обязательно |
+| Свойство      | Описание                                                  | Обязательно для заполнения |
 | ------------- | ------------------------------------------------------------ | -------- |
-| type          | Свойство Type источника действия копирования должно иметь значение **паркуетсинк**. | Да      |
+| Тип          | Свойство Type источника действия копирования должно иметь значение **паркуетсинк**. | ДА      |
 | сторесеттингс | Группа свойств для записи данных в хранилище данных. Каждый соединитель на основе файлов имеет собственные Поддерживаемые параметры записи в разделе `storeSettings`. Дополнительные **сведения см. в статье о соединителе — > свойства действия копирования**. | Нет       |
 
 ## <a name="mapping-data-flow-properties"></a>Сопоставление свойств потока данных

@@ -3,20 +3,19 @@ title: Хранение учетных данных в Azure Key Vault
 description: Узнайте, как хранить учетные данные для хранилищ данных, используемых в Azure Key Vault, которые фабрика данных Azure может автоматически извлекать в среду выполнения.
 services: data-factory
 author: linda33wj
-manager: craigg
+manager: shwang
 editor: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: jingwang
-ms.openlocfilehash: 1e2458fa125ee4d223ef46001534fb7ae72b805e
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 32c4b9b8e6268aa648e3414b337e8b2b908589e8
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73684009"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74928720"
 ---
 # <a name="store-credential-in-azure-key-vault"></a>Хранение учетных данных в Azure Key Vault
 
@@ -24,7 +23,7 @@ ms.locfileid: "73684009"
 
 Сейчас эта функция поддерживается для всех видов действий, кроме пользовательских действий. Дополнительные сведения о настройке соединителя см. в разделе "Свойства связанной службы" [в статьях, посвященных каждому типу соединителей](copy-activity-overview.md#supported-data-stores-and-formats).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Эта функция основана на управляемом удостоверении фабрики данных. Узнайте, как это работает из [управляемого удостоверения для фабрики данных](data-factory-service-identity.md) и убедитесь, что фабрика данных имеет связанную с ней.
 
@@ -41,10 +40,10 @@ ms.locfileid: "73684009"
 
 Для связанной службы Azure Key Vault поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **AzureKeyVault**. | Да |
-| BaseUrl | Укажите URL-адрес Azure Key Vault. | Да |
+| Тип | Для свойства type необходимо задать значение **AzureKeyVault**. | ДА |
+| BaseUrl | Укажите URL-адрес Azure Key Vault. | ДА |
 
 **С помощью пользовательского интерфейса для создания:**
 
@@ -74,12 +73,12 @@ ms.locfileid: "73684009"
 
 Следующие свойства поддерживаются при настройке поля в связанной службе, указывающей секрет хранилища ключей:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства type поля необходимо задать значение **AzureKeyVaultSecret**. | Да |
-| secretName | Имя секрета в Azure Key Vault. | Да |
+| Тип | Для свойства type поля необходимо задать значение **AzureKeyVaultSecret**. | ДА |
+| secretName | Имя секрета в Azure Key Vault. | ДА |
 | secretVersion | Версия секрета в Azure Key Vault.<br/>Если не указано, используется последняя версия секрета.<br/>Если указано, то он придерживается указанной версии.| Нет |
-| store | Ссылается на связанную службу Azure Key Vault, которая используется для хранения учетных данных. | Да |
+| store | Ссылается на связанную службу Azure Key Vault, которая используется для хранения учетных данных. | ДА |
 
 **С помощью пользовательского интерфейса для создания:**
 

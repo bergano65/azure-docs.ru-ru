@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: sstein, carlrab
 ms.date: 12/03/2019
-ms.openlocfilehash: d1f3bf6cb1467d0bb4906ff2409e72828b22cd20
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: e90bff7548be5f469ebbcdc21dd9b93dc887a30e
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74807023"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74931954"
 ---
 # <a name="azure-sql-database-serverless"></a>Бессерверные вычисления в Базе данных SQL Azure
 
@@ -185,18 +185,22 @@ ms.locfileid: "74807023"
 
 В следующем примере создается новая база данных на уровне бессерверных вычислений.  В этом примере явно указываются такие параметры, как минимальное и максимальное количество виртуальных ядер и задержка автоматический приостановки.
 
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+
 ```powershell
-New-AzSqlDatabase `
-  -ResourceGroupName $resourceGroupName `
-  -ServerName $serverName `
-  -DatabaseName $databaseName `
-  -ComputeModel Serverless `
-  -Edition GeneralPurpose `
-  -ComputeGeneration Gen5 `
-  -MinVcore 0.5 `
-  -MaxVcore 2 `
-  -AutoPauseDelayInMinutes 720
+New-AzSqlDatabase -ResourceGroupName $resourceGroupName -ServerName $serverName -DatabaseName $databaseName `
+  -ComputeModel Serverless -Edition GeneralPurpose -ComputeGeneration Gen5 `
+  -MinVcore 0.5 -MaxVcore 2 -AutoPauseDelayInMinutes 720
 ```
+
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```powershell
+az sql db create -g $resourceGroupName -s $serverName -n $databaseName `
+  -e GeneralPurpose -f Gen5 -min-capacity 0.5 -c 2 --compute-model Serverless --auto-pause-delay 720
+```
+
+* * *
 
 #### <a name="use-transact-sql-t-sql"></a>Использовать Transact-SQL (T-SQL)
 
@@ -215,22 +219,26 @@ CREATE DATABASE testdb
 
 В следующем примере база данных перемещается из подготовленного уровня вычислений в бессерверный уровень вычислений. В этом примере явно указываются такие параметры, как минимальное и максимальное количество виртуальных ядер и задержка автоматический приостановки.
 
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+
 ```powershell
-Set-AzSqlDatabase `
-  -ResourceGroupName $resourceGroupName `
-  -ServerName $serverName `
-  -DatabaseName $databaseName `
-  -Edition GeneralPurpose `
-  -ComputeModel Serverless `
-  -ComputeGeneration Gen5 `
-  -MinVcore 1 `
-  -MaxVcore 4 `
-  -AutoPauseDelayInMinutes 1440
+Set-AzSqlDatabase -ResourceGroupName $resourceGroupName -ServerName $serverName -DatabaseName $databaseName `
+  -Edition GeneralPurpose -ComputeModel Serverless -ComputeGeneration Gen5 `
+  -MinVcore 1 -MaxVcore 4 -AutoPauseDelayInMinutes 1440
 ```
+
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```powershell
+az sql db update -g $resourceGroupName -s $serverName -n $databaseName `
+  --edition GeneralPurpose --min-capacity 1 --capacity 4 --family Gen5 --compute-model Serverless --auto-pause-delay 1440
+```
+
+* * *
 
 #### <a name="use-transact-sql-t-sql"></a>Использовать Transact-SQL (T-SQL)
 
-В следующем примере база данных перемещается из подготовленного уровня вычислений в бессерверный уровень вычислений. 
+В следующем примере база данных перемещается из подготовленного уровня вычислений в бессерверный уровень вычислений.
 
 ```sql
 ALTER DATABASE testdb 
@@ -245,23 +253,15 @@ MODIFY ( SERVICE_OBJECTIVE = 'GP_S_Gen5_1') ;
 
 ## <a name="modifying-serverless-configuration"></a>Изменение бессерверной конфигурации
 
-### <a name="maximum-vcores"></a>Максимальное количество виртуальных ядер
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
-#### <a name="use-powershell"></a>Использование PowerShell
+Изменение максимальной или минимальной виртуальных ядер и задержки приостановки выполняется с помощью команды [Set-азсклдатабасе](/powershell/module/az.sql/set-azsqldatabase) в PowerShell с помощью аргументов `MaxVcore`, `MinVcore`и `AutoPauseDelayInMinutes`.
 
-Изменение максимального виртуальных ядер выполняется с помощью команды [Set-азсклдатабасе](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabase) в PowerShell с помощью аргумента `MaxVcore`.
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-### <a name="minimum-vcores"></a>Минимальное количество виртуальных ядер
+Изменение максимальной или минимальной виртуальных ядер и задержки приостановки выполняется с помощью команды [AZ SQL DB Update](/cli/azure/sql/db#az-sql-db-update) в Azure CLI с помощью аргументов `capacity`, `min-capacity`и `auto-pause-delay`.
 
-#### <a name="use-powershell"></a>Использование PowerShell
-
-Изменение min виртуальных ядер выполняется с помощью команды [Set-азсклдатабасе](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabase) в PowerShell с помощью аргумента `MinVcore`.
-
-### <a name="autopause-delay"></a>Задержка автоматической приостановки работы
-
-#### <a name="use-powershell"></a>Использование PowerShell
-
-Изменение задержки приостановки выполняется с помощью команды [Set-азсклдатабасе](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabase) в PowerShell с помощью аргумента `AutoPauseDelayInMinutes`.
+* * *
 
 ## <a name="monitoring"></a>Мониторинг
 
@@ -298,13 +298,20 @@ MODIFY ( SERVICE_OBJECTIVE = 'GP_S_Gen5_1') ;
 
 Просмотреть состояние приостановки и возобновления работы базы данных можно с помощью следующей команды PowerShell:
 
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+
 ```powershell
-Get-AzSqlDatabase `
-  -ResourceGroupName $resourcegroupname `
-  -ServerName $servername `
-  -DatabaseName $databasename `
+Get-AzSqlDatabase -ResourceGroupName $resourcegroupname -ServerName $servername -DatabaseName $databasename `
   | Select -ExpandProperty "Status"
 ```
+
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```powershell
+az sql db show --name $databasename --resource-group $resourcegroupname --server $servername --query 'status' -o json
+```
+
+* * *
 
 ## <a name="resource-limits"></a>Ограничения ресурсов
 

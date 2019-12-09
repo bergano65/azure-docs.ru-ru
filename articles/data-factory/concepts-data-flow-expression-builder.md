@@ -1,17 +1,18 @@
 ---
-title: Построитель выражений потока данных сопоставления фабрики данных Azure
+title: Построитель выражений потока данных сопоставления
 description: Построитель выражений для потоков данных сопоставления фабрики данных Azure
 author: kromerm
 ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 11/17/2019
-ms.openlocfilehash: 0eb2c2692ed2444a85e7253c6fdd8734385ff881
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.custom: seo-lt-2019
+ms.date: 12/06/2019
+ms.openlocfilehash: 7d8f02647224c971c44bff51f09315c53c53e9a3
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74672269"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74928337"
 ---
 # <a name="mapping-data-flow-expression-builder"></a>Построитель выражений потока данных сопоставления
 
@@ -27,7 +28,7 @@ ms.locfileid: "74672269"
 
 ## <a name="build-schemas-in-output-schema-pane"></a>Схемы сборки в области выходной схемы
 
-![Добавить сложный столбец](media/data-flow/complexcolumn.png "Добавить столбцы")
+![Добавить сложный столбец](media/data-flow/complexcolumn.png "Добавление столбцов")
 
 В левой области схемы вывода вы увидите столбцы, которые вы изменяете и добавляете в схему. Здесь можно в интерактивном режиме создавать простые и сложные структуры данных. Добавьте дополнительные поля с помощью команды "добавить столбец" и создайте иерархии с помощью команды "добавить подстолбец".
 
@@ -50,6 +51,16 @@ ms.locfileid: "74672269"
 К выражениям можно добавлять комментарии с использованием однострочного и многострочного синтаксиса комментариев:
 
 ![Комментарии](media/data-flow/comments.png "Комментарии")
+
+## <a name="string-interpolation"></a>Интерполяция строк
+
+Используйте двойные кавычки для заключения текста литеральной строки вместе с выражениями. Можно включать функции выражений, столбцы и параметры. Это очень полезно, чтобы избежать широкого использования объединения строк при включении параметров в строки запроса.
+
+* ```"My favorite movie is {iif(instr(title,', The')>0,"The {split(title,', The')[1]}",title)}"```
+
+* ```"select * from {$tablename} where orderyear > {$year}"```
+
+* ```"Total cost with sales tax is {round(totalcost * 1.08,2)}"```
 
 ## <a name="regular-expressions"></a>Регулярные выражения
 
