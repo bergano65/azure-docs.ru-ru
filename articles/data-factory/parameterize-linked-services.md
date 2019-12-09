@@ -5,18 +5,17 @@ services: data-factory
 documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 12/18/2018
 author: djpmsft
 ms.author: daperlov
-manager: craigg
-ms.openlocfilehash: 46ea65c09ec9567bb03a524470a3550c9cdfd00e
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+manager: anandsub
+ms.openlocfilehash: 0d8418d846d26d4104718df6d0fc66d264ef4a54
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73684575"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74918837"
 ---
 # <a name="parameterize-linked-services-in-azure-data-factory"></a>Параметризация связанных служб в Фабрике данных Azure
 
@@ -34,11 +33,11 @@ ms.locfileid: "73684575"
 ## <a name="supported-data-stores"></a>Поддерживаемые хранилища данных
 
 В настоящее время в пользовательском интерфейсе Фабрики данных на портале Azure связанной службы параметризация поддерживается для следующих хранилищ данных. Для всех других хранилищ данных можно параметризовать связанную службу, выбрав значок **Код** на вкладке **Подключения**, а также использовать редактор JSON.
-- База данных SQL Azure
-- Хранилище данных SQL Azure
+- Базы данных SQL Azure
+- Хранилище данных SQL Azure
 - SQL Server
 - Oracle
-- Cosmos DB
+- База данных Cosmos
 - Amazon Redshift
 - MySQL
 - База данных Azure для MySQL

@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 11/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: d628bbe889617464fe97695a17687d5f02cc61bc
-ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
+ms.openlocfilehash: 1755d5bf3338694f53da7021579cb4c0aee623f3
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74305325"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74912482"
 ---
 # <a name="set-up-and-use-compute-targets-for-model-training"></a>Настройка и использование целевых объектов вычислений для обучения модели 
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -54,7 +54,7 @@ ms.locfileid: "74305325"
 
 ## <a name="whats-an-estimator"></a>Что такое оценщик?
 
-Для упрощения обучения модели с помощью популярных платформ пакет SDK для Машинное обучение Azure Python предоставляет альтернативную абстракцию более высокого уровня, класс оценщика. Этот класс позволяет легко создавать конфигурации запуска. Вы можете создать и использовать универсальный [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) для отправки сценариев обучения, использующих любую выбранную платформу обучения (например, scikit-учиться).
+Для упрощения обучения модели с помощью популярных платформ пакет SDK для Машинное обучение Azure Python предоставляет альтернативную абстракцию более высокого уровня, класс оценщика. Мы рекомендуем использовать оценку для обучения, так как класс содержит методы, позволяющие легко создавать и настраивать конфигурации запуска. Вы можете создать и использовать универсальный [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) для отправки сценариев обучения, использующих любую выбранную платформу обучения (например, scikit-учиться). Если необходимо сделать файлы данных доступными для целевого объекта вычислений, см. статью [обучение с помощью машинное обучение Azure DataSets](how-to-train-with-datasets.md).
 
 Для задач PyTorch, TensorFlow и Chain Машинное обучение Azure также предоставляет соответствующие средства оценки [PyTorch](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py), [TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py)и [формирователя цепочки](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) для упрощения использования этих платформ.
 
@@ -364,7 +364,7 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 
 ## <a name="set-up-with-vs-code"></a>Настройка с помощью VS Code
 
-Вы можете получать доступ, создавать целевые объекты вычислений, связанные с рабочей областью, и управлять ими, используя [расширение VS Code](how-to-vscode-tools.md#create-and-manage-compute-targets) для машинное обучение Azure.
+Вы можете получать доступ, создавать и администрировать целевые объекты вычислений, связанные с рабочей областью, с помощью [расширения VS Code](how-to-vscode-tools.md#create-and-manage-compute-targets) для машинное обучение Azure.
 
 ## <a id="submit"></a>Отправка учебного прогона с помощью пакета SDK для Машинное обучение Azure
 
@@ -509,7 +509,7 @@ az ml run submit-hyperdrive -e <experiment> -c <runconfig> --hyperdrive-configur
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Учебник. Обучение модели](tutorial-train-models-with-aml.md) использует управляемый целевой объект вычислений для обучения модели.
 * Узнайте, как [эффективно настроить параметры](how-to-tune-hyperparameters.md) для создания лучших моделей.

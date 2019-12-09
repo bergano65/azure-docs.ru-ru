@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 12/02/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: b00e699eb49d88e41dff18d6c86024c9b0537e50
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: e8a3397cd8229a84103fdcbb116bf61648a6ba22
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74872321"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74895567"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -5534,14 +5534,14 @@ ms.locfileid: "74872321"
 > | Действия | Microsoft.Sql/managedInstances/databases/recommendedSensitivityLabels/read | Получение списка меток конфиденциальности для конкретной базы данных. |
 > | Действия | Microsoft. SQL/Манажединстанцес/databases/Рекоммендедсенситивитилабелс/Write | Рекомендуемые метки чувствительности к пакетному обновлению |
 > | Действия | Microsoft. SQL/Манажединстанцес/databases/Ресторедетаилс/Read | Возвращает сведения о восстановлении управляемой базы данных, пока выполняется восстановление. |
-> | Действия | Microsoft. SQL/Манажединстанцес/базы данных/схемы/чтение | Получение схемы управляемой базы данных. |
-> | Действия | Microsoft. SQL/Манажединстанцес/базы данных, схемы, таблицы, столбцы и чтение | Получение столбца управляемой базы данных |
+> | Действия | Microsoft. SQL/Манажединстанцес/базы данных/схемы/чтение | Получение схемы управляемой базы данных. (только схема) |
+> | Действия | Microsoft. SQL/Манажединстанцес/базы данных, схемы, таблицы, столбцы и чтение | Получить столбец управляемой базы данных (только схема) |
 > | Действия | Microsoft.Sql/managedInstances/databases/schemas/tables/columns/sensitivityLabels/delete | Удаление метки конфиденциальности данного столбца. |
 > | Действия | Microsoft. SQL/Манажединстанцес/базы данных/схемы/таблицы/столбцы/Сенситивитилабелс/отключение/действие | Отключить рекомендации по конфиденциальности для данного столбца |
 > | Действия | Microsoft. SQL/Манажединстанцес/базы данных/схемы/таблицы/столбцы/Сенситивитилабелс/включение/действие | Включить рекомендации по конфиденциальности для данного столбца |
 > | Действия | Microsoft.Sql/managedInstances/databases/schemas/tables/columns/sensitivityLabels/read | Получение метки конфиденциальности данного столбца. |
 > | Действия | Microsoft.Sql/managedInstances/databases/schemas/tables/columns/sensitivityLabels/write | Создание или обновление метки конфиденциальности данного столбца. |
-> | Действия | Microsoft. SQL/Манажединстанцес/базы данных/схемы/таблицы/чтение | Получение таблицы управляемой базы данных |
+> | Действия | Microsoft. SQL/Манажединстанцес/базы данных/схемы/таблицы/чтение | Получение таблицы управляемой базы данных (только схема) |
 > | Действия | Microsoft.Sql/managedInstances/databases/securityAlertPolicies/read | Получение списка политик обнаружения угроз управляемой базы данных, настроенных для данного сервера |
 > | Действия | Microsoft.Sql/managedInstances/databases/securityAlertPolicies/write | Изменение политики обнаружения угроз для заданной управляемой базы данных. |
 > | Действия | Microsoft.Sql/managedInstances/databases/securityEvents/read | Получение событий безопасности управляемой базы данных. |
@@ -5680,14 +5680,14 @@ ms.locfileid: "74872321"
 > | Действия | Microsoft.Sql/servers/databases/restorePoints/delete | Удаляет точку восстановления для базы данных. |
 > | Действия | Microsoft.Sql/servers/databases/restorePoints/read | Возвращение списка точек восстановления для базы данных. |
 > | Действия | Microsoft.Sql/servers/databases/resume/action | Возобновление работы базы данных хранилища данных SQL Azure. |
-> | Действия | Microsoft.Sql/servers/databases/schemas/read | Получение схемы базы данных. |
-> | Действия | Microsoft.Sql/servers/databases/schemas/tables/columns/read | Получение столбца базы данных. |
+> | Действия | Microsoft.Sql/servers/databases/schemas/read | Получение схемы базы данных (только схема). |
+> | Действия | Microsoft.Sql/servers/databases/schemas/tables/columns/read | Получение столбца базы данных (только схема). |
 > | Действия | Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels/delete | Удаление метки конфиденциальности данного столбца. |
 > | Действия | Microsoft. SQL/серверы/базы данных, схемы, таблицы, столбцы, Сенситивитилабелс, отключение и действие | Отключить рекомендации по конфиденциальности для данного столбца |
 > | Действия | Microsoft. SQL/серверы/базы данных/схемы/таблицы/столбцы/Сенситивитилабелс/включение/действие | Включить рекомендации по конфиденциальности для данного столбца |
 > | Действия | Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels/read | Получение метки конфиденциальности данного столбца. |
 > | Действия | Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels/write | Создание или обновление метки конфиденциальности данного столбца. |
-> | Действия | Microsoft.Sql/servers/databases/schemas/tables/read | Получение таблицы базы данных. |
+> | Действия | Microsoft.Sql/servers/databases/schemas/tables/read | Получение таблицы базы данных (только схема). |
 > | Действия | Microsoft.Sql/servers/databases/schemas/tables/recommendedIndexes/read | Извлекает список рекомендаций по индексам для базы данных. |
 > | Действия | Microsoft.Sql/servers/databases/schemas/tables/recommendedIndexes/write | Применяет рекомендацию по индексу. |
 > | Действия | Microsoft.Sql/servers/databases/securityAlertPolicies/read | Получение списка политик обнаружения угроз базы данных, настроенных для данного сервера |
