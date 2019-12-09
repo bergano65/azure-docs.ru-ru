@@ -5,17 +5,17 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: 474cdc52d34d3f5e00dee69b7cc9861042cbcc04
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 051b8780a102a8a1ec4d3979cc53b686e2823dc8
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231131"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74928597"
 ---
 # <a name="mobile-apps-bindings-for-azure-functions"></a>Привязки мобильных приложений для службы "Функции Azure" 
 
 > [!NOTE]
-> Привязки мобильных приложений Azure доступны только для функций Azure версии 1.x. Они не поддерживаются в функциях версии 2.x.
+> Привязки мобильных приложений Azure доступны только для функций Azure версии 1.x. Они не поддерживаются в функциях Azure 2. x и более поздних версий.
 
 В этой статье описывается использование привязок [мобильных приложений Azure](../app-service-mobile/app-service-mobile-value-prop.md) в "Функциях Azure". Функции Azure поддерживают входные и выходные привязки для мобильных приложений.
 
@@ -23,7 +23,7 @@ ms.locfileid: "74231131"
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
-## <a name="packages---functions-1x"></a>Пакеты — Функции 1.x
+## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
 
 Привязки мобильных приложений доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.MobileApps](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.MobileApps) версии 1.х. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk-extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions.MobileApps/).
 
@@ -134,7 +134,7 @@ module.exports = function (context, myQueueItem) {
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `MobileTable`.
 
-|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 | **type**|| Для этого свойства необходимо задать значение mobileTable.|
 | **direction**||Для этого свойства необходимо задать значение in|
@@ -142,7 +142,7 @@ module.exports = function (context, myQueueItem) {
 |**tableName** |**TableName**|Имя таблицы данных мобильного приложения|
 | **id**| **Id** | Идентификатор извлекаемой записи. Может быть статическим или определяться по триггеру, который вызывает функцию. Например, если вы используете триггер очереди для функции, то `"id": "{queueTrigger}"` использует строковое значение сообщения очереди в качестве идентификатора записи, который нужно получить.|
 |**подключение**|**Connection**|Имя параметра приложения, в котором содержится URL-адрес мобильного приложения. Функция использует этот URL-адрес для создания необходимых операций REST с мобильным приложением. Создайте параметр приложения в приложении-функции, содержащем URL-адрес мобильного приложения, а затем укажите имя параметра приложения в свойстве `connection` во входной привязке. URL-адрес выглядит следующим образом: `http://<appname>.azurewebsites.net`.
-|**apiKey**|**apiKey**|Имя параметра приложения, в котором содержится ваш ключ API для мобильных приложений. При [внедрении ключа API в мобильное приложение Node.js](https://github.com/Azure/azure-mobile-apps-node/tree/master/samples/api-key) [или](https://github.com/Azure/azure-mobile-apps-net-server/wiki/Implementing-Application-Key) .NET предоставьте ключ API. Для этого создайте параметр приложения в приложении-функции, содержащем ключ API, а затем добавьте свойство `apiKey` в свою входную привязку с именем параметра приложения. |
+|**apiKey**|**ApiKey**|Имя параметра приложения, в котором содержится ваш ключ API для мобильных приложений. При [внедрении ключа API в мобильное приложение Node.js](https://github.com/Azure/azure-mobile-apps-node/tree/master/samples/api-key) [или](https://github.com/Azure/azure-mobile-apps-net-server/wiki/Implementing-Application-Key) .NET предоставьте ключ API. Для этого создайте параметр приложения в приложении-функции, содержащем ключ API, а затем добавьте свойство `apiKey` в свою входную привязку с именем параметра приложения. |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -292,7 +292,7 @@ public static object Run(
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `MobileTable`.
 
-|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 | **type**|| Для этого свойства необходимо задать значение mobileTable.|
 | **direction**||Для этого свойства необходимо задать значение out.|
@@ -316,7 +316,7 @@ public static object Run(
 
 Для доступа к выходной записи в функциях Node.js используйте `context.bindings.<name>`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

@@ -4,20 +4,19 @@ description: Узнайте, как копировать данные из Marke
 services: data-factory
 documentationcenter: ''
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 173cd477aaf257eab7c5130e12bbd7417b6f073d
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 74d56d553c4049a98b4401c66b27ae33e31da5c0
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73680715"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74927118"
 ---
 # <a name="copy-data-from-marketo-using-azure-data-factory-preview"></a>Копирование данных из Marketo с помощью фабрики данных Azure (предварительная версия)
 
@@ -40,7 +39,7 @@ ms.locfileid: "73680715"
 >[!NOTE]
 >Соединитель Marketo создан на основе REST API Marketo. Имейте в виду, что на стороне службы у Marketo есть [ограничение на число одновременных запросов](https://developers.marketo.com/rest-api/). Если вы столкнетесь с ошибками наподобие "Ошибка при попытке использовать REST API: максимальный предел скорости — 100 превышен в течение 20 секунд (606)" или "Ошибка при попытке использовать REST API: достигнуто ограничение на параллельный доступ — 10 (615)", попробуйте сократить количество одновременных операций копирования, чтобы уменьшить количество запросов к службе.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -50,17 +49,17 @@ ms.locfileid: "73680715"
 
 Для связанной службы Marketo поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **Marketo** | Да |
-| endpoint | Конечная точка сервера Marketo. (т. е. 123-ABC-321.mktorest.com)  | Да |
-| clientid | Идентификатор клиента службы Marketo.  | Да |
-| clientSecret | Секрет клиента службы Marketo. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| Тип | Для свойства type необходимо задать значение **Marketo** | ДА |
+| endpoint | Конечная точка сервера Marketo. (т. е. 123-ABC-321.mktorest.com)  | ДА |
+| clientid | Идентификатор клиента службы Marketo.  | ДА |
+| clientSecret | Секрет клиента службы Marketo. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет |
 | useHostVerification | Указывает, следует ли требовать, чтобы имя узла в сертификате сервера совпадало с именем узла сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет |
 | usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет |
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -85,9 +84,9 @@ ms.locfileid: "73680715"
 
 Чтобы скопировать данные из Marketo, установите свойство типа набора данных **MarketoObject**. Поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство Type набора данных должно иметь значение **маркетубжект** . | Да |
+| Тип | Свойство Type набора данных должно иметь значение **маркетубжект** . | ДА |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -115,12 +114,12 @@ ms.locfileid: "73680715"
 
 Чтобы копировать данные из Marketo, установите тип источника **MarketoSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство type источника действия копирования должно иметь значение **MarketoSource** | Да |
-| запрос | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Activitiy_Types"`. | Нет (если для набора данных задано свойство tableName) |
+| Тип | Свойство type источника действия копирования должно иметь значение **MarketoSource** | ДА |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Activitiy_Types"`. | Нет (если для набора данных задано свойство tableName) |
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[

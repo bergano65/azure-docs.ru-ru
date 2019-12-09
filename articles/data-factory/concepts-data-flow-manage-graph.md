@@ -1,17 +1,18 @@
 ---
-title: Графы потоков данных фабрики данных Azure
+title: Графы потоков данных
 description: Работа с графами потока данных фабрики данных
 author: kromerm
 ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
+ms.custom: seo-lt-2019
 ms.date: 11/04/2019
-ms.openlocfilehash: 38f85dea554000daf89689a311c091bc9796a658
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: da180bfb1aec29fa15b070fd73ba84d708ada927
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74015903"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74928307"
 ---
 # <a name="mapping-data-flow-graphs"></a>Сопоставление графов потока данных
 
@@ -43,6 +44,6 @@ ms.locfileid: "74015903"
 
 ![Поиск](media/data-flow/search001.png "Граф поиска")
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После завершения проектирования потока данных Включите кнопку Отладка и протестируйте ее в режиме отладки либо непосредственно в [конструкторе потока данных](concepts-data-flow-debug-mode.md) , либо в окне [Отладка конвейера](control-flow-execute-data-flow-activity.md).

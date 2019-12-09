@@ -1,7 +1,7 @@
 ---
-title: Узнайте, как предоставлять необязательные утверждения для приложения Azure AD.
+title: Предоставление дополнительных утверждений для приложений Azure AD | Службы
 titleSuffix: Microsoft identity platform
-description: Руководство по добавлению пользовательских или дополнительных утверждений в токены SAML 2.0 и JSON Web Token (JWT), выдаваемых службой Azure Active Directory.
+description: Добавление настраиваемых или дополнительных утверждений в токены SAML 2,0 и JSON Web tokens (JWT), выданные Azure Active Directory.
 author: rwike77
 manager: CelesteDG
 ms.service: active-directory
@@ -13,12 +13,12 @@ ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1364a491122ae15f86bec98afbfd4e5110e8e07
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 323415c18497f19b4c8f29a303b6ec59dfda1885
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74844725"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74918276"
 ---
 # <a name="how-to-provide-optional-claims-to-your-azure-ad-app"></a>Руководство. предоставление необязательных утверждений для приложения Azure AD
 

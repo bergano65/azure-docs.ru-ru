@@ -4,20 +4,19 @@ description: Узнайте, как копировать данные из Drill
 services: data-factory
 documentationcenter: ''
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 10/25/2019
 ms.author: jingwang
-ms.openlocfilehash: 3d91e8df3f0ecafc133b82dcb0172dbbba966e27
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 69ea905bc8c0deefd34f5fe997cb90dec1b454ab
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73681028"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74929524"
 ---
 # <a name="copy-data-from-drill-using-azure-data-factory"></a>Копирование данных из Drill с помощью Фабрики данных Azure
 
@@ -34,11 +33,11 @@ ms.locfileid: "73681028"
 
 Фабрика данных Azure имеет встроенный драйвер для настройки подключения. Поэтому с использованием этого соединителя вам не нужно устанавливать драйверы вручную.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -48,13 +47,13 @@ ms.locfileid: "73681028"
 
 Для связанной службы Drill поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **Drill** | Да |
-| connectionString | Строка для подключения к Drill по протоколу ODBC. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `pwd` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| Тип | Для свойства type необходимо задать значение **Drill** | ДА |
+| connectionString | Строка для подключения к Drill по протоколу ODBC. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `pwd` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -111,9 +110,9 @@ ms.locfileid: "73681028"
 
 Чтобы скопировать данные из Drill, установите свойство type набора данных **DrillTable**. Поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство Type набора данных должно иметь значение **дриллтабле** . | Да |
+| Тип | Свойство Type набора данных должно иметь значение **дриллтабле** . | ДА |
 | schema | Имя схемы. |Нет (если свойство query указано в источнике действия)  |
 | таблица | Имя таблицы. |Нет (если свойство query указано в источнике действия)  |
 | tableName | Имя таблицы со схемой. Это свойство поддерживается для обеспечения обратной совместимости. Используйте `schema` и `table` для новой рабочей нагрузки. | Нет (если свойство query указано в источнике действия) |
@@ -143,12 +142,12 @@ ms.locfileid: "73681028"
 
 Чтобы копировать данные из Drill, установите тип источника **DrillSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство type источника действия копирования должно иметь значение **DrillSource** | Да |
-| запрос | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
+| Тип | Свойство type источника действия копирования должно иметь значение **DrillSource** | ДА |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[

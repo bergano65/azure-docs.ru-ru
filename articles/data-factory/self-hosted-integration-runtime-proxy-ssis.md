@@ -5,7 +5,6 @@ services: data-factory
 documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 author: swinarko
 ms.author: sawinark
@@ -13,12 +12,12 @@ ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 11/12/2019
-ms.openlocfilehash: cae15e38f98794a3e97ad0b06329aa2e62c2945e
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: fa0f61ed0e280f11e693596f80e79f2e2c110678
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74217649"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74932044"
 ---
 # <a name="configure-self-hosted-ir-as-a-proxy-for-azure-ssis-ir-in-adf"></a>Настройка самостоятельно размещенного IR в качестве прокси-сервера для Azure-SSIS IR в ADF
 
@@ -34,8 +33,8 @@ ms.locfileid: "74217649"
 Затем необходимо подготовить собственный IR-файл в том же ADF-файле, где Azure-SSIS IR подготовлено, следуя инструкциям в статье Создание локальной [ИК-связи](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime) .
 
 Наконец, необходимо скачать и установить последнюю версию локальной среды IR, а также дополнительные драйверы и среду выполнения на локальном компьютере или виртуальной машине Azure, как показано ниже.
-- Скачайте и установите последнюю версию самостоятельно размещенного IR [отсюда.](https://www.microsoft.com/download/details.aspx?id=39717)
-- Если вы используете соединители OLEDB в пакетах, скачайте и установите соответствующие драйверы OLEDB на том же компьютере, где установлен автономный IR, если вы еще не сделали этого.  Если вы используете более раннюю версию драйвера OLEDB для SQL Server (SQLNCLI), можно загрузить 64-разрядную версию [отсюда.](https://www.microsoft.com/download/details.aspx?id=50402)  Если вы используете последнюю версию драйвера OLEDB для SQL Server (МСОЛЕДБСКЛ), вы можете скачать 64-разрядную версию [отсюда.](https://www.microsoft.com/download/details.aspx?id=56730)  Если вы используете драйверы OLEDB для других систем баз данных, таких как PostgreSQL, MySQL, Oracle и т. д., можно загрузить 64-разрядную версию с соответствующих веб-сайтов.
+- Скачайте и установите последнюю версию самостоятельно размещенного IR [отсюда](https://www.microsoft.com/download/details.aspx?id=39717).
+- Если вы используете соединители OLEDB в пакетах, скачайте и установите соответствующие драйверы OLEDB на том же компьютере, где установлен автономный IR, если вы еще не сделали этого.  Если вы используете более раннюю версию драйвера OLEDB для SQL Server (SQLNCLI), можно загрузить 64-разрядную версию [отсюда](https://www.microsoft.com/download/details.aspx?id=50402).  Если вы используете последнюю версию драйвера OLEDB для SQL Server (MSOLEDBSQL), вы можете скачать 64-разрядную версию [отсюда](https://www.microsoft.com/download/details.aspx?id=56730).  Если вы используете драйверы OLEDB для других систем баз данных, таких как PostgreSQL, MySQL, Oracle и т. д., можно загрузить 64-разрядную версию с соответствующих веб-сайтов.
 - Скачайте и установите среду выполнения C++ Visual (VC) на том же компьютере, где установлена автономная среда IR, если вы еще не сделали этого.  Загрузить 64-разрядную версию можно [здесь](https://www.microsoft.com/download/details.aspx?id=40784).
 
 ## <a name="prepare-azure-blob-storage-linked-service-for-staging"></a>Подготовка связанной службы хранилища BLOB-объектов Azure для промежуточного хранения
@@ -54,14 +53,14 @@ ms.locfileid: "74217649"
 ![Настройка Azure-SSIS IR с локальным IR в качестве прокси-сервера](media/self-hosted-integration-runtime-proxy-ssis/shir-advanced-settings-ssisir.png)
 
 ## <a name="enable-ssis-packages-to-connect-by-proxy"></a>Включение пакетов служб SSIS для подключения с помощью прокси-сервера
-Используя последнюю версию SSDT с расширениями проектов SSIS для Visual Studio, которую можно скачать [отсюда или в](https://marketplace.visualstudio.com/items?itemName=SSIS.SqlServerIntegrationServicesProjects) виде автономного [установщика, который](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017#ssdt-for-vs-2017-standalone-installer)можно скачать отсюда, можно найти новое свойство **Коннектбипрокси** , добавленное в диспетчере соединений OLEDB и неструктурированных файлов.  
+Используя последнюю версию SSDT с расширениями проектов SSIS для Visual Studio, которую можно скачать [отсюда](https://marketplace.visualstudio.com/items?itemName=SSIS.SqlServerIntegrationServicesProjects) или как автономный установщик, который можно скачать [отсюда](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017#ssdt-for-vs-2017-standalone-installer), можно найти новое свойство **ConnectByProxy**, добавленное в OLEDB/ Диспетчеры соединений с неструктурированными файлами.  
 
 При проектировании новых пакетов, содержащих задачи потока данных с источниками OLEDB и плоских файлов для доступа к базам данных и файлам в локальной среде, это свойство можно включить, задав для него **значение true** на панели свойства соответствующих диспетчеров соединений.
 
 ![Включить свойство Коннектбипрокси](media/self-hosted-integration-runtime-proxy-ssis/shir-connection-manager-properties.png)
 
 Это свойство также можно включить при запуске существующих пакетов без необходимости вручную изменять их.  Существуют два варианта:
-- Открытие, перестроение и повторное развертывание проекта, содержащего эти пакеты с последним SSDT, для запуска на Azure-SSIS IR: свойство можно включить, задав для него **значение true** для соответствующих диспетчеров соединений, отображаемых в **подключении. Вкладка "менеджеры** " во всплывающем окне "выполнение пакета" при запуске пакетов из среды SSMS.
+- Открытие, перестроение и повторное развертывание проекта, содержащего эти пакеты с последним SSDT, для запуска на Azure-SSIS IR. свойство можно включить, задав для него **значение true** для соответствующих диспетчеров соединений, которые отображаются на вкладке **Диспетчеры соединений** всплывающего окна "выполнение пакета" при запуске пакетов из среды SSMS.
 
   ![Включить Коннектбипрокси свойство2](media/self-hosted-integration-runtime-proxy-ssis/shir-connection-managers-tab-ssms.png)
 
@@ -69,7 +68,7 @@ ms.locfileid: "74217649"
   
   ![Включить Коннектбипрокси property3](media/self-hosted-integration-runtime-proxy-ssis/shir-connection-managers-tab-ssis-activity.png)
 
-- Повторное развертывание проекта, содержащего эти пакеты для запуска служб SSIS IR: свойство можно включить, указав путь к свойству, `\Package.Connections[YourConnectionManagerName].Properties[ConnectByProxy]`и задав для него **значение true** в качестве переопределения свойства на вкладке **Дополнительно** всплывающего окна Выполнение пакета. При запуске пакетов из среды SSMS.
+- Повторное развертывание проекта, содержащего эти пакеты для запуска служб SSIS IR. свойство можно включить, указав путь его свойства, `\Package.Connections[YourConnectionManagerName].Properties[ConnectByProxy]`и задав для него **значение true** в качестве переопределения свойства на вкладке **Дополнительно** во всплывающем окне Выполнение пакета при запуске пакетов из среды SSMS.
 
   ![Включить Коннектбипрокси property4](media/self-hosted-integration-runtime-proxy-ssis/shir-advanced-tab-ssms.png)
 
@@ -94,5 +93,5 @@ ms.locfileid: "74217649"
 - В настоящее время поддерживается только локальная IR, подготовленная в том же ADF-файле, в котором подготовлена Azure-SSIS IR.
 - Использование параметров или переменных служб SSIS в свойствах источников ODBC/OLEDB/неструктурированных файлов и диспетчеров соединений в настоящее время не поддерживается.
 
-## <a name="next-steps"></a>Дополнительная информация
-После настройки локальной среды IR в качестве прокси-сервера для Azure-SSIS IR можно развернуть и запустить пакеты для доступа к данным в локальной среде как выполнение действий пакета служб SSIS в конвейерах ADF. см. раздел [Запуск пакетов служб SSIS как выполнение действий пакета SSIS в конвейерах ADF. ](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity).
+## <a name="next-steps"></a>Дальнейшие действия
+После настройки самостоятельно размещенного IR в качестве прокси-сервера для Azure-SSIS IR можно развернуть и запустить пакеты для доступа к данным в локальной среде как выполнение действий пакета служб SSIS в конвейерах ADF. см. раздел [Запуск пакетов служб SSIS как выполнение действий пакета SSIS в конвейерах ADF](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity).

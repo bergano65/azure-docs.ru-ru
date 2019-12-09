@@ -2,25 +2,25 @@
 title: Двоичный формат в фабрике данных Azure
 description: В этом разделе описывается, как работать с двоичным форматом в фабрике данных Azure.
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 11/26/2019
 ms.author: jingwang
-ms.openlocfilehash: 815933f1f08b873ae1438d6b2f1e6cd922fe886a
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: 8ebb4f0d1a06a7bf29dc46cd696b6acfd2527095
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74548241"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74927396"
 ---
 # <a name="binary-format-in-azure-data-factory"></a>Двоичный формат в фабрике данных Azure
 
 Двоичный формат поддерживается для следующих соединителей: [Amazon S3](connector-amazon-simple-storage-service.md), [большой двоичный объект Azure](connector-azure-blob-storage.md), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md), [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md), [хранилище файлов Azure](connector-azure-file-storage.md), [Файловая система](connector-file-system.md), [FTP](connector-ftp.md), [Google Cloud Storage](connector-google-cloud-storage.md), [HDFS](connector-hdfs.md), [http](connector-http.md)и [SFTP](connector-sftp.md).
 
-Двоичный набор данных можно использовать в действии [копирования](copy-activity-overview.md), [действиях с метаданными](control-flow-get-metadata-activity.md)или [действиях удаления](delete-activity.md). При использовании двоичного набора данных ADF не анализирует содержимое файла, но обрабатывает его как есть. 
+Двоичный набор данных можно использовать в действии [копирования](copy-activity-overview.md), [действиях с метаданными](control-flow-get-metadata-activity.md) или [действиях удаления](delete-activity.md). При использовании двоичного набора данных ADF не анализирует содержимое файла, но обрабатывает его как есть. 
 
 >[!NOTE]
 >При использовании двоичного набора данных в действии копирования можно копировать только из двоичного набора данных в двоичный набор данных.

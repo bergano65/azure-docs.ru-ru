@@ -1,17 +1,18 @@
 ---
-title: Создание потока данных сопоставления фабрики данных Azure
+title: Создание потока данных сопоставления
 description: Создание потока данных сопоставления фабрики данных Azure
 author: kromerm
 ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
+ms.custom: seo-lt-2019
 ms.date: 02/12/2019
-ms.openlocfilehash: 31528c0ac7796aafbde74a3814d971138ec4ba2e
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 2eb455ba6fa40538bfa03018be47232066036c23
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72387248"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930423"
 ---
 # <a name="create-azure-data-factory-data-flow"></a>Создание потока данных Фабрики данных Azure
 

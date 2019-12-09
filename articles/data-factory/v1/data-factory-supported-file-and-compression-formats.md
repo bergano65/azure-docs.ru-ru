@@ -4,20 +4,19 @@ description: Сведения о форматах файлов, поддержи
 services: data-factory
 documentationcenter: ''
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 82d69c739e56a344036e8b91cacdd3e955a4c1d6
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 901e15994b8a51a5fd45d57ca7a4db7778d968e1
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73665878"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74931566"
 ---
 # <a name="file-and-compression-formats-supported-by-azure-data-factory"></a>Форматы файлов и сжатия данных, поддерживаемые фабрикой данных Azure
 *Этот раздел относится к соединителям для следующих компонентов: [Amazon S3](data-factory-amazon-simple-storage-service-connector.md), [большой двоичный объект Azure](data-factory-azure-blob-connector.md), [Azure Data Lake Store](data-factory-azure-datalake-connector.md), [файловая система](data-factory-onprem-file-system-connector.md), [FTP](data-factory-ftp-connector.md), [HDFS](data-factory-hdfs-connector.md), [HTTP](data-factory-http-connector.md) и [SFTP](data-factory-sftp-connector.md).*
@@ -34,9 +33,9 @@ ms.locfileid: "73665878"
 * [формат Parquet](#parquet-format).
 
 ## <a name="text-format"></a>Текстовый формат
-Если вам нужно считать данные из текстового файла или записать в него данные, задайте для свойства `type` в разделе `format` набора данных значение **TextFormat**. В разделе **также можно указать следующие**необязательные`format` свойства. Инструкции по настройке см. в разделе [Пример TextFormat](#textformat-example).
+Если вам нужно считать данные из текстового файла или записать в него данные, задайте для свойства `type` в разделе `format` набора данных значение **TextFormat**. В разделе `format` также можно указать следующие **необязательные** свойства. Инструкции по настройке см. в разделе [Пример TextFormat](#textformat-example).
 
-| Свойство | Description (Описание) | Допустимые значения | Обязательно |
+| Свойство | Описание | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
 | columnDelimiter |Знак, используемый для разделения столбцов в файле. Вы можете использовать редкие непечатаемые символы, которые, скорее всего, не содержатся в ваших данных. Например, укажите "\u0001", что соответствует символу начала заголовка (SOH). |Допускается только один знак. Значение **по умолчанию** — **запятая (,)** . <br/><br/>Чтобы использовать символ Юникода, см. соответствующие коды в статье о [символах Юникода](https://en.wikipedia.org/wiki/List_of_Unicode_characters). |Нет |
 | rowDelimiter |Знак, используемый для разделения строк в файле. |Допускается только один знак. **По умолчанию** используется одно из следующих значений: **для чтения — [\r\n, \r, \n]** , для записи — **\r\n**. |Нет |
@@ -46,7 +45,7 @@ ms.locfileid: "73665878"
 | encodingName |Имя кодировки. |Допустимое имя кодировки. Ознакомьтесь с описанием свойства [Encoding.EncodingName](https://msdn.microsoft.com/library/system.text.encoding.aspx). Пример: windows-1250 или shift_jis. **По умолчанию** используется **UTF-8**. |Нет |
 | firstRowAsHeader |Указывает, следует ли рассматривать первую строки в качестве заголовка. Фабрика данных считывает первую строку входного набора данных как заголовок. Фабрика данных записывает первую строку как заголовок в выходной набор данных. <br/><br/>Примеры сценариев см. в разделе [Сценарии использования `firstRowAsHeader` и `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount). |Да<br/><b>False (по умолчанию)</b> |Нет |
 | skipLineCount |Указывает количество строк, которые нужно пропустить при чтении данных из входных файлов. Если указаны skipLineCount и firstRowAsHeader, то сначала пропускаются строки, после чего из входного файла считываются данные заголовка. <br/><br/>Примеры сценариев см. в разделе [Сценарии использования `firstRowAsHeader` и `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount). |Целое число |Нет |
-| treatEmptyAsNull |Указывает, следует ли интерпретировать строки со значением NULL или пустые строки как значение NULL при чтении данных из входного файла. |**True (по умолчанию)**<br/>Ложь |Нет |
+| treatEmptyAsNull |Указывает, следует ли интерпретировать строки со значением NULL или пустые строки как значение NULL при чтении данных из входного файла. |**True (по умолчанию)**<br/>Нет |Нет |
 
 ### <a name="textformat-example"></a>Пример TextFormat
 В следующем определении JSON для набора данных задаются некоторые необязательные свойства.
@@ -84,15 +83,15 @@ ms.locfileid: "73665878"
 ## <a name="json-format"></a>Формат JSON
 Чтобы **импортировать JSON-файл "как есть" в базу данных Azure Cosmos DB или экспортировать его из нее**, см. раздел [Документы JSON для импорта и экспорта](data-factory-azure-documentdb-connector.md#importexport-json-documents) статьи о [перемещении данных в базу данных Azure Cosmos DB и из нее](data-factory-azure-documentdb-connector.md).
 
-Если требуется проанализировать JSON-файлы или записать данные в формате JSON, задайте для свойства `type` в разделе `format` значение **JsonFormat**. В разделе **также можно указать следующие**необязательные`format` свойства. Инструкции по настройке см. в разделе [Пример JsonFormat](#jsonformat-example).
+Если требуется проанализировать JSON-файлы или записать данные в формате JSON, задайте для свойства `type` в разделе `format` значение **JsonFormat**. В разделе `format` также можно указать следующие **необязательные** свойства. Инструкции по настройке см. в разделе [Пример JsonFormat](#jsonformat-example).
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 | --- | --- | --- |
 | filePattern |Шаблон данных, хранящихся в каждом JSON-файле. Допустимые значения: **setOfObjects** и **arrayOfObjects**. Значение **по умолчанию** — **setOfObjects**. Подробные сведения об этих шаблонах см. в разделе [Шаблоны файлов JSON](#json-file-patterns). |Нет |
 | jsonNodeReference | Для итерации и извлечения данных из объектов в поле массива с таким же шаблоном укажите путь JSON этого массива. Это свойство поддерживается только в том случае, если данные копируются из JSON-файлов. | Нет |
 | jsonPathDefinition | Выражение пути JSON для каждого столбца с его сопоставлением с настраиваемым именем столбца (начало в нижнем регистре). Это свойство поддерживается только в том случае, если данные копируются из JSON-файлов и данные можно извлечь из объекта или массива. <br/><br/> Для полей в области корневого объекта выражение пути должно начинаться с корня $. Для полей внутри массива, выбранных с помощью свойства `jsonNodeReference`, выражение должно начинаться с элемента массива. Инструкции по настройке см. в разделе [Пример JsonFormat](#jsonformat-example). | Нет |
-| encodingName |Имя кодировки. Список допустимых имен кодировок приведен в описании свойства [Encoding.EncodingName](https://msdn.microsoft.com/library/system.text.encoding.aspx) . Например: windows-1250 или shift_jis. **По умолчанию** используется **UTF-8**. |Нет |
-| nestingSeparator |Знак, используемый для разделения уровней вложения. Значение по умолчанию — точка (.). |Нет |
+| encodingName |Имя кодировки. Список допустимых имен кодировок приведен в описании свойства [Encoding.EncodingName](https://msdn.microsoft.com/library/system.text.encoding.aspx). Например: windows-1250 или shift_jis. **По умолчанию** используется **UTF-8**. |Нет |
+| nestingSeparator |Символ, используемый для разделения уровней вложенности. Значение по умолчанию — точка (.). |Нет |
 
 ### <a name="json-file-patterns"></a>Шаблоны файлов JSON
 
@@ -294,7 +293,7 @@ ms.locfileid: "73665878"
 | ordernumber | orderdate | order_pd | order_price | city |
 | --- | --- | --- | --- | --- |
 | 01 | 20170122 | P1 | 23 | [{"sanmateo":"No 1"}] |
-| 01 | 20170122 | P2 | 13. | [{"sanmateo":"No 1"}] |
+| 01 | 20170122 | P2 | 13 | [{"sanmateo":"No 1"}] |
 | 01 | 20170122 | P3 | 231 | [{"sanmateo":"No 1"}] |
 
 Входной набор данных с типом **JsonFormat** определяется следующим образом (частичное определение только соответствующих частей). В частности:
@@ -508,7 +507,7 @@ ms.locfileid: "73665878"
 Ниже приведены статьи для файловых хранилищ данных, поддерживаемых фабрикой данных Azure.
 
 - [Хранилище BLOB-объектов Azure](data-factory-azure-blob-connector.md)
-- [Хранилище озера данных Azure](data-factory-azure-datalake-connector.md)
+- [Azure Data Lake Storage](data-factory-azure-datalake-connector.md)
 - [FTP](data-factory-ftp-connector.md)
 - [HDFS](data-factory-hdfs-connector.md)
 - [Файловая система](data-factory-onprem-file-system-connector.md)

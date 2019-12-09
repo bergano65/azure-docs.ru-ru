@@ -1,5 +1,5 @@
 ---
-title: Проверка подлинности с помощью Azure Active Directory в национальных облаках
+title: Аутентификация Azure AD & национальными облаками | Службы
 titleSuffix: Microsoft identity platform
 description: Узнайте о конечных точках для регистрации и проверки подлинности приложений в национальных облаках.
 services: active-directory
@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 08/28/2019
 ms.author: negoe
-ms.reviewer: negoe,CelesteDG
+ms.reviewer: negoe,celested
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5501b9ceff8659233d1021ad03549eea524ddd78
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 14b97677f5aa9624ba70696114ac34fcd9f46182
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74843926"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74918038"
 ---
 # <a name="national-clouds"></a>Национальные облака
 

@@ -3,27 +3,23 @@ title: Различия между MSAL. js и ADAL. js
 titleSuffix: Microsoft identity platform
 description: Из этой статьи вы узнаете о различиях между библиотекой аутентификации Майкрософт для JavaScript (MSAL.js) и библиотекой аутентификации Azure AD для JavaScript (ADAL.js), а также о критериях выбора одной из них.
 services: active-directory
-documentationcenter: dev-center-name
 author: navyasric
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/10/2019
 ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d831f9f1cf8dbf565d569f63ee6215fac80949d
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: e3696eb90abbb35f4d989649b4a1198aec69b9a5
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72803172"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74916916"
 ---
 # <a name="differences-between-msal-js-and-adal-js"></a>Различия между ADAL и MSAL для JavaScript
 
@@ -66,7 +62,7 @@ ms.locfileid: "72803172"
 
     Вы можете запросить области для любого API ресурсов, используя URI API-интерфейса в формате "URI_приложения/область", например https:\//mytenant.onmicrosoft.com/myapi/api.read.
 
-    Только для MS API Graph, значение области `user.read` сопоставляется с HTTPS: \//Graph. Microsoft. com/пользователь. Read и может использоваться взаимозаменяемым.
+    Только для MS API Graph, значение области `user.read` сопоставляется с HTTPS:\//graph.microsoft.com/User.Read и может использоваться взаимозаменяемы.
 
     ```javascript
     var request = {

@@ -4,20 +4,19 @@ description: Узнайте, как копировать данные из Cassa
 services: data-factory
 documentationcenter: ''
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: 9068874704233b3bbb5f38345648bc3455433768
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 41547787a3b7add1baa05a41d6785d1cd926165d
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73681098"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74929590"
 ---
 # <a name="copy-data-from-cassandra-using-azure-data-factory"></a>Копирование данных из базы данных Cassandra с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -43,13 +42,13 @@ ms.locfileid: "73681098"
 >[!NOTE]
 >Если действие выполняется в локальной среде IR, поддержка Cassandra начинается с версии 3.7.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
 Среда выполнения интеграции предоставляет встроенный драйвер Cassandra, поэтому при копировании данных из Cassandra вам не потребуется устанавливать драйвер вручную.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -59,12 +58,12 @@ ms.locfileid: "73681098"
 
 Для связанной службы Cassandra поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type |Для свойства type необходимо задать значение **Cassandra**. |Да |
-| host |Один или несколько IP-адресов или имен узлов серверов Cassandra.<br/>Укажите через запятую список IP-адресов или имен узлов для одновременного подключения ко всем серверам. |Да |
+| Тип |Для свойства type необходимо задать значение **Cassandra**. |ДА |
+| host |Один или несколько IP-адресов или имен узлов серверов Cassandra.<br/>Укажите через запятую список IP-адресов или имен узлов для одновременного подключения ко всем серверам. |ДА |
 | порт |TCP-порт, используемый сервером Cassandra для прослушивания клиентских подключений |Нет (значение по умолчанию — 9042) |
-| authenticationType | Тип проверки подлинности, используемый для подключения к базе данных Cassandra.<br/>Допустимые значения: **Базовый**, **Анонимный**. |Да |
+| authenticationType | Тип проверки подлинности, используемый для подключения к базе данных Cassandra.<br/>Допустимые значения: **Базовый**, **Анонимный**. |ДА |
 | Имя пользователя |Укажите имя пользователя для учетной записи пользователя |Да (если для свойства authenticationType задано значение Basic) |
 | пароль |Укажите пароль для учетной записи пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да (если для свойства authenticationType задано значение Basic) |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
@@ -72,7 +71,7 @@ ms.locfileid: "73681098"
 >[!NOTE]
 >В настоящее время подключение к Cassandra по протоколу SSL не поддерживается.
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -102,13 +101,13 @@ ms.locfileid: "73681098"
 
 Чтобы скопировать данные из Cassandra, установите для свойства type набора данных значение **CassandraTable**. Поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство type для набора данных должно иметь значение **CassandraTable**. | Да |
+| Тип | Свойство type для набора данных должно иметь значение **CassandraTable**. | ДА |
 | keyspace |Имя пространства ключей или схемы в базе данных Cassandra |Нет (если для CassandraSource определено значение query) |
 | tableName |Имя таблицы в базе данных Cassandra |Нет (если для CassandraSource определено значение query) |
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -137,13 +136,13 @@ ms.locfileid: "73681098"
 
 Чтобы скопировать данные из Cassandra, задайте тип источника **CassandraSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство type источника действия копирования должно иметь значение **CassandraSource**. | Да |
-| запрос |Используйте пользовательский запрос для чтения данных. Запрос SQL-92 или CQL. Ознакомьтесь со [справочником по CQL](https://docs.datastax.com/en/cql/3.1/cql/cql_reference/cqlReferenceTOC.html). <br/><br/>Если используется SQL-запрос, то таблицу, к которой необходимо отправить запрос, укажите в формате **имя_пространства_ключей.имя_таблицы**. |Нет (если в наборе данных определены свойства tableName и keyspace) |
+| Тип | Свойство type источника действия копирования должно иметь значение **CassandraSource**. | ДА |
+| query |Используйте пользовательский запрос для чтения данных. Запрос SQL-92 или CQL. Ознакомьтесь со [справочником по CQL](https://docs.datastax.com/en/cql/3.1/cql/cql_reference/cqlReferenceTOC.html). <br/><br/>Если используется SQL-запрос, то таблицу, к которой необходимо отправить запрос, укажите в формате **имя_пространства_ключей.имя_таблицы**. |Нет (если в наборе данных определены свойства tableName и keyspace) |
 | consistencyLevel |Определяет количество реплик, которые должны ответить на запрос на чтение перед возвращением данных в клиентское приложение. Чтобы выполнить запрос на чтение, база данных Cassandra проверяет наличие указанного количества реплик для данных Дополнительные сведения см. в статье [Configuring data consistency](https://docs.datastax.com/en/cassandra/2.1/cassandra/dml/dml_config_consistency_c.html) (Настройка согласованности данных).<br/><br/>Допустимые значения: **ONE**, **TWO**, **THREE**, **QUORUM**, **ALL**, **LOCAL_QUORUM**, **EACH_QUORUM** и **LOCAL_ONE**. |Нет (значение по умолчанию — `ONE`) |
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[
@@ -181,21 +180,21 @@ ms.locfileid: "73681098"
 
 | Тип данных Cassandra | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
-| ASCII |string |
+| ASCII |Строка |
 | BIGINT |Int64 |
 | BLOB |Byte[] |
 | BOOLEAN |Логический |
-| DECIMAL |DECIMAL |
-| DOUBLE |Double |
-| FLOAT |Single |
-| INET |string |
+| DECIMAL |Decimal |
+| DOUBLE |DOUBLE |
+| FLOAT |Отдельная |
+| INET |Строка |
 | INT |Int32 |
-| TEXT |string |
-| TIMESTAMP |DateTime |
-| TIMEUUID |Guid |
-| UUID |Guid |
-| VARCHAR |string |
-| VARINT |DECIMAL |
+| TEXT |Строка |
+| TIMESTAMP |Дата и время |
+| TIMEUUID |GUID |
+| UUID |GUID |
+| VARCHAR |Строка |
+| VARINT |Decimal |
 
 > [!NOTE]
 > Дополнительные сведения о типах коллекций (сопоставлениях, наборах, списках и т. д.) см. в разделе [Работа с коллекциями с использованием виртуальной таблицы](#work-with-collections-using-virtual-table).
@@ -218,7 +217,7 @@ ms.locfileid: "73681098"
 
 Ниже приведен пример таблицы ExampleTable в базе данных Cassandra. В этой таблице содержатся такие столбцы: столбец первичного ключа pk_int (целое число), текстовый столбец "Значение", столбец "Список", "Сопоставление" и StringSet.
 
-| pk_int | Значение | список | Сопоставление | StringSet |
+| pk_int | Value | Получение списков | Сопоставление | StringSet |
 | --- | --- | --- | --- | --- |
 | 1 |"пример значения 1" |["1", "2", "3"] |{"S1": "a", "S2": "b"} |{"A", "B", "C"} |
 | 3 |"пример значения 3" |["100", "101", "102", "105"] |{"S1": "t"} |{"A", "E"} |
@@ -227,7 +226,7 @@ ms.locfileid: "73681098"
 
 Ниже приведен пример первой базовой виртуальной таблицы ExampleTable: 
 
-| pk_int | Значение |
+| pk_int | Value |
 | --- | --- |
 | 1 |"пример значения 1" |
 | 3 |"пример значения 3" |

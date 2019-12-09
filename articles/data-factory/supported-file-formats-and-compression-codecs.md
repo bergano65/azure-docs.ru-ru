@@ -2,23 +2,23 @@
 title: Поддерживаемые форматы файлов в фабрике данных Azure
 description: В этой статье описаны форматы файлов и коды сжатия, поддерживаемые соединителями на основе файлов в фабрике данных Azure.
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: jingwang
-ms.openlocfilehash: 4a81cc9887610036007b92e43b8bd44f0a8b7740
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 48121dabfa4fc56e2f797f715cb3fce3e3be9578
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74075535"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74928680"
 ---
 # <a name="supported-file-formats-and-compression-codecs-in-azure-data-factory"></a>Поддерживаемые форматы файлов и кодеки сжатия в фабрике данных Azure
 
-*Эта статья относится к следующим соединителям: [Amazon S3](connector-amazon-simple-storage-service.md), [большой двоичный объект Azure](connector-azure-blob-storage.md), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md), [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md), [хранилище файлов Azure](connector-azure-file-storage.md), [Файловая система](connector-file-system.md), [FTP](connector-ftp.md), [Google Cloud Хранилище](connector-google-cloud-storage.md), [HDFS](connector-hdfs.md), [http](connector-http.md)и [SFTP](connector-sftp.md).*
+*Эта статья относится к следующим соединителям: [Amazon S3](connector-amazon-simple-storage-service.md), [большой двоичный объект Azure](connector-azure-blob-storage.md), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md), [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md), [хранилище файлов Azure](connector-azure-file-storage.md), [Файловая система](connector-file-system.md), [FTP](connector-ftp.md), [облачное хранилище](connector-google-cloud-storage.md), [HDFS](connector-hdfs.md), [http](connector-http.md)и [SFTP](connector-sftp.md).*
 
 [!INCLUDE [data-factory-v2-file-formats](../../includes/data-factory-v2-file-formats.md)] 
 
@@ -30,9 +30,9 @@ ms.locfileid: "74075535"
 >[!NOTE]
 >В фабрике данных появился новый набор данных в текстовом формате с разделителями. Дополнительные сведения см. в статье о [формате текста с разделителями](format-delimited-text.md) . Следующие конфигурации в наборе данных хранилища данных на основе файлов по-прежнему поддерживаются "как есть" для обратного компабитилити. Рекомендуется использовать новую модель.
 
-Если вам нужно считать данные из текстового файла или записать в него данные, задайте для свойства `type` в разделе `format` набора данных значение **TextFormat**. В разделе **также можно указать следующие**необязательные`format` свойства. Инструкции по настройке см. в разделе [Пример TextFormat](#textformat-example).
+Если вам нужно считать данные из текстового файла или записать в него данные, задайте для свойства `type` в разделе `format` набора данных значение **TextFormat**. В разделе `format` также можно указать следующие **необязательные** свойства. Инструкции по настройке см. в разделе [Пример TextFormat](#textformat-example).
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | обязательные |
+| Свойство | Описание | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
 | columnDelimiter |Знак, используемый для разделения столбцов в файле. Вы можете использовать редкие непечатаемые символы, которые не содержатся в ваших данных. Например, укажите "\u0001", что соответствует символу начала заголовка (SOH). |Допускается только один знак. Значение **по умолчанию** — **запятая (,)** . <br/><br/>Чтобы использовать символ Юникода, см. соответствующие коды в статье о [символах Юникода](https://en.wikipedia.org/wiki/List_of_Unicode_characters). |Нет |
 | rowDelimiter |Знак, используемый для разделения строк в файле. |Допускается только один знак. **По умолчанию** используется одно из следующих значений: **для чтения — [\r\n, \r, \n]** , для записи — **\r\n**. |Нет |
@@ -40,9 +40,9 @@ ms.locfileid: "74075535"
 | quoteChar |Знак, используемый в качестве кавычки для заключения строкового значения. Разделители столбцов и строк внутри знаков кавычек будут рассматриваться как часть строкового значения. Это свойство применимо к входным и выходным наборам данных.<br/><br/>Для таблицы нельзя указать и escapeChar, и quoteChar. |Допускается только один знак. Значение по умолчанию отсутствует. <br/><br/>Например, если в качестве разделителя столбцов используется запятая (,) и нужно, чтобы этот знак встречался в тексте (например, <Hello, world>), то можно в качестве знака кавычек определить двойную кавычку (") и использовать в исходном тексте строку "Hello, world". |Нет |
 | nullValue |Один или несколько знаков, используемых для представления значения NULL. |Один или несколько знаков. Значения **по умолчанию**: **\N и NULL** для чтения и **\N** для записи. |Нет |
 | encodingName |Имя кодировки. |Допустимое имя кодировки. Ознакомьтесь с описанием свойства [Encoding.EncodingName](https://msdn.microsoft.com/library/system.text.encoding.aspx). Пример: windows-1250 или shift_jis. **По умолчанию** используется **UTF-8**. |Нет |
-| firstRowAsHeader |Указывает, следует ли рассматривать первую строки в качестве заголовка. Фабрика данных считывает первую строку входного набора данных как заголовок. Фабрика данных записывает первую строку как заголовок в выходной набор данных. <br/><br/>Примеры сценариев см. в разделе [Сценарии использования `firstRowAsHeader` и `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount). |True,<br/><b>False (по умолчанию)</b> |Нет |
-| skipLineCount |Указывает количество **непустых** строк, которые нужно пропустить при чтении данных из входных файлов. Если указаны skipLineCount и firstRowAsHeader, то сначала пропускаются строки, после чего из входного файла считываются данные заголовка. <br/><br/>Примеры сценариев см. в разделе [Сценарии использования `firstRowAsHeader` и `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount). |Целое число, |Нет |
-| treatEmptyAsNull |Указывает, следует ли интерпретировать строки со значением NULL или пустые строки как значение NULL при чтении данных из входного файла. |**True (по умолчанию)**<br/>Ложь |Нет |
+| firstRowAsHeader |Указывает, следует ли рассматривать первую строки в качестве заголовка. Фабрика данных считывает первую строку входного набора данных как заголовок. Фабрика данных записывает первую строку как заголовок в выходной набор данных. <br/><br/>Примеры сценариев см. в разделе [Сценарии использования `firstRowAsHeader` и `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount). |Да<br/><b>False (по умолчанию)</b> |Нет |
+| skipLineCount |Указывает количество **непустых** строк, которые нужно пропустить при чтении данных из входных файлов. Если указаны skipLineCount и firstRowAsHeader, то сначала пропускаются строки, после чего из входного файла считываются данные заголовка. <br/><br/>Примеры сценариев см. в разделе [Сценарии использования `firstRowAsHeader` и `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount). |Целое число |Нет |
+| treatEmptyAsNull |Указывает, следует ли интерпретировать строки со значением NULL или пустые строки как значение NULL при чтении данных из входного файла. |**True (по умолчанию)**<br/>Нет |Нет |
 
 ### <a name="textformat-example"></a>Пример TextFormat
 
@@ -86,15 +86,15 @@ ms.locfileid: "74075535"
 
 Чтобы **импортировать JSON-файл "как есть" в базу данных Azure Cosmos DB или экспортировать его из нее**, см. раздел "Документы JSON для импорта и экспорта" статьи о [перемещении данных в базу данных Azure Cosmos DB и из нее](connector-azure-cosmos-db.md).
 
-Если требуется проанализировать JSON-файлы или записать данные в формате JSON, задайте для свойства `type` в разделе `format` значение **JsonFormat**. В разделе **также можно указать следующие**необязательные`format` свойства. Инструкции по настройке см. в разделе [Пример JsonFormat](#jsonformat-example).
+Если требуется проанализировать JSON-файлы или записать данные в формате JSON, задайте для свойства `type` в разделе `format` значение **JsonFormat**. В разделе `format` также можно указать следующие **необязательные** свойства. Инструкции по настройке см. в разделе [Пример JsonFormat](#jsonformat-example).
 
-| Свойство | ОПИСАНИЕ | обязательные |
+| Свойство | Описание | Обязательно для заполнения |
 | --- | --- | --- |
 | filePattern |Шаблон данных, хранящихся в каждом JSON-файле. Допустимые значения: **setOfObjects** и **arrayOfObjects**. Значение **по умолчанию** — **setOfObjects**. Подробные сведения об этих шаблонах см. в разделе [Шаблоны файлов JSON](#json-file-patterns). |Нет |
 | jsonNodeReference | Для итерации и извлечения данных из объектов в поле массива с таким же шаблоном укажите путь JSON этого массива. Это свойство поддерживается только в том случае, если данные копируются **из** JSON-файлов. | Нет |
 | jsonPathDefinition | Выражение пути JSON для каждого столбца с его сопоставлением с настраиваемым именем столбца (начало в нижнем регистре). Это свойство поддерживается только в том случае, если данные копируются **из** JSON-файлов и данные можно извлечь из объекта или массива. <br/><br/> Для полей в области корневого объекта выражение пути должно начинаться с корня $. Для полей внутри массива, выбранных с помощью свойства `jsonNodeReference`, выражение должно начинаться с элемента массива. Инструкции по настройке см. в разделе [Пример JsonFormat](#jsonformat-example). | Нет |
-| encodingName |Имя кодировки. Список допустимых имен кодировок приведен в описании свойства [Encoding.EncodingName](https://msdn.microsoft.com/library/system.text.encoding.aspx) . Например: windows-1250 или shift_jis. **По умолчанию** используется **UTF-8**. |Нет |
-| nestingSeparator |Знак, используемый для разделения уровней вложения. Значение по умолчанию — точка (.). |Нет |
+| encodingName |Имя кодировки. Список допустимых имен кодировок приведен в описании свойства [Encoding.EncodingName](https://msdn.microsoft.com/library/system.text.encoding.aspx). Например: windows-1250 или shift_jis. **По умолчанию** используется **UTF-8**. |Нет |
+| nestingSeparator |Символ, используемый для разделения уровней вложенности. Значение по умолчанию — точка (.). |Нет |
 
 >[!NOTE]
 >В случае перекрестного применения данных массива в несколько строк (например, 1-> Sample 2 в [примерах JsonFormat](#jsonformat-example)) можно выбрать только один массив с помощью `jsonNodeReference`свойств.
@@ -299,7 +299,7 @@ ms.locfileid: "74075535"
 | `ordernumber` | `orderdate` | `order_pd` | `order_price` | `city` |
 | --- | --- | --- | --- | --- |
 | 01 | 20170122 | P1 | 23 | `[{"sanmateo":"No 1"}]` |
-| 01 | 20170122 | P2 | 13. | `[{"sanmateo":"No 1"}]` |
+| 01 | 20170122 | P2 | 13 | `[{"sanmateo":"No 1"}]` |
 | 01 | 20170122 | P3 | 231 | `[{"sanmateo":"No 1"}]` |
 
 
@@ -445,7 +445,7 @@ ms.locfileid: "74075535"
 
 | Тип промежуточных данных фабрики данных | Тип-примитив Parquet | Исходный тип Parquet (десериализация) | Исходный тип Parquet (сериализация) |
 |:--- |:--- |:--- |:--- |
-| Логическое значение. | Логическое значение. | Недоступно | Недоступно |
+| Логический | Логический | Н/Д | Н/Д |
 | SByte | Int32 | Int8 | Int8 |
 | Byte | Int32 | UInt8 | Int16 |
 | Int16 | Int32 | Int16 | Int16 |
@@ -453,18 +453,18 @@ ms.locfileid: "74075535"
 | Int32 | Int32 | Int32 | Int32 |
 | UInt32 | Int64 | UInt32 | Int64 |
 | Int64 | Int64 | Int64 | Int64 |
-| UInt64 | Binary или Int64 | UInt64 | DECIMAL |
-| Single | Float | Недоступно | Недоступно |
-| Double, | Double, | Недоступно | Недоступно |
-| DECIMAL | Binary | DECIMAL | DECIMAL |
-| Строка, | Binary | Utf8 | Utf8 |
-| DateTime | Int96 | Недоступно | Недоступно |
-| TimeSpan | Int96 | Недоступно | Недоступно |
-| Datetimeoffset | Int96 | Недоступно | Недоступно |
-| ByteArray | Binary | Недоступно | Недоступно |
-| Guid | Binary | Utf8 | Utf8 |
+| UInt64 | Binary или Int64 | UInt64 | Decimal |
+| Отдельная | Float | Н/Д | Н/Д |
+| DOUBLE | DOUBLE | Н/Д | Н/Д |
+| Decimal | Binary | Decimal | Decimal |
+| Строка | Binary | Utf8 | Utf8 |
+| Дата и время | Int96 | Н/Д | Н/Д |
+| Интервал времени | Int96 | Н/Д | Н/Д |
+| DateTimeOffset | Int96 | Н/Д | Н/Д |
+| ByteArray | Binary | Н/Д | Н/Д |
+| GUID | Binary | Utf8 | Utf8 |
 | Char | Binary | Utf8 | Utf8 |
-| CharArray | Не поддерживается | Недоступно | Недоступно |
+| CharArray | Не поддерживается | Н/Д | Н/Д |
 
 ## <a name="orc-format"></a>Формат ORC
 
@@ -498,24 +498,24 @@ ms.locfileid: "74075535"
 
 | Тип промежуточных данных фабрики данных | Типы ORC |
 |:--- |:--- |
-| Логическое значение. | Логическое значение. |
+| Логический | Логический |
 | SByte | Byte |
-| Byte | Сокращение |
-| Int16 | Сокращение |
+| Byte | Короткие |
+| Int16 | Короткие |
 | UInt16 | Int |
 | Int32 | Int |
-| UInt32 | длинное целое |
-| Int64 | длинное целое |
-| UInt64 | Строка, |
-| Single | Float |
-| Double, | Double, |
-| DECIMAL | DECIMAL |
-| Строка, | Строка, |
-| DateTime | Timestamp |
-| Datetimeoffset | Timestamp |
-| TimeSpan | Timestamp |
+| UInt32 | Длинные |
+| Int64 | Длинные |
+| UInt64 | Строка |
+| Отдельная | Float |
+| DOUBLE | DOUBLE |
+| Decimal | Decimal |
+| Строка | Строка |
+| Дата и время | Timestamp |
+| DateTimeOffset | Timestamp |
+| Интервал времени | Timestamp |
 | ByteArray | Binary |
-| Guid | Строка, |
+| GUID | Строка |
 | Char | Char(1) |
 
 ## <a name="avro-format"></a>Формат Avro
@@ -585,7 +585,7 @@ ms.locfileid: "74075535"
   * **Fastest:** операция сжатия должна выполняться как можно быстрее, даже если итоговый файл сжимается не оптимально.
   * **Optimal**: операция сжатия должна выполняться оптимально, даже если для ее завершения требуется больше времени.
 
-    Дополнительные сведения см. в статье [Уровень сжатия](https://msdn.microsoft.com/library/system.io.compression.compressionlevel.aspx).
+    Дополнительные сведения см. в разделе [Уровень сжатия](https://msdn.microsoft.com/library/system.io.compression.compressionlevel.aspx).
 
 > [!NOTE]
 > Параметры сжатия для данных в форматах **AvroFormat**, **OrcFormat** или **ParquetFormat** не поддерживаются. Для чтения данных в этих форматах фабрика данных выявляет и использует в метаданных кодек сжатия. При записи в файл в одном из этих форматов фабрика данных выбирает кодек сжатия по умолчанию для этого формата. Например, ZLIB для OrcFormat и SNAPPY для ParquetFormat.
@@ -599,7 +599,7 @@ ms.locfileid: "74075535"
 
 Эту функцию можно также создать с помощью пользовательского действия DotNet. Дополнительные сведения можно найти [здесь](https://docs.microsoft.com/azure/data-factory/transform-data-using-dotnet-custom-activity) .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ниже приведены статьи для файловых хранилищ данных, поддерживаемых фабрикой данных Azure.
 

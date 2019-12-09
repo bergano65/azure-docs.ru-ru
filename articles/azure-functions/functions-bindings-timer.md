@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 09/08/2018
 ms.author: cshoe
 ms.custom: ''
-ms.openlocfilehash: 143a05944799ff04f9c21384f85a4b00cc65b750
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: de36f760fb637ad02446265927e7df7aa91b2abf
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74545730"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74928380"
 ---
 # <a name="timer-trigger-for-azure-functions"></a>Триггеры таймера для службы "Функции Azure" 
 
@@ -26,7 +26,7 @@ ms.locfileid: "74545730"
 
 [!INCLUDE [functions-package-auto](../../includes/functions-package-auto.md)]
 
-## <a name="packages---functions-2x"></a>Пакеты — Функции 2.x
+## <a name="packages---functions-2x-and-higher"></a>Packages — функции 2. x и более поздних версий
 
 Триггер таймера доступен в пакете NuGet [Microsoft.Azure.WebJobs.Extensions](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions) версии 3.х. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk-extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Timers/).
 
@@ -327,7 +327,7 @@ public void keepAlive(
 
 | Версия службы "Функции" | Параметр                                              |
 | ----------------- | ---------------------------------------------------- |
-| 2.x               | переменная среды `AzureFunctionsWebHost__hostid` |
+| 2. x (и выше)  | Переменная среды `AzureFunctionsWebHost__hostid`. |
 | 1.x               | `id` в *Host. JSON*                                  |
 
 Можно опустить идентифицирующее значение или вручную задать для каждой идентифицирующей конфигурации приложения-функции другое значение.

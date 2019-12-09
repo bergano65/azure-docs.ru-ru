@@ -1,6 +1,6 @@
 ---
-title: Классическое приложение, вызывающее веб-API (переместить в рабочую среду) — платформа Microsoft Identity
-description: Узнайте, как создать классическое приложение, вызывающее веб-API (переместить в рабочую среду).
+title: Перемещение классического приложения, вызывающего веб-API, в рабочую среду — платформа Microsoft Identity | Службы
+description: Узнайте, как переместить классическое приложение, вызывающее веб-API, в рабочую среду.
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -17,16 +17,16 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5331f01c5dc6acf01f567dbe4c332853bf7aa47e
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 81a5e57d0ef37a3a2e758e42f122c8e014c94958
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73175552"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74919989"
 ---
 # <a name="desktop-app-that-calls-web-apis---move-to-production"></a>Классическое приложение, вызывающее веб-API — переход в рабочую среду
 
-Эта статья содержит подробные сведения о более подробном улучшении приложения и его перемещении в рабочую среду.
+В этой статье содержатся сведения о перемещении классического приложения, вызывающего веб-API, в рабочую среду.
 
 ## <a name="handling-errors-in-desktop-applications"></a>Обработка ошибок в приложениях для настольных систем
 

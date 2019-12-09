@@ -5,19 +5,18 @@ services: data-factory
 documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.author: abnarain
 author: nabhishek
 manager: anansub
 ms.custom: seo-lt-2019
 ms.date: 10/31/2018
-ms.openlocfilehash: a8ac5bdaab915e46f5d5074c991703790d429e50
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 2b83c61d05cbc9d84c74d03004839a21505519fa
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74218226"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74928466"
 ---
 # <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory"></a>Создание общей локальной среды выполнения интеграции в фабрике данных Azure
 
@@ -46,13 +45,13 @@ ms.locfileid: "74218226"
 ## <a name="create-a-shared-self-hosted-ir-using-azure-powershell"></a>Создание общей локальной среды IR с помощью Azure PowerShell
 
 Чтобы создать общедоступную локальную среду IR с помощью Azure PowerShell, можно выполнить следующие действия. 
-1. Создание фабрики данных. 
+1. Создали фабрику данных. 
 1. Создайте локальную среду выполнения интеграции.
 1. Предоставьте общий доступ к локальной среде выполнения интеграции другим фабриками данных.
 1. Создайте связанную среду выполнения интеграции.
 1. Отмените общий доступ.
 
-### <a name="prerequisites"></a>предварительным требованиям 
+### <a name="prerequisites"></a>Технические условия 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -63,7 +62,7 @@ ms.locfileid: "74218226"
 > [!NOTE]  
 > Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=data-factory).
 
-### <a name="create-a-data-factory"></a>Создать фабрику данных
+### <a name="create-a-data-factory"></a>Создание фабрики данных
 
 1. Откройте интегрированную среду сценариев (ISE) Windows PowerShell.
 
@@ -215,7 +214,7 @@ Remove-AzDataFactoryV2IntegrationRuntime `
     -LinkedDataFactoryName $LinkedDataFactoryName
 ```
 
-### <a name="next-steps"></a>Дополнительная информация
+### <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [основными понятиями среды выполнения интеграции в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/concepts-integration-runtime).
 

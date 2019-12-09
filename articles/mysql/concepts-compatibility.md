@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 83c1463beec47ed3535811de822348cc7706f757
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 12/05/2019
+ms.openlocfilehash: bb8477165afcaafe6d03ccb3fe7764124aa166c6
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74765347"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74928672"
 ---
 # <a name="mysql-drivers-and-management-tools-compatible-with-azure-database-for-mysql"></a>Совместимость драйверов и инструментов управления MySQL с базой данных Azure для MySQL.
 В этой статье описываются драйверы и инструменты управления, совместимые с Базой данных Azure для MySQL.
@@ -30,13 +30,13 @@ ms.locfileid: "74765347"
 | Python | Соединитель MySQL/Python | https://pypi.python.org/pypi/mysql-connector-python | 1.2.3, 2,0, 2,1, 2,2, использование 8.0.16 + с MySQL 8,0  | Версия 1.2.2 и предыдущие версии | |
 | Python | пимискл | https://pypi.org/project/PyMySQL/ | 0.7.11, 0.8.0, 0.8.1, 0.9.3 + | 0.9.0-0.9.2 (регрессия в web2py) | |
 | Java: | Соединитель MariaDB/J | https://downloads.mariadb.org/connector-java/ | 2.1, 2.0, 1.6 | Версия 1.5.5 и предыдущие версии | | 
-| Java: | Соединитель MySQL/J | https://github.com/mysql/mysql-connector-j | 5.1.20 +, использование 8.0.17 + с MySQL 8,0 | 5.1.9 и ниже | |
+| Java: | Соединитель MySQL/J | https://github.com/mysql/mysql-connector-j | 5.1.21 +, использование 8.0.17 + с MySQL 8,0 | 5.1.20 и ниже | |
 | C | Соединитель MySQL/C (либмисклклиент) | https://dev.mysql.com/doc/refman/5.7/en/c-api-implementations.html | 6.0.2 + | | |
 | C | Соединитель MySQL/ODBC (мйодбк) | https://github.com/mysql/mysql-connector-odbc | 3.51.29 + | | |
 | C++ | Соединитель MySQL/C++ | https://github.com/mysql/mysql-connector-cpp | 1.1.9 + | 1.1.3 и ниже | | 
 | C++ | MySQL + +| https://tangentsoft.net/mysql++ | 3.2.3 + | | |
 | Ruby | mysql2 | https://github.com/brianmario/mysql2 | 0.4.10 + | | |
-| R | рмискл | https://github.com/rstats-db/RMySQL | 0.10.16 + | | |
+| R | RMySQL | https://github.com/rstats-db/RMySQL | 0.10.16 + | | |
 | Swift | MySQL — SWIFT | https://github.com/novi/mysql-swift | 0.7.2 + | | |
 | Swift | Вапор и MySQL | https://github.com/vapor/mysql-kit | 2.0.1 + | | |
 

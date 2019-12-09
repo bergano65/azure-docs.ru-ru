@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 07/31/2019
 ms.author: mlearned
-ms.openlocfilehash: d855e7a65b7e1ad24dcfc4fe6a6d5e02f9004bb0
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.openlocfilehash: 5ff79dc597571f4e6ef3d7c2c20bce61c0d061ad
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74089540"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74926376"
 ---
 # <a name="connect-with-ssh-to-azure-kubernetes-service-aks-cluster-nodes-for-maintenance-or-troubleshooting"></a>Подключение по протоколу SSH к узлам кластера Службы Azure Kubernetes (AKS) для обслуживания или устранения неполадок
 
@@ -41,7 +41,7 @@ CLUSTER_RESOURCE_GROUP=$(az aks show --resource-group myResourceGroup --name myA
 SCALE_SET_NAME=$(az vmss list --resource-group $CLUSTER_RESOURCE_GROUP --query [0].name -o tsv)
 ```
 
-В приведенном выше примере имя группы ресурсов кластера для *myAKSCluster* в *myResourceGroup* присваивается *CLUSTER_RESOURCE_GROUP*. Затем в примере используется *CLUSTER_RESOURCE_GROUP* для перечисления имени масштабируемого набора и его назначения *SCALE_SET_NAME*.  
+В приведенном выше примере имя группы ресурсов кластера для *myAKSCluster* в *myResourceGroup* присваивается *CLUSTER_RESOURCE_GROUP*. Затем в примере используется *CLUSTER_RESOURCE_GROUP* для перечисления имени масштабируемого набора и его назначения *SCALE_SET_NAME*.
 
 > [!IMPORTANT]
 > В настоящее время вы должны обновить ключи SSH только для кластеров AKS, основанных на масштабируемом наборе виртуальных машин, с помощью Azure CLI.
@@ -100,7 +100,7 @@ CLUSTER_RESOURCE_GROUP=$(az aks show --resource-group myResourceGroup --name myA
 az vm list --resource-group $CLUSTER_RESOURCE_GROUP -o table
 ```
 
-В приведенном выше примере имя группы ресурсов кластера для *myAKSCluster* в *myResourceGroup* присваивается *CLUSTER_RESOURCE_GROUP*. Затем в примере используется *CLUSTER_RESOURCE_GROUP* для перечисления имени виртуальной машины. В примере выходных данных показано имя виртуальной машины: 
+В приведенном выше примере имя группы ресурсов кластера для *myAKSCluster* в *myResourceGroup* присваивается *CLUSTER_RESOURCE_GROUP*. Затем в примере используется *CLUSTER_RESOURCE_GROUP* для перечисления имени виртуальной машины. В примере выходных данных показано имя виртуальной машины:
 
 ```
 Name                      ResourceGroup                                  Location
@@ -144,7 +144,7 @@ aks-nodepool1-79590246-0  10.240.0.4
 1. Запустите образ контейнера `debian` и свяжите с ним сеанс терминала. Этот контейнер можно использовать для создания сеанса SSH с любым узлом в кластере AKS:
 
     ```console
-    kubectl run -it --rm aks-ssh --image=debian
+    kubectl run --generator=run-pod/v1 -it --rm aks-ssh --image=debian
     ```
 
     > [!TIP]
@@ -158,21 +158,12 @@ aks-nodepool1-79590246-0  10.240.0.4
     apt-get update && apt-get install openssh-client -y
     ```
 
-1. Откройте новое окно терминала, не подключенное к контейнеру, и выведите список модулей Pod в кластере AKS с помощью команды [kubectl Get][kubectl-get] Pod. Модуль pod, созданный на предыдущем шаге, начинается с имени *aks-ssh*, как показано в следующем примере:
+1. Откройте новое окно терминала, не подключенное к контейнеру, и скопируйте закрытый ключ SSH в модуль поддержки. Этот закрытый ключ используется для создания SSH в узле AKS. 
 
-    ```
-    $ kubectl get pods
-    
-    NAME                       READY     STATUS    RESTARTS   AGE
-    aks-ssh-554b746bcf-kbwvf   1/1       Running   0          1m
-    ```
-
-1. На предыдущем шаге вы добавили открытый ключ SSH к узлу AKS, который вы хотите устранить. Теперь скопируйте закрытый ключ SSH в модуль поддержки. Этот закрытый ключ используется для создания SSH в узле AKS.
-
-    Предоставьте имя своего модуля pod *aks-ssh*, полученное на предыдущем шаге. При необходимости измените *~/.ssh/id_rsa* на расположение закрытого ключа SSH:
+   При необходимости измените *~/.ssh/id_rsa* на расположение закрытого ключа SSH:
 
     ```console
-    kubectl cp ~/.ssh/id_rsa aks-ssh-554b746bcf-kbwvf:/id_rsa
+    kubectl cp ~/.ssh/id_rsa $(kubectl get pod -l run=aks-ssh -o jsonpath='{.items[0].metadata.name}'):/id_rsa
     ```
 
 1. Вернитесь в сеанс терминала к контейнеру, обновите разрешения для скопированного `id_rsa` закрытого ключа SSH, чтобы он был доступен только для чтения.
@@ -185,22 +176,22 @@ aks-nodepool1-79590246-0  10.240.0.4
 
     ```console
     $ ssh -i id_rsa azureuser@10.240.0.4
-    
+
     ECDSA key fingerprint is SHA256:A6rnRkfpG21TaZ8XmQCCgdi9G/MYIMc+gFAuY9RUY70.
     Are you sure you want to continue connecting (yes/no)? yes
     Warning: Permanently added '10.240.0.4' (ECDSA) to the list of known hosts.
-    
+
     Welcome to Ubuntu 16.04.5 LTS (GNU/Linux 4.15.0-1018-azure x86_64)
-    
+
      * Documentation:  https://help.ubuntu.com
      * Management:     https://landscape.canonical.com
      * Support:        https://ubuntu.com/advantage
-    
+
       Get cloud support with Ubuntu Advantage Cloud Guest:
         https://www.ubuntu.com/business/services/cloud
-    
+
     [...]
-    
+
     azureuser@aks-nodepool1-79590246-0:~$
     ```
 
@@ -208,7 +199,7 @@ aks-nodepool1-79590246-0  10.240.0.4
 
 Закончив, `exit` из сеанса SSH, а затем `exit` из интерактивного сеанса контейнера. Когда сеанса с этим контейнером закроется, модуль pod, используемый для доступа по протоколу SSH, будет удален из кластера AKS.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если требуются дополнительные данные по устранению неполадок, можно [Просмотреть журналы kubelet][view-kubelet-logs] или [Просмотреть журналы главного узла Kubernetes][view-master-logs].
 

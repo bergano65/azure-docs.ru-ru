@@ -12,14 +12,14 @@ ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.topic: article
-ms.date: 09/11/2018
+ms.date: 12/06/2019
 ms.author: cynthn
-ms.openlocfilehash: cb3bb6a91c25298535cfba1107b85f200031a7d6
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 6cf636e7d7ee35680c1da872b186748c333a81dc
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74035912"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930005"
 ---
 # <a name="quick-steps-create-and-use-an-ssh-public-private-key-pair-for-linux-vms-in-azure"></a>Краткая инструкция: создание и использование пары из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure
 
@@ -38,10 +38,10 @@ ms.locfileid: "74035912"
 
 Чтобы создать файлы открытого и закрытого ключей SSH, используйте команду `ssh-keygen`. По умолчанию эти файлы хранятся в каталоге ~/.ssh. Можно указать другое расположение и необязательный пароль (*парольную фразу*) для доступа к файлу закрытого ключа. Если в выбранном расположении существует пара ключей SSH с теми же именами, они будут перезаписаны.
 
-Следующая команда создает пару 2048-разрядных ключей SSH, использующих шифрование RSA:
+Следующая команда создает пару ключей SSH с помощью шифрования RSA и длины 4096:
 
 ```bash
-ssh-keygen -t rsa -b 2048
+ssh-keygen -m PEM -t rsa -b 4096
 ```
 
 При использовании [Azure CLI 2.0](/cli/azure) для создания виртуальной машины можно дополнительно создать файлы открытого и закрытого ключей SSH, выполнив команду [az vm create](/cli/azure/vm#az-vm-create) с параметром `--generate-ssh-keys`. Файлы ключей хранятся в каталоге ~/.ssh, если не указано иное с помощью параметра `--ssh-dest-key-path`. Параметр `--generate-ssh-keys` не перезаписывает существующие файлы ключей, вместо этого возвращается ошибка. В следующей команде замените *VMname* и *RGname* собственными значениями.
@@ -90,7 +90,7 @@ ssh azureuser@myvm.westus.cloudapp.azure.com
 
 Если виртуальная машина использует политику доступа JIT, запросите доступ, прежде чем подключиться к виртуальной машине. Дополнительные сведения о политике JIT см. в статье [Управление доступом к виртуальным машинам с помощью JIT-доступа](../../security-center/security-center-just-in-time.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о работе с парами ключей SSH см. в разделе [Подробные инструкции: создание ключей SSH для аутентификации на виртуальной машине Linux в Azure и управление этими ключами](create-ssh-keys-detailed.md).
 

@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8337d18b5c6b484e45e6cefaec98e2684155a02
-ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
+ms.openlocfilehash: 9d76a11fc41fd964ff4e43518aee34aad3ecffd3
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74900421"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74922668"
 ---
 # <a name="customizing-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>Настройка сопоставления атрибутов подготовки пользователей для приложений SaaS в Azure Active Directory
 
@@ -139,7 +139,7 @@ SCIM RFC определяет основную схему пользовател
    1. Войдите на [портал Azure Active Directory](https://aad.portal.azure.com), выберите **корпоративные приложения**, выберите приложение, а затем щелкните **Подготовка**.
    2. В разделе **сопоставления**выберите объект (пользователя или группу), для которого вы хотите добавить настраиваемый атрибут.
    3. В нижней части страницы выберите пункт **отобразить дополнительные параметры**.
-   4. Выберите * * Изменить список атрибутов для *приложения*.
+   4. Выберите **изменить список атрибутов для AppName*.
    5. В нижней части списка атрибутов введите сведения о настраиваемом атрибуте в предоставленных полях. Затем выберите **Добавить атрибут**.
 
 Для приложений SCIM имя атрибута должно соответствовать шаблону, показанному в примере ниже. "Кустомекстенсионнаме" и "CustomAttribute" можно настроить в соответствии с требованиями приложения, например: urn: IETF: params: scim: schemas: Extension: 2.0: Кустомекстенсионнаме: CustomAttribute

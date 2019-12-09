@@ -1,23 +1,22 @@
 ---
-title: 'Устранение неполадок при выполнении пакетов в среде выполнения интеграции SSIS '
+title: Устранение неполадок при выполнении пакетов в среде выполнения интеграции SSIS
 description: В этой статье содержатся рекомендации по устранению неполадок при выполнении пакетов служб SSIS в среде выполнения интеграции SSIS.
 services: data-factory
-documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 04/15/2019
-author: wenjiefu
 ms.author: wenjiefu
+author: wenjiefu
 ms.reviewer: sawinark
-manager: craigg
-ms.openlocfilehash: 9692c754e59eba02d3d483d44430150107d703a4
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+manager: shwang
+ms.custom: seo-lt-2019
+ms.date: 04/15/2019
+ms.openlocfilehash: c0aa33cce8dc163722557b1ef868cf0de8bea8fe
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74217540"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74928732"
 ---
 # <a name="troubleshoot-package-execution-in-the-ssis-integration-runtime"></a>Устранение неполадок при выполнении пакетов в среде выполнения интеграции SSIS
 
@@ -31,7 +30,7 @@ ms.locfileid: "74217540"
 
 ## <a name="common-errors-causes-and-solutions"></a>Распространенные ошибки, причины и решения
 
-### <a name="error-message-connection-timeout-expired-or-the-service-has-encountered-an-error-processing-your-request-please-try-again"></a>Сообщение об ошибке: "истекло время ожидания подключения" или "Служба обнаружила ошибку при обработке запроса. Повторите попытку ".
+### <a name="error-message-connection-timeout-expired-or-the-service-has-encountered-an-error-processing-your-request-please-try-again"></a>Сообщение об ошибке: "истекло время ожидания подключения" или "Служба обнаружила ошибку при обработке запроса. Повторите попытку".
 
 Ниже приведены возможные причины и рекомендуемые действия.
 * Источник данных или назначение перегружены. Проверьте загрузку источника данных или назначения и убедитесь, что у него достаточно ресурсов. Например, если вы использовали базу данных SQL Azure, рассмотрите возможность увеличения масштаба, если база данных, скорее всего, истекает время ожидания.
@@ -156,7 +155,7 @@ ms.locfileid: "74217540"
   * Журнал выполнения можно найти в [отчете SSMS](https://docs.microsoft.com/sql/integration-services/performance/monitor-running-packages-and-other-operations?view=sql-server-2017#reports) или в папке журнала, указанной в действии выполнения пакета служб SSIS.
   * Виртуальную сеть можно также использовать для доступа к локальным данным в качестве альтернативы. Дополнительные сведения можно найти в привязке [среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md) .
 
-### <a name="error-message-staging-task-status-failed-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-ssis-executor-exit-code--1n-loglocation-ssistelemetryexecutionlog-effectiveintegrationruntime--executionduration--durationinqueue--integrationruntimequeue--"></a>Сообщение об ошибке: "состояние промежуточной задачи: сбой. Ошибка промежуточной задачи: код ошибки: 2906, ErrorMessage: сбой выполнения пакета., выходные данные: {"Оператионеррормессажес": "службы SSIS Exit код выхода:-1. \ n", "LogLocation": "...\\Ссистелеметри\\ExecutionLog\\...", " Еффективеинтегратионрунтиме ":"... "," Ексекутиондуратион ":...," Дуратионинкуеуе ": {" Интегратионрунтимекуеуе ":...}}"
+### <a name="error-message-staging-task-status-failed-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-ssis-executor-exit-code--1n-loglocation-ssistelemetryexecutionlog-effectiveintegrationruntime--executionduration--durationinqueue--integrationruntimequeue--"></a>Сообщение об ошибке: "состояние промежуточной задачи: сбой. Ошибка промежуточной задачи: код ошибки: 2906, ErrorMessage: сбой выполнения пакета., выход: {"Оператионеррормессажес": "код выхода исполнителя служб SSIS:-1. \ n", "LogLocation": "...\\Ссистелеметри\\ExecutionLog\\...", "Еффективеинтегратионрунтиме": "...", "Ексекутиондуратион":..., "durationInQueue": {"integrationRuntimeQueue":...}} "
 
 Убедитесь, что C++ среда Visual Runtime установлена на компьютере с локальной средой выполнения интеграции. Дополнительные сведения см. в [подокне Настройка автономного IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#prepare-self-hosted-ir) .
 

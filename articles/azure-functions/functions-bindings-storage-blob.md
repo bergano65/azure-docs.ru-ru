@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 11/15/2018
 ms.author: cshoe
-ms.openlocfilehash: b2782ce39bbc2ca86c63b178535fc6b67b9dadfe
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 65775a9c7a6d66a088eccdfdb22ce7d6b01829d2
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231035"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74925405"
 ---
 # <a name="azure-blob-storage-bindings-for-azure-functions"></a>Привязки хранилища BLOB-объектов Azure для службы "Функции Azure"
 
@@ -25,7 +25,7 @@ ms.locfileid: "74231035"
 > [!NOTE]
 > Используйте триггер службы "Сетка событий" вместо триггера хранилища BLOB-объектов для учетных записей хранения только для больших двоичных объектов, чтобы обеспечить высокий уровень масштабирования или сократить задержку. Дополнительные сведения см. в разделе [Триггер](#trigger).
 
-## <a name="packages---functions-1x"></a>Пакеты — Функции 1.x
+## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
 
 Привязки большого двоичного объекта доступны в пакете NuGet [Microsoft.Azure.WebJobs](https://www.nuget.org/packages/Microsoft.Azure.WebJobs), версия 2.х. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk](https://github.com/Azure/azure-webjobs-sdk/tree/v2.x/src/Microsoft.Azure.WebJobs.Storage/Blob).
 
@@ -33,7 +33,7 @@ ms.locfileid: "74231035"
 
 [!INCLUDE [functions-storage-sdk-version](../../includes/functions-storage-sdk-version.md)]
 
-## <a name="packages---functions-2x"></a>Пакеты — Функции 2.x
+## <a name="packages---functions-2x-and-higher"></a>Packages — функции 2. x и более поздних версий
 
 Привязки хранилища BLOB-объектов доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.Storage](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.Storage) версии 3.х. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk](https://github.com/Azure/azure-webjobs-sdk/tree/dev/src/Microsoft.Azure.WebJobs.Extensions.Storage/Blobs).
 
@@ -48,14 +48,14 @@ ms.locfileid: "74231035"
 Используйте службу "Сетка событий" вместо триггера хранилища BLOB-объектов для следующих сценариев:
 
 * Учетные записи хранения BLOB-объектов
-* Большой масштаб
+* Большой масштаб.
 * Минимизация задержки
 
 ### <a name="blob-storage-accounts"></a>Учетные записи хранения BLOB-объектов
 
 [Учетные записи хранения больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts) поддерживаются для входных и выходных привязок больших двоичных объектов, а не для триггеров большого двоичного объекта. Для триггеров хранилища BLOB-объектов требуется учетная запись хранения общего назначения.
 
-### <a name="high-scale"></a>Большой масштаб
+### <a name="high-scale"></a>Большой масштаб.
 
 Большой масштаб можно определить как контейнеры, содержащие более 100 000 больших двоичных объектов, или как учетные записи хранения, в которых выполняется более 100 обновлений больших двоичных объектов в секунду.
 
@@ -87,7 +87,7 @@ public static void Run([BlobTrigger("samples-workitems/{name}")] Stream myBlob, 
 
 # <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
-В следующем примере показана привязка триггера большого двоичного объекта в файле *Function. JSON* и код, использующий привязку. Функция делает запись в журнал при добавлении или обновлении большого двоичного объекта в `samples-workitems`контейнере[ ](../storage/blobs/storage-blobs-introduction.md#blob-storage-resources).
+В следующем примере показана привязка триггера большого двоичного объекта в файле *Function. JSON* и код, использующий привязку. Функция делает запись в журнал при добавлении или обновлении большого двоичного объекта в [контейнере](../storage/blobs/storage-blobs-introduction.md#blob-storage-resources) `samples-workitems`.
 
 Данные привязки в файле *function.json*:
 
@@ -168,7 +168,7 @@ module.exports = function(context) {
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
-В следующем примере показана привязка триггера большого двоичного объекта в файле *function.json* и [код Python](functions-reference-python.md), который использует привязку данных. Функция делает запись в журнал при добавлении или обновлении большого двоичного объекта в `samples-workitems`контейнере[ ](../storage/blobs/storage-blobs-introduction.md#blob-storage-resources).
+В следующем примере показана привязка триггера большого двоичного объекта в файле *function.json* и [код Python](functions-reference-python.md), который использует привязку данных. Функция делает запись в журнал при добавлении или обновлении большого двоичного объекта в [контейнере](../storage/blobs/storage-blobs-introduction.md#blob-storage-resources) `samples-workitems`.
 
 Ниже показан файл *function.json*.
 
@@ -322,11 +322,11 @@ public void run(
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `BlobTrigger`.
 
-|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Недоступно | Нужно задать значение `blobTrigger`. Это свойство задается автоматически при создании триггера на портале Azure.|
-|**direction** | Недоступно | Нужно задать значение `in`. Это свойство задается автоматически при создании триггера на портале Azure. Исключения приведены в этом [разделе](#trigger---usage). |
-|**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции. |
+|**type** | Н/Д | Нужно задать значение `blobTrigger`. Это свойство задается автоматически при создании триггера на портале Azure.|
+|**direction** | Н/Д | Нужно задать значение `in`. Это свойство задается автоматически при создании триггера на портале Azure. Исключения приведены в этом [разделе](#trigger---usage). |
+|**name** | Н/Д | Имя переменной, представляющей большой двоичный объект в коде функции. |
 |**path** | **BlobPath** |[Контейнер](../storage/blobs/storage-blobs-introduction.md#blob-storage-resources) для мониторинга.  Может быть [шаблоном имени большого двоичного объекта](#trigger---blob-name-patterns). |
 |**подключение** | **Connection** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
 
@@ -757,14 +757,14 @@ public static void Run(
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `Blob`.
 
-|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Недоступно | Нужно задать значение `blob`. |
-|**direction** | Недоступно | Нужно задать значение `in`. Исключения приведены в этом [разделе](#input---usage). |
-|**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции.|
+|**type** | Н/Д | Нужно задать значение `blob`. |
+|**direction** | Н/Д | Нужно задать значение `in`. Исключения приведены в этом [разделе](#input---usage). |
+|**name** | Н/Д | Имя переменной, представляющей большой двоичный объект в коде функции.|
 |**path** |**BlobPath** | Путь к BLOB-объекту. |
 |**подключение** |**Connection**| Имя параметра приложения, содержащего [строку подключения к службе хранилища](../storage/common/storage-configure-connection-string.md), используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
-|Недоступно | **Access** | Указывает, какая операция будет выполняться (запись или чтение). |
+|Н/Д | **Доступ** | Указывает, какая операция будет выполняться (запись или чтение). |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -1124,14 +1124,14 @@ public static void Run(
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `Blob`.
 
-|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Недоступно | Нужно задать значение `blob`. |
-|**direction** | Недоступно | Нужно задать значение `out` для выходной привязки. Исключения приведены в этом [разделе](#output---usage). |
-|**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции.  Задайте значение `$return`, ссылающееся на возвращаемое значение функции.|
+|**type** | Н/Д | Нужно задать значение `blob`. |
+|**direction** | Н/Д | Нужно задать значение `out` для выходной привязки. Исключения приведены в этом [разделе](#output---usage). |
+|**name** | Н/Д | Имя переменной, представляющей большой двоичный объект в коде функции.  Задайте значение `$return`, ссылающееся на возвращаемое значение функции.|
 |**path** |**BlobPath** | Путь к контейнеру больших двоичных объектов. |
 |**подключение** |**Connection**| Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
-|Недоступно | **Access** | Указывает, какая операция будет выполняться (запись или чтение). |
+|Н/Д | **Доступ** | Указывает, какая операция будет выполняться (запись или чтение). |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -1164,15 +1164,15 @@ public static void Run(
 
 ---
 
-## <a name="exceptions-and-return-codes"></a>Коды возврата и исключений
+## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
 | Привязка |  Справочные материалы |
 |---|---|
-| BLOB-объект | [Коды ошибок больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/fileservices/blob-service-error-codes) |
+| BLOB-объекты | [Коды ошибок больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/fileservices/blob-service-error-codes) |
 | Большой двоичный объект, таблица, очередь |  [Коды ошибок хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/common-rest-api-error-codes) |
 | Большой двоичный объект, таблица, очередь |  [Устранение неполадок](https://docs.microsoft.com/rest/api/storageservices/fileservices/troubleshooting-api-operations) |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)
 

@@ -1,5 +1,5 @@
 ---
-title: Как и для чего приложения добавляются в Azure Active Directory
+title: Как и зачем добавлять приложения в Azure AD
 titleSuffix: Microsoft identity platform
 description: Что означает добавление приложения в Azure AD и каким образом это осуществляется?
 services: active-directory
@@ -15,12 +15,12 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: lenalepa, sureshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a04315d887a1774fa50743d4bb361b9d9082aba
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: f031389dc37fbf48f8a69db8c42419eed9605373
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74845065"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74918344"
 ---
 # <a name="how-and-why-applications-are-added-to-azure-ad"></a>Как и почему приложения добавляются в Azure AD
 

@@ -9,19 +9,18 @@ ms.reviewer: ''
 manager: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 9/3/2019
-ms.openlocfilehash: 99b7de8c0e24fdbd12742b26394e61c956638525
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 52629b8e2e190cc041116e6f65488480712baf01
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74038278"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74929791"
 ---
 # <a name="migrate-on-premises-ssis-workloads-to-ssis-in-adf"></a>Перенос локальных рабочих нагрузок служб SSIS в службы SSIS в ADF
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 При переносе рабочих нагрузок базы данных из локальной SQL Server в службы баз данных Azure — это база данных SQL Azure или управляемый экземпляр базы данных SQL Azure, рабочие нагрузки ETL на SQL Server Integration Services (SSIS) в качестве одного из основных добавленных значений. Кроме того, необходимо выполнить миграцию служб.
 
@@ -85,9 +84,9 @@ Azure-SSIS Integration Runtime (IR) в фабрике данных Azure (ADF) �
 - [Миграция пакетов служб SSIS в управляемый экземпляр базы данных SQL Azure](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages-managed-instance)
 - [Повторное развертывание пакетов в базе данных SQL Azure](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Проверка пакетов служб SSIS, развернутых в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-validate-packages)
+- [Проверка пакетов SSIS, развертываемых в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-validate-packages)
 - [Запуск пакетов служб SSIS, развернутых в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-run-packages)
 - [Мониторинг Azure-SSIS Integration Runtime](https://docs.microsoft.com/azure/data-factory/monitor-integration-runtime#azure-ssis-integration-runtime)
 - [Планирование выполнения пакетов служб SSIS в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages)

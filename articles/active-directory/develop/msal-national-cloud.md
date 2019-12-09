@@ -1,28 +1,25 @@
 ---
-title: Использование библиотеки проверки подлинности Майкрософт (MSAL) в национальных облаках — платформа Microsoft Identity
+title: Использование MSAL в приложении национального облака | Службы
+titleSuffix: Microsoft identity platform
 description: Библиотека проверки подлинности Майкрософт (MSAL) позволяет разработчикам приложений получать маркеры для вызова защищенных веб-API. Эти веб-API можно Microsoft Graph, других API Майкрософт, партнерских веб-API или собственного веб-API. MSAL поддерживает несколько архитектур и платформ приложений.
 services: active-directory
-documentationcenter: dev-center-name
 author: negoe
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/22/2019
 ms.author: negoe
 ms.reviewer: nacanuma
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f1c73d89b0efc17e8f8836d080595927d500ad6
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: f1d0d4511b95d56ae41bf9fbb1118318d8374bde
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74481868"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74916052"
 ---
 # <a name="use-msal-in-a-national-cloud-environment"></a>Использование MSAL в национальной облачной среде
 
@@ -32,13 +29,13 @@ ms.locfileid: "74481868"
 
 Включая глобальное облако, Azure Active Directory (Azure AD) развертывается в следующих национальных облаках:  
 
-- Azure Government
+- Azure для государственных организаций
 - Azure China 21Vianet
 - Azure для Германии
 
 В этом руководстве показано, как войти в рабочие и учебные учетные записи, получить маркер доступа и вызвать API Microsoft Graph в [облачной среде Azure для государственных организаций](https://azure.microsoft.com/global-infrastructure/government/) .
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Прежде чем начать, убедитесь, что выполнены все необходимые условия.
 
@@ -85,7 +82,7 @@ ms.locfileid: "74481868"
 1. В разделе **URI перенаправления** выберите **веб-** платформу и задайте в качестве значения URL-адрес приложения, основанный на веб-сервере. Инструкции по установке и получению URL-адреса перенаправления в Visual Studio и узле см. в следующих разделах.
 1. Выберите **Зарегистрировать**.
 1. На странице приложения **Обзор** запишите **идентификатор приложения (клиента)** .
-1. Для работы с этим руководством необходимо включить [неявный поток предоставления](v2-oauth2-implicit-grant-flow.md). В левой области навигации зарегистрированного приложения выберите **Проверка подлинности**.
+1. Для работы с этим руководством необходимо включить [неявный поток предоставления](v2-oauth2-implicit-grant-flow.md). В левой области зарегистрированного приложения выберите **Проверка подлинности**.
 1. В окне **Дополнительные параметры** в разделе **Неявное предоставление** установите флажки **Токен идентификатора** и **Маркеры доступа**. Маркеры идентификации и маркеры доступа являются обязательными, так как это приложение должно входить в систему пользователей и вызывать API.
 1. Щелкните **Сохранить**.
 
@@ -105,7 +102,7 @@ ms.locfileid: "74481868"
 
 ### <a name="step-4-configure-your-javascript-spa"></a>Шаг 4. Настройка JavaScript SPA
 
-Внесите сведения о регистрации приложения в файл `index.html`, созданный во время настройки проекта. В начале вашего файла `<script></script>` между тегами `index.html` вставьте следующий код:
+Внесите сведения о регистрации приложения в файл `index.html`, созданный во время настройки проекта. В начале вашего файла `index.html` между тегами `<script></script>` вставьте следующий код:
 
 ```javascript
 const msalConfig = {
@@ -224,7 +221,7 @@ if let application = try? MSALPublicClientApplication(configuration: config) { /
 
 ---
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. также:
 

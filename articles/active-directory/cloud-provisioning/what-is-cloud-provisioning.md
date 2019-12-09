@@ -11,12 +11,12 @@ ms.date: 12/05/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 903551bfcaae3ffa7ccee72b1a5d781413864b32
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 333a3b93d872c1a99d1ec18d4941adc8986d4a03
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74868462"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74914573"
 ---
 # <a name="what-is-azure-ad-connect-cloud-provisioning"></a>Что такое Azure AD Connect подготовки облака?
 Azure AD Connect подготовка облачных облаков — это новый агент Майкрософт, предназначенный для удовлетворения и выполнения целей гибридной идентификации для синхронизации пользователей, групп и контактов с Azure AD.  Его можно использовать вместе с Azure AD Connect Sync и предоставляет следующие преимущества:

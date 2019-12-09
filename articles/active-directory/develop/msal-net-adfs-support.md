@@ -1,29 +1,25 @@
 ---
-title: Поддержка AD FS в библиотеке проверки подлинности Майкрософт для .NET
+title: Поддержка AD FS в MSAL.NET | Службы
 titleSuffix: Microsoft identity platform
 description: Сведения о поддержке службы федерации Active Directory (AD FS) (AD FS) в библиотеке проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
-documentationcenter: dev-center-name
 author: TylerMSFT
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/16/2019
 ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6cdef6f2938f25425a8d65aa5d603bd0a71d074
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 1b5124712e4002c9a3a6740986cafc18c12dbb98
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74483056"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74921940"
 ---
 # <a name="active-directory-federation-services-support-in-msalnet"></a>Поддержка службы федерации Active Directory (AD FS) в MSAL.NET
 Службы федерации Active Directory (AD FS) (AD FS) в Windows Server позволяет добавлять аутентификацию и авторизацию на основе OpenID Connect Connect и OAuth 2,0 для разрабатываемых приложений. Эти приложения могут выполнять проверку подлинности пользователей непосредственно в AD FS. Дополнительные сведения см. в статье [сценарии AD FS для разработчиков](/windows-server/identity/ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios).
@@ -61,6 +57,6 @@ MSAL.NET поддерживает подключение к AD FS 2019, что �
 
  Если требуется поддержка сценариев, требующих прямого подключения к AD FS 2016, используйте последнюю версию [библиотеки проверки Подлинности Azure Active Directory](active-directory-authentication-libraries.md#microsoft-supported-client-libraries). После обновления локальной системы до AD FS 2019 вы сможете использовать MSAL.NET.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об объединенном варианте см. в статье [Настройка поведения при входе Azure Active Directory для приложения с помощью политики обнаружения домашней области](https://docs.microsoft.com/azure/active-directory/manage-apps/configure-authentication-for-federated-users-portal) .

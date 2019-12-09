@@ -1,22 +1,21 @@
 ---
 title: Создание конвейеров прогнозных данных
 description: Узнайте, как создать прогнозирующий конвейер с помощью действия выполнения пакета службы "Машинное обучение Azure" в фабрике данных Azure.
-services: data-factory
-documentationcenter: ''
-ms.service: data-factory
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.topic: conceptual
-ms.date: 02/20/2019
 author: nabhishek
 ms.author: abnarain
-manager: craigg
-ms.openlocfilehash: dc2104495f231a316a1354100ecc105e8fda5bb4
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+manager: shwang
+services: data-factory
+ms.service: data-factory
+ms.workload: data-services
+ms.topic: conceptual
+ms.custom: seo-lt-2019
+ms.date: 02/20/2019
+ms.openlocfilehash: b5b7b69f49efa6cc0d5f3e42fc8a3aca855bca9a
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74893847"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74912995"
 ---
 # <a name="create-predictive-pipelines-using-azure-machine-learning-and-azure-data-factory"></a>Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]

@@ -3,10 +3,8 @@ title: Ошибки и исключения (MSAL)
 titleSuffix: Microsoft identity platform
 description: Сведения об обработке ошибок и исключений, условном доступе и проблемах с утверждениями в MSAL приложениях.
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
 ms.devlang: na
@@ -15,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/22/2019
 ms.author: twhitney
-ms.reviewer: saeeda
+ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 753296596982279a14ff2775b0e129048dbe8369
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 7f903ca541582dfa0f3980bb65a3fef3c4b774a7
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74482073"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74916780"
 ---
 # <a name="handle-msal-exceptions-and-errors"></a>Обработку исключений и ошибок MSAL
 
@@ -71,7 +69,7 @@ ms.locfileid: "74482073"
 
 MSAL предоставляет поле `Classification`, которое можно прочитать, чтобы обеспечить более удобный пользовательский интерфейс, например сообщить пользователю о том, что срок действия пароля истек или что ему нужно предоставить согласие на использование некоторых ресурсов. Поддерживаемые значения являются частью перечисления `UiRequiredExceptionClassification`.
 
-| Классификация    | Значение           | Рекомендуемая обработка |
+| классификация;    | Значение           | Рекомендуемая обработка |
 |-------------------|-------------------|----------------------|
 | басикактион | Условие может быть разрешено путем взаимодействия с пользователем во время интерактивного потока проверки подлинности. | Вызовите Аккуиретокенинтерактивели (). |
 | аддитионалактион | Условие может быть разрешено дополнительным удаленным носителем с системой за пределами интерактивного потока проверки подлинности. | Вызовите Аккуиретокенинтерактивели (), чтобы отобразить сообщение с объяснением действия по воссозданию носителя. Вызывающее приложение может скрыть потоки, требующие additional_action, если пользователь вряд ли будет выполнять действие по восвыполнению. |

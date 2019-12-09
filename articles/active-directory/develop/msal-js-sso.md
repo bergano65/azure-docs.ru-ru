@@ -1,29 +1,25 @@
 ---
-title: Единый вход (Библиотека проверки подлинности Майкрософт для JavaScript)
+title: Единый вход (MSAL. js) | Службы
 titleSuffix: Microsoft identity platform
 description: Узнайте о создании единого входа с помощью библиотеки проверки подлинности Майкрософт для JavaScript (MSAL. js).
 services: active-directory
-documentationcenter: dev-center-name
 author: navyasric
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/24/2019
 ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da39b8435acdd11108a945c6bac5147dc8b6ad50
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 921c02e682c722a4e96f98fb0fc54d7fcbb82220
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73150576"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74916270"
 ---
 # <a name="single-sign-on-with-msaljs"></a>Единый вход с использованием MSAL.js
 
@@ -92,7 +88,7 @@ userAgentApplication.acquireTokenSilent(request).then(function(response) {
 
 **Использование подсказки для входа**
 
-Если вы не настроили заявку SID или не хотите обойти запрос выбора учетной записи в интерактивных вызовах проверки подлинности, это можно сделать, предоставив `login_hint` в параметрах запроса и, при необходимости, `domain_hint` как `extraQueryParameters` в интерактивных методах MSAL. js (@no __t_3_, `loginRedirect`, `acquireTokenPopup` и `acquireTokenRedirect`). Пример.
+Если вы не настроили заявку SID или не хотите обойти запрос выбора учетной записи в интерактивных вызовах проверки подлинности, это можно сделать, предоставив `login_hint` в параметрах запроса и, возможно, `domain_hint` как `extraQueryParameters` в интерактивных методах MSAL. js (`loginPopup`, `loginRedirect`, `acquireTokenPopup` и `acquireTokenRedirect`). Пример.
 
 ```javascript
 var request = {
@@ -113,7 +109,7 @@ userAgentApplication.loginRedirect(request);
 Дополнительные сведения о значениях для указания имени входа и указании домена см. [здесь](v2-oauth2-implicit-grant-flow.md) .
 
 > [!Note]
-> Нельзя передавать SID и login_hint одновременно. Это приведет к ошибочному ответу.
+> Нельзя передавать идентификаторы безопасности и login_hint в одно и то же время. Это приведет к ошибочному ответу.
 
 ## <a name="sso-without-msaljs-login"></a>ЕДИНЫЙ вход без имени входа MSAL. js
 

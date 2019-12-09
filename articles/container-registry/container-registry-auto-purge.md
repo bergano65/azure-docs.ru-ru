@@ -3,12 +3,12 @@ title: Очистка тегов и манифестов
 description: Используйте команду "очистить", чтобы удалить несколько тегов и манифестов из реестра контейнеров Azure на основе возраста и фильтра тегов, а также при необходимости запланировать операции очистки.
 ms.topic: article
 ms.date: 08/14/2019
-ms.openlocfilehash: 65169927f7a1cffa88a2d909217e636417f695cc
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 0ec1f5f6f5c3c572b8558c971b58e46cce36e3fd
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74456485"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74923106"
 ---
 # <a name="automatically-purge-images-from-an-azure-container-registry"></a>Автоматическая очистка образов из реестра контейнеров Azure
 
@@ -33,11 +33,10 @@ ms.locfileid: "74456485"
 > [!NOTE]
 > `acr purge` не удаляет тег образа или репозиторий, в котором для атрибута `write-enabled` задано значение `false`. Дополнительные сведения см. [в разделе Блокировка образа контейнера в реестре контейнеров Azure](container-registry-image-lock.md).
 
-`acr purge` предназначен для выполнения в виде команды контейнера в [задаче записи контроля](container-registry-tasks-overview.md)доступа, поэтому она автоматически проходит проверку подлинности с реестром, в котором выполняется задача. 
+`acr purge` предназначен для выполнения в качестве команды контейнера в [задаче записи контроля](container-registry-tasks-overview.md)доступа, поэтому она автоматически проходит проверку подлинности с реестром, в котором выполняется задача, и выполняет в ней действия. В примерах задач в этой статье вместо полного образа контейнера используется [псевдоним](container-registry-tasks-reference-yaml.md#aliases) команды `acr purge`.
 
 Как минимум, при запуске `acr purge`необходимо указать следующее:
 
-* `--registry` — реестр контейнеров Azure, в котором выполняется команда. 
 * `--filter` — репозиторий и *регулярное выражение* для фильтрации тегов в репозитории. Примеры: `--filter "hello-world:.*"` соответствует всем тегам в репозитории `hello-world`, а `--filter "hello-world:^1.*"` соответствует тегам, начинающимся с `1`. Передайте несколько параметров `--filter` для очистки нескольких репозиториев.
 * `--ago` — [Строка длительности](https://golang.org/pkg/time/) в стиле Go для обозначения длительности, после которой удаляются изображения. Длительность состоит из последовательности из одного или нескольких десятичных чисел, каждый из которых имеет суффикс единицы. Допустимые единицы времени: "d" для дней, "h" для часов и "м" для минут. Например, `--ago 2d3h6m` выбирает все отфильтрованные изображения, которые были в последнее время изменены более 2 дней, 3 часов и 6 минут назад, и `--ago 1.5h` выбирает образы, которые были изменены в последний раз более 1,5 часов назад.
 
@@ -54,12 +53,10 @@ ms.locfileid: "74456485"
 
 В следующем примере используется команда [AZ записи контроля][az-acr-run] доступа для выполнения команды `acr purge` по запросу. В этом примере удаляются все теги и манифесты изображений в репозитории `hello-world` в *myregistry* , которые были изменены более 1 дня назад. Команда контейнера передается с помощью переменной среды. Задача выполняется без контекста источника.
 
-В этом и следующих примерах реестр, в котором выполняется команда `acr purge`, указывается с помощью псевдонима `$Registry`, который указывает на реестр, в котором выполняется задача.
-
 ```azurecli
 # Environment variable for container command line
-PURGE_CMD="mcr.microsoft.com/acr/acr-cli:0.1 purge \
-  --registry {{.Run.Registry}} --filter 'hello-world:.*' --untagged --ago 1d"
+PURGE_CMD="acr purge --filter 'hello-world:.*' \
+  --untagged --ago 1d"
 
 az acr run \
   --cmd "$PURGE_CMD" \
@@ -73,8 +70,8 @@ az acr run \
 
 ```azurecli
 # Environment variable for container command line
-PURGE_CMD="mcr.microsoft.com/acr/acr-cli:0.1 purge \
-  --registry {{.Run.Registry}} --filter 'hello-world:.*' --ago 7d"
+PURGE_CMD="acr purge --filter 'hello-world:.*' \
+  --ago 7d"
 
 az acr task create --name purgeTask \
   --cmd "$PURGE_CMD" \
@@ -93,8 +90,8 @@ az acr task create --name purgeTask \
 
 ```azurecli
 # Environment variable for container command line
-PURGE_CMD="mcr.microsoft.com/acr/acr-cli:0.1 purge \
-  --registry {{.Run.Registry}} --filter 'hello-world:.*' --ago 1d --untagged"
+PURGE_CMD="acr purge --filter 'hello-world:.*' \
+  --ago 1d --untagged"
 
 az acr run \
   --cmd "$PURGE_CMD" \
@@ -115,13 +112,12 @@ az acr run \
 
 ```azurecli
 # Environment variable for container command line
-PURGE_CMD="mcr.microsoft.com/acr/acr-cli:0.1 purge \
-  --registry {{.Run.Registry}} \
+PURGE_CMD="acr purge \
   --filter 'samples/devimage1:.*' --filter 'samples/devimage2:.*' \
   --ago 0d --untagged --dry-run"
 
 az acr run \
-  --cmd  "$PURGE_CMD" \
+  --cmd "$PURGE_CMD" \
   --registry myregistry \
   /dev/null
 ```
@@ -156,8 +152,7 @@ Number of deleted manifests: 4
 
 ```azurecli
 # Environment variable for container command line
-PURGE_CMD="mcr.microsoft.com/acr/acr-cli:0.1 purge \
-  --registry {{.Run.Registry}} \
+PURGE_CMD="acr purge \
   --filter 'samples/devimage1:.*' --filter 'samples/devimage2:.*' \
   --ago 0d --untagged"
 
@@ -170,7 +165,7 @@ az acr task create --name weeklyPurgeTask \
 
 Выполните команду [AZ запись контроля][az-acr-task-show] доступа, чтобы увидеть, что триггер таймера настроен.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте о других вариантах [удаления данных образа](container-registry-delete.md) в реестре контейнеров Azure.
 

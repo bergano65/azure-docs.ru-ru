@@ -1,5 +1,5 @@
 ---
-title: Мобильное приложение, вызывающее веб-API (переместить в рабочую среду) — платформа Microsoft Identity
+title: Перемещение мобильного приложения вызов веб-API в рабочую среду — платформа Microsoft Identity | Службы
 description: Узнайте, как создать мобильное приложение, вызывающее веб-API (переместить в рабочую среду).
 services: active-directory
 documentationcenter: dev-center-name
@@ -16,12 +16,12 @@ ms.author: jmprieur
 ms.reviwer: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67788dd9257a0a4685313dce44c6a3dfb5e514df
-ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
+ms.openlocfilehash: 3e267b2f398480da6949a4c85133342aad5c2ba7
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68413608"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74919908"
 ---
 # <a name="mobile-app-that-calls-web-apis---move-to-production"></a>Мобильное приложение, вызывающее веб-API — переместить в рабочую среду
 
@@ -44,7 +44,7 @@ ms.locfileid: "68413608"
 - Пользователи могут запрашивать помощь при возникновении проблем. Рекомендуется записывать и временно сохранять журналы, а также указывать расположение, в котором пользователи могут отправлять их. MSAL предоставляет расширения ведения журнала для записи подробных сведений о проверке подлинности.
 - Если он доступен, включите телеметрию с помощью MSAL, чтобы собрать данные о том, как пользователи входят в приложение.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
 

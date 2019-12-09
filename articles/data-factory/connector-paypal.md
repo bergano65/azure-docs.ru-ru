@@ -4,20 +4,19 @@ description: Узнайте, как копировать данные из PayPa
 services: data-factory
 documentationcenter: ''
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 106fa42fc7c9feb51ab6bf7f1be5a13a08d234a0
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 2cfe405c6de5b78a003db68053c0a6034c3b241b
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73680494"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930852"
 ---
 # <a name="copy-data-from-paypal-using-azure-data-factory-preview"></a>Копирование данных из PayPal с помощью фабрики данных Azure (предварительная версия)
 
@@ -37,7 +36,7 @@ ms.locfileid: "73680494"
 
 Фабрика данных Azure имеет встроенный драйвер для настройки подключения. Поэтому с использованием этого соединителя вам не нужно устанавливать драйверы вручную.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -47,17 +46,17 @@ ms.locfileid: "73680494"
 
 Для связанной службы PayPal поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **PayPal**. | Да |
-| host | URL-адрес экземпляра PayPal. (api.sandbox.paypal.com).  | Да |
-| clientid | Идентификатор клиента, связанный с приложением PayPal.  | Да |
-| clientSecret | Секрет клиента, связанный с приложением PayPal. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| Тип | Для свойства type необходимо задать значение **PayPal**. | ДА |
+| host | URL-адрес экземпляра PayPal. (api.sandbox.paypal.com).  | ДА |
+| clientid | Идентификатор клиента, связанный с приложением PayPal.  | ДА |
+| clientSecret | Секрет клиента, связанный с приложением PayPal. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет |
 | useHostVerification | Указывает, следует ли требовать, чтобы имя узла в сертификате сервера совпадало с именем узла сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет |
 | usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет |
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -82,9 +81,9 @@ ms.locfileid: "73680494"
 
 Чтобы скопировать данные из PayPal, задайте для свойства type набора данных значение **PayPalObject**. Поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство Type набора данных должно иметь значение **пайпалобжект** . | Да |
+| Тип | Свойство Type набора данных должно иметь значение **пайпалобжект** . | ДА |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -112,12 +111,12 @@ ms.locfileid: "73680494"
 
 Чтобы копировать данные из PayPal, задайте для типа источника в действии копирования значение **PayPalSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство type источника действия копирования должно иметь значение **PayPalSource**. | Да |
-| запрос | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Payment_Experience"`. | Нет (если для набора данных задано свойство tableName) |
+| Тип | Свойство type источника действия копирования должно иметь значение **PayPalSource**. | ДА |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Payment_Experience"`. | Нет (если для набора данных задано свойство tableName) |
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[

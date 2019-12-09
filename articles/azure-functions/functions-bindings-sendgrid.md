@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 11/29/2017
 ms.author: cshoe
-ms.openlocfilehash: 997c9427883e2a099c2c185b618701fb85cb96a6
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: a96cd537328a1a9edeeb03f81350ed5393806765
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231090"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74927579"
 ---
 # <a name="azure-functions-sendgrid-bindings"></a>Привязки SendGrid для Функций Azure
 
@@ -18,18 +18,18 @@ ms.locfileid: "74231090"
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
-## <a name="packages---functions-1x"></a>Пакеты — Функции 1.x
+## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
 
 Привязки SendGrid доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.SendGrid](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.SendGrid) версии 2.x. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk-extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions.SendGrid/).
 
 [!INCLUDE [functions-package](../../includes/functions-package.md)]
 
-## <a name="packages---functions-2x"></a>Пакеты — Функции 2.x
+## <a name="packages---functions-2x-and-higher"></a>Packages — функции 2. x и более поздних версий
 
 Привязки SendGrid доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.SendGrid](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.SendGrid) версии 3.x. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk-extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.SendGrid/).
 
 > [!NOTE]
-> Версия 2. x не создает раздел или подписку, настроенную в экземпляре `ServiceBusTrigger`. Версия 2. x основана на [Microsoft. Azure. servicebus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus) и не обрабатывает управление очередями.
+> Версии 2. x и выше не создают раздел или подписку, настроенные в экземпляре `ServiceBusTrigger`. Эти версии основаны на [Microsoft. Azure. servicebus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus) , который не обрабатывает управление очередями.
 
 [!INCLUDE [functions-package-v2](../../includes/functions-package-v2.md)]
 
@@ -247,16 +247,16 @@ public static void Run(
 
 Полный пример см. в разделе [Пример C#](#c-example).
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Настройка
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `SendGrid`.
 
-|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type**|| Обязательное. Необходимо задать значение `sendGrid`.|
 |**direction**|| Обязательное. Необходимо задать значение `out`.|
 |**name**|| Обязательное. Имя переменной, из которой в коде функции можно получить запрос или текст запроса. Это значение равно ```$return``` при наличии только одного возвращаемого значения. |
-|**apiKey**|**apiKey**| Имя параметра приложения, в котором содержится ваш ключ API. Если значение не задано, имя параметра приложения по умолчанию AzureWebJobsSendGridApiKey.|
+|**apiKey**|**ApiKey**| Имя параметра приложения, в котором содержится ваш ключ API. Если значение не задано, имя параметра приложения по умолчанию AzureWebJobsSendGridApiKey.|
 |**to**|**To**| Электронный адрес получателя. |
 |**from**|**from**| Электронный адрес отправителя. |
 |**subject**|**Тема**| Тема электронного сообщения. |
@@ -268,10 +268,10 @@ public static void Run(
 
 ## <a name="hostjson-settings"></a>Параметры файла host.json
 
-В этом разделе описываются глобальные параметры конфигурации, доступные для этой привязки в версии 2.x. В приведенном ниже примере файла host.json содержатся только параметры версии 2.x для этой привязки. Дополнительные сведения о глобальных параметрах конфигурации в версии 2.x см. в статье [Справочник по файлу host.json для Функций Azure](functions-host-json.md).
+В этом разделе описаны глобальные параметры конфигурации, доступные для этой привязки в версиях 2. x и более поздних. Пример файла host. JSON ниже содержит только параметры версии 2. x + для этой привязки. Дополнительные сведения о глобальных параметрах конфигурации в версиях 2. x и более поздних версий см. в [справочнике по Host. JSON для функций Azure](functions-host-json.md).
 
 > [!NOTE]
-> Чтобы получить дополнительные сведения о файле host.json в Функции 1.x, см. статью [host.json reference for Azure Functions 1.x](functions-host-json-v1.md)(Справочник по файлу host.json для службы "Функции Azure" версии 1.x.).
+> Сведения о файле host.json в Функциях Azure версии 1.x см. в [этой статье](functions-host-json-v1.md).
 
 ```json
 {
@@ -284,12 +284,12 @@ public static void Run(
 }
 ```  
 
-|Свойство  |значение по умолчанию | ОПИСАНИЕ |
+|Свойство  |значение по умолчанию | Описание |
 |---------|---------|---------| 
-|from|Недоступно|Адрес электронной почты для всех функций.| 
+|from|Н/Д|Адрес электронной почты для всех функций.| 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

@@ -4,20 +4,19 @@ description: Сведения о добавлении отказоустойчи
 services: data-factory
 documentationcenter: ''
 author: dearandyxu
-manager: craigg
+manager: anandsub
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 10/26/2018
 ms.author: yexu
-ms.openlocfilehash: a60cafd529db1c6726a15db2c442af8d097411cc
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: b874c0dcc1f394866e74b45e6bc335a25ce24499
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73678158"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930015"
 ---
 #  <a name="fault-tolerance-of-copy-activity-in-azure-data-factory"></a>Отказоустойчивость действия копирования в фабрике данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -49,7 +48,7 @@ ms.locfileid: "73678158"
 >- Эта функция не применяется, когда действие копирования настроено на вызов [Amazon Redshift Unload](connector-amazon-redshift.md#use-unload-to-copy-data-from-amazon-redshift).
 >- Эта функция не применяется, если действие копирования настроено для вызова [хранимой процедуры из приемника SQL](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-database#invoke-a-stored-procedure-from-a-sql-sink).
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Настройка
 В следующем примере приводится определение JSON для настройки пропуска несовместимых строк в действии копирования:
 
 ```json
@@ -71,11 +70,11 @@ ms.locfileid: "73678158"
 }
 ```
 
-Свойство | Description (Описание) | Допустимые значения | Обязательно
+Свойство | Описание | Допустимые значения | Обязательно для заполнения
 -------- | ----------- | -------------- | -------- 
 enableSkipIncompatibleRow | Указывает, следует ли пропустить несовместимые строки во время копирования или нет. | Да<br/>False (по умолчанию) | Нет
 redirectIncompatibleRowSettings | Группа свойств, которые можно указать, если вы хотите записать несовместимые строки в журнал. | &nbsp; | Нет
-linkedServiceName (имя связанной службы) | Связанная [служба хранилища Azure](connector-azure-blob-storage.md#linked-service-properties) или [Azure Data Lake Store](connector-azure-data-lake-store.md#linked-service-properties), в которой будет храниться журнал, содержащий пропущенные строки. | Имя связанной службы `AzureStorage` или `AzureDataLakeStore`, которая ссылается на экземпляр хранилища, используемый для хранения файла журнала. | Нет
+linkedServiceName | Связанная [служба хранилища Azure](connector-azure-blob-storage.md#linked-service-properties) или [Azure Data Lake Store](connector-azure-data-lake-store.md#linked-service-properties), в которой будет храниться журнал, содержащий пропущенные строки. | Имя связанной службы `AzureStorage` или `AzureDataLakeStore`, которая ссылается на экземпляр хранилища, используемый для хранения файла журнала. | Нет
 path | Путь к файлу журнала, который содержит пропущенные строки. | Укажите путь к журналу, в котором будут храниться несовместимые данные. Если путь не указан, служба создаст контейнер самостоятельно. | Нет
 
 ## <a name="monitor-skipped-rows"></a>Мониторинг пропущенных строк

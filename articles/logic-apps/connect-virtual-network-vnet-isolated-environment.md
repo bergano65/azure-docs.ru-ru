@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 11/27/2019
-ms.openlocfilehash: 6e301cf8e24ba740b56c63d7f95b50617ba25383
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 27c83bffe40fd80f87542ee4486ef90e684bd5a6
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74792705"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74931847"
 ---
 # <a name="connect-to-azure-virtual-networks-from-azure-logic-apps-by-using-an-integration-service-environment-ise"></a>Подключение к виртуальным сетям Azure из Azure Logic Apps с помощью среды службы интеграции (ISE)
 
@@ -200,7 +200,7 @@ ms.locfileid: "74792705"
 
    ![После успешной проверки щелкните "Создать"](./media/connect-virtual-network-vnet-isolated-environment/ise-validation-success.png)
 
-   Azure начнет развертывание среды. Выполнение этого процесса *может* занять до двух часов. Чтобы проверить состояние развертывания, на панели инструментов Azure выберите значок уведомлений, который открывает область уведомлений.
+   Azure начинает развертывание среды, что обычно занимает от двух часов до завершения. Иногда развертывание может занять до четырех часов. Чтобы проверить состояние развертывания, на панели инструментов Azure выберите значок уведомлений, который открывает область уведомлений.
 
    ![Проверка состояния развертывания](./media/connect-virtual-network-vnet-isolated-environment/environment-deployment-status.png)
 

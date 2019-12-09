@@ -2,23 +2,21 @@
 title: Перенос данных из Data Lake и хранилища данных в Azure
 description: Используйте фабрику данных Azure для переноса данных из хранилищ данных и хранилища данных в Azure.
 services: data-factory
-documentationcenter: ''
 author: dearandyxu
 ms.author: yexu
 ms.reviewer: ''
 manager: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 7/30/2019
-ms.openlocfilehash: 056e98c18dbe2dd1adaa9386145ef18e36f8aac2
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: aaf1593cc049e8b23f8ebe36fea022b3029ccd04
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74217567"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930795"
 ---
 # <a name="use-azure-data-factory-to-migrate-data-from-your-data-lake-or-data-warehouse-to-azure"></a>Перенос данных из хранилища данных в Azure с помощью фабрики данных Azure
 
@@ -58,7 +56,7 @@ ms.locfileid: "74217567"
 > С помощью оперативной миграции можно обеспечить сквозную загрузку исторических данных и добавочные веб-каналы с помощью одного средства.  При таком подходе данные можно синхронизировать между существующим хранилищем и новым хранилищем во время всего окна миграции. Это означает, что вы можете перестроить логику ETL в новом хранилище с обновленными данными.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Перенос данных из AWS S3 в Azure](data-migration-guidance-s3-azure-storage.md)
 - [Перенос данных из локального кластера Hadoop в Azure](data-migration-guidance-hdfs-azure-storage.md)

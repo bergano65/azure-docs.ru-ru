@@ -4,20 +4,19 @@ description: Узнайте, как копировать данные из Postg
 services: data-factory
 documentationcenter: ''
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: 1f270d2e303a8f7b5589d28f101c797c38b2b626
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: fab3b919ee3ecb1f8e76b70bada57a5380aaeab8
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73680457"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74927813"
 ---
 # <a name="copy-data-from-postgresql-by-using-azure-data-factory"></a>Копирование данных из PostgreSQL с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -37,13 +36,13 @@ ms.locfileid: "73680457"
 
 В частности, этот соединитель PostgreSQL поддерживает PostgreSQL **версии 7.4 и более поздних**.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
 Для Integration Runtime (Self-hosted) версии ниже, чем 3.7, установите на компьютере среды выполнения интеграции [поставщик данных Ngpsql для PostgreSQL](https://go.microsoft.com/fwlink/?linkid=282716) версии от 2.0.12 до 3.1.9.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -53,20 +52,20 @@ ms.locfileid: "73680457"
 
 Для связанной службы PostgreSQL поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **PostgreSql** | Да |
-| connectionString | Строка подключения к базе данных Azure для PostgreSQL через интерфейс ODBC. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `password` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| Тип | Для свойства type необходимо задать значение **PostgreSql** | ДА |
+| connectionString | Строка подключения к базе данных Azure для PostgreSQL через интерфейс ODBC. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `password` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
 Типичная строка подключения — `Server=<server>;Database=<database>;Port=<port>;UID=<username>;Password=<Password>`. Дополнительные свойства, которые вы можете установить в вашем случае:
 
-| Свойство | Description (Описание) | Параметры | Обязательно |
+| Свойство | Описание | Параметры | Обязательно для заполнения |
 |:--- |:--- |:--- |:--- |
 | EncryptionMethod (EM)| Метод, используемый драйвером для шифрования данных, отправленных между драйвером и сервером базы данных. Например, `EncryptionMethod=<0/1/6>;`| 0 (без шифрования) **(по умолчанию)** -1 (SSL) или 6 (RequestSSL) | Нет |
 | ValidateServerCertificate (VSC) | Определяет, проверяет ли драйвер сертификат, отправленный сервером базы данных, когда включено шифрование SSL (метод шифрования = 1). Например, `ValidateServerCertificate=<0/1>;`| 0 (отключено) **(по умолчанию)** -1 (включено) | Нет |
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -148,9 +147,9 @@ ms.locfileid: "73680457"
 
 Чтобы скопировать данные из PostgreSQL, поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство Type набора данных должно иметь значение **постгресклтабле** . | Да |
+| Тип | Свойство Type набора данных должно иметь значение **постгресклтабле** . | ДА |
 | schema | Имя схемы. |Нет (если свойство query указано в источнике действия)  |
 | таблица | Имя таблицы. |Нет (если свойство query указано в источнике действия)  |
 | tableName | Имя таблицы со схемой. Это свойство поддерживается для обеспечения обратной совместимости. Используйте `schema` и `table` для новой рабочей нагрузки. | Нет (если свойство query указано в источнике действия) |
@@ -183,15 +182,15 @@ ms.locfileid: "73680457"
 
 Чтобы скопировать данные из PostgreSQL, в разделе **источник** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство Type источника действия копирования должно иметь значение **постгресклсаурце** . | Да |
-| запрос | Используйте пользовательский SQL-запрос для чтения данных. Например, `"query": "SELECT * FROM \"MySchema\".\"MyTable\""`. | Нет (если для набора данных задано свойство tableName) |
+| Тип | Свойство Type источника действия копирования должно иметь значение **постгресклсаурце** . | ДА |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"query": "SELECT * FROM \"MySchema\".\"MyTable\""`. | Нет (если для набора данных задано свойство tableName) |
 
 > [!NOTE]
 > В именах схем и таблиц учитывается регистр. Заключите имя в `""` (двойные кавычки) в запросе.
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.reviewer: sgilley
 ms.date: 11/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: 9bb22a564f52dfcdb3fbec6d842e452ca416059f
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: ce1076446fb704bb64bac98c7afe53e63d3b3450
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73961698"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74912428"
 ---
 # <a name="train-models-with-azure-machine-learning-using-estimator"></a>Обучение моделей с помощью оценщика Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "73961698"
 
 ### <a name="single-node-training"></a>Одноузловое обучение
 
-Используйте `Estimator` для одноузлового тренировочного запуска в удаленной вычислительной среде в Azure для модели scikit-learn. У вас уже должен быть создан объект [ ](how-to-set-up-training-targets.md#amlcompute)целевого вычислительного ресурса`compute_target` и объект [ ](how-to-access-data.md)хранилища данных`ds`.
+Используйте `Estimator` для одноузлового тренировочного запуска в удаленной вычислительной среде в Azure для модели scikit-learn. У вас уже должен быть создан объект `compute_target` [целевого вычислительного ресурса](how-to-set-up-training-targets.md#amlcompute) и объект `ds` [хранилища данных](how-to-access-data.md).
 
 ```Python
 from azureml.train.estimator import Estimator
@@ -58,7 +58,7 @@ sk_est = Estimator(source_directory='./my-sklearn-proj',
 
 Этот фрагмент кода определяет следующие параметры конструктора `Estimator`.
 
-Параметр | ОПИСАНИЕ
+Параметр | Описание
 --|--
 `source_directory`| Локальный каталог, который содержит весь код, необходимый для задания обучения. Эта папка копируется с локального компьютера на удаленное вычисление.
 `script_params`| Словарь, указывающий аргументы командной строки для передачи в сценарий обучения `entry_script`в виде пар `<command-line argument, value>`. Чтобы задать флаг verbose в `script_params`, используйте `<command-line argument, "">`.
@@ -68,7 +68,7 @@ sk_est = Estimator(source_directory='./my-sklearn-proj',
 
 Конструктор имеет другой параметр с именем `pip_packages`, который используется для любых требуемых пакетов PIP.
 
-Теперь, когда вы создали объект `Estimator`, можно выполнить задание обучения в удаленной вычислительной среде посредством вызова функции `submit` в объекте [ ](concept-azure-machine-learning-architecture.md#experiments)Эксперимента`experiment`. 
+Теперь, когда вы создали объект `Estimator`, можно выполнить задание обучения в удаленной вычислительной среде посредством вызова функции `submit` в объекте `experiment` [Эксперимента](concept-azure-machine-learning-architecture.md#experiments). 
 
 ```Python
 run = experiment.submit(sk_est)
@@ -92,7 +92,7 @@ print(run.get_portal_url())
 
 Ниже показан код, позволяющий выполнить распределенное обучение для модели Keras. Кроме того, предполагается, что для обучения вместо стандартных образов Машинного обучения Azure используется пользовательский образ Docker из контейнера Docker Hub `continuumio/miniconda`.
 
-У вас уже должен быть создан объект [ ](how-to-set-up-training-targets.md#amlcompute)целевого вычислительного ресурса`compute_target`. Вы можете создать оценщик следующим образом.
+У вас уже должен быть создан объект `compute_target` [целевого вычислительного ресурса](how-to-set-up-training-targets.md#amlcompute). Вы можете создать оценщик следующим образом.
 
 ```Python
 from azureml.train.estimator import Estimator
@@ -110,7 +110,7 @@ estimator = Estimator(source_directory='./my-keras-proj',
 
 В приведенном выше коде показаны следующие новые параметры конструктора `Estimator`:
 
-Параметр | ОПИСАНИЕ | значение по умолчанию
+Параметр | Описание | значение по умолчанию
 --|--|--
 `custom_docker_image`| Имя используемого образа. Можно предоставлять только те образы, которые доступны в публичных хранилищах Docker (в данном случае в центре Docker). Чтобы выбрать образ из частного репозитория Docker, используйте параметр конструктора `environment_definition`. [Ознакомьтесь с примером ниже](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/how-to-use-estimator/how-to-use-estimator.ipynb). | `None`
 `node_count`| Количество узлов, которые будут использоваться для задания обучения. | `1`
@@ -122,6 +122,16 @@ estimator = Estimator(source_directory='./my-keras-proj',
 ```Python
 run = experiment.submit(estimator)
 print(run.get_portal_url())
+```
+
+## <a name="registering-a-model"></a>регистрация модели;
+
+После обучения модели ее можно сохранить и зарегистрировать в рабочей области. Регистрация модели позволяет хранить и отменять версии моделей в рабочей области, чтобы упростить [Управление моделями и их развертывание](concept-model-management-and-deployment.md).
+
+Выполнение следующего кода приведет к регистрации модели в рабочей области и сделает ее доступной для ссылки по имени в удаленных контекстах вычислений или скриптах развертывания. Дополнительные сведения и дополнительные параметры см. в разделе [`register_model`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py#register-model-model-name--model-path-none--tags-none--properties-none--model-framework-none--model-framework-version-none--description-none--datasets-none--sample-input-dataset-none--sample-output-dataset-none--resource-configuration-none----kwargs-) в справочной документации.
+
+```python
+model = run.register_model(model_name='sklearn-sample')
 ```
 
 ## <a name="github-tracking-and-integration"></a>Отслеживание и интеграция GitHub
@@ -141,7 +151,7 @@ print(run.get_portal_url())
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Отслеживание метрик выполнения во время обучения](how-to-track-experiments.md)
 * [Обучение моделей PyTorch](how-to-train-pytorch.md)

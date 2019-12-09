@@ -1,22 +1,24 @@
 ---
 title: Копирование и преобразование данных в хранилище BLOB-объектов Azure
 description: Узнайте, как копировать данные в хранилище BLOB-объектов и из него, а затем преобразовывать данные в хранилище BLOB-объектов с помощью фабрики данных.
+ms.author: jingwang
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
+ms.custom: seo-lt-2019
 ms.date: 11/13/2019
-ms.author: jingwang
-ms.openlocfilehash: 9116fca28c48803db613eb36fbbbbf4223e6abcb
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 3c6b6a403919c3545ec000a701ff31044343f73e
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74891122"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74929949"
 ---
 # <a name="copy-and-transform-data-in-azure-blob-storage-by-using-azure-data-factory"></a>Копирование и преобразование данных в хранилище BLOB-объектов Azure с помощью фабрики данных Azure
+
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-azure-blob-connector.md)
 > * [Текущая версия](connector-azure-blob-storage.md)

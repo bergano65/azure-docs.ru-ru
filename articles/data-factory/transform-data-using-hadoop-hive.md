@@ -2,24 +2,24 @@
 title: Преобразование данных с помощью действия Hadoop Hive
 description: Узнайте, как с помощью действия Hive в фабрике данных Azure выполнять запросы Hive к кластеру HDInsight по требованию или собственному кластеру HDInsight.
 services: data-factory
-documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/15/2019
 author: nabhishek
 ms.author: abnarain
-manager: craigg
-ms.openlocfilehash: 84c7ff8268934c771a056e41cd2bf484b8674302
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+manager: anandsub
+ms.custom: seo-lt-2019
+ms.date: 01/15/2019
+ms.openlocfilehash: b4af3f897a12c71d73962735d3fe68d95f138cef
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74893830"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74912914"
 ---
 # <a name="transform-data-using-hadoop-hive-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hadoop Hive в фабрике данных Azure
+
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-hive-activity.md)
 > * [Текущая версия](transform-data-using-hadoop-hive.md)

@@ -1,6 +1,7 @@
 ---
-title: Веб-API, веб-вызовы других API-интерфейсы (получить маркер для приложения) — платформе Microsoft identity
-description: Сведения о создании веб-API, что вызовы других веб-API, (получение токена для приложения).
+title: Получение маркера для веб-API, который вызывает веб-API | Службы
+titleSuffix: Microsoft identity platform
+description: Узнайте, как создать веб-API, который вызывает веб-API, требующие получения маркера для приложения.
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -15,20 +16,20 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 986e2e0f8a481d61dc870af2548290658b44d2d3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 276ff1e5e9f709aa5b38d1efa4055dfe3baf3cc5
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65231098"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74919789"
 ---
-# <a name="web-api-that-calls-web-apis---acquire-a-token-for-the-app"></a>Веб-API, вызывающее веб-интерфейсы API — получение маркера для приложения
+# <a name="web-api-that-calls-web-apis---acquire-a-token-for-the-app"></a>Веб-API, вызывающий веб-API — получение маркера для приложения
 
-После создания клиентского приложения, используйте его, чтобы получить маркер, который можно использовать для вызова веб-API.
+После построения объекта клиентского приложения используйте его для получения маркера, который можно использовать для вызова веб-API.
 
-## <a name="code-in-the-controller"></a>Код в контроллер
+## <a name="code-in-the-controller"></a>Код в контроллере
 
-Ниже приведен пример кода, который будет вызываться в действия контроллеров API, вызвав API нижнего уровня (с именем "todolist").
+Ниже приведен пример кода, который будет вызываться в действиях контроллеров API с вызовом подчиненного API (с именем ToDoList).
 
 ```CSharp
 private async Task GetTodoList(bool isAppStarting)
@@ -49,9 +50,9 @@ private async Task GetTodoList(bool isAppStarting)
 }
 ```
 
-`BuildConfidentialClient()` похоже, что вы уже видели в этой статье [веб-API, который вызывает веб-API — Конфигурация приложения](scenario-web-api-call-api-app-configuration.md). `BuildConfidentialClient()` Создает экземпляр `IConfidentialClientApplication` с кэшем, который содержит сведения только для одной учетной записи. Учетная запись предоставляется `GetAccountIdentifier` метод.
+`BuildConfidentialClient()` аналогично тому, что вы видели в [веб-API статьи, который вызывает веб-API — конфигурацию приложения](scenario-web-api-call-api-app-configuration.md). `BuildConfidentialClient()` создает экземпляры `IConfidentialClientApplication` с кэшем, который содержит только сведения для одной учетной записи. Учетная запись предоставляется методом `GetAccountIdentifier`.
 
-`GetAccountIdentifier` Метод использует утверждения, связанные с удостоверением, для которого веб-API полученный маркер JWT пользователем:
+Метод `GetAccountIdentifier` использует утверждения, связанные с идентификатором пользователя, для которого веб-API получил JWT:
 
 ```CSharp
 public static string GetMsalAccountId(this ClaimsPrincipal claimsPrincipal)

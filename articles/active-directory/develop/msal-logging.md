@@ -1,29 +1,25 @@
 ---
-title: Ведение журнала в приложениях библиотеки проверки подлинности Майкрософт (MSAL)
+title: Ведение журнала в приложениях MSAL | Службы
 titleSuffix: Microsoft identity platform
 description: Сведения о ведении журналов в приложениях MSAL (библиотека аутентификации Майкрософт).
 services: active-directory
-documentationcenter: dev-center-name
 author: TylerMSFT
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/11/2019
 ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5960389389e4b75794a7334c0bff12ce3ac0f170
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 9a71093ee05e032a5df89bb0560b6daa82e2fbf2
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74452466"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74916151"
 ---
 # <a name="logging-in-msal-applications"></a>Ведение журнала в приложениях MSAL
 
@@ -182,7 +178,7 @@ var UserAgentApplication = new Msal.UserAgentApplication(msalConfig);
 typedef void (^MSALLogCallback)(MSALLogLevel level, NSString *message, BOOL containsPII);
 ```
 
-Например,
+Пример.
 
 ```objc
 [MSALGlobalConfig.loggerConfig setLogCallback:^(MSALLogLevel level, NSString *message, BOOL containsPII)
@@ -215,7 +211,7 @@ MSALGlobalConfig.loggerConfig.piiEnabled = NO;
 
 Чтобы задать уровень ведения журнала при использовании MSAL для iOS и macOS, используйте одно из следующих значений:
 
-|уровень  |ОПИСАНИЕ |
+|уровень  |Описание |
 |---------|---------|
 | `MSALLogLevelNothing`| Отключить ведение журнала |
 | `MSALLogLevelError` | Уровень по умолчанию, выводит сведения только при возникновении ошибок |
@@ -223,7 +219,7 @@ MSALGlobalConfig.loggerConfig.piiEnabled = NO;
 | `MSALLogLevelInfo` |  Точки входа библиотеки с параметрами и различными операциями цепочки ключей |
 |`MSALLogLevelVerbose`     |  Трассировка API |
 
-Например,
+Пример.
 
 ```objc
 MSALGlobalConfig.loggerConfig.logLevel = MSALLogLevelVerbose;
@@ -233,7 +229,7 @@ MSALGlobalConfig.loggerConfig.logLevel = MSALLogLevelVerbose;
 
 Часть сообщения журнала MSAL имеет формат `TID = <thread_id> MSAL <sdk_ver> <OS> <OS_ver> [timestamp - correlation_id] message`
 
-Например,
+Пример.
 
 `TID = 551563 MSAL 0.2.0 iOS Sim 12.0 [2018-09-24 00:36:38 - 36764181-EF53-4E4E-B3E5-16FE362CFC44] acquireToken returning with error: (MSALErrorDomain, -42400) User cancelled the authorization session.`
 
@@ -260,7 +256,7 @@ MSALGlobalConfig.loggerConfig.logLevel = MSALLogLevelVerbose;
 typedef void (^MSALLogCallback)(MSALLogLevel level, NSString *message, BOOL containsPII);
 ```
 
-Например,
+Пример.
 
 ```swift
 MSALGlobalConfig.loggerConfig.setLogCallback { (level, message, containsPII) in
@@ -292,7 +288,7 @@ MSALGlobalConfig.loggerConfig.piiEnabled = false
 
 Чтобы задать уровень ведения журнала при использовании MSAL для iOS и macOS, используйте одно из следующих значений:
 
-|уровень  |ОПИСАНИЕ |
+|уровень  |Описание |
 |---------|---------|
 | `MSALLogLevelNothing`| Отключить ведение журнала |
 | `MSALLogLevelError` | Уровень по умолчанию, выводит сведения только при возникновении ошибок |
@@ -300,7 +296,7 @@ MSALGlobalConfig.loggerConfig.piiEnabled = false
 | `MSALLogLevelInfo` |  Точки входа библиотеки с параметрами и различными операциями цепочки ключей |
 |`MSALLogLevelVerbose`     |  Трассировка API |
 
-Например,
+Пример.
 
 ```swift
 MSALGlobalConfig.loggerConfig.logLevel = .verbose
@@ -310,7 +306,7 @@ MSALGlobalConfig.loggerConfig.logLevel = .verbose
 
 Часть сообщения журнала MSAL имеет формат `TID = <thread_id> MSAL <sdk_ver> <OS> <OS_ver> [timestamp - correlation_id] message`
 
-Например,
+Пример.
 
 `TID = 551563 MSAL 0.2.0 iOS Sim 12.0 [2018-09-24 00:36:38 - 36764181-EF53-4E4E-B3E5-16FE362CFC44] acquireToken returning with error: (MSALErrorDomain, -42400) User cancelled the authorization session.`
 

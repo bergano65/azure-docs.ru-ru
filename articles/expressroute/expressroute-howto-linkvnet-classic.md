@@ -1,25 +1,24 @@
 ---
-title: 'ExpressRoute: связывание виртуальной сети с цепью: классическая модель'
+title: 'Azure ExpressRoute: связывание виртуальной сети с цепью: классическая модель'
 description: В этом документе содержатся общие сведения о связывании виртуальных сетей с каналами ExpressRoute с помощью классической модели развертывания и PowerShell.
 services: expressroute
-documentationcenter: na
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 07/27/2018
+ms.date: 12/06/2019
 ms.author: cherylmc
-ms.openlocfilehash: e02073e777c62be00b5c25c2242294e54795a0d4
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 53c200b01dfa6bce09cfc058dc24ab8e38d253a6
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74031613"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930035"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit-using-powershell-classic"></a>Подключение виртуальной сети к каналу ExpressRoute с помощью PowerShell (классическая модель)
 > [!div class="op_single_selector"]
-> * [портал Azure](expressroute-howto-linkvnet-portal-resource-manager.md)
+> * [Портал Azure](expressroute-howto-linkvnet-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-linkvnet-arm.md)
-> * [Интерфейс командной строки Azure](howto-linkvnet-cli.md)
+> * [Azure CLI](howto-linkvnet-cli.md)
 > * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-a-connection-between-your-vpn-gateway-and-expressroute-circuit)
 > * [PowerShell (классическая модель)](expressroute-howto-linkvnet-classic.md)
 >
@@ -46,40 +45,7 @@ ms.locfileid: "74031613"
 
 ### <a name="download-the-latest-powershell-cmdlets"></a>Скачивание последних версий командлетов PowerShell
 
-Установите последние версии модулей PowerShell для управления службами Azure и модуль ExpressRoute. При использовании следующего примера обратите внимание, что номер версии (в нашем случае — 5.1.1) будет меняться по мере выпуска новых версий командлетов.
-
-```powershell
-Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.1.1\Azure\Azure.psd1'
-Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.1.1\ExpressRoute\ExpressRoute.psd1'
-```
-
-См. пошаговые инструкции по [настройке компьютера для использования командлетов Azure PowerShell](/powershell/azure/overview).
-
-### <a name="sign-in"></a>входа
-
-Чтобы войти в свою учетную запись Azure, используйте код из следующих примеров:
-
-1. Откройте консоль PowerShell с повышенными правами и подключитесь к своей учетной записи.
-
-   ```powershell
-   Connect-AzAccount
-   ```
-2. Просмотрите подписки учетной записи.
-
-   ```powershell
-   Get-AzSubscription
-   ```
-3. При наличии нескольких подписок выберите подписку, которую вы хотите использовать.
-
-   ```powershell
-   Select-AzSubscription -SubscriptionName "Replace_with_your_subscription_name"
-   ```
-
-4. Затем воспользуйтесь следующим командлетом, чтобы добавить подписку Azure в PowerShell для классической модели развертывания.
-
-   ```powershell
-   Add-AzureAccount
-   ```
+[!INCLUDE [classic powershell install instructions](../../includes/expressroute-poweshell-classic-install-include.md)]
 
 ## <a name="connect-a-virtual-network-in-the-same-subscription-to-a-circuit"></a>Подключение к каналу виртуальной сети в той же подписке
 Вы можете связать виртуальную сеть с каналом ExpressRoute, используя следующий командлет. Убедитесь в наличии шлюза виртуальной сети и его готовности к связыванию, прежде чем запускать командлет.
@@ -109,7 +75,7 @@ Remove-AzureDedicatedCircuitLink -ServiceKey "*****************************" -VN
 
 ![Подключение между подписками](./media/expressroute-howto-linkvnet-classic/cross-subscription.png)
 
-### <a name="administration"></a>Administration
+### <a name="administration"></a>Администрирование
 *Владелец канала* — это администратор или соадминистратор подписки, в которой создан канал ExpressRoute. Владелец канала может разрешить использовать свой выделенный канал администраторам и соадминистраторам других подписок (на схеме рабочего процесса они называются *пользователями канала*). Пользователи, получившие разрешение на использование канала ExpressRoute организации, смогут связать виртуальную сеть в своей подписке с этим каналом ExpressRoute.
 
 Владелец канала имеет право изменить или отменить авторизацию в любое время. Отмена авторизации приводит к удалению всех ссылок из подписки, доступ которой был отменен.
@@ -235,6 +201,6 @@ New-AzureDedicatedCircuitLink –servicekey "&&&&&&&&&&&&&&&&&&&&&&&&&&" –Vnet
 New-AzureDedicatedCircuitLink -ServiceKey "*****************************" -VNetName "MyVNet"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

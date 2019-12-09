@@ -8,12 +8,12 @@ author: reyang
 ms.author: reyang
 ms.date: 10/11/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 2114e60b5ed684063ed100279ea19f561bd335ea
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: af16643ed877ca427a22428afec028264de7a5d8
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849791"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74928979"
 ---
 # <a name="set-up-azure-monitor-for-your-python-application-preview"></a>Настройка Azure Monitor для приложения Python (Предварительная версия)
 
@@ -61,7 +61,16 @@ python -m pip install opencensus-ext-azure
 
 Пакет SDK использует три Azure Monitor экспорта для отправки различных типов телеметрии в Azure Monitor: трассировка, метрики и журналы. Дополнительные сведения об этих типах телеметрии см. [в разделе Общие сведения о платформе данных](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform). Используйте следующие инструкции для отправки этих типов телеметрии с помощью трех средств экспорта.
 
+## <a name="telemetry-type-mappings"></a>Сопоставления типов телеметрии
+
+Ниже приведены программы экспорта, которые Опенценсус сопоставляются с типами данных телеметрии, которые вы увидите в Azure Monitor.
+
+![Снимок экрана: сопоставление типов телеметрии из Опенценсус с Azure Monitor](./media/opencensus-python/0012-telemetry-types.png)
+
 ### <a name="trace"></a>Трассировка
+
+> [!NOTE]
+> `Trace` в Опенценсус относится к [распределенной трассировке](https://docs.microsoft.com/azure/azure-monitor/app/distributed-tracing). `AzureExporter` отправляет данные телеметрии `requests` и `dependency` Azure Monitor.
 
 1. Сначала давайте создадим некоторые данные трассировки локально. В режиме простоя Python или в любом редакторе введите следующий код.
 
@@ -293,7 +302,10 @@ python -m pip install opencensus-ext-azure
         main()
     ```
 
-4. Программа экспорта отправляет данные журнала в Azure Monitor. Данные можно найти в разделе `traces`.
+4. Программа экспорта отправляет данные журнала в Azure Monitor. Данные можно найти в разделе `traces`. 
+
+> [!NOTE]
+> `traces` в этом контексте не совпадает с `Tracing`. `traces` относится к типу телеметрии, который будет отображаться в Azure Monitor при использовании `AzureLogHandler`. `Tracing` ссылается на концепцию в Опенценсус и относится к [распределенной трассировке](https://docs.microsoft.com/azure/azure-monitor/app/distributed-tracing).
 
 5. Чтобы отформатировать сообщения журнала, можно использовать `formatters` в встроенном [API ведения журнала](https://docs.python.org/3/library/logging.html#formatter-objects)Python.
 

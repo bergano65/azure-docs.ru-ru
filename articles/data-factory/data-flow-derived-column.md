@@ -1,17 +1,18 @@
 ---
-title: Преобразование "производный столбец" в потоке данных сопоставления фабрики данных Azure
+title: Преобразование «Производный столбец» в потоке сопоставления данных
 description: Узнайте, как преобразовать масштабируемые данные в фабрике данных Azure с помощью преобразования «Производный столбец потока данных сопоставления».
 author: kromerm
 ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
+ms.custom: seo-lt-2019
 ms.date: 10/15/2019
-ms.openlocfilehash: 387af25b87fdedff5d15ccb6a03819ad8b020e9a
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: ce774868acc281f769e7f2991472e7d2a5da9739
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73676875"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930390"
 ---
 # <a name="derived-column-transformation-in-mapping-data-flow"></a>Преобразование «Производный столбец» в потоке сопоставления данных
 
@@ -27,7 +28,7 @@ ms.locfileid: "73676875"
 
 ![Выбор нового производного столбца](media/data-flow/columnpattern.png "Выбор нового производного столбца")
 
-## <a name="data-flow-script"></a>Сценарий потока данных
+## <a name="data-flow-script"></a>Скрипт потока данных
 
 ### <a name="syntax"></a>Синтаксис
 

@@ -1,24 +1,23 @@
 ---
-title: Копирование данных из Azure Data Explorer или обратно с помощью Фабрики данных Azure
+title: Копирование данных в обозреватель данных Azure или из нее
 description: Узнайте, как копировать данные из Azure Data Explorer или обратно с помощью действия копирования в конвейере Фабрики данных Azure.
 services: data-factory
-documentationcenter: ''
+ms.author: orspodek
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
+ms.custom: seo-lt-2019
 ms.date: 11/26/2019
-ms.author: orspodek
-ms.openlocfilehash: 0ffec2639d9dfbf3a82a3c24248d65a53e114745
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: 4cc315b91b5dbedcb22091149ca37061ff956efa
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74547143"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74913430"
 ---
 # <a name="copy-data-to-or-from-azure-data-explorer-by-using-azure-data-factory"></a>Копирование данных в Azure обозреватель данных или из нее с помощью фабрики данных Azure
 
@@ -149,7 +148,7 @@ ms.locfileid: "74547143"
 | Тип | Свойство **Type** источника действия копирования должно иметь значение **азуредатаексплорерсаурце** . | ДА |
 | query | Запрос только для чтения в [формате KQL](/azure/kusto/query/). Используйте пользовательский запрос KQL в качестве ссылки. | ДА |
 | queryTimeout | Время ожидания до истечения времени ожидания запроса. Значение по умолчанию — 10 минут (00:10:00); допустимое максимальное значение — 1 час (01:00:00). | Нет |
-| Усечение | Указывает, следует ли усекать возвращенный результирующий набор. По умолчанию результат усекается после 500 000 записей или 64 мегабайт (МБ). Для обеспечения правильного поведения действия настоятельно рекомендуется усечение. |Нет |
+| noTruncation | Указывает, следует ли усекать возвращенный результирующий набор. По умолчанию результат усекается после 500 000 записей или 64 мегабайт (МБ). Для обеспечения правильного поведения действия настоятельно рекомендуется усечение. |Нет |
 
 >[!NOTE]
 >По умолчанию источник обозреватель данных Azure имеет ограничение размера 500 000 записей или 64 МБ. Чтобы получить все записи без усечения, можно указать `set notruncation;` в начале запроса. Дополнительные сведения см. в разделе [ограничения запросов](https://docs.microsoft.com/azure/kusto/concepts/querylimits).
