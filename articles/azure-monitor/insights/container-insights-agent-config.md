@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 10/15/2019
-ms.openlocfilehash: deab16f3b80ada12a7167e90922dc38f3012be91
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 0d654dc05668a71b0fe69de32e5c09f8936951f8
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73478696"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74951587"
 ---
 # <a name="configure-agent-data-collection-for-azure-monitor-for-containers"></a>Настройка сбора данных агента для Azure Monitor для контейнеров
 
@@ -31,15 +31,15 @@ Azure Monitor для контейнеров собирает данные stdout
 
 Ниже приведены параметры, которые можно настроить для управления сбором данных.
 
-|Ключ |Тип данных |Значение |Description (Описание) |
+|Ключ |Тип данных |Value |Описание |
 |----|----------|------|------------|
 |`schema-version` |Строка (с учетом регистра) |Версия 1 |Это версия схемы, используемая агентом при анализе этого ConfigMap. Текущая поддерживаемая версия схемы — v1. Изменение этого значения не поддерживается и будет отклонено при вычислении ConfigMap.|
-|`config-version` |string | | Поддерживает возможность отслеживания версии этого файла конфигурации в системе управления версиями или в репозитории. Максимально допустимое количество символов равно 10, а все остальные символы усекаются. |
-|`[log_collection_settings.stdout] enabled =` |Логический | Значение true или false | Определяет, включен ли сбор журналов контейнеров stdout. Если задано значение `true`, а пространства имен не исключены для сбора журналов stdout (`log_collection_settings.stdout.exclude_namespaces` ниже), журналы stdout будут собираться из всех контейнеров во всех модулях или узлах в кластере. Если параметр не указан в Конфигмапс, по умолчанию используется значение `enabled = true`. |
-|`[log_collection_settings.stdout] exclude_namespaces =`|string | Массив с разделителями-запятыми |Массив пространств имен Kubernetes, для которых не будут собираться журналы stdout. Этот параметр эффективен, только если `log_collection_settings.stdout.enabled` имеет значение `true`. Если параметр не указан в ConfigMap, по умолчанию используется значение `exclude_namespaces = ["kube-system"]`.|
-|`[log_collection_settings.stderr] enabled =` |Логический | Значение true или false |Определяет, включен ли сбор журналов контейнеров stderr. Если задано значение `true`, а пространства имен не исключены для сбора журналов stdout (`log_collection_settings.stderr.exclude_namespaces`), то журналы stderr будут собираться из всех контейнеров во всех модулях или узлах в кластере. Если параметр не указан в Конфигмапс, по умолчанию используется значение `enabled = true`. |
-|`[log_collection_settings.stderr] exclude_namespaces =` |string |Массив с разделителями-запятыми |Массив пространств имен Kubernetes, для которых не будут собираться журналы stderr. Этот параметр эффективен, только если `log_collection_settings.stdout.enabled` имеет значение `true`. Если параметр не указан в ConfigMap, по умолчанию используется значение `exclude_namespaces = ["kube-system"]`. |
-| `[log_collection_settings.env_var] enabled =` |Логический | Значение true или false | Этот параметр управляет коллекцией переменных среды во всех модулях Pod и узлах в кластере и по умолчанию имеет значение `enabled = true`, если не указано в Конфигмапс. Если коллекция переменных среды включена глобально, ее можно отключить для определенного контейнера, задав для `AZMON_COLLECT_ENV` переменной среды значение **false** в параметре Dockerfile или в [файле конфигурации для Pod](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/) в разделе **env:** раздел. Если коллекция переменных среды глобально отключена, то нельзя включить сбор для определенного контейнера (то есть единственным переопределением, которое можно применить на уровне контейнера, является отключение коллекции, если она уже включена глобально). |
+|`config-version` |Строка | | Поддерживает возможность отслеживания версии этого файла конфигурации в системе управления версиями или в репозитории. Максимально допустимое количество символов равно 10, а все остальные символы усекаются. |
+|`[log_collection_settings.stdout] enabled =` |Логический | Значение true или false | Определяет, включен ли сбор журналов контейнеров stdout. Если задано значение `true` и никакие пространства имен не исключены для сбора журналов stdout (`log_collection_settings.stdout.exclude_namespaces` параметр ниже), журналы stdout будут собираться из всех контейнеров во всех модулях или узлах в кластере. Если не указано в Конфигмапс, значение по умолчанию — `enabled = true`. |
+|`[log_collection_settings.stdout] exclude_namespaces =`|Строка | Массив с разделителями-запятыми |Массив пространств имен Kubernetes, для которых не будут собираться журналы stdout. Этот параметр эффективен, только если для параметра `log_collection_settings.stdout.enabled` задано значение `true`. Если не указано в ConfigMap, значение по умолчанию — `exclude_namespaces = ["kube-system"]`.|
+|`[log_collection_settings.stderr] enabled =` |Логический | Значение true или false |Определяет, включен ли сбор журналов контейнеров stderr. Если задано значение `true` и пространства имен не исключены для сбора журналов stdout (`log_collection_settings.stderr.exclude_namespaces` параметр), то журналы stderr будут собираться из всех контейнеров во всех модулях или узлах в кластере. Если не указано в Конфигмапс, значение по умолчанию — `enabled = true`. |
+|`[log_collection_settings.stderr] exclude_namespaces =` |Строка |Массив с разделителями-запятыми |Массив пространств имен Kubernetes, для которых не будут собираться журналы stderr. Этот параметр эффективен, только если для параметра `log_collection_settings.stdout.enabled` задано значение `true`. Если не указано в ConfigMap, значение по умолчанию — `exclude_namespaces = ["kube-system"]`. |
+| `[log_collection_settings.env_var] enabled =` |Логический | Значение true или false | Этот параметр управляет коллекцией переменных среды во всех модулях Pod и узлах в кластере, а значение по умолчанию — `enabled = true`, если не указано в Конфигмапс. Если коллекция переменных среды включена глобально, ее можно отключить для определенного контейнера, задав для `AZMON_COLLECT_ENV` переменной среды значение **false** в параметре Dockerfile или в [файле конфигурации для Pod](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/) в разделе **env:** . Если коллекция переменных среды глобально отключена, то нельзя включить сбор для определенного контейнера (то есть единственным переопределением, которое можно применить на уровне контейнера, является отключение коллекции, если она уже включена глобально). |
 
 Конфигмапс является глобальным списком, и к нему может быть применен только один ConfigMap. У вас не может быть другой Конфигмапс.
 
@@ -55,15 +55,9 @@ Azure Monitor для контейнеров собирает данные stdout
     
     - Чтобы отключить коллекцию переменных среды для определенного контейнера, задайте ключ/значение, `[log_collection_settings.env_var] enabled = true` включить глобальную коллекцию переменных, а затем выполните действия, описанные [здесь](container-insights-manage-agent.md#how-to-disable-environment-variable-collection-on-a-container) , чтобы завершить настройку для конкретного контейнера.
     
-    - Чтобы отключить кластер для сбора журналов stderr, настройте ключ/значение, используя следующий пример: `[log_collection_settings.stderr] enabled = false`.
+    - Чтобы отключить кластер для сбора журналов stderr, настройте ключ или значение, используя следующий пример: `[log_collection_settings.stderr] enabled = false`.
 
 3. Создайте ConfigMap, выполнив следующую команду kubectl: `kubectl apply -f <configmap_yaml_file.yaml>`.
-    
-    Пример: `kubectl apply -f container-azm-ms-agentconfig.yaml`. 
-    
-    До вступления в силу изменение конфигурации может занять несколько минут, и все omsagent Pod в кластере будут перезапущены. Перезагрузка является пошаговым перезапуском для всех модулей omsagent Pod, а не всех перезапусков одновременно. После завершения перезагрузки отображается сообщение, похожее на следующее и содержащее результат: `configmap "container-azm-ms-agentconfig" created`.
-
-4. Создайте ConfigMap, выполнив следующую команду kubectl: `kubectl apply -f <configmap_yaml_file.yaml>`.
     
     Пример: `kubectl apply -f container-azm-ms-agentconfig.yaml`. 
     
@@ -100,7 +94,7 @@ config::unsupported/missing config schema version - 'v21' , using defaults
 
 ## <a name="verifying-schema-version"></a>Проверка версии схемы
 
-Поддерживаемые версии схемы конфигурации доступны в виде заметки к Pod (версии схемы) в модуле omsagent. Их можно увидеть с помощью следующей команды kubectl: `kubectl describe pod omsagent-fdf58 -n=kube-system`.
+Поддерживаемые версии схемы конфигурации доступны в виде заметки к Pod (версии схемы) в модуле omsagent. Их можно увидеть с помощью следующей команды kubectl: `kubectl describe pod omsagent-fdf58 -n=kube-system`
 
 Выходные данные будут выглядеть так, как показано ниже, с помощью схемы аннотации — версии:
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 01/28/2018
-ms.openlocfilehash: 9796b41d0df091bc6eb23ba525a79da278e00bbd
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: b655181f41aeda71364edd061b7c81db23e59990
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72802303"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74951145"
 ---
 # <a name="overview-of-alerts-in-microsoft-azure"></a>Обзор оповещений в Microsoft Azure 
 
@@ -63,9 +63,9 @@ ms.locfileid: "72802303"
 Вы можете оповещать о метриках и журналах, как описано в разделе [мониторинг источников данных](../../azure-monitor/platform/data-sources-reference.md). Помимо прочего, к ним относятся:
 - Значения метрик
 - Запросы поиска по журналам
-- События журнала действий
+- События в журнале действий
 - Работоспособность базовой платформы Azure
-- Тесты доступности веб-сайта
+- Тесты на доступность веб-сайта
 
 Ранее для метрик Azure Monitor, Application Insights, Log Analytics и Работоспособности служб были предусмотрены отдельные возможности оповещений. Со временем пользовательский интерфейс и различные методы оповещений были улучшены и объединены в Azure. Эта консолидация все еще выполняется. Поэтому в новой системе оповещений все еще не присутствуют некоторые возможности оповещений.  
 
@@ -178,7 +178,7 @@ ms.locfileid: "72802303"
 
 ## <a name="role-based-access-control-rbac-for-your-alert-instances"></a>Управление доступом на основе ролей (RBAC) для экземпляров оповещений
 
-Для использования экземпляров оповещений и управления ими требуется, чтобы у пользователя были встроенные роли RBAC либо [участника мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor) , либо [читателя мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader). Эти роли поддерживаются в любой области Azure Resource Manager, от уровня подписки до детализированных назначений на уровне ресурсов. Например, если пользователь имеет доступ только к участнику мониторинга для `ContosoVM1` виртуальных машин, он может использовать только оповещения, созданные в `ContosoVM1`, и управлять ими.
+Для использования экземпляров оповещений и управления ими требуется, чтобы у пользователя были встроенные роли RBAC либо [участника мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor) , либо [читателя мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader). Эти роли поддерживаются в любой области Azure Resource Manager, от уровня подписки до детализированных назначений на уровне ресурсов. Например, если пользователь имеет доступ только к участнику мониторинга для `ContosoVM1`виртуальных машин, он может использовать только оповещения, созданные в `ContosoVM1`, и управлять ими.
 
 ## <a name="manage-your-alert-instances-programmatically"></a>Программное управление экземплярами оповещений
 
@@ -211,6 +211,7 @@ ms.locfileid: "72802303"
 - [Дополнительные сведения о группах действий](../../azure-monitor/platform/action-groups.md)
 - [Управление экземплярами оповещений в Azure](https://aka.ms/managing-alert-instances)
 - [Управление смарт-группами](https://aka.ms/managing-smart-groups)
+- [Дополнительные сведения о ценах на оповещения Azure](https://azure.microsoft.com/pricing/details/monitor/)
 
 
 

@@ -1,5 +1,6 @@
 ---
-title: Настройка входа с помощью учетной записи Twitter c использованием пользовательских политик Azure в Active Directory B2C | Документация Майкрософт
+title: Настройка входа с использованием учетной записи Twitter с помощью настраиваемых политик
+titleSuffix: Azure AD B2C
 description: Настройка входа с помощью учетной записи Twitter с использованием пользовательских политик Azure в Active Directory B2C
 services: active-directory-b2c
 author: mmacy
@@ -10,12 +11,12 @@ ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 2ad6ac4c30572f1b475cba2f699f5842ae3c7528
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: 460f16775bf8b02bbb345b609e1419311f81bd22
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71827000"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74948425"
 ---
 # <a name="set-up-sign-in-with-a-twitter-account-by-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа с помощью учетной записи Twitter с использованием пользовательских политик Azure в Active Directory B2C
 
@@ -23,7 +24,7 @@ ms.locfileid: "71827000"
 
 В этой статье показано, как включить вход для пользователей учетной записи Twitter с помощью [пользовательских политик](active-directory-b2c-overview-custom.md) в Azure Active Directory B2C (Azure AD B2C).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
 - Если у вас нет учетной записи Twitter, создайте ее на [странице регистрации Twitter](https://twitter.com/signup).
@@ -35,8 +36,8 @@ ms.locfileid: "71827000"
 1. Выполните вход на [веб-сайт разработчиков Twitter](https://developer.twitter.com/en/apps) с учетными данными для учетной записи Twitter.
 2. Выберите **Create an app** (Создать приложение).
 3. Введите **имя приложения** и **описание приложения**.
-4. В поле **Website URL** (URL-адрес веб-сайта) введите `https://your-tenant.b2clogin.com`. Замените `your-tenant` именем вашего клиента. Например, https://contosob2c.b2clogin.com.
-5. В поле **Callback URL** (URL-адрес обратного вызова) введите значение `https://your-tenant.b2clogin.com/your-tenant.onmicrosoft.com/your-policy-Id/oauth1/authresp`. Замените `your-tenant` именем своего клиента, а `your-policy-Id` — идентификатором своей политики. Например, `b2c_1A_signup_signin_twitter`. При вводе имени вашего клиента необходимо использовать только строчные буквы, даже если в Azure AD B2C имя клиента определено с прописными буквами.
+4. В поле **Website URL** (URL-адрес веб-сайта) введите `https://your-tenant.b2clogin.com`. Замените `your-tenant` именем вашего клиента. Пример: https://contosob2c.b2clogin.com.
+5. В поле **Callback URL** (URL-адрес обратного вызова) введите значение `https://your-tenant.b2clogin.com/your-tenant.onmicrosoft.com/your-policy-Id/oauth1/authresp`. Замените `your-tenant` именем своего клиента, а `your-policy-Id` — идентификатором своей политики. Пример: `b2c_1A_signup_signin_twitter`. При вводе имени вашего клиента необходимо использовать только строчные буквы, даже если в Azure AD B2C имя клиента определено с прописными буквами.
 6. В нижней части страницы прочтите условия использования и примите их, а затем щелкните **Create** (Создать).
 7. На странице **сведений о приложении** выберите **Edit > Edit details** (Изменить > Изменить сведения), установите флажок в поле **Enable Sign in with Twitter** (Включить вход через Twitter), а затем нажмите кнопку **Save** (Сохранить).
 8. Выберите **Keys and tokens** (Ключи и маркеры), а затем запишите значения **ключа API клиента** и **секретного ключа API клиента**, которые понадобятся далее.
@@ -51,10 +52,10 @@ ms.locfileid: "71827000"
 4. На странице "Обзор" выберите **Identity Experience Framework**.
 5. Выберите **Ключи политики**, а затем щелкните **Добавить**.
 6. Для пункта **Параметры** выберите `Manual`.
-7. Введите **имя** ключа политики. Например, `TwitterSecret`. Префикс `B2C_1A_` будет автоматически добавлен к имени ключа.
+7. Введите **Имя** ключа политики. Пример: `TwitterSecret`. Префикс `B2C_1A_` будет автоматически добавлен к имени ключа.
 8. В поле **Секрет** введите ранее записанный секрет клиента.
 9. Для параметра **Использование ключа** выберите `Encryption`.
-10. Нажмите кнопку **Создать**.
+10. Щелкните **Create**(Создать).
 
 ## <a name="add-a-claims-provider"></a>Добавление поставщика утверждений
 
@@ -64,7 +65,7 @@ ms.locfileid: "71827000"
 
 1. Откройте файл *TrustFrameworkExtensions.xml*.
 2. Найдите элемент **ClaimsProviders**. Если он не существует, добавьте его в корневой элемент.
-3. Добавьте новый элемент **ClaimsProvider** следующим образом:
+3. Добавьте новый элемент **ClaimsProvider** следующим образом.
 
     ```xml
     <ClaimsProvider>
@@ -124,7 +125,7 @@ ms.locfileid: "71827000"
 2. Найдите и скопируйте все содержимое элемента **UserJourney**, в котором присутствует запись `Id="SignUpOrSignIn"`.
 3. Откройте файл *TrustFrameworkExtensions.xml* и найдите элемент **UserJourneys**. Если элемент не существует, добавьте его.
 4. Вставьте все скопированное содержимое элемента **UserJourney** в качестве дочернего элемента в элемент **UserJourneys**.
-5. Переименуйте идентификатор пути взаимодействия пользователя. Например, `SignUpSignInTwitter`.
+5. Переименуйте идентификатор пути взаимодействия пользователя. Пример: `SignUpSignInTwitter`.
 
 ### <a name="display-the-button"></a>Отображение кнопки
 
@@ -148,7 +149,7 @@ ms.locfileid: "71827000"
     <ClaimsExchange Id="TwitterExchange" TechnicalProfileReferenceId="Twitter-OAUTH1" />
     ```
 
-    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `Twitter-OAUTH1`.
+    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Пример: `Twitter-OAUTH1`.
 
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
 
@@ -163,7 +164,7 @@ ms.locfileid: "71827000"
 Обновите файл проверяющей стороны, который активирует созданный путь взаимодействия пользователя.
 
 1. Создайте копию *SignUpOrSignIn.xml* в рабочем каталоге и переименуйте ее. Например, переименуйте ее в *SignUpSignInMSA.xml*.
-2. Откройте новый файл и обновите значение атрибута **PolicyId** для **TrustFrameworkPolicy**, указав уникальное значение. Например, `SignUpSignInTwitter`.
+2. Откройте новый файл и обновите значение атрибута **PolicyId** для **TrustFrameworkPolicy**, указав уникальное значение. Пример: `SignUpSignInTwitter`.
 3. Обновите значение **PublicPolicyUri**, указав URI для политики. Например: `http://contoso.com/B2C_1A_signup_signin_twitter`
 4. Обновите значение атрибута **ReferenceId** для элемента **DefaultUserJourney**, чтобы он соответствовал идентификатору созданного вами пути взаимодействия пользователя (SignUpSignTwitter).
 5. Сохраните изменения, отправьте файл, а затем выберите в списке новую политику.

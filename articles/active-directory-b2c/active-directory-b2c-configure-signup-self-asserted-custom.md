@@ -1,5 +1,6 @@
 ---
-title: Добавление утверждений и настройка пользовательского ввода с помощью настраиваемых политик в Azure Active Directory B2C | Документация Майкрософт
+title: Добавление утверждений и настройка пользовательского ввода в пользовательских политиках
+titleSuffix: Azure AD B2C
 description: Узнайте, как настраивать пользовательский ввод и использовать утверждения при регистрации или входе в Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
@@ -10,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: e29e2e3e61594870cc9d704d64b1040a4211a520
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 452a7f61726c3039b2c2b37280d0153fbcbca5fb
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71066224"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74948914"
 ---
 #  <a name="add-claims-and-customize-user-input-using-custom-policies-in-azure-active-directory-b2c"></a>Добавление утверждений и настройка пользовательского ввода с помощью настраиваемых политик в Azure Active Directory B2C
 
@@ -23,7 +24,7 @@ ms.locfileid: "71066224"
 
 В этой статье вы добавите новую запись, предоставленную пользователем (заявка), в путь взаимодействия пользователя для регистрации в Azure Active Directory B2C (Azure AD B2C).  Вы настраиваете запись в виде раскрывающегося списка и определяете, является ли она обязательной.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Выполните шаги, описанные в статье [Azure Active Directory B2C. Приступая к работе с настраиваемыми политиками](active-directory-b2c-get-started-custom.md). Проверьте процесс регистрации или входа пользователя для регистрации новой локальной учетной записи, прежде чем продолжить.
 
@@ -294,7 +295,7 @@ ms.locfileid: "71066224"
 }
 ```
 
-## <a name="optional-remove-email-verification"></a>Дополнительно отключение проверки по электронной почте
+## <a name="optional-remove-email-verification"></a>Необязательно: Удаление проверки электронной почты
 
 Чтобы пропустить проверку по электронной почте, можно удалить `PartnerClaimType="Verified.Email"`. В таком случае адрес электронной почты нужно будет указывать, но он не будет проверяться, если не удалить фрагмент Required = true.  Подумайте, подходит ли этот вариант в вашем случае.
 
@@ -304,6 +305,6 @@ ms.locfileid: "71066224"
 <OutputClaim ClaimTypeReferenceId="email" PartnerClaimType="Verified.Email" Required="true" />
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [использовать настраиваемые атрибуты в пользовательской политике изменения профиля](active-directory-b2c-create-custom-attributes-profile-edit-custom.md).

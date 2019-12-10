@@ -1,6 +1,7 @@
 ---
-title: Использование AppAuth в приложении iOS в Azure Active Directory B2C | Документация Майкрософт
-description: В этой статье описано, как создать приложение iOS, которое использует AppAuth для управления удостоверениями и аутентификации пользователей в Azure Active Directory B2C.
+title: Использование AppAuth в приложении iOS
+titleSuffix: Azure AD B2C
+description: Как создать приложение iOS, которое использует AppAuth с Azure Active Directory B2C для управления удостоверениями пользователей и проверки подлинности пользователей.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -10,12 +11,12 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 0fb5341c2e7ee55391cb38251b0ea66b55b93301
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: a61b97ade6513785c1cd298f33a5158a14efad82
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73469157"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74948216"
 ---
 # <a name="azure-ad-b2c-sign-in-using-an-ios-application"></a>Azure AD B2C. Вход с помощью приложения iOS
 
@@ -37,12 +38,12 @@ ms.locfileid: "73469157"
 
 [!INCLUDE [active-directory-b2c-appreg-native](../../includes/active-directory-b2c-appreg-native.md)]
 
-Запишите **идентификатор приложения (клиента)** для использования на более позднем этапе.
+Запишите **идентификатор приложения (клиента)** . Он вам потребуется в дальнейшем.
 
 Кроме того, запишите пользовательский URI перенаправления для использования на следующем шаге. Пример: `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
 
 ## <a name="create-your-user-flows"></a>Создание потоков пользователей
-В Azure AD B2C любое взаимодействие с пользователем определяется [потоком пользователя](active-directory-b2c-reference-policies.md). Это приложение предусматривает одну процедуру идентификации, сочетающую в себе вход и регистрацию. При создании потока пользователя обязательно сделайте следующее:
+В Azure AD B2C любое взаимодействие с пользователем определяется [потоком пользователя](active-directory-b2c-reference-policies.md). Это приложение предусматривает одну процедуру идентификации, сочетающую в себе вход и регистрацию. При создании потока пользователя обязательно сделайте следующее:
 
 * В разделе **Sign-up attributes** (Атрибуты регистрации) выберите атрибут **Отображаемое имя**.  Можно также выбрать другие атрибуты.
 * В разделе **Application claims** (Утверждения приложения) выберите утверждения **Отображаемое имя** и **ИД объекта пользователя**. Можно также выбрать другие утверждения.
@@ -61,7 +62,7 @@ ms.locfileid: "73469157"
 > AppAuth поддерживает iOS 7 и более поздние версии.  Однако для поддержки социальных имен входа в Google необходим SFSafariViewController, который поддерживает iOS 9 и более поздние версии.
 >
 
-### <a name="configuration"></a>Конфигурация
+### <a name="configuration"></a>Настройка
 
 Вы можете настроить взаимодействие с Azure AD B2C, указав URI конечной точки авторизации и конечной точки токена.  Для создания URI вам потребуются следующие сведения:
 * идентификатор клиента (например, contoso.onmicrosoft.com);

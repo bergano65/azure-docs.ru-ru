@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 12/04/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 54f0584eae948d6e577b0439a5a0d976ff61d4b1
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: c0b022ed759837fc6d922386dd48a2f3a109527a
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74850658"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74951502"
 ---
 # <a name="startstop-vms-during-off-hours-solution-in-azure-automation"></a>Решение для запуска и остановки виртуальных машин в нерабочее время в службе автоматизации Azure
 
@@ -428,7 +428,7 @@ ms.locfileid: "74850658"
 
 В ходе этого процесса рабочая область Log Analytics и учетная запись службы автоматизации не удаляются. Если вы не хотите сохранить рабочую область Log Analytics, необходимо удалить ее вручную. Это можно сделать на портале Azure.
 
-1. На начальном экране портал Azure выберите **log Analytics рабочие области**.
+1. В портал Azure найдите и выберите **log Analytics рабочие области**.
 1. На странице **log Analytics рабочие области** выберите рабочую область.
 1. В меню, расположенном на странице параметров рабочей области, выберите **Удалить**.
 

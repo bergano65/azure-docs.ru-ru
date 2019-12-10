@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 04/16/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 1a45ed90b2b2c4a3a4f8eb11c4618c11e6d66761
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 3d358ac1fb766804b35d969f4d06bc6c07e62661
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849366"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74951468"
 ---
 # <a name="troubleshoot-desired-state-configuration-dsc"></a>Устранение неполадок с платформой Desired State Configuration (DSC)
 
@@ -89,6 +89,68 @@ ps://<location>-agentservice-prod-1.azure-automation.net/accounts/00000000-0000-
 #### <a name="resolution"></a>Разрешение
 
 Убедитесь, что компьютер имеет доступ к соответствующим конечным точкам Azure Automation DSC и повторите попытку. Список требуемых портов и адресов см. в разделе [планирование сети](../automation-dsc-overview.md#network-planning) .
+
+### <a name="a-nameunauthorizedascenario-status-reports-return-response-code-unauthorized"></a>Сценарий <a/><a name="unauthorized">. отчеты о состоянии возвращают код ответа "несанкционированный"
+
+#### <a name="issue"></a>Проблема
+
+При регистрации узла с помощью конфигурации состояния (DSC) вы получаете одно из следующих сообщений об ошибке:
+
+```error
+The attempt to send status report to the server https://{your automation account url}/accounts/xxxxxxxxxxxxxxxxxxxxxx/Nodes(AgentId='xxxxxxxxxxxxxxxxxxxxxxxxx')/SendReport returned unexpected response code Unauthorized.
+```
+
+```error
+VM has reported a failure when processing extension 'Microsoft.Powershell.DSC / Registration of the Dsc Agent with the server failed.
+```
+
+### <a name="cause"></a>Причина:
+
+Эта проблема вызвана неверным или просроченным сертификатом.  Дополнительные сведения см. в статье [истечение срока действия сертификата и](../automation-dsc-onboarding.md#certificate-expiration-and-re-registration)повторная регистрация.
+
+### <a name="resolution"></a>Разрешение
+
+Выполните приведенные ниже действия, чтобы повторно зарегистрировать неисправный узел DSC.
+
+Сначала отмените регистрацию узла, выполнив следующие действия.
+
+1. В портал Azure в разделе **учетные записи автоматизации** **главной** -> — > {Ваша учетная запись службы автоматизации} — **Настройка состояния > (DSC)** .
+2. Щелкните "узлы" и выберите узел с проблемами.
+3. Нажмите кнопку "отменить регистрацию", чтобы отменить регистрацию узла.
+
+Во вторых, удалите расширение DSC с узла.
+
+1. В портал Azure в разделе **домашняя** -> **виртуальная машина** > {сбой узла} — **расширения** >
+2. Щелкните "Microsoft. PowerShell. DSC".
+3. Нажмите кнопку "Удалить", чтобы удалить расширение PowerShell DSC.
+
+В третьих, удалите из узла все неправильные или просроченные сертификаты.
+
+На узле, на котором произошел сбой, в командной строке PowerShell с повышенными привилегиями выполните следующую команду:
+
+```powershell
+$certs = @()
+$certs += dir cert:\localmachine\my | ?{$_.FriendlyName -like "DSC"}
+$certs += dir cert:\localmachine\my | ?{$_.FriendlyName -like "DSC-OaaS Client Authentication"}
+$certs += dir cert:\localmachine\CA | ?{$_.subject -like "CN=AzureDSCExtension*"}
+"";"== DSC Certificates found: " + $certs.Count
+$certs | FL ThumbPrint,FriendlyName,Subject
+If (($certs.Count) -gt 0)
+{ 
+    ForEach ($Cert in $certs) 
+    {
+        RD -LiteralPath ($Cert.Pspath) 
+    }
+}
+```
+
+Наконец, повторно зарегистрируйте неисправный узел, выполнив следующие действия.
+
+1. В портал Azure в разделе **учетные записи автоматизации** **главной** -> — > {Ваша учетная запись службы автоматизации} — **Настройка состояния > (DSC)** .
+2. Щелкните "узлы".
+3. Нажмите кнопку "Добавить".
+4. Выберите узел, на котором произошел сбой.
+5. Щелкните "подключить" и выберите нужные параметры.
 
 ### <a name="failed-not-found"></a>Сценарий: узел находится в состоянии сбоя с ошибкой "Не найдено"
 
@@ -187,6 +249,49 @@ VM has reported a failure when processing extension 'Microsoft.Powershell.DSC'. 
 
 * Убедитесь, что вы назначаете узлу имя конфигурации узла, которое точно соответствует имени в службе.
 * Можно выбрать не включать имя конфигурации узла, что приведет к адаптации узла, но не назначению конфигурации узла.
+
+### <a name="cross-subscription"></a>Сценарий. Регистрация узла с помощью PowerShell возвращает ошибку "произошла одна или несколько ошибок"
+
+#### <a name="issue"></a>Проблема
+
+При регистрации узла с помощью `Register-AzAutomationDSCNode` или `Register-AzureRMAutomationDSCNode`появляется следующее сообщение об ошибке.
+
+```error
+One or more errors occurred.
+```
+
+#### <a name="cause"></a>Причина:
+
+Эта ошибка возникает при попытке зарегистрировать узел, который находится в отдельной подписке, отличной от учетной записи службы автоматизации.
+
+#### <a name="resolution"></a>Разрешение
+
+Рассматривайте узел между подписками так, как будто он находится в отдельном облаке или локально.
+
+Выполните следующие действия, чтобы зарегистрировать узел.
+
+* Физические или [виртуальные машины Windows в локальной среде или в облаке, отличном от Azure/AWS](../automation-dsc-onboarding.md#physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azureaws).
+* [Виртуальные машины Linux — физические или виртуальных машин Linux — локально или в облаке, отличном от Azure](../automation-dsc-onboarding.md#physicalvirtual-linux-machines-on-premises-or-in-a-cloud-other-than-azure).
+
+### <a name="agent-has-a-problem"></a>Сценарий: сообщение об ошибке-"сбой подготовки"
+
+#### <a name="issue"></a>Проблема
+
+При регистрации узла отображается сообщение об ошибке:
+
+```error
+Provisioning has failed
+```
+
+#### <a name="cause"></a>Причина:
+
+Это сообщение появляется при наличии проблем с подключением между узлом и Azure.
+
+#### <a name="resolution"></a>Разрешение
+
+Определите, находится ли узел в частной виртуальной сети или возникли другие проблемы с подключением к Azure.
+
+Дополнительные сведения см. в разделе [Устранение ошибок при адаптации решений](onboarding.md).
 
 ### <a name="failure-linux-temp-noexec"></a>Сценарий: применение конфигурации в Linux, сбой при возникновении общей ошибки
 

@@ -1,5 +1,6 @@
 ---
-title: Добавление ADFS в качестве поставщика удостоверений SAML с помощью пользовательских политик в Azure Active Directory B2C | Документация Майкрософт
+title: Добавление ADFS в качестве поставщика удостоверений SAML с помощью настраиваемых политик
+titleSuffix: Azure AD B2C
 description: Настройка ADFS 2016 с помощью протокола SAML и пользовательских политик в Azure Active Directory B2C
 services: active-directory-b2c
 author: mmacy
@@ -10,12 +11,12 @@ ms.topic: conceptual
 ms.date: 11/07/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 80accdc4a14a2246ed91a92f6472490479327e2a
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: 202c3bfb8e9818437ff35454a1eafce008cdb00c
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71827208"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74948680"
 ---
 # <a name="add-adfs-as-a-saml-identity-provider-using-custom-policies-in-azure-active-directory-b2c"></a>Добавление ADFS в качестве поставщика удостоверений SAML с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -23,7 +24,7 @@ ms.locfileid: "71827208"
 
 В этой статье показано, как включить вход для учетной записи пользователя ADFS с помощью [пользовательских политик](active-directory-b2c-overview-custom.md) в Azure Active Directory B2C (Azure AD B2C). Вход в систему включается путем добавления [технического профиля SAML](saml-technical-profile.md) в пользовательскую политику.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
 - Убедитесь, что у вас есть доступ к PFX-файлу сертификата с закрытым ключом. Можно создать собственный подписанный сертификат и передать его в Azure AD B2C. Azure AD B2C использует этот сертификат для подписи запроса SAML, отправляемого поставщику удостоверений SAML.
@@ -39,9 +40,9 @@ ms.locfileid: "71827208"
 4. На странице "Обзор" выберите **Identity Experience Framework**.
 5. Выберите **Ключи политики**, а затем щелкните **Добавить**.
 6. Для пункта **Параметры** выберите `Upload`.
-7. Введите **имя** ключа политики. Например, `SamlCert`. Префикс `B2C_1A_` будет автоматически добавлен к имени ключа.
+7. Введите **Имя** ключа политики. Пример: `SamlCert`. Префикс `B2C_1A_` будет автоматически добавлен к имени ключа.
 8. Найдите и выберите PFX-файл сертификата с закрытым ключом.
-9. Нажмите кнопку **Создать**.
+9. Щелкните **Create**(Создать).
 
 ## <a name="add-a-claims-provider"></a>Добавление поставщика утверждений
 
@@ -51,7 +52,7 @@ ms.locfileid: "71827208"
 
 1. Откройте файл *TrustFrameworkExtensions.xml*.
 2. Найдите элемент **ClaimsProviders**. Если он не существует, добавьте его в корневой элемент.
-3. Добавьте новый элемент **ClaimsProvider** следующим образом:
+3. Добавьте новый элемент **ClaimsProvider** следующим образом.
 
     ```xml
     <ClaimsProvider>
@@ -109,13 +110,13 @@ ms.locfileid: "71827208"
 
 ## <a name="register-the-claims-provider"></a>Регистрация поставщика утверждений
 
-На этом этапе поставщик удостоверений уже настроен, но еще не доступен ни на одном экране регистрации или входа. Чтобы сделать его доступным, необходимо создать дубликат существующего шаблона пути взаимодействия пользователя, а затем изменить его таким образом, чтобы он также содержал поставщик удостоверений ADFS.
+На этом этапе поставщик удостоверений уже настроен, но еще недоступен ни на одном экране регистрации или входа. Чтобы сделать его доступным, необходимо создать дубликат существующего шаблона пути взаимодействия пользователя, а затем изменить его таким образом, чтобы он также содержал поставщик удостоверений ADFS.
 
 1. Откройте файл *TrustFrameworkBase.xml* из начального пакета.
 2. Найдите и скопируйте все содержимое элемента **UserJourney**, в котором присутствует запись `Id="SignUpOrSignIn"`.
 3. Откройте файл *TrustFrameworkExtensions.xml* и найдите элемент **UserJourneys**. Если элемент не существует, добавьте его.
 4. Вставьте все скопированное содержимое элемента **UserJourney** в качестве дочернего элемента в элемент **UserJourneys**.
-5. Переименуйте идентификатор пути взаимодействия пользователя. Например, `SignUpSignInADFS`.
+5. Переименуйте идентификатор пути взаимодействия пользователя. Пример: `SignUpSignInADFS`.
 
 ### <a name="display-the-button"></a>Отображение кнопки
 
@@ -139,7 +140,7 @@ ms.locfileid: "71827208"
     <ClaimsExchange Id="ContosoExchange" TechnicalProfileReferenceId="Contoso-SAML2" />
     ```
 
-    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `Contoso-SAML2`.
+    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Пример: `Contoso-SAML2`.
 
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
 
@@ -175,7 +176,7 @@ https://your-tenant-name.b2clogin.com/your-tenant-name/your-policy/samlp/metadat
     | Атрибут LDAP | Тип исходящего утверждения |
     | -------------- | ------------------- |
     | User-Principal-Name | userPrincipalName |
-    | Фамилия | family_name |
+    | Surname | family_name |
     | Given-Name | given_name |
     | E-Mail-Address | email |
     | Display-Name | name |
@@ -197,8 +198,8 @@ https://your-tenant-name.b2clogin.com/your-tenant-name/your-policy/samlp/metadat
 Обновите файл проверяющей стороны, который активирует созданный путь взаимодействия пользователя.
 
 1. Создайте копию *SignUpOrSignIn.xml* в рабочем каталоге и переименуйте ее. Например, переименуйте ее в *SignUpSignInADFS.xml*.
-2. Откройте новый файл и обновите значение атрибута **PolicyId** для **TrustFrameworkPolicy**, указав уникальное значение. Например, `SignUpSignInADFS`.
-3. Обновите значение **PublicPolicyUri**, указав URI для политики. Например: `http://contoso.com/B2C_1A_signup_signin_adfs`.
+2. Откройте новый файл и обновите значение атрибута **PolicyId** для **TrustFrameworkPolicy**, указав уникальное значение. Пример: `SignUpSignInADFS`.
+3. Обновите значение **PublicPolicyUri**, указав URI для политики. Например: `http://contoso.com/B2C_1A_signup_signin_adfs`
 4. Обновите значение атрибута **ReferenceId** для элемента **DefaultUserJourney**, чтобы он соответствовал идентификатору созданного вами нового пути взаимодействия пользователя (SignUpSignInADFS).
 5. Сохраните изменения, отправьте файл, а затем выберите в списке новую политику.
 6. Убедитесь, что созданное приложение Azure AD B2C выбрано в поле **Выберите приложение**, а затем протестируйте его, щелкнув **Запустить сейчас**.

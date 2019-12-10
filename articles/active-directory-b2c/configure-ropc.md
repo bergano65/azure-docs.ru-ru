@@ -1,6 +1,7 @@
 ---
-title: Настройка потока учетных данных пароля владельца ресурса в Azure Active Directory B2C | Документация Майкрософт
-description: Сведения о настройке потока учетных данных пароля владельца ресурса в Azure AD B2C.
+title: Настройка потока учетных данных для пароля владельца ресурса
+titleSuffix: Azure AD B2C
+description: Узнайте, как настроить поток РОПК в Azure AD B2C.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -10,12 +11,12 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: ca17d049d988b2bc8b60249d99c03f70c555d3fb
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: 03ff564848298d31c8bf92169d9e5f66d024d711
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72023740"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74949190"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-ad-b2c"></a>Настройка последовательности проверки учетных данных пароля владельца ресурса в Azure AD B2C
 
@@ -64,11 +65,11 @@ ms.locfileid: "72023740"
 
 `https://yourtenant.b2clogin.com/<yourtenant.onmicrosoft.com>/oauth2/v2.0/token?p=B2C_1_ROPC_Auth`
 
-| Ключ | Значение |
+| Ключ | Value |
 | --- | ----- |
-| username | leadiocl@outlook.com |
-| password | Passxword1 |
-| grant_type | password |
+| Имя пользователя | leadiocl@outlook.com |
+| пароль | Passxword1 |
+| grant_type | пароль |
 | scope | openid \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> offline_access |
 | client_id | \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> |
 | response_type | token id_token |
@@ -104,7 +105,7 @@ username=leadiocl%40trashmail.ws&password=Passxword1&grant_type=password&scope=o
 
 `https://yourtenant.b2clogin.com/<yourtenant.onmicrosoft.com>/oauth2/v2.0/token?p=B2C_1_ROPC_Auth`
 
-| Ключ | Значение |
+| Ключ | Value |
 | --- | ----- |
 | grant_type | refresh_token |
 | response_type | id_token |

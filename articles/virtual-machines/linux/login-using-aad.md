@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/29/2019
 ms.author: iainfou
-ms.openlocfilehash: 74de621f88d9af65f8894319729f902bf11e57ce
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: cccdb54b89dff7c6a1fc9dac55c63b19d661ab65
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74873018"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74951315"
 ---
 # <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Предварительный просмотр. Войдите на виртуальную машину Linux в Azure, используя проверку подлинности Azure Active Directory
 
@@ -206,6 +206,10 @@ Access denied
 - Проверьте, правильно ли указано имя входа в командной строке SSH. Опечатка в имени входа может вызвать несоответствие между именем входа, указанным в командной строке SSH, и учетной записью, с которой вы вошли в Azure AD. Например, вы ввели *азуресуер\@contoso.onmicrosoft.com* вместо *azureuser\@contoso.onmicrosoft.com*.
 - Если у вас есть несколько учетных записей пользователя, убедитесь, что при входе в Azure AD в окне браузера не была указана другая учетная запись.
 - В операционной системе Linux учитывается регистр. Различие между "Azureuser@contoso.onmicrosoft.com" и "azureuser@contoso.onmicrosoft.com" может вызвать несоответствие. Убедитесь в том, что имя участника-пользователя указано в командной строке SSH в правильном регистре.
+
+### <a name="other-limitations"></a>Другие ограничения
+
+Пользователи, которые наследуют права доступа через вложенные группы или назначения ролей, в настоящее время не поддерживаются. Пользователю или группе должны быть непосредственно назначены [требуемые назначения ролей](#configure-role-assignments-for-the-vm). Например, при использовании групп управления или назначений ролей вложенных групп не предоставляются правильные разрешения, позволяющие пользователю входить в систему.
 
 ## <a name="preview-feedback"></a>Отзывы о предварительной версии
 

@@ -11,14 +11,14 @@ ms.date: 12/05/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 333a3b93d872c1a99d1ec18d4941adc8986d4a03
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 10c778025c3def384f621cb5311d0d71ccb457d7
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74914573"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74951128"
 ---
-# <a name="what-is-azure-ad-connect-cloud-provisioning"></a>Что такое Azure AD Connect подготовки облака?
+# <a name="what-is-azure-ad-connect-cloud-provisioning"></a>Что такое подготовка облака Azure AD Connect?
 Azure AD Connect подготовка облачных облаков — это новый агент Майкрософт, предназначенный для удовлетворения и выполнения целей гибридной идентификации для синхронизации пользователей, групп и контактов с Azure AD.  Его можно использовать вместе с Azure AD Connect Sync и предоставляет следующие преимущества:
     
 - Поддержка синхронизации с клиентом Azure AD из нескольких лесов, отключенных Active Directory среде леса. типичные сценарии включают слияние & приобретения, когда приобретенные леса AD изолированы от AD родительской компании. леса и компании, у которых исторически несколько лесов AD.
@@ -60,6 +60,7 @@ Azure AD Connect подготовка облачных облаков — это
 | Разрешение дополнительной настройки потоков атрибутов |● | |
 | Поддержка обратной записи (пароли, устройства, группы) |● | |
 | Поддержка доменных служб Azure AD|● | |
+| Гибридная конфигурация Exchange |● | |
 
 ## <a name="next-steps"></a>Дальнейшие действия 
 

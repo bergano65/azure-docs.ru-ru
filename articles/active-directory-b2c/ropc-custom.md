@@ -1,6 +1,7 @@
 ---
-title: Настройка потока учетных данных пароля владельца ресурса в Azure Active Directory B2C | Документация Майкрософт
-description: Узнайте, как настроить поток учетных данных пароля владельца ресурса в Azure Active Directory B2C.
+title: Настройка потока учетных данных для пароля владельца ресурса с помощью настраиваемых политик
+titleSuffix: Azure AD B2C
+description: Узнайте, как настроить поток учетных данных для пароля владельца ресурса (РОПК) с помощью пользовательских политик в Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -10,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 2f3eb2c0071eecb20bbf5616a01c80e55645207a
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: 990493b6b2c3757849168d8fb82a4b38f55364e2
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71678142"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74951070"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-active-directory-b2c-using-a-custom-policy"></a>Настройка потока учетных данных пароля владельца ресурса в Azure Active Directory B2C с помощью пользовательской политики
 
@@ -35,7 +36,7 @@ ms.locfileid: "71678142"
 - **Одностраничное приложение** — клиентское приложение, написанное главным образом на JavaScript. Часто приложение создается с помощью таких платформ, как AngularJS, Ember.js или Durandal.
 - **Поток конфиденциального клиента**. Проверка идентификатора клиента приложения выполняется, но секрет приложения не проверяется.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
 
@@ -133,7 +134,7 @@ ms.locfileid: "71678142"
     </TechnicalProfile>
     ```
 
-    Замените **DefaultValue** **client_id** идентификатором приложения ProxyIdentityExperienceFramework, созданного в учебнике по необходимым условиям. Затем замените **DefaultValue** для **resource_id** идентификатором приложения IdentityExperienceFramework, которое также было создано в учебнике по необходимым компонентам.
+    Замените **DefaultValue** **client_id** идентификатором приложения ProxyIdentityExperienceFramework, созданным в руководстве по предварительной установке. Затем замените **DefaultValue** **resource_id** идентификатором приложения приложения IdentityExperienceFramework, которое также было создано в учебнике по необходимым компонентам.
 
 5. Добавьте следующие элементы **ClaimsProvider** с техническими профилями в элемент **ClaimsProviders**.
 
@@ -260,11 +261,11 @@ ms.locfileid: "71678142"
 - Замените `your-tenant-name` именем вашего клиента Azure AD B2C.
 - Замените `B2C_1A_ROPC_Auth` полным именем политики учетных данных пароля владельца ресурса.
 
-| Ключ | Значение |
+| Ключ | Value |
 | --- | ----- |
-| username | `user-account` |
-| password | `password1` |
-| grant_type | password |
+| Имя пользователя | `user-account` |
+| пароль | `password1` |
+| grant_type | пароль |
 | scope | openid `application-id` offline_access |
 | client_id | `application-id` |
 | response_type | token id_token |
@@ -305,7 +306,7 @@ username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scop
 - Замените `your-tenant-name` именем вашего клиента Azure AD B2C.
 - Замените `B2C_1A_ROPC_Auth` полным именем политики учетных данных пароля владельца ресурса.
 
-| Ключ | Значение |
+| Ключ | Value |
 | --- | ----- |
 | grant_type | refresh_token |
 | response_type | id_token |
@@ -338,7 +339,7 @@ username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scop
 
 Azure AD B2C соответствует стандартам OAuth 2.0 для учетных данных пароля владельца ресурса общедоступного клиента и должен быть совместим с большинством клиентских пакетов SDK. См. последние [рекомендации по реализации собственного пакета SDK для приложений OAuth 2.0 и OpenID Connect](https://appauth.io/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. полный пример такого сценария в [начальном пакете настраиваемой политики Azure Active Directory B2C](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/scenarios/source/aadb2c-ief-ropc).
 - Дополнительные сведения о маркерах, которые используются Azure Active Directory B2C, см. в [справочнике по маркерам](active-directory-b2c-reference-tokens.md).

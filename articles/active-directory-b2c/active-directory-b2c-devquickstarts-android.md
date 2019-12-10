@@ -1,6 +1,7 @@
 ---
-title: Получение токена с помощью приложения Android в Azure Active Directory B2C | Документация Майкрософт
-description: В этой статье описывается, как создать приложение Android, которое использует AppAuth с Azure Active Directory B2C для управления удостоверениями пользователей и проверки подлинности пользователей.
+title: Получение маркера в приложении Android
+titleSuffix: Azure AD B2C
+description: Как создать приложение Android, которое использует AppAuth с Azure Active Directory B2C для управления удостоверениями пользователей и проверки подлинности пользователей.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -10,12 +11,12 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 28b1c3622ca449b0ce539937369fe43bd1d508ee
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 7da403eff6a8b96e5fbfc6a6acda48fa397e74b1
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73468974"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74948219"
 ---
 # <a name="sign-in-using-an-android-application-in-azure-active-directory-b2c"></a>Вход с помощью приложения Android в Azure Active Directory B2C
 
@@ -38,7 +39,7 @@ ms.locfileid: "73468974"
 
 [!INCLUDE [active-directory-b2c-appreg-native](../../includes/active-directory-b2c-appreg-native.md)]
 
-Запишите **идентификатор приложения (клиента)** для использования на более позднем этапе.
+Запишите **идентификатор приложения (клиента)** . Он вам потребуется в дальнейшем.
 
 Кроме того, запишите пользовательский URI перенаправления для использования на следующем шаге. Пример: `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
 
@@ -64,7 +65,7 @@ ms.locfileid: "73468974"
 > AppAuth поддерживает Android API версии 16 (Jellybean) и более поздних. Мы советуем использовать API версии 23 и более поздних.
 >
 
-### <a name="configuration"></a>Конфигурация
+### <a name="configuration"></a>Настройка
 
 Чтобы настроить взаимодействие с Azure AD B2C, укажите URI обнаружения или URI конечных точек авторизации и токенов. В любом случае вам потребуются следующие сведения:
 

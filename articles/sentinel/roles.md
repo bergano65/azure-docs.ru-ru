@@ -13,14 +13,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/02/2019
+ms.date: 12/09/2019
 ms.author: rkarlin
-ms.openlocfilehash: cf02708ae4ba3f203448398fdf954e8f48cce614
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 0479eba13fd747ea1bcab2672fce1df2156802e8
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74762708"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74947592"
 ---
 # <a name="permissions-in-azure-sentinel"></a>Разрешения в Azure Sentinel
 
@@ -70,7 +70,7 @@ ms.locfileid: "74762708"
 >
 ## <a name="building-custom-rbac-roles"></a>Создание пользовательских ролей RBAC
 
-В дополнение к или вместо, используя встроенные роли RBAC, можно создать пользовательские роли RBAC для Sentinel Azure. Пользовательские роли RBAC для Sentinel Azure создаются так же, как и другие [пользовательские роли RBAC Azure](../role-based-access-control/custom-roles-rest.md#create-a-custom-role) , основанные на конкретных разрешениях для Azure Sentinel Resources.
+В дополнение к или вместо, используя встроенные роли RBAC, можно создать пользовательские роли RBAC для Sentinel Azure. Пользовательские роли RBAC для Sentinel Azure создаются так же, как и другие [пользовательские роли RBAC Azure](../role-based-access-control/custom-roles-rest.md#create-a-custom-role) , на основе [конкретных разрешений для Azure Sentinel](../role-based-access-control/resource-provider-operations.md#microsoftsecurityinsights) и [ресурсов Azure log Analytics](../role-based-access-control/resource-provider-operations.md#microsoftoperationalinsights).
 
 ## <a name="advanced-rbac-on-the-data-you-store-in-azure-sentinel"></a>Расширенный RBAC для данных, хранящихся в Azure Sentinel
   

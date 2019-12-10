@@ -5,12 +5,12 @@ ms.assetid: 242736be-ec66-4114-924b-31795fd18884
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: 24bee8ffe23d524553143b2097560979a39329d7
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 5f260ab1df5341a981a388533b06cbcda400e4da
+ms.sourcegitcommit: b5ff5abd7a82eaf3a1df883c4247e11cdfe38c19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74784720"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74941837"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -31,35 +31,45 @@ ms.locfileid: "74784720"
 
 ## <a name="core-tools-versions"></a>Версии основных инструментов
 
-Есть две версии основных инструментов службы "Функции Azure". Используемая версия зависит от локальной среды разработки, [выбора языка](supported-languages.md) и требуемого уровня поддержки:
+Существует три версии Azure Functions Core Tools. Используемая версия зависит от локальной среды разработки, [выбора языка](supported-languages.md) и требуемого уровня поддержки:
 
-+ Версия 1.x: поддерживает версию 1.x в среде выполнения. Эта версия поддерживается только на компьютерах с ОС Windows и устанавливается из [пакета npm](https://docs.npmjs.com/getting-started/what-is-npm). В этой версии можно создавать функции на экспериментальных языках, которые не имеют официальной поддержки. Дополнительные сведения см. в разделе [Supported languages in Azure Functions](supported-languages.md) (Поддерживаемые языки службы "Функции Azure")
++ **Версия 1. x**: поддерживает версию 1. x среды выполнения функций Azure. Эта версия поддерживается только на компьютерах с ОС Windows и устанавливается из [пакета npm](https://www.npmjs.com/package/azure-functions-core-tools).
 
-+ [Версия 2.x](#v2): поддерживает версию [2.x среды выполнения](functions-versions.md). Эта версия поддерживает [Windows](#windows-npm), [macOS](#brew) и [Linux](#linux). Использует диспетчеры пакетов определенной платформы или пакеты npm для установки.
++ [**Версия 2. x/3. x**](#v2): поддерживает [версию 2. x или 3. x среды выполнения функций Azure](functions-versions.md). Эти версии поддерживают [Windows](#windows-npm), [macOS](#brew)и [Linux](#linux) и используют диспетчеры пакетов для конкретных платформ или NPM для установки.
 
-Если иное не указано, примеры в этой статье предназначены для версии 2.x.
+Если не указано иное, примеры в этой статье относятся к версии 3. x.
 
 ## <a name="install-the-azure-functions-core-tools"></a>Установка основных инструментов Функций Azure
 
 [Основные инструменты службы "Функции Azure"] являются локальной версией среды выполнения "Функции Azure", которую можно запускать на локальном компьютере для разработки. Она также предоставляет команды для создания функций, подключения к Azure и развертывания проектов функций.
 
-### <a name="v2"></a>Версия 2.x
+### <a name="v2"></a>Версии 2. x и 3. x
 
-В версии 2.x инструментов используется среда выполнения Функций Azure версии 2.x, которая основана на .NET Core. Эта версия поддерживается на всех платформах, которые поддерживает .NET Core 2.x, включая [Windows](#windows-npm), [macOS](#brew) и [Linux](#linux). 
+Версия 2. x/3. x инструментов использует среду выполнения функций Azure, созданную на основе .NET Core. Эта версия поддерживается на всех платформах .NET Core, включая [Windows](#windows-npm), [macOS](#brew)и [Linux](#linux). 
 
 > [!IMPORTANT]
-> Вы можете обойти требование для установки пакета SDK для .NET Core 2. x с помощью [пакетов расширений].
+> Вы можете обойти требование для установки пакет SDK для .NET Core с помощью [пакетов расширений].
 
 #### <a name="windows-npm"></a>Windows
 
 На следующих шагах пакет npm используется для установки основных инструментов на компьютерах с Windows. Кроме того, можно использовать [Chocolatey](https://chocolatey.org/). Дополнительные сведения см. в [файле сведений об основных инструментах](https://github.com/Azure/azure-functions-core-tools/blob/master/README.md#windows).
 
-1. Установите [Node.js], который содержит пакет npm. Для версии 2.x этих инструментов поддерживается только версия Node.js 8.5 и более поздние.
+1. Установите [Node.js], который содержит пакет npm.
+    - Для версии 2.x этих инструментов поддерживается только версия Node.js 8.5 и более поздние.
+    - Для версии 3. x средств поддерживаются только узлы 10 и более поздних версий.
 
 1. Установите пакет основных инструментов:
 
+    ##### <a name="v2x"></a>Версия 2.x
+
     ```bash
     npm install -g azure-functions-core-tools
+    ```
+
+    ##### <a name="v3x"></a>v3. x
+
+    ```bash
+    npm install -g azure-functions-core-tools@3
     ```
 
    Загрузка и установка пакета основных средств может занять несколько минут.
@@ -74,13 +84,21 @@ ms.locfileid: "74784720"
 
 1. Установите пакет основных инструментов:
 
+    ##### <a name="v2x"></a>Версия 2.x
+
     ```bash
     brew tap azure/functions
     brew install azure-functions-core-tools
     ```
 
-1. Если вы не планируете использовать [пакетов расширений], установите [пакет SDK для .NET Core 2. x для macOS](https://www.microsoft.com/net/download/macos).
+    ##### <a name="v3x"></a>v3. x
 
+    ```bash
+    brew tap azure/functions
+    brew install azure-functions-core-tools@3
+    # if upgrading on a machine that has 2.x installed
+    brew link --overwrite azure-functions-core-tools@3
+    ```
 
 #### <a name="linux"></a> Linux (Ubuntu/Debian) с APT
 
@@ -114,7 +132,7 @@ ms.locfileid: "74784720"
     | Debian 10 | `buster` |
     | Debian 9 | `stretch` |
     | Debian 8; | `jessie` |
-    | Ubuntu 18,10    | `cosmic`    |
+    | Ubuntu 18.10    | `cosmic`    |
     | Ubuntu 18.04    | `bionic`    |
     | Ubuntu 17.04    | `zesty`     |
     | Ubuntu 16.04/Linux Mint 18    | `xenial`  |

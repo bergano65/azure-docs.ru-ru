@@ -1,5 +1,6 @@
 ---
-title: Настройка регистрации и входа с помощью учетной записи Майкрософт — Azure Active Directory B2C
+title: Настройка регистрации и входа с помощью учетной записи Майкрософт
+titleSuffix: Azure AD B2C
 description: Обеспечение регистрации и входа для клиентов с учетными записями Майкрософт в приложениях с помощью Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
@@ -10,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a921d6110fd0294012e2e59542ba2c82d63ffcde
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: fc79211f55edb471eb95fc55fe8519d228ca192e
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73642079"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74949327"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-microsoft-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Microsoft через Azure Active Directory B2C
 
@@ -23,7 +24,7 @@ ms.locfileid: "73642079"
 
 Чтобы использовать учетная запись Майкрософт в качестве [поставщика удостоверений](active-directory-b2c-reference-oidc.md) в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в клиенте Azure AD. Клиент Azure AD отличается от клиента Azure AD B2C. Если у вас еще нет учетная запись Майкрософт, его можно получить на [https://www.live.com/](https://www.live.com/).
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 1. Убедитесь, что вы используете каталог, содержащий клиент Azure AD, выбрав фильтр " **каталог и подписка** " в верхнем меню и выбрав Каталог, содержащий ваш клиент Azure AD.
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Регистрация приложений**.
 1. Выберите **Новая регистрация**.
@@ -42,7 +43,7 @@ ms.locfileid: "73642079"
 ## <a name="configure-a-microsoft-account-as-an-identity-provider"></a>Настройка учетной записи Microsoft в качестве поставщика удостоверений
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
-1. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C, выбрав фильтр " **каталог и подписка** " в верхнем меню и выбрав Каталог, содержащий ваш клиент.
+1. Убедитесь, что используете каталог с клиентом Azure AD B2C, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом.
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
 1. Выберите **поставщики удостоверений**, а затем выберите **учетная запись Майкрософт**.
 1. Введите **Имя**. Например, *MSA*.

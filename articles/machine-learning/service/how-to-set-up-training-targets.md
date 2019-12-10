@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 11/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1755d5bf3338694f53da7021579cb4c0aee623f3
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 934899a74362ec9354c772c341d38d6a8f988ab4
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74912482"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74951876"
 ---
 # <a name="set-up-and-use-compute-targets-for-model-training"></a>Настройка и использование целевых объектов вычислений для обучения модели 
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -54,7 +54,7 @@ ms.locfileid: "74912482"
 
 ## <a name="whats-an-estimator"></a>Что такое оценщик?
 
-Для упрощения обучения модели с помощью популярных платформ пакет SDK для Машинное обучение Azure Python предоставляет альтернативную абстракцию более высокого уровня, класс оценщика. Мы рекомендуем использовать оценку для обучения, так как класс содержит методы, позволяющие легко создавать и настраивать конфигурации запуска. Вы можете создать и использовать универсальный [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) для отправки сценариев обучения, использующих любую выбранную платформу обучения (например, scikit-учиться). Если необходимо сделать файлы данных доступными для целевого объекта вычислений, см. статью [обучение с помощью машинное обучение Azure DataSets](how-to-train-with-datasets.md).
+Для упрощения обучения модели с помощью популярных платформ пакет SDK для Машинное обучение Azure Python предоставляет альтернативную абстракцию более высокого уровня, класс оценщика.  Этот класс позволяет легко создавать конфигурации запуска. Вы можете создать и использовать универсальный [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) для отправки сценариев обучения, использующих любую выбранную платформу обучения (например, scikit-учиться). Мы рекомендуем использовать Оценщик для обучения, так как он автоматически контруктс внедренные объекты, такие как среда или объекты RunConfiguration. Если вы хотите получить более полный контроль над созданием этих объектов и спекфифи, какие пакеты следует установить для выполнения експериемент, выполните следующие [действия](#amlcompute) , чтобы отправить обучающие эксперименты с помощью объекта RunConfiguration на машинное обучение Azure вычислений.
 
 Для задач PyTorch, TensorFlow и Chain Машинное обучение Azure также предоставляет соответствующие средства оценки [PyTorch](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py), [TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py)и [формирователя цепочки](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) для упрощения использования этих платформ.
 

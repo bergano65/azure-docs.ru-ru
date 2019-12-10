@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 7/12/2019
-ms.openlocfilehash: dc842ba0e7ca0f34b7dacb98322c4dc0cd056483
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: b3165daa06ed975df9ccb677699d3ceb449327ab
+ms.sourcegitcommit: b5ff5abd7a82eaf3a1df883c4247e11cdfe38c19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74931990"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74941954"
 ---
 # <a name="move-files-with-azure-data-factory"></a>Перемещение файлов с помощью фабрики данных Azure
 
@@ -36,9 +36,11 @@ ms.locfileid: "74931990"
 - **Копировать** копирует один файл из источника в целевое хранилище.
 - **Delete** удаляет один и тот же файл из исходного хранилища.
 
-Шаблон определяет два параметра.
-- *FolderPath_SourceStore* — это путь к папке исходного хранилища, из которой нужно переместить файлы. 
-- *FolderPath_DestinationStore* — это путь к папке конечного хранилища, куда нужно переместить файлы. 
+Шаблон определяет четыре параметра:
+- *SourceStore_Location* — это путь к папке исходного хранилища, из которой нужно переместить файлы. 
+- *SourceStore_Directory* — это путь к вложенной папке исходного хранилища, из которого нужно переместить файлы.
+- *DestinationStore_Location* — это путь к папке конечного хранилища, куда нужно переместить файлы. 
+- *DestinationStore_Directory* — это путь к вложенной папке конечного хранилища, куда нужно переместить файлы.
 
 ## <a name="how-to-use-this-solution-template"></a>Использование шаблона решения
 
@@ -50,9 +52,7 @@ ms.locfileid: "74931990"
 
     ![Создание нового подключения к целевому хранилищу](media/solution-template-move-files/move-files2.png)
 
-3. Выберите **Использовать этот шаблон**.
-
-    ![Использование шаблона](media/solution-template-move-files/move-files3.png)
+3. Выберите **использовать вкладку шаблон** .
     
 4. Вы увидите конвейер, как показано в следующем примере:
 
