@@ -124,8 +124,6 @@
               href: point-to-site-how-to-vpn-client-install-azure-cert.md
             - name: Создание и установка файлов конфигурации VPN-клиента
               href: point-to-site-vpn-client-configuration-azure-cert.md
-            - name: О скачиваемом файле профиля VPN-клиента
-              href: about-vpn-profile-download.md
         - name: Проверка подлинности RADIUS
           items:
             - name: "Настройка VPN-подключений \"точка\_— сеть\""
@@ -142,6 +140,8 @@
               href: openvpn-azure-ad-mfa.md
             - name: Настройка VPN-клиента
               href: openvpn-azure-ad-client.md
+            - name: О скачиваемом файле профиля VPN-клиента
+              href: about-vpn-profile-download.md
         - name: OpenVPN
           items:
             - name: "Настройка OpenVPN для подключений \"точка\_— сеть\""
