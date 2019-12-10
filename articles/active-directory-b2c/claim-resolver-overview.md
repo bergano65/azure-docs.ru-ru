@@ -1,6 +1,7 @@
 ---
-title: Арбитры утверждений в пользовательских политиках Azure Active Directory B2C | Документация Майкрософт
-description: Сведения об использовании арбитров утверждений в пользовательской политике Azure Active Directory B2C.
+title: Арбитры утверждений в пользовательских политиках
+titleSuffix: Azure AD B2C
+description: Узнайте, как использовать арбитры утверждений в пользовательской политике в Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -10,12 +11,12 @@ ms.topic: reference
 ms.date: 01/25/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: f08c85cee2378f4a879daf197af7a2adf0c20f45
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 3370ec8de0fb49b92c0fb4dd429439e293ad1d8b
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71064394"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74949880"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Арбитры утверждений в пользовательских политиках Azure Active Directory B2C
 
@@ -47,8 +48,8 @@ ms.locfileid: "71064394"
 
 | Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
-| {Culture:LanguageName} | Двухбуквенный код ISO для языка. | ru-RU |
-| {Culture:LCID}   | Код языка (локаль). | 25 |
+| {Culture:LanguageName} | Двухбуквенный код ISO для языка. | en |
+| {Culture:LCID}   | Код языка (локаль). | 1033 |
 | {Culture:RegionName} | Двухбуквенный код ISO для региона. | США |
 | {Culture:RFC5646} | Код языка RFC5646. | en-US |
 
@@ -61,7 +62,7 @@ ms.locfileid: "71064394"
 | {Policy:TenantObjectId} | Идентификатор объекта клиента для политики проверяющей стороны. | 00000000-0000-0000-0000-000000000000 |
 | {Policy:TrustFrameworkTenantId} | Идентификатор клиента инфраструктуры доверия. | your-tenant.onmicrosoft.com |
 
-### <a name="openid-connect"></a>Подключение OpenID
+### <a name="openid-connect"></a>OpenID Connect
 
 | Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
@@ -82,7 +83,7 @@ ms.locfileid: "71064394"
 | {Context:BuildNumber} | Версия инфраструктури процедур идентификации (номер сборки).  | 1.0.507.0 |
 | {Context:CorrelationId} | Идентификатор корреляции.  | 00000000-0000-0000-0000-000000000000 |
 | {Context:DateTimeInUtc} |Дата и время в формате UTC.  | 10/10/2018 12:00:00 |
-| {Context:DeploymentMode} |Режим развертывания политики.  | Рабочая среда |
+| {Context:DeploymentMode} |Режим развертывания политики.  | Производство |
 | {Context:IPAddress} | IP-адрес пользователя. | 11.111.111.11 |
 
 

@@ -1,5 +1,6 @@
 ---
-title: Настройка смены пароля в настраиваемых политиках в Azure Active Directory B2C | Документация Майкрософт
+title: Настройка смены пароля с помощью настраиваемых политик
+titleSuffix: Azure AD B2C
 description: Сведения о том, как разрешить пользователям изменять пароль с помощью настраиваемых политик в Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
@@ -10,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 0775920e1d6572223253edbfc066123a515b5480
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: fd1f623eecdd855dbfb8e27795f813db4d099f53
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71065535"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74950584"
 ---
 # <a name="configure-password-change-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка смены пароля в настраиваемых политиках в Azure Active Directory B2C
 
@@ -23,7 +24,7 @@ ms.locfileid: "71065535"
 
 В Azure Active Directory B2C (Azure AD B2C) можно разрешить пользователям, вошедшим в локальную учетную запись, изменить пароль, не подтверждая их подлинность по проверке по электронной почте. Если время сеанса истекает, когда пользователь входит в поток смены пароля, такому пользователю предлагается выполнить вход еще раз. В этой статье рассказывается о настройке смены пароля в [настраиваемых политиках](active-directory-b2c-overview-custom.md). Также можно настроить [самостоятельный сброс пароля](active-directory-b2c-reference-sspr.md) в последовательностях пользователей.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
 
@@ -165,7 +166,7 @@ ms.locfileid: "71065535"
 ### <a name="upload-the-files"></a>Передача файлов
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
-2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C, выбрав фильтр " **каталог и подписка** " в верхнем меню и выбрав Каталог, содержащий ваш клиент.
+2. Убедитесь, что используете каталог с клиентом Azure AD B2C, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. Выберите **Инфраструктура процедур идентификации**.
 5. На странице "Настраиваемые политики" щелкните **Отправить политику**.
@@ -179,6 +180,6 @@ ms.locfileid: "71065535"
 2. В разделе **Приложение** выберите зарегистрированное ранее приложение. Чтобы маркер отображался, **URL-адрес ответа** должен быть следующим: `https://jwt.ms`.
 3. Щелкните **Запустить сейчас**. Выполните вход с помощью ранее созданной учетной записи. Теперь вы сможете изменять пароль.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в разделе [Настройка сложности пароля в настраиваемых политиках в Azure Active Directory B2C](active-directory-b2c-reference-password-complexity-custom.md).

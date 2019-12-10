@@ -1,5 +1,6 @@
 ---
-title: Устранение неполадок пользовательских политик с помощью Application Insights Azure Active Directory B2C
+title: Устранение неполадок пользовательских политик с помощью Application Insights
+titleSuffix: Azure AD B2C
 description: Настройка Application Insights для трассировки выполнения пользовательских политик.
 services: active-directory-b2c
 author: mmacy
@@ -10,12 +11,12 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: b8bf26791ca6489c12e4f9538d56ae0f0f66cc8c
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 3aeef1614f22563e0fd348c5bc6ae7ff1e7b0b03
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73602025"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74950091"
 ---
 # <a name="collect-azure-active-directory-b2c-logs-with-application-insights"></a>Собирайте журналы Azure Active Directory B2C с помощью Application Insights
 
@@ -30,7 +31,7 @@ ms.locfileid: "73602025"
 
 Создайте экземпляр Application Insights в подписке, если он еще не создан.
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 1. Выберите фильтр **каталог и подписка** в верхнем меню, а затем выберите каталог, содержащий подписку Azure (а не Azure AD B2C каталог).
 1. Выберите **создать ресурс** в меню навигации слева.
 1. Найдите и выберите **Application Insights**, а затем щелкните **создать**.
@@ -60,7 +61,7 @@ ms.locfileid: "73602025"
     * `ClientEnabled="true"` отправляет скрипт на стороне клиента ApplicationInsights для отслеживания просмотра страниц и ошибок на стороне клиента. Их можно просмотреть в таблице **бровсертимингс** на портале Application Insights. Настроив `ClientEnabled= "true"`, вы добавляете в скрипт страницы Application Insights и получаете время загрузки страниц и вызовов AJAX, количество, сведения об исключениях браузера и сбоях AJAX, а также число пользователей и сеансов. Это поле является **необязательным**и по умолчанию имеет значение `false`.
     * Параметр `ServerEnabled="true"` отправляет существующие данные JSON UserJourneyRecorder как пользовательское событие в Application Insights.
 
-    Например:
+    Пример.
 
     ```XML
     <TrustFrameworkPolicy
@@ -92,7 +93,7 @@ ms.locfileid: "73602025"
 
 Ниже приведен список запросов, которые можно использовать для просмотра журналов.
 
-| Запрос | Description (Описание) |
+| Запрос | Описание |
 |---------------------|--------------------|
 `traces` | Просмотр всех журналов, созданных Azure AD B2C |
 `traces | where timestamp > ago(1d)` | Просмотр всех журналов, созданных Azure AD B2C за последний день

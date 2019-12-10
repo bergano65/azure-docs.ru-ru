@@ -1,5 +1,6 @@
 ---
-title: Определение самоподтвержденного технического профиля в настраиваемой политике в Azure Active Directory B2C | Документация Майкрософт
+title: Определение самостоятельно утвержденного технического профиля в настраиваемой политике
+titleSuffix: Azure AD B2C
 description: Определение самоподтвержденного технического профиля в настраиваемой политике в Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
@@ -10,12 +11,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 4fec742766cebeb5b1d82655e09af77a888c375c
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: bfa8982fb49b31540d1926bdeb75a96dc1d79cf0
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71063694"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74950907"
 ---
 # <a name="define-a-self-asserted-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение самоподтвержденного технического профиля в настраиваемой политике Azure Active Directory B2C
 
@@ -25,7 +26,7 @@ ms.locfileid: "71063694"
 
 ## <a name="protocol"></a>Протокол
 
-Атрибуту **Name** элемента **Protocol** необходимо присвоить значение `Proprietary`. Атрибут **handler** должен содержать полное имя сборки обработчика протокола, которое используется Azure AD B2C, для самоподтверждения: `Web.TPEngine.Providers.SelfAssertedAttributeProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`.
+Для атрибута **Name** элемента **Protocol** необходимо задать значение `Proprietary`. Атрибут **handler** должен содержать полное имя сборки обработчика протокола, которое используется Azure AD B2C, для самоподтверждения: `Web.TPEngine.Providers.SelfAssertedAttributeProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`.
 
 В следующем примере показан самоподтвержденный технический профиль для регистрации по электронной почте:
 
@@ -57,7 +58,7 @@ ms.locfileid: "71063694"
 
 Элемент **ClaimType** в коллекции **OutputClaims** должен задать для элемента **UserInputType** любой тип ввода пользователя, который поддерживается Azure AD B2C, например `TextBox` или `DropdownSingleSelect`. В противном случае элементу **OutputClaim** необходимо задать значение **DefaultValue**.
 
-Элемент **OutputClaimsTransformations** может содержать коллекцию элементов **OutputClaimsTransformation**, которые используются для изменения исходящих утверждений или создания новых.
+Элемент **OutputClaimsTransformations** может содержать коллекцию элементов **OutputClaimsTransformation**, которые используются для изменения выходных утверждений или создания новых.
 
 Следующее исходящее утверждение всегда имеет значение `live.com`:
 
@@ -127,12 +128,12 @@ ms.locfileid: "71063694"
 
 ## <a name="metadata"></a>Метаданные
 
-| Атрибут | Обязательное значение | Описание |
+| Атрибут | Обязательно для заполнения | Описание |
 | --------- | -------- | ----------- |
 | setting.showContinueButton | Нет | Отображает кнопку "Продолжить". Возможные значения: `true` (по умолчанию) или `false`. |
 | setting.showCancelButton | Нет | Отображает кнопку "Отмена". Возможные значения: `true` (по умолчанию) или `false`. |
 | setting.operatingMode | Нет | Для страницы входа в систему это свойство управляет поведением поля имени пользователя, таким как проверка входных данных и вывод сообщений об ошибках. Ожидаемые значения: `Username` или `Email`. |
-| ContentDefinitionReferenceId | Да | Идентификатор [определения содержимого](contentdefinitions.md), связанного с этим техническим профилем. |
+| ContentDefinitionReferenceId | ДА | Идентификатор [определения содержимого](contentdefinitions.md), связанного с этим техническим профилем. |
 | EnforceEmailVerification | Нет | При регистрации или изменении профиля применяет проверку по электронной почте. Возможные значения: `true` (по умолчанию) или `false`. |
 | setting.showSignupLink | Нет | Отображает кнопку "Регистрация". Возможные значения: `true` (по умолчанию) или `false`. |
 | setting.retryLimit | Нет | Определяет, сколько раз пользователь может попытаться предоставить данные, что проверяется на соответствие техническому профилю проверки. Например, пользователь пытается зарегистрироваться с помощью учетной записи, которая уже существует, и продолжает попытки до достижения предела.

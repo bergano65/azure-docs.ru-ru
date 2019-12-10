@@ -1,6 +1,7 @@
 ---
-title: Элементы Predicates и PredicateValidations — Azure Active Directory B2C | Документация Майкрософт
-description: Примеры преобразования утверждений учетной записи социальной сети для схемы инфраструктуры процедур идентификации Azure Active Directory B2C.
+title: Элементы Predicates и PredicateValidations
+titleSuffix: Azure AD B2C
+description: Запретите Добавление неверно сформированных данных в клиент Azure AD B2C с помощью пользовательских политик в Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -10,12 +11,12 @@ ms.topic: reference
 ms.date: 10/28/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a1f08589ae28b3e19d2a4fdb3e3862e127a810cc
-ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
+ms.openlocfilehash: a09478bd2e32a1ab484b85fec33ae03878ebb10c
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73099708"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74951026"
 ---
 # <a name="predicates-and-predicatevalidations"></a>Элементы Predicates и PredicateValidations
 

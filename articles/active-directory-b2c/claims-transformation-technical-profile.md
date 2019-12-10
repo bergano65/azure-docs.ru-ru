@@ -1,5 +1,6 @@
 ---
-title: Определение технического профиля преобразования утверждений в пользовательской политике в Azure Active Directory B2C | Документация Майкрософт
+title: Определение технического профиля преобразования утверждений
+titleSuffix: Azure AD B2C
 description: Определите технический профиль преобразования утверждений в пользовательской политике в Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
@@ -10,12 +11,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: fd2f77200741c54d1ed10f0a0eec1da76462b0a0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bf06fe7d4e529eb04b156a2d61011198a6fe0978
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66511616"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74949429"
 ---
 # <a name="define-a-claims-transformation-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля преобразования утверждений в пользовательской политике в Azure Active Directory B2C
 
@@ -25,7 +26,7 @@ ms.locfileid: "66511616"
 
 ## <a name="protocol"></a>Протокол
 
-Атрибуту **Name** элемента **Protocol** необходимо присвоить значение `Proprietary`. Атрибут **handler** должен содержать полное имя сборки обработчика протокола, которое используется Azure AD B2C: `Web.TPEngine.Providers.ClaimsTransformationProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`.
+Для атрибута **Name** элемента **Protocol** необходимо задать значение `Proprietary`. Атрибут **handler** должен содержать полное имя сборки обработчика протокола, которое используется Azure AD B2C: `Web.TPEngine.Providers.ClaimsTransformationProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`.
 
 В следующем примере показан технический профиль для преобразования утверждений:
 
