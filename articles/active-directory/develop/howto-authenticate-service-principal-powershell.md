@@ -1,5 +1,5 @@
 ---
-title: Создание удостоверения для приложения Azure с помощью PowerShell
+title: Создание удостоверения приложения Azure с помощью PowerShell | Службы
 titleSuffix: Microsoft identity platform
 description: Использование Azure PowerShell для создания приложения Azure Active Directory и субъекта-службы с последующим предоставлением доступа к ресурсам посредством управления доступом на основе ролей. В статье показано, как выполнять аутентификацию приложения с помощью сертификата.
 services: active-directory
@@ -15,12 +15,12 @@ ms.date: 10/10/2019
 ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2456d52a3863b362943547d8a0c0e478dbc572cf
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: b1a6732789ccaf1f5f33ce09592cfa06727908e1
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74917902"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74963738"
 ---
 # <a name="how-to-use-azure-powershell-to-create-a-service-principal-with-a-certificate"></a>Практическое руководство по использованию Azure PowerShell для создания субъекта-службы с сертификатом
 

@@ -1,8 +1,7 @@
 ---
-let application: MSALPublicClientApplication!
-title: Перенос приложений в MSAL. ObjectiveC
+title: Перенос приложений в MSAL (iOS и macOS) | Службы
 titleSuffix: Microsoft identity platform
-description: Узнайте о различиях между библиотекой проверки подлинности Майкрософт для ObjectiveC (MSAL для iOS и macOS) и библиотекой аутентификация Azure AD для ObjectiveC (ADAL. ObjC) и как перейти на MSAL для iOS и macOS.
+description: Узнайте о различиях между MSAL для iOS и macOS и библиотекой аутентификация Azure AD для ObjectiveC (ADAL. ObjC) и как перейти на MSAL для iOS/macOS.
 services: active-directory
 author: TylerMSFT
 manager: CelesteDG
@@ -15,12 +14,12 @@ ms.author: twhitney
 ms.reviewer: oldalton
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6df0fdb2ec3ab3deb8798aa7dbfc0c3e4e25f377
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 88fcb3422c900419abf68173ff5026a7dd0b87ea
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74917290"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74963602"
 ---
 # <a name="migrate-applications-to-msal-for-ios-and-macos"></a>Перенос приложений в MSAL для iOS и macOS
 

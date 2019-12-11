@@ -1,5 +1,5 @@
 ---
-title: Классическое приложение, вызывающее веб-API (обзор) — платформа Microsoft Identity
+title: Создание классического приложения, вызывающего веб-API — платформа Microsoft Identity | Службы
 description: Узнайте, как создать классическое приложение, вызывающее веб-API (обзор)
 services: active-directory
 documentationcenter: dev-center-name
@@ -15,36 +15,36 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d56a07b46c4cd54577bcb3d81f2c45c03433fc31
-ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
+ms.openlocfilehash: 545012629686e1fe3ece8a48ed852542e09e54fe
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71268352"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74965523"
 ---
-# <a name="scenario-desktop-app-that-calls-web-apis"></a>Сценарий. Классическое приложение, которое вызывает веб-API
+# <a name="scenario-desktop-app-that-calls-web-apis"></a>Сценарий: классическое приложение, вызывающее веб-API
 
 Узнайте все, что нужно для создания классического приложения, вызывающего веб-API
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [Pre-requisites](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 Если вы еще этого не сделали, создайте свое первое приложение, следуя краткому руководству по рабочему столу .NET, краткому руководству UWP или краткому руководству по macOS Native App.
 
 > [!div class="nextstepaction"]
-> [Краткое руководство Получение маркера безопасности и вызов API Microsoft Graph из классического приложения Windows](./quickstart-v2-windows-desktop.md)
+> [Краткое руководство. получение маркера и вызов Microsoft Graph API из классического приложения Windows](./quickstart-v2-windows-desktop.md)
 
 
 > [!div class="nextstepaction"]
-> [Краткое руководство Получение маркера и вызов Microsoft Graph API из приложения UWP](./quickstart-v2-uwp.md)
+> [Краткое руководство. получение маркера и вызов Microsoft Graph API из приложения UWP](./quickstart-v2-uwp.md)
 
 > [!div class="nextstepaction"]
-> [Краткое руководство Получение маркера и вызов Microsoft Graph API из собственного приложения macOS](./quickstart-v2-ios.md)
+> [Краткое руководство. получение маркера и вызов Microsoft Graph API из собственного приложения macOS](./quickstart-v2-ios.md)
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 Вы создаете классическое приложение и хотите выполнять вход пользователей в приложение и вызывать веб-API, такие как Microsoft Graph, другие API Майкрософт или собственный веб-API. У вас есть несколько возможностей:
 
@@ -68,7 +68,7 @@ ms.locfileid: "71268352"
 
 Классические приложения имеют ряд специальных особенностей, которые в основном зависят от того, использует ли ваше приложение интерактивную проверку подлинности или нет.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Классическое приложение — регистрация приложения](scenario-desktop-app-registration.md)

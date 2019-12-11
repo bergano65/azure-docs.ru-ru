@@ -9,18 +9,21 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 9301da884e26a65b198c885000159c383655b2d5
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 616e5dc5ac6416d2efe1d9338b99c2b400fe572a
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74771468"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74977120"
 ---
 # <a name="how-to-index-cosmos-db-data-using-an-indexer-in-azure-cognitive-search"></a>Индексирование Cosmos DB данных с помощью индексатора в Azure Когнитивный поиск 
 
 > [!IMPORTANT] 
 > API SQL общедоступен.
 > API MongoDB, API Gremlin и поддержка API Cassandra в настоящее время доступны в общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Вы можете запросить доступ к предварительным просмотрам, заполнив [эту форму](https://aka.ms/azure-cognitive-search/indexer-preview). [Версия REST API 2019-05-06-Preview](search-api-preview.md) предоставляет предварительные версии функций. В настоящее время предоставляется ограниченная поддержка портала, но поддержка пакета SDK для .NET пока что отсутствует.
+
+> [!WARNING]
+> Когнитивный поиск Azure поддерживает только Cosmos DB коллекции с [политикой индексирования](https://docs.microsoft.com/azure/cosmos-db/index-policy) , для которой задано значение [consistent](https://docs.microsoft.com/azure/cosmos-db/index-policy#indexing-mode) . Индексирование коллекций с политикой отложенной индексации не рекомендуется и может привести к отсутствующим данным. Коллекции с отключенным индексированием не поддерживаются.
 
 В этой статье показано, как настроить [индексатор](search-indexer-overview.md) Azure Cosmos DB для извлечения содержимого и сделать его поиском в Azure когнитивный Поиск. Этот рабочий процесс создает индекс Azure Когнитивный поиск и загружает его с помощью существующего текста, извлеченного из Azure Cosmos DB. 
 
@@ -175,7 +178,7 @@ ms.locfileid: "74771468"
 | **name** | Обязательный параметр. Выберите любое имя, представляющее объект источника данных. |
 |**type**| Обязательный параметр. Этот параметр должен содержать значение `cosmosdb`. |
 |**credentials** | Обязательный параметр. Должна быть Cosmos DB строкой подключения.<br/>Для коллекций SQL строки подключения имеют следующий формат: `AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<br/><br/>Для MongoDB Collections добавьте **типа API = MongoDB** в строку подключения:<br/>`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<br/><br/>Чтобы получить доступ к предварительной версии и сведения о том, как отформатировать учетные данные, для графов Gremlin и таблиц Cassandra Зарегистрируйте [предварительную версию для создания условного индексатора](https://aka.ms/azure-cognitive-search/indexer-preview) .<br/><br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если указать номер порта, Когнитивный поиск Azure не сможет индексировать базу данных Azure Cosmos DB.|
-| **container** | Содержит следующие элементы: <br/>**name**: обязательное поле. Укажите идентификатор коллекции баз данных для индексирования.<br/>**query**: необязательное поле. Можно указать запрос на сведение произвольного документа JSON в плоскую схему, которую Azure Когнитивный поиск может индексировать.<br/>Для API MongoDB, API Gremlin и API Cassandra запросы не поддерживаются. |
+| **container** | В данной вкладке содержатся следующие элементы. <br/>**name**: обязательное поле. Укажите идентификатор коллекции баз данных для индексирования.<br/>**query**: необязательное поле. Можно указать запрос на сведение произвольного документа JSON в плоскую схему, которую Azure Когнитивный поиск может индексировать.<br/>Для API MongoDB, API Gremlin и API Cassandra запросы не поддерживаются. |
 | **датачанжедетектионполици** | (рекомендуется). Ознакомьтесь с разделом [Индексация измененных документов](#DataChangeDetectionPolicy).|
 |**датаделетиондетектионполици** | Необязательный элемент. Ознакомьтесь с разделом [удаленных документов](#DataDeletionDetectionPolicy).|
 

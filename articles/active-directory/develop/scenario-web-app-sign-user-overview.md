@@ -1,5 +1,5 @@
 ---
-title: Веб-приложение, которое входит в систему пользователей (обзор) — платформа Microsoft Identity
+title: Вход пользователей из веб-приложения — платформа Microsoft Identity | Службы
 description: Узнайте, как создать веб-приложение, которое входит в систему пользователей (обзор)
 services: active-directory
 documentationcenter: dev-center-name
@@ -15,22 +15,22 @@ ms.date: 09/17/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 316ab055a077b251e88421ab26997f8556a6e31f
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 10a53f88a97cdba8626c9d6c421093e4ec327e19
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74482504"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74961613"
 ---
 # <a name="scenario-web-app-that-signs-in-users"></a>Сценарий: веб-приложение, которое входит в систему пользователей
 
 Узнайте все, что нужно для создания веб-приложения, использующего платформу Microsoft Identity для входа пользователей.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [Prerequisites](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 # <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
 
@@ -62,7 +62,7 @@ ms.locfileid: "74482504"
 
 ---
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 Вы можете добавить проверку подлинности в веб-приложение, чтобы он мог выполнять вход пользователей. Добавление проверки подлинности позволяет веб-приложению получить доступ к сведениям о профиле, чтобы настроить взаимодействие с пользователями. 
 
@@ -81,7 +81,7 @@ ms.locfileid: "74482504"
 - В коде для вашего приложения необходимо предоставить центр, в котором веб-приложение делегирует вход. Может потребоваться настроить проверку маркера (в частности, в сценариях партнеров).
 - Веб-приложения поддерживают любые типы учетных записей. Дополнительные сведения см. в разделе [Поддерживаемые типы учетных записей](v2-supported-account-types.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 # <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
 

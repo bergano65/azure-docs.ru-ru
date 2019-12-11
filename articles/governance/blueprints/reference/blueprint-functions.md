@@ -1,14 +1,14 @@
 ---
 title: Функции чертежей Azure
 description: Описание функций, доступных для использования с артефактами схемы в определениях и назначениях схем Azure.
-ms.date: 04/15/2019
+ms.date: 12/09/2019
 ms.topic: reference
-ms.openlocfilehash: 92539da02ddbe22f943454aff54dae4ccb5af3ce
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 0aab2fe0511ccc11842d0e132a83d6e3f7fac27f
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74128758"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74970896"
 ---
 # <a name="functions-for-use-with-azure-blueprints"></a>Функции для использования с чертежами Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "74128758"
 - [parameters](#parameters)
 - [resourceGroup](#resourcegroup)
 - [resourceGroups](#resourcegroups)
-- [Подписка](#subscription)
+- [subscription](#subscription)
 
 ## <a name="artifacts"></a>artifacts
 
@@ -29,11 +29,14 @@ ms.locfileid: "74128758"
 
 Возвращает объект свойств, заполненных выходными данными артефактов схемы.
 
-### <a name="parameters"></a>parameters
+> [!NOTE]
+> Функция `artifacts()` не может использоваться в шаблоне диспетчер ресурсов. Функцию можно использовать только в коде JSON определения схемы или в JSON артефакта при управлении схемой с Azure PowerShell или REST API как часть [чертежей в виде кода](https://github.com/Azure/azure-blueprints/blob/master/README.md).
 
-| Параметр | обязательные | введите | ОПИСАНИЕ |
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно для заполнения | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| artifactName |Yes |строка |Имя артефакта схемы. |
+| artifactName |ДА |string |Имя артефакта схемы. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -103,14 +106,14 @@ ms.locfileid: "74128758"
 
 Ниже приведены некоторые примеры получения данных из образца _митемплатеартифакт_ .
 
-| Выражение | введите | Значение |
+| Expression | Тип | Value |
 |:---|:---|:---|
-|`[artifacts("myTemplateArtifact").outputs.myArray]` | Массив. | \["first", "second"\] |
-|`[artifacts("myTemplateArtifact").outputs.myArray[0]]` | Строка, | "first" |
-|`[artifacts("myTemplateArtifact").outputs.myString]` | Строка, | "my string value" |
-|`[artifacts("myTemplateArtifact").outputs.myObject]` | Объект. | { "myproperty": "my value", "anotherProperty": true } |
-|`[artifacts("myTemplateArtifact").outputs.myObject.myProperty]` | Строка, | "my value" |
-|`[artifacts("myTemplateArtifact").outputs.myObject.anotherProperty]` | Bool | True, |
+|`[artifacts("myTemplateArtifact").outputs.myArray]` | Массив, | \["first", "second"\] |
+|`[artifacts("myTemplateArtifact").outputs.myArray[0]]` | Строка | "first" |
+|`[artifacts("myTemplateArtifact").outputs.myString]` | Строка | "my string value" |
+|`[artifacts("myTemplateArtifact").outputs.myObject]` | Объекты | { "myproperty": "my value", "anotherProperty": true } |
+|`[artifacts("myTemplateArtifact").outputs.myObject.myProperty]` | Строка | "my value" |
+|`[artifacts("myTemplateArtifact").outputs.myObject.anotherProperty]` | Bool | Да |
 
 ## <a name="concat"></a>concat
 
@@ -118,12 +121,12 @@ ms.locfileid: "74128758"
 
 Объединяет несколько строковых значений и возвращает результирующую строку.
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>Параметры
 
-| Параметр | обязательные | введите | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| строка1 |Yes |строка |Первое значение для сцепки. |
-| дополнительные аргументы |Нет |строка |Дополнительные значения в последовательном порядке для объединения |
+| строка1 |ДА |string |Первое значение для сцепки. |
+| дополнительные аргументы |Нет |string |Дополнительные значения в последовательном порядке для объединения |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -137,17 +140,17 @@ ms.locfileid: "74128758"
 
 `concat(parameters('organizationName'), '-vm')`
 
-## <a name="parameters"></a>Параметры
+## <a name="parameters"></a>parameters
 
 `parameters(parameterName)`
 
 Возвращает значение параметра схемы. Указанное имя параметра должно быть определено в определении схемы или в артефактах схемы.
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>Параметры
 
-| Параметр | обязательные | введите | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| имя_параметра |Yes |строка |Имя параметра, который требуется вернуть. |
+| имя_параметра |ДА |string |Имя параметра, который требуется вернуть. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -264,11 +267,11 @@ ms.locfileid: "74128758"
 
 Возвращает объект, представляющий указанный артефакт группы ресурсов. В отличие от `resourceGroup()`, для которых требуется контекст артефакта, эта функция используется для получения свойств определенного заполнителя группы ресурсов, если он не находится в контексте этой группы ресурсов.
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>Параметры
 
-| Параметр | обязательные | введите | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| плацехолдернаме |Yes |строка |Имя заполнителя артефакта группы ресурсов, который необходимо вернуть. |
+| плацехолдернаме |ДА |string |Имя заполнителя артефакта группы ресурсов, который необходимо вернуть. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -320,7 +323,7 @@ ms.locfileid: "74128758"
 }
 ```
 
-## <a name="subscription"></a>подписку
+## <a name="subscription"></a>subscription
 
 `subscription()`
 
@@ -362,7 +365,7 @@ ms.locfileid: "74128758"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь со сведениями о [жизненном цикле схем](../concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](../concepts/parameters.md).

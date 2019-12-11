@@ -1,5 +1,5 @@
 ---
-title: Учетные данные сертификата в Azure AD
+title: Учетные данные сертификата Azure AD
 titleSuffix: Microsoft identity platform
 description: В этой статье рассматривается регистрация и использование учетных данных сертификата для аутентификации приложения.
 services: active-directory
@@ -15,20 +15,21 @@ ms.author: ryanwi
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b0dd42aeaa8a7a5d9f1cc28b409a8d8dbf92304
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: d37b390e39d2b991ea01468feffbe39c9578af54
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74845371"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74963874"
 ---
-# <a name="certificate-credentials-for-application-authentication"></a>Учетные данные сертификата для аутентификации приложения
+# <a name="azure-ad-application-authentication-certificate-credentials"></a>Учетные данные сертификата проверки подлинности приложения Azure AD
 
 Azure Active Directory (Azure AD) позволяет приложению использовать для аутентификации свои учетные данные, например, в потоке предоставления учетных данных клиента OAuth 2.0 ([версия 1.0](v1-oauth2-client-creds-grant-flow.md), [версия 2.0](v2-oauth2-client-creds-grant-flow.md)) и потоке On-Behalf-Of ([версия 1.0](v1-oauth2-on-behalf-of-flow.md), [версия 2.0](v2-oauth2-on-behalf-of-flow.md)).
 
 Одной из форм учетных данных, которые приложение может использовать для аутентификации, является утверждение JSON Web Token (JWT), подписанное с помощью сертификата приложения.
 
 ## <a name="assertion-format"></a>Формат утверждения
+
 Чтобы вычислить утверждение, можно использовать одну из множества библиотек [JSON Web Token](https://jwt.ms/) на удобном для вас языке. Маркер содержит следующие сведения:
 
 ### <a name="header"></a>Заголовок

@@ -1,6 +1,6 @@
 ---
-title: Веб-приложения, что вызовы, веб-API (перемещение в рабочую среду) - платформой Microsoft identity
-description: Узнайте, как создать веб-приложение, вызовы веб-API-интерфейсы (перемещение в рабочую среду)
+title: Перемещение веб-приложений, вызывающих веб-API, в рабочую среду — платформа Microsoft Identity | Службы
+description: Узнайте, как переместить веб-приложение, которое вызывает веб-API в рабочей среде.
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -15,31 +15,31 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b326cdb7303ff392c6129e0f0fa460ffe088305
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e40920b7045dad6f64b5699bc3c4c560eb399f2a
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65074940"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74964962"
 ---
-# <a name="web-app-that-calls-web-apis---move-to-production"></a>Веб-приложение, вызывающее веб-интерфейсы API — переносу в рабочую среду
+# <a name="web-app-that-calls-web-apis---move-to-production"></a>Веб-приложение, вызывающее веб-API — переместить в рабочую среду
 
-Теперь, когда вы знаете, как получить токен для вызова веб-API, узнайте, как для перемещения в рабочую среду.
+Теперь, когда вы узнали, как получить маркер для вызова веб-API, Узнайте, как перейти в рабочую среду.
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения по этим полный ASP.NET Core web app прогрессивного руководством, показывающий:
+Дополнительные сведения см. в руководстве по полному ASP.NET Coreному веб-приложению, в котором показано следующее:
 
-- Как выполнять вход пользователей с помощью нескольких аудиторий, национальных облаках или с удостоверениями социальных сетей
+- Как войти в систему пользователей с несколькими аудиториями, национальными облаками или с удостоверениями социальных сетей
 - Вызывает Microsoft Graph
-- Вызывает несколько интерфейсов API Майкрософт
+- Вызывает несколько API-интерфейсов Майкрософт
 - Обрабатывает добавочное согласие
-- Вызывает веб-API
+- Вызывает собственный веб-API
 
 > [!div class="nextstepaction"]
-> [Учебник по ASP.NET Core web app](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial#scope-of-this-tutorial)
+> [Руководство по веб-приложению ASP.NET Core](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial#scope-of-this-tutorial)
 
 <!--- Removing this diagram as it's already shown from the next step linked tutorial
 

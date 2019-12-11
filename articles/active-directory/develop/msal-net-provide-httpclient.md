@@ -1,5 +1,5 @@
 ---
-title: Предоставление HttpClient и прокси-сервера (MSAL.NET)
+title: Укажите прокси-сервер HttpClient & (MSAL.NET) | Службы
 titleSuffix: Microsoft identity platform
 description: Дополнительные сведения об определении собственных HttpClient и прокси-сервера для подключения к Azure AD с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
@@ -14,12 +14,12 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c7b9a8d90c505cb93b6cf237ed67e9c47d9be0bb
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 80822c2a745d7c9c5b3f56b7921fcc83c5c807d1
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74915581"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74963245"
 ---
 # <a name="providing-your-own-httpclient-and-proxy-using-msalnet"></a>Определение собственных HttpClient и прокси-сервера с помощью MSAL.NET
 С помощью `.WithHttpClientFactory method` при [инициализации общедоступного клиентского приложения](msal-net-initializing-client-applications.md) можно указать собственное значение для HttpClient.  Определение собственного HttpClient позволяет использовать более сложные сценарии для точного управления прокси-сервером HTTP, настройки заголовков агентов пользователя или настройки принудительного использования определенного клиента HttpClient в MSAL (например, в веб-приложениях ASP.NET Core или интерфейсах API).

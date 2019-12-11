@@ -1,5 +1,5 @@
 ---
-title: Руководство разработчика по Azure Active Directory условному доступу
+title: Руководство разработчика по условному доступу Azure AD
 description: Руководство разработчика и сценарии для условного доступа Azure AD
 services: active-directory
 author: rwike77
@@ -13,12 +13,12 @@ ms.custom: aaddev
 ms.topic: conceptual
 ms.workload: identity
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69fcb50cb8273fa9e6606e1d071249ed17c78786
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: f6bd060e0c627e8183f8d7f7b449f8d6f19c951b
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74843739"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74967053"
 ---
 # <a name="developer-guidance-for-azure-active-directory-conditional-access"></a>Руководство разработчика по Azure Active Directory условному доступу
 

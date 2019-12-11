@@ -1,5 +1,5 @@
 ---
-title: Веб-приложение, которое подписывает пользователей (вход) — платформа Microsoft Identity
+title: Создание веб-приложения, которое входит в систему пользователей — платформа Microsoft Identity | Службы
 description: Узнайте, как создать веб-приложение, которое подписывает пользователей (вход)
 services: active-directory
 documentationcenter: dev-center-name
@@ -15,12 +15,12 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81b41e46401d600ebaba1febb86aafbd55c8399a
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: c8d7d5737a8332416a225154709ab7d66e447764
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74482564"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74961987"
 ---
 # <a name="web-app-that-signs-in-users-sign-in-and-sign-out"></a>Веб-приложение, которое входит в систему пользователей: вход и выход
 
@@ -435,7 +435,7 @@ public class AccountController : Controller
 
 Если вы хотите узнать больше о выходе, прочитайте документацию по протоколу, доступную по адресу [Open ID Connect](./v2-protocols-oidc.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Переместить в рабочую среду](scenario-web-app-sign-user-production.md)

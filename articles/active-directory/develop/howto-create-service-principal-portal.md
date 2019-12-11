@@ -1,7 +1,7 @@
 ---
-title: Создание удостоверения для приложения Azure на портале
+title: Создание приложения Azure AD & субъекта-службы с помощью портала
 titleSuffix: Microsoft identity platform
-description: Описывается создание нового приложения Azure Active Directory и субъекта-службы, которые можно использовать в сочетании с контролем доступа на основе ролей в Azure Resource Manager для управления доступом к ресурсам.
+description: Создайте новый Azure Active Directory приложение & субъекта-службы для управления доступом к ресурсам с помощью управления доступом на основе ролей в Azure Resource Manager.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -13,12 +13,12 @@ ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.custom: aaddev, seoapril2019, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c883dc1f9743e4318db5fe21b0e52ea92d60dc5
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 249c313f8f6195371985f3dad2e707638e52d0df
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74917868"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74967122"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Практическое руководство. Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала
 

@@ -1,7 +1,7 @@
 ---
-title: Настройка браузеров и веб-представлений
+title: Настройка браузеров & представлений | Службы
 titleSuffix: Microsoft identity platform
-description: Узнайте, как настроить взаимодействие с браузером, используемое MSAL для iOS и macOS для входа пользователей
+description: Узнайте, как настроить интерфейс MSAL iOS/macOS в браузере для входа пользователей.
 services: active-directory
 author: tylermsft
 manager: CelesteDG
@@ -14,12 +14,12 @@ ms.author: twhitney
 ms.reviewer: oldalton
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69b1e217bfa64ad08136e2763716d455332c5ba4
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: d5dbdadc6afa3a6822a76fdcecdfcaa6f2ad8c98
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74843331"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74963721"
 ---
 # <a name="how-to-customize-browsers-and-webviews-for-iosmacos"></a>Как настроить браузеры и представления для iOS/macOS
 

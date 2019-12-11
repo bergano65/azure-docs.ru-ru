@@ -1,6 +1,6 @@
 ---
-title: Изменения, вносимые в проект WebAPI при подключении к Azure AD
-description: В этой статье описывается, что происходит с проектом WebAPI при подключении к Azure AD с помощью Visual Studio.
+title: Изменения, внесенные в проекты WebAPI при подключении к Azure AD
+description: Описывает, что происходит с проектом WebAPI при подключении к Azure AD с помощью Visual Studio
 author: ghogen
 manager: jillfra
 ms.assetid: 57630aee-26a2-4326-9dbb-ea2a66daa8b0
@@ -12,12 +12,12 @@ ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 32fc72d22d3f739018df22c315d7a1a3124c8823
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 3a0cf375902281817ecc002f8fb76be32eed149d
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68851802"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74966322"
 ---
 # <a name="what-happened-to-my-webapi-project-visual-studio-azure-active-directory-connected-service"></a>Что произошло с моим проектом WebApi в подключенной службе Visual Studio Azure Active Directory
 
@@ -33,7 +33,7 @@ ms.locfileid: "68851802"
 
 Это изменение влияет на файлы проекта (ссылки \*.NET) и `packages.config` (ссылки NuGet).
 
-| Type | Ссылка |
+| Тип | Справочные материалы |
 | --- | --- |
 | .NET; NuGet | Microsoft.Owin |
 | .NET; NuGet | Microsoft.Owin.Host.SystemWeb |
@@ -46,7 +46,7 @@ ms.locfileid: "68851802"
 
 Дополнительные ссылки, если выбран параметр **Чтение данных каталога**
 
-| Type | Ссылка |
+| Тип | Справочные материалы |
 | --- | --- |
 | .NET; NuGet | EntityFramework |
 | .NET        | EntityFramework.SqlServer (только для Visual Studio 2015) |
@@ -60,7 +60,7 @@ ms.locfileid: "68851802"
 
 Следующие ссылки удалены (только для проектов ASP.NET 4, например в Visual Studio 2015):
 
-| Type | Ссылка |
+| Тип | Справочные материалы |
 | --- | --- |
 | .NET; NuGet | Microsoft.AspNet.Identity.Core |
 | .NET; NuGet | Microsoft.AspNet.Identity.EntityFramework |
@@ -84,7 +84,7 @@ ms.locfileid: "68851802"
     </appSettings>
     ```
 
-- Только для Visual Studio 2017. В разделе `<appSettings>` добавлена следующая запись:
+- Только для Visual Studio 2017: в разделе `<appSettings>` добавлена следующая запись:
 
     ```xml
     <add key="ida:MetadataAddress" value="<domain URL + /federationmetadata/2007-06/federationmetadata.xml>" />
@@ -127,7 +127,7 @@ ms.locfileid: "68851802"
 
 [Подробнее об Azure Active Directory](https://azure.microsoft.com/services/active-directory/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md)
+- [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md).
 - [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v1-aspnet-webapp.md)

@@ -1,6 +1,6 @@
 ---
-title: Веб-API, который вызывает веб-API (вызов API-интерфейсы) - платформой Microsoft identity
-description: Сведения о создании веб-API, вызывающее подчиненными веб-API-интерфейсы (вызов веб-API).
+title: Веб-API, вызывающий веб-API — платформа Microsoft Identity | Службы
+description: Узнайте, как создать веб-API, который вызывает веб-API.
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -15,22 +15,22 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1cd093cc68a21558dc326221eeaa8c034c24f1c2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6063d143e2f217426bdf1db217fde46f8542d314
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65074730"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74965217"
 ---
-# <a name="web-api-that-calls-web-apis---call-an-api"></a>Веб-API, который вызывает веб-API - вызова API
+# <a name="web-api-that-calls-web-apis---call-an-api"></a>Веб-API, вызывающий веб-API — вызов API
 
-Получив маркер, можно вызвать защищенный веб-API. Это делается на контроллере ASP.NET/ASP.NET Core веб-API.
+После получения маркера можно вызвать защищенный веб-API. Это делается с контроллера веб-API ASP.NET/ASP.NET Core.
 
 ## <a name="controller-code"></a>Код контроллера
 
-Здесь является продолжением примера кода, показанного на [вызывает защищенный веб-API веб-API — получение токена](scenario-web-api-call-api-acquire-token.md), с именем действия контроллеров API, вызвав API нижнего уровня (с именем "todolist").
+Вот продолжение примера кода, показанного в разделе [защищенный веб-API, вызывает веб-API — получение маркера](scenario-web-api-call-api-acquire-token.md), вызываемого в действиях контроллеров API, вызов подчиненного API (с именем ToDoList).
 
-После получения маркера используйте как токен носителя для вызова API нижнего уровня.
+После получения маркера используйте его в качестве токена носителя для вызова подчиненного API.
 
 ```CSharp
 private async Task GetTodoList(bool isAppStarting)

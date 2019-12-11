@@ -1,5 +1,5 @@
 ---
-title: Веб-приложение, которое подписывает пользователей (конфигурация кода) — платформа Microsoft Identity
+title: Настройка веб-приложения, которое входит в систему пользователей — платформа Microsoft Identity | Службы
 description: Узнайте, как создать веб-приложение, которое входит в систему пользователей (конфигурация кода)
 services: active-directory
 documentationcenter: dev-center-name
@@ -15,12 +15,12 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16b7032f8568cc944fb95d2e56a84a3d475c3994
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: b077a71a541d29c9b93778babc096ea40c3b43cb
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74482736"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74964877"
 ---
 # <a name="web-app-that-signs-in-users-code-configuration"></a>Веб-приложение, которое входит в систему пользователей: конфигурация кода
 
@@ -31,7 +31,7 @@ ms.locfileid: "74482736"
 <!-- This section can be in an include for Web App and Web APIs -->
 Библиотеки, используемые для защиты веб-приложения (и веб-API):
 
-| платформа | Библиотека | ОПИСАНИЕ |
+| платформа | Библиотека | Описание |
 |----------|---------|-------------|
 | ![.NET](media/sample-v2-code/logo_net.png) | [Расширения модели удостоверений для .NET](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) | По ASP.NET и ASP.NET Core, расширения модели идентификации Майкрософт для .NET предлагают набор библиотек DLL, выполняющихся как в .NET Framework, так и в .NET Core. Из веб-приложения ASP.NET или ASP.NET Core можно управлять проверкой маркера с помощью класса **TokenValidationParameters** (в частности, в некоторых сценариях партнеров). |
 | ![Java:](media/sample-v2-code/small_logo_java.png) | [MSAL Java](https://github.com/AzureAD/microsoft-authentication-library-for-java/wiki) | Библиотека проверки подлинности Майкрософт (MSAL) для Java. В настоящее время общедоступная Предварительная версия. |
@@ -378,7 +378,7 @@ Session(app)
 
 ---
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В следующей статье вы узнаете, как активировать вход и выход.
 

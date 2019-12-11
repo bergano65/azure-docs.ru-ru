@@ -1,5 +1,5 @@
 ---
-title: Проверка подлинности Azure Active Directory и коды ошибок авторизации | Документация Майкрософт
+title: Коды ошибок проверки подлинности и авторизации Azure AD | Службы
 description: Сведения о кодах ошибок AADSTS, которые возвращаются службой маркеров безопасности Azure AD.
 services: active-directory
 documentationcenter: ''
@@ -17,14 +17,14 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 261fe2142fc3bc45625b5d088a46ad92c34222db
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 02ed0b84a29ea0c3ce3b58db1c029798655bfb06
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70193172"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74965812"
 ---
-# <a name="authentication-and-authorization-error-codes"></a>Коды ошибок проверки подлинности и авторизации
+# <a name="azure-ad-authentication-and-authorization-error-codes"></a>Коды ошибок аутентификация Azure AD и авторизации
 
 Вам нужна информация о кодах ошибок AADSTS, которые возвращаются службой маркеров безопасности (STS) Azure Active Directory (Azure AD)? В этом документе приводятся описания ошибок AADSTS, методы их исправления и некоторые рекомендации по обходным путям.
 
@@ -40,7 +40,7 @@ ms.locfileid: "70193172"
 
 ## <a name="aadsts-error-codes"></a>Коды ошибок AADSTS
 
-| Ошибка | ОПИСАНИЕ |
+| Ошибка | Описание |
 |---|---|
 | AADSTS16000 | SelectUserAccount — это прерывание создается Azure AD и вызывает пользовательский интерфейс, в котором пользователь может выбрать один из нескольких допустимых сеансов единого входа. Эта ошибка возникает довольно часто и может возвращаться в приложение, если указан параметр `prompt=none`. |
 | AADSTS16001 | UserAccountSelectionInvalid — такую ошибку вы получите, когда пользователь щелкнет плитку, отклоненную логикой выбора сеанса. Когда возникает эта ошибка, пользователю предоставляется возможность выбрать плитку сеанса из обновленного списка или выбрать другую учетную запись. Эта ошибка может возникнуть из-за дефекта кода или состояния гонки. |
@@ -273,6 +273,6 @@ ms.locfileid: "70193172"
 | AADSTS1000002 | BindCompleteInterruptError: привязка успешно выполнена, но об этом необходимо сообщить пользователю. |
 | AADSTS7000112 | Унаусоризедклиентаппликатиондисаблед — приложение отключено. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * У вас есть вопрос или не можете найти нужную информацию? Создайте запрос в GitHub или изучите статью [Возможности получения поддержки и справки для разработчиков](active-directory-develop-help-support.md), чтобы узнать о других способах получения поддержки и справки.

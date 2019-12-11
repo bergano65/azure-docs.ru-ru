@@ -1,5 +1,5 @@
 ---
-title: Сведения о различных типах маркеров и утверждений, поддерживаемых Azure AD | Документация Майкрософт
+title: Токены Azure AD & типы утверждений | Документация Майкрософт
 description: Руководство с общими данными и анализом утверждений в токенах SAML 2.0 и веб-токенах JSON (JWT), выдаваемых службой Azure Active Directory (AAD)
 documentationcenter: na
 author: rwike77
@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: baf4c976a1232d08df1be2549d2861295adf9ee1
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 4acac79d79b584dac93d63f6d478627f7e953f81
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74532960"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74965762"
 ---
 # <a name="azure-ad-saml-token-reference"></a>Справочник по токенам SAML в Azure AD
 

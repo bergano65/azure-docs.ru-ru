@@ -1,11 +1,10 @@
 ---
-title: Использование Cloud-init для обновления и установки пакетов на виртуальной машине Linux в Azure
+title: Использование Cloud-init в виртуальной машине Linux в Azure
 description: Как с помощью cloud-init и Azure CLI обновить и установить пакеты в создаваемой виртуальной машине Linux
 services: virtual-machines-linux
 documentationcenter: ''
-author: rickstercdn
+author: cynthn
 manager: gwallace
-editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
@@ -13,21 +12,21 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.topic: article
 ms.date: 04/20/2018
-ms.author: rclaus
-ms.openlocfilehash: ddea412598e02be7d71d5a3efafa444a5dc19e8c
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.author: cynthn
+ms.openlocfilehash: 7bb48ec11ec042f021203c1716968daa9ab45047
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036730"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74973141"
 ---
 # <a name="use-cloud-init-to-update-and-install-packages-in-a-linux-vm-in-azure"></a>Обновление и установка пакетов с помощью cloud-init на виртуальной машине Linux в Azure
-В этой статье показано, как с помощью [cloud-init](https://cloudinit.readthedocs.io) обновлять пакеты на виртуальной машине или в масштабируемом наборе виртуальных машин при подготовке в Azure. Эти скрипты cloud-init выполняются при первой загрузке, если в Azure подготовлены все нужные ресурсы. Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).
+В этой статье показано, как использовать [Cloud-init](https://cloudinit.readthedocs.io) для обновления пакетов на виртуальной машине Linux или в масштабируемых наборах виртуальных машин во время подготовки в Azure. Эти скрипты cloud-init выполняются при первой загрузке, если в Azure подготовлены все нужные ресурсы. Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).
 
 ## <a name="update-a-vm-with-cloud-init"></a>Обновление виртуальной машины с помощью cloud-init
 В целях безопасности вы можете настроить автоматическую установку последних обновлений на виртуальной машине при первом запуске. Так как cloud-init одинаково работает в разных дистрибутивах Linux, нет необходимости указывать `apt` или `yum` для диспетчера пакетов. Вместо этого следует указать `package_upgrade`, а процесс cloud-init самостоятельно определит правильный механизм для используемого дистрибутива. Этот рабочий процесс позволяет использовать один и тот же скрипт cloud-init с разными дистрибутивами.
 
-Чтобы увидеть процесс обновления в действии, создайте файл с именем *cloud_init_hostname.txt* и вставьте в него конфигурацию, приведенную ниже. Для этого примера создайте файл в Cloud Shell, не на локальном компьютере. Вы можете использовать любой редактор. Введите `sensible-editor cloud_init_upgrade.txt`, чтобы создать файл и просмотреть список доступных редакторов. Выберите первый пункт, чтобы использовать редактор **nano**. Убедитесь, что весь файл cloud-init скопирован правильно, особенно первая строка.  
+Чтобы увидеть процесс обновления в действии, создайте файл с именем *cloud_init_hostname.txt* и вставьте в него конфигурацию, приведенную ниже. Для этого примера создайте файл в Cloud Shell (не на локальном компьютере). Вы можете использовать любой редактор. Введите `sensible-editor cloud_init_upgrade.txt`, чтобы создать файл и просмотреть список доступных редакторов. Выберите первый пункт, чтобы использовать редактор **nano**. Убедитесь, что весь файл cloud-init скопирован правильно, особенно первая строка.  
 
 ```yaml
 #cloud-config
@@ -76,8 +75,8 @@ ID     | Command line             | Date and time    | Action(s)      | Altered
      1 |                          | 2017-12-12 20:32 | Install        |  522
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
-Дополнительные примеры изменения конфигураций с помощью cloud-init см. в следующих статьях.
+## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные примеры изменения конфигурации с помощью cloud-init см. в следующих статьях:
  
 - [Добавление пользователя Linux к виртуальной машине](cloudinit-add-user.md)
 - [Запуск диспетчера пакетов для обновления существующих пакетов при первой загрузке](cloudinit-update-vm.md)

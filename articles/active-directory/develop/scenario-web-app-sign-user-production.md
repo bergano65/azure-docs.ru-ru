@@ -1,5 +1,5 @@
 ---
-title: Веб-приложение, которое входит в систему пользователей (переходит в рабочую среду) — платформа Microsoft Identity
+title: Перемещение веб-приложения, которое выполняет вход пользователей в рабочую среду — платформа Microsoft Identity | Службы
 description: Узнайте, как создать веб-приложение, которое входит в систему пользователей (переходит в рабочую среду).
 services: active-directory
 documentationcenter: dev-center-name
@@ -15,12 +15,12 @@ ms.date: 09/17/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: efcc7ed4f80d0e3e9750d19ff95d010052a08b87
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: c49782a6e1e86320b508875e2bf931cc1cc19b4e
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74481877"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74964776"
 ---
 # <a name="web-app-that-signs-in-users-move-to-production"></a>Веб-приложение, которое входит в систему пользователей: перейти в рабочую среду
 
@@ -28,7 +28,7 @@ ms.locfileid: "74481877"
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 ### <a name="scenario-for-calling-web-apis"></a>Сценарий для вызова веб-API
 
@@ -50,7 +50,7 @@ ms.locfileid: "74481877"
 - Несколько организаций
 - Рабочие или учебные учетные записи или личные учетные записи Майкрософт
 - [Azure AD B2C](https://aka.ms/aadb2c)
-- Местные облака
+- Национальные облака
 
 ### <a name="sample-code-java-web-app"></a>Пример кода: веб-приложение Java
 
