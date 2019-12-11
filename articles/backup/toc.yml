@@ -222,6 +222,8 @@
       items:
         - name: Создание хранилища Служб восстановления
           href: backup-azure-arm-userestapi-createorupdatevault.md
+        - name: Обновление конфигураций хранилища Служб восстановления
+          href: use-restapi-update-vault-properties.md
         - name: Создание и обновление политики резервного копирования
           href: backup-azure-arm-userestapi-createorupdatepolicy.md
         - name: Резервное копирование виртуальных машин Azure
