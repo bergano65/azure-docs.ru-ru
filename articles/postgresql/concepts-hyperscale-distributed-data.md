@@ -1,5 +1,5 @@
 ---
-title: Распределенные данные в базе данных Azure для PostgreSQL — масштабирование (Цитус)
+title: Распределенные данные — масштабирование (Цитус) — база данных Azure для PostgreSQL
 description: Сведения о распределенных таблицах, ссылочных таблицах, локальных таблицах и сегментах в базе данных Azure для PostgreSQL.
 author: jonels-msft
 ms.author: jonels
@@ -7,19 +7,19 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 05/06/2019
-ms.openlocfilehash: 53d656d8d39c71c813d7dd7a504ec45667bf18b4
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: ade7632dc042741a07bdb59e34e30b3fb464e0e9
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73482434"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74975624"
 ---
 # <a name="distributed-data-in-azure-database-for-postgresql--hyperscale-citus"></a>Распределенные данные в базе данных Azure для PostgreSQL — масштабирование (Цитус)
 
 В этой статье описаны три типа таблиц в базе данных Azure для PostgreSQL — масштабирование (Цитус).
 В нем показано, как распределенные таблицы хранятся в виде сегментов и как сегменты размещаются на узлах.
 
-## <a name="table-types"></a>Типы таблиц
+## <a name="table-types"></a>типы таблиц
 
 Существует три типа таблиц в группе серверов с горизонтальным масштабированием (Цитус), которые используются для разных целей.
 

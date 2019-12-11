@@ -10,12 +10,12 @@ ms.author: jimgries
 author: greazer
 ms.date: 09/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: dd85f3a495b90b3a1dc9d3f021d3600496792759
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 84b7f56ebcbb87a31fbfb85ea6d88c3388870872
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824351"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74975998"
 ---
 # <a name="get-started-with-azure-machine-learning-for-visual-studio-code"></a>Приступая к работе с Azure Machine Learning for Visual Studio Code
 
@@ -25,9 +25,9 @@ ms.locfileid: "73824351"
 + Для обучения он обеспечивает поддержку запуска экспериментов локально или удаленно. Для каждого эксперимента можно зарегистрировать пользовательские метрики нескольких запусков для точной настройки параметров.
 + Вы также можете использовать Машинное обучение Azure для простого развертывания моделей машинного обучения в целях тестирования и эксплуатации.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-+ Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Попробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree).
++ Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Попробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree).
 
 + Установите [Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview), Облегченный редактор кода, работающий в Windows, Mac и Linux.
 
@@ -94,8 +94,8 @@ ms.locfileid: "73824351"
     import azureml
     from azureml.core import Run
 
-    # access the Azure ML run
-    # init run param to check if running within AML
+    # Access the Azure ML run
+    # Init run param to check if running within AML
     def get_AMLRun():
         try:
             run = Run.get_submitted_run()
@@ -128,7 +128,7 @@ ms.locfileid: "73824351"
     ...
             acc_val = acc_op.eval(feed_dict = {X: X_test, y: y_test})
 
-            # log accuracies to AML logger if using AML
+            # Log accuracies to AML logger if using AML
             if run != None:
                 run.log('Validation Accuracy', np.float(acc_val))
                 run.log('Training Accuracy', np.float(acc_train))
@@ -137,14 +137,14 @@ ms.locfileid: "73824351"
     ...
     ```
 ### <a name="run-the-script-in-azure"></a>Запуск скрипта в Azure
-Вот и все! Теперь просто используйте расширение, чтобы запустить сценарий в облаке. Обратите внимание, что в следующем пошаговом руководстве видео выполняется Liberty сжатия времени, затрачиваемого на создание рабочей области машинного обучения Azure и вычислений, а также время, затрачиваемое на выполнение обучающего сценария.
+Вот и все! Теперь просто используйте расширение, чтобы запустить сценарий в облаке. Обратите внимание, что в следующем пошаговом руководстве видео libertyся к сжатию времени, затрачиваемого на создание новой Машинное обучение Azure рабочей области и вычислений, а также время, затрачиваемое на выполнение обучающего сценария.
 
    [![начать эксперимент машинного обучения Azure](./media/vscode-tools-for-ai/start-golden-path.gif)](./media/vscode-tools-for-ai/start-golden-path.gif#lightbox)
 
 После нажатия кнопки выполнить эксперимент ответьте на запросы следующим образом:
 
 1. Выберите подписку Azure.
-1. Выберите, чтобы создать *новую* рабочую область машинного обучения Azure
+1. Выберите создание *новой* рабочей области машинное обучение Azure.
 1. Выберите набор предварительно настроенных шаблонов, чтобы инициализировать среду Python для выполнения. Шаблоны предоставляют отправную точку и параметры включения для:
     1. **PyTorch**, **TensorFlow**или **Scikit — обучение**
     1. Обучение по **единому** или **распределенному** вычислению
@@ -155,7 +155,7 @@ ms.locfileid: "73824351"
 
     [![обучение в облаке](./media/vscode-tools-for-ai/run-golden-path.gif)](./media/vscode-tools-for-ai/run-golden-path.gif#lightbox)
 
-Через несколько секунд вы получите уведомление о том, что эксперимент был отправлен в Azure, где можно просмотреть ход его выполнения либо в Машинное обучение Azure Studio, щелкнув ссылку **View эксперимент Run** в VS Code уведомлении, либо внутри VS Code на вкладке Azure нажмите кнопку Обновить.
+Через несколько секунд вы получите уведомление о том, что эксперимент был отправлен в Azure. в этом случае можно просмотреть ход выполнения в Машинное обучение Azure Studio, щелкнув ссылку **Просмотреть эксперимент Run** в VS Code уведомлении или внутри VS Code, нажав кнопку Обновить на вкладке Azure.
 
 В данный момент Просмотр метрик выполнения поддерживается только в студии. Приведенный выше канал **просмотр эксперимента** поможет перейти к выполнению, где вы увидите зарегистрированные Вами метрики.
 [![ный запуск эксперимента на портале](./media/vscode-tools-for-ai/experiment-run-on-portal.PNG)](./media/vscode-tools-for-ai/experiment-run-on-portal.PNG#lightbox)
@@ -166,7 +166,7 @@ ms.locfileid: "73824351"
 
 Перед началом обучения и развертыванием моделей машинного обучения в Visual Studio Code необходимо создать [машинное обучение Azure рабочую область](concept-workspace.md) в облаке. Эта Рабочая область будет содержать ваши модели и ресурсы.
 
-### <a name="create-a-workspace"></a>Создание рабочей области
+### <a name="create-a-workspace"></a>Создание рабочего пространства
 
 1. На панели действий Visual Studio Code щелкните значок Azure. Появится боковая панель "Машинное обучение Azure".
 

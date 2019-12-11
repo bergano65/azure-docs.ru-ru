@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/11/2018
 ms.author: robinsh
-ms.openlocfilehash: e7114febe85af4acaf94ef7fe64fe47988fd6321
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: d26ccd47ada4f1f1fd87f315e05f822bb2463114
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74079261"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976185"
 ---
 # <a name="weather-forecast-using-the-sensor-data-from-your-iot-hub-in-azure-machine-learning"></a>Прогнозирование погоды в машинном обучении Azure с помощью данных от датчиков Центра Интернета вещей
 
@@ -45,20 +45,20 @@ ms.locfileid: "74079261"
   - Активная подписка Azure.
   - Центр Интернета вещей Azure в подписке;
   - клиентское приложение, которое отправляет сообщения в Центр Интернета вещей Azure.
-- Учетная запись [машинное обучение Azure Studio](https://studio.azureml.net/) .
+- Учетная запись [машинное обучение Azure Studio (классическая модель)](https://studio.azureml.net/) .
 
 ## <a name="deploy-the-weather-prediction-model-as-a-web-service"></a>Развертывание модели прогнозирования погоды как веб-службы
 
 1. Откройте [страницу модели прогнозирования погоды](https://gallery.cortanaintelligence.com/Experiment/Weather-prediction-model-1).
-1. Щелкните **Открыть в Studio** в Студии машинного обучения Microsoft Azure.
+1. Щелкните **Открыть в студии** в студия машинного обучения Microsoft Azure (классическая модель).
    ![Открытая страница модели прогнозирования погоды в коллекции Cortana Intelligence](media/iot-hub-weather-forecast-machine-learning/2_weather-prediction-model-in-cortana-intelligence-gallery.png)
 1. Щелкните **Run** (Запуск), чтобы проверить действия модели. Выполнение этого шага может занять до 2 минут.
-   ![Открытая модель прогнозирования погоды в Студии машинного обучения Azure](media/iot-hub-weather-forecast-machine-learning/3_open-weather-prediction-model-in-azure-machine-learning-studio.png)
+   ![открыть модель прогнозирования погоды в Машинное обучение Azure Studio (классической)](media/iot-hub-weather-forecast-machine-learning/3_open-weather-prediction-model-in-azure-machine-learning-studio.png)
 1. Щелкните действие **SET UP WEB SERVICE** (Настроить веб-службу)  > **Predictive Web Service** (Прогнозная веб-служба).
-   ![Развертывание модели прогнозирования погоды в Студии машинного обучения Azure](media/iot-hub-weather-forecast-machine-learning/4-deploy-weather-prediction-model-in-azure-machine-learning-studio.png)
+   ![развертывание модели прогнозирования погоды в Машинное обучение Azure Studio (классическая модель)](media/iot-hub-weather-forecast-machine-learning/4-deploy-weather-prediction-model-in-azure-machine-learning-studio.png)
 1. На схеме перетащите модуль **Web service input** (Вход веб-службы) куда-нибудь поближе к модулю **Score Model** (Оценка модели).
 1. Соедините между собой модули **Web service input** (Вход веб-службы) и **Score Model** (Оценка модели).
-   ![Соединение модулей в Студии машинного обучения Azure](media/iot-hub-weather-forecast-machine-learning/13_connect-modules-azure-machine-learning-studio.png)
+   ![подключить два модуля в Машинное обучение Azure Studio (классическая модель)](media/iot-hub-weather-forecast-machine-learning/13_connect-modules-azure-machine-learning-studio.png)
 1. Щелкните **RUN** (Запуск), чтобы проверить действия модели.
 1. Щелкните **DEPLOY WEB SERVICE** (Развернуть веб-службу), чтобы преобразовать эту модель в веб-службу.
 1. На панели мониторинга модели скачайте **Excel 2010 or earlier workbook** (Книга Excel 2010 или более ранних версий) для действия **REQUEST/RESPONSE** (Запрос — ответ).
@@ -89,7 +89,7 @@ ms.locfileid: "74079261"
 
    ![Создание задания Stream Analytics в Azure](media/iot-hub-weather-forecast-machine-learning/7_create-stream-analytics-job-azure.png)
 
-1. Нажмите кнопку **Создать**.
+1. Щелкните **Create**(Создать).
 
 ### <a name="add-an-input-to-the-stream-analytics-job"></a>Добавление входных данных в задание Stream Analytics
 
@@ -105,7 +105,7 @@ ms.locfileid: "74079261"
 
    ![Добавление входных данных в задание Stream Analytics в Azure](media/iot-hub-weather-forecast-machine-learning/8_add-input-stream-analytics-job-azure.png)
 
-1. Нажмите кнопку **Создать**.
+1. Щелкните **Create**(Создать).
 
 ### <a name="add-an-output-to-the-stream-analytics-job"></a>Добавление выходных данных в задание Stream Analytics
 
@@ -124,7 +124,7 @@ ms.locfileid: "74079261"
 
    ![Добавление выходных данных в задание Stream Analytics в Azure](media/iot-hub-weather-forecast-machine-learning/9_add-output-stream-analytics-job-azure.png)
 
-1. Нажмите кнопку **Создать**.
+1. Щелкните **Create**(Создать).
 
 ### <a name="add-a-function-to-the-stream-analytics-job-to-call-the-web-service-you-deployed"></a>Добавление в задание Stream Analytics функции для вызова развернутой веб-службы
 
@@ -143,7 +143,7 @@ ms.locfileid: "74079261"
 
    ![Добавление функции в задание Stream Analytics в Azure](media/iot-hub-weather-forecast-machine-learning/10_add-function-stream-analytics-job-azure.png)
 
-1. Нажмите кнопку **Создать**.
+1. Щелкните **Create**(Создать).
 
 ### <a name="configure-the-query-of-the-stream-analytics-job"></a>Настройка запроса задания Stream Analytics
 
@@ -163,7 +163,7 @@ ms.locfileid: "74079261"
 
    Замените значение `[YourOutputAlias]` значением псевдонима выходных данных задания.
 
-1. Выберите команду **Сохранить**.
+1. В нижней части страницы нажмите кнопку **Save**.
 
 ### <a name="run-the-stream-analytics-job"></a>Выполнение задания Stream Analytics
 
@@ -184,7 +184,7 @@ ms.locfileid: "74079261"
 
    ![Получение прогноза погоды с помощью машинного обучения Azure](media/iot-hub-weather-forecast-machine-learning/12_get-weather-forecast-result-azure-machine-learning.png)
 
-## <a name="summary"></a>summary
+## <a name="summary"></a>Резюме
 
 Итак, вы успешно применили машинное обучение Azure, чтобы прогнозировать вероятность дождя на основе данных о температуре и влажности, которые получает Центр Интернета вещей.
 

@@ -1,5 +1,5 @@
 ---
-title: Выбор столбцов распределения в базе данных Azure для PostgreSQL — масштабирование (Цитус)
+title: Выбор столбцов распределения — масштабирование (Цитус) — база данных Azure для PostgreSQL
 description: Узнайте, как выбрать столбцы распределения в общих сценариях масштабирования в базе данных Azure для PostgreSQL.
 author: jonels-msft
 ms.author: jonels
@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 05/06/2019
-ms.openlocfilehash: a61c52773c4c6036a76d7b233988c713c1da861f
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 8ced9767d81affceef851820ee587f4f3dd24deb
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73482853"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74975675"
 ---
 # <a name="choose-distribution-columns-in-azure-database-for-postgresql--hyperscale-citus"></a>Выбор столбцов распределения в базе данных Azure для PostgreSQL — масштабирование (Цитус)
 
@@ -43,7 +43,7 @@ ms.locfileid: "73482853"
 
 Ознакомьтесь с [руководством по нескольким клиентам](./tutorial-design-database-hyperscale-multi-tenant.md) для примера того, как создать приложение такого типа.
 
-### <a name="real-time-apps"></a>Приложения в режиме реального времени
+### <a name="real-time-apps"></a>Приложения, работающие в режиме реального времени
 
 Архитектура с несколькими клиентами представляет иерархическую структуру и использует совместное размещение данных для маршрутизации запросов на каждого клиента. В отличие от этого, архитектуры в режиме реального времени зависят от конкретных свойств распределения своих данных, чтобы добиться высокой параллельной обработки.
 

@@ -1,21 +1,21 @@
 ---
 title: Подключение к Azure Certified для портала IoT | Документация Майкрософт
 description: Подключитесь к порталу сертификации Azure для Интернета вещей.
-author: YasinMSFT
+author: Philmea
 manager: philmea
 ms.service: iot-pnp
 services: iot-pnp
 ms.topic: conceptual
 ms.date: 06/12/2019
-ms.author: yahajiza
-ms.openlocfilehash: b35aeff4c87c676b91e022edb56542a018cb707c
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.author: philmea
+ms.openlocfilehash: 77559636dab00a570db416118b047200320c0308
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69879543"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978991"
 ---
-# <a name="onboard-to-the-azure-certified-for-iot-portal"></a>Подключение к порталу сертификации Azure для Интернета вещей
+# <a name="onboard-to-the-azure-certified-for-iot-portal"></a>Подключение к порталу Azure Certified for IoT
 
 [Портал сертификации Azure для Интернета вещей](https://aka.ms/ACFI) можно использовать для следующих действий:
 
@@ -23,7 +23,7 @@ ms.locfileid: "69879543"
 - Найдите Plug and Play Предварительная версия моделей возможностей устройства для Интернета вещей. Эти модели можно использовать для быстрого создания готовых устройств IoT и их интеграции с решениями.
 - Опубликуйте модель возможностей устройства в общедоступном репозитории.
 
-## <a name="sign-in"></a>Войти
+## <a name="sign-in"></a>Вход
 
 Используйте свою _рабочую учетную запись_ Майкрософт для входа на портал [сертификации Azure для центра Интернета вещей](https://aka.ms/ACFI) . При входе на портал проверяется членство в центре партнеров Майкрософт:
 
@@ -33,6 +33,6 @@ ms.locfileid: "69879543"
 
 Перед публикацией устройства в каталоге сертифицированных устройств IoT прочтите и примите соглашение об использовании программы. Соглашение можно найти на странице Параметры на портале сертификации Azure для IoT.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 На следующем шаге вы узнаете, как [Отправить устройство Plug and Play IOT для сертификации](tutorial-certification-test.md).

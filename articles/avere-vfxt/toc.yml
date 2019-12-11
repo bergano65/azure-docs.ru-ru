@@ -10,7 +10,7 @@
       href: avere-vfxt-deploy-plan.md
     - name: Обзор развертывания Avere vFXT
       href: avere-vfxt-deploy-overview.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Подготовка к созданию Avere vFXT
       href: avere-vfxt-prereqs.md
@@ -38,6 +38,8 @@
       href: avere-vfxt-demo-links.md
     - name: Часто задаваемые вопросы об Avere vFXT для Azure
       href: avere-vfxt-faq.md
+    - name: Руководство по аварийному восстановлению
+      href: disaster-recovery.md
     - name: Дополнительная документация
       items:
         - name: Вспомогательная документация

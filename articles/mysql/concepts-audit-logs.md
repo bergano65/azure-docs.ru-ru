@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: ea536742b6481cb06fbd3130279ca5d08ba1bc08
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 12/09/2019
+ms.openlocfilehash: eae7e434ce21b5f9d9f3e6c40f94261df8baa426
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74773574"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74972359"
 ---
 # <a name="audit-logs-in-azure-database-for-mysql"></a>Журналы аудита в базе данных Azure для MySQL
 
@@ -29,7 +29,7 @@ ms.locfileid: "74773574"
 - `audit_log_events`: управляет событиями, регистрируемыми в журнале. Конкретные события аудита см. в таблице ниже.
 - `audit_log_include_users`: пользователи MySQL, включаемые в ведение журнала. Значение по умолчанию для этого параметра — пустое, которое будет включать всех пользователей для ведения журнала. Это имеет более высокий приоритет, чем `audit_log_exclude_users`. Максимальная длина параметра — 512 символов.
 > [!Note]
-> `audit_log_include_users` имеет более высокий приоритет, чем `audit_log_exclude_users` например, если audit_log_include_users = `demouser` и audit_log_exclude_users = `demouser`, он будет выполнять аудит журналов, так как `audit_log_include_users` имеет более высокий приоритет.
+> `audit_log_include_users` имеет более высокий приоритет, чем `audit_log_exclude_users`. Например, если `audit_log_include_users` = `demouser` и `audit_log_exclude_users` = `demouser`, пользователь будет включаться в журналы аудита, так как `audit_log_include_users` имеет более высокий приоритет.
 - `audit_log_exclude_users`: пользователи MySQL, исключаемые из журнала. Максимальная длина параметра — 512 символов.
 
 > [!Note]
@@ -38,7 +38,7 @@ ms.locfileid: "74773574"
 | **Событие** | **Описание** |
 |---|---|
 | `CONNECTION` | — Инициация подключения (успешно или неуспешно); <br> — Повторное применение проверки подлинности пользователя с другим пользователем или паролем во время сеанса <br> — Завершение подключения |
-| `DML_SELECT`| Выбор запросов |
+| `DML_SELECT`| Запросы SELECT |
 | `DML_NONSELECT` | Операции вставки, удаления и обновления |
 | `DML` | DML = DML_SELECT + DML_NONSELECT |
 | `DDL` | Такие запросы, как "DROP DATABASE" |
@@ -129,7 +129,7 @@ ms.locfileid: "74773574"
 | `OperationName` | `LogEvent` |
 | `LogicalServerName_s` | Имя сервера |
 | `event_class_s` | `table_access_log` |
-| `event_subclass_s` | `READ`, `INSERT`, `UPDATE`или `DELETE` |
+| `event_subclass_s` | `READ`, `INSERT`, `UPDATE` или `DELETE` |
 | `connection_id_d` | Уникальный идентификатор соединения, созданный MySQL |
 | `db_s` | Имя базы данных, к которой осуществлялся доступ |
 | `table_s` | Имя таблицы, к которой осуществлялся доступ |

@@ -1,17 +1,17 @@
 ---
-title: Масштабирование группы серверов базы данных Azure для PostgreSQL-Scale (Цитус)
+title: Масштабирование группы серверов — горизонтальное масштабирование (Цитус) — база данных Azure для PostgreSQL
 description: Настройка памяти группы серверов, диска и ресурсов ЦП для повышения нагрузки
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 9/17/2019
-ms.openlocfilehash: 6053ba37bf330f6b59e291dade822a5ca9de8c85
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 5d8bbe493887c5340f0943a585eb6ff250bd3728
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73492302"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74977562"
 ---
 # <a name="scale-a-hyperscale-citus-server-group"></a>Масштабирование группы серверов с горизонтальным масштабированием (Цитус)
 
@@ -36,7 +36,7 @@ ms.locfileid: "73492302"
 SELECT rebalance_table_shards('distributed_table_name');
 ```
 
-Функция `rebalance_table_shards` перераспределяет все таблицы в группе совместного [размещения](concepts-hyperscale-colocation.md) таблицы с именем в аргументе. Поэтому нет необходимости вызывать функцию для каждой распределенной таблицы, просто вызвать ее в репрезентативной таблице из каждой группы совместного размещения.
+Функция `rebalance_table_shards` перераспределяет все таблицы в группе [совместного размещения](concepts-hyperscale-colocation.md) таблицы с именем в аргументе. Поэтому нет необходимости вызывать функцию для каждой распределенной таблицы, просто вызвать ее в репрезентативной таблице из каждой группы совместного размещения.
 
 ## <a name="increase-vcores-or-storage-space"></a>Увеличение виртуальных ядер или дискового пространства
 

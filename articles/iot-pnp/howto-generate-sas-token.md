@@ -1,21 +1,21 @@
 ---
 title: Создание маркера безопасности для доступа к Интернету вещей Plug and Play Preview | Документация Майкрософт
 description: Создайте маркер подписанного URL-доступа для использования при программном доступе к репозиторию модели предварительной версии Интернета вещей Plug and Play.
-author: YasinMSFT
-ms.author: yahajiza
+author: Philmea
+ms.author: philmea
 ms.date: 08/06/2019
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: e5d6e7087a7e3d5f4a001e16c5cfa19a6df6a68e
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: f6c4f5b9784eeff9d03b6e93953674736fb78c6c
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69880544"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976032"
 ---
-# <a name="generate-sas-token"></a>Создать маркер SAS
+# <a name="generate-sas-token"></a>Создание маркера SAS
 
 В этом пошаговом руководство показано, как программным образом создать маркер подписанного URL-адрес (SAS) для использования с API репозитория модели предварительной версии для Интернета вещей Plug and Play.
 
@@ -46,7 +46,7 @@ def calculate_sas_token(hostname, repo_id, key_name, key, expiry_in_second):
 
 ## <a name="c"></a>C\#
 
-В следующем фрагменте кода показано, как создать маркер SAS с помощью\#C:
+В следующем фрагменте кода показано, как создать маркер SAS с помощью C\#:
 
 ```csharp
 public static string generateSasToken(string hostName, string repoId, string key, string keyName, int expiryInSeconds = 3600)
@@ -74,7 +74,7 @@ public static string generateSasToken(string hostName, string repoId, string key
 
 ## <a name="use-the-sas-token"></a>Использование маркера SAS
 
-После создания маркера SAS его можно использовать для создания HTTP-запроса POST. Пример:
+После создания маркера SAS его можно использовать для создания HTTP-запроса POST. Пример.
 
 ```text
 POST https:///models/{modelId}?repositoryId={repositoryId}&api-version=2019-07-01-preview
@@ -82,6 +82,6 @@ POST https:///models/{modelId}?repositoryId={repositoryId}&api-version=2019-07-0
 
 Если вы выдаете клиенту маркер SAS, он не имеет первичного ключа ресурса и не может изменить хэш, чтобы получить его. Маркер SAS позволяет контролировать доступ клиента и срок его действия. При изменении первичного ключа в политике все созданные на его основе маркеры SAS становятся недействительными.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали о создании маркеров безопасности, которые будут использоваться для доступа к Plug and Play репозиториям модели предварительной версии Интернета вещей, предлагаемый следующий шаг — дополнительные сведения в разделе [центра Интернета вещей Plug and Play предварительной версии для разработчиков моделей](concepts-developer-guide.md).

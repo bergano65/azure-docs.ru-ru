@@ -4,12 +4,12 @@ description: Узнайте, как использовать Azure Application I
 ms.assetid: 501722c3-f2f7-4224-a220-6d59da08a320
 ms.topic: conceptual
 ms.date: 04/04/2019
-ms.openlocfilehash: 5f7f6c130226080cba635f89280f655498e5db27
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 4a182ddffd4c1ee4d2e71e7d9e6385df23e4260e
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74226902"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978089"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
@@ -92,7 +92,7 @@ ms.locfileid: "74226902"
 
 Следующие области Application Insights могут быть полезны при оценке поведения, производительности и ошибок в функциях.
 
-| Tab | ОПИСАНИЕ |
+| Tab | Описание |
 | ---- | ----------- |
 | **[Сбоев](../azure-monitor/app/asp-net-exceptions.md)** |  Создавайте диаграммы и оповещения на основе ошибок функций и исключений сервера. **Имя операции** обозначает имя функции. Сбои в зависимостях не отображаются, если не реализовать пользовательскую телеметрию для зависимостей. |
 | **[Системного](../azure-monitor/app/performance-counters.md)** | Анализ проблем производительности. |
@@ -119,7 +119,7 @@ requests
 
 Доступные таблицы показаны на вкладке **схема** слева. Данные, создаваемые при вызовах функций, вы найдете в следующих таблицах:
 
-| таблица | ОПИСАНИЕ |
+| Таблицы | Описание |
 | ----- | ----------- |
 | **отладоч** | Журналы, созданные средой выполнения и кодом функции. |
 | **requests** | Один запрос для каждого вызова функции. |
@@ -143,7 +143,7 @@ traces
 
 Вы можете использовать Application Insights без какой бы то ни было пользовательской конфигурации. Конфигурация по умолчанию может привести к созданию больших объемов данных. Если вы используете подписку Azure для Visual Studio, объем данных Application Insights может достигнуть установленного верхнего предела. Далее в этой статье вы узнаете, как настроить и настроить данные, отправляемые функциями в Application Insights. Для приложения-функции ведение журнала настраивается в файле [Host. JSON] .
 
-### <a name="categories"></a>категории
+### <a name="categories"></a>Категории
 
 В средстве ведения журнала Функций Azure предусмотрена *категория* для каждого журнала. Категория указывает, какая часть кода среды выполнения или кода функции записывала данные в этот журнал. 
 
@@ -161,19 +161,19 @@ traces
 |Отладка       | 1 |
 |Информация | 2 |
 |Предупреждение     | 3 |
-|Ошибка       | 4\. |
-|критические ошибки.    | 5 |
+|Ошибка       | 4 |
+|Критический    | 5 |
 |Нет        | 6 |
 
 Уровень ведения журнала `None` описан в следующем разделе. 
 
 ### <a name="log-configuration-in-hostjson"></a>Конфигурация журнала в Host. JSON
 
-Файл [Host. JSON] определяет, какой объем информации приложение-функция отправляет в журнал Application Insights. В каждой категории вы можете указать минимальный уровень ведения журнала для отправки данных. Существует два примера: первый пример предназначен для [функций среды выполнения версии 2. x](functions-versions.md#version-2x) (.NET Core), а второй пример — для среды выполнения версии 1. x.
+Файл [Host. JSON] определяет, какой объем информации приложение-функция отправляет в журнал Application Insights. В каждой категории вы можете указать минимальный уровень ведения журнала для отправки данных. Существует два примера: первый пример предназначен для [версии 2. x и более поздней](functions-versions.md#version-2x) версии среды выполнения функций (с .NET Core), а второй пример — для среды выполнения версии 1. x.
 
-### <a name="version-2x"></a>Версия 2.x
+### <a name="version-2x-and-higher"></a>Версии 2. x и выше
 
-В среде выполнения версии 2.x используется [иерархия фильтров для ведения журналов .NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering). 
+Версия V2. x и более поздние версии среды выполнения функций используют [иерархию фильтра ведения журнала .NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering). 
 
 ```json
 {
@@ -209,14 +209,14 @@ traces
 В этом примере настраиваются следующие правила:
 
 * Для журналов с `Host.Results`ом категории или `Function`отправки в Application Insights только `Error`ный уровень и выше. Данные журналов с уровнем `Warning` и ниже игнорируются.
-* Все журналы с категорией `Host.Aggregator` отправляются в Application Insights. Уровень ведения журнала `Trace` — это то же, что в некоторых средствах ведения журналов именуется как `Verbose`. В файле `Trace`host.json[Host. JSON].
+* Все журналы с категорией `Host.Aggregator` отправляются в Application Insights. Уровень ведения журнала `Trace` — это то же, что в некоторых средствах ведения журналов именуется как `Verbose`. В файле [Host. JSON] необходимо использовать `Trace`.
 * Для всех остальных журналов в Application Insights отправляются данные с уровнем `Information` и выше.
 
 Значение категории в [Host. JSON] управляет ведением журнала для всех категорий, название которых начинается с аналогичного значения. `Host` в [Host. JSON] управляет ведением журнала для `Host.General`, `Host.Executor`, `Host.Results`и т. д.
 
 Если [Host. JSON] содержит несколько категорий с одинаковым началом строки, сопоставление начинается с более длинных строк. Предположим, что вы хотите, чтобы все из среды выполнения, за исключением `Host.Aggregator`, заходили в журнале на уровне `Error`, но вы хотите, чтобы `Host.Aggregator` log на уровне `Information`:
 
-### <a name="version-2x"></a>Версия 2.x 
+### <a name="version-2x-and-later"></a>Версии 2. x и более поздних версий
 
 ```json
 {
@@ -298,7 +298,7 @@ traces
 
 Application Insights имеет функцию [выборки](../azure-monitor/app/sampling.md) , которая может защищать вас от создания слишком большого объема данных телеметрии при завершении выполнения в периоды пиковой нагрузки. Если скорость входящих выполнений превышает заданное пороговое значение, Application Insights начинает случайным образом игнорировать некоторые из входящих выполнений. Значение по умолчанию для максимального числа выполнений в секунду — 20 (пять в версии 1. x). Вы можете настроить выборку в файле [Host. JSON].  Ниже приведен пример:
 
-### <a name="version-2x"></a>Версия 2.x 
+### <a name="version-2x-and-later"></a>Версии 2. x и более поздних версий
 
 ```json
 {
@@ -337,7 +337,7 @@ Application Insights имеет функцию [выборки](../azure-monitor
 
 Используйте параметр [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger) в функциях вместо параметра `TraceWriter`. Журналы, созданные с помощью `TraceWriter` перейдите к Application Insights, но `ILogger` позволяет выполнять [структурированное ведение журнала](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging).
 
-Объект `ILogger` позволяет вызывать для создания журналов `Log<level>`методы расширения ILogger[ ](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.loggerextensions#methods). Следующий код записывает `Information` журналы с функцией Category.
+Объект `ILogger` позволяет вызывать для создания журналов [методы расширения ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.loggerextensions#methods) `Log<level>`. Следующий код записывает `Information` журналы с функцией Category.
 
 ```cs
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger logger)
@@ -396,7 +396,7 @@ context.log('JavaScript HTTP trigger function processed a request.' + context.in
 
 ### <a name="custom-metrics-logging"></a>Ведение журнала пользовательских метрик
 
-При использовании [версии 1. x](functions-versions.md#creating-1x-apps) среды выполнения функций функции node. js могут использовать метод `context.log.metric` для создания пользовательских метрик в Application Insights. В настоящее время этот метод не поддерживается в версии 2. x. Ниже приведен пример вызова метода.
+При использовании [версии 1. x](functions-versions.md#creating-1x-apps) среды выполнения функций функции node. js могут использовать метод `context.log.metric` для создания пользовательских метрик в Application Insights. В настоящее время этот метод не поддерживается в версии 2. x и более поздних версиях. Ниже приведен пример вызова метода.
 
 ```javascript
 context.log.metric("TestMetric", 1234);
@@ -408,9 +408,9 @@ context.log.metric("TestMetric", 1234);
 
 Вы можете использовать пакет NuGet [Microsoft.ApplicationInsights](https://www.nuget.org/packages/Microsoft.ApplicationInsights/) для отправки пользовательских данных телеметрии в Application Insights. В следующем примере C# используется [настраиваемый API телеметрии](../azure-monitor/app/api-custom-events-metrics.md). Пример приведен для библиотеки классов .NET, но код Application Insights в скрипте C# будет точно таким же.
 
-### <a name="version-2x"></a>Версия 2.x
+### <a name="version-2x-and-later"></a>Версии 2. x и более поздних версий
 
-Среда выполнения версии 2.x использует новые функции в Application Insights для выполнения автоматической корреляции данных телеметрии с текущей операцией. Нет необходимости вручную задавать поля `Id`, `ParentId`или `Name`.
+Версия 2. x и более поздние версии среды выполнения используют новые функции в Application Insights для автоматической корреляции телеметрии с текущей операцией. Нет необходимости вручную задавать поля `Id`, `ParentId`или `Name`.
 
 ```cs
 using System;
@@ -612,7 +612,7 @@ module.exports = function (context, req) {
 
 Потоки журнала можно просматривать как на портале, так и в большинстве локальных сред разработки. 
 
-### <a name="portal"></a>Портал
+### <a name="portal"></a>Microsoft Azure
 
 На портале можно просматривать оба типа потоков журналов.
 
@@ -634,7 +634,7 @@ module.exports = function (context, req) {
 
 ![Просмотр Live Metrics Stream на портале](./media/functions-monitoring/live-metrics-stream.png) 
 
-### <a name="visual-studio-code"></a>Visual Studio Code.
+### <a name="visual-studio-code"></a>Код Visual Studio
 
 [!INCLUDE [functions-enable-log-stream-vs-code](../../includes/functions-enable-log-stream-vs-code.md)]
 
@@ -642,7 +642,7 @@ module.exports = function (context, req) {
 
 [!INCLUDE [functions-streaming-logs-core-tools](../../includes/functions-streaming-logs-core-tools.md)]
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Вы можете включить журналы потоковой передачи с помощью [Azure CLI](/cli/azure/install-azure-cli). Используйте следующие команды для входа в систему, выбора подписки и потоковой передачи файлов журнала:
 
@@ -670,7 +670,7 @@ Get-AzWebSiteLog -Name <FUNCTION_APP_NAME> -Tail
 
 Чтобы отключить встроенное ведение журнала, удалите параметр приложения `AzureWebJobsDashboard`. Дополнительные сведения о том, как удалять параметры приложения на портале Azure, см. в разделе **Параметры приложения** статьи [Управление приложением-функцией на портале Azure](functions-how-to-use-azure-function-app-settings.md#settings). Перед удалением параметра приложения убедитесь, что ни одна из функций в том же приложении не использует параметр для триггеров или привязок службы хранилища Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений см. следующие ресурсы:
 

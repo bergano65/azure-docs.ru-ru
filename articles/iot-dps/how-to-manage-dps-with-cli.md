@@ -1,18 +1,18 @@
 ---
 title: Управление службой подготовки устройств центра Интернета вещей с помощью Azure CLI & расширения IoT
-description: Узнайте, как управлять Службой подготовки устройств Центра Интернета вещей с помощью Azure CLI и расширения Интернета вещей
+description: Узнайте, как использовать Azure CLI и расширение Интернета вещей для управления службой подготовки устройств центра Интернета вещей (DPS)
 author: chrissie926
 ms.author: menchi
 ms.date: 01/17/2018
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: 0e276ca32d7cd02f9668b33b3729757404b13b00
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 0ba92279632a7283ea6ede423e808e3c7be82cff
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74229742"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74975165"
 ---
 # <a name="how-to-use-azure-cli-and-the-iot-extension-to-manage-the-iot-hub-device-provisioning-service"></a>Как управлять Службой подготовки устройств Центра Интернета вещей с помощью Azure CLI и расширения Интернета вещей
 
@@ -92,13 +92,13 @@ ms.locfileid: "74229742"
 [6]: ./media/how-to-manage-dps-with-cli/link-hub.jpg
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого руководства вы узнали, как выполнить следующие задачи:
 
 > [!div class="checklist"]
-> * регистрация устройства;
-> * Запуск устройства
-> * Проверка регистрации устройства
+> * Регистрация устройства
+> * запуск устройства;
+> * проверка регистрации устройства.
 
 Перейдите к следующему руководству, чтобы узнать, как подготовить несколько устройств через концентраторы с балансировкой нагрузки. 
 

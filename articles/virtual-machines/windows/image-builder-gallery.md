@@ -1,26 +1,26 @@
 ---
 title: Использование Azure Image Builder с коллекцией образов для виртуальных машин Windows (Предварительная версия)
-description: Создание образов Windows с помощью Azure Image Builder и коллекции общих образов.
+description: Создание образов виртуальных машин Windows с помощью Azure Image Builder и коллекции общих образов.
 author: cynthn
 ms.author: cynthn
 ms.date: 05/02/2019
 ms.topic: article
 ms.service: virtual-machines-windows
 manager: gwallace
-ms.openlocfilehash: 33f13c09a06885523298bd7c23744e79f68e5301
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 1d9763ccc5f5967b9fc9932a11fff655e6120fd0
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68698668"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976083"
 ---
-# <a name="preview-create-a-windows-image-and-distribute-it-to-a-shared-image-gallery"></a>Предварительный просмотр: Создание образа Windows и его распространение в общую коллекцию образов 
+# <a name="preview-create-a-windows-image-and-distribute-it-to-a-shared-image-gallery"></a>Предварительная версия: создание образа Windows и его распространение в общую коллекцию образов 
 
 В этой статье показано, как с помощью построителя образов Azure создать версию образа в [общей коллекции образов](shared-image-galleries.md), а затем распространить образ глобально.
 
 Для настройки образа мы будем использовать JSON-шаблон. JSON-файл, который мы используем: [хеллоимажетемплатефорвинсиг. JSON](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image/helloImageTemplateforWinSIG.json). 
 
-Чтобы распространить образ в общую коллекцию образов, шаблон использует [шаредимаже](../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#distribute-sharedimage) в качестве значения для `distribute` раздела шаблона.
+Чтобы распространить образ в общую коллекцию образов, шаблон использует [шаредимаже](../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#distribute-sharedimage) в качестве значения для раздела `distribute` шаблона.
 
 > [!IMPORTANT]
 > Azure Image Builder сейчас находится в общедоступной предварительной версии.
@@ -77,7 +77,7 @@ username="azureuser"
 vmpassword="passwordfortheVM"
 ```
 
-Создайте переменную для идентификатора подписки. Это можно сделать с помощью `az account show | grep id`.
+Создайте переменную для идентификатора подписки. Его можно получить с помощью `az account show | grep id`.
 
 ```azurecli-interactive
 subscriptionID="Subscription ID"
@@ -90,7 +90,7 @@ az group create -n $sigResourceGroup -l $location
 ```
 
 
-Предоставьте разрешение Azure Image Builder для создания ресурсов в этой группе ресурсов. `--assignee` Значение представляет собой идентификатор регистрации приложения для службы "Построитель образов". 
+Предоставьте разрешение Azure Image Builder для создания ресурсов в этой группе ресурсов. Значение `--assignee` — это идентификатор регистрации приложения для службы "Построитель образов". 
 
 ```azurecli-interactive
 az role assignment create \
@@ -191,7 +191,7 @@ az vm create \
 dir c:\
 ```
 
-Вы должны увидеть каталог с именем `buildActions` , созданный во время настройки образа.
+Вы увидите каталог с именем `buildActions`, созданный во время настройки образа.
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
@@ -211,7 +211,7 @@ az resource delete \
     -n helloImageTemplateforWinSIG01
 ```
 
-Получить версию образа, созданную построителем образов, это всегда `0.`начинается с, а затем удаляет версию образа.
+Получить версию образа, созданную построителем образов, это всегда начинается с `0.`, а затем удаляется версия образа.
 
 ```azurecli-interactive
 sigDefImgVersion=$(az sig image-version list \

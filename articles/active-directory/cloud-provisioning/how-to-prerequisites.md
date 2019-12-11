@@ -7,16 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/02/2019
+ms.date: 12/06/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 155edf72a60e079a609853e953e3cf66024cc83c
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: f033563bbd7888e53d910773cd1e0c501eaad098
+ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74794254"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74997111"
 ---
 # <a name="prerequisites-for-azure-ad-connect-cloud-provisioning"></a>Предварительные требования для подготовки облачных Azure AD Connect
 В этом разделе приводятся рекомендации по выбору и использованию Azure AD Connect подготовки облака в качестве решения для идентификации.
@@ -48,7 +48,7 @@ ms.locfileid: "74794254"
      | --- | --- |
      | **80** | Скачивание списков отзыва сертификатов при проверке SSL-сертификата. |
      | **443** | Обработка всего исходящего трафика для службы. |
-     | **8080** (необязательно) | Агенты сообщают о своем состоянии каждые десять минут через порт 8080, если порт 443 недоступен. Это данные о состоянии отображаются на портале Azure AD. Порт 8080 _не_ используется для входа пользователей в систему. |
+     | **8080** (необязательно) | Агенты сообщают о своем состоянии каждые десять минут через порт 8080, если порт 443 недоступен. Это данные о состоянии отображаются на портале Azure AD. |
      
      Если брандмауэр применяет правила в соответствии с отправляющими трафик пользователями, откройте эти порты для трафика, поступающего от служб Windows, которые работают как сетевая служба.
    - Если брандмауэр или прокси-сервер позволяет указать надежные суффиксы, добавьте подключения к **\*. msappproxy.NET** и **\*. servicebus.Windows.NET**. Если нет, разрешите доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.

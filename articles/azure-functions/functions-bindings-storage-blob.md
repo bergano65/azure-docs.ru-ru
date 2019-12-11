@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 11/15/2018
 ms.author: cshoe
-ms.openlocfilehash: 65775a9c7a6d66a088eccdfdb22ce7d6b01829d2
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: d6a17322c360040b8fa77ac243a1b568f0d10c1f
+ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74925405"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74996499"
 ---
 # <a name="azure-blob-storage-bindings-for-azure-functions"></a>Привязки хранилища BLOB-объектов Azure для службы "Функции Azure"
 
@@ -463,7 +463,7 @@ module.exports = function (context, myBlob) {
 
 ## <a name="trigger---polling"></a>Триггер опроса
 
-Если отслеживаемый контейнер больших двоичных объектов содержит более 10 000 больших двоичных объектов (во всех контейнерах), среда выполнения функций сканирует файлы журнала для отслеживания новых или измененных больших двоичных объектов. Этот процесс может привести к задержкам. После создания большого двоичного объекта функция может не вызываться несколько минут или даже дольше.
+Опрос работает как гибрид между проверками журналов и выполнения периодических просмотров контейнеров. Большие двоичные объекты проверяются в группах 10 000 за раз с токеном продолжения, используемым между интервалами.
 
 > [!WARNING]
 > Кроме того, [журналы службы хранилища создаются по принципу лучшего из возможного](/rest/api/storageservices/About-Storage-Analytics-Logging), Регистрация всех событий не гарантируется. В некоторых случаях журналы могут пропускаться.

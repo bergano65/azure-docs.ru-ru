@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/06/2019
-ms.openlocfilehash: 5b1b85a0c600871cbedc478f3a56cf71ef8c2ca4
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 803deb9a4d9eaf02129bd16dd6465362b87b7e84
+ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74931496"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74995921"
 ---
 # <a name="set-up-apache-hbase-cluster-replication-in-azure-virtual-networks"></a>Настройка репликации кластера Apache HBase в виртуальных сетях Azure
 
@@ -275,6 +275,10 @@ sudo service bind9 status
 
 Чтобы создать таблицу [Contacts](apache-hbase-tutorial-get-started-linux.md) и вставить в нее некоторые данные, следуйте инструкциям по **началу работы с примером Apache HBase в HDInsight**.
 
+> [!NOTE]
+> Если необходимо реплицировать таблицы из пользовательского пространства имен, необходимо также убедиться, что в целевом кластере определены соответствующие пользовательские пространства имен.
+>
+
 ## <a name="enable-replication"></a>Включение репликации
 
 Ниже описано, как вызвать скрипт действия сценария на портале Azure. Дополнительные сведения о том, как выполнить действие сценария с помощью Azure PowerShell и классической версии Azure CLI, см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действий сценариев](../hdinsight-hadoop-customize-cluster-linux.md).
@@ -395,6 +399,10 @@ sudo service bind9 status
 - **Отключение репликации для определенных таблиц (table1, table2 и table3):**
 
         -m hn1 -s <source hbase cluster name> -sp <source cluster Ambari password> -t "table1;table2;table3"
+
+> [!NOTE]
+> Если планируется удалить целевой кластер, убедитесь, что он удален из однорангового списка исходного кластера. Это можно сделать, выполнив команду remove_peer "1" в оболочке HBase в исходном кластере. Сбой в исходном кластере может работать неправильно.
+>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

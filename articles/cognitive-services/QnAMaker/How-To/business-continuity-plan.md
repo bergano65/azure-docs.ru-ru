@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: diberry
-ms.openlocfilehash: 0e748e81de39b2bef14b543063adeb51b8b3ecdb
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: a31076d17ebaf8020fe4b3f82594b98a7c3bde74
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73486717"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74977460"
 ---
 # <a name="create-a-business-continuity-plan-for-your-qna-maker-service"></a>Создание плана по обеспечению непрерывности бизнес-процессов для службы QnA Maker
 
@@ -33,7 +33,7 @@ ms.locfileid: "73486717"
 
 4. После настройки первичного и вторичного стеков воспользуйтесь [диспетчером трафика](https://docs.microsoft.com/azure/traffic-manager/) для настройки двух конечных точек и метода маршрутизации.
 
-5. Для конечной точки диспетчера трафика потребуется создать SSL-сертификат. [Привяжите SSL-сертификат](https://docs.microsoft.com/azure/app-service/configure-ssl-bindings) к службам приложений.
+5. Вам потребуется создать сертификат SSL (SSL) для конечной точки диспетчера трафика. [Привяжите SSL-сертификат](https://docs.microsoft.com/azure/app-service/configure-ssl-bindings) к службам приложений.
 
 6. Наконец, используйте конечную точку диспетчера трафика в боте или приложении.
 

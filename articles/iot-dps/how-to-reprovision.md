@@ -1,18 +1,18 @@
 ---
 title: Повторная подготовка устройств в службе подготовки устройств для центра Интернета вещей Azure
-description: Узнайте, как повторно подготовить устройства с помощью экземпляра службы подготовки устройств и зачем это нужно.
+description: Узнайте, как повторно подготовить устройства с помощью экземпляра службы подготовки устройств (DPS) и зачем это необходимо.
 author: wesmc7777
 ms.author: wesmc
 ms.date: 04/04/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: f28dc20a107e9dfdbf252ea614ed4007eafddcd4
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 0ded494debab19daa15a953715b1ab7b0b10ad18
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74229707"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74974910"
 ---
 # <a name="how-to-reprovision-devices"></a>Повторная подготовка устройств
 
@@ -90,7 +90,7 @@ ms.locfileid: "74229707"
 Например, код отправки запросов на подготовку с устройства во время последовательности загрузки см. в статье об [автоматической подготовке имитированного устройства](quick-create-simulated-device.md).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о повторной подготовке см. в статье [Основные понятия повторной инициализации устройств центра Интернета вещей](concepts-device-reprovision.md) . 
 - Дополнительные сведения об отмене подготовки см. в статье [как отменить подготовку устройств, которые были подготовлены ранее](how-to-unprovision-devices.md) . 

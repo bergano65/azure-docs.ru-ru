@@ -7,20 +7,20 @@ ms.subservice: security
 ms.custom: seo-lt-2019
 ms.devlang: ''
 ms.topic: conceptual
-author: aliceku
-ms.author: aliceku
+author: jaszymas
+ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 03/12/2019
-ms.openlocfilehash: 29971414219976f6d72caf30a909f1884b04aef7
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: d4c9b926afe93f52946c5f1adf40835f72812f2a
+ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74422423"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74995828"
 ---
 # <a name="remove-a-transparent-data-encryption-tde-protector-using-powershell"></a>Удаление предохранителя TDE с помощью PowerShell
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 - Подписка Azure и права администратора для нее.
 - Необходимо установить и запустить Azure PowerShell.
@@ -33,13 +33,13 @@ ms.locfileid: "74422423"
 > [!IMPORTANT]
 > Модуль PowerShell Azure Resource Manager (RM) по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Модуль AzureRM продолжит принимать исправления ошибок до 2020 декабря.  Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны. Дополнительные сведения о совместимости см. [в разделе Введение в новый модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az).
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Сведения об установке см. в разделе [Install Azure CLI](/cli/azure/install-azure-cli).
 
 * * *
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 Это практическое руководство описывает, как правильно реагировать на потенциальную компрометацию предохранителя TDE для базы данных SQL Azure или хранилища данных SQL, для которых настроено TDE с ключами, управляемыми клиентом, в Azure Key Vault с поддержкой BYOK. См. дополнительные сведения о [поддержке BYOK для TDE](transparent-data-encryption-byok-azure-sql.md).
 
@@ -70,7 +70,7 @@ SELECT * FROM sys.dm_db_log_info (database_id)
 
 Команда PowerShell **Get-AzureRmSqlServerKeyVaultKey** предоставляет отпечаток предохранителя TDE, используемого в запросе, чтобы можно было видеть, какие ключи следует удерживать, а какие — удалять в AKV. Из Azure Key Vault можно безопасно удалить только те ключи, которые больше не используются базой данных.
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Команда PowerShell **AZ SQL Server Key показать** предоставляет отпечаток предохранителя TDE, используемого в запросе, чтобы можно было увидеть, какие ключи следует удерживать и какие ключи нужно удалить в AKV. Из Azure Key Vault можно безопасно удалить только те ключи, которые больше не используются базой данных.
 
@@ -126,7 +126,7 @@ SELECT * FROM sys.dm_db_log_info (database_id)
    Restore-AzKeyVaultKey -VaultName <KeyVaultName> -InputFile <BackupFilePath>
    ```
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Справочник по командам см. в [Azure CLI keyvault](/cli/azure/keyvault/key).
 
@@ -181,7 +181,7 @@ SELECT * FROM sys.dm_db_log_info (database_id)
 2. Создайте в Key Vault резервную копию материала ключа для предохранителя TDE.
 3. Удалите потенциально скомпрометированный ключ из Key Vault.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. дополнительные сведения о том, как [заменить предохранитель TDE для сервера в соответствии с требованиями к безопасности с помощью PowerShell](transparent-data-encryption-byok-azure-sql-key-rotation.md).
 - См. дополнительные сведения о [включении прозрачного шифрования данных с помощью собственного ключа из Key Vault с помощью PowerShell](transparent-data-encryption-byok-azure-sql-configure.md).

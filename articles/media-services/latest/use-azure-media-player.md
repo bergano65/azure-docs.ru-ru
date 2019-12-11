@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 07/17/2019
 ms.author: juliako
-ms.openlocfilehash: 8f1639a21e3783f587904c2a8085fd2f555ff5b8
-ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
+ms.openlocfilehash: a0b0a4e89242103811f20071b7235c825c9d8bd2
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74900351"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74967530"
 ---
 # <a name="azure-media-player-overview"></a>Обзор Проигрывателя мультимедиа Azure
 
@@ -50,6 +50,10 @@ ms.locfileid: "74900351"
 ## <a name="set-up-azure-media-player-in-your-html"></a>Настройка Проигрывателя мультимедиа Azure в HTML
 
 Проигрыватель мультимедиа Azure можно легко настроить. Для базового воспроизведения мультимедийного содержимого из учетной записи Служб мультимедиа потребуется всего несколько минут. Дополнительные сведения о настройке Проигрывателя мультимедиа Azure см. в [документации по Проигрывателю мультимедиа Azure](https://aka.ms/ampdocs). 
+
+## <a name="additional-notes"></a>Дополнительные замечания
+
+* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

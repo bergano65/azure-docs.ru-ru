@@ -1,5 +1,5 @@
 ---
-title: Область разрешений для приложения версии 1.0 (библиотека проверки подлинности Майкрософт) | Azure
+title: Области MSAL для приложения v 1.0 | Службы
 description: Дополнительные сведения об областях разрешений для приложения версии 1.0, использующего библиотеку проверки подлинности Майкрософт (MSAL).
 services: active-directory
 author: TylerMSFT
@@ -13,12 +13,12 @@ ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 395b5105fdb067977f8414fe5675170032262fe0
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 0606376c455733ca90f1bff3d0295cbd1a075637
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74921404"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74963262"
 ---
 # <a name="scopes-for-a-web-api-accepting-v10-tokens"></a>Области для веб-API, которые принимают маркеры версии 1.0
 
@@ -26,7 +26,7 @@ ms.locfileid: "74921404"
 
 ## <a name="scopes-to-request-access-to-specific-oauth2-permissions-of-a-v10-application"></a>Области для запроса доступа к конкретным разрешениям OAuth2 в приложении версии 1.0
 
-Чтобы получить токены для конкретных областей приложения версии 1.0 (например, Azure AD Graph, который является https:\//graph.windows.net), необходимо создать области путем сцепления требуемого идентификатора ресурса с нужным разрешением OAuth2 для этого ресурса.
+Чтобы получить токены для конкретных областей приложения версии 1.0 (например, Azure AD Graph, https://graph.windows.net), создайте области путем сцепления требуемого идентификатора ресурса с нужным разрешением OAuth2 для этого ресурса.
 
 Например, для доступа от имени пользователя веб-API версии 1.0 с URI идентификатора приложения `ResourceId`:
 

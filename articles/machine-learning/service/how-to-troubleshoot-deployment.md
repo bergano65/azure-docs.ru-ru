@@ -11,12 +11,12 @@ ms.author: clauren
 ms.reviewer: jmartens
 ms.date: 10/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1dc66ae0f69c19524b32b55c654f7c8fd2d32762
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 7d7744aab6d83b3415f32ca9e311940836c6f93c
+ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74123207"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74997247"
 ---
 # <a name="troubleshooting-azure-machine-learning-azure-kubernetes-service-and-azure-container-instances-deployment"></a>Устранение неполадок Машинное обучение Azure службы Azure Kubernetes и развертывания экземпляров контейнеров Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "74123207"
 
 Дополнительные сведения об этом процессе см. во введении в [Управление моделями](concept-model-management-and-deployment.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * **Подписка Azure**. Если у вас ее нет, попробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree).
 * [Пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
@@ -267,7 +267,7 @@ print(Model.get_model_path(model_name='my-best-model'))
 
 ## <a name="function-fails-runinput_data"></a>Ошибка выполнения функции: run(input_data)
 
-Если служба успешно развернута, но аварийно завершает работу при публикации данных в конечную точку оценки, можно добавить оператор для перехвата ошибок в функцию `run(input_data)`, чтобы она возвращала подробное сообщение об ошибке. Например,
+Если служба успешно развернута, но аварийно завершает работу при публикации данных в конечную точку оценки, можно добавить оператор для перехвата ошибок в функцию `run(input_data)`, чтобы она возвращала подробное сообщение об ошибке. Пример.
 
 ```python
 def run(input_data):
@@ -326,7 +326,7 @@ def run(input_data):
 Дополнительные сведения о настройке `autoscale_target_utilization`, `autoscale_max_replicas`и `autoscale_min_replicas` для см. в справочнике по модулю [аксвебсервице](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py) .
 
 
-## <a name="advanced-debugging"></a>Расширенная отладка
+## <a name="advanced-debugging"></a>Усовершенствованная отладка
 
 В некоторых случаях может потребоваться интерактивная отладка кода Python, содержащегося в развертывании модели. Например, если сценарий записи завершается ошибкой и причина не может быть определена дополнительным ведением журнала. С помощью Visual Studio Code и Инструменты Python для Visual Studio (PTVSD) можно присоединяться к коду, выполняющемуся в контейнере DOCKER.
 
@@ -505,7 +505,7 @@ myregistry.azurecr.io/myimage:1
     docker exec -it debug /bin/bash
     ```
 
-1. Чтобы найти файлы, используемые службой, используйте следующую команду в оболочке bash в контейнере:
+1. Чтобы найти файлы, используемые службой, используйте следующую команду оболочки bash в контейнере, если каталог по умолчанию отличается от `/var/azureml-app`:
 
     ```bash
     cd /var/azureml-app
@@ -534,7 +534,7 @@ myregistry.azurecr.io/myimage:1
 docker stop debug
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о развертывании см. в статьях, представленных ниже.
 

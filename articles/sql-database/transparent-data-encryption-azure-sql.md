@@ -8,16 +8,16 @@ titleSuffix: Azure SQL Database and SQL Data Warehouse
 ms.custom: seo-lt-2019
 ms.devlang: ''
 ms.topic: conceptual
-author: aliceku
-ms.author: aliceku
+author: jaszymas
+ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 11/01/2019
-ms.openlocfilehash: b6af171eafbaf1f4d31bad649fcb0c69d8bdc24d
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 19414a6f09f4bc61cd9b1b09ae98ea070e577d7f
+ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73821708"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74995887"
 ---
 # <a name="transparent-data-encryption-for-sql-database-and-data-warehouse"></a>Прозрачное шифрование данных для хранилища данных и Базы данных SQL
 
@@ -72,7 +72,7 @@ SQL Server на виртуальной машине Azure также может 
 
 
 ## <a name="manage-transparent-data-encryption"></a>Управление прозрачным шифрованием данных
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
 Управление прозрачным шифрованием данных в портал Azure.
 
 Чтобы настроить TDE на портале Azure, подключитесь от имени владельца, участника или администратора безопасности SQL Azure.
@@ -98,7 +98,7 @@ SQL Server на виртуальной машине Azure также может 
 
 Используйте следующие командлеты для Базы данных SQL Azure и хранилища данных:
 
-| Командлет | Description (Описание) |
+| Командлет | Описание |
 | --- | --- |
 | [Set-Азсклдатабасетранспарентдатаенкриптион](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabasetransparentdataencryption) |Включение или отключение TDE для базы данных|
 | [Get-Азсклдатабасетранспарентдатаенкриптион](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasetransparentdataencryption) |Получение сведений о состоянии TDE для базы данных |
@@ -118,7 +118,7 @@ SQL Server на виртуальной машине Azure также может 
 
 Подключитесь к базе данных, указав имя входа администратора или члена роли **dbmanager** в базе данных master.
 
-| Команда | Description (Описание) |
+| Команда | Описание |
 | --- | --- |
 | [ALTER DATABASE (база данных SQL Azure)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-azure-sql-database) | SET ENCRYPTION ON/OFF — шифрование или расшифровка базы данных |
 | [sys.dm_database_encryption_keys](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-database-encryption-keys-transact-sql) |Возврат сведений о состоянии шифрования для базы данных и связанных с ней ключей шифрования |
@@ -127,13 +127,13 @@ SQL Server на виртуальной машине Azure также может 
 
 Transact-SQL не позволяет переключиться с предохранителя TDE на ключ из Key Vault. Используйте для этого портал Azure или PowerShell.
 
-# <a name="rest-apitabazure-restapi"></a>[ИНТЕРФЕЙС REST API](#tab/azure-RESTAPI)
+# <a name="rest-apitabazure-restapi"></a>[REST API](#tab/azure-RESTAPI)
 Управление прозрачным шифрованием данных с помощью REST API.
 
 Чтобы настроить TDE через REST API, подключитесь от имени владельца, участника или администратора безопасности SQL Azure.
 Используйте следующий набор команд для Базы данных SQL Azure и хранилища данных:
 
-| Команда | Description (Описание) |
+| Команда | Описание |
 | --- | --- |
 |[Создание или обновление сервера](https://docs.microsoft.com/rest/api/sql/servers/createorupdate)|Добавление удостоверения Azure Active Directory для экземпляра SQL Server (используется для предоставления доступа к Key Vault)|
 |[Создание или обновление ключа сервера](https://docs.microsoft.com/rest/api/sql/serverkeys/createorupdate)|Добавление ключа Key Vault в экземпляр SQL Server|

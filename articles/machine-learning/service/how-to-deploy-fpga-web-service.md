@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.date: 10/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: 5e8dc6181660f0c1545df0688e2749f8f0187027
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b387c9d595898158ff8b5ab8c25f705825b8c248
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73496898"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978225"
 ---
 # <a name="what-are-field-programmable-gate-arrays-fpga-and-how-to-deploy"></a>Что такое программируемые массивы вентиля (FPGA) и как развернуть
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "73496898"
 
 ![Схема сравнения Машинное обучение Azure FPGA](./media/concept-accelerate-with-fpgas/azure-machine-learning-fpga-comparison.png)
 
-|Процессор||Description (Описание)|
+|Процессор||Описание|
 |---|:-------:|------|
 |Микросхемы приложений|ASIC|Пользовательские микросхемы, такие как процессор TensorFlow (TPU) от Google, предоставляют повышенную эффективность. Их нельзя настраивать повторно в случае изменения требований.|
 |Программируемые пользователем вентильные матрицы|FPGA|ППВМ (например те, что доступны в Azure) обеспечивают производительность, близкую к микросхемам ASIC. Они также гибкие и поддерживают перенастройку для реализации новой логики.|
@@ -62,10 +62,10 @@ FPGA в Azure поддерживает:
   - SSD-ВГГ
 
 FPGA доступны в следующих регионах Azure:
-  - Восток США
+  - Восточная часть США
   - Юго-Восточная Азия
   - Западная Европа
-  - Западный регион США 2
+  - Западная часть США 2
 
 > [!IMPORTANT]
 > Чтобы оптимизировать задержку и пропускную способность, клиент, отправляющий данные в модель FPGA, должен находиться в одном из регионов выше (то, в котором была развернута модель).
@@ -90,7 +90,7 @@ Azure FPGAs интегрируется с Машинное обучение Azur
 
 ### <a name="prerequisites"></a>Технические условия
 
-- Подписка Azure.  Если у вас ее нет, создайте бесплатную учетную запись перед началом работы. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня.
+- Подписка Azure.  Если у вас ее нет, создайте бесплатную учетную запись перед началом работы. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
 - Квота FPGA. Используйте Azure CLI, чтобы проверить, есть ли у вас квота:
 
@@ -136,9 +136,9 @@ Azure FPGAs интегрируется с Машинное обучение Azur
 
 Используйте [пакет SDK Машинного обучения Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py), чтобы создать определение службы. Определение службы представляет собой файл, описывающий конвейер графов (входящие данные, характеризатор и классификатор) на основе TensorFlow. Команда развертывания автоматически выполняет сжатие определения и графов в ZIP-файл и передает этот файл в хранилище BLOB-объектов Azure. DNN уже развернут для запуска в FPGA.
 
-### <a name="load-azure-ml-workspace"></a>Загрузить рабочую область машинного обучения Azure
+### <a name="load-azure-machine-learning-workspace"></a>Рабочая область Машинное обучение Azure нагрузки
 
-Загрузите рабочую область машинного обучения Azure.
+Загрузите рабочую область Машинное обучение Azure.
 
 ```python
 import os
@@ -380,7 +380,7 @@ ssl_enabled = address.startswith("https")
 address = address[address.find('/')+2:].strip('/')
 port = 443 if ssl_enabled else 80
 
-# Initialize AzureML Accelerated Models client
+# Initialize Azure ML Accelerated Models client
 client = PredictionClient(address=address,
                           port=port,
                           use_ssl=ssl_enabled,
@@ -432,9 +432,9 @@ converted_model.delete()
 
 Ознакомьтесь с этими записными книжками, видео и блогами:
 
-+ Несколько [примеров записных книжек](https://aka.ms/aml-accel-models-notebooks).
++ Несколько [примеров записных книжек](https://aka.ms/aml-accel-models-notebooks)
 
-+ [Гипермасштабируемое оборудование: ML в масштабе над Azure + FPGA: Сборка 2018 (видео)](https://channel9.msdn.com/events/Build/2018/BRK3202)
++ [Масштабирование оборудования: ML в масштабе на основе Azure + FPGA: сборка 2018 (видео)](https://channel9.msdn.com/events/Build/2018/BRK3202)
 
 + [Внутренние параметры настраиваемого облака на основе FPGA Microsoft (видео)](https://channel9.msdn.com/Events/Build/2017/B8063)
 

@@ -1,6 +1,6 @@
 ---
-title: Веб-приложение, которое подписывает пользователей (регистрация приложения) — платформа Microsoft Identity
-description: Узнайте, как создать веб-приложение, которое входит в систему пользователей (регистрация приложений)
+title: Регистрация веб-приложения, которое входит в систему пользователей — платформа Microsoft Identity | Службы
+description: Узнайте, как зарегистрировать веб-приложение, которое входит в систему пользователей
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -15,12 +15,12 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d840cbaba2cc8325c619248bb7f4421d3b2f83c
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: b08dd5602196bae0e250953c83320e69ddc6da83
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74766078"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74964826"
 ---
 # <a name="web-app-that-signs-in-users-app-registration"></a>Веб-приложение, которое входит в систему пользователей: регистрация приложения
 
@@ -58,7 +58,7 @@ ms.locfileid: "74766078"
 1. Выберите меню **Проверка подлинности**, а затем добавьте следующие сведения:
    1. В качестве **URL-адреса ответа**добавьте **https://localhost:44321/signin-oidc** типа **Web**.
    1. В разделе **Дополнительные параметры** задайте для параметра **URL-адрес выхода** значение **https://localhost:44321/signout-oidc** .
-   1. В разделе **неявное предоставление**выберите **токены идентификации**.
+   1. В разделе **Неявное предоставление разрешения** установите флажок **Токены идентификатора**.
    1. Щелкните **Сохранить**.
 
 # <a name="aspnettabaspnet"></a>[ASP.NET](#tab/aspnet)

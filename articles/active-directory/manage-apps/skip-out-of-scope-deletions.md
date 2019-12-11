@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 10/03/2019
+ms.date: 12/10/2019
 ms.author: chmutali
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b4a8005cf308d5cfce02976e3b2eff39d5fe8c0
-ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
+ms.openlocfilehash: d5a40b699c01f50ceb1bedbc36e7f1467772336f
+ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71958635"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74997077"
 ---
 # <a name="skip-deletion-of-user-accounts-that-go-out-of-scope"></a>Пропуск удаления учетных записей пользователей, которые выходят за пределы области
 
@@ -30,16 +30,16 @@ ms.locfileid: "71958635"
 * Если для ***скипаутофскопеделетионс*** задано значение 0 (false), то учетные записи, выходящие за пределы области, будут отключены в целевом объекте
 * Если для ***скипаутофскопеделетионс*** задано значение 1 (true), то учетные записи, выходящие за пределы области, не будут отключены в целевом объекте. Этот флаг устанавливается на уровне *приложения подготовки* и может быть настроен с помощью API Graph. 
 
-Так как эта конфигурация широко используется с *workday для Active Directory приложения подготовки пользователей* , приведенные ниже действия включают снимки экрана приложения workday. Однако это также можно использовать с другими приложениями подготовки.
+Так как эта конфигурация широко используется с *workday для Active Directory приложения подготовки пользователей* , приведенные ниже действия включают снимки экрана приложения workday. Однако это также можно использовать со **всеми другими приложениями** (ServiceNow, Salesforce, Dropbox и т. д.).
 
-## <a name="step-1-retrieve-your-provisioning-app-service-principal-id-object-id"></a>Шаг 1. Получение идентификатора субъекта-службы приложения для подготовки (идентификатор объекта)
+## <a name="step-1-retrieve-your-provisioning-app-service-principal-id-object-id"></a>Шаг 1. Получение идентификатора субъекта-службы приложения подготовки (идентификатор объекта)
 
 1. Запустите [портал Azure](https://portal.azure.com)и перейдите к разделу Properties приложения подготовки. Например, если вы хотите экспортировать *приложение "Workday в службу подготовки пользователей* ", перейдите в раздел свойств этого приложения. 
 1. В разделе "Свойства" вашего приложения подготовки скопируйте значение GUID, связанное с полем *Идентификатор объекта*. Это значение также называется идентификатором **ServicePrincipalId** вашего приложения, и оно будет использоваться в операциях обозревателя Graph.
 
    ![Идентификатор субъекта-службы приложения Workday](./media/export-import-provisioning-mappings/wd_export_01.png)
 
-## <a name="step-2-sign-into-microsoft-graph-explorer"></a>Шаг 2. Выполнение входа в обозреватель Microsoft Graph
+## <a name="step-2-sign-into-microsoft-graph-explorer"></a>Шаг 2. вход в Microsoft Graph Explorer
 
 1. Запустите [обозреватель Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer)
 1. Нажмите кнопку "Вход с помощью учетной записи Майкрософт" и войдите, используя учетные данные глобального администратора Azure AD или администратора приложения.
@@ -48,7 +48,7 @@ ms.locfileid: "71958635"
 
 1. После выполнения входа вы увидите данные учетной записи пользователя на левой панели.
 
-## <a name="step-3-get-existing-app-credentials-and-connectivity-details"></a>Шаг 3. Получение учетных данных и сведений о подключении для существующих приложений
+## <a name="step-3-get-existing-app-credentials-and-connectivity-details"></a>Шаг 3. получение учетных данных и сведений о подключении для существующих приложений
 
 В обозревателе Microsoft Graph выполните следующий запрос GET, заменив [servicePrincipalId] на атрибут **ServicePrincipalId**, извлеченный на [шаге 1](#step-1-retrieve-your-provisioning-app-service-principal-id-object-id).
 
@@ -71,7 +71,7 @@ ms.locfileid: "71958635"
         }
 ```
 
-## <a name="step-4-update-the-secrets-endpoint-with-the-skipoutofscopedeletions-flag"></a>Шаг 4. Обновление конечной точки секретов с помощью флага Скипаутофскопеделетионс
+## <a name="step-4-update-the-secrets-endpoint-with-the-skipoutofscopedeletions-flag"></a>Шаг 4. обновление конечной точки секреты с помощью флага Скипаутофскопеделетионс
 
 В обозревателе Graph выполните следующую команду, чтобы обновить конечную точку секреты с помощью флага ***скипаутофскопеделетионс*** . 
 
@@ -82,7 +82,7 @@ ms.locfileid: "71958635"
 ```
 Скопируйте обновленный текст из шага 3 в текст запроса и задайте для заголовка "Content-Type" значение "Application/JSON" в заголовках запроса. 
 
-   ![Запрос на размещение](./media/skip-out-of-scope-deletions/skip-05.png)
+   ![запрос PUT](./media/skip-out-of-scope-deletions/skip-05.png)
 
 Щелкните "выполнить запрос". 
 
@@ -90,7 +90,7 @@ ms.locfileid: "71958635"
 
    ![РАЗМЕСТИТЬ ответ](./media/skip-out-of-scope-deletions/skip-06.png)
 
-## <a name="step-5-verify-that-out-of-scope-users-dont-get-disabled"></a>Шаг 5. Убедитесь, что пользователи вне области не отключены
+## <a name="step-5-verify-that-out-of-scope-users-dont-get-disabled"></a>Шаг 5. Убедитесь, что пользователи вне области не отключены
 
 Вы можете проверить, что этот флаг приводит к ожидаемому поведению, обновив правила области, чтобы пропустить определенного пользователя. В приведенном ниже примере мы исключены сотрудник с ИДЕНТИФИКАТОРом 21173 (который ранее находился в области действия), добавив новое правило области. 
 

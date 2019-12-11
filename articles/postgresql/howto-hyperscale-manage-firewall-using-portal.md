@@ -1,22 +1,22 @@
 ---
-title: Управление правилами брандмауэра в базе данных Azure для PostgreSQL — масштабирование (Цитус)
+title: Управление правилами брандмауэра — масштабирование (Цитус) — база данных Azure для PostgreSQL
 description: Создание правил брандмауэра для базы данных Azure для PostgreSQL-Scale (Цитус) и управление ими с помощью портал Azure
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 9/12/2019
-ms.openlocfilehash: 1b132eb168f3d873c8150bc33b581aa0f0f8d124
-ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
+ms.openlocfilehash: 660c395e6cff81b0abcac07e66385f80a538695f
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71273707"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74977545"
 ---
 # <a name="manage-firewall-rules-for-azure-database-for-postgresql---hyperscale-citus"></a>Управление правилами брандмауэра для базы данных Azure для PostgreSQL — масштабирование (Цитус)
 Правила брандмауэра уровня сервера можно использовать для управления доступом к узлу координатора (Цитус) с указанным IP-адресом или диапазоном IP-адресов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - Группа серверов [создает группу серверов базы данных Azure для PostgreSQL — Цитус](quickstart-create-hyperscale-portal.md).
 
@@ -24,7 +24,7 @@ ms.locfileid: "71273707"
 
 > [!NOTE]
 > Эти параметры также доступны во время создания группы серверов базы данных Azure для PostgreSQL-Scale (Цитус). На вкладке **сети** щелкните **общедоступная конечная точка**.
-> ![Портал Azure-вкладка "сеть"](./media/howto-hyperscale-manage-firewall-using-portal/0-create-public-access.png)
+> ![вкладка "сеть" портал Azure](./media/howto-hyperscale-manage-firewall-using-portal/0-create-public-access.png)
 
 1. На странице Группа серверов PostgreSQL под заголовком безопасность щелкните **сети** , чтобы открыть правила брандмауэра.
 
@@ -59,5 +59,5 @@ ms.locfileid: "71273707"
 * Чтобы изменить существующее правило, измените значения во всех полях в данном правиле. Щелкните **Сохранить** , чтобы сохранить изменения.
 * Чтобы удалить имеющееся правило, щелкните многоточие [...], а затем щелкните **Удалить**. Щелкните **Сохранить** , чтобы сохранить изменения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте больше о [принципах правил брандмауэра](concepts-hyperscale-firewall-rules.md), в том числе об устранении проблем с подключением.

@@ -5,12 +5,12 @@ ms.reviewer: saurse
 ms.topic: troubleshooting
 ms.date: 07/05/2019
 ms.service: backup
-ms.openlocfilehash: 5e435d1169d5f148bfa2910174bf1f2835806c8b
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 8331d74528703df1d7c56f25af7df0f53cd1f9be
+ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928247"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74996278"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -29,7 +29,6 @@ ms.locfileid: "74928247"
   - Для виртуальных машин Windows выполните следующие [действия](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms) , чтобы перезапустить Гостевой агент.<br>
   - Для виртуальных машин Linux выполните следующие [действия](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms) , чтобы перезапустить Гостевой агент.
 
-
 ## <a name="guestagentsnapshottaskstatuserror---could-not-communicate-with-the-vm-agent-for-snapshot-status"></a>GuestAgentSnapshotTaskStatusError — не удалось запросить состояние моментального снимка в агенте виртуальной машины
 
 **Код ошибки**: GuestAgentSnapshotTaskStatusError.<br>
@@ -44,6 +43,8 @@ ms.locfileid: "74928247"
 **Причина 3. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)** .
 
 **Причина 4. [Не удалось обновить или загрузить расширение резервного копирования](#the-backup-extension-fails-to-update-or-load)** .
+
+**Причина 5. [Параметры конфигурации агента виртуальной машины не заданы (для виртуальных машин Linux)](#vm-agent-configuration-options-are-not-set-for-linux-vms)**
 
 ## <a name="usererrorvmprovisioningstatefailed---the-vm-is-in-failed-provisioning-state"></a>Усереррорвмпровисионингстатефаилед — виртуальная машина находится в состоянии "сбой подготовки"
 
@@ -196,6 +197,11 @@ ms.locfileid: "74928247"
 1. В файле /etc/waagent.conf найдите такую строку: **Enable verbose logging (y|n)** .
 2. Для параметра **Logs.Verbose** измените значение с *n* на *y*.
 3. Сохраните изменения и перезапустите waagent, выполнив шаги, описанные выше в этом разделе.
+
+### <a name="vm-agent-configuration-options-are-not-set-for-linux-vms"></a>Параметры конфигурации агента виртуальной машины не заданы (для виртуальных машин Linux)
+
+Файл конфигурации (/ etc/waagent.conf) определяет действия waagent. Расширения параметров файла конфигурации **. Включите** и **подготавливаете.** чтобы резервное копирование работало, агент должен иметь значение **y** .
+Полный список параметров файла конфигурации агента виртуальной машины см. на <https://github.com/Azure/WALinuxAgent#configuration-file-options>
 
 ### <a name="the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken"></a>Не удалось получить состояние моментального снимка или создать моментальный снимок
 

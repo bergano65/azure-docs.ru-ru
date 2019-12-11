@@ -13,14 +13,14 @@ ms.workload: infrastructure
 ms.date: 11/06/2019
 ms.author: cynthn
 ms.custom: ''
-ms.openlocfilehash: 9dff10848c42fd730f0bc77fd325f00cec554c9d
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 44df85a94ad26d3abcd48f01c31e7aa093c1123f
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892878"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978702"
 ---
-# <a name="create-a-shared-image-gallery-using-the-azure-portal"></a>Создание коллекции общих образов с помощью портал Azure
+# <a name="create-an-azure-shared-image-gallery-using-the-portal"></a>Создание коллекции общих образов Azure с помощью портала
 
 [Коллекция общих образов](shared-image-galleries.md) упрощает обмен пользовательскими образами в вашей организации. Пользовательские образы похожи на образы магазина, однако их можно создавать самостоятельно. Пользовательские образы можно использовать для начальной загрузки задач развертывания, например при предварительной загрузке приложений, конфигураций приложений и других конфигураций операционной системы. 
 

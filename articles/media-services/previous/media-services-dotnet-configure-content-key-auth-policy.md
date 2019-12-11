@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: a2d978a68f6f654e3bdeea07c931cd7103f5850c
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 386b49698ca6b8ded2972aba14c1968620fcbb08
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "69015533"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74974501"
 ---
-# <a name="dynamic-encryption-configure-a-content-key-authorization-policy"></a>Динамическое шифрование: Настройка политики авторизации ключей содержимого
+# <a name="dynamic-encryption-configure-a-content-key-authorization-policy"></a>Динамическое шифрование: настройка политики для авторизации ключа содержимого
 [!INCLUDE [media-services-selector-content-key-auth-policy](../../../includes/media-services-selector-content-key-auth-policy.md)]
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
  Службы мультимедиа Azure позволяют защищать потоковое содержимое MPEG-DASH, Smooth Streaming и HTTP Live Streaming (HLS) с помощью стандарта AES (использующего 128-разрядные ключи шифрования) или технологии [управления цифровыми правами (DRM) PlayReady](https://www.microsoft.com/playready/overview/). Кроме того, Службы мультимедиа позволяют передавать потоки MPEG DASH с шифрованием Widevine DRM. PlayReady и Widevine шифруются согласно спецификации общего шифрования (ISO/IEC 23001-7 CENC).
 
 Службы мультимедиа также включают в себя службы доставки ключей и лицензий, с помощью которых клиенты могут получать ключи AES либо лицензии PlayReady или Widevine для воспроизведения зашифрованного содержимого.
@@ -426,12 +426,16 @@ ms.locfileid: "69015533"
     }
 ```
 
+## <a name="additional-notes"></a>Дополнительные замечания
+
+* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Оставить отзыв
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда политика авторизации для ключа содержимого настроена, перейдите к статье о [настройке политики доставки ресурсов](media-services-dotnet-configure-asset-delivery-policy.md).
 

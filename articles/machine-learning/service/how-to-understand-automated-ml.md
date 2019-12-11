@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 12/05/2019
-ms.openlocfilehash: 3572d2dffc38f18cbf02aa2e9de98b74ee8ff939
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 81f17de7627658b756edd19438a80fb32add859d
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74930965"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74974093"
 ---
 # <a name="understand-automated-machine-learning-results"></a>Общие сведения об автоматических результатах машинного обучения
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -266,4 +266,4 @@ normalized_root_mean_squared_log_error;|Нормализованная сред�
 ## <a name="next-steps"></a>Дальнейшие действия
 
 + Дополнительные сведения об [автоматизированном ML](concept-automated-ml.md) в машинное обучение Azure.
-+ Попробуйте использовать демонстрационную записную книжку с [описанием автоматизированной машинное обучение модели](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/model-explanation) .
++ Попробуйте ознакомиться с примерами [автоматизированной машинное обучениеной модели](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/explain-model) .

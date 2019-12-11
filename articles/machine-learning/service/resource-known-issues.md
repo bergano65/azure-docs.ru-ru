@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: bff3547456c03ae313e7465238872670965765f1
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: ed67981a79e2bc998d0f1f64858206243c0a7070
+ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74927679"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74997213"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning"></a>Известные проблемы и устранение неполадок Машинное обучение Azure
 
@@ -141,7 +141,7 @@ psutil cryptography==1.5 pyopenssl==16.0.0 ipython==2.2.0
 
 Если в параметрах автоматического машинного обучения имеется более 10 итераций, задайте для `show_output` значение `False` при отправке выполнения.
 
-### <a name="widget-for-the-azure-machine-learning-sdkautomated-machine-learning"></a>Мини-приложение для Машинное обучение Azure пакета SDK или автоматического машинного обучения
+### <a name="widget-for-the-azure-machine-learning-sdk-and-automated-machine-learning"></a>Мини-приложение для Машинное обучение Azure SDK и автоматического машинного обучения
 
 Мини-приложение Машинное обучение Azure SDK не поддерживается в записях модуля обработки сообщений, так как записные книжки не могут анализировать графические элементы HTML. Вы можете просмотреть мини-приложение на портале с помощью этого кода Python в Azure Databricks записной книжке:
 
@@ -261,6 +261,16 @@ kubectl get secret/azuremlfessl -o yaml
 ## <a name="recommendations-for-error-fix"></a>Рекомендации по исправлению ошибок
 Ниже приведены рекомендации Azure ML по устранению некоторых распространенных ошибок в МАШИНном обучении Azure.
 
+### <a name="metric-document-is-too-large"></a>Размер документа метрики слишком велик
+Служба Машинное обучение Azure имеет внутренние ограничения на размер объектов метрик, которые могут быть зарегистрированы в процессе обучения. При возникновении ошибки "документ метрики слишком велик" при записи в журнал метрики, возвращающей значение типа List, попробуйте разделить список на меньшие фрагменты, например:
+
+```python
+run.log_list("my metric name", my_metric[:N])
+run.log_list("my metric name", my_metric[N:])
+```
+
+ На внутреннем уровне Служба журнала выполнения объединяет блоки с одинаковым именем метрики в смежный список.
+
 ### <a name="moduleerrors-no-module-named"></a>Модулиррорс (без модуля с именем)
 Если вы используете в Модулиррорс при отправке экспериментов в МАШИНном обучении Azure, это означает, что обучающий сценарий ожидает установки пакета, но он не добавляется. После предоставления имени пакета Azure ML установит пакет в среде, используемой для обучения. 
 
@@ -268,10 +278,11 @@ kubectl get secret/azuremlfessl -o yaml
 
 МАШИНное обучение Azure также предоставляет средства оценки, зависящие от платформы, для Tensorflow, PyTorch, Chain и SKLearn. Используя эти средства оценки, вы убедитесь, что зависимости платформы установлены от вашего имени в среде, используемой для обучения. Есть возможность указать дополнительные зависимости, как описано выше. 
  
- Образы DOCKER, поддерживаемые МАШИНным обучением Azure, и их содержимое можно просмотреть в [контейнерах AzureML](https://github.com/Azure/AzureML-Containers).
+Образы DOCKER, поддерживаемые МАШИНным обучением Azure, и их содержимое можно просмотреть в [контейнерах AzureML](https://github.com/Azure/AzureML-Containers).
 Зависимости, зависящие от платформы, перечислены в соответствующей документации по платформе — [цепочке](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py#remarks), [PyTorch](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py#remarks), [TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py#remarks), [SKLearn](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.sklearn.sklearn?view=azure-ml-py#remarks).
 
->[Примечание.] Если вы считаете, что определенный пакет является достаточно распространенным для добавления в образы и среды машинного обучения Azure, повысьте вопрос GitHub в [контейнерах AzureML](https://github.com/Azure/AzureML-Containers). 
+> [!Note]
+> Если вы считаете, что определенный пакет является достаточно распространенным для добавления в образы и среды машинного обучения Azure, повысьте вопрос GitHub в [контейнерах AzureML](https://github.com/Azure/AzureML-Containers). 
  
  ### <a name="nameerror-name-not-defined-attributeerror-object-has-no-attribute"></a>Намиррор (имя не определено), Аттрибутиррор (у объекта нет атрибута)
 Это исключение должно поступать из сценариев обучения. Чтобы получить дополнительные сведения о конкретном имени, которое не определено или об ошибке атрибута, можно просмотреть файлы журналов из портал Azure. Из пакета SDK можно использовать `run.get_details()`, чтобы просмотреть сообщение об ошибке. Также будут перечислены все файлы журналов, созданные для выполнения. Обязательно ознакомьтесь со сценарием обучения, исправьте ошибку, прежде чем повторять попытку. 

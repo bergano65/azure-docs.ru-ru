@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: a60691222c6f5f31a5b5c97df029790c1fd690ed
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 3de34c1da20df17fb5fb65cef28669fb73ff33a5
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74873894"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978566"
 ---
 # <a name="monitor-azure-ml-experiment-runs-and-metrics"></a>Мониторинг запусков и метрик экспериментов машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -263,11 +263,11 @@ ms.locfileid: "74873894"
 
    ![Снимок экрана. Мини-приложение записной книжки Jupyter](./media/how-to-track-experiments/run-details-widget.png)
 
-Вы также можете получить ссылку на тот же дисплей в рабочей области.
+   Вы также можете получить ссылку на тот же дисплей в рабочей области.
 
-```python
-print(run.get_portal_url())
-```
+   ```python
+   print(run.get_portal_url())
+   ```
 
 2. **[Для автоматических запусков машинного обучения]** Доступ к диаграммам из предыдущего выполнения. Замените `<<experiment_name>>` именем соответствующего эксперимента:
 

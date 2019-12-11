@@ -1,18 +1,18 @@
 ---
 title: Служба подготовки устройств для центра Интернета вещей Azure — основные понятия устройства
-description: Описание основных понятий повторной подготовки устройств для службы подготовки устройств к добавлению в центр Интернета вещей Azure
+description: Описание принципов повторной подготовки устройств для службы подготовки устройств к добавлению в центр Интернета вещей Azure (DPS)
 author: wesmc7777
 ms.author: wesmc
 ms.date: 04/04/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: 0d6e5b5c7e8e8bf83646b417aa94658efd25b49e
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 2bf369b784cddf307abc59d2b8766fc8a87e0985
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74228838"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74975352"
 ---
 # <a name="iot-hub-device-reprovisioning-concepts"></a>Основные понятия повторной подготовки устройств к добавлению в центр Интернета вещей
 
@@ -80,13 +80,13 @@ ms.locfileid: "74228838"
 
 В следующей таблице приводятся версии API до появления собственной поддержки повторной подготовки в службе подготовки устройств:
 
-| Интерфейс REST API | Пакет C SDK | Пакет SDK для Python |  Пакет SDK для Node | Пакет SDK для Java | ПАКЕТ SDK .NET |
+| REST API | Пакет C SDK | Пакет Python SDK |  Пакет Node SDK | Пакет Java SDK | SDK .NET |
 | -------- | ----- | ---------- | --------- | -------- | -------- |
 | [2018-04-01 и более ранние версии](/rest/api/iot-dps/createorupdateindividualenrollment/createorupdateindividualenrollment#uri-parameters) | [1.2.8 и более ранние версии](https://github.com/Azure/azure-iot-sdk-c/blob/master/version.txt) | [1.4.2 и более ранние версии](https://github.com/Azure/azure-iot-sdk-python/blob/0a549f21f7f4fc24bc036c1d2d5614e9544a9667/device/iothub_client_python/src/iothub_client_python.cpp#L53) | [1.7.3 или более ранние версии](https://github.com/Azure/azure-iot-sdk-node/blob/074c1ac135aebb520d401b942acfad2d58fdc07f/common/core/package.json#L3) | [1.13.0 или более ранние версии](https://github.com/Azure/azure-iot-sdk-java/blob/794c128000358b8ed1c4cecfbf21734dd6824de9/device/iot-device-client/pom.xml#L7) | [1.1.0 или более ранние версии](https://github.com/Azure/azure-iot-sdk-csharp/blob/9f7269f4f61cff3536708cf3dc412a7316ed6236/provisioning/device/src/Microsoft.Azure.Devices.Provisioning.Client.csproj#L20)
 
 > [!NOTE]
 > Эти значения и ссылки могут меняться. Это лишь попытка выяснить, когда версии могут быть определены клиентом и какими будут ожидаемые версии.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Повторная подготовка устройств](how-to-reprovision.md)

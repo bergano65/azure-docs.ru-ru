@@ -1,7 +1,7 @@
 ---
 title: Обучение моделей формирователя цепочки глубокого обучения
 titleSuffix: Azure Machine Learning
-description: Узнайте, как выполнять сценарии обучения PyTorch в масштабе предприятия с помощью класса оценщика цепочки Машинное обучение Azure.  Пример сценария классифицирует рукописные цифры для создания нейронной сети глубокого обучения с помощью библиотеки Python на основе NumPy.
+description: Узнайте, как выполнять сценарии обучения PyTorch в масштабе предприятия с помощью класса оценщика Машинное обучение Azure Chain.  Пример сценария классифицирует рукописные цифры для создания нейронной сети глубокого обучения с помощью библиотеки Python на основе NumPy.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,25 +10,25 @@ ms.author: maxluk
 author: maxluk
 ms.reviewer: sdgilley
 ms.date: 08/02/2019
-ms.openlocfilehash: f384a6a870d891bbaf6fa20a896b0251e62b8d4f
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 40c1b7e1e4089db3e95b0da810a961b7fd202aac
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74224985"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74969179"
 ---
 # <a name="train-and-register-chainer-models-at-scale-with-azure-machine-learning"></a>Обучение и регистрация моделей цепочек в масштабе с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Из этой статьи вы узнаете, как выполнять сценарии обучения для программы " [цепочка](https://chainer.org/) " в масштабах предприятия с помощью класса [оценщика цепочки](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) машинное обучение Azure. В примере обучающего скрипта в этой статье используется популярный [набор данных MNIST](http://yann.lecun.com/exdb/mnist/) для классификации рукописных цифр с помощью глубокой нейронной сети (DNN), созданной с помощью библиотеки Python, которая выполняется поверх [NumPy](https://www.numpy.org/).
+Из этой статьи вы узнаете, как выполнять сценарии обучения для программы " [цепочка](https://chainer.org/) " в масштабах предприятия с помощью класса [оценщика машинное обучение Azure Chain](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) . В примере обучающего скрипта в этой статье используется популярный [набор данных MNIST](http://yann.lecun.com/exdb/mnist/) для классификации рукописных цифр с помощью глубокой нейронной сети (DNN), созданной с помощью библиотеки Python, которая выполняется поверх [NumPy](https://www.numpy.org/).
 
 Независимо от того, обходите ли вы модель цепочки глубокого обучения с нуля или используете существующую модель в облаке, вы можете использовать Машинное обучение Azure для масштабирования заданий обучения с открытым исходным кодом с помощью эластичных облачных ресурсов. Вы можете создавать, развертывать, выполнять версии и отслеживать модели производственного уровня с помощью Машинное обучение Azure. 
 
 Дополнительные сведения о [глубоком обучении и машинном обучении](concept-deep-learning-vs-machine-learning.md).
 
-Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
+Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Запустите этот код в любой из этих сред:
 
@@ -208,7 +208,7 @@ for f in run.get_file_names():
         run.download_file(name=f, output_file_path=output_file_path)
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы обучили и зарегистрировали нейронную сеть для глубокого обучения, использующую цепочку Машинное обучение Azure. Чтобы узнать, как развернуть модель, перейдите к статье о [развертывании модели](how-to-deploy-and-where.md) .
 

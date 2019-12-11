@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/9/2019
 ms.author: mlearned
-ms.openlocfilehash: c48bcab0a3d009b186832a6b728597f03788a7cd
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: f507619a1c8e80623a756b91f3fd6187283212f0
+ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74382990"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74996737"
 ---
 # <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Создание нескольких пулов узлов для кластера в службе Kubernetes Azure (AKS) и управление ими
 
@@ -38,7 +38,7 @@ ms.locfileid: "74382990"
 * Нельзя добавлять или удалять пулы узлов с помощью существующего шаблона диспетчер ресурсов, как в случае с большинством операций. Вместо этого [Используйте отдельный шаблон диспетчер ресурсов](#manage-node-pools-using-a-resource-manager-template) для внесения изменений в пулы узлов в кластере AKS.
 * Имя пула узлов может содержать только буквы в нижнем регистре и должно начинаться с буквы в нижнем регистре. Для пулов узлов Linux длина должна составлять от 1 до 12 символов. для пулов узлов Windows длина должна составлять от 1 до 6 символов.
 * Кластер AKS может иметь не более восьми пулов узлов.
-* Кластер AKS может содержать не более 400 узлов в восьми пулах узлов.
+* Кластер AKS может содержать не более 800 узлов в восьми пулах узлов.
 * Все пулы узлов должны находиться в одной подсети.
 
 ## <a name="create-an-aks-cluster"></a>Создание кластера AKS
@@ -572,7 +572,7 @@ az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster --name gpu
 az group delete --name myResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как создавать и администрировать несколько пулов узлов в кластере AKS. Дополнительные сведения об управлении модулями Pod в пулах узлов см. в разделе рекомендации [по использованию расширенных функций планировщика в AKS][operator-best-practices-advanced-scheduler].
 

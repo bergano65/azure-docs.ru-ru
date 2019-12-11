@@ -10,12 +10,12 @@ ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
 ms.date: 11/13/2019
-ms.openlocfilehash: c5d0c517e7a3d4c011d66925b8db0c4d09dd34ca
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 6b8ebf50e14dc71426727e3754946d5d6f0c7705
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74123595"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978753"
 ---
 # <a name="secure-azure-ml-experimentation-and-inference-jobs-within-an-azure-virtual-network"></a>Защита заданий экспериментирования и вывода машинного обучения Azure в виртуальной сети Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "74123595"
 > [!WARNING]
 > Корпорация Майкрософт не поддерживает использование конструктора Машинное обучение Azure или автоматизированного машинного обучения (из студии) с ресурсами внутри виртуальной сети.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 + [Рабочая область](how-to-manage-workspace.md)машинное обучение Azure.
 
@@ -196,13 +196,13 @@ ms.locfileid: "74123595"
 
 1. Чтобы настроить этот ресурс вычислений для использования виртуальной сети, выполните следующие действия.
 
-    a. В качестве __конфигурации сети__выберите __Дополнительно__.
+    а) В качестве __конфигурации сети__выберите __Дополнительно__.
 
-    b. В раскрывающемся списке __Группа ресурсов__ выберите группу ресурсов, содержащую виртуальную сеть.
+    б) В раскрывающемся списке __Группа ресурсов__ выберите группу ресурсов, содержащую виртуальную сеть.
 
-    c. В раскрывающемся списке __Виртуальная сеть__ выберите виртуальную сеть, содержащую подсеть.
+    в) В раскрывающемся списке __Виртуальная сеть__ выберите виртуальную сеть, содержащую подсеть.
 
-    d. В раскрывающемся списке __подсеть__ выберите подсеть для использования.
+    г) В раскрывающемся списке __подсеть__ выберите подсеть для использования.
 
    ![Параметры виртуальной сети для Вычислительная среда Машинного обучения](./media/how-to-enable-virtual-network/amlcompute-virtual-network-screen.png)
 
@@ -374,7 +374,7 @@ aks_target = ComputeTarget.create(workspace=ws,
 
 Дополнительные сведения о настройке правила сети см. в статье [развертывание и настройка брандмауэра Azure](/azure/firewall/tutorial-firewall-deploy-portal#configure-a-network-rule).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка сред обучения](how-to-set-up-training-targets.md)
 * [Где следует развертывать модели](how-to-deploy-and-where.md)

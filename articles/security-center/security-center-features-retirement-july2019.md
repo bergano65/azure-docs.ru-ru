@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: article
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: c4fe185f5d203b1b0eba306c80cded14ad82bc98
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: bb8cfae73d84135858733899e6441f564106e9d1
+ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72438630"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74997230"
 ---
 # <a name="retirement-of-security-center-features-july-2019"></a>Выбытие средств центра безопасности (Июль 2019)
 
@@ -169,7 +169,7 @@ ms.locfileid: "72438630"
 
 Центр безопасности Azure отслеживает конфигурации безопасности на основе [более 150 рекомендуемых правил](https://gallery.technet.microsoft.com/Azure-Security-Center-a789e335) усиления защиты операционной системы. Эти правила относятся к брандмауэрам, аудиту, политикам паролей и т. д. Если конфигурация компьютера уязвима к атакам, центр безопасности формирует рекомендации по безопасности. [Экран изменение конфигурации безопасности](https://docs.microsoft.com/azure/security-center/security-center-customize-os-security-config) позволяет пользователям настраивать конфигурацию безопасности ОС по умолчанию в центре безопасности.
 
-Мы вышли из этой предварительной версии функции. Чтобы восстановить параметры безопасности по умолчанию после даты выбытия, сделайте это через API или PowerShell, выполнив [следующие инструкции](https://github.com/Azure/Azure-Security-Center/tree/master/Powershell%20samples/Reset%20security%20configurations%20customization) .
+Мы вышли из этой предварительной версии функции. Чтобы восстановить параметры безопасности по умолчанию после даты выбытия, сделайте это через API или PowerShell, выполнив [следующие инструкции](https://github.com/Azure/Azure-Security-Center/tree/master/Powershell%20samples/Reset%20security%20configurations%20customization).
 
 ![Изменение конфигураций безопасности][17]
 
