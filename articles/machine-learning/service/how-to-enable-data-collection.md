@@ -11,19 +11,19 @@ ms.author: copeters
 author: lostmygithubaccount
 ms.date: 11/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 10a150a64a058a4bf346f07e2ef298c974641256
-ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
+ms.openlocfilehash: 4ef1249a601334cc198662b90da95623247190e7
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74901305"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978191"
 ---
 # <a name="collect-data-for-models-in-production"></a>Сбор данных для моделей в рабочей среде
 
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 >[!IMPORTANT]
-> Пакет SDK для мониторинга Машинное обучение Azure будет прекращен в ближайшее время. Пакет SDK по-прежнему подходит для разработчиков, которые контролируют смещение данных в моделях. Но большинство разработчиков должны использовать упрощенный [мониторинг данных с Application Insights](https://docs.microsoft.com/azure/machine-learning/service/how-to-enable-app-insights).
+> Пакет SDK для мониторинга Машинное обучение Azure будет прекращен в ближайшее время. Пакет SDK по-прежнему подходит для разработчиков, которые в настоящее время используют пакет SDK для отслеживания смещения данных в моделях. Но для новых клиентов мы рекомендуем использовать упрощенный [мониторинг данных с помощью Application Insights](https://docs.microsoft.com/azure/machine-learning/service/how-to-enable-app-insights).
 
 В этой статье показано, как получить данные входной модели из Машинное обучение Azure. Здесь также показано, как развернуть входные данные в кластере Azure Kubernetes Service (AKS) и сохранить выходные данные в хранилище BLOB-объектов Azure.
 

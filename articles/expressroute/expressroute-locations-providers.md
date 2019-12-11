@@ -5,14 +5,14 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 11/15/2019
+ms.date: 12/09/2019
 ms.author: cherylmc
-ms.openlocfilehash: 60b5035506b8852c379f2e2617cdf918f09df010
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 71a0d18669ea2c5fc9e0548e195c3df0145f6cb0
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74150066"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74967802"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -51,7 +51,7 @@ ms.locfileid: "74150066"
 | **Южная Корея** | Центральная Корея, Южная Корея |Пусан, Сеул|
 | **ЧАСТЬ ОАЭ** | Центральная часть ОАЭ, Север ОАЭ | Дубаи, Dubai2 |
 | **ЮАР** | Южно-Африканская Республика, Юго-Африканская Республика, Северная Африка |Кейптаун, Йоханнесбург |
-| **Южная Америка** | Южная Бразилия |Сан-Паулу |
+| **Южная Америка** | Южная часть Бразилии |Сан-Паулу |
 
 ## <a name="azure-regions-and-geopolitical-boundaries-for-national-clouds"></a>Регионы Azure и неизменяемые границы для национальных облаков
 В таблице ниже содержатся сведения о регионах и геополитических границах для национальных облаков.
@@ -75,68 +75,68 @@ ms.locfileid: "74150066"
 
 
 ### <a name="global-commercial-azure"></a>Глобальная коммерческая версия Azure
-| **Местоположение.** | **Address** | **Зона** | **Локальные регионы Azure** | **Прямое обращение к ER** | **Поставщики услуг** |
+| **Расположение** | **Address** | **Зона** | **Локальные регионы Azure** | **Прямое обращение к ER** | **Поставщики услуг** |
 | --- | --- | --- | --- | --- | --- |
 | **Амстердам** | [Equinix AM5](https://www.equinix.com/locations/europe-colocation/netherlands-colocation/amsterdam-data-centers/am5/) | 1 | Западная Европа | 10G, 100G | Aryaka Networks, AT & T NetBond, Британская телекоммуникации, Colt, Equinix, Еунетворкс, ГÉАНТ, в облаке, Interxion, КПН, IX REACH, связь уровня 3, Orange, NTT связь, оранжевый, Tata Communications, Телефоника, Telenor, Телиа, Verizon, Zayo |
-| **Амстердам 2** | [Interxion AMS8](https://www.interxion.com/Locations/amsterdam/schiphol/) | 1 | Западная Европа | 10G, 100G | CenturyLink Cloud Connect, Colt, DE-ЦИКС, Еунетворкс, Interxion, Vodafone |
-| **Атланта** | [Equinix AT2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/atlanta-data-centers/at2/) | 1 | Недоступно | Недоступно | Equinix, Megaport |
-| **Окленд** | [Олбани группа вокус (NZ)](https://www.vocus.co.nz/business/cloud-data-centres) | 2 | Недоступно | 10 | Деволи, Кордиа, Orange, Spark NZ, Вокус Group NZ |
-| **Пусан** | [LG CNS](https://www.lgcns.com/datacenter) | 2 | Южная Корея | Недоступно | LG CNS |
-| **Канберра** | [CDC](https://cdcdatacentres.com.au/content/about-cdc) | 1 | Центральная Австралия | 10 | CDC |
-| **Канберра 2** | [CDC](https://cdcdatacentres.com.au/content/about-cdc) | 1 | Центральная Австралия 2| Недоступно | CDC |
+| **Амстердам 2** | [Interxion AMS8](https://www.interxion.com/Locations/amsterdam/schiphol/) | 1 | Западная Европа | 10G, 100G | CenturyLink Cloud Connect, Colt, DE-ЦИКС, Еунетворкс, Interxion, оранжевый, Vodafone |
+| **Атланта** | [Equinix AT2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/atlanta-data-centers/at2/) | 1 | Н/Д | Н/Д | Equinix, Megaport |
+| **Окленд** | [Олбани группа вокус (NZ)](https://www.vocus.co.nz/business/cloud-data-centres) | 2 | Н/Д | 10 | Деволи, Кордиа, Orange, Spark NZ, Вокус Group NZ |
+| **Пусан** | [LG CNS](https://www.lgcns.com/datacenter) | 2 | Республика Корея, южный регион | Н/Д | LG CNS |
+| **Канберра** | [CDC](https://cdcdatacentres.com.au/content/about-cdc) | 1 | Центральная Австралия | 10G, 100G | CDC |
+| **Канберра 2** | [CDC](https://cdcdatacentres.com.au/content/about-cdc) | 1 | Центральная Австралия 2| 10G, 100G | CDC |
 | **Кейптаун** | [Терако CT1](https://www.teraco.co.za/data-centre-locations/cape-town/) | 3 | Западная часть ЮАР | 10 | Internet Solutions - Cloud Connect, Liquid Telecom, Teraco |
 | **Ченнай** | Tata Communications | 2 | Южная Индия | 10 | Global CloudXchange (GCX), SIFY, Tata Communications |
-| **Chennai2** | Airtel | 2 | Южная Индия | Недоступно | Airtel |
-| **Чикаго** | [Equinix CH1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/chicago-data-centers/ch1/) | 1 | Центрально-северная часть США | 10G, 100G | Aryaka сети, в & T NetBond, CenturyLink Cloud Connect, Кологикс, Comcast, Коресите, Equinix, в облаке, Internet2, связи уровня 3, Orange, Паккетфабрик, ПККВ Global Limited, спринт, Телиа, Verizon, Zayo |
-| **Копенгаген** | [Interxion CPH1](https://www.interxion.com/Locations/copenhagen/) | 1 | Недоступно | 10 | Interxion |
-| **Даллас** | [Equinix DA3](https://www.equinix.com/locations/americas-colocation/united-states-colocation/dallas-data-centers/da3/) | 1 | Недоступно | 10G, 100G | Aryaka Networks, AT & T NetBond, Кологикс, Equinix, Internet2, уровень 3, взаимодействие, Orange, Неутрона сети, Телмекс Унинет, Телиа перевозчик, Telco, Verizon, Zayo|
-| **Денвер** | [Коресите DE1](https://www.coresite.com/data-centers/locations/denver/de1) | 1 | Западно-центральная часть США | Недоступно | Коресите, Orange, Zayo |
-| **Дубаи** | [пккс](https://www.pacificcontrols.net/cloudservices/index.html) | 3 | Северная часть ОАЭ; | Недоступно | Етисалат ОАЭ |
-| **Dubai2** | [Du датамена](http://datamena.com/solutions/data-centre) | 3 | Северная часть ОАЭ; | Недоступно | Du датамена, Orange, Орикском |
+| **Chennai2** | Airtel | 2 | Южная Индия | Н/Д | Airtel |
+| **Чикаго** | [Equinix CH1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/chicago-data-centers/ch1/) | 1 | Центрально-северная часть США | 10G, 100G | Aryaka Networks, in & T NetBond, CenturyLink Cloud Connect, Кологикс, Colt, Comcast, Коресите, Equinix, recloud, Internet2, уровень 3, взаимодействие, Orange, Паккетфабрик, ПККВ Global Limited, спринт, Телиа, Verizon, Zayo |
+| **Копенгаген** | [Interxion CPH1](https://www.interxion.com/Locations/copenhagen/) | 1 | Н/Д | 10 | Interxion |
+| **Даллас** | [Equinix DA3](https://www.equinix.com/locations/americas-colocation/united-states-colocation/dallas-data-centers/da3/) | 1 | Н/Д | 10G, 100G | Aryaka Networks, AT & T NetBond, Кологикс, Equinix, Internet2, уровень 3, взаимодействие, Orange, Неутрона сети, Телмекс Унинет, Телиа перевозчик, Telco, Verizon, Zayo|
+| **Денвер** | [Коресите DE1](https://www.coresite.com/data-centers/locations/denver/de1) | 1 | Центрально-западная часть США | Н/Д | Коресите, Orange, Zayo |
+| **Дубаи** | [пккс](https://www.pacificcontrols.net/cloudservices/index.html) | 3 | Северная часть ОАЭ | Н/Д | Етисалат ОАЭ |
+| **Dubai2** | [Du датамена](http://datamena.com/solutions/data-centre) | 3 | Северная часть ОАЭ | Н/Д | Du датамена, Orange, Орикском |
 | **Дублин** | [Equinix DB3](https://www.equinix.com/locations/europe-colocation/ireland-colocation/dublin-data-centers/db3/) | 1 | Северная Европа | 10G, 100G | Colt, eir, Equinix, Interxion, Megaport |
-| **Франкфурт** | [Interxion FRA11](https://www.interxion.com/Locations/frankfurt/) | 1 | Центрально-Западная Германия | Недоступно | DE-ЦИКС, Interxion, оранжевый |
+| **Франкфурт** | [Interxion FRA11](https://www.interxion.com/Locations/frankfurt/) | 1 | Центрально-Западная Германия | 10G, 100G | Colt, DE-ЦИКС, ЖЕАНТ, Interxion, оранжевый, Телиа |
 | **Geneva** | [Equinix GV2](https://www.equinix.com/locations/europe-colocation/switzerland-colocation/geneva-data-centers/gv2/) | 1 | Западная Швейцария | 10G, 100G | |
-| **Гонконг, САР** | [Equinix HK1](https://www.equinix.com/locations/asia-colocation/hong-kong-colocation/hong-kong-data-center/hk1/) | 2 | Восточная Азия | Недоступно | Aryaka сети, Британская телекоммуникации, CenturyLink Cloud Connect, главный телекоммуникации, Международная телекоммуникации, Глобальная, Equinix, Orange, NTT Communications, оранжевый, ПККВ глобально ограниченный, Tata обмен данными, Телиа, Verizon |
-| **Джакарта** | Для абонентов Telkom Индонезия | 4\. | Недоступно | 10 | |
-| **Йоханнесбург** | [Терако JB1](https://www.teraco.co.za/data-centre-locations/johannesburg/#jb1) | 3 | Северная часть ЮАР; | Недоступно | Британская телекоммуникации, Интернет-решения — Cloud Connect, жидкостный телекоммуникации, оранжевый, Терако |
-| **Куала-Лумпур** | [ВРЕМЯ, дотком Менара цель](https://www.aims.com.my/co-location/points-of-presence.html) | 2 | Недоступно | Недоступно | TIME dotCom |
-| **Лас-Вегас** | [Переключение LV](https://www.switch.com/las-vegas) | 1 | Недоступно | Недоступно | CenturyLink Cloud Connect, Megaport |
-| **Лондон** | [Equinix LD5](https://www.equinix.com/locations/europe-colocation/united-kingdom-colocation/london-data-centers/ld5/) | 1 | Южная часть Великобритании | 10G, 100G | AT&T NetBond, British Telecom, Colt, Equinix, InterCloud, Internet Solutions - Cloud Connect, Interxion, Jisc, Level 3 Communications, Megaport, MTN, NTT Communications, Orange, PCCW Global Limited, Tata Communications, Telehouse — KDDI, Telenor, Telia Carrier, Verizon, Vodafone, Zayo |
-| **Лондон 2** | [Два Севера для дома](https://www.telehouse.com/global-data-centers/emea/london-data-centers/telehouse-north-two/) | 1 | Южная часть Великобритании | 10G, 100G | IX-доступ, Equinix, дом — KDDI |
-| **Лос-Анджелес** | [Коресите LA1](https://www.coresite.com/data-centers/locations/los-angeles/one-wilshire) | 1 | Недоступно | Недоступно | Коресите, Equinix, Orange, Неутрона Networks, NTT, Telco, Zayo |
-| **Марсель** |[Interxion MRS1](https://www.interxion.com/Locations/marseille/) | 1 | Южная Франция | Недоступно | DE-ЦИКС, Interxion, Жагуар Network |
-| **Мельбурн** | [Некстдк M1](https://www.nextdc.com/data-centres/m1-melbourne-data-centre) | 2 | Юго-Восточная часть Австралии | 10G, 100G | Аарнет, Деволи, Equinix, Orange, НЕКСТДК, ОПТУС, Телстра Corporation, ТПГ телекоммуникации |
-| **Майами** | [Equinix MI1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/miami-data-centers/mi1/) | 1 | Недоступно | 10 | C3ntro, Equinix, Orange, Неутрона сетей |
-| **Милан** | [иридеос](https://irideos.it/en/data-centers/) | 1 | Недоступно | 10 | |
-| **Монреаль** | [Кологикс MTL3](https://www.cologix.com/data-centers/montreal/mtl3/) | 1 | Недоступно | Недоступно | Bell для Канады, Кологикс, Orange, Телус, Zayo |
-| **Мумбай** | Tata Communications | 2 | Западная Индия | Недоступно | Global Клаудксчанже (ГККС), зависимость ЖИО, Сифи, Tata Communications, Verizon |
-| **Мумбаи 2** | Airtel | 2 | Западная Индия | Недоступно | Airtel, Sify, Vodafone Idea |
-| **Мюнхене** | [еджеконнекс](https://www.edgeconnex.com/locations/europe/) | 1 | Недоступно | 10G, 100G | |
-| **Нью-Йорк** | [Equinix NY9](https://www.equinix.com/locations/americas-colocation/united-states-colocation/new-york-data-centers/ny9/) | 1 | Недоступно | Недоступно | CenturyLink Cloud Connect, Colt, Коресите, Equinix, в облаке, Orange, пакет, Zayo |
-| **Ньюпорт (Уэльс)** | [Next Generation Data](https://www.nextgenerationdata.co.uk) | 1 | Западная часть Великобритании | Недоступно | Британская телекоммуникации, Colt, связь уровня 3, данные следующего поколения |
-| **Осака** | [Equinix OS1](https://www.equinix.com/locations/asia-colocation/japan-colocation/osaka-data-centers/os1/) | 2 | Западная часть Японии | Недоступно | Colt, Equinix, Интернет-инициатива Япония Inc. — IIJ, NTT Communications, NTT Смартконнект, Softbank " |
+| **Гонконг, САР** | [Equinix HK1](https://www.equinix.com/locations/asia-colocation/hong-kong-colocation/hong-kong-data-center/hk1/) | 2 | Восточная Азия | Н/Д | Aryaka сети, Британская телекоммуникации, CenturyLink Cloud Connect, главный телекоммуникации, Международная телекоммуникации, Глобальная, Equinix, взаимосвязь, Orange, NTT Communications, оранжевый, ПККВ глобально ограниченный, Tata связи, Телиа, Verizon |
+| **Джакарта** | Для абонентов Telkom Индонезия | 4 | Н/Д | 10 | |
+| **Йоханнесбург** | [Терако JB1](https://www.teraco.co.za/data-centre-locations/johannesburg/#jb1) | 3 | Северная часть ЮАР | Н/Д | Британская телекоммуникации, Интернет-решения — Cloud Connect, жидкостный телекоммуникации, оранжевый, Терако |
+| **Куала-Лумпур** | [ВРЕМЯ, дотком Менара цель](https://www.aims.com.my/co-location/points-of-presence.html) | 2 | Н/Д | Н/Д | TIME dotCom |
+| **Лас-Вегас** | [Переключение LV](https://www.switch.com/las-vegas) | 1 | Н/Д | Н/Д | CenturyLink Cloud Connect, Megaport |
+| **Лондон** | [Equinix LD5](https://www.equinix.com/locations/europe-colocation/united-kingdom-colocation/london-data-centers/ld5/) | 1 | Южная часть Соединенного Королевства | 10G, 100G | AT&T NetBond, British Telecom, Colt, Equinix, InterCloud, Internet Solutions - Cloud Connect, Interxion, Jisc, Level 3 Communications, Megaport, MTN, NTT Communications, Orange, PCCW Global Limited, Tata Communications, Telehouse — KDDI, Telenor, Telia Carrier, Verizon, Vodafone, Zayo |
+| **Лондон 2** | [Два Севера для дома](https://www.telehouse.com/global-data-centers/emea/london-data-centers/telehouse-north-two/) | 1 | Южная часть Соединенного Королевства | 10G, 100G | Colt, IX REACH, Equinix, Orange, дом — KDDI |
+| **Лос-Анджелес** | [Коресите LA1](https://www.coresite.com/data-centers/locations/los-angeles/one-wilshire) | 1 | Н/Д | Н/Д | Коресите, Equinix, Orange, Неутрона Networks, NTT, Telco, Zayo |
+| **Марсель** |[Interxion MRS1](https://www.interxion.com/Locations/marseille/) | 1 | Южная Франция | Н/Д | DE-ЦИКС, ЖЕАНТ, Interxion, сеть Жагуар |
+| **Мельбурн** | [Некстдк M1](https://www.nextdc.com/data-centres/m1-melbourne-data-centre) | 2 | Юго-Восточная Австралия | 10G, 100G | Аарнет, Деволи, Equinix, Orange, НЕКСТДК, ОПТУС, Телстра Corporation, ТПГ телекоммуникации |
+| **Майами** | [Equinix MI1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/miami-data-centers/mi1/) | 1 | Н/Д | 10 | C3ntro, Equinix, Orange, Неутрона сетей |
+| **Милан** | [иридеос](https://irideos.it/en/data-centers/) | 1 | Н/Д | 10 | |
+| **Монреаль** | [Кологикс MTL3](https://www.cologix.com/data-centers/montreal/mtl3/) | 1 | Н/Д | Н/Д | Bell для Канады, Кологикс, Orange, Телус, Zayo |
+| **Мумбай** | Tata Communications | 2 | Западная Индия | Н/Д | Global Клаудксчанже (ГККС), зависимость ЖИО, Сифи, Tata Communications, Verizon |
+| **Мумбаи 2** | Airtel | 2 | Западная Индия | Н/Д | Airtel, Sify, Vodafone Idea |
+| **Мюнхене** | [еджеконнекс](https://www.edgeconnex.com/locations/europe/) | 1 | Н/Д | 10G, 100G | |
+| **Нью-Йорк** | [Equinix NY9](https://www.equinix.com/locations/americas-colocation/united-states-colocation/new-york-data-centers/ny9/) | 1 | Н/Д | Н/Д | CenturyLink Cloud Connect, Colt, Коресите, Equinix, в облаке, Orange, пакет, Zayo |
+| **Ньюпорт (Уэльс)** | [Next Generation Data](https://www.nextgenerationdata.co.uk) | 1 | Западная часть Соединенного Королевства | Н/Д | Британская телекоммуникации, Colt, связь уровня 3, данные следующего поколения |
+| **Осака** | [Equinix OS1](https://www.equinix.com/locations/asia-colocation/japan-colocation/osaka-data-centers/os1/) | 2 | Западная Япония | Н/Д | Colt, Equinix, Интернет-инициатива Япония Inc. — IIJ, NTT Communications, NTT Смартконнект, Softbank " |
 | **Oslo** | [Дигиплекс Улвен](https://www.digiplex.com/locations/oslo-datacentre) | 1 | Восточная Норвегия | 10G, 100G | Telenor |
-| **Париж** | [Interxion PAR5](https://www.interxion.com/Locations/paris/) | 1 | Центральная Франция | Недоступно | CenturyLink Cloud Connect, Colt, Equinix, в облаке, Interxion, оранжевый, Телиа, Zayo |
-| **Перт** | [Некстдк P1](https://www.nextdc.com/data-centres/p1-perth-data-centre) | 2 | Недоступно | 10 | Orange, Некстдк |
-| **Квебек** | [Разных](https://vantage-dc.com/data_centers/quebec-city-data-center-campus/) | 1 | Восточная Канада | Недоступно | Bell Canada, Megaport |
+| **Париж** | [Interxion PAR5](https://www.interxion.com/Locations/paris/) | 1 | Центральная Франция | Н/Д | CenturyLink Cloud Connect, Colt, Equinix, в облаке, Interxion, оранжевый, Телиа, Zayo |
+| **Перт** | [Некстдк P1](https://www.nextdc.com/data-centres/p1-perth-data-centre) | 2 | Н/Д | 10 | Orange, Некстдк |
+| **Квебек** | [Разных](https://vantage-dc.com/data_centers/quebec-city-data-center-campus/) | 1 | Восточная Канада | Н/Д | Bell Canada, Megaport |
 | **Сан-Антонио** | [Цирусоне SA1](https://cyrusone.com/locations/texas/san-antonio-texas/) | 1 | Центрально-южная часть США | 10G, 100G | CenturyLink Cloud Connect, Megaport |
-| **Сан-Паулу** | [Equinix SP2](https://www.equinix.com/locations/americas-colocation/brazil-colocation/sao-paulo-data-centers/sp2/) | 3 | Южная Бразилия | Недоступно | Aryaka Networks, Ascenty Data Centers, British Telecom, Equinix, Level 3 Communications, Neutrona Networks, Orange, Tata Communications, Telefonica, UOLDIVEO |
-| **Сиэтл;** | [Equinix SE2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/seattle-data-centers/se2/) | 1 | Западный регион США 2 | 10G, 100G | Aryaka сети, Equinix, связь уровня 3, Orange, Телус, Zayo |
-| **Сеул** | [КИНКС Гасан IDC](https://www.kinx.net/support/location/?lang=en) | 2 | Центральная Корея | 10G, 100G | KINX, LG CNS, Sejong Telecom |
-| **Кремниевая долина** | [Equinix SV1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/silicon-valley-data-centers/sv1/) | 1 | Запад США | 10G, 100G | Aryaka Networks, AT & T NetBond, Британская телекоммуникации, CenturyLink Cloud Connect, Colt, Comcast, Коресите, Equinix, в облаке, Internet2, IX REACH, пакет, Паккетфабрик, связь уровня 3, Orange, оранжевый, спринт, Tata Communications, Телиа. Verizon, Zayo |
-| **Полупроводниковая Valley2** | [Коресите SV7](https://www.coresite.com/data-centers/locations/silicon-valley/sv7) | 1 | Запад США | 10G, 100G | Colt, Коресите | 
+| **Сан-Паулу** | [Equinix SP2](https://www.equinix.com/locations/americas-colocation/brazil-colocation/sao-paulo-data-centers/sp2/) | 3 | Южная часть Бразилии | Н/Д | Aryaka Networks, Ascenty Data Centers, British Telecom, Equinix, Level 3 Communications, Neutrona Networks, Orange, Tata Communications, Telefonica, UOLDIVEO |
+| **Сиэтл;** | [Equinix SE2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/seattle-data-centers/se2/) | 1 | Западная часть США 2 | 10G, 100G | Aryaka сети, Equinix, связь уровня 3, Orange, Телус, Zayo |
+| **Сеул** | [КИНКС Гасан IDC](https://www.kinx.net/support/location/?lang=en) | 2 | Республика Корея, центральный регион | 10G, 100G | КИНКС, KT, LG CNS, Сежонг телекоммуникации |
+| **Кремниевая долина** | [Equinix SV1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/silicon-valley-data-centers/sv1/) | 1 | Западная часть США | 10G, 100G | Aryaka Networks, AT & T NetBond, Британская телекоммуникации, CenturyLink Cloud Connect, Colt, Comcast, Коресите, Equinix, в облаке, Internet2, IX REACH, пакет, Паккетфабрик, связь уровня 3, Orange, оранжевый, спринт, Tata Communications, Телиа. Verizon, Zayo |
+| **Полупроводниковая Valley2** | [Коресите SV7](https://www.coresite.com/data-centers/locations/silicon-valley/sv7) | 1 | Западная часть США | 10G, 100G | Colt, Коресите | 
 | **Сингапур** | [Equinix SG1](https://www.equinix.com/locations/asia-colocation/singapore-colocation/singapore-data-center/sg1/) | 2 | Юго-Восточная Азия | 10G, 100G | Aryaka Networks, AT&T NetBond, British Telecom, Epsilon Global Communications, Equinix, InterCloud, Level 3 Communications, Megaport, NTT Communications, Orange, SingTel, Tata Communications, Telstra Corporation, Verizon, Vodafone |
 | **Сингапур 2** | [Глобальный коммутатор Тай Сенг](https://www.globalswitch.com/locations/singapore-data-centres/) | 2 | Юго-Восточная Азия | 10G, 100G | Colt, Эпсилон Global Communications, Orange, SingTel |
-| **ставанжер** | [Зеленый Mountain DC1](https://greenmountain.no/dc1-stavanger/) | 1 | Недоступно | 10G, 100G | |
-| **Стокгольм** | [Equinix SK1](https://www.equinix.com/locations/europe-colocation/sweden-colocation/stockholm-data-centers/sk1/) | 1 | Недоступно | 10 | Equinix, оператор Телиа |
-| **Сидней** | [Equinix SY2](https://www.equinix.com/locations/asia-colocation/australia-colocation/sydney-data-centers/sy2/) | 2 | Восточная часть Австралии | 10G, 100G | Аарнет, AT & T NetBond, Британская телекоммуникации, Деволи, Equinix, Кордиа, Orange, НЕКСТДК, NTT Communications, ОПТУС, оранжевый, Spark NZ, Телстра Corporation, ТПГ Communications, Verizon, Вокус Group NZ |
-| **Sydney2** | [Некстдк S1](https://www.nextdc.com/data-centres/s1-sydney-data-centre) | 2 | Восточная часть Австралии | 10G, 100G | NextDC |
-| **Тайбэй** | Chief Telecom | 2 | Недоступно | 10 | Главный телекоммуникации, Фареастоне |
-| **Токио** | [Equinix TY4](https://www.equinix.com/locations/asia-colocation/japan-colocation/tokyo-data-centers/ty4/) | 2 | Восточная часть Японии | 10G, 100G | Aryaka Networks, AT&T NetBond, British Telecom, CenturyLink Cloud Connect, Colt, Equinix, Internet Initiative Japan Inc. - IIJ, NTT Communications, NTT EAST, Orange, Softbank, Verizon |
+| **ставанжер** | [Зеленый Mountain DC1](https://greenmountain.no/dc1-stavanger/) | 1 | Н/Д | 10G, 100G | |
+| **Стокгольм** | [Equinix SK1](https://www.equinix.com/locations/europe-colocation/sweden-colocation/stockholm-data-centers/sk1/) | 1 | Н/Д | 10 | Equinix, оператор Телиа |
+| **Сидней** | [Equinix SY2](https://www.equinix.com/locations/asia-colocation/australia-colocation/sydney-data-centers/sy2/) | 2 | Восточная Австралия | 10G, 100G | Аарнет, AT & T NetBond, Британская телекоммуникации, Деволи, Equinix, Кордиа, Orange, НЕКСТДК, NTT Communications, ОПТУС, оранжевый, Spark NZ, Телстра Corporation, ТПГ Communications, Verizon, Вокус Group NZ |
+| **Sydney2** | [Некстдк S1](https://www.nextdc.com/data-centres/s1-sydney-data-centre) | 2 | Восточная Австралия | 10G, 100G | NextDC |
+| **Тайбэй** | Chief Telecom | 2 | Н/Д | 10 | Главный телекоммуникации, Фареастоне |
+| **Токио** | [Equinix TY4](https://www.equinix.com/locations/asia-colocation/japan-colocation/tokyo-data-centers/ty4/) | 2 | Восточная Япония | 10G, 100G | Aryaka сети, AT & T NetBond, Британская телекоммуникации, CenturyLink Cloud Connect, Colt, Equinix, Интернет-инициатива Япония Inc. — IIJ, Orange, NTT Communications, NTT Восток, оранжевый, Softbank ", Verizon |
 | **Торонто** | [Кологикс TOR1](https://www.cologix.com/data-centers/toronto/tor1/) | 1 | Центральная Канада | 10G, 100G | AT&T NetBond, Bell Canada, CenturyLink Cloud Connect, Cologix, Equinix, IX Reach Megaport, Telus, Verizon, Zayo |
 | **Вашингтон, округ Колумбия** | [Equinix DC2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/washington-dc-data-centers/dc2/) | 1 | Восточная часть США, Восточная часть США 2 | 10G, 100G | Aryaka сети, AT & T NetBond, Британская телекоммуникации, CenturyLink Cloud Connect, Кологикс, Comcast, Коресите, Equinix, Internet2, между облаком, связь уровня 3, Orange, Неутрона сети, NTT Communications, оранжевый, Паккетфабрик, SES, спринт, Tata Связь, перевозчик Телиа, Verizon, Zayo |
-| **Вашингтон, округ Колумбия 2** | [Коресите Рестоне](https://www.coresite.com/data-centers/locations/northern-virginia-washington-dc/reston-campus) | 1 | Восточная часть США, Восточная часть США 2 | 10G, 100G | Коресите, ВИАСАТ, Zayo | 
-| **Цюрих** | [Interxion ZUR2](https://www.interxion.com/Locations/zurich/) | 1 | Недоступно | Недоступно | В облаке, Interxion, компания Swisscom |
+| **Вашингтон, округ Колумбия 2** | [Коресите Рестоне](https://www.coresite.com/data-centers/locations/northern-virginia-washington-dc/reston-campus) | 1 | Восточная часть США, Восточная часть США 2 | 10G, 100G | CenturyLink Cloud Connect, Коресите, ВИАСАТ, Zayo | 
+| **Цюрих** | [Interxion ZUR2](https://www.interxion.com/Locations/zurich/) | 1 | Н/Д | Н/Д | Взаимооблако, Interxion, Orange, компания Swisscom |
 
  **+** означает "скоро"
 
@@ -145,19 +145,19 @@ ms.locfileid: "74150066"
 Национальные облака Azure изолированы друг от друга и от глобального коммерческих Azure. ExpressRoute для одного облака Azure не может подключиться к регионам Azure в других.
 
 ### <a name="us-government-cloud"></a>Облако правительства США
-| **Местоположение.** | **Address** | **Локальные регионы Azure**| **Прямое обращение к ER** | **Поставщики услуг** |
+| **Расположение** | **Address** | **Локальные регионы Azure**| **Прямое обращение к ER** | **Поставщики услуг** |
 | --- | --- | --- | --- | --- |
-| **Чикаго** | [Equinix CH1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/chicago-data-centers/ch1/) | Недоступно | 10G, 100G | AT&T NetBond, Equinix, Level 3 Communications, Verizon |
-| **Даллас** | [Equinix DA3](https://www.equinix.com/locations/americas-colocation/united-states-colocation/dallas-data-centers/da3/) | Недоступно | 10G, 100G | Equinix, Megaport, Verizon |
-| **Нью-Йорк** | [Equinix NY5](https://www.equinix.com/locations/americas-colocation/united-states-colocation/new-york-data-centers/ny5/) | Недоступно | 10G, 100G | Equinix, CenturyLink Cloud Connect, Verizon |
-| **Phoenix** | [Цирусоне Чандлер](https://cyrusone.com/locations/arizona/phoenix-arizona-chandler/) | Аризона (для обслуживания государственных организаций США) | Недоступно | В & T NetBond, CenturyLink Cloud Connect, Orange |
-| **Сан-Антонио** | [Цирусоне SA2](https://cyrusone.com/locations/texas/san-antonio-texas-ii/) | Техас (для обслуживания государственных организаций США) | Недоступно | CenturyLink Cloud Connect, Megaport |
-| **Кремниевая долина** | [Equinix SV4](https://www.equinix.com/locations/americas-colocation/united-states-colocation/silicon-valley-data-centers/sv4/) | Недоступно | 10G, 100G | Equinix, Level 3 Communications, Verizon |
-| **Сиэтл;** | [Equinix SE2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/seattle-data-centers/se2/) | Недоступно | Недоступно | Equinix, Megaport |
+| **Чикаго** | [Equinix CH1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/chicago-data-centers/ch1/) | Н/Д | 10G, 100G | AT&T NetBond, Equinix, Level 3 Communications, Verizon |
+| **Даллас** | [Equinix DA3](https://www.equinix.com/locations/americas-colocation/united-states-colocation/dallas-data-centers/da3/) | Н/Д | 10G, 100G | Equinix, Megaport, Verizon |
+| **Нью-Йорк** | [Equinix NY5](https://www.equinix.com/locations/americas-colocation/united-states-colocation/new-york-data-centers/ny5/) | Н/Д | 10G, 100G | Equinix, CenturyLink Cloud Connect, Verizon |
+| **Phoenix** | [Цирусоне Чандлер](https://cyrusone.com/locations/arizona/phoenix-arizona-chandler/) | US Gov (Аризона) | Н/Д | В & T NetBond, CenturyLink Cloud Connect, Orange |
+| **Сан-Антонио** | [Цирусоне SA2](https://cyrusone.com/locations/texas/san-antonio-texas-ii/) | US Gov (Техас) | Н/Д | CenturyLink Cloud Connect, Megaport |
+| **Кремниевая долина** | [Equinix SV4](https://www.equinix.com/locations/americas-colocation/united-states-colocation/silicon-valley-data-centers/sv4/) | Н/Д | 10G, 100G | Equinix, Level 3 Communications, Verizon |
+| **Сиэтл;** | [Equinix SE2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/seattle-data-centers/se2/) | Н/Д | Н/Д | Equinix, Megaport |
 | **Вашингтон, округ Колумбия** | [Equinix DC2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/washington-dc-data-centers/dc2/) | Восточный регион US DoD, US Gov (Вирджиния) | 10G, 100G | AT&T NetBond, CenturyLink Cloud Connect, Equinix, Level 3 Communications, Megaport, Verizon |
 
 ### <a name="china"></a>Китай
-| **Местоположение.** | **Поставщики услуг** |
+| **Расположение** | **Поставщики услуг** |
 | --- | --- |
 | **Пекин** |China Telecom |
 | **Пекин 2** | Телекоммуникации в Китае, GDS |
@@ -167,7 +167,7 @@ ms.locfileid: "74150066"
 Дополнительные сведения см. на странице [ExpressRoute в Китае](http://www.windowsazure.cn/home/features/expressroute/).
 
 ### <a name="germany"></a>Германия
-| **Местоположение.** | **Поставщики услуг** |
+| **Расположение** | **Поставщики услуг** |
 | --- | --- |
 | **Берлин** |e-shelter, Megaport +, T-Systems |
 | **Франкфурт** |Colt, Equinix, Interxion |
@@ -197,7 +197,7 @@ ms.locfileid: "74150066"
 * [виасат](http://www.directcloud.viasatbusiness.com/)
 
 ## <a name="c1partners"></a>Подключение через дополнительных поставщиков услуг
-| **Местоположение.** | **Exchange** | **Поставщики услуг подключения** |
+| **Расположение** | **Exchange** | **Поставщики услуг подключения** |
 | --- | --- | --- |
 | **Амстердам** | Equinix, Interxion, Обмен данными уровня 3 | Бикс, Клаудкспресс, Еурофибер, Фаствеб S. p. A, залива Bridge International, Калаам телекоммуникации Бахрейн B. S. C, Маиноне, Нианет, POST-Люксембург, Проксимус, TDC Ерхверв, телекоммуникационной Italia живы, Telekom Deutschland GmbH, Телиа |
 | **Атланта** | Equinix| Самые Castle
@@ -210,7 +210,7 @@ ms.locfileid: "74150066"
 | **Йоханнесбург** | Teraco | MTN |
 | **Лондон** | Бикс, Equinix, Еунетворкс| Безек International Ltd., Кореазуре, Эпсилон, ограниченная, экспоненциальная E, ХСО, Нексжен сетей, Проксимус, Тамарес телекоммуникации, Заину |
 | **Лос-Анджелес** | Equinix |Самые Castle, спектр для предприятий, переtelco |
-| **Мадрид** | Level3 | Zertia |
+| **Мадрид** | Уровень3 | Zertia |
 | **Монреаль** | Cologix, Equinix | Технологии аиргате, Inc. Аптум, Рожерс, Зирро |
 | **Нью-Йорк** |Equinix, Megaport | Алтице Business, самые Castle, спектр предприятий, Вебаир |
 | **Париж** | Equinix | Proximus |
@@ -235,9 +235,9 @@ ms.locfileid: "74150066"
 | **Европа** |Avanade Inc., Altogee, Bright Skies GmbH, Inframon, MSG Services, New Signature, Nelite, Orange Networks, sol-tec |
 | **Северная Америка** |Avanade Inc., Equinix Professional Services, FlexManage, Lightstream, Perficient, Presidio |
 | **Южная Америка** |Avanade Inc., Venha Pra Nuvem |
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).
-* Убедитесь, что выполнены все необходимые условия. Ознакомьтесь с разделом [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).
+* Убедитесь, что выполнены все необходимые условия. См. статью [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).
 
 <!--Image References-->
 [0]: ./media/expressroute-locations/expressroute-locations-map.png "Карта расположения"

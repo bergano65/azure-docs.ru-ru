@@ -1,6 +1,6 @@
 ---
 title: Понятия устройства в контексте подготовки устройств Azure | Документация Майкрософт
-description: Здесь описываются понятия устройства в контексте подготовки устройств Azure с помощью службы подготовки устройств и Центра Интернета вещей
+description: Описание концепций подготовки устройств, относящихся к устройствам с помощью службы подготовки устройств (DPS) и центра Интернета вещей.
 author: nberdy
 ms.author: nberdy
 ms.date: 11/06/2019
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: briz
-ms.openlocfilehash: 0e3557588281cd392a7a8a1c2654f10e8387dd83
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: f5f931622f793a1146c04403e8c5e1a5ef7a7d62
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73720530"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74975318"
 ---
 # <a name="iot-hub-device-provisioning-service-device-concepts"></a>Понятия устройства в контексте подготовки устройств в Центре Интернета вещей
 

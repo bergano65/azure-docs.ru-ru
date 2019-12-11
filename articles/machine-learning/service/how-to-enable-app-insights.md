@@ -11,12 +11,12 @@ ms.author: copeters
 author: lostmygithubaccount
 ms.date: 11/12/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 19dba88bf04ee84459ebd9ef0279f125724d7522
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: f4bb399e24b2c480023eba6bf5b71990f6d39c8c
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406438"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978379"
 ---
 # <a name="monitor-and-collect-data-from-ml-web-service-endpoints"></a>Мониторинг и получение данных из конечных точек веб-службы ML
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -30,16 +30,16 @@ ms.locfileid: "74406438"
 Дополнительные [сведения об Azure Application Insights](../../azure-monitor/app/app-insights-overview.md). 
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
-* Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Попробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) прямо сейчас.
+* Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Попробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) прямо сейчас.
 
 * Должны быть установлены рабочая область машинного обучения Azure, локальный каталог со скриптами и пакет SDK машинного обучения Azure для Python. Чтобы узнать, как выполнить эти предварительные требования, см. статью [Настройка среды разработки](how-to-configure-environment.md) .
 * Обученная модель машинного обучения для развертывания в службе Azure Kubernetes (AKS) или в экземпляре контейнера Azure (ACI). Если у вас ее нет, см. Руководство [обучение модели классификации изображений](tutorial-train-models-with-aml.md)
 
 ## <a name="web-service-input-and-response-data"></a>Входные и ответные данные веб-службы
 
-Ввод и ответ службы, соответствующие входным данным для модели ML и ее прогнозов, записываются в трассировку Application Insights Azure в `"model_data_collection"`е сообщения. Вы можете запросить Azure Application Insights напрямую для доступа к этим данным или настроить [непрерывный экспорт](https://docs.microsoft.com/azure/azure-monitor/app/export-telemetry) в учетную запись хранения для более длительного хранения или дальнейшей обработки. Затем данные модели можно использовать в службе машинного обучения Azure для настройки меток, переобучения, объяснения, анализа данных или других способов использования. 
+Ввод и ответ службы, соответствующие входным данным для модели ML и ее прогнозов, записываются в трассировку Application Insights Azure в `"model_data_collection"`е сообщения. Вы можете запросить Azure Application Insights напрямую для доступа к этим данным или настроить [непрерывный экспорт](https://docs.microsoft.com/azure/azure-monitor/app/export-telemetry) в учетную запись хранения для более длительного хранения или дальнейшей обработки. Данные модели можно использовать в Машинное обучение Azure для настройки меток, переобучения, объяснения, анализа данных или других способов использования. 
 
 ## <a name="use-the-azure-portal-to-configure"></a>Использование портал Azure для настройки
 
@@ -51,7 +51,7 @@ ms.locfileid: "74406438"
 
    [![Список служб на вкладке "Развертывания"](media/how-to-enable-app-insights/Deployments.PNG)](./media/how-to-enable-app-insights/Deployments.PNG#lightbox)
 
-3. Выберите **изменить** .
+3. Выберите **Изменить**.
 
    [![Кнопка "Изменить"](media/how-to-enable-app-insights/Edit.PNG)](./media/how-to-enable-app-insights/Edit.PNG#lightbox)
 
@@ -61,7 +61,7 @@ ms.locfileid: "74406438"
 
 1. Щелкните **Обновить** в нижней части экрана, чтобы применить изменения
 
-### <a name="disable"></a>Disable
+### <a name="disable"></a>Отключение
 
 1. В [портал Azure](https://portal.azure.com)откройте рабочую область.
 1. Выберите **развертывания**, выберите службу, а затем щелкните **изменить** .
@@ -121,7 +121,7 @@ ms.locfileid: "74406438"
 Данные службы хранятся в учетной записи Azure Application Insights в той же группе ресурсов, что и Машинное обучение Azure.
 Чтобы их просмотреть:
 
-1. Перейдите в рабочую область службы Машинное обучение в [машинное обучение Azure Studio](https://ml.azure.com) и щелкните ссылку Application Insights
+1. Перейдите в рабочую область Машинное обучение Azure в [машинное обучение Azure Studio](https://ml.azure.com) и щелкните ссылку Application Insights
 
     [![AppInsightsLoc](media/how-to-enable-app-insights/AppInsightsLoc.png)](./media/how-to-enable-app-insights/AppInsightsLoc.png#lightbox)
 
@@ -155,7 +155,7 @@ ms.locfileid: "74406438"
  
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, [как развернуть модель в кластере службы Azure Kubernetes](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-azure-kubernetes-service) или [как развернуть модель в службе "экземпляры контейнеров Azure](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-azure-container-instance) ", чтобы развернуть модели в конечных точках веб-службы и разрешить Azure Application Insights использовать сбор данных и мониторинг конечных точек.
 * Дополнительные сведения об использовании данных, собираемых из моделей в рабочей среде, см. в разделе [млопс. Управление, развертывание и мониторинг моделей с помощью машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/service/concept-model-management-and-deployment) . Такие данные позволяют постоянно улучшать процесс машинного обучения.
