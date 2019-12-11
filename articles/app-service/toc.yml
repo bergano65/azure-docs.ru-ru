@@ -82,7 +82,11 @@
         - name: Общие сведения о безопасности
           href: overview-security.md
     - name: Функции сетей
-      href: networking-features.md
+      items:
+        - name: Обзор
+          href: networking-features.md
+        - name: Использование Шлюза приложений с конечными точками служб
+          href: networking/app-gateway-with-service-endpoints.md
     - name: Входящие и исходящие IP-адреса
       href: overview-inbound-outbound-ips.md
     - name: Интеграция с виртуальной сетью

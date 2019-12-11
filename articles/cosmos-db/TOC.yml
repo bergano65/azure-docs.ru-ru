@@ -972,6 +972,8 @@
           href: access-secrets-from-keyvault.md
         - name: "Аутентификация на основе сертификатов в Azure\_AD"
           href: certificate-based-authentication.md
+        - name: Ограничение доступа пользователей только операциями с данными
+          href: how-to-restrict-user-data.md
     - name: Готовность к работе в масштабах предприятия
       items:
         - name: Восстановление данных из резервной копии

@@ -389,6 +389,8 @@
       items:
         - name: Справочник по атрибутам SuccessFactors
           href: sap-successfactors-attribute-reference.md
+        - name: Справочник по атрибутам Workday
+          href: workday-attribute-reference.md
     - name: "Агент подготовки Azure\_AD Connect"
       items:
         - name: Журнал версий агента подготовки

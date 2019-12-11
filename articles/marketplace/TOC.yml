@@ -513,3 +513,15 @@
       href: ./partner-center-portal/support.md
     - name: Аналитика Центра партнеров
       href: ./partner-center-portal/analytics.md
+    - name: Получение платежей
+      items:
+        - name: Получение платежей
+          href: ./partner-center-portal/get-paid.md
+        - name: Настройка счета для выплат и налоговых форм
+          href: ./partner-center-portal/set-up-your-payout-account-tax-forms.md
+        - name: 'Пороги, методы и сроки оплаты'
+          href: ./partner-center-portal/payment-thresholds-methods-timeframes.md
+        - name: Сводка по выплатам
+          href: ./partner-center-portal/payout-summary.md
+        - name: Сведения о налогах
+          href: ./partner-center-portal/tax-details-paid-transactions.md

@@ -3,7 +3,7 @@ documentType: LandingData
 title: Документация по Виртуальным машинам
 metadata:
   document_id: na
-  title: Документация по виртуальным машинам в Azure. Руководства и справочник по API | Документация Майкрософт
+  title: Документация по виртуальным машинам Azure. Руководства и справочники по API
   meta.description: 'Learn how to create, deploy, and manage Windows or Linux virtual machines. Tutorials, API references, and other documentation.'
   services: virtual-machines
   author: georgewallace
@@ -13,8 +13,7 @@ metadata:
   ms.topic: landing-page
   ms.date: 01/23/2017
   ms.author: gwallace
-abstract:
-  description: 'Сведения о создании виртуальных машин Azure. В руководствах, справочниках по API и другой документации объясняется, как создавать и развертывать виртуальные машины Windows и Linux, а также шаблоны виртуальных машин.'
+  description: 'Узнайте, как создавать и развертывать виртуальные машины с Windows и Linux в Azure.'
 sections:
   - title: null
     items:
