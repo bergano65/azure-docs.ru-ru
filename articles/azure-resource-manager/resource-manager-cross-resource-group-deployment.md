@@ -2,26 +2,24 @@
 title: Развертывание ресурсов межподписок & группы ресурсов
 description: Сведения о развертывании ресурсов в нескольких подписках и группах ресурсов Azure.
 ms.topic: conceptual
-ms.date: 06/02/2018
-ms.openlocfilehash: 99c534e1c51dcdf32c2b3a3b779c01d71b8d0c24
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.date: 12/09/2019
+ms.openlocfilehash: 0754895215384f76b1cb44224f3ba06c80181827
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74149557"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978770"
 ---
 # <a name="deploy-azure-resources-to-more-than-one-subscription-or-resource-group"></a>Развертывание ресурсов Azure в нескольких подписках или группах ресурсов
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-
-Как правило, все ресурсы в шаблоне развертываются в отдельную [группу ресурсов](resource-group-overview.md). Тем не менее возможны ситуации, когда необходимо развернуть набор ресурсов одновременно, но при этом разместить их в отдельных подписках или группах ресурсов. Например, вы захотите развернуть резервную копию виртуальной машины для Azure Site Recovery в отдельную группу ресурсов или расположение. Resource Manager позволяет использовать вложенные шаблоны, с помощью которых ресурсы можно развертывать в разных подписках и группах ресурсов, а не только в подписках и группах ресурсов родительского шаблона.
+Как правило, все ресурсы в шаблоне развертываются в отдельную [группу ресурсов](resource-group-overview.md). Тем не менее возможны ситуации, когда необходимо развернуть набор ресурсов одновременно, но при этом разместить их в отдельных подписках или группах ресурсов. Например, вы захотите развернуть резервную копию виртуальной машины для Azure Site Recovery в отдельную группу ресурсов или расположение. Диспетчер ресурсов позволяет использовать вложенные шаблоны для более чем одной подписки и группы ресурсов.
 
 > [!NOTE]
 > Развертывание можно выполнять только в пять групп ресурсов в рамках одного развертывания. Как правило, это ограничение означает, что можно выполнить развертывание в одной группе ресурсов, указанной для родительского шаблона, и максимум в четырех группах ресурсов во вложенных или связанных развертываниях. Но если родительский шаблон содержит только вложенные или связанные шаблоны и сам по себе не развертывает ресурсы, во вложенные или связанные развертывания можно включить до пяти групп ресурсов.
 
-## <a name="specify-a-subscription-and-resource-group"></a>Выбор подписки и группы ресурсов
+## <a name="specify-subscription-and-resource-group"></a>Укажите подписку и группу ресурсов
 
-Чтобы подключиться к другому ресурсу, используйте вложенный или связанный шаблон. В ресурсах типа `Microsoft.Resources/deployments` содержатся параметры `subscriptionId` и `resourceGroup`. Эти свойства позволяют указывать различные подписки и группы ресурсов для вложенного развертывания. Все группы ресурсов необходимо создать до выполнения развертывания. Если не указать идентификатор подписки или группу ресурсов, будут использованы подписка и группа ресурсов из родительского шаблона.
+Чтобы выбрать другую группу ресурсов или подписку, используйте [вложенный или связанный шаблон](resource-group-linked-templates.md). Тип ресурса `Microsoft.Resources/deployments` предоставляет параметры для `subscriptionId` и `resourceGroup`, которые позволяют указать подписку и группу ресурсов для вложенного развертывания. Если вы не укажете идентификатор подписки или группу ресурсов, используется подписка и группа ресурсов из родительского шаблона. Все группы ресурсов необходимо создать до выполнения развертывания.
 
 Учетная запись, которая используется для развертывания шаблона, должна иметь разрешения на развертывание с указанным идентификатором подписки. Если указанная подписка существует в другом клиенте Azure Active Directory, необходимо [добавить гостевых пользователей из другого каталога](../active-directory/active-directory-b2b-what-is-azure-ad-b2b.md).
 
@@ -42,7 +40,7 @@ ms.locfileid: "74149557"
 
 Если группы ресурсов находятся в одной подписке, значение **subscriptionId** можно удалить.
 
-В приведенном ниже примере развертываются две учетные записи хранения: одна в группе ресурсов, указанной во время развертывания, другая — в группе ресурсов, указанной в параметре `secondResourceGroup`:
+В следующем примере развертываются две учетные записи хранения. Первая учетная запись хранения развертывается в группе ресурсов, указанной во время развертывания. Вторая учетная запись хранения развертывается в группе ресурсов, указанной в параметрах `secondResourceGroup` и `secondSubscriptionID`.
 
 ```json
 {
@@ -70,6 +68,18 @@ ms.locfileid: "74149557"
         "secondStorageName": "[concat(parameters('storagePrefix'), uniqueString(parameters('secondSubscriptionID'), parameters('secondResourceGroup')))]"
     },
     "resources": [
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "name": "[variables('firstStorageName')]",
+            "apiVersion": "2017-06-01",
+            "location": "[resourceGroup().location]",
+            "sku":{
+                "name": "Standard_LRS"
+            },
+            "kind": "Storage",
+            "properties": {
+            }
+        },
         {
             "apiVersion": "2017-05-10",
             "name": "nestedTemplate",
@@ -100,73 +110,18 @@ ms.locfileid: "74149557"
                 },
                 "parameters": {}
             }
-        },
-        {
-            "type": "Microsoft.Storage/storageAccounts",
-            "name": "[variables('firstStorageName')]",
-            "apiVersion": "2017-06-01",
-            "location": "[resourceGroup().location]",
-            "sku":{
-                "name": "Standard_LRS"
-            },
-            "kind": "Storage",
-            "properties": {
-            }
         }
     ]
 }
 ```
 
-Если в качестве значения параметра `resourceGroup` задать имя несуществующей группы ресурсов, развертывание завершится сбоем.
+Если присвоить `resourceGroup` имя несуществующей группы ресурсов, развертывание завершится ошибкой.
 
-## <a name="use-the-resourcegroup-and-subscription-functions"></a>Использование функций resourceGroup() и subscription()
+Чтобы протестировать предыдущий шаблон и просмотреть результаты, используйте PowerShell или Azure CLI.
 
-При развертывании в нескольких группах ресурсов результат выполнения функций [resourceGroup()](resource-group-template-functions-resource.md#resourcegroup) и [subscription()](resource-group-template-functions-resource.md#subscription) зависит от способа, с помощью которого указан вложенный шаблон. 
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
-При внедрении одного шаблона в другой функции во вложенном шаблоне разрешаются в родительской группе ресурсов и подписке. Внедренный шаблон использует следующий формат:
-
-```json
-"apiVersion": "2017-05-10",
-"name": "embeddedTemplate",
-"type": "Microsoft.Resources/deployments",
-"resourceGroup": "crossResourceGroupDeployment",
-"properties": {
-    "mode": "Incremental",
-    "template": {
-        ...
-        resourceGroup() and subscription() refer to parent resource group/subscription
-    }
-}
-```
-
-При связывании отдельного шаблона функции в связанном шаблоне разрешаются в родительской группе ресурсов и подписке. Связанный шаблон использует следующий формат:
-
-```json
-"apiVersion": "2017-05-10",
-"name": "linkedTemplate",
-"type": "Microsoft.Resources/deployments",
-"resourceGroup": "crossResourceGroupDeployment",
-"properties": {
-    "mode": "Incremental",
-    "templateLink": {
-        ...
-        resourceGroup() and subscription() in linked template refer to linked resource group/subscription
-    }
-}
-```
-
-## <a name="example-templates"></a>Образцы шаблонов
-
-В следующих шаблонах демонстрируется развертывание в нескольких группах ресурсов. Скрипты для развертывания шаблонов приведены после таблицы.
-
-|шаблона  |ОПИСАНИЕ  |
-|---------|---------|
-|[Шаблон для развертывания в нескольких подписках](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/crosssubscription.json) |Развертывание одной учетной записи хранения в одной группе ресурсов и еще одной учетной записи хранения в другой группе ресурсов. Укажите значение идентификатора подписки, если вторая группа ресурсов находится в другой подписке. |
-|[Шаблон свойств для развертывания в нескольких группах ресурсов](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/crossresourcegroupproperties.json) |В этом шаблоне показано, как разрешается функция `resourceGroup()`. Он не используется для развертывания ресурсов. |
-
-### <a name="powershell"></a>PowerShell
-
-Чтобы развернуть две учетные записи хранения в двух группах ресурсов в **одной подписке** с помощью PowerShell, используйте следующий код:
+Чтобы развернуть две учетные записи хранения в двух группах ресурсов в **одной подписке**, используйте:
 
 ```azurepowershell-interactive
 $firstRG = "primarygroup"
@@ -183,7 +138,7 @@ New-AzResourceGroupDeployment `
   -secondStorageLocation eastus
 ```
 
-Чтобы развернуть две учетные записи хранения в **двух подписках** с помощью PowerShell, используйте следующий код:
+Чтобы развернуть две учетные записи хранения в **двух подписках**, используйте:
 
 ```azurepowershell-interactive
 $firstRG = "primarygroup"
@@ -207,52 +162,9 @@ New-AzResourceGroupDeployment `
   -secondSubscriptionID $secondSub
 ```
 
-Чтобы проверить, как разрешается **объект группы ресурсов** для родительского, встроенного и связанного шаблонов с помощью PowerShell, используйте следующий код:
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-```azurepowershell-interactive
-New-AzResourceGroup -Name parentGroup -Location southcentralus
-New-AzResourceGroup -Name inlineGroup -Location southcentralus
-New-AzResourceGroup -Name linkedGroup -Location southcentralus
-
-New-AzResourceGroupDeployment `
-  -ResourceGroupName parentGroup `
-  -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/crossresourcegroupproperties.json
-```
-
-В приведенном выше примере **parentRG** и **inlineRG** разрешаются в **parentGroup**. **linkedRG** разрешается в **linkedGroup**. Выходные данные из предыдущего примера:
-
-```powershell
- Name             Type                       Value
- ===============  =========================  ==========
- parentRG         Object                     {
-                                               "id": "/subscriptions/<subscription-id>/resourceGroups/parentGroup",
-                                               "name": "parentGroup",
-                                               "location": "southcentralus",
-                                               "properties": {
-                                                 "provisioningState": "Succeeded"
-                                               }
-                                             }
- inlineRG         Object                     {
-                                               "id": "/subscriptions/<subscription-id>/resourceGroups/parentGroup",
-                                               "name": "parentGroup",
-                                               "location": "southcentralus",
-                                               "properties": {
-                                                 "provisioningState": "Succeeded"
-                                               }
-                                             }
- linkedRG         Object                     {
-                                               "id": "/subscriptions/<subscription-id>/resourceGroups/linkedGroup",
-                                               "name": "linkedGroup",
-                                               "location": "southcentralus",
-                                               "properties": {
-                                                 "provisioningState": "Succeeded"
-                                               }
-                                             }
-```
-
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
-
-Чтобы развернуть две учетные записи хранения в двух группах ресурсов в **одной подписке** с помощью Azure CLI, используйте следующий код:
+Чтобы развернуть две учетные записи хранения в двух группах ресурсов в **одной подписке**, используйте:
 
 ```azurecli-interactive
 firstRG="primarygroup"
@@ -267,7 +179,7 @@ az group deployment create \
   --parameters storagePrefix=tfstorage secondResourceGroup=$secondRG secondStorageLocation=eastus
 ```
 
-Чтобы развернуть две учетные записи хранения в **двух подписках** с помощью Azure CLI, используйте следующий код:
+Чтобы развернуть две учетные записи хранения в **двух подписках**, используйте:
 
 ```azurecli-interactive
 firstRG="primarygroup"
@@ -289,7 +201,146 @@ az group deployment create \
   --parameters storagePrefix=storage secondResourceGroup=$secondRG secondStorageLocation=eastus secondSubscriptionID=$secondSub
 ```
 
-Чтобы проверить, как разрешается **объект группы ресурсов** для родительского, встроенного и связанного шаблонов с помощью Azure CLI, используйте следующий код:
+---
+
+## <a name="use-functions"></a>Использование функций
+
+Функции [resourceGroup ()](resource-group-template-functions-resource.md#resourcegroup) и [Subscription ()](resource-group-template-functions-resource.md#subscription) разрешаются по-разному в зависимости от способа указания шаблона. При связывании с внешним шаблоном функции всегда разрешаются в область этого шаблона. При вложении шаблона в родительский шаблон используйте свойство `expressionEvaluationOptions`, чтобы указать, будут ли функции разрешаться в группу ресурсов и подписку для родительского шаблона или вложенного шаблона. Задайте для свойства значение `inner`, чтобы разрешить область вложенного шаблона. Задайте для свойства значение `outer`, чтобы разрешить область действия родительского шаблона.
+
+В следующей таблице показано, разрешены ли функции в родительскую или внедренную группу ресурсов и подписку.
+
+| Тип шаблона | Область действия | Разрешение |
+| ------------- | ----- | ---------- |
+| вложенные        | внешний (по умолчанию) | Родительская группа ресурсов |
+| вложенные        | Внутреннее | Подкатегория "подгруппа ресурсов" |
+| связанные        | Н/Д   | Подкатегория "подгруппа ресурсов" |
+
+В следующем [примере шаблона]((https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/crossresourcegroupproperties.json)) показано следующее:
+
+* вложенный шаблон с областью (внешней) по умолчанию
+* вложенный шаблон с внутренней областью
+* связанный шаблон
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "name": "defaultScopeTemplate",
+            "apiVersion": "2017-05-10",
+            "resourceGroup": "inlineGroup",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {},
+                    "variables": {},
+                    "resources": [
+                    ],
+                    "outputs": {
+                        "resourceGroupOutput": {
+                            "type": "string",
+                            "value": "[resourceGroup().name]"
+                        }
+                    }
+                },
+                "parameters": {}
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "name": "innerScopeTemplate",
+            "apiVersion": "2017-05-10",
+            "resourceGroup": "inlineGroup",
+            "properties": {
+                "expressionEvaluationOptions": {
+                    "scope": "inner"
+                },
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {},
+                    "variables": {},
+                    "resources": [
+                    ],
+                    "outputs": {
+                        "resourceGroupOutput": {
+                            "type": "string",
+                            "value": "[resourceGroup().name]"
+                        }
+                    }
+                },
+                "parameters": {}
+            }
+        },
+        {
+            "apiVersion": "2017-05-10",
+            "name": "linkedTemplate",
+            "type": "Microsoft.Resources/deployments",
+            "resourceGroup": "linkedGroup",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "contentVersion": "1.0.0.0",
+                    "uri": "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/resourceGroupName.json"
+                },
+                "parameters": {}
+            }
+        }
+    ],
+    "outputs": {
+        "parentRG": {
+            "type": "string",
+            "value": "[concat('Parent resource group is ', resourceGroup().name)]"
+        },
+        "defaultScopeRG": {
+            "type": "string",
+            "value": "[concat('Default scope resource group is ', reference('defaultScopeTemplate').outputs.resourceGroupOutput.value)]"
+        },
+        "innerScopeRG": {
+            "type": "string",
+            "value": "[concat('Inner scope resource group is ', reference('innerScopeTemplate').outputs.resourceGroupOutput.value)]"
+        },
+        "linkedRG": {
+            "type": "string",
+            "value": "[concat('Linked resource group is ', reference('linkedTemplate').outputs.resourceGroupOutput.value)]"
+        }
+    }
+}
+```
+
+Чтобы протестировать предыдущий шаблон и просмотреть результаты, используйте PowerShell или Azure CLI.
+
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+
+```azurepowershell-interactive
+New-AzResourceGroup -Name parentGroup -Location southcentralus
+New-AzResourceGroup -Name inlineGroup -Location southcentralus
+New-AzResourceGroup -Name linkedGroup -Location southcentralus
+
+New-AzResourceGroupDeployment `
+  -ResourceGroupName parentGroup `
+  -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/crossresourcegroupproperties.json
+```
+
+Выходные данные из предыдущего примера:
+
+```powershell
+ Name             Type                       Value
+ ===============  =========================  ==========
+ parentRG         String                     Parent resource group is parentGroup
+ defaultScopeRG   String                     Default scope resource group is parentGroup
+ innerScopeRG     String                     Inner scope resource group is inlineGroup
+ linkedRG         String                     Linked resource group is linkedgroup
+```
+
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az group create --name parentGroup --location southcentralus
@@ -302,49 +353,32 @@ az group deployment create \
   --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/crossresourcegroupproperties.json 
 ```
 
-В приведенном выше примере **parentRG** и **inlineRG** разрешаются в **parentGroup**. **linkedRG** разрешается в **linkedGroup**. Выходные данные из предыдущего примера:
+Выходные данные из предыдущего примера:
 
 ```azurecli
-...
 "outputs": {
-  "inlineRG": {
-    "type": "Object",
-    "value": {
-      "id": "/subscriptions/<subscription-id>/resourceGroups/parentGroup",
-      "location": "southcentralus",
-      "name": "parentGroup",
-      "properties": {
-        "provisioningState": "Succeeded"
-      }
-    }
+  "defaultScopeRG": {
+    "type": "String",
+    "value": "Default scope resource group is parentGroup"
+  },
+  "innerScopeRG": {
+    "type": "String",
+    "value": "Inner scope resource group is inlineGroup"
   },
   "linkedRG": {
-    "type": "Object",
-    "value": {
-      "id": "/subscriptions/<subscription-id>/resourceGroups/linkedGroup",
-      "location": "southcentralus",
-      "name": "linkedGroup",
-      "properties": {
-        "provisioningState": "Succeeded"
-      }
-    }
+    "type": "String",
+    "value": "Linked resource group is linkedGroup"
   },
   "parentRG": {
-    "type": "Object",
-    "value": {
-      "id": "/subscriptions/<subscription-id>/resourceGroups/parentGroup",
-      "location": "southcentralus",
-      "name": "parentGroup",
-      "properties": {
-        "provisioningState": "Succeeded"
-      }
-    }
+    "type": "String",
+    "value": "Parent resource group is parentGroup"
   }
 },
-...
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+---
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об определении параметров в шаблоне см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Советы по устранению распространенных ошибок развертывания см. в разделе [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager](resource-manager-common-deployment-errors.md).

@@ -1,6 +1,6 @@
 ---
-title: Как повторно активировать отключенные пространства имен службы контроля доступа (ACS)
-description: Узнайте, как найти и включить пространства имен службы контроля доступа (ACS) и запросить расширение, чтобы они оставались включенными до 4 февраля 2019 года.
+title: Повторная активация отключенных пространств имен службы контроля доступа Azure (ACS)
+description: Найдите и включите пространства имен службы контроля доступа Azure (ACS) и запросите расширение, чтобы они оставались включенными до 4 февраля 2019 г.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -13,12 +13,12 @@ ms.author: ryanwi
 ms.reviewer: jlu
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 590fc99861035ce1a5219a3cfd788159c6c2a19b
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 9cc038e67e5528a52b0b98ea1698da07e8120242
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74917715"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74966951"
 ---
 # <a name="how-to-reactivate-disabled-access-control-service-namespaces"></a>Практическое руководство. Повторная активация отключенных пространств имен службы контроля доступа
 

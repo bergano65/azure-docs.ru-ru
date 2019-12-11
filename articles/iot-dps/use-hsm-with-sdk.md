@@ -1,6 +1,6 @@
 ---
 title: Использование различных механизмов аттестации с клиентским пакетом SDK службы подготовки устройств для центра Интернета вещей Azure
-description: Практическое руководство Azure. Использование разных механизмов аттестации с клиентским пакетом SDK для службы подготовки устройств в Azure
+description: Использование различных механизмов аттестации с клиентским пакетом SDK для службы подготовки устройств (DPS) в Azure
 author: robinsh
 ms.author: robinsh
 ms.date: 03/30/2018
@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: 0cde591d2ec8c6f2f51c83b3f263c188c8cf2605
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: c85d958074ea5d41d32f71350164c3c983e372a2
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74228272"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976661"
 ---
 # <a name="how-to-use-different-attestation-mechanisms-with-device-provisioning-service-client-sdk-for-c"></a>Использование разных механизмов аттестации с клиентским пакетом SDK для службы подготовки устройств в Azure для С
 
 В этой статье объясняется, как использовать разные [механизмы аттестации](concepts-security.md#attestation-mechanism) с помощью клиентского пакета SDK для C для службы подготовки устройств. Вы можете использовать физическое устройство или симулятор. Служба подготовки поддерживает проверку подлинности для двух типов механизмов аттестации: X. 509 и доверенный платформенный модуль (TPM) (TPM).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Подготовьте среду разработки в соответствии с инструкциями в разделе "Подготовка среды разработки" руководства по [созданию и подготовке имитированного устройства](./quick-create-simulated-device.md).
 

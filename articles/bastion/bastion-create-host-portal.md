@@ -5,14 +5,14 @@ services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: conceptual
-ms.date: 10/15/2019
+ms.date: 12/09/2019
 ms.author: cherylmc
-ms.openlocfilehash: 7838e1930a8ccd190c95740a6a8e3dadc68149f0
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 95f7d71c0de7570eee6e4c94e88fd65ff1d45ec8
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74422113"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74973090"
 ---
 # <a name="create-an-azure-bastion-host"></a>Создание узла бастиона Azure
 
@@ -78,6 +78,6 @@ ms.locfileid: "74422113"
    * **Имя общедоступного IP-адреса**: имя ресурса общедоступного IP-адреса.
 1. На экране проверка нажмите кнопку **создать**. Подождите около 5 минут для создания и развертывания ресурса бастиона.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с [часто задаваемыми вопросами о бастиона](bastion-faq.md)

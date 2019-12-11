@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: b0d71a7b010e91776a28330cfc32278c7060aab6
-ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
+ms.openlocfilehash: 4ff4025941e9a77148daa91995ecf182231d1f0b
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74901250"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976287"
 ---
 # <a name="content-protection-overview"></a>Обзор системы защиты содержимого 
 
@@ -87,6 +87,10 @@ PlayReady и Widevine используют общее шифрование (ре
   * **cenc**: PlayReady или Widevine (общее шифрование).
   * **cbcs aapl**: для FairPlay (шифрование AES CBC).
   * **cbc**: шифрование конверта AES.
+
+## <a name="additional-notes"></a>Дополнительные замечания
+
+* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В следующих статьях описываются дальнейшие действия, которые помогут вам приступить к работе по защите содержимого:

@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 64662499b4ee782bbf04e9e706cd659e84c90eec
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 12/09/2019
+ms.openlocfilehash: 9c5f6aa2900570aa00ddbc50ec8be4dbb0d16a34
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74773082"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978055"
 ---
 # <a name="audit-logs-in-azure-database-for-mariadb"></a>Журналы аудита в базе данных Azure для MariaDB
 
@@ -27,12 +27,15 @@ ms.locfileid: "74773082"
 Вы можете настроить еще несколько параметров.
 
 - `audit_log_events`: управляет событиями, регистрируемыми в журнале. Конкретные события аудита см. в таблице ниже.
+- `audit_log_include_users`: MariaDB пользователей, которые будут включаться в ведение журнала. Значение по умолчанию для этого параметра — пустое, которое будет включать всех пользователей для ведения журнала. Это имеет более высокий приоритет, чем `audit_log_exclude_users`. Максимальная длина параметра — 512 символов.
+> [!Note]
+> `audit_log_include_users` имеет более высокий приоритет, чем `audit_log_exclude_users`. Например, если `audit_log_include_users` = `demouser` и `audit_log_exclude_users` = `demouser`, пользователь будет включаться в журналы аудита, так как `audit_log_include_users` имеет более высокий приоритет.
 - `audit_log_exclude_users`: MariaDB пользователей, которых следует исключить из ведения журнала. Допускает не более четырех пользователей. Максимальная длина параметра — 256 символов.
 
 | **Событие** | **Описание** |
 |---|---|
 | `CONNECTION` | — Инициация подключения (успешно или неуспешно); <br> — Повторное применение проверки подлинности пользователя с другим пользователем или паролем во время сеанса <br> — Завершение подключения |
-| `DML_SELECT`| Выбор запросов |
+| `DML_SELECT`| Запросы SELECT |
 | `DML_NONSELECT` | Операции вставки, удаления и обновления |
 | `DML` | DML = DML_SELECT + DML_NONSELECT |
 | `DDL` | Такие запросы, как "DROP DATABASE" |
@@ -121,7 +124,7 @@ ms.locfileid: "74773082"
 | `OperationName` | `LogEvent` |
 | `LogicalServerName_s` | Имя сервера |
 | `event_class_s` | `table_access_log` |
-| `event_subclass_s` | `READ`, `INSERT`, `UPDATE`или `DELETE` |
+| `event_subclass_s` | `READ`, `INSERT`, `UPDATE` или `DELETE` |
 | `connection_id_d` | Уникальный идентификатор соединения, созданный MariaDB |
 | `db_s` | Имя базы данных, к которой осуществлялся доступ |
 | `table_s` | Имя таблицы, к которой осуществлялся доступ |

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: peterlu
 author: peterclu
 ms.date: 11/12/2019
-ms.openlocfilehash: 9301f3e685116c8496dd5e0ec986218a046f0c98
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: efc9d7fb31dc9f63780c3f94238bbbfb17756089
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74707736"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74973634"
 ---
 # <a name="what-is-azure-machine-learning-designer-preview"></a>Что такое Машинное обучение Azure конструктор (Предварительная версия)? 
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
@@ -93,7 +93,7 @@ ms.locfileid: "74707736"
 | Вычислительная среда Машинного обучения Azure | ✓ | |
 | Служба Azure Kubernetes | | ✓ |
 
-Целевые объекты вычислений присоединяются к [рабочей области](concept-workspace.md)машинное обучение. Вы управляете целевыми объектами вычислений в рабочей области в [машинное обучение Azure Studio](https://ml.azure.com).
+Целевые объекты вычислений присоединяются к [рабочей области машинное обучение Azure](concept-workspace.md). Вы управляете целевыми объектами вычислений в рабочей области в [машинное обучение Azure Studio (классическая модель)](https://ml.azure.com).
 
 ## <a name="deploy"></a>Развертывание
 

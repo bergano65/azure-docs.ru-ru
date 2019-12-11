@@ -8,12 +8,12 @@ ms.author: abmotley
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 472c4a75f5a4253220383ae79d88d5b90cec4795
-ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
+ms.openlocfilehash: fb8aec10d58ed4f2eca462774aeaf61f2ea21dd0
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74555043"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74973974"
 ---
 # <a name="troubleshooting-common-indexer-errors-and-warnings-in-azure-cognitive-search"></a>Устранение распространенных ошибок индексатора и предупреждений в Azure Когнитивный поиск
 
@@ -307,3 +307,9 @@ ms.locfileid: "74555043"
 Если метка порядка байтов отсутствует, предполагается, что текст кодируется как UTF-8.
 
 Чтобы обойти это предупреждение, определите кодировку текста для этого большого двоичного объекта и добавьте соответствующую метку порядка байтов.
+
+<a name="cosmos-db-collection-has-a-lazy-indexing-policy"/>
+
+## <a name="warning-cosmos-db-collection-x-has-a-lazy-indexing-policy-some-data-may-be-lost"></a>Предупреждение: Cosmos DBная коллекция "X" имеет политику отложенного индексирования. Некоторые данные могут быть потеряны
+
+Коллекции с политиками [отложенного](https://docs.microsoft.com/azure/cosmos-db/index-policy#indexing-mode) индексирования нельзя запрашивать согласованно, что приводит к отсутствующим данным в индексаторе. Чтобы обойти это предупреждение, измените политику индексирования на "постоянная".

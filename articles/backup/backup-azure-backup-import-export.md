@@ -4,12 +4,12 @@ description: Узнайте, как служба архивации Azure поз
 ms.reviewer: saurse
 ms.topic: conceptual
 ms.date: 05/17/2018
-ms.openlocfilehash: 331d5528c8f124f4d43142ff7be4daa3169b0381
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 47d4c4fb63c2aa0e2944456048b06070e235f012
+ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74173288"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74997366"
 ---
 # <a name="offline-backup-workflow-in-azure-backup"></a>Автономное резервное копирование в службе архивации Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "74173288"
 
 [!INCLUDE [backup-upgrade-mars-agent.md](../../includes/backup-upgrade-mars-agent.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
   > [!NOTE]
   > Следующие предварительные требования и рабочий процесс применяются только к автономному резервному копированию файлов и папок с использованием [последней версии агента MARS](https://aka.ms/azurebackup_agent). См. дополнительные сведения о [выполнении автономного резервного копирования рабочих нагрузок с использованием System Center DPM или сервера Azure Backup Server](backup-azure-backup-server-import-export-.md).
@@ -122,7 +122,7 @@ ms.locfileid: "74173288"
 
     ```.\AzureOfflineBackupDiskPrep.exe s:<Staging Location Path>```
 
-    | Параметр | ОПИСАНИЕ |
+    | Параметр | Описание |
     | --- | --- |
     | s:&lt;*путь_к_промежуточному_расположению*&gt; |Обязательный параметр. Используется для предоставления пути к промежуточному расположению, заданному при **запуске автономного резервного копирования**. |
     | p:&lt;*путь_к_файлу_параметров_публикации*&gt; |Необязательный параметр. Используется для предоставления пути к **файлу параметров публикации**, заданному в процессе **запуска автономной архивации**. |
@@ -203,7 +203,7 @@ ms.locfileid: "74173288"
 
 Выполнив начальное резервное копирование, можно безопасно удалить импортированные в контейнер хранилища Azure данные, а также данные резервной копии из промежуточного расположения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о рабочем процессе службы импорта и экспорта см. в статье [Использование службы импорта и экспорта Azure для передачи данных в хранилище BLOB-объектов](../storage/common/storage-import-export-service.md).
-* Дополнительные сведения об автономной архивации см. в статье [Служба архивации Azure: часто задаваемые вопросы](backup-azure-backup-faq.md).
+
