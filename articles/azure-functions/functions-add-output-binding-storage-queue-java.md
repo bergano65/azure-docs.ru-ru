@@ -3,12 +3,12 @@ title: Подключение функции Java к службе хранили
 description: Узнайте, как подключить функцию Java, активируемую HTTP, к службе хранилища Azure с помощью выходной привязки хранилища очередей.
 ms.date: 10/14/2019
 ms.topic: quickstart
-ms.openlocfilehash: f9c3445efbe14c27cad9de62f5b46f50965e3145
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 98f49338f0df935347a26798aceccb80f9f43f50
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231209"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74926900"
 ---
 # <a name="connect-your-java-function-to-azure-storage"></a>Подключение функции Java к службе хранилища Azure
 
@@ -118,7 +118,7 @@ mvn azure-functions:run
 ```
 
 > [!NOTE]  
-> Так как пакеты расширений включены в файл host.json, во время запуска вместе с другими расширениями привязки Майкрософт было также загружено и установлено [расширение привязки службы хранилища](functions-bindings-storage-blob.md#packages---functions-2x).
+> Так как пакеты расширений включены в файл host.json, во время запуска вместе с другими расширениями привязки Майкрософт было также загружено и установлено [расширение привязки службы хранилища](functions-bindings-storage-blob.md#packages---functions-2x-and-higher).
 
 Как и прежде, запустите функцию из командной строки, используя cURL в новом окне терминала:
 

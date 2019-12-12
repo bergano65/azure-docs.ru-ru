@@ -5,12 +5,12 @@ author: KarlErickson
 ms.topic: tutorial
 ms.date: 11/04/2019
 ms.author: karler
-ms.openlocfilehash: 04cb91a62536c493240998270b5bd8d29fd331ba
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: cef1d09f3365350240cb2ed879e4d41edec74aef
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74230624"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849842"
 ---
 # <a name="tutorial-create-a-function-in-java-with-an-event-hub-trigger-and-an-azure-cosmos-db-output-binding"></a>Руководство по созданию функции на языке Java с триггером Центра событий и выходной привязкой Azure Cosmos DB
 
@@ -36,8 +36,6 @@ ms.locfileid: "74230624"
 
 > [!IMPORTANT]
 > В переменной среды `JAVA_HOME` следует сохранить расположение установки JDK, чтобы завершить работу с этим руководством.
-
-Если вы предпочитаете сразу получить код для этого руководства, см. репозиторий примера [java-functions-eventhub-cosmosdb](https://github.com/Azure-Samples/java-functions-eventhub-cosmosdb).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 

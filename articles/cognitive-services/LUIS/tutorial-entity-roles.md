@@ -9,28 +9,28 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 10/14/2019
+ms.date: 12/05/2019
 ms.author: diberry
-ms.openlocfilehash: 3e85067439fe412822ac34a065753e9a13c7a506
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 29e43692c1eb543768934a961a2bb8ae5a023b1d
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73488727"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74894609"
 ---
 # <a name="tutorial-extract-contextually-related-data-from-an-utterance"></a>Руководство по Извлечение из речевого фрагмента данных, связанных с контекстом
 
-Из данного руководства можно узнать, как выполнять поиск связанных частей данных на основе контекста. Например, исходное и конечное расположения для перемещения из одного города в другой. Могут потребоваться фрагменты данных, которые связаны друг с другом.  
+Из данного руководства можно узнать, как выполнять поиск связанных частей данных на основе контекста. Например, исходное и конечное расположения для перемещения из одного города в другой. Могут потребоваться фрагменты данных, которые связаны друг с другом.
 
-Роли можно использовать с любым предварительно созданным или настраиваемым типом сущности. Они используются в примерах речевых фрагментов и шаблонов. 
+Роли можно использовать с любым предварительно созданным или настраиваемым типом сущности. Они используются в примерах речевых фрагментов и шаблонов.
 
-[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
+[!INCLUDE [Only valid with current portal](includes/old-portal-only.md)]
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
 > [!div class="checklist"]
 > * Создание приложения
-> * Добавление намерения 
+> * Добавление намерения
 > * Получение сведений об источнике и назначении с помощью ролей.
 > * Обучение
 > * Публикация
@@ -57,9 +57,9 @@ ms.locfileid: "73488727"
 
 1. [!INCLUDE [Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
 
-1. Выберите **Create new intent**. (Создать намерение). 
+1. Выберите **Create new intent**. (Создать намерение).
 
-1. Введите `MoveEmployeeToCity` во всплывающем диалоговом окне и нажмите кнопку **Done** (Готово). 
+1. Введите `MoveEmployeeToCity` во всплывающем диалоговом окне и нажмите кнопку **Done** (Готово).
 
     ![Снимок экрана диалогового окна создания намерения с](./media/tutorial-entity-roles/create-new-intent-move-employee-to-city.png)
 
@@ -85,24 +85,24 @@ ms.locfileid: "73488727"
 
 1. Выберите **Entities** (Сущности) в меню навигации слева.
 
-1. Выберите **Add prebuilt entity** (Добавить предварительно созданную сущность), а затем выберите `geo` в строке поиска, чтобы отфильтровать предварительно созданные сущности. 
+1. Выберите **Add prebuilt entity** (Добавить предварительно созданную сущность), а затем выберите `geo` в строке поиска, чтобы отфильтровать предварительно созданные сущности.
 
     ![Добавление предварительно созданной сущности geographyV2 в приложение](media/tutorial-entity-roles/add-geographyV2-prebuilt-entity.png)
 1. Установите флажок и выберите **Done** (Готово).
-1. В списке **Entities** (Сущности) выберите **geographyV2**, чтобы открыть новую сущность. 
-1. Добавьте две роли, `Origin` и `Destination`. 
+1. В списке **Entities** (Сущности) выберите **geographyV2**, чтобы открыть новую сущность.
+1. Добавьте две роли, `Origin` и `Destination`.
 
     ![Добавление ролей в предварительно созданную сущность](media/tutorial-entity-roles/add-roles-to-prebuilt-entity.png)
 1. Выберите **Intents** (Намерения) в области навигации слева, затем выберите намерение **MoveEmployeeToCity**. Обратите внимание на то, что названия городов помечены с использованием предварительно созданной сущности **geographyV2**.
 1. В первом речевом фрагменте списка выберите исходное расположение. Откроется раскрывающееся меню. Выберите **geographyV2** из списка, затем проведите указателем мыши по меню, чтобы выбрать **Origin** (Источник).
-1. Используя метод из предыдущего шага, пометьте все роли расположений во всех речевых фрагментах. 
+1. Используя метод из предыдущего шага, пометьте все роли расположений во всех речевых фрагментах.
 
 
-## <a name="add-example-utterances-to-the-none-intent"></a>Добавление примеров речевых фрагментов в намерение None 
+## <a name="add-example-utterances-to-the-none-intent"></a>Добавление примеров речевых фрагментов в намерение None
 
 [!INCLUDE [Follow these steps to add the None intent to the app](../../../includes/cognitive-services-luis-create-the-none-intent.md)]
 
-## <a name="train-the-app-so-the-changes-to-the-intent-can-be-tested"></a>Обучение приложения для проверки изменений намерения 
+## <a name="train-the-app-so-the-changes-to-the-intent-can-be-tested"></a>Обучение приложения для проверки изменений намерения
 
 [!INCLUDE [LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
@@ -152,9 +152,9 @@ ms.locfileid: "73488727"
       ]
     }
     ```
-    
+
     При этом прогнозируется правильное намерение, а для массива сущностей в соответствующем свойстве **entities** существует как целевая, так и исходная роли.
-    
+
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
@@ -173,5 +173,5 @@ ms.locfileid: "73488727"
 
 Из этого руководства вы узнали, как создать намерение и добавить пример с речевыми фрагментами для данных об исходном и конечном расположении, полученных с учетом контекста. После обучения и публикации приложения клиентское приложение может использовать данную информацию для создания и перемещения билета с соответствующей информацией.
 
-> [!div class="nextstepaction"] 
-> [Сведения о добавлении составной сущности](luis-tutorial-composite-entity.md) 
+> [!div class="nextstepaction"]
+> [Сведения о добавлении составной сущности](luis-tutorial-composite-entity.md)

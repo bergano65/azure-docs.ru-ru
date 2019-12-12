@@ -2,27 +2,22 @@
 title: Использование управляющей программы Python с платформой удостоверений Майкрософт | Azure
 description: Узнайте, как процесс Python может получить маркер доступа и вызвать API, защищенный конечной точкой платформы удостоверений Майкрософт, с помощью собственного удостоверения приложения.
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
-ms.assetid: 820acdb7-d316-4c3b-8de9-79df48ba3b06
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: quickstart
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 10/22/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:Python
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68715186c624cc5ce8702073129752487a8cea63
-ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+ms.openlocfilehash: 400dfb1ad8b0682194974e6d829cc42bad37bf75
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72964009"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74920622"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-python-console-app-using-apps-identity"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения Python с помощью удостоверения приложения
 

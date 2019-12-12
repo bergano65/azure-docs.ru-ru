@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18d60614a07895c7e9468d35b2d389a28129af4d
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: f1ca0baa98336570d870a98c75c45a5303bdfaca
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74271655"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74868917"
 ---
 # <a name="what-is-guest-user-access-in-azure-active-directory-b2b"></a>Что представляет собой гостевой доступ в службе совместной работы Azure Active Directory B2B?
 
@@ -61,7 +61,7 @@ ms.locfileid: "74271655"
 - Гостевой пользователь сразу же получит настраиваемое приглашение, которое позволит ему войти на его панель доступа.
 - Гостевых пользователей в каталоге можно назначить приложениям или группам.  
 
-![Снимок экрана с начальной страницей приглашения нового гостевого пользователя](media/what-is-b2b/adding-b2b-users-admin.png)
+![Снимок экрана с начальной страницей приглашения нового гостевого пользователя](media/what-is-b2b/add-a-b2b-user-to-azure-portal.png)
 
 ## <a name="let-application-and-group-owners-manage-their-own-guest-users"></a>Разрешение владельцам приложений и групп управлять собственными гостевыми пользователями
 

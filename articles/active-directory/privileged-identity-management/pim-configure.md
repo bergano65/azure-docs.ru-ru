@@ -14,12 +14,12 @@ ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 578f45a7bc870874319a8238c7c8c50bf7a37998
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: c1f0708f0674633ddfee8b84388a2d96f2a04636
+ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74023022"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74899982"
 ---
 # <a name="what-is-azure-ad-privileged-identity-management"></a>Что такое Azure AD Privileged Identity Management?
 
@@ -46,7 +46,7 @@ ms.locfileid: "74023022"
 
 После настройки PIM в меню навигации слева вы увидите параметры **Задачи**, **Управление** и **Действие**. В качестве администратора вы выберете между управлением **ролями Azure AD** и ролями **службы ресурсов Azure**. При выборе типа ролей для управления вы увидите аналогичный набор параметров для этого типа роли.
 
-![Снимок экрана управления привилегированными пользователями на портале Azure](./media/pim-configure/pim-overview.png)
+![Снимок экрана управления привилегированными пользователями на портале Azure](./media/pim-configure/pim-quickstart.png)
 
 ## <a name="who-can-do-what"></a>Какие существуют роли пользователей и доступные им действия?
 

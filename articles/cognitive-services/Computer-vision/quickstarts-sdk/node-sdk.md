@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 10/01/2019
+ms.date: 12/05/2019
 ms.author: pafarley
-ms.openlocfilehash: a51a8e02ec08b9a4ee353c2c45345c4d01246894
-ms.sourcegitcommit: d7689ff43ef1395e61101b718501bab181aca1fa
+ms.openlocfilehash: 199ead07e499575de21c6878cd348e648f604171
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71981827"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74972665"
 ---
 # <a name="quickstart-computer-vision-client-library-for-nodejs"></a>Краткое руководство. Клиентская библиотека службы "Компьютерное зрение" для Node.js
 
@@ -266,5 +266,5 @@ node index.js
 > [!div class="nextstepaction"]
 >[Справочник по API службы "Компьютерное зрение" (Node.js)](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-computervision/?view=azure-node-latest)
 
-* [Что представляет собой API службы "Компьютерное зрение"?](../Home.md)
+* [Что собой представляет Компьютерное зрение](../Home.md)
 * Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/ComputerVision/ComputerVisionQuickstart.js).

@@ -3,18 +3,18 @@ title: Добавление устройства Azure IoT Edge в Azure IoT Cen
 description: Как оператор вы можете добавить устройство Azure IoT Edge в приложение Azure IoT Central
 author: rangv
 ms.author: rangv
-ms.date: 10/22/2019
+ms.date: 12/09/2019
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: f16db7ebff087b164228f2b23d6fa7ec302705bb
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: e5d60c77e9bdc0733c12bca891eb6c3e33a1fceb
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406331"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74979076"
 ---
 # <a name="tutorial-add-an-azure-iot-edge-device-to-your-azure-iot-central-application"></a>Руководство по добавлению устройства Azure IoT Edge в приложение Azure IoT Central
 

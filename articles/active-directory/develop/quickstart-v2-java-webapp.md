@@ -2,25 +2,21 @@
 title: Краткое руководство. Использование веб-приложений Java с Платформой удостоверений Майкрософт | Azure
 description: Узнайте, как реализовать единый вход Майкрософт на веб-приложении Java с помощью OpenID Connect
 services: active-directory
-documentationcenter: dev-center-name
 author: sangonzal
-editor: ''
-ms.assetid: 820acdb7-d316-4c3b-8de9-79df48ba3b06
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: quickstart
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 10/09/2019
 ms.author: sagonzal
 ms.custom: aaddev, scenarios:getting-started, languages:Java
-ms.openlocfilehash: 6645fa30772d7e1556f7a1aae76c7189577c3c1d
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 1a5401ee76f60c9b9c2a75561cad8f6571d3b308
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74452612"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74920707"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-java-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Java с помощью учетной записи Майкрософт
 

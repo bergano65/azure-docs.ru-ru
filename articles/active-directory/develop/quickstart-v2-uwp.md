@@ -2,27 +2,22 @@
 title: Краткое руководство. Использование приложений Windows UWP с платформой удостоверений Майкрософт | Azure
 description: Узнайте, как приложение универсальной платформы Windows (XAML) может получить маркер доступа и вызвать API, защищенный конечной точкой платформы удостоверений Майкрософт.
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
-ms.assetid: 820acdb7-d316-4c3b-8de9-79df48ba3b06
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: quickstart
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/16/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:UWP
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad7afc2a4936737cf1cb3fd08bc69289b9cfc90a
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 996bc35820d35e031056207adeb707a7ea98a763
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74379789"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74920435"
 ---
 # <a name="quickstart-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Краткое руководство. Вызов API Microsoft Graph из приложения для универсальной платформы Windows (UWP)
 

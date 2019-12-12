@@ -8,13 +8,13 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 10/28/2019
+ms.date: 12/09/2019
 ms.author: erhopf
-ms.openlocfilehash: 3f14d874b7448f0c4a835f89689038103098bf80
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: a5e8f951fbcfe1d0230b0b0ce55b4eba43024531
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74817468"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74981063"
 ---
 Если вы предпочитаете сразу перейти к работе, просмотрите или скачайте все <a href="https://aka.ms/speech/github-python">образцы для пакета SDK службы "Речь" для Python</a> на сайте GitHub. В противном случае ознакомьтесь с инструкциями.
