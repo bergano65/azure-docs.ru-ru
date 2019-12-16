@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 03/12/2019
+ms.date: 12/09/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 9aa8fc4c6b27c2a2c7d11a95ddb2ecca347ec0e0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 4a902e869ed9fd2ae9274f0ad8eee11e43b8edc6
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57858840"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74974331"
 ---
 # <a name="quickstart-use-ruby-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с использованием Ruby  
 
@@ -43,7 +43,7 @@ require 'json'
 
 ## <a name="define-variables"></a>Определение переменных
 
-Прежде чем продолжить, необходимо задать несколько переменных. Убедитесь, что `$uri` и `path` указаны правильно, и замените значение `accessKey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение параметра `term`.
+Прежде чем продолжить, необходимо задать несколько переменных. В качестве `uri` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса. Убедитесь, что `uri` и `path` указаны правильно, и замените значение `accessKey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение параметра `term`.
 
 ```ruby
 accessKey = "YOUR_SUBSCRIPTION_KEY"

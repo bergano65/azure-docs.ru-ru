@@ -1,20 +1,19 @@
 ---
 title: Краткое руководство. Apache Hive в Azure HDInsight с помощью Apache Zeppelin
 description: Из этого краткого руководства вы узнаете, как использовать Apache Zeppelin для выполнения запросов Apache Hive.
-keywords: hdinsight hadoop, hive, interactive query, LLAP
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: quickstart
-ms.date: 05/06/2019
-ms.author: hrasheed
-ms.openlocfilehash: 36d9e9b34deb4bc6cd5f599cfe2d09a12f680730
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.custom: hdinsightactive
+ms.date: 12/03/2019
+ms.openlocfilehash: 915aca0e95fce05f74477b526de047c829c7f512
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73494291"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74890405"
 ---
 # <a name="quickstart-execute-apache-hive-queries-in-azure-hdinsight-with-apache-zeppelin"></a>Краткое руководство. Выполнение запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin
 
@@ -71,9 +70,47 @@ ms.locfileid: "73494291"
 
     По сравнению с обычным Hive, результаты запроса возвращаются намного быстрее.
 
+### <a name="additional-examples"></a>Дополнительные примеры
+
+1. Создайте таблицу. Выполните приведенный ниже код в записной книжке Zeppelin.
+
+    ```hql
+    %jdbc(hive)
+    CREATE EXTERNAL TABLE log4jLogs (
+        t1 string,
+        t2 string,
+        t3 string,
+        t4 string,
+        t5 string,
+        t6 string,
+        t7 string)
+    ROW FORMAT DELIMITED
+    FIELDS TERMINATED BY ' '
+    STORED AS TEXTFILE;
+    ```
+
+1. Загрузите данные в новую таблицу. Выполните приведенный ниже код в записной книжке Zeppelin.
+
+    ```hql
+    %jdbc(hive)
+    LOAD DATA
+    INPATH 'wasbs:///example/data/sample.log'
+    INTO TABLE log4jLogs;
+    ```
+
+1. Вставьте одну запись. Выполните приведенный ниже код в записной книжке Zeppelin.
+
+    ```hql
+    %jdbc(hive)
+    INSERT INTO TABLE log4jLogs2
+    VALUES ('A', 'B', 'C', 'D', 'E', 'F', 'G');
+    ```
+
+Дополнительные сведения о синтаксисе см. в [руководстве по языку Hive](https://cwiki.apache.org/confluence/display/Hive/LanguageManual).
+
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-После завершения работы с этим кратким руководством кластер можно удалить. В случае с HDInsight ваши данные хранятся в службе хранилища Azure, что позволяет безопасно удалить неиспользуемый кластер. Плата за кластеры HDInsight взимается, даже когда они не используются. Поскольку стоимость кластера во много раз превышает стоимость хранилища, экономически целесообразно удалять неиспользуемые кластеры.
+После завершения работы с этим кратким руководством кластер можно удалить. В случае с HDInsight ваши данные хранятся в службе хранилища Azure, что позволяет безопасно удалить неиспользуемый кластер. Плата за кластеры HDInsight взимается, даже когда они не используются. Так как затраты на кластер во много раз превышают затраты на хранилище, экономически целесообразно удалять неиспользуемые кластеры.
 
 Инструкции по удалению кластера см. в статье [Delete an HDInsight cluster using your browser, PowerShell, or the Azure CLI](../hdinsight-delete-cluster.md) (Удаление кластера HDInsight с помощью браузера, PowerShell или Azure CLI).
 

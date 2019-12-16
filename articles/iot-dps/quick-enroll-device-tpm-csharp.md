@@ -1,6 +1,6 @@
 ---
 title: Регистрация устройств TPM в службе подготовки устройств Azure с помощью C#
-description: Краткое руководство. Регистрация устройств TPM в службе "Подготовка устройств к добавлению в Центр Интернета вещей" с помощью пакета SDK для служб C#. В этом кратком руководстве используется индивидуальная регистрация.
+description: Краткое руководство. Регистрация устройств TPM в Подготовке устройств к добавлению в Центр Интернета вещей с помощью пакета SDK для службы C#. В этом кратком руководстве используется индивидуальная регистрация.
 author: wesmc7777
 ms.author: wesmc
 ms.date: 11/08/2019
@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: a95a50e5931f42e442e11fe593a151dd273449e8
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: ee1b803459e0c81b86021b617a29e0b29ee19909
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74423006"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976848"
 ---
 # <a name="quickstart-enroll-tpm-device-to-iot-hub-device-provisioning-service-using-c-service-sdk"></a>Краткое руководство. Регистрация устройств TPM в службе "Подготовка устройств к добавлению в Центр Интернета вещей" пакета SDK для служб C#
 

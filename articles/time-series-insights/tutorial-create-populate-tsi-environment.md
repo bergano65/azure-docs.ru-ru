@@ -7,14 +7,14 @@ ms.author: dpalled
 manager: cshankar
 ms.service: time-series-insights
 ms.topic: tutorial
-ms.date: 10/16/2019
+ms.date: 12/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: fad850da6a7fccb6b97b86532a8d246049942a8b
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 387f3df7313c26c5cd8f7fee7c9b58ec3b5c4552
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74014658"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74872415"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-environment"></a>Руководство по Создание среды службы "Аналитика временных рядов Azure"
 
@@ -55,11 +55,11 @@ ms.locfileid: "74014658"
 
 Сначала вам нужно создать решение для имитации устройств, которое будет создавать тестовые данные для заполнения среды Аналитики временных рядов.
 
-1. В отдельном окне или вкладке перейдите по адресу [azureiotsolutions.com](https://www.azureiotsolutions.com). Выполните вход с той же учетной записью подписки Azure и выберите акселератор решения **Имитация устройств**. Щелкните **Попробовать сейчас**.
+1. В отдельном окне или вкладке перейдите по адресу [azureiotsolutions.com](https://www.azureiotsolutions.com). Выполните вход с той же учетной записью подписки Azure и выберите акселератор решения **Имитация устройств**.
 
-   [![Запуск акселератора "Имитация устройств"](media/tutorial-create-populate-tsi-environment/sa-main.png)](media/tutorial-create-populate-tsi-environment/sa-main.png#lightbox)
+   [![Запуск акселератора "Имитация устройств"](media/tutorial-create-populate-tsi-environment/iot-solution-accelerators-landing-page.png)](media/tutorial-create-populate-tsi-environment/iot-solution-accelerators-landing-page.png#lightbox)
 
-1. Введите необходимые параметры на странице **Create Device Simulation solution** (Создание решения для имитации устройств).
+1.  Щелкните **Попробовать сейчас**. Затем введите необходимые параметры на странице **Создание решения для имитации устройств**.
 
    Параметр|ОПИСАНИЕ
    ---|---
@@ -70,18 +70,18 @@ ms.locfileid: "74014658"
 
    По завершении выберите параметр **Создать**, чтобы подготовить ресурсы решения Azure. Этот процесс может занять около 20 минут.
 
-   [![Подготовка решения для имитации устройств](media/tutorial-create-populate-tsi-environment/sa-create-device-sim-solution.png)](media/tutorial-create-populate-tsi-environment/sa-create-device-sim-solution.png#lightbox)
+   [![Подготовка решения для имитации устройств](media/tutorial-create-populate-tsi-environment/iot-solution-accelerators-configuration.png)](media/tutorial-create-populate-tsi-environment/iot-solution-accelerators-configuration.png#lightbox)
 
-1. Когда подготовка завершится, текст над новым решением **Подготовка** изменится на **Готово**.
+1. По завершении подготовки вы увидите два обновления, которые будут показывать, что состояние развертывания изменилось с **Подготовка** на **Готово**. 
 
    >[!IMPORTANT]
-   > Еще не время щелкать **Запуск**! Оставьте эту веб-страницу открытой, так как она вам понадобится позже.
+   > Пока не используйте акселератор решений! Оставьте эту веб-страницу открытой, так как она вам понадобится позже.
 
-   [![Подготовка решения для имитации устройств завершена](media/tutorial-create-populate-tsi-environment/sa-create-device-sim-solution-dashboard-ready.png)](media/tutorial-create-populate-tsi-environment/sa-create-device-sim-solution-dashboard-ready.png#lightbox)
+   [![Подготовка решения для имитации устройств завершена](media/tutorial-create-populate-tsi-environment/iot-solution-accelerator-ready.png)](media/tutorial-create-populate-tsi-environment/iot-solution-accelerator-ready.png#lightbox)
 
 1. Теперь можно проверить созданные ресурсы на портале Azure. На странице **Группы ресурсов** вы увидите новую группу ресурсов с именем, которое совпадает с указанным выше **именем решения**. Запишите ресурсы, созданные для имитации устройства.
 
-   [![Ресурсы для имитации устройств](media/tutorial-create-populate-tsi-environment/ap-device-sim-solution-resources.png)](media/tutorial-create-populate-tsi-environment/ap-device-sim-solution-resources.png#lightbox)
+   [![Ресурсы для имитации устройств](media/tutorial-create-populate-tsi-environment/tsi-device-sim-solution-resources.png)](media/tutorial-create-populate-tsi-environment/tsi-device-sim-solution-resources.png#lightbox)
 
 ## <a name="create-an-environment"></a>Создание среды
 
@@ -91,7 +91,7 @@ ms.locfileid: "74014658"
 1. Щелкните **+Создать ресурс** слева вверху. 
 1. Выберите категорию **Интернет вещей**, а затем щелкните **Аналитика временных рядов**. 
 
-   [![Выбор ресурса среды Time Series Insights](media/tutorial-create-populate-tsi-environment/ap-create-resource-tsi.png)](media/tutorial-create-populate-tsi-environment/ap-create-resource-tsi.png#lightbox)
+   [![Выбор ресурса среды Time Series Insights](media/tutorial-create-populate-tsi-environment/tsi-create-new-environment.png)](media/tutorial-create-populate-tsi-environment/tsi-create-new-environment.png#lightbox)
 
 1. На странице **Окружение аналитики временных рядов** введите значения для обязательных параметров.
 
@@ -106,17 +106,17 @@ ms.locfileid: "74014658"
 
    Когда завершите, выберите **Далее: источник события**, чтобы перейти к следующему шагу.
 
-   [![Создание ресурса среды Аналитики временных рядов](media/tutorial-create-populate-tsi-environment/ap-create-resource-tsi-params.png)](media/tutorial-create-populate-tsi-environment/ap-create-resource-tsi-params.png#lightbox)
+   [![Создание ресурса среды Аналитики временных рядов](media/tutorial-create-populate-tsi-environment/tsi-create-resource-tsi-params.png)](media/tutorial-create-populate-tsi-environment/tsi-create-resource-tsi-params.png#lightbox)
 
 1. Теперь подключите среду Аналитики временных рядов к Центру Интернета вещей, созданному акселератором решений. Задайте значение `Select existing` для параметра **Выберите концентратор**. Затем выберите Центр Интернета вещей, созданный акселератором решений, при настройке параметра **Имя Центра Интернета вещей**.
 
-   [![Подключение среды Аналитики временных рядов к созданному Центру Интернета вещей](media/tutorial-create-populate-tsi-environment/ap-create-resource-iot-hub.png)](media/tutorial-create-populate-tsi-environment/ap-create-resource-iot-hub.png#lightbox)
+   [![Подключение среды Аналитики временных рядов к созданному Центру Интернета вещей](media/tutorial-create-populate-tsi-environment/tsi-create-resource-iot-hub.png)](media/tutorial-create-populate-tsi-environment/tsi-create-resource-iot-hub.png#lightbox)
 
    Наконец, выберите **Просмотр + создание**.
 
 1. Используйте панель **Уведомления**, чтобы отслеживать выполнение развертывания. 
 
-   [![Успешное развертывание среды Аналитики временных рядов](media/tutorial-create-populate-tsi-environment/ap-create-resource-tsi-deployment-succeeded.png)](media/tutorial-create-populate-tsi-environment/ap-create-resource-tsi-deployment-succeeded.png#lightbox)
+   [![Успешное развертывание среды Аналитики временных рядов](media/tutorial-create-populate-tsi-environment/create-resource-tsi-deployment-succeeded.png)](media/tutorial-create-populate-tsi-environment/create-resource-tsi-deployment-succeeded.png#lightbox)
 
 ## <a name="run-device-simulation"></a>Запуск имитации устройства
 
@@ -126,19 +126,19 @@ ms.locfileid: "74014658"
 
 1. Вернитесь на [панель мониторинга акселератора решений](https://www.azureiotsolutions.com/Accelerators#dashboard). При необходимости войдите в систему с той же учетной записью Azure, которую вы использовали ранее в этом руководстве. Выберите свое "решение устройства", а затем **перейдите к акселератору решений**, чтобы запустить развернутое решение.
 
-     [![Панель мониторинга акселераторов решений](media/tutorial-create-populate-tsi-environment/sa-create-device-sim-solution-dashboard.png)](media/tutorial-create-populate-tsi-environment/sa-create-device-sim-solution-dashboard.png#lightbox)
+   [![Панель мониторинга акселераторов решений](media/tutorial-create-populate-tsi-environment/iot-solution-accelerator-ready.png)](media/tutorial-create-populate-tsi-environment/iot-solution-accelerator-ready.png#lightbox)
 
-1. Веб-приложение имитации устройства начинается с отправления запроса на предоставление веб-приложению разрешения на вход и чтение своего профиля. Это разрешение позволяет приложению получать сведения о профиле пользователя, требуемые для работы приложения.
+1. Веб-приложение имитации устройства начинается с отправления запроса на предоставление веб-приложению **разрешения на вход и чтение вашего профиля**. Это разрешение позволяет приложению получать сведения о профиле пользователя, требуемые для работы приложения.
 
-     [![Согласие для веб-приложения имитации устройств](media/tutorial-create-populate-tsi-environment/sawa-signin-consent.png)](media/tutorial-create-populate-tsi-environment/sawa-signin-consent.png#lightbox)
+   [![Согласие для веб-приложения имитации устройств](media/tutorial-create-populate-tsi-environment/sawa-signin-consent.png)](media/tutorial-create-populate-tsi-environment/sawa-signin-consent.png#lightbox)
 
-1. Когда загрузится страница **Simulation setup** (Настройка имитации), введите обязательные параметры.
+1. Щелкните **+Новая имитация**. Когда загрузится страница **Simulation setup** (Настройка имитации), введите обязательные параметры.
 
    Параметр|ОПИСАНИЕ
    ---|---
    **Целевой Центр Интернета вещей** | Выберите **Use pre-provisioned IoT Hub** (Использовать предварительно подготовленный Центр Интернета вещей).
    **Модель устройства** | Выберите **Chiller**.
-   **Количество устройств**  | Введите значение `1000` в поле **Количество**.
+   **Количество устройств**  | Введите значение `10` в поле **Количество**.
    **Частота получения телеметрии** | Введите `10` секунд.
    **Длительность имитации** | Выберите **End in:** (Завершается через) и введите `5` минут.
 

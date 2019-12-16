@@ -1,22 +1,22 @@
 ---
-title: Копирование данных из SQL Server в хранилище BLOB-объектов с помощью службы "Фабрика данных Azure"
+title: Копирование данных из SQL Server в хранилище BLOB-объектов с помощью портала Azure
 description: Узнайте, как копировать данные из локального хранилища данных в облако с помощью локальной среды выполнения интеграции в фабрике данных Azure.
 services: data-factory
-documentationcenter: ''
+ms.author: abnarain
 author: nabhishek
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
+ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 01/11/2018
-ms.author: abnarain
-ms.openlocfilehash: 09768e3b9bd1c2e6c9d4a5dbe95bb270b07266c0
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 5b9bed971ff239c0c4b0d1cb923e845bd76957da
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73683530"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74922918"
 ---
 # <a name="copy-data-from-an-on-premises-sql-server-database-to-azure-blob-storage"></a>Копирование данных из локальной базы данных SQL Server в хранилище BLOB-объектов Azure
 В этом руководстве вы создадите конвейер фабрики данных, в котором данные из локальной базы данных SQL Server копируются в хранилище BLOB-объектов Azure, с помощью пользовательского интерфейса службы "Фабрика данных Azure". Вы создадите и будете использовать локальную среду выполнения интеграции, которая перемещает данные между локальным и облачным хранилищами данных.

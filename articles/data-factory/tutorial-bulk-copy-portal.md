@@ -1,25 +1,25 @@
 ---
-title: 'Пакетное копирование данных с помощью службы "Фабрика данных Azure" '
+title: Пакетное копирование данных с помощью портала Azure
 description: Узнайте, как использовать фабрику данных Azure и действие копирования для копирования данных из исходного хранилища данных в хранилище данных назначения в пакетном режиме.
 services: data-factory
-documentationcenter: ''
+ms.author: jingwang
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: tutorial
+ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 06/22/2018
-ms.author: jingwang
-ms.openlocfilehash: aaa03e04167cc579cb19885a66db369a3e11176a
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: e0e6ffc45d55dc76abdbdf839958479b2ac5d40b
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74546909"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74926700"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure
+
 В этом руководстве показано **копирование нескольких таблиц из базы данных SQL Azure в хранилище данных SQL Azure**. Этот подход можно применить и в других сценариях. Например, копирование таблиц из SQL Server или Oracle в Базу данных SQL Azure, хранилище данных или большой двоичный объект Azure, копирование различных путей из большого двоичного объекта в таблицы Базы данных SQL Azure.
 
 > [!NOTE]

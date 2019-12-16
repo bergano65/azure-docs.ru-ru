@@ -4,16 +4,19 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 05/04/2019
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 8af8daa4233fe6461b4e129f56a063e7cc212245
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: a26f1207eccd615804babe230df689d27beae49f
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74454753"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74840788"
 ---
 # <a name="tutorial-automate-container-image-builds-in-the-cloud-when-you-commit-source-code"></a>Руководство. Автоматизация создания образов контейнеров в облаке при фиксации исходного кода
 
-Помимо [быстрых задач](container-registry-tutorial-quick-task.md), пакет "Задачи Реестра контейнеров Azure" поддерживает автоматическую сборку образов контейнеров Docker при фиксации исходного кода в репозитории Git.
+Помимо [быстрых задач](container-registry-tutorial-quick-task.md), пакет "Задачи Реестра контейнеров Azure" поддерживает автоматическую сборку образов контейнеров Docker при фиксации исходного кода в репозитории Git. Поддерживаемые контексты Git для Задач ACR включают общедоступные или частные репозитории GitHub или Azure.
+
+> [!NOTE]
+> Сейчас Задачи ACR не поддерживают триггеры фиксации или запроса на вытягивание в репозиториях GitHub Enterprise.
 
 В этом руководстве решение "Задачи Реестра контейнеров Azure" компилирует и отправляет один образ контейнера, указанный в Dockerfile, при фиксации исходного кода в репозитории Git. Чтобы создать [многошаговую задачу](container-registry-tasks-multi-step.md), в которой используется YAML-файл для определения действий по сборке, отправке и тестированию (при необходимости) нескольких контейнеров при фиксации кода, см. статью [Tutorial: Run a multi-step container workflow in the cloud when you commit source code](container-registry-tutorial-multistep-task.md) (Руководство. Запуск многошагового рабочего процесса в облаке при фиксации исходного кода). Обзор решения "Задачи ACR" см. в статье [Automate OS and framework patching with ACR Tasks](container-registry-tasks-overview.md) (Автоматизация установки исправлений для ОС и платформы с помощью службы "Задачи ACR").
 

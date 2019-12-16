@@ -2,27 +2,23 @@
 title: Сценарии проверки подлинности на платформе удостоверений Майкрософт | Azure
 description: Узнайте о потоках проверки подлинности и сценариях приложений для платформы удостоверений Майкрософт. Узнайте о типах приложений, которые могут выполнять проверку подлинности удостоверений, получать маркеры и вызывать защищенные API.
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: quickstart
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/27/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24c891c3de9126de6b833dea30c78c14b709384d
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: 969c7b6c86e09ec73ccf1ffa5cc4dc9703a3d25c
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74687747"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74963806"
 ---
 # <a name="authentication-flows-and-application-scenarios"></a>Потоки проверки подлинности и сценарии приложений
 

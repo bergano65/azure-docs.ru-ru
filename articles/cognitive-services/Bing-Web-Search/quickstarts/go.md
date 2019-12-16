@@ -8,22 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 03/12/2019
+ms.date: 12/09/2019
 ms.author: aahi
 ms.reviewer: nhoyadx@gmail.com, v-gedod, erhopf
 ms.custom: seodec2018
-ms.openlocfilehash: b7bf73c2948b302ec8294b7dc2ff2dc8f220c91b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 589f7884f390ae57df4e946bcd34ca3bda629ed8
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57843889"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978804"
 ---
 # <a name="quickstart-search-the-web-using-the-bing-web-search-rest-api-and-go"></a>Краткое руководство. Поиск в Интернете с помощью REST API Bing для поиска в Интернете и Go
 
 Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON. Это приложение Go отправляет поисковый запрос к API и показывает ответ. Хотя это приложение создается на языке Go, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
-
-См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим кратким руководством вам потребуется следующее:
@@ -113,7 +111,7 @@ type BingAnswer struct {
 
 ## <a name="declare-the-main-function-and-define-variables"></a>Объявление функции main и определение переменных  
 
-Этот код объявляет функцию main и задает необходимые переменные. Убедитесь, что конечная точка указана верно, и замените значение `token` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение параметра `searchTerm`.
+Этот код объявляет функцию main и задает необходимые переменные. В качестве `endpoint` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса. Убедитесь, что конечная точка указана верно, и замените значение `token` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение параметра `searchTerm`.
 
 ```go
 // Declare the main function. This is required for all Go programs.

@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 11/19/2019
+ms.date: 12/10/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 2c13bc79fccc74da431ba1a6399870b261b24c57
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.openlocfilehash: 6f5535a57fae847c8a376b8b39e43955675da739
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74196426"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74974790"
 ---
 # <a name="prepare-on-premises-machines-for-migration-to-azure"></a>Подготовка локальных компьютеров к миграции в Azure
 
@@ -99,7 +99,7 @@ ms.locfileid: "74196426"
 1. На локальной компьютере (не на сервере узла) откройте командную строку с повышенными привилегиями.
 2. Введите **diskpart**.
 3. Введите **SAN**. Если буква диска гостевой ОС не поддерживается, возвращается значение **Offline All** (Перевод всего в состояние "вне сети") или **Offline Shared** (Перевод в состояние "вне сети" общих ресурсов).
-4. В командной строке **DISKPART** введите **SANPOLICY=ONLINEALL**. Этот параметр гарантирует, что диски подключены к сети и доступны для чтения и записи.
+4. В командной строке **DISKPART** введите **SAN Policy=OnlineAll**. Этот параметр гарантирует, что диски подключены к сети и доступны для чтения и записи.
 5. Во время тестовой миграции вы можете проверить, сохраняются ли буквы дисков.
 
 

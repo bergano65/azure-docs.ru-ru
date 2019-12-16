@@ -1,6 +1,6 @@
 ---
 title: Подготовка имитированного устройства X.509 в Центре Интернета вещей Azure с помощью C#
-description: Краткое руководство. Создание и подготовка имитированного устройства X.509 с помощью пакета SDK для устройства C# для службы подготовки устройств к добавлению в Центр Интернета вещей. В этом кратком руководстве используется индивидуальная регистрация.
+description: Краткое руководство по созданию и подготовке имитированного устройства X.509 с помощью пакета SDK C# для устройства, который предназначен для Службы подготовки устройств к добавлению в Центр Интернета вещей (DPS). В этом кратком руководстве используется индивидуальная регистрация.
 author: wesmc7777
 ms.author: wesmc
 ms.date: 11/08/2018
@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 0513884e7869bc14627259ea98a85f4966147d9b
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 639ab07113a0e62cac43af5b79f052da1efd93ab
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74276332"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976525"
 ---
 # <a name="quickstart-create-and-provision-a-simulated-x509-device-using-c-device-sdk-for-iot-hub-device-provisioning-service"></a>Краткое руководство. Создание и подготовка имитированного устройства X.509 с помощью пакета SDK для устройства C# для службы подготовки устройств Центра Интернета вещей
 

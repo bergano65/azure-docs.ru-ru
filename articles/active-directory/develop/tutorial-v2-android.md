@@ -1,6 +1,6 @@
 ---
-title: Начало работы с Android и платформой удостоверений Майкрософт | Azure
-description: Получение маркера доступа для приложения Android и вызов API Microsoft Graph или API, которые требуют маркеры доступа от платформы удостоверений Майкрософт.
+title: Вход пользователей и вызов Microsoft Graph (Android) — платформа удостоверений Майкрософт | Azure
+description: Получение маркера доступа и вызов Microsoft Graph или API, которые требуют маркеры доступа от платформы удостоверений Майкрософт (Android)
 services: active-directory
 documentationcenter: dev-center-name
 author: tylermsft
@@ -16,12 +16,12 @@ ms.author: jmprieur
 ms.reviwer: brandwe
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5417c29b62414468064338a67b188c7b7f832ac5
-ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
+ms.openlocfilehash: 7feefc368815b1bfe57b67db2cd94702db799d78
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73242215"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74961563"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-from-an-android-app"></a>Руководство по Вход пользователей и вызов Microsoft Graph из приложения Android
 

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/13/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 63cc4b902c0bd0281228e23076be6e0a18461597
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 4d137a96a967e017c67da7dfabf25502de32ba7a
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72241417"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74970046"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-salesforce"></a>Руководство по Интеграции единого входа Azure Active Directory с Salesforce
 
@@ -46,9 +46,9 @@ ms.locfileid: "72241417"
 
 * Salesforce поддерживает единый вход, инициированный **поставщиком услуг**.
 
-* Salesforce поддерживает подготовку пользователей **JIT**
+* Salesforce поддерживает [**автоматическую** подготовку пользователей и ее отмену](salesforce-provisioning-tutorial.md) (рекомендуется).
 
-* Salesforce поддерживает [**автоматическую** подготовку пользователей](salesforce-provisioning-tutorial.md).
+* Salesforce поддерживает подготовку пользователей **JIT**
 
 * Теперь для мобильного приложения "Salesforce" можно настроить Azure AD для обеспечения единого входа. В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 

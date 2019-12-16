@@ -1,20 +1,20 @@
 ---
-title: Оптимизация пропускной способности при массовом импорте данных в учетную запись API SQL Azure Cosmos DB
-description: Узнайте, как создать консольное приложение .NET, которое оптимизирует подготовленную пропускную способность (количество единиц запроса (ЕЗ) в секунду), необходимую для импорта данных в Azure Cosmos DB.
+title: Массовый импорт данных в учетную запись API SQL Azure Cosmos DB с помощью пакета SDK для .NET
+description: Узнайте, как импортировать или принимать данные в Azure Cosmos DB, создав консольное приложение .NET, которое оптимизирует требуемую подготовленную пропускную способность (ЕЗ/с)
 author: ealsur
 ms.author: maquaran
 ms.service: cosmos-db
 ms.topic: tutorial
 ms.date: 11/04/2019
 ms.reviewer: sngun
-ms.openlocfilehash: d80d762338744c0ca783d1768bacb8443dbc5020
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 79771e082a4a6ffae15f33f636b0300e93bcdaba
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73606219"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74896277"
 ---
-# <a name="optimize-throughput-when-bulk-importing-data-to-azure-cosmos-db-sql-api-account"></a>Оптимизация пропускной способности при массовом импорте данных в учетную запись API SQL Azure Cosmos DB
+# <a name="bulk-import-data-to-azure-cosmos-db-sql-api-account-by-using-the-net-sdk"></a>Массовый импорт данных в учетную запись API SQL Azure Cosmos DB с помощью пакета SDK для .NET
 
 В этом руководстве описывается, как создать консольное приложение .NET, которое оптимизирует подготовленную пропускную способность (ЕЗ/с), необходимую для импорта данных в Azure Cosmos DB. В этом руководстве вы будете считывать данные из примера источника данных и импортировать их в контейнер Azure Cosmos.
 Для работы с этим руководством используется [версия 3.0 или более поздняя версия](https://www.nuget.org/packages/Microsoft.Azure.Cosmos) пакета SDK .NET для Azure Cosmos DB, предназначенного для .NET Framework или .NET Core.

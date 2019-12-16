@@ -1,6 +1,6 @@
 ---
 title: Учебник. Настройка устройства для Службы подготовки устройств к добавлению в Центр Интернета вещей Azure
-description: В этом учебнике показано, как настроить устройство для подготовки через Службу подготовки устройств к добавлению в Центр Интернета вещей во время производства устройства.
+description: В этом учебнике показано, как настроить устройство для подготовки с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей (DPS) на этапе производства устройства.
 author: wesmc7777
 ms.author: wesmc
 ms.date: 11/12/2019
@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: bdda46a89fc2bcf8b16b2ce771c6540c9ceaa3e0
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 337ac2f60809370e6a07b2b0403d21ef7230b034
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74701985"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976712"
 ---
 # <a name="tutorial-set-up-a-device-to-provision-using-the-azure-iot-hub-device-provisioning-service"></a>Руководство по Настройка устройства для подготовки с помощью службы подготовки устройств для Центра Интернета вещей
 

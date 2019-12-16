@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 03/12/2019
+ms.date: 12/09/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 95a27ff17ca74f930fc1a739c0eb94a90bd82ec4
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f45b6ce402a5f61faeabd1534d7e3562af81294c
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57834495"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74973872"
 ---
 # <a name="quickstart-search-the-web-using-the-bing-web-search-rest-api-and-nodejs"></a>Краткое руководство. Поиск в Интернете с помощью REST API Bing для поиска в Интернете и Node.js
 
@@ -57,7 +57,7 @@ if (!SUBSCRIPTION_KEY) {
 
 ## <a name="create-a-function-to-make-the-request"></a>Создание функции для выполнения запроса
 
-Эта функция будет формировать безопасный запрос GET, сохранять поисковые запросы в качестве параметров запроса в имени пути. `encodeURIComponent` используется для вывода недопустимых символов, после чего ключ подписки передается в заголовок. На обратный вызов будет получен [ответ](https://nodejs.org/dist/latest-v10.x/docs/api/http.html#http_class_http_serverresponse), который описывает событие `data` для агрегирования текста JSON, событие `error` для регистрации любых проблем и событие `end` для получения сведений о том, когда сообщение должно считаться полным. После завершения программа напечатает требуемые заголовки и текст сообщения. Цвета и их глубину можно настроить таким образом, чтобы они соответствовали вашим вкусам. Сама глубина `1` будет хорошим индикатором в ответе.
+Эта функция будет формировать безопасный запрос GET, сохранять поисковые запросы в качестве параметров запроса в имени пути. В качестве `hostname` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.  `encodeURIComponent` используется для вывода недопустимых символов, после чего ключ подписки передается в заголовок. На обратный вызов будет получен [ответ](https://nodejs.org/dist/latest-v10.x/docs/api/http.html#http_class_http_serverresponse), который описывает событие `data` для агрегирования текста JSON, событие `error` для регистрации любых проблем и событие `end` для получения сведений о том, когда сообщение должно считаться полным. После завершения программа напечатает требуемые заголовки и текст сообщения. Цвета и их глубину можно настроить таким образом, чтобы они соответствовали вашим вкусам. Сама глубина `1` будет хорошим индикатором в ответе.
 
 ```javascript
 function bingWebSearch(query) {

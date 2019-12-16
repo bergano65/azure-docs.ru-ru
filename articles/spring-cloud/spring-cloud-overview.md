@@ -6,22 +6,24 @@ ms.service: spring-cloud
 ms.topic: overview
 ms.date: 11/4/2019
 ms.author: jeconnoc
-ms.openlocfilehash: 9709d7edb7c48ccfdb551d0e837a098289a5097a
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 87bcea5e9ada4f095896c1ebe4cbe1928f158eb0
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73721266"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74895416"
 ---
 # <a name="what-is-azure-spring-cloud"></a>Сведения об Azure Spring Cloud
 
-Azure Spring Cloud позволяет легко развертывать в Azure приложения для микрослужб на основе Spring Boot без внесения изменений в код.  Благодаря Azure Spring Cloud разработчики могут сосредоточиться на коде, управляя жизненным циклом приложений Spring Cloud.  Spring Cloud обеспечивает управление жизненным циклом за счет комплексного мониторинга и диагностики, управления конфигурацией, обнаружения служб, интеграции CI/CD, выполнения развертываний по схеме Blue-Green и прочего.
+Azure Spring Cloud позволяет легко развертывать в Azure приложения для микрослужб на основе Spring Boot без внесения изменений в код.  Azure Spring Cloud обеспечивает управление жизненным циклом приложений Spring Cloud, благодаря чему разработчики могут сосредоточиться на коде.  Spring Cloud обеспечивает управление жизненным циклом за счет комплексного мониторинга и диагностики, управления конфигурацией, обнаружения служб, интеграции CI/CD, выполнения развертываний по схеме Blue-Green и прочего.
 
 Azure Spring Cloud, как часть экосистемы Azure, позволяет легко добавлять привязки к другим службам Azure, включая хранилище, базы данных, службы мониторинга и многое другое.
 
 Azure Spring Cloud в настоящее время предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам поэкспериментировать с новыми функциями до официального выпуска.  Функции и службы общедоступной предварительной версии не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request).
 
 Чтобы приступить к работе, ознакомьтесь с кратким руководство по запуску приложений Spring Cloud с помощью [Azure CLI](spring-cloud-quickstart-launch-app-cli.md), [портала Azure](spring-cloud-quickstart-launch-app-portal.md) или [Maven](spring-cloud-quickstart-launch-app-maven.md).
+
+Дополнительные примеры доступны на GitHub: [Примеры для Azure Spring Cloud](https://github.com/Azure-Samples/Azure-Spring-Cloud-Samples/tree/master/service-binding-cosmosdb-sql).
 
 ## <a name="application-configuration"></a>Конфигурация приложения
 

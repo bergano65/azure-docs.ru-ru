@@ -1,24 +1,25 @@
 ---
-title: 'Ветвление в конвейере службы "Фабрика данных Azure" '
+title: Ветвление и создание цепочки действий в конвейере с помощью портала Azure
 description: Узнайте, как контролировать поток данных в фабрике данных Azure с помощью ветвления и создания цепочки действий.
 services: data-factory
-documentationcenter: ''
 author: djpmsft
 ms.author: daperlov
-manager: jroth
+manager: anandsub
 ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
+ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 01/11/2018
-ms.openlocfilehash: aada9d02c624785750c3064b7ca31a863d4080c1
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 08f9310c2ffdb2e7b8d4249495c2ee90b522d694
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73683818"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74926780"
 ---
 # <a name="branching-and-chaining-activities-in-a-data-factory-pipeline"></a>Ветвления и создание цепочки действий в конвейере фабрики данных
+
 В этом руководстве создается конвейер фабрики данных, который демонстрирует некоторые функции потока управления. Этот конвейер просто копирует данные из контейнера в хранилище BLOB-объектов Azure в другой контейнер в той же учетной записи хранения. Если действие копирования завершается успешно, конвейер отправляет по электронной почте подробную информацию об успешной операции копирования (например, количество записанных данных). Если происходит сбой действия копирования, конвейер отправляет по электронной почте данные об ошибке копирования (например, текст сообщения об ошибке). В этом руководстве вы научитесь передавать параметры.
 
 Общий обзор сценария: ![Обзор](media/tutorial-control-flow-portal/overview.png)

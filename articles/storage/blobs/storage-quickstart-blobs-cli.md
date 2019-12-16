@@ -1,21 +1,22 @@
 ---
-title: Краткое руководство Azure. Создание большого двоичного объекта в хранилище объектов с помощью Azure CLI | Документация Майкрософт
+title: Краткое руководство. Создание большого двоичного объекта с помощью Azure CLI
+titleSuffix: Azure Storage
 description: В этом кратком руководстве вы узнаете, как с помощью Azure CLI передать большой двоичный объект в службу хранилища Azure, скачать большой двоичный объект и вывести список больших двоичных объектов в контейнере.
 services: storage
 author: tamram
 ms.custom: mvc
 ms.service: storage
 ms.topic: quickstart
-ms.date: 11/06/2019
+ms.date: 12/04/2019
 ms.author: tamram
-ms.openlocfilehash: 1f3143eced90f97c090c0005375ef50fe48c5f5f
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: c913cb978796abeed5766ffa030aaeb6142320ec
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747920"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892929"
 ---
-# <a name="quickstart-upload-download-and-list-blobs-using-the-azure-cli"></a>Краткое руководство. Передача, скачивание и составление списка больших двоичных объектов с помощью Azure CLI
+# <a name="quickstart-create-download-and-list-blobs-with-azure-cli"></a>Краткое руководство. Создание, скачивание и составление списка больших двоичных объектов с помощью Azure CLI
 
 Azure CLI — это интерфейс командной строки Azure для управления ресурсами Azure. Вы можете использовать его в браузере с Azure Cloud Shell. Его также можно установить в macOS, Linux или Windows и запускать из командной строки. В этом кратком руководстве содержатся сведения об использовании Azure CLI для отправки и скачивания данных в хранилище BLOB-объектов Azure и обратно.
 

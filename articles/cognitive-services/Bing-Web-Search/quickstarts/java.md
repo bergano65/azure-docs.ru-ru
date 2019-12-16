@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 07/22/2019
+ms.date: 12/09/2019
 ms.author: aahi
 ms.custom: seodec2018, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: f8a827cf19bec0796fc0e9743d1a2599071468af
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 8bdc6acb17cde29b99bad20a45f41d6bfc174363
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70899695"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976355"
 ---
 # <a name="quickstart-use-java-to-search-the-web-with-the-bing-web-search-rest-api-an-azure-cognitive-service"></a>Краткое руководство. Поиск в Интернете с помощью Java и REST API "Поиск в Интернете Bing", службы Azure для когнитивного поиска
 
@@ -73,7 +73,7 @@ public class BingWebSearch {
 
 ## <a name="define-variables"></a>Определение переменных
 
-Этот код задает `subscriptionKey`, `host`, `path` и `searchTerm`. Убедитесь, что конечная точка указана верно, и замените значение `subscriptionKey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение параметра `searchTerm`. Не забудьте добавить этот код в класс `BingWebSearch`, как было отмечено выше.
+Этот код задает `subscriptionKey`, `host`, `path` и `searchTerm`. В качестве `host` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса. Замените значение `subscriptionKey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение параметра `searchTerm`. Не забудьте добавить этот код в класс `BingWebSearch`, как было отмечено выше.
 
 ```java
 // Enter a valid subscription key.

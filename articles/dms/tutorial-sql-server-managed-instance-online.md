@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
 ms.date: 12/04/2019
-ms.openlocfilehash: d7a746c170d04ad17b86e8aca63384edffbe75ac
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 53c0601be29c5cac9bddc37158d705f07349323d
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74806802"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74975029"
 ---
 # <a name="tutorial-migrate-sql-server-to-an-azure-sql-database-managed-instance-online-using-dms"></a>Руководство по Перенос баз данных SQL Server в управляемый экземпляр Базы данных SQL Azure по сети с помощью DMS
 
@@ -214,7 +214,7 @@ Azure Database Migration Service можно использовать для пе
 
 
 > [!NOTE]
-  > Возможной причиной появления в Azure Database Migration Service ошибок "системная ошибка 53" или "системная ошибка 57" может быть невозможность доступа Azure Database Migration Service к общей папке Azure. При возникновении таких ошибок предоставьте доступ к хранилищу учетной записи из виртуальной сети, следуя [этим](https://docs.microsoft.com/azure/storage/common/storage-network-security?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network) инструкциям.
+  > Возможной причиной появления в Azure Database Migration Service ошибок "системная ошибка 53" или "системная ошибка 57" может быть невозможность доступа Azure Database Migration Service к общей папке Azure. При возникновении таких ошибок [предоставьте доступ к хранилищу учетной записи из виртуальной сети](https://docs.microsoft.com/azure/storage/common/storage-network-security?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network).
 
 
 2. Щелкните **Сохранить**.

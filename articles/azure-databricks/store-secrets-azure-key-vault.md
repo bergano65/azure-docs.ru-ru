@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: azure-databricks
 ms.topic: tutorial
 ms.date: 07/19/2019
-ms.openlocfilehash: f1472d7043a092f35e10fdedbf4c52740e87c51c
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 27e166a8798f851f6c086c025dd82957b2dcfb84
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74706143"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849281"
 ---
 # <a name="tutorial-access-azure-blob-storage-from-azure-databricks-using-azure-key-vault"></a>Руководство по Доступ к хранилищу BLOB-объектов Azure из Azure Databricks с помощью Azure Key Vault
 
@@ -129,7 +129,8 @@ ms.locfileid: "74706143"
 
 4. Как только ваше рабочее пространство Azure Databricks откроется в отдельном окне, добавьте **#secrets/createScope** к URL-адресу. URL должен иметь следующий формат: 
 
-   **https://<\location>.azuredatabricks.net/#secrets/createScope**.
+   **https://<\location>.azuredatabricks.net/?o=<\orgID>#secrets/createScope**.
+   
 
 5. Введите имя области, а также DNS-имя Azure Key Vault и идентификатор ресурса, сохраненный ранее. Сохраните имя области в текстовом редакторе для последующего использования в этом учебнике. Затем выберите **Создать**.
 

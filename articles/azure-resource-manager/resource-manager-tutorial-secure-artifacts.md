@@ -2,19 +2,19 @@
 title: Защита артефактов в шаблонах
 description: Узнайте, как защитить артефакты, которые используются в шаблонах Azure Resource Manager.
 author: mumian
-ms.date: 10/08/2019
+ms.date: 12/09/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: b37f7e284b655a362c5a4231a7c1da3719762644
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 1a9d209e843d8e9a1735a3c6907b00d85be6580b
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74326440"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74971743"
 ---
 # <a name="tutorial-secure-artifacts-in-azure-resource-manager-template-deployments"></a>Руководство. Защита артефактов в развертываниях шаблонов Azure Resource Manager
 
-Узнайте, как защитить артефакты, которые используются в шаблонах Azure Resource Manager, с помощью подписанных URL-адресов (SAS) учетной записи хранения Azure. Артефакты развертывания — это все файлы, помимо файла основного шаблона, которые необходимы для выполнения развертывания. Например, в [руководстве по импорту BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager](./resource-manager-tutorial-deploy-sql-extensions-bacpac.md) основной шаблон создает базу данных SQL Azure, а также вызывает BACPAC-файл для создания таблиц и добавления данных. BACPAC-файл является артефактом. Артефакт хранится в учетной записи хранения Azure с публичным доступом. В этом руководстве используется SAS для предоставления ограниченного доступа к BACPAC-файлу в учетной записи хранения Azure. Дополнительные сведения о подписанных URL-адресах см. в статье [Использование подписанных URL-адресов (SAS)](../storage/common/storage-dotnet-shared-access-signature-part-1.md).
+Узнайте, как защитить артефакты, которые используются в шаблонах Azure Resource Manager, с помощью подписанных URL-адресов (SAS) учетной записи хранения Azure. Артефакты развертывания — это все файлы, помимо файла основного шаблона, которые необходимы для выполнения развертывания. Например, в [руководстве по импорту BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager](./resource-manager-tutorial-deploy-sql-extensions-bacpac.md) основной шаблон создает базу данных SQL Azure, а также вызывает BACPAC-файл для создания таблиц и добавления данных. BACPAC-файл является артефактом и хранится в учетной записи хранения Azure. Для доступа к артефакту использовался ключ учетной записи хранения. В этом руководстве используется SAS для предоставления ограниченного доступа к BACPAC-файлу в учетной записи хранения Azure. Дополнительные сведения о подписанных URL-адресах см. в статье [Использование подписанных URL-адресов (SAS)](../storage/common/storage-dotnet-shared-access-signature-part-1.md).
 
 Чтобы узнать, как защитить связанные шаблоны, ознакомьтесь со статьей [Руководство. Создание связанных шаблонов Azure Resource Manager](./resource-manager-tutorial-create-linked-templates.md).
 
@@ -40,6 +40,7 @@ ms.locfileid: "74326440"
     ```azurecli-interactive
     openssl rand -base64 32
     ```
+
     Для защиты криптографических ключей и других секретов используйте Azure Key Vault. Дополнительные сведения см. в статье [Руководство. Интеграция с Azure Key Vault при развертывании шаблона Resource Manager](./resource-manager-tutorial-use-key-vault.md). Мы также рекомендуем обновлять пароль каждые три месяца.
 
 ## <a name="prepare-a-bacpac-file"></a>Подготовка BACPAC-файла
@@ -52,77 +53,63 @@ ms.locfileid: "74326440"
 * Передача BACPAC-файла в этот контейнер.
 * Получение маркера SAS из BACPAC-файла.
 
-Чтобы автоматизировать эти шаги с помощью скрипта PowerShell, ознакомьтесь со скриптом из раздела [Передача связанного шаблона](./resource-manager-tutorial-create-linked-templates.md#upload-the-linked-template).
+1. Выберите **Попробовать**, чтобы открыть Cloud Shell, а затем вставьте следующий скрипт PowerShell в окно оболочки.
 
-### <a name="download-the-bacpac-file"></a>Скачивание BACPAC-файла
+    ```azurepowershell-interactive
+    $projectName = Read-Host -Prompt "Enter a project name"   # This name is used to generate names for Azure resources, such as storage account name.
+    $location = Read-Host -Prompt "Enter a location (i.e. centralus)"
 
-Скачайте [BACPAC-файл](https://github.com/Azure/azure-docs-json-samples/raw/master/tutorial-sql-extension/SQLDatabaseExtension.bacpac) и сохраните его на локальный компьютер с таким именем — **SQLDatabaseExtension.bacpac**.
+    $resourceGroupName = $projectName + "rg"
+    $storageAccountName = $projectName + "store"
+    $containerName = "bacpacfile" # The name of the Blob container to be created.
 
-### <a name="create-a-storage-account"></a>Создание учетной записи хранения
+    $bacpacURL = "https://github.com/Azure/azure-docs-json-samples/raw/master/tutorial-sql-extension/SQLDatabaseExtension.bacpac"
+    $bacpacFileName = "SQLDatabaseExtension.bacpac" # A file name used for downloading and uploading the BACPAC file.
 
-1. Выберите следующее изображение, чтобы открыть шаблон Resource Manager на портале Azure.
+    # Download the bacpac file
+    Invoke-WebRequest -Uri $bacpacURL -OutFile "$home/$bacpacFileName"
 
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-storage-account-create%2fazuredeploy.json" target="_blank"><img src="./media/resource-manager-tutorial-secure-artifacts/deploy-to-azure.png" alt="Deploy to Azure"></a>
-2. Введите следующие свойства.
+    # Create a resource group
+    New-AzResourceGroup -Name $resourceGroupName -Location $location
 
-    * **Подписка**: Выберите подписку Azure.
-    * **Группа ресурсов**. Выберите **Создать** и назначьте ей имя. Группа ресурсов служит контейнером для ресурсов Azure для управления. В этом руководстве можно использовать ту же группу ресурсов для учетной записи хранения и базы данных SQL Azure. Запишите имя этой группы ресурсов. Оно понадобится при создании базы данных SQL Azure далее в руководстве.
-    * **Расположение**. Выберите регион. Например, **центральная часть США**.
-    * **Тип учетной записи хранения**. Используйте значение по умолчанию **Standard_LRS**.
-    * **Расположение**. Используйте значение по умолчанию **[resourceGroup().location]** . Это означает, что для учетной записи хранения используется расположение группы ресурсов.
-    * Выберите **I agree to the terms and conditions started above** (Я принимаю указанные выше условия).
-3. Щелкните **Приобрести**.
-4. Выберите значок уведомления (колокольчик) в правом верхнем углу портала, чтобы узнать состояние развертывания.
+    # Create a storage account
+    $storageAccount = New-AzStorageAccount `
+        -ResourceGroupName $resourceGroupName `
+        -Name $storageAccountName `
+        -Location $location `
+        -SkuName "Standard_LRS"
 
-    ![Руководство: панель уведомлений Resource Manager на портале](./media/resource-manager-tutorial-secure-artifacts/resource-manager-tutorial-portal-notifications-pane.png)
-5. После успешного развертывания учетной записи хранения выберите **Перейти к группе ресурсов** в области уведомлений, чтобы открыть группу ресурсов.
+    $context = $storageAccount.Context
 
-### <a name="create-a-blob-container"></a>Создание контейнера больших двоичных объектов
+    # Create a container
+    New-AzStorageContainer -Name $containerName -Context $context
 
-Чтобы файлы можно было передать, необходим контейнер больших двоичных объектов.
+    # Upload the bacpac file
+    Set-AzStorageBlobContent `
+        -Container $containerName `
+        -File "$home/$bacpacFileName" `
+        -Blob $bacpacFileName `
+        -Context $context
 
-1. Выберите учетную запись хранения, чтобы открыть ее. В группе ресурсов должна быть только одна учетная запись хранения. Имя учетной записи хранения отличается от того, которое отображено на следующем снимке экрана.
+    # Generate a SAS token
+    $bacpacURI = New-AzStorageBlobSASToken `
+        -Context $context `
+        -Container $containerName `
+        -Blob $bacpacFileName `
+        -Permission r `
+        -ExpiryTime (Get-Date).AddHours(8.0) `
+        -FullUri
 
-    ![Учетная запись хранения учебника Resource Manager](./media/resource-manager-tutorial-secure-artifacts/resource-manager-tutorial-storage-account.png)
+    $str = $bacpacURI.split("?")
 
-2. Выберите элемент **Большие двоичные объекты**.
+    Write-Host "You need the blob url and the SAS token later in the tutorial:"
+    Write-Host $str[0]
+    Write-Host (-join ("?", $str[1]))
 
-    ![Большие двоичные объекты учебника Resource Manager](./media/resource-manager-tutorial-secure-artifacts/resource-manager-tutorial-blobs.png)
-3. Выберите **+ Container** (+ Контейнер) в верхней части экрана, чтобы создать контейнер.
-4. Введите следующие значения.
+    Write-Host "Press [ENTER] to continue ..."
+    ```
 
-    * **Имя**. Введите **sqlbacpac**.
-    * **Уровень общего доступа**. Используйте значение по умолчанию **Закрытый (отсутствие анонимного доступа)** .
-5. Нажмите кнопку **ОК**.
-6. Выберите **sqlbacpac**, чтобы открыть созданный контейнер.
-
-### <a name="upload-the-bacpac-file-to-the-container"></a>Передача BACPAC-файла в контейнер
-
-1. Щелкните **Отправить**.
-2. Введите следующие значения.
-
-    * **Файлы**. Следуйте инструкциям для выбора скачанного ранее BACPAC-файла. Имя по умолчанию — **SQLDatabaseExtension.bacpac**.
-    * **Тип проверки подлинности**. Выберите **SAS**.  *SAS* — это значение по умолчанию.
-3. Щелкните **Отправить**.  После успешной отправки файла его имя должно быть указано в контейнере.
-
-### <a name="a-namegenerate-a-sas-token-generate-a-sas-token"></a><a name="generate-a-sas-token" />Создание маркера SAS
-
-1. Щелкните правой кнопкой мыши **SQLDatabaseExtension.bacpac** в контейнере, а затем выберите **Создать SAS**.
-2. Введите следующие значения.
-
-    * **Разрешение**. Конфигурация по умолчанию — **Чтение**.
-    * **Дата и время начала и завершения**. Значение по умолчанию позволяет использовать маркер SAS в течение восьми часов. Если для работы с этим руководством необходимо больше времени, обновите **срок действия**.
-    * **Разрешенные IP-адреса**. Оставьте это поле пустым.
-    * **Разрешенные протоколы**. Используйте значение по умолчанию — **HTTPS**.
-    * **Ключ подписывания**. Используйте значение по умолчанию — **Ключ 1**.
-3. Щелкните **Создать токен SAS BLOB-объекта и URL-адрес**.
-4. Скопируйте **URL-адрес SAS BLOB-объекта**. Имя файла **SQLDatabaseExtension.bacpac** находится в середине URL-адреса.  Имя файла разделяет URL-адрес на три части:
-
-   - **Расположение артефакта**: https://xxxxxxxxxxxxxx.blob.core.windows.net/sqlbacpac/. Убедитесь, что расположение заканчивается на "/".
-   - **Имя BACPAC-файла**. SQLDatabaseExtension.bacpac.
-   - **Маркер SAS расположения артефактов**. Убедитесь, что перед маркером стоит знак "?".
-
-     Эти три значения понадобятся в разделе [Развертывание шаблона](#deploy-the-template).
+1. Запишите URL-адрес BACPAC-файла и маркер SAS. Эти значения понадобятся при развертывании шаблона.
 
 ## <a name="open-an-existing-template"></a>Открытие имеющегося шаблона
 
@@ -132,15 +119,15 @@ ms.locfileid: "74326440"
 2. Скопируйте приведенный ниже URL-адрес и вставьте его в поле **Имя файла**.
 
     ```url
-    https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-sql-extension/azuredeploy.json
+    https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-sql-extension/azuredeploy2.json
     ```
+
 3. Чтобы открыть файл, выберите **Открыть**.
 
-    В шаблоне определено пять ресурсов:
+    В шаблоне определено четыре ресурса:
 
    * `Microsoft.Sql/servers`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/2015-05-01-preview/servers).
-   * `Microsoft.SQL/servers/securityAlertPolicies`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/2014-04-01/servers/databases/securityalertpolicies).
-   * `Microsoft.SQL/servers/filewallRules`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/2015-05-01-preview/servers/firewallrules).
+   * `Microsoft.SQL/servers/firewallRules`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/2015-05-01-preview/servers/firewallrules).
    * `Microsoft.SQL/servers/databases`.  Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/servers/databases).
    * `Microsoft.SQL/server/databases/extensions`.  Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/2014-04-01/servers/databases/extensions).
 
@@ -149,39 +136,30 @@ ms.locfileid: "74326440"
 
 ## <a name="edit-the-template"></a>Изменение шаблона
 
-Добавьте следующие дополнительные параметры:
+1. Замените определение параметра storageAccountKey следующим определением параметра:
 
-```json
-"_artifactsLocation": {
-    "type": "string",
-    "metadata": {
-        "description": "The base URI where artifacts required by this template are located."
-    }
-},
-"_artifactsLocationSasToken": {
-    "type": "securestring",
-    "metadata": {
-        "description": "The sasToken required to access _artifactsLocation."
+    ```json
+    "_artifactsLocationSasToken": {
+      "type": "securestring",
+      "metadata": {
+        "description": "Specifies the SAS token required to access the artifact location."
+      }
     },
-    "defaultValue": ""
-},
-"bacpacFileName": {
-    "type": "string",
-    "defaultValue": "SQLDatabaseExtension.bacpac",
-    "metadata": {
-        "description": "The bacpac for configure the database and tables."
-    }
-}
-```
+    ```
 
-![Руководство: параметры защиты артефактов Resource Manager](./media/resource-manager-tutorial-secure-artifacts/resource-manager-tutorial-secure-artifacts-parameters.png)
+    ![Руководство: параметры защиты артефактов Resource Manager](./media/resource-manager-tutorial-secure-artifacts/resource-manager-tutorial-secure-artifacts-parameters.png)
 
-Обновите значение двух следующих элементов:
+2. Обновите значение следующих трех элементов ресурса расширения SQL:
 
-```json
-"storageKey": "[parameters('_artifactsLocationSasToken')]",
-"storageUri": "[uri(parameters('_artifactsLocation'), parameters('bacpacFileName'))]",
-```
+    ```json
+    "storageKeyType": "SharedAccessKey",
+    "storageKey": "[parameters('_artifactsLocationSasToken')]",
+    "storageUri": "[parameters('bacpacUrl')]",
+    ```
+
+Завершенный шаблон выглядит следующим образом.
+
+[!code-json[](~/resourcemanager-templates/tutorial-sql-extension/azuredeploy3.json?range=1-106&highlight=38-43,95-97)]
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
@@ -190,27 +168,29 @@ ms.locfileid: "74326440"
 Дополнительные сведения о процедуре развертывания шаблона см. в [этом разделе](./resource-manager-tutorial-create-multiple-instances.md#deploy-the-template). Вместо этого используйте следующий сценарий развертывания PowerShell:
 
 ```azurepowershell
-$resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
-$location = Read-Host -Prompt "Enter the location (i.e. centralus)"
-$adminUsername = Read-Host -Prompt "Enter the virtual machine admin username"
+$projectName = Read-Host -Prompt "Enter the project name that is used earlier"   # This name is used to generate names for Azure resources, such as storage account name.
+$location = Read-Host -Prompt "Enter a location (i.e. centralus)"
+$adminUsername = Read-Host -Prompt "Enter the sql database admin username"
 $adminPassword = Read-Host -Prompt "Enter the admin password" -AsSecureString
-$artifactsLocation = Read-Host -Prompt "Enter the artifacts location"
+$bacpacUrl = Read-Host -Prompt "Enter the BACPAC url"
 $artifactsLocationSasToken = Read-Host -Prompt "Enter the artifacts location SAS token" -AsSecureString
-$bacpacFileName = Read-Host -Prompt "Enter the BACPAC file name"
 
-New-AzResourceGroup -Name $resourceGroupName -Location $location
+$resourceGroupName = $projectName + "rg"
+
+#New-AzResourceGroup -Name $resourceGroupName -Location $location
 New-AzResourceGroupDeployment `
     -ResourceGroupName $resourceGroupName `
     -adminUser $adminUsername `
     -adminPassword $adminPassword `
-    -_artifactsLocation $artifactsLocation `
     -_artifactsLocationSasToken $artifactsLocationSasToken `
-    -bacpacFileName $bacpacFileName `
+    -bacpacUrl $bacpacUrl `
     -TemplateFile "$HOME/azuredeploy.json"
+
+Write-Host "Press [ENTER] to continue ..."
 ```
 
 Используйте сгенерированный пароль. См. раздел [Предварительные требования](#prerequisites).
-Значения _artifactsLocation, _artifactsLocationSasToken и bacpacFileName см. в разделе [Generate a SAS token](#generate-a-sas-token) (Создание маркера SAS).
+Значения _artifactsLocation, _artifactsLocationSasToken и bacpacFileName см. в разделе [Подготовка BACPAC-файла](#prepare-a-bacpac-file).
 
 ## <a name="verify-the-deployment"></a>Проверка развертывания
 

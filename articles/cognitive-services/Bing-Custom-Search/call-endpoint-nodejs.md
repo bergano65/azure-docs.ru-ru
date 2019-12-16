@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-custom-search
 ms.topic: quickstart
-ms.date: 07/26/2019
+ms.date: 12/09/2019
 ms.author: aahi
-ms.openlocfilehash: e95b9aa8f01142065202e029c6298fc4c4cb1294
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 97bf62c61aee63ce97496e54b99ad641d6150876
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565734"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74972713"
 ---
 # <a name="quickstart-call-your-bing-custom-search-endpoint-using-nodejs"></a>Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" с помощью Node.js
 
@@ -45,7 +45,7 @@ ms.locfileid: "68565734"
 
 ## <a name="send-and-receive-a-search-request"></a>Отправка и получение поискового запроса 
 
-1. Создайте переменную для хранения сведений, отправляемых в запросе. Создайте URL-адрес запроса, добавив условие поиска к параметру запроса `q=` и идентификатор пользовательской конфигурации экземпляра поиска к `customconfig=`. Разделяйте параметры символом `&`. 
+1. Создайте переменную для хранения сведений, отправляемых в запросе. Создайте URL-адрес запроса, добавив условие поиска к параметру запроса `q=` и идентификатор пользовательской конфигурации экземпляра поиска к `customconfig=`. Разделяйте параметры символом `&`. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
 
     ```javascript
     var info = {

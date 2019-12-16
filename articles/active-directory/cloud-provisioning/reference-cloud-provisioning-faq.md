@@ -11,12 +11,12 @@ ms.date: 12/02/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93c88b167884c455ffb995f35356b121bce8a207
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: fbaafdce6f2510b58966f4b6c18e45a3fcd4a664
+ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74794994"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74997094"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Часто задаваемые вопросы по Azure Active Directory Connect
 
@@ -42,7 +42,7 @@ ms.locfileid: "74794994"
 
 **Вопрос. Как обновляется агент?**
 
-Агенты обновляются корпорацией Майкрософт автоматически. Это снижает нагрузку на ИТ-ресурсы в контексте тестирования и проверки новых версий агента. 
+Агенты обновляются корпорацией Майкрософт автоматически. Это снижает нагрузку на ИТ-отдел в контексте тестирования и проверки новых версий агента. 
 
 **Вопрос. Можно ли отключить автоматическое обновление?**
 

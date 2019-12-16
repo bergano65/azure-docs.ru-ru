@@ -1,22 +1,23 @@
 ---
-title: 'Добавочное копирование данных с помощью службы "Фабрика данных Azure" '
+title: Добавочное копирование данных
 description: В этих руководствах описывается добавочное копирование данных из исходного в целевое хранилище данных. В первом руководстве данные копируются из одной таблицы.
 services: data-factory
 documentationcenter: ''
 author: dearandyxu
-manager: craigg
+ms.author: yexu
+manager: anandsub
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
+ms.custom: seo-lt-2019
 ms.date: 01/22/2018
-ms.author: yexu
-ms.openlocfilehash: 42dcd6ecc6df1c9877581d89bf22724054e305d0
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: e87f8d648a617aab24008bd63596db31dd24ab68
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74217271"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74926440"
 ---
 # <a name="incrementally-load-data-from-a-source-data-store-to-a-destination-data-store"></a>Добавочная загрузка данных из исходного хранилища данных в целевое
 

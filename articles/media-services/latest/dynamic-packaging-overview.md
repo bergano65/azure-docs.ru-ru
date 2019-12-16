@@ -1,7 +1,7 @@
 ---
 title: Динамическая упаковка в Службах мультимедиа
 titleSuffix: Azure Media Services
-description: Общие сведения о технологии динамической упаковки в Службах мультимедиа Azure.
+description: В этой статье представлены общие сведения о технологии динамической упаковки в Службах мультимедиа Azure.
 author: Juliako
 manager: femila
 editor: ''
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: overview
 ms.date: 10/17/2019
 ms.author: juliako
-ms.openlocfilehash: 304a6168ee5a4c60369b541d4a8cc7ac961913b6
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: c12ebe307eb370e07b785b4379f82a4274964492
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73574889"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74977766"
 ---
 # <a name="dynamic-packaging-in-media-services"></a>Динамическая упаковка в Службах мультимедиа
 
@@ -269,6 +269,9 @@ QualityLevels(128041)/Manifest(aac_eng_2_128041_2_1,format=m3u8-aapl)
 ## <a name="dynamic-encryption"></a>Динамическое шифрование
 
 Вы можете использовать *динамическое шифрование*, чтобы динамически шифровать содержимое в режиме реального времени или по требованию с помощью AES-128 или трех основных систем управления цифровыми правами (DRM): Microsoft PlayReady, Google Widevine и Apple FairPlay. Авторизованным клиентам также предоставляется служба доставки ключей AES и лицензий DRM. Чтобы узнать больше, ознакомьтесь со статьей [о динамическом шифровании](content-protection-overview.md).
+
+> [!NOTE]
+> Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="more-information"></a>Дополнительные сведения
 

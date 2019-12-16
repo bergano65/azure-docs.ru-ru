@@ -10,12 +10,12 @@ keywords: служба автоматизации Azure, DSC, PowerShell, нас
 ms.date: 11/04/2019
 ms.custom: mvc
 ms.topic: quickstart
-ms.openlocfilehash: 7fb24d53876ab8c06fca4fbfe929c06a889335f3
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: e7a527fc290433390436eac3d4c291f2a32bf2b3
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74786356"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74951451"
 ---
 # <a name="quickstart-connect-machines-to-azure-using-azure-arc-for-servers---powershell"></a>Краткое руководство. Подключение компьютеров к Azure с помощью Azure Arc для серверов в PowerShell
 
@@ -55,6 +55,12 @@ Id                    : 5be92c87-01c4-42f5-bade-c1c10af87758
 Type                  :
 ```
 
+> [!NOTE] 
+> Правильное заполнение разрешений имени субъекта-службы может занять некоторое время. Выполнение следующего назначения ролей для ускоренного определения разрешений.
+> ``` PowerShell
+> New-AzRoleAssignment -RoleDefinitionName "Azure Connected Machine Onboarding" -ServicePrincipalName $sp.ApplicationId
+> ```
+
 Теперь получите пароль с помощью PowerShell.
 
 ```azurepowershell-interactive
@@ -66,8 +72,11 @@ $credential.GetNetworkCredential().password
 
 В сценарии подключения агента установки сделайте следующее:
 
-* Свойство **ApplicationId** используется для параметра `--service-principal-id` в агенте установки.
-* Свойство **password** используется для параметра `--service-principal-secret` в агенте установки.
+* Свойство **ApplicationId** используется для параметра `--service-principal-id` при подключении агента.
+* Свойство **password** используется для параметра `--service-principal-secret` при подключении агента.
+
+> [!NOTE]
+> Убедитесь, что для субъекта-службы используется свойство **ApplicationId**, а не **Id**. Свойство **Id** не будет работать.
 
 ## <a name="manually-install-the-agent-and-connect-to-azure"></a>Установка агента вручную и подключение к Azure
 
@@ -84,7 +93,6 @@ $credential.GetNetworkCredential().password
 > [!NOTE]
 > В общедоступной предварительной версии выпущен только один пакет, который подходит для Ubuntu 16.04 или 18.04.
 
-<!-- What about this aks? -->
 Самый простой вариант — зарегистрировать репозиторий пакетов, а затем установить пакет с помощью диспетчера пакетов дистрибутива.
 Этот bash-скрипт, расположенный в [https://aka.ms/azcmagent](https://aka.ms/azcmagent), выполняет следующие действия:
 

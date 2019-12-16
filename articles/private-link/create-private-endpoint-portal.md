@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: quickstart
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: 2cb3c1d798e48017604d72d8a438d6a1071199ea
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 22614b28023a0628fb12c170e934aaab4d1ddfe4
+ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74419765"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74899867"
 ---
 # <a name="quickstart-create-a-private-endpoint-using-azure-portal"></a>Краткое руководство. Создание частной конечной точки с помощью портала Azure
 
@@ -144,7 +144,7 @@ ms.locfileid: "74419765"
     | Subscription | Выберите свою подписку. |
     | группа ресурсов. | Выберите **myResourceGroup**. Вы создали ее в предыдущем разделе.|
     | **Подробности об экземпляре** |  |
-    | ИМЯ | Введите * myPrivateEndpoint*. Если это имя используется, создайте уникальное имя. |
+    | ИМЯ | Введите *myPrivateEndpoint*. Если это имя используется, создайте уникальное имя. |
     |Регион|Выберите **WestCentralUS**.|
     |||
 5. По завершении выберите **Next: Ресурс**.
@@ -177,7 +177,7 @@ ms.locfileid: "74419765"
 ## <a name="connect-to-a-vm-using-remote-desktop-rdp"></a>Подключение к виртуальной машине с помощью удаленного рабочего стола (RDP)
 
 
-После создания **myVm* подключитесь к ней через Интернет следующим образом: 
+После создания **myVm** подключитесь к ней через Интернет следующим образом: 
 
 1. На портале в строке поиска введите *myVm*.
 
@@ -185,7 +185,7 @@ ms.locfileid: "74419765"
 
 1. Щелкните **Скачать RDP-файл**. Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола (*RDP*).
 
-1. Откройте скачанный RDP-файл*.
+1. Откройте файл *downloaded.rdp*.
 
     1. При появлении запроса выберите **Подключиться**.
 

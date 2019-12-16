@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 10/28/2019
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 313332689b0f2df9698f868297c72be7d8bde5bb
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 54c6f920b581a0bbd00910a3b3ddeebecdbb595f
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74828764"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74954920"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -65,13 +65,18 @@ vcpkg install nlohmann-json
 
 ## <a name="create-and-configure-an-http-client"></a>Создание и настройка клиента HTTP
 Первое, что нам потребуется, — это HTTP-клиент с правильным базовым URL-адресом и настроенной проверкой подлинности.
-Вставьте этот код в `recognizeSpeech` [!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/from-blob/helloworld.cpp?range=191-197)].
+Вставьте этот код в `recognizeSpeech`.
+
+[!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/from-blob/helloworld.cpp?range=191-197)]
 
 ## <a name="generate-a-transcription-request"></a>Создание запроса на транскрибирование
-Далее создайте запрос на транскрибирование. Добавьте этот код в `recognizeSpeech` [!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/from-blob/helloworld.cpp?range=199-203)].
+Далее создайте запрос на транскрибирование. Добавьте этот код в `recognizeSpeech`.
+
+[!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/from-blob/helloworld.cpp?range=199-203)]
 
 ## <a name="send-the-request-and-check-its-status"></a>Отправка запроса и проверка его состояния
 Теперь отправьте запрос в службу "Речь" и проверьте исходный код ответа. Этот код отклика указывает, получила ли служба запрос. Служба вернет в заголовках ответа URL-адрес, по которому будет храниться состояние транскрибирования.
+
 [!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/from-blob/helloworld.cpp?range=204-216)]
 
 ## <a name="wait-for-the-transcription-to-complete"></a>Ожидание завершения транскрибирования
@@ -80,16 +85,20 @@ vcpkg install nlohmann-json
 Для проверки состояния извлекайте содержимое по URL-адресу, полученному при отправке запроса. После получения содержимого обратно десериализуйте его в один из вспомогательных классов, чтобы упростить взаимодействие с ним.
 
 Ниже приведен код опроса с отображением всех состояний, кроме состояний об успешном завершении.
+
 [!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/from-blob/helloworld.cpp?range=222-245,285-299)]
 
 ## <a name="display-the-transcription-results"></a>Отображение результатов транскрибирования
 После того как служба успешно завершит транскрибирование, результаты будут храниться по другому URL-адресу, который можно получить из ответа о состоянии.
 
 Мы скачаем содержимое, расположенное по этому URL-адресу, десериализуем JSON и переберем результаты, выводимые в виде отображаемого текста в ходе выполнения.
+
 [!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/from-blob/helloworld.cpp?range=246-284)]
 
 ## <a name="check-your-code"></a>Проверка кода
-На этом этапе код должен выглядеть так: (Мы добавили несколько комментариев к этой версии.) [!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/from-blob/helloworld.cpp?range=7-308)]
+На этом этапе код должен выглядеть так: (Мы добавили несколько комментариев к этой версии.)
+
+[!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/from-blob/helloworld.cpp?range=7-308)]
 
 ## <a name="build-and-run-your-app"></a>Создание и запуск приложения
 

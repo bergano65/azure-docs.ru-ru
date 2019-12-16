@@ -4,12 +4,12 @@ description: Сведения о добавлении выходной прив�
 ms.date: 07/22/2019
 ms.topic: quickstart
 ms.custom: mvc
-ms.openlocfilehash: bd899c5cc7aafc5b3349cf4cec9098a849665a2d
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 171479a0f60741b545a171315e99cc5e4e8bc843
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74227425"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849213"
 ---
 # <a name="connect-functions-to-azure-storage-using-visual-studio"></a>Подключение функций к службе хранилища Azure с помощью Visual Studio
 
@@ -23,7 +23,7 @@ ms.locfileid: "74227425"
 
 Перед началом работы с этой статьей необходимо выполнить следующие действия: 
 
- - Выполните инструкции, приведенные в первой части краткого руководства по Visual Studio [./functions-create-first-function-vs-code.md]. 
+ - Выполните [первую часть краткого руководства по Visual Studio](./functions-create-first-function-vs-code.md). 
 
 - Войдите в подписку Azure из Visual Studio.
 

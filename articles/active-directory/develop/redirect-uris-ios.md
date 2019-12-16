@@ -1,5 +1,5 @@
 ---
-title: Использование универсальных кодов ресурсов (URI) перенаправления с помощью библиотеки аутентификации Майкрософт
+title: Использование URI перенаправления с MSAL (iOS и macOS) | Azure
 titleSuffix: Microsoft identity platform
 description: Из этой статьи вы узнаете о различиях между библиотекой аутентификации Майкрософт для ObjectiveC (MSAL для iOS и macOS) и библиотекой аутентификации Azure AD для ObjectiveC (ADAL.ObjC) и о том, как выполнить перенос между ними.
 services: active-directory
@@ -18,12 +18,12 @@ ms.author: twhitney
 ms.reviewer: jak
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b78906a03eb9dc96fb58dea4ceabff953f2a3e4f
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: a401f019f38d00790b1975f7a0a68d6097c21a70
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72803788"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74920367"
 ---
 # <a name="using-redirect-uris-with-the-microsoft-authentication-library-for-ios-and-macos"></a>Использование URI перенаправления с помощью библиотеки аутентификации Майкрософт для iOS и macOS
 

@@ -1,16 +1,13 @@
 ---
-title: Создание одностраничного приложения AngularJS для входа и выхода с помощью Azure Active Directory | Документация Майкрософт
-description: Узнайте, как создать одностраничное приложение AngularJS, которое выполняет вход через Azure AD и вызывает API-интерфейсы, защищенные в Azure AD, по протоколу OAuth.
+title: Создание одностраничного приложения AngularJS для выполнения входа и выхода через Azure AD | Документация Майкрософт
+description: Узнайте, как создать одностраничное приложение AngularJS, которое выполняет вход и выход через Azure AD и вызывает API, защищенные в Azure AD, по протоколу OAuth.
 services: active-directory
-documentationcenter: ''
 author: rwike77
 manager: CelesteDG
-editor: ''
 ms.assetid: f2991054-8146-4718-a5f7-59b892230ad7
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.devlang: javascript
 ms.topic: quickstart
 ms.date: 10/25/2019
@@ -18,12 +15,12 @@ ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c239b88a67e1be19e3a95130839ab6fd4598fe77
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 6e66b51199d19ea6af2b88c48aa89a93c1ed731c
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73150043"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74963534"
 ---
 # <a name="quickstart-build-an-angularjs-single-page-app-for-sign-in-and-sign-out-with-azure-active-directory"></a>Краткое руководство. Создание одностраничного приложения AngularJS для входа и выхода с помощью Azure Active Directory
 

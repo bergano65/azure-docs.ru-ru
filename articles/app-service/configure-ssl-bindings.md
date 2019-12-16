@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 10/25/2019
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: b967e4cfad2444e39c7df8cfddcc2154bd48367d
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 60a4646b77f083590a6eb8a8648d6dea932f0bdd
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74670677"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849757"
 ---
 # <a name="secure-a-custom-dns-name-with-an-ssl-binding-in-azure-app-service"></a>Защита настраиваемого DNS-имени с помощью привязки SSL в Службе приложений Azure
 
@@ -107,6 +107,8 @@ ms.locfileid: "74670677"
 В разных браузерах перейдите по адресу `https://<your.custom.domain>`, чтобы проверить, как он обслуживает ваше приложение.
 
 ![Переход к приложению Azure на портале](./media/configure-ssl-bindings/app-with-custom-ssl.png)
+
+Код приложения может проверить протокол с помощью заголовка x-appservice-proto. Заголовок будет иметь значение `http` или `https`. 
 
 > [!NOTE]
 > Если приложение выдает ошибки проверки сертификата, вероятно, вы используете самозаверяющий сертификат.

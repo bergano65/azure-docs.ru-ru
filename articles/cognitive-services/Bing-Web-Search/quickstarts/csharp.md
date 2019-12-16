@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 03/12/2019
+ms.date: 12/09/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 20cb5f65ed33bc3e737bbba902ed2d891eaf83be
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 6c847af4f6938923abdfced4d5e8b842ae84eca6
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65823360"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978821"
 ---
 # <a name="quickstart-search-the-web-using-the-bing-web-search-rest-api-and-c"></a>Краткое руководство. Поиск в Интернете с помощью REST API Bing для поиска в Интернете и C#
 
@@ -62,7 +62,7 @@ namespace BingSearchApisQuickstart
 
 ## <a name="define-variables"></a>Определение переменных
 
-Прежде чем продолжить, необходимо задать несколько переменных. Убедитесь, что значение `uriBase` указано правильно, и замените значение `accessKey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение параметра `searchTerm`. Не забудьте добавить этот код в класс `Program`, как было отмечено выше.
+Прежде чем продолжить, необходимо задать несколько переменных.  В качестве `uriBase` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса. Убедитесь, что значение `uriBase` указано правильно, и замените значение `accessKey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение параметра `searchTerm`. Не забудьте добавить этот код в класс `Program`, как было отмечено выше.
 
 ```csharp
 // Enter a valid subscription key.

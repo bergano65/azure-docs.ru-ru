@@ -3,12 +3,12 @@ title: Руководство по Создание определения по�
 description: В рамках этого учебника вы создадите определение пользовательской политики для Политики Azure, чтобы применять пользовательские бизнес-правила для ресурсов Azure.
 ms.date: 11/25/2019
 ms.topic: tutorial
-ms.openlocfilehash: e30d47ed6e01c4fd8ff061398b1045f9446e466a
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 51899491d7a75dc41bdab94d17769393ab4a6659
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74483984"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74885455"
 ---
 # <a name="tutorial-create-a-custom-policy-definition"></a>Руководство по Создание определения пользовательской политики
 
@@ -200,35 +200,37 @@ az provider show --namespace Microsoft.Storage --expand "resourceTypes/aliases" 
 
 ### <a name="azure-resource-graph"></a>Azure Resource Graph
 
-[Azure Resource Graph](../../resource-graph/overview.md) — это новая служба. Она предлагает еще один способ выяснить свойства ресурсов Azure. Вот пример запроса в Resource Graph для просмотра сведений об отдельной учетной записи хранения.
+[Azure Resource Graph](../../resource-graph/overview.md) — это служба, которая предлагает еще один способ определения свойств ресурсов Azure. Вот пример запроса в Resource Graph для просмотра сведений об отдельной учетной записи хранения.
 
 ```kusto
-where type=~'microsoft.storage/storageaccounts'
+Resources
+| where type=~'microsoft.storage/storageaccounts'
 | limit 1
 ```
 
 ```azurecli-interactive
-az graph query -q "where type=~'microsoft.storage/storageaccounts' | limit 1"
+az graph query -q "Resources | where type=~'microsoft.storage/storageaccounts' | limit 1"
 ```
 
 ```azurepowershell-interactive
-Search-AzGraph -Query "where type=~'microsoft.storage/storageaccounts' | limit 1"
+Search-AzGraph -Query "Resources | where type=~'microsoft.storage/storageaccounts' | limit 1"
 ```
 
 Результат похож на тот, который был получен нами с использованием шаблонов Resource Manager и обозревателя ресурсов Azure. Однако результаты Azure Resource Graph могут включать сведения о [псевдониме](../concepts/definition-structure.md#aliases), _проецируя_ массив _псевдонимов_:
 
 ```kusto
-where type=~'microsoft.storage/storageaccounts'
+Resources
+| where type=~'microsoft.storage/storageaccounts'
 | limit 1
 | project aliases
 ```
 
 ```azurecli-interactive
-az graph query -q "where type=~'microsoft.storage/storageaccounts' | limit 1 | project aliases"
+az graph query -q "Resources | where type=~'microsoft.storage/storageaccounts' | limit 1 | project aliases"
 ```
 
 ```azurepowershell-interactive
-Search-AzGraph -Query "where type=~'microsoft.storage/storageaccounts' | limit 1 | project aliases"
+Search-AzGraph -Query "Resources | where type=~'microsoft.storage/storageaccounts' | limit 1 | project aliases"
 ```
 
 Вот пример выходных данных от учетной записи хранения для псевдонимов.

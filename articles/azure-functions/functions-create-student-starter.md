@@ -6,12 +6,12 @@ author: alexkarcher-msft
 ms.topic: quickstart
 ms.date: 02/22/2019
 ms.author: alkarche
-ms.openlocfilehash: b86ea2367a17baa8c57b8d0c0331c0cd3cfbb481
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: aa2e0e8be8805187ec1f5b8ea6498e90e2d5a7c4
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74227106"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976882"
 ---
 # <a name="create-a-function-using-azure-for-students-starter"></a>Создание функции с помощью службы "Начальный набор Microsoft Azure для учащихся"
 
@@ -121,7 +121,7 @@ ms.locfileid: "74227106"
     * [Поддерживаемые языки в планах высшего уровня см. здесь](supported-languages.md)
 * Windows — единственная поддерживаемая операционная система.
 * Масштаб будет ограничен [до одного бесплатного экземпляра уровня](https://azure.microsoft.com/pricing/details/app-service/windows/), выполняющегося ежедневно на протяжении не больше 60 минут. При получении HTTP-трафика вы сможете автоматически увеличить масштаб от 0 до 1 экземпляра без сервера, но не больше.
-* Поддерживается только [среда выполнения версии 2.x](functions-versions.md).
+* Поддерживается среда выполнения функций только [версии 2.x и выше](functions-versions.md).
 * Для редактирования и публикации функций поддерживаются все средства разработки. В их состав входят: VS Code, Visual Studio, Azure CLI и портал Azure. Если вы хотите использовать что-то кроме портала, необходимо сначала создать приложение на портале, а затем выбрать это приложение в качестве цели развертывания в предпочитаемом средстве.
 
 ## <a name="next-steps"></a>Дополнительная информация

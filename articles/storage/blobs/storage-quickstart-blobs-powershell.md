@@ -1,21 +1,22 @@
 ---
-title: Краткое руководство Azure. Создание большого двоичного объекта в хранилище объектов с помощью Azure PowerShell | Документация Майкрософт
+title: Краткое руководство. Создание большого двоичного объекта с помощью PowerShell
+titleSuffix: Azure Storage
 description: В рамках этого краткого руководства вы используете Azure PowerShell в хранилище объектов (больших двоичных объектов). отправите большой двоичный объект в службу хранилища Azure, скачаете его и составите список больших двоичных объектов в контейнере с помощью Azure PowerShell.
 services: storage
 author: tamram
 ms.custom: mvc
 ms.service: storage
 ms.topic: quickstart
-ms.date: 02/14/2019
+ms.date: 12/04/2019
 ms.author: tamram
-ms.openlocfilehash: b0e9cc37f6269c3b878e16b754ec3a49aee13f72
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: c5d32b91043d310e51143357ad51631463f7e991
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68698999"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892504"
 ---
-# <a name="quickstart-upload-download-and-list-blobs-by-using-azure-powershell"></a>Краткое руководство. Передача, скачивание и составление списка больших двоичных объектов с помощью Azure PowerShell
+# <a name="quickstart-upload-download-and-list-blobs-with-powershell"></a>Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью PowerShell
 
 С помощью модуля Azure PowerShell создайте ресурсы Azure и управляйте ими. Процессы создания ресурсов Azure и управления ими можно выполнить с помощью командной строки PowerShell или скриптов. В этом руководстве рассматривается использование PowerShell для передачи файлов между локальным диском и хранилищем BLOB-объектов Azure.
 

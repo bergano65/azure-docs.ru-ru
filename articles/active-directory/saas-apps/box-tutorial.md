@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/13/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b808e13ec37b9667a3ab1aaa233532a076bf4970
-ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
+ms.openlocfilehash: aceec8ad6ca23a1bd89b93a6442d48aa81597e55
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69558925"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74964180"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-box"></a>Руководство по интеграции единого входа Azure Active Directory с Box
 
@@ -45,8 +45,8 @@ ms.locfileid: "69558925"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Box поддерживает запущенный единый вход **пакета обновления**
+* Box поддерживает [**автоматическую** подготовку пользователей и ее отмену](https://docs.microsoft.com/azure/active-directory/saas-apps/box-userprovisioning-tutorial) (рекомендуется).
 * Box поддерживает **JIT**-подготовку пользователей
-* Box поддерживает [**автоматическую** подготовку пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/box-userprovisioning-tutorial)
 
 ## <a name="adding-box-from-the-gallery"></a>Добавление Box из коллекции
 

@@ -1,28 +1,23 @@
 ---
-title: Вызов веб-API ASP.NET, защищенного с помощью Azure AD — удостоверение Майкрософт
+title: Вызов защищенного веб-API ASP.NET Azure AD — Платформа удостоверений Майкрософт
 description: Из этого краткого руководства вы узнаете, как вызвать веб-API ASP.NET, защищенный с помощью Azure Active Directory, из приложения Windows Desktop (WPF). Клиент WPF выполняет проверку подлинности пользователя, запрашивает маркер доступа и вызывает веб-API.
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
-ms.assetid: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: quickstart
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e0fdeb2c1955eab18b440c3ef3bcac725ad92b6
-ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
+ms.openlocfilehash: fe3301c3c91343277997be1ee554ced76884274a
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73200257"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74963313"
 ---
 # <a name="quickstart-call-an-aspnet-web-api-protected-by-azure-ad"></a>Краткое руководство. Вызов веб-API ASP.NET, защищенного с помощью Azure AD
 

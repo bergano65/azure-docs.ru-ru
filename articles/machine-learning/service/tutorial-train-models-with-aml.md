@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 11/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4d16c07bf42c99b905868cb956d82e8723da61d6
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: ca0f64fe67865e18c47009779cf8bd307a21c961
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73581543"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978736"
 ---
 # <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn-using-azure-machine-learning"></a>Руководство по Обучение моделей классификации изображений с помощью данных MNIST и scikit-learn в Службе машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "73581543"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Пройдите [руководство по началу работы по созданию эксперимента Машинного обучения](tutorial-1st-experiment-sdk-setup.md), чтобы выполнить такие задачи:
+* Пройдите [руководство по созданию первого эксперимента Azure ML](tutorial-1st-experiment-sdk-setup.md), чтобы научиться выполнять такие задачи:
     * Создание рабочей области
     * выполните клонирование записной книжки с учебниками в папку в рабочей области;
     * Создайте виртуальную машину для записных книжек на основе облака.
@@ -430,7 +430,7 @@ print(model.name, model.id, model.version, sep='\t')
 Вычислительный кластер Машинного обучения Azure можно удалить. Но для него включено автомасштабирование с минимальным размером, равным нулю. Это означает, что этот ресурс не создает дополнительных расходов, когда он не используется.
 
 ```python
-# optionally, delete the Azure Machine Learning Compute cluster
+# Optionally, delete the Azure Machine Learning Compute cluster
 compute_target.delete()
 ```
 

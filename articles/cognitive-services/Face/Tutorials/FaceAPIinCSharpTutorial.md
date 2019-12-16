@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: tutorial
-ms.date: 09/06/2019
+ms.date: 12/05/2019
 ms.author: pafarley
-ms.openlocfilehash: 93932fac9a5e5d4c21adc99bd31e9366a9709cc2
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: a444294497b82f316e7407999f5203cd13878928
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70859111"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74977970"
 ---
-# <a name="tutorial-create-a-wpf-app-to-display-face-data-in-an-image"></a>Руководство по Создание приложения WPF для отображения данных о лицах на изображении
+# <a name="tutorial-create-a-windows-presentation-framework-wpf-app-to-display-face-data-in-an-image"></a>Руководство по созданию приложения Windows Presentation Framework (WPF) для отображения данных о лицах на изображении
 
-Из этого руководства вы узнаете, как с помощью API Распознавания лиц Azure, поставляемого через клиентский пакет SDK для .NET, распознавать лица на изображении, а затем представлять эти данные в пользовательском интерфейсе. Вы создадите приложение Windows Presentation Framework (WPF), которое распознает лица, рисует рамку вокруг них и отображает описание лица в строке состояния. 
+Из этого руководства вы узнаете, как с помощью API Распознавания лиц Azure, поставляемого через клиентский пакет SDK для .NET, распознавать лица на изображении, а затем представлять эти данные в пользовательском интерфейсе. Вы создадите приложение WPF, которое распознает лица, рисует рамку вокруг них и отображает описание лица в строке состояния. 
 
 В этом учебнике описаны следующие процедуры.
 

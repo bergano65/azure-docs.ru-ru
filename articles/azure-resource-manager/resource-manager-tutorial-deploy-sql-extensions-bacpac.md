@@ -2,15 +2,15 @@
 title: Импорт BACPAC-файлов SQL с помощью шаблонов
 description: Сведения о том, как использовать расширение Базы данных SQL для импорта BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager.
 author: mumian
-ms.date: 11/21/2019
+ms.date: 12/09/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 741521551335712400e5f61822d7dda31199d3df
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 9f5e2e402e13076dc538a9c9d55e5b67e0d86d4f
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74422164"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978917"
 ---
 # <a name="tutorial-import-sql-bacpac-files-with-azure-resource-manager-templates"></a>Руководство. Импорт BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager
 
@@ -44,17 +44,15 @@ ms.locfileid: "74422164"
 
 BACPAC-файл доступен на сайте [GitHub](https://github.com/Azure/azure-docs-json-samples/raw/master/tutorial-sql-extension/SQLDatabaseExtension.bacpac). Сведения о создании собственного файла см. в статье [Экспорт базы данных SQL Azure в BACPAC-файл](../sql-database/sql-database-export.md). Если вы решили опубликовать файл в своем расположении, необходимо обновить шаблон позже в этом руководстве.
 
-BACPAC-файл должен храниться в учетной записи службы хранилища Azure, прежде чем его можно будет импортировать с помощью шаблона Resource Manager.
+BACPAC-файл должен храниться в учетной записи службы хранилища Azure, прежде чем его можно будет импортировать с помощью шаблона Resource Manager. Следующий скрипт PowerShell подготавливает BACPAC-файл:
 
-1. Откройте [Cloud Shell](https://shell.azure.com).
-1. Выберите **Отправка и скачивание файлов**, а затем **Отправить**.
-1. Укажите приведенный ниже URL-адрес, а затем нажмите кнопку **ОК**.
+* Скачивание BACPAC-файла.
+* Создание учетной записи хранения Azure.
+* Создание контейнера больших двоичных объектов в учетной записи хранения.
+* Передача BACPAC-файла в этот контейнер.
+* Отображение ключа учетной записи хранения и URL-адреса большого двоичного объекта.
 
-    ```url
-    https://github.com/Azure/azure-docs-json-samples/raw/master/tutorial-sql-extension/SQLDatabaseExtension.bacpac
-    ```
-
-1. Скопируйте приведенный ниже скрипт PowerShell и вставьте его в окно оболочки.
+1. Выберите **Попробовать**, чтобы открыть Cloud Shell, а затем вставьте следующий скрипт PowerShell в окно оболочки.
 
     ```azurepowershell-interactive
     $projectName = Read-Host -Prompt "Enter a project name that is used to generate Azure resource names"
@@ -63,10 +61,16 @@ BACPAC-файл должен храниться в учетной записи �
     $resourceGroupName = "${projectName}rg"
     $storageAccountName = "${projectName}store"
     $containerName = "bacpacfiles"
-    $bacpacFile = "$HOME/SQLDatabaseExtension.bacpac"
-    $blobName = "SQLDatabaseExtension.bacpac"
+    $bacpacFileName = "SQLDatabaseExtension.bacpac"
+    $bacpacUrl = "https://github.com/Azure/azure-docs-json-samples/raw/master/tutorial-sql-extension/SQLDatabaseExtension.bacpac"
 
+    # Download the bacpac file
+    Invoke-WebRequest -Uri $bacpacUrl -OutFile "$HOME/$bacpacFileName"
+
+    # Create a resource group
     New-AzResourceGroup -Name $resourceGroupName -Location $location
+
+    # Create a storage account
     $storageAccount = New-AzStorageAccount -ResourceGroupName $resourceGroupName `
                                            -Name $storageAccountName `
                                            -SkuName Standard_LRS `
@@ -74,15 +78,17 @@ BACPAC-файл должен храниться в учетной записи �
     $storageAccountKey = (Get-AzStorageAccountKey -ResourceGroupName $resourceGroupName `
                                                   -Name $storageAccountName).Value[0]
 
+    # Create a container
     New-AzStorageContainer -Name $containerName -Context $storageAccount.Context
 
-    Set-AzStorageBlobContent -File $bacpacFile `
+    # Upload the BACPAC file to the container
+    Set-AzStorageBlobContent -File $HOME/$bacpacFileName `
                              -Container $containerName `
-                             -Blob $blobName `
+                             -Blob $bacpacFileName `
                              -Context $storageAccount.Context
 
     Write-Host "The storage account key is $storageAccountKey"
-    Write-Host "The BACPAC file URL is https://$storageAccountName.blob.core.windows.net/$containerName/$blobName"
+    Write-Host "The BACPAC file URL is https://$storageAccountName.blob.core.windows.net/$containerName/$bacpacFileName"
     Write-Host "Press [ENTER] to continue ..."
     ```
 
@@ -101,10 +107,9 @@ BACPAC-файл должен храниться в учетной записи �
 
 3. Чтобы открыть файл, выберите **Открыть**.
 
-    В шаблоне определено три ресурса:
+    В шаблоне определено два ресурса:
 
    * `Microsoft.Sql/servers`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/servers).
-   * `Microsoft.SQL/servers/securityAlertPolicies`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/servers/securityalertpolicies).
    * `Microsoft.SQL.servers/databases`.  Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.sql/servers/databases).
 
      Прежде чем настраивать шаблон, рекомендуется получить основные сведения о нем.
@@ -138,19 +143,21 @@ BACPAC-файл должен храниться в учетной записи �
     * Чтобы разрешить расширению Базы данных SQL импортировать BACPAC-файлы, необходимо разрешить трафик из служб Azure. Добавьте следующее определение правила брандмауэра в определение SQL Server:
 
         ```json
-        {
-          "type": "firewallrules",
-          "apiVersion": "2015-05-01-preview",
-          "name": "AllowAllAzureIps",
-          "location": "[parameters('location')]",
-          "dependsOn": [
-            "[variables('databaseServerName')]"
-          ],
-          "properties": {
-            "startIpAddress": "0.0.0.0",
-            "endIpAddress": "0.0.0.0"
+        "resources": [
+          {
+            "type": "firewallrules",
+            "apiVersion": "2015-05-01-preview",
+            "name": "AllowAllAzureIps",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+              "[parameters('databaseServerName')]"
+            ],
+            "properties": {
+              "startIpAddress": "0.0.0.0",
+              "endIpAddress": "0.0.0.0"
+            }
           }
-        }
+        ]
         ```
 
         Шаблон должен выглядеть так:
@@ -161,22 +168,22 @@ BACPAC-файл должен храниться в учетной записи �
 
         ```json
         "resources": [
-            {
-              "type": "extensions",
-              "apiVersion": "2014-04-01",
-              "name": "Import",
-              "dependsOn": [
-                "[resourceId('Microsoft.Sql/servers/databases', variables('databaseServerName'), variables('databaseName'))]"
-              ],
-              "properties": {
-                "storageKeyType": "StorageAccessKey",
-                "storageKey": "[parameters('storageAccountKey')]",
-                "storageUri": "[parameters('bacpacUrl')]",
-                "administratorLogin": "[variables('databaseServerAdminLogin')]",
-                "administratorLoginPassword": "[variables('databaseServerAdminLoginPassword')]",
-                "operationMode": "Import"
-              }
+          {
+            "type": "extensions",
+            "apiVersion": "2014-04-01",
+            "name": "Import",
+            "dependsOn": [
+              "[resourceId('Microsoft.Sql/servers/databases', parameters('databaseServerName'), parameters('databaseName'))]"
+            ],
+            "properties": {
+              "storageKeyType": "StorageAccessKey",
+              "storageKey": "[parameters('storageAccountKey')]",
+              "storageUri": "[parameters('bacpacUrl')]",
+              "administratorLogin": "[parameters('adminUser')]",
+              "administratorLoginPassword": "[parameters('adminPassword')]",
+              "operationMode": "Import"
             }
+          }
         ]
         ```
 
@@ -192,6 +199,10 @@ BACPAC-файл должен храниться в учетной записи �
         * **storageUri**. Укажите URL-адрес BACPAC-файла из учетной записи хранения.
         * **administratorLoginPassword**. Пароль администратора SQL. Используйте сгенерированный пароль. См. раздел [Предварительные требования](#prerequisites).
 
+Завершенный шаблон выглядит следующим образом.
+
+[!code-json[](~/resourcemanager-templates/tutorial-sql-extension/azuredeploy2.json?range=1-106&highlight=38-49,62-76,86-103)]
+
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
@@ -199,7 +210,7 @@ BACPAC-файл должен храниться в учетной записи �
 Дополнительные сведения о процедуре развертывания шаблона см. в [этом разделе](./resource-manager-tutorial-create-templates-with-dependent-resources.md#deploy-the-template). Вместо этого используйте следующий сценарий развертывания PowerShell:
 
 ```azurepowershell-interactive
-$projectName = Read-Host -Prompt "Enter a project name that is used to generate Azure resource names"
+$projectName = Read-Host -Prompt "Enter the same project name that is used earlier"
 $location = Read-Host -Prompt "Enter the location (i.e. centralus)"
 $adminUsername = Read-Host -Prompt "Enter the SQL admin username"
 $adminPassword = Read-Host -Prompt "Enter the admin password" -AsSecureString
@@ -207,7 +218,7 @@ $storageAccountKey = Read-Host -Prompt "Enter the storage account key"
 $bacpacUrl = Read-Host -Prompt "Enter the URL of the BACPAC file"
 $resourceGroupName = "${projectName}rg"
 
-New-AzResourceGroup -Name $resourceGroupName -Location $location
+#New-AzResourceGroup -Name $resourceGroupName -Location $location
 New-AzResourceGroupDeployment `
     -ResourceGroupName $resourceGroupName `
     -adminUser $adminUsername `

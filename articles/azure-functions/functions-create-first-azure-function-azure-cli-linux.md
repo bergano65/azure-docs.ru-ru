@@ -4,16 +4,16 @@ description: Из этой статьи вы узнаете, как создат
 ms.date: 03/12/2019
 ms.topic: quickstart
 ms.custom: mvc, fasttrack-edit
-ms.openlocfilehash: 19abfee69db53c560dfa2696d85f8c1c3d770c09
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 57c1b4a0ef5e8f030360bca6d69f66e8752f3da1
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74230810"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74964146"
 ---
 # <a name="quickstart-create-your-first-function-hosted-on-linux-using-command-line-tools"></a>Краткое руководство. Создание функции, выполняемой в Linux, с помощью инструментов командной строки
 
-Решение "Функции Azure" позволяет выполнять код в [бессерверной](https://azure.com/serverless) среде Linux без необходимости создавать виртуальную машину или публиковать веб-приложение. Для функций, выполняемых в Linux, необходима [среда выполнения Функций 2.x](functions-versions.md). Бессерверные функции выполняются в [Плане потребления](functions-scale.md#consumption-plan).
+Решение "Функции Azure" позволяет выполнять код в [бессерверной](https://azure.com/serverless) среде Linux без необходимости создавать виртуальную машину или публиковать веб-приложение. Для функций, выполняемых в Linux, требуется [среда выполнения Функций версии 2.x или более поздней версии](functions-versions.md). Бессерверные функции выполняются в [Плане потребления](functions-scale.md#consumption-plan).
 
 В этом кратком руководстве вы узнаете, как использовать Azure CLI для создания первого приложения-функции на платформе Linux. Код функции создается локально, а затем развертывается в Azure с помощью [Azure Functions Core Tools](functions-run-local.md).
 

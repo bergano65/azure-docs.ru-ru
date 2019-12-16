@@ -9,15 +9,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-image-search
 ms.topic: quickstart
-ms.date: 8/26/2019
+ms.date: 12/06/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: ef38013d2c5d7f41db0eaf8d6e444471387d7ff6
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 3778ec9bb44c1e78da152d4bde525884098fd445
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74327066"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930750"
 ---
 # <a name="quickstart-search-for-images-using-the-bing-image-search-rest-api-and-php"></a>Краткое руководство. Поиск изображений с помощью REST API Bing для поиска изображений и PHP
 
@@ -41,7 +41,7 @@ ms.locfileid: "74327066"
 
 1. Убедитесь, что поддержка безопасного HTTP включена в файле `php.ini`. В Windows этот файл находится в `C:\windows`.
 2. Создайте проект PHP в используемой вами интегрированной среде разработки или редакторе.
-3. Определите конечную точку API, ключ подписки и условие поиска.
+3. Определите конечную точку API, ключ подписки и условие поиска. Конечной точкой может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
 
     ```php
     $endpoint = 'https://api.cognitive.microsoft.com/bing/v7.0/images/search';
@@ -49,7 +49,8 @@ ms.locfileid: "74327066"
     $accessKey = 'enter key here';
     $term = 'tropical ocean';
     ```
-   ## <a name="construct-and-perform-an-http-request"></a>Создание и выполнение HTTP-запроса
+
+## <a name="construct-and-perform-an-http-request"></a>Создание и выполнение HTTP-запроса
 
 1. Используйте переменные из последнего шага, чтобы подготовить HTTP-запрос к API для поиска изображений.
 
@@ -59,6 +60,7 @@ ms.locfileid: "74327066"
                             'header' => $headers,
                             'method' => 'GET' ));
     ```
+
 2. Отправьте веб-запрос и получите ответ в формате JSON.
 
     ```php
@@ -70,16 +72,16 @@ ms.locfileid: "74327066"
 
 Обработайте и выведите ответ в формате JSON.
 
-    ```php
-    $headers = array();
-        foreach ($http_response_header as $k => $v) {
-            $h = explode(":", $v, 2);
-            if (isset($h[1]))
-                if (preg_match("/^BingAPIs-/", $h[0]) || preg_match("/^X-MSEdge-/", $h[0]))
-                    $headers[trim($h[0])] = trim($h[1]);
-        }
-        return array($headers, $result);
-    ```
+```php
+$headers = array();
+    foreach ($http_response_header as $k => $v) {
+        $h = explode(":", $v, 2);
+        if (isset($h[1]))
+            if (preg_match("/^BingAPIs-/", $h[0]) || preg_match("/^X-MSEdge-/", $h[0]))
+                $headers[trim($h[0])] = trim($h[1]);
+    }
+    return array($headers, $result);
+```
 
 ## <a name="example-json-response"></a>Пример ответа в формате JSON
 

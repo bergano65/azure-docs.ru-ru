@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 07/04/2019
+ms.date: 10/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4974f4e39b0b16971d0d666134618d5a1f64e11
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.openlocfilehash: 529c2a453bade8745a596b5cd2e374907a66f613
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68424325"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74893728"
 ---
 # <a name="tutorial-integrate-productboard-with-azure-active-directory"></a>Руководство по Интеграция ProductBoard с Azure Active Directory
 
@@ -65,11 +65,11 @@ ms.locfileid: "68424325"
 Чтобы настроить и проверить единый вход Azure AD в ProductBoard, выполните действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в ProductBoard](#configure-productboard-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя ProductBoard](#create-productboard-test-user)** требуется для того, чтобы в ProductBoard существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-6. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+    * **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+1. **[Настройка единого входа в ProductBoard](#configure-productboard-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    * **[Создание тестового пользователя](#create-productboard-test-user)** ProductBoard требуется для того, чтобы в ProductBoard существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -92,13 +92,9 @@ ms.locfileid: "68424325"
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов ProductBoard](mailto:support@productboard.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
+1. На странице **Настройка единого входа с помощью SAML**, в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы копировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/copy-metadataurl.png)
-
-### <a name="configure-productboard-sso"></a>Настройка единого входа ProductBoard
-
-Чтобы настроить единый вход на стороне **ProductBoard**, необходимо отправить **URL-адрес метаданных федерации приложения** в [группу поддержки ProductBoard](mailto:support@productboard.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -130,9 +126,21 @@ ms.locfileid: "68424325"
 1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
+## <a name="configure-productboard-sso"></a>Настройка единого входа ProductBoard
+
+1. Для автоматизации настройки в ProductBoard необходимо установить **расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
+
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+1. Добавив расширения в браузер, щелкните **Настройка ProductBoard**, после чего вы перейдете в приложение ProductBoard. После этого укажите учетные данные администратора для входа в ProductBoard. Расширение браузера автоматически настроит приложение.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+1. Если нужно настроить единый вход на стороне **ProductBoard** вручную, необходимо отправить **URL-адрес метаданных федерации приложения** в [группу поддержки ProductBoard](mailto:support@productboard.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+
 ### <a name="create-productboard-test-user"></a>Создание тестового пользователя ProductBoard
 
-В этом разделе описано, как в приложении ProductBoard создать пользователя B.Simon. В ProductBoard поддерживается JIT-подготовка пользователей, включенная по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в ProductBoard, он создается после проверки подлинности.
+В этом разделе описано, как в приложении ProductBoard создать пользователя Britta Simon. В ProductBoard поддерживается JIT-подготовка пользователей, включенная по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в ProductBoard, он создается после проверки подлинности.
 
 ### <a name="test-sso"></a>Проверка единого входа
 
@@ -142,8 +150,10 @@ ms.locfileid: "68424325"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+
+- [Попробуйте использовать ProductBoard с Azure AD](https://aad.portal.azure.com/)

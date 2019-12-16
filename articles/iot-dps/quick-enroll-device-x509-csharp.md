@@ -1,6 +1,6 @@
 ---
 title: Регистрация устройств X.509 в службе подготовки устройств Azure с помощью C#
-description: В этом кратком руководстве используется групповая регистрация. С помощью этого краткого руководства вы можете зарегистрировать устройства X.509 в службе подготовки устройств к добавлению в Центр Интернета вещей Azure с помощью C#.
+description: В этом кратком руководстве используется групповая регистрация. С помощью этого краткого руководства вы можете зарегистрировать устройства X.509 в Службе подготовки устройств к добавлению в Центр Интернета вещей Azure с помощью C#.
 author: wesmc7777
 ms.author: wesmc
 ms.date: 11/08/2019
@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 3df9afa35b3ae9f7360a5d4b890d3fce209a4b12
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 1986f51b834f177a7c8d70392cc532cbfadb7170
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74423346"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74974739"
 ---
 # <a name="quickstart-enroll-x509-devices-to-the-device-provisioning-service-using-c"></a>Краткое руководство. Регистрация устройств X.509 в Службе подготовки устройств с помощью C#
 

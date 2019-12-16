@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-image-search
 ms.topic: tutorial
-ms.date: 05/15/2019
+ms.date: 12/06/2019
 ms.author: aahi
-ms.openlocfilehash: e9ba5925ce562e53dbc415d66bbb529c32a725a7
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 9f707dd6b93080e550b4f75e7c9c23139b8adf1d
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74327010"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930686"
 ---
 # <a name="tutorial-extract-image-details-using-the-bing-image-search-api-and-c"></a>Руководство. Извлечение сведений об изображении с помощью API Bing для поиска изображений и C#
 
@@ -42,7 +42,7 @@ ms.locfileid: "74327010"
 
 ## <a name="construct-an-image-details-search-request"></a>Составление запроса на поиск сведений об изображении
 
-Ниже приведена конечная точка `/details`, принимающая запросы POST с данными изображения в тексте запроса.
+Ниже приведена конечная точка `/details`, принимающая запросы POST с данными изображения в тексте запроса. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
 ```
 https://api.cognitive.microsoft.com/bing/v7.0/images/details
 ```

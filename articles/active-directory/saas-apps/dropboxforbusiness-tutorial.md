@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 615c10357e099b547008b128ca5f5a773ff1aa14
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: ae1e537665739c055121fd82cf14f733a90142e4
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73158309"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74964248"
 ---
 # <a name="tutorial-integrate-dropbox-for-business-with-azure-active-directory"></a>Руководство по Интеграция Dropbox for Business с Azure Active Directory
 
@@ -44,7 +44,7 @@ ms.locfileid: "73158309"
 
 * В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде. Dropbox for Business поддерживает единый вход, инициированный **поставщиком услуг**.
 
-* Dropbox for Business поддерживает **JIT**-подготовку пользователей.
+* Dropbox Business поддерживает [автоматическую подготовку пользователей и ее отмену](dropboxforbusiness-tutorial.md).
 
 ## <a name="adding-dropbox-for-business-from-the-gallery"></a>Добавление Dropbox for Business из коллекции
 

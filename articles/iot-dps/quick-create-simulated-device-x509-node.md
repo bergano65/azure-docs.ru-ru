@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: nodejs
 ms.custom: mvc
-ms.openlocfilehash: 5ba18ae304ee1d72306f233a5b288c358efcd696
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 5a713018cb616fd1b82c253554932f6589185e0b
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74423361"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976474"
 ---
 # <a name="quickstart-create-and-provision-an-x509-simulated-device-using-nodejs-device-sdk-for-iot-hub-device-provisioning-service"></a>Краткое руководство. Создание и подготовка имитированного устройства X.509 с помощью пакета SDK для устройства Node.js для службы подготовки устройств к добавлению в Центр Интернета вещей
 [!INCLUDE [iot-dps-selector-quick-create-simulated-device-x509](../../includes/iot-dps-selector-quick-create-simulated-device-x509.md)]
@@ -146,4 +146,4 @@ ms.locfileid: "74423361"
 В этом кратком руководстве вы создали имитированное устройство X.509 и подготовили это устройство для Центра Интернета вещей с помощью службы подготовки устройств к добавлению в Центр Интернета вещей на портале. Чтобы узнать, как выполнить программную регистрацию устройства X.509, изучите соответствующее краткое руководство. 
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Регистрация устройств X.509 в Службе подготовки устройств с помощью Node.js](quick-enroll-device-x509-node.md)
+> [Краткое руководство. Регистрация устройств X.509 в Службе подготовки устройств с помощью C#](quick-enroll-device-x509-node.md)

@@ -1,15 +1,15 @@
 ---
 title: Подключение к службе "Блокчейн Azure" с помощью Visual Studio Code
 description: Подключение к сети консорциума службы "Блокчейн Azure" с помощью комплекта SDK службы "Azure Блокчейн" для Ethereum в Visual Studio Code
-ms.date: 11/19/2019
+ms.date: 12/05/2019
 ms.topic: quickstart
 ms.reviewer: chrisseg
-ms.openlocfilehash: 4d4625df1cb07818dcadb88e2c98bf9ae1da1b1f
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 1bcdfdafa9253fc4dc20ccb7cc237cb794b0af53
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74455981"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74977093"
 ---
 # <a name="quickstart-use-visual-studio-code-to-connect-to-an-azure-blockchain-service-consortium-network"></a>Краткое руководство. Подключение к сети консорциума службы "Блокчейн Azure" с помощью Visual Studio Code
 
@@ -59,12 +59,12 @@ ms.locfileid: "74455981"
 Если у вас нет доступа к участнику консорциума службы "Блокчейн Azure", выполните предварительные требования, изложенные в [руководстве по созданию участника блокчейна на портале Azure](create-member.md) и [руководство по созданию участника блокчейна службы "Блокчейн Azure" с помощью Azure CLI](create-member-cli.md).
 
 1. В области обозревателя VS Code разверните расширение **Блокчейн Azure**.
-1. Выберите **Connect to Consortium** (Подключиться к консорциуму).
+1. Выберите **Подключиться к сети**.
 
-   ![Подключение к консорциуму](./media/connect-vscode/connect-consortium.png)
+   ![Подключение к сети](./media/connect-vscode/connect-consortium.png)
 
     При появлении запроса на проверку подлинности Azure следуйте инструкциям, чтобы выполнить аутентификацию с помощью браузера.
-1. В раскрывающемся списке палитры команд выберите **Connect to Azure Blockchain Service consortium** (Подключиться к консорциуму службы "Блокчейн Azure").
+1. В раскрывающемся списке палитры команд выберите **Блокчейн Azure**.
 1. Выберите подписку и группу ресурсов, связанные с участником консорциума службы "Блокчейн Azure".
 1. Выберите свой консорциум из списка.
 

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 10/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ebfe5f75d5d8546e0f5e8ad6f8c5d0063e5bda2
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: cc73d7ec81ea0105a5868ec698289bd27526a43b
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72377286"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74893507"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-ezofficeinventory"></a>Руководство по интеграции единого входа Azure Active Directory с EZOfficeInventory
 
@@ -94,7 +94,7 @@ ms.locfileid: "72377286"
 
 1. Приложение EZOfficeInventory предусматривает использование проверочных утверждений SAML в определенном формате, что предполагает добавление настраиваемых сопоставлений атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
-    ![image](common/edit-attribute.png)
+    ![image](common/default-attributes.png)
 
 1. В дополнение к описанному выше приложение EZOfficeInventory ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
@@ -144,13 +144,21 @@ ms.locfileid: "72377286"
 
 ## <a name="configure-ezofficeinventory-sso"></a>Настройка единого входа для EZOfficeInventory
 
-1. Откройте новое окно веб-браузера и войдите на корпоративный сайт EZOfficeInventory с правами администратора.
+1. Чтобы автоматизировать настройку в EZOfficeInventory, необходимо установить **расширение браузера My Apps Secure Sign-in**, щелкнув **Установить расширение**.
 
-2. В правом верхнем углу страницы щелкните  **Profile**  (Профиль) и выберите  **Settings** > **Add Ons** (Параметры > Надстройки).
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+1. Чтобы перейти к приложению EZOfficeInventory после добавления расширения в браузер, щелкните **Настройка EZOfficeInventory**. После этого укажите учетные данные администратора для входа в EZOfficeInventory. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–5.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+1. Если необходимо вручную настроить EZOfficeInventory, откройте новое окно веб-браузера, зайдите на сайт компании EZOfficeInventory с правами администратора и выполните следующие действия:
+
+1. В правом верхнем углу страницы щелкните **профиль** и выберите **Settings**(Параметры) > **Add Ons** (Надстройки).
 
     ![Настройка EZOfficeInventory](./media/ezofficeinventory-tutorial/configure01.png)
 
-3. Прокрутите вниз до раздела **SAML Integration** (Интеграция SAML) и выполните следующие действия:
+1. Прокрутите вниз до раздела **SAML Integration** (Интеграция SAML) и выполните следующие действия:
 
     ![Настройка EZOfficeInventory](./media/ezofficeinventory-tutorial/configure02.png)
 
@@ -176,7 +184,7 @@ ms.locfileid: "72377286"
 
 В этом разделе вы создадите в EZOfficeInventory пользователя Britta Simon. Приложение EZOfficeInventory поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в EZOfficeInventory, он создается после проверки подлинности.
 
-## <a name="test-sso"></a>Проверка единого входа 
+## <a name="test-sso"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
@@ -191,4 +199,3 @@ ms.locfileid: "72377286"
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Попробуйте использовать EZOfficeInventory с Azure AD](https://aad.portal.azure.com/)
-

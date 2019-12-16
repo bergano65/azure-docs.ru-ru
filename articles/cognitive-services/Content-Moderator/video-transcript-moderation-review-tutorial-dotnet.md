@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: tutorial
-ms.date: 07/03/2019
+ms.date: 12/05/2019
 ms.author: pafarley
-ms.openlocfilehash: e1c3d3d95261b959a7540aab73faf12f92801d4c
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 2fbd4270221cb23a4f99a0f8155bb1de76472f31
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564269"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976984"
 ---
 # <a name="tutorial-video-and-transcript-moderation"></a>Руководство по Модерация видео и расшифровок речи
 
-В этом руководстве содержатся сведения о создании полного решения для модерации видео и расшифровок с использованием автоматизированной модерации и создания проверок с вовлечением в процесс человека.
+В этом руководстве содержатся сведения о создании полного решения для модерации видео и расшифровок с использованием автоматизированной модерации и интеграции пользовательской проверки.
 
 В этом учебнике описаны следующие процедуры.
 

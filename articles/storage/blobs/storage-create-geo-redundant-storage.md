@@ -1,21 +1,22 @@
 ---
-title: Руководство по Создание высокодоступного приложения с помощью хранилища BLOB-объектов — служба хранилища Azure
-description: Использование геоизбыточного хранилища с доступом на чтение для обеспечения высокой доступности данных приложений
+title: Руководство по созданию высокодоступного приложения с помощью хранилища BLOB-объектов
+titleSuffix: Azure Storage
+description: Использование геоизбыточного хранилища с доступом на чтение для обеспечения высокой доступности данных приложений.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: tutorial
-ms.date: 01/03/2019
+ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: artek
 ms.custom: mvc
 ms.subservice: blobs
-ms.openlocfilehash: 6b0ac017704c599e96543ed36a13ff5d3ddef9fc
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 55846c76f2c3ef1c5d884af39af85db3abe38aad
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838570"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892912"
 ---
 # <a name="tutorial-build-a-highly-available-application-with-blob-storage"></a>Руководство по Создание высокодоступного приложения с помощью хранилища BLOB-объектов
 
@@ -40,8 +41,7 @@ RA-GRS функционирует, реплицируя транзакции и�
 
 # <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
-* Установите [Visual Studio 2019](https://www.visualstudio.com/downloads/) с указанными ниже рабочими нагрузками:
-  - **разработка Azure.**
+* Установите [Visual Studio 2019](https://www.visualstudio.com/downloads/) с рабочей нагрузкой **разработки в Azure**.
 
   ![Разработка Azure (в разделе Web & Cloud (Сеть и облако))](media/storage-create-geo-redundant-storage/workloads.png)
 
@@ -191,7 +191,6 @@ AZURE_STORAGE_ACCOUNT_ACCESS_KEY=<replace with your storage account access key>
 
 Перед скачиванием определяется функция [retry_callback](https://docs.microsoft.com/python/api/azure.storage.common.storageclient.storageclient?view=azure-python) и [response_callback](https://docs.microsoft.com/python/api/azure.storage.common.storageclient.storageclient?view=azure-python) для объекта службы. Эти функции определяют обработчики событий, которые срабатывают при успешном завершении скачивания или при сбое и повторной попытке.
 
-
 # <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
 
 Чтобы выполнить пример, откройте командную строку, перейдите к папке с примерами и введите `node index.js`.
@@ -223,7 +222,7 @@ Deleted container newcontainer1550799840726
 
 ## <a name="understand-the-sample-code"></a>Разбор примера кода
 
-# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
+### <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
 ### <a name="retry-event-handler"></a>Обработчик события при повторном запуске
 
@@ -274,7 +273,7 @@ private static void OperationContextRequestCompleted(object sender, RequestEvent
 }
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+### <a name="pythontabpython"></a>[Python](#tab/python)
 
 ### <a name="retry-event-handler"></a>Обработчик события при повторном запуске
 
@@ -317,7 +316,7 @@ def response_callback(response):
             secondary_read_count = 0
 ```
 
-# <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
+### <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
 
 При использовании пакета SDK для Node.js версии 10 обработчики обратных вызовов не нужны. Вместо этого в примере создается конвейер, настроенный с использованием параметров повторных попыток и вторичной конечной точки. Это позволяет приложению автоматически переключаться на дополнительный конвейер, если ему не удается получить доступ к данным через основной.
 
@@ -349,4 +348,4 @@ const pipeline = StorageURL.newPipeline(sharedKeyCredential, {
 Перейдите ко второй части серии, чтобы узнать, как имитировать сбой и заставить приложение использовать вторичную конечную точку RA-GRS.
 
 > [!div class="nextstepaction"]
-> [Simulate a failure in accessing read-access redundant storage](storage-simulate-failure-ragrs-account-app.md) (Имитация сбоя при подключении к геоизбыточному хранилищу с доступом на чтение)
+> [Моделирование сбоя при чтении из основного региона](storage-simulate-failure-ragrs-account-app.md)

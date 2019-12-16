@@ -1,21 +1,21 @@
 ---
 title: Как выполнять запросы к данным графа в базе данных Azure Cosmos DB
-description: Узнайте, как выполнять запросы к данным графа в базе данных Azure Cosmos DB
+description: Узнайте, как запрашивать данные графа из Azure Cosmos DB с помощью запросов Gremlin
 author: luisbosquez
 ms.author: lbosq
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: tutorial
-ms.date: 01/02/2018
+ms.date: 12/03/2018
 ms.reviewer: sngun
-ms.openlocfilehash: 2bc79801864481562967702a7c52a7670950199b
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 1dde7bfc74c6a7b0c03d8f192f4e6eaf72e2de6b
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54043980"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74870179"
 ---
-# <a name="tutorial-query-azure-cosmos-db-gremlin-api-by-using-gremlin"></a>Руководство. Выполнение запросов к API Gremlin в Azure Cosmos DB с использованием Gremlin
+# <a name="tutorial-query-azure-cosmos-db-gremlin-api-by-using-gremlin"></a>Руководство по Выполнение запросов к API Gremlin в Azure Cosmos DB с использованием Gremlin
 
 [API Gremlin](graph-introduction.md) базы данных Azure Cosmos DB позволяет выполнять запросы [Gremlin](https://github.com/tinkerpop/gremlin/wiki). В этой статье приведены примеры документов и запросов, которые помогут вам начать работу. Подробная справка по Gremlin содержится в [этой статье](gremlin-support.md).
 

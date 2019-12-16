@@ -1,24 +1,25 @@
 ---
-title: Безопасный доступ к данным приложения в облаке с помощью службы хранилища Azure | Документы Майкрософт
+title: Безопасный доступ к данным приложения
+titleSuffix: Azure Storage
 description: Защита данных приложения в облаке с помощью маркеров SAS, шифрования и протокола HTTPS.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: tutorial
-ms.date: 05/30/2018
+ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.custom: mvc
-ms.openlocfilehash: 2cd7a83b597d656ddbb0210aacfe96f6c056248b
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 1075c03820efba44ceb8dea28aff6302d2667cf2
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68986699"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892436"
 ---
-# <a name="secure-access-to-an-applications-data-in-the-cloud"></a>Безопасный доступ к данным приложения в облаке
+# <a name="secure-access-to-application-data"></a>Безопасный доступ к данным приложения
 
-Этот учебник представляет первую часть цикла. Вы узнаете, как обеспечить безопасность доступа к учетной записи хранения. 
+Это руководство представляет собой первую часть цикла. Вы узнаете, как обеспечить безопасность доступа к учетной записи хранения. 
 
 В третьей части цикла вы узнаете, как выполнять такие задачи:
 
@@ -31,7 +32,7 @@ ms.locfileid: "68986699"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством необходимо изучить предыдущее руководство по использованию хранилища — [Автоматическое изменение размера переданных изображений с помощью Сетки событий][previous-tutorial]. 
+Для работы с этим руководством необходимо изучить предыдущее руководство по использованию хранилища — [Автоматическое изменение размера переданных изображений с помощью Сетки событий][previous-tutorial].
 
 ## <a name="set-container-public-access"></a>Установка общего доступа к контейнеру
 

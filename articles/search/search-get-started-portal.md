@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 11/04/2019
-ms.openlocfilehash: be2425d97573e7990ea7f0dfd4c2d999e85fe922
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: 2ae0e5b53d735b95ce1c3d2f9275456e41319242
+ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406997"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74901001"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-the-azure-portal"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" на портале Azure
 > [!div class="op_single_selector"]
@@ -268,7 +268,7 @@ ms.locfileid: "74406997"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Несмотря на то что портал полезен для первоначального изучения и выполнения небольших задач, ознакомление с API на ранней стадии поможет вам понять концепции и рабочие процессы на более глубоком уровне:
+С помощью мастера портала можно создать готовое к использованию веб-приложение, выполняемое в браузере. Вы можете испытать этот мастер с небольшим индексом, который вы создали, или использовать один из встроенных примеров набора данных для расширенного поиска.
 
 > [!div class="nextstepaction"]
-> [Создание индекса службы поиска Azure с помощью пакета SDK для .NET](https://docs.microsoft.com/azure/search/search-create-index-dotnet)
+> [Создание приложения поиска на портале](search-create-app-portal.md)

@@ -1,5 +1,5 @@
 ---
-title: Запуск записной книжки Databricks с помощью действия Databricks Notebook
+title: Запуск записной книжки Databricks с помощью действия
 description: Сведения об использовании действия Databricks Notebook в фабрике данных Azure для выполнения записной книжки Databricks в кластере заданий Databricks.
 services: data-factory
 ms.service: data-factory
@@ -11,12 +11,12 @@ manager: shwang
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
 ms.date: 03/12/2018
-ms.openlocfilehash: 7ad7c8e70d8669612baf00f19d3695dc7fab07f5
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 39b8745b65eccd8e4d1b5986490e30be443ad656
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74217878"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74913519"
 ---
 # <a name="run-a-databricks-notebook-with-the-databricks-notebook-activity-in-azure-data-factory"></a>Запуск записной книжки Databricks с помощью действия Databricks Notebook в фабрике данных Azure
 
@@ -162,8 +162,7 @@ ms.locfileid: "74217878"
            # Creating widgets for leveraging parameters, and printing the parameters
 
            dbutils.widgets.text("input", "","")
-           dbutils.widgets.get("input")
-           y = getArgument("input")
+           y = dbutils.widgets.get("input")
            print ("Param -\'input':")
            print (y)
            ```

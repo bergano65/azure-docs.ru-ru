@@ -1,6 +1,6 @@
 ---
 title: Регистрация устройств X.509 в службе подготовки устройств Azure с помощью Java
-description: В этом кратком руководстве используется групповая и индивидуальная регистрация. В этом кратком руководстве вы зарегистрируете устройства X.509 в Службе подготовки устройств к добавлению в Центр Интернета вещей Azure с помощью Java.
+description: В этом кратком руководстве используется групповая и индивидуальная регистрация. В этом кратком руководстве описано, как зарегистрировать устройства X.509 в Службе подготовки устройств к добавлению в Центр Интернета вещей Azure с помощью Java.
 author: wesmc7777
 ms.author: wesmc
 ms.date: 11/08/2019
@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: java
 ms.custom: mvc
-ms.openlocfilehash: 983e410c6f6298c6b251fdc2a4aff5c677d26906
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 4be7dc3e93b61f036a4167347a45725eff185f04
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74423060"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74969717"
 ---
 # <a name="quickstart-enroll-x509-devices-to-the-device-provisioning-service-using-java"></a>Краткое руководство. Регистрация устройств X.509 в Службе подготовки устройств с помощью Java
 

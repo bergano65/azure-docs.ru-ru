@@ -9,15 +9,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-image-search
 ms.topic: quickstart
-ms.date: 08/26/2019
+ms.date: 12/06/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: fe6289ce893f959ca958096db80f4b2295f6dd43
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 2aaed57c7e1d817cd892f45c441ab59d4ffba3d3
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74327090"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930764"
 ---
 # <a name="quickstart-search-for-images-using-the-bing-image-search-rest-api-and-nodejs"></a>Краткое руководство. Поиск изображений с помощью REST API Bing для поиска изображений и Node.js
 
@@ -30,7 +30,8 @@ ms.locfileid: "74327090"
 * Последняя версия [Node.js](https://nodejs.org/en/download/).
 
 * [Библиотека запросов JavaScript](https://github.com/request/request)  
-  [!INCLUDE [cognitive-services-bing-image-search-signup-requirements](../../../../includes/cognitive-services-bing-image-search-signup-requirements.md)]
+
+[!INCLUDE [cognitive-services-bing-image-search-signup-requirements](../../../../includes/cognitive-services-bing-image-search-signup-requirements.md)]
 
 См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 
@@ -43,7 +44,8 @@ ms.locfileid: "74327090"
     let https = require('https');
     ```
 
-2. Создайте переменные для конечной точки API, пути поиска изображения API, ключа подписки, а также условия поиска.
+2. Создайте переменные для конечной точки API, пути поиска изображения API, ключа подписки, а также условия поиска. В качестве `host` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
+
     ```javascript
     let subscriptionKey = 'enter key here';
     let host = 'api.cognitive.microsoft.com';

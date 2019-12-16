@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Подготовка имитированного устройства доверенного платформенного модуля в Центре Интернета вещей Azure с помощью C
-description: В этом кратком руководстве используется индивидуальная регистрация. В этом кратком руководстве вы создадите и подготовите к работе имитированное устройство доверенного платформенного модуля с помощью пакета SDK C для Службы подготовки устройств к добавлению в Центр Интернета вещей Azure.
+description: В этом кратком руководстве используется индивидуальная регистрация. В этом кратком руководстве показано, как создать и подготовить к работе имитированное устройство доверенного платформенного модуля с помощью пакета SDK C для Службы подготовки устройств к добавлению в Центр Интернета вещей Azure (DPS).
 author: wesmc7777
 ms.author: wesmc
 ms.date: 11/08/2019
@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 0330476650af205854b6d0d4be098c28b46e78a1
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 9ee40d4dadd25e37028a7381583d1f333bc4f19a
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74423171"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976865"
 ---
 # <a name="quickstart-provision-a-simulated-tpm-device-using-the-azure-iot-c-sdk"></a>Краткое руководство. Подготовка имитированного устройства TPM с помощью пакета SDK Интернета вещей Azure для C
 

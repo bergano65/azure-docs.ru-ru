@@ -1,24 +1,24 @@
 ---
-title: 'Преобразование данных в виртуальной сети Azure с помощью Hive '
+title: Преобразование данных с помощью Hive в виртуальной сети Azure с помощью портала Azure
 description: В этом руководстве представлены пошаговые инструкции по преобразованию данных с использованием действия Hive в фабрике данных Azure.
 services: data-factory
-documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.topic: tutorial
-ms.date: 01/04/2018
 author: nabhishek
 ms.author: abnarain
-manager: craigg
-ms.openlocfilehash: 73a43bdb859d39bd0cb8e3d4a3ed3f114fb2c156
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+manager: anandsub
+ms.topic: tutorial
+ms.custom: seo-dt-2019
+ms.date: 01/04/2018
+ms.openlocfilehash: d52aed98549478898cb3bd263d52eeae2a69ccfd
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73683429"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74925551"
 ---
 # <a name="transform-data-in-azure-virtual-network-using-hive-activity-in-azure-data-factory"></a>Преобразование данных в виртуальной сети Azure с помощью действия Hive в фабрике данных Azure
+
 В этом руководстве с помощью портала Azure вы создадите конвейер фабрики данных, который преобразует данные, используя действие Hive в кластере HDInsight, находящемся в виртуальной сети Azure (VNet). В этом руководстве вы выполните следующие шаги:
 
 > [!div class="checklist"]

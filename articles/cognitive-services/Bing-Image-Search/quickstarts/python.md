@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-image-search
 ms.topic: quickstart
-ms.date: 08/26/2019
+ms.date: 12/06/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 17864ed471537f80b537af4b3a8679cb9deaab57
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: f3d00688feb0f9d42e80cdbb51753483e53c388d
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74323801"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930725"
 ---
 # <a name="quickstart-search-for-images-using-the-bing-image-search-rest-api-and-python"></a>Краткое руководство. Поиск изображений с помощью REST API Bing для поиска изображений и Python
 
@@ -40,7 +40,7 @@ ms.locfileid: "74323801"
 
 ## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
 
-1. Создайте новый файл Python в избранной интегрированной среде разработки или редакторе, а затем импортируйте в него следующие модули. Создайте переменные для вашего ключа подписки, конечной точки и условия поиска.
+1. Создайте новый файл Python в избранной интегрированной среде разработки или редакторе, а затем импортируйте в него следующие модули. Создайте переменные для вашего ключа подписки, конечной точки и условия поиска. В качестве `search_url` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
 
     ```python
     import requests

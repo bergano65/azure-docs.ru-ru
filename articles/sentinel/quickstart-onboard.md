@@ -8,13 +8,13 @@ ms.assetid: d5750b3e-bfbd-4fa0-b888-ebfab7d9c9ae
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: quickstart
-ms.date: 09/23/2019
-ms.openlocfilehash: 182dec35d515966ae883aca405cf3a95b6f1f72c
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.date: 12/05/2019
+ms.openlocfilehash: 108d251ec6aadb4881f500edfa3483f137a09a68
+ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74133102"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74900437"
 ---
 # <a name="quickstart-on-board-azure-sentinel"></a>Краткое руководство. Подключение к Azure Sentinel
 
@@ -24,18 +24,8 @@ ms.locfileid: "74133102"
 
 После подключения источников вы можете выбрать из коллекции созданные экспертами книги, которые позволяют просматривать аналитические сведения на основе имеющихся данных. Эти книги можно легко настроить в соответствии со своими потребностями.
 
->[!NOTE] 
-> [Цены на Azure Sentinel](https://azure.microsoft.com/pricing/details/azure-sentinel/) основаны на объеме данных, принимаемых связанной рабочей областью Log Analytics в Azure Monitor. При приеме данных с использованием некоторых соединителей плата не взимается. Однако плата может взиматься при создании любых оповещений с помощью полученных данных, которые хранятся в рабочей области Log Analytics. В этом случае цена образуется по модели, определенной на [на странице цен на Log Analytics в Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/). 
-  > - Действия Azure (журналы действий для операций Azure)
-  > - Защита идентификации Azure Active Directory (для клиентов с лицензиями AAD P2)
-  > - Azure Information Protection
-  > - Расширенная защита от угроз Azure (оповещения)
-  > - Центр безопасности Azure (оповещения)
-  > - Microsoft Cloud App Security (только оповещения)
-  > - Advanced Threat Protection в Microsoft Defender (оповещения агента наблюдения)
-  > - Office 365 (журналы Exchange и SharePoint)
->
-> Журналы аудита Azure AD и Office 365 не предоставляются бесплатно. Они доступны на уровне "Премиум", поэтому прием этих данных оплачивается по цене за гигабайт. 
+>[!IMPORTANT] 
+> См. сведения о [ценах на Azure Sentinel](https://azure.microsoft.com/pricing/details/azure-sentinel/).
   
 
 ## <a name="global-prerequisites"></a>Глобальные предварительные требования
@@ -44,7 +34,7 @@ ms.locfileid: "74133102"
 
 - Рабочая область Log Analytics. Узнайте, как [создать рабочую область Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md). Дополнительные сведения о рабочих областях Log Analytics см. в статье [Designing your Azure Monitor Logs deployment](../azure-monitor/platform/design-logs-deployment.md) (Планирование развертывания журналов Azure Monitor).
 
--  Чтобы включить Azure Sentinel, в подписке, в которой находится рабочая область Azure Sentinel, потребуются разрешения участника. 
+- Чтобы включить Azure Sentinel, в подписке, в которой находится рабочая область Azure Sentinel, потребуются разрешения участника. 
 - Чтобы использовать Azure Sentinel, требуются разрешения участника или читателя в группе ресурсов, к которой принадлежит рабочая область.
 - Для подключения к конкретным источникам данных могут потребоваться дополнительные разрешения.
 - Azure Sentinel — это платная служба. Сведения о ценах на Sentinel см. на [этой странице](https://go.microsoft.com/fwlink/?linkid=2104058).

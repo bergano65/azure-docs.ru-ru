@@ -1,24 +1,25 @@
 ---
-title: 'Добавочное копирование данных с помощью решения "Отслеживание изменений" и службы "Фабрика данных Azure" '
-description: 'В этом руководстве вы создадите конвейер фабрики данных Azure, который пошагово копирует разностные данные из нескольких таблиц в локальной базе данных SQL Server в базу данных SQL Azure. '
+title: Добавочное копирование данных с помощью решения "Отслеживание изменений"
+description: В этом руководстве вы создадите конвейер фабрики данных Azure, который пошагово копирует разностные данные из нескольких таблиц в локальной базе данных SQL Server в базу данных SQL Azure.
 services: data-factory
-documentationcenter: ''
+ms.author: yexu
 author: dearandyxu
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
+ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 01/12/2018
-ms.author: yexu
-ms.openlocfilehash: c754b5755cbab3720ca0ffebc891ce76ce7aebc5
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 1b619ca7bb3b095a5707077beb3e0750dee1c2b7
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73683520"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74923482"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information"></a>Добавочная загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживания изменений 
+
 Из этого руководстве вы узнаете, как создать фабрику данных Azure с конвейером, который копирует разностные данные на основе сведений об **отслеживании изменений** в базе данных-источнике SQL Azure в хранилище BLOB-объектов Azure.  
 
 В этом руководстве вы выполните следующие шаги:

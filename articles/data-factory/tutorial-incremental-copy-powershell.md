@@ -1,24 +1,25 @@
 ---
-title: 'Добавочное копирование таблицы с помощью службы "Фабрика данных Azure" '
+title: Добавочное копирование таблицы с помощью PowerShell
 description: В этом руководстве вы создадите конвейер фабрики данных Azure, который пошагово копирует данные из базы данных SQL Azure в хранилище BLOB-объектов Azure.
 services: data-factory
-documentationcenter: ''
 author: dearandyxu
-manager: craigg
+ms.author: yexu
+manager: anandsub
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
+ms.custom: seo-dt-2019
 ms.date: 01/22/2018
-ms.author: yexu
-ms.openlocfilehash: bb1ddbddfb2e06f394ac2f57b10e18893879b51b
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: d6b41f06f9e5d64532b5684e6bc40d017a8c4434
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73683346"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74925219"
 ---
-# <a name="incrementally-load-data-from-an-azure-sql-database-to-azure-blob-storage"></a>Пошаговая загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure
+# <a name="incrementally-load-data-from-an-azure-sql-database-to-azure-blob-storage-using-powershell"></a>Пошаговая загрузка данных из Базы данных SQL Azure в хранилище BLOB-объектов Azure с помощью PowerShell
+
 В этом руководстве вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из таблицы в базе данных SQL Azure в хранилище BLOB-объектов Azure. 
 
 В этом руководстве вы выполните следующие шаги:

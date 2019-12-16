@@ -1,21 +1,22 @@
 ---
-title: Руководство по Имитация сбоя при обращении к избыточному хранилищу с доступом на чтение в Azure | Документация Майкрософт
-description: Имитация ошибки при обращении к геоизбыточному хранилищу с доступом на чтение
+title: Руководство. Моделирование сбоя при чтении данных в основном регионе
+titleSuffix: Azure Storage
+description: Моделирование ошибки при чтении данных из основного региона, если для учетной записи хранения включено геоизбыточное хранилище с доступом для чтения (RA-GRS).
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: tutorial
-ms.date: 01/03/2019
+ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: artek
-ms.openlocfilehash: 1f5c404e410ded2714be761e35060f3c07379bd3
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 44c5d037797d845aa9c68af2d7b8e5e45bf418fb
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65508102"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892453"
 ---
-# <a name="tutorial-simulate-a-failure-in-accessing-read-access-redundant-storage"></a>Руководство по Имитация сбоя при обращении к избыточному хранилищу с доступом на чтение
+# <a name="tutorial-simulate-a-failure-in-reading-data-from-the-primary-region"></a>Руководство по Моделирование сбоя при чтении данных в основном регионе
 
 Это руководство представляет собой вторую часть цикла. В нем вы узнаете больше о преимуществах [геоизбыточного хранилища с доступом на чтение](../common/storage-redundancy-grs.md#read-access-geo-redundant-storage) (RA-GRS) с помощью имитации сбоя.
 
@@ -32,7 +33,7 @@ ms.locfileid: "65508102"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем начать работу с этим руководством, завершите предыдущее руководство: [Руководство. Обеспечение высокой доступности данных приложения в службе хранилище Azure][previous-tutorial].
+Прежде чем начать работу с этим руководством, завершите предыдущее руководство: [Обеспечение высокой доступности данных приложения в службе хранилище Azure][previous-tutorial].
 
 Чтобы сымитировать сбой с помощью статической маршрутизации, необходимо использовать командную строку с повышенными привилегиями.
 
@@ -44,7 +45,7 @@ ms.locfileid: "65508102"
 
 ### <a name="start-and-pause-the-application"></a>Запуск и приостановка приложения
 
-Используйте инструкции из [предыдущего урока][previous-tutorial], чтобы запустить пример и скачать тестовый файл, подтверждая, что он поступает из основного хранилища. В зависимости от целевой платформы вы можете вручную приостановить пример или ждать подсказку.
+Используйте инструкции из [предыдущего руководства][previous-tutorial], чтобы запустить пример и скачать тестовый файл, подтверждая, что он поступает из основного хранилища. В зависимости от целевой платформы вы можете вручную приостановить пример или ждать подсказку.
 
 ### <a name="simulate-failure"></a>Имитация сбоя
 
@@ -68,7 +69,7 @@ nslookup STORAGEACCOUNTNAME.blob.core.windows.net
 route add <destination_ip> gw <gateway_ip>
 ```
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
 ```
 route add <destination_ip> <gateway_ip>
@@ -86,7 +87,7 @@ route add <destination_ip> <gateway_ip>
 route del <destination_ip> gw <gateway_ip>
 ```
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
 ```
 route delete <destination_ip>
@@ -132,7 +133,7 @@ route delete <destination_ip>
 
 ### <a name="start-and-pause-the-application"></a>Запуск и приостановка приложения
 
-Используйте инструкции из [предыдущего урока][previous-tutorial], чтобы запустить пример и скачать тестовый файл, подтверждая, что он поступает из основного хранилища. В зависимости от целевой платформы вы можете вручную приостановить пример или ждать подсказку.
+Используйте инструкции из [предыдущего руководства][previous-tutorial], чтобы запустить пример и скачать тестовый файл, подтверждая, что он поступает из основного хранилища. В зависимости от целевой платформы вы можете вручную приостановить пример или ждать подсказку.
 
 ### <a name="simulate-failure"></a>Имитация сбоя
 

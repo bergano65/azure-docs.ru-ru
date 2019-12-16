@@ -1,5 +1,5 @@
 ---
-title: Учебник по проектированию мультитенантной базы данных с помощью Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)"
+title: Руководство по Проектирование мультитенантной базы данных с помощью Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)"
 description: В этом учебнике показано, как создавать и заполнять распределенные таблицы и выполнять к ним запрос с помощью решения "Гипермасштабирование (Citus)" в Базе данных Azure для PostgreSQL.
 author: jonels-msft
 ms.author: jonels
@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 05/14/2019
-ms.openlocfilehash: 130c3e9f5abb24ffcc4e0c4ad6b96af5fca62090
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 17ac29de243f4abfff1cfc83fc6424799978bf0e
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73496544"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978157"
 ---
 # <a name="tutorial-design-a-multi-tenant-database-by-using-azure-database-for-postgresql--hyperscale-citus"></a>Учебник по проектированию мультитенантной базы данных с помощью Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)"
 
