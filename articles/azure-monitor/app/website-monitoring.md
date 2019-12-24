@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство по мониторингу веб-сайтов с помощью Azure Monitor Application Insights | Документация Майкрософт
-description: Инструкции по быстрой настройке мониторинга веб-сайта на стороне клиента или браузера с помощью Azure Monitor Application Insights
+description: Инструкции по быстрой настройке мониторинга веб-сайта на стороне клиента (браузера) с помощью Azure M1onitor Ap1plication Insights
 ms.service: azure-monitor
 ms.subservice: application-insights
 ms.topic: quickstart
@@ -17,7 +17,7 @@ ms.locfileid: "72899269"
 ---
 # <a name="start-monitoring-your-website"></a>Запуск мониторинга веб-сайта
 
-С помощью Azure Monitor Application Insights вы можете легко наблюдать за доступностью, производительностью и использованием вашего веб-сайта. Вы также можете быстро идентифицировать и диагностировать ошибки в приложении, не дожидаясь, пока пользователь сообщит о них. Application Insights обеспечивает мониторинг на стороне сервера, а также на стороне клиента или браузера.
+С помощью Azure Monitor Application Insights вы можете легко наблюдать за доступностью, производительностью и использованием вашего веб-сайта. Вы также можете быстро идентифицировать и диагностировать ошибки в приложении, не дожидаясь, пока пользователь сообщит о них. Application Insights обеспечивает мониторинг на стороне сервера, а также на стороне клиента (браузера).
 
 Это краткое руководство содержит пошаговые инструкции по добавлению [пакета SDK JavaScript с открытым исходным кодом для Application Insights](https://github.com/Microsoft/ApplicationInsights-JS), которые помогут вам понять, как работает ваш веб-сайт на стороне клиента (браузера).
 
@@ -31,7 +31,7 @@ ms.locfileid: "72899269"
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портале Azure](https://portal.azure.com/).
+Войдите на [портал Azure](https://portal.azure.com/).
 
 ## <a name="enable-application-insights"></a>Включение Application Insights
 
@@ -47,7 +47,7 @@ Application Insights может собирать данные телеметри
     | Параметры        | Значение           | ОПИСАНИЕ  |
    | ------------- |:-------------|:-----|
    | **Имя**      | Глобально уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
-   | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных App Insights |
+   | **Группа ресурсов**     | myResourceGroup      | Имя группы для нового ресурса для размещения данных App Insights |
    | **Местоположение.** | Восточная часть США | Выберите ближайшее расположение или расположение вблизи места размещения приложения |
 
 2. Нажмите кнопку **Создать**.
@@ -55,7 +55,7 @@ Application Insights может собирать данные телеметри
 ## <a name="create-an-html-file"></a>Создание файла HTML
 
 1. На локальном компьютере создайте файл с именем ``hello_world.html``. В этом примере файл будет помещен в корне диска C: ``C:\hello_world.html``.
-2. Скопируйте приведенный ниже сценарий в ``hello_world.html``:
+2. Скопируйте приведенный ниже код в ``hello_world.html``:
 
     ```html
     <!DOCTYPE html>
@@ -72,13 +72,13 @@ Application Insights может собирать данные телеметри
 
 ## <a name="configure-app-insights-sdk"></a>Настройка пакета SDK App Insights
 
-1. Выберите **Обзор** > **Основные компоненты** и скопируйте **ключ инструментирования** приложения.
+1. Выберите **Обзор** > **Основные компоненты** и скопируйте **Ключ инструментирования** приложения.
 
    ![Форма создания ресурса App Insights](media/website-monitoring/instrumentation-key-001.png)
 
 2. Добавьте следующий скрипт в ``hello_world.html`` перед закрывающим тегом ``</head>``:
 
-   ```javascript
+    ```javascript
     <script type="text/javascript">
       var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=window[sdkInstance],aisdk=window[aiName]||function(e){function n(e){t[e]=function(){var n=arguments;t.queue.push(function(){t[e].apply(t,n)})}}var t={config:e};t.initialize=!0;var i=document,a=window;setTimeout(function(){var n=i.createElement("script");n.src=e.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",i.getElementsByTagName("script")[0].parentNode.appendChild(n)});try{t.cookie=i.cookie}catch(e){}t.queue=[],t.version=2;for(var r=["Event","PageView","Exception","Trace","DependencyData","Metric","PageViewPerformance"];r.length;)n("track"+r.pop());n("startTrackPage"),n("stopTrackPage");var s="Track"+r[0];if(n("start"+s),n("stop"+s),n("setAuthenticatedUserContext"),n("clearAuthenticatedUserContext"),n("flush"),!(!0===e.disableExceptionTracking||e.extensionConfig&&e.extensionConfig.ApplicationInsightsAnalytics&&!0===e.extensionConfig.ApplicationInsightsAnalytics.disableExceptionTracking)){n("_"+(r="onerror"));var o=a[r];a[r]=function(e,n,i,a,s){var c=o&&o(e,n,i,a,s);return!0!==c&&t["_"+r]({message:e,url:n,lineNumber:i,columnNumber:a,error:s}),c},e.autoExceptionInstrumented=!0}return t}(
       {
@@ -90,13 +90,13 @@ Application Insights может собирать данные телеметри
 
 3. Измените ``hello_world.html`` и добавьте ключ инструментирования.
 
-4. Откройте ``hello_world.html`` в сеансе локального браузера. В результате будет создано одностраничное представление. Вы можете обновить свой браузер, чтобы генерировать несколько просмотров тестовых страниц.
+4. Откройте ``hello_world.html`` в сеансе локального браузера. В результате будет создано одностраничное представление. Вы можете обновить свой браузер, чтобы генерировать несколько просмотров тестовой страницы.
 
 ## <a name="start-monitoring-in-the-azure-portal"></a>Запуск мониторинга на портале Azure
 
-1. Теперь можно повторно открыть страницу **Обзор** Application Insights на портале Azure, где вы извлекли ключ иснтрументирования, для просмотра сведений о выполняющемся в данный момент приложении. Четыре диаграммы по умолчанию на обзорной странице привязаны к серверным данным приложения. Так как мы рассматриваем взаимодействие на стороне клиента или браузера с использованием пакета SDK для JavaScript, это конкретное представление не применяется, если у нас также не установлен пакет SDK на стороне сервера.
+1. Теперь можно повторно открыть страницу **Обзор** Application Insights на портале Azure, где вы извлекли ключ инструментирования, для просмотра сведений о выполняющемся в данный момент приложении. Четыре диаграммы по умолчанию на обзорной странице привязаны к серверным данным приложения. Так как мы рассматриваем взаимодействие на стороне клиента или браузера с использованием пакета SDK для JavaScript, это конкретное представление не применяется, если у нас также не установлен пакет SDK на стороне сервера.
 
-2. Щелкните значок ![Схема приложений](media/website-monitoring/006.png) **Analytics**.  Откроется окно **Analytics**, которое предоставляет полнофункциональный язык запросов для анализа всех данных, собранных Application Insights. Для просмотра данных, связанных с запросами браузера на стороне клиента, выполните следующий запрос:
+2. Щелкните значок ![Схема приложений](media/website-monitoring/006.png) **Журналы (аналитика)**.  Откроется окно **Журналы (аналитика)**, которое предоставляет полнофункциональный язык запросов для анализа всех данных, собранных Application Insights. Для просмотра данных, связанных с запросами браузера на стороне клиента, выполните следующий запрос:
 
     ```kusto
     // average pageView duration by name
