@@ -1,31 +1,31 @@
 ---
-title: Выполнение пакетов служб SSIS в фабрике данных Azure из SSDT
+title: Выполнение пакетов служб SSIS из SSDT
 description: Узнайте, как выполнять пакеты служб SSIS в Azure из SSDT.
 services: data-factory
 documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 07/31/2019
-author: swinarko
 ms.author: sawinark
+author: swinarko
 ms.reviewer: douglasl
-manager: craigg
-ms.openlocfilehash: 4c89bdddce7b7318e184994ddf627d853e29fd7e
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+manager: mflasko
+ms.custom: seo-lt-2019
+ms.date: 07/31/2019
+ms.openlocfilehash: 5f21623af9b89bbb020063dfb72f7b60e65a6ebe
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73673599"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74927709"
 ---
 # <a name="execute-ssis-packages-in-azure-from-ssdt"></a>Выполнение пакетов служб SSIS в Azure из SSDT
 В этой статье описывается функция проектов SQL Server Integration Services (SSIS) с поддержкой Azure в SQL Server Data Tools (SSDT), которая позволяет запускать пакеты на Azure-SSIS Integration Runtime (IR) в фабрике данных Azure (ADF).  Эту функцию можно использовать для тестирования существующих пакетов служб SSIS, прежде чем претянуть & Shift/перенести их в Azure или разрабатывать новые пакеты служб SSIS для работы в Azure.
 
 С помощью этой функции можно создать новый Azure-SSIS IR или присоединить существующий объект к проектам служб SSIS, а затем выполнить на нем пакеты.  Мы поддерживаем запуск пакетов для развертывания в каталоге служб SSIS (SSISDB) в модели развертывания проекта, а также для развертывания в файловых системах, файловых ресурсах или файлах Azure в модели развертывания пакетов. 
 
-## <a name="prerequisites"></a>предварительным требованиям
-Чтобы использовать эту функцию, скачайте и установите последнюю версию SSDT с расширением проектов SSIS для Visual Studio отсюда или как автономный [установщик отсюда.](https://marketplace.visualstudio.com/items?itemName=SSIS.SqlServerIntegrationServicesProjects) [](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017#ssdt-for-vs-2017-standalone-installer)
+## <a name="prerequisites"></a>Технические условия
+Чтобы использовать эту функцию, скачайте и установите последнюю версию SSDT с расширением проектов [SSIS](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017#ssdt-for-vs-2017-standalone-installer) для Visual Studio отсюда или как автономный [установщик отсюда.](https://marketplace.visualstudio.com/items?itemName=SSIS.SqlServerIntegrationServicesProjects) 
 
 ## <a name="azure-enable-ssis-projects"></a>Включение проектов служб SSIS в Azure
 В SSDT можно создать новые проекты служб SSIS с поддержкой Azure с помощью шаблона **Integration Services проекта (Azure с возможностью использования)** .
@@ -52,13 +52,13 @@ ms.locfileid: "73673599"
 3. На странице **Выбор среды IR в ADF** выберите существующий ADF-файл и Azure-SSIS IR для запуска пакетов или создайте новые, если их нет.
    - Чтобы выбрать существующий Azure-SSIS IR, сначала выберите соответствующую подписку Azure и ADF.
    - Если вы выбрали существующий ADF-файл без Azure-SSIS IR, нажмите кнопку **создать службы SSIS IR** , чтобы создать новый на портале или приложении ADF.
-   - Если вы выберете существующую подписку Azure, в которой нет ADF, нажмите кнопку **CREATE SSIS IR (создание** среды выполнения интеграции), чтобы запустить **Мастер создания Integration Runtime**, где можно ввести расположение и префикс, чтобы автоматически создать новый Azure. Группа ресурсов, фабрика данных и службы SSIS IR от вашего имени с именем в следующем формате: **йоурпрефикс-RG/DF/IR-йоуркреатионтиме**.
+   - Если вы выберете существующую подписку Azure, в которой нет ADF, нажмите кнопку **CREATE SSIS IR (создание** среды выполнения интеграции), чтобы запустить **Мастер создания Integration Runtime**, где можно ввести расположение и префикс для автоматического создания новой группы ресурсов Azure, фабрики данных и служб SSIS IR от вашего имени в следующем формате: **йоурпрефикс-RG/DF/IR-йоуркреатионтиме**.
    
    ![Выбор служб SSIS IR в ADF](media/how-to-invoke-ssis-package-ssdt/ssis-in-adf-connection-wizard2.png)
 
 4. На странице **Выбор хранилища Azure** выберите существующую учетную запись хранения Azure для отправки пакетов в службу файлов Azure или создайте новую, если у вас нет.
    - Чтобы выбрать существующую учетную запись хранения Azure, сначала выберите соответствующую подписку Azure.
-   - Если вы выбрали ту же подписку Azure, что и Azure-SSIS IR, в которой нет учетной записи хранения Azure, нажмите кнопку **создать службу хранилища Azure** , чтобы автоматически создать новое имя от вашего имени в том же расположении, где находится ваша Azure-SSIS IR, с именем сочетание префикса имени Azure-SSIS IR и даты его создания.
+   - Если вы выбрали ту же подписку Azure, что и Azure-SSIS IR, в которой нет учетной записи хранения Azure, нажмите кнопку " **создать службу хранилища Azure** ", чтобы автоматически создать новое имя от вашего имени в том же расположении, где находится ваша Azure-SSIS IR, с именем, объединив префикс имени Azure-SSIS IR и даты его создания.
    - Если вы выбрали другую подписку Azure без учетной записи хранения Azure, нажмите кнопку " **создать хранилище Azure** ", чтобы создать ее на портал Azure.
    
    ![Выбор службы хранилища Azure](media/how-to-invoke-ssis-package-ssdt/ssis-in-adf-connection-wizard3.png)
@@ -77,18 +77,18 @@ ms.locfileid: "73673599"
    ![Выполнение пакета в Azure](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-enabled-execute-package2.png)
 
 > [!NOTE]
-> Для выполнения пакетов в Azure требуется запущенная Azure-SSIS IR, поэтому если Azure-SSIS IR остановлена, откроется диалоговое окно для запуска.  За исключением любых пользовательских настроек, этот процесс должен выполняться в течение 5 минут, но для Azure-SSIS IR присоединения к виртуальной сети может потребоваться около 20-30 минут.  После выполнения пакетов в Azure можно запретить Azure-SSIS IR для управления затратами на выполнение, щелкнув правой кнопкой мыши его узел на панели обозреватель решений SSDT, чтобы открыть меню и выбрать пункт меню **старт\стоп\манаже** , который переводит вас на портал ADF/ приложение.
+> Для выполнения пакетов в Azure требуется запущенная Azure-SSIS IR, поэтому если Azure-SSIS IR остановлена, откроется диалоговое окно для запуска.  За исключением любых пользовательских настроек, этот процесс должен выполняться в течение 5 минут, но для Azure-SSIS IR присоединения к виртуальной сети может потребоваться около 20-30 минут.  После выполнения пакетов в Azure можно запретить Azure-SSIS IR для управления затратами на выполнение, щелкнув правой кнопкой мыши узел на обозреватель решений панели в SSDT, чтобы открыть меню, а затем выбрать пункт меню **старт\стоп\манаже** , чтобы сделать это на портале или приложении ADF.
 
 ### <a name="checking-package-execution-logs"></a>Проверка журналов выполнения пакетов
 При запуске пакета выполняется форматирование и отображение журнала в окне хода выполнения SSDT.  Для долго выполняющегося пакета мы периодически будем обновлять свой журнал с учетом минут.  Вы можете остановить выполнение пакета, нажав кнопку **остановить** на панели инструментов SSDT, которая немедленно отменит ее.  Кроме того, можно временно найти необработанные данные журнала в UNC-пути: `\\<YourConnectedAzureStorage>.file.core.windows.net\ssdtexecution\<YourProjectName-FirstConnectTime>\<YourPackageName-tmp-ExecutionTime>\logs`, но мы будем очищать его через один день.
 
 ### <a name="switching-package-protection-level"></a>Переключение уровня защиты пакета
-Исполнение пакетов служб SSIS в Azure не поддерживает уровни защиты **EncryptSensitiveWithUserKey**/**EncryptAllWithUserKey** .  Следовательно, если вы настроили пакеты с их помощью, мы временно переключим их в **EncryptSensitiveWithPassword**/**EncryptAllWithPassword**, используя случайным образом созданные пароли при отправке пакеты в службу файлов Azure для выполнения на Azure-SSIS IR.
+Исполнение пакетов служб SSIS в Azure не поддерживает уровни защиты **EncryptSensitiveWithUserKey**/**EncryptAllWithUserKey** .  Следовательно, если вы настроили пакеты с их помощью, мы временно переключим их в **EncryptSensitiveWithPassword**/**EncryptAllWithPassword**соответственно, используя случайные пароли при передаче пакетов в службу файлов Azure для выполнения на Azure-SSIS IR.
 
 > [!NOTE]
 > Если пакеты содержат задачи "выполнение пакета", которые ссылаются на другие пакеты, настроенные с **EncryptSensitiveWithUserKey**/**EncryptAllWithUserKey** , необходимо вручную перенастроить эти пакеты, чтобы использовать **EncryptSensitiveWithPassword**/**EncryptAllWithPassword**, соответственно, перед выполнением пакетов.
 
-Если для пакетов уже настроены уровни защиты **EncryptSensitiveWithPassword**/**EncryptAllWithPassword** , мы не изменим их, но по-прежнему будут использовать сгенерированные случайным образом пароли при передаче пакетов в Файлы Azure для выполнения на Azure-SSIS IR.
+Если для пакетов уже настроены уровни защиты **EncryptSensitiveWithPassword**/**EncryptAllWithPassword** , мы не изменим их, но при передаче пакетов в службу файлов Azure для выполнения на Azure-SSIS IR будут использоваться случайные пароли.
 
 ### <a name="using-package-configuration-file"></a>Использование файла конфигурации пакета
 При использовании файлов конфигурации пакетов в модели развертывания пакетов для изменения значений переменных во время выполнения мы автоматически загружаем эти файлы в файлы Azure для выполнения на Azure-SSIS IR.
@@ -104,5 +104,5 @@ ms.locfileid: "73673599"
 
 Если пакеты содержат задачи «Выполнение пакета», которые ссылаются на другие пакеты в том же проекте, дополнительная настройка не требуется.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Когда вы удовлетворены выполнением пакетов в Azure из SSDT, вы можете развернуть и запустить их как выполнение действий пакета служб SSIS в конвейерах ADF. см. раздел [Запуск пакетов служб SSIS как выполнение действий пакета SSIS в конвейерах ADF](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity).
