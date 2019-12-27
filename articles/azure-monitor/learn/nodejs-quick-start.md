@@ -33,7 +33,7 @@ ms.locfileid: "72894939"
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портале Azure](https://portal.azure.com/).
+Войдите на [портал Azure](https://portal.azure.com/).
 
 ## <a name="enable-application-insights"></a>Включение Application Insights
 
@@ -44,7 +44,7 @@ ms.locfileid: "72894939"
    ![Добавление ресурса Application Insights](./media/nodejs-quick-start/azure-app-insights-create-resource.png)
 
    > [!NOTE]
-   >Если вы создаете ресурс Application Insights впервые, ознакомьтесь с дополнительными сведениями в статье [Create an Application Insights resource](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource) (Создание ресурса Application Insights).
+   >Если вы создаете ресурс Application Insights впервые, ознакомьтесь с дополнительными сведениями в статье [Создание ресурса Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource).
 
    Откроется страница с параметрами, на которой нужно заполнить все поля в соответствии с приведенной ниже таблицей. 
 
@@ -58,7 +58,7 @@ ms.locfileid: "72894939"
 
 ## <a name="configure-app-insights-sdk"></a>Настройка пакета SDK App Insights
 
-1. Выберите **Обзор** и скопируйте **ключ инструментирования** приложения.
+1. Выберите **Обзор** и скопируйте **Ключ инструментирования** приложения.
 
    ![Просмотр ключа инструментирования Application Insights](./media/nodejs-quick-start/azure-app-insights-instrumentation-key.png)
 
@@ -90,7 +90,7 @@ ms.locfileid: "72894939"
 
    ![Схема приложений Application Insights](./media/nodejs-quick-start/azure-app-insights-application-map.png)
 
-3. Щелкните значок **аналитики приложений**, ![значок схемы приложений](./media/nodejs-quick-start/azure-app-insights-analytics-icon.png), **Просмотр в службе Analytics**.  Откроется окно **Application Insights Analytics** (Application Insights — аналитика), которое предоставляет полнофункциональный язык запросов для анализа всех данных, собранных Application Insights. В этом случае создается запрос, который преобразовывает число запросов для просмотра в виде диаграммы. Вы можете записывать собственные запросы для анализа других данных.
+3. Щелкните в **Aналитике приложений** значок ![значок схемы приложений](./media/nodejs-quick-start/azure-app-insights-analytics-icon.png) **Просмотр в службе Analytics**.  Откроется окно **аналитики Application Insights**, которое предоставляет многофункциональный язык запросов для анализа всех данных, собираемых Application Insights. В этом случае автоматически создается запрос, который преобразует число запросов для просмотра в виде диаграммы. Вы можете писать собственные запросы для анализа других данных.
 
    ![Аналитические графики Application Insights](./media/nodejs-quick-start/azure-app-insights-analytics-queries.png)
 

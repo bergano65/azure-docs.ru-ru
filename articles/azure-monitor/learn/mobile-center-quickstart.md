@@ -68,7 +68,7 @@ Analytics.trackEvent("Video clicked")
 
 После того как приложение начнет отправлять пользовательские события в App Center и они будут получены, на портале Azure необходимо создать ресурс Application Insights, подходящий для App Center:
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 2. Последовательно выберите **Создать ресурс** > **Средства разработчика** > **Application Insights**.
 
     > [!NOTE]

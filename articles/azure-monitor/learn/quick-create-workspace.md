@@ -9,7 +9,7 @@ ms.author: magoedte
 ms.date: 03/12/2019
 ms.openlocfilehash: 6dd4486d52cc5c2fb568241ebaefad454e50cb2c
 ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72894892"
@@ -40,7 +40,7 @@ ms.locfileid: "72894892"
   
 2. Щелкните **Добавить** и выберите параметры для следующих элементов:
 
-   * Введите имя для новой **рабочей области Log Analytics**, например *DefaultLAWorkspace*. Это имя должно быть глобально уникальным для всех Azure Monitor подписок.
+   * Введите имя для новой *рабочей области Log Analytics**, например *DefaultLAWorkspace*. Это имя должно быть глобально уникальным для всех подписок Azure Monitor.
    * Выберите в раскрывающемся списке **подписку**, с которой нужно связать рабочую область, если выбранная по умолчанию не подходит.
    * Для **группы ресурсов** выберите существующую и уже настроенную группу ресурсов или создайте новую.  
    * Выберите доступное **расположение**.  Дополнительные сведения см. в разделе какие [регионы log Analytics доступны в](https://azure.microsoft.com/regions/services/) и выполните поиск Azure Monitor в поле **поиска по полю продукта** .  

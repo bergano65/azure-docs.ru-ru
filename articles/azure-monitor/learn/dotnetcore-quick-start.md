@@ -37,7 +37,7 @@ ms.locfileid: "72900569"
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портале Azure](https://portal.azure.com/).
+Войдите на [портал Azure](https://portal.azure.com/).
 
 ## <a name="enable-application-insights"></a>Включение Application Insights
 
@@ -46,7 +46,7 @@ ms.locfileid: "72900569"
 1. Последовательно выберите **Создать ресурс** > **Средства разработчика** > **Application Insights**.
 
    > [!NOTE]
-   >Если вы создаете ресурс Application Insights впервые, ознакомьтесь с дополнительными сведениями в статье [Create an Application Insights resource](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource) (Создание ресурса Application Insights).
+   >Если вы создаете ресурс Application Insights впервые, ознакомьтесь с дополнительными сведениями в статье [Создание ресурса Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource).
 
     Откроется окно настроек, в котором нужно заполнить все поля в соответствии с приведенной ниже таблицей.
 
@@ -66,11 +66,11 @@ ms.locfileid: "72900569"
 
 2. Нажмите кнопку **Начало работы**.
 
-3. Выберите учетную запись и подписку, выберите **существующий ресурс**, который вы создали на портале Azure, и нажмите кнопку **Зарегистрировать**.
+3. Выберите учетную запись и подписку, выберите **Существующий ресурс**, который вы создали на портале Azure, и нажмите кнопку **Зарегистрировать**.
 
-4. Выберите **Project (Проект)**  > **Manage NuGet Packages (Управление пакетами NuGet)**  > **Package source: nuget.org (Источник пакета: nuget.org)**  > **Update the Application Insights SDK packages to the latest stable release** (Обновить пакеты SDK Application Insights до последней стабильной версии).
+4. Выберите **Проект** > **Управление пакетами NuGet** > **Источник пакета: nuget.org** > **Обновить** и обновите пакеты SDK для Application Insights до последней стабильной версии.
 
-5. Чтобы запустить приложение, выберите **Отладка** > **Start without Debugging** (Запуск без отладки) (Ctrl + F5).
+5. Чтобы запустить приложение, выберите **Отладка** > **Запуск без отладки** (CTRL+F5).
 
     ![Меню "Обзор Application Insights"](./media/dotnetcore-quick-start/3debug.png)
 
@@ -83,7 +83,7 @@ ms.locfileid: "72900569"
 
    ![Меню "Обзор Application Insights"](./media/dotnetcore-quick-start/4overview.png)
 
-2. Щелкните **схему приложений**, чтобы получить визуальный макет отношений зависимости между компонентами приложения. Каждый компонент показывает ключевой показатель эффективности, такие как производительность, сбои и оповещения.
+2. Щелкните **Схема приложений**, чтобы получить визуальный макет отношений зависимости между компонентами приложения. Каждый компонент отображает ключевые показатели эффективности, такие как загрузка, производительность, сбои и оповещения.
 
    ![Схема приложений](./media/dotnetcore-quick-start/5appmap.png)
 
