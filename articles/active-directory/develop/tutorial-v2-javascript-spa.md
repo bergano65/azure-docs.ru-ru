@@ -399,7 +399,7 @@ function callMSGraph(theUrl, accessToken, callback) {
     npm install
     node server.js
     ```
-1. В браузере введите **http://\<span>\<localhost:30662** или **http://\<span>\</span>localhost:{port}** , где *port* соответствует порту, с которого веб-сервер ожидает передачи данных. Появится содержимое файла *index.html* с кнопкой **Sign In** (Войти).
+1. В браузере введите **http://\<span>\</span>localhost:30662** или **http://\<span>\</span>localhost:{port}** , где *port* соответствует порту, с которого веб-сервер ожидает передачи данных. Появится содержимое файла *index.html* с кнопкой **Sign In** (Войти).
 
 ### <a name="test-with-visual-studio"></a>Тестирование кода в Visual Studio
 
