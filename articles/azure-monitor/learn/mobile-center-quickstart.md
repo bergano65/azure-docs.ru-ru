@@ -29,8 +29,8 @@ ms.locfileid: "72900532"
  
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="sign-up-with-app-center"></a>Зарегистрироваться в App Center
-Для начала создайте учетную запись и [зарегистрируйтесь в App Center](https://appcenter.ms/signup?utm_source=ApplicationInsights&utm_medium=Azure&utm_campaign=docs).
+## <a name="sign-up-with-app-center"></a>Зарегистрироваться в Центре приложений
+Для начала создайте учетную запись и [зарегистрируйтесь в Центре приложений](https://appcenter.ms/signup?utm_source=ApplicationInsights&utm_medium=Azure&utm_campaign=docs).
 
 ## <a name="onboard-to-app-center"></a>Знакомство с App Center
 
@@ -41,7 +41,7 @@ ms.locfileid: "72900532"
 * [iOS](https://docs.microsoft.com/mobile-center/sdk/getting-started/ios);
 * [Android](https://docs.microsoft.com/mobile-center/sdk/getting-started/android);
 * [Xamarin](https://docs.microsoft.com/mobile-center/sdk/getting-started/xamarin);
-* [Универсальная платформа Windows](https://docs.microsoft.com/mobile-center/sdk/getting-started/uwp);
+* [универсальная платформа Windows](https://docs.microsoft.com/mobile-center/sdk/getting-started/uwp);
 * [React Native](https://docs.microsoft.com/mobile-center/sdk/getting-started/react-native).
 
 ## <a name="track-events-in-your-app"></a>Отслеживание событий в приложении
