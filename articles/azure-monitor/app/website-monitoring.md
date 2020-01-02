@@ -1,5 +1,6 @@
 ---
-title: Мониторинг веб-сайтов с помощью Azure Monitor Application Insights
+title: Краткое руководство по мониторингу веб-сайтов с помощью Azure Monitor Application Insights | Документация Майкрософт
+
 description: Инструкции по быстрой настройке мониторинга веб-сайта на стороне клиента (браузера) с помощью Azure Monitor Application Insights.
 ms.service: azure-monitor
 ms.subservice: application-insights
@@ -47,7 +48,7 @@ Application Insights может собирать данные телеметри
     | Параметры        | Значение           | ОПИСАНИЕ  |
    | ------------- |:-------------|:-----|
    | **Имя**      | Глобально уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
-   | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных App Insights |
+   | **Группа ресурсов** | myResourceGroup | Имя новой группы ресурсов для размещения данных App Insights |
    | **Местоположение.** | Восточная часть США | Выберите ближайшее расположение или расположение вблизи места размещения приложения |
 
 2. Нажмите кнопку **Создать**.
@@ -78,7 +79,7 @@ Application Insights может собирать данные телеметри
 
 2. Добавьте следующий скрипт в ``hello_world.html`` перед закрывающим тегом ``</head>``:
 
-   ```javascript
+    ```javascript
     <script type="text/javascript">
       var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=window[sdkInstance],aisdk=window[aiName]||function(e){function n(e){t[e]=function(){var n=arguments;t.queue.push(function(){t[e].apply(t,n)})}}var t={config:e};t.initialize=!0;var i=document,a=window;setTimeout(function(){var n=i.createElement("script");n.src=e.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",i.getElementsByTagName("script")[0].parentNode.appendChild(n)});try{t.cookie=i.cookie}catch(e){}t.queue=[],t.version=2;for(var r=["Event","PageView","Exception","Trace","DependencyData","Metric","PageViewPerformance"];r.length;)n("track"+r.pop());n("startTrackPage"),n("stopTrackPage");var s="Track"+r[0];if(n("start"+s),n("stop"+s),n("setAuthenticatedUserContext"),n("clearAuthenticatedUserContext"),n("flush"),!(!0===e.disableExceptionTracking||e.extensionConfig&&e.extensionConfig.ApplicationInsightsAnalytics&&!0===e.extensionConfig.ApplicationInsightsAnalytics.disableExceptionTracking)){n("_"+(r="onerror"));var o=a[r];a[r]=function(e,n,i,a,s){var c=o&&o(e,n,i,a,s);return!0!==c&&t["_"+r]({message:e,url:n,lineNumber:i,columnNumber:a,error:s}),c},e.autoExceptionInstrumented=!0}return t}(
       {
@@ -96,7 +97,7 @@ Application Insights может собирать данные телеметри
 
 1. Теперь можно повторно открыть страницу **Обзор** Application Insights на портале Azure, где вы извлекли ключ инструментирования, для просмотра сведений о выполняющемся в данный момент приложении. Четыре диаграммы по умолчанию на обзорной странице привязаны к серверным данным приложения. Так как мы рассматриваем взаимодействие на стороне клиента (браузера) с использованием пакета SDK для JavaScript, это конкретное представление не применяется, если у нас также не установлен пакет SDK на стороне сервера.
 
-2. Щелкните значок ![Схема приложений](media/website-monitoring/006.png) **Аналитика**.  Откроется окно **Аналитика**, которое предоставляет полнофункциональный язык запросов для анализа всех данных, собранных Application Insights. Для просмотра данных, связанных с запросами браузера на стороне клиента, выполните следующий запрос:
+2. Щелкните значок ![Схема приложений](media/website-monitoring/006.png) **Аналитика**. Откроется окно **Аналитика**, которое предоставляет полнофункциональный язык запросов для анализа всех данных, собранных Application Insights. Для просмотра данных, связанных с запросами браузера на стороне клиента, выполните следующий запрос:
 
     ```kusto
     // average pageView duration by name
