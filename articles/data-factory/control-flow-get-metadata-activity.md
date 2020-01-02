@@ -4,21 +4,20 @@ description: Узнайте, как использовать действие п
 services: data-factory
 documentationcenter: ''
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: ''
 ms.assetid: 1c46ed69-4049-44ec-9b46-e90e964a4a8e
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 11/20/2019
+ms.date: 11/26/2019
 ms.author: jingwang
-ms.openlocfilehash: 039176f2c546aa933d3a87ded8b6ded94e485d74
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 9985997ff4bef727676232705297379ccfc179c5
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74280646"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74928566"
 ---
 # <a name="get-metadata-activity-in-azure-data-factory"></a>Действие "получить метаданные" в фабрике данных Azure
 
@@ -47,32 +46,33 @@ ms.locfileid: "74280646"
 |:--- |:--- |:--- |:--- |:--- |:--- |:--- |:--- |:--- |:--- |:--- |
 | [Amazon S3](connector-amazon-simple-storage-service.md) | √/√ | √/√ | √ | x/x | √/√* | √ | x | √ | √ | √/√* |
 | [Google Cloud Storage](connector-google-cloud-storage.md) | √/√ | √/√ | √ | x/x | √/√* | √ | x | √ | √ | √/√* |
-| [хранилище BLOB-объектов Azure](connector-azure-blob-storage.md) | √/√ | √/√ | √ | x/x | √/√* | √ | √ | √ | √ | √/√ |
+| [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md) | √/√ | √/√ | √ | x/x | √/√* | √ | √ | √ | √ | √/√ |
 | [Хранилище Azure Data Lake Gen1](connector-azure-data-lake-store.md) | √/√ | √/√ | √ | x/x | √/√ | √ | x | √ | √ | √/√ |
 | [Хранилище Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | √/√ | √/√ | √ | x/x | √/√ | √ | x | √ | √ | √/√ |
 | [Файлы Azure](connector-azure-file-storage.md) | √/√ | √/√ | √ | √/√ | √/√ | √ | x | √ | √ | √/√ |
 | [Файловая система](connector-file-system.md) | √/√ | √/√ | √ | √/√ | √/√ | √ | x | √ | √ | √/√ |
 | [SFTP](connector-sftp.md) | √/√ | √/√ | √ | x/x | √/√ | √ | x | √ | √ | √/√ |
-| [FTP](connector-ftp.md) | √/√ | √/√ | √ | x/x | √/√ | √ | x | √ | √ | √/√ |
+| [FTP](connector-ftp.md) | √/√ | √/√ | √ | x/x | x/x | √ | x | √ | √ | √/√ |
 
 - Для Amazon S3 и Google Cloud Storage `lastModified` применяется к контейнеру и ключу, но не к виртуальной папке, и `exists` применяется к контейнеру и ключу, но не к префиксу или виртуальной папке.
 - Для хранилища BLOB-объектов Azure `lastModified` применяется к контейнеру и большому двоичному объекту, но не к виртуальной папке.
+- фильтр `lastModified` в настоящее время применяется для фильтрации дочерних элементов, но не для указанной папки или файла.
 - Фильтр с подстановочными знаками для папок и файлов не поддерживается для действия "получение метаданных".
 
 **Реляционная база данных**
 
 | Соединитель и метаданные | structure | columnCount | exists (существует) |
 |:--- |:--- |:--- |:--- |
-| [База данных SQL Azure](connector-azure-sql-database.md) | √ | √ | √ |
+| [база данных SQL Azure;](connector-azure-sql-database.md) | √ | √ | √ |
 | [Управляемый экземпляр Базы данных SQL Azure](connector-azure-sql-database-managed-instance.md) | √ | √ | √ |
-| [Хранилище данных Azure SQL](connector-azure-sql-data-warehouse.md) | √ | √ | √ |
+| [Хранилище данных SQL Azure](connector-azure-sql-data-warehouse.md) | √ | √ | √ |
 | [SQL Server](connector-sql-server.md) | √ | √ | √ |
 
 ### <a name="metadata-options"></a>Параметры метаданных
 
 Для получения соответствующих сведений можно указать следующие типы метаданных в списке полей действие получения метаданных.
 
-| Тип метаданных | ОПИСАНИЕ |
+| Тип метаданных | Описание |
 |:--- |:--- |
 | itemName | Имя файла или папки. |
 | itemType | Тип файла или папки. Возвращаемое значение — `File` или `Folder`. |
@@ -135,10 +135,10 @@ ms.locfileid: "74280646"
 
 В настоящее время действие получить метаданные может возвращать следующие типы сведений о метаданных:
 
-Свойство | ОПИСАНИЕ | обязательные
+Свойство | Описание | Обязательно для заполнения
 -------- | ----------- | --------
-fieldList | Типы необходимых сведений о метаданных. Дополнительные сведения о поддерживаемых метаданных см. в разделе [Параметры метаданных](#metadata-options) этой статьи. | Yes 
-набор данных | Эталонный набор данных, метаданные которого будут извлечены действием "получение метаданных". Сведения о поддерживаемых соединителях см. в разделе [возможности](#capabilities) . Сведения о синтаксисе набора данных см. в разделах, посвященных конкретным соединителям. | Yes
+fieldList | Типы необходимых сведений о метаданных. Дополнительные сведения о поддерживаемых метаданных см. в разделе [Параметры метаданных](#metadata-options) этой статьи. | ДА 
+dataset | Эталонный набор данных, метаданные которого будут извлечены действием "получение метаданных". Сведения о поддерживаемых соединителях см. в разделе [возможности](#capabilities) . Сведения о синтаксисе набора данных см. в разделах, посвященных конкретным соединителям. | ДА
 форматсеттингс | Применяется при использовании набора данных типа Format. | Нет
 сторесеттингс | Применяется при использовании набора данных типа Format. | Нет
 
@@ -193,7 +193,7 @@ fieldList | Типы необходимых сведений о метаданн
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о других действиях потока управления, поддерживаемых фабрикой данных:
 
 - [Действие выполнения конвейера в фабрике данных Azure](control-flow-execute-pipeline-activity.md)

@@ -1,17 +1,17 @@
 ---
-title: Monitor and Tune in Azure Database for PostgreSQL - Single Server
-description: This article describes monitoring and tuning features in Azure Database for PostgreSQL - Single Server.
+title: Мониторинг и Настройка — база данных Azure для PostgreSQL — один сервер
+description: В этой статье описываются функции мониторинга и настройки в базе данных Azure для PostgreSQL-Single Server.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 06/19/2019
-ms.openlocfilehash: 799b2b6ee6074472a951e69dec7e9a87056373b4
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 283ffdd32dbb5b2c80106da98b846ab81aca9608
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74384028"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74768560"
 ---
 # <a name="monitor-and-tune-azure-database-for-postgresql---single-server"></a>мониторингу и настройке отдельного сервера Базы данных Azure для PostgreSQL
 Мониторинг данных о серверах помогает устранять неполадки и оптимизировать рабочую нагрузку. База данных Azure для PostgreSQL предоставляет различные параметры мониторинга, дающие возможность получить полезные сведения о поведении сервера.
@@ -38,28 +38,28 @@ ms.locfileid: "74384028"
 |network_bytes_egress|Сеть (исходящий трафик)|Байты|Исходящий сетевой трафик по активным подключениям.|
 |network_bytes_ingress|Сеть (входящий трафик)|Байты|Входящий сетевой трафик по активным подключениям.|
 |backup_storage_used|Используемое хранилище резервных копий|Байты|Объем используемого хранилища резервных копий.|
-|pg_replica_log_delay_in_bytes|Максимальная задержка между репликами|Байты|The lag in bytes between the master and the most-lagging replica. Эта метрика доступна только на главном сервере.|
-|pg_replica_log_delay_in_seconds|Задержка реплики|Секунды|The time since the last replayed transaction. This metric is available for replica servers only.|
+|pg_replica_log_delay_in_bytes|Максимальная задержка между репликами|Байты|Запаздывание в байтах между главной и задержкой репликой. Эта метрика доступна только на главном сервере.|
+|pg_replica_log_delay_in_seconds|Задержка реплики|Секунды|Время с момента последнего воспроизведения транзакции. Эта метрика доступна только для серверов реплик.|
 
 ## <a name="server-logs"></a>Журналы сервера
-Можно включить ведение журнала на сервере. These logs are also available through Azure Diagnostic Logs in [Azure Monitor logs](../azure-monitor/log-query/log-query-overview.md), Event Hubs, and Storage Account. Дополнительные сведения о ведении журналов см. на странице [Журналы сервера в базе данных Azure для PostgreSQL](concepts-server-logs.md).
+Можно включить ведение журнала на сервере. Эти журналы также доступны в журналах диагностики Azure в [Azure Monitor журналов](../azure-monitor/log-query/log-query-overview.md), концентраторах событий и учетной записи хранения. Дополнительные сведения о ведении журналов см. на странице [Журналы сервера в базе данных Azure для PostgreSQL](concepts-server-logs.md).
 
 ## <a name="query-store"></a>Хранилище запросов
-[Query Store](concepts-query-store.md) keeps track of query performance over time including query runtime statistics and wait events. Эта функция сохраняет сведения о производительности среды выполнения запросов в системной базе данных с именем **azure_sys** в схеме query_store. Вы можете управлять процессами сбора и хранения данных с помощью различных приспособлений конфигурации.
+[Хранилище запросов](concepts-query-store.md) отслеживает производительность запросов с течением времени, включая статистику времени выполнения запросов и события ожидания. Эта функция сохраняет сведения о производительности среды выполнения запросов в системной базе данных с именем **azure_sys** в схеме query_store. Вы можете управлять процессами сбора и хранения данных с помощью различных приспособлений конфигурации.
 
 ## <a name="query-performance-insight"></a>Сведения о производительности запросов
-Средство [Анализ производительности запросов](concepts-query-performance-insight.md) работает совместно с хранилищем запросов для предоставления визуализаций, доступных на портале Azure. Эти диаграммы позволяют определить основные запросы, влияющие на производительность. Query Performance Insightis accessible from the **Support + troubleshooting** section of your Azure Database for PostgreSQL server's portal page.
+Средство [Анализ производительности запросов](concepts-query-performance-insight.md) работает совместно с хранилищем запросов для предоставления визуализаций, доступных на портале Azure. Эти диаграммы позволяют определить основные запросы, влияющие на производительность. Аналитика производительности запросов доступна в разделе **Поддержка и устранение неполадок** страницы портала базы данных Azure для PostgreSQL.
 
 ## <a name="performance-recommendations"></a>Рекомендации по производительности
-Функция [Рекомендации по производительности](concepts-performance-recommendations.md) определяет возможности для повышения производительности рабочей нагрузки. Performance Recommendations provides you with recommendations for creating new indexes that have the potential to improve the performance of your workloads. Для создания рекомендаций по индексам эта функция учитывает различные характеристики базы данных, включая ее схемы и рабочую нагрузку по данным хранилища запросов. После реализации любой из рекомендаций по повышению производительности клиенты должны протестировать производительность, чтобы оценить результаты внесенных изменений. 
+Функция [Рекомендации по производительности](concepts-performance-recommendations.md) определяет возможности для повышения производительности рабочей нагрузки. Рекомендации по производительности предоставляют рекомендации по созданию новых индексов, которые могут повысить производительность рабочих нагрузок. Для создания рекомендаций по индексам эта функция учитывает различные характеристики базы данных, включая ее схемы и рабочую нагрузку по данным хранилища запросов. После реализации любой из рекомендаций по повышению производительности клиенты должны протестировать производительность, чтобы оценить результаты внесенных изменений. 
 
 ## <a name="service-health"></a>Работоспособность службы
-[Azure Service health](../service-health/overview.md) provides a view of all service health notifications in your subscription. You can set up Service Health alerts to notify you via your preferred communication channels when there are issues or changes that may affect the Azure services and regions you use.
+[Служба работоспособности служб Azure](../service-health/overview.md) предоставляет представление всех уведомлений о работоспособности службы в вашей подписке. Вы можете настроить оповещения о работоспособности службы, чтобы уведомлять вас по предпочтительным каналам связи при возникновении проблем или изменений, которые могут повлиять на используемые службы Azure и регионы.
 
-You can view scheduled maintenance events for Azure Database for PostgreSQL - Single Server by using the **planned maintenance** event type. To learn how to create **service health alerts**, visit the [Create activity log alerts on service notifications](../service-health/alerts-activity-log-service-notifications.md) article.
+Вы можете просмотреть события запланированного обслуживания для базы данных Azure для PostgreSQL-Single Server, используя тип события **планового обслуживания** . Сведения о создании **оповещений о работоспособности службы**см. в статье [Создание оповещений журнала действий в службе уведомлений](../service-health/alerts-activity-log-service-notifications.md) .
 
 > [!IMPORTANT]
-> The planned maintenance notifications is available in preview for EAST US and UK South only.
+> Уведомления о плановом обслуживании доступны в предварительной версии только для восточной части США и южная часть Соединенного Королевства.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Рекомендации по созданию оповещений для метрики см. в статье [Настройка оповещений на основе метрик для базы данных Azure для PostgreSQL на портале Azure](howto-alert-on-metric.md).

@@ -4,16 +4,16 @@ description: В этой статье объясняется, как согла�
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 11/06/2019
+ms.date: 12/04/2019
 ms.topic: conceptual
-ms.service: billing
+ms.service: cost-management-billing
 manager: boalcsva
-ms.openlocfilehash: 8a49221a4b45161e562569535b9aac596a41fb98
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 78fda5785d85b728c897bf758bc2a3cdee768d02
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73888420"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849910"
 ---
 # <a name="azure-ea-agreements-and-amendments"></a>Соглашения и изменения для Azure EA
 

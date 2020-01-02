@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 10/14/2019
+ms.date: 12/04/2019
 ms.topic: quickstart
-ms.service: cost-management
+ms.service: cost-management-billing
 manager: micflan
 ms.custom: seodec18
-ms.openlocfilehash: f2e1d19f69b426cee870d2ede489b7c458404704
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: 36b8a3bba82a338f3aab526d505c4d1e96061ddf
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72374767"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849128"
 ---
 # <a name="quickstart-explore-and-analyze-costs-with-cost-analysis"></a>Краткое руководство. Изучение и анализ затрат с помощью функции анализа затрат
 
@@ -101,7 +101,9 @@ ms.locfileid: "72374767"
 
 Можно выполнять **группировку по** общим свойствам, чтобы разбить затраты и выявить наивысшие показатели. Например, чтобы выполнить группирование по тегам ресурсов, выберите ключ тега, с помощью которого необходимо выполнить группировку. В результате отобразится разбивка затрат по каждому значению тега с одной дополнительной категорией для ресурсов, к которым не применялся тег.
 
-Большинство [ресурсов Azure поддерживают теги](../azure-resource-manager/tag-support.md). Однако некоторые теги недоступны в Управлении затратами и выставлении счетов. Кроме того, не поддерживаются теги группы ресурсов. Управление затратами поддерживает только теги ресурсов с момента непосредственного применения тегов к ресурсу. Просмотрите видео [How to review tag policies with Azure Cost Management](https://www.youtube.com/watch?v=nHQYcYGKuyw) (Как просматривать политики тегов с помощью службы "Управление затратами Azure"), чтобы узнать, как использовать политику тегов Azure для улучшения видимости данных о расходах.
+Большинство [ресурсов Azure поддерживают теги](../azure-resource-manager/tag-support.md). Однако некоторые теги недоступны в Управлении затратами и выставлении счетов. Кроме того, не поддерживаются теги группы ресурсов. Поддержка тегов применяется к использованию, отчет о котором поступил *после* того, как к ресурсу был применен тег. Теги не применяются к сверткам затрат задним числом.
+
+Просмотрите видео [How to review tag policies with Azure Cost Management](https://www.youtube.com/watch?v=nHQYcYGKuyw) (Как просматривать политики тегов с помощью службы "Управление затратами Azure"), чтобы узнать, как использовать политику тегов Azure для улучшения видимости данных о расходах.
 
 Это представление затрат на службы Azure за текущий месяц.
 

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 09/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3ba2f59799629873553fe261abebf59529ad94d
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: 0e08ef72dca09f873ad1cfcc91e132063b88406b
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "73570623"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227532"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-freshservice"></a>Руководство по интеграции единого входа Azure Active Directory с приложением Freshservice
 
@@ -95,7 +95,7 @@ ms.locfileid: "73570623"
 
 1. Для работы единого входа Freshservice требуется отпечаток SHA-256. Чтобы получить отпечаток SHA-256, выполните следующие действия.
 
-    ![Отпечаток пальца](./media/freshservice-tutorial/ic790821.png "Отпечаток пальца")
+    ![Отпечаток](./media/freshservice-tutorial/ic790821.png "Отпечаток")
 
     1. Откройте [ссылку](https://www.samltool.com/fingerprint.php) в другом веб-браузере.
 
@@ -191,15 +191,15 @@ ms.locfileid: "73570623"
 
 3. В разделе **User Management** (Управление пользователями) выберите **Requesters** (Инициаторы запроса).
 
-    ![Инициатор запроса](./media/freshservice-tutorial/ic790818.png "Инициатор запроса")
+    ![Инициаторы запроса](./media/freshservice-tutorial/ic790818.png "Инициаторы запроса")
 
 4. Нажмите **Новый инициатор запроса**.
 
-    ![Создание инициаторов запроса](./media/freshservice-tutorial/ic790819.png "Создание инициаторов запроса")
+    ![Новые инициаторы запроса](./media/freshservice-tutorial/ic790819.png "Новые инициаторы запроса")
 
 5. В разделе **Новый инициатор запроса** выполните следующие действия.
 
-    ![Создание инициатора запроса](./media/freshservice-tutorial/ic790820.png "Создание инициатора запроса")  
+    ![Новый инициатор запроса](./media/freshservice-tutorial/ic790820.png "Новый инициатор запроса")  
 
     a. В соответствующие текстовые поля введите атрибуты **First name** (Имя) и **Email** (Адрес электронной почты) действующей учетной записи Azure Active Directory, которую вы хотите подготовить.
 
@@ -210,7 +210,7 @@ ms.locfileid: "73570623"
     >  
 
 > [!NOTE]
-> Вы можете использовать любые другие инструменты создания учетных записей пользователя FreshService или API, предоставляемые FreshService для подготовки учетных записей пользователя AAD.
+> Вы можете использовать любые другие инструменты создания учетных записей пользователя FreshService или API, предоставляемые FreshService, для подготовки учетных записей пользователя AAD.
 
 ## <a name="test-sso"></a>Проверка единого входа
 

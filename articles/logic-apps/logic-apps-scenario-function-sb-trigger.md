@@ -1,26 +1,23 @@
 ---
-title: Вызов приложений логики с помощью функций Azure — Azure Logic Apps
+title: Вызов приложений логики с помощью решения "Функции Azure"
 description: Создание функций Azure, которые вызывают или активируют приложения логики, прослушиваемые служебной шиной Azure
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: jehollan, klam, LADocs
+ms.reviewer: jehollan, klam, logicappspm
 ms.topic: article
 ms.date: 11/08/2019
-ms.openlocfilehash: c65a0464bbad6dbaca51dbc5bbc0d84adbd605d7
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: 66f0e0cd2bd09e22260574992f92f7210bd6aa51
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73904658"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74792943"
 ---
 # <a name="call-or-trigger-logic-apps-by-using-azure-functions-and-azure-service-bus"></a>Вызов или Активация приложений логики с помощью функций Azure и служебной шины Azure
 
 Вы можете использовать [функции Azure](../azure-functions/functions-overview.md) для активации приложения логики, когда требуется развернуть долгосрочный прослушиватель или задачу. Например, можно создать функцию Azure, которая прослушивает очередь [служебной шины Azure](../service-bus-messaging/service-bus-messaging-overview.md) и сразу же запускает приложение логики в качестве триггера push-уведомлений.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -151,6 +148,6 @@ ms.locfileid: "73904658"
 
    Приложение логики должно активироваться сразу же, как только функция получит это сообщение.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Вызов, активация или вложение рабочих процессов с помощью конечных точек HTTP](../logic-apps/logic-apps-http-endpoint.md)

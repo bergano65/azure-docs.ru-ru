@@ -1,5 +1,5 @@
 ---
-title: Интеграция Azure Monitor для виртуальных машин с System Center Operations Manager | Документация Майкрософт
+title: Интеграция Azure Monitor для виртуальных машин Map с Operations Manager | Документация Майкрософт
 description: Azure Monitor для виртуальных машин автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. В этой статье рассматривается использование функции Map для автоматического создания схем распределенного приложения в Operations Manager.
 ms.service: azure-monitor
 ms.subservice: ''
@@ -7,16 +7,16 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 07/12/2019
-ms.openlocfilehash: 3523756e89506e90407090db105fdced5853d9d9
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: f1acf3c1574fd94606d75c6250dedd40a9c7ea4d
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72553973"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849825"
 ---
-# <a name="system-center-operations-manager-integration-with-azure-monitor-for-vms-map-feature"></a>Интеграция System Center Operations Manager с функцией Map Azure Monitor для виртуальных машин
+# <a name="integrate-system-center-operations-manager-with-azure-monitor-for-vms-map-feature"></a>Интеграция System Center Operations Manager с функцией карт Azure Monitor для виртуальных машин
 
-В Azure Monitor для виртуальных машин можно просматривать обнаруженные компоненты приложения на виртуальных машинах Windows и Linux, работающих в Azure или в среде. Благодаря такой интеграции между функцией Map и System Center Operations Manager можно автоматически создавать схемы распределенных приложений в Operations Manager, основанные на динамических картах зависимостей в Azure Monitor для виртуальных машин. 
+В Azure Monitor для виртуальных машин можно просматривать обнаруженные компоненты приложения на виртуальных машинах Windows и Linux, работающих в Azure или в среде. Благодаря такой интеграции между функцией Map и System Center Operations Manager можно автоматически создавать схемы распределенных приложений в Operations Manager, основанные на динамических картах зависимостей в Azure Monitor для виртуальных машин. В этой статье описывается настройка группы управления System Center Operations Manager для поддержки этой функции.
 
 >[!NOTE]
 >Если вы уже развернули Сопоставление служб, вы можете просматривать карты в Azure Monitor для виртуальных машин, включая дополнительные функции для мониторинга работоспособности и производительности виртуальных машин. Функция Map Azure Monitor для виртуальных машин предназначена для замены автономного Сопоставление службного решения. Дополнительные сведения см. в разделе [Общие сведения об Azure Monitor для виртуальных машин](vminsights-overview.md).

@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: overview
-ms.date: 03/12/2019
+ms.date: 12/05/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 65e28b557a3708c155bf80f21a784374c4497783
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 6615f166ced4a93115f9cbaae1c6ce5b57cf57bc
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66383038"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892997"
 ---
 # <a name="what-is-the-bing-web-search-api"></a>Знакомство с API Bing для поиска в Интернете
 
@@ -42,7 +42,7 @@ API Bing для поиска в Интернете — это служба RESTf
 
 API Bing для поиска в Интернете легко вызывается с любого языка программирования, который может обрабатывать HTTP-запросы и анализировать ответы JSON. Служба доступна с использованием [REST API](quickstarts/python.md) или [пакетов SDK для Поиска в Интернете Bing](web-sdk-python-quickstart.md).
 
-1. Создайте [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с доступом к API-интерфейсам поиска Bing. Если у вас нет подписки Azure, вы можете [создать бесплатную учетную запись](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).  
+1. [Создайте ресурс Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) для API-интерфейсов "Поиск Bing". Если у вас нет подписки Azure, вы можете [создать бесплатную учетную запись](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).  
 2. Отправьте [запрос в API Bing для поиска в Интернете](quickstarts/python.md).
 3. Проанализируйте ответ JSON.
 

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 09/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 150c4b458724562fc35ef97e190c898a289c6122
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: fae7b80fd4d2fcec32bbef5e4cdf18e576412a86
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71102920"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74231978"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sugar-crm"></a>Руководство по интеграции единого входа Azure Active Directory с Sugar CRM
 
@@ -159,7 +159,7 @@ ms.locfileid: "71102920"
 
 1. В разделе **Проверка подлинности SAML** сделайте следующее:
 
-    ![Аутентификация SAML](./media/sugarcrm-tutorial/ic795891.png "Аутентификация SAML")  
+    ![Проверка подлинности SAML](./media/sugarcrm-tutorial/ic795891.png "Проверка подлинности SAML")  
 
     a. В текстовое поле **Login URL** (URL-адрес входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
   
@@ -187,7 +187,7 @@ ms.locfileid: "71102920"
 
 1. Выберите **Users (Пользователи) \> Create New User (Создать нового пользователя)** .
 
-    ![Создание пользователя](./media/sugarcrm-tutorial/ic795894.png "Создание пользователя")
+    ![Создание пользователя](./media/sugarcrm-tutorial/ic795894.png "Создать нового пользователя")
 
 1. На вкладке **Профиль пользователя** сделайте следующее:
 
@@ -206,7 +206,7 @@ ms.locfileid: "71102920"
     b. Выберите команду **Сохранить**.
 
 > [!NOTE]
-> Вы можете использовать любые другие инструменты создания учетных записей пользователей SugarCRM или API, предоставляемые SugarCRM для подготовки учетных записей пользователей AAD.
+> Вы можете использовать любые другие инструменты создания учетных записей пользователей SugarCRM или API, предоставляемые SugarCRM, для подготовки учетных записей пользователей AAD.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 

@@ -1,22 +1,16 @@
 ---
-title: Создание функции, активируемой сообщениями очереди, в Azure | Документация Майкрософт
+title: Создание функции, активируемой сообщениями очереди, в Azure
 description: Создавайте независимые от сервера функции, активируемые сообщениями, отправленными в очередь службы хранилища Azure.
-services: azure-functions
-documentationcenter: na
-author: ggailey777
-manager: jeconnoc
 ms.assetid: 361da2a4-15d1-4903-bdc4-cc4b27fc3ff4
-ms.service: azure-functions
 ms.topic: quickstart
 ms.date: 10/01/2018
-ms.author: glenga
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: 60c8505b8180a60eed114deb4cd2b11f32c8baa4
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 3f4e9f8a607856e3de92a4824a4221071f3c02a4
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70096804"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227137"
 ---
 # <a name="create-a-function-triggered-by-azure-queue-storage"></a>Создание функции, активируемой хранилищем очередей Azure
 

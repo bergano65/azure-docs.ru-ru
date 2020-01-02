@@ -1,26 +1,19 @@
 ---
-title: Знакомство со Служба приложений Azure на платформе Linux | Документация Майкрософт
-description: Информация о службе приложений Azure на платформе Linux.
+title: Выполнение кода в контейнерах Linux по умолчанию
+description: Служба приложений Azure может выполнять код в предварительно созданных контейнерах Linux. Узнайте о возможностях запуска веб-приложений Linux в Azure.
 keywords: служба приложений azure, linux, oss
-services: app-service
-documentationcenter: ''
 author: msangapu-msft
-manager: gwallace
-editor: ''
 ms.assetid: bc85eff6-bbdf-410a-93dc-0f1222796676
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: overview
 ms.date: 1/11/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 1bbcd5e4f8c6a429def84ad77d7dd93fa11b7324
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: 381f1486f13907aa52558029789e49bc4e5c4961
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72819684"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74687616"
 ---
 # <a name="introduction-to-azure-app-service-on-linux"></a>Вводные сведения о службе приложений Azure на платформе Linux
 
@@ -67,7 +60,12 @@ ms.locfileid: "72819684"
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-Если не удается запустить приложение или необходимо проверить ведение журнала приложения, просмотрите журналы Docker в каталоге LogFiles. Доступ к этому каталогу можно получить либо на сайте SCM, либо через FTP. Чтобы записать `stdout` и `stderr` из контейнера, необходимо включить **ведение журнала контейнера Docker** в разделе **Журналы Службы приложений**. Изменение параметров вступает в силу немедленно. Служба приложений обнаруживает изменение и автоматически перезапускает контейнер.
+> [!NOTE]
+> В службе [Мониторинг Azure (предварительная версия)](https://docs.microsoft.com/azure/app-service/troubleshoot-diagnostic-logs#send-logs-to-azure-monitor-preview) есть новые возможности интегрированного ведения журнала. 
+>
+>
+
+Если не удается запустить приложение или необходимо проверить ведение журнала приложения, просмотрите журналы Docker в каталоге LogFiles. Доступ к этому каталогу можно получить либо на сайте SCM, либо через FTP. Чтобы записать `stdout` и `stderr` из контейнера, необходимо включить **ведение журнала приложения** в разделе **Журналы Службы приложений**. Изменение параметров вступает в силу немедленно. Служба приложений обнаруживает изменение и автоматически перезапускает контейнер.
 
 Получить доступ к сайту SCM можно, щелкнув **Дополнительные средства** в меню **Средства разработки**.
 

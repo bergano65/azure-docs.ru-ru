@@ -1,5 +1,5 @@
 ---
-title: Automatically provision Windows devices with DPS - Azure IoT Edge | Microsoft Docs
+title: Автоматическая подготавливает устройства Windows с помощью DPS-Azure IoT Edge | Документация Майкрософт
 description: Использование имитированного устройства на компьютере Windows для тестирования автоматической подготовки устройств для Azure IoT Edge с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей
 author: kgremban
 manager: philmea
@@ -15,13 +15,13 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/24/2019
 ms.locfileid: "74457136"
 ---
-# <a name="create-and-provision-a-simulated-iot-edge-device-with-a-virtual-tpm-on-windows"></a>Create and provision a simulated IoT Edge device with a virtual TPM on Windows
+# <a name="create-and-provision-a-simulated-iot-edge-device-with-a-virtual-tpm-on-windows"></a>Создание и инициализация имитации устройства IoT Edge с помощью виртуального доверенного платформенного модуля в Windows
 
 Устройства Azure IoT Edge можно подготовить автоматически с помощью [Службы подготовки устройств к добавлению в Центр Интернета вещей](../iot-dps/index.yml) точно так же, как и другие устройства. При необходимости ознакомьтесь с [процессом автоматической подготовки](../iot-dps/concepts-auto-provisioning.md), прежде чем продолжить.
 
-DPS supports symmetric key attestation for IoT Edge devices in both individual enrollment and group enrollment. For group enrollment, if you check “is IoT Edge device” option to be true in symmetric key attestation, all the devices that are registered under that enrollment group will be marked as IoT Edge devices. 
+Служба DPS поддерживает симметричную аттестацию ключей для IoT Edge устройств как отдельной регистрации, так и групповой регистрации. Если для групповой регистрации выбран параметр "это IoT Edge устройство" в аттестации симметричного ключа, все устройства, зарегистрированные в этой группе регистрации, будут помечены как IoT Edgeные. 
 
-This article shows you how to test auto-provisioning on a simulated IoT Edge device with the following steps:
+В этой статье показано, как протестировать автоматическую подготовку на имитации устройства IoT Edge, выполнив следующие действия.
 
 * Создание экземпляра Службы подготовки устройств к добавлению в Центр Интернета вещей.
 * Создание имитированного устройства на компьютере Windows с имитированным доверенным платформенным модулем (TPM) для обеспечения безопасности оборудования.
@@ -29,12 +29,12 @@ This article shows you how to test auto-provisioning on a simulated IoT Edge dev
 * Установка среды выполнения IoT Edge и подключение устройства к Центру Интернета вещей.
 
 > [!NOTE]
-> TPM 2.0 is required when using TPM attestation with DPS and can only be used to create individual, not group, enrollments.
+> TPM 2,0 необходим при использовании аттестации доверенного платформенного модуля с DPS и может использоваться только для создания отдельных, а не групп, регистраций.
 
 > [!TIP]
-> This article describes testing auto-provisioning by using TPM attestation on virtual devices, but much of it applies when using physical TPM hardware as well.
+> В этой статье описывается тестирование автоматической подготовки с помощью аттестации TPM на виртуальных устройствах, но многие из них применяются и при использовании физического аппаратного обеспечения TPM.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 * Компьютер для разработки Windows. В этой статье используется Windows 10.
 * Действующий Центр Интернета вещей.
@@ -46,19 +46,19 @@ This article shows you how to test auto-provisioning on a simulated IoT Edge dev
 После запуска Службы подготовки устройств к добавлению в Центр Интернета вещей скопируйте значение **Область идентификатора** на странице обзора. Это значение используется при настройке среды выполнения IoT Edge.
 
 > [!TIP]
-> If you're using a physical TPM device, you need to determine the **Endorsement key**, which is unique to each TPM chip and is obtained from the TPM chip manufacturer associated with it. You can derive a unique **Registration ID** for your TPM device by, for example, creating an SHA-256 hash of the endorsement key.
+> При использовании физического устройства доверенного платформенного модуля необходимо определить **ключ подтверждения**, уникальный для каждого микросхемы TPM и полученный от изготовителя МИКРОсхемы TPM, связанного с ним. Можно создать уникальный **идентификатор регистрации** для устройства TPM, например, СОЗДАВ хэш SHA-256 для ключа подтверждения.
 >
-> Follow the instructions in the article [How to manage device enrollments with Azure Portal](../iot-dps/how-to-manage-enrollments.md) to create your enrollment in DPS and then proceed with the [Install the IoT Edge runtime](#install-the-iot-edge-runtime) section in this article to continue.
+> Следуйте инструкциям в статье [Управление регистрацией устройств с помощью портала Azure](../iot-dps/how-to-manage-enrollments.md) , чтобы создать регистрацию в службе DPS, а затем перейдите к разделу [установка среды выполнения IOT Edge](#install-the-iot-edge-runtime) в этой статье, чтобы продолжить.
 
 ## <a name="simulate-a-tpm-device"></a>Имитация устройства TPM
 
-Создайте имитированное устройства доверенного платформенного модуля на компьютере Windows для разработки. Retrieve the **Registration ID** and **Endorsement key** for your device, and use them to create an individual enrollment entry in DPS.
+Создайте имитированное устройства доверенного платформенного модуля на компьютере Windows для разработки. Получите **идентификатор регистрации** и **ключ подтверждения** для устройства и используйте их для создания отдельной записи регистрации в DPS.
 
 При регистрации в Службе подготовки устройств к добавлению в Центр Интернета вещей есть возможность объявить **Первоначальное состояние двойника устройства**. В двойнике устройства можно задать теги для группировки устройств по любой требуемой для решения метрике, например по региону, среде, расположению или типу устройства. Эти теги используются для создания [автоматических развертываний](how-to-deploy-monitor.md).
 
 Выберите язык пакета SDK для создания имитации устройства, а затем создайте отдельную регистрацию.
 
-When you create the individual enrollment, select **True** to declare that the simulated TPM device on your Windows development machine is an **IoT Edge device**.
+При создании отдельной регистрации выберите **значение true** , чтобы объявить, что имитируемое устройство TPM на компьютере разработки Windows является **IOT Edge устройством**.
 
 Руководства по использованию виртуальных устройств и отдельной регистрации:
 
@@ -74,32 +74,32 @@ When you create the individual enrollment, select **True** to declare that the s
 
 Среда выполнения IoT Edge развертывается на всех устройствах IoT Edge. Ее компоненты выполняются в контейнерах и позволяют развертывать дополнительные контейнеры на устройстве, чтобы обеспечить возможность выполнения кода в граничной системе.
 
-You'll need the following information when provisioning your device:
+При подготовке устройства вам потребуются следующие сведения:
 
-* The DPS **ID Scope** value
-* The device **Registration ID** you created
+* Значение **области идентификаторов** DPS
+* Созданный **идентификатор регистрации** устройства
 
-Install the IoT Edge runtime on the device that is running the simulated TPM. You'll configure the IoT Edge runtime for automatic, not manual, provisioning.
+Установите среду выполнения IoT Edge на устройстве, где выполняется имитация TPM. Вы настроите среду выполнения IoT Edge для автоматического, а не ручной подготовки.
 
 > [!TIP]
 > Не закрывайте окно с запущенным симулятором TPM во время установки и тестирования.
 
-For more detailed information about installing IoT Edge on Windows, including prerequisites and instructions for tasks like managing containers and updating IoT Edge, see [Install the Azure IoT Edge runtime on Windows](how-to-install-iot-edge-windows.md).
+Дополнительные сведения об установке IoT Edge в Windows, включая предварительные требования и инструкции для таких задач, как Управление контейнерами и обновление IoT Edge, см. в [статье Установка среды выполнения Azure IOT EDGE в Windows](how-to-install-iot-edge-windows.md).
 
-1. Откройте окно PowerShell с правами администратора. Be sure to use an AMD64 session of PowerShell when installing IoT Edge, not PowerShell (x86).
+1. Откройте окно PowerShell с правами администратора. Не забудьте использовать сеанс AMD64 PowerShell при установке IoT Edge, а не PowerShell (x86).
 
-1. The **Deploy-IoTEdge** command checks that your Windows machine is on a supported version, turns on the containers feature, and then downloads the moby runtime and the IoT Edge runtime. The command defaults to using Windows containers.
+1. Команда **deploy-IoTEdge** проверяет, что компьютер Windows находится в поддерживаемой версии, включает функцию контейнеров, а затем загружает среду выполнения значок Кита и среду выполнения IOT Edge. Команда по умолчанию использует контейнеры Windows.
 
    ```powershell
    . {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; `
    Deploy-IoTEdge
    ```
 
-1. At this point, IoT Core devices may restart automatically. Other Windows 10 or Windows Server devices may prompt you to restart. If so, restart your device now. Once your device is ready, run PowerShell as an administrator again.
+1. На этом этапе устройства IoT Core могут перезапускаться автоматически. Другие устройства Windows 10 или Windows Server могут предложить перезагрузку. Если да, перезагрузите устройство прямо сейчас. Когда устройство будет готово, снова запустите PowerShell от имени администратора.
 
-1. Команда **Initialize-IoTEdge** настраивает среду выполнения IoT Edge на вашем компьютере. По умолчанию при выполнении команды применяется подготовка вручную с помощью контейнеров Windows. Use the `-Dps` flag to use the Device Provisioning Service instead of manual provisioning.
+1. Команда **Initialize-IoTEdge** настраивает среду выполнения IoT Edge на вашем компьютере. По умолчанию при выполнении команды применяется подготовка вручную с помощью контейнеров Windows. Используйте флаг `-Dps`, чтобы использовать службу подготовки устройств вместо подготовки вручную.
 
-   Replace the placeholder values for `{scope_id}` and `{registration_id}` with the data you collected earlier.
+   Замените значения заполнителей для `{scope_id}` и `{registration_id}` данными, собранными ранее.
 
    ```powershell
    . {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; `
@@ -128,6 +128,6 @@ Get-Service iotedge
 iotedge list
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Процесс регистрации Службы подготовки устройств к добавлению в Центр Интернета вещей позволяет задать идентификатор устройства и теги двойников устройств параллельно с подготовкой нового устройства. Эти значения можно использовать для указания отдельных устройств или групп устройств с помощью автоматического управления устройствами. См. дополнительные сведения о развертывании и мониторинге модулей IoT Edge с поддержкой масштабирования с помощью [портала Azure](how-to-deploy-monitor.md) или [Azure CLI](how-to-deploy-monitor-cli.md).

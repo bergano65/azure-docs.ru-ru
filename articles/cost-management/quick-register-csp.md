@@ -1,21 +1,21 @@
 ---
-title: Регистрация в Cloudyn в Azure с помощью данных партнера CSP | Документация Майкрософт
+title: Регистрация в Cloudyn в Azure с помощью данных партнера CSP
 description: В этом кратком руководстве описывается процесс регистрации, который необходимо пройти для создания пробной подписки Cloudyn и входа на портал Cloudyn.
 services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 05/20/2019
+ms.date: 11/18/2019
 ms.topic: quickstart
 ms.custom: seodec18
-ms.service: cost-management
+ms.service: cost-management-billing
 manager: benshy
-ms.openlocfilehash: 17f4069e38b4e4f0ee7a4ef4acc4535198b62b02
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 4255bfc6a0e51e175bd7cba7102069065b477258
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65969202"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74229963"
 ---
 # <a name="register-with-the-csp-partner-program-and-view-cost-data"></a>Регистрация в партнерской программе CSP и просмотр данных о затратах
 
@@ -30,6 +30,8 @@ ms.locfileid: "65969202"
 > Дополнительные сведения см. в разделе о [подключении к API Центра партнеров](https://msdn.microsoft.com/library/partnercenter/mt709136.aspx).
 >
 > Доступ к Cloudyn можно предоставить торговым представителям косвенного CSP, после того как его косвенные поставщик CSP зарегистрируется в Cloudyn. Торговые представители косвенного CSP могут предоставить доступ к Cloudyn клиентам и подпискам Azure.
+>
+>Cloudyn соответствует требованиям модели безопасного приложения Майкрософт. Дополнительные сведения см. в статье [Enabling the Secure Application Model framework](/partner-center/develop/enable-secure-app-model) (Использование платформы модели безопасного приложения)
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 

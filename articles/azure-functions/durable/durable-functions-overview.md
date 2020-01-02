@@ -1,21 +1,17 @@
 ---
 title: Обзор устойчивых функций — Azure
 description: Общие сведения о расширении устойчивых функций для Функций Azure.
-services: functions
 author: cgillum
-manager: jeconnoc
-keywords: ''
-ms.service: azure-functions
 ms.topic: overview
 ms.date: 08/07/2019
 ms.author: cgillum
 ms.reviewer: azfuncdf
-ms.openlocfilehash: 0b85d6fbe8e66b94bad372ccb29e5489dd81587b
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.openlocfilehash: 684c067f393b1f6037e67d3b49a861341f3353c8
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73614785"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74706125"
 ---
 # <a name="what-are-durable-functions"></a>Что такое Устойчивые функции?
 
@@ -26,8 +22,8 @@ ms.locfileid: "73614785"
 Устойчивые функции в настоящее время поддерживают следующие языки.
 
 * **C#** : обе [предварительно скомпилированные библиотеки классов](../functions-dotnet-class-library.md) и [сценарий C#](../functions-reference-csharp.md).
-* **F#** : предварительно скомпилированные библиотеки классов и сценарий F#. Сценарий F# (.fsx) поддерживается только в среде выполнения Функций Azure версии 1.x.
 * **JavaScript**: поддерживается только для версии 2.x среды выполнения Функций Azure. Требуется расширение устойчивых функций версии 1.7.0 или более поздней версии. 
+* **F#** : предварительно скомпилированные библиотеки классов и сценарий F#. Сценарий F# (.fsx) поддерживается только в среде выполнения Функций Azure версии 1.x.
 
 Целью устойчивых функций является поддержка всех [языков Функций Azure](../supported-languages.md). См. [здесь](https://github.com/Azure/azure-functions-durable-extension/issues) список проблем Устойчивых функций для получения последних сведений о состоянии работы для поддержки дополнительных языков.
 
@@ -42,7 +38,7 @@ ms.locfileid: "73614785"
 * [Асинхронные API-интерфейсы HTTP](#async-http)
 * [Мониторинг](#monitoring)
 * [Участие пользователя](#human)
-* [Агрегатор](#aggregator)
+* [Агрегатор (сущности с отслеживанием состояния)](#aggregator)
 
 ### <a name="chaining"></a>Шаблон 1. Цепочка функций
 
@@ -50,9 +46,11 @@ ms.locfileid: "73614785"
 
 ![Схема шаблона цепочки функций](./media/durable-functions-concepts/function-chaining.png)
 
-Устойчивые функции можно использовать для реализации шаблона цепочки функций, как показано в следующем примере:
+Устойчивые функции можно использовать для реализации шаблона цепочки функций, как показано в следующем примере.
 
-#### <a name="c"></a>C#
+В этом примере значения `F1`, `F2`, `F3` и `F4` являются именами других функций в приложении-функции. Поток управления можно реализовать с помощью обычных принудительных конструкций программирования. Код выполняется сверху вниз. Код может включать в себя имеющуюся семантику языка потока управления, такую ​​как условные обозначения и циклы. Вы можете включить логику обработки ошибок в блоках `try`/`catch`/`finally`.
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("Chaining")]
@@ -73,25 +71,31 @@ public static async Task<object> Run(
 }
 ```
 
-#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
+Вы можете использовать параметр `context` для вызова других функций по имени, передачи параметров и возврата выходных данных функции. Каждый раз, когда код вызывает `await`, платформа Устойчивых функций создает контрольные точки выполнения текущего экземпляра функции. Если процесс или виртуальная машина перезапускается во время выполнения, экземпляр функции возобновляется из предыдущего вызова `await`. Этот процесс описан в следующем разделе Шаблон 2: развертывание и объединение.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
 
 module.exports = df.orchestrator(function*(context) {
-    const x = yield context.df.callActivity("F1");
-    const y = yield context.df.callActivity("F2", x);
-    const z = yield context.df.callActivity("F3", y);
-    return    yield context.df.callActivity("F4", z);
+    try {
+        const x = yield context.df.callActivity("F1");
+        const y = yield context.df.callActivity("F2", x);
+        const z = yield context.df.callActivity("F3", y);
+        return    yield context.df.callActivity("F4", z);
+    } catch (error) {
+        // Error handling or compensation goes here.
+    }
 });
 ```
 
-В этом примере значения `F1`, `F2`, `F3` и `F4` являются именами других функций в приложении-функции. Поток управления можно реализовать с помощью обычных принудительных конструкций программирования. Код выполняется сверху вниз. Код может включать в себя имеющуюся семантику языка потока управления, такую ​​как условные обозначения и циклы. Вы можете включить логику обработки ошибок в блоках `try`/`catch`/`finally`.
-
-Вы можете использовать параметр `context` [IDurableOrchestrationContext] \(.NET\) и объект `context.df` (JavaScript) для вызова других функций по имени, передачи параметров и возврата выходных данных функции. Каждый раз, когда код вызывает `await` (C#) или `yield` (JavaScript), платформа Устойчивых функций создает контрольные точки выполнения текущего экземпляра функции. Если процесс или виртуальная машина перезапускается во время выполнения, экземпляр функции возобновляется из предыдущего вызова `await` или `yield`. Этот процесс описан в следующем разделе Шаблон 2: развертывание и объединение.
+Вы можете использовать объект `context.df` для вызова других функций по имени, передачи параметров и возврата выходных данных функции. Каждый раз, когда код вызывает `yield`, платформа Устойчивых функций создает контрольные точки выполнения текущего экземпляра функции. Если процесс или виртуальная машина перезапускается во время выполнения, экземпляр функции возобновляется из предыдущего вызова `yield`. Этот процесс описан в следующем разделе Шаблон 2: развертывание и объединение.
 
 > [!NOTE]
-> Объект `context` в JavaScript представляет не только параметр [DurableOrchestrationContext], а весь [контекст функции](../functions-reference-node.md#context-object).
+> Объект `context` в JavaScript представляет весь [контекст функции](../functions-reference-node.md#context-object). Доступ к контексту Устойчивых функций с помощью свойства `df` в основном контексте.
+
+---
 
 ### <a name="fan-in-out"></a>Шаблон 2. Развертывание и объединение
 
@@ -103,7 +107,7 @@ module.exports = df.orchestrator(function*(context) {
 
 Расширение "Устойчивые функции" обрабатывает этот шаблон с помощью относительно простого кода:
 
-#### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("FanOutFanIn")]
@@ -128,7 +132,11 @@ public static async Task Run(
 }
 ```
 
-#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
+Процесс развертывания распределяется по нескольким экземплярам функции `F2`. И отслеживается с использованием динамического списка задач. `Task.WhenAll` вызывается для ожидания завершения всех вызванных функций. Затем выходные данные функции `F2` агрегируются из списка динамических задач и передаются функции `F3`.
+
+Автоматическое создание контрольных точек, которое происходит при вызове `await` к `Task.WhenAll`, гарантирует, что возможный сбой или перезагрузка во время выполнения не потребуют перезапуска уже завершенной задачи.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -150,9 +158,11 @@ module.exports = df.orchestrator(function*(context) {
 });
 ```
 
-Процесс развертывания распределяется по нескольким экземплярам функции `F2`. И отслеживается с использованием динамического списка задач. Вызывается API .NET `Task.WhenAll` или API JavaScript `context.df.Task.all` для ожидания завершения всех вызванных функций. Затем выходные данные функции `F2` агрегируются из списка динамических задач и передаются функции `F3`.
+Процесс развертывания распределяется по нескольким экземплярам функции `F2`. И отслеживается с использованием динамического списка задач. `context.df.Task.all` API вызывается для ожидания завершения всех вызванных функций. Затем выходные данные функции `F2` агрегируются из списка динамических задач и передаются функции `F3`.
 
-Автоматическое создание контрольных точек, которое происходит при вызове `await` или `yield` к `Task.WhenAll` или `context.df.Task.all`, гарантирует, что возможный сбой или перезагрузка во время выполнения не потребуют перезапуска уже завершенной задачи.
+Автоматическое создание контрольных точек, которое происходит при вызове `yield` к `context.df.Task.all`, гарантирует, что возможный сбой или перезагрузка во время выполнения не потребуют перезапуска уже завершенной задачи.
+
+---
 
 > [!NOTE]
 > В редких случаях может произойти сбой в окне после завершения функции действия, но до того, как ее выполнение будет сохранено в журнале оркестрации. В этом случае функция действия будет повторно выполнена с начала после восстановления процесса.
@@ -204,11 +214,11 @@ Content-Type: application/json
 
 ![Схема шаблона мониторинга](./media/durable-functions-concepts/monitor.png)
 
-Благодаря нескольким строкам кода можно использовать Устойчивые функции, чтобы создать несколько мониторингов, которые наблюдают за произвольными конечными точками. Работа мониторов может приостановиться, если выполнено условие, или ее можно завершить с помощью параметра `IDurableOrchestrationClient`. Можно изменить интервал мониторинга `wait` в зависимости от определенного условия (например, экспоненциальной задержки). 
+Благодаря нескольким строкам кода можно использовать Устойчивые функции, чтобы создать несколько мониторингов, которые наблюдают за произвольными конечными точками. Работа мониторингов может приостановиться, если выполнено условие, или другая функция может использовать клиент оркестрации для завершения мониторинга. Можно изменить интервал мониторинга `wait` в зависимости от определенного условия (например, экспоненциальной задержки). 
 
 В следующем коде реализуется простой мониторинг:
 
-#### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("MonitorJobStatus")]
@@ -238,7 +248,7 @@ public static async Task Run(
 }
 ```
 
-#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -266,7 +276,9 @@ module.exports = df.orchestrator(function*(context) {
 });
 ```
 
-При получении запроса создается экземпляр оркестрации для указанного идентификатора события. Экземпляр выполняет опрос состояния, пока не выполнится условие или не произойдет выход из цикла. Для управления интервалом опроса используется устойчивый таймер. После этого можно перейти к другим задачам или завершить оркестрацию. Когда `context.CurrentUtcDateTime` (.NET) или `context.df.currentUtcDateTime` (JavaScript) превышает значение `expiryTime`, мониторинг останавливается.
+---
+
+При получении запроса создается экземпляр оркестрации для указанного идентификатора события. Экземпляр выполняет опрос состояния, пока не выполнится условие или не произойдет выход из цикла. Для управления интервалом опроса используется устойчивый таймер. После этого можно перейти к другим задачам или завершить оркестрацию. Когда `nextCheck` превышает `expiryTime`, монитор останавливается.
 
 ### <a name="human"></a>Шаблон 5. Участие пользователя
 
@@ -280,7 +292,7 @@ module.exports = df.orchestrator(function*(context) {
 
 В этих примерах создается процесс утверждения для демонстрации шаблона участия пользователя:
 
-#### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("ApprovalWorkflow")]
@@ -307,7 +319,9 @@ public static async Task Run(
 }
 ```
 
-#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
+Для создания устойчивого таймера вызовите `context.CreateTimer`. Уведомление получает `context.WaitForExternalEvent`. Затем `Task.WhenAny` вызывается для того, чтобы решить, следует ли ускорить процесс (сначала истечет время ожидания) или утвердить процесс (утверждение получено до истечения времени ожидания).
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -329,9 +343,19 @@ module.exports = df.orchestrator(function*(context) {
 });
 ```
 
-Для создания устойчивого таймера вызовите `context.CreateTimer` (.NET) или `context.df.createTimer` (JavaScript). Уведомление поступает событию `context.WaitForExternalEvent` (.NET) или `context.df.waitForExternalEvent` (JavaScript). Затем `Task.WhenAny` (.NET) или `context.df.Task.any` (JavaScript) вызывается для того, чтобы решить, следует ли ускорить процесс (сначала время ожидания истечет) или утвердить процесс (утверждение получено до истечения времени ожидания).
+Для создания устойчивого таймера вызовите `context.df.createTimer`. Уведомление получает `context.df.waitForExternalEvent`. Затем `context.df.Task.any` вызывается для того, чтобы решить, следует ли ускорить процесс (сначала истечет время ожидания) или утвердить процесс (утверждение получено до истечения времени ожидания).
 
-Внешний клиент может доставить уведомление о событии в функцию оркестратора, находящуюся в состоянии ожидания, как через [встроенные интерфейсы API HTTP](durable-functions-http-api.md#raise-event), так и с помощью метода `RaiseEventAsync` (.NET) или `raiseEvent` (JavaScript) из другой функции.
+---
+
+Внешний клиент может доставить уведомление о событии в функцию оркестратора, находящуюся в состоянии ожидания, через [встроенные интерфейсы API HTTP](durable-functions-http-api.md#raise-event):
+
+```bash
+curl -d "true" http://localhost:7071/runtime/webhooks/durabletask/instances/{instanceId}/raiseEvent/ApprovalEvent -H "Content-Type: application/json"
+```
+
+Событие также можно вызвать с помощью клиента оркестрации устойчивых функций из другой функции:
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("RaiseEventToOrchestration")]
@@ -344,6 +368,8 @@ public static async Task Run(
 }
 ```
 
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
 ```javascript
 const df = require("durable-functions");
 
@@ -354,11 +380,9 @@ module.exports = async function (context) {
 };
 ```
 
-```bash
-curl -d "true" http://localhost:7071/runtime/webhooks/durabletask/instances/{instanceId}/raiseEvent/ApprovalEvent -H "Content-Type: application/json"
-```
+---
 
-### <a name="aggregator"></a>Шаблон 6. Агрегатор
+### <a name="aggregator"></a>Шаблон 6. Агрегатор (сущности с отслеживанием состояния)
 
 Шестой шаблон заключается в статистической обработке данных событий за определенный период времени в одну доступную для адресации *сущность*. В этом шаблоне данные, для которых выполняется агрегирование, могут поступать из нескольких источников, могут быть доставлены пакетами или разбросаны по длительным временным периодам. Агрегатору может потребоваться выполнить действия над данными событий по мере их поступления, а внешним клиентам может потребоваться запросить агрегированные данные.
 
@@ -367,6 +391,8 @@ curl -d "true" http://localhost:7071/runtime/webhooks/durabletask/instances/{ins
 Сложности при реализации этого шаблона с обычными функциями без отслеживания состояния заключаются в том, что управление параллелизмом крайне усложняется. Нужно не только беспокоиться о том, что несколько потоков одновременно изменяют одни и те же данные, также важно и то, чтобы агрегатор одновременно выполнялся только на одной виртуальной машине.
 
 [Устойчивые сущности](durable-functions-entities.md) можно использовать, чтобы легко реализовать этот шаблон как отдельную функцию.
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("Counter")]
@@ -389,26 +415,6 @@ public static void Counter([EntityTrigger] IDurableEntityContext ctx)
 }
 ```
 
-```javascript
-const df = require("durable-functions");
-
-module.exports = df.entity(function(context) {
-    const currentValue = context.df.getState(() => 0);
-    switch (context.df.operationName) {
-        case "add":
-            const amount = context.df.getInput();
-            context.df.setState(currentValue + amount);
-            break;
-        case "reset":
-            context.df.setState(0);
-            break;
-        case "get":
-            context.df.return(currentValue);
-            break;
-    }
-});
-```
-
 Устойчивые сущности можно также моделировать как классы в .NET. Эта модель может быть полезной, если список операций является фиксированным и становится большим. Следующий пример представляет собой эквивалентную реализацию сущности `Counter` с помощью классов и методов .NET.
 
 ```csharp
@@ -429,7 +435,33 @@ public class Counter
 }
 ```
 
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+```javascript
+const df = require("durable-functions");
+
+module.exports = df.entity(function(context) {
+    const currentValue = context.df.getState(() => 0);
+    switch (context.df.operationName) {
+        case "add":
+            const amount = context.df.getInput();
+            context.df.setState(currentValue + amount);
+            break;
+        case "reset":
+            context.df.setState(0);
+            break;
+        case "get":
+            context.df.return(currentValue);
+            break;
+    }
+});
+```
+
+---
+
 Клиенты могут поставить в очередь *операции* (называемые также "сигнализацией") для функции сущности, использующей [привязку клиента сущности](durable-functions-bindings.md#entity-client).
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("EventHubTriggerCSharp")]
@@ -449,6 +481,7 @@ public static async Task Run(
 > [!NOTE]
 > Динамически создаваемые прокси-серверы также доступны в .NET для сигнализации сущностям типобезопасным способом. Кроме сигнализации, клиенты также могут запрашивать состояние функции сущности с помощью [типобезопасных методов](durable-functions-bindings.md#entity-client-usage) в привязке клиента оркестрации.
 
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -459,6 +492,8 @@ module.exports = async function (context) {
     await context.df.signalEntity(entityId, "add", 1);
 };
 ```
+
+---
 
 Функции сущности доступны в [Устойчивых функциях 2.0](durable-functions-versions.md) и более поздних версиях.
 

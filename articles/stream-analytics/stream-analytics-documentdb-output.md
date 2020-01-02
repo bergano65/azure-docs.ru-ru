@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 01/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: 52bbb52b13a3606e3ddc8deca2da8505233c9352
-ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
+ms.openlocfilehash: aa4ac011a7b6258958ac1ac176fd63b18a4ef856
+ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70062018"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74560182"
 ---
 # <a name="azure-stream-analytics-output-to-azure-cosmos-db"></a>Выходные данные Azure Stream Analytics в Azure Cosmos DB  
 Stream Analytics позволяет направлять данные из [Azure Cosmos DB](https://azure.microsoft.com/services/documentdb/) в формат JSON, позволяя архивировать данные и уменьшать задержки запросов в отношении неструктурированных данных JSON. В этом документе представлены некоторые рекомендации по реализации данной конфигурации.
@@ -91,13 +91,23 @@ Stream Analytics использует оптимистичный подход Up
 
 |Поле           | Описание|
 |-------------   | -------------|
-|Выходной псевдоним    | Псевдоним для ссылки на эти выходные данные в запросе ASA.|
-|Подписка    | Выберите подписку Azure.|
+|Псевдоним выходных данных    | Псевдоним для ссылки на эти выходные данные в запросе ASA.|
+|Subscription    | Выберите подписку Azure.|
 |Идентификатор учетной записи      | Имя или универсальный код ресурса (URI) конечной точки учетной записи Azure Cosmos DB.|
 |Ключ учетной записи     | Общедоступный ключ доступа к учетной записи Azure Cosmos DB.|
 |База данных        | Имя базы данных Azure Cosmos DB.|
-|Имя контейнера | Имя используемого контейнера. `MyContainer`— Это пример допустимого входного типа, `MyContainer` который должен существовать в контейнере с именем.  |
+|Имя контейнера | Имя используемого контейнера. `MyContainer` является примером допустимых входных данных — один контейнер с именем `MyContainer` должен существовать.  |
 |Идентификатор документа     | Необязательный элемент. Имя столбца в выходных событиях используется как уникальный ключ, на котором должны основываться операции вставки или обновления. Если оставить это поле пустым, все события будут вставлены, без возможности обновления.|
+
+После настройки выходных данных Cosmos DB их можно использовать в запросе в качестве целевого объекта [инструкции into](https://docs.microsoft.com/stream-analytics-query/into-azure-stream-analytics). При использовании выходных данных Cosmos DB, необходимо [явно задать ключ секции](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-parallelization#partitions-in-sources-and-sinks). Выходная запись должна содержать столбец с учетом регистра, названный после ключа секции в Cosmos DB. Для достижения большей параллелизации оператору может потребоваться [Предложение PARTITION BY](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-parallelization#embarrassingly-parallel-jobs) , использующее тот же столбец.
+
+**Образец запроса**:
+
+```SQL
+    SELECT TollBoothId, PartitionId
+    INTO CosmosDBOutput
+    FROM Input1 PARTITION BY PartitionId
+``` 
 
 ## <a name="error-handling-and-retries"></a>Обработка ошибок и повторные попытки
 

@@ -1,19 +1,19 @@
 ---
-title: Краткое руководство. Создание Базы данных Azure для MySQL с помощью простой команды Azure CLI — az mysql up (предварительная версия)
+title: Краткое руководство. Создание Базы данных Azure для MySQL с помощью команды az mysql up
 description: Краткое руководство по созданию сервера Базы данных Azure для MySQL с помощью команды Azure CLI (интерфейса командной строки) up.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.devlang: azurecli
 ms.topic: quickstart
-ms.date: 3/18/2019
+ms.date: 12/02/2019
 ms.custom: mvc
-ms.openlocfilehash: aa0d2a9e990faa8d99355744824f34e26aeb519e
-ms.sourcegitcommit: f68b0e128f0478444740172f54e92b453df696be
+ms.openlocfilehash: 4bb5c62a7df53548ff59a03c6ccc8fb28f1503d3
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58137918"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74765689"
 ---
 # <a name="quickstart-create-an-azure-database-for-mysql-using-a-simple-azure-cli-command---az-mysql-up-preview"></a>Краткое руководство. Создание Базы данных Azure для MySQL с помощью простой команды Azure CLI — az mysql up (предварительная версия)
 

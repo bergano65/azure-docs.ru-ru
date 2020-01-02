@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 11/04/2019
 ms.author: diberry
-ms.openlocfilehash: 279ec4e8a6d9a9d473cc511b4ec690391cdbd634
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 65af2caa2272549b5ad562ff3c38b90e3ea43fd5
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73669427"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74278539"
 ---
 # <a name="quickstart-deploy-an-app-in-the-luis-portal"></a>Краткое руководство. Развертывание приложения на портале LUIS
 
@@ -29,6 +29,7 @@ ms.locfileid: "73669427"
 
 * Оформите [подписку Azure](https://azure.microsoft.com/free).
 * Выполните указания из [предыдущего краткого руководства по порталу](get-started-portal-build-app.md) или [скачайте и импортируйте приложение](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/quickstarts/in-portal/build-portal-app.json).
+* Если у вас есть приложения с более устаревшей проверкой подлинности, чем проверка подлинности ресурсов Azure, [перейдите на ресурс Azure](luis-migration-authoring.md). Некоторые страницы портала отличаются, когда действует проверка подлинности по электронной почте.
 
 ## <a name="create-the-endpoint-resource"></a>Создание ресурса конечной точки
 
@@ -60,7 +61,7 @@ ms.locfileid: "73669427"
 
 Каждый раз при создании ресурса для LUIS необходимо назначать его для приложения LUIS. После этого вам не нужно будет еще раз выполнять этот шаг до создания следующего ресурса. Вы можете создать ресурс для расширения регионов приложения или для поддержки большего количества запросов прогнозирования.
 
-1. Войдите на [портал LUIS](https://www.luis.ai) и выберите приложение **myEnglishApp** из списка приложений.
+1. Войдите на [портал LUIS](https://preview.luis.ai) и выберите приложение **myEnglishApp** из списка приложений.
 
 1. В верхнем правом меню выберите **Manage** (Управление), **Azure Resources** (Ресурсы Azure).
 
@@ -86,7 +87,7 @@ ms.locfileid: "73669427"
 
 ## <a name="prediction-endpoint-request"></a>Запрос конечной точки прогнозирования
 
-`query=` в конце URL-адреса обозначает место добавления фрагмента речи пользователя в запрос GET. После `query=` введите речевой фрагмент пользователя, используемый в конце предыдущего краткого руководства:
+На портале предварительной версии `query=` в конце URL-адреса обозначает место добавления речевого фрагмента пользователя в запрос GET. После `query=` введите речевой фрагмент пользователя, используемый в конце предыдущего краткого руководства:
 
 ```Is there a form named hrf-234098```
 

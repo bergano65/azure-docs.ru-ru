@@ -1,27 +1,20 @@
 ---
-title: Пример скрипта Azure CLI. Создание веб-приложения и непрерывное развертывание из Azure Repos | Документация Майкрософт
-description: Пример сценария Azure CLI. Создание приложения с непрерывным развертыванием из Azure Repos
-services: app-service\web
-documentationcenter: ''
+title: Непрерывное развертывание из Azure Repos
+description: Сведения об использовании Azure CLI для автоматизации развертывания приложения Службы приложений и управления им. В этом примере показано, как настроить CI/CD из Azure Repos.
 author: msangapu-msft
-manager: jeconnoc
-editor: ''
 tags: azure-service-management
 ms.assetid: 389d3bd3-cd8e-4715-a3a1-031ec061d385
-ms.service: app-service-web
-ms.workload: web
 ms.devlang: azurecli
-ms.tgt_pltfrm: na
 ms.topic: sample
 ms.date: 12/11/2017
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: f7b28e75e8ae722169f3e41f657ef6292e12cc6b
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 1b1d829f2e1e9dcf277f3be5276a1494d5b96c12
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68879015"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74688397"
 ---
 # <a name="create-an-app-service-app-with-continuous-deployment-using-azure-cli"></a>Создание приложения Службы приложений с непрерывным развертыванием с помощью Azure CLI
 

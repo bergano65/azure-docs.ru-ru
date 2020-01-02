@@ -1,25 +1,25 @@
 ---
-title: Копирование данных в Azure Data Lake Storage 1-го поколения с помощью фабрики данных или из нее
+title: Копирование данных в Azure Data Lake Storage 1-го поколения или из него
 description: Узнайте, как копировать данные из поддерживаемых исходных хранилищ данных в Azure Data Lake Store или из Data Lake Store в поддерживаемые приемники хранилищ с помощью фабрики данных.
 services: data-factory
+ms.author: jingwang
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
+ms.custom: seo-lt-2019
 ms.date: 10/24/2019
-ms.author: jingwang
-ms.openlocfilehash: 2aef04c4fe4713b107abe53fe459b7859a9c714e
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 17f7c62600bcc2aa21fbcea8ecd96810be412a26
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73681274"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930534"
 ---
 # <a name="copy-data-to-or-from-azure-data-lake-storage-gen1-using-azure-data-factory"></a>Копирование данных в Azure Data Lake Storage 1-го поколения с помощью фабрики данных Azure или из нее
+
 > [!div class="op_single_selector" title1="Выберите версию фабрики данных Azure, которую вы используете:"]
 > * [Версия 1](v1/data-factory-azure-datalake-connector.md)
 > * [Текущая версия](connector-azure-data-lake-store.md)
@@ -44,7 +44,7 @@ ms.locfileid: "73681274"
 > [!IMPORTANT]
 > При копировании данных с помощью локальной среды выполнения интеграции Настройте корпоративный брандмауэр, чтобы разрешить исходящий трафик для `<ADLS account name>.azuredatalakestore.net` и `login.microsoftonline.com/<tenant>/oauth2/token` через порт 443. Последняя – это служба токенов безопасности Azure, с которой должна взаимодействовать среда выполнения интеграции для получения маркера доступа.
 
-## <a name="get-started"></a>Приступая к работе
+## <a name="get-started"></a>Начать
 
 > [!TIP]
 > Пошаговые инструкции по использованию соединителя Azure Data Lake Store см. в разделе [Загрузка данных в Azure Data Lake Store](load-azure-data-lake-store.md).
@@ -57,10 +57,10 @@ ms.locfileid: "73681274"
 
 Для связанной службы Azure Data Lake Store поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства `type` следует задать значение **AzureDataLakeStore**. | Да |
-| dataLakeStoreUri | Сведения об учетной записи Azure Data Lake Store. Эти данные принимают один из следующих форматов: `https://[accountname].azuredatalakestore.net/webhdfs/v1` или `adl://[accountname].azuredatalakestore.net/`. | Да |
+| Тип | Для свойства `type` следует задать значение **AzureDataLakeStore**. | ДА |
+| dataLakeStoreUri | Сведения об учетной записи Azure Data Lake Store. Эти данные принимают один из следующих форматов: `https://[accountname].azuredatalakestore.net/webhdfs/v1` или `adl://[accountname].azuredatalakestore.net/`. | ДА |
 | subscriptionId | Идентификатор подписки Azure, к которой принадлежит учетная запись Data Lake Store. | Необходимо для приемника |
 | имя_группы_ресурсов | Имя группы ресурсов Azure, к которой принадлежит учетная запись Data Lake Store. | Необходимо для приемника |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать среду выполнения интеграции Azure или локальную среду выполнения интеграции, если хранилище данных находится в частной сети. Если это свойство не указано, используется среда выполнения интеграции Azure по умолчанию. |Нет |
@@ -82,13 +82,13 @@ ms.locfileid: "73681274"
 
 Поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| servicePrincipalId | Укажите идентификатора клиента приложения. | Да |
-| servicePrincipalKey | Укажите ключ приложения. Пометьте это поле как `SecureString`, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
-| клиенте | Укажите сведения о клиенте, такие как доменное имя или идентификатор клиента, в котором находится ваше приложение. Эти сведения можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Да |
+| servicePrincipalId | Укажите идентификатора клиента приложения. | ДА |
+| servicePrincipalKey | Укажите ключ приложения. Пометьте это поле как `SecureString`, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
+| tenant | Укажите сведения о клиенте, такие как доменное имя или идентификатор клиента, в котором находится ваше приложение. Эти сведения можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | ДА |
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -129,7 +129,7 @@ ms.locfileid: "73681274"
 
 В фабрике данных Azure не нужно указывать ничего, кроме общих сведений о Data Lake Store в связанной службе.
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -157,13 +157,13 @@ ms.locfileid: "73681274"
 
 Для Azure Data Lake Store Gen1 в параметрах `location` в наборе данных на основе формата поддерживаются следующие свойства:
 
-| Свойство   | Description (Описание)                                                  | Обязательно |
+| Свойство   | Описание                                                  | Обязательно для заполнения |
 | ---------- | ------------------------------------------------------------ | -------- |
-| type       | Свойство Type в разделе `location` в наборе данных должно иметь значение **азуредаталакесторелокатион**. | Да      |
+| Тип       | Свойство Type в разделе `location` в наборе данных должно иметь значение **азуредаталакесторелокатион**. | ДА      |
 | folderPath | Путь к папке. Если вы хотите использовать подстановочный знак для фильтрации папок, пропустите этот параметр и укажите его в параметрах источника действия. | Нет       |
 | fileName   | Имя файла в заданной folderPath. Если вы хотите использовать подстановочный знак для фильтрации файлов, пропустите этот параметр и укажите его в параметрах источника действия. | Нет       |
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -194,20 +194,20 @@ ms.locfileid: "73681274"
 >[!NOTE]
 >Следующая модель набора данных по-прежнему поддерживается "как есть" для обеспечения обратной совместимости. Рекомендуется использовать новую модель, упомянутую выше в разделе "вперед", и пользовательский интерфейс создания ADF переключился на создание новой модели.
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство Type набора данных должно иметь значение **AzureDataLakeStoreFile**. |Да |
+| Тип | Свойство Type набора данных должно иметь значение **AzureDataLakeStoreFile**. |ДА |
 | folderPath | Путь к папке в Data Lake Store. Если это свойство не указано, будет использоваться корневая папка. <br/><br/>Поддерживается фильтр с подстановочными знаками. Разрешенные подстановочные знаки `*` (соответствует нулю или большему числу символов) и `?` (соответствует нулю или одиночному символу). Используйте `^` для экранирования, если фактическое имя папки содержит подстановочный знак или escape-символ внутри. <br/><br/>Например: RootFolder/вложенная папка/. Дополнительные примеры приведены в разделе [Примеры фильтров папок и файлов](#folder-and-file-filter-examples). |Нет |
 | fileName | Имя или фильтр по шаблону для файлов с указанной "folderPath". Если этому свойству не присвоить значение, набор данных будет указывать на все файлы в папке. <br/><br/>Для фильтра разрешены подстановочные знаки `*` (соответствует нулю или большему числу символов) и `?` (соответствует нулю или одиночному символу).<br/>Пример 1. `"fileName": "*.csv"`<br/>Пример 2. `"fileName": "???20180427.txt"`<br/>Используйте `^` для экранирования, если фактическое имя файла имеет подстановочный знак или escape-символ внутри.<br/><br/>Если параметр fileName не указан для выходного набора данных, а **preserveHierarchy** не указан в приемнике действия, действие копирования автоматически создает имя файла со следующим форматом: "*Data. [ Идентификатор запуска действия GUID]. [GUID if FlattenHierarchy]. [Format, если настроено]. [compression, если он настроен]* ", например" Data. 0a405f8a-93ff-4c6f-b3be-f69616f1df7a. txt. gz ". При копировании из табличного источника с использованием имени таблицы вместо запроса используется шаблон имени " *[имя таблицы]. [ format]. [compression, если он настроен]* ", например" MyTable. csv ". |Нет |
 | modifiedDatetimeStart | Фильтр файлов, основанный на последнем измененном атрибуте. Файлы выбираются, если время последнего изменения находится в пределах диапазона времени между `modifiedDatetimeStart` и `modifiedDatetimeEnd`. Время применяется к часовому поясу UTC в формате "2018-12-01T05:00:00Z". <br/><br/> Включение этого параметра влияет на общую производительность перемещения данных, если требуется использовать фильтр файлов с огромным объемом файлов. <br/><br/> Свойства могут иметь значение NULL, что означает, что фильтр атрибутов файла не применяется к набору данных. Если `modifiedDatetimeStart` имеет значение DateTime, но `modifiedDatetimeEnd` имеет значение NULL, это означает, что выбраны файлы, атрибут последнего изменения которых больше или равен значению DateTime. Если `modifiedDatetimeEnd` имеет значение DateTime, но `modifiedDatetimeStart` имеет значение NULL, это означает, что выбраны файлы, атрибут последнего изменения которых меньше значения DateTime.| Нет |
 | modifiedDatetimeEnd | Фильтр файлов, основанный на последнем измененном атрибуте. Файлы выбираются, если время последнего изменения находится в пределах диапазона времени между `modifiedDatetimeStart` и `modifiedDatetimeEnd`. Время применяется к часовому поясу UTC в формате "2018-12-01T05:00:00Z". <br/><br/> Включение этого параметра влияет на общую производительность перемещения данных, если требуется использовать фильтр файлов с огромным объемом файлов. <br/><br/> Свойства могут иметь значение NULL, что означает, что фильтр атрибутов файла не применяется к набору данных. Если `modifiedDatetimeStart` имеет значение DateTime, но `modifiedDatetimeEnd` имеет значение NULL, это означает, что выбраны файлы, атрибут последнего изменения которых больше или равен значению DateTime. Если `modifiedDatetimeEnd` имеет значение DateTime, но `modifiedDatetimeStart` имеет значение NULL, это означает, что выбраны файлы, атрибут последнего изменения которых меньше значения DateTime.| Нет |
-| format | Если требуется копировать файлы между хранилищами на основе файлов (двоичное копирование), пропустите раздел Format в определениях входного и выходного наборов данных.<br/><br/>Если нужно проанализировать или создать файлы определенного формата, поддерживаются следующие типы форматов файлов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Свойству **type** в разделе **format** необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [текстовом формате](supported-file-formats-and-compression-codecs.md#text-format), [формате JSON](supported-file-formats-and-compression-codecs.md#json-format), [формате Avro](supported-file-formats-and-compression-codecs.md#avro-format), [формате Orc](supported-file-formats-and-compression-codecs.md#orc-format) и [формате Parquet](supported-file-formats-and-compression-codecs.md#parquet-format). |Нет (только для сценария двоичного копирования) |
+| свойства | Если требуется копировать файлы между хранилищами на основе файлов (двоичное копирование), пропустите раздел Format в определениях входного и выходного наборов данных.<br/><br/>Если нужно проанализировать или создать файлы определенного формата, поддерживаются следующие типы форматов файлов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Свойству **type** в разделе **format** необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [текстовом формате](supported-file-formats-and-compression-codecs.md#text-format), [формате JSON](supported-file-formats-and-compression-codecs.md#json-format), [формате Avro](supported-file-formats-and-compression-codecs.md#avro-format), [формате Orc](supported-file-formats-and-compression-codecs.md#orc-format) и [формате Parquet](supported-file-formats-and-compression-codecs.md#parquet-format). |Нет (только для сценария двоичного копирования) |
 | compression | Укажите тип и уровень сжатия данных. Дополнительные сведения см. в разделе [Поддержка сжатия](supported-file-formats-and-compression-codecs.md#compression-support).<br/>Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**.<br/>Поддерживаемые уровни: **Optimal** и **Fastest**. |Нет |
 
 >[!TIP]
 >Чтобы скопировать все файлы в папке, укажите только **folderPath**.<br>Чтобы скопировать отдельный файл с определенным именем, укажите параметр **FolderPath** с именем файла **, который является** частью папки.<br>Чтобы скопировать подмножество файлов в папке, укажите параметр **FolderPath** с частью папки и **именем файла** с фильтром с подстановочными знаками. 
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -247,9 +247,9 @@ ms.locfileid: "73681274"
 
 Следующие свойства поддерживаются для Azure Data Lake Store Gen1 в разделе Параметры `storeSettings` в источнике копирования на основе формата:
 
-| Свойство                 | Description (Описание)                                                  | Обязательно                                      |
+| Свойство                 | Описание                                                  | Обязательно для заполнения                                      |
 | ------------------------ | ------------------------------------------------------------ | --------------------------------------------- |
-| type                     | Свойство Type в разделе `storeSettings` должно иметь значение **азуредаталакесторереадсеттинг**. | Да                                           |
+| Тип                     | Свойство Type в разделе `storeSettings` должно иметь значение **азуредаталакесторереадсеттинг**. | ДА                                           |
 | recursive                | Указывает, следует ли читать данные рекурсивно из вложенных папок или только из указанной папки. Если параметру recursive присвоено значение true и приемник является хранилищем на основе файлов, пустая папка или подпапка не копируется или не создается в приемнике. Допустимые значения: **true** (по умолчанию) и **false**. | Нет                                            |
 | вилдкардфолдерпас       | Путь к папке с подстановочными знаками для фильтрации исходных папок. <br>Разрешенные подстановочные знаки `*` (соответствует нулю или большему числу символов) и `?` (соответствует нулю или одиночному символу). Используйте `^` для экранирования, если фактическое имя папки содержит подстановочный знак или escape-символ внутри. <br>Дополнительные примеры приведены в разделе [Примеры фильтров папок и файлов](#folder-and-file-filter-examples). | Нет                                            |
 | вилдкардфиленаме         | Имя файла с подстановочными знаками в заданной folderPath/Вилдкардфолдерпас для фильтрации исходных файлов. <br>Разрешенные подстановочные знаки `*` (соответствует нулю или большему числу символов) и `?` (соответствует нулю или одиночному символу). Используйте `^` для экранирования, если фактическое имя папки содержит подстановочный знак или escape-символ внутри. Дополнительные примеры приведены в разделе [Примеры фильтров папок и файлов](#folder-and-file-filter-examples). | Да, если `fileName` не указан в наборе данных |
@@ -257,7 +257,7 @@ ms.locfileid: "73681274"
 | modifiedDatetimeEnd      | То же, что и выше.                                               | Нет                                            |
 | maxConcurrentConnections | Число подключений для одновременного подключения к хранилищу хранилища. Укажите, только если требуется ограничить одновременный подключение к хранилищу данных. | Нет                                            |
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[
@@ -303,13 +303,13 @@ ms.locfileid: "73681274"
 >[!NOTE]
 >Следующая исходная модель копирования по-прежнему поддерживается "как есть" для обеспечения обратной совместимости. Рекомендуется использовать новую модель, упомянутую выше, и пользовательский интерфейс создания ADF переключился на создание новой модели.
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство `type` источника действия копирования должно иметь значение **AzureDataLakeStoreSource**. |Да |
+| Тип | Свойство `type` источника действия копирования должно иметь значение **AzureDataLakeStoreSource**. |ДА |
 | recursive | Указывает, следует ли читать данные рекурсивно из вложенных папок или только из указанной папки. Если для `recursive` задано значение true и приемник является хранилищем на основе файлов, пустая папка или подпапка не копируется и не создается в приемнике. Допустимые значения: **true** (по умолчанию) и **false**. | Нет |
 | maxConcurrentConnections | Число подключений для одновременного подключения к хранилищу данных. Укажите, только если требуется ограничить одновременный подключение к хранилищу данных. | Нет |
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[
@@ -347,13 +347,13 @@ ms.locfileid: "73681274"
 
 Для Azure Data Lake Store Gen1 в параметрах `storeSettings` в приемнике копирования на основе формата поддерживаются следующие свойства:
 
-| Свойство                 | Description (Описание)                                                  | Обязательно |
+| Свойство                 | Описание                                                  | Обязательно для заполнения |
 | ------------------------ | ------------------------------------------------------------ | -------- |
-| type                     | Свойство Type в разделе `storeSettings` должно иметь значение **азуредаталакесторевритесеттинг**. | Да      |
+| Тип                     | Свойство Type в разделе `storeSettings` должно иметь значение **азуредаталакесторевритесеттинг**. | ДА      |
 | copyBehavior             | Определяет поведение копирования, когда источником являются файлы из файлового хранилища данных.<br/><br/>Допустимые значения:<br/><b>— PreserveHierarchy (по умолчанию)</b>. Сохраняет иерархию файлов в целевой папке. Относительный путь исходного файла в исходной папке идентичен относительному пути целевого файла в целевой папке.<br/><b>— FlattenHierarchy</b>. Все файлы из исходной папки размещаются на первом уровне в целевой папке. Целевые файлы имеют автоматически сформированные имена. <br/><b>— MergeFiles</b>. Объединяет все файлы из исходной папки в один файл. Если указано имя файла, то оно присваивается объединенному файлу. В противном случае присваивается автоматически созданное имя файла. | Нет       |
 | maxConcurrentConnections | Число подключений для одновременного подключения к хранилищу данных. Укажите, только если требуется ограничить одновременный подключение к хранилищу данных. | Нет       |
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[
@@ -393,13 +393,13 @@ ms.locfileid: "73681274"
 >[!NOTE]
 >Следующая модель приемника копирования по-прежнему поддерживается "как есть" для обеспечения обратной совместимости. Рекомендуется использовать новую модель, упомянутую выше, и пользовательский интерфейс создания ADF переключился на создание новой модели.
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство `type` приемника действия копирования должно иметь значение **AzureDataLakeStoreSink**. |Да |
+| Тип | Свойство `type` приемника действия копирования должно иметь значение **AzureDataLakeStoreSink**. |ДА |
 | copyBehavior | Определяет поведение копирования, когда источником являются файлы из файлового хранилища данных.<br/><br/>Допустимые значения:<br/><b>— PreserveHierarchy (по умолчанию)</b>. Сохраняет иерархию файлов в целевой папке. Относительный путь исходного файла в исходной папке идентичен относительному пути целевого файла в целевой папке.<br/><b>— FlattenHierarchy</b>. Все файлы из исходной папки размещаются на первом уровне в целевой папке. Целевые файлы имеют автоматически сформированные имена. <br/><b>— MergeFiles</b>. Объединяет все файлы из исходной папки в один файл. Если указано имя файла, то оно присваивается объединенному файлу. В противном случае имя файла создается автоматически. | Нет |
 | maxConcurrentConnections | Число подключений для одновременного подключения к хранилищу данных. Укажите, только если требуется ограничить одновременный подключение к хранилищу данных. | Нет |
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[
@@ -437,10 +437,10 @@ ms.locfileid: "73681274"
 
 | folderPath | fileName | recursive | Структура исходной папки и результат фильтрации (извлекаются файлы, выделенные **полужирным** шрифтом)|
 |:--- |:--- |:--- |:--- |
-| `Folder*` | (Пусто, используйте значение по умолчанию) | нет | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл2.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5.csv<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
-| `Folder*` | (Пусто, используйте значение по умолчанию) | Да | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл2.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл3.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл4.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл5.csv**<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
-| `Folder*` | `*.csv` | нет | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5.csv<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
-| `Folder*` | `*.csv` | Да | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл3.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл5.csv**<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
+| `Folder*` | (Пусто, используйте значение по умолчанию) | false | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл2.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5.csv<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
+| `Folder*` | (Пусто, используйте значение по умолчанию) | true | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл2.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл3.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл4.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл5.csv**<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
+| `Folder*` | `*.csv` | false | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5.csv<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
+| `Folder*` | `*.csv` | true | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл3.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл5.csv**<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
 
 ### <a name="examples-of-behavior-of-the-copy-operation"></a>Примеры поведения операции копирования
 
@@ -448,12 +448,12 @@ ms.locfileid: "73681274"
 
 | recursive | copyBehavior | Структура папок источника | Результаты цели |
 |:--- |:--- |:--- |:--- |
-| Да |preserveHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая "Папка1" создается с такой же структурой, как и исходная папка:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 |
-| Да |flattenHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл1"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл2"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл3"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл4"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл5" |
-| Да |mergeFiles | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;file1 + file2 + Файл3 + "Файл4" + "Файл5" содержимое объединяется в один файл с автоматически сформированным именем файла. |
-| нет |preserveHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/><br/>Subfolder1 с Файл3, "Файл4" и "Файл5" не забирается. |
-| нет |flattenHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл1"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл2"<br/><br/>Subfolder1 с Файл3, "Файл4" и "Файл5" не забирается. |
-| нет |mergeFiles | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;файлы file1 + file2 объединяются в один файл с автоматически созданным именем файла. автоматически созданное имя для "Файл1"<br/><br/>Subfolder1 с Файл3, "Файл4" и "Файл5" не забирается. |
+| true |preserveHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая "Папка1" создается с такой же структурой, как и исходная папка:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 |
+| true |flattenHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл1"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл2"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл3"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл4"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл5" |
+| true |mergeFiles | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;file1 + file2 + Файл3 + "Файл4" + "Файл5" содержимое объединяется в один файл с автоматически сформированным именем файла. |
+| false |preserveHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/><br/>Subfolder1 с Файл3, "Файл4" и "Файл5" не забирается. |
+| false |flattenHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл1"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл2"<br/><br/>Subfolder1 с Файл3, "Файл4" и "Файл5" не забирается. |
+| false |mergeFiles | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;файлы file1 + file2 объединяются в один файл с автоматически созданным именем файла. автоматически созданное имя для "Файл1"<br/><br/>Subfolder1 с Файл3, "Файл4" и "Файл5" не забирается. |
 
 ## <a name="preserve-acls-to-data-lake-storage-gen2"></a>Сохранение списков управления доступом в Data Lake Storage 2-го поколения
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.author: erhopf
-ms.openlocfilehash: c8a2855ce9cd320be3aea8b3b4a05f3b3eb39976
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 8ca31dcadebf2dc47d5a4b4db715f26fb38e204e
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73578218"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74816381"
 ---
 # <a name="create-a-tenant-model-preview"></a>Создание клиентской модели (предварительная версия)
 
@@ -96,7 +96,7 @@ ms.locfileid: "73578218"
 
 ## <a name="use-your-model-with-the-speech-sdk"></a>Использование модели с пакетом SDK службы "Речь"
 
-После развертывания модели вы можете использовать ее с пакетом SDK службы "Речь". В этом разделе вы используете предоставленный образец кода для вызова службы "Речь" с использованием проверки подлинности Azure AD.
+После развертывания модели вы можете использовать ее с пакетом SDK службы "Речь". В этом разделе вы используете предоставленный пример кода для вызова службы "Речь" с использованием проверки подлинности Azure AD.
 
 Рассмотрим код, используемый для вызова пакета SDK службы "Речь" в C#. В этом примере будет выполняться распознавание речи с использованием клиентской модели. В рамках этого руководства подразумевается, что настройка платформы уже была выполнена заранее. Если вам нужна помощь в настройке, ознакомьтесь со статьей [Краткое руководство. Распознавание речи с помощью C# (.NET Core)](quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnetcore).
 

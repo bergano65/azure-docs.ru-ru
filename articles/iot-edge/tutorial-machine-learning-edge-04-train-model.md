@@ -1,6 +1,6 @@
 ---
 title: Руководство по обучению и развертыванию моделей Машинного обучения в Azure IoT Edge
-description: Руководство по Обучите модель машинного обучения с помощью Службы машинного обучения Azure, а затем упакуйте модель в виде образа контейнера, который можно развернуть как модуль Azure IoT Edge.
+description: Работая с этим учебником, вы обучите модель машинного обучения с помощью Службы машинного обучения Azure, а затем упакуете модель в виде образа контейнера, который можно развернуть как модуль Azure IoT Edge.
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -8,12 +8,12 @@ ms.date: 11/11/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 8cb3d0329c41256823a66fc3276711c43da61cdd
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 9c0613d319c0c82fa61d75ed016d68d38dfcea8d
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112465"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74701828"
 ---
 # <a name="tutorial-train-and-deploy-an-azure-machine-learning-model"></a>Руководство по Обучение и развертывание модели машинного обучения Azure
 

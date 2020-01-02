@@ -5,20 +5,20 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 04/24/2019
+ms.date: 12/06/2019
 ms.author: cherylmc
-ms.openlocfilehash: 814a73900b05b66d1bacc946b9f994135d3fc9f6
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 05602538f206032d924b39a7dd8f4325c48a5224
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083443"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74931376"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit-classic"></a>Создание и изменение пиринга для канала ExpressRoute (классическая модель)
 > [!div class="op_single_selector"]
-> * [портал Azure](expressroute-howto-routing-portal-resource-manager.md)
+> * [Портал Azure](expressroute-howto-routing-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-routing-arm.md)
-> * [Интерфейс командной строки Azure](howto-routing-cli.md)
+> * [Azure CLI](howto-routing-cli.md)
 > * [Видео — частный пиринг](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-private-peering-for-your-expressroute-circuit)
 > * [Видео — общедоступный пиринг](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-public-peering-for-your-expressroute-circuit)
 > * [Видео — пиринг Майкрософт](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-microsoft-peering-for-your-expressroute-circuit)
@@ -37,45 +37,12 @@ ms.locfileid: "74083443"
 
 ## <a name="configuration-prerequisites"></a>Предварительные требования для настройки
 
-* Прежде чем приступить к настройке, обязательно изучите [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md).
+* Прежде чем приступать к настройке, обязательно изучите [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md).
 * Вам потребуется активный канал ExpressRoute. Перед тем как продолжить, [создайте канал ExpressRoute](expressroute-howto-circuit-classic.md) и включите его на стороне поставщика услуг подключения. Для выполнения описанных ниже командлетов канал ExpressRoute должен быть подготовлен и включен.
 
 ### <a name="download-the-latest-powershell-cmdlets"></a>Скачивание последних версий командлетов PowerShell
 
-Установите последние версии модулей PowerShell для управления службами Azure и модуль ExpressRoute. При использовании следующего примера обратите внимание, что номер версии (в нашем случае — 5.1.1) будет меняться по мере выпуска новых версий командлетов.
-
-```powershell
-Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.1.1\Azure\Azure.psd1'
-Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.1.1\ExpressRoute\ExpressRoute.psd1'
-```
-
-Пошаговые инструкции по настройке компьютера для использования модулей Azure PowerShell см. в статье [Общие сведения об Azure PowerShell](/powershell/azure/overview).
-
-### <a name="sign-in"></a>входа
-
-Чтобы войти в свою учетную запись Azure, используйте код из следующих примеров:
-
-1. Откройте консоль PowerShell с повышенными правами и подключитесь к своей учетной записи.
-
-   ```powershell
-   Connect-AzAccount
-   ```
-2. Просмотрите подписки учетной записи.
-
-   ```powershell
-   Get-AzSubscription
-   ```
-3. При наличии нескольких подписок выберите подписку, которую вы хотите использовать.
-
-   ```powershell
-   Select-AzSubscription -SubscriptionName "Replace_with_your_subscription_name"
-   ```
-
-4. Затем воспользуйтесь следующим командлетом, чтобы добавить подписку Azure в PowerShell для классической модели развертывания.
-
-   ```powershell
-   Add-AzureAccount
-   ```
+[!INCLUDE [classic powershell install instructions](../../includes/expressroute-poweshell-classic-install-include.md)]
 
 ## <a name="azure-private-peering"></a>Частный пиринг Azure
 
@@ -121,7 +88,7 @@ Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.1.1\ExpressRou
    * Подсеть /30 для дополнительной ссылки. Она не должна входить в адресное пространство, зарезервированное для виртуальных сетей.
    * Действительный идентификатор виртуальной локальной сети для установки пиринга. Идентификатор виртуальной локальной сети не должен использоваться ни одним другим пирингом в канале.
    * Номер AS для пиринга. Можно использовать 2-байтовые и 4-байтовые номера AS. Для этого пиринга можно использовать частный номер AS. Не используйте номер 65515.
-   * Хэш MD5, если вы решите его использовать. **Необязательный**.
+   * Хэш MD5, если вы решите его использовать. **Необязательно**.
      
    Вы можете использовать код из следующего примера, чтобы настроить для канала частный пиринг Azure:
 
@@ -190,7 +157,7 @@ Remove-AzureBGPPeering -AccessType Private -ServiceKey "************************
 
 ### <a name="to-create-azure-public-peering"></a>Создание общедоступного пиринга Azure
 
-1. **Создание канала ExpressRoute**
+1. **Создайте канал ExpressRoute.**
 
    Выполните инструкции по созданию [канала ExpressRoute](expressroute-howto-circuit-classic.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения оказывает услуги третьего уровня, он может включить для вас частный пиринг Azure. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не управляет маршрутизацией за вас, после создания канала выполните приведенные ниже инструкции.
 2. **Проверьте, подготовлен ли канал ExpressRoute.**
@@ -228,7 +195,7 @@ Remove-AzureBGPPeering -AccessType Private -ServiceKey "************************
    * Подсеть /30 для дополнительной ссылки. Это должен быть допустимый префикс общедоступного адреса IPv4.
    * Действительный идентификатор виртуальной локальной сети для установки пиринга. Идентификатор виртуальной локальной сети не должен использоваться ни одним другим пирингом в канале.
    * Номер AS для пиринга. Можно использовать 2-байтовые и 4-байтовые номера AS.
-   * Хэш MD5, если вы решите его использовать. **Необязательный**.
+   * Хэш MD5, если вы решите его использовать. **Необязательно**.
 
    > [!IMPORTANT]
    > Номер AS должен быть указан в качестве ASN пиринга, а не ASN клиента.
@@ -294,7 +261,7 @@ Remove-AzureBGPPeering -AccessType Public -ServiceKey "*************************
 
 ### <a name="to-create-microsoft-peering"></a>Создание пиринга Майкрософт
 
-1. **Создание канала ExpressRoute**
+1. **Создайте канал ExpressRoute.**
   
    Выполните инструкции по созданию [канала ExpressRoute](expressroute-howto-circuit-classic.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения оказывает услуги третьего уровня, он может включить для вас частный пиринг Azure. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не управляет маршрутизацией за вас, после создания канала выполните приведенные ниже инструкции.
 2. **Проверьте, подготовлен ли канал ExpressRoute.**
@@ -333,7 +300,7 @@ Remove-AzureBGPPeering -AccessType Public -ServiceKey "*************************
    * Действительный идентификатор виртуальной локальной сети для установки пиринга. Идентификатор виртуальной локальной сети не должен использоваться ни одним другим пирингом в канале.
    * Номер AS для пиринга. Можно использовать 2-байтовые и 4-байтовые номера AS.
    * Объявленные префиксы: необходимо предоставить список всех префиксов, которые вы планируете объявить во время сеанса BGP. Допускаются только общедоступные префиксы IP-адресов. Если планируется отправить набор префиксов, можно отправить список с разделителями-запятыми. Эти префиксы должны быть зарегистрированы в RIR/IRR на ваше имя.
-   * Клиент ASN: для объявления префиксов, не зарегистрированных с номером AS для пиринга, можно указать номер AS, с которым они зарегистрированы. **Необязательный**.
+   * Клиент ASN: для объявления префиксов, не зарегистрированных с номером AS для пиринга, можно указать номер AS, с которым они зарегистрированы. **Необязательно**.
    * Имя реестра маршрутизации: можно указать RIR/IRR, в котором зарегистрированы номер AS и префиксы.
    * Хэш MD5, если вы решите его использовать. **Необязательный параметр.**
      
@@ -383,7 +350,7 @@ Set-AzureBGPPeering -AccessType Microsoft -ServiceKey "*************************
 Remove-AzureBGPPeering -AccessType Microsoft -ServiceKey "*********************************"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Затем необходимо выполнить [связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-classic.md).
 

@@ -1,21 +1,16 @@
 ---
 title: Создание определения OpenAPI для бессерверного API с помощью Управления API
 description: Создание определения OpenAPI, которое позволяет другим приложениям и службам вызывать функцию в Azure.
-keywords: OpenAPI, Swagger, облачные приложения, облачные службы
-author: ggailey777
-manager: gwallace
-ms.service: azure-functions
 ms.topic: tutorial
 ms.date: 05/08/2019
-ms.author: glenga
 ms.reviewer: sunayv
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: 54a4c6eba094231e8e73cdef87b911dfba20f657
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 659c05b3d31f5673e95cb27f10eaa8bd872e4be6
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69533546"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74226820"
 ---
 # <a name="create-an-openapi-definition-for-a-serverless-api-using-azure-api-management"></a>Создание определения OpenAPI для бессерверного API с помощью Управления API
 
@@ -143,7 +138,7 @@ ms.locfileid: "69533546"
     | Параметр      | Рекомендуемое значение  | Описание                                        |
     | ------------ |  ------- | -------------------------------------------------- |
     | **Имя** | Глобально уникальное имя | Имя создается на основе имени приложения-функции. |
-    | **Подписка** | Ваша подписка | Подписка, в которой создан ресурс. |  
+    | **подписка** | Ваша подписка | Подписка, в которой создан ресурс. |  
     | **[Группа ресурсов](../azure-resource-manager/resource-group-overview.md)** |  myResourceGroup | Та же группа, в которую входит ваше приложение-функция. Значение должно быть установлено. |
     | **Местоположение.** | Запад США | Для расположения выберите западную часть США. |
     | **Название организации** | Contoso | Название организации, используемое на портале разработчика и для уведомлений по электронной почте. |

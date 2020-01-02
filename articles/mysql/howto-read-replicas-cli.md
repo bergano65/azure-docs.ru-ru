@@ -1,26 +1,26 @@
 ---
-title: Создание & Управление репликами чтения — база данных Azure для MySQL
+title: Управление репликами чтения — Azure CLI, REST API — база данных Azure для MySQL
 description: Узнайте, как настроить реплики чтения и управлять ими в базе данных Azure для MySQL с помощью Azure CLI или REST API.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 09/14/2019
-ms.openlocfilehash: 741b50bdb2ec9c8d29a9f759e46209856de3a49c
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.date: 12/02/2019
+ms.openlocfilehash: 56ba530c4f684bf89db9c5b87306592fbfeee7fa
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71970308"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74774100"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-the-azure-cli-and-rest-api"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для MySQL с помощью Azure CLI и REST API
 
 В этой статье вы узнаете, как создавать реплики чтения и управлять ими в службе "база данных Azure для MySQL" с помощью Azure CLI и REST API. Дополнительные сведения о репликах чтения см. в [этой статье](concepts-read-replicas.md).
 
-## <a name="azure-cli"></a>Инфраструктура CLI Azure
+## <a name="azure-cli"></a>Azure CLI
 Вы можете создавать реплики чтения и управлять ими с помощью Azure CLI.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 - [Установите Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 - [Сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md), который будет использоваться в качестве главного сервера. 
@@ -110,7 +110,7 @@ az mysql server delete --resource-group myresourcegroup --name mydemoserver
 ```
 
 
-## <a name="rest-api"></a>REST API
+## <a name="rest-api"></a>REST API
 Вы можете создавать реплики чтения и управлять ими с помощью [REST API Azure](/rest/api/azure/).
 
 ### <a name="create-a-read-replica"></a>Создание реплики чтения
@@ -175,6 +175,6 @@ DELETE https://management.azure.com/subscriptions/{subscriptionId}/resourceGroup
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [репликах чтения](concepts-read-replicas.md)

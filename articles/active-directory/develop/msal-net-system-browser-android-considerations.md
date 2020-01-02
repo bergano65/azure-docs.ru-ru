@@ -1,29 +1,25 @@
 ---
-title: Рекомендации для браузера системы Xamarin Android (Библиотека проверки подлинности Майкрософт для .NET)
+title: Рекомендации по браузеру системы Xamarin Android (MSAL.NET) | Службы
 titleSuffix: Microsoft identity platform
-description: Ознакомьтесь с конкретными соображениями при использовании системных браузеров Xamarin Android при использовании библиотеки проверки подлинности Microsoft для .NET (MSAL.NET).
+description: Ознакомьтесь с конкретными соображениями при использовании системных браузеров Xamarin Android с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
-documentationcenter: dev-center-name
 author: TylerMSFT
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 10/30/2019
 ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f83283cc02c60eb452d0e414c0b21843b48f343b
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 1d3ea2554fac8654b052e3e38633af23e7c778b3
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73150356"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74915463"
 ---
 #  <a name="xamarin-android-system-browser-considerations-with-msalnet"></a>Рекомендации по браузеру системы Xamarin Android с MSAL.NET
 
@@ -35,7 +31,7 @@ ms.locfileid: "73150356"
 
 | Браузеры с поддержкой пользовательских вкладок | Имя пакета |
 |------| ------- |
-|Chrome | com. Android. Chrome|
+|Chrome | com.android.chrome|
 |Microsoft Edge | com. Microsoft. еммкс|
 |Firefox | org. Mozilla. Firefox|
 |екосиа | com. екосиа. Android|
@@ -67,7 +63,7 @@ ms.locfileid: "73150356"
 | Huawei/один + | Opera | Pass;|
 | Huawei | операмини | Pass;|
 | Huawei/один + | Браузер | Pass;|
-| Один + | макссон | Pass;|
+| Один + | Maxthon | Pass;|
 | Huawei/один + | дуккдуккго | Проверка подлинности отменена пользователем|
 | Huawei/один + | Браузер UC | Проверка подлинности отменена пользователем|
 | Один + | долфин | Проверка подлинности отменена пользователем|

@@ -1,20 +1,19 @@
 ---
-title: Ошибки сценариев B2B и их решения в Azure Logic Apps | Документация Майкрософт
+title: Ошибки и решения для сценариев B2B
 description: Поиск ошибок и решений для сценариев B2B в Azure Logic Apps.
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
 author: divyaswarnkar
 ms.author: divswa
-ms.reviewer: jonfan, estfan, LADocs
+ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 06/02/2017
-ms.openlocfilehash: f0591b47ce7ba6837f300088c856c0098fb66710
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 176bc3642f7c923b50cbf2f7a97096f88dc02817
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60998828"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74790700"
 ---
 # <a name="b2b-errors-and-solutions-for-azure-logic-apps"></a>Ошибки B2B и их решения для Azure Logic Apps
 
@@ -34,7 +33,7 @@ ms.locfileid: "60998828"
 
 |   |   | 
 |---|---|
-| Описание ошибки | Не найдено соглашение с удостоверениями: 'AS2Identity':: 'Partner1' и 'AS2Identity':: 'Partner3' | 
+| Описание ошибки | Отсутствует соглашение с идентификаторами 'AS2Identity'::'Partner1' и 'AS2Identity'::'Partner3'. | 
 | Рекомендуемые действия | В соглашении определены недопустимые идентификаторы AS2-From (AS2 — от) и AS2-To (AS2 — кому). </br>Введите правильные идентификаторы AS2-From (AS2 — от) и AS2-To (AS2 — кому) для сопоставления идентификаторов AS2 в заголовках сообщения AS2 с параметрами соглашения. |
 |   |   |     
 
@@ -64,7 +63,7 @@ ms.locfileid: "60998828"
 | Рекомендуемые действия | Добавьте в сообщение AS2 параметр @base64ToBinary перед отправкой партнеру. |
 |||
 
-Пример:
+Пример.
 
 ```json
 "HTTP": {
@@ -84,7 +83,7 @@ ms.locfileid: "60998828"
 | Рекомендуемые действия | Добавьте в сообщение MDN параметр @base64ToBinary перед отправкой партнеру. | 
 |||
 
-Пример:
+Пример.
 
 ```json
 "Response": {
@@ -145,7 +144,7 @@ ms.locfileid: "60998828"
 
 |   |   | 
 |---|---|
-| Описание ошибки | Недопустимый шаблон. Не удалось обработать выражения языка шаблона в действии «Flat_File_Decoding» входных данных в строке "1" и столбце "1902": "Требуется свойство «content» ожидает значение, однако получен null. Путь ''.'. |
+| Описание ошибки | Недопустимый шаблон. Невозможно обработать выражения языка шаблона во входных данных действия Flat_File_Decoding в строке 1 и столбце 1902: обязательное свойство content ожидает значение, но возвращается Null. Путь ''.'. |
 | Рекомендуемые действия | Эта ошибка означает, что входящее сообщение не содержит текста. |
 |   |   | 
 

@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Создание Load Balancer (цен. категория "Стандартный") — портал Azure | Документация Майкрософт
-titlesuffix: Azure Load Balancer
+titleSuffix: Azure Load Balancer
 description: В этом кратком руководстве вы узнаете, как создать Load Balancer (цен. категория "Стандартный") с помощью портала Azure.
 services: load-balancer
 documentationcenter: na
@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 03/11/2019
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: c8df0daac25a79bbbd67577c30b0a2da62d037da
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: d15223dfe6d9ce710f2a3d402a49203ef169132e
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68273843"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74225208"
 ---
 # <a name="quickstart-create-a-standard-load-balancer-to-load-balance-vms-using-the-azure-portal"></a>Краткое руководство. Создание подсистемы балансировки нагрузки уровня "Стандартный" с помощью портала Azure для распределения нагрузки между виртуальными машинами
 
@@ -42,7 +42,7 @@ ms.locfileid: "68273843"
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
     | Subscription               | Выберите свою подписку.    |    
-    | Resource group         | Выберите **Создать** и в текстовом поле введите *myResourceGroupSLB*.|
+    | группа ресурсов.         | Выберите **Создать** и в текстовом поле введите *myResourceGroupSLB*.|
     | ИМЯ                   | *myLoadBalancer*                                   |
     | Регион         | Выберите **Западная Европа**.                                        |
     | type          | Щелкните **Общедоступный**.                                        |
@@ -115,7 +115,7 @@ ms.locfileid: "68273843"
     | ИМЯ | Введите *myVNet*. |
     | Пространство адресов | Введите *10.1.0.0/16*. |
     | Subscription | Выберите свою подписку.|
-    | Resource group | Выберите существующий ресурс *myResourceGroupSLB*. |
+    | группа ресурсов. | Выберите существующий ресурс *myResourceGroupSLB*. |
     | Location | Выберите **Западная Европа**.|
     | Имя подсети | Введите *myBackendSubnet*. |
     | Диапазон адреса подсети | Введите *10.1.0.0/24*. |

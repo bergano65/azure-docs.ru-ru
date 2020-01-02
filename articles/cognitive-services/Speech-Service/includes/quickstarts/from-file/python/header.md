@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Распознавание речи из звукового файла с использованием Python и службы "Речь"
+title: Краткое руководство. Распознавание речи из звукового файла в службе "Речь" с помощью Python
 titleSuffix: Azure Cognitive Services
 description: ПОДЛЕЖИТ УТОЧНЕНИЮ
 services: cognitive-services
@@ -10,11 +10,11 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 10/28/2019
 ms.author: erhopf
-ms.openlocfilehash: c6e2c7266ac5816a3d61811777d60a44e5bd99d4
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: a2dca3a8c99fc2253619c2ceeca08067a564201d
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73506430"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74819258"
 ---
-Если вы предпочитаете сразу перейти к работе, просмотрите или скачайте все <a href="https://aka.ms/speech/github-python">образцы для пакета SDK службы "Речь" для Python</a> в GitHub. В противном случае ознакомьтесь с инструкциями.
+Если вы предпочитаете сразу перейти к работе, просмотрите или скачайте все <a href="https://aka.ms/speech/github-python">образцы для пакета SDK службы "Речь" для Python</a> на сайте GitHub. В противном случае ознакомьтесь с инструкциями.

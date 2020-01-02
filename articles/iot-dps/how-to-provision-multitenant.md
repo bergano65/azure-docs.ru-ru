@@ -1,18 +1,18 @@
 ---
-title: How to provision devices for multitenancy in Azure IoT Hub Device Provisioning Service
-description: Подготовка устройств к мультитенантности с помощью экземпляра службы подготовки устройств
+title: Подготовка устройств для многоаренды в службе подготовки устройств для центра Интернета вещей Azure
+description: Как подготовить устройства для многоаренды с помощью экземпляра службы подготовки устройств (DPS)
 author: wesmc7777
 ms.author: wesmc
 ms.date: 04/10/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: 6d9755c076763a72d54abb66cfdf01b0ac7ffb9d
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 5703db90307f679ff4728386dc24647437f9f9ba
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74228790"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74974978"
 ---
 # <a name="how-to-provision-for-multitenancy"></a>Подготовка к мультитенантности 
 
@@ -419,8 +419,8 @@ J5n4NY2GiBYy7Mp4lDDa5CbEe6zDU/c62rhjCuFWxnc=
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- To learn more Reprovisioning, see [IoT Hub Device reprovisioning concepts](concepts-device-reprovision.md) 
-- To learn more Deprovisioning, see [How to deprovision devices that were previously auto-provisioned](how-to-unprovision-devices.md) 
+- Дополнительные сведения о повторной подготовке см. в статье [Основные понятия повторной инициализации устройств центра Интернета вещей](concepts-device-reprovision.md) . 
+- Дополнительные сведения об отмене подготовки см. в статье [как отменить подготовку устройств, которые были подготовлены ранее](how-to-unprovision-devices.md) . 
 
 
 

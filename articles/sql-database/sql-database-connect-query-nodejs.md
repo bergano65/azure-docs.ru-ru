@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Использование Node.js для отправки запросов
+title: Краткое руководство. Создание запросов к базе данных SQL Azure с помощью Node.js
 description: Как с помощью Node.js создать программу, которая подключается к базе данных SQL Azure, и запрашивать из нее данные с использованием инструкций T-SQL
 services: sql-database
 ms.service: sql-database
@@ -11,12 +11,12 @@ ms.author: sstein
 ms.reviewer: v-masebo
 ms.date: 03/25/2019
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: b996b380195b8b339424c8d716c139072a98303f
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 064baf0215a2eaf7b90b78716b87606990b8fd21
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73827022"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74279262"
 ---
 # <a name="quickstart-use-nodejs-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Node.js для создания запросов к базе данных SQL Azure
 
@@ -67,8 +67,7 @@ ms.locfileid: "73827022"
 
   ```bash
   npm init -y
-  npm install tedious@5.0.3
-  npm install async@2.6.2
+  npm install tedious
   ```
 
 ## <a name="add-code-to-query-database"></a>Добавление кода для создания запроса к базе данных
@@ -78,63 +77,60 @@ ms.locfileid: "73827022"
 1. Замените содержимое файла приведенным ниже кодом. Затем добавьте соответствующие данные сервера, базы данных, пользователя и пароля.
 
     ```js
-    var Connection = require('tedious').Connection;
-    var Request = require('tedious').Request;
+    const { Connection, Request } = require("tedious");
 
     // Create connection to database
-    var config =
-    {
-        authentication: {
-            options: {
-                userName: 'userName', // update me
-                password: 'password' // update me
-            },
-            type: 'default'
+    const config = {
+      authentication: {
+        options: {
+          userName: "username", // update me
+          password: "password" // update me
         },
-        server: 'your_server.database.windows.net', // update me
-        options:
-        {
-            database: 'your_database', //update me
-            encrypt: true
-        }
-    }
-    var connection = new Connection(config);
+        type: "default"
+      },
+      server: "your_server.database.windows.net", // update me
+      options: {
+        database: "your_database", //update me
+        encrypt: true
+      }
+    };
+
+    const connection = new Connection(config);
 
     // Attempt to connect and execute queries if connection goes through
-    connection.on('connect', function(err)
-        {
-            if (err)
-            {
-                console.log(err)
-            }
-            else
-            {
-                queryDatabase()
-            }
+    connection.on("connect", err => {
+      if (err) {
+        console.error(err.message);
+      } else {
+        queryDatabase();
+      }
+    });
+
+    function queryDatabase() {
+      console.log("Reading rows from the Table...");
+
+      // Read all rows from table
+      const request = new Request(
+        `SELECT TOP 20 pc.Name as CategoryName,
+                       p.name as ProductName
+         FROM [SalesLT].[ProductCategory] pc
+         JOIN [SalesLT].[Product] p ON pc.productcategoryid = p.productcategoryid`,
+        (err, rowCount) => {
+          if (err) {
+            console.error(err.message);
+          } else {
+            console.log(`${rowCount} row(s) returned`);
+          }
         }
-    );
+      );
 
-    function queryDatabase()
-    {
-        console.log('Reading rows from the Table...');
-
-        // Read all rows from table
-        var request = new Request(
-            "SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName FROM [SalesLT].[ProductCategory] pc "
-                + "JOIN [SalesLT].[Product] p ON pc.productcategoryid = p.productcategoryid",
-            function(err, rowCount, rows)
-            {
-                console.log(rowCount + ' row(s) returned');
-                process.exit();
-            }
-        );
-
-        request.on('row', function(columns) {
-            columns.forEach(function(column) {
-                console.log("%s\t%s", column.metadata.colName, column.value);
-            });
+      request.on("row", columns => {
+        columns.forEach(column => {
+          console.log("%s\t%s", column.metadata.colName, column.value);
         });
-        connection.execSql(request);
+      });
+      
+      connection.execSql(request);
     }
     ```
 

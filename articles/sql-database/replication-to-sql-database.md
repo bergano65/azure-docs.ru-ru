@@ -11,12 +11,12 @@ author: allenwux
 ms.author: xiwu
 ms.reviewer: mathoma
 ms.date: 01/25/2019
-ms.openlocfilehash: ac198ed8eac6221831fbb280129b76e5fa4e3413
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: f718bc17b987926f4324635f096d5983acdb63fc
+ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73815766"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74997281"
 ---
 # <a name="replication-to-sql-database-single-and-pooled-databases"></a>Репликация в отдельную базу данных и в базы данных в пуле службы "База данных SQL Azure"
 
@@ -32,14 +32,17 @@ ms.locfileid: "73815766"
 
 ## <a name="versions"></a>Версии  
 
-- У издателя и распространителя должна быть одна из следующих версий:  
-- SQL Server 2017 (14.x);
-- SQL Server 2016 (13.x);
-- SQL Server 2014 (12.x) с пакетом обновления 1 (SP1) и накопительным пакетом обновления 3 (CU3);
-- SQL Server 2014 (12.x) RTM с накопительным пакетом обновления 10 (CU10);
-- SQL Server 2012 (11.x) с пакетом обновления 2 (SP2) и накопительным пакетом обновления 8 (CU8) или пакетом обновления 3 (SP3).
-- Попытка настроить репликацию с использованием более старой версии может привести к ошибке MSSQL_REPL20084 (The process could not connect to Subscriber (Процессу не удалось подключиться к Подписчику)) или MSSQL_REPL40532 ("Не удается открыть сервер \<имя>, запрашиваемый с использованием имени для входа. Вход в систему не выполнен").  
-- Чтобы использовать все функции Базы данных SQL Azure, необходимо использовать последние версии [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) и [SQL Server Data Tools](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt).  
+Локальные издатели SQL Server и распространители должны использовать (по крайней мере) одну из следующих версий:  
+
+- SQL Server 2016 и выше
+- SQL Server 2014 [RTM Cu10 (12.0.4427.24)](https://support.microsoft.com/help/3094220/cumulative-update-10-for-sql-server-2014) или [пакет обновления 1 (SP1) CU3 (12.0.2556.4)](https://support.microsoft.com/help/3094221/cumulative-update-3-for-sql-server-2014-service-pack-1)
+- SQL Server 2012 [с пакетом обновления 2 (SP2) CU8 (11.0.5634.1)](https://support.microsoft.com/help/3082561/cumulative-update-8-for-sql-server-2012-sp2) или [SP3 (11.0.6020.0)](https://www.microsoft.com/download/details.aspx?id=49996)
+
+> [!NOTE]
+> Попытка настроить репликацию с использованием неподдерживаемой версии может привести к появлению номера ошибки MSSQL_REPL20084 (процессу не удалось подключиться к подписчику.) и MSSQL_REPL40532 (не удается открыть имя сервера \<> запрашиваемое именем для входа. Вход в систему не выполнен").  
+
+Чтобы использовать все функции Базы данных SQL Azure, необходимо использовать последние версии [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) и [SQL Server Data Tools](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt).  
+
   
 ## <a name="remarks"></a>Примечания
 
@@ -51,7 +54,7 @@ ms.locfileid: "73815766"
 - Одна публикация на сервере SQL Server может поддерживать подписчиков и Базы данных SQL Azure, и SQL Server (локально и SQL Server на виртуальной машине Azure).  
 - Управление репликацией, ее мониторинг и устранение неполадок должны выполняться на локальном SQL Server.  
 - В Базе данных SQL Azure поддерживаются только принудительные подписки.  
-- В `@subscriber_type = 0`sp_addsubscription**для Базы данных SQL поддерживается только**.  
+- В **sp_addsubscription** для Базы данных SQL поддерживается только `@subscriber_type = 0`.  
 - База данных SQL Azure не поддерживает двунаправленную, немедленную, обновляемую или одноранговую репликацию.
 
 ## <a name="replication-architecture"></a>Архитектура репликации  
@@ -103,7 +106,7 @@ ms.locfileid: "73815766"
 
 ## <a name="examples"></a>Примеры
 
-Создайте публикацию и принудительную подписку. Дополнительные сведения можно найти в разделе
+Создайте публикацию и принудительную подписку. Дополнительные сведения см. здесь:
   
 - [Создание публикации](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
 - [Создание принудительной подписки](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/) с использованием имени сервера Базы данных SQL Azure в качестве подписчика (например, **N'azuresqldbdns.database.windows.net'** ) и имени базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks**).  

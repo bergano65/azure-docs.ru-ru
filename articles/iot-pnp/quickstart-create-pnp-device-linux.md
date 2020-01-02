@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 087f1d76aaab4b05425262e0c1fb87b168c99b95
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: ff8303b6af73605aae82bae4d70f9648154f9744
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73931221"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406234"
 ---
 # <a name="quickstart-use-a-device-capability-model-to-create-an-iot-plug-and-play-preview-device-linux"></a>Краткое руководство. Создание устройства IoT Plug and Play (предварительная версия) в Linux с помощью модели возможностей устройства
 
@@ -57,7 +57,7 @@ _Строку подключения к репозиторию моделей к
 
 ## <a name="prepare-an-iot-hub"></a>Подготовка Центра Интернета вещей
 
-Для выполнения инструкций, приведенных в этом кратком руководстве, также необходим Центр Интернета вещей Azure в подписке Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. Если у вас нет центра Интернета вещей, создайте его, следуя приведенным ниже указаниям.
+Для выполнения инструкций, приведенных в этом кратком руководстве, также необходим Центр Интернета вещей Azure в подписке Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. Если у вас еще нет центра Интернета вещей, следуйте инструкциям в оставшейся части этого раздела, чтобы создать его.
 
 Если вы используете Azure CLI локально, версия `az` должна быть **2.0.75** или выше. В Azure Cloud Shell используется последняя версия. Используйте команду `az --version`, чтобы проверить версию, установленную на компьютере.
 
@@ -82,17 +82,33 @@ az extension add --name azure-cli-iot-ext
 > [!IMPORTANT]
 > На этапе общедоступной предварительной версии функции IoT Plug and Play доступны только в центрах Интернета вещей, созданных в таких регионах, как **Центральная часть США**, **Северная Европа** и **Восточная Япония**.
 
-Выполните приведенную ниже команду, чтобы создать удостоверение устройства в Центре Интернета вещей. Замените заполнители **YourIoTHubName** и **YourDevice** фактическими именами.
+Выполните приведенную ниже команду, чтобы создать удостоверение устройства в Центре Интернета вещей. Замените заполнители **YourIoTHubName** и **YourDeviceID** своими значениями _имени Центра Интернета вещей_ и _идентификатора устройства_.
 
 ```azurecli-interactive
-az iot hub device-identity create --hub-name <YourIoTHubName> --device-id <YourDevice>
+az iot hub device-identity create --hub-name <YourIoTHubName> --device-id <YourDeviceID>
 ```
 
-Выполните приведенные ниже команды, чтобы получить _строку подключения к только что зарегистрированному устройству_.
+Выполните следующие команды, чтобы получить _строку подключения устройства_ для зарегистрированного устройства (запишите для использования в будущем).
 
 ```azurecli-interactive
 az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --device-id <YourDevice> --output table
 ```
+
+## <a name="prepare-the-development-environment"></a>Подготовка среды разработки
+
+В этом кратком руководстве используется диспетчер библиотек [Vcpkg](https://github.com/microsoft/vcpkg) для установки пакета SDK для устройств Azure IoT для C в среде разработки.
+
+Откройте оболочку. Выполните указанную ниже команду, чтобы установить Vcpkg.
+
+```bash
+cd ~
+git clone https://github.com/microsoft/vcpkg
+cd vcpkg
+./bootstrap-vcpkg.sh
+./vcpkg install azure-iot-sdk-c[public-preview,use_prov_client]
+```
+
+Выполнение этой операции может занять несколько минут.
 
 ## <a name="author-your-model"></a>Создание модели
 
@@ -138,7 +154,7 @@ az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --
 
 1. Выберите **CMake Project on Linux** в качестве шаблона проекта.
 
-1. Выберите **Via Source Code** (С помощью исходного кода) в качестве способа добавления пакета SDK для устройств.
+1. Выберите **Via Vcpkg** (С помощью Vcpkg) в качестве способа добавления пакета SDK для устройств.
 
 1. Новая папка **sample_device** создается в том же расположении, что и файл DCM, и в ней создаются файлы заглушки кода устройства. VS Code открывает новое окно для их отображения.
     ![Код устройства](media/quickstart-create-pnp-device-linux/device-code.png)
@@ -146,13 +162,6 @@ az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --
 ## <a name="build-and-run-the-code"></a>Сборка и выполнение кода
 
 Вы используете исходный код пакета SDK для устройств для сборки созданной заглушки кода устройства. Создаваемое приложение имитирует устройство, которое подключается к Центру Интернета вещей. Оно отправляет данные телеметрии и свойства, а также получает команды.
-
-1. Выполните следующие команды, чтобы скачать исходный код пакета SDK для устройств.
-
-    ```bash
-    cd ~/pnp_app/sample_device
-    git clone https://github.com/Azure/azure-iot-sdk-c --recursive -b public-preview
-    ```
 
 1. Создайте папку сборки **CMake** для приложения **sample_device**.
 
@@ -162,10 +171,10 @@ az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --
     cd cmake
     ```
 
-1. Запустите CMake, чтобы выполнить сборку приложения с помощью пакета SDK.
+1. Запустите CMake, чтобы выполнить сборку приложения с помощью пакета SDK. В следующей команде предполагается, что в домашней папке установлено **vcpkg**:
 
     ```bash
-    cmake .. -Duse_prov_client=ON -Dhsm_type_symm_key:BOOL=ON -Dskip_samples:BOOL=ON
+    cmake .. -DCMAKE_TOOLCHAIN_FILE=~/vcpkg/scripts/buildsystems/vcpkg.cmake -Duse_prov_client=ON -Dhsm_type_symm_key:BOOL=ON
     cmake --build .
     ```
 
@@ -173,7 +182,7 @@ az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --
 
     ```sh
     cd ~/pnp_app/sample_device/cmake
-    ./sample_device "<device connection string>"
+    ./sample_device "<YourDeviceConnectionString>"
     ```
 
 1. Приложение устройства начнет отправку данных в Центр Интернета вещей.
@@ -213,8 +222,10 @@ az iot dt monitor-events --hub-name <YourIoTHubNme> --device-id <YourDevice>
 Чтобы просмотреть все свойства, отправленные устройством, используйте следующую команду.
 
 ```azurecli-interactive
-az iot dt list-properties --device-id <YourDevice> --hub-name <YourIoTHubNme> --source private --repo-login "<Your company model repository connection string>"
+az iot dt list-properties --device-id <YourDevice> --hub-name <YourIoTHubNme> --source private --repo-login "<YourCompanyModelRepositoryConnectionString>"
 ```
+
+[!INCLUDE [iot-pnp-clean-resources.md](../../includes/iot-pnp-clean-resources.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

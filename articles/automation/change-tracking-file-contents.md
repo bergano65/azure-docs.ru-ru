@@ -4,17 +4,17 @@ description: Используйте функцию изменения содер
 services: automation
 ms.service: automation
 ms.subservice: change-inventory-management
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 07/03/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 6aef9a24e3337d1f5a5a6c9ac6b510cc7f9a66a5
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 4ab88aa2dc604172f00d875353dabba61fd101af
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478649"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74850590"
 ---
 # <a name="view-contents-of-a-file-that-is-being-tracked-with-change-tracking"></a>Просмотр содержимого файла, который отслеживается с помощью отслеживания изменений
 
@@ -75,5 +75,5 @@ ms.locfileid: "67478649"
 > [!div class="nextstepaction"]
 > [Устранение неполадок при изменениях в среде](automation-tutorial-troubleshoot-changes.md)
 
-* Используйте [при поиске по журналам в Azure Monitor журналы](../log-analytics/log-analytics-log-searches.md) Чтобы просмотреть подробные данные отслеживания изменений.
+* Используйте [Поиск по журналам в Azure Monitor журналов](../log-analytics/log-analytics-log-searches.md) для просмотра подробных данных отслеживания изменений.
 

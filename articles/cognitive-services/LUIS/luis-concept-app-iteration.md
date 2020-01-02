@@ -1,5 +1,5 @@
 ---
-title: Iterative app design - LUIS
+title: Разработка итеративных приложений — LUIS
 titleSuffix: Azure Cognitive Services
 description: LUIS лучше всего обучается на итеративных циклах изменения моделей, примерах высказываний, публикации содержимого и сборе данных из запросов к конечным точкам.
 services: cognitive-services
@@ -18,123 +18,123 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74422589"
 ---
-# <a name="iterative-app-design-for-luis"></a>Iterative app design for LUIS
+# <a name="iterative-app-design-for-luis"></a>Итеративная разработка приложений для LUIS
 
-A Language Understanding (LUIS) app learns and performs most efficiently with iteration. Here's a typical iteration cycle:
+Приложение Language Understanding (LUIS) изучает и выполняет наиболее эффективное использование итерации. Вот типичный цикл итерации:
 
-* Create new version
-* Edit the LUIS app schema. А именно:
-    * Intents with example utterances
+* создать новую версию
+* Измените схему приложения LUIS. А именно:
+    * намерения с примером фразы продолжительностью
     * Сущности
-    * Компоненты
-* Train, test, and publish
-    * Test at the prediction endpoint for active learning
-* Gather data from endpoint queries
+    * Функции
+* Обучение, тестирование и публикация
+    * Тестирование в конечной точке прогнозирования для активного обучения
+* сбор данных из запросов конечной точки
 
 ![Цикл разработки](./media/luis-concept-app-iteration/iteration.png)
 
-## <a name="building-a-luis-schema"></a>Building a LUIS schema
+## <a name="building-a-luis-schema"></a>Создание схемы LUIS
 
-An app's schema defines what the user is asking for (the _intention_ or _intent_ ) and what parts of the intent provide details (called _entities_) that are used to help determine the answer. 
+Схема приложения определяет, что пользователь запрашивает ( _намерение_ или _намерение_ ) и какие части цели предоставляют сведения (называемые _сущностями_), которые используются для определения ответа. 
 
-The app schema must be specific to the app domains to determine words and phrases that are relevant, as well as to determine typical word ordering. 
+Схема приложения должна быть специальной для доменов приложений, чтобы определять применимые слова и фразы, а также определять типичное упорядочение слов. 
 
-Example utterances represent user inputs, such as recognized speech or text, that the app expects at runtime. 
+Пример фразы продолжительностью представляют входные данные пользователя, такие как распознанный голос или текст, которые приложение ждет во время выполнения. 
 
-The schema requires intents, and _should have_ entities. 
+Схема требует целей и _должна иметь_ сущности. 
 
-### <a name="example-schema-of-intents"></a>Example schema of intents
+### <a name="example-schema-of-intents"></a>Пример схемы целей
 
-The most common schema is an intent schema organized with intents. This type of schema uses LUIS to determine a user's intention. 
+Наиболее распространенная схема — это схема намерения, упорядоченная с использованием целей. Этот тип схемы использует LUIS для определения намерения пользователя. 
 
-The intent schema type may have entities if it helps LUIS determine the user's intention. For example, a shipping entity (as a descriptor to an intent) helps LUIS determine a shipping intention. 
+Тип схемы намерения может иметь сущности, если он помогает LUIS определить намерение пользователя. Например, объект отгрузки (в качестве дескриптора цели) помогает LUIS определить цель доставки. 
 
-### <a name="example-schema-of-entities"></a>Example schema of entities
+### <a name="example-schema-of-entities"></a>Пример схемы сущностей
 
-An entity schema focuses on entities, which is the data that is extracted from user utterances. For example, if a user was to say, "I'd like to order three pizzas." There are two entities that would be extracted: _three_ and _pizzas_. These are used to help fulfill the intention, which was to make an order. 
+Схема сущности фокусируется на сущностях, которые являются данными, извлеченными из пользователя фразы продолжительностью. Например, если пользователь хотел бы сказать: «я хочу заказать три пиццы». Есть две сущности, которые будут извлечены: _три_ и _пиццы_. Они используются для удовлетворения намерений, которые были внесены в заказ. 
 
-For an entity schema, the intention of the utterance is less important to the client application. 
+Для схемы сущности цель utterance менее важна для клиентского приложения. 
 
-A common method of organizing an entity schema is to add all example utterances to the **None** intent. 
+Распространенным способом организации схемы сущности является добавление всех примеров фразы продолжительностью к намерениям **None** . 
 
-### <a name="example-of-a-mixed-schema"></a>Example of a mixed schema
+### <a name="example-of-a-mixed-schema"></a>Пример смешанной схемы
 
-The most powerful and mature schema is an intent schema with a full range of entities and features. This schema can begin as either an intent or entity schema and grow to include concepts of both, as the client application needs those pieces of information. 
+Самая мощная и зрелая схема — это схема намерения с полным набором сущностей и функций. Эта схема может начинаться как схема намерения или сущности и увеличиваться, чтобы включать в себя основные понятия, так как клиентское приложение нуждается в этих фрагментах информации. 
 
-## <a name="add-example-utterances-to-intents"></a>Add example utterances to intents
+## <a name="add-example-utterances-to-intents"></a>Добавить пример фразы продолжительностью к каждому из целей
 
-LUIS needs a few example utterances in each **intent**. The example utterances need enough variation of word choice and word order to be able to determine which intent the utterance is meant for. 
+LUIS требуется несколько примеров фразы продолжительностью в каждом **намерении**. В примере фразы продолжительностью требуется достаточно вариантов выбора слов и порядка слов, чтобы определить, для чего предназначено utterance. 
 
 > [!CAUTION]
-> Do not add example utterances in bulk. Start with 15 to 30 specific and varying examples. 
+> Не добавляйте пример фразы продолжительностью в групповой операции. Начните с 15 – 30 отдельных и различных примеров. 
 
-Each example utterance needs to have any **required data to extract** designed and labeled with **entities**. 
+Каждый пример utterance должен иметь все **необходимые данные для извлечения** и пометки с **сущностями**. 
 
-|Key element|Цель|
+|Key, элемент|Назначение|
 |--|--|
-|Намерение|**Classify** user utterances into a single intention, or action. Примеры: `BookFlight` и `GetWeather`.|
-|Учреждение|**Extract** data from utterance required to complete intention. Examples include date and time of travel, and location.|
+|Намерение|**Классифицировать** пользователя фразы продолжительностью в одну намерение или действие. Примеры: `BookFlight` и `GetWeather`.|
+|Сущность|Чтобы завершить намерение, необходимо **извлечь** данные из utterance. К примерам относятся Дата и время поездки и расположение.|
 
-A LUIS app can be designed to ignore utterances that aren't relevant to an app's domain by assigning the utterance to the **None** intent.
+Приложение LUIS может быть спроектировано таким образом, чтобы игнорировать фразы продолжительностью, не относящиеся к домену приложения, путем назначения utterance намерению **None** .
 
-## <a name="test-and-train-your-app"></a>Test and train your app
+## <a name="test-and-train-your-app"></a>Тестирование и обучение приложения
 
-After you have 15 to 30 different example utterances in each intent, with the required entities labeled, you need to test and [train](luis-how-to-train.md) your LUIS app. 
+После получения от 15 до 30 различных примеров, фразы продолжительностью в каждом намерении, с пометкой необходимых сущностей, необходимо протестировать и [обучить](luis-how-to-train.md) приложение Luis. 
 
-## <a name="publish-to-a-prediction-endpoint"></a>Publish to a prediction endpoint
+## <a name="publish-to-a-prediction-endpoint"></a>Публикация в конечной точке прогнозирования
 
-The LUIS app must be published so that it's available to you in the list [prediction endpoint regions](luis-reference-regions.md).
+Приложение LUIS должно быть опубликовано, чтобы оно было доступно в [областях прогнозирования конечных точек](luis-reference-regions.md).
 
 ## <a name="test-your-published-app"></a>Тестирование опубликованного приложения
 
-You can test your published LUIS app from the HTTPS prediction endpoint. Testing from the prediction endpoint allows LUIS to choose any utterances with low-confidence for [review](luis-how-to-review-endpoint-utterances.md).  
+Вы можете протестировать опубликованное приложение LUIS из конечной точки прогнозирования HTTPS. Тестирование из конечной точки прогнозирования позволяет LUIS выбирать любой фразы продолжительностью с низкой достоверностью для [проверки](luis-how-to-review-endpoint-utterances.md).  
 
-## <a name="create-a-new-version-for-each-cycle"></a>Create a new version for each cycle
+## <a name="create-a-new-version-for-each-cycle"></a>Создать новую версию для каждого цикла
 
-Each version is a snapshot in time of the LUIS app. Перед внесением изменений в приложение создайте новую версию. It is easier to go back to an older version than to try to remove intents and utterances to a previous state.
+Каждая версия является моментальным снимком времени приложения LUIS. Перед внесением изменений в приложение создайте новую версию. Проще вернуться к более старой версии, чем пытаться удалить способы и фразы продолжительностью предыдущее состояние.
 
 ИД версии состоит из символов, цифр или точки ".". Его длина не может превышать 10 символов.
 
 Исходная версия (0.1) является заданной по умолчанию активной версией. 
 
-### <a name="begin-by-cloning-an-existing-version"></a>Begin by cloning an existing version
+### <a name="begin-by-cloning-an-existing-version"></a>Начните с клонирования существующей версии
 
-Clone an existing version to use as a starting point for each new version. After you clone a version, the new version becomes the **active** version. 
+Клонирование существующей версии для использования в качестве отправной точки для каждой новой версии. После клонирования версии новая версия станет **активной** . 
 
-### <a name="publishing-slots"></a>Publishing slots
+### <a name="publishing-slots"></a>Слоты публикации
 
-You can publish to either the stage and/or production slots. У слотов могут быть разные или одинаковые версии. This is useful for verifying changes before publishing to production, which is available to bots or other LUIS calling apps. 
+Вы можете опубликовать в рабочей области или в рабочих слотах. У слотов могут быть разные или одинаковые версии. Это полезно для проверки изменений перед публикацией в рабочей среде, доступной для программы-роботы или других вызывающих приложений LUIS. 
 
-Trained versions aren't automatically available at your LUIS app's [endpoint](luis-glossary.md#endpoint). You must [publish](luis-how-to-publish-app.md) or republish a version in order for it to be available at your LUIS app endpoint. You can publish to **Staging** and **Production**, giving you two versions of the app available at the endpoint. If more versions of the app need to be available at an endpoint, you should export the version and reimport it to a new app. Новое приложение имеет другой идентификатор.
+Обученные версии не будут автоматически доступны на [конечной точке](luis-glossary.md#endpoint)приложения Luis. Необходимо [опубликовать](luis-how-to-publish-app.md) или повторно опубликовать версию, чтобы она была доступна в конечной точке приложения Luis. Вы можете опубликовать в **промежуточном** и **рабочем**месте, предоставив две версии приложения, доступные на конечной точке. Если требуется, чтобы в конечной точке были доступны дополнительные версии приложения, необходимо экспортировать версию и повторно импортировать ее в новое приложение. Новое приложение имеет другой идентификатор.
 
 ### <a name="import-and-export-a-version"></a>Импорт и экспорт версии
 
-A version can be imported at the app level. That version becomes the active version and uses the version ID in the `versionId` property of the app file. You can also import into an existing app, at the version level. Новая версия становится активной версией. 
+Версию можно импортировать на уровне приложения. Эта версия станет активной версией и использует идентификатор версии в свойстве `versionId` файла приложения. Также можно импортировать в существующее приложение на уровне версии. Новая версия становится активной версией. 
 
-A version can be exported at the app or version level as well. Единственное отличие заключается в том, что экспортированная на уровне приложения версии является текущей активной версией, тогда как на странице **[Параметры](luis-how-to-manage-versions.md)** на уровне версии можно экспортировать любую версию. 
+Версию можно также экспортировать на уровне приложения или версии. Единственное отличие заключается в том, что экспортированная на уровне приложения версии является текущей активной версией, тогда как на странице **[Параметры](luis-how-to-manage-versions.md)** на уровне версии можно экспортировать любую версию. 
 
-The exported file **doesn't** contain:
+Экспортированный файл **не** содержит:
 
-* Machine-learned information, because the app is retrained after it's imported
-* Contributor information
+* Сведения, полученные от компьютера, так как приложение переучить после импорта
+* сведения о участнике
 
-In order to back up your LUIS app schema, export a version from the [LUIS portal](https://www.luis.ai/applications).
+Чтобы создать резервную копию схемы приложения LUIS, экспортируйте версию на [портале Luis](https://www.luis.ai/applications).
 
-## <a name="manage-contributor-changes-with-versions-and-contributors"></a>Manage contributor changes with versions and contributors
+## <a name="manage-contributor-changes-with-versions-and-contributors"></a>Управление изменениями участников с помощью версий и участников
 
-LUIS uses the concept of contributors to an app, by providing Azure resource-level permissions. Combine this concept with versioning to provide targeted collaboration. 
+LUIS использует концепцию участников в приложении, предоставляя разрешения уровня ресурса Azure. Объедините эту концепцию с управлением версиями, чтобы обеспечить целевую совместную работу. 
 
-Use the following techniques to manage contributor changes to your app.
+Используйте следующие методы для управления изменениями участников приложения.
 
 ### <a name="manage-multiple-versions-inside-the-same-app"></a>Управление несколькими версиями внутри одного приложения
 
-Begin by [cloning](luis-how-to-manage-versions.md#clone-a-version) from a base version for each author. 
+Начните с [клонирования](luis-how-to-manage-versions.md#clone-a-version) из базовой версии для каждого автора. 
 
-Each author makes changes to their own version of the app. When the author is satisfied with the model, export the new versions to JSON files.  
+Каждый автор вносит изменения в собственную версию приложения. Когда автор удовлетворяет модели, экспортируйте новые версии в JSON-файлы.  
 
-Exported apps, .json or .lu files, can be compared for changes. Combine the files to create a single file of the new version. Change the `versionId` property to signify the new merged version. Импортируйте эту версию в исходное приложение. 
+Экспортированные приложения,. JSON или. lu файлы можно сравнивать с изменениями. Объедините файлы, чтобы создать один файл новой версии. Измените свойство `versionId`, чтобы обозначить новую объединенную версию. Импортируйте эту версию в исходное приложение. 
 
-Этот метод позволяет иметь одну активную версию, одну промежуточную версию и одну опубликованную версию. You can compare the results of the active version with a published version (stage or production) in the [interactive testing pane](luis-interactive-test.md).
+Этот метод позволяет иметь одну активную версию, одну промежуточную версию и одну опубликованную версию. Вы можете сравнить результаты активной версии с опубликованной версией (этап или рабочая) на [панели интерактивного тестирования](luis-interactive-test.md).
 
 ### <a name="manage-multiple-versions-as-apps"></a>Управление несколькими версиями как приложениями
 
@@ -142,12 +142,12 @@ Exported apps, .json or .lu files, can be compared for changes. Combine the file
 
 Экспортированные приложения представляют собой файлы формата JSON, которые можно сравнивать с базовой версией. Объедините файлы, чтобы создать один JSON-файл новой версии. Измените свойство **versionId** в JSON-файле для обозначения новой объединенной версии. Импортируйте эту версию в исходное приложение.
 
-Learn more about authoring contributions from [collaborators](luis-how-to-collaborate.md).
+Узнайте больше о создании вкладов из [участников совместной работы](luis-how-to-collaborate.md).
 
-## <a name="review-endpoint-utterances-to-begin-the-new-iterative-cycle"></a>Review endpoint utterances to begin the new iterative cycle
+## <a name="review-endpoint-utterances-to-begin-the-new-iterative-cycle"></a>Проверка конечной точки фразы продолжительностью для начала нового цикла итерации
 
-When you are done with an iteration cycle, you can repeat the process. Start with [reviewing prediction endpoint utterances](luis-how-to-review-endpoint-utterances.md) LUIS marked with low-confidence. Check these utterances for both correct predicted intent and correct and complete entity extracted. After you review and accept changes, the review list should be empty.  
+По завершении цикла итерации можно повторить процесс. Начните с [проверки конечной точки прогнозирования фразы продолжительностью](luis-how-to-review-endpoint-utterances.md) Luis, помеченной с низким уровнем достоверности. Проверьте эти фразы продолжительностью и правильность прогнозируемого намерения и правильность и полноту извлеченных сущностей. После просмотра и принятия изменений список проверки должен быть пустым.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте о принципах [совместной работы](luis-concept-keys.md).

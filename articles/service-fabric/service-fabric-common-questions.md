@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/18/2017
 ms.author: pepogors
-ms.openlocfilehash: 28a0418fd94c03f1fe308c7cd6f17b6d9a331fb0
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: dd514bb7c600c99518983855dae1d3b7fb8a1efb
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72529372"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74481650"
 ---
 # <a name="commonly-asked-service-fabric-questions"></a>Распространенные вопросы о Service Fabric
 
@@ -107,7 +107,7 @@ ms.locfileid: "72529372"
 Да.  Дополнительные сведения см. [в статье Создание кластера с подключенными дисками данных](../virtual-machine-scale-sets/virtual-machine-scale-sets-attached-disks.md#create-a-service-fabric-cluster-with-attached-data-disks) и [Шифрование дисков Azure для масштабируемых наборов виртуальных машин](../virtual-machine-scale-sets/disk-encryption-overview.md).
 
 ### <a name="can-i-use-low-priority-vms-in-a-cluster-node-type-virtual-machine-scale-set"></a>Можно ли использовать низкоприоритетные виртуальные машины с типом узла кластера (масштабируемый набор виртуальных машин)?
-Нет. Низкоприоритетные виртуальные машины не поддерживаются. 
+Нет Низкоприоритетные виртуальные машины не поддерживаются. 
 
 ### <a name="what-are-the-directories-and-processes-that-i-need-to-exclude-when-running-an-anti-virus-program-in-my-cluster"></a>Какие каталоги и процессы необходимо исключить при запуске антивирусной программы в кластере?
 
@@ -146,7 +146,8 @@ Reliable Collection обычно содержит несколько [разде
 
 - Создать службу, которая направляет запросы во все разделы другой службы для извлечения необходимых данных.
 - Создать службу, которая может получать данные из всех разделов другой службы.
-- Периодически передавать данные из каждой службы во внешнее хранилище. Этот подход используется, только если выполняемые запросы не являются частью основной бизнес-логики.
+- Периодически передавать данные из каждой службы во внешнее хранилище. Этот подход подходит только в том случае, если выполняемые Вами запросы не являются частью основной бизнес-логики, так как данные внешнего хранилища будут устаревшими.
+- Кроме того, храните данные, которые должны поддерживать запросы для всех записей непосредственно в хранилище данных, а не в надежной коллекции. Это устраняет проблемы с устаревшими данными, но не позволяет использовать преимущества надежных коллекций.
 
 
 ### <a name="whats-the-best-way-to-query-data-across-my-actors"></a>Как лучше запрашивать данные из моих субъектов?
@@ -190,6 +191,6 @@ Reliable Services обычно состоит из нескольких разд
 
 После объявления о начале их реализации см. дополнительные сведения в [блоге Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Сведения о [базовых Service Fabric основных понятиях](service-fabric-technical-overview.md) и рекомендациях по [управлению](service-fabric-best-practices-overview.md) Fabric] (Service-Fabric-Technical-Overview.md [) и рекомендации](service-fabric-best-practices-overview.md)

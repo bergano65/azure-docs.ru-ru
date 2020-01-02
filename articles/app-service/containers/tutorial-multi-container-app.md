@@ -1,24 +1,17 @@
 ---
-title: Создание многоконтейнерного приложения с помощью функции "Веб-приложение для контейнеров" в Службе приложений Azure
-description: Узнайте, как использовать несколько контейнеров в Azure с помощью Docker Compose, WordPress и MySQL.
+title: Руководство по созданию многоконтейнерного приложения
+description: Узнайте, как создать в Службе приложений Azure многоконтейнерное приложение, содержащее приложение WordPress и контейнер MySQL, и настроить приложение WordPress.
 keywords: служба приложений azure, веб-приложение, linux, docker, compose, многоконтейнерное, несколько контейнеров, веб-приложение для контейнеров, много контейнеров, контейнер, wordpress, azure db для mysql, рабочая база данных с контейнерами
-services: app-service
-documentationcenter: ''
 author: msangapu-msft
-manager: gwallace
-editor: ''
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 04/29/2019
 ms.author: msangapu
-ms.openlocfilehash: f4a366809bd5c6267ef76632e8990309f100c393
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 327b2aaadd77c00d847504ff16415813d2fcf89c
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72554942"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74687458"
 ---
 # <a name="tutorial-create-a-multi-container-preview-app-in-web-app-for-containers"></a>Руководство по Создание многоконтейнерного приложения (предварительная версия) на платформе Azure "Веб-приложение для контейнеров"
 

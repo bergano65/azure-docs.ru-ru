@@ -1,26 +1,17 @@
 ---
-title: Примеры Azure CLI. Служба приложений | Документация Майкрософт
-description: Примеры Azure CLI. Служба приложений
-services: app-service
-documentationcenter: app-service
-author: syntaxc4
-manager: erikre
-editor: ggailey777
+title: Примеры для CLI
+description: В этой статье приведены примеры Azure CLI для некоторых распространенных сценариев Службы приложений. Узнайте, как автоматизировать задачи развертывания и управления в Службе приложений.
 tags: azure-service-management
 ms.assetid: 53e6a15a-370a-48df-8618-c6737e26acec
-ms.service: app-service
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.workload: app-service
 ms.date: 12/12/2017
-ms.author: cfowler
 ms.custom: mvc
-ms.openlocfilehash: dc8a08c61250994b6083e3936820e1e6025593a6
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 0b3acb1b421962cde7d90398f42bdfeefda578e3
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70066698"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74971508"
 ---
 # <a name="cli-samples-for-azure-app-service"></a>Примеры интерфейса командной строки для Службы приложений Azure
 
@@ -41,6 +32,8 @@ ms.locfileid: "70066698"
 |**Масштабирование приложения**||
 | [Масштабирование приложения вручную](./scripts/cli-scale-manual.md?toc=%2fcli%2fazure%2ftoc.json) | Создает приложение Службы приложений и масштабирует его по двум экземплярам. |
 | [Глобальное масштабирование приложения с помощью высокодоступной архитектуры](./scripts/cli-scale-high-availability.md?toc=%2fcli%2fazure%2ftoc.json) | Создает два приложения Службы приложений в двух разных географических регионах и делает их доступными через одну конечную точку с помощью диспетчера трафика Azure. |
+|**Защита приложения**||
+| [Интеграция со Шлюзом приложений Azure](./scripts/cli-integrate-app-service-with-application-gateway.md?toc=%2fcli%2fazure%2ftoc.json) | Создает приложение Службы приложений и интегрирует его со Шлюзом приложений, используя конечную точку службы и ограничения доступа. |
 |**Подключение приложения к ресурсам**||
 | [Подключение приложения к Базе данных SQL](./scripts/cli-connect-to-sql.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений и базу данных SQL, а затем добавляет строку подключения базы данных к параметрам приложения. |
 | [Подключение приложения к учетной записи хранения](./scripts/cli-connect-to-storage.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений и учетную запись хранения, а затем добавляет строку подключения хранилища к параметрам приложения. |

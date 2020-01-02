@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: 8bc7f879a2c2e8b1e0e2d82216241704a466ad60
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 211f8c8a203b81a4df6a8e9515b403f99cec572a
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231139"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74926324"
 ---
 # <a name="notification-hubs-output-binding-for-azure-functions"></a>Выходная привязка Центра уведомлений для службы "Функции Azure"
 
@@ -21,7 +21,7 @@ ms.locfileid: "74231139"
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
 > [!IMPORTANT]
-> Google has [deprecated Google Cloud Messaging (GCM) in favor of Firebase Cloud Messaging (FCM)](https://developers.google.com/cloud-messaging/faq). This output binding doesn't support FCM. To send notifications using FCM, use the [Firebase API](https://firebase.google.com/docs/cloud-messaging/server#choosing-a-server-option) directly in your function or use [template notifications](../notification-hubs/notification-hubs-templates-cross-platform-push-messages.md).
+> В Google используется [устаревший Google Cloud Messaging (gcm) в пользу Firebase Cloud Messaging (FCM)](https://developers.google.com/cloud-messaging/faq). Эта выходная привязка не поддерживает FCM. Чтобы отправлять уведомления с помощью FCM, используйте [API Firebase](https://firebase.google.com/docs/cloud-messaging/server#choosing-a-server-option) непосредственно в функции или используйте [уведомления шаблона](../notification-hubs/notification-hubs-templates-cross-platform-push-messages.md).
 
 ## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
 
@@ -29,9 +29,9 @@ ms.locfileid: "74231139"
 
 [!INCLUDE [functions-package](../../includes/functions-package.md)]
 
-## <a name="packages---functions-2x"></a>Пакеты — Функции 2.x
+## <a name="packages---functions-2x-and-higher"></a>Packages — функции 2. x и более поздних версий
 
-Эта привязка недоступна в Функциях 2.x.
+Эта привязка недоступна в функциях 2. x и более поздних версий.
 
 ## <a name="example---template"></a>Пример шаблона
 

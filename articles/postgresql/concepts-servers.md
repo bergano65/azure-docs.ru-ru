@@ -1,17 +1,17 @@
 ---
-title: Основные понятия сервера в базе данных Azure для PostgreSQL — один сервер
+title: Серверы — база данных Azure для PostgreSQL — один сервер
 description: В этой статье приводятся рекомендации и рекомендации по настройке базы данных Azure для PostgreSQL-Single Server и управлению ею.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: bd7c24489e8ac7b26cb703923ddf9cbb741cfd68
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: d86170a53b4bfbe712bbca12db4d6063214aba21
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72029970"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74768169"
 ---
 # <a name="azure-database-for-postgresql---single-server"></a>База данных Azure для PostgreSQL — отдельный сервер
 В этой статье приводятся рекомендации и рекомендации по работе с базой данных Azure для PostgreSQL-Single Server.
@@ -62,7 +62,7 @@ ms.locfileid: "72029970"
 Так как База данных Azure для PostgreSQL — это управляемая служба для Postgres, настраиваемые параметры в ней являются подмножеством параметров локального экземпляра Postgres. Дополнительные сведения о параметрах Postgres см. в [документации PostgreSQL](https://www.postgresql.org/docs/9.6/static/runtime-config.html). При создании сервера Базы данных Azure для PostgreSQL для его параметров устанавливаются стандартные значения. Пользователи не могут настраивать некоторые параметры, для изменения которых требуется перезагрузка сервера или права суперпользователя.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Общие сведения о службе приведены в статье  [Что такое База данных Azure для PostgreSQL](overview.md).
 - Сведения о квотах и ограничениях для конкретных ресурсов, основанных на **уровне служб**, см. в разделе [уровни служб](concepts-pricing-tiers.md).
 - Сведения о подключении к службе см. в статье  [Библиотеки подключений для Базы данных Azure для PostgreSQL](concepts-connection-libraries.md).

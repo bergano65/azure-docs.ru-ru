@@ -1,24 +1,15 @@
 ---
-title: Периодичность выпуска исправлений для ОС и среды выполнения в Службе приложений Azure | Документация Майкрософт
-description: В этой статьей объясняется, как Служба приложений Azure обновляет операционную систему и среды выполнения и как вы можете получать новости об обновлениях.
-services: app-service
-documentationcenter: ''
-author: cephalin
-manager: cfowler
-editor: ''
-ms.service: app-service
-ms.workload: web
-ms.tgt_pltfrm: na
+title: Ритмичность исправления операционной системы и среды выполнения
+description: Узнайте, как служба приложений Azure обновляет операционную систему и среды выполнения, какие уровни среды выполнения и обновления имеют ваши приложения, а также как можно получить объявления об обновлениях.
 ms.topic: article
 ms.date: 02/02/2018
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 3469c4f11a075ceb958e35e4cfc87a78e60b3882
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 1a56fed04399325be315d8d977e5a72223bddac5
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70074130"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74688575"
 ---
 # <a name="os-and-runtime-patching-in-azure-app-service"></a>Установка исправлений для ОС и среды выполнения в Службе приложений Azure
 
@@ -84,7 +75,7 @@ az webapp config set --java-version 1.8 --java-container Tomcat --java-container
 
 В следующей таблице показано, как запросить версии Windows и языковой среды выполнения, в которых работают ваши приложения:
 
-| Сведения | Где ее найти | 
+| Информация | Где ее найти | 
 |-|-|
 | Версия Windows | См. `https://<appname>.scm.azurewebsites.net/Env.cshtml` (в разделе "Сведения о системе") |
 | Версия .NET | Откройте `https://<appname>.scm.azurewebsites.net/DebugConsole` и выполните следующую команду в командной строке: <br>`powershell -command "gci 'Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Net Framework Setup\NDP\CDF'"` |
@@ -98,7 +89,7 @@ az webapp config set --java-version 1.8 --java-container Tomcat --java-container
 >
 >
 
-## <a name="more-resources"></a>Другие ресурсы
+## <a name="more-resources"></a>Дополнительные ресурсы
 
-[Trust Center: Security](https://www.microsoft.com/en-us/trustcenter/security) (Центр управления безопасностью: Безопасность)  
+[Центр управления безопасностью: безопасность](https://www.microsoft.com/en-us/trustcenter/security)  
 [64-разрядная версия ASP.NET Core в службе приложений Azure](https://gist.github.com/glennc/e705cd85c9680d6a8f1bdb62099c7ac7)

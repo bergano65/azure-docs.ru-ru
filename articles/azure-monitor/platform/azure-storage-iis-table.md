@@ -7,14 +7,14 @@ ms.topic: conceptual
 author: MGoedtel
 ms.author: magoedte
 ms.date: 04/12/2017
-ms.openlocfilehash: 8f70ecc96269783c29c566fb89bd617f034316b1
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 2d2d8d43cb5ee91810d639c4ee8925d185987954
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72932673"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74893558"
 ---
-# <a name="collect-azure-diagnostic-logs-from-azure-storage"></a>Сбор журналов диагностики Azure из службы хранилища Azure
+# <a name="collect-azure-resource-logs-from-azure-storage"></a>Получение журналов ресурсов Azure из службы хранилища Azure
 
 Azure Monitor могут читать журналы для следующих служб, которые записывают диагностику в хранилище таблиц или журналы IIS, записанные в хранилище BLOB-объектов:
 

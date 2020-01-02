@@ -10,21 +10,22 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 10/28/2019
 ms.author: erhopf
-ms.openlocfilehash: d0d1cfee535a04203d9ff995b94fcad5d432ed3e
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: ecfdc74c72284da97ebf3107140911e666a3a12d
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73961186"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74818781"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы нужно сделать следующее:
+Необходимые условия:
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
 > * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=xamarin)
-> * [Создать пустой пример проекта](../../../../quickstarts/create-project.md?tabs=xamarin).
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=xamarin)
+> * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 
 Если вы уже сделали это, отлично. Давайте продолжим.
 
@@ -135,7 +136,7 @@ ms.locfileid: "73961186"
 
    ![Запрос на разрешение доступа к микрофону](../../../../media/sdk/qs-csharp-xamarin-uwp-access-prompt.png)
 
-1. Щелкните **Начать распознавание речи** и произнесите фразу или предложение на английском языке в микрофон вашего устройства. Ваша речь передается в службу "Речь" и преобразуется в текст, который появляется в том же окне.
+1. Щелкните **Начать распознавание речи** и произнесите фразу или предложение на английском языке в микрофон вашего устройства. Ваша речь передается в службу "Речь" и преобразовывается в текст, который появляется в том же окне.
 
    ![Пользовательский интерфейс распознавания речи](../../../../media/sdk/qs-csharp-xamarin-uwp-ui-result.png)
 * * *

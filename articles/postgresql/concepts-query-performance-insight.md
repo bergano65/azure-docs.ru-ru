@@ -1,17 +1,17 @@
 ---
-title: Анализ производительности запросов в базе данных Azure для PostgreSQL — один сервер
+title: Анализ производительности запросов — "база данных Azure для PostgreSQL — один сервер"
 description: В этой статье описывается функция анализ производительности запросов в базе данных Azure для PostgreSQL-Single Server.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.openlocfilehash: 748c6f08da535013724f68b8be424e50a2d49dfd
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: dd5b4ec53d82421ddd9d680ca41e48eeecc43c2c
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764433"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74768390"
 ---
 # <a name="query-performance-insight"></a>Сведения о производительности запросов 
 
@@ -22,7 +22,7 @@ ms.locfileid: "70764433"
 ## <a name="permissions"></a>Разрешения
 Чтобы просматривать текст запросов в анализе производительности запросов, требуются разрешения **Владельца** или **Участника**. **Модуль чтения** может просматривать графики и таблицы, но не текст запросов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Чтобы компонент "Анализ производительности запросов" работал, данные должны находиться в [хранилище запросов](concepts-query-store.md).
 
 ## <a name="viewing-performance-insights"></a>Просмотр анализа производительности
@@ -45,7 +45,7 @@ ms.locfileid: "70764433"
 ## <a name="considerations"></a>Рекомендации
 * Анализ производительности запросов недоступна для [реплик чтения](concepts-read-replicas.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [мониторинге и настройке](concepts-monitoring.md) см. в базе данных Azure для PostgreSQL.
 
 

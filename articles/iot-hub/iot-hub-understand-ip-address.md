@@ -1,6 +1,6 @@
 ---
-title: Understanding the IP address of your IoT hub | Microsoft Docs
-description: Understand how to query your IoT hub IP address and its properties. The IP address of your IoT hub can change during certain scenarios such as disaster recovery or regional failover.
+title: Основные сведения об IP-адресе центра Интернета вещей | Документация Майкрософт
+description: Узнайте, как выполнять запросы к IP-адресу центра Интернета вещей и его свойствам. IP-адрес центра Интернета вещей может изменяться в определенных сценариях, таких как аварийное восстановление или региональная отработка отказа.
 author: philmea
 ms.author: philmea
 ms.service: iot-hub
@@ -14,17 +14,17 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74383911"
 ---
-# <a name="iot-hub-ip-addresses"></a>IoT Hub IP addresses
+# <a name="iot-hub-ip-addresses"></a>IP-адреса центра Интернета вещей
 
-The IP address prefixes of IoT hub are published periodically under the *AzureIoTHub* [service tag](../virtual-network/service-tags-overview.md). To ensure proper operation, your IoT devices must have outbound connectivity to address prefixes listed under *AzureIoTHub* service tag. Your IoT application services need to additionally have outbound connectivity to address prefixes listed under *EventHub* service tag.
+Префиксы IP-адресов центра Интернета вещей периодически публикуются в [теге службы](../virtual-network/service-tags-overview.md) *азуреиосуб* . Чтобы обеспечить правильную работу, устройства Интернета вещей должны иметь исходящее подключение к префиксам адресов, указанным в разделе Тег службы *азуреиосуб* . Службы приложений IoT должны дополнительно иметь исходящее подключение к префиксам адресов, указанным в теге службы *EventHub* .
 
 
 ## <a name="best-practices"></a>Рекомендации
 
-* The IP address prefixes of IoT hub are subject to change. These changes are published periodically via service tags before taking effect. It is therefore important that you develop processes to regularly retrieve and use the latest service tags. This process can be automated via the [service tags discovery API](../virtual-network/service-tags-overview.md#service-tags-in-on-premises).
-* Use the *AzureIoTHub.[region name]* tag to identify IP prefixes used by IoT hub endpoints in a specific region. To account for datacenter disaster recovery, or [regional failover](iot-hub-ha-dr.md) ensure connectivity to IP prefixes of your IoT Hub's geo-pair region is also enabled.
+* Префиксы IP-адресов центра Интернета вещей могут быть изменены. Эти изменения публикуются периодически с помощью тегов службы, прежде чем они вступают в действие. Поэтому важно разрабатывать процессы для регулярного получения и использования последних версий тегов служб. Этот процесс можно автоматизировать с помощью [API обнаружения тегов служб](../virtual-network/service-tags-overview.md#service-tags-in-on-premises).
+* Используйте *азуреиосуб. [ Region]* тег для обозначения префиксов IP-адресов, используемых конечными точками центра Интернета вещей в определенном регионе. Для учета аварийного восстановления центра обработки данных или для [региональной отработки отказа](iot-hub-ha-dr.md) убедитесь, что также включена возможность подключения к префиксам IP-адресов в регионе геопар центра Интернета вещей.
 
 
-## <a name="support-for-ipv6"></a>Support for IPv6 
+## <a name="support-for-ipv6"></a>Поддержка IPv6 
 
-IPv6 is currently not supported on IoT Hub.
+IPv6 сейчас не поддерживается в центре Интернета вещей.

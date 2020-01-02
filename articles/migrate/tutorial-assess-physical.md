@@ -5,20 +5,16 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 10/23/2019
+ms.date: 11/18/2019
 ms.author: raynew
-ms.openlocfilehash: 9339a03fcb3f67402c0aab030cb69a45e1b42b45
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 56b7cc6e95cb85b5508199287cc77aedeebc8b81
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74123510"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74280550"
 ---
 # <a name="assess-physical-servers-with-azure-migrate-server-assessment"></a>Оценка готовности физических серверов с помощью службы "Миграция Azure": Оценка сервера
-
-> [!NOTE]
-> Если эта функция отсутствует на портале миграции Azure, подождите. Предположительно, она появится в течение следующей недели.
- 
 
 В этой статье описывается, как оценивать готовность локальных физических серверов с помощью службы "Миграция Azure": службы "Миграция Azure".
 
@@ -108,11 +104,12 @@ ms.locfileid: "74123510"
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
     - Пример использования: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller\AzureMigrateInstaller.ps1 SHA256```
 
-3.  Для версии устройства 1.19.05.10 созданный хэш должен соответствовать этим параметрам.
+3.  Для последней версии устройства созданный хэш должен соответствовать этим параметрам.
 
   **Алгоритм** | **Значение хэша**
   --- | ---
-  SHA256 | 598d2e286f9c972bb7f7382885e79e768eddedfe8a3d3460d6b8a775af7d7f79
+  MD5 | 96fd99581072c400aa605ab036a0a7c0
+  SHA256 | f5454beef510c0aa38ac1c6be6346207c351d5361afa0c9cea4772d566fcdc36
 
 ### <a name="run-the-azure-migrate-installer-script"></a>Запуск скрипта установщика службы "Миграция Azure"
 
@@ -135,7 +132,7 @@ ms.locfileid: "74123510"
     ```
     PS C:\Users\administrator\Desktop\AzureMigrateInstaller> AzureMigrateInstaller.ps1
     ```
-После успешного завершения скрипт запустит веб-приложение устройства. 
+После успешного завершения скрипт запустит веб-приложение устройства.
 
 Для устранения возникающих проблем можно получить доступ к журналам скриптов здесь: C:\ProgramData\Microsoft Azure\Logs\AzureMigrateScenarioInstaller_<em>Timestamp</em>.log.
 
@@ -166,7 +163,7 @@ ms.locfileid: "74123510"
 ### <a name="register-the-appliance-with-azure-migrate"></a>Регистрация устройства с помощью службы "Миграция Azure"
 
 1. Щелкните **Войти в систему**. Если этот параметр не отображается, убедитесь, что в браузере отключена блокировка всплывающих окон.
-2. На новой вкладке выполните вход с использованием учетных данных Azure. 
+2. На новой вкладке выполните вход с использованием учетных данных Azure.
     - Войдите с использованием имени пользователя и пароля.
     - Вход с помощью PIN-кода не поддерживается.
 3. После успешного входа вернитесь к веб-приложению.
@@ -188,7 +185,7 @@ ms.locfileid: "74123510"
     - Чтобы удалить сервер, выберите > **Удалить**.
 4. После проверки щелкните **Сохранить и начать обнаружение**, чтобы начать процесс обнаружения.
 
-Запустится обнаружение. Чтобы метаданные обнаруженного сервера отобразились на портале Azure, потребуется около 1,5 минут на сервер. 
+Запустится обнаружение. Чтобы метаданные обнаруженного сервера отобразились на портале Azure, потребуется около 1,5 минут на сервер.
 
 ### <a name="verify-servers-in-the-portal"></a>Проверка серверов на портале
 

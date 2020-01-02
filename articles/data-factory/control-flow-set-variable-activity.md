@@ -5,19 +5,18 @@ services: data-factory
 documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 10/10/2018
 author: djpmsft
 ms.author: daperlov
 manager: jroth
 ms.reviewer: maghan
-ms.openlocfilehash: 2589e56d3170b235f31d07f902eb75c749e8573f
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 88500ecbc56b34551a0cbd3ca94727ba4bbcda9f
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73679300"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930644"
 ---
 # <a name="set-variable-activity-in-azure-data-factory"></a>Установка действия переменной в фабрике данных Azure
 
@@ -25,12 +24,12 @@ ms.locfileid: "73679300"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Description (Описание) | Обязательно
+Свойство | Описание | Обязательно для заполнения
 -------- | ----------- | --------
-name | Имя действия в конвейере | Да
-description | Текст, описывающий действия | Нет
-type | Тип действия — SetVariable | Да
-значение | Строковый литерал или значение объекта выражения, используемое для установки указанной переменной | Да
+name | Имя действия в конвейере | ДА
+Description (Описание) | Текст, описывающий действия | Нет
+Тип | Тип действия — SetVariable | Да
+value | Строковый литерал или значение объекта выражения, используемое для установки указанной переменной | Да
 variableName | Имя переменной, которое будет задано этим действием | Да
 
 

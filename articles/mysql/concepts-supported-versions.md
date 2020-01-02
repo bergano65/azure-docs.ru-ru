@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 09/12/2019
-ms.openlocfilehash: f9c7278e60c8342aa7d5b68ab8da7143abaf4c89
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.date: 12/09/2019
+ms.openlocfilehash: b4029d49eeba53e7a502a7ac68081bb5a2d549f8
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71970534"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74971933"
 ---
 # <a name="supported-azure-database-for-mysql-server-versions"></a>Поддерживаемые версии сервера базы данных Azure для MySQL
 
@@ -26,22 +26,22 @@ MySQL использует схему именования X.Y.Z. X являет
 
 ## <a name="mysql-version-56"></a>MySQL версии 5.6
 
-Выпуск для исправления ошибок: 5.6.44
+Исправление ошибки: 5.6.45
 
-Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-44.html) MySQL.
+Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-45.html) MySQL.
 
 ## <a name="mysql-version-57"></a>MySQL версии 5.7
 
-Выпуск для исправления ошибок: 5.7.26
+Исправление ошибки: 5.7.27
 
-Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-26.html) MySQL.
+Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-27.html) MySQL.
 
 ## <a name="mysql-version-80"></a>MySQL версии 8,0
 
 > [!IMPORTANT]
 > В настоящее время MySQL 8,0 находится на этапе предварительной версии.
 
-Выпуск для исправления ошибок: 8.0.15
+Исправление ошибки: 8.0.15
 
 Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-15.html) MySQL.
 
@@ -50,6 +50,6 @@ MySQL использует схему именования X.Y.Z. X являет
 
 Сейчас обновления основного и дополнительного номера версии не поддерживаются. Например, обновление с версии MySQL 5.6 до MySQL 5.7 не поддерживается. Чтобы выполнить обновление с версии 5.6 до 5.7, создайте дамп и восстановите его на сервере, который был создан с новой версией ядра. Для дополнительных сведений см. [эту статью](./concepts-migrate-dump-restore.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о квотах и ограничениях для конкретных ресурсов с учетом вашего **уровня служб** представлены в статье [Уровни служб в базе данных Azure для MySQL](./concepts-pricing-tiers.md).

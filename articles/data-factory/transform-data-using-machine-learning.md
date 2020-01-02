@@ -1,22 +1,21 @@
 ---
-title: Создание конвейеров прогнозных данных с помощью фабрики данных Azure
+title: Создание конвейеров прогнозных данных
 description: Узнайте, как создать прогнозирующий конвейер с помощью действия выполнения пакета службы "Машинное обучение Azure" в фабрике данных Azure.
-services: data-factory
-documentationcenter: ''
-ms.service: data-factory
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.topic: conceptual
-ms.date: 02/20/2019
 author: nabhishek
 ms.author: abnarain
-manager: craigg
-ms.openlocfilehash: 24568940a0f6e550ae0fe7658b81ba1c3b3d3556
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+manager: shwang
+services: data-factory
+ms.service: data-factory
+ms.workload: data-services
+ms.topic: conceptual
+ms.custom: seo-lt-2019
+ms.date: 02/20/2019
+ms.openlocfilehash: b5b7b69f49efa6cc0d5f3e42fc8a3aca855bca9a
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73683764"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74912995"
 ---
 # <a name="create-predictive-pipelines-using-azure-machine-learning-and-azure-data-factory"></a>Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -124,12 +123,12 @@ ms.locfileid: "73683764"
 }
 ```
 
-| Свойство          | Description (Описание)                              | Обязательно |
+| Свойство          | Описание                              | Обязательно для заполнения |
 | :---------------- | :--------------------------------------- | :------- |
-| name              | Имя действия в конвейере.     | Да      |
-| description       | Описание действия.  | Нет       |
-| type              | Для действия U-SQL Data Lake Analytics в качестве типа действия используется **AzureMLBatchExecution**. | Да      |
-| linkedServiceName (имя связанной службы) | Связанные службы для связанной службы Машинного обучения Azure. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md). | Да      |
+| name              | Имя действия в конвейере.     | ДА      |
+| Description (Описание)       | Описание действия.  | Нет       |
+| Тип              | Для действия U-SQL Data Lake Analytics в качестве типа действия используется **AzureMLBatchExecution**. | ДА      |
+| linkedServiceName | Связанные службы для связанной службы Машинного обучения Azure. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md). | ДА      |
 | webServiceInputs  | Пары "ключ —значение", сопоставляющие имена входных данных веб-службы Машинного обучения Azure. Ключ должен соответствовать входным параметрам, определенным в опубликованной веб-службе Машинного обучения Azure. Значение — это пара свойств связанных служб хранилища Azure и FilePath, указывающих на расположения входных больших двоичных объектов. | Нет       |
 | webServiceOutputs | Пары "ключ —значение", сопоставляющие имена выходных данных веб-службы Машинного обучения Azure. Ключ должен соответствовать выходным параметрам, определенным в опубликованной веб-службе Машинного обучения Azure. Значением является пара свойств связанных служб хранилища Azure и FilePath, указывающих на расположения выходных больших двоичных объектов. | Нет       |
 | globalParameters  | Пары "ключ —значение", которые необходимо передать в конечную точку службы пакетного выполнения Студии машинного обучение Azure. Ключ должен соответствовать именам параметров веб-службы, определенным в опубликованной веб-службе Студии машинного обучения Azure. Значения передаются в свойстве GlobalParameters запроса пакетного выполнения Студии машинного обучения Azure | Нет       |

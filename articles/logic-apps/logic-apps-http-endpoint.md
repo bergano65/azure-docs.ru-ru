@@ -1,20 +1,17 @@
 ---
-title: Вызов, активация или вложение приложений логики — Azure Logic Apps
+title: Вызов, активация или вкладывание приложений логики
 description: Настройка конечных точек HTTP для вызова, активации или вложения рабочих процессов приложения логики в Azure Logic Apps
 services: logic-apps
-ms.service: logic-apps
 ms.workload: integration
-author: ecfan
-ms.author: klam
-ms.reviewer: klam, jehollan, LADocs
+ms.reviewer: klam, jehollan, logicappspm
 ms.topic: article
 ms.date: 11/04/2019
-ms.openlocfilehash: 27a3bf036cce27a5f215068ff71928cb7e181452
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: dbb91106ad00e1a82e2e6e9c470e61764a4ad4c4
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73833905"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74792028"
 ---
 # <a name="call-trigger-or-nest-logic-apps-by-using-http-endpoints-in-azure-logic-apps"></a>Вызов, активация или вложение приложений логики с помощью конечных точек HTTP в Azure Logic Apps
 
@@ -23,7 +20,7 @@ ms.locfileid: "73833905"
 Чтобы настроить конечную точку HTTP, можно использовать любой из следующих типов триггеров, которые позволяют приложениям логики получать входящие запросы:
 
 * [Запрос](../connectors/connectors-native-reqres.md)
-* [webhook HTTP](../connectors/connectors-native-webhook.md)
+* [webhook HTTP](../connectors/connectors-native-webhook.md).
 * Триггеры управляемых соединителей, которые имеют [тип ApiConnectionWebhook](../logic-apps/logic-apps-workflow-actions-triggers.md#apiconnectionwebhook-trigger) и могут принимать входящие HTTP-запросы
 
 > [!NOTE]
@@ -31,7 +28,7 @@ ms.locfileid: "73833905"
 
 Если вы не знакомы с приложениями логики, см. статью [что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [Краткое руководство. Создание первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -39,7 +36,7 @@ ms.locfileid: "73833905"
 
 ## <a name="create-a-callable-endpoint"></a>Создание вызываемой конечной точки
 
-1. Войдите на [портал Azure](https://portal.azure.com). Создайте и откройте пустое приложение логики в конструкторе приложений логики.
+1. Войдите на [портале Azure](https://portal.azure.com). Создайте и откройте пустое приложение логики в конструкторе приложений логики.
 
    В этом примере используется триггер запроса, но можно использовать любой триггер, который может принимать входящие HTTP-запросы. Все принципы одинаково применяются к этим триггерам. Дополнительные сведения о триггере запросов см. [в разделе Получение и реагирование на входящие вызовы HTTPS с помощью Azure Logic Apps](../connectors/connectors-native-reqres.md).
 
@@ -157,7 +154,7 @@ ms.locfileid: "73833905"
 
    1. В разделе триггер запроса выберите **новый шаг** > **Добавить действие**.
 
-   1. В разделе **выберите действие**в поле поиска введите `response` в качестве фильтра.
+   1. В разделе **Выберите действие** введите фильтр `response` в поле поиска.
 
    1. В списке действия выберите действие **ответ** .
 
@@ -231,7 +228,7 @@ ms.locfileid: "73833905"
 
 1. На шаге, где необходимо вызвать другое приложение логики, выберите **новый шаг** > **Добавить действие**.
 
-1. В разделе **Выбор действия**выберите **встроенный**. В поле поиска введите `logic apps` в качестве фильтра. В списке действия выберите **пункт выбрать Logic Apps рабочий процесс**.
+1. В разделе **Выберите действие** выберите **Встроенный**. В поле поиска введите `logic apps` в качестве фильтра. В списке действия выберите **пункт выбрать Logic Apps рабочий процесс**.
 
    ![Вложение приложения логики в текущее приложение логики](./media/logic-apps-http-endpoint/choose-logic-apps-workflow.png)
 
@@ -278,7 +275,7 @@ ms.locfileid: "73833905"
 
 У ответов есть следующие свойства:
 
-| Свойство (отображение) | Свойство (JSON) | Description (Описание) |
+| Свойство (отображение) | Свойство (JSON) | Описание |
 |--------------------|-----------------|-------------|
 | **Код состояния** | `statusCode` | Код состояния HTTP, используемый в ответе для входящего запроса. Это может быть любой допустимый код состояния, который начинается с 2xx, 4xx или 5xx. Но коды состояния 3xx не допускаются. |
 | **Заголовки** | `headers` | Один или несколько заголовков для включения в ответ |
@@ -305,7 +302,7 @@ ms.locfileid: "73833905"
 }
 ```
 
-## <a name="q--a"></a>Вопросы и ответы
+## <a name="q--a"></a>Контроль качества
 
 #### <a name="q-what-about-url-security"></a>Вопрос. Как обеспечивается безопасность URL-адресов?
 

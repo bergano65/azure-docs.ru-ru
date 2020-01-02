@@ -1,26 +1,19 @@
 ---
-title: Непрерывное развертывание с использованием платформы "Веб-приложения для контейнеров" в службе приложений Azure | Документация Майкрософт
-description: Сведения о настройке непрерывного развертывания с использованием платформы "Веб-приложения для контейнеров".
+title: CI/CD для пользовательских контейнеров Linux
+description: Узнайте, как настроить непрерывное развертывание в пользовательском контейнере Linux в службе приложений Azure. Непрерывное развертывание поддерживается для DOCKER HUB и записи контроля доступа.
 keywords: azure app service, linux, docker, acr,oss
-services: app-service
-documentationcenter: ''
-author: msangapu
-manager: jeconnoc
-editor: ''
+author: msangapu-msft
 ms.assetid: a47fb43a-bbbd-4751-bdc1-cd382eae49f8
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/08/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 1dc776f0a61ac1a29ab3fe3ebdd542469863cd50
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: d43491de7500204ed470757a1b744017a8180b57
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70071357"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74687634"
 ---
 # <a name="continuous-deployment-with-web-app-for-containers"></a>Непрерывное развертывание с использованием платформы Azure "Веб-приложения для контейнеров"
 
@@ -60,7 +53,7 @@ ms.locfileid: "70071357"
 
 Скопируйте URL-адрес веб-перехватчика. Чтобы добавить веб-перехватчик для Docker Hub, ознакомьтесь со статьей о <a href="https://docs.docker.com/docker-hub/webhooks/" target="_blank">веб-перехватчиках для Docker Hub</a>.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Вводные сведения о службе приложений Azure на платформе Linux](./app-service-linux-intro.md)
 * [Реестр контейнеров Azure](https://azure.microsoft.com/services/container-registry/)

@@ -1,21 +1,19 @@
 ---
-title: Кодирование сообщений EDIFACT в Azure Logic Apps | Документация Майкрософт
+title: Кодирование сообщений EDIFACT
 description: Проверка EDI и создание XML-сообщений с помощью кодировщика сообщений EDIFACT для Azure Logic Apps с помощью Пакета интеграции Enterprise.
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: jonfan, divswa, LADocs
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, divswa, logicappspm
 ms.topic: article
-ms.assetid: 974ac339-d97a-4715-bc92-62d02281e900
 ms.date: 01/27/2017
-ms.openlocfilehash: 7396aee56acdf2476ed1bb3cc5a9909349662dc7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 257cbd0b1a68ddd2b16235e6f8dec5d5b0eb10e2
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64705543"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74790644"
 ---
 # <a name="encode-edifact-messages-for-azure-logic-apps-with-enterprise-integration-pack"></a>Кодирование сообщений EDIFACT для Azure Logic Apps с помощью Пакета интеграции Enterprise
 
@@ -54,7 +52,7 @@ ms.locfileid: "64705543"
 
 5.  Когда все будет готово, данные для подключения должны выглядеть примерно так, как показано в примере. Чтобы завершить создание подключения, нажмите кнопку **Создать**.
 
-    ![сведения о подключении к учетной записи интеграции](media/logic-apps-enterprise-integration-edifact-encode/edifactencodeimage2.png)
+    ![Сведения о подключении к учетной записи интеграции](media/logic-apps-enterprise-integration-edifact-encode/edifactencodeimage2.png)
 
     Подключение создано.
 
@@ -94,5 +92,5 @@ ms.locfileid: "64705543"
 Дополнительные сведения о Swagger для соединителя EDIFACT см.в [этой статье](/connectors/edifact/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Узнайте больше о пакете интеграции Enterprise](logic-apps-enterprise-integration-overview.md "Узнайте о пакете интеграции Enterprise.") 
+[Дополнительные сведения о Пакете интеграции Enterprise](logic-apps-enterprise-integration-overview.md "Дополнительные сведения о Пакет интеграции Enterprise") 
 

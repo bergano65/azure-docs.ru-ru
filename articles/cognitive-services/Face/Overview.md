@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: overview
-ms.date: 07/03/2019
+ms.date: 12/05/2019
 ms.author: pafarley
-ms.openlocfilehash: 95ea1718682340967d5d39fe5f550f2638273796
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 75f2969562dd2de041ffaa146c394f1a18c7756b
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73743700"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74961545"
 ---
 # <a name="what-is-the-azure-face-api"></a>Что такое API распознавания лиц Azure?
 
@@ -45,7 +45,7 @@ API Поиска похожих лиц сравнивает целевое ли�
 
 ![Улыбающаяся женщина](./Images/FaceFindSimilar.QueryFace.jpg)
 
-А это лица-кандидаты:
+А здесь изображены лица-кандидаты:
 
 ![Пять изображений улыбающихся людей. Изображения А и Б: изображения одного человека](./Images/FaceFindSimilar.Candidates.jpg)
 

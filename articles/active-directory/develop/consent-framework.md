@@ -1,29 +1,25 @@
 ---
-title: Платформа предоставления согласия Azure Active Directory
+title: Инфраструктура согласия Azure AD
 titleSuffix: Microsoft identity platform
 description: Сведения о платформе предоставления согласия Azure Active Directory и о том, как с ее помощью легко разрабатывать мультитенантные веб-приложения и собственные клиентские приложения.
 services: active-directory
-documentationcenter: ''
 author: rwike77
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/30/2018
 ms.author: ryanwi
 ms.reviewer: zachowd, lenalepa, jesakowi
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af5b60901e57392aaea504f96572801a878d707c
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: a04dc3c7946589d03c3fd07451ec643d9c088c1a
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72803857"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74963755"
 ---
 # <a name="azure-active-directory-consent-framework"></a>Платформа предоставления согласия Azure Active Directory
 

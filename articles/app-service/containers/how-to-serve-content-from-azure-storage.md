@@ -1,25 +1,22 @@
 ---
-title: Обработка содержимого из службы хранилища Azure в Службе приложений на платформе Linux
-description: Как настраивать и обрабатывать содержимое из службы хранилища Azure в Службе приложений Azure на платформе Linux.
-author: msangapu
-manager: jeconnoc
-ms.service: app-service
-ms.workload: web
+title: Подключение пользовательского контейнера хранилища в Linux
+description: Узнайте, как подключить настраиваемую сетевую папку к контейнеру Linux в службе приложений Azure. Совместное использование файлов между приложениями, удаленное управление статическим содержимым и локальный доступ и т. д.
+author: msangapu-msft
 ms.topic: article
 ms.date: 2/04/2019
 ms.author: msangapu
-ms.openlocfilehash: 97c03ad294bba1f8a0285fff4595991ca0acc8b5
-ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
+ms.openlocfilehash: 00c60edeefa5fd8d1304aa5fc301a3b0304f5ca3
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71018275"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74671793"
 ---
-# <a name="serve-content-from-azure-storage-in-app-service-on-linux"></a>Обработка содержимого из службы хранилища Azure в Службе приложений на платформе Linux
+# <a name="attach-azure-storage-containers-to-linux-containers"></a>Подключение контейнеров службы хранилища Azure к контейнерам Linux
 
-В этом руководстве показано, как обрабатывать статическое содержимое в Службе приложений на платформе Linux с помощью [службы хранилища Azure](/azure/storage/common/storage-introduction). К преимуществам относятся защищенное содержимое, переносимость содержимого, постоянное хранилище, доступ к нескольким приложениям и несколько методов передачи.
+В этом руководство показано, как подключить сетевые общие папки к службе приложений на платформе Linux с помощью службы [хранилища Azure](/azure/storage/common/storage-introduction). К преимуществам относятся защищенное содержимое, переносимость содержимого, постоянное хранилище, доступ к нескольким приложениям и несколько методов передачи.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Существующее веб-приложение (Служба приложений в Linux или Веб-приложение для контейнеров).
 - [Azure CLI](/cli/azure/install-azure-cli) (2.0.46 или более поздней версии).
@@ -64,7 +61,7 @@ az webapp config storage-account add --resource-group <group_name> --name <app_n
 
 Для всех остальных каталогов, которые вы хотите связать с учетной записью хранения, следует сделать то же самое.
 
-## <a name="verify"></a>Проверьте
+## <a name="verify"></a>Проверка
 
 Проверить, связан ли контейнер хранилища с веб-приложением, можно, выполнив следующую команду.
 
@@ -74,9 +71,9 @@ az webapp config storage-account list --resource-group <resource_group> --name <
 
 ## <a name="use-custom-storage-in-docker-compose"></a>Использование пользовательского хранилища в Docker Compose
 
-Службу хранилища Azure можно подключить с помощью многоконтейнерных приложений, используя пользовательский идентификатор. Чтобы просмотреть имя настраиваемого идентификатора, выполните команду [`az webapp config storage-account list --name <app_name> --resource-group <resource_group>`](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-list).
+Службу хранилища Azure можно подключить с помощью многоконтейнерных приложений, используя пользовательский идентификатор. Чтобы просмотреть имя настраиваемого идентификатора, выполните [`az webapp config storage-account list --name <app_name> --resource-group <resource_group>`](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-list).
 
-В файле *DOCKER-Compose. yml* сопоставьте `volumes` параметр с `custom-id`. Пример:
+В файле *DOCKER-Compose. yml* сопоставьте параметр `volumes` для `custom-id`. Пример.
 
 ```yaml
 wordpress:
@@ -85,6 +82,6 @@ wordpress:
   - <custom-id>:<path_in_container>
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка веб-приложений в службе приложений Azure](../configure-common.md).

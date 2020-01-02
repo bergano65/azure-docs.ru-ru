@@ -74,8 +74,9 @@
         - name: проблемы с производительностью сети;
           href: ../..//virtual-network/virtual-network-optimize-network-bandwidth.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
     - name: Типы и размеры виртуальных машин
-      href: sizes.md
       items:
+        - name: Семейства размеров
+          href: sizes.md
         - name: Виртуальные машины 2-го поколения
           href: generation-2.md
         - name: Универсальные
@@ -103,6 +104,16 @@
               href: n-series-driver-setup.md
         - name: Для высокопроизводительных вычислений
           href: sizes-hpc.md
+        - name: Зарезервированные экземпляры
+          items:
+            - name: Предоплата за виртуальные машины
+              href: prepay-reserved-vm-instances.md
+            - name: Основные сведения о резервировании в Azure
+              href: ../../billing/billing-save-compute-costs-reservations.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+            - name: Гибкость размера экземпляра виртуальной машины
+              href: reserved-vm-instance-size-flexibility.md
+        - name: Точечные виртуальные машины
+          href: spot-vms.md
         - name: Предыдущие поколения
           href: sizes-previous-gen.md
         - name: Размеры изолированных виртуальных машин
@@ -126,7 +137,7 @@
     - name: Выделенные узлы
       href: dedicated-hosts.md
     - name: Обслуживание и обновления
-      href: maintenance-and-updates.md
+      href: ../maintenance-and-updates.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
     - name: Дисковый накопитель
       items:
         - name: Общие сведения об управляемых дисках
@@ -186,6 +197,16 @@
               href: dedicated-hosts-cli.md
             - name: Портал
               href: dedicated-hosts-portal.md
+        - name: Развертывание точечных виртуальных машин
+          items:
+            - name: CLI
+              href: spot-cli.md
+            - name: Портал
+              href: ../windows/spot-portal.md?toc=/azure/virtual-machines/linux/toc.json
+            - name: Шаблон
+              href: spot-template.md
+            - name: Коды ошибок
+              href: ../error-codes-spot.md?toc=/azure/virtual-machines/linux/toc.json
     - name: Защита виртуальных машин
       items:
         - name: Рекомендации
@@ -298,16 +319,32 @@
               href: ../extensions/agent-linux.md
             - name: Обновление агента
               href: update-agent.md
-        - name: Плановое техническое обслуживание
-          href: maintenance-notifications.md
         - name: 'Устранение уязвимостей, связанных со спекулятивным выполнением команд'
           href: mitigate-se.md
-        - name: Запланированные события
-          href: scheduled-events.md
         - name: Монитор метаданных
           href: instance-metadata-service.md
         - name: Получение метрик потребления с помощью REST
           href: metrics-vm-usage-rest.md
+    - name: Обслуживание платформы
+      items:
+        - name: Уведомления об обслуживании
+          items:
+            - name: Обзор
+              href: ../maintenance-notifications.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
+            - name: CLI
+              href: ../maintenance-notifications-cli.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
+            - name: Портал
+              href: ../maintenance-notifications-portal.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
+            - name: PowerShell
+              href: ../maintenance-notifications-powershell.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
+        - name: Управление обслуживанием
+          items:
+            - name: CLI
+              href: ../maintenance-control-cli.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
+            - name: PowerShell
+              href: ../maintenance-control-powershell.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
+        - name: Запланированные события
+          href: scheduled-events.md
     - name: Мониторинг виртуальных машин
       items:
         - name: Azure Monitor для виртуальных машин

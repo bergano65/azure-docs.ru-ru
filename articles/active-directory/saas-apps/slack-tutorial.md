@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ac464593e14a712cf0f137b5f3522d018d5874d
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 0085db3f38fb8af014434f36893182e1682b05a7
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73884541"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74972154"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-slack"></a>Руководство по интеграции единого входа Azure Active Directory со Slack
 
@@ -45,11 +45,10 @@ ms.locfileid: "73884541"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Slack поддерживает единый вход, инициированный **поставщиком услуг**.
-* Slack поддерживает **JIT**-подготовку пользователей.
-* Slack поддерживает [**автоматическую** подготовку пользователей](slack-provisioning-tutorial.md).
+* Slack поддерживает [**автоматическую** подготовку пользователей и ее отмену](slack-provisioning-tutorial.md) (рекомендуется).
 
 > [!NOTE]
-> Идентификатор этого приложения является фиксированным строковым значением, поэтому в одном клиенте можно настроить только один экземпляр.
+> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
 
 ## <a name="adding-slack-from-the-gallery"></a>Добавление Slack из коллекции.
 

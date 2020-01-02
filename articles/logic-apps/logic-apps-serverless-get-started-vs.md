@@ -1,21 +1,17 @@
 ---
-title: Создание первого бессерверного приложения в Visual Studio — Azure Logic Apps
+title: Создание первого бессерверного приложения в Visual Studio
 description: Создание, развертывание бессерверного приложения и управление им с помощью Azure Logic Apps и функций Azure в Visual Studio
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-ms.workload: vs-azure
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 06/20/2019
-ms.openlocfilehash: 76ab76440ddc25f4b1cf51f7d540a6e21614541d
-ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
+ms.openlocfilehash: 4ed2ad2d2ff92e9320a7b9c773c4d6e5857fb905
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72680129"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74792964"
 ---
 # <a name="build-your-first-serverless-app-by-using-azure-logic-apps-and-azure-functions-in-visual-studio"></a>Создание первого бессерверного приложения с помощью Azure Logic Apps и функций Azure в Visual Studio
 
@@ -68,7 +64,7 @@ ms.locfileid: "72680129"
 
    ![Создание проекта в Visual Studio](./media/logic-apps-serverless-get-started-vs/create-new-project-visual-studio.png)
 
-1. В разделе **Установленные** выберите **Visual C#** или **Visual Basic**. Затем выберите **облако**  > **Группа ресурсов Azure**.
+1. В разделе **Установленные** выберите **Visual C#** или **Visual Basic**. Затем выберите **облако** > **Группа ресурсов Azure**.
 
    > [!NOTE]
    > Если категория **облако** или проект **группы ресурсов Azure** не существуют, убедитесь, что вы установили пакет Azure SDK для Visual Studio.
@@ -104,7 +100,7 @@ ms.locfileid: "72680129"
 
 Прежде чем можно будет открыть приложение логики в конструкторе приложений логики в Visual Studio, необходимо иметь группу ресурсов Azure, которая уже развернута в Azure. Это позволит конструктору создавать подключения к ресурсам и службам из приложения логики. Для выполнения этой задачи выполните следующие действия, чтобы развернуть решение из Visual Studio на портал Azure:
 
-1. В обозреватель решений в контекстном меню проекта ресурса выберите **развернуть**  > **создать**.
+1. В обозреватель решений в контекстном меню проекта ресурса выберите **развернуть** > **создать**.
 
    ![Создание развертывания для группы ресурсов](./media/logic-apps-serverless-get-started-vs/deploy.png)
 

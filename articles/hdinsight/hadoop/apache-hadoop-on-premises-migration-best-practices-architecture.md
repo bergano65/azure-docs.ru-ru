@@ -2,18 +2,18 @@
 title: 'Архитектура: локальное Apache Hadoop в Azure HDInsight'
 description: Ознакомьтесь с рекомендациями по архитектуре в контексте миграции локальных кластеров Hadoop в Azure HDInsight.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: ashishth
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 09/04/2019
-ms.author: hrasheed
-ms.openlocfilehash: 4ef3cded9aba7bd95ecc48e1feadf6c55acd7bdc
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.custom: hdinsightactive
+ms.date: 12/06/2019
+ms.openlocfilehash: 9f532e7bbf9e24e431341344b3172c988f69bfc3
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73499252"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74951536"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---architecture-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по архитектуре
 
@@ -23,27 +23,27 @@ ms.locfileid: "73499252"
 
 Большое количество локальных развертываний Apache Hadoop состоит из одного большого кластера, который поддерживает многие рабочие нагрузки. Этот отдельный кластер может быть комплексным и требовать компромиссов для отдельных служб, чтобы обеспечить их совместную работу. При миграции локальных кластеров Hadoop в Azure HDInsight нужен измененный подход.
 
-Кластеры Azure HDInsight предназначены для конкретного типа использований вычислений. Так как хранилище может совместно использоваться несколькими кластерами, можно создать вычислительные кластеры, оптимизированные для нескольких рабочих нагрузок, в соответствии с потребностями разных заданий. У каждого типа кластера есть оптимальная конфигурация для конкретной рабочей нагрузки. В следующей таблице перечислены поддерживаемые типы кластеров в HDInsight и соответствующие рабочие нагрузки.
+Кластеры Azure HDInsight предназначены для конкретного типа использований вычислений. Так как хранилище может совместно использоваться несколькими кластерами, можно создать несколько кластеров, оптимизированных для рабочей нагрузки, в соответствии с потребностями различных заданий. У каждого типа кластера есть оптимальная конфигурация для конкретной рабочей нагрузки. В следующей таблице перечислены поддерживаемые типы кластеров в HDInsight и соответствующие рабочие нагрузки.
 
-|**Рабочая нагрузка**|**Тип кластера HDInsight**|
+|Рабочая нагрузка|Тип кластера HDInsight|
 |---|---|
 |Пакетная обработка (ETL/ELT)|Hadoop, Spark|
 |Хранение данных|Hadoop, Spark, Interactive Query|
 |Центр Интернета вещей или потоковая передача|Kafka, Storm, Spark|
-|Обработка транзакций NoSQL|HBase|
-|Кэширование в памяти для обеспечения интерактивных и ускоренных запросов|Interactive Query|
+|Обработка транзакций NoSQL|hbase|
+|Кэширование в памяти для обеспечения интерактивных и ускоренных запросов|Интерактивный запрос|
 |Обработка и анализ данных|Службы машинного обучения, Spark|
 
 В приведенной ниже таблице представлены различные способы создания кластера HDInsight.
 
-|**Средство**|**На основе браузера**|**Командная строка**|**ИНТЕРФЕЙС REST API**|**Пакет SDK**|
+|Средство|На основе браузера|Командная строка|REST API|SDK|
 |---|---|---|---|---|
-|[портал Azure](../hdinsight-hadoop-create-linux-clusters-portal.md)|X||||
+|[Портал Azure](../hdinsight-hadoop-create-linux-clusters-portal.md)|X||||
 |[Фабрика данных Azure](../hdinsight-hadoop-create-linux-clusters-adf.md)|X|X|X|X|
 |[Azure CLI (версия 1.0)](../hdinsight-hadoop-create-linux-clusters-azure-cli.md)||X|||
 |[Azure PowerShell](../hdinsight-hadoop-create-linux-clusters-azure-powershell.md)||X|||
 |[cURL](../hdinsight-hadoop-create-linux-clusters-curl-rest.md)||X|X||
-|[Пакет SDK для .NET](../hdinsight-hadoop-create-linux-clusters-dotnet-sdk.md)||||X|
+|[ПАКЕТ SDK .NET](../hdinsight-hadoop-create-linux-clusters-dotnet-sdk.md)||||X|
 |[Пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/hdinsight?view=azure-python)||||X|
 |[Пакет SDK для Java](https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable)||||X|
 |[Шаблоны диспетчера ресурсов Azure](../hdinsight-hadoop-create-linux-clusters-arm-templates.md)||X|||
@@ -60,9 +60,9 @@ ms.locfileid: "73499252"
 
 ## <a name="decouple-storage-from-compute"></a>Отделение ресурсов хранилища от вычислительных ресурсов
 
-Стандартное локальное развертывание Hadoop использует один набор компьютеров для хранения и обработки данных. Так как они размещаются совместно, вычислительные ресурсы и ресурсы хранения должны также масштабироваться вместе.
+Стандартное локальное развертывание Hadoop использует один набор компьютеров для хранения и обработки данных. Так как они совместно размещены, расчеты и хранилище должны масштабироваться вместе.
 
-В кластерах HDInsight хранилища не нужно размещать совместно с вычислительными ресурсами. Для хранения может использоваться служба хранилища Azure, Azure Data Lake Storage или оба хранилища. Отделение хранилища от вычислительных ресурсов предоставляет следующие преимущества:
+В кластерах HDInsight хранилище не нужно совместно использовать с COMPUTE и может быть в службе хранилища Azure, Azure Data Lake Storage или в обоих случаях. Отделение хранилища от вычислительных ресурсов предоставляет следующие преимущества:
 
 - совместное использование данных кластерами;
 - использование промежуточных кластеров, так как данные не зависят от кластера;
@@ -74,9 +74,7 @@ ms.locfileid: "73499252"
 
 ## <a name="use-external-metadata-stores"></a>Использование внешних хранилищ метаданных
 
-
 Существует два основных метахранилища, которые работают с кластерами HDInsight: [Apache Hive](https://hive.apache.org/) и [Apache Oozie](https://oozie.apache.org/). Хранилище метаданных Hive — это центральный репозиторий схемы, который могут использовать модули обработки данных, такие как Hadoop, Spark, LLAP, Presto и Apache Pig. Хранилище метаданных Oozie хранит сведения о планировании, состояние хода выполнения и выполненные задания Hadoop.
-
 
 HDInsight использует Базу данных SQL Azure для хранилищ метаданных Hive и Oozie. Есть два способа настроить хранилище метаданных для кластеров HDInsight.
 
@@ -105,7 +103,7 @@ HDInsight использует Базу данных SQL Azure для храни
 - Периодически архивируйте пользовательское хранилище метаданных.
 - Разместите хранилище метаданных и кластер HDInsight в одном регионе.
 - Отслеживайте производительность и доступность хранилище метаданных с помощью средств мониторинга базы данных SQL Azure, таких как портал Azure или журналов Azure Monitor.
-- Выполняйте команду **ANALYZE TABLE** по необходимости, чтобы создать статистику для таблиц и столбцов. Например, `ANALYZE TABLE [table_name] COMPUTE STATISTICS`.
+- Выполните команду `ANALYZE TABLE` в соответствии с требованиями для создания статистики по таблицам и столбцам. Пример: `ANALYZE TABLE [table_name] COMPUTE STATISTICS`.
 
 ## <a name="best-practices-for-different-workloads"></a>Рекомендации для различных рабочих нагрузок
 
@@ -120,8 +118,8 @@ HDInsight использует Базу данных SQL Azure для храни
 - Рассмотрите использование Ranger RBAC для таблиц Hive и аудита.
 - Рассмотрите вопрос об использовании CosmosDB вместо MongoDB или Cassandra.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Прочитайте следующую статью в этом цикле:
+Прочитайте следующую статью в этой серии:
 
 - [Migrate on-premises Apache Hadoop clusters to Azure HDInsight - infrastructure best practices](apache-hadoop-on-premises-migration-best-practices-infrastructure.md) (Миграция локальных кластеров Apache Hadoop в Azure HDInsight. Рекомендации по инфраструктуре)

@@ -1,7 +1,7 @@
 ---
 title: Часто задаваемые вопросы об Индексаторе видео в Azure
 titleSuffix: Azure Media Services
-description: Получите ответы на часто задаваемые вопросы об Индексаторе видео.
+description: В этой статье приводятся ответы на часто задаваемые вопросы об индексаторе видео служб мультимедиа Azure.
 services: media-services
 author: Juliako
 manager: femila
@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: juliako
-ms.openlocfilehash: 95f2af1b192564290551f9ed31f0fe158b4536f6
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: fc5457fd44bd27731cad6269ee95aed838a3d755
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838233"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892793"
 ---
 # <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
@@ -23,7 +23,7 @@ ms.locfileid: "73838233"
 
 ## <a name="general-questions"></a>Общие вопросы
 
-### <a name="what-is-video-indexer"></a>Что такое Индексатор видео?
+### <a name="what-is-video-indexer"></a>Что такое "Индексатор видео"?
 
 Индексатор видео — это служба искусственного интеллекта, которая входит в состав Служб мультимедиа Microsoft Azure. Индексатор видео выполняет оркестрацию нескольких моделей машинного обучения, позволяя легко извлекать аналитические сведения из видео. Чтобы предоставить расширенные и точные сведения, Индексатор видео применяет несколько каналов видео: аудио, речь и визуальные элементы. Полученные от Индексатора видео сведения можно использовать разными способами, например для улучшения доступности содержимого, а также создания возможностей монетизации и новых решений для работы. Индексатор видео предоставляет веб-интерфейс для тестирования, настройки и персонализации моделей, содержащихся в учетной записи. Разработчики могут использовать API REST для интеграции Индексатора видео в рабочие системы. 
 
@@ -59,7 +59,7 @@ ms.locfileid: "73838233"
 
 ### <a name="what-media-formats-does-video-indexer-support"></a>Какие форматы мультимедиа поддерживает Индексатор видео?
 
-Индексатор видео поддерживает самые распространенные форматы мультимедиа. См. [список стандартных форматов кодировщика мультимедиа Azure](https://docs.microsoft.com/azure/media-services/latest/media-encoder-standard-formats).
+"Индексатор видео" поддерживает самые распространенные форматы мультимедиа. См. [список стандартных форматов кодировщика мультимедиа Azure](https://docs.microsoft.com/azure/media-services/latest/media-encoder-standard-formats).
 
 ### <a name="how-to-do-i-upload-a-media-into-video-indexer"></a>Как отправлять мультимедиа в Индексатор видео?
 
@@ -71,7 +71,7 @@ ms.locfileid: "73838233"
 
 ### <a name="can-i-create-customized-workflows-to-automate-processes-with-video-indexer"></a>Могу ли я создавать настраиваемые рабочие процессы для автоматизации процессов с помощью Индексатора видео?
 
-Да, вы можете интегрировать Индексатор видео в любые бессерверные технологии, такие как Logic Apps, Flow и [Функции Azure](https://azure.microsoft.com/services/functions/). См. [дополнительные сведения](https://azure.microsoft.com/services/logic-apps/) о соединителях [Logic Apps](https://flow.microsoft.com/en-us/) и [Flow](https://azure.microsoft.com/blog/logic-apps-flow-connectors-will-make-automating-video-indexer-simpler-than-ever/) для Индексатора видео. 
+Да, вы можете интегрировать Индексатор видео в любые бессерверные технологии, такие как Logic Apps, Flow и [Функции Azure](https://azure.microsoft.com/services/functions/). См. [дополнительные сведения](https://azure.microsoft.com/blog/logic-apps-flow-connectors-will-make-automating-video-indexer-simpler-than-ever/) о соединителях [Logic Apps](https://azure.microsoft.com/services/logic-apps/) и [Flow](https://flow.microsoft.com/en-us/) для Индексатора видео. 
 
 ### <a name="in-which-azure-regions-is-video-indexer-available"></a>В каких регионах Azure доступен Индексатор видео?
 

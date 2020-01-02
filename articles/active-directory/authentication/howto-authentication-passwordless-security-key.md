@@ -1,108 +1,108 @@
 ---
-title: Passwordless security key sign (preview) - Azure Active Directory
-description: Enable passwordless security key sign-in to Azure AD using FIDO2 security keys (preview)
+title: Подписывание ключа безопасности без пароля (Предварительная версия) — Azure Active Directory
+description: Включение входа с использованием ключа безопасности без пароля в Azure AD с помощью ключей безопасности FIDO2 (Предварительная версия)
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9f87f1b2561b65590dfe29d7d2c8d1318e3d35e1
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 826b8e923575db3d6c6aee7ead230f87f1efb50e
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74381854"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74848448"
 ---
-# <a name="enable-passwordless-security-key-sign-in-preview"></a>Enable passwordless security key sign in (preview)
+# <a name="enable-passwordless-security-key-sign-in-preview"></a>Включение входа в систему с паролем без пароля (Предварительная версия)
 
-For enterprises that use passwords today and have a shared PC environment, security keys provide a seamless way for workers to authenticate without entering a username or password. Security keys provide improved productivity for workers, and have better security.
+Для предприятий, использующих пароли сегодня и имеющих общую среду ПК, ключи безопасности обеспечивают простой способ проверки подлинности для работников без ввода имени пользователя или пароля. Ключи безопасности обеспечивают повышенную производительность для рабочих ролей и имеют более высокий уровень безопасности.
 
-This document focuses on enabling security key based passwordless authentication. At the end of this article, you will be able to sign in to web-based applications with your Azure AD account using a FIDO2 security key.
+В этом документе основное внимание уделяется включению проверки подлинности с использованием пароля на основе ключа безопасности. В конце этой статьи вы сможете войти в веб-приложения с помощью учетной записи Azure AD, используя ключ безопасности FIDO2.
 
 |     |
 | --- |
-| FIDO2 security keys are a public preview feature of Azure Active Directory. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
+| Ключи безопасности FIDO2 — это общедоступная Предварительная версия функции Azure Active Directory. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
 |     |
 
 ## <a name="requirements"></a>Требования
 
 - [Многофакторная идентификация Azure](howto-mfa-getstarted.md)
-- [Combined security information registration preview](concept-registration-mfa-sspr-combined.md)
-- Compatible [FIDO2 security keys](concept-authentication-passwordless.md#fido2-security-keys)
-- WebAuthN requires Windows 10 version 1809 or higher**
+- [Общая Предварительная версия регистрации сведений о безопасности](concept-registration-mfa-sspr-combined.md)
+- Совместимые [ключи безопасности FIDO2](concept-authentication-passwordless.md#fido2-security-keys)
+- Для WebAuthN требуется Windows 10 версии 1809 или более поздней * *
 
-To use security keys for logging in to web apps and services, you must have a browser that supports the WebAuthN protocol. These include Microsoft Edge, Chrome, Firefox, and Safari.
+Чтобы использовать ключи безопасности для входа в веб-приложения и службы, необходимо иметь браузер, поддерживающий протокол WebAuthN. К ним относятся Microsoft ребро, Chrome, Firefox и Safari.
 
-## <a name="prepare-devices-for-preview"></a>Prepare devices for preview
+## <a name="prepare-devices-for-preview"></a>Подготовка устройств для предварительной версии
 
-Devices that you will be piloting with must be running Windows 10 version 1809 or higher. The best experience is on Windows 10 version 1903 or higher.
+Устройства, на которых будет выполняться Пилотная подготовка, должны работать под управлением Windows 10 версии 1809 или более поздней. В Windows 10 версии 1903 или более поздней.
 
-## <a name="enable-passwordless-authentication-method"></a>Enable passwordless authentication method
+## <a name="enable-passwordless-authentication-method"></a>Включение метода проверки подлинности с паролем
 
-### <a name="enable-the-combined-registration-experience"></a>Enable the combined registration experience
+### <a name="enable-the-combined-registration-experience"></a>Включение объединенного процесса регистрации
 
-Registration features for passwordless authentication methods rely on the combined registration preview. Follow the steps in the article [Enable combined security information registration (preview)](howto-registration-mfa-sspr-combined.md), to enable the combined registration preview.
+Функции регистрации для методов проверки подлинности, не защищенных паролем, зависят от предварительной версии регистрации. Выполните действия, описанные в статье [Включение общей регистрации сведений о безопасности (Предварительная версия)](howto-registration-mfa-sspr-combined.md), чтобы включить объединенную предварительную версию регистрации.
 
-### <a name="enable-fido2-security-key-method"></a>Enable FIDO2 security key method
+### <a name="enable-fido2-security-key-method"></a>Включить метод ключа безопасности FIDO2
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-1. Browse to **Azure Active Directory** > **Security** > **Authentication methods** > **Authentication method policy (Preview)** .
-1. Under the method **FIDO2 Security Key**, choose the following options:
-   1. **Enable** - Yes or No
-   1. **Target** - All users or Select users
+1. Выберите **Azure Active Directory** > **Безопасность** > **методы проверки** подлинности > **политики метода проверки подлинности (Предварительная версия)** .
+1. В разделе метод **FIDO2 ключ безопасности**выберите следующие параметры.
+   1. **Включить** -да или нет
+   1. **Target** — все пользователи или выбранные пользователи
 1. Нажмите кнопку **Сохранить**, чтобы сохранить конфигурацию.
 
-## <a name="user-registration-and-management-of-fido2-security-keys"></a>User registration and management of FIDO2 security keys
+## <a name="user-registration-and-management-of-fido2-security-keys"></a>Регистрация пользователей и управление ключами безопасности FIDO2
 
 1. Перейдите по ссылке [https://myprofile.microsoft.com](https://myprofile.microsoft.com).
-1. Sign in if not already.
-1. Click **Security Info**.
-   1. If the user already has at least one Azure Multi-Factor Authentication method registered, they can immediately register a FIDO2 security key.
-   1. If they don’t have at least one Azure Multi-Factor Authentication method registered, they must add one.
-1. Add a FIDO2 Security key by clicking **Add method** and choosing **Security key**.
-1. Choose **USB device** or **NFC device**.
-1. Have your key ready and choose **Next**.
-1. A box will appear and ask the user to create/enter a PIN for your security key, then perform the required gesture for the key, either biometric or touch.
-1. The user will be returned to the combined registration experience and asked to provide a meaningful name for the key so the user can identify which one if they have multiple. Щелкните **Далее**.
-1. Click **Done** to complete the process.
+1. Войдите, если он еще не создан.
+1. Щелкните **сведения о безопасности**.
+   1. Если у пользователя уже есть по крайней мере один зарегистрированный метод многофакторной идентификации Azure, он может немедленно зарегистрировать ключ безопасности FIDO2.
+   1. Если у них нет хотя бы одного метода многофакторной идентификации Azure, он должен добавить один из них.
+1. Добавьте ключ безопасности FIDO2, нажав кнопку **Добавить метод** и выбрав **ключ безопасности**.
+1. Выберите **USB-устройство** или **устройство NFC**.
+1. Получите ключ и нажмите кнопку **Далее**.
+1. Появится окно с просьбой создать или ввести ПИН-код для ключа безопасности, а затем выполнить требуемый жест для ключа — Биометрия или сенсорного ввода.
+1. Пользователь вернется к объединенному интерфейсу регистрации и попросит ввести понятное имя для ключа, чтобы пользователь мог указать, какой из них имеет несколько. Щелкните **Далее**.
+1. Нажмите кнопку **Готово** , чтобы завершить процесс.
 
-## <a name="sign-in-with-passwordless-credential"></a>Sign in with passwordless credential
+## <a name="sign-in-with-passwordless-credential"></a>Вход с использованием учетных данных без пароля
 
-In the example below a user has already provisioned their FIDO2 security key. The user can choose to sign in on the web with their FIDO2 security key inside of a supported browser on Windows 10 version 1809 or higher.
+В примере ниже пользователь уже предоставил свой ключ безопасности FIDO2. Пользователь может выбрать вход в Интернет с помощью ключа безопасности FIDO2 в поддерживаемом браузере в Windows 10 версии 1809 или более поздней.
 
-![Security key sign-in Microsoft Edge](./media/howto-authentication-passwordless-security-key/fido2-windows-10-1903-edge-sign-in.png)
+![Вход с ключом безопасности в Microsoft ребро](./media/howto-authentication-passwordless-security-key/fido2-windows-10-1903-edge-sign-in.png)
 
-## <a name="troubleshooting-and-feedback"></a>Troubleshooting and feedback
+## <a name="troubleshooting-and-feedback"></a>Устранение неполадок и обратная связь
 
-If you would like to share feedback or encounter issues while previewing this feature, please share via the Windows Feedback Hub app.
+Если вы хотите поделиться отзывами или столкнуться с проблемами при предварительном просмотре этой функции, предоставьте общий доступ через приложение центра отзывов Windows.
 
-1. Launch **Feedback Hub** and make sure you're signed in.
-1. Submit feedback under the following categorization:
-   1. Category: Security and Privacy
-   1. Subcategory: FIDO
-1. To capture logs, use the option: **Recreate my Problem**
+1. Запустите **центр отзывов** и убедитесь, что вы вошли в него.
+1. Отправьте отзыв по следующей категории:
+   1. Категория: безопасность и конфиденциальность
+   1. Подкатегория: FIDO
+1. Чтобы записать журналы, используйте параметр: **повторно создать мою проблему**
 
 ## <a name="known-issues"></a>Известные проблемы
 
-### <a name="security-key-provisioning"></a>Security key provisioning
+### <a name="security-key-provisioning"></a>Подготовка ключа безопасности
 
-Administrator provisioning and de-provisioning of security keys is not available in the public preview.
+В общедоступной предварительной версии недоступна подготовка администратора и Отмена подготовки ключей безопасности.
 
-### <a name="upn-changes"></a>UPN changes
+### <a name="upn-changes"></a>Изменения имени участника-пользователя
 
-If a user’s UPN changes, you can no longer modify FIDO2 security keys to account for the change. The resolution is to reset the device and the user has to re-register their FIDO2 security keys.
+При изменении имени участника-пользователя вы больше не сможете изменить ключи безопасности FIDO2, чтобы учитывать изменения. Решением является сброс устройства, и пользователь должен повторно зарегистрировать свои ключи безопасности FIDO2.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[FIDO2 security key Windows 10 sign in](howto-authentication-passwordless-security-key-windows.md)
+[FIDO2 безопасность ключ безопасности Windows 10 вход](howto-authentication-passwordless-security-key-windows.md)
 
-[Enable FIDO2 authentication to on-premises resources](howto-authentication-passwordless-security-key-on-premises.md)
+[Включение проверки подлинности FIDO2 для локальных ресурсов](howto-authentication-passwordless-security-key-on-premises.md)
 
-[Learn more about device registration](../devices/overview.md)
+[Дополнительные сведения о регистрации устройств](../devices/overview.md)
 
-[Learn more about Azure Multi-Factor Authentication](../authentication/howto-mfa-getstarted.md)
+[Дополнительные сведения о службе многофакторной идентификации Azure](../authentication/howto-mfa-getstarted.md)

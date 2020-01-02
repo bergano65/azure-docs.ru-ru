@@ -1,17 +1,17 @@
 ---
-title: Перезапуск сервера Базы данных Azure для MariaDB с помощью портала Azure
+title: Перезапуск сервера-портал Azure — база данных Azure для MariaDB
 description: В этой статье объясняется, как перезапустить сервер Базы данных Azure для MariaDB с помощью портала Azure.
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 2/7/2019
-ms.openlocfilehash: 232037562c4a84ee9217e2e89a0da2ffdc37d560
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 12/02/2019
+ms.openlocfilehash: fb4e56a3f40573a65b679ee026c22dfc5d6e5fa2
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60745796"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74769427"
 ---
 # <a name="restart-azure-database-for-mariadb-server-using-azure-portal"></a>Перезапуск сервера Базы данных Azure для MariaDB с помощью портала Azure
 В этой статье объясняется, как перезапустить сервер Базы данных Azure для MariaDB. Возможно, вам потребуется перезапустить сервер в целях обслуживания, что приводит к кратковременному отключению во время выполнения операции.
@@ -22,7 +22,7 @@ ms.locfileid: "60745796"
 
 ## <a name="prerequisites"></a>Технические условия
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
-- [Базы данных Azure для MariaDB](./quickstart-create-mariadb-server-database-using-azure-portal.md)
+- [Сервер базы данных Azure для MariaDB](./quickstart-create-mariadb-server-database-using-azure-portal.md)
 
 ## <a name="perform-server-restart"></a>Перезапуск сервера
 
@@ -48,4 +48,4 @@ ms.locfileid: "60745796"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Краткое руководство Создание сервера Базы данных Azure для MySQL с помощью портала Azure](./quickstart-create-mariadb-server-database-using-azure-portal.md)
+[Краткое руководство. Создание сервера базы данных Azure для MariaDB с помощью портал Azure](./quickstart-create-mariadb-server-database-using-azure-portal.md)

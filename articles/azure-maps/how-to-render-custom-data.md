@@ -1,6 +1,6 @@
 ---
 title: Как визуализировать пользовательские данные на растровой карте в Azure Maps | Документация Майкрософт
-description: Отображение пользовательских данных на растровой карте в Azure Maps.
+description: Из этой статьи вы узнаете, как визуализировать пользовательские данные на растровой карте с помощью Azure Maps службы статических изображений.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 07/29/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 6619fd842f225a6d362a4b308dde6e35b43677c9
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: 41166d57a8ea9b9cf34f76ecce318351d5131794
+ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70915759"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74559977"
 ---
 # <a name="render-custom-data-on-a-raster-map"></a>Отображение пользовательских данных на растровой карте
 
@@ -23,7 +23,7 @@ ms.locfileid: "70915759"
 Для отрисовки пользовательских защелкаок, меток и наложения геометрических объектов можно использовать приложение POST. [Интерфейсы API служб Azure Maps данных](https://docs.microsoft.com/rest/api/maps/data) можно использовать для хранения и визуализации наложений.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 ### <a name="create-an-azure-maps-account"></a>создание учетной записи службы "Карты Azure";
 
@@ -35,7 +35,7 @@ ms.locfileid: "70915759"
 > [!Note]
 > Для процедуры, описанной в этом разделе, требуется учетная запись Azure Maps в ценовой категории S0 или S1.
 
-Уровень учетной записи Azure Maps S0 поддерживает только один экземпляр `pins` параметра. Он позволяет визуализировать до пяти приэлементов, указанных в запросе URL-адреса, с пользовательским изображением.
+Уровень учетной записи Azure Maps S0 поддерживает только один экземпляр параметра `pins`. Он позволяет визуализировать до пяти приэлементов, указанных в запросе URL-адреса, с пользовательским изображением.
 
 Чтобы отобразить защелки с метками и пользовательским изображением, выполните следующие действия.
 
@@ -48,7 +48,7 @@ ms.locfileid: "70915759"
 3. Выберите метод получения HTTP на вкладке Построитель и введите следующий URL-адрес для создания запроса GET.
 
     ```HTTP
-    https://atlas.microsoft.com/map/static/png?subscription-key={subscription-key}&api-version=1.0&layer=basic&style=main&zoom=12&center=-73.98,%2040.77&pins=custom%7Cla15+50%7Cls12%7Clc003b61%7C%7C%27CentralPark%27-73.9657974+40.781971%7C%7Chttp%3A%2F%2Fazuremapscodesamples.azurewebsites.net%2FCommon%2Fimages%2Fpushpins%2Fylw-pushpin.png
+    https://atlas.microsoft.com/map/static/png?subscription-key={subscription-key}&api-version=1.0&layer=basic&style=main&zoom=12&center=-73.98,%2040.77&pins=custom%7Cla15+50%7Cls12%7Clc003b61%7C%7C%27CentralPark%27-73.9657974+40.781971%7C%7Chttps%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2FAzureMapsCodeSamples%2Fmaster%2FAzureMapsCodeSamples%2FCommon%2Fimages%2Ficons%2Fylw-pushpin.png
     ```
     Вот итоговый образ:
 
@@ -68,7 +68,7 @@ ms.locfileid: "70915759"
     https://atlas.microsoft.com/mapData/upload?subscription-key={subscription-key}&api-version=1.0&dataFormat=geojson
     ```
 
-2. На вкладке **params (параметры** ) введите следующие пары "ключ-значение", которые используются для URL-адреса запроса POST. `subscription-key` Замените значение ключом подписки Azure Maps.
+2. На вкладке **params (параметры** ) введите следующие пары "ключ-значение", которые используются для URL-адреса запроса POST. Замените значение `subscription-key` значением ключа подписки Azure Maps.
     
     ![Параметры "ключ — значение" в POST](./media/how-to-render-custom-data/postman-key-vals.png)
 
@@ -154,7 +154,7 @@ ms.locfileid: "70915759"
    }
    ```
 
-7. Используйте значение `udId` , полученное от API передачи данных, для отрисовки функций на карте. Для этого откройте новую вкладку в коллекции, созданной в предыдущем разделе. На вкладке Построитель выберите метод GET HTTP и введите этот URL-адрес, чтобы выполнить запрос GET:
+7. Используйте значение `udId`, полученное от API передачи данных, для отрисовки функций на карте. Для этого откройте новую вкладку в коллекции, созданной в предыдущем разделе. На вкладке Построитель выберите метод GET HTTP и введите этот URL-адрес, чтобы выполнить запрос GET:
 
     ```HTTP
     https://atlas.microsoft.com/map/static/png?subscription-key={subscription-key}&api-version=1.0&layer=basic&style=main&zoom=12&center=-73.96682739257812%2C40.78119135317995&pins=default|la-35+50|ls12|lc003C62|co9B2F15||'Times Square'-73.98516297340393 40.758781646381024|'Central Park'-73.96682739257812 40.78119135317995&path=lc0000FF|fc0000FF|lw3|la0.80|fa0.30||udid-{udId}
@@ -190,7 +190,7 @@ ms.locfileid: "70915759"
 > Для процедуры, описанной в этом разделе, требуется учетная запись Azure Maps в ценовой категории S1.
 
 
-Можно сделать защелки и их метки крупнее или мельче с помощью `sc` модификатора масштабирования. Этот модификатор принимает значение больше нуля. Значение 1 — это стандартный масштаб. Значения, превышающие 1, будут увеличивать кнопки, а меньше 1 будут их уменьшать. Дополнительные сведения об модификаторах стилей см. в разделе [параметры пути к службе статических изображений](https://docs.microsoft.com/rest/api/maps/render/getmapimage#uri-parameters).
+Можно сделать защелки и их метки крупнее или мельче, используя модификатор стиля `sc` Scale. Этот модификатор принимает значение больше нуля. Значение 1 — это стандартный масштаб. Значения, превышающие 1, будут увеличивать кнопки, а меньше 1 будут их уменьшать. Дополнительные сведения об модификаторах стилей см. в разделе [параметры пути к службе статических изображений](https://docs.microsoft.com/rest/api/maps/render/getmapimage#uri-parameters).
 
 
 Выполните следующие действия, чтобы отобразить круг и канцелярские кнопки с пользовательскими метками:
@@ -205,7 +205,7 @@ ms.locfileid: "70915759"
 
     ![Отрисовка круга с пользовательскими защелками](./media/how-to-render-custom-data/circle-custom-pins.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 
 * Ознакомьтесь с документацией по [API получения изображения карты в службе Azure Maps](https://docs.microsoft.com/rest/api/maps/render/getmapimage).

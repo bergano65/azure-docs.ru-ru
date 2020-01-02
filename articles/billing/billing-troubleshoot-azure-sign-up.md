@@ -1,23 +1,24 @@
 ---
 title: Устранение неполадок при регистрации в Azure
 description: Решение проблемы при регистрации для создания учетной записи в центре управления учетной записью на портале Microsoft Azure.
+services: billing
 author: v-miegge
-manager: na
+manager: dcscontentpm
 editor: v-jesits
 tags: billing
-ms.service: billing
+ms.service: cost-management-billing
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/12/2019
 ms.author: v-miegge
-ms.openlocfilehash: 5032762c1275d3f1c8d1a020a54d20555f8ba3fe
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: f1414f96a00626b8e47decd22e4560bff1394468
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70242436"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74872729"
 ---
 # <a name="troubleshoot-azure-sign-up"></a>Устранение неполадок при регистрации в Azure
 
@@ -124,7 +125,7 @@ ms.locfileid: "70242436"
  
 ## <a name="additional-help-resources"></a>Дополнительные справочные ресурсы
 
-Другие статьи по устранению неполадок при выставлении счетов и подписках Azure
+Другие статьи по устранению проблем при выставлении счетов и с подписками Azure
 
 - [Карта не принимается](billing-troubleshoot-declined-card.md)
 - [Проблемы со входом в подписку](billing-troubleshoot-sign-in-issue.md)

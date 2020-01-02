@@ -21,48 +21,48 @@ ms.locfileid: "74232344"
 # <a name="azure-active-directory-identity-protection-glossary"></a>Глоссарий по защите идентификации Azure Active Directory
 
 ### <a name="at-risk-user"></a>Под угрозой (пользователь)
-A user with one or more active risk detections. 
+Пользователь с одним или несколькими активными обнаруженными рисками. 
 
 ### <a name="atypical-sign-in-location"></a>Нетипичное расположение входа
 Вход из географического расположения, которое не является типичным для конкретного пользователя, схожих пользователей или клиента.
 
-### <a name="azure-ad-identity-protection"></a>защиту идентификации Azure AD
-A security module of Azure Active Directory that provides a consolidated view into risk detections and potential vulnerabilities affecting an organization’s identities.
+### <a name="azure-ad-identity-protection"></a>Защита идентификации Azure AD
+Модуль безопасности Azure Active Directory, обеспечивающий объединенное представление об обнаружении рисков и потенциальных уязвимостях, влияющих на удостоверения Организации.
 
-### <a name="conditional-access"></a>Условный доступ
-Политика для защиты доступа к ресурсам. Conditional Access rules are stored in the Azure Active Directory and are evaluated by Azure AD before granting access to the resource.  Примерами правил являются ограничения доступа на основе расположения пользователя, работоспособности устройства или метода проверки подлинности пользователя.
+### <a name="conditional-access"></a>условный доступ;
+Политика для защиты доступа к ресурсам. Правила условного доступа хранятся в Azure Active Directory и оцениваются с помощью Azure AD перед предоставлением доступа к ресурсу.  Примерами правил являются ограничения доступа на основе расположения пользователя, работоспособности устройства или метода проверки подлинности пользователя.
 
 ### <a name="credentials"></a>Учетные данные
 Данные, которые включают в себя идентификацию и проверку идентификации, используемой для получения доступа к локальным и сетевым ресурсам. Примерами учетных данных являются имена пользователей и пароли, смарт-карты и сертификаты.
 
-### <a name="event"></a>Мероприятие
+### <a name="event"></a>Событие
 Запись действия в Azure Active Directory.
 
-### <a name="false-positive-risk-detection"></a>False-positive (risk detection)
-A risk detection status set manually by an Identity Protection user, indicating that the risk detection was investigated and was incorrectly flagged as a risk detection.
+### <a name="false-positive-risk-detection"></a>Ложное срабатывание (обнаружение рисков)
+Состояние обнаружения рисков, заданное вручную пользователем защиты идентификации, указывающее, что обнаружение рисков было исследовано и ошибочно отмечено как обнаружение рисков.
 
 ### <a name="identity"></a>Удостоверение
 Лицо или организация, которые должны быть проверены с помощью средств проверки подлинности на основе определенных условий, таких как пароль или сертификат.
 
-### <a name="identity-risk-detection"></a>Identity risk detection
-Azure AD event that was flagged as anomalous by Identity Protection, and may indicate that an identity has been compromised.
+### <a name="identity-risk-detection"></a>Обнаружение рисков удостоверений
+Событие Azure AD, которое было отмечено как аномальное с помощью защиты идентификации, и может означать, что удостоверение скомпрометировано.
 
-### <a name="ignored-risk-detection"></a>Ignored (risk detection)
-A risk detection status set manually by an Identity Protection user, indicating that the risk detection is closed without taking a remediation action.
+### <a name="ignored-risk-detection"></a>Игнорируется (обнаружение рисков)
+Состояние обнаружения рисков, заданное вручную пользователем защиты идентификации, указывающее, что обнаружение рисков закрывается без выполнения действия исправления.
 
 ### <a name="impossible-travel-from-atypical-locations"></a>Невозможно переместиться из нетипичных расположений
-A risk detection triggered when two sign-ins for the same user are detected, where at least one of them is from an atypical sign-in location, and where the time between the sign-ins is shorter than the minimum time it would take to physically travel between these locations.  
+Обнаружение рисков срабатывает при обнаружении двух входов для одного пользователя, где по крайней мере один из них находится в нетипичном расположении входа, а время между попытками входа короче минимального времени, которое необходимо для физического переезда между ними. расположения.  
 
 ### <a name="investigation"></a>Исследование
-The process of reviewing the activities, logs, and other relevant information related to a risk detection to decide whether remediation or mitigation steps are necessary, understand if and how the identity was compromised, and understand how the compromised identity was used.
+Процесс просмотра действий, журналов и других релевантных сведений, относящихся к обнаружению рисков с целью принятия решения о необходимости выполнения действий по исправлению или устранению, сведения о том, каким образом и как скомпрометировано удостоверение. удостоверение было использовано.
 
 ### <a name="leaked-credentials"></a>Утерянные учетные данные
-A risk detection triggered when current user credentials (user name and password) are found posted publicly in the Dark   web by our researchers.
+Обнаружение рисков, активируемое при обнаружении учетных данных текущего пользователя (имени пользователя и пароля), опубликованных в виде темной веб-страниц нашими исследователими.
 
 ### <a name="mitigation"></a>Устранение
-Действие, позволяющее ограничить или исключить возможность использования злоумышленником скомпрометированного удостоверения или устройства без восстановления их безопасного состояния. A mitigation does not resolve previous risk detections associated with the identity or device.
+Действие, позволяющее ограничить или исключить возможность использования злоумышленником скомпрометированного удостоверения или устройства без восстановления их безопасного состояния. Устранение рисков не приводит к устранению предыдущих обнаружений рисков, связанных с удостоверением или устройством.
 
-### <a name="multi-factor-authentication"></a>Многофакторная Идентификация
+### <a name="multi-factor-authentication"></a>Многофакторная проверка подлинности
 Метод проверки подлинности, требующий двух или более способов проверки подлинности, включая следующее: предоставляемые пользователем объекты, например сертификаты; известные только пользователям сведения, например имена пользователей, пароли или парольные фразы; физические атрибуты, например отпечаток большого пальца; персональные атрибуты, например личная подпись.
 
 ### <a name="offline-detection"></a>Обнаружение в автономном режиме
@@ -72,13 +72,13 @@ A risk detection triggered when current user credentials (user name and password
 Часть политики безопасности, которая определяет сущности (группы, пользователи, приложения, платформы устройств, состояния устройств, диапазоны IP-адресов, типы клиентов), включаемые в политику или исключаемые из нее.
 
 ### <a name="policy-rule"></a>Правило политики
-The part of a security policy that describes the circumstances that would trigger the policy, and the actions taken when the policy is triggered.
+Часть политики безопасности, которая описывает обстоятельства, которые активируют политику, и действия, выполняемые при активации политики.
 
 ### <a name="prevention"></a>Предотвращение
-Действие для предотвращения нанесения ущерба организации путем использования удостоверения или устройства, которое ранее предположительно или фактически было скомпрометировано. A prevention action does not secure the device or identity, and does not resolve previous risk detections.
+Действие для предотвращения нанесения ущерба организации путем использования удостоверения или устройства, которое ранее предположительно или фактически было скомпрометировано. Действие предотвращения не защищает устройство или удостоверение и не разрешает предыдущие обнаружения рисков.
 
 ### <a name="privileged-user"></a>Привилегированный (пользователь)
-A user that at the time of a risk detection, had permanent or temporary admin permissions to one or more resources in Azure Active Directory, such as a Global Administrator, Billing Administrator, Service Administrator, User administrator, and Password Administrator. 
+Пользователь, который во время обнаружения риска обладает постоянными или временными разрешениями администратора для одного или нескольких ресурсов в Azure Active Directory, таких как глобальный администратор, администратор выставления счетов, администратор служб, администратор пользователей и пароль. Административ. 
 
 ### <a name="real-time"></a>В режиме реального времени
 См. "Обнаружение в режиме реального времени".
@@ -86,23 +86,23 @@ A user that at the time of a risk detection, had permanent or temporary admin pe
 ### <a name="real-time-detection"></a>Обнаружение в режиме реального времени.
 Обнаружение аномалий и оценки риска события, такого как попытка входа до разрешения продолжения события.
 
-### <a name="remediated-risk-detection"></a>Remediated (risk detection)
-A risk detection status set automatically by Identity Protection, indicating that the risk detection was remediated using the standard remediation action for this type of risk detection. For example, when the user password is reset, many risk detections that indicate that the previous password was compromised are automatically remediated.
+### <a name="remediated-risk-detection"></a>Исправлено (обнаружение рисков)
+Состояние обнаружения рисков автоматически задается защитой идентификации, указывая на то, что обнаружение рисков было исправлено с помощью стандартного действия по исправлению для этого типа обнаружения рисков. Например, при сбросе пароля пользователя многие обнаружения рисков, указывающие на то, что предыдущий пароль был скомпрометирован, автоматически исправляются.
 
 ### <a name="remediation"></a>Исправление
-Действие для защиты удостоверения или устройства, которое было ранее предположительно или фактически скомпрометировано. A remediation action restores the identity or device to a safe state, and resolves previous risk detections associated with the identity or device.
+Действие для защиты удостоверения или устройства, которое было ранее предположительно или фактически скомпрометировано. Действие исправления восстанавливает состояние "удостоверение" или "устройство" в безопасном состоянии и разрешает предыдущие обнаружения рисков, связанные с удостоверением или устройством.
 
-### <a name="resolved-risk-detection"></a>Resolved (risk detection)
-A risk detection status set manually by an Identity Protection user, indicating that the user took an appropriate remediation action outside Identity Protection, and that the risk detection should be considered closed.
+### <a name="resolved-risk-detection"></a>Разрешено (обнаружение рисков)
+Состояние обнаружения рисков, заданное пользователем для защиты идентификации вручную, которое указывает, что пользователь выполнил соответствующее действие по исправлению вне защиты идентификации и что обнаружение рисков должно считаться закрытым.
 
-### <a name="risk-detection-status"></a>Risk detection status
-A property of a risk detection, indicating whether the event is active, and if closed, the reason for closing it.
+### <a name="risk-detection-status"></a>Состояние обнаружения рисков
+Свойство обнаружения рисков, указывающее, является ли событие активным, и, если оно закрыто, причина его закрытия.
 
 ### <a name="risk-detection-type"></a>Тип обнаружения риска
-A category for the risk detection, indicating the type of anomaly that caused the event to be considered risky.
+Категория для обнаружения рисков, указывающая тип аномалии, которая привела к тому, что событие будет считаться рискованным.
 
-### <a name="risk-level-risk-detection"></a>Risk level (risk detection)
-An indication (High, Medium, or Low) of the severity of the risk detection to help Identity Protection users prioritize the actions they take to reduce the risk to their organization. 
+### <a name="risk-level-risk-detection"></a>Уровень риска (обнаружение рисков)
+Указание (высокая, средняя или низкая) серьезности обнаружения рисков, помогающее пользователям защиты идентификации расстановка приоритетов действий, выполняемых для снижения риска в Организации. 
 
 ### <a name="risk-level-sign-in"></a>Уровень риска (вход)
 Обозначение уровня вероятности ("Высокий", "Средний" или "Низкий") того, что при конкретной попытке входа удостоверение пользователя будет использоваться другим лицом.
@@ -126,22 +126,22 @@ An indication (High, Medium, or Low) of the severity of the risk detection to he
 Процесс или действие проверки подлинности удостоверения в Azure Active Directory и событие, которое записывает эту операцию.
 
 ### <a name="sign-in-from-anonymous-ip-address"></a>Вход с анонимных IP-адресов
-A risk detection triggered after a successful sign-in from IP address that has been identified as an anonymous proxy IP address.
+Обнаружение рисков, активируемое после успешного входа с IP-адреса, определенного как IP-адрес анонимного прокси-сервера.
 
 ### <a name="sign-in-from-infected-device"></a>Вход с инфицированных устройств
-A risk detection triggered when a sign-in originates from an IP address, which is known to be used by one or more compromised devices, which are actively attempting to communicate with a bot server.
+Обнаружение рисков активируется, когда выполняется вход с IP-адреса, который используется одним или несколькими скомпрометированными устройствами, которые активно пытаются связаться с сервером-Bot.
 
 ### <a name="sign-in-from-ip-address-with-suspicious-activity"></a>Вход с IP-адресов с подозрительными действиями
-A risk detection triggered after a successful sign-in from an IP address with a high number of failed login attempts across multiple user accounts over a short period of time.
+Обнаружение рисков, активируемое после успешного входа в систему с IP-адреса с большим количеством неудачных попыток входа в несколько учетных записей пользователей за короткий период времени.
 
 ### <a name="sign-in-from-unfamiliar-location"></a>Вход из неизвестного расположения
-A risk detection triggered when a user successfully signs in from a new location (IP, Latitude/Longitude, and ASN).
+Обнаружение рисков активируется, когда пользователь успешно входит в новое место (IP, Широта, Долгота и ASN).
 
-### <a name="sign-in-risk"></a>Риск при входе
+### <a name="sign-in-risk"></a>Риск входа
 См. "Уровень риска" (вход)
 
-### <a name="sign-in-risk-policy"></a>Политика риска входа
-A Conditional Access policy that evaluates the risk to a specific sign-in and applies mitigations based on predefined conditions and rules.
+### <a name="sign-in-risk-policy"></a>Sign-in risk policy
+Политика условного доступа, которая оценивает риск для конкретного входа и применяет меры по устранению на основе предопределенных условий и правил.
 
 ### <a name="user-compromise-risk"></a>Риск компрометации пользователя
 См. "Уровень риска" (компрометация пользователя)
@@ -150,14 +150,14 @@ A Conditional Access policy that evaluates the risk to a specific sign-in and ap
 См. "Уровень риска" (компрометация пользователя)
 
 ### <a name="user-risk-policy"></a>Политика риска пользователя
-A Conditional Access policy that considers the sign-in and applies mitigations based on predefined conditions and rules.
+Политика условного доступа, которая учитывает вход и применяет меры по устранению на основе предопределенных условий и правил.
 
 ### <a name="users-flagged-for-risk"></a>Пользователи, помеченные для события риска
-Users that have risk detections, which are either active or remediated
+Пользователи с обнаруженными рисками (активные или исправленные);
 
 ### <a name="vulnerability"></a>Уязвимость
 Конфигурация или условие в Azure Active Directory, которое делает каталог уязвимым к атакам или угрозам.
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 - [Защита идентификации Azure Active Directory.](../active-directory-identityprotection.md)

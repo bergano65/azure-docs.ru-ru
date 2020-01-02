@@ -3,19 +3,19 @@ title: Подключение к API Bing для поиска новостей �
 titleSuffix: Azure Cognitive Services
 description: С помощью службы "Поиск новостей Bing" можно позволить приложениям и службам использовать мощные возможности поисковой системы без рекламы, разработанной для Интернета.
 services: cognitive-services
-author: ghogen
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: tutorial
-ms.date: 06/18/2019
-ms.author: ghogen
-ms.openlocfilehash: 0a8a4f69c94f217cb40146b022adf2b2d56c8d42
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.date: 11/29/2019
+ms.author: aahi
+ms.openlocfilehash: 2afe9a66d9f0ebecaef9626ef6caf9fc30f20841
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74111495"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74771076"
 ---
 # <a name="tutorial-connect-to-bing-news-search-api-with-connected-services-in-visual-studio-and-c"></a>Руководство по Подключение к API Bing для поиска новостей с помощью компонента "Подключенные службы" в Visual Studio на C#
 
@@ -268,4 +268,4 @@ ms.locfileid: "74111495"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения об API Bing для поиска новостей см. в [документации по службе "Поиск новостей Bing"](index.yml).
+Дополнительные сведения об API Bing для поиска новостей см. в [документации по службе "Поиск новостей Bing"](search-the-web.md).

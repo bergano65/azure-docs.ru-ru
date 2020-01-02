@@ -6,14 +6,14 @@ author: cherylmc
 Customer intent: As someone with a basic network background, I want to understand zone-redundant gateways.
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 09/21/2018
+ms.date: 12/05/2019
 ms.author: cherylmc
-ms.openlocfilehash: d076e2b0057f0ba666fa47ffd0b3d7d1fcc14631
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: c13e7b507291d7671ac861fc7a8683c87be947a1
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68725583"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74896653"
 ---
 # <a name="about-zone-redundant-virtual-network-gateways-in-azure-availability-zones"></a>Избыточные между зонами шлюзы виртуальной сети в Зонах доступности Azure
 
@@ -39,21 +39,9 @@ ms.locfileid: "68725583"
 
 ## <a name="gwskus"></a>SKU шлюзов
 
-Шлюзы, избыточные между зонами, и зональные шлюзы используют новые номера SKU шлюзов. Мы добавили новые номера SKU шлюза виртуальной сети в регионах Зон доступности Azure. Эти номера SKU аналогичны соответствующим существующим номерам SKU для шлюза ExpressRoute и VPN-шлюза, за исключением того, что они относятся к шлюзам, избыточным между зонами, и зональным шлюзам.
+Шлюзы, избыточные между зонами, и зональные шлюзы используют новые номера SKU шлюзов. Мы добавили новые номера SKU шлюза виртуальной сети в регионах Зон доступности Azure. Эти номера SKU аналогичны соответствующим существующим номерам SKU для шлюза ExpressRoute и VPN-шлюза, за исключением того, что они относятся к шлюзам, избыточным между зонами, и зональным шлюзам. Эти номера SKU можно найти, выполнив команду AZ в имени SKU.
 
-Доступны следующие новые номера SKU шлюзов:
-
-### <a name="vpn-gateway"></a>VPN-шлюз
-
-* VpnGw1AZ
-* VpnGw2AZ
-* VpnGw3AZ
-
-### <a name="expressroute"></a>ExpressRoute
-
-* ErGw1AZ
-* ErGw2AZ
-* ErGw3AZ
+Сведения о SKU шлюзов см. в разделе SKU [шлюзов VPN](vpn-gateway-about-vpngateways.md#gwsku) и [номера SKU шлюза ExpressRoute](../expressroute/expressroute-about-virtual-network-gateways.md#gwsku).
 
 ## <a name="pipskus"></a>Номера SKU общедоступных IP-адресов
 
@@ -96,6 +84,6 @@ ms.locfileid: "68725583"
 
 Допускается одновременное функционирование VPN-шлюзов и шлюзов Express Route в одной виртуальной сети. Но при этом необходимо зарезервировать диапазон IP-адресов /27 для подсети шлюза.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание избыточного между зонами шлюза виртуальной сети](create-zone-redundant-vnet-gateway.md)

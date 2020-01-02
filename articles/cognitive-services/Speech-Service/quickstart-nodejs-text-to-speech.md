@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Преобразование текста в речь на Node.js — служба "Речь"
+title: Краткое руководство. Преобразование текста в речь на Node.js в службе "Речь"
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как преобразовать текст в речь с помощью Node.js и REST API преобразования текста в речь. В это руководство включен пример текста, оформленный по стандарту разметки SSML (Speech Synthesis Markup Language). Этот стандарт позволяет выбрать голос и язык для речевого ответа.
 services: cognitive-services
@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 07/05/2019
+ms.date: 12/09/2019
 ms.author: erhopf
-ms.openlocfilehash: 72be99ec666bb9e04ffca6e14ab4fcafa889ae68
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: b120acd25874585a744fb774aafe15d32d7baf08
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68553939"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976508"
 ---
 # <a name="quickstart-convert-text-to-speech-using-nodejs"></a>Краткое руководство. Преобразование текста в речь с использованием Node.js
 
 В этом кратком руководстве описано, как преобразовать текст в речь с помощью Node.js и REST API преобразования текста в речь. Текст запроса в этом руководстве оформлен по стандарту разметки [SSML (Speech Synthesis Markup Language)](speech-synthesis-markup.md), который позволяет выбрать голос и язык для ответа.
 
-Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом служб "Речь". Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](get-started.md), чтобы получить ключ подписки.
+Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом службы "Речь". Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](get-started.md), чтобы получить ключ подписки.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -52,9 +52,9 @@ const xmlbuilder = require('xmlbuilder');
 
 ## <a name="get-an-access-token"></a>Получение маркера доступа
 
-REST API преобразования текста в речь требует предоставить маркер доступа для аутентификации. Чтобы получить маркер доступа, нужно выполнить обмен. Эта функция меняет ключ подписки служб распознавания речи на маркер доступа через конечную точку `issueToken`.
+REST API преобразования текста в речь требует предоставить маркер доступа для аутентификации. Чтобы получить маркер доступа, нужно выполнить обмен. Эта функция меняет ключ подписки службы "Речь" на маркер доступа через конечную точку `issueToken`.
 
-В этом примере предполагается, что подписка служб "Речь" размещена в регионе "Западная часть США". Если вы используете другой регион, измените значение `uri`. См. [полный список регионов](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#rest-apis).
+В этом примере предполагается, что подписка службы "Речь" размещена в регионе "Западная часть США". Если вы используете другой регион, измените значение `uri`. См. [полный список регионов](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#rest-apis).
 
 Скопируйте в проект следующий код:
 
@@ -79,7 +79,7 @@ function getAccessToken(subscriptionKey) {
 
 ## <a name="make-a-request-and-save-the-response"></a>Выполнение запроса и сохранение ответа
 
-Здесь вы создадите запрос к API преобразования текста в речь и сохраните ответ службы "Речь". В этом примере предполагается, что вы используете конечную точку в регионе "Западная часть США". Если ресурс зарегистрирован в другом регионе, обновите значение `uri`. Подробные сведения см. в [списке регионов служб "Речь"](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#text-to-speech).
+Здесь вы создадите запрос к API преобразования текста в речь и сохраните ответ службы "Речь". В этом примере предполагается, что вы используете конечную точку в регионе "Западная часть США". Если ресурс зарегистрирован в другом регионе, обновите значение `uri`. Дополнительные сведения см. в [списке регионов службы "Речь"](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#text-to-speech).
 
 Теперь следует добавить в запрос обязательные заголовки. Обязательно сохраните в `User-Agent` имя ресурса (размещенного на портале Azure), а в `X-Microsoft-OutputFormat` укажите нужный аудиовыход. См. [полный список форматов аудиовыхода](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis).
 

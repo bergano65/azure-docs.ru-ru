@@ -1,5 +1,5 @@
 ---
-title: Problem signing in to on-premises app using Azure AD app proxy | Microsoft Docs
+title: Проблема входа в локальное приложение с помощью прокси приложения Azure AD | Документация Майкрософт
 description: Устранение типичных проблем, препятствующих выполнению входа в локальное приложение, интегрированное с Azure AD, с использованием прокси приложения Azure AD.
 services: active-directory
 documentationcenter: ''
@@ -58,5 +58,5 @@ ms.locfileid: "74232323"
   Приведенные ниже документы помогут устранить некоторые из наиболее распространенных проблем в этой категории.
   * [Возникла проблема с установкой соединителя агента Application Proxy](application-proxy-connector-installation-problem.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 [Как обеспечить безопасный удаленный доступ к локальным приложениям](application-proxy.md)

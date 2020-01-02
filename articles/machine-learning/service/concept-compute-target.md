@@ -1,5 +1,5 @@
 ---
-title: 'Целевые объекты вычислений: где можно обучать и развертывать модели'
+title: Что такое целевые показатели вычислений
 titleSuffix: Azure Machine Learning
 description: Определите, где вы хотите обучить или развернуть модель с помощью Машинное обучение Azure.
 services: machine-learning
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 11/04/2019
-ms.openlocfilehash: 75e789ac1f9c161bc67ba90062be39f986f5b140
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: dd4ac07ddf94bd7fc12a2673ce76fb0b9f4d2ccb
+ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73580581"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74901430"
 ---
 #  <a name="what-are-compute-targets-in-azure-machine-learning"></a>Что такое целевые показатели вычислений в Машинное обучение Azure? 
 
@@ -67,6 +67,6 @@ ms.locfileid: "73580581"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы узнаете, как выполнять следующие задачи:
+На вебинаре будут рассматриваться следующие темы:
 * [Настройка целевого объекта вычислений для обучения модели](how-to-set-up-training-targets.md)
 * [Развертывание модели в целевом объекте вычислений](how-to-deploy-and-where.md)

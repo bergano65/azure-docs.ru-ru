@@ -1,23 +1,22 @@
 ---
-title: Копирование файлов из нескольких контейнеров с помощью фабрики данных Azure
+title: Копирование файлов из нескольких контейнеров
 description: Узнайте, как использовать шаблон решения для копирования файлов из нескольких контейнеров с помощью фабрики данных Azure.
 services: data-factory
-documentationcenter: ''
 author: dearandyxu
 ms.author: yexu
 ms.reviewer: douglasl
-manager: craigg
+manager: anandsub
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
+ms.custom: seo-lt-2019
 ms.date: 11/1/2018
-ms.openlocfilehash: 004a623f0dfe251da9d452b53c2541e53339d965
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 35eff70c12e6f98fa74a4180bf82a369c1ecfaa4
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73684261"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74927706"
 ---
 # <a name="copy-files-from-multiple-containers-with-azure-data-factory"></a>Копирование файлов из нескольких контейнеров с помощью Фабрики данных Azure
 
@@ -49,7 +48,7 @@ ms.locfileid: "73684261"
 
     ![Создание нового подключения к целевому хранилищу](media/solution-template-copy-files-multiple-containers/copy-files-multiple-containers-image2.png)
 
-3. Выберите **использовать этот шаблон**.
+3. Выберите **Использовать этот шаблон**.
 
     ![Использование шаблона](media/solution-template-copy-files-multiple-containers/copy-files-multiple-containers-image3.png)
     

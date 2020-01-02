@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/29/2019
 ms.author: iainfou
-ms.openlocfilehash: a67d3a9fb74b1a4f07fc4995c268bb40a84834f7
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: cccdb54b89dff7c6a1fc9dac55c63b19d661ab65
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74035931"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74951315"
 ---
 # <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Предварительный просмотр. Войдите на виртуальную машину Linux в Azure, используя проверку подлинности Azure Active Directory
 
@@ -48,7 +48,7 @@ ms.locfileid: "74035931"
 
 В режиме предварительной версии этой функции сейчас поддерживаются следующие дистрибутивы Linux:
 
-| Дистрибутив | Версия |
+| Дистрибуция | Версия |
 | --- | --- |
 | CentOS | CentOS 6, CentOS 7 |
 | Debian | Debian 9 |
@@ -67,6 +67,19 @@ ms.locfileid: "74035931"
 
 
 Чтобы установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.31 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+
+## <a name="network-requirements"></a>Требования к сети
+
+Чтобы включить аутентификацию Azure AD для виртуальных машин Linux в Azure, необходимо убедиться, что конфигурация сети виртуальных машин разрешает исходящий доступ к следующим конечным точкам через TCP-порт 443:
+
+* https://login.microsoftonline.com
+* https://device.login.microsoftonline.com
+* https://pas.windows.net
+* https://management.azure.com
+* https://packages.microsoft.com
+
+> [!NOTE]
+> Сейчас нельзя настроить группы безопасности сети Azure для виртуальных машин, включенных с помощью аутентификации Azure AD.
 
 ## <a name="create-a-linux-virtual-machine"></a>Создание виртуальной машины Linux
 
@@ -194,10 +207,14 @@ Access denied
 - Если у вас есть несколько учетных записей пользователя, убедитесь, что при входе в Azure AD в окне браузера не была указана другая учетная запись.
 - В операционной системе Linux учитывается регистр. Различие между "Azureuser@contoso.onmicrosoft.com" и "azureuser@contoso.onmicrosoft.com" может вызвать несоответствие. Убедитесь в том, что имя участника-пользователя указано в командной строке SSH в правильном регистре.
 
+### <a name="other-limitations"></a>Другие ограничения
+
+Пользователи, которые наследуют права доступа через вложенные группы или назначения ролей, в настоящее время не поддерживаются. Пользователю или группе должны быть непосредственно назначены [требуемые назначения ролей](#configure-role-assignments-for-the-vm). Например, при использовании групп управления или назначений ролей вложенных групп не предоставляются правильные разрешения, позволяющие пользователю входить в систему.
+
 ## <a name="preview-feedback"></a>Отзывы о предварительной версии
 
 Поделиться своими отзывами об этой предварительной версии функции или сообщите о проблемах на [форуме отзывов и предложений по Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md).

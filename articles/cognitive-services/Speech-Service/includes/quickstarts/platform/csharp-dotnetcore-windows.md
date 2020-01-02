@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Настройка платформы для пакета SDK службы "Речь" для C# (.NET Core) — служба "Речь"
+title: Краткое руководство. Настройка платформы для пакета SDK службы "Речь" для .NET Core (C#) — служба "Речь"
 titleSuffix: Azure Cognitive Services
-description: В этом руководстве показано, как настроить платформу для приложения .NET Core на C# в Windows или macOS с пакетом SDK для службы "Речь",
+description: В этом руководстве показано, как настроить платформу для приложения .NET Core на C# в Windows или macOS с пакетом SDK службы "Речь".
 services: cognitive-services
 author: markamos
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 10/10/2019
 ms.author: erhopf
-ms.openlocfilehash: ff18fb372d5feb96369d5d51d386520665302c78
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 6bcbf56fd3248098e012d0c56700432ab7594440
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73504414"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74816369"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для C# (.NET Core).
 

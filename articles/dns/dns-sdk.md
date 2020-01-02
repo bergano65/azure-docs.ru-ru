@@ -1,7 +1,7 @@
 ---
 title: Создание зон и наборов записей DNS с помощью пакета SDK для .NET
 titleSuffix: Azure DNS
-description: In this learning path, get started creating DNS zones and record sets in Azure DNS by using the .NET SDK.
+description: В этой схеме обучения приступайте к созданию зон DNS и наборов записей в Azure DNS с помощью пакета SDK для .NET.
 services: dns
 documentationcenter: na
 author: asudbring
@@ -23,7 +23,7 @@ ms.locfileid: "74210956"
 ---
 # <a name="create-dns-zones-and-record-sets-using-the-net-sdk"></a>Создание зон и наборов записей DNS с помощью пакета SDK для .NET
 
-Вы можете автоматизировать операции создания, удаления или обновления зон, наборов записей и записей DNS, используя пакет SDK для DNS и библиотеку управления DNS для .NET. Полный проект Visual Studio доступен [здесь](https://www.microsoft.com/en-us/download/details.aspx?id=47268&WT.mc_id=DX_MVP4025064&e6b34bbe-475b-1abd-2c51-b5034bcdd6d2=True).
+Вы можете автоматизировать операции создания, удаления или обновления зон, наборов записей и записей DNS, используя пакет SDK для DNS и библиотеку управления DNS для .NET. Полный проект Visual Studio доступен [здесь.](https://www.microsoft.com/en-us/download/details.aspx?id=47268&WT.mc_id=DX_MVP4025064&e6b34bbe-475b-1abd-2c51-b5034bcdd6d2=True)
 
 ## <a name="create-a-service-principal-account"></a>Создание учетной записи субъекта-службы
 
@@ -146,7 +146,7 @@ recordSet = await dnsClient.RecordSets.CreateOrUpdateAsync(resourceGroupName, zo
 
 ## <a name="list-zones-and-record-sets"></a>Вывод списка зон и наборов записей
 
-To list zones, use the *DnsManagementClient.Zones.List...* methods, which support listing either all zones in a given resource group or all zones in a given Azure subscription (across resource groups.) To list record sets, use *DnsManagementClient.RecordSets.List...* methods, which support either listing all record sets in a given zone or only those record sets of a specific type.
+Чтобы вывести список зон, используйте методы *DnsManagementClient. Zones. List...* , которые поддерживают перечисление всех зон в заданной группе ресурсов или всех зон в заданной подписке Azure (в группах ресурсов). Чтобы вывести список наборов записей, используйте методы *DnsManagementClient. recordsets. List...* , которые поддерживают либо перечисление всех наборов записей в данной зоне, либо только наборы записей определенного типа.
 
 Обратите внимание, что при выводе списка зон и наборов записей может быть применена разбивка на страницы.  В приведенном ниже примере показано, как выполнить итерацию по страницам результатов. (Для принудительного разбиения на страницы используется небольшой размер страницы "2". На практике этот параметр следует пропустить и использовать размер страницы по умолчанию.)
 
@@ -164,6 +164,6 @@ while (page.NextPageLink != null)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Загрузите [пример проекта SDK .NET для Azure DNS](https://www.microsoft.com/en-us/download/details.aspx?id=47268&WT.mc_id=DX_MVP4025064&e6b34bbe-475b-1abd-2c51-b5034bcdd6d2=True), который содержит дополнительные примеры использования пакета SDK .NET для Azure DNS, а также примеры других типов записей DNS.

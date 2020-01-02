@@ -1,6 +1,6 @@
 ---
 title: Непрерывное развертывание для Функций Azure
-description: Use the continuous deployment features of Azure App Service to publish your functions.
+description: Используйте функции непрерывного развертывания службы приложений Azure для публикации функций.
 ms.assetid: 361daf37-598c-4703-8d78-c77dbef91643
 ms.topic: conceptual
 ms.date: 09/25/2019
@@ -13,59 +13,59 @@ ms.locfileid: "74230899"
 ---
 # <a name="continuous-deployment-for-azure-functions"></a>Непрерывное развертывание для Функций Azure
 
-You can use Azure Functions to deploy your code continuously by using [source control integration](functions-deployment-technologies.md#source-control). Source control integration enables a workflow in which a code update triggers deployment to Azure. If you're new to Azure Functions, get started by reviewing the [Azure Functions overview](functions-overview.md).
+Вы можете использовать функции Azure для непрерывного развертывания кода с помощью [интеграции системы управления версиями](functions-deployment-technologies.md#source-control). Интеграция системы управления версиями включает рабочий процесс, в котором обновление кода активирует развертывание в Azure. Если вы не знакомы с функциями Azure, начните с просмотра [общих сведений о функциях Azure](functions-overview.md).
 
-Continuous deployment is a good option for projects where you integrate multiple and frequent contributions. When you use continuous deployment, you maintain a single source of truth for your code, which allows teams to easily collaborate. You can configure continuous deployment in Azure Functions from the following source code locations:
+Непрерывное развертывание является хорошим вариантом для проектов, в которых выполняется интеграция нескольких и частых публикаций. При использовании непрерывного развертывания вы сохраняете единый источник истинности кода, что позволяет командам легко сотрудничать. Вы можете настроить непрерывное развертывание в функциях Azure из следующих расположений исходного кода:
 
 * [Azure Repos](https://azure.microsoft.com/services/devops/repos/)
 * [GitHub](https://github.com)
 * [Bitbucket;](https://bitbucket.org/)
 
-The unit of deployment for functions in Azure is the function app. All functions in a function app are deployed at the same time. After you enable continuous deployment, access to function code in the Azure portal is configured as *read-only* because the source of truth is set to be elsewhere.
+Единицей развертывания для функций в Azure является приложение-функция. Все функции в приложении-функции развертываются одновременно. После включения непрерывного развертывания доступ к коду функции в портал Azure настраивается как " *только для чтения* ", так как источник истинности установлен в другое место.
 
-## <a name="requirements-for-continuous-deployment"></a>Requirements for continuous deployment
+## <a name="requirements-for-continuous-deployment"></a>Требования к непрерывному развертыванию
 
-For continuous deployment to succeed, your directory structure must be compatible with the basic folder structure that Azure Functions expects.
+Для успешности непрерывного развертывания структура каталогов должна быть совместима с базовой структурой папок, которую ожидает служба "функции Azure".
 
 [!INCLUDE [functions-folder-structure](../../includes/functions-folder-structure.md)]
 
 >[!NOTE]  
-> Continuous deployment is not yet supported for Linux apps running on a Consumption plan. 
+> Непрерывное развертывание пока не поддерживается для приложений Linux, работающих в плане потребления. 
 
-## <a name="credentials"></a>Set up continuous deployment
+## <a name="credentials"></a>Настройка непрерывного развертывания
 
-To configure continuous deployment for an existing function app, complete these steps. The steps demonstrate integration with a GitHub repository, but similar steps apply for Azure Repos or other source code repositories.
+Чтобы настроить непрерывное развертывание для существующего приложения функции, выполните следующие действия. Шаги демонстрируют интеграцию с репозиторием GitHub, но аналогичные действия применяются для Azure Repos или других репозиториев исходного кода.
 
-1. In your function app in the [Azure portal](https://portal.azure.com), select **Platform features** > **Deployment Center**.
+1. В приложении функции в [портал Azure](https://portal.azure.com)выберите **функции платформы** > **центр развертывания**.
 
-    ![Open Deployment Center](./media/functions-continuous-deployment/platform-features.png)
+    ![Открыть центр развертывания](./media/functions-continuous-deployment/platform-features.png)
 
-2. In **Deployment Center**, select **GitHub**, and then select **Authorize**. If you've already authorized GitHub, select **Continue**. 
+2. В **центре развертывания**выберите **GitHub**и щелкните **авторизовать**. Если у вас уже есть авторизация GitHub, нажмите кнопку **продолжить**. 
 
-    ![Azure App Service Deployment Center](./media/functions-continuous-deployment/github.png)
+    ![Центр развертывания службы приложений Azure](./media/functions-continuous-deployment/github.png)
 
-3. In GitHub, select the **Authorize AzureAppService** button. 
+3. В GitHub нажмите кнопку **авторизовать AzureAppService** . 
 
-    ![Authorize Azure App Service](./media/functions-continuous-deployment/authorize.png)
+    ![Авторизация службы приложений Azure](./media/functions-continuous-deployment/authorize.png)
     
-    In **Deployment Center** in the Azure portal, select **Continue**.
+    В **центре развертывания** в портал Azure выберите **продолжить**.
 
-4. Select one of the following build providers:
+4. Выберите один из следующих поставщиков сборки:
 
-    * **App Service build service**: Best when you don't need a build or if you need a generic build.
-    * **Azure Pipelines (Preview)** : Best when you need more control over the build. This provider currently is in preview.
+    * **Служба сборок службы приложений**: лучше, если сборка не нужна или если требуется универсальная сборка.
+    * **Azure pipelines (Предварительная версия)** . рекомендуется, если требуется больший контроль над сборкой. Сейчас этот поставщик находится на этапе предварительной версии.
 
-    ![Select a build provider](./media/functions-continuous-deployment/build.png)
+    ![Выбор поставщика сборки](./media/functions-continuous-deployment/build.png)
 
-5. Configure information specific to the source control option you specified. For GitHub, you must enter or select values for **Organization**, **Repository**, and **Branch**. The values are based on the location of your code. Затем выберите **Продолжить**.
+5. Настройте сведения, относящиеся к указанному параметру системы управления версиями. Для GitHub необходимо ввести или выбрать значения для параметров **Организация**, **репозиторий**и **ветвь**. Значения основаны на расположении кода. Затем выберите **Продолжить**.
 
     ![Настройка GitHub](./media/functions-continuous-deployment/github-specifics.png)
 
-6. Review all details, and then select **Finish** to complete your deployment configuration.
+6. Просмотрите все сведения, а затем нажмите кнопку **Готово** , чтобы завершить настройку развертывания.
 
-    ![Резюме](./media/functions-continuous-deployment/summary.png)
+    ![summary](./media/functions-continuous-deployment/summary.png)
 
-When the process is finished, all code from the specified source is deployed to your app. At that point, changes in the deployment source trigger a deployment of those changes to your function app in Azure.
+По завершении процесса весь код из указанного источника развертывается в приложении. В этот момент изменения в источнике развертывания активируют развертывание этих изменений в приложении-функции в Azure.
 
 ## <a name="deployment-scenarios"></a>Сценарии развертывания
 
@@ -73,14 +73,14 @@ When the process is finished, all code from the specified source is deployed to 
 
 ### <a name="move-existing-functions-to-continuous-deployment"></a>Перемещение имеющихся функций в среду непрерывного развертывания
 
-If you've already written functions in the [Azure portal](https://portal.azure.com) and you want to download the contents of your app before you switch to continuous deployment, go to the **Overview** tab of your function app. Select the **Download app content** button.
+Если вы уже написали функции в [портал Azure](https://portal.azure.com) и хотите скачать содержимое приложения перед переключением на непрерывное развертывание, перейдите на вкладку **Обзор** приложения функции. Нажмите кнопку **скачать содержимое приложения** .
 
-![Download app content](./media/functions-continuous-deployment/download.png)
+![Скачать содержимое приложения](./media/functions-continuous-deployment/download.png)
 
 > [!NOTE]
-> After you configure continuous integration, you can no longer edit your source files in the Functions portal.
+> После настройки непрерывной интеграции вы больше не сможете изменять исходные файлы на портале функций.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Рекомендации по функциям Azure](functions-best-practices.md)
+> [Рекомендации по Функциям Azure](functions-best-practices.md)

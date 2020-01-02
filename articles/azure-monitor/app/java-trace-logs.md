@@ -1,5 +1,5 @@
 ---
-title: Изучение журналов трассировки Java в Azure Application Insights | Документация Майкрософт
+title: Изучение журналов трассировки Java в Azure Application Insights
 description: Поиск данных трассировки Log4J или Logback в Application Insights
 ms.service: azure-monitor
 ms.subservice: application-insights
@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/18/2019
-ms.openlocfilehash: 23e3116a0cc3283191d00079e0926dc206e677f0
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: f552ccdbc67df93913c698e5d763dbb62b48a4ad
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72819338"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74927242"
 ---
 # <a name="explore-java-trace-logs-in-application-insights"></a>Просмотр журналов трассировки Java в Application Insights
 Если вы используете Logback или Log4J (версия 1.2 или 2.0) для трассировки, можно настроить автоматическую пересылку журналов в Application Insights, где вы сможете их изучить.
@@ -22,27 +22,41 @@ ms.locfileid: "72819338"
 
 ## <a name="using-the-application-insights-java-agent"></a>Использование агента Application Insights Java
 
-Можно настроить Application Insights агент Java для автоматической записи журналов, включив эту функцию в файл `AI-Agent.xml`:
+По умолчанию агент Application Insights Java автоматически отслеживает ведение журнала, выполненное на уровне `WARN` и выше.
+
+Вы можете изменить пороговое значение ведения журнала, которое захватывается с помощью файла `AI-Agent.xml`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <ApplicationInsightsAgent>
    <Instrumentation>
-      <BuiltIn enabled="true">
-         <Logging enabled="true" />
+      <BuiltIn>
+         <Logging threshold="info"/>
       </BuiltIn>
    </Instrumentation>
-   <AgentLogger />
 </ApplicationInsightsAgent>
 ```
 
-Кроме того, можно выполнить приведенные ниже инструкции.
+Вы можете отключить запись журнала агента Java с помощью файла `AI-Agent.xml`:
 
-## <a name="install-the-java-sdk"></a>Установка пакета SDK для Java
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationInsightsAgent>
+   <Instrumentation>
+      <BuiltIn>
+         <Logging enabled="false"/>
+      </BuiltIn>
+   </Instrumentation>
+</ApplicationInsightsAgent>
+```
+
+## <a name="alternatively-as-opposed-to-using-the-java-agent-you-can-follow-the-instructions-below"></a>Кроме того, в отличие от использования агента Java, можно выполнить приведенные ниже инструкции.
+
+### <a name="install-the-java-sdk"></a>Установка пакета SDK для Java
 
 Если вы еще не сделали этого, следуйте инструкциям по установке [пакета SDK для Application Insights для Java][java].
 
-## <a name="add-logging-libraries-to-your-project"></a>Добавление в проект библиотеки ведения журналов
+### <a name="add-logging-libraries-to-your-project"></a>Добавление в проект библиотеки ведения журналов
 *Выберите подходящий метод для проекта.*
 
 #### <a name="if-youre-using-maven"></a>Если вы используете Maven...
@@ -123,7 +137,7 @@ ms.locfileid: "72819338"
 | Log4J версии 1.2 |[JAR-файл аппендера Log4J версии 1.2](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22applicationinsights-logging-log4j1_2%22) |applicationinsights-logging-log4j1_2 |
 
 
-## <a name="add-the-appender-to-your-logging-framework"></a>Добавление аппендера в платформу ведения журнала
+### <a name="add-the-appender-to-your-logging-framework"></a>Добавление аппендера в платформу ведения журнала
 Чтобы начать трассировку, добавьте соответствующий фрагмент кода в файл конфигурации Log4J или Logback: 
 
 *Logback*

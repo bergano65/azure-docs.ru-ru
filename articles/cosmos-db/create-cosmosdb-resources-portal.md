@@ -1,21 +1,21 @@
 ---
-title: Создайте учетную запись Azure Cosmos, контейнер и элементы на портале Azure.
-description: Создайте учетную запись Azure Cosmos, контейнер и элементы на портале Azure.
+title: Краткое руководство. Создание базы данных Azure Cosmos на портале Azure
+description: В этом кратком руководстве показано, как создать базу данных, контейнер и элементы Azure Cosmos с помощью портала Azure.
 author: SnehaGunda
 ms.author: sngun
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 09/01/2019
-ms.openlocfilehash: e0a9f4fa6ca5ff7447d2ffaef3eab2f3c54fdeae
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.date: 12/02/2019
+ms.openlocfilehash: 9b563f7546710b0cb07573d32b2f3939d8e64085
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70241262"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74872219"
 ---
-# <a name="quickstart-create-an-azure-cosmos-account-container-and-items-with-the-azure-portal"></a>Краткое руководство. Создание учетной записи Azure Cosmos, контейнера и элементов на портале Azure
+# <a name="quickstart-create-an-azure-cosmos-account-database-container-and-items-from-the-azure-portal"></a>Краткое руководство. Создание учетной записи, базы данных, контейнера и элементов Azure Cosmos на портале Azure
 
 > [!div class="op_single_selector"]
 > * [портал Azure](create-cosmosdb-resources-portal.md)

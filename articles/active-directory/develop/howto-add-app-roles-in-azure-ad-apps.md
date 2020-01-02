@@ -1,29 +1,26 @@
 ---
-title: Добавление ролей приложения в зарегистрированное Azure Active Directory приложении и получение их в токене
+title: Добавление ролей приложения и получение их из токена | Службы
 titleSuffix: Microsoft identity platform
 description: Сведения о добавлении ролей приложения в приложение, зарегистрированное в Azure Active Directory, назначении ролей для пользователей и групп и их получение в утверждении `roles` в токене.
 services: active-directory
 documentationcenter: ''
 author: kkrishna
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: kkrishna
-ms.reviewer: ''
+ms.reviewer: kkrishna, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c838c6fe256e2960842c5b40f58f8a5d5b1fdf3
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 0fe116b5ae26522c9bce0322123836a6e08d3cfd
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73473783"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74917920"
 ---
 # <a name="how-to-add-app-roles-in-your-application-and-receive-them-in-the-token"></a>Практическое руководство. Добавление ролей приложения в приложение, зарегистрированное в Azure Active Directory, и их получение в токене
 
@@ -39,16 +36,12 @@ ms.locfileid: "73473783"
 
 ### <a name="declare-app-roles-using-azure-portal"></a>Объявление ролей приложения, использующих портал Azure
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 1. На верхней панели выберите свою учетную запись, а затем щелкните **Переключение каталога**.
 1. Когда откроется панель **Каталог и подписка**, выберите клиент Active Directory, в котором необходимо зарегистрировать приложение, из списка **Favorites** (Избранное) или **Все каталоги**.
 1. В меню навигации слева щелкните **Все службы** и выберите **Azure Active Directory**.
-1. В области **Azure Active Directory** выберите **Регистрация приложений (устаревший)** , чтобы просмотреть список всех приложений.
-
-     Если нужное приложение не отображается здесь, используйте различные фильтры в верхней части списка **Регистрация приложений (прежние версии)** , чтобы ограничить список или прокрутить список, чтобы найти приложение.
-
-1. Выберите приложение, в котором требуется определить роли приложения.
-1. В колонке приложения выберите **Манифест**.
+1. На панели **Azure Active Directory** выберите **Регистрация приложений**, чтобы просмотреть список всех приложений.
+1. Выберите приложение, в котором требуется определить роли приложения. Затем выберите **Манифест**.
 1. Измените манифест приложения. Для этого найдите параметр `appRoles` и добавьте все имеющиеся роли приложения.
 
      > [!NOTE]

@@ -1,6 +1,6 @@
 ---
 title: Сведения о кодировщиках, рекомендуемых службами мультимедиа Azure | Документация Майкрософт
-description: Сведения о кодировщиках, рекомендуемых службами мультимедиа
+description: В этой статье приведен список локальных кодировщиков, рекомендованных службами мультимедиа Azure.
 services: media-services
 keywords: encoding;encoders;media
 author: dbgeorge
@@ -9,12 +9,12 @@ ms.author: johndeu
 ms.date: 03/20/2019
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: fc481129e652c6dacd15a5a6d039a9118393e8f1
-ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
+ms.openlocfilehash: 4a0af9d040c801c125d04a5af72b2ea53322ccdb
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67854242"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74886577"
 ---
 # <a name="recommended-on-premises-encoders"></a>Рекомендуемые локальные кодировщики
 При потоковой трансляции с помощью служб мультимедиа Azure можно указать, как ваш канал должен принимать входной поток. Если вы решили использовать локальный кодировщик с каналом кодирования в реальном времени, ваш кодировщик должен передать высококачественный поток с односкоростной передачей в качестве выходных данных. Если вы решили использовать локальный кодировщик с транзитным каналом, кодировщик должен передать поток с несколькими скоростями в качестве выходных данных со всеми требуемыми качествами вывода. Дополнительные сведения см. [в статье динамическая Потоковая трансляция с помощью локальных кодировщиков](media-services-live-streaming-with-onprem-encoders.md).

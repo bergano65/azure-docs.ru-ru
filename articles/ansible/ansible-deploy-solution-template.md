@@ -3,17 +3,13 @@ title: Краткое руководство по развертыванию ш�
 description: В этом кратком руководстве в узнаете, как развернуть шаблон решения Ansible на виртуальной машине CentOS, размещенной в Azure, а также изучите инструменты, которые настроены для работы с Azure.
 keywords: ansible, azure, devops, solution template, virtual machine, managed identities for azure resources, centos, red hat
 ms.topic: quickstart
-ms.service: ansible
-author: tomarchermsft
-manager: jeconnoc
-ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 6aa721ee6cf6680518a28d050c22d8649f0f531f
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: ebd01411ff27b0e95be21ef147098a90b6f62742
+ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73833168"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74156335"
 ---
 # <a name="quickstart-deploy-the-ansible-solution-template-for-azure-to-centos"></a>Краткое руководство. Развертывание шаблона решения Ansible для Azure в CentOS
 

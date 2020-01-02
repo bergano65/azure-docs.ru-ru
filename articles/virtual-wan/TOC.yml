@@ -24,8 +24,6 @@
           href: migrate-from-hub-spoke-topology.md
         - name: Архитектура глобальной транзитной сети
           href: virtual-wan-global-transit-network-architecture.md
-        - name: Уровень управления Office 365 в Виртуальной глобальной сети
-          href: virtual-wan-office365-overview.md
 - name: Руководства
   items:
     - name: Подключение шлюза виртуальной сети к Виртуальной глобальной сети
@@ -40,6 +38,12 @@
       href: virtual-wan-custom-ipsec-portal.md
     - name: "Настройка сертификатов для пользовательского VPN-подключения (точка\_— сеть)"
       href: certificates-point-to-site.md
+    - name: "Настройка клиента Azure\_AD для VPN пользователя"
+      href: openvpn-azure-ad-tenant.md
+    - name: Включение многофакторной идентификации для VPN пользователя
+      href: openvpn-azure-ad-mfa.md
+    - name: Настройка аутентификации Azure AD для VPN пользователя (предварительная версия)
+      href: virtual-wan-point-to-site-azure-ad.md
     - name: Настройка автоматизации (участники Виртуальной глобальной сети)
       href: virtual-wan-configure-automation-providers.md
     - name: Настройка маршрутизации

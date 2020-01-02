@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: tutorial
-ms.date: 07/03/2019
+ms.date: 12/05/2019
 ms.author: areddish
-ms.openlocfilehash: 00d3b1dce9bacc01c8319c678ab27a3d4cc8da88
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: d7e3eeeea6bb25b4cddaea1d04e86f23ab7e4f5f
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73718421"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74969845"
 ---
 # <a name="tutorial-run-tensorflow-model-in-python"></a>Руководство по Запуск модели TensorFlow в среде Python
 
@@ -68,7 +68,7 @@ with open(labels_filename, 'rt') as lf:
 
 ## <a name="prepare-an-image-for-prediction"></a>Подготовка изображения для прогнозирования
 
-Необходимо выполнить несколько действий, чтобы подготовить изображение для прогнозирования. Эти действия имитируют обработку изображения, выполняемую во время обучения.
+Для подготовки образа к прогнозированию необходимо выполнить несколько действий. Эти действия имитируют обработку изображения, выполняемую во время обучения.
 
 ### <a name="open-the-file-and-create-an-image-in-the-bgr-color-space"></a>Открытие файла и создание изображения в цветовой схеме BGR
 

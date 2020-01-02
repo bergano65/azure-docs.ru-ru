@@ -1,22 +1,22 @@
 ---
-title: On-premises password writeback integration with Azure AD SSPR - Azure Active Directory
-description: Get cloud passwords written back to on-premises AD infrastructure
+title: Интеграция локальной обратной записи паролей с Azure AD SSPR — Azure Active Directory
+description: Получение облачных паролей, записанных обратно в локальную инфраструктуру AD
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 05/06/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 758d7122a991309504c5cac18b9aaf1268808887
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 151e7b2ab091959c8b6c08d366318a49987aefd9
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74420656"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74848533"
 ---
 # <a name="what-is-password-writeback"></a>Что такое компонент обратной записи паролей?
 
@@ -43,7 +43,7 @@ ms.locfileid: "74420656"
 * **Не требуются какие-либо правила брандмауэра для входящего трафика**. Компонент обратной записи паролей использует ретранслятор служебной шины Azure в качестве базового коммуникационного канала. Весь обмен данными является исходящим и осуществляется через порт 443.
 
 > [!NOTE]
-> Обратная запись паролей не поддерживается для учетных записей администраторов в защищенных группах в локальной службе Active Directory. Administrators can change their password in the cloud but cannot use password reset to reset a forgotten password. Дополнительные сведения о защищенных группах см. в статье [Appendix C: Protected Accounts and Groups in Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-c--protected-accounts-and-groups-in-active-directory) (Приложение В. Защищенные учетные записи и группы в Active Directory).
+> Обратная запись паролей не поддерживается для учетных записей администраторов в защищенных группах в локальной службе Active Directory. Администраторы могут изменять свой пароль в облаке, но не могут использовать сброс пароля для сброса забытого пароля. Дополнительные сведения о защищенных группах см. в статье [Appendix C: Protected Accounts and Groups in Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-c--protected-accounts-and-groups-in-active-directory) (Приложение В. Защищенные учетные записи и группы в Active Directory).
 
 ## <a name="licensing-requirements-for-password-writeback"></a>Требования к лицензированию для обратной записи паролей
 
@@ -161,10 +161,10 @@ ms.locfileid: "74420656"
    * Все операции сброса пароля пользователя с помощью PowerShell версии 1, PowerShell версии 2 или API Graph Azure AD.
 * **Неподдерживаемые операции администрирования:**
    * все операции сброса пароля пользователя, инициируемые администратором с помощью PowerShell версии 1, PowerShell версии 2 или API Graph Azure AD.
-   * Any administrator-initiated end-user password reset from the [Microsoft 365 admin center](https://admin.microsoft.com)
+   * Любые сброс пароля конечного пользователя, инициированный администратором, из [центра администрирования Microsoft 365](https://admin.microsoft.com)
 
 > [!WARNING]
-> Use of the checkbox "User must change password at next logon" in on-premises Active Directory administrative tools like Active Directory Users and Computers or the Active Directory Administrative Center is supported as a preview feature of Azure AD Connect. For more information, see the article, [Implement password hash synchronization with Azure AD Connect sync](../hybrid/how-to-connect-password-hash-synchronization.md#public-preview-of-synchronizing-temporary-passwords-and-force-password-on-next-logon).
+> Используйте флажок "пользователь должен сменить пароль при следующем входе в систему" в локальных Active Directory средствах администрирования, таких как Active Directory пользователи и компьютеры, или центр администрирования Active Directory поддерживается в качестве предварительной версии функции Azure AD Connect. Дополнительные сведения см. в статье [Реализация синхронизации хэшей паролей с Azure AD Connect синхронизацией](../hybrid/how-to-connect-password-hash-synchronization.md#public-preview-of-synchronizing-temporary-passwords-and-force-password-on-next-logon).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

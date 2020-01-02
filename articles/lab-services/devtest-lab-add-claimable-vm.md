@@ -1,5 +1,5 @@
 ---
-title: Create and manage claimable VMs in Azure DevTest Labs | Microsoft Docs
+title: Создание запрашиваемых виртуальных машин и управление ими в Azure DevTest Labs | Документация Майкрософт
 description: Узнайте, как добавить запрашиваемую виртуальную машину в лабораторию в Azure DevTest Labs
 services: devtest-lab,virtual-machines
 documentationcenter: na
@@ -72,7 +72,7 @@ ms.locfileid: "74383952"
   ![Запрос любой запрашиваемой виртуальной машины](./media/devtest-lab-add-vm/devtestlab-claim-any.png)
 
 
-After a user claims a VM, DevTest Labs will start the machine and move it up into lab user's list of "My virtual machines". This means the lab user will now have owner privileges on this machine. The time required for this step may vary depending on start up times as well as any other custom actions being performed during the claim event. Once claimed, the machine is no longer available in the claimable pool.  
+После того как пользователь получит заявку на виртуальную машину, DevTest Labs запустит его и переместит в список "мои виртуальные машины" пользователя лаборатории. Это означает, что пользователь лаборатории теперь имеет права владельца на этом компьютере. Время, необходимое для этого шага, может отличаться в зависимости от времени запуска, а также от других настраиваемых действий, выполняемых во время события утверждения. После получения заявки компьютер больше не будет доступен в запрашиваемом пуле.  
 
 ## <a name="unclaim-a-vm"></a>Освобождение виртуальной машины
 
@@ -86,7 +86,7 @@ After a user claims a VM, DevTest Labs will start the machine and move it up int
 
   ![Действие освобождения на панели управления виртуальной машиной](./media/devtest-lab-add-vm/devtestlab-unclaim-VM.png)
 
-When a user unclaims a VM, they no longer have owner permissions for that specific lab VM and it is available to be claimed by any other lab user in the state that it was retured to the pool. 
+Когда пользователь отменяет виртуальную машину, у него больше нет разрешений владельца на эту виртуальную машину лаборатории, и ее можно запросить другим пользователям лаборатории в том состоянии, в котором оно было ретуредо в пул. 
 
 ### <a name="transferring-the-data-disk"></a>Передача диска данных
 Если к запрашиваемой виртуальной машине подключен диск данных, то при освобождении виртуальной машины диск данных остается подключенным к ней. Когда другой пользователь отправит заявку на эту виртуальную машину, он одновременно получит и подключенный диск данных.
@@ -97,6 +97,6 @@ When a user unclaims a VM, they no longer have owner permissions for that specif
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 * После создания виртуальной машины вы можете подключиться к ней, выбрав **Подключиться** на соответствующей панели управления.
 * Изучите [коллекцию шаблонов быстрого запуска для Azure Resource Manager в DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).

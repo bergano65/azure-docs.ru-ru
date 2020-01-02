@@ -8,12 +8,12 @@ ms.author: grhuynh
 ms.service: genomics
 ms.topic: quickstart
 ms.date: 01/11/2019
-ms.openlocfilehash: eab5714cb43816c617190fc394f6156ab08ff51d
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 772fd74446b43869721afe38fb107cfff8404e99
+ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838727"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539086"
 ---
 # <a name="quickstart-run-a-workflow-through-the-microsoft-genomics-service"></a>Краткое руководство. Запуск рабочего процесса в службе Microsoft Genomics
 
@@ -47,7 +47,8 @@ ms.locfileid: "73838727"
 
 
 В строке меню вверху выберите пункт "Уведомления", чтобы отслеживать процесс развертывания.
-![Уведомления Microsoft Genomics](./media/quickstart-run-genomics-workflow-portal/genomics-notifications-box.png "MУведомления Microsoft Genomics)
+
+![Уведомления Microsoft Genomics](./media/quickstart-run-genomics-workflow-portal/genomics-notifications-box.png "Уведомления Microsoft Genomics")
 
 
 
@@ -110,7 +111,7 @@ msgen list -f “<full path where you saved the config file>”
 Служба Microsoft Genomics ожидает входные файлы в виде блочных BLOB-объектов в учетной записи хранения Azure. Она также записывает выходные файлы как блочные BLOB-объекты в определенный пользователем контейнер в учетной записи хранения Azure. Входные и выходные файлы могут находиться в разных учетных записях хранения.
 Если в вашей учетной записи хранения Azure уже есть данные, вам нужно только убедиться, что она находится в том же расположении, что и учетная запись Genomics. Иначе при запуске службы Genomics вы будете оплачивать исходящие данные. Если у вас еще нет учетной записи хранения Microsoft Azure, необходимо создать ее и отправить туда данные. Дополнительные сведения об учетных записях хранения Azure см. [здесь](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account). Из этой статьи вы узнаете, что такое учетная запись хранения и для чего она нужна. Чтобы создать учетную запись хранения Microsoft Azure, перейдите на [портал Azure](https://portal.azure.com/#create/Microsoft.StorageAccount-ARM ).  
 
-![Колонка "Создание хранилища"](./media/quickstart-run-genomics-workflow-portal/genomics-storage-create-blade.png "Колонка "Создание хранилища"")
+![Колонка Создание хранилища](./media/quickstart-run-genomics-workflow-portal/genomics-storage-create-blade.png "Колонка Создание хранилища")
 
 Настройте учетную запись хранения, указав следующую информацию, как показано на предыдущем рисунке. Используйте стандартные параметры для учетной записи хранения. Укажите только, что она не является учетной записью общего назначения, а предназначена для хранилища BLOB-объектов. В хранилище BLOB-объектов операции скачивания или отправки могут выполняться в 2–5 раз быстрее.  Рекомендуется модель развертывания по умолчанию (Azure Resource Manager).  
 

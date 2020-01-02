@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 12/20/2017
 ms.author: cshoe
-ms.openlocfilehash: f253aeb202671a3f90eabb1d04af95333540a239
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 77915409e3c44a01e26c35c0facb2d577c331fd8
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231150"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74914938"
 ---
 # <a name="microsoft-graph-bindings-for-azure-functions"></a>Привязки Microsoft Graph для службы "Функции Azure"
 
@@ -28,7 +28,7 @@ ms.locfileid: "74231150"
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
 > [!Note]
-> Привязки Microsoft Graph сейчас доступны в предварительной версии для Функций Azure версии 2.x. Они не поддерживаются в Функциях версии 1.x.
+> Сейчас привязки Microsoft Graph доступны в предварительной версии для функций Azure версий 2. x и выше. Они не поддерживаются в Функциях версии 1.x.
 
 ## <a name="packages"></a>Пакеты
 
@@ -1084,7 +1084,7 @@ module.exports = function (context) {
 
 ### <a name="webhook-trigger---attributes"></a>Атрибуты триггера веб-перехватчика
 
-In [C# class libraries](functions-dotnet-class-library.md), use the [GraphWebhookTrigger](https://github.com/Azure/azure-functions-microsoftgraph-extension/blob/master/src/MicrosoftGraphBinding/Bindings/GraphWebhookTriggerAttribute.cs) attribute.
+В [ C# библиотеках классов](functions-dotnet-class-library.md)используйте атрибут [GraphWebhookTrigger](https://github.com/Azure/azure-functions-microsoftgraph-extension/blob/master/src/MicrosoftGraphBinding/Bindings/GraphWebhookTriggerAttribute.cs) .
 
 ### <a name="webhook-trigger---configuration"></a>Конфигурация триггера веб-перехватчика
 
@@ -1236,7 +1236,7 @@ module.exports = function (context, req) {
 
 ### <a name="webhook-input---attributes"></a>Атрибуты входной привязки веб-перехватчика
 
-In [C# class libraries](functions-dotnet-class-library.md), use the [GraphWebhookSubscription](https://github.com/Azure/azure-functions-microsoftgraph-extension/blob/master/src/MicrosoftGraphBinding/Bindings/GraphWebhookSubscriptionAttribute.cs) attribute.
+В [ C# библиотеках классов](functions-dotnet-class-library.md)используйте атрибут [GraphWebhookSubscription](https://github.com/Azure/azure-functions-microsoftgraph-extension/blob/master/src/MicrosoftGraphBinding/Bindings/GraphWebhookSubscriptionAttribute.cs) .
 
 ### <a name="webhook-input---configuration"></a>Конфигурация входной привязки веб-перехватчика
 
@@ -1377,7 +1377,7 @@ module.exports = function (context, req) {
 
 ### <a name="webhook-output---attributes"></a>Атрибуты выходной привязки веб-перехватчика
 
-In [C# class libraries](functions-dotnet-class-library.md), use the [GraphWebhookSubscription](https://github.com/Azure/azure-functions-microsoftgraph-extension/blob/master/src/MicrosoftGraphBinding/Bindings/GraphWebhookSubscriptionAttribute.cs) attribute.
+В [ C# библиотеках классов](functions-dotnet-class-library.md)используйте атрибут [GraphWebhookSubscription](https://github.com/Azure/azure-functions-microsoftgraph-extension/blob/master/src/MicrosoftGraphBinding/Bindings/GraphWebhookSubscriptionAttribute.cs) .
 
 ### <a name="webhook-output---configuration"></a>Конфигурация выходной привязки веб-перехватчика
 
@@ -1409,7 +1409,7 @@ In [C# class libraries](functions-dotnet-class-library.md), use the [GraphWebhoo
 
 Существует два способа обновления подписок:
 
-- Использование удостоверения приложения для всех подписок. This will require consent from an Azure Active Directory admin. This can be used by all languages supported by Azure Functions.
+- Использование удостоверения приложения для всех подписок. Для этого потребуется согласие от администратора Azure Active Directory. Это может быть использовано всеми языками, поддерживаемыми функциями Azure.
 - Использование удостоверения, связанного с каждой подпиской, путем привязки каждого идентификатора пользователя вручную. В этом случае для выполнения привязки потребуется пользовательский код. Этот метод можно использовать только с функциями .NET.
 
 В этом разделе содержатся примеры для каждого из этих подходов:

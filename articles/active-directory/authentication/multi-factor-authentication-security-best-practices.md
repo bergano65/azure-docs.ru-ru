@@ -1,22 +1,22 @@
 ---
-title: Security guidance for Azure Multi-Factor Authentication - Azure Active Directory
+title: Руководство по безопасности для многофакторной идентификации Azure — Azure Active Directory
 description: Этот документ содержит указания по использованию Azure MFA с учетными записями Azure.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 07/11/2018
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2756d39a93751271c8c7bf2a51108b9fe5b09b1e
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: e42234e9fcdcfe3ee5ce975babbe03b64a750e36
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74208432"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74846833"
 ---
 # <a name="security-guidance-for-using-azure-multi-factor-authentication-with-azure-ad-accounts"></a>Руководство по безопасности для использования Многофакторной идентификации Azure с учетными записями Azure AD
 
@@ -31,7 +31,7 @@ ms.locfileid: "74208432"
 
 ### <a name="licenses"></a>Лицензии
 
-![Apply licenses to users, enable, notify](./media/multi-factor-authentication-security-best-practices/ems.png)
+![Применение лицензий для пользователей, включение, уведомление](./media/multi-factor-authentication-security-best-practices/ems.png)
 
 При наличии лицензий Azure AD Premium или Enterprise Mobility + Security вы уже можете использовать Azure MFA. Вашей организации не требуются дополнительные компоненты или действия для распространения двухфакторной проверки подлинности на всех пользователей. Вам достаточно назначить пользователю лицензию и включить MFA.
 
@@ -43,7 +43,7 @@ ms.locfileid: "74208432"
 
 ### <a name="multi-factor-auth-provider"></a>поставщик Multi-Factor Authentication.
 
-![Multi-Factor Authentication Provider](./media/multi-factor-authentication-security-best-practices/authprovider.png)
+![Поставщик многофакторной идентификации](./media/multi-factor-authentication-security-best-practices/authprovider.png)
 
 Если у вас нет лицензий, которые включают в себя Azure MFA, то вы можете [создать поставщик аутентификации Azure MFA](concept-mfa-authprovider.md).
 
@@ -52,7 +52,7 @@ ms.locfileid: "74208432"
 * Для создания поставщика Многофакторной идентификации не требуется каталог Azure AD, однако он расширяет функциональные возможности. Связывание поставщика аутентификации с каталогом Azure AD обеспечивает следующие возможности:
   * распространение двухфакторной проверки подлинности на всех пользователей;
   * предоставление глобальным администраторам дополнительных функций, таких как портал управления, настраиваемые приветствия и отчеты.
-* If you synchronize your on-premises Active Directory environment with an Azure AD directory, you need DirSync or Azure AD Sync. If you use an Azure AD directory that is not synchronized with an on-premises instance of Active Directory, you do not need DirSync or Azure AD Sync.
+* Если вы синхронизируете локальную среду Active Directory с каталогом Azure AD, требуется DirSync или Azure AD Sync. Если вы используете каталог Azure AD, который не синхронизирован с локальным экземпляром Active Directory, не требуется DirSync или Azure AD Sync.
 * Выберите модель использования, наиболее подходящую для вашей организации. Выбрав модель использования, ее нельзя будет изменить. Доступны две модели.
   * По количеству событий аутентификации: плата взимается за каждую проверку. Эта модель удобна, если двухфакторная проверка подлинности будет использоваться для всех, кто использует приложение, а не для конкретных пользователей.
   * По количеству включенных пользователей: оплата взимается за каждого пользователя, для которого включена служба Azure MFA. Эту модель лучше использовать, если у одних пользователей есть лицензии Azure AD Premium или Enterprise Mobility Suite, а у других — нет.
@@ -68,7 +68,7 @@ ms.locfileid: "74208432"
 
 Если ваша компания использует собственную инфраструктуру для поддержки MFA, необходимо [развернуть сервер Многофакторной идентификации Azure в локальной среде](howto-mfaserver-deploy.md). На приведенной ниже схеме показаны компоненты сервера MFA.
 
-![The default MFA Server components](./media/multi-factor-authentication-security-best-practices/server.png) \*Not installed by default \**Installed but not enabled by default
+![компоненты сервера MFA по умолчанию](./media/multi-factor-authentication-security-best-practices/server.png) \*не установлены по умолчанию \** установлен, но не включен по умолчанию
 
 Сервер Многофакторной идентификации Azure может защитить облачные и локальные ресурсы с помощью федерации. Для этого необходимы службы федерации Active Directory (AD FS) и федерация с клиентом Azure AD.
 При настройке сервера Многофакторной идентификации необходимо учесть следующие сведения.

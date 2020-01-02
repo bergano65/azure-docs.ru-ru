@@ -1,6 +1,6 @@
 ---
-title: View privacy-related info from the My Account portal - Azure AD
-description: Learn how your organization uses your privacy-related information from the Privacy page of the My Account portal.
+title: Просмотр сведений о конфиденциальности на портале "Моя учетная запись" — Azure AD
+description: Сведения о том, как ваша организация использует информацию, связанную с конфиденциальностью, на странице "Конфиденциальность" портала "Моя учетная запись".
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -19,9 +19,9 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74231816"
 ---
-# <a name="view-how-your-organization-uses-your-privacy-related-data"></a>View how your organization uses your privacy-related data
+# <a name="view-how-your-organization-uses-your-privacy-related-data"></a>Просмотр сведений об использовании данных, связанных с конфиденциальностью в Организации
 
-You can view how your organization uses your data from the **Privacy** page of the **My Account** portal.
+Вы можете просмотреть, как ваша организация использует ваши данные на странице " **Конфиденциальность** " портала " **Моя учетная запись** ".
 
 ## <a name="view-your-privacy-related-info"></a>Просмотр сведений, связанных с конфиденциальностью
 
@@ -29,7 +29,7 @@ You can view how your organization uses your data from the **Privacy** page of t
 
 2. Выберите **Конфиденциальность** на левой панели навигации или выберите ссылку **Просмотр конфиденциальности** в блоке **Конфиденциальность**.
 
-    ![My Account page, showing highlighted Privacy links](media/my-account-portal/my-account-portal-privacy.png)
+    ![Страница «Моя учетная запись», отображающая выделенные ссылки на конфиденциальность](media/my-account-portal/my-account-portal-privacy.png)
 
 3. Просмотрите информацию, включая:
 
@@ -37,16 +37,16 @@ You can view how your organization uses your data from the **Privacy** page of t
 
     - **Условия использования**. Условия использования в вашей организации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-After viewing how your organization uses your data, you can:
+После просмотра того, как ваша организация использует ваши данные, вы можете:
 
-- View or manage your [security info](user-help-security-info-overview.md).
+- Просмотр [сведений о безопасности](user-help-security-info-overview.md)и управление ими.
 
-- View or manage your connected [devices](my-account-portal-devices-page.md).
+- Просмотр подключенных [устройств](my-account-portal-devices-page.md)или управление ими.
 
-- View or manage your [organizations](my-account-portal-organizations-page.md).
+- Просматривайте свои [Организации](my-account-portal-organizations-page.md)или управляйте ими.
 
-- View your [sign-in activity](my-account-portal-sign-ins-page.md).
+- Просмотр [действий входа](my-account-portal-sign-ins-page.md).
 
-- You can also view your Microsoft Office-related contact preferences and privacy information from the [Office portal, Security & privacy page](https://portal.office.com/account/#security).
+- Вы также можете просмотреть сведения о контактных лицах, связанных с Microsoft Office [, на странице "Портал Office", "безопасность & Конфиденциальность](https://portal.office.com/account/#security)".

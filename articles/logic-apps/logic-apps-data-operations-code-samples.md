@@ -1,21 +1,17 @@
 ---
-title: Примеры операций с данными — Azure Logic Apps
+title: Примеры операций с данными
 description: Примеры кода для действий операций с данными в Azure Logic Apps
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-manager: carmonm
-ms.reviewer: klam, LADocs
-ms.topic: reference
+ms.reviewer: klam, logicappspm
+ms.topic: conceptual
 ms.date: 09/01/2019
-ms.openlocfilehash: d692d943249c9fc6b46ed6eb1ddff3f07152f5b6
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.openlocfilehash: d59e461fab52bddf9cb1f881d52a751931c7312b
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2019
-ms.locfileid: "71179139"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74793091"
 ---
 # <a name="data-operation-code-samples-for-azure-logic-apps"></a>Примеры кода операций с данными для Azure Logic Apps
 
@@ -25,7 +21,7 @@ ms.locfileid: "71179139"
 
 <a name="compose-action-example"></a>
 
-## <a name="compose"></a>Создание
+## <a name="compose"></a>Docker Compose
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Создать**](../logic-apps/logic-apps-perform-data-operations.md#compose-action).
 
@@ -185,7 +181,7 @@ ms.locfileid: "71179139"
 
 <a name="filter-array-action-example"></a>
 
-## <a name="filter-array"></a>Фильтр массива
+## <a name="filter-array"></a>Фильтрация массива
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Фильтровать массив**](../logic-apps/logic-apps-perform-data-operations.md#filter-array-action).
 
@@ -226,7 +222,7 @@ ms.locfileid: "71179139"
 
 <a name="join-action-example"></a>
 
-## <a name="join"></a>Присоединиться
+## <a name="join"></a>Объединение
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Объединить**](../logic-apps/logic-apps-perform-data-operations.md#join-action).
 
@@ -267,7 +263,7 @@ ms.locfileid: "71179139"
 
 <a name="parse-json-action-example"></a>
 
-## <a name="parse-json"></a>Анализ JSON
+## <a name="parse-json"></a>Parse JSON
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Анализ JSON**](../logic-apps/logic-apps-perform-data-operations.md#parse-json-action).
 
@@ -326,7 +322,7 @@ ms.locfileid: "71179139"
 
 <a name="select-action-example"></a>
 
-## <a name="select"></a>Выбор
+## <a name="select"></a>Выберите
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Выбрать пункт**](../logic-apps/logic-apps-perform-data-operations.md#select-action).
 
@@ -367,6 +363,6 @@ ms.locfileid: "71179139"
 },
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Выполнение операций с данными](../logic-apps/logic-apps-perform-data-operations.md)

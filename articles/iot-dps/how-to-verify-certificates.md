@@ -1,18 +1,18 @@
 ---
-title: Verify X.509 CA certificates with Azure IoT Hub Device Provisioning Service
-description: How to do proof-of-possession for X.509 CA certificates with Azure IoT Hub Device Provisioning Service
+title: Проверка сертификатов ЦС X. 509 с помощью службы подготовки устройств для центра Интернета вещей Azure
+description: Как проверить свое владение сертификатами ЦС X. 509 с помощью службы подготовки устройств к добавлению в центр Интернета вещей Azure (DPS)
 author: wesmc7777
 ms.author: wesmc
 ms.date: 02/26/2018
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: b701b15b3dd4463b2d5adbb38ee23bf0c3bfdfe9
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: b008c4ebc83200043d51fc8ef367f1983c549949
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74228684"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74973447"
 ---
 # <a name="how-to-do-proof-of-possession-for-x509-ca-certificates-with-your-device-provisioning-service"></a>Как подтвердить владение сертификатами ЦС X.509 с помощью службы подготовки устройств
 

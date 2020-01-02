@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 07/05/2019
+ms.date: 12/09/2019
 ms.author: erhopf
-ms.openlocfilehash: ac96c3ce3924b8b2fe834e2b350e95ce23c52e1f
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: c645d01dd37fd370911019446c99c76c9da6221c
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68559339"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74975981"
 ---
 # <a name="quickstart-get-the-list-of-text-to-speech-voices-using-python"></a>Краткое руководство. Получение списка голосовых моделей для преобразований текста в речь с использованием Python
 
 В этом кратком руководстве вы узнаете, как получить полный список стандартных и нейронных голосовых моделей для региона или конечной точки с использованием Python. Список возвращается как JSON, а доступность голосовой модели зависит от региона. Список поддерживаемых регионов см. в разделе [Регионы](regions.md).
 
-Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) и ресурс службы распознавания речи. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](get-started.md), чтобы получить ключ подписки.
+Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом службы "Речь". Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](get-started.md), чтобы получить ключ подписки.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -29,7 +29,7 @@ ms.locfileid: "68559339"
 
 * Python 2.7.x или 3.x;
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
-* ключ подписки Azure для служб "Речь".
+* ключ подписки Azure для службы "Речь".
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
 
@@ -80,7 +80,7 @@ def get_token(self):
 
 ## <a name="make-a-request-and-save-the-response"></a>Выполнение запроса и сохранение ответа
 
-Здесь вы создадите запрос и сохраните список возвращенных голосовых моделей. Прежде всего задайте значения `base_url` и `path`. В этом примере предполагается, что вы используете конечную точку в регионе "Западная часть США". Если ресурс зарегистрирован в другом регионе, обновите значение `base_url`. Дополнительные сведения см. в [списке регионов служб распознавания речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#text-to-speech).
+Здесь вы создадите запрос и сохраните список возвращенных голосовых моделей. Прежде всего задайте значения `base_url` и `path`. В этом примере предполагается, что вы используете конечную точку в регионе "Западная часть США". Если ресурс зарегистрирован в другом регионе, обновите значение `base_url`. Дополнительные сведения см. в [списке регионов службы "Речь"](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#text-to-speech).
 
 Теперь следует добавить в запрос обязательные заголовки. И наконец, направьте запрос в службу. Если запрос выполнен успешно, возвращается код состояния 200 и ответ сохраняется как файл.
 

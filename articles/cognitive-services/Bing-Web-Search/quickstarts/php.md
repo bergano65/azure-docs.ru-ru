@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 03/12/2019
+ms.date: 12/09/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: ba132adc6b0fd2b8423a7bce30ad6d52fccc898e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: cf3cf1f69f7b45dd90070f4074e85fa21359837d
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57858207"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74961490"
 ---
 # <a name="quickstart-use-php-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с помощью PHP  
 
@@ -43,7 +43,7 @@ ms.locfileid: "57858207"
 
 Создайте проект PHP в используемой вами интегрированной среде разработки или редакторе. Не забудьте добавить открывающие и закрывающие теги `<?php` и `?>`.
 
-Прежде чем продолжить, необходимо задать несколько переменных. Убедитесь, что значение `$endpoint` указано верно, и замените `$accesskey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение `$term`.
+Прежде чем продолжить, необходимо задать несколько переменных. В качестве `$endpoint` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса. Убедитесь, что значение `$endpoint` указано верно, и замените `$accesskey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение `$term`.
 
 ```php
 $accessKey = 'enter key here';

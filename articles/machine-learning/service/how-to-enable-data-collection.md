@@ -1,7 +1,7 @@
 ---
 title: Сбор данных рабочих моделей
 titleSuffix: Azure Machine Learning
-description: Сведения о сборе входных данных модели машинного обучения Azure в хранилище BLOB-объектов Azure.
+description: Узнайте, как выполнять Машинное обучение Azure данных входной модели в хранилище BLOB-объектов Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,39 +11,42 @@ ms.author: copeters
 author: lostmygithubaccount
 ms.date: 11/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 18b92fe090895c3aa08c3c931dfa8bd12db0f2d3
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: 4ef1249a601334cc198662b90da95623247190e7
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406452"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978191"
 ---
 # <a name="collect-data-for-models-in-production"></a>Сбор данных для моделей в рабочей среде
+
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 >[!IMPORTANT]
-> This SDK is retiring soon. This SDK is still appropriate for developers monitoring data drift in models but most developers should use the simplified [data monitoring with Application Insights](https://docs.microsoft.com/azure/machine-learning/service/how-to-enable-app-insights). 
+> Пакет SDK для мониторинга Машинное обучение Azure будет прекращен в ближайшее время. Пакет SDK по-прежнему подходит для разработчиков, которые в настоящее время используют пакет SDK для отслеживания смещения данных в моделях. Но для новых клиентов мы рекомендуем использовать упрощенный [мониторинг данных с помощью Application Insights](https://docs.microsoft.com/azure/machine-learning/service/how-to-enable-app-insights).
 
-In this article, you can learn how to collect input model data from Azure Machine Learning you've deployed into Azure Kubernetes Cluster (AKS) into an Azure Blob storage. 
+В этой статье показано, как получить данные входной модели из Машинное обучение Azure. Здесь также показано, как развернуть входные данные в кластере Azure Kubernetes Service (AKS) и сохранить выходные данные в хранилище BLOB-объектов Azure.
 
-После включения сбора данных собранные данные помогут вам:
-* [Monitor data drifts](how-to-monitor-data-drift.md) as production data enters your model
+После включения сбора собранные данные помогут вам:
 
-* Принимать более взвешенные решения о необходимости повторного обучения и оптимизации модели
+* [Отслеживание смещения данных](how-to-monitor-data-drift.md) по мере того, как рабочие данные попадают в модель.
 
-* Повторно обучить модель с использованием собранных данных
+* Принятие более эффективных решений о том, когда следует переучить или оптимизировать модель.
 
-## <a name="what-is-collected-and-where-does-it-go"></a>Какие данные собираются и куда они попадают?
+* Переобучение модели с помощью собранных данных.
+
+## <a name="what-is-collected-and-where-it-goes"></a>Собираемые и расположенные
 
 Вы можете собирать следующие данные:
-* **Входные** данные модели от веб-служб, развернутых в кластере Azure Kubernetes (AKS) (голосовые данные, видео и изображения **не** собираются) 
+
+* Входные данные модели из веб-служб, развернутых в кластере AKS. Голосовые аудио, изображения и видео *не* собираются.
   
-* Model predictions using production input data
+* Прогнозирование моделей с использованием входных данных рабочей среды.
 
-> [!Note]
-> Предварительная статистическая обработка и предварительные вычислительные операции с этими данными сейчас не выполняются в рамках службы.   
+>[!NOTE]
+> Предварительная агрегация и предварительные вычисления над этими данными в настоящее время не являются частью службы сбора.
 
-Выходные данные сохраняются в BLOB-объекте Azure. Так как данные добавляются в BLOB-объект Azure, вы можете выбрать привычные инструменты для проведения анализа. 
+Выходные данные сохраняются в хранилище BLOB-объектов. Так как данные добавляются в хранилище BLOB-объектов, можно выбрать предпочтительный инструмент для выполнения анализа.
 
 Для пути к выходным данным в BLOB-объекте используется следующий синтаксис:
 
@@ -52,27 +55,28 @@ In this article, you can learn how to collect input model data from Azure Machin
 # example: /modeldata/1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14/myresourcegrp/myWorkspace/aks-w-collv9/best_model/10/inputs/2018/12/31/data.csv
 ```
 
->[!Note]
-> In versions of the SDK prior to `0.1.0a16` the `designation` argument was named `identifier`. If your code was developed with an earlier version, you will need to update accordingly.
+>[!NOTE]
+> В версиях пакета SDK Машинное обучение Azure для Python, предшествующего версии 0.1.0 A16, аргумент `designation` называется `identifier`. Если вы разработали код с более ранней версией, необходимо соответствующим образом обновить его.
 
 ## <a name="prerequisites"></a>Технические условия
 
-- Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Попробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) прямо сейчас.
+- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://aka.ms/AMLFree), прежде чем начинать работу.
 
-- Должны быть установлены рабочая область машинного обучения Azure, локальный каталог со сценариями и пакет SDK машинного обучения Azure для Python. Learn how to get these prerequisites using the [How to configure a development environment](how-to-configure-environment.md) document
+- Необходимо установить рабочую область Азуремачине Learning, локальный каталог, содержащий скрипты, и пакет SDK для Машинное обучение Azure для Python. Сведения об их установке см. в статье [Настройка среды разработки](how-to-configure-environment.md).
 
-- Обученная модель машинного обучения для развертывания в службе Azure Kubernetes (AKS). If you don't have one, see the [train image classification model](tutorial-train-models-with-aml.md) tutorial
+- Для развертывания в AKS требуется обученная модель машинного обучения. Если у вас нет модели, см. Руководство [обучение модели классификации изображений](tutorial-train-models-with-aml.md) .
 
-- Кластер Службы Azure Kubernetes. For information on how to create and deploy to one, see the [How to deploy and where](how-to-deploy-and-where.md) document
+- Необходим кластер AKS. Сведения о том, как создать и развернуть в нем, см. [в разделе Развертывание и размещение](how-to-deploy-and-where.md).
 
-- [Set up your environment](how-to-configure-environment.md) and install the [Monitoring SDK](https://aka.ms/aml-monitoring-sdk)
+- [Настройте среду](how-to-configure-environment.md) и установите [пакет SDK для машинное обучение Azure мониторинга](https://aka.ms/aml-monitoring-sdk).
 
 ## <a name="enable-data-collection"></a>Включение сбора данных
-Data collection can be enabled regardless of the model being deployed through Azure Machine Learning or other tools. 
 
-Чтобы включить сбор данных, выполните следующие действия:
+Сбор данных можно включить независимо от модели, развертываемой с помощью Машинное обучение Azure или других средств.
 
-1. Open the scoring file
+Чтобы включить сбор данных, необходимо выполнить следующие действия.
+
+1. Откройте файл оценки.
 
 1. Добавьте [следующий код](https://aka.ms/aml-monitoring-sdk) в начало файла:
 
@@ -80,7 +84,7 @@ Data collection can be enabled regardless of the model being deployed through Az
    from azureml.monitoring import ModelDataCollector
    ```
 
-2. Объявите переменные коллекции данных в функции `init()`:
+1. Объявите переменные коллекции данных в функции `init`:
 
     ```python
     global inputs_dc, prediction_dc
@@ -88,11 +92,11 @@ Data collection can be enabled regardless of the model being deployed through Az
     prediction_dc = ModelDataCollector("best_model", designation="predictions", feature_names=["prediction1", "prediction2"])
     ```
 
-    Параметр *CorrelationId* является необязательным, и если он не требуется для модели, указывать его не нужно. Указание идентификатора корреляции упрощает сопоставление с другими данными. (К ним относятся LoanNumber, CustomerId и т. д.)
+    *CorrelationId* является необязательным параметром. Вам не нужно использовать его, если модель не требует ее. Использование *correlationId* позволяет легко сопоставляться с другими данными, такими как *лоаннумбер* или *CustomerID*.
     
-    *Identifier* is later used for building the folder structure in your Blob, it can be used to divide “raw” data versus “processed”
+    Параметр *identifier* позже используется для создания структуры папок в большом двоичном объекте. Его можно использовать для различения обработанных данных от обработанных.
 
-3.  Добавьте в функцию `run(input_df)` следующие строки кода.
+1. Добавьте в функцию `run(input_df)` следующие строки кода.
 
     ```python
     data = np.array(data)
@@ -101,132 +105,137 @@ Data collection can be enabled regardless of the model being deployed through Az
     prediction_dc.collect(result) #this call is saving our input data into Azure Blob
     ```
 
-4. Сбор данных **не** **включается** автоматически при развертывании службы в AKS, поэтому вам необходимо обновить файл конфигурации, например: 
+1. При развертывании службы в AKS сбор данных *не* устанавливается автоматически в **значение true** . Обновите файл конфигурации, как показано в следующем примере:
 
     ```python
     aks_config = AksWebservice.deploy_configuration(collect_model_data=True)
     ```
-    Также можно включить AppInsights для мониторинга служб, изменив эту конфигурацию:
+
+    Вы также можете включить Application Insights для наблюдения за службами, изменив эту конфигурацию:
+
     ```python
     aks_config = AksWebservice.deploy_configuration(collect_model_data=True, enable_app_insights=True)
-    ``` 
+    ```
 
-5. To create a new image and deploy the service, see the [How to deploy and where](how-to-deploy-and-where.md) document
+1. Сведения о создании нового образа и развертывании модели машинного обучения см. в разделе [развертывание и использование](how-to-deploy-and-where.md).
 
+Если у вас уже есть служба с зависимостями, установленными в файле и файле оценки среды, включите сбор данных, выполнив следующие действия.
 
-Если в **файле среды** и **файле оценки** уже указана служба с установленными зависимостями, вы можете включить сбор данных следующим образом:
+1. Перейдите в [машинное обучение Azure](https://ml.azure.com).
 
-1. Go to [Azure Machine Learning studio](https://ml.azure.com)
+1. Перейдите в рабочую область.
 
-1. Open your workspace
-
-1. Go to **Deployments** -> **Select service** -> **Edit**
+1. Выберите **развертывания** > **выберите Служба** > **изменить**.
 
    ![Изменение службы](media/how-to-enable-data-collection/EditService.PNG)
 
-1. In **Advanced Settings**, select **Enable Model data collection**
+1. В окне **Дополнительные параметры**выберите **включить сбор данных модели**.
 
-    [![Установка флажка сбора данных](media/how-to-enable-data-collection/CheckDataCollection.png)](./media/how-to-enable-data-collection/CheckDataCollection.png#lightbox)
+    [![выбор сбора данных](media/how-to-enable-data-collection/CheckDataCollection.png)](./media/how-to-enable-data-collection/CheckDataCollection.png#lightbox)
 
-   In this window, you can also choose to "Enable Appinsights diagnostics" to track the health of your service
+   Чтобы отвести наблюдение за работоспособностью службы, можно также выбрать **включить диагностику AppInsights** .
 
-1. Select **Update** to apply the change
-
+1. Выберите **Обновить** , чтобы применить изменения.
 
 ## <a name="disable-data-collection"></a>Отключение сбора данных
-Вы можете остановить сбор данных в любое время. Use Python code or Azure Machine Learning studio to disable data collection.
 
-+ Option 1 - Disable in Azure Machine Learning studio: 
-  1. Sign in to [Azure Machine Learning studio](https://ml.azure.com)
+Сбор данных можно отключить в любое время. Используйте код Python или Машинное обучение Azure, чтобы отключить сбор данных.
 
-  1. Open your workspace
+### <a name="option-1---disable-data-collection-in-azure-machine-learning"></a>Вариант 1. Отключение сбора данных в Машинное обучение Azure
 
-  1. Go to **Deployments** -> **Select service** -> **Edit**
+1. Войдите в [машинное обучение Azure](https://ml.azure.com).
 
-     [![Параметр "Изменить"](media/how-to-enable-data-collection/EditService.PNG)](./media/how-to-enable-data-collection/EditService.PNG#lightbox)
+1. Перейдите в рабочую область.
 
-  1. In **Advanced Settings**, deselect **Enable Model data collection**
+1. Выберите **развертывания** > **выберите Служба** > **изменить**.
 
-     [![Снятие флажка сбора данных](media/how-to-enable-data-collection/UncheckDataCollection.png)](./media/how-to-enable-data-collection/UncheckDataCollection.png#lightbox)
+   [![выберите параметр "Изменить".](media/how-to-enable-data-collection/EditService.PNG)](./media/how-to-enable-data-collection/EditService.PNG#lightbox)
 
-  1. Select **Update** to apply the change
+1. В окне **Дополнительные параметры**снимите флажок **включить сбор данных модели**.
 
-  You can also access these settings in your workspace in [Azure Machine Learning studio](https://ml.azure.com).
+    [![снять флажок "сбор данных"](media/how-to-enable-data-collection/UncheckDataCollection.png)](./media/how-to-enable-data-collection/UncheckDataCollection.png#lightbox)
 
-+ Вариант 2 — отключение сбора данных с помощью Python:
+1. Чтобы применить изменение, нажмите кнопку **Обновить**.
+
+Вы также можете получить доступ к этим параметрам в рабочей области в [машинное обучение Azure](https://ml.azure.com).
+
+### <a name="option-2---use-python-to-disable-data-collection"></a>Вариант 2. Отключение сбора данных с помощью Python
 
   ```python 
   ## replace <service_name> with the name of the web service
   <service_name>.update(collect_model_data=False)
   ```
 
-## <a name="validate-your-data-and-analyze-it"></a>Проверка и анализ данных
-Для анализа данных, собранных в большом двоичном объекте Azure, можно выбрать любой предпочитаемый инструмент.
+## <a name="validate-and-analyze-your-data"></a>Проверка и анализ данных
 
-Чтобы быстро получить доступ к данным большого двоичного объекта:
+Вы можете выбрать инструмент для анализа данных, собранных в хранилище BLOB-объектов.
 
-1. Sign in to [Azure Machine Learning studio](https://ml.azure.com)
+### <a name="quickly-access-your-blob-data"></a>Быстрый доступ к данным большого двоичного объекта
 
-1. Open your workspace
-1. Click on **Storage**
+1. Войдите в [машинное обучение Azure](https://ml.azure.com).
 
-    [![Хранилище](media/how-to-enable-data-collection/StorageLocation.png)](./media/how-to-enable-data-collection/StorageLocation.png#lightbox)
+1. Перейдите в рабочую область.
 
-1. Используйте для пути к выходным данным в большом двоичном объекте следующий синтаксис:
+1. Выберите **Хранилище**.
 
-```
-/modeldata/<subscriptionid>/<resourcegroup>/<workspace>/<webservice>/<model>/<version>/<designation>/<year>/<month>/<day>/data.csv
-# example: /modeldata/1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14/myresourcegrp/myWorkspace/aks-w-collv9/best_model/10/inputs/2018/12/31/data.csv
-```
+    [![выбрать вариант хранения](media/how-to-enable-data-collection/StorageLocation.png)](./media/how-to-enable-data-collection/StorageLocation.png#lightbox)
 
+1. Выполните путь к выходным данным большого двоичного объекта, используя следующий синтаксис:
 
-### <a name="analyzing-model-data-through-power-bi"></a>Анализ данных модели с помощью Power BI
+   ```
+   /modeldata/<subscriptionid>/<resourcegroup>/<workspace>/<webservice>/<model>/<version>/<designation>/<year>/<month>/<day>/data.csv
+   # example: /modeldata/1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14/myresourcegrp/myWorkspace/aks-w-collv9/best_model/10/inputs/2018/12/31/data.csv
+   ```
 
-1. Download and Open [Power BI Desktop](https://www.powerbi.com)
+### <a name="analyze-model-data-using-power-bi"></a>Анализ данных модели с помощью Power BI
 
-1. Select **Get Data** and click on [**Azure Blob Storage**](https://docs.microsoft.com/power-bi/desktop-data-sources)
+1. Скачайте и откройте [Power BI Desktop](https://www.powerbi.com).
 
-    [![Настройка большого двоичного объекта в Power BI](media/how-to-enable-data-collection/PBIBlob.png)](./media/how-to-enable-data-collection/PBIBlob.png#lightbox)
+1. Выберите **получить данные** и выберите [**хранилище BLOB-объектов Azure**](https://docs.microsoft.com/power-bi/desktop-data-sources).
 
+    [Настройка ![Power BI большого двоичного объекта](media/how-to-enable-data-collection/PBIBlob.png)](./media/how-to-enable-data-collection/PBIBlob.png#lightbox)
 
-1. Добавьте имя учетной записи хранения и введите ключ к хранилищу данных. You can find this information in your blob's **Settings** >> Access keys
+1. Добавьте имя учетной записи хранения и введите ключ к хранилищу данных. Эти сведения можно найти, выбрав **параметры** > **ключи доступа** в большом двоичном объекте.
 
-1. Select the container **modeldata** and click on **Edit**
+1. Выберите контейнер **данных модели** и нажмите кнопку **изменить**.
 
-    [![Навигатор в Power BI](media/how-to-enable-data-collection/pbiNavigator.png)](./media/how-to-enable-data-collection/pbiNavigator.png#lightbox)
+    [![навигатор Power BI](media/how-to-enable-data-collection/pbiNavigator.png)](./media/how-to-enable-data-collection/pbiNavigator.png#lightbox)
 
-1. В редакторе запросов щелкните в столбце "Имя" и добавьте учетную запись хранения 1. Введите путь к модели в фильтре. Примечание. Если вы хотите искать только файлы за определенный год или месяц, просто разверните путь фильтра. For example, just look into March data: /modeldata/subscriptionid>/resourcegroupname>/workspacename>/webservicename>/modelname>/modelversion>/designation>/year>/3
+1. В редакторе запросов щелкните в столбце **имя** и добавьте учетную запись хранения.
 
-1. Отфильтруйте по **имени** для отображения нужных данных. If you stored **predictions** and **inputs**, you'll need to create a query for each
+1. Введите путь к модели в фильтре. Если вы хотите просматривать файлы только из определенного года или месяца, просто разверните путь фильтра. Например, чтобы просмотреть только данные в марте, используйте следующий путь фильтра:
 
-1. Click on the double arrow aside the **Content** column to combine the files
+   /моделдата/\<SubscriptionId >/\<resourcegroupname >/\<workspacename >/\<webservicename >/\<modelname >/\<моделверсион >/\<обозначение >/\<года >/3
 
-    [![Содержимое в Power BI](media/how-to-enable-data-collection/pbiContent.png)](./media/how-to-enable-data-collection/pbiContent.png#lightbox)
+1. Отфильтруйте данные, относящиеся к вам, на основе значений **имен** . Если вы сохранили прогнозы и входные данные, необходимо создать запрос для каждого из них.
 
-1. Click OK and the data will preload
+1. Щелкните двойные стрелки вниз рядом с заголовком столбца **содержимого** , чтобы объединить файлы.
 
-    [![pbiCombine](media/how-to-enable-data-collection/pbiCombine.png)](./media/how-to-enable-data-collection/pbiCombine.png#lightbox)
+    [![Power BI содержимого](media/how-to-enable-data-collection/pbiContent.png)](./media/how-to-enable-data-collection/pbiContent.png#lightbox)
 
-1. You can now click **Close and Apply**
+1. Нажмите кнопку **ОК**. Предварительная загрузка данных.
 
-1.  If you added inputs and predictions, your tables will automatically correlate by **RequestId**
+    [![Power BI объединение файлов](media/how-to-enable-data-collection/pbiCombine.png)](./media/how-to-enable-data-collection/pbiCombine.png#lightbox)
 
-1. Start building your custom reports on your model data
+1. Выберите **Закрыть и применить**.
 
+1. Если были добавлены входные данные и прогнозы, таблицы автоматически упорядочиваются по значениям **RequestId** .
 
-### <a name="analyzing-model-data-using-databricks"></a>Анализ данных модели с помощью Databricks
+1. Приступите к созданию пользовательских отчетов о данных модели.
 
-1. Create a [Databricks workspace](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal)
+### <a name="analyze-model-data-using-azure-databricks"></a>Анализ данных модели с помощью Azure Databricks
 
-1. Go to your Databricks workspace
+1. Создайте [рабочую область Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal).
 
-1. In your databricks workspace, select **Upload Data**
+1. Перейдите к рабочей области Databricks.
 
-    [![Отправка базы данных](media/how-to-enable-data-collection/dbupload.png)](./media/how-to-enable-data-collection/dbupload.png#lightbox)
+1. В рабочей области "сведения о модулях **данных" выберите Отправить данные**.
 
-1. Create New Table and select **Other Data Sources** -> Azure Blob Storage -> Create Table in Notebook
+    [!["Выбор параметра" отправить данные о модулях данных "](media/how-to-enable-data-collection/dbupload.png)](./media/how-to-enable-data-collection/dbupload.png#lightbox)
 
-    [![Таблица базы данных](media/how-to-enable-data-collection/dbtable.PNG)](./media/how-to-enable-data-collection/dbtable.PNG#lightbox)
+1. Выберите **создать новую таблицу** и выберите **другие источники данных** > **хранилище BLOB-объектов Azure** > **создать таблицу в записной книжке**.
+
+    [Создание таблицы ![ных блоков данных](media/how-to-enable-data-collection/dbtable.PNG)](./media/how-to-enable-data-collection/dbtable.PNG#lightbox)
 
 1. Обновите расположение данных. Вот пример:
 
@@ -234,13 +243,7 @@ Data collection can be enabled regardless of the model being deployed through Az
     file_location = "wasbs://mycontainer@storageaccountname.blob.core.windows.net/modeldata/1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14/myresourcegrp/myWorkspace/aks-w-collv9/best_model/10/inputs/2018/*/*/data.csv" 
     file_type = "csv"
     ```
- 
-    [![DBsetup](media/how-to-enable-data-collection/dbsetup.png)](./media/how-to-enable-data-collection/dbsetup.png#lightbox)
 
-1. Follow the steps on the template in order to view and analyze your data
+    [Установка ![кирпичей](media/how-to-enable-data-collection/dbsetup.png)](./media/how-to-enable-data-collection/dbsetup.png#lightbox)
 
-## <a name="example-notebook"></a>Пример записной книжки
-
-В записной книжке [how-to-use-azureml/deployment/enable-data-collection-for-models-in-aks/enable-data-collection-for-models-in-aks.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/enable-data-collection-for-models-in-aks/enable-data-collection-for-models-in-aks.ipynb) демонстрируются понятия, описанные в данной статье.  
-
-[!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
+1. Выполните действия, описанные в шаблоне, чтобы просмотреть и проанализировать данные.

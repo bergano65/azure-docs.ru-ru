@@ -1,5 +1,5 @@
 ---
-title: Учебник. Защита веб-сервера Windows с помощью SSL-сертификатов в Azure
+title: Руководство по Защита веб-сервера Windows с помощью SSL-сертификатов в Azure
 description: В этом руководстве описано, как использовать Azure PowerShell для защиты виртуальной машины Windows, запущенной на веб-сервере IIS, с помощью SSL-сертификатов, хранящихся в Azure Key Vault.
 services: virtual-machines-windows
 documentationcenter: virtual-machines
@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 02/09/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 6fd60993582fb4d7c052ffff2f492739153229e6
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: c84bc3633ccd25fd2206c9e6912a6b8c8d46a5f4
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74067756"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74974195"
 ---
 # <a name="tutorial-secure-a-web-server-on-a-windows-virtual-machine-in-azure-with-ssl-certificates-stored-in-key-vault"></a>Руководство по Защита веб-сервера на виртуальной машине Windows в Azure с помощью SSL-сертификатов, хранимых в Key Vault
 

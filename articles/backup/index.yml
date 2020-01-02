@@ -1,69 +1,142 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по службе Azure Backup
+summary: Служба Azure Backup предоставляет простые, безопасные и экономичные решения для резервного копирования и восстановления данных из облака Microsoft Azure.
 metadata:
-  title: Документация по службе Azure Backup. Руководства и справочник по API | Документация Майкрософт
-  description: "Служба Azure Backup позволяет создавать резервную копию данных для локальных серверов, виртуальных машин, виртуализованных рабочих нагрузок, сервера SQL, сервера SharePoint и т.\_д. Ознакомьтесь с нашими краткими руководствами, примерами и учебниками, чтобы узнать, как создавать резервную копию данных и восстанавливать их."
-  services: backup
-  author: dcurwin
-  manager: carmonm
+  title: Документация по Azure Backup
+  description: Служба Azure Backup предоставляет простые, безопасные и экономичные решения для резервного копирования и восстановления данных из облака Microsoft Azure.
   ms.service: backup
-  ms.tgt_pltfrm: na
   ms.topic: landing-page
-  ms.date: 05/22/2018
+  author: dcurwin
   ms.author: dacurwin
-abstract:
-  description: "Служба Azure Backup защищает данные для локальных серверов, виртуальных машин, виртуализованных рабочих нагрузок, сервера SQL, сервера SharePoint и т.\_д. Ознакомьтесь с нашими краткими руководствами, примерами и учебниками, чтобы узнать, как создавать резервную копию данных и восстанавливать их."
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как выполнять резервное копирование виртуальных машин в Azure.'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/sql-database/media/index/portal.svg'
-            text: Портал Azure
-            href: quick-backup-vm-portal
-          - image:
-              src: 'https://docs.microsoft.com/azure/sql-database/media/index/logo_powershell.svg'
-            text: Azure PowerShell
-            href: quick-backup-vm-powershell
-          - image:
-              src: 'https://docs.microsoft.com/media/common/cli.svg'
-            text: Azure CLI
-            href: quick-backup-vm-cli
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Узнайте, как выполнять резервное копирование и восстановление виртуальных машин в Azure или с помощью Windows Server.'
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="tutorial-backup-vm-at-scale">Резервное копирование нескольких виртуальных машин Azure</a>
-          - html: <a href="tutorial-restore-disk">Восстановление диска и создание восстановленной виртуальной машины</a>
-          - html: <a href="tutorial-restore-files">Восстановление файлов на виртуальной машине в Azure</a>
-          - html: <a href="tutorial-backup-windows-server-to-azure">Резервное копирование Windows Server в Azure</a>
-          - html: <a href="tutorial-backup-restore-files-windows-server">Восстановление файлов из Azure в Windows Server</a>
-  - title: Примеры
-    items:
-      - type: paragraph
-        text: Используйте приведенные ниже примеры для защиты данных в Azure.
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/azure/backup/powershell-backup-samples">Azure PowerShell</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Командная строка
-            html: <p><a href="/powershell/module/az.recoveryservices">Azure PowerShell</a></p><p><a href="/cli/azure/backup?view=azure-cli-latest">Azure CLI</a></p>
-          - title: Языки
-            html: <p><a href="/dotnet/api/microsoft.azure.management.backupservices">.NET</a></p>
-          - title: REST
-            html: <p><a href="/rest/api/backup/">Справочник по API Azure Backup</a></p>
+  ms.date: 12/01/2019
+  ms.openlocfilehash: e352f5aa764795c27dd94ef2750b1265ffcc527d
+  ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 12/02/2019
+  ms.locfileid: "74669089"
+landingContent:
+- title: См. дополнительные сведения о службе архивации Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Azure Backup?
+      url: backup-overview.md
+  - linkListType: concept
+    links:
+    - text: Таблица поддержки Azure Backup
+      url: backup-support-matrix.md
+    - text: Архитектура службы Azure Backup
+      url: backup-architecture.md
+- title: Начало работы со службой архивации Azure
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Резервное копирование виртуальной машины с помощью портала Azure
+      url: quick-backup-vm-portal.md
+    - text: Резервное копирование виртуальной машины с помощью PowerShell
+      url: quick-backup-vm-powershell.md
+    - text: Резервное копирование виртуальной машины с помощью Azure CLI
+      url: quick-backup-vm-cli.md
+    - text: Резервное копирование виртуальной машины с помощью шаблона Resource Manager
+      url: quick-backup-vm-template.md
+- title: Воспользуйтесь этими пошаговыми руководствами
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Резервное копирование виртуальных машин Azure
+      url: tutorial-backup-vm-at-scale.md
+    - text: Резервное копирование SQL Server на виртуальной машине Azure
+      url: tutorial-sql-backup.md
+    - text: Резервное копирование файлов и папок Windows Server
+      url: tutorial-backup-windows-server-to-azure.md
+    - text: Резервное копирование общих папок Файлов Azure
+      url: tutorial-backup-azure-files.md
+- title: Узнайте о новых возможностях Azure Backup
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Обратимое удаление данных резервного копирования виртуальных машин Azure
+      url: backup-azure-security-feature-cloud.md
+    - text: Восстановление SQL Server на виртуальных машинах Azure в виде файлов
+      url: restore-sql-database-azure-vm.md#restore-as-files
+    - text: Резервное копирование базы данных SAP HANA на виртуальных машинах Azure
+      url: backup-azure-sap-hana-database.md
+- title: Резервное копирование виртуальных машин Azure
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Сведения о резервном копировании виртуальных машин Azure
+      url: backup-azure-vms-introduction.md
+    - text: Матрица поддержки для резервного копирования виртуальных машин Azure
+      url: backup-support-matrix-iaas.md
+    - text: Вопросы и ответы о резервном копировании виртуальных машин Azure
+      url: backup-azure-vm-backup-faq.md
+    - text: Управление резервными копиями виртуальных машин Azure
+      url: backup-azure-manage-vms.md
+- title: Резервное копирование SQL Server на виртуальных машинах Azure
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Сведения о резервном копировании SQL Server на виртуальных машинах Azure
+      url: backup-azure-sql-database.md
+    - text: Вопросы и ответы о резервном копировании SQL Server на виртуальных машинах Azure
+      url: faq-backup-sql-server.md
+    - text: Создание резервных копий баз данных SQL Server на виртуальных машинах Azure
+      url: backup-sql-server-database-azure-vms.md
+    - text: Мониторинг резервных копий баз данных SQL Server и управление ими
+      url: manage-monitor-sql-database-backup.md
+- title: Резервное копирование SAP HANA на виртуальных машинах Azure
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Резервное копирование баз данных SAP HANA на виртуальных машинах Azure
+      url: backup-azure-sap-hana-database.md
+    - text: Мониторинг резервных копий баз данных SAP HANA и управление ими
+      url: sap-hana-db-manage.md
+    - text: Вопросы и ответы о резервном копировании баз данных SAP HANA на виртуальных машинах Azure
+      url: sap-hana-faq-backup-azure-vm.md
+    - text: Матрица поддержки для резервного копирования баз данных SAP HANA на виртуальных машинах Azure
+      url: sap-hana-backup-support-matrix.md
+- title: Резервное копирование общих папок Файлов Azure
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Резервное копирование и восстановление файловых ресурсов Azure
+      url: backup-azure-files.md
+    - text: Вопросы и ответы о резервном копировании Файлов Azure
+      url: backup-azure-files-faq.md
+- title: Резервное копирование с помощью агента Служб восстановления Microsoft Azure (MARS)
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Резервное копирование компьютеров Windows с помощью агента MARS Azure Backup
+      url: backup-configure-vault.md
+    - text: Управление резервными копиями агента MARS с помощью службы Azure Backup
+      url: backup-azure-manage-mars.md
+    - text: Таблица поддержки агента Служб восстановления Microsoft Azure
+      url: backup-support-matrix-mars-agent.md
+    - text: Вопросы и ответы об агенте MARS
+      url: backup-azure-file-folder-backup-faq.md
+- title: Резервное копирование с помощью Microsoft Azure Backup Server (MABS) и DPM
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Матрица защиты MABS
+      url: backup-mabs-protection-matrix.md
+    - text: Матрица поддержки MABS/DPM
+      url: backup-support-matrix-mabs-dpm.md
+    - text: Вопросы и ответы о MABS и DPM
+      url: backup-azure-dpm-azure-server-faq.md
+    - text: Установка и обновление MABS
+      url: backup-azure-microsoft-azure-backup.md
+- title: Ресурсы по Azure Backup
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Калькулятор цен на Azure Backup
+      url: https://azure.microsoft.com/pricing/details/backup/
+    - text: Обновления Azure Backup
+      url: https://azure.microsoft.com/updates/?product=backup
+    - text: Форум MSDN по Azure Backup
+      url: https://social.msdn.microsoft.com/Forums/home?forum=windowsazureonlinebackup

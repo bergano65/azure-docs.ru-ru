@@ -4,16 +4,16 @@ description: Экспорт данных из приложения IoT Central A
 services: iot-central
 author: viv-liu
 ms.author: viviali
-ms.date: 10/15/2019
+ms.date: 12/06/2019
 ms.topic: conceptual
 ms.service: iot-central
 manager: corywink
-ms.openlocfilehash: 35415fd1a552328faa8d1ad5812f44d8f4b6d5e4
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 1aac5af916e414178676a1caf42fead41109de68
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73894868"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74974467"
 ---
 # <a name="export-your-azure-iot-central-data-preview-features"></a>Экспорт данных IoT Central Azure (Предварительная версия компонентов)
 
@@ -29,7 +29,7 @@ ms.locfileid: "73894868"
 > [!Note]
 > С момента включения экспорта непрерывных данных вы получаете только поступающие данные. Сейчас невозможно получить данные за то время, когда непрерывный экспорт данных был отключен. Чтобы сохранить больше исторических данных, включите экспорт непрерывных данных раньше.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Вы должны быть администратором в своем приложении IoT Central.
 
@@ -315,8 +315,8 @@ ms.locfileid: "73894868"
 Каждое сообщение или запись моментального снимка представляет одно или несколько изменений шаблона устройства с момента последнего экспортированного сообщения. Данные, отправляемые в каждое сообщение или запись, включают:
 
 - `@id` шаблона устройства, соответствующего `instanceOf` приведенного выше потока устройств
-- идентификатор (`name`) шаблона устройства;
-- идентификатор (`version`) шаблона устройства;
+- версию (`name`) шаблона устройства;
+- версию (`version`) шаблона устройства;
 - Устройство `capabilityModel` включая его `interfaces`, а также определения телеметрии, свойств и команд
 - определения `cloudProperties`
 - Переопределения и начальные значения, встроенные с `capabilityModel`
@@ -608,7 +608,7 @@ ms.locfileid: "73894868"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как экспортировать данные в концентраторы событий Azure, служебную шину Azure и хранилище BLOB-объектов Azure, перейдите к следующему шагу:
 

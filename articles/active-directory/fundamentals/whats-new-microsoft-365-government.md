@@ -1,6 +1,6 @@
 ---
-title: Новые возможности Azure Active Directory в Microsoft 365 Government — Azure Active Directory | Документация Майкрософт
-description: Узнайте о некоторых изменениях в Azure Active Directory (Azure AD) в экземпляр облака Microsoft 365 для государственных организаций, которая может влиять на.
+title: Новые возможности Azure AD в Microsoft 365 правительственных учреждениях | Документация Майкрософт
+description: Узнайте об изменениях в Azure Active Directory (Azure AD) в облачном экземпляре Microsoft 365, что может повлиять на вас.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -13,63 +13,63 @@ ms.topic: conceptual
 ms.date: 05/07/2019
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b077c7b5efbad2add971d42ff31938b56f6bc33
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 75e7c6809810a78c81348bd4bbeb808e103f453f
+ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66258899"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73805281"
 ---
-# <a name="whats-new-for-azure-active-directory-in-microsoft-365-government"></a>Новые возможности Azure Active Directory в Microsoft 365 для государственных организаций
+# <a name="whats-new-for-azure-active-directory-in-microsoft-365-government"></a>Новые возможности Azure Active Directory в Microsoft 365 государственных организаций
 
-Мы внесли некоторые изменения в Azure Active Directory (Azure AD) в экземпляр облака Microsoft 365 для государственных организаций, который предоставляется клиентам, с помощью следующих служб:
+Мы внесли некоторые изменения в Azure Active Directory (Azure AD) в облачном экземпляре Microsoft 365 для государственных организаций, который применим к клиентам, использующим следующие службы:
 
 - Azure для государственных организаций
 
-- Microsoft 365 для государственных организаций — GCC высокого уровня
+- Microsoft 365 правительственные учреждения — GCC High
 
-- Microsoft 365 для государственных организаций — министерства обороны США
+- Microsoft 365 правительственные учреждения — DoD
 
-Эта статья не относится к Microsoft 365 Government — GCC клиентов.
+Эта статья не относится к Microsoft 365 правительственным учреждениям — клиентам GCC.
 
-## <a name="changes-to-the-initial-domain-name"></a>Изменения в исходное доменное имя
+## <a name="changes-to-the-initial-domain-name"></a>Изменение исходного доменного имени
 
-Во время первой вашей организации, зарегистрируйтесь в Microsoft 365 для государственных организаций online Service, было предложено выбрать имя домена вашей организации, `<your-domain-name>.onmicrosoft.com`. Если у вас уже есть доменное имя с суффиксом .com, ничего не изменится.
+Во время начальной регистрации вашей организации для службы Microsoft 365 государственных организаций вам было предложено выбрать доменное имя Организации, `<your-domain-name>.onmicrosoft.com`. Если у вас уже есть имя домена с суффиксом. com, ничего не изменится.
 
-Тем не менее, если вы входите в для новой службы Microsoft 365 для государственных организаций, вам будет предложено выбрать имя домена с помощью `.us` суффикс. Таким образом, он будет `<your-domain-name>.onmicrosoft.us`.
+Однако если вы регистрируетесь для использования новой службы Microsoft 365 правительственных учреждений, вам будет предложено выбрать доменное имя с помощью суффикса `.us`. Таким образом, он будет `<your-domain-name>.onmicrosoft.us`.
 
 >[!Note]
->Это изменение не относится к любой клиентов, которые управляются поставщиками облачных служб (CSP).
+>Это изменение не относится к клиентам, которые управляются поставщиками облачных служб (CSP).
 
-## <a name="changes-to-portal-access"></a>Изменения доступа к порталу
+## <a name="changes-to-portal-access"></a>Изменения в доступе к порталу
 
-Мы обновили конечные точки на портале Microsoft Azure для государственных организаций, Microsoft 365 для государственных организаций — GCC High и Microsoft 365 Government – министерства обороны США, как показано в [таблицу сопоставления конечной точки](#endpoint-mapping).
+Мы обновили конечные точки портала для Microsoft Azure для государственных организаций, Microsoft 365 правительственные учреждения — GCC High и Microsoft 365 правительства — DoD, как показано в [таблице сопоставления конечных точек](#endpoint-mapping).
 
-Ранее клиентам удалось вход с использованием на порталах Office 365 (portal.office.com) и по всему миру Azure (portal.azure.com). Это обновление клиентов теперь необходимо войти с использованием определенного Microsoft Azure для государственных организаций, Microsoft 365 для государственных организаций — GCC High и Microsoft 365 Government - порталы министерства обороны США.
+Ранее клиенты могли входить с помощью порталов Azure (portal.azure.com) и Office 365 (portal.office.com) на разных языках. После этого обновления клиенты должны войти в систему, используя конкретные Microsoft Azure для государственных организаций, Microsoft 365 правительственные учреждения и Microsoft 365ные порталы для государственных организаций.
 
 ## <a name="endpoint-mapping"></a>Сопоставление конечных точек
 
-В следующей таблице показаны конечные точки для всех клиентов:
+В следующей таблице показаны конечные точки для всех клиентов.
 
-| ИМЯ | сведения о конечной точке |
+| имя | Сведения о конечной точке |
 |------|------------------|
-| Порталы |Microsoft Azure для государственных организаций: https://portal.azure.us<p>Microsoft 365 для государственных организаций — GCC высокого уровня: https://portal.office365.us<p>Microsoft 365 для государственных организаций — министерства обороны США: https://portal.apps.mil |
-| Конечная точка авторизации Azure Active Directory | https://login.microsoftonline.us |
+| Порталы |Microsoft Azure для государственных организаций: https://portal.azure.us<p>Microsoft 365 правительственные учреждения — GCC High: https://portal.office365.us<p>Microsoft 365ные учреждения — DoD: https://portal.apps.mil |
+| Конечная точка центра Azure Active Directory | https://login.microsoftonline.us |
 | API Graph Azure Active Directory | https://graph.windows.net |
-| Microsoft Graph API для Microsoft 365 для государственных организаций — GCC высокого уровня | https://graph.microsoft.us |
-| Microsoft Graph API для Microsoft 365 для государственных организаций - министерства обороны США | https://dod-graph.microsoft.us |
-| Конечные точки служб Azure для государственных организаций | Дополнительные сведения см. в разделе [руководство разработчика Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/documentation-government-developer-guide) |
-| Microsoft 365 для государственных организаций — GCC High конечных точек | Дополнительные сведения см. в разделе [США Office 365 Конечные точки GCC High для государственных организаций](https://docs.microsoft.com/office365/enterprise/office-365-u-s-government-gcc-high-endpoints) |
-| Microsoft 365 для государственных организаций - министерства обороны США | Дополнительные сведения см. в разделе [США Office 365 Конечные точки для государственных организаций министерства обороны США](https://docs.microsoft.com/office365/enterprise/office-365-u-s-government-dod-endpoints) |
+| Microsoft Graph API для Microsoft 365 государственных организаций — GCC High | https://graph.microsoft.us |
+| Microsoft Graph API для Microsoft 365 государственных организаций — DoD | https://dod-graph.microsoft.us |
+| Конечные точки служб Azure для государственных организаций | Дополнительные сведения см. в разделе [руководством для разработчиков Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/documentation-government-developer-guide) . |
+| Microsoft 365 государственные учреждения — старшие конечные точки GCC | Дополнительные сведения см. в статье [Office 365 U.S. правительства GCC High Endpoints](https://docs.microsoft.com/office365/enterprise/office-365-u-s-government-gcc-high-endpoints) |
+| Microsoft 365 для государственных организаций — DoD | Дополнительные сведения см. в разделе [конечные точки Microsoft Office 365 США для государственных организаций](https://docs.microsoft.com/office365/enterprise/office-365-u-s-government-dod-endpoints) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения вы найдете в следующих статьях:
 
 - [Что такое Azure для государственных организаций?](https://docs.microsoft.com/azure/azure-government/documentation-government-welcome)
 
-- [Обновление конечной точки центра AAD Azure для государственных организаций](https://devblogs.microsoft.com/azuregov/azure-government-aad-authority-endpoint-update/)
+- [Обновление конечной точки центра сертификации AAD в Azure для государственных организаций](https://devblogs.microsoft.com/azuregov/azure-government-aad-authority-endpoint-update/)
 
-- [Конечных точек Microsoft Graph в облаке для государственных организаций США](https://developer.microsoft.com/graph/blogs/new-microsoft-graph-endpoints-in-us-government-cloud/)
+- [Microsoft Graph конечных точек в облаке правительства США](https://developer.microsoft.com/graph/blogs/new-microsoft-graph-endpoints-in-us-government-cloud/)
 
-- [Office 365 для государственных организаций США GCC High и министерства обороны США](https://docs.microsoft.com/office365/servicedescriptions/office-365-platform-service-description/office-365-us-government/gcc-high-and-dod)
+- [Office 365 США, американская для государственных организаций, GCC High и DoD](https://docs.microsoft.com/office365/servicedescriptions/office-365-platform-service-description/office-365-us-government/gcc-high-and-dod)

@@ -1,7 +1,7 @@
 ---
-title: View a knowledge store (preview) with Storage Explorer
+title: Просмотр хранилища знаний (Предварительная версия) с Обозреватель службы хранилища
 titleSuffix: Azure Cognitive Search
-description: Просматривайте и анализируйте хранилище знаний Когнитивного поиска Azure с помощью Обозревателя службы хранилища портала Azure. knowledge store is currently in public preview.
+description: Просматривайте и анализируйте хранилище знаний Когнитивного поиска Azure с помощью Обозревателя службы хранилища портала Azure. Хранилище знаний сейчас находится в общедоступной предварительной версии.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
@@ -18,19 +18,19 @@ ms.locfileid: "74406556"
 # <a name="view-a-knowledge-store-with-storage-explorer"></a>Просмотр хранилища знаний с помощью Обозревателя службы хранилища
 
 > [!IMPORTANT] 
-> Сейчас предоставляется общедоступная предварительная версия хранилища знаний. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). [Версия REST API 2019-05-06-Preview](search-api-preview.md) предоставляет предварительные версии функций. В настоящее время предоставляется ограниченная поддержка портала, но поддержка пакета SDK для .NET пока что отсутствует.
+> Сейчас предоставляется общедоступная предварительная версия хранилища знаний. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). [Версия REST API 2019-05-06-Preview](search-api-preview.md) предоставляет предварительные версии функций. Сейчас доступна ограниченная поддержка портала. Поддержка пакета SDK для .NET пока не реализована.
 
-In this article, you'll learn by example how to connect to and explore a knowledge store using Storage Explorer in the Azure portal.
+В этой статье вы узнаете, как подключиться к хранилищу знаний и исследовать его с помощью Обозреватель службы хранилища в портал Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-+ Follow the steps in [Create a knowledge store in Azure portal](knowledge-store-create-portal.md) or [Create an Azure Cognitive Search knowledge store by using REST](knowledge-store-create-rest.md) to create the sample knowledge store used in this walkthrough.
++ Выполните действия, описанные в разделе [Создание хранилища знаний в портал Azure](knowledge-store-create-portal.md) или [Создание хранилища знаний Azure когнитивный Поиск с помощью функции "оставшаяся",](knowledge-store-create-rest.md) чтобы создать образец хранилища знаний, используемый в этом пошаговом руководстве.
 
 + Кроме того, вам потребуется имя учетной записи хранения Azure, которая использовалась для создания хранилища знаний, а также его ключ доступа из портала Azure.
 
-## <a name="view-edit-and-query-a-knowledge-store-in-storage-explorer"></a>View, edit, and query a knowledge store in Storage Explorer
+## <a name="view-edit-and-query-a-knowledge-store-in-storage-explorer"></a>Просмотр, изменение и запрос к хранилищу знаний в Обозреватель службы хранилища
 
-1. In the Azure portal, [open the Storage account](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/) that you used to create the knowledge store.
+1. В портал Azure [откройте учетную запись хранения](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/) , которая использовалась для создания хранилища знаний.
 
 1. В левой области навигации учетной записи хранения щелкните **Обозреватель службы хранилища.**
 
@@ -56,10 +56,10 @@ In this article, you'll learn by example how to connect to and explore a knowled
 
 При работе с бесплатной версией службы помните о том, что вам доступно максимум три индекса, индексатора и источника данных. Вы можете удалить отдельные элементы на портале, чтобы не превысить лимит.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Connect this knowledge store to Power BI for deeper analysis, or move forward with code, using the REST API and Postman to create a different knowledge store.
+Подключите это хранилище знаний к Power BI для более глубокого анализа или вперед с помощью кода, используя REST API и POST, чтобы создать другое хранилище знаний.
 
 > [!div class="nextstepaction"]
-> [Connect with Power BI](knowledge-store-connect-power-bi.md)
-> [Create a knowledge store in REST](knowledge-store-howto.md)
+> [Подключение с помощью Power BI](knowledge-store-connect-power-bi.md)
+> [Создание хранилища знаний в оставшейся](knowledge-store-howto.md) работе

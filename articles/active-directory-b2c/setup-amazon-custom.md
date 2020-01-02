@@ -1,5 +1,6 @@
 ---
-title: Настройка входа с помощью учетной записи Amazon c использованием пользовательских политик Azure в Active Directory B2C | Документация Майкрософт
+title: Настройка входа с помощью учетной записи Amazon с помощью настраиваемых политик
+titleSuffix: Azure AD B2C
 description: Настройка входа в Azure Active Directory B2C с использованием пользовательских политик учетной записи Amazon.
 services: active-directory-b2c
 author: mmacy
@@ -10,12 +11,12 @@ ms.topic: conceptual
 ms.date: 10/05/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 89f753eb0a4327bc68be9ff85006e86b57bcb548
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: 39a0e9442f3e41ceeb67b4d528eb193b159d8777
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71827257"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74950856"
 ---
 # <a name="set-up-sign-in-with-an-amazon-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с использованием пользовательских политик учетной записи Amazon
 
@@ -23,7 +24,7 @@ ms.locfileid: "71827257"
 
 В этой статье показано, как включить вход для пользователей из учетной записи Amazon с помощью [пользовательских политик](active-directory-b2c-overview-custom.md) в Azure Active Directory B2C (Azure AD B2C).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
 - Создайте учетную запись Amazon на сайте [https://www.amazon.com/](https://www.amazon.com/), если у вас ее еще нет.
@@ -38,7 +39,7 @@ ms.locfileid: "71827257"
 4. Введите значения **Имя**, **Описание**, и **URL-адрес заявления о конфиденциальности**, а затем щелкните **Сохранить**. Уведомление о конфиденциальности — это управляемая вами страница, где предоставляются сведения о конфиденциальности для пользователей.
 5. В разделе **Web Settings** (Веб-параметры) скопируйте значение **Client ID** (Идентификатор клиента). Выберите **Показать секрет**, чтобы просмотреть и скопировать секрет клиента. Оба значения потребуются для настройки учетной записи Amazon в качестве поставщика удостоверений в вашем клиенте. **Секрет клиента** — это важные учетные данные безопасности.
 6. В разделе **Web Settings** (Веб-параметры) выберите действие **Редактировать**, а затем введите значение `https://your-tenant-name.b2clogin.com` в поле **Allowed JavaScript Origins** (Допустимые источники JavaScript) и значение `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` в поле **Allowed Return URLs** (Допустимые URL-адреса возврата). Замените `your-tenant-name` именем вашего клиента. При вводе имени вашего клиента используйте только строчные буквы, даже если в Azure AD B2C имя клиента определено с помощью прописных букв.
-7. Нажмите кнопку **Сохранить**.
+7. В нижней части страницы нажмите кнопку **Save**.
 
 ## <a name="create-a-policy-key"></a>Создание ключа политики
 
@@ -50,10 +51,10 @@ ms.locfileid: "71827257"
 4. На странице "Обзор" выберите **Identity Experience Framework**.
 5. Выберите **Ключи политики**, а затем щелкните **Добавить**.
 6. Для пункта **Параметры** выберите `Manual`.
-7. Введите **имя** ключа политики. Например, `AmazonSecret`. Префикс `B2C_1A_` будет автоматически добавлен к имени ключа.
+7. Введите **Имя** ключа политики. Пример: `AmazonSecret`. Префикс `B2C_1A_` будет автоматически добавлен к имени ключа.
 8. В поле **Секрет** введите ранее записанный секрет клиента.
 9. Для параметра **Использование ключа** выберите `Signature`.
-10. Нажмите кнопку **Создать**.
+10. Щелкните **Create**(Создать).
 
 ## <a name="add-a-claims-provider"></a>Добавление поставщика утверждений
 
@@ -64,7 +65,7 @@ ms.locfileid: "71827257"
 
 1. Откройте файл *TrustFrameworkExtensions.xml*.
 2. Найдите элемент **ClaimsProviders**. Если он не существует, добавьте его в корневой элемент.
-3. Добавьте новый элемент **ClaimsProvider** следующим образом:
+3. Добавьте новый элемент **ClaimsProvider** следующим образом.
 
     ```xml
     <ClaimsProvider>
@@ -124,7 +125,7 @@ ms.locfileid: "71827257"
 2. Найдите и скопируйте все содержимое элемента **UserJourney**, в котором присутствует запись `Id="SignUpOrSignIn"`.
 3. Откройте файл *TrustFrameworkExtensions.xml* и найдите элемент **UserJourneys**. Если элемент не существует, добавьте его.
 4. Вставьте все скопированное содержимое элемента **UserJourney** в качестве дочернего элемента в элемент **UserJourneys**.
-5. Переименуйте идентификатор пути взаимодействия пользователя. Например, `SignUpSignInAmazon`.
+5. Переименуйте идентификатор пути взаимодействия пользователя. Пример: `SignUpSignInAmazon`.
 
 ### <a name="display-the-button"></a>Отображение кнопки
 
@@ -148,7 +149,7 @@ ms.locfileid: "71827257"
     <ClaimsExchange Id="AmazonExchange" TechnicalProfileReferenceId="Amazon-OAuth" />
     ```
 
-    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `Amazon-OAuth`.
+    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Пример: `Amazon-OAuth`.
 
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
 
@@ -163,8 +164,8 @@ ms.locfileid: "71827257"
 Обновите файл проверяющей стороны, который активирует созданный путь взаимодействия пользователя.
 
 1. Создайте копию *SignUpOrSignIn.xml* в рабочем каталоге и переименуйте ее. Например, переименуйте ее в *SignUpSignInAmazon.xml*.
-2. Откройте новый файл и обновите значение атрибута **PolicyId** для **TrustFrameworkPolicy**, указав уникальное значение. Например, `SignUpSignInAmazon`.
-3. Обновите значение **PublicPolicyUri**, указав URI для политики. Например: `http://contoso.com/B2C_1A_signup_signin_amazon`.
+2. Откройте новый файл и обновите значение атрибута **PolicyId** для **TrustFrameworkPolicy**, указав уникальное значение. Пример: `SignUpSignInAmazon`.
+3. Обновите значение **PublicPolicyUri**, указав URI для политики. Например: `http://contoso.com/B2C_1A_signup_signin_amazon`
 4. Обновите значение атрибута **ReferenceId** для элемента **DefaultUserJourney**, чтобы он соответствовал идентификатору созданного вами пути взаимодействия пользователя (SignUpSignAmazon).
 5. Сохраните изменения, отправьте файл, а затем выберите в списке новую политику.
 6. Убедитесь, что созданное приложение Azure AD B2C выбрано в поле **Выберите приложение**, а затем протестируйте его, щелкнув **Запустить сейчас**.

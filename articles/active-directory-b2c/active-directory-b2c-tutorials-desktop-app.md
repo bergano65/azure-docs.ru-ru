@@ -1,5 +1,6 @@
 ---
-title: Учебник по проверке подлинности пользователей в собственном клиентском приложении с помощью Azure Active Directory B2C
+title: Руководство по Аутентификация пользователей в собственном клиентском приложении
+titleSuffix: Azure AD B2C
 description: Руководство по предоставлению пользователю данных для входа в классическое приложение .NET с помощью Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
@@ -10,12 +11,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: cd0fc90988048f98be46370d2c7836d9506cc44a
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 54a2fe4f0eee5c926878682ea1fccdfdd005e68b
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73475295"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74950203"
 ---
 # <a name="tutorial-authenticate-users-in-a-native-desktop-client-using-azure-active-directory-b2c"></a>Руководство по проверке подлинности пользователей в собственном настольном клиенте с помощью Azure Active Directory B2C
 
@@ -43,7 +44,7 @@ ms.locfileid: "73475295"
 
 ## <a name="configure-the-sample"></a>Настройка примера
 
-С помощью этого руководства вы настроите пример, который можно скачать из репозитория GitHub. Пример классического приложения WPF демонстрирует регистрацию, вход в систему и может вызывать защищенный веб-API в Azure AD B2C. [Скачайте ZIP-файл](https://github.com/Azure-Samples/active-directory-b2c-dotnet-desktop/archive/master.zip), [просмотрите репозиторий](https://github.com/Azure-Samples/active-directory-b2c-dotnet-desktop) или клонируйте пример с GitHub.
+С помощью этого руководства вы настроите пример, который можно скачать из репозитория GitHub. Пример классического приложения WPF демонстрирует регистрацию, вход в систему и может вызывать защищенный веб-API в Azure AD B2C. [Скачайте ZIP-файл](https://github.com/Azure-Samples/active-directory-b2c-dotnet-desktop/archive/msalv3.zip), [просмотрите репозиторий](https://github.com/Azure-Samples/active-directory-b2c-dotnet-desktop) или клонируйте пример с GitHub.
 
 ```
 git clone https://github.com/Azure-Samples/active-directory-b2c-dotnet-desktop.git

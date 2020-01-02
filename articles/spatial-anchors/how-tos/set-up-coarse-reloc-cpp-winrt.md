@@ -1,5 +1,5 @@
 ---
-title: Создание и поиск привязок с использованием датчиков устройств на C++/WinRT | Документация Майкрософт
+title: Простое уточнение расположения в C++/WinRT
 description: В этой статье подробно рассказывается о том, как создавать и находить привязки с использованием датчиков устройств на C++/WinRT.
 author: bucurb
 manager: dacoghl
@@ -8,12 +8,12 @@ ms.author: bobuc
 ms.date: 09/19/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 8ea4abe8dee22a50fc50e8d58f99f382a135b70b
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.openlocfilehash: dd759ed4cbda936b00ce2ac0946184f9f6581c78
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74093090"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74790368"
 ---
 # <a name="how-to-create-and-locate-anchors-using-on-device-sensors-in-cwinrt"></a>Создание и поиск привязок с использованием датчиков устройств на C++/WinRT
 
@@ -39,13 +39,8 @@ ms.locfileid: "74093090"
 [!INCLUDE [Configure Provider](../../../includes/spatial-anchors-set-up-coarse-reloc-configure-provider.md)]
 
 ```cpp
-// Create the ASA factory
-SpatialAnchorsFactory m_asaFactory { nullptr };
-// . . .
-
 // Create the sensor fingerprint provider
-PlatformLocationProvider sensorProvider;
-sensorProvider = m_asaFactory.CreatePlatformLocationProvider();
+PlatformLocationProvider sensorProvider = PlatformLocationProvider();
 
 // Allow GPS
 SensorCapabilities sensors = sensorProvider.Sensors()
@@ -71,12 +66,12 @@ sensors.KnownBeaconProximityUuids(uuids);
 cloudSpatialAnchorSession.LocationProvider(sensorProvider);
 
 // Configure the near-device criteria
-NearDeviceCriteria nearDeviceCriteria = m_asaFactory.CreateNearDeviceCriteria();
+NearDeviceCriteria nearDeviceCriteria = NearDeviceCriteria();
 nearDeviceCriteria.DistanceInMeters(5.0f);
 nearDeviceCriteria.MaxResultCount(25);
 
 // Set the session's locate criteria
-anchorLocateCriteria = m_asaFactory.CreateAnchorLocateCriteria();
+anchorLocateCriteria = AnchorLocateCriteria();
 anchorLocateCriteria.NearDevice(nearDeviceCriteria);
 cloudSpatialAnchorSession.CreateWatcher(anchorLocateCriteria);
 ```

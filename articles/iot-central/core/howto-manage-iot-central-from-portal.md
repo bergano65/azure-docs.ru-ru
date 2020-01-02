@@ -8,12 +8,12 @@ ms.author: dobett
 ms.date: 10/02/2019
 ms.topic: conceptual
 manager: philmea
-ms.openlocfilehash: c9a8ed6d55fbbfcf59c98a86ac98cb4264d31ee4
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: c86df7c50e59309f921c60738870407e74a23219
+ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74278817"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74555218"
 ---
 # <a name="manage-iot-central-from-the-azure-portal"></a>Управление IoT Central на портале Azure
 
@@ -41,10 +41,14 @@ ms.locfileid: "74278817"
 
 Заполните все поля в форме. Эта форма аналогична форме, которую вы заполнили для создания приложений на веб-сайте [Azure IOT Central Application Manager](https://aka.ms/iotcentral) . Дополнительные сведения см. в кратком руководстве [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
 
+Вы можете создать IoT Central приложение с общедоступными компонентами, выбрав **Пример Contoso**, **настраиваемое приложение** и **Пример девкитс** в качестве шаблонов приложений. все остальные шаблоны приложений используют общедоступные функции предварительной версии.
+
+![Создание IoT Central формы](media/howto-manage-iot-central-from-portal/image6a.png)
+
 **Расположение** — это [География](https://azure.microsoft.com/global-infrastructure/geographies/) , где вы хотите создать приложение. Как правило, для достижения оптимальной производительности следует выбирать расположение, расположенное рядом с вашими устройствами. Azure IoT Central в настоящее время доступна в **США**, **Австралии**, **Азиатско-Тихоокеанский регион**или в **Европе**.  После выбора расположения вы не сможете переместить приложение в другое расположение позже.
 
 > [!NOTE]
-> Шаблон **предварительной версии приложения** доступен только в **странах Европы** и **США** .
+> В настоящее время шаблоны приложений предварительной версии доступны только в **странах Европы** и **США** .
 
 ![Портал управления: создание ресурса IoT Central](media/howto-manage-iot-central-from-portal/image1a.png)  
 
@@ -73,7 +77,7 @@ ms.locfileid: "74278817"
 
 ![Портал управления: управление ресурсами](media/howto-manage-iot-central-from-portal/image5a.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как управлять приложениями Azure IoT Central на портале Azure, а значит, вы готовы к следующему шагу:
 

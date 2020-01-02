@@ -5,29 +5,29 @@ ms.subservice: operations
 ms.topic: include
 ms.date: 08/23/2019
 ms.author: sstein
-ms.openlocfilehash: 9e189d0582d2e81193c892cb349b475ed0d68df8
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: 2a8b9322f7c03d76cd8a31c832c343cde9e2e355
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70014810"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74935830"
 ---
 ## <a name="create-and-manage-azure-sql-resources-with-the-azure-portal"></a>Создание ресурсов SQL Azure и управление ими с помощью портал Azure
 
 Портал Azure предоставляет одну страницу, где можно управлять [всеми ресурсами Azure SQL](https://go.microsoft.com/fwlink/?linkid=2100641) , включая виртуальные машины SQL.
 
-Чтобы получить доступ к странице **ресурсов SQL Azure** , выберите **Azure SQL** в меню слева портал Azure. Если **SQL Azure** отсутствует в списке, выберите **все службы**, а затем введите *Azure SQL* в поле поиска.
+Чтобы открыть страницу **ресурсов SQL Azure** , в меню портал Azure выберите **Azure SQL** или найдите и выберите **Azure SQL** на любой странице.
 
 > [!NOTE]
 > **Azure SQL** предоставляет быстрый и простой способ доступа ко всем базам данных SQL, эластичным пулам, серверам баз данных, управляемым экземплярам SQL и виртуальным машинам SQL. SQL Azure не является службой или ресурсом. 
 
 Чтобы управлять существующими ресурсами, выберите нужный элемент в списке. Чтобы создать новые ресурсы SQL Azure, выберите **+ Добавить**. 
 
-![Страница портала SQL Azure](../media/sql-database-technical-overview/azure-sql.png)
+![Страница портала SQL Azure](../media/sql-database-technical-overview/add-azure-sql-resources.png)
 
 После выбора **+ Добавить**просмотрите дополнительные сведения о различных параметрах, выбрав **Показать сведения** на любой плитке.
 
-![сведения о плитке баз данных](../media/sql-database-technical-overview/create-single-database.png)
+![сведения о плитке баз данных](../media/sql-database-technical-overview/single-sql-database-deployment-options.png)
 
 Дополнительные сведения см. в статье:
 

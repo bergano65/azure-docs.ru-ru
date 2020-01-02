@@ -12,18 +12,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/26/2019
+ms.date: 12/02/2019
 ms.author: rkarlin
-ms.openlocfilehash: d3b9284282a7ee14cde2461598c81e6dfdfd9f72
-ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
+ms.openlocfilehash: 4c0c415235fd290bc47ac402a6b81a1afa7af903
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71316741"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74777440"
 ---
-# <a name="remove-azure-sentinel-from-your-tenant"></a>Удаление Sentinel Azure из клиента
+# <a name="remove-azure-sentinel-from-your-workspace"></a>Удаление Sentinel Azure из рабочей области
 
-Если вы больше не хотите использовать метку Azure, в этой статье объясняется, как удалить ее из клиента.
+Если вы больше не хотите использовать метку Azure, в этой статье объясняется, как удалить ее из рабочей области.
 
 ## <a name="how-to-delete-azure-sentinel"></a>Удаление Sentinel Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "71316741"
 3.  В верхней части страницы выберите **Удалить**.
 
     > [!IMPORTANT]
-    > При удалении рабочей области Рабочая область и метку Azure удаляются из клиента в Azure Monitor.
+    > Удаление рабочей области может повлиять на другие решения и источники данных, которые используют эту рабочую область, в том числе Azure Monitor. Чтобы узнать, какие решения используют эту рабочую область, см. раздел [список установленных решений для мониторинга](../azure-monitor/insights/solutions.md#list-installed-monitoring-solutions). Чтобы проверить, какие решения отправляются в рабочую область, см. раздел [Общие сведения о принятом объеме данных](../azure-monitor/platform/manage-cost-storage.md#understanding-ingested-data-volume).
 
     ![Удаление решения Секуритинсигхтс](media/offboard/delete-solution.png)
 
@@ -49,7 +49,7 @@ ms.locfileid: "71316741"
 После того как отключение будет идентифицировано, начинается процесс отключения.
 
 **Конфигурация этих соединителей удалена:**
--   Office 365
+-   Office 365
 
 -   AWS
 
@@ -67,9 +67,9 @@ ms.locfileid: "71316741"
 
 -   Инциденты (включая метаданные для расследования)
 
--   Правила оповещения
+-   Правила генерации оповещений
 
--   Закладки
+-   закладки
 
 Ваши модули PlayBook, сохраненные книги, сохраненные запросы на поиск и записные книжки не удаляются. **Некоторые из них могут прерываться из-за удаленных данных. Их можно удалить вручную.**
 
@@ -81,7 +81,7 @@ ms.locfileid: "71316741"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как удалить службу Sentinel Azure. Если вы передумали и хотите установить ее снова:
 - Начало работы [с подсистемой Azure Sentinel](quickstart-onboard.md).
 

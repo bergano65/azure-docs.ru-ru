@@ -1,18 +1,18 @@
 ---
 title: Соответствие требованиям Azure Cosmos DB
 description: В этой статье описывается область действия сертификата для предложений для соответствия требованиям Azure Cosmos DB.
-author: dharmas-cosmos
+author: SnehaGunda
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 10/15/2019
-ms.author: dharmas
+ms.date: 12/02/2019
+ms.author: sngun
 ms.reviewer: sngun
-ms.openlocfilehash: 9ebec5498da8f7280179a48a6e3e3b10a9810e28
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: a41d95a5ab0665698676d0f17333e2f5c7f467eb
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72881847"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74872209"
 ---
 # <a name="compliance-in-azure-cosmos-db"></a>Соответствие требованиям в Azure Cosmos DB 
 

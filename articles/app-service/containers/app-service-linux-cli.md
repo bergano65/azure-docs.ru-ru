@@ -1,26 +1,18 @@
 ---
-title: Управление компонентом "Веб-приложение для контейнеров" с помощью Azure CLI в службе приложений Azure | Документация Майкрософт
-description: Сведения о том, как управлять веб-приложением для контейнеров с помощью Azure CLI.
+title: Управление пользовательскими контейнерами Linux с помощью интерфейса командной строки
+description: Узнайте, как управлять пользовательскими контейнерами Linux в службе приложений Azure из командной строки. Автоматизируйте подготовку или обслуживание приложений.
 keywords: служба приложений azure, веб-приложение, cli, linux, oss
-services: app-service
-documentationCenter: ''
 author: ahmedelnably
-manager: cfowler
-editor: ''
-ms.assetid: ''
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 08/22/2017
 ms.author: aelnably
 ms.custom: seodec18
-ms.openlocfilehash: 5481e9f28d8fc47936ad62bd8d974beb5ca85fcd
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 773c8036a345383162013f9f7103164b0f382f12
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70071311"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74689065"
 ---
 # <a name="manage-web-app-for-containers-using-azure-cli"></a>Управление веб-приложением для контейнеров с помощью Azure CLI
 
@@ -102,7 +94,7 @@ az webapp config set -n sname -g rgname --linux-fx-version "node|6.11"
 az webapp deployment source config -n sname -g rgname --repo-url <gitrepo url> --branch <branch>
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Общие сведения о службе приложений на платформе Linux](app-service-linux-intro.md).
 * [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)

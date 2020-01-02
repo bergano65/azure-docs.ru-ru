@@ -8,12 +8,12 @@ services: time-series-insights
 ms.service: time-series-insights
 ms.topic: conceptual
 ms.date: 11/12/2019
-ms.openlocfilehash: e218877ee0d29e493a31091ccbce406ed888f8cc
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 8a464a8a635e0531eba2f9cc6fbceeb9edcea8bb
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74114738"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74705973"
 ---
 # <a name="visualize-data-from-time-series-insights-in-power-bi"></a>Визуализация данных из анализа временных рядов в Power BI
 
@@ -29,10 +29,13 @@ ms.locfileid: "74114738"
 
 Обязательно подпишитесь на [бесплатную подписку Azure](https://azure.microsoft.com/free/) , если у вас ее еще нет.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * Скачайте и установите последнюю версию [Power BI Desktop](https://powerbi.microsoft.com/downloads/)
-* Создайте [экземпляр "аналитика временных рядов Azure](time-series-insights-get-started.md) " или [экземпляр Azure Time Series Insights в предварительной версии](time-series-insights-update-how-to-manage.md) .
+* Создание [экземпляра предварительной версии службы "аналитика временных рядов Azure](time-series-insights-update-how-to-manage.md) "
+
+> [!IMPORTANT]
+> Соединитель Power BI в настоящее время поддерживается в средах "аналитика временных рядов" Предварительная версия *"с оплатой по мере использования"* , настроенных для **горячего хранения**.
 
 ## <a name="connect-data-from-time-series-insights-to-power-bi"></a>Подключение данных из Time Series Insights к Power BI
 
@@ -45,7 +48,7 @@ ms.locfileid: "74114738"
 
 ### <a name="export-data-into-power-bi-desktop"></a>Экспорт данных в Power BI Desktop
 
-Чтобы начать работу:
+Чтобы приступить к работе, сделайте следующее:
 
 1. Откройте обозреватель предварительного просмотра "аналитика временных рядов" и проучите данные.
 1. После создания представления, с которым вы удовлетворены, перейдите в раскрывающееся меню **More Actions (дополнительные действия** ) и щелкните **подключиться к Power BI**. 
@@ -65,12 +68,12 @@ ms.locfileid: "74114738"
 
        [Подключение ![](media/how-to-connect-power-bi/connect-to-power-bi.png)](media/how-to-connect-power-bi/connect-to-power-bi.png#lightbox)
 
-   1. Если вы не настроили экземпляр "аналитика временных рядов" для "горячего" хранилища, вы получите предупреждение.
+   1. Если вы не настроили экземпляр "аналитика временных рядов" для " **горячего" хранилища**, вы получите предупреждение.
 
        [Подключение ![](media/how-to-connect-power-bi/connect-to-power-bi-warning.png)](media/how-to-connect-power-bi/connect-to-power-bi-warning.png#lightbox)
 
        > [!TIP]
-       > Вы можете настроить существующий экземпляр для горячего хранения в портал Azure.
+       > Вы можете настроить существующий экземпляр для **горячего хранения** в портал Azure.
 
 1. Выберите **Копировать запрос в буфер обмена**.
 1. Теперь запустите Power BI Desktop.
@@ -136,7 +139,7 @@ ms.locfileid: "74114738"
 
 Вы должны увидеть, что нужные изменения применены.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте о [концепциях соединителей Power BI](https://docs.microsoft.com/power-bi/desktop-query-overview) для Azure Time Series Insights.
 

@@ -1,7 +1,7 @@
 ---
 title: Что такое Azure Load Balancer (цен. категория "Стандартный")
 titleSuffix: Azure Load Balancer
-description: With this learning path, get started with an overview of Azure Standard Load Balancer features.
+description: По этой схеме обучения приступайте к работе с обзором функций Load Balancer (цен. категория "Стандартный") Azure.
 services: load-balancer
 documentationcenter: na
 author: asudbring
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/21/2019
 ms.author: allensu
-ms.openlocfilehash: 36035d844237115361ccb3c1e1bc0dcb91250881
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 3b6a16436b2719d1571f5d5a3c16711a9100b75d
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74423875"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74894421"
 ---
 # <a name="azure-standard-load-balancer-overview"></a>Обзор Azure Load Balancer (цен. категория "Стандартный")
 
@@ -38,11 +38,6 @@ Load Balancer можно использовать в качестве внешн
 Одним ключевым аспектом является область виртуальной сети для ресурса.  Хотя Load Balancer уровня "Базовый" расположен в рамках области группы доступности, Load Balancer уровня "Стандартный" полностью интегрирован в область виртуальной сети и к нему применяются все понятия виртуальной сети.
 
 Ресурсы Load Balancer представляют собой объекты, в которых можно выразить, как служба Azure должна запрограммировать свою мультитенантную инфраструктуру, чтобы получить сценарий, который необходимо создать.  Между ресурсами Load Balancer и фактической инфраструктурой нет прямой связи. При создании Load Balancer экземпляр не создается, емкость всегда доступна, а задержки запуска или масштабирования отсутствуют. 
-
->[!NOTE]
-> Azure предоставляет набор полностью управляемых решений балансировки нагрузки для пользовательских сценариев. If you're looking for Transport Layer Security (TLS) protocol termination ("SSL offload") or per-HTTP/HTTPS request, application-layer processing, see [What is Azure Application Gateway?](../application-gateway/overview.md) If you're looking for global DNS load balancing, see [What is Traffic Manager?](../traffic-manager/traffic-manager-overview.md) Your end-to-end scenarios may benefit from combining these solutions.
->
-> For an Azure load-balancing options comparison, see [Overview of load-balancing options in Azure](https://docs.microsoft.com/azure/architecture/guide/technology-choices/load-balancing-overview).
 
 ## <a name="why-use-standard-load-balancer"></a>Зачем использовать Load Balancer уровня "Стандартный"
 
@@ -77,7 +72,7 @@ Load Balancer (цен. категория "Стандартный") позвол
 ### <a name="az"></a>Зоны доступности
 
 >[!IMPORTANT]
->Review [Availability Zones](../availability-zones/az-overview.md) for related topics, including any region specific information.
+>Ознакомьтесь [зоны доступности](../availability-zones/az-overview.md) по связанным темам, включая сведения о различных регионах.
 
 Load Balancer уровня "Стандартный" поддерживает дополнительные возможности в регионах, где доступны зоны доступности.  Эти функции являются добавочными для всех Load Balancer уровня "Стандартный".  Конфигурации зон доступности доступны для общедоступных и внутренних Load Balancer уровня "Стандартный".
 

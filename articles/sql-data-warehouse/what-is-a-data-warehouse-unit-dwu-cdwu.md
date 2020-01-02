@@ -1,6 +1,6 @@
 ---
-title: Data Warehouse Units (DWUs) in Azure Synapse Analytics (formerly SQL DW)
-description: Recommendations on choosing the ideal number of data warehouse units (DWUs) to optimize price and performance, and how to change the number of units.
+title: Единицы хранилища данных (Dwu) в Azure синапсе Analytics (прежнее название — SQL DW)
+description: Рекомендации по выбору оптимального количества единиц использования хранилища данных (Dwu) для оптимизации цены и производительности, а также изменения числа единиц.
 services: sql-data-warehouse
 author: mlee3gsd
 manager: craigg
@@ -18,21 +18,21 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74420493"
 ---
-# <a name="data-warehouse-units-dwus"></a>Data Warehouse Units (DWUs)
+# <a name="data-warehouse-units-dwus"></a>Единицы хранилища данных (Dwu)
 
-Recommendations on choosing the ideal number of data warehouse units (DWUs) to optimize price and performance, and how to change the number of units.
+Рекомендации по выбору оптимального количества единиц использования хранилища данных (Dwu) для оптимизации цены и производительности, а также изменения числа единиц.
 
-## <a name="what-are-data-warehouse-units"></a>What are Data Warehouse Units
+## <a name="what-are-data-warehouse-units"></a>Что такое единицы хранилища данных
 
-A [SQL pool](sql-data-warehouse-overview-what-is.md#sql-analytics-and-sql-pool-in-azure-synapse) represents a collection of analytic resources that are being provisioned when using [SQL Analytics](sql-data-warehouse-overview-what-is.md#sql-analytics-and-sql-pool-in-azure-synapse). Analytic resources are defined as a combination of CPU, memory and IO. These three resources are bundled into units of compute scale called Data Warehouse Units (DWUs). Единица DWU представляет собой абстрактный, нормализованный объем вычислительных ресурсов и производительности. A change to your service level alters the number of DWUs that are available to the system, which in turn adjusts the performance, and the cost, of your system.
+[Пул SQL](sql-data-warehouse-overview-what-is.md#sql-analytics-and-sql-pool-in-azure-synapse) представляет коллекцию аналитических ресурсов, которые подготавливаются при использовании [SQL Analytics](sql-data-warehouse-overview-what-is.md#sql-analytics-and-sql-pool-in-azure-synapse). Аналитические ресурсы определяются как сочетание ЦП, памяти и операций ввода-вывода. Эти три ресурса объединены в единицы масштабирования вычислений, которые называются единицами использования хранилища данных (Dwu). Единица DWU представляет собой абстрактный, нормализованный объем вычислительных ресурсов и производительности. Изменение уровня обслуживания изменяет количество DWU, доступных системе, что, в свою очередь, корректирует производительность и стоимость системы.
 
-For higher performance, you can increase the number of data warehouse units. For less performance, reduce data warehouse units. Использование хранилища и операции вычисления оплачиваются отдельно, независимо от изменений количества единиц использования хранилища данных.
+Для повышения производительности можно увеличить число единиц использования хранилища данных. Для уменьшения производительности уменьшите число единиц хранилища данных. Использование хранилища и операции вычисления оплачиваются отдельно, независимо от изменений количества единиц использования хранилища данных.
 
-Performance for data warehouse units is based on these workload metrics:
+Производительность единиц работы с хранилищем данных зависит от этих метрик рабочей нагрузки:
 
-- How fast a standard data warehousing query can scan a large number of rows and then perform a complex aggregation. Это требует интенсивного использования операций ввода-вывода и ресурсов ЦП.
-- How fast the data warehouse can ingest data from Azure Storage Blobs or Azure Data Lake. Это сетевая операция, которая требует интенсивного использования ресурсов ЦП.
-- How fast the [`CREATE TABLE AS SELECT`](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) T-SQL command can copy a table. Эта операция предусматривает чтение данных из хранилища, их распространение в различные узлы устройства и повторную запись в хранилище. Эта операция выполняется ЦП и требует интенсивного использования операций ввода-вывода и сетевых ресурсов.
+- Скорость, с которой стандартный запрос хранилища данных может сканировать большое количество строк, а затем выполнять комплексное агрегирование. Это требует интенсивного использования операций ввода-вывода и ресурсов ЦП.
+- Скорость приема данных в хранилище данных из больших двоичных объектов службы хранилища Azure или Azure Data Lake. Это сетевая операция, которая требует интенсивного использования ресурсов ЦП.
+- Скорость, с которой команда t-SQL [`CREATE TABLE AS SELECT`](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) может копировать таблицу. Эта операция предусматривает чтение данных из хранилища, их распространение в различные узлы устройства и повторную запись в хранилище. Эта операция выполняется ЦП и требует интенсивного использования операций ввода-вывода и сетевых ресурсов.
 
 При увеличении единиц DWU происходит следующее:
 
@@ -42,9 +42,9 @@ Performance for data warehouse units is based on these workload metrics:
 
 ## <a name="service-level-objective"></a>Целевой уровень обслуживания
 
-Цель уровня обслуживания (SLO) — это параметр масштабируемости, который определяет уровень затрат и производительности хранилища данных. The service levels for Gen2 SQL pool are measured in data warehouse units (DWU), for example DW2000c.
+Цель уровня обслуживания (SLO) — это параметр масштабируемости, который определяет уровень затрат и производительности хранилища данных. Уровни обслуживания для пула SQL Gen2 измеряются в единицах хранилища данных (DWU), например DW2000c.
 
-In T-SQL, the SERVICE_OBJECTIVE setting determines the service level for your SQL pool.
+В T-SQL параметр SERVICE_OBJECTIVE определяет уровень обслуживания для пула SQL.
 
 ```sql
 CREATE DATABASE mySQLDW
@@ -58,7 +58,7 @@ CREATE DATABASE mySQLDW
 
 Для каждого сервера SQL (например, myserver.database.windows.net) предусмотрена квота [DTU (единицы передачи данных)](../sql-database/sql-database-what-is-a-dtu.md), которая позволяет применить только определенное число единиц использования хранилища данных. Дополнительные сведения см. в статье об [ограничениях емкости для управления рабочей нагрузкой](sql-data-warehouse-service-capacity-limits.md#workload-management).
 
-## <a name="how-many-data-warehouse-units-do-i-need"></a>How many data warehouse units do I need
+## <a name="how-many-data-warehouse-units-do-i-need"></a>Сколько единиц хранилища данных требуется
 
 Оптимальное количество единиц использования хранилища данных существенно зависит от рабочей нагрузки и объема данных, загруженных в систему.
 
@@ -66,9 +66,9 @@ CREATE DATABASE mySQLDW
 
 1. Начните, выбрав меньшее число DWU.
 2. Отслеживайте производительность приложения по мере загрузки тестовых данных в систему, сравнивая ее с количеством выбранных DWU.
-3. Определите любые дополнительные требования для периодов пиковой активности. Workloads that show significant peaks and troughs in activity may need to be scaled frequently.
+3. Определите любые дополнительные требования для периодов пиковой активности. Рабочие нагрузки, отображающие значительные пиковые значения и спадов в действии, могут быть часто масштабированы.
 
-SQL Analytics is a scale-out system that can provision vast amounts of compute and query sizeable quantities of data. Чтобы ознакомиться с реальными возможностями масштабирования, особенно при использовании большого количества DWU, мы рекомендуем во время масштабирования выполнить масштабирование набора данных, чтобы проверить, достаточно ли используется данных для ЦП. Для проверки масштабирования мы рекомендуем использовать как минимум 1 TБ.
+SQL Analytics — это масштабируемая система, которая позволяет подготавливать большие объемы вычислений и запрашивать немалым количество данных. Чтобы ознакомиться с реальными возможностями масштабирования, особенно при использовании большого количества DWU, мы рекомендуем во время масштабирования выполнить масштабирование набора данных, чтобы проверить, достаточно ли используется данных для ЦП. Для проверки масштабирования мы рекомендуем использовать как минимум 1 TБ.
 
 > [!NOTE]
 >
@@ -80,13 +80,13 @@ SQL Analytics is a scale-out system that can provision vast amounts of compute a
 
 Встроенные роли для ресурсов Azure, такие как участник базы данных SQL и участник SQL Server, позволяют изменять параметры DWU.
 
-## <a name="view-current-dwu-settings"></a>для просмотра текущих параметров DWU;
+## <a name="view-current-dwu-settings"></a>Просмотр текущих параметров DWU
 
 Чтобы просмотреть текущие параметры DWU, сделайте следующее:
 
 1. Откройте обозреватель объектов SQL Server в Visual Studio.
 2. Подключитесь к базе данных master, связанной с логическим сервером Базы данных SQL.
-3. Выберите в sys.database_service_objectives динамическое административное представление. Вот пример:
+3. Выберите в sys.database_service_objectives динамическое административное представление. Пример:
 
 ```sql
 SELECT  db.name [Database]
@@ -99,21 +99,21 @@ JOIN    sys.databases                     AS db ON ds.database_id = db.database_
 
 ## <a name="change-data-warehouse-units"></a>Изменение единиц использования хранилища данных
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>портале Azure
 
-To change DWUs:
+Чтобы изменить DWU, сделайте следующее:
 
-1. Откройте [портал Azure](https://portal.azure.com), затем откройте нужную базу данных и щелкните **Масштаб**.
+1. Откройте [портал Azure](https://portal.azure.com), откройте нужную базу данных и щелкните **Масштаб**.
 
 2. В колонке **Масштаб** передвиньте ползунок влево или вправо, чтобы изменить число единиц DWU.
 
-3. В нижней части страницы нажмите кнопку **Save**. Появится сообщение с подтверждением. Щелкните **Да** для подтверждения или **Нет** для отмены.
+3. Выберите команду **Сохранить**. Появится сообщение с подтверждением. Щелкните **Да** для подтверждения или **Нет** для отмены.
 
 ### <a name="powershell"></a>PowerShell
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-To change the DWUs, use the [Set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase) PowerShell cmdlet. The following example sets the service level objective to DW1000c for the database MySQLDW that is hosted on server MyServer.
+Чтобы изменить DWU, используйте командлет PowerShell [Set-азсклдатабасе](/powershell/module/az.sql/set-azsqldatabase) . В следующем примере задается цель уровня обслуживания DW1000c для базы данных MySQLDW, размещенной на сервере MyServer.
 
 ```Powershell
 Set-AzSqlDatabase -DatabaseName "MySQLDW" -ServerName "MyServer" -RequestedServiceObjectiveName "DW1000c"
@@ -123,12 +123,12 @@ Set-AzSqlDatabase -DatabaseName "MySQLDW" -ServerName "MyServer" -RequestedServi
 
 ### <a name="t-sql"></a>T-SQL
 
-With T-SQL you can view the current DWU settings, change the settings, and check the progress.
+С помощью T-SQL можно просмотреть текущие параметры DWU, изменить параметры и проверить ход выполнения.
 
 Изменение DWU:
 
 1. Подключитесь к базе данных master, связанной с логическим сервером Базы данных SQL.
-2. Используйте оператор TSQL [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql). The following example sets the service level objective to DW1000c for the database MySQLDW.
+2. Используйте оператор TSQL [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql) . В следующем примере задается цель уровня обслуживания DW1000c для базы данных MySQLDW.
 
 ```Sql
 ALTER DATABASE MySQLDW
@@ -136,9 +136,9 @@ MODIFY (SERVICE_OBJECTIVE = 'DW1000c')
 ;
 ```
 
-### <a name="rest-apis"></a>API-интерфейсы REST
+### <a name="rest-apis"></a>Интерфейсы API REST
 
-Чтобы изменить число DWU, используйте REST API [создания или обновления базы данных](/rest/api/sql/databases/createorupdate). The following example sets the service level objective to DW1000c for the database MySQLDW, which is hosted on server MyServer. Сервер находится в группе ресурсов Azure с именем ResourceGroup1.
+Чтобы изменить число единиц DWU, используйте REST API для [создания или обновления базы данных](/rest/api/sql/databases/createorupdate) . В следующем примере устанавливается цель уровня обслуживания DW1000c для базы данных MySQLDW, которая размещается на сервере MyServer. Сервер находится в группе ресурсов Azure с именем ResourceGroup1.
 
 ```
 PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}/databases/{database-name}?api-version=2014-04-01-preview HTTP/1.1
@@ -183,15 +183,15 @@ Content-Type: application/json; charset=UTF-8
     ;
     ```
     
-This DMV returns information about various management operations on your SQL pool such as the operation and the state of the operation, which is either IN_PROGRESS or COMPLETED.
+Это динамическое административное представление возвращает сведения о различных операциях управления в пуле SQL, таких как операция и состояние операции, которая либо IN_PROGRESS, либо завершена.
 
 ## <a name="the-scaling-workflow"></a>Масштабирование рабочего процесса
 
-When you start a scale operation, the system first kills all open sessions, rolling back any open transactions to ensure a consistent state. Операции масштабирования можно выполнить только после завершения отката транзакций.  
+При запуске операции масштабирования система сначала завершает все открытые сеансы и откатывает все открытые транзакции, чтобы обеспечить целостность состояния. Операции масштабирования можно выполнить только после завершения отката транзакций.  
 
-- For a scale-up operation, the system detaches all compute nodes, provisions the additional compute nodes, and then reattaches to the storage layer.
-- For a scale-down operation, the system detaches all compute nodes and then reattaches only the needed nodes to the storage layer.
+- Для операции масштабирования система отсоединяет все расчетные узлы, подготавливает дополнительные расчетные узлы, а затем повторно подключается к уровню хранилища.
+- Для операции уменьшения масштаба система отсоединяет все расчетные узлы, а затем повторно подключает только необходимые узлы к уровню хранилища.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об управлении производительностью см. в статьях [Классы ресурсов для управления рабочими нагрузками](resource-classes-for-workload-management.md) и [Memory and concurrency limits for Azure SQL Data Warehouse](memory-concurrency-limits.md) (Ограничения памяти и параллелизма для хранилища данных SQL Azure).

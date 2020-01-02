@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.custom: sample, mvc
 ms.date: 5/6/2019
-ms.openlocfilehash: 9b8ff3334c8e31397f68e890c15bec3e2515a1a2
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 154dc8b8569162992f4fc231caee2a43682db456
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65073114"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74774726"
 ---
 # <a name="azure-cli-samples-for-azure-database-for-postgresql---single-server"></a>Примеры Azure CLI для службы "База данных Azure для PostgreSQL — отдельный сервер"
 В следующей таблице содержатся ссылки на примеры скриптов Azure CLI для базы данных Azure для PostgreSQL.

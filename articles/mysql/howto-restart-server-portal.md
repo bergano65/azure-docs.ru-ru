@@ -1,17 +1,17 @@
 ---
-title: Перезапуск Базы данных Azure для MySQL с помощью портала Azure
-description: В этой статье описывается, как вы можете перезапустить базу данных Azure для сервера MySQL с помощью портала Azure.
+title: Перезапуск сервера-портал Azure — база данных Azure для MySQL
+description: В этой статье описывается, как можно перезапустить сервер базы данных Azure для MySQL с помощью портал Azure.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 2/7/2019
-ms.openlocfilehash: a20030a1dc6cd8b89064731c283f9b462d30ec8f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 12/02/2019
+ms.openlocfilehash: 1857c67a77b9600f3d8f7c222a8e06f899fba728
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61422593"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74774057"
 ---
 # <a name="restart-azure-database-for-mysql-server-using-azure-portal"></a>Перезапуск Базы данных Azure для MySQL с помощью портала Azure
 В этой статье объясняется, как перезапустить сервер в Базе данных Azure для MySQL. Возможно, вам потребуется перезапустить сервер в целях обслуживания, что приводит к кратковременному отключению во время выполнения операции.
@@ -22,7 +22,7 @@ ms.locfileid: "61422593"
 
 ## <a name="prerequisites"></a>Технические условия
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
-- [База данных Azure для сервера MySQL](quickstart-create-mysql-server-database-using-azure-portal.md)
+- [Сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md)
 
 ## <a name="perform-server-restart"></a>Перезапуск сервера
 
@@ -48,4 +48,4 @@ ms.locfileid: "61422593"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Краткое руководство по созданию сервера Базы данных Azure для MySQL с помощью портала Azure](./quickstart-create-mysql-server-database-using-azure-portal.md)
+[Создание сервера базы данных Azure для MySQL и управление им с помощью портала Azure](./quickstart-create-mysql-server-database-using-azure-portal.md)

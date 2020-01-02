@@ -1,26 +1,20 @@
 ---
 title: Часто задаваемые вопросы о развертывании в Службе приложений Azure | Документация Майкрософт
 description: Ответы на часто задаваемые вопросы о развертывании в веб-приложениях службы приложений Azure.
-services: app-service\web
-documentationcenter: ''
 author: genlin
 manager: dcscontentpm
-editor: ''
 tags: top-support-issue
 ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
-ms.service: app-service-web
-ms.workload: web
-ms.tgt_pltfrm: ibiza
 ms.topic: article
 ms.date: 11/01/2018
 ms.author: genli
 ms.custom: seodec18
-ms.openlocfilehash: 0a01f25894d1226466473dec7333859c7415f1fd
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: 25f43051f11d42c4f8565039d3168f2ae162eb37
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71121209"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74671682"
 ---
 # <a name="deployment-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о развертывании в веб-приложениях Azure
 
@@ -39,7 +33,7 @@ ms.locfileid: "71121209"
 
 ## <a name="i-see-an-error-message-when-i-try-to-deploy-from-visual-studio-how-do-i-resolve-this-error"></a>При попытке выполнить развертывание из Visual Studio отображается сообщение об ошибке. Разделы справки устранить эту ошибку?
 
-При использовании предыдущей версии пакета SDK может появиться следующее сообщение об ошибке: "Ошибка при развертывании для ресурса "имя_ресурса" в группе ресурсов "группа_ресурсов": MissingRegistrationForLocation. Подписка не зарегистрирована для типа ресурса "компоненты" в расположении "Центральная часть США". Повторите регистрацию для этого поставщика, чтобы получить доступ к этому расположению. " 
+При использовании пакета SDK предыдущей версии может появиться следующее сообщение об ошибке: "Ошибка при развертывании для ресурса "имя_ресурса" в группе ресурсов "группа_ресурсов": MissingRegistrationForLocation. Подписка не зарегистрирована для типа ресурсов "компоненты" в расположении "Центральная часть США". Повторите регистрацию для этого поставщика, чтобы получить доступ к этому расположению. " 
 
 Чтобы устранить эту ошибку, обновите [пакет SDK до последней версии](https://azure.microsoft.com/downloads/). Если вы видите это сообщение и имеете последнюю версию пакета SDK, отправьте запрос на техническую поддержку.
 
@@ -75,7 +69,7 @@ ms.locfileid: "71121209"
 1. Убедитесь, что введены правильные имя узла и учетные данные. Подробные сведения о различных типах учетных данных и способе их использования см. в статье [Deployment credentials](https://github.com/projectkudu/kudu/wiki/Deployment-credentials) (Учетные данные развертывания).
 2. Убедитесь, что FTP-порты не заблокированы брандмауэром. Эти порты должны иметь следующие параметры:
     * Порт подключения для управления FTP: 21
-    * Порт подключения к данным FTP: 989, 10001–10300
+    * Порт подключения к данным FTP: 989, 10001–10300.
 
 ## <a name="how-do-i-publish-my-code-to-app-service"></a>Как опубликовать код в службу приложений?
 

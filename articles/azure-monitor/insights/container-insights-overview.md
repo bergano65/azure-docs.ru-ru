@@ -7,19 +7,19 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 11/18/2019
-ms.openlocfilehash: 12860d70cad2dbcfa3d06bf4df6939dd27ab3ab3
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 8267f8148269f8b1a0717435e57614f09c229de1
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74279631"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74841410"
 ---
 # <a name="azure-monitor-for-containers-overview"></a>Обзор службы "Azure Monitor для контейнеров"
 
 Azure Monitor для контейнеров — это функция, предназначенная для наблюдения за производительностью рабочих нагрузок контейнера, развернутых в.
 
 - Managed Kubernetes кластеров, размещенных в службе Azure Kubernetes (AKS)
-- Экземпляры контейнеров Azure
+- Служба "Экземпляры контейнеров Azure"
 - Самостоятельно управляемые кластеры Kubernetes, размещенные на Azure Stack или в локальной среде
 - Azure Red Hat OpenShift
 
@@ -49,7 +49,7 @@ Azure Monitor для контейнеров — это комплексный п
 * Мониторинг рабочих нагрузок контейнера [, развернутых в Azure Red Hat OpenShift](../../openshift/intro-openshift.md).
 
     >[!NOTE]
-    >Поддержка Red Hat OpenShift в настоящее время является функцией в общедоступной предварительной версии.
+    >Поддержка Azure Red Hat OpenShift в настоящее время является функцией в общедоступной предварительной версии.
     >
 
 Ознакомьтесь со следующим видео, в котором приведен подробный обзор промежуточного уровня, который поможет вам узнать о мониторинге кластера AKS с помощью Azure Monitor для контейнеров.
@@ -64,6 +64,6 @@ Azure Monitor для контейнеров — это комплексный п
 
 Если вы заинтересованы в мониторинге и управлении узлами контейнеров DOCKER и Windows, запущенными за пределами AKS для просмотра конфигурации, аудита и использования ресурсов, см. раздел [решение для мониторинга контейнеров](../../azure-monitor/insights/containers.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы начать мониторинг кластера Kubernetes, ознакомьтесь со сведениями о том, [как включить Azure Monitor для контейнеров](container-insights-onboard.md) , чтобы понять требования и доступные методы для включения мониторинга. 

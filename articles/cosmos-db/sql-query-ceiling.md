@@ -1,18 +1,18 @@
 ---
 title: Azure Cosmos DB языка запросов
-description: Сведения о функции SQL System, потолок в Azure Cosmos DB.
+description: Узнайте о том, как функция CEILING SQL System в Azure Cosmos DB возвращает основное значение тангенса дуги y/x, выраженное в радианах.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 7056cfd1773e0d98fa134c9fdec3ad6a43af1bcf
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 18462b152b698e7c6bc4c6c1e59511b4bacaa611
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71351111"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873443"
 ---
 # <a name="ceiling-azure-cosmos-db"></a>CEILING (Azure Cosmos DB)
  Возвращает наименьшее целочисленное значение, которое больше или равно указанному числовому выражению.  
@@ -34,7 +34,7 @@ CEILING (<numeric_expr>)
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показаны положительные числовые, отрицательные и нулевые значения с функцией `CEILING`.  
+  В следующем примере показаны положительные числовые, отрицательные и нулевые значения с помощью функции `CEILING`.  
   
 ```sql
 SELECT CEILING(123.45) AS c1, CEILING(-123.45) AS c2, CEILING(0.0) AS c3  
@@ -46,7 +46,7 @@ SELECT CEILING(123.45) AS c1, CEILING(-123.45) AS c2, CEILING(0.0) AS c3
 [{c1: 124, c2: -123, c3: 0}]  
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

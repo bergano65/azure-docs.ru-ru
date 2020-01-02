@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
-ms.openlocfilehash: fd75cc392bb30d15b665190eef8fbea39d692ee3
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: dfa5fbcf5df8ee314aab3e4a8228d81e7e14565b
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73160341"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74233513"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-new-relic"></a>Руководство по Интеграция Azure Active Directory с New Relic
 
@@ -225,7 +225,7 @@ ms.locfileid: "73160341"
     c. Щелкните **Добавить этого пользователя**.
 
 >[!NOTE]
->Вы можете использовать любые другие инструменты создания учетных записей пользователя New Relic или API, предоставляемые New Relic для подготовки учетных записей пользователя AAD.
+>Вы можете использовать любые другие инструменты создания учетных записей пользователя New Relic или API, предоставляемые New Relic, для подготовки учетных записей пользователя AAD.
 > 
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 

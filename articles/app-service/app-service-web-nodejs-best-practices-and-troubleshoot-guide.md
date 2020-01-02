@@ -1,26 +1,19 @@
 ---
-title: Рекомендации и методы устранения неполадок для Node.js в Службе приложений Azure
-description: Представлены рекомендации и способы устранения неполадок в приложениях Node.js в Службе приложений Azure.
-services: app-service\web
-documentationcenter: nodejs
+title: Рекомендации по использованию и устранению неполадок в Node. js
+description: Ознакомьтесь с рекомендациями и действиями по устранению неполадок для приложений Node. js, работающих в службе приложений Azure.
 author: ranjithr
-manager: wadeh
-editor: ''
 ms.assetid: 387ea217-7910-4468-8987-9a1022a99bef
-ms.service: app-service-web
-ms.workload: web
-ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 11/09/2017
-ms.author: ranjithr
+ms.author: bwren
 ms.custom: seodec18
-ms.openlocfilehash: 5dae268e2c659bcd39c7b274f2f12c64b4504353
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 75195bd7ad228bb66dfd21d2c65997cc8c02680e
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67719786"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74672043"
 ---
 # <a name="best-practices-and-troubleshooting-guide-for-node-applications-on-azure-app-service-windows"></a>Рекомендации и руководство по устранению неполадок в приложениях Node.js в Службе приложений Azure (Windows)
 
@@ -36,7 +29,7 @@ ms.locfileid: "67719786"
 
 ### <a name="nodeprocesscountperapplication"></a>nodeProcessCountPerApplication
 
-Этот параметр определяет количество процессов Node, запущенных в одном приложении IIS. Значение по умолчанию — 1. Если задать значение 0, число файлов node.exe будет совпадать с числом ЦП на виртуальной машине. Для большинства приложений рекомендуемое значение — 0. Это позволяет использовать все виртуальные ЦП на вашем компьютере. Файл node.exe является однопотоковым, поэтому один такой файл потребляет не более 1 виртуального ЦП. Чтобы добиться максимальной производительности приложения Node, используйте все виртуальные ЦП.
+Этот параметр определяет количество процессов Node, запущенных в одном приложении IIS. Значение по умолчанию — 1. Если задать значение 0, число файлов node.exe будет совпадать с числом ЦП на виртуальной машине. Для большинства приложений рекомендуемое значение — 0. Это позволяет использовать все виртуальные ЦП на вашем компьютере. Файл node.exe является однопотоковым, поэтому один такой файл потребляет не более 1 виртуального ЦП. Чтобы добиться максимальной производительности приложения Node, используйте все виртуальные ЦП.
 
 ### <a name="nodeprocesscommandline"></a>nodeProcessCommandLine
 
@@ -212,7 +205,7 @@ http.createServer(function (req, res) {
 
 ![](./media/app-service-web-nodejs-best-practices-and-troubleshoot-guide/scm_profile.cpuprofile.png)
 
-Загрузите этот файл и откройте его с помощью средств Chrome (клавиша F12). Нажмите клавишу F12 для Chrome, а затем перейдите на вкладку **Профили**. Нажмите кнопку **Загрузить**. Выберите загруженный файл profile.cpuprofile. Щелкните только что загруженный профиль.
+Загрузите этот файл и откройте его с помощью средств Chrome (клавиша F12). Нажмите клавишу F12 на Chrome, а затем выберите вкладку **Профили** . Нажмите кнопку **загрузить** . Выберите загруженный файл profile.cpuprofile. Щелкните только что загруженный профиль.
 
 ![](./media/app-service-web-nodejs-best-practices-and-troubleshoot-guide/chrome_tools_view.png)
 
@@ -283,6 +276,6 @@ NODE.exe поддерживает параметр с именем `NODE_PENDING
 * [Приступая к работе с веб-приложениями Node.js в службе приложений Azure](app-service-web-get-started-nodejs.md)
 * [Отладка веб-приложения Node.js в службе приложений Azure](https://blogs.msdn.microsoft.com/azureossds/2018/08/03/debugging-node-js-apps-on-azure-app-services/)
 * [Использование модулей Node.js с приложениями Azure](../nodejs-use-node-modules-azure-apps.md)
-* [Azure App Service Web Apps: Node.js](https://blogs.msdn.microsoft.com/silverlining/2012/06/14/windows-azure-websites-node-js/) (Веб-приложения в Службе приложений Azure: Node.js)
-* [Центр разработчика Node.js](../nodejs-use-node-modules-azure-apps.md)
+* [Azure App Service Web Apps: Node.js (Веб-приложения службы приложений Azure: Node.js)](https://blogs.msdn.microsoft.com/silverlining/2012/06/14/windows-azure-websites-node-js/)
+* [Центр разработчиков Node.js.](../nodejs-use-node-modules-azure-apps.md)
 * [Exploring the Super Secret Kudu Debug Console (Обзор сверхсекретной консоли для отладки Kudu)](https://azure.microsoft.com/documentation/videos/super-secret-kudu-debug-console-for-azure-web-sites/)

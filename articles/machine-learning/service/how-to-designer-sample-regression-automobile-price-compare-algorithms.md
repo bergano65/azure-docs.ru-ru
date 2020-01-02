@@ -1,7 +1,7 @@
 ---
-title: 'Designer: Predict car prices (advanced) example'
+title: 'Конструктор: пример прогноза цен на автомобиль (дополнительно)'
 titleSuffix: Azure Machine Learning
-description: Build & compare multiple ML regression models to predict an automobile's price  based on technical features with Azure Machine Learning designer.
+description: Сборка & Сравните несколько моделей регрессии машинного обучения с целью прогнозирования цены автомобиля на основе технических функций с помощью конструктора Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -17,62 +17,62 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74225045"
 ---
-# <a name="train--compare-multiple-regression-models-to-predict-car-prices-with-azure-machine-learning-designer"></a>Train & compare multiple regression models to predict car prices with Azure Machine Learning designer
+# <a name="train--compare-multiple-regression-models-to-predict-car-prices-with-azure-machine-learning-designer"></a>Обучение & сравнение нескольких моделей регрессии для прогнозирования цен автомобилей с помощью конструктора Машинное обучение Azure
 
-**Designer (preview) sample 2**
+**Конструктор (Предварительная версия) — пример 2**
 
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]
 
-Learn how to build a  machine learning pipeline without writing a single line of code using the designer (preview). This sample trains and compares multiple regression models to predict a car's price based on its technical features. We'll provide the rationale for the choices made in this pipeline so you can tackle your own machine learning problems.
+Узнайте, как создать конвейер машинного обучения без написания единой строки кода с помощью конструктора (Предварительная версия). В этом примере описывается обучение и сравнение нескольких моделей регрессии для прогнозирования цены автомобиля на основе ее технических характеристик. Мы предоставим смысл для вариантов, сделанных в этом конвейере, чтобы вы могли справиться с собственными проблемами машинного обучения.
 
-If you're just getting started with machine learning, take a look at the [basic version](how-to-designer-sample-regression-automobile-price-basic.md) of this pipeline.
+Если вы только начинаете работу с машинным обучением, ознакомьтесь с [базовой версией](how-to-designer-sample-regression-automobile-price-basic.md) этого конвейера.
 
-Here's the completed graph for this pipeline:
+Вот завершенный граф для этого конвейера:
 
-[![Graph of the pipeline](media/how-to-designer-sample-regression-predict-automobile-price-compare-algorithms/graph.png)](media/how-to-designer-sample-regression-predict-automobile-price-compare-algorithms/graph.png#lightbox)
+[![граф конвейера](media/how-to-designer-sample-regression-predict-automobile-price-compare-algorithms/graph.png)](media/how-to-designer-sample-regression-predict-automobile-price-compare-algorithms/graph.png#lightbox)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 
-4. Click sample 2 to open it. 
+4. Щелкните пример 2, чтобы открыть его. 
 
-## <a name="pipeline-summary"></a>Pipeline summary
+## <a name="pipeline-summary"></a>Сводка по конвейеру
 
-Use following steps to build the machine learning pipeline:
+Чтобы создать конвейер машинного обучения, выполните следующие действия.
 
-1. Get the data.
-1. Pre-process the data.
-1. Train the model.
-1. Test, evaluate, and compare the models.
+1. Получение данных.
+1. Предварительно обработайте данные.
+1. Обучение модели.
+1. Тестирование, оценка и сравнение моделей.
 
 ## <a name="get-the-data"></a>Получение данных
 
-This sample uses the **Automobile price data (Raw)** dataset, which is from the UCI Machine Learning Repository. This dataset contains 26 columns that contain information about automobiles, including make, model, price, vehicle features (like the number of cylinders), MPG, and an insurance risk score.
+В этом примере используется набор данных " **данные о ценах на автомобиль" (RAW)** , который находится в репозитории "UCI машинное обучение". Этот набор данных содержит 26 столбцов, содержащих сведения об устройствах автомобильной связи, включая создание, моделирование, цену, функции автомобилей (например, число цилиндров), MPG и оценку риска страхования.
 
-## <a name="pre-process-the-data"></a>Pre-process the data
+## <a name="pre-process-the-data"></a>Предварительная обработка данных
 
-The main data preparation tasks include data cleaning, integration, transformation, reduction, and discretization or quantization. In the designer, you can find modules to perform these operations and other data pre-processing tasks in the **Data Transformation** group in the left panel.
+К основным задачам подготовки данных относятся очистка данных, интеграция, преобразование, сокращение, дискретизация или дискретизация. В конструкторе можно найти модули для выполнения этих операций и других задач предварительной обработки данных в группе **преобразования данных** на левой панели.
 
-Use the **Select Columns in Dataset** module to exclude normalized-losses that have many missing values. We then use **Clean Missing Data** to remove the rows that have missing values. This helps to create a clean set of training data.
+Используйте модуль **Выбор столбцов в наборе данных** , чтобы исключить нормализованные потери с большим количеством отсутствующих значений. Затем мы используем **чистые отсутствующие данные** для удаления строк с отсутствующими значениями. Это помогает создать чистый набор обучающих данных.
 
 ![Предварительная обработка данных](media/how-to-designer-sample-regression-predict-automobile-price-compare-algorithms/data-processing.png)
 
 ## <a name="train-the-model"></a>Обучение модели
 
-Machine learning problems vary. Common machine learning tasks include classification, clustering, regression, and recommender systems, each of which might require a different algorithm. Your choice of algorithm often depends on the requirements of the use case. After you pick an algorithm, you need to tune its parameters to train a more accurate model. You then need to evaluate all models based on metrics like accuracy, intelligibility, and efficiency.
+Проблемы машинного обучения различаются. Типичные задачи машинного обучения включают в себя классификацию, кластеризацию, регрессию и рекомендации, для каждой из которых может потребоваться другой алгоритм. Выбор алгоритма часто зависит от требований варианта использования. После выбора алгоритма необходимо настроить его параметры для обучения более точной модели. Затем необходимо оценить все модели на основе метрик, таких как точность, интеллигибилити и эффективность.
 
-Because the goal of this pipeline is to predict automobile prices, and because the label column (price) contains real numbers, a regression model is a good choice. Considering that the number of features is relatively small (less than 100) and these features aren't sparse, the decision boundary is likely to be nonlinear.
+Так как цель этого конвейера — прогнозировать цены автомобилей, и поскольку столбец меток (Price) содержит реальные числа, то модель регрессии является хорошим выбором. Учитывая, что количество функций относительно невелико (меньше 100) и эти функции не имеют разреженности, граница решения, скорее всего, будет нелинейной.
 
-To compare the performance of different algorithms, we use two nonlinear algorithms, **Boosted Decision Tree Regression** and **Decision Forest Regression**, to build models. Both algorithms have parameters that you can change, but this sample uses the default values for this pipeline.
+Чтобы сравнить производительность различных алгоритмов, мы используем два нелинейных алгоритма, **повышенную регрессию дерева принятия решений** и **регрессию леса принятия решений**для построения моделей. Оба алгоритма имеют параметры, которые можно изменить, но в этом образце используются значения по умолчанию для этого конвейера.
 
-Use the **Split Data** module to randomly divide the input data so that the training dataset contains 70% of the original data and the testing dataset contains 30% of the original data.
+Используйте модуль **Split Data (разделение данных** ), чтобы случайным образом разделить входные данные так, чтобы набор данных для обучения содержал 70% исходных данных, а проверочный набор данных содержит 30% от исходных.
 
-## <a name="test-evaluate-and-compare-the-models"></a>Test, evaluate, and compare the models
+## <a name="test-evaluate-and-compare-the-models"></a>Тестирование, оценка и сравнение моделей
 
-You use two different sets of randomly chosen data to train and then test the model, as described in the previous section. Split the dataset and use different datasets to train and test the model to make the evaluation of the model more objective.
+Для обучения и последующей проверки модели используются два разных набора случайных данных, как описано в предыдущем разделе. Разделите набор данных и используйте различные наборы данных для обучения и тестирования модели, чтобы сделать оценку модели более целевой.
 
-After the model is trained, use the **Score Model** and **Evaluate Model** modules to generate predicted results and evaluate the models. **Score Model** generates predictions for the test dataset by using the trained model. Then pass the scores to **Evaluate Model** to generate evaluation metrics.
+После обучения модели используйте **модель оценки** и **оцените модули модели** для создания прогнозируемых результатов и оценки моделей. **Модель оценки** создает прогнозы для тестового набора данных с помощью обученной модели. Затем передайте оценки для **оценки модели** , чтобы создать метрики оценки.
 
 
 
@@ -80,21 +80,21 @@ After the model is trained, use the **Score Model** and **Evaluate Model** modul
 
 ![Сравнение результатов](media/how-to-designer-sample-regression-predict-automobile-price-compare-algorithms/result.png)
 
-These results show that the model built with **Boosted Decision Tree Regression** has a lower root mean squared error than the model built on **Decision Forest Regression**.
+Эти результаты показывают, что модель, построенная с помощью **регрессии с повышенным деревом принятия решений** , имеет меньшую среднюю корневую ошибку, чем модель, построенную на **регрессии леса принятия решений**.
 
-Both algorithms have a lower error on the training dataset than on the unseen testing dataset.
+Оба алгоритма имеют более низкую ошибку в наборе данных для обучения, чем в невидимом наборе данных тестирования.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [aml-ui-cleanup](../../../includes/aml-ui-cleanup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Explore the other samples available for the designer:
+Изучите другие примеры, доступные для конструктора:
 
-- [Sample 1 - Regression: Predict an automobile's price](how-to-designer-sample-regression-automobile-price-basic.md)
-- [Sample 3 - Classification with feature selection: Income Prediction](how-to-designer-sample-classification-predict-income.md)
-- [Sample 4 - Classification: Predict credit risk (cost sensitive)](how-to-designer-sample-classification-credit-risk-cost-sensitive.md)
-- [Sample 5 - Classification: Predict churn](how-to-designer-sample-classification-churn.md)
-- [Sample 6 - Classification: Predict flight delays](how-to-designer-sample-classification-flight-delay.md)
-- [Sample 7 - Text Classification: Wikipedia SP 500 Dataset](how-to-designer-sample-text-classification.md)
+- [Пример 1. регрессия: прогнозирование цены автомобиля](how-to-designer-sample-regression-automobile-price-basic.md)
+- [Пример 3. Классификация с выбором компонентов: прогноз дохода](how-to-designer-sample-classification-predict-income.md)
+- [Пример 4. Классификация: прогнозируемый кредитный риск (с учетом стоимости)](how-to-designer-sample-classification-credit-risk-cost-sensitive.md)
+- [Пример 5. Классификация: обработка прогнозов](how-to-designer-sample-classification-churn.md)
+- [Пример 6. Классификация: прогнозы задержек полета](how-to-designer-sample-classification-flight-delay.md)
+- [Пример 7. Классификация текста: набор данных Википедии SP 500](how-to-designer-sample-text-classification.md)

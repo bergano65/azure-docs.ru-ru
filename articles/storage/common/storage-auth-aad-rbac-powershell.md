@@ -1,24 +1,25 @@
 ---
-title: Использование Azure PowerShell для управления правами доступа Azure AD к данным BLOB-объектов и очередей с помощью RBAC в службе хранилища Azure
-description: Используйте Azure PowerShell, чтобы назначить доступ к контейнерам и очередям с помощью управления доступом на основе ролей (RBAC). Служба хранилища Azure поддерживает встроенные и настраиваемые роли RBAC для проверки подлинности с помощью Azure AD.
+title: Назначение роли RBAC для доступа к данным с помощью PowerShell
+titleSuffix: Azure Storage
+description: Узнайте, как использовать PowerShell для назначения разрешений участнику безопасности Azure Active Directory с помощью управления доступом на основе ролей (RBAC). Служба хранилища Azure поддерживает встроенные и настраиваемые роли RBAC для проверки подлинности с помощью Azure AD.
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: conceptual
-ms.date: 07/25/2019
+ms.topic: how-to
+ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 967e1754ec4be504669e176a5643186d08efb9d4
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.openlocfilehash: 57d30803f20d17ee31c3d42d9a26e04c1b0832b6
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71673177"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892023"
 ---
-# <a name="grant-access-to-azure-blob-and-queue-data-with-rbac-using-powershell"></a>Предоставление доступа к данным большого двоичного объекта и очереди Azure с помощью RBAC с использованием PowerShell
+# <a name="use-powershell-to-assign-an-rbac-role-for-access-to-blob-and-queue-data"></a>Назначение роли RBAC доступа к данным большого двоичного объекта и очереди с помощью PowerShell
 
-Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам с помощью [управления доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md). Служба хранилища Azure определяет набор встроенных ролей RBAC, которые охватывают общие наборы разрешений, используемые для доступа к контейнерам или очередям. 
+Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам с помощью [управления доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md). Служба хранилища Azure определяет набор встроенных ролей RBAC, которые охватывают общие наборы разрешений, используемые для доступа к контейнерам или очередям.
 
 Когда роль RBAC назначается субъекту безопасности Azure AD, Azure предоставляет доступ к этим ресурсам для этого субъекта безопасности. Доступ может ограничиваться уровнем подписки, группой ресурсов, учетной записью хранения или отдельным контейнером или очередью. Субъект безопасности Azure AD может быть пользователем, группой, субъектом-службой приложения или [управляемым удостоверением для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).
 
@@ -60,7 +61,7 @@ Storage Queue Data Reader                 Allows for read access to Azure Storag
 
 ### <a name="container-scope"></a>Область контейнера
 
-Чтобы назначить роль для контейнера, укажите строку, содержащую область действия контейнера для параметра `--scope`. Область для контейнера имеет вид:
+Чтобы назначить роль для контейнера, укажите строку, содержащую область действия контейнера, для параметра `--scope`. Область для контейнера имеет вид:
 
 ```
 /subscriptions/<subscription>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>/blobServices/default/containers/<container-name>
@@ -76,7 +77,7 @@ New-AzRoleAssignment -SignInName <email> `
 
 ### <a name="queue-scope"></a>Область очереди
 
-Чтобы назначить роль, ограниченную очередью, укажите строку, содержащую область очереди, для параметра `--scope`. Область для очереди имеет вид:
+Чтобы назначить роль, ограниченную очередью, укажите строку, содержащую область действия очереди для параметра `--scope`. Область для очереди имеет вид:
 
 ```
 /subscriptions/<subscription>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>/queueServices/default/queues/<queue-name>
@@ -118,7 +119,7 @@ New-AzRoleAssignment -SignInName <email> `
 
 ### <a name="subscription-scope"></a>Область действия подписки
 
-Чтобы назначить роль, ограниченную подпиской, укажите область для подписки для параметра `--scope`. Область для подписки имеет вид:
+Чтобы назначить роль, ограниченную подпиской, укажите область действия подписки для параметра `--scope`. Область для подписки имеет вид:
 
 ```
 /subscriptions/<subscription>
@@ -132,7 +133,7 @@ New-AzRoleAssignment -SignInName <email> `
     -Scope  "/subscriptions/<subscription>"
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление доступом с помощью RBAC и Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
 - [Предоставление доступа к BLOB-объектам Azure и создание очереди данных с использованием RBAC с помощью Azure CLI](storage-auth-aad-rbac-cli.md)

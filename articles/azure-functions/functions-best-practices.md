@@ -22,18 +22,18 @@ ms.locfileid: "74227385"
 
 ### <a name="avoid-long-running-functions"></a>Избегайте длительных функций
 
-Крупные длительные функции могут вызывать непредвиденные проблемы времени ожидания. To learn more about the timeouts for a given hosting plan, see [function app timeout duration](functions-scale.md#timeout). 
+Крупные длительные функции могут вызывать непредвиденные проблемы времени ожидания. Дополнительные сведения о времени ожидания для заданного плана размещения см. в разделе время [ожидания приложения-функции](functions-scale.md#timeout). 
 
-A function can become large because of many Node.js dependencies. Импорт зависимостей может также привести к замедлению загрузки, что, в свою очередь, приводит к непредвиденным проблемам времени ожидания. Зависимости можно загрузить явно и неявно. Один модуль, загруженный в коде, может загрузить собственные дополнительные модули. 
+Функция может стать большой из-за множества зависимостей Node. js. Импорт зависимостей может также привести к замедлению загрузки, что, в свою очередь, приводит к непредвиденным проблемам времени ожидания. Зависимости можно загрузить явно и неявно. Один модуль, загруженный в коде, может загрузить собственные дополнительные модули. 
 
-По возможности выполняйте рефакторинг крупных функций и перерабатывайте их на более мелкие совместимые наборы функций, которые работают сообща и быстро возвращают ответ. For example, a webhook or HTTP trigger function might require an acknowledgment response within a certain time limit; it's common for webhooks to require an immediate response. Полезные данные триггера HTTP можно передать в очередь для обработки с помощью функции триггера очереди. This approach lets you defer the actual work and return an immediate response.
+По возможности выполняйте рефакторинг крупных функций и перерабатывайте их на более мелкие совместимые наборы функций, которые работают сообща и быстро возвращают ответ. Например, для веб-перехватчика или функции триггера HTTP может потребоваться ответ подтверждения в течение определенного предела времени. для веб-перехватчиков обычно требуется немедленный отклик. Полезные данные триггера HTTP можно передать в очередь для обработки с помощью функции триггера очереди. Такой подход позволяет отложить фактическую работу и вернуть немедленный ответ.
 
 
 ### <a name="cross-function-communication"></a>Взаимодействие функций
 
 [Устойчивые функции](durable/durable-functions-overview.md) и [Azure Logic Apps](../logic-apps/logic-apps-overview.md) используются для управления переходами состояний и обмена данными между несколькими функциями.
 
-If not using Durable Functions or Logic Apps to integrate with multiple functions, it's best to use storage queues for cross-function communication. The main reason is that storage queues are cheaper and much easier to provision than other storage options. 
+Если не используется Устойчивые функции или Logic Apps для интеграции с несколькими функциями, лучше использовать очереди хранилища для обмена данными между функциями. Основная причина заключается в том, что очереди хранилища являются более дешевыми и проще в подготовке, чем другие варианты хранения. 
 
 Размер отдельных сообщений в очереди хранилища ограничен до 64 КБ. Если между функциями нужно передать сообщения большего размера, можно использовать очередь служебной шины Azure, которая поддерживает сообщения размером до 256 КБ на уровне "Стандартный" и 1 МБ на уровне "Премиум".
 
@@ -46,19 +46,19 @@ If not using Durable Functions or Logic Apps to integrate with multiple function
 
 По возможности функции должны быть без отслеживания состояния и идемпотентными. Свяжите любые необходимые сведения о состоянии со своими данными. Например, с обрабатываемым заказом скорее всего будет связан элемент `state`. Функция может обработать заказ, основываясь на этом состоянии, но в ней самой при этом не отслеживается состояние. 
 
-Идемпотентные функции рекомендуется использовать с триггерами таймера. For example, if you have something that absolutely must run once a day, write it so it can run anytime during the day with the same results. The function can exit when there's no work for a particular day. Кроме того, если предыдущее выполнение завершилось ошибкой, следующее выполнение должно начаться с прерванного момента.
+Идемпотентные функции рекомендуется использовать с триггерами таймера. Например, если у вас есть нечто, что должно выполняться раз в день, напишите его, чтобы оно можно было выполнять в любое время в течение дня с теми же результатами. Функция может выйти из программы, если она не работает в определенный день. Кроме того, если предыдущее выполнение завершилось ошибкой, следующее выполнение должно начаться с прерванного момента.
 
 
 ### <a name="write-defensive-functions"></a>Создавайте защищенные функции
 
 Предположим, что в любое время в функции может возникнуть исключение. Реализуйте в функции возможность продолжения с предыдущей точки сбоя во время следующего выполнения. Давайте рассмотрим сценарий, в котором необходимо сделать следующее:
 
-1. Query for 10,000 rows in a database.
+1. Запрос 10 000 строк в базе данных.
 2. Создать сообщение очереди для каждой из этих строк для дальнейшей обработки.
  
-Depending on how complex your system is, you may have: involved downstream services behaving badly, networking outages, or quota limits reached, etc. All of these can affect your function at any time. Функции необходимо подготавливать к таким проблемам.
+В зависимости от того, насколько сложна система, у вас может быть: вовлечение подчиненных служб в неплохое поведение, сбои сети или достигнутые квоты и т. д. Все это может повлиять на вашу функцию в любое время. Функции необходимо подготавливать к таким проблемам.
 
-Как отреагирует ваш код при сбое после вставки 5000 элементов в очередь для обработки? Отслеживайте элементы в наборе, работа с которым завершена. В противном случае их можно вставить позже. This double-insertion can have a serious impact on your work flow, so [make your functions idempotent](functions-idempotent.md). 
+Как отреагирует ваш код при сбое после вставки 5000 элементов в очередь для обработки? Отслеживайте элементы в наборе, работа с которым завершена. В противном случае их можно вставить позже. Такая двойная Вставка может оказать серьезное воздействие на рабочий процесс, поэтому [функция идемпотентными](functions-idempotent.md). 
 
 Если элемент очереди уже обработан, разрешите холостой цикл выполнения функции.
 
@@ -66,11 +66,11 @@ Depending on how complex your system is, you may have: involved downstream servi
 
 ## <a name="scalability-best-practices"></a>Рекомендации по масштабируемости
 
-There are a number of factors that impact how instances of your function app scale. Дополнительные сведения см. в документации по [масштабированию функций](functions-scale.md).  Ниже приведены рекомендации по оптимальному масштабированию приложения-функции.
+Существует ряд факторов, влияющих на то, как экземпляры приложения-функции масштабируются. Дополнительные сведения см. в документации по [масштабированию функций](functions-scale.md).  Ниже приведены рекомендации по оптимальному масштабированию приложения-функции.
 
 ### <a name="share-and-manage-connections"></a>Управление подключениями и общий доступ к ним
 
-Reuse connections to external resources whenever possible.  См. раздел [Способы управления подключениями в службе "Функции Azure"](./manage-connections.md).
+При возможности повторно используйте подключения к внешним ресурсам.  См. раздел [Способы управления подключениями в службе "Функции Azure"](./manage-connections.md).
 
 ### <a name="dont-mix-test-and-production-code-in-the-same-function-app"></a>Не используйте тестовый и рабочий код в одном приложении-функции
 
@@ -78,9 +78,9 @@ Reuse connections to external resources whenever possible.  См. раздел [
 
 Следите за тем, что вы загружаете в рабочие приложения-функции. Память усредняется для каждой функции в приложении.
 
-If you have a shared assembly referenced in multiple .NET functions, put it in a common shared folder. Otherwise, you could accidentally deploy multiple versions of the same binary that behave differently between functions.
+Если у вас есть общая сборка, на которую имеется ссылка в нескольких функциях .NET, поставьте ее в общую общую папку. В противном случае можно случайно развернуть несколько версий одного и того же двоичного файла, которые ведут себя по-разному в разных функциях.
 
-Don't use verbose logging in production code, which has a negative performance impact.
+Не используйте подробный журнал в рабочем коде, что отрицательно сказывается на производительности.
 
 ### <a name="use-async-code-but-avoid-blocking-calls"></a>Использование асинхронного кода без блокирующих вызовов
 
@@ -92,17 +92,17 @@ Don't use verbose logging in production code, which has a negative performance i
 
 Некоторые триггеры, например триггер концентратора событий, позволяют получать сообщения в пакетном режиме в рамках одного вызова.  Пакетная обработка сообщений обеспечивает более высокую производительность.  Вы можете настроить максимальный размер пакета в файле `host.json`, как описано в [справочной документации по host.json](functions-host-json.md).
 
-For C# functions, you can change the type to a strongly-typed array.  Например, вместо `EventData sensorEvent` можно использовать сигнатуру метода `EventData[] sensorEvent`.  For other languages, you'll need to explicitly set the cardinality property in your `function.json` to `many` in order to enable batching [as shown here](https://github.com/Azure/azure-webjobs-sdk-templates/blob/df94e19484fea88fc2c68d9f032c9d18d860d5b5/Functions.Templates/Templates/EventHubTrigger-JavaScript/function.json#L10).
+Для C# функций можно изменить тип на строго типизированный массив.  Например, вместо `EventData sensorEvent` можно использовать сигнатуру метода `EventData[] sensorEvent`.  Для других языков необходимо явно задать свойство кратности в `function.json` для `many`, чтобы включить пакетную обработку [, как показано ниже](https://github.com/Azure/azure-webjobs-sdk-templates/blob/df94e19484fea88fc2c68d9f032c9d18d860d5b5/Functions.Templates/Templates/EventHubTrigger-JavaScript/function.json#L10).
 
 ### <a name="configure-host-behaviors-to-better-handle-concurrency"></a>Настройте поведение узла для обеспечения оптимального параллелизма
 
 Файл `host.json` в приложении-функции позволяет настраивать среду выполнения узла и поведение триггера.  Кроме настройки поведения пакетной обработки, вы можете управлять параллелизмом определенного числа триггеров. Часто настройка этих параметров помогает масштабировать каждый экземпляр согласно требованиям вызванных функций.
 
-Settings in the host.json file apply across all functions within the app, within a *single instance* of the function. For example, if you had a function app with two HTTP functions and [`maxConcurrentRequests`](functions-bindings-http-webhook.md#hostjson-settings) requests set to 25, a request to either HTTP trigger would count towards the shared 25 concurrent requests.  When that function app is scaled to 10 instances, the two functions effectively allow 250 concurrent requests (10 instances * 25 concurrent requests per instance). 
+Параметры в файле host. JSON применяются ко всем функциям в приложении в рамках *одного экземпляра* функции. Например, если у вас есть приложение-функция с двумя функциями HTTP, а для запросов [`maxConcurrentRequests`](functions-bindings-http-webhook.md#hostjson-settings) задано значение 25, запрос к любому триггеру HTTP будет считаться общим 25 одновременных запросов.  Если это приложение-функция масштабируется до 10 экземпляров, то две функции эффективно допускают 250 параллельных запросов (10 экземпляров * 25 одновременных запросов на экземпляр). 
 
-Other host configuration options are found in the [host.json configuration article](functions-host-json.md).
+Другие параметры конфигурации узла находятся в [статье Настройка Host. JSON](functions-host-json.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Для получения дополнительных сведений см. следующие ресурсы:
 

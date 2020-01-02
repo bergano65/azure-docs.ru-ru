@@ -190,6 +190,8 @@
       href: /javascript/api/overview/azure/container-registry
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.containerregistry/registries
+    - name: "Задачи\_— YAML"
+      href: container-registry-tasks-reference-yaml.md
     - name: Схема веб-перехватчика
       href: container-registry-webhook-reference.md
     - name: Схема службы "Сетка событий"

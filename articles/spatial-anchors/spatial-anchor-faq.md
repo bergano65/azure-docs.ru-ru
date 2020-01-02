@@ -1,19 +1,19 @@
 ---
-title: Часто задаваемые вопросы о службе "Пространственные привязки Azure" | Документация Майкрософт
-description: Управляемая облачная служба "Пространственные привязки Azure" предоставляет разработчикам платформу для создания систем, взаимодействующих с несколькими пользователями и смешанной реальностью на разных устройствах под управлением HoloLens, iOS и Android. Здесь собраны часто задаваемые вопросы о технической стороне этой службы.
+title: Часто задаваемые вопросы
+description: Вопросы и ответы о службе "Пространственные привязки Azure".
 author: ramonarguelles
-manager: vicenterivera
+manager: vriveras
 services: azure-spatial-anchors
 ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: overview
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 06936a196813dacfc1fc9d02945bee4119b7eea8
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: ac7fefd8ecabd40070b422c169befe64c08f12a8
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68927499"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74277078"
 ---
 # <a name="frequently-asked-questions-about-azure-spatial-anchors"></a>Часто задаваемые вопросы о службе "Пространственные привязки Azure"
 

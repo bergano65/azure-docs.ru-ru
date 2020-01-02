@@ -1,31 +1,27 @@
 ---
-title: Переход с портала регистрации приложений на новый Регистрация приложений интерфейс в портал Azure
+title: Переход с портала "Регистрация приложений" на новый интерфейс "Регистрация приложений" на портале Azure
 titleSuffix: Microsoft identity platform
 description: Общие сведения о новом интерфейсе регистрации приложений в портал Azure
 services: active-directory
-documentationcenter: ''
 author: archieag
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/8/2019
 ms.author: aragra
 ms.reviewer: lenalepa, alamaral
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e9c09ce2d997c58e2725c411fff0b87a0f5071b
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 93af32e99e725a72c20c05690b2a96c74082e2ff
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74013025"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74844522"
 ---
-# <a name="transitioning-from-application-registration-portal-to-the-new-app-registrations-experience-in-the-azure-portal"></a>Переход с портала регистрации приложений на новый Регистрация приложений интерфейс в портал Azure
+# <a name="transitioning-from-application-registration-portal-to-the-new-app-registrations-experience-in-the-azure-portal"></a>Переход с портала "Регистрация приложений" на новый интерфейс "Регистрация приложений" на портале Azure
 
 Новые возможности [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) в портал Azureе значительно улучшены. Если вы больше знакомы с порталом регистрации приложений (apps.dev.microsoft.com) для регистрации приложений и управления ими, которые называются старыми впечатлениями, это руководство поможет вам приступить к работе с новым интерфейсом.
 
@@ -87,12 +83,12 @@ ms.locfileid: "74013025"
 ## <a name="platformsauthentication-reply-urlsredirect-uris"></a>Платформы и аутентификация: URL-адреса ответа и URI перенаправления
 В старом интерфейсе приложение имело раздел "платформы" для веб-интерфейса, собственного веб-API, а также для настройки URL-адресов перенаправления, URL-адреса выхода и неявного потока.
 
-В новом интерфейсе URL-адреса ответов можно найти в разделе "Проверка подлинности приложения\'s". Кроме того, они называются URI перенаправления, и формат URI перенаправления изменился. Они должны быть связаны с типом приложения (веб-сайт или общедоступный клиент — Mobile и Desktop). [Подробнее](quickstart-configure-app-access-web-apis.md#add-redirect-uris-to-your-application)
+В новом интерфейсе URL-адреса ответов можно найти в разделе "Проверка подлинности приложения\'s". Кроме того, они называются URI перенаправления, и формат URI перенаправления изменился. Они должны быть связаны с типом приложения (веб-сайт или общедоступный клиент — Mobile и Desktop). [Дополнительные сведения](quickstart-configure-app-access-web-apis.md#add-redirect-uris-to-your-application)
 
 Веб-API настраиваются в, предоставляющих страницу API.
 
 > [!NOTE] 
-> Ознакомьтесь с новыми параметрами проверки подлинности, где можно настроить параметры для приложения на основе платформы или устройства, для которых вы хотите ориентироваться. [Подробнее](quickstart-configure-app-access-web-apis.md#configure-platform-settings-for-your-application)
+> Ознакомьтесь с новыми параметрами проверки подлинности, где можно настроить параметры для приложения на основе платформы или устройства, для которых вы хотите ориентироваться. [Дополнительные сведения](quickstart-configure-app-access-web-apis.md#configure-platform-settings-for-your-application)
 
 ## <a name="microsoft-graph-permissionsapi-permissions"></a>Разрешения Microsoft Graph/API
 

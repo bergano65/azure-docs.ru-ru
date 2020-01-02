@@ -52,26 +52,32 @@
           items:
             - name: Портал Azure
               href: ingest-data-event-hub.md
-            - name: python
+            - name: Python
               href: data-connection-event-hub-python.md
             - name: 'C#'
               href: data-connection-event-hub-csharp.md
+            - name: Шаблон Azure Resource Manager
+              href: data-connection-event-hub-resource-manager.md
         - name: Сетка событий Azure
           items:
             - name: Портал Azure
               href: ingest-data-event-grid.md
-            - name: python
+            - name: Python
               href: data-connection-event-grid-python.md
             - name: 'C#'
               href: data-connection-event-grid-csharp.md
+            - name: Шаблон Azure Resource Manager
+              href: data-connection-event-grid-resource-manager.md
         - name: Центр Интернета вещей
           items:
             - name: Портал Azure
               href: ingest-data-iot-hub.md
-            - name: python
+            - name: Python
               href: data-connection-iot-hub-python.md
             - name: 'C#'
               href: data-connection-iot-hub-csharp.md
+            - name: Шаблон Azure Resource Manager
+              href: data-connection-iot-hub-resource-manager.md
         - name: Прием данных одним щелчком
           href: ingest-data-one-click.md
         - name: Прием потоковой передачи
@@ -96,8 +102,12 @@
           href: data-lake-query-data.md
         - name: Запрашивание данных в Azure Monitor
           href: query-monitor-data.md
-        - name: Python
-          href: python-query-data.md
+        - name: Отладка встроенного KQL-кода Python
+          href: debug-inline-python.md
+        - name: Использование пакетов SDK
+          items:
+            - name: Python
+              href: python-query-data.md
         - name: Анализ временных рядов и машинное обучение
           items:
             - name: Аналитика временных рядов

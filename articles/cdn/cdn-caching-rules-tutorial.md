@@ -14,17 +14,17 @@ ms.topic: tutorial
 ms.date: 04/20/2018
 ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: c6da3270de94fd0d5525f28cdd31039f5bd85dbd
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 5330c99f4d42f591944ddc5c58ac98bea6387da5
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67594078"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74278150"
 ---
 # <a name="tutorial-set-azure-cdn-caching-rules"></a>Руководство по Настройка правил кэширования Azure CDN
 
 > [!NOTE] 
-> Правила кэширования Azure CDN доступны только для профилей **Azure CDN уровня "Стандартный" от Verizon** и **Azure CDN уровня "Стандартный" от Akamai**. Для **Azure CDN уровня "Премиум" от Verizon** используйте [обработчик правил Azure CDN](cdn-rules-engine.md) на портале **Управление** с аналогичными функциональными возможностями.
+> Правила кэширования доступны только для профилей **Azure CDN уровня "Стандартный" от Verizon** и **Azure CDN уровня "Стандартный" от Akamai**. Для профилей **Azure CDN от корпорации Майкрософт** необходимо использовать [стандартный обработчик правил](cdn-standard-rules-engine-reference.md). Для профилей **Azure CDN (цен. категории "Премиум") от Verizon** необходимо использовать [обработчик правил Verizon (цен. категории "Премиум")](cdn-rules-engine.md) на **портале управления** для аналогичных функций.
  
 
 В этом руководстве описывается, как использовать правила кэширования сети доставки содержимого Azure (CDN) или изменять истечение срока действия кэша по умолчанию как глобально, так и с настраиваемыми условиями (например, URL-путь и расширения файла). Azure CDN предоставляет два типа правил кэширования.

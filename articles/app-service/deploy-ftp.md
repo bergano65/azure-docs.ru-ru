@@ -1,26 +1,17 @@
 ---
-title: Развертывание содержимого в Службе приложений Azure с помощью FTP/S | Документация Майкрософт
-description: Узнайте, как развернуть приложение в службе приложений Azure с помощью FTP или FTPS.
-services: app-service
-documentationcenter: ''
-author: cephalin
-manager: erikre
-editor: ''
+title: Развертывание содержимого с помощью FTP/S
+description: Узнайте, как развернуть приложение в службе приложений Azure с помощью FTP или FTPS. Повысьте безопасность веб-сайта, отключив незашифрованный FTP.
 ms.assetid: ae78b410-1bc0-4d72-8fc4-ac69801247ae
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 09/18/2019
-ms.author: cephalin
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: 6e8a6820b3cf3031f11ab04d9baf4a7888491c81
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: bccf4fa0b17f261d41c0a80d9f75fe391f591bfb
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71098071"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74671725"
 ---
 # <a name="deploy-your-app-to-azure-app-service-using-ftps"></a>Развертывание приложения в службе приложений Azure с помощью FTP или FTPS
 
@@ -72,7 +63,7 @@ ms.locfileid: "71098071"
 
 Для повышения безопасности доступ к FTP следует разрешать только по протоколу SSL. Вы также можете отключить и FTP, и FTPS, если развертывание FTP вам не нужно.
 
-На странице ресурсов приложения в [портал Azure](https://portal.azure.com)выберите **Конфигурация** > **Общие параметры** в левой области навигации.
+На странице ресурсов приложения в [портал Azure](https://portal.azure.com)выберите **Configuration** > **Общие параметры** в левой области навигации.
 
 Чтобы отключить незашифрованный FTP, выберите **FTPS только** в **состоянии FTP**. Чтобы полностью отключить протоколы FTP и FTPS, выберите значение **отключено**. По завершении щелкните **Сохранить**. Если используется **только FTPS**, необходимо принудительно включить TLS 1,2 или более поздней версии, перейдя в колонку **параметров TLS/SSL** веб-приложения. Протоколы TLS 1.0 и 1.1 не поддерживаются для параметра **Только FTPS**.
 
@@ -89,7 +80,7 @@ ms.locfileid: "71098071"
 ## <a name="troubleshoot-ftp-deployment"></a>Устранение неполадок с развертыванием FTP
 
 - [Как устранять неполадки с развертыванием FTP?](#how-can-i-troubleshoot-ftp-deployment)
-- [Мне не удается подключиться по FTP для публикации кода. Как мне решить эту проблему?](#im-not-able-to-ftp-and-publish-my-code-how-can-i-resolve-the-issue)
+- [Я не могу выполнять FTP и публиковать мой код. Как устранить проблему?](#im-not-able-to-ftp-and-publish-my-code-how-can-i-resolve-the-issue)
 - [Как применить пассивный режим для подключения к FTP в Службе приложений Azure?](#how-can-i-connect-to-ftp-in-azure-app-service-via-passive-mode)
 
 ### <a name="how-can-i-troubleshoot-ftp-deployment"></a>Как устранять неполадки с развертыванием FTP?
@@ -106,15 +97,15 @@ ms.locfileid: "71098071"
 Убедитесь, что вы правильно ввели имя узла и [учетные данные](#open-ftp-dashboard). Также убедитесь, что на вашем компьютере брандмауэр не блокирует следующие порты FTP.
 
 - Порт подключения для управления FTP: 21
-- Порт подключения к данным FTP: 989, 10001–10300
+- Порт подключения к данным FTP: 989, 10001–10300.
  
 ### <a name="how-can-i-connect-to-ftp-in-azure-app-service-via-passive-mode"></a>Как применить пассивный режим для подключения к FTP в Службе приложений Azure?
 Служба приложений Azure поддерживает подключение как в активном, так и в пассивном режимах. Пассивный режим является предпочтительным, так как компьютеры развертывания обычно защищены брандмауэром (встроенным в операционную систему или развернутым отдельно в домашней или корпоративной сети). См. также [пример из документации по WinSCP](https://winscp.net/docs/ui_login_connection). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы изучить более сложные сценарии развертывания, ознакомьтесь с [развертыванием в Azure с помощью Git](deploy-local-git.md). Развертывание в Azure на основе Git обеспечивает систему управления версиями, восстановление пакета, MSBuild и многое другое.
 
-## <a name="more-resources"></a>Другие ресурсы
+## <a name="more-resources"></a>Дополнительные ресурсы
 
 * [Учетные данные развертывания службы приложений Azure](deploy-configure-credentials.md)

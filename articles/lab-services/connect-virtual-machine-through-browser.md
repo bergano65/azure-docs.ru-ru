@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/19/2019
+ms.date: 12/09/2019
 ms.author: takamath
-ms.openlocfilehash: 1bb5d979ff7c9fe6e2afec4c7ebd81649b4488e3
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 4549ee0f50c06040b70307c96b5ca96cd4162214
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73581236"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74974307"
 ---
 # <a name="connect-to-your-virtual-machines-through-a-browser"></a>Подключение к виртуальным машинам через браузер 
 
@@ -26,10 +26,9 @@ DevTest Labs интегрируется с [Azure бастиона](https://docs
 
 После включения *подключения к браузеру* пользователи лаборатории смогут получать доступ к виртуальным машинам через браузер.  
 
-
 ## <a name="create-a-lab-virtual-machine"></a>Создание виртуальной машины лаборатории
 
-Сначала необходимо создать виртуальную машину лаборатории в виртуальной сети, на которой настроен бастиона. Вы можете выбрать виртуальную сеть во время создания виртуальной машины, перейдя на вкладку **Дополнительные параметры** .
+Сначала необходимо создать виртуальную машину лаборатории в виртуальной сети, на которой настроен бастиона. Выберите вторую созданную **подсеть** , а не азуребастионсубнет. Вы можете выбрать виртуальную сеть во время создания виртуальной машины, перейдя на вкладку **Дополнительные параметры** .
 
 ![Создание виртуальной машины](./media/connect-virtual-machine-through-browser/create-virtual-machine.png)
 
@@ -39,6 +38,6 @@ DevTest Labs интегрируется с [Azure бастиона](https://docs
 
 ![Запуск в браузере](./media/connect-virtual-machine-through-browser/browser-connect.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Добавление виртуальной машины в лабораторию в Azure DevTest Labs](devtest-lab-add-vm.md)

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 09/17/2018
 ms.author: cynthn
-ms.openlocfilehash: 17100769bac2e7af08e0bcba6ca2eb129b621013
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: de59edc2e2c702993efd6187a590264d9aac16a7
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74037533"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74841937"
 ---
 # <a name="create-a-vm-from-a-managed-image"></a>Создание виртуальной машины из управляемого образа
 
@@ -29,8 +29,7 @@ ms.locfileid: "74037533"
 
 ## <a name="use-the-portal"></a>Использование портала
 
-1. Откройте [портал Azure](https://portal.azure.com).
-2. В меню слева выберите **Все ресурсы**. Вы можете отсортировать ресурсы по **типу**, чтобы легко найти образы.
+1. Перейдите в [портал Azure](https://portal.azure.com) , чтобы найти управляемый образ. Найдите и выберите **изображения**.
 3. Выберите в списке необходимый образ. Откроется страница **Обзор** для образа.
 4. В меню выберите **Создать виртуальную машину**.
 5. Введите сведения о виртуальной машине. Имя пользователя и пароль понадобятся для входа на виртуальную машину. Когда все будет готово, нажмите кнопку **ОК**. Вы можете создать виртуальную машину в существующей группе ресурсов или выбрать **Создать**, чтобы создать группу ресурсов для хранения данных виртуальной машины.
@@ -65,6 +64,6 @@ New-AzVm `
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Руководство. Создание и администрирование виртуальных машин Windows с помощью Azure PowerShell](tutorial-manage-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 

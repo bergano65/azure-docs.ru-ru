@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 09/04/2018
 ms.author: cshoe
-ms.openlocfilehash: 8820818528835df6379c894eb06c154f4120f507
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: b1717b9b336d31c86db1ec38eb97c7e8814b76d7
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74227303"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74925999"
 ---
 # <a name="event-grid-trigger-for-azure-functions"></a>Триггер службы "Сетка событий" для службы "Функции Azure"
 
@@ -24,7 +24,7 @@ ms.locfileid: "74227303"
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
-## <a name="packages---functions-2x"></a>Пакеты — Функции 2.x
+## <a name="packages---functions-2x-and-higher"></a>Packages — функции 2. x и более поздних версий
 
 Триггер службы "Сетка событий" предоставляется в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.EventGrid](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.EventGrid) версии 2.х. Исходный код для пакета находится в репозитории GitHub [azure-functions-eventgrid-extension](https://github.com/Azure/azure-functions-eventgrid-extension/tree/v2.x).
 
@@ -48,9 +48,9 @@ ms.locfileid: "74227303"
 
 Пример триггера HTTP см. в разделе [Использование триггера HTTP в качестве триггера службы "Сетка событий"](#use-an-http-trigger-as-an-event-grid-trigger) в этой статье.
 
-### <a name="c-2x"></a>C# (2.x)
+### <a name="c-2x-and-higher"></a>C#(2. x и выше)
 
-В следующем примере показана [функция C#](functions-dotnet-class-library.md) службы "Функции" 2.х, которая выполняет привязку к `EventGridEvent`.
+В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая выполняет привязку к `EventGridEvent`:
 
 ```cs
 using Microsoft.Azure.EventGrid.Models;
@@ -118,9 +118,9 @@ namespace Company.Function
 }
 ```
 
-#### <a name="c-script-version-2x"></a>Скрипт C# (версия 2.x)
+#### <a name="c-script-version-2x-and-higher"></a>C#Скрипт (версия 2. x и более поздние)
 
-Ниже приведен код сценария C# службы "Функции" 2.х, который выполняет привязку к `EventGridEvent`:
+Ниже приведен пример, который привязывается к `EventGridEvent`:
 
 ```csharp
 #r "Microsoft.Azure.EventGrid"
@@ -326,7 +326,7 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 * `JObject`
 * `string`
 
-В функциях C# и F# в службе "Функции Azure" 2.х для триггера службы "Сетка событий" у вас также есть возможность использовать следующие типы параметров:
+Для C# функций F# и в функциях Azure 2. x и более поздних версий также можно использовать следующий тип параметра для триггера службы "Сетка событий":
 
 * `Microsoft.Azure.EventGrid.Models.EventGridEvent` — определяет свойства для полей, которые являются общими для всех типов событий.
 
@@ -395,7 +395,7 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 Для команды нужен URL-адрес конечной точки, который вызывает функцию. В следующем примере показан шаблон URL-адреса в зависимости от версии:
 
-#### <a name="version-2x-runtime"></a>Среда выполнения версии 2.x
+#### <a name="version-2x-and-higher-runtime"></a>Среда выполнения версии 2. x (и выше)
 
     https://{functionappname}.azurewebsites.net/runtime/webhooks/eventgrid?functionName={functionname}&code={systemkey}
 
@@ -407,7 +407,7 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 Ниже приведен пример, который подписывается на учетную запись хранения больших двоичных объектов (с заполнителем для системного ключа):
 
-#### <a name="version-2x-runtime"></a>Среда выполнения версии 2.x
+#### <a name="version-2x-and-higher-runtime"></a>Среда выполнения версии 2. x (и выше)
 
 ```azurecli
 az eventgrid resource event-subscription create -g myResourceGroup \
@@ -435,7 +435,7 @@ az eventgrid resource event-subscription create -g myResourceGroup \
 
 Системный ключ можно получить с помощью следующего API-интерфейса (HTTP GET):
 
-#### <a name="version-2x-runtime"></a>Среда выполнения версии 2.x
+#### <a name="version-2x-and-higher-runtime"></a>Среда выполнения версии 2. x (и выше)
 
 ```
 http://{functionappname}.azurewebsites.net/admin/host/systemkeys/eventgrid_extension?code={masterkey}
@@ -521,14 +521,14 @@ http://{functionappname}.azurewebsites.net/admin/host/systemkeys/eventgridextens
 * Задайте заголовок `Content-Type: application/json`.
 * Задайте заголовок `aeg-event-type: Notification`.
 * Вставьте данные RequestBin в текст запроса.
-* Post to the URL of your Event Grid trigger function.
-  * For 2.x use the following pattern:
+* Опубликуйте по URL-адресу функции триггера сетки событий.
+  * Для 2. x и более поздних версий используйте следующий шаблон:
 
     ```
     http://localhost:7071/runtime/webhooks/eventgrid?functionName={FUNCTION_NAME}
     ```
 
-  * For 1.x use:
+  * Для использования с 1. x:
 
     ```
     http://localhost:7071/admin/extensions/EventGridExtensionConfig?functionName={FUNCTION_NAME}
@@ -548,7 +548,7 @@ http://{functionappname}.azurewebsites.net/admin/host/systemkeys/eventgridextens
 
 ## <a name="local-testing-with-ngrok"></a>Локальное тестирование с помощью ngrok
 
-Другим способом локально проверить триггер Сетки событий является автоматизация HTTP-подключения между Интернетом и компьютером разработчика. You can do that with a tool like [ngrok](https://ngrok.com/):
+Другим способом локально проверить триггер Сетки событий является автоматизация HTTP-подключения между Интернетом и компьютером разработчика. Это можно сделать с помощью такого средства, как [ngrok](https://ngrok.com/):
 
 1. [Создайте конечную точку ngrok](#create-an-ngrok-endpoint).
 1. [Запустите функцию триггера службы "Сетка событий"](#run-the-event-grid-trigger-function).
@@ -591,7 +591,7 @@ Connections                   ttl     opn     rt1     rt5     p50     p90
 
 Создайте подписку службы "Сетка событий" типа, который необходимо протестировать, и присвойте ее конечной точке ngrok.
 
-А для Функций версии 2.x используйте этот шаблон конечной точки:
+Используйте этот шаблон конечной точки для функций 2. x и более поздних версий:
 
 ```
 https://{SUBDOMAIN}.ngrok.io/runtime/webhooks/eventgrid?functionName={FUNCTION_NAME}

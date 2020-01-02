@@ -1,5 +1,5 @@
 ---
-title: Различия в проверке по поддерживаемым типам учетных записей (Сигнинаудиенце) — платформа Microsoft Identity/Azure Active Directory
+title: Различия в проверке по типу учетной записи — платформа Microsoft Identity | Службы
 description: Сведения о различиях в проверке различных свойств для различных поддерживаемых типов учетных записей при регистрации приложения на платформе Microsoft Identity.
 author: SureshJa
 ms.author: sureshja
@@ -11,12 +11,12 @@ ms.custom: aaddev
 ms.service: active-directory
 ms.reviewer: lenalepa, manrath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3bea6e3ea93e8b630970a8d86fc246eddaf3f56c
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 576adc99ef7d794f50efeb61375f3e59f8815033
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72392609"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74919364"
 ---
 # <a name="validation-differences-by-supported-account-types-signinaudience"></a>Различия в проверке по поддерживаемым типам счетов (Сигнинаудиенце)
 
@@ -44,7 +44,7 @@ ms.locfileid: "72392609"
 | Области, определяемые этим API (`oauth2Permissions`) | Максимальная длина имени области (120 символов) <br><br> Нет ограничения * в количестве определенных областей | Максимальная длина имени области (120 символов) <br><br> Нет ограничения * в количестве определенных областей |  Максимальная длина имени области (40 символов) <br><br> Определено не более 100 областей | 
 | Полномочные клиентские приложения (`preautorizedApplications`) | Без ограничений * | Без ограничений * | Общее максимальное число 500 <br><br> Определено не более 100 клиентских приложений <br><br> Максимум 30 областей, определенных для каждого клиента | 
 | appRoles | Поддерживается <br> Без ограничений * | Поддерживается <br> Без ограничений * | Не поддерживается | 
-| URL-адрес выхода. | http://localhost разрешено <br><br> Максимальная длина 255 символов | http://localhost разрешено <br><br> Максимальная длина 255 символов | <br><br> https://localhost разрешено, http://localhost не удается выполнить MSA <br><br> Максимальная длина 255 символов <br><br> Схема HTTP не разрешена <br><br> Подстановочные знаки не поддерживаются | 
+| URL-адрес выхода. | http://localhost разрешено <br><br> Максимальная длина 255 символов | http://localhost разрешено <br><br> Максимальная длина 255 символов | <br><br> https://localhost разрешено, http://localhost не выполняется для MSA <br><br> Максимальная длина 255 символов <br><br> Схема HTTP не разрешена <br><br> Подстановочные знаки не поддерживаются | 
 
 \* Существует глобальное ограничение в 1000 элементов во всех свойствах коллекции в объекте App.
 

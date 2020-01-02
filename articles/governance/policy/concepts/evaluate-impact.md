@@ -1,14 +1,14 @@
 ---
 title: Оценка влияния новой политики Azure
-description: Изучите процесс, который необходимо выполнить при внедрении новой политики в среду Azure.
+description: Изучите процесс, который необходимо выполнить при внедрении нового определения политики в среду Azure.
 ms.date: 09/23/2019
 ms.topic: conceptual
-ms.openlocfilehash: e39183b13d2b3cf8c7527f9372879372b2123648
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 562fa2378356ddc1eac48b6ea5c160ebf655d525
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74279429"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463525"
 ---
 # <a name="evaluate-the-impact-of-a-new-azure-policy"></a>Оценка влияния новой политики Azure
 

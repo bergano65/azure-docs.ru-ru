@@ -1,6 +1,6 @@
 ---
-title: Azure Blockchain Tokens account management
-description: Using Azure Blockchain Tokens account management, you can create groups and link blockchain accounts to control access to blockchain actions.
+title: Управление учетными записями маркеров Azure Блокчейн
+description: С помощью управления учетными записями маркеров Azure Блокчейн можно создавать группы и связывать учетные записи блокчейн для управления доступом к действиям блокчейн.
 ms.date: 11/04/2019
 ms.topic: conceptual
 ms.reviewer: brendal
@@ -11,26 +11,26 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74326099"
 ---
-# <a name="azure-blockchain-tokens-account-management"></a>Azure Blockchain Tokens account management
+# <a name="azure-blockchain-tokens-account-management"></a>Управление учетными записями маркеров Azure Блокчейн
 
 [!INCLUDE [Preview note](./includes/preview.md)]
 
-For a blockchain solution, users may require different levels of access to the tokens that are created with the Azure Blockchain Tokens service. In most blockchain scenarios, you need to plan and deploy different blockchain accounts that exist on the ledger. You also need to manage access across participants. Using Azure Blockchain Tokens account management, you can create groups and link blockchain accounts to control access to blockchain actions.
+Для решения блокчейн пользователям могут потребоваться разные уровни доступа к маркерам, созданным с помощью службы маркеров Блокчейн Azure. В большинстве случаев блокчейн необходимо спланировать и развернуть разные учетные записи блокчейн, которые существуют в главной книге. Кроме того, необходимо управлять доступом между участниками. С помощью управления учетными записями маркеров Azure Блокчейн можно создавать группы и связывать учетные записи блокчейн для управления доступом к действиям блокчейн.
 
-## <a name="blockchain-networks"></a>Blockchain networks
+## <a name="blockchain-networks"></a>Блокчейн сети
 
-Azure Blockchain Tokens enables deployment and management of tokens across a set of blockchain networks. You can connect a single blockchain ledger or several blockchain ledgers to the service.
+Маркеры Azure Блокчейн позволяют развертывать маркеры и управлять ими в наборе блокчейн сетей. К службе можно подключить одну книгу блокчейн или несколько книг блокчейн.
 
-## <a name="accounts"></a>учетные записи;
+## <a name="accounts"></a>Учетные записи
 
-For blockchain networks connected to Azure Blockchain Tokens, the service creates and manages the account private-public key pairs and performs transaction signing and submission. Azure Blockchain Tokens also provides identity mapping to match accounts with the public key identity on the ledger.
+Для сетей блокчейн, подключенных к маркерам Блокчейн для Azure, служба создает и управляет парой закрытых открытых ключей учетной записи и выполняет подписывание и отправку транзакций. Маркеры Блокчейн Azure также предоставляют Сопоставление удостоверений для сопоставления учетных записей с удостоверением открытого ключа в главной книге.
 
 ## <a name="groups"></a>Группы
 
-Groups lets you manage a large number of blockchain accounts across connected networks. You can track and audit which applications and users in the directory have the ability to use accounts through Azure Blockchain Tokens APIs. For example, you could group a set of accounts that represent different lines of business or different roles and access to blockchain tokens.
+Группы позволяют управлять большим количеством учетных записей блокчейн в подключенных сетях. Вы можете отслеживать и проверять, какие приложения и пользователи в каталоге имеют возможность использовать учетные записи через API маркеров Azure Блокчейн. Например, можно сгруппировать набор учетных записей, представляющих различные строки бизнеса или различные роли, и доступ к маркерам блокчейн.
 
-You can also associate a group to an Azure Active Directory user or service principal and this principal has permissions to the group and its associated accounts.  
+Можно также связать группу с Azure Active Directory пользователем или субъектом-службой, и этот субъект имеет разрешения для группы и связанных с ней учетных записей.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 См. дополнительные сведения о [шаблонах службы "Токены блокчейна Azure"](templates.md).

@@ -1,22 +1,22 @@
 ---
-title: Azure MFA user data collection - Azure Active Directory
+title: Сбор данных пользователя Azure MFA — Azure Active Directory
 description: Какие сведения используются для проверки подлинности пользователей в службе "Многофакторная идентификация Azure"?
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 09aa95e55b3d253ef41724298247694b9883e31f
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 3bc0f0dbcd08df887b2484be6ca8c92a85962c1c
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74381764"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74848295"
 ---
 # <a name="azure-multi-factor-authentication-user-data-collection"></a>Сбор данных о пользователях в службе "Многофакторная идентификация Azure"
 
@@ -116,7 +116,7 @@ ms.locfileid: "74381764"
 - причина выполнения;
 - использование обхода проверки.
 
-Changes (used to sync user changes to MFA Server or Azure AD):
+Изменения (используемые для синхронизации изменений пользователей с сервером MFA или Azure AD):
 
 - время изменения;
 - Имя пользователя
@@ -138,7 +138,7 @@ Changes (used to sync user changes to MFA Server or Azure AD):
 - Войдите на сервер MFA, перейдите на вкладку **Пользователи**, выберите нужного пользователя и нажмите кнопку **Изменить**. Сделайте снимки (сочетанием клавиш ALT+PRTSCRN) каждой вкладки, чтобы передать пользователю текущие настройки многофакторной проверки подлинности.
 - В командной строке на сервере MFA выполните следующую команду, изменив путь в соответствии со средой установки, чтобы создать файл в формате JSON: `C:\Program Files\Multi-Factor Authentication Server\MultiFactorAuthGdpr.exe export <username>`
 - Администраторы могут также использовать операцию GetUserGdpr из пакета SDK веб-службы для экспорта всей информации, собранной в облачной службе MFA для определенного пользователя, или для интеграции с крупным решением по созданию отчетов.
-- Search `C:\Program Files\Multi-Factor Authentication Server\Logs\MultiFactorAuthSvc.log` and any backups for “\<username>” (include the quotes in the search) to find all instances of the user record being added or changed.
+- `C:\Program Files\Multi-Factor Authentication Server\Logs\MultiFactorAuthSvc.log` поиска и все резервные копии для\<username > (включая кавычки в поиске), чтобы найти все экземпляры добавляемой или изменяемой записи пользователя.
    - Эти записи можно ограничить (но не устранить), сняв флажок **Вести журнал изменений, внесенных пользователем** в интерфейсе сервера MFA, разделе "Ведение журнала", на вкладке "Файлы журнала".
    - Если настроен системный журнал и установлен флажок **Вести журнал изменений, внесенных пользователем** в интерфейсе сервера MFA (раздел "Ведение журнала", вкладка "Системный журнал"), то записи журнала могут собираться из системного журнала.
 - Другие вхождения имен пользователей в файле MultiFactorAuthSvc.log и других файлах журналов сервера MFA, имеющие отношения к попыткам входа, считаются операционными и дублируют информацию, предоставляемую через экспорт MultiFactorAuthGdpr.exe или GetUserGdpr из пакета SDK веб-службы.

@@ -1,6 +1,6 @@
 ---
-title: Руководство. Выполнение операций извлечения, преобразования и загрузки с помощью Azure Databricks
-description: Узнайте, как извлечь данные из Data Lake Storage 2-го поколения в Azure Databricks, преобразовать их, а затем загрузить в Хранилище данных SQL Azure.
+title: Учебник. Выполнение операций извлечения, преобразования и загрузки с помощью Azure Databricks
+description: В этом учебнике вы узнаете, как извлечь данные из Data Lake Storage 2-го поколения в Azure Databricks, преобразовать их, а затем загрузить в Хранилище данных SQL Azure.
 author: mamccrea
 ms.author: mamccrea
 ms.reviewer: jasonh
@@ -8,12 +8,12 @@ ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/20/2019
-ms.openlocfilehash: 8ceb9e940584ae4c41484fe31ce5cb1832bb3400
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 11e5aac559370c478b774f2a503bde590dfeedf4
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73605693"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707456"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство по Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 

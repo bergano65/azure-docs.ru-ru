@@ -1,6 +1,6 @@
 ---
-title: Руководство. Создание пользовательской роли для ресурсов Azure с помощью Azure CLI | Документация Майкрософт
-description: Создание пользовательской роли для ресурсов Azure с помощью Azure CLI.
+title: Учебник. Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI
+description: Приступите к созданию пользовательской роли для ресурсов Azure с помощью Azure CLI.
 services: active-directory
 documentationCenter: ''
 author: rolyon
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/20/2019
 ms.author: rolyon
-ms.openlocfilehash: de1805d91f48b5718ecf293c2b8672ba40fb81a9
-ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.openlocfilehash: 29b0bea851466b5173711441a5a7927c796c9926
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56588166"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74419594"
 ---
-# <a name="tutorial-create-a-custom-role-for-azure-resources-using-azure-cli"></a>Руководство. Создание пользовательской роли для ресурсов Azure с помощью Azure CLI
+# <a name="tutorial-create-a-custom-role-for-azure-resources-using-azure-cli"></a>Руководство по Создание пользовательской роли для ресурсов Azure с помощью Azure CLI
 
 Если [встроенные роли для ресурсов Azure](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. С помощью этого руководства и Azure CLI вы создадите настраиваемую роль с именем "Запросы в службу поддержки от читателя". Она позволяет пользователю просматривать все объекты в плоскости управления подписки, а также делать запросы в службу поддержки.
 

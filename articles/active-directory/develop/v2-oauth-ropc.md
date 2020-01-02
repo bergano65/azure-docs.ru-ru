@@ -1,6 +1,7 @@
 ---
-title: Use Microsoft identity platform to sign in users using resource owner password credential (ROPC) grant | Azure
-description: Поддержка внебраузерных потоков аутентификации с помощью предоставления пароля владельца ресурса.
+title: Вход с использованием учетных данных владельца ресурса "предоставить" | Службы
+titleSuffix: Microsoft identity platform
+description: Поддержка потоков проверки подлинности без браузера с помощью предоставления учетных данных владельца ресурса (РОПК).
 services: active-directory
 documentationcenter: ''
 author: rwike77
@@ -17,41 +18,41 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e4504a1ae60aaac790ca15c120433159c2ff78fa
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 24c6bfdc7efc8f15378d4a126b978bc77741b43c
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74207769"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74919330"
 ---
-# <a name="microsoft-identity-platform-and-the-oauth-20-resource-owner-password-credentials"></a>Microsoft identity platform and the OAuth 2.0 Resource Owner Password Credentials
+# <a name="microsoft-identity-platform-and-oauth-20-resource-owner-password-credentials"></a>Учетные данные пароля владельца ресурса OAuth 2,0 для платформы Microsoft Identity
 
-Microsoft identity platform supports the [OAuth 2.0 Resource Owner Password Credentials (ROPC) grant](https://tools.ietf.org/html/rfc6749#section-4.3), which allows an application to sign in the user by directly handling their password.  This article describes how to program directly against the protocol in your application.  When possible, we recommend you use the supported Microsoft Authentication Libraries (MSAL) instead to [acquire tokens and call secured web APIs](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows).  Also take a look at the [sample apps that use MSAL](sample-v2-code.md).
+Платформа удостоверений Майкрософт поддерживает [учетные данные владельца ресурса OAuth 2,0 (ропк)](https://tools.ietf.org/html/rfc6749#section-4.3), что позволяет приложению входить в систему пользователя, напрямую обрабатывая свой пароль.  В этой статье описывается, как программировать непосредственно по протоколу в приложении.  По возможности рекомендуется использовать поддерживаемые библиотеки проверки подлинности Майкрософт (MSAL) вместо [получения маркеров и вызова защищенных веб-API](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows).  Также ознакомьтесь с [примерами приложений, которые используют MSAL](sample-v2-code.md).
 
 > [!WARNING]
-> Microsoft recommends you do _not_ use the ROPC flow. In most scenarios, more secure alternatives are available and recommended. This flow requires a very high degree of trust in the application, and carries risks which are not present in other flows. You should only use this flow when other more secure flows can't be used.
+> Корпорация Майкрософт рекомендует _не_ использовать поток ропк. В большинстве случаев доступны и рекомендуются более безопасные альтернативы. Этот поток требует очень высокого уровня доверия в приложении и несет риски, отсутствующие в других потоках. Этот поток следует использовать только в том случае, если нельзя использовать другие более безопасные потоки.
 
 > [!IMPORTANT]
 >
-> * The Microsoft identity platform endpoint only supports ROPC for Azure AD tenants, not personal accounts. Это означает, что придется использовать конечную точку клиента (`https://login.microsoftonline.com/{TenantId_or_Name}`) или конечную точку `organizations`.
+> * Конечная точка платформы Microsoft Identity поддерживает только РОПК для клиентов Azure AD, а не для личных учетных записей. Это означает, что придется использовать конечную точку клиента (`https://login.microsoftonline.com/{TenantId_or_Name}`) или конечную точку `organizations`.
 > * Пользователи личных учетных записей, приглашенные в клиент Azure AD, не могут использовать ROPC.
 > * Пользователи учетных записей без пароля не смогут войти в систему через ROPC. Для таких случаев мы рекомендуем использовать для приложения другой поток.
 > * Если пользователи должны использовать для входа в приложение многофакторную проверку подлинности (MFA), они будут заблокированы.
-> * ROPC is not supported in [hybrid identity federation](/azure/active-directory/hybrid/whatis-fed) scenarios (for example, Azure AD and ADFS used to authenticate on-premises accounts). If users are full-page redirected to an on-premises identity providers, Azure AD is not able to test the username and password against that identity provider. [Pass-through authentication](/azure/active-directory/hybrid/how-to-connect-pta) is supported with ROPC, however.
+> * РОПК не поддерживается в сценариях [Федерации гибридной идентификации](/azure/active-directory/hybrid/whatis-fed) (например, Azure AD и ADFS, используемые для проверки подлинности локальных учетных записей). Если пользователи полностью перенаправлены на страницу локальных поставщиков удостоверений, то Azure AD не сможет проверить имя пользователя и пароль для этого поставщика удостоверений. Однако в РОПК поддерживается [сквозная аутентификация](/azure/active-directory/hybrid/how-to-connect-pta) .
 
 ## <a name="protocol-diagram"></a>Схема протокола
 
 На следующей схеме показано представление потока ROPC.
 
-![Diagram showing the resource owner password credential flow](./media/v2-oauth2-ropc/v2-oauth-ropc.svg)
+![Схема, показывающая поток учетных данных для пароля владельца ресурса](./media/v2-oauth2-ropc/v2-oauth-ropc.svg)
 
 ## <a name="authorization-request"></a>Запрос авторизации
 
-The ROPC flow is a single request: it sends the client identification and user's credentials to the IDP, and then receives tokens in return. Перед этим клиент должен получить от пользователя адрес электронной почты (или другое имя участника-пользователя) и пароль. Сразу после успешного выполнения запроса клиент обязан безопасно удалить из памяти учетные данные пользователя. Ни в коем случае нельзя сохранять их.
+Поток РОПК — это один запрос: он отправляет идентификатор клиента и учетные данные пользователя в IDP, а затем получает маркеры в Return. Перед этим клиент должен получить от пользователя адрес электронной почты (или другое имя участника-пользователя) и пароль. Сразу после успешного выполнения запроса клиент обязан безопасно удалить из памяти учетные данные пользователя. Ни в коем случае нельзя сохранять их.
 
 > [!TIP]
 > Попытайтесь выполнить этот запрос в Postman.
-> [![Try running this request in Postman](./media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d)
+> [![попытаться выполнить этот запрос в POST](./media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d)
 
 
 ```
@@ -71,17 +72,17 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 | Параметр | Условие | Описание |
 | --- | --- | --- |
 | `tenant` | Обязательно для заполнения | Клиент каталога, в который пользователь выполняет вход. Его можно указать в виде GUID или понятного имени. Этот параметр не может иметь значение `common` или `consumers`, но может быть равен `organizations`. |
-| `client_id` | Обязательно для заполнения | The Application (client) ID that the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page assigned to your app. | 
+| `client_id` | Обязательно для заполнения | Идентификатор приложения (клиента), которому назначена страница [портал Azure регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) приложения. | 
 | `grant_type` | Обязательно для заполнения | Нужно задать значение `password`. |
 | `username` | Обязательно для заполнения | Адрес электронной почты пользователя. |
 | `password` | Обязательно для заполнения | Пароль пользователя. |
-| `scope` | Рекомендуется | Разделенный пробелами список [областей](v2-permissions-and-consent.md) или разрешений, которые нужны приложению. In an interactive flow, the admin or the user must consent to these scopes ahead of time. |
-| `client_secret`| Sometimes required | If your app is a public client, then the `client_secret` or `client_assertion` cannot be included.  If the app is a confidential client, then it must be included. | 
-| `client_assertion` | Sometimes required | A different form of `client_secret`, generated using a certificate.  See [certificate credentials](active-directory-certificate-credentials.md) for more details. | 
+| `scope` | Рекомендуется | Разделенный пробелами список [областей](v2-permissions-and-consent.md) или разрешений, которые нужны приложению. В интерактивном потоке администратор или пользователь должен заранее согласиться на эти области. |
+| `client_secret`| Иногда требуется | Если приложение является общедоступным клиентом, то `client_secret` или `client_assertion` не могут быть добавлены.  Если приложение является конфиденциальным клиентом, оно должно быть включено. | 
+| `client_assertion` | Иногда требуется | Другая форма `client_secret`, созданная с помощью сертификата.  Дополнительные сведения см. в разделе [учетные данные сертификата](active-directory-certificate-credentials.md) . | 
 
 ### <a name="successful-authentication-response"></a>Успешный ответ аутентификации
 
-The following example shows a successful token response:
+В следующем примере показан успешный ответ маркера:
 
 ```json
 {
@@ -111,10 +112,10 @@ The following example shows a successful token response:
 
 | Ошибка | Описание | Действие клиента |
 |------ | ----------- | -------------|
-| `invalid_grant` | Сбой аутентификации | Учетные данные указаны неверно или у клиента отсутствует согласие для запрошенных областей. If the scopes aren't granted, a `consent_required` error will be returned. В этом случае клиент должен перенаправить пользователя в интерактивный интерфейс через веб-представление или браузер. |
-| `invalid_request` | Запрос был неправильно сформирован | The grant type isn't supported on the `/common` or `/consumers` authentication contexts.  Use `/organizations` or a tenant ID instead. |
+| `invalid_grant` | Сбой аутентификации | Учетные данные указаны неверно или у клиента отсутствует согласие для запрошенных областей. Если области не предоставлены, будет возвращена ошибка `consent_required`. В этом случае клиент должен перенаправить пользователя в интерактивный интерфейс через веб-представление или браузер. |
+| `invalid_request` | Запрос был неправильно сформирован | Тип предоставления не поддерживается в контекстах проверки подлинности `/common` или `/consumers`.  Вместо этого используйте `/organizations` или идентификатор клиента. |
 
 ## <a name="learn-more"></a>Дополнительные сведения
 
 * Вы можете опробовать ROPC самостоятельно с помощью [примера консольного приложения](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2).
-* To determine whether you should use the v2.0 endpoint, read about [Microsoft identity platform limitations](active-directory-v2-limitations.md).
+* Чтобы определить, следует ли использовать конечную точку версии 2.0, ознакомьтесь с [ограничениями платформы удостоверений Майкрософт](active-directory-v2-limitations.md).

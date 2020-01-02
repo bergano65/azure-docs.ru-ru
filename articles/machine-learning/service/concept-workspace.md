@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 11/04/2019
-ms.openlocfilehash: 4fe405d4027535eb6b0211f7a3f997194b8819aa
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 9f3dd3c7d1a1352d40f9a15ba9aa1c012d1784d6
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73580747"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978276"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Что такое Рабочая область Машинное обучение Azure?
 
@@ -69,12 +69,12 @@ ms.locfileid: "73580747"
 
 Вы также можете выполнять следующие задачи по управлению рабочими областями:
 
-| Задача управления рабочей областью   | Microsoft Azure              | Студия | Пакет SDK для Python или пакет SDK для R       | Интерфейс командной строки        |
+| Задача управления рабочей областью   | Microsoft Azure              | Студия | Пакет SDK для Python или пакет SDK для R       | CLI        |
 |---------------------------|---------|---------|------------|------------|
-| Создание рабочей области        | **&check;**     | | **&check;** | **&check;** |
+| Создание рабочего пространства        | **&check;**     | | **&check;** | **&check;** |
 | Управление доступом к рабочей области    | **&check;**   || |  **&check;**    |
-| Обновление до выпуска Enterprise Edition    | **&check;** |  | |     |
-| Создание ресурсов вычислений и управление ими    |   | **&check;** | **&check;** |  **&check;**   |
+| Обновление до выпуска Enterprise Edition    | **&check;** | **&check;**  | |     |
+| Создание ресурсов вычислений и управление ими    | **&check;**   | **&check;** | **&check;** |  **&check;**   |
 | Создание виртуальной машины записной книжки |   | **&check;** | |     |
 
 

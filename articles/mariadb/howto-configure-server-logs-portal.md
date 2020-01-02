@@ -1,31 +1,31 @@
 ---
-title: Настройка и доступ к журналам сервера в базе данных Azure для MariaDB из портал Azure
-description: В этой статье описывается, как настроить журналы сервера в базе данных Azure для MariaDB и получить к ним доступ из портал Azure.
+title: Доступ к журналам запросов с высокой производительностью. портал Azure — база данных Azure для MariaDB
+description: В этой статье описывается, как настроить и получить доступ к журналам запросов в базе данных Azure для MariaDB из портал Azure.
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 09/30/2019
-ms.openlocfilehash: c7e95521e503ad2d92bf13ae7e410b71ed6dfcd3
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.date: 12/02/2019
+ms.openlocfilehash: 69a01ec021ecbade235a693b1be502353420fde0
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71844687"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74767472"
 ---
-# <a name="configure-and-access-server-logs-from-the-azure-portal"></a>Настройка и доступ к журналам сервера из портал Azure
+# <a name="configure-and-access-slow-query-logs-from-the-azure-portal"></a>Настройка и доступ к журналам запросов с высокой занесением портал Azure
 
 Вы можете настроить, перечислить и скачать [базу данных Azure для MariaDB с помощью журналов запросов с высокой](concepts-server-logs.md) загрузкой из портал Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 Для выполнения действий, описанных в этой статье, требуется [сервер базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-portal.md).
 
 ## <a name="configure-logging"></a>Настройка журнала
 Настройте доступ к журналу медленных запросов. 
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
-2. Выберите сервер Базы данных Azure для MariaDB.
+2. Выберите сервер базы данных Azure для MariaDB.
 
 3. В разделе **мониторинг** на боковой панели выберите **журналы сервера**. 
    ![снимок экрана параметров журналов сервера](./media/howto-configure-server-logs-portal/1-select-server-logs-configure.png)
@@ -45,7 +45,7 @@ ms.locfileid: "71844687"
 
 1. Перейдите на портал Azure.
 
-2. Выберите сервер Базы данных Azure для MariaDB.
+2. Выберите сервер базы данных Azure для MariaDB.
 
 3. В разделе **мониторинг** на боковой панели выберите **журналы сервера**. На странице отображается список файлов журнала.
 
@@ -78,7 +78,7 @@ ms.locfileid: "71844687"
 
 1. Получите доступ к журналам запросов с задержкой, изучив их в настроенных приемниках данных. Для отображения журналов может потребоваться до 10 минут.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Сведения о том, как программно скачивать журналы запросов, см. [в статье доступ к журналам запросов с помощью интерфейса командной строки](howto-configure-server-logs-cli.md) .
 - Дополнительные сведения о [медленных журналах запросов](concepts-server-logs.md) в базе данных Azure для MariaDB.
 - Дополнительные сведения об определениях параметров и ведении журналов см. в документации MariaDB по [журналам](https://mariadb.com/kb/en/library/slow-query-log-overview/).

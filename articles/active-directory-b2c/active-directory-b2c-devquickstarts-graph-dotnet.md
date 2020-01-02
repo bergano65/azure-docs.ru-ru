@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: e0b87757326b5e2a54a78a38bbcd5bef8e6f5be2
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 42378c4377057902937b718555489636bc5dcbaa
+ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74119988"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74900021"
 ---
 # <a name="azure-ad-b2c-use-the-azure-ad-graph-api"></a>Azure AD B2C. Использование API Graph Azure AD
 
@@ -33,7 +33,7 @@ ms.locfileid: "74119988"
 >[!IMPORTANT]
 > Для управления пользователями в каталоге Azure AD B2C **необходимо** использовать [API Graph Azure AD](../active-directory/develop/active-directory-graph-api-quickstart.md) . API Graph Azure AD отличается от Microsoft Graph API. Дополнительные сведения см. в этой записи блога MSDN: [Microsoft Graph или Azure AD Graph](https://blogs.msdn.microsoft.com/aadgraphteam/2016/07/08/microsoft-graph-or-azure-ad-graph/).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Перед созданием приложений или пользователей вам потребуется клиент Azure AD B2C. [Создайте клиент Azure Active Directory B2C](tutorial-create-tenant.md), если он еще не создан.
 
@@ -290,7 +290,7 @@ B2C Get-User <user-object-id>
 B2C Get-User <filter-query-expression>
 ```
 
-Например,
+Пример.
 
 ```cmd
 B2C Get-User 2bcf1067-90b6-4253-9991-7f16449c2d91
@@ -332,7 +332,7 @@ B2C Get-B2C-Application
 B2C Get-Extension-Attribute <object-id-in-the-output-of-the-above-command>
 ```
 
-В выходных данных раскрываются подробные сведения о каждом настраиваемом атрибуте. Например,
+В выходных данных раскрываются подробные сведения о каждом настраиваемом атрибуте. Пример.
 
 ```json
 {
@@ -356,13 +356,12 @@ B2C Get-Extension-Attribute <object-id-in-the-output-of-the-above-command>
 B2C Update-User <object-id-of-user> <path-to-json-file>
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Использование `B2CGraphClient`позволяет получить приложение-службу, которое обеспечивает управление пользователями клиента B2C программным путем. `B2CGraphClient` проходит аутентификацию в API Graph Azure AD по собственному удостоверению приложения. Кроме того, B2CGraphClient получает маркеры, используя секрет клиента.
 
 При внедрении этой функции в собственное приложение помните несколько ключевых моментов для B2C приложений:
 
 * Предоставьте приложению необходимые разрешения в клиенте.
-* На данном этапе для получения токенов доступа необходимо использовать ADAL (не MSAL). (Кроме того, сообщения протокола можно отправлять напрямую, не используя библиотеку.)
 * При вызове API Graph укажите `api-version=1.6`.
 * При создании и обновлении пользователей-клиентов требуются некоторые свойства, как описано выше.

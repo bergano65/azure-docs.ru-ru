@@ -3,34 +3,30 @@ title: Переход на MSAL.NET
 titleSuffix: Microsoft identity platform
 description: Из этой статьи вы узнаете о различиях между библиотекой аутентификации Майкрософт для .NET (MSAL.NET) и библиотекой аутентификации Azure AD для .NET (ADAL.NET), а также о переходе на MSAL.NET.
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/10/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5059acea753b4b8b7db80bfc79b4bb9718e0484e
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 38f28f153eff11e2b4d705b874609a95a9def8d4
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73175573"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74915670"
 ---
 # <a name="migrating-applications-to-msalnet"></a>Перенос приложений на MSAL.NET
 
 Как MSAL.NET, так и ADAL.NET используются для аутентификации сущностей Azure AD и маркеров запроса из Azure AD. До настоящего времени большинство разработчиков использовали для аутентификации удостоверений Azure AD (рабочих и учебных учетных записей) платформу Azure AD для разработчиков (версия 1.0), запрашивая маркеры через библиотеку аутентификации Azure AD (ADAL). Использование MSAL:
 
 - Вы можете проверить подлинность более широкого набора удостоверений Майкрософт (удостоверений Azure AD и учетных записей Майкрософт, а также социальных и локальных учетных записей с помощью Azure AD B2C), так как в нем используется конечная точка платформы Microsoft Identity.
-- пользователи получат лучшие возможности единого входа.
+- Пользователи получат лучшие возможности единого входа.
 - приложение может включить добавочное согласие, и поддержка условного доступа упрощается
 - преимущества инноваций.
 

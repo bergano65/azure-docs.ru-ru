@@ -8,12 +8,12 @@ ms.author: bobuc
 ms.date: 09/18/2019
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: f03d2fba01dadc443da19416871a93a72289c0c6
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 3477bac051346e4b334ff3437085c402090b2c98
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74270148"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74765467"
 ---
 # <a name="coarse-relocalization"></a>Простое уточнение расположения
 
@@ -107,13 +107,8 @@ cloudSpatialAnchorSession->LocationProvider(sensorProvider);
 
 # <a name="c-winrttabcppwinrt"></a>[C++WinRT](#tab/cppwinrt)
 ```cpp
-// Create the ASA factory
-SpatialAnchorsFactory m_asaFactory { nullptr };
-// . . .
-
 // Create the sensor fingerprint provider
-PlatformLocationProvider sensorProvider;
-sensorProvider = m_asaFactory.CreatePlatformLocationProvider();
+PlatformLocationProvider sensorProvider = PlatformLocationProvider();
 
 // Create and configure the session
 cloudSpatialAnchorSession = CloudSpatialAnchorSession();
@@ -128,9 +123,9 @@ cloudSpatialAnchorSession.LocationProvider(sensorProvider);
 
 |             | Выдвижки | Туризм |
 |-------------|---------|----------|
-| GPS         | Отключить | С |
-| Wi-Fi        | С | Включено (необязательно) |
-| BLE маяки | Вкл. (необязательно с предупреждениями см. ниже) | Отключить |
+| GPS         | Выключено | Включено |
+| Wi-Fi        | Включено | Включено (необязательно) |
+| BLE маяки | Вкл. (необязательно с предупреждениями см. ниже) | Выключено |
 
 
 ### <a name="enabling-gps"></a>Включение GPS
@@ -495,7 +490,7 @@ sensors.KnownBeaconProximityUuids(uuids);
 
 ---
 
-Пространственные привязки Azure будут отслеживанием только маяков Bluetooth, которые находятся в списке. Вредоносные маяки, запрограммированные на наличие в списке идентификаторов UUID, по-прежнему могут негативно повлиять на качество службы. По этой причине вы должны использовать маяки только в проверенных пространствах, где можно управлять развертыванием.
+Пространственные привязки Azure будут отслеживанием только маяков Bluetooth, которые находятся в списке. Вредоносные маяки, запрограммированные для предоставления идентификаторов UUID, могут негативно повлиять на качество службы. По этой причине вы должны использовать маяки только в проверенных пространствах, где можно управлять развертыванием.
 
 ## <a name="querying-with-sensor-data"></a>Запросы с данными датчика
 
@@ -581,7 +576,7 @@ anchorLocateCriteria->NearDevice(nearDeviceCriteria);
 # <a name="c-winrttabcppwinrt"></a>[C++WinRT](#tab/cppwinrt)
 
 ```cpp
-NearDeviceCriteria nearDeviceCriteria = m_asaFactory.CreateNearDeviceCriteria();
+NearDeviceCriteria nearDeviceCriteria = NearDeviceCriteria();
 
 // Choose a maximum exploration distance between your device and the returned anchors
 nearDeviceCriteria.DistanceInMeters(5.0f);
@@ -590,7 +585,7 @@ nearDeviceCriteria.DistanceInMeters(5.0f);
 nearDeviceCriteria.MaxResultCount(25);
 
 // Set the session's locate criteria
-anchorLocateCriteria = m_asaFactory.CreateAnchorLocateCriteria();
+anchorLocateCriteria = AnchorLocateCriteria();
 anchorLocateCriteria.NearDevice(nearDeviceCriteria);
 ```
 
@@ -652,7 +647,7 @@ cloudSpatialAnchorSession.CreateWatcher(anchorLocateCriteria);
 
 В таблице ниже вычисляется ожидаемое пространство поиска для каждого типа датчика:
 
-| Датчик      | Область поиска радиус пространства (примерно) | Подробная информация |
+| Датчик      | Область поиска радиус пространства (примерно) | Сведения |
 |-------------|:-------:|---------|
 | GPS         | 20 м – 30 м | Определяется неуверенностью GPS среди других факторов. Сообщаемые числа оцениваются по срединной точности GPS для мобильных телефонов с помощью A-GPS, т. е. 7 метров. |
 | Wi-Fi        | 50 м-100 м | Определяется диапазоном точек беспроводного доступа. Зависит от частоты, силы передатчика, физических препятствий, помех и т. д. |
@@ -665,11 +660,11 @@ cloudSpatialAnchorSession.CreateWatcher(anchorLocateCriteria);
 
 |             | HoloLens | Android | iOS |
 |-------------|----------|---------|-----|
-| GPS         | Недоступно | Поддерживается через API-интерфейсы [локатионманажер][3] (как GPS, так и Network) | Поддерживается через API-интерфейсы [кллокатионманажер][4] |
+| GPS         | Н/Д | Поддерживается через API-интерфейсы [локатионманажер][3] (как GPS, так и Network) | Поддерживается через API-интерфейсы [кллокатионманажер][4] |
 | Wi-Fi        | Поддерживается с частотой приблизительно одного сканирования каждые 3 секунды. | Поддерживается. Начиная с уровня API 28, сканирование Wi-Fi регулируется до 4 вызовов каждые 2 минуты. С Android 10 регулирование можно отключить в меню "Параметры разработчика". Дополнительные сведения см. в [документации по Android][5]. | Н/д — нет открытого API |
 | BLE маяки | Ограничено [еддистоне][1] и [ибеакон][2] | Ограничено [еддистоне][1] и [ибеакон][2] | Ограничено [еддистоне][1] и [ибеакон][2] |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте грубую перелокализацию в приложении.
 

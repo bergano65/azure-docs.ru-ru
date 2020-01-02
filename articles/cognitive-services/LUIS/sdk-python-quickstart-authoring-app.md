@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 08/07/2019
+ms.date: 11/22/2019
 ms.author: diberry
-ms.openlocfilehash: 1b586af569a9406d7fe9fa3d05c198f62f32744f
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 97bb86dc702802fd071015364cf205c4f1bb11d5
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73672003"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74422713"
 ---
 # <a name="quickstart-language-understanding-luis-authoring-client-library-for-python"></a>Краткое руководство. Клиентская библиотека для разработки Распознавания речи (LUIS) для Python
 
@@ -39,7 +39,46 @@ ms.locfileid: "73672003"
 
 ### <a name="get-your-language-understanding-luis-starter-key"></a>Получение начального ключа LUIS
 
-Получите [начальный ключ](luis-how-to-azure-subscription.md#starter-key) и [создайте переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа с именем `LUIS_AUTHORING_KEY` и переменную среды для региона ключа `LUIS_REGION`.
+Получите [ключ для начала работы](luis-how-to-azure-subscription.md#starter-key), создав ресурс разработки LUIS. Сохраните ключ и регион ключа для следующего шага.
+
+### <a name="create-an-environment-variable"></a>Создание переменной среды
+
+Используя ключ и регион для ключа, создайте две переменные среды для проверки подлинности:
+
+* `LUIS_AUTHORING_KEY` — ключ ресурса для проверки подлинности запросов.
+* `LUIS_REGION` — регион, связанный с ключом. Пример: `westus`.
+
+Используйте инструкции для своей операционной системы.
+
+#### <a name="windowstabwindows"></a>[Windows](#tab/windows)
+
+```console
+setx LUIS_AUTHORING_KEY <replace-with-your-luis-authoring-key
+setx LUIS_REGION <replace-with-your-luis-region>
+```
+
+Добавив переменную среды, перезапустите окно консоли.
+
+#### <a name="linuxtablinux"></a>[Linux](#tab/linux)
+
+```bash
+export LUIS_AUTHORING_KEY=<replace-with-your-luis-authoring-key>
+export LUIS_REGION=<replace-with-your-luis-region>
+```
+
+После добавления переменной среды запустите `source ~/.bashrc` из окна консоли, чтобы применить изменения.
+
+#### <a name="macostabunix"></a>[macOS](#tab/unix)
+
+Измените `.bash_profile` и добавьте переменную среды:
+
+```bash
+export LUIS_AUTHORING_KEY=<replace-with-your-luis-authoring-key> 
+export LUIS_REGION=<replace-with-your-luis-region>
+```
+
+После добавления переменной среды запустите `source .bash_profile` из окна консоли, чтобы применить изменения.
+***
 
 ### <a name="install-the-python-library-for-luis"></a>Установка библиотеки Python для LUIS
 

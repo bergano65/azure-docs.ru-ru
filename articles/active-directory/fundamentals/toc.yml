@@ -3,7 +3,7 @@
 - name: Обзор
   expanded: true
   items:
-    - name: Что такое Microsoft Azure Active Directory
+    - name: Что такое Azure Active Directory
       href: active-directory-whatis.md
     - name: Новые возможности Azure Active Directory
       href: whats-new.md
@@ -17,6 +17,14 @@
   items:
     - name: Оценка безопасности удостоверений
       href: identity-secure-score.md
+    - name: Безопасность
+      items:
+        - name: Включение MFA
+          href: concept-fundamentals-mfa-get-started.md
+        - name: Параметры безопасности по умолчанию
+          href: concept-fundamentals-security-defaults.md
+        - name: Блокировка устаревших методов проверки подлинности
+          href: concept-fundamentals-block-legacy-authentication.md
     - name: Управление группами и доступом
       href: active-directory-manage-groups.md
     - name: Групповое лицензирование
@@ -31,7 +39,19 @@
       href: active-directory-data-storage-eu.md
     - name: "Новые возможности Microsoft\_365 для государственных организаций"
       href: whats-new-microsoft-365-government.md
-- name: Практические руководства
+    - name: Справочник по операциям Azure AD
+      items:
+        - name: Введение
+          href: active-directory-ops-guide-intro.md
+        - name: Управление удостоверениями и доступом
+          href: active-directory-ops-guide-iam.md
+        - name: Управление аутентификацией
+          href: active-directory-ops-guide-auth.md
+        - name: Identity Governance
+          href: active-directory-ops-guide-govern.md
+        - name: Операции
+          href: active-directory-ops-guide-ops.md
+- name: Руководства
   expanded: true
   items:
     - name: План

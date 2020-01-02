@@ -1,6 +1,6 @@
 ---
-title: Руководство. Предоставление доступа к веб-API Node.js из классического приложения в Azure Active Directory B2C | Документация Майкрософт
-description: Руководство по использованию Active Directory B2C для защиты веб-API Node.js и его вызова из классического приложения NET.
+title: Руководство по Предоставление доступа к веб-API Node.js из классического приложения
+description: Руководство. Использование Active Directory B2C для защиты веб-API Node.js и его вызова из классического приложения NET.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -10,14 +10,14 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 0cf9a0a13a1c16f5be6d82528849e6e2cc3d466d
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: f271dd23501aa0514faff29f638f695c80c844f2
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73641852"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74949778"
 ---
-# <a name="tutorial-grant-access-to-a-nodejs-web-api-from-a-desktop-app-using-azure-active-directory-b2c"></a>Руководство. Предоставление доступа к веб-API Node.js из классического приложения с помощью Azure Active Directory B2C
+# <a name="tutorial-grant-access-to-a-nodejs-web-api-from-a-desktop-app-using-azure-active-directory-b2c"></a>Руководство по Предоставление доступа к веб-API Node.js из классического приложения с помощью Azure Active Directory B2C
 
 В этом учебнике показано, как вызывать веб-API Node.js, защищенный с помощью Azure Active Directory (Azure AD) B2C, из классического приложения Windows Presentation Foundation (WPF), также защищенного с помощью Azure AD B2C.
 

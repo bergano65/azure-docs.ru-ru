@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell | Документация Майкрософт
+title: Учебник. Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell
 description: Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell.
 services: active-directory
 documentationCenter: ''
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/20/2019
 ms.author: rolyon
-ms.openlocfilehash: 269bd74aca85ddbc2bafda30542c48f8ab391b32
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 176e465163d92156308eda64c4187467cc10ee15
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66158867"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74419747"
 ---
 # <a name="tutorial-create-a-custom-role-for-azure-resources-using-azure-powershell"></a>Руководство по Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell
 

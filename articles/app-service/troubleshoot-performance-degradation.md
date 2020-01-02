@@ -1,27 +1,18 @@
 ---
-title: Устранение неполадок замедления Службы приложений Azure | Документация Майкрософт
-description: Эта статья поможет устранить неполадки снижения производительности приложения, размещенного в Службе приложений Azure.
-services: app-service\web
-documentationcenter: ''
-author: cephalin
-manager: erikre
-editor: ''
+title: Устранение неполадок снижения производительности
+description: Узнайте, как устранять проблемы с производительностью приложений в службе приложений Azure, включая мониторинг поведения приложений, сбор данных и устранение проблемы.
 tags: top-support-issue
 keywords: Производительность веб-приложения, медленное приложение, приложение работает медленно
 ms.assetid: b8783c10-3a4a-4dd6-af8c-856baafbdde5
-ms.service: app-service-web
-ms.workload: web
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 08/03/2016
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 3f7389022eaee4268d5d4fc5439b64d7f7f1bf07
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 98c11a72b5aea0fac15d943977402289dc33a970
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70066524"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74688312"
 ---
 # <a name="troubleshoot-slow-app-performance-issues-in-azure-app-service"></a>Устранение причин низкой производительности приложения в Службе приложений Azure
 Эта статья поможет устранить причины снижения производительности приложения, размещенного в [Службе приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714).
@@ -50,7 +41,7 @@ ms.locfileid: "70066524"
 
 <a name="observe" />
 
-### <a name="1-observe-and-monitor-application-behavior"></a>1. Наблюдение за поведением приложения
+### <a name="1-observe-and-monitor-application-behavior"></a>1. наблюдение и отслеживание поведения приложения
 #### <a name="track-service-health"></a>Мониторинг работоспособности службы
 Microsoft Azure информирует о каждом случае прерывания работы или снижения производительности службы. За работоспособностью службы можно следить на [портале Azure](https://portal.azure.com/). Дополнительные сведения см. в статье [Получение информации о работоспособности службы](../monitoring-and-diagnostics/insights-service-health.md).
 
@@ -59,15 +50,15 @@ Microsoft Azure информирует о каждом случае прерыв
 
 Некоторые из этих метрик помогут вам отслеживать работу приложения, например:
 
-* Средний рабочий набор памяти
-* Среднее время ответа
+* средний размер рабочего набора памяти;
+* Average response time (Среднее время ответа)
 * время ЦП;
-* Рабочий набор памяти
-* Запрошено
+* рабочий набор памяти;
+* Requests (Запросы)
 
 ![Мониторинг производительности приложения](./media/app-service-web-troubleshoot-performance-degradation/1-monitor-metrics.png)
 
-Дополнительные сведения можно найти в разделе
+Дополнительные сведения см. здесь:
 
 * [Мониторинг приложений в Службе приложений Azure](web-sites-monitor.md)
 * [Создание оповещений для служб Azure с помощью портала Azure](../monitoring-and-diagnostics/insights-receive-alert-notifications.md)
@@ -95,7 +86,7 @@ Microsoft Azure информирует о каждом случае прерыв
 
 <a name="collect" />
 
-### <a name="2-collect-data"></a>2. Сбор данных
+### <a name="2-collect-data"></a>2. получение данных
 Службы приложений включают функции диагностики для записи в журнал информации как с веб-сервера, так и из веб-приложения. Информация разделена следующим образом: диагностика веб-сервера и диагностика приложений.
 
 #### <a name="enable-web-server-diagnostics"></a>Включение диагностики веб-сервера

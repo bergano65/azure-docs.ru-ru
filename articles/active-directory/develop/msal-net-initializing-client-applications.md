@@ -1,36 +1,32 @@
 ---
-title: Инициализация клиентских приложений (Библиотека проверки подлинности Microsoft для .NET)
+title: Инициализация клиентских приложений MSAL.NET | Службы
 titleSuffix: Microsoft identity platform
 description: Узнайте, как инициализировать общедоступные клиентские и конфиденциальные клиентские приложения с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
-documentationcenter: dev-center-name
 author: TylerMSFT
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/12/2019
 ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8cf7b7004097ef5a4d915d8fdff60cc9606c5be
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 15c0db66fd357ba150af1901a6b50a645fd1ca88
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73927076"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74915860"
 ---
 # <a name="initialize-client-applications-using-msalnet"></a>Инициализация клиентских приложений с помощью MSAL.NET
 В этой статье описывается инициализация общедоступного клиента и конфиденциальных клиентских приложений с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).  Дополнительные сведения о типах клиентских приложений и параметрах конфигурации приложений см. в [обзоре](msal-client-applications.md).
 
 При использовании MSAL.NET 3. x рекомендуемым способом создания экземпляра приложения является использование построителей приложений: `PublicClientApplicationBuilder` и `ConfidentialClientApplicationBuilder`. Они предлагают мощный механизм настройки приложения либо из кода, либо из файла конфигурации, либо путем смешивания обоих подходов.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 Перед инициализацией приложения необходимо сначала [зарегистрировать его](quickstart-register-app.md) , чтобы приложение можно было интегрировать с платформой Microsoft Identity.  После регистрации может потребоваться следующая информация (которую можно найти в портал Azure):
 
 - Идентификатор клиента (строка, представляющая GUID)
@@ -101,17 +97,17 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 
 Модификаторы, которые можно задать в построителе общедоступных клиентов или конфиденциальных клиентских приложений:
 
-|Модификатор | ОПИСАНИЕ|
+|Модификатор | Описание|
 |--------- | --------- |
 |переопределения `.WithAuthority()` 7 | Устанавливает центр по умолчанию для центра приложений Azure AD с возможностью выбора облака Azure, аудитории, клиента (идентификатора клиента или имени домена) или непосредственного URI центра.|
 |`.WithAdfsAuthority(string)` | Задает центр по умолчанию приложения в качестве центра ADFS.|
 |`.WithB2CAuthority(string)` | Задает центр по умолчанию приложения как центр Azure AD B2C.|
 |`.WithClientId(string)` | Переопределяет идентификатор клиента.|
 |`.WithComponent(string)` | Задает имя библиотеки с помощью MSAL.NET (по причинам телеметрии). |
-|`.WithDebugLoggingCallback()` | При вызове приложение вызывает `Debug.Write` просто включить трассировку отладки. Дополнительные сведения см. в разделе [ведение журнала](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/logging) .|
+|`.WithDebugLoggingCallback()` | При вызове приложение вызывает `Debug.Write` просто включить трассировку отладки. Дополнительные сведения см. в статье, посвященной [ведению журналов](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/logging).|
 |`.WithExtraQueryParameters(IDictionary<string,string> eqp)` | Задайте дополнительные параметры запроса уровня приложения, которые будут отправляться во все запросы проверки подлинности. Это может быть переопределяемым на каждом уровне метода получения маркера (с тем же `.WithExtraQueryParameters pattern`).|
 |`.WithHttpClientFactory(IMsalHttpClientFactory httpClientFactory)` | Включает расширенные сценарии, такие как настройка для HTTP-прокси, или принудительное MSAL для использования определенного HttpClient (например, в ASP.NET Core веб-приложений и API).|
-|`.WithLogging()` | При вызове приложение вызывает обратный вызов с трассировкой отладки. Дополнительные сведения см. в разделе [ведение журнала](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/logging) .|
+|`.WithLogging()` | При вызове приложение вызывает обратный вызов с трассировкой отладки. Дополнительные сведения см. в статье, посвященной [ведению журналов](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/logging).|
 |`.WithRedirectUri(string redirectUri)` | Переопределяет URI перенаправления по умолчанию. В случае общедоступных клиентских приложений это будет полезно для сценариев, использующих брокер.|
 |`.WithTelemetry(TelemetryCallback telemetryCallback)` | Задает делегат, используемый для отправки данных телеметрии.|
 |`.WithTenantId(string tenantId)` | Переопределяет идентификатор клиента или описание клиента.|
@@ -120,7 +116,7 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 
 Модификаторы, которые можно задать в построителе общедоступных клиентских приложений для Xamarin. iOS:
 
-|Модификатор | ОПИСАНИЕ|
+|Модификатор | Описание|
 |--------- | --------- |
 |`.WithIosKeychainSecurityGroup()` | **Только Xamarin. iOS**. задает группу безопасности цепочки ключей iOS (для сохраняемости кэша).|
 
@@ -128,7 +124,7 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 
 Ниже перечислены модификаторы, которые можно задать в построителе конфиденциальных клиентских приложений.
 
-|Модификатор | ОПИСАНИЕ|
+|Модификатор | Описание|
 |--------- | --------- |
 |`.WithCertificate(X509Certificate2 certificate)` | Задает сертификат, идентифицирующий приложение в Azure AD.|
 |`.WithClientSecret(string clientSecret)` | Задает секрет клиента (пароль приложения), определяющий приложение в Azure AD.|

@@ -8,13 +8,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 09/20/2019
-ms.openlocfilehash: 044a63274f7f24831b1f791982f36898199616a6
-ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
+ms.date: 11/20/2019
+ms.openlocfilehash: 37b8ad0fc09644d746c3528c174d1bf95d546d0f
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73052513"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74706265"
 ---
 # <a name="azure-hdinsight-frequently-asked-questions"></a>Azure HDInsight: часто задаваемые вопросы
 
@@ -90,7 +90,7 @@ ms.locfileid: "73052513"
 
 Однако служба поддержки Майкрософт команды могут предоставлять поддержку только в следующих ситуациях:
 
-- Проблемы или ошибки, возникающие при загрузке скрипта. Все ошибки, возникающие во время выполнения пользовательских скриптов, выходят за рамки запроса в службу поддержки.
+- Проблемы или ошибки, возникающие при загрузке скрипта. Ошибки, возникающие во время выполнения пользовательских скриптов, не поддерживаются в запросах в службу поддержки.
 
 - Дополнительные приложения, которые являются частью процесса создания кластера. 
 
@@ -180,6 +180,11 @@ ms.locfileid: "73052513"
 - Граничные узлы. Вы можете добавить в кластер другой пограничной узел, как описано в разделе [использование пустых граничных узлов в кластерах Apache Hadoop в HDInsight](hdinsight-apps-use-edge-node.md).
 
 - Автономные узлы. Вы можете добавить автономную виртуальную машину в ту же подсеть и получить доступ к кластеру из этой виртуальной машины с помощью закрытой конечной точки `https://<CLUSTERNAME>-int.azurehdinsight.net`. Дополнительные сведения см. в разделе [Управление сетевым трафиком](hdinsight-plan-virtual-network-deployment.md#networktraffic).
+
+### <a name="should-i-store-data-on-the-local-disk-of-an-edge-node"></a>Следует ли хранить данные на локальном диске пограничных узлов?
+
+Нет, хранение данных на локальном диске не является хорошей идеей. В случае сбоя узла все хранящиеся локально данные будут потеряны. Мы рекомендуем хранить данные в Azure Data Lake Storage 2-го поколения или хранилище BLOB-объектов Azure либо путем подключения общей папки службы файлов Azure для хранения данных.
+
 
 ### <a name="can-i-add-an-existing-hdinsight-cluster-to-another-virtual-network"></a>Можно ли добавить существующий кластер HDInsight в другую виртуальную сеть?
 

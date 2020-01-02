@@ -7,19 +7,19 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: cherylmc
-ms.openlocfilehash: a2a3bdeb0ee454185c92c6e49a17bda7e4e5d5f0
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: e421a534b04f74d2a2eb0bc06aeffa52684ae17a
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083582"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74931981"
 ---
 # <a name="modify-an-expressroute-circuit-using-powershell-classic"></a>Изменение канала ExpressRoute с помощью PowerShell (классическая модель)
 
 > [!div class="op_single_selector"]
-> * [портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
+> * [Портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-circuit-arm.md)
-> * [Интерфейс командной строки Azure](howto-circuit-cli.md)
+> * [Azure CLI](howto-circuit-cli.md)
 > * [Шаблон Azure Resource Manager](expressroute-howto-circuit-resource-manager-template.md)
 > * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
 > * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
@@ -35,20 +35,7 @@ ms.locfileid: "74083582"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Установите последние версии модулей PowerShell для управления службами Azure и модуль ExpressRoute. Среду Azure CloudShell нельзя использовать для запуска модулей SM.
-
-1. Используйте инструкции из статьи [Установка модуля управления службами](/powershell/azure/servicemanagement/install-azure-ps) для установки модуля управления службами Azure. Если модуль az или RM уже установлен, обязательно используйте параметр-AllowClobber.
-2. Импортируйте установленные модули. При использовании следующего примера измените путь в соответствии с расположением установленных модулей PowerShell.
-
-   ```powershell
-   Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.3.0\Azure.psd1'
-   Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.3.0\ExpressRoute\ExpressRoute.psd1'
-   ```
-3. Чтобы войти в учетную запись Azure, откройте консоль PowerShell с повышенными правами и подключитесь к вашей учетной записи. Используйте следующий пример, чтобы подключиться с помощью модуля управления службами:
-
-   ```powershell
-   Add-AzureAccount
-   ```
+[!INCLUDE [classic powershell install instructions](../../includes/expressroute-poweshell-classic-install-include.md)]
 
 ## <a name="get-the-status-of-a-circuit"></a>Получение состояния канала
 

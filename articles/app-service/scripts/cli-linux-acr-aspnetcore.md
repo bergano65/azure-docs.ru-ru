@@ -1,27 +1,20 @@
 ---
-title: Пример скрипта Azure CLI. Создание веб-приложения ASP.NET Core в Реестре контейнеров Azure | Документация Майкрософт
-description: Пример сценария Azure CLI. Создание приложения ASP.NET Core в контейнере Docker в Службе приложений из Реестра контейнеров Azure
-services: appservice
-documentationcenter: appservice
-author: msangapu
-manager: jeconnoc
-editor: ''
+title: 'CLI: Создание приложения ASP.NET Core из Реестра контейнеров'
+description: Сведения об использовании Azure CLI для автоматизации развертывания приложения службы приложений и управления им. В этом примере показано, как создать приложение ASP.NET Core Linux из Реестра контейнеров Azure.
+author: msangapu-msft
 tags: azure-service-management
 ms.assetid: 3a2d1983-ff7b-476a-ac44-49ec2aabb31a
-ms.service: app-service
 ms.devlang: azurecli
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.workload: web
 ms.date: 12/13/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: c05572d4962eca042a807be3eec94462d0830e1b
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.openlocfilehash: 9733475753cb9d7fae5f452b33842602f56eff52
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53653379"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74685970"
 ---
 # <a name="create-an-aspnet-core-app-in-a-docker-container-in-app-service-from-azure-container-registry"></a>Создание приложения ASP.NET Core в контейнере Docker в Службе приложений из Реестра контейнеров Azure
 
@@ -42,7 +35,7 @@ ms.locfileid: "53653379"
 
 Для создания группы ресурсов, приложения Службы приложений и всех связанных с ними ресурсов этот сценарий использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [`az group create`](/cli/azure/group?view=azure-cli-latest#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [`az appservice plan create`](/cli/azure/appservice/plan?view=azure-cli-latest#az-appservice-plan-create) | Создает план службы приложений. |

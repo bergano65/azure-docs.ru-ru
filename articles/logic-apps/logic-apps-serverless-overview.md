@@ -2,21 +2,20 @@
 title: 'Обзор: бессерверные решения Azure'
 description: Создавайте эффективные решения в облаке, не беспокоясь о инфраструктуре
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
 author: jeffhollan
 ms.author: jehollan
-ms.reviewer: klam, estfan, LADocs
+ms.reviewer: klam, estfan, logicappspm
 ms.topic: article
 ms.date: 03/30/2017
-ms.openlocfilehash: 363002712bdd06e74360de9af186f5a458a4999d
-ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
+ms.openlocfilehash: d658efd278425358a2a931fe976827c3bae4247d
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "68385355"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74792825"
 ---
-# <a name="overview-azure-serverless-with-azure-logic-apps-and-azure-functions"></a>Рассматриваемые действия: Бессерверные службы Azure с Azure Logic Apps и функциями Azure
+# <a name="overview-azure-serverless-with-azure-logic-apps-and-azure-functions"></a>Обзор: бессерверные службы Azure с Azure Logic Apps и функциями Azure
 
 [Бессерверные](https://azure.microsoft.com/solutions/serverless/) приложения предлагают такие преимущества, как увеличение скорости разработки, сокращение объема кода, простоту и масштабируемость. В этой статье рассматриваются различные атрибуты бессерверных решений и бессерверных предложений Azure.
 
@@ -32,7 +31,7 @@ ms.locfileid: "68385355"
 
 Чтобы приступить к работе с Logic Apps, начните с [создания первого приложения логики](quickstart-create-first-logic-app-workflow.md). Дополнительные технические сведения о Logic Apps см. в [справочнике разработчика](logic-apps-workflow-definition-language.md).
 
-## <a name="what-is-azure-functions"></a>Что такое функции Azure?
+## <a name="what-is-azure-functions"></a>Что такое Функции Azure?
 
 Функции Azure — это служба для упрощения выполнения фрагментов кода или "функций" в облаке. Вы можете написать только код, необходимый для текущей проблемы, не беспокоясь о том, что требуется приложение или инфраструктура. Функции делают разработку более продуктивной. Кроме того, вы можете использовать предпочтительный язык программирования, например C#, F#, Node.js, Python или PHP. Вы платите только за время выполнения кода и при необходимости масштабируете Azure.
 
@@ -42,7 +41,7 @@ ms.locfileid: "68385355"
 
 Azure предоставляет широкие средства для разработки, развертывания и управления бессерверными приложениями. Приложения можно создавать непосредственно в портал Azure, с помощью [инструментов в Visual Studio](logic-apps-serverless-get-started-vs.md)или [Visual Studio Code](quickstart-create-logic-apps-visual-studio-code.md). После сборки приложения можно [быстро развернуть это приложение с помощью шаблонов Azure Resource Manager](logic-apps-deploy-azure-resource-manager-templates.md). Azure также предоставляет средства мониторинга, к которым можно получить доступ через портал Azure, через API или пакеты SDK или с помощью интегрированных средств для Azure Monitor журналов и Application Insights.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание бессерверного приложения в Visual Studio](logic-apps-serverless-get-started-vs.md)
 * [Создание панели мониторинга Customer Insights с бессерверным](logic-apps-scenario-social-serverless.md)

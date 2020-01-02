@@ -1,25 +1,25 @@
 ---
-title: 'Пакетное копирование данных с помощью службы "Фабрика данных Azure" '
+title: Пакетное копирование данных с помощью портала Azure
 description: Узнайте, как использовать фабрику данных Azure и действие копирования для копирования данных из исходного хранилища данных в хранилище данных назначения в пакетном режиме.
 services: data-factory
-documentationcenter: ''
+ms.author: jingwang
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: tutorial
+ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 06/22/2018
-ms.author: jingwang
-ms.openlocfilehash: 9feb9be5e76f91ab55ec1b3e60eb79ab5e246f4f
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: e0e6ffc45d55dc76abdbdf839958479b2ac5d40b
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73683737"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74926700"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure
+
 В этом руководстве показано **копирование нескольких таблиц из базы данных SQL Azure в хранилище данных SQL Azure**. Этот подход можно применить и в других сценариях. Например, копирование таблиц из SQL Server или Oracle в Базу данных SQL Azure, хранилище данных или большой двоичный объект Azure, копирование различных путей из большого двоичного объекта в таблицы Базы данных SQL Azure.
 
 > [!NOTE]
@@ -62,7 +62,7 @@ ms.locfileid: "73683737"
 
 1. Если у вас нет хранилища данных SQL Azure, выполните шаги из раздела [Создание хранилища данных SQL](../sql-data-warehouse/sql-data-warehouse-get-started-tutorial.md).
 
-1. Создайте соответствующие схемы таблиц в хранилище данных SQL Azure. [Служебную программу переноса](https://www.microsoft.com/download/details.aspx?id=49100) можно использовать для **миграции схемы** из Базы данных SQL Azure в хранилище данных SQL Azure. Фабрика данных Azure используется для миграции и копирования данных на более поздних этапах.
+1. Создайте соответствующие схемы таблиц в хранилище данных SQL Azure. Фабрика данных Azure используется для миграции и копирования данных на более поздних этапах.
 
 ## <a name="azure-services-to-access-sql-server"></a>Доступ служб Azure к серверу SQL Server
 

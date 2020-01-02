@@ -1,18 +1,18 @@
 ---
 title: Вход на языке Azure Cosmos DB запросов
-description: Дополнительные сведения о журнале системных функций SQL в Azure Cosmos DB.
+description: Сведения о системной функции LOG SQL в Azure Cosmos DB для получения натурального логарифма указанного числового выражения
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 16f2321eb48afacbc9636b5c0588b1ea3a01a284
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: ae7812670da836efa326b9224547e4d1b64374c2
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349738"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873290"
 ---
 # <a name="log-azure-cosmos-db"></a>Журнал (Azure Cosmos DB)
  Возвращает натуральный логарифм от указанного числового выражения.  
@@ -28,7 +28,7 @@ LOG (<numeric_expr> [, <base>])
 *numeric_expr*  
    Числовое выражение.  
   
-*из*  
+*base*  
    Дополнительный числовой аргумент, который задает основание логарифма.  
   
 ## <a name="return-types"></a>Возвращаемые типы
@@ -41,7 +41,7 @@ LOG (<numeric_expr> [, <base>])
   
   Натуральный логарифм — это логарифм с основанием **e**, где **e** — это иррациональная константа приблизительно равная 2,718281828.  
   
-  Натуральный логарифм экспоненты числа — это само число. Например, LOG( EXP( n ) ) = n. Экспонента натурального логарифма числа — это само число. Например, EXP( LOG( n ) ) = n.  
+  Натуральный логарифм экспоненты числа — это само число. Например, LOG( EXP( n ) ) = n. И экспонента натурального логарифма числа также является самым числом. Например, EXP( LOG( n ) ) = n.  
   
 ## <a name="examples"></a>Примеры
   
@@ -57,7 +57,7 @@ SELECT LOG(10) AS log
 [{log: 2.3025850929940459}]  
 ```  
   
- В следующем примере вычисляется `LOG` для экспоненты числа.  
+ В приведенном ниже примере вычисляется `LOG` для экспоненты числа.  
   
 ```sql
 SELECT EXP(LOG(10)) AS expLog  
@@ -69,7 +69,7 @@ SELECT EXP(LOG(10)) AS expLog
 [{expLog: 10.000000000000002}]  
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

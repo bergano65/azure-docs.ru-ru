@@ -1,0 +1,66 @@
+- name: Подготовка облака
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что такое подготовка удостоверений?
+      href: what-is-provisioning.md
+    - name: Что такое подготовка облака Azure AD Connect?
+      href: what-is-cloud-provisioning.md
+      maintainContext: true
+- name: Учебники
+  expanded: true
+  items:
+    - name: Интеграция одного леса AD с одним клиентом Azure AD
+      href: tutorial-single-forest.md
+    - name: Интеграция существующего и нового лесов с одним клиентом Azure AD
+      href: tutorial-existing-forest.md
+    - name: Пилотная подготовка облака для существующего синхронизированного леса AD
+      href: tutorial-pilot-aadc-aadccp.md
+- name: Основные понятия
+  items:
+    - name: Сведения о синхронизации хэша паролей
+      href: /azure/active-directory/hybrid/whatis-phs?context=azure/active-directory/cloud-provisioning/context/cloud-provisioning-context
+    - name: 'Основные сведения о схеме, атрибутах и выражениях Azure AD'
+      href: concept-attributes.md
+    - name: Запись выражений для сопоставления атрибутов в Azure Active Directory
+      href: reference-expressions.md
+- name: Руководства
+  items:
+    - name: Установка и обновление
+      items:
+        - name: Предварительные требования для установки
+          href: how-to-prerequisites.md
+        - name: Установка агента подготовки облака Azure AD Connect
+          href: how-to-install.md
+        - name: Конфигурация подготовки облака
+          href: how-to-configure.md
+    - name: Планирование и проектирование
+      items:
+        - name: Топологии и сценарии для подготовки облака Azure AD Connect
+          href: plan-cloud-provisioning-topologies.md
+    - name: Управление
+      items:
+        - name: Автоматическое обновление агента
+          href: how-to-automatic-upgrade.md
+    - name: Разработка
+      items:
+        - name: Преобразования
+          href: how-to-transformation.md
+        - name: API синхронизации Azure AD
+          href: 'https://docs.microsoft.com/graph/api/resources/synchronization-overview'
+    - name: Устранение неполадок
+      items:
+        - name: Устранение неполадок с подготовкой облака
+          href: how-to-troubleshoot.md
+        - name: повторяющиеся атрибуты
+          href: 'https://docs.microsoft.com/office365/troubleshoot/administration/duplicate-attributes-prevent-dirsync'
+- name: Справочные материалы
+  items:
+    - name: Журнал версий агента подготовки облака Azure AD Connect
+      href: /azure/active-directory/manage-apps/provisioning-agent-release-version-history?context=azure/active-directory/cloud-provisioning/context/cp-context
+    - name: "Вопросы и ответы. Подготовка облака Azure\_AD Connect"
+      href: reference-cloud-provisioning-faq.md
+    - name: Синхронизированные атрибуты
+      href: /azure/active-directory/hybrid/reference-connect-sync-attributes-synchronized?context=azure/active-directory/cloud-provisioning/context/cp-context
+    - name: Базовое развертывание Active Directory и среда Azure AD
+      href: tutorial-basic-ad-azure.md

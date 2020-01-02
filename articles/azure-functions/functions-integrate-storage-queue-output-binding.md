@@ -1,22 +1,16 @@
 ---
-title: Добавление сообщений в очередь службы хранилища Azure с помощью службы "Функции" | Документация Майкрософт
+title: Добавление сообщений в очередь службы хранилища Azure с помощью Функций
 description: Создавайте независимые от сервера функции, активируемые HTTP-запросом и создающие сообщения в очереди службы хранилища Azure с помощью службы "Функции Azure".
-services: azure-functions
-documentationcenter: na
-author: ggailey777
-manager: jeconnoc
 ms.assetid: 0b609bc0-c264-4092-8e3e-0784dcc23b5d
-ms.service: azure-functions
 ms.topic: quickstart
 ms.date: 09/19/2017
-ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: 1d24eb81361a337ed00d719a7fb5895e73583030
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: fb5fc2fadf4087ebc42253cf568af424a80cb9d5
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70096311"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74226885"
 ---
 # <a name="add-messages-to-an-azure-storage-queue-using-functions"></a>Добавление сообщений в очередь службы хранилища Azure с помощью Функций
 

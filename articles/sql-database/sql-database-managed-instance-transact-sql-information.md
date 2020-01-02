@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, carlrab, bonova
 ms.date: 11/04/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 636fd5fd17838c729cdbc9e2a322c1f991d93948
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: e517b6030aa1c9549e33c00425851afae90aac42
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74186439"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707648"
 ---
 # <a name="managed-instance-t-sql-differences-limitations-and-known-issues"></a>Различия в T-SQL управляемого экземпляра, ограничения и известные проблемы
 
@@ -26,10 +26,10 @@ ms.locfileid: "74186439"
 
 Существуют некоторые ограничения PaaS, появившиеся в Управляемый экземпляр и некоторые изменения в поведении по сравнению с SQL Server. Различия делятся на следующие категории:<a name="Differences"></a>
 
-- [Доступность](#availability) включает различия в [Always-On](#always-on-availability) и [Backups](#backup).
-- [Безопасность](#security) включает в себя различия [в аудите](#auditing), [сертификатах](#certificates), [учетных данных](#credential), [поставщиках служб шифрования](#cryptographic-providers), [именах входа и пользователях](#logins-and-users), а также [ключе службы и главный ключ службы](#service-key-and-service-master-key).
+- [Доступность](#availability) включает различия в [Always on группах доступности](#always-on-availability-groups) и [резервных копиях](#backup).
+- [Безопасность](#security) включает в себя различия в [аудите](#auditing), [сертификатах](#certificates), [учетных данных](#credential), [поставщиках служб шифрования](#cryptographic-providers), [именах входа и пользователях](#logins-and-users), а также [ключе службы и главный ключ службы](#service-key-and-service-master-key).
 - [Конфигурация](#configuration) включает различия в [расширении буферного пула](#buffer-pool-extension), параметрах [сортировки](#collation), [уровнях совместимости](#compatibility-levels), [зеркальном отображении баз данных](#database-mirroring), [параметрах базы данных](#database-options), [Агент SQL Server](#sql-server-agent)и [параметрах таблиц](#tables).
-- К [функциональным возможностям](#functionalities) относятся [BULK INSERT/OPENROWSET](#bulk-insert--openrowset), [CLR](#clr), [DBCC](#dbcc), [распределенные транзакции](#distributed-transactions), [Расширенные события](#extended-events), [внешние библиотеки](#external-libraries), [FileStream и FileTable](#filestream-and-filetable), [полнотекстовые Семантический поиск](#full-text-semantic-search), [связанные серверы](#linked-servers), [polybase](#polybase), [репликация](#replication), [Восстановление](#restore-statement), [Service Broker](#service-broker), [хранимые процедуры, функции и триггеры](#stored-procedures-functions-and-triggers).
+- К [функциональным возможностям](#functionalities) относятся [BULK INSERT/OPENROWSET](#bulk-insert--openrowset), [CLR](#clr), [DBCC](#dbcc), [распределенные транзакции](#distributed-transactions), [Расширенные события](#extended-events), [внешние библиотеки](#external-libraries), [FileStream и FileTable](#filestream-and-filetable), [Полнотекстовый семантический поиск](#full-text-semantic-search), [связанные серверы](#linked-servers), [polybase](#polybase), [репликация](#replication), [Восстановление](#restore-statement), [Service Broker](#service-broker), [хранимые процедуры, функции и триггеры](#stored-procedures-functions-and-triggers).
 - [Параметры среды](#Environment) , такие как виртуальных сетей и конфигурации подсети.
 
 Большинство этих функций являются ограничениями архитектуры и представляют функции служб.
@@ -38,7 +38,7 @@ ms.locfileid: "74186439"
 
 ## <a name="availability"></a>Доступность
 
-### <a name="always-on-availability"></a>Always On
+### <a name="always-on-availability-groups"></a>Always On группы доступности
 
 [Высокий уровень доступности](sql-database-high-availability.md) встроен в управляемый экземпляр и не может управляться пользователями. Следующие инструкции не поддерживаются:
 
@@ -48,7 +48,7 @@ ms.locfileid: "74186439"
 - [DROP AVAILABILITY GROUP](/sql/t-sql/statements/drop-availability-group-transact-sql);
 - Предложение [Set HADR](/sql/t-sql/statements/alter-database-transact-sql-set-hadr) инструкции [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql)
 
-### <a name="backup"></a>Azure Backup
+### <a name="backup"></a>Backup
 
 Управляемые экземпляры имеют автоматическое резервное копирование, поэтому пользователи могут создавать полные резервные копии базы данных `COPY_ONLY`. Разностные резервные копии, журналы и моментальные снимки файлов не поддерживаются.
 
@@ -95,7 +95,7 @@ ms.locfileid: "74186439"
 - Предоставляется новый синтаксис `TO URL`, который можно использовать для указания URL-адреса контейнера хранилища больших двоичных объектов Azure, в который помещаются файлы `.xel`.
 - Синтаксис `TO FILE` не поддерживается, так как управляемый экземпляр не может получить доступ к общим файловым ресурсам Windows.
 
-Дополнительные сведения см. в следующих источниках. 
+Дополнительные сведения см. здесь: 
 
 - [CREATE SERVER AUDIT (Transact-SQL)](/sql/t-sql/statements/create-server-audit-transact-sql) 
 - [ALTER SERVER AUDIT (Transact-SQL)](/sql/t-sql/statements/alter-server-audit-transact-sql)
@@ -163,7 +163,7 @@ WITH PRIVATE KEY (<private_key_options>)
     - Экспорт базы данных из управляемого экземпляра и импорт в SQL Server (версии 2012 или более поздней).
       - В этой конфигурации все пользователи Azure AD создаются как субъекты базы данных SQL (пользователи) без имен входа. Тип пользователей указывается как SQL (отображается как SQL_USER в sys. database_principals). Их разрешения и роли остаются в метаданных базы данных SQL Server и могут использоваться для олицетворения. Однако они не могут использоваться для доступа к SQL Server и входа в него с помощью учетных данных.
 
-- Только имя входа субъекта уровня сервера, созданное процессом подготовки управляемого экземпляра, члены ролей сервера, такие как `securityadmin` или `sysadmin`или другие имена входа с разрешением ALTER ANY LOGIN на уровне сервера, могут создать сервер Azure AD. Участники (имена входа) в базе данных master для управляемого экземпляра.
+- Только имя входа субъекта уровня сервера, созданное в процессе подготовки управляемого экземпляра, члены ролей сервера, такие как `securityadmin` или `sysadmin`или другие имена входа с разрешением ALTER ANY LOGIN на уровне сервера, могут создавать субъекты-серверы Azure AD (имена входа) в базе данных master для управляемого экземпляра.
 - Если имя входа является субъектом SQL, только имена входа, являющиеся частью роли `sysadmin`, могут использовать команду CREATE для создания имен входа для учетной записи Azure AD.
 - Имя входа Azure AD должно быть членом Azure AD в том же каталоге, который используется для управляемого экземпляра базы данных SQL Azure.
 - Участники сервера Azure AD (имена входа) отображаются в обозревателе объектов, начиная с версии SQL Server Management Studio 18,0 Предварительная версия 5.
@@ -184,7 +184,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - [Резервное копирование главного ключа службы](/sql/t-sql/statements/backup-service-master-key-transact-sql) не поддерживается (управляется службой базы данных SQL).
 - [Восстановление главного ключа службы](/sql/t-sql/statements/restore-service-master-key-transact-sql) не поддерживается (управляется службой базы данных SQL).
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Настройка
 
 ### <a name="buffer-pool-extension"></a>Расширение буферного пула
 
@@ -280,7 +280,7 @@ WITH PRIVATE KEY (<private_key_options>)
   - Шаги задания T-SQL поддерживаются.
   - Поддерживаются следующие задания репликации:
     - Читатель журнала транзакций.
-    - Снимок
+    - Моментальный снимок
     - Распространитель.
   - Поддерживаются шаги задания служб SSIS.
   - Другие типы шагов заданий в настоящее время не поддерживаются:
@@ -302,7 +302,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - прокси-серверы;
 - Планирование заданий на неактивном ЦП
 - Включение или отключение агента
-- Предупреждения
+- Оповещения
 
 Сведения об агенте SQL Server см. в статье [Агент SQL Server](/sql/ssms/agent/sql-server-agent).
 
@@ -389,7 +389,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - Связанные серверы не поддерживают распределенные транзакции с возможностью записи (MS DTC).
 - Неподдерживаемые целевые объекты — это файлы, Analysis Services и другие РСУБД. Попробуйте использовать собственный импорт CSV из хранилища BLOB-объектов Azure с помощью `BULK INSERT` или `OPENROWSET` в качестве альтернативы для импорта файлов.
 
-Операции
+Operations
 
 - Транзакции записи между несколькими экземплярами не поддерживаются.
 - `sp_dropserver` поддерживается для удаления связанного сервера. См. статью [sp_dropserver (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-dropserver-transact-sql).
@@ -529,7 +529,7 @@ WITH PRIVATE KEY (<private_key_options>)
 ### <a name="vnet"></a>Виртуальная сеть
 - Виртуальную сеть можно развернуть с помощью модели ресурсов — классическая модель для виртуальной сети не поддерживается.
 - После создания управляемого экземпляра перемещение управляемого экземпляра или виртуальной сети в другую группу ресурсов или подписку не поддерживается.
-- Некоторые службы, такие как среды службы приложений, приложения логики и управляемые экземпляры (используемые для георепликации, репликации транзакций или с помощью связанных серверов), не могут получить доступ к управляемым экземплярам в разных регионах, если их виртуальных сетей подключены с помощью [глобального пиринг](../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers). Вы можете подключаться к этим ресурсам через ExpressRoute или VNet-VNet через шлюзы виртуальной сети.
+- Некоторые службы, такие как среды службы приложений, приложения логики и управляемые экземпляры (используемые для георепликации, репликации транзакций или через связанные серверы), не могут получить доступ к управляемым экземплярам в разных регионах, если их виртуальных сетей подключены с помощью [глобального пиринга](../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers). Вы можете подключаться к этим ресурсам через ExpressRoute или VNet-VNet через шлюзы виртуальной сети.
 
 ### <a name="tempdb"></a>БАЗЕ
 
@@ -569,7 +569,7 @@ SQL Server и Управляемый экземпляр [не позволяют
 
 **Дата:** Sep 2019
 
-[Resource Governor](/sql/relational-databases/resource-governor/resource-governor) функция, которая позволяет ограничить ресурсы, назначенные пользовательской рабочей нагрузке, может неправильно классифицировать определенную рабочую нагрузку пользователя после отработки отказа или изменения уровня служб (например, изменение максимального Виртуальное ядро или максимального экземпляра). Размер хранилища).
+Функция [Resource Governor](/sql/relational-databases/resource-governor/resource-governor) , которая позволяет ограничить ресурсы, назначенные пользовательской рабочей нагрузке, может неправильно классифицировать определенную рабочую нагрузку пользователя после отработки отказа или изменения уровня обслуживания, инициированного пользователем (например, изменение максимального Виртуальное ядро или максимального размера хранилища экземпляра).
 
 Инструкции по **решению**: запустите `ALTER RESOURCE GOVERNOR RECONFIGURE` периодически или в рамках задания агента SQL Server, которое ВЫПОЛНЯЕТ задачу SQL при запуске экземпляра, если используется [Resource Governor](/sql/relational-databases/resource-governor/resource-governor).
 
@@ -679,7 +679,7 @@ using (var scope = new TransactionScope())
 
 **Обходной путь:** По возможности используйте контекстные соединения в модуле CLR.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об управляемых экземплярах см [. в разделе понятие управляемого экземпляра.](sql-database-managed-instance.md)
 - Список функций и сравнительных списков см. в статье [Сравнение функций базы данных SQL Azure](sql-database-features.md).

@@ -1,22 +1,16 @@
 ---
-title: Создание приложения PHP (Laravel) с базой данных MySQL в Linux в Службе приложений Azure | Документация Майкрософт
-description: Узнайте, как создать приложение PHP, работающее в Службе приложений Azure в Linux, с подключением к базе данных MySQL в Azure. В этом руководстве используется Laravel.
-services: app-service\web
-author: cephalin
-manager: jeconnoc
-ms.service: app-service-web
-ms.workload: web
+title: Руководство по использованию приложения PHP в Linux с MySQL
+description: Узнайте, как создать приложение Node.js, работающее в Службе приложений Azure в Linux, с подключением к базе данных MySQL в Azure. В этом учебнике используется Laravel.
 ms.devlang: php
 ms.topic: tutorial
-ms.date: 03/27/2019
-ms.author: cephalin
+ms.date: 11/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6d9ef67f39a67fd06a5b42afe4432b5a0156fead
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: be8bbfde7e9873f9cef3a85cacc2dfcf4db9039b
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59549837"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74687428"
 ---
 # <a name="build-a-php-and-mysql-app-in-azure-app-service-on-linux"></a>Разработка приложения на основе PHP и MySQL в Службе приложений Azure в Linux
 
@@ -202,7 +196,7 @@ az mysql server firewall-rule create --name AllowLocalClient --server <mysql-ser
 
 ### <a name="connect-to-production-mysql-server-locally"></a>Локальное подключение к серверу рабочей базы данных MySQL
 
-В окне терминала подключитесь к серверу MySQL в Azure. Используйте значение, указанное ранее для _&lt;admin-user>_ и _&lt;mysql-server-name>_. При появлении запроса на ввод пароля используйте пароль, указанный во время создания базы данных в Azure.
+В окне терминала подключитесь к серверу MySQL в Azure. Используйте значение, указанное ранее для _&lt;admin-user>_ и _&lt;mysql-server-name>_ . При появлении запроса на ввод пароля используйте пароль, указанный во время создания базы данных в Azure.
 
 ```bash
 mysql -u <admin-user>@<mysql-server-name> -h <mysql-server-name>.mysql.database.azure.com -P 3306 -p
@@ -239,7 +233,7 @@ quit
 
 ### <a name="configure-the-database-connection"></a>Настройка подключения к базе данных
 
-В корневой папке репозитория создайте файл _.env.production_ и скопируйте в него следующие переменные. Замените заполнитель _&lt;mysql-server-name>_.
+В корневой папке репозитория создайте файл _.env.production_ и скопируйте в него следующие переменные. Замените заполнитель _&lt;mysql-server-name>_ .
 
 ```txt
 APP_ENV=production
@@ -270,7 +264,7 @@ MYSQL_SSL=true
 'mysql' => [
     ...
     'sslmode' => env('DB_SSLMODE', 'prefer'),
-    'options' => (env('MYSQL_SSL')) ? [
+    'options' => (env('MYSQL_SSL') && extension_loaded('pdo_mysql')) ? [
         PDO::MYSQL_ATTR_SSL_KEY    => '/ssl/BaltimoreCyberTrustRoot.crt.pem',
     ] : []
 ],
@@ -317,7 +311,7 @@ git commit -m "database.php updates"
 
 Ваше приложение готово к развертыванию.
 
-## <a name="deploy-to-azure"></a>Развернуть в Azure
+## <a name="deploy-to-azure"></a>Развертывание в Azure
 
 На этом шаге вы развернете приложение PHP, подключенное к базе данных MySQL, в службе приложений Azure.
 
@@ -341,7 +335,7 @@ git commit -m "database.php updates"
 
 В службе приложений переменные среды задаются в качестве _параметров приложения_ с помощью команды [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set).
 
-Команда ниже позволяет настроить параметры приложения `DB_HOST`, `DB_DATABASE`, `DB_USERNAME` и `DB_PASSWORD`. Замените заполнители _&lt;appname>_ и _&lt;mysql-server-name>_.
+Команда ниже позволяет настроить параметры приложения `DB_HOST`, `DB_DATABASE`, `DB_USERNAME` и `DB_PASSWORD`. Замените заполнители _&lt;appname>_ и _&lt;mysql-server-name>_ .
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group myResourceGroup --settings DB_HOST="<mysql-server-name>.mysql.database.azure.com" DB_DATABASE="sampledb" DB_USERNAME="phpappuser@<mysql-server-name>" DB_PASSWORD="MySQLAzure2017" MYSQL_SSL="true"
@@ -606,7 +600,7 @@ git push azure master
 Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"]
-> [Руководство Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
+> [Руководство. Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
 
 Также ознакомьтесь с другими ресурсами:
 

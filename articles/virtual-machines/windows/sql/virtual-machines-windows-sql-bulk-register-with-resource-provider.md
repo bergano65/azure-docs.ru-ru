@@ -13,12 +13,12 @@ ms.workload: iaas-sql-server
 ms.date: 10/21/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 97541484501a3ecdd1bd5998314c1ee9e7a4e3a5
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 4ee9d651e1ec7807d191bc3393c0c280ce1e52f9
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73489066"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74790557"
 ---
 # <a name="bulk-register-sql-virtual-machines-in-azure-with-the-sql-vm-resource-provider"></a>Полное регистрация виртуальных машин SQL в Azure с помощью поставщика ресурсов виртуальной машины SQL
 
@@ -39,7 +39,7 @@ ms.locfileid: "73489066"
 - Последняя версия [AZ PowerShell](/powershell/azure/new-azureps-module-az). 
 - Последняя версия [AZ. склвиртуалмачине](https://www.powershellgallery.com/packages/Az.SqlVirtualMachine/0.1.0).
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 Прежде чем продолжать, необходимо создать локальную копию скрипта, импортировать ее в качестве модуля PowerShell и подключиться к Azure. 
 
@@ -222,7 +222,7 @@ Please find the detailed report in  file RegisterSqlVMScriptReport1571314821.txt
 
 При регистрации SQL Server виртуальных машин с поставщиком ресурсов с помощью предоставленного скрипта учитывайте следующее.
 
-- Для регистрации в поставщике ресурсов требуется Гостевой агент, работающий на виртуальной машине SQL Server. В образах Windows Server 2008 Нет гостевого агента, поэтому эти виртуальные машины завершаются сбоем и должны быть зарегистрированы вручную с помощью [режима управления](virtual-machines-windows-sql-register-with-resource-provider.md#register-sql-server-2008-or-2008-r2-on-windows-server-2008-vms)"без агента".
+- Для регистрации в поставщике ресурсов требуется Гостевой агент, работающий на виртуальной машине SQL Server. В образах Windows Server 2008 Нет гостевого агента, поэтому эти виртуальные машины завершаются сбоем и должны быть зарегистрированы вручную с помощью [режима управления](virtual-machines-windows-sql-register-with-resource-provider.md#management-modes)"без агента".
 - Существует встроенная логика повторных попыток для преодоления прозрачных ошибок. Если виртуальная машина успешно зарегистрирована, эта операция выполняется быстро. Однако в случае сбоя регистрации каждая виртуальная машина будет повторно выполнена.  Таким образом, для завершения процесса регистрации необходимо значительное время, хотя фактические требования к времени зависят от типа и количества ошибок. 
 
 ## <a name="full-script"></a>Полный сценарий

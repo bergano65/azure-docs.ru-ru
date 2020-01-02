@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/23/2019
 ms.author: jhakulin
-ms.openlocfilehash: 3beda852b3e711ee969b7f80f8f326285cc2cad6
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 421b9adf4ae5d2c641484e646bea096716d46cca
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68558880"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74815411"
 ---
 # <a name="troubleshoot-the-speech-sdk"></a>Устранение неполадок с пакетом SDK для службы "Речь"
 
@@ -107,7 +107,7 @@ ms.locfileid: "68558880"
 
 ---
 
-## <a name="error-http-400-bad-request"></a>Ошибка: HTTP 400 Недопустимый запрос
+## <a name="error-http-400-bad-request"></a>Ошибка: HTTP 400 неверный запрос
 
 Обычно эта ошибка возникает, когда текст запроса содержит недопустимые аудиоданные. Поддерживается только формат WAV. Также проверьте заголовки запроса, чтобы убедиться, что вы указываете соответствующие значения для `Content-Type` и `Content-Length`.
 
@@ -123,6 +123,6 @@ ms.locfileid: "68558880"
 
 * Аудиозапись создана с помощью неподдерживаемого кодека, что приводит к тому, что аудиоданные воспринимаются как тишина.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Просмотр заметки о выпуске](releasenotes.md)

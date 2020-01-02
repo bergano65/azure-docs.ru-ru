@@ -1,27 +1,27 @@
 ---
 title: Использование Azure Image Builder с коллекцией образов для виртуальных машин Linux (Предварительная версия)
-description: Создание образов Linux с помощью Azure Image Builder и коллекции общих образов.
+description: Создание образов виртуальных машин Linux с помощью Azure Image Builder и коллекции общих образов.
 author: cynthn
 ms.author: cynthn
 ms.date: 04/20/2019
 ms.topic: article
 ms.service: virtual-machines-linux
 manager: gwallace
-ms.openlocfilehash: 9fc624ab24cd98d0025fe2a34bf48c29b47c50e9
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 09dceb84a20ef49b3e9d5264b94bb5e74180cd2b
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68695407"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976134"
 ---
-# <a name="preview-create-a-linux-image-and-distribute-it-to-a-shared-image-gallery"></a>Предварительный просмотр: Создание образа Linux и его распространение в общую коллекцию образов 
+# <a name="preview-create-a-linux-image-and-distribute-it-to-a-shared-image-gallery"></a>Предварительная версия: создание образа Linux и его распространение в общую коллекцию образов 
 
 В этой статье показано, как с помощью построителя образов Azure создать версию образа в [общей коллекции образов](https://docs.microsoft.com/azure/virtual-machines/windows/shared-image-galleries), а затем распространить образ глобально.
 
 
 Мы будем использовать шаблон Sample. JSON для настройки образа. JSON-файл, который мы используем: [хеллоимажетемплатефорсиг. JSON](https://github.com/danielsollondon/azvmimagebuilder/blob/master/quickquickstarts/1_Creating_a_Custom_Linux_Shared_Image_Gallery_Image/helloImageTemplateforSIG.json). 
 
-Чтобы распространить образ в общую коллекцию образов, шаблон использует [шаредимаже](image-builder-json.md#distribute-sharedimage) в качестве значения для `distribute` раздела шаблона.
+Чтобы распространить образ в общую коллекцию образов, шаблон использует [шаредимаже](image-builder-json.md#distribute-sharedimage) в качестве значения для раздела `distribute` шаблона.
 
 > [!IMPORTANT]
 > Azure Image Builder сейчас находится в общедоступной предварительной версии.
@@ -77,7 +77,7 @@ imageDefName=myIbImageDef
 runOutputName=aibLinuxSIG
 ```
 
-Создайте переменную для идентификатора подписки. Это можно сделать с помощью `az account show | grep id`.
+Создайте переменную для идентификатора подписки. Его можно получить с помощью `az account show | grep id`.
 
 ```azurecli-interactive
 subscriptionID=<Subscription ID>
@@ -90,7 +90,7 @@ az group create -n $sigResourceGroup -l $location
 ```
 
 
-Предоставьте разрешение Azure Image Builder для создания ресурсов в этой группе ресурсов. `--assignee` Значение представляет собой идентификатор регистрации приложения для службы "Построитель образов". 
+Предоставьте разрешение Azure Image Builder для создания ресурсов в этой группе ресурсов. Значение `--assignee` — это идентификатор регистрации приложения для службы "Построитель образов". 
 
 ```azurecli-interactive
 az role assignment create \
@@ -220,7 +220,7 @@ az resource delete \
     -n helloImageTemplateforSIG01
 ```
 
-Получить версию образа, созданную построителем образов, это всегда `0.`начинается с, а затем удаляет версию образа.
+Получить версию образа, созданную построителем образов, это всегда начинается с `0.`, а затем удаляется версия образа.
 
 ```azurecli-interactive
 sigDefImgVersion=$(az sig image-version list \
@@ -259,6 +259,6 @@ az sig delete -r $sigName -g $sigResourceGroup
 az group delete -n $sigResourceGroup -y
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [галереях общих образов Azure](shared-image-galleries.md).

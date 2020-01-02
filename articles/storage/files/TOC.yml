@@ -141,6 +141,8 @@
           href: storage-sync-offline-data-transfer.md
         - name: Перемещение данных в службу хранилища Azure и из нее
           href: ../common/storage-moving-data.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+        - name: Миграция в Синхронизацию файлов Azure из StorSimple
+          href: storage-sync-files-storsimple-migration.md
         - name: Перемещение данных с помощью AzCopy
           items:
             - name: Начало работы
@@ -149,6 +151,8 @@
               href: ../common/storage-use-azcopy-files.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
             - name: 'Настройка, оптимизация и устранение неполадок'
               href: ../common/storage-use-azcopy-configure.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+            - name: Перенос данных с помощью библиотеки перемещения данных
+              href: ../common/storage-use-data-movement-library.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Разработка
       items:
         - name: Настройка строк подключения

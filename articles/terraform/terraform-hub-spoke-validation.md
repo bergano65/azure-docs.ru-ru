@@ -1,17 +1,14 @@
 ---
 title: Руководство. Проверка периферийной сети и концентратора в Azure с помощью Terraform
 description: Учебник по проверке звездообразной топологии сети со всеми виртуальными сетями, подключенными друг к другу.
-ms.service: terraform
-author: tomarchermsft
-ms.author: tarcher
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: b0b761fcd79f7129befefa37ce11d9c70cf7cb96
-ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
+ms.openlocfilehash: 9ba4780c59e5e9da4999573abbc08ecd2738a2cd
+ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72969334"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74159203"
 ---
 # <a name="tutorial-validate-a-hub-and-spoke-network-in-azure-using-terraform"></a>Руководство по Проверка периферийной сети и концентратора в Azure с помощью Terraform
 

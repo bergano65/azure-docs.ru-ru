@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: amishu
-ms.openlocfilehash: 58f6c97ac819947f84735bc0bc4c125b43db58dc
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 707a0f801a739a7a91cee19635e609305cd8f021
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74075803"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74805796"
 ---
 # <a name="enable-logging-in-the-speech-sdk"></a>Включение ведения журнала в пакете SDK для распознавания речи
 
@@ -24,7 +24,7 @@ ms.locfileid: "74075803"
 > [!NOTE]
 > Ведение журнала доступно с момента использования пакета SDK для распознавания речи версии 1.4.0 во всех поддерживаемых языках программирования SDK для обработки речи, за исключением JavaScript.
 
-## <a name="sample"></a>Образец
+## <a name="sample"></a>Пример
 
 Имя файла журнала указано в объекте конфигурации. Используя `SpeechConfig` в качестве примера и предположим, что вы создали экземпляр с именем `config`:
 
@@ -115,7 +115,7 @@ NSString *filePath = [
 
 Дополнительные сведения о файловой системе iOS можно найти [здесь](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Примеры на сайте GitHub](https://aka.ms/csspeech/samples)

@@ -7,18 +7,18 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2019
-ms.openlocfilehash: 5324c17cdf2593d8e1022e6ddbf52b4e24ee64e8
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 01d4c8b3b803c5fce4fe24a5c96e649212fc4dca
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72597811"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74894353"
 ---
 # <a name="azure-monitor-naming-and-terminology-changes"></a>Изменения терминологии и именования Azure Monitor
 Недавно в Azure Monitor были внесены значительные изменения, а также произошло слияние различных служб, для того чтобы упростить мониторинг для клиентов Azure. В этой статье описываются недавние изменения имени и терминологии в документации Azure Monitor.
 
 ## <a name="october-2019---diagnostic-log-to-resource-log"></a>Октябрь 2019 — журнал диагностики для журнала ресурсов
-Журналы диагностики были изменены на "Журналы ресурсов", чтобы они лучше соответствовали фактически собираемым данным. Термин "параметры диагностики" остается неизменным.  
+"Журналы диагностики" были изменены на "Журналы ресурсов", чтобы они лучше соответствовали собираемым данным. Термин "параметры диагностики" остается неизменным.  
 
 ## <a name="february-2019---log-analytics-terminology"></a>Терминология Log Analytics, февраль 2019 г.
 Чтобы лучше описать службу Azure Monitor и ее различные компоненты после слияния различных служб в Azure Monitor, мы делаем следующий шаг, изменяя терминологию в нашей документации. 

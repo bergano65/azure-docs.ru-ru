@@ -1,24 +1,25 @@
 ---
-title: Преобразование фильтра в потоке данных сопоставления фабрики данных Azure
+title: Преобразование «фильтр» в потоке данных сопоставления
 description: Фильтрация строк с помощью преобразования «фильтр» в потоке данных сопоставления фабрики данных Azure
 author: kromerm
 ms.author: makromer
 ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
+ms.custom: seo-lt-2019
 ms.date: 10/16/2019
-ms.openlocfilehash: 1daff431fc217c08f3bc3c5aeb3b4711691909c0
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 84b935d1646ea4f13d5926fc68797fd8efd03dea
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74132537"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930351"
 ---
 # <a name="filter-transformation-in-mapping-data-flow"></a>Преобразование «фильтр» в потоке данных сопоставления
 
 Преобразование «фильтр» позволяет фильтровать строки на основе условия. Выходной поток включает все строки, соответствующие условию фильтрации. Преобразование «фильтр» аналогично предложению WHERE в SQL.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Настройка
 
 Используйте построитель выражений потока данных, чтобы ввести выражение для условия фильтра. Чтобы открыть построитель выражений, щелкните синюю рамку. Условие фильтра должно иметь тип Boolean. Дополнительные сведения о создании выражения см. в документации по [построителю выражений](concepts-data-flow-expression-builder.md) .
 
@@ -53,6 +54,6 @@ CleanData
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Фильтрация столбцов с помощью [преобразования «выбор](data-flow-select.md) »

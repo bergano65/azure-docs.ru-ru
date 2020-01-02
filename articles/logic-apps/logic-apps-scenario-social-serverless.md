@@ -1,20 +1,19 @@
 ---
-title: Создание панели мониторинга Customer Insights — Azure Logic Apps
+title: Создать панель мониторинга Customer Insights
 description: Управление отзывами от клиентов, данными социальных сетей и многим другим путем создания панели мониторинга клиента с помощью Azure Logic Apps и Функций Azure
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
 author: jeffhollan
 ms.author: jehollan
-ms.reviewer: estfan, LADocs
+ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 03/15/2018
-ms.openlocfilehash: c9c5cf9c56f2e22faa973c983c6fd81733119daa
-ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
+ms.openlocfilehash: ebc1d449cdb8702a984304e92697d4b7c778daaa
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72680109"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74792903"
 ---
 # <a name="create-a-streaming-customer-insights-dashboard-with-azure-logic-apps-and-azure-functions"></a>Создание панели мониторинга потоковой передачи сведений о клиентах с помощью Функций Azure и Azure Logic Apps.
 

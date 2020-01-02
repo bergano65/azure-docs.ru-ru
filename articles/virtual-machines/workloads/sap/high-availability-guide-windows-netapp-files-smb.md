@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/29/2019
 ms.author: radeltch
-ms.openlocfilehash: 5de28055a1b573b3326b717614f481b0e1158f1a
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: d7c2bfbe3f277bbaf652191977434ea5fe4dbffd
+ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74064701"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74555302"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-windows-with-azure-netapp-filessmb-for-sap-applications"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure в Windows с Azure NetApp Files (SMB) для приложений SAP
 
@@ -78,12 +78,12 @@ ms.locfileid: "74064701"
 * В примечании SAP [662452](https://launchpad.support.sap.com/#/notes/662452) содержится рекомендация (деактивация создания имени 8,3) для устранения проблем с производительностью файловой системы и ошибками при доступе к данным.
 * [Установка высокого уровня доступности SAP NetWeaver в отказоустойчивом кластере Windows и в общей папке для экземпляров SAP ASCS/SCS в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-installation-wsfc-file-share) 
 * [Архитектура высокого уровня доступности виртуальных машин Azure и сценарии для SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-architecture-scenarios)
-* [Добавление порта пробы в конфигурацию кластера ASCS](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-installation-wsfc-file-share#create-a-new-sap-service-and-sap-instance-resources)
-* [Установка экземпляра (A) SCS в отказоустойчивом кластере](https:\www.sap.com\documents\2017\07\f453332f-c97c-0010-82c7-eda71af511fa.html) 
+* [Добавление порта пробы в конфигурацию кластера ASCS](sap-high-availability-installation-wsfc-file-share.md)
+* [Установка экземпляра (A) SCS в отказоустойчивом кластере](https://www.sap.com/documents/2017/07/f453332f-c97c-0010-82c7-eda71af511fa.html)
 * [Создание тома SMB для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes-smb#requirements-for-active-directory-connections)
 * [NetApp приложений SAP на Microsoft Azure с помощью Azure NetApp Files][anf-sap-applications-azure]
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 В SAP разработан новый подход и альтернатива общим дискам кластера для кластеризации экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows. Вместо использования общих дисков кластера один из них может использовать файловый ресурс SMB для развертывания файлов глобального узла SAP. Azure NetApp Files поддерживает SMBv3 (вместе с NFS) с ACL NTFS с помощью Active Directory. Azure NetApp Files автоматически становится высокодоступным (как и служба PaaS). Эти функции делают Azure NetApp Files отличным вариантом для размещения общего файлового ресурса SMB для глобального SAP.  
 Поддерживаются [службы доменов Azure Active Directory (AD)](https://docs.microsoft.com/azure/active-directory-domain-services/overview) и [домен Active Directory Services (AD DS)](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) . С Azure NetApp Files можно использовать существующие Active Directory контроллеры домена. Контроллеры домена могут находиться в Azure как виртуальные машины или локально с помощью ExpressRoute или S2S VPN. В этой статье мы будем использовать контроллер домена на виртуальной машине Azure.  
@@ -193,7 +193,7 @@ ms.locfileid: "74064701"
 ![Рис. 3. запись блокировки сохраняется после теста отработки отказа](./media/virtual-machines-shared-sap-high-availability-guide/high-availability-windows-azure-netapp-files-smb-figure-3.png)  
 
 Дополнительные сведения см. [в разделе Устранение неполадок при отработке отказа в очереди в ASCS с ERS](https://wiki.scn.sap.com/wiki/display/SI/Troubleshooting+for+Enqueue+Failover+in+ASCS+with+ERS)
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]

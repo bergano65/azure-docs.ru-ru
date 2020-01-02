@@ -1,25 +1,17 @@
 ---
-title: Добавление push-уведомлений в приложение Android с помощью мобильных приложений | Документация Майкрософт
+title: Добавление push-уведомлений в приложение Android
 description: Узнайте, как использовать мобильные приложения для отправки push-уведомлений в приложение Android.
-services: app-service\mobile
-documentationcenter: android
-manager: crdun
-editor: ''
-author: elamalani
 ms.assetid: 9058ed6d-e871-4179-86af-0092d0ca09d3
-ms.service: app-service-mobile
-ms.workload: mobile
 ms.tgt_pltfrm: mobile-android
 ms.devlang: java
 ms.topic: article
 ms.date: 06/25/2019
-ms.author: emalani
-ms.openlocfilehash: 539859ba73c8a26d6f7e8f25b9e7453d987a52bd
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: ce4ebe9e8874e779b8da16e9c30fcfc3ca46754e
+ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72389011"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74668610"
 ---
 # <a name="add-push-notifications-to-your-android-app"></a>Добавление push-уведомлений в приложение Android
 
@@ -30,13 +22,13 @@ ms.locfileid: "72389011"
 >
 > Если вы хотите интегрировать облачные службы с мобильным приложением, зарегистрируйтесь в [Центре приложений](https://appcenter.ms/signup?utm_source=zumo&utm_medium=Azure&utm_campaign=zumo%20doc) сегодня.
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 В этом учебнике мы добавим push-уведомления в [ознакомительный проект для платформы Android], чтобы при каждом добавлении новой записи на устройство отправлялось push-уведомление.
 
 Если вы не используете скачанный проект сервера, необходимо добавить пакет расширений для push-уведомлений. Дополнительные сведения см. в статье [Работа с пакетом SDK для внутреннего сервера .NET для мобильных приложений Azure](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Кроме этого, вам потребуются:
 
@@ -63,7 +55,7 @@ ms.locfileid: "72389011"
 
 [!INCLUDE [app-service-mobile-dotnet-backend-configure-push-google](../../includes/app-service-mobile-dotnet-backend-configure-push-google.md)]
 
-## <a name="add-push-notifications-to-your-app"></a>Добавление push-уведомлений в приложение
+## <a name="add-push-notifications-to-your-app"></a>Добавьте в приложения возможность использования push-уведомлений
 
 В этом разделе мы обновим клиентское приложение Android для обработки push-уведомлений.
 
@@ -87,7 +79,7 @@ ms.locfileid: "72389011"
 
 Приложение можно проверить, подключив телефон Android напрямую с помощью USB-кабеля или используя виртуальное устройство в эмуляторе.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы изучили это руководство и теперь можете перейти к ознакомлению с одной из следующих тем.
 

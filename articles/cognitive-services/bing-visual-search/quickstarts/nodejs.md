@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Получение аналитических сведений об изображениях с помощью REST API Визуального поиска Bing и Node.js
+title: Краткое руководство. Получение аналитических сведений об изображениях с помощью REST API и Node.js — Визуальный поиск Bing
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как отправить изображение в API визуального поиска Bing и получить аналитические сведения об этом изображении.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: bing-visual-search
 ms.topic: quickstart
 ms.date: 4/02/2019
 ms.author: scottwhi
-ms.openlocfilehash: 9414bac220d928618b403aa2f7df7748772e0e9a
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: ecfe341fa050e693f919f35c29c8120c687c88f8
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59047574"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74383192"
 ---
 # <a name="quickstart-get-image-insights-using-the-bing-visual-search-rest-api-and-nodejs"></a>Краткое руководство. Получение аналитических сведений об изображениях с помощью REST API Визуального поиска Bing и Node.js
 

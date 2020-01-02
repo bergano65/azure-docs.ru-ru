@@ -1,14 +1,14 @@
 ---
-title: 'Процедура развертывания. Схема "ISO 27001: рабочая нагрузка Среды службы приложений или Базы данных SQL"'
+title: Развертывание примера схемы рабочей нагрузки ASE или SQL на основе ISO 27001
 description: 'Процедура развертывания примера схемы "ISO 27001: рабочая нагрузка Среды службы приложений или Базы данных SQL", включая сведения о параметрах артефактов схемы.'
-ms.date: 03/14/2019
+ms.date: 11/18/2019
 ms.topic: sample
-ms.openlocfilehash: edcf9920f3a65c182240da735b1883b3d67da650
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 3cf3c062b1e8b69a6a0b9eb585b30ce2d5c4acfb
+ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74032140"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74546754"
 ---
 # <a name="deploy-the-iso-27001-app-service-environmentsql-database-workload-blueprint-sample"></a>Развертывание примера схемы "ISO 27001: рабочая нагрузка Среды службы приложений или Базы данных SQL"
 

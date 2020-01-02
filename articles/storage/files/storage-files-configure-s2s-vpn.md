@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 36f85b0906b67c5bee61b9e22101f7a0d117878a
-ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
+ms.openlocfilehash: 7762366f68bee2cd8c44e81bb22366c504ff1a73
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126490"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74484428"
 ---
 # <a name="configure-a-site-to-site-vpn-for-use-with-azure-files"></a>Настройка VPN-подключения "сеть — сеть" для использования с Файлами Azure
 Вы можете использовать VPN-подключение "сеть — сеть" (S2S) для подключения файловых ресурсов Azure по протоколу SMB в локальной сети, не открывая порт 445. VPN-подключение "сеть — сеть" можно настроить с помощью [VPN-шлюза Azure](../../vpn-gateway/vpn-gateway-about-vpngateways.md), который является ресурсом Azure, предлагающим службы VPN, и развертывается в группе ресурсов вместе с учетными записями хранения или другими ресурсами Azure.
@@ -113,5 +113,5 @@ ms.locfileid: "73126490"
 
 ## <a name="see-also"></a>См. также
 - [Рекомендации по работе с сетями службы "Файлы Azure"](storage-files-networking-overview.md)
-- [Настройка VPN-подключения "точка — сеть" (P2S) в Linux для использования с Файлами Azure](storage-files-configure-p2s-vpn-windows.md)
+- [Настройка VPN-подключения "точка — сеть" (P2S) в Windows для использования с Файлами Azure](storage-files-configure-p2s-vpn-windows.md)
 - [Настройка VPN-подключения "точка — сеть" (P2S) в Linux для использования с Файлами Azure](storage-files-configure-p2s-vpn-linux.md)

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/10/2019
 ms.author: juliako
-ms.openlocfilehash: 30e5daba56bb371aafa6d2636a0a9f641977e6fa
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: dcfe9c1c3e12aa726f57db29db59732cceb87a69
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73162566"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74967462"
 ---
 # <a name="widevine-license-template-overview"></a>Обзор шаблона лицензии Widevine 
 
@@ -83,7 +83,7 @@ ms.locfileid: "73162566"
 | content_key_specs. track_type |string |Имя типа записи. Если content_key_specs указан в запросе лицензии, убедитесь, что все типы записей указаны явным образом. Невыполнение этого требования приведет к сбою воспроизведения последних 10 секунд. |
 | content_key_specs  <br/> security_level |uint32 |Определяет требования к надежности клиента для воспроизведения. <br/> — Требуется программное шифрование методом белого ящика. <br/> — Требуются шифрование ПО и скрытый декодер. <br/> — Материал ключа и операции шифрования должны быть выполнены в резервной доверенной аппаратной среде выполнения. <br/> — Операции шифрования и расшифровки содержимого должны быть выполнены в резервной доверенной аппаратной среде выполнения.  <br/> — Шифрование, расшифровка и обработка всех носителей (сжатых и несжатых) должны быть выполнены в резервной доверенной аппаратной среде выполнения. |
 | content_key_specs <br/> required_output_protection.hdc |Строка, одна из: HDCP_NONE, HDCP_V1, HDCP_V2 |Указывает, требуется ли HDCP. |
-| content_key_specs <br/>key |Base64-<br/>Base64 |Ключ содержимого, используемый для этой записи. Если указано, требуется track_type или Key_ID. Поставщик содержимого с помощью этого параметра может вставить ключ содержимого для этой дорожки вместо того, чтобы сервер лицензирования Widevine создал или нашел ключ. |
+| content_key_specs <br/>key |Base64-<br/>Base64 |Ключ содержимого, используемый для этой записи. Если указано, требуется track_type или key_id. Поставщик содержимого с помощью этого параметра может вставить ключ содержимого для этой дорожки вместо того, чтобы сервер лицензирования Widevine создал или нашел ключ. |
 | content_key_specs.key_ID |Двоичные данные строки в кодировке base64, 16 байт |Уникальный идентификатор ключа. |
 
 ## <a name="policy-overrides"></a>Переопределения политики
@@ -202,6 +202,10 @@ private static ContentKeyPolicyWidevineConfiguration ConfigureWidevineLicenseTem
     return objContentKeyPolicyWidevineConfiguration;
 }
 ```
+
+## <a name="additional-notes"></a>Дополнительные замечания
+
+* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

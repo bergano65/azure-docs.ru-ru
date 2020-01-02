@@ -1,15 +1,15 @@
 ---
-title: Azure Blockchain Workbench configuration metadata reference
-description: Azure Blockchain Workbench Preview application configuration metadata overview.
-ms.date: 09/05/2019
+title: Справочник по метаданным конфигурации Azure Блокчейн Workbench
+description: Обзор метаданных конфигурации приложения Azure Блокчейн Workbench Preview.
+ms.date: 12/09/2019
 ms.topic: article
 ms.reviewer: brendal
-ms.openlocfilehash: 2ee1d1da1a9a5d8e890a6578eaec42cc6bf9f3ed
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 661e795f0e85f872b1072a8f641b8938115c5d7a
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74326070"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74972448"
 ---
 # <a name="azure-blockchain-workbench-configuration-reference"></a>Справочник по конфигурации Azure Blockchain Workbench
 
@@ -391,6 +391,7 @@ function AssetTransfer(string description, uint256 price, PropertyTypeEnum prope
 | Name | Уникальное имя свойства или параметра. Для соответствующего смарт-контракта должно использоваться то же самое имя **Name**, что и для применимого свойства или параметра. | ДА | 50 |
 | displayName | Понятное отображаемое имя свойства или параметра. | ДА | 255 |
 | Описание | Описание свойства или параметра. | Нет | 255 |
+| Тип | [Тип данных](#type)свойства. | ДА |
 
 ### <a name="identifiers-example"></a>Пример раздела с идентификаторами
 

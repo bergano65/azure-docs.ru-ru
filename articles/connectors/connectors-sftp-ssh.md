@@ -1,21 +1,19 @@
 ---
-title: Подключение к серверу SFTP с помощью SSH-Azure Logic Apps
+title: Подключение к SFTP-серверу с помощью SSH
 description: Автоматизация задач, которые отслеживают, создают, отправляют и получают файлы для SFTP-сервера, а также управляют ими с помощью SSH и Azure Logic Apps
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: divswa, klam, LADocs
+author: divyaswarnkar
+ms.reviewer: estfan, klam, logicappspm
 ms.topic: article
 ms.date: 06/18/2019
 tags: connectors
-ms.openlocfilehash: f52fc91d218e1a5448f6e6e7465f6416a04fd67d
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 54a1d1183ac16f5ec3db5477cda75c6e1a776b3d
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73837148"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74786896"
 ---
 # <a name="monitor-create-and-manage-sftp-files-by-using-ssh-and-azure-logic-apps"></a>Мониторинг и создание SFTP-файлов, а также управление ими с помощью SSH и Azure Logic Apps
 
@@ -24,7 +22,7 @@ ms.locfileid: "73837148"
 * мониторинг добавления или изменения файлов;
 * получение, создание, копирование, переименование, перечисление, обновление и удаление файлов;
 * создание папок;
-* получение содержимого и метаданных файлов;
+* получение содержимого и метаданных файлов.
 * извлечение архивов в папки.
 
 Вы можете использовать триггеры, которые отслеживают события сервера SFTP и делают выходные данные доступными для других действий. Вы можете использовать действия для выполнения различных задач на SFTP-сервере. Кроме того, в вашем приложении логики есть другие действия, которые могут использовать выходные данные действий SFTP. Например, если вы регулярно извлекаете файлы с сервера SFTP, то можете отправлять сообщения оповещений об этих файлах и их содержимое с помощью соединителя Outlook Office 365 или Outlook.com. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
@@ -59,7 +57,7 @@ ms.locfileid: "73837148"
 
 * Выполняет кэширование подключения к серверу SFTP *продолжительностью до 1 часа*, что повышает производительность и уменьшает количество попыток подключения к серверу. Чтобы указать длительность этого поведения кэширования, измените свойство [**ClientAliveInterval**](https://man.openbsd.org/sshd_config#ClientAliveInterval) в конфигурации SSH на SFTP-сервере.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -86,7 +84,7 @@ ms.locfileid: "73837148"
 
 Протокол SFTP. триггеры SSH работают путем опроса файловой системы SFTP и поиска файла, который был изменен с момента последнего опроса. При изменении файлов некоторые средства позволяют сохранить метку времени. В этом случае необходимо отключить эту функцию, чтобы триггер мог работать. Ниже приведены некоторые распространенные параметры:
 
-| Клиент SFTP | Действие |
+| Клиент SFTP | Действия |
 |-------------|--------|
 | Winscp | Выберите **Параметры** > **Настройки** > **Перенос** > **Изменить** > **Сохранение метки времени** > **Отключить** |
 | FileZilla | Выберите **Перенос** > **Preserve timestamps of transferred files** (Сохранение метки времени перенесенных файлов)  > **Отключить**. |
@@ -110,7 +108,7 @@ ms.locfileid: "73837148"
 
    `puttygen <path-to-private-key-file-in-PuTTY-format> -O private-openssh -o <path-to-private-key-file-in-OpenSSH-format>`
 
-   Например:
+   Пример.
 
    `puttygen /tmp/sftp/my-private-key-putty.ppk -O private-openssh -o /tmp/sftp/my-private-key-openssh.pem`
 

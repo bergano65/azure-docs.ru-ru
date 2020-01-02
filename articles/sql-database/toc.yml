@@ -124,8 +124,6 @@
               href: sql-database-threat-detection-overview.md
             - name: Атрибуты безопасности
               href: sql-database-security-attributes.md
-            - name: Ограничения компонентов
-              href: sql-database-feature-restrictions.md
         - name: Защита отдельных баз данных
           items:
             - name: Средства контроля сетевого доступа

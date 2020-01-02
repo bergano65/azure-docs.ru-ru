@@ -12,20 +12,20 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-multiple
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 01/23/2019
+ms.date: 12/09/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/23/2019
-ms.openlocfilehash: 66388f139b63c63e1f0f8ee8ee063e0ddd0f9da5
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: 236e222da9e9a64d4b93002d28c94fa6fe469c08
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71213038"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74972023"
 ---
 # <a name="routing-and-tag-expressions"></a>Маршрутизация и выражения тегов
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 Выражения тегов позволяют выбирать определенные целевые наборы устройств, а точнее регистраций, при отправке push-уведомлений через центры уведомлений.
 
@@ -37,11 +37,11 @@ ms.locfileid: "71213038"
 2. **По тегу**: уведомление получают все регистрации, которые содержат указанный тег.
 3. **По выражению тега**: уведомление получают все регистрации, набор тегов которых соответствует указанному выражению.
 
-## <a name="tags"></a>Tags
+## <a name="tags"></a>Теги
 
 Тегом может быть любая строка длиной до 120 знаков, содержащая буквы, цифры и следующие знаки: "_", "@", "#", ".", ":", "-". В следующем примере показано приложение, из которого можно получать всплывающие уведомления об определенных музыкальных группах. В этом случае для маршрутизации уведомлений удобно пометить регистрации тегами различных групп, как показано на следующем рисунке.
 
-![](./media/notification-hubs-routing-tag-expressions/notification-hubs-tags.png)
+![Общие сведения о тегах](./media/notification-hubs-tags-segment-push-message/notification-hubs-tags.png)
 
 На этом рисунке сообщение с тегом **Beatles** поступает только на планшет, зарегистрированный с тегом **Beatles**.
 
@@ -65,7 +65,7 @@ outcome = await Notifications.Instance.Hub.SendWindowsNativeNotificationAsync(to
 
 Теги необязательно определяются заранее и могут быть связаны с несколькими аспектами приложения. Например, пользователи приложения из этого примера могут оставлять свои комментарии по группам и хотят получать всплывающие уведомления не только о комментариях по своим любимым группам, но и обо всех комментариях от своих друзей, независимо от того, какую группу они комментируют. На рисунке ниже показан пример такого сценария.
 
-![](./media/notification-hubs-routing-tag-expressions/notification-hubs-tags2.png)
+![Теги друзья](./media/notification-hubs-tags-segment-push-message/notification-hubs-tags2.png)
 
 На этом рисунке Алиса интересуется новостями о Beatles, а Боб — о Wailers. Боба также интересуют комментарии Чарли, а Чарли интересуется Wailers. Когда отправляется уведомление о комментарии Чарли по Beatles, его получают и Алиса, и Боб.
 
@@ -80,9 +80,9 @@ outcome = await Notifications.Instance.Hub.SendWindowsNativeNotificationAsync(to
 
 Теги также могут использоваться для идентификации всех устройств определенного пользователя. Регистрации можно пометить тегом, который содержит идентификатор пользователя, как показано на следующем рисунке.
 
-![](./media/notification-hubs-routing-tag-expressions/notification-hubs-tags3.png)
+![Теги пользователей](./media/notification-hubs-tags-segment-push-message/notification-hubs-tags3.png)
 
-На этом рисунке сообщение с тегом Alice поступает во все регистрации с тегом Alice, то есть на все устройства Алисы.
+На этом рисунке сообщение с меткой UID: Алиса достигает всех регистраций, помеченных как "UID: Alice"; Таким образом, все устройства Алисы.
 
 ## <a name="tag-expressions"></a>Выражения тегов
 
@@ -94,7 +94,7 @@ outcome = await Notifications.Instance.Hub.SendWindowsNativeNotificationAsync(to
 (follows_RedSox || follows_Cardinals) && location_Boston
 ```
 
-![](./media/notification-hubs-routing-tag-expressions/notification-hubs-tags4.png)
+![Выражения тегов](./media/notification-hubs-tags-segment-push-message/notification-hubs-tags4.png)
 
 Выражения тегов могут содержать любые логические операторы, такие как AND (&&), OR (||) и NOT (!). В них также можно использовать скобки. В выражении можно использовать не больше 20 тегов, если в нем содержатся только операторы OR; в противном случае максимальное число тегов равно 6.
 

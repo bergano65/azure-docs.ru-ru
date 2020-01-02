@@ -1,5 +1,6 @@
 ---
-title: Настройка пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C | Документация Майкрософт
+title: Настройка пользовательского интерфейса приложения с помощью настраиваемой политики
+titleSuffix: Azure AD B2C
 description: Дополнительные сведения о настройке пользовательского интерфейса с помощью настраиваемой политики в Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
@@ -10,12 +11,12 @@ ms.topic: conceptual
 ms.date: 09/11/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 1ef4ddc422041de623b96f3a0c85f067427cacd7
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: 1ac0f59ea709e25f3d71a78ece5ebf40690bd3be
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72374229"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74949632"
 ---
 # <a name="customize-the-user-interface-of-your-application-using-a-custom-policy-in-azure-active-directory-b2c"></a>Настройка пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C
 
@@ -119,7 +120,7 @@ ms.locfileid: "72374229"
 
 Чтобы настроить пользовательский интерфейс, скопируйте **ContentDefinition** вместе с дочерним элементом из базового файла в файл расширений.
 
-1. Откройте базовый файл политики. Например, <em>`SocialAndLocalAccounts/` **`TrustFrameworkBase.xml`** </em> . Это один из файлов политики, включенных в начальный пакет пользовательской политики, который должен быть получен в предварительных требованиях, чтобы приступить [к работе с пользовательскими политиками](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-get-started-custom).
+1. Откройте базовый файл политики. Например, <em>`SocialAndLocalAccounts/`**`TrustFrameworkBase.xml`**</em> . Это один из файлов политики, включенных в начальный пакет пользовательской политики, который должен быть получен в предварительных требованиях, чтобы приступить [к работе с пользовательскими политиками](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-get-started-custom).
 1. Найдите и скопируйте содержимое элемента **ContentDefinitions**.
 1. Откройте файл расширения, Например, *TrustFrameworkExtensions.xml*. Найдите элемент **BuildingBlocks**. Если такой элемент не существует, добавьте его.
 1. Вставьте содержимое скопированного элемента **ContentDefinitions** в качестве дочернего элемента **BuildingBlocks**.
@@ -182,11 +183,11 @@ git clone https://github.com/azureadquickstarts/b2c-azureblobstorage-client
 Ниже приведены инструкции по использованию примера.
 
 1. Клонировать репозиторий на локальном компьютере. Выберите папку шаблона в разделе sample_templates. Можно использовать `wingtip` или `contoso`.
-1. Отправьте все файлы в папках `css`, `fonts` и `images` в хранилище больших двоичных объектов, как описано в предыдущих разделах.
-1. Затем откройте каждый файл @no__t -0. HTML в корне `wingtip` или `contoso` (в зависимости от выбранного на первом шаге) и замените все экземпляры "http://localhost" URL-адресами файлов CSS, изображений и шрифтов, отправленных на шаге 2.
-1. Сохраните файлы @no__t -0. HTML и отправьте их в хранилище BLOB-объектов.
+1. Передайте все файлы в папки `css`, `fonts`и `images` в хранилище BLOB-объектов, как описано в предыдущих разделах.
+1. Затем откройте каждый файл \*. HTML в корне `wingtip` или `contoso` (в зависимости от выбранного на первом шаге) и замените все экземпляры "http://localhost" URL-адресами файлов CSS, изображений и шрифтов, отправленных на шаге 2.
+1. Сохраните файлы \*. HTML и отправьте их в хранилище BLOB-объектов.
 1. Теперь измените файл расширений, как упоминалось ранее [, в файле](#modify-the-extensions-file)с расширением.
-1. Если вы видите отсутствующие шрифты, изображения или CSS, проверьте ссылки в политиках расширений и файлах @no__t -0. HTML.
+1. Если вы видите отсутствующие шрифты, изображения или CSS, проверьте ссылки в политиках расширений и файлах \*. HTML.
 
 ### <a name="content-definition-ids"></a>Идентификаторы определения содержимого
 
@@ -207,4 +208,4 @@ git clone https://github.com/azureadquickstarts/b2c-azureblobstorage-client
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об элементах пользовательского интерфейса, которые можно настроить, см. в [справочном руководстве по настройке пользовательского интерфейса для встроенных политик](active-directory-b2c-reference-ui-customization.md).
+Дополнительные сведения об элементах пользовательского интерфейса, которые можно настроить, см. в [справочном руководстве по настройке пользовательского интерфейса для потоков пользователей](active-directory-b2c-reference-ui-customization.md).

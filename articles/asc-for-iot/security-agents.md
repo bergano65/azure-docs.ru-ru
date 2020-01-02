@@ -1,6 +1,6 @@
 ---
 title: Приступая к работе с центром безопасности Azure для агентов безопасности IoT | Документация Майкрософт
-description: Приступая к работе с центром безопасности Azure для агентов безопасности IoT.
+description: Приступите к изучению, настройке, развертыванию и использованию центра безопасности Azure для агентов службы безопасности IoT на устройствах IoT.
 services: asc-for-iot
 ms.service: asc-for-iot
 documentationcenter: na
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: 6e790c125c59aea85f1ac34240c5a1d1969544ae
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 1ed890d9d3602de24e6f85f6f0ae7f59849f3df2
+ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68600596"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74664198"
 ---
 # <a name="get-started-with-azure-security-center-for-iot-device-security-agents"></a>Приступая к работе с центром безопасности Azure для агентов безопасности устройств IoT
 
@@ -39,10 +39,10 @@ ms.locfileid: "68600596"
 1. [Разверните центр безопасности Azure для агента безопасности IOT](how-to-deploy-linux-cs.md) на устройстве IOT или на новой виртуальной машине.
 1. Следуйте инструкциям по [trigger_events](https://aka.ms/iot-security-github-trigger-events) , чтобы запустить безвредную имитацию атаки.
 1. Проверьте центр безопасности Azure на наличие оповещений IoT в ответ на имитацию атаки на предыдущем шаге. Начните проверку через пять минут после выполнения скрипта.
-1. Ознакомьтесь [с оповещениями](concept-security-alerts.md), [рекомендациями](concept-recommendations.md) и подробным обзором [с помощью Log Analytics](how-to-security-data-access.md) с помощью центра Интернета вещей. 
+1. Ознакомьтесь с [оповещениями](concept-security-alerts.md), [рекомендациями](concept-recommendations.md)и [подробным обзором с помощью log Analytics](how-to-security-data-access.md) с помощью центра Интернета вещей. 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Настройка [решения](quickstart-configure-your-solution.md)
 - [Quickstart: Create an azureiotsecurity module twin](quickstart-create-security-twin.md) (Краткое руководство по созданию модуля двойника устройства azureiotsecurity)

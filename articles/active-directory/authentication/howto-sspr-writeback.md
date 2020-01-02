@@ -1,22 +1,22 @@
 ---
-title: Configure password writeback for SSPR - Azure Active Directory
+title: Настройка обратной записи паролей для SSPR — Azure Active Directory
 description: Использование Azure AD и Azure AD Connect для обратной записи паролей в локальный каталог.
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1acda877ecadc8ad0abd09b78d5453743e2470b1
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 67737aed3bd9961a37dc761fddf608d9bcfe3ffe
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74381155"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74847258"
 ---
 # <a name="how-to-configure-password-writeback"></a>Сведения о настройке компонента обратной записи паролей
 
@@ -59,7 +59,7 @@ ms.locfileid: "74381155"
 > Автономные планы лицензирования Office 365 *не поддерживают функции самостоятельного сброса пароля, изменения пароля или разблокировки при помощи локальной обратной записи*. Для работы этих функций требуется один из указанных выше планов.
 >
 
-## <a name="active-directory-permissions-and-on-premises-password-complexity-policies"></a>Active Directory permissions and on-premises password complexity policies 
+## <a name="active-directory-permissions-and-on-premises-password-complexity-policies"></a>Active Directory разрешениями и локальными политиками сложности паролей 
 
 Для учетной записи, указанной в служебной программе Azure AD Connect, должны быть заданы следующие элементы, чтобы можно было использовать SSPR:
 
@@ -99,7 +99,7 @@ ms.locfileid: "74381155"
     * **Write pwdLastSet** (Запись времени последней установки пароля).
 9. Щелкните **Применить** и "ОК", чтобы применить изменения, а затем закройте все открытые диалоговые окна.
 
-Since the source of authority is on premises, the password complexity policies apply from the same connected data source. Make sure you've changed the existing group policies for "Minimum password age". The group policy shouldn't be set to 1, which means password should be at least a day old before it can be updated. You need make sure it's set to 0. These settings can be found in `gpmc.msc` under **Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies**. Run `gpupdate /force` to ensure that the change takes effect. 
+Так как источник полномочий локальным, политики сложности паролей применяются к тому же подключенному источнику данных. Убедитесь, что вы изменили существующие групповые политики для параметра "минимальный срок действия пароля". Для групповой политики не должно быть задано значение 1. Это означает, что пароль должен быть не менее одного дня, прежде чем его можно будет обновить. Необходимо убедиться, что для него задано значение 0. Эти параметры можно найти в `gpmc.msc` разделе **Конфигурация компьютера > политики > параметры Windows > параметры безопасности > политики учетных записей**. Запустите `gpupdate /force`, чтобы убедиться, что изменение вступает в силу. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

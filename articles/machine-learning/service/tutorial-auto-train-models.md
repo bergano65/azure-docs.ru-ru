@@ -1,7 +1,7 @@
 ---
-title: Руководство по регрессионной модели. Автоматическое Машинное обучение
+title: 'Учебник по регрессии: Автоматическое Машинное обучение'
 titleSuffix: Azure Machine Learning
-description: Узнайте, как создать модель машинного обучения с помощью автоматического машинного обучения. Машинное обучение Azure может автоматически выполнять предварительную обработку данных, а также выбор алгоритма и гиперпараметров. После этого окончательная модель развертывается в Машинном обучении Azure.
+description: В этом учебнике вы узнаете, как создать модель машинного обучения с помощью автоматического машинного обучения. Машинное обучение Azure может автоматически выполнять предварительную обработку данных, а также выбор алгоритма и гиперпараметров.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,12 +10,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 11/04/2019
-ms.openlocfilehash: 23441fb64293647698921c17c06731ab413b7699
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 2a47b6851d9c3250913783c8a63b666e8a8474d9
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73582459"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483543"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-predict-taxi-fares"></a>Руководство по Использованию автоматического машинного обучения для прогнозирования тарифов на такси
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]

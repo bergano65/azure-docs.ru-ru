@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Синтез речи с помощью Python — служба "Речь"
+title: Краткое руководство. Синтез речи с помощью Python в службе "Речь"
 titleSuffix: Azure Cognitive Services
 description: Из этой статьи вы узнаете, как синтезировать речь в Linux, используя Python и пакет SDK службы "Речь".
 services: cognitive-services
@@ -10,20 +10,20 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 09/14/2019
 ms.author: yulili
-ms.openlocfilehash: 36e48a5d513daa951c1e92017ba9a2322b009703
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 990e795d0331df41ff098ed498508d6ecfd58f0e
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73505454"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74818175"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы нужно:
+Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure](../../../../get-started.md).
-> * [Настроить среду разработки](../../../../quickstarts/setup-platform.md).
+> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md)
 > * [Создать пустой пример проекта](../../../../quickstarts/create-project.md).
 ```
 
@@ -69,7 +69,7 @@ python quickstart.py
    ![Создание файла](~/articles/cognitive-services/Speech-Service/media/sdk/qs-python-vscode-python-newfile.png)
 
 1. Скопируйте, вставьте и сохраните [код Python](#sample-code) в созданный файл.
-1. Вставьте сведения о подписках на службы речи
+1. Вставьте сведения о подписке службы "Речь".
 1. Если интерпретатор Python выбран, он отображается в левой части строки состояния в нижней части окна.
    В противном случае откроется список доступных интерпретаторов Python. Откройте палитру команд (CTRL+SHIFT+P) и введите **Python: Select Interpreter** (Python: выбор интерпретатора). Выберите соответствующий интерпретатор.
 1. Вы можете установить пакет SDK службы "Речь" для Python в Visual Studio Code. Сделайте это, если он еще не установлен для выбранного интерпретатора Python.

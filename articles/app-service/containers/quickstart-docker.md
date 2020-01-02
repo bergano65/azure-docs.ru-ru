@@ -1,19 +1,18 @@
 ---
-title: Развертывание приложения Docker в Linux. Служба приложений Azure
-description: Развертывание образа Docker в службах приложений Azure для Linux
-author: msangapu
+title: Краткое руководство. Запуск пользовательского контейнера Linux
+description: Начало работы с контейнерами Linux в Службе приложений Azure, развернув первый настраиваемый контейнер с помощью Реестров контейнеров Azure.
+author: msangapu-msft
 ms.author: msangapu
 ms.date: 08/28/2019
 ms.topic: quickstart
-ms.service: app-service
-ms.openlocfilehash: 2a7dc477b4cd0be0c50569d84e10cfe1d666eac9
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: 14ea5444d3d8827919405a4d5aa8a176746c2e72
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70392703"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74688961"
 ---
-# <a name="deploy-to-azure-using-docker"></a>Развертывание в Azure с помощью Docker
+# <a name="deploy-a-custom-linux-container-to-azure-app-service"></a>Развертывание пользовательского контейнера Linux в Службе приложений Azure
 
 Служба приложений в Linux предоставляет предопределенные стеки приложений на платформе Linux с поддержкой определенных языков (например, .NET, PHP, Node.js и т. д.). Вы также можете использовать пользовательский образ Docker для запуска веб-приложения в стеке приложений, который еще не определен в Azure. В этом кратком руководстве показано, как развернуть образ из [Реестра контейнеров Azure](/azure/container-registry) (ACR) в Службе приложений.
 

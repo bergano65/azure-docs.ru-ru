@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Просмотр прав доступа пользователя к ресурсам Azure | Документация Майкрософт
+title: Краткое руководство. Просмотр прав доступа пользователя к ресурсам Azure
 description: Узнайте, как просматривать права доступа пользователя или другого субъекта безопасности к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и портала Azure.
 services: role-based-access-control
 documentationCenter: ''
@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 11/30/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: f388215b2829066906ee7faf41abb17307bf3fff
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
+ms.openlocfilehash: b23c10fc2a551b8044b208911dbc048968b06564
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56337951"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74419615"
 ---
 # <a name="quickstart-view-the-access-a-user-has-to-azure-resources"></a>Краткое руководство. Просмотр прав доступа пользователя к ресурсам Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "56337951"
 
 1. Щелкните на подписку.
 
-1. Щелкните **Управление доступом (IAM)**.
+1. Щелкните **Управление доступом (IAM)** .
 
 1. Щелкните вкладку **Проверить доступ**.
 
@@ -54,4 +54,4 @@ ms.locfileid: "56337951"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство Предоставление доступа пользователю с помощью RBAC и портала Azure](quickstart-assign-role-user-portal.md)
+> [Руководство. Предоставление доступа пользователю с помощью RBAC и портала Azure](quickstart-assign-role-user-portal.md)

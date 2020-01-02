@@ -1,6 +1,6 @@
 ---
-title: Одностраничное приложение (вызов веб-API) — платформе Microsoft identity
-description: Узнайте, как создать одностраничное приложение (вызов веб-API)
+title: Создание одностраничного приложения, вызывающего веб-API — платформа Microsoft Identity | Службы
+description: Узнайте, как создать одностраничное приложение, вызывающее веб-API.
 services: active-directory
 documentationcenter: dev-center-name
 author: rwike77
@@ -15,22 +15,22 @@ ms.date: 05/06/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77a4ed01ac55a1153a62c672b33056a543b912ed
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1171d8c3bc28c7b325cc8daf6cc072965363339c
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65545614"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74965337"
 ---
-# <a name="single-page-application---call-a-web-api"></a>Одностраничное приложение - вызов в веб-API
+# <a name="single-page-application-call-a-web-api"></a>Одностраничное приложение: вызов веб-API
 
-Мы рекомендуем вызывать `acquireTokenSilent` метод для получения или обновления маркера доступа перед вызовом веб-API. Получив маркер, можно вызвать защищенный веб-API.
+Рекомендуется вызвать метод `acquireTokenSilent`, чтобы получить или продлить маркер доступа перед вызовом веб-API. После создания маркера можно вызвать защищенный веб-API.
 
 ## <a name="call-a-web-api"></a>Вызов веб-API
 
 ### <a name="javascript"></a>JavaScript
 
-Используйте маркер доступа, полученные как носителя в HTTP-запрос для вызова веб-API, например Microsoft Graph API. Пример:
+Используйте полученный маркер доступа в качестве носителя в HTTP-запросе для вызова любого веб-API, например Microsoft Graph API. Пример.
 
 ```javascript
     var headers = new Headers();
@@ -50,7 +50,7 @@ ms.locfileid: "65545614"
 
 ### <a name="angular"></a>Angular
 
-Как упоминалось в [получение маркеров разделе](scenario-spa-acquire-token.md), MSAL Angular оболочки использует перехватчик HTTP для автоматического получения маркеров доступа без уведомления и присоединить их к HTTP-запросов к API.
+Угловая оболочка MSAL использует преимущества перехватчика HTTP для автоматического получения маркеров доступа и их присоединения к API-запросам. Дополнительные сведения см. в разделе [Получение маркера для вызова API](scenario-spa-acquire-token.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

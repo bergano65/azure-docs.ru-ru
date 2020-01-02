@@ -1,17 +1,17 @@
 ---
-title: Ведение журнала аудита с помощью Пгаудит в базе данных Azure для PostgreSQL-Single Server
+title: Ведение журнала аудита — база данных Azure для PostgreSQL — один сервер
 description: Основные понятия для ведения журнала аудита Пгаудит в базе данных Azure для PostgreSQL-Single Server.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/14/2019
-ms.openlocfilehash: 49ad7334c418e29c821320608be729e060b4a8ae
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 4a41e5eda3ca2bd92d78a81d73c1ad4c859e25a3
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72331333"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74764565"
 ---
 # <a name="audit-logging-in-azure-database-for-postgresql---single-server"></a>Ведение журнала аудита в базе данных Azure для PostgreSQL — один сервер
 
@@ -30,14 +30,14 @@ ms.locfileid: "72331333"
 
 Включение pgAudit приводит к созданию большого объема журналов на сервере, что влияет на производительность и хранение журналов. Мы рекомендуем использовать службу журналов диагностики Azure, которая предлагает варианты долговременного хранения, а также функции анализа и оповещений. Мы рекомендуем отключить стандартное ведение журнала, чтобы уменьшить влияние дополнительного ведения журнала на производительность:
 
-   1. Задайте параметру `logging_collector` значение OFF. 
+   1. Задайте для параметра `logging_collector` значение OFF. 
    2. Перезапустите сервер, чтобы применить это изменение.
 
 Чтобы узнать, как настроить ведение журнала для службы хранилища Azure, концентраторов событий или журналов Azure Monitor, перейдите к разделу журналы диагностики [статьи журналы сервера](concepts-server-logs.md).
 
 ## <a name="installing-pgaudit"></a>Установка Пгаудит
 
-Чтобы установить Пгаудит, необходимо включить его в общие библиотеки предварительной загрузки сервера. Для вступления в силу изменения параметра `shared_preload_libraries` требуется перезапуск сервера. Параметры можно изменить с помощью [портал Azure](howto-configure-server-parameters-using-portal.md), [Azure CLI](howto-configure-server-parameters-using-cli.md)или [REST API](/rest/api/postgresql/configurations/createorupdate).
+Чтобы установить Пгаудит, необходимо включить его в общие библиотеки предварительной загрузки сервера. Для вступления в силу изменения параметра `shared_preload_libraries` postgres требуется перезагрузка сервера. Параметры можно изменить с помощью [портал Azure](howto-configure-server-parameters-using-portal.md), [Azure CLI](howto-configure-server-parameters-using-cli.md)или [REST API](/rest/api/postgresql/configurations/createorupdate).
 
 Использование [портал Azure](https://portal.azure.com):
 
@@ -65,16 +65,16 @@ ms.locfileid: "72331333"
 После [установки пгаудит](#installing-pgaudit)можно настроить его параметры, чтобы начать ведение журнала. В [документации по пгаудит](https://github.com/pgaudit/pgaudit/blob/master/README.md#settings) содержится определение каждого параметра. Сначала проверьте параметры и убедитесь, что вы получаете ожидаемое поведение.
 
 > [!NOTE]
-> Если установить `pgaudit.log_client` в значение ON, журналы будут перенаправляться в клиентский процесс (например, psql), а не в файл. Этот параметр обычно следует отключать.
+> Если задать для параметра `pgaudit.log_client` значение ON, журналы будут перенаправляться в процесс клиента (например, psql) вместо записи в файл. Этот параметр обычно следует отключать.
 
 > [!NOTE]
-> `pgaudit.log_level` включается, только если включено `pgaudit.log_client`. Кроме того, в портал Azure в настоящее время есть ошибка с `pgaudit.log_level`: поле со списком отображается, что означает возможность выбора нескольких уровней. Однако должен быть выбран только один уровень. 
+> `pgaudit.log_level` включается только при включенном `pgaudit.log_client`. Кроме того, в портал Azure в настоящее время есть ошибка `pgaudit.log_level`: поле со списком отображается, что означает, что можно выбрать несколько уровней. Однако должен быть выбран только один уровень. 
 
 > [!NOTE]
-> В базе данных Azure для PostgreSQL `pgaudit.log` нельзя задать с помощью ярлыка `-` (минус), как описано в документации по Пгаудит. Все необходимые классы операторов (READ, WRITE и т. д.) должны быть указаны отдельно.
+> В базе данных Azure для PostgreSQL нельзя задать `pgaudit.log` с помощью ярлыка `-` (минус), как описано в документации по Пгаудит. Все необходимые классы операторов (READ, WRITE и т. д.) должны быть указаны отдельно.
 
 ### <a name="audit-log-format"></a>Формат журнала аудита
-Каждая запись аудита обозначается `AUDIT:` рядом с началом строки журнала. Формат остальной части записи подробно описан в [документации по пгаудит](https://github.com/pgaudit/pgaudit/blob/master/README.md#format).
+Каждая запись аудита обозначается `AUDIT:` около начала строки журнала. Формат остальной части записи подробно описан в [документации по пгаудит](https://github.com/pgaudit/pgaudit/blob/master/README.md#format).
 
 Если вам нужны другие поля для удовлетворения требований аудита, используйте параметр postgres `log_line_prefix`. `log_line_prefix` — это строка, которая выводится в начале каждой строки журнала postgres. Например, следующий параметр `log_line_prefix` предоставляет метку времени, имя пользователя, имя базы данных и идентификатор процесса:
 
@@ -82,10 +82,10 @@ ms.locfileid: "72331333"
 t=%m u=%u db=%d pid=[%p]:
 ```
 
-Дополнительные сведения о `log_line_prefix` см. в [документации по PostgreSQL](https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-LINE-PREFIX).
+Дополнительные сведения о `log_line_prefix`см. в [документации по PostgreSQL](https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-LINE-PREFIX).
 
 ### <a name="getting-started"></a>Начало работы
-Чтобы быстро приступить к работе, присвойте параметру `pgaudit.log` значение `WRITE` и откройте журналы, чтобы просмотреть выходные данные. 
+Чтобы быстро приступить к работе, присвойте параметру `pgaudit.log` значение `WRITE`и откройте журналы, чтобы просмотреть выходные данные. 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

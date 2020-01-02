@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Поиск новостей с помощью пакета SDK Поиска новостей Bing для C#
+title: Краткое руководство. Поиск новостей с помощью пакета SDK для C# — Поиск новостей Bing
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как искать новости с помощью пакета SDK Поиска новостей Bing для C# и обрабатывать ответы.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 06/18/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 626596cc88b1b3b1067d7d6d157a548f92fb621a
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 03f582b4ba5b3321f46af370a0bb4adfa005046c
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67206021"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74379014"
 ---
 # <a name="quickstart-perform-a-news-search-with-the-bing-news-search-sdk-for-c"></a>Краткое руководство. Поиск новостей с помощью пакета SDK Поиска новостей Bing для C#
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по массовому приглашению пользователей B2B для совместной работы в Azure Active Directory | Документация Майкрософт
+title: Учебник по массовому приглашению пользователей B2B для совместной работы в Azure AD
 description: Из этого руководства вы узнаете, как с помощью PowerShell и CSV-файла отправлять массовые приглашения для внешних пользователей службы совместной работы Azure AD B2B.
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec1a6ea8f363f2ddd4a9568700d5bff3330443c0
-ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+ms.openlocfilehash: 1ffcdad43195ce49ef3cd8b695f9ad5009af82fb
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71128723"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74272353"
 ---
 # <a name="tutorial-bulk-invite-azure-ad-b2b-collaboration-users-preview"></a>Руководство по массовой отправке приглашений пользователям службы совместной работы Azure Active Directory B2B (предварительная версия)
 

@@ -1,27 +1,24 @@
 ---
-title: Настройка приложения для доступа к интерфейсам веб-API с помощью платформы удостоверений Майкрософт
+title: Настройка приложения для доступа к интерфейсам веб-API с помощью платформы удостоверений Майкрософт | Azure
 description: Сведения о настройке приложения, зарегистрированного с помощью платформы удостоверений Майкрософт для включения универсального кода ресурса (URI) перенаправления, учетных данных или разрешений для доступа к веб-API.
 services: active-directory
-documentationcenter: ''
 author: rwike77
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: quickstart
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 08/07/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: lenalepa, aragra, sureshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: afa757020ff6de3be23403b78fd9a12c2de97016
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: ec5fe8e93c9032a07c1defe5b28753e0f520a320
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74106609"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74963339"
 ---
 # <a name="quickstart-configure-a-client-application-to-access-web-apis"></a>Краткое руководство. Настройка клиентского приложения для доступа к веб-API
 

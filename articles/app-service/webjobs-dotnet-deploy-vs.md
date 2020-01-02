@@ -1,21 +1,19 @@
 ---
-title: Разработка и развертывание веб-заданий с помощью Visual Studio в Azure
-description: Сведения о разработке и развертывании веб-заданий Azure в службе приложений Azure с помощью Visual Studio.
+title: Разработка и развертывание веб-заданий с помощью VS
+description: Узнайте, как разрабатывать веб-задания Azure в Visual Studio и развертывать их в службе приложений Azure, включая создание запланированной задачи.
 author: ggailey777
-manager: gwallace
 ms.assetid: a3a9d320-1201-4ac8-9398-b4c9535ba755
-ms.service: app-service
 ms.topic: conceptual
 ms.custom: vs-azure
 ms.date: 02/18/2019
 ms.author: glenga
 ms.reviewer: david.ebbo;suwatch;pbatum;naren.soni
-ms.openlocfilehash: ac458b01135be8628fbf939e310f8bda02b8d290
-ms.sourcegitcommit: 9858ab651a520c26f0ed18215e650efbf1fc5de9
+ms.openlocfilehash: feacd463a10bae66dc8fa88a99b9ea60f399e9ec
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72303540"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74684169"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio---azure-app-service"></a>Разработка и развертывание веб-заданий в службе приложений Azure с помощью Visual Studio
 
@@ -66,7 +64,7 @@ ms.locfileid: "72303540"
 
 ## <a name="webjobs-as-net-framework-console-apps"></a>Веб-задания как .NET Framework консольные приложения  
 
-Когда Visual Studio развертывает проект консольного приложения с поддержкой веб-заданий .NET Framework, он копирует файлы среды выполнения в соответствующую папку веб-приложения (*App_Data/Jobs/непрерывно* для непрерывной работы и в папке *App_Data/Jobs/запускается* для запланированные или веб-задания по запросу.
+Когда Visual Studio развертывает проект консольного приложения с поддержкой веб-заданий .NET Framework, он копирует файлы среды выполнения в соответствующую папку в веб-приложении (*App_Data/Жобс/континуаус* для непрерывных задач и *App_Data/Жобс/тригжеред* по запланированным или веб-заданиям по запросу).
 
 Проект с поддержкой веб-заданий содержит следующие добавленные элементы.
 
@@ -81,7 +79,7 @@ ms.locfileid: "72303540"
 
 ![Диаграмма, отображающая проект веб-задания, связанный с веб-проектом](./media/webjobs-dotnet-deploy-vs/link.png)
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 Если вы используете Visual Studio 2015, установите [пакет Azure SDK для .NET (Visual Studio 2015)](https://azure.microsoft.com/downloads/).
 
@@ -238,7 +236,7 @@ ms.locfileid: "72303540"
 | `schedule` | Активируемые | Запуск веб-задания по расписанию на основе CRON. Дополнительные сведения см. в [статье Справочник по триггерам таймера](../azure-functions/functions-bindings-timer.md#ncrontab-expressions). |
 | `stopping_wait_time`| Все | Позволяет управлять поведением при завершении работы. Дополнительные сведения см. в разделе [корректное завершение работы](https://github.com/projectkudu/kudu/wiki/WebJobs#graceful-shutdown). |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Подробнее о пакете SDK веб-заданий](webjobs-sdk-how-to.md)

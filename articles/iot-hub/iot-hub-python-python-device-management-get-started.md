@@ -8,12 +8,12 @@ ms.devlang: python
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: robinsh
-ms.openlocfilehash: eb5085db10c5763a4173f460eabde6afcccd5aff
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 514f4b26a708a6fec30a1f54cfe6da6d1b58b79d
+ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71000441"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74555520"
 ---
 # <a name="get-started-with-device-management-python"></a>Начало работы с управлением устройствами (Python)
 
@@ -35,11 +35,11 @@ ms.locfileid: "71000441"
 
 [!INCLUDE [iot-hub-include-python-sdk-note](../../includes/iot-hub-include-python-sdk-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [iot-hub-include-python-installation-notes](../../includes/iot-hub-include-python-installation-notes.md)]
 
-## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
+## <a name="create-an-iot-hub"></a>Создание центра IoT
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 
@@ -63,11 +63,7 @@ ms.locfileid: "71000441"
     pip install azure-iot-device
     ```
 
-   > [!NOTE]
-   > Пакеты PIP для Azure-iothub-Service-Client доступны только для ОС Windows. Сведения для Linux и Mac OS см. в разделах, посвященных Linux и Mac OS, в разделе [Подготовка среды разработки для Python](https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md) POST.
-   >
-
-2. С помощью текстового редактора создайте файл с именем **dmpatterns_getstarted_device. корректировки** в рабочем каталоге.
+2. С помощью текстового редактора создайте файл с именем **dmpatterns_getstarted_device. копировать** в рабочем каталоге.
 
 3. Добавьте следующие инструкции `import` в начале файла **dmpatterns_getstarted_device.js**.
 
@@ -78,7 +74,7 @@ ms.locfileid: "71000441"
     from azure.iot.device import IoTHubDeviceClient, MethodResponse
     ```
 
-4. Добавьте переменную **CONNECTION_STRING** . Замените значение `{deviceConnectionString}` заполнителя строкой подключения устройства. Вы скопировали эту строку подключения ранее в раздел [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub).  
+4. Добавьте переменную **CONNECTION_STRING** . Замените значение заполнителя `{deviceConnectionString}` строкой подключения устройства. Вы скопировали эту строку подключения ранее в раздел [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub).  
 
     ```python
     CONNECTION_STRING = "{deviceConnectionString}"
@@ -161,10 +157,10 @@ ms.locfileid: "71000441"
     ```
 
    > [!NOTE]
-   > Пакеты PIP для Azure-iothub-Service-Client и Azure-iothub-Device-Client в настоящее время доступны только для ОС Windows. Сведения для Linux и Mac OS см. в разделах, посвященных Linux и Mac OS, в разделе [Подготовка среды разработки для Python](https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md) POST.
+   > Пакет PIP для Azure-iothub-Service-Client в настоящее время доступен только для ОС Windows. Сведения для Linux и Mac OS см. в разделах, посвященных Linux и Mac OS, в разделе [Подготовка среды разработки для Python](https://github.com/Azure/azure-iot-sdk-python/blob/v1-deprecated/doc/python-devbox-setup.md) POST.
    >
 
-2. С помощью текстового редактора создайте файл с именем **dmpatterns_getstarted_service. корректировки** в рабочем каталоге.
+2. С помощью текстового редактора создайте файл с именем **dmpatterns_getstarted_service. копировать** в рабочем каталоге.
 
 3. Добавьте следующие инструкции `import` в начале файла **dmpatterns_getstarted_service.py**.
 
@@ -175,7 +171,7 @@ ms.locfileid: "71000441"
     from iothub_service_client import IoTHubDeviceMethod, IoTHubError, IoTHubDeviceTwin
     ```
 
-4. Добавьте следующие объявления переменных. Замените значение заполнителя строкой подключения центра Интернета вещей, скопированным ранее в поле [Получение строки подключения для центра Интернета вещей.](#get-the-iot-hub-connection-string) `{IoTHubConnectionString}` Замените значение заполнителя идентификатором устройства, зарегистрированным в окне [Регистрация нового устройства в центре Интернета вещей.](#register-a-new-device-in-the-iot-hub) `{deviceId}`
+4. Добавьте следующие объявления переменных. Замените значение заполнителя `{IoTHubConnectionString}` строкой подключения центра Интернета вещей, скопированным ранее в поле [Получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string). Замените значение заполнителя `{deviceId}` ИДЕНТИФИКАТОРом устройства, зарегистрированным в окне [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub).
 
     ```python
     CONNECTION_STRING = "{IoTHubConnectionString}"

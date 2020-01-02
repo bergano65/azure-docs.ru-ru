@@ -10,14 +10,14 @@ ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: troubleshooting
-ms.date: 10/10/2019
+ms.date: 11/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: 7ea98baa9cb202e2584c18998c5ab96d1c1f9e5a
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: f29bd4ab679d734c3acce967a5d60784b9884ba6
+ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012655"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74561389"
 ---
 # <a name="monitor-and-mitigate-throttling-to-reduce-latency-in-azure-time-series-insights"></a>Отслеживание и уменьшение регулирования для сокращения задержек в службе "Аналитика временных рядов Azure"
 
@@ -42,13 +42,13 @@ ms.locfileid: "74012655"
 
 Оповещения помогут вам выявить и устранить проблемы, вызывающие задержки в вашей среде.
 
-1. В портал Azure выберите **оповещения**.
+1. В портал Azure выберите среду "аналитика временных рядов". Затем выберите **оповещения**.
 
-   [Оповещения ![](media/environment-mitigate-latency/add-alerts.png)](media/environment-mitigate-latency/add-alerts.png#lightbox)
+   [![добавить оповещение в среду службы "аналитика временных рядов"](media/environment-mitigate-latency/mitigate-latency-add-alert.png)](media/environment-mitigate-latency/mitigate-latency-add-alert.png#lightbox)
 
 1. После этого отобразится панель **Создание правила** . Выберите **Добавить** в поле **условие**.
 
-   [![добавить оповещение](media/environment-mitigate-latency/alert-pane.png)](media/environment-mitigate-latency/alert-pane.png#lightbox)
+   [![добавить панель предупреждений](media/environment-mitigate-latency/mitigate-latency-add-pane.png)](media/environment-mitigate-latency/mitigate-latency-add-pane.png#lightbox)
 
 1. Затем настройте точные условия для логики сигнала.
 
@@ -56,7 +56,7 @@ ms.locfileid: "74012655"
 
    В нем можно настроить оповещения с помощью некоторых из следующих условий.
 
-   |Метрика  |ОПИСАНИЕ  |
+   |Метрика  |Описание  |
    |---------|---------|
    |**Ingress Received Bytes** (Получено байт входящих данных)     | Количество байтов необработанной информации, полученных от источников событий. Обычно в этот объем включается имя и значение свойства.  |  
    |**Ingress Received Invalid Messages** (Получено недопустимых сообщений во входящих данных)     | Число недопустимых сообщений, полученных от всех источников событий (Центров событий Azure и Центров Интернета вещей Azure).      |
@@ -70,7 +70,7 @@ ms.locfileid: "74012655"
 
 1. После настройки требуемой логики сигнала Просмотрите выбранное правило генерации оповещений визуально.
 
-   [![входящий трафик](media/environment-mitigate-latency/ingress.png)](media/environment-mitigate-latency/ingress.png#lightbox)
+   [представление задержки ![и построение диаграмм](media/environment-mitigate-latency/mitigate-latency-view-and-charting.png)](media/environment-mitigate-latency/mitigate-latency-view-and-charting.png#lightbox)
 
 ## <a name="throttling-and-ingress-management"></a>Регулирование и управление входящими сообщениями
 
@@ -92,7 +92,7 @@ ms.locfileid: "74012655"
 
 Чтобы избежать задержки и регулирования, следует правильно настроить среду для того объема данных, который поступает для анализа. Дополнительные сведения о том, как повысить емкость среды, вы найдете в [статье о масштабировании среды](time-series-insights-how-to-scale-your-environment.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте о [диагностике и устранении проблем в среде "аналитика временных рядов](time-series-insights-diagnose-and-solve-problems.md)".
 

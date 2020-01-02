@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 08/23/2019
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: 629ba904d055977fe70f749a46fbbec71be71b79
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: b71d3b4824d8c1c73f40c8c6d87db315aabd423b
+ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083655"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74555495"
 ---
 # <a name="monitor-your-workload-using-dmvs"></a>Мониторинг рабочей нагрузки с помощью динамических административных представлений
 В этой статье объясняется, как отслеживать рабочую нагрузку с помощью динамических административных представлений (DMV). Она включает в себя анализ выполнения запросов в хранилище данных SQL Azure.
@@ -63,7 +63,7 @@ ORDER BY total_elapsed_time DESC;
 
 **Запишите идентификатор запроса**, который вы хотите исследовать. Он указан в приведенных выше результатах запроса.
 
-Запросы в **приостановленном** состоянии могут быть поставлены в очередь из-за большого количества активных выполняющихся запросов. Эти запросы также отображаются в запросе Waiting [sys. dm_pdw_waits](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-waits-transact-sql) с типом усерконкурренциресаурцетипе. Сведения об ограничениях параллелизма см. в статье об [уровнях производительности](/azure/sql-data-warehouse/what-is-a-data-warehouse-unit-dwu-cdwu#performance-tiers-and-data-warehouse-units) или [классах ресурсов для управления рабочей нагрузкой](resource-classes-for-workload-management.md). Запросы также могут быть отложены по другим причинам, в том числе из-за блокировки объектов.  Если запрос ожидает ресурс, ознакомьтесь с разделом [Исследование запросов, ожидающих ресурсы][Investigating queries waiting for resources] далее в этой статье.
+Запросы в **приостановленном** состоянии могут быть поставлены в очередь из-за большого количества активных выполняющихся запросов. Эти запросы также отображаются в запросе Waiting [sys. dm_pdw_waits](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-waits-transact-sql) с типом усерконкурренциресаурцетипе. Сведения об ограничениях параллелизма см. в разделе [ограничения памяти и параллелизма для хранилища данных SQL Azure](memory-concurrency-limits.md) или [классов ресурсов для управления рабочей нагрузкой](resource-classes-for-workload-management.md). Запросы также могут быть отложены по другим причинам, в том числе из-за блокировки объектов.  Если запрос ожидает ресурс, ознакомьтесь с разделом [Исследование запросов, ожидающих ресурсы][Investigating queries waiting for resources] далее в этой статье.
 
 Чтобы упростить поиск запроса в таблице [sys. dm_pdw_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql) , используйте [Label][LABEL] , чтобы назначить комментарий для запроса, который может быть просмотрен в представлении sys. dm_pdw_exec_requests.
 
@@ -206,7 +206,7 @@ WHERE DB_NAME(ssu.database_id) = 'tempdb'
 ORDER BY sr.request_id;
 ```
 
-Если у вас есть запрос, который потребляет большой объем памяти или получил сообщение об ошибке, связанное с выделением базы данных tempdb, это может быть вызвано очень большим [CREATE TABLEм при выполнении инструкции SELECT (CTAS)](https://docs.microsoft.com/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) или [INSERT SELECT](https://docs.microsoft.com/sql/t-sql/statements/insert-transact-sql) , которая завершается ошибкой в Окончательная операция перемещения данных. Обычно это может быть определено как операция Шуффлемове в плане распределенного запроса непосредственно перед завершающим ВЫДЕЛЕНИЕм INSERT.  Используйте [sys. dm_pdw_request_steps](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql) для наблюдения за операциями шуффлемове. 
+Если у вас есть запрос, который потребляет большой объем памяти или получил сообщение об ошибке, связанное с выделением базы данных tempdb, это могло произойти из-за очень большого CREATE TABLE в том случае, если инструкция [SELECT (CTAS)](https://docs.microsoft.com/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) или [INSERT SELECT](https://docs.microsoft.com/sql/t-sql/statements/insert-transact-sql) выполняется с ошибкой в окончательной операции перемещения данных. Обычно это может быть определено как операция Шуффлемове в плане распределенного запроса непосредственно перед завершающим ВЫДЕЛЕНИЕм INSERT.  Используйте [sys. dm_pdw_request_steps](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql) для наблюдения за операциями шуффлемове. 
 
 Наиболее распространенный способ устранения проблемы состоит в том, чтобы разбить инструкцию CTAS или INSERT SELECT на несколько инструкций Load, чтобы объем данных не превышал ограничение в 1 ТБ на узел. Можно также масштабировать кластер до большего размера, который будет распределять размер базы данных tempdb между большим количеством узлов, уменьшая базу данных tempdb на каждом отдельном узле.
 
@@ -289,7 +289,7 @@ ORDER BY
     gb_processed desc;
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о динамических административных представлениях см. в разделе [System views][System views].
 
 

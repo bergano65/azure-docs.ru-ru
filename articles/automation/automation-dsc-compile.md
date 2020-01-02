@@ -4,34 +4,34 @@ description: В этой статье описывается, как компи�
 services: automation
 ms.service: automation
 ms.subservice: dsc
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 09/10/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 6d3cca9d8954d9ac158d88b393c46672da3faa19
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: fdea8ed9a9e59a169a6ffb525ed286eb7d1ada53
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231718"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74850913"
 ---
 # <a name="compiling-dsc-configurations-in-azure-automation-state-configuration"></a>Компилирование конфигураций DSC в службе "Настройка состояния службы автоматизации Azure"
 
-You can compile Desired State Configuration (DSC) configurations in two ways with Azure Automation State Configuration: in Azure and in Windows PowerShell. Приведенная ниже таблица поможет определить, когда и какой метод использовать с учетом характеристик каждого метода:
+Вы можете компилировать конфигурации требуемого состояния (DSC) двумя способами с помощью конфигурации состояния службы автоматизации Azure: в Azure и в Windows PowerShell. Приведенная ниже таблица поможет определить, когда и какой метод использовать с учетом характеристик каждого метода:
 
-- Azure State Configuration compilation service
-  - Beginner method with interactive user interface
+- Служба компиляции конфигурации состояния Azure
+  - Метод "новичок" с интерактивным пользовательским интерфейсом
    - Легко отслеживаемое состояние задания.
 
 - Windows PowerShell
-  - Call from Windows PowerShell on local workstation or build service
-  - Integrate with development test pipeline
-  - Provide complex parameter values
-  - Work with node and non-node data at scale
-  - Significant performance improvement
+  - Вызов из Windows PowerShell на локальной рабочей станции или в службе сборок
+  - Интеграция с конвейером тестирования разработки
+  - Укажите значения сложных параметров
+  - Работа с данными узла и без узла в масштабе
+  - Значительное повышение производительности
 
-## <a name="compiling-a-dsc-configuration-in-azure-state-configuration"></a>Compiling a DSC Configuration in Azure State Configuration
+## <a name="compiling-a-dsc-configuration-in-azure-state-configuration"></a>Компиляция конфигурации DSC в конфигурации состояния Azure
 
 ### <a name="portal"></a>Microsoft Azure
 
@@ -122,22 +122,22 @@ Start-AzureRmAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -A
 
 Сведения о передаче учетных данных PSCredentials в качестве параметров см. в разделе [Активы учетных данных](#credential-assets) ниже.
 
-### <a name="compiling-configurations-in-azure-automation-that-contain-composite-resources"></a>Compiling configurations in Azure Automation that contain Composite Resources
+### <a name="compiling-configurations-in-azure-automation-that-contain-composite-resources"></a>Компиляция конфигураций в службе автоматизации Azure, содержащих составные ресурсы
 
 **Составные ресурсы** позволяют использовать конфигурации DSC в качестве вложенных ресурсов в рамках конфигурации. Благодаря этому можно применить несколько конфигураций к одному ресурсу. См. статью [Составные ресурсы: использование DSC как ресурса](/powershell/scripting/dsc/resources/authoringresourcecomposite) для получения дополнительных сведений о **составных ресурсах**.
 
 > [!NOTE]
-> In order for configurations containing **Composite Resources** to compile correctly, you must first ensure that any DSC Resources that the composite relies on are first imported in to Azure Automation.
+> Для правильной компиляции конфигураций, содержащих **Составные ресурсы** , необходимо сначала убедиться, что все ресурсы DSC, на которые полагается составной компонент, сначала импортируются в службу автоматизации Azure.
 
-Adding a DSC **Composite Resource** is no different than adding any PowerShell module to Azure Automation.
-The step by step instruction for this process is documented in the article [Manage Modules in Azure Automation](/azure/automation/shared-resources/modules).
+Добавление **составного ресурса** DSC не отличается от добавления любого модуля PowerShell в службу автоматизации Azure.
+Пошаговые инструкции для этого процесса описаны в статье [Управление модулями в службе автоматизации Azure](/azure/automation/shared-resources/modules).
 
-### <a name="managing-configurationdata-when-compiling-configuration-in-azure-automation"></a>Managing ConfigurationData when compiling configuration in Azure Automation
+### <a name="managing-configurationdata-when-compiling-configuration-in-azure-automation"></a>Управление ConfigurationData при компиляции конфигурации в службе автоматизации Azure
 
 Параметр **ConfigurationData** позволяет при использовании PowerShell DSC отделить конфигурацию структуры от любой конфигурации среды. Дополнительные сведения о **ConfigurationData** см. в публикации блога [Separating "What" from "Where" in PowerShell DSC](https://blogs.msdn.com/b/powershell/archive/2014/01/09/continuous-deployment-using-dsc-with-minimal-change.aspx) (Разница между "что" и "где" в DSC PowerShell).
 
 > [!NOTE]
-> You can use **ConfigurationData** when compiling in Azure Automation State Configuration using Azure PowerShell but not in the Azure portal.
+> Вы можете использовать **ConfigurationData** при компиляции в конфигурации состояния службы автоматизации Azure с помощью Azure PowerShell, но не в портал Azure.
 
 В приведенном ниже примере конфигурации DSC параметр **ConfigurationData** используется через ключевые слова **$ConfigurationData** и **$AllNodes**. Для этого примера также нужен [модуль **xWebAdministration**](https://www.powershellgallery.com/packages/xWebAdministration/):
 
@@ -160,7 +160,7 @@ Configuration ConfigurationDataSample
 }
 ```
 
-You can compile the preceding DSC configuration with Windows PowerShell. The following script adds two node configurations to the Azure Automation State Configuration Pull Service: **ConfigurationDataSample.MyVM1** and **ConfigurationDataSample.MyVM3**:
+Вы можете скомпилировать предыдущую конфигурацию DSC с помощью Windows PowerShell. Следующий скрипт добавляет две конфигурации узла в опрашивающую службу конфигурации состояния службы автоматизации Azure: **ConfigurationDataSample. MyVM1** и **ConfigurationDataSample. MyVM3**:
 
 ```powershell
 $ConfigData = @{
@@ -187,7 +187,7 @@ $ConfigData = @{
 Start-AzureRmAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -AutomationAccountName 'MyAutomationAccount' -ConfigurationName 'ConfigurationDataSample' -ConfigurationData $ConfigData
 ```
 
-### <a name="working-with-assets-in-azure-automation-during-compilation"></a>Working with Assets in Azure Automation during compilation
+### <a name="working-with-assets-in-azure-automation-during-compilation"></a>Работа с ресурсами в службе автоматизации Azure во время компиляции
 
 Ссылки на ресурсы одинаковы в конфигурациях и модулях Runbook службы "Настройка состояния службы автоматизации Azure". Дополнительную информацию см. в следующих разделах.
 
@@ -202,7 +202,7 @@ Start-AzureRmAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -A
 
 Чтобы обеспечить безопасность учетных данных в конфигурациях узла (документы конфигурации MOF), учетные данные нужно зашифровать в MOF-файле конфигурации узла. Но сейчас в модуле DSC PowerShell нужно подтверждать, что учетные данные можно отображать в формате обычного текста во время создания MOF-файла конфигурации узла. Это связано с тем, что модулю DSC PowerShell неизвестно, что, когда MOF-файл будет создан с помощью задачи компилирования, служба автоматизации Azure будет шифровать его целиком.
 
-You can tell PowerShell DSC that it is okay for credentials to be outputted in plain text in the generated node configuration MOFs using Configuration Data. `PSDscAllowPlainTextPassword = $true` следует передать через **ConfigurationData** для каждого имени блока узла, которое отображается в конфигурации DSC и для которого нужны учетные данные.
+Вы можете сообщить PowerShell DSC, что учетные данные можно выпустить в виде обычного текста в созданной конфигурации узла MOF с помощью данных конфигурации. `PSDscAllowPlainTextPassword = $true` следует передать через **ConfigurationData** для каждого имени блока узла, которое отображается в конфигурации DSC и для которого нужны учетные данные.
 
 В следующем примере показана конфигурация DSC, использующая актив учетных данных автоматизации.
 
@@ -248,12 +248,12 @@ Start-AzureRmAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -A
 > [!NOTE]
 > После завершения компиляции может появиться следующее сообщение об ошибке: **The 'Microsoft.PowerShell.Management' module was not imported because the 'Microsoft.PowerShell.Management' snap-in was already imported** (Модуль Microsoft.PowerShell.Management не импортирован, так как уже импортирована оснастка Microsoft.PowerShell.Management). Это предупреждение можно спокойно проигнорировать.
 
-## <a name="compiling-configurations-in-windows-powershell-and-publishing-to-azure-automation"></a>Compiling configurations in Windows PowerShell and publishing to Azure Automation
+## <a name="compiling-configurations-in-windows-powershell-and-publishing-to-azure-automation"></a>Компиляция конфигураций в Windows PowerShell и публикация в службе автоматизации Azure
 
 Вы также можете импортировать конфигурации узла (MOF-файлы), скомпилированные вне Azure.
-This includes compiling from a developer workstation or in a service such as [Azure DevOps](https://dev.azure.com).
-There are multiple advantages to this approach including performance and reliability.
-Compiling in Windows PowerShell also provides the option to sign configuration content.
+Это включает компиляцию из рабочей станции разработчика или службы, например [Azure DevOps](https://dev.azure.com).
+Этот подход имеет несколько преимуществ, включая производительность и надежность.
+Компиляция в Windows PowerShell также предоставляет возможность подписывать содержимое конфигурации.
 Заверенная конфигурация узла проверяется локально на управляемом узле агентом DSC. Тем самым гарантируется, что конфигурация, применяемая к узлу, передана из авторизованного источника.
 
 > [!NOTE]
@@ -261,12 +261,12 @@ Compiling in Windows PowerShell also provides the option to sign configuration c
 
 Дополнительные сведения о том, как подписывать конфигурации узла, см. в разделе [Модуль DSC и проверка подписи конфигурации](/powershell/scripting/wmf/whats-new/dsc-improvements#dsc-module-and-configuration-signing-validations).
 
-### <a name="compiling-a-configuration-in-windows-powershell"></a>Compiling a configuration in Windows PowerShell
+### <a name="compiling-a-configuration-in-windows-powershell"></a>Компиляция конфигурации в Windows PowerShell
 
-The process to compile DSC configurations in Windows PowerShell is included in the PowerShell DSC documentation [Write, Compile, and Apply a Configuration](/powershell/scripting/dsc/configurations/write-compile-apply-configuration#compile-the-configuration).
-This can be executed from a developer workstation or within a build service such as [Azure DevOps](https://dev.azure.com).
+Процесс компиляции конфигураций DSC в Windows PowerShell включен в документацию по PowerShell DSC [Создание, компиляция и применение конфигурации](/powershell/scripting/dsc/configurations/write-compile-apply-configuration#compile-the-configuration).
+Это можно выполнить на рабочей станции разработчика или в службе сборки, такой как [Azure DevOps](https://dev.azure.com).
 
-The MOF file or files produced by compiling the configuration can then be imported directly in to the Azure State Configuration service.
+MOF-файл или файлы, созданные при компиляции конфигурации, можно импортировать непосредственно в службу настройки состояния Azure.
 
 ### <a name="importing-a-node-configuration-in-the-azure-portal"></a>Импорт конфигурации узла на портале Azure
 
@@ -279,7 +279,7 @@ The MOF file or files produced by compiling the configuration can then be import
 1. В текстовом поле **Configuration Name** (Имя конфигурации) введите имя. Это имя должно совпадать с именем конфигурации, из которой была скомпилирована данная конфигурация узла.
 1. Последовательно выберите **ОК**.
 
-### <a name="importing-a-node-configuration-with-azure-powershell"></a>Importing a node configuration with Azure PowerShell
+### <a name="importing-a-node-configuration-with-azure-powershell"></a>Импорт конфигурации узла с Azure PowerShell
 
 Для импорта конфигурации узла в учетную запись службы автоматизации можно использовать командлет [Import-AzureRmAutomationDscNodeConfiguration](/powershell/module/azurerm.automation/import-azurermautomationdscnodeconfiguration).
 

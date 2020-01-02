@@ -1,6 +1,6 @@
 ---
-title: Отключение Azure Active Directory доменных служб | Документация Майкрософт "
-description: Узнайте, как отключить Azure Active Directory доменных служб с помощью портал Azure
+title: Удаление Azure Active Directory доменных служб | Документация Майкрософт
+description: Узнайте, как отключить или удалить управляемый домен доменных служб Azure Active Directory с помощью портал Azure
 services: active-directory-ds
 author: iainfoulds
 manager: daveba
@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 11/26/2019
 ms.author: iainfou
-ms.openlocfilehash: 05c4e73c56b79c6e313ea15124bd0f3d17b2fc70
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: ee4c41ca3179eead0e4fd470a02a5cdfa4a6d43a
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70842607"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74705233"
 ---
-# <a name="disable-azure-active-directory-domain-services-using-the-azure-portal"></a>Отключение доменных служб Azure Active Directory с помощью портала Azure
+# <a name="delete-an-azure-active-directory-domain-services-managed-domain-using-the-azure-portal"></a>Удаление управляемого домена Azure Active Directory доменных служб с помощью портал Azure
 
 Если управляемый домен больше не нужен, можно удалить экземпляр Azure Active Directory доменных служб (Azure AD DS). Нет возможности отключить или временно отключить управляемый домен AD DS Azure. Удаление управляемого домена AD DS Azure не приводит к удалению или иным образом отрицательно скажется на клиенте Azure AD. В этой статье показано, как с помощью портал Azure удалить управляемый домен AD DS Azure.
 
@@ -35,12 +35,12 @@ ms.locfileid: "70842607"
 Чтобы удалить управляемый домен AD DS Azure, выполните следующие действия.
 
 1. В портал Azure найдите и выберите **доменные службы Azure AD**.
-1. Выберите имя управляемого домена Azure AD DS, например *contoso.com*.
+1. Выберите имя управляемого домена Azure AD DS, например *aadds.contoso.com*.
 1. На странице **Обзор** выберите **Удалить**. Чтобы подтвердить удаление, введите доменное имя управляемого домена еще раз, а затем выберите **Удалить**.
 
 Удаление управляемого домена AD DS Azure может занять 15-20 минут или более.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Рассмотрите возможность [предоставления отзывов][feedback] о функциях, которые вы хотели бы увидеть в AD DS Azure.
 

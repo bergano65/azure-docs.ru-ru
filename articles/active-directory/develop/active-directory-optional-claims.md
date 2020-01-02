@@ -1,29 +1,24 @@
 ---
-title: Узнайте, как предоставлять необязательные утверждения для приложения Azure AD.
+title: Предоставление дополнительных утверждений для приложений Azure AD | Службы
 titleSuffix: Microsoft identity platform
-description: Руководство по добавлению пользовательских или дополнительных утверждений в токены SAML 2.0 и JSON Web Token (JWT), выдаваемых службой Azure Active Directory.
-documentationcenter: na
+description: Добавление настраиваемых или дополнительных утверждений в токены SAML 2,0 и JSON Web tokens (JWT), выданные Azure Active Directory.
 author: rwike77
-services: active-directory
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/03/2019
+ms.date: 12/08/2019
 ms.author: ryanwi
-ms.reviewer: paulgarn, hirsin
+ms.reviewer: paulgarn, hirsin, keyam
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b74e680979ccbcc94f8a49e993c6d64797ab80b1
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: bcaf347eb91f8777b56bb2ea4d26985b2d75f645
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72803408"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74967254"
 ---
 # <a name="how-to-provide-optional-claims-to-your-azure-ad-app"></a>Руководство. предоставление необязательных утверждений для приложения Azure AD
 
@@ -35,7 +30,7 @@ ms.locfileid: "72803408"
 - изменить поведение определенных утверждений в токенах, возвращаемых Azure AD;
 - добавлять пользовательские утверждения для приложения и обращаться к ним.
 
-Список стандартных утверждений см. в документации по [маркерам доступа](access-tokens.md) и утверждениям [id_token](id-tokens.md) . 
+Список стандартных утверждений см. в документации [маркер доступа](access-tokens.md) и [id_token](id-tokens.md) утверждений. 
 
 Хотя необязательные утверждения поддерживаются в маркерах формата v 1.0 и v 2.0, а также в маркерах SAML, они предоставляют большую часть их значений при переходе с версии 1.0 на версию 2.0. Одной из целей [конечной точки платформы идентификации Майкрософт версии 2.0](active-directory-appmodel-v2-overview.md) являются меньшие размеры маркеров для обеспечения оптимальной производительности клиентов. В результате нескольких утверждений, ранее включенных в маркеры доступа и идентификаторов, больше нет в токенах версии 2.0 и их нужно запрашивать специально для каждого приложения.
 
@@ -74,11 +69,11 @@ ms.locfileid: "72803408"
 | `xms_tpl`                  | Предпочитаемый язык клиента| JWT | | Предпочитаемый язык клиента ресурса, если задан. Формат: ЯЯ ("en"). |
 | `ztdid`                    | Идентификатор развертывания без участия пользователя | JWT | | Идентификатор устройства, используемый для [Windows AutoPilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot) |
 | `email`                    | Доступный адрес электронной почты для этого пользователя (если имеется).  | JWT, SAML | MSA, Azure AD | Это значение добавляется по умолчанию, если пользователь является гостем в клиенте.  Для управляемых пользователей (в клиенте) это значение должно запрашиваться посредством необязательного утверждения или, в версии 2.0, с использованием области OpenID.  Адреса электронной почты для управляемых пользователей должны быть заданы на [портале администрирования Office](https://portal.office.com/adminportal/home#/users).| 
-| `groups`| Необязательное форматирование для групповых утверждений |JWT, SAML| |Используется в сочетании с параметром GroupMembershipClaims в [манифесте приложения](reference-app-manifest.md), который также должен быть установлен. Дополнительные сведения см. в разделе [групповые утверждения](#Configuring-group-optional claims) ниже. Дополнительные сведения об утверждениях группы см. [в статье Настройка групповых утверждений](../hybrid/how-to-connect-fed-group-claims.md) .
+| `groups`| Необязательное форматирование для групповых утверждений |JWT, SAML| |Используется в сочетании с параметром GroupMembershipClaims в [манифесте приложения](reference-app-manifest.md), который также должен быть установлен. Дополнительные сведения см. в разделе [групповые утверждения](#configuring-groups-optional-claims) ниже. Дополнительные сведения об утверждениях группы см. [в статье Настройка групповых утверждений](../hybrid/how-to-connect-fed-group-claims.md) .
 | `acct`             | Состояние учетной записи пользователя в клиенте. | JWT, SAML | | Если пользователь является членом клиента, это значение равно `0`. Если он является гостем, это значение равно `1`. |
 | `upn`                      | Утверждение UserPrincipalName. | JWT, SAML  |           | Несмотря на то, что это утверждение автоматически включается, можно указать его в качестве необязательного утверждения для присоединения дополнительных свойств, чтобы изменить его поведение в варианте использования гостевым пользователем.  |
 
-### <a name="v20-optional-claims"></a>Необязательные утверждения версии 2.0
+## <a name="v20-specific-optional-claims-set"></a>Версия 2.0 — заданный дополнительный набор утверждений
 
 Эти утверждения всегда включаются в токены Azure AD версии 1.0, но не включены в маркеры версии 2.0, если это не требуется. Эти утверждения применимы только для JWT (токены идентификации и маркеры доступа). 
 
@@ -110,126 +105,166 @@ ms.locfileid: "72803408"
 
 #### <a name="additional-properties-example"></a>Пример дополнительных свойств:
 
-```json
- "optionalClaims": 
-   {
-       "idToken": [ 
-             { 
-                "name": "upn", 
-            "essential": false,
-                "additionalProperties": [ "include_externally_authenticated_upn"]  
-              }
-        ]
-}
-```
+    ```json
+        "optionalClaims": 
+         {
+             "idToken": [ 
+            { 
+                      "name": "upn", 
+                      "essential": false,
+                  "additionalProperties": [ "include_externally_authenticated_upn"]  
+                    }
+                 ]
+        }
+    ```
 
 Этот объект OptionalClaims вызывает маркер идентификатора, возвращаемый клиенту, для включения другого имени участника-пользователя с дополнительными сведениями о домашнем клиенте и клиенте ресурса. Он может изменить утверждение `upn` в маркере, только если пользователь является гостем в клиенте (который использует другой поставщик удостоверений для проверки подлинности). 
 
 ## <a name="configuring-optional-claims"></a>Настройка необязательных утверждений
 
-С помощью изменения манифеста приложения можно настроить необязательные утверждения (см. пример ниже). Дополнительные сведения см. в [статье Общие сведения о манифесте приложения Azure AD](reference-app-manifest.md).
-
 > [!IMPORTANT]
 > Маркеры доступа **всегда** создаются с помощью манифеста ресурса, а не клиента.  Итак, в запросе `...scope=https://graph.microsoft.com/user.read...` ресурс является графом.  Таким же маркер доступа создается с помощью манифеста графа, а не манифеста клиента.  Изменение манифеста для приложения никогда не приведет к тому, что маркеры для Graph будут выглядеть иначе.  Чтобы проверить, вступают ли в действие изменения в `accessToken`, запросите маркер для вашего приложения, а не другого приложения.  
 
-**Пример схемы:**
+Можно настроить необязательные утверждения для приложения с помощью пользовательского интерфейса или манифеста приложения.
 
-```json
-"optionalClaims":  
-   {
-      "idToken": [
-            {
-                  "name": "auth_time", 
-                  "essential": false
-             }
-      ],
-      "accessToken": [
-             {
-                    "name": "ipaddr", 
-                    "essential": false
-              }
-      ],
-      "saml2Token": [
-              {
-                    "name": "upn", 
-                    "essential": false
-               },
-               {
-                    "name": "extension_ab603c56068041afb2f6832e2a17e237_skypeId",
-                    "source": "user", 
-                    "essential": false
-               }
-       ]
-   }
-```
+1. Войдите на [портале Azure](https://portal.azure.com).
+1. Пройдя аутентификацию, выберите клиент Azure AD, щелкнув его в правом верхнем углу страницы.
+1. Выберите **Azure Active Directory** в меню слева.
+1. В разделе **Управление** выберите **Регистрация приложений**.
+1. В списке выберите приложение, для которого нужно настроить необязательные утверждения.
 
-### <a name="optionalclaims-type"></a>Тип OptionalClaims
+**Настройка необязательных утверждений через пользовательский интерфейс:**
 
-Объявляет необязательные утверждения, запрошенные приложением. В приложении можно настроить необязательные утверждения, которые должны возвращаться в каждый из трех типов токенов (токен идентификации, маркер доступа, токен SAML 2), которые оно может получить из службы токенов безопасности. Приложение может настроить различные наборы необязательных утверждений, которые будут возвращаться в каждый тип токена. Свойство optionalClaims сущности приложения — это объект optionalClaims.
+[![показано, как настроить необязательные утверждения с помощью пользовательского интерфейса](./media/active-directory-optional-claims/token-configuration.png)](./media/active-directory-optional-claims/token-configuration.png)
 
-**Таблица 5. свойства типа OptionalClaims**
+1. В разделе **Управление** выберите **Конфигурация токена (Предварительная версия)** .
+2. Выберите **добавить необязательное утверждение**.
+3. Выберите тип токена, который требуется настроить.
+4. Выберите необязательные утверждения для добавления.
+5. Щелкните **Добавить**.
 
-| Name        | Тип                       | Описание                                           |
+**Настройка необязательных утверждений с помощью манифеста приложения:**
+
+[![показано, как настроить необязательные утверждения с помощью манифеста приложения.](./media/active-directory-optional-claims/app-manifest.png)](./media/active-directory-optional-claims/app-manifest.png)
+
+1. В разделе **Управление** выберите **Манифест**. Откроется редактор манифестов на основе веб-интерфейсов, позволяющий изменить манифест. При необходимости можно выбрать **Скачать** и изменить манифест локально, а затем повторно применить его для приложения с помощью команды **Отправить**. Дополнительные сведения о манифесте приложения см. в [статье основные сведения о манифесте приложения Azure AD](reference-app-manifest.md).
+
+    Следующая запись манифеста приложения добавляет необязательные утверждения auth_time, reduce и UPN к маркерам ID, доступа и SAML.
+
+    ```json
+        "optionalClaims":  
+           {
+              "idToken": [
+                    {
+                          "name": "auth_time", 
+                          "essential": false
+                     }
+              ],
+              "accessToken": [
+                     {
+                            "name": "ipaddr", 
+                            "essential": false
+                      }
+              ],
+              "saml2Token": [
+                      {
+                            "name": "upn", 
+                            "essential": false
+                       },
+                       {
+                            "name": "extension_ab603c56068041afb2f6832e2a17e237_skypeId",
+                            "source": "user", 
+                            "essential": false
+                       }
+               ]
+           }
+       ```
+
+2. When finished, click **Save**. Now the specified optional claims will be included in the tokens for your application.    
+
+
+### OptionalClaims type
+
+Declares the optional claims requested by an application. An application can configure optional claims to be returned in each of three types of tokens (ID token, access token, SAML 2 token) it can receive from the security token service. The application can configure a different set of optional claims to be returned in each token type. The OptionalClaims property of the Application entity is an OptionalClaims object.
+
+**Table 5: OptionalClaims type properties**
+
+| Name        | Type                       | Description                                           |
 |-------------|----------------------------|-------------------------------------------------------|
-| `idToken`     | Коллекция (OptionalClaim) | Необязательные утверждения, возвращаемые в токен идентификации JWT. |
-| `accessToken` | Коллекция (OptionalClaim) | Необязательные утверждения, возвращаемые в маркер доступа JWT. |
-| `saml2Token`  | Коллекция (OptionalClaim) | Необязательные утверждения, возвращаемые в токен SAML.   |
+| `idToken`     | Collection (OptionalClaim) | The optional claims returned in the JWT ID token. |
+| `accessToken` | Collection (OptionalClaim) | The optional claims returned in the JWT access token. |
+| `saml2Token`  | Collection (OptionalClaim) | The optional claims returned in the SAML token.   |
 
-### <a name="optionalclaim-type"></a>Тип OptionalClaim
+### OptionalClaim type
 
-Содержит необязательное утверждение, связанное с приложением или субъект-службой. Свойства idToken, accessToken и saml2Token типа [OptionalClaims](https://msdn.microsoft.com/library/azure/ad/graph/api/entity-and-complex-type-reference#optionalclaims-type) являются коллекцией OptionalClaim.
-С помощью поля AdditionalProperties можно изменить поведение OptionalClaim, если это поддерживается определенным утверждением.
+Contains an optional claim associated with an application or a service principal. The idToken, accessToken, and saml2Token properties of the [OptionalClaims](https://msdn.microsoft.com/library/azure/ad/graph/api/entity-and-complex-type-reference#optionalclaims-type) type is a collection of OptionalClaim.
+If supported by a specific claim, you can also modify the behavior of the OptionalClaim using the AdditionalProperties field.
 
-**Таблица 6. свойства типа OptionalClaim**
+**Table 6: OptionalClaim type properties**
 
-| Name                 | Тип                    | Описание                                                                                                                                                                                                                                                                                                   |
+| Name                 | Type                    | Description                                                                                                                                                                                                                                                                                                   |
 |----------------------|-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `name`                 | Edm.String              | Имя необязательного утверждения.                                                                                                                                                                                                                                                                           |
-| `source`               | Edm.String              | Источник утверждения (объект каталога). Существуют стандартные утверждения и определяемые пользователем утверждения из свойств расширения. Если исходное значение равно null, утверждение будет являться предопределенным необязательным утверждением. Если исходное значение — user, значение в имени свойства будет свойством расширения из объекта пользователя. |
-| `essential`            | Edm.Boolean             | Если значение равно true, утверждение, указанное клиентом, необходимо для обеспечения плавной авторизации конкретной задачи, запрашиваемой пользователем. По умолчанию для этого параметра используется значение false.                                                                                                             |
-| `additionalProperties` | Коллекция (Edm.String) | Дополнительные свойства утверждений. Если свойство существует в коллекции, оно изменяет поведение дополнительного утверждения, указанного в свойстве имени.                                                                                                                                               |
-## <a name="configuring-directory-extension-optional-claims"></a>Настройка необязательных утверждений для расширения каталога
+| `name`                 | Edm.String              | The name of the optional claim.                                                                                                                                                                                                                                                                           |
+| `source`               | Edm.String              | The source (directory object) of the claim. There are predefined claims and user-defined claims from extension properties. If the source value is null, the claim is a predefined optional claim. If the source value is user, the value in the name property is the extension property from the user object. |
+| `essential`            | Edm.Boolean             | If the value is true, the claim specified by the client is necessary to ensure a smooth authorization experience for the specific task requested by the end user. The default value is false.                                                                                                             |
+| `additionalProperties` | Collection (Edm.String) | Additional properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property.                                                                                                                                               |
+## Configuring directory extension optional claims
 
-В дополнение к стандартному дополнительному набору утверждений можно также настроить маркеры для включения расширений схемы каталога. Дополнительные сведения см. в разделе [расширения схемы каталога](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-directory-schema-extensions). Эта возможность полезна при присоединении дополнительных сведений о пользователях, которые может использовать приложение, например, дополнительный идентификатор или важный параметр конфигурации, заданный пользователем. 
+In addition to the standard optional claims set, you can also configure tokens to include directory schema extensions. For more info, see [Directory schema extensions](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-directory-schema-extensions). This feature is useful for attaching additional user information that your app can use – for example, an additional identifier or important configuration option that the user has set. See the bottom of this page for an example.
 
-> [!Note]
-> - Расширения схемы каталогов — это функция только Azure AD, поэтому если манифест приложения запрашивает пользовательское расширение и пользователь MSA входит в приложение, эти расширения не будут возвращены.
-> - Дополнительные утверждения Azure AD работают только с расширением Azure AD и не работают с расширением Microsoft Graph Directory. Для обоих API требуется разрешение `Directory.ReadWriteAll`, которое может быть предоставлено только администраторам.
+> [!NOTE]
+> - Directory schema extensions are an Azure AD-only feature, so if your application manifest requests a custom extension and an MSA user logs into your app, these extensions will not be returned.
+> - Azure AD optional claims only work with Azure AD Graph extensions and do not work with Microsoft Graph directory extensions. Both APIs require the `Directory.ReadWriteAll` permission, which can only be consented by admins.
 
-### <a name="directory-extension-formatting"></a>Форматирование расширения каталога
+### Directory extension formatting
 
-Для атрибутов расширения используйте полное имя расширения (в формате: `extension_<appid>_<attributename>`) в манифесте приложения. `<appid>` должен соответствовать ИДЕНТИФИКАТОРу приложения, запросившего утверждение. 
+When configuring directory extension optional claims using the application manifest, use the full name of the extension (in the format: `extension_<appid>_<attributename>`). The `<appid>` must match the ID of the application requesting the claim. 
 
-В рамках JWT эти утверждения будут передаваться с помощью следующего формата имени: `extn.<attributename>`.
+Within the JWT, these claims will be emitted with the following name format:  `extn.<attributename>`.
 
-В рамках токенов SAML эти утверждения будут передаваться с помощью следующего формата URI: `http://schemas.microsoft.com/identity/claims/extn.<attributename>`
+Within the SAML tokens, these claims will be emitted with the following URI format: `http://schemas.microsoft.com/identity/claims/extn.<attributename>`
 
-## <a name="configuring-group-optional-claims"></a>Настройка необязательных утверждений группы
+## Configuring groups optional claims
 
    > [!NOTE]
-   > Возможность создавать имена групп для пользователей и групп, синхронизированных из локальной среды, — это общедоступная Предварительная версия.
+   > The ability to emit group names for users and groups synced from on-premises is Public Preview.
 
-В этом разделе описываются параметры конфигурации в разделе необязательные утверждения для изменения атрибутов группы, используемых в утверждениях группы, из группы по умолчанию для атрибутов, синхронизированных из локальной Active Directory Windows.
+This section covers the configuration options under optional claims for changing the group attributes used in group claims from the default group objectID to attributes synced from on-premises Windows Active Directory. You can configure groups optional claims for your application through the UI or application manifest.
 
 > [!IMPORTANT]
-> Дополнительные сведения см. в статье [Настройка групповых утверждений для приложений с помощью Azure AD](../hybrid/how-to-connect-fed-group-claims.md) для получения дополнительных сведений, включая важные предостережения для общедоступной предварительной версии утверждений групп из локальных атрибутов.
+> See [Configure group claims for applications with Azure AD](../hybrid/how-to-connect-fed-group-claims.md) for more details including important caveats for the public preview of group claims from on-premises attributes.
 
-1. На портале > Регистрация приложения Azure Active Directory > — > выберите манифест приложения->.
+**Configuring groups optional claims through the UI:**
+1. Sign in to the [Azure portal](https://portal.azure.com)
+1. After you've authenticated, choose your Azure AD tenant by selecting it from the top right corner of the page
+1. Select **Azure Active Directory** from the left hand menu
+1. Under the **Manage** section, select **App registrations**
+1. Select the application you want to configure optional claims for in the list
+1. Under the **Manage** section, select **Token configuration (preview)**
+2. Select **Add groups claim**
+3. Select the group types to return (**All Groups**, **SecurityGroup** or **DirectoryRole**). The **All Groups** option includes **SecurityGroup**, **DirectoryRole** and **DistributionList**
+4. Optional: click on the specific token type properties to modify the groups claim value to contain on premises group attributes or to change the claim type to a role
+5. Click **Save**
 
-2. Включение утверждений о членстве в группах путем изменения Граупмембершипклаим
+**Configuring groups optional claims through the application manifest:**
+1. Sign in to the [Azure portal](https://portal.azure.com)
+1. After you've authenticated, choose your Azure AD tenant by selecting it from the top right corner of the page
+1. Select **Azure Active Directory** from the left hand menu
+1. Select the application you want to configure optional claims for in the list
+1. Under the **Manage** section, select **Manifest**
+3. Add the following entry using the manifest editor:
 
-   Допустимые значения:
+   The valid values are:
 
-   - Каждого
-   - SecurityGroup
-   - "Дистрибутионлист"
-   - DirectoryRole
+   - "All" (this option includes SecurityGroup, DirectoryRole and DistributionList)
+   - "SecurityGroup"
+   - "DirectoryRole"
 
-   Пример.
+   For example:
 
-   ```json
-   "groupMembershipClaims": "SecurityGroup"
-   ```
+    ```json
+        "groupMembershipClaims": "SecurityGroup"
+    ```
 
    По умолчанию группы ObjectID будут выдаваться в значении утверждения группы.  Чтобы изменить значение утверждения в соответствии с атрибутами локальной группы или изменить тип утверждения на Role, используйте конфигурацию OptionalClaims следующим образом:
 
@@ -246,14 +281,14 @@ ms.locfileid: "72803408"
 
    Для каждого соответствующего типа токена измените утверждение групп, чтобы в манифесте использовался раздел OptionalClaims. Схема OptionalClaims выглядит следующим образом:
 
-   ```json
-   {
-   "name": "groups",
-   "source": null,
-   "essential": false,
-   "additionalProperties": []
-   }
-   ```
+    ```json
+       {
+       "name": "groups",
+       "source": null,
+       "essential": false,
+       "additionalProperties": []
+       }
+    ```
 
    | Схема необязательных утверждений | Value |
    |----------|-------------|
@@ -262,91 +297,131 @@ ms.locfileid: "72803408"
    | **очень** | Не используется. Опустить или укажите значение false |
    | **AdditionalProperties** | Список дополнительных свойств.  Допустимые значения: "sam_account_name", "dns_domain_and_sam_account_name", "netbios_domain_and_sam_account_name", "emit_as_roles" |
 
-   В additionalProperties требуется только один из "sam_account_name", "dns_domain_and_sam_account_name", "netbios_domain_and_sam_account_name".  Если указано более одного, используется первый, а остальные игнорируются.
+   В additionalProperties требуется только один из них: "sam_account_name", "dns_domain_and_sam_account_name", "netbios_domain_and_sam_account_name".  Если указано более одного, используется первый, а остальные игнорируются.
 
-   Некоторые приложения занимают сведения о группе пользователя в утверждении роли.  Чтобы изменить тип утверждения с утверждения группы на утверждение роли, добавьте "emit_as_roles" в дополнительные свойства.  Значения группы будут выдаваться в заявке роли.
+   Некоторые приложения занимают сведения о группе пользователя в утверждении роли.  Чтобы изменить тип утверждения с утверждения группы на утверждение роли, добавьте "emit_as_roles" к дополнительным свойствам.  Значения группы будут выдаваться в заявке роли.
 
    > [!NOTE]
    > Если используется "emit_as_roles", все роли приложения, настроенные для назначения пользователя, не будут отображаться в заявке роли
 
-**Примеры:** Выдавать группы в виде имен групп в маркерах доступа OAuth в формате Днсдомаиннаме\самаккаунтнаме
+**Примеры**
 
-```json
-"optionalClaims": {
-    "accessToken": [{
-        "name": "groups",
-        "additionalProperties": ["dns_domain_and_sam_account_name"]
-    }]
-}
- ```
+1) Выдавать группы в виде имен групп в маркерах доступа OAuth в формате Днсдомаиннаме\самаккаунтнаме
 
-Чтобы выдать имена групп, возвращаемых в формате Нетбиосдомаин\самаккаунтнаме, в качестве утверждения ролей в маркерах ИДЕНТИФИКАТОРов SAML и OIDC:
+    
+    **Конфигурация пользовательского интерфейса:**
 
-```json
-"optionalClaims": {
-    "saml2Token": [{
-        "name": "groups",
-        "additionalProperties": ["netbios_name_and_sam_account_name", "emit_as_roles"]
-    }],
+    [![показано, как настроить необязательные утверждения с помощью пользовательского интерфейса](./media/active-directory-optional-claims/groups-example-1.png)](./media/active-directory-optional-claims/groups-example-1.png)
 
-    "idToken": [{
-        "name": "groups",
-        "additionalProperties": ["netbios_name_and_sam_account_name", "emit_as_roles"]
-    }]
- }
 
- ```
+    **Запись манифеста приложения:**
+    ```json
+        "optionalClaims": {
+            "accessToken": [{
+            "name": "groups",
+            "additionalProperties": ["dns_domain_and_sam_account_name"]
+            }]
+        }
+    ```
+
+ 
+    
+2) Выдавать имена групп, возвращаемых в формате Нетбиосдомаин\самаккаунтнаме в качестве утверждения ролей в маркерах ИДЕНТИФИКАТОРов SAML и OIDC
+
+    **Конфигурация пользовательского интерфейса:**
+
+    [![показано, как настроить необязательные утверждения с помощью пользовательского интерфейса](./media/active-directory-optional-claims/groups-example-2.png)](./media/active-directory-optional-claims/groups-example-2.png)
+
+    **Запись манифеста приложения:**
+    
+    ```json
+        "optionalClaims": {
+        "saml2Token": [{
+            "name": "groups",
+            "additionalProperties": ["netbios_name_and_sam_account_name", "emit_as_roles"]
+        }],
+        "idToken": [{
+            "name": "groups",
+            "additionalProperties": ["netbios_name_and_sam_account_name", "emit_as_roles"]
+        }]
+    ``` 
+     
 
 ## <a name="optional-claims-example"></a>Пример необязательного утверждения
 
 В этом разделе можно пошагово выполнить сценарий, чтобы узнать, как можно использовать возможность необязательных утверждений для приложения.
 Есть несколько доступных вариантов обновления свойств в конфигурации удостоверения приложения, позволяющих включить и настроить необязательные утверждения:
--   Вы можете изменить манифест приложения. В приведенном ниже примере этот метод будет использоваться для настройки. Ознакомьтесь со статьей [Манифест приложения Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-manifest), чтобы получить общие сведения о манифесте.
+-    Вы можете использовать пользовательский интерфейс **настройки маркера (Предварительная версия)** (см. пример ниже).
+-    Вы можете использовать **Манифест** (см. пример ниже). Ознакомьтесь со статьей [Манифест приложения Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-manifest), чтобы получить общие сведения о манифесте.
 -   Вы также можете написать приложение, в котором для обновления используется [API Graph](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api). [Справочник по сущностям и сложным типам](https://msdn.microsoft.com/library/azure/ad/graph/api/entity-and-complex-type-reference#optionalclaims-type) в справочнике по API Graph может помочь вам с конфигурацией необязательных утверждений.
 
-**Пример.** В приведенном ниже примере манифест приложения изменяется, чтобы добавить утверждения в маркеры доступа, идентификации и SAML, предназначенные для приложения.
+**Пример:** В приведенном ниже примере вы будете использовать пользовательский интерфейс **конфигурации маркера (Предварительная версия)** и **Манифест** для добавления необязательных утверждений к МАРКЕРам доступа, идентификатору и SAML, предназначенным для вашего приложения. В каждый тип токена, который может получить приложение, будут добавлены различные необязательные утверждения:
+-    Теперь токены идентификации содержат имена участников-пользователей федеративных пользователей в полной форме (`<upn>_<homedomain>#EXT#@<resourcedomain>`).
+-    Маркеры доступа, запрашиваемые другими клиентами для этого приложения, теперь включают утверждение auth_time
+-    Токен SAML будет содержать расширение схемы каталога skypeId (в этом примере идентификатор этого приложения — ab603c56068041afb2f6832e2a17e237). Токен SAML представит идентификатор Skype как `extension_skypeId`.
 
+**Конфигурация пользовательского интерфейса:**
+
+1. Войдите на [портал Azure](https://portal.azure.com)
+
+1. Пройдя аутентификацию, выберите клиент Azure AD, щелкнув его в правом верхнем углу страницы.
+
+1. Выберите **Azure Active Directory** в меню слева.
+
+1. В разделе **Управление** выберите **Регистрация приложений**.
+
+1. Найдите в списке приложение, для которого нужно настроить необязательные утверждения, и щелкните его.
+
+1. В разделе **Управление** щелкните **Конфигурация токена (Предварительная версия)** .
+
+1. Выберите **добавить необязательное утверждение**, выберите тип маркера **идентификатор** , выберите **UPN** в списке утверждений и нажмите кнопку **Добавить**.
+
+1. Выберите **добавить необязательное утверждение**, выберите тип маркера **доступа** , выберите **auth_time** в списке заявок, а затем нажмите кнопку **Добавить**.
+
+1. На экране "Обзор конфигурации токенов" щелкните значок карандаша рядом с **именем участника-пользователя**, выберите переключатель с **внешней проверкой подлинности** и нажмите кнопку **сохранить**.
+
+1. Выберите **добавить необязательное утверждение**, выберите тип токена **SAML** , выберите **екстн. skypeID** из списка утверждений (применимо, только если вы создали объект пользователя Azure AD с именем skypeID) и нажмите кнопку **Добавить**.
+
+    [![показано, как настроить необязательные утверждения с помощью пользовательского интерфейса](./media/active-directory-optional-claims/token-config-example.png)](./media/active-directory-optional-claims/token-config-example.png)
+
+**Конфигурация манифеста:**
 1. Войдите на [портале Azure](https://portal.azure.com).
 1. Пройдя аутентификацию, выберите клиент Azure AD, щелкнув его в правом верхнем углу страницы.
-1. Выберите в левой части **Регистрация приложений**.
+1. Выберите **Azure Active Directory** в меню слева.
 1. Найдите в списке приложение, для которого нужно настроить необязательные утверждения, и щелкните его.
-1. Щелкните **Манифест** на странице приложения, чтобы открыть встроенный редактор манифестов. 
-1. Можно напрямую изменить манифест с помощью этого редактора. Манифест соответствует схеме для [сущности приложения](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest) и автоматически форматирует манифест после сохранения. В свойство `OptionalClaims` будут добавлены новые элементы.
+1. В разделе **Управление** щелкните **Манифест** , чтобы открыть встроенный редактор манифеста.
+1. Можно напрямую изменить манифест с помощью этого редактора. Манифест соответствует схеме для [сущности приложения]. (https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest) и автоматическое форматирование манифеста после сохранения. В свойство `OptionalClaims` будут добавлены новые элементы.
 
     ```json
-      "optionalClaims": 
-      {
-            "idToken": [ 
-                  { 
+            "optionalClaims": {
+                "idToken": [ 
+                     { 
                         "name": "upn", 
                         "essential": false, 
                         "additionalProperties": [ "include_externally_authenticated_upn"]  
-                  }
-            ],
-            "accessToken": [ 
-                  {
+                     }
+                     ],
+                "accessToken": [ 
+                      {
                         "name": "auth_time", 
                         "essential": false
-                  }
-            ],
+                      }
+                     ],
             "saml2Token": [ 
                   { 
-                        "name": "extension_ab603c56068041afb2f6832e2a17e237_skypeId",
-                        "source": "user", 
-                        "essential": true
+                    "name": "extension_ab603c56068041afb2f6832e2a17e237_skypeId",
+                    "source": "user", 
+                    "essential": true
                   }
-            ]
-      }
+                 ]
+        ``` 
 
-    ```
 
-    В этом случае различные необязательные утверждения будут добавлены к каждому типу токена, который может получить приложение. Теперь токены идентификации содержат имена участников-пользователей федеративных пользователей в полной форме (`<upn>_<homedomain>#EXT#@<resourcedomain>`). Маркеры доступа, запрашиваемые для этого приложения другими клиентами, будут включены в утверждение auth_time. Токен SAML будет содержать расширение схемы каталога skypeId (в этом примере идентификатор этого приложения — ab603c56068041afb2f6832e2a17e237). Токен SAML представит идентификатор Skype как `extension_skypeId`.
+1. When you're finished updating the manifest, click **Save** to save the manifest.
 
-1. Завершив изменение манифеста, нажмите кнопку **Сохранить**, чтобы сохранить его.
+## Next steps
 
-## <a name="next-steps"></a>Дальнейшие действия
+Learn more about the standard claims provided by Azure AD.
 
-Дополнительные сведения о стандартных утверждениях, предоставляемых Azure AD, см. в следующих статьях.
-
-- [Маркеры идентификации](id-tokens.md)
-- [Маркеры доступа в Azure Active Directory](access-tokens.md)
+- [ID tokens](id-tokens.md)
+- [Access tokens](access-tokens.md)

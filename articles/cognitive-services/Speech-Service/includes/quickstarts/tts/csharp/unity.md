@@ -10,23 +10,23 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 9/19/2019
 ms.author: yinhew
-ms.openlocfilehash: 281fbcf3f42160b18adcad3f06f6ef4a7b8de243
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: f3b3d68e0154913e3eb6d101965ad33530502954
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73504902"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74818311"
 ---
 > [!NOTE]
 > Unity поддерживает Windows Desktop (x86 и x64) или универсальную платформу Windows (x86, x64, ARM и ARM64), Android (x86, ARM32/64) и iOS (симулятор x64, ARM32 и ARM64).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы нужно:
+Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure](../../../../get-started.md).
-> * [Настроить среду разработки](../../../../quickstarts/setup-platform.md?tabs=unity).
+> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=unity)
 > * [Создать пустой пример проекта](../../../../quickstarts/create-project.md?tabs=unity).
 
 ## <a name="add-a-ui"></a>Добавление пользовательского интерфейса
@@ -64,7 +64,7 @@ ms.locfileid: "73504902"
 
    [!code-csharp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/csharp/unity/text-to-speech/Assets/Scripts/HelloWorld.cs#code)]
 
-1. Найдите строку `YourSubscriptionKey` и замените ее ключом подписки службы "Речь".
+1. Найдите и замените строку `YourSubscriptionKey` на ключ подписки службы "Речь".
 
 1. Найдите и замените строку `YourServiceRegion` на [регион](~/articles/cognitive-services/Speech-Service/regions.md), связанный с вашей подпиской. Например, если вы используете бесплатную пробную версию, ваш регион — `westus`.
 
@@ -83,7 +83,7 @@ ms.locfileid: "73504902"
 ## <a name="run-the-application-in-the-unity-editor"></a>Запуск приложения в Unity Editor
 
 * Нажмите кнопку **Play** (Воспроизвести) на панели инструментов Unity Editor, которая находится под строкой меню.
-* После запуска приложения введите текст в поле ввода и нажмите кнопку. Введенный текст передается в службы "Речь" и синтезируется в речь, которая воспроизводится через динамик.
+* После запуска приложения введите текст в поле ввода и нажмите кнопку. Текст передается в службу "Речь" и синтезируется в речь, которая воспроизводится через динамик.
 
   [![Снимок экрана запущенного краткого руководства в окне Unity Game](~/articles/cognitive-services/speech-service/media/sdk/qs-tts-csharp-unity-output-inline.png)](~/articles/cognitive-services/speech-service/media/sdk/qs-tts-csharp-unity-output-expanded.png#lightbox)
 

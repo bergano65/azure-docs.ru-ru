@@ -7,16 +7,16 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: manage
-ms.date: 7/29/2019
+ms.date: 11/25/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 2aa7926286be277c7ad0aa7054b4bd6fceb8229f
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: b2a9a7b0b759f5853d83a4b1999887414fd5f430
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73685399"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483206"
 ---
 # <a name="troubleshooting-azure-sql-data-warehouse"></a>Устранение неполадок хранилища данных SQL Azure
 В этой статье даны рекомендации по устранению распространенных неполадок.
@@ -41,6 +41,7 @@ ms.locfileid: "73685399"
 | Проблема                                                        | Способы устранения:                                                   |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Устранение проблем с производительностью запросов                            | Если вы пытаетесь устранить проблему конкретного запроса, для начала ознакомьтесь со статьей, [посвященной мониторингу запросов][Learning how to monitor your queries]. |
+| Проблемы с пространством TempDB | [Мониторинг](sql-data-warehouse-manage-monitor.md#monitor-tempdb) использования пространства tempdb.  Ниже приведены распространенные причины запуска пространства TempDB.<br>— Недостаточно ресурсов, выделенных для запроса, который вызывает сброс данных в TempDB.  См. раздел [Управление рабочей нагрузкой](resource-classes-for-workload-management.md) <br>-Статистика отсутствует или устарела, что приводит к чрезмерному перемещению данных.  Дополнительные сведения о создании статистики см. в разделе [обслуживание статистики таблиц][Statistics] .<br>— Пространство TempDB выделяется для каждого уровня обслуживания.  [Масштабирование хранилища данных SQL][Scaling your SQL Data Warehouse] до более высокого параметра DWU выделяет больше пространства tempdb.|
 | Низкая производительность и неправильные планы запросов в результате отсутствия статистики | Самая распространенная причина низкой производительности — отсутствие статистики таблиц.  Сведения о том, как создать статистику и почему они важны для производительности, см. в разделе [обслуживание статистики таблиц][Statistics] . |
 | Низкий уровень параллелизма и помещение запросов в очередь                             | Чтобы обеспечить выделение памяти с учетом параллелизма, важно понимать принципы [управления рабочими нагрузками][Workload management] . |
 | Реализация рекомендаций                              | Лучше всего начать изучение способов повышения производительности запросов со статьи [Рекомендации по использованию хранилища данных SQL Azure][SQL Data Warehouse best practices] . |
@@ -66,12 +67,12 @@ ms.locfileid: "73685399"
 | Ограничения хранимых процедур          | Ознакомьтесь с [ограничениями хранимых процедур][Stored procedure limitations] . |
 | Определяемые пользователем функции не поддерживают инструкции SELECT | Это текущее ограничение определяемых пользователем функций.  Поддерживаемый синтаксис см. в разделе [Создание функции][CREATE FUNCTION] . |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Ниже перечислены некоторые ресурсы, которые можно использовать для поиска решения вашей проблемы.
 
 * [Блоги]
 * [Запросы функций]
-* [Видео]
+* [Видеоролики]
 * [Блоги группы CAT]
 * [Создание запроса в службу поддержки]
 * [Форум MSDN]
@@ -127,5 +128,5 @@ ms.locfileid: "73685399"
 [Форум MSDN]: https://social.msdn.microsoft.com/Forums/home?forum=AzureSQLDataWarehouse
 [Форум Stack Overflow]: https://stackoverflow.com/questions/tagged/azure-sqldw
 [Twitter]: https://twitter.com/hashtag/SQLDW
-[Видео]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse
+[Видеоролики]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse
 [Databricks]: https://docs.microsoft.com/azure/azure-databricks/databricks-extract-load-sql-data-warehouse#load-data-into-azure-sql-data-warehouse

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: chlandsi
-ms.openlocfilehash: 661dd94caa2a1998b26ec1270688c0729011c15a
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 53ddf18c0ea102968db03bc4435b7615e724892a
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73505702"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74818500"
 ---
 # <a name="quickstart-recognize-speech-in-swift-on-ios-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в Swift с использованием iOS и пакета SDK службы "Речь"
 
@@ -36,7 +36,7 @@ ms.locfileid: "73505702"
 
 Для работы с этим учебником нужна версия пакета SDK не ниже 1.6.0.
 
-Пакет SDK службы "Речь" в Cognitive Services для iOS сейчас доступен в виде пакета платформы. Его можно использовать в проектах Xcode в виде диспетчера зависимостей [CocoaPod](https://cocoapods.org/) или скачать по адресу https://aka.ms/csspeech/macosbinary и выполнить привязку вручную. В этой статье используется CocoaPod.
+Пакет SDK службы "Речь" в Cognitive Services для iOS сейчас доступен в виде пакета платформы. Его можно использовать в проектах Xcode в виде диспетчера зависимостей [CocoaPod](https://cocoapods.org/) или скачать по адресу https://aka.ms/csspeech/iosbinary и выполнить привязку вручную. В этой статье используется CocoaPod.
 
 ## <a name="create-an-xcode-project"></a>Создание проекта Xcode
 

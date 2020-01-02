@@ -1,22 +1,23 @@
 ---
-title: Авторизация доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory | Документация Майкрософт
+title: Авторизация доступа к BLOB-объектам и очередям с помощью Active Directory
+titleSuffix: Azure Storage
 description: Авторизуйте доступ к BLOB-объектам и очередям Azure с помощью Azure Active Directory.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 08/02/2019
+ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: aed61e5cf32ed0148e8b9eee6edf44daa03acd17
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 445d98ab07a91b056d4cf747f7c0f4cf1cdf9d53
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72598109"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74891819"
 ---
-# <a name="authorize-access-to-azure-blobs-and-queues-using-azure-active-directory"></a>Авторизация доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory
+# <a name="authorize-access-to-blobs-and-queues-using-azure-active-directory"></a>Авторизация доступа к BLOB-объектам и очередям с помощью Azure Active Directory
 
 Служба хранилища Azure поддерживает использование Azure Active Directory (AD) для авторизации запросов к хранилищу BLOB-объектов и очередей. С помощью Azure AD можно использовать управление доступом на основе ролей (RBAC) для предоставления разрешений субъекту безопасности, который может быть пользователем, группой или субъектом-службой приложения. Проверка подлинности субъекта безопасности в Azure AD возвращает маркер OAuth 2,0. Токен можно использовать для авторизации запроса на доступ к ресурсу в хранилище BLOB-объектов или очередей.
 

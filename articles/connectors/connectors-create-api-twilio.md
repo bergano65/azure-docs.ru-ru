@@ -1,28 +1,24 @@
 ---
-title: Подключение к Twilio из Azure Logic Apps | Документация Майкрософт
+title: Подключение к Twilio из Azure Logic Apps
 description: Автоматизация задач и рабочих процессов, которые управляют глобальными сообщениями SMS, MMS и IP через учетную запись Twilio с помощью Azure Logic Apps.
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
-ms.assetid: 43116187-4a2f-42e5-9852-a0d62f08c5fc
+ms.reviewer: klam, logicappspm
 ms.topic: article
-tags: connectors
 ms.date: 08/25/2018
-ms.openlocfilehash: 09d4a6acf93f5fb01c70f9e9bd935c404c5abf50
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+tags: connectors
+ms.openlocfilehash: e5b218efd9c8cfaad99d76d8118d181390a977c3
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70050703"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74789109"
 ---
 # <a name="manage-messages-in-twilio-with-azure-logic-apps"></a>Управление сообщениями в Twilio с помощью Azure Logic Apps
 
 С помощью Azure Logic Apps и соединителя Twilio можно создать автоматизированные задачи и рабочие процессы, которые получают, отправляют и отображают сообщения в Twilio, включая глобальные сообщения SMS, MMS и IP. Эти действия можно использовать для выполнения задач с вашей учетной записью Twilio. Кроме того, выходные данные действий Twilio могут использоваться другими действиями. Например, при поступлении нового сообщения вы можете отправить содержимое сообщения с помощью соединителя Slack. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
@@ -71,11 +67,11 @@ ms.locfileid: "70050703"
 
 Дополнительные технические сведения о триггерах, действиях и ограничениях, которые приведены в описании OpenAPI соединителя (прежнее название — Swagger), можно найти на [странице справки](/connectors/twilio/) соединителя.
 
-## <a name="get-support"></a>Поддержка
+## <a name="get-support"></a>Получение поддержки
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

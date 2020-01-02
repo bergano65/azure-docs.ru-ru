@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: tutorial
-ms.date: 09/06/2019
+ms.date: 12/05/2019
 ms.author: pafarley
-ms.openlocfilehash: 740b3fae81521fec2cba31e3b8fd161f767c4380
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: ce0b308077505d5af1d757f1684c50505b11831e
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70858971"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74977800"
 ---
 # <a name="tutorial-create-an-android-app-to-detect-and-frame-faces-in-an-image"></a>Руководство по Создание приложения Android для обнаружения и выделения лиц на изображении
 
-С помощью этого руководства вы создадите простое приложение для Android, которое использует API распознавания лиц Azure, поставляемый через пакет SDK для Java, для определения лиц на изображении. Приложение отображает выбранное изображение и рисует рамку вокруг каждого распознанного лица.
+С помощью этого руководства вы создадите приложение для Android, которое использует API Распознавания лиц Azure, поставляемый через пакет SDK для Java, для определения лиц на изображении. Приложение отображает выбранное изображение и рисует рамку вокруг каждого распознанного лица.
 
 В этом учебнике описаны следующие процедуры.
 
@@ -103,7 +103,7 @@ ms.locfileid: "70858971"
 
 Каждый возвращенный элемент **Face** выделяется прямоугольником, указывающим его расположение, и дополняется рядом необязательных атрибутов лица. В этом примере запрашиваются только прямоугольники для лиц.
 
-Вставьте следующие два метода в класс **MainActivity**. Обратите внимание, что после завершения определения лиц приложение вызывает метод **drawFaceRectanglesOnBitmap** для изменения **ImageView**. Вы определите этот метод далее.
+Вставьте следующие два метода в класс **MainActivity**. После завершения определения лиц приложение вызывает метод **drawFaceRectanglesOnBitmap** для изменения **ImageView**. Вы определите этот метод далее.
 
 [!code-java[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/java/com/contoso/facetutorial/MainActivity.java?name=snippet_detection_methods)]
 

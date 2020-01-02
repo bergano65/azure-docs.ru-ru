@@ -1,6 +1,6 @@
 ---
-title: Одностраничное приложение (для перемещения в рабочую среду) - платформой Microsoft identity
-description: Узнайте, как создать одностраничное приложение (перемещение в рабочую среду)
+title: Перемещение одностраничного приложения в рабочую среду — платформа Microsoft Identity | Службы
+description: Узнайте, как создать одностраничное приложение (переместить в рабочую среду)
 services: active-directory
 documentationcenter: dev-center-name
 author: navyasric
@@ -15,42 +15,38 @@ ms.date: 05/07/2019
 ms.author: nacanuma
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e6a04f5d62ec750cfbe44765e833552bd694654d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ba41b29cfcea2d9dfcab2cd552040eaffa4e90ff
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65075015"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74965285"
 ---
-# <a name="single-page-application---move-to-production"></a>Одностраничное приложение - перемещения в рабочую среду
+# <a name="single-page-application-move-to-production"></a>Одностраничное приложение: переход в рабочую среду
 
-Теперь, когда вы знаете, как получить токен для вызова веб-API, узнайте, как для перемещения в рабочую среду.
+Теперь, когда вы узнали, как получить маркер для вызова веб-API, Узнайте, как перейти в рабочую среду.
 
-## <a name="improve-your-app"></a>Улучшить приложение
+## <a name="improve-your-app"></a>Улучшение приложения
 
-Выполните шаги, необходимые для подготовки к рабочие приложения.
+[Включите ведение журнала](msal-logging.md) , чтобы подготовить приложение к работе.
 
-- [Включите ведение журнала](msal-logging.md) в приложении.
+## <a name="test-your-integration"></a>Тестирование интеграции
 
-## <a name="test-your-integration"></a>Проверили интеграцию
-
-- Протестируйте интеграцию согласно [контрольному списку для интеграции платформы удостоверений Майкрософт](identity-platform-integration-checklist.md).
+Протестируйте интеграцию согласно [контрольному списку для интеграции платформы удостоверений Майкрософт](identity-platform-integration-checklist.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Ниже приведены несколько других примеров и учебников.
+Подробное описание примера краткого руководства, в котором объясняется, как войти в систему пользователей и получить маркер доступа для вызова API Microsoft Graph с помощью MSAL. js:
 
-- Подробный обзор быстрого запуска пример, где объясняется код для входа в систему и получить маркер доступа для вызова API Graph MS, с помощью MSAL.js
+> [!div class="nextstepaction"]
+> [Руководство по JavaScript SPA](./tutorial-v2-javascript-spa.md)
 
-    > [!div class="nextstepaction"]
-    > [Учебник одностраничного приложения JavaScript](./tutorial-v2-javascript-spa.md)
+Пример, демонстрирующий получение маркеров для собственного серверного веб-API с помощью MSAL. js:
 
-- Пример, демонстрирующий, как получить маркеры для собственных веб-API серверной части, с помощью MSAL.js
+> [!div class="nextstepaction"]
+> [SPA с серверной службой ASP.NET](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi-v2)
 
-     > [!div class="nextstepaction"]
-     > [SPA с сервера ASP.NET](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi-v2)
+Пример, демонстрирующий использование MSAL. js для входа пользователей в приложение, зарегистрированное в Azure Active Directory B2C (Azure AD B2C):
 
-- Образец, показывающий, как использовать MSAL.js для входа пользователей в приложение зарегистрировано в Azure AD B2C
-
-    > [!div class="nextstepaction"]
-    > [SPA с помощью Azure AD B2C](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp)
+> [!div class="nextstepaction"]
+> [SPA с Azure AD B2C](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp)

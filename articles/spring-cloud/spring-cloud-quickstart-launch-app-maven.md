@@ -1,17 +1,17 @@
 ---
 title: Краткое руководство. Запуск приложения с помощью Maven в Azure Spring Cloud
-description: Запуск примера приложения с помощью Maven.
+description: Работая с этим кратким руководством, вы запустите пример приложения с помощью Maven.
 author: jpconnock
 ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 11/04/2019
 ms.author: jeconnoc
-ms.openlocfilehash: 01bf33c3ed50311b031e015b24566f5819ac0857
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 61436b4317e85b67387a75e87c31a1c6cd13d84f
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74123834"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74895411"
 ---
 # <a name="quickstart-launch-an-azure-spring-cloud-app-using-the-maven-plug-in"></a>Краткое руководство. Запуск приложения Azure Spring Cloud с помощью подключаемого модуля Maven
 
@@ -38,16 +38,7 @@ ms.locfileid: "74123834"
 1. [Установка Git](https://git-scm.com/).
 2. [Установите JDK версии 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable).
 3. [Установите Maven 3.0 или более поздней версии](https://maven.apache.org/download.cgi).
-4. [Установите Azure CLI (версии 2.0.67 или выше)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
-5. [Подпишитесь на бесплатную версию Azure](https://azure.microsoft.com/free/).
-
-## <a name="install-the-azure-cli-extension"></a>Установка расширения Azure CLI
-
-Установите расширение Azure Spring Cloud для Azure CLI с помощью следующей команды:
-
-```Azure CLI
-az extension add --name spring-cloud
-```
+4. [Подпишитесь на бесплатную версию Azure](https://azure.microsoft.com/free/).
 
 ## <a name="provision-a-service-instance-on-the-azure-portal"></a>Подготовка экземпляра службы к работе на портале Azure
 
@@ -122,3 +113,5 @@ az extension add --name spring-cloud
 > [!div class="nextstepaction"]
 > [Подготовка приложения Azure Spring Cloud к развертыванию](spring-cloud-tutorial-prepare-app-deployment.md)
 > [Дополнительные сведения о подключаемых модулях Maven для Azure](https://github.com/microsoft/azure-maven-plugin)
+
+Дополнительные примеры доступны на GitHub: [Примеры для Azure Spring Cloud](https://github.com/Azure-Samples/Azure-Spring-Cloud-Samples/tree/master/service-binding-cosmosdb-sql).

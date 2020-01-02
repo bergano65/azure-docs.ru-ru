@@ -6,19 +6,19 @@ documentationcenter: ''
 author: amberb
 manager: amberb
 editor: ''
-ms.service: billing
+ms.service: cost-management-billing
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: banders
-ms.openlocfilehash: acb41de8344d1467e86c38c7c99e8ad4ab517ead
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: bd561f616c9e120a38f1c6b125e349684f82942e
+ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72375825"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74665616"
 ---
 # <a name="create-an-additional-azure-subscription"></a>Создание дополнительной подписки Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "72375825"
 |---------|---------|
 |Соглашение Enterprise (EA) |  Роль владельца учетной записи при регистрации на соглашение Enterprise. Дополнительные сведения см. в описании [административных ролей в Azure при использовании Соглашения Azure Enterprise](billing-understand-ea-roles.md).    |
 |Клиентское соглашение Майкрософт (MCA) |  Роль владельца или участника в разделе счетов, профиле выставления счетов или учетной записи выставления счетов. Или роль создателя подписки Azure в разделе счета.  Дополнительные сведения см. в статье [Роли и задачи выставления счетов в подписке](billing-understand-mca-roles.md#subscription-billing-roles-and-tasks).    |
-|Соглашение с партнером Майкрософт (ПСМ) |   Роль глобального администратора и агента администратора в партнерской организации. Дополнительные сведения см. в статье [Назначение пользователям ролей и разрешений](https://docs.microsoft.com/partner-center/permissions-overview)  |
+|Соглашение с партнером Майкрософт (ПСМ) |   Роль глобального администратора и агента администратора в партнерской организации CSP. Дополнительные сведения см. в статье [Назначение пользователям ролей и разрешений](https://docs.microsoft.com/partner-center/permissions-overview).  Пользователь должен войти в клиент-партнер для создания подписок Azure.   |
 
 ## <a name="create-a-subscription-in-the-azure-portal"></a>Создание подписки на портале Azure
 

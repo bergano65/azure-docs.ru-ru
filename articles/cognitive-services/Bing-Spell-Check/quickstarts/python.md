@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Проверка орфографии с помощью REST API проверки орфографии Bing и Python
+title: Краткое руководство. Проверка орфографии с помощью REST API и Python — Проверка орфографии Bing
 titleSuffix: Azure Cognitive Services
 description: Приступите к работе с REST API проверки орфографии Bing для проверки орфографии и грамматики.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: bing-spell-check
 ms.topic: quickstart
 ms.date: 09/13/2019
 ms.author: aahi
-ms.openlocfilehash: fef329a46594071b5f1621e9a46140f407eeb415
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 9a75148ab1ca1dae0acb5af8128fe1220fbbe8b3
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70996723"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74378807"
 ---
 # <a name="quickstart-check-spelling-with-the-bing-spell-check-rest-api-and-python"></a>Краткое руководство. Проверка орфографии с помощью REST API проверки орфографии Bing и Python
 

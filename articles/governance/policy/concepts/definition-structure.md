@@ -1,14 +1,14 @@
 ---
 title: Сведения о структуре определения политики
 description: Описывает, как определения политик используются для установки соглашений о ресурсах Azure в Организации.
-ms.date: 11/04/2019
+ms.date: 11/26/2019
 ms.topic: conceptual
-ms.openlocfilehash: afb06771422b2f8117383b0bde711dc3e1a4d238
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 2126415c3ae7ecb14a47c79dacd67aee656cd745
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74279458"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74894307"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
 
@@ -20,9 +20,9 @@ ms.locfileid: "74279458"
 Для создания определения политики используется JSON. Определение политики содержит следующие элементы:
 
 - mode;
-- Параметры
+- parameters
 - display name
-- Описание
+- Description (Описание)
 - policy rule
   - logical evaluation
   - effect
@@ -63,7 +63,7 @@ ms.locfileid: "74279458"
 
 Все примеры политик Azure приведены в [примерах политики Azure](../samples/index.md).
 
-## <a name="mode"></a>Режим
+## <a name="mode"></a>Mode
 
 **Режим** настраивается в зависимости от того, нацелена ли политика в свойство Azure Resource Manager или на свойство поставщика ресурсов.
 
@@ -90,7 +90,7 @@ ms.locfileid: "74279458"
 > [!NOTE]
 > Режимы поставщиков ресурсов поддерживают только встроенные определения политик и не поддерживают инициативы в предварительной версии.
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>Параметры
 
 Параметры помогают упростить управление политиками за счет сокращения числа определений политик. Параметры можно рассматривать как поля в форме: `name`, `address`, `city`, `state`. Эти параметры никогда не меняются, однако их значения изменяются в зависимости от того, как пользователь заполняет форму.
 Точно так же параметры работают при создании политик. Добавив параметры в определение политики, вы сможете повторно использовать ее в различных сценариях, указывая разные значения.
@@ -308,7 +308,7 @@ ms.locfileid: "74279458"
 }
 ```
 
-### <a name="value"></a>Значение
+### <a name="value"></a>Value
 
 Условия также можно настраивать с помощью **value**. **value** проверяет условия на соответствие [параметрам](#parameters), [поддерживаемым функциям шаблонов](#policy-functions) или литералам.
 **value** используется в паре с любым поддерживаемым [условием](#conditions).
@@ -318,7 +318,7 @@ ms.locfileid: "74279458"
 
 #### <a name="value-examples"></a>Примеры значений
 
-В этом примере правила политики используют **value** для сравнения результата функции `resourceGroup()` и возвращенного свойства **name** с условием **like** для `*netrg`. Это правило запрещает любой ресурс, с `Microsoft.Network/*`типом **, отличающимся от** , в любой группе ресурсов, имя которой заканчивается на `*netrg`.
+В этом примере правила политики используют **value** для сравнения результата функции `resourceGroup()` и возвращенного свойства **name** с условием **like** для `*netrg`. Это правило запрещает любой ресурс, с **типом**, отличающимся от `Microsoft.Network/*`, в любой группе ресурсов, имя которой заканчивается на `*netrg`.
 
 ```json
 {
@@ -394,6 +394,146 @@ ms.locfileid: "74279458"
 
 После изменения правила политики `if()` проверяет длину **имени** , прежде чем пытаться получить `substring()` значения с менее чем тремя символами. Если **имя** слишком короткое, возвращается значение "не начинается с ABC", а затем сравнивается с **ABC**. Ресурс с коротким именем, который не начинается с **ABC** , по-прежнему не проходит правило политики, но больше не вызывает ошибку во время вычисления.
 
+### <a name="count"></a>Количество
+
+Условия, которые подсчитывает, сколько элементов массива в полезных данных ресурса соответствуют условному выражению, могут быть сформированы с помощью выражения **Count** . Распространенными сценариями является проверка того, что по крайней мере один из "," только один из "," все "или" ни одного из "элементов массива не удовлетворяет условию. Функция **Count** вычисляет каждый элемент массива для выражения условия и суммирует _истинные_ результаты, которые затем сравниваются с оператором выражения.
+
+Структура выражения **Count** имеет следующие значения:
+
+```json
+{
+    "count": {
+        "field": "<[*] alias>",
+        "where": {
+            /* condition expression */
+        }
+    },
+    "<condition>": "<compare the count of true condition expression array members to this value>"
+}
+```
+
+Для **счетчика**используются следующие свойства:
+
+- **Count. поле** (обязательно): содержит путь к массиву и должен быть псевдонимом массива. Если массив отсутствует, выражение вычисляется как _false_ без учета выражения условия.
+- **Count. Where** (необязательно): выражение условия для индивидуального вычисления каждого [\[\*\] член массива псевдонимов](#understanding-the--alias) **Count. Field**. Если это свойство не указано, все элементы массива с путем "Field" оцениваются в _значение true_. В этом свойстве можно использовать любое [условие](../concepts/definition-structure.md#conditions) .
+  [Логические операторы](#logical-operators) можно использовать внутри этого свойства для создания сложных требований к оценке.
+- **условие\<\>** (обязательно). значение сравнивается с числом элементов, которые соответствуют условному выражению **Count. Where** . Следует использовать числовое [условие](../concepts/definition-structure.md#conditions) .
+
+#### <a name="count-examples"></a>Примеры количества
+
+Пример 1. Проверка пустого массива
+
+```json
+{
+    "count": {
+        "field": "Microsoft.Network/networkSecurityGroups/securityRules[*]"
+    },
+    "equals": 0
+}
+```
+
+Пример 2. Проверка только одного элемента массива для соответствия условному выражению
+
+```json
+{
+    "count": {
+        "field": "Microsoft.Network/networkSecurityGroups/securityRules[*]",
+        "where": {
+            "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].description",
+            "equals": "My unique description"
+        }
+    },
+    "equals": 1
+}
+```
+
+Пример 3. Проверка по крайней мере одного элемента массива на соответствие условному выражению
+
+```json
+{
+    "count": {
+        "field": "Microsoft.Network/networkSecurityGroups/securityRules[*]",
+        "where": {
+            "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].description",
+            "equals": "My common description"
+        }
+    },
+    "greaterOrEquals": 1
+}
+```
+
+Пример 4. Проверка соответствия всех элементов массива объектов условному выражению
+
+```json
+{
+    "count": {
+        "field": "Microsoft.Network/networkSecurityGroups/securityRules[*]",
+        "where": {
+            "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].description",
+            "equals": "description"
+        }
+    },
+    "equals": "[length(field(Microsoft.Network/networkSecurityGroups/securityRules[*]))]"
+}
+```
+
+Пример 5. Проверка соответствия всех элементов массива строк условному выражению
+
+```json
+{
+    "count": {
+        "field": "Microsoft.Sql/servers/securityAlertPolicies/emailAddresses[*]",
+        "where": {
+            "field": "Microsoft.Sql/servers/securityAlertPolicies/emailAddresses[*]",
+            "like": "*@contoso.com"
+        }
+    },
+    "equals": "[length(field('Microsoft.Sql/servers/securityAlertPolicies/emailAddresses[*]'))]"
+}
+```
+
+Пример 6. Использование **поля** внутри **значения** для проверки соответствия всех элементов массива условному выражению
+
+```json
+{
+    "count": {
+        "field": "Microsoft.Sql/servers/securityAlertPolicies/emailAddresses[*]",
+        "where": {
+            "value": "[last(split(first(field('Microsoft.Sql/servers/securityAlertPolicies/emailAddresses[*]')), '@'))]",
+            "equals": "contoso.com"
+        }
+    },
+    "equals": "[length(field('Microsoft.Sql/servers/securityAlertPolicies/emailAddresses[*]'))]"
+}
+```
+
+Пример 7. Проверка того, что хотя бы один элемент массива соответствует нескольким свойствам в выражении условия
+
+```json
+{
+    "count": {
+        "field": "Microsoft.Network/networkSecurityGroups/securityRules[*]",
+        "where": {
+            "allOf": [
+                {
+                    "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].direction",
+                    "equals": "Inbound"
+                },
+                {
+                    "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].access",
+                    "equals": "Allow"
+                },
+                {
+                    "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].destinationPortRange",
+                    "equals": "3389"
+                }
+            ]
+        }
+    },
+    "greater": 0
+}
+```
+
 ### <a name="effect"></a>Результат
 
 Политика Azure поддерживает следующие типы эффектов:
@@ -458,6 +598,31 @@ ms.locfileid: "74279458"
 
 Список псевдонимов постоянно пополняется. Чтобы узнать, какие псевдонимы в настоящее время поддерживаются службой "Политика Azure", используйте один из следующих методов:
 
+- Расширение политики Azure для Visual Studio Code (рекомендуется)
+
+  Используйте [расширение политики Azure для Visual Studio Code](../how-to/extension-for-vscode.md) , чтобы просматривать и находить псевдонимы для свойств ресурсов.
+
+  ![Расширение политики Azure для Visual Studio Code](../media/extension-for-vscode/extension-hover-shows-property-alias.png)
+
+- График ресурсов Azure
+
+  Используйте оператор `project` для вывода **псевдонима** ресурса.
+
+  ```kusto
+  Resources
+  | where type=~'microsoft.storage/storageaccounts'
+  | limit 1
+  | project aliases
+  ```
+  
+  ```azurecli-interactive
+  az graph query -q "Resources | where type=~'microsoft.storage/storageaccounts' | limit 1 | project aliases"
+  ```
+  
+  ```azurepowershell-interactive
+  Search-AzGraph -Query "Resources | where type=~'microsoft.storage/storageaccounts' | limit 1 | project aliases"
+  ```
+
 - Azure PowerShell
 
   ```azurepowershell-interactive
@@ -470,7 +635,7 @@ ms.locfileid: "74279458"
   (Get-AzPolicyAlias -NamespaceMatch 'compute').Aliases
   ```
 
-- Интерфейс командной строки Azure
+- Azure CLI
 
   ```azurecli-interactive
   # Login first with az login if not using Cloud Shell
@@ -490,14 +655,15 @@ ms.locfileid: "74279458"
 
 ### <a name="understanding-the--alias"></a>Общие сведения о псевдониме [*]
 
-Некоторые доступные псевдонимы имеют версию с отображаемым именем "Обычный", а другие — с подключенным к ней **[\*]** . Например,
+Несколько доступных псевдонимов имеют версию, которая отображается как "нормальное", а другая имеет **\[\*\]** прикреплена к ней. Пример.
 
 - `Microsoft.Storage/storageAccounts/networkAcls.ipRules`
 - `Microsoft.Storage/storageAccounts/networkAcls.ipRules[*]`
 
 Псевдоним "Обычная" представляет поле как одно значение. Это поле предназначено для сценариев сравнения точного соответствия, если весь набор значений должен быть в точности определен, но не больше и не меньше.
 
-Псевдоним **[\*]** позволяет сравнивать со значением каждого элемента массива и конкретными свойствами каждого элемента. Такой подход позволяет сравнивать свойства элементов для сценариев "If None of", "If any of", или "Если все из". С помощью **ипрулес [\*]** в качестве примера можно проверить, что каждое _действие_ _отклоняется_, но не будет беспокоиться о том, сколько правил существует или какое _значение_ является IP-адресом. Этот пример правила проверяет наличие совпадений **ипрулес [\*]. Value** to **10.0.4.1** и применяет **еффекттипе** только в том случае, если не найдено хотя бы одно совпадение:
+**\[\*\]** псевдоним позволяет сравнивать со значением каждого элемента массива и конкретными свойствами каждого элемента. Такой подход позволяет сравнивать свойства элементов для сценариев "If None of", "If any of", или "Если все из". Для более сложных сценариев используйте выражение условия [Count](#count) . С помощью **ипрулес\[\*\]** , пример будет проверять, что каждое _действие_ _отклоняется_, но не беспокоясь о том, сколько правил существует или какое _значение_ является IP-адресом.
+Этот пример правила проверяет наличие совпадений **ипрулес\[\*\]. Value** to **10.0.4.1** и применяет **еффекттипе** только в том случае, если не найдено хотя бы одно совпадение:
 
 ```json
 "policyRule": {
@@ -518,6 +684,8 @@ ms.locfileid: "74279458"
     }
 }
 ```
+
+
 
 Дополнительные сведения см. [в разделе Вычисление псевдонима [\*]](../how-to/author-policies-for-arrays.md#evaluating-the--alias).
 
@@ -599,10 +767,10 @@ ms.locfileid: "74279458"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Просмотрите примеры в [примерах политики Azure](../samples/index.md).
-- См. дополнительные сведения о [действиях политик](effects.md).
+- Изучите [сведения о действии политик](effects.md).
 - Узнайте, как [программно создавать политики](../how-to/programmatically-create.md).
 - Узнайте, как [получить данные о соответствии](../how-to/get-compliance-data.md).
 - Узнайте, как [исправлять несоответствующие ресурсы](../how-to/remediate-resources.md).

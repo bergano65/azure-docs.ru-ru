@@ -1,29 +1,25 @@
 ---
-title: Настройка домена издателя приложения
+title: Настройка домена издателя приложения | Службы
 titleSuffix: Microsoft identity platform
 description: Узнайте, как настроить домен издателя приложения, чтобы пользователи могли узнать, куда отправляются данные.
 services: active-directory
-documentationcenter: dev-center-name
 author: rwike77
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/05/2019
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, zachowd
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3558e589004e0488e5b96b0e39bd3f5ceea69658
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 2739f5db8c50449e3481ccdfb495b30edba54ce1
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74013057"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74966985"
 ---
 # <a name="how-to-configure-an-applications-publisher-domain"></a>Как настроить домен издателя приложения
 
@@ -55,9 +51,9 @@ ms.locfileid: "74013057"
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 
-1. Если ваша учетная запись имеется в нескольких клиентах Azure AD:
-   1. Выберите свой профиль в меню в правом верхнем углу страницы, а затем **перейдите в каталог**.
-   1. Измените сеанс на клиенте Azure AD, где вы хотите создать приложение.
+1. Если ваша учетная запись присутствует в нескольких клиентах Azure AD:
+   1. Выберите свой профиль в меню в правом верхнем углу страницы, а затем **Переключение каталога**.
+   1. Измените сеанс на арендатор Azure AD, в котором нужно создать приложение.
 
 1. Перейдите к [Azure Active Directory > Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) , чтобы найти и выбрать приложение, которое требуется настроить.
 

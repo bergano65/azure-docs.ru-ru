@@ -1,6 +1,6 @@
 ---
-title: Azure Functions trigger and binding example
-description: Learn to configure Azure Function bindings
+title: Пример триггера и привязки функций Azure
+description: Научитесь настраивать привязки функций Azure.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 02/18/2019
@@ -12,9 +12,9 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74227239"
 ---
-# <a name="azure-functions-trigger-and-binding-example"></a>Azure Functions trigger and binding example
+# <a name="azure-functions-trigger-and-binding-example"></a>Пример триггера и привязки функций Azure
 
-This article demonstrates how to configure a [trigger and bindings](./functions-triggers-bindings.md) in an Azure Function.
+В этой статье показано, как настроить [триггер и привязки](./functions-triggers-bindings.md) в функции Azure.
 
 Предположим, вам нужно, чтобы каждый раз, когда в хранилище очередей Azure появляется новое сообщение, создавалась строка в хранилище таблиц Azure. Этот сценарий можно реализовать с помощью триггера для хранилища очередей Azure и выходной привязки хранилища таблиц Azure. 
 
@@ -82,7 +82,7 @@ public class Person
 
 ## <a name="javascript-example"></a>Пример JavaScript
 
-The same *function.json* file can be used with a JavaScript function:
+Один и тот же файл *Function. JSON* можно использовать с функцией JavaScript:
 
 ```javascript
 // From an incoming queue message that is a JSON object, add fields and write to Table Storage
@@ -100,7 +100,7 @@ function generateRandomId() {
 }
 ```
 
-## <a name="class-library-example"></a>Class library example
+## <a name="class-library-example"></a>Пример библиотеки классов
 
 В библиотеке классов эта информация о триггере и привязке &mdash; имена очередей и таблиц, учетные записи хранения, входные и выходные параметры функции &mdash; передаются в виде атрибутов вместо файла function.json. Ниже приведен пример:
 
@@ -130,9 +130,9 @@ public class Person
 }
 ```
 
-You now have a working function that is triggered by an Azure Queue and outputs data to Azure Table storage.
+Теперь у вас есть рабочая функция, активируемая очередью Azure, которая выводит данные в хранилище таблиц Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Azure Functions binding expression patterns](./functions-bindings-expressions-patterns.md)
+> [Шаблоны выражений привязки функций Azure](./functions-bindings-expressions-patterns.md)

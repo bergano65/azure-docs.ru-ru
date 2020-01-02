@@ -1,25 +1,18 @@
 ---
-title: Размещение с высокой плотностью с использованием масштабирования для каждого приложения в службе приложений Azure | Документация Майкрософт
-description: Высокая плотность размещения в службе приложений Azure
+title: Масштабирование на уровне приложения для размещения с высокой плотностью
+description: Масштабировать приложения независимо от планов службы приложений и оптимизировать масштабируемые экземпляры в плане.
 author: btardif
-manager: erikre
-editor: ''
-services: app-service\web
-documentationcenter: ''
 ms.assetid: a903cb78-4927-47b0-8427-56412c4e3e64
-ms.service: app-service-web
-ms.workload: web
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 05/13/2019
 ms.author: byvinyal
 ms.custom: seodec18
-ms.openlocfilehash: 7130c9547e0778ce40a0ad1c1ea41607a02df23e
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: f1ca4958fe2608d0c040ef5b93827a7e71a4151c
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70088103"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74672351"
 ---
 # <a name="high-density-hosting-on-azure-app-service-using-per-app-scaling"></a>Высокая плотность размещения в службе приложений Azure с использованием масштабирования для каждого приложения
 
@@ -140,11 +133,11 @@ Set-AzWebApp $newapp
 1. Задайте для флага `PerSiteScaling` плана службы приложений значение "true".
 1. Новые приложения будут созданы и назначены этому плану службы приложений, при этом для свойства **numberOfWorkers** будет задано значение **1**.
    - Использование этой конфигурации обеспечивает максимально возможную плотность.
-1. Число рабочих ролей можно настроить отдельно для каждого приложения, чтобы предоставить дополнительные ресурсы согласно требованиям. Пример:
+1. Число рабочих ролей можно настроить отдельно для каждого приложения, чтобы предоставить дополнительные ресурсы согласно требованиям. Пример.
    - Для приложения с высоким уровнем использования свойству **numberOfWorkers** можно присвоить значение **3**, чтобы обеспечить большую вычислительную мощность для этого приложения.
    - Для приложений с низким уровнем использования свойству **numberOfWorkers** можно присвоить значение **1**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Подробный обзор планов службы приложений Azure](overview-hosting-plans.md)
 - [Введение в среду службы приложения](environment/app-service-app-service-environment-intro.md)

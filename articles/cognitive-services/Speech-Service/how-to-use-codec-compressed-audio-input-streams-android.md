@@ -1,7 +1,7 @@
 ---
 title: Потоковая передача сжатого аудио кодека с помощью пакета SDK для распознавания речи в Android
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как выполнять потоковую передачу сжатых аудио в службы речевого обучения Azure с помощью речевого пакета SDK на Android.
+description: Узнайте, как выполнять потоковую передачу сжатых аудио в службу речи с помощью речевого пакета SDK на Android.
 services: cognitive-services
 author: amitkumarshukla
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.author: amishu
-ms.openlocfilehash: 76a4b010dd54a9cc6224432adf615814520ef4fd
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 01135229167dde3784137ab1b06dfc931766a2e0
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74109907"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74805847"
 ---
 # <a name="how-to-use-codec-compressed-audio-input-with-the-speech-sdk-on-android"></a>Как использовать сжатый аудиокодек с пакетом SDK для Android
 
@@ -37,7 +37,7 @@ ms.locfileid: "74109907"
 
 Сжатый аудиокодек реализован с помощью [гстреамер](https://gstreamer.freedesktop.org). В целях лицензирования двоичные файлы Гстреамер не компилируются вместе с пакетом SDK. Вам потребуется использовать предварительно созданные двоичные файлы для Android. Сведения о загрузке предварительно созданных библиотек см. в разделе [Установка для разработки Android](https://gstreamer.freedesktop.org/documentation/installing/for-android-development.html?gi-language=c).
 
-требуется `libgstreamer_android.so`. Убедитесь, что подключаемые модули Гстреамер связаны в `libgstreamer_android.so`.
+Значение `libgstreamer_android.so` обязательно. Убедитесь, что подключаемые модули Гстреамер связаны в `libgstreamer_android.so`.
 
 ```make
 GSTREAMER_PLUGINS := coreelements app audioconvert mpg123 audioresample audioparsers ogg opusparse opus wavparse alaw mulaw flac
@@ -133,7 +133,7 @@ ndk-build -C $(pwd)/gstreamer "NDK_APPLICATION_MK=Application.mk" APP_ABI=armeab
 
 ## <a name="example-code-using-codec-compressed-audio-input"></a>Пример кода, использующий сжатые звуковые входные кодеки
 
-Чтобы выполнить потоковую передачу в сжатом аудио формате в речевые службы, создайте `PullAudioInputStream` или `PushAudioInputStream`. Затем создайте `AudioConfig` из экземпляра класса Stream, указав формат сжатия потока.
+Чтобы выполнить потоковую передачу в сжатом аудио формате в службу распознавания речи, создайте `PullAudioInputStream` или `PushAudioInputStream`. Затем создайте `AudioConfig` из экземпляра класса Stream, указав формат сжатия потока.
 
 Предположим, что у вас есть класс входного потока с именем `myPullStream` и опус/OGG. Код может выглядеть следующим образом:
 
@@ -157,7 +157,7 @@ SpeechRecognitionResult result = recognizer.recognizeOnceAsync().get()
 String text = result.getText();
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Получение пробной версии службы "Речь"](https://azure.microsoft.com/try/cognitive-services/)
+- [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
 - [Узнайте, как распознать речь в Java](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-java)

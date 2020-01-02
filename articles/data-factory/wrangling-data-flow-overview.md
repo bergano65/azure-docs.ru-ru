@@ -7,12 +7,12 @@ ms.reviewer: gamal
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/01/2019
-ms.openlocfilehash: e36cc044e6a4160d16f15b93d8a88d946f476c89
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: 56c2d96e6e4a5900770aaefcabb424eddb1cbde6
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74287101"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74531377"
 ---
 # <a name="what-are-wrangling-data-flows"></a>Что такое потоки данных структурирование?
 
@@ -24,7 +24,7 @@ ms.locfileid: "74287101"
 
 Потоки данных структурирование особенно полезны для инженеров по работе с данными или "интеграторов данных".
 
-## <a name="use-cases"></a>Варианты использования
+## <a name="use-cases"></a>Примеры использования
 
 ### <a name="fast-interactive-data-exploration-and-preparation"></a>Быстрое исследование и подготовка данных в интерактивном режиме
 
@@ -45,7 +45,7 @@ ms.locfileid: "74287101"
 | [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md) | - | Ключ учетной записи |
 | [Хранилище Azure Data Lake Gen1](connector-azure-data-lake-store.md) | - | Субъект-служба |
 | [Хранилище Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | - | Ключ учетной записи, субъект-служба |
-| [База данных SQL Azure](connector-azure-sql-database.md) | - | Аутентификация SQL |
+| [база данных SQL Azure;](connector-azure-sql-database.md) | - | Аутентификация SQL |
 | [Azure синапсе Analytics](connector-azure-sql-data-warehouse.md) | - | Аутентификация SQL |
 
 ## <a name="the-mashup-editor"></a>Редактор гибридных приложений
@@ -62,6 +62,6 @@ ms.locfileid: "74287101"
 
 В настоящее время поток данных структурирование поддерживает запись только в один приемник.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [создать поток данных структурирование](wrangling-data-flow-tutorial.md).

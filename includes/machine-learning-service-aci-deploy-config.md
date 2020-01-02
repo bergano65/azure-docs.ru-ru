@@ -1,19 +1,19 @@
 ---
-author: larryfr
+author: Blackmist
 ms.service: machine-learning
 ms.topic: include
 ms.date: 10/06/2019
 ms.author: larryfr
-ms.openlocfilehash: b3c1ad48da0ef28c73e3af5d1e30414534f4e94d
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 4f861d5e7832512e2c2732f1ce5dbf6ac76b91b1
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73800080"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74935943"
 ---
 Записи в документе `deploymentconfig.json` соответствуют параметрам для [аЦивебсервице. deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aci.aciservicedeploymentconfiguration?view=azure-ml-py). В следующей таблице описывается сопоставление между сущностями в документе JSON и параметрами метода.
 
-| Сущность JSON | Параметр метода | Description (Описание) |
+| Сущность JSON | Параметр метода | Описание |
 | ----- | ----- | ----- |
 | `computeType` | Нет данных | Целевой объект вычисления. Для ACI значение должно быть `ACI`. |
 | `containerResourceRequirements` | Нет данных | Контейнер для сущностей ЦП и памяти. |
@@ -21,7 +21,7 @@ ms.locfileid: "73800080"
 | &emsp;&emsp;`memoryInGB` | `memory_gb` | Объем памяти (в ГБ), выделяемой для данной веб-службы. По умолчанию, `0.5` |
 | `location` | `location` | Регион Azure для развертывания этой службы. Если не указано, будет использоваться расположение рабочей области. Дополнительные сведения о доступных регионах можно найти здесь: [ACI regions](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=container-instances) . |
 | `authEnabled` | `auth_enabled` | Следует ли включить проверку подлинности для этой WebService. По умолчанию имеет значение false |
-| `sslEnabled` | `ssl_enabled` | Следует ли включить SSL для этой WebService. Значение по умолчанию — false. |
+| `sslEnabled` | `ssl_enabled` | Следует ли включить SSL для этой WebService. По умолчанию принимает значение False. |
 | `appInsightsEnabled` | `enable_app_insights` | Следует ли включить AppInsights для этой WebService. По умолчанию имеет значение false |
 | `sslCertificate` | `ssl_cert_pem_file` | Файл сертификата, необходимый, если включен протокол SSL |
 | `sslKey` | `ssl_key_pem_file` | Файл ключа, необходимый, если включен протокол SSL |

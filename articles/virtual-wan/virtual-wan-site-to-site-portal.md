@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/04/2019
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect my local site to my VNets using Virtual WAN and I don't want to go through a Virtual WAN partner.
-ms.openlocfilehash: 82f662dd00805cf53c0581fb0a2b3322a0207a11
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: e17205af1ede845ea77b04f6f2b4c6babf3bc450
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74005716"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74482136"
 ---
 # <a name="tutorial-create-a-site-to-site-connection-using-azure-virtual-wan"></a>Руководство по Создание подключения "сеть — сеть" с помощью Виртуальной глобальной сети Azure
 
@@ -249,7 +249,7 @@ ms.locfileid: "74005716"
 * Инструкции на странице VPN-устройств не предназначены для Виртуальной глобальной сети, но вы можете использовать значения Виртуальной глобальной сети из файла конфигурации для настройки VPN-устройства вручную. 
 * Загружаемые скрипты конфигурации устройства, предназначенные для VPN-шлюза, не подходят для Виртуальной глобальной сети, так как ее конфигурация отличается.
 * Новая Виртуальная глобальная сеть поддерживает IKEv1 и IKEv2.
-* Виртуальная глобальная сеть может использовать только VPN-устройства на основе маршрута и инструкции устройства.
+* Виртуальная глобальная сеть может использовать политики VPN-устройства на основе маршрута и инструкции устройства.
 
 ## <a name="viewwan"></a>Просмотр виртуальной глобальной сети
 

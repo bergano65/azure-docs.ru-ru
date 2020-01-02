@@ -1,5 +1,6 @@
 ---
-title: Динамическая настройка пользовательского интерфейса Azure AD B2C с помощью пользовательских политик в Azure Active Directory B2C | Документация Майкрософт
+title: Динамическое изменение пользовательского интерфейса с помощью настраиваемых политик
+titleSuffix: Azure AD B2C
 description: Сведения о том, как обеспечить поддержку нескольких фирменных символик с помощью содержимого HTML5 или каскадных таблиц стилей (CSS), которое динамически изменяется в среде выполнения.
 services: active-directory-b2c
 author: mmacy
@@ -10,20 +11,20 @@ ms.topic: conceptual
 ms.date: 09/20/2017
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 43c0da3ca8fa4b2f74d48b0e202cc56bc8b9406c
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: dbc932bd7a68212ce94f2ad07de6e625d26c0918
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68227224"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74950244"
 ---
-# <a name="azure-active-directory-b2c-configure-the-ui-with-dynamic-content-by-using-custom-policies"></a>Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики
+# <a name="azure-active-directory-b2c-configure-the-ui-with-dynamic-content-by-using-custom-policies"></a>Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
 Пользовательские политики Azure Active Directory B2C (Azure AD B2C) позволяют отправлять параметр в строке запроса. Передавая параметр в конечную точку HTML, вы можете динамически изменять содержимое страницы. Например, можно изменить фоновое изображение страницы регистрации или входа в Azure AD B2C на основе параметра, передаваемого из веб-приложения или мобильного приложения.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Эта статья посвящена настройке пользовательского интерфейса Azure AD B2C с помощью *динамического содержимого*, используя пользовательские политики. Сведения по началу работы см. в статье [Azure Active Directory B2C. Настройка пользовательского интерфейса с помощью настраиваемой политики](active-directory-b2c-ui-customization-custom.md).
 
 >[!NOTE]
@@ -123,7 +124,7 @@ ms.locfileid: "68227224"
 
 Найдите элемент `<img>` со значением `ID` *background_background_image* и замените `src` на **https://kbdevstorage1.blob.core.windows.net/asset-blobs/19889_en_1** или любое другое необходимое изображение фона.
 
-![элемент img с пользовательским значением src background_background_image](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-static-background.png)
+![элемент img со значением пользовательского background_background_image src](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-static-background.png)
 
 ### <a name="step-24-add-your-view-to-the-mvc-controller"></a>Шаг 2.4. Добавление представления в контроллер MVC
 
@@ -167,7 +168,7 @@ ms.locfileid: "68227224"
 
 5. Скопируйте URL-адрес _единой_ страницы, например _https://<имя_приложения>.azurewebsites.net/home/unified_.
 
-## <a name="step-3-configure-cors-in-azure-app-service"></a>Шаг 3. Настройка CORS в Службе приложений Azure
+## <a name="step-3-configure-cors-in-azure-app-service"></a>Шаг 3. Настройка CORS в службе приложений Azure
 1. На [портале Azure](https://portal.azure.com/) выберите **Службы приложений**, а затем щелкните имя своего приложения API.
 
     ![Выбор приложения API на портале Azure](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-CORS1.png)
@@ -196,7 +197,7 @@ ms.locfileid: "68227224"
     >Чтобы проверить, что на сайте, где вы размещаете содержимое, включен механизм CORS и можно тестировать запросы CORS, перейдите на веб-сайт [test-cors.org](https://test-cors.org/).
 
 * Обслуживаемое содержимое защищено с помощью **HTTPS**.
-* Вы используете *абсолютные URL-адреса*, `https://yourdomain/content`такие как, для всех ссылок, содержимого CSS и изображений.
+* Вы используете *абсолютные URL-адреса*, например `https://yourdomain/content`, для всех ссылок, содержимого CSS и изображений.
 
 ## <a name="step-5-configure-your-content-definition"></a>Шаг 5. Настройка определения содержимого
 Чтобы настроить `ContentDefinition`, сделайте следующее:
@@ -215,7 +216,7 @@ ms.locfileid: "68227224"
 
     ![Пример фрагмента XML с выделенным элементом LoadUri](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-content-definition.png)
 
-## <a name="step-6-upload-the-policy-to-your-tenant"></a>Шаг 6. Отправка политики в клиент
+## <a name="step-6-upload-the-policy-to-your-tenant"></a>Шаг 6. Отправка политики в клиент
 1. На [портале Azure](https://portal.azure.com) переключитесь в [контекст клиента Azure AD B2C](active-directory-b2c-navigate-to-b2c-context.md) и выберите **Azure AD B2C**.
 
 2. Выберите **Инфраструктура процедур идентификации**.
@@ -232,9 +233,9 @@ ms.locfileid: "68227224"
 1. Откройте **параметры Azure AD B2C** и выберите **Identity Experience Framework**.
 
     >[!NOTE]
-    >Для использования команды Run now (Запустить сейчас) необходимо, чтобы в клиенте было предварительно зарегистрировано хотя бы одно приложение. Дополнительные сведения о регистрации приложений см. в статье [Azure AD B2C: начало работы](active-directory-b2c-get-started.md) или [Регистрация приложения](active-directory-b2c-app-registration.md).
+    >Для использования команды "Запустить сейчас" необходимо, чтобы в клиенте было предварительно зарегистрировано хотя бы одно приложение. Дополнительные сведения о регистрации приложений см. в статье [Azure AD B2C: начало работы](active-directory-b2c-get-started.md) или [Регистрация приложения](active-directory-b2c-app-registration.md).
 
-2. Откройте **B2C_1A_signup_signin**, отправленную вами пользовательскую политику проверяющей стороны, а затем выберите **Run Now** (Запустить сейчас).
+2. Откройте **B2C_1A_signup_signin**, отправленную вами пользовательскую политику проверяющей стороны, а затем выберите **Запустить сейчас**.
     Вы должны увидеть настраиваемый HTML5 с ранее созданным фоном.
 
     ![Политика регистрации или входа в систему](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-demo1.png)
@@ -261,7 +262,7 @@ ms.locfileid: "68227224"
     </RelyingParty>
     ```
 
-### <a name="step-82-change-your-code-to-accept-a-query-string-parameter-and-replace-the-background-image"></a>Шаг 8.2. Изменение кода, позволяющее принять параметр строки запроса и заменить фоновое изображение
+### <a name="step-82-change-your-code-to-accept-a-query-string-parameter-and-replace-the-background-image"></a>Шаг 8.2. Изменение кода так, чтобы принять параметр строки запроса и заменить фоновое изображение
 Измените метод `unified` HomeController для приема параметра campaignId. Затем метод проверяет значение параметра и устанавливает соответствующее значение для переменной `ViewData["background"]`.
 
 1. Откройте файл *Controllers\HomeController.cs*, а затем измените метод `unified`, добавив следующий фрагмент кода:
@@ -294,7 +295,7 @@ ms.locfileid: "68227224"
 
     ![элемент img с выделенным значением src ](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-dynamic-background.png)
 
-### <a name="83-upload-the-changes-and-publish-your-policy"></a>8.3. Отправка изменений и публикация политики
+### <a name="83-upload-the-changes-and-publish-your-policy"></a>Шаг 8.3. Отправка изменений и публикация политики
 1. Опубликуйте проект Visual Studio в службе приложений Azure.
 
 2. Отправьте файл политики *SignUporSignIn.xml* в Azure AD B2C.
@@ -321,19 +322,19 @@ ms.locfileid: "68227224"
 Если выбрать ссылку **Зарегистрироваться сейчас** на странице входа, в браузере отобразится фоновое изображение по умолчанию, а не определенное изображение. Это связано с тем, что вы изменили только страницу регистрации или входа в систему. Чтобы изменить остальную часть определений содержимого с самостоятельным утверждением, сделайте следующее:
 1. Вернитесь к шагу 2 и выполните следующие действия.
 
-    1\. Скачайте файл *selfasserted*.
+    а) Скачайте файл *selfasserted*.
 
-    2\. Скопируйте содержимое файла.
+    б) Скопируйте содержимое файла.
 
-    В. Создайте представление *selfasserted*.
+    в) Создайте представление *selfasserted*.
 
-    Г. Добавьте *selfasserted* в контроллер **Home**.
+    г) Добавьте *selfasserted* в контроллер **Home**.
 
 2. Вернитесь к шагу 4 и выполните следующие действия.
 
-    1\. В политике расширения найдите узел `<ContentDefinition>`, который содержит `Id="api.selfasserted"`, `Id="api.localaccountsignup"` и `Id="api.localaccountpasswordreset"`.
+    а) В политике расширения найдите узел `<ContentDefinition>`, который содержит `Id="api.selfasserted"`, `Id="api.localaccountsignup"` и `Id="api.localaccountpasswordreset"`.
 
-    2\. Задайте для атрибута `LoadUri` универсальный код ресурса (URI) *selfasserted*.
+    б) Задайте для атрибута `LoadUri` универсальный код ресурса (URI) *selfasserted*.
 
 3. Вернитесь к шагу 8.2 и измените код так, чтобы принимать параметры строки запроса, но на этот раз укажите функцию *selfasserted*.
 

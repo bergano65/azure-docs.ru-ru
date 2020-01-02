@@ -7,19 +7,16 @@ ms.service: azure-migrate
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.author: raynew
-ms.openlocfilehash: 856f7f7735435579ac14918ee8026f27b222773e
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 7bf47731f2a3621e7bbdc1b104d94e97f2d03099
+ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73715508"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74158656"
 ---
 # <a name="assess-servers-using-imported-data"></a>Оценка серверов по импортированным данным
 
-> [!NOTE]
-> Если эта функция отсутствует на портале миграции Azure, подождите. Предположительно, она появится в течение следующей недели.
-
-В этой статье описывается, как оценивать локальные серверы с помощью средства [Оценка серверов в службе "Миграция Azure"](migrate-services-overview.md#azure-migrate-server-assessment-tool) путем импорта метаданных сервера с использованием CSV-файла. Такой метод оценки позволяет обойтись без настройки модуля службы "Миграция Azure" для создания оценки. Это полезно в следующих случаях: 
+В этой статье описывается, как оценивать локальные серверы с помощью средства [Оценка серверов в службе "Миграция Azure"](migrate-services-overview.md#azure-migrate-server-assessment-tool) путем импорта метаданных сервера с использованием CSV-файла. Такой метод оценки позволяет обойтись без настройки модуля службы "Миграция Azure" для создания оценки. Это полезно в следующих случаях:
 
 - Перед развертыванием модуля нужно создать быструю начальную оценку.
 - Нет возможности развернуть модуль службы "Миграция Azure" в вашей организации.
@@ -49,7 +46,7 @@ ms.locfileid: "73715508"
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/pricing/free-trial/), прежде чем начинать работу.
 
 
-## <a name="set-azure-permissions-for-azure-migrate"></a>Настройка разрешений Azure для службы "Миграция Azure" 
+## <a name="set-azure-permissions-for-azure-migrate"></a>Настройка разрешений Azure для службы "Миграция Azure"
 
 Учетная запись Azure должна иметь разрешения на создание приложений проекта Миграции Azure.
 
@@ -116,7 +113,7 @@ ms.locfileid: "73715508"
 
 **Имя поля** | **Обязательное** | **Дополнительные сведения**
 --- | --- | ---
-**Server name** (Имя сервера) | Yes | Мы рекомендуем указать полное доменное имя. 
+**Server name** (Имя сервера) | Yes | Мы рекомендуем указать полное доменное имя.
 **IP-адрес** | Нет | Адрес сервера.
 **Number of cores** (Число ядер) | Yes | Общее число ядер процессора, выделенных для этого сервера.
 **Память** | Yes | Общий объем ОЗУ (МБ), выделенный для этого сервера.
@@ -144,7 +141,7 @@ ms.locfileid: "73715508"
 **Virtual machine manager ID** (Идентификатор диспетчера виртуальных машин) | Нет | Соответствует значению **InstanceUUid** для VMWare vCenter. Не используется для Hyper-V.
 **MAC address** (MAC-адрес)| Нет | MAC-адрес сервера.
 **BIOS ID** (Идентификатор BIOS) | Нет | Идентификатор BIOS сервера.
-**Custom server ID** (Пользовательский идентификатор сервера)| Нет | Уникальные идентификаторы серверов в локальной среде. <br/> Полезно для отслеживания импортированного сервера по локальному идентификатору. 
+**Custom server ID** (Пользовательский идентификатор сервера)| Нет | Уникальные идентификаторы серверов в локальной среде. <br/> Полезно для отслеживания импортированного сервера по локальному идентификатору.
 **Application 1 name** (Имя приложения 1) | Нет | Имя рабочих нагрузок, которые выполняются на сервере.<br/> Вы можете добавить сведения о дополнительных приложениях, [добавив столбцы](#add-multiple-applications) в этот шаблон. В общей сложности можно добавить до пяти приложений.
 **Application 1 type** (Тип приложения 1) | Нет | Тип рабочей нагрузки, которая выполняется на сервере.
 **Application 1 version** (Версия приложения 1) | Нет | Версия рабочей нагрузки, которая выполняется на сервере.
@@ -162,7 +159,7 @@ ms.locfileid: "73715508"
 
 ### <a name="add-multiple-disks"></a>Добавление нескольких дисков
 
-В шаблоне предоставлены поля по умолчанию для первого диска.  Вы можете добавить аналогичные столбцы для дополнительных дисков, до 8 в общей сложности. 
+В шаблоне предоставлены поля по умолчанию для первого диска.  Вы можете добавить аналогичные столбцы для дополнительных дисков, до 8 в общей сложности.
 
 Например, чтобы подготовить все поля для второго диска, добавьте следующие столбцы:
 
@@ -192,10 +189,10 @@ Application 2 name, Application 2 type, Application 2 version, Application 2 lic
 
 1. В службе "Миграция Azure" выберите **Обнаружение компьютеров** и перейдите к заполненному шаблону.
 2. Щелкните **Импорт**.
-3. Отобразится состояние импорта. 
+3. Отобразится состояние импорта.
     - Если в этом состоянии отображаются предупреждения, вы можете исправить их или продолжить работу без устранения.
     - Предлагаемые в предупреждениях уточнения информации о сервере повысят точность оценки.
-    - Чтобы просмотреть и исправить отображаемые предупреждения, щелкните действие **Download warning details .CSV** (Скачать CSV-файл с информацией о предупреждениях). Это действие скачивает CSV-файл с добавленными предупреждениями. Вы можете просмотреть эти предупреждения и принять меры при необходимости. 
+    - Чтобы просмотреть и исправить отображаемые предупреждения, щелкните действие **Download warning details .CSV** (Скачать CSV-файл с информацией о предупреждениях). Это действие скачивает CSV-файл с добавленными предупреждениями. Вы можете просмотреть эти предупреждения и принять меры при необходимости.
     Если в состоянии отображаются ошибки (состояние импорта имеет значение **Сбой**), необходимо исправить их перед продолжением импорта. Для этого скачайте CSV-файл, в который теперь добавлены сведения об ошибках. Просмотрите эти сведения и устраните ошибки при необходимости. Затем отправьте измененный файл.
 4. Если состояние импорта приняло значение **Completed** (Завершено), значит сведения о сервере успешно импортированы.
 
@@ -205,7 +202,7 @@ Application 2 name, Application 2 type, Application 2 version, Application 2 lic
 
 ## <a name="updating-server-information"></a>Обновление информации о сервере
 
-Чтобы обновить сведения о сервере, повторите отправку данных с тем же значением для поля **Server name** (Имя сервера). Значение поля **Server name** (Имя сервера) нельзя изменить. 
+Чтобы обновить сведения о сервере, повторите отправку данных с тем же значением для поля **Server name** (Имя сервера). Значение поля **Server name** (Имя сервера) нельзя изменить.
 
 В настоящее время удаление серверов не поддерживается.
 
@@ -300,21 +297,21 @@ Application 2 name, Application 2 type, Application 2 version, Application 2 lic
 
 ИМЯ | ИМЯ
 --- | ---
-**A–H** | 
+**A–H** |
 Apple Mac OS X 10 | Asianux 3<br/>Asianux 4<br/>Asianux 5
-CentOS<br/>CentOS 4/5 | CoreOS Linux 
-Debian GNU/Linux 4<br/>Debian GNU/Linux 5<br/>Debian GNU/Linux 6<br/>Debian GNU/Linux 7<br/>Debian GNU/Linux 8 | FreeBSD 
-**I–R** | 
+CentOS<br/>CentOS 4/5 | CoreOS Linux
+Debian GNU/Linux 4<br/>Debian GNU/Linux 5<br/>Debian GNU/Linux 6<br/>Debian GNU/Linux 7<br/>Debian GNU/Linux 8 | FreeBSD
+**I–R** |
 IBM OS/2 | MS-DOS |
-Novell NetWare 5<br/>Novell NetWare 6 | Oracle Linux<br/> Oracle Linux 4/5<br/>Oracle Solaris 10<br/> Oracle Solaris 11 
-Red Hat Enterprise Linux 2<br/>Red Hat Enterprise Linux 3<br/>Red Hat Enterprise Linux 4<br/>Red Hat Enterprise Linux 5<br/>Red Hat Enterprise Linux 6<br/>Red Hat Enterprise Linux 7<br/>Red Hat Fedora | 
-**S–T** | 
+Novell NetWare 5<br/>Novell NetWare 6 | Oracle Linux<br/> Oracle Linux 4/5<br/>Oracle Solaris 10<br/> Oracle Solaris 11
+Red Hat Enterprise Linux 2<br/>Red Hat Enterprise Linux 3<br/>Red Hat Enterprise Linux 4<br/>Red Hat Enterprise Linux 5<br/>Red Hat Enterprise Linux 6<br/>Red Hat Enterprise Linux 7<br/>Red Hat Fedora |
+**S–T** |
 SCO OpenServer 5<br/>SCO OpenServer 6<br/>SCO UnixWare 7 | Serenity Systems eComStation 1<br/>Serenity Systems eComStation 2
 Sun Microsystems Solaris 8<br/>Sun Microsystems Solaris 9 | SUSE Linux Enterprise 10<br/> SUSE Linux Enterprise 11<br/>SUSE Linux Enterprise 12<br/>SUSE Linux Enterprise 8/9<br/>SUSE Linux Enterprise 11<br/>SUSE openSUSE
-**U-Z** | 
+**U-Z** |
 Ubuntu Linux | VMware ESXi 4<br/>VMware ESXi 5<br/>VMware ESXi 6
 Windows 10<br/>Windows 2000<br/>Windows 3<br/>Windows 7<br/>Windows 8<br/>Windows 95<br/>Windows 98<br/>Windows NT<br/>Windows Server (R) 2008<br/>Windows Server 2003 | Windows Server 2008<br/>Windows Server 2008 R2<br/>Windows Server 2012<br/>Windows Server 2012 R2<br/>Windows Server 2016<br/>Windows Server 2019<br/>Windows Server Threshold<br/>Windows Vista<br/>Windows Web Server 2008 R2<br/>Windows XP Professional
-    
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Многофакторная идентификация в службе "Совместная работа B2B" — Azure Active Directory | Документация Майкрософт
+title: Учебник. Многофакторная идентификация для B2B в Azure AD
 description: Сведения о том, как требовать Многофакторную идентификацию (MFA) при использовании Azure AD B2B для совместной работы с внешними пользователями и партнерскими организациями.
 services: active-directory
 ms.service: active-directory
@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16a2438133f545c57d1046a0c4db94135f8a426d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bddf1642b2013567fbc23278b3d8d32692601d55
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67113184"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74420589"
 ---
 # <a name="tutorial-enforce-multi-factor-authentication-for-b2b-guest-users"></a>Руководство по Применение многофакторной проверки подлинности для гостевых пользователей B2B
 

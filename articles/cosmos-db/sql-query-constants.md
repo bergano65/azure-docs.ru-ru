@@ -1,17 +1,17 @@
 ---
 title: Константы SQL в Azure Cosmos DB
-description: Сведения о константах SQL в Azure Cosmos DB
+description: Сведения о том, как константы SQL-запросов в Azure Cosmos DB используются для представления определенного значения данных
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/31/2019
 ms.author: tisande
-ms.openlocfilehash: 41cafeb76b7b9481a78ffcff179676d0aa7bf6fd
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: cca62c358037dbe99fd16746ee081b1540161df2
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71002043"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873426"
 ---
 # <a name="azure-cosmos-db-sql-query-constants"></a>Константы запроса SQL Azure Cosmos DB  
 
@@ -59,7 +59,7 @@ ms.locfileid: "71002043"
   
 ```  
   
-##  <a name="bk_arguments"></a>Даваемых
+##  <a name="bk_arguments"></a> Аргументы
   
 * `<undefined_constant>; Undefined`  
   
@@ -116,7 +116,7 @@ ms.locfileid: "71002043"
 |\t|TAB|U+0009|  
 |\uXXXX|Символ Юникода, определяемый 4 шестнадцатеричными цифрами.|U+XXXX|  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
 - [Данные документа модели](modeling-data.md)

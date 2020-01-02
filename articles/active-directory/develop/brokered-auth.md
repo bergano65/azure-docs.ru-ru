@@ -1,32 +1,27 @@
 ---
 title: Проверка подлинности через посредника в Android | Службы
+titlesuffix: Microsoft identity platform
 description: Обзор проверки подлинности через посредника & авторизации для Android на платформе Microsoft Identity
 services: active-directory
-documentationcenter: ''
 author: shoatman
-manager: nadima
-editor: ''
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/14/2019
 ms.author: shoatman
 ms.custom: aaddev
-ms.reviewer: shoatman
+ms.reviewer: shoatman, hahamil, brianmel
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a535cbefc3520cbf0c0fc14fbcfd0dd9ebd92ac
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: f5204ad71efa2587341600d2c5c1e5195d15445e
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73175656"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74843722"
 ---
-# <a name="brokered-auth-in-android"></a>Проверка подлинности через посредника в Android
-
-## <a name="introduction"></a>Общие сведения
+# <a name="brokered-authentication-in-android"></a>Проверка подлинности через посредника в Android
 
 Для участия в программе единого входа (SSO) на уровне устройства и для соответствия политикам условного доступа Организации необходимо использовать один из брокеров проверки подлинности Майкрософт. Интеграция с брокером обеспечивает следующие преимущества:
 
@@ -52,9 +47,9 @@ ms.locfileid: "73175656"
 
 Приложения, размещенные в брокере, могут быть установлены владельцем устройства из своего магазина приложений (обычно Google Play Маркет) в любое время. Однако некоторые интерфейсы API (Resources) защищены политиками условного доступа, для которых требуется, чтобы устройства были:
 
-- зарегистрировано (присоединено к рабочему месту) и (или)
-- зарегистрировано в управлении устройствами или
-- зарегистрировано в Защита приложений Intune
+- Зарегистрировано (присоединено к рабочему месту) и (или)
+- Зарегистрировано в управлении устройствами или
+- Зарегистрировано в Защита приложений Intune
 
 Если на устройстве еще не установлено приложение брокера, MSAL предписывает пользователю установить его, как только приложение попытается получить маркер в интерактивном режиме. После этого приложение потребует от пользователя выполнить шаги, чтобы сделать устройство совместимым с требуемой политикой.
 

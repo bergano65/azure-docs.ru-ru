@@ -1,210 +1,209 @@
 ---
-title: Use Azure Data Factory to migrate data from an on-premises Netezza server to Azure
-description: Use Azure Data Factory to migrate data from an on-premises Netezza server to Azure.
+title: Перенос данных с локального сервера Netezza в Azure
+description: Используйте фабрику данных Azure для переноса данных с локального сервера Netezza в Azure.
 services: data-factory
-documentationcenter: ''
 author: dearandyxu
 ms.author: yexu
 ms.reviewer: ''
-manager: ''
+manager: shwang
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
+ms.custom: seo-lt-2019
 ms.date: 9/03/2019
-ms.openlocfilehash: 2844b48b3d832e8d9ec659ba657879d683016aee
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 80c9929f37b4890387a7625f04db6ce3e37f0cdd
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74217678"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74922113"
 ---
-# <a name="use-azure-data-factory-to-migrate-data-from-an-on-premises-netezza-server-to-azure"></a>Use Azure Data Factory to migrate data from an on-premises Netezza server to Azure 
+# <a name="use-azure-data-factory-to-migrate-data-from-an-on-premises-netezza-server-to-azure"></a>Перенос данных с локального сервера Netezza в Azure с помощью фабрики данных Azure 
 
-Azure Data Factory provides a performant, robust, and cost-effective mechanism to migrate data at scale from an on-premises Netezza server to your Azure storage account or Azure SQL Data Warehouse database. 
+Фабрика данных Azure предоставляет производительный, надежный и экономичный механизм переноса данных с локального сервера Netezza в учетную запись хранения Azure или базу данных хранилища данных SQL Azure. 
 
-This article provides the following information for data engineers and developers:
+Эта статья содержит следующие сведения для инженеров и разработчиков данных:
 
 > [!div class="checklist"]
 > * Ориентированное на производительность 
-> * Copy resilience
+> * Устойчивость к копированию
 > * Безопасность сети
-> * High-level solution architecture 
-> * Implementation best practices  
+> * Архитектура высокого уровня решения 
+> * Рекомендации по реализации  
 
 ## <a name="performance"></a>Ориентированное на производительность
 
-Azure Data Factory offers a serverless architecture that allows parallelism at various levels. If you're a developer, this means you can build pipelines to fully use both network and database bandwidth to maximize data movement throughput for your environment.
+Фабрика данных Azure предлагает бессерверную архитектуру, обеспечивающую параллелизм на различных уровнях. Если вы являетесь разработчиком, это означает, что вы можете создавать конвейеры для полного использования полосы пропускания сети и базы данных, чтобы максимально увеличить пропускную способность перемещения данных для вашей среды.
 
-![Performance diagram](media/data-migration-guidance-netezza-azure-sqldw/performance.png)
+![Диаграмма производительности](media/data-migration-guidance-netezza-azure-sqldw/performance.png)
 
-The preceding diagram can be interpreted as follows:
+Приведенная выше схема может интерпретироваться следующим образом:
 
-- A single copy activity can take advantage of scalable compute resources. When you use Azure Integration Runtime, you can specify [up to 256 DIUs](https://docs.microsoft.com/azure/data-factory/copy-activity-performance#data-integration-units) for each copy activity in a serverless manner. With a self-hosted integration runtime (self-hosted IR), you can manually scale up the machine or scale out to multiple machines ([up to four nodes](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime#high-availability-and-scalability)), and a single copy activity distributes its partition across all nodes. 
+- Одно действие копирования может воспользоваться преимуществами масштабируемых ресурсов вычислений. При использовании Azure Integration Runtime можно указать [до 256 диус](https://docs.microsoft.com/azure/data-factory/copy-activity-performance#data-integration-units) для каждого действия копирования в бессерверном режиме. С помощью локальной среды выполнения интеграции (с локальным размещением) можно вручную масштабировать компьютер или масштабировать его на несколько компьютеров ([до четырех узлов](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime#high-availability-and-scalability)), и одно действие копирования распределяет свой раздел по всем узлам. 
 
-- A single copy activity reads from and writes to the data store by using multiple threads. 
+- Одно действие копирования считывает и выполняет запись в хранилище данных с помощью нескольких потоков. 
 
-- Azure Data Factory control flow can start multiple copy activities in parallel. For example, it can start them by using a [For Each loop](https://docs.microsoft.com/azure/data-factory/control-flow-for-each-activity). 
+- Поток управления фабрики данных Azure может запускать несколько операций копирования параллельно. Например, он может запускать их с помощью [цикла for each](https://docs.microsoft.com/azure/data-factory/control-flow-for-each-activity). 
 
-For more information, see [Copy activity performance and scalability guide](https://docs.microsoft.com/azure/data-factory/copy-activity-performance).
+Дополнительные сведения см. в разделе Краткое информация о [производительности и масштабируемости действий копирования](https://docs.microsoft.com/azure/data-factory/copy-activity-performance).
 
 ## <a name="resilience"></a>Устойчивость
 
-Within a single copy activity run, Azure Data Factory has a built-in retry mechanism, which enables it to handle a certain level of transient failures in the data stores or in the underlying network.
+В рамках одного действия копирования фабрика данных Azure имеет встроенный механизм повторных попыток, позволяющий ему управлять определенным уровнем временных сбоев в хранилищах данных или в базовой сети.
 
-With Azure Data Factory copy activity, when you copy data between source and sink data stores, you have two ways to handle incompatible rows. You can either abort and fail the copy activity or continue to copy the rest of the data by skipping the incompatible data rows. In addition, to learn the cause of the failure, you can log the incompatible rows in Azure Blob storage or Azure Data Lake Store, fix the data on the data source, and retry the copy activity.
+При копировании данных между хранилищами данных источника и приемника с помощью действия копирования фабрики данных Azure существует два способа обработки несовместимых строк. Можно либо прервать, либо завершить действие копирования или продолжить копирование остальных данных, пропуская несовместимые строки данных. Кроме того, чтобы узнать причину сбоя, можно зарегистрировать несовместимые строки в хранилище BLOB-объектов Azure или Azure Data Lake Store, исправить данные в источнике данных и повторить действие копирования.
 
 ## <a name="network-security"></a>Безопасность сети 
 
-By default, Azure Data Factory transfers data from the on-premises Netezza server to an Azure storage account or Azure SQL Data Warehouse database by using an encrypted connection over Hypertext Transfer Protocol Secure (HTTPS). HTTPS provides data encryption in transit and prevents eavesdropping and man-in-the-middle attacks.
+По умолчанию фабрика данных Azure передает данные с локального сервера Netezza в учетную запись хранения Azure или базу данных хранилища данных SQL Azure, используя зашифрованное соединение по протоколу HTTPS. HTTPS обеспечивает шифрование данных при передаче и предотвращает атаки перехвата и атак типа "злоумышленник в середине".
 
-Alternatively, if you don't want data to be transferred over the public internet, you can help achieve higher security by transferring data over a private peering link via Azure Express Route. 
+Кроме того, если вы не хотите, чтобы данные передавались через общедоступный Интернет, вы можете повысить безопасность, передавая данные через частный пиринг через канал Azure Express Route. 
 
-The next section discusses how to achieve higher security.
+В следующем разделе описывается достижение более высокого уровня безопасности.
 
 ## <a name="solution-architecture"></a>Архитектура решения
 
-This section discusses two ways to migrate your data.
+В этом разделе обсуждаются два способа переноса данных.
 
-### <a name="migrate-data-over-the-public-internet"></a>Migrate data over the public internet
+### <a name="migrate-data-over-the-public-internet"></a>Перенос данных через общедоступный Интернет
 
-![Migrate data over the public internet](media/data-migration-guidance-netezza-azure-sqldw/solution-architecture-public-network.png)
+![Перенос данных через общедоступный Интернет](media/data-migration-guidance-netezza-azure-sqldw/solution-architecture-public-network.png)
 
-The preceding diagram can be interpreted as follows:
+Приведенная выше схема может интерпретироваться следующим образом:
 
-- In this architecture, you transfer data securely by using HTTPS over the public internet.
+- В этой архитектуре данные безопасно передаются с помощью протокола HTTPS через общедоступный Интернет.
 
-- To achieve this architecture, you need to install the Azure Data Factory integration runtime (self-hosted) on a Windows machine behind a corporate firewall. Make sure that this integration runtime can directly access the Netezza server. To fully use your network and data stores bandwidth to copy data, you can manually scale up your machine or scale out to multiple machines.
+- Для достижения этой архитектуры необходимо установить среду выполнения интеграции фабрики данных Azure (локальное размещение) на компьютере под управлением Windows, который находится за корпоративным брандмауэром. Убедитесь, что эта среда выполнения интеграции может напрямую обращаться к серверу Netezza. Чтобы полностью использовать пропускную способность сети и хранилища данных для копирования данных, можно вручную увеличить масштаб компьютера или выполнить масштабирование на нескольких компьютерах.
 
-- By using this architecture, you can migrate both initial snapshot data and delta data.
+- С помощью этой архитектуры можно перенести исходные данные моментального снимка и разностные данные.
 
-### <a name="migrate-data-over-a-private-network"></a>Migrate data over a private network 
+### <a name="migrate-data-over-a-private-network"></a>Перенос данных через частную сеть 
 
-![Migrate data over a private network](media/data-migration-guidance-netezza-azure-sqldw/solution-architecture-private-network.png)
+![Перенос данных через частную сеть](media/data-migration-guidance-netezza-azure-sqldw/solution-architecture-private-network.png)
 
-The preceding diagram can be interpreted as follows:
+Приведенная выше схема может интерпретироваться следующим образом:
 
-- In this architecture, you migrate data over a private peering link via Azure Express Route, and data never traverses over the public internet. 
+- В этой архитектуре данные переносятся по ссылке частного пиринга через экспресс-маршрут Azure, и данные никогда не проходят через общедоступный Интернет. 
 
-- To achieve this architecture, you need to install the Azure Data Factory integration runtime (self-hosted) on a Windows virtual machine (VM) within your Azure virtual network. To fully use your network and data stores bandwidth to copy data, you can manually scale up your VM or scale out to multiple VMs.
+- Для достижения этой архитектуры необходимо установить среду выполнения интеграции фабрики данных Azure (локальное размещение) на виртуальной машине Windows в виртуальной сети Azure. Чтобы полностью использовать пропускную способность сети и хранилища данных для копирования данных, можно вручную увеличить масштаб виртуальной машины или выполнить масштабирование на нескольких виртуальных машинах.
 
-- By using this architecture, you can migrate both initial snapshot data and delta data.
+- С помощью этой архитектуры можно перенести исходные данные моментального снимка и разностные данные.
 
-## <a name="implement-best-practices"></a>Implement best practices 
+## <a name="implement-best-practices"></a>Реализация рекомендаций 
 
-### <a name="manage-authentication-and-credentials"></a>Manage authentication and credentials 
+### <a name="manage-authentication-and-credentials"></a>Управление проверкой подлинности и учетными данными 
 
-- To authenticate to Netezza, you can use [ODBC authentication via connection string](https://docs.microsoft.com/azure/data-factory/connector-netezza#linked-service-properties). 
+- Для проверки подлинности в Netezza можно использовать [проверку подлинности ODBC с помощью строки подключения](https://docs.microsoft.com/azure/data-factory/connector-netezza#linked-service-properties). 
 
-- To authenticate to Azure Blob storage: 
+- Для проверки подлинности в хранилище BLOB-объектов Azure: 
 
-   - We highly recommend using [managed identities for Azure resources](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#managed-identity). Built on top of an automatically managed Azure Data Factory identity in Azure Active Directory (Azure AD), managed identities allows you to configure pipelines without having to supply credentials in the Linked Service definition.  
+   - Мы настоятельно рекомендуем использовать [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#managed-identity). Управляемые удостоверения, созданные на основе автоматически управляемого удостоверения фабрики данных Azure в Azure Active Directory (Azure AD), позволяют настраивать конвейеры без необходимости указывать учетные данные в определении связанной службы.  
 
-   - Alternatively, you can authenticate to Azure Blob storage by using [service principal](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#service-principal-authentication), a [shared access signature](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#shared-access-signature-authentication), or a [storage account key](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#account-key-authentication). 
+   - Кроме того, вы можете пройти проверку подлинности в хранилище BLOB-объектов Azure, используя [субъект](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#service-principal-authentication), [подпись общего доступа](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#shared-access-signature-authentication)или [ключ учетной записи хранения](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#account-key-authentication). 
 
-- To authenticate to Azure Data Lake Storage Gen2: 
+- Для проверки подлинности в Azure Data Lake Storage 2-го поколения: 
 
-   - We highly recommend using [managed identities for Azure resources](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#managed-identity).
+   - Мы настоятельно рекомендуем использовать [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#managed-identity).
    
-   - You can also use [service principal](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication) or a [storage account key](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#account-key-authentication). 
+   - Также можно использовать [субъект-службу](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication) или [ключ учетной записи хранения](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#account-key-authentication). 
 
-- To authenticate to Azure SQL Data Warehouse:
+- Для проверки подлинности в хранилище данных SQL Azure выполните следующие действия.
 
-   - We highly recommend using [managed identities for Azure resources](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse#managed-identity).
+   - Мы настоятельно рекомендуем использовать [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse#managed-identity).
    
-   - You can also use [service principal](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse#service-principal-authentication) or [SQL authentication](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse#sql-authentication).
+   - Также можно использовать [субъект-службу](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse#service-principal-authentication) или [проверку подлинности SQL](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse#sql-authentication).
 
-- When you're not using managed identities for Azure resources, we highly recommend [storing the credentials in Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault) to make it easier to centrally manage and rotate keys without having to modify Azure Data Factory linked services. This is also one of the [best practices for CI/CD](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment#best-practices-for-cicd). 
+- Если управляемые удостоверения для ресурсов Azure не используются, настоятельно рекомендуется [хранить учетные данные в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault) , чтобы упростить централизованное управление ключами и их вращение без изменения связанных служб фабрики данных Azure. Это также один из рекомендаций [по интеграции и откомпакт-диску](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment#best-practices-for-cicd). 
 
-### <a name="migrate-initial-snapshot-data"></a>Migrate initial snapshot data 
+### <a name="migrate-initial-snapshot-data"></a>Перенос исходных данных моментальных снимков 
 
-For small tables (that is, tables with a volume of less than 100 GB or that can be migrated to Azure within two hours), you can make each copy job load data per table. For greater throughput, you can run multiple Azure Data Factory copy jobs to load separate tables concurrently. 
+Для небольших таблиц (т. е. таблиц с объемом менее 100 ГБ или, которые могут быть перенесены в Azure в течение двух часов) можно создать для каждой таблицы данные загрузки каждого задания копирования. Для повышения пропускной способности можно запустить несколько заданий копирования фабрики данных Azure для параллельной загрузки отдельных таблиц. 
 
-Within each copy job, to run parallel queries and copy data by partitions, you can also reach some level of parallelism by using the [`parallelCopies` property setting](https://docs.microsoft.com/azure/data-factory/copy-activity-performance#parallel-copy) with either of the following data partition options:
+В каждом задании копирования для выполнения параллельных запросов и копирования данных по секциям можно также достичь определенного уровня параллелизма, используя [параметр свойства`parallelCopies`](https://docs.microsoft.com/azure/data-factory/copy-activity-performance#parallel-copy) с одним из следующих параметров секции данных:
 
-- For help achieve greater efficiency, we encourage you to start from a data slice.  Make sure that the value in the `parallelCopies` setting is less than the total number of data-slice partitions in your table on the Netezza server.  
+- Чтобы повысить эффективность, мы рекомендуем начать с среза данных.  Убедитесь, что значение параметра `parallelCopies` меньше, чем общее число секций срезов данных в таблице на сервере Netezza.  
 
-- If the volume of each data-slice partition is still large (for example, 10 GB or greater), we encourage you to switch to a dynamic range partition. This option gives you greater flexibility to define the number of partitions and the volume of each partition by partition column, upper bound and lower bound.
+- Если объем всех секций срезов данных по-прежнему большой (например, 10 ГБ или больше), мы рекомендуем переключиться на динамический раздел диапазона. Этот параметр обеспечивает большую гибкость при определении количества секций и объема каждой секции по столбцу секционирования, верхней и нижней границам.
 
-For larger tables (that is, tables with a volume of 100 GB or greater or that *can't* be migrated to Azure within two hours), we recommend that you partition the data by custom query and then make each copy-job copy one partition at a time. For better throughput, you can run multiple Azure Data Factory copy jobs concurrently. For each copy-job target of loading one partition by custom query, you can increase throughput by enabling parallelism via either data slice or dynamic range. 
+Для больших таблиц (т. е. таблиц с томом размером 100 ГБ или выше или которые *не могут* быть перенесены в Azure в течение двух часов) рекомендуется секционировать данные по пользовательскому запросу, а затем каждый раз копировать копию задания по одной секции. Для повышения пропускной способности можно одновременно запустить несколько заданий копирования в фабрике данных Azure. Для каждого целевого объекта задания копирования, загружая одну секцию по пользовательскому запросу, можно увеличить пропускную способность, включив параллелизм через срез данных или динамический диапазон. 
 
-If any copy job fails because of a network or data store transient issue, you can rerun the failed copy job to reload that specific partition from the table. Other copy jobs that load other partitions aren't affected.
+В случае сбоя любого задания копирования из-за временной ошибки сети или хранилища данных можно повторно выполнить задание копирования, завершившееся сбоем, чтобы перезагрузить эту конкретную секцию из таблицы. Другие задания копирования, которые загружают другие секции, не затрагиваются.
 
-When you load data into an Azure SQL Data Warehouse database, we suggest that you enable PolyBase within the copy job with Azure Blob storage as staging.
+При загрузке данных в базу данных хранилища данных SQL Azure мы рекомендуем включить Polybase в задании копирования с помощью хранилища BLOB-объектов Azure в качестве промежуточного хранения.
 
-### <a name="migrate-delta-data"></a>Migrate delta data 
+### <a name="migrate-delta-data"></a>Перенос разностных данных 
 
-To identify the new or updated rows from your table, use a timestamp column or an incrementing key within the schema. You can then store the latest value as a high watermark in an external table and then use it to filter the delta data the next time you load data. 
+Чтобы указать новые или обновленные строки из таблицы, используйте столбец timestamp или инкрементный ключ в схеме. Затем можно сохранить Последнее значение в качестве верхнего предела во внешней таблице, а затем использовать его для фильтрации разностных данных при следующей загрузке данных. 
 
-Each table can use a different watermark column to identify its new or updated rows. We suggest that you create an external control table. In the table, each row represents one table on the Netezza server with its specific watermark column name and high watermark value. 
+Каждая таблица может использовать другой столбец подложки для обнаружения новых или обновленных строк. Мы рекомендуем создать внешнюю таблицу управления. В таблице каждая строка представляет одну таблицу на сервере Netezza с его именем столбца подложки и значением верхнего предела. 
 
-### <a name="configure-a-self-hosted-integration-runtime"></a>Configure a self-hosted integration runtime
+### <a name="configure-a-self-hosted-integration-runtime"></a>Настройка локальной среды выполнения интеграции
 
-If you're migrating data from the Netezza server to Azure, whether the server is on-premises behind your corporation firewall or within a virtual network environment, you need to install a self-hosted IR on a Windows machine or VM, which is the engine that's used to move data. As you're installing the self-hosted IR, we recommend the following approach:
+Если вы выполняете миграцию данных с сервера Netezza в Azure, независимо от того, находится ли сервер в локальной среде в рамках брандмауэра или среды виртуальной сети, необходимо установить локальную IR на компьютере Windows или виртуальной машине, который используется для Перемещение данных. При установке локальной среды IR рекомендуется использовать следующий подход:
 
-- For each Windows machine or VM, start with a configuration of 32 vCPU and 128-GB memory. You can keep monitoring the CPU and memory usage of the IR machine during the data migration to see whether you need to further scale up the machine for better performance or scale down the machine to save cost.
+- Для каждого компьютера или виртуальной машины Windows Начните с конфигурации 32 виртуальных ЦП и 128 ГБ памяти. Вы можете следить за использованием ЦП и памяти на IR-компьютере во время переноса данных, чтобы узнать, требуется ли дальнейшее масштабирование компьютера для повышения производительности или уменьшения масштаба компьютера, чтобы сэкономить затраты.
 
-- You can also scale out by associating up to four nodes with a single self-hosted IR. A single copy job that's running against a self-hosted IR automatically applies all VM nodes to copy the data in parallel. For high availability, start with four VM nodes to avoid a single point of failure during the data migration.
+- Кроме того, можно выполнить горизонтальное масштабирование, связав до четырех узлов с одним локальным IR. Одно задание копирования, которое выполняется для саморазмещенного IR, автоматически применяет все узлы виртуальной машины для параллельного копирования данных. Для обеспечения высокой доступности Начните с четырех узлов виртуальных машин, чтобы избежать единой точки отказа во время переноса данных.
 
-### <a name="limit-your-partitions"></a>Limit your partitions
+### <a name="limit-your-partitions"></a>Ограничение секций
 
-As a best practice, conduct a performance proof of concept (POC) with a representative sample dataset, so that you can determine an appropriate partition size for each copy activity. We suggest that you load each partition to Azure within two hours.  
+Рекомендуется провести проверку концепции производительности с помощью репрезентативного примера набора данных, чтобы можно было определить подходящий размер раздела для каждого действия копирования. Мы рекомендуем загрузить каждую секцию в Azure в течение двух часов.  
 
-To copy a table, start with a single copy activity with a single, self-hosted IR machine. Gradually increase the `parallelCopies` setting based on the number of data-slice partitions in your table. See whether the entire table can be loaded to Azure within two hours, according to the throughput that results from the copy job. 
+Чтобы скопировать таблицу, начните с одного действия копирования с единой, размещенной на собственном компьютере IR. Постепенно увеличивайте значение параметра `parallelCopies` в зависимости от количества секций срезов данных в таблице. Узнайте, можно ли загрузить всю таблицу в Azure в течение двух часов в соответствии с пропускной способностью, полученной в результате задания копирования. 
 
-If it can't be loaded to Azure within two hours, and the capacity of the self-hosted IR node and the data store are not fully used, gradually increase the number of concurrent copy activities until you reach the limit of your network or the bandwidth limit of the data stores. 
+Если его невозможно загрузить в Azure в течение двух часов, а емкость автономного узла IR и хранилища данных не используется полностью, постепенно увеличивайте количество одновременных операций копирования, пока не достигнет ограничения сети или ограничения пропускной способности хранилища данных. #d0. 
 
-Keep monitoring the CPU and memory usage on the self-hosted IR machine, and be ready to scale up the machine or scale out to multiple machines when you see that the CPU and memory are fully used. 
+Отслеживайте использование ЦП и памяти на автономном IR-компьютере и будьте готовы к увеличению масштаба компьютера или масштабированию на нескольких компьютерах, когда вы видите, что ЦП и память полностью используются. 
 
-When you encounter throttling errors, as reported by Azure Data Factory copy activity, either reduce the concurrency or `parallelCopies` setting in Azure Data Factory, or consider increasing the bandwidth or I/O operations per second (IOPS) limits of the network and data stores. 
+При возникновении ошибок регулирования, о которых сообщает действие копирования фабрики данных Azure, следует либо уменьшить параллелизм или `parallelCopies` параметр в фабрике данных Azure, либо увеличить ограничения пропускной способности или операций ввода-вывода в секунду, а также ограничений сети и хранилищ данных. 
 
 
-### <a name="estimate-your-pricing"></a>Estimate your pricing 
+### <a name="estimate-your-pricing"></a>Оценка цен 
 
-Consider the following pipeline, which is constructed to migrate data from the on-premises Netezza server to an Azure SQL Data Warehouse database:
+Рассмотрим следующий конвейер, который создается для переноса данных с локального сервера Netezza в базу данных хранилища данных SQL Azure:
 
-![The pricing pipeline](media/data-migration-guidance-netezza-azure-sqldw/pricing-pipeline.png)
+![Ценовой конвейер](media/data-migration-guidance-netezza-azure-sqldw/pricing-pipeline.png)
 
-Let's assume that the following statements are true: 
+Предположим, что выполняются следующие условия: 
 
-- The total data volume is 50 terabytes (TB). 
+- Общий объем данных составляет 50 терабайт (ТБ). 
 
-- We're migrating data by using first-solution architecture (the Netezza server is on-premises, behind the firewall).
+- Мы переносим данные с помощью архитектуры первого решения (сервер Netezza находится в локальной среде, защищенном брандмауэром).
 
-- The 50-TB volume is divided into 500 partitions, and each copy activity moves one partition.
+- Том 50 ТБ делится на секции 500, и каждое действие копирования перемещает один раздел.
 
-- Each copy activity is configured with one self-hosted IR against four machines and achieves a throughput of 20 megabytes per second (MBps). (Within copy activity, `parallelCopies` is set to 4, and each thread to load data from the table achieves a 5-MBps throughput.)
+- Для каждого действия копирования настраивается один автономный IR-объект на четыре компьютера и достигается пропускная способность 20 мегабайт в секунду (Мбит/с). (В рамках действия копирования `parallelCopies` имеет значение 4, и каждый поток для загрузки данных из таблицы достигает пропускной способности 5 Мбит/с.)
 
-- The ForEach concurrency is set to 3, and the aggregate throughput is 60 MBps.
+- Параметр параллелизма ForEach имеет значение 3, а суммарная пропускная способность — 60 Мбит/с.
 
-- In total, it takes 243 hours to complete the migration.
+- В итоге выполнение миграции займет 243 часа.
 
-Based on the preceding assumptions, here's the estimated price: 
+На основе приведенных выше предположений мы рассмотрим предполагаемую цену: 
 
-![The pricing table](media/data-migration-guidance-netezza-azure-sqldw/pricing-table.png)
+![Таблица цен](media/data-migration-guidance-netezza-azure-sqldw/pricing-table.png)
 
 > [!NOTE]
-> The pricing shown in the preceding table is hypothetical. Your actual pricing depends on the actual throughput in your environment. The price for the  Windows machine (with the self-hosted IR installed) is not included. 
+> В приведенной выше таблице указаны гипотетические цены. Реальная цена зависит от фактической пропускной способности в вашей среде. Цена на компьютере с Windows (с установленным локальным IR) не включена. 
 
 ### <a name="additional-references"></a>Дополнительные ссылки
 
-For more information, see the following articles and guides:
+Дополнительные сведения см. в следующих статьях и руководствах:
 
-- [Migrate data from an on-premises relational Data Warehouse database to Azure by using Azure Data Factory](https://azure.microsoft.com/mediahandler/files/resourcefiles/data-migration-from-on-premises-relational-data-warehouse-to-azure-data-lake-using-azure-data-factory/Data_migration_from_on-prem_RDW_to_ADLS_using_ADF.pdf)
-- [Netezza connector](https://docs.microsoft.com/azure/data-factory/connector-netezza)
-- [ODBC connector](https://docs.microsoft.com/azure/data-factory/connector-odbc)
-- [Azure Blob storage connector](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage)
+- [Перенос данных из локальной базы данных реляционного хранилища данных в Azure с помощью фабрики данных Azure](https://azure.microsoft.com/resources/data-migration-from-on-premise-relational-data-warehouse-to-azure-data-lake-using-azure-data-factory/)
+- [Соединитель Netezza](https://docs.microsoft.com/azure/data-factory/connector-netezza)
+- [Соединитель ODBC](https://docs.microsoft.com/azure/data-factory/connector-odbc)
+- [Соединитель хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage)
 - [Copy data to or from Azure Data Lake Storage Gen2 Preview using Azure Data Factory (Preview)](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage) (Копирование данных в Azure Data Lake Storage Gen2 (предварительная версия) или из него с помощью фабрики данных Azure)
 - [Перемещение данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse).
-- [Copy activity performance tuning guide](https://docs.microsoft.com/azure/data-factory/copy-activity-performance)
+- [Краткое руководств по настройке производительности действий копирования](https://docs.microsoft.com/azure/data-factory/copy-activity-performance)
 - [Создание и настройка локальной среды выполнения интеграции](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime)
-- [Self-hosted integration runtime HA and scalability](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime#high-availability-and-scalability)
-- [Data movement security considerations](https://docs.microsoft.com/azure/data-factory/data-movement-security-considerations)
-- [Store credentials in Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault)
-- [Copy data incrementally from one table](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-portal)
-- [Copy data incrementally from multiple tables](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-multiple-tables-portal)
-- [Azure Data Factory pricing page](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/)
+- [Высокая доступность и масштабируемость локальной среды выполнения интеграции](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime#high-availability-and-scalability)
+- [Вопросы безопасности перемещения данных](https://docs.microsoft.com/azure/data-factory/data-movement-security-considerations)
+- [Хранение учетных данных в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault)
+- [Добавочное копирование данных из одной таблицы](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-portal)
+- [Добавочное копирование данных из нескольких таблиц](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-multiple-tables-portal)
+- [Страница с ценами на фабрику данных Azure](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Copy files from multiple containers by using Azure Data Factory](solution-template-copy-files-multiple-containers.md)
+- [Копирование файлов из нескольких контейнеров с помощью фабрики данных Azure](solution-template-copy-files-multiple-containers.md)

@@ -1,31 +1,32 @@
 ---
-title: Управление службой хранилища в независимых от Azure облаках с помощью Azure PowerShell | Документация Майкрософт
-description: Управление службой хранилища в облаках для Китая, Германии и государственных организаций с помощью Azure PowerShell
+title: Использование PowerShell для управления данными в независимых облаках Azure
+titleSuffix: Azure Storage
+description: Управление хранилищем в облаке, правительственном облаке и немецком облаке с помощью Azure PowerShell.
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: article
-ms.date: 10/24/2017
+ms.topic: how-to
+ms.date: 12/04/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 69707eec0ea1f2260ee50a48ce1dcb82dc9ddd8f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5fa515515c06466e121a5c0ee925fd4d14245363
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65145867"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74895232"
 ---
 # <a name="managing-storage-in-the-azure-independent-clouds-using-powershell"></a>Управление службой хранилища в независимых от Azure облаках с помощью Azure PowerShell
 
 Большинство людей используют общедоступное облако Azure для глобального развертывания Azure. Но есть и независимые развертывания Microsoft Azure для обеспечения автономности и других целей. Такие независимые развертывания называются средами. Ниже приведен список независимых облаков, доступных в настоящее время:
 
 * [Облако Azure для государственных организаций](https://azure.microsoft.com/features/gov/).
-* [Облако Azure для Китая (обслуживается 21Vianet в Китае)](http://www.windowsazure.cn/).
+* [Облако Azure Китая 21Vianet, управляемое 21Vianet, в Китае](http://www.windowsazure.cn/)
 * [Облако Azure для Германии](../../germany/germany-welcome.md).
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="using-an-independent-cloud"></a>Использование независимого облака 
+## <a name="using-an-independent-cloud"></a>Использование независимого облака
 
 Чтобы использовать службу хранилища Azure в одном из независимых облаков, нужно подключиться к нему вместо общедоступного облака Azure. Чтобы использовать одно из независимых облаков Azure вместо общедоступного, выполните следующие инструкции:
 
@@ -33,12 +34,12 @@ ms.locfileid: "65145867"
 * Определите и используйте доступные регионы.
 * Используйте правильный суффикс конечной точки, который отличается от суффикса общедоступного облака Azure.
 
-Для работы с этим руководством требуется модуль Az в Azure PowerShell 0.7 или более поздней версии. В окне PowerShell выполните `Get-Module -ListAvailable Az`, чтобы найти версию. Если версия не отображается или необходимо обновить модуль, см. статью об [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). 
+Для работы с этим руководством требуется модуль Az в Azure PowerShell 0.7 или более поздней версии. В окне PowerShell выполните `Get-Module -ListAvailable Az`, чтобы найти версию. Если версия не отображается или необходимо обновить модуль, см. статью об [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps).
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
 Запустите командлет [Get-AzEnvironment](/powershell/module/az.accounts/get-azenvironment), чтобы просмотреть доступные среды Azure.
-   
+
 ```powershell
 Get-AzEnvironment
 ```
@@ -59,19 +60,21 @@ Get-AzLocation | select Location, DisplayName
 
 В следующей таблице показаны расположения, доступные в облаке для Германии.
 
-|Расположение | DisplayName |
+|Location | Отображаемое имя |
 |----|----|
-| germanycentral | Центральная Германия|
-| germanynortheast | Северо-восточная Германия | 
+| `germanycentral` | Центральная Германия|
+| `germanynortheast` | Северо-Восточная Германия |
 
 
 ## <a name="endpoint-suffix"></a>Суффикс конечной точки
 
-Суффикс конечной точки для каждой из этих сред отличается от суффикса конечной точки общедоступного облака Azure. Например, суффикс конечной точки большого двоичного объекта в общедоступном облаке Azure — **blob.core.windows.net**. В облаке Azure для государственных организаций суффикс конечной точки большого двоичного объекта — **blob.core.usgovcloudapi.net**. 
+Суффикс конечной точки для каждой из этих сред отличается от суффикса конечной точки общедоступного облака Azure. Например, суффикс конечной точки большого двоичного объекта в общедоступном облаке Azure — **blob.core.windows.net**. В облаке Azure для государственных организаций суффикс конечной точки большого двоичного объекта — **blob.core.usgovcloudapi.net**.
 
-### <a name="get-endpoint-using-get-azenvironment"></a>Получение конечной точки с помощью командлета Get-AzEnvironment 
+### <a name="get-endpoint-using-get-azenvironment"></a>Получение конечной точки с помощью командлета Get-AzEnvironment
 
-Получите суффикс конечной точки с помощью командлета [Get AzEnvironment](/powershell/module/az.accounts/get-azenvironment). Конечная точка — это свойство среды *StorageEndpointSuffix*. В приведенном ниже фрагменте кода показано, как это сделать. Все эти команды возвращают такие значения, как core.cloudapp.net или core.cloudapi.de и т. д. Добавьте это значение в службу хранилища для доступа к ней. Например, конечная точка queue.core.cloudapi.de получит доступ к службе очередей в облаке для Германии.
+Получите суффикс конечной точки с помощью командлета [Get AzEnvironment](/powershell/module/az.accounts/get-azenvironment). Конечная точка — это свойство среды *StorageEndpointSuffix*.
+
+В следующих фрагментах кода показано, как получить суффикс конечной точки. Все эти команды возвращают нечто вроде "core.cloudapp.net" или "core.cloudapi.de" и т. д. Добавьте суффикс в службу хранилища для доступа к этой службе. Например, конечная точка queue.core.cloudapi.de получит доступ к службе очередей в облаке для Германии.
 
 Этот фрагмент кода позволяет получить все среды и суффикс конечной точки для каждой из них.
 
@@ -91,41 +94,38 @@ Get-AzEnvironment | select Name, StorageEndpointSuffix
 Чтобы получить все свойства для указанной среды, вызовите **Get AzEnvironment** и укажите имя облака. Этот фрагмент кода позволяет получить список свойств. Найдите **StorageEndpointSuffix** в списке. Следующий пример касается облака для Германии.
 
 ```powershell
-Get-AzEnvironment -Name AzureGermanCloud 
+Get-AzEnvironment -Name AzureGermanCloud
 ```
 
-Результаты должны выглядеть следующим образом:
+Результаты похожи на следующие значения:
 
-|Имя свойства|Значение|
+|Имя свойства|Value|
 |----|----|
-| Name | AzureGermanCloud |
-| EnableAdfsAuthentication | False |
-| ActiveDirectoryServiceEndpointResourceI | http://management.core.cloudapi.de/ |
-| GalleryURL | https://gallery.cloudapi.de/ |
-| ManagementPortalUrl | https://portal.microsoftazure.de/ | 
-| ServiceManagementUrl | https://manage.core.cloudapi.de/ |
-| PublishSettingsFileUrl| https://manage.microsoftazure.de/publishsettings/index |
-| ResourceManagerUrl | http://management.microsoftazure.de/ |
-| SqlDatabaseDnsSuffix | .database.cloudapi.de |
-| **StorageEndpointSuffix** | core.cloudapi.de |
-| ... | ... | 
-
+| Name | `AzureGermanCloud` |
+| EnableAdfsAuthentication | `False` |
+| ActiveDirectoryServiceEndpointResourceI | `http://management.core.cloudapi.de/` |
+| GalleryURL | `https://gallery.cloudapi.de/` |
+| ManagementPortalUrl | `https://portal.microsoftazure.de/` |
+| ServiceManagementUrl | `https://manage.core.cloudapi.de/` |
+| PublishSettingsFileUrl| `https://manage.microsoftazure.de/publishsettings/index` |
+| ResourceManagerUrl | `http://management.microsoftazure.de/` |
+| SqlDatabaseDnsSuffix | `.database.cloudapi.de` |
+| **StorageEndpointSuffix** | `core.cloudapi.de` |
+| ... | ... |
 Чтобы получить только свойство суффикса конечной точки хранилища, обратитесь к определенному облаку и подайте запрос только на это свойство.
 
 ```powershell
 $environment = Get-AzEnvironment -Name AzureGermanCloud
-Write-Host "Storage EndPoint Suffix = " $environment.StorageEndpointSuffix 
+Write-Host "Storage EndPoint Suffix = " $environment.StorageEndpointSuffix
 ```
 
-Вы получите следующую информацию:
+Эта команда возвращает приведенные ниже сведения.
 
-```
-Storage Endpoint Suffix = core.cloudapi.de
-```
+`Storage Endpoint Suffix = core.cloudapi.de`
 
 ### <a name="get-endpoint-from-a-storage-account"></a>Получение конечной точки из учетной записи хранения
 
-Для получения конечных точек также можно просмотреть свойства учетной записи хранения. Это целесообразно, если вы уже используете учетную запись хранения в скрипте PowerShell. Вы можете просто получить нужную точку. 
+Вы также можете проверить свойства учетной записи хранения, чтобы получить конечные точки:
 
 ```powershell
 # Get a reference to the storage account.
@@ -141,7 +141,7 @@ Write-Host "queue endpoint = " $storageAccount.PrimaryEndPoints.Queue
 Write-Host "table endpoint = " $storageAccount.PrimaryEndPoints.Table
 ```
 
-Для учетной записи хранения в облаке для государственных организаций возвращаются следующие значения: 
+Для учетной записи хранения в облаке для государственных организаций эта команда возвращает следующие выходные данные:
 
 ```
 blob endpoint = http://myexistingstorageaccount.blob.core.usgovcloudapi.net/
@@ -156,7 +156,7 @@ table endpoint = http://myexistingstorageaccount.table.core.usgovcloudapi.net/
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы создали новую группу ресурсов и учетную запись хранения для этого примера, удалите их, удалив группу ресурсов. При этом будут также удалены все ресурсы, содержащиеся в группе. В этом случае происходит удаление созданной учетной записи хранения и самой группы ресурсов.
+Если вы создали новую группу ресурсов и учетную запись хранения для этого упражнения, вы можете удалить оба ресурса, удалив группу ресурсов. Удаление группы ресурсов приведет к удалению всех ресурсов, которые она содержит.
 
 ```powershell
 Remove-AzResourceGroup -Name $resourceGroup
@@ -167,5 +167,5 @@ Remove-AzResourceGroup -Name $resourceGroup
 * [Использование учетных данных для входа в разных сеансах PowerShell](/powershell/azure/context-persistence).
 * [Azure Government storage](../../azure-government/documentation-government-services-storage.md) (Хранилище Azure для государственных организаций).
 * [Azure Government developer guide](../../azure-government/documentation-government-developer-guide.md) (Руководство для разработчиков Microsoft Azure для государственных организаций).
-* [Заметки для разработчика для Azure в китайских приложениях](https://msdn.microsoft.com/library/azure/dn578439.aspx).
+* [Примечания для разработчиков для приложений Azure для Китая в Китае](https://msdn.microsoft.com/library/azure/dn578439.aspx)
 * [Документация по Azure для Германии](../../germany/germany-welcome.md).

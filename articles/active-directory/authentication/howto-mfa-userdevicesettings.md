@@ -1,22 +1,22 @@
 ---
-title: Manage users and devices Azure MFA - Azure Active Directory
-description: How can administrators change user settings such as forcing the users to do the proof-up process again.
+title: Управление пользователями и устройствами Azure MFA — Azure Active Directory
+description: Как администраторы могут изменить параметры пользователя, например, заставить пользователей снова выполнять проверку.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5fd03ea807e48f6f0e287bb4497e4d20268995db
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: 7a1e6dc3ed1c1f9af6f6b935cdd3a6ceaedbe7a4
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74404162"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74848261"
 ---
 # <a name="manage-user-settings-with-azure-multi-factor-authentication-in-the-cloud"></a>Управление параметрами пользователей с помощью Многофакторной идентификации Azure в облаке
 
@@ -26,32 +26,32 @@ ms.locfileid: "74404162"
 * Удалять пароли приложений.
 * Требовать Многофакторную идентификацию на всех доверенных устройствах.
 
-## <a name="manage-authentication-methods"></a>Manage authentication methods
+## <a name="manage-authentication-methods"></a>Управление методами проверки подлинности
 
-As an administrator assigned the Authentication Administrator role you can require users to reset their password, re-register for MFA, or revoke existing MFA sessions from their user object.
+Администратор, которому назначена роль администратора проверки подлинности, может потребовать от пользователей сбросить свой пароль, повторно зарегистрироваться для использования MFA или отозвать существующие сеансы MFA из своего объекта пользователя.
 
-![Manage authentication methods from the Azure portal](./media/howto-mfa-userdevicesettings/manage-authentication-methods.png)
+![Управление методами проверки подлинности из портал Azure](./media/howto-mfa-userdevicesettings/manage-authentication-methods.png)
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 1. Слева выберите **Azure Active Directory** > **Пользователи** > **Все пользователи**.
-1. Choose the user you wish to perform an action on and select **Authentication methods**.
-   - **Reset Password** will reset the user's password and assign a temporary password that must be changed on the next sign in.
-   - **Require Re-register MFA** will make it so that when the user signs in next time, they will be requested to setup a new MFA authentication method.
-   - **Revoke MFA Sessions** clears the user's remembered MFA sessions and requires them to perform MFA the next time it is required by the policy on the device.
+1. Выберите пользователя, для которого требуется выполнить действие, и выберите **методы проверки подлинности**.
+   - **Сброс пароля** приведет к сбросу пароля пользователя и назначению временного пароля, который необходимо изменить при следующем входе.
+   - **Обязательное повторное регистрация MFA** сделает это, чтобы при следующем входе пользователя в систему ему запросили настроить новый метод проверки подлинности mfa.
+   - **Отозвать сеансы MFA** очищают сохраненные сеансы MFA пользователя и требуют, чтобы они выполняли MFA в следующий раз, когда это необходимо для политики на устройстве.
 
 ## <a name="delete-users-existing-app-passwords"></a>Удалять существующие пароли приложений пользователей
 
-Этот параметр удаляет все созданные пользователем пароли приложений. Работа не использующих браузер приложений, связанных с этими паролями, приостанавливается, пока не будут созданы новые пароли. Global administrator permissions are required to perform this action.
+Этот параметр удаляет все созданные пользователем пароли приложений. Работа не использующих браузер приложений, связанных с этими паролями, приостанавливается, пока не будут созданы новые пароли. Для выполнения этого действия требуются разрешения глобального администратора.
 
 ### <a name="how-to-delete-users-existing-app-passwords"></a>Как удалить существующие пароли приложений пользователей
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 2. Слева выберите **Azure Active Directory** > **Пользователи** > **Все пользователи**.
 3. Справа на панели инструментов выберите **Многофакторная идентификация**. Откроется страница Многофакторной идентификации.
-4. Установите флажок рядом с именем пользователя или пользователей, которыми требуется управлять. A list of quick step options appears on the right.
+4. Установите флажок рядом с именем пользователя или пользователей, которыми требуется управлять. Список параметров быстрого шага отображается справа.
 5. Выберите **Управление параметрами пользователя**.
 6. Установите флажок **Удалить все существующие пароли приложений, созданные выбранными пользователями**.
-   ![Delete all existing app passwords](./media/howto-mfa-userdevicesettings/deleteapppasswords.png)
+   ![удалить все существующие пароли приложений](./media/howto-mfa-userdevicesettings/deleteapppasswords.png)
 7. Щелкните **Сохранить**.
 8. Щелкните **Закрыть**.
 

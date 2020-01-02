@@ -1,22 +1,18 @@
 ---
-title: Создание первого автоматизированного рабочего процесса — Azure Logic Apps
+title: Создание первого автоматизированного рабочего процесса
 description: Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps для решений интеграции систем и корпоративных приложений (EAI)
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.manager: carmonm
-ms.reviewer: klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 10/20/2019
-ms.openlocfilehash: b6222747e352f446dab33314729f7f697e328909
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 45b9cdc74fc57e53ca2cd76f8b1f98671f5bbc7e
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824904"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791866"
 ---
 # <a name="quickstart-create-your-first-workflow-by-using-azure-logic-apps---azure-portal"></a>Краткое руководство. Создание первого рабочего процесса с помощью Azure Logic Apps — портал Azure
 

@@ -2,27 +2,23 @@
 title: Сценарии проверки подлинности на платформе удостоверений Майкрософт | Azure
 description: Узнайте о потоках проверки подлинности и сценариях приложений для платформы удостоверений Майкрософт. Узнайте о типах приложений, которые могут выполнять проверку подлинности удостоверений, получать маркеры и вызывать защищенные API.
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: quickstart
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/27/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d6a36d66d6094bbac1b3e39a4ee5cea55737971
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 969c7b6c86e09ec73ccf1ffa5cc4dc9703a3d25c
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73473827"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74963806"
 ---
 # <a name="authentication-flows-and-application-scenarios"></a>Потоки проверки подлинности и сценарии приложений
 
@@ -261,14 +257,14 @@ MSAL для iOS и MSAL для Android по умолчанию использу�
 
   <tr>
    <td><a href="scenario-daemon-overview.md"><img alt="Daemon app that calls web APIs" src="media/scenarios/daemon-app.svg"></a></td>
-   <td><a href=scenario-daemon-overview.md">Управляющая программа, которая вызывает веб-API</a></td>
+   <td><a href="scenario-daemon-overview.md">Управляющая программа, которая вызывает веб-API</a></td>
    <td><a href="v2-oauth2-client-creds-grant-flow.md">Учетные данные клиента</a></td>
    <td>Разрешения только для приложений, которые используются без участия пользователей и только в организациях Azure AD</td>
  </tr>
 
   <tr>
-   <td><a href=scenario-web-api-call-api-overview.md"><img alt="Web API that calls web APIs" src="media/scenarios/web-api.svg"></a></td>
-   <td><a href=scenario-web-api-call-api-overview.md">Веб-API, которое вызывает веб-API</a></td>
+   <td><a href="scenario-web-api-call-api-overview.md"><img alt="Web API that calls web APIs" src="media/scenarios/web-api.svg"></a></td>
+   <td><a href="scenario-web-api-call-api-overview.md">Веб-API, которое вызывает веб-API</a></td>
    <td><a href="v2-oauth2-on-behalf-of-flow.md">От имени</a></td>
    <td>Рабочие или учебные учетные записи и личные учетные записи</td>
  </tr>

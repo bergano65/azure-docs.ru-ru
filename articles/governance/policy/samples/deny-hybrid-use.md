@@ -1,14 +1,14 @@
 ---
 title: 'Пример: запрет на использование программы преимуществ гибридного использования'
-description: В этом примере определения политики налагается запрет на использование Программы преимуществ гибридного использования Azure.
+description: В этом примере определения политики запрещено реализовывать преимущество гибридного использования Azure (AHUB) для виртуальных машин и масштабируемых наборов виртуальных машин.
 ms.date: 01/23/2019
 ms.topic: sample
-ms.openlocfilehash: 441f3bc75dc066684f201deabe34b2dfd962e0ca
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 98518e33f27f0e46bf224301f3a02bb57141c4e1
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74070913"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463655"
 ---
 # <a name="sample---deny-hybrid-use-benefit"></a>Пример: запрет на использование программы преимуществ гибридного использования
 

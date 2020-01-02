@@ -1,6 +1,6 @@
 ---
-title: What is an Azure Private Endpoint?
-description: Learn about Azure Private Endpoint
+title: Что такое частная конечная точка Azure?
+description: Сведения о частной конечной точке Azure
 services: private-link
 author: asudbring
 ms.service: private-link
@@ -14,122 +14,122 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74228120"
 ---
-# <a name="what-is-azure-private-endpoint"></a>What is Azure Private Endpoint?
+# <a name="what-is-azure-private-endpoint"></a>Что такое частная конечная точка Azure?
 
-Azure Private Endpoint is a network interface that connects you privately and securely to a service powered by Azure Private Link. Private Endpoint uses a private IP address from your VNet, effectively bringing the service into your VNet. The service could be an Azure service such as Azure Storage, Azure Cosmos DB, SQL, etc. or your own [Private Link Service](private-link-service-overview.md).
+Частная конечная точка Azure — это сетевой интерфейс, который обеспечивает безопасное и надежное подключение к службе с помощью частной связи Azure. Частная конечная точка использует частный IP-адрес из виртуальной сети, фактически передавая ее в виртуальную сеть. Служба может быть службой Azure, такой как служба хранилища Azure, Azure Cosmos DB, SQL и т. д., или собственной [службы частной связи](private-link-service-overview.md).
   
-## <a name="private-endpoint-properties"></a>Private Endpoint properties 
- A Private Endpoint specifies the following properties: 
+## <a name="private-endpoint-properties"></a>Свойства частной конечной точки 
+ Частная конечная точка содержит следующие свойства: 
 
 
-|Свойство  |Описание |
+|Свойство  |ОПИСАНИЕ |
 |---------|---------|
-|Name    |    A unique name within the resource group.      |
-|Подсеть    |  The subnet to deploy and allocate private IP addresses from a virtual network. For subnet requirements, see the Limitations section in this article.         |
-|Private Link Resource    |   The private link resource to connect using resource ID or alias, from the list of available types. A unique network identifier will be generated for all traffic sent to this resource.       |
-|Target subresource   |      The subresource to connect. Each private link resource type has different options to select based on preference.    |
-|Connection approval method    |  Automatic or manual. Based on role-based access control (RBAC) permissions, your private endpoint can be approved automatically. If you try to connect to a private link resource without RBAC, use the manual method to allow the owner of the resource to approve the connection.        |
-|Request Message     |  You can specify a message for requested connections to be approved manually. This message can be used to identify a specific request.        |
-|Состояние подключения   |   A read-only property that specifies if the private endpoint is active. Only private endpoints in an approved state can be used to send traffic. Additional states available: <br>-**Approved**: Connection was automatically or manually approved and is ready to be used.</br><br>-**Pending**: Connection was created manually and is pending approval by the private link resource owner.</br><br>-**Rejected**: Connection was rejected by the private link resource owner.</br><br>-**Disconnected**: Connection was removed by the private link resource owner. The private endpoint becomes informative and should be deleted for cleanup. </br>|
+|имя    |    Уникальное имя в группе ресурсов.      |
+|Подсеть    |  Подсеть для развертывания и выделения частных IP-адресов из виртуальной сети. Требования к подсети см. в разделе ограничения этой статьи.         |
+|Ресурс частной ссылки    |   Ресурс частной связи для подключения с помощью идентификатора ресурса или псевдонима из списка доступных типов. Для всего трафика, отправляемого в этот ресурс, будет создан уникальный идентификатор сети.       |
+|Целевой подресурс   |      Подресурс для подключения. Каждый тип ресурса частной связи имеет различные параметры для выбора в зависимости от предпочтений.    |
+|Метод утверждения соединения    |  Автоматически или вручную. На основе разрешений на управление доступом на основе ролей (RBAC) Закрытая конечная точка может быть утверждена автоматически. При попытке подключения к ресурсу частной связи без RBAC используйте ручной метод, чтобы разрешить владельцу ресурса утверждать подключение.        |
+|Сообщение запроса     |  Можно указать сообщение о том, что запрошенные подключения должны быть утверждены вручную. Это сообщение можно использовать для поиска конкретного запроса.        |
+|Состояние подключения   |   Свойство только для чтения, которое указывает, активна ли закрытая конечная точка. Для отправки трафика можно использовать только частные конечные точки в утвержденном состоянии. Доступны дополнительные состояния: <br>-**утверждено**: подключение было автоматически или утверждено вручную и готово к использованию.</br><br>-**Ожидание**: подключение создано вручную и ожидает утверждения владельцем ресурса закрытой ссылки.</br><br>-**отклонено**: соединение было отклонено владельцем ресурса закрытой ссылки.</br><br>-**отключено**: подключение было удалено владельцем ресурса закрытой ссылки. Частная конечная точка станет информативной и должна быть удалена для очистки. </br>|
 
-Here are some key details about private endpoints: 
-- Private endpoint enables connectivity between the consumers from the same VNet, regionally peered VNets, globally peered VNets and on premises using [VPN](https://azure.microsoft.com/services/vpn-gateway/) or [Express Route](https://azure.microsoft.com/services/expressroute/) and services powered by Private Link.
+Ниже приведены некоторые ключевые сведения о частных конечных точках. 
+- Частная конечная точка обеспечивает подключение между потребителями из одной и той же виртуальной сети, с помощью виртуальных сетей, глобально одноранговых виртуальных сетей и локальной сети, используя [VPN](https://azure.microsoft.com/services/vpn-gateway/) или [Express Route](https://azure.microsoft.com/services/expressroute/) и службы на базе частной связи.
  
-- When creating a private endpoint, a network interface is also created for the lifecycle of the resource. The interface is assigned a private IP address from the subnet that maps to the Private Link Service.
+- При создании частной конечной точки также создается сетевой интерфейс для жизненного цикла ресурса. Интерфейсу назначается частный IP-адрес из подсети, сопоставляемой со службой Private Link.
  
-- The private endpoint must be deployed in the same region as the virtual network. 
+- Частная конечная точка должна быть развернута в том же регионе, что и виртуальная сеть. 
  
-- The private link resource can be deployed in a different region than the virtual network and private endpoint.
+- Ресурс частной ссылки можно развернуть в регионе, отличном от региона виртуальной сети и частной конечной точки.
  
-- Multiple private endpoints can be created using the same private link resource. For a single network using a common DNS server configuration, the recommended practice is to use a single private endpoint for a given private link resource to avoid duplicate entries or conflicts in DNS resolution. 
+- Несколько частных конечных точек можно создать с помощью одного и того же ресурса частной связи. Для одной сети, использующей общую конфигурацию DNS-сервера, рекомендуется использовать одну частную конечную точку для данного ресурса закрытой ссылки, чтобы избежать дублирования записей или конфликтов при разрешении DNS. 
  
-- Multiple private endpoints can be created on the same or different subnets within the same virtual network. There are limits to the number of private endpoints you can create in a subscription. For details, see [Azure limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#networking-limits).
+- В одной и той же виртуальной сети можно создать несколько частных конечных точек для одних и тех же или разных подсетей. Количество частных конечных точек, которые можно создать в подписке, ограничено. Дополнительные сведения см. в статье [ограничения Azure](https://docs.microsoft.com/azure/azure-subscription-service-limits#networking-limits).
 
 
  
-## <a name="private-link-resource"></a>Private link resource 
-A private link resource is the destination target of a given private endpoint. The following is a list of available private link resource types: 
+## <a name="private-link-resource"></a>Ресурс частной ссылки 
+Ресурс частной ссылки является целевым объектом назначения заданной закрытой конечной точки. Ниже приведен список доступных типов ресурсов частной ссылки. 
  
-|Private link resource name  |Тип ресурса   |Subresources  |
+|Имя ресурса частной ссылки  |Тип ресурса   |Подресурсов  |
 |---------|---------|---------|
-|**Private Link Service** (Your own service)   |  Microsoft.Network/privateLinkServices       | empty |
-|**база данных SQL Azure;** | Microsoft.Sql/servers    |  Sql Server (sqlServer)        |
-|**Хранилище данных SQL Azure** | Microsoft.Sql/servers    |  Sql Server (sqlServer)        |
-|**Служба хранилища Azure**  | Microsoft.Storage/storageAccounts    |  Blob (blob, blob_secondary)<BR> Table (table, table_secondary)<BR> Queue (queue, queue_secondary)<BR> File (file, file_secondary)<BR> Web (web, web_secondary)        |
-|**Хранилище Azure Data Lake Storage 2-го поколения**  | Microsoft.Storage/storageAccounts    |  Blob (blob, blob_secondary)       |
-|**Azure Cosmos DB** | Microsoft.AzureCosmosDB/databaseAccounts | Sql, MongoDB, Cassandra, Gremlin, Table|
+|**Служба частной связи** (собственная служба)   |  Microsoft. Network/Привателинксервицес       | empty |
+|**база данных SQL Azure;** | Microsoft.Sql/servers    |  SQL Server (sqlServer)        |
+|**Хранилище данных Azure SQL** | Microsoft.Sql/servers    |  SQL Server (sqlServer)        |
+|**Хранилище Azure**  | Microsoft.Storage/storageAccounts    |  Большой двоичный объект (BLOB-объект, blob_secondary)<BR> Таблица (таблица, table_secondary)<BR> Очередь (очередь, queue_secondary)<BR> Файл (файл, file_secondary)<BR> Интернет (веб, web_secondary)        |
+|**Хранилище Azure Data Lake Storage 2-го поколения**  | Microsoft.Storage/storageAccounts    |  Большой двоичный объект (BLOB-объект, blob_secondary)       |
+|**Azure Cosmos DB** | Microsoft. Азурекосмосдб/databaseAccounts | SQL, MongoDB, Cassandra, Gremlin, Table|
  
-## <a name="network-security-of-private-endpoints"></a>Network security of private endpoints 
-When using private endpoints for Azure services, traffic is secured to a specific private link resource. The platform performs an access control to validate network connections reaching only the specified private link resource. To access additional resources within the same Azure service, additional private endpoints are required. 
+## <a name="network-security-of-private-endpoints"></a>Сетевая безопасность частных конечных точек 
+При использовании частных конечных точек для служб Azure трафик защищен с помощью определенного ресурса частной ссылки. Платформа выполняет контроль доступа для проверки сетевых подключений, достигнутых только указанным ресурсом частной ссылки. Для доступа к дополнительным ресурсам в одной службе Azure требуются дополнительные частные конечные точки. 
  
-You can completely lock down your workloads from accessing public endpoints to connect to a supported Azure service. This control provides an additional network security layer to your resources by providing a built-in exfiltration protection that prevents access to other resources hosted on the same Azure service. 
+Вы можете полностью заблокировать рабочие нагрузки от доступа к общедоступным конечным точкам для подключения к поддерживаемой службе Azure. Этот элемент управления предоставляет дополнительный уровень безопасности сети для ресурсов, предоставляя встроенную защиту утечка, которая предотвращает доступ к другим ресурсам, размещенным в той же службе Azure. 
  
-## <a name="access-to-a-private-link-resource-using-approval-workflow"></a>Access to a private link resource using approval workflow 
-You can connect to a private link resource using the following connection approval methods:
-- **Automatically** approved when you own or have permission on the specific private link resource. The permission required is based on the private link resource type in the following format: Microsoft.\<Provider>/<resource_type>/privateEndpointConnectionApproval/action
-- **Manual** request when you don't have the permission required and would like to request access. An approval workflow will be initiated. The private endpoint and subsequent private endpoint connection will be created in a "Pending" state. The private link resource owner is responsible to approve the connection. After it's approved, the private endpoint is enabled to send traffic normally, as shown in the following approval workflow diagram.  
+## <a name="access-to-a-private-link-resource-using-approval-workflow"></a>Доступ к ресурсу закрытой ссылки с помощью рабочего процесса утверждения 
+Подключиться к ресурсу закрытой ссылки можно с помощью следующих методов утверждения соединения:
+- **Автоматически** утверждается, когда вы владеете или имеете разрешение на конкретный ресурс частной связи. Требуемое разрешение основано на типе ресурса частной ссылки в следующем формате: Microsoft. Поставщик\<>/< resource_type >/Приватиндпоинтконнектионаппровал/Актион
+- **Ручное** выполнение запроса, если у вас нет необходимых разрешений и требуется запросить доступ. Будет инициирован рабочий процесс утверждения. Частная конечная точка и последующее подключение к частной конечной точке будут созданы в состоянии "ожидание". Владелец ресурса закрытой ссылки отвечает за утверждение подключения. После утверждения частная конечная точка будет включена для обычной отправки трафика, как показано на следующей схеме рабочего процесса утверждения.  
 
-![workflow approval](media/private-endpoint-overview/private-link-paas-workflow.png)
+![утверждение рабочего процесса](media/private-endpoint-overview/private-link-paas-workflow.png)
  
-The private link resource owner can perform the following actions over a private endpoint connection: 
-- Review all private endpoint connections details. 
-- Approve a private endpoint connection. The corresponding private endpoint will be enabled to send traffic to the private link resource. 
-- Reject a private endpoint connection. The corresponding private endpoint will be updated to reflect the status.
-- Delete a private endpoint connection in any state. The corresponding private endpoint will be updated with a disconnected state to reflect the action, the private endpoint owner can only delete the resource at this point. 
+Владелец ресурса закрытой ссылки может выполнять следующие действия через подключение к частной конечной точке: 
+- Проверьте все сведения о подключениях к частным конечным точкам. 
+- Утвердите подключение к частной конечной точке. Соответствующая частная конечная точка будет включена для отправки трафика в ресурс закрытой ссылки. 
+- Отклонение подключения к частной конечной точке. Соответствующая частная конечная точка будет обновлена для отражения состояния.
+- Удаление подключения к частной конечной точке в любом состоянии. Соответствующая частная конечная точка будет обновлена с отключенным состоянием, чтобы отразить действие, владелец частной конечной точки может удалить ресурс только на этом этапе. 
  
 > [!NOTE]
-> Only a private endpoint in an approved state can send traffic to a given private link resource. 
+> Только частная конечная точка в утвержденном состоянии может передавать трафик на данный ресурс закрытой ссылки. 
 
-### <a name="connecting-using-alias"></a>Connecting using Alias
-Alias is a unique moniker that is generated when the service owner creates the private link service behind a standard load balancer. Service owner can share this Alias with their consumers offline. Consumers can request a connection to private link service using either the resource URI or the Alias. If you want to connect using Alias, you must create private endpoint using manual connection approval method. For using manual connection approval method, set manual request parameter to true during private endpoint create flow. Look at [New-AzPrivateEndpoint](/powershell/module/az.network/new-azprivateendpoint?view=azps-2.6.0) and [az network private-endpoint create](/cli/azure/network/private-endpoint?view=azure-cli-latest#az-network-private-endpoint-create) for details. 
+### <a name="connecting-using-alias"></a>Соединение с помощью псевдонима
+Псевдоним — это уникальный моникер, который создается, когда владелец службы создает службу частной связи за стандартную подсистему балансировки нагрузки. Владелец службы может совместно использовать этот псевдоним со своими потребителями в автономном режиме. Потребители могут запрашивать подключение к службе Private Link с помощью URI ресурса или псевдонима. Если вы хотите подключиться с помощью псевдонима, необходимо создать закрытую конечную точку с помощью метода подтверждения соединения вручную. Для использования метода утверждения подключения вручную задайте для параметра ручного запроса значение true во время создания конечной точки с помощью команды "создать поток". Дополнительные сведения см. в описании командлета [New-азприватиндпоинт](/powershell/module/az.network/new-azprivateendpoint?view=azps-2.6.0) и [AZ Network Private-конечной точки Create](/cli/azure/network/private-endpoint?view=azure-cli-latest#az-network-private-endpoint-create) . 
 
 ## <a name="dns-configuration"></a>Настройка DNS 
-When connecting to a private link resource using a fully qualified domain name (FQDN) as part of the connection string, it's important to correctly configure your DNS settings to resolve to the allocated private IP address. Existing Azure services might already have a DNS configuration to use when connecting over a public endpoint. This needs to be overridden to connect using your private endpoint. 
+При подключении к ресурсу частной связи с использованием полного доменного имени (FQDN) в строке подключения необходимо правильно настроить параметры DNS, чтобы разрешить доступ к выделенному частному IP-адресу. Возможно, в существующих службах Azure уже есть конфигурация DNS, используемая при подключении через общедоступную конечную точку. Это необходимо переопределить для подключения с помощью частной конечной точки. 
  
-The network interface associated with the private endpoint contains the complete set of information required to configure your DNS, including FQDN and private IP addresses allocated for a given private link resource. 
+Сетевой интерфейс, связанный с частной конечной точкой, содержит полный набор сведений, необходимых для настройки DNS, включая полное доменное имя и частные IP-адреса, выделенные для данного ресурса частной ссылки. 
  
-You can use the following options to configure your DNS settings for private endpoints: 
-- **Use the Host file (only recommended for testing)** . You can use the host file on a virtual machine to override the DNS.  
-- **Use a private DNS zone**. You can use private DNS zones to override the DNS resolution for a given private endpoint. A private DNS zone can be linked to your virtual network to resolve specific domains.
-- **Use your custom DNS server**. You can use your own DNS server to override the DNS resolution for a given private link resource. If your [DNS server](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server) is hosted on a virtual network, you can create a DNS forwarding rule to use a private DNS zone to simplify the configuration for all private link resources.
+Для настройки параметров DNS для частных конечных точек можно использовать следующие параметры. 
+- **Используйте файл узла (рекомендуется только для тестирования)** . Для переопределения DNS можно использовать файл узла на виртуальной машине.  
+- **Используйте частную зону DNS**. Для переопределения разрешения DNS для заданной закрытой конечной точки можно использовать частные зоны DNS. Частная зона DNS может быть связана с вашей виртуальной сетью для разрешения конкретных доменов.
+- **Используйте пользовательский DNS-сервер**. Можно использовать собственный DNS-сервер для переопределения разрешения DNS для данного ресурса закрытой ссылки. Если [DNS-сервер](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server) размещен в виртуальной сети, можно создать правило пересылки DNS для использования частной зоны DNS, чтобы упростить настройку для всех ресурсов частной связи.
  
 > [!IMPORTANT]
-> It's not recommended to override a zone that is actively in use to resolve public endpoints. Connections to resources won't be able to resolve correctly without DNS forwarding to the public DNS. To avoid issues, create a different domain name or follow the suggested name for each service below. 
+> Не рекомендуется переопределять зону, которая активно используется для разрешения общедоступных конечных точек. Подключения к ресурсам не смогут правильно разрешаться без пересылки DNS в общедоступную службу DNS. Чтобы избежать проблем, создайте другое доменное имя или выполните предлагаемое имя для каждой службы ниже. 
  
-For Azure services, use the recommended zone names as described in the following table:
+Для служб Azure используйте Рекомендуемые имена зон, как описано в следующей таблице.
 
-|Private Link resource type   |Subresource  |Zone name  |
+|Тип ресурса частной ссылки   |Subresource  |Имя зоны  |
 |---------|---------|---------|
-|SQL DB/DW (Microsoft.Sql/servers)    |  Sql Server (sqlServer)        |   privatelink.database.windows.net       |
-|Storage Account (Microsoft.Storage/storageAccounts)    |  Blob (blob, blob_secondary)        |    privatelink.blob.core.windows.net      |
-|Storage Account (Microsoft.Storage/storageAccounts)    |    Table (table, table_secondary)      |   privatelink.table.core.windows.net       |
-|Storage Account (Microsoft.Storage/storageAccounts)    |    Queue (queue, queue_secondary)     |   privatelink.queue.core.windows.net       |
-|Storage Account (Microsoft.Storage/storageAccounts)   |    File (file, file_secondary)      |    privatelink.file.core.windows.net      |
-|Storage Account (Microsoft.Storage/storageAccounts)     |  Web (web, web_secondary)        |    privatelink.web.core.windows.net      |
-|Data Lake File System Gen2 (Microsoft.Storage/storageAccounts)  |  Data Lake File System Gen2 (dfs, dfs_secondary)        |     privatelink.dfs.core.windows.net     |
-|Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts)|SQL |privatelink.documents.azure.com|
-|Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts)|MongoDB |privatelink.mongo.cosmos.azure.com|
-|Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts)|Cassandra|privatelink.cassandra.cosmos.azure.com|
-|Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts)|Gremlin |privatelink.gremlin.cosmos.azure.com|
-|Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts)|Таблицы|privatelink.table.cosmos.azure.com|
+|SQL DB/DW (Microsoft. SQL/Servers)    |  SQL Server (sqlServer)        |   privatelink.database.windows.net       |
+|Учетная запись хранения (Microsoft. Storage/storageAccounts)    |  Большой двоичный объект (BLOB-объект, blob_secondary)        |    privatelink.blob.core.windows.net      |
+|Учетная запись хранения (Microsoft. Storage/storageAccounts)    |    Таблица (таблица, table_secondary)      |   privatelink.table.core.windows.net       |
+|Учетная запись хранения (Microsoft. Storage/storageAccounts)    |    Очередь (очередь, queue_secondary)     |   privatelink.queue.core.windows.net       |
+|Учетная запись хранения (Microsoft. Storage/storageAccounts)   |    Файл (файл, file_secondary)      |    privatelink.file.core.windows.net      |
+|Учетная запись хранения (Microsoft. Storage/storageAccounts)     |  Интернет (веб, web_secondary)        |    privatelink.web.core.windows.net      |
+|Data Lake файловой системы Gen2 (Microsoft. Storage/storageAccounts)  |  Data Lake файловой системы Gen2 (DFS, dfs_secondary)        |     privatelink.dfs.core.windows.net     |
+|Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|SQL |privatelink.documents.azure.com|
+|Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|MongoDB |privatelink.mongo.cosmos.azure.com|
+|Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|Cassandra|privatelink.cassandra.cosmos.azure.com|
+|Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|Gremlin |privatelink.gremlin.cosmos.azure.com|
+|Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|таблица|privatelink.table.cosmos.azure.com|
  
-Azure will create a canonical name DNS record (CNAME) on the public DNS to redirect the resolution to the suggested domain names. You'll be able to override the resolution with the private IP address of your private endpoints. 
+Azure создаст каноническое имя DNS-записи (CNAME) на общедоступном DNS-сервере, чтобы перенаправить разрешение в предлагаемые доменные имена. Вы сможете переопределить разрешение с помощью частного IP-адреса закрытых конечных точек. 
  
-Your applications don't need to change the connection URL. When attempting to resolve using a public DNS, the DNS server will now resolve to your private endpoints. The process does not impact your applications. 
+Приложениям не нужно изменять URL-адрес подключения. При попытке разрешить использование общедоступной службы DNS DNS-сервер теперь будет разрешаться в частные конечные точки. Этот процесс не влияет на ваши приложения. 
  
 ## <a name="limitations"></a>Ограничения
  
-The following table includes a list of known limitations when using private endpoints: 
+В следующей таблице содержится список известных ограничений при использовании частных конечных точек. 
 
 
-|Ограничение |Описание |Устранение  |
+|Ограничения |ОПИСАНИЕ |Устранение  |
 |---------|---------|---------|
-|Network Security Group (NSG) rules and User Defined Routes do not apply to Private Endpoint    |NSG is not supported on private endpoints. While subnets containing the private endpoint can have NSG associated with it, the rules will not be effective on traffic processed by the private endpoint. You must have [network policies enforcement disabled](disable-private-endpoint-network-policy.md) to deploy private endpoints in a subnet. NSG is still enforced on other workloads hosted on the same subnet. Routes on any client subnet will be using an /32 prefix, changing the default routing behavior requires a similar UDR  | Control the traffic by using NSG rules for outbound traffic on source clients. Deploy individual routes with /32 prefix to override private endpoint routes        |
-|  Peered Virtual Network with Private endpoints only are not supported   |   When connecting to private endpoints on a peered Virtual Network without any other workload is not supported       | Deploy a single VM on the peered Virtual Network to enable the connectivity |
-|Specialized workloads cannot access private endpoints    |   The following services deployed into your virtual network cannot access any private link resource using private endpoints:<br>План обслуживания приложения</br>Экземпляр контейнера Azure</br>Azure NetApp Files</br>Выделенное устройство HSM Azure<br>       |   No mitigation during preview.       |
+|Правила группы безопасности сети (NSG) и определяемые пользователем маршруты не применяются к частной конечной точке    |NSG не поддерживается в частных конечных точках. В то время как подсети, содержащие закрытую конечную точку, могут связываться с NSG, правила не будут действовать для трафика, обрабатываемого частной конечной точкой. Для развертывания частных конечных точек в подсети необходимо [Отключить принудительное применение политик сети](disable-private-endpoint-network-policy.md) . NSG по-прежнему применяется к другим рабочим нагрузкам, размещенным в той же подсети. Маршруты в любой подсети клиента будут использовать префикс/32, изменение поведения маршрутизации по умолчанию требует аналогичного UDR  | Управление трафиком с помощью правил NSG для исходящего трафика на исходных клиентах. Развертывание отдельных маршрутов с префиксом/32 для переопределения маршрутов частных конечных точек        |
+|  Одноранговая виртуальная сеть с частными конечными точками не поддерживается   |   При подключении к частным конечным точкам в одноранговой виртуальной сети без какой-либо другой рабочей нагрузки не поддерживается.       | Развертывание одной виртуальной машины в одноранговой виртуальной сети для обеспечения возможности подключения |
+|Специализированные рабочие нагрузки не могут получить доступ к частным конечным точкам    |   Следующие службы, развернутые в виртуальной сети, не могут получить доступ к ресурсам частной связи с помощью частных конечных точек:<br>План обслуживания приложения</br>Экземпляр контейнера Azure</br>Azure NetApp Files</br>Выделенное устройство HSM Azure<br>       |   Без устранения рисков во время предварительной версии.       |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 - [Create a Private Endpoint using Azure portal ](create-private-endpoint-portal.md) (Создание частной конечной точки для сервера базы данных SQL с помощью портала)
 - [Создание частной конечной точки для сервера базы данных SQL с помощью портала PowerShell ](create-private-endpoint-powershell.md)
 - [Создание частной конечной точки для сервера базы данных SQL с помощью портала CLI ](create-private-endpoint-cli.md)

@@ -4,16 +4,16 @@ description: В этой статье объясняются распростр�
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 11/08/2019
+ms.date: 12/04/2019
 ms.topic: conceptual
-ms.service: billing
+ms.service: cost-management-billing
 manager: boalcsva
-ms.openlocfilehash: 3c992274ba8ff82795e9a4f917c67e7ef379d13e
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: c53a051df0a0100d9209530490d910612be2f30d
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73888449"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849927"
 ---
 # <a name="azure-ea-portal-administration"></a>Администрирование на портале Azure EA
 

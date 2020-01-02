@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: vinynigam
 ms.author: vinigam
 ms.date: 02/20/2018
-ms.openlocfilehash: 943f6cee70367d8a1ff0dc003d06e46b487e3a48
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: f7859dbef486d4afa825b289f3991464dacf702c
+ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72898807"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74665650"
 ---
 # <a name="network-performance-monitor-solution-in-azure"></a>Решение "Монитор производительности сети" в Azure
 
@@ -39,10 +39,14 @@ ms.locfileid: "72898807"
 Монитор производительности сети может отслеживать подключение между сетями и приложениями в любой части мира из рабочей области, размещенной в одном из следующих регионов:
 * Западная Европа
 * Центрально-западная часть США
+* Центрально-северная часть США
 * Восточная часть США
+* Восточная часть США 2
 * Восточная Япония
 * Юго-Восточная Азия
 * Юго-Восточная Австралия
+* Центральная Австралия
+* Восточная Австралия
 * Южная часть Соединенного Королевства
 * Центральная Индия
 * Правительство США (Вирджиния)

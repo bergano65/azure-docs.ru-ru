@@ -1,5 +1,5 @@
 ---
-title: Скрипт Azure CLI. Масштабирование сервера Базы данных Azure для MariaDB
+title: Скрипт CLI для масштабирования сервера службы "База данных Azure для MariaDB"
 description: Этот пример скрипта CLI масштабирует сервер Базы данных Azure для MariaDB до нужного уровня производительности после выполнения запроса к метрикам.
 author: ajlam
 ms.author: andrela
@@ -7,13 +7,13 @@ ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: sample
 ms.custom: mvc
-ms.date: 08/07/2019
-ms.openlocfilehash: 772c4de9c53f618d0c7c5d8b8d6acc2830595f55
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.date: 12/02/2019
+ms.openlocfilehash: 562f265cccf444740c177a41e516f9066188613e
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68884149"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74771641"
 ---
 # <a name="monitor-and-scale-an-azure-database-for-mariadb-server-using-azure-cli"></a>Мониторинг и масштабирование сервера Базы данных Azure для MariaDB с помощью Azure CLI
 Этот пример скрипта CLI масштабирует вычислительные ресурсы и хранилище для отдельного сервера Базы данных Azure для MariaDB после выполнения запроса к метрикам. Вычислительные ресурсы можно масштабировать произвольно. Объем хранилища можно только наращивать.

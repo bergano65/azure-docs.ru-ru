@@ -1,6 +1,6 @@
 ---
-title: Система управления инфраструктурой Azure DevTest Labs
-description: Эта статья содержит рекомендации по управлению инфраструктурой Azure DevTest Labs.
+title: Миграция и интеграция приложений в Azure DevTest Labs
+description: В этой статье приводятся рекомендации по управлению Azure DevTest Labs инфраструктурой в контексте миграции и интеграции приложений.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -10,15 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/11/2019
+ms.date: 11/26/2019
 ms.author: spelluru
 ms.reviewer: christianreddington,anthdela,juselph
-ms.openlocfilehash: 75ce5d6a88b5398bd010cc363b4241bc90068f55
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 25342cfbb8ac7ad5538b1f009c75f1d101bfc047
+ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60193005"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74560648"
 ---
 # <a name="governance-of-azure-devtest-labs-infrastructure---application-migration-and-integration"></a>Система управления инфраструктурой Azure DevTest Labs. Миграция и интеграция приложений
 После создания лабораторной среды для разработки и тестирования обдумайте следующие вопросы.
@@ -63,9 +63,9 @@ ms.locfileid: "60193005"
 
 С помощью DevTest Labs создайте конвейер пользовательского образа в Azure Pipelines.
 
-- [Introduction: Get VMs ready in minutes by setting up an image factory in Azure DevTest Labs](https://blogs.msdn.microsoft.com/devtestlab/2016/09/14/introduction-get-vms-ready-in-minutes-by-setting-up-image-factory-in-azure-devtest-labs/) (Введение: подготовка виртуальных машин за несколько минут за счет настройки фабрики образов в Azure DevTest Labs)
-- [Image Factory – Part 2! Setup Azure Pipelines and Factory Lab to Create VMs](https://blogs.msdn.microsoft.com/devtestlab/2017/10/25/image-factory-part-2-setup-vsts-to-create-vms-based-on-devtest-labs/) (Фабрика образов, часть 2. Установка Azure Pipelines и лаборатории фабрики для создания виртуальных машин)
-- [Image Factory – Part 3: Save Custom Images and Distribute to Multiple Labs](https://blogs.msdn.microsoft.com/devtestlab/2018/01/10/image-factory-part-3-save-custom-images-and-distribute-to-multiple-labs/) (Фабрика образов, часть 3. Сохранение пользовательских образов и распространение их в несколько лабораторий)
+- [Introduction: Get VMs ready in minutes by setting up an image factory in Azure DevTest Labs](https://blogs.msdn.microsoft.com/devtestlab/2016/09/14/introduction-get-vms-ready-in-minutes-by-setting-up-image-factory-in-azure-devtest-labs/) (Введение: подготовьте виртуальные машины за несколько минут, настроив фабрику образов в Azure DevTest Labs)
+- [Фабрика образов — часть 2! Настройка Azure Pipelines и фабричной лаборатории для создания виртуальных машин](https://blogs.msdn.microsoft.com/devtestlab/2017/10/25/image-factory-part-2-setup-vsts-to-create-vms-based-on-devtest-labs/)
+- [Image Factory – Part 3: Save Custom Images and Distribute to Multiple Labs](https://blogs.msdn.microsoft.com/devtestlab/2018/01/10/image-factory-part-3-save-custom-images-and-distribute-to-multiple-labs/) (Фабрика образов, часть 3. Сохранение пользовательских образов и распространение их в несколько лабораторий)
 - [Video: Custom Image Factory with Azure DevTest Labs](https://blogs.msdn.microsoft.com/devtestlab/2017/04/17/video-custom-image-factory-with-azure-devtest-labs/) (Видео. Фабрика пользовательских образов в Azure DevTest Labs)
 
 ## <a name="patterns-to-set-up-network-configuration"></a>Шаблоны для настройки конфигурации сети
@@ -117,10 +117,10 @@ ms.locfileid: "60193005"
 При выборе числа виртуальных машин для одного пользователя или лаборатории следует учитывать три основных критерия.
 
 - **Общая сумма расходов** группы на ресурсы для лаборатории. Запустить несколько компьютеров очень легко. Чтобы контролировать эти расходы, можно применить ограничение на число виртуальных машин для пользователя и (или) лаборатории.
-- Общее число виртуальных машин в лаборатории зависит от доступных [квот уровня подписки](../azure-subscription-service-limits.md). Одно из действующих ограничений — не более 800 групп ресурсов на одну подписку. В настоящее время DevTest Labs создает для каждой виртуальной машины новую группу ресурсов (если не используются общие общедоступные IP-адреса). При возникновении 10 labs в подписке, labs помещалось примерно 79 виртуальных машин в каждой лаборатории (800 верхний предел — 10 групп ресурсов для 10 лабораторий, сами) = 79 виртуальных машин на лабораторию.
+- Общее число виртуальных машин в лаборатории зависит от доступных [квот уровня подписки](../azure-subscription-service-limits.md). Одно из действующих ограничений — не более 800 групп ресурсов на одну подписку. В настоящее время DevTest Labs создает для каждой виртуальной машины новую группу ресурсов (если не используются общие общедоступные IP-адреса). Если в подписке 10 лабораторий, лабораторные занятия могут разместить около 79 виртуальных машин в каждой лаборатории (800 верхний предел — 10 групп ресурсов для 10 практических занятий) = 79 виртуальных машин на лабораторию.
 - Если лаборатория подключена к локальной сети через (например) Express Route, для виртуальной сети или подсети будут действовать **определенные доступные пространства IP-адресов**. Чтобы не возникало ситуаций, когда новые виртуальные машины в лаборатории не удается создать из-за ошибки ("не удается получить IP-адрес"), владельцу лаборатории следует настроить для лаборатории ограничение на максимальное количество виртуальных машин, согласованное с размером доступного пространства IP-адресов.
 
-## <a name="use-resource-manager-templates"></a>Использование шаблонов Resource Manager
+## <a name="use-resource-manager-templates"></a>Использование шаблонов диспетчера ресурсов
 
 ### <a name="question"></a>Вопрос
 Как применить шаблоны Resource Manager в моей среде DevTest Labs?

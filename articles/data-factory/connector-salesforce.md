@@ -1,25 +1,25 @@
 ---
-title: Копирование данных в Salesforce и обратно с помощью фабрики данных Azure
+title: Копирование данных из Salesforce и обратно
 description: Узнайте, как копировать данные из Salesforce в поддерживаемые приемники данных или из поддерживаемых источников данных в Salesforce с помощью действия копирования в конвейере фабрики данных.
 services: data-factory
-documentationcenter: ''
+ms.author: jingwang
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
+ms.custom: seo-lt-2019
 ms.date: 08/01/2019
-ms.author: jingwang
-ms.openlocfilehash: 1bcfc0386925d142fd765547ff60e1f2a3bd9101
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 89ce253806b4a39b393c74ea96ddc2523d338d84
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73680341"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74926256"
 ---
 # <a name="copy-data-from-and-to-salesforce-by-using-azure-data-factory"></a>Копирование данных в Salesforce и обратно с помощью фабрики данных Azure
+
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-salesforce-connector.md)
 > * [Текущая версия](connector-salesforce.md)
@@ -43,7 +43,7 @@ ms.locfileid: "73680341"
 
 Соединитель Salesforce создан на основе API-интерфейса SalesForce RESTFUL и групповой информации с [V45](https://developer.salesforce.com/docs/atlas.en-us.218.0.api_rest.meta/api_rest/dome_versions.htm) для копирования данных из и [V40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api_asynch.meta/api_asynch/asynch_api_intro.htm) для копирования данных в.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 В Salesforce требуется включить разрешение API. Дополнительные сведения о включении доступа к API в Salesforce с помощью набора разрешений см. [здесь](https://www.data2crm.com/migration/faqs/enable-api-access-salesforce-permission-set/).
 
@@ -56,7 +56,7 @@ ms.locfileid: "73680341"
 
 Кроме того, в обоих случаях вы можете получить сообщение об ошибке "REQUEST_LIMIT_EXCEEDED". Дополнительные сведения см. в разделе API request limits (Ограничения запросов API) руководства об [ограничениях для разработчика Salesforce](https://resources.docs.salesforce.com/200/20/en-us/sfdc/pdf/salesforce_app_limits_cheatsheet.pdf).
 
-## <a name="get-started"></a>Приступая к работе
+## <a name="get-started"></a>Начать
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -66,13 +66,13 @@ ms.locfileid: "73680341"
 
 Для связанной службы Salesforce поддерживаются следующие свойства.
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type |Для свойства type нужно задать значение **Salesforce**. |Да |
+| Тип |Для свойства type нужно задать значение **Salesforce**. |ДА |
 | environmentUrl | Укажите URL-адрес экземпляра Salesforce. <br> Значение по умолчанию — `"https://login.salesforce.com"`. <br> Чтобы скопировать данные из песочницы, укажите `"https://test.salesforce.com"`. <br> Чтобы скопировать данные из пользовательского домена, укажите URL-адрес, например `"https://[domain].my.salesforce.com"`. |Нет |
-| Имя пользователя |Укажите имя пользователя для учетной записи пользователя. |Да |
-| пароль |Укажите пароль для учетной записи пользователя.<br/><br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да |
-| securityToken |Укажите маркер безопасности для учетной записи пользователя. Инструкции по получению и сбросу маркера безопасности см. в [этом разделе](https://help.salesforce.com/apex/HTViewHelpDoc?id=user_security_token.htm). Общие сведения о маркере безопасности см. в статье [Security and the API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm) (Безопасность и API).<br/><br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да |
+| Имя пользователя |Укажите имя пользователя для учетной записи пользователя. |ДА |
+| пароль |Укажите пароль для учетной записи пользователя.<br/><br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |ДА |
+| securityToken |Укажите маркер безопасности для учетной записи пользователя. Инструкции по получению и сбросу маркера безопасности см. в [этом разделе](https://help.salesforce.com/apex/HTViewHelpDoc?id=user_security_token.htm). Общие сведения о маркере безопасности см. в статье [Security and the API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm) (Безопасность и API).<br/><br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |ДА |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | "Нет" для источника, "Да" для приемника, если связанная с источником служба не имеет среды выполнения интеграции |
 
 >[!IMPORTANT]
@@ -144,9 +144,9 @@ ms.locfileid: "73680341"
 
 Чтобы скопировать данные в Salesforce, а также из Salesforce, для свойства type набора данных установите значение **SalesforceObject**. Поддерживаются следующие свойства.
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства type нужно задать значение **SalesforceObject**.  | Да |
+| Тип | Для свойства type нужно задать значение **SalesforceObject**.  | ДА |
 | objectApiName | Имя объекта Salesforce, из которого извлекаются данные. | "Нет" для источника, "Да" для приемника |
 
 > [!IMPORTANT]
@@ -154,7 +154,7 @@ ms.locfileid: "73680341"
 
 ![Фабрика данных — подключение к Salesforce: имя API](media/copy-data-from-salesforce/data-factory-salesforce-api-name.png)
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -176,9 +176,9 @@ ms.locfileid: "73680341"
 >[!NOTE]
 >Для обеспечения обратной совместимости: если для копирования данных из Salesforce используется прежний тип набора данных (RelationalTable), он будет работать, пока не появится предложение переключиться на новый тип (SalesforceObject).
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство type для набора данных должно иметь значение **RelationalTable**. | Да |
+| Тип | Свойство type для набора данных должно иметь значение **RelationalTable**. | ДА |
 | tableName | Имя таблицы в Salesforce | Нет (если свойство query указано в источнике действия) |
 
 ## <a name="copy-activity-properties"></a>Свойства действия копирования
@@ -189,10 +189,10 @@ ms.locfileid: "73680341"
 
 Чтобы копировать данные из Salesforce, установите тип источника **SalesforceSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство type источника действия копирования должно иметь значение **SalesforceSource**. | Да |
-| запрос |Используйте пользовательский запрос для чтения данных. Вы можете использовать запрос, написанный на [объектно-ориентированном языке запросов Salesforce (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm), или запрос SQL-92. Дополнительные советы см. в разделе [Советы по запросам](#query-tips). Если запрос не указан, будут извлечены все данные объекта Salesforce, заданного в наборе данных в свойстве objectApiName. | Нет (если в наборе данных задано свойство objectApiName) |
+| Тип | Свойство type источника действия копирования должно иметь значение **SalesforceSource**. | ДА |
+| query |Используйте пользовательский запрос для чтения данных. Вы можете использовать запрос, написанный на [объектно-ориентированном языке запросов Salesforce (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm), или запрос SQL-92. Дополнительные советы см. в разделе [Советы по запросам](#query-tips). Если запрос не указан, будут извлечены все данные объекта Salesforce, заданного в наборе данных в свойстве objectApiName. | Нет (если в наборе данных задано свойство objectApiName) |
 | readBehavior | Указывает, следует ли запрашивать существующие записи или все записи, включая удаленные. Если значение не задано, по умолчанию используется первое значение. <br>Допустимые значения: **query** (по умолчанию), **queryAll**.  | Нет |
 
 > [!IMPORTANT]
@@ -200,7 +200,7 @@ ms.locfileid: "73680341"
 
 ![Фабрика данных — подключение к Salesforce: список имен API](media/copy-data-from-salesforce/data-factory-salesforce-api-name-2.png)
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[
@@ -239,9 +239,9 @@ ms.locfileid: "73680341"
 
 Чтобы скопировать данные в Salesforce, установите тип приемника **SalesforceSink** в действии копирования. В разделе **sink** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство type приемника действия копирования должно иметь значение **SalesforceSink**. | Да |
+| Тип | Свойство type приемника действия копирования должно иметь значение **SalesforceSink**. | ДА |
 | writeBehavior | Поведение операции при записи.<br/>Допустимые значения: **Insert** (Вставка) и **Upsert** (Вставка-обновление). | Нет (по умолчанию используется Insert) |
 | externalIdFieldName | Имя поля для внешнего идентификатора при операции upsert. Это поле должно быть определено в объекте Salesforce как External Id Field (Поле внешнего идентификатора). Оно не может иметь значения NULL в соответствующих входных данных. | "Да" для операции Upsert (Вставка-обновление) |
 | writeBatchSize | Количество строк данных, записываемых в Salesforce одним пакетом. | Нет (значение по умолчанию — 5,000) |
@@ -307,14 +307,14 @@ ms.locfileid: "73680341"
 
 ### <a name="retrieve-data-by-using-a-where-clause-on-the-datetime-column"></a>Извлечение данных с использованием предложения where для столбца даты и времени
 
-При указании запроса SOQL или SQL обратите внимание на различие в формате даты и времени. Например:
+При указании запроса SOQL или SQL обратите внимание на различие в формате даты и времени. Пример.
 
 * **Пример SOQL**: `SELECT Id, Name, BillingCity FROM Account WHERE LastModifiedDate >= @{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-ddTHH:mm:ssZ')} AND LastModifiedDate < @{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-ddTHH:mm:ssZ')}`
 * **Пример SQL**: `SELECT * FROM Account WHERE LastModifiedDate >= {ts'@{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-dd HH:mm:ss')}'} AND LastModifiedDate < {ts'@{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-dd HH:mm:ss')}'}`
 
 ### <a name="error-of-malformed_querytruncated"></a>Ошибка MALFORMED_QUERY: усечено
 
-Если вы столкнулись с ошибкой "MALFORMED_QUERY: truncated", обычно это связано с тем, что в данных имеется столбец Жунктионидлист Type, а Salesforce имеет ограничение на поддержку таких данных с большим количеством строк. Чтобы устранить эту проблемы, попробуйте исключить столбец Жунктионидлист или ограничить число копируемых строк (можно разделить на несколько запусков действия копирования).
+Если вы столкнулись с ошибкой "MALFORMED_QUERY: truncated", обычно это связано с тем, что в данных имеется столбец типа Жунктионидлист, а Salesforce имеет ограничение на поддержку таких данных с большим количеством строк. Чтобы устранить эту проблемы, попробуйте исключить столбец Жунктионидлист или ограничить число копируемых строк (можно разделить на несколько запусков действия копирования).
 
 ## <a name="data-type-mapping-for-salesforce"></a>Сопоставление типов данных для Salesforce
 
@@ -322,25 +322,25 @@ ms.locfileid: "73680341"
 
 | Тип данных Salesforce | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
-| Автонумерация |string |
+| Автонумерация |Строка |
 | Флажок |Логический |
-| Валюта |DECIMAL |
-| Дата |DateTime |
-| Дата и время |DateTime |
-| Email |string |
-| Идентификатор |string |
-| Связь для подстановки |string |
-| Список множественного выбора |string |
-| Number |DECIMAL |
-| Процент |DECIMAL |
-| Номер телефона |string |
-| Список выбора |string |
-| текст |string |
-| Текстовое поле |string |
-| Текстовое поле (длинное) |string |
-| Текстовое поле (расширенное) |string |
-| Текст (зашифрованный) |string |
-| URL-адрес |string |
+| Валюта |Decimal |
+| Дата |Дата и время |
+| Дата и время |Дата и время |
+| Эл. почта |Строка |
+| Идентификатор |Строка |
+| Связь для подстановки |Строка |
+| Список множественного выбора |Строка |
+| NUMBER |Decimal |
+| Процент |Decimal |
+| Номер телефона |Строка |
+| Список выбора |Строка |
+| Текст |Строка |
+| Текстовое поле |Строка |
+| Текстовое поле (длинное) |Строка |
+| Текстовое поле (расширенное) |Строка |
+| Текст (зашифрованный) |Строка |
+| URL-адрес |Строка |
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска
 

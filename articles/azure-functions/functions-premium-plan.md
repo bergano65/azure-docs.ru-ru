@@ -1,102 +1,102 @@
 ---
 title: План ценовой категории "Премиум" для Функций Azure
-description: Details and configuration options (VNet, no cold start, unlimited execution duration) for the Azure Functions Premium plan.
+description: Сведения и параметры конфигурации (VNet, без холодного запуска, длительности выполнения) для плана функций Azure Premium.
 author: jeffhollan
 ms.topic: conceptual
 ms.date: 10/16/2019
 ms.author: jehollan
-ms.openlocfilehash: 99589a4f11f91afa7d3c9f93d844654ccc69aab1
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 9c1a9a9e3b9e1c12c3960a8586c25436c8d937e0
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74322962"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74532905"
 ---
 # <a name="azure-functions-premium-plan"></a>План ценовой категории "Премиум" для Функций Azure
 
-The Azure Functions Premium plan is a hosting option for function apps. The Premium plan provides features like VNet connectivity, no cold start, and premium hardware.  Multiple function apps can be deployed to the same Premium plan, and the plan allows you to configure compute instance size, base plan size, and maximum plan size.  For a comparison of the Premium plan and other plan and hosting types, see [function scale and hosting options](functions-scale.md).
+План функций Azure Premium — это вариант размещения для приложений-функций. План "Премиум" предоставляет такие функции, как подключение к виртуальной сети, без холодного запуска и оборудование уровня "Премиум".  В один и тот же план Premium можно развернуть несколько приложений с функциями, а план позволяет настроить размер вычислительных экземпляров, базовый размер плана и максимальный размер плана.  Сравнение плана Premium и других типов планов и размещения см. в статье [варианты масштабирования и размещения функций](functions-scale.md).
 
 ## <a name="create-a-premium-plan"></a>Создание плана "Премиум"
 
 [!INCLUDE [functions-premium-create](../../includes/functions-premium-create.md)]
 
-You can also create a Premium plan using [az functionapp plan create](/cli/azure/functionapp/plan#az-functionapp-plan-create) in the Azure CLI. The following example creates an _Elastic Premium 1_ tier plan:
+Вы также можете создать план Premium с помощью команды [AZ functionapp Plan Create](/cli/azure/functionapp/plan#az-functionapp-plan-create) в Azure CLI. В следующем примере создается план уровня _эластичного Premium 1_ :
 
 ```azurecli-interactive
 az functionapp plan create --resource-group <RESOURCE_GROUP> --name <PLAN_NAME> \
 --location <REGION> --sku EP1
 ```
 
-In this example, replace `<RESOURCE_GROUP>` with your resource group and `<PLAN_NAME>` with a name for your plan that is unique in the resource group. Specify a [supported `<REGION>`](#regions). To create a Premium plan that supports Linux, include the `--is-linux` option.
+В этом примере замените `<RESOURCE_GROUP>` своей группой ресурсов и `<PLAN_NAME>` именем вашего плана, который уникален в группе ресурсов. Укажите [поддерживаемый `<REGION>`](#regions). Чтобы создать план Premium, поддерживающий Linux, включите параметр `--is-linux`.
 
-With the plan created, you can use [az functionapp create](/cli/azure/functionapp#az-functionapp-create) to create your function app. In the portal, both the plan and the app are created at the same time. 
+После создания плана можно использовать команду [AZ functionapp Create](/cli/azure/functionapp#az-functionapp-create) , чтобы создать приложение функции. На портале одновременно создаются план и приложение. Пример полного скрипта Azure CLI см. [в разделе Создание приложения-функции в плане Premium](scripts/functions-cli-create-premium-plan.md).
 
 ## <a name="features"></a>Компоненты
 
-The following features are available to function apps deployed to a Premium plan.
+Следующие функции доступны для приложений-функций, развернутых в плане Premium.
 
-### <a name="pre-warmed-instances"></a>Pre-warmed instances
+### <a name="pre-warmed-instances"></a>Предварительно заданный экземпляр
 
-If no events and executions occur today in the Consumption plan, your app may scale down to zero instances. When new events come in, a new instance needs to be specialized with your app running on it.  Specializing new instances may take some time depending on the app.  This additional latency on the first call is often called app cold start.
+Если в плане потребления не происходит никаких событий и выполнений в настоящее время, приложение может масштабироваться до нулевых экземпляров. Когда поступают новые события, новый экземпляр должен быть специализированным для приложения, работающего на нем.  Специализация новых экземпляров может занять некоторое время в зависимости от приложения.  Эта дополнительная задержка при первом вызове часто называется холодный запуском приложения.
 
-In the Premium plan, you can have your app pre-warmed on a specified number of instances, up to your minimum plan size.  Pre-warmed instances also let you pre-scale an app before high load. As the app scales out, it first scales into the pre-warmed instances. Additional instances continue to buffer out and warm immediately in preparation for the next scale operation. By having a buffer of pre-warmed instances, you can effectively avoid cold start latencies.  Pre-warmed instances is a feature of the Premium plan, and you need to keep at least one instance running and available at all times the plan is active.
+В плане "Премиум" вы можете подготовить приложение на заданное количество экземпляров, вплоть до минимального размера плана.  Предварительно подготовленные экземпляры также позволяют предварительно масштабировать приложение перед высокой нагрузкой. По мере того как приложение масштабируется, оно сначала масштабируется до заранее подготовленных экземпляров. Дополнительные экземпляры продолжают поступить в буфер и немедленно загревается для подготовки к следующей операции масштабирования. Наличие буфера предварительно подготовленных экземпляров позволяет избежать задержек при холодном запуске.  Предварительно подготовленные экземпляры являются функцией плана Premium, поэтому необходимо, чтобы хотя бы один экземпляр работал и был доступен во всех случаях, когда план активен.
 
-You can configure the number of pre-warmed instances in the Azure portal by selected your **Function App**, going to the **Platform Features** tab, and selecting the **Scale Out** options. In the function app edit window, pre-warmed instances is specific to that app, but the minimum and maximum instances apply to your entire plan.
+Вы можете настроить число предварительно заданных экземпляров в портал Azure, выбрав **приложение-функция**, перейдите на вкладку **функции платформы** и выберите параметры **Scale out** . В окне изменения приложения-функции предварительно заработающие экземпляры относятся только к этому приложению, но минимальное и максимальное экземпляры применяются ко всему плану.
 
-![Elastic Scale Settings](./media/functions-premium-plan/scale-out.png)
+![Параметры эластичного масштабирования](./media/functions-premium-plan/scale-out.png)
 
-You can also configure pre-warmed instances for an app with the Azure CLI
+Вы также можете настроить предварительно подготовленные экземпляры для приложения с помощью Azure CLI
 
 ```azurecli-interactive
 az resource update -g <resource_group> -n <function_app_name>/config/web --set properties.preWarmedInstanceCount=<desired_prewarmed_count> --resource-type Microsoft.Web/sites
 ```
 
-### <a name="private-network-connectivity"></a>Private network connectivity
+### <a name="private-network-connectivity"></a>Подключение к частной сети
 
-Azure Functions deployed to a Premium plan takes advantage of [new VNet integration for web apps](../app-service/web-sites-integrate-with-vnet.md).  When configured, your app can communicate with resources within your VNet or secured via service endpoints.  IP restrictions are also available on the app to restrict incoming traffic.
+Функции Azure, развернутые в плане Premium, используют преимущества [новой интеграции с виртуальной сетью для веб-приложений](../app-service/web-sites-integrate-with-vnet.md).  При настройке приложение может взаимодействовать с ресурсами в виртуальной сети или защищено с помощью конечных точек службы.  Ограничения IP-адресов также доступны в приложении для ограничения входящего трафика.
 
-When assigning a subnet to your function app in a Premium plan, you need a subnet with enough IP addresses for each potential instance. We require an IP block with at least 100 available addresses.
+При назначении подсети для приложения-функции в плане Premium требуется подсеть с достаточной IP-адресацией для каждого возможного экземпляра. Для этого требуется блок IP-адресов, в котором по меньшей мере 100.
 
-Fore more information, see [integrate your function app with a VNet](functions-create-vnet.md).
+Дополнительные сведения см. в статье [интеграция приложения-функции с виртуальной](functions-create-vnet.md)сетью.
 
-### <a name="rapid-elastic-scale"></a>Rapid elastic scale
+### <a name="rapid-elastic-scale"></a>Быстрое Эластичное масштабирование
 
-Additional compute instances are automatically added for your app using the same rapid scaling logic as the Consumption plan.  To learn more about how scaling works, see [Function scale and hosting](./functions-scale.md#how-the-consumption-and-premium-plans-work).
+Дополнительные расчетные экземпляры автоматически добавляются в приложение с использованием той же логики быстрого масштабирования, что и план потребления.  Дополнительные сведения о том, как работает масштабирование, см. в статье [масштабирование и размещение функций](./functions-scale.md#how-the-consumption-and-premium-plans-work).
 
-### <a name="longer-run-duration"></a>Longer run duration
+### <a name="longer-run-duration"></a>Длительность длительного выполнения
 
-Azure Functions in a Consumption plan are limited to 10 minutes for a single execution.  In the Premium plan, the run duration defaults to 30 minutes to prevent runaway executions. However, you can [modify the host.json configuration](./functions-host-json.md#functiontimeout) to make this 60 minutes for Premium plan apps.
+Использование функций Azure в плане потребления ограничено 10 минутами для одного выполнения.  В плане Premium длительность выполнения по умолчанию составляет 30 минут, чтобы предотвратить неконтролируемые выполнения. Однако вы можете [изменить конфигурацию Host. JSON](./functions-host-json.md#functiontimeout) , чтобы сделать 60 минут для приложений плана Premium.
 
-## <a name="plan-and-sku-settings"></a>Plan and SKU settings
+## <a name="plan-and-sku-settings"></a>Параметры плана и номера SKU
 
-When you create the plan, you configure two settings: the minimum number of instances (or plan size) and the maximum burst limit.  Minimum instances are reserved and always running.
+При создании плана необходимо настроить два параметра: минимальное число экземпляров (или размер плана) и максимальное количество пакетов.  Минимальное количество экземпляров зарезервировано и всегда выполняется.
 
 > [!IMPORTANT]
-> You are charged for each instance allocated in the minimum instance count regardless if functions are executing or not.
+> За каждый экземпляр, выделенный в качестве минимального числа экземпляров, выставляются счета независимо от того, выполняются ли функции.
 
-If your app requires instances beyond your plan size, it can continue to scale out until the number of instances hits the maximum burst limit.  You are billed for instances beyond your plan size only while they are running and rented to you.  We will make a best effort at scaling your app out to its defined maximum limit, whereas the minimum plan instances are guaranteed for your app.
+Если приложению требуются экземпляры за пределами вашего плана, можно продолжить масштабирование до тех пор, пока количество экземпляров не достигнет максимального количества пакетов.  Счета выставляются за экземпляры, которые выходят за пределы размера вашего плана, только если они работают и арендованы вам.  Мы сделаем лучшие усилия при масштабировании приложения до заданного максимального предела, в то время как минимальный набор экземпляров плана гарантированно подходит для вашего приложения.
 
-You can configure the plan size and maximums in the Azure portal by selected the **Scale Out** options in the plan or a function app deployed to that plan (under **Platform Features**).
+Вы можете настроить размер и максимум для плана в портал Azure, выбрав параметры **Scale out** в плане или приложение-функцию, развернутое в этом плане (в разделе **функции платформы**).
 
-You can also increase the maximum burst limit from the Azure CLI:
+Кроме того, можно увеличить максимальное число пакетов от Azure CLI:
 
 ```azurecli-interactive
 az resource update -g <resource_group> -n <premium_plan_name> --set properties.maximumElasticWorkerCount=<desired_max_burst> --resource-type Microsoft.Web/serverfarms 
 ```
 
-### <a name="available-instance-skus"></a>Available instance SKUs
+### <a name="available-instance-skus"></a>Номера SKU доступных экземпляров
 
-When creating or scaling your plan, you can choose between three instance sizes.  You will be billed for the total number of cores and memory consumed per second.  Your app can automatically scale out to multiple instances as needed.  
+При создании или масштабировании плана можно выбрать один из трех размеров экземпляра.  Вам будет выставлен счет за общее количество ядер и объем используемой памяти в секунду.  Приложение может автоматически масштабироваться на несколько экземпляров по мере необходимости.  
 
 |SKU|Ядра|Память|Storage|
 |--|--|--|--|
-|EP1|1|3.5GB|250 ГБ|
+|EP1|1|3,5 ГБ|250 ГБ|
 |EP2|2|7 ГБ|250 ГБ|
 |EP3|4|14 ГБ|250 ГБ|
 
 ## <a name="regions"></a>Регионы
 
-Below are the currently supported regions for each OS.
+Ниже приведены поддерживаемые в настоящее время регионы для каждой ОС.
 
 |Регион| Windows | Linux |
 |--| -- | -- |
@@ -126,11 +126,11 @@ Below are the currently supported regions for each OS.
 |Западная часть США| ✔ | ✔ |
 |Западная часть США 2| ✔ |  |
 
-<sup>1</sup>Maximum scale out limited to 20 instances.  
-<sup>2</sup>Maximum scale out limited to 60 instances.
+<sup>1</sup> Максимальное масштабное масштабирование ограничено 20 экземплярами.  
+<sup>2</sup> Максимальный масштаб развертывания ограничен до 60 экземпляров.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Understand Azure Functions scale and hosting options](functions-scale.md)
+> [Общие сведения о масштабировании и возможностях размещения функций Azure](functions-scale.md)

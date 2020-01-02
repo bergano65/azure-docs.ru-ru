@@ -4,12 +4,13 @@ description: Симптомы, причины и способы устранен
 ms.reviewer: saurse
 ms.topic: troubleshooting
 ms.date: 07/05/2019
-ms.openlocfilehash: c4ee8cbeeec21c4af0cc3a7fd83844bc8c676add
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.service: backup
+ms.openlocfilehash: 8331d74528703df1d7c56f25af7df0f53cd1f9be
+ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74172606"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74996278"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -22,10 +23,11 @@ ms.locfileid: "74172606"
 **Код ошибки**: UserErrorGuestAgentStatusUnavailable. <br>
 **Сообщение об ошибке**: "Агенту виртуальной машины не удается установить связь со службой Azure Backup".<br>
 
-Возможно, агент виртуальной машины Azure остановлен, устарел, находится в нестабильном состоянии или не установлен, а служба Azure Backup не может активировать моментальные снимки.  
+Возможно, агент виртуальной машины Azure остановлен, устарел, находится в нестабильном состоянии или не установлен, а служба Azure Backup не может активировать моментальные снимки.
 
-- Если агент виртуальной машины остановлен или находится в нестабильном состоянии, **перезапустите агент** и повторите операцию резервного копирования (попробуйте выполнить резервное копирование по запросу). Действия по перезапуску агента см. в инструкциях для [виртуальных машин Windows](https://docs.microsoft.com/azure/backup/backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms) или [виртуальных машин Linux](https://docs.microsoft.com/azure/virtual-machines/linux/update-agent).
-- Если агент виртуальной машины не установлен или устарел, установите или обновите агент виртуальной машины и повторите операцию резервного копирования. Инструкции по установке и обновлению агента см. в статье [виртуальные машины Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows) или [виртуальные машины Linux](https://docs.microsoft.com/azure/virtual-machines/linux/update-agent).  
+- **Откройте портал Azure > параметры > виртуальной машины > колонка свойств** > Убедитесь, что **состояние** виртуальной машины **работает** и **состояние агента** — **Готово**. Если агент виртуальной машины остановлен или находится в нестабильном состоянии, перезапустите агент.<br>
+  - Для виртуальных машин Windows выполните следующие [действия](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms) , чтобы перезапустить Гостевой агент.<br>
+  - Для виртуальных машин Linux выполните следующие [действия](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms) , чтобы перезапустить Гостевой агент.
 
 ## <a name="guestagentsnapshottaskstatuserror---could-not-communicate-with-the-vm-agent-for-snapshot-status"></a>GuestAgentSnapshotTaskStatusError — не удалось запросить состояние моментального снимка в агенте виртуальной машины
 
@@ -41,6 +43,18 @@ ms.locfileid: "74172606"
 **Причина 3. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)** .
 
 **Причина 4. [Не удалось обновить или загрузить расширение резервного копирования](#the-backup-extension-fails-to-update-or-load)** .
+
+**Причина 5. [Параметры конфигурации агента виртуальной машины не заданы (для виртуальных машин Linux)](#vm-agent-configuration-options-are-not-set-for-linux-vms)**
+
+## <a name="usererrorvmprovisioningstatefailed---the-vm-is-in-failed-provisioning-state"></a>Усереррорвмпровисионингстатефаилед — виртуальная машина находится в состоянии "сбой подготовки"
+
+**Код ошибки**: усереррорвмпровисионингстатефаилед<br>
+**Сообщение об ошибке**: виртуальная машина находится в состоянии "сбой подготовки"<br>
+
+Эта ошибка возникает, когда один из ошибок расширения переводит виртуальную машину в состояние сбоя подготовки.<br>**Откройте портал Azure > параметры виртуальной машины > > расширения > состояние расширений** и проверьте, все ли расширения находятся в состоянии " **успех** ".
+
+- Если расширение VMSnapshot находится в состоянии Failed, щелкните правой кнопкой мыши неисправное расширение и удалите его. Активация нерегламентированного резервного копирования. это приведет к переустановке расширений и запуску задания архивации.  <br>
+- Если какое-либо другое расширение находится в состоянии сбоя, оно может повлиять на резервное копирование. Убедитесь, что эти проблемы с расширением разрешены, и повторите операцию резервного копирования.  
 
 ## <a name="usererrorrpcollectionlimitreached---the-restore-point-collection-max-limit-has-reached"></a>UserErrorRpCollectionLimitReached — достигнуто максимальное количество точек восстановления в коллекции
 
@@ -168,7 +182,7 @@ ms.locfileid: "74172606"
 
    Если нужный процесс не запущен, выполните следующие команды для его перезапуска:
 
-   - Для Ubuntu: `service walinuxagent start`
+   - Для Ubuntu: `service walinuxagent start`.
    - Для других дистрибутивов: `service waagent start`.
 
 3. [Настройте автоматический перезапуск агента](https://github.com/Azure/WALinuxAgent/wiki/Known-Issues#mitigate_agent_crash).
@@ -183,6 +197,11 @@ ms.locfileid: "74172606"
 1. В файле /etc/waagent.conf найдите такую строку: **Enable verbose logging (y|n)** .
 2. Для параметра **Logs.Verbose** измените значение с *n* на *y*.
 3. Сохраните изменения и перезапустите waagent, выполнив шаги, описанные выше в этом разделе.
+
+### <a name="vm-agent-configuration-options-are-not-set-for-linux-vms"></a>Параметры конфигурации агента виртуальной машины не заданы (для виртуальных машин Linux)
+
+Файл конфигурации (/ etc/waagent.conf) определяет действия waagent. Расширения параметров файла конфигурации **. Включите** и **подготавливаете.** чтобы резервное копирование работало, агент должен иметь значение **y** .
+Полный список параметров файла конфигурации агента виртуальной машины см. на <https://github.com/Azure/WALinuxAgent#configuration-file-options>
 
 ### <a name="the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken"></a>Не удалось получить состояние моментального снимка или создать моментальный снимок
 

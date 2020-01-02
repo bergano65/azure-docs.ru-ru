@@ -4,17 +4,17 @@ description: Руководство по управлению настройка
 services: automation
 ms.service: automation
 ms.subservice: dsc
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 manager: carmonm
 ms.topic: conceptual
 ms.date: 08/08/2018
-ms.openlocfilehash: 72e5018dc1212e57dc190c05cc54158d37ca7fe1
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 0339796f028a0cc0b19533be06127544db396f92
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231502"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74850097"
 ---
 # <a name="configure-servers-to-a-desired-state-and-manage-drift"></a>Настройка требуемого состояния серверов и управление смещением
 
@@ -65,7 +65,7 @@ configuration TestConfig {
 ```
 
 > [!NOTE]
-> In more advanced scenarios where you require multiple modules to be imported that provide DSC Resources, make sure each module has a unique `Import-DscResource` line in your configuration.
+> В более сложных сценариях, где требуется импортировать несколько модулей, предоставляющих ресурсы DSC, убедитесь, что каждый модуль имеет уникальную `Import-DscResource`ную строку в конфигурации.
 
 Вызовите командлет `Import-AzureRmAutomationDscConfiguration`, чтобы отправить конфигурацию в учетную запись службы автоматизации:
 
@@ -134,16 +134,16 @@ Set-AzureRmAutomationDscNode -ResourceGroupName 'MyResourceGroup' -AutomationAcc
 По умолчанию узел DSC проверяется на соответствие конфигурации узла каждые 30 минут.
 Сведения о том, как изменить интервал проверки соответствия, см. в статье [Настройка локального диспетчера конфигураций](/powershell/scripting/dsc/managing-nodes/metaConfig).
 
-## <a name="working-with-partial-configurations"></a>Working with Partial Configurations
+## <a name="working-with-partial-configurations"></a>Работа с частичными конфигурациями
 
-Azure Automation State Configuration supports usage of [partial configurations](/powershell/scripting/dsc/pull-server/partialconfigs).
-In this scenario, DSC is configured to manage multiple configurations independently, and each configuration is retrieved from Azure Automation.
-However, only one configuration can be assigned to a node per automation account.
-This means if you are using two configurations for a node you will require two automation accounts.
+Конфигурация состояния службы автоматизации Azure поддерживает использование [частичных конфигураций](/powershell/scripting/dsc/pull-server/partialconfigs).
+В этом сценарии DSC настроен для управления несколькими конфигурациями независимо, и каждая конфигурация извлекается из службы автоматизации Azure.
+Однако для каждой учетной записи службы автоматизации можно назначить только одну конфигурацию.
+Это означает, что при использовании двух конфигураций для узла потребуется две учетные записи службы автоматизации.
 
-For details about how to register a partial configuration from pull service, see the documentation for [partial configurations](https://docs.microsoft.com/powershell/scripting/dsc/pull-server/partialconfigs#partial-configurations-in-pull-mode).
+Дополнительные сведения о регистрации частичной конфигурации из опрашивающей службы см. в документации по [частичным конфигурациям](https://docs.microsoft.com/powershell/scripting/dsc/pull-server/partialconfigs#partial-configurations-in-pull-mode).
 
-For more information about how teams can work together to collaboratively manage servers using configuration as code see [Understanding DSC's role in a CI/CD Pipeline](/powershell/scripting/dsc/overview/authoringadvanced).
+Дополнительные сведения о совместной работе групп для совместного управления серверами с помощью конфигурации в качестве кода см. [в разделе Основные сведения о роли DSC в конвейере CI/CD](/powershell/scripting/dsc/overview/authoringadvanced).
 
 ## <a name="check-the-compliance-status-of-a-managed-node"></a>Проверка состояния соответствия управляемого узла
 
@@ -160,26 +160,26 @@ $reports = Get-AzureRmAutomationDscNodeReport -ResourceGroupName 'MyResourceGrou
 $reports[0]
 ```
 
-## <a name="removing-nodes-from-service"></a>Removing nodes from service
+## <a name="removing-nodes-from-service"></a>Удаление узлов из службы
 
-When you add a node to Azure Automation State Configuration, the settings in Local Configuration Manager are set to register with the service and pull configurations and required modules to configure the machine.
-If you choose to remove the node from the service, you can do so using either the Azure portal or the Az cmdlets.
+При добавлении узла в конфигурацию состояния службы автоматизации Azure параметры в локальной Configuration Manager задаются для регистрации в службе, а также для получения конфигураций и требуемых модулей для настройки компьютера.
+Если вы решили удалить узел из службы, это можно сделать с помощью командлета портал Azure или AZ.
 
 > [!NOTE]
-> Unregistering a node from the service only sets the Local Configuration Manager settings so the node is no longer connecting to the service.
-> This does not effect the configuration that is currently applied to the node.
-> To remove the current configuration, use the [PowerShell](https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument?view=powershell-5.1) or delete the local configuration file (this is the only option for Linux nodes).
+> При отмене регистрации узла из службы задаются только локальные параметры Configuration Manager, поэтому узел больше не подключается к службе.
+> Это не влияет на конфигурацию, которая в настоящее время применяется к узлу.
+> Чтобы удалить текущую конфигурацию, используйте [PowerShell](https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument?view=powershell-5.1) или удалите локальный файл конфигурации (это единственный вариант для узлов Linux).
 
 ### <a name="azure-portal"></a>портала Azure
 
-From Azure Automation, click on **State configuration (DSC)** in the table of contents.
-Next click **Nodes** to view the list of nodes that are registered with the service.
-Click on the name of the node you wish to remove.
-In the Node view that opens, click **Unregister**.
+Из службы автоматизации Azure щелкните **Конфигурация состояния (DSC)** в содержании.
+Затем щелкните **узлы** , чтобы просмотреть список узлов, зарегистрированных в службе.
+Щелкните имя узла, который вы хотите удалить.
+В открывшемся представлении узла нажмите кнопку **отменить регистрацию**.
 
 ### <a name="powershell"></a>PowerShell
 
-To unregister a node from Azure Automation State Configuration service using PowerShell, follow the documentation for the cmdlet [Unregister-AzAutomationDscNode](https://docs.microsoft.com/powershell/module/az.automation/unregister-azautomationdscnode?view=azps-2.0.0).
+Чтобы отменить регистрацию узла в службе настройки состояния службы автоматизации Azure с помощью PowerShell, следуйте указаниям в документации командлета [Unregister-азаутоматиондскноде](https://docs.microsoft.com/powershell/module/az.automation/unregister-azautomationdscnode?view=azps-2.0.0).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

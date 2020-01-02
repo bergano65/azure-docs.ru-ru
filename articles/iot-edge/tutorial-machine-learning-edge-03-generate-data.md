@@ -1,6 +1,6 @@
 ---
 title: Руководство по созданию данных на имитированном устройстве — Машинное обучение в Azure IoT Edge
-description: Руководство по Создание виртуальных устройств, которые формируют имитированные данные телеметрии для обучения модели машинного обучения.
+description: В этом учебнике будут созданы виртуальные устройства, которые формируют имитированные данные телеметрии для обучения модели машинного обучения.
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -8,12 +8,12 @@ ms.date: 11/11/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 51d93e5b83d203f3fa99b69cc5f2877bbfdb6fb1
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: d51a577b8a460e872b2baddcb668b13981609e40
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112867"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707744"
 ---
 # <a name="tutorial-generate-simulated-device-data"></a>Руководство по Создание данных имитированного устройства
 

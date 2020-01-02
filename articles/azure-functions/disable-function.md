@@ -1,33 +1,24 @@
 ---
 title: Способы отключения функций в решении "Функции Azure"
-description: Узнайте, как отключать и включать функции в решении "Функции Azure" версии 1.x и 2.x.
+description: Узнайте, как отключить и включить функции в функциях Azure.
 ms.topic: conceptual
-ms.date: 08/05/2019
-ms.openlocfilehash: 7968580fcaa40575571a41f067fa74fbdc0a3a34
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.date: 12/05/2019
+ms.openlocfilehash: bffb3136c77074ecd50e839fd7c73144ad910967
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74233040"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74970981"
 ---
 # <a name="how-to-disable-functions-in-azure-functions"></a>Способы отключения функций в решении "Функции Azure"
 
-В этой статье объясняется, как отключить функцию в решении "Функции Azure". *Отключить* функцию означает сделать так, чтобы среда выполнения игнорировала автоматический триггер, который определен для функции. Способ, с помощью которого вы это сделаете, зависит от версии среды выполнения и языка:
+В этой статье объясняется, как отключить функцию в решении "Функции Azure". *Отключить* функцию означает сделать так, чтобы среда выполнения игнорировала автоматический триггер, который определен для функции. Это позволяет предотвратить выполнение определенной функции без остановки всего приложения-функции.
 
-* Functions 2.x:
-  * Один способ для всех языков.
-  * Дополнительный способ для библиотек классов C#.
-* Functions 1.x:
-  * Языки сценариев.
-  * Библиотеки классов C#.
+Рекомендуемый способ отключения функции — использовать параметр приложения в формате `AzureWebJobs.<FUNCTION_NAME>.Disabled`. Вы можете создать и изменить этот параметр приложения несколькими способами, в том числе с помощью [Azure CLI](/cli/azure/) и вкладки " **Управление** " функции в [портал Azure](https://portal.azure.com). 
 
-## <a name="functions-2x---all-languages"></a>Функции 2.x — все языки
+## <a name="use-the-azure-cli"></a>Использование Azure CLI
 
-In Functions 2.x, you disable a function by using an app setting in the format `AzureWebJobs.<FUNCTION_NAME>.Disabled`. You can create and modify this application setting in a number of ways, including by using the [Azure CLI](/cli/azure/) and from your function's **Manage** tab in the [Azure portal](https://portal.azure.com). 
-
-### <a name="azure-cli"></a>Azure CLI
-
-In the Azure CLI, you use the [`az functionapp config appsettings set`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set) command to create and modify the app setting. The following command disables a function named `QueueTrigger` by creating an app setting named `AzureWebJobs.QueueTrigger.Disabled` set it to `true`. 
+В Azure CLI используется команда [`az functionapp config appsettings set`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set) для создания и изменения параметра приложения. Следующая команда отключает функцию с именем `QueueTrigger`, создавая параметр приложения с именем `AzureWebJobs.QueueTrigger.Disabled` присвоив ему значение `true`. 
 
 ```azurecli-interactive
 az functionapp config appsettings set --name <myFunctionApp> \
@@ -35,7 +26,7 @@ az functionapp config appsettings set --name <myFunctionApp> \
 --settings AzureWebJobs.QueueTrigger.Disabled=true
 ```
 
-To re-enable the function, rerun the same command with a value of `false`.
+Чтобы повторно включить функцию, повторно запустите ту же команду со значением `false`.
 
 ```azurecli-interactive
 az functionapp config appsettings set --name <myFunctionApp> \
@@ -43,52 +34,19 @@ az functionapp config appsettings set --name <myFunctionApp> \
 --settings AzureWebJobs.QueueTrigger.Disabled=false
 ```
 
-### <a name="portal"></a>Microsoft Azure
+## <a name="use-the-portal"></a>Использование портала
 
-You can also use the **Function State** switch on the function's **Manage** tab. The switch works by creating and deleting the `AzureWebJobs.<FUNCTION_NAME>.Disabled` app setting.
-
-![Переключатель состояния функции](media/disable-function/function-state-switch.png)
-
-## <a name="functions-2x---c-class-libraries"></a>Функции 2.x — библиотеки классов C#
-
-В библиотеке классов Функций 2.x рекомендуется использовать метод, который работает для всех языков. Но при желании вы можете [использовать атрибут Disable, как в Функциях 1.x](#functions-1x---c-class-libraries).
-
-## <a name="functions-1x---scripting-languages"></a>Функции 1.x — языки сценариев
-
-Для языков сценариев, таких как сценарий C# и JavaScript, используйте свойство `disabled` файла *function.json*, чтобы сообщить среде выполнения не активировать функцию. Этому свойству можно задать значение `true` или имя параметра приложения:
-
-```json
-{
-    "bindings": [
-        {
-            "type": "queueTrigger",
-            "direction": "in",
-            "name": "myQueueItem",
-            "queueName": "myqueue-items",
-            "connection":"MyStorageConnectionAppSetting"
-        }
-    ],
-    "disabled": true
-}
-```
-или 
-
-```json
-    "bindings": [
-        ...
-    ],
-    "disabled": "IS_DISABLED"
-```
-
-Во втором примере функция отключается, если имеется параметр приложения с именем IS_DISABLED и ему задано значение `true` или 1.
-
-You can edit the file in the Azure portal or use the **Function State** switch on the function's **Manage** tab. The portal switch works by changing the *function.json* file.
+Можно также использовать параметр **состояния функции** на вкладке **Управление** функции. Этот параметр работает путем создания и удаления параметра `AzureWebJobs.<FUNCTION_NAME>.Disabled` приложения.
 
 ![Переключатель состояния функции](media/disable-function/function-state-switch.png)
 
-## <a name="functions-1x---c-class-libraries"></a>Функции 1.x — библиотеки классов C#
+## <a name="other-methods"></a>Другие методы
 
-В библиотеке классов Функций 1.x используйте атрибут `Disable` для предотвращения активации функции. Можно использовать атрибут без параметра конструктора, как показано в следующем примере:
+Хотя метод установки приложения рекомендуется для всех языков и всех версий среды выполнения, существует несколько других способов отключения функций. Эти методы, зависящие от языка и версии среды выполнения, поддерживаются для обеспечения обратной совместимости. 
+
+### <a name="c-class-libraries"></a>Библиотеки классов C#.
+
+В функции библиотеки классов можно также использовать атрибут `Disable`, чтобы предотвратить срабатывание функции. Можно использовать атрибут без параметра конструктора, как показано в следующем примере:
 
 ```csharp
 public static class QueueFunctions
@@ -128,6 +86,39 @@ public static class QueueFunctions
 > То же самое касается переключателя **состояния функции** на вкладке **Управление**, так как он работает, изменяя файл *function.json*.
 >
 > Обратите также внимание, что портал может указывать, что функция отключена, когда это не так.
+
+### <a name="functions-1x---scripting-languages"></a>Функции 1.x — языки сценариев
+
+В версии 1. x можно также использовать свойство `disabled` файла *Function. JSON* , чтобы указать среде выполнения не запускать функцию. Этот метод работает только для языков сценариев, таких как C# script и JavaScript. Свойству `disabled` может быть присвоено значение `true` или имя параметра приложения:
+
+```json
+{
+    "bindings": [
+        {
+            "type": "queueTrigger",
+            "direction": "in",
+            "name": "myQueueItem",
+            "queueName": "myqueue-items",
+            "connection":"MyStorageConnectionAppSetting"
+        }
+    ],
+    "disabled": true
+}
+```
+или 
+
+```json
+    "bindings": [
+        ...
+    ],
+    "disabled": "IS_DISABLED"
+```
+
+Во втором примере функция отключается, если имеется параметр приложения с именем IS_DISABLED и ему задано значение `true` или 1.
+
+Файл можно изменить в портал Azure или использовать параметр **состояния функции** на вкладке **Управление** функции. Переключение на портал выполняется путем изменения файла *Function. JSON* .
+
+![Переключатель состояния функции](media/disable-function/function-state-switch.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

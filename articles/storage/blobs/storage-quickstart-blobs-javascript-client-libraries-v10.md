@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Создание большого двоичного объекта в службе хранилища Azure с помощью JavaScript и HTML в браузере
-description: Узнайте, как выполнять загрузку и удаление, а также получать список больших двоичных объектов с помощью JavaScript на странице HTML.
+title: Краткое руководство. Хранилище BLOB-объектов Azure для JavaScript версии 10 в браузере
+description: Узнайте, как выполнять отправку и удаление, а также получать список больших двоичных объектов с помощью пакета SDK JavaScript версии 10 на странице HTML.
 services: storage
 author: mhopkins-msft
 ms.custom: mvc
@@ -9,12 +9,12 @@ ms.author: mhopkins
 ms.date: 08/29/2019
 ms.topic: quickstart
 ms.subservice: blobs
-ms.openlocfilehash: 018a0405215d084962f6c107a607c8f82fae2500
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 7d481b115650c72df95f7516bb3b39411201bf83
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74132002"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74270196"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 

@@ -12,21 +12,23 @@ ms.date: 10/22/2018
 ms.author: mimart
 ms.reviewer: arvindh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a187ea9d22efa40c482ea8930be0271d84a899a
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 8ba3cc27777d13448b0e1114413128b550b0b2f5
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74273990"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74842294"
 ---
 # <a name="configure-the-way-end-users-consent-to-an-application-in-azure-active-directory"></a>Настройка методов получения согласия пользователей для приложения в Azure Active Directory
 Сведения о том, как настроить метод для получения согласия пользователя на разрешения приложения. Взаимодействие с пользователем можно упростить, предоставив согласие администратора. В этой статье приводятся различные способы, позволяющие настроить согласие пользователя. Эти методы применяются для всех пользователей в клиенте Azure Active Directory (AAD). 
 
 Дополнительные сведения о предоставлении согласия для приложений см. в статье [Платформа предоставления согласия Azure Active Directory](../develop/consent-framework.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы предоставить согласие администратора, следует войти от имени глобального администратора, администратора приложения или администратора облачных приложений.
+
+Чтобы предоставить согласие администратора для разрешений на Microsoft Graph и Azure AD Graph, требуются права глобального администратора. 
 
 Чтобы ограничить доступ к приложениям, необходимо запросить назначение пользователя, а затем назначить пользователей или группы приложению.  Подробнее см. статью [Методы назначения пользователей и групп](methods-for-assigning-users-and-groups.md).
 
@@ -72,7 +74,7 @@ ms.locfileid: "74273990"
 Вы можете потребовать, чтобы пользователи предоставляли согласие для приложения при каждом входе, добавив строку `&prompt=consent` к URL-адресу запроса проверки подлинности.
 Этот URL-адрес будет выглядеть следующим образом: `https://login.microsoftonline.com/<tenant-id>/oauth2/authorize?client_id=<client id>&response_type=code&redirect_uri=<Your-Redirect-URI-Https-Encoded>&nonce=1234&resource=<your-resource-Https-encoded>&prompt=consent`
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Согласие и интеграция приложений с Azure Active Directory](../develop/quickstart-v1-integrate-apps-with-azure-ad.md)
 

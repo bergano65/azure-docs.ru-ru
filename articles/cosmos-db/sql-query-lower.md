@@ -1,18 +1,18 @@
 ---
 title: НИЖЕ Azure Cosmos DB язык запросов
-description: Сведения о системной функции SQL ниже в Azure Cosmos DB.
+description: Сведения о более РАННЕй системной функции SQL в Azure Cosmos DB для возврата строкового выражения после преобразования символьных данных в нижний регистр
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 3a9c122ef65772458b832d3b1651e7e63e42985e
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 8f7cd864d90b8ab17a180a00a7a6d4bb683da9be
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349704"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873307"
 ---
 # <a name="lower-azure-cosmos-db"></a>НИЖЕ (Azure Cosmos DB)
  Возвращает строковое выражение после преобразования символов верхнего регистра в нижний.  
@@ -47,7 +47,7 @@ SELECT LOWER("Abc") AS lower
   
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

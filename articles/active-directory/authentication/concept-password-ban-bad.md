@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 07/11/2018
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 27530b143e46acad4152e8333836cbe9c79fab17
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: ef127d120b32f5344bce0f68d79f48401087f0ce
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74168100"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74848618"
 ---
 # <a name="eliminate-bad-passwords-in-your-organization"></a>Исключение неправильных паролей в организации
 
@@ -65,7 +65,7 @@ ms.locfileid: "74168100"
 
 Вместо этого гораздо эффективнее и безопасно блокировать только основные термины.
 
-- Компанией
+- "Contoso"
 - Лондон
 - »
 
@@ -174,7 +174,7 @@ ms.locfileid: "74168100"
 
 К сожалению, ваш пароль содержит слово, фразу или сочетание символов, которые легко угадать. Попробуйте ввести другой пароль.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка пользовательского списка заблокированных паролей](howto-password-ban-bad.md)
 - [Развертывание предварительной версии защиты паролем Azure AD](howto-password-ban-bad-on-premises-deploy.md)

@@ -1,20 +1,15 @@
 ---
-title: Руководство. Активация экземпляров контейнеров Azure с помощью функции Azure
+title: Учебник. Активация группы контейнеров по функциям Azure
 description: Создание бессерверной функции PowerShell, которая активируется HTTP-запросами, для автоматического создания экземпляров контейнеров Azure
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: tutorial
 ms.date: 09/20/2019
-ms.author: danlep
 ms.custom: ''
-ms.openlocfilehash: 00bd017b0bcff6386e678802c301087819792744
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.openlocfilehash: 49eb0721972a92f33bda2532367bc78280b6e655
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2019
-ms.locfileid: "71179952"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533374"
 ---
 # <a name="tutorial-use-an-http-triggered-azure-function-to-create-a-container-group"></a>Руководство по применению функции Azure, активируемой HTTP-запросами, для создания группы контейнеров
 

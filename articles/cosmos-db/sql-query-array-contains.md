@@ -1,18 +1,18 @@
 ---
-title: ARRAY_CONTAINS на языке запросов Azure Cosmos DB
-description: Дополнительные сведения о функции SQL System ARRAY_CONTAINS в Azure Cosmos DB.
+title: ARRAY_CONTAINS языка запросов Azure Cosmos DB
+description: Сведения о том, как массив содержит системную функцию SQL в Azure Cosmos DB возвращает логическое значение, показывающее, содержит ли массив указанное значения.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 247956ccc2718c9bf192b4d704a48014753c00dc
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 115667c93bbb832926a7939cf250a02b6fef8baa
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71348702"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873494"
 ---
 # <a name="array_contains-azure-cosmos-db"></a>ARRAY_CONTAINS (Azure Cosmos DB)
 Возвращает логическое значение, указывающее, содержит ли массив указанное значение. Вы можете проверить частичное или полное совпадение объекта с помощью логического выражение в команде. 
@@ -74,7 +74,7 @@ SELECT
 ```  
   
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Функции массива Azure Cosmos DB](sql-query-array-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

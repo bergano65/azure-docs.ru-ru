@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Создание индекса службы "Поиск Azure" с помощью .NET
 titleSuffix: Azure Cognitive Search
-description: Описание процессов создания индекса, загрузки данных и выполнения запросов с помощью C# и пакета SDK .NET для службы "Когнитивный поиск Azure".
+description: В этом руководстве по C# вы узнаете, как создать индекс, загрузить данные и выполнить запросы с помощью пакета SDK .NET для службы "Когнитивный поиск Azure".
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 11/04/2019
-ms.openlocfilehash: 45d24286a511ff60db33e149627932b0768c543b
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 1d8eaea4a6eded769542921851fb0c74a3c9d58b
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112026"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406762"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-c-using-the-net-sdk"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" с помощью C# и пакета SDK .NET
 > [!div class="op_single_selector"]
@@ -548,7 +548,7 @@ ms.locfileid: "74112026"
 
     Выходные данные содержат те же сообщения, что и ранее, с новыми сведениями о запросе и результатах.
 
-## <a name="clean-up"></a>Очистка
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Если вы работаете в своей подписке, по окончании проекта рекомендуем решить, нужны ли вам созданные ресурсы. Работающие ресурсы могут означать лишние затраты. Можно удалить отдельные ресурсы или удалить группу ресурсов, что позволит удалить весь набор ресурсов.
 

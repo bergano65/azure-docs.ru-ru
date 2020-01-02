@@ -10,14 +10,14 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: travisw
-ms.openlocfilehash: 62210bf480d09ce2a256a44b7554ac53aa06eb0c
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: dd3e27aefe03ee30e721fcbb915d9ad4b3821618
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73579699"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74806309"
 ---
-# <a name="custom-commands-preview"></a>Пользовательские команды (Предварительная версия)
+# <a name="custom-commands-preview"></a>Пользовательские команды (предварительная версия)
 
 [Голосовые помощники](voice-assistants.md) прослушивают пользователей и принимают меры в ответе, которые часто говорят обратно. Они используют [речь в тексте](speech-to-text.md) для транскрипция речи пользователя, а затем принимают меры по естественному пониманию текста. Это действие часто включает в себя речевой вывод от помощника, созданного с помощью преобразования [текста в речь](text-to-speech.md). Устройства подключаются к помощникам с помощью объекта `DialogServiceConnector` SDK для распознавания речи.
 
@@ -45,20 +45,20 @@ ms.locfileid: "73579699"
 
 Пример кода для создания речевого помощника с помощью настраиваемых команд (Предварительная версия) доступен на сайте GitHub.
 
-* [Образцы для голоса (SDK)](https://aka.ms/csspeech/samples)
+* [Примеры голосового помощника (SDK)](https://aka.ms/csspeech/samples)
 
 ## <a name="customization"></a>Настройка
 
-Речевые помощники, созданные с помощью служб распознавания речи Azure, могут использовать полный спектр вариантов настройки, доступных для преобразования [речи в текст](speech-to-text.md), преобразования [текста в речь](text-to-speech.md)и [выбора настраиваемых ключевых слов](speech-devices-sdk-create-kws.md).
+Речевые помощники, созданные с помощью службы распознавания речи, могут использовать полный спектр вариантов настройки, доступных для преобразования [речи в текст](speech-to-text.md), преобразования [текста в речь](text-to-speech.md)и [выбора настраиваемых ключевых слов](speech-devices-sdk-create-kws.md).
 
 > [!NOTE]
 > Параметры настройки зависят от языка и языкового стандарта (см. раздел [Поддерживаемые языки](supported-languages.md)).
 
-## <a name="reference-docs"></a>Справочная документация
+## <a name="reference-docs"></a>Справочные документы
 
 * [пакет SDK для службы "Речь"](speech-sdk-reference.md);
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Получите ключ подписки для Служб речи бесплатно](get-started.md)
+* [Try the Speech service for free](get-started.md) (Бесплатное использование службы "Речь")
 * [Получение пакета SDK для распознавания речи](speech-sdk.md)

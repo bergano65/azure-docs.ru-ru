@@ -1,48 +1,82 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Сетке Azure Service Fabric
+summary: Сетка Azure Service Fabric — это полностью управляемая служба, которая позволяет разработчикам развертывать контейнерные приложения без управления ресурсами виртуальных машин, хранилища или сети.
 metadata:
-  title: Документация по Сетке Azure Service Fabric. Руководства и справочник по API | Документация Майкрософт
-  meta.description: 'Azure Service Fabric Mesh is a fully managed service enabling developers to deploy containerized applications without managing virtual machines, storage, or networking resources. Learn how to use Service Fabric Mesh with our quickstarts and tutorials.'
-  services: service-fabric-mesh
-  author: dkkapur
-  manager: timlt
   ms.service: service-fabric-mesh
   ms.topic: landing-page
-  ms.date: 07/26/2018
-  ms.author: dekapur
-abstract:
-  description: 'Сетка Azure Service Fabric — это полностью управляемая служба, с помощью которой разработчики могут создавать и развертывать критически важные приложения, не беспокоясь об управлении инфраструктурой.  Используйте Сетку Service Fabric для создания и запуска надежных распределенных приложений на базе микрослужб с возможностью масштабирования по запросу. Узнайте, как использовать Сетку Azure Service Fabric, ознакомившись с нашими краткими руководствами и инструкциями.  Для получения дополнительных сведений ознакомьтесь с <a href="/azure/service-fabric-mesh/service-fabric-mesh-overview">обзором Сетки Azure Service Fabric</a> и ответами на <a href="/azure/service-fabric-mesh/service-fabric-mesh-faq">часто задаваемые вопросы</a>.'
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: Сведения о развертывании приложений и контейнеров Service Fabric в Сетке Service Fabric
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_cligeneric.svg'
-            text: Развертывание приложения Hello World в Сетке Service Fabric
-            href: /azure/service-fabric-mesh/service-fabric-mesh-quickstart-deploy-container
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_netcore.svg'
-            text: Создание и развертывание веб-приложения в Сетке Service Fabric
-            href: /azure/service-fabric-mesh/service-fabric-mesh-quickstart-dotnet-core
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: "Узнайте, как создать и развернуть приложение для Сетки с помощью Visual Studio или Azure\_CLI."
-      - type: list
-        style: unordered
-        items:
-          - html: '<a href="/azure/service-fabric-mesh/service-fabric-mesh-tutorial-create-dotnetcore">Создание, отладка, развертывание и обновление приложения на базе нескольких служб в Сетке Service Fabric с помощью Visual Studio.</a>'
-          - html: '<a href="/azure/service-fabric-mesh/service-fabric-mesh-tutorial-template-deploy-app">Развертывание, масштабирование и обновление приложения для Сетки Service Fabric с помощью шаблона.</a>'
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: REST
-            html: '<p><a href="/rest/api/servicefabric/sfmeshrp-index">API-интерфейсы поставщика ресурсов службы "Сетка Service Fabric"</a></p><p><a href="/rest/api/servicefabric/sfclient-index#service-fabric-resource-model">API-интерфейсы ресурсов клиента Service Fabric</a></p>'
+  author: erikadoyle
+  ms.author: edoyle
+  ms.date: 12/02/2019
+  ms.openlocfilehash: eb24b0b0b4a143e82c2b93f158db0a3d0647ed7c
+  ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 12/03/2019
+  ms.locfileid: "74790151"
+landingContent:
+- title: Сведения о Сетке Service Fabric
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Сетка Service Fabric?
+      url: service-fabric-mesh-overview.md
+    - text: Общие сведения о модели ресурсов Service Fabric
+      url: service-fabric-mesh-service-fabric-resources.md
+  - linkListType: concept
+    links:
+    - text: Терминология
+      url: service-fabric-mesh-terminology.md
+    - text: Сети и шлюзы
+      url: service-fabric-mesh-networks-and-gateways.md
+    - text: Хранение сведений о состояниях
+      url: service-fabric-mesh-storing-state.md
+    - text: Секреты
+      url: service-fabric-mesh-secrets-overview.md
+  - linkListType: whats-new
+    links:
+    - text: Часто задаваемые вопросы
+      url: service-fabric-mesh-faq.md
+- title: Создание приложений Сетки Service Fabric
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание веб-приложения с помощью Visual Studio
+      url: service-fabric-mesh-quickstart-dotnet-core.md
+  - linkListType: tutorial
+    links:
+    - text: Создание и развертывание приложения для Сетки в Visual Studio
+      url: service-fabric-mesh-tutorial-create-dotnetcore.md
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка среды разработки
+      url: service-fabric-mesh-howto-setup-developer-environment-sdk.md
+    - text: Оптимизация Visual Studio для Сетки Service Fabric
+      url: service-fabric-mesh-howto-optimize-vs.md
+    - text: Настройка CLI для Сетки Service Fabric
+      url: service-fabric-mesh-howto-setup-cli.md
+  - linkListType: download
+    links:
+    - text: Поиск примеров Сетки Service Fabric
+      url: service-fabric-mesh-howto-find-samples.md
+- title: Развертывание существующих приложений и управление ими
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Развертывание приложения Hello World
+      url: service-fabric-mesh-quickstart-deploy-container.md
+  - linkListType: tutorial
+    links:
+    - text: Развертывание, масштабирование и обновление приложения Сетки Service Fabric
+      url: service-fabric-mesh-tutorial-template-deploy-app.md
+  - linkListType: how-to-guide
+    links:
+    - text: Контейнеризация существующего приложения .NET для сетки Service Fabric
+      url: service-fabric-mesh-howto-containerize-vs.md
+    - text: Создание политик автомасштабирования
+      url: service-fabric-mesh-howto-auto-scale-services.md
+  - linkListType: concept
+    links:
+    - text: Масштабируемость службы
+      url: service-fabric-mesh-scalability.md
+    - text: Мониторинг и диагностика
+      url: service-fabric-mesh-monitoring-diagnostics.md

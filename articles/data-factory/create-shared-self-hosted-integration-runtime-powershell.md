@@ -1,31 +1,30 @@
 ---
-title: Create a shared self-hosted integration runtime with PowerShell
+title: Создание общей локальной среды выполнения интеграции с помощью PowerShell
 description: Узнайте, как создать общую локальную среду выполнения интеграции в Фабрике данных Azure, обеспечивающую нескольким фабрикам данных доступ к среде выполнения интеграции.
 services: data-factory
 documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.author: abnarain
 author: nabhishek
 manager: anansub
 ms.custom: seo-lt-2019
 ms.date: 10/31/2018
-ms.openlocfilehash: a8ac5bdaab915e46f5d5074c991703790d429e50
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 2b83c61d05cbc9d84c74d03004839a21505519fa
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74218226"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74928466"
 ---
-# <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory"></a>Create a shared self-hosted integration runtime in Azure Data Factory
+# <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory"></a>Создание общей локальной среды выполнения интеграции в фабрике данных Azure
 
-This guide shows you how to create a shared self-hosted integration runtime in Azure Data Factory. Общую локальную среду выполнения интеграции затем можно использовать в другой фабрике данных.
+В этом руководство показано, как создать общую локальную среду выполнения интеграции в фабрике данных Azure. Общую локальную среду выполнения интеграции затем можно использовать в другой фабрике данных.
 
-## <a name="create-a-shared-self-hosted-ir-using-azure-data-factory-ui"></a>Create a shared self-hosted IR using Azure Data Factory UI
+## <a name="create-a-shared-self-hosted-ir-using-azure-data-factory-ui"></a>Создание общей локальной среды IR с помощью пользовательского интерфейса фабрики данных Azure
 
-To create a shared self-hosted IR using Azure Data Factory UI, you can take following steps:
+Чтобы создать общий собственный IR-объект с помощью пользовательского интерфейса фабрики данных Azure, можно выполнить следующие действия.
 
 1. В локальной среде выполнения интеграции для совместного использования предоставьте разрешения фабрике данных, в которой нужно создать связанную среду IR.
       
@@ -43,9 +42,9 @@ To create a shared self-hosted IR using Azure Data Factory UI, you can take foll
       
     ![Поля для имени и идентификатора ресурса](media/create-self-hosted-integration-runtime/6_create-linkedIR_3.png)
 
-## <a name="create-a-shared-self-hosted-ir-using-azure-powershell"></a>Create a shared self-hosted IR using Azure PowerShell
+## <a name="create-a-shared-self-hosted-ir-using-azure-powershell"></a>Создание общей локальной среды IR с помощью Azure PowerShell
 
-To create a shared self-hosted IR using Azure PowerShell, you can take following steps: 
+Чтобы создать общедоступную локальную среду IR с помощью Azure PowerShell, можно выполнить следующие действия. 
 1. Создали фабрику данных. 
 1. Создайте локальную среду выполнения интеграции.
 1. Предоставьте общий доступ к локальной среде выполнения интеграции другим фабриками данных.
@@ -100,7 +99,7 @@ To create a shared self-hosted IR using Azure PowerShell, you can take following
     > [!NOTE]  
     > Этот шаг не является обязательным. Если у вас уже есть фабрика данных, пропустите этот шаг. 
 
-    Create an [Azure resource group](../azure-resource-manager/resource-group-overview.md) by using the [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) command. Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа. В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении WestEurope. 
+    Создайте [группу ресурсов Azure](../azure-resource-manager/resource-group-overview.md) с помощью команды [New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) . Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа. В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении WestEurope. 
 
     ```powershell
     New-AzResourceGroup -Location $DataFactoryLocation -Name $ResourceGroupName

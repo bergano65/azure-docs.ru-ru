@@ -1,5 +1,5 @@
 ---
-title: Руководство по Регистрация событий пространства Azure Digital Twins
+title: Руководство по Запись событий устройства из пространства Интернета вещей в Azure Digital Twins | Документация Майкрософт
 description: В этом руководстве вы узнаете, как получать уведомления от пространств, интегрировав Azure Digital Twins с Logic Apps.
 services: digital-twins
 ms.author: alinast
@@ -9,12 +9,12 @@ ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
 ms.date: 11/12/2019
-ms.openlocfilehash: 545e1757f4f3669957d8f6755cdbd9a2b29513b6
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 7700c61a978532a63fc5b3298d45b8e7041dba40
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74129132"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74790345"
 ---
 # <a name="tutorial-receive-notifications-from-your-azure-digital-twins-spaces-by-using-logic-apps"></a>Руководство по Получение уведомлений от пространств Azure Digital Twins с использованием Logic Apps
 
@@ -118,9 +118,9 @@ ms.locfileid: "74129132"
 
 1. Откройте развернутый ресурс Logic Apps, а затем откройте панель **Конструктор приложений логики**. 
 
-1. Выберите триггер **When an Event Grid resource event occurs** (Когда происходит событие ресурса службы "Сетка событий"). При появлении запроса войдите в клиент с использованием учетной записи Azure. При появлении запроса выберите **Разрешить доступ** для ресурса службы "Сетка событий". Выберите **Продолжить**.
+1. Выберите триггер **When an Event Grid resource event occurs** (Когда происходит событие ресурса службы "Сетка событий"). Разверните параметр **Сетка событий Azure** и войдите в клиент с использованием учетной записи Azure при появлении запроса. При появлении запроса выберите **Разрешить доступ** для ресурса службы "Сетка событий". Выберите **Продолжить**.
 
-1. В окне **When an Event Grid event occurs (Preview)** (Когда происходит событие службы "Сетка событий" (предварительная версия)) сделайте следующее: 
+1. В окне **When an Event Grid event occurs (Preview)** (Когда происходит событие службы "Сетка событий") сделайте следующее: 
    
    a. Выберите **подписку**, которую вы использовали ранее для создания раздела службы "Сетка событий".
 

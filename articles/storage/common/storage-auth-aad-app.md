@@ -1,21 +1,22 @@
 ---
-title: Авторизация доступа к BLOB-объектам и очередям с Azure Active Directory из клиентского приложения в службе хранилища Azure
+title: Получение маркера из Azure AD для авторизации запросов из клиентского приложения
+titleSuffix: Azure Storage
 description: Используйте Azure Active Directory для проверки подлинности в клиентском приложении, получения маркера OAuth 2,0 и авторизации запросов к хранилищу BLOB-объектов Azure и хранилищу очередей.
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: conceptual
-ms.date: 07/18/2019
+ms.topic: how-to
+ms.date: 12/04/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: ca6b055b5d3702cea4ca1986ad1c81b59f76cee3
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: e05557b0391a1d698dad000aa9df54424588afe0
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72299636"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892266"
 ---
-# <a name="authorize-access-to-blobs-and-queues-with-azure-active-directory-from-a-client-application"></a>Авторизация доступа к BLOB-объектам и очередям с Azure Active Directory из клиентского приложения
+# <a name="acquire-a-token-from-azure-ad-for-authorizing-requests-from-a-client-application"></a>Получение маркера из Azure AD для авторизации запросов из клиентского приложения
 
 Ключевым преимуществом использования Azure Active Directory (Azure AD) с хранилищем BLOB-объектов Azure или хранилищем очередей является то, что ваши учетные данные больше не нужно хранить в коде. Вместо этого можно запросить маркер доступа OAuth 2,0 на платформе Microsoft Identity (прежнее название — Azure AD). Azure AD выполняет проверку подлинности субъекта безопасности (пользователя, группы или субъекта-службы), на котором выполняется приложение. Если проверка подлинности прошла удачно, Azure AD возвращает маркер доступа приложению, а приложение может использовать маркер доступа для авторизации запросов к хранилищу BLOB-объектов Azure или хранилищу очередей.
 
@@ -297,7 +298,7 @@ CloudBlockBlob blob = new CloudBlockBlob(
 
     ![Снимок экрана, показывающий URI перенаправления для регистрации приложения](media/storage-auth-aad-app/redirect-uri.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о платформе Microsoft Identity см. в разделе [платформа Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/).
 - Дополнительные сведения о ролях RBAC для службы хранилища Azure см. в статье [Управление правами доступа к данным хранилища с помощью RBAC](storage-auth-aad-rbac.md).

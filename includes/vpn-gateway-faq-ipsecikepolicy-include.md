@@ -5,15 +5,15 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 11/06/2019
+ms.date: 12/05/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 345822847ddd60794cd912ccb52c14f6e240cd66
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 80c961c1aa4da199fa87b97bc8e0a37e60c2235f
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74075413"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74903110"
 ---
 ### <a name="is-custom-ipsecike-policy-supported-on-all-azure-vpn-gateway-skus"></a>Поддерживается ли политика IPsec/IKE во всех номерах SKU VPN-шлюзов Azure?
 Пользовательская политика IPsec/IKE поддерживается во всех SKU Azure, за исключением номера SKU "базовый".
@@ -101,7 +101,7 @@ ms.locfileid: "74075413"
 Да. Туннель подключения между виртуальными сетями состоит из двух ресурсов Azure: для каждого направления используется один ресурс. Обоим ресурсам подключения следует назначить одну и ту же политику, иначе подключение между виртуальными сетями не будет установлено.
 
 ### <a name="does-custom-ipsecike-policy-work-on-expressroute-connection"></a>Работает ли настраиваемая политика IPsec/IKE для подключения ExpressRoute?
-Нет Политика IPsec/IKE работает только для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть" через VPN-шлюзы Azure.
+Нет. Политика IPsec/IKE работает только для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть" через VPN-шлюзы Azure.
 
 ### <a name="how-do-i-create-connections-with-ikev1-or-ikev2-protocol-type"></a>Разделы справки создать подключения с использованием типа протокола IKEv1 или IKEv2?
 Подключения IKEv1 могут создаваться для всех номеров SKU типа RouteBased VPN, за исключением номера SKU "базовый". При создании подключений можно указать тип протокола соединения IKEv1 или IKEv2. Если тип протокола соединения не указан, по умолчанию используется протокол IKEv2. Дополнительные сведения см. в документации по [командлетам PowerShell](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworkgatewayconnection?) . Сведения о типах SKU и поддержке IKEv1/IKEv2 см. [в статье Подключение шлюзов к VPN-устройствам на основе политик](../articles/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps.md).
@@ -110,10 +110,10 @@ ms.locfileid: "74075413"
 Да. Поддерживается транзитное соединение между IKEv1 и IKEv2.
 
 ### <a name="can-i-have-ikev1-site-to-site-connections-on-basic-skus-of-routebased-vpn-type"></a>Могу ли я использовать для подключения типа "сеть — сеть" на уровне "базовый" RouteBased VPN?
-Нет Все RouteBased VPN-SKU, за исключением основных номеров SKU на основе маршрутов, поддерживают подключения IKEv1 для типа "сеть — сеть".
+Нет. Базовый SKU не поддерживает эту возможность.
 
 ### <a name="can-i-change-the-connection-protocol-type-after-the-connection-is-created-ikev1-to-ikev2-and-vice-versa"></a>Можно ли изменить тип протокола подключения после создания подключения (IKEv1 в IKEv2 и наоборот)?
-Нет После создания соединения невозможно изменить протоколы IKEv1/IKEv2. Необходимо удалить и повторно создать новое соединение с требуемым типом протокола.
+Нет. После создания соединения невозможно изменить протоколы IKEv1/IKEv2. Необходимо удалить и повторно создать новое соединение с требуемым типом протокола.
 
 ### <a name="where-can-i-find-more-configuration-information-for-ipsec"></a>Где можно найти дополнительные сведения о конфигурации для IPsec?
 См. раздел [Настройка политики IPsec/IKE для подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"](../articles/vpn-gateway/vpn-gateway-ipsecikepolicy-rm-powershell.md).

@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 11/08/2019
+ms.date: 12/09/2019
 ms.author: diberry
-ms.openlocfilehash: 83fd06078500be7b5bd58e9ea92d957f9d77f892
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: f6b95f76af4c83459ac81ff1703d8588f649326c
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73904207"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74970548"
 ---
 # <a name="language-and-region-support-for-luis"></a>Поддержка языков и регионов в LUIS
 
@@ -30,20 +30,21 @@ ms.locfileid: "73904207"
 
 Служба LUIS распознает фрагменты речи на следующих языках:
 
-| Язык |Языковой стандарт  |  Предварительно созданный домен | Предварительно созданная сущность | Рекомендации по списку фраз | **[Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages)<br>(Тональность и<br>ключевые слова)|
+| Язык |Язык  |  Предварительно созданная предметная область | Предварительно созданная сущность | Рекомендации по списку фраз | **[Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages)<br>(Тональность и<br>ключевые слова)|
 |--|--|:--:|:--:|:--:|:--:|
 | Английский (США) |`en-US` | ✔ | ✔  |✔|✔|
+| Арабский (Предварительная версия — современные стандартные арабские) |`ar-AR`|-|-|-|-|
 | *[Китайский](#chinese-support-notes) |`zh-CN` | ✔ | ✔ |✔|-|
 | Нидерландский |`nl-NL` |✔|  -   |-|✔|
-| Французский (Франция) |`fr-FR` |✔| ✔ |✔ |✔|
-| Французский (Канада) |`fr-CA` |-|   -   |-|✔|
+| французский (Франция) |`fr-FR` |✔| ✔ |✔ |✔|
+| французский (Канада) |`fr-CA` |-|   -   |-|✔|
 | Немецкий |`de-DE` |✔| ✔ |✔ |✔|
 | Хинди | `hi-IN`|-|-|-|-|
 | Итальянский |`it-IT` |✔| ✔ |✔|✔|
 | *[Японский](#japanese-support-notes) |`ja-JP` |✔| ✔ |✔|Только ключевая фраза|
 | Корейский |`ko-KR` |✔|   -   |-|Только ключевая фраза|
 | Португальский (Бразилия) |`pt-BR` |✔| ✔ |✔ |не все вложенные языки и региональные параметры|
-| Испанский (Испания) |`es-ES` |✔| ✔ |✔|✔|
+| испанский (Испания) |`es-ES` |✔| ✔ |✔|✔|
 | Испанский (Мексика)|`es-MX` |-|  -   |✔|✔|
 | Турецкий | `tr-TR` |✔|-|-|Только тональность|
 
@@ -66,18 +67,19 @@ ms.locfileid: "73904207"
 Список поддерживаемых языков и состояний см. в разделе [Поддерживаемые языки](https://docs.microsoft.com/azure/cognitive-services/bing-spell-check/bing-spell-check-supported-languages) проверки орфографии Bing.
 
 ## <a name="rare-or-foreign-words-in-an-application"></a>Редкие или иностранные слова в приложении
-В языке и региональных параметрах `en-us` служба LUIS обучается для определения большинства английских слов, включая сленг. В языке и региональных параметрах `zh-cn` служба LUIS обучается для определения большинства символов китайского языка. Если при использовании редких слов в `en-us` или символов в `zh-cn` вы понимаете, что служба LUIS не может распознать это слово или символ, их можно добавить в [список фраз](luis-how-to-add-features.md). Например, слова за пределами языка и региональных параметров приложения, то есть иностранные слова, следует добавить в свойство "Список фраз". 
+В языке и региональных параметрах `en-us` служба LUIS обучается для определения большинства английских слов, включая сленг. В языке и региональных параметрах `zh-cn` служба LUIS обучается для определения большинства символов китайского языка. Если при использовании редких слов в `en-us` или символов в `zh-cn` вы понимаете, что служба LUIS не может распознать это слово или символ, их можно добавить в [список фраз](luis-how-to-add-features.md). Например, слова за пределами языка и региональных параметров приложения, то есть иностранные слова, следует добавить в свойство "Список фраз".
 
 <!--This phrase list should be marked non-interchangeable, to indicate that the set of rare words forms a class that LUIS should learn to recognize, but they are not synonyms or interchangeable with each other.-->
 
 ### <a name="hybrid-languages"></a>Гибридные языки
 Гибридные языки объединяют слова из двух культур, например английского и китайского языка. Эти языки не поддерживаются в LUIS, так как приложение основано на одном языке.
 
-## <a name="tokenization"></a>Разметка
+## <a name="tokenization"></a>Выделение лексем
 В целях машинного обучения LUIS разбивает фрагменты речи на [маркеры](luis-glossary.md#token), в зависимости от языка и региональных параметров.
 
 |Язык|  каждый пробел и специальный символ | уровень символа|составные слова|[возвращаемая размеченная сущность](luis-concept-data-extraction.md#tokenized-entity-returned)
 |--|:--:|:--:|:--:|:--:|
+|Арабский|||||
 |Китайский||✔||✔|
 |Нидерландский|||✔|✔|
 |Английский (en-us)|✔ ||||
@@ -96,16 +98,16 @@ ms.locfileid: "73904207"
 
 Следующие языки и региональные параметры имеют пользовательские версии маркеров:
 
-|Язык и региональные параметры|Версия|Назначение|
+|Язык и региональные параметры|Версия|Цель|
 |--|--|--|
 |Немецкий<br>`de-de`|1.0.0|Разделяет слова, разделив их с помощью токена на основе машинного обучения, который пытается разбить составные слова на отдельные компоненты.<br>Если пользователь вводит `Ich fahre einen krankenwagen` как utterance, он включается `Ich fahre einen kranken wagen`. Разрешение маркировки `kranken` и `wagen` независимо от разных сущностей.|
 |Немецкий<br>`de-de`|1.0.2|Разделяет слова, разбивая их на пробелы.<br> Если пользователь вводит `Ich fahre einen krankenwagen` как utterance, он остается единственным маркером. Таким образом `krankenwagen` помечается как единая сущность. |
 
 ### <a name="migrating-between-tokenizer-versions"></a>Миграция между версиями маркеров
 <!--
-Your first choice is to change the tokenizer version in the app file, then import the version. This action changes how the utterances are tokenized but allows you to keep the same app ID. 
+Your first choice is to change the tokenizer version in the app file, then import the version. This action changes how the utterances are tokenized but allows you to keep the same app ID.
 
-Tokenizer JSON for 1.0.0. Notice the property value for  `tokenizerVersion`. 
+Tokenizer JSON for 1.0.0. Notice the property value for  `tokenizerVersion`.
 
 ```JSON
 {
@@ -154,7 +156,7 @@ Tokenizer JSON for 1.0.0. Notice the property value for  `tokenizerVersion`.
 }
 ```
 
-Tokenizer JSON for version 1.0.1. Notice the property value for  `tokenizerVersion`. 
+Tokenizer JSON for version 1.0.1. Notice the property value for  `tokenizerVersion`.
 
 ```JSON
 {
@@ -204,6 +206,6 @@ Tokenizer JSON for version 1.0.1. Notice the property value for  `tokenizerVersi
 ```
 -->
 
-Разметка происходит на уровне приложения. Разметки на уровне версии не поддерживаются. 
+Разметка происходит на уровне приложения. Разметки на уровне версии не поддерживаются.
 
-[Импортируйте файл как новое приложение](luis-how-to-start-new-app.md), а не версию. Это действие означает, что новое приложение имеет другой идентификатор приложения, но использует версию анализатора, указанную в файле. 
+[Импортируйте файл как новое приложение](luis-how-to-start-new-app.md), а не версию. Это действие означает, что новое приложение имеет другой идентификатор приложения, но использует версию анализатора, указанную в файле.

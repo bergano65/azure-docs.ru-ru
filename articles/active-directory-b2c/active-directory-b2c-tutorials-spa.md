@@ -1,6 +1,7 @@
 ---
-title: Руководство по Включение аутентификации в одностраничном приложении в Azure Active Directory B2C
-description: Узнайте, как использовать Azure Active Directory B2C для обеспечения входа пользователя в систему для одностраничного приложения (JavaScript).
+title: Руководство по включению проверки подлинности в одностраничном приложении
+titleSuffix: Azure AD B2C
+description: Из этого учебника вы узнаете, как с помощью Azure Active Directory B2C обеспечить вход пользователя в систему для одностраничного приложения на базе JavaScript (SPA).
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -10,12 +11,12 @@ ms.custom: mvc, seo-javascript-september2019
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: f9e4f25c5750ae5c48130140f49f986e20adc745
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: 2f18a7ddeb5256c660c6458fc8d2d29f83e04429
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73641776"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74950174"
 ---
 # <a name="tutorial-enable-authentication-in-a-single-page-application-using-azure-active-directory-b2c-azure-ad-b2c"></a>Руководство по Включение в одностраничном приложении проверки подлинности с помощью Azure Active Directory B2C (Azure AD B2C)
 

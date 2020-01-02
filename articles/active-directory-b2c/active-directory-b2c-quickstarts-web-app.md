@@ -1,6 +1,7 @@
 ---
-title: Краткое руководство. Настройка входа в приложение ASP.NET с помощью Azure Active Directory B2C
-description: Запуск примера веб-приложения ASP.NET, использующего Azure Active Directory B2C для предоставления возможности входа с учетной записью.
+title: Краткое руководство. Настройка входа для веб-приложения ASP.NET
+titleSuffix: Azure AD B2C
+description: В этом кратком руководстве описан запуск примера веб-приложения ASP.NET, использующего Azure Active Directory B2C для предоставления возможности входа с учетной записью.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -10,12 +11,12 @@ ms.custom: mvc
 ms.date: 09/12/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 446f891538f926342e1a4e3e5f5bca0cc791b27e
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: c1ab78a5858994591fbec2e2954702c72a1a345a
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71065804"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74950636"
 ---
 # <a name="quickstart-set-up-sign-in-for-an-aspnet-application-using-azure-active-directory-b2c"></a>Краткое руководство. Настройка входа в приложение ASP.NET с помощью Azure Active Directory B2C
 

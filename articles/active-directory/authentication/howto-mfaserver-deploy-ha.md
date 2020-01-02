@@ -1,35 +1,35 @@
 ---
-title: High availability for Azure MFA Server - Azure Active Directory
+title: Высокий уровень доступности для сервера Azure MFA — Azure Active Directory
 description: Разверните несколько экземпляров сервера Многофакторной идентификации Azure в конфигурациях, обеспечивающих высокую доступность.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18f56665041fed301faf3b4b5f99c78c1d468f8e
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: a7b2df4e87dddcfedd10682e4e3ab6c014ad7bbb
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74404309"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74848193"
 ---
 # <a name="configure-azure-multi-factor-authentication-server-for-high-availability"></a>Настройка сервера Многофакторной идентификации Azure для обеспечения высокой доступности
 
 Чтобы обеспечить высокую доступность с развертыванием сервера MFA Azure, необходимо развернуть несколько серверов MFA. В этой статье приведены сведения о структуре с балансировкой нагрузки, позволяющей достичь целевых показателей высокой доступности в развертывании сервера MFA Azure.
 
 > [!IMPORTANT]
-> As of July 1, 2019, Microsoft will no longer offer MFA Server for new deployments. New customers who would like to require multi-factor authentication from their users should use cloud-based Azure Multi-Factor Authentication. Existing customers who have activated MFA Server prior to July 1 will be able to download the latest version, future updates and generate activation credentials as usual.
+> По состоянию на 1 июля 2019 Корпорация Майкрософт больше не будет предлагать сервер MFA для новых развертываний. Новые клиенты, желающие требовать многофакторную проверку подлинности пользователей, должны использовать службу многофакторной идентификации Azure на основе облачных служб. Существующие клиенты, которые активировали сервер MFA до 1 июля, смогут скачать последнюю версию, будущие обновления и создать учетные данные активации обычным образом.
 
 ## <a name="mfa-server-overview"></a>Обзор сервера MFA
 
 Архитектура сервера MFA Azure состоит из нескольких компонентов, как показано на схеме ниже.
 
- ![MFA Server Architecture components](./media/howto-mfaserver-deploy-ha/mfa-ha-architecture.png)
+ ![Компоненты архитектуры сервера MFA](./media/howto-mfaserver-deploy-ha/mfa-ha-architecture.png)
 
 Сервер MFA — это сервер Windows Server, на котором установлено программное обеспечение службы "Многофакторная идентификация Azure". Экземпляр сервера MFA необходимо активировать с помощью службы MFA Azure. В локальной среде можно установить несколько серверов MFA.
 
@@ -39,7 +39,7 @@ ms.locfileid: "74404309"
 
 После успешной проверки подлинности в AD сервер MFA будет взаимодействовать со службой MFA. Сервер MFA ожидает уведомление от службы MFA, чтобы разрешить или запретить доступ пользователя к приложению.
 
-Если главный сервер MFA отключится от сети, проверку подлинности по-прежнему можно будет обработать, но операции, при выполнении которых необходимо вносить изменения в базу данных MFA, не удастся обработать. (Examples include: the addition of users, self-service PIN changes, changing user information, or access to the user portal)
+Если главный сервер MFA отключится от сети, проверку подлинности по-прежнему можно будет обработать, но операции, при выполнении которых необходимо вносить изменения в базу данных MFA, не удастся обработать. (Примеры включают в себя: Добавление пользователей, изменение ПИН-кода самообслуживания, изменение сведений о пользователе или доступ к пользовательскому порталу).
 
 ## <a name="deployment"></a>Развертывание.
 

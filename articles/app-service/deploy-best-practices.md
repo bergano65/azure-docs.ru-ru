@@ -1,26 +1,18 @@
 ---
-title: Рекомендации по развертыванию — служба приложений Azure | Документация Майкрософт
-description: Узнайте о ключевых компонентах развертывания в службе приложений Azure.
+title: Рекомендуемые способы развертывания
+description: Узнайте о ключевых механизмах развертывания в службе приложений Azure. Поиск рекомендаций, относящихся к конкретному языку, и других предостережений.
 keywords: служба приложений Azure, веб-приложение, развертывание, развертывание, конвейеры, сборка
-services: app-service
-documentationcenter: ''
 author: jasonfreeberg
-manager: ''
-editor: ''
 ms.assetid: bb51e565-e462-4c60-929a-2ff90121f41d
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/31/2019
 ms.author: jafreebe
-ms.custom: ''
-ms.openlocfilehash: 121ea4b7e29510ef86b61350ed97ffca5d133d56
-ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
+ms.openlocfilehash: d3959b9a86ccc2d42cbf7bd188ce86bf4b7a2e63
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73199491"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74670084"
 ---
 # <a name="deployment-best-practices"></a>Рекомендации по развертыванию
 

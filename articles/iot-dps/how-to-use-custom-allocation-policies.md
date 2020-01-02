@@ -1,26 +1,26 @@
 ---
-title: Custom allocation policies with Azure IoT Hub Device Provisioning Service
-description: Как использовать пользовательские политики выделения со Службой подготовки устройств к добавлению в Центр Интернета вещей Azure.
+title: Пользовательские политики выделения с помощью службы подготовки устройств для центра Интернета вещей Azure
+description: Как использовать пользовательские политики распределения с помощью службы подготовки устройств для центра Интернета вещей Azure (DPS)
 author: wesmc7777
 ms.author: wesmc
 ms.date: 11/14/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: 2a17cc6c9f2211de31d4551bd12e6c832d4eee38
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: b6b7d4614d3c63fe93e213fb830b85d0b7f9c474
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74228732"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74974876"
 ---
 # <a name="how-to-use-custom-allocation-policies"></a>Как использовать пользовательские политики выделения
 
 Пользовательская политика выделения обеспечивает больший контроль над назначением устройств в Центре Интернета вещей. Это достигается с помощью пользовательского кода в [функции Azure](../azure-functions/functions-overview.md), используемого для назначения устройств Центру Интернета вещей. Служба подготовки устройств вызывает код функции Azure, предоставляя всю необходимую информацию об устройстве и регистрации. Код функции выполняется и возвращает данные Центра Интернета вещей, используемые при подготовке устройства.
 
-By using custom allocation policies, you define your own allocation policies when the policies provided by the Device Provisioning Service don't meet the requirements of your scenario.
+Используя пользовательские политики распределения, вы определяете собственные политики распределения, если политики, предоставляемые службой подготовки устройств, не соответствуют требованиям вашего сценария.
 
-For example, maybe you want to examine the certificate a device is using during provisioning and assign the device to an IoT hub based on a certificate property. Or, maybe you have information stored in a database for your devices and need to query the database to determine which IoT hub a device should be assigned to.
+Например, может потребоваться проверить сертификат, который используется устройством во время подготовки, и назначить устройство центру Интернета вещей на основе свойства сертификата. Или, возможно, у вас есть информация, хранящаяся в базе данных для устройств, и необходимо запросить базу данных, чтобы определить, в какой центр Интернета вещей должно быть назначено устройство.
 
 В этой статье показана работа с пользовательскими политиками с помощью кода функции Azure на языке C#. Создаются два новых Центра Интернета вещей, представляющие *отдел тостеров Contoso* и *отдел тепловых насосов Contoso*. Устройства, запрашивающие подготовку, должны иметь идентификатор регистрации с одним из следующих суффиксов, чтобы они были приняты для подготовки:
 
@@ -29,13 +29,13 @@ For example, maybe you want to examine the certificate a device is using during 
 
 Устройства будут подготовлены в соответствии с этими обязательными суффиксами в идентификаторе регистрации. Эти устройства будут имитироваться с помощью примера для подготовки из [пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c).
 
-You perform the following steps in this article:
+Выполните следующие действия в этой статье:
 
 * Использование Azure CLI для создания центров Интернета вещей для двух отделов Contoso (**отдела тостеров Contoso** и **отдела тепловых насосов Contoso**).
 * Создание группы регистрации с помощью функции Azure для пользовательской политики выделения.
 * Создание ключей устройства для имитации двух устройств.
 * Подготовка среды разработки для пакета SDK Azure IoT для C.
-* Simulate the devices and verify that they are provisioned according to the example code in the custom allocation policy
+* Имитируйте устройства и убедитесь, что они подготовлены в соответствии с примером кода в пользовательской политике выделения.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -46,25 +46,25 @@ You perform the following steps in this article:
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="create-the-provisioning-service-and-two-divisional-iot-hubs"></a>Create the provisioning service and two divisional IoT hubs
+## <a name="create-the-provisioning-service-and-two-divisional-iot-hubs"></a>Создание службы подготовки и двух центров выпусков IoT
 
-In this section, you use the Azure Cloud Shell to create a provisioning service and two IoT hubs representing the **Contoso Toasters Division** and the **Contoso Heat Pumps division**.
+В этом разделе описано, как использовать Azure Cloud Shell для создания службы подготовки и двух центров Интернета вещей, представляющих **подразделение** и подразделение " **теплообменники**Contoso".
 
 > [!TIP]
-> The commands used in this article create the provisioning service and other resources in the West US location. We recommend that you create your resources in the region nearest you that supports Device Provisioning Service. Чтобы просмотреть список доступных расположений, выполните команду `az provider show --namespace Microsoft.Devices --query "resourceTypes[?resourceType=='ProvisioningServices'].locations | [0]" --out table`, или перейдите на страницу [Состояние Azure](https://azure.microsoft.com/status/) и введите в строке поиска "Служба подготовки устройств". In commands, locations can be specified either in one word or multi-word format; for example: westus, West US, WEST US, etc. The value is not case sensitive. Если для указания расположения вы используете несколько слов, укажите значение поиска в кавычках, например `-- location "West US"`.
+> Команды, используемые в этой статье, создают службу подготовки и другие ресурсы в расположении "Западная часть США". Рекомендуется создавать ресурсы в ближайшем для вас регионе, поддерживающем службу подготовки устройств. Чтобы просмотреть список доступных расположений, выполните команду `az provider show --namespace Microsoft.Devices --query "resourceTypes[?resourceType=='ProvisioningServices'].locations | [0]" --out table`, или перейдите на страницу [Состояние Azure](https://azure.microsoft.com/status/) и введите в строке поиска "Служба подготовки устройств". В командах расположения могут быть указаны в одном или нескольких форматах слов. Например: westus, Западная часть США, Западная часть США и т. д. В значении регистр не учитывается. Если для указания расположения вы используете несколько слов, укажите значение поиска в кавычках, например `-- location "West US"`.
 >
 
 1. В Azure Cloud Shell создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
-    The following example creates a resource group named *contoso-us-resource-group* in the *westus* region. Рекомендуется использовать эту группу для всех ресурсов, созданных в рамках этой статьи. This approach will make clean up easier after you're finished.
+    В следующем примере создается группа ресурсов с именем *contoso-US-Resource-Group* в регионе *westus* . Рекомендуется использовать эту группу для всех ресурсов, созданных в рамках этой статьи. Этот подход упростит очистку после завершения работы.
 
     ```azurecli-interactive 
     az group create --name contoso-us-resource-group --location westus
     ```
 
-2. Use the Azure Cloud Shell to create a device provisioning service with the [az iot dps create](/cli/azure/iot/dps#az-iot-dps-create) command. The provisioning service will be added to *contoso-us-resource-group*.
+2. Используйте Azure Cloud Shell, чтобы создать службу подготовки устройств с помощью команды [AZ IOT DP Create](/cli/azure/iot/dps#az-iot-dps-create) . Служба подготовки будет добавлена в *contoso-US-Resource-Group*.
 
-    The following example creates a provisioning service named *contoso-provisioning-service-1098* in the *westus* location. You must use a unique service name. Make up your own suffix in the service name in place of **1098**.
+    В следующем примере создается служба подготовки с именем *contoso-подготовка-Service-1098* в расположении *westus* . Необходимо использовать уникальное имя службы. Создайте собственный суффикс в имени службы вместо **1098**.
 
     ```azurecli-interactive 
     az iot dps create --name contoso-provisioning-service-1098 --resource-group contoso-us-resource-group --location westus
@@ -74,7 +74,7 @@ In this section, you use the Azure Cloud Shell to create a provisioning service 
 
 3. В Azure Cloud Shell создайте Центр Интернета вещей **отдела тостеров Contoso** с помощью команды [az iot hub create](/cli/azure/iot/hub#az-iot-hub-create). Этот Центр Интернета вещей будет добавлен в группу *contoso-us-resource-group*.
 
-    The following example creates an IoT hub named *contoso-toasters-hub-1098* in the *westus* location. You must use a unique hub name. Придумайте собственный суффикс в имени центра вместо **1098**. В примере кода для пользовательской политики выделения требуется наличие слова `-toasters-` в имени центра.
+    В следующем примере создается центр Интернета вещей с именем *contoso-Names-Hub-1098* в расположении *westus* . Необходимо использовать уникальное имя концентратора. Придумайте собственный суффикс в имени центра вместо **1098**. В примере кода для пользовательской политики выделения требуется наличие слова `-toasters-` в имени центра.
 
     ```azurecli-interactive 
     az iot hub create --name contoso-toasters-hub-1098 --resource-group contoso-us-resource-group --location westus --sku S1
@@ -84,7 +84,7 @@ In this section, you use the Azure Cloud Shell to create a provisioning service 
 
 4. В Azure Cloud Shell создайте Центр Интернета вещей **отдела тепловых насосов Contoso** с помощью команды [az iot hub create](/cli/azure/iot/hub#az-iot-hub-create). Этот Центр Интернета вещей также будет добавлен в группу *contoso-us-resource-group*.
 
-    The following example creates an IoT hub named *contoso-heatpumps-hub-1098* in the *westus* location. You must use a unique hub name. Придумайте собственный суффикс в имени центра вместо **1098**. В примере кода для пользовательской политики выделения требуется наличие слова `-heatpumps-` в имени центра.
+    В следующем примере создается центр Интернета вещей с именем *contoso-хеатпумпс-Hub-1098* в расположении *westus* . Необходимо использовать уникальное имя концентратора. Придумайте собственный суффикс в имени центра вместо **1098**. В примере кода для пользовательской политики выделения требуется наличие слова `-heatpumps-` в имени центра.
 
     ```azurecli-interactive 
     az iot hub create --name contoso-heatpumps-hub-1098 --resource-group contoso-us-resource-group --location westus --sku S1
@@ -92,46 +92,46 @@ In this section, you use the Azure Cloud Shell to create a provisioning service 
 
     Выполнение этой команды может занять несколько минут.
 
-## <a name="create-the-custom-allocation-function"></a>Create the custom allocation function
+## <a name="create-the-custom-allocation-function"></a>Создание пользовательской функции выделения
 
-In this section, you create an Azure function that implements your custom allocation policy. This function decides which divisional IoT hub a device should be registered to based on whether its registration ID contains the string **-contoso-tstrsd-007** or **-contoso-hpsd-088**. It also sets the initial state of the device twin based on whether the device is a toaster or a heat pump.
+В этом разделе вы создадите функцию Azure, которая реализует пользовательскую политику распределения. Эта функция определяет, какой центр Интернета вещей должен быть зарегистрирован, в зависимости от того, содержит ли его идентификатор регистрации строку **-contoso-тстрсд-007** или **-contoso-хпсд-088**. Он также задает начальное состояние двойникаа устройства в зависимости от того, является ли устройство тостерным или теплоотводом.
 
-1. Войдите на [портале Azure](https://portal.azure.com). From your home page, select **+ Create a resource**.
+1. Войдите на [портале Azure](https://portal.azure.com). На домашней странице выберите **+ создать ресурс**.
 
-2. In the *Search the Marketplace* search box, type "Function App". From the drop-down list select **Function App**, and then select **Create**.
+2. В поле *Поиск в Marketplace* введите "приложение-функция". В раскрывающемся списке выберите **приложение-функция**и нажмите кнопку **создать**.
 
-3. On **Function App** create page, under the **Basics** tab, enter the following settings for your new function app and select **Review + create**:
+3. На странице **приложение-функция** создать на вкладке **Основные сведения** введите следующие параметры для нового приложения-функции и выберите Проверка и **Создание**:
 
-    **Resource Group**: Select the **contoso-us-resource-group** to keep all resources created in this article together.
+    **Группа ресурсов**. Выберите **contoso-US-Resource-Group** , чтобы все ресурсы, созданные в этой статье, были объединены.
 
-    **Function App name**: Enter a unique function app name. This example uses **contoso-function-app-1098**.
+    **Имя приложение-функция**: введите уникальное имя приложения-функции. В этом примере используется **contoso-Function-App-1098**.
 
-    **Publish**: Verify that **Code** is selected.
+    **Публикация**: Убедитесь, что выбран **код** .
 
-    **Runtime Stack**: Select **.NET Core** from the drop-down.
+    **Стек среды выполнения**: выберите **.NET Core** в раскрывающемся списке.
 
-    **Region**: Select the same region as your resource group. This example uses **West US**.
+    **Регион**: выберите тот же регион, что и для группы ресурсов. В этом примере используется **Западная часть США**.
 
     > [!NOTE]
-    > By default, Application Insights is enabled. Application Insights is not necessary for this article, but it might help you understand and investigate any issues you encounter with the custom allocation. If you prefer, you can disable Application Insights by selecting the **Monitoring** tab and then selecting **No** for **Enable Application Insights**.
+    > По умолчанию Application Insights включена. Application Insights не является обязательным для этой статьи, но она может помочь понять и исследовать проблемы, возникающие при работе с пользовательским выделением. При желании можно отключить Application Insights, выбрав вкладку **мониторинг** и выбрав **нет** для параметра **включить Application Insights**.
 
-    ![Create an Azure Function App to host the custom allocation function](./media/how-to-use-custom-allocation-policies/create-function-app.png)
+    ![Создание приложение-функция Azure для размещения пользовательской функции выделения](./media/how-to-use-custom-allocation-policies/create-function-app.png)
 
-4. On the **Summary** page, select **Create** to create the function app. Deployment may take several minutes. When it completes, select **Go to resource**.
+4. На странице **Сводка** выберите **создать** , чтобы создать приложение-функцию. Развертывание может занять несколько минут. По завершении выберите **Переход к ресурсу**.
 
-5. On the left pane of the function app **Overview** page, select **+** next to **Functions** to add a new function.
+5. В левой области страницы **Обзор** приложения-функции выберите **+** **рядом с функцией, чтобы** добавить новую функцию.
 
-    ![Add a function to the Function App](./media/how-to-use-custom-allocation-policies/create-function.png)
+    ![Добавление функции в приложение-функция](./media/how-to-use-custom-allocation-policies/create-function.png)
 
-6. On the **Azure Functions for .NET - getting started** page, for the **CHOOSE A DEPLOYMENT ENVIRONMENT** step, select the **In-portal** tile, then select **Continue**.
+6. На странице " **функции Azure для .NET — Приступая к работе** " для шага **Выбор среды развертывания** выберите плитку **на портале** , а затем нажмите кнопку **продолжить**.
 
-    ![Select the portal development environment](./media/how-to-use-custom-allocation-policies/function-choose-environment.png)
+    ![Выбор среды разработки портала](./media/how-to-use-custom-allocation-policies/function-choose-environment.png)
 
-7. On the next page, for the **CREATE A FUNCTION** step, select the **Webhook + API** tile, then select **Create**. A function named **HttpTrigger1** is created, and the portal displays the contents of the **run.csx** code file.
+7. На следующей странице для шага **Создание функции** выберите плитку **веб-перехватчик + API** , а затем щелкните **создать**. Будет создана функция с именем **HttpTrigger1** , и на портале отобразится содержимое файла **Run. CSX** .
 
-8. Reference required Nuget packages. To create the initial device twin, the custom allocation function uses classes that are defined in two Nuget packages that must be loaded into the hosting environment. With Azure Functions, Nuget packages are referenced using a *function.host* file. In this step, you save and upload a *function.host* file.
+8. Требуется ссылка на пакеты NuGet. Чтобы создать первоначальное двойника устройства, пользовательская функция выделения использует классы, определенные в двух пакетах NuGet, которые должны быть загружены в среду размещения. С помощью функций Azure вы указываете на пакеты NuGet, используя файл *функции. Host* . На этом шаге вы сохраняете и отправляете файл *функции. Host* .
 
-    1. Copy the following lines into your favorite editor and save the file on your computer as *function.host*.
+    1. Скопируйте приведенные ниже строки в свой любимый редактор и сохраните файл на своем компьютере в виде *функции. Host*.
 
         ```xml
         <Project Sdk="Microsoft.NET.Sdk">  
@@ -145,15 +145,15 @@ In this section, you create an Azure function that implements your custom alloca
         </Project>
         ```
 
-    2. On the **HttpTrigger1** function, expand the **View Files** tab on the right side of the window.
+    2. В функции **HttpTrigger1** разверните вкладку **Просмотр файлов** в правой части окна.
 
-        ![Open view files](./media/how-to-use-custom-allocation-policies/function-open-view-files.png)
+        ![Открыть файлы представления](./media/how-to-use-custom-allocation-policies/function-open-view-files.png)
 
-    3. Select **Upload**, browse to the **function.proj** file, and select **Open** to upload the file.
+    3. Выберите **Отправить**, перейдите к файлу **Function. proj** и выберите **Открыть** , чтобы передать файл.
 
-        ![Select upload file](./media/how-to-use-custom-allocation-policies/function-choose-upload-file.png)
+        ![Выбор отправки файла](./media/how-to-use-custom-allocation-policies/function-choose-upload-file.png)
 
-9. Replace the code for the **HttpTrigger1** function with the following code and select **Save**:
+9. Замените код функции **HttpTrigger1** следующим кодом и выберите **сохранить**:
 
     ```csharp
     #r "Newtonsoft.Json"
@@ -294,13 +294,13 @@ In this section, you create an Azure function that implements your custom alloca
 
 ## <a name="create-the-enrollment"></a>Создание регистрации
 
-In this section, you'll create a new enrollment group that uses the custom allocation policy. Для удобства в этой статье используется [аттестация симметричного ключа](concepts-symmetric-key-attestation.md) с регистрацией. В качестве более безопасного решения рекомендуется использовать [аттестацию сертификатов X.509](concepts-security.md#x509-certificates) с цепочкой доверия.
+В этом разделе вы создадите новую группу регистрации, которая использует пользовательскую политику распределения. Для удобства в этой статье используется [аттестация симметричного ключа](concepts-symmetric-key-attestation.md) с регистрацией. В качестве более безопасного решения рекомендуется использовать [аттестацию сертификатов X.509](concepts-security.md#x509-certificates) с цепочкой доверия.
 
-1. Still on the [Azure portal](https://portal.azure.com), open your provisioning service.
+1. По-прежнему на [портал Azure](https://portal.azure.com)откройте службу подготовки.
 
-2. Select **Manage enrollments** on the left pane, and then select the **Add enrollment group** button at the top of the page.
+2. Выберите **Управление регистрациями** в левой области, а затем нажмите кнопку **Добавить группу регистрации** в верхней части страницы.
 
-3. On **Add Enrollment Group**, enter the following information, and select the **Save** button.
+3. На странице **Добавление группы регистрации**введите следующие сведения и нажмите кнопку **сохранить** .
 
     **Имя группы**: введите **contoso-custom-allocated-devices**.
 
@@ -312,9 +312,9 @@ In this section, you'll create a new enrollment group that uses the custom alloc
 
     ![Добавление группы регистрации пользовательского выделения для аттестации симметричного ключа](./media/how-to-use-custom-allocation-policies/create-custom-allocation-enrollment.png)
 
-4. On **Add Enrollment Group**, select **Link a new IoT hub** to link both of your new divisional IoT hubs.
+4. В меню **Добавить группу регистрации**выберите **связать новый центр Интернета вещей** , чтобы связать оба новых центра Интернета вещей.
 
-    Execute this step for both of your divisional IoT hubs.
+    Выполните этот шаг для обоих центров разукомплектованного центра Интернета вещей.
 
     **Подписка**: если у вас несколько подписок, выберите подписку, в которой вы создали Центры Интернета вещей для отделов.
 
@@ -328,17 +328,17 @@ In this section, you'll create a new enrollment group that uses the custom alloc
 
     ![Создание группы центров отделов для регистрации](./media/how-to-use-custom-allocation-policies/enrollment-divisional-hub-group.png)
 
-6. On **Add Enrollment Group**, scroll down to the **Select Azure Function** section, select the Function app you created in the previous section. Then select the function you created and select Save to save the enrollment group.
+6. В разделе **Добавление группы регистрации**перейдите к разделу **Выбор функции Azure** и выберите приложение функции, созданное в предыдущем разделе. Затем выберите созданную функцию и нажмите кнопку Сохранить, чтобы сохранить группу регистрации.
 
-    ![Select the function and save the enrollment group](./media/how-to-use-custom-allocation-policies/save-enrollment.png)
+    ![Выберите функцию и сохраните группу регистрации](./media/how-to-use-custom-allocation-policies/save-enrollment.png)
 
 7. После сохранения регистрации снова откройте ее и запомните или запишите **первичный ключ**. Для формирования ключей необходимо сначала сохранить регистрацию. Этот ключ будет позднее использоваться для создания уникальных ключей устройства для имитированных устройств.
 
 ## <a name="derive-unique-device-keys"></a>Получение производных уникальных ключей
 
-In this section, you create two unique device keys. Один ключ будет использоваться для имитированного устройства toaster. Другой ключ будет использоваться для имитированного устройства heat pump.
+В этом разделе вы создадите два уникальных ключа устройства. Один ключ будет использоваться для имитированного устройства toaster. Другой ключ будет использоваться для имитированного устройства heat pump.
 
-To generate the device key, you use the **Primary Key** you noted earlier to compute the [HMAC-SHA256](https://wikipedia.org/wiki/HMAC) of the device registration ID for each device and convert the result into Base64 format. Дополнительные сведения о создании производных ключей устройств с группами регистраций см. в разделе о регистрации групп в статье [Аттестация симметричного ключа](concepts-symmetric-key-attestation.md).
+Для создания ключа устройства используется **первичный ключ** , записанный ранее, для вычисления [HMAC-SHA256](https://wikipedia.org/wiki/HMAC) идентификатора регистрации устройства для каждого устройства и преобразования результата в формат Base64. Дополнительные сведения о создании производных ключей устройств с группами регистраций см. в разделе о регистрации групп в статье [Аттестация симметричного ключа](concepts-symmetric-key-attestation.md).
 
 Для примера в этой статье используйте следующие два идентификатора регистрации устройств и вычислите ключи для обоих устройств. Оба идентификатора регистрации содержат допустимый суффикс для работы с примером кода для пользовательской политики выделения:
 
@@ -347,7 +347,7 @@ To generate the device key, you use the **Primary Key** you noted earlier to com
 
 ### <a name="linux-workstations"></a>Рабочие станции Linux
 
-If you're using a Linux workstation, you can use openssl to generate your derived device keys as shown in the following example.
+Если вы используете рабочую станцию Linux, вы можете использовать OpenSSL для создания ключей производных устройств, как показано в следующем примере.
 
 1. Замените значение **KEY** значением **первичного ключа**, записанным ранее.
 
@@ -371,7 +371,7 @@ If you're using a Linux workstation, you can use openssl to generate your derive
 
 ### <a name="windows-based-workstations"></a>Рабочие станции на основе Windows
 
-If you're using a Windows-based workstation, you can use PowerShell to generate your derived device key as shown in the following example.
+Если вы используете рабочую станцию под управлением Windows, вы можете создать ключ производного устройства с помощью PowerShell, как показано в следующем примере.
 
 1. Замените значение **KEY** значением **первичного ключа**, записанным ранее.
 
@@ -400,7 +400,7 @@ If you're using a Windows-based workstation, you can use PowerShell to generate 
 
 ## <a name="prepare-an-azure-iot-c-sdk-development-environment"></a>Подготовка среды разработки для пакета SDK Azure IoT для C
 
-In this section, you prepare the development environment used to build the [Azure IoT C SDK](https://github.com/Azure/azure-iot-sdk-c). В пакет SDK входит пример кода для имитированного устройства. Для этого имитированного устройства будет выполнена попытка подготовки во время последовательности загрузки.
+В этом разделе вы подготовите среду разработки, используемую для создания [пакета SDK для Azure IOT C](https://github.com/Azure/azure-iot-sdk-c). В пакет SDK входит пример кода для имитированного устройства. Для этого имитированного устройства будет выполнена попытка подготовки во время последовательности загрузки.
 
 В этом разделе описывается использование рабочей станции Windows. Пример для Linux приведен в инструкциях по настройке виртуальных машин в статье [Подготовка к мультитенантности](how-to-provision-multitenant.md).
 
@@ -430,7 +430,7 @@ In this section, you prepare the development environment used to build the [Azur
     cmake -Dhsm_type_symm_key:BOOL=ON -Duse_prov_client:BOOL=ON  ..
     ```
 
-    If `cmake` doesn't find your C++ compiler, you might get build errors while running the command. If that happens, try running the command in the [Visual Studio command prompt](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs).
+    Если `cmake` не находит ваш C++ компилятор, при выполнении команды могут возникать ошибки сборки. Если это произойдет, попробуйте выполнить команду в [командной строке Visual Studio](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs).
 
     После успешного создания последние несколько строк выходных данных будут выглядеть следующим образом:
 
@@ -450,7 +450,7 @@ In this section, you prepare the development environment used to build the [Azur
 
 ## <a name="simulate-the-devices"></a>Имитация устройств
 
-In this section, you update a provisioning sample named **prov\_dev\_client\_sample** located in the Azure IoT C SDK you set up previously.
+В этом разделе вы обновите пример подготовки с именем **prov\_dev\_client\_** , расположенном в пакете SDK для Azure IOT C, настроенном ранее.
 
 Пример кода имитирует последовательность загрузки устройства, которое отправляет запрос на подготовку в экземпляр службы подготовки устройств. При выполнении последовательности загрузки устройство toaster будет распознано и назначено Центру Интернета вещей с помощью пользовательской политики выделения.
 
@@ -492,7 +492,7 @@ In this section, you update a provisioning sample named **prov\_dev\_client\_sam
     //prov_dev_set_symmetric_key_info("<symm_registration_id>", "<symmetric_Key>");
     ```
 
-    Uncomment the function call and replace the placeholder values (including the angle brackets) with the toaster registration ID and derived device key you generated previously. Значение ключа **JC8F96eayuQwwz+PkE7IzjH2lIAjCUnAa61tDigBnSs=** , показанное ниже, приведено только в качестве примера.
+    Раскомментируйте вызов функции и замените значения заполнителей (включая угловые скобки) на идентификатор регистрации тостер и созданный ранее ключ устройства. Значение ключа **JC8F96eayuQwwz+PkE7IzjH2lIAjCUnAa61tDigBnSs=** , показанное ниже, приведено только в качестве примера.
 
     ```c
     // Set the symmetric key if using they auth type
@@ -501,9 +501,9 @@ In this section, you update a provisioning sample named **prov\_dev\_client\_sam
 
     Сохраните файл.
 
-2. В меню Visual Studio выберите **Отладка** > **Запуск без отладки**, чтобы запустить решение. In the prompt to rebuild the project, select **Yes**, to rebuild the project before running.
+2. В меню Visual Studio выберите **Отладка** > **Запуск без отладки**, чтобы запустить решение. При появлении запроса перестроить проект щелкните **Да**, чтобы перестроить его перед запуском.
 
-    The following output is an example of the simulated toaster device successfully booting up and connecting to the provisioning service instance to be assigned to the toasters IoT hub by the custom allocation policy:
+    Ниже приведен пример, в котором виртуальное устройство Тостер успешно загрузилось и подключается к экземпляру службы подготовки, чтобы он был назначен для центра Интернета вещей с помощью настраиваемой политики выделения.
 
     ```cmd
     Provisioning API Version: 1.3.6
@@ -530,9 +530,9 @@ In this section, you update a provisioning sample named **prov\_dev\_client\_sam
 
     Сохраните файл.
 
-2. В меню Visual Studio выберите **Отладка** > **Запуск без отладки**, чтобы запустить решение. In the prompt to rebuild the project, select **Yes** to rebuild the project before running.
+2. В меню Visual Studio выберите **Отладка** > **Запуск без отладки**, чтобы запустить решение. В командной строке для перестроения проекта выберите **Да** , чтобы перестроить проект перед запуском.
 
-    The following output is an example of the simulated heat pump device successfully booting up and connecting to the provisioning service instance to be assigned to the Contoso heat pumps IoT hub by the custom allocation policy:
+    Ниже приведен пример, в котором виртуальное устройство теплоотвода успешно загружается и подключается к экземпляру службы подготовки, который назначается настраиваемой политикой распределения для центра Интернета вещей "тепло-насоса".
 
     ```cmd
     Provisioning API Version: 1.3.6
@@ -550,7 +550,7 @@ In this section, you update a provisioning sample named **prov\_dev\_client\_sam
 
 ## <a name="troubleshooting-custom-allocation-policies"></a>Устранение неполадок пользовательских политик выделения
 
-The following table shows expected scenarios and the results error codes you might receive. Используйте эту таблицу при устранении неполадок в работе пользовательских политик выделения с функциями Azure.
+В следующей таблице показаны ожидаемые сценарии и коды ошибок, которые могут быть получены. Используйте эту таблицу при устранении неполадок в работе пользовательских политик выделения с функциями Azure.
 
 | Сценарий | Результат регистрации из службы подготовки | Результаты пакета SDK для подготовки |
 | -------- | --------------------------------------------- | ------------------------ |
@@ -563,7 +563,7 @@ The following table shows expected scenarios and the results error codes you mig
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-If you plan to continue working with the resources created in this article, you can leave them. If you don't plan to continue using the resources, use the following steps to delete all of the resources created in this article to avoid unnecessary charges.
+Если вы планируете продолжить работу с ресурсами, созданными в этой статье, их можно оставить. Если вы не планируете продолжать использовать ресурсы, выполните следующие действия, чтобы удалить все ресурсы, созданные в этой статье, чтобы избежать ненужных расходов.
 
 Здесь предполагается, что вы создали все используемые в этой статье ресурсы, как было указано, в одной группе ресурсов, **contoso-us-resource-group**.
 
@@ -579,9 +579,9 @@ If you plan to continue working with the resources created in this article, you 
 
 3. Справа от своей группы ресурсов в списке результатов щелкните **...** , а затем выберите **Удалить группу ресурсов**.
 
-4. You'll be asked to confirm the deletion of the resource group. Снова введите имя группы ресурсов, которую необходимо удалить, и щелкните **Удалить**. Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
+4. Вам будет предложено подтвердить удаление группы ресурсов. Снова введите имя группы ресурсов, которую необходимо удалить, и щелкните **Удалить**. Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* To learn more Reprovisioning, see [IoT Hub Device reprovisioning concepts](concepts-device-reprovision.md) 
-* To learn more Deprovisioning, see [How to deprovision devices that were previously autoprovisioned](how-to-unprovision-devices.md) 
+* Дополнительные сведения о повторной подготовке см. в статье [Основные понятия повторной инициализации устройств центра Интернета вещей](concepts-device-reprovision.md) . 
+* Дополнительные сведения о повторной подготовке см. в статье [как отменить предварительную инициализацию устройств, которые были настроены ранее](how-to-unprovision-devices.md) . 

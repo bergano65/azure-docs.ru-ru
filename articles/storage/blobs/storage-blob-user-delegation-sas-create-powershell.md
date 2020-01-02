@@ -1,20 +1,21 @@
 ---
-title: Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с помощью PowerShell (Предварительная версия) — служба хранилища Azure
-description: Узнайте, как создать подписанный URL-адрес (SAS) с помощью учетных данных Azure Active Directory в службе хранилища Azure с помощью PowerShell.
+title: Создание SAS делегирования пользователя для контейнера или большого двоичного объекта с помощью PowerShell
+titleSuffix: Azure Storage
+description: Узнайте, как создать SAS делегирования пользователя (Предварительная версия) с учетными данными Azure Active Directory с помощью PowerShell.
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: conceptual
-ms.date: 08/29/2019
+ms.topic: how-to
+ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
-ms.openlocfilehash: 0164c97adf720a618179908298223c54bf48824e
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.openlocfilehash: 5f4947921a77f2bc94d1810c9b1d1951431d3d71
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71673342"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892521"
 ---
 # <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-powershell-preview"></a>Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с помощью PowerShell (Предварительная версия)
 
@@ -86,7 +87,7 @@ Connect-AzAccount
 
 В следующем примере назначается роль **участника данных BLOB-объекта хранилища** , которая включает действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** . Роль ограничивается уровнем учетной записи хранения.
 
-Не забудьте заменить значения заполнителей в угловых скобках собственными значениями:
+Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 
 ```powershell
 New-AzRoleAssignment -SignInName <email> `
@@ -104,7 +105,7 @@ New-AzRoleAssignment -SignInName <email> `
 
 Чтобы создать SAS для делегирования пользователя для контейнера или большого двоичного объекта с Azure PowerShell, сначала создайте объект контекста службы хранилища Azure, указав параметр `-UseConnectedAccount`. Параметр `-UseConnectedAccount` указывает, что команда создает объект контекста в учетной записи Azure AD, с которой вы вошли.
 
-Не забудьте заменить значения заполнителей в угловых скобках собственными значениями:
+Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 
 ```powershell
 $ctx = New-AzStorageContext -StorageAccountName <storage-account> -UseConnectedAccount
@@ -158,7 +159,7 @@ https://storagesamples.blob.core.windows.net/sample-container/blob1.txt?sv=2018-
 
 Чтобы отозвать SAS для делегирования пользователя из Azure PowerShell, вызовите команду **REVOKE-азсторажеаккаунтусерделегатионкэйс** . Эта команда отменяет все ключи делегирования пользователя, связанные с указанной учетной записью хранения. Все подписанные URL, связанные с этими ключами, становятся недействительными.
 
-Не забудьте заменить значения заполнителей в угловых скобках собственными значениями:
+Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 
 ```powershell
 Revoke-AzStorageAccountUserDelegationKeys -ResourceGroupName <resource-group> `
@@ -168,7 +169,7 @@ Revoke-AzStorageAccountUserDelegationKeys -ResourceGroupName <resource-group> `
 > [!IMPORTANT]
 > Как ключ делегирования пользователя, так и назначение ролей RBAC кэшируются службой хранилища Azure, поэтому при инициации процесса отзыва может возникнуть задержка, и если существующее сопоставление безопасности делегирования пользователя станет недействительным.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-user-delegation-sas)
 - [Операция получения ключа делегирования пользователя](/rest/api/storageservices/get-user-delegation-key)

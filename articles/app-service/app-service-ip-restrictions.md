@@ -1,25 +1,18 @@
 ---
-title: Ограничение доступа — служба приложений Azure | Документация Майкрософт
-description: Как использовать ограничения доступа со службой приложений Azure
+title: Ограничение доступа для IP-адресов
+description: Узнайте, как защитить приложение в службе приложений Azure, явно список разрешений IP-адреса клиентов или диапазоны адресов.
 author: ccompy
-manager: stefsch
-editor: ''
-services: app-service\web
-documentationcenter: ''
 ms.assetid: 3be1f4bd-8a81-4565-8a56-528c037b24bd
-ms.service: app-service-web
-ms.workload: web
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 06/06/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: cee6fc9fb5cc10a2b3442e146ef5688ed74290bb
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 64ce74c84f8f69e72510be76a1309e1a5ea42f2f
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70088438"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74672187"
 ---
 # <a name="azure-app-service-access-restrictions"></a>Ограничения доступа для службы приложений Azure #
 
@@ -37,7 +30,7 @@ ms.locfileid: "70088438"
 
 ## <a name="adding-and-editing-access-restriction-rules-in-the-portal"></a>Добавление и изменение правил ограничения доступа на портале ##
 
-Чтобы добавить правило ограничения доступа в приложение, используйте меню, чтобы открыть**ограничения доступа к** **сети**>, и щелкните **настроить ограничения доступа** .
+Чтобы добавить правило ограничения доступа в приложение, используйте меню, чтобы открыть **сетевые**>**ограничения доступа** , и щелкните **настроить ограничения доступа** .
 
 ![Сетевые возможности службы приложений](media/app-service-ip-restrictions/access-restrictions.png)  
 

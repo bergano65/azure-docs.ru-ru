@@ -8,14 +8,14 @@ ms.author: dpalled
 manager: cshankar
 ms.workload: big-data
 ms.topic: overview
-ms.date: 10/10/2019
+ms.date: 11/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: aa15e9c50cb5cd694a7a6adad352459536292b85
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 042e969b4a0dfea0910a0ef81fae264792cfd85f
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012586"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327657"
 ---
 # <a name="what-is-azure-time-series-insights"></a>Что собой представляет служба "Аналитика временных рядов Azure"
 
@@ -84,13 +84,16 @@ ms.locfileid: "74012586"
 1. Передайте эталонные данные. Это не дополнительная служба.
 1. Уже через несколько минут вы увидите данные в обозревателе службы "Аналитика временных рядов".
 
-## <a name="time-series-insights-explorer"></a>Обозреватель службы "Аналитика временных рядов"
+## <a name="explorer"></a>Обозреватель
 
-На этой схеме показан пример данных временного ряда, отображаемых в обозревателе Аналитики временных рядов.
+Просмотр, анализ и обнаружение тенденций в данных с помощью обозревателя службы "Аналитика временных рядов Azure".
 
-![Обозреватель службы "Аналитика временных рядов"](media/time-series-insights-explorer/explorer4.png)
+![Обозреватель службы "Аналитика временных рядов"](media/overview/time-series-insights-explorer-panel.png)
+
+Узнайте, как использовать [обозреватель службы "Аналитика временных рядов Azure"](time-series-insights-explorer.md) и извлекать ценные сведения из данных.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Изучите общедоступную версию [бесплатной демонстрационной среды](./time-series-quickstart.md) Аналитики временных рядов Azure.
+
 - Узнайте больше о [планировании среды Аналитики временных рядов](time-series-insights-environment-planning.md).

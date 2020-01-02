@@ -1,24 +1,23 @@
 ---
-title: Разностное копирование из базы данных с помощью таблицы элементов управления и фабрики данных Azure
+title: Разностное копирование из базы данных с помощью управляющей таблицы
 description: Узнайте, как использовать шаблон решения для добавочного копирования только новых или обновленных строк из базы данных в Фабрике данных Azure.
 services: data-factory
 documentationcenter: ''
 author: dearandyxu
 ms.author: yexu
 ms.reviewer: douglasl
-manager: craigg
+manager: anandsub
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
+ms.custom: seo-lt-2019
 ms.date: 12/24/2018
-ms.openlocfilehash: c9ab1d005cf71dbe03546ce5b6014f616a872f8d
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 4c72bd37a636ec31c13737705c22aaa895b9ad72
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73684210"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74928216"
 ---
 # <a name="delta-copy-from-a-database-with-a-control-table"></a>Разностное копирование из базы данных с помощью управляющей таблицы
 
@@ -36,11 +35,11 @@ ms.locfileid: "73684210"
 Шаблон состоит из четырех действий.
 - **Поиск** получает старое значение верхнего предела, которое хранится во внешней таблице элементов управления.
 - Другое действие **поиска** извлекает текущее значение высокой подложки из базы данных-источника.
-- **Копировать** копирует только изменения из базы данных источника в целевое хранилище. Запрос, определяющий изменения в базе данных-источнике, похож на "SELECT * FROM Data_Source_Table, где TIMESTAMP_Column >" Last High-водяной знак "и TIMESTAMP_Column < =" текущий верхний предел ".
+- **Копировать** копирует только изменения из базы данных источника в целевое хранилище. Запрос, определяющий изменения в базе данных-источнике, аналогичен "SELECT * FROM Data_Source_Table, где TIMESTAMP_Column >" последняя большая Подложка "и TIMESTAMP_Column < =" текущий верхний предел ".
 - **SqlServerStoredProcedure** записывает текущее значение высокой подложки во внешнюю таблицу управления для разностного копирования в следующий раз.
 
 Шаблон определяет пять параметров.
-- *Data_Source_Table_Name* — это таблица в базе данных-источнике, из которой требуется загрузить данные.
+- *Data_Source_Table_Name* — это таблица в базе данных-источнике, из которой необходимо загрузить данные.
 - *Data_Source_WaterMarkColumn* — имя столбца в исходной таблице, который используется для обнаружения новых или обновленных строк. Этот столбец обычно имеет тип *DateTime*, *int*или аналогичный.
 - *Data_Destination_Folder_Path* или *Data_Destination_Table_Name* — место, куда копируются данные в целевом хранилище.
 - *Control_Table_Table_Name* — это внешняя таблица элементов управления, в которой хранится значение верхнего предела.
@@ -100,7 +99,7 @@ ms.locfileid: "73684210"
 
     ![Создание подключения к хранилищу данных контрольной таблицы](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable6.png)
 
-7. Выберите **использовать этот шаблон**.
+7. Выберите **Использовать этот шаблон**.
 
      ![Использование шаблона](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable7.png)
     

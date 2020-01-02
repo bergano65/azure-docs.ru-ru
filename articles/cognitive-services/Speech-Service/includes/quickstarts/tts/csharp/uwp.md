@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 08/19/2019
 ms.author: yinhew
-ms.openlocfilehash: 3a88f4fc14286a60feb9d72676827b0cce91eb25
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 276de42f2a37a0e48cd323e285760c00e6db9f32
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73505134"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74818140"
 ---
 > [!NOTE]
 > Универсальная платформа Windows позволяет разрабатывать приложения, работающие на любом устройстве, которое поддерживает Windows 10, включая компьютеры, Xbox, Surface Hub и другие устройств.
@@ -25,9 +25,9 @@ ms.locfileid: "73505134"
 Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure](../../../../get-started.md).
-> * [Настроить среду разработки](../../../../quickstarts/setup-platform.md?tabs=uwp).
-> * [Создать пустой пример проекта](../../../../quickstarts/create-project.md?tabs=uwp).
+> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=uwp)
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=uwp)
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
@@ -61,7 +61,7 @@ ms.locfileid: "73505134"
 
    ![Пример приложения для синтеза речи в UWP на языке C# — краткое руководство](~/articles/cognitive-services/Speech-Service/media/sdk/qs-text-to-speech-uwp-helloworld-window.png)
 
-1. Введите любой текст в текстовое поле и нажмите кнопку **Speak** (Сказать). Введенный текст передается в службы "Речь" и синтезируется в речь, которая воспроизводится через динамик.
+1. Введите любой текст в текстовое поле и нажмите кнопку **Speak** (Сказать). Текст передается в службу "Речь" и синтезируется в речь, которая воспроизводится через динамик.
 
     ![Пользовательский интерфейс для синтеза речи](~/articles/cognitive-services/Speech-Service/media/sdk/qs-tts-csharp-uwp-ui-result.png)
 

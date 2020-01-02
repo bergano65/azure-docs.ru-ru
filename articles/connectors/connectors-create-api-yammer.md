@@ -1,22 +1,18 @@
 ---
-title: Подключение к Yammer из Azure Logic Apps | Документация Майкрософт
+title: Подключение к Yammer из Azure Logic Apps
 description: Автоматизация задач и рабочих процессов, которые выполняют мониторинг и публикацию сообщений, веб-каналов и многого другого, а также управление ими в Yammer с использованием Azure Logic Apps
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
-ms.assetid: b5ae0827-fbb3-45ec-8f45-ad1cc2e7eccc
+ms.reviewer: klam, logicappspm
 ms.topic: article
-tags: connectors
 ms.date: 08/25/2018
-ms.openlocfilehash: 9228a94dcf27d8987b16e2caa2681cf973db0657
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+tags: connectors
+ms.openlocfilehash: 194c08d034d44ba0a4472b3b516fc45d1d262d28
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70050640"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74789075"
 ---
 # <a name="monitor-and-manage-your-yammer-account-by-using-azure-logic-apps"></a>Мониторинг учетной записи Yammer и управление ею с помощью Azure Logic Apps
 
@@ -28,7 +24,7 @@ ms.locfileid: "70050640"
 
 Вы можете использовать триггеры, которые получают ответы из учетной записи Yammer и делают выходные данные доступными для других действий. Вы можете использовать действия, которые выполняют задачи с вашей учетной записью Yammer. Кроме того, выходные данные от действий Yammer могут использоваться другими действиями. Например, при появлении новых сообщений в веб-каналах или группах вы можете обмениваться ими с помощью соединителя Slack. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
@@ -73,11 +69,11 @@ ms.locfileid: "70050640"
 
 Дополнительные технические сведения о триггерах, действиях и ограничениях, которые приведены в описании OpenAPI соединителя (прежнее название — Swagger), можно найти на [странице справки](/connectors/yammer/) соединителя.
 
-## <a name="get-support"></a>Поддержка
+## <a name="get-support"></a>Получение поддержки
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

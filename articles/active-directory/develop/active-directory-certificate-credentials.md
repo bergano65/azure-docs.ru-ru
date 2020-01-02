@@ -1,38 +1,35 @@
 ---
-title: Учетные данные сертификата в Azure AD
+title: Учетные данные сертификата Azure AD
 titleSuffix: Microsoft identity platform
 description: В этой статье рассматривается регистрация и использование учетных данных сертификата для аутентификации приложения.
 services: active-directory
-documentationcenter: .net
 author: rwike77
 manager: CelesteDG
-editor: ''
 ms.assetid: 88f0c64a-25f7-4974-aca2-2acadc9acbd8
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: ryanwi
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3fca872d639ab5c2d4053656cdd3e68a59fdc1e6
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: d37b390e39d2b991ea01468feffbe39c9578af54
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73473970"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74963874"
 ---
-# <a name="certificate-credentials-for-application-authentication"></a>Учетные данные сертификата для аутентификации приложения
+# <a name="azure-ad-application-authentication-certificate-credentials"></a>Учетные данные сертификата проверки подлинности приложения Azure AD
 
 Azure Active Directory (Azure AD) позволяет приложению использовать для аутентификации свои учетные данные, например, в потоке предоставления учетных данных клиента OAuth 2.0 ([версия 1.0](v1-oauth2-client-creds-grant-flow.md), [версия 2.0](v2-oauth2-client-creds-grant-flow.md)) и потоке On-Behalf-Of ([версия 1.0](v1-oauth2-on-behalf-of-flow.md), [версия 2.0](v2-oauth2-on-behalf-of-flow.md)).
 
 Одной из форм учетных данных, которые приложение может использовать для аутентификации, является утверждение JSON Web Token (JWT), подписанное с помощью сертификата приложения.
 
 ## <a name="assertion-format"></a>Формат утверждения
+
 Чтобы вычислить утверждение, можно использовать одну из множества библиотек [JSON Web Token](https://jwt.ms/) на удобном для вас языке. Маркер содержит следующие сведения:
 
 ### <a name="header"></a>Заголовок
@@ -101,7 +98,7 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 При регистрации приложения Azure для клиентского приложения сделайте следующее.
 1. Выберите **Сертификаты и секреты**. 
 2. Щелкните **отправить сертификат** и выберите файл сертификата для отправки.
-3. Нажмите кнопку **Добавить**.
+3. Щелкните **Добавить**.
   После отправки сертификата отображаются отпечаток, Дата начала и срок действия. 
 
 ### <a name="updating-the-application-manifest"></a>Обновление манифеста приложения

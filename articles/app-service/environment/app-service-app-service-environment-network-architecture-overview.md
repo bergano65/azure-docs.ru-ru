@@ -1,28 +1,20 @@
 ---
-title: Общие сведения об архитектуре сетевых Сред службы приложений Azure
-description: Общие сведения об архитектуре топологии сети сред службы приложений.
-services: app-service
-documentationcenter: ''
+title: Архитектура сети v1
+description: Обзор архитектуры топологии сети в средах службы приложений. Этот документ предоставляется только для клиентов, использующих устаревшую версию V1 ASE.
 author: stefsch
-manager: erikre
-editor: ''
 ms.assetid: 13d03a37-1fe2-4e3e-9d57-46dfb330ba52
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 10/04/2016
 ms.author: stefsch
 ms.custom: seodec18
-ms.openlocfilehash: 98eb4d7440126bedb3d2e1de5711141eaac8b07a
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: b1b866f3be789c59eea38c5c22b5557d557440be
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70070068"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74687351"
 ---
-# <a name="network-architecture-overview-of-app-service-environments"></a>Общие сведения об архитектуре сетевых сред службы приложений
-## <a name="introduction"></a>Введение
+# <a name="network-architecture-overview-of-app-service-environments"></a>Обзор сетевой архитектуры сред службы приложений
 Среды службы приложений всегда создаются в подсети [виртуальной сети][virtualnetwork] . приложения, работающие в среда службы приложений, могут взаимодействовать с частными конечными точками, расположенными в той же топологии виртуальной сети.  Поскольку клиенты могут заблокировать части инфраструктуры виртуальной сети, важно понять типы потоков сетевой связи, которые возникают в среде службы приложений.
 
 ## <a name="general-network-flow"></a>Общий поток сетевого трафика

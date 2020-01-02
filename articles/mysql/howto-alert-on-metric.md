@@ -1,17 +1,17 @@
 ---
-title: Настройка оповещений о метриках службы "База данных Azure для MySQL" на портале Azure
+title: Настройка оповещений метрик — портал Azure — база данных Azure для MySQL
 description: В этой статье описывается, как настроить уведомления на основе метрик для базы данных Azure для MySQL и получить к ним доступ с помощью портала Azure.
 author: rachel-msft
 ms.author: raagyema
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 01/10/2019
-ms.openlocfilehash: 387877efea4df30685fcf443a4d114c4feb66401
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 12/02/2019
+ms.openlocfilehash: 487ca76115b93020a762cfa2afb5fd5a3be40a66
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60525770"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74770668"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-mysql"></a>Настройка оповещений на основе метрик для базы данных Azure для MySQL на портале Azure 
 
@@ -25,8 +25,8 @@ ms.locfileid: "60525770"
 * Вызов webhook.
 
 Для настройки правил генерации оповещений и получения сведений о них можно использовать:
-* [портал Azure](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
-* [Интерфейс командной строки Azure](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
+* [Портал Azure](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
+* [Azure CLI](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
 * [Azure Monitor REST API](https://docs.microsoft.com/rest/api/monitor/metricalerts)
 
 ## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Создание правила генерации оповещений на основе метрики на портале Azure

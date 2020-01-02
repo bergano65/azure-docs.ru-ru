@@ -1,6 +1,6 @@
 ---
-title: Firewall access rules
-description: Configure rules to access an Azure container registry from behind a firewall.
+title: Правила доступа брандмауэра
+description: Настройте правила для доступа к реестру контейнеров Azure из защищенного брандмауэра.
 ms.topic: article
 ms.date: 07/17/2019
 ms.openlocfilehash: 6a0a169f7e5a7e07771cb9fee474b7f4a9391a4e
@@ -10,39 +10,39 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/24/2019
 ms.locfileid: "74455186"
 ---
-# <a name="configure-rules-to-access-an-azure-container-registry-behind-a-firewall"></a>Configure rules to access an Azure container registry behind a firewall
+# <a name="configure-rules-to-access-an-azure-container-registry-behind-a-firewall"></a>Настройка правил для доступа к реестру контейнеров Azure за брандмауэром
 
-This article explains how to configure rules on your firewall to allow access to an Azure container registry. For example, an Azure IoT Edge device behind a firewall or proxy server might need to access a container registry to pull a container image. Or, a locked-down server in an on-premises network might need access to push an image.
+В этой статье объясняется, как настроить правила в брандмауэре, чтобы разрешить доступ к реестру контейнеров Azure. Например, для извлечения образа контейнера Azure IoT Edgeному устройству за брандмауэром или прокси-сервером может потребоваться доступ к реестру контейнеров. Или заблокированный сервер в локальной сети может потребовать доступа для отправки образа.
 
-If instead you want to configure inbound network access rules on a container registry to allow access only within an Azure virtual network or a public IP address range, see [Restrict access to an Azure container registry from a virtual network](container-registry-vnet.md).
+Если вместо этого вы хотите настроить входящие правила доступа к сети в реестре контейнеров, чтобы разрешить доступ только в пределах виртуальной сети Azure или диапазона общедоступных IP-адресов, см. раздел [ограничение доступа к реестру контейнеров Azure из виртуальной сети](container-registry-vnet.md).
 
-## <a name="about-registry-endpoints"></a>About registry endpoints
+## <a name="about-registry-endpoints"></a>Сведения о конечных точках реестра
 
-To pull or push images or other artifacts to an Azure container registry, a client such as a Docker daemon needs to interact over HTTPS with two distinct endpoints.
+Чтобы извлечь или отправить образы или другие артефакты в реестр контейнеров Azure, клиент, например, управляющая программа DOCKER должна взаимодействовать по протоколу HTTPS с двумя разными конечными точками.
 
-* **Registry REST API endpoint** - Authentication and registry management operations are handled through the registry's public REST API endpoint. This endpoint is the login server URL of the registry, or an associated IP address range. 
+* **Реестр REST API конечная точка** . операции проверки подлинности и управления реестром обрабатываются через общедоступную конечную точку REST API реестра. Эта конечная точка представляет собой URL-адрес сервера входа в реестр или соответствующий диапазон IP-адресов. 
 
-* **Storage endpoint** - Azure [allocates blob storage](container-registry-storage.md) in Azure storage accounts on behalf of each registry to manage container images and other artifacts. When a client accesses image layers in an Azure container registry, it makes requests using a storage account endpoint provided by the registry.
+* **Конечная точка хранилища** . Azure [выделяет хранилище BLOB-объектов](container-registry-storage.md) в учетных записях хранения Azure от имени каждого реестра для управления образами контейнеров и другими артефактами. Когда клиент получает доступ к слоям изображений в реестре контейнеров Azure, он выполняет запросы с помощью конечной точки учетной записи хранения, предоставляемой реестром.
 
-If your registry is [geo-replicated](container-registry-geo-replication.md), a client might need to interact with REST and storage endpoints in a specific region or in multiple replicated regions.
+Если реестр является [географически реплицируемым](container-registry-geo-replication.md), клиенту может потребоваться взаимодействовать с конечными точками службы "остальное" и "хранилище" в определенном регионе или в нескольких реплицируемых регионах.
 
-## <a name="allow-access-to-rest-and-storage-urls"></a>Allow access to REST and storage URLs
+## <a name="allow-access-to-rest-and-storage-urls"></a>Разрешить доступ к URL-адресам RESTFUL и хранилища
 
-* **REST endpoint** - Allow access to the registry server URL, such as  `myregistry.azurecr.io`
-* **Storage endpoint** - Allow access to all Azure blob storage accounts using the wildcard `*.blob.core.windows.net`
+* **Конечная точка RESTful** — разрешает доступ к URL-адресу сервера реестра, например `myregistry.azurecr.io`
+* **Конечная точка хранилища** — разрешает доступ ко всем учетным записям хранилища BLOB-объектов Azure с помощью подстановочных знаков `*.blob.core.windows.net`
 
 
-## <a name="allow-access-by-ip-address-range"></a>Allow access by IP address range
+## <a name="allow-access-by-ip-address-range"></a>Разрешить доступ по диапазону IP-адресов
 
-If you need to allow access to specific IP addresses, download [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519).
+Если необходимо разрешить доступ к конкретным IP-адресам, скачайте [диапазоны IP-адресов Azure и теги служб — общедоступное облако](https://www.microsoft.com/download/details.aspx?id=56519).
 
-To find the ACR REST endpoint IP ranges, search for **AzureContainerRegistry** in the JSON file.
+Чтобы найти диапазоны IP-адресов конечной точки записи контроля доступа, выполните поиск **азуреконтаинеррегистри** в файле JSON.
 
 > [!IMPORTANT]
-> IP address ranges for Azure services can change, and updates are published weekly. Download the JSON file regularly, and make necessary updates in your access rules. If your scenario involves configuring network security group rules in an Azure virtual network to access Azure Container Registry, use the **AzureContainerRegistry** [service tag](#allow-access-by-service-tag) instead.
+> Диапазоны IP-адресов для служб Azure могут изменяться, а обновления публикуются еженедельно. Регулярно загружайте JSON и вносите необходимые обновления в правила доступа. Если в сценарии предполагается настройка правил группы безопасности сети в виртуальной сети Azure для доступа к реестру контейнеров Azure, используйте вместо этого [тег службы](#allow-access-by-service-tag) **азуреконтаинеррегистри** .
 >
 
-### <a name="rest-ip-addresses-for-all-regions"></a>REST IP addresses for all regions
+### <a name="rest-ip-addresses-for-all-regions"></a>IP-адреса RESTFUL для всех регионов
 
 ```json
 {
@@ -58,9 +58,9 @@ To find the ACR REST endpoint IP ranges, search for **AzureContainerRegistry** i
     [...]
 ```
 
-### <a name="rest-ip-addresses-for-a-specific-region"></a>REST IP addresses for a specific region
+### <a name="rest-ip-addresses-for-a-specific-region"></a>IP-адреса RESTFUL для определенного региона
 
-Search for the specific region, such as **AzureContainerRegistry.AustraliaEast**.
+Выполните поиск по определенному региону, например **азуреконтаинеррегистри. AustraliaEast**.
 
 ```json
 {
@@ -76,7 +76,7 @@ Search for the specific region, such as **AzureContainerRegistry.AustraliaEast**
     [...]
 ```
 
-### <a name="storage-ip-addresses-for-all-regions"></a>Storage IP addresses for all regions
+### <a name="storage-ip-addresses-for-all-regions"></a>IP-адреса хранилища для всех регионов
 
 ```json
 {
@@ -92,9 +92,9 @@ Search for the specific region, such as **AzureContainerRegistry.AustraliaEast**
     [...]
 ```
 
-### <a name="storage-ip-addresses-for-specific-regions"></a>Storage IP addresses for specific regions
+### <a name="storage-ip-addresses-for-specific-regions"></a>IP-адреса хранилища для конкретных регионов
 
-Search for the specific region, such as **Storage.AustraliaCentral**.
+Выполните поиск по определенному региону, например **Storage. аустралиацентрал**.
 
 ```json
 {
@@ -110,17 +110,17 @@ Search for the specific region, such as **Storage.AustraliaCentral**.
     [...]
 ```
 
-## <a name="allow-access-by-service-tag"></a>Allow access by service tag
+## <a name="allow-access-by-service-tag"></a>Разрешить доступ по тегу службы
 
-In an Azure virtual network, use network security rules to filter traffic from a resource such as a virtual machine to a container registry. To simplify the creation of the Azure network rules, use the **AzureContainerRegistry** [service tag](../virtual-network/security-overview.md#service-tags). A service tag represents a group of IP address prefixes to access an Azure service globally or per Azure region. The tag is automatically updated when addresses change. 
+В виртуальной сети Azure используйте правила сетевой безопасности для фильтрации трафика от ресурса, например виртуальной машины, в реестр контейнеров. Чтобы упростить создание правил сети Azure, используйте [тег службы](../virtual-network/security-overview.md#service-tags) **азуреконтаинеррегистри** . Тег службы представляет группу префиксов IP-адресов для глобального доступа к службе Azure или по всему региону Azure. Тег автоматически обновляется при изменении адресов. 
 
-For example, create an outbound network security group rule with destination **AzureContainerRegistry** to allow traffic to an Azure container registry. To allow access to the service tag only in a specific region, specify the region in the following format: **AzureContainerRegistry**.[*region name*].
+Например, создайте правило исходящей группы безопасности сети с назначением **азуреконтаинеррегистри** , чтобы разрешить трафик в реестр контейнеров Azure. Чтобы разрешить доступ к тегу службы только в определенном регионе, укажите регион в следующем формате: **азуреконтаинеррегистри**. [*имя региона*].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-* Learn about [Azure best practices for network security](../security/fundamentals/network-best-practices.md)
+* Узнайте о [рекомендациях Azure по сетевой безопасности](../security/fundamentals/network-best-practices.md)
 
-* Learn more about [security groups](/azure/virtual-network/security-overview) in an Azure virtual network
+* Дополнительные сведения о [группах безопасности](/azure/virtual-network/security-overview) в виртуальной сети Azure
 
 
 

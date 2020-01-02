@@ -12,12 +12,12 @@ author: barmichal
 ms.author: mibar
 ms.reviewer: vanto
 ms.date: 08/22/2019
-ms.openlocfilehash: b5f839cc6216eb12bfd0a86009ec49e987279d6e
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 7a8fe0f21ea8b31fb26727e2220f7395e2d71c2c
+ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73889831"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74555374"
 ---
 # <a name="azure-sql-database-and-sql-data-warehouse-data-discovery--classification"></a>Классификация & базы данных SQL Azure и хранилища данных SQL
 
@@ -128,8 +128,17 @@ ms.locfileid: "73889831"
 
 ![Журнал аудита](./media/sql-data-discovery-and-classification/11_data_classification_audit_log.png)
 
-## <a id="subheading-4"></a>Управление классификацией данных с помощью T-SQL
+## <a id="subheading-4"></a>Разрешения
 
+Следующие встроенные роли могут считывать классификацию данных базы данных SQL Azure: `Owner`, `Reader`, `Contributor`, `SQL Security Manager` и `User Access Administrator`.
+
+Следующие встроенные роли могут изменять классификацию данных базы данных SQL Azure: `Owner`, `Contributor``SQL Security Manager`.
+
+Дополнительные сведения о [RBAC для ресурсов Azure](https://docs.microsoft.com/azure/role-based-access-control/overview)
+
+## <a id="subheading-5"></a>Управление классификациями
+
+# <a name="t-sqltabazure-t-sql"></a>[T-SQL](#tab/azure-t-sql)
 Используйте T-SQL, чтобы добавить или удалить классификацию столбца или извлечь все классификации для целой базы данных.
 
 > [!NOTE]
@@ -139,8 +148,7 @@ ms.locfileid: "73889831"
 - Удаление классификации одного или нескольких столбцов: [DROP SENSITIVITY CLASSIFICATION](https://docs.microsoft.com/sql/t-sql/statements/drop-sensitivity-classification-transact-sql)
 - Просмотр всех классификаций в базе данных: [sys.sensitivity_classifications](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-sensitivity-classifications-transact-sql)
 
-### <a name="manage-classifications-using-rest-apis"></a>Управление классификациями с помощью API-интерфейсов RESTful
-
+# <a name="rest-apistabazure-rest-api"></a>[Интерфейсы API-интерфейсов RESTful](#tab/azure-rest-api)
 Также интерфейсы REST API можно использовать для программного управления классификациями. Опубликованные интерфейсы REST API поддерживают следующие операции:
 
 - [CREATE или Update](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/createorupdate) — создает или обновляет метку чувствительности данного столбца.
@@ -152,12 +160,10 @@ ms.locfileid: "73889831"
 
 - [List, рекомендованный базой данных](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/listrecommendedbydatabase) — получение рекомендуемых меток чувствительности для заданной базы данных.
 
-## <a name="manage-data-discovery-and-classification-using-azure-powershell"></a>Управление обнаружением и классификацией данных с помощью Azure PowerShell
+# <a name="powershell-cmdlettabazure-powelshell"></a>[Командлет PowerShell](#tab/azure-powelshell)
+Вы можете использовать PowerShell для получения всех рекомендуемых столбцов в базе данных SQL Azure и в управляемом экземпляре.
 
-Вы можете использовать PowerShell для получения всех рекомендуемых столбцов в базе данных SQL Azure и управляемом экземпляре.
-
-### <a name="powershell-cmdlets-for-azure-sql-database"></a>Командлеты PowerShell для базы данных SQL Azure
-
+### <a name="powershell-cmdlet-for-azure-sql-database"></a>Командлет PowerShell для базы данных SQL Azure
 - [Get-Азсклдатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasesensitivityclassification)
 - [Set-Азсклдатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabasesensitivityclassification)
 - [Remove-Азсклдатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqldatabasesensitivityclassification)
@@ -165,8 +171,7 @@ ms.locfileid: "73889831"
 - [Enable-Азсклдатабасесенситивитирекоммендатион](https://docs.microsoft.com/powershell/module/az.sql/enable-azsqldatabasesensitivityrecommendation)
 - [Disable-Азсклдатабасесенситивитирекоммендатион](https://docs.microsoft.com/powershell/module/az.sql/disable-azsqldatabasesensitivityrecommendation)
 
-### <a name="powershell-cmdlets-for-managed-instance"></a>Командлеты PowerShell для управляемого экземпляра
-
+### <a name="powershell-cmdlets-for-managed-instance"></a>Командлеты PowerShell для Управляемый экземпляр
 - [Get-Азсклинстанцедатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlinstancedatabasesensitivityclassification)
 - [Set-Азсклинстанцедатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlinstancedatabasesensitivityclassification)
 - [Remove-Азсклинстанцедатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlinstancedatabasesensitivityclassification)
@@ -174,22 +179,17 @@ ms.locfileid: "73889831"
 - [Enable-Азсклинстанцедатабасесенситивитирекоммендатион](https://docs.microsoft.com/powershell/module/az.sql/enable-azsqlinstancedatabasesensitivityrecommendation)
 - [Disable-Азсклинстанцедатабасесенситивитирекоммендатион](https://docs.microsoft.com/powershell/module/az.sql/disable-azsqlinstancedatabasesensitivityrecommendation)
 
-## <a name="permissions"></a>Разрешения
+---
 
-Следующие встроенные роли могут считывать классификацию данных базы данных SQL Azure: `Owner`, `Reader`, `Contributor`, `SQL Security Manager` и `User Access Administrator`.
-
-Следующие встроенные роли могут изменять классификацию данных базы данных SQL Azure: `Owner`, `Contributor``SQL Security Manager`.
-
-Дополнительные сведения о [RBAC для ресурсов Azure](https://docs.microsoft.com/azure/role-based-access-control/overview)
-
-## <a id="subheading-5"></a>Дальнейшие действия
+## <a id="subheading-6"></a>Дальнейшие действия
 
 - Дополнительные сведения о [расширенной защите данных](sql-database-advanced-data-security.md).
 - Рекомендуется настроить [аудит базы данных SQL Azure](sql-database-auditing.md) для мониторинга и аудита доступа к секретным конфиденциальным данным.
 
 <!--Anchors-->
-[SQL data discovery & classification overview]: #subheading-1
+[What is data discovery & classification]: #subheading-1
 [Discovering, classifying & labeling sensitive columns]: #subheading-2
 [Auditing access to sensitive data]: #subheading-3
-[Automated/Programmatic classification]: #subheading-4
-[Next Steps]: #subheading-5
+[Permissions]: #subheading-4
+[Manage classifications]: #subheading-5
+[Next Steps]: #subheading-6

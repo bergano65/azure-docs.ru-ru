@@ -1,30 +1,22 @@
 ---
-title: Как настроить кластеризацию Redis для кэша Azure категории "Премиум" для Redis | Документация Майкрософт
+title: Настройка кластеризации Redis для кэша Azure категории "Премиум" для Redis
 description: Узнайте, как создать и управлять кластеризацией Redis для кэша Azure уровня "Премиум" для экземпляров Redis
-services: cache
-documentationcenter: ''
 author: yegu-ms
-manager: jhubbard
-editor: ''
-ms.assetid: 62208eec-52ae-4713-b077-62659fd844ab
 ms.service: cache
-ms.workload: tbd
-ms.tgt_pltfrm: cache
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/13/2018
 ms.author: yegu
-ms.openlocfilehash: d81647e8d09d8f10827e8eb6038363db73395c1e
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 1f0c97d6c0854254026e194ffd5030976fc506b2
+ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72596923"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74122156"
 ---
 # <a name="how-to-configure-redis-clustering-for-a-premium-azure-cache-for-redis"></a>Настройка кластеризации Redis для кэша Azure категории "Премиум" для Redis
-Кэш Azure для Redis предлагает разные варианты кэша, которые позволяют выбирать размер и функции кэша, включая функции ценовой категории "Премиум", такие как кластеризация, постоянное хранение данных и поддержка виртуальной сети. В этой статье описывается как настроить кластеризацию в кэше Azure категории "Премиум" для экземпляра Redis.
+Кэш Azure для Redis содержит разные предложения кэша, которые позволяют выбирать размер и функции кэша, включая функции уровня "Премиум", например, кластеризация, сохраняемость и поддержка виртуальной сети. В этой статье описывается как настроить кластеризацию в кэше Azure категории "Премиум" для экземпляра Redis.
 
-См. дополнительные сведения о других функциях [кэша Azure для Redis ценовой категории "Премиум"](cache-premium-tier-intro.md).
+Дополнительные сведения о других функциях кэша категории "Премиум" см. в статье [Introduction to the Azure Cache for Redis Premium tier](cache-premium-tier-intro.md) (Общие сведения о кэше Azure для Redis уровня "Премиум").
 
 ## <a name="what-is-redis-cluster"></a>Что такое кластер Redis?
 Кэш Azure для Redis предлагает кластер Redis в том виде, как это [реализовано в Redis](https://redis.io/topics/cluster-tutorial). При использовании кластера Redis вы получаете такие преимущества: 
@@ -38,20 +30,20 @@ ms.locfileid: "72596923"
 
 В Azure кластер Redis предоставляется в виде основной или реплицированной модели, где у каждого сегмента есть основная или реплицированная пара с репликацией, управляемой кэшем Azure для службы Redis. 
 
-## <a name="clustering"></a>Кластеризация
+## <a name="clustering"></a>кластеризация;
 Кластеризация доступна во время создания кэша в колонке **Новый кэш Azure для Redis**. 
 
 [!INCLUDE [redis-cache-create](../../includes/redis-cache-premium-create.md)]
 
 Кластер настраивается в колонке **Кластер Redis** .
 
-![Кластеризация][redis-cache-clustering]
+![кластеризация;][redis-cache-clustering]
 
 Кластер может включать до 10 сегментов. Щелкните **Включено**, передвиньте ползунок или введите число от 1 до 10 для поля **Число сегментов**, после чего нажмите кнопку **ОК**.
 
 Каждый сегмент представляет собой пару основного экземпляра кэша и реплики кэша, которыми управляет Azure. Общий размер кэша вычисляется путем умножения количества сегментов на размер кэша, выбранный в ценовой категории. 
 
-![Кластеризация][redis-cache-clustering-selected]
+![кластеризация;][redis-cache-clustering-selected]
 
 Создав кэш, вы подключаетесь к нему, используя как некластеризованный кэш, а Redis распределяет данные между его сегментами. Если диагностика [включена](cache-how-to-monitor.md#enable-cache-diagnostics), то метрики собираются отдельно для каждого сегмента и могут [отображаться](cache-how-to-monitor.md) в колонке кэша Azure для Redis. 
 
@@ -137,7 +129,7 @@ ms.locfileid: "72596923"
 Вы можете подключаться к кэшу с помощью тех же [конечных точек](cache-configure.md#properties), [портов](cache-configure.md#properties) и [ключей](cache-configure.md#access-keys), которые используются для подключения к кэшу с отключенной кластеризацией. Redis управляет кластеризацией на сервере, поэтому управлять ей из клиента не нужно.
 
 ### <a name="can-i-directly-connect-to-the-individual-shards-of-my-cache"></a>Можно ли напрямую подключаться к отдельным сегментам кэша?
-В соответствии с требованиями протокола кластеризации, клиент должен подключаться к надлежащему сегменту. Поэтому нужно обеспечить правильное подключение клиента. Тем не менее каждый сегмент включает пару, которая включает основной кэш и его реплику и называется экземпляром кэша. Вы можете подключиться к этим экземплярам кэша с помощью служебной программы redis-cli из ветви [нестабильных версий](https://redis.io/download) репозитория Redis на портале GitHub. Эта версия реализует базовую поддержку при запуске с параметром `-c`. Дополнительные сведения см. в разделе [Playing with the cluster](https://redis.io/topics/cluster-tutorial#playing-with-the-cluster) (Эксперименты с кластером) [руководства по кластерам Redis](https://redis.io/topics/cluster-tutorial) на сайте [https://redis.io](https://redis.io).
+В соответствии с требованиями протокола кластеризации, клиент должен подключаться к надлежащему сегменту. Поэтому нужно обеспечить правильное подключение клиента. Тем не менее каждый сегмент включает пару, которая включает основной кэш и его реплику и называется экземпляром кэша. Вы можете подключиться к этим экземплярам кэша с помощью служебной программы redis-cli из ветви [нестабильных версий](https://redis.io/download) репозитория Redis на портале GitHub. Эта версия реализует базовую поддержку при запуске с параметром `-c`. Дополнительные сведения см. в разделе [Playing with the cluster](https://redis.io/topics/cluster-tutorial#playing-with-the-cluster) (Эксперименты с кластером) [руководства по кластерам Redis https://redis.io на сайте ](https://redis.io)[](https://redis.io/topics/cluster-tutorial).
 
 Для non-ssl используйте следующие команды.
 
@@ -167,7 +159,7 @@ ms.locfileid: "72596923"
 ### <a name="i-am-getting-move-exceptions-when-using-stackexchangeredis-and-clustering-what-should-i-do"></a>При использовании StackExchange.Redis и кластеризации порождаются исключения MOVE. Что делать?
 Если вы применяете StackExchange.Redis и получаете исключения `MOVE` при кластеризации, убедитесь, что вы используете [StackExchange.Redis 1.1.603](https://www.nuget.org/packages/StackExchange.Redis/) или более позднюю версию. Инструкции по настройке приложений .NET для использования StackExchange.Redis см. в разделе [Настройка клиентов кэша](cache-dotnet-how-to-use-azure-redis-cache.md#configure-the-cache-clients).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Узнайте, как использовать расширенные функции кэша.
 
 * [Общие сведения о кэше Azure для Redis уровня "Премиум"](cache-premium-tier-intro.md)

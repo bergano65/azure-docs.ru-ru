@@ -1,20 +1,19 @@
 ---
-title: Мониторинг сообщений B2B с помощью Azure Monitor Azure Logic Apps
+title: Мониторинг сообщений B2B с помощью Azure Monitor
 description: Настройка ведения журнала диагностики для сообщений AS2, X12 и EDIFACT в Azure Logic Apps с помощью Azure Monitor
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
 author: divyaswarnkar
 ms.author: divswa
-ms.reviewer: jonfan, estfan, LADocs
+ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 10/23/2018
-ms.openlocfilehash: e5c8e5f3d42f4e85406fcc7dd5a2f6602045c8ed
-ms.sourcegitcommit: d37991ce965b3ee3c4c7f685871f8bae5b56adfa
+ms.openlocfilehash: cd96376f764ec3075b916bf2207ec6ee3dd3fcbd
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72680205"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791936"
 ---
 # <a name="set-up-diagnostics-logging-for-b2b-messages-in-azure-logic-apps-by-using-azure-monitor"></a>Настройка ведения журнала диагностики для сообщений B2B в Azure Logic Apps с помощью Azure Monitor
 

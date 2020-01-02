@@ -10,11 +10,11 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 10/28/2019
 ms.author: erhopf
-ms.openlocfilehash: 2a361fc8f1f9c1798703ee655f70765ce182b961
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: d7e2e3c7a2259eb454b26445c834bd1cb2facd39
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73506190"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74815962"
 ---
 Просмотрите или скачайте все <a href="https://aka.ms/speech/github">примеры для пакета SDK службы "Речь"</a> на сайте GitHub.

@@ -1,17 +1,17 @@
 ---
 title: Краткое руководство. REST API Службы Azure SignalR
-description: Краткое руководство по использованию REST API службы Azure SignalR.
+description: Узнайте, как использовать REST API со Службой Azure SignalR в следующих примерах. Дополнительные сведения о спецификации REST API.
 author: sffamily
 ms.service: signalr
 ms.topic: quickstart
-ms.date: 03/01/2019
+ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: 999d44e394d47e350187f9175389e04e68567d5e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 17371e3bd426ea81b5e7e07610aac0073ea972c9
+ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64724667"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74157681"
 ---
 # <a name="quickstart-broadcast-real-time-messages-from-console-app"></a>Краткое руководство. Широковещательные сообщения в режиме реального времени из консольного приложения
 

@@ -2,28 +2,24 @@
 title: Интеграция с Azure Active Directory | Документация Майкрософт
 description: Узнайте о преимуществах интеграции приложения с Azure Active Directory и получите ресурсы для таких функций, как упрощенный вход, управление удостоверениями, многофакторная идентификация и контроль доступа.
 services: active-directory
-documentationcenter: dev-center-name
 author: rwike77
 manager: CelesteDG
-editor: ''
 ms.assetid: d13bba54-96bd-4b81-bee9-c8025ffa1648
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/08/2019
 ms.author: ryanwi
-ms.reviewer: bryanla
+ms.reviewer: jmprieur
 ms.custom: aaddev, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 48be16827da21643af485d1fb94b9a7b76728325
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: 2815fbebd54a1e373aa8b3058f85d092c0bb098f
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72374037"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74844895"
 ---
 # <a name="integrating-with-azure-active-directory"></a>Интеграция с Azure Active Directory
 
@@ -31,7 +27,7 @@ ms.locfileid: "72374037"
 
 В этой статье вы узнаете о преимуществах интеграции приложения с Azure Active Directory (Azure AD) и получите ресурсы для интеграции. Azure AD предоставляет организациям Управление удостоверениями корпоративного уровня для облачных приложений. Интеграция с Azure AD позволяет вашим пользователям удобно входить в систему, а вашему приложению соответствовать политике ИТ.
 
-## <a name="how-to-integrate"></a>Как интегрировать
+## <a name="how-to-integrate"></a>Интеграция
 
 Для интеграции приложения с Azure AD можно использовать несколько способов. Выберите соответствующий сценарий для своего приложения.
 

@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 10/23/2019
+ms.date: 12/03/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37db9b9679e904aed33de404e91c9f461d3388d7
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 83a4323c2679bdf55709aeaed82134b7b4457fee
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73150864"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74803705"
 ---
 # <a name="conditional-access-require-compliant-devices"></a>Условный доступ: требовать соответствующие требованиям устройства
 
@@ -34,7 +34,7 @@ ms.locfileid: "73150864"
 Следующие шаги помогут создать политику условного доступа, чтобы требовать, чтобы устройства, обращающиеся к ресурсам, были помечены как соответствующие политикам соответствия Организации Intune.
 
 1. Войдите в **портал Azure** в качестве глобального администратора, администратора безопасности или администратора условного доступа.
-1. Перейдите к **Azure Active Directory** > **Условный доступ**.
+1. Перейдите к **Azure Active Directory** > **Безопасность** > **Условный доступ**.
 1. Выберите **Новая политика**.
 1. Присвойте политике имя. Корпорация Майкрософт рекомендует организациям создавать осмысленные стандартные имена политик.
 1. В разделе **назначения**выберите **Пользователи и группы** .

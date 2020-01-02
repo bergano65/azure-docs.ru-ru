@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 12/21/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: add43f081ca6059651725cd6f817d4cce127b74b
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: e75a45bc4ccd2614520fda39e09996c2286bdbd0
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73155757"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227613"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-freshdesk"></a>Руководство по Интеграция Azure Active Directory с FreshDesk
 
@@ -272,7 +272,7 @@ ms.locfileid: "73155757"
     >Владелец учетной записи Azure AD получит по электронной почте сообщение со ссылкой для активации учетной записи.
     >
     >[!NOTE]
-    >Чтобы подготовить учетные записи пользователей AAD к работе с FreshDesk, можно использовать любые другие средства создания учетной записи пользователя Freshdesk или API, предоставляемые Freshdesk.
+    >Вы можете использовать любые другие средства создания учетной записи пользователя Freshdesk или API, предоставляемые Freshdesk, для подготовки учетных записей пользователя AAD.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 

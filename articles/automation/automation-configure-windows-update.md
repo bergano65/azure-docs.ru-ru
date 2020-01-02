@@ -4,17 +4,17 @@ description: В этой статье описываются параметры 
 services: automation
 ms.service: automation
 ms.subservice: update-management
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 10/02/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 813d34f9c07e6c2909c483f040d4f3bf09b3ad24
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 804f42121293e142cf77ad73c4aab36e62e3242d
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72690841"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74850420"
 ---
 # <a name="configure-windows-update-settings-for-update-management"></a>Настройка параметров Центр обновления Windows для Управление обновлениями
 
@@ -43,11 +43,11 @@ Set-ItemProperty -Path $AutoUpdatePath -Name NoAutoUpdate -Value 1
 
 ## <a name="configure-reboot-settings"></a>Настройка параметров перезагрузки
 
-Разделы реестра, перечисленные в разделе [настройка Автоматическое обновление путем изменения реестра](/windows/deployment/update/waas-wu-settings#configuring-automatic-updates-by-editing-the-registry) и [разделов реестра, используемых для управления перезапуском](/windows/deployment/update/waas-restart#registry-keys-used-to-manage-restart) , могут привести к перезагрузке компьютеров, даже если в параметрах **развертывания обновления** не указан параметр **никогда перезагружаться** . . Эти разделы реестра должны быть настроены для лучшего соответствия среде.
+Разделы реестра, перечисленные в разделе [настройка Автоматическое обновление путем изменения реестра](/windows/deployment/update/waas-wu-settings#configuring-automatic-updates-by-editing-the-registry) и [разделов реестра, используемых для управления перезапуском](/windows/deployment/update/waas-restart#registry-keys-used-to-manage-restart) , могут привести к перезагрузке компьютеров, даже если в параметрах **развертывания обновления** не указан параметр **никогда перезагружаться** . Эти разделы реестра должны быть настроены для лучшего соответствия среде.
 
 ## <a name="enable-updates-for-other-microsoft-products"></a>Включение обновлений для других продуктов Майкрософт
 
-По умолчанию Центр обновления Windows предоставляет обновления только для Windows. Если включить **обновления для других продуктов Майкрософт при обновлении параметра Windows** , вы также получаете обновления для других продуктов, включая исправления системы безопасности для Microsoft SQL Server и другого программного обеспечения Майкрософт. Этот параметр нельзя настроить с помощью групповой политики. Выполните следующую команду PowerShell для систем, на которых требуется включить другие обновления Майкрософт. Управление обновлениями будет соответствовать этому параметру.
+По умолчанию Центр обновления Windows предоставляет обновления только для ОС Windows. Если включить **обновления для других продуктов Майкрософт при обновлении параметра Windows** , вы также получаете обновления для других продуктов, включая исправления системы безопасности для Microsoft SQL Server и другого программного обеспечения Майкрософт. Этот параметр нельзя настроить с помощью групповой политики. Выполните следующую команду PowerShell для систем, на которых требуется включить другие обновления Майкрософт. Управление обновлениями будет соответствовать этому параметру.
 
 ```powershell
 $ServiceManager = (New-Object -com "Microsoft.Update.ServiceManager")

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Перевод речи в речь на Python — служба "Речь"
+title: Краткое руководство. Перевод речи в речь с помощью Python в службе "Речь"
 titleSuffix: Azure Cognitive Services
 description: ПОДЛЕЖИТ УТОЧНЕНИЮ
 services: cognitive-services
@@ -8,13 +8,13 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 10/28/2019
+ms.date: 12/09/2019
 ms.author: erhopf
-ms.openlocfilehash: a41339b4aed855b92152534f7be9b4f516045e65
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: a5e8f951fbcfe1d0230b0b0ce55b4eba43024531
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73505302"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74981063"
 ---
-Если вы предпочитаете сразу перейти к работе, просмотрите или скачайте все <a href="https://aka.ms/speech/github-python">образцы для пакета SDK службы "Речь" для Python</a> в GitHub. В противном случае ознакомьтесь с инструкциями.
+Если вы предпочитаете сразу перейти к работе, просмотрите или скачайте все <a href="https://aka.ms/speech/github-python">образцы для пакета SDK службы "Речь" для Python</a> на сайте GitHub. В противном случае ознакомьтесь с инструкциями.

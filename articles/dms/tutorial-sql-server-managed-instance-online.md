@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 11/06/2019
-ms.openlocfilehash: 556fb2c1caf9c763cf5a63b71d3dd1e522104e1d
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.date: 12/04/2019
+ms.openlocfilehash: 53c0601be29c5cac9bddc37158d705f07349323d
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73646965"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74975029"
 ---
 # <a name="tutorial-migrate-sql-server-to-an-azure-sql-database-managed-instance-online-using-dms"></a>Руководство по Перенос баз данных SQL Server в управляемый экземпляр Базы данных SQL Azure по сети с помощью DMS
 
@@ -204,13 +204,18 @@ Azure Database Migration Service можно использовать для пе
 
     | | |
     |--------|---------|
-    |**SMB Network location share** (Общая сетевая папка SMB) | Локальная сетевая папка SMB, содержащая файлы резервных копий базы данных и файлы резервных копий журнала транзакций, которые могут использоваться службой Azure Database Migration Service для миграции. Учетная запись службы, в которой выполняется исходный экземпляр SQL Server, должна иметь права записи и чтения для этой сетевой папки. Укажите полное доменное имя или IP-адрес сервера и сетевую папку, например "\\\servername.domainname.com\backupfolder" или "\\\IP address\backupfolder".|
-    |**Имя пользователя** | Убедитесь, что пользователь Windows имеет полное право доступа к указанной ранее сетевой папке. Служба Azure Database Migration Service будет олицетворять пользователя с этими учетными данными, чтобы отправить файлы резервных копий в контейнер службы хранилища Azure для операции восстановления. |
-    |**Пароль** | Пароль для пользователя |
+    |**SMB Network location share** (Общая сетевая папка SMB) | Локальная сетевая папка SMB или общая папка Azure, содержащая файлы резервных копий базы данных и файлы резервных копий журнала транзакций, которые могут использоваться службой Azure Database Migration Service для миграции. Учетная запись службы, в которой выполняется исходный экземпляр SQL Server, должна иметь права записи и чтения для этой сетевой папки. Укажите полное доменное имя или IP-адрес сервера и сетевую папку, например "\\\servername.domainname.com\backupfolder" или "\\\IP address\backupfolder".|
+    |**Имя пользователя** | Убедитесь, что пользователь Windows имеет полное право доступа к указанной ранее сетевой папке. Служба Azure Database Migration Service будет олицетворять пользователя с этими учетными данными, чтобы отправить файлы резервных копий в контейнер службы хранилища Azure для операции восстановления. При использовании файлового ресурса Azure следует использовать имя учетной записи хранения, предварительно указав в качестве имени пользователя AZURE\. |
+    |**Пароль** | Пароль для пользователя Если используется общая папка Azure, в качестве пароля следует указать ключ учетной записи хранения. |
     |**Subscription of the Azure Storage Account** (Подписка учетной записи хранения Azure) | Выберите подписку, которая содержит учетную запись хранения Azure. |
     |**Учетная запись хранения Azure** | Выберите учетную запись хранения Azure, в которую служба DMS может отправлять файлы резервной копии из общей сетевой папки SMB, а также использовать эту учетную запись для миграции базы данных.  Рекомендуется выбрать учетную запись хранения в том же регионе, что и служба DMS для получения оптимальной производительности при передаче файлов. |
 
     ![Настройка параметров миграции](media/tutorial-sql-server-to-managed-instance-online/dms-configure-migration-settings4.png)
+
+
+> [!NOTE]
+  > Возможной причиной появления в Azure Database Migration Service ошибок "системная ошибка 53" или "системная ошибка 57" может быть невозможность доступа Azure Database Migration Service к общей папке Azure. При возникновении таких ошибок [предоставьте доступ к хранилищу учетной записи из виртуальной сети](https://docs.microsoft.com/azure/storage/common/storage-network-security?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network).
+
 
 2. Щелкните **Сохранить**.
 

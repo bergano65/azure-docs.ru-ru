@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/25/2019
-ms.openlocfilehash: 69a6939cdbcc9b2c4e496c8d47aa20c9f6e85d57
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: ed33d50da84347f55d355802e7767c8477c30e87
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826942"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74482164"
 ---
 # <a name="quickstart-use-sql-server-management-studio-to-connect-and-query-an-azure-sql-database"></a>Краткое руководство. Подключение к базе данных SQL Azure и создание запросов к ней с помощью SQL Server Management Studio
 
@@ -77,7 +77,7 @@ ms.locfileid: "73826942"
 
    ![Подключение к серверу](./media/sql-database-connect-query-ssms/connect.png)  
 
-3. Выберите **Параметры** в диалоговом окне **Подключение к серверу**. В раскрывающемся меню **Подключение к базе данных** выберите **mySampleDatabase**.
+3. Выберите **Параметры** в диалоговом окне **Подключение к серверу**. В раскрывающемся меню **Соединение с базой данных** выберите **mySampleDatabase**.Если оставить в раскрывающемся списке значения по умолчанию, то подключение будет установлено к **главной базе данных**.
 
    ![Подключение к базе данных на сервере](./media/sql-database-connect-query-ssms/options-connect-to-db.png)  
 

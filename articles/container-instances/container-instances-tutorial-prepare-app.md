@@ -1,20 +1,15 @@
 ---
-title: Руководство. Подготовка образа контейнера для службы "Экземпляры контейнеров Azure"
+title: Учебник. Подготовка образа контейнера для развертывания
 description: Руководство по службе "Экземпляры контейнеров Azure" —часть 1 из 3. Подготовка приложения в образе контейнера для развертывания в службе "Экземпляры контейнеров Azure".
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: tutorial
 ms.date: 03/21/2018
-ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 719237f63d387cf56ab7947f8f168e0aa4351376
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 487dca97dc47bf214bedf38f44b2d29a71567cbb
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68325584"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533343"
 ---
 # <a name="tutorial-create-a-container-image-for-deployment-to-azure-container-instances"></a>Руководство. Создание образа контейнера для развертывания в службе "Экземпляры контейнеров Azure"
 

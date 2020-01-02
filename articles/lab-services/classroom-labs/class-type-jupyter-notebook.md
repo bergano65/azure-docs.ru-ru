@@ -1,6 +1,6 @@
 ---
-title: Set up a lab to teach data science with Python and Jupyter Notebooks | Microsoft Docs
-description: Learn how to set up a lab to teach data science using Python and Jupyter Notebooks.
+title: Настройка лаборатории для обучения обработки и анализа данных с использованием записных книжек Python и Jupyter | Документация Майкрософт
+description: Узнайте, как настроить лабораторию для обучения обработки и анализа данных с использованием записных книжек Python и Jupyter.
 services: lab-services
 documentationcenter: na
 author: emaher
@@ -20,60 +20,60 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74383981"
 ---
-# <a name="set-up-a-lab-to-teach-data-science-with-python-and-jupyter-notebooks"></a>Set up a lab to teach data science with Python and Jupyter Notebooks
+# <a name="set-up-a-lab-to-teach-data-science-with-python-and-jupyter-notebooks"></a>Настройка лаборатории для обучения обработки и анализа данных с помощью записных книжек Python и Jupyter
 
-This article outlines how to set up a template machine in Lab Services with the tools needed to teach students how to use [Jupyter Notebooks](http://jupyter-notebook.readthedocs.io).  Jupyter Notebooks is an open-source project that lets you easily combine rich text and executable [Python](https://www.python.org/) source code on a single canvas called a notebook.  Running a notebook results in a linear record of inputs and outputs.  Those outputs can include text, tables of information, scatter plots, and more.
+В этой статье описано, как настроить компьютер-шаблон в службах лаборатории с помощью средств, необходимых для обучения учащихся, как использовать [записные книжки Jupyter](http://jupyter-notebook.readthedocs.io).  Записные книжки Jupyter — это проект с открытым исходным кодом, который позволяет легко сочетать текстовый и исполняемый исходный код [Python](https://www.python.org/) на одном холсте, именуемом записной книжкой.  При запуске записной книжки создается линейная запись входных и выходных данных.  Эти выходные данные могут включать текст, таблицы данных, точечные диаграммы и многое другое.
 
 ## <a name="lab-configuration"></a>Настройка лаборатории
 
-To set up this lab, you need an Azure subscription and lab account to get started. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. Once you get an Azure subscription, you can create a new lab account in Azure Lab Services. For more information about creating a new lab account, see [tutorial to setup a lab account](tutorial-setup-lab-account.md).  You can also use an existing lab account.
+Для настройки этой лабораторной работы требуется подписка Azure и учетная запись лаборатории. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/) , прежде чем начинать работу. После получения подписки Azure можно создать новую учетную запись лаборатории в службах лаборатории Azure. Дополнительные сведения о создании учетной записи лаборатории см. в разделе [учебник по настройке учетной записи лаборатории](tutorial-setup-lab-account.md).  Можно также использовать существующую учетную запись лаборатории.
 
-### <a name="lab-account-settings"></a>Lab Account Settings
+### <a name="lab-account-settings"></a>Параметры учетной записи лаборатории
 
-Enable the settings described in the table below for the lab account. For more information about how to enable marketplace images, see [specify marketplace images available to lab creators](tutorial-setup-lab-account.md#specify-marketplace-images-available-to-lab-creators).
+Включите параметры, описанные в таблице ниже, для учетной записи лаборатории. Дополнительные сведения о том, как включить образы Marketplace, см. [в разделе Указание образов Marketplace, доступных авторам лабораторий](tutorial-setup-lab-account.md#specify-marketplace-images-available-to-lab-creators).
 
-| Lab account setting | Указания |
+| Параметр учетной записи лаборатории | Указания |
 | ------------------- | ------------ |
-| Marketplace image | Enable the [Data Science Virtual Machine - Windows 2016](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.dsvm-windows) image for use within your lab account. |
+| Образ Marketplace | Включите [виртуальную машину для обработки и анализа данных — образ Windows 2016](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.dsvm-windows) для использования в учетной записи лаборатории. |
 
 >[!TIP]
->This article will focus on configuring a template machine that uses the Windows Server operating system.  It's also possible to set up a data science class with Python and Jupyter Notebooks using [Data Science Virtual Machine for Linux (CentOS)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.linux-data-science-vm) or [Data Science Virtual Machine for Linux (Ubuntu)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.linux-data-science-vm-ubuntu) images from the Azure Marketplace.
+>В этой статье основное внимание уделяется настройке компьютера-шаблона, использующего операционную систему Windows Server.  Кроме того, можно настроить класс обработки и анализа данных с записными книжками Python и Jupyter, используя [виртуальную машину для Linux (CentOS)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.linux-data-science-vm) или [виртуальные машины для обработки и анализа данных для Linux (Ubuntu)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.linux-data-science-vm-ubuntu) из Azure Marketplace.
 
-### <a name="lab-settings"></a>Lab settings
+### <a name="lab-settings"></a>Параметры лаборатории
 
-Use the settings in the table below when setting up a classroom lab.  For more information how to create a classroom lab, see [set up a classroom lab tutorial](tutorial-setup-classroom-lab.md).
+При настройке лаборатории для занятий используйте параметры, приведенные в таблице ниже.  Дополнительные сведения о создании лабораторной среды см. в разделе [Настройка лаборатории по созданию аудиторий](tutorial-setup-classroom-lab.md).
 
-| Lab settings | Value/instructions |
+| Параметры лаборатории | Значение или инструкции |
 | ------------ | ------------------ |
-|Размер виртуальной машины| Small GPU (Compute). This size is best suited for compute-intensive and network-intensive applications like Artificial Intelligence and Deep Learning. |
-|Virtual Machine Image| SQL Server 2019 Standard on Windows Server 2019|
+|Размер виртуальной машины| Малый GPU (вычисление). Этот размер лучше всего подходит для ресурсоемких вычислительных и ресурсоемких приложений, таких как искусственный интеллект и глубокое обучение. |
+|Образ виртуальной машины| SQL Server 2019 Standard на Windows Server 2019|
 
-## <a name="template-machine"></a>Template machine
+## <a name="template-machine"></a>Компьютер шаблона
 
-The [Data Science Virtual Machine - Windows 2016](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.dsvm-windows) image provides the necessary deep learning frameworks and tools required for this type of class.  The image includes Jupyter Notebooks and Visual Studio Code.  [Jupyter Notebooks](http://jupyter-notebook.readthedocs.io) is a web application that allows data scientists to take raw data, run computations, and see the results all in the same environment.  For our template machine, the web application will be running locally.  [Visual Studio Code](https://code.visualstudio.com/) is an IDE that provides a rich interactive experience when writing and testing a notebook.  For more information, see [Working with Jupyter Notebooks in Visual Studio Code](https://code.visualstudio.com/docs/python/jupyter-support).
+[Виртуальная машина для обработки и анализа данных — образ Windows 2016](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.dsvm-windows) предоставляет необходимые платформы и средства глубокого обучения, необходимые для этого типа класса.  Образ включает в себя записные книжки Jupyter и Visual Studio Code.  [Записные книжки Jupyter](http://jupyter-notebook.readthedocs.io) — это веб-приложение, которое позволяет специалистам по обработке и анализу данных принимать необработанные данные, выполнять вычисления и просматривать результаты в одной и той же среде.  Для нашего шаблонного компьютера веб-приложение будет работать локально.  [Visual Studio Code](https://code.visualstudio.com/) — это интегрированная среда разработки, предоставляющая широкие возможности интерактивного взаимодействия при написании и тестировании записной книжки.  Дополнительные сведения см. [в разделе Работа с записными книжками Jupyter в Visual Studio Code](https://code.visualstudio.com/docs/python/jupyter-support).
 
-The remaining task to set up the class is to provide local notebooks.  For instructions how to use the Azure Machine Learning samples, see [how to configure an environment with Jupyter Notebooks](../../machine-learning/service/how-to-configure-environment.md#jupyter).  You can also provide your own notebooks on the template machine.  The notebooks will be copied to all student machines when the template is published.
+Оставшаяся задача для настройки класса — предоставление локальных записных книжек.  Инструкции по использованию Машинное обучение Azure примеров см. в статье [Настройка среды с помощью записных книжек Jupyter](../../machine-learning/service/how-to-configure-environment.md#jupyter).  Вы также можете предоставить собственные записные книжки на компьютере шаблона.  Записные книжки будут скопированы на все компьютеры учащихся при публикации шаблона.
 
 ## <a name="cost-estimate"></a>Оценка затрат
 
-Let's cover a possible cost estimate for this class.  We'll use a class of 25 students.  There are 20 hours of scheduled class time.  Also, each student gets 10 hours quota for homework or assignments outside scheduled class time.  The virtual machine size we chose was small gpu (compute), which is 139 lab units.
+Давайте рассмотрим возможную оценку затрат для этого класса.  Мы будем использовать класс из 25 учащихся.  Существует 20 часов запланированного времени класса.  Кроме того, каждый учащийся получает 10 часов квоты на домашние задания или назначения за пределами запланированного времени класса.  Выбранная виртуальная машина имеет малый GPU (вычислений), то есть 139 лабораторных единиц.
 
-Here is an example of a possible cost estimate for this class:
+Ниже приведен пример возможной оценки затрат для этого класса:
 
-25 students \* (20 scheduled hours + 10 quota hours) \* 139 lab units \*  0.01 USD per hour  = 1042.5 USD
+25 учащихся \* (20 запланированных часов + 10 квот) \* 139 единиц лаборатории \* 0,01 долл. США в час = 1042,5 долл. США
 
-Further more details on pricing, see [Azure Lab Services Pricing](https://azure.microsoft.com/pricing/details/lab-services/).
+Дополнительные сведения о ценах см. на странице [цен на службы лаборатории Azure](https://azure.microsoft.com/pricing/details/lab-services/).
 
 ## <a name="conclusion"></a>Заключение
 
-In this article, we walked through the steps to create a lab for a Jupyter Notebooks class. You can use a similar setup for other machine learning classes.
+В этой статье мы рассмотрели шаги по созданию лаборатории для класса записных книжек Jupyter. Аналогичную программу установки можно использовать для других классов машинного обучения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Next steps are common to setting up any lab.
+Дальнейшие действия являются общими для настройки любой лаборатории.
 
-- [Create and manage a template](how-to-create-manage-template.md)
+- [Создание шаблона и управление им](how-to-create-manage-template.md)
 - [Добавление пользователей](tutorial-setup-classroom-lab.md#add-users-to-the-lab)
-- [Set quota](how-to-configure-student-usage.md#set-quotas-for-users)
-- [Set a schedule](tutorial-setup-classroom-lab.md#set-a-schedule-for-the-lab)
-- [Email registration links to students](how-to-configure-student-usage.md#send-invitations-to-users)
+- [Задать квоту](how-to-configure-student-usage.md#set-quotas-for-users)
+- [Задание расписания](tutorial-setup-classroom-lab.md#set-a-schedule-for-the-lab)
+- [Ссылки для регистрации электронной почты учащихся](how-to-configure-student-usage.md#send-invitations-to-users)

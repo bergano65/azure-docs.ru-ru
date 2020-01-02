@@ -3,15 +3,10 @@ documentType: LandingData
 title: Документация по Службе приложений
 metadata:
   document_id: 6c8db72a-cdb7-8fb7-ed57-ed75afcca4d0
-  title: Документация по Службе приложений Azure. Руководства и справочник по API
-  meta.description: 'Learn how to use App Service to build and host websites and web applications, including RESTful APIs and mobile back ends.'
-  services: app-service
-  author: georgewallace
-  manager: gwallace
-  ms.service: app-service
+  title: Документация по Службе приложений Azure
+  meta.description: 'Host websites, web apps, RESTful APIs, and mobile back ends in Azure App Service. Find quickstarts, tutorials, and samples to help you succeed with App Service.'
   ms.topic: landing-page
   ms.date: 01/23/2017
-  ms.author: gwallace
 abstract:
   description: 'Служба приложений Azure позволяет создавать и размещать веб-приложения, серверные части мобильных решений и API RESTful на любых языках без необходимости управлять инфраструктурой. Служба обеспечивает автоматическое масштабирование и высокий уровень доступности, поддерживает Windows и Linux и обеспечивает автоматическое развертывание из GitHub, Azure DevOps или любого репозитория Git. Узнайте, как использовать Службу приложений Azure, изучив краткие инструкции, примеры и руководства.'
   aside:

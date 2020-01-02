@@ -1,22 +1,18 @@
 ---
-title: Создание среды разработки Node.js на основе Kubernetes в облаке с помощью VS Code
-titleSuffix: Azure Dev Spaces
+title: 'Создание пространства разработки Kubernetes: Visual Studio Code и Node.js'
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
-author: zr-msft
-ms.author: zarhoads
 ms.date: 09/26/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: 30f912e9c1573b32247bb3c2a3f7d4026436748b
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: 64d4f7560325429fc2a36be066c6c475d4d60e90
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67503021"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74708599"
 ---
-# <a name="get-started-on-azure-dev-spaces-with-nodejs"></a>Начало работы с Node.js в Azure Dev Spaces
+# <a name="create-a-kubernetes-dev-space-visual-studio-code-and-nodejs-with-azure-dev-spaces"></a>Создание пространства разработки Kubernetes: Visual Studio Code и Node.js в Azure Dev Spaces
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 
@@ -44,9 +40,10 @@ az login
 Можно просматривать свои подписки, выполнив следующую команду: 
 
 ```cmd
-az account list
+az account list --output table
 ```
-Найдите подписку с `isDefault: true` в выходных данных JSON.
+
+Найдите подписку со значением *True* для параметра *IsDefault*.
 Если это не та подписка, которую нужно использовать, вы можете изменить подписку по умолчанию:
 
 ```cmd

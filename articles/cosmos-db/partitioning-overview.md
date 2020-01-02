@@ -1,17 +1,17 @@
 ---
 title: Секционирование в базе данных Azure Cosmos DB
-description: Общие сведения о секционировании в Azure Cosmos DB.
+description: Сведения о секционировании в Azure Cosmos DB, рекомендации по выбору ключа секции и управлении логическими секциями
 author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 08/01/2019
-ms.openlocfilehash: 38b4e4c2541bf30bd9c95d9c0ec61779b0d1d7bb
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.date: 12/02/2019
+ms.openlocfilehash: c781c5e12f3f678ef640c6017a768e7ac14448f9
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72753247"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74871998"
 ---
 # <a name="partitioning-in-azure-cosmos-db"></a>Секционирование в базе данных Azure Cosmos DB
 

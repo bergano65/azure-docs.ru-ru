@@ -20,6 +20,6 @@ ms.locfileid: "74456628"
 
 [!INCLUDE [azure-iot-hub-edge-glossary-includes](../../includes/azure-iot-hub-edge-glossary-includes.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-[IoT Hub glossary](../iot-hub/iot-hub-devguide-glossary.md)
+[Глоссарий центра Интернета вещей](../iot-hub/iot-hub-devguide-glossary.md)

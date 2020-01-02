@@ -10,11 +10,11 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 10/28/2019
 ms.author: erhopf
-ms.openlocfilehash: 34cf935f32f361977e5fb733c799462454c65ec3
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: e0124b3078f49d17b917125cc20991c06a4e6039
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73505430"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74818399"
 ---
-Если вы предпочитаете сразу перейти к практике, просмотрите или скачайте все <a href="https://aka.ms/speech/github-java">примеры для пакета SDK службы "Речь" для Java</a> на сайте GitHub. В противном случае приступим к работе.
+Если вы предпочитаете сразу перейти к работе, просмотрите или скачайте все <a href="https://aka.ms/speech/github-java">образцы для пакета SDK службы "Речь" для Java</a> в GitHub. В противном случае ознакомьтесь с инструкциями.

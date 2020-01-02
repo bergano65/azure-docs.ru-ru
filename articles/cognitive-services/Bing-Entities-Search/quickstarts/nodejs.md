@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Отправка запросов для поиска в REST API Bing для поиска сущностей с помощью Node.js
+title: Краткое руководство. Отправка запросов для поиска в REST API Поиска сущностей Bing с помощью Node.js
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве показано, как отправлять запросы в REST API Bing для поиска сущностей с помощью C# и получать ответы в формате JSON.
+description: В этом кратком руководстве показано, как отправлять запросы в REST API Поиска сущностей Bing с помощью C# и получать ответы в формате JSON.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 07/24/2019
 ms.author: aahi
-ms.openlocfilehash: e56bf0b3daa38f79e637ece947414b885de3797a
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 48d2b36e35a2e0b41b1202beda9944339dc7530c
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68478981"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327116"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-nodejs"></a>Краткое руководство. Отправка запросов для поиска в REST API Bing для поиска сущностей с помощью Node.js
 

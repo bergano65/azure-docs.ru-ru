@@ -25,7 +25,7 @@ landingContent:
       url: overview.md
     - text: Что представляют собой журналы Azure Monitor и Log Analytics?
       url: overview.md
-    - text: Страница центра документации по Log Analytics и журналах Azure Monitor
+    - text: Страница центра документации по Log Analytics и журналам Azure Monitor
       url: azure-monitor-log-hub.md
     - text: Что такое Azure Application Insights?
       url: app/app-insights-overview.md
@@ -77,7 +77,7 @@ landingContent:
       url: https://go.microsoft.com/fwlink/?linkid=2012827
 - title: Справочник по командам CLI
   linkLists:
-  - linkListType: reference
+- linkListType: reference
     links:
     - text: Метрики, автомасштабирование, параметры диагностики, оповещения
       url: /cli/azure/monitor?view=azure-cli-latest
@@ -87,7 +87,7 @@ landingContent:
       url: /cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest
 - title: Справочник по командам PowerShell
   linkLists:
-  - linkListType: reference
+- linkListType: reference
     links:
     - text: Метрики, автомасштабирование, параметры диагностики, оповещения
       url: /powershell/module/az.monitor/?view=azps-2.6.0
@@ -97,9 +97,9 @@ landingContent:
       url: /powershell/module/az.applicationinsights/new-azapplicationinsights?view=azps-2.7.0&viewFallbackFrom=azps-2.5.0
 - title: Справочник по командам REST API
   linkLists:
-  - linkListType: reference
+- linkListType: reference
     links:
-    - text: Метрики, автомасштабирование, параметры диагностики, оповещения
+   - text: Метрики, автомасштабирование, параметры диагностики, оповещения
       url: /rest/api/monitor
     - text: Log Analytics
       url: /rest/api/loganalytics

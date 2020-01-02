@@ -1,33 +1,33 @@
 ---
-title: Среда выполнения интеграции в фабрике данных Azure
+title: Среда выполнения интеграции
 description: Сведения о среде выполнения интеграции в фабрике данных Azure.
 services: data-factory
 documentationcenter: ''
+ms.author: abnarain
 author: nabhishek
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
+ms.custom: seo-lt-2019
 ms.date: 05/31/2019
-ms.author: abnarain
-ms.openlocfilehash: 0b137edbfb5ca439d4ba15614225ec0973511763
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 40660c0397f8b7fd7c370e2e0f697cae26b9bb48
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74218813"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74927146"
 ---
 # <a name="integration-runtime-in-azure-data-factory"></a>Среда выполнения интеграции в фабрике данных Azure
 Среда выполнения интеграции (IR) — это инфраструктура вычислений, которую фабрика данных Azure использует для обеспечения перечисленных ниже возможностей интеграции данных в разных сетевых средах.
 
-- **Data Flow**: Execute a [Data Flow](concepts-data-flow-overview.md) in managed Azure compute environment.  
-- **Data movement**: Copy data across data stores in public network and data stores in private network (on-premises or virtual private network). Поддерживаются встроенные соединители, преобразование форматов, сопоставление столбцов, высокопроизводительная и масштабируемая передача данных.
-- **Activity dispatch**:  Dispatch and monitor transformation activities running on a variety of compute services such as Azure Databricks, Azure HDInsight, Azure Machine Learning, Azure SQL Database, SQL Server, and more.
+- **Поток данных**. выполняет [поток данных](concepts-data-flow-overview.md) в управляемой среде вычислений Azure.  
+- **Перемещение данных**. копирование данных между хранилищами данных в общедоступной сети и хранилищах данных в частной сети (локальной или виртуальной частной сети). Поддерживаются встроенные соединители, преобразование форматов, сопоставление столбцов, высокопроизводительная и масштабируемая передача данных.
+- **Отправка**действий. действия по отправке и мониторингу, выполняемые в различных службах вычислений, таких как Azure Databricks, Azure HDInsight, машинное обучение Azure, база данных SQL azure, SQL Server и многое другое.
 - **Выполнение пакетов служб SSIS**. Выполнение пакетов служб SQL Server Integration Services (SSIS) в собственном коде в управляемой вычислительной среде Azure.
 
-В фабрике данных действия определяют выполняемые операции. Связанная служба обозначает целевое хранилище данных или службу вычислений. Среда выполнения интеграции соединяет между собой действия и связанные службы.  It is referenced by the linked service or activity, and provides the compute environment where the activity either runs on or gets dispatched from. Такая схема позволяет выполнять действия в регионе, который максимально близко расположен к целевому хранилищу данных или службе вычислений, обеспечивает высокую производительность и соблюдение требований по безопасности и соответствию.
+В фабрике данных действия определяют выполняемые операции. Связанная служба обозначает целевое хранилище данных или службу вычислений. Среда выполнения интеграции соединяет между собой действия и связанные службы.  На него ссылается связанная служба или действие, а также среда вычислений, в которой действие запускается или отправляется из. Такая схема позволяет выполнять действия в регионе, который максимально близко расположен к целевому хранилищу данных или службе вычислений, обеспечивает высокую производительность и соблюдение требований по безопасности и соответствию.
 
 ## <a name="integration-runtime-types"></a>Типы сред выполнения интеграции
 Фабрика данных предлагает три типа сред выполнения интеграции. Вы можете выбрать тот, который отвечает вашим потребностям в интеграции данных и сетевой среде.  Эти три типа перечислены ниже.
@@ -51,12 +51,12 @@ Azure | Поток данных<br/>Перемещение данных<br/>Ди
 ## <a name="azure-integration-runtime"></a>Среда выполнения интеграции Azure
 В среде выполнения интеграции Azure доступны следующие возможности.
 
-- Running Data Flows in Azure 
+- Выполнение потоков данных в Azure 
 - Выполнение действия копирования между облачными хранилищами данных
-- Dispatching the following transform activities in public network: Databricks Notebook/ Jar/ Python activity, HDInsight Hive activity, HDInsight Pig activity, HDInsight MapReduce activity, HDInsight Spark activity, HDInsight Streaming activity, Machine Learning Batch Execution activity, Machine Learning Update Resource activities, Stored Procedure activity, Data Lake Analytics U-SQL activity, .NET custom activity, Web activity, Lookup activity, and Get Metadata activity.
+- Отправка следующих действий преобразования в общедоступной сети: операции с модулями данных записной книжки/JAR/Python, действие Hive hdinsight, действие Pig hdinsight, действие MapReduce в hdinsight, действие HDInsight Spark, действие потоковой передачи HDInsight, Машинное обучение действие выполнения пакета, Машинное обучение операции обновления ресурсов, действия с хранимой Data Lake Analytics процедурой, действия по поиску и действием получения метаданных.
 
 ### <a name="azure-ir-network-environment"></a>Сетевая среда Azure IR
-Azure Integration Runtime supports connecting to data stores and compute services with public accessible endpoints. Для среды виртуальных сетей Azure следует использовать локально размещенную среду выполнения интеграции.
+Azure Integration Runtime поддерживает подключение к хранилищам данных и службам вычислений с общедоступными конечными точками. Для среды виртуальных сетей Azure следует использовать локально размещенную среду выполнения интеграции.
 
 ### <a name="azure-ir-compute-resource-and-scaling"></a>Вычислительные ресурсы и масштабирование Azure IR
 Среда выполнения интеграции Azure предоставляет полностью управляемые вычисления в Azure без использования серверов.  Вам не нужно подготавливать инфраструктуру, устанавливать программное обеспечение, применять исправления и масштабировать емкость.  Кроме того, вы платите только за фактическое время использования.
@@ -68,19 +68,19 @@ Azure Integration Runtime supports connecting to data stores and compute service
 Сведения о создании и настройке Azure IR см. в руководстве по созданию и настройке Azure IR. 
 
 > [!NOTE] 
-> Azure Integration runtime has properties related to Data Flow runtime, which defines the underlying compute infrastructure that would be used to run the data flows on. 
+> Среда выполнения интеграции Azure имеет свойства, связанные со средой выполнения потока данных, которая определяет базовую инфраструктуру вычислений, которая будет использоваться для выполнения потоков данных. 
 
 ## <a name="self-hosted-integration-runtime"></a>Локальная среда IR
 В локальной среде IR доступны следующие возможности.
 
 - Выполнение действия копирования между облачными хранилищами данных и хранилищем данных в частной сети.
-- Dispatching the following transform activities against compute resources in on-premises or Azure Virtual Network: HDInsight Hive activity (BYOC-Bring Your Own Cluster), HDInsight Pig activity (BYOC), HDInsight MapReduce activity (BYOC), HDInsight Spark activity (BYOC), HDInsight Streaming activity (BYOC), Machine Learning Batch Execution activity, Machine Learning Update Resource activities, Stored Procedure activity, Data Lake Analytics U-SQL activity, Custom activity (runs on Azure Batch), Lookup activity, and Get Metadata activity.
+- Отправка следующих действий преобразования в ресурсы вычислений в локальной или виртуальной сети Azure: действие Hive в HDInsight (BYOC — создание собственного кластера), действие HDInsight Pig (BYOC), действие MapReduce HDInsight (BYOC), HDInsight Spark действие (BYOC), действие потоковой передачи HDInsight (BYOC), действие выполнения пакета Машинное обучение, Машинное обучение обновление действий с ресурсами, действие хранимой процедуры, Data Lake Analytics действие U-SQL, настраиваемое действие (выполняется в пакетной службе Azure), подстановка действие и получение метаданных.
 
 > [!NOTE] 
-> Use self-hosted integration runtime to support data stores that requires bring-your-own driver such as SAP Hana, MySQL, etc.  For more information, see [supported data stores](copy-activity-overview.md#supported-data-stores-and-formats).
+> Используйте локальную среду выполнения интеграции для поддержки хранилищ данных, для которых требуется собственный драйвер, например SAP Hana, MySQL и т. д.  Дополнительные сведения см. в разделе [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats).
 
 > [!NOTE] 
-> Java Runtime Environment (JRE) is a dependency of Self Hosted IR. Please make sure you have JRE installed on the same host.
+> Среда выполнения Java (JRE) — это зависимость саморазмещенного IR. Убедитесь, что на том же узле установлен JRE.
 
 ### <a name="self-hosted-ir-network-environment"></a>Локальная сетевая среда IR
 Если вы хотите безопасно выполнять интеграцию данных в среде частной сети, которая не связана напрямую с общедоступной облачной средой, вы можете установить локальную IR в локальной среде за корпоративным брандмауэром или внутри виртуальной частной сети.  Локальная среда выполнения интеграции использует только исходящие HTTP-соединения во внешнюю сеть.
@@ -88,7 +88,7 @@ Azure Integration Runtime supports connecting to data stores and compute service
 ### <a name="self-hosted-ir-compute-resource-and-scaling"></a>Вычислительные ресурсы и масштабирование локальной среды IR
 Локальная IR устанавливается на локальном компьютере или виртуальной машине в частной сети. В настоящее время локальная IR может выполняться только в операционной системе Windows.  
 
-Чтобы получить высокий уровень доступности и масштабируемости, разверните локальную IR. Для этого следует связать логический экземпляр с несколькими локальными компьютерами в режиме "активный — активный".  For more information, see how to [create and configure self-hosted IR](create-self-hosted-integration-runtime.md) article under how to guides for details.
+Чтобы получить высокий уровень доступности и масштабируемости, разверните локальную IR. Для этого следует связать логический экземпляр с несколькими локальными компьютерами в режиме "активный — активный".  Дополнительные сведения см. в статье [Создание и настройка](create-self-hosted-integration-runtime.md) локальной среды IR в разделе руководства для получения дополнительных сведений.
 
 ## <a name="azure-ssis-integration-runtime"></a>Среда выполнения интеграции Azure SSIS
 Чтобы переместить уже существующую рабочую нагрузку SSIS, создайте Azure SSIS IR для выполнения пакетов служб SSIS в собственной среде.
@@ -117,16 +117,16 @@ Azure SSIS IR — это полностью управляемый класте
 ### <a name="azure-ir-location"></a>Расположение Azure IR
 Вы можете задать определенное расположение Azure IR. При этом перемещение данных или диспетчеризация действий будет происходить в этом конкретном регионе. 
 
-If you choose to use the **auto-resolve Azure IR** which is the default, 
+Если вы решили использовать **Автоматическое разрешение Azure IR** , которое является значением по умолчанию, 
 
 - Для действия копирования в ADF прилагается максимум усилий, чтобы автоматически определить хранилище данных приемника и источника и выбрать наилучшее расположение — по возможности в том же регионе или ближайшем регионе в той же географической области. Если же не удается обнаружить такое расположение, как альтернатива используется регион фабрики данных.
 
-- For Lookup/GetMetadata/Delete activity execution (also known as Pipeline activities), transformation activity dispatching (also known as External activities), and authoring operations (test connection, browse folder list and table list, preview data), ADF will use the IR in the data factory region.
+- Для выполнения операции Lookup/-Metadata/Delete (также называемых действиями конвейера), диспетчеризации действий преобразования (также называемых внешними действиями) и операций создания (проверка соединения, просмотр списка папок и списка таблиц, предварительный просмотр данных), ADF будет использовать IR в области фабрики данных.
 
-- For Data Flow, ADF will use the IR in the data factory region. 
+- Для потока данных ADF будет использовать IR в регионе фабрики данных. 
 
   > [!TIP] 
-  > A good practice would be to ensure Data flow runs in the same region as your corresponding data stores (if possible). You can either achieve this by auto-resolve Azure IR (if data store location is same as Data Factory location), or by creating a new Azure IR instance in the same region as your data stores and then execute the data flow on it. 
+  > Рекомендуется убедиться, что поток данных выполняется в том же регионе, что и соответствующие хранилища данных (если это возможно). Это можно сделать, выполнив автоматическую разрешающую Azure IR (если расположение хранилища данных совпадает с расположением фабрики данных) или создав новый экземпляр Azure IR в том же регионе, в котором хранятся данные, а затем выполнить на нем поток данных. 
 
 Вы можете отслеживать, какие расположения IR используются во время выполнения действия, в представлении мониторинга действий конвейера в пользовательском интерфейсе или в полезных данных мониторинга действий.
 
@@ -167,13 +167,13 @@ If you choose to use the **auto-resolve Azure IR** which is the default,
 
 Для каждого действия преобразования задается целевая связанная служба вычислений, которая указывает на определенную среду выполнения интеграции. Этот экземпляр среды выполнения интеграции будет отвечать за диспетчеризацию действия преобразования.
 
-### <a name="data-flow-activity"></a>Data Flow activity
+### <a name="data-flow-activity"></a>Действие потока данных
 
-Data Flow activity is executed on the integration runtime associated to it. 
+Действие потока данных выполняется в связанной с ним среде выполнения интеграции. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими статьями:
 
-- [Create Azure integration runtime](create-azure-integration-runtime.md)
+- [Создание среды выполнения интеграции Azure](create-azure-integration-runtime.md)
 - [Создание и настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md)
 - [Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](create-azure-ssis-integration-runtime.md). Эта статья дополняет соответствующее руководство, а также предоставляет инструкции по использованию Управляемого экземпляра Базы данных SQL Azure и присоединению среды выполнения интеграции к виртуальной сети. 

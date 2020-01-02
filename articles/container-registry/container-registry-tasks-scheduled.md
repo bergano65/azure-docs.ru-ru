@@ -1,6 +1,6 @@
 ---
-title: Tutorial - Schedule an ACR task
-description: In this tutorial, learn how to run an Azure Container Registry Task on a defined schedule by setting one or more timer triggers
+title: Руководство по планированию задачи записи контроля доступа
+description: В этом руководстве описано, как запустить задачу реестра контейнеров Azure по заданному расписанию, задав один или несколько триггеров таймера.
 ms.topic: article
 ms.date: 06/27/2019
 ms.openlocfilehash: 37247289ef11873ac37dc78ad56548994220f894
@@ -10,40 +10,40 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/24/2019
 ms.locfileid: "74454674"
 ---
-# <a name="run-an-acr-task-on-a-defined-schedule"></a>Run an ACR task on a defined schedule
+# <a name="run-an-acr-task-on-a-defined-schedule"></a>Выполнение задачи записи контроля доступа по определенному расписанию
 
-This tutorial shows you how to run an [ACR Task](container-registry-tasks-overview.md) on a schedule. Schedule a task by setting up one or more *timer triggers*. Timer triggers can be used alone, or in combination with other task triggers.
+В этом учебнике показано, как выполнить [задачу записи контроля](container-registry-tasks-overview.md) доступа по расписанию. Запланируйте задачу, настроив один или несколько *триггеров таймера*. Триггеры таймера можно использовать отдельно или в сочетании с другими триггерами задач.
 
-In this tutorial, learn about scheduling tasks and:
+В этом руководстве содержатся сведения о планировании задач и:
 
 > [!div class="checklist"]
-> * Create a task with a timer trigger
-> * Manage timer triggers
+> * Создание задачи с триггером таймера
+> * Управление триггерами таймера
 
-Scheduling a task is useful for scenarios like the following:
+Планирование задачи полезно в следующих сценариях:
 
-* Run a container workload for scheduled maintenance operations. For example, run a containerized app to remove unneeded images from your registry.
-* Run a set of tests on a production image during the workday as part of your live-site monitoring.
+* Запустите рабочую нагрузку контейнера для запланированных операций обслуживания. Например, запустите контейнерное приложение, чтобы удалить ненужные образы из реестра.
+* Выполнение набора тестов на рабочем образе во время рабочего дня в рамках мониторинга активного сайта.
 
-You can use the Azure Cloud Shell or a local installation of the Azure CLI to run the examples in this article. If you'd like to use it locally, version 2.0.68 or later is required. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
+Для выполнения примеров, описанных в этой статье, можно использовать Azure Cloud Shell или локальную установку Azure CLI. Если вы хотите использовать его локально, требуется версия 2.0.68 или более поздняя. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 
-## <a name="about-scheduling-a-task"></a>About scheduling a task
+## <a name="about-scheduling-a-task"></a>О планировании задачи
 
-* **Trigger with cron expression** - The timer trigger for a task uses a *cron expression*. The expression is a string with five fields specifying the minute, hour, day, month, and day of week to trigger the task. Frequencies of up to once per minute are supported.
+* **Триггер с помощью выражения cron** . триггер таймера для задачи использует *выражение cron*. Выражение представляет собой строку с пятью полями, задающими минуты, часы, дни, месяцы и дни недели для запуска задачи. Поддерживаются частоты в один раз в минуту.
 
-  For example, the expression `"0 12 * * Mon-Fri"` triggers a task at noon UTC on each weekday. See [details](#cron-expressions) later in this article.
-* **Multiple timer triggers** - Adding multiple timers to a task is allowed, as long as the schedules differ.
-    * Specify multiple timer triggers when you create the task, or add them later.
-    * Optionally name the triggers for easier management, or ACR Tasks will provide default trigger names.
-    * If timer schedules overlap at a time, ACR Tasks triggers the task at the scheduled time for each timer.
-* **Other task triggers** - In a timer-triggered task, you can also enable triggers based on [source code commit](container-registry-tutorial-build-task.md) or [base image updates](container-registry-tutorial-base-image-update.md). Like other ACR tasks, you can also [manually trigger][az-acr-task-run] a scheduled task.
+  Например, выражение `"0 12 * * Mon-Fri"` запускает задачу в 12:00 по ГРИНВИЧу для каждого дня недели. [Дополнительные сведения](#cron-expressions) см. Далее в этой статье.
+* **Несколько триггеров таймера** — Добавление нескольких таймеров в задачу разрешено при условии, что расписания различаются.
+    * Укажите несколько триггеров таймера при создании задачи или добавьте их позже.
+    * При необходимости задайте имя триггеров для упрощения управления, или задачи записи контроля доступа будут предоставлять имена триггеров по умолчанию.
+    * Если расписания таймера перекрываются одновременно, задачи записи контроля доступа запускают задачу в запланированное время для каждого таймера.
+* **Другие триггеры задач** . в задаче, активируемом с помощью таймера, можно также включить триггеры на основе изменений [исходного кода](container-registry-tutorial-build-task.md) или [базовых образов](container-registry-tutorial-base-image-update.md). Как и другие задачи контроля учетных записей, вы также можете запустить запланированную задачу [вручную][az-acr-task-run] .
 
-## <a name="create-a-task-with-a-timer-trigger"></a>Create a task with a timer trigger
+## <a name="create-a-task-with-a-timer-trigger"></a>Создание задачи с триггером таймера
 
-When you create a task with the [az acr task create][az-acr-task-create] command, you can optionally add a timer trigger. Add the `--schedule` parameter and pass a cron expression for the timer.
+При создании задачи с помощью команды [AZ контроля доступа Task Create][az-acr-task-create] можно дополнительно добавить триггер таймера. Добавьте параметр `--schedule` и передайте выражение cron для таймера.
 
-As a simple example, the following command triggers running the `hello-world` image from Docker Hub every day at 21:00 UTC. The task runs without a source code context.
+В качестве простого примера Следующая команда инициирует запуск образа `hello-world` из DOCKER Hub каждый день в 21:00 UTC. Задача выполняется без контекста исходного кода.
 
 ```azurecli
 az acr task create \
@@ -54,7 +54,7 @@ az acr task create \
   --context /dev/null
 ```
 
-Run the [az acr task show][az-acr-task-show] command to see that the timer trigger is configured. By default, the base image update trigger is also enabled.
+Выполните команду [AZ запись контроля][az-acr-task-show] доступа, чтобы увидеть, что триггер таймера настроен. По умолчанию также включен базовый триггер обновления образа.
 
 ```console
 $ az acr task show --name mytask --registry registry --output table
@@ -63,13 +63,13 @@ NAME      PLATFORM    STATUS    SOURCE REPOSITORY       TRIGGERS
 mytask    linux       Enabled                           BASE_IMAGE, TIMER
 ```
 
-Trigger the task manually with [az acr task run][az-acr-task-run] to ensure that it is set up properly:
+Запустите задачу вручную с помощью команды [AZ запись контроля][az-acr-task-run] доступа, чтобы убедиться, что она правильно настроена:
 
 ```azurecli
 az acr task run --name mytask --registry myregistry
 ```
 
-If the container runs successfully, the output is similar to the following:
+Если контейнер выполняется успешно, выходные данные похожи на следующие:
 
 ```console
 Queued a run with ID: cf2a
@@ -84,13 +84,13 @@ This message shows that your installation appears to be working correctly.
 [...]
 ```
 
-After the scheduled time, run the [az acr task list-runs][az-acr-task-list-runs] command to verify that the timer triggered the task as expected:
+По истечении запланированного времени выполните команду [AZ контроля доступа Task List-runs][az-acr-task-list-runs] , чтобы убедиться, что таймер активировал задачу ожидаемым образом:
 
 ```azurecli
 az acr task list-runs --name mytask --registry myregistry --output table
 ```
 
-When the timer is successful, output is similar to the following:
+При успешном выполнении таймера выходные данные должны выглядеть следующим образом:
 
 ```console
 RUN ID    TASK     PLATFORM    STATUS     TRIGGER    STARTED               DURATION
@@ -100,13 +100,13 @@ cf2b      mytask   linux       Succeeded  Timer      2019-06-28T21:00:23Z  00:00
 cf2a      mytask   linux       Succeeded  Manual     2019-06-28T20:53:23Z  00:00:06
 ```
 
-## <a name="manage-timer-triggers"></a>Manage timer triggers
+## <a name="manage-timer-triggers"></a>Управление триггерами таймера
 
-Use the [az acr task timer][az-acr-task-timer] commands to manage the timer triggers for an ACR task.
+Используйте команды [AZ запись контроля][az-acr-task-timer] доступа для управления триггерами таймера для задачи контроля учетных записей.
 
-### <a name="add-or-update-a-timer-trigger"></a>Add or update a timer trigger
+### <a name="add-or-update-a-timer-trigger"></a>Добавление или обновление триггера таймера
 
-After a task is created, optionally add a timer trigger by using the [az acr task timer add][az-acr-task-timer-add] command. The following example adds a timer trigger name *timer2* to *mytask* created previously. This timer triggers the task every day at 10:30 UTC.
+После создания задачи можно добавить триггер таймера с помощью команды AZ контроля доступа к [таймеру добавления][az-acr-task-timer-add] . В следующем примере добавляется имя триггера таймера *timer2* в *MyTask* , созданное ранее. Этот таймер активирует задачу каждый день в 10:30 UTC.
 
 ```azurecli
 az acr task timer add \
@@ -116,7 +116,7 @@ az acr task timer add \
   --schedule "30 10 * * *"
 ```
 
-Update the schedule of an existing trigger, or change its status, by using the [az acr task timer update][az-acr-task-timer-update] command. For example, update the trigger named *timer2* to trigger the task at 11:30 UTC:
+Обновите расписание существующего триггера или измените его состояние с помощью команды AZ запись контроля доступа для [обновления таймера][az-acr-task-timer-update] . Например, обновите триггер с именем *timer2* , чтобы активировать задачу в 11:30 UTC:
 
 ```azurecli
 az acr task timer update \
@@ -126,9 +126,9 @@ az acr task timer update \
   --schedule "30 11 * * *"
 ```
 
-### <a name="list-timer-triggers"></a>List timer triggers
+### <a name="list-timer-triggers"></a>Список триггеров таймера
 
-The [az acr task timer list][az-acr-task-timer-list] command shows the timer triggers set up for a task:
+Команда [AZ запись контроля доступа Task List][az-acr-task-timer-list] показывает триггеры таймера, настроенные для задачи:
 
 ```azurecli
 az acr task timer list --name mytask --registry myregistry
@@ -151,9 +151,9 @@ az acr task timer list --name mytask --registry myregistry
 ]
 ```
 
-### <a name="remove-a-timer-trigger"></a>Remove a timer trigger
+### <a name="remove-a-timer-trigger"></a>Удаление триггера таймера
 
-Use the [az acr task timer remove][az-acr-task-timer-remove] command to remove a timer trigger from a task. The following example removes the *timer2* trigger from *mytask*:
+Используйте команду [AZ запись контроля][az-acr-task-timer-remove] доступа для удаления триггера таймера из задачи. В следующем примере удаляется триггер *timer2* из *MyTask*:
 
 ```azurecli
 az acr task timer remove \
@@ -162,49 +162,49 @@ az acr task timer remove \
   --timer-name timer2
 ```
 
-## <a name="cron-expressions"></a>Cron expressions
+## <a name="cron-expressions"></a>Выражения cron
 
-ACR Tasks uses the [NCronTab](https://github.com/atifaziz/NCrontab) library to interpret cron expressions. Supported expressions in ACR Tasks have five required fields separated by white space:
+Задачи записи контроля доступа используют библиотеку [нкронтаб](https://github.com/atifaziz/NCrontab) для интерпретации выражений cron. Поддерживаемые выражения в задачах контроля доступа имеют пять обязательных полей, разделенных пробелами:
 
 `{minute} {hour} {day} {month} {day-of-week}`
 
-The time zone used with the cron expressions is Coordinated Universal Time (UTC). Hours are in 24-hour format.
+Часовым поясом, используемым с выражениями cron, является время в формате UTC. Часы представлены в 24-часовом формате.
 
 > [!NOTE]
-> ACR Tasks does not support the `{second}` or `{year}` field in cron expressions. If you copy a cron expression used in another system, be sure to remove those fields, if they are used.
+> Задачи записи контроля доступа не поддерживают поле `{second}` или `{year}` в выражениях cron. При копировании выражения cron, используемого в другой системе, обязательно удалите эти поля, если они используются.
 
 Каждое поле может принимать значение одного из следующих типов:
 
-|Тип  |Пример  |Когда активируется  |
+|введите  |Пример  |Когда активируется  |
 |---------|---------|---------|
-|Определенное значение |<nobr>`"5 * * * *"`</nobr>|every hour at 5 minutes past the hour|
-|Все значения (`*`)|<nobr>`"* 5 * * *"`</nobr>|every minute of the hour beginning 5:00 UTC (60 times a day)|
-|Диапазон (оператор `-`)|<nobr>`"0 1-3 * * *"`</nobr>|3 times per day, at 1:00, 2:00, and 3:00 UTC|
-|Набор значений (оператор `,`)|<nobr>`"20,30,40 * * * *"`</nobr>|3 times per hour, at 20 minutes, 30 minutes, and 40 minutes past the hour|
-|Значение интервала (оператор `/`)|<nobr>`"*/10 * * * *"`</nobr>|6 times per hour, at 10 minutes, 20 minutes, and so on, past the hour
+|Определенное значение |<nobr>`"5 * * * *"`</nobr>|Каждый час за 5 минут после часа|
+|Все значения (`*`)|<nobr>`"* 5 * * *"`</nobr>|каждую минуту начала часа, начиная с 5:00 UTC (60 раз в день)|
+|Диапазон (оператор `-`)|<nobr>`"0 1-3 * * *"`</nobr>|3 раза в день, 1:00, 2:00 и 3:00 UTC|
+|Набор значений (оператор `,`)|<nobr>`"20,30,40 * * * *"`</nobr>|3 раза в час, 20 минут, 30 минут и 40 минут после часа|
+|Значение интервала (оператор `/`)|<nobr>`"*/10 * * * *"`</nobr>|6 раз в час, 10 минут, 20 минут и т. д. за час
 
 [!INCLUDE [functions-cron-expressions-months-days](../../includes/functions-cron-expressions-months-days.md)]
 
-### <a name="cron-examples"></a>Cron examples
+### <a name="cron-examples"></a>Примеры cron
 
 |Пример|Когда активируется  |
 |---------|---------|
 |`"*/5 * * * *"`|через каждые пять минут|
 |`"0 * * * *"`|через каждый час|
 |`"0 */2 * * *"`|через каждые 2 часа|
-|`"0 9-17 * * *"`|once every hour from 9:00 to 17:00 UTC|
-|`"30 9 * * *"`|at 9:30 UTC every day|
-|`"30 9 * * 1-5"`|at 9:30 UTC every weekday|
-|`"30 9 * Jan Mon"`|at 9:30 UTC every Monday in January|
+|`"0 9-17 * * *"`|Каждый час с 9:00 до 17:00 UTC|
+|`"30 9 * * *"`|в 9:30 UTC каждый день|
+|`"30 9 * * 1-5"`|в 9:30 UTC каждый будний день|
+|`"30 9 * Jan Mon"`|в 9:30 UTC каждый понедельник в январе|
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-In this tutorial, you learned how to create Azure Container Registry tasks that are automatically triggered by a timer. 
+В этом руководстве вы узнали, как создавать задачи реестра контейнеров Azure, которые автоматически активируются таймером. 
 
-For an example of using a scheduled task to clean up repositories in a registry, see [Automatically purge images from an Azure container registry](container-registry-auto-purge.md).
+Пример использования запланированной задачи для очистки репозиториев в реестре см. в статье [Автоматическое удаление образов из реестра контейнеров Azure](container-registry-auto-purge.md).
 
-For examples of tasks triggered by source code commits or base image updates, see other articles in the [ACR Tasks tutorial series](container-registry-tutorial-quick-task.md).
+Примеры задач, активируемых фиксациями исходного кода или обновлениями базовых образов, см. в других статьях [руководства по задачам записи контроля](container-registry-tutorial-quick-task.md)доступа.
 
 
 

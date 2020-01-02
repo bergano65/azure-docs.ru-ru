@@ -1,19 +1,14 @@
 ---
-title: Использование политик перезапуска для контейнерных задач в службе "Экземпляры контейнеров Azure"
+title: Политика перезапуска для задач однократного запуска
 description: Узнайте, как использовать Экземпляры контейнеров Azure для задач, выполняемых до завершения, включая сборку, тестирование или преобразование изображений.
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: article
 ms.date: 04/15/2019
-ms.author: danlep
-ms.openlocfilehash: 4fe5d9a20249a17030e0ccfa34f6a4f183be0d82
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: f814b1c99827c07f8dadfb0cfd80c87a93377cdc
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325676"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533458"
 ---
 # <a name="run-containerized-tasks-with-restart-policies"></a>Выполнение контейнерных задач с помощью политики перезапуска
 
@@ -35,7 +30,7 @@ ms.locfileid: "68325676"
 
 ## <a name="specify-a-restart-policy"></a>Указание политики перезапуска
 
-Способ определения политики перезапуска зависит от способа создания экземпляра контейнера: с помощью Azure CLI, командлетов PowerShell Azure или портала Azure. В Azure CLI укажите `--restart-policy` параметр при вызове команды [AZ Container Create][az-container-create].
+Способ определения политики перезапуска зависит от способа создания экземпляра контейнера: с помощью Azure CLI, командлетов PowerShell Azure или портала Azure. В Azure CLI укажите параметр `--restart-policy` при вызове команды [AZ Container Create][az-container-create].
 
 ```azurecli-interactive
 az container create \
@@ -47,7 +42,7 @@ az container create \
 
 ## <a name="run-to-completion-example"></a>Пример выполнения до завершения
 
-Чтобы увидеть политику перезапуска в действии, создайте экземпляр контейнера из образа Microsoft [ACI-WordCount][aci-wordcount-image] и укажите `OnFailure` политику перезапуска. Контейнер из этого примера запускает скрипт Python, который по умолчанию анализирует текст пьесы [Гамлет](http://shakespeare.mit.edu/hamlet/full.html) Уильяма Шекспира, выдает в STDOUT 10 самых употребимых слов в тексте, и завершает работу.
+Чтобы увидеть политику перезапуска в действии, создайте экземпляр контейнера из образа Microsoft [ACI-WordCount][aci-wordcount-image] и укажите политику перезапуска `OnFailure`. Контейнер из этого примера запускает скрипт Python, который по умолчанию анализирует текст пьесы [Гамлет](http://shakespeare.mit.edu/hamlet/full.html) Уильяма Шекспира, выдает в STDOUT 10 самых употребимых слов в тексте, и завершает работу.
 
 Запустите пример контейнера с помощью следующей команды [AZ Container Create][az-container-create] :
 
@@ -94,7 +89,7 @@ az container logs --resource-group myResourceGroup --name mycontainer
 
 В нашем примере вы увидите выходные данные, отправленные скриптом в STDOUT. Но задачи, заключенные в контейнер, могут записывать выходные данные в постоянное хранилище, чтобы их можно было использовать позднее. Например, их можно отправить в [файловый ресурс Azure](container-instances-mounting-azure-files-volume.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сценарии на основе задач, такие как пакетная обработка большого набора данных с несколькими контейнерами, могут воспользоваться преимуществами пользовательских [переменных среды](container-instances-environment-variables.md) или [командных строк](container-instances-start-command.md) во время выполнения.
 

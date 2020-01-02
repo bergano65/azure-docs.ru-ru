@@ -1,6 +1,6 @@
 ---
 title: Общие сведения о жизненном цикле схемы
-description: Learn about the lifecycle that a blueprint definition goes through and details about each stage, including updating and removing blueprint assignments.
+description: Узнайте о жизненном цикле, который проходит определение схемы, и сведения о каждом этапе, включая обновление и удаление назначений в схеме.
 ms.date: 07/30/2019
 ms.topic: conceptual
 ms.openlocfilehash: 4dd5cb7d085744377cf12998f14c994fb1dcd2d7
@@ -18,18 +18,18 @@ ms.locfileid: "74404588"
 Чтобы полностью понять схему и ее этапы, мы рассмотрим стандартный жизненный цикл:
 
 > [!div class="checklist"]
-> - Создание и изменение схемы
+> - создание и изменение схемы;
 > - публикация схемы;
-> - создание новой версии схемы и ее изменение;
+> - Создание новой версии схемы и ее изменение
 > - публикация новой версии схемы;
-> - удаление определенной версии схемы;
-> - Удаление схемы
+> - Удаление определенной версии схемы
+> - удаление схемы.
 
-## <a name="creating-and-editing-a-blueprint"></a>Создание и изменение схемы
+## <a name="creating-and-editing-a-blueprint"></a>создание и изменение схемы;
 
 При создании схемы добавьте в нее артефакты, сохраните ее в группу управления или подписку, а также укажите уникальное имя и уникальную версию схемы. Схема находится в режиме **черновика**, поэтому она еще не может быть назначена. Но в режиме **черновика** ее можно обновлять и изменять.
 
-Схема в режиме **черновика**, которая никогда не публиковалась, будет отображаться на странице **Определения схем** со значком, отличным от значка для ранее **опубликованной** схемы. The **Latest Version** is displayed as **Draft** for these never published blueprints.
+Схема в режиме **черновика**, которая никогда не публиковалась, будет отображаться на странице **Определения схем** со значком, отличным от значка для ранее **опубликованной** схемы. **Последняя версия** отображается как **черновик** для этих никогда не опубликованных схем.
 
 Создайте схему с помощью [портала Azure](../create-blueprint-portal.md#create-a-blueprint) или [REST API](../create-blueprint-rest-api.md#create-a-blueprint) и измените ее.
 
@@ -39,7 +39,7 @@ ms.locfileid: "74404588"
 
 Опубликуйте схему с помощью [портала Azure](../create-blueprint-portal.md#publish-a-blueprint) или [REST API](../create-blueprint-rest-api.md#publish-a-blueprint).
 
-## <a name="creating-and-editing-a-new-version-of-the-blueprint"></a>создание новой версии схемы и ее изменение;
+## <a name="creating-and-editing-a-new-version-of-the-blueprint"></a>Создание новой версии схемы и ее изменение
 
 **Опубликованную** версию схемы изменить нельзя. Но вы можете добавить в существующую схему новую версию схемы и изменить ее в соответствии со своими потребностями. Внесите изменения в существующую схему, используя режим редактирования. После сохранения изменений схема получает состояние **Неопубликованные изменения**. Теперь эти изменения составляют новую версию **черновика** схемы.
 
@@ -54,7 +54,7 @@ ms.locfileid: "74404588"
 
 Чтобы опубликовать схему с **неопубликованными изменениями**, выполните те же действия, что и для публикации новой схемы.
 
-## <a name="deleting-a-specific-version-of-the-blueprint"></a>удаление определенной версии схемы;
+## <a name="deleting-a-specific-version-of-the-blueprint"></a>Удаление определенной версии схемы
 
 Каждая версия схемы является уникальным объектом и может быть **опубликована** отдельно. Аналогично, каждую версию схемы можно удалить. Удаление версии схемы никак не влияет на другие версии этой схемы.
 
@@ -63,13 +63,13 @@ ms.locfileid: "74404588"
 
 1. Выберите **Все службы** в левой области. Найдите и выберите пункт **Схемы**.
 
-1. Select **Blueprint definitions** from the page on the left and use the filter options to locate the blueprint you want to delete a version of. Select it to open the edit page.
+1. Выберите **определения** схемы на странице слева и используйте параметры фильтра, чтобы выбрать схему, для которой нужно удалить версию. Выберите его, чтобы открыть страницу редактирования.
 
-1. Select the **Published versions** tab and locate the version you wish to delete.
+1. Выберите вкладку **опубликованные версии** и укажите версию, которую нужно удалить.
 
-1. Right-click on the version to delete and select **Delete this version**.
+1. Щелкните правой кнопкой мыши версию, которую нужно удалить, и выберите **удалить эту версию**.
 
-## <a name="deleting-the-blueprint"></a>Удаление схемы
+## <a name="deleting-the-blueprint"></a>удаление схемы.
 
 Основную схему также можно удалить. Удаление основной схемы приводит к удалению всех версий схемы независимо от их состояния: **Черновик** или **Опубликовано**. Как и в случае удаления версии схемы, удаление основной схемы не приводит к удалению имеющихся назначений любых версий схемы.
 
@@ -94,18 +94,18 @@ ms.locfileid: "74404588"
 
 Узнайте, как [обновлять существующие назначения](../how-to/update-existing-assignments.md).
 
-### <a name="unassigning-assignments"></a>Unassigning assignments
+### <a name="unassigning-assignments"></a>Отмена назначения назначений
 
-If the blueprint is no longer needed, it can be unassigned from the management group or subscription. During blueprint unassignment, the following occurs:
+Если проект больше не нужен, его можно отменить из группы управления или подписки. Во время отназначения схемы происходит следующее:
 
-- Removal of [blueprint resource locking](resource-locking.md)
-- Deletion of the blueprint assignment object
-- (Conditional) If a **system-assigned managed identity** was used, it's also deleted
+- Удаление [блокировки ресурсов](resource-locking.md) схемы
+- Удаление объекта назначения схемы
+- Условие Если использовалось **назначенное системой управляемое удостоверение** , оно также удаляется.
 
 > [!NOTE]
-> All resources deployed by the blueprint assignment remain in place, but are no longer protected by Azure Blueprints.
+> Все ресурсы, развернутые с помощью назначения схемы, остаются на месте, но больше не защищаются с помощью чертежей Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Узнайте, как использовать [статические и динамические параметры](parameters.md).
 - Научитесь настраивать [последовательность схемы](sequencing-order.md).

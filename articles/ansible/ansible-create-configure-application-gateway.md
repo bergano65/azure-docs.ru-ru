@@ -3,17 +3,13 @@ title: Руководство по управлению веб-трафиком 
 description: Сведения об использовании службы Ansible для создания и настройки входящего веб-трафика Шлюза приложений Azure
 keywords: ansible, azure, devops, bash, playbook, application gateway, load balancer, web traffic
 ms.topic: tutorial
-ms.service: ansible
-author: tomarchermsft
-manager: jeconnoc
-ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 1dd547fb59a41a90de18d595a392b64ef518023a
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 07f75e39b8c6f592ecd4c48697527493b1109bb9
+ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72241885"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74156609"
 ---
 # <a name="tutorial-manage-web-traffic-with-azure-application-gateway-using-ansible"></a>Руководство по управлению веб-трафиком с помощью Шлюза приложений Azure и Ansible
 

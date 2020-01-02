@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 1f8041ecea7c297c6eafdedfbedaae62f61e0e8c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d368b6cd809ccf4e428974bf7c82c01bc5e035b7
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67090593"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74233423"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-simplenexus"></a>Руководство по Интеграция Azure Active Directory с SimpleNexus
 
@@ -186,7 +186,7 @@ ms.locfileid: "67090593"
 Чтобы пользователи Azure AD могли выполнять вход в SimpleNexus, они должны быть подготовлены в SimpleNexus. В случае SimpleNexus подготовка выполняется вручную администратором клиента.
 
 > [!NOTE]
-> Вы можете использовать любые другие инструменты создания учетных записей пользователей SimpleNexus или API, предоставляемые SimpleNexus для подготовки учетных записей пользователей AAD.
+> Вы можете использовать любые другие инструменты создания учетных записей пользователей SimpleNexus или API, предоставляемые SimpleNexus, для подготовки учетных записей пользователей AAD.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
@@ -200,4 +200,4 @@ ms.locfileid: "67090593"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

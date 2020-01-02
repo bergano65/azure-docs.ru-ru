@@ -2,23 +2,22 @@
 title: Настройка Azure-SSIS Integration Runtime для отработки отказа базы данных SQL
 description: В этой статье описывается настройка Azure-SSIS Integration Runtime с помощью георепликации базы данных SQL Azure и отработка отказа для базы данных SSISDB
 services: data-factory
-documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: ''
 ms.devlang: powershell
-ms.topic: conceptual
-ms.date: 08/14/2018
 author: swinarko
 ms.author: sawinark
+manager: mflasko
 ms.reviewer: douglasl
-manager: craigg
-ms.openlocfilehash: 6e709a25c6c33a1fc80a110435035b1473d92681
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.topic: conceptual
+ms.custom: seo-lt-2019
+ms.date: 08/14/2018
+ms.openlocfilehash: 92f7d25a9c19409b220b6a71fba87da91e51a415
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73681392"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74928496"
 ---
 # <a name="configure-the-azure-ssis-integration-runtime-with-azure-sql-database-geo-replication-and-failover"></a>Настройка Azure-SSIS Integration Runtime с помощью георепликации базы данных SQL Azure и отработка отказа
 
@@ -52,11 +51,11 @@ ms.locfileid: "73681392"
 
 - Azure-SSIS IR указывает на конечную точку основного сервера группы отработки отказа. Эта конечная точка изменяется при отработке отказа.
 
-  ИЛИ
+  Или
 
 - В сервере Базы данных SQL Azure настроено правило конечной точки службы для виртуальной сети.
 
-  ИЛИ
+  Или
 
 - Сервер базы данных является управляемым экземпляром базы данных SQL, настроенным с помощью виртуальной сети.
 
@@ -72,7 +71,7 @@ ms.locfileid: "73681392"
 
 В следующих разделах данные шаги описаны более подробно.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 - Убедитесь, что вы активировали аварийное восстановление для сервера Базы данных SQL Azure на случай сбоя в работе сервера в то же время. Дополнительные сведения см. в статье [Обзор обеспечения непрерывности бизнес-процессов с помощью Базы данных SQL Azure](../sql-database/sql-database-business-continuity.md).
 
@@ -105,7 +104,7 @@ ms.locfileid: "73681392"
 
 В случае сбоя ADF или Azure-SSIS IR в текущем регионе можно сделать SSISDB невозможной работать с новым Azure-SSIS IR в новом регионе.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 - Если вы используете виртуальную сеть в текущем регионе, нужно использовать другую виртуальную сеть в новом регионе для подключения среды выполнения интеграции Azure-SSIS. Дополнительные сведения см. в статье [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md).
 
@@ -115,7 +114,7 @@ ms.locfileid: "73681392"
 
 Выполните следующие шаги, чтобы остановить среду выполнения интеграции Azure-SSIS, переключить ее в новый регион и запустить снова.
 
-1. Выполните хранимую процедуру, чтобы сделать SSISDB прикрепленной к **\<new_data_factory_name\>** или **\<new_integration_runtime_name\>** .
+1. Выполните хранимую процедуру, чтобы прикрепить SSISDB к **\<new_data_factory_name\>** или **\<new_integration_runtime_name** \>.
    
   ```SQL
     EXEC [catalog].[failover_integration_runtime] @data_factory_name='<new_data_factory_name>', @integration_runtime_name='<new_integration_runtime_name>'

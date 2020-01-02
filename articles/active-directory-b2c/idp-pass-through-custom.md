@@ -1,6 +1,7 @@
 ---
-title: Передача маркера доступа с помощью пользовательской политики в приложение в Azure Active Directory B2C
-description: Сведения о передаче маркера доступа для поставщиков удостоверений OAuth2.0 в качестве утверждения через пользовательскую политику в приложение в Azure Active Directory B2C.
+title: Передача маркера доступа через настраиваемую политику в приложение
+titleSuffix: Azure AD B2C
+description: Узнайте, как можно передать маркер доступа для поставщиков удостоверений OAuth 2,0 в качестве утверждения через настраиваемую политику в Azure Active Directory B2C приложения.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -10,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: b6795af0829a288c36cad5b848fed50a99dc1bfc
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 8f7122035f8d70cb91f4ec4f64e1dd4f7b2842b8
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69510133"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74949846"
 ---
 # <a name="pass-an-access-token-through-a-custom-policy-to-your-application-in-azure-active-directory-b2c"></a>Передача маркера доступа с помощью пользовательской политики в приложение в Azure Active Directory B2C
 
@@ -23,7 +24,7 @@ ms.locfileid: "69510133"
 
 Azure AD B2C поддерживает передачу маркеров доступа от поставщиков удостоверений по протоколу [OAuth 2.0](active-directory-b2c-reference-oauth-code.md) и стандарту [Подключение OpenID](active-directory-b2c-reference-oidc.md). Для остальных поставщиков удостоверений утверждение возвращается пустым.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Ваша пользовательская политика поддерживает поставщиков удостоверений OAuth 2.0 или Подключение OpenID.
 
@@ -100,8 +101,8 @@ Azure AD B2C поддерживает передачу маркеров дост
 
     Должен отобразиться результат, аналогичный следующему примеру:
 
-    ![Декодированный токен в jwt.ms с выделенным блоком idp_access_token](./media/idp-pass-through-custom/idp-pass-through-custom-token.PNG)
+    ![Декодированный маркер в jwt.ms с выделенным блоком idp_access_token](./media/idp-pass-through-custom/idp-pass-through-custom-token.PNG)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о токенах см. в справочнике по [маркеру Azure Active Directory B2C](active-directory-b2c-reference-tokens.md).
+Дополнительные сведения о токенах см. в [справочнике по маркеру Azure Active Directory B2C](active-directory-b2c-reference-tokens.md).

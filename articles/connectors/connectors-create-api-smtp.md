@@ -1,28 +1,24 @@
 ---
-title: Подключение к SMTP из Azure Logic Apps | Документация Майкрософт
+title: Подключение к SMTP из Azure Logic Apps
 description: Автоматизация задач и рабочих процессов, отправляющих сообщения из учетной записи SMTP (протокол SMTP) с помощью Azure Logic Apps.
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
-ms.assetid: d4141c08-88d7-4e59-a757-c06d0dc74300
+ms.reviewer: klam, logicappspm
 ms.topic: article
-tags: connectors
 ms.date: 08/25/2018
-ms.openlocfilehash: 1649f197d4dbd88e2b485ab32f254a2d09696a84
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+tags: connectors
+ms.openlocfilehash: fb501a158c839e6d4d71fc2af5ae50e48c248466
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70050740"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74789160"
 ---
 # <a name="send-email-from-your-smtp-account-with-azure-logic-apps"></a>Отправка сообщений электронной почты из учетной записи SMTP с помощью Azure Logic Apps
 
 С помощью Azure Logic Apps и соединителя протокола SMTP можно создавать автоматизированные задачи и рабочие процессы, которые отправляют сообщения электронной почты из учетной записи SMTP. Кроме того, выходные данные от действий SMTP могут использоваться другими действиями. Например, после того как SMTP отправит сообщение электронной почты, вы можете уведомить свою команду в Slack с помощью соединителя Slack. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
@@ -55,10 +51,10 @@ ms.locfileid: "70050740"
 
    | Свойство | Обязательно для заполнения | Описание |
    |----------|----------|-------------|
-   | **Имя подключения** | Да | Имя для подключения к серверу SMTP | 
-   | **Адрес SMTP-сервера** | Да | Адрес для SMTP-сервера | 
-   | **Имя пользователя** | Да | Имя пользователя для учетной записи SMTP | 
-   | **Пароль** | Да | Пароль для учетной записи SMTP | 
+   | **Имя подключения** | ДА | Имя для подключения к серверу SMTP | 
+   | **Адрес SMTP-сервера** | ДА | Адрес для SMTP-сервера | 
+   | **Имя пользователя** | ДА | Имя пользователя для учетной записи SMTP | 
+   | **Пароль** | ДА | Пароль для учетной записи SMTP | 
    | **Порт SMTP-сервера** | Нет | Определенный порт SMTP-сервера, который вы хотите использовать | 
    | **Включить SSL?** | Нет | Включает и отключает SSL-шифрование | 
    |||| 
@@ -71,11 +67,11 @@ ms.locfileid: "70050740"
 
 Дополнительные технические сведения о триггерах, действиях и ограничениях, которые приведены в описании OpenAPI соединителя (прежнее название — Swagger), можно найти на [странице справки](/connectors/smtpconnector/) соединителя.
 
-## <a name="get-support"></a>Поддержка
+## <a name="get-support"></a>Получение поддержки
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

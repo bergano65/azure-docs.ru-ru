@@ -8,12 +8,12 @@ ms.author: dobett
 ms.date: 08/23/2019
 ms.topic: conceptual
 manager: philmea
-ms.openlocfilehash: 8e9c2077960dc64aa7bac13a53e0b3f74062aa55
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: d74bd67dedb70308061e54c05d23a4bb63adc8f8
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73177262"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74851338"
 ---
 # <a name="create-and-manage-an-azure-iot-central-application-from-the-csp-portal"></a>Создание приложения IoT Central Azure и управление им на портале CSP
 
@@ -33,7 +33,7 @@ Azure IoT Central отображается как служба, доступна
 
 ![Создание диспетчера для поставщиков облачных решений](media/howto-create-application-csp/image3.png)
 
-Чтобы создать приложение IoT Central Azure, выберите **Сборка** в меню слева. Выберите один из шаблонов идустри или выберите **пользовательское приложение** , чтобы создать приложение с нуля. Будет загружена страница создания приложения. Необходимо заполнить все поля на этой странице и нажать кнопку **Создать**. Ниже приводятся сведения о каждом поле.
+Чтобы создать приложение IoT Central Azure, выберите **Сборка** в меню слева. Выберите один из отраслевых шаблонов или выберите **пользовательское приложение** , чтобы создать приложение с нуля. Будет загружена страница создания приложения. Необходимо заполнить все поля на этой странице и нажать кнопку **Создать**. Ниже приводятся сведения о каждом поле.
 
 ![Страница создания приложения для CSP](media/howto-create-application-csp/image4.png)
 
@@ -74,7 +74,7 @@ URL-адрес приложения будет создан автоматиче
 Выберите регион или [географию](https://azure.microsoft.com/global-infrastructure/geographies/) , где вы хотите создать приложение IOT Central Azure. Как правило, для достижения оптимальной производительности следует выбирать наиболее близкий к вашим устройствам регион.
 
 > [!NOTE]
-> В настоящее время шаблон **предварительной версии приложения** доступен только в **Северной Европе** и в **центральных регионах США** .
+> В настоящее время шаблоны приложений предварительной версии доступны только в **странах Европы** и **США** .
 
 Дополнительные сведения см. в статье [регионы Azure](https://azure.microsoft.com/global-infrastructure/regions/) и [географические диаграммы Azure](https://azure.microsoft.com/global-infrastructure/geographies/).
 

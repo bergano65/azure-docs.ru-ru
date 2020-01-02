@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: erhopf
-ms.openlocfilehash: d308623a323fecd39efa90639da71fb981936fe5
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 1558b2eb12b1d4745cdfeab41fc2d1bd829b3d9c
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73930576"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74816688"
 ---
 # <a name="quickstart-asynchronous-synthesis-for-long-form-audio-in-python-preview"></a>Краткое руководство. асинхронное синтез для звука в длинном формате в Python (Предварительная версия)
 
@@ -24,13 +24,13 @@ ms.locfileid: "73930576"
 > [!NOTE]
 > Асинхронное синтез для длинных аудиофайлов можно использовать только с [пользовательскими нейронными голосовыми](../../how-to-custom-voice.md#custom-neural-voices)данными.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим кратким руководством вам понадобится:
 
 * Python 2.7. x или 3. x.
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download)или ваш любимый текстовый редактор.
-* Подписка Azure и ключ подписки на службу речи. [Создайте учетную запись Azure](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started#new-azure-account) и [Создайте речевой ресурс](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started#create-a-speech-resource-in-azure) для получения ключа. При создании ресурса речи убедитесь, что для ценовой категории задано значение **S0**, а для параметра расположение — [поддерживаемый регион](../../regions.md#standard-and-neural-voices).
+* Подписка Azure и ключ подписки на службу речи. [Создайте учетную запись Azure](../../get-started.md#try-the-speech-service-using-a-new-azure-account) и [Создайте речевой ресурс](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started#create-a-speech-resource-in-azure) для получения ключа. При создании ресурса речи убедитесь, что для ценовой категории задано значение **S0**, а для параметра расположение — [поддерживаемый регион](../../regions.md#standard-and-neural-voices).
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
 
@@ -274,7 +274,7 @@ delete successful
 
 Полный `voice_synthesis_client.py` можно скачать на сайте [GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice-API-Samples/Python/voiceclient.py).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения об API длинного звука](../../long-audio-api.md)

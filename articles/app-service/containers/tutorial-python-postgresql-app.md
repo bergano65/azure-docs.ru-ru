@@ -1,26 +1,19 @@
 ---
-title: Руководство по Запуск веб-приложения Python (Django) с подключением к PostgreSQL в Linux в Службе приложений Azure
-description: Узнайте, как запустить управляемое данными веб-приложение Python (Django) в Azure с подключением к базе данных PostgreSQL.
-services: app-service\web
-documentationcenter: python
-author: cephalin
-manager: gwallace
-ms.service: app-service-web
-ms.workload: web
+title: Руководство по использованию приложения Python в Linux с PostgreSQL
+description: Узнайте, как создать приложение Python в Linux, работающее в Службе приложений Azure, с подключением к базе данных PostgreSQL в Azure. В этом учебнике используется Django.
 ms.devlang: python
 ms.topic: tutorial
 ms.date: 03/27/2019
-ms.author: cephalin
 ms.custom:
 - mvc
 - seodec18
 - seo-python-october2019
-ms.openlocfilehash: 34dbce2a6da2395bbc627a30d464a9817dfe76fe
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: d23097c9674d2b7e60e779304a2d08c734bd614d
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72439429"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74688879"
 ---
 # <a name="tutorial-build-a-python-django-web-app-with-postgresql-in-azure-app-service"></a>Руководство по Создание веб-приложения Python (Django) с помощью PostgreSQL в Службе приложений Azure
 

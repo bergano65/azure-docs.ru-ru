@@ -3,26 +3,25 @@ title: Использование секретов Azure Key Vault в дейст
 description: Узнайте, как извлечь сохраненные учетные данные из хранилища ключей Azure и использовать их во время выполнения конвейера фабрики данных.
 services: data-factory
 author: ChrisLound
-manager: craigg
+manager: anandsub
 editor: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: chlound
-ms.openlocfilehash: 83d0981a0d277eab1aae8654343ab34661b3e88b
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 837d62784a56ad0f17471cca5a660819d4a83e12
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73672898"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74926762"
 ---
 # <a name="use-azure-key-vault-secrets-in-pipeline-activities"></a>Использование секретов Azure Key Vault в действиях конвейера
 
 Можно сохранить учетные данные или секретные значения в Azure Key Vault и использовать их во время выполнения конвейера для передачи в действия.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Эта функция основана на управляемом удостоверении фабрики данных.  Узнайте, как это работает из [управляемого удостоверения для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) и убедитесь, что фабрика данных имеет одну связь.
 
@@ -48,12 +47,12 @@ ms.locfileid: "73672898"
 
 4. В конвейере фабрики данных добавьте новое веб-действие и настройте его следующим образом.  
 
-    |Свойство  |Значение  |
+    |Свойство  |Value  |
     |---------|---------|
     |Безопасный вывод     |Да         |
     |URL-адрес     |[Значение URI секрета]? API-Version = 7.0         |
     |Метод     |ПОЛУЧЕНИЕ         |
-    |Аутентификация     |MSI         |
+    |Authentication     |MSI         |
     |Ресурс        |https://vault.azure.net       |
 
     ![Веб-действие](media/how-to-use-azure-key-vault-secrets-pipeline-activities/webactivity.png)

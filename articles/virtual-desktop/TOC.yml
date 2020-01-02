@@ -58,8 +58,6 @@
           href: configure-host-pool-load-balancing.md
     - name: Использование лицензии на Виртуальный рабочий стол Windows
       href: apply-windows-license.md
-    - name: Создание контейнера профиля для пула узлов с помощью общей папки
-      href: create-host-pools-user-profile.md
     - name: Настройка образа узла сеансов
       items:
         - name: Настройка главного образа VHD
@@ -72,7 +70,7 @@
       href: customize-feed-for-virtual-desktop-users.md
     - name: Развертывание средства диагностики
       href: deploy-diagnostics.md
-    - name: Публикация приложений
+    - name: Публикация встроенных приложений
       href: publish-apps.md
     - name: Настройка присоединения приложения MSIX
       href: app-attach.md
@@ -124,6 +122,8 @@
       href: /powershell/windows-virtual-desktop/overview
     - name: REST API
       href: /rest/api/virtual-desktop/
+    - name: Поддерживаемые параметры RDP-файла
+      href: 'https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/rdp-files?context=/azure/virtual-desktop/context/context'
 - name: Ресурсы
   items:
     - name: Средство оценки удобства работы

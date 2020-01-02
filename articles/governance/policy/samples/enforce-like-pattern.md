@@ -1,14 +1,14 @@
 ---
 title: 'Пример: принудительное применение шаблона LIKE'
-description: В этом примере определения политики необходимо, чтобы ресурсы соответствовали шаблону LIKE для соглашения об именовании.
+description: В этом примере определения политики необходимо, чтобы ресурсы соответствовали указанному в параметре шаблону LIKE для соглашения об именовании.
 ms.date: 01/23/2019
 ms.topic: sample
-ms.openlocfilehash: 34013753c18ad3b84a29b04fead9ea83aeb03d7b
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: df72db59e0370e82ca9f4aff199498ffdf06d834
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74076305"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463607"
 ---
 # <a name="sample---enforce-like-pattern-for-naming-conventions"></a>Пример принудительного применения шаблона LIKE для соглашения об именовании
 

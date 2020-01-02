@@ -9,18 +9,18 @@ manager: cshankar
 ms.reviewer: jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 10/03/2019
+ms.date: 11/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8200c2511d4f85705ff56df43f128034d29b0604
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 2c68c64202efec6d7dab745b6e1bdc029fa3976f
+ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012701"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74561305"
 ---
 # <a name="understand-data-retention-in-azure-time-series-insights"></a>Общие сведения о хранении данных в службе "аналитика временных рядов Azure"
 
-В этой статье описываются два параметра, которые влияют на хранение данных в среде службы "аналитика временных рядов Azure".
+В этой статье описываются два основных параметра, которые влияют на хранение данных в среде службы "аналитика временных рядов Azure".
 
 ## <a name="video"></a>Видео
 
@@ -88,13 +88,13 @@ ms.locfileid: "74012701"
 
 Для затронутых концентраторов событий можно настроить свойство **Хранение сообщений**, чтобы минимизировать потерю данных при остановке приема данных в службе "Аналитика временных рядов".
 
-[![хранения сообщений концентратора событий.](media/time-series-insights-contepts-retention/event-hub-retention.png)](media/time-series-insights-contepts-retention/event-hub-retention.png#lightbox)
+[![хранения сообщений концентратора событий.](media/time-series-insights-concepts-retention/event-hub-retention.png)](media/time-series-insights-concepts-retention/event-hub-retention.png#lightbox)
 
 Если ни одно из свойств не настроено в источнике события (`timeStampPropertyName`), по умолчанию для аналитики временных рядов используется метка времени прибытия в концентраторе событий в качестве оси X. Если `timeStampPropertyName` настроена на что-то другое, среда ищет настроенную `timeStampPropertyName` в пакете данных при анализе событий.
 
 Узнайте [, как масштабировать среду "аналитика временных рядов](time-series-insights-how-to-scale-your-environment.md) ", чтобы масштабировать среду в соответствии с дополнительной емкостью или увеличить длину хранения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о настройке и изменении параметров хранения данных см. [в этой статьи](time-series-insights-how-to-configure-retention.md).
 

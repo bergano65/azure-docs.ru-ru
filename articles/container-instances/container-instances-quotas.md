@@ -1,19 +1,14 @@
 ---
-title: Квоты и доступность по регионам для службы "Экземпляры контейнеров Azure"
+title: Квоты службы и доступность по регионам
 description: Квоты, ограничения и доступность по регионам службы "Экземпляры контейнеров Azure".
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: article
 ms.date: 03/01/2019
-ms.author: danlep
-ms.openlocfilehash: c266a67685197ba40d2868fefca08098cb41598c
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: 91681130e32cf8a76829b8bfc3e2a1e97a59ff6b
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70172379"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533512"
 ---
 # <a name="quotas-and-limits-for-azure-container-instances"></a>Квоты и ограничения службы "Экземпляры контейнеров Azure"
 
@@ -25,7 +20,7 @@ ms.locfileid: "70172379"
 
 [!INCLUDE [container-instances-limits](../../includes/container-instances-limits.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете повысить лимит нескольких ограничений и квот. Чтобы запросить увеличение квоты на один или несколько ресурсов, которые поддерживают такую возможность, отправьте [запрос в службу поддержки Azure][azure-support] (указав "Квота" в качестве **типа проблемы**).
 

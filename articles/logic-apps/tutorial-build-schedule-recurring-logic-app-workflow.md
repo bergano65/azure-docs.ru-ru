@@ -1,22 +1,18 @@
 ---
-title: Создание автоматизированных рабочих процессов на основе расписания в Azure Logic Apps
+title: Создание автоматизированных рабочих процессов на основе расписания
 description: В этом руководстве показано, как создать повторяющийся автоматизированный рабочий процесс на основе расписания с использованием Azure Logic Apps
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.manager: carmonm
-ms.reviewer: klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 09/12/2019
-ms.openlocfilehash: eae2319e8d1c162969a04f8dafa18eec671ee1d0
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.openlocfilehash: f9203f77d5b398f53fcb7c9fceb70604b364a4e0
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72034652"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74790298"
 ---
 # <a name="tutorial-create-automated-schedule-based-recurring-workflows-by-using-azure-logic-apps"></a>Руководство по cозданию автоматических, выполняемых по расписанию, повторяющихся рабочих процессов с помощью Azure Logic Apps
 

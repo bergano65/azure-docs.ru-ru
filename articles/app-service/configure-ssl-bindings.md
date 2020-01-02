@@ -1,24 +1,17 @@
 ---
-title: Защита настраиваемого DNS-имени с помощью привязки SSL в Службе приложений Azure | Документация Майкрософт
-description: Узнайте, как приобрести сертификат службы приложений и привязать его к приложению службы приложений.
-services: app-service
-author: cephalin
-manager: gwallace
+title: Защита настраиваемого DNS с помощью привязки SSL
+description: Обеспечьте защищенный доступ по протоколу HTTPS к пользовательскому домену, создав привязку TLS/SSL с сертификатом. Повышение безопасности веб-сайта за счет применения протокола HTTPS или TLS 1.2.
 tags: buy-ssl-certificates
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 10/25/2019
-ms.author: cephalin
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: 259a4d33ba6e8c072f8df906da4784119b299822
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 60a4646b77f083590a6eb8a8648d6dea932f0bdd
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73509058"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849757"
 ---
 # <a name="secure-a-custom-dns-name-with-an-ssl-binding-in-azure-app-service"></a>Защита настраиваемого DNS-имени с помощью привязки SSL в Службе приложений Azure
 
@@ -114,6 +107,8 @@ ms.locfileid: "73509058"
 В разных браузерах перейдите по адресу `https://<your.custom.domain>`, чтобы проверить, как он обслуживает ваше приложение.
 
 ![Переход к приложению Azure на портале](./media/configure-ssl-bindings/app-with-custom-ssl.png)
+
+Код приложения может проверить протокол с помощью заголовка x-appservice-proto. Заголовок будет иметь значение `http` или `https`. 
 
 > [!NOTE]
 > Если приложение выдает ошибки проверки сертификата, вероятно, вы используете самозаверяющий сертификат.

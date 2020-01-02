@@ -1,25 +1,16 @@
 ---
-title: Использование SSL-сертификата в коде — служба приложений Azure | Документация Майкрософт
-description: Узнайте, как подключаться к удаленным ресурсам с помощью необходимых им сертификатов клиента.
-services: app-service
-documentationcenter: ''
-author: cephalin
-manager: gwallace
-editor: ''
-ms.service: app-service
-ms.workload: web
-ms.tgt_pltfrm: na
+title: Использование SSL-сертификата в коде
+description: Узнайте, как использовать сертификаты клиента в коде. Проверяйте подлинность с помощью удаленных ресурсов с помощью сертификата клиента или выполните с ними задачи шифрования.
 ms.topic: article
 ms.date: 11/04/2019
-ms.author: cephalin
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: 1546ded1977e1e26792189e1d992d106d3d77ef2
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: d783b61c372c7d0f8cca13106bf297ab9b55c424
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74271286"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74671894"
 ---
 # <a name="use-an-ssl-certificate-in-your-code-in-azure-app-service"></a>Использование SSL-сертификата в коде в службе приложений Azure
 
@@ -29,7 +20,7 @@ ms.locfileid: "74271286"
 
 Доверив управление SSL-сертификатами службе приложений, вы сможете разделить сертификаты и код приложения, защитив таким образом конфиденциальные данные.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Ознакомьтесь со следующими статьями:
 

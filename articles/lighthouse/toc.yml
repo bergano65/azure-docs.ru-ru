@@ -44,9 +44,6 @@
     - name: Просмотр клиентов и управление ими
       displayName: my customers
       href: ./how-to/view-manage-customers.md
-    - name: Просмотр поставщиков служб и управление ими
-      displayName: 'customer, update'
-      href: ./how-to/view-manage-service-providers.md
     - name: Интеграция Политики Azure
       items:
         - name: Развертывание политики в любом масштабе
@@ -55,6 +52,14 @@
         - name: 'Развертывание политики, которую можно исправить'
           displayName: 'deployIfNotExists, modify, managed identities, managed identity'
           href: ./how-to/deploy-policy-remediation.md
+    - name: Действия клиента
+      items:
+        - name: Просмотр поставщиков служб и управление ими
+          displayName: 'customer, update'
+          href: ./how-to/view-manage-service-providers.md
+        - name: Просмотр действий поставщика служб
+          displayName: 'monitor, log'
+          href: ./how-to/view-service-provider-activity.md
 - name: Справочные материалы
   items:
     - name: Azure CLI

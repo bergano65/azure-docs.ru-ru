@@ -1,20 +1,18 @@
 ---
-title: Создание веб-приложения Java в Службе приложений Azure в Linux
-description: Создание, развертывание и масштабирование веб-приложений Java Spring Boot с помощью Службы приложений Azure в Linux и Azure Cosmos DB.
+title: Руководство по Приложение Java Linux с MongoDB
+description: Сведение о получении управляемого данными приложения Java Linux в Службе приложений Azure с подключением к MongoDB, работающем в Azure (Cosmos DB).
 author: rloutlaw
 ms.author: routlaw
-manager: angerobe
-ms.service: app-service-web
 ms.devlang: java
 ms.topic: tutorial
 ms.date: 12/10/2018
 ms.custom: seodec18, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 077c9b22dbb629c8408d431de3e2e621b79c9c48
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: a3e9c05fbe68bf1b03f45d045afd8754753fecd3
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747675"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74688830"
 ---
 # <a name="tutorial-build-a-java-spring-boot-web-app-with-azure-app-service-on-linux-and-azure-cosmos-db"></a>Руководство по созданию веб-приложения Java Spring Boot с помощью Службы приложений Azure в Linux и Azure Cosmos DB
 

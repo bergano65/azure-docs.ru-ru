@@ -1,23 +1,23 @@
 ---
-title: Создание и управление правилами брандмауэра в базе данных Azure для PostgreSQL - отдельного сервера с помощью интерфейса командной строки Azure
-description: В этой статье описывается создание и управление правилами брандмауэра в базе данных Azure для PostgreSQL - отдельного сервера с помощью командной строки Azure.
+title: Управление правилами брандмауэра — Azure CLI — "база данных Azure для PostgreSQL — один сервер"
+description: В этой статье описывается создание правил брандмауэра в базе данных Azure для PostgreSQL-Single Server и управление ими с помощью командной строки Azure CLI.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: 03b1c215994e4089ad0aed4eac3868b05c564c4c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4af0fb288961689fb051bab8091c838f793cfcc3
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65067538"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74765653"
 ---
-# <a name="create-and-manage-firewall-rules-in-azure-database-for-postgresql---single-server-using-azure-cli"></a>Создание и управление правилами брандмауэра в базе данных Azure для PostgreSQL - отдельного сервера с помощью интерфейса командной строки Azure
-Правила брандмауэра уровня сервера можно использовать для управления доступом к базе данных Azure для сервера PostgreSQL с определенный IP-адрес или диапазон IP-адресов. С помощью удобных команд Azure CLI можно создавать, обновлять, удалять, выводить список и отображать правила брандмауэра для управления сервером. Общие сведения о базе данных Azure для правил брандмауэра PostgreSQL, см. в разделе [базы данных Azure для правил брандмауэра сервера PostgreSQL](concepts-firewall-rules.md).
+# <a name="create-and-manage-firewall-rules-in-azure-database-for-postgresql---single-server-using-azure-cli"></a>Создание правил брандмауэра в базе данных Azure для PostgreSQL-Single Server и управление ими с помощью Azure CLI
+Правила брандмауэра уровня сервера можно использовать для управления доступом к серверу базы данных Azure для PostgreSQL с определенного IP-адреса или диапазона IP-адресов. С помощью удобных команд Azure CLI можно создавать, обновлять, удалять, выводить список и отображать правила брандмауэра для управления сервером. Общие сведения о правилах брандмауэра базы данных Azure для PostgreSQL см. в статье [правила брандмауэра сервера базы данных Azure для PostgreSQL](concepts-firewall-rules.md).
 
-Правилами виртуальных сетей (VNet) также может использоваться для обеспечения безопасного доступа к серверу. Дополнительные сведения о [Создание и управление виртуальной сетью на базе службы конечных точек и правил, с помощью Azure CLI](howto-manage-vnet-using-cli.md).
+Правила виртуальной сети (VNet) также можно использовать для защиты доступа к серверу. Дополнительные сведения о [создании конечных точек и правил виртуальных сетевых служб и управлении ими с помощью Azure CLI](howto-manage-vnet-using-cli.md).
 
 ## <a name="prerequisites"></a>Технические условия
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
@@ -81,5 +81,5 @@ az postgres server firewall-rule delete --resource-group myresourcegroup --serve
 ## <a name="next-steps"></a>Дальнейшие действия
 - Аналогичным образом можно использовать веб-браузер, чтобы [создать правила брандмауэра базы данных Azure для PostgreSQL и управлять ими с помощью портала Azure](howto-manage-firewall-using-portal.md).
 - Узнайте больше о [правилах брандмауэра сервера базы данных Azure для PostgreSQL](concepts-firewall-rules.md).
-- Дополнительно обеспечить безопасность доступа к серверу с [Создание и управление виртуальной сетью на базе службы конечных точек и правил, с помощью Azure CLI](howto-manage-vnet-using-cli.md).
+- Более безопасный доступ к серверу путем [создания конечных точек и правил службы виртуальной сети и управления ими с помощью Azure CLI](howto-manage-vnet-using-cli.md).
 - Справка по подключению к серверу базы данных Azure для PostgreSQL доступна в статье [Библиотеки подключений для базы данных Azure для PostgreSQL](concepts-connection-libraries.md).

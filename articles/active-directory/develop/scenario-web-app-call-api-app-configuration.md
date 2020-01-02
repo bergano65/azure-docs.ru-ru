@@ -1,6 +1,6 @@
 ---
-title: Веб-приложение, вызывающее веб-API (конфигурация кода) — платформа Microsoft Identity
-description: Узнайте, как создать веб-приложение, вызывающее веб-API (конфигурация кода приложения).
+title: Настройка веб-приложения, вызывающего веб-API — платформа Microsoft Identity | Службы
+description: Узнайте, как настроить код веб-приложения, вызывающего веб-API
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -15,12 +15,12 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 231ecdb6afae1fc36d11b2c12aa82c7e860bb708
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 83523fd12700789fb5c34230d529e06c0b284147
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73175313"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74964991"
 ---
 # <a name="web-app-that-calls-web-apis---code-configuration"></a>Веб-приложение, вызывающее веб-API — конфигурация кода
 
@@ -86,7 +86,7 @@ ms.locfileid: "73175313"
 
 ### <a name="startupcs"></a>Startup.cs
 
-В ASP.NET Core принцип состоит в том, что в файле `Startup.cs`. Вам нужно подписываться на событие `OnAuthorizationCodeReceived` Open ID Connect, и из этого события вызовите MSAL. Метод NET `AcquireTokenFromAuthorizationCode`, который оказывает воздействие на сохранение в кэше маркеров, маркер доступа для запрошенной `scopes`и маркер обновления, который будет использоваться для обновления маркера доступа, когда он близок к истечению срока действия, или для получения маркера от имени того же пользователя. , но для другого ресурса.
+В ASP.NET Core принцип состоит в том, что в файле `Startup.cs`. Вам нужно подписываться на событие `OnAuthorizationCodeReceived` Open ID Connect, и из этого события вызовите MSAL. Метод NET `AcquireTokenFromAuthorizationCode`, который оказывает воздействие на сохранение в кэше маркеров, маркер доступа для запрошенной `scopes`и маркер обновления, который будет использоваться для обновления маркера доступа, когда он близок к истечению срока действия, или для получения маркера от имени того же пользователя, но для другого ресурса.
 
 На практике [учебник по ASP.NET Core веб-приложению](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2) пытается предоставить вам повторно используемый код для веб-приложений.
 
@@ -314,13 +314,13 @@ public class TokenAcquisition : ITokenAcquisition
 
 ```
 
-### <a name="summary"></a>Сводка
+### <a name="summary"></a>Резюме
 
 Для суммирования `AcquireTokenByAuthorizationCode` действительно активирует код авторизации, запрошенный ASP.NET, и получает маркеры, которые добавляются в кэш пользовательских маркеров MSAL.NET. После этого они будут использоваться в контроллерах ASP.NET Core.
 
 # <a name="aspnettabaspnet"></a>[ASP.NET](#tab/aspnet)
 
-Метод ASP.NET обрабатывает вещи так же, как и ASP.NET Core, за исключением того, что конфигурация OpenIdConnect и подписка на событие `OnAuthorizationCodeReceived` происходят в файле [App_Start\Startup.auth.CS](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/a2da310539aa613b77da1f9e1c17585311ab22b7/WebApp/App_Start/Startup.Auth.cs) . Аналогичные понятия можно найти в ASP.NET Core, за исключением того, что в ASP.NET необходимо указать RedirectUri в [файле Web. config # L15](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/master/WebApp/Web.config#L15). Такая конфигурация немного менее надежна, чем та, которая выполняется в ASP.NET Core, так как ее потребуется изменить при развертывании приложения.
+ASP.NET обрабатывает вещи так же, как и ASP.NET Core, за исключением того, что конфигурация OpenIdConnect и подписка на событие `OnAuthorizationCodeReceived` происходят в файле [App_Start \стартуп.АУС.КС](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/a2da310539aa613b77da1f9e1c17585311ab22b7/WebApp/App_Start/Startup.Auth.cs) . Аналогичные понятия можно найти в ASP.NET Core, за исключением того, что в ASP.NET необходимо указать RedirectUri в [файле Web. config # L15](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/master/WebApp/Web.config#L15). Такая конфигурация немного менее надежна, чем та, которая выполняется в ASP.NET Core, так как ее потребуется изменить при развертывании приложения.
 
 ```CSharp
 public partial class Startup
@@ -610,7 +610,7 @@ def _build_msal_app(cache=None):
 
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 На этом этапе, когда пользователь входит в маркер, он хранится в кэше маркеров. Давайте посмотрим, как он используется в других частях веб-приложения.
 

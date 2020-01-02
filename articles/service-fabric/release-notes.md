@@ -18,11 +18,11 @@ ms.locfileid: "74186520"
 ---
 # <a name="service-fabric-releases"></a>Service Fabric выпуски
 
-| <a href="https://github.com/Azure/Service-Fabric-Troubleshooting-Guides" target="blank">Руководства</a> 
-| <a href="https://github.com/Azure/service-fabric-issues" target="blank">проблема отслеживание</a> 
-| <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-support" target="blank">поддержка Параметры</a> 
-| <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-versions" target="blank">поддержка версия</a> 
-| <a href="https://azure.microsoft.com/resources/samples/?service=service-fabric&sort=0" target="blank">пример кода</a>
+| <a href="https://github.com/Azure/Service-Fabric-Troubleshooting-Guides" target="blank">руководства по устранению неполадок</a> 
+| <a href="https://github.com/Azure/service-fabric-issues" target="blank">Отслеживание проблем</a> 
+| <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-support" target="blank">варианты поддержки</a> 
+| <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-versions" target="blank">поддерживаемых версий</a> 
+| <a href="https://azure.microsoft.com/resources/samples/?service=service-fabric&sort=0" target="blank">примеров кода</a>
 
 В этой статье содержатся дополнительные сведения о последних выпусках и обновлениях для среды выполнения Service Fabric и пакетов SDK.
 

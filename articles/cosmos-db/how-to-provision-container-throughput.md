@@ -1,23 +1,23 @@
 ---
 title: Подготовка пропускной способности контейнера в Azure Cosmos DB
-description: Узнайте о том, как подготовить пропускную способность на уровне контейнера в Azure Cosmos DB
+description: Узнайте, как подготавливать пропускную способность на уровне контейнера в Azure Cosmos DB с помощью портал Azure, CLI, PowerShell и других пакетов SDK.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/28/2019
+ms.date: 12/12/2019
 ms.author: mjbrown
-ms.openlocfilehash: 0b48652f7b181f1254a4b20af75b83593c2aba05
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: ed6a55c8b6049f16e96a4a95ecf3ef125db908d7
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74147593"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74872049"
 ---
 # <a name="provision-throughput-on-an-azure-cosmos-container"></a>Подготовка пропускной способности для контейнера Azure Cosmos
 
 Узнайте, как подготовить пропускную способность для контейнера (коллекции, графа или таблицы) в Azure Cosmos DB. Вы можете подготовить пропускную способность для одного контейнера или [базы данных](how-to-provision-database-throughput.md) и предоставить к ней общий доступ для контейнеров в пределах этой базы данных. Пропускную способность для контейнера можно подготовить с помощью портала Azure, Azure CLI или пакетов SDK Azure Cosmos DB.
 
-## <a name="azure-portal"></a>портале Azure
+## <a name="azure-portal"></a>портала Azure
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
 
@@ -43,7 +43,7 @@ ms.locfileid: "74147593"
 > [!Note]
 > При подготовке пропускной способности для учетной записи Azure Cosmos, настроенной с помощью API Azure Cosmos DB для MongoDB, используйте `/myShardKey` для пути к ключу секции. При подготовке пропускной способности для контейнера в учетной записи Azure Cosmos, настроенной с помощью API Cassandra, используйте `/myPrimaryKey` для пути к ключу секции.
 
-## <a name="net-sdk"></a>ПАКЕТ SDK .NET
+## <a name="net-sdk"></a>SDK .NET
 
 > [!Note]
 > Используйте пакеты SDK Cosmos для API SQL для подготовки пропускной способности для всех API Cosmos DB, кроме API Cassandra.
@@ -66,7 +66,7 @@ await client.CreateDocumentCollectionAsync(
 ### <a name="net-v3-sdk"></a>Пакет SDK для .Net версии 3
 [!code-csharp[](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos/tests/Microsoft.Azure.Cosmos.Tests/SampleCodeForDocs/ContainerDocsSampleCode.cs?name=ContainerCreateWithThroughput)]
 
-## <a name="javascript-sdk"></a>Пакет SDK для JavaScript
+## <a name="javascript-sdk"></a>Пакет SDK JavaScript
 
 ```javascript
 // Create a new Client
@@ -115,7 +115,7 @@ session.Execute("ALTER TABLE myKeySpace.myTable WITH cosmosdb_provisioned_throug
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать о подготовке пропускной способности в Cosmos DB, обратитесь к следующим статьям:
 

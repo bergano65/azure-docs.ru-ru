@@ -5,12 +5,12 @@ ms.date: 09/25/2019
 ms.topic: conceptual
 description: Найдите ответы на некоторые распространенные вопросы о Azure Dev Spaces
 keywords: 'Docker, Kubernetes, Azure, служба контейнеров Azure, служба Azure Kubernetes, контейнеры, Helm, сетка службы, сетка службы маршрутизации, kubectl, k8s '
-ms.openlocfilehash: 3c7335f1656d304d231c2146c8b7496ea43f0b4c
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 2baab0812061bec7dcf08d35056804313d873889
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74280244"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74482301"
 ---
 # <a name="frequently-asked-questions-about-azure-dev-spaces"></a>Часто задаваемые вопросы о Azure Dev Spaces
 
@@ -51,8 +51,9 @@ ms.locfileid: "74280244"
 | ПОЛН                                    | Порт      | Использование      |
 |-----------------------------------------|-----------|----------|
 | cloudflare.docker.com | HTTPS:443 | Извлечение образов Linux Alpine и других Azure Dev Spaces |
-| gcr.io | HTTP: 443 | Извлечение Helm/с образами|
-| storage.googleapis.com | HTTP: 443 | Извлечение Helm/с образами|
+| gcr.io | HTTP: 443 | Извлечение Helm/с образами |
+| storage.googleapis.com | HTTP: 443 | Извлечение Helm/с образами |
+| аздс —<guid>.<location>. azds.io | HTTPS:443 | Для взаимодействия с Azure Dev Spaces серверных служб для контроллера. Точное полное доменное имя можно найти в "Датапланефкдн" в% USERPROFILE%\.аздс\сеттингс.жсон |
 
 
 [aks-auth-range]: ../aks/api-server-authorized-ip-ranges.md

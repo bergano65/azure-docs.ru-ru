@@ -2,20 +2,20 @@
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: include
-ms.date: 10/26/2018
+ms.date: 11/28/2019
 ms.author: raynew
-ms.openlocfilehash: 96cba4e077be8b7658c270b09b177a845e16c8b0
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: de15e3028cf22cdd03ce29385278fc5e2babaa9b
+ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185813"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74566348"
 ---
 В этой статье предполагается, что:
 
 1. Между локальной сетью и виртуальной сетью Azure установлено подключение **VPN типа "сеть — сеть"** или **ExpressRoute**.
 2. У вашей учетной записи есть разрешения на создание виртуальной машины в подписке Azure, в которую выполняется отработка отказа виртуальных машин.
-3. Ваша подписка имеет как минимум 4 доступных ядра для запуска новой виртуальной машины сервера обработки.
+3. В вашей подписке доступно как минимум 8 ядер для запуска новой виртуальной машины сервера обработки.
 4. **Парольная фраза сервера конфигурации** доступна.
 
 > [!TIP]

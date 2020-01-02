@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 07/05/2019
+ms.date: 12/09/2019
 ms.author: erhopf
-ms.openlocfilehash: 5c2c843d25da7c413628450f8ef3c1ca14898734
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 88f0a890d8cc3a3651d3b4ccbb20d5fb0079bc3e
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73504766"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74981129"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы нужно сделать следующее.
+Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: .NET
 ms.workload: tbd
 ms.date: 10/09/2019
 ms.author: lcozzens
-ms.openlocfilehash: 17b2e7272d499ce99d40d2ee52de1c7a5a1d0d04
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: f1fd1c21789c272bf8deae72ef64f2bbb1c6b3cb
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72329796"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707440"
 ---
 # <a name="quickstart-create-a-net-framework-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения на .NET Framework с помощью службы конфигурации приложений Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "72329796"
 - [Visual Studio 2019](https://visualstudio.microsoft.com/vs)
 - [.NET Framework 4.7.2](https://dotnet.microsoft.com/download)
 
-## <a name="create-an-app-configuration-store"></a>Создание хранилища конфигураций приложений
+## <a name="create-an-app-configuration-store"></a>Создание хранилища Конфигурации приложений
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
@@ -51,7 +51,7 @@ ms.locfileid: "72329796"
 
 1. В окне **Настроить новый проект** введите имя проекта. В разделе **Платформа** выберите **.NET Framework 4.7.1** или более поздней версии. Нажмите кнопку **Создать**.
 
-## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу конфигураций приложений
+## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
 
 1. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами NuGet**. На вкладке **Обзор** найдите и добавьте в проект следующие пакеты NuGet. Если вы не можете их найти, установите флажок **Включить предварительные выпуски**.
 
@@ -81,7 +81,7 @@ ms.locfileid: "72329796"
     </appSettings>
     ```
 
-   Строка подключения к хранилищу конфигураций приложений считывается из переменной среды `ConnectionString`. Добавьте построитель конфигураций `Environment` перед `MyConfigStore` в свойстве `configBuilders` раздела `appSettings`.
+   Строка подключения к хранилищу службы "Конфигурация приложений" считывается из переменной среды `ConnectionString`. Добавьте построитель конфигураций `Environment` перед `MyConfigStore` в свойстве `configBuilders` раздела `appSettings`.
 
 1. Откройте файл *Program.cs* и обновите метод `Main` для использования службы "Конфигурация приложений", вызвав метод `ConfigurationManager`.
 
@@ -96,7 +96,7 @@ ms.locfileid: "72329796"
 
 ## <a name="build-and-run-the-app-locally"></a>Создание и запуск приложения локально
 
-1. Задайте переменную среды с именем **ConnectionString** для строки подключения к хранилищу конфигураций приложений. При использовании командной строки Windows выполните следующую команду:
+1. Задайте переменную среды с именем **ConnectionString** для строки подключения к хранилищу службы "Конфигурация приложений". При использовании командной строки Windows выполните следующую команду:
 
         setx ConnectionString "connection-string-of-your-app-configuration-store"
 
@@ -112,7 +112,7 @@ ms.locfileid: "72329796"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве описано, как создать хранилище конфигурации приложения и использовать его с консольным приложением на основе .NET Framework. Ознакомьтесь с дополнительными сведениями об использовании службы "Конфигурация приложений" в следующем учебнике, посвященном проверке подлинности.
+В этом кратком руководстве описано, как создать хранилище службы "Конфигурация приложений" и использовать его с консольным приложением на основе .NET Framework. После запуска приложения значение `AppSettings` параметра `ConfigurationManager` не изменится. Однако в приложении .NET Framework также может использоваться библиотека поставщика конфигурации .NET Standard службы "Конфигурация приложений". Чтобы узнать, как включить в приложении .NET Framework динамическое обновление параметров конфигурации, перейдите к следующему учебнику.
 
 > [!div class="nextstepaction"]
-> [Руководство по интеграции с управляемыми удостоверениями Azure](./howto-integrate-azure-managed-service-identity.md)
+> [Включение динамической конфигурации](./enable-dynamic-configuration-dotnet.md)

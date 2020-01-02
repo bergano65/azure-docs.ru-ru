@@ -1,14 +1,14 @@
 ---
-title: Инструкции по развертыванию. Пример схемы зоны размещения для миграции в соответствии с CAF
+title: Развертывание примера схемы зоны размещения для миграции в соответствии с CAF
 description: Процедура развертывания для примера схемы зоны размещения для миграции в соответствии с CAF и сведения о параметрах артефактов схемы.
 ms.date: 08/20/2019
 ms.topic: sample
-ms.openlocfilehash: 67dabde6afe2dbc17a5ca2bd32534108b8008a8a
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: da17083e8e1b27739288a9d9ac087d071ff4861c
+ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74038445"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74545466"
 ---
 # <a name="deploy-the-microsoft-cloud-adoption-framework-for-azure-migrate-landing-zone-blueprint-sample"></a>Развертывание примера схемы зоны размещения для миграции Microsoft Cloud Adoption Framework для Azure
 

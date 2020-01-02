@@ -5,17 +5,17 @@ keywords: PowerShell DSC, настройка требуемого состоян
 services: automation
 ms.service: automation
 ms.subservice: dsc
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 5ed18f8a8bbd8bd323dec54ca3f700c7ce168dde
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 787cade13a0636bb25afa1d4043a977f512484f9
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231635"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74850896"
 ---
 # <a name="azure-automation-state-configuration-overview"></a>Обзор службы "Настройка состояния службы автоматизации Azure"
 
@@ -37,17 +37,17 @@ ms.locfileid: "74231635"
 
 ![Снимок экрана со страницей службы автоматизации Azure](./media/automation-dsc-overview/azure-automation-blade.png)
 
-### <a name="import-reporting-data-into-azure-monitor-logs"></a>Import reporting data into Azure Monitor logs
+### <a name="import-reporting-data-into-azure-monitor-logs"></a>Импорт данных отчетов в журналы Azure Monitor
 
-Узлы, управление которыми осуществляется с помощью "Настройка состояния службы автоматизации Azure", отправляют подробные отчеты с данными о состоянии на встроенный опрашивающий сервер. В службе "Настройка состояния службы автоматизации Azure" можно настроить отправку этих данных в рабочую область Log Analytics. To learn how to send State Configuration status data to your Log Analytics workspace, see [Forward Azure Automation State Configuration reporting data to Azure Monitor logs](automation-dsc-diagnostics.md).
+Узлы, управление которыми осуществляется с помощью "Настройка состояния службы автоматизации Azure", отправляют подробные отчеты с данными о состоянии на встроенный опрашивающий сервер. В службе "Настройка состояния службы автоматизации Azure" можно настроить отправку этих данных в рабочую область Log Analytics. Сведения о том, как отправлять данные о состоянии конфигурации состояния в рабочую область Log Analytics, см. в разделе [пересылка данных отчетов о настройке состояния службы автоматизации Azure в журналы Azure Monitor](automation-dsc-diagnostics.md).
 
 ## <a name="prerequisites"></a>Технические условия
 
-Please consider the following requirements when using Azure Automation State Configuration (DSC).
+При использовании конфигурации состояния службы автоматизации Azure (DSC) учитывайте следующие требования.
 
-### <a name="operating-system-requirements"></a>Operating System Requirements
+### <a name="operating-system-requirements"></a>Требования к операционной системе
 
-For nodes running Windows, the following versions are supported:
+Для узлов под управлением Windows поддерживаются следующие версии:
 
 - Windows Server 2019
 - Windows Server 2016
@@ -58,40 +58,40 @@ For nodes running Windows, the following versions are supported:
 - Windows 8.1
 - Windows 7
 
-The [Microsoft Hyper-V Server](/windows-server/virtualization/hyper-v/hyper-v-server-2016) standalone product sku does not contain an implementation of Desired State Configuraion so it cannot be managed by PowerShell DSC or Azure Automation State Configuration.
+Номер SKU автономного продукта [Microsoft Hyper-V Server](/windows-server/virtualization/hyper-v/hyper-v-server-2016) не содержит реализацию Desired State Configuration, поэтому управлять им с помощью DSC PowerShell или настройки состояния службы автоматизации Azure невозможно.
 
-For nodes running Linux, the following distros/versions are supported:
+Для узлов под управлением Linux поддерживаются следующие дистрибутивов и версии:
 
-The DSC Linux extension supports all the Linux distributions listed under [Supported Linux Distributions](https://github.com/Azure/azure-linux-extensions/tree/master/DSC#4-supported-linux-distributions).
+Расширение DSC для Linux поддерживает все дистрибутивы Linux, перечисленные в разделе [Поддерживаемые дистрибутивы Linux](https://github.com/Azure/azure-linux-extensions/tree/master/DSC#4-supported-linux-distributions).
 
-### <a name="dsc-requirements"></a>DSC requirements
+### <a name="dsc-requirements"></a>Требования к DSC
 
-For all Windows nodes running in Azure, [WMF 5.1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure) will be installed during onboarding.  For nodes running Windows Server 2012 and Windows 7, [WinRM will be enabled](https://docs.microsoft.com/powershell/scripting/dsc/troubleshooting/troubleshooting#winrm-dependency).
+Для всех узлов Windows, работающих в Azure, во время адаптации будет установлен [WMF 5,1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure) .  Для узлов под Windows Server 2012 и Windows 7 [Служба WinRM будет включена](https://docs.microsoft.com/powershell/scripting/dsc/troubleshooting/troubleshooting#winrm-dependency).
 
-For all Linux nodes running in Azure, [PowerShell DSC for Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux) will be installed during onboarding.
+Для всех узлов Linux, работающих в Azure, [POWERSHELL DSC для Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux) будет установлен во время адаптации.
 
-### <a name="network-planning"></a>Configure private networks
+### <a name="network-planning"></a>Настройка частных сетей
 
-If your nodes are located within a private network, the following port and URLs are required for State Configuration (DSC) to communicate with Automation:
+Если узлы находятся в частной сети, для взаимодействия с автоматизацией требуется следующий порт и URL-адреса для настройки состояния (DSC):
 
 * порт: только исходящий трафик Интернета через TCP-порт 443.
 * Глобальный URL-адрес: *.azure-automation.net.
 * Глобальный URL-адрес US Gov (Вирджиния): *.azure automation.us
 * Служба агента: https://\<ИД рабочей области\>.agentsvc.azure-automation.net
 
-This provides network connectivity for the managed node to communicate with Azure Automation.
-If you are using DSC resources that communicate between nodes, such as the [WaitFor* resources](https://docs.microsoft.com/powershell/scripting/dsc/reference/resources/windows/waitForAllResource), you will also need to allow traffic between nodes.
-See the documentation for each DSC resource to understand those network requirements.
+Это обеспечивает сетевое подключение для управляемого узла для взаимодействия со службой автоматизации Azure.
+При использовании ресурсов DSC, взаимодействующих между узлами, например с [ресурсами WAITFOR *](https://docs.microsoft.com/powershell/scripting/dsc/reference/resources/windows/waitForAllResource), необходимо также разрешить трафик между узлами.
+Сведения о требованиях к сети см. в документации по каждому ресурсу DSC.
 
-#### <a name="proxy-support"></a>Proxy Support
+#### <a name="proxy-support"></a>Поддержка прокси-сервера
 
-Proxy support for the DSC agent is available in Windows version 1809 and later.
-To configure this option, set the value for **ProxyURL** and **ProxyCredential** in the [metaconfiguration script](automation-dsc-onboarding.md#generating-dsc-metaconfigurations) used to register nodes.
-Proxy is not available in DSC for previous versions of Windows.
+Поддержка прокси-сервера для агента DSC доступна в Windows версии 1809 и более поздних версиях.
+Чтобы настроить этот параметр, задайте значение для **прокси** и **ProxyCredential** в [скрипте метаконфигурации](automation-dsc-onboarding.md#generating-dsc-metaconfigurations) , используемом для регистрации узлов.
+Прокси-сервер недоступен в DSC для предыдущих версий Windows.
 
-For Linux nodes, the DSC agent supports proxy and will utilize the http_proxy variable to determine the url.
+Для узлов Linux агент DSC поддерживает прокси-сервер и будет использовать переменную http_proxy для определения URL-адреса.
 
-#### <a name="azure-state-configuration-network-ranges-and-namespace"></a>Azure State Configuration network ranges and namespace
+#### <a name="azure-state-configuration-network-ranges-and-namespace"></a>Диапазоны и пространство имен сети конфигурации состояния Azure
 
 При определении исключений рекомендуется использовать адреса из списка. Если вам нужны IP-адреса, вы можете скачать [список диапазонов IP-адресов центров обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653). Файл обновляется еженедельно и содержит развернутые в настоящее время диапазоны и все предстоящие изменения диапазонов IP-адресов.
 

@@ -182,8 +182,6 @@
           href: service-bus-end-to-end-tracing.md
         - name: Создание многоуровневого приложения Служебной шины
           href: service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
-        - name: Перенос приложения Java Enterprise Edition в Azure
-          href: migrate-java-apps-wild-fly.md
     - name: Управление
       items:
         - name: Подготовка сущностей с помощью Azure PowerShell
@@ -205,10 +203,16 @@
               href: service-bus-resource-manager-namespace-auth-rule.md
             - name: 'Создание пространства имен с разделом, подпиской и правилом'
               href: service-bus-resource-manager-namespace-topic-with-rule.md
+    - name: Безопасность
+      items:
+        - name: Настройка управляемых пользователем ключей для шифрования неактивных данных (предварительная версия)
+          href: configure-customer-managed-key.md
     - name: Устранение неполадок
       items:
-        - name: Исключения
+        - name: Руководство по устранению неполадок
           href: service-bus-messaging-exceptions.md
+        - name: Исключения Resource Manager
+          href: service-bus-resource-manager-exceptions.md
 - name: Справочные материалы
   items:
     - name: .NET

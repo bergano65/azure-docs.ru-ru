@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Поиск сущностей с помощью пакета SDK Поиска сущностей Bing для Python
+title: Краткое руководство. Поиск сущностей с помощью пакета SDK для Python — Поиск сущностей Bing
 titleSuffix: Azure Cognitive Services
 description: Из этого руководства вы узнаете, как выполнить поиск сущностей с помощью пакета SDK Поиска сущностей Bing для Python.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 07/24/2019
 ms.author: aahi
-ms.openlocfilehash: 0a4a4e3ce6f318a693b8ee760a0d892eaecb2c82
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 7720304cc017db86b052cee39ca0430e5c1bf9c2
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68479017"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327122"
 ---
 # <a name="quickstart-bing-entity-search-sdk-with-python"></a>Краткое руководство. Пакет SDK Поиска сущностей Bing для Python
 

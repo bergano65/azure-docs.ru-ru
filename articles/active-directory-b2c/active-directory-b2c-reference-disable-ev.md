@@ -1,5 +1,6 @@
 ---
-title: Отключить проверку электронной почты во время регистрации клиента в Azure Active Directory B2C
+title: Отключить проверку электронной почты во время регистрации клиента
+titleSuffix: Azure AD B2C
 description: Узнайте, как отключить проверку электронной почты во время регистрации клиента в Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
@@ -10,12 +11,12 @@ ms.topic: conceptual
 ms.date: 09/25/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 9a7adc04991dd4a472bdaf1aa47aacaf6cdeb190
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: c5b3598e33dac131c8881248a5f4b740a6302e20
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71256931"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74948153"
 ---
 # <a name="disable-email-verification-during-customer-sign-up-in-azure-active-directory-b2c"></a>Отключить проверку электронной почты во время регистрации клиента в Azure Active Directory B2C
 
@@ -27,7 +28,7 @@ ms.locfileid: "71256931"
 
 1. Войдите на [портал Azure](https://portal.azure.com)
 1. Используйте фильтр **каталог и подписка** в верхнем меню, чтобы выбрать каталог, содержащий клиент Azure AD B2C.
-1. В меню слева выберите **Azure AD B2C**. Или выберите **все службы** , найдите и выберите **Azure AD B2C**.
+1. В меню слева выберите **Azure AD B2C**. Либо щелкните **Все службы**, а затем найдите и выберите **Azure AD B2C**
 1. Выберите **Потоки пользователей**.
 1. Выберите поток пользователя, для которого требуется отключить проверку по электронной почте. Например, *B2C_1_signinsignup*.
 1. Выберите **макеты страниц**.

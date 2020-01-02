@@ -1,5 +1,5 @@
 ---
-title: Руководство. Развертывание Функций Azure с помощью на устройстве в Azure IoT Edge | Документация Майкрософт
+title: Руководство по развертыванию Функций Azure в виде модулей с использованием Azure IoT Edge
 description: В этом руководстве описано, как разработать Функции Azure в виде модуля IoT Edge с последующим развертыванием на устройстве.
 author: kgremban
 manager: philmea
@@ -8,13 +8,13 @@ ms.date: 06/25/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.custom: mvc, seodec18
-ms.openlocfilehash: b0007f578efa1c9f8653e1ab6295b81e554245bd
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.custom: mvc
+ms.openlocfilehash: 8edd6028e73690829129168d912b312247d8b880
+ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71123360"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74664120"
 ---
 # <a name="tutorial-deploy-azure-functions-as-iot-edge-modules"></a>Руководство. Развертывание Функций Azure как модулей IoT Edge
 

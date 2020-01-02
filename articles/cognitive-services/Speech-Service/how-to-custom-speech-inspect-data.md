@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 09/06/2019
+ms.date: 12/02/2019
 ms.author: erhopf
-ms.openlocfilehash: cf0deffb6fe484f7e3ee38b95f285bb4b7cc809c
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 60b415f69800885f37ee53cc4f090098f5ebf1f1
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74072557"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74806085"
 ---
 # <a name="inspect-custom-speech-data"></a>Проверка данных Пользовательское распознавание речи
 
@@ -28,7 +28,7 @@ ms.locfileid: "74072557"
 
 На этой странице вы узнаете, как визуально проверить качество встроенной в Майкрософт модели преобразования речи в текст и (или) настраиваемой модели. Вы будете использовать данные, отправленные на вкладку **данные** для тестирования.
 
-## <a name="create-a-test"></a>Создание теста
+## <a name="create-a-test"></a>Создание тестов
 
 Чтобы создать тест, выполните следующие инструкции:
 
@@ -37,9 +37,11 @@ ms.locfileid: "74072557"
 3. Нажмите кнопку **добавить тест**.
 4. Выберите **проверить качество (только звуковые данные)** . Присвойте тесту имя, описание и выберите свой набор данных для звука.
 5. Выберите до двух моделей, которые вы хотите протестировать.
-6. Нажмите кнопку **Создать**.
+6. Щелкните **Create**(Создать).
 
 После успешного создания теста можно сравнить модели параллельно.
+
+[!INCLUDE [service-pricing-advisory](includes/service-pricing-advisory.md)]
 
 ## <a name="side-by-side-model-comparisons"></a>Сравнение параллельных моделей
 
@@ -49,7 +51,7 @@ ms.locfileid: "74072557"
 
 Проверка качества помогает проверить, достаточно ли для приложения качество конечной точки распознавания речи. Для целевой меры точности, которая требует расшифрованной Audio, следуйте инструкциям, приведенным в статье [точность оценки](how-to-custom-speech-evaluate-data.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Оценка данных](how-to-custom-speech-evaluate-data.md)
 - [Обучение модели](how-to-custom-speech-train-model.md)

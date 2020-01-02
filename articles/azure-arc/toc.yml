@@ -8,9 +8,9 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: "Подключение компьютеров к Azure с помощью Azure Arc для серверов\_— портал"
+    - name: Подключение компьютеров к Azure с помощью Azure Arc для серверов на портале
       href: ./servers/quickstart-onboard-portal.md
-    - name: "Подключение компьютеров к Azure с помощью Azure Arc для серверов\_— PowerShell"
+    - name: Подключение виртуальных машин в большом масштабе с помощью Azure Arc для серверов с помощью PowerShell
       href: ./servers/quickstart-onboard-powershell.md
 - name: Справочные материалы
   items:

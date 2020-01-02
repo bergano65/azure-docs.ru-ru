@@ -1,29 +1,26 @@
 ---
-title: Как повторно активировать отключенные пространства имен службы контроля доступа (ACS)
-description: Узнайте, как найти и включить пространства имен службы контроля доступа (ACS) и запросить расширение, чтобы они оставались включенными до 4 февраля 2019 года.
+title: Повторная активация отключенных пространств имен службы контроля доступа Azure (ACS)
+description: Найдите и включите пространства имен службы контроля доступа Azure (ACS) и запросите расширение, чтобы они оставались включенными до 4 февраля 2019 г.
 services: active-directory
-documentationcenter: ''
 author: rwike77
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/21/2019
 ms.author: ryanwi
 ms.reviewer: jlu
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1cb17109d53c6e08c8607959207e367086032f6d
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 9cc038e67e5528a52b0b98ea1698da07e8120242
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67482706"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74966951"
 ---
-# <a name="how-to-reactivate-disabled-access-control-service-namespaces"></a>Практическое руководство: Повторная активация отключенных пространств имен службы контроля доступа
+# <a name="how-to-reactivate-disabled-access-control-service-namespaces"></a>Практическое руководство. Повторная активация отключенных пространств имен службы контроля доступа
 
 В ноябре 2017 года мы объявили, что служба контроля доступа Microsoft Azure (ACS), относящаяся к Azure Active Directory (Azure AD), прекратит функционирование 7 ноября 2018 года.
 
@@ -90,19 +87,19 @@ ms.locfileid: "67482706"
 
 ### <a name="to-request-an-extension"></a>Запрос расширения
 
-1. Войдите на портал Azure и создайте [новый запрос на поддержку](https://portal.azure.com/#create/Microsoft.Support).
+1. Войдите в портал Azure и создайте [новый запрос в службу поддержки](https://portal.azure.com/#create/Microsoft.Support).
 1. Заполните новую форму запроса на поддержку, как показано в следующем примере.
 
-    | Поле запроса на поддержку | Значение |
+    | Поле запроса на поддержку | Value |
     |-----------------------|--------------------|
     | **Тип проблемы** | `Technical` |
-    | **Подписка** | Задается вашей подписке |
+    | **подписка** | Задается вашей подписке |
     | **Служба** | `All services` |
     | **Ресурс** | `General question/Resource not available` |
     | **Тип проблемы** | `ACS to SAS Migration` |
     | **Тема** | Описание проблемы |
 
-   ![Является примером новый запрос на техническую поддержку](./media/howto-reactivate-disabled-acs-namespaces/new-technical-support-request.png)
+   ![Показывает пример нового запроса на техническую поддержку](./media/howto-reactivate-disabled-acs-namespaces/new-technical-support-request.png)
 
 <!--
 
@@ -127,4 +124,4 @@ ms.locfileid: "67482706"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительную информацию см. в статье [Руководство. Перенос из службы контроля доступа Azure](active-directory-acs-migration.md).
+- Просмотрите сведения о прекращении поддержки ACS в статье [Руководство. Перенос из службы контроля доступа Azure](active-directory-acs-migration.md).

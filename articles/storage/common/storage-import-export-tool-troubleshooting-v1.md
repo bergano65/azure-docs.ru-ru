@@ -1,19 +1,19 @@
 ---
 title: Устранение неполадок с инструментом импорта и экспорта Azure | Документация Майкрософт
 description: Узнайте о некоторых распространенных проблемах, возникающих при использовании инструмента импорта и экспорта Azure, и о том, как их устранить.
-author: muralikk
+author: twooley
 services: storage
 ms.service: storage
 ms.topic: article
 ms.date: 01/15/2017
-ms.author: muralikk
+ms.author: twooley
 ms.subservice: common
-ms.openlocfilehash: 9a4e47143515c7f9c21d701809c35d61853d91ec
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7e463e1cdd340f852af46e39cca0dd9bfce7b8da
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60320454"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978940"
 ---
 # <a name="troubleshooting-the-azure-importexport-tool"></a>Устранение неполадок со средством импорта и экспорта Azure
 В случае возникновения проблем инструмент импорта и экспорта Microsoft Azure возвращает сообщения об ошибках. В этом разделе приведены некоторые распространенные проблемы, с которыми могут столкнуться пользователи.  

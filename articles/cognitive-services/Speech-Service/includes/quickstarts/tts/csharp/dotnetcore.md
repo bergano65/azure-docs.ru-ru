@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 6/24/2019
 ms.author: yinhew
-ms.openlocfilehash: 670d32a93df9e2a0363163079b50c7306f81975e
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 6e732237b22bec6e2a66d44f12ac25e5f9adca3f
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73504886"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74818282"
 ---
 > [!NOTE]
 > .NET Core — это кроссплатформенная платформа .NET с открытым кодом, которая реализует спецификацию [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard).
@@ -25,9 +25,9 @@ ms.locfileid: "73504886"
 Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure](../../../../get-started.md).
-> * [Настроить среду разработки](../../../../quickstarts/setup-platform.md?tabs=dotnetcore).
-> * [Создать пустой пример проекта](../../../../quickstarts/create-project.md?tabs=dotnetcore).
+> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=dotnetcore)
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=dotnetcore)
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
 1. Откройте файл `Program.cs` и замените все содержимое приведенным ниже кодом.
@@ -50,7 +50,7 @@ ms.locfileid: "73504886"
 
     ![Снимок экрана приложения Visual Studio с выделенным параметром "Начать отладку"](~/articles/cognitive-services/Speech-Service/media/sdk/qs-csharp-dotnetcore-windows-06-start-debugging.png "Запуск приложения для отладки")
 
-1. Появится всплывающее окно консоли с запросом ввести текст. Введите несколько слов или предложение. Введенный текст передается в службы "Речь" и синтезируется в речь, которая воспроизводится через динамик.
+1. Появится всплывающее окно консоли с запросом ввести текст. Введите несколько слов или предложение. Введенный текст передается в службу "Речь" и синтезируется в речь, которая воспроизводится через динамик.
 
     ![Снимок экрана с выходными данными в консоли после успешного синтезирования](~/articles/cognitive-services/Speech-Service/media/sdk/qs-tts-csharp-dotnet-windows-console-output.png "Выходные данные в консоли после успешного синтеза")
 

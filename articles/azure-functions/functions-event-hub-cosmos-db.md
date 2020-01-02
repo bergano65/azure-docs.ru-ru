@@ -2,18 +2,15 @@
 title: Руководство по использованию функций Java с Azure Cosmos DB и Центрами событий
 description: В этом руководстве показано, как получать события из Центров событий для внесения обновлений в Azure Cosmos DB с помощью функции на языке Java.
 author: KarlErickson
-manager: barbkess
-ms.service: azure-functions
-ms.devlang: java
 ms.topic: tutorial
 ms.date: 11/04/2019
 ms.author: karler
-ms.openlocfilehash: 172dda0a79620431d41a5be7e872b6b1507a6c81
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: cef1d09f3365350240cb2ed879e4d41edec74aef
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73608307"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849842"
 ---
 # <a name="tutorial-create-a-function-in-java-with-an-event-hub-trigger-and-an-azure-cosmos-db-output-binding"></a>Руководство по созданию функции на языке Java с триггером Центра событий и выходной привязкой Azure Cosmos DB
 
@@ -39,8 +36,6 @@ ms.locfileid: "73608307"
 
 > [!IMPORTANT]
 > В переменной среды `JAVA_HOME` следует сохранить расположение установки JDK, чтобы завершить работу с этим руководством.
-
-Если вы предпочитаете сразу получить код для этого руководства, см. репозиторий примера [java-functions-eventhub-cosmosdb](https://github.com/Azure-Samples/java-functions-eventhub-cosmosdb).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 

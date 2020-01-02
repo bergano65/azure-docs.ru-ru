@@ -9,13 +9,13 @@ ms.custom:
 - iot-p0-scenario
 ms.author: avneets
 author: avneet723
-ms.date: 10/19/2019
-ms.openlocfilehash: a068ea3f51e4faa6497c7b1a93192a924753c7c9
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.date: 11/27/2019
+ms.openlocfilehash: 9be8fbad8811d758f9ac4205c0d1e60e0d82e07f
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73895102"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74895489"
 ---
 # <a name="connect-a-ruuvitag-sensor-to-your-azure-iot-central-application"></a>Подключение датчика Руувитаг к приложению IoT Central Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "73895102"
 
 Если вы хотите настроить устройство шлюза Ригадо Cascade 500, следуйте приведенным [здесь инструкциям](./howto-connect-rigado-cascade-500.md) .
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Для подключения датчиков Руувитаг вам потребуются следующие ресурсы:
 
@@ -72,6 +72,6 @@ ms.locfileid: "73895102"
 1. Включите параметр **имитация** .
 1. Нажмите кнопку **Создать**.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как подключить Руувитаг к приложению Azure IoT Central, предлагаем следующий шаг: Узнайте, как [настроить приложение IOT Central](../retail/tutorial-in-store-analytics-customize-dashboard-pnp.md) для создания комплексного решения.

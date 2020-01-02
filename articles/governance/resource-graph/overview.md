@@ -1,16 +1,16 @@
 ---
 title: Обзор Azure Resource Graph
-description: Узнайте, как служба Azure Resource Graph позволяет выполнять сложные запросы ресурсов в нужном масштабе.
+description: Узнайте, как служба Azure Resource Graph позволяет выполнять сложные запросы ресурсов в нужном масштабе в подписках и клиентах.
 ms.date: 10/21/2019
 ms.topic: overview
-ms.openlocfilehash: f75a2b65b59a9f0367a6c52c2a1cf058df5b59c3
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 7a96faa8502fca6fc501985cd677ac28454f1ba1
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73958735"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406702"
 ---
-# <a name="overview-of-the-azure-resource-graph-service"></a>Обзор службы Azure Resource Graph
+# <a name="what-is-azure-resource-graph"></a>Что такое Azure Resource Graph?
 
 Azure Resource Graph — это служба в Azure, призванная расширить управление ресурсами Azure за счет действенных средств для оценки ресурсов и возможности масштабных запросов к выбранному набору подписок, которые позволят вам эффективно контролировать вашу среду. Такие запросы предоставляют следующие возможности:
 
@@ -92,6 +92,3 @@ Resource Graph поддерживает Azure CLI, Azure PowerShell, пакет 
 - Выполните свой первый запрос с помощью [портала Azure](first-query-portal.md).
 - Выполните первый запрос с помощью [Azure CLI](first-query-azurecli.md).
 - Выполните первый запрос с помощью [Azure PowerShell](first-query-powershell.md).
-- Получите более подробную информацию о [языке запросов](./concepts/query-language.md).
-- Начните с [начальных запросов](./samples/starter.md).
-- Перейдите к [расширенным запросам](./samples/advanced.md).

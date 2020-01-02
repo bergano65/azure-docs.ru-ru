@@ -4,20 +4,19 @@ description: Узнайте, как копировать данные из HBase
 services: data-factory
 documentationcenter: ''
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: 4768a3fbe30cf338628be44cb003e8aab527c946
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 2dfb2a7766ddbda5dd27d5b4fd6745836ad1dc75
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73680882"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74929378"
 ---
 # <a name="copy-data-from-hbase-using-azure-data-factory"></a>Копирование данных из HBase с помощью фабрики данных Azure 
 
@@ -34,11 +33,11 @@ ms.locfileid: "73680882"
 
 Фабрика данных Azure имеет встроенный драйвер для настройки подключения. Поэтому с использованием этого соединителя вам не нужно устанавливать драйверы вручную.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -48,13 +47,13 @@ ms.locfileid: "73680882"
 
 Для связанной службы HBase поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **HBase**. | Да |
-| host | IP-адрес или имя узла сервера HBase. такого.  `[clustername].azurehdinsight.net`, `192.168.222.160`)  | Да |
+| Тип | Для свойства type необходимо задать значение **HBase**. | ДА |
+| host | IP-адрес или имя узла сервера HBase. такого.  `[clustername].azurehdinsight.net`, `192.168.222.160`)  | ДА |
 | порт | TCP-порт, используемый экземпляром HBase для прослушивания клиентских подключений. По умолчанию используется значение 9090. При подключении к Azure HDInsights укажите порт 443. | Нет |
 | httpPath | Частичный URL-адрес, соответствующий серверу HBase, например `/hbaserest0` при использовании кластера HDInsights. | Нет |
-| authenticationType | Механизм аутентификации, используемый для подключения к серверу HBase. <br/>Допустимые значения — **Anonymous** или **Basic**. | Да |
+| authenticationType | Механизм аутентификации, используемый для подключения к серверу HBase. <br/>Допустимые значения — **Anonymous** или **Basic**. | ДА |
 | Имя пользователя | Имя пользователя, используемое для подключения к сущности HBase.  | Нет |
 | пароль | Пароль, соответствующий имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет |
 | enableSsl | Указывает, шифруются ли подключения к серверу с помощью протокола SSL. По умолчанию для этого параметра используется значение false.  | Нет |
@@ -129,9 +128,9 @@ ms.locfileid: "73680882"
 
 Чтобы скопировать данные из HBase, задайте для свойства type набора данных значение **HBaseObject**. Поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство Type набора данных должно иметь значение **хбасеобжект** . | Да |
+| Тип | Свойство Type набора данных должно иметь значение **хбасеобжект** . | ДА |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -159,12 +158,12 @@ ms.locfileid: "73680882"
 
 Чтобы копировать данные из HBase, задайте для типа источника в действии копирования значение **HBaseSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство type источника действия копирования должно иметь значение **HBaseSource**. | Да |
-| запрос | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
+| Тип | Свойство type источника действия копирования должно иметь значение **HBaseSource**. | ДА |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[

@@ -1,24 +1,24 @@
 ---
-title: Учебник. Шифрование и расшифровка больших двоичных объектов в службе хранилища Azure с помощью Azure Key Vault | Документация Майкрософт
-description: Как выполнять шифрование и расшифровку большого двоичного объекта путем шифрования на стороне клиента для службы хранилища Microsoft Azure с помощью Azure Key Vault.
+title: Руководство. Шифрование и расшифровка больших двоичных объектов с помощью Azure Key Vault
+titleSuffix: Azure Storage
+description: Узнайте, как зашифровать и расшифровать большой двоичный объект путем шифрования на стороне клиента с помощью Azure Key Vault.
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: article
-ms.date: 05/14/2019
+ms.topic: tutorial
+ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
-ms.openlocfilehash: 34dbcaeedb544a8a8808aab3e8e3315f1790dd9a
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
-ms.translationtype: MT
+ms.openlocfilehash: c83e56a47f4b212a5612cb9e6965ce8e73228dcb
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71003429"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892895"
 ---
-# <a name="tutorial-encrypt-and-decrypt-blobs-in-microsoft-azure-storage-using-azure-key-vault"></a>Учебник. Шифрование и расшифровка больших двоичных объектов в службе хранилища Azure с помощью Azure Key Vault
+# <a name="tutorial---encrypt-and-decrypt-blobs-using-azure-key-vault"></a>Руководство. Шифрование и расшифровка больших двоичных объектов с помощью Azure Key Vault
 
-## <a name="introduction"></a>Введение
 В этом учебнике описывается, как использовать хранилище ключей Azure для шифрования хранилища на стороне клиента. Учебник включает пошаговое руководство по шифрованию и расшифровке большого двоичного объекта в консольном приложении с помощью этих технологий.
 
 **Предполагаемое время выполнения**: 20 минут
@@ -48,7 +48,7 @@ ms.locfileid: "71003429"
 
 ## <a name="set-up-your-azure-key-vault"></a>Настройка хранилища ключей Azure
 
-Чтобы продолжить работу с этим руководством, необходимо выполнить следующие действия, описанные в кратком руководстве [. Установка и получение секрета из Azure Key Vault с помощью веб-приложения](../../key-vault/quick-create-net.md).NET:
+Для продолжения работы с этим руководством необходимо выполнить действия, описанные в руководстве по [ настройке и получению секрета из Azure Key Vault с помощью веб-приложения .NET](../../key-vault/quick-create-net.md).
 
 * Создать хранилище ключей.
 * Добавить ключ или секрет в хранилище ключей.
@@ -121,9 +121,9 @@ private async static Task<string> GetToken(string authority, string resource, st
 }
 ```
 
-## <a name="access-storage-and-key-vault-in-your-program"></a>Доступ к хранилищу данных и хранилищу ключей в программе.
+## <a name="access-azure-storage-and-key-vault-in-your-program"></a>Получение доступа к хранилищу данных Azure и Key Vault в программе
 
-В метод Main () добавьте следующий код.
+В методе main() добавьте следующий код.
 
 ```csharp
 // This is standard code to interact with Blob storage.
@@ -229,9 +229,10 @@ SymmetricKey sec = (SymmetricKey) cloudResolver.ResolveKeyAsync(
     "https://contosokeyvault.vault.azure.net/secrets/TestSecret2/",
     CancellationToken.None).GetAwaiter().GetResult();
 ```
+
 Вот и все. Так просто!
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об использовании службы хранилища Microsoft Azure с C# см. в статье [Клиентская библиотека службы хранилища Microsoft Azure для .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx).
 

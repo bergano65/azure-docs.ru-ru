@@ -1,25 +1,17 @@
 ---
-title: Сценарий Azure PowerShell для создания веб-приложения с непрерывным развертыванием из GitHub | Документация Майкрософт
-description: Пример сценария Azure PowerShell для создания веб-приложения с непрерывным развертыванием из GitHub.
-services: app-service\web
-documentationcenter: ''
-author: cephalin
-manager: erikre
-editor: ''
+title: 'PowerShell: Непрерывное развертывание из GitHub'
+description: Сведения об использовании Azure PowerShell для автоматизации процессов развертывания и управления в Службе приложений. В этом примере показано, как создать приложение с CI/CD из GitHub.
 tags: azure-service-management
 ms.assetid: 42f901f8-02f7-4869-b22d-d99ef59f874c
-ms.service: app-service-web
-ms.workload: web
 ms.topic: sample
 ms.date: 03/20/2017
-ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: bc8be33ede80070b8e9928e01d07b6066f1c887c
-ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
+ms.openlocfilehash: eee6ac9f9c469f9e1a9344ab4a30626c219d7836
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70113578"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74685155"
 ---
 # <a name="create-a-web-app-with-continuous-deployment-from-github"></a>Создание веб-приложения с непрерывным развертыванием из GitHub
 

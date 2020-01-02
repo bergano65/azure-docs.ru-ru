@@ -1,17 +1,17 @@
 ---
-title: Настройка оповещений метрик для базы данных Azure для PostgreSQL — масштабирование (Цитус)
+title: Настройка оповещений — изменение масштаба (Цитус) — база данных Azure для PostgreSQL
 description: В этой статье описывается, как настроить оповещения метрик для базы данных Azure для PostgreSQL-Scale (Цитус) и получить доступ к ним.
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: d5f45df16ac294f50e99cc7e05ab6eba43c0ae85
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 68a830f344023967f07ab809d67833f99e4e2958
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73516023"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74977613"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-postgresql---hyperscale-citus"></a>Использование портал Azure для настройки оповещений в метриках для базы данных Azure для PostgreSQL-Scale (Цитус)
 
@@ -25,8 +25,8 @@ ms.locfileid: "73516023"
 * вызов веб-перехватчика.
 
 Для настройки правил генерации оповещений и получения сведений о них можно использовать:
-* [портал Azure](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
-* [Интерфейс командной строки Azure](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
+* [Портал Azure](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
+* [Azure CLI](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
 * [Azure Monitor REST API](https://docs.microsoft.com/rest/api/monitor/metricalerts)
 
 ## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Создание правила генерации оповещений на основе метрики на портале Azure

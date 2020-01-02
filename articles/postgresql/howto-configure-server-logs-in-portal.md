@@ -1,23 +1,23 @@
 ---
-title: Настройка и доступ к журналам сервера в базе данных Azure для PostgreSQL-Single Server из портал Azure
-description: В этой статье описывается, как настроить журналы сервера в базе данных Azure для PostgreSQL-Single Server и получить к ним доступ из портал Azure.
+title: Управление журналами — портал Azure — база данных Azure для PostgreSQL — один сервер
+description: В этой статье описывается, как настроить журналы сервера (файлы журнала) и получить доступ к ним в базе данных Azure для PostgreSQL-Single Server из портал Azure.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: c77e708e14d34545754ca38095aedb63ff0172a1
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.openlocfilehash: 3da48a9b6d3acb1f2811bc279de7963fa1d83918
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71841517"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74763697"
 ---
 # <a name="configure-and-access-azure-database-for-postgresql---single-server-logs-from-the-azure-portal"></a>Настройка журналов базы данных Azure для PostgreSQL и доступ к ним из портал Azure
 
 Вы можете настроить, перечислить и скачать [журналы базы данных Azure для PostgreSQL](concepts-server-logs.md) из портал Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для выполнения действий, описанных в этой статье, требуется [сервер базы данных Azure для PostgreSQL](quickstart-create-server-database-portal.md).
 
 ## <a name="configure-logging"></a>Настройка журнала
@@ -63,7 +63,7 @@ ms.locfileid: "71841517"
 
    ![Снимок экрана: страница "журналы сервера" с выделенным значком "стрелка вниз"](./media/howto-configure-server-logs-in-portal/6-download.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Сведения о загрузке журналов программным способом см. в разделе [Журналы доступа к серверу в интерфейсе командной строки](howto-configure-server-logs-using-cli.md) .
 - Дополнительные сведения о [журналах сервера](concepts-server-logs.md) в базе данных Azure для PostgreSQL. 
 - Дополнительные сведения об определениях параметров и ведении журнала PostgreSQL см. в документации PostgreSQL по [отчетам об ошибках и ведению журнала](https://www.postgresql.org/docs/current/static/runtime-config-logging.html).

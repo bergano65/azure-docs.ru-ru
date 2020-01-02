@@ -1,19 +1,19 @@
 ---
 title: Краткое руководство. Создание набора навыков на портале Azure
 titleSuffix: Azure Cognitive Search
-description: Используйте мастер импорта данных, чтобы добавить в конвейер индексирования когнитивные навыки. Когнитивные навыки включают в себя оптическое распознавание символов (OCR) и обработку естественного языка.
+description: В этом кратком руководстве по порталу приводятся сведения об использовании мастера импорта данных для добавления когнитивных навыков в конвейер индексирования в службе "Когнитивный поиск Azure". Навыки включают в себя оптическое распознавание символов (OCR) и обработку естественного языка.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 11/04/2019
-ms.openlocfilehash: 2280b718fe949384bb67b1b606ab143ddca8e077
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 5e891627b337a0a3a15d0ebfa2b9cc95f27feca4
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74113352"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74533113"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-cognitive-skillset-in-the-azure-portal"></a>Краткое руководство. Создание набора навыков Когнитивного поиска на портале Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "74113352"
 
 1. [Скачайте пример данных](https://1drv.ms/f/s!As7Oy81M_gVPa-LCb5lC_3hbS-4), который состоит из небольшого набора файлов различных типов. Распакуйте файлы.
 
-1. [Создайте учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal) или [найдите имеющуюся учетную запись](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/) в текущей подписке. 
+1. [Создайте учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal) или [найдите имеющуюся учетную запись](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/). 
 
    Выберите регион, в котором размещается Когнитивный поиск Azure. Выберите тип учетной записи StorageV2 (общего назначения версии 2), если хотите испытать функцию хранилища знаний позже, в рамках другого пошагового руководства. В противном случае выберите любой тип.
 
@@ -41,7 +41,7 @@ ms.locfileid: "74113352"
 
    ![Исходные файлы в хранилище BLOB-объектов Azure](./media/cognitive-search-quickstart-blob/sample-data.png)
 
-1. [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве.
+1. [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices). Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве.
 
 <!-- 1. You are almost done with this resource, but before you leave these pages, use a link on the left navigation pane to open the **Access Keys** page. In many tutorials, especially those that use the REST API, you will need a connection string to retrieve data from Blob storage. A connection string looks similar to the following example: `DefaultEndpointsProtocol=https;AccountName=<YOUR-ACCOUNT-NAME>;AccountKey=<YOUR-ACCOUNT-KEY>;EndpointSuffix=core.windows.net` -->
 
@@ -152,7 +152,7 @@ ms.locfileid: "74113352"
 
 Наконец, вы узнали, что можно проверять содержимое путем запроса индекса. В результате служба "Когнитивный поиск Azure" предоставляет доступный для поиска индекс, который можно запрашивать с помощью [простого](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) или [полностью расширенного синтаксиса запроса](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search). Индекс, который содержит обогащенные поля, не отличается от других. Если вы хотите включить стандартные или [настраиваемые анализаторы](search-analyzers.md), [профили оценки](https://docs.microsoft.com/rest/api/searchservice/add-scoring-profiles-to-a-search-index), [синонимы](search-synonyms.md), [фильтры аспектов](search-filters-facets.md), географический поиск или любую другую функцию службы "Когнитивный поиск Azure", вы можете это сделать.
 
-## <a name="clean-up"></a>Очистка
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Если вы работаете в своей подписке, по окончании проекта рекомендуем решить, нужны ли вам созданные ресурсы. Работающие ресурсы могут означать лишние затраты. Можно удалить отдельные ресурсы или удалить группу ресурсов, что позволит удалить весь набор ресурсов.
 
@@ -160,12 +160,12 @@ ms.locfileid: "74113352"
 
 При работе с бесплатной версией службы помните о том, что вам доступно максимум три индекса, индексатора и источника данных. Вы можете удалить отдельные элементы на портале, чтобы не превысить лимит. 
 
+> [!Tip]
+> Если вы хотите повторить это упражнение или попробовать другое пошаговое руководство по обогащению ИИ, удалите индексатор на портале. При удалении индексатора счетчик бесплатных ежедневных транзакций сбрасывается обратно на нулевое значение для обработки Cognitive Services.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 Вы можете создавать наборы навыков, используя портал, .NET SDK или REST API. Чтобы получить дополнительные знания, попробуйте использовать REST API с Postman и другими демонстрационными данными.
 
 > [!div class="nextstepaction"]
 > [Руководство. Добавление структуры в "неструктурированное содержимое" с помощью обогащения ИИ](cognitive-search-tutorial-blob.md)
-
-> [!Tip]
-> Если вы хотите повторить это упражнение или попробовать другое пошаговое руководство по обогащению ИИ, удалите индексатор на портале. При удалении индексатора счетчик бесплатных ежедневных транзакций сбрасывается обратно на нулевое значение для обработки Cognitive Services.

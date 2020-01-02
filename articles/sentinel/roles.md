@@ -13,14 +13,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/26/2019
+ms.date: 12/09/2019
 ms.author: rkarlin
-ms.openlocfilehash: 0bf95b499a7366dad1e7b78fa4298aa6a42bb5fe
-ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
+ms.openlocfilehash: 0479eba13fd747ea1bcab2672fce1df2156802e8
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71316803"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74947592"
 ---
 # <a name="permissions-in-azure-sentinel"></a>Разрешения в Azure Sentinel
 
@@ -30,9 +30,9 @@ ms.locfileid: "71316803"
 
 Существует три определенные встроенные роли-Sentinel Azure.  
 **Все встроенные роли Azure Sentinel предоставляют доступ на чтение данных в рабочей области Sentinel Azure.**
-- **Читатель маркеров Azure**: пользователь, которому назначена эта роль, имеет права на просмотр Sentinel Azure. Пользователь может просматривать инциденты и данные, но не может вносить изменения.
-- **Ответчик Sentinel Azure**. пользователь, которому назначена эта роль, может читать и выполнять действия на таких инцидентах, как изменение назначения и серьезность.
-- **Участник Sentinel Azure**. пользователь, которому назначена эта роль, может читать и выполнять действия с инцидентами, а также создавать и удалять аналитические правила.
+- [Читатель маркеров Azure](../role-based-access-control/built-in-roles.md#azure-sentinel-reader)
+- [Ответчик Sentinel Azure](../role-based-access-control/built-in-roles.md#azure-sentinel-responder)
+- [Участник Sentinel Azure](../role-based-access-control/built-in-roles.md#azure-sentinel-contributor)
 
 Помимо ролей RBAC, выделенных на основе маркеров Azure, существуют роли Azure и Log Analytics RBAC, которые могут предоставлять более широкий набор разрешений, включая доступ к рабочей области Azure Sentinel и другим ресурсам:
 
@@ -70,13 +70,13 @@ ms.locfileid: "71316803"
 >
 ## <a name="building-custom-rbac-roles"></a>Создание пользовательских ролей RBAC
 
-В дополнение к или вместо, используя встроенные роли RBAC, можно создать пользовательские роли RBAC для Sentinel Azure. Пользовательские роли RBAC для Sentinel Azure создаются так же, как и другие [пользовательские роли RBAC Azure](../role-based-access-control/custom-roles-rest.md#create-a-custom-role) , основанные на конкретных разрешениях для Azure Sentinel Resources.
+В дополнение к или вместо, используя встроенные роли RBAC, можно создать пользовательские роли RBAC для Sentinel Azure. Пользовательские роли RBAC для Sentinel Azure создаются так же, как и другие [пользовательские роли RBAC Azure](../role-based-access-control/custom-roles-rest.md#create-a-custom-role) , на основе [конкретных разрешений для Azure Sentinel](../role-based-access-control/resource-provider-operations.md#microsoftsecurityinsights) и [ресурсов Azure log Analytics](../role-based-access-control/resource-provider-operations.md#microsoftoperationalinsights).
 
 ## <a name="advanced-rbac-on-the-data-you-store-in-azure-sentinel"></a>Расширенный RBAC для данных, хранящихся в Azure Sentinel
   
 Вы можете использовать Log Analytics расширенный контроль доступа на основе ролей для данных в рабочей области Sentinel Azure. Сюда входят Управление доступом на основе ролей для каждого типа данных и управление доступом на основе ролей. Дополнительные сведения о ролях Log Analytics см. [в статье Управление данными и рабочими областями в Azure Monitor](../azure-monitor/platform/manage-access.md#manage-access-using-workspace-permissions).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как работать с ролями в Azure Sentinel Users и какую роль разрешает выполнять пользователи.
 
-* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/). Записи блога, посвященные безопасности и соответствию требованиям в Azure.
+* [Блог Sentinel Azure](https://aka.ms/azuresentinelblog). Записи блога, посвященные безопасности и соответствию требованиям в Azure.

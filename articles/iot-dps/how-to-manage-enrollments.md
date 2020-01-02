@@ -1,6 +1,6 @@
 ---
-title: Manage device enrollments for Azure IoT Hub Device Provisioning Service in the Azure portal
-description: Как управлять регистрацией устройств в Службе подготовки устройств на портале Azure.
+title: Управление регистрацией устройств для службы подготовки устройств в центре Интернета вещей Azure в портал Azure
+description: Управление регистрацией устройств для службы подготовки устройств (DPS) на портале Azure
 author: wesmc7777
 ms.author: wesmc
 ms.date: 04/05/2018
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
-ms.openlocfilehash: 03559183e46182c4f80fe3d16ec542add9b1692b
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 8bd896573dbd0b24df11c0d66009098de19654ac
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74229719"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74974944"
 ---
 # <a name="how-to-manage-device-enrollments-with-azure-portal"></a>Как управлять регистрацией устройств с помощью портала Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "74229719"
      в) Когда появится панель Add Enrollment Group (Добавление группы регистрации), введите сведения об элементе списка регистрации.  Поле **Имя группы** является обязательным. Также выберите **тип сертификата** "Сертификат ЦС" или Intermediate Certificate (Промежуточный сертификат) и отправьте корневой **основной сертификат** для группы устройств.  
      г) В нижней части страницы нажмите кнопку **Save**. При успешном создании группы регистраций под вкладкой **Enrollment Groups** (Группы регистраций) должно отобразиться название группы.  
 
-     [![Enrollment group in the portal](./media/how-to-manage-enrollments/group-enrollment.png)](./media/how-to-manage-enrollments/group-enrollment.png#lightbox)
+     [![группы регистрации на портале](./media/how-to-manage-enrollments/group-enrollment.png)](./media/how-to-manage-enrollments/group-enrollment.png#lightbox)
     
 
 * **Отдельная регистрация** — это запись одного устройства, которое можно зарегистрировать. При аттестации таких устройств используются сертификаты X.509 или токены SAS (от физических или виртуальных доверенных платформенных модулей). Мы советуем использовать отдельные регистрации для устройств, которым требуются уникальные начальные конфигурации, или для устройств, которые могут использовать только маркеры SAS через TPM или виртуальный TPM в качестве механизма аттестации. Для отдельных регистраций можно указать нужный идентификатор устройства Центра Интернета вещей.

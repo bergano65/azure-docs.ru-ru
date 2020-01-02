@@ -6,20 +6,20 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 10/17/2019
+ms.date: 11/20/2019
 ms.author: diberry
-ms.openlocfilehash: cac3ee99598f8bcb29bd15c60063159b51f71923
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 4e2fb81b19694136896b1dee07c3bd74c63fc01b
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74125594"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74414485"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [JDK SE](https://aka.ms/azure-jdks) (комплект разработчика Java, выпуск "Стандартный");
 * [Visual Studio Code](https://code.visualstudio.com/) или привычный вам редактор кода;
-* идентификатор общедоступного приложения: df67dcdb-c37d-46af-88e1-8b97951ca1c2.
+* Идентификатор общедоступного приложения: `df67dcdb-c37d-46af-88e1-8b97951ca1c2`
 
 ## <a name="get-luis-key"></a>Получение ключа LUIS
 
@@ -27,7 +27,7 @@ ms.locfileid: "74125594"
 
 ## <a name="get-intent-programmatically"></a>Получение намерения программным способом
 
-Используйте Java, чтобы запросить конечную точку прогноза GET [API](https://aka.ms/luis-apim-v3-prediction) и получить результат прогноза.
+Используйте Java, чтобы запросить [конечную точку прогноза](https://aka.ms/luis-apim-v3-prediction) и получить результат прогноза.
 
 1. Создайте подкаталог с именем `lib` и скопируйте в него следующие библиотеки Java.
 
@@ -36,7 +36,6 @@ ms.locfileid: "74125594"
     * [httpcore-4.4.6.jar](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-language-understanding/master/documentation-samples/quickstarts/analyze-text/java/lib/httpcore-4.4.6.jar)
 
 1. Скопируйте следующий код для создания класса в файл с именем `Predict.java`:
-
 
     ```java
     import java.io.*;
@@ -108,7 +107,7 @@ ms.locfileid: "74125594"
 1. Замените следующие значения:
 
     * `YOUR-KEY` на ключ для начала работы.
-    * `YOUR-ENDPOINT` на конечную точку, например `westus2.api.cognitive.microsoft.com`.
+    * `YOUR-ENDPOINT` на конечную точку. Например, `westus2.api.cognitive.microsoft.com`.
 
 
 1. Скомпилируйте программу Java из командной строки: 
@@ -123,7 +122,7 @@ ms.locfileid: "74125594"
     java -cp ":lib/*" Predict
     ```
 
-1. Проверьте ответ с прогнозом в формате JSON:
+1. Проверьте ответ прогноза, который возвращается в формате JSON:
 
     ```console
     {'query': 'turn on all lights', 'prediction': {'topIntent': 'HomeAutomation.TurnOn', 'intents': {'HomeAutomation.TurnOn': {'score': 0.5375382}, 'None': {'score': 0.08687421}, 'HomeAutomation.TurnOff': {'score': 0.0207554}}, 'entities': {'HomeAutomation.Operation': ['on'], '$instance': {'HomeAutomation.Operation': [{'type': 'HomeAutomation.Operation', 'text': 'on', 'startIndex': 5, 'length': 2, 'score': 0.724984169, 'modelTypeId': -1, 'modelType': 'Unknown', 'recognitionSources': ['model']}]}}}}

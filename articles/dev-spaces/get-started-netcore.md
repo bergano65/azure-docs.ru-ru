@@ -1,22 +1,18 @@
 ---
-title: Создание среды разработки Kubernetes в облаке с помощью .NET Core и VS Code
-titleSuffix: Azure Dev Spaces
+title: 'Создание пространства разработки Kubernetes: Visual Studio Code и .NET Core'
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
-author: zr-msft
-ms.author: zarhoads
 ms.date: 09/26/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: 523c722edd3e76a291ae753ec7c3482e19ca7e24
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: fa7b4b4dcd1883c7619faa6fcfe014f4fc8c036f
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70845717"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74708580"
 ---
-# <a name="get-started-on-azure-dev-spaces-with-net-core"></a>Начало работы в Azure Dev Spaces с .NET Core
+# <a name="create-a-kubernetes-dev-space-visual-studio-code-and-net-core-with-azure-dev-spaces"></a>Создание пространства разработки Kubernetes: Использование Visual Studio Code и .NET Core с Azure Dev Spaces
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 
@@ -44,9 +40,10 @@ az login
 Можно просматривать свои подписки, выполнив следующую команду: 
 
 ```cmd
-az account list
+az account list --output table
 ```
-Найдите подписку с `isDefault: true` в выходных данных JSON.
+
+Найдите подписку со значением *True* для параметра *IsDefault*.
 Если это не та подписка, которую нужно использовать, вы можете изменить подписку по умолчанию:
 
 ```cmd

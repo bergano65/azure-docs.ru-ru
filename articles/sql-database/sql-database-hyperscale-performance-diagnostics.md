@@ -10,12 +10,12 @@ author: denzilribeiro
 ms.author: denzilr
 ms.reviewer: sstein
 ms.date: 10/18/2019
-ms.openlocfilehash: a7c64284c958fa8b3ec89c2b27515fe167a04011
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 2e162b30a0227c5f04c74dae01413177d1623235
+ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73811149"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74901243"
 ---
 # <a name="sql-hyperscale-performance-troubleshooting-diagnostics"></a>Диагностика по устранению неполадок производительности в SQL
 
@@ -30,7 +30,7 @@ ms.locfileid: "73811149"
 
 Следующие типы ожидания (в [sys. dm_os_wait_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql/)) описывают причины, по которым скорость ведения журнала может регулироваться в основной реплике вычислений:
 
-|Тип ожидания    |Description (Описание)                         |
+|Тип ожидания    |Описание                         |
 |-------------          |------------------------------------|
 |RBIO_RG_STORAGE        | Происходит, когда скорость создания журнала основного узла базы данных в масштабе подкачки регулируется из-за отложенного потребления журнала на серверах страниц.         |
 |RBIO_RG_DESTAGE        | Происходит при регулировании частоты создания журнала для масштабируемого узла базы данных, обусловленной задержкой использования журнала в долгосрочном хранилище журналов.         |
@@ -44,13 +44,14 @@ ms.locfileid: "73811149"
  
 При выполнении операции чтения в реплике вычислений, если данные не существуют в буферном пуле или локальном кэше RBPEX, выдается вызов функции Page (идентификатор страницы, LSN), а страница извлекается с соответствующего сервера страниц. Операции чтения с серверов страниц — это удаленные операции чтения, поэтому они выполняются медленнее, чем операции чтения из локальной RBPEX. При устранении проблем с производительностью, связанных с операциями ввода-вывода, необходимо иметь возможность определить, сколько IOs выполнялось с помощью относительно медленных операций чтения с удаленного сервера страниц.
 
-Несколько динамических административных представлений и расширенных событий имеют столбцы и поля, указывающие число удалений операций чтения с сервера страниц, которые можно сравнить с общим количеством операций чтения. 
+Несколько динамических административных представлений и расширенных событий имеют столбцы и поля, указывающие число удалений операций чтения с сервера страниц, которые можно сравнить с общим количеством операций чтения. Хранилище запросов также захватывает удаленные операции чтения в рамках статистики времени выполнения запроса.
 
-- Столбцы, доступные для чтения сервера страниц отчетов, доступны в административных представлениях выполнения, например:
+- Столбцы, доступные для чтения сервера страниц отчетов, доступны в представлениях DMV выполнения и представлении каталога, например:
     - [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql/)
     - [sys.dm_exec_query_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-stats-transact-sql/)
     - [sys.dm_exec_procedure_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-procedure-stats-transact-sql/)
-    - [sys. dm_exec_trigger_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-trigger-stats-transact-sql/)
+    - [sys.dm_exec_trigger_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-trigger-stats-transact-sql/)
+    - [sys.query_store_runtime_stats](/sql/relational-databases/system-catalog-views/sys-query-store-runtime-stats-transact-sql/)
 - Операции чтения сервера страниц добавляются к следующим расширенным событиям:
     - sql_statement_completed
     - sp_statement_completed
@@ -59,7 +60,7 @@ ms.locfileid: "73811149"
     - scan_stopped
     - query_store_begin_persist_runtime_stat
     - запрос — store_execution_runtime_info
-- Актуалпажесерверреадс/Актуалпажесерверреадахеадс добавляются в XML плана запроса для реальных планов. Например:
+- Актуалпажесерверреадс/Актуалпажесерверреадахеадс добавляются в XML плана запроса для реальных планов. Пример.
 
 `<RunTimeCountersPerThread Thread="8" ActualRows="90466461" ActualRowsRead="90466461" Batches="0" ActualEndOfScans="1" ActualExecutions="1" ActualExecutionMode="Row" ActualElapsedms="133645" ActualCPUms="85105" ActualScans="1" ActualLogicalReads="6032256" ActualPhysicalReads="0" ActualPageServerReads="0" ActualReadAheads="6027814" ActualPageServerReadAheads="5687297" ActualLobLogicalReads="0" ActualLobPhysicalReads="0" ActualLobPageServerReads="0" ActualLobReadAheads="0" ActualLobPageServerReadAheads="0" />`
 
@@ -100,7 +101,7 @@ ms.locfileid: "73811149"
 - На основном вычислении запись журнала учитывается в file_id 2 из sys. dm_io_virtual_file_stats. Запись в журнал в основном вычислений — это запись в основную зону журнала.
 - Записи журнала не зафиксированы на вторичной реплике при фиксации. В процессе масштабирования журнал применяется службой xlog к удаленным репликам. Поскольку записи журнала в действительности не происходят во вторичных репликах, любые учетные данные ввода-вывода журнала на вторичных репликах предназначены только для отслеживания.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="additional-resources"></a>дополнительные ресурсы.
 
 - Ограничения ресурсов Виртуальное ядро для отдельной базы данных с горизонтальным масштабированием см. в разделе [Виртуальное ядро Service Tier Limits](sql-database-vcore-resource-limits-single-databases.md#hyperscale---provisioned-compute---gen5)
 - Сведения о настройке производительности базы данных SQL Azure см. [в статье производительность запросов в базе данных SQL Azure](sql-database-performance-guidance.md) .

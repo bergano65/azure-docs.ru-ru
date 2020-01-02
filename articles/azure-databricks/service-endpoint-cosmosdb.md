@@ -1,5 +1,5 @@
 ---
-title: Внедрение Azure Databricks с помощью конечной точки Cosmos DB
+title: Учебник по внедрению Azure Databricks с помощью конечной точки Cosmos DB
 description: В этом руководстве описывается, как внедрить Azure Databricks в виртуальную сеть с использованием конечной точки службы с поддержкой Cosmos DB.
 author: mamccrea
 ms.author: mamccrea
@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: azure-databricks
 ms.topic: tutorial
 ms.date: 04/17/2019
-ms.openlocfilehash: d1268ea2cfc22e6350edb32230588a497be8bc79
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4ac8c01e986cf1f3158c615a0791ba476e5bf1bb
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67054492"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74706164"
 ---
 # <a name="tutorial-implement-azure-databricks-with-a-cosmos-db-endpoint"></a>Руководство по Внедрение Azure Databricks с помощью конечной точки Cosmos DB
 
@@ -57,11 +57,11 @@ ms.locfileid: "67054492"
 
    |Параметр|Значение|
    |-------|-----|
-   |Подписка|*ваша подписка*|
+   |Subscription|*ваша подписка*|
    |Группа ресурсов|*ваша группа ресурсов*|
    |Имя учетной записи|db-vnet-service-endpoint|
    |API|Core (SQL)|
-   |Расположение|Запад США|
+   |Location|Запад США|
    |Геоизбыточность|Disable|
    |Выполнение операций записи в нескольких регионах|Включение|
 

@@ -1,6 +1,6 @@
 ---
-title: Руководство по мониторингу устройств в Azure IoT Central
-description: Руководство по Вы, как оператор, можете использовать приложение Azure IoT Central для мониторинга устройств.
+title: Учебник. Мониторинг устройств в Azure IoT Central
+description: В этом учебнике показано, как оператору использовать приложение Azure IoT Central для мониторинга устройств.
 author: dominicbetts
 ms.author: dobett
 ms.date: 11/13/2019
@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: db3a9a6ba51394a0473f64a2ccede97e5283bba1
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: c04793f22e146491efdffc81f28e1719542af054
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74106572"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74705858"
 ---
 # <a name="tutorial-use-azure-iot-central-to-monitor-your-devices"></a>Руководство по Использование Azure IoT Central для мониторинга устройств
 

@@ -1,17 +1,17 @@
 ---
-title: Журналы аудита для базы данных Azure для MySQL
+title: Журналы аудита — база данных Azure для MySQL
 description: Описание журналов аудита, доступных в базе данных Azure для MySQL, и доступных параметров для включения уровней ведения журнала.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 06/26/2019
-ms.openlocfilehash: 42881fcb12f29ec14bbdc0ec4942b2eef17c7312
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.date: 12/09/2019
+ms.openlocfilehash: eae7e434ce21b5f9d9f3e6c40f94261df8baa426
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72434406"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74972359"
 ---
 # <a name="audit-logs-in-azure-database-for-mysql"></a>Журналы аудита в базе данных Azure для MySQL
 
@@ -22,23 +22,23 @@ ms.locfileid: "72434406"
 
 ## <a name="configure-audit-logging"></a>Настройка ведения журнала аудита
 
-По умолчанию журнал аудита отключен. Чтобы включить его, установите `audit_log_enabled` в значение Вкл.
+По умолчанию журнал аудита отключен. Чтобы включить его, установите для параметра `audit_log_enabled` значение Вкл.
 
 Вы можете настроить еще несколько параметров.
 
 - `audit_log_events`: управляет событиями, регистрируемыми в журнале. Конкретные события аудита см. в таблице ниже.
-- `audit_log_include_users`: пользователи MySQL, включаемые в ведение журнала. Значение по умолчанию для этого параметра — пустое, которое будет включать всех пользователей для ведения журнала. Он имеет более высокий приоритет, чем `audit_log_exclude_users`. Максимальная длина параметра — 512 символов.
+- `audit_log_include_users`: пользователи MySQL, включаемые в ведение журнала. Значение по умолчанию для этого параметра — пустое, которое будет включать всех пользователей для ведения журнала. Это имеет более высокий приоритет, чем `audit_log_exclude_users`. Максимальная длина параметра — 512 символов.
 > [!Note]
-> `audit_log_include_users` имеет более высокий приоритет, чем `audit_log_exclude_users`. Например, если audit_log_include_users = `demouser` и audit_log_exclude_users = `demouser`, он будет выполнять аудит журналов, так как `audit_log_include_users` имеет более высокий приоритет.
+> `audit_log_include_users` имеет более высокий приоритет, чем `audit_log_exclude_users`. Например, если `audit_log_include_users` = `demouser` и `audit_log_exclude_users` = `demouser`, пользователь будет включаться в журналы аудита, так как `audit_log_include_users` имеет более высокий приоритет.
 - `audit_log_exclude_users`: пользователи MySQL, исключаемые из журнала. Максимальная длина параметра — 512 символов.
 
 > [!Note]
-> Для `sql_text` журнал будет обрезан, если его длина превышает 2048 символов.
+> Для `sql_text`журнал будет обрезан, если его длина превышает 2048 символов.
 
 | **Событие** | **Описание** |
 |---|---|
 | `CONNECTION` | — Инициация подключения (успешно или неуспешно); <br> — Повторное применение проверки подлинности пользователя с другим пользователем или паролем во время сеанса <br> — Завершение подключения |
-| `DML_SELECT`| Выбор запросов |
+| `DML_SELECT`| Запросы SELECT |
 | `DML_NONSELECT` | Операции вставки, удаления и обновления |
 | `DML` | DML = DML_SELECT + DML_NONSELECT |
 | `DDL` | Такие запросы, как "DROP DATABASE" |
@@ -73,7 +73,7 @@ ms.locfileid: "72434406"
 | `OperationName` | `LogEvent` |
 | `LogicalServerName_s` | Имя сервера |
 | `event_class_s` | `connection_log` |
-| `event_subclass_s` | `CONNECT`, `DISCONNECT`, `CHANGE USER` (доступно только для MySQL 5,7) |
+| `event_subclass_s` | `CONNECT`, `DISCONNECT``CHANGE USER` (доступно только для MySQL 5,7) |
 | `connection_id_d` | Уникальный идентификатор соединения, созданный MySQL |
 | `host_s` | Пустой |
 | `ip_s` | IP-адрес клиента, подключающегося к MySQL |
@@ -101,9 +101,9 @@ ms.locfileid: "72434406"
 | `OperationName` | `LogEvent` |
 | `LogicalServerName_s` | Имя сервера |
 | `event_class_s` | `general_log` |
-| `event_subclass_s` | `LOG`, `ERROR`, `RESULT` (доступно только для MySQL 5,6) |
+| `event_subclass_s` | `LOG`, `ERROR``RESULT` (доступно только для MySQL 5,6) |
 | `event_time` | Время начала запроса в формате UTC (метка времени) |
-| `error_code_d` | Код ошибки, если запрос не выполнен. `0` означает отсутствие ошибки |
+| `error_code_d` | Код ошибки, если запрос не выполнен. `0` означает отсутствие ошибок |
 | `thread_id_d` | Идентификатор потока, выполнившего запрос |
 | `host_s` | Пустой |
 | `ip_s` | IP-адрес клиента, подключающегося к MySQL |

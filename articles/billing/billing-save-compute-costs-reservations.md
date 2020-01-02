@@ -3,16 +3,16 @@ title: Общие сведения о резервированиях в Azure
 description: Из этой статьи вы узнаете о резервировании Azure, которое позволяет сократить расходы на виртуальные машины, базы данных SQL, Azure Cosmos DB и другие ресурсы, а также о ценах на него.
 author: yashesvi
 manager: yashar
-ms.service: billing
+ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 11/01/2019
+ms.date: 11/22/2019
 ms.author: banders
-ms.openlocfilehash: a002f5a1657454ff5048ab695e62eccd268a5891
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: df15bcc0e4a3ef7629abf7b62f8ff36caf732150
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73580096"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74420149"
 ---
 # <a name="what-are-azure-reservations"></a>Общие сведения о резервированиях в Azure
 
@@ -36,6 +36,12 @@ ms.locfileid: "73580096"
 - **Зарезервированные виртуальные ядра Базы данных SQL** — резервирование покрывает расходы только на вычислительные ресурсы. Лицензия оплачивается отдельно.
 - **Хранилище данных SQL** — резервирование покрывает использование cDWU. Оно не покрывает затраты на хранилище и сетевые ресурсы, связанные с использованием Хранилища данных SQL.
 - **Базовая плата для Службы приложений** — резервирование покрывает базовую плату. Оно не применяется к рабочим ролям, поэтому все прочие ресурсы, связанные с базовой платой, оплачиваются отдельно.
+- База данных Azure для MySQL
+- База данных Azure для PostgreSQL
+- База данных Azure для MariaDB
+- Azure Data Explorer
+- Управляемые диски SSD (цен. категория "Премиум")
+
 
 Если вы используете виртуальные машины Windows и Базу данных SQL, расходы на лицензирование вам поможет сократить [Преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/).
 

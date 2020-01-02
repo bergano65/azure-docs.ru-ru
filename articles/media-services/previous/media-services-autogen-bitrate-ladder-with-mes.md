@@ -1,6 +1,6 @@
 ---
 title: Использование Media Encoder Standard для автоматического создания поскоростной лестнице в Azure | Документация Майкрософт
-description: В этом разделе показано, как использовать Media Encoder Standard (MES) для автоматического создания таблицы скоростей и разрешений на основе разрешения и скорости входных данных. Разрешение и скорость входных данных никогда не превышаются. Например, если указаны входные данные с разрешением 720p и скоростью 3 Мбит/с, то выходные данные будут иметь разрешение не выше 720p, а их скорости начнутся со значений ниже 3 Мбит/с.
+description: В этом разделе показано, как использовать Media Encoder Standard (MES) для автоматического создания таблицы скоростей и разрешений на основе разрешения и скорости входных данных.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
-ms.openlocfilehash: 14575e0c95acf1345fc3358b323083d86d8eedee
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: b7f0b77ba11a0c9c1670ec240caf45fcf61a934d
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69543540"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74896023"
 ---
 #  <a name="use-media-encoder-standard-to-auto-generate-a-bitrate-ladder"></a>Использование Media Encoder Standard для автоматического создания лестнице скорости  
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 В этой статье показано, как использовать Media Encoder Standard (MES) для автоматического создания таблицы скоростей и разрешений (пар "скорость-разрешение") на основе разрешения и скорости входных данных. Созданная автоматически предустановка никогда не превышает разрешение и скорость входных данных. Например, если указаны входные данные с разрешением 720p и скоростью 3 Мбит/с, то разрешение выходных данных не выше 720p, а скорость их запуска ниже 3 Мбит/с.
 
@@ -174,7 +174,7 @@ namespace AdaptiveStreamingMESPresest
 ### <a name="example-1"></a>Пример 1
 При исходной высоте 1080 и частоте кадров 29,970 создается 6 слоев видео.
 
-|Слой|Высота|Ширина|Скорость (кбит/с)|
+|Слой|Высота:|Ширина|Скорость (кбит/с)|
 |---|---|---|---|
 |1|1080|1920|6780|
 |2|720|1280|3520|
@@ -186,7 +186,7 @@ namespace AdaptiveStreamingMESPresest
 ### <a name="example-2"></a>Пример 2
 При исходной высоте 720 и частоте кадров 23,970 создается 5 слоев видео.
 
-|Слой|Высота|Ширина|Скорость (кбит/с)|
+|Слой|Высота:|Ширина|Скорость (кбит/с)|
 |---|---|---|---|
 |1|720|1280|2940|
 |2|540|960|1850|
@@ -197,7 +197,7 @@ namespace AdaptiveStreamingMESPresest
 ### <a name="example-3"></a>Пример 3
 При исходной высоте 360 и частоте кадров 29,970 создается 3 слоя видео.
 
-|Слой|Высота|Ширина|Скорость (кбит/с)|
+|Слой|Высота:|Ширина|Скорость (кбит/с)|
 |---|---|---|---|
 |1|360|640|700|
 |2|270|480|440|
@@ -205,7 +205,7 @@ namespace AdaptiveStreamingMESPresest
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Оставить отзыв
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="see-also"></a>См. также

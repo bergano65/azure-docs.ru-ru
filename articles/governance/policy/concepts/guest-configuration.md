@@ -1,14 +1,14 @@
 ---
 title: Изучение аудита содержимого виртуальных машин
-description: Узнайте, как политика Azure использует гостевую конфигурацию для аудита параметров на компьютере Azure.
+description: Узнайте, как политика Azure использует агент гостевой конфигурации для аудита параметров в виртуальных машинах.
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: c01f6d02c15dbd7519bfafdc413d70a05498c7c4
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: f68bbc64ee8f0da02d213895a70e4c533b9a5f63
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74279378"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463797"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 

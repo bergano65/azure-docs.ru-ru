@@ -1,21 +1,18 @@
 ---
-title: Вызов конечных точек HTTP и HTTPS — Azure Logic Apps
+title: Вызов конечных точек HTTP и HTTPS
 description: Отправка исходящих запросов на конечные точки HTTP и HTTPS с помощью Azure Logic Apps
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 07/05/2019
 tags: connectors
-ms.openlocfilehash: 4f585778808b133fe5c731ab6a3189594cbfc0f9
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: 971d7432c841c4ef984c7bbd7899fce733512303
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72804231"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74787188"
 ---
 # <a name="send-outgoing-calls-to-http-or-https-endpoints-by-using-azure-logic-apps"></a>Отправка исходящих вызовов конечных точек HTTP или HTTPS с помощью Azure Logic Apps
 

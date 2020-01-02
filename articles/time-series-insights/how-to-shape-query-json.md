@@ -7,14 +7,14 @@ ms.author: dpalled
 manager: cshankar
 ms.service: time-series-insights
 ms.topic: article
-ms.date: 10/09/2019
+ms.date: 12/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 386d10c8e4bd7d5f46d2081d5a26371fb37ff30f
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 3d611806d31719899d249b29ed4b0ea499280252
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74007005"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74894915"
 ---
 # <a name="shape-json-to-maximize-query-performance"></a>Формирование JSON для повышения производительности запросов 
 
@@ -97,15 +97,15 @@ ms.locfileid: "74007005"
 
    | deviceId | messageId | deviceLocation |
    | --- | --- | --- |
-   | FXXX | LINE\_DATA | EU |
+   | FXXX | LINE\_DATA | ЕС |
    | FYYY | LINE\_DATA | США |
 
 * Таблица событий "аналитика временных рядов" после спрямления:
 
    | deviceId | messageId | deviceLocation | Timestamp | series.Flow Rate ft3/s | series.Engine Oil Pressure psi |
    | --- | --- | --- | --- | --- | --- |
-   | FXXX | LINE\_DATA | EU | 2018-01-17T01:17:00Z | 1.0172575712203979 | 34.7 |
-   | FXXX | LINE\_DATA | EU | 2018-01-17T01:17:00Z | 2.445906400680542 | 49.2 |
+   | FXXX | LINE\_DATA | ЕС | 2018-01-17T01:17:00Z | 1.0172575712203979 | 34.7 |
+   | FXXX | LINE\_DATA | ЕС | 2018-01-17T01:17:00Z | 2.445906400680542 | 49.2 |
    | FYYY | LINE\_DATA | США | 2018-01-17T01:18:00Z | 0.58015072345733643 | 22.2 |
 
 > [!NOTE]
@@ -165,21 +165,21 @@ ms.locfileid: "74007005"
 
 * Таблица ссылочных данных с ключевыми свойствами **deviceId** и **Series. tagId**:
 
-   | deviceId | series.tagId | messageId | deviceLocation | type | unit |
+   | deviceId | series.tagId | messageId | deviceLocation | Тип | unit |
    | --- | --- | --- | --- | --- | --- |
-   | FXXX | pumpRate | LINE\_DATA | EU | Скорость потока | ft3/s |
-   | FXXX | oilPressure | LINE\_DATA | EU | Давление масла в двигателе | psi |
+   | FXXX | pumpRate | LINE\_DATA | ЕС | Скорость потока | ft3/s |
+   | FXXX | oilPressure | LINE\_DATA | ЕС | Давление масла в двигателе | psi |
    | FYYY | pumpRate | LINE\_DATA | США | Скорость потока | ft3/s |
    | FYYY | oilPressure | LINE\_DATA | США | Давление масла в двигателе | psi |
 
 * Таблица событий "аналитика временных рядов" после спрямления:
 
-   | deviceId | series.tagId | messageId | deviceLocation | type | unit | Timestamp | series.value |
+   | deviceId | series.tagId | messageId | deviceLocation | Тип | unit | Timestamp | series.value |
    | --- | --- | --- | --- | --- | --- | --- | --- |
-   | FXXX | pumpRate | LINE\_DATA | EU | Скорость потока | ft3/s | 2018-01-17T01:17:00Z | 1.0172575712203979 | 
-   | FXXX | oilPressure | LINE\_DATA | EU | Давление масла в двигателе | psi | 2018-01-17T01:17:00Z | 34.7 |
-   | FXXX | pumpRate | LINE\_DATA | EU | Скорость потока | ft3/s | 2018-01-17T01:17:00Z | 2.445906400680542 | 
-   | FXXX | oilPressure | LINE\_DATA | EU | Давление масла в двигателе | psi | 2018-01-17T01:17:00Z | 49.2 |
+   | FXXX | pumpRate | LINE\_DATA | ЕС | Скорость потока | ft3/s | 2018-01-17T01:17:00Z | 1.0172575712203979 | 
+   | FXXX | oilPressure | LINE\_DATA | ЕС | Давление масла в двигателе | psi | 2018-01-17T01:17:00Z | 34.7 |
+   | FXXX | pumpRate | LINE\_DATA | ЕС | Скорость потока | ft3/s | 2018-01-17T01:17:00Z | 2.445906400680542 | 
+   | FXXX | oilPressure | LINE\_DATA | ЕС | Давление масла в двигателе | psi | 2018-01-17T01:17:00Z | 49.2 |
    | FYYY | pumpRate | LINE\_DATA | США | Скорость потока | ft3/s | 2018-01-17T01:18:00Z | 0.58015072345733643 |
    | FYYY | oilPressure | LINE\_DATA | США | Давление масла в двигателе | psi | 2018-01-17T01:18:00Z | 22.2 |
 
@@ -196,7 +196,7 @@ ms.locfileid: "74007005"
   - В первом примере несколько свойств имеют несколько значений, поэтому можно создать каждое отдельное свойство.
   - Во втором примере меры не указываются как отдельные свойства. Вместо этого они представляют собой массив значений или мер в общем свойстве ряда. Будет отправлен новый ключ **tagId** , создающий новый столбец **Series. tagId** в плоской таблице. Новый **тип** и **единица** свойств создаются с помощью ссылочных данных, поэтому ограничение свойства не достигается.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше об отправке [сообщений устройства центра Интернета вещей в облако](../iot-hub/iot-hub-devguide-messages-construct.md).
 

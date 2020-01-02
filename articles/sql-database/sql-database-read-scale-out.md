@@ -1,6 +1,6 @@
 ---
-title: Read queries on replicas
-description: The Azure SQL Database provides the ability to load-balance read-only workloads using the capacity of read-only replicas - called Read Scale-Out.
+title: Чтение запросов к репликам
+description: База данных SQL Azure предоставляет возможность балансировки нагрузки только для чтения с использованием емкости реплик только для чтения, называемых горизонтальным масштабированием чтения.
 services: sql-database
 ms.service: sql-database
 ms.subservice: scale-out
@@ -18,28 +18,28 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74420729"
 ---
-# <a name="use-read-only-replicas-to-load-balance-read-only-query-workloads"></a>Use read-only replicas to load-balance read-only query workloads
+# <a name="use-read-only-replicas-to-load-balance-read-only-query-workloads"></a>Использование реплик только для чтения для балансировки нагрузки рабочих нагрузок запросов только для чтения
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-As part of the [High Availability architecture](./sql-database-high-availability.md#premium-and-business-critical-service-tier-availability), each database in the Premium and Business Critical service tier is automatically provisioned with a primary replica and several secondary replicas. The secondary replicas are provisioned with the same compute size as the primary replica. The **Read Scale-Out** feature allows you to load-balance SQL Database read-only workloads using the capacity of one of the read-only replicas instead of sharing the read-write replica. Таким образом рабочая нагрузка только для чтения изолируется от главных рабочих нагрузок чтения и записи и не влияет на их производительность. The feature is intended for the applications that include logically separated read-only workloads, such as analytics. In the Premium and Business Critical service tiers, applications could gain performance benefits using this additional capacity at no extra cost.
+В рамках архитектуры с [высоким уровнем доступности](./sql-database-high-availability.md#premium-and-business-critical-service-tier-availability)каждая база данных на уровне Premium и критически важный для бизнеса служб автоматически подготавливается с помощью первичной и нескольких вторичных реплик. Вторичные реплики подготавливаются с тем же размером вычислений, что и первичная реплика. Функция **масштабирования чтения** позволяет балансировать нагрузку только для чтения базы данных SQL, используя емкость одной из реплик только для чтения, а не предоставляет доступ к реплике для чтения и записи. Таким образом рабочая нагрузка только для чтения изолируется от главных рабочих нагрузок чтения и записи и не влияет на их производительность. Эта функция предназначена для приложений, которые содержат логически разделенные рабочие нагрузки только для чтения, такие как аналитика. На уровнях служб "Премиум" и "критически важный для бизнеса" приложения могут повысить производительность с помощью этой дополнительной емкости без дополнительных затрат.
 
-The **Read Scale-Out** feature is also available in the Hyperscale service tier when at least one secondary replica is created. Multiple secondary replicas can be used if read-only workloads require more resources than available on one secondary replica. The High Availability architecture of Basic, Standard, and General Purpose service tiers does not include any replicas. The **Read Scale-Out** feature is not available in these service tiers.
+При создании хотя бы одной вторичной реплики также доступна функция **горизонтального масштабирования для чтения** на уровне служб. Несколько вторичных реплик можно использовать, если для рабочих нагрузок только для чтения требуется больше ресурсов, чем доступно на одной вторичной реплике. Архитектура высокого уровня доступности уровней "базовый", "Стандартный" и "общего назначения" не включает ни одной реплики. Функция **горизонтального масштабирования чтения** недоступна на этих уровнях служб.
 
-The following diagram illustrates it using a Business Critical database.
+На следующей схеме показано использование базы данных критически важный для бизнеса.
 
 ![Реплики только для чтения](media/sql-database-read-scale-out/business-critical-service-tier-read-scale-out.png)
 
-The Read Scale-Out feature is enabled by default on new Premium,  Business Critical, and Hyperscale databases. For Hyperscale, one secondary replica is created by default for new databases. If your SQL connection string is configured with `ApplicationIntent=ReadOnly`, the application will be redirected by the gateway to a read-only replica of that database. For information on how to use the `ApplicationIntent` property, see [Specifying Application Intent](https://docs.microsoft.com/sql/relational-databases/native-client/features/sql-server-native-client-support-for-high-availability-disaster-recovery#specifying-application-intent).
+Функция масштабирования чтения по умолчанию включена для новых баз данных Premium, критически важный для бизнеса и Scale. Для линейного масштабирования одна вторичная реплика по умолчанию создается для новых баз данных. Если строка подключения SQL настроена с `ApplicationIntent=ReadOnly`, то приложение будет перенаправляться шлюзом в реплику, доступную только для чтения этой базы данных. Сведения об использовании свойства `ApplicationIntent` см. в разделе [Указание намерения приложения](https://docs.microsoft.com/sql/relational-databases/native-client/features/sql-server-native-client-support-for-high-availability-disaster-recovery#specifying-application-intent).
 
-If you wish to ensure that the application connects to the primary replica regardless of the `ApplicationIntent` setting in the SQL connection string, you must explicitly disable read scale-out when creating the database or when altering its configuration. For example, if you upgrade your database from Standard or General Purpose tier to Premium, Business Critical or Hyperscale tier and want to make sure all your connections continue to go to the primary replica, disable Read Scale-out. For details on how to disable it, see [Enable and disable Read Scale-Out](#enable-and-disable-read-scale-out).
+Если вы хотите убедиться, что приложение подключается к первичной реплике независимо от параметра `ApplicationIntent` в строке подключения SQL, необходимо явно отключить горизонтальное масштабирование чтения при создании базы данных или при изменении ее конфигурации. Например, если вы обновите базу данных с уровня "Стандартный" или "общего назначения" на "Премиум", критически важный для бизнеса или "Масштаб" и хотите убедиться, что все подключения продолжают работать с первичной репликой, отключите горизонтальное масштабирование чтения. Дополнительные сведения о том, как ее отключить, см. в разделе [Включение и отключение горизонтального масштабирования для чтения](#enable-and-disable-read-scale-out).
 
 > [!NOTE]
-> Query Data Store, Extended Events, SQL Profiler and Audit features are not supported on the read-only replicas.
+> Хранилище данных запросов, расширенные события, функции SQL Profiler и аудита не поддерживаются в репликах только для чтения.
 
 ## <a name="data-consistency"></a>Согласованность данных
 
-Одним из преимуществ реплик является то, что реплики всегда находятся в состоянии транзакционной согласованности, но в разные моменты времени может возникать небольшая задержка между различными репликами. Горизонтальное масштабирование для чтения поддерживает согласованность на уровне сеанса. It means, if the read-only session reconnects after a connection error caused by replica unavailability, it may be redirected to a replica that is not 100% up-to-date with the read-write replica. Likewise, if an application writes data using a read-write session and immediately reads it using a read-only session, it is possible that the latest updates are not immediately visible on the replica. The latency is caused by an asynchronous transaction log redo operation.
+Одним из преимуществ реплик является то, что реплики всегда находятся в состоянии транзакционной согласованности, но в разные моменты времени может возникать небольшая задержка между различными репликами. Горизонтальное масштабирование для чтения поддерживает согласованность на уровне сеанса. Это означает, что если сеанс только для чтения повторно подключается после ошибки подключения, вызванной недоступностью реплики, он может быть перенаправлен на реплику, которая не 100% обновлена с репликой для чтения и записи. Аналогично, если приложение записывает данные с помощью сеанса чтения и записи и сразу же считывает их с помощью сеанса только для чтения, возможно, что последние обновления не будут немедленно видны в реплике. Задержка вызвана асинхронной операцией повтора журнала транзакций.
 
 > [!NOTE]
 > Задержки репликации в пределах региона случаются крайне редко.
@@ -73,56 +73,56 @@ SELECT DATABASEPROPERTYEX(DB_NAME(), 'Updateability')
 > [!NOTE]
 > В отдельно взятый момент времени только одна из реплик AlwaysON доступна в сеансах только для чтения.
 
-## <a name="monitoring-and-troubleshooting-read-only-replica"></a>Monitoring and troubleshooting read-only replica
+## <a name="monitoring-and-troubleshooting-read-only-replica"></a>Мониторинг и устранение неполадок в реплике только для чтения
 
-When connected to a read-only replica, you can access the performance metrics using the `sys.dm_db_resource_stats` DMV. To access query plan statistics, use the `sys.dm_exec_query_stats`, `sys.dm_exec_query_plan` and `sys.dm_exec_sql_text` DMVs.
+При подключении к реплике только для чтения можно получить доступ к метрикам производительности с помощью `sys.dm_db_resource_stats` динамического административного представления. Для доступа к статистике плана запроса используйте динамические административные представления `sys.dm_exec_query_stats`, `sys.dm_exec_query_plan` и `sys.dm_exec_sql_text`.
 
 > [!NOTE]
-> The DMV `sys.resource_stats` in the logical master database returns CPU usage and storage data of the primary replica.
+> `sys.resource_stats` динамического административного представления в логической базе данных Master возвращает данные об использовании ЦП и хранилища первичной реплики.
 
 ## <a name="enable-and-disable-read-scale-out"></a>Включение и отключение горизонтального масштабирования для чтения
 
-Read Scale-Out is enabled by default on Premium, Business Critical and Hyperscale service tiers. Read Scale-Out cannot be enabled in Basic, Standard, or General Purpose service tiers. Read Scale-Out is automatically disabled on Hyperscale databases configured with 0 replicas.
+Горизонтальное масштабирование чтения включено по умолчанию для уровней служб Premium, критически важный для бизнеса и Scale. Невозможно включить горизонтальное масштабирование чтения на уровнях служб "базовый", "Стандартный" или "общего назначения". Горизонтальное масштабирование чтения автоматически отключается в базах данных масштаба, настроенных с 0 репликами.
 
-You can disable and re-enable Read Scale-Out on single databases and elastic pool databases in Premium or Business Critical service tier using the following methods.
+Вы можете отключить и снова включить горизонтальное масштабирование чтения для отдельных баз данных и баз данных эластичного пула на уровне Premium или критически важный для бизнеса, используя следующие методы.
 
 > [!NOTE]
-> The ability to disable Read Scale-Out is provided for backward compatibility.
+> Возможность отключения горизонтального масштабирования для чтения предоставляется для обеспечения обратной совместимости.
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>портале Azure
 
-You can manage the Read Scale-out setting on the **Configure** database blade.
+Вы можете управлять параметром масштабирования чтения в колонке **Настройка** базы данных.
 
 ### <a name="powershell"></a>PowerShell
 
 > [!IMPORTANT]
-> The PowerShell Azure Resource Manager (RM) module is still supported by Azure SQL Database, but all future development is for the Az.Sql module. The AzureRM module will continue to receive bug fixes until at least December 2020.  The arguments for the commands in the Az module and in the AzureRm modules are substantially identical. For more about their compatibility, see [Introducing the new Azure PowerShell Az module](/powershell/azure/new-azureps-module-az).
+> Модуль PowerShell Azure Resource Manager (RM) по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Модуль AzureRM продолжит принимать исправления ошибок до 2020 декабря.  Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны. Дополнительные сведения о совместимости см. [в разделе Введение в новый модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az).
 
 Для управления горизонтальным масштабированием для чтения в Azure PowerShell требуется выпуск Azure PowerShell за декабрь 2016 года или более поздней версии. Последнюю версию Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/azure/install-az-ps).
 
-You can disable or re-enable Read Scale-Out in Azure PowerShell by invoking the [Set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase) cmdlet and passing in the desired value – `Enabled` or `Disabled` -- for the `-ReadScale` parameter.
+Можно отключить или повторно включить горизонтальное масштабирование чтения в Azure PowerShell, вызвав командлет [Set-азсклдатабасе](/powershell/module/az.sql/set-azsqldatabase) и передав нужное значение — `Enabled` или `Disabled`--для параметра `-ReadScale`.
 
-To disable read scale-out on an existing database (replacing the items in the angle brackets with the correct values for your environment and dropping the angle brackets):
+Чтобы отключить горизонтальное масштабирование чтения в существующей базе данных (замените элементы в угловых скобках правильными значениями для вашей среды и удалите угловые скобки):
 
 ```powershell
 Set-AzSqlDatabase -ResourceGroupName <resourceGroupName> -ServerName <serverName> -DatabaseName <databaseName> -ReadScale Disabled
 ```
 
-To disable read scale-out on a new database (replacing the items in the angle brackets with the correct values for your environment and dropping the angle brackets):
+Чтобы отключить горизонтальное масштабирование чтения в новой базе данных (замените элементы в угловых скобках правильными значениями для вашей среды и удалите угловые скобки):
 
 ```powershell
 New-AzSqlDatabase -ResourceGroupName <resourceGroupName> -ServerName <serverName> -DatabaseName <databaseName> -ReadScale Disabled -Edition Premium
 ```
 
-To re-enable read scale-out on an existing database (replacing the items in the angle brackets with the correct values for your environment and dropping the angle brackets):
+Чтобы повторно включить горизонтальное масштабирование чтения в существующей базе данных (заменив элементы в угловых скобках на правильные значения для вашей среды и удалив угловые скобки):
 
 ```powershell
 Set-AzSqlDatabase -ResourceGroupName <resourceGroupName> -ServerName <serverName> -DatabaseName <databaseName> -ReadScale Enabled
 ```
 
-### <a name="rest-api"></a>REST API
+### <a name="rest-api"></a>Интерфейс REST API
 
-To create a database with read scale-out disabled, or to change the setting for an existing database, use the following method with the `readScale` property set to `Enabled` or `Disabled` as in the below sample request.
+Чтобы создать базу данных с отключенным горизонтальным масштабированием чтения или изменить параметр для существующей базы данных, используйте следующий метод со свойством `readScale`, для которого задано значение `Enabled`, или `Disabled`, как показано в примере запроса ниже.
 
 ```rest
 Method: PUT
@@ -136,17 +136,17 @@ Body: {
 
 Дополнительные сведения см. в статье о [создании или обновлении базы данных](https://docs.microsoft.com/rest/api/sql/databases/createorupdate).
 
-## <a name="using-tempdb-on-read-only-replica"></a>Using TempDB on read-only replica
+## <a name="using-tempdb-on-read-only-replica"></a>Использование базы данных TempDB в реплике только для чтения
 
-The TempDB database is not replicated to the read-only replicas. Each replica has its own version of TempDB database that is created when the replica is created. It ensures that TempDB is updateable and can be modified during your query execution. If your read-only workload depends on using TempDB objects, you should create these objects as part of your query script.
+База данных TempDB не реплицируется в реплики только для чтения. Каждая реплика имеет собственную версию базы данных TempDB, созданную при создании реплики. Это гарантирует, что база данных TempDB будет обновлена и может быть изменена во время выполнения запроса. Если Рабочая нагрузка только для чтения зависит от использования объектов TempDB, следует создать эти объекты в рамках скрипта запроса.
 
 ## <a name="using-read-scale-out-with-geo-replicated-databases"></a>Использование горизонтального масштабирования для чтения с геореплицированными базами данных
 
-If you are using Read Scale-Out to load-balance read-only workloads on a database that is geo-replicated (for example, as a member of a failover group), make sure that read scale-out is enabled on both the primary and the geo-replicated secondary databases. This configuration will ensure that the same load-balancing experience continues when your application connects to the new primary after failover. Если подключение к геореплицированной базе данных-получателю выполняется с включенной функцией масштабирования для чтения, ваши сеансы с `ApplicationIntent=ReadOnly` будут направляться в одну из реплик, так же как и в случае с маршрутизацией подключений к базе данных-источнику.  Сеансы без `ApplicationIntent=ReadOnly` будут направляться в первичную реплику геореплицированной базы данных-получателя (тоже только для чтения). Because geo-replicated secondary database has a different endpoint than the primary database, historically to access the secondary it wasn't required to set `ApplicationIntent=ReadOnly`. Для обеспечения обратной совместимости в динамическом административном представлении `sys.geo_replication_links` отображается `secondary_allow_connections=2` (разрешены любые подключения клиента).
+Если вы используете масштабирование для чтения и балансировки нагрузки только для чтения в базе данных, которая является геореплицированной (например, членом группы отработки отказа), убедитесь, что горизонтальное масштабирование для чтения включено как в основной, так и в геореплицированных базах данных-получателях. Эта конфигурация гарантирует, что при подключении приложения к новой версии-источнику после отработки отказа будет выполняться одна и та же процедура балансировки нагрузки. Если подключение к геореплицированной базе данных-получателю выполняется с включенной функцией масштабирования для чтения, ваши сеансы с `ApplicationIntent=ReadOnly` будут направляться в одну из реплик, так же как и в случае с маршрутизацией подключений к базе данных-источнику.  Сеансы без `ApplicationIntent=ReadOnly` будут направляться в первичную реплику геореплицированной базы данных-получателя (тоже только для чтения). Так как геореплицированная база данных-получатель имеет другую конечную точку, чем база данных-источник, историческая для доступа к ней не требовалось устанавливать `ApplicationIntent=ReadOnly`. Для обеспечения обратной совместимости в динамическом административном представлении `sys.geo_replication_links` отображается `secondary_allow_connections=2` (разрешены любые подключения клиента).
 
 > [!NOTE]
-> Round-robin or any other load-balanced routing between the local replicas of the secondary database is not supported.
+> Циклический перебор или любая другая маршрутизация с балансировкой нагрузки между локальными репликами базы данных-получателя не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- For information about SQL Database Hyperscale offering, see [Hyperscale service tier](./sql-database-service-tier-hyperscale.md).
+- Дополнительные сведения о предложении для масштабирования базы данных SQL см. в разделе [уровень служб в масштабе](./sql-database-service-tier-hyperscale.md).

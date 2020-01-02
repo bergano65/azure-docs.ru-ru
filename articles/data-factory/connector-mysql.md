@@ -4,20 +4,19 @@ description: Дополнительные сведения о соедините
 services: data-factory
 documentationcenter: ''
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: ecc6bdb9f46b5dbc544f5a9c74bdec4a58c1fd72
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: c03a7cb28820ef8aca4e10314a424ea068cb3cee
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73680624"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930074"
 ---
 # <a name="copy-data-from-mysql-using-azure-data-factory"></a>Копирование данных из MySQL с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -40,7 +39,7 @@ ms.locfileid: "73680624"
 
 В частности, этот соединитель MySQL поддерживает MySQL **версии 5.6 и 5.7**.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
@@ -48,7 +47,7 @@ ms.locfileid: "73680624"
 
 Для Integration Runtime (Self-hosted) версии ниже, чем 3.7, установите [соединитель MySQL Connector/Net для Microsoft Windows](https://dev.mysql.com/downloads/connector/net/) версии 6.6.5–6.10.7 на компьютер со средой выполнения интеграции. Этот 32-разрядный драйвер совместим с 64-разрядным IR.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -58,20 +57,20 @@ ms.locfileid: "73680624"
 
 Для связанной службы MySQL поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **MySql** | Да |
-| connectionString | Укажите сведения, необходимые для подключения к экземпляру базы данных Azure для MySQL.<br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `password` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| Тип | Для свойства type необходимо задать значение **MySql** | ДА |
+| connectionString | Укажите сведения, необходимые для подключения к экземпляру базы данных Azure для MySQL.<br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `password` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
 Типичная строка подключения — `Server=<server>;Port=<port>;Database=<database>;UID=<username>;PWD=<password>`. Дополнительные свойства, которые вы можете установить в вашем случае:
 
-| Свойство | Description (Описание) | Параметры | Обязательно |
+| Свойство | Описание | Параметры | Обязательно для заполнения |
 |:--- |:--- |:--- |:--- |
 | SSLMode | Этот параметр указывает, использует ли драйвер SSL-шифрование и проверку при подключении к MySQL. Например, `SSLMode=<0/1/2/3/4>`| DISABLED (0) / PREFERRED (1) **(по умолчанию)** / REQUIRED (2) / VERIFY_CA (3) / VERIFY_IDENTITY (4) | Нет |
-| useSystemTrustStore | Этот параметр указывает, следует ли использовать сертификат ЦС из доверенного системного хранилища или из указанного PEM-файла. Например: `UseSystemTrustStore=<0/1>;`| Enabled (1) / Disabled (0) **(по умолчанию)** | Нет |
+| useSystemTrustStore | Этот параметр указывает, следует ли использовать сертификат ЦС из доверенного системного хранилища или из указанного PEM-файла. Например, `UseSystemTrustStore=<0/1>;`| Enabled (1) / Disabled (0) **(по умолчанию)** | Нет |
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -153,9 +152,9 @@ ms.locfileid: "73680624"
 
 Для копирования данных из MySQL поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство Type набора данных должно иметь значение **мисклтабле** . | Да |
+| Тип | Свойство Type набора данных должно иметь значение **мисклтабле** . | ДА |
 | tableName | Имя таблицы в базе данных MySQL. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -186,12 +185,12 @@ ms.locfileid: "73680624"
 
 Чтобы скопировать данные из MySQL, в разделе **источник** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство Type источника действия копирования должно иметь значение **мисклсаурце** . | Да |
-| запрос | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
+| Тип | Свойство Type источника действия копирования должно иметь значение **мисклсаурце** . | ДА |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[

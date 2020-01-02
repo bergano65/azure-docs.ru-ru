@@ -67,7 +67,7 @@ Microsoft Azure периодически выполняет обновления
 
 ### <a name="user-initiated-reboot-or-shutdown-actions"></a>Перезапуск, инициированный пользователем, и действия по завершению работы
 
-If you perform a reboot from the Azure portal, Azure PowerShell, command-line interface, or REST API, you can find the event in the [Azure Activity Log](../../azure-monitor/platform/activity-logs-overview.md).
+Если выполнить перезагрузку из портал Azure, Azure PowerShell, интерфейса командной строки или REST API, это событие можно найти в [журнале действий Azure](../../azure-monitor/platform/activity-logs-overview.md).
 
 Если вы выполняете это действие из операционной системы виртуальной машины, это событие можно найти в журналах системы.
 
@@ -101,7 +101,7 @@ If you perform a reboot from the Azure portal, Azure PowerShell, command-line in
 
 В редких случаях рабочей группе Azure может потребоваться выполнить действия по обслуживанию для обеспечения общей работоспособности платформы Azure. Это может повлиять на доступность виртуальных машин и обычно приводит к автоматическому восстановлению, описанному выше.  
 
-Unplanned maintenance include the following:
+Незапланированное обслуживание включает в себя следующее:
 
 - срочную дефрагментацию узла;
 - срочные обновления сетевого коммутатора.
@@ -118,7 +118,7 @@ Unplanned maintenance include the following:
 
 **Превышение ограничения количества операций ввода-вывода**
 
-Запросы на операции ввода-вывода последовательно регулируются на основе допустимых объемов, установленных для этих операций (в секунду). Если эти объемы превышают установленные ограничения для диска, виртуальные машины могут временно завершить работу. (Standard disk storage is limited to 500 IOPS.) To mitigate this issue, use disk striping or configure the storage space inside the guest VM, depending on the workload. Дополнительные сведения см. на странице [настройки виртуальных машин Azure для обеспечения оптимальной производительности хранилища](https://blogs.msdn.com/b/mast/archive/2014/10/14/configuring-azure-virtual-machines-for-optimal-storage-performance.aspx).
+Запросы на операции ввода-вывода последовательно регулируются на основе допустимых объемов, установленных для этих операций (в секунду). Если эти объемы превышают установленные ограничения для диска, виртуальные машины могут временно завершить работу. (Хранилище уровня "Стандартный" ограничено 500 операциями ввода-вывода в секунду.) Чтобы устранить эту ошибку, используйте чередование дисков или настройте дисковое пространство внутри гостевой виртуальной машины в зависимости от рабочей нагрузки. Дополнительные сведения см. на странице [настройки виртуальных машин Azure для обеспечения оптимальной производительности хранилища](https://blogs.msdn.com/b/mast/archive/2014/10/14/configuring-azure-virtual-machines-for-optimal-storage-performance.aspx).
 
 ### <a name="other-incidents"></a>Другие инциденты
 

@@ -1,23 +1,22 @@
 ---
-title: Преобразование данных с помощью записной книжки кирпичей Azure
+title: Преобразование данных с помощью записной книжки кирпичей
 description: Узнайте, как обрабатывать и преобразовывать данные с помощью записной книжки Databricks.
 services: data-factory
 documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 author: nabhishek
 ms.author: abnarain
-manager: jroth
+manager: shwang
 ms.reviewer: maghan
 ms.topic: conceptual
 ms.date: 03/15/2018
-ms.openlocfilehash: 685a7863af74bf90c819453b41078b48ab6d2045
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: c7a2aec35511ef066033c3d6462143ac31660e76
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73683929"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74923065"
 ---
 # <a name="transform-data-by-running-a-databricks-notebook"></a>Преобразование данных с помощью записной книжки Databricks
 
@@ -57,13 +56,13 @@ ms.locfileid: "73683929"
 
 В следующей таблице приведено описание свойств, используемых в определении JSON.
 
-|Свойство|ОПИСАНИЕ|обязательные|
+|Свойство|Описание|Обязательно для заполнения|
 |---|---|---|
-|Имя|Имя действия в конвейере.|Yes|
-|Описание|Описание действия.|Нет|
-|type|Тип действия Databricks Notebook — DatabricksNotebook.|Yes|
-|linkedServiceName (имя связанной службы)|Имя связанной службы Databricks, в которой запускается записная книжка Databricks. Дополнительные сведения об этой связанной службе см. в статье  [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md) .|Yes|
-|notebookPath|Абсолютный путь записной книжки, которая будет запущена в рабочей области Databricks. Этот путь должен начинаться с косой черты.|Yes|
+|name|Имя действия в конвейере.|ДА|
+|Description (Описание)|Описание действия.|Нет|
+|Тип|Тип действия Databricks Notebook — DatabricksNotebook.|ДА|
+|linkedServiceName|Имя связанной службы Databricks, в которой запускается записная книжка Databricks. Дополнительные сведения об этой связанной службе см. в статье  [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md) .|ДА|
+|notebookPath|Абсолютный путь записной книжки, которая будет запущена в рабочей области Databricks. Этот путь должен начинаться с косой черты.|ДА|
 |baseParameters|Массив пар "ключ-значение". Для каждого выполнения действия можно использовать базовые параметры. Если записная книжка принимает параметр, который не был указан, используется значение по умолчанию из записной книжки. Дополнительные сведения о параметрах Databricks Notebook см. [здесь](https://docs.databricks.com/api/latest/jobs.html#jobsparampair).|Нет|
 |libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Массив объектов \<строка, объект>.|Нет|
 

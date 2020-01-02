@@ -1,5 +1,5 @@
 ---
-title: Одностраничное приложение (получение маркера для вызова API) — платформа Microsoft Identity
+title: Получение маркера в одностраничных приложениях — платформа Microsoft Identity | Службы
 description: Сведения о создании одностраничного приложения (получение маркера для вызова API)
 services: active-directory
 documentationcenter: dev-center-name
@@ -15,37 +15,37 @@ ms.date: 08/20/2019
 ms.author: negoe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f49a6093194ef76a895f2a54f8a78a55da73e7e
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 9723e9a58704a583c7332db11bae7da6b045a5f7
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70135711"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74919840"
 ---
-# <a name="single-page-application---acquire-a-token-to-call-an-api"></a>Одностраничное приложение — получение маркера для вызова API
+# <a name="single-page-application-acquire-a-token-to-call-an-api"></a>Одностраничное приложение: получение маркера для вызова API
 
-Шаблон для получения маркеров для API-интерфейсов с помощью MSAL. js — сначала попытайтесь выполнить запрос маркера `acquireTokenSilent` в автоматическом режиме с помощью метода. При вызове этого метода библиотека сначала проверяет кэш в хранилище браузера, чтобы узнать, существует ли допустимый маркер, и возвращает его. Если в кэше нет допустимого маркера, он отправляет запрос на автоматическую лексему в Azure Active Directory (Azure AD) из скрытого IFRAME. Этот метод также позволяет библиотеке обновлять маркеры. Дополнительные сведения о сеансах единого входа и значениях времени существования маркеров в Azure AD см. в разделе [время существования маркеров](active-directory-configurable-token-lifetimes.md).
+Шаблон для получения маркеров для API-интерфейсов с помощью MSAL. js — сначала попытайтесь выполнить запрос маркера без уведомления с помощью метода `acquireTokenSilent`. При вызове этого метода библиотека сначала проверяет кэш в хранилище браузера, чтобы узнать, существует ли допустимый маркер, и возвращает его. Если в кэше нет допустимого маркера, он отправляет запрос на автоматическую лексему в Azure Active Directory (Azure AD) из скрытого IFRAME. Этот метод также позволяет библиотеке обновлять маркеры. Дополнительные сведения о сеансах единого входа и значениях времени существования маркеров в Azure AD см. в разделе [время существования маркеров](active-directory-configurable-token-lifetimes.md).
 
-Неуспешные запросы маркера к Azure AD могут завершиться сбоем по некоторым причинам, таким как просроченный сеанс Azure AD или изменение пароля. В этом случае можно вызвать один из интерактивных методов (который предложит пользователю) получить маркеры.
+Запросы токенов без уведомления к Azure AD могут завершиться сбоем по причинам, например просроченному сеансу Azure AD или изменению пароля. В этом случае можно вызвать один из интерактивных методов (который будет предлагать пользователю) получить маркеры:
 
-* [Получение маркера во всплывающем окне](#acquire-token-with-a-pop-up-window) с помощью`acquireTokenPopup`
-* [Получение токена с](#acquire-token-with-redirect) перенаправлением с помощью`acquireTokenRedirect`
+* [Всплывающее окно](#acquire-a-token-with-a-pop-up-window)с использованием `acquireTokenPopup`
+* [Перенаправление](#acquire-a-token-with-a-redirect)с помощью `acquireTokenRedirect`
 
-**Выбор между всплывающим окном или перенаправлением**
+## <a name="choose-between-a-pop-up-or-redirect-experience"></a>Выбор между всплывающим окном или перенаправлением
 
- В приложении нельзя использовать сочетание методов всплывающего окна и перенаправления. Выбор между всплывающим окном или перенаправлением зависит от потока приложения.
+ В приложении нельзя использовать методы всплывающего окна и перенаправления. Выбор между всплывающим окном или перенаправлением зависит от потока приложения:
 
-* Если вы не хотите, чтобы пользователь перешел со страницы основного приложения во время проверки подлинности, рекомендуется использовать всплывающие методы. Так как перенаправление проверки подлинности происходит во всплывающем окне, состояние основного приложения сохраняется.
+* Если вы не хотите, чтобы пользователи перейдут с основной страницы приложения во время проверки подлинности, мы рекомендуем использовать всплывающий метод. Так как перенаправление проверки подлинности происходит во всплывающем окне, состояние основного приложения сохраняется.
 
-* В некоторых случаях может потребоваться использовать методы перенаправления. Если у пользователей приложения есть ограничения браузера или политики, в которых отключены всплывающие окна, можно использовать методы перенаправления. Также рекомендуется использовать методы перенаправления с браузером Internet Explorer, так как при обработке всплывающих окон возникают определенные [проблемы с Internet Explorer](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/Known-issues-on-IE-and-Edge-Browser) .
+* Если у пользователей есть ограничения браузера или политики, в которых отключены всплывающие окна, можно использовать метод перенаправления. Используйте метод Redirect в браузере Internet Explorer, так как существуют [Известные проблемы с всплывающими окнами в Internet Explorer](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/Known-issues-on-IE-and-Edge-Browser).
 
-Вы можете задать области API, которые должен включить маркер доступа при создании запроса маркера доступа. Обратите внимание, что все запрошенные области могут быть не предоставлены в маркере доступа и зависят от согласия пользователя.
+Можно задать области API, которые должен включить маркер доступа при создании запроса маркера доступа. Обратите внимание, что в маркере доступа могут быть не предоставлены все запрошенные области. Это зависит от согласия пользователя.
 
-## <a name="acquire-token-with-a-pop-up-window"></a>Получение маркера во всплывающем окне
+## <a name="acquire-a-token-with-a-pop-up-window"></a>Получение маркера с помощью всплывающего окна
 
 ### <a name="javascript"></a>JavaScript
 
-Приведенный выше шаблон, использующий методы для всплывающего окна:
+Следующий код сочетает ранее описанный шаблон с методами для всплывающего окна:
 
 ```javascript
 const accessTokenRequest = {
@@ -54,10 +54,10 @@ const accessTokenRequest = {
 
 userAgentApplication.acquireTokenSilent(accessTokenRequest).then(function(accessTokenResponse) {
     // Acquire token silent success
-    // call API with token
+    // Call API with token
     let accessToken = accessTokenResponse.accessToken;
 }).catch(function (error) {
-    //Acquire token silent failure, send an interactive request.
+    //Acquire token silent failure, and send an interactive request
     if (error.errorMessage.indexOf("interaction_required") !== -1) {
         userAgentApplication.acquireTokenPopup(accessTokenRequest).then(function(accessTokenResponse) {
             // Acquire token interactive success
@@ -72,9 +72,9 @@ userAgentApplication.acquireTokenSilent(accessTokenRequest).then(function(access
 
 ### <a name="angular"></a>Angular
 
-MSAL угловая оболочка предоставляет возможность добавления перехватчика HTTP, который автоматически получает маркеры доступа и прикрепляет их к HTTP-запросам к API.
+MSAL угловая оболочка предоставляет перехватчик HTTP, который автоматически получает маркеры доступа и прикрепляет их к HTTP-запросам к API.
 
-Вы можете указать области для API-интерфейсов в `protectedResourceMap` параметре конфигурации, который мсалинтерцептор будет запрашивать при автоматическом получении маркеров.
+Области для API-интерфейсов можно указать в параметре конфигурации `protectedResourceMap`. `MsalInterceptor` будет запрашивать эти области при автоматическом получении маркеров.
 
 ```javascript
 //In app.module.ts
@@ -93,7 +93,7 @@ providers: [ ProductService, {
    ],
 ```
 
-В случае успеха и сбоя при получении автоматического получения маркера MSAL в радиальном режиме предоставляет обратные вызовы, на которые можно подписываться. Также важно отменить подписывание.
+В случае успеха и сбоя при получении автоматического получения маркера MSALный угловой предоставляет обратные вызовы, на которые можно подписываться. Также важно отменить подписывание.
 
 ```javascript
 // In app.component.ts
@@ -110,17 +110,17 @@ ngOnDestroy() {
  }
 ```
 
-Кроме того, можно явно получить маркеры с помощью методов получения маркера, как описано в разделе Основная библиотека MSAL. js.
+Кроме того, можно явно получить токены с помощью методов получения маркера, как описано в разделе Основная библиотека MSAL. js.
 
-## <a name="acquire-token-with-redirect"></a>Получение маркера с перенаправлением
+## <a name="acquire-a-token-with-a-redirect"></a>Получение маркера с перенаправлением
 
 ### <a name="javascript"></a>JavaScript
 
-Шаблон описан выше, но показан с помощью метода Redirect для получения маркера в интерактивном режиме. Вам нужно будет зарегистрировать обратный вызов перенаправления, как упоминалось выше.
+Следующий шаблон описан ранее, но показан с помощью метода Redirect для получения маркеров в интерактивном режиме. Вам потребуется зарегистрировать обратный вызов перенаправления, как упоминалось ранее.
 
 ```javascript
 function authCallback(error, response) {
-    //handle redirect response
+    // Handle redirect response
 }
 
 userAgentApplication.handleRedirectCallback(authCallback);
@@ -131,10 +131,10 @@ const accessTokenRequest: AuthenticationParameters = {
 
 userAgentApplication.acquireTokenSilent(accessTokenRequest).then(function(accessTokenResponse) {
     // Acquire token silent success
-    // call API with token
+    // Call API with token
     let accessToken = accessTokenResponse.accessToken;
 }).catch(function (error) {
-    //Acquire token silent failure, send an interactive request.
+    //Acquire token silent failure, and send an interactive request
     console.log(error);
     if (error.errorMessage.indexOf("interaction_required") !== -1) {
         userAgentApplication.acquireTokenRedirect(accessTokenRequest);
@@ -142,15 +142,14 @@ userAgentApplication.acquireTokenSilent(accessTokenRequest).then(function(access
 });
 ```
 
-## <a name="request-for-optional-claims"></a>Запрос дополнительных утверждений
-Вы можете запросить дополнительные утверждения в приложении, чтобы указать, какие дополнительные утверждения следует включить в токены для вашего приложения. Чтобы запросить необязательные утверждения в id_token, можно отправить объект утверждений переведенные в поле Клаимсрекуест класса AuthenticationParameters. TS.
-
+## <a name="request-optional-claims"></a>Запрос необязательных утверждений
 Необязательные утверждения можно использовать в следующих целях:
 
-- Для включения дополнительных утверждений в токены для вашего приложения.
+- Включите дополнительные утверждения в токены для вашего приложения.
 - изменить поведение определенных утверждений в токенах, возвращаемых Azure AD;
-- добавлять пользовательские утверждения для приложения и обращаться к ним.
+- добавлять пользовательские утверждения для приложения и обращаться к ним. 
 
+Чтобы запросить необязательные утверждения в `IdToken`, можно отправить объект утверждений переведенные в поле `claimsRequest` класса `AuthenticationParameters.ts`.
 
 ### <a name="javascript"></a>JavaScript
 ```javascript
@@ -170,14 +169,14 @@ var request = {
 
 myMSALObj.acquireTokenPopup(request);
 ```
-Дополнительные сведения о необязательных утверждениях см. в статье извлечение [дополнительных утверждений](active-directory-optional-claims.md) .
+Дополнительные сведения см. в разделе [необязательные утверждения](active-directory-optional-claims.md).
 
 
 ### <a name="angular"></a>Angular
 
-Это то же самое, что описано выше.
+Этот код аналогичен описанному выше.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Вызов веб-API](scenario-spa-call-api.md)

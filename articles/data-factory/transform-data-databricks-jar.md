@@ -1,23 +1,22 @@
 ---
-title: Преобразование данных с помощью JAR-файла в Azure
+title: Преобразование данных с помощью JAR-файла
 description: Сведения об обработке или преобразовании данных с помощью Databricks Jar.
 services: data-factory
 documentationcenter: ''
 ms.assetid: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 03/15/2018
-author: nabhishek
 ms.author: abnarain
-manager: craigg
-ms.openlocfilehash: 982f00b5de9fd3e84233e5fe3b68e22fa6f7fe2a
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+author: nabhishek
+manager: shwang
+ms.date: 03/15/2018
+ms.openlocfilehash: 20858069b745beeaf64951c4ef23c2eb85251985
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73683958"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74929118"
 ---
 # <a name="transform-data-by-running-a-jar-activity-in-azure-databricks"></a>Преобразование данных с помощью выполнения действий Jar в Azure Databricks
 
@@ -56,18 +55,18 @@ ms.locfileid: "73683958"
 
 В следующей таблице приведено описание свойств, используемых в определении JSON.
 
-|Свойство|ОПИСАНИЕ|обязательные|
+|Свойство|Описание|Обязательно для заполнения|
 |:--|---|:-:|
-|Имя|Имя действия в конвейере.|Yes|
-|Описание|Описание действия.|Нет|
-|type|Тип действия Jar в Databricks — DatabricksSparkJar.|Yes|
-|linkedServiceName (имя связанной службы)|Имя связанной службы Databricks, в которой выполняется действие Jar. Дополнительные сведения об этой связанной службе см. в статье  [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md) .|Yes|
-|mainClassName|Полное имя класса, содержащего метод main, который будет выполнен. Этот класс должен содержаться в файле JAR, предоставляемом в виде библиотеки.|Yes|
-|Параметры|Параметры, которые будут переданы в метод main.  Массив строк.|Нет|
+|name|Имя действия в конвейере.|ДА|
+|Description (Описание)|Описание действия.|Нет|
+|Тип|Тип действия Jar в Databricks — DatabricksSparkJar.|ДА|
+|linkedServiceName|Имя связанной службы Databricks, в которой выполняется действие Jar. Дополнительные сведения об этой связанной службе см. в статье  [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md) .|ДА|
+|mainClassName|Полное имя класса, содержащего метод main, который будет выполнен. Этот класс должен содержаться в файле JAR, предоставляемом в виде библиотеки.|ДА|
+|parameters|Параметры, которые будут переданы в метод main.  Массив строк.|Нет|
 |libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Массив объектов <строка, объект>|Да (по крайней мере один метод, содержащий mainClassName)|
 
 > [!NOTE]
-> **Известная ошибка** . при использовании одного и того же [интерактивного кластера](compute-linked-services.md#example---using-existing-interactive-cluster-in-databricks) для выполнения операций JAR-файла с параллельными модулями данных (без перезапуска кластера) существует известная ошибка в модулях данных, где в параметрах первого действия будут использоваться следующие действия. также. Поэтому в последующие задания передаются неверные параметры. Для устранения этой проблемы используйте вместо этого [кластер заданий](compute-linked-services.md#example---using-new-job-cluster-in-databricks) . 
+> **Известная ошибка** . при использовании одного и того же [интерактивного кластера](compute-linked-services.md#example---using-existing-interactive-cluster-in-databricks) для выполнения операций JAR-файла с параллельными модулями данных (без перезапуска кластера) существует известная ошибка в модулях данных, где в параметрах первого действия будут использоваться следующие действия. Поэтому в последующие задания передаются неверные параметры. Для устранения этой проблемы используйте вместо этого [кластер заданий](compute-linked-services.md#example---using-new-job-cluster-in-databricks) . 
 
 ## <a name="supported-libraries-for-databricks-activities"></a>Поддерживаемые библиотеки для действий Databricks
 

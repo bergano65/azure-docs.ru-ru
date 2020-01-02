@@ -1,5 +1,6 @@
 ---
-title: Управление сеансами единого входа с помощью настраиваемых политик в Azure Active Directory B2C | Документация Майкрософт
+title: Управление сеансами единого входа с помощью пользовательских политик
+titleSuffix: Azure AD B2C
 description: Узнайте, как для управлять сеансами единого входа с помощью настраиваемых политик в Azure AD B2C.
 services: active-directory-b2c
 author: mmacy
@@ -10,12 +11,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 5ae30b316133b7479b66a69a3467497a7151dbc8
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: ee32b13820cb50fc1649672b78b34e7e293d65b5
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71065384"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74950499"
 ---
 # <a name="single-sign-on-session-management-in-azure-active-directory-b2c"></a>Управление сеансами единого входа в Azure Active Directory B2C
 
@@ -29,10 +30,10 @@ ms.locfileid: "71065384"
 
 В Azure AD B2C можно использовать определенное количество поставщиков сеансов единого входа.
 
-* NoopSSOSessionProvider;
-* DefaultSSOSessionProvider;
-* ExternalLoginSSOSessionProvider;
-* SamlSSOSessionProvider.
+* NoopSSOSessionProvider
+* DefaultSSOSessionProvider
+* ExternalLoginSSOSessionProvider
+* SamlSSOSessionProvider
 
 Классы управления единым входом указываются с помощью элемента `<UseTechnicalProfileForSessionManagement ReferenceId=“{ID}" />` технического профиля.
 
@@ -89,7 +90,7 @@ ms.locfileid: "71065384"
 
 Технический профиль содержит два элемента метаданных.
 
-| Элемент | Default Value | Возможные значения | Описание
+| Элемент | Значение по умолчанию | Возможные значения | Описание
 | --- | --- | --- | --- |
 | IncludeSessionIndex | true | True или false | Указывает поставщику, что следует сохранить индекс сеанса. |
 | RegisterServiceProviders | true | True или false | Указывает, что поставщик должен зарегистрировать все поставщики услуг SAML, которыми было выдано утверждение. |

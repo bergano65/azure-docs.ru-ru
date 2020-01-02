@@ -4,22 +4,25 @@ ms.author: aahi
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 10/08/2019
-ms.openlocfilehash: a7ae6cb1231e4c202dfd0a39602c03b33099d088
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 5089af4a4e1714d49b844a1b6823487a3f6a8dcf
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72554718"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74483018"
 ---
 Начните использовать службу "Детектор аномалий", создав один из ресурсов Azure ниже.
 
-* [Пробный ресурс](https://azure.microsoft.com/try/cognitive-services/#decision) (подписка Azure не требуется): 
+* <a href="https://azure.microsoft.com/try/cognitive-services/#decision" target="_blank" rel="noopener">Создание пробного ресурса (открывается на новой вкладке)</a>
+    * Подписка Azure не требуется: 
     * срок действия —7 дней, бесплатно. После регистрации ключ пробной версии и конечная точка будут доступными на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis/). 
     * Это отличный вариант, если вы хотите опробовать Детектор аномалий, но у вас нет подписки Azure.
 
-* Ресурс [Детектор аномалий](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAnomalyDetector):
-    * доступен на [портале Azure](https://ms.portal.azure.com#blade/HubsExtension/BrowseResourceGroupBlade) до удаления.
+* <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAnomalyDetector" target="_blank" rel="noopener">Создание ресурса "Детектор аномалий" (открывается на новой вкладке)</a>
+    * доступен на портале Azure до удаления.
     * Используйте бесплатную ценовую категорию, чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
+
+
 
 ### <a name="create-an-environment-variable"></a>Создание переменной среды
 
@@ -37,8 +40,8 @@ ms.locfileid: "72554718"
 #### <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
 ```console
-setx ANOMALY_DETECTOR_KEY your-anomaly-detector-key
-setx ANOMALY_DETECTOR_ENDPOINT your-anomaly-detector-endpoint
+setx ANOMALY_DETECTOR_KEY <replace-with-your-anomaly-detector-key>
+setx ANOMALY_DETECTOR_ENDPOINT <replace-with-your-anomaly-detector-endpoint>
 ```
 
 Добавив переменную среды, перезапустите окно консоли.
@@ -46,8 +49,8 @@ setx ANOMALY_DETECTOR_ENDPOINT your-anomaly-detector-endpoint
 #### <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
 ```bash
-export ANOMALY_DETECTOR_KEY=your-anomaly-detector-key
-export ANOMALY_DETECTOR_ENDPOINT=your-anomaly-detector-endpoint
+export ANOMALY_DETECTOR_KEY=<replace-with-your-anomaly-detector-key>
+export ANOMALY_DETECTOR_ENDPOINT=<replace-with-your-anomaly-detector-endpoint>
 ```
 
 После добавления переменной среды запустите `source ~/.bashrc` из окна консоли, чтобы применить изменения.
@@ -57,8 +60,8 @@ export ANOMALY_DETECTOR_ENDPOINT=your-anomaly-detector-endpoint
 Измените `.bash_profile` и добавьте переменную среды:
 
 ```bash
-export ANOMALY_DETECTOR_KEY=your-anomaly-detector-key
-export ANOMALY_DETECTOR_ENDPOINT=your-anomaly-detector-endpoint
+export ANOMALY_DETECTOR_KEY=<replace-with-your-anomaly-detector-key>
+export ANOMALY_DETECTOR_ENDPOINT=<replace-with-your-anomaly-detector-endpoint>
 ```
 
 После добавления переменной среды запустите `source .bash_profile` из окна консоли, чтобы применить изменения.

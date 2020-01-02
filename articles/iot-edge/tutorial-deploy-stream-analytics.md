@@ -1,18 +1,18 @@
 ---
-title: Руководство по Stream Analytics на граничной системе (Azure IoT Edge)
+title: Учебник. Stream Analytics на пограничных устройствах (Azure IoT Edge)
 description: В этом руководстве Azure Stream Analytics развертывается в качестве модуля на устройстве IoT Edge.
 author: kgremban
 ms.author: kgremban
 ms.date: 11/11/2019
 ms.topic: tutorial
 ms.service: iot-edge
-ms.custom: mvc, seodec18
-ms.openlocfilehash: fcb272a6161ecae99f969fbf6689944ea85a1384
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.custom: mvc
+ms.openlocfilehash: b4c4415819ba614bb584f1bc5cb0acfe136c174c
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74114023"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707065"
 ---
 # <a name="tutorial-deploy-azure-stream-analytics-as-an-iot-edge-module"></a>Руководство по Развертывание Azure Stream Analytics в качестве модуля IoT Edge
 

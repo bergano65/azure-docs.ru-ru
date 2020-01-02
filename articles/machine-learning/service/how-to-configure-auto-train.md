@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: c70226ef58ed60a7be556b88366953796ed6fff1
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: ddcf97a8c7ae6000c14638a8292bc8b4f39ed87d
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73580563"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74978345"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка автоматизированных экспериментов машинного обучения в Python
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "73580563"
 * выбор целевого объекта вычислений (локальный или удаленный);
 * настройка параметров эксперимента автоматического машинного обучения;
 * выполнение эксперимента автоматического машинного обучения;
-* изучение метрик модели;
+* Изучение метрик модели
 * регистрация и развертывание модели.
 
 Если вы предпочитаете работать без кода, вы также можете [создавать автоматические эксперименты машинного обучения в машинное обучение Azure Studio](how-to-create-portal-experiments.md).
@@ -43,7 +43,7 @@ ms.locfileid: "73580563"
 
 Эта служба также поддерживает приведенные ниже алгоритмы для автоматизации и настройки. Пользователю не нужно указывать алгоритм.
 
-классификация; | регрессия; | Прогнозирование временных рядов
+классификация; | Регрессия | Прогнозирование временных рядов
 |-- |-- |--
 [Логистическая регрессия](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)| [Эластичная сеть](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)| [Эластичная сеть](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)
 [Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)|[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)|[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)
@@ -171,17 +171,17 @@ automl_config = AutoMLConfig(task = "classification")
         n_cross_validations=5)
     ```
 
-Три разных `task` значений параметров (Третий тип задачи — `forecasting`и используют тот же пул алгоритмов, что и `regression` задачи), определяют список применяемых моделей. Используйте параметры `whitelist` или `blacklist`, чтобы дополнительно изменить итерации с помощью доступных моделей для включения или исключения. Список поддерживаемых моделей можно найти в [классе суппортедмоделс](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.constants.supportedmodels?view=azure-ml-py).
+Три разных значения параметра `task` (Третий тип задачи — `forecasting`, и использует аналогичный пул алгоритмов в качестве `regression` задач), определяющий список применяемых моделей. Используйте параметры `whitelist` или `blacklist`, чтобы дополнительно изменить итерации с помощью доступных моделей для включения или исключения. Список поддерживаемых моделей можно найти в [классе суппортедмоделс](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.constants.supportedmodels?view=azure-ml-py).
 
 ### <a name="primary-metric"></a>Основная метрика
 Основная метрика определяет метрику, используемую во время обучения модели для оптимизации. Доступные метрики, которые можно выбрать, определяются выбранным типом задачи, а в следующей таблице показаны допустимые основные метрики для каждого типа задачи.
 
-|классификация; | регрессия; | Прогнозирование временных рядов
+|классификация; | Регрессия | Прогнозирование временных рядов
 |-- |-- |--
 |accuracy;| spearman_correlation; | spearman_correlation;
 |AUC_weighted; | normalized_root_mean_squared_error; | normalized_root_mean_squared_error;
 |average_precision_score_weighted. | r2_score; | r2_score;
-|norm_macro_recall | normalized_mean_absolute_error; | normalized_mean_absolute_error;
+|norm_macro_recall; | normalized_mean_absolute_error; | normalized_mean_absolute_error;
 |precision_score_weighted; |
 
 Дополнительные сведения об определенных определениях см. в статье сведения о [автоматических результатах машинного обучения](how-to-understand-automated-ml.md).
@@ -240,7 +240,7 @@ automl_config = AutoMLConfig(task = 'forecasting',
 Существует несколько аргументов по умолчанию, которые можно указать как `kwargs` в объекте `AutoMLConfig`, чтобы изменить поведение ансамблей стека по умолчанию.
 
 * `stack_meta_learner_type`: мета-учебник — это модель, обученная на выходе отдельных моделей разнородных. Мета-сведения по умолчанию `LogisticRegression` для задач классификации (или `LogisticRegressionCV`, если включена перекрестная проверка) и `ElasticNet` для задач «регрессия» и «прогнозирование» (или `ElasticNetCV` при включенной перекрестной проверке). Этот параметр может быть одной из следующих строк: `LogisticRegression`, `LogisticRegressionCV`, `LightGBMClassifier`, `ElasticNet`, `ElasticNetCV`, `LightGBMRegressor`или `LinearRegression`.
-* `stack_meta_learner_train_percentage`: определяет пропорцию обучающего набора (при выборе типа обучения и проверки) для зарезервированного для обучения мета-знания. Значение по умолчанию — `0.2`.
+* `stack_meta_learner_train_percentage`: определяет пропорцию обучающего набора (при выборе типа обучения и проверки) для зарезервированного для обучения мета-знания. По умолчанию имеет значение `0.2`.
 * `stack_meta_learner_kwargs`: необязательные параметры для передачи в инициализатор мета-знания. Эти параметры и типы параметров отражаются на основе соответствующего конструктора модели и пересылаются конструктору модели.
 
 В следующем коде показан пример указания пользовательского поведения ансамблей в объекте `AutoMLConfig`.
@@ -316,7 +316,7 @@ run = experiment.submit(automl_config, show_output=True)
 1. Выход по истечении определенного времени: использование `experiment_timeout_minutes` в параметрах позволяет определить продолжительность выполнения эксперимента в минутах.
 1. Выйти после достижения оценки: использование `experiment_exit_score` приведет к завершению эксперимента после достижения основного показателя метрики.
 
-### <a name="explore-model-metrics"></a>изучение метрик модели;
+### <a name="explore-model-metrics"></a>Изучение метрик модели
 
 Вы можете просмотреть результаты обучения в мини-приложении или встроенном приложении, если вы используете записную книжку. Ознакомьтесь с разделом [Просмотр сведений о выполнении](how-to-track-experiments.md#view-run-details), чтобы получить дополнительные сведения.
 
@@ -326,7 +326,7 @@ run = experiment.submit(automl_config, show_output=True)
 + Автоматизированное проектирование компонентов (если предварительная обработка = true)
 + Масштабирование, нормализация и алгоритм с использованием значений параметров
 
-Мы сделаем его прозрачным, чтобы получить эту информацию из выходных данных fitted_model из автоматизированного ML.
+Мы сделаем его прозрачным, чтобы получить эти сведения из fitted_model выходных данных автоматизированного ML.
 
 ```python
 automl_config = AutoMLConfig(…)
@@ -396,13 +396,13 @@ best_run, fitted_model = automl_run.get_output()
     'Tranformations': ['DateTime','DateTime','DateTime','DateTime','DateTime','DateTime','DateTime','DateTime','DateTime','DateTime','DateTime']}]
   ```
 
-   Описание
+   Где:
 
    |Выходные данные|Определение|
    |----|--------|
    |равфеатуренаме|Имя входного компонента или столбца из предоставленного набора данных.|
    |типедетектед|Обнаружен тип данных функции ввода.|
-   |Рывает|Указывает, была ли функция ввода удалена или использована.|
+   |Выполнен сброс|Указывает, была ли функция ввода удалена или использована.|
    |енгинирингфеатурекаунт|Количество функций, созданных с помощью автоматизированных преобразований «разработка компонентов».|
    |Преобразования|Список преобразований, применяемых к функциям ввода для создания сконструированных функций.|
    
@@ -434,7 +434,7 @@ featurization_config.add_transformer_params('HashOneHotEncoder', [], {"number_of
 
 ### <a name="scalingnormalization-and-algorithm-with-hyperparameter-values"></a>Масштабирование, нормализация и алгоритм со значениями параметров.
 
-Чтобы получить представление о масштабировании, нормализации и значении параметра Algorithm и параметров в конвейере, используйте fitted_model. шаги. Дополнительные [сведения о масштабировании и нормализации](concept-automated-ml.md#preprocess). Пример выходных данных:
+Чтобы получить представление о масштабировании, нормализации и значении параметра алгоритма или параметров в конвейере, используйте fitted_model. шаги. Дополнительные [сведения о масштабировании и нормализации](concept-automated-ml.md#preprocess). Пример выходных данных:
 
 ```
 [('RobustScaler', RobustScaler(copy=True, quantile_range=[10, 90], with_centering=True, with_scaling=True)), ('LogisticRegression', LogisticRegression(C=0.18420699693267145, class_weight='balanced', dual=False, fit_intercept=True, intercept_scaling=1, max_iter=100, multi_class='multinomial', n_jobs=1, penalty='l2', random_state=None, solver='newton-cg', tol=0.0001, verbose=0, warm_start=False))

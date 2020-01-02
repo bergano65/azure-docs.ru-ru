@@ -15,12 +15,12 @@ ms.custom: mvc
 ms.date: 09/26/2019
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f5a9f83a8f6e8d5e83f30d30da2b1c4c0f722dc3
-ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
+ms.openlocfilehash: 7ee30962db230417bf3e20a354614a5ebb8f35a0
+ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73063057"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74561896"
 ---
 # <a name="what-is-managed-identities-for-azure-resources"></a>Что такое управляемые удостоверения для ресурсов Azure?
 
@@ -43,7 +43,7 @@ ms.locfileid: "73063057"
 - **Идентификатор субъекта** — идентификатор объекта субъекта-службы для управляемого удостоверения, которое используется для предоставления доступа на основе ролей к ресурсу Azure.
 - **Служба метаданных экземпляров Azure (IMDS)**  — конечная точка REST, доступная всем виртуальным машинам IaaS, которые созданы с помощью Azure Resource Manager. Конечная точка доступна по известному IP-адресу без поддержки маршрутизации (169.254.169.254), к которому можно получить доступ только в пределах виртуальной машины.
 
-## Принцип работы управляемых удостоверений для ресурсов Azure<a name="how-does-it-work"></a>
+## <a name="how-does-the-managed-identities-for-azure-resources-work"></a>Принцип работы управляемых удостоверений для ресурсов Azure
 
 Существует два типа управляемых удостоверений.
 

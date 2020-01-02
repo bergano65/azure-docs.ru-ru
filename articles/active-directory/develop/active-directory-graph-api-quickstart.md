@@ -2,36 +2,31 @@
 title: Использование API Graph Azure AD
 description: API Graph Azure Active Directory (Azure AD) обеспечивает программный доступ к Azure AD через конечные точки REST API OData. Приложения могут использовать API Azure AD Graph для выполнения операций создания, чтения, обновления и удаления (CRUD) с данными и объектами каталогов.
 services: active-directory
-documentationcenter: n/a
 author: rwike77
 manager: CelesteDG
-editor: ''
-tags: ''
 ms.assetid: 9dc268a9-32e8-402c-a43f-02b183c295c5
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 08/28/2019
 ms.author: ryanwi
 ms.reviewer: sureshja
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 662d8ecf3d20716a717a5f04f30e04114c9dce04
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: 5f4baee8186894e985143b7d68d3c4a9ec34b55b
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72374164"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74845133"
 ---
 # <a name="how-to-use-the-azure-ad-graph-api"></a>Использование API Graph Azure AD
 
 > [!IMPORTANT]
-> Мы настоятельно рекомендуем использовать для доступа к ресурсам Azure Active Directory [Microsoft Graph](https://developer.microsoft.com/graph) вместо API Azure AD Graph. В настоящее время усилия наших разработчиков направлены на Microsoft Graph, и дальнейшие усовершенствования API Azure AD Graph не планируются. Существует ограниченное количество сценариев, в которых API Graph Azure AD все еще может быть подходящими. Дополнительные сведения см. в блоге [Microsoft Graph или Azure AD Graph](https://dev.office.com/blogs/microsoft-graph-or-azure-ad-graph) , а также [в статье Перенос приложений Azure ad Graph в Microsoft Graph](https://docs.microsoft.com/graph/migrate-azure-ad-graph-overview).
+> Для доступа к ресурсам Azure Active Directory (Azure AD) настоятельно рекомендуется использовать [Microsoft Graph](https://developer.microsoft.com/graph) , а не API Graph Azure AD. В настоящее время усилия наших разработчиков направлены на Microsoft Graph, и дальнейшие усовершенствования API Azure AD Graph не планируются. Существует ограниченное количество сценариев, в которых API Graph Azure AD все еще может быть подходящими. Дополнительные сведения см. в блоге [Microsoft Graph или Azure AD Graph](https://dev.office.com/blogs/microsoft-graph-or-azure-ad-graph) , а также [в статье Перенос приложений Azure ad Graph в Microsoft Graph](https://docs.microsoft.com/graph/migrate-azure-ad-graph-overview).
 
-API Graph Azure Active Directory (Azure AD) обеспечивает программный доступ к Azure AD через конечные точки REST API OData. Приложения могут использовать API Azure AD Graph для выполнения операций создания, чтения, обновления и удаления (CRUD) с данными и объектами каталогов. Например, можно использовать API Azure AD Graph для создания нового пользователя, просмотра или обновления свойств пользователя, изменения пароля пользователя, проверки членства в группе для доступа на основе ролей, а также отключения или удаления пользователя. Дополнительные сведения о функциях и сценариях приложений Azure AD API Graph см. в статье [API Graph Azure AD](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) и [Предварительные требования для API Graph Azure AD](https://msdn.microsoft.com/library/hh974476.aspx). API Graph Azure AD работает только с рабочими или учебными учетными записями или организациями.
+Azure AD API Graph предоставляет программный доступ к Azure AD через REST API конечные точки OData. Приложения могут использовать API Azure AD Graph для выполнения операций создания, чтения, обновления и удаления (CRUD) с данными и объектами каталогов. Например, можно использовать API Azure AD Graph для создания нового пользователя, просмотра или обновления свойств пользователя, изменения пароля пользователя, проверки членства в группе для доступа на основе ролей, а также отключения или удаления пользователя. Дополнительные сведения о функциях и сценариях приложений Azure AD API Graph см. в статье [API Graph Azure AD](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) и [Предварительные требования для API Graph Azure AD](https://msdn.microsoft.com/library/hh974476.aspx). API Graph Azure AD работает только с рабочими или учебными учетными записями или организациями.
 
 В этой статье рассматривается API Graph Azure AD. Аналогичные сведения, связанные с API Microsoft Graph, см. в статье [Использование API Microsoft Graph](https://developer.microsoft.com/graph/docs/concepts/use_the_api).
 

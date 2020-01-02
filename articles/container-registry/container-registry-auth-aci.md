@@ -1,5 +1,5 @@
 ---
-title: Access from Container Instances
+title: Доступ из экземпляров контейнеров
 description: Узнайте, как обеспечить доступ к образам в закрытом реестре контейнеров из службы "Экземпляры контейнеров Azure" с помощью субъекта-службы Azure Active Directory.
 ms.topic: article
 ms.date: 04/23/2018
@@ -40,14 +40,14 @@ az container create \
     --registry-password <service-principal-password>
 ```
 
-## <a name="sample-scripts"></a>Примеры скриптов
+## <a name="sample-scripts"></a>Примеры сценариев
 
 На GitHub можно найти предыдущие примеры сценариев для Azure CLI, а также версии для Azure PowerShell:
 
-* [Azure CLI][acr-scripts-cli]
+* [Интерфейс командной строки Azure][acr-scripts-cli]
 * [Azure PowerShell][acr-scripts-psh]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В следующих статьях приводятся дополнительные сведения о работе с субъектами-службами и реестром контейнеров Azure.
 

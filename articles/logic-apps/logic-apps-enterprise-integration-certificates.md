@@ -1,22 +1,19 @@
 ---
-title: Защита сообщений B2B с помощью сертификатов в приложениях Azure Logic Apps | Документация Майкрософт
+title: Защита сообщений B2B с помощью сертификатов
 description: Добавление сертификатов для защиты сообщений B2B в Azure Logic Apps с помощью пакета интеграции Enterprise
 services: logic-apps
-ms.service: logic-apps
+ms.suite: integration
 author: divyaswarnkar
 ms.author: divswa
-ms.reviewer: estfan, LADocs
-manager: jeconnoc
-ms.assetid: 4cbffd85-fe8d-4dde-aa5b-24108a7caa7d
-ms.suite: integration
+ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 08/17/2018
-ms.openlocfilehash: be3dbc386b0ac89a85bc1719081df944523c28ce
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.openlocfilehash: 6c5de6eba000c9052c7eb7b31d75804b9f454607
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69997836"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74790692"
 ---
 # <a name="secure-b2b-messages-with-certificates"></a>Защита сообщений B2B с помощью сертификатов
 
@@ -47,10 +44,10 @@ ms.locfileid: "69997836"
 
 3. В разделе **Сертификаты** выберите **Добавить**. В разделе **Добавление сертификата** предоставьте указанные сведения для вашего сертификата. Когда все будет готово, нажмите кнопку **ОК**.
 
-   | Свойство | Значение | Описание | 
+   | Свойство | Value | Описание | 
    |----------|-------|-------------|
-   | **Name** | <*certificate-name*> | Имя сертификата, в этом примере — "publicCert" | 
-   | **Тип сертификата** | Открытый | Тип вашего сертификата |
+   | **Имя** | <*certificate-name*> | Имя сертификата, в этом примере — "publicCert" | 
+   | **Тип сертификата** | Общедоступные | Тип вашего сертификата |
    | **Certificate** | <*certificate-file-name*> | Чтобы найти и выбрать файл сертификата, который требуется загрузить, выберите значок папки рядом с полем **Сертификат**. |
    ||||
 
@@ -86,10 +83,10 @@ ms.locfileid: "69997836"
 
 5. В разделе **Сертификаты** выберите **Добавить**. В разделе **Добавление сертификата** предоставьте указанные сведения для вашего сертификата. Когда все будет готово, нажмите кнопку **ОК**.
 
-   | Свойство | Значение | Описание | 
+   | Свойство | Value | Описание | 
    |----------|-------|-------------|
-   | **Name** | <*certificate-name*> | Имя сертификата, в этом примере — "privateCert" | 
-   | **Тип сертификата** | Закрытый | Тип вашего сертификата |
+   | **Имя** | <*certificate-name*> | Имя сертификата, в этом примере — "privateCert" | 
+   | **Тип сертификата** | Частные | Тип вашего сертификата |
    | **Certificate** | <*certificate-file-name*> | Чтобы найти и выбрать файл сертификата, который требуется загрузить, выберите значок папки рядом с полем **Сертификат**. При использовании хранилища ключей для закрытого ключа отправленный файл будет общедоступным сертификатом. | 
    | **Группа ресурсов** | <*integration-account-resource-group*> | Группа ресурсов учетной записи интеграции, в этом примере — "MyResourceGroup" | 
    | **хранилище ключей;** | <*key-vault-name*> | Имя хранилища ключей Azure |
@@ -102,6 +99,6 @@ ms.locfileid: "69997836"
 
    ![Отображение нового сертификата в Azure](media/logic-apps-enterprise-integration-certificates/new-private-certificate.png) 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание соглашения "бизнес-бизнес"](logic-apps-enterprise-integration-agreements.md)

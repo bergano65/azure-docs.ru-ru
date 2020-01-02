@@ -1,26 +1,17 @@
 ---
-title: PHP (Laravel) с MySQL — Служба приложений Azure | Документация Майкрософт
+title: Руководство по приложению PHP с MySQL
 description: Узнайте, как создать приложение PHP, работающее в Azure, с подключением к базе данных MySQL в Azure. В этом руководстве используется Laravel.
-services: app-service\web
-documentationcenter: php
-author: cephalin
-manager: erikre
-editor: ''
 ms.assetid: 14feb4f3-5095-496e-9a40-690e1414bd73
-ms.service: app-service-web
-ms.workload: web
-ms.tgt_pltfrm: na
 ms.devlang: php
 ms.topic: tutorial
-ms.date: 11/15/2018
-ms.author: cephalin
+ms.date: 11/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: eddccc9897380e3ff47de49771a617bf6cacc407
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d827270c89160097f76a7fdb36f9a6f97525064b
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66138400"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74671993"
 ---
 # <a name="tutorial-build-a-php-and-mysql-app-in-azure"></a>Руководство по Создание приложения PHP в Azure с подключением к базе данных MySQL
 

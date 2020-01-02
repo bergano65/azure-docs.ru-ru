@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 07/23/2019
 ms.author: victorh
-ms.openlocfilehash: fb3d2e70d9485c63d6de156abe9d192afa818814
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 3cf4f2314c7de2b2f7d581faeea88fe3c3177e81
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74075086"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74975063"
 ---
 # <a name="generate-an-azure-application-gateway-self-signed-certificate-with-a-custom-root-ca"></a>Создание самозаверяющего сертификата шлюза приложений Azure с помощью пользовательского корневого ЦС
 
@@ -30,7 +30,7 @@ ms.locfileid: "74075086"
 - Создание самозаверяющего сертификата, подписанного пользовательским центром сертификации
 - Отправка самозаверяющего корневого сертификата в шлюз приложений для проверки подлинности внутреннего сервера
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 - **[OpenSSL](https://www.openssl.org/) на компьютере под управлением Windows или Linux** 
 
@@ -106,7 +106,7 @@ CSR — это открытый ключ, предоставляемый ЦС п
 1. Чтобы создать сертификат, используйте следующую команду:
 
    ```
-   openssl x509 -req -in fabrikam.csr -CA public.crt -CAkey contoso.key -CAcreateserial -out fabrikam.crt -days 365 -sha256
+   openssl x509 -req -in fabrikam.csr -CA  contoso.crt -CAkey contoso.key -CAcreateserial -out fabrikam.crt -days 365 -sha256
    ```
 ### <a name="verify-the-newly-created-certificate"></a>Проверка только что созданного сертификата
 
@@ -179,7 +179,7 @@ openssl s_client -connect localhost:443 -servername www.fabrikam.com -showcerts
 
 Чтобы отправить сертификат в шлюзе приложений, необходимо экспортировать CRT-сертификат в формате CER с кодировкой 64. Поскольку CRT уже содержит открытый ключ в формате Base-64, просто Переименуйте расширение файла с CRT на CER. 
 
-### <a name="azure-portal"></a>портале Azure
+### <a name="azure-portal"></a>портала Azure
 
 Чтобы отправить доверенный корневой сертификат с портала, выберите **Параметры HTTP** и выберите протокол **HTTPS** .
 
@@ -269,7 +269,7 @@ Set-AzApplicationGateway -ApplicationGateway $gw
 
     ![Проверка HTTPS](media/self-signed-certificates/https-probe.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о ССЛ\ТЛС в шлюзе приложений см. в разделе [Общие сведения о завершении работы SSL и сквозном использовании SSL с помощью шлюза приложений](ssl-overview.md).
 

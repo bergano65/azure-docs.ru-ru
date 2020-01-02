@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 08/19/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d7a23ed0a84ebd671c69744dfec145763ef6897
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 598f3bd8500a59cd41cc4126915e6cccbd4fb2f3
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69622722"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74848567"
 ---
 # <a name="licensing-requirements-for-azure-ad-self-service-password-reset"></a>Требования к лицензированию самостоятельного сброса пароля в Azure AD
 
@@ -26,12 +26,12 @@ Azure Active Directory (Azure AD) поставляется в нескольки
 
 Самостоятельный сброс пароля в Azure AD лицензируется для каждого пользователя. Это позволяет отвечать требованиям организаций по назначению соответствующих лицензий для пользователей.
 
-* Самостоятельное изменение паролей для пользователей облака
+* Самостоятельная смена пароля для пользователей облачной службы
    * Я являюсь **пользователем облака** и знаю свой пароль.
       * Я хочу **изменить** пароль.
    * Данная функция включена во все выпуски Azure AD.
 
-* Самостоятельный сброс паролей для пользователей облака
+* Самостоятельный сброс пароля для пользователей облачной службы
    * Я являюсь **пользователем облака** и забыл свой пароль.
       * Я хочу **сбросить** пароль.
    * Эта функция включена в Azure AD Premium P1, P2, Microsoft 365 бизнес или Office 365.
@@ -59,7 +59,7 @@ Azure AD теперь поддерживает групповое лицензи
 
 Некоторые службы Майкрософт недоступны во всех расположениях. Прежде чем назначать лицензию, администратор должен указать для пользователя свойство **Место использования**. Назначить лицензию можно на портале Azure в разделе **Пользователь** > **Профиль** > **Параметры**. *Если лицензии назначаются группам, все пользователи, для которых не указано расположение, наследуют расположение каталога.*
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
 * [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)
@@ -70,5 +70,5 @@ Azure AD теперь поддерживает групповое лицензи
 * [Что такое обратная запись паролей и каково ее назначение](howto-sspr-writeback.md)
 * [Как сообщать о действиях в SSPR](howto-sspr-reporting.md)
 * [Обзор всех параметров SSPR и их значение](concept-sspr-howitworks.md)
-* [Как устранить неполадки самостоятельного сброса пароля](active-directory-passwords-troubleshoot.md)
+* [Думаю, что что-то не так. Разделы справки устранить неполадки SSPR?](active-directory-passwords-troubleshoot.md)
 * [Вопросы, не вошедшие в другие статьи](active-directory-passwords-faq.md)

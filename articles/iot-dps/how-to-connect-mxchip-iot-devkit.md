@@ -1,6 +1,6 @@
 ---
 title: Порядок использования автоподготовки в службе подготовки устройств к добавлению в Центр Интернета вещей для регистрации MXChip IoT DevKit в Центре Интернета вещей | Документация Майкрософт
-description: Порядок использования автоподготовки в службе подготовки устройств к добавлению в Центр Интернета вещей для регистрации MXChip IoT DevKit в Центре Интернета вещей.
+description: Как использовать автоматическую подготовку службы подготовки устройств к добавлению в центр Интернета вещей Azure для регистрации MXChip IoT DevKit с центром Интернета вещей.
 author: liydu
 ms.author: liydu
 ms.date: 06/25/2019
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: jeffya
-ms.openlocfilehash: 2731bbcd6a6b0c8f7d82334c022c017d5eae35f0
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: f05e92f0452b1cfff23e2094354203fd7eaea48b
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71677018"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74975658"
 ---
 # <a name="use-azure-iot-hub-device-provisioning-service-auto-provisioning-to-register-the-mxchip-iot-devkit-with-iot-hub"></a>Использование автоподготовки в службе подготовки устройств к добавлению в Центр Интернета вещей Azure для регистрации MXChip IoT DevKit в Центре Интернета вещей
 
@@ -38,7 +38,7 @@ ms.locfileid: "71677018"
 
 1. Убедитесь, что плата IoT DevKit **не подключена** к компьютеру. Сначала запустите VS Code, а затем подключите плату DevKit к компьютеру.
 
-1. Щелкните `F1`, чтобы открыть палитру команд, затем введите и выберите **Azure IoT Device Workbench. Открыть примеры...** Затем выберите **IoT DevKit** в качестве платы.
+1. Щелкните `F1`, чтобы открыть палитру команд, введите и выберите **Azure IOT Device Workbench: Open examples...** . Затем выберите **IOT DevKit** в качестве доски.
 
 1. На странице с примерами IoT Workbench найдите **Регистрация устройства в DPS** и щелкните **Открыть пример**. Затем выберите путь по умолчанию, чтобы загрузить пример кода.
     ![Открытие примера](media/how-to-connect-mxchip-iot-devkit/open-sample.png)
@@ -58,9 +58,9 @@ ms.locfileid: "71677018"
 1. В VS Code щелкните строку состояния, чтобы выбрать COM-порт для DevKit.
   ![Выберите COM-порт](media/how-to-connect-mxchip-iot-devkit/select-com.png)
 
-1. В DevKit удерживайте нажатой **кнопку A**, нажмите и отпустите кнопку **Reset** (Сброс), а затем отпустите **кнопку А**. DevKit переходит в режим настройки.
+1. В DevKit нажмите **кнопку a**, принудительно отпустите и Освободите кнопку **сброса** , а затем отпустите **кнопку A**. DevKit переходит в режим конфигурации.
 
-1. Щелкните `F1`, чтобы открыть палитру команд, затем введите и выберите **Azure IoT Device Workbench. Настройка параметров устройства… > Настройка уникальной строки устройства (UDS)** .
+1. Щелкните `F1`, чтобы открыть палитру команд, введите и выберите **Azure IOT Device Workbench: Настройка параметров устройства... > Конфигурации уникальная строка устройства (доменов обновления)** .
   ![Настройте UDS](media/how-to-connect-mxchip-iot-devkit/config-uds.png)
 
 1. Запишите созданную строку уникального секрета устройства. Она понадобится для создания сертификата X.509. Затем нажмите `Enter`.
@@ -85,7 +85,7 @@ ms.locfileid: "71677018"
 1. Заполните переменную `registrationId` в коде. Допускаются только буквенно-цифровые символы, строчные буквы, и дефисы, не более 128 символов. Также запишите и это значение.
   ![Идентификатор регистрации](media/how-to-connect-mxchip-iot-devkit/registration-id.png).
 
-1. Щелкните `F1`, введите и выберите **Azure IoT Device Workbench. Отправка кода устройства**. Система запускает компиляцию и отправку кода в DevKit.
+1. Щелкните `F1`, введите и выберите **Azure IOT Device Workbench: отправить код устройства**. Система запускает компиляцию и отправку кода в DevKit.
   ![Отправка на устройство](media/how-to-connect-mxchip-iot-devkit/device-upload.png)
 
 ## <a name="generate-x509-certificate"></a>Создание сертификата X.509
@@ -102,7 +102,7 @@ ms.locfileid: "71677018"
 1. Сертификат X.509 `.pem` создается в той же папке.
   ![Файл X.509](media/how-to-connect-mxchip-iot-devkit/pem-file.png)
 
-## <a name="create-a-device-enrollment-entry"></a>Создание записи о регистрации устройства
+## <a name="create-a-device-enrollment-entry"></a>Создание записи для регистрации устройства
 
 1. На портале Azure откройте службу подготовки устройств, перейдите к разделу управления регистрациями и нажмите кнопку **Добавить отдельную регистрацию**.
   ![Добавить индивидуальную регистрацию](media/how-to-connect-mxchip-iot-devkit/add-enrollment.png)
@@ -128,7 +128,7 @@ ms.locfileid: "71677018"
 * [Gitter.im](https://gitter.im/Microsoft/azure-iot-developer-kit)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/iot-devkit)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как безопасно зарегистрировать устройство в Службе подготовки устройств с помощью обработчика композиций для удостоверения устройств, после чего устройство может автоматически зарегистрироваться в Центре Интернета вещей Azure. 
 

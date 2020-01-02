@@ -7,12 +7,12 @@ ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 10/24/2019
-ms.openlocfilehash: d0e19c8483321189cb38a4eebdbf7b2cb89785ef
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 0503ebc7a585210f95eb58b0f11ae1dd0a835264
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72933038"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74278604"
 ---
 # <a name="get-started-with-log-queries-in-azure-monitor"></a>Начало работы с запросами журналов Azure Monitor
 
@@ -239,4 +239,7 @@ Perf
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Дополнительные сведения о написании запросов поиска](search-queries.md)
+- Дополнительные сведения об использовании строкового типа данных в запросе журнала см. в статье [Работа со строками в запросах журнала Azure Monitor](string-operations.md).
+- Дополнительные сведения об агрегировании данных в запросе журнала см. в статье [Расширенное агрегирование в запросах журнала Azure Monitor](advanced-aggregations.md).
+- Дополнительные сведения об объединении данных из нескольких таблиц см. в статье [Объединения в запросах журнала Azure Monitor](joins.md).
+- Ознакомьтесь с документацией по всему языку запросов Kusto в [справочнике по языку KQL](/azure/kusto/query/).

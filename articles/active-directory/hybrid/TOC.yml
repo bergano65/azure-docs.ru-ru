@@ -148,8 +148,6 @@
               href: plan-migrate-adfs-password-hash-sync.md
             - name: Миграция из федерации в PTA
               href: plan-migrate-adfs-pass-through-authentication.md
-            - name: Аутентификация в облаке. Промежуточное развертывание (общедоступная предварительная версия)
-              href: how-to-connect-staged-rollout.md
         - name: Рекомендации по разработке архитектуры гибридной идентификации
           items:
             - name: Обзор рекомендаций по разработке архитектуры гибридной идентификации
@@ -322,6 +320,8 @@
       href: reference-connect-version-history.md
     - name: "Журнал версий Azure\_AD Connect Health"
       href: reference-connect-health-version-history.md
+    - name: "Журнал версий агента сквозной аутентификации Azure\_AD"
+      href: reference-connect-pta-version-history.md
     - name: Журнал версий соединителей
       href: reference-connect-sync-connector-version-history.md
     - name: Учетные записи и разрешения

@@ -1,5 +1,5 @@
 ---
-title: Создание интерактивных отчетов с помощью Azure Monitor книг и текстовых параметров | Документация Майкрософт
+title: Текстовые параметры книг Azure Monitor
 description: Упростите создание сложных отчетов с помощью предварительно созданных и настраиваемых параметризованных книг. Дополнительные сведения о текстовых параметрах книги.
 services: azure-monitor
 author: mrbullwinkle
@@ -10,12 +10,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
-ms.openlocfilehash: ee3e24444b87c461841b591176774d4e945e4fcc
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 3b7affb9c7d7be790d4279c1db8174a5dd3b2c2a
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73165164"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74872780"
 ---
 # <a name="workbook-text-parameters"></a>Текстовые параметры книги
 

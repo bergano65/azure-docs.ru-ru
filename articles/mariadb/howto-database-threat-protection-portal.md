@@ -1,17 +1,17 @@
 ---
-title: Расширенная защита от угроз — база данных Azure для MariaDB | Документация Майкрософт
+title: Расширенная защита от угроз — портал Azure — база данных Azure для MariaDB
 description: Система защиты от угроз обнаруживает подозрительные действия в базе данных, указывающие на наличие потенциальных угроз безопасности.
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 07/12/2019
-ms.openlocfilehash: f77d9f105d5c2ff10753f2b4b1ecc962c84eee6e
-ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
+ms.date: 12/02/2019
+ms.openlocfilehash: 1d6eafd38d418066ddf5933139bd4caf6e69ddea
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67869655"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74766979"
 ---
 # <a name="advanced-threat-protection-for-azure-database-for-mariadb"></a>Расширенная защита от угроз для базы данных Azure для MariaDB
 
@@ -23,7 +23,7 @@ ms.locfileid: "67869655"
 > Расширенная защита от угроз доступна в общедоступной предварительной версии. Эта функция доступна во всех областях Azure, где База данных Azure для MariaDB развернута для серверов общего назначения и оптимизированных для операций в памяти.
 
 > [!NOTE]
-> Компонент "Расширенная защита от угроз" **недоступен** в следующих регионах Azure для национальных облаков и облаков для государственных организаций: US Gov (Техас), US Gov (Аризона), US Gov (Айова), US Gov (Вирджиния), восточный регион US DoD, центральный регион US DoD, Центральная Германия, Северная Германия, Восточный Китай, Восточный Китай — 2. Сведения об общей доступности продукта по регионам см. на [этой странице](https://azure.microsoft.com/global-infrastructure/services/).
+> Компонент "Расширенная защита от угроз" **недоступен** в следующих регионах облака правительства и национального облака Azure: US Gov (Техас), US Gov (Аризона), US Gov (Айова), US Gov (Вирджиния), восточный регион US DoD, центральный регион US DoD, Центральная Германия, Северная Германия, Восточный Китай, Восточный Китай 2. Сведения об общей доступности продукта по регионам см. на [этой странице](https://azure.microsoft.com/global-infrastructure/services/).
 
 ## <a name="set-up-threat-detection"></a>Настройка обнаружения угроз
 1. Запустите портал Azure: [https://portal.azure.com](https://portal.azure.com).
@@ -60,7 +60,7 @@ ms.locfileid: "67869655"
    ![Оповещение об обнаружении угроз](./media/howto-database-threat-protection-portal/threat-detection-alert-asc.png)
    
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
 * Дополнительные сведения о ценах см. на [странице цен на базу данных Azure для MariaDB](https://azure.microsoft.com/pricing/details/mariadb/) .  

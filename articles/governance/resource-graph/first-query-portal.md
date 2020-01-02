@@ -1,20 +1,22 @@
 ---
-title: Выполнение запроса с помощью обозревателя Azure Resource Graph
-description: В этой статье описано, как выполнить запрос на портале Azure с помощью обозревателя Azure Resource Graph.
-ms.date: 10/21/2019
+title: Краткое руководство. Первый запрос на портале
+description: В этом кратком руководстве описано, как выполнить первый запрос на портале Azure с помощью обозревателя Azure Resource Graph.
+ms.date: 11/21/2019
 ms.topic: quickstart
-ms.openlocfilehash: 9cb8fdfcc68e2ef8e19a8fce2545d2939ac13e06
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 5cf355e78ad51e06d7ba27d48dd352f35b4c0740
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73958828"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406798"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-azure-resource-graph-explorer"></a>Краткое руководство. Выполнение запроса Resource Graph с помощью обозревателя Azure Resource Graph
 
 Использовать возможности Azure Resource Graph можно непосредственно на портале Azure с помощью обозревателя Azure Resource Graph. Обозреватель Resource Graph предоставляет доступные для просмотра сведения о типах и свойствах ресурсов Azure Resource Manager, к которым можно выполнять запросы. Обозреватель Resource Graph также предоставляет удобный интерфейс для параллельной работы с запросами, оценки результатов и даже преобразования результатов некоторых запросов в диаграмму, которую можно закрепить на панели мониторинга Azure.
 
 Завершив работу с этим кратким руководством, вы выполните с помощью портала Azure и обозревателя Resource Graph простой запрос к Resource Graph и закрепите его результаты на панели мониторинга.
+
+## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
@@ -117,9 +119,7 @@ ms.locfileid: "73958828"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Получите более подробную информацию о [языке запросов](./concepts/query-language.md).
-- Узнайте больше о том, как [изучать ресурсы](./concepts/explore-resources.md).
-- Выполните первый запрос с помощью [Azure CLI](first-query-azurecli.md).
-- Ознакомьтесь с примерами [начальных запросов](./samples/starter.md).
-- Ознакомьтесь с примерами [усложненных запросов](./samples/advanced.md).
-- Оставьте отзыв с помощью [UserVoice](https://feedback.azure.com/forums/915958-azure-governance).
+В этом кратком руководстве вы использовали обозреватель Azure Resource Graph для выполнения первого запроса и ознакомились с примерами панели мониторинга на базе Resource Graph. Чтобы узнать больше о языке Resource Graph, перейдите на страницу сведений о языке запросов.
+
+> [!div class="nextstepaction"]
+> [Получите более подробную информацию о языке запросов](./concepts/query-language.md).

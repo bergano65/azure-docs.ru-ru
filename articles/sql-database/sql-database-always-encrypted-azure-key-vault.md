@@ -1,5 +1,5 @@
 ---
-title: Always Encrypted - Azure Key Vault
+title: Always Encrypted Azure Key Vault
 description: В этой статье показано, как защитить конфиденциальные данные в базе данных SQL с помощью шифрования данных, используя мастер настройки Always Encrypted в SQL Server Management Studio.
 keywords: шифрование данных, ключ шифрования, шифрование в облаке
 services: sql-database
@@ -35,15 +35,15 @@ Always Encrypted — это новая технология шифровани�
 - Создавать таблицу базы данных и шифровать столбцы.
 - Создавать приложение, которое вставляет, выбирает и отображает данные зашифрованных столбцов.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
 Для работы с этим руководством вам потребуется:
 
 - Учетная запись и подписка Azure. Если у вас ее нет, зарегистрируйтесь, чтобы [воспользоваться бесплатной пробной версией](https://azure.microsoft.com/pricing/free-trial/).
 - [SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) версии 13.0.700.242 или более поздней версии.
 - [NET Framework версии 4.6](https://msdn.microsoft.com/library/w0x726c2.aspx) или более поздней версии (на клиентском компьютере).
-- [Visual Studio.](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
-- [Azure PowerShell](/powershell/azure/overview) or [Azure CLI](/cli/azure/install-azure-cli)
+- [Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
+- [Azure PowerShell](/powershell/azure/overview) или [Azure CLI](/cli/azure/install-azure-cli)
 
 ## <a name="enable-your-client-application-to-access-the-sql-database-service"></a>Включение доступа клиентского приложения к службе базы данных SQL
 
@@ -55,12 +55,12 @@ Always Encrypted — это новая технология шифровани�
 
 Теперь, когда клиентское приложение настроено и у вас есть идентификатор приложения, пора создать хранилище ключей и настроить его политику доступа таким образом, чтобы ваше приложение могло обращаться к секретам в хранилище (ключам Always Encrypted). Для создания главного ключа столбца и настройки шифрования с помощью SQL Server Management Studio необходимы разрешения *create*, *get*, *list*, *sign*, *verify*, *wrapKey* и *unwrapKey*.
 
-Можно быстро создать хранилище ключей, выполнив следующий сценарий. For a detailed explanation of these commands and more information about creating and configuring a key vault, see [What is Azure Key Vault?](../key-vault/key-vault-overview.md).
+Можно быстро создать хранилище ключей, выполнив следующий сценарий. Подробное описание этих команд и дополнительные сведения о создании и настройке хранилища ключей см. в разделе [что такое Azure Key Vault?](../key-vault/key-vault-overview.md).
 
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
 > [!IMPORTANT]
-> The PowerShell Azure Resource Manager (RM) module is still supported by Azure SQL Database, but all future development is for the Az.Sql module. The AzureRM module will continue to receive bug fixes until at least December 2020.  The arguments for the commands in the Az module and in the AzureRm modules are substantially identical. For more about their compatibility, see [Introducing the new Azure PowerShell Az module](/powershell/azure/new-azureps-module-az).
+> Модуль PowerShell Azure Resource Manager (RM) по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Модуль AzureRM продолжит принимать исправления ошибок до 2020 декабря.  Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны. Дополнительные сведения о совместимости см. [в разделе Введение в новый модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az).
 
 ```powershell
 $subscriptionName = '<subscriptionName>'
@@ -81,7 +81,7 @@ Set-AzKeyVaultAccessPolicy -VaultName $vaultName -ResourceGroupName $resourceGro
 Set-AzKeyVaultAccessPolicy  -VaultName $vaultName  -ResourceGroupName $resourceGroupName -ServicePrincipalName $applicationId -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
 
 ```powershell
 $subscriptionName = '<subscriptionName>'
@@ -192,11 +192,11 @@ GO
 
 Можно зашифровать столбцы сейчас или сохранить сценарий PowerShell и выполнить его позже. Для целей этого руководства выберите **Перейти к завершению** и нажмите кнопку **Далее**.
 
-### <a name="summary"></a>Резюме
+### <a name="summary"></a>summary
 
 Убедитесь, что все параметры настроены правильно, и нажмите кнопку **Готово** , чтобы завершить настройку Always Encrypted.
 
-![Резюме](./media/sql-database-always-encrypted-azure-key-vault/summary.png)
+![summary](./media/sql-database-always-encrypted-azure-key-vault/summary.png)
 
 ### <a name="verify-the-wizards-actions"></a>Проверка действий мастера
 
@@ -213,13 +213,13 @@ GO
 Теперь, когда функция Always Encrypted настроена, мы можем создать приложение, которое выполняет c зашифрованными столбцами операции *вставки* и *выборки*.  
 
 > [!IMPORTANT]
-> При передаче открытого текста на сервер со столбцами с постоянным шифрованием приложение должно использовать объекты [SqlParameter](https://msdn.microsoft.com/library/system.data.sqlclient.sqlparameter.aspx) . Передача значений литералов без использования объектов SqlParameter приведет к возникновению исключения.
+> При передаче открытого текста на сервер со столбцами Always Encrypted приложение должно использовать объекты [SqlParameter](https://msdn.microsoft.com/library/system.data.sqlclient.sqlparameter.aspx) . Передача значений литералов без использования объектов SqlParameter приведет к возникновению исключения.
 
 1. Откройте Visual Studio и создайте **консольное приложение** C# (Visual Studio 2015 и более ранней версии) или **консольное приложение (.NET Framework)** (Visual Studio 2017 и более поздней версии). Убедитесь, что для проекта используется платформа **.NET Framework** версии 4.6 или более поздней.
 2. Укажите имя проекта **AlwaysEncryptedConsoleApp** и нажмите кнопку **ОК**.
 3. Установите следующие пакеты NuGet, выбрав **Сервис** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**.
 
-Run these two lines of code in the Package Manager Console:
+Выполните следующие две строки кода в консоли диспетчера пакетов:
 
    ```powershell
    Install-Package Microsoft.SqlServer.Management.AlwaysEncrypted.AzureKeyVaultProvider
@@ -608,7 +608,7 @@ SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
      Теперь в зашифрованных столбцах отображаются незашифрованные данные.
      ![Новое консольное приложение](./media/sql-database-always-encrypted-azure-key-vault/ssms-plaintext.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 После создания базы данных с функцией Always Encrypted вы можете сделать следующее:
 

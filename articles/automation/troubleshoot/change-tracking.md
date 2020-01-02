@@ -4,25 +4,25 @@ description: В этой статье приводятся сведения об
 services: automation
 ms.service: automation
 ms.subservice: change-inventory-management
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 01/31/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: beb0b89bdbf143c89a83c0813313a8bbda7235d4
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 482b263b7c8427276d4fdb8681372c2be1ae69ee
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564846"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849400"
 ---
 # <a name="troubleshoot-change-tracking-and-inventory"></a>Устранение неполадок в службах "Отслеживание изменений" и "Учет"
 
 ## <a name="windows"></a>Windows
 
-### <a name="records-not-showing-windows"></a>Сценарий. Записи Отслеживания изменений не отображаются для компьютеров Windows
+### <a name="records-not-showing-windows"></a>Сценарий: записи Отслеживание изменений не отображаются для компьютеров под Windows
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Вы не видите никаких результатов от служб "Учет" или "Отслеживание изменений" для компьютеров Windows, которые подключены к Отслеживанию изменений.
 
@@ -60,7 +60,7 @@ net start healthservice
 > [!NOTE]
 > По умолчанию трассировка ошибок включена. Если вы намерены включить подробные сообщения об ошибках, как в предыдущем примере, используйте параметр `VER`. Для трассировки информации используйте `INF` при вызове `StartTracing.cmd`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

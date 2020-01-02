@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 01/02/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab998b6d9aec663123f0bd2428e4c6f1767f1846
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: c3ce5cff0de2939c25400d1d63138b23bc6c9822
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73158734"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232034"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-canvas"></a>Руководство по Интеграция Azure Active Directory с Canvas
 
@@ -249,7 +249,7 @@ ms.locfileid: "73158734"
    д. Нажмите кнопку **Add User**(Добавить пользователя).
 
 > [!NOTE]
-> Вы можете использовать любые другие средства создания учетной записи пользователя Canvas или API, предоставляемые Canvas для подготовки учетных записей пользователя AAD.
+> Вы можете использовать любые другие средства создания учетной записи пользователя Canvas или API, предоставляемые Canvas, для подготовки учетных записей пользователя AAD.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

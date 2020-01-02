@@ -6,20 +6,20 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 10/18/2019
+ms.date: 11/20/2019
 ms.author: diberry
-ms.openlocfilehash: 10216b52ded61328a73e5401549a59e6abc4667a
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: b158f3738e5d5e33c831e7312c167e5185d19e95
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74125596"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74414534"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Язык программирования [Node.js](https://nodejs.org/). 
 * [Visual Studio Code](https://code.visualstudio.com/)
-* идентификатор общедоступного приложения: df67dcdb-c37d-46af-88e1-8b97951ca1c2.
+* Идентификатор общедоступного приложения: `df67dcdb-c37d-46af-88e1-8b97951ca1c2`
 
 ## <a name="get-luis-key"></a>Получение ключа LUIS
 
@@ -27,7 +27,7 @@ ms.locfileid: "74125596"
 
 ## <a name="get-intent-programmatically"></a>Получение намерения программным способом
 
-Используйте Node.js, чтобы запросить конечную точку прогноза GET [API](https://aka.ms/luis-apim-v3-prediction) и получить результат прогноза.
+Используйте Node.js, чтобы запросить [конечную точку прогноза](https://aka.ms/luis-apim-v3-prediction) и получить результат прогноза.
 
 1. Скопируйте следующий фрагмент кода в файл с именем `predict.js`:
 
@@ -76,24 +76,24 @@ ms.locfileid: "74125596"
     getPrediction().then(()=>console.log("done")).catch((err)=>console.log(err));
     ```
 
-1. Задайте следующие значения:
+1. Замените следующие значения:
 
     * `YOUR-KEY` на ключ для начала разработки.
-    * `YOUR-ENDPOINT` на URL-адрес конечной точки.
+    * `YOUR-ENDPOINT` на URL-адрес конечной точки. Например, `westus2.api.cognitive.microsoft.com`.
 
-1. Установите зависимости, выполнив следующую команду в командной строке: 
+1. Установите зависимости `request`, `request-promise` и `querystring` с помощью следующей команды: 
 
     ```console
     npm install request request-promise querystring
     ```
 
-1. Выполните следующую команду, чтобы запустить код:
+1. Запустите приложение с помощью следующей команды:
 
     ```console
     node predict.js
     ```
 
- 1. Проверьте ответ с прогнозом в формате JSON:   
+ 1. Проверьте ответ прогноза, который возвращается в формате JSON:   
     
     ```console
     {"query":"turn on all lights","prediction":{"topIntent":"HomeAutomation.TurnOn","intents":{"HomeAutomation.TurnOn":{"score":0.5375382},"None":{"score":0.08687421},"HomeAutomation.TurnOff":{"score":0.0207554}},"entities":{"HomeAutomation.Operation":["on"],"$instance":{"HomeAutomation.Operation":[{"type":"HomeAutomation.Operation","text":"on","startIndex":5,"length":2,"score":0.724984169,"modelTypeId":-1,"modelType":"Unknown","recognitionSources":["model"]}]}}}}

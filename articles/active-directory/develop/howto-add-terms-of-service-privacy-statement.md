@@ -1,30 +1,26 @@
 ---
-title: Условия службы и заявление о конфиденциальности для приложений | Azure
+title: Условия обслуживания и заявление о конфиденциальности для приложений | Службы
 description: Узнайте, как настроить условия обслуживания и заявление о конфиденциальности для приложений, зарегистрированных для использования Azure AD.
 services: active-directory
-documentationcenter: dev-center-name
 author: rwike77
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/22/2019
 ms.author: ryanwi
 ms.reviwer: lenalepa, sureshja
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0a01b50573405964b09339d03e84c62dbdd8582
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 9ca59120bcfadc6c75e3687be84a0e70f97fc3c2
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67482865"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74842818"
 ---
-# <a name="how-to-configure-terms-of-service-and-privacy-statement-for-an-app"></a>Практическое руководство: Настройка условия службы и заявление о конфиденциальности для приложения
+# <a name="how-to-configure-terms-of-service-and-privacy-statement-for-an-app"></a>Как настроить условия предоставления услуг и заявления о конфиденциальности для приложения
 
 Разработчики, создающие и обслуживающие приложения, которые интегрируются с Azure Active Directory (Azure AD) и учетными записями Майкрософт, должны добавить ссылки на условия обслуживания и заявление о конфиденциальности приложений. Условия обслуживания и заявление о конфиденциальности отображаются в окне запроса согласия пользователя. Они помогут пользователям понять, что они могут доверять вашему приложению. Условия обслуживания и заявление о конфиденциальности особенно важны для пользовательских мультитенантных приложений, то есть приложений, используемых в нескольких каталогах или доступных для любой учетной записи Майкрософт.
 
@@ -60,16 +56,16 @@ ms.locfileid: "67482865"
 * [с помощью JSON объекта приложения](#app-object-json);
 * [с помощью бета-версии REST API MSGraph](#msgraph-beta-rest-api).
 
-### <a name="azure-portal"></a>С помощью портала Azure
-Выполните следующие действия на портале Azure.
+### <a name="azure-portal"></a>Использование портал Azure
+Выполните следующие действия в портал Azure.
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
 2. Перейдите к разделу **Регистрация приложений** и выберите свое приложение.
-3. Откройте **фирменной символики** области.
+3. Откройте панель **фирменной символики** .
 4. Заполните поля **URL-адрес условий предоставления услуг** и **URL-адрес заявления о конфиденциальности**.
 5. Сохраните изменения.
 
-    ![Свойства приложения содержит термины, службы и конфиденциальности инструкции URL-адресов](./media/howto-add-terms-of-service-privacy-statement/azure-portal-terms-service-privacy-statement-urls.png)
+    ![Свойства приложения содержат условия предоставления услуг и URL-адресов заявления о конфиденциальности](./media/howto-add-terms-of-service-privacy-statement/azure-portal-terms-service-privacy-statement-urls.png)
 
 ### <a name="app-object-json"></a>Использование JSON объекта приложения
 

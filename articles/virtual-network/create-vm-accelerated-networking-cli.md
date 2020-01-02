@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 01/10/2019
 ms.author: gsilva
 ms.custom: ''
-ms.openlocfilehash: 29014674cee4d6498ca7b56582313265da886122
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: eb44163922e318d17d675143ca2d6a3a1fa4ed75
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083670"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74793320"
 ---
 # <a name="create-a-linux-virtual-machine-with-accelerated-networking-using-azure-cli"></a>Создание виртуальной машины Linux с ускоренной сетью с помощью Azure CLI
 
@@ -62,7 +62,10 @@ ms.locfileid: "74083670"
 
 Дополнительные сведения см. в статье [Размеры виртуальных машин Linux в Azure](../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
-### <a name="regions"></a>регионы
+### <a name="custom-images"></a>Пользовательские образы
+Если вы используете пользовательский образ, а образ поддерживает ускоренную работу в сети, убедитесь, что у вас есть необходимые драйверы для работы с сетевыми адаптерами Mellanox ConnectX-3 и ConnectX-4 LX в Azure.
+
+### <a name="regions"></a>Регионы
 Доступно во всех общедоступных регионах Azure, а также в облаках Azure для государственных организаций.
 
 <!-- ### Network interface creation 
@@ -82,7 +85,7 @@ removed per issue https://github.com/MicrosoftDocs/azure-docs/issues/9772 -->
 После создания виртуальной машины можно проверить, включена ли Ускоренная сеть, следуя инструкциям в разделе [подтверждение включения ускорения сети](#confirm-that-accelerated-networking-is-enabled).
 
 ## <a name="cli-creation"></a>Создание интерфейса командной строки
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 Установите последнюю версию [Azure CLI](/cli/azure/install-azure-cli) и войдите в систему с учетной записью Azure, выполнив команду [az login](/cli/azure/reference-index). В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров: *myResourceGroup*, *myNic* и *myVm*.
 

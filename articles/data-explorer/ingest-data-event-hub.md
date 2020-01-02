@@ -7,30 +7,28 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 07/17/2019
-ms.openlocfilehash: 102cfa81c6093ff1aeefdd8d1937143a25cf76f5
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: 13c0bf8d0829debaa4ae41c724aafdaf5891ce4d
+ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72028489"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74667442"
 ---
 # <a name="ingest-data-from-event-hub-into-azure-data-explorer"></a>Прием данных из концентратора событий в Azure Data Explorer
 
 > [!div class="op_single_selector"]
-> * [Портал](ingest-data-event-hub.md)
+> * [Microsoft Azure](ingest-data-event-hub.md)
 > * [C#](data-connection-event-hub-csharp.md)
 > * [Python](data-connection-event-hub-python.md)
+> * [Шаблон Azure Resource Manager](data-connection-event-hub-resource-manager.md)
 
 Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Обозреватель данных Azure позволяет выполнять прием (загрузку) данных из концентраторов событий, платформы потоковой передачи больших данных и службы приема данных событий. [Центры событий](/azure/event-hubs/event-hubs-about) могут обрабатывать миллионы событий в секунду практически в режиме реального времени. В этой статье вы создадите концентратор событий, подключится к нему из Azure обозреватель данных и увидите поток данных через систему.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
-
 * [Тестовый кластер и база данных](create-cluster-database-portal.md).
-
 * [Пример приложения](https://github.com/Azure-Samples/event-hubs-dotnet-ingest), создающего данные и отправляющего их в концентратор событий. Загрузите пример приложения в систему.
-
 * [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) для запуска примера приложения.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
@@ -47,7 +45,7 @@ ms.locfileid: "72028489"
 
     Кнопка **Развернуть в Azure** выполняет переход на портал Azure для заполнения формы развертывания.
 
-    ![Развертывание в Azure](media/ingest-data-event-hub/deploy-to-azure.png)
+    ![Развернуть в Azure](media/ingest-data-event-hub/deploy-to-azure.png)
 
 1. Выберите подписку, в которой нужно создать концентратор событий, и создайте группу ресурсов с именем *test-hub-rg*.
 
@@ -129,7 +127,7 @@ ms.locfileid: "72028489"
 
      **Параметр** | **Рекомендуемое значение** | **Описание поля**
     |---|---|---|
-    | Таблица | *TestTable* | Таблица, созданная в базе данных **TestDatabase**. |
+    | Таблицы | *TestTable* | Таблица, созданная в базе данных **TestDatabase**. |
     | Формат данных | *JSON* | Поддерживаются форматы Avro, CSV, JSON, многострочные JSON, ПСВ, СОХСВ, СКСВ, TSV, ТСВЕ и TXT. Поддерживаемые параметры сжатия: GZip |
     | Сопоставление столбцов | *TestMapping* | [Сопоставление](/azure/kusto/management/mappings) , созданное в **тестдатабасе**, которое сопоставляет входящие данные JSON с именами столбцов и типами данных **тесттабле**. Является обязательным для JSON, MULTILINE JSON, AVRO и необязательным для других форматов.|
     | | |
@@ -137,6 +135,8 @@ ms.locfileid: "72028489"
     > [!NOTE]
     > * Выберите **My data includes routing info** (Мои данные содержат сведения о маршрутизации) для использования динамической маршрутизации, при которой данные содержат необходимые сведения о маршрутизации, как показано в комментариях [примера приложения](https://github.com/Azure-Samples/event-hubs-dotnet-ingest). Если заданы свойства статической и динамической маршрутизации, то свойство динамической маршрутизации переопределяет свойство статической. 
     > * Принимаются только события, помещенные в очередь после создания подключения к данным.
+    > * Включите сжатие GZip для статической маршрутизации, открыв [запрос в службу поддержки в портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview). Включите сжатие GZip для динамической маршрутизации, как показано в [примере приложения](https://github.com/Azure-Samples/event-hubs-dotnet-ingest). 
+    > * В полезных данных сжатия не поддерживаются формат Avro и свойства системы событий.
 
 ## <a name="copy-the-connection-string"></a>Копирование строки подключения
 
@@ -212,6 +212,6 @@ ms.locfileid: "72028489"
 
 1. В новом окне введите имя удаляемой группы ресурсов (*test-hub-rg*) и нажмите кнопку **Удалить**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Запрос данных в обозреватель данных Azure](web-query-data.md)

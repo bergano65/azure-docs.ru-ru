@@ -1,5 +1,5 @@
 ---
-title: Защищенный веб-API — конфигурация кода приложения
+title: Настройка защищенных веб-API приложений | Службы
 titleSuffix: Microsoft identity platform
 description: Узнайте, как создать защищенный веб-API и настроить код приложения.
 services: active-directory
@@ -17,12 +17,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb562caf2dfc83841762748f37d1a7ee325de10b
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 7f78fa35096b7e17d3736190bfa49619c2c81520
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73882625"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74965404"
 ---
 # <a name="protected-web-api-code-configuration"></a>Защищенный веб-API: конфигурация кода
 
@@ -32,7 +32,7 @@ ms.locfileid: "73882625"
 
 Как и веб-приложения, веб-API ASP.NET/ASP.NET Core являются защищенными, так как их действия контроллера начинаются с атрибута `[Authorize]`. Поэтому действия контроллера можно вызывать только в том случае, если API вызывается с удостоверением, которому разрешено.
 
-Учитывайте следующие вопросы.
+Оцените следующие вопросы.
 
 - Как веб-API знает удостоверение приложения, которое его вызывает? (Веб-API может вызывать только приложение.)
 - Если приложение называется веб-API от имени пользователя, удостоверение пользователя?
@@ -148,7 +148,7 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 
 В этой таблице описаны проверяющие элементы управления.
 
-| Управления | ОПИСАНИЕ |
+| Управления | Описание |
 |---------|---------|
 | `ValidateAudience` | Гарантирует, что маркер предназначен для приложения, которое проверяет маркер (для меня). |
 | `ValidateIssuer` | Гарантирует, что маркер был выдан доверенной службой STS (от доверенного лица). |
@@ -163,7 +163,7 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 
 Также можно проверить входящие маркеры доступа в функциях Azure. Примеры проверки маркеров в функциях Azure можно найти в [DotNet](https://github.com/Azure-Samples/ms-identity-dotnet-webapi-azurefunctions), [NodeJS](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-azurefunctions)и [Python](https://github.com/Azure-Samples/ms-identity-python-webapi-azurefunctions).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Проверка областей и ролей приложений в коде](scenario-protected-web-api-verification-scope-app-roles.md)

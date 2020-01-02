@@ -1,17 +1,17 @@
 ---
 title: Краткое руководство. Запуск приложения Azure Spring Cloud с помощью портала Azure
-description: Развертывание примера приложения в Azure Spring Cloud с помощью портала Azure.
+description: В этом руководстве содержатся сведения о развертывании примера приложения в Azure Spring Cloud с помощью портала Azure.
 author: jpconnock
 ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 11/4/2019
 ms.author: jeconnoc
-ms.openlocfilehash: 39a249fb75249505189e2af4872c3a3f61ebe2af
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: a96429a84fab10c033cc18a2c35edb4b2a056924
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74133228"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74895392"
 ---
 # <a name="quickstart-launch-an-azure-spring-cloud-application-using-the-azure-portal"></a>Краткое руководство. Запуск приложения Azure Spring Cloud с помощью портала Azure
 
@@ -72,7 +72,11 @@ az extension add --name spring-cloud
 
 1. Перейдите на страницу **Обзор** службы и выберите **Config Server** (Сервер конфигурации).
 
-1. В разделе **Репозиторий по умолчанию** задайте для параметра **URI** значение "https\://github.com/Azure-Samples/piggymetrics", для параметра **Метка** — значение "config" и щелкните **Применить**, чтобы сохранить изменения.
+1. В разделе **Репозиторий по умолчанию** задайте для параметра **URI** значение "https\://github.com/Azure-Samples/piggymetrics".
+
+1. Задайте для параметра **Метка** значение "config".
+
+1. Щелкните **Применить**, чтобы сохранить изменения.
 
     ![Снимок экрана, где отображается окно портала ASC](media/spring-cloud-quickstart-launch-app-portal/portal-config.png)
 
@@ -92,20 +96,6 @@ az extension add --name spring-cloud
     cd piggymetrics
     mvn clean package -DskipTests
     ```
-
-1. Вход в Azure CLI и настройка активной подписки.
-
-    ```azurecli
-    # Login to Azure CLI
-    az login
-
-    # List all subscriptions
-    az account list -o table
-
-    # Set active subscription
-    az account set --subscription <target subscription ID>
-    ```
-
 1. Назначьте имена группе ресурсов и службе. Обязательно замените заполнители ниже именем группы ресурсов и именем службы, подготовленными ранее в этом учебнике.
 
     ```azurecli
@@ -137,7 +127,7 @@ az extension add --name spring-cloud
 
 1. Выберите приложение `gateway`, чтобы отобразить страницу **Обзор**.
 
-1. Выберите **Назначить домен**, чтобы назначить общедоступную конечную точку шлюзу. Для этого может потребоваться несколько минут.
+1. Выберите **Назначить домен**, чтобы назначить общедоступную конечную точку шлюзу. Это может занять несколько минут.
 
     ![Снимок экрана, где отображается окно портала ASC](media/spring-cloud-quickstart-launch-app-portal/portal-endpoint.png)
 
@@ -159,3 +149,5 @@ az extension add --name spring-cloud
 
 > [!div class="nextstepaction"]
 > [Подготовка приложения Azure Spring Cloud к развертыванию](spring-cloud-tutorial-prepare-app-deployment.md)
+
+Дополнительные примеры доступны на GitHub: [Примеры для Azure Spring Cloud](https://github.com/Azure-Samples/Azure-Spring-Cloud-Samples/tree/master/service-binding-cosmosdb-sql).

@@ -1,29 +1,25 @@
 ---
-title: Клиентские приложения (Библиотека проверки подлинности Майкрософт)
+title: Общедоступные и конфиденциальные клиентские приложения (MSAL) | Службы
 titleSuffix: Microsoft identity platform
 description: Сведения о общедоступных клиентах и конфиденциальных клиентских приложениях в библиотеке проверки подлинности Майкрософт (MSAL).
 services: active-directory
-documentationcenter: dev-center-name
 author: TylerMSFT
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/25/2019
 ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 76c57d3a13f9f03fa635c6c9425e2049e2a2c885
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: 4ad2f271ae0eea2e393aad4eb972eff211655b02
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72803215"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74917103"
 ---
 # <a name="public-client-and-confidential-client-applications"></a>Общедоступные клиентские и конфиденциальные клиентские приложения
 Библиотека проверки подлинности (Майкрософт) (MSAL) определяет два типа клиентов: открытые клиенты и конфиденциальные клиенты. Два типа клиентов различаются их возможностью безопасной проверки подлинности с помощью сервера авторизации и обеспечения конфиденциальности своих клиентских учетных данных. Напротив, Библиотека аутентификация Azure AD (ADAL) использует то, что называется *контекстом проверки подлинности* (это подключение к Azure AD).

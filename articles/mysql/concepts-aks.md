@@ -1,17 +1,17 @@
 ---
-title: Подключение Службы Azure Kubernetes (AKS) к Базе данных Azure для MySQL
+title: Подключение к службе Azure Kubernetes. база данных Azure для MySQL
 description: Сведения о подключении Службы Azure Kubernetes к Базе данных Azure для MySQL
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 11/28/2018
-ms.openlocfilehash: d9f2e26a2bc89329ca9038c666c0d960289e2670
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 12/02/2019
+ms.openlocfilehash: 71b266231b7ed3012e5ea7f65fe9487eeb5fb358
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60790527"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74773617"
 ---
 # <a name="connecting-azure-kubernetes-service-and-azure-database-for-mysql"></a>Подключение Службы Azure Kubernetes к Базе данных Azure для MySQL
 

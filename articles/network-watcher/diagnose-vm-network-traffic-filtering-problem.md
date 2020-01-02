@@ -1,5 +1,6 @@
 ---
-title: Краткое руководство. Диагностика проблемы с фильтром сетевого трафика на виртуальной машине с помощью портала Azure | Документация Майкрософт
+title: Краткое руководство. Диагностика проблемы с фильтром сетевого трафика на виртуальной машине с помощью портала Azure
+titleSuffix: Azure Network Watcher
 description: Из этого краткого руководства вы узнаете, как диагностировать проблему с фильтром сетевого трафика на виртуальной машине с помощью функции проверки IP-потока в Наблюдателе за сетями Azure.
 services: network-watcher
 documentationcenter: network-watcher
@@ -17,12 +18,12 @@ ms.workload: infrastructure
 ms.date: 04/20/2018
 ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: 6478c82a93cd35eead3972bb4dccf402219d9b7d
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: d436fab100dc05cde8a434af564c67477b33d8d3
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64702895"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74276011"
 ---
 # <a name="quickstart-diagnose-a-virtual-machine-network-traffic-filter-problem-using-the-azure-portal"></a>Краткое руководство. Диагностика проблемы с фильтром трафика на виртуальной машине с помощью портала Azure
 
@@ -45,9 +46,9 @@ ms.locfileid: "64702895"
     |ИМЯ|myVm|
     |Имя пользователя| Введите выбранное имя пользователя.|
     |Пароль| Введите выбранный пароль. Пароль должен включать минимум 12 символов и соответствовать [определенным требованиям к сложности](../virtual-machines/windows/faq.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm).|
-    |Подписка| Выберите свою подписку.|
-    |Группа ресурсов| Выберите **Создать новую**, а затем введите **myResourceGroup**.|
-    |Расположение| Выберите **Восточная часть США**.|
+    |Subscription| Выберите свою подписку.|
+    |группа ресурсов.| Выберите **Создать новую**, а затем введите **myResourceGroup**.|
+    |Location| Выберите **Восточная часть США**.|
 
 4. Выберите размер виртуальной машины и щелкните **Выбрать**.
 5. На странице **Параметры** примите все значения по умолчанию и нажмите кнопку **ОК**.
@@ -78,8 +79,8 @@ ms.locfileid: "64702895"
 
     |Параметр            |Значение                                                                                              |
     |---------          |---------                                                                                          |
-    | Группа ресурсов    | Выберите myResourceGroup                                                                            |
-    | Виртуальная машина.   | Выберите myVm                                                                                       |
+    | группа ресурсов.    | Выберите myResourceGroup                                                                            |
+    | Виртуальная машина   | Выберите myVm                                                                                       |
     | сетевому интерфейсу | myvm — имя сетевого интерфейса, созданного на портале при создании виртуальной машины отличается |
     | Протокол          | TCP                                                                                               |
     | Направление         | Исходящие                                                                                          |

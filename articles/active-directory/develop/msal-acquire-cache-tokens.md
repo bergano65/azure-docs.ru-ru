@@ -1,29 +1,25 @@
 ---
-title: Получение и кэширование маркеров с помощью MSAL
+title: Получение маркеров кэша & с помощью MSAL | Службы
 titleSuffix: Microsoft identity platform
 description: Сведения о получении и кэшировании токенов с помощью библиотеки аутентификации Майкрософт (MSAL).
 services: active-directory
-documentationcenter: dev-center-name
 author: TylerMSFT
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/07/2019
 ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2df30156cde0244209f5f07c2627887252642525
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: 3060f79f85db6504c38ba4fc6b7d3df97f0edb55
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73903018"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74963568"
 ---
 # <a name="acquire-and-cache-tokens-using-the-microsoft-authentication-library-msal"></a>Получение и кэширование маркеров с помощью библиотеки проверки подлинности Майкрософт (MSAL)
 
@@ -112,7 +108,7 @@ MSAL хранит кэш токенов (или два кэша для конф�
 - Области, для которых выдан токен.
 - Уникальный идентификатор пользователя.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы используете MSAL для Java, ознакомьтесь с [сериализацией кэша пользовательской лексемы в MSAL для Java](msal-java-token-cache-serialization.md).
 

@@ -1,22 +1,17 @@
 ---
-title: Руководство по развертыванию приложений с помощью шаблонов в Службе приложений Azure| Документация Майкрософт
-description: Рекомендации по созданию шаблонов Azure Resource Manager для развертывания веб-приложений.
-services: app-service
-documentationcenter: app-service
+title: Развертывание приложений с помощью шаблонов
+description: Ознакомьтесь с руководством по созданию шаблонов Azure Resource Manager для предоставления и развертывания приложений службы приложений.
 author: tfitzmac
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: tomfitz
 ms.custom: seodec18
-ms.openlocfilehash: 2af3ec61537dc28ab652b669ff46500db19ab307
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 082ef9753f84aef3f867a9dee4b4e9fbf73dd379
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74130601"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74670098"
 ---
 # <a name="guidance-on-deploying-web-apps-by-using-azure-resource-manager-templates"></a>Руководство по развертыванию веб-приложений с помощью шаблонов Azure Resource Manager
 
@@ -136,7 +131,7 @@ Set-AzKeyVaultAccessPolicy `
 
 Пример шаблона см. в разделе [Развертывание сертификата веб-приложения из секрета Key Vault и его использование для создания SSL-привязки](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-certificate-from-key-vault).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Руководство по развертыванию веб-приложений с помощью шаблона см. [здесь](deploy-complex-application-predictably.md).
 * Сведения о синтаксисе JSON и свойствах типов ресурсов в шаблонах см. в статье [Define resources in Azure Resource Manager templates](/azure/templates/) (Определение ресурсов в шаблонах Azure Resource Manager).

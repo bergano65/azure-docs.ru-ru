@@ -1,141 +1,141 @@
 ---
-title: Deploy Azure AD password protection - Azure Active Directory
-description: Deploy Azure AD password protection to ban bad passwords on-premises
+title: Развертывание защиты паролем Azure AD. Azure Active Directory
+description: Развертывание защиты паролей Azure AD для подключения недопустимых паролей в локальной среде
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: article
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e1d53d63b40ad62a4d21cbad22a67e9e9781b1f
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: f98373fe8eab07519e665ab1eddfd7a9ce6b7e22
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74381716"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74847872"
 ---
 # <a name="deploy-azure-ad-password-protection"></a>Развертывание защиты паролем Azure AD
 
-Now that you understand [how to enforce Azure AD password protection for Windows Server Active Directory](concept-password-ban-bad-on-premises.md), the next step is to plan and execute your deployment.
+Теперь, когда вы понимаете, [как применять защиту паролем Azure AD для Active Directory Windows Server](concept-password-ban-bad-on-premises.md), следующим шагом является планирование и выполнение развертывания.
 
 ## <a name="deployment-strategy"></a>Стратегия развертывания
 
-We recommend that you start deployments in audit mode. Audit mode is the default initial setting, where passwords can continue to be set. Passwords that would be blocked are recorded in the event log. After you deploy the proxy servers and DC Agents in audit mode, you should monitor the impact that the password policy will have on users and the environment when the policy is enforced.
+Рекомендуется запускать развертывания в режиме аудита. Режим аудита является начальным параметром по умолчанию, где можно продолжать устанавливать пароли. Пароли, которые будут заблокированы, записываются в журнал событий. После развертывания прокси-серверов и агентов контроллеров домена в режиме аудита следует отслеживать влияние политики паролей на пользователей и среду при применении политики.
 
-During the audit stage, many organizations find out that:
+На этапе аудита многие организации считают, что:
 
 * Необходимо улучшить имеющиеся операционные процессы, чтобы использовать более безопасные пароли.
-* Users often use unsecure passwords.
-* They need to inform users about the upcoming change in security enforcement, possible impact on them, and how to choose more secure passwords.
+* Пользователи часто используют небезопасные пароли.
+* Они должны информировать пользователей о предстоящем изменении в обеспечении безопасности, возможном влиянии на них и о том, как выбрать более безопасные пароли.
 
-It is also possible for stronger password validation to affect your existing Active Directory domain controller deployment automation. We recommend that at least one DC promotion and one DC demotion happen during the audit period evaluation in order to help uncover such issues in advance.  Дополнительные сведения см. здесь:
+Кроме того, более надежная проверка пароля может повлиять на существующую Active Directory автоматизации развертывания контроллера домена. Во время оценки периода аудита рекомендуется выполнять по крайней мере одно повышение роли контроллера домена и одно понижение контроллера домена, чтобы помочь устранить эти проблемы заранее.  Дополнительные сведения см. здесь:
 
-* [Ntdsutil.exe is unable to set a weak Directory Services Repair Mode password](howto-password-ban-bad-on-premises-troubleshoot.md##ntdsutilexe-fails-to-set-a-weak-dsrm-password)
-* [Domain controller replica promotion fails because of a weak Directory Services Repair Mode password](howto-password-ban-bad-on-premises-troubleshoot.md#domain-controller-replica-promotion-fails-because-of-a-weak-dsrm-password)
-* [Domain controller demotion fails due to a weak local Administrator password](howto-password-ban-bad-on-premises-troubleshoot.md#domain-controller-demotion-fails-due-to-a-weak-local-administrator-password)
+* [Программе Ntdsutil. exe не удается задать пароль режима восстановления слабых служб каталогов](howto-password-ban-bad-on-premises-troubleshoot.md##ntdsutilexe-fails-to-set-a-weak-dsrm-password)
+* [Сбой повышения реплики контроллера домена из-за ненадежного режима восстановления служб каталогов](howto-password-ban-bad-on-premises-troubleshoot.md#domain-controller-replica-promotion-fails-because-of-a-weak-dsrm-password)
+* [Сбой понижения роли контроллера домена из-за ненадежного пароля локального администратора](howto-password-ban-bad-on-premises-troubleshoot.md#domain-controller-demotion-fails-due-to-a-weak-local-administrator-password)
 
-After the feature has been running in audit mode for a reasonable period, you can switch the configuration from *Audit* to *Enforce* to require more secure passwords. Детальный мониторинг в это время — хорошая идея.
+После того как компонент будет запущен в режиме аудита в течение разумного периода времени, можно переключить конфигурацию с режима *аудита* на *принудительное* требование более безопасных паролей. Детальный мониторинг в это время — хорошая идея.
 
 ## <a name="deployment-requirements"></a>Требования к развертыванию
 
-* Licensing requirements for Azure AD password protection can be found in the article [Eliminate bad passwords in your organization](concept-password-ban-bad.md#license-requirements).
-* All machines where the Azure AD Password Protection DC Agent software will be installed must run Windows Server 2012 or later. This requirement does not imply that the Active Directory domain or forest must also be at Windows Server 2012 domain or forest functional level. As mentioned in [Design Principles](concept-password-ban-bad-on-premises.md#design-principles), there is no minimum DFL or FFL required for either the DC agent or proxy software to run.
-* All machines that get the DC agent service installed must have .NET 4.5 installed.
-* All machines where the Azure AD Password Protection Proxy service will be installed  must run Windows Server 2012 R2 or later.
+* Требования к лицензированию для защиты паролей Azure AD см. в статье [устранение недопустимых паролей в Организации](concept-password-ban-bad.md#license-requirements).
+* Все компьютеры, на которых будет установлено программное обеспечение агента DC для защиты паролем Azure AD, должны работать под управлением Windows Server 2012 или более поздней версии. Это требование не подразумевает, что Active Directory домен или лес также должен находиться на функциональном уровне домена или леса Windows Server 2012. Как упоминалось в [принципах разработки](concept-password-ban-bad-on-premises.md#design-principles), не существует минимального ДФЛ или FFL, необходимого для запуска агента контроллера домена или программного обеспечения прокси-сервера.
+* На всех компьютерах, на которых установлена служба агента контроллера домена, должна быть установлена платформа .NET 4,5.
+* Все компьютеры, на которых будет установлена служба прокси-сервера защиты паролей Azure AD, должны работать под управлением Windows Server 2012 R2 или более поздней версии.
    > [!NOTE]
-   > Proxy service deployment is a mandatory requirement for deploying Azure AD password protection even though the domain controller may have outbound direct internet connectivity. 
+   > Развертывание службы прокси является обязательным требованием к развертыванию защиты паролей Azure AD, даже если контроллер домена может иметь исходящее прямое подключение к Интернету. 
    >
-* All machines where the Azure AD Password Protection Proxy service will be installed must have .NET 4.7 installed.
-  .NET 4.7 should already be installed on a fully updated Windows Server. If necessary, download and run the installer found at [The .NET Framework 4.7 offline installer for Windows](https://support.microsoft.com/help/3186497/the-net-framework-4-7-offline-installer-for-windows).
-* All machines, including domain controllers, that have Azure AD password protection components installed must have the Universal C Runtime installed. You can get the runtime by making sure you have all updates from Windows Update. Or you can get it in an OS-specific update package. For more information, see [Update for Universal C Runtime in Windows](https://support.microsoft.com/help/2999226/update-for-uniersal-c-runtime-in-windows).
-* Network connectivity must exist between at least one domain controller in each domain and at least one server that hosts the proxy service for password protection. This connectivity must allow the domain controller to access RPC endpoint mapper port 135 and the RPC server port on the proxy service. By default, the RPC server port is a dynamic RPC port, but it can be configured to [use a static port](#static).
-* All machines where the Azure AD Password Protection Proxy service will be installed must have network access to the following endpoints:
+* На всех компьютерах, на которых будет установлена служба прокси-сервера защиты паролей Azure AD, должна быть установлена платформа .NET 4,7.
+  Платформа .NET 4,7 уже должна быть установлена на полностью обновленной операционной системе Windows Server. При необходимости скачайте и запустите установщик, который находится на странице [автономный установщик .NET Framework 4,7 для Windows](https://support.microsoft.com/help/3186497/the-net-framework-4-7-offline-installer-for-windows).
+* На всех компьютерах, включая контроллеры домена, на которых установлены компоненты защиты паролей Azure AD, должна быть установлена универсальная среда выполнения C. Вы можете получить среду выполнения, убедившись, что у вас есть все обновления от Центр обновления Windows. Или вы можете получить его в пакете обновления для конкретной ОС. Дополнительные сведения см. [в статье обновление для универсальной среды выполнения C в Windows](https://support.microsoft.com/help/2999226/update-for-uniersal-c-runtime-in-windows).
+* Сетевое подключение должно существовать между хотя бы одним контроллером домена в каждом домене и по крайней мере одним сервером, на котором размещена служба прокси-сервера для защиты паролем. Это подключение должно разрешить контроллеру домена доступ к порту сопоставителя конечных точек RPC 135 и порту сервера RPC в службе прокси. По умолчанию порт сервера RPC является динамическим портом RPC, но его можно настроить для [использования статического порта](#static).
+* Все компьютеры, на которых будет установлена прокси-служба защиты паролей Azure AD, должны иметь сетевой доступ к следующим конечным точкам:
 
     |**Конечная точка**|**Назначение**|
     | --- | --- |
     |`https://login.microsoftonline.com`|Запросы на аутентификацию|
     |`https://enterpriseregistration.windows.net`|Функция защиты паролем Azure AD|
  
-* Microsoft Azure AD Connect Agent Updater prerequisites
+* Предварительные требования к обновлению агента Microsoft Azure AD
 
-  The Microsoft Azure AD Connect Agent Updater service is installed side by side with the Azure AD Password Protection Proxy service. Additional configuration is required in order for the Microsoft Azure AD Connect Agent Updater service to be able to function:
+  Служба обновления агента Microsoft Azure AD также устанавливается параллельно с прокси-службой защиты паролей Azure AD. Чтобы служба обновления агента Microsoft Azure AD могла функционировать, требуется дополнительная настройка:
 
-  If your environment uses an http proxy server, you must follow the guidelines specified in [Work with existing on-premises proxy servers](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-connectors-with-proxy-servers).
+  Если в вашей среде используется прокси-сервер HTTP, необходимо следовать рекомендациям, указанным в руководстве по [работе с существующими локальными прокси-серверами](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-connectors-with-proxy-servers).
 
-  The Microsoft Azure AD Connect Agent Updater service also requires the TLS 1.2 steps specified in [TLS requirements](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application#tls-requirements).
+  Для службы обновления Microsoft Azure AD Connect Agent также требуются шаги TLS 1,2, указанные в [требованиях TLS](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application#tls-requirements).
 
-  Network access must be enabled for the set of ports and urls specified in the [Application Proxy environment setup procedures](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application#prepare-your-on-premises-environment).
-
-  > [!WARNING]
-  > Azure AD Password Protection Proxy and Application Proxy install different versions of the Microsoft Azure AD Connect Agent Updater service, which is why the instructions refer to Application Proxy content. These different versions are incompatible when installed side by side, so it is not recommended to install Azure AD Password Protection Proxy and Application Proxy side by side on the same machine.
-
-* All machines that host the proxy service for password protection must be configured to grant domain controllers the ability to log on to the proxy service. This ability is controlled via the "Access this computer from the network" privilege assignment.
-* All machines that host the proxy service for password protection must be configured to allow outbound TLS 1.2 HTTP traffic.
-* A Global Administrator account to register the proxy service for password protection and forest with Azure AD.
-* An account that has Active Directory domain administrator privileges in the forest root domain to register the Windows Server Active Directory forest with Azure AD.
-* Any Active Directory domain that runs the DC Agent service software must use Distributed File System Replication (DFSR) for sysvol replication.
-
-  If your domain is not already using DFSR, you MUST migrate it to use DFSR before installing Azure AD Password Protection. For more information, see the following link:
-
-  [SYSVOL Replication Migration Guide: FRS to DFS Replication](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd640019(v=ws.10))
+  Сетевой доступ должен быть включен для набора портов и URL-адресов, указанных в [процедурах установки среды прокси приложения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application#prepare-your-on-premises-environment).
 
   > [!WARNING]
-  > The Azure AD Password Protection DC Agent software will currently install on domain controllers in domains that are still using FRS (the predecessor technology to DFSR) for sysvol replication, but the software will NOT work properly in this environment. Additional negative side-effects include individual files failing to replicate, and sysvol restore procedures appearing to succeed but silently failing to replicate all files. You should migrate your domain to use DFSR as soon as possible, both for DFSR's inherent benefits and also to unblock the deployment of Azure AD Password Protection. Future versions of the software will be automatically disabled when running in a domain that is still using FRS.
+  > Прокси-сервер защиты паролей Azure AD и прокси приложения устанавливают разные версии службы обновления Microsoft Azure AD Connect Agent, поэтому инструкции ссылаются на содержимое прокси приложения. Эти разные версии несовместимы при установке параллельно, поэтому не рекомендуется устанавливать прокси-сервер защиты паролей Azure AD и прокси приложения параллельно на одном компьютере.
 
-* The Key Distribution Service must be enabled on all domain controllers in the domain that run Windows Server 2012. By default, this service is enabled via manual trigger start.
+* Все компьютеры, на которых размещается служба прокси для защиты паролей, должны быть настроены на предоставление контроллерам домена возможности входа в службу прокси. Эта возможность контролируется с помощью назначения привилегий "доступ к компьютеру из сети".
+* Все компьютеры, на которых размещается служба прокси для защиты паролей, должны быть настроены на разрешение исходящего трафика TLS 1,2 HTTP.
+* Учетная запись глобального администратора, которая регистрирует службу прокси-сервера для защиты пароля и леса с помощью Azure AD.
+* Учетная запись, которая имеет Active Directory права администратора домена в корневом домене леса для регистрации леса Windows Server Active Directory в Azure AD.
+* Любой домен Active Directory, на котором выполняется программное обеспечение службы агента контроллера домена, должен использовать репликацию распределенная файловая система (DFSR) для репликации SYSVOL.
 
-## <a name="single-forest-deployment"></a>Single-forest deployment
+  Если в вашем домене еще не используется служба DFSR, ее необходимо перенести для использования DFSR перед установкой защиты паролей Azure AD. Дополнительные сведения см. по следующей ссылке:
 
-The following diagram shows how the basic components of Azure AD password protection work together in an on-premises Active Directory environment.
+  [Руководство по миграции репликации SYSVOL: FRS — репликация DFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd640019(v=ws.10))
+
+  > [!WARNING]
+  > Программное обеспечение агента DC для защиты паролем Azure AD будет установлено на контроллерах домена в доменах, которые по-прежнему используют службу FRS (для репликации SYSVOL используется технология "предшественника"), но программное обеспечение не будет правильно работать в этой среде. К дополнительным отрицательным побочным эффектам относятся отдельные файлы, которые не реплицируются, и процедуры восстановления SYSVOL, которые завершаются успешно, но не выполняют автоматическую репликацию всех файлов. Необходимо выполнить миграцию домена, чтобы использовать DFSR как можно скорее, и для внутренних преимуществ DFSR, а также для разблокировки развертывания защиты паролей Azure AD. Будущие версии программного обеспечения будут автоматически отключены при работе в домене, который по-прежнему использует службу FRS.
+
+* Служба распространения ключей должна быть включена на всех контроллерах домена, работающих под управлением Windows Server 2012. По умолчанию эта служба включена через запуск триггера вручную.
+
+## <a name="single-forest-deployment"></a>Развертывание с одним лесом
+
+На следующей схеме показано, как базовые компоненты защиты паролей Azure AD работают вместе в локальной среде Active Directory.
 
 ![Взаимодействие компонентов защиты паролем Azure AD](./media/concept-password-ban-bad-on-premises/azure-ad-password-protection.png)
 
-It's a good idea to review how the software works before you deploy it. See [Conceptual overview of Azure AD password protection](concept-password-ban-bad-on-premises.md).
+Рекомендуется проанализировать работу программного обеспечения перед его развертыванием. См. [Общие сведения о защите паролей в Azure AD](concept-password-ban-bad-on-premises.md).
 
 ### <a name="download-the-software"></a>Скачать ПО
 
-There are two required installers for Azure AD password protection. They're available from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=57071).
+Для защиты паролей Azure AD необходимы два необходимых установщика. Они доступны в [центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=57071).
 
-### <a name="install-and-configure-the-proxy-service-for-password-protection"></a>Install and configure the proxy service for password protection
+### <a name="install-and-configure-the-proxy-service-for-password-protection"></a>Установка и Настройка службы прокси-сервера для защиты паролем
 
-1. Choose one or more servers to host the proxy service for password protection.
-   * Each such service can only provide password policies for a single forest. The host machine must be joined to a domain in that forest. Root and child domains are both supported. You need network connectivity between at least one DC in each domain of the forest and the password protection machine.
-   * You can run the proxy service on a domain controller for testing. But that domain controller then requires internet connectivity, which can be a security concern. We recommend this configuration for testing only.
-   * We recommend at least two proxy servers for redundancy. See [High availability](howto-password-ban-bad-on-premises-deploy.md#high-availability).
+1. Выберите один или несколько серверов для размещения службы прокси-сервера для защиты паролем.
+   * Каждая такая служба может предоставлять политики паролей только для одного леса. Хост-компьютер должен быть присоединен к домену в этом лесу. Поддерживаются и корневые, и дочерние домены. Необходимо сетевое подключение по крайней мере к одному КОНТРОЛЛЕРу домена в каждом домене леса и компьютера с защитой паролем.
+   * Вы можете запустить службу прокси на контроллере домена для тестирования. Однако этот контроллер домена требует подключения к Интернету, что может быть проблемой безопасности. Эту конфигурацию рекомендуется использовать только для тестирования.
+   * Для обеспечения избыточности рекомендуется по крайней мере два прокси-сервера. См. раздел [высокий уровень доступности](howto-password-ban-bad-on-premises-deploy.md#high-availability).
 
-1. Install the  Azure AD Password Protection Proxy service using the `AzureADPasswordProtectionProxySetup.exe` software installer.
+1. Установите прокси-службу защиты паролей Azure AD с помощью установщика программного обеспечения `AzureADPasswordProtectionProxySetup.exe`.
    * Для этого не требуется перезагрузка. Установку программного обеспечения можно автоматизировать с использованием стандартных процедур MSI, например:
 
       `AzureADPasswordProtectionProxySetup.exe /quiet`
 
       > [!NOTE]
-      > The Windows Firewall service must be running before you install the AzureADPasswordProtectionProxySetup.msi package to avoid an installation error. If Windows Firewall is configured to not run, the workaround is to temporarily enable and run the Firewall service during the installation. The proxy software has no specific dependency on Windows Firewall after installation. If you're using a third-party firewall, it must still be configured to satisfy the deployment requirements. These include allowing inbound access to port 135 and the proxy RPC server port. See [Deployment requirements](howto-password-ban-bad-on-premises-deploy.md#deployment-requirements).
+      > Перед установкой пакета Азуреадпассвордпротектионпроксисетуп. MSI необходимо запустить службу брандмауэра Windows, чтобы избежать ошибки установки. Если настройка брандмауэра Windows не выполняется, решение заключается в временном включении и запуске службы брандмауэра во время установки. После установки программного обеспечения прокси-сервера не определена зависимость от брандмауэра Windows. Если вы используете брандмауэр стороннего производителя, он по-прежнему должен быть настроен для удовлетворения требований к развертыванию. К ним относятся предоставление входящего доступа к порту 135 и порту прокси-сервера RPC. См. раздел [требования к развертыванию](howto-password-ban-bad-on-premises-deploy.md#deployment-requirements).
 
 1. Откройте окно PowerShell от имени администратора.
-   * The password protection proxy software includes a new PowerShell module, *AzureADPasswordProtection*. The following steps run various cmdlets from this PowerShell module. Import the new module as follows:
+   * Прокси-сервер защиты паролей включает новый модуль PowerShell *азуреадпассвордпротектион*. Следующие шаги запускают различные командлеты из этого модуля PowerShell. Импортируйте новый модуль следующим образом:
 
       ```powershell
       Import-Module AzureADPasswordProtection
       ```
 
-   * To check that the service is running, use the following PowerShell command:
+   * Чтобы проверить, запущена ли служба, используйте следующую команду PowerShell:
 
       `Get-Service AzureADPasswordProtectionProxy | fl`.
 
-     The result should show a **Status** of "Running."
+     В результате должно отобразиться **состояние** "работает".
 
 1. Зарегистрируйте прокси-сервер.
-   * After step 3 is completed, the proxy service is running on the machine. But the service doesn't yet have the necessary credentials to communicate with Azure AD. Registration with Azure AD is required:
+   * После завершения шага 3 на компьютере будет запущена служба прокси. Но у службы еще нет необходимых учетных данных для взаимодействия с Azure AD. Требуется регистрация в Azure AD:
 
      `Register-AzureADPasswordProtectionProxy`
 
-     This cmdlet requires global administrator credentials for your Azure tenant. You also need on-premises Active Directory domain administrator privileges in the forest root domain. After this command succeeds once for a proxy service, additional invocations of it will succeed but are unnecessary.
+     Для этого командлета требуются учетные данные глобального администратора для клиента Azure. Также требуются права локального Active Directory администратора домена в корневом домене леса. После того как эта команда будет выполнена для прокси-службы, дополнительные вызовы будут выполнены, но не нужны.
 
-      The `Register-AzureADPasswordProtectionProxy` cmdlet supports the following three authentication modes. The first two modes support Azure Multi-Factor Authentication but the third mode does not. Please see comments below for more details.
+      Командлет `Register-AzureADPasswordProtectionProxy` поддерживает следующие три режима проверки подлинности. Первые два режима поддерживают многофакторную идентификацию Azure, но в третьем режиме нет. Дополнительные сведения см. в комментариях ниже.
 
      * Интерактивный режим проверки подлинности.
 
@@ -144,7 +144,7 @@ There are two required installers for Azure AD password protection. They're avai
         ```
 
         > [!NOTE]
-        > This mode doesn't work on Server Core operating systems. Instead, use one of the following authentication modes. Also, this mode might fail if Internet Explorer Enhanced Security Configuration is enabled. The workaround is to disable that Configuration, register the proxy, and then re-enable it.
+        > Этот режим не работает в операционных системах Server Core. Вместо этого используйте один из следующих режимов проверки подлинности. Кроме того, этот режим может завершиться ошибкой, если включена конфигурация усиленной безопасности Internet Explorer. Чтобы устранить эту проблему, необходимо отключить эту конфигурацию, зарегистрировать прокси-сервер и снова включить ее.
 
      * Режим проверки подлинности по коду устройства.
 
@@ -153,7 +153,7 @@ There are two required installers for Azure AD password protection. They're avai
         To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code XYZABC123 to authenticate.
         ```
 
-        You then complete authentication by following the displayed instructions on a different device.
+        Затем завершите проверку подлинности, следуя отображаемым инструкциям на другом устройстве.
 
      * Режим автоматической проверки подлинности (на основе пароля).
 
@@ -163,23 +163,23 @@ There are two required installers for Azure AD password protection. They're avai
         ```
 
         > [!NOTE]
-        > This mode fails if Azure Multi-Factor Authentication is required for your account. In that case, use one of the previous two authentication modes, or instead use a different account that does not require MFA.
+        > В этом режиме происходит сбой, если для вашей учетной записи требуется многофакторная идентификация Azure. В этом случае используйте один из двух предыдущих режимов проверки подлинности или используйте другую учетную запись, для которой не требуется MFA.
         >
-        > You may also see MFA required if Azure Device Registration (which is used under the covers by Azure AD Password Protection) has been configured to globally require MFA. To workaround this you may use a different account that supports MFA with one of the previous two authentication modes, or you may also temporarily relax the Azure Device Registration MFA requirement. To do this, go to the Azure management portal, then go to Azure Active Directory, then Devices, then Device Settings, then set "Require Multi-Factor Auth to join devices" to No. Be sure to reconfigure this setting back to Yes once registration is complete.
+        > Если регистрация устройств Azure (которая используется в службе защиты паролем Azure AD) настроена для глобального использования MFA, вы также можете увидеть MFA. Чтобы решить эту проблему, вы можете использовать другую учетную запись, которая поддерживает MFA с одним из предыдущих режимов проверки подлинности, или временно ослабить требование регистрации устройств Azure MFA. Для этого перейдите на портал управления Azure, перейдите в раздел Azure Active Directory, устройства, затем Параметры устройства и установите для параметра "требовать многофакторную проверку подлинности присоединить устройства" к "нет". Не забудьте повторно настроить этот параметр на Да после завершения регистрации.
         >
-        > We recommend that MFA requirements be bypassed for test purposes only.
+        > Рекомендуется обходить требования MFA только в целях тестирования.
 
-       You don't currently have to specify the *-ForestCredential* parameter, which is reserved for future functionality.
+       В настоящее время не нужно указывать параметр *-форесткредентиал* , который зарезервирован для будущих функциональных возможностей.
 
-   Registration of the proxy service for password protection is necessary only once in the lifetime of the service. After that, the proxy service will automatically perform any other necessary maintenance.
+   Регистрация службы прокси-сервера для защиты паролей необходима только один раз в течение времени существования службы. После этого прокси-служба автоматически выполнит все необходимое обслуживание.
 
    > [!TIP]
-   > There might be a noticeable delay before completion the first time that this cmdlet is run for a specific Azure tenant. Unless a failure is reported, don't worry about this delay.
+   > При первом запуске этого командлета для конкретного клиента Azure может возникнуть заметная задержка до завершения. Если нет сообщения о сбое, не беспокойтесь о такой задержке.
 
 1. Зарегистрируйте лес.
-   * You must initialize the on-premises Active Directory forest with the necessary credentials to communicate with Azure by using the `Register-AzureADPasswordProtectionForest` PowerShell cmdlet. The cmdlet requires global administrator credentials for your Azure tenant. It also requires on-premises Active Directory Enterprise Administrator privileges. Этот шаг выполняется один раз в каждом лесу.
+   * Необходимо инициализировать локальный лес Active Directory с необходимыми учетными данными для взаимодействия с Azure с помощью командлета `Register-AzureADPasswordProtectionForest` PowerShell. Для этого командлета требуются учетные данные глобального администратора для клиента Azure. Также требуются права администратора локального Active Directory предприятия. Этот шаг выполняется один раз в каждом лесу.
 
-      The `Register-AzureADPasswordProtectionForest` cmdlet supports the following three authentication modes. The first two modes support Azure Multi-Factor Authentication but the third mode does not. Please see comments below for more details.
+      Командлет `Register-AzureADPasswordProtectionForest` поддерживает следующие три режима проверки подлинности. Первые два режима поддерживают многофакторную идентификацию Azure, но в третьем режиме нет. Дополнительные сведения см. в комментариях ниже.
 
      * Интерактивный режим проверки подлинности.
 
@@ -188,7 +188,7 @@ There are two required installers for Azure AD password protection. They're avai
         ```
 
         > [!NOTE]
-        > This mode won't work on Server Core operating systems. Instead use one of the following two authentication modes. Also, this mode might fail if Internet Explorer Enhanced Security Configuration is enabled. The workaround is to disable that Configuration, register the forest, and then re-enable it.  
+        > Этот режим не работает в операционных системах Server Core. Вместо этого используйте один из следующих двух режимов проверки подлинности. Кроме того, этот режим может завершиться ошибкой, если включена конфигурация усиленной безопасности Internet Explorer. Чтобы решить эту проблему, отключите эту конфигурацию, зарегистрируйте лес, а затем снова включите его.  
 
      * Режим проверки подлинности по коду устройства.
 
@@ -197,7 +197,7 @@ There are two required installers for Azure AD password protection. They're avai
         To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code XYZABC123 to authenticate.
         ```
 
-        You then complete authentication by following the displayed instructions on a different device.
+        Затем завершите проверку подлинности, следуя отображаемым инструкциям на другом устройстве.
 
      * Режим автоматической проверки подлинности (на основе пароля).
 
@@ -207,27 +207,27 @@ There are two required installers for Azure AD password protection. They're avai
         ```
 
         > [!NOTE]
-        > This mode fails if Azure Multi-Factor Authentication is required for your account. In that case, use one of the previous two authentication modes, or instead use a different account that does not require MFA.
+        > В этом режиме происходит сбой, если для вашей учетной записи требуется многофакторная идентификация Azure. В этом случае используйте один из двух предыдущих режимов проверки подлинности или используйте другую учетную запись, для которой не требуется MFA.
         >
-        > You may also see MFA required if Azure Device Registration (which is used under the covers by Azure AD Password Protection) has been configured to globally require MFA. To workaround this you may use a different account that supports MFA with one of the previous two authentication modes, or you may also temporarily relax the Azure Device Registration MFA requirement. To do this, go to the Azure management portal, then go to Azure Active Directory, then Devices, then Device Settings, then set "Require Multi-Factor Auth to join devices" to No. Be sure to reconfigure this setting back to Yes once registration is complete.
+        > Если регистрация устройств Azure (которая используется в службе защиты паролем Azure AD) настроена для глобального использования MFA, вы также можете увидеть MFA. Чтобы решить эту проблему, вы можете использовать другую учетную запись, которая поддерживает MFA с одним из предыдущих режимов проверки подлинности, или временно ослабить требование регистрации устройств Azure MFA. Для этого перейдите на портал управления Azure, перейдите в раздел Azure Active Directory, устройства, затем Параметры устройства и установите для параметра "требовать многофакторную проверку подлинности присоединить устройства" к "нет". Не забудьте повторно настроить этот параметр на Да после завершения регистрации.
         >
-        > We recommend that MFA requirements be bypassed for test purposes only.
+        > Рекомендуется обходить требования MFA только в целях тестирования.
 
-       These examples only succeed if the currently signed-in user is also an Active Directory domain administrator for the root domain. If this isn't the case, you can supply alternative domain credentials via the *-ForestCredential* parameter.
+       Эти примеры выполняются только в том случае, если вошедший в данный момент пользователь также является администратором домена Active Directory для корневого домена. Если это не так, можно указать альтернативные учетные данные домена с помощью параметра *-форесткредентиал* .
 
    > [!NOTE]
-   > If multiple proxy servers are installed in your environment, it doesn't matter which proxy server you use to register the forest.
+   > Если в вашей среде установлено несколько прокси-серверов, не имеет значения, какой прокси-сервер используется для регистрации леса.
    >
    > [!TIP]
-   > There might be a noticeable delay before completion the first time that this cmdlet is run for a specific Azure tenant. Unless a failure is reported, don't worry about this delay.
+   > При первом запуске этого командлета для конкретного клиента Azure может возникнуть заметная задержка до завершения. Если нет сообщения о сбое, не беспокойтесь о такой задержке.
 
-   Registration of the Active Directory forest is necessary only once in the lifetime of the forest. After that, the Domain Controller Agents in the forest will automatically perform any other necessary maintenance. After `Register-AzureADPasswordProtectionForest` runs successfully for a forest, additional invocations of the cmdlet succeed but are unnecessary.
+   Регистрация Active Directory леса необходима только один раз в течение всего времени существования леса. После этого агенты контроллера домена в лесу будут автоматически выполнять все необходимое обслуживание. После успешного выполнения `Register-AzureADPasswordProtectionForest` для леса дополнительные вызовы командлета выполняются успешно, но не нужны.
 
-   For `Register-AzureADPasswordProtectionForest` to succeed, at least one domain controller running Windows Server 2012 or later must be available in the proxy server's domain. The DC Agent software does not have to be installed on any domain controllers prior to this step.
+   Для выполнения `Register-AzureADPasswordProtectionForest` в домене прокси-сервера должен быть доступен по крайней мере один контроллер домена под Windows Server 2012 или более поздней версии. До этого шага не требуется устанавливать программное обеспечение агента DC на контроллерах домена.
 
-1. Configure the proxy service for password protection to communicate through an HTTP proxy.
+1. Настройте прокси-службу для защиты паролем через прокси-сервер HTTP.
 
-   If your environment requires the use of a specific HTTP proxy to communicate with Azure, use this method: Create a *AzureADPasswordProtectionProxy.exe.config* file in the %ProgramFiles%\Azure AD Password Protection Proxy\Service folder. Include the following content:
+   Если в среде требуется использовать конкретный прокси-сервер HTTP для взаимодействия с Azure, используйте следующий метод: Создайте файл *азуреадпассвордпротектионпрокси. exe. config* в папке%ProgramFiles%\Azure Active Directory защита паролей прокси\сервице. Включите следующее содержимое:
 
       ```xml
       <configuration>
@@ -240,7 +240,7 @@ There are two required installers for Azure AD password protection. They're avai
       </configuration>
       ```
 
-   If your HTTP proxy requires authentication, add the *useDefaultCredentials* tag:
+   Если прокси-сервер HTTP требует проверки подлинности, добавьте тег *уседефаулткредентиалс* :
 
       ```xml
       <configuration>
@@ -253,17 +253,17 @@ There are two required installers for Azure AD password protection. They're avai
       </configuration>
       ```
 
-   In both cases, replace `http://yourhttpproxy.com:8080` with the address and port of your specific HTTP proxy server.
+   В обоих случаях замените `http://yourhttpproxy.com:8080` на адрес и порт конкретного прокси-сервера HTTP.
 
-   If your HTTP proxy is configured to use an authorization policy, you must grant access to the Active Directory computer account of the machine that hosts the proxy service for password protection.
+   Если прокси-сервер HTTP настроен для использования политики авторизации, необходимо предоставить доступ к учетной записи Active Directory компьютера компьютера, на котором размещена служба прокси-сервера, для защиты пароля.
 
-   We recommend that you stop and restart the proxy service after you create or update the *AzureADPasswordProtectionProxy.exe.config* file.
+   Рекомендуется отключить и перезапустить службу прокси-сервера после создания или обновления файла *азуреадпассвордпротектионпрокси. exe. config* .
 
-   The proxy service doesn't support the use of specific credentials for connecting to an HTTP proxy.
+   Прокси-служба не поддерживает использование конкретных учетных данных для подключения к прокси-серверу HTTP.
 
-1. Optional: Configure the proxy service for password protection to listen on a specific port.
-   * The DC Agent software for password protection on the domain controllers uses RPC over TCP to communicate with the proxy service. By default, the proxy service listens on any available dynamic RPC endpoint. But you can configure the service to listen on a specific TCP port, if this is necessary because of networking topology or firewall requirements in your environment.
-      * <a id="static" /></a>To configure the service to run under a static port, use the `Set-AzureADPasswordProtectionProxyConfiguration` cmdlet.
+1. Необязательно. Настройте службу прокси-сервера для защиты паролем для прослушивания определенного порта.
+   * Программное обеспечение агента DC для защиты паролей на контроллерах домена использует RPC через TCP для взаимодействия со службой прокси. По умолчанию служба прокси-сервера прослушивает любую доступную динамическую конечную точку RPC. Но можно настроить службу для прослушивания определенного TCP-порта, если это необходимо из-за топологии сетевых подключений или требований брандмауэра в вашей среде.
+      * <a id="static" /></a>чтобы настроить запуск службы со статическим портом, используйте командлет `Set-AzureADPasswordProtectionProxyConfiguration`.
 
          ```powershell
          Set-AzureADPasswordProtectionProxyConfiguration –StaticPort <portnumber>
@@ -272,7 +272,7 @@ There are two required installers for Azure AD password protection. They're avai
          > [!WARNING]
          > Вы должны остановить и перезапустить службу, чтобы эти изменения вступили в силу.
 
-      * To configure the service to run under a dynamic port, use the same procedure but set *StaticPort* back to zero:
+      * Чтобы настроить службу для работы с динамическим портом, используйте ту же процедуру, но присвойте параметру *статикпорт* значение 0:
 
          ```powershell
          Set-AzureADPasswordProtectionProxyConfiguration –StaticPort 0
@@ -282,9 +282,9 @@ There are two required installers for Azure AD password protection. They're avai
          > Вы должны остановить и перезапустить службу, чтобы эти изменения вступили в силу.
 
    > [!NOTE]
-   > The proxy service for password protection requires a manual restart after any change in port configuration. But you don't have to restart the DC Agent service software on domain controllers after you make these configuration changes.
+   > Прокси-служба для защиты паролей требует перезапуска вручную после любых изменений в конфигурации порта. Но после внесения этих изменений в конфигурацию не нужно перезапускать программное обеспечение службы агента DC на контроллерах домена.
 
-   * To query for the current configuration of the service, use the `Get-AzureADPasswordProtectionProxyConfiguration` cmdlet:
+   * Чтобы запросить текущую конфигурацию службы, используйте командлет `Get-AzureADPasswordProtectionProxyConfiguration`.
 
       ```powershell
       Get-AzureADPasswordProtectionProxyConfiguration | fl
@@ -294,60 +294,60 @@ There are two required installers for Azure AD password protection. They're avai
       StaticPort  : 0
       ```
 
-### <a name="install-the-dc-agent-service"></a>Install the DC Agent service
+### <a name="install-the-dc-agent-service"></a>Установка службы агента контроллера домена
 
-   Install the DC Agent service for password protection by using the `AzureADPasswordProtectionDCAgentSetup.msi` package.
+   Установите службу агента контроллера домена для защиты паролем с помощью пакета `AzureADPasswordProtectionDCAgentSetup.msi`.
 
-   The software installation, or uninstallation, requires a restart. This requirement is because password filter DLLs are only loaded or unloaded by a restart.
+   Для установки или удаления программного обеспечения требуется перезагрузка. Это требование связано с тем, что библиотеки DLL для фильтрации паролей загружаются или выгружаются только при перезапуске.
 
-   You can install the DC Agent service on a machine that's not yet a domain controller. In this case, the service will start and run but remain inactive until the machine is promoted to be a domain controller.
+   Службу агента контроллера домена можно установить на компьютере, который еще не является контроллером домена. В этом случае служба будет запущена и запущена, но останется неактивной до тех пор, пока компьютер не станет контроллером домена.
 
-   You can automate the software installation by using standard MSI procedures. Пример.
+   Можно автоматизировать установку программного обеспечения с помощью стандартных процедур MSI. Пример.
 
    `msiexec.exe /i AzureADPasswordProtectionDCAgentSetup.msi /quiet /qn /norestart`
 
-   You may omit the `/norestart` flag if you prefer to have the installer automatically reboot the machine.
+   Вы можете опустить флаг `/norestart`, если вы предпочитаете, чтобы установщик автоматически перезагружает компьютер.
 
-The installation is complete after the DC Agent software is installed on a domain controller, and that computer is rebooted. Дальнейшая настройка не требуется.
+Установка завершается после установки программного обеспечения агента DC на контроллере домена и перезагрузки компьютера. Дальнейшая настройка не требуется.
 
-## <a name="upgrading-the-proxy-agent"></a>Upgrading the Proxy agent
+## <a name="upgrading-the-proxy-agent"></a>Обновление прокси-агента
 
-When a newer version of the Azure AD Password Protection Proxy software is available, the upgrade is accomplished by running the latest version of the `AzureADPasswordProtectionProxySetup.exe` software installer. The latest version of the software is available on the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=57071).
+При наличии более новой версии программного обеспечения прокси-сервера защиты паролей Azure AD обновление выполняется с помощью последней версии установщика `AzureADPasswordProtectionProxySetup.exe` программного обеспечения. Последняя версия программного обеспечения доступна в [центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=57071).
 
-It is not required to uninstall the current version of the Proxy software - the installer will perform an in-place upgrade. No reboot should be required when upgrading the Proxy software. The software upgrade may be automated using standard MSI procedures, for example: `AzureADPasswordProtectionProxySetup.exe /quiet`.
+Удаление текущей версии программного обеспечения прокси-сервера не требуется — установщик выполняет обновление на месте. При обновлении программного обеспечения прокси-сервера не требуется выполнять перезагрузку. Обновление программного обеспечения может быть автоматизировано с помощью стандартных процедур MSI, например: `AzureADPasswordProtectionProxySetup.exe /quiet`.
 
-The Proxy agent supports automatic upgrade. Automatic upgrade uses the Microsoft Azure AD Connect Agent Updater service, which is installed side by side with the Proxy service. Automatic upgrade is on by default, and may be enabled or disabled using the `Set-AzureADPasswordProtectionProxyConfiguration` cmdlet. The current setting can be queried using the `Get-AzureADPasswordProtectionProxyConfiguration` cmdlet. Microsoft recommends that the automatic upgrade setting always is enabled.
+Прокси-агент поддерживает автоматическое обновление. При автоматическом обновлении используется служба обновления агента Microsoft Azure AD Connect, которая устанавливается параллельно с прокси-службой. Автоматическое обновление включено по умолчанию и может быть включено или отключено с помощью командлета `Set-AzureADPasswordProtectionProxyConfiguration`. Текущее значение можно запросить с помощью командлета `Get-AzureADPasswordProtectionProxyConfiguration`. Корпорация Майкрософт рекомендует всегда включать параметр автоматического обновления.
 
-The `Get-AzureADPasswordProtectionProxy` cmdlet may be used to query the software version of all currently installed Proxy agents in a forest.
+Командлет `Get-AzureADPasswordProtectionProxy` можно использовать для запроса версии программного обеспечения всех установленных в настоящее время агентов прокси-сервера в лесу.
 
-## <a name="upgrading-the-dc-agent"></a>Upgrading the DC agent
+## <a name="upgrading-the-dc-agent"></a>Обновление агента контроллера домена
 
-When a newer version of the Azure AD Password Protection DC Agent software is available, the upgrade is accomplished by running the latest version of the `AzureADPasswordProtectionDCAgentSetup.msi` software package. The latest version of the software is available on the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=57071).
+Если доступна более новая версия программного обеспечения агента DC для защиты паролем Azure AD, то обновление выполняется с помощью последней версии пакета `AzureADPasswordProtectionDCAgentSetup.msi` программного обеспечения. Последняя версия программного обеспечения доступна в [центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=57071).
 
-It is not required to uninstall the current version of the DC agent software - the installer will perform an in-place upgrade. A reboot is always required when upgrading the DC agent software - this requirement is caused by core Windows behavior. 
+Удаление текущей версии программного обеспечения агента контроллера домена не требуется — установщик выполняет обновление на месте. При обновлении программного обеспечения агента контроллера домена всегда требуется перезагрузка. это требование вызвано основным поведением Windows. 
 
-The software upgrade may be automated using standard MSI procedures, for example: `msiexec.exe /i AzureADPasswordProtectionDCAgentSetup.msi /quiet /qn /norestart`.
+Обновление программного обеспечения может быть автоматизировано с помощью стандартных процедур MSI, например: `msiexec.exe /i AzureADPasswordProtectionDCAgentSetup.msi /quiet /qn /norestart`.
 
-You may omit the `/norestart` flag if you prefer to have the installer automatically reboot the machine.
+Вы можете опустить флаг `/norestart`, если вы предпочитаете, чтобы установщик автоматически перезагружает компьютер.
 
-The `Get-AzureADPasswordProtectionDCAgent` cmdlet may be used to query the software version of all currently installed DC agents in a forest.
+Командлет `Get-AzureADPasswordProtectionDCAgent` можно использовать для запроса версии программного обеспечения всех установленных агентов контроллеров домена в лесу.
 
 ## <a name="multiple-forest-deployments"></a>Развертывание в нескольких лесах
 
-Дополнительные требования для развертывания защиты паролем Azure AD в нескольких лесах отсутствуют. Each forest is independently configured as described in the "Single-forest deployment" section. Each password protection proxy can only support domain controllers from the forest that it's joined to. The password protection software in any forest is unaware of password protection software that's deployed in other forests, regardless of Active Directory trust configurations.
+Дополнительные требования для развертывания защиты паролем Azure AD в нескольких лесах отсутствуют. Каждый лес настроен независимо, как описано в разделе Развертывание с одним лесом. Каждый прокси-сервер защиты паролей может поддерживать только контроллеры домена из леса, к которому он присоединен. Программное обеспечение защиты паролем в любом лесу не знает о программном обеспечении защиты паролем, которое развертывается в других лесах, независимо от конфигурации доверия Active Directory.
 
 ## <a name="read-only-domain-controllers"></a>Контроллеры домена только для чтения
 
-Password changes/sets are not processed and persisted on read-only domain controllers (RODCs). They are forwarded to writable domain controllers. So, you don't have to install the DC Agent software on RODCs.
+Изменения или наборы паролей не обрабатываются и не сохраняются на контроллерах домена только для чтения (RODC). Они пересылаются на контроллеры домена с возможностью записи. Поэтому не нужно устанавливать программное обеспечение агента контроллера домена на RODC.
 
 ## <a name="high-availability"></a>Высокий уровень доступности
 
-The main availability concern for password protection is the availability of proxy servers when the domain controllers in a forest try to download new policies or other data from Azure. Each DC Agent uses a simple round-robin-style algorithm when deciding which proxy server to call. The Agent skips proxy servers that aren't responding. For most fully connected Active Directory deployments that have healthy replication of both directory and sysvol folder state, two proxy servers is enough to ensure availability. This results in timely download of new policies and other data. But you can deploy additional proxy servers.
+Основная проблема доступности для защиты паролей — доступность прокси-серверов, когда контроллеры домена в лесу пытаются скачать новые политики или другие данные из Azure. Каждый агент контроллера домена использует простой алгоритм циклического перебора при выборе прокси-сервера для вызова. Агент пропускает прокси-серверы, которые не отвечают. Для большинства полностью подключенных Active Directory развертываний, которые имеют работоспособную репликацию каталога и состояния папки SYSVOL, достаточно двух прокси-серверов для обеспечения доступности. Это приводит к своевременной загрузке новых политик и других данных. Но можно развернуть дополнительные прокси-серверы.
 
-The design of the DC Agent software mitigates the usual problems that are associated with high availability. The DC Agent maintains a local cache of the most recently downloaded password policy. Even if all registered proxy servers become unavailable, the DC Agents continue to enforce their cached password policy. A reasonable update frequency for password policies in a large deployment is usually days, not hours or less. So, brief outages of the proxy servers don't significantly impact Azure AD password protection.
+Архитектура программного обеспечения агента контроллера домена устраняет обычные проблемы, связанные с высокой доступностью. Агент контроллера домена обслуживает локальный кэш самой последней скачанной политики паролей. Даже если все зарегистрированные прокси-серверы станут недоступными, агенты контроллера домена продолжают применять свои кэшированные политики паролей. Разумная частота обновления политик паролей в крупном развертывании обычно составляет дни, не часов или меньше. Таким образом, кратковременные сбои прокси-серверов не оказывают существенного воздействия на защиту паролей Azure AD.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Now that you've installed the services that you need for Azure AD password protection on your on-premises servers, [perform post-install configuration and gather reporting information](howto-password-ban-bad-on-premises-operations.md) to complete your deployment.
+Теперь, когда вы установили службы, необходимые для защиты паролей Azure AD на локальных серверах, [выполните настройку после установки и соберите данные отчетов](howto-password-ban-bad-on-premises-operations.md) для завершения развертывания.
 
 [Предварительная версия. Применение защиты паролем Azure AD для Windows Server Active Directory](concept-password-ban-bad-on-premises.md)

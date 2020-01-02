@@ -1,5 +1,5 @@
 ---
-title: Руководство по развертыванию службы "Машинное обучение Azure" на устройстве — Azure IoT Edge
+title: Учебник по развертыванию службы "Машинное обучение Azure" на устройстве с помощью Azure IoT Edge
 description: В этом учебнике вы создадите модель службы "Машинное обучение Azure", а затем развернете ее как модуль на пограничном устройстве
 author: kgremban
 manager: philmea
@@ -8,13 +8,13 @@ ms.date: 11/11/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.custom: mvc, seodec18
-ms.openlocfilehash: 2d56d434fbdaf8c05c4d4db75bffb65468a5bc42
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.custom: mvc
+ms.openlocfilehash: 3d46e0695238ed7a09f180fe59063f8e2590f307
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74114032"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74701923"
 ---
 # <a name="tutorial-deploy-azure-machine-learning-as-an-iot-edge-module-preview"></a>Руководство по Развертывание службы "Машинное обучение Azure" в качестве модуля IoT Edge (предварительная версия)
 
@@ -165,4 +165,3 @@ ms.locfileid: "74114032"
 
 > [!div class="nextstepaction"]
 > [Классификация изображений с помощью Пользовательской службы визуального распознавания](tutorial-deploy-custom-vision.md)
-

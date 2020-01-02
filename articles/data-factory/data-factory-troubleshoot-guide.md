@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.date: 8/26/2019
 ms.author: abnarain
 ms.reviewer: craigg
-ms.openlocfilehash: 0026aa377a58f6b766a400860692a35440deb962
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 2ae0f3033b88b3229d3dbef35c8bc9a32510c00e
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73748362"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74972342"
 ---
 # <a name="troubleshoot-azure-data-factory"></a>Устранение неполадок фабрики данных Azure
 
@@ -43,9 +43,9 @@ ms.locfileid: "73748362"
 
 - **Рекомендация**: укажите путь к записной книжке в действии "кирпичы".
 
-<br/>    
-              
-- **Сообщение**: `Cluster   ... does not exist.`
+<br/>  
+
+- **Сообщение**: `Cluster... does not exist.`
 
 - **Причина**: `Authoring error: Databricks cluster does not exist or has been deleted.`
 
@@ -53,7 +53,7 @@ ms.locfileid: "73748362"
 
 <br/>  
 
-- **Сообщение**: `Invalid Python file URI.... Please visit Databricks user guide for supported URI schemes.`
+- **Сообщение**: `Invalid Python file URI... Please visit Databricks user guide for supported URI schemes.`
 
 - **Причина**: `Bad authoring.`
 
@@ -334,56 +334,56 @@ ms.locfileid: "73748362"
 
 ### <a name="error-code--4121"></a>Код ошибки: 4121
 
-- **Сообщение**: `Request sent to Azure ML Service for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure ML Service: '%externalMessage;'.`
+- **Сообщение**: `Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
 
-- **Причина**: истек срок действия учетных данных, используемых для доступа к службе машинного обучения Azure.
+- **Причина**: истек срок действия учетных данных, используемых для доступа к машинное обучение Azure.
 
 - **Рекомендация**: Проверьте правильность учетных данных и повторите попытку
 
 
 ### <a name="error-code--4122"></a>Код ошибки: 4122
 
-- **Сообщение**: `Request sent to Azure ML Service for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure ML Service: '%externalMessage;'.`
+- **Сообщение**: `Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
 
-- **Причина**: учетные данные, указанные в связанной службе службы машинного обучения Azure, недопустимы или не имеют разрешения на выполнение операции.
+- **Причина**: учетные данные, предоставленные в машинное обучение Azure связанной службе, недопустимы или не имеют разрешения на выполнение операции.
 
-- **Рекомендация**: Убедитесь, что учетные данные в связанной службе действительны и имеют разрешение на доступ к службе машинного обучения Azure.
+- **Рекомендация**: Проверьте допустимость учетных данных в связанной службе и наличие разрешений на доступ к машинное обучение Azure.
 
 
 ### <a name="error-code--4123"></a>Код ошибки: 4123
 
-- **Сообщение**: `Request sent to Azure ML Service for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure ML Service: '%externalMessage;'.`
+- **Сообщение**: `Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
 
-- **Причина**: `Properties of the activity such as pipelineParamters are invalid for the Azure ML pipeline.`
+- **Причина**: свойства действия, такие как pipelineParameters, недопустимы для КОНВЕЙЕРа машинного обучения Azure.
 
 - **Рекомендация**: проверьте значение свойств действия в соответствии с ожидаемыми полезными данными из опубликованного КОНВЕЙЕРа машинного обучения Azure, указанного в связанной службе.
 
 
 ### <a name="error-code--4124"></a>Код ошибки: 4124
 
-- **Сообщение**: `Request sent to Azure ML Service for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure ML Service: '%externalMessage;'.`
+- **Сообщение**: `Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
 
 - **Причина**: опубликованная конечная точка КОНВЕЙЕРа машинного обучения Azure не существует.
 
-- **Рекомендация**: Убедитесь, что опубликованная конечная точка КОНВЕЙЕРа машинного обучения Azure, указанная в связанной службе, существует в службе машинного обучения Azure.
+- **Рекомендация**: Убедитесь, что опубликованная конечная точка конвейера машинное обучение Azure, указанная в связанной службе, существует в машинное обучение Azure.
 
 
 ### <a name="error-code--4125"></a>Код ошибки: 4125
 
-- **Сообщение**: `Request sent to Azure ML Service for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure ML Service: '%externalMessage;'.`
+- **Сообщение**: `Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
 
-- **Причина**: ошибка сервера в службе машинного обучения Azure.
+- **Причина**: ошибка сервера в машинное обучение Azure.
 
-- **Рекомендация**: повторите попытку позже. Обратитесь в службу поддержки машинного обучения Azure, чтобы получить помощь в случае ее возникновения.
+- **Рекомендация**: повторите попытку позже. Если проблемы не удается устранить, обратитесь в службу Машинное обучение Azure.
 
 
 ### <a name="error-code--4126"></a>Код ошибки: 4126
 
-- **Сообщение**: `Azure ML pipeline run failed with status: '%amlPipelineRunStatus;'. Azure ML pipeline run Id: '%amlPipelineRunId;'. Please check in Azure ML Service for more error logs.`
+- **Сообщение**: `Azure ML pipeline run failed with status: '%amlPipelineRunStatus;'. Azure ML pipeline run Id: '%amlPipelineRunId;'. Please check in Azure Machine Learning for more error logs.`
 
 - **Причина**: сбой запуска КОНВЕЙЕРа машинного обучения Azure.
 
-- **Рекомендация**: проверьте наличие дополнительных журналов ошибок в службе машинного обучения Azure и исправьте конвейер ml.
+- **Рекомендация**: выполните возврат машинное обучение Azure для получения дополнительных журналов ошибок и исправления КОНВЕЙЕРа машинного обучения.
 
 
 
@@ -422,7 +422,7 @@ ms.locfileid: "73748362"
 
 - **Причина**: строка подключения для хранилища недопустима или имеет неправильный формат.
 
-- **Рекомендация**: перейдите на портал Azure, найдите хранилище, скопируйте строку подключения и вставьте в нее связанную службу и повторите попытку.
+- **Рекомендация**: перейдите в портал Azure, найдите хранилище, скопируйте строку подключения и вставьте в нее связанную службу и повторите попытку.
 
 
 ### <a name="error-code--2108"></a>Код ошибки: 2108
@@ -471,7 +471,7 @@ ms.locfileid: "73748362"
 
 
 
-## <a name="custom"></a>Пользовательская
+## <a name="custom"></a>Пользовательские
 
 Следующая таблица относится к пакетной службе Azure.
       
@@ -522,7 +522,7 @@ ms.locfileid: "73748362"
 
 ### <a name="error-code--2507"></a>Код ошибки: 2507
 
-- **Сообщение**: `The folder path does not exist or is empty: ....`
+- **Сообщение**: `The folder path does not exist or is empty: ...`
 
 - **Причина**: в учетной записи хранения нет файлов по указанному пути.
 
@@ -648,7 +648,7 @@ ms.locfileid: "73748362"
 - **Причина**: Если сообщение об ошибке содержит сообщение, аналогичное "удаленное имя не удалось разрешить", это может означать, что указанный URI кластера недопустим.
 
 
-- **Рекомендация**: Убедитесь, что кластер не был удален и предоставлен правильный универсальный код ресурса (URI). При открытии URI в браузере должен отобразиться пользовательский интерфейс Ambari. Если кластер находится в виртуальной сети, URI должен быть частным URI. Чтобы открыть его, используйте виртуальную машину, которая является частью той же виртуальной сети. Дополнительные сведения см. [здесь](https://docs.microsoft.com/azure/hdinsight/hdinsight-plan-virtual-network-deployment#directly-connect-to-apache-hadoop-services).
+- **Рекомендация**: Убедитесь, что кластер не был удален и предоставлен правильный универсальный код ресурса (URI). При открытии URI в браузере должен отобразиться пользовательский интерфейс Ambari. Если кластер находится в виртуальной сети, URI должен быть частным URI. Чтобы открыть его, используйте виртуальную машину, которая является частью той же виртуальной сети. Дополнительные сведения см. в разделе [this](https://docs.microsoft.com/azure/hdinsight/hdinsight-plan-virtual-network-deployment#directly-connect-to-apache-hadoop-services).
                   
 
 <br>
@@ -668,12 +668,12 @@ ms.locfileid: "73748362"
 - **Причина**: Если сообщение об ошибке содержит сообщение, похожее на "502 — веб-сервер получил недопустимый ответ при работе в качестве шлюза или прокси-сервера", служба HDInsight возвращает эту ошибку.
 
 
-- **Рекомендации**. Просмотрите документацию по устранению неполадок Azure HDInsight, например https://hdinsight.github.io/ambari/ambari-ui-502-error.html, https://hdinsight.github.io/spark/spark-thriftserver-errors.htmlhttps://docs.microsoft.com/azure/application-gateway/application-gateway-troubleshooting-502.
+- **Рекомендации**. Просмотрите документацию по устранению неполадок Azure HDInsight, например https://hdinsight.github.io/ambari/ambari-ui-502-error.html , https://hdinsight.github.io/spark/spark-thriftserver-errors.htmlhttps://docs.microsoft.com/azure/application-gateway/application-gateway-troubleshooting-502.
                   
 
 <br>
 
-- **Причина**: Если сообщение об ошибке содержит сообщение, похожее на "не удалось выполнить обслуживание запроса на отправку, так как служба Templeton занята слишком большим количеством запросов на задание отправки" или "Корневая папка очереди. joblauncher уже содержит приложения 500, не может принимать отправку Приложение ", это означает, что в HDInsight одновременно отправляется слишком много заданий.
+- **Причина**: Если сообщение об ошибке содержит сообщение о том, что "не удалось выполнить обслуживание запроса на отправку, так как служба Templeton занята слишком большим количеством запросов на задание отправки" или "Корневая папка. joblauncher уже содержит приложения 500, не может принять приложение", это означает, что слишком много заданий отправляются в HDInsight одновременно.
 
 - **Рекомендация**. Попробуйте ограничить количество параллельных заданий, отправляемых в HDInsight. См. сведения о параллелизме действий фабрики данных, если задания отправляются одним действием. Измените триггеры, чтобы параллельные запуски конвейера были распределены по времени. Сведения об ошибке см. в документации по HDInsight для настройки Templeton. параллеллисм. job. Submit.
 
@@ -685,7 +685,7 @@ ms.locfileid: "73748362"
 - **Причина**: в кластере HDInsight или службе возникли проблемы.
 
 
-- **Рекомендация**. Эта ошибка возникает, когда ADF не получает ответ от кластера HDInsight при попытке получить состояние выполняющегося задания. Это может быть вызвано проблемами в самом кластере или в случае сбоя службы HDInsight. Обратитесь к документации по устранению неполадок HDInsight по адресу https://docs.microsoft.com/azure/hdinsight/hdinsight-troubleshoot-guideили обратитесь в службу поддержки за дальнейшей помощью.
+- **Рекомендация**. Эта ошибка возникает, когда ADF не получает ответ от кластера HDInsight при попытке получить состояние выполняющегося задания. Это может быть вызвано проблемами в самом кластере или в случае сбоя службы HDInsight. Обратитесь к документации по устранению неполадок HDInsight по адресу https://docs.microsoft.com/azure/hdinsight/hdinsight-troubleshoot-guide или обратитесь в службу поддержки за дальнейшей помощью.
                 
 
 
@@ -816,7 +816,7 @@ ms.locfileid: "73748362"
 
 - **Рекомендация**.  
       1. Проверьте правильность учетных данных, открыв пользовательский интерфейс Ambari кластера HDInsight в браузере.
-      2. Если кластер находится в виртуальной сети и используется локальная среда IR, URL-адрес HDI должен быть частным URL-адресом в виртуальных сетей. Это означает, что после имени кластера должно быть задано "-int". Например, "https://mycluster.azurehdinsight.net/" следует изменить на "https://mycluster-int.azurehdinsight.net/".
+      2. Если кластер находится в виртуальной сети и используется локальная среда IR, URL-адрес HDI должен быть частным URL-адресом в виртуальных сетей. Это означает, что после имени кластера должно быть задано "-int". Например, "https://mycluster.azurehdinsight.net/ " следует изменить на "https://mycluster-int.azurehdinsight.net/".
       2. Если кластер находится в виртуальной сети, используется локальная IR и используется частный URL-адрес, а подключение по-прежнему завершилось сбоем, а на виртуальной машине, где установлена среда IR, возникли проблемы с подключением к HDI. Подключитесь к виртуальной машине, где установлена среда IR, и откройте пользовательский интерфейс Ambari в браузере. Используйте частный URL-адрес кластера. Это подключение должно работать из браузера. Если это не так, обратитесь в службу поддержки HDInsight за помощью.
       3. Если локальная среда IR не используется, кластер HDI должен быть общедоступным. Откройте пользовательский интерфейс Ambari в браузере и убедитесь, что он открыт. Если возникли проблемы с кластером или службами на нем, обратитесь в службу поддержки HDInsight за помощью.
       Поэтому, как правило, URL-адрес кластера HDI, используемый в связанной службе ADF, должен быть доступен для службы ADF IR (с локальным размещением или Azure), чтобы проверить подключение, а также для выполнения работы. Это можно легко проверить, открыв этот URL-адрес из браузера либо с виртуальной машины, либо с общедоступного компьютера.
@@ -990,7 +990,7 @@ ms.locfileid: "73748362"
 
 
 
-## <a name="web-activity"></a>Веб-действие
+## <a name="web-activity"></a>веб-действие;
 
 ### <a name="error-code--2128"></a>Код ошибки: 2128
 
@@ -1011,14 +1011,14 @@ ms.locfileid: "73748362"
 <br>
 
 
-#### <a name="more-details"></a>Дополнительные сведения
+#### <a name="more-details"></a>Дополнительная информация
 Чтобы использовать Fiddler для создания сеанса HTTP отслеживаемого веб-приложения, выполните следующие действия.
 
 1. Скачайте, установите и откройте [Fiddler](https://www.telerik.com/download/fiddler).
 
 1. Если веб-приложение использует протокол HTTPS, перейдите в **меню сервис** > **Параметры Fiddler** > **HTTPS**. Выберите **захват HTTPS подключение** и **расшифровка трафика HTTPS**.
 
-![Параметры Fiddler](media/data-factory-troubleshoot-guide/fiddler-options.png)
+   ![Параметры Fiddler](media/data-factory-troubleshoot-guide/fiddler-options.png)
 
 1. Если приложение использует SSL-сертификаты, добавьте сертификат Fiddler на устройство. Последовательно выберите **пункты сервис** > **параметры Fiddler** >  > **действия** **HTTPS** > **экспортировать корневой сертификат на Рабочий стол**.
 
@@ -1028,17 +1028,17 @@ ms.locfileid: "73748362"
 
 1. Создайте запрос:
 
-а. Перейдите на вкладку **Composer** .
+   1. Перейдите на вкладку **Composer** .
 
-b. Задайте метод HTTP и URL-адрес.
+   1. Задайте метод HTTP и URL-адрес.
+   
+   1. При необходимости добавьте заголовки и текст запроса.
 
-c. При необходимости добавьте заголовки и текст запроса.
+   1. Нажмите кнопку **Выполнить**.
 
-г) Нажмите кнопку **Execute**(Выполнить).
+1. Включите повторную запись трафика и завершите проблемную транзакцию на странице.
 
-9. Включите повторную запись трафика и завершите проблемную транзакцию на странице.
-
-10. Перейдите в **файл** > **сохранить** > **все сеансы**.
+1. Перейдите в **файл** > **сохранить** > **все сеансы**.
 
 Дополнительные сведения см. в статье [Приступая к работе с Fiddler](https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/ConfigureFiddler).
 
@@ -1046,7 +1046,7 @@ c. При необходимости добавьте заголовки и те
 
 Для получения дополнительных сведений об устранении неполадок воспользуйтесь следующими ресурсами:
 
-*  [Блог, посвященный службе "Фабрика данных"](https://azure.microsoft.com/blog/tag/azure-data-factory/)
+*  [Блог фабрики данных](https://azure.microsoft.com/blog/tag/azure-data-factory/)
 *  [Запросы функций фабрики данных](https://feedback.azure.com/forums/270578-data-factory)
 *  [Видеоролики по Azure](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
 *  [Форум MSDN](https://social.msdn.microsoft.com/Forums/home?sort=relevancedesc&brandIgnore=True&searchTerm=data+factory)

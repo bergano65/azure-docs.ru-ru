@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Настройка платформы для пакета SDK службы "Речь" для C++ (macOS) — служба "Речь"
 titleSuffix: Azure Cognitive Services
-description: В этом руководстве показано, как настроить платформу для использования C++ в macOS с пакетом SDK для службы "Речь".
+description: В этом руководстве показано, как настроить платформу для использования C++ в macOS с пакетом SDK службы "Речь".
 services: cognitive-services
 author: markamos
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 10/14/2019
 ms.author: erhopf
-ms.openlocfilehash: 2c6a186eef631372f08b876083dacede31cf1077
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 1b01a7df286af65d3363956706ad2703a339a255
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73504470"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74818542"
 ---
 Здесь также описано, как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для C++ в macOS 10.13 и более новых версий.
 

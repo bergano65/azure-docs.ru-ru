@@ -1,22 +1,22 @@
 ---
-title: Self-service password reset deep dive - Azure Active Directory
+title: Самостоятельный сброс пароля — Azure Active Directory
 description: Как работает самостоятельный сброс пароля.
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 08/16/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e88669b5453069d9f6bb64e803adc65baf8afc6b
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 5b19c80378aa40a7f791a3eb61130b013217ddee
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74420704"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74848584"
 ---
 # <a name="how-it-works-azure-ad-self-service-password-reset"></a>Как это работает: самостоятельный сброс пароля в Azure AD
 
@@ -54,10 +54,10 @@ ms.locfileid: "74420704"
 
 ## <a name="authentication-methods"></a>Методы проверки подлинности
 
-Если функция самостоятельного сброса паролей включена, необходимо выбрать один из приведенных ниже методов проверки подлинности. Иногда эти методы называют шлюзами. Мы настоятельно рекомендуем **выбрать два или больше методов проверки подлинности**, чтобы у пользователей было больше возможностей на случай, если они не смогут получить доступ к одному из методов. Additional details about the methods listed below can be found in the article [What are authentication methods?](concept-authentication-methods.md).
+Если функция самостоятельного сброса паролей включена, необходимо выбрать один из приведенных ниже методов проверки подлинности. Иногда эти методы называют шлюзами. Мы настоятельно рекомендуем **выбрать два или больше методов проверки подлинности**, чтобы у пользователей было больше возможностей на случай, если они не смогут получить доступ к одному из методов. Дополнительные сведения о методах, перечисленных ниже, можно найти в статье [что такое методы проверки подлинности?](concept-authentication-methods.md).
 
 * Уведомление от мобильного приложения
-* Mobile app code
+* Код мобильного приложения
 * Эл. почта
 * Мобильный телефон
 * Рабочий телефон
@@ -66,12 +66,12 @@ ms.locfileid: "74420704"
 Пользователи смогут сбросить пароль, только если у них есть необходимые данные для методов проверки подлинности, которые включил администратор.
 
 > [!IMPORTANT]
-> Starting in March of 2019 the phone call options will not be available to MFA and SSPR users in free/trial Azure AD tenants. SMS messages are not impacted by this change. Phone call will continue to be available to users in paid Azure AD tenants. This change only impacts free/trial Azure AD tenants.
+> Начиная с марта 2019 параметры телефонного звонка не будут доступны для пользователей MFA и SSPR в бесплатных или пробных клиентах Azure AD. Это изменение не влияет на SMS messages. Телефонный звонок будет по прежнему доступен пользователям в платных клиентах Azure AD. Это изменение касается только бесплатных и пробных клиентов Azure AD.
 
 > [!WARNING]
 > Для учетных записей, назначенных ролям администратора Azure, необходимо использовать методы, описанные в разделе о [различиях в политиках сброса паролей для роли администратора](concept-sspr-policy.md#administrator-reset-policy-differences).
 
-![Authentication methods selection in the Azure portal][Authentication]
+![Выбор методов проверки подлинности в портал Azure][Authentication]
 
 ### <a name="number-of-authentication-methods-required"></a>Необходимое количество методов проверки подлинности
 
@@ -81,7 +81,7 @@ ms.locfileid: "74420704"
 
 Если количество методов проверки подлинности не соответствует минимально установленному значению, отобразится страница ошибки со ссылкой, по которой можно отправить запрос администратору на сброс пароля.
 
-#### <a name="mobile-app-and-sspr"></a>Mobile app and SSPR
+#### <a name="mobile-app-and-sspr"></a>Мобильное приложение и SSPR
 
 При использовании мобильного приложения, например приложения Microsoft Authenticator, для сброса пароля нужно учитывать следующие предупреждения:
 
@@ -98,10 +98,10 @@ ms.locfileid: "74420704"
 > Вы должны включить [конвергентную регистрацию для самостоятельного сброса пароля и многофакторную идентификацию Azure (общедоступную предварительную версию)](concept-registration-mfa-sspr-converged.md), прежде чем пользователи смогут получить новые возможности в [https://aka.ms/setupsecurityinfo](https://aka.ms/setupsecurityinfo).
 
 > [!IMPORTANT]
-> The authenticator app cannot be selected as the only authentication method when configuring a 1-gate policy. Similarly, the authenticator app and only one additional method cannot be selected when configuring a 2-gates policy.
-> Then, when configuring SSPR policies that include the authenticator app as a method, at least an additional method should be selected when configuring a 1-gate policy, and at least two additional methods should be selected when configuring a 2-gates policy.
-> The reason for this requirement is because the current SSPR registration experience does not include the option to register the authenticator app. The option to register the authenticator app is included with the new [Converged registration for self-service password reset and Azure Multi-Factor Authentication (Public preview)](concept-registration-mfa-sspr-converged.md).
-> Allowing policies that only use the authenticator app (for 1-gate policies), or the authenticator app and only one additional method (for 2-gates policies), could lead to users being blocked from registering for  SSPR until they have been configured to use the new registration experience.
+> Приложение Authenticator не может быть выбрано в качестве единственного метода проверки подлинности при настройке политики с 1 шлюзом. Аналогично, приложение Authenticator и только один дополнительный метод не могут быть выбраны при настройке политики с 2 шлюзами.
+> Затем при настройке политик SSPR, включающих приложение Authenticator в качестве метода, необходимо выбрать по крайней мере дополнительный метод при настройке политики с 1 шлюзом, а при настройке 2-шлюза необходимо выбрать по крайней мере два дополнительных метода.
+> Причина этого требования заключается в том, что текущая процедура регистрации SSPR не включает возможность регистрации приложения для проверки подлинности. Возможность регистрации приложения для проверки подлинности включается в новую [согласованную регистрацию для самостоятельного сброса пароля и многофакторной идентификации Azure (общедоступная Предварительная версия)](concept-registration-mfa-sspr-converged.md).
+> Предоставление политики, которые используют только приложение для проверки подлинности (для политик с 1 шлюзом) или приложение для проверки подлинности, и только один дополнительный метод (для политик с 2 шлюзами) может привести к тому, что пользователи будут заблокированы для SSPR, пока они не будут настроены для использования нового процесс регистрации.
 
 ### <a name="change-authentication-methods"></a>Изменение методов проверки подлинности
 
@@ -161,7 +161,7 @@ ms.locfileid: "74420704"
 
 Установив, настроив и включив Azure AD Connect, вы получите приведенные ниже дополнительные параметры интеграции с локальной средой. Они будут недоступны, если обратная запись настроена неправильно. Дополнительные сведения см. в разделе [Настройка компонента обратной записи паролей](howto-sspr-writeback.md).
 
-![Validating password writeback is enabled and working][Writeback]
+![Проверка включения обратной записи паролей включена и работает][Writeback]
 
 На этой странице приводится краткая информация о состоянии локального клиента обратной записи. На ней отображается одно из приведенных ниже сообщений, в зависимости от текущей конфигурации.
 
@@ -217,7 +217,7 @@ ms.locfileid: "74420704"
 * [Что такое обратная запись паролей и каково ее назначение](howto-sspr-writeback.md)
 * [Как сообщать о действиях в SSPR](howto-sspr-reporting.md)
 * [Обзор всех параметров SSPR и их значение](concept-sspr-howitworks.md)
-* [I think something is broken. How do I troubleshoot SSPR?](active-directory-passwords-troubleshoot.md)
+* [Думаю, что что-то не так. Разделы справки устранить неполадки SSPR?](active-directory-passwords-troubleshoot.md)
 * [Вопросы, не вошедшие в другие статьи](active-directory-passwords-faq.md)
 
 [Authentication]: ./media/concept-sspr-howitworks/manage-authentication-methods-for-password-reset.png "Доступные методы проверки подлинности Azure AD и требуемое число методов"

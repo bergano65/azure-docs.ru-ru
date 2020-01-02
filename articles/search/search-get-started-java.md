@@ -1,20 +1,20 @@
 ---
 title: Краткое руководство. Создание индекса службы "Поиск Azure" в Java с помощью интерфейсов REST API
 titleSuffix: Azure Cognitive Search
-description: Описание процессов создания индекса, загрузки данных и выполнения запросов с помощью Java и REST API Когнитивного поиска Azure.
+description: В этом кратком руководстве Java вы узнаете, как создать индекс, загрузку данных и выполнение запросов с помощью REST API Когнитивного поиска Azure.
 manager: nitinme
-author: lisaleib
-ms.author: v-lilei
+author: HeidiSteen
+ms.author: heidist
 ms.devlang: java
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 11/04/2019
-ms.openlocfilehash: 9f30c30276db6daa0b4afdf3e6bdd8e617dedc52
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 5e53167a083b5e89bd88a45452929dd40f0868f2
+ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72792812"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74406730"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-java-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Java с помощью REST API
 > [!div class="op_single_selector"]
@@ -817,7 +817,7 @@ ms.locfileid: "72792812"
 
     Отслеживайте сводку по каждому запросу и результатам. По завершении выполнения вы увидите сообщение BUILD SUCCESS с нулевым (0) кодом выхода.
 
-## <a name="clean-up"></a>Очистка
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Если вы работаете в своей подписке, после завершения проекта целесообразно удалить созданные ресурсы, которые вам больше не потребуются. Работающие ресурсы могут означать лишние затраты. Можно удалить отдельные ресурсы или удалить группу ресурсов, что позволит удалить весь набор ресурсов.
 
@@ -827,10 +827,7 @@ ms.locfileid: "72792812"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве для Java вы отработали ряд задач по созданию индекса, загрузке документов в него и выполнению запросов. Если вы хорошо разобрались с основными концепциями, мы рекомендуем перейти к следующим статьям для более подробного изучения.
+В этом кратком руководстве для Java вы отработали ряд задач по созданию индекса, загрузке документов в него и выполнению запросов. Если вы хорошо разобрались с основными концепциями, мы рекомендуем перейти к следующей статье, которая содержат список операций с индексатором в REST.
 
-+ [Операции с индексом](/rest/api/searchservice/index-operations)
-
-+ [Операции с документами](/rest/api/searchservice/document-operations)
-
-+ [Операции с индексатором](/rest/api/searchservice/indexer-operations)
+> [!div class="nextstepaction"]
+> [Операции с индексатором](/rest/api/searchservice/indexer-operations)

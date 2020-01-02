@@ -1,6 +1,6 @@
 ---
-title: Disenroll device from Azure IoT Hub Device Provisioning Service
-description: Сведения о том, как отозвать регистрацию устройства, чтобы предотвратить его подготовку с помощью службы подготовки устройств к добавлению в Центр Интернета вещей Azure.
+title: Отменяется регистрация устройства в службе подготовки устройств для центра Интернета вещей Azure
+description: Отмена регистрации устройства для предотвращения подготовки через службу подготовки устройств для центра Интернета вещей Azure (DPS)
 author: wesmc7777
 ms.author: wesmc
 ms.date: 04/05/2018
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
-ms.openlocfilehash: 6efbc4483e4768014678822e82f4ca4178f51863
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: af883da67f4e1bc819514e88ff480526e16124db
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74228768"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74974927"
 ---
 # <a name="how-to-disenroll-a-device-from-azure-iot-hub-device-provisioning-service"></a>Практическое руководство по отзыву регистрации устройства из службы подготовки устройств к добавлению в Центр Интернета вещей Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "74228768"
 
 ## <a name="blacklist-devices-by-using-an-individual-enrollment-entry"></a>Список блокировок устройств при использовании записей индивидуальной регистрации
 
-Индивидуальные регистрации относятся к конкретным устройствам и могут использовать в качестве механизмов аттестации сертификаты X.509 или токены SAS (в реальном или виртуальном доверенном платформенном модуле). (Devices that use SAS tokens as their attestation mechanism can be provisioned only through an individual enrollment.) To blacklist a device that has an individual enrollment, you can either disable or delete its enrollment entry. 
+Индивидуальные регистрации относятся к конкретным устройствам и могут использовать в качестве механизмов аттестации сертификаты X.509 или токены SAS (в реальном или виртуальном доверенном платформенном модуле). (Устройства, использующие маркеры SAS в качестве механизма аттестации, можно подготовить только через индивидуальную регистрацию.) Чтобы запретить доступ устройства с индивидуальной регистрацией, можно либо отключить, либо удалить запись регистрации. 
 
 Чтобы временно отключить устройство, достаточно отключить его запись регистрации: 
 

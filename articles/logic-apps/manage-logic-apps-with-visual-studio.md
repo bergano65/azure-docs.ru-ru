@@ -1,32 +1,29 @@
 ---
-title: Управление приложениями логики с помощью Visual Studio — Azure Logic Apps
+title: Управление приложениями логики с помощью Visual Studio
 description: Управление приложениями логики и другими ресурсами Azure с помощью Visual Studio с Cloud Explorer
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.custom: mvc
 ms.date: 10/29/2019
-ms.openlocfilehash: e10683bcd5612db788d6dd5675425fec4130ffeb
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: 29b1235ee319567e103267b9054b8c6b244e1ca7
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73796599"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74790835"
 ---
 # <a name="manage-logic-apps-with-visual-studio"></a>Управление приложениями логики в Visual Studio
 
-Хотя вы можете создавать, изменять, администрировать и развертывать приложения логики в [портал Azure](https://portal.azure.com), можно также использовать Visual Studio, если вы хотите добавить приложения логики в систему управления версиями, опубликовать разные версии и создать шаблоны [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md) для различные среды развертывания. С помощью Visual Studio Cloud Explorer вы можете найти приложения логики и другие ресурсы Azure и управлять ими. Например, вы можете открывать, загружать, редактировать, запускать, просматривать журнал запусков, а также отключать и включать приложения логики, которые уже развернуты на портале Azure. Если вы ранее не работали с Azure Logic Apps в Visual Studio, [узнайте о создании приложений логики с помощью Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md).
+Несмотря на то, что вы можете создавать, изменять, администрировать и развертывать приложения логики в [портал Azure](https://portal.azure.com), можно также использовать Visual Studio, если вы хотите добавить приложения логики в систему управления версиями, опубликовать разные версии и создать шаблоны [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md) для различных сред развертывания. С помощью Visual Studio Cloud Explorer вы можете найти приложения логики и другие ресурсы Azure и управлять ими. Например, вы можете открывать, загружать, редактировать, запускать, просматривать журнал запусков, а также отключать и включать приложения логики, которые уже развернуты на портале Azure. Если вы ранее не работали с Azure Logic Apps в Visual Studio, [узнайте о создании приложений логики с помощью Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md).
 
 > [!IMPORTANT]
 > Развертывание или публикация приложения логики из Visual Studio перезаписывает версию этого приложения на портале Azure. Поэтому, если вы вносите изменения на портале Azure, которые нужно сохранить, [обновите приложение логики в Visual Studio](#refresh) с портала Azure перед следующим развертыванием или публикацией из Visual Studio.
 
 <a name="requirements"></a>
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -44,13 +41,13 @@ ms.locfileid: "73796599"
 
   * [Azure PowerShell](https://github.com/Azure/azure-powershell#installation)
 
-  * Новейшие средства Azure Logic Apps для расширения Visual Studio для нужной версии:
+  * Новейшие средства Azure Logic Apps для расширения Visual Studio нужной версии:
 
     * [Visual Studio 2019](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2019)
 
     * [Visual Studio 2017](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2017)
 
-    * [Visual Studio 2015](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2015)
+    * [Visual Studio 2015](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2015)
 
     Вы можете скачать и установить средства Azure Logic Apps напрямую из Visual Studio Marketplace или узнать, [как установить это расширение из Visual Studio](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions). После завершения установки перезагрузите Visual Studio.
 
@@ -66,7 +63,7 @@ ms.locfileid: "73796599"
 
 1. Откройте Visual Studio. В меню **Представление** выберите **Cloud Explorer**.
 
-1. В Cloud Explorer выберите **Управление учетными записями**. Выберите подписку Azure, связанную с приложениями логики, и нажмите кнопку **Применить**. Например:
+1. В Cloud Explorer выберите **Управление учетными записями**. Выберите подписку Azure, связанную с приложениями логики, и нажмите кнопку **Применить**. Пример.
 
    ![Выберите "Управление учетными записями".](./media/manage-logic-apps-with-visual-studio/account-management-select-Azure-subscription.png)
 
@@ -229,7 +226,7 @@ ms.locfileid: "73796599"
 
    ![Открытие журнала выполнения для приложения логики](./media/manage-logic-apps-with-visual-studio/open-run-history-for-logic-app.png)
 
-1. Чтобы просмотреть сведения об определенном запуске, дважды щелкните его. Например:
+1. Чтобы просмотреть сведения об определенном запуске, дважды щелкните его. Пример.
 
    ![Просмотр сведений о конкретном запуске](./media/manage-logic-apps-with-visual-studio/view-run-history-details.png)
   
@@ -262,7 +259,7 @@ ms.locfileid: "73796599"
 > [!NOTE]
 > При удалении приложения логики новые экземпляры запуска не создаются. Всех выполняющиеся и ожидающие выполнения запуски будут отменены. При наличии тысяч операций запуска отмена может занять значительное время. 
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
 При открытии проекта приложения логики в конструкторе Logic Apps может не отображаться параметр для выбора подписки Azure. Вместо этого приложение логики откроется не с той подпиской Azure, которую вы хотите использовать. Это происходит, потому что после открытия JSON-файла для приложения логики Visual Studio кэширует первую выбранную подписку для использования в будущем. Чтобы устранить эту проблему, попробуйте одно из этих действий:
 

@@ -1,5 +1,5 @@
 ---
-title: Приложение управляющей программы, вызывающее веб-API (обзор) — платформа Microsoft Identity
+title: Создание управляющего приложения, вызывающего веб-API — платформа Microsoft Identity | Службы
 description: Узнайте, как создать управляющее приложение, вызывающее веб-API
 services: active-directory
 documentationcenter: dev-center-name
@@ -16,22 +16,22 @@ ms.date: 09/15/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae0912203f2427694d2a9b8611966a55e1e6889e
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 70a8c97ee1e10d53cd8da9687a9109eb4ce8ae3d
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71056386"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74965574"
 ---
-# <a name="scenario-daemon-application-that-calls-web-apis"></a>Сценарий. Управляющее приложение, вызывающее веб-API
+# <a name="scenario-daemon-application-that-calls-web-apis"></a>Сценарий: управляющее приложение, вызывающее веб-API
 
 Изучите все, что нужно для создания управляющего приложения, вызывающего веб-API.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [Pre-requisites](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 Приложение может получить маркер для вызова веб-API от имени самого себя (не от имени пользователя). Этот сценарий полезен для управляющих приложений. Он использует стандартные [учетные данные клиента](v2-oauth2-client-creds-grant-flow.md) OAuth 2,0.
 
@@ -64,7 +64,7 @@ ms.locfileid: "71056386"
 - При регистрации приложения в [конфигурации приложения](./scenario-daemon-app-configuration.md) необходимо предоставить учетные данные клиента совместно с Azure AD.
 - [Область](scenario-daemon-acquire-token.md#scopes-to-request) , используемая для получения маркера с помощью потока учетных данных клиента, должна быть статической областью.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Приложение управляющей программы — регистрация приложения](./scenario-daemon-app-registration.md)

@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: antchu
-ms.openlocfilehash: 68ada90699fe9a9db6faeb32a04e8eb02c176944
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: f86a63315798d982f7e78fd1ff293061daf50132
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74157653"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74786781"
 ---
 # <a name="azure-functions-development-and-configuration-with-azure-signalr-service"></a>Разработка и Настройка функций Azure с помощью службы Azure SignalR
 
@@ -40,7 +40,7 @@ ms.locfileid: "74157653"
 
 Используйте функцию Azure, активируемую с помощью HTTP, и входную привязку *сигналрконнектионинфо* для создания объекта сведений о соединении. У функции должен быть маршрут HTTP, который заканчивается на `/negotiate`.
 
-Дополнительные сведения о создании функции Negotiate см. в [справочнике по входной привязке *сигналрконнектионинфо* ](../azure-functions/functions-bindings-signalr-service.md#signalr-connection-info-input-binding).
+Дополнительные сведения о создании функции Negotiate см. в [справочнике по входной привязке *сигналрконнектионинфо* ](../azure-functions/functions-bindings-signalr-service.md#input).
 
 Дополнительные сведения о создании маркера с проверкой подлинности см. в разделе [использование проверки подлинности службы приложений](#using-app-service-authentication).
 
@@ -50,7 +50,7 @@ ms.locfileid: "74157653"
 
 Пользователи могут быть добавлены в одну или несколько групп. Вы также можете использовать выходную привязку *SignalR* для добавления или удаления пользователей в группы.
 
-Дополнительные сведения см. в [справочнике по выходной привязке *SignalR* ](../azure-functions/functions-bindings-signalr-service.md#signalr-output-binding).
+Дополнительные сведения см. в [справочнике по выходной привязке *SignalR* ](../azure-functions/functions-bindings-signalr-service.md#output).
 
 ### <a name="signalr-hubs"></a>Концентраторы SignalR
 
@@ -205,6 +205,6 @@ public static Task SendMessage(
 
 Сведения о других языках см. в справочнике по [привязкам службы Azure SignalR](../azure-functions/functions-bindings-signalr-service.md) для функций Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как разрабатывать и настраивать приложения службы SignalR для бессерверных приложений с помощью функций Azure. Попробуйте создать приложение самостоятельно с помощью одного из быстрых запусков или руководств на [странице обзора службы SignalR](index.yml).

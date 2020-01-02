@@ -1,24 +1,21 @@
 ---
-title: Limits and configuration - Azure Logic Apps
-description: Service limits, such as duration, throughput, and capacity, plus configuration values, such as IP addresses to allow, for Azure Logic Apps
+title: Ограничения и настройка
+description: Ограничения службы, такие как длительность, пропускная способность и емкость, плюс значения конфигурации, например IP-адреса, которые следует разрешить, для Azure Logic Apps
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 11/19/2019
-ms.openlocfilehash: dbfa1752f275417c19ada9a7f76e01be6f00397e
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 13bced5cb692366f46032d51c3b635533110d781
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74214599"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791975"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Ограничения и сведения о конфигурации для Azure Logic Apps
 
-В этой статье описаны ограничения и сведения о конфигурации при создании и запуске автоматизированных рабочих процессов в Azure Logic Apps. For Power Automate, see [Limits and configuration in Power Automate](https://docs.microsoft.com/flow/limits-and-config).
+В этой статье описаны ограничения и сведения о конфигурации при создании и запуске автоматизированных рабочих процессов в Azure Logic Apps. Сведения об автоматизации питания см. [в разделе ограничения и настройка в Power автоматизиру](https://docs.microsoft.com/flow/limits-and-config).
 
 <a name="definition-limits"></a>
 
@@ -48,10 +45,10 @@ ms.locfileid: "74214599"
 
 Ограничения для одного выполнения приложения логики:
 
-| Name | Multi-tenant limit | Integration service environment limit | Заметки |
+| Name | Ограничение для нескольких клиентов | Ограничение среды службы интеграции | Заметки |
 |------|--------------------|---------------------------------------|-------|
-| Длительность выполнения | 90 дней | 365 дней | To change the default limit, see [change run duration](#change-duration). |
-| Хранение периода удержания | 90 дней со времени начала выполнения | 365 дней | To change the default limit, see [change storage retention](#change-retention). |
+| Длительность выполнения | 90 дней | 366 дней | Сведения об изменении ограничения по умолчанию см. в разделе [изменение длительности выполнения](#change-duration). |
+| Хранение периода удержания | 90 дней со времени начала выполнения | 366 дней | Чтобы изменить ограничение по умолчанию, см. раздел [изменение хранения хранилища](#change-retention). |
 | Минимальный интервал повторения | 1 с | 1 с ||
 | Максимальный интервал повторения | 500 дней | 500 дней ||
 |||||
@@ -61,13 +58,17 @@ ms.locfileid: "74214599"
 
 ### <a name="change-run-duration-and-storage-retention"></a>Изменение длительности выполнения и хранения
 
-To change the default limit for run duration and storage retention, follow these steps. Если нужно превысить максимальное ограничение, [свяжитесь с командой Logic Apps](mailto://logicappsemail@microsoft.com), чтобы получить справку по своим требованиям.
+Чтобы изменить ограничение по умолчанию для длительности выполнения и хранения, выполните следующие действия. Чтобы увеличить максимальное ограничение, [обратитесь к группе Logic Apps](mailto://logicappsemail@microsoft.com) , чтобы получить помощь в требованиях.
 
-1. На портале Azure в меню вашего приложения логики выберите **Параметры рабочего процесса**.
+1. В портал Azure в меню приложения логики выберите **Параметры рабочего процесса**.
 
-2. В разделе **Параметры среды выполнения** в списке **Срок хранения журнала в днях** выберите **Пользовательский**.
+1. В разделе **Параметры среды выполнения**в списке **срок хранения журнала выполнения в днях** выберите значение **Custom**.
 
-3. Введите необходимое число дней или перетащите ползунок на это число дней.
+1. Введите или перетащите ползунок в нужное количество дней. 
+
+   > [!NOTE]
+   > Для приложений логики в нескольких клиентах Azure ограничение в 90 дней по умолчанию совпадает с максимальным ограничением. Это значение можно уменьшить.
+   > Для приложений логики в среде службы интеграции можно уменьшить или увеличить ограничение в 90 дней по умолчанию.
 
 <a name="looping-debatching-limits"></a>
 
@@ -77,11 +78,11 @@ To change the default limit for run duration and storage retention, follow these
 
 | Name | Ограничение | Заметки |
 | ---- | ----- | ----- |
-| Триггер параллелизма | * Не ограничено, если отключено управление параллелизмом. <p><p>* 25 — это предел по умолчанию при включенном управлении параллелизмом, которое нельзя отключить после включения. Значение по умолчанию можно изменить на значение в пределах от 1 до 50 включительно. | Это ограничение описывает максимальное количество экземпляров приложения логики, которые могут выполняться одновременно или в параллельном режиме. <p><p>**Note**: When concurrency is turned on, the SplitOn limit is reduced to 100 items for [debatching arrays](../logic-apps/logic-apps-workflow-actions-triggers.md#split-on-debatch). <p><p>Чтобы изменить ограничение по умолчанию на любое значение в диапазоне от 1 до 50 включительно, см. раздел об [Изменении параллелизма триггера](../logic-apps/logic-apps-workflow-actions-triggers.md#change-trigger-concurrency) или [Последовательной активации экземпляров](../logic-apps/logic-apps-workflow-actions-triggers.md#sequential-trigger). |
+| Триггер параллелизма | * Не ограничено, если отключено управление параллелизмом. <p><p>* 25 — это предел по умолчанию при включенном управлении параллелизмом, которое нельзя отключить после включения. Значение по умолчанию можно изменить на значение в пределах от 1 до 50 включительно. | Это ограничение описывает максимальное количество экземпляров приложения логики, которые могут выполняться одновременно или в параллельном режиме. <p><p>**Примечание**. Если параметр Concurrency включен, ограничение SplitOn сокращается до 100 элементов для [депакетирования массивов](../logic-apps/logic-apps-workflow-actions-triggers.md#split-on-debatch). <p><p>Чтобы изменить ограничение по умолчанию на любое значение в диапазоне от 1 до 50 включительно, см. раздел об [Изменении параллелизма триггера](../logic-apps/logic-apps-workflow-actions-triggers.md#change-trigger-concurrency) или [Последовательной активации экземпляров](../logic-apps/logic-apps-workflow-actions-triggers.md#sequential-trigger). |
 | Максимальное число ожидающих запусков | Когда управление параллелизмом включено, минимальное количество ожидающих запусков равно 10 плюс количество параллельных запусков (триггер параллелизма). Вы можете изменить максимальное количество вплоть до 100 включительно. | Это ограничение описывает максимальное количество экземпляров приложения логики, ожидающих выполнения, когда приложение логики уже выполняет максимальное число параллельных экземпляров. <p><p>Чтобы изменить предел по умолчанию, см. раздел [Изменение предела ожидающих запусков](../logic-apps/logic-apps-workflow-actions-triggers.md#change-waiting-runs). |
 | Элементы массива foreach | 100 000 | Это ограничение описывает максимальное число элементов массива, которые может обработать цикл For each. <p><p>Для фильтрации больших массивов можно использовать [действие запроса](../connectors/connectors-native-query.md). |
 | Параллелизм foreach | 20 — это предел по умолчанию, если управление параллелизмом отключено. Значение по умолчанию можно изменить на значение в пределах от 1 до 50 включительно. | Это ограничение является максимальным количеством итераций цикла For each, которые могут выполняться одновременно или в параллельном режиме. <p><p>Чтобы изменить ограничение по умолчанию на любое значение в диапазоне от 1 до 50 включительно, см. раздел об [Изменении параллелизма цикла Foreach](../logic-apps/logic-apps-workflow-actions-triggers.md#change-for-each-concurrency) или [Последовательном запуске циклов Foreach](../logic-apps/logic-apps-workflow-actions-triggers.md#sequential-for-each). |
-| Элементы SplitOn | * 100,000 without trigger concurrency <p><p>* 100 with trigger concurrency | Для триггеров, возвращающих массив, можно указать выражение для обработки, которое использует свойство SplitOn, [разделяющее или выполняющее по отдельности элементы массива на нескольких экземплярах рабочего процесса](../logic-apps/logic-apps-workflow-actions-triggers.md#split-on-debatch), вместо цикла For each. Это выражение ссылается на массив, который будет использоваться для создания и запуска экземпляра рабочего процесса для каждого элемента массива. <p><p>**Note**: When concurrency is turned on, the SplitOn limit is reduced to 100 items. |
+| Элементы SplitOn | * 100 000 без параллелизма триггеров <p><p>* 100 с параллелизмом триггеров | Для триггеров, возвращающих массив, можно указать выражение для обработки, которое использует свойство SplitOn, [разделяющее или выполняющее по отдельности элементы массива на нескольких экземплярах рабочего процесса](../logic-apps/logic-apps-workflow-actions-triggers.md#split-on-debatch), вместо цикла For each. Это выражение ссылается на массив, который будет использоваться для создания и запуска экземпляра рабочего процесса для каждого элемента массива. <p><p>**Примечание**. Если параметр Concurrency включен, ограничение SplitOn сокращается до 100 элементов. |
 | Максимальное количество итераций | 5 000 | |
 ||||
 
@@ -91,11 +92,11 @@ To change the default limit for run duration and storage retention, follow these
 
 Ограничения для одного определения приложения логики:
 
-### <a name="multi-tenant-logic-apps-service"></a>Multi-tenant Logic Apps service
+### <a name="multi-tenant-logic-apps-service"></a>Служба Logic Apps нескольких клиентов
 
 | Name | Ограничение | Заметки |
 | ---- | ----- | ----- |
-| Действие: выполнения за 5 минут | 100,000 is the default limit, but 300,000 is the maximum limit. | Чтобы изменить ограничение по умолчанию, см. сведения в разделе о [выполнении приложения логики в режиме высокой пропускной способности](../logic-apps/logic-apps-workflow-actions-triggers.md#run-high-throughput-mode), который находится в предварительной версии. При необходимости можно распределить рабочую нагрузку между несколькими приложениями логики. |
+| Действие: выполнения за 5 минут | 100 000 — ограничение по умолчанию, а 300 000 — максимальное ограничение. | Чтобы изменить ограничение по умолчанию, см. сведения в разделе о [выполнении приложения логики в режиме высокой пропускной способности](../logic-apps/logic-apps-workflow-actions-triggers.md#run-high-throughput-mode), который находится в предварительной версии. При необходимости можно распределить рабочую нагрузку между несколькими приложениями логики. |
 | Действие: исходящие параллельные вызовы | около 2500 | При необходимости можно уменьшить количество параллельных запросов или длительность выполнения запроса. |
 | Конечная точка среды выполнения: входящие параллельные вызовы | ~1000 | При необходимости можно уменьшить количество параллельных запросов или длительность выполнения запроса. |
 | Конечная точка среды выполнения: вызовы read за 5 минут  | 60 000 | При необходимости можно распределить рабочую нагрузку между несколькими приложениями. |
@@ -103,50 +104,50 @@ To change the default limit for run duration and storage retention, follow these
 | Пропускная способность содержимого за 5 минут | 600 МБ | При необходимости можно распределить рабочую нагрузку между несколькими приложениями. |
 ||||
 
-### <a name="integration-service-environment-ise"></a>Integration service environment (ISE)
+### <a name="integration-service-environment-ise"></a>Среда службы интеграции (ISE)
 
-Here are the throughput limits for the Premium SKU:
+Ниже приведены ограничения пропускной способности для SKU уровня "Премиум":
 
 | Name | Ограничение | Заметки |
 |------|-------|-------|
-| Base unit execution limit | System-throttled when infrastructure capacity reaches 80% | Provides ~4,000 action executions per minute, which is ~160 million action executions per month | |
-| Scale unit execution limit | System-throttled when infrastructure capacity reaches 80% | Each scale unit can provide ~2,000 additional action executions per minute, which is ~80 million more action executions per month | |
-| Maximum scale units that you can add | 10 | |
+| Ограничение выполнения базовых единиц | Регулирование системы при достижении емкости инфраструктуры 80% | Предоставляет около 4 000 выполненных действий в минуту, что составляет ~ 160 000 000 выполненных действий в месяц | |
+| Предел выполнения единицы масштабирования | Регулирование системы при достижении емкости инфраструктуры 80% | Каждая единица масштабирования может предоставить около 2 000 дополнительных выполняемых действий в минуту, что составляет ~ 80 000 000 больше выполненных действий в месяц | |
+| Максимальное число единиц масштабирования, которые можно добавить | 10 | |
 ||||
 
 Чтобы превысить эти пороговые значения при обычной обработке или запустить нагрузочное тестирование, при котором возможно их превышение, [свяжитесь с командой Logic Apps](mailto://logicappsemail@microsoft.com). Мы поможем удовлетворить ваши требования.
 
 > [!NOTE]
-> The [Developer SKU](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level) has no published limits as this SKU doesn't have any service-level agreement (SLA) or capabilities for scaling up. Use this SKU only for experimenting, development, and testing, not production or performance testing.
+> У [SKU разработчика](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level) нет опубликованных ограничений, так как этот SKU не имеет соглашения об уровне обслуживания (SLA) или возможностей для увеличения масштаба. Используйте этот номер SKU только для экспериментов, разработки и тестирования, а не для тестирования в рабочей среде и производительности.
 
 <a name="gateway-limits"></a>
 
-## <a name="gateway-limits"></a>Gateway limits
+## <a name="gateway-limits"></a>Ограничения шлюза
 
-Azure Logic Apps supports write operations, including inserts and updates, through the gateway. However, these operations have [limits on their payload size](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem#considerations).
+Azure Logic Apps поддерживает операции записи, включая операции вставки и обновления через шлюз. Однако эти операции имеют [ограничения на размер полезных данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem#considerations).
 
 <a name="request-limits"></a>
 
 ## <a name="http-limits"></a>Ограничения HTTP
 
-Here are the limits for a single outgoing or incoming HTTP call:
+Ниже приведены ограничения для одного исходящего или входящего HTTP-вызова.
 
 #### <a name="timeout"></a>Время ожидания
 
 Некоторые операции соединителя выполняют асинхронные вызовы или прослушивают запросы веб-перехватчика, поэтому время ожидания для этих операций может превышать эти ограничения. Дополнительные сведения см. в разделе с техническими сведениями для указанного соединителя, а также в разделе [Триггеры и действия рабочих процессов](../logic-apps/logic-apps-workflow-actions-triggers.md#http-action).
 
-| Name | Multi-tenant limit | Integration service environment limit | Заметки |
+| Name | Ограничение для нескольких клиентов | Ограничение среды службы интеграции | Заметки |
 |------|--------------------|---------------------------------------|-------|
-| Outbound request | 120 секунд <br>(2 minutes) | 240 seconds <br>(4 minutes) | Examples of outbound requests include calls made by HTTP triggers. <p><p>**Tip**: For longer running operations, use an [asynchronous polling pattern](../logic-apps/logic-apps-create-api-app.md#async-pattern) or an [until loop](../logic-apps/logic-apps-workflow-actions-triggers.md#until-action). |
-| Inbound request | 120 секунд <br>(2 minutes) | 240 seconds <br>(4 minutes) | Examples of inbound requests include calls received by request triggers and webhook triggers. <p><p>**Note**: For the original caller to get the response, all steps in the response must finish within the limit unless you call another logic app as a nested workflow. Дополнительные сведения см. в разделе [Вызов, активация и вложение приложений логики](../logic-apps/logic-apps-http-endpoint.md). |
+| Исходящий запрос | 120 секунд <br>(2 минуты) | 240 секунд <br>(4 минуты) | Примеры исходящих запросов включают вызовы, выполняемые триггерами HTTP. <p><p>**Совет**. для более длительного выполнения операций используйте [асинхронный шаблон опроса](../logic-apps/logic-apps-create-api-app.md#async-pattern) или [цикл Until](../logic-apps/logic-apps-workflow-actions-triggers.md#until-action). |
+| Входящий запрос | 120 секунд <br>(2 минуты) | 240 секунд <br>(4 минуты) | Примеры входящих запросов включают вызовы, полученные триггерами запросов и триггерами веб-перехватчика. <p><p>**Примечание**. чтобы исходный вызывающий объект получил ответ, все шаги в ответе должны заканчиваться в пределах ограничения, если только вы не вызываете другое приложение логики как вложенный рабочий процесс. Дополнительные сведения см. в разделе [Вызов, активация и вложение приложений логики](../logic-apps/logic-apps-http-endpoint.md). |
 |||||
 
 #### <a name="message-size"></a>Размер сообщения
 
-| Name | Multi-tenant limit | Integration service environment limit | Заметки |
+| Name | Ограничение для нескольких клиентов | Ограничение среды службы интеграции | Заметки |
 |------|--------------------|---------------------------------------|-------|
 | Размер сообщения | 100 МБ | 200 МБ | Чтобы обойти это ограничение, см. раздел [Обработка больших сообщений](../logic-apps/logic-apps-handle-large-messages.md). Тем не менее некоторые соединители и API-интерфейсы могут не поддерживать фрагментацию и даже ограничение по умолчанию. |
-| Размер сообщения с фрагментацией | 1 ГБ | 5 ГБ | Это ограничение применяется к действиям, которые изначально поддерживают фрагментацию или позволяют включить фрагментацию в конфигурации среды выполнения. <p>For the integration service environment, the Logic Apps engine supports this limit, but connectors have their own chunking limits up to the engine limit, for example, see the [Azure Blob Storage connector's API reference](https://docs.microsoft.com/connectors/azureblob/). For more information chunking, see [Handle large messages with chunking](../logic-apps/logic-apps-handle-large-messages.md). |
+| Размер сообщения с фрагментацией | 1 ГБ | 5 ГБ | Это ограничение применяется к действиям, которые изначально поддерживают фрагментацию или позволяют включить фрагментацию в конфигурации среды выполнения. <p>Для среды службы интеграции подсистема Logic Apps поддерживает это ограничение, но для соединителей предусмотрены собственные ограничения на количество блоков, например, см. [Справочник по API для соединителя хранилища BLOB-объектов Azure](https://docs.microsoft.com/connectors/azureblob/). Дополнительные сведения о фрагментации см. в разделе [Handle Large messages with Фрагментирование](../logic-apps/logic-apps-handle-large-messages.md). |
 | Оценочное ограничение выражения | 131 072 символов | 131 072 символов | `@concat()`, `@base64()` и `@string()` не могут превышать это ограничение. |
 |||||
 
@@ -165,10 +166,10 @@ Here are the limits for a single outgoing or incoming HTTP call:
 
 Эти ограничения относятся к пользовательским соединителям, которые можно создавать с помощью интерфейсов веб-API.
 
-| Name | Multi-tenant limit | Integration service environment limit | Заметки |
+| Name | Ограничение для нескольких клиентов | Ограничение среды службы интеграции | Заметки |
 |------|--------------------|---------------------------------------|-------|
 | Часто задаваемые вопросы о пользовательских соединителях | 1000 для каждой подписки Azure | 1000 для каждой подписки Azure ||
-| Number of requests per minute for a custom connector | 500 requests per minute per connection | 2,000 requests per minute per *custom connector* ||
+| Число запросов в минуту для настраиваемого соединителя | 500 запросов в минуту на подключение | 2 000 запросов в минуту на *пользовательский соединитель* ||
 |||
 
 <a name="managed-identity"></a>
@@ -177,37 +178,37 @@ Here are the limits for a single outgoing or incoming HTTP call:
 
 | Name | Ограничение |
 | ---- | ----- |
-| Number of logic apps that have the system-assigned identity in an Azure subscription per region | 100 |
+| Количество приложений логики, которым назначено системное удостоверение в подписке Azure по регионам | 100 |
 |||
 
 <a name="integration-account-limits"></a>
 
 ## <a name="integration-account-limits"></a>Ограничения учетной записи интеграции
 
-Each Azure subscription has these integration account limits:
+Каждая подписка Azure имеет следующие ограничения учетной записи интеграции:
 
-* One [Free tier](../logic-apps/logic-apps-pricing.md#integration-accounts) integration account per Azure region
+* Одна учетная запись интеграции [уровня Free](../logic-apps/logic-apps-pricing.md#integration-accounts) на регион Azure
 
-* 1,000 total integration accounts, including integration accounts in any [integration service environments (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) across both [Developer and Premium SKUs](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level).
+* 1 000. Общее число учетных записей интеграции, включая учетные записи интеграции в любой [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) по [номерам SKU Developer и Premium](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level).
 
-* Each ISE, whether [Developer or Premium](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level), is limited to 5 total integration accounts:
+* В каждой ИНТЕГРИРОВАНной среде [разработки (Developer или Premium](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level)) ограничен 5 общих учетных записей интеграции:
 
-  | ISE SKU | Ограничения учетной записи интеграции |
+  | SKU ИНТЕГРИРОВАННОЙ СРЕДЫ СЦЕНАРИЕВ | Ограничения учетной записи интеграции |
   |---------|----------------------------|
-  | **Премиальный** | 5 total - [Standard](../logic-apps/logic-apps-pricing.md#integration-accounts) accounts only, including one Standard account for free. No Free or Basic accounts are permitted. |
-  | **Разработчик** | 5 total - [Free](../logic-apps/logic-apps-pricing.md#integration-accounts) (limited to 1 account) and [Standard](../logic-apps/logic-apps-pricing.md#integration-accounts) combined, or all Standard accounts. No Basic accounts are permitted. Use the [Developer SKU](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level) for experimenting, development, and testing, but not for production or performance testing. |
+  | **Премиальный** | 5 всего — только [стандартные](../logic-apps/logic-apps-pricing.md#integration-accounts) учетные записи, включая одну стандартную учетную запись бесплатно. Учетные записи Free и Basic не разрешены. |
+  | **Разработчик** | 5 от общего [числа (не](../logic-apps/logic-apps-pricing.md#integration-accounts) более 1 учетной записи), со [стандартным](../logic-apps/logic-apps-pricing.md#integration-accounts) объединением или со всеми стандартными учетными записями. Базовые учетные записи не разрешены. Используйте [SKU Developer](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level) для экспериментов, разработки и тестирования, но не для тестирования в рабочей среде или тестировании производительности. |
   |||
 
-Additional costs apply to integration accounts that you add beyond the integration accounts that are included with an ISE. To learn how pricing and billing work for ISEs, see the [Logic Apps pricing model](../logic-apps/logic-apps-pricing.md#fixed-pricing). For pricing rates, see [Logic Apps pricing](https://azure.microsoft.com/pricing/details/logic-apps/).
+Дополнительные затраты применяются к учетным записям интеграции, добавленным за пределы учетных записей интеграции, которые входят в интегрированную среду сценариев. Чтобы узнать, как цены и данные о выставлении счетов для Исес, см. [Logic Apps модель ценообразования](../logic-apps/logic-apps-pricing.md#fixed-pricing). Цены см. на странице [цен на Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps/).
 
 <a name="artifact-number-limits"></a>
 
 ### <a name="artifact-limits-per-integration-account"></a>Ограничения артефактов на учетную запись интеграции
 
-Here are the limits on the number of artifacts for each integration account tier. For pricing rates, see [Logic Apps pricing](https://azure.microsoft.com/pricing/details/logic-apps/). To learn how pricing and billing work for integration accounts, see the [Logic Apps pricing model](../logic-apps/logic-apps-pricing.md#integration-accounts).
+Ниже приведены ограничения на количество артефактов для каждого уровня учетной записи интеграции. Цены см. на странице [цен на Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps/). Чтобы узнать, как цены и данные о выставлении счетов для учетных записей интеграции, см. [Logic Apps модель ценообразования](../logic-apps/logic-apps-pricing.md#integration-accounts).
 
 > [!NOTE]
-> Use the Free tier only for exploratory scenarios, not production scenarios. Этот уровень ограничивает пропускную способность и потребление, а также не предусматривает соглашения об уровне обслуживания (SLA).
+> Уровень Free следует использовать только для произвольных сценариев, а не для рабочих сценариев. Этот уровень ограничивает пропускную способность и потребление, а также не предусматривает соглашения об уровне обслуживания (SLA).
 
 | Артефакт | Бесплатные | "Базовый" | Стандарт |
 |----------|------|-------|----------|
@@ -243,11 +244,11 @@ Here are the limits on the number of artifacts for each integration account tier
 
 ### <a name="b2b-protocol-as2-x12-edifact-message-size"></a>Размер сообщения протокола B2B (AS2, X12, EDIFACT)
 
-Here are the message size limits that apply to B2B protocols:
+Ниже приведены ограничения на размер сообщений, которые применяются к протоколам B2B.
 
-| Name | Multi-tenant limit | Integration service environment limit | Заметки |
+| Name | Ограничение для нескольких клиентов | Ограничение среды службы интеграции | Заметки |
 |------|--------------------|---------------------------------------|-------|
-| AS2 | v2 - 100 MB<br>v1 - 50 MB | v2 - 200 MB <br>v1 - 50 MB | Относится к декодированию и кодированию |
+| AS2 | v2 – 100 МБ<br>V1 – 50 МБ | v2 – 200 МБ <br>V1 – 50 МБ | Относится к декодированию и кодированию |
 | X12 | 50 МБ | 50 МБ | Относится к декодированию и кодированию |
 | EDIFACT | 50 МБ | 50 МБ | Относится к декодированию и кодированию |
 ||||
@@ -256,33 +257,33 @@ Here are the message size limits that apply to B2B protocols:
 
 ## <a name="disabling-or-deleting-logic-apps"></a>Отключение или удаление приложений логики
 
-При отключении приложения логики новые экземпляры запуска не создаются. All in-progress and pending runs continue until they finish, which might take time to complete.
+При отключении приложения логики новые экземпляры запуска не создаются. Все выполняющиеся и ожидающие выполнения продолжаются до завершения, что может занять некоторое время.
 
 При удалении приложения логики новые экземпляры запуска не создаются. Всех выполняющиеся и ожидающие выполнения запуски будут отменены. При наличии тысяч операций запуска отмена может занять значительное время.
 
 <a name="configuration"></a>
 
-## <a name="firewall-configuration-ip-addresses"></a>Firewall configuration: IP addresses
+## <a name="firewall-configuration-ip-addresses"></a>Конфигурация брандмауэра: IP-адреса
 
-The IP addresses that Azure Logic Apps uses for incoming and outgoing calls depend on the region where your logic app exists. *All* logic apps that are in the same region use the same IP address ranges.
+IP-адреса, которые Azure Logic Apps используют для входящих и исходящих вызовов, зависят от региона, в котором существует приложение логики. *Все* приложения логики, наявляющиесяся в одном регионе, используют одни и те же диапазоны IP-адресов.
 
 > [!NOTE]
-> Some Power Automate calls, such as **HTTP** and **HTTP + OpenAPI** requests, go directly through the Azure Logic Apps service and come from the IP addresses that are listed here. For more information about IP addresses used by Power Automate, see [Limits and configuration in Power Automate](https://docs.microsoft.com/flow/limits-and-config#ip-address-configuration).
+> Некоторые вызовы Power автоматизиру, такие как запросы **http** и **http + OpenAPI** , проходят непосредственно через службу Azure Logic Apps и берутся из указанных здесь IP-адресов. Дополнительные сведения об IP-адресах, используемых службой автоматизации питания, см. [в разделе ограничения и настройка в Power автоматизиру](https://docs.microsoft.com/flow/limits-and-config#ip-address-configuration).
 
-* To support the calls that your logic apps directly make with [HTTP](../connectors/connectors-native-http.md), [HTTP + Swagger](../connectors/connectors-native-http-swagger.md), and other HTTP requests, set up your firewall with *all* the [inbound](#inbound) *and* [outbound](#outbound) IP addresses that are used by the Logic Apps service, based on the regions where your logic apps exist. Эти адреса отображаются под заголовками **Входящие** и **Исходящие** в этом разделе и сортируются по регионам.
+* Для поддержки вызовов, которые напрямую делают приложения логики с [http](../connectors/connectors-native-http.md), [http + SWAGGER](../connectors/connectors-native-http-swagger.md)и другими HTTP-запросами, настройте брандмауэр со *всеми* [входящими](#inbound) *и* [исходящими](#outbound) IP-адресами, используемыми службой Logic Apps, в зависимости от регионов, где существуют приложения логики. Эти адреса отображаются под заголовками **Входящие** и **Исходящие** в этом разделе и сортируются по регионам.
 
 * Для поддержки вызовов [соединителей, управляемых Майкрософт](../connectors/apis-list.md), настройте брандмауэр так, чтобы он включал *все* [исходящие](#outbound) IP-адреса, используемые этими соединителями, в зависимости от регионов, где существуют приложения логики. Эти адреса отображаются под заголовком **Исходящие** в этом разделе и сортируются по регионам. 
 
-* To enable communication for logic apps that run in an integration service environment (ISE), make sure that you [open these ports](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#ports).
+* Чтобы включить обмен данными для приложений логики, которые выполняются в среде службы интеграции (ISE), убедитесь, что вы [откроете эти порты](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#network-ports-for-ise).
 
-* If your logic apps have problems accessing Azure storage accounts that use [firewalls and firewall rules](../storage/common/storage-network-security.md), you have [various options to enable access](../connectors/connectors-create-api-azureblobstorage.md#access-storage-accounts-behind-firewalls).
+* Если приложения логики имеют проблемы с доступом к учетным записям хранения Azure, использующим [брандмауэры и правила брандмауэра](../storage/common/storage-network-security.md), у вас есть [различные параметры для включения доступа](../connectors/connectors-create-api-azureblobstorage.md#access-storage-accounts-behind-firewalls).
 
-  For example, logic apps can't directly access storage accounts that use firewall rules and exist in the same region. However, if you permit the [outbound IP addresses for managed connectors in your region](../logic-apps/logic-apps-limits-and-config.md#outbound), your logic apps can access storage accounts that are in a different region except when you use the Azure Table Storage or Azure Queue Storage connectors. To access your Table Storage or Queue Storage, you can use the HTTP trigger and actions instead. For other options, see [Access storage accounts behind firewalls](../connectors/connectors-create-api-azureblobstorage.md#access-storage-accounts-behind-firewalls).
+  Например, приложения логики не могут напрямую обращаться к учетным записям хранения, которые используют правила брандмауэра и существуют в одном регионе. Однако если вы разрешите [Исходящие IP-адреса для управляемых соединителей в вашем регионе](../logic-apps/logic-apps-limits-and-config.md#outbound), приложения логики смогут получать доступ к учетным записям хранения, находящимся в другом регионе, за исключением случаев использования хранилища таблиц Azure или соединителей хранилища очередей Azure. Для доступа к хранилищу таблиц или хранилищу очередей вместо них можно использовать триггер и действия HTTP. Другие параметры см. в разделе [доступ к учетным записям хранения, защищенным брандмауэрами](../connectors/connectors-create-api-azureblobstorage.md#access-storage-accounts-behind-firewalls).
 
-* For custom connectors, [Azure Government](../azure-government/documentation-government-overview.md), and [Azure China 21Vianet](https://docs.microsoft.com/azure/china/), fixed or reserved IP addresses aren't available.
+* Для настраиваемых соединителей, [Azure для государственных организаций](../azure-government/documentation-government-overview.md)и [Azure для Китая](https://docs.microsoft.com/azure/china/)() недоступны фиксированные или зарезервированные IP-адреса.
 
 > [!IMPORTANT]
-> If you have firewall configurations that you set up before September 1, 2018, make sure that they match the current IP addresses in these lists for the regions where your logic apps exist.
+> При наличии конфигураций брандмауэра, которые вы настроили до 1 сентября 2018, убедитесь, что они соответствуют текущим IP-адресам в этих списках для регионов, где существуют приложения логики.
 
 <a name="inbound"></a>
 
@@ -338,12 +339,12 @@ The IP addresses that Azure Logic Apps uses for incoming and outgoing calls depe
 | Восточная Азия | 13.75.94.173, 40.83.127.19, 52.175.33.254, 40.83.73.39, 65.52.175.34, 40.83.77.208, 40.83.100.69, 40.83.75.165 | 13.75.36.64–13.75.36.79, 23.99.116.181, 52.175.23.169 |
 | Восточная часть США | 13.92.98.111, 40.121.91.41, 40.114.82.191, 23.101.139.153, 23.100.29.190, 23.101.136.201, 104.45.153.81, 23.101.132.208 | 40.71.11.80–40.71.11.95, 40.71.249.205, 191.237.41.52 |
 | Восточная часть США 2 | 40.84.30.147, 104.208.155.200, 104.208.158.174, 104.208.140.40, 40.70.131.151, 40.70.29.214, 40.70.26.154, 40.70.27.236 | 40.70.146.208–40.70.146.223, 52.232.188.154, 104.208.233.100 |
-| Центральная Франция | 52.143.164.80, 52.143.164.15, 40.89.186.30, 20.188.39.105, 40.89.191.161, 40.89.188.169, 40.89.186.28, 40.89.190.104 | 40.79.130.208 - 40.79.130.223, 40.89.135.2 |
-| Южная Франция | 52.136.132.40, 52.136.129.89, 52.136.131.155, 52.136.133.62, 52.136.139.225, 52.136.130.144, 52.136.140.226, 52.136.129.51 | 40.79.178.240 - 40.79.178.255, 52.136.133.184 |
+| Центральная Франция | 52.143.164.80, 52.143.164.15, 40.89.186.30, 20.188.39.105, 40.89.191.161, 40.89.188.169, 40.89.186.28, 40.89.190.104 | 40.79.130.208-40.79.130.223, 40.89.135.2 |
+| Южная Франция | 52.136.132.40, 52.136.129.89, 52.136.131.155, 52.136.133.62, 52.136.139.225, 52.136.130.144, 52.136.140.226, 52.136.129.51 | 40.79.178.240-40.79.178.255, 52.136.133.184 |
 | Восточная Япония | 13.71.158.3, 13.73.4.207, 13.71.158.120, 13.78.18.168, 13.78.35.229, 13.78.42.223, 13.78.21.155, 13.78.20.232 | 13.71.153.19, 13.78.108.0–13.78.108.15, 40.115.186.96 |
 | Западная Япония | 40.74.140.4, 104.214.137.243, 138.91.26.45, 40.74.64.207, 40.74.76.213, 40.74.77.205, 40.74.74.21, 40.74.68.85 | 40.74.100.224–40.74.100.239, 40.74.130.77, 104.215.61.248 |
-| Республика Корея, центральный регион | 52.231.14.11, 52.231.14.219, 52.231.15.6, 52.231.10.111, 52.231.14.223, 52.231.77.107, 52.231.8.175, 52.231.9.39 | 52.231.18.208 - 52.231.18.223, 52.141.36.214 |
-| Республика Корея, южный регион | 52.231.204.74, 52.231.188.115, 52.231.189.221, 52.231.203.118, 52.231.166.28, 52.231.153.89, 52.231.155.206, 52.231.164.23 | 52.231.147.0 - 52.231.147.15, 52.231.163.10 |
+| Республика Корея, центральный регион | 52.231.14.11, 52.231.14.219, 52.231.15.6, 52.231.10.111, 52.231.14.223, 52.231.77.107, 52.231.8.175, 52.231.9.39 | 52.231.18.208-52.231.18.223, 52.141.36.214 |
+| Республика Корея, южный регион | 52.231.204.74, 52.231.188.115, 52.231.189.221, 52.231.203.118, 52.231.166.28, 52.231.153.89, 52.231.155.206, 52.231.164.23 | 52.231.147.0-52.231.147.15, 52.231.163.10 |
 | Центрально-северная часть США | 168.62.248.37, 157.55.210.61, 157.55.212.238, 52.162.208.216, 52.162.213.231, 65.52.10.183, 65.52.9.96, 65.52.8.225 | 52.162.107.160–52.162.107.175, 52.162.242.161, 65.52.218.230 |
 | Северная Европа | 40.113.12.95, 52.178.165.215, 52.178.166.21, 40.112.92.104, 40.112.95.216, 40.113.4.18, 40.113.3.202, 40.113.1.181 | 13.69.227.208–13.69.227.223, 52.178.150.68, 104.45.93.9 |
 | Северная часть ЮАР | 102.133.231.188, 102.133.231.117, 102.133.230.4, 102.133.227.103, 102.133.228.6, 102.133.230.82, 102.133.231.9, 102.133.231.51 | 13.65.86.57, 104.214.19.48–104.214.19.63, 104.214.70.191 |

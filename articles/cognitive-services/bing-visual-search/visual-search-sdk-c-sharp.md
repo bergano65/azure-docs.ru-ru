@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Получение сведений изображений с помощью пакета SDK для визуального поиска Bing для C#
+title: Краткое руководство. Получение аналитических сведений об изображении с помощью пакета SDK для C# — Визуальный поиск Bing
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как отправить изображение с помощью пакета SDK визуального поиска Bing и получить аналитические сведения об этом изображении.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: bing-web-search
 ms.topic: quickstart
 ms.date: 05/15/2019
 ms.author: aahi
-ms.openlocfilehash: 2c98484eca027d20fbbe72ffb333a3e281e6f46b
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: 3db40f999770823052f07a328d3d8dc8c01ce345
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67849888"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74383582"
 ---
 # <a name="quickstart-get-image-insights-using-the-bing-visual-search-sdk-for-c"></a>Краткое руководство. Получение сведений изображений с помощью пакета SDK для визуального поиска Bing для C#
 

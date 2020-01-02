@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 3c27ff06237336d37ad1b5bed1b90aaa6b076f0b
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 3e72bd366cdbba1d73bc05f98d3848e2d4f0ca6c
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74230999"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74925335"
 ---
 # <a name="azure-queue-storage-bindings-for-azure-functions"></a>Привязки хранилища очередей Azure для службы "Функции Azure"
 
@@ -27,7 +27,7 @@ ms.locfileid: "74230999"
 
 [!INCLUDE [functions-storage-sdk-version](../../includes/functions-storage-sdk-version.md)]
 
-## <a name="packages---functions-2x"></a>Пакеты — Функции 2.x
+## <a name="packages---functions-2x-and-higher"></a>Packages — функции 2. x и более поздних версий
 
 Привязки хранилища очередей доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.Storage](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.Storage) версии 3.х. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk](https://github.com/Azure/azure-webjobs-sdk/tree/dev/src/Microsoft.Azure.WebJobs.Extensions.Storage/Queues).
 
@@ -185,9 +185,9 @@ module.exports = async function (context, message) {
 
 ### <a name="trigger---python-example"></a>Пример Python: триггер
 
-The following example demonstrates how to read a queue message passed to a function via a trigger.
+В следующем примере показано, как прочитать сообщение очереди, переданное в функцию через триггер.
 
-A Storage queue trigger is defined in *function.json* where *type* is set to `queueTrigger`.
+Триггер очереди хранилища определен в *Function. JSON* , где *type* имеет значение `queueTrigger`.
 
 ```json
 {
@@ -204,7 +204,7 @@ A Storage queue trigger is defined in *function.json* where *type* is set to `qu
 }
 ```
 
-The code *_\_init_\_.py* declares a parameter as `func.ServiceBusMessage` which allows you to read the queue message in your function.
+Код  *_\_init_\_. копировать* объявляет параметр как `func.ServiceBusMessage` который позволяет считывать сообщение очереди в функции.
 
 ```python
 import logging
@@ -348,7 +348,7 @@ def main(msg: func.QueueMessage):
 
 ## <a name="trigger---hostjson-properties"></a>Свойства host.json в триггере
 
-В файле [host.json](functions-host-json.md#queues) содержатся параметры, управляющие поведением очереди триггера. See the [host.json settings](#hostjson-settings) section for details regarding available settings.
+В файле [host.json](functions-host-json.md#queues) содержатся параметры, управляющие поведением очереди триггера. Дополнительные сведения о доступных параметрах см. в разделе [Параметры Host. JSON](#hostjson-settings) .
 
 ## <a name="output"></a>Выходные данные
 
@@ -513,9 +513,9 @@ module.exports = function(context) {
 
 ### <a name="output---python-example"></a>Пример Python: выходные данные
 
-The following example demonstrates how to output single and multiple values to storage queues. The configuration needed for *function.json* is the same either way.
+В следующем примере показано, как вывести одно и несколько значений в очереди хранилища. Конфигурация, необходимая для *Function. JSON* , такая же, как и та же.
 
-A Storage queue binding is defined in *function.json* where *type* is set to `queue`.
+Привязка очереди хранилища определяется в *Function. JSON* , где *type* имеет значение `queue`.
 
 ```json
 {
@@ -547,7 +547,7 @@ A Storage queue binding is defined in *function.json* where *type* is set to `qu
 }
 ```
 
-To set a individual message on the queue, you pass a single value to the `set` method.
+Чтобы задать отдельное сообщение в очереди, необходимо передать одно значение методу `set`.
 
 ```python
 import azure.functions as func
@@ -561,7 +561,7 @@ def main(req: func.HttpRequest, msg: func.Out[str]) -> func.HttpResponse:
     return 'OK'
 ```
 
-To create multiple messages on the queue, declare a parameter as the appropriate list type and pass an array of values (that match the list type) to the `set` method.
+Чтобы создать несколько сообщений в очереди, объявите параметр в качестве соответствующего типа списка и передайте в метод `set` массив значений (которые соответствуют типу списка).
 
 ```python
 import azure.functions as func
@@ -649,7 +649,7 @@ public static string Run([HttpTrigger] dynamic input,  ILogger log)
 
 ## <a name="hostjson-settings"></a>Параметры файла host.json
 
-В этом разделе описываются глобальные параметры конфигурации, доступные для этой привязки в версии 2.x. В приведенном ниже примере файла host.json содержатся только параметры версии 2.x для этой привязки. Дополнительные сведения о глобальных параметрах конфигурации в версии 2.x см. в статье [Справочник по файлу host.json для Функций Azure](functions-host-json.md).
+В этом разделе описаны глобальные параметры конфигурации, доступные для этой привязки в версиях 2. x и более поздних. Пример файла host. JSON ниже содержит только параметры версии 2. x + для этой привязки. Дополнительные сведения о глобальных параметрах конфигурации в версиях 2. x и более поздних версий см. в [справочнике по Host. JSON для функций Azure](functions-host-json.md).
 
 > [!NOTE]
 > Сведения о файле host.json в Функциях Azure версии 1.x см. в [этой статье](functions-host-json-v1.md).
@@ -672,7 +672,7 @@ public static string Run([HttpTrigger] dynamic input,  ILogger log)
 
 |Свойство  |значение по умолчанию | Описание |
 |---------|---------|---------|
-|maxPollingInterval|00:00:01|Максимальный интервал между опросами очереди. Minimum is 00:00:00.100 (100 ms) and increments up to 00:01:00 (1 min).  In 1.x the data type is milliseconds, and in 2.x it is a TimeSpan.|
+|maxPollingInterval|00:00:01|Максимальный интервал между опросами очереди. Минимальное значение — 00:00:00.100 (100 мс) и увеличивается до 00:01:00 (1 мин.).  В 1. x тип данных равен миллисекундам, а в 2. x и более поздней — интервал времени.|
 |visibilityTimeout|00:00:00|Интервал времени между повторными попытками, когда при обработке сообщения возникает сбой. |
 |batchSize|16|Количество сообщений очереди, которые среда выполнения функций одновременно получает и обрабатывает в параллельном режиме. Когда число обрабатываемых сообщений достигает `newBatchThreshold`, среда выполнения получает следующий пакет и начинает обработку содержащихся в нем сообщений. Поэтому максимальное количество сообщений, одновременно обрабатываемых каждой функцией, равно `batchSize` плюс `newBatchThreshold`. Это ограничение применяется отдельно к каждой функции, активируемой с помощью очереди. <br><br>Если вы не хотите, чтобы сообщения из одной очереди обрабатывались параллельно, можно установить для `batchSize` значение 1. Тем не менее этот параметр позволяет исключить параллелизм только при условии, что приложение-функция выполняется на одной виртуальной машине. Если приложение-функция развернуто на нескольких виртуальных машинах, каждая машина может запускать один экземпляр каждой функции, активируемой с помощью очереди.<br><br>Максимальное значение `batchSize` — 32. |
 |maxDequeueCount|5|Число повторных попыток обработки сообщения, прежде чем поместить его в очередь подозрительных сообщений.|

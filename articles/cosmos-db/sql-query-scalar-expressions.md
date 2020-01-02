@@ -1,17 +1,17 @@
 ---
 title: Скалярные выражения в запросах SQL Azure Cosmos DB
-description: Сведения о скалярном выражении синтаксиса SQL для Azure Cosmos DB.
+description: Сведения о скалярном выражении синтаксиса SQL для Azure Cosmos DB. В этой статье также описывается объединение скалярных выражений в сложные выражения с помощью операторов.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/17/2019
 ms.author: mjbrown
-ms.openlocfilehash: c35ad65a584f8ee95142e9bc85a58b5b6cd99744
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: f8c98915ad3b682af00492acc7bc51672ec874a8
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71003541"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74870740"
 ---
 # <a name="scalar-expressions-in-azure-cosmos-db-sql-queries"></a>Скалярные выражения в запросах SQL Azure Cosmos DB
 
@@ -63,7 +63,7 @@ ms.locfileid: "71003541"
   
 - `<scalar_expression>'['"property_name"|array_index']'`  
   
-   Представляет значение свойства с именем `property_name` или элементом массива с индексом `array_index` массива. Если объект или массив не существует или ссылается на значение, которое не является объектом или массивом, выражение принимает значение undefined.  
+   Представляет значение свойства с именем `property_name` или элемент массива с индексом `array_index` массива. Если объект или массив не существует или ссылается на значение, которое не является объектом или массивом, выражение принимает значение undefined.  
   
 - `unary_operator <scalar_expression>`  
   
@@ -139,7 +139,7 @@ ms.locfileid: "71003541"
     ]
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)

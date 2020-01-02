@@ -1,6 +1,6 @@
 ---
 title: Концепция блокировки ресурсов
-description: Learn about the locking options in Azure Blueprints to protect resources when assigning a blueprint.
+description: Сведения о вариантах блокировки в схемах Azure для защиты ресурсов при назначении схемы.
 ms.date: 04/24/2019
 ms.topic: conceptual
 ms.openlocfilehash: 50f506cc57f67ca2ae2b07e342750d6c5099e739
@@ -12,19 +12,19 @@ ms.locfileid: "74406406"
 ---
 # <a name="understand-resource-locking-in-azure-blueprints"></a>Общие сведения о блокировке ресурсов в Azure Blueprint
 
-Создавать крупные согласованные среды имеет смысл только при наличии механизма, поддерживающего эту согласованность. В этой статье рассказывается, как работает блокировка ресурсов в Azure Blueprint. To see an example of resource locking and application of _deny assignments_, see the [protecting new resources](../tutorials/protect-new-resources.md) tutorial.
+Создавать крупные согласованные среды имеет смысл только при наличии механизма, поддерживающего эту согласованность. В этой статье рассказывается, как работает блокировка ресурсов в Azure Blueprint. Пример блокировки ресурсов и применения _запрета назначений_см. в учебнике [Защита новых ресурсов](../tutorials/protect-new-resources.md) .
 
 ## <a name="locking-modes-and-states"></a>Режимы и состояния блокировки
 
-Locking Mode applies to the blueprint assignment and it has three options: **Don't Lock**, **Read Only**, or **Do Not Delete**. Режим блокировки настраивается во время развертывания артефактов при назначении схемы. Вы можете задать другой режим блокировки, обновив назначение схемы.
+Режим блокировки применяется к назначению схемы и имеет три параметра: **не блокировать**, **только чтение**или не **удалять**. Режим блокировки настраивается во время развертывания артефактов при назначении схемы. Вы можете задать другой режим блокировки, обновив назначение схемы.
 Тем не менее режим блокировки нельзя изменить вне службы Blueprints.
 
-Resources created by artifacts in a blueprint assignment have four states: **Not Locked**, **Read Only**, **Cannot Edit / Delete**, or **Cannot Delete**. Каждый тип артефакта может находиться в состоянии **Не заблокировано**. Следующую таблицу можно использовать для определения состояния ресурса:
+Ресурсы, созданные артефактами в назначении схемы, имеют четыре состояния: **не заблокировано**, **доступно только для чтения**, **не может быть изменено, удалено**или **не может быть удалено**. Каждый тип артефакта может находиться в состоянии **Не заблокировано**. Следующую таблицу можно использовать для определения состояния ресурса:
 
-|Mode|Тип ресурса артефакта|Состояние|Описание|
+|Режим|Тип ресурса артефакта|Состояние|ОПИСАНИЕ|
 |-|-|-|-|
 |Не блокировать|*|Не заблокировано|Ресурсы не защищены службой Blueprints. Это состояние также используется для ресурсов, добавленных к артефакту группы ресурсов **Только чтение** или **Do Not Delete** (Не удалять) за пределами назначения схемы.|
-|Только чтение|группа ресурсов.|Невозможно изменить/удалить|Группа ресурсов доступна только для чтения, и теги в этой группе недоступны для изменения. Ресурсы с состоянием **Не заблокировано** можно добавлять, перемещать, изменять или удалять из этой группы ресурсов.|
+|Только чтение|Группа ресурсов|Невозможно изменить/удалить|Группа ресурсов доступна только для чтения, и теги в этой группе недоступны для изменения. Ресурсы с состоянием **Не заблокировано** можно добавлять, перемещать, изменять или удалять из этой группы ресурсов.|
 |Только чтение|Нересурсная группа|Только чтение|Ресурс невозможно изменить или удалить каким-либо образом.|
 |Не удалять|*|Cannot Delete (Невозможно удалить)|Ресурсы можно изменить, но невозможно удалить. Ресурсы с состоянием **Не заблокировано** можно добавлять, перемещать, изменять или удалять из этой группы ресурсов.|
 
@@ -47,21 +47,21 @@ Resources created by artifacts in a blueprint assignment have four states: **Not
 
 Действие [запрета назначений](../../../role-based-access-control/deny-assignments.md) RBAC применяется к ресурсам артефактов во время назначения схемы, если для назначения выбрано состояние **Только чтение** или **Do Not Delete** (Не удалять). Запрещающее действие добавляется управляемым удостоверением назначения схемы и может быть удалено из ресурсов артефактов только тем же управляемым удостоверением. Эта мера предосторожности обеспечивает механизм блокировки и предотвращает попытки удалить блокировку схемы за пределами схемы.
 
-![Blueprint deny assignment on resource group](../media/resource-locking/blueprint-deny-assignment.png)
+![План запрет назначения в группе ресурсов](../media/resource-locking/blueprint-deny-assignment.png)
 
-The [deny assignment properties](../../../role-based-access-control/deny-assignments.md#deny-assignment-properties) of each mode are as follows:
+Ниже перечислены [свойства назначения Deny](../../../role-based-access-control/deny-assignments.md#deny-assignment-properties) для каждого режима.
 
-|Mode |Permissions.Actions |Permissions.NotActions |Principals[i].Type |ExcludePrincipals[i].Id | DoNotApplyToChildScopes |
+|Режим |Permissions. Actions |Разрешения. без изменений |Участники [i]. Тип |ЕксклудепринЦипалс [i]. Удостоверения | донотапплиточилдскопес |
 |-|-|-|-|-|-|
-|Только чтение |**\*** |**\*/read** |SystemDefined (Everyone) |blueprint assignment and user-defined in **excludedPrincipals** |Resource group - _true_; Resource - _false_ |
-|Не удалять |**\*/delete** | |SystemDefined (Everyone) |blueprint assignment and user-defined in **excludedPrincipals** |Resource group - _true_; Resource - _false_ |
+|Только чтение |**\*** |**\*/Реад** |Системдефинед (все) |Назначение схемы и определяемые пользователем данные в **ексклудедпринЦипалс** |Группа ресурсов — _true_; Ресурс — _false_ |
+|Не удалять |**\*/Delete** | |Системдефинед (все) |Назначение схемы и определяемые пользователем данные в **ексклудедпринЦипалс** |Группа ресурсов — _true_; Ресурс — _false_ |
 
 > [!IMPORTANT]
 > Azure Resource Manager кэширует сведения о назначении роли на срок до 30 минут. Это означает, что действие запрета назначений для ресурсов схемы может не сразу вступать в полную силу. В течение этого периода сохраняется возможность удалить ресурс, который должен быть защищен блокировками схемы.
 
-## <a name="exclude-a-principal-from-a-deny-assignment"></a>Exclude a principal from a deny assignment
+## <a name="exclude-a-principal-from-a-deny-assignment"></a>Исключение участника из назначения Deny
 
-In some design or security scenarios, it may be necessary to exclude a principal from the [deny assignment](../../../role-based-access-control/deny-assignments.md) the blueprint assignment creates. This is done in REST API by adding up to five values to the **excludedPrincipals** array in the **locks** property when [creating the assignment](/rest/api/blueprints/assignments/createorupdate). This is an example of a request body that includes **excludedPrincipals**:
+В некоторых сценариях проектирования или безопасности может потребоваться исключить субъект из [назначения «Deny](../../../role-based-access-control/deny-assignments.md) », создаваемого назначением схемы. Это выполняется в REST API путем добавления до пяти значений в массив **ексклудедпринЦипалс** в свойстве **locks** при [создании назначения](/rest/api/blueprints/assignments/createorupdate). Вот пример текста запроса, который содержит **ексклудедпринЦипалс**:
 
 ```json
 {
@@ -103,9 +103,9 @@ In some design or security scenarios, it may be necessary to exclude a principal
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- Follow the [protect new resources](../tutorials/protect-new-resources.md) tutorial.
+- Следуйте указаниям в учебнике [Защита новых ресурсов](../tutorials/protect-new-resources.md) .
 - Ознакомьтесь со сведениями о [жизненном цикле схем](lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](parameters.md).
 - Научитесь настраивать [последовательность схемы](sequencing-order.md).

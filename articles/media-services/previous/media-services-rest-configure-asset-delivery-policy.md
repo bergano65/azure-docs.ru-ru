@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 5e4e565b0b5272de19458617a9c4bd3509907cce
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b1c71a1329b930beea38fe39518914b278f9372d
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60817400"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74968414"
 ---
 # <a name="configuring-asset-delivery-policies"></a>Настройка политик доставки ресурсов-контейнеров
 [!INCLUDE [media-services-selector-asset-delivery-policy](../../../includes/media-services-selector-asset-delivery-policy.md)]
@@ -68,11 +68,11 @@ MPEG DASH
 
 ## <a name="connect-to-media-services"></a>Подключение к службам мультимедиа
 
-Сведения о подключении к API AMS см. в разделе [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md). 
+См. дополнительные сведения о [получении доступа к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md). 
 
 ## <a name="clear-asset-delivery-policy"></a>Политики доставки незашифрованных ресурсов
 ### <a id="create_asset_delivery_policy"></a>Создание политики доставки активов
-Следующий HTTP-запрос создает политику доставки ресурсов-контейнеров, указывающую, что не следует применять динамическое шифрование, а доставку следует осуществлять с использованием потоковой передачи по одному из следующих протоколов:  MPEG DASH, HLS или Smooth Streaming. 
+Следующий HTTP-запрос создает политику доставки ресурсов-контейнеров, указывающую, что не следует применять динамическое шифрование, а доставку следует осуществлять с использованием потоковой передачи по одному из следующих протоколов: MPEG DASH, HLS или Smooth Streaming. 
 
 Сведения о том, какие значения можно задать при создании политики доставки ресурсов-контейнеров, см. в разделе [Типы, используемые при определении AssetDeliveryPolicy](#types).   
 
@@ -145,7 +145,7 @@ MPEG DASH
 
 ## <a name="dynamicenvelopeencryption-asset-delivery-policy"></a>Политика доставки ресурсов DynamicEnvelopeEncryption
 ### <a name="create-content-key-of-the-envelopeencryption-type-and-link-it-to-the-asset"></a>Создание ключа содержимого типа EnvelopeEncryption и связывание его с ресурсом
-При определении политики доставки DynamicEnvelopeEncryption необходимо обязательно связать ресурс с ключом содержимого типа EnvelopeEncryption. Дополнительные сведения можно найти в разделе  [Создание ключа содержимого](media-services-rest-create-contentkey.md).
+При определении политики доставки DynamicEnvelopeEncryption необходимо обязательно связать ресурс с ключом содержимого типа EnvelopeEncryption. Дополнительные сведения см. в статье, посвященной [созданию ключей содержимого](media-services-rest-create-contentkey.md).
 
 ### <a id="get_delivery_url"></a>Получение URL-адреса доставки
 Получите URL-адрес доставки для указанного метода доставки ключа содержимого, созданного на предыдущем шаге. Клиент использует возвращенный URL-адрес для запроса ключа AES или лицензии PlayReady, чтобы воспроизвести защищенное содержимое.
@@ -231,7 +231,7 @@ MPEG DASH
 
 ## <a name="dynamiccommonencryption-asset-delivery-policy"></a>Политика доставки ресурсов DynamicCommonEncryption
 ### <a name="create-content-key-of-the-commonencryption-type-and-link-it-to-the-asset"></a>Создание ключа содержимого типа CommonEncryption и связывание его с ресурсом
-При определении политики доставки DynamicCommonEncryption необходимо обязательно связать ресурс с ключом содержимого типа CommonEncryption. Дополнительные сведения можно найти в разделе  [Создание ключа содержимого](media-services-rest-create-contentkey.md).
+При определении политики доставки DynamicCommonEncryption необходимо обязательно связать ресурс с ключом содержимого типа CommonEncryption. Дополнительные сведения см. в статье, посвященной [созданию ключей содержимого](media-services-rest-create-contentkey.md).
 
 ### <a name="get-delivery-url"></a>Получение URL-адреса доставки
 Получите URL-адрес доставки для метода доставки ключа содержимого PlayReady, созданного на предыдущем шаге. Клиент использует возвращенный URL-адрес для запроса лицензии PlayReady, чтобы воспроизвести защищенное содержимого. Дополнительные сведения см. в разделе [Получение URL-адреса доставки](#get_delivery_url).
@@ -260,7 +260,7 @@ MPEG DASH
 
 Если требуется защитить содержимое с помощью Widevine DRM, обновите значения AssetDeliveryConfiguration, чтобы использовать WidevineLicenseAcquisitionUrl (со значением 7), и укажите URL-адрес службы доставки лицензий. Вы можете использовать следующих партнеров AMS для доставки лицензий Widevine: [Axinom](https://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](https://ezdrm.com/) и [castLabs](https://castlabs.com/company/partners/azure/).
 
-Пример: 
+Пример. 
 
     {"Name":"AssetDeliveryPolicy","AssetDeliveryProtocol":2,"AssetDeliveryPolicyType":4,"AssetDeliveryConfiguration":"[{\"Key\":7,\"Value\":\"https:\\/\\/example.net\/WidevineLicenseAcquisition\/"}]"}
 
@@ -422,9 +422,13 @@ MPEG DASH
         WidevineLicenseAcquisitionUrl
     }
 
+## <a name="additional-notes"></a>Дополнительные замечания
+
+* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

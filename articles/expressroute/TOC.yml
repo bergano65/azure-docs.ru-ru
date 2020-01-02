@@ -26,7 +26,7 @@
           href: expressroute-locations-providers.md
         - name: Расположения по поставщикам
           href: expressroute-locations.md
-    - name: Шлюз виртуальной сети и FastPath
+    - name: О шлюзах виртуальных сетей
       href: expressroute-about-virtual-network-gateways.md
     - name: Предварительные требования
       href: expressroute-prerequisites.md
@@ -40,6 +40,8 @@
       href: expressroute-qos.md
     - name: Перенос каналов из классической модели развертывания в модель развертывания Resource Manager
       href: expressroute-move.md
+    - name: Сведения об ExpressRoute FastPath
+      href: about-fastpath.md
     - name: Сведения об ExpressRoute Direct
       href: expressroute-erdirect-about.md
     - name: Общие сведения об ExpressRoute Global Reach

@@ -5,14 +5,14 @@ services: expressroute
 author: charwen
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 10/25/2019
+ms.date: 08/15/2018
 ms.author: charwen
-ms.openlocfilehash: 2810dfc4cb41dcf11eb59ce3c87e6f7d6b2d5f65
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: b14b8a9a2bc43c33095bf07e7fb7ebcc2d6c1ffa
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083497"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74769529"
 ---
 # <a name="reset-expressroute-circuit-peerings"></a>Сброс пиринга канала ExpressRoute
 
@@ -20,7 +20,7 @@ ms.locfileid: "74083497"
 
 Существует несколько сценариев, в которых сброс пиринга для ExpressRoute может оказаться полезным.
 * Протестируйте проектирование и реализацию аварийного восстановления. Например, существует две цепи ExpressRoute. Пиринг в первой цепи можно отключить и принудительно перевести весь сетевой трафик на вторую цепь.
-* Включите обнаружение двунаправленной переадресации (БФД) в частном пиринга Azure или пиринга Майкрософт для канала ExpressRoute. БФД по умолчанию включен для частного пиринга Azure, если канал ExpressRoute создается после августа 1 2018 и пиринга Майкрософт, если канал ExpressRoute создается после 1 2019 октября. Если цепь была создана ранее приведенной даты, BFD включено не было. BFD можно включить путем отключения и повторного включения пиринга. 
+* Включите обнаружение двунаправленной передачи (BFD) для частного пиринга Azure в цепи ExpressRoute. Если цепь ExpressRoute создается после 1 августа 2018 г., BFD будет включено по умолчанию. Если цепь была создана ранее приведенной даты, BFD включено не было. BFD можно включить путем отключения и повторного включения пиринга. Также необходимо обратить внимание на то, что BFD поддерживается только для частного пиринга Azure.
 
 ### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
 
@@ -141,7 +141,7 @@ ms.locfileid: "74083497"
    ```
    Теперь пиринг должен находиться в состоянии, установленном пользователем. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об устранении проблем с ExpressRoute можно получить в следующих статьях.
 * [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md)
 * [Устранение проблем с производительностью сети](expressroute-troubleshooting-network-performance.md)

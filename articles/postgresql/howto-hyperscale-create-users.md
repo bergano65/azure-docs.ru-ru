@@ -1,17 +1,17 @@
 ---
-title: Создание пользователей в базе данных Azure для PostgreSQL — масштабирование (Цитус)
+title: Создание пользователей — масштабирование (Цитус) — база данных Azure для PostgreSQL
 description: В этой статье описывается создание новых учетных записей пользователей для взаимодействия с базой данных Azure для PostgreSQL-Scale (Цитус).
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 7187135b29f0a9a790c032330c73bcb1ae27229b
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: d093d4c23fcc44e7e9f3461f875607926f4b612d
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73515945"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74977579"
 ---
 # <a name="create-users-in-azure-database-for-postgresql---hyperscale-citus"></a>Создание пользователей в базе данных Azure для PostgreSQL — масштабирование (Цитус)
 
@@ -26,21 +26,19 @@ ms.locfileid: "73515945"
 * *postgres*
 * *Цитус*
 
-Пользователь с правами администратора сервера *Цитус*является членом роли *azure_pg_admin* .
-Однако он не является частью роли *postgres* (супер User).  Так как в качестве масштаба используется управляемая служба PaaS, только корпорация Майкрософт является частью роли суперпользователя.
-
 Подсистема PostgreSQL использует права для управления доступом к объектам базы данных, как описано в [документации по продукту PostgreSQL](https://www.postgresql.org/docs/current/static/sql-createrole.html).
-В службе "База данных Azure для PostgreSQL" пользователю-администратору сервера предоставляются следующие права: LOGIN, NOSUPERUSER, INHERIT, CREATEDB, CREATEROLE, NOREPLICATION
+Пользователь с правами администратора сервера *Цитус*является членом роли *azure_pg_admin* .
+Однако он не является частью роли *postgres* (супер User).  Так как в качестве масштаба используется управляемая служба PaaS, только корпорация Майкрософт является частью роли суперпользователя. Пользователь *Цитус* имеет ограниченные разрешения и не может, например, создавать новые базы данных.
 
 ## <a name="how-to-create-additional-users"></a>Создание дополнительных пользователей
 
-Учетная запись администратора *Цитус* не имеет разрешения на создание дополнительных пользователей. Чтобы добавить пользователя, используйте вместо этого портал Azure.
+Учетная запись администратора *Цитус* не имеет разрешения на создание дополнительных пользователей. Чтобы добавить пользователя, используйте интерфейс портал Azure.
 
 1. Перейдите на страницу **роли** для группы масштабируемых серверов и нажмите кнопку **+ Добавить**:
 
    ![Страница «роли»](media/howto-hyperscale-create-users/1-role-page.png)
 
-2. Введите имя и пароль роли. Щелкните **Сохранить**.
+2. Введите имя и пароль роли. В нижней части страницы нажмите кнопку **Save**.
 
    ![Добавление роли](media/howto-hyperscale-create-users/2-add-user-fields.png)
 
@@ -84,4 +82,4 @@ SELECT run_command_on_workers(
 
 * [Роли и привилегии базы данных](https://www.postgresql.org/docs/current/static/user-manag.html)
 * [Синтаксис предоставления](https://www.postgresql.org/docs/current/static/sql-grant.html)
-* [Права](https://www.postgresql.org/docs/current/static/ddl-priv.html)
+* [Привилегии](https://www.postgresql.org/docs/current/static/ddl-priv.html)

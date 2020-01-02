@@ -1,5 +1,5 @@
 ---
-title: Создание задания Stream Analytics и управление им с помощью портала Azure
+title: Учебник по созданию задания Stream Analytics и управление им с помощью портала Azure
 description: В этом руководстве содержится комплексное описание использования Azure Stream Analytics для анализа мошеннических вызовов в потоке телефонных звонков.
 services: stream-analytics
 author: mamccrea
@@ -9,14 +9,14 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 06/03/2019
-ms.openlocfilehash: 128859a00402c3381edfa65918a7135c9fd775de
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: cca9f25fae9646b4207db7aa98f4c334457fc426
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72925279"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707385"
 ---
-# <a name="analyze-phone-call-data-with-stream-analytics-and-visualize-results-in-power-bi-dashboard"></a>Анализа данных телефонных звонков с помощью Stream Analytics и визуализация результатов на панели мониторинга Power BI
+# <a name="tutorial-analyze-phone-call-data-with-stream-analytics-and-visualize-results-in-power-bi-dashboard"></a>Руководство по Анализа данных телефонных звонков с помощью Stream Analytics и визуализация результатов на панели мониторинга Power BI
 
 Это руководство о том, как анализировать данные телефонных звонков с помощью Azure Stream Analytics. Данные телефонных звонков, поступившие от клиентского приложение, содержат сведения о мошеннических вызовах, которые будут отфильтрованы с помощью задания Stream Analytics.
 

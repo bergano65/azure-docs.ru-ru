@@ -1,8 +1,6 @@
 ---
-title: Коллективная разработка с помощью Azure Dev Spaces в .NET Core и Visual Studio
-titleSuffix: Azure Dev Spaces
+title: Коллективная разработка с помощью .NET Core и Visual Studio
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
 ms.custom: vs-azure
 ms.workload: azure-vs
 author: DrEsteban
@@ -10,15 +8,15 @@ ms.author: stevenry
 ms.date: 12/09/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
-keywords: 'Docker, Kubernetes, Azure, служба контейнеров Azure, служба Azure Kubernetes, контейнеры, Helm, сетка службы, сетка службы маршрутизации, kubectl, k8s '
-ms.openlocfilehash: 53c870ad135fe13eb3bf7556678cac29352911aa
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
+ms.openlocfilehash: 895d2edbb268eab9944909ecda7193ce945bbf39
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442925"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325536"
 ---
-# <a name="team-development-with-azure-dev-spaces"></a>Коллективная разработка с помощью Azure Dev Spaces
+# <a name="team-development-using-net-core-and-visual-studio-with-azure-dev-spaces"></a>Коллективная разработка с помощью Azure Dev Spaces в .NET Core и Visual Studio
 
 Из этого руководства вы узнаете, как команда разработчиков может одновременно работать в одном кластере Kubernetes с помощью сред Dev Spaces.
 
@@ -123,7 +121,7 @@ _Без_ использования сред Dev Spaces у Василия был
 
 Эта встроенная возможность Azure Dev Spaces позволяет выполнять комплексное тестирование кода в общей среде, не требуя от каждого разработчика повторно создавать множество служб в своем пространстве. Для такой маршрутизации требуется, чтобы заголовки распространения передавались в код приложения, как показано на предыдущем шаге этого руководства.
 
-### <a name="test-code-running-in-the-devscott-space"></a>Тестирование кода, выполняемого в пространстве _dev/scott_
+### <a name="test-code-running-in-the-_devscott_-space"></a>Тестирование кода, выполняемого в пространстве _dev/scott_
 Чтобы проверить свою новую версию *mywebapi* в сочетании с *webfrontend*, откройте в браузере URL-адрес общедоступной точки доступа для *webfrontend* (например, http://dev.webfrontend.123456abcdef.eus.azds.io) и перейдите на страницу About (Сведения). Вы увидите исходное сообщение "Hello from webfrontend and Hello from mywebapi".
 
 Теперь добавьте часть "scott.s" в URL-адрес, чтобы получилось http\:/scott.s.dev.webfrontend.123456abcdef.eus.azds.io, и обновите браузер. Должна сработать точка останова, заданная в проекте *mywebapi*. Нажмите клавишу F5, чтобы продолжить. В браузере вы должны увидеть новое сообщение "Hello from webfrontend and mywebapi now says something new". Это происходит, так как путь к обновленному коду в *mywebapi* используется в пространстве _dev/scott_.

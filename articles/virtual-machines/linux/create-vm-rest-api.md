@@ -1,5 +1,5 @@
 ---
-title: Создание виртуальной машины Linux с помощью Azure REST API | Документация Майкрософт
+title: Создание виртуальной машины Linux с помощью REST API Azure
 description: Сведения о создании виртуальной машины Linux, которая использует управляемые диски и проверку подлинности SSH с Azure REST API, в Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/05/2018
 ms.author: cynthn
-ms.openlocfilehash: 9851305bdaa2f214e0d00eda3235068cac2ea980
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: c1010bf4bde01920449e9252de563d79bfc61997
+ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70083481"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74036442"
 ---
 # <a name="create-a-linux-virtual-machine-that-uses-ssh-authentication-with-the-rest-api"></a>Создание виртуальной машины Linux, в которой используется проверка подлинности по SSH с интерфейсом REST API
 
@@ -29,7 +29,7 @@ ms.locfileid: "70083481"
 
 В этой статье показано, как с помощью REST API создать виртуальную машину Linux под управлением Ubuntu 18.04-LTS с управляемыми дисками и аутентификацией SSH.
 
-## <a name="before-you-start"></a>Перед началом
+## <a name="before-you-start"></a>Перед началом работы
 
 Перед созданием и отправкой запроса вам потребуется:
 
@@ -51,10 +51,10 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 Ниже приведены обязательные заголовки.
 
-| Заголовок запроса   | Описание |
+| Заголовок запроса   | ОПИСАНИЕ |
 |------------------|-----------------|
-| *Content-Type:*  | Обязательный элемент. Задайте значение `application/json`. |
-| *Authorization:* | Обязательный элемент. Задайте в качестве значения [допустимый токен доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |
+| *Content-Type:*  | обязательный параметр. Задайте значение `application/json`. |
+| *Authorization:* | обязательный параметр. Задайте в качестве значения `Bearer`допустимый токен доступа[ ](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients). |
 
 Общие сведения о работе с запросами REST API см. в разделе [Components of a REST API request/response](/rest/api/azure/#components-of-a-rest-api-requestresponse) (Компоненты запроса или ответа REST API).
 
@@ -62,10 +62,10 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 Для создания текста запроса используются следующие общие определения.
 
-| Название                       | Обязательное значение | Тип                                                                                | Описание  |
+| имя                       | обязательные | введите                                                                                | ОПИСАНИЕ  |
 |----------------------------|----------|-------------------------------------------------------------------------------------|--------------|
-| расположение                   | True     | строка                                                                              | Расположение ресурса. |
-| name                       |          | строка                                                                              | Имя виртуальной машины. |
+| location                   | True,     | строка                                                                              | Расположение ресурса. |
+| Имя                       |          | строка                                                                              | Имя виртуальной машины. |
 | properties.hardwareProfile |          | [HardwareProfile](/rest/api/compute/virtualmachines/createorupdate#hardwareprofile) | Указывает параметры оборудования виртуальной машины. |
 | properties.storageProfile  |          | [StorageProfile](/rest/api/compute/virtualmachines/createorupdate#storageprofile)   | Указывает параметры хранилища дисков виртуальной машины. |
 | properties.osProfile       |          | [OSProfile](/rest/api/compute/virtualmachines/createorupdate#osprofile)             | Указывает параметры операционной системы виртуальной машины. |
@@ -132,14 +132,14 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 Вы можете отправить HTTP-запроса с помощью предпочитаемого клиента. Кроме того, вы можете также использовать [инструмент в браузере](https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate), нажав кнопку **Попробовать**.
 
-### <a name="responses"></a>Responses
+### <a name="responses"></a>Ответы
 
 Существует два успешных ответа для операции по созданию или обновлению виртуальной машины.
 
-| Название        | Тип                                                                              | Описание |
+| имя        | введите                                                                              | ОПИСАНИЕ |
 |-------------|-----------------------------------------------------------------------------------|-------------|
-| 200 ОК      | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | OK          |
-| 201 Создано | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | Дата создания     |
+| 200 ОК      | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | ОК          |
+| 201 Создано | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | Создано     |
 
 Сокращенный ответ *201 Создано*, полученный из предыдущего примера текста запроса, который создает виртуальную машину, показывает, что *vmId* был назначен, и что *ProvisionState* находится в состоянии *Создание*.
 
@@ -152,7 +152,7 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 Дополнительные сведения об ответах REST API можно узнать в разделе [Process the response message](/rest/api/azure/#process-the-response-message) (Обработка ответного сообщения).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об Azure REST API или других средствах управления (например, Azure CLI или Azure PowerShell) см. в статьях:
 

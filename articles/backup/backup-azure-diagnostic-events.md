@@ -10,7 +10,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/21/2019
 ms.locfileid: "74281107"
 ---
-# <a name="using-diagnostics-settings-for-recovery-services-vaults"></a>Использование параметров диагностики для хранилищ служб восстановления
+# <a name="using-diagnostics-settings-for-recovery-services-vaults"></a>Использование параметров диагностики для хранилищ Службы восстановления
 
 Azure Backup отправляет диагностические события, которые можно собирать и использовать в целях анализа, оповещения и создания отчетов. 
 

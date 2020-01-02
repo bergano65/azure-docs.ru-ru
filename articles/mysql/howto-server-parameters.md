@@ -1,17 +1,17 @@
 ---
-title: Как настроить параметры сервера в службе "База данных Azure для MySQL"
+title: Настройка параметров сервера — портал Azure — база данных Azure для MySQL
 description: В этой статье описывается, как настроить параметры MySQL сервера в базе данных Azure для MySQL с помощью портала Azure.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 11/19/2019
-ms.openlocfilehash: d589800f62f96510a09d23cb6e8794177121c6dd
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.date: 12/05/2019
+ms.openlocfilehash: 8ec6f32d7db0161cef00330aa38601ba9bdb309d
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74419713"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74893150"
 ---
 # <a name="how-to-configure-server-parameters-in-azure-database-for-mysql-by-using-the-azure-portal"></a>Как настроить параметры сервера в базе данных Azure для MySQL с помощью портала Azure
 
@@ -35,9 +35,9 @@ ms.locfileid: "74419713"
 
 ## <a name="non-configurable-server-parameters"></a>Ненастраиваемые параметры сервера
 
-The InnoDB Buffer Pool size is not configurable and tied to your [pricing tier](concepts-service-tiers.md).
+Размер пула буферов InnoDB нельзя настроить и привязать к [ценовой категории](concepts-service-tiers.md).
 
-|**Ценовая категория**|**Виртуальные ядра**|**InnoDB Buffer Pool size in MB <br>(servers supporting up to 4 TB storage)**| **InnoDB Buffer Pool size in MB <br>(servers supporting up to 16 TB storage)**|
+|**Ценовая категория**|**Виртуальные ядра**|**Размер InnoDB буферного пула в МБ <br>(серверы, поддерживающие до 4 ТБ хранилища)**| **Размер InnoDB буферного пула в МБ <br>(серверы, поддерживающие до 16 ТБ хранилища)**|
 |:---|---:|---:|---:|
 |"Базовый"| 1| 832| |
 |"Базовый"| 2| 2560| |
@@ -76,6 +76,9 @@ The InnoDB Buffer Pool size is not configurable and tied to your [pricing tier](
 ```sql
 CALL mysql.az_load_timezone();
 ```
+
+> [!IMPORTANT]
+> Необходимо перезапустить сервер, чтобы убедиться, что таблицы часовых поясов заполнены правильно. Чтобы перезапустить сервер, используйте [портал Azure](howto-restart-server-portal.md) или [CLI](howto-restart-server-cli.md).
 
 Чтобы просмотреть доступные значения часового пояса, выполните следующую команду.
 

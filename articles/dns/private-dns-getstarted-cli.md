@@ -2,17 +2,17 @@
 title: Краткое руководство. Создание частной зоны Azure DNS с помощью Azure CLI
 description: Из этого краткого руководства вы узнаете, как создать и проверить частную зону и запись DNS в Azure DNS. В нем пошагово описывается создание первой частной зоны и записи DNS, а также управление ими с помощью Azure CLI.
 services: dns
-author: vhorne
+author: asudbring
 ms.service: dns
 ms.topic: quickstart
 ms.date: 10/05/2019
-ms.author: victorh
-ms.openlocfilehash: 8cd5986d61765680698b6c682567dd6388d80a2a
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.author: allensu
+ms.openlocfilehash: 3c580eebd19eb2f2028768059140731fa24f4664
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73158861"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74210921"
 ---
 # <a name="quickstart-create-an-azure-private-dns-zone-using-the-azure-cli"></a>Краткое руководство. Создание частной зоны Azure DNS с помощью Azure CLI
 

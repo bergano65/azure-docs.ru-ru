@@ -1,125 +1,125 @@
 ---
-title: Deploy Azure Multi-Factor Authentication - Azure Active Directory
-description: Microsoft Azure Multi-Factor Authentication deployment planning
+title: Развертывание многофакторной идентификации Azure Azure Active Directory
+description: Планирование развертывания Многофакторная идентификация Microsoft Azure
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cab4b57513f90a5cbe80724d4937f8d0f87b5517
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: ccffe8d104792d9723c1541466067de3ea2c2e66
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74381788"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74848397"
 ---
-# <a name="planning-a-cloud-based-azure-multi-factor-authentication-deployment"></a>Planning a cloud-based Azure Multi-Factor Authentication deployment
+# <a name="planning-a-cloud-based-azure-multi-factor-authentication-deployment"></a>Планирование развертывания многофакторной идентификации Azure на основе облачных служб
 
-People are connecting to organizational resources in increasingly complicated scenarios. People connect from organization-owned, personal, and public devices on and off the corporate network using smart phones, tablets, PCs, and laptops, often on multiple platforms. In this always-connected, multi-device and multi-platform world, the security of user accounts is more important than ever. Passwords, no matter their complexity, used across devices, networks, and platforms are no longer sufficient to ensure the security of the user account, especially when users tend to reuse passwords across accounts. Sophisticated phishing and other social engineering attacks can result in usernames and passwords being posted and sold across the dark web.
+Пользователи подключаются к ресурсам Организации в более сложных сценариях. Люди подключаются к корпоративным, персональным и общедоступным устройствам в корпоративной сети с помощью смарт-телефонов, планшетов, компьютеров и ноутбуков, часто на нескольких платформах. В этом постоянно подключенном мире с несколькими устройствами и несколькими платформами безопасность учетных записей пользователей важнее, чем когда-либо. Пароли, независимо от их сложности, использования на разных устройствах, сетях и платформах, больше не подходят для обеспечения безопасности учетной записи пользователя, особенно в тех случаях, когда пользователи предпочитают повторно использовать пароли для учетных записей. Сложные фишингы и другие атаки социальных сетей могут привести к тому, что имена пользователей и пароли публикуются и продаются по темному веб-каналу.
 
-[Azure Multi-Factor Authentication (MFA)](concept-mfa-howitworks.md) helps safeguard access to data and applications. It provides an additional layer of security using a second form of authentication. Organizations can use [Conditional Access](../conditional-access/overview.md) to make the solution fit their specific needs.
+[Многофакторная идентификация Azure (MFA)](concept-mfa-howitworks.md) помогает защитить доступ к данным и приложениям. Он обеспечивает дополнительный уровень безопасности, используя вторую форму проверки подлинности. Организации могут использовать [Условный доступ](../conditional-access/overview.md) для того, чтобы решение соответствовало конкретным потребностям.
 
 ## <a name="prerequisites"></a>Технические условия
 
-Before starting a deployment of Azure Multi-Factor Authentication, there are prerequisite items that should be considered.
+Перед началом развертывания многофакторной идентификации Azure необходимо учитывать необходимые компоненты.
 
 | Сценарий | Необходимое условие |
 | --- | --- |
-| **Cloud-only** identity environment with modern authentication | **No additional prerequisite tasks** |
-| **Hybrid** identity scenarios | [Azure AD Connect](../hybrid/whatis-hybrid-identity.md) is deployed and user identities are synchronized or federated with the on-premises Active Directory Domain Services with Azure Active Directory. |
-| On-premises legacy applications published for cloud access | Azure AD [Application Proxy](../manage-apps/application-proxy.md) is deployed. |
-| Using Azure MFA with RADIUS Authentication | A [Network Policy Server (NPS)](howto-mfa-nps-extension.md) is deployed. |
-| Users have Microsoft Office 2010 or earlier, or Apple Mail for iOS 11 or earlier | Upgrade to [Microsoft Office 2013 or later](https://support.microsoft.com/help/4041439/modern-authentication-configuration-requirements-for-transition-from-o) and Apple mail for iOS 12 or later. Conditional Access is not supported by legacy authentication protocols. |
+| **Облачная** среда удостоверений с современной проверкой подлинности | **Нет дополнительных обязательных задач** |
+| Сценарии **гибридной** идентификации | [Azure AD Connect](../hybrid/whatis-hybrid-identity.md) развертывается, а удостоверения пользователей синхронизируются или Федеративные с локальными службами домен Active Directory с Azure Active Directory. |
+| Локальные устаревшие приложения, опубликованные для облачного доступа | Развернут [прокси приложения](../manage-apps/application-proxy.md) Azure AD. |
+| Использование Azure MFA с проверкой подлинности RADIUS | [Сервер политики сети (NPS)](howto-mfa-nps-extension.md) развернут. |
+| У пользователей есть Microsoft Office 2010 или более ранней версии или Apple Mail для iOS 11 или более ранней версии. | Обновите систему до [Microsoft Office 2013 или более поздней версии](https://support.microsoft.com/help/4041439/modern-authentication-configuration-requirements-for-transition-from-o) и Apple Mail для iOS 12 или более поздней версии. Условный доступ не поддерживается устаревшими протоколами проверки подлинности. |
 
-## <a name="plan-user-rollout"></a>Plan user rollout
+## <a name="plan-user-rollout"></a>Планирование развертывания пользователей
 
-Your MFA rollout plan should include a pilot deployment followed by deployment waves that are within your support capacity. Begin your rollout by applying your Conditional Access policies to a small group of pilot users. After evaluating the effect on the pilot users, process used, and registration behaviors, you can either add more groups to the policy or add more users to the existing groups.
+План выпуска MFA должен включать пилотное развертывание, за которым следуют волны развертывания, которые находятся в пределах вашей емкости. Начните развертывание, применив политики условного доступа к небольшой группе пилотных пользователей. После оценки влияния на пилотные пользователи, процесс использования и поведения регистрации можно добавить дополнительные группы в политику или добавить дополнительных пользователей в существующие группы.
 
-### <a name="user-communications"></a>User communications
+### <a name="user-communications"></a>Взаимодействие с пользователем
 
-It is critical to inform users, in planned communications, about upcoming changes, Azure MFA registration requirements, and any necessary user actions. We recommend communications are developed in concert with representatives from within your organization, such as a Communications, Change Management, or Human Resources departments.
+Очень важно информировать пользователей о предстоящих изменениях, требованиях регистрации Azure MFA и обо всех необходимых действиях пользователя. Мы рекомендуем использовать взаимодействие, разработанное совместно с представителями Организации, такими как обмен информацией, управление изменениями или отдел кадров.
 
-Microsoft provides [communication templates](https://aka.ms/mfatemplates) and [end-user documentation](../user-help/security-info-setup-signin.md) to help draft your communications. You can send users to [https://myprofile.microsoft.com](https://myprofile.microsoft.com) to register directly by selecting the **Security Info** links on that page.
+Корпорация Майкрософт предоставляет [шаблоны связи](https://aka.ms/mfatemplates) и [документацию для конечных пользователей](../user-help/security-info-setup-signin.md) , чтобы помочь вам в разработке связи. Вы можете отправить пользователям [https://myprofile.microsoft.com](https://myprofile.microsoft.com) для непосредственной регистрации, выбрав ссылки на **сведения о безопасности** на этой странице.
 
 ## <a name="deployment-considerations"></a>Рекомендации по развертыванию
 
-Azure Multi-factor Authentication is deployed by enforcing policies with Conditional Access. A [Conditional Access policy](../conditional-access/overview.md) can require users to perform multi-factor authentication when certain criteria are met such as:
+Многофакторная идентификация Azure развертывается путем применения политик с условным доступом. [Политика условного доступа](../conditional-access/overview.md) может требовать от пользователей выполнять многофакторную проверку подлинности, если выполняются определенные условия:
 
-* All users, a specific user, member of a group, or assigned role
-* Specific cloud application being accessed
+* Все пользователи, конкретный пользователь, член группы или назначенная роль
+* Доступ к конкретному облачному приложению
 * Платформа устройства
-* State of device
-* Network location or geo-located IP address
+* Состояние устройства
+* Сетевое расположение или географически расположенный IP-адрес
 * Клиентские приложения
-* Sign-in risk (Requires Identity Protection)
+* Риск при входе (требуется защита идентификации)
 * Устройства, соответствующие требованиям
 * Гибридные устройства, присоединенные к Azure AD
-* Approved client application
+* Утвержденное клиентское приложение
 
-Use the customizable posters and email templates in [multi-factor authentication rollout materials](https://www.microsoft.com/download/details.aspx?id=57600&WT.mc_id=rss_alldownloads_all) to roll out multi-factor authentication to your organization.
+Для развертывания многофакторной идентификации в Организации используйте настраиваемые плакаты и шаблоны электронной почты в [материалах для многофакторной проверки подлинности](https://www.microsoft.com/download/details.aspx?id=57600&WT.mc_id=rss_alldownloads_all) .
 
 ## <a name="enable-multi-factor-authentication-with-conditional-access"></a>Включение службы Многофакторной идентификации Azure с условным доступом
 
-Conditional Access policies enforce registration, requiring unregistered users to complete registration at first sign-in, an important security consideration.
+Политики условного доступа применяют регистрацию, при этом требуется, чтобы незарегистрированные пользователи завершили регистрацию при первом входе в систему, что важно для безопасности.
 
-[Azure AD Identity Protection](../identity-protection/howto-configure-risk-policies.md) contributes both a registration policy for and automated risk detection and remediation policies to the Azure Multi-Factor Authentication story. Policies can be created to force password changes when there is a threat of compromised identity or require MFA when a sign-in is deemed risky by the following [events](../reports-monitoring/concept-risk-events.md):
+[Защита идентификации Azure AD](../identity-protection/howto-configure-risk-policies.md) участвует в политиках регистрации и автоматизированных политиках обнаружения и исправления рисков в истории многофакторной идентификации Azure. Политики могут быть созданы для принудительного изменения пароля при наличии угрозы скомпрометированного удостоверения или при необходимости проверки подлинности MFA, когда вход считается рискованным для следующих [событий](../reports-monitoring/concept-risk-events.md):
 
 * Утерянные учетные данные
 * Попытки входа с анонимных IP-адресов
 * Невозможно переместиться в нетипичные расположения
 * Попытки входа из неизвестных расположений
 * Попытки входа с инфицированных устройств
-* Sign-ins from IP addresses with suspicious activities
+* Входы с IP-адресов с подозрительными действиями
 
-Some of the risk detections detected by Azure Active Directory Identity Protection occur in real time and some require offline processing. Administrators can choose to block users who exhibit risky behaviors and remediate manually, require a password change, or require a multi-factor authentication as part of their Conditional Access policies.
+Некоторые обнаружения рисков, обнаруженные Защита идентификации Azure Active Directory, происходят в режиме реального времени, и для некоторых требуется автономная обработка. Администраторы могут блокировать пользователей, которые работают с опасным поведением и устраняют неполадки вручную, требовать изменения пароля или требовать многофакторную проверку подлинности в рамках политик условного доступа.
 
-## <a name="define-network-locations"></a>Define network locations
+## <a name="define-network-locations"></a>Определение сетевых расположений
 
-We recommended that organizations use Conditional Access to define their network using [named locations](../conditional-access/location-condition.md#named-locations). If your organization is using Identity Protection, consider using risk-based policies instead of named locations.
+Корпорация Майкрософт рекомендует организациям использовать условный доступ для определения их сети с помощью [именованных расположений](../conditional-access/location-condition.md#named-locations). Если ваша организация использует защиту идентификации, рассмотрите возможность использования политик на основе рисков вместо именованных расположений.
 
-### <a name="configuring-a-named-location"></a>Configuring a named location
+### <a name="configuring-a-named-location"></a>Настройка именованного расположения
 
-1. Open **Azure Active Directory** in the Azure portal
-2. Click **Conditional Access**
-3. Click **Named Locations**
-4. Click **New Location**
-5. In the **Name** field, provide a meaningful name
-6. Select whether you are defining the location using IP ranges or Countries/Regions
-   1. If using IP Ranges
-      1. Decide whether to mark the location as Trusted. Вход из надежного расположения снижает риски входа пользователя. Only mark this location as trusted if you know the IP ranges entered are established and credible in your organization.
-      2. Specify the IP Ranges
-   2. If using Countries/Regions
-      1. Expand the drop-down menu and select the countries or regions you wish to define for this named location.
-      2. Decide whether to Include unknown areas. Unknown areas are IP addresses that can't be mapped to a country/region.
+1. Откройте **Azure Active Directory** в портал Azure
+2. Щелкните **Условный доступ** .
+3. Щелкните " **именованные расположения** "
+4. Щелкните **новое расположение** .
+5. В поле **имя** введите понятное имя.
+6. Выберите, следует ли определять расположение с помощью диапазонов IP-адресов или стран или регионов.
+   1. При использовании диапазонов IP-адресов
+      1. Решите, следует ли пометить расположение как доверенное. Вход из надежного расположения снижает риски входа пользователя. Пометьте это расположение как доверенное, если известно, что введенные диапазоны IP-адресов установлены и достоверных в вашей организации.
+      2. Укажите диапазоны IP-адресов
+   2. При использовании стран или регионов
+      1. Разверните раскрывающееся меню и выберите страны или регионы, которые вы хотите определить для этого именованного расположения.
+      2. Решите, следует ли включать неизвестные области. Неизвестные области — это IP-адреса, которые не могут быть сопоставлены со страной или регионом.
 7. Нажмите кнопку **Создать**.
 
-## <a name="plan-authentication-methods"></a>Plan authentication methods
+## <a name="plan-authentication-methods"></a>Планирование методов проверки подлинности
 
-Administrators can choose the [authentication methods](../authentication/concept-authentication-methods.md) that they want to make available for users. It is important to allow more than a single authentication method so that users have a backup method available in case their primary method is unavailable. The following methods are available for administrators to enable:
+Администраторы могут выбирать [методы проверки подлинности](../authentication/concept-authentication-methods.md) , которые они хотят сделать доступными для пользователей. Важно обеспечить более одного метода проверки подлинности, чтобы пользователи имели доступ к методу резервного копирования, если их основной метод недоступен. Для включения в Администраторы доступны следующие методы:
 
 ### <a name="notification-through-mobile-app"></a>Уведомление в мобильном приложении
 
-A push notification is sent to the Microsoft Authenticator app on your mobile device. The user views the notification and selects **Approve** to complete verification. Push notifications through a mobile app provide the least intrusive option for users. They are also the most reliable and secure option because they use a data connection rather than telephony.
+В приложение Microsoft Authenticator на мобильном устройстве отправляется push-уведомление. Пользователь просматривает уведомление и выбирает **утверждение** для завершения проверки. Push-уведомления в мобильном приложении предоставляют пользователям возможность наименее вмешательство. Они также являются наиболее надежным и безопасным вариантом, поскольку они используют подключение к данным, а не телефонию.
 
 > [!NOTE]
-> If your organization has staff working in or traveling to China, the **Notification through mobile app** method on **Android devices** does not work in that country. Alternate methods should be made available for those users.
+> Если в вашей организации сотрудники работают в Китае или **передаются в Китая, уведомление через метод мобильного приложения** на **устройствах Android** не работает в этой стране. Для этих пользователей можно сделать альтернативные методы.
 
 ### <a name="verification-code-from-mobile-app"></a>Код проверки от мобильного приложения
 
-A mobile app like the Microsoft Authenticator app generates a new OATH verification code every 30 seconds. Пользователь вводит этот код проверки в интерфейсе входа. The mobile app option can be used whether or not the phone has a data or cellular signal.
+Мобильное приложение, например Microsoft Authenticator приложение, создает новый код проверки OATH каждые 30 секунд. Пользователь вводит этот код проверки в интерфейсе входа. Параметр мобильного приложения можно использовать независимо от того, есть ли у телефона данные или сотовый сигнал.
 
 ### <a name="call-to-phone"></a>Звонок на телефон
 
-An automated voice call is placed to the user. The user answers the call and presses **#** on the phone keypad to approve their authentication. Call to phone is a great backup method for notification or verification code from a mobile app.
+Для пользователя помещается автоматический голосовой вызов. Пользователь отвечает на звонок и нажимает **#** на клавиатуре телефона, чтобы утвердить проверку подлинности. Вызов по телефону — это отличный метод резервного копирования для уведомления или кода проверки из мобильного приложения.
 
 ### <a name="text-message-to-phone"></a>SMS на телефон
 
-A text message that contains a verification code is sent to the user, the user is prompted to enter the verification code into the sign-in interface.
+Текстовое сообщение, содержащее код проверки, отправляется пользователю, пользователю предлагается ввести код проверки в интерфейс входа.
 
 ### <a name="choose-verification-options"></a>Выбор вариантов проверки
 
@@ -135,45 +135,45 @@ A text message that contains a verification code is sent to the user, the user i
 1. Щелкните **Save**(Сохранить).
 1. Закройте вкладку **Параметры службы**.
 
-## <a name="plan-registration-policy"></a>Plan registration policy
+## <a name="plan-registration-policy"></a>Политика регистрации планов
 
-Administrators must determine how users will register their methods. Organizations should [enable the new combined registration experience](howto-registration-mfa-sspr-combined.md) for Azure MFA and self-service password reset (SSPR). SSPR allows users to reset their password in a secure way using the same methods they use for multi-factor authentication. We recommend this combined registration, currently in public preview, because it’s a great experience for users, with the ability to register once for both services. Enabling the same methods for SSPR and Azure MFA will allow your users to be registered to use both features.
+Администраторы должны определить, как пользователи будут регистрировать свои методы. Организации должны [включить новый объединенный интерфейс регистрации](howto-registration-mfa-sspr-combined.md) для Azure MFA и самостоятельного сброса пароля (SSPR). SSPR позволяет пользователям безопасно сбрасывать свой пароль с помощью тех же методов, которые они используют для многофакторной проверки подлинности. Мы рекомендуем использовать эту объединенную регистрацию, в настоящее время в общедоступной предварительной версии, так как это отличная возможность для пользователей, с возможностью зарегистрироваться один раз для обеих служб. Включение одних и тех же методов для SSPR и Azure MFA позволит регистрировать пользователей для использования обеих функций.
 
-### <a name="registration-with-identity-protection"></a>Registration with Identity Protection
+### <a name="registration-with-identity-protection"></a>Регистрация с защитой идентификации
 
-If your organization is using Azure Active Directory Identity Protection, [configure the MFA registration policy](../identity-protection/howto-mfa-policy.md) to prompt your users to register the next time they sign in interactively.
+Если ваша организация использует Защита идентификации Azure Active Directory, [Настройте политику регистрации MFA](../identity-protection/howto-mfa-policy.md) , чтобы предлагать пользователям регистрироваться при следующем входе в интерактивный режиме.
 
-### <a name="registration-without-identity-protection"></a>Registration without Identity Protection
+### <a name="registration-without-identity-protection"></a>Регистрация без защиты идентификации
 
-If your organization does not have licenses that enable Identity Protection, users are prompted to register the next time that MFA is required at sign-in. Users may not be registered for MFA if they don't use applications protected with MFA. It's important to get all users registered so that bad actors cannot guess the password of a user and register for MFA on their behalf, effectively taking control of the account.
+Если у вашей организации нет лицензий, обеспечивающих защиту идентификации, пользователям будет предложено зарегистрироваться в следующий раз, когда MFA потребуется выполнить вход. Пользователи могут не регистрироваться для MFA, если они не используют приложения, защищенные с помощью MFA. Важно получить регистрацию всех пользователей, чтобы неправильные субъекты не могли угадать пароль пользователя и зарегистрироваться для использования MFA от своего имени, эффективно контролируя учетную запись.
 
-#### <a name="enforcing-registration"></a>Enforcing registration
+#### <a name="enforcing-registration"></a>Принудительная регистрация
 
-Using the following steps a Conditional Access policy can force users to register for Multi-Factor Authentication
+С помощью следующих действий политика условного доступа может заставить пользователей регистрироваться для многофакторной проверки подлинности.
 
-1. Create a group, add all users not currently registered.
-2. Using Conditional Access, enforce multi-factor authentication for this group for access to all resources.
-3. Periodically, reevaluate the group membership, and remove users who have registered from the group.
+1. Создание группы, добавление всех пользователей, не зарегистрированных в настоящий момент.
+2. С помощью условного доступа следует применять многофакторную проверку подлинности для этой группы для доступа ко всем ресурсам.
+3. Периодически выполняйте повторное вычисление членства в группе и удаляйте пользователей, которые зарегистрировались в группе.
 
-You may identify registered and non-registered Azure MFA users with PowerShell commands that rely on the [MSOnline PowerShell module](https://docs.microsoft.com/powershell/azure/active-directory/install-msonlinev1?view=azureadps-1.0).
+Вы можете вычислить зарегистрированные и незарегистрированные пользователи Azure MFA с помощью команд PowerShell, которые используют [модуль MSOnline PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/install-msonlinev1?view=azureadps-1.0).
 
-#### <a name="identify-registered-users"></a>Identify registered users
+#### <a name="identify-registered-users"></a>Выявление зарегистрированных пользователей
 
 ```PowerShell
 Get-MsolUser -All | where {$_.StrongAuthenticationMethods -ne $null} | Select-Object -Property UserPrincipalName | Sort-Object userprincipalname 
 ```
 
-#### <a name="identify-non-registered-users"></a>Identify non-registered users
+#### <a name="identify-non-registered-users"></a>Выявление незарегистрированных пользователей
 
 ```PowerShell
 Get-MsolUser -All | where {$_.StrongAuthenticationMethods.Count -eq 0} | Select-Object -Property UserPrincipalName | Sort-Object userprincipalname 
 ```
 
-### <a name="convert-users-from-per-user-mfa-to-conditional-access-based-mfa"></a>Convert users from per-user MFA to Conditional Access based MFA
+### <a name="convert-users-from-per-user-mfa-to-conditional-access-based-mfa"></a>Преобразование пользователей из многопользовательского MFA в условный доступ на основе MFA
 
-If your users were enabled using per-user enabled and enforced Azure Multi-Factor Authentication the following PowerShell can assist you in making the conversion to Conditional Access based Azure Multi-Factor Authentication.
+Если пользователи были включены с включенной поддержкой многофакторной идентификации Azure для каждого пользователя, вы можете выполнить преобразование в службу многофакторной идентификации Azure на основе условного доступа с помощью следующих возможностей PowerShell.
 
-Run this PowerShell in an ISE window or save as a .PS1 file to run locally.
+Запустите PowerShell в окне интегрированной среды сценариев или сохраните его как. Файл PS1 для локального запуска.
 
 ```PowerShell
 # Sets the MFA requirement state
@@ -210,24 +210,24 @@ Get-MsolUser -All | Set-MfaState -State Disabled
 ```
 
 > [!NOTE]
-> We recently changed the behavior and PowerShell script above accordingly. Previously, the script saved off the MFA methods, disabled MFA, and restored the methods. This is no longer necessary now that the default behavior for disable doesn't clear the methods.
+> Мы недавно изменили поведение и сценарий PowerShell. Ранее скрипт сохранялся из методов MFA, отключил MFA и восстановил методы. Это больше не требуется, так как поведение по умолчанию для Disable не приводит к очистке методов.
 
-## <a name="plan-conditional-access-policies"></a>Plan Conditional Access policies
+## <a name="plan-conditional-access-policies"></a>Планирование политик условного доступа
 
-To plan your Conditional Access policy strategy, which will determine when MFA and other controls are required, refer to [What is Conditional Access in Azure Active Directory?](../conditional-access/overview.md).
+Чтобы спланировать стратегию политики условного доступа, которая определит, когда требуется MFA и другие элементы управления, см. статью [что такое условный доступ в Azure Active Directory?](../conditional-access/overview.md).
 
-It is important that you prevent being inadvertently locked out of your Azure AD tenant. You can mitigate the impact of this inadvertent lack of administrative access by [creating two or more emergency access accounts in your tenant](../users-groups-roles/directory-emergency-access.md) and excluding them from your Conditional Access policy.
+Важно предотвратить непреднамеренное блокирование клиента Azure AD. Вы можете уменьшить последствия такого случайного отсутствия административного доступа, [создав две или более учетных записей аварийного доступа в клиенте](../users-groups-roles/directory-emergency-access.md) и исключив их из политики условного доступа.
 
-### <a name="create-conditional-access-policy"></a>Create Conditional Access policy
+### <a name="create-conditional-access-policy"></a>Создание политики условного доступа
 
 1. Войдите на [портал Azure](https://portal.azure.com), используя учетную запись глобального администратора.
 1. Выберите **Azure Active Directory**, **Условный доступ**.
 1. Выберите **Новая политика**.
-   ![Create a Conditional Access policy to enable MFA for Azure portal users in pilot group](media/howto-mfa-getstarted/conditionalaccess-newpolicy.png)
+   ![создать политику условного доступа для включения MFA для пользователей портал Azure в пилотной группе](media/howto-mfa-getstarted/conditionalaccess-newpolicy.png)
 1. Введите понятное имя для политики.
 1. В разделе **Пользователи и группы** сделайте следующее.
    * На вкладке **Включить** щелкните переключатель **Все пользователи**.
-   * On the **Exclude** tab, check the box for **Users and groups** and choose your emergency access accounts.
+   * На вкладке **исключить** установите флажок для **пользователей и групп** и выберите учетные записи для аварийного доступа.
    * Нажмите кнопку **Done**(Готово).
 1. В разделе **Облачные приложения** щелкните переключатель **Все облачные приложения**.
    * Необязательно. На вкладке **Исключить** выберите облачные приложения в своей организации, для которых не требуется MFA.
@@ -242,118 +242,118 @@ It is important that you prevent being inadvertently locked out of your Azure AD
 1. Для переключателя **Включить политику** установите значение **Вкл.**
 1. Щелкните **Create**(Создать).
 
-## <a name="plan-integration-with-on-premises-systems"></a>Plan integration with on-premises systems
+## <a name="plan-integration-with-on-premises-systems"></a>Планирование интеграции с локальными системами
 
-Some legacy and on-premises applications that do not authenticate directly against Azure AD require additional steps to use MFA including:
+Некоторые устаревшие и локальные приложения, которые не проходят проверку подлинности непосредственно в Azure AD, потребовали дополнительных действий для использования MFA, включая:
 
-* Legacy on-premises applications, which will need to use Application proxy.
-* On-premises RADIUS applications, which will need to use MFA adapter with NPS server.
-* On-premises AD FS applications, which will need to use MFA adapter with AD FS 2016 or newer.
+* Устаревшие локальные приложения, которые требуют использования прокси приложения.
+* Локальные приложения RADIUS, которые должны использовать адаптер MFA с NPS-сервером.
+* Локальные AD FS приложения, для которых необходимо использовать адаптер MFA с AD FS 2016 или более поздней версии.
 
-Applications that authenticate directly with Azure AD and have modern authentication (WS-Fed, SAML, OAuth, OpenID Connect) can make use of Conditional Access policies directly.
+Приложения, которые проходят проверку подлинности напрямую с помощью Azure AD и имеют современную проверку подлинности (WS-подача, SAML, OAuth, OpenID Connect Connect), могут напрямую использовать политики условного доступа.
 
-### <a name="use-azure-mfa-with-azure-ad-application-proxy"></a>Use Azure MFA with Azure AD Application Proxy
+### <a name="use-azure-mfa-with-azure-ad-application-proxy"></a>Использование Azure MFA с Azure AD Application Proxy
 
-Applications residing on-premises can be published to your Azure AD tenant via [Azure AD Application Proxy](../manage-apps/application-proxy.md) and can take advantage of Azure Multi-Factor Authentication if they are configured to use Azure AD pre-authentication.
+Приложения, размещенные локально, могут быть опубликованы в клиенте Azure AD с помощью [azure AD application proxy](../manage-apps/application-proxy.md) и могут использовать преимущества многофакторной идентификации Azure, если они настроены для предварительной проверки подлинности Azure AD.
 
-These applications are subject to Conditional Access policies that enforce Azure Multi-Factor Authentication, just like any other Azure AD-integrated application.
+К этим приложениям применяются политики условного доступа, которые применяют многофакторную идентификацию Azure, как и любые другие приложения, интегрированные с Azure AD.
 
-Likewise, if Azure Multi-Factor Authentication is enforced for all user sign-ins, on-premises applications published with Azure AD Application Proxy will be protected.
+Аналогично, если многофакторная идентификация Azure применяется для всех входов пользователей, локальные приложения, опубликованные с помощью AD Application Proxy Azure, будут защищены.
 
-### <a name="integrating-azure-multi-factor-authentication-with-network-policy-server"></a>Integrating Azure Multi-Factor Authentication with Network Policy Server
+### <a name="integrating-azure-multi-factor-authentication-with-network-policy-server"></a>Интеграция многофакторной идентификации Azure с сервером политики сети
 
-Расширение сервера политики сети (NPS) для MFA Azure добавляет облачные функции многофакторной идентификации в инфраструктуру проверки подлинности на базе существующих серверов. With the NPS extension, you can add phone call, text message, or phone app verification to your existing authentication flow. This integration has the following limitations:
+Расширение сервера политики сети (NPS) для MFA Azure добавляет облачные функции многофакторной идентификации в инфраструктуру проверки подлинности на базе существующих серверов. С помощью расширения NPS можно добавить телефонный звонок, текстовое сообщение или проверку приложения для телефона в существующий поток проверки подлинности. Эта интеграция имеет следующие ограничения.
 
-* With the CHAPv2 protocol, only authenticator app push notifications and voice call are supported.
-* Conditional Access policies cannot be applied.
+* При использовании протокола CHAPv2 поддерживаются только push-уведомления приложения проверки подлинности и голосовое обращение.
+* Политики условного доступа не могут быть применены.
 
-The NPS extension acts as an adapter between RADIUS and cloud-based Azure MFA to provide a second factor of authentication to protect [VPN](howto-mfa-nps-extension-vpn.md), [Remote Desktop Gateway connections](howto-mfa-nps-extension-rdg.md), or other RADIUS capable applications. Users that register for Azure MFA in this environment will be challenged for all authentication attempts, the lack of Conditional Access policies means MFA is always required.
+Расширение NPS выступает в качестве адаптера между RADIUS и облачным Azure MFA для обеспечения второго фактора проверки подлинности для защиты [VPN](howto-mfa-nps-extension-vpn.md), [подключений шлюза удаленный рабочий стол](howto-mfa-nps-extension-rdg.md)или других приложений, поддерживающих RADIUS. Пользователи, зарегистрировавшиеся для Azure MFA в этой среде, будут вызывать проблемы при всех попытках проверки подлинности, отсутствие политик условного доступа означает, что MFA всегда требуется.
 
-#### <a name="implementing-your-nps-server"></a>Implementing your NPS server
+#### <a name="implementing-your-nps-server"></a>Реализация сервера NPS
 
-If you have an NPS instance deployed and in use already, reference [Integrate your existing NPS Infrastructure with Azure Multi-Factor Authentication](howto-mfa-nps-extension.md). If you are setting up NPS for the first time, refer to [Network Policy Server (NPS)](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top) for instructions. Troubleshooting guidance can be found in the article [Resolve error messages from the NPS extension for Azure Multi-Factor Authentication](howto-mfa-nps-extension-errors.md).
+Если у вас уже развернутый и используемый экземпляр NPS, см. Справочник [по интеграции существующей инфраструктуры NPS с многофакторной идентификацией Azure](howto-mfa-nps-extension.md). Если сервер политики сети настраивается в первый раз, см. инструкции в разделе [сервер политики сети (NPS)](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top) . Рекомендации по устранению неполадок см. в статье [Устранение сообщений об ошибках из расширения NPS для многофакторной идентификации Azure](howto-mfa-nps-extension-errors.md).
 
-#### <a name="prepare-nps-for-users-that-arent-enrolled-for-mfa"></a>Prepare NPS for users that aren't enrolled for MFA
+#### <a name="prepare-nps-for-users-that-arent-enrolled-for-mfa"></a>Подготовка NPS для пользователей, которые не зарегистрированы для MFA
 
-Choose what happens when users that aren’t enrolled with MFA try to authenticate. Use the registry setting `REQUIRE_USER_MATCH` in the registry path `HKLM\Software\Microsoft\AzureMFA` to control the feature behavior. This setting has a single configuration option.
+Выберите, что произойдет, если пользователи, не зарегистрированные с помощью MFA, попытаются пройти проверку подлинности. Используйте параметр реестра `REQUIRE_USER_MATCH` в пути реестра `HKLM\Software\Microsoft\AzureMFA` для управления поведением функции. Этот параметр имеет один параметр конфигурации.
 
 | Ключ | Value | значение по умолчанию |
 | --- | --- | --- |
-| `REQUIRE_USER_MATCH` | TRUE / FALSE | Не задано (эквивалентно значению True) |
+| `REQUIRE_USER_MATCH` | TRUE/FALSE | Не задано (эквивалентно значению True) |
 
-Этот параметр определяет, что нужно делать при проверке подлинности пользователя, не зарегистрированного для MFA. The effects of changing this setting are listed in the table below.
+Этот параметр определяет, что нужно делать при проверке подлинности пользователя, не зарегистрированного для MFA. Последствия изменения этого параметра перечислены в таблице ниже.
 
-| Настройки | User MFA Status | Effects |
+| Настройки | Состояние пользователя MFA | Произведенный эффект |
 | --- | --- | --- |
-| Key does not exist | Not enrolled | MFA challenge is unsuccessful |
-| Value set to True / not set | Not enrolled | MFA challenge is unsuccessful |
-| Key set to False | Not enrolled | Authentication without MFA |
-| Key set to False or True | Enrolled | Must authenticate with MFA |
+| Ключ не существует | Не зарегистрировано | Запрос MFA не выполнен |
+| Значение true/Not Set | Не зарегистрировано | Запрос MFA не выполнен |
+| Для ключа задано значение false | Не зарегистрировано | Проверка подлинности без MFA |
+| Для ключа задано значение false или true | Зарегистрировано | Необходимо пройти проверку подлинности с помощью MFA |
 
-### <a name="integrate-with-active-directory-federation-services"></a>Integrate with Active Directory Federation Services
+### <a name="integrate-with-active-directory-federation-services"></a>Интеграция с службы федерации Active Directory (AD FS)
 
-If your organization is federated with Azure AD, you can use [Azure Multi-Factor Authentication to secure AD FS resources](multi-factor-authentication-get-started-adfs.md), both on-premises and in the cloud. Azure MFA enables you to reduce passwords and provide a more secure way to authenticate. Starting with Windows Server 2016, you can now configure Azure MFA for primary authentication.
+Если ваша организация является Федеративной с Azure AD, вы можете использовать [многофакторную идентификацию Azure для защиты AD FSных ресурсов](multi-factor-authentication-get-started-adfs.md)как локально, так и в облаке. Azure MFA позволяет сократить пароли и обеспечить более безопасный способ проверки подлинности. Начиная с Windows Server 2016, теперь можно настроить Azure MFA для основной проверки подлинности.
 
-Unlike with AD FS in Windows Server 2012 R2, the AD FS 2016 Azure MFA adapter integrates directly with Azure AD and does not require an on-premises Azure MFA server. The Azure MFA adapter is built into Windows Server 2016, and there is no need for an additional installation.
+В отличие от AD FS в Windows Server 2012 R2, адаптер Azure MFA для AD FS 2016 интегрируется непосредственно с Azure AD и не требует локального сервера Azure MFA. Адаптер Azure MFA встроен в Windows Server 2016, и нет необходимости в дополнительной установке.
 
-When using Azure MFA with AD FS 2016 and the target application is subject to Conditional Access policy, there are additional considerations:
+При использовании Azure MFA с AD FS 2016, а целевое приложение подчиняется политике условного доступа, существуют дополнительные соображения.
 
-* Conditional Access is available when the application is a relying party to Azure AD, federated with AD FS 2016 or newer.
-* Conditional Access is not available when the application is a relying party to AD FS 2016 or AD FS 2019 and is managed or federated with AD FS 2016 or AD FS 2019.
-* Conditional Access is also not available when AD FS 2016 or AD FS 2019 is configured to use Azure MFA as the primary authentication method.
+* Условный доступ доступен, если приложение является проверяющей стороной для Azure AD, Федеративной с AD FS 2016 или более поздней версии.
+* Условный доступ недоступен, если приложение является проверяющей стороной AD FS 2016 или AD FS 2019, управляемой или Федеративной с AD FS 2016 или AD FS 2019.
+* Условный доступ также недоступен, если AD FS 2016 или AD FS 2019 настроены для использования Azure MFA в качестве основного метода проверки подлинности.
 
-#### <a name="ad-fs-logging"></a>AD FS logging
+#### <a name="ad-fs-logging"></a>Ведение журнала AD FS
 
-Standard AD FS 2016 and 2019 logging in both the Windows Security Log and the AD FS Admin log, contains information about authentication requests and their success or failure. Event log data within these events will indicate whether Azure MFA was used. For example, an AD FS Auditing Event ID 1200 may contain:
+Стандартные AD FS 2016 и 2019. ведение журнала в журнале безопасности Windows и в журнале администратора AD FS содержит сведения о запросах проверки подлинности и их успехе или сбое. Данные журнала событий в этих событиях указывают, использовался ли Azure MFA. Например, AD FS события аудита с ИДЕНТИФИКАТОРом 1200 может содержать:
 
 ```
 <MfaPerformed>true</MfaPerformed>
 <MfaMethod>MFA</MfaMethod>
 ```
 
-#### <a name="renew-and-manage-certificates"></a>Renew and manage certificates
+#### <a name="renew-and-manage-certificates"></a>Продление сертификатов и управление ими
 
-On each AD FS server, in the local computer My Store, there will be a self-signed Azure MFA certificate titled OU=Microsoft AD FS Azure MFA, which contains the certificate expiration date. Check the validity period of this certificate on each AD FS server to determine the expiration date.
+На каждом AD FS сервере в моем хранилище локального компьютера будет существовать самозаверяющий сертификат Azure MFA под названием OU = Microsoft AD FS Azure MFA, который содержит дату истечения срока действия сертификата. Проверьте срок действия этого сертификата на каждом AD FS сервере, чтобы определить дату истечения срока.
 
-If the validity period of your certificates is nearing expiration, [generate and verify a new MFA certificate on each AD FS server](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa#configure-the-ad-fs-servers).
+Если срок действия сертификатов приближается к истечению, [Создайте и проверьте новый сертификат MFA на каждом AD FS сервере](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa#configure-the-ad-fs-servers).
 
-The following guidance details how to manage the Azure MFA certificates on your AD FS servers. When you configure AD FS with Azure MFA, the certificates generated via the `New-AdfsAzureMfaTenantCertificate` PowerShell cmdlet are valid for 2 years. Renew and install the renewed certificates prior to expiration to ovoid disruptions in MFA service.
+В следующем руководстве описано, как управлять сертификатами Azure MFA на серверах AD FS. При настройке AD FS с помощью Azure MFA сертификаты, созданные с помощью командлета PowerShell для `New-AdfsAzureMfaTenantCertificate`, действительны в течение 2 лет. Продлите и установите продленные сертификаты до истечения срока действия, чтобы овоид перерывы в службе MFA.
 
-## <a name="implement-your-plan"></a>Implement your plan
+## <a name="implement-your-plan"></a>Реализация плана
 
-Now that you have planned your solution, you can implement by following the steps below:
+После планирования решения можно реализовать, выполнив следующие действия:
 
-1. Meet any necessary prerequisites
-   1. Deploy [Azure AD Connect](../hybrid/whatis-hybrid-identity.md) for any hybrid scenarios
-   1. Deploy [Azure AD Application Proxy](../manage-apps/application-proxy.md) for on any on-premises apps published for cloud access
-   1. Deploy [NPS](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top) for any RADIUS authentication
-   1. Ensure users have upgraded to supported versions of Microsoft Office with modern authentication enabled
-1. Configure chosen [authentication methods](#choose-verification-options)
-1. Define your [named network locations](../conditional-access/location-condition.md#named-locations)
-1. Select groups to begin rolling out MFA.
-1. Configure your [Conditional Access policies](#create-conditional-access-policy)
-1. Configure your MFA registration policy
-   1. [Combined MFA and SSPR](howto-registration-mfa-sspr-combined.md)
-   1. With [Identity Protection](../identity-protection/howto-mfa-policy.md)
-1. Send user communications and get users to enroll at [https://aka.ms/mfasetup](https://aka.ms/mfasetup)
-1. [Keep track of who’s enrolled](#identify-non-registered-users)
+1. Соблюдение необходимых условий
+   1. Развертывание [Azure AD Connect](../hybrid/whatis-hybrid-identity.md) для любых гибридных сценариев
+   1. Развертывание [AD application proxy Azure](../manage-apps/application-proxy.md) для в любых локальных приложениях, опубликованных для доступа к облаку
+   1. Развертывание [NPS](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top) для любой проверки подлинности RADIUS
+   1. Убедитесь, что пользователи выполнили обновление до поддерживаемых версий Microsoft Office с включенной современной проверкой подлинности.
+1. Настройка выбранных [методов проверки подлинности](#choose-verification-options)
+1. Определение [именованных сетевых расположений](../conditional-access/location-condition.md#named-locations)
+1. Выберите группы, чтобы начать развертывание MFA.
+1. Настройка [политик условного доступа](#create-conditional-access-policy)
+1. Настройка политики регистрации MFA
+   1. [Объединенные MFA и SSPR](howto-registration-mfa-sspr-combined.md)
+   1. С [защитой идентификации](../identity-protection/howto-mfa-policy.md)
+1. Отправка пользователей и получение пользователям регистрации на [https://aka.ms/mfasetup](https://aka.ms/mfasetup)
+1. [Следите за тем, кто зарегистрирован](#identify-non-registered-users)
 
 > [!TIP]
-> Government cloud users can enroll at [https://aka.ms/GovtMFASetup](https://aka.ms/GovtMFASetup)
+> Пользователи в облаке для государственных организаций могут зарегистрироваться на [https://aka.ms/GovtMFASetup](https://aka.ms/GovtMFASetup)
 
 ## <a name="manage-your-solution"></a>Управление решением
 
-Reports for Azure MFA
+Отчеты для Azure MFA
 
-Azure Multi-Factor Authentication provides reports through the Azure portal:
+Многофакторная идентификация Azure предоставляет отчеты с помощью портал Azure:
 
 | Отчет | Location | Описание |
 | --- | --- | --- |
 | Предупреждения об использовании и о мошенничестве | "Azure AD > События входа" | Сведения об общем использовании, сводка пользователей, сведения о пользователях, а также история предупреждений о мошенничестве, отправленных в течение указанного диапазона дат. |
 
-## <a name="troubleshoot-mfa-issues"></a>Troubleshoot MFA issues
+## <a name="troubleshoot-mfa-issues"></a>Устранение неполадок MFA
 
-Find solutions for common issues with Azure MFA at the [Troubleshooting Azure Multi-Factor Authentication article](https://support.microsoft.com/help/2937344/troubleshooting-azure-multi-factor-authentication-issues) on the Microsoft Support Center.
+Найдите решения для распространенных проблем с Azure MFA в [статье Устранение неполадок многофакторной идентификации Azure](https://support.microsoft.com/help/2937344/troubleshooting-azure-multi-factor-authentication-issues) в центре служба поддержки Майкрософт.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

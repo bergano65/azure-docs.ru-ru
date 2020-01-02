@@ -1,5 +1,5 @@
 ---
-title: Copy data from Amazon Marketplace Web Service
+title: Копирование данных из AWS Marketplace
 description: Узнайте, как копировать данные из Amazon Marketplace Web Service на поддерживаемые приемники хранилища данных с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 ms.service: data-factory
@@ -9,13 +9,14 @@ ms.author: jingwang
 author: linda33wj
 manager: shwang
 ms.reviewer: douglasl
+ms.custom: seo-lt-2019
 ms.date: 08/01/2018
-ms.openlocfilehash: 24e0de3efec4e2d442f746e19f4c30363f0b4bfa
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: db4173cdaf18d827c6a3c047777f7d5e67d79b84
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74218759"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74931124"
 ---
 # <a name="copy-data-from-amazon-marketplace-web-service-using-azure-data-factory"></a>Копирование данных из Amazon Marketplace Web Service с помощью Фабрики данных Azure
 
@@ -23,9 +24,9 @@ ms.locfileid: "74218759"
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
-This Amazon Marketplace Web Service connector is supported for the following activities:
+Соединитель Amazon Marketplace Web Service Connector поддерживается для следующих действий:
 
-- [Copy activity](copy-activity-overview.md) with [supported source/sink matrix](copy-activity-overview.md)
+- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника и приемника](copy-activity-overview.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 
 Вы можете скопировать данные из Amazon Marketplace Web Service в любой поддерживаемый приемник данных. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
@@ -88,7 +89,7 @@ This Amazon Marketplace Web Service connector is supported for the following act
 
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | The type property of the dataset must be set to: **AmazonMWSObject** | ДА |
+| Тип | Свойство Type набора данных должно иметь значение **амазонмвсобжект** . | ДА |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -154,9 +155,9 @@ This Amazon Marketplace Web Service connector is supported for the following act
 ]
 ```
 
-## <a name="lookup-activity-properties"></a>Lookup activity properties
+## <a name="lookup-activity-properties"></a>Свойства действия поиска
 
-To learn details about the properties, check [Lookup activity](control-flow-lookup-activity.md).
+Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

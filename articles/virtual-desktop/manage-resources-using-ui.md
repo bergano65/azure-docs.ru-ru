@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 11/09/2019
 ms.author: helohr
-ms.openlocfilehash: c7ef648dd2610c337bc9146e7a52c04d91907c8e
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: ad0c67cea6a5a9b487cd47aa7c10d10da1438050
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73904909"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74384284"
 ---
 # <a name="tutorial-deploy-a-management-tool"></a>Руководство по Развертывание средства управления
 
@@ -63,10 +63,9 @@ ms.locfileid: "73904909"
 ### <a name="guidance-for-template-parameters"></a>Рекомендации по настройке параметров шаблона
 Введите следующие параметры для настройки средства:
 
-- URL-адрес брокера RD:  https:\//rdbroker.wvd.microsoft.com/.
-- URL-адрес ресурса:  https:\//mrs-prod.ame.gbl/mrs-RDInfra-prod.
-- Используйте свои учетные данные Azure Active Directory с отключенной Многофакторной идентификацией, чтобы войти в Azure. Дополнительные сведения см. в разделе [Предварительные требования для запуска шаблона Azure Resource Manager](#what-you-need-to-run-the-azure-resource-manager-template).
-- Укажите уникальное имя для приложения, которое будет зарегистрировано в Azure Active Directory для использования средства управления, например Apr3UX.
+- Выберите для параметра **isServicePrincipal** значение **false**.
+- В качестве учетных данных введите свои учетные данные Azure Active Directory с отключенной многофакторной проверкой подлинности. Эти учетные данные вы будете использовать для входа в Azure и создания приложения Azure AD и ресурсов веб-приложения Azure. Дополнительные сведения см. в разделе [Предварительные требования для запуска шаблона Azure Resource Manager](#what-you-need-to-run-the-azure-resource-manager-template).
+- Для параметра **applicationName** укажите уникальное имя для приложения, которое будет зарегистрировано в Azure Active Directory. Это имя также будет использоваться для URL-адреса веб-приложения. Например, вы можете использовать такое имя, как Apr3UX.
 
 ## <a name="provide-consent-for-the-management-tool"></a>Предоставление согласия для средства управления
 

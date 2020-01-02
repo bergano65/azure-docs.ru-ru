@@ -4,17 +4,17 @@ description: Эта статья содержит сведения об испо
 services: automation
 ms.service: automation
 ms.subservice: shared-capabilities
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 02/08/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 2f81c0affb78d5944b8ba910cccfa0be655f1a6f
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: 23869647b5ad04d24f0b700a1433482d4ae15fd3
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71097939"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74850539"
 ---
 # <a name="az-module-support-in-azure-automation"></a>Поддержка модулей Az в службе автоматизации Azure
 
@@ -71,6 +71,6 @@ ms.locfileid: "71097939"
 
 После того как переход выполнен, больше не запускайте модули runbook с помощью модулей `AzureRM` в учетной записи. Кроме того, мы рекомендуем не импортировать и не обновлять модули `AzureRM` в этой учетной записи. Начиная с этого момента, мы рекомендуем перенести эту учетную запись в `Az` и работать только с модулями `Az`. После создания учетной записи службы автоматизации имеющиеся модули `AzureRM` по-прежнему будут установлены, а учебные модули runbook по-прежнему будут создаваться с помощью командлетов `AzureRM`. Не следует запускать эти модули Runbook.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании модулей Az см. в статье [Get started with Azure PowerShell](/powershell/azure/get-started-azureps?view=azps-1.1.0) (Начало работы с Azure PowerShell).

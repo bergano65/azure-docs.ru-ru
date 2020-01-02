@@ -1,17 +1,17 @@
 ---
-title: Общие сведения о непрерывности бизнес-процессов с помощью базы данных Azure для PostgreSQL — один сервер
+title: Непрерывность бизнес-процессов — база данных Azure для PostgreSQL — один сервер
 description: В этой статье описывается непрерывность бизнес-процессов (восстановление на момент времени, сбой центра обработки данных, геовосстановление) при использовании базы данных Azure для PostgreSQL.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.openlocfilehash: 3623611bcd22486d90651c6e8b6880c6de1de0c5
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: 13fbab52c16fcde72da8073b429fe6fb4665c21b
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71950092"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74763884"
 ---
 # <a name="overview-of-business-continuity-with-azure-database-for-postgresql---single-server"></a>Общие сведения о непрерывности бизнес-процессов с помощью базы данных Azure для PostgreSQL — один сервер
 
@@ -53,7 +53,7 @@ ms.locfileid: "71950092"
 ## <a name="cross-region-read-replicas"></a>Реплики чтения между регионами
 Для повышения непрерывности бизнес-процессов и планирования аварийного восстановления можно использовать реплики чтения в разных регионах. Реплики чтения обновляются асинхронно с помощью технологии физической репликации PostgreSQL. Дополнительные сведения о репликах чтения, доступных регионах и отработки отказа см. в [статье основные понятия чтения реплик](concepts-read-replicas.md). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения об автоматическом создании резервных копий см. в [этой статье](concepts-backup.md). 
-- Дополнительные сведения см. в статьях [Как заархивировать и восстановить сервер в базе данных Azure для PostgreSQL с помощью портала Azure](howto-restore-server-portal.md) или [Как выполнить резервное копирование и восстановление сервера в базе данных Azure для PostgreSQL с помощью Azure CLI](howto-restore-server-cli.md).
+- Узнайте, как выполнить восстановление с помощью [портала Azure](howto-restore-server-portal.md) или [Azure CLI](howto-restore-server-cli.md).
 - См. дополнительные сведения в статье [Реплики чтения в Базе данных Azure для PostgreSQL](concepts-read-replicas.md).

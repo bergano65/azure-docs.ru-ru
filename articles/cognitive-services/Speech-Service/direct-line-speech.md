@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: travisw
-ms.openlocfilehash: 72029d1d56c9d561e629cc750244fd7de8ec113a
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: cec3131d791d591375fd87d1c080294c9034a815
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73507179"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74806224"
 ---
 # <a name="about-direct-line-speech"></a>О прямой голосовой речи
 
@@ -35,36 +35,36 @@ ms.locfileid: "73507179"
 
 Мы также предлагаем краткие руководства, предназначенные для выполнения кода менее чем через 10 минут. В этой таблице содержится список кратких руководств по голосовому помощнику, упорядоченных по языку.
 
-| Быстрый запуск | Платформа | Справочник по API |
+| Краткое руководство | платформа | Справочные материалы по API |
 |------------|----------|---------------|
 | C#, UWP | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| Java | Windows, macOS, Linux | [Обзор](https://aka.ms/csspeech/javaref) |
-| Java | Android | [Обзор](https://aka.ms/csspeech/javaref) |
+| Java: | Windows, macOS, Linux | [Обзор](https://aka.ms/csspeech/javaref) |
+| Java: | Android | [Обзор](https://aka.ms/csspeech/javaref) |
 
 ## <a name="sample-code"></a>Пример кода
 
 Пример кода для создания речевого помощника доступен на сайте GitHub. Эти примеры охватывают клиентское приложение для подключения к помощнику на нескольких популярных языках программирования.
 
-* [Образцы для голоса (SDK)](https://aka.ms/csspeech/samples)
+* [Примеры голосового помощника (SDK)](https://aka.ms/csspeech/samples)
 * [Учебник. Включение помощника в речь с помощью голосового пакета SDKC#](tutorial-voice-enable-your-bot-speech-sdk.md)
 
 ## <a name="customization"></a>Настройка
 
-Речевые помощники, созданные с помощью служб распознавания речи Azure, могут использовать полный спектр вариантов настройки, доступных для преобразования [речи в текст](speech-to-text.md), преобразования [текста в речь](text-to-speech.md)и [выбора настраиваемых ключевых слов](speech-devices-sdk-create-kws.md).
+Речевые помощники, созданные с помощью речевой службы, могут использовать полный спектр вариантов настройки, доступных для преобразования [речи в текст](speech-to-text.md), преобразования [текста в речь](text-to-speech.md)и [выбора настраиваемых ключевых слов](speech-devices-sdk-create-kws.md).
 
 > [!NOTE]
 > Параметры настройки зависят от языка и языкового стандарта (см. раздел [Поддерживаемые языки](supported-languages.md)).
 
 Прямой голос и связанные с ним функции для голосовых помощников являются идеальным дополнением к [решению виртуального помощника и шаблону Enterprise](https://docs.microsoft.com/azure/bot-service/bot-builder-enterprise-template-overview). Несмотря на то, что прямое распознавание речи может работать с любым совместимым роботом, эти ресурсы предоставляют возможность повторного использования для высококачественных диалоговых возможностей, а также общие вспомогательные навыки и модели для быстрого начала работы.
 
-## <a name="reference-docs"></a>Справочная документация
+## <a name="reference-docs"></a>Справочные документы
 
 * [пакет SDK для службы "Речь"](speech-sdk-reference.md);
 * [Служба Azure Bot](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Получите ключ подписки для Служб речи бесплатно](get-started.md)
+* [Try the Speech service for free](get-started.md) (Бесплатное использование службы "Речь")
 * [Получение пакета SDK для распознавания речи](speech-sdk.md)
 * [Создание и развертывание простого бота](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-basic-deploy?view=azure-bot-service-4.0)
 * [Получение решения виртуального помощника и корпоративного шаблона](https://github.com/Microsoft/AI)

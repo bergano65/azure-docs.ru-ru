@@ -1,6 +1,6 @@
 ---
-title: Добавление имитированного устройства в Azure IoT Central | Документация Майкрософт
-description: Создание шаблона устройства и добавление имитированного устройства в приложение IoT Central.
+title: Краткое руководство. Добавление имитированного устройства в Azure IoT Central
+description: В этом кратком руководстве содержатся сведения о создании шаблона устройства и добавлении имитированного устройства в приложение IoT Central.
 author: dominicbetts
 ms.author: dobett
 ms.date: 10/24/2019
@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
-ms.openlocfilehash: 8b6720af6328242a1fe297e60c9d413d0b83f3d2
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 46d325fd609363a5425fc16845552e75b575c231
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73896302"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74706711"
 ---
 # <a name="quickstart-add-a-simulated-device-to-your-iot-central-application-preview-features"></a>Краткое руководство. Добавление имитированного устройства в приложение IoT Central (предварительные версии функций)
 

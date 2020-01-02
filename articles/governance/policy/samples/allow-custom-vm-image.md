@@ -1,14 +1,14 @@
 ---
 title: 'Пример: разрешение применения пользовательского образа виртуальной машины из группы ресурсов'
-description: В этом примере определения политики необходимо, чтобы пользовательские образы поступали из утвержденной группы ресурсов.
+description: В этом примере определения политики необходимо, чтобы пользовательские образы поступали из утвержденной группы ресурсов, указанной в параметре.
 ms.date: 01/23/2019
 ms.topic: sample
-ms.openlocfilehash: 4956b01dfc48014a047e61aa4961cc4da418f6ae
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 788098998bb5a1f268203e8e37fd671bdfbd6425
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74076496"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463784"
 ---
 # <a name="sample---allow-custom-vm-image-from-a-resource-group"></a>Пример: разрешение использования пользовательского образа виртуальной машины из группы ресурсов
 

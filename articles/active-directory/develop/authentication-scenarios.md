@@ -2,28 +2,24 @@
 title: Проверка подлинности на платформе удостоверений Майкрософт | Azure
 description: Узнайте об основах проверки подлинности на платформе Microsoft Identity Platform (v 2.0).
 services: active-directory
-documentationcenter: dev-center-name
 author: rwike77
 manager: CelesteDG
-editor: ''
 ms.assetid: 0c84e7d0-16aa-4897-82f2-f53c6c990fd9
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 10/15/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda, sureshja, hirsin
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 317efa17b294e859ef8a092451aca70b5b836fe7
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 0ffe0773c943983fc098d41f56b21b898682b2a0
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74167789"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74843994"
 ---
 # <a name="authentication-basics"></a>Основные сведения об аутентификации
 
@@ -167,7 +163,7 @@ MSAL использует браузер для получения маркер�
 
 По умолчанию MSAL использует системный браузер, за исключением .NET Framework классических приложений, в которых используется внедренный элемент управления для обеспечения более тесного взаимодействия с пользователем.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общие термины см. в [глоссарии разработчика платформы удостоверений Майкрософт](developer-glossary.md) .
 Дополнительные сведения о других сценариях проверки подлинности пользователей, поддерживаемых платформой идентификации Майкрософт, см. в статье [потоки проверки подлинности и сценарии приложений](authentication-flows-app-scenarios.md) .

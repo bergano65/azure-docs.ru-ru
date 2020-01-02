@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-local-business
 ms.topic: quickstart
-ms.date: 04/26/2019
-ms.author: rosh
-ms.openlocfilehash: d14e9dd8d02db7ca0131927682804fe81b750d97
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.date: 11/29/2019
+ms.author: aahi
+ms.openlocfilehash: 2265471001896652a4ce35dbf8bd84aca50000fb
+ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74072324"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74665685"
 ---
 # <a name="quickstart-send-a-query-to-the-bing-local-business-search-api-in-c"></a>Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью C#
 
@@ -34,7 +34,7 @@ ms.locfileid: "74072324"
 
 Следующий код создает `WebRequest`, задает заголовок ключа доступа и добавляет строку запроса "restaurant in Bellevue" (ресторан в Бельвю).  Затем код отправляет запрос и назначает ответ строке, содержащей текст JSON.
 
-```
+```csharp
     // Replace the accessKey string value with your valid access key.
     const string accessKey = "enter key here";
 
@@ -60,7 +60,7 @@ API Bing для поиска местных компаний возвращае�
 3. Замените значение accessKey ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Text;

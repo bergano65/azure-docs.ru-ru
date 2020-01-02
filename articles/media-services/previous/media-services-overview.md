@@ -1,6 +1,6 @@
 ---
 title: Общие сведения о службах мультимедиа Azure | Документация Майкрософт
-description: В этом разделе приводится краткий обзор служб мультимедиа Azure.
+description: Службы мультимедиа Microsoft Azure — расширяемая облачная платформа, которая позволяет разработчикам создавать масштабируемые приложения для управления и доставки мультимедиа. В этой статье приводятся общие сведения о службах мультимедиа Azure.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -13,21 +13,21 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/19/2019
 ms.author: juliako
-ms.openlocfilehash: 7f0a071012685ee192d4f866396a5953d0a4508c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d339fd16b1eef8df367bdcb375a1cb3dc71ddde2
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64937249"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74895879"
 ---
 # <a name="azure-media-services-overview"></a>Общие сведения о службах мультимедиа Azure 
 
-> [!div class="op_single_selector" title1="Выберите версию служб мультимедиа, в которых используется:"]
+> [!div class="op_single_selector" title1="Выберите версию служб мультимедиа, которую вы используете:"]
 > * [Версия 3](../latest/media-services-overview.md)
 > * [Версия 2](media-services-overview.md)
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см. в разделе [руководство по миграции из версии 2 версии 3](../latest/migrate-from-v2-to-v3.md)
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 
 Службы мультимедиа Azure (AMS) — это расширяемая облачная платформа, которая позволяет разработчикам создавать масштабируемые приложения для управления и доставки файлов мультимедиа. С помощью служб мультимедиа Azure можно безопасно передавать, сохранять, кодировать и упаковывать видео- или аудиосодержимое для потоковой трансляции разным клиентам (например, на ТВ, ПК и мобильные устройства) или для трансляции по требованию.
 
@@ -37,7 +37,7 @@ ms.locfileid: "64937249"
 
 Приступить к использованию служб мультимедиа Azure можно только при наличии следующих компонентов.
 
-* Учетная запись Azure. Если ее нет, можно создать бесплатную пробную учетную запись всего за несколько минут. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com).
+* Учетная запись Azure. Если ее нет, можно создать бесплатную пробную учетную запись всего за несколько минут. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com);
 * Учетная запись служб мультимедиа Azure. Дополнительные сведения см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
 * Настройка среды разработки (необязательно) Выберите .NET или REST API для среды разработки. Дополнительные сведения см. в [разделе о настройке среды](media-services-dotnet-how-to-use.md).
 
@@ -53,12 +53,12 @@ ms.locfileid: "64937249"
     * Пакет SDK служб мультимедиа Azure для .NET
     
         * [Пакет NuGet](https://www.nuget.org/packages/windowsazure.mediaservices/).
-        * [Исходный код Github](https://github.com/Azure/azure-sdk-for-media-services)
+        * [Исходный код GitHub](https://github.com/Azure/azure-sdk-for-media-services)
     * [Пакет Azure SDK для Java](https://github.com/Azure/azure-sdk-for-java).
     * [Пакет Azure SDK для PHP](https://github.com/Azure/azure-sdk-for-php).
     * [Службы мультимедиа Azure для Node.js](https://github.com/michelle-becker/node-ams-sdk/blob/master/lib/request.js) (это версия пакета SDK для Node.js сторонних производителей. Она поддерживается сообществом и в настоящее время не обладает полным покрытием всех интерфейсов API AMS).
 * Существующие средства:
-    * [портал Azure](https://portal.azure.com/)
+    * [Портал Azure](https://portal.azure.com/)
     * [Azure-Media-Services-Explorer](https://github.com/Azure/Azure-Media-Services-Explorer) (обозреватель служб мультимедиа Azure (AMSE) является приложением Winforms/С# для Windows)
 
 > [!NOTE]
@@ -67,9 +67,9 @@ ms.locfileid: "64937249"
 
 ## <a name="code-samples"></a>Примеры кода
 
-Разнообразные примеры кода в коллекции **образцов кода Azure** — [Примеры кода Azure](https://azure.microsoft.com/resources/samples/?service=media-services&sort=0).
+Найдите несколько примеров кода в коллекции **образцов кода Azure**: [Примеры кода Azure](https://azure.microsoft.com/resources/samples/?service=media-services&sort=0).
 
-## <a name="concepts"></a>Основные понятия
+## <a name="concepts"></a>Концепции
 
 Основные понятия служб мультимедиа Azure см. в статье [Основные понятия служб мультимедиа Azure](media-services-concepts.md).
 
@@ -87,6 +87,6 @@ ms.locfileid: "64937249"
 
 [Служба поддержки Azure](https://azure.microsoft.com/support/options/) обеспечивает различные варианты поддержки для Azure, включая службы мультимедиа.
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Отправить отзыв
 
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

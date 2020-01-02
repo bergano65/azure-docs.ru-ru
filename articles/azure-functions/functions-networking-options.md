@@ -1,6 +1,6 @@
 ---
-title: Azure Functions networking options
-description: An overview of all networking options available in Azure Functions.
+title: Параметры сети функций Azure
+description: Обзор всех параметров сети, доступных в функциях Azure.
 author: alexkarcher-msft
 ms.topic: conceptual
 ms.date: 4/11/2019
@@ -12,144 +12,144 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74226801"
 ---
-# <a name="azure-functions-networking-options"></a>Azure Functions networking options
+# <a name="azure-functions-networking-options"></a>Параметры сети функций Azure
 
-This article describes the networking features available across the hosting options for Azure Functions. All the following networking options give you some ability to access resources without using internet-routable addresses, or to restrict internet access to a function app.
+В этой статье описываются сетевые функции, доступные в различных вариантах размещения для функций Azure. Все следующие сетевые параметры позволяют получить доступ к ресурсам без использования адресов, маршрутизируемых через Интернет, или ограничить доступ к приложению-функции через Интернет.
 
-The hosting models have different levels of network isolation available. Choosing the correct one will help you meet your network isolation requirements.
+Модели размещения имеют разные уровни сетевой изоляции. Выбор правильного варианта поможет удовлетворить требования к изоляции сети.
 
-You can host function apps in a couple of ways:
+Размещать приложения-функции можно двумя способами:
 
-* There's a set of plan options that run on a multi-tenant infrastructure, with various levels of virtual network connectivity and scaling options:
-    * The [Consumption plan](functions-scale.md#consumption-plan), which scales dynamically in response to load and offers minimal network isolation options.
-    * The [Premium plan](functions-scale.md#premium-plan), which also scales dynamically, while offering more comprehensive network isolation.
-    * The Azure [App Service plan](functions-scale.md#app-service-plan), which operates at a fixed scale and offers similar network isolation as the Premium plan.
-* You can run functions in an [App Service Environment](../app-service/environment/intro.md). This method deploys your function into your virtual network and offers full network control and isolation.
+* Существует набор параметров плана, которые выполняются в инфраструктуре с несколькими клиентами с различными уровнями возможностей подключения и масштабирования виртуальной сети.
+    * [План потребления](functions-scale.md#consumption-plan), который динамически масштабируется в ответ на загрузку и предлагает минимальные варианты сетевой изоляции.
+    * [План Premium](functions-scale.md#premium-plan), который также динамически масштабируется, обеспечивая более широкие сетевые изоляции.
+    * [План службы приложений](functions-scale.md#app-service-plan)Azure, который работает в фиксированном масштабе и предлагает такую же сетевую изоляцию, как и план Premium.
+* Функции можно запускать в [Среда службы приложений](../app-service/environment/intro.md). Этот метод развертывает функцию в виртуальной сети и обеспечивает полный контроль и изоляцию сети.
 
-## <a name="matrix-of-networking-features"></a>Matrix of networking features
+## <a name="matrix-of-networking-features"></a>Матрица сетевых компонентов
 
-|                |[Consumption plan](functions-scale.md#consumption-plan)|[Premium plan](functions-scale.md#premium-plan)|[План обслуживания приложения](functions-scale.md#app-service-plan)|[Среда службы приложений](../app-service/environment/intro.md)|
+|                |[План потребления](functions-scale.md#consumption-plan)|[План Premium](functions-scale.md#premium-plan)|[План обслуживания приложения](functions-scale.md#app-service-plan)|[Среда службы приложений](../app-service/environment/intro.md)|
 |----------------|-----------|----------------|---------|-----------------------|  
-|[Inbound IP restrictions & private site access](#inbound-ip-restrictions)|✅Yes|✅Yes|✅Yes|✅Yes|
-|[Интеграция с виртуальной сетью](#virtual-network-integration)|❌No|✅Yes (Regional)|✅Yes (Regional and Gateway)|✅Yes|
-|[Virtual network triggers (non-HTTP)](#virtual-network-triggers-non-http)|❌No| ❌No|✅Yes|✅Yes|
-|[Гибридные подключения](#hybrid-connections)|❌No|✅Yes|✅Yes|✅Yes|
-|[Outbound IP restrictions](#outbound-ip-restrictions)|❌No| ❌No|❌No|✅Yes|
+|[Ограничения на входящие IP-адреса & доступ к частному сайту](#inbound-ip-restrictions)|✅да|✅да|✅да|✅да|
+|[Интеграция с виртуальной сетью](#virtual-network-integration)|❌нет|✅Да (региональный)|✅Да (региональный и шлюз)|✅да|
+|[Триггеры виртуальной сети (не HTTP)](#virtual-network-triggers-non-http)|❌нет| ❌нет|✅да|✅да|
+|[Гибридные подключения](#hybrid-connections)|❌нет|✅да|✅да|✅да|
+|[Ограничения исходящих IP-адресов](#outbound-ip-restrictions)|❌нет| ❌нет|❌нет|✅да|
 
-## <a name="inbound-ip-restrictions"></a>Inbound IP restrictions
+## <a name="inbound-ip-restrictions"></a>Ограничения на входящие IP-адреса
 
-You can use IP restrictions to define a priority-ordered list of IP addresses that are allowed or denied access to your app. The list can include IPv4 and IPv6 addresses. When there are one or more entries, an implicit "deny all" exists at the end of the list. IP restrictions work with all function-hosting options.
+Вы можете использовать ограничения IP-адресов, чтобы определить упорядоченный по приоритету IP-адреса, которым разрешен или запрещен доступ к вашему приложению. Список может содержать адреса IPv4 и IPv6. Если имеется одна или несколько записей, в конце списка существует неявный "Deny All". Ограничения IP-адресов работают со всеми вариантами размещения функций.
 
 > [!NOTE]
-> With network restrictions in place, you can use the portal editor only from within your virtual network, or when you've put the IP address of the machine you're using to access the Azure portal on the Safe Recipients list. However, you can still access any features on the **Platform features** tab from any machine.
+> С учетом ограничений сети можно использовать редактор портала только в пределах виртуальной сети или указать IP-адрес компьютера, который вы используете для доступа к портал Azure в списке Надежные получатели. Тем не менее вы по-прежнему можете получить доступ к любым функциям на вкладке **функции платформы** на любом компьютере.
 
-To learn more, see [Azure App Service static access restrictions](../app-service/app-service-ip-restrictions.md).
+Дополнительные сведения см. в статье [ограничения статического доступа в службе приложений Azure](../app-service/app-service-ip-restrictions.md).
 
 ## <a name="private-site-access"></a>доступ к частным сайтам;
 
-Private site access refers to making your app accessible only from a private network such as an Azure virtual network.
+Доступ к частному сайту означает предоставление доступа к приложению только из частной сети, такой как виртуальная сеть Azure.
 
-* Private site access is available in the [Premium](./functions-premium-plan.md), [Consumption](functions-scale.md#consumption-plan), and [App Service](functions-scale.md#app-service-plan) plans when service endpoints are configured.
-    * Service endpoints can be configured on a per-app basis under **Platform features** > **Networking** > **Configure Access Restrictions** > **Add Rule**. Virtual networks can now be selected as a rule type.
-    * For more information, see [virtual network service endpoints](../virtual-network/virtual-network-service-endpoints-overview.md).
-    * Keep in mind that with service endpoints, your function still has full outbound access to the internet, even with virtual network integration configured.
-* Private site access is also available within an App Service Environment that's configured with an internal load balancer (ILB). For more information, see [Create and use an internal load balancer with an App Service Environment](../app-service/environment/create-ilb-ase.md).
+* Доступ к частному сайту доступен в планах обслуживания " [премиум](./functions-premium-plan.md)", " [потребление](functions-scale.md#consumption-plan)" и " [служба приложений](functions-scale.md#app-service-plan) " при настройке конечных точек службы.
+    * Конечные точки службы можно настроить для каждого приложения в разделе **функции платформы** > **сети** > **настроить ограничения доступа** > **Добавить правило**. Теперь в качестве типа правила можно выбрать виртуальные сети.
+    * Дополнительные сведения см. в разделе [конечные точки службы виртуальной сети](../virtual-network/virtual-network-service-endpoints-overview.md).
+    * Помните, что при использовании конечных точек службы функция по-прежнему имеет полный исходящий доступ к Интернету, даже если настроена интеграция с виртуальной сетью.
+* Доступ к частному сайту также доступен в Среда службы приложений, настроенном с внутренней подсистемой балансировки нагрузки (ILB). Дополнительные сведения см. в статье [Создание и использование внутренней подсистемы балансировки нагрузки с среда службы приложений](../app-service/environment/create-ilb-ase.md).
 
 ## <a name="virtual-network-integration"></a>Интеграция виртуальной сети
 
-Virtual network integration allows your function app to access resources inside a virtual network. This feature is available in both the Premium plan and the App Service plan. If your app is in an App Service Environment, it's already in a virtual network and doesn't require virtual network integration to reach resources in the same virtual network.
+Интеграция виртуальной сети позволяет приложению-функции получить доступ к ресурсам в виртуальной сети. Эта функция доступна как в плане Premium, так и в плане службы приложений. Если приложение находится в Среда службы приложений, оно уже находится в виртуальной сети и не требует интеграции с виртуальной сетью для доступа к ресурсам в той же виртуальной сети.
 
-You can use virtual network integration to enable access from apps to databases and web services running in your virtual network. With virtual network integration, you don't need to expose a public endpoint for applications on your VM. You can use private, non-internet routable addresses instead.
+С помощью интеграции с виртуальной сетью можно разрешить доступ из приложений к базам данных и веб-службам, работающим в виртуальной сети. Благодаря интеграции с виртуальной сетью вам не нужно предоставлять общедоступную конечную точку для приложений на виртуальной машине. Вместо этого можно использовать частные, не являющиеся в Интернете маршрутизируемый адреса.
 
-There are two forms of virtual network integration:
+Существует две формы интеграции виртуальной сети:
 
-+ **Regional virtual network integration (preview)** : Enables integration with virtual networks in the same region. This type of integration requires a subnet in a virtual network in the same region. This feature is still in preview, but it's supported for function apps running on Windows, with the caveats described after the following Problem/Solution table.
-+ **Gateway required virtual network integration**: Enables integration with virtual networks in remote regions, or with classic virtual networks. This type of integration requires deployment of a virtual network gateway into your VNet. This is a point-to-site VPN-based feature, which is supported only for function apps running on Windows.
++ **Интеграция с региональной виртуальной сетью (Предварительная версия)** : включает интеграцию с виртуальными сетями в одном регионе. Для этого типа интеграции требуется подсеть в виртуальной сети в том же регионе. Эта функция по-прежнему доступна в предварительной версии, но она поддерживается для приложений-функций, работающих в Windows, с предупреждениями, описанными после следующей таблицы проблем или решений.
++ **Интеграция виртуальной сети, требующая шлюза**: включает интеграцию с виртуальными сетями в удаленных регионах или с классическими виртуальными сетями. Для этого типа интеграции требуется развертывание шлюза виртуальной сети в виртуальной сети. Это функция на основе VPN типа "точка — сеть", которая поддерживается только для приложений-функций, работающих в Windows.
 
-An app can use only one type of the virtual network integration feature at a time. Although both are useful for many scenarios, the following table indicates where each should be used:
+Приложение может использовать только один тип функции интеграции виртуальной сети за раз. Хотя оба варианта полезны во многих сценариях, в следующей таблице показано, где следует использовать:
 
 | Проблема  | Решение |
 |----------|----------|
-| Want to reach an RFC 1918 address (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) in the same region | Regional virtual network integration |
-| Want to reach resources in a Classic virtual network or a virtual network in another region | Gateway required virtual network integration |
-| Want to reach RFC 1918 endpoints across Azure ExpressRoute | Regional virtual network integration |
-| Want to reach resources across service endpoints | Regional virtual network integration |
+| Хотите обратиться к адресу RFC 1918 (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) в том же регионе | Интеграция региональной виртуальной сети |
+| Требуется доступ к ресурсам в классической виртуальной сети или виртуальной сети в другом регионе | Интеграция виртуальной сети, требующая шлюза |
+| Хотите получить доступ к конечным точкам RFC 1918 в Azure ExpressRoute | Интеграция региональной виртуальной сети |
+| Требуется доступ к ресурсам в конечных точках службы | Интеграция региональной виртуальной сети |
 
-Neither feature lets you reach non-RFC 1918 addresses across ExpressRoute. To do that, you currently have to use an App Service Environment.
+Ни одна из этих функций не позволяет обращаться к адресам, отличным от RFC 1918, в ExpressRoute. Для этого в настоящее время необходимо использовать Среда службы приложений.
 
-Using regional virtual network integration doesn't connect your virtual network to on-premises endpoints or configure service endpoints. That's a separate networking configuration. Regional virtual network integration just enables your app to make calls across those connection types.
+При использовании региональной интеграции виртуальной сети виртуальная сеть не подключается к локальным конечным точкам или настраивается конечные точки службы. Это отдельная сетевая конфигурация. Интеграция с региональной виртуальной сетью позволяет приложению выполнять вызовы через эти типы подключений.
 
-Regardless of the version used, virtual network integration gives your function app access to resources in your virtual network but doesn't grant private site access to your function app from the virtual network. Private site access means making your app accessible only from a private network like an Azure virtual network. virtual network integration is only for making outbound calls from your app into your virtual network.
+Независимо от используемой версии, интеграция виртуальной сети предоставляет приложению-функции доступ к ресурсам в вашей виртуальной сети, но не предоставляет частному сайту доступ к приложению-функции из виртуальной сети. Доступ к частному сайту означает, что приложение доступно только из частной сети, такой как виртуальная сеть Azure. Интеграция виртуальной сети предназначена только для исходящих вызовов из приложения в виртуальную сеть.
 
-The virtual network integration feature:
+Функция интеграции виртуальной сети:
 
-* Requires a Standard, Premium, or PremiumV2 App Service plan
-* Supports TCP and UDP
-* Works with App Service apps and function apps
+* Требуется план службы приложений "Стандартный", "Премиум" или "категории премиум v2"
+* Поддержка TCP и UDP
+* Работает с приложениями службы приложений и приложениями функций
 
-There are some things that virtual network integration doesn't support, including:
+Интеграция с виртуальной сетью не поддерживается, в том числе:
 
 * подключение диска;
 * Интеграция с Active Directory
-* NetBIOS
+* Протокола
 
-Virtual network integration in Azure Functions uses shared infrastructure with App Service web apps. To learn more about the two types of virtual network integration, see:
+Интеграция виртуальной сети в функции Azure использует общую инфраструктуру с веб-приложениями службы приложений. Дополнительные сведения о двух типах интеграции виртуальной сети см. в следующих статьях:
 
-* [Regional virtual network Integration](../app-service/web-sites-integrate-with-vnet.md#regional-vnet-integration)
-* [Gateway required virtual network integration](../app-service/web-sites-integrate-with-vnet.md#gateway-required-vnet-integration)
+* [Интеграция региональной виртуальной сети](../app-service/web-sites-integrate-with-vnet.md#regional-vnet-integration)
+* [Интеграция виртуальной сети, требующая шлюза](../app-service/web-sites-integrate-with-vnet.md#gateway-required-vnet-integration)
 
-To learn more about using virtual network integration, see [Integrate a function app with an Azure virtual network](functions-create-vnet.md).
+Дополнительные сведения об использовании интеграции с виртуальной сетью см. в статье [интеграция приложения-функции с виртуальной сетью Azure](functions-create-vnet.md).
 
-## <a name="connecting-to-service-endpoint-secured-resources"></a>Connecting to service endpoint secured resources
+## <a name="connecting-to-service-endpoint-secured-resources"></a>Подключение к защищенным ресурсам конечной точки службы
 
 > [!NOTE]
-> For now, it may take up to 12 hours for new service endpoints to become available to your function app after you configure access restrictions on the downstream resource. During this time the resource will be completely unavailable to your app.
+> Пока новые конечные точки службы станут доступными для приложения функции после настройки ограничений доступа к подчиненному ресурсу, в настоящее время может потребоваться до 12 часов. В течение этого времени ресурс будет полностью недоступен для вашего приложения.
 
-To provide a higher level of security, you can restrict a number of Azure services to a virtual network by using service endpoints. You must then integrate your function app with that virtual network to access the resource. This configuration is supported on all plans that support virtual network integration.
+Чтобы обеспечить более высокий уровень безопасности, можно ограничить число служб Azure для виртуальной сети с помощью конечных точек службы. Затем необходимо интегрировать приложение функции с этой виртуальной сетью для доступа к ресурсу. Эта конфигурация поддерживается во всех планах, поддерживающих интеграцию виртуальной сети.
 
-[Learn more about virtual network service endpoints.](../virtual-network/virtual-network-service-endpoints-overview.md)
+[Дополнительные сведения о конечных точках службы виртуальной сети.](../virtual-network/virtual-network-service-endpoints-overview.md)
 
-### <a name="restricting-your-storage-account-to-a-virtual-network"></a>Restricting your storage account to a virtual network
+### <a name="restricting-your-storage-account-to-a-virtual-network"></a>Учетная запись хранения должна быть ограничена виртуальной сетью
 
-When you create a function app, you must create or link to a general-purpose Azure Storage account that supports Blob, Queue, and Table storage. You can't currently use any virtual network restrictions on this account. If you configure a virtual network service endpoint on the storage account you're using for your function app, that will break your app.
+При создании приложения-функции необходимо создать или связать с учетной записью хранения Azure общего назначения, которая поддерживает хранилище BLOB-объектов, очередей и таблиц. Сейчас вы не можете использовать ограничения виртуальной сети для этой учетной записи. Если вы настроили конечную точку службы виртуальной сети в учетной записи хранения, которую вы используете для приложения-функции, это приведет к нарушению работы приложения.
 
-[Learn more about storage account requirements.](./functions-create-function-app-portal.md#storage-account-requirements)
+[Дополнительные сведения о требованиях к учетной записи хранения.](./functions-create-function-app-portal.md#storage-account-requirements)
 
-### <a name="using-key-vault-references"></a>Using Key Vault references 
+### <a name="using-key-vault-references"></a>Использование Key Vault ссылок 
 
-Key Vault references allow you to use secrets from Azure Key Vault in your Azure Functions application without requiring any code changes. Azure Key Vault is a service that provides centralized secrets management, with full control over access policies and audit history.
+Key Vault ссылки позволяют использовать секреты из Azure Key Vault в приложении "функции Azure" без каких бы то ни было изменений кода. Azure Key Vault — это служба, которая обеспечивает централизованное управление секретами с полным контролем над политиками доступа и журналом аудита.
 
-Currently [Key Vault references](../app-service/app-service-key-vault-references.md) will not work if your Key Vault is secured with service endpoints. To connect to a Key Vault using virtual network integration you will need to call key vault in your application code.
+В настоящее время [Key Vault ссылки](../app-service/app-service-key-vault-references.md) не будут работать, если ваша Key Vault защищена с помощью конечных точек службы. Чтобы подключиться к Key Vault с помощью интеграции с виртуальной сетью, необходимо вызвать хранилище ключей в коде приложения.
 
-## <a name="virtual-network-triggers-non-http"></a>Virtual network triggers (non-HTTP)
+## <a name="virtual-network-triggers-non-http"></a>Триггеры виртуальной сети (не HTTP)
 
-Currently, to use function triggers other than HTTP from within a virtual network, you must run your function app in an App Service plan or in an App Service Environment.
+В настоящее время для использования триггеров функций, отличных от HTTP, в виртуальной сети необходимо запустить приложение-функцию в плане службы приложений или в Среда службы приложений.
 
-For example, assume you want to configure Azure Cosmos DB to accept traffic only from a virtual network. You would need to deploy your function app in an app service plan that provides virtual network integration with that virtual network in order to configure Azure Cosmos DB triggers from that resource. During preview, configuring virtual network integration doesn't allow the Premium plan to trigger off that Azure Cosmos DB resource.
+Например, предположим, что требуется настроить Azure Cosmos DB для приема трафика только из виртуальной сети. Вам потребуется развернуть приложение функции в плане службы приложений, который обеспечивает интеграцию виртуальной сети с этой виртуальной сетью для настройки триггеров Azure Cosmos DB из этого ресурса. Во время предварительной версии Настройка интеграции виртуальной сети не позволяет плану Premium активировать этот Azure Cosmos DB ресурс.
 
-See [this list for all non-HTTP triggers](./functions-triggers-bindings.md#supported-bindings) to double-check what's supported.
+Просмотрите [этот список для всех триггеров, отличных от HTTP](./functions-triggers-bindings.md#supported-bindings) , чтобы дважды проверить поддерживаемые возможности.
 
-## <a name="hybrid-connections"></a>Гибридные подключения
+## <a name="hybrid-connections"></a>через гибридные подключения
 
-[Hybrid Connections](../service-bus-relay/relay-hybrid-connections-protocol.md) is a feature of Azure Relay that you can use to access application resources in other networks. Они обеспечивают доступ из вашего приложения к конечной точке приложения. You can't use it to access your application. Hybrid Connections is available to functions running in all but the Consumption plan.
+[Гибридные подключения](../service-bus-relay/relay-hybrid-connections-protocol.md) — это функция Azure Relay, которую можно использовать для доступа к ресурсам приложения в других сетях. Они обеспечивают доступ из вашего приложения к конечной точке приложения. Его нельзя использовать для доступа к приложению. Гибридные подключения доступен для функций, которые выполняются во всех планах, кроме плана потребления.
 
-As used in Azure Functions, each hybrid connection correlates to a single TCP host and port combination. This means that the hybrid connection's endpoint can be on any operating system and any application as long as you're accessing a TCP listening port. The Hybrid Connections feature doesn't know or care what the application protocol is or what you're accessing. It just provides network access.
+При использовании в функциях Azure каждое гибридное подключение сопоставляется с одним сочетанием узла и порта TCP. Это означает, что конечная точка гибридного подключения может находиться в любой операционной системе и любом приложении, если вы обращаетесь к порту прослушивания TCP. Функция гибридные подключения не знает, что такое протокол приложения или к чему вы обращаетесь. Он просто предоставляет доступ к сети.
 
-To learn more, see the [App Service documentation for Hybrid Connections](../app-service/app-service-hybrid-connections.md). These same configuration steps support Azure Functions.
+Дополнительные сведения см. в [документации по службе приложений для гибридные подключения](../app-service/app-service-hybrid-connections.md). Эти же шаги настройки поддерживают функции Azure.
 
-## <a name="outbound-ip-restrictions"></a>Outbound IP restrictions
+## <a name="outbound-ip-restrictions"></a>Ограничения исходящих IP-адресов
 
-Outbound IP restrictions are available only for functions deployed to an App Service Environment. You can configure outbound restrictions for the virtual network where your App Service Environment is deployed.
+Ограничения исходящих IP-адресов доступны только для функций, развернутых в Среда службы приложений. Вы можете настроить ограничения для исходящего трафика для виртуальной сети, в которой развернута Среда службы приложений.
 
-When you integrate a function app in a Premium plan or an App Service plan with a virtual network, the app can still make outbound calls to the internet.
+При интеграции приложения-функции в план Premium или план службы приложений с виртуальной сетью приложение может выполнять исходящие вызовы через Интернет.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-To learn more about networking and Azure Functions:
+Дополнительные сведения о работе с сетью и функциях Azure:
 
-* [Follow the tutorial about getting started with virtual network integration](./functions-create-vnet.md)
-* [Read the Functions networking FAQ](./functions-networking-faq.md)
-* [Learn more about virtual network integration with App Service/Functions](../app-service/web-sites-integrate-with-vnet.md)
-* [Learn more about virtual networks in Azure](../virtual-network/virtual-networks-overview.md)
-* [Enable more networking features and control with App Service Environments](../app-service/environment/intro.md)
-* [Connect to individual on-premises resources without firewall changes by using Hybrid Connections](../app-service/app-service-hybrid-connections.md)
+* [Следуйте указаниям в руководстве по началу работы с интеграцией виртуальной сети.](./functions-create-vnet.md)
+* [Прочтите вопросы и ответы по функциям сети](./functions-networking-faq.md)
+* [Дополнительные сведения об интеграции виртуальной сети со службой приложений и функциями](../app-service/web-sites-integrate-with-vnet.md)
+* [Дополнительные сведения о виртуальных сетях в Azure](../virtual-network/virtual-networks-overview.md)
+* [Предоставление дополнительных сетевых функций и управление средами службы приложений](../app-service/environment/intro.md)
+* [Подключение к отдельным локальным ресурсам без изменения брандмауэра с помощью гибридные подключения](../app-service/app-service-hybrid-connections.md)

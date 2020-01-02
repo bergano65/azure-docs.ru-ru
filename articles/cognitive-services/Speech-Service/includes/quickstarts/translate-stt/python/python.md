@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Перевод речи в речь на Python в службе "Речь"
+title: Краткое руководство. Перевод речи в речь с помощью Python в службе "Речь"
 description: ПОДЛЕЖИТ УТОЧНЕНИЮ
 services: cognitive-services
 author: chlandsi
@@ -7,23 +7,23 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 07/05/2019
+ms.date: 12/09/2019
 ms.author: chlandsi
-ms.openlocfilehash: 679690c495f18a489c6fab11a18182c83ca1577f
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 4816f29435035011588c86c6e1ceeb238b53509a
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73505086"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74981348"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы нужно:
+Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure](../../../../get-started.md).
-> * [Настроить среду разработки](../../../../quickstarts/setup-platform.md?tabs=python).
-> * [Создать пустой пример проекта](../../../../quickstarts/create-project.md?tabs=python).
+> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=python)
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=python)
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 

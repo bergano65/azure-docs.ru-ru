@@ -2,28 +2,28 @@
 title: Apache Hive & Data Lake инструменты для Visual Studio — Azure HDInsight
 description: Узнайте, как использовать Средства Data Lake для Visual Studio с целью выполнения запросов Apache Hive с Apache Hadoop в Azure HDInsight.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 11/06/2019
-ms.author: hrasheed
-ms.openlocfilehash: 5b10cc5a8b7468b222fec3f2e66a8258470047ae
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.custom: hdinsightactive
+ms.date: 11/27/2019
+ms.openlocfilehash: 27ab13481525819eb1435f4c9ac256a21acd21fb
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73931898"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74687802"
 ---
 # <a name="run-apache-hive-queries-using-the-data-lake-tools-for-visual-studio"></a>Выполнение запросов Apache Hive с использованием средств Data Lake для Visual Studio
 
 Узнайте, как использовать Средства Data Lake для Visual Studio с целью выполнения запросов Apache Hive. Средства Data Lake позволяют легко создавать, отправлять и отслеживать запросы Hive к Apache Hadoop в Azure HDInsight.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * Кластер Apache Hadoop в HDInsight. Сведения о создании этого элемента см. [в статье Создание кластера Apache Hadoop в Azure HDInsight с помощью шаблона диспетчер ресурсов](./apache-hadoop-linux-tutorial-get-started.md).
 
-* [Visual Studio](https://visualstudio.microsoft.com/vs/) В действиях, описанных в этой статье, используется Visual Studio 2019.
+* [Visual Studio.](https://visualstudio.microsoft.com/vs/) В действиях, описанных в этой статье, используется Visual Studio 2019.
 
 * Средства HDInsight для Visual Studio или инструменты Azure Data Lake Tools для Visual Studio. Сведения об установке и настройке средств см. в разделе [Install Data Lake Tools for Visual Studio](apache-hadoop-visual-studio-tools-get-started.md#install-data-lake-tools-for-visual-studio).
 
@@ -36,11 +36,11 @@ ms.locfileid: "73931898"
 
 ### <a name="create-an-ad-hoc-hive-query"></a>Создание нерегламентированного запроса Hive
 
-Специальные запросы можно выполнять в **пакетном** или **интерактивном** режиме.
+Нерегламентированные запросы можно выполнять в **пакетном** или **интерактивном** режиме.
 
-1. Откройте **Visual Studio**.
+1. Запустите **Visual Studio** и выберите **Продолжить без кода**.
 
-2. В **Обозреватель сервера**перейдите в **Azure** > **HDInsight**.
+2. В **Обозреватель сервера**щелкните правой кнопкой мыши **Azure**, выберите **подключиться к Microsoft Azure подписке...** и завершите процесс входа.
 
 3. Разверните **HDInsight**, щелкните правой кнопкой мыши кластер, в котором нужно выполнить запрос, и выберите команду **написать запрос Hive**.
 
@@ -50,7 +50,7 @@ ms.locfileid: "73931898"
     SELECT * FROM hivesampletable;
     ```
 
-5. Нажмите кнопку **Execute**(Выполнить). Режим выполнения по умолчанию — **Interactive**.
+5. Нажмите кнопку **Выполнить**. Режим выполнения по умолчанию — **Interactive**.
 
     ![Выполнение интерактивного запроса Hive, Visual Studio](./media/apache-hadoop-use-hive-visual-studio/vs-execute-hive-query.png)
 
@@ -99,7 +99,7 @@ ms.locfileid: "73931898"
         > Внешние таблицы следует использовать, если предполагается, что базовые данные будут обновляться внешним источником, например заданием MapReduce или службой Azure.
         >
         > Удаление внешней таблицы **не** приводит к удалению данных, будет удалено только определение таблицы.
-    
+
     * `ROW FORMAT`: инструкции по форматированию данных для Hive. В данном случае поля всех журналов разделены пробелом.
 
     * `STORED AS TEXTFILE LOCATION`: сообщает Hive, что данные хранятся в каталоге *example/Data* и хранятся в виде текста.
@@ -138,25 +138,19 @@ ms.locfileid: "73931898"
         > В отличие от таблиц `EXTERNAL`, удаление внутренней таблицы приводит к удалению ее базовых данных.
 
     * `STORED AS ORC`: сохраняет данные в формате *оптимизированной строки по столбцам* (ORC). Это высокооптимизированный и эффективный формат для хранения данных Hive.
-    
+
     * `INSERT OVERWRITE ... SELECT`: выбирает строки из таблицы `log4jLogs`, которые содержат `[ERROR]`, а затем вставляет эти данные в таблицу `errorLogs`.
 
 3. При необходимости измените **Интерактивный** для **пакета** , а затем нажмите кнопку **Отправить**.
 
 4. Чтобы убедиться, что задание создало таблицу, перейдите в раздел **Обозреватель сервера** и разверните **Azure** > **HDInsight**. Разверните свой кластер HDInsight, а затем разверните **базы данных Hive** > **умолчанию**. Должны быть отображены таблицы **errorLogs** и **log4jLogs**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Как вы видите, средства HDInsight для Visual Studio упрощают работу с запросами Hive в HDInsight.
 
-Общая информация о Hive в HDInsight:
+* Общие сведения о Hive в HDInsight см. в статье [что такое Apache Hive и HiveQL в Azure hdinsight?](hdinsight-use-hive.md)
 
-* [Что такое Apache Hive и HiveQL в Azure HDInsight?](hdinsight-use-hive.md)
+* Дополнительные сведения о других способах работы с Hadoop в HDInsight см. [в статье Использование MapReduce в Apache Hadoop в hdinsight](hdinsight-use-mapreduce.md) .
 
-Дополнительная информация о других способах работы с Hadoop в HDInsight:
-
-* [Использование MapReduce в Apache Hadoop в HDInsight](hdinsight-use-mapreduce.md)
-
-Дополнительная информация об инструментах HDInsight для Visual Studio:
-
-* [Использование средств Data Lake для Visual Studio для подключения к Azure HDInsight и выполнения запросов Apache Hive](apache-hadoop-visual-studio-tools-get-started.md)
+* Дополнительные сведения о средствах HDInsight для Visual Studio см. в статье[использование средств Data Lake для Visual Studio для подключения к Azure HDInsight и выполнения запросов Apache Hive](apache-hadoop-visual-studio-tools-get-started.md)

@@ -1,19 +1,14 @@
 ---
-title: Выполнение команд в запущенных контейнерах в службе "Экземпляры контейнеров Azure"
+title: Выполнение команд в работающем экземпляре контейнера
 description: Узнайте, как выполнить команду в контейнере, который выполняется в данный момент в службе "Экземпляры контейнеров"
-services: container-instances
-author: dlepow
-manager: gwallace
-ms.service: container-instances
 ms.topic: article
 ms.date: 03/30/2018
-ms.author: danlep
-ms.openlocfilehash: a8583cf605891631a2bce6914b24525aebd59ea0
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 10d0ea0c2dfa60aad64d0ae11532aff24a7ce773
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68325986"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74481583"
 ---
 # <a name="execute-a-command-in-a-running-azure-container-instance"></a>Выполнение команды в экземпляре контейнера Azure
 
@@ -87,7 +82,7 @@ az container exec --resource-group myResourceGroup --name mynginx --container-na
 
 Сейчас служба "экземпляры контейнеров Azure" поддерживает запуск одного процесса с помощью команды [AZ Container Exec][az-container-exec], и вы не можете передавать аргументы команды. Например, нельзя добавить команды, как в случае с `sh -c "echo FOO && echo BAR"`, или выполнить `echo FOO`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о других средствах устранения неполадок и часто встречающихся проблемах развертывания см. в статье [Устранение неполадок развертывания с помощью службы "Экземпляры контейнеров Azure"](container-instances-troubleshooting.md).
 

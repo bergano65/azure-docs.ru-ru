@@ -6,20 +6,20 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 10/17/2019
+ms.date: 11/20/2019
 ms.author: diberry
-ms.openlocfilehash: 6d2955a77c06f371975a7a14675eedceab7c98ae
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 5054ee9a23458944257a8010aaab6268d25042a7
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74125595"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74414451"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 * язык программирования [GO](https://golang.org/);  
 * [Visual Studio Code](https://code.visualstudio.com/)
-* идентификатор общедоступного приложения: df67dcdb-c37d-46af-88e1-8b97951ca1c2.
+* Идентификатор общедоступного приложения: `df67dcdb-c37d-46af-88e1-8b97951ca1c2`
 
 ## <a name="get-luis-key"></a>Получение ключа LUIS
 
@@ -27,7 +27,7 @@ ms.locfileid: "74125595"
 
 ## <a name="get-intent-programmatically"></a>Получение намерения программным способом
 
-Используйте Go, чтобы запросить конечную точку прогноза GET [API](https://aka.ms/luis-apim-v3-prediction) и получить результат прогноза.
+Используйте Go, чтобы запросить [конечную точку прогноза](https://aka.ms/luis-apim-v3-prediction) и получить результат прогноза.
 
 1. Создайте файл с именем `predict.go`. Добавьте следующий код:
     
@@ -86,9 +86,9 @@ ms.locfileid: "74125595"
 1. Замените следующие значения:
 
     * `YOUR-KEY` на ключ для начала работы.
-    * `YOUR-ENDPOINT` на конечную точку, например `westus2.api.cognitive.microsoft.com`.
+    * `YOUR-ENDPOINT` на конечную точку. Например, `westus2.api.cognitive.microsoft.com`.
 
-1. В командной строке каталога, в котором вы создали файл, введите следующую команду, чтобы скомпилировать файл Go.
+1. В командной строке в каталоге, в котором вы создали файл, введите следующую команду, чтобы скомпилировать файл Go:
 
     ```console
     go build predict.go

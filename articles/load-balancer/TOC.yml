@@ -2,16 +2,12 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое Load Balancer
+    - name: Что такое Load Balancer?
       href: load-balancer-overview.md
-- name: Быстрый запуск
+    - name: Что такое Load Balancer ценовой категории "Стандартный"
+      href: load-balancer-standard-overview.md
+- name: Краткое руководство
   items:
-    - name: Создание Load Balancer уровня "Базовый" с помощью портала
-      href: quickstart-create-basic-load-balancer-portal.md
-    - name: Создание Load Balancer уровня "Базовый" с помощью Azure CLI
-      href: quickstart-create-basic-load-balancer-cli.md
-    - name: Создание Load Balancer уровня "Базовый" с помощью Azure PowerShell
-      href: quickstart-create-basic-load-balancer-powershell.md
     - name: Создание Load Balancer ценовой категории "Стандартный" с помощью портала
       href: quickstart-load-balancer-standard-public-portal.md
     - name: Создание Load Balancer ценовой категории "Стандартный" с помощью Azure CLI
@@ -19,8 +15,13 @@
     - name: Создание Load Balancer ценовой категории "Стандартный" с помощью Azure PowerShell
       href: quickstart-create-standard-load-balancer-powershell.md
     - name: "Создание Load Balancer ценовой категории \"Стандартный\"\_— шаблон"
-      displayName: ARM
+    - name: Создание Load Balancer уровня "Базовый" с помощью портала
+      href: quickstart-create-basic-load-balancer-portal.md
+    - name: Создание Load Balancer уровня "Базовый" с помощью Azure CLI
+      href: quickstart-create-basic-load-balancer-cli.md
+    - name: Создание Load Balancer уровня "Базовый" с помощью Azure PowerShell
       href: quickstart-load-balancer-standard-public-template.md
+      displayName: ARM
 - name: Учебники
   items:
     - name: Балансировка интернет-трафика на виртуальных машинах
@@ -41,8 +42,6 @@
       href: powershell-samples.md
 - name: Основные понятия
   items:
-    - name: Что такое Load Balancer ценовой категории "Стандартный"
-      href: load-balancer-standard-overview.md
     - name: Пробы работоспособности
       href: load-balancer-custom-probe-overview.md
     - name: Порты с высоким уровнем доступности

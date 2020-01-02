@@ -1,25 +1,16 @@
 ---
-title: Настройка проверки подлинности учетной записи Майкрософт в Службе приложений Azure
-description: Узнайте, как настроить проверку подлинности учетной записи Майкрософт для приложения службы приложений.
-author: mattchenderson
-services: app-service
-documentationcenter: ''
-manager: syntaxc4
-editor: ''
+title: Настройка проверки подлинности Майкрософт
+description: Узнайте, как настроить проверку подлинности учетной записи Майкрософт в качестве поставщика удостоверений для приложения службы приложений.
 ms.assetid: ffbc6064-edf6-474d-971c-695598fd08bf
-ms.service: app-service
-ms.workload: mobile
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 08/08/2019
-ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: 70af534e6bcd0039dbc602a5ebc3fc35fb145e79
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: f9158a4094b7d2ec148c2cae85decb3ad959b7c3
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72176940"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74671922"
 ---
 # <a name="configure-your-app-service-app-to-use-microsoft-account-login"></a>Настройка приложения службы приложений для использования входа в учетную запись Майкрософт
 
@@ -31,7 +22,7 @@ ms.locfileid: "72176940"
 
 1. Перейдите к [**Регистрация приложений**](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в портал Azure. При необходимости выполните вход с помощью учетная запись Майкрософт.
 1. Выберите **Новая регистрация**, а затем введите имя приложения.
-1. В списке **URI перенаправления**выберите **веб**и введите `https://<app-domain-name>/.auth/login/microsoftaccount/callback supply the endpoint for your application`. Замените *\<APP-domain-name >* именем домена приложения.  Например, `https://contoso.azurewebsites.net/.auth/login/microsoftaccount/callback`. Не забудьте использовать схему HTTPS в URL-адресе.
+1. В списке **URI перенаправления**выберите **веб**и введите `https://<app-domain-name>/.auth/login/microsoftaccount/callback supply the endpoint for your application`. Замените *\<app-domain-name >* именем домена приложения.  Пример: `https://contoso.azurewebsites.net/.auth/login/microsoftaccount/callback`. Не забудьте использовать схему HTTPS в URL-адресе.
 
 1. Выберите **Зарегистрировать**.
 1. Скопируйте **идентификатор приложения (клиента)** . Он понадобится вам позднее.
@@ -66,4 +57,4 @@ ms.locfileid: "72176940"
 <!-- URLs. -->
 
 [My Applications]: https://go.microsoft.com/fwlink/p/?LinkId=262039
-[портал Azure]: https://portal.azure.com/
+[Портал Azure]: https://portal.azure.com/

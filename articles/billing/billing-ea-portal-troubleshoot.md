@@ -4,16 +4,16 @@ description: В этой статье описываются некоторые 
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 11/04/2019
+ms.date: 12/04/2019
 ms.topic: troubleshooting
-ms.service: billing
+ms.service: cost-management-billing
 manager: boalcsva
-ms.openlocfilehash: 1b0be54eea063399cc9ed2c3005808d5189e2663
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: ff8408a098049d860a614900bdeea80da1bd95e4
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73888342"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74841393"
 ---
 # <a name="troubleshoot-azure-ea-portal-access"></a>Устранение неполадок с доступом к порталу Azure EA
 

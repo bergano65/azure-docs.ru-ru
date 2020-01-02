@@ -1,6 +1,6 @@
 ---
-title: Developer's Guide to Durable Entities in .NET - Azure Functions
-description: How to work with durable entities in .NET with the Durable Functions extension for Azure Functions.
+title: Рекомендации разработчика по устойчивым сущностям в .NET — функции Azure
+description: Как работать с устойчивыми сущностями в .NET с помощью расширения Устойчивые функции для функций Azure.
 author: sebastianburckhardt
 ms.topic: conceptual
 ms.date: 10/06/2019
@@ -12,26 +12,26 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74231429"
 ---
-# <a name="developers-guide-to-durable-entities-in-net"></a>Developer's guide to durable entities in .NET
+# <a name="developers-guide-to-durable-entities-in-net"></a>Рекомендации разработчика по устойчивым сущностям в .NET
 
-In this article, we describe the available interfaces for developing durable entities with .NET in detail, including examples and general advice. 
+В этой статье мы подробно рассмотрим доступные интерфейсы для разработки устойчивых сущностей с помощью .NET, включая примеры и общие рекомендации. 
 
-Entity functions provide serverless application developers with a convenient way to organize application state as a collection of fine-grained entities. For more detail about the underlying concepts, see the [Durable Entities: Concepts](durable-functions-entities.md) article.
+Функции сущностей предоставляют разработчикам бессерверных приложений удобный способ организации состояния приложения в виде коллекции детализированных сущностей. Дополнительные сведения об основных понятиях см. в статье о [устойчивых сущностях: основные понятия](durable-functions-entities.md) .
 
-We currently offer two APIs for defining entities:
+Сейчас мы предлагаем два API для определения сущностей:
 
-- The **class-based syntax** represents entities and operations as classes and methods. This syntax produces easily readable code and allows operations to be invoked in a type-checked manner through interfaces. 
+- **Синтаксис на основе классов** представляет сущности и операции как классы и методы. Этот синтаксис обеспечивает простой для чтения код и позволяет вызывать операции с помощью интерфейсов с проверкой типа. 
 
-- The **function-based syntax** is a lower-level interface that represents entities as functions. It provides precise control over how the entity operations are dispatched, and how the entity state is managed.  
+- **Синтаксис на основе функций** является интерфейсом более низкого уровня, который представляет сущности как функции. Он обеспечивает точный контроль над тем, как отправляются операции сущности, и как осуществляется управление состоянием сущности.  
 
-This article focuses primarily on the class-based syntax, as we expect it to be better suited for most applications. However, the [function-based syntax](#function-based-syntax) may be appropriate for applications that wish to define or manage their own abstractions for entity state and operations. Also, it may be appropriate for implementing libraries that require genericity not currently supported by the class-based syntax. 
+В этой статье основное внимание уделяется синтаксису на основе классов, так как предполагается, что он лучше подходит для большинства приложений. Однако [синтаксис на основе функций](#function-based-syntax) может быть приемлемым для приложений, которые хотят определять собственные абстракции для состояния и операций объекта и управлять ими. Кроме того, он может подойти для реализации библиотек, требующих универсальности, которые в настоящее время не поддерживаются синтаксисом на основе класса. 
 
 > [!NOTE]
-> The class-based syntax is just a layer on top of the function-based syntax, so both variants can be used interchangeably in the same application. 
+> Синтаксис на основе классов — это просто слой поверх синтаксиса на основе функций, поэтому оба варианта могут быть взаимозаменяемы в одном и том же приложении. 
  
-## <a name="defining-entity-classes"></a>Defining entity classes
+## <a name="defining-entity-classes"></a>Определение классов сущностей
 
-The following example is an implementation of a `Counter` entity that stores a single value of type integer, and offers four operations `Add`, `Reset`, `Get`, and `Delete`.
+В следующем примере реализована сущность `Counter`, которая хранит одно значение типа Integer, и предлагает четыре операции `Add`, `Reset`, `Get`и `Delete`.
 
 ```csharp
 [JsonObject(MemberSerialization.OptIn)]
@@ -67,38 +67,38 @@ public class Counter
 }
 ```
 
-The `Run` function contains the boilerplate required for using the class-based syntax. It must be a *static* Azure Function. It executes once for each operation message that is processed by the entity. When `DispatchAsync<T>` is called and the entity isn't already in memory, it constructs an object of type `T` and populates its fields from the last persisted JSON found in storage (if any). Then it invokes the method with the matching name.
+Функция `Run` содержит шаблон, необходимый для использования синтаксиса на основе классов. Это должна быть *статическая* функция Azure. Он выполняется один раз для каждого сообщения операции, обрабатываемого сущностью. Когда вызывается `DispatchAsync<T>` и сущность еще не находится в памяти, она конструирует объект типа `T` и заполняет его поля из последнего сохраненного JSON-файла, найденного в хранилище (если таковой имеется). Затем он вызывает метод с соответствующим именем.
 
 > [!NOTE]
-> The state of a class-based entity is **created implicitly** before the entity processes an operation, and can be **deleted explicitly** in an operation by calling `Entity.Current.DeleteState()`.
+> Состояние сущности на основе класса **создается неявно** перед тем, как сущность обрабатывает операцию, и может быть **удалена явным образом** в операции путем вызова `Entity.Current.DeleteState()`.
 
-### <a name="class-requirements"></a>Class Requirements
+### <a name="class-requirements"></a>Требования к классам
  
-Entity classes are POCOs (plain old CLR objects) that require no special superclasses, interfaces, or attributes. However:
+Классы сущностей — это POCO (обычные старые объекты CLR), для которых не требуются специальные классы, интерфейсы или атрибуты. Несмотря
 
-- The class must be constructible (see [Entity construction](#entity-construction)).
-- The class must be JSON-serializable (see [Entity serialization](#entity-serialization)).
+- Класс должен быть конструируемым (см. раздел [Конструирование сущностей](#entity-construction)).
+- Класс должен быть сериализуемым в формат JSON (см. раздел [Сериализация сущностей](#entity-serialization)).
 
-Also, any method that is intended to be invoked as an operation must satisfy additional requirements:
+Кроме того, любой метод, предназначенный для вызова в качестве операции, должен удовлетворять дополнительным требованиям:
 
-- An operation must have at most one argument, and must not have any overloads or generic type arguments.
-- An operation meant to be called from an orchestration using an interface must return `Task` or `Task<T>`.
-- Arguments and return values must be serializable values or objects.
+- Операция должна иметь не более одного аргумента и не должна иметь никаких перегрузок или аргументов универсального типа.
+- Операция, предназначенная для вызова из оркестрации с помощью интерфейса, должна возвращать `Task` или `Task<T>`.
+- Аргументы и возвращаемые значения должны быть сериализуемыми значениями или объектами.
 
-### <a name="what-can-operations-do"></a>What can operations do?
+### <a name="what-can-operations-do"></a>Что могут делать операции?
 
-All entity operations can read and update the entity state, and changes to the state are automatically persisted to storage. Moreover, operations can perform external I/O or other computations, within the general limits common to all Azure Functions.
+Все операции с сущностью могут считывать и обновлять состояние сущности, а изменения состояния автоматически сохраняются в хранилище. Кроме того, операции могут выполнять внешние операции ввода-вывода или другие вычисления в рамках общих ограничений, общих для всех функций Azure.
 
-Operations also have access to functionality provided by the `Entity.Current` context:
+Операции также имеют доступ к функциональным возможностям, предоставляемым `Entity.Current`ным контекстом:
 
-* `EntityName`: the name of the currently executing entity.
-* `EntityKey`: the key of the currently executing entity.
-* `EntityId`: the ID of the currently executing entity (includes name and key).
-* `SignalEntity`: sends a one-way message to an entity.
-* `CreateNewOrchestration`: starts a new orchestration.
-* `DeleteState`: deletes the state of this entity.
+* `EntityName`: имя выполняемой в данный момент сущности.
+* `EntityKey`: ключ выполняемой в данный момент сущности.
+* `EntityId`: Идентификатор выполняемой в данный момент сущности (включая имя и ключ).
+* `SignalEntity`: отправляет одностороннее сообщение в сущность.
+* `CreateNewOrchestration`: запускает новое согласование.
+* `DeleteState`: удаляет состояние этой сущности.
 
-For example, we can modify the counter entity so it starts an orchestration when the counter reaches 100 and passes the entity ID as an input argument:
+Например, можно изменить сущность счетчика, чтобы она начала оркестрации, когда счетчик достигнет 100 и передаст идентификатор сущности в качестве входного аргумента:
 
 ```csharp
     public void Add(int amount) 
@@ -111,16 +111,16 @@ For example, we can modify the counter entity so it starts an orchestration when
     }
 ```
 
-## <a name="accessing-entities-directly"></a>Accessing entities directly
+## <a name="accessing-entities-directly"></a>Прямой доступ к сущностям
 
-Class-based entities can be accessed directly, using explicit string names for the entity and its operations. We provide some examples below; for a deeper explanation of the underlying concepts (such as signals vs. calls) see the discussion in [Access entities](durable-functions-entities.md#access-entities). 
+К сущностям на основе классов можно обращаться напрямую, используя явные имена строк для сущности и ее операций. Ниже приведены некоторые примеры. более подробное описание базовых понятий (таких как сигналы и вызовы) см. в обсуждении [сущностей Access](durable-functions-entities.md#access-entities). 
 
 > [!NOTE]
-> Where possible, we recommend [Accessing entities through interfaces](#accessing-entities-through-interfaces), because it provides more type checking.
+> Там, где это возможно, мы советуем [обращаться к сущностям через интерфейсы](#accessing-entities-through-interfaces), так как они обеспечивают дополнительную проверку типов.
 
-### <a name="example-client-signals-entity"></a>Example: client signals entity
+### <a name="example-client-signals-entity"></a>Пример: клиент сигнализирует об объекте
 
-The following Azure Http Function implements a DELETE operation using REST conventions. It sends a delete signal to the counter entity whose key is passed in the URL path.
+Следующая функция HTTP Azure реализует операцию удаления с использованием соглашений RESTFUL. Он отправляет сигнал об удалении в сущность счетчика, ключ которой передается в URL-пути.
 
 ```csharp
 [FunctionName("DeleteCounter")]
@@ -135,9 +135,9 @@ public static async Task<HttpResponseMessage> DeleteCounter(
 }
 ```
 
-### <a name="example-client-reads-entity-state"></a>Example: client reads entity state
+### <a name="example-client-reads-entity-state"></a>Пример: клиент считывает состояние сущности
 
-The following Azure Http Function implements a GET operation using REST conventions. It reads the current state of the counter entity whose key is passed in the URL path.
+Следующая функция HTTP Azure реализует операцию GET с использованием соглашений RESTFUL. Он считывает текущее состояние сущности счетчика, ключ которой передается в URL-пути.
 
 ```csharp
 [FunctionName("GetCounter")]
@@ -153,11 +153,11 @@ public static async Task<HttpResponseMessage> GetCounter(
 ```
 
 > [!NOTE]
-> The object returned by `ReadEntityStateAsync` is just a local copy, that is, a snapshot of the entity state from some earlier point in time. In particular, it may be stale, and modifying this object has no effect on the actual entity. 
+> Объект, возвращаемый `ReadEntityStateAsync`, представляет собой только локальную копию, то есть моментальный снимок состояния сущности с более ранней точки во времени. В частности, это может быть устаревшим, и изменение этого объекта не влияет на фактическую сущность. 
 
-### <a name="example-orchestration-first-signals-then-calls-entity"></a>Example: orchestration first signals, then calls entity
+### <a name="example-orchestration-first-signals-then-calls-entity"></a>Пример: сначала orchestration передает, а затем вызывает сущность
 
-The following orchestration signals a counter entity to increment it, and then calls the same entity to read its latest value.
+Следующее согласование сообщает сущности счетчика, чтобы увеличить ее, а затем вызывает ту же сущность для считывания ее последнего значения.
 
 ```csharp
 [FunctionName("IncrementThenGet")]
@@ -176,11 +176,11 @@ public static async Task<int> Run(
 }
 ```
 
-## <a name="accessing-entities-through-interfaces"></a>Accessing entities through interfaces
+## <a name="accessing-entities-through-interfaces"></a>Доступ к сущностям через интерфейсы
 
-Interfaces can be used for accessing entities via generated proxy objects. This approach ensures that the name and argument type of an operation matches what is implemented. We recommend using interfaces for accessing entities whenever possible.
+Интерфейсы можно использовать для доступа к сущностям через созданные прокси-объекты. Такой подход гарантирует, что имя и тип аргумента операции совпадают с реализуемыми. Мы рекомендуем использовать интерфейсы для доступа к сущностям, когда это возможно.
 
-For example, we can modify the counter example as follows:
+Например, можно изменить пример счетчика следующим образом:
 
 ```csharp
 public interface ICounter
@@ -197,13 +197,13 @@ public class Counter : ICounter
 }
 ```
 
-Entity classes and entity interfaces are similar to the grains and grain interfaces popularized by [Orleans](https://www.microsoft.com/research/project/orleans-virtual-actors/). For a more information about similarities and differences between Durable Entities and Orleans, see [Comparison with virtual actors](durable-functions-entities.md#comparison-with-virtual-actors).
+Классы сущностей и интерфейсы сущностей похожи на интерфейсы детализации и детализации, которые популярны [Orleans](https://www.microsoft.com/research/project/orleans-virtual-actors/). Дополнительные сведения о сходстве и различиях между устойчивыми сущностями и Orleans см. в статье [Сравнение с виртуальными субъектами](durable-functions-entities.md#comparison-with-virtual-actors).
 
-Besides providing type checking, interfaces are useful for a better separation of concerns within the application. For example, since an entity may implement multiple interfaces, a single entity can serve multiple roles. Also, since an interface may be implemented by multiple entities, general communication patterns can be implemented as reusable libraries.
+Помимо обеспечения проверки типов, интерфейсы полезны для более точного разделения проблем в приложении. Например, поскольку сущность может реализовывать несколько интерфейсов, одна сущность может обслуживать несколько ролей. Кроме того, поскольку интерфейс может быть реализован несколькими сущностями, общие шаблоны связи могут быть реализованы в виде многократно используемых библиотек.
 
-### <a name="example-client-signals-entity-through-interface"></a>Example: client signals entity through interface
+### <a name="example-client-signals-entity-through-interface"></a>Пример. Клиент оповещает сущность через интерфейс
 
-Client code can use `SignalEntityAsync<TEntityInterface>` to send signals to entities that implement `TEntityInterface`. Пример.
+Клиентский код может использовать `SignalEntityAsync<TEntityInterface>` для отправки сигналов в сущности, реализующие `TEntityInterface`. Например,
 
 ```csharp
 [FunctionName("DeleteCounter")]
@@ -218,15 +218,15 @@ public static async Task<HttpResponseMessage> DeleteCounter(
 }
 ```
 
-In this example, the `proxy` parameter is a dynamically generated instance of `ICounter`, which internally translates the call to `Delete` into a signal.
+В этом примере параметр `proxy` является динамически создаваемым экземпляром `ICounter`, который внутренне преобразует вызов `Delete` в сигнал.
 
 > [!NOTE]
-> The `SignalEntityAsync` APIs can be used only for one-way operations. Even if an operation returns `Task<T>`, the value of the `T` parameter will always be null or `default`, not the actual result.
-For example, it doesn't make sense to signal the `Get` operation, as no value is returned. Instead, clients can use either `ReadStateAsync` to access the counter state directly, or can start an orchestrator function that calls the `Get` operation. 
+> `SignalEntityAsync` интерфейсы API можно использовать только для односторонних операций. Даже если операция возвращает `Task<T>`, значением параметра `T` всегда будет null или `default`, а не фактический результат.
+Например, не имеет смысла подать сигнал операции `Get`, так как значение не возвращается. Вместо этого клиенты могут использовать либо `ReadStateAsync` для прямого доступа к состоянию счетчика, либо запустить функцию Orchestrator, которая вызывает операцию `Get`. 
 
-### <a name="example-orchestration-first-signals-then-calls-entity-through-proxy"></a>Example: orchestration first signals, then calls entity through proxy
+### <a name="example-orchestration-first-signals-then-calls-entity-through-proxy"></a>Пример. процесс оркестрации сначала сигнализирует, затем вызывает сущность через прокси-сервер
 
-To call or signal an entity from within an orchestration, `CreateEntityProxy` can be used, along with the interface type, to generate a proxy for the entity. This proxy can then be used to call or signal operations:
+Чтобы вызвать или передать объект в рамках оркестрации, `CreateEntityProxy` можно использовать вместе с типом интерфейса, чтобы создать прокси для сущности. Затем этот прокси-сервер можно использовать для вызова или сигнализации операций:
 
 ```csharp
 [FunctionName("IncrementThenGet")]
@@ -246,39 +246,39 @@ public static async Task<int> Run(
 }
 ```
 
-Implicitly, any operations that return `void` are signaled, and any operations that return `Task` or `Task<T>` are called. One can change this default behavior, and signal operations even if they return Task, by using the `SignalEntity<IInterfaceType>` method explicitly.
+Неявным образом, любые операции, возвращающие `void`, получают сигнал и любые операции, возвращающие `Task` или `Task<T>`, вызываются. Одно из них может изменить это поведение по умолчанию и операции с сигналами, даже если они возвращают задачу, используя метод `SignalEntity<IInterfaceType>` явным образом.
 
-### <a name="shorter-option-for-specifying-the-target"></a>Shorter option for specifying the target
+### <a name="shorter-option-for-specifying-the-target"></a>Более короткий параметр для указания целевого объекта
 
-When calling or signaling an entity using an interface, the first argument must specify the target entity. The target can be specified either by specifying the entity ID, or, in cases where there's just one class that implements the entity, just the entity key:
+При вызове или сигнализации сущности с помощью интерфейса в первом аргументе должна быть указана целевая сущность. Целевой объект можно указать либо путем указания идентификатора сущности, либо, в тех случаях, когда существует только один класс, реализующий сущность, а только ключ сущности:
 
 ```csharp
 context.SignalEntity<ICounter>(new EntityId(nameof(Counter), "myCounter"), ...);
 context.SignalEntity<ICounter>("myCounter", ...);
 ```
 
-If only the entity key is specified and a unique implementation can't be found at runtime, `InvalidOperationException` is thrown. 
+Если указан только ключ сущности и не удается найти уникальную реализацию во время выполнения, выдается `InvalidOperationException`. 
 
-### <a name="restrictions-on-entity-interfaces"></a>Restrictions on entity interfaces
+### <a name="restrictions-on-entity-interfaces"></a>Ограничения для интерфейсов сущностей
 
-As usual, all parameter and return types must be JSON-serializable. Otherwise, serialization exceptions are thrown at runtime.
+Как правило, все типы параметров и возвращаемых типов должны быть сериализуемыми в формат JSON. В противном случае исключения сериализации создаются во время выполнения.
 
-We also enforce some additional rules:
-* Entity interfaces must only define methods.
-* Entity interfaces must not contain generic parameters.
-* Entity interface methods must not have more than one parameter.
-* Entity interface methods must return `void`, `Task`, or `Task<T>` 
+Также применяются некоторые дополнительные правила:
+* Интерфейсы сущности должны определять только методы.
+* Интерфейсы сущностей не должны содержать универсальные параметры.
+* Методы интерфейса сущности не должны иметь более одного параметра.
+* Методы интерфейса сущности должны возвращать `void`, `Task`или `Task<T>` 
 
-If any of these rules are violated, an `InvalidOperationException` is thrown at runtime when the interface is used as a type argument to `SignalEntity` or `CreateProxy`. The exception message explains which rule was broken.
+Если какое-либо из этих правил нарушается, во время выполнения возникает исключение `InvalidOperationException`, когда интерфейс используется в качестве аргумента типа для `SignalEntity` или `CreateProxy`. В сообщении об исключении объясняется, какое правило было разорвано.
 
 > [!NOTE]
-> Interface methods returning `void` can only be signaled (one-way), not called (two-way). Interface methods returning `Task` or `Task<T>` can be either called or signalled. If called, they return the result of the operation, or re-throw exceptions thrown by the operation. However, when signalled, they do not return the actual result or exception from the operation, but just the default value.
+> Методы интерфейса, возвращающие `void`, могут быть сигнальными (односторонние), но не вызываются (двусторонняя). Методы интерфейса, возвращающие `Task` или `Task<T>`, могут быть либо вызванными, либо сигнальными. При вызове они возвращают результат операции или повторно создают исключения, созданные операцией. Однако при появлению сигнала они не возвращают фактический результат или исключение из операции, а только значение по умолчанию.
 
-## <a name="entity-serialization"></a>Entity serialization
+## <a name="entity-serialization"></a>Сериализация сущностей
 
-Since the state of an entity is durably persisted, the entity class must be serializable. The Durable Functions runtime uses the [Json.NET](https://www.newtonsoft.com/json) library for this purpose, which supports a number of policies and attributes to control the serialization and deserialization process. Most commonly used C# data types (including arrays and collection types) are already serializable, and can easily be used for defining the state of durable entities.
+Так как состояние сущности надежно материализованным, класс сущности должен быть сериализуемым. Среда выполнения Устойчивые функции использует библиотеку [JSON.NET](https://www.newtonsoft.com/json) для этой цели, которая поддерживает ряд политик и атрибутов для управления процессом сериализации и десериализации. Наиболее часто используемые C# типы данных (включая массивы и типы коллекций) уже являются сериализуемыми и могут быть легко использованы для определения состояния устойчивых сущностей.
 
-For example, Json.NET can easily serialize and deserialize the following class:
+Например, Json.NET может легко сериализовать и десериализовать следующий класс:
 
 ```csharp
 [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
@@ -307,13 +307,13 @@ public class User
 }
 ```
 
-### <a name="serialization-attributes"></a>Serialization Attributes
+### <a name="serialization-attributes"></a>Атрибуты сериализации
 
-In the example above, we chose to include several attributes to make the underlying serialization more visible:
-- We annotate the class with `[JsonObject(MemberSerialization.OptIn)]` to remind us that the class must be serializable, and to persist only members that are explicitly marked as JSON properties.
--  We annotate the fields to be persisted with `[JsonProperty("name")]` to remind us that a field is part of the persisted entity state, and to specify the property name to be used in the JSON representation.
+В приведенном выше примере мы решили включить несколько атрибутов, чтобы сделать базовую сериализацию более видимой:
+- Мы замечаем класс `[JsonObject(MemberSerialization.OptIn)]`, чтобы напомнить нам, что класс должен быть сериализуемым, а также для сохранения только тех элементов, которые явно помечены как свойства JSON.
+-  Мы замечаем поля, которые должны быть сохранены в `[JsonProperty("name")]`, чтобы напомнить, что поле является частью состояния сохраненной сущности, и указать имя свойства, которое будет использоваться в представлении JSON.
 
-However, these attributes aren't required; other conventions or attributes are permitted as long as they work with Json.NET. For example, one may use `[DataContract]` attributes, or no attributes at all:
+Однако эти атрибуты не требуются. другие соглашения или атрибуты могут быть разрешены при условии, что они работают с Json.NET. Например, один из них может использовать `[DataContract]` атрибуты или вообще не иметь атрибутов:
 
 ```csharp
 [DataContract]
@@ -331,29 +331,29 @@ public class Counter
 }
 ```
 
-By default, the name of the class is *not* stored as part of the JSON representation: that is, we use `TypeNameHandling.None` as the default setting. This default behavior can be overridden using `JsonObject` or `JsonProperty` attributes.
+По умолчанию имя класса *не* сохраняется как часть представления JSON: то есть в качестве значения по умолчанию используется `TypeNameHandling.None`. Это поведение по умолчанию можно переопределить с помощью `JsonObject` или атрибутов `JsonProperty`.
 
-### <a name="making-changes-to-class-definitions"></a>Making changes to class definitions
+### <a name="making-changes-to-class-definitions"></a>Внесение изменений в определения классов
 
-Some care is required when making changes to a class definition after an application has been run, because the stored JSON object may no longer match the new class definition. Still, it is often possible to deal correctly with changing data formats as long as one understands the deserialization process used by `JsonConvert.PopulateObject`.
+При внесении изменений в определение класса после запуска приложения необходимо учитывать некоторые меры, поскольку сохраненный объект JSON может больше не соответствовать новому определению класса. Тем не менее часто можно правильно работать с измененными форматами данных, если один из них понимает процесс десериализации, используемый `JsonConvert.PopulateObject`.
 
-For example, here are some examples of changes and their effect:
+Например, ниже приведены некоторые примеры изменений и их воздействие.
 
-1. If a new property is added, which is not present in the stored JSON, it assumes its default value.
-1. If a property is removed, which is present in the stored JSON, the previous content is lost.
-1. If a property is renamed, the effect is as if removing the old one and adding a new one.
-1. If the type of a property is changed so it can no longer be deserialized from the stored JSON, an exception is thrown.
-1. If the type of a property is changed, but it can still be deserialized from the stored JSON, it will do so.
+1. Если добавляется новое свойство, которое отсутствует в сохраненном JSON-формате, предполагается, что оно имеет значение по умолчанию.
+1. Если свойство удалено, которое имеется в сохраненном JSON-формате, то предыдущее содержимое будет утеряно.
+1. Если свойство переименовано, то результат будет таким же, как при удалении старого элемента и добавлении нового.
+1. Если тип свойства изменяется, поэтому его невозможно десериализовать из хранимого JSON, создается исключение.
+1. Если тип свойства изменен, но его все равно можно десериализовать из сохраненного JSON, это будет сделано.
 
-There are many options available for customizing the behavior of Json.NET. For example, to force an exception if the stored JSON contains a field that is not present in the class, specify the attribute `JsonObject(MissingMemberHandling = MissingMemberHandling.Error)`. It is also possible to write custom code for deserialization that can read JSON stored in arbitrary formats.
+Существует множество параметров, доступных для настройки поведения Json.NET. Например, чтобы принудительно вызвать исключение, если хранимый JSON содержит поле, которое отсутствует в классе, укажите атрибут `JsonObject(MissingMemberHandling = MissingMemberHandling.Error)`. Также можно написать пользовательский код для десериализации, который может читать JSON, хранящийся в произвольных форматах.
 
-## <a name="entity-construction"></a>Entity construction
+## <a name="entity-construction"></a>Создание сущностей
 
-Sometimes we want to exert more control over how entity objects are constructed. We now describe several options for changing the default behavior when constructing entity objects. 
+Иногда требуется больший контроль над тем, как создаются объекты сущностей. Теперь мы рассмотрим несколько вариантов изменения поведения по умолчанию при построении объектов сущностей. 
 
-### <a name="custom-initialization-on-first-access"></a>Custom initialization on first access
+### <a name="custom-initialization-on-first-access"></a>Пользовательская инициализация при первом доступе
 
-Occasionally we need to perform some special initialization before dispatching an operation to an entity that has never been accessed, or that has been deleted. To specify this behavior, one can add a conditional before the `DispatchAsync`:
+Иногда требуется выполнить некоторую специальную инициализацию перед отправкой операции в сущность, к которой никогда не обращались или которые были удалены. Чтобы указать это поведение, можно добавить условие перед `DispatchAsync`:
 
 ```csharp
 [FunctionName(nameof(Counter))]
@@ -367,9 +367,9 @@ public static Task Run([EntityTrigger] IDurableEntityContext ctx)
 }
 ```
 
-### <a name="bindings-in-entity-classes"></a>Bindings in entity classes
+### <a name="bindings-in-entity-classes"></a>Привязки в классах сущностей
 
-Unlike regular functions, entity class methods don't have direct access to input and output bindings. Вместо этого данные привязки должны быть записаны в объявлении функции точки входа, а затем переданы в метод `DispatchAsync<T>`. Любые объекты, передаваемые в `DispatchAsync<T>`, будут автоматически переданы в конструктор класса сущностей в виде аргумента.
+В отличие от обычных функций, методы классов сущностей не имеют прямого доступа к входным и выходным привязкам. Вместо этого данные привязки должны быть записаны в объявлении функции точки входа, а затем переданы в метод `DispatchAsync<T>`. Любые объекты, передаваемые в `DispatchAsync<T>`, будут автоматически переданы в конструктор класса сущностей в виде аргумента.
 
 В следующем примере показано, как можно сделать ссылку `CloudBlobContainer` из [входной привязки BLOB-объекта](../functions-bindings-storage-blob.md#input) доступной для сущности на основе класса.
 
@@ -400,7 +400,7 @@ public class BlobBackedEntity
 
 Дополнительные сведения о привязках в Функциях Azure см. в статье[Azure Functions triggers and bindings concepts](../functions-triggers-bindings.md) (Основные понятия триггеров и привязок в Функциях Azure).
 
-### <a name="dependency-injection-in-entity-classes"></a>Dependency injection in entity classes
+### <a name="dependency-injection-in-entity-classes"></a>Внедрение зависимостей в классы сущностей
 
 Классы сущностей [поддерживают внедрение зависимостей Функций Azure](../functions-dotnet-dependency-injection.md). В следующем примере показано, как зарегистрировать службу `IHttpClientFactory` в сущность на основе класса.
 
@@ -447,16 +447,16 @@ public class HttpEntity
 ```
 
 > [!NOTE]
-> To avoid issues with serialization, make sure to exclude fields meant to store injected values from the serialization.
+> Чтобы избежать проблем с сериализацией, не забудьте исключить поля, предназначенные для хранения внедренных значений из сериализации.
 
 > [!NOTE]
 > В отличие от внедрения конструктора в обычных Функциях Azure .NET, метод точки входа функций для сущностей на основе класса *необходимо* объявить `static`. Объявление нестатической точки входа функции может привести к конфликтам между обычным инициализатором объектов Функций Azure и инициализатором объектов Устойчивых сущностей.
 
-## <a name="function-based-syntax"></a>Function-based syntax
+## <a name="function-based-syntax"></a>Синтаксис на основе функций
 
-So far we have focused on the class-based syntax, as we expect it to be better suited for most applications. However, the function-based syntax can be appropriate for applications that wish to define or manage their own abstractions for entity state and operations. Also, it may be appropriate when implementing libraries that require genericity not currently supported by the class-based syntax. 
+До сих пор мы работаем над синтаксисом на основе классов, так как мы предполагаем, что он лучше подходит для большинства приложений. Однако синтаксис на основе функций может быть приемлемым для приложений, которые хотят определять собственные абстракции для состояния и операций объекта и управлять ими. Кроме того, это может быть уместно при реализации библиотек, требующих универсальности, которые в настоящее время не поддерживаются синтаксисом на основе класса. 
 
-With the function-based syntax, the Entity Function explicitly handles the operation dispatch, and explicitly manages the state of the entity. For example, the following code shows the *Counter* entity implemented using the function-based syntax.  
+При использовании синтаксиса на основе функций функция сущности явным образом обрабатывает диспетчеризацию операции и явно управляет состоянием сущности. Например, в следующем коде показана сущность *счетчика* , реализованная с помощью синтаксиса на основе функций.  
 
 ```csharp
 [FunctionName("Counter")]
@@ -480,34 +480,34 @@ public static void Counter([EntityTrigger] IDurableEntityContext ctx)
 }
 ```
 
-### <a name="the-entity-context-object"></a>The entity context object
+### <a name="the-entity-context-object"></a>Объект контекста сущности
 
-Entity-specific functionality can be accessed via a context object of type `IDurableEntityContext`. This context object is available as a parameter to the entity function, and via the async-local property `Entity.Current`.
+Доступ к функциональным возможностям, относящимся к сущностям, можно получить через объект контекста типа `IDurableEntityContext`. Этот объект контекста доступен в качестве параметра функции сущности и через свойство Async-Local `Entity.Current`.
 
-The following members provide information about the current operation, and allow us to specify a return value. 
+Следующие члены предоставляют сведения о текущей операции и позволяют указать возвращаемое значение. 
 
-* `EntityName`: the name of the currently executing entity.
-* `EntityKey`: the key of the currently executing entity.
-* `EntityId`: the ID of the currently executing entity (includes name and key).
-* `OperationName`: the name of the current operation.
-* `GetInput<TInput>()`: gets the input for the current operation.
-* `Return(arg)`: returns a value to the orchestration that called the operation.
+* `EntityName`: имя выполняемой в данный момент сущности.
+* `EntityKey`: ключ выполняемой в данный момент сущности.
+* `EntityId`: Идентификатор выполняемой в данный момент сущности (включая имя и ключ).
+* `OperationName`: имя текущей операции.
+* `GetInput<TInput>()`: получает входные данные для текущей операции.
+* `Return(arg)`: Возвращает значение для оркестрации, вызвавшего операцию.
 
-The following members manage the state of the entity (create, read, update, delete). 
+Следующие элементы управляют состоянием сущности (создание, чтение, обновление, удаление). 
 
-* `HasState`: whether the entity exists, that is, has some state. 
-* `GetState<TState>()`: gets the current state of the entity. If it does not already exist, it is created.
-* `SetState(arg)`: creates or updates the state of the entity.
-* `DeleteState()`: deletes the state of the entity, if it exists. 
+* `HasState`: существует ли сущность, то есть имеет какое-то состояние. 
+* `GetState<TState>()`: Возвращает текущее состояние сущности. Если он еще не существует, он будет создан.
+* `SetState(arg)`: создает или обновляет состояние сущности.
+* `DeleteState()`: удаляет состояние сущности, если оно существует. 
 
-If the state returned by `GetState` is an object, it can be directly modified by the application code. There is no need to call `SetState` again at the end (but also no harm). If `GetState<TState>` is called multiple times, the same type must be used.
+Если состояние, возвращенное `GetState`, является объектом, его можно напрямую изменить с помощью кода приложения. Нет необходимости повторно вызывать `SetState` в конце (но без ущерба). Если `GetState<TState>` вызывается несколько раз, необходимо использовать один и тот же тип.
 
-Finally, the following members are used to signal other entities, or start new orchestrations:
+Наконец, следующие члены используются для сигнализации других сущностей или запуска новых оркестрации:
 
-* `SignalEntity(EntityId, operation, input)`: sends a one-way message to an entity.
-* `CreateNewOrchestration(orchestratorFunctionName, input)`: starts a new orchestration.
+* `SignalEntity(EntityId, operation, input)`: отправляет одностороннее сообщение в сущность.
+* `CreateNewOrchestration(orchestratorFunctionName, input)`: запускает новое согласование.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Learn about entity concepts](durable-functions-entities.md)
+> [Сведения о концепциях сущностей](durable-functions-entities.md)

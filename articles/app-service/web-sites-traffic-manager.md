@@ -1,26 +1,16 @@
 ---
-title: Управление трафиком Службы приложений Azure с помощью диспетчера трафика
-description: В этой статье представлена сводная информация об использовании диспетчера трафика Azure со службой приложений Azure.
-services: app-service\web
-documentationcenter: ''
-author: cephalin
-writer: cephalin
-manager: erikre
-editor: mollybos
+title: Управление трафиком с помощью диспетчера трафика
+description: Ознакомьтесь с рекомендациями по настройке диспетчера трафика Azure при его интеграции со службой приложений Azure.
 ms.assetid: dabda633-e72f-4dd4-bf1c-6e945da456fd
-ms.service: app-service-web
-ms.workload: web
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 02/25/2016
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: a1f377c3325797f2f55f051830014b1068c51327
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: 200effab70b369d69b4e89b1901578ecfe1a1b87
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74405591"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74684108"
 ---
 # <a name="controlling-azure-app-service-traffic-with-azure-traffic-manager"></a>Управление трафиком службы приложений Azure с помощью диспетчера трафика Azure
 > [!NOTE]
@@ -34,7 +24,7 @@ ms.locfileid: "74405591"
 ## <a name="routing-methods"></a>Методы маршрутизации
 Диспетчер трафика Azure использует четыре разных метода маршрутизации. Эти методы и их применение к службе приложений Azure описаны в следующем списке.
 
-* **[По приоритету](../traffic-manager/traffic-manager-routing-methods.md#priority)** . Основное приложение получает весь трафик, а резервные копии создаются на тот случай, если основное или резервное приложения будут недоступны.
+* **[По приоритету](../traffic-manager/traffic-manager-routing-methods.md#priority-traffic-routing-method)** . Основное приложение получает весь трафик, а резервные копии создаются на тот случай, если основное или резервное приложения будут недоступны.
 * **[Со взвешиванием](../traffic-manager/traffic-manager-routing-methods.md#weighted)** . Трафик распределяется между несколькими приложениями равномерно или в соответствии с весовыми коэффициентами, которые вы можете настроить.
 * **[По производительности](../traffic-manager/traffic-manager-routing-methods.md#performance)** . Если используется несколько приложений, размещенных в разных географических регионах, трафик направляется к ближайшему из них в соответствии со статистикой задержек в сети.
 * **[Географический](../traffic-manager/traffic-manager-routing-methods.md#geographic)** . Пользователи направляются к конкретному приложению в соответствии с настройками для географических расположений, из которых получены соответствующие запросы DNS. 
@@ -42,7 +32,7 @@ ms.locfileid: "74405591"
 Дополнительные сведения см. в статье [Методы маршрутизации трафика диспетчером трафика](../traffic-manager/traffic-manager-routing-methods.md).
 
 ## <a name="app-service-and-traffic-manager-profiles"></a>Служба приложений и профили диспетчера трафика
-To configure the control of App Service app traffic, you create a profile in Azure Traffic Manager that uses one of the four load balancing methods described previously, and then add the endpoints (in this case, App Service) for which you want to control traffic to the profile. Сведения о состоянии приложения (запущено, остановлено или удалено) регулярно передаются в профиль. Это позволяет диспетчеру трафика Azure правильно перенаправлять трафик.
+Чтобы настроить управление трафиком приложения службы приложений, создайте профиль в диспетчере трафика Azure, использующий один из четырех описанных выше методов балансировки нагрузки, а затем добавьте конечные точки (в нашем случае это служба приложений), для которых требуется управлять трафиком к профиля. Сведения о состоянии приложения (запущено, остановлено или удалено) регулярно передаются в профиль. Это позволяет диспетчеру трафика Azure правильно перенаправлять трафик.
 
 При использовании диспетчера трафика Azure с Azure необходимо помнить следующее:
 

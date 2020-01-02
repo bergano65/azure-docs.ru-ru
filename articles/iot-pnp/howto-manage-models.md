@@ -1,19 +1,19 @@
 ---
 title: Управление моделями предварительной версии Plug and Play IoT в репозитории | Документация Майкрософт "
 description: Управление моделями возможностей устройств в репозитории с помощью портала Azure Certified для IoT, Azure CLI и Visual Studio Code.
-author: YasinMSFT
+author: Philmea
 manager: philmea
 ms.service: iot-pnp
 services: iot-pnp
 ms.topic: conceptual
 ms.date: 06/12/2019
-ms.author: yahajiza
-ms.openlocfilehash: 1b71d8bd0f0417c7dc408c580a1c73ac654743ce
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.author: philmea
+ms.openlocfilehash: 4320a975f74d000bd492d291f5e610f591536b0d
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70932857"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74979110"
 ---
 # <a name="manage-models-in-the-repository"></a>Управление моделями в репозитории
 
@@ -23,7 +23,7 @@ ms.locfileid: "70932857"
 
 - Портал сертификации Azure для IoT
 - Интерфейс командной строки Azure
-- Visual Studio Code
+- Код Visual Studio
 
 ## <a name="model-repositories"></a>Репозитории модели
 
@@ -39,15 +39,15 @@ ms.locfileid: "70932857"
 - [Завершите процесс сертификации для вашего устройства IOT](./tutorial-certification-test.md).
 - Найдите Plug and Playные модели возможностей устройств IoT. Эти модели можно использовать для [быстрого создания готовых устройств IOT и их интеграции с решениями](./quickstart-connect-pnp-device-solution.md).
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Azure CLI
 
 Azure CLI предоставляет команды для управления моделями возможностей устройств и интерфейсами в центрах Интернета вещей Plug and Play Public и в репозиториях модели компании. Дополнительные сведения см. в разделе [Установка и использование расширения Интернета вещей Azure для Azure CLI](./howto-install-pnp-cli.md) .
 
-## <a name="visual-studio-code"></a>Visual Studio Code
+## <a name="visual-studio-code"></a>Код Visual Studio
 
 Чтобы открыть представление **репозитория модели** в Visual Studio Code.
 
-1. Откройте Visual Studio Code, нажмите **клавиши CTRL + SHIFT + P**, введите и **выберите IOT Plug and Play: Откройте репозиторий**модели.
+1. Откройте Visual Studio Code, нажмите **клавиши CTRL + SHIFT + P**, введите и выберите **IOT Plug and Play: открыть репозиторий модели**.
 
 1. Вы можете **Открыть репозиторий общедоступной модели** или **открыть хранилище организационной модели**. Для репозитория модели компании необходимо ввести строку подключения к репозиторию модели. Эту строку подключения можно найти на [портале Microsoft Azure Certified for IoT](https://preview.catalog.azureiotsolutions.com) на вкладке **Строки подключения** для **репозитория компании**.
 
@@ -55,11 +55,11 @@ Azure CLI предоставляет команды для управления 
 
     Используйте это представление для добавления, загрузки и удаления моделей и интерфейсов возможностей устройства. Фильтр можно использовать для поиска конкретных элементов в списке.
 
-1. Чтобы переключиться между репозиторием модели компании и общедоступным репозиторием модели, используйте **сочетание клавиш CTRL + SHIFT + P**, введите и выберите **IOT Plug and Play: Выйти из репозитория**модели. Затем используйте **Plug and Play IOT: Снова откройте команду** репозиторий модели.
+1. Чтобы переключиться между репозиторием модели компании и общедоступным репозиторием модели, используйте **сочетание клавиш CTRL + SHIFT + P**, введите и выберите **IOT Plug and Play: выйти из репозитория модели**. Затем снова воспользуйтесь командой **Интернета вещей Plug and Play: Open Model Repository** .
 
 > [!NOTE]
 > В VS Code репозиторий общедоступной модели доступен только для чтения. Партнеры корпорации Майкрософт могут обновить общедоступный репозиторий на [портале сертификации Azure для IOT](https://preview.catalog.azureiotsolutions.com).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 На следующем шаге вы узнаете, как [Отправить устройство Plug and Play IOT для сертификации](tutorial-certification-test.md).

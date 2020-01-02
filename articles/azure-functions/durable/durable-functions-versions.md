@@ -1,70 +1,70 @@
 ---
-title: Durable Functions versions overview - Azure Functions
-description: Learn about Durable Functions versions.
+title: 'Обзор Устойчивые функции версий: функции Azure'
+description: Дополнительные сведения о Устойчивые функции версиях.
 author: cgillum
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 93c35eb4f69cc4f9b16f669d96c2df53f50bcf84
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 789af25cc37183e9eeae253e1e8529615abdd308
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231194"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849808"
 ---
-# <a name="durable-functions-versions-overview"></a>Durable Functions versions overview
+# <a name="durable-functions-versions-overview"></a>Обзор версий Устойчивые функции
 
-*Устойчивые функции* являются расширением [Функций Azure](../functions-overview.md) и [веб-заданий Azure](../../app-service/web-sites-create-web-jobs.md), которое позволяет писать функции с отслеживанием состояния в безсерверной среде. Расширение автоматически управляет состоянием, создает контрольные точки и перезагружается. If you are not already familiar with Durable Functions, see the [overview documentation](durable-functions-overview.md).
+*Устойчивые функции* являются расширением [Функций Azure](../functions-overview.md) и [веб-заданий Azure](../../app-service/web-sites-create-web-jobs.md), которое позволяет писать функции с отслеживанием состояния в безсерверной среде. Расширение автоматически управляет состоянием, создает контрольные точки и перезагружается. Если вы еще не знакомы с Устойчивые функции, см. [обзорную документацию](durable-functions-overview.md).
 
-## <a name="new-features-in-2x"></a>New features in 2.x
+## <a name="new-features-in-2x"></a>Новые возможности в 2. x
 
-This section describes the features of Durable Functions that are added in version 2.x.
+В этом разделе описаны функции Устойчивые функции, добавленные в версии 2. x.
 
-### <a name="durable-entities"></a>Durable entities
+### <a name="durable-entities"></a>Устойчивые сущности
 
-In Durable Functions 2.x, we introduced a new [entity functions](durable-functions-entities.md) concept.
+В Устойчивые функции 2. x мы предоставили новую концепцию [функций сущностей](durable-functions-entities.md) .
 
-Функции сущностей определяют операции чтения и обновления мелких частей состояния, известных как *устойчивые сущности*. Как и функции оркестратора, функции сущностей — это функции с особым типом триггера, *триггером сущности*. Unlike orchestrator functions, entity functions do not have any specific code constraints. Функции сущностей также управляют состоянием явным образом, а не неявно представляют состояние с помощью потока управления.
+Функции сущностей определяют операции чтения и обновления мелких частей состояния, известных как *устойчивые сущности*. Как и функции оркестратора, функции сущностей — это функции с особым типом триггера, *триггером сущности*. В отличие от функций Orchestrator, функции сущностей не имеют конкретных ограничений кода. Функции сущностей также управляют состоянием явным образом, а не неявно представляют состояние с помощью потока управления.
 
-To learn more, see the [durable entities](durable-functions-entities.md) article.
+Дополнительные сведения см. в статье о [устойчивых сущностях](durable-functions-entities.md) .
 
-### <a name="durable-http"></a>Durable HTTP
+### <a name="durable-http"></a>Устойчивый протокол HTTP
 
-In Durable Functions 2.x, we introduced a new [Durable HTTP](durable-functions-http-features.md#consuming-http-apis) feature that allows you to:
+В Устойчивые функции 2. x мы предоставили новую [устойчивую функцию HTTP](durable-functions-http-features.md#consuming-http-apis) , которая позволяет:
 
-* Call HTTP APIs directly from orchestration functions (with some documented limitations).
-* Implement automatic client-side HTTP 202 status polling.
-* Built-in support for [Azure Managed Identities](../../active-directory/managed-identities-azure-resources/overview.md).
+* Вызывайте API HTTP непосредственно из функций оркестрации (с некоторыми задокументированными ограничениями).
+* Реализация автоматического опроса состояния HTTP 202 на стороне клиента.
+* Встроенная поддержка [управляемых удостоверений Azure](../../active-directory/managed-identities-azure-resources/overview.md).
 
-To learn more, see the [HTTP features](durable-functions-http-features.md#consuming-http-apis) article.
+Дополнительные сведения см. в статье о [функциях HTTP](durable-functions-http-features.md#consuming-http-apis) .
 
-## <a name="migrate-from-1x-to-2x"></a>Migrate from 1.x to 2.x
+## <a name="migrate-from-1x-to-2x"></a>Миграция с 1. x на 2. x
 
-This section describes how to migrate your existing version 1.x Durable Functions to version 2.x to take advantage of the new features.
+В этом разделе описано, как перенести существующую версию 1. x Устойчивые функции в версию 2. x, чтобы воспользоваться преимуществами новых функций.
 
-### <a name="upgrade-the-extension"></a>Upgrade the extension
+### <a name="upgrade-the-extension"></a>Обновление расширения
 
-Install version 2.x of the [Durable Functions bindings extension](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask) in your project. See [Register Azure Functions binding extensions](../functions-bindings-register.md) for more information.
+Установите версию 2. x [расширения привязок устойчивые функции](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask) в проекте. Дополнительные сведения см. в разделе [Регистрация расширений привязки функций Azure](../functions-bindings-register.md) .
 
-### <a name="update-your-code"></a>Update your code
+### <a name="update-your-code"></a>Обновление кода
 
-Durable Functions 2.x introduces several breaking changes. Durable Functions 1.x applications are not compatible with Durable Functions 2.x without code changes. This section lists some of the changes you must make when upgrading your version 1.x functions to 2.x.
+Устойчивые функции 2. x вводит несколько критических изменений. Приложения Устойчивые функции 1. x несовместимы с Устойчивые функции 2. x без изменений кода. В этом разделе перечислены некоторые изменения, которые необходимо внести при обновлении функций версии 1. x до 2. x.
 
-#### <a name="hostjson-schema"></a>Host.json schema
+#### <a name="hostjson-schema"></a>Схема Host. JSON
 
-Durable Functions 2.x uses a new host.json schema. The main changes from 1.x include:
+Устойчивые функции 2. x использует новую схему Host. JSON. Основные изменения из 1. x включают:
 
-* `"storageProvider"` (and the `"azureStorage"` subsection) for storage-specific configuration.
-* `"tracking"` for tracking and logging configuration.
-* `"notifications"` (and the `"eventGrid"` subsection) for event grid notification configuration.
+* `"storageProvider"` (и подраздела `"azureStorage"`) для конфигурации, относящейся к хранилищу.
+* `"tracing"` для настройки трассировки и ведения журнала.
+* `"notifications"` (и подраздела `"eventGrid"`) для конфигурации уведомлений сетки событий.
 
-See the [Durable Functions host.json reference documentation](durable-functions-bindings.md#durable-functions-2-0-host-json) for details.
+Дополнительные сведения см. в [справочной документации по устойчивые функции Host. JSON](durable-functions-bindings.md#durable-functions-2-0-host-json) .
 
-#### <a name="public-interface-changes-net-only"></a>Public interface changes (.NET only)
+#### <a name="public-interface-changes-net-only"></a>Изменения открытого интерфейса (только .NET)
 
-In version 1.x, the various _context_ objects supported by Durable Functions have abstract base classes intended for use in unit testing. As part of Durable Functions 2.x, these abstract base classes are replaced with interfaces.
+В версии 1. x различные объекты _контекста_ , поддерживаемые устойчивые функции, имеют абстрактные базовые классы, предназначенные для использования в модульном тестировании. В состав Устойчивые функции 2. x эти абстрактные базовые классы заменяются интерфейсами.
 
-The following table represents the main changes:
+В следующей таблице представлены основные изменения.
 
 | 1.x | 2.x |
 |----------|----------|
@@ -73,8 +73,8 @@ The following table represents the main changes:
 | `DurableActivityContext` или `DurableActivityContextBase` | `IDurableActivityContext` |
 | `OrchestrationClientAttribute` | `DurableClientAttribute` |
 
-In the case where an abstract base class contained virtual methods, these virtual methods have been replaced by extension methods defined in `DurableContextExtensions`.
+В случае, когда абстрактный базовый класс содержал виртуальные методы, эти виртуальные методы были заменены методами расширения, определенными в `DurableContextExtensions`.
 
-#### <a name="functionjson-changes-javascript-and-c-script"></a>function.json changes (JavaScript and C# Script)
+#### <a name="functionjson-changes-javascript-and-c-script"></a>изменения Function. JSON (JavaScript и C# скрипт)
 
-In Durable Functions 1.x, the orchestration client binding uses a `type` of `orchestrationClient`. Version 2.x uses `durableClient` instead.
+В Устойчивые функции 1. x привязка клиента оркестрации использует `type` `orchestrationClient`. В версии 2. x вместо нее используется `durableClient`.

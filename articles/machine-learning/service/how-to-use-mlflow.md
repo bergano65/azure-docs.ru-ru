@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.custom: seodec18
-ms.openlocfilehash: 9b6efdc75c15e9686728236f82fea8794f3782bf
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: c06eb4043e0e7de886ef8180845464a6be554fd1
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74276641"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976559"
 ---
 # <a name="track-metrics-and-deploy-models-with-mlflow-and-azure-machine-learning-preview"></a>Мониторинг метрик и развертывание моделей с помощью Млфлов и Машинное обучение Azure (Предварительная версия)
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -55,7 +55,7 @@ ms.locfileid: "74276641"
 |Мониторинг производительности модели||✓|  |   |
 | Определение смещения данных |   | ✓ |   | ✓ |
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * [Установите Млфлов.](https://mlflow.org/docs/latest/quickstart.html)
 * [Установка пакета sdk машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) на локальном компьютере. пакет SDK обеспечивает подключение для млфлов к рабочей области.
@@ -217,7 +217,7 @@ mlflow.log_metric('epoch_loss', loss.item())
 
 Вместо того, чтобы вручную задавать URI отслеживания в каждом последующем сеансе работы с записными книжками в кластерах, сделайте это автоматически, используя этот [машинное обучение Azure скрипт инициализации кластера отслеживания](https://github.com/Azure/MachineLearningNotebooks/blob/3ce779063b000e0670bdd1acc6bc3a4ee707ec13/how-to-use-azureml/azure-databricks/linking/README.md).
 
-При правильной настройке данные отслеживания Млфлов можно просматривать в REST APIх и всех клиентах Машинное обучение Azure, а также в Azure Databricks через пользовательский интерфейс Млфлов или с помощью клиента Млфлов.
+При правильной настройке данные отслеживания Млфлов можно просматривать в Машинное обучение Azure REST API и всех клиентах, а также в Azure Databricks через пользовательский интерфейс Млфлов или с помощью клиента Млфлов.
 
 ## <a name="view-metrics-and-artifacts-in-your-workspace"></a>Просмотр метрик и артефактов в рабочей области
 
@@ -303,7 +303,7 @@ aci_config = AciWebservice.deploy_configuration(cpu_cores=1,
                                                 location='eastus2')
 ```
 
-Затем разверните образ с помощью метода [deploy_from_image ()](/python/api/azureml-core/azureml.core.webservice.webservice(class)?view=azure-ml-py#deploy-from-image-workspace--name--image--deployment-config-none--deployment-target-none--overwrite-false-) машинное обучение Azure SDK. 
+Затем разверните образ с помощью метода Машинное обучение Azure SDK [deploy_from_image ()](/python/api/azureml-core/azureml.core.webservice.webservice(class)?view=azure-ml-py#deploy-from-image-workspace--name--image--deployment-config-none--deployment-target-none--overwrite-false-) . 
 
 ```python
 webservice = Webservice.deploy_from_image( image=azure_image, 
@@ -359,7 +359,7 @@ aks_config = AksWebservice.deploy_configuration(enable_app_insights=True)
 service_name ='aks-service'
 ```
 
-Затем разверните образ с помощью метода [deploy_from_image ()](/python/api/azureml-core/azureml.core.webservice.webservice(class)?view=azure-ml-py#deploy-from-image-workspace--name--image--deployment-config-none--deployment-target-none--overwrite-false-) машинное обучение Azure SDK. 
+Затем разверните образ с помощью метода Машинное обучение Azure SDK [deploy_from_image ()](/python/api/azureml-core/azureml.core.webservice.webservice(class)?view=azure-ml-py#deploy-from-image-workspace--name--image--deployment-config-none--deployment-target-none--overwrite-false-) . 
 
 ```python
 # Webservice creation using single command
@@ -393,6 +393,6 @@ aks_service.wait_for_deployment(show_output=True)
 
 [Млфлов с записными книжками машинного обучения Azure](https://aka.ms/azureml-mlflow-examples) демонстрируют и расширяют концепции, представленные в этой статье.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Управляйте моделями](concept-model-management-and-deployment.md).
 * Мониторинг производственных моделей для [смещения данных](how-to-monitor-data-drift.md).

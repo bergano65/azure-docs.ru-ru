@@ -2,17 +2,17 @@
 title: Краткое руководство. Создание частной зоны Azure DNS на портале Azure
 description: Из этого краткого руководства вы узнаете, как создать и проверить частную зону и запись DNS в Azure DNS. В этом пошаговом руководстве описывается создание первой частной зоны и записи DNS, а также управление ими с помощью портала Azure.
 services: dns
-author: vhorne
+author: asudbring
 ms.service: dns
 ms.topic: quickstart
 ms.date: 10/11/2019
-ms.author: victorh
-ms.openlocfilehash: 352a63e611e3823e03bedb01a9c1a5071d628c4f
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.author: allensu
+ms.openlocfilehash: 48c5684dd491a91b6da212f78c535433ac2aecf7
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73163826"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74210749"
 ---
 # <a name="quickstart-create-an-azure-private-dns-zone-using-the-azure-portal"></a>Краткое руководство. Создание частной зоны Azure DNS на портале Azure
 

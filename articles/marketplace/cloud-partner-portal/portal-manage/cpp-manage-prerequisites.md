@@ -1,49 +1,20 @@
 ---
 title: Необходимые условия для управления учетными записями на Портал Cloud Partner | Azure Marketplace
-description: Необходимые условия для управления учетными записями Azure Marketplace на Портал Cloud Partner.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+description: Устаревшая статья CPP, указанная в статье о ПК; был "предварительные требования для управления учетными записями Azure Marketplace на Портал Cloud Partner".
+services: Azure, Marketplace, Cloud Partner Portal, Partner Center
+author: ChJenk
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 04/01/2019
-ms.author: pabutler
-ms.openlocfilehash: b0a9f312ba78e148a573064b81ff1f52fbd85c03
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.date: 11/27/2019
+ms.author: v-chjen
+ms.openlocfilehash: 1b6e7df904b6c564935a3f34ca2da12bed459c4f
+ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826671"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74666466"
 ---
-# <a name="prerequisites-for-managing-accounts-on-the-cloud-partner-portal"></a>Необходимые условия для управления учетными записями в Портал Cloud Partner 
+# <a name="prerequisites-for-managing-accounts-on-the-cloud-partner-portal"></a>Необходимые условия для управления учетными записями в Портал Cloud Partner
 
-Прежде чем использовать [портал Cloud Partner](https://cloudpartner.azure.com/) для любой функции, включая управление учетными записями, необходимо выполнить ряд действий, чтобы зарегистрировать себя и их организацию в качестве облачных издателей Майкрософт.
-
-
-## <a name="account-terms-and-guidelines"></a>Условия и рекомендации для учетных записей
-
-Перед созданием учетной записи внимательно Проанализируйте свои права и обязанности в [соглашение об использовании служб Майкрософт](https://www.microsoft.com/servicesagreement) и [условиях использования Майкрософт](https://www.microsoft.com/en-us/legal/intellectualproperty/copyright) .  
-
-Тщательно выберите имя своей учетной записи.  Она представляет вашу организацию, поэтому она не должна содержать никаких спорными слов с авторскими правами.  Например, корпорация Майкрософт запрещает использование в именах учетных записей таких терминов, как "Azure" и "Майкрософт".  Дополнительные сведения см. в статье [рекомендации для Azure Marketplace](https://docs.microsoft.com/azure/marketplace/guidelines) .
-
-
-## <a name="registration-steps"></a>Этапы регистрации
-
-В следующей таблице перечислены действия, необходимые для полной регистрации в качестве издателя Microsoft Cloud.  Полные инструкции см. [в разделе Станьте издателем облачной Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher). 
-
-
-|                   Шаг                   |  Результирующая регистрация или ресурс                     |
-|                  ------                  |  -----------------------------------                    |
-| 1. Зарегистрируйтесь в Microsoft Partner Network |  Идентификатор Microsoft Partner Network для вашей организации |
-| 2. Создание учетная запись Майкрософт *           |  Проверенный учетная запись Майкрософт, заканчивается на @outlook.com, @live.comи т. д. |
-| 3. Отправьте форму регистрации Marketplace | Учетная запись издателя на Портал Cloud Partner      |
-| 4. вход в Портал Cloud Partner        | Центр для создания и публикации предложений, управления пользователями, сбора метрик Marketplace и т. д. |
-| 5. Зарегистрируйтесь в центре разработчиков Майкрософт * | Проверенная учетная запись центра разработки; полномочия на проведение транзакций Marketplace  |
-|   |   |
-
-\* эти действия необходимы для предложений Transact в Azure Marketplace, но настоятельно рекомендуется для всех предложений.  После установления учетная запись Майкрософт и регистрации в качестве разработчика Майкрософт вы можете получить доступ к дополнительным ресурсам клиента и разработчика Майкрософт, а также дополнительным предложениям партнеров.  
-
-
-## <a name="next-steps"></a>Дальнейшие действия
-
-После завершения процедуры регистрации вы сможете войти в [портал Cloud Partner](https://cloudpartner.azure.com/).  Этот портал можно использовать для управления профилями издателя и управления учетными записями пользователей.
+Эта функция была перемещена на [портал центра партнеров](https://partner.microsoft.com/)Майкрософт. Дополнительные сведения см. [в статье Управление учетной записью коммерческого магазина в центре партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/manage-account).

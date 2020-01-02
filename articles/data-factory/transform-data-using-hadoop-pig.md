@@ -1,24 +1,25 @@
 ---
-title: Преобразование данных с помощью действия Hadoop Pig в фабрике данных Azure
+title: Преобразование данных с помощью действия Hadoop Pig
 description: Узнайте, как с помощью действия Pig в фабрике данных Azure выполнять запросы Pig к собственному кластеру HDInsight или к кластеру HDInsight по требованию.
 services: data-factory
 documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 01/16/2018
 author: nabhishek
 ms.author: abnarain
-manager: craigg
-ms.openlocfilehash: 85478c128e2a61ed6a3f4da5cacdcb425038c639
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+manager: shwang
+ms.custom: seo-lt-2019
+ms.date: 01/16/2018
+ms.openlocfilehash: 4064d62a6dc826b23ff1f51e9f61e48d362ae695
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73683837"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74912932"
 ---
 # <a name="transform-data-using-hadoop-pig-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hadoop Pig в фабрике данных Azure
+
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-pig-activity.md)
 > * [Текущая версия](transform-data-using-hadoop-pig.md)
@@ -56,12 +57,12 @@ ms.locfileid: "73683837"
 ```
 ## <a name="syntax-details"></a>Сведения о синтаксисе
 
-| Свойство            | Description (Описание)                              | Обязательно |
+| Свойство            | Описание                              | Обязательно для заполнения |
 | ------------------- | ---------------------------------------- | -------- |
-| name                | Имя действия.                     | Да      |
-| description         | Текст, описывающий, для чего используется действие | Нет       |
-| type                | Для действия Hive используется тип действия HDinsightPig. | Да      |
-| linkedServiceName (имя связанной службы)   | Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md). | Да      |
+| name                | Имя действия.                     | ДА      |
+| Description (Описание)         | Текст, описывающий, для чего используется действие | Нет       |
+| Тип                | Для действия Hive используется тип действия HDinsightPig. | ДА      |
+| linkedServiceName   | Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md). | ДА      |
 | scriptLinkedService | Ссылки на связанные службы хранилища Azure, используемые для хранения скрипта Pig, который следует выполнить. Если не указать эту связанную службу, будет использоваться связанная служба хранилища Azure, определенная в связанной службе HDInsight. | Нет       |
 | scriptPath          | Укажите путь к файлу скрипта, который хранится в службе хранилища Azure, на который ссылается scriptLinkedService. В имени файла учитывается регистр знаков. | Нет       |
 | getDebugInfo        | Указывает, когда файлы журнала копируются в службу хранилища Azure, используемую кластером HDInsight или определенную scriptLinkedService. Допустимые значения: None, Always или Failure. Значение по умолчанию: None. | Нет       |

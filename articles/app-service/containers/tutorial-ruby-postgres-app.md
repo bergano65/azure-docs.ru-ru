@@ -1,23 +1,16 @@
 ---
-title: Создание приложения Ruby (Rails) с базой данных Postgres в Linux в Службе приложений Azure | Документация Майкрософт
-description: Узнайте, как создать приложение Ruby, работающее в Azure, с подключением к базе данных PostgreSQL в Azure. В этом руководстве используется Rails.
-services: app-service\web
-documentationcenter: ''
-author: cephalin
-manager: jeconnoc
-ms.service: app-service-web
-ms.workload: web
+title: Руководство по приложению Ruby в Linux на основе Postgres
+description: Узнайте, как создать приложение Ruby в Linux, работающее в Службе приложений Azure, с подключением к базе данных PostgreSQL в Azure. В этом руководстве используется Rails.
 ms.devlang: ruby
 ms.topic: tutorial
 ms.date: 03/27/2019
-ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 3ec19b1c564c09406ab1f29c38aef6332d80f8f1
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 6af9da060f7742fe2a9b9656199edd5feb67bec1
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59544694"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74687413"
 ---
 # <a name="build-a-ruby-and-postgres-app-in-azure-app-service-on-linux"></a>Разработка приложения на основе Ruby и Postgres в Службе приложений Azure в Linux
 
@@ -167,13 +160,13 @@ az postgres server firewall-rule create --resource-group myResourceGroup --serve
 
 ### <a name="connect-to-production-postgres-server-locally"></a>Локальное подключение к рабочему серверу Postgres
 
-В Cloud Shell установите соединение с сервером Postgres в Azure. Используйте значение, указанное ранее для заполнителей _&lt;postgres-server-name>_.
+В Cloud Shell установите соединение с сервером Postgres в Azure. Используйте значение, указанное ранее для заполнителей _&lt;postgres-server-name>_ .
 
 ```bash
 psql -U adminuser@<postgres-server-name> -h <postgres-server-name>.postgres.database.azure.com postgres
 ```
 
-При появлении запроса на ввод пароля используйте пароль _My5up3r$tr0ngPa$w0rd!_, указанный во время создания сервера базы данных.
+При появлении запроса на ввод пароля используйте пароль _My5up3r$tr0ngPa$w0rd!_ , указанный во время создания сервера базы данных.
 
 ### <a name="create-a-production-database"></a>Создание рабочей базы данных
 
@@ -282,7 +275,7 @@ git commit -m "database.yml updates"
 
 Ваше приложение готово к развертыванию.
 
-## <a name="deploy-to-azure"></a>Развернуть в Azure
+## <a name="deploy-to-azure"></a>Развертывание в Azure
 
 На этом этапе вы развернете приложение Rails, подключенное к базе данных Postgres, в Службе приложений Azure.
 
@@ -302,7 +295,7 @@ git commit -m "database.yml updates"
 
 В службе приложений переменные среды задаются в качестве _параметров приложения_ с помощью команды [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell.
 
-Команда Cloud Shell ниже позволяет настроить параметры приложения `DB_HOST`, `DB_DATABASE`, `DB_USERNAME` и `DB_PASSWORD`. Замените заполнители _&lt;appname>_ и _&lt;postgres-server-name>_.
+Команда Cloud Shell ниже позволяет настроить параметры приложения `DB_HOST`, `DB_DATABASE`, `DB_USERNAME` и `DB_PASSWORD`. Замените заполнители _&lt;appname>_ и _&lt;postgres-server-name>_ .
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group myResourceGroup --settings DB_HOST="<postgres-server-name>.postgres.database.azure.com" DB_DATABASE="sampledb" DB_USERNAME="railsappuser@<postgres-server-name>" DB_PASSWORD="MyPostgresAzure2017"
@@ -513,7 +506,7 @@ git push azure master
 Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"]
-> [Руководство Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
+> [Руководство. Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
 
 Также ознакомьтесь с другими ресурсами:
 

@@ -10,19 +10,22 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: quickstart
-ms.date: 11/06/2019
-ms.openlocfilehash: 47c0ecb5674f821d3034fb5f165df08f176c2e93
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.date: 12/06/2019
+ms.openlocfilehash: a124c33f15318f1b9b22a750a1de15601823afa3
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73646943"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74890697"
 ---
 # <a name="quickstart-create-an-instance-of-azure-database-migration-service-in-hybrid-mode-using-the-azure-portal-preview"></a>Краткое руководство. Создание экземпляра службы Azure Database Migration Service в гибридном режиме с помощью портала Azure (предварительная версия)
 
 Гибридный режим Azure Database Migration Service позволяет управлять миграцией баз данных с помощью рабочей роли миграции, размещенной локально, и экземпляра Azure Database Migration Service, работающего в облаке. Гибридный режим особенно удобен для сценариев, в которых подключение типа "сеть — сеть" между локальной сетью и Azure отсутствует или его пропускная способность ограничена.
 
 В этом кратком руководстве вы создадите экземпляр службы Azure Database Migration Service в гибридном режиме с помощью портала Azure. После этого вы скачаете, установите и настроите гибридную рабочую роль в локальной сети. На этапе предварительной версии гибридный режим Azure Database Migration Service можно использовать для миграции данных из локального экземпляра SQL Server в Базу данных SQL Azure.
+
+> [!IMPORTANT]
+> Для гибридного установщика Azure Database Migration Service требуется .NET 4.7.2 или более поздней версии. Чтобы найти последние версии .NET, перейдите на страницу скачивания [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework).
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
@@ -111,6 +114,9 @@ ms.locfileid: "73646943"
 
 3. Извлеките содержимое ZIP-файла на сервер, на котором будет размещена гибридная рабочая роль Azure Database Migration Service.
 
+    > [!IMPORTANT]
+    > Для гибридного установщика Azure Database Migration Service требуется .NET 4.7.2 или более поздней версии. Чтобы найти последние версии .NET, перейдите на страницу скачивания [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework).
+
 4. В папке установки найдите и откройте файл **dmsSettings.json**, укажите в нем **ApplicationId** и **resourceId**, а затем сохраните этот файл.
 
     ![Параметры гибридной рабочей роли Azure Database Migration Service](media/quickstart-create-data-migration-service-hybrid-portal/dms-settings.png)
@@ -125,7 +131,7 @@ ms.locfileid: "73646943"
 
     ![Сертификат гибридной рабочей роли Azure Database Migration Service](media/quickstart-create-data-migration-service-hybrid-portal/dms-certificate.png)
 
-6. На портале Azure перейдите к идентификатору приложения в разделе **Управление**, выберите **Certificates & secrets** (Сертификаты и секреты), а затем выберите **Отправить сертификат**, чтобы выбрать только что созданный открытый сертификат.
+6. На портале Azure перейдите к идентификатору приложения в разделе **Управление**, выберите **Сертификаты и секреты**, а затем выберите **Отправить сертификат**, чтобы выбрать созданный открытый сертификат.
 
     ![Передача сертификата гибридной рабочей роли Azure Database Migration Service](media/quickstart-create-data-migration-service-hybrid-portal/dms-app-upload-certificate.png)
 

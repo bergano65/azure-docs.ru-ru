@@ -1,19 +1,15 @@
 ---
 title: Масштабирование развертываний Jenkins с помощью агентов виртуальных машин Azure
 description: Увеличьте емкость конвейеров Jenkins с помощью виртуальных машин Azure с подключаемым модулем агентов виртуальных машин Azure для Jenkins.
-ms.service: jenkins
 keywords: jenkins, azure, devops, virtual machine, agents
-author: tomarchermsft
-manager: jeconnoc
-ms.author: tarcher
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: 5cfece551f99a0925099b6ef936703e72f078985
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 2e811d628c017316a5bc50a8ddc22ee24d6f744e
+ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54074672"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74158536"
 ---
 # <a name="scale-your-jenkins-deployments-to-meet-demand-with-azure-vm-agents"></a>Масштабирование развертываний Jenkins в соответствии с требованиями агентов виртуальных машин Azure
 

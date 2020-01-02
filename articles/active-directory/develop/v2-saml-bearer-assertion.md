@@ -1,5 +1,5 @@
 ---
-title: Поток утверждения платформы идентификации (Майкрософт) и носителя SAML | Службы
+title: Поток утверждений носителя SAML для платформы Microsoft Identity & | Службы
 description: Узнайте, как извлечь данные из Microsoft Graph без запроса учетных данных пользователя с помощью потока утверждения носителя SAML.
 services: active-directory
 documentationcenter: ''
@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 13b316568ba555de764c1aaa4ddf0e72d25cf24f
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: f7f5b983a00dfc0af2e7a40571ce58fafca5914e
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68990953"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74964623"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-saml-bearer-assertion-flow"></a>Поток утверждения для платформы Microsoft Identity и OAuth 2,0 SAML
 Поток утверждений носителя OAuth 2,0 SAML позволяет запросить маркер доступа OAuth с помощью утверждения SAML, когда клиенту необходимо использовать существующее отношение доверия. Подпись, применяемая к утверждению SAML, обеспечивает проверку подлинности полномочного приложения. Утверждение SAML — это маркер безопасности XML, выданный поставщиком удостоверений и используемый поставщиком услуг. Поставщик услуг использует его содержимое для идентификации субъекта утверждения в целях безопасности.
@@ -41,12 +41,12 @@ ms.locfileid: "68990953"
 ## <a name="call-graph-using-saml-bearer-assertion"></a>Граф вызовов, использующий утверждение носителя SAML
 Теперь давайте посмотрим, как можно реально получить утверждение SAML программным способом. Этот подход тестируется с помощью ADFS. Однако это работает с любым поставщиком удостоверений, который поддерживает возврат утверждения SAML программным путем. Базовый процесс: получение утверждения SAML, получение маркера доступа и доступ к Microsoft Graph.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 Установите отношение доверия между сервером авторизации/средой (Microsoft 365) и поставщиком удостоверений или издателем утверждения носителя SAML 2,0 (ADFS). Чтобы настроить ADFS для единого входа и как поставщика удостоверений, обратитесь к [этой статье](https://blogs.technet.microsoft.com/canitpro/2015/09/11/step-by-step-setting-up-ad-fs-and-enabling-single-sign-on-to-office-365/).
 
 Зарегистрируйте приложение на [портале](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade):
-1. Войдите в колонку [регистрации приложения](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) на портале (Обратите внимание, что мы используем конечные точки версии 2.0 для API Graph и, следовательно, должны зарегистрировать приложение на этом портале. В противном случае мы могли бы использовать регистрации в Azure Active Directory. 
+1. Войдите в [колонку регистрации приложения на портале](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) (Обратите внимание, что мы используем конечные точки версии 2.0 для API Graph и, следовательно, должны зарегистрировать приложение на этом портале. В противном случае мы могли бы использовать регистрации в Azure Active Directory. 
 1. Выберите **Новая регистрация**.
 1. После появления страницы **Регистрация приложения** введите сведения о регистрации приложения: 
     1. **Имя** — введите информативное имя приложения, которое будет отображаться пользователям приложения.
@@ -79,10 +79,10 @@ ms.locfileid: "68990953"
 
 1. Создайте запрос POST, как показано ниже, со значениями заголовка:
 
-    ![Запрос POST](./media/v2-saml-bearer-assertion/5.png)
-1. В тексте запроса замените **client_id**, **client_secret**и **assertion** (утверждение SAML в кодировке Base64, полученное на предыдущем шаге):
+    ![запрос POST](./media/v2-saml-bearer-assertion/5.png)
+1. В тексте запроса замените **client_id**, **client_secret**и **Assert** (утверждение SAML в кодировке Base64, полученное на предыдущем шаге):
 
-    ![Текст запроса](./media/v2-saml-bearer-assertion/6.png)
+    ![Тело запроса](./media/v2-saml-bearer-assertion/6.png)
 1. После успешного выполнения запроса вы получите маркер доступа из Azure Active Directory.
 
 ### <a name="get-the-data-with-the-oauth-token"></a>Получение данных с помощью токена OAuth
@@ -95,6 +95,6 @@ ms.locfileid: "68990953"
 
 1. После успешного выполнения запроса вы получите ответ JSON.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте о различных [потоках проверки подлинности и сценариях приложений](authentication-flows-app-scenarios.md).

@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 10/28/2019
+ms.date: 12/02/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: f3ee958484fdb8cacad0a3bfa0c3385374ac7487
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 00d4487abed97084976d81ee1ec78316fc688193
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185743"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74851389"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "74185743"
 
 
 > [!div class="mx-tableFixed"]
-> | Встроенные роли | ОПИСАНИЕ | id |
+> | Встроенные роли | Описание | Идентификатор |
 > | --- | --- | --- |
 > | [Владелец](#owner) | Позволяет управлять всем, в том числе доступом к ресурсам. | 8e3af657-a8ff-443c-a75c-2fe8c4bcb635 |
 > | [Участник](#contributor) | Позволяет управлять всем, кроме предоставления доступа к ресурсам. | b24988ac-6180-42a0-ab88-20f7382dd24c |
@@ -82,7 +82,7 @@ ms.locfileid: "74185743"
 > | [Читатель данных профиля CDN](#cdn-profile-reader) | Может просматривать профили CDN и их конечные точки, но не может вносить изменения. | 8f96442b-4075-438f-813d-ad51ab4019af |
 > | [Участник классической сети](#classic-network-contributor) | Позволяет управлять классическими сетями, но не доступом к ним. | b34d265f-36f7-4a0d-a4d4-e158ca92e90f |
 > | [Участник классической учетной записи хранения](#classic-storage-account-contributor) | Позволяет управлять классическими учетными записями хранения, но не предоставлять доступ к ним. | 86e8f5dc-a6e9-4c67-9d15-de283e8eac25 |
-> | [Роль службы оператора ключей классических учетных записей хранения](#classic-storage-account-key-operator-service-role) | Операторы ключей классических учетных записей хранения могут перечислять и повторно создавать ключи в классических учетных записях хранения. | 985d6b00-f706-48f5-a6fe-d0ca12fb668d |
+> | [Роль службы оператора ключей классических учетных записей хранения](#classic-storage-account-key-operator-service-role) | Операторы ключей классических учетных записей хранения могут перечислять и повторно создавать ключи в классических учетных записях хранения | 985d6b00-f706-48f5-a6fe-d0ca12fb668d |
 > | [Участник классической виртуальной машины](#classic-virtual-machine-contributor) | Позволяет управлять классическими виртуальными машинами, но не доступом к ним и не учетной записью виртуальной сети или хранения, к которой они подключены. | d73bb868-a0df-4d4d-bd69-98a00b01fccb |
 > | [Участник служб Cognitive Services](#cognitive-services-contributor) | Позволяет создавать, читать, обновлять, удалять ключи служб Cognitive Services и управлять ими. | 25fbc0a9-bd7c-42a3-aa1a-3b75d497ee68 |
 > | [Cognitive Services модуль чтения данных (Предварительная версия)](#cognitive-services-data-reader-preview) | Позволяет считывать данные Cognitive Services. | b59867f0-fa02-499b-be73-45a86b5b3e1c |
@@ -123,9 +123,10 @@ ms.locfileid: "74185743"
 > | [Monitoring Reader](#monitoring-reader) (Читатель данных мониторинга) | Может читать все данные мониторинга (метрики, журналы и т. д.). Ознакомьтесь также со статьей [Приступая к работе с ролями, разрешениями и системой безопасности с помощью Azure Monitor](../azure-monitor/platform/roles-permissions-security.md#built-in-monitoring-roles). | 43d0d8ad-25c7-4714-9337-8ba259a9fe05 |
 > | [Участник сети](#network-contributor) | Позволяет управлять сетями, но не доступом к ним. | 4d97b98b-1d4f-4787-a291-c67834d212e7 |
 > | [Участник учетной записи New Relic APM](#new-relic-apm-account-contributor) | Позволяет управлять учетными записями и приложениями New Relic Application Performance Management, но не доступом к ним. | 5d28c62d-5b37-4476-8438-e587778df237 |
+> | [Средство записи данных Policy Insights (Предварительная версия)](#policy-insights-data-writer-preview) | Разрешает доступ на чтение к политикам ресурсов и доступ на запись к событиям политики компонента ресурсов. | 66bb4e9e-b016-4a94-8249-4c0511c2be84 |
 > | [Модуль чтения и доступ к данным](#reader-and-data-access) | Позволяет просматривать все данные, но не позволит удалить или создать учетную запись хранения или содержащий ресурс. Он также предоставит доступ на чтение и запись для всех данных, содержащихся в учетной записи хранения через доступ к ключам учетной записи хранения. | c12c1c16-33a1-487b-954d-41c89c60f349 |
 > | [Участник кэша Redis](#redis-cache-contributor) | Позволяет управлять кэшем Redis, но не доступом к нему. | e0f68234-74aa-48ed-b826-c38b57376e17 |
-> | [Участник политики ресурсов (предварительная версия)](#resource-policy-contributor-preview) | Обратное заполнение пользователей из EA с правами на создание и изменение политики ресурсов, создание запросов в службу поддержки и чтение ресурсов и иерархии (предварительная версия). | 36243c78-bf99-498c-9df9-86d9f8d28608 |
+> | [Участник политики ресурсов](#resource-policy-contributor) | Пользователи с правами на создание и изменение политики ресурсов, создание запроса в службу поддержки и чтение ресурсов и иерархии. | 36243c78-bf99-498c-9df9-86d9f8d28608 |
 > | [Участник коллекции заданий планировщика](#scheduler-job-collections-contributor) | Позволяет управлять коллекциями заданий планировщика, но не доступом к ним. | 188a0f2f-5c9e-469b-ae67-2aa5ce574b94 |
 > | [Участник службы поиска](#search-service-contributor) | Позволяет управлять службами поиска, но не доступом к ним. | 7ca78c08-252a-4471-8644-bb5ff32d4ba0 |
 > | [Администратор безопасности](#security-admin) | Только в центре безопасности: может просматривать политики безопасности и состояния безопасности, изменять политики безопасности, просматривать оповещения и рекомендации, а также закрывать предупреждения и рекомендации | fb1c8493-542b-48eb-b624-b4c8fea62acd |
@@ -137,7 +138,7 @@ ms.locfileid: "74185743"
 > | [Участник учетной записи пространственных привязок](#spatial-anchors-account-contributor) | Позволяет управлять пространственными привязками в учетной записи, но не удалять их | 8bbe83f1-e2a6-4df7-8cb4-4e04d4e5c827 |
 > | [Владелец учетной записи пространственных привязок](#spatial-anchors-account-owner) | Позволяет управлять пространственными привязками в учетной записи, включая их удаление. | 70bbe301-9835-447d-afdd-19eb3167307c |
 > | [Читатель учетной записи пространственных привязок](#spatial-anchors-account-reader) | Позволяет нахождение и чтение свойств пространственных привязок в учетной записи. | 5d51204f-eb77-4b1c-b86a-2ec626c49413 |
-> | [Участник баз данных SQL](#sql-db-contributor) | Позволяет управлять базами данных SQL, но не доступом к ним. Кроме того, не позволяет управлять их политиками безопасности или родительскими серверами SQL Server. | 9b7fa17d-e63e-47b0-bb0a-15c516ac86ec |
+> | [Участник базы данных SQL](#sql-db-contributor) | Позволяет управлять базами данных SQL, но не доступом к ним. Кроме того, не позволяет управлять их политиками безопасности или родительскими серверами SQL Server. | 9b7fa17d-e63e-47b0-bb0a-15c516ac86ec |
 > | [Участник SQL Управляемый экземпляр](#sql-managed-instance-contributor) | Позволяет управлять управляемыми экземплярами SQL и требуемой конфигурацией сети, но не может предоставлять доступ другим пользователям. | 4939a1f6-9ae0-4e48-a1e0-f2cbe897382d |
 > | [Диспетчер безопасности SQL](#sql-security-manager) | Позволяет управлять политиками безопасности серверов SQL Server и баз данных SQL, но не доступом к ним. | 056cd41c-7e88-42e1-933e-88ba6a50c9c3 |
 > | [Участник SQL Server](#sql-server-contributor) | Позволяет управлять серверами SQL Server и базами данных SQL, но не доступом к ним и их политиками безопасности. | 6d8ee4ec-f05a-4a1d-8b00-a9b17e38b437 |
@@ -164,7 +165,7 @@ ms.locfileid: "74185743"
 > | [Участник веб-сайта](#website-contributor) | Позволяет управлять веб-сайтами (не веб-планами), но не доступом к ним. | de139f84-1756-47ae-9be6-808fbbe84772 |
 
 
-## <a name="owner"></a>владелец;
+## <a name="owner"></a>Владелец.
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -179,7 +180,7 @@ ms.locfileid: "74185743"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="contributor"></a>участник
+## <a name="contributor"></a>участник;
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -198,7 +199,7 @@ ms.locfileid: "74185743"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="reader"></a>reader
+## <a name="reader"></a>Читатель
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -337,11 +338,11 @@ ms.locfileid: "74185743"
 > | Microsoft.ApiManagement/service/backup/action | Архивирует службу управления API в указанный контейнер в предоставленной пользователем учетной записи хранения. |
 > | Microsoft.ApiManagement/service/delete | Удаляет экземпляр службы управления API. |
 > | Microsoft.ApiManagement/service/managedeployments/action | Позволяет изменить номер SKU или единицы, а также добавить или удалить региональные развертывания службы управления API. |
-> | Microsoft.ApiManagement/service/read | Считывает метаданные для экземпляра службы управления API. |
-> | Microsoft.ApiManagement/service/restore/action | Восстанавливает службу управления API из указанного контейнера в предоставленной пользователем учетной записи хранения. |
+> | Microsoft.ApiManagement/service/read | Чтение метаданных для экземпляра службы управления API. |
+> | Microsoft.ApiManagement/service/restore/action | Восстановление службы управления API из указанного контейнера в предоставленной пользователем учетной записи хранения. |
 > | Microsoft.ApiManagement/service/updatecertificate/action | Передает SSL-сертификата для службы управления API. |
 > | Microsoft.ApiManagement/service/updatehostname/action | Позволяет настроить, обновить или удалить имена личных доменов для службы управления API. |
-> | Microsoft.ApiManagement/service/write | Создает экземпляр службы управления API. |
+> | Microsoft.ApiManagement/service/write | Создание экземпляра службы управления API. |
 > | Microsoft.Authorization/*/read | Авторизация на чтение |
 > | Microsoft.Insights/alertRules/* | Создание правил оповещения и управление ими |
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
@@ -363,7 +364,7 @@ ms.locfileid: "74185743"
 > | **Id** | 71522526-b88f-4d52-b57f-d31fc3546d0d |
 > | **Действия** |  |
 > | Microsoft.ApiManagement/service/*/read | Чтение экземпляров службы управления API. |
-> | Microsoft.ApiManagement/service/read | Считывает метаданные для экземпляра службы управления API. |
+> | Microsoft.ApiManagement/service/read | Чтение метаданных для экземпляра службы управления API. |
 > | Microsoft.Authorization/*/read | Авторизация на чтение |
 > | Microsoft.Insights/alertRules/* | Создание правил оповещения и управление ими |
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
@@ -463,7 +464,7 @@ ms.locfileid: "74185743"
 > | Microsoft.Automation/automationAccounts/jobs/write | Создает задание службы автоматизации Azure. |
 > | Microsoft.Automation/automationAccounts/jobSchedules/read | Возвращает расписание заданий службы автоматизации Azure. |
 > | Microsoft.Automation/automationAccounts/jobSchedules/write | Создает расписание заданий службы автоматизации Azure. |
-> | Microsoft.Automation/automationAccounts/linkedWorkspace/read | Получение рабочей области, связанной с учетной записью автоматизации. |
+> | Microsoft.Automation/automationAccounts/linkedWorkspace/read | Получает рабочую область, связанную с учетной записью службы автоматизации. |
 > | Microsoft.Automation/automationAccounts/read | Возвращает учетную запись службы автоматизации Azure. |
 > | Microsoft.Automation/automationAccounts/runbooks/read | Возвращает runbook службы автоматизации Azure. |
 > | Microsoft.Automation/automationAccounts/schedules/read | Возвращает ресурс расписания службы автоматизации Azure. |
@@ -518,7 +519,7 @@ ms.locfileid: "74185743"
 > | Microsoft.Network/virtualNetworks/read | Возвращает определение виртуальной сети. |
 > | Microsoft.Network/virtualNetworks/subnets/read | Возвращает определение подсети виртуальной сети. |
 > | Microsoft.Network/virtualNetworks/subnets/join/action | Присоединяет виртуальную сеть. Не оповещать. |
-> | Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action | Присоединяет к подсети ресурс, например учетную запись хранения или базу данных SQL. Не оповещать. |
+> | Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action | Присоединение к подсети ресурса, например учетной записи хранения или базы данных SQL. Не оповещать. |
 > | Microsoft.Network/networkSecurityGroups/join/action | Присоединяет группу безопасности сети. Не оповещать. |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
@@ -666,6 +667,7 @@ ms.locfileid: "74185743"
 > | Microsoft.OperationalInsights/workspaces/savedSearches/* |  |
 > | Microsoft.OperationsManagement/solutions/read | Возвращает существующее решение OMS. |
 > | Microsoft.OperationalInsights/workspaces/query/read | Выполнение запросов к данным в рабочей области |
+> | Microsoft. OperationalInsights/рабочие области/запрос/*/Реад |  |
 > | Microsoft. OperationalInsights/рабочие области/источники данных/чтение | Возвращает источники данных в рабочей области. |
 > | Microsoft. Insights/книги/* |  |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
@@ -693,6 +695,7 @@ ms.locfileid: "74185743"
 > | Microsoft.OperationalInsights/workspaces/savedSearches/read | Возвращает сохраненный поисковый запрос. |
 > | Microsoft.OperationsManagement/solutions/read | Возвращает существующее решение OMS. |
 > | Microsoft.OperationalInsights/workspaces/query/read | Выполнение запросов к данным в рабочей области |
+> | Microsoft. OperationalInsights/рабочие области/запрос/*/Реад |  |
 > | Microsoft. OperationalInsights/рабочие области/источники данных/чтение | Возвращает источники данных в рабочей области. |
 > | Microsoft. Insights/книги/чтение | Чтение книги |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
@@ -722,6 +725,7 @@ ms.locfileid: "74185743"
 > | Microsoft.OperationalInsights/workspaces/savedSearches/read | Возвращает сохраненный поисковый запрос. |
 > | Microsoft.OperationsManagement/solutions/read | Возвращает существующее решение OMS. |
 > | Microsoft.OperationalInsights/workspaces/query/read | Выполнение запросов к данным в рабочей области |
+> | Microsoft. OperationalInsights/рабочие области/запрос/*/Реад |  |
 > | Microsoft. OperationalInsights/рабочие области/источники данных/чтение | Возвращает источники данных в рабочей области. |
 > | Microsoft. Insights/книги/чтение | Чтение книги |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
@@ -793,7 +797,7 @@ ms.locfileid: "74185743"
 > | **Id** | 6f12a6df-dd06-4f3e-bcb1-ce8be600526a |
 > | **Действия** |  |
 > | Microsoft. AzureStack/регистрации/Products/*/Action |  |
-> | Microsoft.AzureStack/registrations/products/read | Получение свойств продукта из Azure Stack Marketplace. |
+> | Microsoft.AzureStack/registrations/products/read | Получает свойства продукта из Azure Stack Marketplace. |
 > | Microsoft.AzureStack/registrations/read | Получение свойств регистрации в Azure Stack. |
 > | **NotActions** |  |
 > | *Нет* |  |
@@ -1210,7 +1214,7 @@ ms.locfileid: "74185743"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Операторы ключей классических учетных записей хранения могут перечислять и повторно создавать ключи в классических учетных записях хранения. |
+> | **Описание** | Операторы ключей классических учетных записей хранения могут перечислять и повторно создавать ключи в классических учетных записях хранения |
 > | **Id** | 985d6b00-f706-48f5-a6fe-d0ca12fb668d |
 > | **Действия** |  |
 > | Microsoft.ClassicStorage/storageAccounts/listkeys/action | Отображает ключи доступа для учетных записей хранения. |
@@ -1361,6 +1365,7 @@ ms.locfileid: "74185743"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action | Присоединение к подсети ресурса, например учетной записи хранения или базы данных SQL. Не оповещать. |
 > | **NotActions** |  |
 > | Microsoft. DocumentDB/databaseAccounts/Реадонликэйс/* |  |
 > | Microsoft. DocumentDB/databaseAccounts/Реженератекэй/* |  |
@@ -1631,6 +1636,7 @@ ms.locfileid: "74185743"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action | Присоединение к подсети ресурса, например учетной записи хранения или базы данных SQL. Не оповещать. |
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
@@ -1772,7 +1778,7 @@ ms.locfileid: "74185743"
 > | **Действия** |  |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
 > | Microsoft.LabServices/labAccounts/*/read |  |
-> | Microsoft.LabServices/labAccounts/createLab/action | Создание лаборатории в учетной записи лаборатории. |
+> | Microsoft.LabServices/labAccounts/createLab/action | Создает лабораторию в учетной записи лаборатории. |
 > | Microsoft.LabServices/labAccounts/sizes/getRegionalAvailability/action |  |
 > | Microsoft.LabServices/labAccounts/getRegionalAvailability/action | Позволяет получать сведения о доступности по регионам для каждой категории размеров, настроенной в учетной записи лаборатории. |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
@@ -2139,6 +2145,24 @@ ms.locfileid: "74185743"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
+## <a name="policy-insights-data-writer-preview"></a>Средство записи данных Policy Insights (Предварительная версия)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Разрешает доступ на чтение к политикам ресурсов и доступ на запись к событиям политики компонента ресурсов. |
+> | **Id** | 66bb4e9e-b016-4a94-8249-4c0511c2be84 |
+> | **Действия** |  |
+> | Microsoft. Authorization/полициассигнментс/чтение | Возвращает сведения о назначении политики. |
+> | Microsoft. Authorization/PolicyDefinitions/чтение | Возвращает сведения об определении политики. |
+> | Microsoft. Authorization/полицисетдефинитионс/чтение | Получение сведений об определении набора политик. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | Microsoft. Полициинсигхтс/Чеккдатаполицикомплианце/действие | Проверьте состояние соответствия данного компонента политикам данных. |
+> | Microsoft. Полициинсигхтс/Полициевентс/Логдатаевентс/Action | Регистрация событий политики компонента ресурсов. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
 ## <a name="reader-and-data-access"></a>Модуль чтения и доступ к данным
 > [!div class="mx-tableFixed"]
 > | | |
@@ -2177,11 +2201,11 @@ ms.locfileid: "74185743"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="resource-policy-contributor-preview"></a>Участник политики ресурсов (предварительная версия)
+## <a name="resource-policy-contributor"></a>Участник политики ресурсов
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Обратное заполнение пользователей из EA с правами на создание и изменение политики ресурсов, создание запросов в службу поддержки и чтение ресурсов и иерархии (предварительная версия). |
+> | **Описание** | Пользователи с правами на создание и изменение политики ресурсов, создание запроса в службу поддержки и чтение ресурсов и иерархии. |
 > | **Id** | 36243c78-bf99-498c-9df9-86d9f8d28608 |
 > | **Действия** |  |
 > | */чтение | Чтение ресурсов всех типов, кроме секретов. |
@@ -2328,7 +2352,7 @@ ms.locfileid: "74185743"
 > | Microsoft.RecoveryServices/Vaults/refreshContainers/read |  |
 > | Microsoft.RecoveryServices/Vaults/registeredIdentities/* | Создание зарегистрированных удостоверений и управление ими |
 > | Microsoft.RecoveryServices/vaults/replicationAlertSettings/* | Создание или обновление параметров оповещения репликации |
-> | Microsoft.RecoveryServices/vaults/replicationEvents/read | Считывает события. |
+> | Microsoft.RecoveryServices/vaults/replicationEvents/read | Считывание события |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/* | Создание структур репликации и управление ими |
 > | Microsoft.RecoveryServices/vaults/replicationJobs/* | Создание заданий репликации и управление ими |
 > | Microsoft.RecoveryServices/vaults/replicationPolicies/* | Создание политик репликации и управление ими |
@@ -2343,6 +2367,7 @@ ms.locfileid: "74185743"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Storage/storageAccounts/read | Возвращает список учетных записей хранения или свойства указанной учетной записи хранения. |
+> | Microsoft. RecoveryServices/хранилища/Репликатионоператионстатус/чтение | Чтение состояния операции репликации хранилища |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | **NotActions** |  |
 > | *Нет* |  |
@@ -2368,39 +2393,39 @@ ms.locfileid: "74185743"
 > | Microsoft.RecoveryServices/Vaults/refreshContainers/read |  |
 > | Microsoft.RecoveryServices/Vaults/registeredIdentities/operationResults/read | Операцию получения результатов операции можно использовать, чтобы получить состояние и результат асинхронно отправленной операции. |
 > | Microsoft.RecoveryServices/Vaults/registeredIdentities/read | Операцию получения контейнеров можно использовать для получения контейнеров, зарегистрированных для ресурса. |
-> | Microsoft.RecoveryServices/vaults/replicationAlertSettings/read | Считывает параметры оповещений. |
-> | Microsoft.RecoveryServices/vaults/replicationEvents/read | Считывает события. |
+> | Microsoft.RecoveryServices/vaults/replicationAlertSettings/read | Считывание параметров оповещений |
+> | Microsoft.RecoveryServices/vaults/replicationEvents/read | Считывание события |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/checkConsistency/action | Проверяет согласованность структуры. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/read | Считывает структуры. |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/read | Считывание структуры |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/reassociateGateway/action | Повторно задает связь шлюза. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/renewcertificate/action | Обновление сертификата для структуры. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/read | Считывает сети. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/replicationNetworkMappings/read | Считывает сетевые сопоставления. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/read | Считывает контейнеры защиты. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectableItems/read | Считывает защищаемые элементы. |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/read | Считывание сети |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/replicationNetworkMappings/read | Считывание сетевых сопоставлений |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/read | Считывание контейнеров защиты |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectableItems/read | Считывание защищаемых элементов |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/applyRecoveryPoint/action | Применяет точку восстановления. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/failoverCommit/action | Выполняет отработку отказа с фиксацией. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/plannedFailover/action | Выполняет плановую отработку отказа. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/read | Считывает защищенные элементы. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/recoveryPoints/read | Считывает точки восстановления для репликации. |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/read | Считывание защищенных элементов |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/recoveryPoints/read | Считывание точек восстановления для репликации |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/repairReplication/action | Исправляет репликацию. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/reProtect/action | Повторно защищает защищенный элемент. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/switchprotection/action | Переключает контейнер защиты. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/testFailover/action | Тестирование отработки отказа |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/testFailoverCleanup/action | Тестирует очистку отработки отказа. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/unplannedFailover/action | Отработка отказа |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/unplannedFailover/action | Переход на другой ресурс |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/updateMobilityService/action | Обновляет службу Mobility Service. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/read | Считывает сопоставления контейнера защиты. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders/read | Считывает поставщики служб восстановления. |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/read | Считывание сопоставлений контейнера защиты |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders/read | Считывание поставщиков службы восстановления |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders/refreshProvider/action | Обновляет поставщик. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/read | Считывает классификации хранилища. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/replicationStorageClassificationMappings/read | Считывает сопоставления классификаций хранилища. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationvCenters/read | Считывает vCenter. |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/read | Считывание классификации хранилища |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/replicationStorageClassificationMappings/read | Считывание сопоставлений классификаций хранилища |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationvCenters/read | Чтение vCenter |
 > | Microsoft.RecoveryServices/vaults/replicationJobs/* | Создание заданий репликации и управление ими |
-> | Microsoft.RecoveryServices/vaults/replicationPolicies/read | Считывает политики. |
+> | Microsoft.RecoveryServices/vaults/replicationPolicies/read | Считывание политики |
 > | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/failoverCommit/action | Выполняет отработку отказа с фиксацией для плана восстановления. |
 > | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/plannedFailover/action | Выполняет плановую отработку отказа для плана восстановления. |
-> | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/read | Считывает планы восстановления. |
+> | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/read | Считывание планов восстановления |
 > | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/reProtect/action | Повторно защищает план восстановления. |
 > | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/testFailover/action | Тестирует отработку отказа для плана восстановления. |
 > | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/testFailoverCleanup/action | Тестирует очистку отработки отказа для плана восстановления. |
@@ -2439,23 +2464,23 @@ ms.locfileid: "74185743"
 > | Microsoft.RecoveryServices/Vaults/refreshContainers/read |  |
 > | Microsoft.RecoveryServices/Vaults/registeredIdentities/operationResults/read | Операцию получения результатов операции можно использовать, чтобы получить состояние и результат асинхронно отправленной операции. |
 > | Microsoft.RecoveryServices/Vaults/registeredIdentities/read | Операцию получения контейнеров можно использовать для получения контейнеров, зарегистрированных для ресурса. |
-> | Microsoft.RecoveryServices/vaults/replicationAlertSettings/read | Считывает параметры оповещений. |
-> | Microsoft.RecoveryServices/vaults/replicationEvents/read | Считывает события. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/read | Считывает структуры. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/read | Считывает сети. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/replicationNetworkMappings/read | Считывает сетевые сопоставления. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/read | Считывает контейнеры защиты. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectableItems/read | Считывает защищаемые элементы. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/read | Считывает защищенные элементы. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/recoveryPoints/read | Считывает точки восстановления для репликации. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/read | Считывает сопоставления контейнера защиты. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders/read | Считывает поставщики служб восстановления. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/read | Считывает классификации хранилища. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/replicationStorageClassificationMappings/read | Считывает сопоставления классификаций хранилища. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationvCenters/read | Считывает vCenter. |
-> | Microsoft.RecoveryServices/vaults/replicationJobs/read | Считывает задания. |
-> | Microsoft.RecoveryServices/vaults/replicationPolicies/read | Считывает политики. |
-> | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/read | Считывает планы восстановления. |
+> | Microsoft.RecoveryServices/vaults/replicationAlertSettings/read | Считывание параметров оповещений |
+> | Microsoft.RecoveryServices/vaults/replicationEvents/read | Считывание события |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/read | Считывание структуры |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/read | Считывание сети |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/replicationNetworkMappings/read | Считывание сетевых сопоставлений |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/read | Считывание контейнеров защиты |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectableItems/read | Считывание защищаемых элементов |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/read | Считывание защищенных элементов |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/recoveryPoints/read | Считывание точек восстановления для репликации |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/read | Считывание сопоставлений контейнера защиты |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders/read | Считывание поставщиков службы восстановления |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/read | Считывание классификации хранилища |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/replicationStorageClassificationMappings/read | Считывание сопоставлений классификаций хранилища |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationvCenters/read | Чтение vCenter |
+> | Microsoft.RecoveryServices/vaults/replicationJobs/read | Считывание задания |
+> | Microsoft.RecoveryServices/vaults/replicationPolicies/read | Считывание политики |
+> | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/read | Считывание планов восстановления |
 > | Microsoft.RecoveryServices/Vaults/storageConfig/read |  |
 > | Microsoft.RecoveryServices/Vaults/tokenInfo/read |  |
 > | Microsoft.RecoveryServices/Vaults/usages/read | Возвращает данные об использовании хранилища служб восстановления. |
@@ -2612,7 +2637,7 @@ ms.locfileid: "74185743"
 > | **Действия** |  |
 > | Microsoft.Authorization/*/read | Чтение авторизации Майкрософт |
 > | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
-> | Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action | Присоединяет к подсети ресурс, например учетную запись хранения или базу данных SQL. Не оповещать. |
+> | Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action | Присоединение к подсети ресурса, например учетной записи хранения или базы данных SQL. Не оповещать. |
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
@@ -2721,7 +2746,7 @@ ms.locfileid: "74185743"
 > | Microsoft.Authorization/*/read | Авторизация на чтение всех элементов |
 > | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
 > | Microsoft.Insights/diagnosticSettings/* | Управление параметрами диагностики |
-> | Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action | Присоединяет к подсети ресурс, например учетную запись хранения или базу данных SQL. Не оповещать. |
+> | Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action | Присоединение к подсети ресурса, например учетной записи хранения или базы данных SQL. Не оповещать. |
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
@@ -3025,7 +3050,7 @@ ms.locfileid: "74185743"
 > | Microsoft.Network/loadBalancers/backendAddressPools/join/action | Присоединяет внутренний пул адресов подсистемы балансировки нагрузки. Не оповещать. |
 > | Microsoft.Network/loadBalancers/inboundNatPools/join/action | Присоединяется к пулу входящих подключений NAT подсистемы балансировки нагрузки. Не оповещать. |
 > | Microsoft.Network/loadBalancers/inboundNatRules/join/action | Присоединяет правило NAT для входящего трафика подсистемы балансировки нагрузки. Не оповещать. |
-> | Microsoft.Network/loadBalancers/probes/join/action | Разрешение использования зондов подсистемы балансировки нагрузки. Например, при наличии этого разрешения свойство healthProbe в масштабируемом наборе виртуальных машин может ссылаться на конкретный зонд. Не оповещать. |
+> | Microsoft.Network/loadBalancers/probes/join/action | Позволяет использовать зонды подсистемы балансировки нагрузки. Например, при наличии этого разрешения свойство healthProbe в масштабируемом наборе виртуальных машин может ссылаться на конкретный зонд. Не оповещать. |
 > | Microsoft.Network/loadBalancers/read | Возвращает определение подсистемы балансировки нагрузки. |
 > | Microsoft.Network/locations/* | Создание сетевых расположений и управление ими |
 > | Microsoft.Network/networkInterfaces/* | Создание сетевых интерфейсов и управление ими |
@@ -3126,7 +3151,7 @@ ms.locfileid: "74185743"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Сопоставить поставщик ресурсов со службой](../azure-resource-manager/azure-services-resource-providers.md)
 - [Пользовательские роли для ресурсов Azure](custom-roles.md)

@@ -1,28 +1,28 @@
 ---
-title: Two-step verification Azure MFA and ADFS - Azure Active Directory
+title: Двухфакторная проверка подлинности Azure MFA и ADFS — Azure Active Directory
 description: Эта страница содержит сведения о службе Azure Multi-Factor Authentication, описывающие начало работы с Azure MFA и AD FS.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 142b836a4f585f047c0789e3214c27ef9f07599f
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 1fbbba49ddf2252e22cb32a0b8adc6fa2070e999
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74381165"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74847139"
 ---
 # <a name="getting-started-with-azure-multi-factor-authentication-and-active-directory-federation-services"></a>Приступая к работе со службой Многофакторной идентификации Azure и службами федерации Active Directory
 
 <center>
 
-![Azure MFA and ADFS getting started](./media/multi-factor-authentication-get-started-adfs/adfs.png)</center>
+![Azure MFA и Приступая к работе с ADFS](./media/multi-factor-authentication-get-started-adfs/adfs.png)</center>
 
 Если в организации создана федерация локальной службы Active Directory со службой Azure Active Directory с помощью служб федерации Active Directory, доступны два варианта использования Многофакторной идентификации Azure.
 

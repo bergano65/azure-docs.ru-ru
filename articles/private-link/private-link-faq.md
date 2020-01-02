@@ -1,6 +1,6 @@
 ---
-title: Azure Private Link frequently asked questions (FAQ)
-description: Learn about Azure Private Link.
+title: Часто задаваемые вопросы о частной ссылке Azure
+description: Сведения о частной ссылке Azure.
 services: private-link
 author: asudbring
 ms.service: private-link
@@ -14,68 +14,68 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74229336"
 ---
-# <a name="azure-private-link-frequently-asked-questions-faq"></a>Azure Private Link frequently asked questions (FAQ)
+# <a name="azure-private-link-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о частной ссылке Azure
 
 ## <a name="private-link"></a>Приватный канал
 
-### <a name="what-is-azure-private-endpoint-and-azure-private-link-service"></a>What is Azure Private Endpoint and Azure Private Link Service?
+### <a name="what-is-azure-private-endpoint-and-azure-private-link-service"></a>Что такое частная конечная точка Azure и служба частной связи Azure?
 
-- **[Azure Private Endpoint](private-endpoint-overview.md)** : Azure Private Endpoint is a network interface that connects you privately and securely to a service powered by Azure Private Link. You can use Private Endpoints to connect to an Azure PaaS service that supports Private Link or to your own Private Link Service.
-- **[Azure Private Link Service](private-link-service-overview.md)** : Azure Private Link service is a service created by a service provider. Currently, a Private Link service can be attached to the frontend IP configuration of a Standard Load Balancer. 
+- **[Частная конечная точка Azure](private-endpoint-overview.md)** . Частная конечная точка Azure — это сетевой интерфейс, который обеспечивает безопасное и надежное подключение к службе с помощью частной связи Azure. Частные конечные точки можно использовать для подключения к службе PaaS Azure, которая поддерживает закрытую ссылку или собственную службу частной связи.
+- Служба **[частной связи Azure](private-link-service-overview.md)** : служба частной связи Azure — это служба, созданная поставщиком услуг. В настоящее время служба частной связи может быть подключена к интерфейсной IP-конфигурации Load Balancer (цен. категория "Стандартный"). 
 
-### <a name="how-is-traffic-being-sent-when-using-private-link"></a>How is traffic being sent when using Private Link?
-Traffic is sent privately using Microsoft backbone. It doesn’t traverse the internet.  
+### <a name="how-is-traffic-being-sent-when-using-private-link"></a>Как отправляется трафик при использовании частной ссылки?
+Трафик отправляется частным образом с помощью магистрали Майкрософт. Он не проходит через Интернет.  
  
-### <a name="what-is-the-difference-between-a-service-endpoints-and-a-private-endpoints"></a>What is the difference between a Service Endpoints and a Private Endpoints?
-- When using Private Endpoints, network access is granted to specific resources behind a given service providing granular segmentation, also traffic can reach the service resource from on premises without using public endpoints.
+### <a name="what-is-the-difference-between-a-service-endpoints-and-a-private-endpoints"></a>В чем разница между конечными точками службы и частными конечными точками?
+- При использовании частных конечных точек доступ к сети предоставляется определенным ресурсам за заданной службой, обеспечивая детальное сегментирование, а трафик может достигать ресурса службы из локальной среды без использования общедоступных конечных точек.
 
-### <a name="what-is-the-relationship-between-private-link-service-and-private-endpoint"></a>What is the relationship between Private Link service and Private Endpoint?
-Private Endpoint provides access to multiple private link resource types, including Azure PaaS services and your own Private Link Service. It is a one-to-many relationship. One Private Link service can receive connections from multiple private endpoints. On the other hand, one private endpoint can only connect to one Private Link service.    
+### <a name="what-is-the-relationship-between-private-link-service-and-private-endpoint"></a>Какова связь между службой частной связи и частной конечной точкой?
+Частная конечная точка предоставляет доступ к нескольким типам ресурсов частной связи, включая службы Azure PaaS и собственную службу частной связи. Это связь «один ко многим». Одна служба частной связи может принимать подключения из нескольких частных конечных точек. С другой стороны, одна частная конечная точка может подключаться только к одной частной службе ссылок.    
 
 ## <a name="private-endpoint"></a>Частная конечная точка 
  
-### <a name="can-i-create-multiple-private-endpoints-in-same-vnet-can-they-connect-to-different-services"></a>Can I create multiple Private Endpoints in same VNet? Can they connect to different Services? 
-Да. You can have multiple private endpoints in same VNet or subnet. They can connect to different services.  
+### <a name="can-i-create-multiple-private-endpoints-in-same-vnet-can-they-connect-to-different-services"></a>Можно ли создать несколько частных конечных точек в одной виртуальной сети? Могут ли они подключаться к разным службам? 
+Да. В одной виртуальной сети или подсетях может быть несколько частных конечных точек. Они могут подключаться к разным службам.  
  
-### <a name="do-i-require-a-dedicated-subnet-for-private-endpoints"></a>Do I require a dedicated subnet for private endpoints? 
-Нет. You don't require a dedicated subnet for private endpoints. You can choose a private endpoint IP from any subnet from the VNet where your service is deployed.  
+### <a name="do-i-require-a-dedicated-subnet-for-private-endpoints"></a>Требуется ли выделенная подсеть для частных конечных точек? 
+Нет Выделенная подсеть для частных конечных точек не требуется. Вы можете выбрать IP-адрес частной конечной точки из любой подсети в виртуальной сети, в которой развернута служба.  
  
-### <a name="can-private-endpoint-connect-to-private-link-service-across-azure-active-directory-tenants"></a>Can Private Endpoint connect to Private Link service across Azure Active Directory Tenants? 
-Да. Private endpoints can connect to Private Link services or Azure PaaS across AD tenants.  
+### <a name="can-private-endpoint-connect-to-private-link-service-across-azure-active-directory-tenants"></a>Может ли частная конечная точка подключаться к службе частной связи между клиентами Azure Active Directory? 
+Да. Частные конечные точки могут подключаться к службам Private Link или Azure PaaS между клиентами AD.  
  
-### <a name="can-private-endpoint-connect-to-azure-paas-resources-across-azure-regions"></a>Can private endpoint connect to Azure PaaS resources across Azure regions?
-Да. Private endpoints can connect to Azure PaaS resources across Azure regions.
+### <a name="can-private-endpoint-connect-to-azure-paas-resources-across-azure-regions"></a>Может ли частная конечная точка подключаться к ресурсам Azure PaaS в регионах Azure?
+Да. Частные конечные точки могут подключаться к ресурсам Azure PaaS в регионах Azure.
 
 ## <a name="private-link-service"></a>Служба "Приватный канал"
  
-### <a name="what-are-the-pre-requisites-for-creating-a-private-link-service"></a>What are the pre-requisites for creating a Private Link service? 
-Your service backends should be in a Virtual network and behind a Standard Load Balancer.
+### <a name="what-are-the-pre-requisites-for-creating-a-private-link-service"></a>Каковы предварительные требования для создания службы частной связи? 
+Она должна находиться в виртуальной сети и находиться за Load Balancer (цен. категория "Стандартный").
  
-### <a name="how-can-i-scale-my-private-link-service"></a>How can I scale my Private Link service? 
-You can scale your Private Link service in a few different ways: 
-- Add Backend VMs to the pool behind your Standard Load Balancer 
-- Add an IP to the Private Link service. We allow up to 8 IPs per Private Link service.  
-- Add new Private Link service to Standard Load Balancer. We allow up to eight Private Link services per load balancer.   
+### <a name="how-can-i-scale-my-private-link-service"></a>Как можно масштабировать службу частной связи? 
+Вы можете масштабировать службу частной связи несколькими способами: 
+- Добавление серверных виртуальных машин в пул за Load Balancer (цен. категория "Стандартный") 
+- Добавьте IP-адрес в службу частной связи. Мы допуским до 8 IP-адресов на службу частных ссылок.  
+- Добавьте новую службу закрытых ссылок в Load Balancer (цен. категория "Стандартный"). Мы допуским до восьми служб частной связи на подсистему балансировки нагрузки.   
 
-### <a name="can-i-connect-my-service-to-multiple-private-endpoints"></a>Can I connect my service to multiple Private Endpoints?
-Да. One Private Link service can receive connections from multiple Private Endpoints. However one Private Endpoint can only connect to one Private Link service.  
+### <a name="can-i-connect-my-service-to-multiple-private-endpoints"></a>Можно ли подключить службу к нескольким частным конечным точкам?
+Да. Одна служба частной связи может принимать подключения из нескольких частных конечных точек. Однако одна частная конечная точка может подключаться только к одной частной службе ссылок.  
  
-### <a name="how-should-i-control-the-exposure-of-my-private-link-service"></a>How should I control the exposure of my Private Link service?
-You can control the exposure using the visibility configuration on Private Link service. Visibility supports three settings:
+### <a name="how-should-i-control-the-exposure-of-my-private-link-service"></a>Как управлять раскрытием службы частной связи?
+Вы можете контролировать экспозицию с помощью конфигурации видимости в службе частной связи. Видимость поддерживает три параметра:
 
-- **None** - Only subscriptions with RBAC access can locate the service. 
-- **Restrictive** - Only subscriptions that are whitelisted and with RBAC access can locate the service. 
-- **All** - Everyone can locate the service. 
+- **Нет** — подписки с доступом RBAC могут определять размещение службы. 
+- Для доступа к службе можно использовать только список разрешений подписки и доступ RBAC. 
+- **ALL — все** пользователи могут размещать службу. 
  
-### <a name="can-i-create-a-private-link-service-with-basic-load-balancer"></a>Can I create a Private Link service with Basic Load Balancer? 
-Нет. Private Link service over a Basic Load Balancer is not supported.
+### <a name="can-i-create-a-private-link-service-with-basic-load-balancer"></a>Можно ли создать службу частной связи с базовым Load Balancer? 
+Нет Служба закрытых ссылок не поддерживает базовый Load Balancer.
  
-### <a name="is-a-dedicated-subnet-required-for-private-link-service"></a>Is a dedicated subnet required for Private Link service? 
-Нет. Private Link service doesn’t require a dedicated subnet. You can choose any subnet in your VNet where your service is deployed.   
+### <a name="is-a-dedicated-subnet-required-for-private-link-service"></a>Требуется ли выделенная подсеть для службы частной связи? 
+Нет Для службы частной связи не требуется выделенная подсеть. Вы можете выбрать любую подсеть в виртуальной сети, в которой развернута служба.   
 
-### <a name="i-am-a-service-provider-using-azure-private-link-do-i-need-to-make-sure-all-my-customers-have-unique-ip-space-and-dont-overlap-with-my-ip-space"></a>I am a service provider using Azure Private Link. Do I need to make sure all my customers have unique IP space and don’t overlap with my IP space? 
-Нет. Azure Private Link provides this functionality for you. Hence, you are not required to have non-overlapping address space with your customer's address space. 
+### <a name="i-am-a-service-provider-using-azure-private-link-do-i-need-to-make-sure-all-my-customers-have-unique-ip-space-and-dont-overlap-with-my-ip-space"></a>Я являюсь поставщиком услуг, используя частную ссылку Azure. Нужно ли, чтобы все мои клиенты имели уникальные IP-пространство и не перекрывались с моим IP-адресом? 
+Нет Частная ссылка Azure предоставляет эту функцию. Таким образом, не обязательно включать в адресное пространство клиента неперекрывающиеся адресные пространства. 
 
-##  <a name="next-steps"></a>Дальнейшие действия
+##  <a name="next-steps"></a>Дополнительная информация
 
-- Learn about [Azure Private Link](private-link-overview.md)
+- Сведения о [частной ссылке Azure](private-link-overview.md)

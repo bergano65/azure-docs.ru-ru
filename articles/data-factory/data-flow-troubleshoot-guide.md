@@ -1,18 +1,20 @@
 ---
-title: Устранение неполадок в потоках данных фабрики данных Azure
+title: Устранение неполадок в потоках данных
 description: Узнайте, как устранять неполадки потока данных в фабрике данных Azure.
 services: data-factory
+ms.author: makromer
 author: kromerm
+manager: anandsub
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 10/08/2019
-ms.author: makromer
-ms.openlocfilehash: 1b2309ec71cb3d43f4e5a39b80db593ab201c614
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.custom: seo-lt-2019
+ms.date: 12/06/2019
+ms.openlocfilehash: b972bbeac419d88afdd257a7fd19587dbaedf0d9
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73721343"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74930173"
 ---
 # <a name="troubleshoot-azure-data-factory-data-flows"></a>Устранение неполадок в потоках данных фабрики данных Azure
 
@@ -84,6 +86,14 @@ ms.locfileid: "73721343"
 
 - **Решение**. в преобразовании «источник», использующем набор данных JSON, разверните узел «Параметры JSON» и включите «один документ».
 
+### <a name="error-message-duplicate-columns-found-in-join"></a>Сообщение об ошибке: в соединении обнаружены дублирующиеся столбцы
+
+- **Симптомы**: преобразование «соединение» привело к тому, что столбцы из левой и правой части содержат дублирующиеся имена столбцов.
+
+- **Причина**: соединяемые потоки имеют общие имена столбцов
+
+- **Решение**. Добавьте трансфорамтион SELECT после объединения и выберите "удалить дублирующиеся столбцы" как для входных, так и для выходных данных.
+
 
 ## <a name="general-troubleshooting-guidance"></a>Общие рекомендации по устранению неполадок
 
@@ -95,7 +105,7 @@ ms.locfileid: "73721343"
 
 Для получения дополнительных сведений об устранении неполадок воспользуйтесь следующими ресурсами:
 
-*  [Блог, посвященный службе "Фабрика данных"](https://azure.microsoft.com/blog/tag/azure-data-factory/)
+*  [Блог фабрики данных](https://azure.microsoft.com/blog/tag/azure-data-factory/)
 *  [Запросы функций фабрики данных](https://feedback.azure.com/forums/270578-data-factory)
 *  [Видеоролики по Azure](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
 *  [Форум MSDN](https://social.msdn.microsoft.com/Forums/home?sort=relevancedesc&brandIgnore=True&searchTerm=data+factory)

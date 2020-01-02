@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 10/28/2019
 ms.author: erhopf
-ms.openlocfilehash: f69c00f9cf787a192c62f12a707927c5c51a1d31
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 7d9a03f5a57473ce651560b261a4cf84b4ca4824
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73504926"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74817868"
 ---
 В этом кратком руководстве будет использоваться [пакет SDK службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для преобразования текста в синтезированную речь в звуковом файле. После выполнения нескольких предварительных требований для синтезирования речи в файл необходимо выполнить всего пять шагов:
 > [!div class="checklist"]

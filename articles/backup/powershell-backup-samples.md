@@ -1,19 +1,15 @@
 ---
-title: Примеры Azure Backup PowerShell
+title: Примеры для PowerShell
 description: В этой статье собраны ссылки на примеры сценариев PowerShell, которые используют службу Azure Backup для резервного копирования и восстановления данных.
-author: dcurwin
-manager: carmonm
-ms.service: backup
 ms.topic: sample
 ms.date: 01/31/2019
-ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: 4283871d17f01a3b70884e898397794ae7e4eb84
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: fc7108c0f785edf9305db09a8f78298018c5e66a
+ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747101"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74171976"
 ---
 # <a name="azure-backup-powershell-samples"></a>Примеры Azure Backup PowerShell
 

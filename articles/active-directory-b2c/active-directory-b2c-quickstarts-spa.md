@@ -1,6 +1,7 @@
 ---
-title: Краткое руководство. Настройка входа в одностраничное приложение с помощью Azure Active Directory B2C
-description: Запуск примера одностраничного приложения, использующего Azure Active Directory B2C для предоставления возможности входа с учетной записью.
+title: Краткое руководство. Настройка входа для одностраничного приложения (SPA)
+titleSuffix: Azure AD B2C
+description: В этом кратком руководстве рассматривается запуск примера одностраничного приложения, использующего Azure Active Directory B2C для предоставления возможности входа с учетной записью.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -10,12 +11,12 @@ ms.topic: quickstart
 ms.date: 09/12/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 22cdfaf1d48c4e93e57f46482eacb66742a6c9d6
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.openlocfilehash: ef6fd46ef51cff9823c93e2297a738f95494f577
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72515702"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74948340"
 ---
 # <a name="quickstart-set-up-sign-in-for-a-single-page-app-using-azure-active-directory-b2c"></a>Краткое руководство. Настройка входа в одностраничное приложение с помощью Azure Active Directory B2C
 
@@ -29,7 +30,7 @@ Azure Active Directory (Azure AD) B2C обеспечивает управлен�
 - [Node.js](https://nodejs.org/en/download/)
 - Учетная запись социальных сетей Facebook, Google или Майкрософт
 - Пример кода из GitHub: [active-directory-b2c-javascript-msal-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp)
-    
+
     Вы можете [скачать ZIP-архив](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp/archive/master.zip) или клонировать репозиторий:
 
     ```

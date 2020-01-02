@@ -1,6 +1,6 @@
 ---
-title: Permissions to repositories
-description: Create a token with permissions scoped to specific repositories in a registry to pull or push images
+title: Разрешения для репозиториев
+description: Создание маркера с разрешениями, ограниченными конкретными репозиториями в реестре для извлечения или отправки изображений
 ms.topic: article
 ms.date: 10/31/2019
 ms.openlocfilehash: cf36a49ffd6c04897e6f44b844f0c813d0992b18
@@ -10,39 +10,39 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/24/2019
 ms.locfileid: "74454911"
 ---
-# <a name="repository-scoped-permissions-in-azure-container-registry"></a>Repository-scoped permissions in Azure Container Registry 
+# <a name="repository-scoped-permissions-in-azure-container-registry"></a>Разрешения уровня репозитория в реестре контейнеров Azure 
 
-Azure Container Registry supports several [authentication options](container-registry-authentication.md) using identities that have [role-based access](container-registry-roles.md) to an entire registry. However, for certain scenarios, you might need to provide access only to specific *repositories* in a registry. 
+Реестр контейнеров Azure поддерживает несколько [вариантов проверки подлинности](container-registry-authentication.md) с помощью удостоверений, имеющих [доступ на основе ролей](container-registry-roles.md) ко всему реестру. Однако в некоторых сценариях может потребоваться предоставить доступ только к определенным *репозиториям* в реестре. 
 
-This article shows how to create and use an access token that has permissions to perform actions on only specific repositories in a registry. With an access token, you can provide users or services with scoped, time-limited access to repositories to pull or push images or perform other actions. 
+В этой статье показано, как создать и использовать маркер доступа, имеющий разрешения на выполнение действий только с конкретными репозиториями в реестре. С помощью маркера доступа можно предоставить пользователям или службам доступ к репозиториям с ограниченным временем по времени, чтобы получать или отправлять изображения или выполнять другие действия. 
 
-See [About repository-scoped permissions](#about-repository-scoped-permissions), later in this article, for background about token concepts and scenarios.
+Дополнительные сведения об основных понятиях и сценариях маркеров см. в разделе Общие [сведения о разрешениях в области репозитория](#about-repository-scoped-permissions)далее в этой статье.
 
 > [!IMPORTANT]
 > Сейчас эта функция доступна в предварительной версии, и применяются [некоторые ограничения](#preview-limitations). Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования][terms-of-use]. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
 
 ## <a name="preview-limitations"></a>Ограничения предварительной версии
 
-* This feature is only available in a **Premium** container registry. For information about registry service tiers and limits, see [Azure Container Registry SKUs](container-registry-skus.md).
-* You can't currently assign repository-scoped permissions to an Azure Active Directory object such as a service principal or managed identity.
+* Эта функция доступна только в реестре контейнеров уровня " **премиум** ". Сведения об уровнях и ограничениях служб реестра см. в статье [номера SKU реестра контейнеров Azure](container-registry-skus.md).
+* В настоящее время невозможно назначить разрешения уровня репозитория для объекта Azure Active Directory, такого как субъект-служба или управляемое удостоверение.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительным требованиям
 
-* **Azure CLI** - This article requires a local installation of the Azure CLI (version 2.0.76 or later). Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
-* **Docker** - To authenticate with the registry, you also need a local Docker installation. На сайте Docker предоставляются инструкции по установке для систем [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms).
-* **Container registry with repositories** - If you don't have one, create a container registry in your Azure subscription. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md). 
+* **Azure CLI** . для работы с этой статьей требуется локальная установка Azure CLI (версия 2.0.76 или более поздняя). Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+* **DOCKER** — для проверки подлинности в реестре также необходима локальная установка DOCKER. На сайте Docker предоставляются инструкции по установке для систем [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms).
+* **Реестр контейнеров с репозиториями** . Если у вас его нет, создайте реестр контейнеров в подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md). 
 
-  For test purposes, [push](container-registry-get-started-docker-cli.md) or [import](container-registry-import-images.md) one or more sample images to the registry. Examples in this article refer to the following images in two repositories: `samples/hello-world:v1` and `samples/nginx:v1`. 
+  В целях тестирования [отправьте](container-registry-get-started-docker-cli.md) или [импортируйте](container-registry-import-images.md) один или несколько образцов изображений в реестр. Примеры в этой статье относятся к следующим изображениям в двух репозиториях: `samples/hello-world:v1` и `samples/nginx:v1`. 
 
 ## <a name="create-an-access-token"></a>Создание маркера доступа
 
-Create a token using the [az acr token create][az-acr-token-create] command. When creating a token, specify one or more repositories and associated actions on each repository, or specify an existing scope map with those settings.
+Создайте маркер с помощью команды [AZ контроля доступа токена Create][az-acr-token-create] . При создании маркера укажите один или несколько репозиториев и связанных действий в каждом репозитории или укажите существующую карту области с этими параметрами.
 
-### <a name="create-access-token-and-specify-repositories"></a>Create access token and specify repositories
+### <a name="create-access-token-and-specify-repositories"></a>Создание маркера доступа и указание репозиториев
 
-The following example creates an access token with permissions to perform `content/write` and `content/read` actions on the `samples/hello-world` repository, and the `content/read` action on the `samples/nginx` repository. By default, the command generates two passwords. 
+В следующем примере создается маркер доступа с разрешениями на выполнение действий `content/write` и `content/read` в репозитории `samples/hello-world`, а также действие `content/read` в репозитории `samples/nginx`. По умолчанию команда создает два пароля. 
 
-This example sets the token status to `enabled` (the default setting), but you can update the token at any time and set the status to `disabled`.
+В этом примере для маркера задается состояние `enabled` (значение по умолчанию), но токен можно обновить в любое время и установить для состояния значение `disabled`.
 
 ```azurecli
 az acr token create --name MyToken --registry myregistry \
@@ -50,9 +50,9 @@ az acr token create --name MyToken --registry myregistry \
   --repository samples/nginx content/read --status enabled
 ```
 
-The output shows details about the token, including generated passwords and scope map. It's recommended to save the passwords in a safe place to use later with `docker login`. The passwords can't be retrieved again but new ones can be generated.
+В выходных данных отображаются сведения о маркере, включая созданные пароли и карту области. Рекомендуется сохранять пароли в надежном месте для последующего использования с `docker login`. Невозможно снова получить пароли, но можно создать новые.
 
-The output also shows that a scope map is automatically created, named `MyToken-scope-map`. You can use the scope map to apply the same repository actions to other tokens. Or, update the scope map later to change the token permissions.
+Выходные данные также показывают, что автоматически создается таблица областей с именем `MyToken-scope-map`. Карту области можно использовать для применения одних и тех же действий репозитория к другим токенам. Или обновите карту области позже, чтобы изменить разрешения маркера.
 
 ```console
 {
@@ -85,11 +85,11 @@ The output also shows that a scope map is automatically created, named `MyToken-
   "type": "Microsoft.ContainerRegistry/registries/tokens"
 ```
 
-### <a name="create-a-scope-map-and-associated-token"></a>Create a scope map and associated token
+### <a name="create-a-scope-map-and-associated-token"></a>Создание сопоставления области и связанного токена
 
-Alternatively, specify a scope map with repositories and associated actions when creating a token. To create a scope map, use the [az acr scope-map create][az-acr-scope-map-create] command.
+Кроме того, можно указать карту области с репозиториями и связанными действиями при создании маркера. Чтобы создать карту области, используйте команду [AZ контроля доступа Scope-Map Create][az-acr-scope-map-create] .
 
-The following example command creates a scope map with the same permissions used in the previous example. It allows `content/write` and `content/read` actions on the `samples/hello-world` repository, and the `content/read` action on the `samples/nginx` repository:
+В следующем примере команда создает карту области с теми же разрешениями, которые используются в предыдущем примере. Это позволяет выполнять действия `content/write` и `content/read` в репозитории `samples/hello-world`, а также действие `content/read` в репозитории `samples/nginx`.
 
 ```azurecli
 az acr scope-map create --name MyScopeMap --registry myregistry \
@@ -116,21 +116,21 @@ az acr scope-map create --name MyScopeMap --registry myregistry \
   "type": "Microsoft.ContainerRegistry/registries/scopeMaps"
 ```
 
-Run [az acr token create][az-acr-token-create] to create a token associated with the *MyScopeMap* scope map. By default, the command generates two passwords. This example sets the token status to `enabled` (the default setting), but you can update the token at any time and set the status to `disabled`.
+Выполните команду [AZ контроля доступа токена Create][az-acr-token-create] , чтобы создать маркер, связанный с картой области *мископемап* . По умолчанию команда создает два пароля. В этом примере для маркера задается состояние `enabled` (значение по умолчанию), но токен можно обновить в любое время и установить для состояния значение `disabled`.
 
 ```azurecli
 az acr token create --name MyToken --registry myregistry --scope-map MyScopeMap --status enabled
 ```
 
-The output shows details about the token, including generated passwords and the scope map you applied. It's recommended to save the passwords in a safe place to use later with `docker login`. The passwords can't be retrieved again but new ones can be generated.
+В выходных данных отображаются сведения о маркере, включая созданные пароли и применяемую карту области. Рекомендуется сохранять пароли в надежном месте для последующего использования с `docker login`. Невозможно снова получить пароли, но можно создать новые.
 
-## <a name="generate-passwords-for-token"></a>Generate passwords for token
+## <a name="generate-passwords-for-token"></a>Создание паролей для токена
 
-If passwords were created when you created the token, proceed to [Authenticate with registry](#authenticate-using-token).
+Если при создании маркера были созданы пароли, перейдите к [разделу Проверка подлинности с помощью реестра](#authenticate-using-token).
 
-If you don't have a token password, or you want to generate new passwords, run the [az acr token credential generate][az-acr-token-credential-generate] command.
+Если у вас нет пароля маркера или вы хотите создать новые пароли, выполните команду [AZ контроля учетных данных маркера][az-acr-token-credential-generate] .
 
-The following example generates a new password for the token you created, with an expiration period of 30 days. It stores the password in the environment variable TOKEN_PWD. This example is formatted for the bash shell.
+В следующем примере создается новый пароль для созданного маркера с периодом действия 30 дней. Пароль сохраняется в переменной среды TOKEN_PWD. Этот пример отформатирован для оболочки bash.
 
 ```azurecli
 TOKEN_PWD=$(az acr token credential generate \
@@ -138,9 +138,9 @@ TOKEN_PWD=$(az acr token credential generate \
   --password1 --query 'passwords[0].value' --output tsv)
 ```
 
-## <a name="authenticate-using-token"></a>Authenticate using token
+## <a name="authenticate-using-token"></a>Проверка подлинности с помощью токена
 
-Run `docker login` to authenticate with the registry using the token credentials. Enter the token name as the user name and provide one of its passwords. The following example is formatted for the bash shell, and provides the values using environment variables.
+Запустите `docker login` для проверки подлинности в реестре с помощью учетных данных маркера. Введите имя маркера в качестве имени пользователя и укажите один из его паролей. Следующий пример форматируется для оболочки bash и предоставляет значения с помощью переменных среды.
 
 ```bash
 TOKEN_NAME=MyToken
@@ -149,22 +149,22 @@ TOKEN_PWD=<token password>
 echo $TOKEN_PWD | docker login --username $TOKEN_NAME --password-stdin myregistry.azurecr.io
 ```
 
-Output should show successful authentication:
+Выходные данные должны показывать успешную проверку подлинности:
 
 ```console
 Login Succeeded
 ```
 
-## <a name="verify-scoped-access"></a>Verify scoped access
+## <a name="verify-scoped-access"></a>Проверка доступа с областью действия
 
-You can verify that the token provides scoped permissions to the repositories in the registry. In this example, the following `docker pull` commands complete successfully to pull images available in the `samples/hello-world` and `samples/nginx` repositories:
+Вы можете убедиться, что маркер предоставляет доступ к репозиториям в реестре с заданной областью. В этом примере следующие `docker pull` команды успешно выполняются для извлечения образов, доступных в репозиториях `samples/hello-world` и `samples/nginx`:
 
 ```console
 docker pull myregistry.azurecr.io/samples/hello-world:v1
 docker pull myregistry.azurecr.io/samples/nginx:v1
 ```
 
-Because the example token allows the `content/write` action only on the `samples/hello-world` repository, `docker push` succeeds to that repository but fails for `samples/nginx`:
+Так как пример маркера разрешает действие `content/write` только в репозитории `samples/hello-world`, `docker push` завершается успешно в этом репозитории, но завершается сбоем для `samples/nginx`:
 
 ```console
 # docker push succeeds
@@ -174,90 +174,90 @@ docker pull myregistry.azurecr.io/samples/hello-world:v1
 docker pull myregistry.azurecr.io/samples/nginx:v1
 ```
 
-## <a name="update-scope-map-and-token"></a>Update scope map and token
+## <a name="update-scope-map-and-token"></a>Обновить карту области и токен
 
-To update token permissions, update the permissions in the associated scope map, using [az acr scope-map update][az-acr-scope-map-update]. For example, to update *MyScopeMap* to remove the `content/write` action on the `samples/hello-world` repository:
+Чтобы обновить разрешения маркера, обновите разрешения в соответствующей карте области с помощью команды [AZ запись контроля доступа — обновление схемы][az-acr-scope-map-update]. Например, чтобы обновить *мископемап* для удаления действия `content/write` в репозитории `samples/hello-world`:
 
 ```azurecli
 az acr scope-map update --name MyScopeMap --registry myregistry \
   --remove samples/hello-world content/write
 ```
 
-If the scope map is associated with more than one token, the command updates the permission of all associated tokens.
+Если схема области связана с несколькими маркерами, команда обновляет разрешение всех связанных маркеров.
 
-If you want to update a token with a different scope map, run [az acr token update][az-acr-token-update]. Пример.
+Если вы хотите обновить маркер с другой картой области, выполните команду AZ запись [контроля обновления токена][az-acr-token-update]. Например,
 
 ```azurecli
 az acr token update --name MyToken --registry myregistry \
   --scope-map MyNewScopeMap
 ```
 
-After updating a token, or a scope map associated with a token, the permission changes take effect at the next `docker login` or other authentication using the token.
+После обновления маркера или сопоставления области, связанного с маркером, изменения разрешений вступают в силу при следующей `docker login` или другой проверке подлинности с помощью маркера.
 
-After updating a token, you might want to generate new passwords to access the registry. Run [az acr token credential generate][az-acr-token-credential-generate]. Пример.
+После обновления маркера может потребоваться создать новые пароли для доступа к реестру. Выполните команду [AZ запись контроля учетных данных маркера][az-acr-token-credential-generate]. Например,
 
 ```azurecli
 az acr token credential generate \
   --name MyToken --registry myregistry --days 30
 ```
 
-## <a name="about-repository-scoped-permissions"></a>About repository-scoped permissions
+## <a name="about-repository-scoped-permissions"></a>О разрешениях с областью действия репозитория
 
-### <a name="concepts"></a>Концепции
+### <a name="concepts"></a>Основные понятия
 
-To configure repository-scoped permissions, you create an *access token* and an associated *scope map* using commands in the Azure CLI.
+Чтобы настроить разрешения в пределах репозитория, создайте *маркер доступа* и связанную с ним *карту области* с помощью команд в Azure CLI.
 
-* An **access token** is a credential used with a password to authenticate with the registry. Associated with each token are permitted *actions* scoped to one or more repositories. You can set an expiration time for each token. 
+* **Маркер доступа** — это учетные данные, используемые с паролем для проверки подлинности в реестре. Для каждого маркера разрешены *действия* , ограниченные одним или несколькими репозиториями. Для каждого токена можно задать срок действия. 
 
-* **Actions** on each specified repository include one or more of the following.
+* **Действия** с каждым из указанных репозиториев включают в себя один или несколько следующих элементов.
 
-  |Действия  |Описание  |
+  |Действие  |ОПИСАНИЕ  |
   |---------|---------|
-  |`content/read`     |  Read data from the repository. For example, pull an artifact.  |
-  |`metadata/read`    | Read metadata from the repository. For example, list tags or show manifest metadata.   |
-  |`content/write`     |  Write data to the repository. Use with `content/read` to push an artifact.    |
-  |`metadata/write`     |  Write metadata to the repository. For example, update manifest attributes.  |
-  |`content/delete`    | Remove data from the repository. For example, delete a repository or a manifest. |
+  |`content/read`     |  Чтение данных из репозитория. Например, извлекать артефакт.  |
+  |`metadata/read`    | Чтение метаданных из репозитория. Например, перечислите теги или отобразите метаданные манифеста.   |
+  |`content/write`     |  Запись данных в репозиторий. Используйте with `content/read` для отправки артефакта.    |
+  |`metadata/write`     |  Запись метаданных в репозиторий. Например, обновите атрибуты манифеста.  |
+  |`content/delete`    | Удалите данные из репозитория. Например, удалите репозиторий или манифест. |
 
-* A **scope map** is a registry object that groups repository permissions you apply to a token, or can reapply to other tokens. If you don't apply a scope map when creating a token, a scope map is automatically created for you, to save the permission settings. 
+* **Map области** — это объект реестра, который группирует разрешения репозитория, применяемые к маркеру, или может повторно применяться к другим токенам. Если вы не примените карту области при создании маркера, автоматически создается таблица области, чтобы сохранить параметры разрешений. 
 
-  A scope map helps you configure multiple users with identical access to a set of repositories. Azure Container Registry also provides system-defined scope maps that you can apply when creating access tokens.
+  Схема области позволяет настроить несколько пользователей с одинаковым доступом к набору репозиториев. Реестр контейнеров Azure также предоставляет определенные системой карты областей, которые можно применять при создании маркеров доступа.
 
-The following image summarizes the relationship between tokens and scope maps. 
+На следующем рисунке показана сводка связей между токенами и картами области. 
 
-![Registry scope maps and tokens](media/container-registry-repository-scoped-permissions/token-scope-map-concepts.png)
+![Карты и маркеры области реестра](media/container-registry-repository-scoped-permissions/token-scope-map-concepts.png)
 
 ### <a name="scenarios"></a>Сценарии
 
-Scenarios for using an access token include:
+Ниже перечислены сценарии использования маркера доступа.
 
-* Provide IoT devices with individual tokens to pull an image from a repository
-* Provide an external organization with permissions to a specific repository 
-* Limit repository access to specific user groups in your organization. For example, provide write and read access to developers who build images that target specific repositories, and read access to teams that deploy from those repositories.
+* Предоставление устройств Интернета вещей отдельным маркерам для извлечения образа из репозитория
+* Предоставление внешней организации с разрешениями для определенного репозитория 
+* Ограничьте доступ к репозиторию для конкретных групп пользователей в вашей организации. Например, предоставьте доступ на запись и чтение для разработчиков, создающих образы, предназначенные для конкретных репозиториев, и доступ для чтения к командам, которые развертываются из этих репозиториев.
 
-### <a name="authentication-using-token"></a>Authentication using token
+### <a name="authentication-using-token"></a>Проверка подлинности с помощью токена
 
-Use a token name as a user name and one of its associated passwords to authenticate with the target registry. The authentication method depends on the configured actions.
+Используйте имя маркера в качестве имени пользователя и одного из его связанных паролей для проверки подлинности в целевом реестре. Метод проверки подлинности зависит от настроенных действий.
 
-### <a name="contentread-or-contentwrite"></a>content/read or content/write
+### <a name="contentread-or-contentwrite"></a>содержимое, чтение, содержимое или запись
 
-If the token permits only `content/read` or `content/write` actions, provide token credentials in either of the following authentication flows:
+Если маркер допускает только `content/read` или `content/write` действия, укажите учетные данные маркера в одном из следующих потоков проверки подлинности:
 
-* Authenticate with Docker using `docker login`
-* Authenticate with the registry using the [az acr login][az-acr-login] command in the Azure CLI
+* Проверка подлинности с помощью DOCKER с использованием `docker login`
+* Проверяйте подлинность с помощью реестра, выполнив команду [AZ контроля учетных записей][az-acr-login] в Azure CLI
 
-Following authentication, the token permits the configured actions on the scoped repository or repositories. For example, if the token permits the `content/read` action on a repository, `docker pull` operations are permitted on images in that repository.
+После проверки подлинности маркер разрешает настроенные действия в репозитории или репозиториях с заданной областью. Например, если маркер разрешает `content/read` действие в репозитории, `docker pull` операции разрешены для образов в этом репозитории.
 
-#### <a name="metadataread-metadatawrite-or-contentdelete"></a>metadata/read, metadata/write, or content/delete
+#### <a name="metadataread-metadatawrite-or-contentdelete"></a>метаданные, чтение, метаданные, запись, содержимое или удаление
 
-If the token permits `metadata/read`, `metadata/write`, or `content/delete` actions on a repository, token credentials must be provided as parameters with the related [az acr repository][az-acr-repository] commands in the Azure CLI.
+Если маркер разрешает `metadata/read`, `metadata/write`или `content/delete` действиям в репозитории, учетные данные маркера должны быть предоставлены в качестве параметров с помощью связанных команд [AZ контроля][az-acr-repository] доступа в Azure CLI.
 
-For example, if `metadata/read` actions are permitted on a repository, pass the token credentials when running the [az acr repository show-tags][az-acr-repository-show-tags] command to list tags.
+Например, если в репозитории разрешены `metadata/read` действия, передайте учетные данные маркера при выполнении команды AZ запись в [репозитории для просмотра][az-acr-repository-show-tags] тегов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-* To manage scope maps and access tokens, use additional commands in the [az acr scope-map][az-acr-scope-map] and [az acr token][az-acr-token] command groups.
-* See the [authentication overview](container-registry-authentication.md) for scenarios to authenticate with an Azure container registry using an admin account or an Azure Active Directory identity.
+* Чтобы управлять картами области и маркерами доступа, используйте дополнительные команды в группах команд AZ запись в [области видимости записей: Map][az-acr-scope-map] и [AZ][az-acr-token] .
+* В разделе [Общие сведения о проверке подлинности](container-registry-authentication.md) приведены сценарии для проверки подлинности в реестре контейнеров Azure с помощью учетной записи администратора или удостоверения Azure Active Directory.
 
 
 <!-- LINKS - External -->

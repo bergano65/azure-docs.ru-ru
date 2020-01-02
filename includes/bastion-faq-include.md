@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/15/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: b4e479405a9606a8353785828d0c9c94ef8c32ed
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: d31e30991056cc891e63347a2c88e7fc4caeab28
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73850468"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74875473"
 ---
 ### <a name="regions"></a>Какие регионы доступны?
 
@@ -55,3 +55,11 @@ ms.locfileid: "73850468"
 
 В настоящее время служба "Бастион" Azure поддерживает в виртуальной машине раскладку клавиатуры en-us-qwerty.  Сейчас проводятся работы по реализации поддержки других языковых стандартов.
 
+### <a name="udr"></a>Поддерживаются ли определяемые пользователем маршруты в подсети Бастиона Azure?
+
+№ Определяемые пользователем маршруты не поддерживаются в подсети Бастиона Azure.
+В сценариях, в которых Бастион Azure и Брандмауэр Azure или виртуальный сетевой модуль (NVA) находятся в одной виртуальной сети, не нужно принудительно перенаправлять трафик из подсети Бастиона Azure в Брандмауэр Azure, так как обмен данными между Бастионом Azure и виртуальными машинами выполняется по частному каналу. Дополнительные сведения см. в статье [Accessing VMs behind Azure Firewall with Bastion](https://azure.microsoft.com/blog/accessing-virtual-machines-behind-azure-firewall-with-azure-bastion/) (Доступ к виртуальным машинам за Брандмауэром Azure с помощью Бастиона).
+
+### <a name="filetransfer"></a>Поддерживается ли перенос файлов с помощью сеанса RDP Бастиона Azure?
+
+Мы работаем над добавлением новых функций. Сейчас перенос файлов не поддерживается, но мы планируем реализовать эту возможность. Вы можете поделиться своими отзывами о новых возможностях на странице, посвященной [Бастиону Azure](https://feedback.azure.com/forums/217313-networking?category_id=367303).

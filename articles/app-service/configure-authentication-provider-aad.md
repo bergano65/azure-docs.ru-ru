@@ -1,25 +1,16 @@
 ---
-title: Настройка аутентификации Azure Active Directory в Службе приложений Azure
-description: Узнайте, как настроить проверку подлинности Azure Active Directory для приложения службы приложений.
-author: cephalin
-services: app-service
-documentationcenter: ''
-manager: gwallace
-editor: ''
+title: Настройка проверки подлинности Azure AD
+description: Узнайте, как настроить проверку подлинности Azure Active Directory в качестве поставщика удостоверений для приложения службы приложений.
 ms.assetid: 6ec6a46c-bce4-47aa-b8a3-e133baef22eb
-ms.service: app-service
-ms.workload: web,mobile
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 09/03/2019
-ms.author: cephalin
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 6812f99d8433ef318eca37eb2615d43f4749e944
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: b833604ce18873e22c22990a26dcbae1d9928628
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73886189"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74670887"
 ---
 # <a name="configure-your-app-service-app-to-use-azure-ad-login"></a>Настройка приложения службы приложений для использования имени входа Azure AD
 
@@ -67,7 +58,7 @@ ms.locfileid: "73886189"
 
 При настройке приложения службы приложений вам потребуются следующие сведения:
 
-- идентификатор клиента
+- Идентификатор клиента
 - Tenant ID
 - Секрет клиента (необязательно)
 - URI идентификатора приложения
@@ -101,9 +92,9 @@ ms.locfileid: "73886189"
 1. В разделе Поставщики проверки подлинности выберите **Azure Active Directory**.
 1. В **режиме управления**выберите **Дополнительно** и настройте проверку подлинности службы приложений в соответствии со следующей таблицей.
 
-    |Поле|ОПИСАНИЕ|
+    |Поле|Описание|
     |-|-|
-    |идентификатор клиента| Используйте **идентификатор приложения (клиента)** для регистрации приложения. |
+    |Идентификатор клиента| Используйте **идентификатор приложения (клиента)** для регистрации приложения. |
     |Идентификатор издателя| Используйте `https://login.microsoftonline.com/<tenant-id>`и замените *\<идентификатор клиента >* на **идентификатор каталога (клиента)** регистрации приложения. |
     |Секрет клиента (необязательно)| Используйте секрет клиента, созданный при регистрации приложения.|
     |Разрешенные аудитории маркеров| Если это облачное или серверное приложение, и вы хотите разрешить токены проверки подлинности из веб-приложения, добавьте **URI идентификатора приложения** веб-приложения здесь. |
@@ -152,5 +143,5 @@ ms.locfileid: "73886189"
 
 <!-- URLs. -->
 
-[портал Azure]: https://portal.azure.com/
+[Портал Azure]: https://portal.azure.com/
 [alternative method]:#advanced

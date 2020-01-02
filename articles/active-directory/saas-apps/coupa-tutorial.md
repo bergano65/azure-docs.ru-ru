@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 031a88bb8a8832fbe7acb124436cce6aaeb02e21
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 709f3a5b66db660ade482660cd9b3930ff0b7141
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73159316"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227653"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-coupa"></a>Руководство по Интеграция Azure Active Directory с Coupa
 
@@ -241,7 +241,7 @@ ms.locfileid: "73159316"
     >
 
 >[!NOTE]
->Вы можете использовать любые другие средства создания учетной записи пользователя Coupa или API, предоставляемые Coupa для подготовки учетных записей пользователя AAD.
+>Вы можете использовать любые другие средства создания учетной записи пользователя Coupa или API, предоставляемые Coupa, для подготовки учетных записей пользователя AAD.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 

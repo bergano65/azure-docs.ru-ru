@@ -1,5 +1,5 @@
 ---
-title: Однотенантные и мультитенантные приложения в Azure Active Directory
+title: Приложения с одним и несколькими клиентами в Azure AD
 titleSuffix: Microsoft identity platform
 description: Узнайте о компонентах и различиях между приложениями в одно- и мультитенантном режимах в Azure AD.
 services: active-directory
@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: justhu
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6aa8f63b6e7355ae387a321acf77683fac22e028
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: b0cef2ed24eb242629aa5547391c0d2a27344d8b
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72803651"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74919486"
 ---
 # <a name="tenancy-in-azure-active-directory"></a>Аренда в Azure Active Directory
 

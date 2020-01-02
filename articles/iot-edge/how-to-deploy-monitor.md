@@ -1,5 +1,5 @@
 ---
-title: Создание задачи автоматического развертывания на портале Azure — Azure IoT Edge | Документация Майкрософт
+title: Развертывание модулей в масштабе в портал Azure Azure IoT Edge
 description: Создание задач автоматического развертывания для групп устройств IoT Edge с помощью портала Azure
 keywords: ''
 author: kgremban
@@ -9,22 +9,22 @@ ms.date: 06/17/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 286bab7b7fdbe42190c32dabb42c59d6fc094b2a
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 068845bf8cda7ce6abf11eefad0ed176688b34c5
+ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74457366"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74665854"
 ---
 # <a name="deploy-and-monitor-iot-edge-modules-at-scale-using-the-azure-portal"></a>Развертывание и мониторинг большого числа модулей IoT Edge с помощью портала Azure
 
-Create an **IoT Edge automatic deployment** in the Azure portal to manage ongoing deployments for many devices at once. Automatic deployments for IoT Edge are part of the [automatic device management](/azure/iot-hub/iot-hub-automatic-device-management) feature of IoT Hub. Deployments are dynamic processes that enable you to deploy multiple modules to multiple devices, track the status and health of the modules, and make changes when necessary. 
+Создайте **IOT Edge автоматическое развертывание** в портал Azure, чтобы управлять текущими развертываниями для нескольких устройств одновременно. Автоматические развертывания для IoT Edge входят в функцию [автоматического управления устройствами](/azure/iot-hub/iot-hub-automatic-device-management) в центре Интернета вещей. Развертывания — это динамические процессы, которые позволяют развертывать несколько модулей на нескольких устройствах, контролировать состояние и работоспособность модулей, а также вносить изменения при необходимости. 
 
-For more information, see [Understand IoT Edge automatic deployments for single devices or at scale](module-deployment-monitoring.md).
+Дополнительные сведения см. в статье [IOT Edge автоматическое развертывание для отдельных устройств или в масштабе](module-deployment-monitoring.md).
 
 ## <a name="identify-devices-using-tags"></a>Определение устройств с помощью тегов
 
-Перед созданием развертывания необходимо указать устройства, на которые вы хотите повлиять. Azure IoT Edge определяет устройства с помощью **тегов** в двойнике устройства. Each device can have multiple tags that you define in any way that makes sense for your solution. Например, при управлении кампусом интеллектуальных зданий можно добавлять к устройству следующие теги:
+Перед созданием развертывания необходимо указать устройства, на которые вы хотите повлиять. Azure IoT Edge определяет устройства с помощью **тегов** в двойнике устройства. Каждое устройство может иметь несколько тегов, которые определяются любым способом, имеющим смысл для вашего решения. Например, при управлении кампусом интеллектуальных зданий можно добавлять к устройству следующие теги:
 
 ```json
 "tags":{
@@ -55,21 +55,21 @@ For more information, see [Understand IoT Edge automatic deployments for single 
 
 ### <a name="step-2-add-modules-optional"></a>Шаг 2. Добавление модулей (необязательно)
 
-You can add up to 20 modules to a deployment. 
+В развертывание можно добавить до 20 модулей. 
 
-If you create a deployment with no modules, it removes any current modules from the target devices. 
+Если вы создаете развертывание без модулей, оно удаляет все текущие модули с целевых устройств. 
 
 Чтобы добавить модуль из Azure Stream Analytics, сделайте следующее:
 
 1. В разделе **Модули развертывания** на этой странице щелкните **Добавить**.
 1. Выберите модуль **Azure Stream Analytics**.
 1. В раскрывающемся меню выберите свою **подписку**.
-1. Choose your IoT **Edge job** from the drop-down menu.
+1. Выберите задание IoT **ребра** в раскрывающемся меню.
 1. Выберите **Сохранить**, чтобы добавить модуль в развертывание. 
 
 Чтобы добавить пользовательский код в качестве модуля или вручную добавить модуль службы Azure, сделайте следующее:
 
-1. В разделе **Параметры реестра контейнеров** на этой странице введите имена и учетные данные всех реестров частных контейнеров, которые содержат образы модулей для этого развертывания. The IoT Edge Agent will report error 500 if it can't find the container registry credential for a Docker image.
+1. В разделе **Параметры реестра контейнеров** на этой странице введите имена и учетные данные всех реестров частных контейнеров, которые содержат образы модулей для этого развертывания. Агент IoT Edge сообщит об ошибке 500, если не удается найти учетные данные реестра контейнеров для образа DOCKER.
 1. В разделе **Модули развертывания** на этой странице щелкните **Добавить**.
 1. Выберите **Модуль IoT Edge**.
 1. Укажите **имя** модуля.
@@ -77,14 +77,14 @@ If you create a deployment with no modules, it removes any current modules from 
 1. Укажите любые **параметры создания контейнера**, которые следует передать в контейнер. Дополнительные сведения см. в статье [о создании Docker](https://docs.docker.com/engine/reference/commandline/create/).
 1. В раскрывающемся меню выберите **политику перезагрузки**. Выберите один из следующих параметров: 
    * **Всегда.** Модуль всегда перезапускается, если он завершил работу по любой причине.
-   * **never** - The module never restarts if it shuts down for any reason.
-   * **on-failure** - The module restarts if it crashes, but not if it shuts down cleanly. 
-   * **on-unhealthy** - The module restarts if it crashes or returns an unhealthy status. Реализация функции состояния работоспособности зависит от модуля. 
+   * **никогда** — модуль никогда не перезагружается, если по какой-либо причине завершается.
+   * **On-Failure** — модуль перезапускается, если он завершается сбоем, но не в случае чистого завершения работы. 
+   * **при неработоспособном** состоянии модуль перезапускается, если он аварийно завершает работу или возвращает неработоспособное состояние. Реализация функции состояния работоспособности зависит от модуля. 
 1. В раскрывающемся меню выберите **требуемое состояние** модуля. Выберите один из следующих параметров:
-   * **running** - Running is the default option. Модуль начнет выполняться сразу после развертывания.
-   * **stopped** - After being deployed, the module will remain idle until called upon to start by you or another module.
+   * **выполнение** — это параметр по умолчанию. Модуль начнет выполняться сразу после развертывания.
+   * **остановлено** — после развертывания модуль остается неактивным до тех пор, пока не будет вызван для запуска пользователем или другим модулем.
 1. Выберите **Установить требуемые свойства двойника модуля**, если необходимо добавить теги или другие свойства в двойник модуля.
-1. Введите **Переменные среды** для этого модуля. Environment variables provide configuration information to a module.
+1. Введите **Переменные среды** для этого модуля. Переменные среды предоставляют сведения о конфигурации для модуля.
 1. Выберите **Сохранить**, чтобы добавить модуль в развертывание. 
 
 Настроив все модули для развертывания, нажмите кнопку **Далее**, чтобы перейти к шагу 3.
@@ -95,7 +95,7 @@ If you create a deployment with no modules, it removes any current modules from 
 
 Добавьте в маршруты информацию из раздела [Объявление маршрутов](module-composition.md#declare-routes), затем щелкните **Далее**, чтобы перейти к разделу проверки.
 
-### <a name="step-4-specify-metrics-optional"></a>Step 4: Specify Metrics (optional)
+### <a name="step-4-specify-metrics-optional"></a>Шаг 4. Указание метрик (необязательно)
 
 Метрики предоставляют общее количество различных состояний, которые устройство может передавать в результате применения содержимого конфигурации.
 
@@ -110,17 +110,17 @@ If you create a deployment with no modules, it removes any current modules from 
      WHERE properties.reported.lastDesiredStatus.code = 200
    ```
 
-### <a name="step-5-target-devices"></a>Step 5: Target Devices
+### <a name="step-5-target-devices"></a>Шаг 5. целевые устройства
 
 С помощью свойств тегов ваших устройств можно назначить конкретные устройства, к которым будет применяться это развертывание. 
 
-Так как несколько развертываний могут предназначаться для одного устройства, каждому развертыванию необходимо присвоить номер приоритета. If there's ever a conflict, the deployment with the highest priority (larger values indicate higher priority) wins. Когда оба развертывания имеют одинаковый номер приоритета, побеждает то, которое было создано недавно. 
+Так как несколько развертываний могут предназначаться для одного устройства, каждому развертыванию необходимо присвоить номер приоритета. Если возникает конфликт, развертывание с наивысшим приоритетом (более крупные значения указывает более высокий приоритет) WINS. Когда оба развертывания имеют одинаковый номер приоритета, побеждает то, которое было создано недавно. 
 
 1. Введите положительное целое число для **приоритета** развертывания.
-1. Введите **условие назначения**, чтобы определить, для каких устройств будет предназначено это развертывание. The condition is based on device twin tags or device twin reported properties and should match the expression format. For example, `tags.environment='test'` or `properties.reported.devicemodel='4000x'`. 
+1. Введите **условие назначения**, чтобы определить, для каких устройств будет предназначено это развертывание. Условие основано на тегах двойникаа устройства или сообщаемых свойствах двойникаа устройства и должно соответствовать формату выражения. Например, `tags.environment='test'` или `properties.reported.devicemodel='4000x'`. 
 1. Нажмите кнопку **Далее**, чтобы перейти к последнему шагу.
 
-### <a name="step-6-review-deployment"></a>Step 6: Review Deployment
+### <a name="step-6-review-deployment"></a>Шаг 6. Проверка развертывания
 
 Просмотрите сведения о развертывании, а затем выберите **Отправить**.
 
@@ -128,11 +128,11 @@ If you create a deployment with no modules, it removes any current modules from 
 
 Azure Marketplace — это интернет-магазин приложений и служб, где вы можете просматривать разнообразные корпоративные приложения и решения, сертифицированные и оптимизированные для работы в Azure, включая [модули IoT Edge](https://azuremarketplace.microsoft.com/marketplace/apps/category/internet-of-things?page=1&subcategories=iot-edge-modules). Доступ к Azure Marketplace возможен также с помощью портала Azure в разделе **Создать ресурс**.
 
-You can deploy an IoT Edge module from either Azure Marketplace or the Azure portal:
+Модуль IoT Edge можно развернуть из Azure Marketplace или портал Azure.
 
 1. Найдите модуль и начните процесс развертывания.
 
-   * Azure portal: Find a module and select **Create**.
+   * Портал Azure: Найдите модуль и выберите **создать**.
 
    * Azure Marketplace:
 
@@ -157,13 +157,13 @@ You can deploy an IoT Edge module from either Azure Marketplace or the Azure por
 
    ![Просмотр развертываний IoT Edge](./media/how-to-deploy-monitor/iot-edge-deployments.png)
 
-1. Изучите список развертывания. For each deployment, you can view the following details:
+1. Изучите список развертывания. Для каждого развертывания можно просмотреть следующие сведения:
    * **Идентификатор**. Имя развертывания.
    * **Target condition** (Условие назначения). Тег, используемый для определения целевых устройств.
    * **Приоритет.** Номер приоритета, назначенный для развертывания.
    * **Системные метрики** - **Целевые устройства**. Число двойников устройств в Центре Интернета вещей, которые соответствуют заданному условию. **Применено**. Число устройств, к двойникам которых уже применено содержимое этого развертывания в Центре Интернета вещей. 
-   * **Device metrics** - the number of IoT Edge devices in the deployment reporting success or errors from the IoT Edge client runtime.
-   * **Custom metrics** - the number of IoT Edge devices in the deployment reporting data for any metrics that you defined for the deployment.
+   * **Метрики устройства** — количество IOT Edge устройств в развертывании, сообщающих об успешном выполнении или ошибках из среды выполнения клиента IOT Edge.
+   * **Пользовательские метрики** — количество IOT Edgeных устройств в данных отчетов о развертывании для всех метрик, определенных для развертывания.
    * **Время создания.** Метка времени, когда было создано развертывание. Метка времени используется, чтобы разорвать связи, если два развертывания имеют одинаковый приоритет. 
 1. Выберите развертывание, которое вы хотите отслеживать.  
 1. Изучите сведения о развертывании. Вы можете использовать вкладки для просмотра сведений о развертывании.
@@ -207,8 +207,8 @@ You can deploy an IoT Edge module from either Azure Marketplace or the Azure por
 
 1. Установите флажок, чтобы выбрать развертывание, которое необходимо удалить. 
 1. Нажмите кнопку **Удалить**.
-1. Появится запрос с сообщением о том, что это действие удалит развертывание и будут возвращены предыдущие состояния всех устройств.  This means that a deployment with a lower priority will apply.  If no other deployment is targeted, no modules will be removed. Чтобы удалить все модули из устройства, создайте развертывание без модулей и разверните его на этом устройстве. Select **Yes** to continue. 
+1. Появится запрос с сообщением о том, что это действие удалит развертывание и будут возвращены предыдущие состояния всех устройств.  Это означает, что будет применено развертывание с более низким приоритетом.  Если другие развертывания не предназначены, модули не удаляются. Чтобы удалить все модули из устройства, создайте развертывание без модулей и разверните его на этом устройстве. Нажмите кнопку **Да** , чтобы продолжить. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Learn more about [Deploying modules to IoT Edge devices](module-deployment-monitoring.md).
+Дополнительные сведения о [развертывании модулей на IOT Edge устройствах](module-deployment-monitoring.md).

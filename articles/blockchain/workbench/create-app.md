@@ -1,23 +1,17 @@
 ---
 title: Создание блокчейн-приложения в Azure Blockchain Workbench
-description: Руководство по созданию блокчейн-приложения в Azure Blockchain Workbench (предварительная версия).
-services: azure-blockchain
-keywords: ''
-author: PatAltimore
-ms.author: patricka
+description: Учебник по созданию блокчейн-приложения в Azure Blockchain Workbench (предварительная версия).
 ms.date: 10/14/2019
 ms.topic: tutorial
-ms.service: azure-blockchain
 ms.reviewer: brendal
-manager: femila
-ms.openlocfilehash: a7d7c68840999772461655090d0213ada0997a7a
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 33a9e9c10c07d0808626353a7edfd505e0f60bc9
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72329107"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74324804"
 ---
-# <a name="tutorial-create-a-blockchain-application-in-azure-blockchain-workbench"></a>Руководство по Создание блокчейн-приложения в Azure Blockchain Workbench
+# <a name="tutorial-create-a-blockchain-application-for-azure-blockchain-workbench"></a>Руководство по Создание блокчейн-приложения в Azure Blockchain Workbench
 
 Вы можете использовать Azure Blockchain Workbench для создания блокчейн-приложений, которые представляют собой многосторонние рабочие процессы, определенные конфигурацией и кодом смарт-контракта.
 
@@ -222,7 +216,7 @@ ms.locfileid: "72329107"
 
 ## <a name="smart-contract-code-file"></a>Файл с кодом смарт-контракта
 
-Интеллектуальные контракты представляют собой бизнес-логику блокчейн-приложения. В настоящее время Blockchain Workbench поддерживает сеть Ethereum для реестра блокчейна. Сеть Ethereum использует [Solidity](https://solidity.readthedocs.io) как язык программирования для написания самореализуемой бизнес-логики для интеллектуальных контрактов.
+Интеллектуальные контракты представляют собой бизнес-логику блокчейн-приложения. В настоящее время Blockchain Workbench поддерживает сеть Ethereum для реестра блокчейна. Сеть Ethereum использует [Solidity](https://solidity.readthedocs.io) как язык программирования для написания самореализуемой бизнес-логики для смарт-контрактов.
 
 Интеллектуальные контракты в Solidity аналогичны классам в объектно-ориентированных языках. Каждый контракт содержит состояние и функции для реализации этапов и действий смарт-контракта.
 

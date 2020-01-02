@@ -1,6 +1,6 @@
 ---
 title: Настройка политики авторизации ключей содержимого с помощью портала Azure | Документация Майкрософт
-description: Узнайте, как настроить политику авторизации для ключа содержимого.
+description: В этой статье показано, как настроить политику авторизации для ключа содержимого.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: b046ce5a8647abe601a6327667241d98445ce1e4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8580bafd4d68ef6567b09fefcaa01c682ae2cafe
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61130557"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74968805"
 ---
 # <a name="configure-a-content-key-authorization-policy"></a>Настройка политики авторизации ключей содержимого
 [!INCLUDE [media-services-selector-content-key-auth-policy](../../../includes/media-services-selector-content-key-auth-policy.md)]
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
  Службы мультимедиа Azure позволяют защищать потоковое содержимое MPEG-DASH, Smooth Streaming и HTTP Live Streaming (HLS) с помощью стандарта AES (использующего 128-разрядные ключи шифрования) или технологии [ управления цифровыми правами (DRM) PlayReady](https://www.microsoft.com/playready/overview/). Кроме того, Службы мультимедиа позволяют передавать потоки MPEG DASH с шифрованием Widevine DRM. PlayReady и Widevine шифруются согласно спецификации общего шифрования (ISO/IEC 23001-7 CENC).
 
 Службы мультимедиа также включают в себя службы доставки ключей и лицензий, с помощью которых клиенты могут получать ключи AES либо лицензии PlayReady или Widevine для воспроизведения зашифрованного содержимого.
@@ -33,7 +33,7 @@ ms.locfileid: "61130557"
 
 Когда проигрыватель запрашивает поток, для которого настроено динамическое шифрование, Службы мультимедиа, используя настроенный ключ, выполняют динамическое шифрование содержимого с помощью AES или DRM. Чтобы расшифровать поток, проигрыватель запросит ключ у службы доставки ключей. Чтобы определить, есть ли у пользователя право на получение ключа, служба оценивает политики авторизации, заданные для ключа.
 
-Если вы планируете использовать несколько ключей содержимого или хотите задать URL-адрес службы доставки ключей или лицензий, отличный от адреса службы доставки ключей Служб мультимедиа, используйте пакет SDK для .NET или интерфейсы REST API для Служб мультимедиа. Дополнительные сведения можно найти в разделе
+Если вы планируете использовать несколько ключей содержимого или хотите задать URL-адрес службы доставки ключей или лицензий, отличный от адреса службы доставки ключей Служб мультимедиа, используйте пакет SDK для .NET или интерфейсы REST API для Служб мультимедиа. Дополнительные сведения см. здесь:
 
 * [Настройка политики авторизации ключей содержимого с помощью пакета SDK Служб мультимедиа для .NET](media-services-dotnet-configure-content-key-auth-policy.md)
 * [Настройка политики авторизации ключей содержимого с помощью REST API для Служб мультимедиа](media-services-rest-configure-content-key-auth-policy.md)
@@ -80,10 +80,14 @@ ms.locfileid: "61130557"
 
 Вы можете нажать кнопку **импорта XML-файла политики** и выбрать другой XML-файл, который соответствует XML-схеме, определенной в статье [Обзор шаблонов лицензий PlayReady Служб мультимедиа](media-services-playready-license-template-overview.md).
 
+## <a name="additional-notes"></a>Дополнительные замечания
+
+* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 [open_policy]: ./media/media-services-portal-configure-content-key-auth-policy/media-services-protect-content-with-open-restriction.png

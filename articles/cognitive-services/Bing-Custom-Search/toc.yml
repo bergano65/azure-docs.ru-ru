@@ -1,5 +1,5 @@
 - name: Документация по Пользовательскому поиску Bing
-  href: index.yml
+  href: ../Bing-Web-Search/index.yml
 - name: Обзор
   expanded: true
   items:

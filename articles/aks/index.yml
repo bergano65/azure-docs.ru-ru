@@ -65,6 +65,7 @@ sections:
           - html: <a href="/azure/aks/tutorial-kubernetes-scale">Масштабирование приложений и инфраструктуры Kubernetes</a>
           - html: '<a href="/azure/aks/tutorial-kubernetes-app-update">Обновление приложений, выполняющихся в Kubernetes</a>'
           - html: <a href="/azure/aks/tutorial-kubernetes-upgrade-cluster">Обновление кластера AKS</a>
+          - html: <a href="/azure/architecture/reference-architectures/microservices/aks">Изучение и реализация эталонной архитектуры микрослужб</a>
   - title: Развитие навыков с помощью Microsoft Learn
     items:
       - type: list

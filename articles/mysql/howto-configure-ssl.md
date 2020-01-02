@@ -1,26 +1,26 @@
 ---
-title: Настройка SSL-соединений для безопасного подключения к службе "База данных Azure для MySQL"
+title: Настройка SSL — база данных Azure для MySQL
 description: Инструкции по настройке базы данных Azure для MySQL и связанных приложений для правильного использования SSL-соединений.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 07/02/2019
-ms.openlocfilehash: 7a6c42da3fb92dc7dda014faa64fb8daa8c58774
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.date: 12/05/2019
+ms.openlocfilehash: 3a1c7f6542ebdf1617982fbb50a239b66a6675ba
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359448"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74926710"
 ---
 # <a name="configure-ssl-connectivity-in-your-application-to-securely-connect-to-azure-database-for-mysql"></a>Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MySQL
 База данных Azure для MySQL поддерживает подключение сервера базы данных Azure для MySQL к клиентским приложениям с помощью протокола SSL (Secure Sockets Layer). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением.
 
-## <a name="step-1-obtain-ssl-certificate"></a>Шаг 1.: Получение SSL-сертификата
+## <a name="step-1-obtain-ssl-certificate"></a>Шаг 1. Получение SSL-сертификата
 Скачайте сертификат, который необходим для взаимодействия с сервером базы данных Azure для MySQL по протоколу SSL ([https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem)), и сохраните файл сертификата на локальном диске (в этом руководстве для примера мы использовали папку C:\SSL).
-**Для браузеров Microsoft Internet Explorer и Microsoft Edge:** после завершения скачивания переименуйте сертификат в BaltimoreCyberTrustRoot.crt.pem.
+**Для браузеров Microsoft Internet Explorer и Microsoft Edge:** по завершении скачивания переименуйте сертификат в BaltimoreCyberTrustRoot.crt.pem.
 
-## <a name="step-2-bind-ssl"></a>Шаг 2.: Привязка SSL
+## <a name="step-2-bind-ssl"></a>Шаг 2. Привязка SSL
 
 Сведения о строках подключения для конкретных языков программирования см. в приведенном ниже [образце кода](howto-configure-ssl.md#sample-code) .
 
@@ -31,7 +31,7 @@ ms.locfileid: "68359448"
 
 1. Обновите поле " **использовать SSL** " для "обязательно".
 
-1. Введите расположение файла BaltimoreCyberTrustRoot.crt.pem в поле **SSL CA File:** (Файл центра сертификации SSL-сертификата). 
+1. В поле **файл SSL-центра сертификации:** введите расположение файла **BaltimoreCyberTrustRoot. CRT. pem**. 
     
     ![Сохранить конфигурацию SSL](./media/howto-configure-ssl/mysql-workbench-ssl.png)
 
@@ -47,7 +47,7 @@ mysql.exe -h mydemoserver.mysql.database.azure.com -u Username@mydemoserver -p -
 > [!NOTE]
 > При использовании интерфейса командной строки MySQL для Windows может появиться ошибка `SSL connection error: Certificate signature check failed`. В этом случае замените параметр `--ssl-mode=REQUIRED --ssl-ca={filepath}` на `--ssl`.
 
-## <a name="step-3--enforcing-ssl-connections-in-azure"></a>Шаг 3.  Применение SSL-соединений в Azure 
+## <a name="step-3--enforcing-ssl-connections-in-azure"></a>Шаг 3. Применение SSL-соединений в Azure 
 ### <a name="using-the-azure-portal"></a>Использование портала Azure
 С помощью портала Azure перейдите к серверу базы данных Azure для MySQL и щелкните **Безопасность подключения**. Воспользуйтесь выключателем для включения или отключения параметра **Enforce SSL connection** (Применять SSL-соединение), а затем щелкните **Сохранить**. Для повышения безопасности корпорация Майкрософт рекомендует всегда включать параметр **Enforce SSL connection** (Применять SSL-соединение).
 ![enable-ssl](./media/howto-configure-ssl/enable-ssl.png)
@@ -58,15 +58,17 @@ mysql.exe -h mydemoserver.mysql.database.azure.com -u Username@mydemoserver -p -
 az mysql server update --resource-group myresource --name mydemoserver --ssl-enforcement Enabled
 ```
 
-## <a name="step-4-verify-the-ssl-connection"></a>Шаг 4. Проверка SSL-соединения
+## <a name="step-4-verify-the-ssl-connection"></a>Шаг 4. Проверка SSL-соединения
 Выполните команду mysql **status**, чтобы проверить наличие подключения к серверу MySQL с помощью протокола SSL.
 ```dos
 mysql> status
 ```
-Убедитесь, что подключение зашифровано, просмотрев выходные данные. Они должны содержать следующее.  **SSL. Используемый алгоритм шифрования: AES256-SHA** 
+Убедитесь, что соединение зашифровано, просмотрев выходные данные, в которых должно отображаться следующее: **SSL: используемый шифр — AES256 SHA**. 
 
 ## <a name="sample-code"></a>Пример кода
 Чтобы установить безопасное подключение приложения к Базе данных Azure для MySQL по протоколу SSL, изучите приведенные ниже примеры кода.
+
+См. список [совместимых драйверов](concepts-compatibility.md) , поддерживаемых службой "база данных Azure для MySQL".
 
 ### <a name="php"></a>PHP
 ```php
@@ -217,5 +219,5 @@ using (var connection = new MySqlConnection(builder.ConnectionString))
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о вариантах подключения приложений см. в статье [Библиотеки подключений для базы данных Azure для MySQL](concepts-connection-libraries.md).

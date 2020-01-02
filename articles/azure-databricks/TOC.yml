@@ -126,9 +126,6 @@
         - name: Инициализация узлов кластера
           href: /azure/databricks/clusters/init-scripts
           maintainContext: true
-        - name: Пользовательские контейнеры
-          href: /azure/databricks/clusters/custom-containers
-          maintainContext: true
         - name: Кластеры с поддержкой GPU
           href: /azure/databricks/clusters/gpu
           maintainContext: true
@@ -226,9 +223,6 @@
       maintainContext: true
     - name: Данные
       items:
-        - name: Файловая система Databricks
-          href: /azure/databricks/data/databricks-file-system
-          maintainContext: true
         - name: Базы данных и таблицы
           href: /azure/databricks/data/tables
           maintainContext: true
@@ -242,7 +236,7 @@
             - name: 'Базы данных SQL, использующие JDBC'
               href: /azure/databricks/data/data-sources/sql-databases
               maintainContext: true
-            - name: 'База данных SQL Azure, использующая соединитель Apache Spark'
+            - name: 'Базы данных SQL, использующие соединитель Apache Spark'
               href: /azure/databricks/data/data-sources/sql-databases-azure
               maintainContext: true
             - name: Хранилище BLOB-объектов Azure
@@ -254,7 +248,7 @@
             - name: Azure Data Lake Storage
               href: /azure/databricks/data/data-sources/azure/azure-datalake
               maintainContext: true
-            - name: Сквозной режим Azure Data Lake Storage
+            - name: Использование сквозного режима учетных данных Azure Data Lake Storage
               href: /azure/databricks/data/data-sources/azure/adls-passthrough
               maintainContext: true
             - name: Cosmos DB
@@ -263,7 +257,7 @@
             - name: "Хранилище данных SQL\_Azure"
               href: /azure/databricks/data/data-sources/azure/sql-data-warehouse
               maintainContext: true
-            - name: Двоичные файлы
+            - name: Двоичный файл
               href: /azure/databricks/data/data-sources/binary-file
               maintainContext: true
             - name: Cassandra
@@ -275,7 +269,7 @@
             - name: ElasticSearch
               href: /azure/databricks/data/data-sources/elasticsearch
               maintainContext: true
-            - name: Образы
+            - name: "Образ\_—"
               href: /azure/databricks/data/data-sources/image
               maintainContext: true
             - name: таблицы Hive.
@@ -317,6 +311,9 @@
             - name: ZIP-файлы
               href: /azure/databricks/data/data-sources/zip-files
               maintainContext: true
+        - name: Файловая система Databricks (DBFS)
+          href: /azure/databricks/data/databricks-file-system
+          maintainContext: true
         - name: FileStore
           href: /azure/databricks/data/filestore
           maintainContext: true
@@ -618,7 +615,7 @@
             - name: Удаление таблицы из кэша
               href: /azure/databricks/spark/latest/spark-sql/language-manual/uncache-table
               maintainContext: true
-            - name: Команда Update (Delta Lake на Azure Databricks)
+            - name: Update (Delta Lake в Azure Databricks)
               href: /azure/databricks/spark/latest/spark-sql/language-manual/update
               maintainContext: true
             - name: Использование базы данных
@@ -629,10 +626,10 @@
               maintainContext: true
         - name: Примеры для SQL Spark
           items:
-            - name: Оптимизатор на основе затрат
+            - name: Использование оптимизатора на основе затрат
               href: /azure/databricks/spark/latest/spark-sql/cbo
               maintainContext: true
-            - name: Индекс с пропуском данных
+            - name: Использование индекса с пропуском данных
               href: /azure/databricks/spark/latest/spark-sql/dataskipping-index
               maintainContext: true
             - name: Транзакционная запись в облачное хранилище с помощью DBIO
@@ -641,10 +638,10 @@
             - name: Обработка неправильных записей и файлов
               href: /azure/databricks/spark/latest/spark-sql/handling-bad-records
               maintainContext: true
-            - name: Приоритетное прерывание задачи для высокой степени параллелизма
+            - name: Приоритетное прерывание задачи для обеспечения высокой степени параллелизма
               href: /azure/databricks/spark/latest/spark-sql/preemption
               maintainContext: true
-            - name: Обработка больших запросов в интерактивных рабочих процессах
+            - name: Обработка крупных запросов в интерактивных рабочих процессах
               href: /azure/databricks/spark/latest/spark-sql/query-watchdog
               maintainContext: true
             - name: Оптимизация преобразований между Spark и Pandas DataFrames
@@ -659,7 +656,7 @@
             - name: Создание определяемых пользователем функций в Pandas
               href: /azure/databricks/spark/latest/spark-sql/udf-python-pandas
               maintainContext: true
-            - name: Совместимость с Apache Hive
+            - name: Обеспечение совместимости с Apache Hive
               href: /azure/databricks/spark/latest/spark-sql/compatibility/hive
               maintainContext: true
     - name: R
@@ -764,16 +761,16 @@
               href: /azure/databricks/applications/deep-learning/data-prep/ddl-data
               maintainContext: true
             - name: Загрузка данных с помощью Petastorm
-              href: /azure/databricks//applications/deep-learning/data-prep/petastorm
+              href: /azure/databricks/applications/deep-learning/data-prep/petastorm
               maintainContext: true
             - name: Сохранение DataFrames и наборов данных в файлы TFRecord
-              href: /azure/databricks//applications/deep-learning/data-prep/dataset-to-tfrecords
+              href: /azure/databricks/applications/deep-learning/data-prep/dataset-to-tfrecords
               maintainContext: true
             - name: Загрузка данных из файлов TFRecord с помощью TensorFlow
-              href: /azure/databricks//applications/deep-learning/data-prep/tfrecords-to-tensorflow
+              href: /azure/databricks/applications/deep-learning/data-prep/tfrecords-to-tensorflow
               maintainContext: true
             - name: Сохранение данных в файлы TFRecord с помощью TensorFlow
-              href: /azure/databricks//applications/deep-learning/data-prep/tensorflow-to-tfrecords
+              href: /azure/databricks/applications/deep-learning/data-prep/tensorflow-to-tfrecords
               maintainContext: true
         - name: Обучение с одним узлом
           items:
@@ -829,8 +826,8 @@
             - name: Вывод модели с использованием TensorFlow
               href: /azure/databricks/applications/deep-learning/inference/resnet-model-inference-tensorflow
               maintainContext: true
-            - name: Настройка производительности вывода модели
-              href: /azure/databricks/applications/deep-learning/inference/model-inference-performance
+            - name: Эталонное решение для вывода модели распределенного изображения
+              href: /azure/databricks/applications/deep-learning/reference-solutions/images-etl-inference
               maintainContext: true
     - name: MLflow
       items:
@@ -1061,6 +1058,14 @@
         - name: Управление хранилищем рабочей области
           href: /azure/databricks/administration-guide/workspace-storage/storage
           maintainContext: true
+        - name: Включение конфигураций кластера
+          items:
+            - name: Общие сведения о конфигурации кластера
+              href: /azure/databricks/administration-guide/clusters/index
+              maintainContext: true
+            - name: Включение Databricks Runtime for Genomics
+              href: /azure/databricks/administration-guide/clusters/genomics-runtime
+              maintainContext: true
         - name: Управление виртуальными сетями
           items:
             - name: Общие сведения о виртуальных сетях
@@ -1084,7 +1089,7 @@
     - name: Устранение неполадок
       items:
         - name: Часто задаваемые вопросы
-          href: /azure/databricks//azure/azure-databricks/frequently-asked-questions-databricks
+          href: /azure/azure-databricks/frequently-asked-questions-databricks
           maintainContext: true
         - name: Администрирование
           items:
@@ -1126,9 +1131,6 @@
               maintainContext: true
             - name: Параметр конфигурации переопределяет параметры по умолчанию
               href: /azure/databricks/kb/clusters/conf-overwrites-default-settings
-              maintainContext: true
-            - name: Запуск библиотек JNI в одноядерных исполнителях
-              href: /azure/databricks/kb/clusters/multiple-executors-single-worker
               maintainContext: true
             - name: Переопределение конфигураций log4j
               href: /azure/databricks/kb/clusters/overwrite-log4j-logs
@@ -1533,6 +1535,9 @@
           items:
             - name: Заметки о выпуске платформы
               href: /azure/databricks/release-notes/product/index
+              maintainContext: true
+            - name: "Декабрь 2019\_г."
+              href: /azure/databricks/release-notes/product/2019/december
               maintainContext: true
             - name: "Ноябрь 2019\_г."
               href: /azure/databricks/release-notes/product/2019/november

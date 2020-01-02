@@ -1,16 +1,12 @@
 ---
-title: Получение маркера и вызов API Microsoft Graph с удостоверением консольного приложения (версия 1.0) | Документация Майкрософт
-description: Из этой статьи вы узнаете, как создать управляющую программу .NET, которая интегрируется с Azure AD и вызывает API, защищенные Azure AD, по протоколу OAuth 2.0.
+title: Получение маркера безопасности и вызов API Microsoft Graph из консольных приложений (версия 1.0) | Azure
+description: Создайте управляющую программу .NET, которая интегрируется с Azure AD и вызывает API, защищенные Azure AD, по протоколу OAuth 2.0.
 services: active-directory
-documentationcenter: .net
 author: rwike77
 manager: CelesteDG
-editor: ''
-ms.assetid: ''
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 07/17/2019
@@ -18,12 +14,12 @@ ms.author: jmprieur
 ms.reviewer: ryanwi
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d79d448f10c0d404516371be19d561bb21c8c0c7
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 2858a0b14863195ee0f56c89fe2c55c9e63873de
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73149608"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74965931"
 ---
 # <a name="quickstart-acquire-token-and-call-microsoft-graph-api-with-console-apps-identity-v10"></a>Краткое руководство. Получение маркера и вызов API Microsoft Graph с удостоверением консольного приложения (версия 1.0) 
 

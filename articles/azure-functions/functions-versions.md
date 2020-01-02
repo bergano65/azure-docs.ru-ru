@@ -2,62 +2,59 @@
 title: Обзор версий среды выполнения для решения "Функции Azure"
 description: Решение "Функции Azure" поддерживает разные версии среды выполнения. В этой статье приводятся различия между ними и рекомендации по выбору подходящей для вас версии.
 ms.topic: conceptual
-ms.date: 10/10/2019
-ms.openlocfilehash: 53da5869b4768c95fd225fb15db60f4301e537d4
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.date: 12/09/2019
+ms.openlocfilehash: 874d2e657c2c9d7cba7874ff9815c61f9bbe8ef7
+ms.sourcegitcommit: b5ff5abd7a82eaf3a1df883c4247e11cdfe38c19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74226537"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74941740"
 ---
 # <a name="azure-functions-runtime-versions-overview"></a>Обзор версий среды выполнения для решения "Функции Azure"
 
-The major versions of the Azure Functions runtime are related to the version of .NET on which the runtime is based. The following table indicates the current version of the runtime, the release level, and the related .NET version. 
+Основные версии среды выполнения функций Azure связаны с версией .NET, на которой основана среда выполнения. В следующей таблице указывается текущая версия среды выполнения, уровень выпуска и связанная версия .NET. 
 
-| Версия среды выполнения | Release level<sup>1</sup> | Версия .NET | 
+| Версия среды выполнения | Уровень выпуска<sup>1</sup> | Версия .NET | 
 | --------------- | ------------- | ------------ |
-| 3.x  | предварительная версия | .NET Core 3.x | 
+| 3.x | Общая доступность | .NET Core 3.1 | 
 | 2.x | Общая доступность | .NET Core 2.2 |
-| 1.x | GA<sup>2</sup> | .NET Framework 4.6<sup>3</sup> |
+| 1.x | Общедоступная версия<sup>2</sup> | .NET Framework 4,6<sup>3</sup> |
 
-<sup>1</sup>GA releases are supported for production scenarios.   
-<sup>2</sup>Version 1.x is in maintenance mode. Enhancements are provided only in later versions.   
-<sup>3</sup>Only supports development in the Azure portal or locally on Windows computers.
+<sup>1</sup> общедоступные версии поддерживаются в рабочих сценариях.   
+<sup>2</sup> версия 1. x находится в режиме обслуживания. Усовершенствования предоставляются только в более поздних версиях.   
+<sup>3</sup> поддерживает только разработку на портал Azure или локально на компьютерах Windows.
 
->[!NOTE]  
-> Version 3.x of the Functions runtime is in preview and isn't supported for production environments. For more information about trying out version 3.x, see [this announcement](https://dev.to/azure/develop-azure-functions-using-net-core-3-0-gcm).
-
-This article details some of the differences between the various versions, how you can create each version, and how to change versions.
+В этой статье описаны некоторые различия между различными версиями, способы создания каждой версии и изменения версий.
 
 ## <a name="languages"></a>Языки
 
-Starting with version 2.x, the runtime uses a language extensibility model, and all functions in a function app must share the same language. The language of functions in a function app is chosen when creating the app and is maintained in the [FUNCTIONS\_WORKER\_RUNTIME](functions-app-settings.md#functions_worker_runtime) setting. 
+Начиная с версии 2. x, среда выполнения использует модель расширяемости языка, и все функции в приложении-функции должны использовать один и тот же язык. Язык функций в приложении-функции выбирается при создании приложения и сохраняется в параметрах [\_рабочего\_времени выполнения для функций](functions-app-settings.md#functions_worker_runtime) . 
 
-Azure Functions 1.x experimental languages can't use the new model, so they aren't supported in 2.x. В следующей таблице перечислены языки программирования, которые в настоящее время поддерживаются для каждой версии среды выполнения.
+Функции Azure 1. x экспериментальные языки не могут использовать новую модель, поэтому они не поддерживаются в 2. x. В следующей таблице перечислены языки программирования, которые в настоящее время поддерживаются для каждой версии среды выполнения.
 
 [!INCLUDE [functions-supported-languages](../../includes/functions-supported-languages.md)]
 
 Дополнительные сведения см. в [списке поддерживаемых языков](supported-languages.md).
 
-## <a name="creating-1x-apps"></a>Run on a specific version
+## <a name="creating-1x-apps"></a>Запуск в определенной версии
 
-By default, function apps created in the Azure portal and by the Azure CLI are set to version 2.x. When possible, you should use this runtime version. Но если нужно, вы еще может выполнять приложения-функции в среде выполнения версии 1.x. Версию среды выполнения следует менять только после создания приложения-функции, но до добавления в него функций. Чтобы узнать, как закрепить версию 1.x для среды выполнения, изучите статью [Выбор целевых версий среды выполнения Функций Azure](set-runtime-version.md#view-and-update-the-current-runtime-version).
+По умолчанию приложения функций, созданные в портал Azure и Azure CLI, имеют значение версии 2. x. При необходимости эту версию можно изменить. Вы можете изменить версию среды выполнения до 1. x после создания приложения функции, но перед добавлением каких бы то ни было функций.  Перемещение между 2. x и 3. x разрешено даже с приложениями, которые имеют функции, но по-прежнему рекомендуется сначала проверить в новом приложении.
 
-You can also upgrade to version 3.x of the runtime, which is in preview. Do this if you need to be able to run your functions on .NET Core 3.x. To learn how to upgrade to 3.x, see [View and update the current runtime version](set-runtime-version.md#view-and-update-the-current-runtime-version).
+## <a name="migrating-from-1x-to-later-versions"></a>Переход с версии 1. x на более позднюю версию
 
-## <a name="migrating-from-1x-to-later-versions"></a>Migrating from 1.x to later versions
+Вы можете выбрать миграцию существующего приложения, написанного для использования среды выполнения версии 1. x, вместо этого использовать более новую версию. Большинство изменений, которые необходимо внести, связаны с изменениями в языковой среде выполнения, такими как C# изменения API между .NET Framework 4,7 и .NET Core. Также нужно убедиться, что код и библиотеки совместимы с выбранными языковыми средами выполнения. И наконец, обязательно обратите внимание на все изменения в триггерах, привязках и функциях, указанные ниже. Для достижения наилучших результатов миграции следует создать новое приложение-функцию в новой версии и перенести существующий код функции версии 1. x в новое приложение.  
 
-Вы можете перенести существующее приложение, написанное для среды выполнения версии 1.x, на новую версию 2.x. Большинство изменений, которые нужно внести в этом случае, связаны с языковой средой выполнения, например с различиями API C# между версиями для .NET Framework 4.7 и .NET Core 2. Также нужно убедиться, что код и библиотеки совместимы с выбранными языковыми средами выполнения. И наконец, обязательно обратите внимание на все изменения в триггерах, привязках и функциях, указанные ниже. Чтобы миграция прошла идеально, создайте новое приложение-функцию для версии 2.x и портируйте код существующей функции версии 1.x в новое приложение.  
+Хотя можно выполнить обновление на месте путем ручного обновления конфигурации приложения, переход от 1. x к более поздней версии включает некоторые критические изменения. Например, в C#параметре объект отладки изменяется с `TraceWriter` на `ILogger`. Создание нового проекта версии 3. x начинается с обновленных функций на основе последних шаблонов версии 3. x.
 
-### <a name="changes-in-triggers-and-bindings"></a>Изменения в триггерах и привязках
+### <a name="changes-in-triggers-and-bindings-after-version-1x"></a>Изменения в триггерах и привязках после версии 1. x
 
-Для версии 2.x вам потребуется установить расширения для конкретных триггеров и привязок, которые используются функциями вашего приложения. Единственное исключение — триггеры HTTP и таймера, для которых не требуется расширение.  Для получения дополнительной информации ознакомьтесь с разделом [Регистрация расширений привязки](./functions-bindings-register.md).
+Начиная с версии 2. x, необходимо установить расширения для конкретных триггеров и привязок, используемых функциями в приложении. Единственное исключение — триггеры HTTP и таймера, для которых не требуется расширение.  Для получения дополнительной информации ознакомьтесь с разделом [Регистрация расширений привязки](./functions-bindings-register.md).
 
-Также при смене версий были внесены некоторые изменения в `function.json` или атрибуты функций. Например, свойство `path` для концентратора событий теперь имеет атрибут `eventHubName`. Для получения ссылок на документацию для каждой привязки см. [таблицу существующих привязок](#bindings).
+Существует также несколько изменений в *Function. JSON* или атрибутов функции между версиями. Например, свойство `path` для концентратора событий теперь имеет атрибут `eventHubName`. Для получения ссылок на документацию для каждой привязки см. [таблицу существующих привязок](#bindings).
 
-### <a name="changes-in-features-and-functionality"></a>Изменения в функциях и возможностях
+### <a name="changes-in-features-and-functionality-after-version-1x"></a>Изменения в функциях и функциях после версии 1. x
 
-Некоторые возможности в новой версии удалены, обновлены или заменены. В этом разделе описаны изменения, которые вы заметите в версии 2.x после использования версии 1.x.
+Некоторые функции были удалены, обновлены или заменены после версии 1. x. В этом разделе описаны изменения, которые отображаются в более поздних версиях после использования версии 1. x.
 
 В версии 2.x внесены следующие изменения.
 
@@ -79,9 +76,46 @@ You can also upgrade to version 3.x of the runtime, which is in preview. Do this
 
 * Для веб-перехватчиков триггера сетки событий формат URL-адреса изменен на `https://{app}/runtime/webhooks/{triggerName}`.
 
-### <a name="migrating-a-locally-developed-application"></a>Миграция локально разработанного приложения
+## <a name="migrating-from-2x-to-3x"></a>Миграция с 2. x на 3. x
 
-Возможно, у вас есть существующие проекты приложений-функций, локально разработанные для среды выполнения версии 1.x. Чтобы обновить их до версии 2.x, создайте локальный проект приложения-функции для версии 2.x и портируйте существующий код в новое приложение. Вы также можете обновить существующий проект и код "на месте", без создания нового проекта. Но в этом случае может потребоваться вручную применить ряд других улучшений, которые различают версии 1.x и 2.x. Например, в C# объект отладки изменен с `TraceWriter` на `ILogger`. Создавая новый проект версии 2.x, вы сразу получаете обновленные функции, основанные на самых свежих шаблонах для версии 2.x.
+Функции Azure версии 3. x — это очень обратная совместимость с версией 2. x.  Многие приложения должны иметь возможность безопасно выполнить обновление до 3. x без каких бы то ни было изменений кода.  При переходе на 3. x рекомендуется выполнять сложные тесты перед изменением основной версии в рабочих приложениях.
+
+### <a name="breaking-changes-between-2x-and-3x"></a>Критические изменения между 2. x и 3. x
+
+Ниже приведены изменения, которые следует учитывать перед обновлением приложения 2. x до 3. x.
+
+#### <a name="javascript"></a>JavaScript
+
+* Выходные привязки, назначенные с помощью `context.done` или возвращаемых значений, теперь ведут себя так же, как и параметр в `context.bindings`.
+
+* Объект триггера таймера — это camelCase, а не PascalCase
+
+* Функции, активируемые концентратором событий с `dataType` двоичными данными, получают массив `binary` вместо `string`.
+
+* Полезные данные HTTP-запроса больше не могут быть доступны через `context.bindingData.req`.  Доступ к нему по-прежнему можно получить в качестве входного параметра, `context.req`и в `context.bindings`.
+
+* Node. js 8 больше не поддерживается и не будет выполняться в функциях 3. x.
+
+#### <a name="net"></a>.NET
+
+* [Синхронные операции сервера по умолчанию отключены](https://docs.microsoft.com/dotnet/core/compatibility/2.2-3.0#http-synchronous-io-disabled-in-all-servers).
+
+### <a name="changing-version-of-apps-in-azure"></a>Изменение версии приложений в Azure
+
+Версия среды выполнения для Функций Azure, используемая опубликованными в Azure приложениями, зависит от параметра приложения [`FUNCTIONS_EXTENSION_VERSION`](functions-app-settings.md#functions_extension_version). Поддерживаются следующие основные значения версии среды выполнения:
+
+| Value | Целевой объект среды выполнения |
+| ------ | -------- |
+| `~3` | 3.x |
+| `~2` | 2.x |
+| `~1` | 1.x |
+
+>[!IMPORTANT]
+> Не меняйте этот параметр произвольно, так как могут потребоваться другие изменения параметров приложения и изменения кода функции.
+
+### <a name="locally-developed-application-versions"></a>Локально разработанные версии приложений
+
+Вы можете сделать следующие обновления для приложений функций локально изменяют целевые версии.
 
 #### <a name="visual-studio-runtime-versions"></a>Версии среды выполнения Visual Studio
 
@@ -97,25 +131,60 @@ You can also upgrade to version 3.x of the runtime, which is in preview. Do this
 ##### <a name="version-2x"></a>Версия 2.x
 
 ```xml
-<TargetFramework>netcoreapp2.2</TargetFramework>
+<TargetFramework>netcoreapp2.1</TargetFramework>
 <AzureFunctionsVersion>v2</AzureFunctionsVersion>
 ```
 
-При отладке или публикации проекта используется правильная версия среды выполнения.
+##### <a name="version-3x"></a>Версия 3.x
+
+```xml
+<TargetFramework>netcoreapp3.1</TargetFramework>
+<AzureFunctionsVersion>v3</AzureFunctionsVersion>
+```
+
+> [!NOTE]
+> Для функций Azure 3. x и .NET требуется, чтобы расширение `Microsoft.Sdk.NET.Functions` было как минимум `3.0.0`.
+
+###### <a name="updating-2x-apps-to-3x-in-visual-studio"></a>Обновление приложений 2. x до 3. x в Visual Studio
+
+Можно открыть существующую функцию, предназначенную для 2. x, и переместить ее в 3. x, изменив файл `.csproj` и обновив значения, приведенные выше.  Visual Studio управляет версиями среды выполнения автоматически на основе метаданных проекта.  Однако это возможно, если вы никогда не создавали приложение 3. x, а пока Visual Studio еще не создали шаблоны и среду выполнения для 3. x на вашем компьютере.  Это может представлять собой сообщение об ошибке, например "не доступна среда выполнения функций, соответствующая версии, указанной в проекте".  Чтобы получить последние шаблоны и среду выполнения, ознакомьтесь с возможностями по созданию нового проекта функции.  При появлении страницы Выбор версии и шаблона подождите, пока Visual Studio не завершит выборку последних шаблонов.  После того как последние шаблоны .NET Core 3 будут доступны и будут отображены, вы сможете запустить и отладить любой проект, настроенный для версии 3. x.
+
+> [!IMPORTANT]
+> Функции версии 3. x можно разрабатывать только в Visual Studio, если используется версия 16,4 или более поздняя.
 
 #### <a name="vs-code-and-azure-functions-core-tools"></a>Основные инструменты VS Code и Функций Azure
 
-[Основные инструменты службы функции Azure](functions-run-local.md) используются для разработки из командной строки, а также в [расширении Функций Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) для Visual Studio Code. Чтобы вести разработку для версии 2.x, установите версию 2.x основных инструментов. Разработка для версии 1.x требует наличия версии 1.x основных инструментов. Дополнительные сведения см. в разделе [Установка основных инструментов Функций Azure](functions-run-local.md#install-the-azure-functions-core-tools).
+[Основные инструменты службы функции Azure](functions-run-local.md) используются для разработки из командной строки, а также в [расширении Функций Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) для Visual Studio Code. Для разработки на базе версии 3. x установите версию 3. x основных средств. Для разработки версии 2. x требуется версия 2. x основных средств и т. д. Дополнительные сведения см. в разделе [Установка основных инструментов Функций Azure](functions-run-local.md#install-the-azure-functions-core-tools).
 
-Для разработки в Visual Studio Code следует также изменить параметры пользователя, чтобы `azureFunctions.projectRuntime` соответствовал версии установленных инструментов.  Этот параметр также обновляет шаблоны и языки, используемые при создании приложения-функции.
+Для разработки в Visual Studio Code следует также изменить параметры пользователя, чтобы `azureFunctions.projectRuntime` соответствовал версии установленных инструментов.  Этот параметр также обновляет шаблоны и языки, используемые при создании приложения-функции.  Для создания приложений в `~3` необходимо обновить пользовательский параметр `azureFunctions.projectRuntime` на `~3`.
 
-### <a name="changing-version-of-apps-in-azure"></a>Изменение версии приложений в Azure
+![Параметр среды выполнения расширения функций Azure](./media/functions-versions/vs-code-version-runtime.png)
 
-Версия среды выполнения для Функций Azure, используемая опубликованными в Azure приложениями, зависит от параметра приложения [`FUNCTIONS_EXTENSION_VERSION`](functions-app-settings.md#functions_extension_version). Значение `~2` обозначает среду выполнения версии 2.x, а `~1` — среду выполнения версии 1.x. Не изменяйте этот параметр без веских причин, поскольку это потребует и других изменений в параметрах приложения и коде функций. Дополнительные сведения о рекомендациях по миграции приложения-функции на другую версию среды выполнения см. в статье [Выбор целевых версий среды выполнения Функций Azure](set-runtime-version.md).
+#### <a name="maven-and-java-apps"></a>Приложения Maven и Java
+
+Вы можете перенести приложения Java с версии 2. x на 3. x, [установив версию 3. x основных средств](functions-run-local.md#install-the-azure-functions-core-tools) , необходимых для локального запуска.  Убедившись, что приложение правильно работает локально в версии 3. x, обновите файл `POM.xml` приложения, чтобы изменить `FUNCTIONS_EXTENSION_VERSION` параметр на `~3`, как показано в следующем примере:
+
+```xml
+<configuration>
+    <resourceGroup>${functionResourceGroup}</resourceGroup>
+    <appName>${functionAppName}</appName>
+    <region>${functionAppRegion}</region>
+    <appSettings>
+        <property>
+            <name>WEBSITE_RUN_FROM_PACKAGE</name>
+            <value>1</value>
+        </property>
+        <property>
+            <name>FUNCTIONS_EXTENSION_VERSION</name>
+            <value>~3</value>
+        </property>
+    </appSettings>
+</configuration>
+```
 
 ## <a name="bindings"></a>Привязки
 
-Starting with version 2.x, the runtime uses a new [binding extensibility model](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview) that offers these advantages:
+Начиная с версии 2. x среда выполнения использует новую [модель расширяемости привязки](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview) , которая предоставляет следующие преимущества:
 
 * Поддержка сторонних расширений привязок.
 

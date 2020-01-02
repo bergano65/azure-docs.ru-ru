@@ -1,21 +1,21 @@
 ---
 title: Управление политиками индексирования в Azure Cosmos DB
-description: Узнайте, как управлять политиками индексирования в Azure Cosmos DB.
+description: Узнайте, как управлять политиками индексации, включать или исключать свойства из индексирования, определять индексацию с помощью различных пакетов SDK Azure Cosmos DB
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/28/2019
+ms.date: 12/02/2019
 ms.author: thweiss
-ms.openlocfilehash: 46d0124eb701b0c2d779a96c8efd50ba43e8fc07
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.openlocfilehash: 3b98975df194af4625087e1beb556efb2a347f43
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72034449"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74872066"
 ---
 # <a name="manage-indexing-policies-in-azure-cosmos-db"></a>Управление политиками индексирования в Azure Cosmos DB
 
-В Azure Cosmos DB данные индексируются с помощью приведенных ниже [политик индексирования](index-policy.md), определенных для каждого контейнера. Политика индексирования по умолчанию для только что созданных контейнеров применяет индексы диапазона для любой строки или числа. Эту политику можно переопределить с помощью пользовательской политики индексирования.
+В Azure Cosmos DB данные индексируются с помощью приведенных ниже [политик индексирования](index-policy.md), определенных для каждого контейнера. Политика индексирования по умолчанию, задаваемая для только что созданных контейнеров, применяет диапазонные индексы для любых строк или чисел. Эту политику можно переопределить собственной политикой индексирования.
 
 ## <a name="indexing-policy-examples"></a>Примеры политик индексирования
 
@@ -42,7 +42,7 @@ ms.locfileid: "72034449"
     }
 ```
 
-Эта политика индексирования эквивалентна той, которую вручную задает значения по умолчанию ```kind```, ```dataType``` и ```precision```. Эти свойства больше не нужны для явной установки, и их можно полностью опустить в политике индексирования (как показано в примере выше).
+Эта политика индексации эквивалентна приведенной ниже, которая вручную задает значения по умолчанию ```kind```, ```dataType```и ```precision```. Эти свойства больше не нужны для явной установки, и их можно полностью опустить в политике индексирования (как показано в примере выше).
 
 ```json
     {
@@ -96,7 +96,7 @@ ms.locfileid: "72034449"
     }
 ```
 
-Эта политика индексирования эквивалентна той, которую вручную задает значения по умолчанию ```kind```, ```dataType``` и ```precision```. Эти свойства больше не нужны для явной установки, и их можно полностью опустить в политике индексирования (как показано в примере выше).
+Эта политика индексации эквивалентна приведенной ниже, которая вручную задает значения по умолчанию ```kind```, ```dataType```и ```precision```. Эти свойства больше не нужны для явной установки, и их можно полностью опустить в политике индексирования (как показано в примере выше).
 
 ```json
     {
@@ -320,7 +320,7 @@ WHERE c.name = "Tim" AND c.age > 18
 
 ### <a name="no-indexing"></a>Без индексирования
 
-Эта политика отключит индексирование. Если `indexingMode` имеет значение `none`, нельзя задать TTL для контейнера.
+Эта политика отключит индексирование. Если `indexingMode` имеет значение `none`, то для контейнера нельзя задать TTL.
 
 ```json
     {
@@ -370,7 +370,7 @@ WHERE c.name = "Tim" AND c.age > 18
 
 ## <a name="use-the-net-sdk-v2"></a>Использование пакета SDK для .NET версии 2
 
-Объект `DocumentCollection` из [пакета SDK .NET версии 2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/) предоставляет свойство `IndexingPolicy`, которое позволяет изменить `IndexingMode`, а также добавить или удалить `IncludedPaths` и `ExcludedPaths`.
+Объект `DocumentCollection` из [пакета SDK .NET v2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/) предоставляет свойство `IndexingPolicy`, которое позволяет изменить `IndexingMode`, а также добавить или удалить `IncludedPaths` и `ExcludedPaths`.
 
 ```csharp
 // Retrieve the container's details
@@ -400,7 +400,7 @@ long indexTransformationProgress = container.IndexTransformationProgress;
 
 ## <a name="use-the-net-sdk-v3"></a>Использование пакета SDK для .NET v3
 
-Объект `ContainerProperties` из [пакета SDK .NET v3](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) (см. [это краткое руководство](create-sql-api-dotnet.md) по использованию) предоставляет свойство `IndexingPolicy`, которое позволяет изменить `IndexingMode`, а также добавить или удалить `IncludedPaths` и `ExcludedPaths`.
+Объект `ContainerProperties` из [пакета SDK .NET v3](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) (см. [это краткое руководство](create-sql-api-dotnet.md) по его использованию) предоставляет свойство `IndexingPolicy`, которое позволяет изменить `IndexingMode` и добавить или удалить `IncludedPaths` и `ExcludedPaths`.
 
 ```csharp
 // Retrieve the container's details
@@ -424,7 +424,7 @@ containerResponse.Resource.IndexingPolicy.CompositeIndexes.Add(new Collection<Co
 await client.GetContainer("database", "container").ReplaceContainerAsync(containerResponse.Resource);
 ```
 
-Чтобы отслеживать ход преобразования индекса, передайте объект `RequestOptions`, который задает для свойства `PopulateQuotaInfo` значение `true`, а затем извлеките значения из заголовка ответа `x-ms-documentdb-collection-index-transformation-progress`.
+Чтобы отслеживать ход преобразования индекса, передайте объект `RequestOptions`, который задает для свойства `PopulateQuotaInfo` значение `true`, а затем извлеките его из заголовка ответа `x-ms-documentdb-collection-index-transformation-progress`.
 
 ```csharp
 // retrieve the container's details
@@ -671,9 +671,9 @@ container['indexingPolicy']['compositeIndexes'] = [
 response = client.ReplaceContainer(containerPath, container)
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об индексировании см. по следующим ссылкам:
 
 - [Общие сведения об индексировании](index-overview.md)
-- [Политика индексирования](index-policy.md)
+- [Политика индексирования в Azure Cosmos DB](index-policy.md)

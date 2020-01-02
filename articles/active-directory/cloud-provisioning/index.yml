@@ -1,0 +1,50 @@
+### YamlMime:Landing
+title: Документация по подготовке облака Azure AD Connect
+summary: Подготовка облака помогает упростить и автоматизировать управление локальными пользователями за счет сохранения всех данных в облаке.
+metadata:
+  author: billmath
+  description: Подготовка облака помогает упростить и автоматизировать управление пользователями Azure AD с помощью правил, управляемых в облаке, для синхронизации этих пользователей из существующих лесов AD.
+  ms.author: billmath
+  ms.collection: na
+  ms.date: 09/05/2019
+  ms.service: active-directory
+  ms.subservice: na
+  ms.topic: landing-page
+  services: active-directory
+  ms.openlocfilehash: 89f3cf397322be65166e05c20b2e1d978a837581
+  ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 12/03/2019
+  ms.locfileid: "74795247"
+landingContent:
+- title: Сведения о подготовке облака
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое подготовка облака Azure AD Connect?
+      url: what-is-cloud-provisioning.md
+- title: Узнайте, как реализовать наилучшее решение для управления жизненным циклом пользователей и групп
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Интеграция одного леса AD с одним клиентом Azure AD
+      url: tutorial-single-forest.md
+    - text: Интеграция существующего и нового лесов с одним клиентом Azure AD
+      url: tutorial-existing-forest.md
+    - text: Пилотная подготовка облака для существующего синхронизированного леса AD
+      url: tutorial-pilot-aadc-aadccp.md
+- title: Начало работы с подготовкой облака
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Предварительные требования для подготовки облака Azure AD Connect
+      url: how-to-prerequisites.md
+    - text: Установка агента подготовки облака Azure AD Connect
+      url: how-to-install.md
+    - text: Настройка агента подготовки облака Azure AD Connect
+      url: how-to-configure.md
+  - linkListType: reference
+    links:
+    - text: Поддерживаемые топологии и сценарии
+      url: plan-cloud-provisioning-topologies.md

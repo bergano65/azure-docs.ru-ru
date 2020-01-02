@@ -1,6 +1,6 @@
 ---
-title: Error reference for health checks
-description: Error codes and possible solutions to problems found by running the az acr check-health diagnostic command in Azure Container Registry
+title: Ссылка на ошибку для проверок работоспособности
+description: Коды ошибок и возможные решения проблем, обнаруженных при выполнении команды AZ контроля доступа проверки работоспособности в реестре контейнеров Azure
 ms.topic: article
 ms.date: 07/02/2019
 ms.openlocfilehash: a921d17ad7d01b134f5bfa33a1d9a768d3ea94df
@@ -10,99 +10,99 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/24/2019
 ms.locfileid: "74455038"
 ---
-# <a name="health-check-error-reference"></a>Health check error reference
+# <a name="health-check-error-reference"></a>Ссылка на ошибку проверки работоспособности
 
-Following are details about error codes returned by the [az acr check-health][az-acr-check-health] command. For each error, possible solutions are listed.
+Ниже приведены сведения о кодах ошибок, возвращаемых командой [AZ контроля доступа проверки работоспособности][az-acr-check-health] . Для каждой ошибки перечислены возможные решения.
 
 ## <a name="docker_command_error"></a>DOCKER_COMMAND_ERROR
 
-This error means that Docker client for CLI could not be found. As a result, the following additional checks are not run: finding Docker version, evaluating Docker daemon status, and running a Docker pull command.
+Эта ошибка означает, что не удалось найти клиент DOCKER для CLI. В результате следующие дополнительные проверки не выполняются: поиск версии DOCKER, оценка состояния управляющей программы DOCKER и выполнение команды DOCKER Pull.
 
-*Potential solutions*: Install Docker client; add Docker path to the system variables.
+*Возможные решения*: Установка клиента DOCKER; Добавьте путь DOCKER в системные переменные.
 
 ## <a name="docker_daemon_error"></a>DOCKER_DAEMON_ERROR
 
-This error means that the Docker daemon status is unavailable, or that it could not be reached using the CLI. As a result, Docker operations (such as `docker login` and `docker pull`) are unavailable through the CLI.
+Эта ошибка означает, что состояние управляющей программы DOCKER недоступно или не может быть достигнуто с помощью интерфейса командной строки. В результате операции DOCKER (такие как `docker login` и `docker pull`) недоступны через интерфейс командной строки.
 
-*Potential solutions*: Restart Docker daemon, or validate that it is properly installed.
+*Возможные решения*: перезапустите управляющую программу DOCKER или проверьте правильность ее установки.
 
 ## <a name="docker_version_error"></a>DOCKER_VERSION_ERROR
 
-This error means that CLI was not able to run the command `docker --version`.
+Эта ошибка означает, что интерфейс командной строки не может выполнить команду `docker --version`.
 
-*Potential solutions*: Try running the command manually, make sure you have the latest CLI version, and investigate the error message.
+*Возможные решения*: попробуйте выполнить команду вручную, убедитесь, что у вас установлена последняя версия CLI, и проверьте сообщение об ошибке.
 
 ## <a name="docker_pull_error"></a>DOCKER_PULL_ERROR
 
-This error means that the CLI was not able to pull a sample image to your environment.
+Эта ошибка означает, что интерфейс командной строки не смог извлечь пример изображения в вашу среду.
 
-*Potential solutions*: Validate that all components necessary to pull an image are running properly.
+*Возможные решения*: Убедитесь, что все компоненты, необходимые для извлечения образа, выполняются правильно.
 
 ## <a name="helm_command_error"></a>HELM_COMMAND_ERROR
 
-This error means that Helm client could not be found by the CLI, which precludes other Helm operations.
+Эта ошибка означает, что интерфейс командной строки не может найти клиент Helm, который исключает другие операции Helm.
 
-*Potential solutions*: Verify that Helm client is installed, and that its path is added to the system environment variables.
+*Возможные решения*: Убедитесь, что клиент Helm установлен и что его путь добавлен в системные переменные среды.
 
 ## <a name="helm_version_error"></a>HELM_VERSION_ERROR
 
-This error means that the CLI was unable to determine the Helm version installed. This can happen if the Azure CLI version (or if the Helm version) being used is obsolete.
+Эта ошибка означает, что интерфейс командной строки не смог определить установленную версию Helm. Это может произойти, если используемая версия Azure CLI (или Helm версия) устарела.
 
-*Potential solutions*: Update to the latest Azure CLI version or to the recommended Helm version; run the command manually and investigate the error message.
+*Возможные решения*: обновление до последней версии Azure CLI или на рекомендуемую версию Helm; выполните команду вручную и изучите сообщение об ошибке.
 
 ## <a name="connectivity_dns_error"></a>CONNECTIVITY_DNS_ERROR
 
-This error means that the DNS for the given registry login server was pinged but did not respond, which means it is unavailable. This can indicate some connectivity issues. Alternatively, the registry might not exist, the user might not have the permissions on the registry (to retrieve its login server properly), or the target registry is in a different cloud than the one used in the Azure CLI.
+Эта ошибка означает, что служба DNS для данного сервера входа в реестр выполнила проверку связи, но не ответила, что означает, что она недоступна. Это может указывать на некоторые проблемы с подключением. Кроме того, реестр может не существовать, пользователь может не иметь разрешений на реестр (для правильного извлечения сервера входа), или целевой реестр находится в другом облаке, отличном от того, который используется в Azure CLI.
 
-*Potential solutions*: Validate connectivity; verify spelling of the registry, and that registry exists; verify that the user has the right permissions on it and that the registry's cloud is the same that is used in the Azure CLI.
+*Возможные решения*: Проверка подключения; Проверьте правильность написания реестра, и убедитесь, что реестр существует. Убедитесь, что у пользователя есть необходимые разрешения на него и что облако реестра совпадает с используемым в Azure CLI.
 
 ## <a name="connectivity_forbidden_error"></a>CONNECTIVITY_FORBIDDEN_ERROR
 
-This error means that the challenge endpoint for the given registry responded with a 403 Forbidden HTTP status. This error means that users don't have access to the registry, most likely because of a virtual network configuration. To see the currently configured firewall rules, run `az acr show --query networkRuleSet --name <registry>`.
+Эта ошибка означает, что конечная точка вызова для данного реестра ответила с состоянием HTTP, которым запрещено 403. Эта ошибка означает, что пользователи не имеют доступа к реестру, скорее всего, из-за конфигурации виртуальной сети. Чтобы просмотреть настроенные в настоящее время правила брандмауэра, выполните `az acr show --query networkRuleSet --name <registry>`.
 
-*Potential solutions*: Remove virtual network rules, or add the current client IP address to the allowed list.
+*Возможные решения*: удалите правила виртуальной сети или добавьте текущий IP-адрес клиента в список разрешенных.
 
 ## <a name="connectivity_challenge_error"></a>CONNECTIVITY_CHALLENGE_ERROR
 
-This error means that the challenge endpoint of the target registry did not issue a challenge.
+Эта ошибка означает, что конечная точка вызова целевого реестра не выдавала проблему.
 
-*Potential solutions*: Try again after some time. If the error persists, open an issue at https://aka.ms/acr/issues.
+*Возможные решения*: повторите попытку через некоторое время. Если ошибка повторяется, откройте проблему на https://aka.ms/acr/issues.
 
 ## <a name="connectivity_aad_login_error"></a>CONNECTIVITY_AAD_LOGIN_ERROR
 
-This error means that the challenge endpoint of the target registry issued a challenge, but the registry does not support Azure Active Directory authentication.
+Эта ошибка означает, что конечной точке запроса целевого реестра была выдана проблема, но реестр не поддерживает проверку подлинности Azure Active Directory.
 
-*Potential solutions*: Try a different way to authenticate, for example, with admin credentials. If users need  to authenticate using Azure Active Directory, open an issue at https://aka.ms/acr/issues.
+*Возможные решения*. Попробуйте использовать другой способ проверки подлинности, например с учетными данными администратора. Если пользователям необходимо пройти проверку подлинности с помощью Azure Active Directory, откройте вопрос в https://aka.ms/acr/issues.
 
 ## <a name="connectivity_refresh_token_error"></a>CONNECTIVITY_REFRESH_TOKEN_ERROR
 
-This error means that the registry login server did not respond with a refresh token, so access to the target registry was denied. This error can occur if the user does not have the right permissions on the registry or if the user credentials for the  Azure CLI are stale.
+Эта ошибка означает, что сервер входа в реестр не ответил на маркер обновления, поэтому доступ к целевому реестру был отклонен. Эта ошибка может возникать, если у пользователя нет нужных разрешений в реестре или если учетные данные пользователя для Azure CLI устарели.
 
-*Potential solutions*: Verify if the user has the right permissions on the registry; run `az login` to refresh permissions, tokens, and credentials.
+*Возможные решения*: Убедитесь, что у пользователя есть нужные разрешения в реестре. Запустите `az login`, чтобы обновить разрешения, токены и учетные данные.
 
 ## <a name="connectivity_access_token_error"></a>CONNECTIVITY_ACCESS_TOKEN_ERROR
 
-This error means that the registry login server did not respond with an access token, so that the access to the target registry was denied. This error can occur if the user does not have the right permissions on the registry or if the user credentials for the Azure CLI are stale.
+Эта ошибка означает, что сервер входа в реестр не ответил маркером доступа, чтобы доступ к целевому реестру был запрещен. Эта ошибка может возникать, если у пользователя нет нужных разрешений в реестре или если учетные данные пользователя для Azure CLI устарели.
 
-*Potential solutions*: Verify if the user has the right permissions on the registry; run `az login` to refresh permissions, tokens, and credentials.
+*Возможные решения*: Убедитесь, что у пользователя есть нужные разрешения в реестре. Запустите `az login`, чтобы обновить разрешения, токены и учетные данные.
 
 ## <a name="connectivity_ssl_error"></a>CONNECTIVITY_SSL_ERROR
 
-This error means that the client was unable to establish a secure connection to the container registry. This error generally occurs if you're running or using a proxy server.
+Эта ошибка означает, что клиенту не удалось установить безопасное подключение к реестру контейнеров. Эта ошибка обычно возникает, если вы используете или используете прокси-сервер.
 
-*Potential solutions*: More information on working behind a proxy can be [found here](https://github.com/Azure/azure-cli/blob/master/doc/use_cli_effectively.md#working-behind-a-proxy).
+*Возможные решения*. Дополнительные сведения о работе с прокси-сервером можно [найти здесь](https://github.com/Azure/azure-cli/blob/master/doc/use_cli_effectively.md#working-behind-a-proxy).
 
 ## <a name="login_server_error"></a>LOGIN_SERVER_ERROR
 
-This error means that the CLI was unable to find the login server of the given registry, and no default suffix was found for the current cloud. This error can occur if the registry does not exist, if the user does not have the right permissions on the registry, if the registry's cloud and the current Azure CLI cloud do not match, or if the Azure CLI version is obsolete.
+Эта ошибка означает, что CLI не удалось найти сервер входа в заданный реестр, и для текущего облака не найдено суффикс по умолчанию. Эта ошибка может возникать, если реестр не существует, если у пользователя нет нужных разрешений в реестре, если облако реестра и текущее Azure CLIное облако не совпадают или если Azure CLIная версия устарела.
 
-*Potential solutions*: Verify that the spelling is correct and that the registry exists; verify that user has the right permissions on the registry, and that the clouds of the registry and the CLI environment match; update Azure CLI to the latest version.
+*Возможные решения*: Проверьте правильность написания и убедитесь, что реестр существует. Убедитесь, что у пользователя есть нужные разрешения в реестре и что облака реестра и среды CLI совпадают. Обновите Azure CLI до последней версии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-For options to check the health of a registry, see [Check the health of an Azure container registry](container-registry-check-health.md).
+Сведения о параметрах проверки работоспособности реестра см. в статье [Проверка работоспособности реестра контейнеров Azure](container-registry-check-health.md).
 
-See the [FAQ](container-registry-faq.md) for frequently asked questions and other known issues about Azure Container Registry.
+Часто задаваемые вопросы и другие известные проблемы реестра контейнеров Azure см. в [часто](container-registry-faq.md) задаваемых вопросах.
 
 
 

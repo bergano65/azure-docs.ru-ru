@@ -1,5 +1,5 @@
 ---
-title: Troubleshoot legacy hybrid Azure Active Directory joined devices
+title: Устранение неполадок с подключенными устаревшими гибридными Azure Active Directory устройствами
 description: Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory.
 services: active-directory
 ms.service: active-directory
@@ -24,15 +24,15 @@ ms.locfileid: "74379117"
 
 - Windows 7 
 - Windows 8.1 
-- Windows Server 2008 R2 
+- Windows Server 2008 R2 
 - Windows Server 2012 
-- Windows Server 2012 R2 
+- Windows Server 2012 R2 
 
 Сведения об устройствах под управлением Windows 10 и Windows Server 2016 см. в статье [Troubleshooting hybrid Azure Active Directory joined Windows 10 and Windows Server 2016 devices](troubleshoot-hybrid-join-windows-current.md) (Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory).
 
 В этой статье предполагается, что вы [настроили гибридное присоединение устройств к Azure Active Directory](hybrid-azuread-join-plan.md) для поддержки следующих сценариев:
 
-- Device-based Conditional Access
+- Условный доступ на основе устройств
 
 В этой статье содержатся рекомендации по устранению неполадок для решения потенциальных проблем.  
 
@@ -69,11 +69,11 @@ ms.locfileid: "74379117"
     ![Присоединение к рабочей области для Windows](./media/troubleshoot-hybrid-join-windows-legacy/02.png)
     
    - Autoworkplace.exe не удалось выполнить автоматическую аутентификацию с помощью Azure AD или AD FS. Это может быть вызвано отсутствием или неправильной настройкой AD FS (для федеративных доменов) или отсутствующим или неправильно сконфигурированным эффективным единым входом в Azure AD (для управляемых доменов), или сетевыми проблемами. 
-   - It could be that multi-factor authentication (MFA) is enabled/configured for the user and WIAORMULTIAUTHN is not configured at the AD FS server. 
+   - Возможно, многофакторная проверка подлинности (MFA) включена или настроена для пользователя, а WIAORMULTIAUTHN не настроен на сервере AD FS. 
    - Другой вариант — страница обнаружения домашней области (HRD) ожидает взаимодействия с пользователем, что предотвращает автоматическое запрашивание токена программой **Autoworkplace.exe**.
    - Возможно, URL-адреса AD FS и Azure AD отсутствуют в зоне интрасети IE на клиенте.
    - Проблемы с подключением к сети могут препятствовать **autoworkplace.exe** достигать URL-адреса AD FS или Azure AD. 
-   - **Autoworkplace.exe** requires the client to have direct line of sight from the client to the organization's on-premises AD domain controller, which means that hybrid Azure AD join succeeds only when the client is connected to organization's intranet.
+   - Для работы программы автообслуживания **. exe** требуется, чтобы клиент имел прямую отправку информации от клиента к локальному контроллеру домена AD Организации. Это означает, что гибридное присоединение к Azure AD будет выполнено успешно, только если клиент подключен к интрасети организации.
    - Ваша организация использует прозрачный единый вход Azure AD, `https://autologon.microsoftazuread-sso.com` или `https://aadg.windows.net.nsatc.net` нет в параметрах интрасети IE устройства, а параметр **Разрешить обновление строки состояния в сценарии** не включен в зоне интранета.
 - Вы не вошли в качестве пользователя домена
 
@@ -103,6 +103,6 @@ ms.locfileid: "74379117"
    - или, если ваш домен управляемый, то эффективный SSO не был настроен или не работает;
    - пользователь достиг предела подключенных устройств. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Ответы на вопросы можно найти в статье [Azure Active Directory device management FAQ](faq.md) (Часто задаваемые вопросы по управлению устройствами Azure Active Directory).  

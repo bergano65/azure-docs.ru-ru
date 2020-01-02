@@ -1,24 +1,17 @@
 ---
-title: Развертывание контейнера из конвейера CI/CD с помощью действий GitHub в службе приложений Azure | Документация Майкрософт
-description: Узнайте, как использовать действия GitHub для развертывания контейнера в службе приложений.
-services: app-service
-documentationcenter: ''
-author: cephalin
-manager: gwallace
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
+title: Настраиваемые контейнеры CI/CD из действий GitHub
+description: Узнайте, как использовать действия GitHub для развертывания пользовательского контейнера Linux в службе приложений из конвейера CI/CD.
 ms.devlang: na
 ms.topic: article
 ms.date: 10/25/2019
 ms.author: jafreebe
 ms.reviewer: ushan
-ms.openlocfilehash: 7fbd7b571f5590ff35d52062cc621069a47b619c
-ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
+ms.openlocfilehash: 127dd8645596b605980bf3c6fbc87bf159f7c03e
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73620234"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74671807"
 ---
 # <a name="deploy-a-custom-container-to-app-service-using-github-actions"></a>Развертывание пользовательского контейнера в службе приложений с помощью действий GitHub
 
@@ -28,13 +21,13 @@ ms.locfileid: "73620234"
 > Действия GitHub в настоящее время находятся в бета-версии. Сначала необходимо [зарегистрироваться, чтобы присоединиться к предварительной версии](https://github.com/features/actions) с помощью учетной записи GitHub.
 > 
 
-Рабочий процесс определяется файлом YAML (yml) в пути `/.github/workflows/` в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс.
+Рабочий процесс определяется файлом YAML (yml) в `/.github/workflows/` пути в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс.
 
 Для рабочего процесса контейнера службы приложений Azure файл содержит три раздела:
 
-|Раздел  |Задачи  |
+|Section  |Задачи  |
 |---------|---------|
-|**Проверка подлинности** | 1. Определите субъект-службу. <br /> 2. Создайте секрет GitHub. |
+|**Authentication** (Аутентификация) | 1. Определите субъект-службу. <br /> 2. Создайте секрет GitHub. |
 |**Сборка** | 1. Настройте среду. <br /> 2. Создайте образ контейнера. |
 |**Развертывание** | 1. Разверните образ контейнера. |
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/24/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 52dbf03c7d4c2c2de565d6793fc867cf5b886db3
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: c88cba57ed987074c0dde3c8b251f54393667740
+ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "74000460"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "75002686"
 ---
 | Размеры дисков SSD (цен. категория "Премиум") | P1* | P2* | P3* | P4 | P6 | P10 | P15 | P20 | P30 | P40 | P50 | P60 | P70 | P80 |
 |-------------------|----|----|----|----|----|-----|-----|-----|-----|-----|-----|------|------|------|
@@ -26,4 +26,4 @@ ms.locfileid: "74000460"
 
 \*Обозначает размер диска, который сейчас находится на этапе предварительной версии. Сведения о доступности в регионах см. в разделе [Размеры новых управляемых и неуправляемых дисков](https://docs.microsoft.com/azure/virtual-machines/linux/faq-for-disks#new-disk-sizes-managed-and-unmanaged).
 
-\** Обозначает компонент, который сейчас находится на этапе предварительной версии. Дополнительные сведения см. в [этой статье](https://docs.microsoft.com/azure/virtual-machines/linux/disk-bursting#regional-availability).
+\*\* Обозначает, что доступна предварительная версия компонента. Дополнительные сведения см. в разделе о [поддержке пакетов дисками](https://docs.microsoft.com/azure/virtual-machines/linux/disk-bursting#regional-availability).

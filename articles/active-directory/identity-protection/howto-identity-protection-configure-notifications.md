@@ -20,51 +20,51 @@ ms.locfileid: "74382154"
 ---
 # <a name="azure-active-directory-identity-protection-notifications"></a>Уведомления защиты идентификации Azure Active Directory
 
-Azure AD Identity Protection sends two types of automated notification emails to help you manage user risk and risk detections:
+Защита идентификации Azure AD отправляет два типа автоматически отправляемых по электронной почте уведомлений, помогающих управлять рисками для пользователей и обнаружения рисков.
 
-- Сообщение электронной почты об обнаружении пользователей в группе риска
+- сообщение электронной почты об обнаружении пользователей в группе риска;
 - сообщение электронной почты еженедельного дайджеста.
 
 В этой статье рассматриваются оба уведомления по электронной почте.
 
-## <a name="users-at-risk-detected-email"></a>Сообщение электронной почты об обнаружении пользователей в группе риска
+## <a name="users-at-risk-detected-email"></a>сообщение электронной почты об обнаружении пользователей в группе риска;
 
 При обнаружении учетной записи в группе риска служба "Защита идентификации Azure Active Directory" создает уведомление по электронной почте с темой **Users at risk detected** (Обнаружены пользователи в группе риска). В таком электронном сообщении содержится ссылка на отчет **[Пользователи, находящиеся в группе риска](../reports-monitoring/concept-user-at-risk.md)** . Мы советуем немедленно проверить пользователей в группе риска.
 
-The configuration for this alert allows you to specify at what user risk level you want the alert to be generated. The email will be generated when the user's risk level reaches what you have specified; however, you will not receive new users at risk detected email alerts for this user after they move to this user risk level. For example, if you set the policy to alert on medium user risk and your user John moves to medium risk, you will receive the users at risk detected email for John. However, you will not receive a second user at risk detected alert if John then moves to high risk or has additional risk detections.
+Конфигурация этого оповещения позволяет указать уровень риска, на котором будет создаваться оповещение. Сообщение электронной почты будет создано, когда уровень риска пользователя достигнет указанного вами значения. Однако после перехода на этот уровень риска для этого пользователя не будут приходить новые пользователи с риском. Например, если вы настроили политику на оповещение о риске среднего пользователя, а пользователь Джон перейдет к среднему риску, вы будете получать пользователей с обнаруженным риском в сообщении электронной почты для Джон. Однако вы не получите второго пользователя в случае, если Джон перейдет к большому риску или получит дополнительные определения рисков.
 
-![Сообщение электронной почты об обнаружении пользователей в группе риска](./media/howto-identity-protection-configure-notifications/01.png)
+![сообщение электронной почты об обнаружении пользователей в группе риска;](./media/howto-identity-protection-configure-notifications/01.png)
 
-### <a name="configure-users-at-risk-detected-alerts"></a>Configure users at risk detected alerts
+### <a name="configure-users-at-risk-detected-alerts"></a>Настройка пользователей под угрозой обнаруженные предупреждения
 
 Как администратор вы можете настроить:
 
-- **The user risk level that triggers the generation of this email** - By default, the risk level is set to “High” risk.
+- **Уровень риска пользователя, который активирует создание этого сообщения электронной почты** по умолчанию, имеет уровень риска "высокий".
 - **Получателей.** По умолчанию это письмо отправляется всем глобальным администраторам. Глобальные администраторы также могут добавить в список получателей других глобальных администраторов, администраторов безопасности и читателей сведений о безопасности.
-   - Optionally you can **Add additional emails to receive alert notifications** this feature is a preview and users defined must have the appropriate permissions to view the linked reports in the Azure portal.
+   - При необходимости можно **добавить дополнительные сообщения электронной почты для получения уведомлений об оповещениях** . Эта функция является предварительной и определенные пользователи должны иметь соответствующие разрешения на просмотр связанных отчетов в портал Azure.
 
-Configure the users at risk email in the **Azure portal** under **Azure Active Directory** > **Security** > **Identity Protection** > **Users at risk detected alerts**.
+Настройте электронную почту пользователей под угрозой в **портал Azure** в разделе **Azure Active Directory** > **Безопасность** > **удостоверение** > **пользователей в риске обнаружены предупреждения**.
 
 ## <a name="weekly-digest-email"></a>сообщение электронной почты еженедельного дайджеста.
 
-The weekly digest email contains a summary of new risk detections.  
+Еженедельное сообщение сводки содержит сводку новых обнаружений рисков.  
 Сюда входят:
 
-- Пользователи, подверженные риску
+- пользователи под угрозой;
 - подозрительные действия;
 - обнаруженные уязвимости;
 - ссылки на связанные отчеты в службе защиты идентификации.
 
 ![сообщение электронной почты еженедельного дайджеста.](./media/howto-identity-protection-configure-notifications/400.png)
 
-By default, recipients include all Global Admins. Глобальные администраторы также могут добавить в список получателей других глобальных администраторов, администраторов безопасности и читателей сведений о безопасности.
+По умолчанию получатели включают всех глобальных администраторов. Глобальные администраторы также могут добавить в список получателей других глобальных администраторов, администраторов безопасности и читателей сведений о безопасности.
 
-### <a name="configure-weekly-digest-email"></a>Configure weekly digest email
+### <a name="configure-weekly-digest-email"></a>Настройка еженедельной сводки по электронной почте
 
-As an administrator, you can switch sending a weekly digest email on or off and choose the users assigned to receive the email.
+Администратор может включить или отключить Еженедельный дайджест-адрес электронной почты и выбрать пользователей, которым назначено получение электронного письма.
 
-Configure the weekly digest email in the **Azure portal** under **Azure Active Directory** > **Security** > **Identity Protection** > **Weekly digest**.
+Настройте Еженедельный дайджест-адрес в **портал Azure** в разделе **Azure Active Directory** > **Безопасность** > **Идентификация** > **Еженедельный дайджест**.
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 - [Защита идентификации Azure Active Directory.](../active-directory-identityprotection.md)

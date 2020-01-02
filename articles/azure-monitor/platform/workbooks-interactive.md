@@ -1,5 +1,5 @@
 ---
-title: Создание интерактивных отчетов с помощью Azure Monitor пользовательских параметров | Документация Майкрософт
+title: Azure Monitor книг с пользовательскими параметрами
 description: Упростите создание сложных отчетов с помощью готовых настраиваемых параметризованных книг
 services: azure-monitor
 author: mrbullwinkle
@@ -10,14 +10,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
-ms.openlocfilehash: eeb6eb5d8b3ad6498ff90a9afe1fa4f2c18d30e5
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 19fd8c108e8075d30ca494ca75d52952849c284a
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73165957"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74872848"
 ---
-# <a name="interactive-workbooks"></a>Интерактивные книги
+# <a name="interactive-workbooks"></a>Интерактивные Workbooks
 
 Книги позволяют авторам создавать интерактивные отчеты и взаимодействия с пользователями. Интерактивность поддерживается несколькими способами.
 
@@ -46,7 +46,7 @@ ms.locfileid: "73165957"
 7. Проверьте параметр: `When an item is selected, export a parameter`
     1. Поле для экспорта: `Request`
     2. Имя параметра: `SelectedRequest`
-    3. Значение по умолчанию: `All requests`
+    3. Значение по умолчанию — `All requests`.
     
     ![Изображение, отображающее Расширенный редактор с параметрами экспорта полей в качестве параметров](./media/workbooks-interactive/advanced-settings.png)
 
@@ -109,7 +109,7 @@ ms.locfileid: "73165957"
 | `* Details` | Аналогично пользовательским сведениям о событии, за исключением зависимостей, исключений, просмотров страниц, запросов и трассировок. |
 | `Custom Event User Flows` | Открывает Application Insights Маршруты пользователей возможности, сведенные по имени пользовательского события в ячейке. |
 | `* User Flows` | Аналогично Маршруты пользователей пользовательских событий, за исключением исключений, просмотров страниц и запросов |
-| `User Timeline` | Открывает пользовательскую временную шкалу с ИДЕНТИФИКАТОРом пользователя в ячейке. |
+| `User Timeline` | Открывает временную шкалу пользователя с ИДЕНТИФИКАТОРом пользователя (user_Id) в ячейке |
 | `Session Timeline` | Открывает Application Insights поиска для значения в ячейке (например, Поиск текста "ABC", где ABC — это значение в ячейке). |
 | `Resource overview` | Откройте Обзор ресурса на портале на основе значения идентификатора ресурса в ячейке. |
 

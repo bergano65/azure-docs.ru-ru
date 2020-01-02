@@ -29,6 +29,8 @@
           href: tutorial-iot-hub-maps.md
         - name: Прокладывание маршрута электромобиля с использованием службы "Записные книжки Azure" (Python)
           href: tutorial-ev-routing.md
+        - name: Анализ данных о погоде с помощью Записных книжек Azure (Python)
+          href: weather-service-tutorial.md
 - name: Основные понятия
   items:
     - name: Аутентификация в Azure Maps
@@ -127,7 +129,7 @@
               href: map-add-custom-html.md
             - name: Отображение трафика
               href: map-show-traffic.md
-            - name: Взаимодействие с событиями мыши
+            - name: Реагирование на события
               href: map-events.md
             - name: Добавление специальных возможностей в приложение
               href: map-accessibility.md

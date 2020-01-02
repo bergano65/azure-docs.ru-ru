@@ -1,6 +1,6 @@
 ---
 title: Использование внешних хранилищ метаданных в Azure HDInsight
-description: Use external metadata stores with Azure HDInsight clusters, and best practices.
+description: Используйте внешние хранилища метаданных с кластерами Azure HDInsight и рекомендациями.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -17,7 +17,7 @@ ms.locfileid: "74327370"
 ---
 # <a name="use-external-metadata-stores-in-azure-hdinsight"></a>Использование внешних хранилищ метаданных в Azure HDInsight
 
-HDInsight allows you to take control of your data and metadata by deploying key metadata solutions and management databases to external data stores. This feature is currently available for [Apache Hive metastore](#custom-metastore), [Apache Oozie metastore](#apache-oozie-metastore) and [Apache Ambari database](#custom-ambari-db).
+HDInsight позволяет управлять данными и метаданными, развертывая ключевые решения метаданных и базы данных управления во внешних хранилищах данных. Эта функция в настоящее время доступна для базы данных [Apache Hive хранилище метаданных](#custom-metastore), [Apache Oozie хранилище метаданных](#apache-oozie-metastore) и [Apache Ambari](#custom-ambari-db).
 
 Хранилище метаданных Apache Hive в HDInsight является важной частью архитектуры Apache Hadoop. Хранилище метаданных — это центральный репозиторий схемы, который могут использовать другие инструменты для доступа к большим данным, такие как Apache Spark, Interactive Query (LLAP), Presto или Apache Pig. HDInsight использует базу данных SQL Azure в качестве хранилища метаданных Hive.
 
@@ -36,7 +36,7 @@ HDInsight allows you to take control of your data and metadata by deploying key 
 
 * Каждое хранилище метаданных по умолчанию является частью жизненного цикла кластера. При удалении кластера соответствующее хранилище метаданных и метаданные также удаляются.
 
-* You can't share the default metastore with other clusters.
+* Вы не можете совместно использовать хранилище метаданных по умолчанию с другими кластерами.
 
 * Хранилище метаданных по умолчанию использует стандартную базу данных SQL Azure с ограничением в пять DTU (единица транзакций базы данных).
 Это хранилище метаданных по умолчанию обычно используется для относительно простых рабочих нагрузок, которым не требуется несколько кластеров, а метаданные не нужно сохранять за пределами жизненного цикла кластера.
@@ -47,7 +47,7 @@ HDInsight также поддерживает пользовательские �
 
 * В качестве хранилища метаданных указывается собственная база данных SQL Azure.
 
-* The lifecycle of the metastore isn't tied to a clusters lifecycle, so you can create and delete clusters without losing metadata. Метаданные, такие как схемы Hive, сохраняются даже после удаления и повторного создания кластера HDInsight.
+* Жизненный цикл хранилище метаданных не привязан к жизненному циклу кластеров, поэтому вы можете создавать и удалять кластеры без потери метаданных. Метаданные, такие как схемы Hive, сохраняются даже после удаления и повторного создания кластера HDInsight.
 
 * Пользовательское хранилище метаданных позволяет присоединять к этому хранилищу метаданных кластеры различных типов. Например, одно хранилище метаданных может совместно использоваться в кластерах Interactive Query, Hive и Hive в HDInsight.
 
@@ -57,21 +57,21 @@ HDInsight также поддерживает пользовательские �
 
 ![Вариант использования хранилища метаданных Hive HDInsight](./media/hdinsight-use-external-metadata-stores/metadata-store-use-case.png)
 
-### <a name="create-and-config-azure-sql-database-for-the-custom-metastore"></a>Create and config Azure SQL Database for the custom metastore
+### <a name="create-and-config-azure-sql-database-for-the-custom-metastore"></a>Создание и Настройка базы данных SQL Azure для настраиваемого хранилище метаданных
 
-You need to create or have an existing Azure SQL Database before setting up a custom Hive metastore for a HDInsight cluster.  For more information, see [Quickstart: Create a single database in Azure SQL DB](https://docs.microsoft.com/azure/sql-database/sql-database-single-database-get-started?tabs=azure-portal).
+Перед настройкой настраиваемого хранилище метаданных Hive для кластера HDInsight необходимо создать или использовать существующую базу данных SQL Azure.  Дополнительные сведения см. [в разделе Краткое руководство. Создание отдельной базы данных в базе данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-single-database-get-started?tabs=azure-portal).
 
-To make sure that your HDInsight cluster can access the connected Azure SQL Database, configure Azure SQL Database firewall rules to allow Azure services and resources to access the server.
+Чтобы обеспечить доступ кластера HDInsight к подключенной базе данных SQL Azure, настройте правила брандмауэра базы данных SQL Azure, чтобы предоставить службам и ресурсам Azure доступ к серверу.
 
-You can enable this option in the Azure portal by clicking **Set server firewall**, and clicking **ON** underneath **Allow Azure services and resources to access this server** for the Azure SQL Database server or database. For more information, see [Create and manage IP firewall rules](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure#use-the-azure-portal-to-manage-server-level-ip-firewall-rules)
+Вы можете включить этот параметр в портал Azure, щелкнув **задать брандмауэр сервера**, а **затем выбрав пункт** **Разрешить службам и ресурсам Azure доступ к серверу** для сервера базы данных SQL Azure или базы данных. Дополнительные сведения см. в разделе [Создание правил брандмауэра IP-адресов и управление ими](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure#use-the-azure-portal-to-manage-server-level-ip-firewall-rules) .
 
-![set server firewall button](./media/hdinsight-use-external-metadata-stores/configure-azure-sql-database-firewall1.png)
+![Кнопка установки брандмауэра сервера](./media/hdinsight-use-external-metadata-stores/configure-azure-sql-database-firewall1.png)
 
-![allow azure services access](./media/hdinsight-use-external-metadata-stores/configure-azure-sql-database-firewall2.png)
+![разрешить доступ к службам Azure](./media/hdinsight-use-external-metadata-stores/configure-azure-sql-database-firewall2.png)
 
 ### <a name="select-a-custom-metastore-during-cluster-creation"></a>Выбор пользовательского хранилища метаданных во время создания кластера
 
-При создании кластеру можно указать ранее созданную базу данных Azure SQL или настроить базу данных SQL после его создания. This option is specified with the **Storage > Metastore settings** while creating a new Hadoop, Spark, or interactive Hive cluster from Azure portal.
+При создании кластеру можно указать ранее созданную базу данных Azure SQL или настроить базу данных SQL после его создания. Этот параметр указывается с помощью **параметров Storage > хранилище метаданных** при создании нового кластера Hadoop, Spark или Interactive Hive из портал Azure.
 
 ![Хранилище метаданных Hive HDInsight на портале Azure](./media/hdinsight-use-external-metadata-stores/azure-portal-cluster-storage-metastore.png)
 
@@ -89,15 +89,15 @@ You can enable this option in the Azure portal by clicking **Set server firewall
 
 * Найдите свое хранилище метаданных и кластер HDInsight в одном регионе для максимальной производительности и минимальной платы за исходящий трафик сети.
 
-* Monitor your metastore for performance and availability using Azure SQL Database Monitoring tools, such as the Azure portal or Azure Monitor logs.
+* Отслеживайте производительность и доступность хранилище метаданных с помощью средств мониторинга базы данных SQL Azure, таких как журналы портал Azure или Azure Monitor.
 
 * Если создается новая версия Azure HDInsight для существующей пользовательской базы данных хранилища метаданных, система обновляет схему хранилища метаданных, и это необратимая операция без восстановления базы данных из резервной копии.
 
-* Если вы совместно используете хранилище метаданных в нескольких кластерах, убедитесь, что все кластеры имеют одну и ту же версию HDInsight. Различные версии Hive используют разные версии базы данных хранилища метаданных. For example, you can't share a metastore across Hive 2.1 and Hive 3.1 versioned clusters.
+* Если вы совместно используете хранилище метаданных в нескольких кластерах, убедитесь, что все кластеры имеют одну и ту же версию HDInsight. Различные версии Hive используют разные версии базы данных хранилища метаданных. Например, нельзя совместно использовать хранилище метаданных в кластерах Hive 2,1 и Hive 3,1 с версиями.
 
-* In HDInsight 4.0, Spark and Hive use independent catalogs for accessing SparkSQL or Hive tables. A table created by Spark resides in the Spark catalog. A table created by Hive resides in the Hive catalog. This is different than HDInsight 3.6 where Hive and Spark shared common catalog. Hive and Spark Integration in HDInsight 4.0 relies on Hive Warehouse Connector (HWC). HWC works as a bridge between Spark and Hive. [Learn about Hive Warehouse Connector](../hdinsight/interactive-query/apache-hive-warehouse-connector.md).
+* В HDInsight 4,0 Spark и Hive используют независимые каталоги для доступа к таблицам SparkSQL или Hive. Таблица, созданная Spark, находится в каталоге Spark. Таблица, созданная Hive, находится в каталоге Hive. Это отличается от HDInsight 3,6, где размещается общий каталог Hive и Spark. Интеграция Hive и Spark в HDInsight 4,0 основана на соединителе хранилища Hive (HWC). HWC работает как мост между Spark и Hive. [Сведения о соединителе хранилища Hive](../hdinsight/interactive-query/apache-hive-warehouse-connector.md).
 
-## <a name="apache-oozie-metastore"></a>Apache Oozie metastore
+## <a name="apache-oozie-metastore"></a>Хранилище метаданных Apache Oozie
 
 Apache Oozie — это система координации рабочих процессов, которая управляет заданиями Hadoop.  Эта система поддерживает задания Hadoop для Apache MapReduce, Pig, Hive и т. д.  Oozie использует хранилище метаданных, чтобы сохранять сведения о текущих и завершенных рабочих процессах. Для повышения производительности Oozie можно использовать Базу данных SQL Azure в качестве хранилища метаданных. Хранилище метаданных также позволяет осуществлять доступ к данным задания Oozie после удаления кластера.
 
@@ -105,8 +105,8 @@ Apache Oozie — это система координации рабочих п�
 
 ## <a name="custom-ambari-db"></a>Пользовательская база данных Ambari DB
 
-To use your own external database with Apache Ambari on HDInsight, see [Custom Apache Ambari database](hdinsight-custom-ambari-db.md).
+Сведения о том, как использовать собственную внешнюю базу данных с Apache Ambari в HDInsight, см. в статье [пользовательские базы данных Apache Ambari](hdinsight-custom-ambari-db.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий](./hdinsight-hadoop-provision-linux-clusters.md)

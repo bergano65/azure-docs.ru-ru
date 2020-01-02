@@ -1,5 +1,6 @@
 ---
-title: REST API обмен утверждениями в качестве проверки в Azure Active Directory B2C
+title: REST API обмен утверждениями в качестве проверки
+titleSuffix: Azure AD B2C
 description: Пошаговое руководство по созданию Azure AD B2C пути взаимодействия пользователя, взаимодействующего со службами RESTFUL.
 services: active-directory-b2c
 author: mmacy
@@ -10,14 +11,14 @@ ms.topic: conceptual
 ms.date: 08/21/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 45fad1fab419c448febb3f3b760996fba278e154
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 8730870bfae9f704ee43594497f79942b70a6181
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69644972"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74949378"
 ---
-# <a name="walkthrough-integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-user-journey-as-validation-on-user-input"></a>Пошаговое руководство. Интеграция обмена утверждениями REST API в пути взаимодействия пользователей Azure AD B2C как проверка входных данных
+# <a name="walkthrough-integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-user-journey-as-validation-on-user-input"></a>Пошаговое руководство. Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
@@ -30,18 +31,18 @@ ms.locfileid: "69644972"
 - можно реализовать как обмен утверждениями REST API или профиль проверки, выполняемой на этапе оркестрации;
 - обычно проверяет входные данные пользователя. Если полученное значение отклоняется, то пользователь может повторно ввести допустимое значение с возможностью возвращения сообщения об ошибке.
 
-Взаимодействие можно также реализовать на этапе оркестрации. Дополнительные сведения см. в статье [Пошаговое руководство. Интеграция обмена утверждениями REST API в пути взаимодействия пользователя Azure AD B2C как этап оркестрации](active-directory-b2c-rest-api-step-custom.md).
+Взаимодействие можно также реализовать на этапе оркестрации. Дополнительные сведения см. в статье [Пошаговое руководство. Интеграция обмена утверждениями REST API в пути взаимодействия пользователя Azure AD B2C как этап оркестрации](active-directory-b2c-rest-api-step-custom.md).
 
 В качестве примера профиля проверки мы будем использовать путь взаимодействия пользователя для изменения профиля в файле начального пакета ProfileEdit.xml.
 
 Мы можем проверить, не входит ли имя, указанное пользователем в политике изменения профиля, в список исключений.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Клиент Azure AD B2C, необходимый для регистрации или входа с использованием локальной учетной записи, как описано в статье [Azure Active Directory B2C. Приступая к работе с настраиваемыми политиками](active-directory-b2c-get-started-custom.md).
 - Конечная точка REST API, с которой устанавливается взаимодействие. Для этого руководства мы настроили демонстрационный сайт [WingTipGames](https://wingtipgamesb2c.azurewebsites.net/), используя службу REST API.
 
-## <a name="step-1-prepare-the-rest-api-function"></a>Шаг 1. Подготовка функции REST API
+## <a name="step-1-prepare-the-rest-api-function"></a>Шаг 1. Подготовка функции REST API
 
 > [!NOTE]
 > В рамках этой статьи настройка функций REST API не рассматривается. [Функции Azure](https://docs.microsoft.com/azure/azure-functions/functions-reference) предоставляют отличный набор инструментов для создания служб RESTful в облаке.
@@ -75,7 +76,7 @@ return request.CreateResponse(HttpStatusCode.OK);
 
 Инфраструктура процедур идентификации ожидает, что функция Azure вернет утверждение `userMessage`. Это утверждение будет представлено пользователю в виде строки, если при проверке произойдет сбой, например при возвращении кода состояния 409 (конфликт) в примере выше.
 
-## <a name="step-2-configure-the-restful-api-claims-exchange-as-a-technical-profile-in-your-trustframeworkextensionsxml-file"></a>Шаг 2. Настройка обмена утверждениями RESTful API как технического профиля в файле TrustFrameworkExtensions.xml
+## <a name="step-2-configure-the-restful-api-claims-exchange-as-a-technical-profile-in-your-trustframeworkextensionsxml-file"></a>Шаг 2. Настройка обмена утверждениями RESTful API как технического профиля в файле TrustFrameworkExtensions.xml
 
 Технический профиль представляет собой полную конфигурацию обмена, заданную с помощью службы RESTful. Откройте файл TrustFrameworkExtensions.xml и добавьте следующий фрагмент XML-кода в элемент `<ClaimsProviders>`.
 
@@ -113,9 +114,9 @@ return request.CreateResponse(HttpStatusCode.OK);
 
 Элемент `InputClaims` определяет утверждения, которые отправляются из инфраструктуры процедур идентификации в службу REST. В этом примере содержимое утверждения `givenName` отправляется в службу REST как `playerTag`. В этом примере инфраструктура процедур идентификации не ожидает возврата утверждений. Вместо этого она ожидает ответ от службы REST и действует на основе полученного кода состояния.
 
-Комментарии выше `AuthenticationType` и `AllowInsecureAuthInProduction` указывают изменения, которые необходимо внести при переходе в рабочую среду. Чтобы узнать, как защитить интерфейсы API RESTFUL для рабочей среды, см. статью Защита API RESTful [с помощью базовой проверки](active-directory-b2c-custom-rest-api-netfw-secure-basic.md) подлинности и [защищенных API-интерфейсов RESTful с проверкой подлинности сертификата](active-directory-b2c-custom-rest-api-netfw-secure-cert.md).
+В комментариях выше `AuthenticationType` и `AllowInsecureAuthInProduction` указать изменения, которые следует внести при переходе в рабочую среду. Чтобы узнать, как защитить интерфейсы API RESTFUL для рабочей среды, см. статью Защита API RESTful [с помощью базовой проверки подлинности](active-directory-b2c-custom-rest-api-netfw-secure-basic.md) и [защищенных API-интерфейсов RESTful с проверкой подлинности сертификата](active-directory-b2c-custom-rest-api-netfw-secure-cert.md).
 
-## <a name="step-3-include-the-restful-service-claims-exchange-in-self-asserted-technical-profile-where-you-want-to-validate-the-user-input"></a>Шаг 3. Включение обмена утверждениями службы REST в самоподтвержденном техническом профиле, в котором необходимо реализовать проверку входных данных пользователя
+## <a name="step-3-include-the-restful-service-claims-exchange-in-self-asserted-technical-profile-where-you-want-to-validate-the-user-input"></a>Шаг 3. Включение обмена утверждениями службы REST в самоподтвержденном техническом профиле, в котором необходимо реализовать проверку входных данных пользователя
 
 Чаще всего этап проверки используется при взаимодействии с пользователем. Все взаимодействия, где пользователь должен предоставить входные данные, выполняются с использованием *самоподтвержденных технических профилей*. В этом примере мы добавим этап проверки в технический профиль Self-Asserted-ProfileUpdate. Это технический профиль, используемый файлом политики проверяющей стороны `Profile Edit`.
 
@@ -125,19 +126,19 @@ return request.CreateResponse(HttpStatusCode.OK);
 2. Проверьте конфигурацию этого технического профиля. Просмотрите, как определен обмен утверждениями, запрашивающими данные пользователя (входящие утверждения), и утверждениями, возвращаемыми самоподтвержденным поставщиком (исходящие утверждения).
 3. Найдите `TechnicalProfileReferenceId="SelfAsserted-ProfileUpdate`. Обратите внимание, что этот профиль вызывается как пятый этап оркестрации `<UserJourney Id="ProfileEdit">`.
 
-## <a name="step-4-upload-and-test-the-profile-edit-rp-policy-file"></a>Шаг 4. Отправка и тестирование файла политики изменения профиля проверяющей стороны
+## <a name="step-4-upload-and-test-the-profile-edit-rp-policy-file"></a>Шаг 4. Отправка и тестирование файла политики изменения профиля проверяющей стороны
 
 1. Отправьте новую версию файла TrustFrameworkExtensions.xml.
 2. Проверьте файл политики изменения профиля проверяющей стороны с помощью кнопки **Запустить**.
 3. Выполните проверку, указав одно из имеющихся имен (например, mcvinny) в поле **Заданное имя**. Если все настроено правильно, то должно отобразиться сообщение, указывающее, что playerTag уже используется.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Azure Active Directory B2C. Создание и использование настраиваемых атрибутов в пользовательской политике изменения профиля](active-directory-b2c-create-custom-attributes-profile-edit-custom.md)
 
-[Пошаговое руководство Интеграция обмена утверждениями REST API в пути взаимодействия пользователя Azure AD B2C как этап оркестрации](active-directory-b2c-rest-api-step-custom.md)
+[Пошаговое руководство. Интеграция обмена утверждениями REST API в пути взаимодействия пользователя Azure AD B2C как этап оркестрации](active-directory-b2c-rest-api-step-custom.md)
 
-[Общие сведения Технический профиль RESTFUL](restful-technical-profile.md)
+[Справочник: технический профиль RESTFUL](restful-technical-profile.md)
 
 Дополнительные сведения о защите API см. в следующих статьях:
 

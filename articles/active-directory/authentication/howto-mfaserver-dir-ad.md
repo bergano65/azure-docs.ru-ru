@@ -1,39 +1,39 @@
 ---
-title: Azure MFA Server and Active Directory - Azure Active Directory
+title: Сервер Azure MFA и Active Directory — Azure Active Directory
 description: Как интегрировать сервер Многофакторной идентификации Azure c Active Directory для синхронизации каталогов.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.custom: seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b02d6468ede0d5748409a620a6641109cd523a09
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: b51c6284c0d7ee21f67d37465100f84d4b2f5ae2
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74404228"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74848091"
 ---
 # <a name="directory-integration-between-azure-mfa-server-and-active-directory"></a>Интеграция каталогов между сервером Azure Multi-Factor Authentication и Active Directory
 
 Воспользуйтесь разделом "Интеграция каталогов" сервера Многофакторной идентификации Azure для интеграции с Active Directory или другим каталогом LDAP. Вы сможете настроить атрибуты в соответствии со схемой каталога и автоматическую синхронизацию пользователей.
 
 > [!IMPORTANT]
-> As of July 1, 2019, Microsoft will no longer offer MFA Server for new deployments. New customers who would like to require multi-factor authentication from their users should use cloud-based Azure Multi-Factor Authentication. Existing customers who have activated MFA Server prior to July 1 will be able to download the latest version, future updates and generate activation credentials as usual.
+> По состоянию на 1 июля 2019 Корпорация Майкрософт больше не будет предлагать сервер MFA для новых развертываний. Новые клиенты, желающие требовать многофакторную проверку подлинности пользователей, должны использовать службу многофакторной идентификации Azure на основе облачных служб. Существующие клиенты, которые активировали сервер MFA до 1 июля, смогут скачать последнюю версию, будущие обновления и создать учетные данные активации обычным образом.
 
 ## <a name="settings"></a>Настройки
 
 По умолчанию на сервере Многофакторной идентификации Azure настроен импорт или синхронизация пользователей из Active Directory.  На вкладке "Интеграция каталогов" можно переопределить поведение по умолчанию и выполнить привязку к другому каталогу LDAP, каталогу ADAM или конкретному контроллеру домена Active Directory.  На ней также можно настроить проверку подлинности LDAP для прокси-сервера LDAP или привязку LDAP в качестве целевого объекта RADIUS, а также настроить предварительную проверку подлинности для IIS и основную проверку подлинности для пользовательского портала.  В следующей таблице описаны отдельные параметры.
 
-![Edit LDAP configuration in MFA Server](./media/howto-mfaserver-dir-ad/dirint.png)
+![Изменение конфигурации LDAP на сервере MFA](./media/howto-mfaserver-dir-ad/dirint.png)
 
 > [!NOTE]
-> Directory integration is not guaranteed to work with directories other than Active Directory Domain Services.
+> Интеграция каталогов не гарантирует работу с каталогами, отличными от служб домен Active Directory.
 
 | Компонент | Описание |
 | --- | --- |
@@ -60,7 +60,7 @@ ms.locfileid: "74404228"
 
 Фильтры позволяют задать условие ограничения записей при выполнении поиска в каталоге.  Задавая фильтр, можно ограничить область объектов, которые требуется синхронизировать.  
 
-![Configure directory filtering in MFA Server](./media/howto-mfaserver-dir-ad/dirint2.png)
+![Настройка фильтрации каталогов на сервере MFA](./media/howto-mfaserver-dir-ad/dirint2.png)
 
 Для Многофакторной идентификации Azure может использоваться три следующих варианта фильтров.
 
@@ -70,17 +70,17 @@ ms.locfileid: "74404228"
 
 ## <a name="attributes"></a>Атрибуты
 
-Атрибуты для каталога при необходимости можно изменить.  Это позволит добавлять настраиваемые атрибуты и выполнять тонкую настройку синхронизации, оставляя только те атрибуты, которые необходимы. Use the name of the attribute as defined in the directory schema for the value of each attribute field. В таблице ниже приведены дополнительные сведения о каждой функции.
+Атрибуты для каталога при необходимости можно изменить.  Это позволит добавлять настраиваемые атрибуты и выполнять тонкую настройку синхронизации, оставляя только те атрибуты, которые необходимы. Используйте имя атрибута, как определено в схеме каталога, для значения каждого поля атрибута. В таблице ниже приведены дополнительные сведения о каждой функции.
 
 Атрибуты можно вводить вручную и не обязательно выбирать из списка.
 
-![Customize directory integration attributes in MFA Server](./media/howto-mfaserver-dir-ad/dirint3.png)
+![Настройка атрибутов интеграции каталогов на сервере MFA](./media/howto-mfaserver-dir-ad/dirint3.png)
 
 | Компонент | Описание |
 | --- | --- |
 | Уникальный идентификатор |Введите имя атрибута, который служит в качестве уникального идентификатора контейнера, группы безопасности и записей пользователей.  В Active Directory это обычно objectGUID. В других реализациях LDAP может использоваться entryUUID или подобный атрибут.  По умолчанию используется objectGUID. |
 | Тип уникального идентификатора |Выберите тип уникального идентификатора атрибута.  В Active Directory атрибут objectGUID имеет тип GUID. В других реализациях LDAP может использоваться ASCII Byte Array или String.  По умолчанию используется GUID. <br><br>Очень важно правильно задать тип, так как элементы синхронизации определяются их уникальными идентификаторами. Для прямого поиска объекта в каталоге используется тип уникального идентификатора.  Если установить тип String, тогда как фактически значение хранится в виде байтового массива символов ASCII, синхронизация будет работать неправильно. |
-| Различающееся имя |Введите имя атрибута, который содержит различающееся имя для каждой записи.  В Active Directory это обычно distinguishedName. В других реализациях LDAP может использоваться entryDN или что-либо подобное.  По умолчанию используется distinguishedName. <br><br>If an attribute containing just the distinguished name doesn't exist, the ads path attribute may be used.  Фрагмент пути LDAP://\<сервер\>/ будет автоматически удален, и останется только различающееся имя объекта. |
+| Различающееся имя |Введите имя атрибута, который содержит различающееся имя для каждой записи.  В Active Directory это обычно distinguishedName. В других реализациях LDAP может использоваться entryDN или что-либо подобное.  По умолчанию используется distinguishedName. <br><br>Если атрибут, содержащий только различающееся имя, не существует, можно использовать атрибут пути ADS.  Фрагмент пути LDAP://\<сервер\>/ будет автоматически удален, и останется только различающееся имя объекта. |
 | Имя контейнера |Введите имя атрибута, который содержит имя в записи контейнера.  Значение этого атрибута отображается в иерархии контейнеров при импорте из Active Directory или при добавлении элементов синхронизации.  По умолчанию используется name. <br><br>Если в различных контейнерах для имен используются различные атрибуты, используйте точку с запятой, чтобы разделить несколько атрибутов имен контейнеров.  Для отображения имени контейнера используется первый атрибут имени контейнера, найденный в объекте контейнера. |
 | Имя группы безопасности |Введите имя атрибута, который содержит имя в записи группы безопасности.  Значение этого атрибута отображается в списке групп безопасности при импорте из Active Directory или при добавлении элементов синхронизации.  По умолчанию используется name. |
 | Имя пользователя |Введите имя атрибута, который содержит имя пользователя в записи пользователя.  Значение этого атрибута используется в качестве имени пользователя сервера Многофакторной идентификации.  В дополнение к первому можно указать второй атрибут.  Второй атрибут используется только в тех случаях, когда первый атрибут не содержит значения для пользователя.  Значения по умолчанию: userPrincipalName и sAMAccountName. |
@@ -103,9 +103,9 @@ ms.locfileid: "74404228"
 | Расширение |Введите имя атрибута, который содержит добавочный номер телефона в записи пользователя.  Добавочный номер используется только для основного номера телефона.  Значение по умолчанию — пусто. <br><br>Если атрибут добавочного номера не указан, добавочный номер можно включить в атрибут телефона. В этом случае перед добавочным номером нужно указать символ "x", чтобы добавочный номер можно было правильно определить.  Например, для атрибута 555-123-4567 x890 будут определены основной номер 555-123-4567 и добавочный номер 890. |
 | Кнопка «Восстановить значения по умолчанию» |Для возврата всех атрибутов в значения по умолчанию нажмите кнопку **Восстановить значения по умолчанию**.  Значения по умолчанию подходят для Active Directory или ADAM. |
 
-To edit attributes, click **Edit** on the Attributes tab.  This brings up a window where you can edit the attributes. Щелкните **...** рядом с любым атрибутом, чтобы открыть окно, в котором можно выбрать, какие атрибуты следует отобразить.
+Чтобы изменить атрибуты, нажмите кнопку **изменить** на вкладке атрибуты.  Откроется окно, в котором можно изменить атрибуты. Щелкните **...** рядом с любым атрибутом, чтобы открыть окно, в котором можно выбрать, какие атрибуты следует отобразить.
 
-![Edit directory attribute mapping in MFA Server](./media/howto-mfaserver-dir-ad/dirint4.png)
+![Изменение сопоставления атрибутов каталога на сервере MFA](./media/howto-mfaserver-dir-ad/dirint4.png)
 
 ## <a name="synchronization"></a>Синхронизация
 
@@ -117,7 +117,7 @@ To edit attributes, click **Edit** on the Attributes tab.  This brings up a wind
 
 Если каталог LDAP настроен для использования DirSync и поддерживает его, то опрос изменений пользователей и группы безопасности будет выполняться точно так же, как в случае с Active Directory.  Если каталог LDAP не поддерживает DirSync, то во время каждого цикла будет выполняться полная синхронизация.
 
-![Synchronization of directory objects to MFA Server](./media/howto-mfaserver-dir-ad/dirint5.png)
+![Синхронизация объектов каталога с сервером MFA](./media/howto-mfaserver-dir-ad/dirint5.png)
 
 Следующая таблица содержит дополнительные сведения о каждом параметре на вкладке "Синхронизация".
 
@@ -143,8 +143,8 @@ To edit attributes, click **Edit** on the Attributes tab.  This brings up a wind
 > [!TIP]
 > После удаления элементов синхронизации следует выполнить полную синхронизацию.  После упорядочения элементов синхронизации следует выполнить полную синхронизацию.  Нажмите кнопку **Синхронизировать**, чтобы выполнить полную синхронизацию.
 
-## <a name="multi-factor-authentication-servers"></a>Multi-Factor Authentication servers
+## <a name="multi-factor-authentication-servers"></a>Серверы многофакторной идентификации
 
-Additional Multi-Factor Authentication servers may be set up to serve as a backup RADIUS proxy, LDAP proxy, or for IIS Authentication. Настройки синхронизации доступны всем агентам. However, only one of these agents may have the Multi-Factor Authentication server service running. This tab allows you to select the Multi-Factor Authentication server that should be enabled for synchronization.
+Дополнительные серверы многофакторной идентификации можно настроить для использования в качестве резервного прокси-сервера RADIUS, прокси-сервера LDAP или для проверки подлинности IIS. Настройки синхронизации доступны всем агентам. Однако служба сервера многофакторной идентификации может быть запущена только на одном из этих агентов. На этой вкладке можно выбрать сервер многофакторной идентификации, который должен быть включен для синхронизации.
 
-![Related Multi-Factor Authentication Servers](./media/howto-mfaserver-dir-ad/dirint6.png)
+![Связанные серверы многофакторной проверки подлинности](./media/howto-mfaserver-dir-ad/dirint6.png)

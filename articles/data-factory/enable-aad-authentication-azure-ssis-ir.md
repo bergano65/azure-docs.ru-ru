@@ -1,22 +1,22 @@
 ---
-title: Включение Azure Active Directory для Azure-SSIS Integration Runtime
+title: Включение AAD для Integration Runtime Azure SSIS
 description: В этой статье описывается включение аутентификации Azure Active Directory с использованием управляемого удостоверения для службы "Фабрика данных Azure" с целью создания среды выполнения интеграции Azure-SSIS.
 services: data-factory
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: ''
 ms.devlang: powershell
 ms.topic: conceptual
 author: swinarko
 ms.author: sawinark
 manager: mflasko
+ms.custom: seo-lt-2019
 ms.date: 5/14/2019
-ms.openlocfilehash: 6973e72b06d51241e883038936270fd0931365d7
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 70367a38fbf7b59486e2eaaf6c05634aa7575869
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74217699"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74927439"
 ---
 # <a name="enable-azure-active-directory-authentication-for-azure-ssis-integration-runtime"></a>Включение аутентификации Azure Active Directory для среды выполнения интеграции Azure-SSIS
 
@@ -198,7 +198,7 @@ ms.locfileid: "74217699"
 
 1.  Установите модуль [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/tag/v5.5.0-March2018) .
 
-2.  Не задавайте в скрипте параметр `CatalogAdminCredential`. Пример:
+2.  Не задавайте в скрипте параметр `CatalogAdminCredential`. Пример.
 
     ```powershell
     Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `

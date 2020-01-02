@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 10/23/2019
+ms.date: 12/03/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64b7add9ddb1734d763c46e93d6788ce21a2c321
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 26299ca12071b521fc825a0b1ab1425f24af67e0
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73150875"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74803603"
 ---
 # <a name="conditional-access-block-access-by-location"></a>Условный доступ: Блокировка доступа по расположению
 
@@ -25,20 +25,20 @@ ms.locfileid: "73150875"
 ## <a name="define-locations"></a>Определение расположений
 
 1. Войдите в **портал Azure** в качестве глобального администратора, администратора безопасности или администратора условного доступа.
-1. Перейдите к **Azure Active Directory** > **Условный доступ**.
+1. Перейдите к **Azure Active Directory** > **Безопасность** > **Условный доступ**.
 1. Выберите **новое расположение**.
 1. Укажите имя своего расположения.
 1. Выберите **диапазоны IP-** адресов, если вы знакомы с конкретными внешними доступными диапазонами IPv4, которые составляют это расположение или **страны или регионы**.
    1. Укажите **диапазоны IP-адресов** или выберите **страны или регионы** для расположения, которое вы указываете.
       * Если выбраны страны и регионы, можно дополнительно включить неизвестные области.
-1. Выбор **сохранения**
+1. Выберите **Сохранить**.
 
 Дополнительные сведения о условии расположения в условном доступе см. в статье [что такое условие расположения в Azure Active Directory условном доступе](location-condition.md) .
 
 ## <a name="create-a-conditional-access-policy"></a>Создание политики условного доступа
 
 1. Войдите в **портал Azure** в качестве глобального администратора, администратора безопасности или администратора условного доступа.
-1. Перейдите к **Azure Active Directory** > **Условный доступ**.
+1. Перейдите к **Azure Active Directory** > **Безопасность** > **Условный доступ**.
 1. Выберите **Новая политика**.
 1. Присвойте политике имя. Корпорация Майкрософт рекомендует организациям создавать осмысленные стандартные имена политик.
 1. В разделе **назначения**выберите **Пользователи и группы** .

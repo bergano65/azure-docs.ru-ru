@@ -5,19 +5,19 @@ author: amberbhargava
 manager: amberb
 editor: banders
 tags: billing
-ms.service: billing
+ms.service: cost-management-billing
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/01/2019
+ms.date: 12/04/2019
 ms.author: banders
-ms.openlocfilehash: ca0f83628edeef9e55ebc81798d0229791b80a7a
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: 87fe00066989a0b037fc093c8ddf181b8453d5d9
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72375510"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849876"
 ---
 # <a name="complete-enterprise-agreement-tasks-in-your-billing-account-for-a-microsoft-customer-agreement"></a>Выполнение задач для Соглашения Enterprise в учетной записи выставления счетов для Клиентского соглашения Майкрософт
 

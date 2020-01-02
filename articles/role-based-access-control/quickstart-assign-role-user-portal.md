@@ -1,5 +1,5 @@
 ---
-title: Руководство. Предоставление доступа пользователям с помощью RBAC и портала Azure | Документация Майкрософт
+title: Учебник. Предоставление доступа пользователю с помощью RBAC и портала Azure
 description: Узнайте, как предоставить пользователям доступ к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и портала Azure.
 services: role-based-access-control
 documentationCenter: ''
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/22/2019
 ms.author: rolyon
-ms.openlocfilehash: 5786f7b48477fa705b43e3a953ac15b2c768bd71
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f4dd3995df2a068824c4aa6bccca5606d250a165
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57854264"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74419662"
 ---
-# <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-the-azure-portal"></a>Руководство. Предоставление доступа пользователю с помощью RBAC и портала Azure
+# <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-the-azure-portal"></a>Руководство по Предоставление доступа пользователю с помощью RBAC и портала Azure
 
 [Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом руководстве объясняется, как предоставить пользователю доступ к созданию и администрированию виртуальных машин в группе ресурсов.
 
@@ -62,7 +62,7 @@ ms.locfileid: "57854264"
 
 1. В списке **Группы ресурсов** щелкните новую группу ресурсов **rbac-resource-group**.
 
-1. Щелкните **Управление доступом (IAM)**.
+1. Щелкните **Управление доступом (IAM)** .
 
 1. Щелкните вкладку **Назначения ролей**, чтобы просмотреть выбранный список назначения ролей.
 
@@ -115,5 +115,4 @@ ms.locfileid: "57854264"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство Предоставление доступа пользователям с помощью RBAC и Azure PowerShell](tutorial-role-assignments-user-powershell.md)
-
+> [Руководство. Предоставление доступа пользователям с помощью RBAC и Azure PowerShell](tutorial-role-assignments-user-powershell.md)

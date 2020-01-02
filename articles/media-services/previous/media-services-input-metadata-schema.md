@@ -1,6 +1,6 @@
 ---
 title: Схема входных метаданных служб мультимедиа Azure | Документация Майкрософт
-description: Эта статья содержит обзор схемы входных метаданных служб мультимедиа Azure.
+description: В этой статье приводятся общие сведения о схеме входных метаданных служб мультимедиа Azure.
 author: Juliako
 manager: femila
 editor: ''
@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: fa4487b07f130947ac5da2a5dbae6776b06acbe7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a81d6edfd887dc935a53742b7bc1492651c9bda5
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61463780"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74887125"
 ---
 # <a name="input-metadata"></a>Входные метаданные 
 
-Задание кодирования связано с входным ресурсом-контейнером (или ресурсами-контейнерами), в котором нужно выполнить эти задачи.  После выполнения задачи создается выходной ресурс-контейнер.  Выходной ресурс-контейнер содержит видео- и аудиофайлы, эскизы, манифест и т. д. Выходной актив также содержит файл с метаданными входного актива. Имя XML-файла метаданных имеет следующий формат: &lt;ИД_ресурса-контейнера&gt;_metadata.xml (например, 41114ad3-eb5e-4c57-8d92-5354e2b7d4a4_metadata.xml), где &lt;ИД_ресурса-контейнера&gt; — это значение AssetId для входного ресурса-контейнера.  
+Задание кодирования связано с входным ресурсом-контейнером (или ресурсами-контейнерами), в котором нужно выполнить эти задачи.  После выполнения задачи создается выходной ресурс-контейнер.  Выходной ресурс содержит видео, аудио, эскизы, манифест и т. д. Выходной ресурс также содержит файл с метаданными о входном ресурсе. Имя XML-файла метаданных имеет следующий формат: &lt;ИД_ресурса-контейнера&gt;_metadata.xml (например, 41114ad3-eb5e-4c57-8d92-5354e2b7d4a4_metadata.xml), где &lt;ИД_ресурса-контейнера&gt; — это значение AssetId для входного ресурса-контейнера.  
 
 Службы мультимедиа не проверяют входные ресурсы заблаговременно для создания метаданных. Входные метаданные создаются только в качестве артефактов, когда входные файлы обрабатывается в задании. Поэтому этот артефакт записывается в выходной файл. Для создания метаданных входных и выходных файлов используются разные инструменты. Таким образом, схемы входных и выходных метаданных немного отличаются.
 
@@ -36,19 +36,19 @@ ms.locfileid: "61463780"
 ## <a name="AssetFiles"></a> Элемент AssetFiles (корневой элемент)
 Содержит коллекцию [элементов AssetFile](media-services-input-metadata-schema.md#AssetFile) для задания кодирования.  
 
-Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
+Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
-| ИМЯ | Описание |
+| Name | Описание |
 | --- | --- |
 | **AssetFile**<br /><br /> minOccurs="1" maxOccurs="unbounded" |Один дочерний элемент. Дополнительные сведения см. в разделе [Элемент AssetFile](media-services-input-metadata-schema.md#AssetFile). |
 
 ## <a name="AssetFile"></a> Элемент AssetFile
  Содержит атрибуты и элементы, описывающие файл ресурса-контейнера.  
 
- Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
+ Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
 ### <a name="attributes"></a>Атрибуты
-| ИМЯ | Тип | Описание |
+| Name | Тип | Описание |
 | --- | --- | --- |
 | **Имя**<br /><br /> Обязательно для заполнения |**xs:string** |Имя файла ресурса-контейнера. |
 | **Размер**<br /><br /> Обязательно для заполнения |**xs:long** |Размер файла ресурса-контейнера в байтах. |
@@ -56,7 +56,7 @@ ms.locfileid: "61463780"
 | **NumberOfStreams**<br /><br /> Обязательно для заполнения |**xs:int** |Количество потоков в файле ресурса-контейнера. |
 | **FormatNames**<br /><br /> Обязательно для заполнения |**xs: string** |Имена форматов. |
 | **FormatVerboseNames**<br /><br /> Обязательно для заполнения |**xs: string** |Подробные имена форматов. |
-| **StartTime** |**xs:duration** |Время начала содержимого. Пример: StartTime="PT2.669S" |
+| **StartTime** |**xs:duration** |Время начала содержимого. Пример: StartTime="PT2.669S". |
 | **OverallBitRate** |**xs: int** |Средняя скорость файла ресурса-контейнера (Кбит/с). |
 
 > [!NOTE]
@@ -70,10 +70,10 @@ ms.locfileid: "61463780"
 | **Programs**<br /><br /> minOccurs="0" | |Коллекция всех [элементов Programs](media-services-input-metadata-schema.md#Programs), если файл ресурса-контейнера имеет формат MPEG-TS. |
 | **VideoTracks**<br /><br /> minOccurs="0" | |Каждый физический файл ресурса может содержать ноль или более видеодорожек, чередуемых в соответствующем формате ресурса. Этот элемент содержит коллекцию всех [элементов VideoTracks](media-services-input-metadata-schema.md#VideoTracks), которые являются частью файла ресурса. |
 | **AudioTracks**<br /><br /> minOccurs="0" | |Каждый физический файл ресурса-контейнера может содержать ноль или более звуковых дорожек, чередуемых в соответствующем формате ресурса-контейнера. Этот элемент содержит коллекцию всех [элементов AudioTracks](media-services-input-metadata-schema.md#AudioTracks), которые являются частью файла ресурса. |
-| **Metadata**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[MetadataType](media-services-input-metadata-schema.md#MetadataType) |Метаданные файла ресурса-контейнера, представленные в виде строки "ключ —значение". Пример:<br /><br /> **&lt;Metadata key="language" value="eng" /&gt;** |
+| **Metadata**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[MetadataType](media-services-input-metadata-schema.md#MetadataType) |Метаданные файла ресурса-контейнера, представленные в виде строки "ключ —значение". Пример.<br /><br /> **&lt;Metadata key="language" value="eng" /&gt;** |
 
 ## <a name="TrackType"></a> TrackType
-Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
+Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
 ### <a name="attributes"></a>Атрибуты
 | Name | Тип | Описание |
@@ -102,7 +102,7 @@ ms.locfileid: "61463780"
 
  Этот тип представляет конкретную звуковую дорожку в файле ресурса-контейнера.  
 
- Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
+ Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
 ### <a name="attributes"></a>Атрибуты
 | Name | Тип | Описание |
@@ -119,10 +119,10 @@ ms.locfileid: "61463780"
 
 Этот тип представляет конкретную видеодорожку в файле ресурса-контейнера.  
 
-Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
+Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
 ### <a name="attributes"></a>Атрибуты
-| ИМЯ | Тип | Описание |
+| Name | Тип | Описание |
 | --- | --- | --- |
 | **FourCC**<br /><br /> Обязательно для заполнения |**xs:string** |Код FourCC видеокодека. |
 | **Профиль** |**xs: string** |Профиль видеодорожки. |
@@ -143,7 +143,7 @@ ms.locfileid: "61463780"
 ## <a name="MetadataType"></a> MetadataType
 **MetadataType** — глобальный сложный тип, описывающий метаданные файла ресурса-контейнера в виде строк "ключ —значение". Например, key="language" и value="eng".  
 
-Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
+Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
 ### <a name="attributes"></a>Атрибуты
 | Name | Тип | Описание |
@@ -155,7 +155,7 @@ ms.locfileid: "61463780"
 **ProgramType** — глобальный сложный тип, описывающий программу.  
 
 ### <a name="attributes"></a>Атрибуты
-| ИМЯ | Тип | Описание |
+| Name | Тип | Описание |
 | --- | --- | --- |
 | **ProgramId**<br /><br /> Обязательно для заполнения |**xs:int** |Идентификатор программы |
 | **NumberOfPrograms**<br /><br /> Обязательно для заполнения |**xs:int** |Количество программ. |
@@ -167,10 +167,10 @@ ms.locfileid: "61463780"
 ## <a name="StreamDispositionType"></a> StreamDispositionType
 **StreamDispositionType** — глобальный сложный тип, описывающий поток.  
 
-Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
+Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
 ### <a name="attributes"></a>Атрибуты
-| Name | Тип | ОПИСАНИЕ |
+| Name | Тип | Описание |
 | --- | --- | --- |
 | **По умолчанию**<br /><br /> Обязательно для заполнения |**xs: int** |Установите значение 1, чтобы указать, что это презентация по умолчанию. |
 | **Dub**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что это дубликат презентации. |
@@ -179,7 +179,7 @@ ms.locfileid: "61463780"
 | **Lyrics**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что эта дорожка содержит слова композиции. |
 | **Karaoke**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что это караоке-дорожка (фонограмма без вокала). |
 | **Forced**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что это принудительная презентация. |
-| **HearingImpaired**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что эта дорожка предназначена для людей с нарушениями слуха. |
+| **HearingImpaired**<br /><br /> Обязательно для заполнения |**xs:int** |Присвойте этому атрибуту значение 1, чтобы указать, что эта запись предназначена для людей с нарушениями слуха. |
 | **VisualImpaired**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что эта дорожка предназначена для пользователей с нарушениями зрения. |
 | **CleanEffects**<br /><br /> Обязательно для заполнения |**xs: int** |Установите значение 1, чтобы указать, что эта дорожка содержит чистые эффекты. |
 | **AttachedPic**<br /><br /> Обязательно для заполнения |**xs: int** |Установите значение 1, чтобы указать, что эта дорожка содержит изображения. |
@@ -188,14 +188,14 @@ ms.locfileid: "61463780"
 Оболочечный элемент, содержащий несколько элементов **Program**.  
 
 ### <a name="child-elements"></a>Дочерние элементы
-| ИМЯ | Тип | Описание |
+| Name | Тип | Описание |
 | --- | --- | --- |
 | **Program**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[ProgramType](media-services-input-metadata-schema.md#ProgramType) |Содержит сведения о программах в файле ресурса-контейнера (в формате MPEG-TS). |
 
 ## <a name="VideoTracks"></a> Элемент VideoTracks
  Оболочечный элемент, содержащий несколько элементов **VideoTrack**.  
 
- Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
+ Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
 ### <a name="child-elements"></a>Дочерние элементы
 | Name | Тип | Описание |
@@ -205,7 +205,7 @@ ms.locfileid: "61463780"
 ## <a name="AudioTracks"></a> Элемент AudioTracks
  Оболочечный элемент, содержащий несколько элементов **AudioTrack**.  
 
- Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
+ Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
 ### <a name="elements"></a>элементы
 | Name | Тип | Описание |
@@ -644,6 +644,6 @@ ms.locfileid: "61463780"
 ## <a name="next-steps"></a>Дальнейшие действия
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

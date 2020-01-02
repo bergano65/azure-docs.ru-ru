@@ -1,20 +1,17 @@
 ---
-title: Ссылки на статьи о пользовательских соединителях в Azure Logic Apps | Документация Майкрософт
+title: Ссылки на разделы пользовательского соединителя
 description: Ссылки на статьи о том, как создать, использовать и сертифицировать пользовательские соединители, а также предоставлять к ним общий доступ.
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: divswa, LADocs
+ms.reviewer: divswa, logicappspm
 ms.topic: article
 ms.date: 1/30/2018
-ms.openlocfilehash: c4cc0201b8ac61c54aadcc59b549877238b95e54
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: d91d46e0119c22f4f2538ab5ea982ca4418256cf
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73574457"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74792651"
 ---
 # <a name="custom-connectors-in-logic-apps"></a>Пользовательские соединители в Logic Apps
 

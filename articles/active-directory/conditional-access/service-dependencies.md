@@ -1,6 +1,6 @@
 ---
-title: Conditional Access service dependencies - Azure Active Directory
-description: Learn how conditions are used in Azure Active Directory Conditional Access to trigger a policy.
+title: Зависимости службы условного доступа — Azure Active Directory
+description: Узнайте, как условия используются в Azure Active Directory условном доступе для активации политики.
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
@@ -18,49 +18,49 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74380009"
 ---
-# <a name="what-are-service-dependencies-in-azure-active-directory-conditional-access"></a>What are service dependencies in Azure Active Directory Conditional Access? 
+# <a name="what-are-service-dependencies-in-azure-active-directory-conditional-access"></a>Что такое зависимости служб в Azure Active Directory условном доступе? 
 
-With Conditional Access policies, you can specify access requirements to websites and services. For example, your access requirements can include requiring multi-factor authentication (MFA) or [managed devices](require-managed-devices.md). 
+С помощью политик условного доступа можно указать требования доступа к веб-сайтам и службам. Например, требования к доступу могут включать в себя требование многофакторной проверки подлинности (MFA) или [управляемых устройств](require-managed-devices.md). 
 
-When you access a site or service directly, the impact of a related policy is typically easy to assess. For example, if you have a policy that requires MFA for SharePoint Online configured, MFA is enforced for each sign-in to the SharePoint web portal. However, it is not always straight-forward to assess the impact of a policy because there are cloud apps with dependencies to other cloud apps. For example, Microsoft Teams can provide access to resources in SharePoint Online. So, when you access Microsoft Teams in our current scenario, you are also subject to the SharePoint MFA policy.   
+При непосредственном доступе к сайту или службе влияние связанной политики обычно легко оценивается. Например, если имеется политика, требующая настройки MFA для SharePoint Online, для каждого входа на веб-портал SharePoint применяется MFA. Однако это не всегда прямо вперед, чтобы оценить влияние политики, поскольку существуют облачные приложения с зависимостями от других облачных приложений. Например, Microsoft Teams может предоставить доступ к ресурсам в SharePoint Online. Таким образом, при обращении к Microsoft Teams в нашем текущем сценарии вы также налагаетесь на политику MFA SharePoint.   
 
 ## <a name="policy-enforcement"></a>Принудительное применение политики 
 
-If you have a service dependency configured, the policy may be applied using early-bound or late-bound enforcement. 
+При наличии настроенной зависимости службы политику можно применить с помощью принудительного применения ранней или поздней привязки. 
 
-- **Early-bound policy enforcement** means a user must satisfy the dependent service policy before accessing the calling app. For example, a user must satisfy SharePoint policy before signing into MS Teams. 
-- **Late-bound policy enforcement** occurs after the user signs into the calling app. Enforcement is deferred to when calling app requests, a token for the downstream service. Examples include MS Teams accessing Planner and Office.com accessing SharePoint. 
+- **Принудительное применение политики с ранним связыванием** означает, что пользователь должен соответствовать политике зависимой службы, прежде чем обращаться к вызывающему приложению. Например, пользователь должен соответствовать политике SharePoint перед входом в Microsoft Teams. 
+- **Применение политики с поздним** связыванием происходит после того, как пользователь войдет в вызывающее приложение. Принудительное выполнение откладывается до вызова запросов приложения — маркера для подчиненной службы. Примеры включают в себя MS Teams доступ к планировщику и Office.com доступ к SharePoint. 
 
-The diagram below illustrates MS Teams service dependencies. Solid arrows indicate early-bound enforcement the dashed arrow for Planner indicates late-bound enforcement. 
+На схеме ниже показаны зависимости служб MS Teams. Сплошная стрелка указывает на принудительное применение раннего связывания. Пунктирная стрелка для планировщика указывает на принудительное применение с поздним связыванием. 
 
-![MS Teams service dependencies](./media/service-dependencies/01.png)
+![Зависимости службы MS Teams](./media/service-dependencies/01.png)
 
-As a best practice, you should set common policies across related apps and services whenever possible. Having a consistent security posture provides you with the best user experience. For example, setting a common policy across Exchange Online, SharePoint Online, Microsoft Teams, and Skype for business significantly reduces unexpected prompts that may arise from different policies being applied to downstream services. 
+Рекомендуется устанавливать общие политики для связанных приложений и служб везде, где это возможно. Обеспечение единообразного уровня безопасности обеспечивает оптимальное взаимодействие с пользователем. Например, при настройке общей политики для Exchange Online, SharePoint Online, Microsoft Teams и Skype для бизнеса значительно сокращается количество непредвиденных запросов, которые могут возникнуть из-за применения различных политик к подчиненным службам. 
 
-The below table lists additional service dependencies, where the client apps must satisfy  
+В таблице ниже перечислены дополнительные зависимости служб, которые должны соответствовать клиентским приложениям.  
 
-| Клиентские приложения         | Downstream service                          | Enforcement |
+| Клиентские приложения         | Подчиненная служба                          | Стиль |
 | :--                 | :--                                         | ---         | 
-| Azure Data Lake     | Microsoft Azure Management (portal and API) | Early-bound |
-| Microsoft Classroom | Обмен                                    | Early-bound |
-|                     | SharePoint                                  | Early-bound |
-| Microsoft Teams     | Обмен                                    | Early-bound |
-|                     | MS Planner                                  | Late-bound  |
-|                     | SharePoint                                  | Early-bound |
-|                     | Skype для бизнеса Online                   | Early-bound |
-| Office Portal       | Обмен                                    | Late-bound  |
-|                     | SharePoint                                  | Late-bound  |
-| Outlook groups      | Обмен                                    | Early-bound |
-|                     | SharePoint                                  | Early-bound |
-| PowerApps           | Microsoft Azure Management (portal and API) | Early-bound |
-|                     | Microsoft Azure Active Directory              | Early-bound |
-| Project             | Dynamics CRM                                | Early-bound |
-| Skype для бизнеса  | Обмен                                    | Early-bound |
-| Visual Studio       | Microsoft Azure Management (portal and API) | Early-bound |
-| Microsoft Forms     | Обмен                                    | Early-bound |
-|                     | SharePoint                                  | Early-bound |
-| Microsoft To-Do     | Обмен                                    | Early-bound |
+| Озеро данных Azure     | Управление Microsoft Azure (портал и API) | Раннее связывание |
+| Аудитория Майкрософт | Exchange                                    | Раннее связывание |
+|                     | SharePoint                                  | Раннее связывание |
+| Microsoft Teams     | Exchange                                    | Раннее связывание |
+|                     | Планировщик MS                                  | Позднее связывание  |
+|                     | SharePoint                                  | Раннее связывание |
+|                     | Skype для бизнеса Online                   | Раннее связывание |
+| Портал Office       | Exchange                                    | Позднее связывание  |
+|                     | SharePoint                                  | Позднее связывание  |
+| Группы Outlook      | Exchange                                    | Раннее связывание |
+|                     | SharePoint                                  | Раннее связывание |
+| PowerApps.           | Управление Microsoft Azure (портал и API) | Раннее связывание |
+|                     | Microsoft Azure Active Directory              | Раннее связывание |
+| Project             | Dynamics CRM                                | Раннее связывание |
+| Skype для бизнеса  | Exchange                                    | Раннее связывание |
+| Visual Studio       | Управление Microsoft Azure (портал и API) | Раннее связывание |
+| Microsoft Forms     | Exchange                                    | Раннее связывание |
+|                     | SharePoint                                  | Раннее связывание |
+| Microsoft To-Do     | Exchange                                    | Раннее связывание |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Сведения о реализации условного доступа см.в статье [How To: Plan your Conditional Access deployment in Azure Active Directory](plan-conditional-access.md) (Практическое руководство. Планирование развертывания с условным доступом в Azure Active Directory).

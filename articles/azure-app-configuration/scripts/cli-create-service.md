@@ -14,12 +14,12 @@ ms.workload: azure-app-configuration
 ms.date: 02/24/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: 8a58b73f3f3acb8d7c6ced9e0086687b54fff734
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: cd150368898b3f02b4366debbe775ece76b23043
+ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72029796"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74184901"
 ---
 # <a name="create-an-azure-app-configuration-store"></a>Создание хранилища конфигураций для приложения Azure
 
@@ -71,16 +71,16 @@ echo "$connstring"
 
 ## <a name="script-explanation"></a>Описание скрипта
 
-Для создания группы ресурсов и хранилища конфигураций приложения этот сценарий использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
+Для создания группы ресурсов и хранилища Конфигурации приложений этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
 | Команда | Примечания |
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az appconfig create](/cli/azure/ext/appconfig/appconfig) | Создает ресурс хранилища конфигураций приложения. |
-| [az appconfig key list](/cli/azure/ext/appconfig/appconfig/kv) | Выводит список ключей, которые содержатся в хранилище конфигураций приложения. |
+| [az appconfig create](/cli/azure/ext/appconfig/appconfig#ext-appconfig-az-appconfig-create) | Создает ресурс хранилища Конфигурации приложений. |
+| [az appconfig kv list](/cli/azure/ext/appconfig/appconfig/kv#ext-appconfig-az-appconfig-kv-list) | Выводит список ключей, которые содержатся в хранилище Конфигурации приложений. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
-Дополнительные примеры скриптов Azure CLI для службы "Конфигурации приложений" см. в [документации по службе "Конфигурация приложений Azure"](../cli-samples.md).
+Дополнительные примеры скриптов Azure CLI для службы "Конфигурация приложений" см. в [этой статье](../cli-samples.md).

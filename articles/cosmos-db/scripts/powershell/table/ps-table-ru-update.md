@@ -1,18 +1,18 @@
 ---
 title: Скрипт Azure PowerShell — обновление ЕЗ/с в Azure Cosmos DB для API таблиц
-description: Скрипт Azure PowerShell — обновление ЕЗ/с в Azure Cosmos DB для API таблиц
+description: Узнайте, как с помощью скрипта PowerShell обновить показатель пропускной способности для базы данных или контейнера в учетной записи API таблиц Azure Cosmos DB
 author: markjbrown
 ms.service: cosmos-db
 ms.subservice: cosmosdb-table
 ms.topic: sample
-ms.date: 05/18/2019
+ms.date: 12/02/2019
 ms.author: mjbrown
-ms.openlocfilehash: c9a210636dc277eec106248b13ea42ec58bf15b5
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.openlocfilehash: 8188089f216fa33ba958cf670bb321816387f5c9
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2019
-ms.locfileid: "71178686"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74871880"
 ---
 # <a name="update-rus-for-a-table-for-azure-cosmos-db---table-api"></a>Обновление ЕЗ/с для таблицы в Azure Cosmos DB — API таблиц
 

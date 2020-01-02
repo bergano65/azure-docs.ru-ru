@@ -1,23 +1,23 @@
 ---
-title: 'Пользовательская установка для среды выполнения интеграции Azure–SSIS '
+title: Пользовательская установка для среды выполнения интеграции Azure–SSIS
 description: В этой статье описано, как использовать интерфейс пользовательской установки для среды выполнения интеграции Azure–SSIS и установить дополнительные компоненты или изменить параметры
 services: data-factory
 documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 1/25/2019
 author: swinarko
 ms.author: sawinark
+manager: mflasko
 ms.reviewer: douglasl
-manager: craigg
-ms.openlocfilehash: 222672a93ccde7464ec1f37212f18996033a1460
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.custom: seo-lt-2019
+ms.date: 1/25/2019
+ms.openlocfilehash: d80ff102648deebf63cc0752b2980274cb90aeb9
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73674861"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74922879"
 ---
 # <a name="customize-setup-for-the-azure-ssis-integration-runtime"></a>Пользовательская установка для среды выполнения интеграции Azure–SSIS
 
@@ -34,7 +34,7 @@ ms.locfileid: "73674861"
 
 -   Если вы хотите использовать файл `gacutil.exe`, чтобы установить сборки в глобальном кэше сборок, необходимо предоставить `gacutil.exe` как часть пользовательской установки или воспользоваться его копией, доступной в контейнере общедоступной предварительной версии.
 
--   Если в скрипт нужно добавить ссылку на вложенную папку, не используйте `msiexec.exe`. Эта команда не поддерживает нотацию `.\` для ссылки на корневую папку. Вместо `msiexec /i "MySubfolder\MyInstallerx64.msi" ...` используйте такую команду, как `msiexec /i ".\MySubfolder\MyInstallerx64.msi" ...`.
+-   Если в скрипт нужно добавить ссылку на вложенную папку, не используйте `msiexec.exe`. Эта команда не поддерживает нотацию `.\` для ссылки на корневую папку. Вместо `msiexec /i ".\MySubfolder\MyInstallerx64.msi" ...` используйте такую команду, как `msiexec /i "MySubfolder\MyInstallerx64.msi" ...`.
 
 -   Если во время пользовательской настройки среды выполнения интеграции Azure–SSIS необходимо подключить к виртуальной сети, это можно сделать только с помощью виртуальной сети Azure Resource Manager. Классическая виртуальная сеть не поддерживается.
 
@@ -42,7 +42,7 @@ ms.locfileid: "73674861"
 
 -   Драйвер ODBC для IBM iSeries Access не поддерживается в Azure-SSIS IR. Ошибка установки может возникнуть во время пользовательской установки. Обратитесь за помощью в службу поддержки IBM.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -109,7 +109,7 @@ ms.locfileid: "73674861"
 
       ![Ввод подписанного URL-адреса.](media/tutorial-create-azure-ssis-runtime-portal/advanced-settings.png)
 
-      При подготовке или перенастройке Azure SSIS IR с помощью PowerShell, прежде чем запустить Azure SSIS IR, выполните командлет `Set-AzDataFactoryV2IntegrationRuntime` с URI SAS контейнера в качестве значения нового параметра `SetupScriptContainerSasUri`. Например:
+      При подготовке или перенастройке Azure SSIS IR с помощью PowerShell, прежде чем запустить Azure SSIS IR, выполните командлет `Set-AzDataFactoryV2IntegrationRuntime` с URI SAS контейнера в качестве значения нового параметра `SetupScriptContainerSasUri`. Пример.
 
       ```powershell
       Set-AzDataFactoryV2IntegrationRuntime -DataFactoryName $MyDataFactoryName `
@@ -126,17 +126,17 @@ ms.locfileid: "73674861"
 
 1. Чтобы просмотреть другие примеры пользовательской установки, подключитесь к контейнеру общедоступной предварительной версии с помощью Обозревателя службы хранилища Azure.
 
-   а.  В узле **(Local and Attached)** (Локальные и присоединенные) щелкните правой кнопкой мыши **Учетные записи хранения**, выберите пункт **Connect to Azure storage** (Подключиться к службе хранилища Azure), а затем — **Use a storage account name and key** (Использовать имя и ключ учетной записи хранения) и нажмите кнопку **Далее**.
+   а)  В узле **(Local and Attached)** (Локальные и присоединенные) щелкните правой кнопкой мыши **Учетные записи хранения**, выберите пункт **Connect to Azure storage** (Подключиться к службе хранилища Azure), а затем — **Use a storage account name and key** (Использовать имя и ключ учетной записи хранения) и нажмите кнопку **Далее**.
 
       ![Подключение к хранилищу Azure с помощью подписанного URL-адреса](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image9.png)
 
-   b.  Выберите **Use a SAS URI** (Использовать URI SAS) и введите следующий URI SAS для контейнера общедоступной предварительной версии. Нажмите кнопку **Далее**, а затем — **Подключить**.
+   б)  Выберите **Use a SAS URI** (Использовать URI SAS) и введите следующий URI SAS для контейнера общедоступной предварительной версии. Нажмите кнопку **Далее**, а затем — **Подключить**.
 
       `https://ssisazurefileshare.blob.core.windows.net/publicpreview?sp=rl&st=2018-04-08T14%3A10%3A00Z&se=2020-04-10T14%3A10%3A00Z&sv=2017-04-17&sig=mFxBSnaYoIlMmWfxu9iMlgKIvydn85moOnOch6%2F%2BheE%3D&sr=c`
 
       ![Предоставление подписанного URL-адреса для контейнера](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image10.png)
 
-   c. Выберите подключенный контейнер общедоступной предварительной версии и дважды щелкните папку `CustomSetupScript`. Внутри этой папки находятся следующие элементы:
+   в) Выберите подключенный контейнер общедоступной предварительной версии и дважды щелкните папку `CustomSetupScript`. Внутри этой папки находятся следующие элементы:
 
       1. Папка `Sample`, где содержится файл пользовательской установки для установки базовой задачи на каждом узле Azure SSIS IR. Задача не делает ничего, только несколько секунд находится в спящем режиме. Папка также содержит папку `gacutil`, все содержимое которой (`gacutil.exe`, `gacutil.exe.config` и `1033\gacutlrc.dll`) можно скопировать в контейнер. Кроме того, `main.cmd` содержит комментарии для сохранения учетных данных доступа к общим папкам.
 
@@ -166,7 +166,7 @@ ms.locfileid: "73674861"
 
    ![Папки в папке сценариев пользователя](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image12.png)
 
-   д. Чтобы попробовать эти примеры пользовательской установки, скопируйте, а затем вставьте содержимое из выбранной папки в свой контейнер. При подготовке или перенастройке Azure SSIS IR с помощью PowerShell выполните командлет `Set-AzDataFactoryV2IntegrationRuntime` с URI SAS контейнера в качестве значения нового параметра `SetupScriptContainerSasUri`.
+   д) Чтобы попробовать эти примеры пользовательской установки, скопируйте, а затем вставьте содержимое из выбранной папки в свой контейнер. При подготовке или перенастройке Azure SSIS IR с помощью PowerShell выполните командлет `Set-AzDataFactoryV2IntegrationRuntime` с URI SAS контейнера в качестве значения нового параметра `SetupScriptContainerSasUri`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

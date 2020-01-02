@@ -1,23 +1,21 @@
 ---
-title: Создание пространства разработки Kubernetes в облаке с помощью Java и VS Code
-titleSuffix: Azure Dev Spaces
+title: 'Создание пространства разработки Kubernetes: Visual Studio Code и Java'
 services: azure-dev-spaces
-ms.service: azure-dev-spaces
 author: stepro
 ms.author: stephpr
 ms.date: 09/26/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
-keywords: Docker, Kubernetes, Azure, служба контейнеров Azure, служба Azure Kubernetes, контейнеры, Helm, сетка службы, сетка службы маршрутизации, kubectl, k8s
+keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: ec1c2b385797b1219814e584a9db7da82d111e2d
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 5888547939759984effb10aa2c7c6b2add135d12
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67704090"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74708394"
 ---
-# <a name="get-started-on-azure-dev-spaces-with-java"></a>Начало работы в Azure Dev Spaces с использованием Java
+# <a name="create-a-kubernetes-dev-space-visual-studio-code-and-java-with-azure-dev-spaces"></a>Создание пространства разработки Kubernetes: Использование Visual Studio Code и Java в Azure Dev Spaces
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 
@@ -45,9 +43,10 @@ az login
 Можно просматривать свои подписки, выполнив следующую команду: 
 
 ```cmd
-az account list
+az account list --output table
 ```
-Найдите подписку с `isDefault: true` в выходных данных JSON.
+
+Найдите подписку со значением *True* для параметра *IsDefault*.
 Если это не та подписка, которую нужно использовать, вы можете изменить подписку по умолчанию:
 
 ```cmd

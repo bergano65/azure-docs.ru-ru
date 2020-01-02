@@ -1,17 +1,17 @@
 ---
-title: Настройка и вход с помощью Azure AD для базы данных Azure для PostgreSQL — Single Server
-description: Узнайте, как настроить Azure Active Directory для проверки подлинности с помощью базы данных Azure для PostgreSQL — Single Server.
+title: Использование Azure Active Directory — база данных Azure для PostgreSQL — один сервер
+description: Узнайте, как настроить Azure Active Directory (AAD) для проверки подлинности с помощью базы данных Azure для PostgreSQL — Single Server.
 author: lfittl
 ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: d5abfe4cc6aa0679d8009343fa24c1059700bb79
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: c929ac1c171547a4ff485fc43f0f329440f9c3b5
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73516036"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74763646"
 ---
 # <a name="use-azure-active-directory-for-authenticating-with-postgresql"></a>Использование Azure Active Directory для проверки подлинности с помощью PostgreSQL
 
@@ -45,9 +45,9 @@ ms.locfileid: "73516036"
 1. Сначала убедитесь, что пользователь Azure AD `<user>@yourtenant.onmicrosoft.com` является допустимым пользователем в клиенте Azure AD.
 2. Войдите в базу данных Azure для экземпляра PostgreSQL в качестве пользователя с правами администратора Azure AD.
 3. Создание `<user>@yourtenant.onmicrosoft.com` ролей в базе данных Azure для PostgreSQL.
-4. Сделайте `<user>@yourtenant.onmicrosoft.com` членом роли azure_ad_user. Эта возможность должна быть предоставлена только пользователям Azure AD.
+4. Сделайте `<user>@yourtenant.onmicrosoft.com` членом azure_ad_user ролей. Эта возможность должна быть предоставлена только пользователям Azure AD.
 
-**Пример**
+**Пример.**
 
 ```sql
 CREATE ROLE "user1@yourtenant.onmicrosoft.com" WITH LOGIN IN ROLE azure_ad_user;
@@ -60,7 +60,7 @@ CREATE ROLE "user1@yourtenant.onmicrosoft.com" WITH LOGIN IN ROLE azure_ad_user;
 
 Чтобы разрешить группе Azure AD доступ к базе данных, используйте тот же механизм, что и для пользователей, но вместо этого укажите имя группы:
 
-**Пример**
+**Пример.**
 
 ```sql
 CREATE ROLE "Prod DB Readonly" WITH LOGIN IN ROLE azure_ad_user;
@@ -193,7 +193,7 @@ GRANT azure_ad_user TO "existinguser@yourtenant.onmicrosoft.com";
 
 ### <a name="case-2-postgresql-username-is-different-than-the-azure-ad-user-principal-name"></a>Вариант 2. имя пользователя PostgreSQL отличается от имени субъекта-пользователя Azure AD.
 
-Если пользователь PostgreSQL не существует в Azure AD или имеет другое имя пользователя, вы можете использовать группы Azure AD для проверки подлинности в качестве этого пользователя PostgreSQL. Вы можете перенести существующие пользователи базы данных Azure для PostgreSQL в Azure AD, создав группу Azure AD с именем, которое соответствует пользователю PostgreSQL, а затем предоставив роль azure_ad_user для существующего пользователя PostgreSQL:
+Если пользователь PostgreSQL не существует в Azure AD или имеет другое имя пользователя, вы можете использовать группы Azure AD для проверки подлинности в качестве этого пользователя PostgreSQL. Вы можете перенести существующие пользователи базы данных Azure для PostgreSQL в Azure AD, создав группу Azure AD с именем, которое соответствует пользователю PostgreSQL, а затем предоставив роль azure_ad_user существующему пользователю PostgreSQL:
 
 ```sql
 GRANT azure_ad_user TO "DBReadUser";

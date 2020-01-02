@@ -1,6 +1,7 @@
 ---
-title: Примеры преобразования целочисленных утверждений для схемы инфраструктуры процедур идентификации Azure Active Directory B2C | Документация Майкрософт
-description: Примеры преобразования целочисленных утверждений для схемы инфраструктуры процедур идентификации Azure Active Directory B2C.
+title: Примеры преобразования целочисленных требований для пользовательских политик
+titleSuffix: Azure AD B2C
+description: Примеры преобразования целочисленных утверждений для схемы инфраструктура процедур идентификации (инфраструктура процедур идентификации) Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
@@ -10,12 +11,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: d82f7fecfb35c63d586993fed73a83209782a890
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 7295e03f0a0f94b3450b99acc4d10d6ff86c92e7
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71064215"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74948908"
 ---
 # <a name="integer-claims-transformations"></a>Преобразования целочисленных утверждений
 
@@ -27,10 +28,10 @@ ms.locfileid: "71064215"
 
 Преобразует тип данных "длинное целое" в тип данных "строка".
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Элемент | TransformationClaimType | Тип данных | Заметки |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | InputClaim | long | ClaimType для преобразования в строку. |
-| OutputClaim | OutputClaim | string | ClaimType, который создается после вызова ClaimsTransformation. |
+| inputClaim | InputClaim | длинное целое число | ClaimType для преобразования в строку. |
+| outputClaim | outputClaim | string | ClaimType, который создается после вызова ClaimsTransformation. |
 
 В этом примере утверждение `numericUserId` с типом значения "длинное целое" преобразуется в утверждение `UserId` с типом значения "строка".
 
@@ -48,7 +49,7 @@ ms.locfileid: "71064215"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **inputClaim**: 12334 (длинное)
+    - **inputClaim**: 12334 (длинное целое)
 - Исходящие утверждения:
-    - **outputClaim**: "12334" (строковое)
+    - **outputClaim**: "12334" (строка)
 

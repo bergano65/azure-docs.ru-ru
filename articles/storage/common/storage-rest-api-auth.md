@@ -1,5 +1,6 @@
 ---
-title: Вызов операций REST API хранилища Azure с использованием авторизации общего ключа | Документация Майкрософт
+title: Вызов REST API операций с авторизацией общего ключа
+titleSuffix: Azure Storage
 description: Используйте REST API службы хранилища Azure, чтобы выполнить запрос к хранилищу BLOB-объектов с помощью авторизации общего ключа.
 services: storage
 author: tamram
@@ -9,24 +10,24 @@ ms.date: 10/01/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 05f71d4952d5f500a93adbb740739a46e9036ac1
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.openlocfilehash: 13e9abb2a7b79ad9355261832145766e424c3df6
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71803073"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74895172"
 ---
-# <a name="using-the-azure-storage-rest-api"></a>Использование REST API службы хранилища Azure
+# <a name="call-rest-api-operations-with-shared-key-authorization"></a>Вызов REST API операций с авторизацией общего ключа
 
 В этой статье показано, как вызывать интерфейсы API службы хранилища Azure, в том числе как сформировать заголовок авторизации. Она написана с точки зрения разработчика, который ничего не знает о других частях и не имеет представления о том, как выполнить вызов RESTFUL. После того как вы узнаете, как вызвать операцию RESTFUL, можно использовать эти знания для использования любых других операций службы хранилища Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Пример приложения перечисляет контейнеры больших двоичных объектов для учетной записи хранения. Чтобы выполнить код, описанный в этой статье, необходимо следующее. 
 
 - Установите [Visual Studio 2019](https://www.visualstudio.com/visual-studio-homepage-vs.aspx) с рабочей нагрузкой **разработки Azure** .
 
-- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 - Учетная запись хранения общего назначения. Если у вас еще нет учетной записи хранения Azure, [создайте ее](storage-quickstart-create-account.md).
 
@@ -58,9 +59,9 @@ git clone https://github.com/Azure-Samples/storage-dotnet-rest-api-with-auth.git
 
 Если вы посмотрите на [API REST службы BLOB-объектов](/rest/api/storageservices/Blob-Service-REST-API), то увидите, что все операции можно выполнять в хранилище BLOB-объектов. Библиотеки клиентских хранилищ представляют собой программы-оболочки вокруг API REST, которые упрощают доступ к хранилищу без прямого использования API REST. Но, как указано выше, иногда требуется использовать интерфейс API REST вместо клиентской библиотеки хранилища.
 
-## <a name="rest-api-reference-list-containers-api"></a>Руководство по API REST: список контейнеров API
+## <a name="list-containers-operation"></a>Операция "список контейнеров"
 
-Ознакомьтесь со страницей справочника по REST API для операции [ListContainers](/rest/api/storageservices/List-Containers2) . Эта информация поможет вам понять, откуда берутся некоторые из полей в запросе и ответе.
+Ознакомьтесь со ссылкой на операцию [ListContainers](/rest/api/storageservices/List-Containers2) . Эта информация поможет вам понять, откуда берутся некоторые из полей в запросе и ответе.
 
 **Метод запроса**: GET. Эта команда является методом HTTP, который вы указываете как свойство объекта запроса. Другие значения для этой команды включают в себя: HEAD, PUT и DELETE, в зависимости от API, который вы вызываете.
 
@@ -132,29 +133,29 @@ using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri)
 Добавьте заголовки запроса для `x-ms-date` и `x-ms-version`. В этом месте кода также можно добавить дополнительные заголовки запросов, необходимые для вызова. В этом примере нет дополнительных заголовков. Примером API, который передается в дополнительных заголовках, является операция задания ACL контейнера. Этот вызов API добавляет заголовок с именем x-MS-BLOB-Public-Access и значение для уровня доступа.
 
 ```csharp
-    // Add the request headers for x-ms-date and x-ms-version.
-    DateTime now = DateTime.UtcNow;
-    httpRequestMessage.Headers.Add("x-ms-date", now.ToString("R", CultureInfo.InvariantCulture));
-    httpRequestMessage.Headers.Add("x-ms-version", "2017-07-29");
-    // If you need any additional headers, add them here before creating
-    //   the authorization header.
+// Add the request headers for x-ms-date and x-ms-version.
+DateTime now = DateTime.UtcNow;
+httpRequestMessage.Headers.Add("x-ms-date", now.ToString("R", CultureInfo.InvariantCulture));
+httpRequestMessage.Headers.Add("x-ms-version", "2017-07-29");
+// If you need any additional headers, add them here before creating
+//   the authorization header.
 ```
 
 Вызовите метод, который создает заголовок авторизации и добавьте его в заголовки запросов. Сведения о том, как создать заголовок авторизации, приведены далее в этой статье. Именем метода является GetAuthorizationHeader, которое можно увидеть в этом фрагменте кода:
 
 ```csharp
-    // Get the authorization header and add it.
-    httpRequestMessage.Headers.Authorization = AzureStorageAuthenticationHelper.GetAuthorizationHeader(
-        storageAccountName, storageAccountKey, now, httpRequestMessage);
+// Get the authorization header and add it.
+httpRequestMessage.Headers.Authorization = AzureStorageAuthenticationHelper.GetAuthorizationHeader(
+    storageAccountName, storageAccountKey, now, httpRequestMessage);
 ```
 
 На этом этапе `httpRequestMessage` содержит запрос REST с заголовками авторизации.
 
-## <a name="call-the-rest-api-with-the-request"></a>Вызов REST API с помощью запроса
+## <a name="send-the-request"></a>Отправка запроса
 
-Теперь, когда у вас есть запрос, вы можете вызвать SendAsync, чтобы отправить запрос REST. SendAsync вызывает API и возвращает ответ. Изучите ответ StatusCode (200 является нормой),а затем проанализируйте ответ. В этом случае можно получить XML-список контейнеров. Давайте рассмотрим код вызова метода GetRESTRequest, после чего создадим запрос, выполним его и изучим ответ со списком контейнеров.
+Теперь, когда запрос создан, можно вызвать метод SendAsync, чтобы отправить его в службу хранилища Azure. Убедитесь, что значение кода состояния отклика — 200. Это означает, что операция выполнена успешно. Затем проанализируйте ответ. В этом случае можно получить XML-список контейнеров. Давайте рассмотрим код вызова метода GetRESTRequest, после чего создадим запрос, выполним его и изучим ответ со списком контейнеров.
 
-```csharp 
+```csharp
     // Send the request.
     using (HttpResponseMessage httpResponseMessage =
       await new HttpClient().SendAsync(httpRequestMessage, cancellationToken))
@@ -562,11 +563,11 @@ Content-Length: 1135
 </EnumerationResults>
 ```
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Резюме
 
 В этой статье вы узнали, как выполнить запрос к хранилищу BLOB-объектов REST API. С помощью запроса можно получить список контейнеров или список больших двоичных объектов в контейнере. Вы узнали, как создать подпись авторизации для вызова REST API и как использовать ее в запросе RESTFUL. Наконец, вы узнали, как проверить ответ.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Blob Service REST API](/rest/api/storageservices/blob-service-rest-api) (API-интерфейс REST службы BLOB-объектов)
 - [File Service REST API](/rest/api/storageservices/file-service-rest-api) (API-интерфейс REST файловой службы)

@@ -15,9 +15,9 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/24/2019
 ms.locfileid: "74456579"
 ---
-# <a name="understand-azure-iot-edge-modules"></a>Общие сведения о модулях Azure IoT Edge
+# <a name="understand-azure-iot-edge-modules"></a>Общие сведения о модулях IoT Edge Azure
 
-Azure IoT Edge позволяет развертывать *модули* бизнес-логики на пограничных устройствах и управлять этими модулями. Модуль Azure IoT Edge представляет собой наименьшую единицу вычислительных ресурсов, которыми управляет IoT Edge. Эти модули могут содержать службы Azure (например, Azure Stream Analytics) или пользовательский код для конкретного решения. To understand how modules are developed, deployed, and maintained, it helps to think of the four conceptual elements of a module:
+Azure IoT Edge позволяет развертывать *модули* бизнес-логики на пограничных устройствах и управлять этими модулями. Модуль Azure IoT Edge представляет собой наименьшую единицу вычислительных ресурсов, которыми управляет IoT Edge. Эти модули могут содержать службы Azure (например, Azure Stream Analytics) или пользовательский код для конкретного решения. Чтобы понять, как разрабатываются, развертываются и обслуживаются модули, он помогает представить четыре концептуальных элемента модуля:
 
 * **Образ модуля** — это пакет с программным обеспечением для модуля.
 * **Экземпляр модуля** — это единица вычислительных ресурсов, выполняющая образ модуля на устройстве IoT Edge. Экземпляр модуля запускается средой выполнения IoT Edge.
@@ -68,9 +68,9 @@ Twin twin = await client.GetTwinAsync(); 
 
 ## <a name="offline-capabilities"></a>Возможности автономной работы
 
-Azure IoT Edge modules can operate offline indefinitely after syncing with IoT Hub at least once. IoT Edge devices can also extend this offline capability to other IoT devices. Дополнительные сведения см. в разделе [Сведения о расширенных возможностях автономной работы устройств, модулей и дочерних устройств IoT Edge](offline-capabilities.md).
+Azure IoT Edge модули могут автономно обрабатываться после синхронизации с центром Интернета вещей по крайней мере один раз. IoT Edge устройства также могут расширить эту возможность автономного режима на другие устройства IoT. Дополнительные сведения см. в разделе [Сведения о расширенных возможностях автономной работы устройств, модулей и дочерних устройств IoT Edge](offline-capabilities.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
  - [Сведения о требованиях и средствах разработки модулей IoT Edge](module-development.md)
  - [Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре](iot-edge-runtime.md)
 

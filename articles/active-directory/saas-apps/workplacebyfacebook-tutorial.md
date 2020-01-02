@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 10/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15e98bf83cedc22aa565ba0f98089e9f6f217728
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 6fc55130bd840de3960a44ddc1bd0617af185148
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72787615"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74969740"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workplace-by-facebook"></a>Руководство по интеграции единого входа Azure Active Directory с Workplace by Facebook
 
@@ -48,8 +48,8 @@ ms.locfileid: "72787615"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Workplace by Facebook поддерживает единый вход, инициированный **поставщиком услуг**.
+* Workplace by Facebook поддерживает **[автоматическую подготовку пользователей и ее отмену (рекомендуется)](workplacebyfacebook-provisioning-tutorial.md)** .
 * Workplace by Facebook поддерживает **JIT-подготовку**.
-* Workplace by Facebook поддерживает **[автоматическую подготовку пользователей](workplacebyfacebook-provisioning-tutorial.md)** .
 * Теперь для приложения Workplace by Facebook можно настроить Azure AD для обеспечения единого входа. В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 ## <a name="adding-workplace-by-facebook-from-the-gallery"></a>Добавление Workplace by Facebook из коллекции

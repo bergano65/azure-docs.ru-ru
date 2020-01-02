@@ -1,5 +1,5 @@
 ---
-title: Руководство по развертыванию классификатора Пользовательской службы визуального распознавания на устройстве в Azure IoT Edge | Документация Майкрософт
+title: Учебник по развертыванию классификатора Пользовательской службы визуального распознавания на устройстве с помощью Azure IoT Edge
 description: Из этого руководства вы узнайте, как создать модель компьютерного зрения в качестве контейнера с помощью Пользовательской службы визуального распознавания и IoT Edge.
 services: iot-edge
 author: kgremban
@@ -8,13 +8,13 @@ ms.author: kgremban
 ms.date: 10/15/2019
 ms.topic: tutorial
 ms.service: iot-edge
-ms.custom: mvc, seodec18
-ms.openlocfilehash: b84ab9691064e7040e586ad82835f27fa5555920
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.custom: mvc
+ms.openlocfilehash: 41a2fac48980cf376c833b022b833cfcf1e99821
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72434650"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74701870"
 ---
 # <a name="tutorial-perform-image-classification-at-the-edge-with-custom-vision-service"></a>Руководство по классификации изображений в пограничной системе с помощью Пользовательской службы визуального распознавания
 

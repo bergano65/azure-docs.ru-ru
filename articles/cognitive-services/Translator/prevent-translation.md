@@ -22,9 +22,9 @@ ms.locfileid: "74326761"
 API перевода текстов позволяет помечать содержимое тегами, чтобы оно не переводилось. Например, можно пометить тегами код, название торговой марки, а также слово или фразу, которая не имеет смысла при локализации.
 
 ## <a name="methods-for-preventing-translation"></a>Способы запрета перевода
-1. Для экранирования используйте тег Twitter @somethingtopassthrough или #somethingtopassthrough. Отмените экранирование после перевода. This is the regular expression for valid twitter tags: `\B@[A-Za-z]+[A-Za-z0-9_]+)`. A tag should start with a "@" sign, followed by a character and then followed by one or many characters, digits or underscore. It is recommended to keep tags short and the opening tag must be preceded by a space.
+1. Для экранирования используйте тег Twitter @somethingtopassthrough или #somethingtopassthrough. Отмените экранирование после перевода. Это регулярное выражение для допустимых тегов Twitter: `\B@[A-Za-z]+[A-Za-z0-9_]+)`. Тег должен начинаться с символа "@", за которым следует символ, а затем один или несколько символов, цифр или символ подчеркивания. Рекомендуется, чтобы теги были короткими, а открывающим тегом — пробел.
 
-2. Пометьте содержимое с помощью `notranslate`. It's by design that this works only when the input textType is set as HTML
+2. Пометьте содержимое с помощью `notranslate`. Это можно сделать, только если входные Тексттипе заданы в формате HTML.
 
    Пример:
 
@@ -42,9 +42,9 @@ API перевода текстов позволяет помечать соде
 
 4. Не передавайте строку в API перевода текстов для перевода.
 
-5. Custom Translator: Use a [dictionary in Custom Translator](custom-translator/what-is-dictionary.md) to prescribe the translation of a phrase with 100% probability.
+5. Пользовательский переводчик. Используйте [словарь в пользовательском трансляторе](custom-translator/what-is-dictionary.md) , чтобы предписывает перевод фразы с вероятностью 100%.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"]
 > [Запрет перевода при вызове API перевода текстов](reference/v3-0-translate.md)

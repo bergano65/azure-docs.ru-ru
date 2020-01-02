@@ -1,18 +1,14 @@
 ---
 title: Использование подключаемого модуля Azure Dev Spaces для Jenkins со службой Azure Kubenetes
 description: Из этой статьи вы узнаете, как использовать подключаемый модуль Azure Dev Spaces в конвейере непрерывной интеграции.
-author: tomarchermsft
-ms.author: tarcher
-ms.service: jenkins
 ms.topic: tutorial
-ms.custom: mvc
 ms.date: 10/23/2019
-ms.openlocfilehash: 7bc2bb63f1382d1c7fd7e436dd5ddfa278262526
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: 9dba0307db8ebbf07422fd770ea336b2abc031bd
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72881882"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74209672"
 ---
 # <a name="tutorial-using-the-azure-dev-spaces-plug-in-for-jenkins-with-azure-kubernetes-service"></a>Руководство по Использование подключаемого модуля Azure Dev Spaces для Jenkins со службой Azure Kubenetes 
 
@@ -131,7 +127,7 @@ Azure Dev Spaces позволяет тестировать и итеративн
     Команда `azds prep` в Dev Spaces CLI создает ресурсы Docker и Kubernetes с настройками по умолчанию. Эти файлы сохраняются в течение всего жизненного цикла проекта, и вы можете изменить их:
 
     * `./Dockerfile` и `./Dockerfile.develop` описывают образ контейнера приложения, а также способ создания и выполнения исходного кода в контейнере.
-    * В [диаграмме Helm](https://helm.sh/docs/developing_charts/) в разделе `./charts/webfrontend` описано, как развернуть контейнер в Kubernetes.
+    * В [диаграмме Helm](https://helm.sh/docs/topics/charts/) в разделе `./charts/webfrontend` описано, как развернуть контейнер в Kubernetes.
     * `./azds.yaml` выполняет роль файла конфигурации для Azure Dev Spaces.
 
     Дополнительные сведения см. в статье о [принципах работы и настройки Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/how-dev-spaces-works).

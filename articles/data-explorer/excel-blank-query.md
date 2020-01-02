@@ -7,20 +7,20 @@ ms.reviewer: rkarlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 08/30/2019
-ms.openlocfilehash: 55198e0c38c2922d69b68d9ce62e16ea25e9cc44
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: 4999000e2084922b43b8085034f545d4b5c644a9
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70173733"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849094"
 ---
 # <a name="visualize-data-using-an-azure-data-explorer-kusto-query-imported-into-microsoft-excel"></a>Визуализация данных с помощью запроса Azure обозреватель данных Kusto, импортированного в Microsoft Excel
 
 Azure обозреватель данных предоставляет два варианта подключения к данным в Excel: Используйте собственный соединитель или импортируйте запрос из обозреватель данных Azure. В этой статье показано, как импортировать запрос из обозреватель данных Azure в Excel для визуализации данных. Добавьте запрос Kusto в качестве источника данных Excel для выполнения дополнительных вычислений или визуализаций данных.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
-* Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+* Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 * Учетная запись электронной почты организации, которая является членом Azure Active Directory, поэтому вы можете подключиться к [кластеру справки azure обозреватель данных](https://dataexplorer.azure.com/clusters/help/databases/Samples) 
 <br>или</br>
 * Создайте [тестовый кластер и базу данных](create-cluster-database-portal.md) и войдите в [приложение пользовательского веб-интерфейса Azure обозреватель данных](https://dataexplorer.azure.com/).
@@ -68,3 +68,7 @@ Azure обозреватель данных предоставляет два в
 1. Теперь данные находятся в Excel. Нажмите кнопку **Обновить** , чтобы обновить запрос.
 
     ![Просмотр данных в Excel](media/excel-blank-query/data-in-excel.png)
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+[Визуализация данных с помощью соединителя Azure обозреватель данных для Excel](excel-connector.md)

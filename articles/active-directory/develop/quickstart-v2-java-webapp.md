@@ -2,25 +2,21 @@
 title: Краткое руководство. Использование веб-приложений Java с Платформой удостоверений Майкрософт | Azure
 description: Узнайте, как реализовать единый вход Майкрософт на веб-приложении Java с помощью OpenID Connect
 services: active-directory
-documentationcenter: dev-center-name
 author: sangonzal
-editor: ''
-ms.assetid: 820acdb7-d316-4c3b-8de9-79df48ba3b06
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: quickstart
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 10/09/2019
 ms.author: sagonzal
 ms.custom: aaddev, scenarios:getting-started, languages:Java
-ms.openlocfilehash: 93ae820f8c98b749ef8f71b17bf3d540d7886ed6
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 1a5401ee76f60c9b9c2a75561cad8f6571d3b308
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73832129"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74920707"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-java-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Java с помощью учетной записи Майкрософт
 
@@ -136,7 +132,7 @@ ms.locfileid: "73832129"
 
 ### <a name="getting-msal"></a>Получение MSAL
 
-MSAL4J — это библиотека Java, используемая для выполнения входа пользователей и запросов маркеров, которые нужны для доступа к API, защищенному Платформой удостоверений Майкрософт.
+MSAL для Java (MSAL4J) — это библиотека Java, используемая для выполнения входа пользователей и запросов маркеров, которые нужны для доступа к API, защищенному платформой удостоверений Майкрософт.
 
 Добавьте библиотеку MSAL4J в приложение с помощью Maven или Gradle для управления зависимостями, внеся следующие изменения в файл pom.xml (Maven) или build.gradle (Gradle) приложения.
 
@@ -154,7 +150,7 @@ compile group: 'com.microsoft.azure', name: 'msal4j', version: '1.0.0'
 
 ### <a name="msal-initialization"></a>Инициализация MSAL
 
-Добавьте ссылку на MSAL4J, добавив следующий код в начало файла, в котором будет использоваться MSAL4J:
+Добавьте ссылку на MSAL для Java, добавив следующий код в начало файла, в котором будет использоваться MSAL4J:
 
 ```Java
 import com.microsoft.aad.msal4j.*;

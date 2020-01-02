@@ -9,12 +9,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
 ms.date: 11/13/2019
-ms.openlocfilehash: 4aab699ff0141b648066fae0de445c4467be7509
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.openlocfilehash: 394c674da63bbda643246c3d61fb670d6ac8d1f7
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74048396"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74928613"
 ---
 # <a name="azure-hybrid-benefit"></a>Преимущество гибридного использования Azure
 
@@ -31,28 +31,36 @@ ms.locfileid: "74048396"
 
 Вы можете выбрать или изменить модель лицензирования с помощью портал Azure или с помощью одного из следующих API:
 
-- Чтобы задать или обновить тип лицензии с помощью PowerShell, выполните следующие действия.
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
-  - [New-AzSqlDatabase](https://docs.microsoft.com/powershell/module/az.sql/new-azsqldatabase)
-  - [Set-AzSqlDatabase](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabase)
-  - [New-AzSqlInstance](https://docs.microsoft.com/powershell/module/az.sql/new-azsqlinstance)
-  - [Set-AzSqlInstance](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlinstance)
+Чтобы задать или обновить тип лицензии с помощью PowerShell, выполните следующие действия.
 
-- Чтобы задать или обновить тип лицензии с помощью Azure CLI:
+- [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase)
+- [Set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase)
+- [New-AzSqlInstance](/powershell/module/az.sql/new-azsqlinstance)
+- [Set-AzSqlInstance](/powershell/module/az.sql/set-azsqlinstance)
 
-  - [az sql db create](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-create)
-  - [az sql db update](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-update)
-  - [az sql mi create](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-create)
-  - [az sql mi update](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-update)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-- Чтобы задать или обновить тип лицензии с помощью REST API:
+Чтобы задать или обновить тип лицензии с помощью Azure CLI:
 
-  - [Создание или обновление баз данных](https://docs.microsoft.com/rest/api/sql/databases/createorupdate)
-  - [Базы данных: обновление](https://docs.microsoft.com/rest/api/sql/databases/update)
-  - [Управляемые экземпляры. Создание или обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/createorupdate)
-  - [Управляемые экземпляры. Обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/update)
+- [az sql db create](/cli/azure/sql/db#az-sql-db-create)
+- [az sql db update](/cli/azure/sql/db#az-sql-db-update)
+- [az sql mi create](/cli/azure/sql/mi#az-sql-mi-create)
+- [az sql mi update](/cli/azure/sql/mi#az-sql-mi-update)
 
-## <a name="next-steps"></a>Дополнительная информация
+# <a name="rest-apitabrest"></a>[REST API](#tab/rest)
+
+Чтобы задать или обновить тип лицензии с помощью REST API:
+
+- [Создание или обновление баз данных](/rest/api/sql/databases/createorupdate)
+- [Базы данных: обновление](/rest/api/sql/databases/update)
+- [Управляемые экземпляры. Создание или обновление](/rest/api/sql/managedinstances/createorupdate)
+- [Управляемые экземпляры. Обновление](/rest/api/sql/managedinstances/update)
+
+* * *
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о выборе между вариантами развертывания базы данных SQL см. [в разделе Выбор правильного развертывания в SQL Azure](sql-database-paas-vs-sql-server-iaas.md).
 - Сравнение функций базы данных SQL см. в статье [функции базы данных SQL Azure](sql-database-features.md).

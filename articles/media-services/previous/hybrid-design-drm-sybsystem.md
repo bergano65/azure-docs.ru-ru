@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: willzhan
 ms.reviewer: juliako
-ms.openlocfilehash: d15bfcfbae3b24e1a9b29dc74f9b41a979e63ae9
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: d2f4ddfbff791fbfeb2eb006a628c0fdeb4fdce1
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "69014689"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74975199"
 ---
 # <a name="hybrid-design-of-drm-subsystems"></a>Гибридный дизайн подсистем DRM 
 
 Здесь рассматривается гибридная структура подсистем управления цифровыми правами (DRM) с использованием служб мультимедиа Azure.
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Краткое описание
 
 Службы мультимедиа Azure поддерживают три следующие системы DRM:
 
@@ -97,11 +97,11 @@ ms.locfileid: "69014689"
 
 |**Размещение содержимого и источник**|**Шифрование DRM**|**Доставка лицензий DRM**|**Настройка ключа содержимого**|**Настройка политики доставки для ресурса-контейнера**|**Пример**|
 |---|---|---|---|---|---|
-|AMS|AMS|AMS|Да|Да|Пример 1|
-|AMS|AMS|Сторонний производитель|Да|Да|Пример 2|
-|AMS|Сторонний производитель|AMS|Да|Нет|Пример 3|
+|AMS|AMS|AMS|ДА|ДА|Пример 1|
+|AMS|AMS|Сторонний производитель|ДА|ДА|Пример 2|
+|AMS|Сторонний производитель|AMS|ДА|Нет|Пример 3|
 |AMS|Сторонний производитель|Внешняя|Нет|Нет|Пример 4|
-|Сторонний производитель|Сторонний производитель|AMS|Да|Нет|    
+|Сторонний производитель|Сторонний производитель|AMS|ДА|Нет|    
 
 В примерах защита PlayReady работает как для DASH, так и для Smooth Streaming. Ниже приведены URL-адреса видео, которые являются URL-адресами Smooth Streaming. Чтобы получить соответствующие URL-адреса DASH, просто добавьте "(format=mpd-time-csf)". Для проверки в браузере можно использовать [проигрыватель для тестирования мультимедиа Azure](https://aka.ms/amtest). Он позволяет настроить протокол потоковой передачи для использования с каждой технологией. Internet Explorer 11 и Microsoft Edge в Windows 10 поддерживают PlayReady через EME. Дополнительные сведения см. в записи блога [Azure Media Test Tool](https://blogs.msdn.microsoft.com/playready4/2016/02/28/azure-media-test-tool/) (Средство для тестирования мультимедиа Azure).
 
@@ -127,15 +127,19 @@ ms.locfileid: "69014689"
 * URL-адрес источника: https://willzhanmswest.streaming.mediaservices.windows.net/7c085a59-ae9a-411e-842c-ef10f96c3f89/20150807-bridges-2500.ism/manifest 
 * URL-адрес для приобретения лицензии PlayReady (DASH и Smooth Streaming): https://willzhan12.cloudapp.net/playready/rightsmanager.asmx 
 
-## <a name="summary"></a>Сводка
+## <a name="additional-notes"></a>Дополнительные замечания
+
+* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+
+## <a name="summary"></a>Резюме
 
 Таким образом, компоненты DRM служб мультимедиа Azure являются гибкими. Их можно использовать в гибридных сценариях при правильной настройке ключа содержимого и политики доставки ресурсов, как описано в этой статье.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Оставить отзыв
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

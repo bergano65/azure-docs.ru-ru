@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 4/10/2019
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: e28104e1c795e093fda6457d9f86265312f540be
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 19503fd0e469258bb8305f151cc53b9ec3136558
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185850"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74935857"
 ---
 > [!IMPORTANT]
-> Среда выполнения функций Azure Предварительная версия 2 поддерживает только версии 1.x среды выполнения функций Azure. Эта функция предварительного просмотра не обновляются для поддержки версии 2.x среды выполнения и будущие обновления не планируются. Если вам нужно разместить в среде выполнения функций Azure за пределами Azure, рассмотрите возможность [с помощью функций Azure в Kubernetes с использованием KEDA](../articles/azure-functions/functions-kubernetes-keda.md)
+> Предварительная версия 2 среда выполнения Функций Azure поддерживает только версию 1. x среды выполнения функций Azure. Эта предварительная версия функции не обновляется для поддержки версии 2. x и более поздней версии среды выполнения, и будущие обновления не планируются. Если вам нужно разместить среду выполнения функций Azure за пределами Azure, рассмотрите возможность [использования функций Azure в Kubernetes с Кеда](../articles/azure-functions/functions-kubernetes-keda.md)

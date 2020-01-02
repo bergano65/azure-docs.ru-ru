@@ -8,14 +8,14 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 09/10/2019
+ms.date: 12/03/2019
 ms.author: juliako
-ms.openlocfilehash: 255c98965026266348a66bb98a1741eaf04a1d38
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: beb44c469aa8a03430cd5cb5a162966855aad448
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73839144"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74815405"
 ---
 # <a name="upload-and-index-your-videos"></a>Отправка и индексирование видео  
 
@@ -31,7 +31,7 @@ API Индексатора видео позволяет загружать ви
 
 ## <a name="uploading-considerations-and-limitations"></a>Отправка рекомендаций и ограничений
  
-- Имя видео должно содержать не более 80 символов.
+- Имя видео должно содержать не более 80 символов.
 - При отправке видео на основе URL-адреса (предпочтительно) конечная точка должна быть защищена с помощью TLS 1,2 (или более поздней версии).
 - Размер передачи с параметром URL-адреса ограничен 30 ГБ.
 - Длина URL-адреса запроса ограничена 6144 символами, в которых длина URL-адреса строки запроса ограничена 4096 символами.
@@ -61,15 +61,15 @@ URL-адрес, используемый для уведомления клие�
 - Изменение состояния индексирования: 
     - Свойства:    
     
-        |Имя|Description (Описание)|
+        |Name|Описание|
         |---|---|
         |id|Идентификатор видео|
         |state|Состояние видео|  
     - Пример: https:\//test.com/notifyme?projectName=MyProject&id=1234abcd&state=Processed
 - Человек, идентифицированный на видео:
-  - Свойства
+  - properties
     
-      |Имя|Description (Описание)|
+      |Name|Описание|
       |---|---|
       |id| Идентификатор видео|
       |faceId|Идентификатор лица, которое отображается в индексе видео|
@@ -78,7 +78,7 @@ URL-адрес, используемый для уведомления клие�
         
     - Пример: https:\//test.com/notifyme?projectName=MyProject&id=1234abcd&faceid=12&knownPersonId=CCA84350-89B7-4262-861C-3CAC796542A5&personName=Inigo_Montoya 
 
-#### <a name="notes"></a>Примечания
+#### <a name="notes"></a>Заметки
 
 - Индексатор видео возвращает любые существующие параметры, указанные в исходном URL-адресе.
 - Указанный URL-адрес должен быть закодирован.
@@ -87,8 +87,9 @@ URL-адрес, используемый для уведомления клие�
 
 Используйте этот параметр, если необработанные или внешние записи содержат фоновый шум. Этот параметр используется для настройки процесса индексирования. Можно указать следующие значения:
 
-- `Default` — индексирование и извлечение аналитических сведений с помощью аудио и видео.
 - `AudioOnly` — индексирование и извлечение аналитических сведений с помощью только аудио (без видео).
+- `VideoOnly`-индексировать и извлекать аналитические данные с использованием только видео (без звука)
+- `Default` — индексирование и извлечение аналитических сведений с помощью аудио и видео.
 - `DefaultWithNoiseReduction` — индексирование и извлечение аналитических сведений из аудио и видео с применением алгоритмов снижения шума в аудиопотоке.
 
 Цена зависит от выбранного параметра индексирования.  
@@ -119,12 +120,28 @@ URL-адрес индексируемого видео- или аудиофай�
 
 В следующем фрагменте кода C# показано, как использовать все API Индексатора видео.
 
+### <a name="instructions-for-running-this-code-sample"></a>Инструкции по запуску этого примера кода
+
+После копирования этого кода в платформу разработки необходимо указать два параметра: ключ проверки подлинности управления API и URL-адрес видео.
+
+* Ключ API — ключ API — это ваш личный ключ подписки управления API, который позволит получить маркер доступа для выполнения операций с учетной записью индексатора видео. 
+
+    Чтобы получить ключ API, пройдите по этой последовательности:
+
+    * Перейдите на страницу https://api-portal.videoindexer.ai/.
+    * Вход
+    * Последовательно выберите **продукты** -> **авторизация** -> **авторизация** .
+    * Копирование **первичного ключа**
+* URL-адрес видео — URL-адрес видео-или аудиофайла, который необходимо проиндексировать. URL-адрес должен указывать на файл мультимедиа (HTML-страницы не поддерживаются). Файл может быть защищен маркером доступа, предоставленным в составе универсального кода ресурса (URI), а конечная точка, обрабатывающая файл, должна быть защищена с использованием протокола TLS версии 1.2 или выше. URL-адрес нужно закодировать.
+
+В результате успешного выполнения примера кода будут содержаться URL-адрес элемента "аналитика" и URL мини-приложения проигрывателя, которые позволят вам исследовать ценные сведения и видео, отправленные соответственно. 
+
+
 ```csharp
 public async Task Sample()
 {
     var apiUrl = "https://api.videoindexer.ai";
-    var location = "westus2";
-    var apiKey = "...";
+    var apiKey = "..."; // replace with API key taken from https://aka.ms/viapi
 
     System.Net.ServicePointManager.SecurityProtocol =
         System.Net.ServicePointManager.SecurityProtocol | System.Net.SecurityProtocolType.Tls12;
@@ -145,7 +162,9 @@ public async Task Sample()
     HttpResponseMessage result = await client.GetAsync($"{apiUrl}/auth/trial/Accounts?{queryParams}");
     var json = await result.Content.ReadAsStringAsync();
     var accounts = JsonConvert.DeserializeObject<AccountContractSlim[]>(json);
-    // take the relevant account, here we simply take the first
+    
+    // take the relevant account, here we simply take the first, 
+    // you can also get the account via accounts.First(account => account.Id == <GUID>);
     var accountInfo = accounts.First();
 
     // we will use the access token from here on, no need for the apim key
@@ -153,7 +172,7 @@ public async Task Sample()
 
     // upload a video
     var content = new MultipartFormDataContent();
-    Debug.WriteLine("Uploading...");
+    Console.WriteLine("Uploading...");
     // get the video from URL
     var videoUrl = "VIDEO_URL"; // replace with the video URL
 
@@ -179,9 +198,9 @@ public async Task Sample()
 
     // get the video ID from the upload result
     string videoId = JsonConvert.DeserializeObject<dynamic>(uploadResult)["id"];
-    Debug.WriteLine("Uploaded");
-    Debug.WriteLine("Video ID:");
-    Debug.WriteLine(videoId);
+    Console.WriteLine("Uploaded");
+    Console.WriteLine("Video ID:");
+    Console.WriteLine(videoId);
 
     // wait for the video index to finish
     while (true)
@@ -200,16 +219,16 @@ public async Task Sample()
 
         string processingState = JsonConvert.DeserializeObject<dynamic>(videoGetIndexResult)["state"];
 
-        Debug.WriteLine("");
-        Debug.WriteLine("State:");
-        Debug.WriteLine(processingState);
+        Console.WriteLine("");
+        Console.WriteLine("State:");
+        Console.WriteLine(processingState);
 
         // job is finished
         if (processingState != "Uploaded" && processingState != "Processing")
         {
-            Debug.WriteLine("");
-            Debug.WriteLine("Full JSON:");
-            Debug.WriteLine(videoGetIndexResult);
+            Console.WriteLine("");
+            Console.WriteLine("Full JSON:");
+            Console.WriteLine(videoGetIndexResult);
             break;
         }
     }
@@ -224,9 +243,9 @@ public async Task Sample()
 
     var searchRequestResult = await client.GetAsync($"{apiUrl}/{accountInfo.Location}/Accounts/{accountInfo.Id}/Videos/Search?{queryParams}");
     var searchResult = await searchRequestResult.Content.ReadAsStringAsync();
-    Debug.WriteLine("");
-    Debug.WriteLine("Search:");
-    Debug.WriteLine(searchResult);
+    Console.WriteLine("");
+    Console.WriteLine("Search:");
+    Console.WriteLine(searchResult);
 
     // Generate video access token (used for get widget calls)
     client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", apiKey);
@@ -244,8 +263,8 @@ public async Task Sample()
         });
     var insightsWidgetRequestResult = await client.GetAsync($"{apiUrl}/{accountInfo.Location}/Accounts/{accountInfo.Id}/Videos/{videoId}/InsightsWidget?{queryParams}");
     var insightsWidgetLink = insightsWidgetRequestResult.Headers.Location;
-    Debug.WriteLine("Insights Widget url:");
-    Debug.WriteLine(insightsWidgetLink);
+    Console.WriteLine("Insights Widget url:");
+    Console.WriteLine(insightsWidgetLink);
 
     // get player widget url
     queryParams = CreateQueryString(
@@ -255,9 +274,16 @@ public async Task Sample()
         });
     var playerWidgetRequestResult = await client.GetAsync($"{apiUrl}/{accountInfo.Location}/Accounts/{accountInfo.Id}/Videos/{videoId}/PlayerWidget?{queryParams}");
     var playerWidgetLink = playerWidgetRequestResult.Headers.Location;
-    Debug.WriteLine("");
-    Debug.WriteLine("Player Widget url:");
-    Debug.WriteLine(playerWidgetLink);
+     Console.WriteLine("");
+     Console.WriteLine("Player Widget url:");
+     Console.WriteLine(playerWidgetLink);
+     Console.WriteLine("\nPress Enter to exit...");
+     String line = Console.ReadLine();
+     if (line == "enter")
+     {
+         System.Environment.Exit(0);
+     }
+
 }
 
 private string CreateQueryString(IDictionary<string, string> parameters)
@@ -285,7 +311,7 @@ public class AccountContractSlim
 
 После операции отправки могут возвращаться коды состояния, перечисленные в приведенной ниже таблице.
 
-|Код состояния|ErrorType (в тексте ответа)|Description (Описание)|
+|Код состояния|ErrorType (в тексте ответа)|Описание|
 |---|---|---|
 |400|VIDEO_ALREADY_IN_PROGRESS|То же самое видео уже обрабатывается в указанной учетной записи.|
 |400|VIDEO_ALREADY_FAILED|Менее 2 часов назад обработка того же самого видео завершилась сбоем. Клиентам API следует подождать не менее 2 часов, прежде чем повторно отправлять видео.|

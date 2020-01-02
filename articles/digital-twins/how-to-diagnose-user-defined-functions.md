@@ -1,6 +1,6 @@
 ---
-title: How to debug UDFs - Azure Digital Twins | Microsoft Docs
-description: Learn about recommended approaches to debug user-defined functions in Azure Digital Twins.
+title: Отладка пользовательских функций в Azure Digital двойников | Документация Майкрософт
+description: Узнайте о рекомендуемых подходах к отладке определяемых пользователем функций в Azure Digital двойников.
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
@@ -18,34 +18,34 @@ ms.locfileid: "74457022"
 ---
 # <a name="how-to-debug-user-defined-functions-in-azure-digital-twins"></a>Сведения о том, как выполнять отладку пользовательских функций в Azure Digital Twins
 
-This article summarizes how to diagnose and debug user-defined functions in Azure Digital Twins. Она также описывает некоторые наиболее распространенные сценарии, обнаруженные при отладке.
+В этой статье приведена сводка по диагностике и отладке определяемых пользователем функций в Azure Digital двойников. Она также описывает некоторые наиболее распространенные сценарии, обнаруженные при отладке.
 
 >[!TIP]
 > Дополнительные сведения о настройке средств отладки в Azure Digital Twins с использованием журналов действий, журналов диагностики и Azure Monitor см. в разделе [Настройка мониторинга и ведения журнала](./how-to-configure-monitoring.md).
 
 ## <a name="debug-issues"></a>Отладка проблем
 
-Knowing how to diagnose issues within Azure Digital Twins allows you to effectively analyze issues, identify the causes of problems, and provide appropriate solutions for them.
+Знание способов диагностики проблем в Azure Digital двойников позволяет эффективно анализировать проблемы, определять причины проблем и предоставлять соответствующие решения.
 
-A variety of logging, analytics, and diagnostic tools are provided to that end.
+Для этой конечной точки предоставляются разнообразные средства ведения журналов, аналитики и диагностики.
 
-### <a name="enable-logging-for-your-instance"></a>Enable logging for your instance
+### <a name="enable-logging-for-your-instance"></a>Включение ведения журнала для экземпляра
 
-Azure Digital Twins поддерживает надежные механизмы ведения журнала, мониторинга и аналитики. Solutions developers can use Azure Monitor logs, diagnostic logs, activity logs, and other services to support the complex monitoring needs of an IoT app. Можно сочетать несколько вариантов ведения журнала для запрашивания или отображения записей в нескольких службах и получения подробных сведений в журналах для многих служб.
+Azure Digital Twins поддерживает надежные механизмы ведения журнала, мониторинга и аналитики. Разработчики решений могут использовать журналы Azure Monitor, журналы диагностики, журналы действий и другие службы для поддержки сложных задач мониторинга приложения IoT. Можно сочетать несколько вариантов ведения журнала для запрашивания или отображения записей в нескольких службах и получения подробных сведений в журналах для многих служб.
 
-* For logging configuration specific to Azure Digital Twins, read [How to configure monitoring and logging](./how-to-configure-monitoring.md).
-* Consult the [Azure Monitor](../azure-monitor/overview.md) overview to learn about powerful log settings enabled through Azure Monitor.
-* Review the article [Collect and consume log data from your Azure resources](../azure-monitor/platform/resource-logs-overview.md) for configuring diagnostic log settings in Azure Digital Twins through the Azure portal, Azure CLI, or PowerShell.
+* Сведения о настройке ведения журнала в Azure Digital двойников см. [в статье Настройка мониторинга и ведения журнала](./how-to-configure-monitoring.md).
+* Дополнительные сведения о мощных параметрах журналов, включенных в Azure Monitor, см. в обзоре [Azure Monitor](../azure-monitor/overview.md) .
+* Просмотрите статью [сбор и использование данных журналов из ресурсов Azure](../azure-monitor/platform/resource-logs-overview.md) для настройки параметров журналов диагностики в службе Digital двойников с помощью портал Azure, Azure CLI или PowerShell.
 
-Once configured, you'll be able to select all log categories, metrics, and use powerful Azure Monitor log analytics workspaces to support your debugging efforts.
+После настройки вы сможете выбрать все категории журналов, метрики и использовать мощные Azure Monitor рабочие области log Analytics для поддержки отладки.
 
 ### <a name="trace-sensor-telemetry"></a>Отслеживание телеметрии от датчика
 
-Чтобы отследить телеметрию датчиков, убедитесь, что для экземпляра Azure Digital Twins включены диагностические параметры. Затем убедитесь в том, что выбраны все нужные категории журналов. Lastly, confirm that the desired logs are being sent to Azure Monitor logs.
+Чтобы отследить телеметрию датчиков, убедитесь, что для экземпляра Azure Digital Twins включены диагностические параметры. Затем убедитесь в том, что выбраны все нужные категории журналов. Наконец, убедитесь, что нужные журналы отправляются в журналы Azure Monitor.
 
 Чтобы сопоставлять сообщения телеметрии от датчиков с соответствующими журналами, можно указать идентификатор корреляции в отправляемых данных событий. Для этого задайте для свойства `x-ms-client-request-id` значение GUID.
 
-After sending telemetry, open Azure Monitor log analytics to query for logs using the set Correlation ID:
+После отправки данных телеметрии откройте Azure Monitor log Analytics, чтобы запросить журналы, используя идентификатор корреляции:
 
 ```Kusto
 AzureDiagnostics
@@ -56,14 +56,14 @@ AzureDiagnostics
 | --- | --- |
 | YOUR_CORRELATION_IDENTIFIER | Идентификатор корреляции, который был указан для данных событий |
 
-To see all recent telemetry logs query:
+Чтобы просмотреть все недавние журналы телеметрии, выполните следующие действия.
 
 ```Kusto
 AzureDiagnostics
 | order by CorrelationId desc
 ```
 
-If you enable logging for your user-defined function, those logs appear in your log analytics instance with the category `UserDefinedFunction`. To retrieve them, enter the following query condition in log analytics:
+Если включить ведение журнала для определяемой пользователем функции, эти журналы будут отображаться в экземпляре log Analytics с категорией `UserDefinedFunction`. Чтобы получить их, введите следующее условие запроса в log Analytics:
 
 ```Kusto
 AzureDiagnostics
@@ -212,8 +212,8 @@ function process(telemetry, executionContext) {
 
 1. **Нет прав**. Если у пользовательской функции нет назначения роли или достаточных разрешений для доступа к некоторым метаданным топологии, такая операция завершится ошибкой.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения о включении [журналов и мониторинга](./how-to-configure-monitoring.md) для Azure Digital Twins.
 
-- Read the [Overview of Azure Activity log](../azure-monitor/platform/activity-logs-overview.md) article for more Azure logging options.
+- Дополнительные сведения о параметрах ведения журнала Azure см. в статье [Обзор журнала действий Azure](../azure-monitor/platform/activity-logs-overview.md) .

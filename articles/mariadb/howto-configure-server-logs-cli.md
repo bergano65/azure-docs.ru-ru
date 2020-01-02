@@ -1,23 +1,23 @@
 ---
-title: Доступ к журналам сервера в службе "База данных Azure для MariaDB" с помощью Azure CLI
-description: В этой статье объясняется, как получить доступ к журналам сервера в службе "База данных Azure для MariaDB" с помощью программы Azure CLI.
-author: rachel-msft
-ms.author: raagyema
+title: Доступ к журналам запросов с высокой производительностью. Azure CLI — база данных Azure для MariaDB
+description: В этой статье описывается, как получить доступ к журналам ожидания в базе данных Azure для MariaDB с помощью служебной программы командной строки Azure CLI.
+author: ajlam
+ms.author: andrela
 ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 06/12/2019
-ms.openlocfilehash: ffc724ef5133ee25643a966d2b6d8448a4c3a920
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: 32e73835732538813f90de5cb737429373c3762a
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72023619"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74767387"
 ---
-# <a name="configure-and-access-server-logs-by-using-azure-cli"></a>Настройка журналов сервера и получение к ним доступа с помощью Azure CLI
-Скачать журналы сервера из службы "База данных Azure для MariaDB" можно с помощью Azure CLI — программы для работы с Azure.
+# <a name="configure-and-access-slow-query-logs-by-using-azure-cli"></a>Настройка и доступ к журналам запросов с высокой занесением с помощью Azure CLI
+Вы можете скачать базу данных Azure для MariaDBных журналов запросов с помощью Azure CLI, служебной программы командной строки Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - [База данных Azure для сервера MariaDB](quickstart-create-mariadb-server-database-using-azure-cli.md)
 - [Azure CLI](/cli/azure/install-azure-cli) или Azure Cloud Shell в браузере.
@@ -52,5 +52,5 @@ az mariadb server-logs list --resource-group myresourcegroup --server mydemoserv
 az mariadb server-logs download --name mysql-slow-mydemoserver-2018110800.log --resource-group myresourcegroup --server mydemoserver
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Сведения о [очень низких журналах запросов в базе данных Azure для MariaDB](concepts-server-logs.md).

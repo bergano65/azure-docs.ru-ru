@@ -1,18 +1,18 @@
 ---
 title: Математические функции в Azure Cosmos DB языке запросов
-description: Сведения о математических системных функциях SQL в Azure Cosmos DB.
+description: Сведения о математических функциях в Azure Cosmos DB для выполнения вычислений на основе входных значений, которые предоставляются в качестве аргументов, и возвращают числовое значение.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: fe4a84db3f2cbcfc2d9841caf520404afec2a297
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: a04867d356aaf2f55dbe900d2e35b42f74206851
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349669"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873273"
 ---
 # <a name="mathematical-functions-azure-cosmos-db"></a>Математические функции (Azure Cosmos DB)  
 
@@ -30,7 +30,7 @@ ms.locfileid: "71349669"
     [4]
 ```
 
-## <a name="functions"></a>Функции
+## <a name="functions"></a>Функции Azure
 
 Следующие поддерживаемые встроенные математические функции выполняют вычисление, обычно на основе входных аргументов и возвращают числовое выражение.
   
@@ -45,11 +45,11 @@ ms.locfileid: "71349669"
 |[SIGN](sql-query-sign.md)|[SIN](sql-query-sin.md)|[SQRT](sql-query-sqrt.md)|
 |[SQUARE](sql-query-square.md)|[TAN](sql-query-tan.md)|[TRUNC](sql-query-trunc.md)||  
   
-Все математические функции, за исключением RAND, являются детерминированными функциями. Это означает, что они возвращают одинаковые результаты при каждом вызове с помощью определенного набора входных значений.
+Все математические функции, кроме RAND, являются детерминированными. Это значит, что они возвращают одни и те же результаты каждый раз, когда вызываются с одними и теми же входными значениями.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
 - [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
 - [Определяемые пользователем функции](sql-query-udfs.md)
-- [Статистические выражения](sql-query-aggregates.md)
+- [Статистические функции](sql-query-aggregates.md)

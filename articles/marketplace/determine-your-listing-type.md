@@ -2,19 +2,19 @@
 title: Выбор варианта публикации в Azure Marketplace | Azure
 description: В этой статье описываются условия и требования, которые следует принимать во внимание партнерам при публикации приложений в Azure Marketplace.
 services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
-author: jm-aditi-ms
+author: ellacroi
 manager: pabutler
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 06/13/2018
 ms.author: ellacroi
-ms.openlocfilehash: 967d33cb7a9eb3ec922f9d85cfc2581b85bce537
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: ed25b92dc759f687e35a8424558453a830369a57
+ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73825901"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74548362"
 ---
 # <a name="determine-your-publishing-option"></a>Выбор варианта публикации
 Вариант публикации, выбранный для вашего предложения, определяется требованиями соответствия и преимуществами GTM в Marketplace. Что более важно, выбор варианта публикации и типа предложения определяет, как пользователи будут взаимодействовать с вашим предложением Marketplace.
@@ -41,7 +41,7 @@ ms.locfileid: "73825901"
 
 ## <a name="understand-storefront-selection"></a>Выбор правильного онлайн-магазина
 
-Магазин, в котором будет представлено ваше предложение, Azure Marketplace и/или AppSource, будет автоматически определяться сведениями о предложении и целевой аудиторией, а также категориями и отраслями, выбранными при создании предложения. 
+Каждый витринный магазин обслуживает уникальные клиентские требования. Магазин, в котором будет опубликовано ваше предложение, будет определяться по типу предложения, предоставлять возможности transactа и категории и (или) отраслевый выбор для конкретной аудитории. 
 
 >[!Note]
 >"Перекрестное перечисление" (только для приложений SaaS): Если список или пробное предложение удовлетворяют критериям как для технического, так и для бизнес-аудитории, ваше предложение будет указано в обоих витринах. Дополнительные сведения о вариантах публикации см. ниже.

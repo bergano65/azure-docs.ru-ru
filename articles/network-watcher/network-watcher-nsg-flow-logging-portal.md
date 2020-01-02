@@ -1,5 +1,6 @@
 ---
-title: Руководство по регистрации потока сетевого трафика на виртуальную машину и с нее с помощью портала Azure | Документация Майкрософт
+title: Учебник по регистрации потока сетевого трафика на виртуальную машину и с нее с помощью портала Azure
+titleSuffix: Azure Network Watcher
 description: Дополнительные сведения о регистрации потока сетевого трафика на виртуальную машину и обратно с помощью функции журналов потока NSG службы "Наблюдатель за сетями".
 services: network-watcher
 documentationcenter: na
@@ -17,12 +18,12 @@ ms.workload: infrastructure-services
 ms.date: 04/30/2018
 ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: 3e5490a4d74f10532764029f7a83788e3e39b592
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: afa1d2ca59bacec2695aaff0cacb119a8fbf787b
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69636221"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74766605"
 ---
 # <a name="tutorial-log-network-traffic-to-and-from-a-virtual-machine-using-the-azure-portal"></a>Руководство по Регистрация потока входящего и исходящего сетевого трафика виртуальной машины с помощью портала Azure
 
@@ -49,7 +50,7 @@ ms.locfileid: "69636221"
     |Имя пользователя| Введите выбранное имя пользователя.|
     |Пароль| Введите выбранный пароль. Пароль должен включать минимум 12 символов и соответствовать [определенным требованиям к сложности](../virtual-machines/windows/faq.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm).|
     |Subscription| Выберите свою подписку.|
-    |Resource group| Выберите **Создать новую**, а затем введите **myResourceGroup**.|
+    |группа ресурсов.| Выберите **Создать новую**, а затем введите **myResourceGroup**.|
     |Location| Выберите **Восточная часть США**.|
 
 4. Выберите размер виртуальной машины и щелкните **Выбрать**.
@@ -90,7 +91,7 @@ ms.locfileid: "69636221"
     | ---            | ---   |
     | ИМЯ           | Должно состоять из 3–24 символов, может содержать только буквы нижнего регистра и цифры и должно быть уникальным среди всех учетных записей хранения Azure.                                                               |
     | Location       | Выберите **Восточная часть США**.                                           |
-    | Resource group | Щелкните **Use existing** (Использовать существующую), а затем выберите **myResourceGroup**. |
+    | группа ресурсов. | Щелкните **Use existing** (Использовать существующую), а затем выберите **myResourceGroup**. |
 
     Создание учетной записи хранения может занять примерно минуту. Выполняйте последующие шаги только после создания учетной записи хранения. Если вы использовали имеющуюся учетную запись хранения, а не создали новую, убедитесь, что выбрали учетную запись, для которой установлен параметр **Все сети** (по умолчанию) в области **Брандмауэры и виртуальные сети** раздела **Settings** (Параметры). Во любом случае учетная запись хранения находиться в том же регионе, что и NSG. 
     
@@ -126,7 +127,7 @@ ms.locfileid: "69636221"
    ![Скачивание журналов потоков](./media/network-watcher-nsg-flow-logging-portal/download-flow-logs.png)
 
 3. Выберите учетную запись хранения, настроенную на шаге 2 в разделе о [включении журнала потоков NSG](#enable-nsg-flow-log).
-4. В разделе **Служба BLOB-объектов** выберите **BLOB-объекты**, а затем —контейнер **insights-logs-networksecuritygroupflowevent**.
+4. В разделе **Служба BLOB-объектов** выберите **Контейнеры**, а затем —контейнер **insights-logs-networksecuritygroupflowevent**.
 5. В контейнере перейдите к иерархии папок и найдите файл PT1H.json, как показано на следующем изображении. Файлы журналов записываются в иерархию папок, которая соответствует следующему соглашению об именовании: https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecuritygroupflowevent/resourceId=/SUBSCRIPTIONS/{subscriptionID}/RESOURCEGROUPS/{resourceGroupName}/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/{nsgName}/y={year}/m={month}/d={day}/h={hour}/m=00/macAddress={macAddress}/PT1H.json
 
    ![Журнал потока](./media/network-watcher-nsg-flow-logging-portal/log-file.png)

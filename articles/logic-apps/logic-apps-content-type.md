@@ -1,20 +1,17 @@
 ---
-title: Работа с типами содержимого — Azure Logic Apps
+title: Обработка типов содержимого
 description: Узнайте, как служба Logic Apps обрабатывает типы содержимого во время разработки и при выполнении
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 07/20/2018
-ms.openlocfilehash: 97897da13c70c29834b1fc276829b316416efd8d
-ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
+ms.openlocfilehash: 75d9285c4a838c2057c0f23841c3a2f465789c7c
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67868910"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791532"
 ---
 # <a name="handle-content-types-in-azure-logic-apps"></a>Обработка типов содержимого в Azure Logic Apps
 
@@ -62,7 +59,7 @@ ms.locfileid: "67868910"
   
   1. В триггере запросов выберите **Использовать пример полезной нагрузки, чтобы создать схему**.  
   
-  2. В разделе **Введение или вставка примера полезных данных JSON** предоставьте пример полезных данных, а затем выберите **Готово**. Пример: 
+  2. В разделе **Введение или вставка примера полезных данных JSON** предоставьте пример полезных данных, а затем выберите **Готово**. Пример. 
 
      ![Предоставление примера полезных данных JSON](./media/logic-apps-content-type/request-trigger.png)
 
@@ -139,16 +136,16 @@ ms.locfileid: "67868910"
 
 Ниже приводится список преобразований службой Logic Apps содержимого при использовании этих [функций](../logic-apps/workflow-definition-language-functions-reference.md).
 
-* `json()`. Приводит данные к`application/json`
-* `xml()`. Приводит данные к`application/xml`
-* `binary()`. Приводит данные к`application/octet-stream`
-* `string()`. Приводит данные к`text/plain`
-* `base64()`. Преобразует содержимое в строку в кодировке Base64
-* `base64toString()`. Преобразует строку в кодировке Base64 в`text/plain`
-* `base64toBinary()`. Преобразует строку в кодировке Base64 в`application/octet-stream`
-* `dataUri()`. Преобразует строку в универсальный код ресурса (URI) данных
-* `dataUriToBinary()`. Преобразует универсальный код ресурса (URI) данных в двоичную строку
-* `dataUriToString()`. Преобразует универсальный код ресурса (URI) данных в строку
+* `json()`: Приводит данные к `application/json`
+* `xml()`: Приводит данные к `application/xml`
+* `binary()`: Приводит данные к `application/octet-stream`
+* `string()`: Приводит данные к `text/plain`
+* `base64()`: преобразует содержимое в строку в кодировке Base64
+* `base64toString()`: преобразует строку в кодировке Base64 в `text/plain`
+* `base64toBinary()`: преобразует строку в кодировке Base64 в `application/octet-stream`
+* `dataUri()`: преобразует строку в универсальный код ресурса (URI) данных
+* `dataUriToBinary()`: преобразует универсальный код ресурса (URI) данных в двоичную строку
+* `dataUriToString()`: преобразует универсальный код ресурса (URI) данных в строку
 
 Например, при получении HTTP-запроса, где `Content-Type` установлено как `application/xml`, как в этом содержимом.
 

@@ -1,5 +1,5 @@
 ---
-title: Индексирование содержимого хранилища BLOB-объектов Azure для полнотекстового поиска
+title: Поиск содержимого хранилища BLOB-объектов Azure
 titleSuffix: Azure Cognitive Search
 description: Узнайте, как индексировать хранилище BLOB-объектов Azure и извлекать текст из документов с помощью Azure Когнитивный поиск.
 manager: nitinme
@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: b093525fcabc31074b398444a2fceffd0f6d3493
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 4f662df6692e03cf3eb948b0d8e2ae51002e815d
+ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72791787"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74113021"
 ---
 # <a name="how-to-index-documents-in-azure-blob-storage-with-azure-cognitive-search"></a>Индексирование документов в хранилище BLOB-объектов Azure с помощью Azure Когнитивный поиск
 
@@ -30,7 +30,7 @@ ms.locfileid: "72791787"
 ## <a name="setting-up-blob-indexing"></a>Настройка индексирования больших двоичных объектов
 Можно настроить индексатор хранилище BLOB-объектов Azure с помощью следующих инструментов:
 
-* [Портал Azure](https://ms.portal.azure.com)
+* [портал Azure](https://ms.portal.azure.com)
 * [REST API](https://docs.microsoft.com/rest/api/searchservice/Indexer-operations) когнитивный Поиск Azure
 * [Пакет SDK](https://aka.ms/search-sdk) Azure когнитивный Поиск для .NET
 
@@ -70,7 +70,7 @@ ms.locfileid: "72791787"
 
 Учетные данные для контейнера BLOB-объектов можно указать одним из описанных ниже способов.
 
-- **Строка подключения учетной записи хранения с полным доступом**: `DefaultEndpointsProtocol=https;AccountName=<your storage account>;AccountKey=<your account key>` можно получить строку подключения из портал Azure, перейдя в колонку учетной записи хранения > Параметры > ключи (для классических учетных записей хранения) или параметры > ключи доступа (для Azure). Диспетчер ресурсов учетных записей хранения).
+- **Строка подключения учетной записи хранения с полным доступом**: `DefaultEndpointsProtocol=https;AccountName=<your storage account>;AccountKey=<your account key>` можно получить строку подключения из портал Azure, перейдя в колонку учетной записи хранения > Параметры > ключи (для классических учетных записей хранения) или параметры > ключи доступа (для Azure Resource Manager учетных записей хранения).
 - **Строка подключения с подписанным URL-адресом (SAS) учетной записи хранения**. `BlobEndpoint=https://<your account>.blob.core.windows.net/;SharedAccessSignature=?sv=2016-05-31&sig=<the signature>&spr=https&se=<the validity end time>&srt=co&ss=b&sp=rl` Подписанный URL-адрес должен иметь разрешения на перечисление и чтение для контейнеров и объектов (в этом случае BLOB-объектов).
 -  **Подписанный URL-адрес контейнера**. `ContainerSharedAccessUri=https://<your storage account>.blob.core.windows.net/<container name>?sv=2016-05-31&sr=c&sig=<the signature>&se=<the validity end time>&sp=rl` Подписанный URL-адрес должен иметь разрешения на перечисление и чтение для контейнера.
 
@@ -140,12 +140,12 @@ ms.locfileid: "72791787"
 * Стандартные свойства метаданных большого двоичного объекта извлекаются в указанные ниже поля.
 
   * **metadata\_storage\_name** (Edm.String) — имя файла большого двоичного объекта. Например, для большого двоичного объекта /my-container/my-folder/subfolder/resume.pdf значение этого поля — `resume.pdf`.
-  * **metadata\_storage\_path** (Edm.String) — полный универсальный код ресурса (URI) большого двоичного объекта, включая учетную запись хранения. Например `https://myaccount.blob.core.windows.net/my-container/my-folder/subfolder/resume.pdf`.
-  * **metadata\_storage\_content\_type** (Edm.String) — тип содержимого, указанный в коде для отправки большого двоичного объекта. Пример: `application/octet-stream`.
+  * **metadata\_storage\_path** (Edm.String) — полный универсальный код ресурса (URI) большого двоичного объекта, включая учетную запись хранения. Например, `https://myaccount.blob.core.windows.net/my-container/my-folder/subfolder/resume.pdf`
+  * **metadata\_storage\_content\_type** (Edm.String) — тип содержимого, указанный в коде для отправки большого двоичного объекта. Например, `application/octet-stream`.
   * **metadata\_storage\_last\_modified** (Edm.DateTimeOffset) — последняя измененная метка времени для большого двоичного объекта. Когнитивный поиск Azure использует эту метку времени для обнаружения измененных больших двоичных объектов, чтобы избежать повторного индексирования всех объектов после первоначального индексирования.
   * **metadata\_storage\_size** (Edm.Int64) — размер большого двоичного объекта в байтах.
   * **metadata\_storage\_content\_metadatastoragecontentmd5** (Edm.String) — хэш MD5 содержимого большого двоичного объекта, если он доступен.
-  * **метаданные\_хранилище\_\_токен SAS** (EDM. String) — временный маркер SAS, который может использоваться [пользовательскими навыками](cognitive-search-custom-skill-interface.md) для получения доступа к большому двоичному объекту. Этот токен не должен храниться для дальнейшего использования, так как срок его действия может истечь.
+  * **metadata\_storage\_sas\_token** (Edm.String) — временный маркер SAS, который может использоваться [пользовательскими навыками](cognitive-search-custom-skill-interface.md) для получения доступа к большому двоичному объекту. Этот токен не должен храниться для дальнейшего использования, так как срок его действия может истечь.
 
 * Определенные для каждого формата документа свойства метаданных извлекаются в поля, список которых приводится [здесь](#ContentSpecificMetadata).
 
@@ -162,8 +162,8 @@ ms.locfileid: "72791787"
 
 Следует определить, какие извлеченные поля должны сопоставляться с полем ключа индекса. Основные варианты представлены ниже.
 
-* **metadata\_storage\_name** — удобный вариант, но следует учесть следующее. 1) Имена могут не быть уникальными, так как возможно наличие больших двоичных объектов с одинаковыми именами в разных папках. 2) Имя может содержать знаки, недопустимые для использования в ключах документов, например дефисы. Устранить проблему недопустимых знаков можно с помощью [функции сопоставления полей](search-indexer-field-mappings.md#base64EncodeFunction) `base64Encode`. После ее применения обязательно закодируйте ключи документов для передачи в вызовах API, таких как вызов для поиска. (Например, в .NET для этого можно использовать [метод UrlTokenEncode](https://msdn.microsoft.com/library/system.web.httpserverutility.urltokenencode.aspx)).
-* **metadata\_storage\_path** — использование полного пути гарантирует уникальность, но такой путь определенно содержит знаки `/`, [недопустимые в ключе документа](https://docs.microsoft.com/rest/api/searchservice/naming-rules).  Как упоминалось выше, вы можете закодировать ключи с помощью [функции](search-indexer-field-mappings.md#base64EncodeFunction) `base64Encode`.
+* **metadata\_storage\_name** — удобный вариант, но следует учесть следующее. 1) Имена могут не быть уникальными, так как возможно наличие больших двоичных объектов с одинаковыми именами в разных папках. 2) Имя может содержать знаки, недопустимые для использования в ключах документов, например дефисы. Устранить проблему недопустимых знаков можно с помощью `base64Encode`функции сопоставления полей[ ](search-indexer-field-mappings.md#base64EncodeFunction). После ее применения обязательно закодируйте ключи документов для передачи в вызовах API, таких как вызов для поиска. (Например, в .NET для этого можно использовать [метод UrlTokenEncode](https://msdn.microsoft.com/library/system.web.httpserverutility.urltokenencode.aspx)).
+* **metadata\_storage\_path** — использование полного пути гарантирует уникальность, но такой путь определенно содержит знаки `/`, [недопустимые в ключе документа](https://docs.microsoft.com/rest/api/searchservice/naming-rules).  Как упоминалось выше, вы можете закодировать ключи с помощью `base64Encode`функции[ ](search-indexer-field-mappings.md#base64EncodeFunction).
 * Если ни один вариант не подходит, вы можете добавить пользовательское свойство метаданных в большие двоичные объекты. Однако для этого варианта требуется, чтобы при передаче эти свойства метаданных добавлялись ко всем большим двоичным объектам. Поскольку ключ является обязательным свойством, все большие двоичные объекты без этого свойства индексироваться не будут.
 
 > [!IMPORTANT]
@@ -280,7 +280,7 @@ Azure Когнитивный поиск ограничивает размер и
 
     "parameters" : { "configuration" : { "indexStorageMetadataOnlyForOversizedDocuments" : true } }
 
-Вы также можете продолжить индексирование, если ошибки возникают в какой-либо момент обработки — при анализе больших двоичных объектов или при добавлении документов в индекс. Чтобы пропустить определенное количество ошибок, задайте для параметров конфигурации `maxFailedItems` и `maxFailedItemsPerBatch` нужные значения. Пример.
+Вы также можете продолжить индексирование, если ошибки возникают в какой-либо момент обработки — при анализе больших двоичных объектов или при добавлении документов в индекс. Чтобы пропустить определенное количество ошибок, задайте для параметров конфигурации `maxFailedItems` и `maxFailedItemsPerBatch` нужные значения. Например,
 
     {
       ... other parts of indexer definition

@@ -1,17 +1,16 @@
 ---
-title: Восстановление удаленных приложений службы приложений в службе приложений Azure
-description: Узнайте, как восстановить удаленное приложение службы приложений с помощью PowerShell.
+title: Восстановить удаленные приложения
+description: Узнайте, как восстановить удаленное приложение в службе приложений Azure. Избегайте случайного удаления случайно удаленного приложения.
 author: btardif
 ms.author: byvinyal
 ms.date: 9/23/2019
 ms.topic: article
-ms.service: app-service
-ms.openlocfilehash: 6a3a62053a488f95e22cae13ef9d0714a7b5dd05
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: a30ac638422f99134ebe9cc26e4b418f5de079b9
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74173740"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74672142"
 ---
 # <a name="restore-deleted-app-service-app-using-powershell"></a>Восстановление удаленного приложения службы приложений с помощью PowerShell
 

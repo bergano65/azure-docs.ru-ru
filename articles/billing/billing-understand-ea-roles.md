@@ -6,19 +6,19 @@ documentationcenter: ''
 author: adpick
 manager: adpick
 editor: ''
-ms.service: billing
+ms.service: cost-management-billing
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/21/2018
+ms.date: 12/04/2019
 ms.author: banders
-ms.openlocfilehash: 39526defb8f41ddacb0a26d7ad852f820ca6ea77
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 62a16a6a96fbfdfbb4ed2d70b74470e29efaa844
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70034530"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849859"
 ---
 # <a name="understand-azure-enterprise-agreement-administrative-roles-in-azure"></a>Сведения об административных ролях для соглашения Azure Enterprise в Azure
 

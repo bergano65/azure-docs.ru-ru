@@ -1,21 +1,17 @@
 ---
-title: Выполнение операций с данными Azure Logic Apps
+title: Выполнение операций с данными
 description: Преобразование, управление и работа с выводами и форматами данных в Azure Logic Apps
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-manager: carmonm
-ms.reviewer: klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 09/20/2019
-ms.openlocfilehash: a21b7f510b6da40d3ab2c72fcfbcb2a746b75db1
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: f98daf301e8e17ad3f0bfb850ded1a8ed8bce417
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72990611"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74793121"
 ---
 # <a name="perform-data-operations-in-azure-logic-apps"></a>Выполнение операций с данными в Azure Logic Apps
 
@@ -497,7 +493,7 @@ Oranges,2
 
    `@actionBody('Filter_array')`
 
-   В этом примере используется действие Outlook **Отправить сообщение электронной почты** с помощью Office 365 и включает выходные данные из выражения **Актионбоди (' Filter_array ')** в тексте сообщения электронной почты:
+   В этом примере используется действие Outlook **Отправить сообщение электронной почты** с помощью Office 365 и включает выходные данные из выражения **актионбоди (' Filter_array ')** в тексте сообщения электронной почты:
 
    ![Выходные данные действия из действия "Фильтрация массива"](./media/logic-apps-perform-data-operations/send-email-filter-array-action.png)
 
@@ -676,7 +672,7 @@ Oranges,2
 
 1. В левом столбце окна **Сопоставить** укажите имя свойства, которое нужно присвоить каждому значению в исходном массиве. В правом столбце укажите выражение, представляющее значение, которое нужно присвоить свойству.
 
-   В этом примере в качестве имени свойства указывается "Product_ID", чтобы присвоить каждое значение в массиве целых чисел с помощью функции `item()` в выражении, которое обращается к каждому элементу массива. 
+   В этом примере в качестве имени свойства для назначения каждого значения в массиве целых чисел указывается "Product_ID" с помощью функции `item()` в выражении, которое обращается к каждому элементу массива. 
 
    ![Укажите свойство объекта JSON и значения для создания массива](./media/logic-apps-perform-data-operations/configure-select-action-2.png)
 

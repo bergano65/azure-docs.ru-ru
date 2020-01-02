@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: quickstart
-ms.date: 07/03/2019
+ms.date: 12/05/2019
 ms.author: pafarley
-ms.openlocfilehash: bb4fc076d01c1108278cea0cebba958b4ea94660
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: a641893fece37c759480ab31f505b1673f50e2b9
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73044053"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74973617"
 ---
 # <a name="quickstart-try-content-moderator-on-the-web"></a>Краткое руководство. Опробование Content Moderator в Интернете
 
-При работе с этим кратким руководством используется интерактивное средство проверки Content Moderator для тестирования основных функций Content Moderator без необходимости написания кода. Если вы хотите быстрее интегрировать эту службу в свое приложение, см. другие краткие руководства в разделе [Дополнительная информация](#next-steps).
+При работе с этим кратким руководством используется интерактивное средство проверки Content Moderator для тестирования основных функций Content Moderator без написания кода. Если вы хотите быстрее интегрировать эту службу в свое приложение, см. другие краткие руководства в разделе [Дополнительная информация](#next-steps).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

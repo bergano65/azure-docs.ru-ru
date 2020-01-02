@@ -1,22 +1,22 @@
 ---
-title: Проверка подлинности Windows и сервер многофакторной Идентификации Azure — Azure Active Directory
+title: Проверка подлинности Windows и сервер Azure MFA — Azure Active Directory
 description: Развертывание аутентификации Windows на сервере Многофакторной идентификации Azure.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 07/11/2018
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fa52dcf08a5e4b152d9fe0db36710e41a5a79fe7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: faab28a714b1a62e1e34de5b07119aa3018db24e
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67057329"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74847975"
 ---
 # <a name="windows-authentication-and-azure-multi-factor-authentication-server"></a>Проверка подлинности Windows и сервер Многофакторной идентификации Azure
 
@@ -27,15 +27,15 @@ ms.locfileid: "67057329"
 * Надежные IP-адреса зависят от того, может ли приложение предоставлять IP-адрес клиента с проверкой подлинности. В настоящее время поддерживаются только службы терминалов.  
 
 > [!IMPORTANT]
-> Начиная с 1 июля 2019 г. Корпорация Майкрософт больше не предоставляет многофакторной проверки Подлинности сервера для новых развертываний. Новых клиентов, которые хотите требовать многофакторную проверку подлинности от пользователей, их следует использовать многофакторную идентификацию Azure на основе облака. Существующие клиенты, которые активировали сервера MFA до 1 июля будет иметь возможность загрузить последнюю версию, будущие обновления и создать учетные данные активации обычным образом.
+> По состоянию на 1 июля 2019 Корпорация Майкрософт больше не будет предлагать сервер MFA для новых развертываний. Новые клиенты, желающие требовать многофакторную проверку подлинности пользователей, должны использовать службу многофакторной идентификации Azure на основе облачных служб. Существующие клиенты, которые активировали сервер MFA до 1 июля, смогут скачать последнюю версию, будущие обновления и создать учетные данные активации обычным образом.
 
 > [!NOTE]
 > Для обеспечения безопасности служб терминалов в Windows Server 2012 R2 эта функция не поддерживается.
 
-## <a name="to-secure-an-application-with-windows-authentication-use-the-following-procedure"></a>Чтобы защитить приложение с помощью проверки подлинности Windows, используйте следующую процедуру
+## <a name="to-secure-an-application-with-windows-authentication-use-the-following-procedure"></a>Чтобы защитить приложение с помощью проверки подлинности Windows, выполните следующую процедуру.
 
 1. На сервере Многофакторной идентификации Azure щелкните значок проверки подлинности Windows.
-   ![Проверка подлинности Windows на сервере MFA](./media/howto-mfaserver-windows/windowsauth.png)
+   ![проверки подлинности Windows на сервере MFA](./media/howto-mfaserver-windows/windowsauth.png)
 2. Установите флажок **Включить проверку подлинности Windows**. По умолчанию этот флажок не установлен.
 3. На вкладке «Приложения» администратор может настроить одно или несколько приложений для проверки подлинности Windows.
 4. Выберите сервер или приложение — укажите, включен ли сервер или приложение. Последовательно выберите **ОК**.

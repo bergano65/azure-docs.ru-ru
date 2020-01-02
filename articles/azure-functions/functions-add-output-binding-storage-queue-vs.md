@@ -1,19 +1,15 @@
 ---
 title: Подключение функций к службе хранилища Azure с помощью Visual Studio
 description: Сведения о добавлении выходной привязки для подключения функций библиотеки классов C# к очереди службы хранилища Azure с помощью Visual Studio.
-author: ggailey777
-ms.author: glenga
 ms.date: 07/22/2019
 ms.topic: quickstart
-ms.service: azure-functions
 ms.custom: mvc
-manager: gwallace
-ms.openlocfilehash: 383401c1486bcbebc39b64d5794f8bdc660d2778
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 171479a0f60741b545a171315e99cc5e4e8bc843
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72329634"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849213"
 ---
 # <a name="connect-functions-to-azure-storage-using-visual-studio"></a>Подключение функций к службе хранилища Azure с помощью Visual Studio
 
@@ -27,7 +23,7 @@ ms.locfileid: "72329634"
 
 Перед началом работы с этой статьей необходимо выполнить следующие действия: 
 
- - Выполните инструкции, приведенные в первой части краткого руководства по Visual Studio [./functions-create-first-function-vs-code.md]. 
+ - Выполните [первую часть краткого руководства по Visual Studio](./functions-create-first-function-vs-code.md). 
 
 - Войдите в подписку Azure из Visual Studio.
 

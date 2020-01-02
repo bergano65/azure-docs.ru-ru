@@ -1,24 +1,21 @@
 ---
-title: Проверка подлинности с помощью управляемых удостоверений — Azure Logic Apps
+title: Аутентификация на основе управляемых удостоверений
 description: Доступ к ресурсам в других клиентах Azure Active Directory без входа с использованием учетных данных или секретов с помощью управляемого удостоверения
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
+ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/21/2019
-ms.openlocfilehash: 2d1dbde2499dbe793a895f894e5ae83c36c54449
-ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
+ms.openlocfilehash: 49c925cfe61084d8fedfdf953d469db4bd2c10b1
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73200624"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74792678"
 ---
 # <a name="authenticate-access-to-azure-resources-by-using-managed-identities-in-azure-logic-apps"></a>Проверка подлинности доступа к ресурсам Azure с помощью управляемых удостоверений в Azure Logic Apps
 
-Чтобы получить доступ к ресурсам в других клиентах Azure Active Directory (Azure AD) и проверить подлинность личности без входа, приложение логики может использовать [управляемое системой удостоверение](../active-directory/managed-identities-azure-resources/overview.md) (прежнее название — управляемое удостоверение службы или MSI), а не учетные данные или секреты. Azure управляет этим удостоверением за вас и помогает защитить учетные данные, потому что вам не нужно предоставлять или сменять секреты. В этой статье показано, как настроить и использовать управляемое системой удостоверение в приложении логики. В настоящее время управляемые удостоверения работают только с [конкретными встроенными триггерами и действиями, а](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-to-outbound-calls)не с управляемыми соединителями или соединениями.
+Для доступа к ресурсам в других клиентах Azure Active Directory (Azure AD) и проверки подлинности удостоверения без входа в приложение логики можно использовать [управляемое системой удостоверение](../active-directory/managed-identities-azure-resources/overview.md) (прежнее название — управляемое удостоверение службы или MSI), а не учетные данные или секреты. Azure управляет этим удостоверением за вас и помогает защитить учетные данные, потому что вам не нужно предоставлять или сменять секреты. В этой статье показано, как настроить и использовать управляемое системой удостоверение в приложении логики. В настоящее время управляемые удостоверения работают только с [конкретными встроенными триггерами и действиями, а](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-to-outbound-calls)не с управляемыми соединителями или соединениями.
 
 Дополнительные сведения см. в следующих статьях:
 

@@ -1,22 +1,18 @@
 ---
-title: Подключение к Dropbox — Azure Logic Apps
+title: Подключение к Dropbox
 description: Передавайте файлы и управляйте ими с помощью интерфейсов REST API Dropbox и Azure Logic Apps.
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-manager: carmonm
-ms.reviewer: klam, LADocs
+ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 03/01/2019
 tags: connectors
-ms.openlocfilehash: 4e0689454ec074348fcbc775373a48d6825cfac4
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: b38f9b9626e5eec0272256aacc71f7503a006dd6
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70050977"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74789817"
 ---
 # <a name="upload-and-manage-files-in-dropbox-by-using-azure-logic-apps"></a>Передача файлов в Dropbox и управление ими с помощью Azure Logic Apps
 
@@ -24,7 +20,7 @@ ms.locfileid: "70050977"
 
 В этой статье показано, как подключиться к Dropbox из приложения логики, а затем добавить Dropbox **при создании файла** и **получить содержимое файла Dropbox с помощью действия Path** .
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -32,12 +28,12 @@ ms.locfileid: "70050977"
 
 * Базовые знания о [создании приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md). Для этого примера требуется пустое приложение логики.
 
-## <a name="add-trigger"></a>Добавить триггер
+## <a name="add-trigger"></a>Добавление триггера
 
 [!INCLUDE [Create connection general intro](../../includes/connectors-create-connection-general-intro.md)]
 
 1. Под полем поиска выберите **Все**. В поле поиска введите слово dropbox в качестве фильтра.
-В списке триггеров выберите триггер: **При создании файла**
+В списке триггеров выберите этот триггер: **When a file is created** (При создании файла)
 
    ![Выбор триггера Dropbox](media/connectors-create-api-dropbox/select-dropbox-trigger.png)
 
@@ -47,14 +43,14 @@ ms.locfileid: "70050977"
 
    В этом примере выберите папку, в которой необходимо отвести журнал создания файла. Чтобы просмотреть папки, щелкните значок папки рядом с полем **Папка** .
 
-## <a name="add-action"></a>Добавить действие
+## <a name="add-action"></a>Добавление действия
 
 Теперь добавьте действие, которое получает содержимое из любого нового файла.
 
 1. В разделе триггера выберите **Следующий шаг**. 
 
 1. Под полем поиска выберите **Все**. В поле поиска введите слово dropbox в качестве фильтра.
-В списке действий выберите действие **Получение содержимого файла с помощью пути**
+В списке действия выберите это действие: **получить содержимое файла с помощью пути** .
 
 1. Если вы еще не уполномочены Azure Logic Apps для доступа к Dropbox, Авторизуйте доступ сейчас.
 
@@ -68,8 +64,8 @@ ms.locfileid: "70050977"
 
 ## <a name="connector-reference"></a>Справочник по соединителям
 
-Для получения технических сведений, таких как триггеры, действия и ограничения, как описано в файле OpenAPI (ранее Swagger) соединителя, см. [страницу справочника](/connectors/dropbox/)по соединителю.
+Для получения технических сведений, таких как триггеры, действия и ограничения, как описано в файле OpenAPI (ранее Swagger) соединителя, см. [страницу справочника по соединителю](/connectors/dropbox/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

@@ -1,18 +1,18 @@
 ---
 title: CONCAT на языке запросов Azure Cosmos DB
-description: Дополнительные сведения о функции SQL System CONCAT в Azure Cosmos DB.
+description: Узнайте, как системная функция CONCAT SQL в Azure Cosmos DB возвращает строку, которая является результатом сцепления двух или более строковых значений.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 1e61d61a3d64ca7d7808619159e4dfc8e8b33d68
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: adb8564d4addaaa3f4a383b32941549aed3d53bd
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71351264"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74871556"
 ---
 # <a name="concat-azure-cosmos-db"></a>CONCAT (Azure Cosmos DB)
  Возвращает строку, являющуюся результатом объединения двух или более строковых значений.  
@@ -26,7 +26,7 @@ CONCAT(<str_expr1>, <str_expr2> [, <str_exprN>])
 ## <a name="arguments"></a>Аргументы
   
 *str_expr*  
-   Строковое выражение для объединения с другими значениями. Функции `CONCAT` требуются по крайней мере два аргумента *str_expr* .  
+   Строковое выражение для объединения с другими значениями. Для функции `CONCAT` требуется по крайней мере два аргумента *str_expr* .  
   
 ## <a name="return-types"></a>Возвращаемые типы
   
@@ -47,7 +47,7 @@ SELECT CONCAT("abc", "def") AS concat
 ```  
   
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

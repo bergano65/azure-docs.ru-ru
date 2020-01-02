@@ -10,24 +10,27 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 10/28/2019
 ms.author: erhopf
-ms.openlocfilehash: babc6b1c0b6207d404091db3117f95f6d71c53ac
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b0a9eddf147eedfa972e0574e62c9e7c2eace84f
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73505558"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74818874"
 ---
 > [!NOTE]
 > Пакет SDK службы "Речь" для Unity поддерживает Windows Desktop (x86 и x64) или универсальную платформу Windows (x86, x64, ARM и ARM64), Android (x86, ARM32/64) и iOS (симулятор x64, ARM32 и ARM64).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы нужно:
+Необходимые условия:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure](../../../../get-started.md).
-> * [Настроить среду разработки](../../../../quickstarts/setup-platform.md?tabs=unity).
-> * [Создать пустой пример проекта](../../../../quickstarts/create-project.md?tabs=unity). Если вы уже сделали это, отлично. Давайте продолжим.
+> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=unity)
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=unity)
+> * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
+
+Если вы уже сделали это, отлично. Давайте продолжим.
 
 ## <a name="create-a-unity-project"></a>Создание проекта Unity
 
@@ -86,7 +89,7 @@ ms.locfileid: "73505558"
 
    [!code-csharp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/csharp/unity/from-microphone/Assets/Scripts/HelloWorld.cs#code)]
 
-1. Найдите строку `YourSubscriptionKey` и замените ее ключом подписки службы "Речь".
+1. Найдите и замените строку `YourSubscriptionKey` ключом подписки службы "Речь".
 
 1. Найдите строку `YourServiceRegion` и замените ее на [регион](~/articles/cognitive-services/Speech-Service/regions.md) своей подписки. Например, если вы используете бесплатную пробную версию, ваш регион — `westus`.
 

@@ -9,27 +9,27 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 10/14/2019
+ms.date: 12/05/2019
 ms.author: diberry
-ms.openlocfilehash: 04f30818e3c871d74d94bfd92bd3f73e4e6637a0
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 0a4d2a3345ce4f69d4492d1a782b778b1ee3bf4c
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73499415"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74895674"
 ---
 # <a name="tutorial-fix-unsure-predictions-by-reviewing-endpoint-utterances"></a>Руководство по Исправление неточных прогнозов с помощью проверки высказываний конечной точки
-Из этого руководства вы узнаете, как повысить точность прогнозирования приложения, проверяя или корректируя высказывания, полученные через неизвестную для LUIS конечную точку HTTP интеллектуальной службы распознавания речи. Некоторые высказывания необходимо проверять на наличие намерений, а другие — на наличие сущностей. Высказывания конечных точек необходимо проверять в рамках планового обслуживания LUIS. 
+Из этого учебника вы узнаете, как повысить точность прогнозирования приложения, проверяя или корректируя речевые фрагменты, полученные через неизвестную для LUIS конечную точку HTTP интеллектуальной службы распознавания речи. Речевые фрагменты конечных точек необходимо проверять в рамках планового обслуживания LUIS.
 
-Этот процесс проверки — еще один способ обучить LUIS для использования вашего домена приложений. В LUIS выбираются те высказывания, которые отображаются в списке проверки. Этот список:
+Этот процесс проверки позволяет обучить LUIS для использования вашего домена приложений. В LUIS выбираются те речевые фрагменты, которые отображаются в списке проверки. Этот список:
 
 * относится к конкретному приложению;
-* предназначен для повышения точности прогнозирования в приложении; 
-* должен периодически проверяться. 
+* предназначен для повышения точности прогнозирования в приложении;
+* должен периодически проверяться.
 
-Проверив фрагменты речи конечной точки, вы подтверждаете или исправляете прогнозируемое намерение фрагмента речи. Кроме того, вы отмечаете настраиваемые сущности, которые не вошли в прогноз или были неверно спрогнозированы. 
+Проверив фрагменты речи конечной точки, вы подтверждаете или исправляете прогнозируемое намерение фрагмента речи.
 
-[!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
+[!INCLUDE [Uses preview portal](includes/uses-portal-preview.md)]
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
@@ -37,202 +37,195 @@ ms.locfileid: "73499415"
 > [!div class="checklist"]
 > * Импортировать пример приложения
 > * Просмотр речевых фрагментов конечной точки
-> * Обновлять список фраз
-> * Обучать приложения
-> * Публикация приложения
+> * Обучение и публикация приложения.
 > * Запрос конечной точки приложения для просмотра ответа JSON LUIS.
 
 [!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
 ## <a name="import-example-app"></a>Импортировать пример приложения
 
-Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
-
-Выполните следующие действия.
+Чтобы импортировать приложение, сделайте следующее:
 
 1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/custom-domain-sentiment-HumanResources.json).
 
-1. Импортируйте JSON-файл в новое приложение.
+1. В [предварительной версии портала LUIS](https://preview.luis-ai) импортируйте JSON-файл в новое приложение.
 
-1. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `review`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе.
+1. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `review`.
 
-1. Обучите и опубликуйте новое приложение.
+    > [!TIP]
+    > Мы рекомендуем клонировать версию перед изменением приложения. Завершив работу с новой версией, экспортируйте ее (в файл с расширением JSON или LU) и зарегистрируйте файл в системе управления версиями.
 
-1. Используйте конечную точку, чтобы добавить следующие фрагменты речи. Это можно сделать с помощью [скрипта](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/demo-upload-endpoint-utterances/endpoint.js) или из конечной точки в браузере. Фрагменты речи, которые нужно добавить:
 
-   [!code-nodejs[Node.js code showing endpoint utterances to add](~/samples-luis/examples/demo-upload-endpoint-utterances/endpoint.js?range=15-26)]
+1. Чтобы обучить приложение, щелкните **Обучение**.
 
-    Если у вас есть все версии приложения, созданные в рамках серии руководств, возможно, вас удивит, что список **проверки фрагментов речи конечной точки** не изменяется в зависимости от версии. Для проверки используется единственный пул высказываний независимо от того, какую версию вы активно редактируете или какая версия приложения опубликована в конечной точке. 
+## <a name="publish-the-app-to-access-it-from-the-http-endpoint"></a>Публикация приложения для доступа к нему через конечную точку HTTP
+
+[!INCLUDE [LUIS How to Publish steps](includes/howto-publish.md)]
+
+## <a name="add-utterances-at-the-endpoint"></a>Добавление речевого фрагмента в конечную точку
+
+В этом приложении у вас есть намерения и сущности, но отсутствует использование конечных точек. Использование конечной точки необходимо для улучшения приложения путем проверки речевых фрагментов конечной точки.
+
+1. [!INCLUDE [LUIS How to get endpoint first step](includes/howto-get-endpoint.md)]
+
+1. Используйте конечную точку, чтобы добавить следующие фрагменты речи.
+
+    |Речевой фрагмент конечной точки|Сопоставленное намерение|
+    |--|--|
+    |`I'm looking for a job with Natural Language Processing`|`GetJobInformation`|
+    |`I want to cancel on March 3`|`Utilities.Cancel`|
+    |`When were HRF-123456 and hrf-234567 published in the last year?`|`FindForm`|
+    |`shift 123-45-6789 from Z-1242 to T-54672`|`MoveEmployee`|
+    |`Please relocation jill-jones@mycompany.com from x-2345 to g-23456`|`MoveEmployee`|
+    |`Here is my c.v. for the programmer job`|`ApplyForJob`|
+    |`This is the lead welder paperwork.`|`ApplyForJob`|
+    |`does form hrf-123456 cover the new dental benefits and medical plan`|`FindForm`|
+    |`Jill Jones work with the media team on the public portal was amazing`|`EmployeeFeedback`|
+
+    Для проверки используется единственный пул высказываний независимо от того, какую версию вы активно редактируете или какая версия приложения опубликована в конечной точке.
 
 ## <a name="review-endpoint-utterances"></a>Просмотр речевых фрагментов конечной точки
 
-1. [!INCLUDE [Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
+Просмотрите, правильно ли сопоставлено намерение для речевых фрагментов в конечной точке. Хотя существует единый пул речевых фрагментов для просмотра во всех версиях, процесс правильного сопоставления намерения добавляет пример речевого фрагмента только к текущей _активной модели_.
 
-1. Выберите **Review endpoint utterances** (Проверить фрагменты речи конечной точки) на панели навигации слева. Список будет отфильтрован для намерения **ApplyForJob**. 
+1. В разделе **Сборка** портала выберите **Review endpoint utterances** (Просмотреть речевые фрагменты конечной точки) на панели навигации слева. Список будет отфильтрован для намерения **ApplyForJob**.
 
-    [![Снимок экрана с кнопкой Review endpoint utterances (Проверить фрагменты речи конечной точки) на панели навигации слева](./media/luis-tutorial-review-endpoint-utterances/review-endpoint-utterances-with-entity-view.png)](./media/luis-tutorial-review-endpoint-utterances/review-endpoint-utterances-with-entity-view.png#lightbox)
+    > [!div class="mx-imgBorder"]
+    > ![Снимок экрана с кнопкой Review endpoint utterances (Просмотреть речевые фрагменты конечной точки) на панели навигации слева](./media/luis-tutorial-review-endpoint-utterances/review-endpoint-utterances-with-entity-view.png)
 
-1. Переключите **представление сущностей**, чтобы просмотреть отмеченные сущности. 
-    
-    [![Снимок экрана с элементом Review endpoint utterances (Проверить фрагменты речи конечной точки) и выделенным переключателем представления сущностей](./media/luis-tutorial-review-endpoint-utterances/review-endpoint-utterances-with-token-view.png)](./media/luis-tutorial-review-endpoint-utterances/review-endpoint-utterances-with-token-view.png#lightbox)
+    Этот фрагмент речи, `I'm looking for a job with Natural Language Processing`, неправильно соотнесен с намерением.
 
+1.  Чтобы сопоставить этот фрагмент речи, в строке фрагмента выберите правильное **сопоставленное намерение** `GetJobInformation`. Добавьте измененный речевой фрагмент в приложение, установив флажок.
 
-    Этот фрагмент речи, `I'm looking for a job with Natural Language Processing`, неправильно соотнесен с намерением. 
+    > [!div class="mx-imgBorder"]
+    > ![Снимок экрана с кнопкой Review endpoint utterances (Просмотреть речевые фрагменты конечной точки) на панели навигации слева](./media/luis-tutorial-review-endpoint-utterances/select-correct-aligned-intent-for-endpoint-utterance.png)
 
-    Причина его неверного предсказания в том, что намерение **ApplyForJob** имеет 21 речевой фрагмент, тогда как у **GetJobInformation** их 7. Намерение с большим количеством речевых фрагментов имеет приоритет при предсказании. Важно сбалансировать количество и качество речевых фрагментов у намерений.
+    Изучите оставшиеся речевые фрагменты в этом намерении и исправьте сопоставленное намерение при необходимости. Используйте таблицу изначальных речевых фрагментов в этом учебнике, чтобы просмотреть сопоставленное намерение.
 
-1.  Чтобы правильно соотнести этот речевой фрагмент с намерением, выберите соответствующее ему намерение и пометьте в нем сущность Job. Добавьте измененный речевой фрагмент в приложение, установив зеленый флажок. 
+    Список **проверки речевых фрагментов конечной точки** больше не должен содержать такие речевые фрагменты. Если появляется больше речевых фрагментов, продолжайте работу по списку, исправляя сопоставленные намерения, пока этот список не опустеет.
 
-    |Фраза|Правильное намерение|Отсутствующие сущности|
-    |:--|:--|:--|
-    |`I'm looking for a job with Natural Language Processing`|GetJobInfo|Job — "Обработка естественного языка"|
+    Любое исправление метки сущности выполняется после того, как намерение будет согласовано на странице сведений о намерениях.
 
-    Чтобы изменить сущность keyPhrase для `natural language processing` на сущность Job, выберите фразу и нажмите **Job** в списке. Если вы хотите выбрать только часть текста keyPhrase для другой сущности, вам нужно удалить keyPhrase в виде сущности, создать пометку с помощью другой сущности, а затем повторно применить сущность keyPhrase к приложению. 
+1. Обучите и опубликуйте приложение еще раз.
 
-    При добавлении речевого фрагмента он перемещается из списка **проверки фрагментов речи конечной точки** в намерение **GetJobInformation**. Фрагмент речи теперь является примером для этого намерения. 
+## <a name="get-intent-prediction-from-endpoint"></a>Получение прогноза намерений из конечной точки
 
-    Помимо соотнесения речевого фрагмента с соответствующим ему намерением, для намерения **GetJobInformation** нужно добавить больше фрагментов речи. Вы можете сделать это самостоятельно, чтобы попрактиковаться. Для каждого намерения, кроме **None**, должно использоваться приблизительно одинаковое количество примеров фрагментов речи. Число фрагментов речи с намерением **None** должно составлять 10 % от общего числа фрагментов речи в приложении. 
-
-    Просмотрите остальные фрагменты речи для этого намерения, отмечая их и при необходимости внося исправления в список **упорядоченных намерений**.
-
-    Список **Проверка речевых фрагментов конечной точки** больше не должен содержать такие речевые фрагменты. Если появляется больше высказываний, продолжайте работу по списку, исправляя намерения и отмечая любые отсутствующие сущности, пока этот список не опустеет. 
-
-    Выберите следующее намерение в списке фильтрации и продолжайте исправлять фрагменты речи и отмечать сущности. Помните, что на последнем этапе обработки каждого намерения нужно либо выбрать **Add to aligned intent** (Добавить в список упорядоченных намерений) в строке фрагмента речи, либо установить флажок для каждого намерения и выбрать команду **Добавить выбранные** над таблицей.
-
-    Продолжайте, пока список намерений и сущностей не опустеет. Это очень небольшое приложение. Проверка занимает несколько минут. 
-
-## <a name="update-phrase-list"></a>Обновлять список фраз
-Обновляйте список фраз, добавляя названия любых обнаруженных вакансий. 
-
-1. Выберите **Phrase lists** (Списки фраз) на панели навигации слева.
-
-2. Выберите список фраз **Jobs** (Вакансии).
-
-3. Введите значение `Natural Language Processing` и выберите **Save** (Сохранить). 
-
-## <a name="train"></a>Обучение
-
-Приложение LUIS не узнает об изменениях, пока не будет обучено. 
-
-[!INCLUDE [LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
-
-## <a name="publish"></a>Публикация
-
-Если приложение импортировано, выберите **Sentiment analysis** (Анализ тональности).
-
-[!INCLUDE [LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
-
-## <a name="get-intent-and-entities-from-endpoint"></a>Получение намерения и сущностей из конечной точки
-
-Попробуйте использовать фрагмент речи, близкий к исправленному. 
+Чтобы проверить, что правильно сопоставленные примеры речевых фрагментов улучшили прогнозирование в приложении, попробуйте использовать фрагмент речи, близкий к исправленному.
 
 1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
-2. Перейдите в конец URL-адреса и введите `Are there any natural language processing jobs in my department right now?`. Последний параметр строки запроса — `q`. Это **запрос** фразы. 
+1. Перейдите в конец URL-адреса и введите `Are there any natural language processing jobs in my department right now?`. Последний параметр строки запроса — `q`. Это **запрос** фразы.
 
    ```json
-   {
-    "query": "are there any natural language processing jobs in my department right now?",
-    "topScoringIntent": {
-      "intent": "GetJobInformation",
-      "score": 0.9247605
-    },
-    "intents": [
-      {
-        "intent": "GetJobInformation",
-        "score": 0.9247605
-      },
-      {
-        "intent": "ApplyForJob",
-        "score": 0.129989788
-      },
-      {
-        "intent": "FindForm",
-        "score": 0.006438211
-      },
-      {
-        "intent": "EmployeeFeedback",
-        "score": 0.00408575451
-      },
-      {
-        "intent": "Utilities.StartOver",
-        "score": 0.00194211153
-      },
-      {
-        "intent": "None",
-        "score": 0.00166400627
-      },
-      {
-        "intent": "Utilities.Help",
-        "score": 0.00118593348
-      },
-      {
-        "intent": "MoveEmployee",
-        "score": 0.0007885918
-      },
-      {
-        "intent": "Utilities.Cancel",
-        "score": 0.0006373631
-      },
-      {
-        "intent": "Utilities.Stop",
-        "score": 0.0005980781
-      },
-      {
-        "intent": "Utilities.Confirm",
-        "score": 3.719905E-05
-      }
-    ],
-    "entities": [
-      {
-        "entity": "right now",
-        "type": "builtin.datetimeV2.datetime",
-        "startIndex": 64,
-        "endIndex": 72,
-        "resolution": {
-          "values": [
-            {
-              "timex": "PRESENT_REF",
-              "type": "datetime",
-              "value": "2018-07-05 15:23:18"
+    {
+        "query": "Are there any natural language processing jobs in my department right now?",
+        "prediction": {
+            "topIntent": "GetJobInformation",
+            "intents": {
+                "GetJobInformation": {
+                    "score": 0.903607249
+                },
+                "EmployeeFeedback": {
+                    "score": 0.0312187821
+                },
+                "ApplyForJob": {
+                    "score": 0.0230276529
+                },
+                "MoveEmployee": {
+                    "score": 0.008322801
+                },
+                "Utilities.Stop": {
+                    "score": 0.004480808
+                },
+                "FindForm": {
+                    "score": 0.00425248267
+                },
+                "Utilities.StartOver": {
+                    "score": 0.004224336
+                },
+                "Utilities.Help": {
+                    "score": 0.00373591436
+                },
+                "None": {
+                    "score": 0.0034621188
+                },
+                "Utilities.Cancel": {
+                    "score": 0.00230977475
+                },
+                "Utilities.Confirm": {
+                    "score": 0.00112078607
+                }
+            },
+            "entities": {
+                "keyPhrase": [
+                    "natural language processing jobs",
+                    "department"
+                ],
+                "datetimeV2": [
+                    {
+                        "type": "datetime",
+                        "values": [
+                            {
+                                "timex": "PRESENT_REF",
+                                "resolution": [
+                                    {
+                                        "value": "2019-12-05 23:23:53"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "$instance": {
+                    "keyPhrase": [
+                        {
+                            "type": "builtin.keyPhrase",
+                            "text": "natural language processing jobs",
+                            "startIndex": 14,
+                            "length": 32,
+                            "modelTypeId": 2,
+                            "modelType": "Prebuilt Entity Extractor",
+                            "recognitionSources": [
+                                "model"
+                            ]
+                        },
+                        {
+                            "type": "builtin.keyPhrase",
+                            "text": "department",
+                            "startIndex": 53,
+                            "length": 10,
+                            "modelTypeId": 2,
+                            "modelType": "Prebuilt Entity Extractor",
+                            "recognitionSources": [
+                                "model"
+                            ]
+                        }
+                    ],
+                    "datetimeV2": [
+                        {
+                            "type": "builtin.datetimeV2.datetime",
+                            "text": "right now",
+                            "startIndex": 64,
+                            "length": 9,
+                            "modelTypeId": 2,
+                            "modelType": "Prebuilt Entity Extractor",
+                            "recognitionSources": [
+                                "model"
+                            ]
+                        }
+                    ]
+                }
             }
-          ]
         }
-      },
-      {
-        "entity": "natural language processing",
-        "type": "Job",
-        "startIndex": 14,
-        "endIndex": 40,
-        "score": 0.9869922
-      },
-      {
-        "entity": "natural language processing jobs",
-        "type": "builtin.keyPhrase",
-        "startIndex": 14,
-        "endIndex": 45
-      },
-      {
-        "entity": "department",
-        "type": "builtin.keyPhrase",
-        "startIndex": 53,
-        "endIndex": 62
-      }
-    ],
-    "sentimentAnalysis": {
-      "label": "positive",
-      "score": 0.8251864
     }
-   }
-   }
    ```
 
-   Правильное намерение спрогнозировано с высокой оценкой, а сущность **Job** определена как `natural language processing`. 
+   Теперь, когда неточные речевые фрагменты правильно сопоставлены, правильное намерение будет предсказано с **высокой вероятностью**.
 
-## <a name="can-reviewing-be-replaced-by-adding-more-utterances"></a>Можно ли вместо проверки добавить больше фрагментов речи? 
-У вас может возникнуть вопрос, почему бы не добавить больше примеров фрагментов речи. Какова цель проверки фрагментов речи конечной точки? В реальном приложении LUIS фрагменты речи конечной точки поступают от пользователей после выбора и организации слов. Эти операции вы еще не выполняли. Если бы вы использовали выбор и организацию одинаковых слов, для исходного прогноза процент был бы выше. 
+## <a name="can-reviewing-be-replaced-by-adding-more-utterances"></a>Можно ли вместо проверки добавить больше фрагментов речи?
+У вас может возникнуть вопрос, почему бы не добавить больше примеров фрагментов речи. Какова цель проверки фрагментов речи конечной точки? В реальном приложении LUIS фрагменты речи конечной точки поступают от пользователей после выбора и организации слов. Эти операции вы еще не выполняли. Если бы вы использовали выбор и организацию одинаковых слов, для исходного прогноза процент был бы выше.
 
-## <a name="why-is-the-top-intent-on-the-utterance-list"></a>Почему намерения с самым высоким показателем находятся в списке фрагментов речи? 
+## <a name="why-is-the-top-intent-on-the-utterance-list"></a>Почему намерения с самым высоким показателем находятся в списке фрагментов речи?
 Некоторые высказывания конечной точки будут иметь высокую оценку прогнозирования в списке проверки. Их по-прежнему нужно проверить и подтвердить. Они входят в список, так как оценка следующего намерения с самым высоким показателем слишком близка к самой высокой оценке намерения. Между двумя верхними намерениями разница должна составлять около 15 %.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
@@ -240,6 +233,7 @@ ms.locfileid: "73499415"
 [!INCLUDE [LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 Из этого руководства вы узнали, как просматривать высказывания, отправленные неизвестной для LUIS конечной точке. После того как эти высказывания будут проверены и перенесены в правильные намерения в качестве примеров высказываний, точность прогнозов LUIS увеличится.
 
 > [!div class="nextstepaction"]

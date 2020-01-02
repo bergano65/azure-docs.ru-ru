@@ -5,14 +5,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 10/11/2019
+ms.date: 11/19/2019
 ms.author: hamusa
-ms.openlocfilehash: 46bf756a729441bd3bc4b2b00aaa2c79fa06c0b8
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 595b6705b4e876ce5b42a7de831136cb0b62b1f5
+ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73521223"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74196447"
 ---
 # <a name="assess-vmware-vms-with-azure-migrate-server-assessment"></a>Оценка виртуальных машин VMware с помощью средства "Оценка серверов" службы "Миграция Azure"
 
@@ -108,8 +108,8 @@ ms.locfileid: "73521223"
 
   **Алгоритм** | **Значение хэша**
   --- | ---
-  MD5 | 27230f3b012187860281b912ee661709
-  SHA256 | c0a5b5998b7f38ac6e57ea9a808ecc4295795e18f9ca99c367585068883f06e7
+  MD5 | c06ac2a2c0f870d3b274a0b7a73b78b1
+  SHA256 | 4ce4faa3a78189a09a26bfa5b817c7afcf5b555eb46999c2fad9d2ebc808540c
 
 
 ### <a name="create-the-appliance-vm"></a>Создание виртуальной машины устройства
@@ -172,7 +172,7 @@ ms.locfileid: "73521223"
 
 ### <a name="specify-vcenter-server-details"></a>Укажите сведения о vCenter Server
 1. В разделе **Укажите сведения о vCenter Server** укажите полное доменное имя или IP-адрес сервера vCenter Server. Вы можете оставить порт по умолчанию или указать пользовательский порт, который прослушивает vCenter Server.
-2. В полях **Имя пользователя** и **Пароль** укажите данные учетной записи только для чтения, которые устройство будет использовать для обнаружения виртуальных машин на сервере vCenter Server. Убедитесь, что в учетной записи есть [необходимые разрешения для обнаружения](migrate-support-matrix-vmware.md#assessment-vcenter-server-permissions). Вы можете обозначить область обнаружения, ограничив доступ к учетной записи vCenter соответствующим образом. Дополнительные сведения об обозначении области обнаружения см. [здесь](tutorial-assess-vmware.md#scoping-discovery).
+2. В полях **Имя пользователя** и **Пароль** укажите данные учетной записи vCenter Server, которые устройство будет использовать для обнаружения виртуальных машин на сервере vCenter Server. Убедитесь, что в учетной записи есть [необходимые разрешения для обнаружения](migrate-support-matrix-vmware.md#assessment-vcenter-server-permissions). Вы можете обозначить область обнаружения, ограничив доступ к учетной записи vCenter соответствующим образом. Дополнительные сведения об обозначении области обнаружения см. [здесь](tutorial-assess-vmware.md#scoping-discovery).
 3. Щелкните **Проверить подключение**, чтобы убедиться, что устройство может подключаться к vCenter Server.
 
 ### <a name="specify-vm-credentials"></a>Указание учетных данных виртуальной машины
@@ -222,7 +222,7 @@ ms.locfileid: "73521223"
 
     Аналогичным образом для переноса сервера пользовательская роль (может называться  <em>Azure_Migrate</em>) с этими назначенными [разрешениями](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware#agentless-migration-vcenter-server-permissions) должна применяться к учетной записи vCenter для всех родительских объектов, в которых размещены виртуальные машины, которые необходимо перенести.
 
-![Назначение разрешений](./media/tutorial-assess-vmware/assign-perms.png)
+  ![Назначение разрешений](./media/tutorial-assess-vmware/assign-perms.png)
 
 - Кроме того, вы можете назначить учетную запись и роль на уровне центра обработки данных и распространить их на дочерние объекты. Затем присвойте учетной записи роль **Нет доступа** для каждого объекта (например, виртуальных машин), который вы не хотите обнаруживать или переносить. Такая конфигурация довольно сложная. Она не обеспечивает полный контроль доступа, так как каждый дочерний объект автоматически наследует права доступа родительского объекта. Поэтому рекомендуется использовать первый подход.
 

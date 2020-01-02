@@ -1,17 +1,17 @@
 ---
-title: Сведения о непрерывности бизнес-процессов в базе данных Azure для MySQL
+title: Непрерывность бизнес-процессов — база данных Azure для MySQL
 description: Сведения о непрерывности бизнес-процессов (восстановление на момент времени, сбой центра обработки данных, геовосстановление) при использовании службы "база данных Azure для MySQL".
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 02/01/2019
-ms.openlocfilehash: 28cd46077e67aa48169421607cd977103da735c5
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.date: 12/02/2019
+ms.openlocfilehash: 3f82dfd5e289b09761dbdbdc5af4da76d7c961d4
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71972889"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74765364"
 ---
 # <a name="understand-business-continuity-in-azure-database-for-mysql"></a>Сведения о непрерывности бизнес-процессов в базе данных Azure для MySQL
 
@@ -48,7 +48,7 @@ ms.locfileid: "71972889"
 > [!IMPORTANT]
 > Геовосстановление возможно только в том случае, если сервер был подготовлен с геоизбыточным хранилищем резервных копий. Если вы хотите переключиться с локально избыточных на геоизбыточные резервные копии на существующем сервере, необходимо с помощью mysqldump сделать дамп имеющегося сервера и восстановить его на только что созданном сервере, где настроено геоизбыточное резервное копирование.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об автоматическом создании резервных копий в Базе данных Azure для MySQL см. в [этой статье](concepts-backup.md).
 - Узнайте, как выполнить восстановление с помощью [портала Azure](howto-restore-server-portal.md) или [Azure CLI](howto-restore-server-cli.md).

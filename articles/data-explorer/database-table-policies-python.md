@@ -7,23 +7,26 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 2afe3da8b4d4bee31b17320ad976e795e91d410a
-ms.sourcegitcommit: 9f330c3393a283faedaf9aa75b9fcfc06118b124
+ms.openlocfilehash: a0fe86e2dcb802b822cb08ed0922b5da9c5cfd1c
+ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71997245"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74667282"
 ---
 # <a name="create-database-and-table-policies-for-azure-data-explorer-by-using-python"></a>Создание политик базы данных и таблиц для обозреватель данных Azure с помощью Python
 
+> [!div class="op_single_selector"]
+> * [C#](database-table-policies-csharp.md)
+> * [Python](database-table-policies-python.md)
+>
+
 Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. В этой статье вы создадите политики базы данных и таблиц для Azure обозреватель данных с помощью Python.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
-
 * [Тестовый кластер и база данных](create-cluster-database-python.md)
-
 * [Тестовая таблица](python-ingest-data.md#create-a-table-on-your-cluster)
 
 ## <a name="install-the-data-libraries"></a>Установка библиотек данных
@@ -34,8 +37,8 @@ pip install azure-mgmt-kusto
 pip install azure-kusto-data (Optional, for changing table's policies)
 ```
 
-## <a name="authentication"></a>Проверка подлинности
-Для выполнения примеров в этой статье нам потребуется приложение Azure AD и субъект-служба, которые могут получать доступ к ресурсам. Вы можете использовать одно и то же приложение Azure AD для проверки подлинности из [тестового кластера и базы данных](create-cluster-database-csharp.md#authentication). Если вы хотите использовать другое приложение Azure AD, см. раздел [Создание приложения Azure AD](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) для создания бесплатного приложения Azure AD и Добавление назначения роли в области подписки. Также показано, как получить `Directory (tenant) ID`, `Application ID` и `Client Secret`. Возможно, потребуется добавить новое приложение Azure AD в качестве участника в базу данных. см. раздел [Управление разрешениями для базы данных azure обозреватель данных](https://docs.microsoft.com/azure/data-explorer/manage-database-permissions).    
+## <a name="authentication"></a>Authentication
+Для выполнения примеров в этой статье нам потребуется приложение Azure AD и субъект-служба, которые могут получать доступ к ресурсам. Вы можете использовать одно и то же приложение Azure AD для проверки подлинности из [тестового кластера и базы данных](create-cluster-database-csharp.md#authentication). Если вы хотите использовать другое приложение Azure AD, см. раздел [Создание приложения Azure AD](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) для создания бесплатного приложения Azure AD и Добавление назначения роли в области подписки. В нем также показано, как получить `Directory (tenant) ID`, `Application ID`и `Client Secret`. Возможно, потребуется добавить новое приложение Azure AD в качестве участника в базу данных. см. раздел [Управление разрешениями для базы данных azure обозреватель данных](https://docs.microsoft.com/azure/data-explorer/manage-database-permissions).    
 
 ## <a name="alter-database-retention-policy"></a>Изменение политики хранения базы данных
 Задает политику хранения с периодом обратимого удаления в 10 дней.
@@ -163,6 +166,6 @@ kustoManagementClient.databases.add_principals(resource_group_name=resource_grou
                          value=[DatabasePrincipal(role=role, name=principle_name, type=type_name, app_id=client_id_to_add, tenant_name=tenant_id)])
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения о политиках баз данных и таблиц](https://docs.microsoft.com/azure/kusto/management/policies)

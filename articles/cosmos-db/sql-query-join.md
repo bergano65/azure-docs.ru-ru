@@ -1,17 +1,17 @@
 ---
 title: Запросы SQL JOIN для Azure Cosmos DB
-description: Дополнительные сведения о синтаксисе JOIN SQL для Azure Cosmos DB.
+description: Сведения о СОЕДИНЕНии нескольких таблиц в Azure Cosmos DB для запроса данных
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/17/2019
 ms.author: mjbrown
-ms.openlocfilehash: d78904fde53da0e800a69d2148a9c4e3acf57307
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 38e80f1597a08b8db7cbfa852d1bcf38ac768b1f
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73494416"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74871148"
 ---
 # <a name="joins-in-azure-cosmos-db"></a>Объединения в Azure Cosmos DB
 
@@ -21,11 +21,11 @@ ms.locfileid: "73494416"
 
 ## <a name="syntax"></a>Синтаксис
 
-Язык поддерживает синтаксис `<from_source1> JOIN <from_source2> JOIN ... JOIN <from_sourceN>`. Этот запрос возвращает набор кортежей со `N`ными значениями. Каждый кортеж будет со значениями, полученными путем итерации всех псевдонимов контейнера среди их наборов. 
+Язык поддерживает синтаксис `<from_source1> JOIN <from_source2> JOIN ... JOIN <from_sourceN>`. Этот запрос возвращает набор кортежей со `N`ными значениями. Каждый кортеж будет иметь значения, полученные путем итерации всех псевдонимов контейнера по соответствующим наборам. 
 
 Рассмотрим следующее выражение FROM: `<from_source1> JOIN <from_source2> JOIN ... JOIN <from_sourceN>`.  
   
- Разрешите каждому источнику определить `input_alias1, input_alias2, …, input_aliasN`. Это предложение FROM возвращает набор N-кортежей (кортежей, у которых число значений равно N). Каждый кортеж будет со значениями, полученными путем итерации всех псевдонимов контейнера среди их наборов.  
+ Разрешите каждому источнику определить `input_alias1, input_alias2, …, input_aliasN`. Это предложение FROM возвращает набор N-кортежей (кортежей, у которых число значений равно N). Каждый кортеж будет иметь значения, полученные путем итерации всех псевдонимов контейнера по соответствующим наборам.  
   
 **Пример 1** — 2 источника  
   
@@ -35,7 +35,7 @@ ms.locfileid: "73494416"
   
     {1, 2} для `input_alias1 = A,`;  
   
-    {3} для `input_alias1 = B,`;  
+    {3} для `input_alias1 = B,`.  
   
     {4, 5} для `input_alias1 = C,`.  
   
@@ -53,7 +53,7 @@ ms.locfileid: "73494416"
   
     {1, 2} для `input_alias1 = A,`;  
   
-    {3} для `input_alias1 = B,`;  
+    {3} для `input_alias1 = B,`.  
   
     {4, 5} для `input_alias1 = C,`.  
   
@@ -61,7 +61,7 @@ ms.locfileid: "73494416"
   
     {100, 200} для `input_alias2 = 1,`;  
   
-    {300} для `input_alias2 = 3,`;  
+    {300} для `input_alias2 = 3,`.  
   
 - В результате выполнения предложения FROM `<from_source1> JOIN <from_source2> JOIN <from_source3>` вернутся следующие кортежи:  
   
@@ -82,7 +82,7 @@ ms.locfileid: "73494416"
   
     {1, 2} для `input_alias1 = A,`;  
   
-    {3} для `input_alias1 = B,`;  
+    {3} для `input_alias1 = B,`.  
   
     {4, 5} для `input_alias1 = C,`.  
   
@@ -90,7 +90,7 @@ ms.locfileid: "73494416"
   
     {100, 200} для `input_alias2 = A,`;  
   
-    {300} для `input_alias2 = C,`;  
+    {300} для `input_alias2 = C,`.  
   
 - В результате выполнения предложения FROM `<from_source1> JOIN <from_source2> JOIN <from_source3>` вернутся следующие кортежи:  
   
@@ -254,6 +254,6 @@ ms.locfileid: "73494416"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Приступая к работе](sql-query-getting-started.md)
+- [Начало работы](sql-query-getting-started.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmosdb-dotnet)
 - [Вложенные запросы](sql-query-subquery.md)

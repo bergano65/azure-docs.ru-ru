@@ -1,17 +1,17 @@
 ---
-title: Создание пользователей в базе данных Azure для PostgreSQL — один сервер
+title: Создание пользователей — база данных Azure для PostgreSQL — один сервер
 description: В этой статье описывается создание новых учетных записей пользователей для взаимодействия с базой данных Azure для PostgreSQL-Single Server.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2019
-ms.openlocfilehash: 91ba485347aeb19ce9b173bd4cec944a655a56dc
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: 8e4c95c4c6c653854864aa4996f926177d3d55c7
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71203498"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74763608"
 ---
 # <a name="create-users-in-azure-database-for-postgresql---single-server"></a>Создание пользователей в базе данных Azure для PostgreSQL — один сервер
 В этой статье описывается создание пользователей на сервере базы данных Azure для PostgreSQL. 
@@ -28,7 +28,7 @@ ms.locfileid: "71203498"
 
 Пользователь-администратор сервера является членом роли azure_pg_admin. Но учетная запись администратора сервера не входит в роль azure_superuser. Так как эта служба является управляемой службой PaaS, только Майкрософт входит в роль суперпользователя. 
 
-Подсистема PostgreSQL использует права для управления доступом к объектам базы данных, как описано в [документации по продукту PostgreSQL](https://www.postgresql.org/docs/current/static/sql-createrole.html). В базе данных Azure для PostgreSQL администратор сервера получает следующие права: LOGIN, NOSUPERUSER, INHERIT, CREATEDB, CREATEROLE, NOREPLICATION.
+Подсистема PostgreSQL использует права для управления доступом к объектам базы данных, как описано в [документации по продукту PostgreSQL](https://www.postgresql.org/docs/current/static/sql-createrole.html). В службе "База данных Azure для PostgreSQL" пользователю-администратору сервера предоставляются следующие права: LOGIN, NOSUPERUSER, INHERIT, CREATEDB, CREATEROLE, NOREPLICATION
 
 Учетную запись пользователя администратора сервера можно использовать для создания дополнительных пользователей и включения этих пользователей в роль azure_pg_admin. Кроме того, учетная запись администратора сервера может использоваться для создания менее привилегированных пользователей и ролей, имеющих доступ к отдельным базам данных и схемам.
 
@@ -66,7 +66,7 @@ ms.locfileid: "71203498"
    GRANT CONNECT ON DATABASE <newdb> TO <db_user>;
    ```
 
-4. При использовании учетной записи администратора вам может потребоваться предоставить дополнительные права для безопасности объектов в базе данных. См. [документацию PostgreSQL](https://www.postgresql.org/docs/current/static/ddl-priv.html) для получения дальнейших сведений о ролях базы данных и правах доступа. Пример: 
+4. При использовании учетной записи администратора вам может потребоваться предоставить дополнительные права для безопасности объектов в базе данных. См. [документацию PostgreSQL](https://www.postgresql.org/docs/current/static/ddl-priv.html) для получения дальнейших сведений о ролях базы данных и правах доступа. Пример. 
    ```sql
    GRANT ALL PRIVILEGES ON DATABASE <newdb> TO <db_user>;
    ```
@@ -77,7 +77,7 @@ ms.locfileid: "71203498"
    psql --host=mydemoserver.postgres.database.azure.com --port=5432 --username=db_user@mydemoserver --dbname=newdb
    ```
 
-## <a name="next-steps"></a>Следующие шаги
-Откройте брандмауэр для IP-адресов компьютеров новых пользователей, чтобы обеспечить их подключение: [Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью портала Azure](howto-manage-firewall-using-portal.md) или [интерфейса командной строки Azure](howto-manage-firewall-using-cli.md).
+## <a name="next-steps"></a>Дальнейшие действия
+Откройте брандмауэр для IP-адресов компьютеров новых пользователей, чтобы обеспечить их подключение. Для этого ознакомьтесь с разделом [Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью портала Azure](howto-manage-firewall-using-portal.md) или [Azure CLI](howto-manage-firewall-using-cli.md).
 
 Чтобы получить дополнительные сведения об управлении учетными записями пользователей, ознакомьтесь с [ролями базы данных и привилегиями](https://www.postgresql.org/docs/current/static/user-manag.html), [синтаксисом GRANT](https://www.postgresql.org/docs/current/static/sql-grant.html) и [привилегиями](https://www.postgresql.org/docs/current/static/ddl-priv.html) в документации по продукту PostgreSQL.

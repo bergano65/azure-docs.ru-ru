@@ -1,23 +1,14 @@
 ---
 title: Создание и совместное использование записной книжки Jupyter в Azure
 description: Быстрое создание и запуск записной книжки Jupyter в Записных книжках Azure, а также предоставление общего доступа к этой записной книжке.
-services: app-service
-documentationcenter: ''
-author: kraigb
-manager: barbkess
-ms.assetid: 5add60ad-0b4b-4fd5-adf5-eb50ce072d00
-ms.service: azure-notebooks
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: quickstart
 ms.date: 12/04/2018
-ms.author: kraigb
-ms.openlocfilehash: 19e8217bf88427c353fdd4c90c9f421445b7c81a
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: 71220fa5aa0367d1cb1694582b4f96459a3016e7
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71970175"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74277508"
 ---
 # <a name="quickstart-create-and-share-a-notebook"></a>Краткое руководство. Создание и совместное использование записной книжки
 
@@ -42,7 +33,7 @@ ms.locfileid: "71970175"
 
 1. Через несколько секунд Записные книжки Azure перенаправят вас в окно нового проекта. Добавьте записную книжку в проект. Для этого выберите раскрывающийся список **+ Создать** (который может отображаться в виде **+** ), а затем элемент **Notebook** (Записная книжка):
 
-    [![](media/quickstarts/empty-project-new-notebook-button.png "Новый, пустой проект и команда добавления записной книжки")](media/quickstarts/empty-project-new-notebook-button.png#lightbox)
+    [![](media/quickstarts/empty-project-new-notebook-button.png "A new, empty project and add notebook command")](media/quickstarts/empty-project-new-notebook-button.png#lightbox)
 
 1. В появившемся всплывающем окне **Create New Notebook** (Создание записной книжки) введите имя файла для записной книжки, например *HelloWorldInPython.ipynb* ( *.ipynb* означает, что это записная книжка IronPython (Jupyter)) и выберите **Python 3.6** в качестве языка (также называемого *ядром*):
 

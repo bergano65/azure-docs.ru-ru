@@ -1,26 +1,23 @@
 ---
-title: Рекомендации по обработке ошибок для клиентов аутентификация Azure AD Library (ADAL)
+title: Рекомендации по обработке ошибок клиентского приложения ADAL | Службы
 description: Здесь содержатся инструкции по обработке ошибок и рекомендации для клиентских приложений ADAL.
 services: active-directory
-documentationcenter: ''
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.service: active-directory
 ms.subservice: develop
 ms.custom: aaddev
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/27/2017
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7008a5909d8f530920628125fec1b826be3f984
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: f4e0f434831f624dbd8c9c1302aab6816cd3d148
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72374188"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74966169"
 ---
 # <a name="error-handling-best-practices-for-azure-active-directory-authentication-library-adal-clients"></a>Руководство по обработке ошибок для клиентов библиотеки аутентификации Active Directory (ADAL)
 
@@ -577,6 +574,7 @@ window.Logging = {
     }
 };
 ```
+
 ## <a name="related-content"></a>Связанная информация
 
 * [Инструкции для разработчиков Azure AD][AAD-Dev-Guide]
@@ -586,7 +584,7 @@ window.Logging = {
 
 Оставляйте свои замечания и пожелания в разделе ниже. Они помогают нам улучшать содержимое веб-сайта.
 
-[![Shows кнопку "Войдите с помощью учетной записи Майкрософт"][AAD-Sign-In]][AAD-Sign-In]
+[![отображается кнопка "Войдите с помощью учетной записи Майкрософт"][AAD-Sign-In]][AAD-Sign-In]
 <!--Reference style links -->
 
 [AAD-Auth-Libraries]: ./active-directory-authentication-libraries.md

@@ -1,6 +1,6 @@
 ---
-title: Update profile & account info from the My Apps portal - Azure AD
-description: Learn how to update your profile and your work or school account information, including changing your password, turning on password reset, updating your security verification methods, viewing your organization's terms of use statement, and signing out of everywhere you've signed in using your work or school account.
+title: Обновление сведений об учетной записи & в профиле с портала "Мои приложения" в Azure AD
+description: Узнайте, как обновить профиль и сведения о рабочей или учебной учетной записи, включая изменение пароля, включение сброса пароля, обновление методов проверки безопасности, просмотр условий использования вашей организации и выход из везде, где вы вошли с помощью рабочей или учебной учетной записи.
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -20,7 +20,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74233168"
 ---
-# <a name="update-your-profile-and-work-or-school-account-information-on-the-my-apps-portal"></a>Update your profile and work or school account information on the My Apps portal
+# <a name="update-your-profile-and-work-or-school-account-information-on-the-my-apps-portal"></a>Обновление данных профиля, рабочей или учебной учетной записи на портале "Мои приложения"
 
 На веб-портале **Мои приложения** можно использовать рабочую или учебную учетную запись, чтобы просматривать и запускать многие облачные приложения вашей организации, обновлять сведения о профиле и учетной записи, просматривать сведения о **группах** и выполнять **проверки доступа** к приложениям и группам. Если у вас нет доступа к порталу **Мои приложения**, обратитесь за разрешением в службу технической поддержки.
 
@@ -29,115 +29,115 @@ ms.locfileid: "74233168"
 >[!Important]
 >Эти материалы предназначены для пользователей. Администраторы могут найти дополнительные сведения о настройке облачных приложений и управлении ими в [документации по управлению приложениями](https://docs.microsoft.com/azure/active-directory/manage-apps).
 
-## <a name="view-your-organization-related-profile-information"></a>View your organization-related profile information
+## <a name="view-your-organization-related-profile-information"></a>Просмотр сведений о профиле, связанных с Организацией
 
-Depending on what your organization has chosen to include on your **Profile** page of the **My Apps** portal, you might see your specific work-related details, along with your devices and activity, and any additional organizations to which you belong.
+В зависимости от того, что ваша организация выбрала для включения на страницу **профиля** портала " **Мои приложения** ", вы можете увидеть сведения о конкретной работе, а также об устройствах и действиях, а также о любых дополнительных организациях, к которым вы принадлежите.
 
-### <a name="to-view-your-profile-information"></a>To view your profile information
+### <a name="to-view-your-profile-information"></a>Просмотр сведений о профиле
 
-1. Sign in to your work or school account, [go to the **My Apps** portal](my-apps-portal-end-user-access.md).
+1. Войдите в рабочую или учебную учетную запись, [перейдя на портал " **Мои приложения** ](my-apps-portal-end-user-access.md)".
 
-2. From the **Apps** page, select your profile picture from the upper-right corner, where it says your name and your organization, and then select **Profile**.
+2. На странице **приложения** выберите изображение профиля в правом верхнем углу, где он указывает ваше имя и организацию, а затем выберите **профиль**.
 
-    The **Profile** page appears, showing your profile information.
+    Откроется страница **профиля** , в которой отображаются сведения о профиле.
 
-    ![Profile page, showing all of the available information](media/my-apps-portal/my-apps-portal-profile-page.png)
+    ![Страница профиля с отображением всех доступных сведений](media/my-apps-portal/my-apps-portal-profile-page.png)
 
-3. From the **Profile** page, you can:
+3. На странице **профиль** можно выполнить следующие действия.
 
-    - **Review your organization-related details.** View your photo, name, title, associated email addresses, and office information. This information is managed by your organization and you won't be able to change it. If you see an error, contact your Helpdesk.
+    - **Ознакомьтесь со сведениями, связанными с Организацией.** Просмотр фотографии, имени, названия, связанных адресов электронной почты и сведений о офисе. Эта информация управляется вашей организацией, и вы не сможете изменить ее. Если вы видите ошибку, обратитесь в службу технической поддержки.
 
-    - **Review your Devices & activity**. Make sure each device is familiar and properly connected to your organization. If you don’t recognize a device, select **Disable device** to remove the association with your account. After you disable a device, it’s removed from this page.
+    - **Проверьте устройства & действия**. Убедитесь, что каждое устройство известно и правильно подключено к вашей организации. Если устройство не распознается, выберите **отключить устройство** , чтобы удалить связь с вашей учетной записью. После отключения устройство будет удалено с этой страницы.
 
-    - **Review your Organizations.** Make sure that you still work with each of the specified organizations. If you no longer work with an organization, we highly recommend that you select **Sign in to leave organization**. After you leave the organization, it’s removed from this page.
+    - **Просматривайте свои организации.** Убедитесь, что вы все еще работаете с каждой из указанных организаций. Если вы больше не работаете с Организацией, мы настоятельно рекомендуем выбрать **войти, чтобы выйти из Организации**. После выхода из Организации она удаляется из этой страницы.
 
-## <a name="manage-your-work-or-school-account-information"></a>Manage your work or school account information
+## <a name="manage-your-work-or-school-account-information"></a>Управление данными рабочей или учебной учетной записи
 
-Update and manage your work or school account information from the **Profile** page of the **My Apps** portal. This page helps you to:
+Обновление данных рабочей или учебной учетной записи и управление ими на странице **профиль** портала " **Мои приложения** ". Эта страница поможет вам:
 
-- Change your work or school account password.
+- Измените пароль рабочей или учебной учетной записи.
 
-- Turn on password reset (if your administrator has turned on this feature).
+- Включите сброс пароля (если администратор включил эту функцию).
 
-- Provide additional security verification information.
+- Предоставьте дополнительные сведения о проверке безопасности.
 
-- Review your organization’s terms of use.
+- Ознакомьтесь с условиями использования вашей организации.
 
-- Sign out of everywhere.
+- Выйдите из повсеместного выхода.
 
 ## <a name="change-your-password"></a>Изменение пароля
 
-If you want to change the password for your work or school account, you can select **Change password** from the **Manage account** area of the **Profile** page.
+Если вы хотите изменить пароль для рабочей или учебной учетной записи, можно выбрать **изменить пароль** в области **Управление учетной записью** на странице **профиль** .
 
-### <a name="to-change-your-password"></a>To change your password
+### <a name="to-change-your-password"></a>Изменение пароля
 
-1. From the **Manage account** area of the **Profile** page, select **Change password**.
+1. В области **Управление учетной записью** на странице **профиль** выберите **изменить пароль**.
 
-2. On the **Change password** page, make sure your User ID is correct, and then type your old password and your new password into the boxes.
+2. На странице **изменение пароля** убедитесь, что идентификатор пользователя указан правильно, а затем введите старый пароль и новый пароль в поля.
 
-    ![Change password page](media/my-apps-portal/my-apps-portal-change-password-page.png)
+    ![Страница изменения пароля](media/my-apps-portal/my-apps-portal-change-password-page.png)
 
 3. Нажмите кнопку **Submit** (Отправить).
 
-    Your password is changed. You’ll be required to sign-in to any apps you’ve previously signed in to using your work or school account.
+    Пароль изменен. Вам потребуется войти в все приложения, которые ранее вошли в рабочую или учебную учетную запись.
 
-## <a name="set-up-and-use-password-reset"></a>Set up and use password reset
+## <a name="set-up-and-use-password-reset"></a>Настройка и использование сброса пароля
 
-If you forgot your password, never got one from your company support, or have been locked out of your account, you can reset your own password.
+Если вы забыли пароль, не получили его от службы поддержки вашей компании или не заблокировали свою учетную запись, вы можете сбросить свой пароль.
 
 >[!Important]
->Your administrator must turn on this feature and you must register to participate. For details about how to register and how to reset your password, see [Register for self-service password reset](active-directory-passwords-reset-register.md) and [Reset your work or school password](active-directory-passwords-update-your-own-password.md).
+>Администратор должен включить эту функцию, и вы должны зарегистрироваться для участия. Дополнительные сведения о регистрации и сбросе пароля см. в статьях [Регистрация для самостоятельного сброса пароля](active-directory-passwords-reset-register.md) и [Сброс рабочего или учебного пароля](active-directory-passwords-update-your-own-password.md).
 
-## <a name="change-your-security-verification-information"></a>Change your security verification information
+## <a name="change-your-security-verification-information"></a>Изменение сведений о проверке безопасности
 
-If your organization requires you to use two-factor verification, you can add, update, and delete your associated security information from the **Additional security verification** page.
+Если в вашей организации требуется использовать двухфакторную проверку подлинности, можно добавить, обновить и удалить связанные сведения о безопасности на странице **Дополнительная проверка безопасности** .
 
-Two-factor verification requires you to use two pieces of verification info, like a password and a PIN, before you can get to your account or to your organization’s information. For more information about two-factor verification, see [Set up my account for two-step verification](multi-factor-authentication-end-user-first-time.md).
+Для двухфакторной проверки необходимо использовать два этапа проверки, например пароль и ПИН-код, прежде чем можно будет получить учетную запись или сведения о вашей организации. Дополнительные сведения о двухфакторной проверке подлинности см. в разделе [Настройка учетной записи для двухфакторной проверки подлинности](multi-factor-authentication-end-user-first-time.md).
 
-### <a name="to-change-your-security-information"></a>To change your security information
+### <a name="to-change-your-security-information"></a>Изменение сведений о безопасности
 
-1. From the **Manage account** area of the **Profile** page, select **Additional security verification**.
+1. В области **Управление учетной записью** на странице **профиль** выберите пункт **Дополнительная проверка безопасности**.
 
-    ![Additional security verification page](media/my-apps-portal/my-apps-portal-additional-verification-page.png)
+    ![Страница "дополнительная проверка безопасности"](media/my-apps-portal/my-apps-portal-additional-verification-page.png)
 
-2. On the **Additional security verification** page, you can add, change, or delete the following information:
+2. На странице **Дополнительная проверка безопасности** можно добавить, изменить или удалить следующие сведения.
 
-    - **Default verification option.** Select the default secondary method to use for two-factor verification. This method is automatically used any time two-factor verification is required after you enter your username and password.
+    - **Параметр проверки по умолчанию.** Выберите дополнительный метод по умолчанию, который будет использоваться для двухфакторной проверки подлинности. Этот метод автоматически используется, когда требуется выполнить двухфакторную проверку подлинности после ввода имени пользователя и пароля.
 
-    - **Add, update, or remove verification methods.** You can add new, update existing, or delete old information that no longer applies.
+    - **Добавление, обновление или удаление методов проверки.** Вы можете добавлять новые, обновлять существующие или удалять старые сведения, которые больше не применяются.
 
-    - **Set up the Microsoft Authenticator app.** You can choose to set up the Microsoft Authenticator app to work as your verification method. For more information about the Microsoft Authenticator app, see [What is the Microsoft Authenticator app?](user-help-auth-app-overview.md)
+    - **Настройте приложение Microsoft Authenticator.** Вы можете настроить Microsoft Authenticator приложение для работы в качестве метода проверки. Дополнительные сведения о Microsoft Authenticator приложении см [. в разделе что такое Microsoft Authenticator приложение?](user-help-auth-app-overview.md)
 
 3. Выберите **Сохранить**, чтобы сохранить изменения.
 
-## <a name="review-your-organizations-terms-of-use-statement"></a>Review your organization’s terms of use statement
+## <a name="review-your-organizations-terms-of-use-statement"></a>Ознакомьтесь с условиями использования вашей организации
 
-You can choose to review your organization’s terms of use statement, if it’s available.
+Вы можете проверить условия использования вашей организации, если она доступна.
 
-1. From the **Manage account** area of the **Profile** page, select **Review terms of use**.
+1. В области **Управление учетной записью** на странице **профиль** выберите **проверить условия использования**.
 
-2. Review your organization's terms of use and select **Accept** to confirm that you've read and understood the terms of use for your organization.
+2. Проверьте условия использования вашей организации и выберите **принять** , чтобы подтвердить, что вы прочитали и поняли условия использования для вашей организации.
 
-    ![Terms of use page from the My Apps portal](media/my-apps-portal/my-apps-portal-tou-page.png)
+    ![Страница Условия использования на портале "Мои приложения"](media/my-apps-portal/my-apps-portal-tou-page.png)
 
-    If your organization doesn't have a terms of use, you can select **Done** to return to the **Profile** page.
+    Если в вашей организации нет условий использования, можно нажать кнопку **Готово** , чтобы вернуться на страницу **профиля** .
 
-## <a name="sign-out-of-everywhere"></a>Sign out of everywhere
+## <a name="sign-out-of-everywhere"></a>Выход из повсеместно
 
-You can choose to sign out of everywhere you’re currently signed in to using your work or school account. This includes all apps and devices.
+Вы можете выйти из любого места, где вы вошли в систему, используя рабочую или учебную учетную запись. Сюда входят все приложения и устройства.
 
-### <a name="to-sign-out-of-everywhere"></a>To sign out of everywhere
+### <a name="to-sign-out-of-everywhere"></a>Выход из повсеместно
 
-1. From the **Manage account** area of the **Profile** page, select **Sign out everywhere**.
+1. В области **Управление учетной записью** на странице **профиль** выберите **выход везде**.
 
-2. In the **Sign out everywhere** confirmation box, select **Yes** to confirm that you want to sign out of all your sessions and devices. Select **No** if you change your mind.
+2. В окне подтверждения при выходе **везде** выберите **Да** , чтобы подтвердить выход из всех сеансов и устройств. Если вы передумали, выберите **нет** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-After you finish your updates on the **Profile** page, you can:
+После завершения обновления на странице **профиля** можно выполнить следующие действия.
 
-- [Access and use apps on the My Apps portal](my-apps-portal-end-user-access.md).
+- [Доступ к приложениям и их использование на портале "Мои приложения"](my-apps-portal-end-user-access.md).
 
-- [View and update your groups-related information](my-apps-portal-end-user-groups.md).
+- [Просмотр и обновление сведений, относящихся к группам](my-apps-portal-end-user-groups.md).
 
-- [Perform your own access reviews](my-apps-portal-end-user-access-reviews.md).
+- [Выполнение собственных проверок доступа](my-apps-portal-end-user-access-reviews.md).

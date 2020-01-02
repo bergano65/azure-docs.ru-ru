@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-local-business
 ms.topic: overview
-ms.date: 09/13/2019
+ms.date: 11/29/2019
 ms.author: aahi
-ms.openlocfilehash: bdada613ef46881bbf051144efded541ac3d0974
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 4e08596e8cf71bbb0e88abdc51f5d8e69972464d
+ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70996687"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74665261"
 ---
 # <a name="what-is-bing-local-business-search"></a>Что такое Bing Local Business Search?
 API Bing Local Business Search — это служба RESTful, которая позволяет приложениям находить сведения о местных компаниях на основе поисковых запросов. Например, `q=<business-name> in Redmond, Washington` или `q=Italian restaurants near me`. 
@@ -36,9 +36,9 @@ API Bing Local Business Search — это служба RESTful, которая �
 4. Проанализируйте ответ JSON. 
 
 > [!NOTE]
-> Сейчас Local Business Search поддерживает только рынок `en-US`. 
-> [!NOTE]
-> Сейчас Local Business Search не поддерживает автозаполнение. 
+> В настоящее время локальный бизнес-поиск: 
+> * поддерживает только рынок `en-US`; 
+> * не поддерживает Автозаполнение Bing. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Sending and using Bing Local Business Search API queries and responses](local-search-query-response.md) (Отправление и использование запросов и ответов API Bing Local Business Search)

@@ -1,23 +1,22 @@
 ---
-title: Перемещение файлов между файловым хранилищем с помощью фабрики данных Azure
+title: Перемещение файлов между файловым хранилищем
 description: Узнайте, как использовать шаблон решения для перемещения файлов между файловым хранилищем с помощью фабрики данных Azure.
 services: data-factory
-documentationcenter: ''
 author: dearandyxu
 ms.author: yexu
 ms.reviewer: ''
-manager: ''
+manager: shwang
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
+ms.custom: seo-lt-2019
 ms.date: 7/12/2019
-ms.openlocfilehash: f6f83917e84a880fb86b5f592c4d51b03462753d
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: b3165daa06ed975df9ccb677699d3ceb449327ab
+ms.sourcegitcommit: b5ff5abd7a82eaf3a1df883c4247e11cdfe38c19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73684081"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74941954"
 ---
 # <a name="move-files-with-azure-data-factory"></a>Перемещение файлов с помощью фабрики данных Azure
 
@@ -37,9 +36,11 @@ ms.locfileid: "73684081"
 - **Копировать** копирует один файл из источника в целевое хранилище.
 - **Delete** удаляет один и тот же файл из исходного хранилища.
 
-Шаблон определяет два параметра.
-- *FolderPath_SourceStore* — это путь к папке исходного хранилища, из которой нужно переместить файлы. 
-- *FolderPath_DestinationStore* — это путь к папке конечного хранилища, куда нужно переместить файлы. 
+Шаблон определяет четыре параметра:
+- *SourceStore_Location* — это путь к папке исходного хранилища, из которой нужно переместить файлы. 
+- *SourceStore_Directory* — это путь к вложенной папке исходного хранилища, из которого нужно переместить файлы.
+- *DestinationStore_Location* — это путь к папке конечного хранилища, куда нужно переместить файлы. 
+- *DestinationStore_Directory* — это путь к вложенной папке конечного хранилища, куда нужно переместить файлы.
 
 ## <a name="how-to-use-this-solution-template"></a>Использование шаблона решения
 
@@ -51,9 +52,7 @@ ms.locfileid: "73684081"
 
     ![Создание нового подключения к целевому хранилищу](media/solution-template-move-files/move-files2.png)
 
-3. Выберите **использовать этот шаблон**.
-
-    ![Использование шаблона](media/solution-template-move-files/move-files3.png)
+3. Выберите **использовать вкладку шаблон** .
     
 4. Вы увидите конвейер, как показано в следующем примере:
 

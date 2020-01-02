@@ -10,12 +10,12 @@ keywords: служба автоматизации Azure, DSC, PowerShell, нас
 ms.date: 11/04/2019
 ms.custom: mvc
 ms.topic: overview
-ms.openlocfilehash: 7a2e9d39629e4fdb349652c9c48d0084d051f9f8
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: d091b89342570b73ccde5fe496a3432102617918
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74122840"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74951434"
 ---
 # <a name="what-is-azure-arc-for-servers"></a>Что собой представляет Azure Arc для серверов
 
@@ -108,6 +108,40 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
 ```
 
 Вы также можете зарегистрировать поставщики ресурсов с помощью портала Azure, выполнив действия, описанные в [этом разделе](../../azure-resource-manager/resource-manager-supported-services.md#azure-portal).
+
+## <a name="machine-changes-after-installing-the-agent"></a>Изменения компьютера после установки агента
+
+Если в вашей среде развернуто решение для отслеживания изменений, вы можете использовать приведенный ниже список, чтобы отслеживать, обнаруживать и разрешать изменения, внесенные пакетом установки **агента подключенного компьютера Azure (AzCMAgent)** .
+
+После установки агента вы увидите следующие изменения, внесенные на серверы.
+
+### <a name="windows"></a>Windows
+
+Установленные службы:
+
+* `Himds` — служба **агента подключенного компьютера Azure**.
+* `Dscservice` или `gcd` — служба **гостевой конфигурации**.
+
+Файлы, добавленные на сервер:
+
+* `%ProgramFiles%\AzureConnectedMachineAgent\*.*` — расположение файлов **агента подключенного компьютера Azure**.
+* `%ProgramData%\GuestConfig\*.*`  -  журналы **гостевой конфигурации**.
+
+Расположение разделов реестра:
+
+* `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Azure Connected Machine Agent` — разделы реестра для **агента подключенного компьютера Azure**.
+
+### <a name="linux"></a>Linux
+
+Установленные службы:
+
+* `Himdsd` — служба **агента подключенного компьютера Azure**.
+* `dscd` или `gcd` — служба **гостевой конфигурации**.
+
+Файлы, добавленные на сервер:
+
+* `/var/opt/azcmagent/**` — расположение файлов **агента подключенного компьютера Azure**.
+* `/var/lib/GuestConfig/**`  -  журналы **гостевой конфигурации**.
 
 ## <a name="supported-scenarios"></a>Поддерживаемые сценарии
 

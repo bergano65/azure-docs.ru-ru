@@ -1,5 +1,5 @@
 ---
-title: Руководство по Миграция локальных данных в службу хранилища Azure с помощью AzCopy | Документация Майкрософт
+title: Руководство по Миграция локальных данных в службу хранилища Azure с помощью AzCopy | Документация Майкрософт
 description: В этом руководстве вы используете AzCopy для перемещения или копирования данных в большие двоичные объекты, таблицы, файлы и обратно. Вы можете легко перенести данные из локального хранилища в службу хранилища Azure.
 author: normesta
 ms.service: storage
@@ -8,14 +8,14 @@ ms.date: 05/14/2019
 ms.author: normesta
 ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: 5f09ae7dc625ad579e31fd49d70331f30e6a708a
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: f7155053072b3533503765dc6f4fbf185d21f0d4
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68844905"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327519"
 ---
-#  <a name="tutorial-migrate-on-premises-data-to-cloud-storage-by-using-azcopy"></a>Руководство по Миграция локальных данных в службу хранилища Azure с помощью AzCopy
+#  <a name="tutorial-migrate-on-premises-data-to-cloud-storage-with-azcopy"></a>Руководство по Перенос локальных данных в облачное хранилище с помощью AzCopy
 
 Средство командной строки AzCopy принимает простые команды, позволяющие копировать данные в хранилища BLOB-объектов Azure, файлов Azure и таблиц Azure, а также из этих хранилищ. Команды рассчитаны на оптимальную производительность. С помощью AzCopy вы можете перемещать данные между файловой системой и учетной записью хранения или между разными учетными записями хранения. AzCopy может использоваться для копирования локальных данных в учетную запись хранения.
 

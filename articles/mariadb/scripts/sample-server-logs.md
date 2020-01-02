@@ -1,19 +1,19 @@
 ---
-title: Скрипт Azure CLI. Скачивание журналов сервера в службе "База данных Azure для MariaDB"
-description: В этом примере скрипта Azure CLI показано, как включить и скачать журналы сервера в службе "База данных Azure для MariaDB".
+title: Скрипт CLI для скачивания журналов медленных запросов в Базе данных Azure для MariaDB
+description: В этом примере скрипта Azure CLI показано, как включить и скачать журналы медленных запросов сервера в службе "База данных Azure для MariaDB".
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: sample
 ms.custom: mvc
-ms.date: 11/28/2018
-ms.openlocfilehash: da2a8ed610873d957866117a9ef7aab424edd452
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 12/02/2019
+ms.openlocfilehash: a6d4ed70418f39b24a68362d5006f3f374693cb6
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66171340"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74777367"
 ---
 # <a name="enable-and-download-server-slow-query-logs-of-an-azure-database-for-mariadb-server-using-azure-cli"></a>Включение и скачивание журналов медленных запросов для сервера службы "База данных Azure для MariaDB" с помощью Azure CLI
 Этот пример скрипта CLI позволяет скачать журналы медленных запросов на одном сервере службы "База данных Azure для MariaDB".

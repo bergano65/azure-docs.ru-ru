@@ -1,14 +1,14 @@
 ---
 title: 'Пример: допустимые номера SKU ExpressRoute'
-description: В этом примере определения политики требуется, чтобы служба ExpressRoute использовала только утвержденный номер SKU.
+description: В этом примере определения политики требуется, чтобы ExpressRoute использовал утвержденный номер SKU, указанный в параметре.
 ms.date: 01/29/2019
 ms.topic: sample
-ms.openlocfilehash: a9fa0e98a2973cbaa689358c0922b0eda23dd042
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: e4bd9dfe9c9851f80fe7e6f7b93a1c251e163bf7
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74072030"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463730"
 ---
 # <a name="sample---allowed-expressroute-skus"></a>Пример: допустимые номера SKU ExpressRoute
 

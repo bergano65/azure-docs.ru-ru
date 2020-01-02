@@ -10,12 +10,12 @@ ms.subservice: luis
 ms.topic: include
 ms.date: 11/05/2019
 ms.author: diberry
-ms.openlocfilehash: b65bf177d98d5b0bcbaf9e9eaf06707b43ed7032
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: 47913f86edcf83825254775705e38310f3c2c6b4
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73647462"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325936"
 ---
 Чтобы получить результат прогнозирования LUIS в чат-боте или другом приложении, необходимо опубликовать приложение в конечной точке. 
 
@@ -27,7 +27,7 @@ ms.locfileid: "73647462"
 
     ![Публикация в конечной точке с помощью LUIS](../media/howto-publish/publish-app-popup.png)
 
-3. Когда публикация будет завершена, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
+3. Когда публикация будет завершена, в верхней части страницы появится панель состояния, свидетельствующая об успешном результате.
 
     ![Публикация в конечной точке с помощью LUIS](../media/howto-publish/publish-endpoint-success.png)
 

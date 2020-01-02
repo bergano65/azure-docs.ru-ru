@@ -1,13 +1,10 @@
 ---
 title: Повторная активация подписки "Azure для учащихся" | Документация Майкрософт
 description: В этой статье объясняется, почему подписка "Azure для учащихся" отключена и как активировать ее повторно.
-services: ''
-documentationcenter: ''
 author: amberbhargava
 manager: amberb
-editor: ''
 tags: billing
-ms.service: billing
+ms.service: cost-management-billing
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
@@ -15,12 +12,12 @@ ms.workload: na
 ms.date: 03/01/2018
 ms.author: banders
 ROBOTS: NOINDEX
-ms.openlocfilehash: 7d41e9b7774bf8840db9e729d3aa9371f5bac04f
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: cfabb3ad7ad150b38b8c90488710731ad29b80a3
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "60615945"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74226414"
 ---
 # <a name="why-is-my-azure-for-students-subscription-disabled-and-how-do-i-reactivate-it"></a>Почему подписка "Azure для учащихся" отключена и как активировать ее повторно?
 
@@ -34,7 +31,7 @@ ms.locfileid: "60615945"
 
 1. Войдите в учетную запись, используя учетные данные "Azure для учащихся".
 2. На странице баланса приводятся сведения о деньгах, которые были использованы и которые остались на счете. Дату истечения срока действия средств на счете можно найти под диаграммой "кредит".  
-   
+
     ![На снимке экрана показана информация о средствах на счете для подписки "Azure для учащихся"](./media/billing-azurestudents-subscription-disabled/azurestudents-credit-balance.png)
 
 3. Чтобы проверить использование служб, которые потребляют средства со счета Azure, в панели навигации слева выберите **Использование**, а затем выберите подписку "Azure для учащихся".

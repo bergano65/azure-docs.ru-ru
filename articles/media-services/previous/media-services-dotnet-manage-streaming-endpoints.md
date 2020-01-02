@@ -1,6 +1,6 @@
 ---
 title: Управление конечными точками потоковой передачи с помощью пакета SDK для .NET | Документация Майкрософт
-description: В этой статье рассказывается, как управлять конечными точками потоковой передачи с помощью портала Azure.
+description: В этой статье показано, как управлять конечными точками потоковой передачи с помощью портал Azure.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 0222450e1b85c255f2028adff750b9257f109be7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b6c6fccd473ae57139c0b46bf32dc9468a4ba1a8
+ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61464969"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74901270"
 ---
 # <a name="manage-streaming-endpoints-with-net-sdk"></a>Управление конечными точками потоковой передачи с помощью пакета SDK для .NET  
 
@@ -148,6 +148,6 @@ namespace AMSStreamingEndpoint
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

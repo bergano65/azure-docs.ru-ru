@@ -1,17 +1,18 @@
 ---
-title: Преобразование "производный столбец" в потоке данных сопоставления фабрики данных Azure
+title: Преобразование «Производный столбец» в потоке сопоставления данных
 description: Узнайте, как преобразовать масштабируемые данные в фабрике данных Azure с помощью преобразования «Производный столбец потока данных сопоставления».
 author: kromerm
 ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
+ms.custom: seo-lt-2019
 ms.date: 10/15/2019
-ms.openlocfilehash: 387af25b87fdedff5d15ccb6a03819ad8b020e9a
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: c2d4c9b089a6673a5cff716d2901cc2b9483ede1
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73676875"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74972257"
 ---
 # <a name="derived-column-transformation-in-mapping-data-flow"></a>Преобразование «Производный столбец» в потоке сопоставления данных
 
@@ -27,7 +28,17 @@ ms.locfileid: "73676875"
 
 ![Выбор нового производного столбца](media/data-flow/columnpattern.png "Выбор нового производного столбца")
 
-## <a name="data-flow-script"></a>Сценарий потока данных
+## <a name="build-schemas-in-output-schema-pane"></a>Схемы сборки в области выходной схемы
+
+Столбцы, которые вы изменяете и добавляете в схему, перечислены на панели выходная схема. Здесь можно в интерактивном режиме создавать простые и сложные структуры данных. Чтобы добавить дополнительные поля, выберите **Добавить столбец**. Чтобы создать иерархии, выберите **Добавить подстолбец**.
+
+![Добавить подстолбец](media/data-flow/addsubcolumn.png "Добавить подстолбец")
+
+Дополнительные сведения об обработке сложных типов в потоке данных см. в разделе [Обработка JSON в потоке данных сопоставления](concepts-data-flow-json.md) .
+
+![Добавить сложный столбец](media/data-flow/complexcolumn.png "Добавление столбцов")
+
+## <a name="data-flow-script"></a>Скрипт потока данных
 
 ### <a name="syntax"></a>Синтаксис
 

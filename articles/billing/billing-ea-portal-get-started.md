@@ -4,16 +4,16 @@ description: В этой статье объясняется, как клиен�
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 11/07/2019
+ms.date: 12/04/2019
 ms.topic: conceptual
-ms.service: billing
+ms.service: cost-management-billing
 manager: boalcsva
-ms.openlocfilehash: 567beb9de0c0a8039d774270bdf61a7db437091e
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 2f7c4f0d4d8bd7e5209f666dbfca34eaffc8ebc7
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73888381"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74841376"
 ---
 # <a name="get-started-with-the-azure-ea-portal"></a>Начало работы с порталом Azure EA
 
@@ -399,7 +399,7 @@ ms.locfileid: "73888381"
 
 Для создания отчетов по конкретным диапазонам дат или учетным записям можно использовать скачивание расширенного отчета. По состоянию на 30 августа 2016 г. формат выходного файла меняется с XLSX на CSV для размещения больших наборов записей.
 
-1. Выберите **Advanced report download** (Скачивание расширенного отчета).
+1. Выберите **Advanced Report Download** (Скачивание расширенного отчета).
 1. Выберите **Appropriate Date Range** (Соответствующий диапазон дат).
 1. Выберите **Appropriate Accounts** (Соответствующие учетные записи).
 1. Выберите **Request Usage Data** (Запросить данные об использовании).

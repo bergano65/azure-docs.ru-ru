@@ -1,20 +1,21 @@
 ---
-title: Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)
+title: Предоставление ограниченного доступа к данным с помощью подписанных URL-адресов (SAS)
+titleSuffix: Azure Storage
 description: Узнайте об использовании подписанных URL-адресов (SAS) для делегирования доступа к ресурсам службы хранилища Azure, включая большие двоичные объекты, очереди, таблицы и файлы.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 10/14/2019
+ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 9623152bdea5cc56e6b9bcb7d9911a730fd7a4a4
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: e4a5f83e3f4d26c2321ed1b4c48a385d07e6489d
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72382015"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74895156"
 ---
 # <a name="grant-limited-access-to-azure-storage-resources-using-shared-access-signatures-sas"></a>Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)
 
@@ -133,7 +134,7 @@ ms.locfileid: "72382015"
 
 - [Создание SAS учетной записи с помощью .NET](storage-account-sas-create-dotnet.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Делегирование доступа с помощью подписанного URL-доступа (REST API)](/rest/api/storageservices/delegate-access-with-shared-access-signature)
 - [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-user-delegation-sas)

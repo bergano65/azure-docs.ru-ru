@@ -1,6 +1,5 @@
 ---
-title: Интерактивная настройка одностраничного приложения JavaScript в Azure AD 2.0
-titleSuffix: Microsoft identity platform
+title: Руководство по работе с одностраничным приложением JavaScript на платформе удостоверений Майкрософт | Azure
 description: Узнайте, как одностраничные приложения JavaScript могут вызывать API, которым требуются маркеры доступа от конечной точки Azure Active Directory версии 2.0.
 services: active-directory
 documentationcenter: dev-center-name
@@ -17,12 +16,12 @@ ms.date: 03/20/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc03e6f1610fe6cef9ce72c981f6f800da8a9951
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: a3576c015fcca7eb9c390f38c6527d76353efe06
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72802527"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74919398"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Вход пользователей и вызов API Microsoft Graph из одностраничного приложения JavaScript (SPA)
 
@@ -400,7 +399,7 @@ function callMSGraph(theUrl, accessToken, callback) {
     npm install
     node server.js
     ```
-1. В браузере введите **http://\<span>\<localhost:30662** или **http://\<span>\</span>localhost:{port}** , где *port* соответствует порту, с которого веб-сервер ожидает передачи данных. Появится содержимое файла *index.html* с кнопкой **Sign In** (Войти).
+1. В браузере введите **http://\<span>\</span>localhost:30662** или **http://\<span>\</span>localhost:{port}** , где *port* соответствует порту, с которого веб-сервер ожидает передачи данных. Появится содержимое файла *index.html* с кнопкой **Sign In** (Войти).
 
 ### <a name="test-with-visual-studio"></a>Тестирование кода в Visual Studio
 

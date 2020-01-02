@@ -1,25 +1,17 @@
 ---
-title: Приступая к работе с мобильными приложениями Azure для приложений Xamarin.Android | Microsoft Azure
-description: Этот учебник поможет приступить к использованию мобильных приложений Azure для разработки приложений Xamarin Android
-services: app-service\mobile
-documentationcenter: xamarin
-author: elamalani
-manager: crdun
-editor: ''
+title: Начало работы с приложениями Xamarin. Android
+description: Следуйте указаниям этого руководства, чтобы приступить к работе с мобильными приложениями Azure для разработки Xamarin Android.
 ms.assetid: 81649dd3-544f-40ff-b9b7-60c66d683e60
-ms.service: app-service-mobile
-ms.workload: mobile
 ms.tgt_pltfrm: mobile-xamarin-android
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 06/25/2019
-ms.author: emalani
-ms.openlocfilehash: 038ca0bd7690ac90470d9a739a47d0f634f1297b
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 1bac9ac03971765f1afc4f15ff3de6cc4b7d3883
+ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72388479"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74668675"
 ---
 # <a name="create-a-xamarinandroid-app"></a>Создание приложения Xamarin.Android
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
@@ -57,11 +49,11 @@ ms.locfileid: "72388479"
 ## <a name="run-the-xamarinandroid-app"></a>Запуск приложения Xamarin. Android
 1. Откройте проект Xamarin. Android.
 
-2. Перейдите к [портал Azure](https://portal.azure.com/) и перейдите к созданному вами мобильному приложению. В колонке `Overview` найдите URL-адрес, который является общедоступной конечной точкой для мобильного приложения. Пример. имя сайта для имени моего приложения "test123" будет https://test123.azurewebsites.net.
+2. Перейдите к [портал Azure](https://portal.azure.com/) и перейдите к созданному вами мобильному приложению. В колонке `Overview` найдите URL-адрес, который является общедоступной конечной точкой для мобильного приложения. Пример. имя сайта для имени приложения "test123" будет https://test123.azurewebsites.net.
 
 3. Откройте файл `ToDoActivity.cs` в этой папке — Xamarin. Android/ЗУМОАППНАМЕ/ToDoActivity. cs. Имя приложения — `ZUMOAPPNAME`.
 
-4. В классе `ToDoActivity` Замените переменную `ZUMOAPPURL` общедоступной конечной точкой выше.
+4. В `ToDoActivity` классе Замените переменную `ZUMOAPPURL` на общую конечную точку выше.
 
     `const string applicationURL = @"ZUMOAPPURL";`
 

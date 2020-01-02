@@ -1,6 +1,6 @@
 ---
-title: Security controls for Azure Load Balancer
-description: A checklist of security controls for evaluating Load Balancer
+title: Элементы управления безопасностью для Azure Load Balancer
+description: Контрольный список элементов управления безопасностью для оценки Load Balancer
 services: load-balancer
 author: asudbring
 manager: KumudD
@@ -15,52 +15,52 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74214899"
 ---
-# <a name="security-controls-for-azure-load-balancer"></a>Security controls for Azure Load Balancer
+# <a name="security-controls-for-azure-load-balancer"></a>Элементы управления безопасностью для Azure Load Balancer
 
-This article documents the security controls built into Azure Load Balancer.
+В этой статье описываются элементы управления безопасностью, встроенные в Azure Load Balancer.
 
 [!INCLUDE [Security controls Header](../../includes/security-controls-header.md)]
 
-## <a name="network"></a>Network
+## <a name="network"></a>Сеть
 
-| Security control | Да/нет | Заметки |
+| Управление безопасностью | Да/нет | Примечания |
 |---|---|--|
-| Service endpoint support| Н/Д | |
-| VNet injection support| Н/Д | |
-| Network Isolation and Firewalling support| Н/Д |  |
-| Forced tunneling support| Н/Д | |
+| Поддержка конечных точек службы| Недоступно | |
+| Поддержка внедрения виртуальной сети| Недоступно | |
+| Поддержка сетевой изоляции и брандмауэров| Недоступно |  |
+| Поддержка принудительного туннелирования| Недоступно | |
 
-## <a name="monitoring--logging"></a>Monitoring & logging
+## <a name="monitoring--logging"></a>Мониторинг & ведения журнала
 
-| Security control | Да/нет | Заметки|
+| Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
-| Azure monitoring support (Log analytics, App insights, etc.)| ДА | See [Azure Monitor logs for public Basic Load Balancer](load-balancer-monitor-log.md). |
-| Control and management plane logging and audit| ДА | See [Azure Monitor logs for public Basic Load Balancer](load-balancer-monitor-log.md). |
-| Data plane logging and audit | Н/Д |  |
+| Поддержка мониторинга Azure (log Analytics, App Insights и т. д.)| Yes | См. раздел [журналы Azure Monitor для общедоступной базовой Load Balancer](load-balancer-monitor-log.md). |
+| Ведение журнала и аудит в плоскости управления и управления| Yes | См. раздел [журналы Azure Monitor для общедоступной базовой Load Balancer](load-balancer-monitor-log.md). |
+| Ведение журнала и аудит в плоскости данных | Недоступно |  |
 
 ## <a name="identity"></a>Удостоверение
 
-| Security control | Да/нет | Заметки|
+| Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
-| Authentication| Н/Д |  |
-| Авторизация| Н/Д |  |
+| Проверка подлинности| Недоступно |  |
+| Авторизация| Недоступно |  |
 
 ## <a name="data-protection"></a>Защита данных
 
-| Security control | Да/нет | Заметки |
+| Управление безопасностью | Да/нет | Примечания |
 |---|---|--|
-| Server-side encryption at rest: Microsoft-managed keys | Н/Д | |
-| Encryption in transit (such as ExpressRoute encryption, in VNet encryption, and VNet-VNet encryption )| Н/Д | |
-| Server-side encryption at rest: customer-managed keys (BYOK) | Н/Д | |
-| Column level encryption (Azure Data Services)| Н/Д | |
-| Вызовы API в зашифрованном виде| ДА | Via the [Azure Resource Manager](../azure-resource-manager/index.yml). |
+| Шифрование неактивных на стороне сервера: ключи, управляемые корпорацией Майкрософт | Недоступно | |
+| Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Недоступно | |
+| Шифрование неактивных на стороне сервера: ключи, управляемые клиентом (BYOK) | Недоступно | |
+| Шифрование на уровне столбцов (службы данных Azure)| Недоступно | |
+| Вызовы API в зашифрованном виде| Yes | Через [Azure Resource Manager](../azure-resource-manager/index.yml). |
 
 ## <a name="configuration-management"></a>Управление конфигурацией
 
-| Security control | Да/нет | Заметки|
+| Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
-| Configuration management support (versioning of configuration, etc.)| Н/Д |  | 
+| Поддержка управления конфигурацией (управление версиями конфигураций и т. д.)| Недоступно |  | 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- Learn more about the [built-in security controls across Azure services](../security/fundamentals/security-controls.md).
+- Дополнительные сведения о [встроенных средствах управления безопасностью в службах Azure](../security/fundamentals/security-controls.md).

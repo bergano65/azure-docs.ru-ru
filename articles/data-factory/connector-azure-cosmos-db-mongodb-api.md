@@ -1,23 +1,22 @@
 ---
-title: Копирование данных в API Azure Cosmos DB для MongoDB с помощью фабрики данных или из него
+title: Копирование данных из API Azure Cosmos DB для MongoDB
 description: Узнайте, как копировать данные из поддерживаемых исходных хранилищ данных в API службы Azure Cosmos DB для MongoDB или из него в поддерживаемые хранилища-приемники с помощью Фабрики данных.
 services: data-factory, cosmosdb
-documentationcenter: ''
+ms.author: jingwang
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: multiple
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
+ms.custom: seo-lt-2019
 ms.date: 11/20/2019
-ms.author: jingwang
-ms.openlocfilehash: 0da3452964a7c4bb7d2a22ce4cd5164ad8c1e3fb
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 0b38bc3309d8cf265a554a10e36311f53e6fe8a9
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74280709"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74929921"
 ---
 # <a name="copy-data-to-or-from-azure-cosmos-dbs-api-for-mongodb-by-using-azure-data-factory"></a>Копирование данных в API службы Azure Cosmos DB для MongoDB или из него с помощью Фабрики данных Azure
 
@@ -36,7 +35,7 @@ ms.locfileid: "74280709"
 - Запись данных в Azure Cosmos DB с помощью операции **INSERT** или **UPSERT**.
 - Импорт и экспорт документов JSON "как есть" либо копирование данных из набора табличных данных или в него. К примерам можно отнести базу данных SQL и CSV-файл. Сведения о копировании документов "как есть" в JSON-файлы или другую коллекцию Azure Cosmos DB либо из них см. в разделе "Импорт и экспорт документов JSON".
 
-## <a name="get-started"></a>Приступая к работе
+## <a name="get-started"></a>Начать
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -46,11 +45,11 @@ ms.locfileid: "74280709"
 
 Для связанной службы API Azure Cosmos DB для MongoDB поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | обязательные |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство **type** должно иметь значение **CosmosDbMongoDbApi**. | Yes |
-| connectionString |Укажите строку подключения для API службы Azure Cosmos DB для MongoDB. Вы найдете ее на портале Azure -> колонка Cosmos DB -> основная или дополнительная строка подключения с шаблоном `mongodb://<cosmosdb-name>:<password>@<cosmosdb-name>.documents.azure.com:10255/?ssl=true&replicaSet=globaldb`. <br/><br />Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных. Вы можете также [указать секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Yes |
-| database | Имя базы данных, к которой нужно получить доступ. | Yes |
+| Тип | Свойство **type** должно иметь значение **CosmosDbMongoDbApi**. | ДА |
+| connectionString |Укажите строку подключения для API службы Azure Cosmos DB для MongoDB. Вы найдете ее на портале Azure -> колонка Cosmos DB -> основная или дополнительная строка подключения с шаблоном `mongodb://<cosmosdb-name>:<password>@<cosmosdb-name>.documents.azure.com:10255/?ssl=true&replicaSet=globaldb`. <br/><br />Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных. Вы можете также [указать секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |ДА |
+| база данных | Имя базы данных, к которой нужно получить доступ. | ДА |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать Azure Integration Runtime или локальную среду IR (если хранилище данных расположено в частной сети). Если это свойство не задано, используется Azure Integration Runtime по умолчанию. |Нет |
 
 **Пример**
@@ -79,10 +78,10 @@ ms.locfileid: "74280709"
 
 Полный список разделов и свойств, используемых для определения наборов данных, приведен в статье [Наборы данных и связанные службы в фабрике данных Azure](concepts-datasets-linked-services.md). Для набора данных API службы Azure Cosmos DB для MongoDB поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | обязательные |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство **type** набора данных должно иметь значение **CosmosDbMongoDbApiCollection**. |Yes |
-| collectionName |Имя коллекции Azure Cosmos DB. |Yes |
+| Тип | Свойство **type** набора данных должно иметь значение **CosmosDbMongoDbApiCollection**. |ДА |
+| collectionName |Имя коллекции Azure Cosmos DB. |ДА |
 
 **Пример**
 
@@ -113,9 +112,9 @@ ms.locfileid: "74280709"
 
 В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | обязательные |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство **type** действия копирования должно иметь значение **CosmosDbMongoDbApiSource**. |Yes |
+| Тип | Свойство **type** действия копирования должно иметь значение **CosmosDbMongoDbApiSource**. |ДА |
 | фильтр | Задает фильтр выбора с помощью операторов запросов. Чтобы получить все документы в коллекции, не указывайте этот параметр или передайте пустой документ ({}). | Нет |
 | cursorMethods.project | Определяет, какие поля в документах для проекции необходимо получить. Чтобы получить все поля в соответствующих документах, не указывайте этот параметр. | Нет |
 | cursorMethods.sort | Определяет, в каком порядке запрос будет возвращать соответствующие документы. См. [cursor.sort()](https://docs.mongodb.com/manual/reference/method/cursor.sort/#cursor.sort). | Нет |
@@ -168,9 +167,9 @@ ms.locfileid: "74280709"
 
 В разделе **sink** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | обязательные |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство **type** приемника действия копирования должно иметь значение **CosmosDbMongoDbApiSink**. |Yes |
+| Тип | Свойство **type** приемника действия копирования должно иметь значение **CosmosDbMongoDbApiSink**. |ДА |
 | writeBehavior |Описывает способ записи данных в Azure Cosmos DB. Допустимые значения: **insert** и **upsert**.<br/><br/>Поведение **Upsert** заключается в замене документа, если документ с таким `_id` уже существует; в противном случае Вставьте документ.<br /><br />**Примечание**. фабрика данных автоматически создает `_id` для документа, если `_id` не указан ни в исходном документе, ни в сопоставлении столбцов. Это означает, что для правильной работы **upsert** у документа должен быть идентификатор. |Нет<br />(По умолчанию используется **insert**.) |
 | writeBatchSize | Свойство **writeBatchSize** определяет размер документов для записи в каждом пакете. Вы можете увеличить значение **writeBatchSize** для повышения производительности или уменьшить значение, если документ большого размера. |Нет<br />(Значение по умолчанию — **10 000**.) |
 | writeBatchTimeout | Время ожидания завершения операции пакетной вставки до истечения времени ожидания. Допустимое значение — TimeSpan. | Нет<br/>(по умолчанию используется **00:30:00** — 30 минут) |
@@ -236,6 +235,6 @@ ms.locfileid: "74280709"
 }
 ``` 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в Фабрике данных Azure.

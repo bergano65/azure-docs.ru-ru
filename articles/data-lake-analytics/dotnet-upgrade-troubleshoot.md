@@ -9,12 +9,12 @@ ms.service: data-lake-analytics
 ms.topic: troubleshooting
 ms.workload: big-data
 ms.date: 10/11/2019
-ms.openlocfilehash: 851a405e5143ea5bb3a26de76f713914aa4bb569
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: 2be2f50558fef41659c9a3313871b17961f6ad6d
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73648523"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873239"
 ---
 # <a name="azure-data-lake-analytics-is-upgrading-to-the-net-framework-v472"></a>Azure Data Lake Analytics выполняется обновление до .NET Framework v 4.7.2
 
@@ -39,7 +39,7 @@ ms.locfileid: "73648523"
 1. Запустите средство проверки обратной совместимости для DLL-библиотек .NET с помощью
    1. Использование расширения Visual Studio в [расширении Visual Studio для анализатора переносимости .NET](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer)
    1. Загрузка и использование автономного средства из [GitHub дотнетапипорт](https://github.com/microsoft/dotnet-apiport). Инструкции по запуску автономного средства находятся на сайте [GitHub дотнетапипорт критические изменения](https://github.com/microsoft/dotnet-apiport/blob/dev/docs/HowTo/BreakingChanges.md)
-   1. Для 4.7.2. совместимость Read Исретаржетинг = = true — это критические изменения.
+   1. Для 4.7.2. совместимость, `read isRetargeting == True` выявляет возможные проблемы.
 2. Если средство указывает, может ли код влиять на возможную обратную несовместимость (некоторые распространенные примеры несовместимости перечислены ниже), можно дополнительно проверить
    1. Анализ кода и определение, передает ли ваш код значения затронутым API
    1. Выполните проверку времени выполнения. Развертывание среды выполнения не выполняется параллельно в ADLA. Перед обновлением можно выполнить проверку среды выполнения, используя локальный запуск VisualStudio с локальной .NET Framework 4.7.2 с репрезентативным набором данных.
@@ -59,47 +59,47 @@ ms.locfileid: "73648523"
 
 Наиболее распространенная обратная совместимость, которая, вероятно, будет выявлена средством проверки (мы создали этот список, запустив средство проверки на основе собственных внутренних заданий ADLA), на которые повлияли библиотеки (Обратите внимание, что библиотеки можно вызывать только косвенно, поэтому важно, чтобы предпринять необходимые действия #1, чтобы проверить, влияют ли ваши задания), и возможные действия для их устранения. Примечание. почти во всех случаях для собственных заданий предупреждения выдавали ложные срабатывания из-за узких особенностей наиболее критических изменений.
 
-- Свойство IAsyncResult. CompletedSynchronously должно быть правильным для выполнения результирующей задачи
-  - При вызове TaskFactory. FromAsync реализация свойства IAsyncResult. CompletedSynchronously должна быть правильной для выполнения результирующей задачи. Это значит, что свойство должно возвращать значение true только в том случае, если реализация завершена синхронно. Ранее свойство не проверялось.
+- Чтобы результирующая задача завершилась, реализация свойства IAsyncResult.CompletedSynchronously должна быть правильной
+  - При вызове TaskFactory.FromAsync реализация свойства IAsyncResult.CompletedSynchronously должна быть правильной, чтобы результирующая задача завершилась. То есть свойство должно возвращать значение true, если (и только если) реализация завершилась синхронно. Раньше свойство не проверялось.
   - Затронутые библиотеки: mscorlib, System. Threading. Tasks
   - Предлагаемое действие: Убедитесь, что TaskFactory. FromAsync правильно возвращает значение true
 
-- DataObject. GetData теперь получает данные в кодировке UTF-8.
-  - Для приложений, предназначенных для .NET Framework 4 или работающих на .NET Framework 4.5.1 или более ранних версиях, объект DataObject. GetData получает данные в формате HTML в виде строки ASCII. В результате символы, не входящие в набор ASCII (символы, коды ASCII которых больше 0x7F), представляются двумя случайными символами. #N # #N # для приложений, предназначенных для .NET Framework 4,5 или более поздней версии и выполняемых на .NET Framework 4.5.2, `DataObject.GetData` извлекает данные в формате HTML в формате UTF-8, который правильно представляет символы, превышающие 0x7F.
+- DataObject.GetData теперь получает данные в кодировке UTF-8
+  - Для приложений, предназначенных для NET Framework 4, а также для выполняющихся в .NET Framework 4.5.1 или более ранних версиях, DataObject.GetData получает HTML-данные в виде строки ASCII. В результате символы, не входящие в набор ASCII (символы, коды ASCII которых больше 0x7F), представляются двумя случайными символами. #N # #N # для приложений, предназначенных для .NET Framework 4,5 или более поздней версии и выполняемых в .NET Framework 4.5.2, `DataObject.GetData` извлекает данные в формате HTML в кодировке UTF-8, которая представляет символы, превышающие 0x7F.
   - Затронутые библиотеки: гло
   - Предлагаемое действие. Убедитесь, что извлекаемые данные имеют нужный формат.
 
-- XmlWriter вызывает недопустимые суррогатные пары
-  - Для приложений, предназначенных для .NET Framework 4.5.2 или предыдущих версий, написание недопустимой суррогатной пары с помощью обработки резервных исключений не всегда приводит к созданию исключения. Для приложений, предназначенных для .NET Framework 4,6, попытка записи недопустимой суррогатной пары вызывает `ArgumentException`.
+- XmlWriter вызывает недействительные суррогатные пары
+  - Для приложений с целевой платформой .NET Framework 4.5.2 или предыдущих версий запись недействительной суррогатной пары с помощью обработки резервного исключения не всегда вызывает исключение. Для приложений с целевой платформой .NET Framework 4.6 попытка записи недействительной суррогатной пары вызывает исключение `ArgumentException`.
   - Затронутые библиотеки: System. XML, System. XML. блокировки
   - Предлагаемое действие: Убедитесь, что вы не пишете недопустимую суррогатную пару, которая приведет к исключению аргумента
 
-- HtmlTextWriter неправильно обрабатывает элемент `<br/>`
-  - Начиная с .NET Framework 4,6, вызов `HtmlTextWriter.RenderBeginTag()` и `HtmlTextWriter.RenderEndTag()` с элементом `<BR />` будет правильно вставлять только один `<BR />` (а не два).
+- HtmlTextWriter неправильно отображает элемент `<br/>`
+  - Начиная с .NET Framework 4.6, при вызове `HtmlTextWriter.RenderBeginTag()` и `HtmlTextWriter.RenderEndTag()` с элементом `<BR />` правильно вставляется только один `<BR />` (вместо двух).
   - Затронутые библиотеки: System. Web
   - Предлагаемое действие. Убедитесь, что вы вставляете предполагаемый объем `<BR />`, чтобы случайное поведение не проявлялось в рабочем задании.
 
-- Вызов метода createdefaultauthorizationcontext с аргументом null был изменен
-  - Реализация AuthorizationContext, возвращенная вызовом `CreateDefaultAuthorizationContext(IList<IAuthorizationPolicy>)` с аргументом нулевым authorizationpolicies с нулевым значением, изменила свою реализацию в .NET Framework 4,6.
+- Был изменен вызов метода CreateDefaultAuthorizationContext с аргументом NULL
+  - В .NET Framework 4.6 изменилась реализация AuthorizationContext, возвращаемая вызовом `CreateDefaultAuthorizationContext(IList<IAuthorizationPolicy>)` с нулевым аргументом authorizationPolicies.
   - Затронутые библиотеки: System. IdentityModel
   - Предлагаемое действие: Убедитесь, что вы обрабатываете новое ожидаемое поведение при наличии политики авторизации, имеющей значение null.
   
-- RSACng теперь правильно загружает ключи RSA для нестандартного размера ключа
-  - В .NET Framework версиях до 4.6.2 Клиенты с нестандартными размерами ключей для сертификатов RSA не могут получить доступ к этим ключам с помощью методов расширения `GetRSAPublicKey()` и `GetRSAPrivateKey()`. Создается `CryptographicException` с сообщением "запрошенный размер ключа не поддерживается". С .NET Framework 4.6.2 Эта проблема исправлена. Аналогично, `RSA.ImportParameters()` и `RSACng.ImportParameters()` теперь работают с нестандартными размерами ключей, не вызывая `CryptographicException`.
+- RSACng теперь правильно загружает ключи RSA нестандартного размера
+  - В версиях .NET Framework до 4.6.2 клиенты с нестандартным размером ключа для сертификатов RSA не могли получить доступ к этим ключам через методы расширения `GetRSAPublicKey()` и `GetRSAPrivateKey()`. Создается `CryptographicException` с сообщением "запрошенный размер ключа не поддерживается". С .NET Framework 4.6.2 Эта проблема исправлена. Аналогично, `RSA.ImportParameters()` и `RSACng.ImportParameters()` теперь работают с нестандартными размерами ключей, не вызывая `CryptographicException`.
   - Затронутые библиотеки: mscorlib, System. Core
   - Предлагаемое действие: Убедитесь, что ключи RSA работают должным образом.
 
-- Проверки двоеточия в пути являются более четкими
-  - В .NET Framework 4.6.2 было внесено несколько изменений для поддержки ранее неподдерживаемых путей (как в длине, так и в формате). Проверки правильности синтаксиса разделителя дисков (двоеточие) были сделаны более правильными, в результате чего некоторые пути URI в некоторых API-интерфейсах выбора пути, где они допускают, блокируются, имеют побочный результат.
+- Более строгие проверки двоеточий в пути
+  - В .NET Framework 4.6.2 выполнен ряд изменений для поддержки ранее не поддерживаемых путей (по длине и формату). Исправлены проверки надлежащего синтаксиса разделителя диска (двоеточие), в результате появился побочный эффект в виде блокировки некоторых путей универсального кода ресурса (URI) в некоторых API-интерфейсах пути, где раньше это допускалось.
   - Затронутые библиотеки: mscorlib, System. Runtime. Extensions
   - Предлагаемое действие:
 
 - Вызовы к конструкторам ClaimsIdentity
-  - Начиная с .NET Framework 4.6.2, существует изменение того, как `T:System.Security.Claims.ClaimsIdentity` конструкторы с параметром `T:System.Security.Principal.IIdentity` задают свойство `P:System.Security.Claims.ClaimsIdentify.Actor`. Если аргумент `T:System.Security.Principal.IIdentity` является `T:System.Security.Claims.ClaimsIdentity`ным объектом, а свойство `P:System.Security.Claims.ClaimsIdentify.Actor` этого объекта `T:System.Security.Claims.ClaimsIdentity` не `null`, то свойство `P:System.Security.Claims.ClaimsIdentify.Actor` присоединяется с помощью метода `M:System.Security.Claims.ClaimsIdentity.Clone`. В 4.6.1 Framework и более ранних версиях свойство `P:System.Security.Claims.ClaimsIdentify.Actor` присоединяется как существующая ссылка. Из-за этого изменения, начиная с .NET Framework 4.6.2, свойство `P:System.Security.Claims.ClaimsIdentify.Actor` нового объекта `T:System.Security.Claims.ClaimsIdentity` не равно свойству `P:System.Security.Claims.ClaimsIdentify.Actor` аргумента `T:System.Security.Principal.IIdentity` конструктора. В .NET Framework 4.6.1 и более ранних версиях он равен.
+  - Начиная с .NET Framework 4.6.2 конструкторы `T:System.Security.Claims.ClaimsIdentity` с параметром `T:System.Security.Principal.IIdentity` иначе задают свойство `P:System.Security.Claims.ClaimsIdentify.Actor`. Если аргумент `T:System.Security.Principal.IIdentity` является объектом `T:System.Security.Claims.ClaimsIdentity`, а свойство `P:System.Security.Claims.ClaimsIdentify.Actor` этого объекта `T:System.Security.Claims.ClaimsIdentity` не равно `null`, свойство `P:System.Security.Claims.ClaimsIdentify.Actor` присоединяется с помощью метода `M:System.Security.Claims.ClaimsIdentity.Clone`. В 4.6.1 Framework и более ранних версиях свойство `P:System.Security.Claims.ClaimsIdentify.Actor` присоединяется как существующая ссылка. Из-за этого изменения, начиная с .NET Framework 4.6.2, свойство `P:System.Security.Claims.ClaimsIdentify.Actor` нового объекта `T:System.Security.Claims.ClaimsIdentity` не равно свойству `P:System.Security.Claims.ClaimsIdentify.Actor` аргумента `T:System.Security.Principal.IIdentity` конструктора. В .NET Framework 4.6.1 и более ранних версиях они равны.
   - Затронутые библиотеки: mscorlib
   - Предлагаемое действие: Убедитесь, что ClaimsIdentity работает должным образом в новой среде выполнения
 
-- Сериализация управляющих символов с помощью DataContractJsonSerializer теперь совместима с ECMAScript версии 6 и V8
-  - В .NET Framework 4.6.2 и более ранних версиях DataContractJsonSerializer не выполнял сериализацию некоторых специальных управляющих символов, таких как \b, \f и \t, так, как это было совместимо с стандартами ECMAScript версии 6 и V8. Начиная с .NET Framework 4,7 сериализация этих управляющих символов совместима с ECMAScript V6 и V8.
+- Сериализация управляющих символов с помощью DataContractJsonSerializer теперь совместима с ECMAScript версии 6 и 8
+  - В .NET Framework 4.6.2 и более ранних версиях DataContractJsonSerializer не выполнял сериализацию некоторых специальных управляющих символов, таких как \b, \f и \t, так, как это было совместимо с стандартами ECMAScript версии 6 и V8. Начиная с .NET Framework 4.7 сериализация таких управляющих символов совместима с ECMAScript версий 6 и 8.
   - Затронутые библиотеки: System. Runtime. Serialization. JSON
   - Предлагаемое действие: обеспечить то же поведение с DataContractJsonSerializer

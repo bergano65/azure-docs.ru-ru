@@ -7,12 +7,12 @@ ms.date: 10/25/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 3389744c44f7eb4f11a1c9a53ea9e370b83dd79b
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: af1870ecc9714eceaf69f2892537e59f068c6a70
+ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73890840"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74480328"
 ---
 # <a name="what-are-application-templates"></a>Что представляют собой шаблоны приложений?
 
@@ -50,6 +50,9 @@ ms.locfileid: "73890840"
 - Мониторинг потребления воды > государственных организаций
 - Мониторинг качества воды государственных >
 - Здравоохранение > непрерывное наблюдение за пациентами
+
+> [!NOTE]
+> **Пользовательские приложения, примеры Contoso, примеры шаблонов девкитс** в настоящее время доступны в **США**, **Австралии**, **Азиатско-Тихоокеанский регион**или в **Европе** , а другие шаблоны в настоящее время доступны только в **странах Европы** и **США** .
 
 ## <a name="industry-focused-templates"></a>Шаблоны, нацеленные на отрасли
 

@@ -3,17 +3,17 @@ title: Управляйте своим счетом и преобразуйте 
 description: Как администратор, вы можете узнать, как управлять счетами и пересчитывать их с пробы по мере использования в приложении Azure IoT Central.
 author: v-krghan
 ms.author: v-krghan
-ms.date: 07/26/2019
+ms.date: 12/09/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: 11bcdaab34cf4d82b688a578ab2d9ee686ffe07e
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 0c1c1643fb8c8394ce3ce50e5926f05fd4d366f6
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73894816"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976423"
 ---
 # <a name="manage-your-bill-in-an-iot-central-application"></a>Управление счетами в IoT Central приложении
 
@@ -50,6 +50,6 @@ ms.locfileid: "73894816"
 
 1. После выбора **преобразуйте**ваше приложение теперь является приложением с оплатой по мере использования, и вы начнете получать счет.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как управлять счетами в IoT Central приложении Azure, рекомендуем следующий шаг — узнать о [настройке пользовательского интерфейса приложения](howto-customize-ui.md) в Azure IOT Central.

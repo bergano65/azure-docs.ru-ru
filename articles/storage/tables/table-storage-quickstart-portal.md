@@ -1,19 +1,19 @@
 ---
-title: Обзор табличного хранилища Azure | Документация Майкрософт
-description: Создание таблицы Хранилища таблиц Azure на портале Azure.
+title: Краткое руководство. Создание таблицы службы хранилища Azure на портале Azure
+description: В этом кратком руководстве описано, как создать таблицу Хранилища таблиц службы хранилища Azure на портале Azure.
 services: storage
 author: MarkMcGeeAtAquent
 ms.service: storage
 ms.topic: quickstart
-ms.date: 04/23/2018
+ms.date: 12/02/2019
 ms.author: sngun
 ms.subservice: tables
-ms.openlocfilehash: 052a462da5349b0886d6d99cd59d1a4ce816220f
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 4cfb44964b06c811d6d587f2a406cdcfb8048a42
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55462721"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74793333"
 ---
 # <a name="quickstart-create-an-azure-storage-table-in-the-azure-portal"></a>Краткое руководство. Создание таблицы службы хранилища Azure на портале Azure 
 

@@ -1,21 +1,19 @@
 ---
-title: Подключение к учетной записи SFTP — Azure Logic Apps
+title: Подключение к учетной записи SFTP
 description: Автоматизация задач и процессов, которые отслеживают, создают, отправляют и получают файлы для SFTP-сервера по SSH, а также управляют ими с помощью Azure Logic Apps
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-author: ecfan
-ms.author: estfan
-ms.reviewer: divswa, klam, LADocs
+author: divyaswarnkar
+ms.reviewer: divswa, klam, logicappspm
 ms.topic: article
 ms.date: 11/01/2019
 tags: connectors
-ms.openlocfilehash: 20702f5bc0dfc513d1fba84b69595dec885613ac
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: d0da98070fa8da5403677e1a67bda75456c74d80
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73837110"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74789279"
 ---
 # <a name="monitor-create-and-manage-sftp-files-by-using-azure-logic-apps"></a>Мониторинг и создание SFTP-файлов, а также управление ими с помощью Azure Logic Apps
 
@@ -26,7 +24,7 @@ ms.locfileid: "73837110"
 
 * мониторинг добавления или изменения файлов;
 * получение, создание, копирование, перечисление, обновление и удаление файлов;
-* получение содержимого и метаданных файлов;
+* получение содержимого и метаданных файлов.
 * извлечение архивов в папки.
 
 Вы можете использовать триггеры, которые отслеживают события сервера SFTP и делают выходные данные доступными для других действий. Вы можете использовать действия для выполнения различных задач на SFTP-сервере. Кроме того, в вашем приложении логики есть другие действия, которые могут использовать выходные данные действий SFTP. Например, если вы регулярно извлекаете файлы с сервера SFTP, то можете отправлять сообщения оповещений об этих файлах и их содержимое с помощью соединителя Outlook Office 365 или Outlook.com. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
@@ -35,7 +33,7 @@ ms.locfileid: "73837110"
 
 Соединитель SFTP обрабатывает только файлы размером *50 МБ или меньше* и не поддерживает [фрагментацию сообщений](../logic-apps/logic-apps-handle-large-messages.md). Для больших файлов используйте [соединитель SFTP-SSH](../connectors/connectors-sftp-ssh.md). Сведения о различиях между соединителем SFTP и соединителем SFTP-SSH см. в статье [Сравнение SFTP-SSH и SFTP](../connectors/connectors-sftp-ssh.md#comparison) в разделе SFTP-SSH.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -57,7 +55,7 @@ ms.locfileid: "73837110"
 
 Триггеры SFTP работают путем опроса файловой системы SFTP и поиска любого файла, который был изменен с момента последнего опроса. При изменении файлов некоторые средства позволяют сохранить метку времени. В этом случае необходимо отключить эту функцию, чтобы триггер мог работать. Ниже приведены некоторые распространенные параметры:
 
-| Клиент SFTP | Действие |
+| Клиент SFTP | Действия |
 |-------------|--------|
 | Winscp | Выберите **Параметры** > **Настройки** > **Перенос** > **Изменить** > **Сохранение метки времени** > **Отключить** |
 | FileZilla | Выберите **Перенос** > **Preserve timestamps of transferred files** (Сохранение метки времени перенесенных файлов)  > **Отключить**. |

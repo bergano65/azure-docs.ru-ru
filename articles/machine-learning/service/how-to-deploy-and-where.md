@@ -11,12 +11,12 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 09/13/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 63d2aa5c9e4ec751d9b95ba0d884e6dc17e207bb
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: bb86d551d83668a3558cf63827a64a481cf87e02
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74276793"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74926933"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "74276793"
 
 Дополнительные сведения об основных понятиях, связанных с рабочим процессом развертывания, см. в разделе [Управление моделями, их развертывание и мониторинг с помощью машинное обучение Azure](concept-model-management-and-deployment.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 - Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 
@@ -208,7 +208,7 @@ AZUREML_MODEL_DIR — это переменная среды, созданная
 
 В следующей таблице описано значение AZUREML_MODEL_DIR в зависимости от числа развернутых моделей:
 
-| Развертывание | Значение переменной среды |
+| Развертывание. | Значение переменной среды |
 | ----- | ----- |
 | Одна модель | Путь к папке, содержащей модель. |
 | Несколько моделей | Путь к папке, содержащей все модели. Модели расположены по имени и версии в этой папке (`$MODEL_NAME/$VERSION`) |
@@ -376,7 +376,7 @@ def run(data):
 Дополнительные примеры см. в следующих скриптах:
 
 * [PyTorch](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/pytorch)
-* [TensorFlow](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/tensorflow);
+* [TensorFlow](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/tensorflow)
 * [Keras](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-keras);
 * [ONNX](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/)
 
@@ -530,8 +530,8 @@ az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json
 
 | Целевой объект вычисления | Пример конфигурации развертывания |
 | ----- | ----- |
-| Local | `deployment_config = LocalWebservice.deploy_configuration(port=8890)` |
-| Экземпляры контейнеров Azure | `deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
+| Местного уровня | `deployment_config = LocalWebservice.deploy_configuration(port=8890)` |
+| Служба "Экземпляры контейнеров Azure" | `deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
 | Служба Azure Kubernetes | `deployment_config = AksWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
 
 Классы для локальных объектов, экземпляров контейнеров Azure и веб-служб AKS можно импортировать из `azureml.core.webservice`:
@@ -540,7 +540,7 @@ az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json
 from azureml.core.webservice import AciWebservice, AksWebservice, LocalWebservice
 ```
 
-#### <a name="profiling"></a>Профилирование
+#### <a name="profiling"></a>Профилирование.
 
 Перед развертыванием модели в качестве службы может потребоваться ее профилирование для определения оптимальных требований к ЦП и памяти. Для профилирования модели можно использовать либо пакет SDK, либо интерфейс командной строки. В следующих примерах показано, как профилировать модель с помощью пакета SDK.
 
@@ -852,7 +852,7 @@ print(response.json())
 ## <a name="download-a-model"></a>Загрузка модели
 Если вы хотите загрузить модель для использования в собственной среде выполнения, это можно сделать с помощью следующих команд SDK/CLI:
 
-Tool
+Пакет SDK :
 ```python
 model_path = Model(ws,'mymodel').download()
 ```
@@ -867,6 +867,9 @@ az ml model download --model-id mymodel:1 --target-dir model_folder
 Развертывание модели без кода сейчас находится на этапе предварительной версии и поддерживает следующие платформы машинного обучения:
 
 ### <a name="tensorflow-savedmodel-format"></a>Формат Саведмодел Tensorflow
+Модели Tensorflow необходимо зарегистрировать в **формате саведмодел** для работы без развертывания модели кода.
+
+Сведения о том, как создать Саведмодел, см. по [этой ссылке](https://www.tensorflow.org/guide/saved_model) .
 
 ```python
 from azureml.core import Model
@@ -902,7 +905,7 @@ service_name = 'onnx-mnist-service'
 service = Model.deploy(ws, service_name, [model])
 ```
 
-### <a name="scikit-learn-models"></a>Scikit — изучение моделей
+### <a name="scikit-learn-models"></a>Модели scikit-learn
 
 Не поддерживается развертывание модели кода для всех встроенных типов моделей scikit-учиться.
 
@@ -961,7 +964,7 @@ package = Model.package(ws, [model], inference_config)
 package.wait_for_creation(show_output=True)
 ```
 
-После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Например, 
+После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Пример. 
 
 `Status: Downloaded newer image for myworkspacef78fd10.azurecr.io/package:20190822181338`. 
 
@@ -1074,7 +1077,7 @@ docker kill mycontainer
 
 Дополнительные сведения см. в документации по [WebService. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#delete--) и [model. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#delete--).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)

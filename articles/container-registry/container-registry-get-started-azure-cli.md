@@ -1,20 +1,15 @@
 ---
-title: Краткое руководство. Создание реестра с помощью Azure CLI — реестр контейнеров Azure
+title: Краткое руководство. Создание реестра с помощью Azure CLI
 description: Быстрый способ изучить создание частного реестра контейнеров Docker с помощью Azure CLI.
-services: container-registry
-author: dlepow
-manager: gwallace
-ms.service: container-registry
 ms.topic: quickstart
 ms.date: 01/22/2019
-ms.author: danlep
 ms.custom: seodec18, H1Hack27Feb2017, mvc
-ms.openlocfilehash: 562f8d41e1f91e408263809bdfc78905317912a1
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 551a3659feb39943c9f794484abb6f2da4367f39
+ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73931602"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74455167"
 ---
 # <a name="quickstart-create-a-private-container-registry-using-the-azure-cli"></a>Краткое руководство. Создание закрытого реестра контейнеров с помощью Azure CLI
 

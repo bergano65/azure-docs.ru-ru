@@ -1,6 +1,6 @@
 ---
-title: Image tag best practices
-description: Best practices for tagging and versioning Docker container images when pushing images to and pulling images from an Azure container registry
+title: Рекомендации по тегу образа
+description: Рекомендации по созданию тегов и управлению версиями для образов контейнеров DOCKER при помещении образов в реестр контейнеров Azure и получении образов из него
 author: stevelasker
 ms.topic: article
 ms.date: 07/10/2019
@@ -12,50 +12,50 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/24/2019
 ms.locfileid: "74454998"
 ---
-# <a name="recommendations-for-tagging-and-versioning-container-images"></a>Recommendations for tagging and versioning container images
+# <a name="recommendations-for-tagging-and-versioning-container-images"></a>Рекомендации по отстановке тегов и управления версиями для образов контейнеров
 
-When pushing deploying container images to a container registry and then deploying them, you need a strategy for image tagging and versioning. This article discusses two approaches and where each fits during the container lifecycle:
+При принудительной отправке образов контейнеров в реестр контейнеров и последующем их развертывании необходима стратегия для добавления тегов в образы и управления версиями. В этой статье обсуждаются два подхода и каждый из них помещается во время жизненного цикла контейнера:
 
-* **Stable tags** - Tags that you reuse, for example, to indicate a major or minor version such as *mycontainerimage:1.0*.
-* **Unique tags** - A different tag for each image you push to a registry, such as *mycontainerimage:abc123*.
+* **Стабильные Теги** — теги, которые можно повторно использовать, например, чтобы указать основную или дополнительную версию, например *миконтаинеримаже: 1.0*.
+* **Уникальные Теги** — отдельный тег для каждого изображения, которое вы отправляете в реестр, например *миконтаинеримаже: abc123*.
 
-## <a name="stable-tags"></a>Stable tags
+## <a name="stable-tags"></a>Стабильные Теги
 
-**Recommendation**: Use stable tags to maintain **base images** for your container builds. Avoid deployments with stable tags, because those tags continue to receive updates and can introduce inconsistencies in production environments.
+**Рекомендация**: используйте стабильные теги для обслуживания **базовых образов** для сборок контейнера. Избегайте развертываний с стабильными тегами, так как эти теги продолжают принимать обновления и могут привести к несогласованности в рабочих средах.
 
-*Stable tags* mean a developer, or a build system, can continue to pull a specific tag, which continues to get updates. Stable doesn’t mean the contents are frozen. Rather, stable implies the image should be stable for the intent of that version. To stay “stable”, it might be serviced to apply security patches or framework updates.
+*Стабильные Теги* означают, что разработчик или система сборки могут продолжить извлекать конкретный тег, который продолжает получать обновления. Стабильность не означает, что содержимое заморожено. Напротив, stable означает, что образ должен быть стабильным в целях этой версии. Чтобы остаться "стабильным", он может обслуживаться для применения исправлений безопасности или обновлений платформы.
 
 ### <a name="example"></a>Пример
 
-A framework team ships version 1.0. They know they’ll ship updates, including minor updates. To support stable tags for a given major and minor version, they have two sets of stable tags.
+Группа разработчиков поставляет версию 1,0. Они узнают, что они поставляют обновления, включая незначительные обновления. Для поддержки стабильных тегов для заданной основной и дополнительной версий они имеют два набора стабильных тегов.
 
-* `:1` – a stable tag for the major version. `1` represents the “newest” or “latest” 1.* version.
-* `:1.0`- a stable tag for version 1.0, allowing a developer to bind to updates of 1.0, and not be rolled forward to 1.1 when it is released.
+* `:1` — стабильный тег для основной версии. `1` представляет версию "самый новый" или "последний" 1. *.
+* `:1.0`— стабильный тег для версии 1,0, позволяющий разработчику выполнять привязку к обновлениям 1,0, а также не выполнять накат до 1,1 при его освобождении.
 
-The team also uses the `:latest` tag, which points to the latest stable tag, no matter what the current major version is.
+Группа также использует тег `:latest`, который указывает на последний стабильный тег независимо от текущей основной версии.
 
-When base image updates are available, or any type of servicing release of the framework, images with the stable tags are updated to the newest digest that represents the most current stable release of that version.
+Если доступны базовые обновления образа или любой тип выпуска обслуживания платформы, образы с стабильными тегами обновляются до последнего дайджеста, представляющего самую последнюю версию стабильного выпуска этой версии.
 
-In this case, both the major and minor tags are continually being serviced. From a base image scenario, this allows the image owner to provide serviced images.
+В этом случае постоянно обслуживаются как основной, так и дополнительный Теги. В сценарии базового образа это позволяет владельцу образа предоставлять обслуживаемые образы.
 
-## <a name="unique-tags"></a>Unique tags
+## <a name="unique-tags"></a>Уникальные Теги
 
-**Recommendation**: Use unique tags for **deployments**, especially in an environment that could scale on multiple nodes. You likely want deliberate deployments of a consistent version of components. If your container restarts or an orchestrator scales out more instances, your hosts won’t accidentally pull a newer version, inconsistent with the other nodes.
+**Рекомендация**: Используйте уникальные теги для **развертываний**, особенно в среде, которая может масштабироваться на нескольких узлах. Вам, скорее всего, потребуется преднамеренное развертывание одинаковой версии компонентов. Если контейнер перезапускается или Orchestrator масштабирует больше экземпляров, узлы не будут случайно получать более новую версию, несовместимую с другими узлами.
 
-Unique tagging simply means that every image pushed to a registry has a unique tag. Tags are not reused. There are several patterns you can follow to generate unique tags, including:
+Уникальное Добавление тегов означает, что каждое изображение, отправленное в реестр, имеет уникальный тег. Теги не используются повторно. Существует несколько шаблонов, которые можно использовать для создания уникальных тегов, включая:
 
-* **Date-time stamp** - This approach is fairly common, since you can clearly tell when the image was built. But, how to correlate it back to your build system? Do you have to find the build that was completed at the same time? What time zone are you in? Are all your build systems calibrated to UTC?
-* **Git commit**  – This approach works until you start supporting base image updates. If a base image update happens, your build system  kicks off with the same Git commit as the previous build. However, the base image has new content. In general, a Git commit provides a *semi*-stable tag.
-* **Manifest digest** - Each container image pushed to a container registry is associated with a manifest, identified by a unique SHA-256 hash, or digest. While unique, the digest is long, difficult to read, and uncorrelated with your build environment.
-* **Build ID** - This option may be best since it's likely incremental, and it allows you to correlate back to the specific build to find all the artifacts and logs. However, like a manifest digest, it might be difficult for a human to read.
+* **Метка даты и времени** . Этот подход довольно распространен, так как вы можете четко определить, когда образ был построен. Но как снова сопоставить его с системой сборки? Нужно ли найти сборку, которая была выполнена одновременно? В каком часовом поясе вы используете? Откалиброваны ли все системы сборки в формате UTC?
+* **Фиксация git** — этот подход работает до начала поддержки базовых обновлений образов. Если происходит обновление базового образа, система сборки начинается с той же фиксацией Git, что и в предыдущей сборке. Однако базовый образ содержит новое содержимое. Как правило, фиксация Git предоставляет *частично*стабильный тег.
+* **Дайджест манифеста** — каждый образ контейнера, отправленный в реестр контейнеров, связан с манифестом, определяемым уникальным хэшем SHA-256 или дайджестом. В то время как уникальный дайджест является длинным, сложным для чтения и не связан с средой сборки.
+* **Идентификатор сборки** . Этот параметр может быть лучше, так как он, скорее всего, будет добавочным, и он позволяет сопоставить его с конкретной сборкой, чтобы найти все артефакты и журналы. Однако, как и в случае с дайджестом манифеста, может быть трудно читать человека.
 
-  If your organization has several build systems, prefixing the tag with the build system name is a variation on this option: `<build-system>-<build-id>`. For example, you could differentiate builds from the API team’s Jenkins build system and the web team's Azure Pipelines build system.
+  Если в вашей организации есть несколько систем сборки, в этом параметре можно добавить префикс с именем системы сборки: `<build-system>-<build-id>`. Например, можно отличить сборки от системы сборки Jenkins, созданной группой API, и системы сборки Azure Pipelines в веб-группе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-For a more detailed discussion of the concepts in this article, see the blog post [Docker Tagging: Best practices for tagging and versioning docker images](https://stevelasker.blog/2018/03/01/docker-tagging-best-practices-for-tagging-and-versioning-docker-images/).
+Более подробное описание концепций в этой статье см. в записи блога [Добавление тегов в теги docker: рекомендации по разметке и управлению версиями образов DOCKER](https://stevelasker.blog/2018/03/01/docker-tagging-best-practices-for-tagging-and-versioning-docker-images/).
 
-To help maximize the performance and cost-effective use of your Azure container registry, see [Best practices for Azure Container Registry](container-registry-best-practices.md).
+Чтобы максимально повысить производительность и экономично использовать реестр контейнеров Azure, ознакомьтесь со статьей [рекомендации по использованию реестра контейнеров Azure](container-registry-best-practices.md).
 
 <!-- IMAGES -->
 

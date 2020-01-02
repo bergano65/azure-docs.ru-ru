@@ -51,6 +51,10 @@
       href: concepts-custom-role-definition.md
     - name: Подключение ресурсов
       href: concepts-custom-providers-resourceonboarding.md
+    - name: Политика Azure для связей пользовательских поставщиков
+      href: concepts-custom-providers-built-in-policy.md
+    - name: Политика Azure для связей управляемых приложений
+      href: concepts-managed-applications-built-in-policy.md
 - name: Руководства
   items:
     - name: Настраиваемые поставщики

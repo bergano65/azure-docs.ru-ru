@@ -1,26 +1,26 @@
 ---
-title: Расширенная защита от угроз — база данных Azure для MySQL
+title: Расширенная защита от угроз — портал Azure — база данных Azure для MySQL
 description: Узнайте, как настроить расширенную защиту от угроз для обнаружения аномальных действий базы данных, указывающих на потенциальные угрозы безопасности для базы данных.
 author: bolzmj
 ms.author: mbolz
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 01/24/2019
-ms.openlocfilehash: fe058433cfe4c6c9f89f14d2c74e33ff1b8372ac
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.date: 12/02/2019
+ms.openlocfilehash: 11ac05c710f7daf709ffbc29aebff706aea704d5
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71970484"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74765052"
 ---
-# <a name="advanced-threat-protection-for-azure-database-for-mysql"></a>Расширенная защита от угроз для Базы данных Azure для MySQL
+# <a name="advanced-threat-protection-for-azure-database-for-mysql"></a>Расширенная защита от угроз для службы "База данных Azure для MySQL"
 
 Служба "Расширенная защита от угроз" для Базы данных Azure для MySQL позволяет выявить подозрительную активность, указывающую на необычные и потенциально опасные попытки получить доступ к базам данных или воспользоваться ими.
 
 Расширенная защита от угроз входит в состав предложения "Расширенная защита данных", которое представляет собой унифицированный пакет расширенных возможностей безопасности. Перейти к службе "Расширенная защита от угроз" и управлять ею можно на [портале Azure](https://portal.azure.com). Она сейчас доступна в предварительной версии.
 
 > [!NOTE]
-> Компонент "Расширенная защита от угроз" **недоступен** в следующих регионах Azure для национальных облаков и облаков для государственных организаций: US Gov (Техас), US Gov (Аризона), US Gov (Айова), US Gov (Вирджиния), восточный регион US DoD, центральный регион US DoD, Центральная Германия, Северная Германия, Восточный Китай, Восточный Китай — 2. Сведения об общей доступности продукта по регионам см. на [этой странице](https://azure.microsoft.com/global-infrastructure/services/).
+> Компонент "Расширенная защита от угроз" **недоступен** в следующих регионах облака правительства и национального облака Azure: US Gov (Техас), US Gov (Аризона), US Gov (Айова), US Gov (Вирджиния), восточный регион US DoD, центральный регион US DoD, Центральная Германия, Северная Германия, Восточный Китай, Восточный Китай 2. Сведения об общей доступности продукта по регионам см. на [этой странице](https://azure.microsoft.com/global-infrastructure/services/).
 >
 
 > [!NOTE]
@@ -61,7 +61,7 @@ ms.locfileid: "71970484"
    ![Оповещение об обнаружении угроз](./media/howto-database-threat-protection-portal/threat-detection-alert-asc.png)
    
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
 * Дополнительные сведения о ценах см. на [странице цен на Базу данных Azure для MySQL](https://azure.microsoft.com/pricing/details/mysql/).  

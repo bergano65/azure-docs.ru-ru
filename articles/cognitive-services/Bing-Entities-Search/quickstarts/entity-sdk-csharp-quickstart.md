@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Поиск сущностей с помощью пакета SDK Поиска сущностей Bing для C#
+title: Краткое руководство. Поиск сущностей с помощью пакета SDK для C# — Поиск сущностей Bing
 titleSuffix: Azure Cognitive Services
 description: Используйте это краткое руководство для поиска сущностей с помощью пакета SDK Поиска сущностей Bing для C#.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 07/15/2019
 ms.author: aahi
-ms.openlocfilehash: 20f76c0adfcbd756c71769979214ea975cb5d6d9
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: f9036e78934ac14017a0437583109c91732ce4b3
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360582"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74323824"
 ---
 # <a name="send-a-search-request-with-the-bing-entity-search-sdk-for-c"></a>Отправка запросов для поиска в пакете SDK Поиска сущностей Bing для C#
 

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 10/29/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: eeb1dc44341768984bd6e337a2fe65a277f5aa77
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 1ae8645f3e782305ed5e1b7847b019a978e48dde
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73581213"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74977783"
 ---
 # <a name="protect-your-content-with-media-services-dynamic-encryption"></a>Защита содержимого с помощью динамического шифрования служб мультимедиа
 
@@ -159,7 +159,7 @@ HLS/КМАФ + FairPlay (включая HEVC/H. 265) поддерживаетс�
 
 Общие браузеры поддерживают следующие клиенты DRM:
 
-|"Обзор"|Шифрование|
+|Браузер|Шифрование|
 |---|---|
 |Chrome|Widevine|
 |Microsoft ребро, Internet Explorer 11|PlayReady|
@@ -236,7 +236,7 @@ HLS/КМАФ + FairPlay (включая HEVC/H. 265) поддерживаетс�
 * `StreamingPolicyWidevineConfiguration.CustomLicenseAcquisitionUrlTemplate`: то же, что и предыдущий шаблон, только для Widevine. 
 * `StreamingPolicyFairPlayConfiguration.CustomLicenseAcquisitionUrlTemplate`: то же, что и предыдущий шаблон, только для FairPlay.  
 
-Например:
+Пример.
 
 ```csharp
 streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://mykeyserver.hostname.com/envelopekey/{AlternativeMediaId}/{ContentKeyId}";
@@ -244,7 +244,10 @@ streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://myk
 
 `ContentKeyId` имеет значение запрошенного ключа. Вы можете использовать `AlternativeMediaId`, если хотите сопоставлять запрос с сущностью на стороне. Например, `AlternativeMediaId` можно использовать для поиска разрешений.
 
- Примеры использования пользовательских лицензий и URL-адресов для получения ключей см. в разделе [политики потоковой передачи — создание](https://docs.microsoft.com/rest/api/media/streamingpolicies/create).
+Примеры использования пользовательских лицензий и URL-адресов для получения ключей см. в разделе [политики потоковой передачи — создание](https://docs.microsoft.com/rest/api/media/streamingpolicies/create).
+
+> [!NOTE]
+> Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
 
 ## <a name="troubleshoot"></a>Устранение неполадок
 
@@ -263,4 +266,4 @@ streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://myk
 * [Разработка системы защиты содержимого с несколькими DRM с помощью контроля доступа](design-multi-drm-system-with-access-control.md)
 * [Шифрование на стороне хранилища](storage-account-concept.md#storage-side-encryption)
 * [Часто задаваемые вопросы](frequently-asked-questions.md)
-* [Обработчик JSON Web Token](https://docs.microsoft.com/dotnet/framework/security/json-web-token-handler)
+* [Обработчик веб-токенов JSON](https://docs.microsoft.com/dotnet/framework/security/json-web-token-handler)

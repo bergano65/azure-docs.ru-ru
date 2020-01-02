@@ -3,19 +3,19 @@ title: Общие сведения об административных рол�
 description: Сведения о ролях выставления счетов для учетных записей выставления счетов в Azure для клиентских соглашений Майкрософт.
 author: amberbhargava
 manager: amberbhargava
-ms.service: billing
+ms.service: cost-management-billing
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2019
 ms.author: banders
-ms.openlocfilehash: 8b4aeaa885b18f433c366788af350a7fe9c064e4
-ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
+ms.openlocfilehash: f143297ce3a3e41174cbd6cf59ca3df29f8ebc63
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71709481"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74223510"
 ---
 # <a name="understand-microsoft-customer-agreement-administrative-roles-in-azure"></a>Сведения об административных ролях клиентских соглашений Майкрософт в Azure
 

@@ -1,6 +1,6 @@
 ---
 title: Схемы журналов диагностики служб мультимедиа Azure — Azure
-description: В этой статье показаны схемы журналов диагностики служб мультимедиа Azure.
+description: В этой статье описываются схемы журналов диагностики служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/20/2019
 ms.author: juliako
-ms.openlocfilehash: f95258368664aabeb89426afb83854378c0e4429
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 5e416087df6c27eff42db487e90ff908d7d49df8
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71261083"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74977698"
 ---
 # <a name="diagnostic-logs-schemas"></a>Схемы для журналов диагностики
 
@@ -34,11 +34,11 @@ ms.locfileid: "71261083"
 
 ## <a name="key-delivery-log-schema"></a>Схема журнала доставки ключей
 
-### <a name="properties"></a>Свойства
+### <a name="properties"></a>properties
 
 Эти свойства относятся к схеме журнала доставки ключей.
 
-|Название|Описание|
+|Name|Описание|
 |---|---|
 |keyId|ИДЕНТИФИКАТОР запрошенного ключа.|
 |keyType|Может принимать одно из следующих значений: "Clear" (без шифрования), "FairPlay", "PlayReady" или "Widevine".|
@@ -108,6 +108,10 @@ ms.locfileid: "71261083"
 } 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="additional-notes"></a>Дополнительные замечания
+
+* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Мониторинг метрик и журналов диагностики служб мультимедиа](media-services-metrics-diagnostic-logs.md)

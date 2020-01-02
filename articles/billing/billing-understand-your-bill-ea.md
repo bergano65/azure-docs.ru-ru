@@ -4,19 +4,19 @@ description: Узнайте, как читать и интерпретирова
 author: adpick
 manager: dougeby
 tags: billing
-ms.service: billing
+ms.service: cost-management-billing
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/01/2019
+ms.date: 12/04/2019
 ms.author: banders
-ms.openlocfilehash: f89d7935af10ebb477125c598a01278a4ceef0bd
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: cc4b552143917f5a9ca66ad402cca79956186d08
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71326944"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74841275"
 ---
 # <a name="understand-your-azure-enterprise-agreement-bill"></a>Общие сведения о счете по соглашению Azure Enterprise
 

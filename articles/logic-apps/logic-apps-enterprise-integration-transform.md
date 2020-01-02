@@ -1,21 +1,19 @@
 ---
-title: Преобразование XML из одного формата в другой с помощью Azure Logic Apps | Документация Майкрософт
+title: Преобразование XML между форматами
 description: Создание преобразований или сопоставлений, которые изменяют форматы данных XML в Azure Logic Apps с Пакетом интеграции Enterprise.
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
 author: divyaswarnkar
 ms.author: divswa
-ms.reviewer: jonfan, estfan, LADocs
+ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
-ms.assetid: add01429-21bc-4bab-8b23-bc76ba7d0bde
 ms.date: 07/08/2016
-ms.openlocfilehash: 4ebd96613378bbd907beb5109343a2427b1300b0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 500769a39ba7658b35c1abb80101f6234170c941
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60427290"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74792378"
 ---
 # <a name="create-maps-that-transform-xml-between-formats-in-azure-logic-apps-with-enterprise-integration-pack"></a>Создание преобразований или сопоставлений, которые изменяют форматы данных XML в Azure Logic Apps с Пакетом интеграции Enterprise
 
@@ -38,7 +36,7 @@ ms.locfileid: "60427290"
 
 Теперь, когда предварительные требования выполнены, пора создать приложение логики.  
 
-1. Создайте приложение логики и [свяжите его с учетной записью интеграции](../logic-apps/logic-apps-enterprise-integration-accounts.md "Узнайте, как связать учетную запись интеграции с приложением логики"), содержащей карту.
+1. Создайте приложение логики и [свяжите его с учетной записью интеграции](../logic-apps/logic-apps-enterprise-integration-accounts.md "Сведения о связывании учетной записи интеграции с приложением логики") , содержащей карту.
 2. Добавление триггера **запроса** в приложение логики  
    ![](./media/logic-apps-enterprise-integration-transforms/transform-1.png)    
 3. Добавьте действие **Преобразовать XML**, щелкнув **Добавить действие** .  
@@ -135,7 +133,7 @@ ms.locfileid: "60427290"
 
 
 
-## <a name="learn-more"></a>Подробнее
-* [Обзор пакета интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Обзор пакета интеграции Enterprise")  
-* [Узнайте больше о картах](../logic-apps/logic-apps-enterprise-integration-maps.md "Узнайте о картах интеграции Enterprise")  
+## <a name="learn-more"></a>Дополнительные сведения
+* [Дополнительные сведения о Пакете интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Дополнительные сведения о Пакет интеграции Enterprise")  
+* [Дополнительные сведения о сопоставлениях](../logic-apps/logic-apps-enterprise-integration-maps.md "Сведения о картах интеграции Enterprise")  
 

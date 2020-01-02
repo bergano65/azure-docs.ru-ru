@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 4f8663d59c263b6fa24e23e286f8eb4e75b888da
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 96966e4b9db5af40eee233d746d5790bbb769455
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73159430"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227499"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mcm"></a>Руководство. Интеграция Azure Active Directory с МСМ
 
@@ -186,7 +186,7 @@ ms.locfileid: "73159430"
 В этом разделе описано, как создать пользователя Britta Simon в приложении MCM. Обратитесь к  [группе поддержки MCM](https://mcmtechnology.com/support/), чтобы добавить пользователей на платформу MCM. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 >[!NOTE]
->Вы можете использовать любые другие средства создания учетной записи пользователя MCM или API, предоставляемые MCM для подготовки учетных записей пользователя AAD.
+>Вы можете использовать любые другие средства создания учетной записи пользователя MCM или API, предоставляемые MCM, для подготовки учетных записей пользователя AAD.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 

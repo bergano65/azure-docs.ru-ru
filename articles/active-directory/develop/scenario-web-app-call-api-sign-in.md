@@ -1,6 +1,6 @@
 ---
-title: Веб-приложение, вызывающее веб-API (вход) — платформа Microsoft Identity
-description: Узнайте, как создать веб-приложение, вызывающее веб-API (вход)
+title: Удаление учетных записей из кэша при входе — платформа Microsoft Identity | Службы
+description: Узнайте, как удалить учетную запись из кэша маркеров при выходе
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -15,14 +15,14 @@ ms.date: 09/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cb0190f76ddce79012a5bf97e2d813f40f9f018
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 375382b1245186197657c5067e3c5b4ec2b15655
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72596376"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74961664"
 ---
-# <a name="web-app-that-calls-web-apis---sign-in"></a>Веб-приложение, вызывающее веб-API — вход
+# <a name="remove-accounts-from-the-cache-on-global-sign-out"></a>Удаление учетных записей из кэша при глобальном выходе
 
 Вы уже знакомы с добавлением единого входа в веб-приложение. Вы узнаете, что в [веб-приложении, в котором входят пользователи, — добавление входа в систему](scenario-web-app-sign-user-sign-in.md).
 

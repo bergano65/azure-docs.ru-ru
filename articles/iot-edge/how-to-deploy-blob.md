@@ -1,5 +1,5 @@
 ---
-title: Deploy the Azure Blob Storage module to devices - Azure IoT Edge | Microsoft Docs
+title: Развертывание хранилища BLOB-объектов в модуле на устройстве. Azure IoT Edge
 description: Разверните модуль хранилища BLOB-объектов Azure на вашем устройстве IoT Edge для хранения данных на границе.
 author: arduppal
 ms.author: arduppal
@@ -8,26 +8,26 @@ ms.topic: conceptual
 ms.service: iot-edge
 ms.reviewer: arduppal
 manager: mchad
-ms.openlocfilehash: e5241e078cd8d36a9e43b4b55a649c1e24c85345
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: b89532038b00e28eb7c43232683349652af6bc3f
+ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74456862"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74665871"
 ---
-# <a name="deploy-the-azure-blob-storage-on-iot-edge-module-to-your-device"></a>Deploy the Azure Blob Storage on IoT Edge module to your device
+# <a name="deploy-the-azure-blob-storage-on-iot-edge-module-to-your-device"></a>Развертывание хранилища BLOB-объектов Azure в модуле IoT Edge на устройстве
 
-There are several ways to deploy modules to an IoT Edge device and all of them work for Azure Blob Storage on IoT Edge modules. Два простейших метода — это портал Azure или шаблоны Visual Studio Code.
+Существует несколько способов развертывания модулей на IoT Edge устройстве, и все они работают для хранилища BLOB-объектов Azure в модулях IoT Edge. Два простейших метода — это портал Azure или шаблоны Visual Studio Code.
 
 ## <a name="prerequisites"></a>Технические условия
 
 - [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) в подписке Azure.
 - [Устройство IoT Edge](how-to-register-device.md) с установленной средой выполнения IoT Edge.
-- [Visual Studio Code](https://code.visualstudio.com/) and the [Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) if deploying from Visual Studio Code.
+- [Visual Studio Code](https://code.visualstudio.com/) и [средства Azure IOT](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) при развертывании из Visual Studio Code.
 
-## <a name="deploy-from-the-azure-portal"></a>Deploy from the Azure portal
+## <a name="deploy-from-the-azure-portal"></a>Развертывание из портал Azure
 
-The Azure portal guides you through creating a deployment manifest and pushing the deployment to an IoT Edge device.
+В портал Azure описывается создание манифеста развертывания и принудительная отправка развертывания на устройство IoT Edge.
 
 ### <a name="select-your-device"></a>Выбор устройства
 
@@ -38,23 +38,23 @@ The Azure portal guides you through creating a deployment manifest and pushing t
 
 ### <a name="configure-a-deployment-manifest"></a>Настройка манифеста развертывания
 
-Манифест развертывания — это документ JSON, в котором определены развертываемые модули, способ передачи данных между этими модулями и требуемые свойства для двойников модулей. The Azure portal has a wizard that walks you through creating a deployment manifest, instead of building the JSON document manually. В этом мастере есть три шага: **Добавление модулей**, **Указание маршрутов** и **Просмотр развертываний**.
+Манифест развертывания — это документ JSON, в котором определены развертываемые модули, способ передачи данных между этими модулями и требуемые свойства для двойников модулей. В портал Azure имеется мастер, который поможет вам создать манифест развертывания вместо создания документа JSON вручную. В этом мастере есть три шага: **Добавление модулей**, **Указание маршрутов** и **Просмотр развертываний**.
 
 #### <a name="add-modules"></a>Добавление модулей
 
 1. В разделе **Модули развертывания** на этой странице выберите **Добавить**.
 
-1. From the types of modules in the drop-down list, select **IoT Edge Module**.
+1. В раскрывающемся списке типы модулей выберите **IOT Edge Module (модуль**).
 
-1. Provide a name for the module and then specify the container image:
+1. Укажите имя модуля, а затем укажите образ контейнера:
 
-   - **Name** - azureblobstorageoniotedge
-   - **Image URI** - mcr.microsoft.com/azure-blob-storage:latest
+   - **Имя** — азуреблобсторажеониотедже
+   - **URI изображения** — MCR.Microsoft.com/Azure-Blob-Storage:Latest
 
    > [!IMPORTANT]
-   > Azure IoT Edge is case-sensitive when you make calls to modules, and the Storage SDK also defaults to lowercase. Although the name of the module in the [Azure Marketplace](how-to-deploy-modules-portal.md#deploy-modules-from-azure-marketplace) is **AzureBlobStorageonIoTEdge**, changing the name to lowercase helps to ensure that your connections to the Azure Blob Storage on IoT Edge module aren't interrupted.
+   > Azure IoT Edge учитывает регистр при вызове модулей, а пакет SDK хранилища также по умолчанию имеет нижний регистр. Хотя имя модуля в [Azure Marketplace](how-to-deploy-modules-portal.md#deploy-modules-from-azure-marketplace) — **азуреблобсторажеониотедже**, изменение имени на строчное помогает гарантировать, что подключения к хранилищу BLOB-объектов Azure в модуле IOT EDGE не прерываются.
 
-1. The default **Container Create Options** values define the port bindings that your container needs, but you also need to add your storage account information and a mount for the storage on your device. Replace the default JSON in the portal with the JSON below:
+1. Значения **параметров создания контейнера** по умолчанию определяют привязки портов, необходимые для контейнера, но также необходимо добавить сведения об учетной записи хранения и подключение к хранилищу на устройстве. Замените JSON по умолчанию на портале следующим JSON:
 
    ```json
    {
@@ -75,24 +75,24 @@ The Azure portal guides you through creating a deployment manifest and pushing t
 
 1. Обновите в скопированном JSON-файле следующие сведения:
 
-   - Замените `<your storage account name>` запоминаемым именем. Account names should be 3 to 24 characters long, with lowercase letters and numbers. No spaces.
+   - Замените `<your storage account name>` запоминаемым именем. Длина имени учетной записи должна составлять от 3 до 24 символов, а строчные буквы и цифры. Без пробелов.
 
    - Замените `<your storage account key>` на 64-байтовый ключ Base64. Вы можете создать ключ с помощью таких средств, как [GeneratePlus](https://generate.plus/en/base64). Вы будете использовать эти учетные данные для доступа к хранилищу BLOB-объектов из других модулей.
 
-   - Replace `<storage mount>` according to your container operating system. Укажите имя [тома](https://docs.docker.com/storage/volumes/) или абсолютный путь к каталогу на устройстве IoT Edge, где модуль BLOB-объектов должен хранить данные. The storage mount maps a location on your device that you provide to a set location in the module.
+   - Замените `<storage mount>` в соответствии с операционной системой контейнера. Укажите имя [тома](https://docs.docker.com/storage/volumes/) или абсолютный путь к каталогу на устройстве IoT Edge, где модуль BLOB-объектов должен хранить данные. Подключение к хранилищу сопоставляет расположение на вашем устройстве, которое вы задаете в заданном расположении в модуле.
 
-     - For Linux containers, the format is *\<storage path or volume>:/blobroot*. Например:
-         - use [volume mount](https://docs.docker.com/storage/volumes/): **my-volume:/blobroot** 
-         - use [bind mount](https://docs.docker.com/storage/bind-mounts/): **/srv/containerdata:/blobroot**. Make sure to follow the steps to [grant directory access to the container user](how-to-store-data-blob.md#granting-directory-access-to-container-user-on-linux)
-     - For Windows containers, the format is *\<storage path or volume>:C:/BlobRoot*. Например:
-         - use [volume mount](https://docs.docker.com/storage/volumes/): **my-volume:C:/blobroot**. 
-         - use [bind mount](https://docs.docker.com/storage/bind-mounts/): **C:/ContainerData:C:/BlobRoot**.
-         - Instead of using your local drive, you can map your SMB network location, for more information see [using SMB share as your local storage](how-to-store-data-blob.md#using-smb-share-as-your-local-storage)
+     - Для контейнеров Linux используется формат *\<пути к хранилищу или > тома:/блобрут*. Например:
+         - использование [подключения тома](https://docs.docker.com/storage/volumes/): **My-Volume:/блобрут** 
+         - Используйте [Подключение BIND](https://docs.docker.com/storage/bind-mounts/): **/СРВ/контаинердата:/блобрут**. Обязательно выполните действия по [предоставлению доступа к каталогу пользователю контейнера](how-to-store-data-blob.md#granting-directory-access-to-container-user-on-linux) .
+     - Для контейнеров Windows используется формат *\<путь к хранилищу или > томов: C:/блобрут*. Например:
+         - Используйте [Подключение тома](https://docs.docker.com/storage/volumes/): **My-Volume: C:/блобрут**. 
+         - Используйте [BIND Mount](https://docs.docker.com/storage/bind-mounts/): **c:/контаинердата: c:/блобрут**.
+         - Вместо использования локального диска можно назначить сетевое расположение SMB. Дополнительные сведения см. в разделе [использование общего ресурса SMB в качестве локального хранилища](how-to-store-data-blob.md#using-smb-share-as-your-local-storage) .
 
      > [!IMPORTANT]
-     > Do not change the second half of the storage mount value, which points to a specific location in the module. The storage mount should always end with **:/blobroot** for Linux containers and **:C:/BlobRoot** for Windows containers.
+     > Не изменяйте вторую половину значения подключения к хранилищу, которое указывает на определенное место в модуле. Подключение к хранилищу всегда должно заканчиваться на **:/блобрут** для контейнеров Linux и **: C:/Блобрут** для контейнеров Windows.
 
-1. Set [deviceToCloudUploadProperties](how-to-store-data-blob.md#devicetoclouduploadproperties) and [deviceAutoDeleteProperties](how-to-store-data-blob.md#deviceautodeleteproperties) properties for your module by copying the following JSON and pasting it into the **Set module twin's desired properties** box. Configure each property with an appropriate value, save it, and continue with the deployment. If you are using the IoT Edge simulator, set the values to the related environment variables for these properties, which you can find in the explanation section of [deviceToCloudUploadProperties](how-to-store-data-blob.md#devicetoclouduploadproperties) and [deviceAutoDeleteProperties](how-to-store-data-blob.md#deviceautodeleteproperties).
+1. Задайте свойства [девицетоклаудуплоадпропертиес](how-to-store-data-blob.md#devicetoclouduploadproperties) и [девицеаутоделетепропертиес](how-to-store-data-blob.md#deviceautodeleteproperties) для модуля, скопировав следующий код JSON и вставляя его в поле **требуемые свойства двойника модуля** . Настройте каждое свойство с соответствующим значением, сохраните его и продолжайте развертывание. Если вы используете симулятор IoT Edge, задайте значения для соответствующих переменных среды для этих свойств, которые можно найти в разделе пояснения в [девицетоклаудуплоадпропертиес](how-to-store-data-blob.md#devicetoclouduploadproperties) и [девицеаутоделетепропертиес](how-to-store-data-blob.md#deviceautodeleteproperties).
 
    ```json
    {
@@ -118,9 +118,9 @@ The Azure portal guides you through creating a deployment manifest and pushing t
 
       ```
 
-   ![set container create options, deviceAutoDeleteProperties and deviceToCloudUploadProperties properties](./media/how-to-deploy-blob/iotedge-custom-module.png)
+   ![Установка параметров создания контейнера, свойств Девицеаутоделетепропертиес и Девицетоклаудуплоадпропертиес](./media/how-to-deploy-blob/iotedge-custom-module.png)
 
-   For information on configuring deviceToCloudUploadProperties and deviceAutoDeleteProperties after your module has been deployed, see [Edit the Module Twin](https://github.com/Microsoft/vscode-azure-iot-toolkit/wiki/Edit-Module-Twin). For more information about desired properties, see [Define or update desired properties](module-composition.md#define-or-update-desired-properties).
+   Сведения о настройке Девицетоклаудуплоадпропертиес и Девицеаутоделетепропертиес после развертывания модуля см. [в разделе изменение модуля двойника](https://github.com/Microsoft/vscode-azure-iot-toolkit/wiki/Edit-Module-Twin). Дополнительные сведения о требуемых свойствах см. в разделе [Определение или обновление требуемых свойств](module-composition.md#define-or-update-desired-properties).
 
 1. Щелкните **Сохранить**.
 
@@ -128,15 +128,15 @@ The Azure portal guides you through creating a deployment manifest and pushing t
 
 #### <a name="specify-routes"></a>Настройка маршрутов
 
-Keep the default routes, and select **Next** to continue to the review section.
+Сохранить маршруты по умолчанию и нажать кнопку **Далее** , чтобы перейти к разделу "Проверка".
 
 #### <a name="review-deployment"></a>Проверка развертывания
 
-В разделе обзорной информации вы увидите манифест развертывания в формате JSON, который был создан на основе параметров, выбранных вами в двух предыдущих разделах. There are also two modules declared that you didn't add: **$edgeAgent** and **$edgeHub**. Эти два модуля составляют [среду выполнения IoT Edge](iot-edge-runtime.md) и являются обязательными для каждого развертывания.
+В разделе обзорной информации вы увидите манифест развертывания в формате JSON, который был создан на основе параметров, выбранных вами в двух предыдущих разделах. Также есть два объявленных модуля, которые не были добавлены: **$edgeAgent** и **$edgeHub**. Эти два модуля составляют [среду выполнения IoT Edge](iot-edge-runtime.md) и являются обязательными для каждого развертывания.
 
 Просмотрите сведения о развертывании, а затем выберите **Отправить**.
 
-### <a name="verify-your-deployment"></a>Verify your deployment
+### <a name="verify-your-deployment"></a>Проверка развертывания
 
 Сразу после отправки развертывания можно вернуться на страницу **IoT Edge** Центра Интернета вещей.
 
@@ -145,9 +145,9 @@ Keep the default routes, and select **Next** to continue to the review section.
 
 Запуск модуля на устройстве может занять несколько секунд. Затем информация о нем передается в Центр Интернета вещей. Обновите страницу, чтобы увидеть обновленное состояние.
 
-## <a name="deploy-from-visual-studio-code"></a>Deploy from Visual Studio Code
+## <a name="deploy-from-visual-studio-code"></a>Развертывание из Visual Studio Code
 
-Azure IoT Edge предоставляет шаблоны в Visual Studio Code для разработки решений для границы. Use the following steps to create a new IoT Edge solution with a blob storage module and to configure the deployment manifest.
+Azure IoT Edge предоставляет шаблоны в Visual Studio Code для разработки решений для границы. Выполните следующие действия, чтобы создать новое IoT Edge решение с модулем хранилища BLOB-объектов и настроить манифест развертывания.
 
 1. Выберите **Представление** > **Палитра команд**.
 
@@ -159,19 +159,19 @@ Azure IoT Edge предоставляет шаблоны в Visual Studio Code �
 
    | Поле | Value |
    | ----- | ----- |
-   | Выбор папки | Choose the location on your development machine for Visual Studio Code to create the solution files. |
+   | Выбор папки | Выберите расположение на компьютере разработки, чтобы Visual Studio Code создать файлы решения. |
    | Введите название решения. | Введите описательное имя решения или примите имя по умолчанию **EdgeSolution**. |
    | Выбор шаблона модуля | Выберите **Existing Module (Enter full image URL)** (Имеющийся модуль (введите полный URL-адрес образа)). |
-   | Указание имени модуля | Enter an all-lowercase name for your module, like **azureblobstorageoniotedge**.<br /><br />В модуле IoT Edge очень важно использовать знаки нижнего регистра для имени хранилища BLOB-объектов Azure. IoT Edge учитывает регистр при ссылке на модули, а название пакета SDK службы хранилища по умолчанию преобразовывается в нижний регистр. |
+   | Указание имени модуля | Введите строчное имя для модуля, например **азуреблобсторажеониотедже**.<br /><br />В модуле IoT Edge очень важно использовать знаки нижнего регистра для имени хранилища BLOB-объектов Azure. IoT Edge учитывает регистр при ссылке на модули, а название пакета SDK службы хранилища по умолчанию преобразовывается в нижний регистр. |
    | Указание образа Docker для модуля | Укажите универсальный код ресурса (URI) образа: **mcr.microsoft.com/azure-blob-storage:latest**. |
 
    Visual Studio Code принимает предоставленные сведения, создает решение IoT Edge, а затем загружает его в новом окне. Шаблон решения создает шаблон манифеста развертывания, который содержит образ модуля хранилища BLOB-объектов, но вам нужно настроить параметры создания модуля.
 
 1. Откройте *deployment.template.json* в рабочей области нового решения и найдите раздел **modules**. Внесите следующие изменения конфигурации.
 
-   1. Delete the **SimulatedTemperatureSensor** module, as it's not necessary for this deployment.
+   1. Удалите модуль **симулатедтемпературесенсор** , так как он не требуется для этого развертывания.
 
-   1. Copy and paste the following code into the `createOptions` field:
+   1. Скопируйте и вставьте следующий код в поле `createOptions`:
 
       ```json
       "Env":[
@@ -186,27 +186,27 @@ Azure IoT Edge предоставляет шаблоны в Visual Studio Code �
       }
       ```
 
-      ![Update module createOptions - Visual Studio Code](./media/how-to-deploy-blob/create-options.png)
+      ![Креатеоптионс модуля обновления — Visual Studio Code](./media/how-to-deploy-blob/create-options.png)
 
-1. Замените `<your storage account name>` запоминаемым именем. Account names should be 3 to 24 characters long, with lowercase letters and numbers. No spaces.
+1. Замените `<your storage account name>` запоминаемым именем. Длина имени учетной записи должна составлять от 3 до 24 символов, а строчные буквы и цифры. Без пробелов.
 
 1. Замените `<your storage account key>` на 64-байтовый ключ Base64. Вы можете создать ключ с помощью таких средств, как [GeneratePlus](https://generate.plus/en/base64). Вы будете использовать эти учетные данные для доступа к хранилищу BLOB-объектов из других модулей.
 
-1. Replace `<storage mount>` according to your container operating system. Укажите имя [тома](https://docs.docker.com/storage/volumes/) или абсолютный путь к каталогу на устройстве IoT Edge, где модуль BLOB-объектов должен хранить данные. The storage mount maps a location on your device that you provide to a set location in the module.  
+1. Замените `<storage mount>` в соответствии с операционной системой контейнера. Укажите имя [тома](https://docs.docker.com/storage/volumes/) или абсолютный путь к каталогу на устройстве IoT Edge, где модуль BLOB-объектов должен хранить данные. Подключение к хранилищу сопоставляет расположение на вашем устройстве, которое вы задаете в заданном расположении в модуле.  
 
       
-     - For Linux containers, the format is *\<storage path or volume>:/blobroot*. Например:
-         - use [volume mount](https://docs.docker.com/storage/volumes/): **my-volume:/blobroot** 
-         - use [bind mount](https://docs.docker.com/storage/bind-mounts/): **/srv/containerdata:/blobroot**. Make sure to follow the steps to [grant directory access to the container user](how-to-store-data-blob.md#granting-directory-access-to-container-user-on-linux)
-     - For Windows containers, the format is *\<storage path or volume>:C:/BlobRoot*. Например:
-         - use [volume mount](https://docs.docker.com/storage/volumes/): **my-volume:C:/blobroot**. 
-         - use [bind mount](https://docs.docker.com/storage/bind-mounts/): **C:/ContainerData:C:/BlobRoot**.
-         - Instead of using your local drive, you can map your SMB network location, for more information see [using SMB share as your local storage](how-to-store-data-blob.md#using-smb-share-as-your-local-storage)
+     - Для контейнеров Linux используется формат *\<пути к хранилищу или > тома:/блобрут*. Например:
+         - использование [подключения тома](https://docs.docker.com/storage/volumes/): **My-Volume:/блобрут** 
+         - Используйте [Подключение BIND](https://docs.docker.com/storage/bind-mounts/): **/СРВ/контаинердата:/блобрут**. Обязательно выполните действия по [предоставлению доступа к каталогу пользователю контейнера](how-to-store-data-blob.md#granting-directory-access-to-container-user-on-linux) .
+     - Для контейнеров Windows используется формат *\<путь к хранилищу или > томов: C:/блобрут*. Например:
+         - Используйте [Подключение тома](https://docs.docker.com/storage/volumes/): **My-Volume: C:/блобрут**. 
+         - Используйте [BIND Mount](https://docs.docker.com/storage/bind-mounts/): **c:/контаинердата: c:/блобрут**.
+         - Вместо использования локального диска можно назначить сетевое расположение SMB. Дополнительные сведения см. в разделе [использование общего ресурса SMB в качестве локального хранилища](how-to-store-data-blob.md#using-smb-share-as-your-local-storage) .
 
      > [!IMPORTANT]
-     > Do not change the second half of the storage mount value, which points to a specific location in the module. The storage mount should always end with **:/blobroot** for Linux containers and **:C:/BlobRoot** for Windows containers.
+     > Не изменяйте вторую половину значения подключения к хранилищу, которое указывает на определенное место в модуле. Подключение к хранилищу всегда должно заканчиваться на **:/блобрут** для контейнеров Linux и **: C:/Блобрут** для контейнеров Windows.
 
-1. Configure [deviceToCloudUploadProperties](how-to-store-data-blob.md#devicetoclouduploadproperties) and [deviceAutoDeleteProperties](how-to-store-data-blob.md#deviceautodeleteproperties) for your module by adding the following JSON to the *deployment.template.json* file. Configure each property with an appropriate value and save the file. If you are using the IoT Edge simulator, set the values to the related environment variables for these properties, which you can find in the explanation section of [deviceToCloudUploadProperties](how-to-store-data-blob.md#devicetoclouduploadproperties) and [deviceAutoDeleteProperties](how-to-store-data-blob.md#deviceautodeleteproperties)
+1. Настройте [девицетоклаудуплоадпропертиес](how-to-store-data-blob.md#devicetoclouduploadproperties) и [девицеаутоделетепропертиес](how-to-store-data-blob.md#deviceautodeleteproperties) для модуля, добавив следующий код JSON в файл *Deployment. Template. JSON* . Настройте каждое свойство с соответствующим значением и сохраните файл. Если вы используете симулятор IoT Edge, задайте значения для соответствующих переменных среды для этих свойств, которые можно найти в разделе пояснения в [девицетоклаудуплоадпропертиес](how-to-store-data-blob.md#devicetoclouduploadproperties) и [девицеаутоделетепропертиес](how-to-store-data-blob.md#deviceautodeleteproperties) .
 
    ```json
    "<your azureblobstorageoniotedge module name>":{
@@ -231,21 +231,21 @@ Azure IoT Edge предоставляет шаблоны в Visual Studio Code �
    }
    ```
 
-   ![set desired properties for azureblobstorageoniotedge - Visual Studio Code](./media/how-to-deploy-blob/devicetocloud-deviceautodelete.png)
+   ![Настройка требуемых свойств для азуреблобсторажеониотедже-Visual Studio Code](./media/how-to-deploy-blob/devicetocloud-deviceautodelete.png)
 
-   For information on configuring deviceToCloudUploadProperties and deviceAutoDeleteProperties after your module has been deployed, see [Edit the Module Twin](https://github.com/Microsoft/vscode-azure-iot-toolkit/wiki/Edit-Module-Twin). For more information about container create options, restart policy, and desired status, see [EdgeAgent desired properties](module-edgeagent-edgehub.md#edgeagent-desired-properties).
+   Сведения о настройке Девицетоклаудуплоадпропертиес и Девицеаутоделетепропертиес после развертывания модуля см. [в разделе изменение модуля двойника](https://github.com/Microsoft/vscode-azure-iot-toolkit/wiki/Edit-Module-Twin). Дополнительные сведения о параметрах создания контейнера, перезапуске политики и требуемом состоянии см. в разделе [EdgeAgent требуемые свойства](module-edgeagent-edgehub.md#edgeagent-desired-properties).
 
 1. Сохраните файл *deployment.template.json*.
 
 1. Щелкните правой кнопкой мыши **deployment.template.json** и выберите **Создать манифест развертывания IoT Edge**.
 
-1. Visual Studio Code takes the information that you provided in *deployment.template.json* and uses it to create a new deployment manifest file. Манифест развертывания создается в новой папке **config** в рабочей области решения. Получив этот файл, выполните действия, описанные в разделе [Развертывание модулей Azure IoT Edge из Visual Studio Code](how-to-deploy-modules-vscode.md) или [Развертывание модулей IoT Edge Azure с помощью Azure CLI 2.0](how-to-deploy-modules-cli.md).
+1. Visual Studio Code принимает сведения, указанные в файле *Deployment. Template. JSON* , и использует его для создания нового файла манифеста развертывания. Манифест развертывания создается в новой папке **config** в рабочей области решения. Получив этот файл, выполните действия, описанные в разделе [Развертывание модулей Azure IoT Edge из Visual Studio Code](how-to-deploy-modules-vscode.md) или [Развертывание модулей IoT Edge Azure с помощью Azure CLI 2.0](how-to-deploy-modules-cli.md).
 
-## <a name="deploy-multiple-module-instances"></a>Deploy multiple module instances
+## <a name="deploy-multiple-module-instances"></a>Развертывание нескольких экземпляров модулей
 
-If you want to deploy multiple instances of the Azure Blob Storage on IoT Edge module, you need to provide a different storage path and change the `HostPort` value that the module binds to. Модули службы хранилища BLOB-объектов всегда предоставляют порт 11002 в контейнере, но вы можете объявить, к какому порту он привязан в узле.
+Если вы хотите развернуть несколько экземпляров хранилища BLOB-объектов Azure в модуле IoT Edge, необходимо указать другой путь к хранилищу и изменить значение `HostPort`, к которому привязан модуль. Модули службы хранилища BLOB-объектов всегда предоставляют порт 11002 в контейнере, но вы можете объявить, к какому порту он привязан в узле.
 
-Edit **Container Create Options** (in the Azure portal) or the **createOptions** field (in the *deployment.template.json* file in Visual Studio Code) to change the `HostPort` value:
+Измените **Параметры создания контейнера** (в портал Azure) или поле **креатеоптионс** (в файле *Deployment. Template. JSON* в Visual Studio Code), чтобы изменить значение `HostPort`:
 
 ```json
 "PortBindings":{
@@ -256,6 +256,6 @@ Edit **Container Create Options** (in the Azure portal) or the **createOptions**
 При подключении к дополнительным модулям хранилища BLOB-объектов измените конечную точку, чтобы она указывала на обновленный порт узла.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Learn more about [Azure Blob Storage on IoT Edge](how-to-store-data-blob.md)
+Дополнительные сведения о [хранилище BLOB-объектов Azure см. на IOT Edge](how-to-store-data-blob.md)
 
 Дополнительные сведения о работе манифестов развертывания и об их создании см. в статье [Сведения об использовании, настройке и повторном использовании модулей Azure IoT Edge (предварительная версия)](module-composition.md).

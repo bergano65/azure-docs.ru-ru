@@ -2,18 +2,18 @@
 title: Устранение неполадок c помощью управления обновлениями
 description: Узнайте, как устранять неполадки с Управление обновлениями.
 services: automation
-author: bobbytreed
-ms.author: robreed
+author: mgoedtel
+ms.author: magoedte
 ms.date: 05/31/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 2aebcf05cbc818997943ed3bab19fb1fd8a83592
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: a42b05239ae1ddf8909e288486694bf57595b195
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72786062"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849247"
 ---
 # <a name="troubleshooting-issues-with-update-management"></a>Устранение неполадок c помощью управления обновлениями
 
@@ -21,7 +21,7 @@ ms.locfileid: "72786062"
 
 Существует средство устранения неполадок агента для агента гибридной рабочей роли, чтобы определить базовую проблему. Для дополнительных сведений о средстве устранения неполадок см. [Общие сведения о результатах проверки агента в службе "Управление обновлениями"](update-agent-issues.md). Для устранения других проблем используйте следующие рекомендации по устранению неполадок.
 
-Если при попытке подключить решение к виртуальной машине возникли проблемы, проверьте журнал **Operations Manager** в разделе **журналы приложений и служб** на локальном компьютере на наличие событий с идентификатором 4502 и сведения о событии, содержащие **Microsoft. EnterpriseManagement. HealthService. AzureAutomation. HybridAgent**.
+Если при попытке подключить решение на виртуальной машине возникли проблемы, проверьте журнал **Operations Manager** в разделе **журналы приложений и служб** на локальном компьютере на наличие событий с идентификатором 4502 и сведения о событии, содержащие **Microsoft. EnterpriseManagement. HealthService. AzureAutomation. HybridAgent**.
 
 В следующем разделе описываются конкретные сообщения об ошибках и возможные способы их устранения. Сведения о других проблемах подключения см. в статье [Устранение неполадок при адаптации решения](onboarding.md).
 
@@ -68,7 +68,7 @@ ms.locfileid: "72786062"
   | where OperationCategory == 'Data Collection Status'
   | sort by TimeGenerated desc
   ```
-  Если полученный результат `Data collection stopped due to daily limit of free data reached. Ingestion status = OverQuota`, то в рабочей области будет определена квота, которая остановила сохранение данных. В рабочей области выберите **использование и оценочные затраты**  > **Управление объемом данных** и проверьте квоту или удалите ее.
+  Если полученный результат `Data collection stopped due to daily limit of free data reached. Ingestion status = OverQuota`, то в рабочей области будет определена квота, которая остановила сохранение данных. В рабочей области выберите **использование и оценочные затраты** > **Управление объемом данных** и проверьте квоту или удалите ее.
 
 * Если эти действия не помогли устранить проблему, выполните действия, описанные в статье [развертывание гибридной рабочей роли Runbook Windows](../automation-windows-hrw-install.md) , чтобы переустановить гибридную рабочую роль для Windows. Или для Linux [разверните гибридную рабочую роль Runbook Linux](../automation-linux-hrw-install.md).
 
@@ -187,7 +187,7 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 
 ### <a name="resolution"></a>Разрешение
 
-При необходимости используйте [динамические группы](../automation-update-management-groups.md) для развертываний обновлений. Дополнительного
+При необходимости используйте [динамические группы](../automation-update-management-groups.md) для развертываний обновлений. Дополнительно:
 
 * Убедитесь, что компьютер по-прежнему существует и доступен. Если он не существует, измените развертывание и удалите компьютер.
 * Список портов и адресов, необходимых для Управление обновлениями, см. в разделе [планирование сети](../automation-update-management.md#ports) , а затем убедитесь, что компьютер соответствует этим требованиям.

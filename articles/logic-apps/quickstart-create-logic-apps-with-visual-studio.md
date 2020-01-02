@@ -1,23 +1,18 @@
 ---
-title: Автоматизация рабочих процессов задач в Visual Studio — Azure Logic Apps
+title: Автоматизация рабочих процессов задач в Visual Studio
 description: Создание, планирование и запуск повторяющихся рабочих процессов для сценариев корпоративной интеграции с помощью Azure Logic Apps и Visual Studio
 services: logic-apps
-ms.service: logic-apps
 ms.suite: integration
-ms.workload: azure-vs
-author: ecfan
-ms.author: estfan
-ms.reviewer: klam, LADocs
-ms.manager: carmonm
+ms.reviewer: klam, logicappspm
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 11/08/2019
-ms.openlocfilehash: e7ce31f489ae274eddb02c1bfb7e57eb486f5851
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: f4d10f6b0934e7dea9779f45d0f05d7c28966965
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73796878"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74819164"
 ---
 # <a name="quickstart-create-automated-tasks-processes-and-workflows-with-azure-logic-apps---visual-studio"></a>Краткое руководство. Создание автоматизированных задач, операций и рабочих процессов с помощью Azure Logic Apps в Visual Studio
 
@@ -196,11 +191,11 @@ ms.locfileid: "73796878"
 
 1. Войдите на [портал Azure](https://portal.azure.com) с учетной записью, использованной для создания приложения логики.
 
-1. В главном меню Azure выберите **Группы ресурсов**. Выберите группу ресурсов приложения логики и щелкните **Обзор**.
+1. В меню портала Azure выберите **Группы ресурсов** или выполните поиск по запросу **Группы ресурсов** на любой странице и выберите этот пункт. Выберите группу ресурсов приложения логики.
 
 1. На вкладке **Обзор** выберите **Удалить группу ресурсов**. Введите имя группы ресурсов для подтверждения и нажмите кнопку **Удалить**.
 
-   !["Группы ресурсов > Обзор > Удалить группу ресурсов"](./media/quickstart-create-logic-apps-with-visual-studio/delete-resource-group.png)
+   !["Группы ресурсов > Обзор > Удалить группу ресурсов"](./media/quickstart-create-logic-apps-with-visual-studio/clean-up-resources.png)
 
 1. Удалите решение Visual Studio со своего локального компьютера.
 

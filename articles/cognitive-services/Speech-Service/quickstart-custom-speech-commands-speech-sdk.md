@@ -8,14 +8,14 @@ manager: yetian
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 10/09/2019
+ms.date: 12/09/2019
 ms.author: donkim
-ms.openlocfilehash: 890d2200a8047bc12c99eed97277e11776806def
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 3301c43aa71f041de1c53fb4083de73b6d2e4450
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74111154"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976763"
 ---
 # <a name="quickstart-connect-to-a-custom-commands-application-with-the-speech-sdk-preview"></a>Краткое руководство. подключение к приложению настраиваемых команд с помощью речевого пакета SDK (Предварительная версия)
 
@@ -26,17 +26,17 @@ ms.locfileid: "74111154"
 - Публикация приложения настраиваемых команд и получение идентификатора приложения (идентификатор приложения)
 - Создание клиентского приложения с помощью речевого пакета SDK для взаимодействия с приложением пользовательских команд
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Для выполнения этой статьи требуется приложение с пользовательскими командами. Если вы еще не создали приложение с пользовательскими командами, это можно сделать в предыдущих кратких руководствах:
 
 - [Краткое руководство. Создание настраиваемой команды (Предварительная версия)](./quickstart-custom-speech-commands-create-new.md)
 - [Краткое руководство. Создание настраиваемой команды с параметрами (Предварительная версия)](./quickstart-custom-speech-commands-create-parameters.md)
 
-Вам также потребуется:
+Также необходимо:
 
 - [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
-- Ключ подписки Azure для служб "Речь". [Получите его бесплатно](get-started.md) или создайте его на [портал Azure](https://portal.azure.com)
+- Ключ подписки Azure для службы "Речь". [Получите его бесплатно](get-started.md) или создайте его на [портал Azure](https://portal.azure.com)
 
 ## <a name="optional-get-started-fast"></a>Необязательно: быстрое начало работы
 
@@ -414,7 +414,7 @@ ms.locfileid: "74111154"
 
 1. Выберите **разговор**и говорите в микрофоне устройства фразу на английском языке или предложение. Ваша речь передастся в канал "Речь Direct Line" и преобразуется в текст, который появится в том же окне.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Как выполнять команды на клиенте с помощью пакета SDK для распознавания речи (Предварительная версия)](./how-to-custom-speech-commands-fulfill-sdk.md)

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Поиск видео с помощью пакета SDK Поиска видео Bing для Node.js
+title: Краткое руководство. Поиск видео с помощью пакета SDK для Node.js — Поиск видео Bing
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как отправлять запросы с помощью пакета SDK Поиска видео Bing для Node.js.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: bing-video-search
 ms.topic: quickstart
 ms.date: 07/18/2019
 ms.author: aahi
-ms.openlocfilehash: 12eafca9c673d95813eefcd58d2b3f9ba7b54fd3
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 5c8bd4ccadcc3c1947905e6bd74b48045a62ab57
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68358886"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74383743"
 ---
 # <a name="quickstart-perform-a-video-search-with-the-bing-video-search-sdk-for-nodejs"></a>Краткое руководство. Поиск видео с помощью пакета SDK Поиска видео Bing для Node.js
 

@@ -1,6 +1,6 @@
 ---
 title: Потоковая передача Apache Spark c Apache Kafka в Azure HDInsight
-description: Узнайте об использовании Apache Spark для двунаправленного потокового обмена данными с Apache Kafka с помощью DStreams. В этом примере описано, как выполнить потоковую передачу данных, используя записную книжку Jupyter из Spark в HDInsight.
+description: Узнайте об использовании Apache Spark для двунаправленного потокового обмена данными с Apache Kafka с помощью DStreams. В этом примере показано, как выполнить потоковую передачу данных, используя записную книжку Jupyter из Spark в HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -29,7 +29,7 @@ ms.locfileid: "74327401"
 
 ## <a name="create-the-clusters"></a>Создание кластеров
 
-Apache Kafka on HDInsight doesn't provide access to the Kafka brokers over the public internet. Все объекты, обращающиеся к Kafka, должны находиться в той же виртуальной сети Azure, что и узлы в кластере Kafka. В этом примере кластеры Kafka и Spark расположены в виртуальной сети Azure. На следующей схеме показано, как взаимодействуют кластеры.
+Apache Kafka в HDInsight не предоставляет доступ к брокерам Kafka через общедоступный Интернет. Все объекты, обращающиеся к Kafka, должны находиться в той же виртуальной сети Azure, что и узлы в кластере Kafka. В этом примере кластеры Kafka и Spark расположены в виртуальной сети Azure. На следующей схеме показано, как взаимодействуют кластеры.
 
 ![Схема кластеров Spark и Kafka в виртуальной сети Azure](./media/hdinsight-apache-spark-with-kafka/apache-spark-kafka-vnet.png)
 
@@ -51,17 +51,17 @@ Apache Kafka on HDInsight doesn't provide access to the Kafka brokers over the p
 
 1. Используйте следующие сведения, чтобы заполнить раздел **Настраиваемое развертывание**:
 
-    |Свойство |Value |
+    |Свойство |Значение |
     |---|---|
-    |группа ресурсов.|Создайте новую группу или выберите существующую.|
-    |Location|Выберите близкое к вам географическое расположение.|
-    |Base Cluster Name|Это значение будет использоваться в качестве базового имени для кластеров Spark и Kafka. Например, если ввести **hdistreaming**, будет создан кластер Spark с именем __spark-hdistreaming__ и кластер Kafka с именем **kafka-hdistreaming**.|
+    |Группа ресурсов|Создайте новую группу или выберите существующую.|
+    |Место проведения|Выберите близкое к вам географическое расположение.|
+    |Имя базового кластера|Это значение будет использоваться в качестве базового имени для кластеров Spark и Kafka. Например, если ввести **hdistreaming**, будет создан кластер Spark с именем __spark-hdistreaming__ и кластер Kafka с именем **kafka-hdistreaming**.|
     |Имя пользователя для входа в кластер|Имя администратора для кластеров Spark и Kafka.|
     |Пароль для входа в кластер|Пароль администратора для кластеров Spark и Kafka.|
     |Имя пользователя SSH|Создаваемый пользователь SSH для кластеров Spark и Kafka.|
     |Пароль SSH|Пароль пользователя SSH для кластеров Spark и Kafka.|
 
-    ![HDInsight custom deployment parameters](./media/hdinsight-apache-spark-with-kafka/hdinsight-parameters.png)
+    ![Параметры настраиваемого развертывания HDInsight](./media/hdinsight-apache-spark-with-kafka/hdinsight-parameters.png)
 
 1. Прочтите **условия использования** и установите флажок **Я принимаю указанные выше условия**.
 
@@ -84,10 +84,10 @@ Apache Kafka on HDInsight doesn't provide access to the Kafka brokers over the p
 
 Выполнив описанные здесь инструкции, вы создадите два кластера в одной группе ресурсов Azure. Следовательно, вы можете удалить эту группу ресурсов на портале Azure. При этом будут удалены все созданные в рамках этого руководства и используемые в кластерах ресурсы, виртуальная сеть Azure и учетная запись хранения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этом примере описано, как использовать Spark для чтения и записи данных в Kafka. Другие материалы, посвященные работе с Kafka, доступны по следующим ссылкам:
 
 * [Get started with Apache Kafka on HDInsight (preview)](kafka/apache-kafka-get-started.md) (Приступая к работе с Apache Kafka в HDInsight (предварительная версия))
 * [Репликация разделов Apache Kafka с помощью Kafka в HDInsight и MirrorMaker](kafka/apache-kafka-mirroring.md)
-* [Использование Apache Storm с Apache Kafka в HDInsight](hdinsight-apache-storm-with-kafka.md)
+* [Краткое руководство. Использование Apache Storm с Apache Kafka в HDInsight](hdinsight-apache-storm-with-kafka.md)

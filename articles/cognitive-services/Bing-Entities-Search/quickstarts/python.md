@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Отправка запросов для поиска в REST API Bing для поиска сущностей с помощью Python
+title: Краткое руководство. Отправка поисковых запросов в REST API Поиск сущностей Bing с помощью Python
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве показано, как отправлять запросы в REST API Bing для поиска сущностей с помощью Python и получать ответы в формате JSON.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 07/24/2019
 ms.author: aahi
-ms.openlocfilehash: fa306ecd7690085d96f561fcf7e043064013344d
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 52695cca2fe49829705ac2283c9f083ada8ae0b0
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68478943"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74327072"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-python"></a>Краткое руководство. Отправка запросов для поиска в REST API Bing для поиска сущностей с помощью Python
 

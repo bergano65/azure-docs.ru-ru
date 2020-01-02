@@ -1,7 +1,7 @@
 ---
-title: 'Assign Data to Cluster: Module Reference'
+title: 'Назначение данных кластеру: ссылка на модуль'
 titleSuffix: Azure Machine Learning
-description: Learn how to use the Assign Data to Cluster module in Azure Machine Learning to score clustering model.
+description: Узнайте, как использовать модуль "назначение данных в кластере" в Машинное обучение Azure для оценки модели кластеризации.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -16,36 +16,36 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74214553"
 ---
-# <a name="module-assign-data-to-clusters"></a>Module: Assign Data to Clusters
+# <a name="module-assign-data-to-clusters"></a>Модуль: назначение данных кластерам
 
-This article describes how to use the *Assign Data to Clusters* module in Azure Machine Learning designer (preview). The module generates predictions through a clustering model that was trained with the *K-means clustering* algorithm.
+В этой статье описывается использование модуля *Assign Data to Clusters* в машинное обучение Azure Designer (Предварительная версия). Модуль создает прогнозы с помощью модели кластеризации, обученной с помощью алгоритма *кластеризации K-средних* .
 
-The Assign Data to Clusters module returns a dataset that contains the probable assignments for each new data point. 
+Модуль назначение данных в кластеры возвращает набор данных, который содержит возможные назначения для каждой новой точки данных. 
 
-## <a name="how-to-use-assign-data-to-clusters"></a>How to use Assign Data to Clusters
+## <a name="how-to-use-assign-data-to-clusters"></a>Использование назначения данных кластерам
   
-1. In Azure Machine Learning designer, locate a previously trained clustering model. You can create and train a clustering model by using either of the following methods:  
+1. В конструкторе Машинное обучение Azure выберите ранее обученную модель кластеризации. Создать и обучить модель кластеризации можно одним из следующих способов.  
   
-    - Configure the K-means clustering algorithm by using the [K-Means Clustering](k-means-clustering.md) module, and train the model by using a dataset and the Train Clustering Model module (this article).  
+    - Настройте алгоритм кластеризации K-средних с помощью модуля [кластеризации k-средних](k-means-clustering.md) и обучить модель с помощью набора данных и модуля обучение модели кластеризации (в этой статье).  
   
-    - You can also add an existing trained clustering model from the **Saved Models** group in your workspace.
+    - Можно также добавить существующую обученную модель кластеризации из **сохраненной группы моделей** в рабочую область.
 
-2. Attach the trained model to the left input port of **Assign Data to Clusters**.  
+2. Присоедините обученную модель к левому порту ввода для **назначения данных кластерам**.  
 
-3. Attach a new dataset as input. 
+3. Присоединение нового набора данных в качестве входных данных. 
 
-   In this dataset, labels are optional. Generally, clustering is an unsupervised learning method. You are not expected to know the categories in advance. However, the input columns must be the same as the columns that were used in training the clustering model, or an error occurs.
+   В этом наборе данных метки необязательны. Как правило, кластеризация — это неконтролируемый метод обучения. Вы не должны заранее узнавать категории. Однако входные столбцы должны быть теми же, что и столбцы, использованные при обучении модели кластеризации, иначе возникает ошибка.
 
     > [!TIP]
-    > To reduce the number of columns that are written to the designer from the cluster predictions, use [Select columns in the dataset](select-columns-in-dataset.md), and select a subset of the columns. 
+    > Чтобы уменьшить количество столбцов, записываемых в конструктор из прогнозов кластера, используйте [Выбор столбцов в наборе данных](select-columns-in-dataset.md)и выберите подмножество столбцов. 
     
-4. Leave the **Check for append or uncheck for result only** check box selected if you want the results to contain the full input dataset, including a column that displays the results (cluster assignments).
+4. Если требуется, чтобы результаты содержали полный входной набор данных, включая столбец, в котором отображаются результаты (назначения кластера), оставьте флажок **флажок Добавить или снять флажок только для результата** установлен.
   
-    If you clear this check box, only the results are returned. This option might be useful when you create predictions as part of a web service.
+    Если снять этот флажок, возвращаются только результаты. Этот параметр может быть полезен при создании прогнозов как части веб-службы.
   
 5.  Запустили конвейер.  
   
 ### <a name="results"></a>Результаты
 
-+  To view the values in the dataset, right-click the module, select **Result datasets**, and then select **Visualize**.
++  Чтобы просмотреть значения в наборе данных, щелкните модуль правой кнопкой мыши, выберите пункт **результирующие наборы данных**и щелкните **визуализировать**.
 

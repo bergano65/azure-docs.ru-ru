@@ -1,7 +1,7 @@
 ---
 title: Потоковая передача сжатого аудио-кодека с помощью речевого пакета SDK — служба речи
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как выполнять потоковую передачу сжатых аудио в службы речевого обучения Azure с помощью речевого пакета SDK. Доступно для C++, C#и Java для Linux, Java в Android и цели-C в iOS.
+description: Узнайте, как выполнять потоковую передачу сжатых аудио в службу речи с помощью речевого пакета SDK. Доступно для C++, C#и Java для Linux, Java в Android и цели-C в iOS.
 services: cognitive-services
 author: amitkumarshukla
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.author: amishu
-ms.openlocfilehash: 668964c597b8d748220cbeec68e0ba68300cb406
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 36e4506ea290d6109e1d1ae874b7e0f7c11bf50d
+ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73464347"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74805830"
 ---
 # <a name="using-codec-compressed-audio-input-with-the-speech-sdk"></a>Использование сжатых звуковых данных кодеков с помощью пакета SDK для распознавания речи
 
@@ -43,7 +43,7 @@ sudo apt install libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugin
 
 ## <a name="example-code-using-codec-compressed-audio-input"></a>Пример кода, использующий сжатые звуковые входные кодеки
 
-Чтобы выполнить потоковую передачу в сжатом аудио формате в речевые службы, создайте `PullAudioInputStream` или `PushAudioInputStream`. Затем создайте `AudioConfig` из экземпляра класса Stream, указав формат сжатия потока.
+Чтобы выполнить потоковую передачу в сжатом аудио формате в службу распознавания речи, создайте `PullAudioInputStream` или `PushAudioInputStream`. Затем создайте `AudioConfig` из экземпляра класса Stream, указав формат сжатия потока.
 
 Предположим, что у вас есть класс входного потока с именем `myPushStream` и опус/OGG. Код может выглядеть следующим образом:
 
@@ -66,5 +66,5 @@ var text = result.GetText();
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Получение пробной подписки на службу "Речь"](https://azure.microsoft.com/try/cognitive-services/)
+- [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
 * [Узнайте, как распознать речь в Java](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-java)

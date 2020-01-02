@@ -6,20 +6,20 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 10/17/2019
+ms.date: 11/20/2019
 ms.author: diberry
-ms.openlocfilehash: 9ab477ffd7001f0f492f63355baaee26827db845
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 2d3a000040ff1b4f6e0ae548b578e8be014dc06a
+ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74125598"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74414510"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [.NET Core версий 2.2+](https://dotnet.microsoft.com/download)
 * [Visual Studio Code](https://code.visualstudio.com/)
-* идентификатор общедоступного приложения: df67dcdb-c37d-46af-88e1-8b97951ca1c2.
+* Идентификатор общедоступного приложения: `df67dcdb-c37d-46af-88e1-8b97951ca1c2`.
 
 ## <a name="get-luis-key"></a>Получение ключа LUIS
 
@@ -27,7 +27,7 @@ ms.locfileid: "74125598"
 
 ## <a name="get-intent-programmatically"></a>Получение намерения программным способом
 
-Используйте C#, чтобы запросить конечную точку прогноза GET [API](https://aka.ms/luis-apim-v3-prediction) и получить результат прогноза. 
+Используйте C# (.NET Core), чтобы запросить [конечную точку прогноза](https://aka.ms/luis-apim-v3-prediction) и получить результат прогноза.
 
 1. Создайте консольное приложение для языка C# с проектом и именем папки `predict-with-rest`. 
 
@@ -35,12 +35,14 @@ ms.locfileid: "74125598"
     dotnet new console -lang C# -n predict-with-rest
     ```
 
-1. Установите необходимые зависимости с помощью следующих команд CLI dotnet.
+1. Перейдите в только что созданный каталог `predict-with-rest` и установите необходимые зависимости с помощью следующих команд:  
 
     ```console
+    cd predict-with-rest
     dotnet add package System.Net.Http
     ```
-1. Перезапишите содержимое файла Program.cs следующим кодом:
+
+1. Откройте `Program.cs` в любой интегрированной среде разработки или редакторе. Затем замените `Program.cs` следующим кодом:
     
    ```csharp
     using System;
@@ -103,9 +105,9 @@ ms.locfileid: "74125598"
 1. Замените следующие значения:
 
     * `YOUR-KEY` на ключ для начала работы.
-    * `YOUR-ENDPOINT` на конечную точку, например `westus2.api.cognitive.microsoft.com`.
+    * `YOUR-ENDPOINT` на конечную точку. Например, `westus2.api.cognitive.microsoft.com`.
 
-1. Постройте консольное приложение. 
+1. Создайте консольное приложение с помощью этой команды: 
 
     ```console
     dotnet build
@@ -117,7 +119,7 @@ ms.locfileid: "74125598"
     dotnet run
     ```
 
-1. Проверьте ответ с прогнозом в формате JSON:
+1. Проверьте ответ прогноза, который возвращается в формате JSON:
 
     ```console
     Hit ENTER to exit...

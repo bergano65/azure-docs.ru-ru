@@ -1,7 +1,7 @@
 ---
-title: Entity types - LUIS
+title: Типы сущностей — LUIS
 titleSuffix: Azure Cognitive Services
-description: 'Entities extract data from the utterance. Entity types give you predictable extraction of data. There are two types of entities: machine-learned and non-machine-learned. It is important to know which type of entity you are working with in utterances.'
+description: 'Сущности извлекают данные из utterance. Типы сущностей предоставляют предсказуемое извлечение данных. Существует два типа сущностей: изученный компьютером и не являющийся компьютером. Важно понять, с каким типом сущности вы работаете в фразы продолжительностью.'
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -11,73 +11,73 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: diberry
-ms.openlocfilehash: 808e110ccb45b0b4f7bf34a43597c1f7a7bc0fed
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 6ee156efb5512c92d86ba05513b6a2b91df4eae8
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74422582"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74976967"
 ---
-# <a name="entities-and-their-purpose-in-luis"></a>Entities and their purpose in LUIS
+# <a name="entities-and-their-purpose-in-luis"></a>Сущности и их назначение в LUIS
 
-The primary purpose of entities is to give the client application predictable extraction of data. An _optional_, secondary purpose is to boost the prediction of the intent or other entities with descriptors.
+Основной целью сущностей является предоставление клиентскому приложению предсказуемого извлечения данных. _Необязательно_, вторичное назначение — увеличение прогноза намерения или других сущностей с дескрипторами.
 
-There are two types of entities:
+Существует два типа сущностей:
 
-* machine-learned - from context
-* non-machine-learned - for exact text matches, pattern matches, or detection by prebuilt entities
+* Изученный машинный контекст
+* не предназначено для машинного обучения — для точных совпадений текста, соответствия шаблонов или обнаружения предварительно созданными сущностями
 
-Machine-learned entities provide the widest range of data extraction choices. Non-machine-learned entities work by text matching and may be used independently or as a [constraint](#design-entities-for-decomposition) on a machine-learned entity.
+Сущности, изученные компьютером, обеспечивают широкий спектр вариантов извлечения данных. Сущности, не предназначенные для использования компьютером, работают по совпадению текста и могут использоваться независимо или в качестве [ограничения](#design-entities-for-decomposition) для сущностей, используемых компьютером.
 
 ## <a name="entities-represent-data"></a>Сущности представляют данные
 
-Entities are data you want to pull from the utterance, such as names, dates, product names, or any significant group of words. Фраза может содержать много сущностей или вообще ни одной. A client application _may_ need the data to perform its task.
+Сущности — это данные, которые необходимо извлечь из utterance, такие как имена, даты, названия продуктов или любая значительная группа слов. Фраза может содержать много сущностей или вообще ни одной. Клиентское приложение _может_ потребовать данные для выполнения задачи.
 
-Entities need to be labeled consistently across all training utterances for each intent in a model.
+Сущности должны помечаться одинаково во всех фразы продолжительностьюах обучения для каждой цели в модели.
 
- You can define your own entities or use prebuilt entities to save time for common concepts such as [datetimeV2](luis-reference-prebuilt-datetimev2.md), [ordinal](luis-reference-prebuilt-ordinal.md), [email](luis-reference-prebuilt-email.md), and [phone number](luis-reference-prebuilt-phonenumber.md).
+ Вы можете определить собственные сущности или использовать готовые объекты, чтобы сэкономить время для таких распространенных концепций, как [datetimeV2](luis-reference-prebuilt-datetimev2.md), [Ordinal](luis-reference-prebuilt-ordinal.md), [e-mail](luis-reference-prebuilt-email.md)и [номер телефона](luis-reference-prebuilt-phonenumber.md).
 
 |Фраза|Учреждение|Данные|
 |--|--|--|
 |Купить 3 билета в Нью-Йорк|Предварительно созданная сущность number<br>Location.Destination|3<br>Нью-Йорк|
 |Купить билет из Нью-Йорка в Лондон на 5 марта|Location.Origin<br>Location.Destination<br>Предварительно созданная сущность datetimeV2|Нью-Йорк<br>Лондон<br>5 марта 2018 г.|
 
-### <a name="entities-are-optional"></a>Entities are optional
+### <a name="entities-are-optional"></a>Сущности являются необязательными
 
 Тогда как намерения являются обязательными, использовать сущности необязательно. Не нужно создавать сущности для каждого понятия в приложении — они требуются только для тех, которые требуются для работы клиентского приложения.
 
-If your utterances do not have data the client application requires, you do not need to add entities. As your application develops and a new need for data is identified, you can add appropriate entities to your LUIS model later.
+Если в фразы продолжительностью нет данных, необходимых клиентскому приложению, добавлять сущности не требуется. По мере разработки приложения и определения новой потребности в данных вы можете добавить соответствующие сущности в модель LUIS позже.
 
 ## <a name="entity-compared-to-intent"></a>Сущность по сравнению с намерением
 
-The entity represents a data concept inside the utterance that you want extracted.
+Сущность представляет концепцию данных в utterance, которую необходимо извлечь.
 
-An utterance may optionally include entities. By comparison, the prediction of the intent for an utterance is _required_ and represents the entire utterance. LUIS requires example utterances are contained in an intent.
+Utterance может дополнительно включать сущности. По сравнению, прогноз цели для utterance является _обязательным_ и представляет весь utterance. Для LUIS требуется пример фразы продолжительностью.
 
-Consider the following 4 utterances:
+Рассмотрим следующие 4 фразы продолжительностью:
 
-|Фраза|Прогнозирование намерения|Entities extracted|Пояснение|
+|Фраза|Прогнозирование намерения|Извлеченные сущности|Пояснение|
 |--|--|--|--|
-|Справка|help|-|Nothing to extract.|
-|Send something|sendSomething|-|Nothing to extract. The model has not been trained to extract `something` in this context, and there is no recipient either.|
-|Send Bob a present|sendSomething|`Bob`, `present`|The model has been trained with the [personName](luis-reference-prebuilt-person.md) prebuilt entity, which has extracted the name `Bob`. A machine-learned entity has been used to extract `present`.|
-|Send Bob a box of chocolates|sendSomething|`Bob`, `box of chocolates`|The two important pieces of data, `Bob` and the `box of chocolates`, have been extracted by entities.|
+|Справка|help|-|Нет для извлечения.|
+|Отправить что-нибудь|сендсомесинг|-|Нет для извлечения. Модель не была обучена для извлечения `something` в этом контексте, и ни один получатель не существует.|
+|Отправить Бобу|сендсомесинг|`Bob`, `present`|Модель обучена с помощью предварительно созданной сущности [персоннаме](luis-reference-prebuilt-person.md) , которая извлекает имя `Bob`. Для извлечения `present`используется сущность, занятая компьютером.|
+|Отправить Бобу поле шоколада|сендсомесинг|`Bob`, `box of chocolates`|Два важных фрагмента данных, `Bob` и `box of chocolates`, были извлечены сущностями.|
 
-## <a name="design-entities-for-decomposition"></a>Design entities for decomposition
+## <a name="design-entities-for-decomposition"></a>Проектирование сущностей для декомпозиции
 
-It is good entity design to make your top-level entity a machine-learned entity. This allows for changes to your entity design over time and the use of **subcomponents** (child entities), optionally with **constraints** and **descriptors**, to decompose the top-level entity into the parts needed by the client application.
+Это хорошая структура сущности, которая делает вашу сущность верхнего уровня сущностью, занятой компьютером. Это позволяет изменять структуру сущности с течением времени и использовать **подкомпоненты** (дочерние сущности), при необходимости используя **ограничения** и **дескрипторы**, чтобы разбить сущность верхнего уровня на части, необходимые клиентскому приложению.
 
-Designing for decomposition allows LUIS to return a deep degree of entity resolution to your client application. This allows your client application to focus on business rules and leave data resolution to LUIS.
+Проектирование для декомпозиции позволяет LUIS вернуть в клиентское приложение глубокий уровень разрешения сущности. Это позволяет клиентскому приложению сосредоточиться на бизнес-правилах и оставить разрешение данных LUIS.
 
-### <a name="machine-learned-entities-are-primary-data-collections"></a>Machine-learned entities are primary data collections
+### <a name="machine-learned-entities-are-primary-data-collections"></a>Сущности, занятые компьютером, являются первичными коллекциями данных
 
-[**Machine-learned entities**](tutorial-machine-learned-entity.md) are the top-level data unit. Subcomponents are child entities of machine-learned entities.
+[**Сущности, занятые компьютером**](tutorial-machine-learned-entity.md) , являются блоком данных верхнего уровня. Подкомпоненты — это дочерние сущности, полученные от компьютера.
 
-A machine-learned entity triggers based on the context learned through training utterances. **Constraints** are optional rules applied to a machine-learned entity that further constrains triggering based on the exact-text matching definition of a non-machine-learned entity such as a [List](reference-entity-list.md) or [Regex](reference-entity-regular-expression.md). For example, a `size` machine-learned entity can have a constraint of a `sizeList` list entity that constrains the `size` entity to trigger only when values contained within the `sizeList` entity are encountered.
+Триггеры сущности, полученные от компьютера, основаны на контексте, полученном с помощью обучающих фразы продолжительностью. **Ограничения** — это необязательные правила, применяемые к сущности, занятой компьютером, которая в дальнейшем активируется на основе точного определения совпадающего текста, такого как [список](reference-entity-list.md) или [регулярное выражение](reference-entity-regular-expression.md). Например, сущность, которая используется `size` компьютере, может иметь ограничение на сущность списка `sizeList`, ограничивающее активацию сущности `size` только при обнаружении значений, содержащихся в сущности `sizeList`.
 
-[**Descriptors**](luis-concept-feature.md) are features applied to boost the relevance of the words or phrases for the prediction. They are called *descriptors* because they are used to *describe* an intent or entity. Descriptors describe distinguishing traits or attributes of data, such as important words or phrases. that LUIS observes and learns through.
+[**Дескрипторы**](luis-concept-feature.md) — это функции, применяемые для повышения релевантности слов или фраз для прогноза. Они называются *дескрипторами* , так как они используются для *описания* намерения или сущности. Дескрипторы описывают отличительные признаки или атрибуты данных, такие как важные слова или фразы, которые LUIS отслеживать и изучать.
 
-When you create a phrase list feature in your LUIS app, it is enabled globally by default and applies evenly across all intents and entities. However, if you apply the phrase list as a descriptor (feature) of a machine-learned entity (or *model*), then its scope reduces to apply only to that model and is no longer used with all the other models. Using a phrase list as a descriptor to a model helps decomposition by assisting with the accuracy for the model it is applied to.
+При создании функции списка фраз в приложении LUIS она включается глобально по умолчанию и применяется равномерно для всех целей и сущностей. Однако, если вы примените список фраз в качестве дескриптора (функции) для объекта, предназначенного для компьютера (или *модели*), его область действия будет применена только к этой модели и больше не будет использоваться со всеми другими моделями. Использование списка фраз в качестве дескриптора модели помогает декомпозиции, помогая точности модели, к которой она применяется.
 
 <a name="composite-entity"></a>
 <a name="list-entity"></a>
@@ -92,47 +92,47 @@ When you create a phrase list feature in your LUIS app, it is enabled globally b
 
 |Тип сущности|Цель|
 |--|--|
-|[**Machine-learned**](tutorial-machine-learned-entity.md)|Machine-learned entities learn from context in the utterance. Parent grouping of entities, regardless of entity type. This makes variation of placement in example utterances significant. |
-|[**Список**](reference-entity-list.md)|List of items and their synonyms extracted with **exact text match**.|
+|[**Полученные компьютером**](tutorial-machine-learned-entity.md)|Сущности, полученные от компьютера, изучены из контекста в utterance. Родительское группирование сущностей независимо от типа сущности. Это делает вариации в примере фразы продолжительностью значимыми. |
+|[**Список**](reference-entity-list.md)|Список элементов и их синонимов, извлеченных с **точным совпадением текста**.|
 |[**Pattern.any**](reference-entity-pattern-any.md)|Сущность, конец которой определить довольно сложно. |
-|[**Предварительно созданная**](luis-reference-prebuilt-entities.md)|Already trained to extract specific kind of data such as URL or email. Некоторые из этих предварительно созданных сущностей определены в проекте [Recognizers-Text](https://github.com/Microsoft/Recognizers-Text) с открытым исходным кодом. Если в настоящее время определенный язык и региональные параметры или сущность не поддерживается, примите участие в добавлении материалов в проект.|
-|[**Регулярное выражение**](reference-entity-regular-expression.md)|Uses regular expression for **exact text match**.|
+|[**Предварительно созданная**](luis-reference-prebuilt-entities.md)|Уже обучено извлечение конкретного вида данных, таких как URL-адрес или электронная почта. Некоторые из этих предварительно созданных сущностей определены в проекте [Recognizers-Text](https://github.com/Microsoft/Recognizers-Text) с открытым исходным кодом. Если в настоящее время определенный язык и региональные параметры или сущность не поддерживается, примите участие в добавлении материалов в проект.|
+|[**Регулярное выражение**](reference-entity-regular-expression.md)|Использует регулярное выражение для **точного совпадения текста**.|
 
-## <a name="extracting-contextually-related-data"></a>Extracting contextually related data
+## <a name="extracting-contextually-related-data"></a>Извлечение данных, связанных с контекстом
 
-An utterance may contain two or more occurrences of an entity where the meaning of the data is based on context within the utterance. An example is an utterance for booking a flight that has two locations, origin and destination.
+Utterance может содержать два или более вхождений сущности, где значение данных зависит от контекста в utterance. Примером является utterance для резервирования рейса с двумя расположениями, источником и назначением.
 
 `Book a flight from Seattle to Cairo`
 
-The two examples of a `location` entity need to be extracted. The client-application needs to know the type of location for each in order to complete the ticket purchase.
+Необходимо извлечь два примера `location` сущности. Клиентское приложение должно иметь сведения о типе расположения для каждого из них, чтобы завершить покупку билетов.
 
-There are two techniques for extracting contextually-related data:
+Существует два способа извлечения данных, связанных с контекстом:
 
- * The `location` entity is a machine-learned entity and uses two subcomponent entities to capture the  `origin` and `destination` (preferred)
- * The `location` entity uses two **roles** of `origin` and `destination`
+ * Сущность `location` — это сущность, которая используется компьютером и использует две сущности подкомпонента для захвата `origin` и `destination` (предпочтительно)
+ * Сущность `location` использует две **роли** `origin` и `destination`
 
-Multiple entities can exist in an utterance and can be extracted without using decomposition or roles if the context in which they are used has no significance. For example, if the utterance includes a list of locations, `I want to travel to Seattle, Cairo, and London.`, this is a list where each item doesn't have an additional meaning.
+В utterance может существовать несколько сущностей, которые могут быть извлечены без использования разложения или ролей, если контекст, в котором они используются, не имеет значения. Например, если utterance включает список расположений, `I want to travel to Seattle, Cairo, and London.`, это список, в котором у каждого элемента нет дополнительного значения.
 
-### <a name="using-subcomponent-entities-of-a-machine-learned-entity-to-define-context"></a>Using subcomponent entities of a machine-learned entity to define context
+### <a name="using-subcomponent-entities-of-a-machine-learned-entity-to-define-context"></a>Использование сущностей подкомпонентов сущности, занятой компьютером, для определения контекста
 
-You can use a [**machine-learned entity**](tutorial-machine-learned-entity.md) to extract the data that describes the action of booking a flight and then to decompose the top-level entity into the separate parts needed by the client application.
+Чтобы извлечь данные, описывающие действие по резервированию рейса, а затем разбить сущность верхнего уровня на отдельные части, необходимые клиентскому приложению, можно использовать [**сущность, занятая компьютером**](tutorial-machine-learned-entity.md) .
 
-In this example, `Book a flight from Seattle to Cairo`, the top-level entity could be `travelAction` and labeled to extract `flight from Seattle to Cairo`. Then two subcomponent entities are created, called `origin` and `destination`, both with a constraint applied of the prebuilt `geographyV2` entity. In the training utterances, the `origin` and `destination` are labeled appropriately.
+В этом примере `Book a flight from Seattle to Cairo`сущность верхнего уровня может быть `travelAction` и помечена для извлечения `flight from Seattle to Cairo`. Затем создаются две сущности подкомпонента, называемые `origin` и `destination`, с ограничением, примененным к предварительно созданной сущности `geographyV2`. В фразы продолжительностьюах обучения `origin` и `destination` помечаются соответствующим образом.
 
-### <a name="using-entity-role-to-define-context"></a>Using Entity role to define context
+### <a name="using-entity-role-to-define-context"></a>Использование роли сущности для определения контекста
 
-A Role is a named alias for an entity based on context within the utterance. Роли можно использовать с любым предварительно созданным или настраиваемым типом сущности. Они используются в примерах речевых фрагментов и шаблонов. In this example, the `location` entity needs two roles of `origin` and `destination` and both need to be marked in the example utterances.
+Роль — это именованный псевдоним для сущности на основе контекста в utterance. Роли можно использовать с любым предварительно созданным или настраиваемым типом сущности. Они используются в примерах речевых фрагментов и шаблонов. В этом примере для сущности `location` необходимы две роли `origin` и `destination` и они должны быть помечены в примере фразы продолжительностью.
 
-If LUIS finds the `location` but can't determine the role, the location entity is still returned. The client application would need to follow up with a question to determine which type of location the user meant.
+Если LUIS находит `location`, но не может определить роль, сущность Location по-прежнему возвращается. Клиентскому приложению необходимо отслеживать вопрос, чтобы определить, какой тип расположения предназначен пользователю.
 
 
 ## <a name="if-you-need-more-than-the-maximum-number-of-entities"></a>Если требуется количество сущностей, превышающее максимальное значение
 
-If you need more than the limit, contact support. Для этого соберите подробные сведения о системе, откройте веб-сайт [LUIS](luis-reference-regions.md#luis-website), а затем выберите элемент **Поддержка**. Если ваша подписка Azure включает службы поддержки, обратитесь в службу [технической поддержки Azure](https://azure.microsoft.com/support/options/).
+Если вам требуется больше ограничений, обратитесь в службу поддержки. Для этого соберите подробные сведения о системе, откройте веб-сайт [LUIS](luis-reference-regions.md#luis-website), а затем выберите элемент **Поддержка**. Если ваша подписка Azure включает службы поддержки, обратитесь в службу [технической поддержки Azure](https://azure.microsoft.com/support/options/).
 
-## <a name="entity-prediction-status"></a>Entity prediction status
+## <a name="entity-prediction-status"></a>Состояние прогнозирования сущностей
 
-The LUIS portal shows when the entity, in an example utterance, has a different entity prediction than the entity you selected. This different score is based on the current trained model.
+На портале LUIS показано, когда сущность, в примере utterance, отличается от прогноза сущностей, чем выбранная сущность. Эта другая оценка основана на текущей обученной модели.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -140,4 +140,5 @@ The LUIS portal shows when the entity, in an example utterance, has a different 
 
 Дополнительные сведения о добавлении сущностей в приложение LUIS см. в статье [Добавление сущностей](luis-how-to-add-entities.md).
 
-See [Tutorial: Extract structured data from user utterance with machine-learned entities in Language Understanding (LUIS)](tutorial-machine-learned-entity.md) to learn how to extract structured data from an utterance using the machine-learned entity.
+Сведения о том, как извлечь структурированные данные из utterance с помощью сущности, использующей компьютер, см. [в разделе Учебник. Извлечение структурированных данных из пользователя utterance с помощью машинных сущностей в Language Understanding (Luis)](tutorial-machine-learned-entity.md) .
+ 

@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: 0ba76ed2bd7d6259307e2e8046c4695786ff3045
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 0dbfab9b1886b39f166b94447fed8dc6707404bd
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73506414"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74795885"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -17,6 +17,8 @@ ms.locfileid: "73506414"
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
 > * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=jre)
 > * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=jre)
+
+[!INCLUDE [Audio input format](~/articles/cognitive-services/speech-service/includes/audio-input-format-chart.md)]
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
@@ -108,6 +110,9 @@ ms.locfileid: "73506414"
 1. Замените строку `whatstheweatherlike.wav` собственным именем файла.
 
 1. Сохраните внесенные в проект изменения.
+
+> [!NOTE]
+> Пакет SDK для распознавания речи по умолчанию распознает использование языкового стандарта en-us. Дополнительные сведения о выборе исходного языка см. в разделе [Specify source language for speech to text](../../../../how-to-specify-source-language.md) (Указание исходного языка для преобразования речи в текст).
 
 ## <a name="build-and-run-the-app"></a>Создание и запуск приложения
 

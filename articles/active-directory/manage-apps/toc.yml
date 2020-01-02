@@ -72,8 +72,14 @@
       items:
         - name: Планирование развертывания автоматической подготовки пользователей
           href: plan-auto-user-provisioning.md
+        - name: Автоматизация подготовки для приложений с поддержкой SCIM
+          href: use-scim-to-provision-users-and-groups.md
         - name: Сравнение подготовки вручную и автоматической подготовки
           href: application-provisioning-config-how-to.md
+    - name: Подготовка к управлению кадрами
+      items:
+        - name: Планирование развертывания подготовки пользователей к управлению кадрами
+          href: plan-cloud-hr-provision.md
     - name: Прокси приложения для локальных приложений
       items:
         - name: Прокси приложения
@@ -379,6 +385,12 @@
           href: functions-for-customizing-application-data.md
         - name: Выбор метода подготовки
           href: isv-automatic-provisioning-multi-tenant-apps.md
+    - name: Подготовка к управлению кадрами
+      items:
+        - name: Справочник по атрибутам SuccessFactors
+          href: sap-successfactors-attribute-reference.md
+        - name: Справочник по атрибутам Workday
+          href: workday-attribute-reference.md
     - name: "Агент подготовки Azure\_AD Connect"
       items:
         - name: Журнал версий агента подготовки

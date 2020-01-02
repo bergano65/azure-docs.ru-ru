@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 11/21/2019
 ms.author: helohr
-ms.openlocfilehash: b6c56bbe86f2c81421a39ee85e06dec447382833
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: fde3ddf052e47e7550d15aba4ff26d32c91e34b9
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74288715"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74972394"
 ---
 # <a name="set-up-msix-app-attach"></a>Настройка присоединения приложения MSIX
 
@@ -184,8 +184,8 @@ sc config wuauserv start=disabled
 
 Присоединение приложения MSIX состоит из четырех отдельных этапов, которые необходимо выполнить в следующем порядке:
 
-1. Этап
-2. регистрация;
+1. Stage
+2. Зарегистрироваться
 3. Отмена регистрации
 4. Отмена размещения
 
@@ -206,7 +206,7 @@ sc config wuauserv start=disabled
 
 4.  Откройте родительскую папку. При правильном развертывании вы увидите папку с тем же именем, что и у пакета. Обновите переменную **\$packageName** в соответствии с именем этой папки.
 
-    Например, `VSCodeUserSetup-x64-1.38.1_1.38.1.0_x64__8wekyb3d8bbwe`.
+    Пример: `VSCodeUserSetup-x64-1.38.1_1.38.1.0_x64__8wekyb3d8bbwe`.
 
 5.  Откройте командную строку и введите команду **mountvol**. Эта команда отобразит список томов и их идентификаторы GUID. Скопируйте идентификатор GUID тома, где буква диска совпадает с диском, к которому подключен виртуальный жесткий диск, на шаге 2.
 
@@ -307,8 +307,7 @@ sc config wuauserv start=disabled
 
     $packageManager = [Windows.Management.Deployment.PackageManager]::new()
 
-    $path = $msixJunction + $parentFolder + $packageName # needed if we do the
-    pbisigned.vhd
+    $path = $msixJunction + $parentFolder + $packageName # needed if we do the pbisigned.vhd
 
     $path = ([System.Uri]$path).AbsoluteUri
 
@@ -338,7 +337,7 @@ $path = "C:\Program Files\WindowsApps\" + $packageName + "\AppxManifest.xml"
 
 #region register
 
-Add-AppxPackage -Path \$path -DisableDevelopmentMode -Register
+Add-AppxPackage -Path $path -DisableDevelopmentMode -Register
 
 #endregion
 ```
@@ -391,7 +390,7 @@ rmdir $packageName -Force -Verbose
 
 ## <a name="set-up-simulation-scripts-for-the-msix-app-attach-agent"></a>Настройка сценариев моделирования для агента присоединения приложения MSIX
 
-После создания сценариев пользователи могут вручную запустить их или настроить для автоматического запуска в качестве сценариев запуска, входа в систему, выхода из системы и завершения работы. Дополнительные сведения об этих типах сценариев см. в разделе [Использование сценариев сартуп, завершения работы, входа и выхода из системы в групповая политика](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn789196(v=ws.11)).
+После создания сценариев пользователи могут вручную запустить их или настроить для автоматического запуска в качестве сценариев запуска, входа в систему, выхода из системы и завершения работы. Дополнительные сведения об этих типах сценариев см. в разделе [Использование сценариев запуска, завершения работы, входа и выхода из системы в групповая политика](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn789196(v=ws.11)).
 
 Каждый из этих автоматических сценариев запускается на одном этапе сценария присоединения приложения:
 
@@ -448,7 +447,7 @@ catch [Exception]
 }  
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В настоящее время эта функция не поддерживается, но вы можете задать вопросы в сообществе на странице [виртуальных рабочих столов Windows течкоммунити](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop).
 

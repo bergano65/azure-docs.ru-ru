@@ -1,6 +1,6 @@
 ---
-title: Access controls in Azure Active Directory Conditional Access
-description: Learn how access controls in Azure Active Directory Conditional Access work.
+title: Управление доступом в Azure Active Directory условного доступа
+description: Узнайте, как работают элементы управления доступом в Azure Active Directory условного доступа.
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
@@ -18,18 +18,18 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74380810"
 ---
-# <a name="what-are-access-controls-in-azure-active-directory-conditional-access"></a>What are access controls in Azure Active Directory Conditional Access?
+# <a name="what-are-access-controls-in-azure-active-directory-conditional-access"></a>Что такое элементы управления доступом в Azure Active Directory условном доступе?
 
-With [Azure Active Directory (Azure AD) Conditional Access](../active-directory-conditional-access-azure-portal.md), you can control how authorized users access your cloud apps. In a Conditional Access policy, you define the response ("do this") to the reason for triggering your policy ("when this happens").
+С помощью [условного доступа Azure Active Directory (Azure AD)](../active-directory-conditional-access-azure-portal.md)можно контролировать доступ полномочных пользователей к облачным приложениям. В политике условного доступа вы определяете ответ ("сделать это") по причине активации политики ("в этом случае").
 
 ![Контроль](./media/controls/10.png)
 
-In the context of Conditional Access,
+В контексте условного доступа
 
 - элемент "**в этом случае**" называется **условиями**;
 - а "**следует сделать это**" называется **элементом управления доступом**.
 
-The combination of a condition statement with your controls represents a Conditional Access policy.
+Сочетание оператора условия с элементами управления представляет политику условного доступа.
 
 ![Контроль](./media/controls/61.png)
 
@@ -40,7 +40,7 @@ The combination of a condition statement with your controls represents a Conditi
 - **Элементы управления предоставлением прав** позволяют контролировать доступ.
 - **Элементы управления сеансом** позволяют ограничить доступ в пределах сеанса.
 
-This topic explains the various controls that are available in Azure AD Conditional Access. 
+В этом разделе объясняются различные элементы управления, доступные в условном доступе Azure AD. 
 
 ## <a name="grant-controls"></a>Элементы управления предоставлением прав
 
@@ -51,7 +51,7 @@ This topic explains the various controls that are available in Azure AD Conditio
 
 ![Контроль](./media/controls/18.png)
 
-### <a name="multi-factor-authentication"></a>Многофакторная Идентификация
+### <a name="multi-factor-authentication"></a>Многофакторная проверка подлинности
 
 Этот элемент управления позволяет требовать прохождение Многофакторной идентификации для доступа к указанному облачному приложению. Данный элемент управления поддерживает следующие поставщики Многофакторной идентификации:
 
@@ -62,7 +62,7 @@ This topic explains the various controls that are available in Azure AD Conditio
 
 ### <a name="compliant-device"></a>Устройства, соответствующие требованиям
 
-You can configure Conditional Access policies that are device-based. The objective of a device-based Conditional Access policy is to only grant access to the selected cloud apps from [managed devices](require-managed-devices.md). Один из вариантов ограничения доступа к управляемым устройствам — требование отметки устройства в качестве соответствующего. Устройство может быть помечено как соответствующее службой Intune (для любой операционной системы устройства) или сторонней системой управления мобильными устройствами для устройств Windows 10. Сторонние системы управления мобильными устройствами для ОС, отличных от Windows 10, не поддерживаются. 
+Можно настроить политики условного доступа, основанные на устройствах. Цель политики условного доступа на основе устройств — предоставить доступ только к выбранным облачным приложениям с [управляемых устройств](require-managed-devices.md). Один из вариантов ограничения доступа к управляемым устройствам — требование отметки устройства в качестве соответствующего. Устройство может быть помечено как соответствующее службой Intune (для любой операционной системы устройства) или сторонней системой управления мобильными устройствами для устройств Windows 10. Сторонние системы управления мобильными устройствами для других ОС, кроме Windows 10, не поддерживаются. 
 
 Ваше устройство должно быть зарегистрировано в Azure AD, прежде чем его можно будет пометить как соответствующее. Чтобы зарегистрировать устройство, у вас есть три варианта: 
 
@@ -70,33 +70,33 @@ You can configure Conditional Access policies that are device-based. The objecti
 - Устройства, присоединенные к Azure AD  
 - Гибридные устройства, присоединенные к Azure AD
 
-These three options are discussed in the article [What is a device identity?](../devices/overview.md)
+Эти три варианта обсуждаются в статье [что такое удостоверение устройства?](../devices/overview.md)
 
-For more information, see [how to require managed devices for cloud app access with Conditional Access](require-managed-devices.md).
+Дополнительные сведения см. [в статье как требовать управляемых устройств для доступа к облачным приложениям с помощью условного доступа](require-managed-devices.md).
 
 ### <a name="hybrid-azure-ad-joined-device"></a>Гибридные устройства, присоединенные к Azure AD
 
-Requiring a Hybrid Azure AD joined device is another option you have to configure device-based Conditional Access policies. Это требование относится к настольным компьютерам, ноутбукам и корпоративным планшетам, присоединенным к локальному каталогу Active Directory. If this option is selected, your Conditional Access policy grants access to access attempts made with devices that are joined to your on-premises Active Directory and your Azure Active Directory.  
+Обязательное гибридное устройство, присоединенное к Azure AD, является еще одним вариантом для настройки политик условного доступа на основе устройств. Это требование относится к настольным компьютерам, ноутбукам и корпоративным планшетам, присоединенным к локальному каталогу Active Directory. Если выбран этот параметр, политика условного доступа предоставляет доступ к попыткам доступа к устройствам, присоединенным к локальному Active Directory и Azure Active Directory.  
 
-For more information, see [set up Azure Active Directory device-based Conditional Access policies](require-managed-devices.md).
+Дополнительные сведения см. в разделе [настройка Azure Active Directory политик условного доступа на основе устройств](require-managed-devices.md).
 
 ### <a name="approved-client-app"></a>Утвержденное клиентское приложение
 
 Так как ваши сотрудники используют мобильные устройства как в личных целях, так и для выполнения рабочих задач, вам может потребоваться возможность защитить данные компании, предоставляемые на устройствах, даже в том случае, если вы не управляете этими устройствами.
 Можно использовать [политики защиты приложений Intune](https://docs.microsoft.com/intune/app-protection-policy), чтобы защитить данные компании независимо от какого-либо решения по управлению мобильными устройствами (MDM).
 
-Используя утвержденные клиентские приложения, можно требовать поддержку [политик защиты приложений Intune](https://docs.microsoft.com/intune/app-protection-policy) клиентским приложением, которое пытается получить доступ к вашим облачным приложениям. Например, можно ограничить доступ приложения Outlook к Exchange Online. A Conditional Access policy that requires approved client apps is  also known as [app-based Conditional Access policy](app-based-conditional-access.md). Список поддерживаемых утвержденных клиентских приложений приведен в разделе [Требование утвержденного клиентского приложения](technical-reference.md#approved-client-app-requirement).
+Используя утвержденные клиентские приложения, можно требовать поддержку [политик защиты приложений Intune](https://docs.microsoft.com/intune/app-protection-policy) клиентским приложением, которое пытается получить доступ к вашим облачным приложениям. Например, можно ограничить доступ приложения Outlook к Exchange Online. Политика условного доступа, требующая утвержденных клиентских приложений, также называется [политикой условного доступа на основе приложений](app-based-conditional-access.md). Список поддерживаемых утвержденных клиентских приложений приведен в разделе [Требование утвержденного клиентского приложения](technical-reference.md#approved-client-app-requirement).
 
-### <a name="app-protection-policy-preview"></a>App protection policy (preview)
+### <a name="app-protection-policy-preview"></a>Политика защиты приложений (Предварительная версия)
 
 Так как ваши сотрудники используют мобильные устройства как в личных целях, так и для выполнения рабочих задач, вам может потребоваться возможность защитить данные компании, предоставляемые на устройствах, даже в том случае, если вы не управляете этими устройствами.
 Можно использовать [политики защиты приложений Intune](https://docs.microsoft.com/intune/app-protection-policy), чтобы защитить данные компании независимо от какого-либо решения по управлению мобильными устройствами (MDM).
 
-With app protection policy, you can limit access to client applications that have reported to Azure AD has having received [Intune app protection policies](https://docs.microsoft.com/intune/app-protection-policy). For example, you can restrict access to Exchange Online to the Outlook app that has an Intune app protection policy. A Conditional Access policy that requires app protection policy is also known as [app protection-based Conditional Access policy](app-protection-based-conditional-access.md). 
+С помощью политики защиты приложений можно ограничить доступ к клиентским приложениям, отправленным в Azure AD, и получить [политики защиты приложений Intune](https://docs.microsoft.com/intune/app-protection-policy). Например, можно ограничить доступ к Exchange Online для приложения Outlook, в котором есть политика защиты приложений Intune. Политика условного доступа, требующая политики защиты приложений, также называется [политикой условного доступа на основе защиты приложений](app-protection-based-conditional-access.md). 
 
-Your device must be registered to Azure AD before an application can be marked as policy protected.
+Устройство должно быть зарегистрировано в Azure AD, прежде чем можно будет пометить приложение как защищенное политикой.
 
-For a list of supported policy protected client apps, see [app protection policy requirement](technical-reference.md#app-protection-policy-requirement).
+Список поддерживаемых клиентских приложений, защищенных с помощью политики, см. в разделе [требование политики защиты приложений](technical-reference.md#app-protection-policy-requirement).
 
 ### <a name="terms-of-use"></a>Условия использования
 
@@ -104,19 +104,19 @@ For a list of supported policy protected client apps, see [app protection policy
 
 ## <a name="custom-controls-preview"></a>Настраиваемые элементы управления (предварительная версия)
 
-Пользовательские элементы управления являются функцией выпуска Azure Active Directory Premium P1. При использовании пользовательских элементов управления пользователи перенаправляются на совместимую службу для удовлетворения дальнейших требований вне Azure Active Directory. В этом случае пользователь перенаправляется на внешнюю службу, выполняет все необходимые действия для собственной проверки или проверки подлинности и затем перенаправляется обратно в Azure Active Directory. Azure Active Directory verifies the response and, if the user was successfully authenticated or validated, the user continues in the Conditional Access flow.
+Пользовательские элементы управления являются функцией выпуска Azure Active Directory Premium P1. При использовании пользовательских элементов управления пользователи перенаправляются на совместимую службу для удовлетворения дальнейших требований вне Azure Active Directory. В этом случае пользователь перенаправляется на внешнюю службу, выполняет все необходимые действия для собственной проверки или проверки подлинности и затем перенаправляется обратно в Azure Active Directory. Azure Active Directory проверяет ответ и, если пользователь прошел проверку подлинности или проверен, пользователь переходит в поток условного доступа.
 
-These controls allow the use of certain external or custom services as Conditional Access controls, and generally extend the capabilities of Conditional Access.
+Эти элементы управления позволяют использовать определенные внешние или пользовательские службы в качестве элементов управления условным доступом и, как правило, расширяют возможности условного доступа.
 
 Сейчас поставщики включают следующие совместимые службы:
 
 - [Duo Security](https://duo.com/docs/azure-ca)
 - [Entrust Datacard](https://www.entrustdatacard.com/products/authentication/intellitrust);
-- [GSMA](https://mobileconnect.io/azure/)
+- [гсма](https://mobileconnect.io/azure/)
 - [Ping Identity](https://documentation.pingidentity.com/pingid/pingidAdminGuide/index.shtml#pid_c_AzureADIntegration.html);
 - RSA
 - [SecureAuth](https://docs.secureauth.com/pages/viewpage.action?pageId=47238992#)
-- [Silverfort](https://www.silverfort.io/company/using-silverfort-mfa-with-azure-active-directory/)
+- [силверфорт](https://www.silverfort.io/company/using-silverfort-mfa-with-azure-active-directory/)
 - [Symantec VIP](https://help.symantec.com/home/VIP_Integrate_with_Azure_AD)
 - [Thales (Gemalto)](https://resources.eu.safenetid.com/help/AzureMFA/Azure_Help/Index.htm)
 - [Trusona](https://www.trusona.com/docs/azure-ad-integration-guide)
@@ -125,13 +125,13 @@ These controls allow the use of certain external or custom services as Condition
 
 ### <a name="creating-custom-controls"></a>Создание пользовательских элементов управления
 
-Чтобы создать пользовательский элемент управления, сначала обратитесь к поставщику, которым вы хотите воспользоваться. Each non-Microsoft provider has its own process and requirements to sign up, subscribe, or otherwise become a part of the service, and to indicate that you wish to integrate with Conditional Access. После выполнения этих требований поставщик предоставит вам блок данных в формате JSON. This data allows the provider and Conditional Access to work together for your tenant, creates the new control and defines how Conditional Access can tell if your users have successfully performed verification with the provider.
+Чтобы создать пользовательский элемент управления, сначала обратитесь к поставщику, которым вы хотите воспользоваться. У каждого поставщика, не относящегося к корпорации Майкрософт, есть собственный процесс и требования для регистрации, подписки или других компонентов, а также для указания необходимости интеграции с условным доступом. После выполнения этих требований поставщик предоставит вам блок данных в формате JSON. Эти данные позволяют поставщику и условному доступу работать вместе для вашего клиента, создавать новый элемент управления и определять, каким образом условный доступ может определить, успешно ли пользователи выполнили проверку у поставщика.
 
-Custom controls cannot be used with Identity Protection's automation requiring multi-factor authentication or to elevate roles in Privileged Identity Manager (PIM).
+Пользовательские элементы управления нельзя использовать с автоматизацией защиты идентификации, требующей многофакторную проверку подлинности, или для повышения роли в диспетчере привилегированных удостоверений (PIM).
 
 Скопируйте данные JSON и вставьте их в соответствующее текстовое поле. Не изменяйте данные JSON, если точно не знаете, что делаете. Изменение данных JSON может привести к разрыву связи между поставщиком и корпорацией Майкрософт и к блокировке учетных записей ваших пользователей.
 
-The option to create a custom control is in the **Manage** section of the **Conditional Access** page.
+Параметр для создания пользовательского элемента управления находится в разделе **Управление** на странице **Условный доступ** .
 
 ![Контроль](./media/controls/82.png)
 
@@ -141,7 +141,7 @@ The option to create a custom control is in the **Manage** section of the **Cond
 
 ### <a name="deleting-custom-controls"></a>Удаление пользовательских элементов управления
 
-To delete a custom control, you must first ensure that it isn’t being used in any Conditional Access policy. После завершения:
+Чтобы удалить пользовательский элемент управления, необходимо сначала убедиться, что он не используется в каких-либо политиках условного доступа. После завершения:
 
 1. Перейдите к списку пользовательских элементов управления
 1. Нажмите кнопку ...  
@@ -161,12 +161,12 @@ To delete a custom control, you must first ensure that it isn’t being used in 
 
 Этот элемент управления используется, чтобы требовать от Azure AD передачу сведений об устройстве в выбранные облачные приложения. По этим сведениям об устройстве облачные приложения могут определить, инициируется ли подключение с соответствующего требованиям устройства или устройства, присоединенного к домену. Этот элемент управления поддерживает только SharePoint Online и Exchange Online в качестве выбранных облачных приложений. Выбранное облачное приложение использует сведения об устройствах для предоставления пользователям ограниченных или полных возможностей в зависимости от состояния устройства.
 
-Дополнительные сведения см. на следующих ресурсах:
+Дополнительные сведения см. в следующих статьях:
 
 - [Включение ограниченного доступа с помощью SharePoint Online](https://aka.ms/spolimitedaccessdocs)
 - [Включение ограниченного доступа с помощью Exchange Online](https://aka.ms/owalimitedaccess)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Чтобы узнать, как настроить политику условного доступа, см. статью [Краткое руководство. Требование Многофакторной идентификации для конкретных приложений с помощью условного доступа Azure Active Directory](app-based-mfa.md).
 - Если вы готовы к настройке политик условного доступа для своей среды, см. статью [Best practices for Conditional Access in Azure Active Directory](best-practices.md) (Рекомендации по работе с условным доступом в Azure Active Directory).

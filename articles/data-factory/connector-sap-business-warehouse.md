@@ -1,23 +1,23 @@
 ---
-title: Копирование данных из SAP BW с помощью фабрики данных Azure
+title: Копирование данных из SAP BW
 description: Узнайте, как копировать данные из SAP Business Warehouse на поддерживаемые приемники хранилища данных с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
+ms.author: jingwang
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
+ms.custom: seo-lt-2019
 ms.date: 09/04/2019
-ms.author: jingwang
-ms.openlocfilehash: c2dbacc2fd7906aaf22447dfb39c543206f05392
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 0c37d77ca73ddbe8b79351f90275a1d639757633
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73680282"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74923738"
 ---
 # <a name="copy-data-from-sap-business-warehouse-using-azure-data-factory"></a>Копирование данных из SAP Business Warehouse с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -44,7 +44,7 @@ ms.locfileid: "73680282"
 - Копирование данных из **InfoCubes и QueryCubes** (включая запросы BEx) с помощью запросов многомерных выражений.
 - Копирование данных с помощью базовой проверки подлинности.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы использовать этот соединитель SAP Business Warehouse, сделайте следующее:
 
@@ -56,7 +56,7 @@ ms.locfileid: "73680282"
 >- В папке %windir%\system32 хранятся все библиотеки зависимостей, извлеченные из пакета SDK для NetWeaver RFC. Как правило, это библиотеки icudt34.dll, icuin34.dll, icuuc34.dll, libicudecnumber.dll, librfc32.dll, libsapucum.dll, sapcrypto.dll, sapcryto_old.dll и sapnwrfc.dll.
 >- На компьютере с локальной средой выполнения интеграции включены порты (как правило, 3300 и 3201), необходимые для подключения к серверу SAP.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -66,17 +66,17 @@ ms.locfileid: "73680282"
 
 Для связанной службы SAP Business Warehouse (BW) поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **SapBw** | Да |
-| server | Имя сервера, на котором размещен экземпляр SAP Business Warehouse. | Да |
-| systemNumber | Номер системы SAP Business Warehouse.<br/>Допустимые значения: двузначное десятичное число, представленное в виде строки. | Да |
-| clientid | Идентификатор клиента в системе SAP Business Warehouse.<br/>Допустимые значения: трехзначное десятичное число, представленное в виде строки. | Да |
-| userName | Имя пользователя, имеющего доступ к серверу SAP. | Да |
-| пароль | Пароль для пользователя Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Требуется локальная среда IR, как упоминалось в разделе [Предварительные требования](#prerequisites). |Да |
+| Тип | Для свойства type необходимо задать значение **SapBw** | ДА |
+| server | Имя сервера, на котором размещен экземпляр SAP Business Warehouse. | ДА |
+| systemNumber | Номер системы SAP Business Warehouse.<br/>Допустимые значения: двузначное десятичное число, представленное в виде строки. | ДА |
+| clientid | Идентификатор клиента в системе SAP Business Warehouse.<br/>Допустимые значения: трехзначное десятичное число, представленное в виде строки. | ДА |
+| userName | Имя пользователя, имеющего доступ к серверу SAP. | ДА |
+| пароль | Пароль для пользователя Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Требуется локальная среда IR, как упоминалось в разделе [Предварительные требования](#prerequisites). |ДА |
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -107,7 +107,7 @@ ms.locfileid: "73680282"
 
 Чтобы скопировать данные из SAP BW, задайте для свойства Type набора данных значение **сапбвкубе**. Сейчас для набора данных SAP Business Warehouse типа RelationalTable не поддерживаются какие-либо свойства типа.
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -134,12 +134,12 @@ ms.locfileid: "73680282"
 
 Чтобы скопировать данные из SAP BW, в разделе **источник** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство Type источника действия копирования должно иметь значение **сапбвсаурце** . | Да |
-| запрос | Указывает запрос многомерных выражений для чтения данных из экземпляра SAP Business Warehouse. | Да |
+| Тип | Свойство Type источника действия копирования должно иметь значение **сапбвсаурце** . | ДА |
+| query | Указывает запрос многомерных выражений для чтения данных из экземпляра SAP Business Warehouse. | ДА |
 
-**Пример**
+**Пример.**
 
 ```json
 "activities":[
@@ -180,27 +180,27 @@ ms.locfileid: "73680282"
 | Тип данных SAP BW | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | ACCP | Int |
-| CHAR | string |
-| CLNT | string |
-| CURR | DECIMAL |
-| CUKY | string |
-| DEC | DECIMAL |
-| FLTP | Double |
+| CHAR | Строка |
+| CLNT | Строка |
+| CURR | Decimal |
+| CUKY | Строка |
+| DEC | Decimal |
+| FLTP | DOUBLE |
 | INT1 | Byte |
 | INT2 | Int16 |
 | INT4 | Int |
-| LANG | string |
-| LCHR | string |
+| LANG | Строка |
+| LCHR | Строка |
 | LRAW | Byte[] |
 | PREC | Int16 |
-| QUAN | DECIMAL |
+| QUAN | Decimal |
 | RAW | Byte[] |
 | RAWSTRING | Byte[] |
-| STRING | string |
-| ЕДИНИЦА ИЗМЕРЕНИЯ | string |
-| DATS | string |
-| NUMC | string |
-| TIMS | string |
+| STRING | Строка |
+| ЕДИНИЦА | Строка |
+| DATS | Строка |
+| NUMC | Строка |
+| TIMS | Строка |
 
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска

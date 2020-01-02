@@ -1,14 +1,14 @@
 ---
 title: 'Пример: допустимые номера SKU подсистемы балансировки нагрузки'
-description: В этом примере определения политики требуется, чтобы подсистемы балансировки нагрузки использовали утвержденный номер SKU.
+description: В этом примере определения политики требуется, чтобы подсистемы балансировки нагрузки использовали утвержденный номер SKU, указанный в параметре.
 ms.date: 01/23/2019
 ms.topic: sample
-ms.openlocfilehash: f3872ffc2fc75445f4f51573474fc359227b431b
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 3d3425211e44dc87d87a962630dec574a60614e7
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74076441"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463488"
 ---
 # <a name="sample---allowed-load-balancer-skus"></a>Пример: допустимые номера SKU подсистемы балансировки нагрузки
 

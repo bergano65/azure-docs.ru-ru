@@ -1,116 +1,118 @@
 ---
-title: Common cost analysis uses in Azure Cost Management
-description: This article explains how you can get results for common cost analysis tasks in Azure Cost Management.
+title: Использование общего анализа затрат в службе "Управление затратами Azure"
+description: В этой статье объясняется, как можно получить результаты задач анализа общих затрат в службе "Управление затратами Azure".
 services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 10/16/2019
+ms.date: 12/04/2019
 ms.topic: conceptual
 ms.service: cost-management-billing
 manager: adwise
 ms.custom: ''
-ms.openlocfilehash: 01087f3e40e278490abb87d0ab3b7b6ab5052b6b
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 4798b6908069af229c2bed4a2e5f38fa60e0d554
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74219486"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74849111"
 ---
-# <a name="common-cost-analysis-uses"></a>Common cost analysis uses
+# <a name="common-cost-analysis-uses"></a>Использование анализа общих затрат
 
-Azure Cost Management users often want answers to questions that many others ask. This article walks you through getting results for common cost analysis tasks in Cost Management.
+Пользователи службы "Управление затратами Azure" часто хотят получать ответы на вопросы, которые запрашиваются многими другими пользователями. В этой статье описывается получение результатов для задач анализа общих затрат в разделе "Управление затратами".
 
-## <a name="view-cost-breakdown-by-azure-service"></a>View cost breakdown by Azure service
+## <a name="view-cost-breakdown-by-azure-service"></a>Просмотр распределения затрат по службе Azure
 
-Viewing costs by an Azure service can help you to better understand the parts of your infrastructure that cost the most. For example, VM compute costs might be small. Yet you might accrue significant networking costs because of the amount of information emitting from the VMs. Understanding the primary cost drivers of your Azure services is essential so that you can adjust service usage, as needed.
+Просмотр затрат службой Azure поможет вам лучше разобраться в самых частях инфраструктуры. Например, затраты на вычислительные ресурсы виртуальных машин могут быть небольшими. Однако вы можете начислять значительные расходы на сети из-за объема информации, выдаваемой виртуальными машинами. Основные сведения о первичных драйверах служб Azure очень важно, чтобы при необходимости можно было настроить использование службы.
 
-1. In the Azure portal, navigate to cost analysis for your scope. For example: **Cost Management + Billing** > **Cost Management** > **Cost analysis**.
-1. Select **Cost by service** and then group by **Service tier**.
-1. Change the view to **Table**.
+1. В портал Azure перейдите к анализу затрат для вашей области. Например: **Управление затратами + выставление счетов** > **управление затратами** > **анализ затрат**.
+1. Выберите **стоимость службы,** а затем сгруппируйте по **уровню служб**.
+1. Измените представление на **Таблица**.
 
-![Cost breakdown by Azure service](./media/cost-analysis-common-uses/breakdown-by-service.png)
+![Распределение затрат по службе Azure](./media/cost-analysis-common-uses/breakdown-by-service.png)
 
-## <a name="view-cost-breakdown-by-azure-resource"></a>View cost breakdown by Azure resource
+## <a name="view-cost-breakdown-by-azure-resource"></a>Просмотр распределения затрат по ресурсам Azure
 
-Your services are built with Azure resources. Reviewing costs based on resources can help you quickly identify your primary cost contributors. If a service has resources that are too expensive, consider making changes to reduce your costs.
+Ваши службы созданы с помощью ресурсов Azure. Обзор затрат, основанных на ресурсах, поможет быстро определить основные участники затрат. Если у службы слишком много ресурсов, рекомендуется внести изменения, чтобы снизить затраты.
 
-1. In the Azure portal, navigate to cost analysis for your scope. For example: **Cost Management + Billing** > **Cost Management** > **Cost analysis**.
-1. Select **Cost by resource**.
-1. Change the view to **Table**.
+1. В портал Azure перейдите к анализу затрат для вашей области. Например: **Управление затратами + выставление счетов** > **управление затратами** > **анализ затрат**.
+1. Выберите **стоимость по ресурсам**.
+1. Измените представление на **Таблица**.
 
-![View cost breakdown by Azure resource](./media/cost-analysis-common-uses/cost-by-resource.png)
+![Просмотр распределения затрат по ресурсам Azure](./media/cost-analysis-common-uses/cost-by-resource.png)
 
-## <a name="view-cost-breakdown-by-selected-dimensions"></a>View cost breakdown by selected dimensions
+## <a name="view-cost-breakdown-by-selected-dimensions"></a>Просмотр детализации затрат по выбранным измерениям
 
-Dimensions allow you to organize your costs based on various metadata values shown in your charges. For example, you could group your costs by location.
+Измерения позволяют организовывать затраты на основе различных значений метаданных, показанных в расходах. Например, можно сгруппировать затраты по расположению.
 
-1. In the Azure portal, navigate to cost analysis for your scope. For example: **Cost Management + Billing** > **Cost Management** > **Cost analysis**.
-1. Select the **Group by** filter.  
-    ![Select a Group by item](./media/cost-analysis-common-uses/group-by.png)
-1. Optionally, you save the view for later use.
-1. Click a pie chart below the graph to view more detailed data.  
-    ![View cost breakdown by selected dimensions](./media/cost-analysis-common-uses/drill-down.png)
+1. В портал Azure перейдите к анализу затрат для вашей области. Например: **Управление затратами + выставление счетов** > **управление затратами** > **анализ затрат**.
+1. Выберите фильтр **Группировать по** .  
+    ![выбрать группу по элементу](./media/cost-analysis-common-uses/group-by.png)
+1. При необходимости вы можете сохранить представление для последующего использования.
+1. Щелкните круговую диаграмму под диаграммой, чтобы просмотреть более подробные данные.  
+    ![Просмотр детализации затрат по выбранным измерениям](./media/cost-analysis-common-uses/drill-down.png)
 
-## <a name="view-costs-per-day-or-by-month"></a>View costs per day or by month
+## <a name="view-costs-per-day-or-by-month"></a>Просмотр затрат в день или по месяцам
 
-Looking at daily and monthly costs can help you to better understand if there’s a time of the week or year where your costs are higher. If you have more customer traffic in a holiday period, does that lead to a corresponding increase in your Azure costs? Is Friday a more costly day than Monday?
+Просматривая ежедневные и ежемесячные затраты, вы сможете лучше понять, есть ли время недели или года, где ваши затраты выше. Если у вас есть больше трафика клиентов в течение праздничного периода, это приведет к увеличению затрат Azure? Является ли Пятница более дорогостоящим днем по сравнению с понедельника?
 
-1. In the Azure portal, navigate to cost analysis for your scope. For example: **Cost Management + Billing** > **Cost Management** > **Cost analysis**.
-1. Set the **Granularity** to **Monthly** or **Daily**.
+1. В портал Azure перейдите к анализу затрат для вашей области. Например: **Управление затратами + выставление счетов** > **управление затратами** > **анализ затрат**.
+1. Установите **детализацию** **ежемесячно** или **ежедневно**.
 
-![View costs per day](./media/cost-analysis-common-uses/daily-granularity.png)
+![Просмотр затрат в день](./media/cost-analysis-common-uses/daily-granularity.png)
 
-## <a name="view-costs-for-a-specific-tag"></a>View costs for a specific tag
+## <a name="view-costs-for-a-specific-tag"></a>Просмотр затрат для определенного тега
 
-Many Azure users apply tags to their resources such as a cost center or development environment (production and test) to better categorize charges. Tags appear as a dimension in cost analysis. You can use the dimension to gain insights into your custom tagging categorizations.
+Многие пользователи Azure применяют теги к своим ресурсам, таким как центр затрат или среда разработки (Рабочая и тестовая), для лучшей классификации расходов. Теги отображаются в виде измерения в анализе затрат. Измерение можно использовать для получения ценных сведений о настраиваемых классификациях тегов.
 
-1. In the Azure portal, navigate to cost analysis for your scope. For example: **Cost Management + Billing** > **Cost Management** > **Cost analysis**.
-1. Select **Group by** for your tag.
+Поддержка тегов применяется к сообщению об использовании *после* применения тега к ресурсу. Теги не применяются задним числом для свертки затрат.
 
-![View costs for a specific tag](./media/cost-analysis-common-uses/tag.png)
+1. В портал Azure перейдите к анализу затрат для вашей области. Например: **Управление затратами + выставление счетов** > **управление затратами** > **анализ затрат**.
+1. Выберите **Группировать по** для тега.
+
+![Просмотр затрат для определенного тега](./media/cost-analysis-common-uses/tag.png)
 
 ## <a name="download-your-usage-details"></a>Скачивание сведений об использовании
 
-Your usage details report file, in CSV format, provides a breakdown of all the charges that accrued towards an invoice. You can use the report to compare it to, and better understand, your invoice. Each billed charge on your invoice corresponds to broken-down charges in the usage report.
+Файл отчета с подробными сведениями об использовании в формате CSV обеспечивает разбивку всех расходов, начисленных в направлении счета. Вы можете использовать отчет, чтобы сравнить его с вашим счетом и лучше понять его. Каждая плата за выставленный счет соответствует неучитываемым расходам в отчете об использовании.
 
-1. In the Azure portal, navigate to the **Usage and Charges** tab for a billing account or subscription. For example: **Cost Management + Billing** > **Billing** > **Usage + charges**.
-1. Select the line item to download from and then click the download symbol.  
-    ![Download usage and charges](./media/cost-analysis-common-uses/download1.png)
-1.  Select the usage file to download.  
-    ![Choose a usage file to download](./media/cost-analysis-common-uses/download2.png)
+1. В портал Azure перейдите на вкладку **использование и расходы** для учетной записи выставления счетов или подписки. Например: **Управление затратами и выставление счетов** > **выставления счетов** > **использования и расходов**.
+1. Выберите элемент строки для скачивания и щелкните символ скачивания.  
+    ![Загрузка сведений об использовании и платах](./media/cost-analysis-common-uses/download1.png)
+1.  Выберите файл использования для загрузки.  
+    ![Выбор файла использования для скачивания](./media/cost-analysis-common-uses/download2.png)
 
-## <a name="view-monthly-ea-cost-breakdown"></a>View monthly EA cost breakdown
+## <a name="view-monthly-ea-cost-breakdown"></a>Просмотр ежемесячной детализации затрат EA
 
-Your EA enrollment accrues costs for your entire organization. Understanding how costs accrue and are invoiced over time helps you to engage the appropriate stakeholders to ensure that costs are managed responsibly.
+Регистрация EA начисляется стоимостью всей Организации. Понимание того, как затраты начисляются и выставлены счета за период времени, поможет вам привлечь соответствующих заинтересованных лиц, чтобы обеспечить управление затратами.
 
-1. In the Azure portal, navigate to **Cost Management + Billing** > **Overview**.
-1. Click **Breakdown** for the current month and view your monetary commitment burn down.  
-    ![EA costs overview - breakdown summary](./media/cost-analysis-common-uses/breakdown1.png)
-1.  Click the **Usage and Charges** tab and view the prior month’s breakdown in the chosen timespan.  
-    ![Usage and charges tab](./media/cost-analysis-common-uses/breakdown2.png)
+1. В портал Azure перейдите к разделу **Управление затратами + выставление счетов** > **Обзор**.
+1. Щелкните **подразделение** за текущий месяц и просмотрите запись о своем денежном обязательстве.  
+    ![обзор стоимостей EA — сводка по подразделениям](./media/cost-analysis-common-uses/breakdown1.png)
+1.  Перейдите на вкладку **использование и расходы** и просмотрите декомпозицию за прошлый месяц в выбранном интервале времени.  
+    ![вкладка "использование и расходы"](./media/cost-analysis-common-uses/breakdown2.png)
 
-## <a name="view-enrollment-monthly-cost-by-term"></a>View enrollment monthly cost by term
+## <a name="view-enrollment-monthly-cost-by-term"></a>Просмотр месячной стоимости регистрации по условию
 
-Use a graphical view of your enrollment’s monthly costs to understand the cost trends and invoiced amounts for a given period.
+Используйте графическое представление ежемесячных затрат на регистрацию, чтобы понять тенденции затрат и суммы счетов за указанный период.
 
-1. In the Azure portal, navigate to cost analysis for your scope. For example: **Cost Management + Billing** > **Cost Management** > **Cost analysis**.
-1. Select your enrollment and set the enrollment term.
-1. Set the granularity to monthly and then set the view to **Column     (stacked)** .
+1. В портал Azure перейдите к анализу затрат для вашей области. Например: **Управление затратами + выставление счетов** > **управление затратами** > **анализ затрат**.
+1. Выберите регистрацию и задайте срок регистрации.
+1. Задайте для параметра гранулярность значение ежемесячно, а затем задайте для представления значение **столбец (с накоплением)** .
 
-You can group by and filter your data for a more detailed analysis.
+Вы можете группировать и фильтровать данные для более подробного анализа.
 
-![Monthly enrollment cost by term](./media/cost-analysis-common-uses/enrollment-term1.png)
+![Стоимость ежемесячной регистрации по сроку](./media/cost-analysis-common-uses/enrollment-term1.png)
 
-## <a name="view-ea-enrollment-accumulated-costs"></a>View EA enrollment accumulated costs
+## <a name="view-ea-enrollment-accumulated-costs"></a>Просмотр накопленных затрат на регистрацию EA
 
-View the net accumulated charges over time to understand overall expenditures for your organization for a given period.
+Просматривайте накопленные расходы с течением времени, чтобы понять общие расходы на организацию в течение заданного периода.
 
-1. In the Azure portal, navigate to cost analysis for your scope. For example: **Cost Management + Billing** > **Cost Management** > **Cost analysis**.
-1. Select your enrollment and then view your current accumulated costs.
+1. В портал Azure перейдите к анализу затрат для вашей области. Например: **Управление затратами + выставление счетов** > **управление затратами** > **анализ затрат**.
+1. Выберите регистрацию и просмотрите текущие накопленные затраты.
 
-![Enrollment accumulated costs](./media/cost-analysis-common-uses/cost-analysis-enrollment.png)
+![Накопленные затраты на регистрацию](./media/cost-analysis-common-uses/cost-analysis-enrollment.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - См. первое краткое руководство по [работе с Управлением затратами](quick-acm-cost-analysis.md).
-- Read the [Cost Management documentation](index.yml).
+- Ознакомьтесь с [документацией по управлению затратами](index.yml).

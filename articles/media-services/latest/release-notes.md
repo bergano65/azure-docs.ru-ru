@@ -36,103 +36,103 @@ ms.locfileid: "74420035"
 
 ## <a name="september-2019"></a>Сентябрь 2019 г.
 
-###  <a name="media-services-v3"></a>Службы мультимедиа версии 3  
+###  <a name="media-services-v3"></a>Службы мультимедиа версии 3  
 
-#### <a name="live-linear-encoding-of-live-events"></a>Live linear encoding of live events
+#### <a name="live-linear-encoding-of-live-events"></a>Динамическое линейное кодирование событий в реальном времени
 
-Media Services v3 is announcing the preview of 24 hrs x 365 days of live linear encoding of live events.
+Службы мультимедиа v3 сообщают о предварительной версии в 24 часа x 365 дней в реальном времени в реальном времени.
 
-###  <a name="media-services-v2"></a>Службы мультимедиа версии 2  
+###  <a name="media-services-v2"></a>Службы мультимедиа версии 2  
 
-#### <a name="deprecation-of-media-processors"></a>Deprecation of media processors
+#### <a name="deprecation-of-media-processors"></a>Устаревшие обработчики мультимедиа
 
-We are announcing deprecation of *Azure Media Indexer* and *Azure Media Indexer 2 Preview*. The [Azure Media Indexer](../previous/media-services-index-content.md) media processor will be retired on October 1st of 2020. The [Azure Media Indexer 2 Preview](../previous/media-services-process-content-with-indexer2.md) media processors will be retired on January 1 of 2020. [Azure Media Services Video Indexer](https://docs.microsoft.com/azure/media-services/video-indexer/) replaces these legacy media processors.
+Мы объявляем объявление о нерекомендуемых *Azure Media indexer* и *Azure Media indexer 2 Preview*. [Azure Media Indexerный](../previous/media-services-index-content.md) обработчик мультимедиа будет снят с 1 октября по 2020. Процессоры мультимедиа [Azure Media indexer 2 Preview](../previous/media-services-process-content-with-indexer2.md) будут сняты с 1 января 2020. [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет эти устаревшие обработчики мультимедиа.
 
-For more information, see [Migrate from Azure Media Indexer and Azure Media Indexer 2 to Azure Media Services Video Indexer](../previous/migrate-indexer-v1-v2.md).
+Дополнительные сведения см. в статье [Миграция с Azure Media indexer и Azure Media indexer 2 в индексатор видео служб мультимедиа Azure](../previous/migrate-indexer-v1-v2.md).
 
 ## <a name="august-2019"></a>Август 2019 г.
 
-###  <a name="media-services-v3"></a>Службы мультимедиа версии 3  
+###  <a name="media-services-v3"></a>Службы мультимедиа версии 3  
 
-#### <a name="south-africa-regional-pair-is-open-for-media-services"></a>South Africa regional pair is open for Media Services 
+#### <a name="south-africa-regional-pair-is-open-for-media-services"></a>Для служб мультимедиа открыта пара региональных стандартов Южно-Африканского языка 
 
-Media Services is now available in South Africa North and South Africa West regions.
+Теперь службы мультимедиа доступны в регионах Южной и Южной Африки.
 
-For more information, see [Clouds and regions in which Media Services v3 exists](azure-clouds-regions.md).
+Дополнительные сведения см. [в разделе облака и регионы, в которых существует версия 3 служб мультимедиа](azure-clouds-regions.md).
 
-###  <a name="media-services-v2"></a>Службы мультимедиа версии 2  
+###  <a name="media-services-v2"></a>Службы мультимедиа версии 2  
 
-#### <a name="deprecation-of-media-processors"></a>Deprecation of media processors
+#### <a name="deprecation-of-media-processors"></a>Устаревшие обработчики мультимедиа
 
-We are announcing deprecation of the *Windows Azure Media Encoder* (WAME) and *Azure Media Encoder* (AME) media processors, which are being retired on March 31, 2020.
+Мы сообщаем о прекращении использования *Windows Azure Media Encoder* (Ваме) и обработчиков мультимедиа *кодировщика мультимедиа Azure* (\), которые выпускают 31 марта 2020 г.
 
-For details, see [Migrate WAME to Media Encoder Standard](https://go.microsoft.com/fwlink/?LinkId=2101334) and [Migrate AME to Media Encoder Standard](https://go.microsoft.com/fwlink/?LinkId=2101335).
+Дополнительные сведения см. в статье [Миграция Ваме в Media Encoder Standard](https://go.microsoft.com/fwlink/?LinkId=2101334) и [перенос в Media Encoder Standard](https://go.microsoft.com/fwlink/?LinkId=2101335).
  
 ## <a name="july-2019"></a>Июль 2019 г.
 
-### <a name="content-protection"></a>Система защиты содержимого
+### <a name="content-protection"></a>Защита содержимого
 
-When streaming content protected with token restriction, end users need to obtain a token that is sent as part of the key delivery request. The *Token Replay Prevention* feature allows Media Services customers to set a limit on how many times the same token can be used to request a key or a license. For more information, see [Token Replay Prevention](content-protection-overview.md#token-replay-prevention).
+Если потоковая передача содержимого, защищенного с помощью ограничения маркера, конечным пользователям необходимо получить маркер, который отправляется как часть запроса на доставку ключа. Функция *предотвращения воспроизведения маркеров* позволяет клиентам служб мультимедиа устанавливать ограничения на то, сколько раз один и тот же маркер можно использовать для запроса ключа или лицензии. Дополнительные сведения см. в разделе [Предотвращение воспроизведения маркеров](content-protection-overview.md#token-replay-prevention).
 
-This feature is currently available in US Central and US West Central.
+В настоящее время эта функция доступна в центральной части США и западной центральной части США.
 
 ## <a name="june-2019"></a>Июнь 2019 г.
 
-### <a name="video-subclipping"></a>Video subclipping
+### <a name="video-subclipping"></a>Подрезка видео
 
-You can now trim or subclip a video when encoding it using a [Job](https://docs.microsoft.com/rest/api/media/jobs). 
+Теперь можно обрезать или подрезать видео при кодировании с помощью [задания](https://docs.microsoft.com/rest/api/media/jobs). 
 
-This functionality works with any [Transform](https://docs.microsoft.com/rest/api/media/transforms) that is built using either the [BuiltInStandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) presets, or the [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset) presets. 
+Эта функция работает с любым [преобразованием](https://docs.microsoft.com/rest/api/media/transforms) , построенным с помощью предустановок [буилтинстандарденкодерпресет](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [стандарденкодерпресет](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset) . 
 
-See examples:
+См. примеры:
 
-* [Subclip a video with .NET](subclip-video-dotnet-howto.md)
-* [Subclip a video with REST](subclip-video-rest-howto.md)
+* [Подклип видео с помощью .NET](subclip-video-dotnet-howto.md)
+* [Подрезать видео с помощью RESTFUL](subclip-video-rest-howto.md)
 
 ## <a name="may-2019"></a>Май 2019 г.
 
-### <a name="azure-monitor-support-for-media-services-diagnostic-logs-and-metrics"></a>Azure Monitor support for Media Services diagnostic logs and metrics
+### <a name="azure-monitor-support-for-media-services-diagnostic-logs-and-metrics"></a>Поддержка Azure Monitor для журналов диагностики и метрик в службах мультимедиа
 
-You can now use Azure Monitor to view telemetry data emmited by Media Services.
+Теперь вы можете использовать Azure Monitor для просмотра данных телеметрии, еммитед с помощью служб мультимедиа.
 
-* Use the Azure Monitor diagnostic logs to monitor requests sent by the Media Services Key Delivery endpoint. 
-* Monitor metrics emitted by Media Services [Streaming Endpoints](streaming-endpoint-concept.md).   
+* Используйте журналы диагностики Azure Monitor, чтобы отслеживать запросы, отправленные конечной точкой доставки ключей служб мультимедиа. 
+* Отслеживать метрики, созданные [конечными точками потоковой передачи](streaming-endpoint-concept.md)служб мультимедиа.   
 
-For details, see [Monitor Media Services metrics and diagnostic logs](media-services-metrics-diagnostic-logs.md).
+Дополнительные сведения см. в статье [мониторинг метрик и журналов диагностики служб мультимедиа](media-services-metrics-diagnostic-logs.md).
 
-### <a name="multi-audio-tracks-support-in-dynamic-packaging"></a>Multi audio tracks support in Dynamic Packaging 
+### <a name="multi-audio-tracks-support-in-dynamic-packaging"></a>Поддержка нескольких звуковых дорожек в динамической упаковке 
 
-When streaming Assets that have multiple audio tracks with multiple codecs and languages, [Dynamic Packaging](dynamic-packaging-overview.md) now supports multi audio tracks for the HLS output (version 4 or above).
+При потоковой передаче ресурсов, имеющих несколько звуковых дорожек с несколькими кодеками и языков, [Динамическая упаковка](dynamic-packaging-overview.md) теперь поддерживает несколько звуковых дорожек для выходных данных HLS (версии 4 или более поздней).
 
-### <a name="korea-regional-pair-is-open-for-media-services"></a>Korea regional pair is open for Media Services 
+### <a name="korea-regional-pair-is-open-for-media-services"></a>Для служб мультимедиа открыта пара региональных стандартов Кореи 
 
-Media Services is now available in Korea Central and Korea South regions. 
+Службы мультимедиа теперь доступны в центральных и Южной регионах Кореи. 
 
-For more information, see [Clouds and regions in which Media Services v3 exists](azure-clouds-regions.md).
+Дополнительные сведения см. [в разделе облака и регионы, в которых существует версия 3 служб мультимедиа](azure-clouds-regions.md).
 
 ### <a name="performance-improvements"></a>Повышение производительности.
 
-Added updates that include Media Services performance improvements.
+Добавлены обновления, включающие улучшения производительности служб мультимедиа.
 
-* The maximum file size supported for processing was updated. See, [Quotas and limitations](limits-quotas-constraints.md).
-* [Encoding speeds improvements](media-reserved-units-cli-how-to.md#choosing-between-different-reserved-unit-types).
+* Обновлен максимальный размер файла, поддерживаемый для обработки. См. раздел, [квоты и ограничения](limits-quotas-constraints.md).
+* [Улучшение скорости кодирования](media-reserved-units-cli-how-to.md#choosing-between-different-reserved-unit-types).
 
 ## <a name="april-2019"></a>Апрель 2019 г.
 
-### <a name="new-presets"></a>New presets
+### <a name="new-presets"></a>Новые предустановки
 
-* [FaceDetectorPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#facedetectorpreset) was added to the built-in analyzer presets.
-* [ContentAwareEncodingExperimental](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#encodernamedpreset) was added to the built-in encoder presets. For more information, see [Content-aware encoding](cae-experimental.md). 
+* [Фацедетекторпресет](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#facedetectorpreset) был добавлен во встроенные предустановки анализатора.
+* [Контентаваринкодинжекспериментал](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#encodernamedpreset) был добавлен во встроенные предустановки кодировщика. Дополнительные сведения см. в разделе [кодировка с учетом содержимого](cae-experimental.md). 
 
 ## <a name="march-2019"></a>Март 2019 г.
 
-Dynamic Packaging now supports Dolby Atmos. For more information, see [Audio codecs supported by dynamic packaging](dynamic-packaging-overview.md#audio-codecs).
+Динамическая упаковка теперь поддерживает Dolby атмос. Дополнительные сведения см. в разделе [аудиокодеки, поддерживаемые динамической упаковкой](dynamic-packaging-overview.md#audio-codecs).
 
-You can now specify a list of asset or account filters, which would apply to your Streaming Locator. For more information, see [Associate filters with Streaming Locator](filters-concept.md#associating-filters-with-streaming-locator).
+Теперь можно указать список фильтров активов или учетных записей, которые будут применяться к указателю потоковой передачи. Дополнительные сведения см. в разделе [связывание фильтров с указателем потоковой передачи](filters-concept.md#associating-filters-with-streaming-locator).
 
 ## <a name="february-2019"></a>Февраль 2019 г.
 
-Media Services v3 is now supported in Azure national clouds. Некоторые возможности пока недоступны во всех облаках. Дополнительные сведения см. в разделе [Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3](azure-clouds-regions.md).
+Службы мультимедиа версии 3 теперь поддерживаются в национальных облаках Azure. Некоторые возможности пока недоступны во всех облаках. Дополнительные сведения см. в разделе [Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3](azure-clouds-regions.md).
 
 Событие [Microsoft.Media.JobOutputProgress](media-services-event-schemas.md#monitoring-job-output-progress) для Служб мультимедиа добавлено в Сетку событий Azure.
 
@@ -239,11 +239,11 @@ Media Services v3 is now supported in Azure national clouds. Некоторые 
 
 Представлены следующие обновления кодирования в реальном времени:
 
-- Новый режим с низкой задержкой для трансляции (10 секунд полного процесса).
+- Новый режим с низкой задержкой для трансляции (10 секунд для полного процесса).
 - Улучшенная поддержка RTMP (повышенная стабильность и поддержка исходного кодировщика).
 - Безопасный прием RTMPS.
 
-    При создании динамических событий вы получите 4 URL-адреса для приема. 4 URL-адреса приема практически идентичны, они имеют тот же токен потоковой передачи (AppId) с отличной частью номера порта. Два из URL-адресов являются первичными и резервными для RTMPS. 
+    При создании динамических событий вы получите 4 URL-адреса для приема. 4 URL-адреса для приема практически идентичны, они имеют тот же токен потоковой передачи (AppId) с отличной частью номера порта. Два из этих URL-адресов являются первичным и резервным для RTMPS. 
 - 24-часовая система поддержки перекодирования. 
 - Улучшена поддержка рекламных сигналов в RTMP с помощью SCTE35.
 
@@ -276,9 +276,9 @@ Media Services v3 is now supported in Azure national clouds. Некоторые 
 
 ## <a name="may-2018---preview"></a>Май 2018 г. Предварительная версия
 
-### <a name="net-sdk"></a>SDK .NET
+### <a name="net-sdk"></a>ПАКЕТ SDK .NET
 
-The following features are present in the .NET SDK:
+В пакете SDK для .NET имеются следующие возможности.
 
 * **Преобразования** и **задания**, позволяющие кодировать или анализировать мультимедийное содержимое. Примеры см. в руководстве по [потоковой передаче](stream-files-tutorial-with-api.md) и [анализе видео](analyze-videos-tutorial-with-api.md).
 * **Указатели потоковой передачи**, отвечающие за публикацию и потоковую передачу содержимого на устройства пользователей.
@@ -295,7 +295,7 @@ The following features are present in the .NET SDK:
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Обзор](media-services-overview.md)
-- [Media Services v2 release notes](../previous/media-services-release-notes.md)
+- [Заметки о выпуске служб мультимедиа версии 2](../previous/media-services-release-notes.md)

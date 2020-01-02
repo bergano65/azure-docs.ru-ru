@@ -4,16 +4,16 @@ description: В этой статье рассказывается о том, к
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 11/04/2019
+ms.date: 12/04/2019
 ms.topic: conceptual
-ms.service: billing
+ms.service: cost-management-billing
 manager: boalcsva
-ms.openlocfilehash: 1ab6a3c0a4497ce49534f2708e13d7479130ba15
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 3c3d95feed4f7cf47448c4fe62d8368fa5498dd7
+ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73887166"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74841326"
 ---
 # <a name="azure-ea-vm-reserved-instances"></a>Зарезервированные экземпляры виртуальной машины Azure EA
 

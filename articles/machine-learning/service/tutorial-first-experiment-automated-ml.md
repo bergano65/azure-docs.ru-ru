@@ -1,5 +1,5 @@
 ---
-title: Создание эксперимента автоматизированного машинного обучения с классификацией
+title: Создание первого эксперимента машинного обучения
 titleSuffix: Azure Machine Learning
 description: Узнайте, как обучить и развернуть модель классификации в службе автоматического машинного обучения с помощью Студии машинного обучения Azure.
 services: machine-learning
@@ -10,12 +10,12 @@ ms.author: tzvikei
 author: tsikiksr
 ms.reviewer: nibaccam
 ms.date: 11/04/2019
-ms.openlocfilehash: ecad41097786a40f7c605a686f085136856c950a
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 04035e23c0c650fb6cbf4fdca3b78ce5e814c9d3
+ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73581589"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74270728"
 ---
 # <a name="tutorial-create-your-first-classification-model-with-automated-machine-learning"></a>Руководство по созданию первой модели классификации в службе автоматического машинного обучения
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-enterprise-sku.md)]

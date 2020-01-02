@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Синтезирование речи через динамик — Служба "Речь"
+title: Краткое руководство. Синтезирование речи через динамик в службе "Речь"
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве будет использоваться пакет SDK службы "Речь" для преобразования текста в синтезированную речь и воспроизведения результата через динамик.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 11/04/2019
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 960e87860f004d8f9f2002b8125ecf26ee55237d
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 9f91d4b0c390b2014dfd88c94b89374d3ea67324
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826858"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74818268"
 ---
 # <a name="quickstart-synthesize-speech-to-a-speaker"></a>Краткое руководство. Синтезирование речи в виде речи докладчика
 

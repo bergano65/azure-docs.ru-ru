@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5eefac10e2ab196affc4c4148348d19959fcfeec
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 5d4bdd554fb7c8817ada80a294f3ecb1c6c85b00
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74266899"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707026"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -70,7 +70,7 @@ ms.locfileid: "74266899"
 
 ### <a name="authentication-administratorauthentication-administrator-permissions"></a>[Администратор проверки подлинности](#authentication-administrator-permissions)
 
-Пользователи с этой ролью могут устанавливать или сбрасывать учетные данные, не являющиеся паролями, и могут обновлять пароли для всех пользователей. Администраторы проверки подлинности могут потребовать от пользователей повторной регистрации с использованием существующих учетных данных, не являющихся паролями (например, MFA или FIDO), и отменять **запоминать MFA на устройстве**, при этом при следующем входе в систему пользователей, не являющихся администраторами, или назначены только следующие роли:
+Пользователи с этой ролью могут устанавливать или сбрасывать учетные данные, не являющиеся паролями, и могут обновлять пароли для всех пользователей. Администраторы проверки подлинности могут требовать от пользователей повторной регистрации в существующих учетных данных, не являющихся паролями (например, MFA или FIDO), и отменять **запоминать MFA на устройстве**, при этом при следующем входе в систему пользователи, не являющиеся администраторами, или назначены только следующие роли.
 
 * Администратор проверки подлинности
 * Читатели каталогов
@@ -79,7 +79,7 @@ ms.locfileid: "74266899"
 * Читатель отчетов
 
 > [!IMPORTANT]
-> Пользователи с этой ролью могут изменять учетные данные для пользователей, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в службе Azure Active Directory и за ее пределами. Изменение учетных данных пользователя подразумевает возможность предполагать идентификатор и разрешения пользователя. Например,
+> Пользователи с этой ролью могут изменять учетные данные для пользователей, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в службе Azure Active Directory и за ее пределами. Изменение учетных данных пользователя подразумевает возможность предполагать идентификатор и разрешения пользователя. Пример.
 >
 >- Владельцы при регистрации приложения и владельцы корпоративных приложений, которые могут управлять учетными данными принадлежащих им приложений. У этих приложений в Azure AD и в других местах могут быть привилегированные разрешения, которые не предоставлены администраторам проверки подлинности. По этому пути администратор проверки подлинности может предположить идентификатор владельца приложения, а затем допустить удостоверение привилегированного приложения, обновив учетные данные для приложения.
 >- Владельцы подписок Azure, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в Azure.
@@ -170,7 +170,7 @@ ms.locfileid: "74266899"
 
 ### <a name="customer-lockbox-access-approvercustomer-lockbox-access-approver-permissions"></a>[Утверждающий защищенное хранилище доступа](#customer-lockbox-access-approver-permissions)
 
-Управляет [запросами защищенного хранилища](https://docs.microsoft.com/office365/admin/manage/customer-lockbox-requests) в вашей организации. Для запросов защищенного хранилища они получают уведомления по электронной почте и могут утверждать и отклонять запросы из Центра администрирования Microsoft 365. Они могут также выключать функции защищенного хранилища. Только глобальные администраторы могут сбрасывать пароли пользователей, которым назначены эти роли.
+Управляет [запросами защищенное хранилище](https://docs.microsoft.com/office365/admin/manage/customer-lockbox-requests) в Организации. Для запросов защищенного хранилища они получают уведомления по электронной почте и могут утверждать и отклонять запросы из Центра администрирования Microsoft 365. Они могут также выключать функции защищенного хранилища. Только глобальные администраторы могут сбрасывать пароли пользователей, которым назначены эти роли.
 
 ### <a name="desktop-analytics-administratordesktop-analytics-administrator-permissions"></a>[Администратор Desktop Analytics](#desktop-analytics-administrator-permissions)
 
@@ -179,13 +179,13 @@ ms.locfileid: "74266899"
 
 ### <a name="device-administratordevice-administrators-permissions"></a>[Администратор устройства](#device-administrators-permissions)
 
-эту роль можно назначить только в качестве роли дополнительного локального администратора в [параметрах устройства](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/DeviceSettings/menuId/). Пользователи с этой ролью становятся администраторами локальных компьютеров на всех устройствах с Windows 10, присоединенных к Azure Active Directory. Они не могут управлять объектами устройств в Azure Active Directory.
+Эта роль доступна для назначения только в качестве дополнительного локального администратора в [параметрах устройства](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/DeviceSettings/menuId/). Пользователи с этой ролью становятся администраторами локальных компьютеров на всех устройствах с Windows 10, присоединенных к Azure Active Directory. Они не могут управлять объектами устройств в Azure Active Directory.
 
 ### <a name="directory-readersdirectory-readers-permissions"></a>[Читатели каталогов](#directory-readers-permissions)
 
 Пользователи с этой ролью могут читать основные сведения о каталоге. Эта роль должна использоваться для:
 * Предоставление определенному набору гостевых пользователей доступа на чтение вместо предоставления его всем гостевым пользователям.
-* Предоставление определенного набора пользователей, не являющихся администраторами, доступа к порталу Azure, если параметр "ограничить доступ к порталу Azure AD только администраторам" имеет значение "Да".
+* Предоставление определенному набору пользователей, не являющихся администраторами, доступа к портал Azure, если параметр "ограничить доступ к порталу Azure AD только администраторам" имеет значение "Да".
 * Предоставление субъектам-службам доступа к каталогу, где Directory. Read. ALL, не является параметром.
 
 ### <a name="directory-synchronization-accountsdirectory-synchronization-accounts-permissions"></a>[Учетные записи синхронизации каталогов](#directory-synchronization-accounts-permissions)
@@ -194,7 +194,7 @@ ms.locfileid: "74266899"
 
 ### <a name="directory-writersdirectory-writers-permissions"></a>[Модули записи каталога](#directory-writers-permissions)
 
-это устаревшая роль, которая будет назначаться приложениям, не поддерживающим [платформу предоставления разрешений](../develop/quickstart-v1-integrate-apps-with-azure-ad.md). Ее не следует назначать пользователям.
+Это устаревшая роль, которая должна быть назначена приложениям, не поддерживающим [инфраструктуру согласия](../develop/quickstart-v1-integrate-apps-with-azure-ad.md). Ее не следует назначать пользователям.
 
 ### <a name="dynamics-365-administrator--crm-administratorcrm-service-administrator-permissions"></a>[Администратор Dynamics 365 или администратор CRM](#crm-service-administrator-permissions)
 
@@ -238,7 +238,7 @@ ms.locfileid: "74266899"
 >- [Портал Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/) . Глобальный считыватель не может прочитать режим подготовки для корпоративного приложения.
 >- [Центр администрирования M365](https://admin.microsoft.com/Adminportal/Home#/homepage) — глобальный модуль чтения не может читать запросы на хранилище клиентов. **На левой** панели центра администрирования M365 не находится вкладка " **запросы к защищенному хранилищем для клиентов** ".
 >- [M365 Security Center](https://security.microsoft.com/homepage) -Global Reader не может читать метки чувствительности и хранения. На левой панели центра безопасности M365 не найдены **метки конфиденциальности**, **метки хранения**и **аналитика меток** .
->- [Office Центр безопасности и соответствия требованиям](https://protection.microsoft.com) — глобальный считыватель не может читать журналы аудита SCC или выполнять поиск содержимого.
+>- [Office Центр безопасности и соответствия требованиям](https://sip.protection.office.com/homepage) — глобальный считыватель не может читать журналы аудита SCC или выполнять поиск содержимого.
 >- [Центр администрирования групп](https://admin.teams.microsoft.com) — глобальный модуль чтения не может читать **жизненный цикл групп**, **аналитические отчеты &** , **Управление устройствами с IP-телефонами** и **Каталог приложений**.
 >- [Privileged Access Management (PAM)](https://docs.microsoft.com/office365/securitycompliance/privileged-access-management-overview) не поддерживает роль глобального читателя.
 >- [Azure Information Protection](https://docs.microsoft.com/azure/information-protection/what-is-information-protection) -Global Reader поддерживается только [для централизованной отчетности](https://docs.microsoft.com/azure/information-protection/reports-aip) , и если ваша организация Azure AD не находится на [единой платформе меток](https://docs.microsoft.com/azure/information-protection/faqs#how-can-i-determine-if-my-tenant-is-on-the-unified-labeling-platform).
@@ -246,13 +246,13 @@ ms.locfileid: "74266899"
 > В настоящее время эти функции находятся в разработке.
 >
 
-### <a name="group-administratorgroup-administrator"></a>[Администратор группы](#group-administrator)
+### <a name="group-administratorgroup-administrator-permissions"></a>[Администратор группы](#group-administrator-permissions)
 
-Пользователи с этой ролью могут создавать группы и ее параметры, такие как политики именования и истечения срока действия, и управлять ими. Важно понимать, что назначение пользователю этой роли дает им возможность управлять всеми группами в клиенте на различных рабочих нагрузках, таких как команды, SharePoint, Yammer в дополнение к Outlook. Кроме того, пользователь сможет управлять параметрами различных групп на различных порталах администрирования, например в центре администрирования Майкрософт, на портале Azure, а также в конкретных рабочих нагрузках, таких как команды и центры администрирования SharePoint.
+Пользователи с этой ролью могут создавать группы и ее параметры, такие как политики именования и истечения срока действия, и управлять ими. Важно понимать, что назначение пользователю этой роли дает им возможность управлять всеми группами в клиенте на различных рабочих нагрузках, таких как команды, SharePoint, Yammer в дополнение к Outlook. Кроме того, пользователь сможет управлять параметрами различных групп на различных порталах администрирования, таких как центр администрирования Майкрософт, портал Azure, а также с конкретными рабочими нагрузками, такими как команды и центры администрирования SharePoint.
 
 ### <a name="guest-inviterguest-inviter-permissions"></a>[Приглашенный докладчик](#guest-inviter-permissions)
 
-пользователи с этой ролью могут управлять приглашениями пользователей-гостей Azure Active Directory B2B, если для параметра **Участники могут приглашать** задано значение "Нет". Дополнительные сведения о службе совместной работы Azure AD B2B см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b). В нее не входят какие-либо другие разрешения.
+Пользователи с этой ролью могут управлять приглашениями гостевого пользователя B2B Azure Active Directory, когда **Участники могут приглашать** параметры пользователя, для которых задано значение нет. Дополнительные сведения о службе совместной работы Azure AD B2B см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b). В нее не входят какие-либо другие разрешения.
 
 ### <a name="helpdesk-administratorhelpdesk-administrator-permissions"></a>[Администратор службы поддержки](#helpdesk-administrator-permissions)
 
@@ -265,7 +265,7 @@ ms.locfileid: "74266899"
 * Читатель отчетов
 
 > [!IMPORTANT]
-> Пользователи с этой ролью могут изменять пароли для пользователей, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в службе Azure Active Directory и за ее пределами. Изменение пароля пользователя подразумевает возможность предполагать идентификатор и разрешения пользователя. Например,
+> Пользователи с этой ролью могут изменять пароли для пользователей, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в службе Azure Active Directory и за ее пределами. Изменение пароля пользователя подразумевает возможность предполагать идентификатор и разрешения пользователя. Пример.
 >
 >- Владельцы при регистрации приложения и владельцы корпоративных приложений, которые могут управлять учетными данными принадлежащих им приложений. У этих приложений в Azure AD и в других местах могут быть привилегированные разрешения, которые не предоставлены администраторам службы технической поддержки. По этому пути администратор службы технической поддержки сможет предположить идентификатор владельца приложения, а затем идентификатор привилегированного приложения, обновив учетные данные приложения.
 >- Владельцы подписки Azure, которые могут иметь доступ к конфиденциальной или частной информации или критической конфигурации в Azure.
@@ -279,7 +279,9 @@ ms.locfileid: "74266899"
 
 ### <a name="intune-administratorintune-service-administrator-permissions"></a>[Администратор Intune](#intune-service-administrator-permissions)
 
-пользователи с этой ролью имеют глобальные разрешения в Microsoft Intune Online (если служба используется). Кроме того, администраторы этой роли могут управлять пользователями и устройствами, чтобы связать политику, а также создавать группы и управлять ими. Дополнительные сведения см. в статье [Управление доступом на основе ролей (RBAC) с помощью Microsoft Intune](https://docs.microsoft.com/intune/role-based-access-control).
+пользователи с этой ролью имеют глобальные разрешения в Microsoft Intune Online (если служба используется). Кроме того, администраторы этой роли могут управлять пользователями и устройствами, чтобы связать политику, а также создавать группы и управлять ими. Дополнительные сведения об [управлении ролевым администрированием (RBAC) с помощью Microsoft Intune](https://docs.microsoft.com/intune/role-based-access-control).
+
+Эта роль может создавать все группы безопасности и управлять ими. Однако у администратора Intune нет прав администратора на группы Office. Это означает, что администратор не может обновить владельцев или членство всех групп Office в клиенте. Тем не менее, он может управлять группой Office, которую он создает, которая входит в состав своих привилегий конечного пользователя. Таким образом, любая группа Office (не группа безопасности), которую он создает, должна быть рассчитана на его квоту 250.
 
 > [!NOTE]
 > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Intune". На [портале Azure](https://portal.azure.com) она называется "Администратор Intune".
@@ -298,7 +300,7 @@ ms.locfileid: "74266899"
 
 ### <a name="message-center-readermessage-center-reader-permissions"></a>[Средство чтения центра сообщений](#message-center-reader-permissions)
 
-пользователи с этой ролью могут отслеживать уведомления и рекомендации по обновлениям работоспособности в [центре сообщений Office 365](https://support.office.com/article/Message-center-in-Office-365-38FB3333-BFCC-4340-A37B-DEDA509C2093) для своей организации в настроенных службах, таких как Exchange, Intune и Microsoft Teams. Читатели Центра сообщений еженедельно получают по электронной почте хэш-коды публикаций, обновлений и могут размещать общедоступные публикации в центре сообщений в Office 365. В Azure AD у пользователей с этой ролью будет только доступ на чтение данных в службах Azure AD, например данных пользователей и групп. Данная роль не обладает доступом для просмотра, создания или управления запросами в службу поддержки.
+Пользователи с этой ролью могут отслеживать уведомления и обновления работоспособности рекомендаций в [центре сообщений Office 365](https://support.office.com/article/Message-center-in-Office-365-38FB3333-BFCC-4340-A37B-DEDA509C2093) для своей организации по настроенным службам, таким как Exchange, Intune и Microsoft Teams. Читатели Центра сообщений еженедельно получают по электронной почте хэш-коды публикаций, обновлений и могут размещать общедоступные публикации в центре сообщений в Office 365. В Azure AD у пользователей с этой ролью будет только доступ на чтение данных в службах Azure AD, например данных пользователей и групп. Данная роль не обладает доступом для просмотра, создания или управления запросами в службу поддержки.
 
 ### <a name="office-apps-administratoroffice-apps-administrator-permissions"></a>[Администратор приложений Office](#office-apps-administrator-permissions)
 
@@ -326,6 +328,10 @@ ms.locfileid: "74266899"
 
 > [!NOTE]
 > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Power BI". На [портале Azure](https://portal.azure.com) она называется "Администратор Power BI".
+
+### <a name="power-platform-administratorpower-platform-administrator-permissions"></a>[Администратор Power Platform](#power-platform-administrator-permissions)
+
+Пользователи с этой ролью могут создавать и администрировать все аспекты сред, PowerApps, потоков, политик защиты от потери данных. Кроме того, пользователи с этой ролью могут управлять билетами поддержки и отслеживать работоспособность службы.
 
 ### <a name="privileged-authentication-administratorprivileged-authentication-administrator-permissions"></a>[Администратор привилегированной проверки подлинности](#privileged-authentication-administrator-permissions)
 
@@ -358,9 +364,9 @@ ms.locfileid: "74266899"
 --- | ---
 [Центр безопасности Microsoft 365](https://protection.office.com) | Отслеживает политики, связанные с безопасностью во всех службах Microsoft 365.<br>Управляет угрозами безопасности и оповещениями.<br>Просмотр отчетов
 Центр защиты идентификации | Все разрешения роли читателя сведений о безопасности.<br>А также возможность выполнять все операции центра защиты идентификации, кроме сброса паролей.
-[Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Все разрешения роли читателя сведений о безопасности.<br>**Невозможно** управлять назначениями ролей или параметрами Azure AD
+[управление привилегированными пользователями;](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Все разрешения роли читателя сведений о безопасности.<br>**Невозможно** управлять назначениями ролей или параметрами Azure AD
 [Центр безопасности и соответствия требованиям Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Управление политиками безопасности.<br>Просмотр, исследование и реагирование на угрозы безопасности.<br>Просмотр отчетов
-Azure Advanced Threat Protection | Мониторинг и реагирование на подозрительные безопасные действия.
+Расширенная защита от угроз Azure | Мониторинг и реагирование на подозрительные безопасные действия.
 EDR и ATP в Защитнике Windows | Назначение ролей<br>Управление группами компьютеров<br>Настройка выявления угроз в конечной точке и автоматизированном исправлении.<br>Просмотр, исследование и реагирование на оповещения.
 [Intune](https://docs.microsoft.com/intune/role-based-access-control) | Просмотр пользователя, устройства, соглашения о регистрации, конфигурации и сведений о приложении.<br>Не может вносить изменения в Intune.
 [Cloud App Security](https://docs.microsoft.com/cloud-app-security/manage-admins) | Добавление администраторов, политики и параметров, загрузка журналов и выполнение действия системы управления.
@@ -375,7 +381,7 @@ EDR и ATP в Защитнике Windows | Назначение ролей<br>У
 --- | ---
 [Центр безопасности Microsoft 365](https://protection.office.com) | Все разрешения роли читателя сведений о безопасности.<br>Просмотр, исследование и реагирование на предупреждения о угрозах безопасности
 Центр защиты идентификации | Все разрешения роли читателя сведений о безопасности.<br>А также возможность выполнять все операции центра защиты идентификации, кроме сброса паролей.
-[Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Все разрешения роли читателя сведений о безопасности.
+[управление привилегированными пользователями;](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Все разрешения роли читателя сведений о безопасности.
 [Центр безопасности и соответствия требованиям Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Все разрешения роли читателя сведений о безопасности.<br>Просмотр, исследование и реагирование на оповещения системы безопасности
 EDR и ATP в Защитнике Windows | Все разрешения роли читателя сведений о безопасности.<br>Просмотр, исследование и реагирование на оповещения системы безопасности
 [Intune](https://docs.microsoft.com/intune/role-based-access-control) | Все разрешения роли читателя сведений о безопасности.
@@ -390,7 +396,7 @@ EDR и ATP в Защитнике Windows | Все разрешения роли 
 --- | ---
 [Центр безопасности Microsoft 365](https://protection.office.com) | Просмотр политик связанных с безопасностью во всех службах Microsoft 365.<br>Просмотр угроз безопасности и оповещений.<br>Просмотр отчетов
 Центр защиты идентификации | Чтение всех отчетов о безопасности и сведений о параметрах функций безопасности<br><ul><li>Защита от нежелательной почты<li>Шифрование<li>Защита от потери данных<li>Защита от вредоносных программ<li>Дополнительная защита от угроз<li>Защита от фишинга<li>Правила обработки почты
-[Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Имеет доступ только для чтения ко всей информации, отображаемой в Azure AD Privileged Identity Management: политики и отчеты для назначений ролей Azure AD и проверок безопасности.<br>**Не удается** зарегистрироваться для Azure AD privileged Identity Management или внести в него изменения. На портале управление привилегированными пользователями или с помощью PowerShell кто-то из этой роли может активировать дополнительные роли (например, администратора глобального администратора или привилегированной роли), если он подходит для них.
+[управление привилегированными пользователями;](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Имеет доступ только для чтения ко всей информации, отображаемой в Azure AD Privileged Identity Management: политики и отчеты для назначений ролей Azure AD и проверок безопасности.<br>**Не удается** зарегистрироваться для Azure AD privileged Identity Management или внести в него изменения. На портале управление привилегированными пользователями или с помощью PowerShell кто-то из этой роли может активировать дополнительные роли (например, администратора глобального администратора или привилегированной роли), если он подходит для них.
 [Центр безопасности и соответствия требованиям Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Просмотр политик безопасности<br>Просмотр и анализ угроз безопасности.<br>Просмотр отчетов
 EDR и ATP в Защитнике Windows | Просмотр и анализ оповещений. При включении контроля доступа на основе ролей в ATP в Защитнике Windows пользователи с разрешениями только для чтения, такими как роль чтения безопасности Azure AD, теряют доступ, пока они не назначены роли ATP в Защитнике Windows.
 [Intune](https://docs.microsoft.com/intune/role-based-access-control) | Просмотр пользователя, устройства, соглашения о регистрации, настроек и сведений о приложении. Не может вносить изменения в Intune.
@@ -445,10 +451,10 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | --- | --- |
 |Общие разрешения|<p>Создание пользователей и групп</p><p>Создание представлений пользователя и управление ими</p><p>Управление запросами в службу поддержки Office<p>Обновление политик истечения срока действия паролей|
 |<p>Для всех пользователей, в том числе всех администраторов</p>|<p>Управление лицензиями</p><p>Управление всеми свойствами пользователя, за исключением имени участника-пользователя</p>
-|Только для пользователей без прав администратора или с правами любой из следующих ограниченных ролей администратора:<ul><li>Читатели каталогов<li>Приглашающий гостей<li>Администратор службы технической поддержки<li>Читатель Центра сообщений<li>Читатель отчетов<li>администратора пользователей;|<p>Удаление и восстановление</p><p>Отключение и включение</p><p>Отмена маркеров обновления</p><p>Управление всеми свойствами пользователя, включая имя участника-пользователя</p><p>Сбросить пароль</p><p>Обновление ключей устройства (FIDO)</p>|
+|Только для пользователей без прав администратора или с правами любой из следующих ограниченных ролей администратора:<ul><li>Читатели каталогов<li>Приглашающий гостей<li>Администратор службы технической поддержки<li>Читатель Центра сообщений<li>Читатель отчетов<li>администратора пользователей;|<p>Удаление и восстановление</p><p>Отключение и включение</p><p>Отмена маркеров обновления</p><p>Управление всеми свойствами пользователя, включая имя участника-пользователя</p><p>Сброс пароля</p><p>Обновление ключей устройства (FIDO)</p>|
 
 > [!IMPORTANT]
-> Пользователи с этой ролью могут изменять пароли для пользователей, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в службе Azure Active Directory и за ее пределами. Изменение пароля пользователя подразумевает возможность предполагать идентификатор и разрешения пользователя. Например,
+> Пользователи с этой ролью могут изменять пароли для пользователей, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в службе Azure Active Directory и за ее пределами. Изменение пароля пользователя подразумевает возможность предполагать идентификатор и разрешения пользователя. Пример.
 >
 >- Владельцы при регистрации приложения и владельцы корпоративных приложений, которые могут управлять учетными данными принадлежащих им приложений. У этих приложений в Azure AD и в других местах могут быть привилегированные разрешения, которые не предоставлены администраторам пользователей. По этому пути администратор пользователей сможет предположить идентификатор владельца приложения, а затем идентификатор привилегированного приложения, обновив учетные данные приложения.
 >- Владельцы подписок Azure, у которых может быть доступ к конфиденциальной, частной информации или критически важной конфигурации в Azure.
@@ -475,7 +481,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory/Applications/Basic/Update | Изменение базовых свойств приложений в Azure Active Directory. |
 | Microsoft. Directory/Applications/CREATE | Создание приложений в Azure Active Directory. |
 | Microsoft. Directory/приложения/учетные данные/обновление | Изменение свойства applications.credentials в Azure Active Directory. |
-| microsoft.directory/applications/delete | Удаление приложений в Azure Active Directory. |
+| Microsoft. Directory/Applications/Delete | Удаление приложений в Azure Active Directory. |
 | Microsoft. Directory, приложения, владельцы и обновление | Изменение свойства applications.owners в Azure Active Directory. |
 | Microsoft. Directory/приложения/разрешения/обновление | Изменение свойства applications.permissions в Azure Active Directory. |
 | Microsoft. Directory, приложения, политики или обновление | Изменение свойства applications.policies в Azure Active Directory. |
@@ -483,7 +489,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory/appRoleAssignments/чтение | Чтение объектов appRoleAssignment в Azure Active Directory. |
 | Microsoft. Directory/appRoleAssignments/обновление | Изменение объектов appRoleAssignment в Azure Active Directory. |
 | Microsoft. Directory/appRoleAssignments/удаление | Удаление объектов appRoleAssignment в Azure Active Directory. |
-| microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| Microsoft. Directory/auditLogs/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
 | Microsoft. Directory/Коннекторграупс/все/чтение | Чтение свойств группы соединителей прокси приложения в Azure Active Directory. |
 | Microsoft. Directory/Коннекторграупс/все/обновление | Обновите все свойства группы соединителей прокси приложения в Azure Active Directory. |
 | Microsoft. Directory/Коннекторграупс/создать | Создайте группы соединителей прокси приложения в Azure Active Directory. |
@@ -497,8 +503,8 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory/Policies/Аппликатионконфигуратион/Owners/Read | Чтение свойства applicationConfiguration в Azure Active Directory. |
 | Microsoft. Directory/Policies/Аппликатионконфигуратион/владельцы/обновление | Обновление свойства applicationConfiguration в Azure Active Directory. |
 | Microsoft. Directory/Policies/Аппликатионконфигуратион/policyAppliedTo/чтение | Чтение свойства applicationConfiguration в Azure Active Directory. |
-| microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
-| microsoft.directory/servicePrincipals/appRoleAssignments/update | Изменение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/appRoleAssignedTo/Update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/appRoleAssignments/Update | Изменение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals/аудитория/обновление | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals, проверка подлинности или обновление | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals/Basic/Update | Обновление базовых свойств для объектов ServicePrincipal в Azure Active Directory. |
@@ -508,7 +514,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory/свойства serviceprincipals/Owners/Update | Изменение свойства servicePrincipals.owners в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals/разрешения/обновление | Обновление свойства servicePrincipals.permissions в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals/политики/обновление | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
-| microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
+| Microsoft. Directory/Сигнинрепортс/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
@@ -632,14 +638,14 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory/Applications/Basic/Update | Изменение базовых свойств приложений в Azure Active Directory. |
 | Microsoft. Directory/Applications/CREATE | Создание приложений в Azure Active Directory. |
 | Microsoft. Directory/приложения/учетные данные/обновление | Изменение свойства applications.credentials в Azure Active Directory. |
-| microsoft.directory/applications/delete | Удаление приложений в Azure Active Directory. |
+| Microsoft. Directory/Applications/Delete | Удаление приложений в Azure Active Directory. |
 | Microsoft. Directory, приложения, владельцы и обновление | Изменение свойства applications.owners в Azure Active Directory. |
 | Microsoft. Directory/приложения/разрешения/обновление | Изменение свойства applications.permissions в Azure Active Directory. |
 | Microsoft. Directory, приложения, политики или обновление | Изменение свойства applications.policies в Azure Active Directory. |
 | Microsoft. Directory/appRoleAssignments/создать | Создание объектов appRoleAssignment в Azure Active Directory. |
 | Microsoft. Directory/appRoleAssignments/обновление | Изменение объектов appRoleAssignment в Azure Active Directory. |
 | Microsoft. Directory/appRoleAssignments/удаление | Удаление объектов appRoleAssignment в Azure Active Directory. |
-| microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| Microsoft. Directory/auditLogs/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
 | Microsoft. Directory/Policies/Аппликатионконфигуратион/создать | Создание политик в Azure Active Directory. |
 | Microsoft. Directory/политики/Аппликатионконфигуратион/Basic/Read | Чтение свойства applicationConfiguration в Azure Active Directory. |
 | Microsoft. Directory/Policies/Аппликатионконфигуратион/Basic/Update | Обновление свойства applicationConfiguration в Azure Active Directory. |
@@ -647,8 +653,8 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory/Policies/Аппликатионконфигуратион/Owners/Read | Чтение свойства applicationConfiguration в Azure Active Directory. |
 | Microsoft. Directory/Policies/Аппликатионконфигуратион/владельцы/обновление | Обновление свойства applicationConfiguration в Azure Active Directory. |
 | Microsoft. Directory/Policies/Аппликатионконфигуратион/policyAppliedTo/чтение | Чтение свойства applicationConfiguration в Azure Active Directory. |
-| microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
-| microsoft.directory/servicePrincipals/appRoleAssignments/update | Изменение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/appRoleAssignedTo/Update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/appRoleAssignments/Update | Изменение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals/аудитория/обновление | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals, проверка подлинности или обновление | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals/Basic/Update | Обновление базовых свойств для объектов ServicePrincipal в Azure Active Directory. |
@@ -658,7 +664,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory/свойства serviceprincipals/Owners/Update | Изменение свойства servicePrincipals.owners в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals/разрешения/обновление | Обновление свойства servicePrincipals.permissions в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals/политики/обновление | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
-| microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
+| Microsoft. Directory/Сигнинрепортс/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
@@ -670,12 +676,12 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| Microsoft. Directory/auditLogs/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
 | Microsoft. Directory/Devices/Битлоккеррековерикэйс/Read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
 | Microsoft. Directory/Devices/Delete | Удаление устройств в Azure Active Directory. |
 | Microsoft. Directory/Devices/Disable | Отключение устройств в Azure Active Directory. |
 | Microsoft. Directory/Devices/Enable | Включение устройств в Azure Active Directory. |
-| microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
+| Microsoft. Directory/Сигнинрепортс/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 
@@ -694,7 +700,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory/administrativeUnits/Аллпропертиес/Аллтаскс | Создание и удаление объектов administrativeUnit, а также чтение и изменение всех свойств в Azure Active Directory. |
 | Microsoft. Directory/Applications/Аллпропертиес/Аллтаскс | Создание и удаление приложений, а также чтение и изменение всех свойств в Azure Active Directory. |
 | Microsoft. Directory/appRoleAssignments/Аллпропертиес/Аллтаскс | Создание и удаление объектов appRoleAssignment, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| Microsoft. Directory/auditLogs/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
 | Microsoft. Directory/Contacts/Аллпропертиес/Аллтаскс | Создание и удаление контактов, а также чтение и изменение всех свойств в Azure Active Directory. |
 | Microsoft. Directory/Contracts/Аллпропертиес/Аллтаскс | Создание и удаление контрактов, а также чтение и изменение всех свойств в Azure Active Directory. |
 | Microsoft. Directory/Devices/Аллпропертиес/Аллтаскс | Создание и удаление устройств, а также чтение и изменение всех свойств в Azure Active Directory. |
@@ -716,7 +722,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory/Сервицеактион/Енабледиректорифеатуре | Выполнение действия службы Enabledirectoryfeature в Azure Active Directory. |
 | Microsoft. Directory/Сервицеактион/Жетаваилабликстентионпропертиес | Выполнение действия службы Getavailableextentionproperties в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals/Аллпропертиес/Аллтаскс | Создание и удаление объектов servicePrincipal, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
+| Microsoft. Directory/Сигнинрепортс/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | Microsoft. Directory/Субскрибедскус/Аллпропертиес/Аллтаскс | Создание и удаление объектов subscribedSku и чтение и изменение всех свойств в Azure Active Directory. |
 | Microsoft. Directory/Users/Аллпропертиес/Аллтаскс | Создание и удаление пользователей, а также чтение и изменение всех свойств в Azure Active Directory. |
 | Microsoft. Директорисинк/Аллентитиес/Аллтаскс | Выполнение любых действий в Azure AD Connect. |
@@ -933,9 +939,9 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory/Policies/ПолиЦиесапплиедто/чтение | Чтение свойства policies.policyAppliedTo в Azure Active Directory. |
 | Microsoft. Directory/Policies/Тенантдефаулт/обновление | Обновление свойства policies.tenantDefault в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals/appRoleAssignedTo/Read | Чтение свойства ervicePrincipals.appRoleAssignedTo в Azure Active Directory. |
-| microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/appRoleAssignedTo/Update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals/appRoleAssignments/Read | Чтение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
-| microsoft.directory/servicePrincipals/appRoleAssignments/update | Изменение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/appRoleAssignments/Update | Изменение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals/аудитория/обновление | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals, проверка подлинности или обновление | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals/Basic/Read | Чтение базовых свойств для объектов servicePrincipal в Azure Active Directory. |
@@ -964,7 +970,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory/Groups/базовый/обновление | Обновление базовых свойств в группах в Azure Active Directory. |
 | Microsoft. Directory/Groups/Members/Update | Изменение свойства groups.members в Azure Active Directory. |
 | Microsoft. Directory, группы, владельцы и обновление | Изменение свойства groups.owners в Azure Active Directory. |
-| microsoft.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
+| Microsoft. каталог/группы/параметры/обновление | Изменение свойства groups.settings в Azure Active Directory. |
 | Microsoft. Directory/Граупсеттингс/Basic/Update | Обновление базовых свойств для объектов groupSettings в Azure Active Directory. |
 | Microsoft. Directory/Граупсеттингс/создать | Создание свойства groupSettings в Azure Active Directory. |
 | Microsoft. Directory/Граупсеттингс/удаление | Удаление объектов groupSetting в Azure Active Directory. |
@@ -1057,7 +1063,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory/свойства serviceprincipals/ownedObjects/Read   | Чтение свойства servicePrincipals.ownedObjects в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals/Owners/Read | Чтение свойства servicePrincipals.owners в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals/политики/чтение   | Чтение свойства servicePrincipals.policies в Azure Active Directory. |
-| microsoft.directory/signInReports/allProperties/read  | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
+| Microsoft. Directory/Сигнинрепортс/Аллпропертиес/Read  | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | Microsoft. Directory/Субскрибедскус/Basic/Read | Чтение базовых свойств объектов subscribedSku в Azure Active Directory. |
 | Microsoft. Directory/Users/appRoleAssignments/Read | Чтение свойства users.appRoleAssignments в Azure Active Directory. |
 | Microsoft. Directory/Users/Basic/Read  | Чтение базовых свойств пользователей в Azure Active Directory. |
@@ -1077,7 +1083,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
 | Microsoft. Office 365. Аллентитиес/Standard/Read   | Чтение стандартных свойств для всех ресурсов в Microsoft. Office 365. Port. |
 
-### <a name="group-administrator"></a>Администратор группы
+### <a name="group-administrator-permissions"></a>Разрешения администратора группы
 Может управлять всеми аспектами групп и параметров групп, таких как политики именования и истечения срока действия.
 
 | **Действия** | **Описание** |
@@ -1091,7 +1097,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory/Groups/Members/Update | Изменение свойства groups.members в Azure Active Directory. |
 | Microsoft. Directory, группы, владельцы и обновление | Изменение свойства groups.owners в Azure Active Directory. |
 | Microsoft. каталог/группы/восстановление | Восстановление групп в Azure Active Directory. |
-| microsoft.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
+| Microsoft. каталог/группы/параметры/обновление | Изменение свойства groups.settings в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.office365.messageCenter/messages/read | Чтение сообщений в microsoft.office365.messageCenter. |
@@ -1159,7 +1165,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory/Groups/Members/Update | Изменение свойства groups.members в Azure Active Directory. |
 | Microsoft. Directory, группы, владельцы и обновление | Изменение свойства groups.owners в Azure Active Directory. |
 | Microsoft. каталог/группы/восстановление | Восстановление групп в Azure Active Directory. |
-| microsoft.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
+| Microsoft. каталог/группы/параметры/обновление | Изменение свойства groups.settings в Azure Active Directory. |
 | Microsoft. Directory/Users/appRoleAssignments/Update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
 | Microsoft. Directory/Users/Basic/Update | Обновление базовых свойств пользователей в Azure Active Directory. |
 | Microsoft. Directory/Users/Manager/Update | Изменение свойства users.manager в Azure Active Directory. |
@@ -1345,12 +1351,31 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
 >
 >
-
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.powerApps.powerBI/allEntities/allTasks | Управление всеми аспектами Power BI. |
+| microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
+| microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
+| microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
+
+
+### <a name="power-platform-administrator-permissions"></a>Разрешения администратора Power Platform
+
+Может создавать все аспекты Microsoft Dynamics 365, PowerApps и Microsoft Flow и управлять ими. 
+
+> [!NOTE]
+> Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
+>
+>
+| **Действия** | **Описание** |
+| --- | --- |
+| microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
+| microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
+| Microsoft. dynamics365/Аллентитиес/Аллтаскс | Управление всеми аспектами Dynamics 365. |
+| Microsoft. Flow/Аллентитиес/Аллтаскс | Управление всеми аспектами Microsoft Flow. |
+| Microsoft. powerApps/Аллентитиес/Аллтаскс | Управление всеми аспектами PowerApps. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -1399,8 +1424,8 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
-| microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
+| Microsoft. Directory/auditLogs/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| Microsoft. Directory/Сигнинрепортс/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
 
@@ -1449,7 +1474,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | Microsoft. Directory, приложения, политики или обновление | Изменение свойства applications.policies в Azure Active Directory. |
-| microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| Microsoft. Directory/auditLogs/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
 | Microsoft. Directory/Devices/Битлоккеррековерикэйс/Read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
 | Microsoft. Directory/политики/базовый/обновление | Обновление базовых свойств политик в Azure Active Directory. |
 | Microsoft. Каталог/политики/создать | Создание политик в Azure Active Directory. |
@@ -1457,7 +1482,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory, политики, владельцы и обновление | Изменение свойства policies.owners в Azure Active Directory. |
 | Microsoft. Directory/Policies/Тенантдефаулт/обновление | Обновление свойства policies.tenantDefault в Azure Active Directory. |
 | Microsoft. Directory/свойства serviceprincipals/политики/обновление | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
-| microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
+| Microsoft. Directory/Сигнинрепортс/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.aad.identityProtection/allEntities/read | Чтение всех ресурсов в microsoft.aad.identityProtection. |
 | microsoft.aad.identityProtection/allEntities/update | Обновление всех ресурсов в microsoft.aad.identityProtection. |
 | microsoft.aad.privilegedIdentityManagement/allEntities/read | Чтение всех ресурсов в microsoft.aad.privilegedIdentityManagement. |
@@ -1498,9 +1523,9 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| Microsoft. Directory/auditLogs/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
 | Microsoft. Directory/Devices/Битлоккеррековерикэйс/Read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
-| microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
+| Microsoft. Directory/Сигнинрепортс/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.aad.identityProtection/allEntities/read | Чтение всех ресурсов в microsoft.aad.identityProtection. |
 | microsoft.aad.privilegedIdentityManagement/allEntities/read | Чтение всех ресурсов в microsoft.aad.privilegedIdentityManagement. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
@@ -1642,7 +1667,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory/Groups/Members/Update | Изменение свойства groups.members в Azure Active Directory. |
 | Microsoft. Directory, группы, владельцы и обновление | Изменение свойства groups.owners в Azure Active Directory. |
 | Microsoft. каталог/группы/восстановление | Восстановление групп в Azure Active Directory. |
-| microsoft.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
+| Microsoft. каталог/группы/параметры/обновление | Изменение свойства groups.settings в Azure Active Directory. |
 | Microsoft. Directory/Users/appRoleAssignments/Update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
 | Microsoft. Directory/Users/Ассигнлиценсе | Управление лицензиями для пользователей в Azure Active Directory. |
 | Microsoft. Directory/Users/Basic/Update | Обновление базовых свойств пользователей в Azure Active Directory. |
@@ -1677,7 +1702,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 администратора выставления счетов; | Администратор выставления счетов | b0f54661-2d74-4c50-afa3-1ec803f12efe
 Администратор облачных приложений | Администратор облачных приложений | 158c047a-c907-4556-b7ef-446551a6b5f7
 Администратор облачного устройства | Администратор облачного устройства | 7698a772-787b-4ac8-901f-60d6b08affd2
-Администратор организации | Глобальный администратор | 62e90394-69f5-4237-9190-012177145e10
+Администратор организации | Глобальный администратор. | 62e90394-69f5-4237-9190-012177145e10
 Администратор соответствия требованиям | администратор соответствия требованиям. | 17315797-102d-40b4-93e0-432062caca18
 Администратор данных соответствия требованиям | Администратор данных соответствия требованиям | e6d1a23a-da11-4be4-9570-befc86d067a7
 Администратор условного доступа | Администратор условного доступа | b1be1c3e-b65d-4f19-8427-f6fa0d97feb9
@@ -1708,6 +1733,7 @@ Device Users (Пользователи устройства) | Пользова�
 Служба поддержка партнеров уровня 2 | партнер с поддержкой 2 уровня; | e00e864a-17c5-4a4b-9c06-f5b95a8d5bd8
 администратора паролей. | Администратор паролей | 966707d0-3269-4727-9be2-8c3a10f19b9d
 Администратор службы Power BI | Администратор Power BI | a9ea8996-122f-4c74-9520-8edcd192826c
+Администратор Power Platform | Администратор платформа Power | 11648597-926c-4cf3-9c36-bcebb0ba8dcc
 Администратор привилегированной проверки подлинности | Администратор привилегированной проверки подлинности | 7be44c8a-adaf-4e2a-84d6-ab2649e08a13
 Администратор привилегированных ролей | администратор привилегированных ролей; | e8611ab8-c189-46e8-94e1-60213ab1f814
 Читатель отчетов | Читатель отчетов | 4a5d8f65-41da-4de4-8968-e035b65339cf
@@ -1738,7 +1764,7 @@ Device Users (Пользователи устройства) | Пользова�
 * администратор почтовых ящиков;
 * Присоединение устройства к рабочей области
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о том, как назначить пользователя администратором подписки Azure, см. в руководстве по [управлению доступом с помощью RBAC и портала Azure](../../role-based-access-control/role-assignments-portal.md)
 * Дополнительные сведения о том, как осуществляется доступ к ресурсам в Microsoft Azure, см. в статье [Основные сведения о доступе к ресурсам в Azure](../../role-based-access-control/rbac-and-directory-admin-roles.md).

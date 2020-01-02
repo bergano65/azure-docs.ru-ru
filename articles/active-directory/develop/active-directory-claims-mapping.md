@@ -1,5 +1,5 @@
 ---
-title: Настройка утверждений для приложения клиента Azure AD (общедоступная Предварительная версия)
+title: Настройка утверждений для приложений клиента Azure AD
 titleSuffix: Microsoft identity platform
 description: На этой странице описываются сопоставления утверждений Azure Active Directory.
 services: active-directory
@@ -9,19 +9,17 @@ ms.service: active-directory
 ms.subservice: develop
 ms.custom: aaddev
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/22/2019
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 53ef51d52e699612508a446acbc075f766565d63
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: c8d15631c30566d7588b562f1bb0d6ba5280e699
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72803514"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74918429"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Практическое руководство. Настройка утверждений, добавляемых в токены для определенных служб в клиенте (предварительная версия)
 
@@ -108,7 +106,7 @@ ms.locfileid: "72803514"
 | grant_type |
 | graph |
 | group_sids |
-| groups |
+| группы |
 | hasgroups |
 | hash_alg |
 | home_oid |
@@ -161,7 +159,7 @@ ms.locfileid: "72803514"
 | request_nonce |
 | resource |
 | role |
-| ролей |
+| roles |
 | scope |
 | scp |
 | sid |
@@ -287,18 +285,18 @@ ms.locfileid: "72803514"
 
 #### <a name="table-3-valid-id-values-per-source"></a>Таблица 3. Допустимый идентификатор значения для источника
 
-| Source | ИД | Описание |
+| Источник | ИД | Описание |
 |-----|-----|-----|
 | Пользователь | surname | Фамилия |
 | Пользователь | givenname | Заданное имя |
 | Пользователь | displayname | Отображаемое имя |
 | Пользователь | objectid | ObjectID |
 | Пользователь | mail | Электронная почта |
-| Пользователь | userprincipalname | Имя участника-пользователя |
-| Пользователь | department|Department|
+| Пользователь | userprincipalname | User Principal Name |
+| Пользователь | department|отдел;|
 | Пользователь | onpremisessamaccountname | Имя локальной учетной записи SAM |
 | Пользователь | netbiosname| NetBIOS-имя |
-| Пользователь | dnsdomainname | DNS-имя домена |
+| Пользователь | dnsdomainname | Доменное DNS-имя |
 | Пользователь | onpremisesecurityidentifier | Локальный идентификатор безопасности |
 | Пользователь | companyname| Название организации |
 | Пользователь | streetaddress | Почтовый адрес |
@@ -323,9 +321,9 @@ ms.locfileid: "72803514"
 | Пользователь | extensionattribute15 | Атрибут расширения 15 |
 | Пользователь | othermail | Остальные сообщения |
 | Пользователь | country | Страна |
-| Пользователь | city | City |
+| Пользователь | city | Город |
 | Пользователь | state | Состояние |
-| Пользователь | jobtitle | Должность |
+| Пользователь | jobtitle | Наименование должности |
 | Пользователь | employeeid | Код сотрудника |
 | Пользователь | facsimiletelephonenumber | Номер телефона, факса |
 | application, resource, audience | displayname | Отображаемое имя |
@@ -335,7 +333,7 @@ ms.locfileid: "72803514"
 
 **TransformationID:** элемент TransformationID должен быть указан только в том случае, если для элемента "Источник" задано значение "transformation".
 
-- Этот элемент должен соответствовать элементу ID{b> <b}записи преобразования в свойстве **ClaimsTransformation**, которое определяет порядок создания данных для этого утверждения.
+- Этот элемент должен соответствовать элементу ID записи преобразования в свойстве **ClaimsTransformation**, которое определяет порядок создания данных для этого утверждения.
 
 **Тип утверждения:** элементы **JwtClaimType** и **SamlClaimType** определяют, к какому утверждению относится эта запись схемы утверждения.
 
@@ -387,10 +385,10 @@ ms.locfileid: "72803514"
 
 #### <a name="table-5-attributes-allowed-as-a-data-source-for-saml-nameid"></a>Таблица 5. Атрибуты, разрешенные в качестве источника данных для идентификатора имени SAML NameID
 
-|Source|ИД|Описание|
+|Источник|ИД|Описание|
 |-----|-----|-----|
 | Пользователь | mail|Электронная почта|
-| Пользователь | userprincipalname|Имя участника-пользователя|
+| Пользователь | userprincipalname|User Principal Name|
 | Пользователь | onpremisessamaccountname|Имя локальной учетной записи SAM|
 | Пользователь | employeeid|Код сотрудника|
 | Пользователь | extensionattribute1 | Атрибут расширения 1 |
@@ -413,7 +411,7 @@ ms.locfileid: "72803514"
 
 | TransformationMethod | Ограничения |
 | ----- | ----- |
-| ExtractMailPrefix | Отсутствуют |
+| ExtractMailPrefix | Нет |
 | Объединение | Присоединяемый суффикс должен быть подтвержденным доменом клиента ресурса. |
 
 ### <a name="custom-signing-key"></a>Пользовательский ключ подписывания
@@ -432,7 +430,7 @@ ms.locfileid: "72803514"
 
 В Azure AD существует множество сценариев, когда можно настроить утверждения, добавляемые в токены для определенных субъектов-служб. В этом разделе рассматриваются наиболее распространенные сценарии, которые помогут вам понять, как использовать политики сопоставления утверждений.
 
-#### <a name="prerequisites"></a>Предварительные требования
+#### <a name="prerequisites"></a>Технические условия
 
 В следующих примерах мы будем создавать, обновлять, связывать и удалять политики для субъектов-служб. Если вы еще не работали с Azure AD, прежде чем продолжить работу с этими примерами, советуем ознакомиться со статьей [Краткое руководство: настройка среды разработки](quickstart-create-new-tenant.md).
 
@@ -521,6 +519,6 @@ ms.locfileid: "72803514"
       Add-AzureADServicePrincipalPolicy -Id <ObjectId of the ServicePrincipal> -RefObjectId <ObjectId of the Policy>
       ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительные материалы
 
 Чтобы узнать, как настроить утверждения, выданные в токене SAML с помощью портал Azure, см [. раздел как настроить утверждения, выданные в токене SAML для корпоративных приложений](active-directory-saml-claims-customization.md) .

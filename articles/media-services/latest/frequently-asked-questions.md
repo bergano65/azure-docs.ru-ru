@@ -11,18 +11,18 @@ ms.workload: ''
 ms.topic: article
 ms.date: 06/21/2019
 ms.author: juliako
-ms.openlocfilehash: 6e52a51c82529a98ef679dd747b9c8b7d177b660
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: c9da29ad288811bbed225fd906f2a7eb1fd9edf7
+ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338817"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74977732"
 ---
 # <a name="media-services-v3-frequently-asked-questions"></a>Часто задаваемые вопросы о службах мультимедиа v3
 
 В этой статье предоставлены ответы на часто задаваемые вопросы о Службах мультимедиа Azure (AMS) версии 3.
 
-## <a name="general"></a>Общее
+## <a name="general"></a>Общие сведения
 
 ### <a name="what-azure-roles-can-perform-actions-on-azure-media-services-resources"></a>Какие роли Azure могут выполнять действия с ресурсами служб мультимедиа Azure? 
 
@@ -50,7 +50,7 @@ ms.locfileid: "71338817"
 
 Дополнительные сведения см. [в статье Перемещение учетной записи служб мультимедиа между подписками](media-services-account-concept.md).
 
-## <a name="live-streaming"></a>Потоковая трансляция 
+## <a name="live-streaming"></a>Потоковая передача в реальном времени 
 
 ###  <a name="how-to-insert-breaksvideos-and-image-slates-during-live-stream"></a>Как вставлять паузы, видео или баннеры во время передачи динамического потока?
 
@@ -58,7 +58,7 @@ ms.locfileid: "71338817"
 
 Можно использовать [локальный динамический кодировщик](recommended-on-premises-live-encoders.md), чтобы переключать исходное видео. Многие приложения дают возможность переключения источников, включая Telestream Wirecast, Switcher Studio (в iOS), OBS Studio (бесплатное приложение) и многие другие.
 
-## <a name="content-protection"></a>Защита содержимого
+## <a name="content-protection"></a>Система защиты содержимого
 
 ### <a name="should-i-use-an-aes-128-clear-key-encryption-or-a-drm-system"></a>Следует ли использовать шифрование AES-128 с открытым ключом или систему DRM?
 
@@ -90,7 +90,7 @@ ms.locfileid: "71338817"
 
 Используйте API служб мультимедиа Azure для настройки доставки лицензий и ключей и шифрования ресурсов (как показано в [этом примере](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithAES/Program.cs)).
 
-Дополнительные сведения можно найти в разделе
+Дополнительные сведения см. здесь:
 
 - [Обзор системы защиты содержимого](content-protection-overview.md)
 - [Проектирование системы для защиты содержимого с несколькими подсистемами DRM и управлением доступом](design-multi-drm-system-with-access-control.md)
@@ -119,6 +119,9 @@ ms.locfileid: "71338817"
 * Служба маркеров безопасности должна выдавать маркеры, которые являются допустимыми и могут быть проверены на ферме серверов лицензий. Например, серверы лицензий Widevine, предоставляемые Axinom, требуют определенного маркера JWT, который содержит сообщение о правах. Таким образом, необходимо иметь STS для издания такого маркера JWT. 
 * Настройка службы доставки лицензий в Службах мультимедиа больше не требуется. Вам нужно предоставить URL-адреса приобретения лицензии (для PlayReady, Widevine и FairPlay) при настройке ContentKeyPolicies.
 
+> [!NOTE]
+> Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+
 ## <a name="media-services-v2-vs-v3"></a>Сравнение версий 2 и 3 Служб мультимедиа 
 
 ### <a name="can-i-use-the-azure-portal-to-manage-v3-resources"></a>Могу ли я использовать портал Azure для управления ресурсами версии 3?
@@ -135,6 +138,6 @@ ms.locfileid: "71338817"
 
 Сейчас рекомендуется использовать шифрование хранилища на стороне сервера (которое включено по умолчанию). Дополнительные сведения см. в статье [Шифрование службы хранилища Azure для неактивных данных (предварительная версия)](https://docs.microsoft.com/azure/storage/common/storage-service-encryption).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Что такое Службы мультимедиа Azure версии 3?](media-services-overview.md)

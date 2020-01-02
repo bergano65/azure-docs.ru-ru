@@ -1,26 +1,19 @@
 ---
-title: Поддержка SSH для Службы приложений Azure в Linux | Документация Майкрософт
-description: Сведения об использовании SSH для службы приложений Azure на платформе Linux.
+title: Доступ по протоколу SSH для контейнеров Linux
+description: Вы можете открыть сеанс SSH для контейнера Linux в службе приложений Azure. Настраиваемые контейнеры Linux поддерживаются с некоторыми изменениями пользовательского образа.
 keywords: служба приложений azure, веб-приложение, linux, oss
-services: app-service
-documentationcenter: ''
-author: msangapu
-manager: jeconnoc
-editor: ''
+author: msangapu-msft
 ms.assetid: 66f9988f-8ffa-414a-9137-3a9b15a5573c
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 02/25/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: fef8a17de4539a1427c269cdc512063d07df195c
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 299bbfbc50e9ba779898ab0e0e9dec060bf6541d
+ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70066878"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74687576"
 ---
 # <a name="ssh-support-for-azure-app-service-on-linux"></a>Поддержка SSH для службы приложений Azure в Linux
 
@@ -50,7 +43,7 @@ ms.locfileid: "70066878"
 
 Чтобы начать работу, нужно установить [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). Чтобы ознакомиться с принципами работы без установки Azure CLI, перейдите к статье [Обзор Azure Cloud Shell](../../cloud-shell/overview.md). 
 
-Откройте удаленное подключение к приложению, используя команду [az webapp remote-connection create](/cli/azure/ext/webapp/webapp/remote-connection?view=azure-cli-latest#ext-webapp-az-webapp-remote-connection-create). \<Укажите \_  _\<для своего приложения идентификатор подписки >_ ,  _\<имя группы >_ и имя приложения > _.
+Откройте удаленное подключение к приложению, используя команду [az webapp remote-connection create](/cli/azure/ext/webapp/webapp/remote-connection?view=azure-cli-latest#ext-webapp-az-webapp-remote-connection-create). Укажите _\<Subscription-id >_ , _\<имя группы >_ и \_\<App-name > _ для своего приложения.
 
 ```azurecli-interactive
 az webapp create-remote-connection --subscription <subscription-id> --resource-group <resource-group-name> -n <app-name> &
@@ -120,7 +113,7 @@ Load average: 0.07 0.04 0.08 4/765 45738
 45738     1 root     Z        0   0%   0   0% [init]
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас возникли вопросы, опубликуйте их на [форуме Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazurewebsitespreview).
 
@@ -128,6 +121,6 @@ Load average: 0.07 0.04 0.08 4/765 45738
 
 * [Общие сведения об удаленной отладке приложений Node.js в службе приложений Azure из VS Code](https://medium.com/@auchenberg/introducing-remote-debugging-of-node-js-apps-on-azure-app-service-from-vs-code-in-public-preview-9b8d83a6e1f0)
 * [Использование пользовательского образа Docker для платформы "Веб-приложения для контейнеров"](quickstart-docker-go.md).
-* [Использование .NET Core в службе приложений Azure на платформе Linux](quickstart-dotnetcore.md).
+* [Использование .NET Core в службе приложений Azure на платформе Linux](quickstart-dotnetcore.md)
 * [Использование Ruby в службе приложений Azure на платформе Linux](quickstart-ruby.md).
 * [Вопросы и ответы о платформе "Веб-приложения для контейнеров" в службе приложений Azure](app-service-linux-faq.md)

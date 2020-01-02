@@ -11,14 +11,14 @@ ms.topic: quickstart
 ms.date: 11/04/2019
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 0ae332bf08a0e45dd0c2f380ef41bbaf2202b5fd
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 9b8fed7a023a4c39dca3eacb4f8496730a7f50b2
+ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73682012"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74815993"
 ---
-# <a name="quickstart-recognize-speech-intents-and-entities-with-luis"></a>Краткое руководство. Распознавание речи, намерений и сущностей с помощью LUIS
+# <a name="quickstart-recognize-speech-intents-and-entities-with-language-understanding-luis"></a>Краткое руководство. Распознавание речи, намерений и сущностей с помощью службы "Распознавание речи" (LUIS)
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [Header](../includes/quickstarts/intent-recognition/header.md)]

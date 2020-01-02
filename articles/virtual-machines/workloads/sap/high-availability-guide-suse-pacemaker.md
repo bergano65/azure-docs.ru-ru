@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: sedusch
-ms.openlocfilehash: 8c7da1b989546950bf61153e96193c0bab11d8ac
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 8136e65636561079603986f0d6ff30bcbd68258f
+ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73603546"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74534220"
 ---
 # <a name="setting-up-pacemaker-on-suse-linux-enterprise-server-in-azure"></a>Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure.
 
@@ -27,8 +27,8 @@ ms.locfileid: "73603546"
 [deployment-guide]:deployment-guide.md
 [dbms-guide]:dbms-guide.md
 [sap-hana-ha]:sap-hana-high-availability.md
-[virtual-machines-linux-maintenance]:../../linux/maintenance-and-updates.md#maintenance-that-doesnt-require-a-reboot
-[virtual-machines-windows-maintenance]:../../windows/maintenance-and-updates.md#maintenance-that-doesnt-require-a-reboot
+[virtual-machines-linux-maintenance]:../../maintenance-and-updates.md#maintenance-that-doesnt-require-a-reboot
+[virtual-machines-windows-maintenance]:../../maintenance-and-updates.md#maintenance-that-doesnt-require-a-reboot
 [sles-nfs-guide]:high-availability-guide-suse-nfs.md
 [sles-guide]:high-availability-guide-suse.md
 
@@ -41,7 +41,7 @@ ms.locfileid: "73603546"
 ![Обзор кластера Pacemaker на SLES](./media/high-availability-guide-suse-pacemaker/pacemaker.png)
 
 >[!IMPORTANT]
-> При планировании и развертывании Linux Pacemaker кластеризованных узлов и устройств SBD очень важно для общей надежности полной конфигурации кластера, чтобы маршрутизация между задействованными виртуальными машинами и виртуальными машинами, на которых размещены устройства SBD, не проходила через другие устройства, такие как [виртуальные сетевые устройства](https://azure.microsoft.com/solutions/network-appliances/). В противном случае проблемы и события обслуживания с виртуальным сетевым устройством могут иметь негативное влияние на стабильность и надежность общей конфигурации кластера. Чтобы избежать таких препятствий, не определяйте правила маршрутизации NVA или [определяемых пользователем правил маршрутизации](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview) , которые направляют трафик между кластерными узлами и устройствами SBD через NVA и аналогичные устройства при планировании и развертывании кластерных узлов Linux Pacemaker. Устройства SBD. 
+> При планировании и развертывании Linux Pacemaker кластеризованных узлов и устройств SBD очень важно для общей надежности полной конфигурации кластера, чтобы маршрутизация между задействованными виртуальными машинами и виртуальными машинами, на которых размещены устройства SBD, не проходила через другие устройства, такие как [виртуальные сетевые устройства](https://azure.microsoft.com/solutions/network-appliances/). В противном случае проблемы и события обслуживания с виртуальным сетевым устройством могут иметь негативное влияние на стабильность и надежность общей конфигурации кластера. Чтобы избежать таких препятствий, не определяйте правила маршрутизации NVA или [определяемых пользователем правил маршрутизации](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview) , которые направляют трафик между кластерными узлами и устройствами SBD через NVA и аналогичные устройства при планировании и развертывании кластерных узлов Linux PACEMAKER и SBD устройств. 
 >
 
 ## <a name="sbd-fencing"></a>Ограждение SBD
@@ -83,7 +83,7 @@ ms.locfileid: "73603546"
 
 Выполните следующие команды на всех **целевых виртуальных машинах iSCSI**, чтобы создать диски iSCSI для кластеров, используемых вашими системами SAP. В следующем примере создаются устройства SBD для нескольких кластеров. В нем показано, как использовать один сервер цели iSCSI для нескольких кластеров. Устройства SBD размещаются на диске операционной системы. Убедитесь, что на диске достаточно места.
 
-**`nfs`** используется для обнаружения кластера NFS, **ascsnw1** используется для обнаружения кластера ASCS **NW1**, **Dbnw1** используется для обнаружения кластера баз данных **NW1**, **NFS-0** и **NFS-1** являются именами узлов Узлы кластера NFS, **NW1-ксскс-0** и **NW1-ксскс-1** — это имена узлов кластера **NW1** ASCS, а **NW1-DB-0** и **NW1-DB-1** — имена узлов кластера базы данных. Замените их именами узлов кластера и SID системы SAP.
+**`nfs`** используется для обнаружения кластера NFS, **ascsnw1** используется для обнаружения кластера ASCS **NW1**, **Dbnw1** используется для обнаружения кластера базы данных **NW1**, **NFS-0** и **NFS-1** — это имена узлов кластеров NFS, **NW1-ксскс-0** и **NW1-ксскс-1** — это имена узлов кластера **NW1** ASCS, а **NW1-DB-0** и **NW1-DB-1** — имена узлов кластера базы данных. Замените их именами узлов кластера и SID системы SAP.
 
 <pre><code># Create the root folder for all SBD devices
 sudo mkdir /sbd

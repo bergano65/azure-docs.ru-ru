@@ -1,77 +1,68 @@
 ---
-title: Настройка приложения Node.js — служба приложений Azure | Документация Майкрософт
-description: Сведения о настройке приложения Node.js на работу в службе приложений Azure
-services: app-service
-documentationcenter: ''
-author: cephalin
-manager: jpconnock
-editor: ''
-ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: dotnet
+title: Настройка приложений Node. js
+description: Узнайте, как настроить предварительно созданный контейнер Node. js для приложения. В этой статье приведены наиболее распространенные задачи настройки.
+ms.devlang: nodejs
 ms.topic: article
 ms.date: 03/28/2019
-ms.author: cephalin
-ms.openlocfilehash: 9422d543ad83f29d60fd7e1de51a79c3416e5b14
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6cf60472307a378d2fd4258a9777152344a11ded
+ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65956172"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74670274"
 ---
-# <a name="configure-a-linux-nodejs-app-for-azure-app-service"></a>Настройка приложения Node.js в Linux для службы приложений Azure
+# <a name="configure-a-linux-nodejs-app-for-azure-app-service"></a>Настройка приложения Node. js Linux для службы приложений Azure
 
-Должны быть развернуты приложения node.js с помощью все необходимые зависимости NPM. Подсистема развертывания службы приложений (Kudu) автоматически выполняется `npm install --production` автоматически при развертывании [репозиторий Git](../deploy-local-git.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json), или [ZIP-пакет](../deploy-zip.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) с процессами сборки, включены ли. При развертывании файлов с помощью [FTP/S](../deploy-ftp.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json), тем не менее, необходимо вручную загрузить необходимые пакеты.
+Приложения Node. js должны быть развернуты со всеми необходимыми зависимостями NPM. Подсистема развертывания службы приложений (KUDU) автоматически запускается `npm install --production` при развертывании [репозитория Git](../deploy-local-git.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)или в [ZIP-пакете](../deploy-zip.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) с включенными процессами сборки. Однако при развертывании файлов с помощью [FTP/S](../deploy-ftp.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)нужные пакеты необходимо загрузить вручную.
 
-Это руководство содержит основные понятия и инструкции для разработчиков Node.js, которые используют встроенный контейнер Linux в службе приложений. Если вы раньше не использовали службы приложений Azure, выполните [краткое руководство по Node.js](quickstart-nodejs.md) и [Node.js с MongoDB руководством](tutorial-nodejs-mongodb-app.md) первого.
+Это краткое описание содержит основные понятия и инструкции для разработчиков Node. js, использующих встроенный контейнер Linux в службе приложений. Если вы никогда не использовали службу приложений Azure, сначала ознакомьтесь с [кратким](quickstart-nodejs.md) руководством по Node. js и [node. js с MongoDB](tutorial-nodejs-mongodb-app.md) .
 
-## <a name="show-nodejs-version"></a>Показать версию Node.js
+## <a name="show-nodejs-version"></a>Отображение версии Node. js
 
-Чтобы отобразить текущую версию Node.js, выполните следующую команду [Cloud Shell](https://shell.azure.com):
+Чтобы отобразить текущую версию Node. js, выполните следующую команду в [Cloud Shell](https://shell.azure.com):
 
 ```azurecli-interactive
 az webapp config show --resource-group <resource-group-name> --name <app-name> --query linuxFxVersion
 ```
 
-Чтобы отобразить всех поддерживаемых версий Node.js, выполните следующую команду [Cloud Shell](https://shell.azure.com):
+Чтобы отобразить все поддерживаемые версии Node. js, выполните следующую команду в [Cloud Shell](https://shell.azure.com):
 
 ```azurecli-interactive
 az webapp list-runtimes --linux | grep NODE
 ```
 
-## <a name="set-nodejs-version"></a>Выбор версии Node.js
+## <a name="set-nodejs-version"></a>Установка версии Node. js
 
-Для настройки приложения [поддерживаемую версию Node.js](#show-nodejs-version), выполните следующую команду [Cloud Shell](https://shell.azure.com):
+Чтобы задать [поддерживаемую версию Node. js](#show-nodejs-version)для приложения, выполните следующую команду в [Cloud Shell](https://shell.azure.com):
 
 ```azurecli-interactive
 az webapp config set --resource-group <resource-group-name> --name <app-name> --linux-fx-version "NODE|10.14"
 ```
 
-Этот параметр указывает версию Node.js, чтобы использовать, как во время выполнения, так и при восстановлении автоматических пакетов в Kudu.
+Этот параметр указывает используемую версию Node. js как во время выполнения, так и во время автоматического восстановления пакетов в KUDU.
 
 > [!NOTE]
-> В проекте должна быть установлена версия Node.js `package.json`. Подсистема развертывания выполняется в отдельном контейнере, который содержит все поддерживаемые версии Node.js.
+> Необходимо задать версию Node. js в `package.json`проекта. Модуль развертывания выполняется в отдельном контейнере, который содержит все поддерживаемые версии Node. js.
 
-## <a name="configure-nodejs-server"></a>Настройка сервера Node.js
+## <a name="configure-nodejs-server"></a>Настройка сервера Node. js
 
-Состав контейнеров Node.js [PM2](https://pm2.keymetrics.io/), диспетчера рабочих процессов. Можно настроить приложение для запуска PM2, или с помощью NPM или с пользовательской команды.
+Контейнеры Node. js поставляются с [PM2](https://pm2.keymetrics.io/), диспетчером рабочих процессов. Вы можете настроить приложение для запуска с PM2 или с помощью NPM или с помощью пользовательской команды.
 
-- [Выполнить настраиваемую команду](#run-custom-command)
-- [Запустите npm start](#run-npm-start)
-- [Запуск с PM2](#run-with-pm2)
+- [Выполнить пользовательскую команду](#run-custom-command)
+- [Запустить NPM запуск](#run-npm-start)
+- [Запуск с помощью PM2](#run-with-pm2)
 
-### <a name="run-custom-command"></a>Выполнить настраиваемую команду
+### <a name="run-custom-command"></a>Выполнить пользовательскую команду
 
-Службы приложений можно запустить приложение с помощью пользовательской команды, такие как исполняемый файл, например *run.sh*. Например, для запуска `npm run start:prod`, выполните следующую команду [Cloud Shell](https://shell.azure.com):
+Служба приложений может запустить приложение с помощью пользовательской команды, такой как исполняемый файл, например *Run.sh*. Например, чтобы запустить `npm run start:prod`, выполните следующую команду в [Cloud Shell](https://shell.azure.com):
 
 ```azurecli-interactive
 az webapp config set --resource-group <resource-group-name> --name <app-name> --startup-file "npm run start:prod"
 ```
 
-### <a name="run-npm-start"></a>Запустите npm start
+### <a name="run-npm-start"></a>Запустить NPM запуск
 
-Чтобы запустить приложение, нажав `npm start`, просто убедитесь, что `start` сценарий находится в *package.json* файла. Пример:
+Чтобы запустить приложение с помощью `npm start`, достаточно убедиться в том, что `start` сценарий находится в файле *Package. JSON* . Пример.
 
 ```json
 {
@@ -84,29 +75,29 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 }
 ```
 
-Чтобы использовать пользовательскую *package.json* в проекте, выполните следующую команду [Cloud Shell](https://shell.azure.com):
+Чтобы использовать пользовательский *пакет Package. JSON* в проекте, выполните следующую команду в [Cloud Shell](https://shell.azure.com):
 
 ```azurecli-interactive
 az webapp config set --resource-group <resource-group-name> --name <app-name> --startup-file "<filename>.json"
 ```
 
-### <a name="run-with-pm2"></a>Запуск с PM2
+### <a name="run-with-pm2"></a>Запуск с помощью PM2
 
-Контейнер автоматически запускает приложение с PM2, когда будет найден один из общих файлов Node.js в проекте:
+Контейнер автоматически запускает приложение с PM2, когда в проекте обнаружен один из общих файлов Node. js:
 
-- *Bin/www*
-- *файл Server.js*
+- *bin/www*
+- *Server. js*
 - *app.js*
 - *index.js*
-- *hostingstart.js*
-- Одно из следующих [файлы PM2](https://pm2.keymetrics.io/docs/usage/application-declaration/#process-file): *process.json* и *ecosystem.config.js*
+- *хостингстарт. js*
+- Один из следующих [файлов PM2](https://pm2.keymetrics.io/docs/usage/application-declaration/#process-file): *Process. JSON* и *экосистема. config. js*
 
-Можно также настроить файл настраиваемой начальной, со следующими расширениями:
+Можно также настроить пользовательский файл запуска со следующими расширениями:
 
-- Объект *.js* файла
-- Объект [файл PM2](https://pm2.keymetrics.io/docs/usage/application-declaration/#process-file) с расширением *.json*, *. config.js*, *.yaml*, или *.yml*
+- *JS* -файл
+- [Файл PM2](https://pm2.keymetrics.io/docs/usage/application-declaration/#process-file) с расширением *JSON*, *config. js*, *. YAML*или *. yml*
 
-Чтобы добавить файл настраиваемой начальной, выполните следующую команду в [Cloud Shell](https://shell.azure.com):
+Чтобы добавить пользовательский начальный файл, выполните следующую команду в [Cloud Shell](https://shell.azure.com):
 
 ```azurecli-interactive
 az webapp config set --resource-group <resource-group-name> --name <app-name> --startup-file "<filname-with-extension>"
@@ -115,11 +106,11 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 ## <a name="debug-remotely"></a>Удаленная отладка
 
 > [!NOTE]
-> Удаленная отладка сейчас доступна Предварительная версия.
+> Удаленная отладка сейчас доступна в предварительной версии.
 
-Можно отлаживать приложения Node.js удаленно в среде [Visual Studio Code](https://code.visualstudio.com/) если его необходимо настроить для [работы PM2](#run-with-pm2), за исключением при запуске его с помощью *. config.js, *.yml, или *.yaml*.
+Вы можете выполнить отладку приложения Node. js удаленно в [Visual Studio Code](https://code.visualstudio.com/) , если он настроен для [работы с PM2](#run-with-pm2), за исключением случаев, когда вы запустите его с помощью *. config. js, *. yml или *. YAML*.
 
-В большинстве случаев никакая дополнительная настройка не является обязательным для приложения. Если приложение выполняется с *process.json* файла (по умолчанию или пользовательский), он должен иметь `script` свойства в корне JSON. Пример:
+В большинстве случаев для приложения не требуется дополнительная настройка. Если приложение запускается с файлом *Process. JSON* (по умолчанию или настраиваемым), он должен иметь свойство `script` в корне JSON. Пример.
 
 ```json
 {
@@ -129,25 +120,25 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 }
 ```
 
-Для настройки Visual Studio Code для удаленной отладки, установите [расширение службы приложений](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice). Следуйте инструкциям на странице "расширения" и войдите в Azure в Visual Studio Code.
+Чтобы настроить Visual Studio Code для удаленной отладки, установите [расширение службы приложений](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice). Следуйте инструкциям на странице расширение и войдите в Azure в Visual Studio Code.
 
-В Azure explorer, найдите приложение, вы хотите отладить, щелкните его правой кнопкой мыши и выберите **начать удаленную отладку**. Нажмите кнопку **Да** включить, то для вашего приложения. Служба приложений запускает туннель прокси-сервер для вас и присоединит отладчик. Затем можно выполнять запросы к приложению и отладчика Приостановка в точках останова см. в разделе.
+В Azure Explorer найдите приложение, которое нужно отладить, щелкните его правой кнопкой мыши и выберите команду **запустить удаленную отладку**. Нажмите кнопку **Да** , чтобы включить его для приложения. Служба приложений запускает прокси-сервер туннеля и присоединяет отладчик. Затем можно выполнить запросы к приложению и увидеть, что отладчик приостанавливается в точках останова.
 
-После завершения отладки, остановите отладчик, выбрав **Disconnect**. При появлении запроса, следует нажать кнопку **Да** отключить удаленную отладку. Чтобы отключить его позже, щелкните правой кнопкой мыши по своему приложению в Azure explorer и выберите **отключить удаленную отладку**.
+После завершения отладки закройте отладчик, выбрав **Отключить**. При появлении запроса нажмите кнопку **Да** , чтобы отключить удаленную отладку. Чтобы отключить его позже, снова щелкните свое приложение в Azure Explorer и выберите **Отключить удаленную отладку**.
 
 ## <a name="access-environment-variables"></a>Доступ к переменным среды
 
-В Службе приложений можно [задать параметры приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) вне кода приложения. Затем они будут доступны с помощью стандартного шаблона Node.js. Например, для доступа к параметру приложения с именем `NODE_ENV` используйте следующий код:
+В Службе приложений можно [задать параметры приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) вне кода приложения. Затем к ним можно получить доступ с помощью стандартного шаблона Node. js. Например, для доступа к параметру приложения с именем `NODE_ENV` используйте следующий код:
 
 ```javascript
 process.env.NODE_ENV
 ```
 
-## <a name="run-gruntbowergulp"></a>Запустите Bower и Grunt/Gulp
+## <a name="run-gruntbowergulp"></a>Запуск grunt/Bower/gulp
 
-По умолчанию выполняется Kudu `npm install --production` при обнаружении развертывается приложение Node.js. Если приложению требуются некоторые средства популярные службы автоматизации, например Grunt, Bower или Gulp, необходимо предоставить [пользовательский скрипт развертывания](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script) для его запуска.
+По умолчанию KUDU выполняется `npm install --production` при распознавании приложения Node. js. Если приложению требуются какие-либо популярные средства автоматизации, такие как grunt, Bower или gulp, необходимо предоставить [Пользовательский скрипт развертывания](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script) для его запуска.
 
-Чтобы включить репозиторий, чтобы запускать эти средства, необходимо добавить их к зависимостям в *package.json.* Пример:
+Чтобы разрешить репозиторию запускать эти средства, необходимо добавить их в зависимости в *Package. JSON.* Пример.
 
 ```json
 "dependencies": {
@@ -158,16 +149,16 @@ process.env.NODE_ENV
 }
 ```
 
-В окне терминала на локальном измените каталог на корневой папке репозитория и выполните следующие команды:
+В окне терминала перейдите в каталог корня репозитория и выполните следующие команды:
 
 ```bash
 npm install kuduscript -g
 kuduscript --node --scriptType bash --suppressPrompt
 ```
 
-Теперь в корневом каталоге репозитория расположены два дополнительных файла: *.deployment* и *deploy.sh*.
+Корневой каталог репозитория теперь содержит два дополнительных файла: *. Deployment* и *deploy.sh*.
 
-Откройте *deploy.sh* и найти `Deployment` раздел, который выглядит следующим образом:
+Откройте *deploy.sh* и найдите раздел `Deployment`, который выглядит следующим образом:
 
 ```bash
 ##################################################################################################################################
@@ -175,17 +166,17 @@ kuduscript --node --scriptType bash --suppressPrompt
 # ----------
 ```
 
-В этом разделе заканчивается выполнение `npm install --production`. Добавьте раздел кода, необходимо запустить средство требуется *в конце* из `Deployment` раздел:
+Этот раздел завершается выполнением `npm install --production`. Добавьте раздел кода, чтобы запустить требуемое средство *в конце* раздела `Deployment`:
 
 - [Bower](#bower)
 - [Gulp](#gulp)
 - [Grunt](#grunt)
 
-См. в разделе [образце MEAN.js](https://github.com/Azure-Samples/meanjs/blob/master/deploy.sh#L112-L135), которой также выполняется скрипт развертывания пользовательского `npm install` команды.
+См. [пример в примере Sample. js](https://github.com/Azure-Samples/meanjs/blob/master/deploy.sh#L112-L135), где скрипт развертывания также выполняет пользовательскую команду `npm install`.
 
 ### <a name="bower"></a>Bower
 
-Этот фрагмент выполняется `bower install`.
+Этот фрагмент кода выполняется `bower install`.
 
 ```bash
 if [ -e "$DEPLOYMENT_TARGET/bower.json" ]; then
@@ -198,7 +189,7 @@ fi
 
 ### <a name="gulp"></a>Gulp
 
-Этот фрагмент выполняется `gulp imagemin`.
+Этот фрагмент кода выполняется `gulp imagemin`.
 
 ```bash
 if [ -e "$DEPLOYMENT_TARGET/gulpfile.js" ]; then
@@ -211,7 +202,7 @@ fi
 
 ### <a name="grunt"></a>Grunt
 
-Этот фрагмент выполняется `grunt`.
+Этот фрагмент кода выполняется `grunt`.
 
 ```bash
 if [ -e "$DEPLOYMENT_TARGET/Gruntfile.js" ]; then
@@ -226,7 +217,7 @@ fi
 
 В Службе приложений [завершение SSL-запросов](https://wikipedia.org/wiki/TLS_termination_proxy) происходит в подсистеме балансировки нагрузки сети, поэтому все HTTPS-запросы достигают вашего приложения в виде незашифрованных HTTP-запросов. Если логика вашего приложения проверяет, зашифрованы ли пользовательские запросы, проверяйте заголовок `X-Forwarded-Proto`.
 
-Популярные веб-платформы позволяют получить доступ к информации `X-Forwarded-*` в стандартном шаблоне приложения. В [Express](https://expressjs.com/), можно использовать [доверия прокси-серверы](https://expressjs.com/guide/behind-proxies.html). Пример:
+Популярные веб-платформы позволяют получить доступ к информации `X-Forwarded-*` в стандартном шаблоне приложения. В [Express](https://expressjs.com/)можно использовать [Доверенные прокси-серверы](https://expressjs.com/guide/behind-proxies.html). Пример.
 
 ```javascript
 app.set('trust proxy', 1)
@@ -244,21 +235,21 @@ if (req.secure) {
 
 [!INCLUDE [Open SSH session in browser](../../../includes/app-service-web-ssh-connect-builtin-no-h.md)]
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
-Когда рабочее приложение Node.js работает по-разному, в службе приложений или содержит ошибки, попробуйте сделайте следующее:
+Когда работа приложения Node. js ведет себя иначе в службе приложений или с ошибками, попробуйте выполнить следующие действия.
 
 - [Получите доступ к потоку журнала](#access-diagnostic-logs).
-- Тестирование приложения локально в рабочем режиме. Служба приложений запускает приложения Node.js в рабочем режиме, поэтому необходимо убедиться, что проект работает надлежащим образом в рабочем режиме локально. Пример:
-    - В зависимости от вашей *package.json*, разные пакеты могут быть установлены для рабочий режим (`dependencies` и `devDependencies`).
-    - Некоторые веб-платформы может развернуть статические файлы по-разному в рабочем режиме.
-    - Некоторые веб-платформы может использовать специальные сценарии, при выполнении в рабочем режиме.
-- Запустите приложение в службе приложений в режиме разработки. Например, в [MEAN.js](https://meanjs.org/), можно задать свое приложение в режим разработки в среде выполнения с [параметр `NODE_ENV` параметр приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings).
+- Протестируйте приложение локально в рабочем режиме. Служба приложений запускает приложения Node. js в рабочем режиме, поэтому необходимо убедиться, что проект работает в режиме рабочей среды локально. Пример.
+    - В зависимости от *пакета Package. JSON*различные пакеты могут быть установлены для рабочего режима (`dependencies` и `devDependencies`).
+    - Некоторые веб-платформы могут развертывать статические файлы в рабочем режиме по-разному.
+    - При работе в рабочем режиме некоторые веб-платформы могут использовать пользовательские сценарии запуска.
+- Запустите приложение в службе приложений в режиме разработки. Например, в [среднем. js](https://meanjs.org/)можно настроить приложение в режиме разработки в среде выполнения, [задав параметр приложения `NODE_ENV`](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Учебник. Приложение Node.js с MongoDB](tutorial-nodejs-mongodb-app.md)
+> [Учебник. приложение Node. js с MongoDB](tutorial-nodejs-mongodb-app.md)
 
 > [!div class="nextstepaction"]
 > [Служба приложений под управлением Linux: вопросы и ответы](app-service-linux-faq.md)

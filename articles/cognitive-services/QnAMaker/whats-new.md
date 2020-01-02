@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: overview
-ms.date: 10/14/2019
+ms.date: 11/08/2019
 ms.author: diberry
-ms.openlocfilehash: 0ce44429c7222e4eaa0ef523dadf0fa08723e975
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 94c2f86b6d0a592e53c2ab1f9833bdb045f81583
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72327900"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74325877"
 ---
 # <a name="whats-new-in-qna-maker"></a>Новые возможности QnA Maker
 
@@ -24,6 +24,12 @@ ms.locfileid: "72327900"
 ## <a name="release-notes"></a>Заметки о выпуске 
 
 Узнайте о новых возможностях QnA Maker.
+
+### <a name="november-2019"></a>Ноябрь 2019 г.
+
+* [Поддержка облака для государственных организаций США](https://docs.microsoft.com/azure/azure-government/documentation-government-services-aiandcognitiveservices#qna-maker) для QnA Maker
+* [Многоэтапные](https://docs.microsoft.com/azure/cognitive-services/qnamaker/how-to/multiturn-conversation) функции в общедоступной версии
+* [Поддержка беседы](https://docs.microsoft.com/azure/cognitive-services/qnamaker/how-to/chit-chat-knowledge-base#language-support) доступна на языках уровня 1
 
 ### <a name="october-2019"></a>Октябрь 2019 г.
 

@@ -1,5 +1,6 @@
 ---
-title: Передача маркера доступа через поток пользователя в приложение — Azure Active Directory B2C
+title: Передача маркера доступа через поток пользователя в приложение
+titleSuffix: Azure AD B2C
 description: Узнайте, как передать маркер доступа для поставщиков удостоверений OAuth 2,0 в качестве утверждения в потоке пользователя в Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
@@ -10,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a1a9ad0c615e50db746548a1ed5b557fe6fdea5a
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 345924c10feabe9a7d5f50905689a4a0edb065ce
+ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71064283"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74948817"
 ---
 # <a name="pass-an-access-token-through-a-user-flow-to-your-application-in-azure-active-directory-b2c"></a>Передача маркера доступа с помощью потока пользователя в приложение в Azure Active Directory B2C
 
@@ -23,7 +24,7 @@ ms.locfileid: "71064283"
 
 В настоящее время Azure AD B2C поддерживает только передачу маркера доступа поставщиков удостоверений [OAuth 2.0](active-directory-b2c-reference-oauth-code.md), в том числе [Facebook](active-directory-b2c-setup-fb-app.md) и [Google](active-directory-b2c-setup-goog-app.md). Для остальных поставщиков удостоверений утверждение возвращается пустым.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Приложение должно использовать [поток пользователя версии 2](user-flow-versions.md).
 * Ваш поток пользователя настроен с поставщиком удостоверений OAuth 2.0.
@@ -51,8 +52,8 @@ ms.locfileid: "71064283"
 
     Должен отобразиться результат, аналогичный следующему примеру:
 
-    ![Декодированный токен в jwt.ms с выделенным блоком idp_access_token](./media/idp-pass-through-user-flow/idp-pass-through-user-flow-token.PNG)
+    ![Декодированный маркер в jwt.ms с выделенным блоком idp_access_token](./media/idp-pass-through-user-flow/idp-pass-through-user-flow-token.PNG)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в [обзоре маркеров Azure AD B2C](active-directory-b2c-reference-tokens.md).

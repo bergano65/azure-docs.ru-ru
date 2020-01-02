@@ -8,12 +8,12 @@ ms.devlang: python
 ms.topic: conceptual
 ms.date: 08/16/2019
 ms.author: robinsh
-ms.openlocfilehash: f1fbfcaa80a3d1781878fe3d6eb14558a3b298a5
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: c424c18538a4e428c0e713bb814c2febe28d2d04
+ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "70999520"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74555573"
 ---
 # <a name="schedule-and-broadcast-jobs-python"></a>Планирование и трансляция заданий (Python)
 
@@ -29,7 +29,7 @@ ms.locfileid: "70999520"
 
 Дополнительные сведения о каждой из этих возможностей см. в следующих статьях:
 
-* Двойник устройства и свойства: [Начало работы с двойниковами устройств](iot-hub-python-twin-getstarted.md) и [учебником: Использование свойств двойникаа устройства](tutorial-device-twins.md)
+* Двойники устройств и свойства: [Начало работы с двойниками устройств](iot-hub-python-twin-getstarted.md) и [Руководство. Настройка устройств из внутренней службы](tutorial-device-twins.md).
 
 * Прямые методы: [Руководство разработчика для центра Интернета вещей. прямые методы](iot-hub-devguide-direct-methods.md) и [учебник. прямые методы](quickstart-control-device-python.md)
 
@@ -53,11 +53,11 @@ ms.locfileid: "70999520"
 
 [!INCLUDE [iot-hub-include-python-sdk-note](../../includes/iot-hub-include-python-sdk-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [iot-hub-include-python-installation-notes](../../includes/iot-hub-include-python-installation-notes.md)]
 
-## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
+## <a name="create-an-iot-hub"></a>Создание центра IoT
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 
@@ -74,10 +74,6 @@ ms.locfileid: "70999520"
     ```cmd/sh
     pip install azure-iot-device
     ```
-
-   > [!NOTE]
-   > Пакеты PIP для Azure-iothub-Service-Client в настоящее время доступны только для ОС Windows. Сведения для Linux и Mac OS см. в разделах, посвященных Linux и Mac OS, в разделе [Подготовка среды разработки для Python](https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md) POST.
-   >
 
 2. В текстовом редакторе создайте файл **simDevice.py** в рабочей папке.
 
@@ -189,12 +185,12 @@ ms.locfileid: "70999520"
     ```
 
    > [!NOTE]
-   > Пакеты PIP для Azure-iothub-Service-Client и Azure-iothub-Device-Client в настоящее время доступны только для ОС Windows. Сведения для Linux и Mac OS см. в разделах, посвященных Linux и Mac OS, в разделе [Подготовка среды разработки для Python](https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md) POST.
+   > Пакет PIP для Azure-iothub-Service-Client в настоящее время доступен только для ОС Windows. Сведения для Linux и Mac OS см. в разделах, посвященных Linux и Mac OS, в разделе [Подготовка среды разработки для Python](https://github.com/Azure/azure-iot-sdk-python/blob/v1-deprecated/doc/python-devbox-setup.md) POST.
    >
 
 2. В текстовом редакторе создайте файл **scheduleJobService.py** в рабочей папке.
 
-3. Добавьте следующие `import` инструкции и переменные в начало файла **scheduleJobService.py** . Замените заполнитель строкой подключения центра Интернета вещей, скопированным ранее в [поле получение строки подключения для центра Интернета вещей.](#get-the-iot-hub-connection-string) `{IoTHubConnectionString}` Замените заполнитель идентификатором устройства, зарегистрированным в окне [Регистрация нового устройства в центре Интернета вещей:](#register-a-new-device-in-the-iot-hub) `{deviceId}`
+3. Добавьте следующие `import`ные операторы и переменные в начало файла **scheduleJobService.py** . Замените заполнитель `{IoTHubConnectionString}` строкой подключения центра Интернета вещей, скопированным ранее в поле [Получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string). Замените заполнитель `{deviceId}` ИДЕНТИФИКАТОРом устройства, зарегистрированным в окне [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub):
 
     ```python
     import sys
@@ -342,7 +338,7 @@ ms.locfileid: "70999520"
 
     ![Пример 2 задания центра Интернета вещей — выходные данные устройства](./media/iot-hub-python-python-schedule-jobs/sample2-deviceoutput.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом учебнике описано использование задания для планирования прямого метода на устройстве и обновления свойств двойника устройства.
 

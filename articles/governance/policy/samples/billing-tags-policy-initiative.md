@@ -1,14 +1,14 @@
 ---
 title: 'Пример: инициатива политики тегов для выставления счетов'
-description: В этом примере определения политики требуется указать значения тега для обозначения места возникновения затрат и имени продукта.
+description: Этот пример инициативы политики (набор политик) требует указать значения тега, заданные в параметрах, для обозначения места возникновения затрат и имени продукта.
 ms.date: 01/23/2019
 ms.topic: sample
-ms.openlocfilehash: e2fc9a7251fbe548b22f24356e555f92a3a6e22f
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 449909b160c2b811c62cd8c6592e74dd0f714e41
+ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74076353"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74463393"
 ---
 # <a name="sample---billing-tags-policy-initiative"></a>Пример: инициатива политики тегов для выставления счетов
 

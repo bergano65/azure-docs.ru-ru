@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: f76ec20da73c778d024feea9df113de9e4aa0fe9
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: a72236843c13e139f33a669b54f108e91679c8c6
+ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73573086"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74326583"
 ---
 # <a name="tutorial-add-a-sample-model-from-the-portal"></a>Руководство. Добавление образца модели с портала
 
@@ -73,6 +73,6 @@ ms.locfileid: "73573086"
 В этом руководстве было рассмотрено добавление базового образца модели на сервер. Когда есть шаблон базы данных, можно подключиться к нему из SQL Server Management Studio и добавить роли пользователей. Для получения дополнительных сведений перейдите к следующему руководству.
 
 > [!div class="nextstepaction"]
-> [Руководство. Настройка ролей администратора и пользователя сервера](analysis-services-database-users.md)
+> [Руководство. Настройка ролей администратора и пользователя сервера](tutorials/analysis-services-tutorial-roles.md)
 
 

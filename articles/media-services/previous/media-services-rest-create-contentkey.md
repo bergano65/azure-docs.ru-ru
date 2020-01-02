@@ -1,6 +1,6 @@
 ---
 title: Создание ключей содержимого с помощью REST | Документация Майкрософт
-description: Узнайте, как создавать ключи содержимого, которые обеспечивают безопасный доступ к ресурсам.
+description: В этой статье показано, как создавать ключи содержимого, обеспечивающие безопасный доступ к ресурсам.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 84fd4f0971c56d8cf2cdf138ba8ac8ea1a6e07eb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9927de3ab3fb68cea17095d7255fd8a68f66c9a8
+ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60711532"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74901474"
 ---
 # <a name="create-content-keys-with-rest"></a>Создание ключей содержимого с помощью REST
 > [!div class="op_single_selector"]
@@ -77,7 +77,7 @@ ms.locfileid: "60711532"
 
 ## <a name="connect-to-media-services"></a>Подключение к службам мультимедиа
 
-Сведения о подключении к API AMS см. в разделе [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md). 
+См. дополнительные сведения о [получении доступа к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md). 
 
 ## <a name="retrieve-the-protectionkeyid"></a>Получение ProtectionKeyId
 В следующем примере показано, как получить ProtectionKeyId (отпечаток сертификата) для сертификата, который необходимо использовать при шифровании ключа содержимого. Выполните этот шаг, чтобы проверить наличие соответствующего сертификата на компьютере.
@@ -253,6 +253,6 @@ ms.locfileid: "60711532"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

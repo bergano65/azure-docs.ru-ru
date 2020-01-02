@@ -1,20 +1,17 @@
 ---
-title: Общие сведения об использовании частных реестров контейнеров Docker в Azure
+title: Управляемые реестры контейнеров
 description: Общие сведения о службе реестра контейнеров Azure, предоставляющей облачные, управляемые и частные реестры Docker.
-services: container-registry
 author: stevelas
-manager: gwallace
-ms.service: container-registry
 ms.topic: overview
 ms.date: 06/28/2019
 ms.author: stevelas
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 2262948a8368f9448d876166b712ebaf670b5a56
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 2ceae0a6d6eb4dc989a53b35dc4a2f64472a5f54
+ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70994359"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74892980"
 ---
 # <a name="introduction-to-private-docker-container-registries-in-azure"></a>Общие сведения о частных реестрах контейнеров Docker в Azure
 

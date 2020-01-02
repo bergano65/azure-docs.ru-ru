@@ -56,6 +56,8 @@
           href: backup-support-matrix-mars-agent.md
         - name: Матрица поддержки резервного копирования SAP HANA
           href: sap-hana-backup-support-matrix.md
+        - name: Поддерживаемые номера SKU виртуальных машин для Политики Azure
+          href: backup-azure-policy-supported-skus.md
     - name: Безопасность
       items:
         - name: Управление доступом на основе ролей
@@ -174,6 +176,10 @@
               href: backup-azure-vms-encryption.md
             - name: Восстановление ключей и секрета зашифрованных виртуальных машин
               href: backup-azure-restore-key-secret.md
+    - name: Встроенная Политика Azure для Azure Backup
+      items:
+        - name: Автоматическое включение резервного копирования при создании виртуальной машины с использованием Политики Azure
+          href: backup-azure-auto-enable-backup.md
     - name: Диагностические события для хранилищ Службы восстановления
       items:
         - name: Использование параметров диагностики для хранилищ Службы восстановления
@@ -216,6 +222,8 @@
       items:
         - name: Создание хранилища Служб восстановления
           href: backup-azure-arm-userestapi-createorupdatevault.md
+        - name: Обновление конфигураций хранилища Служб восстановления
+          href: use-restapi-update-vault-properties.md
         - name: Создание и обновление политики резервного копирования
           href: backup-azure-arm-userestapi-createorupdatepolicy.md
         - name: Резервное копирование виртуальных машин Azure
@@ -244,6 +252,8 @@
           href: sap-hana-db-manage.md
     - name: Windows Server
       items:
+        - name: Сведения об агенте MARS
+          href: backup-azure-about-mars.md
         - name: Резервное копирование файлов и папок Windows Server
           href: backup-configure-vault.md
         - name: Резервное копирование состояния системы Windows Server

@@ -1,23 +1,22 @@
 ---
-title: Копирование данных из Amazon Redshift с помощью фабрики данных Azure
+title: Копирование данных из Amazon RedShift
 description: Узнайте, как копировать данные из Amazon Redshift в поддерживаемые хранилища данных-приемники с помощью фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
+ms.author: jingwang
 author: linda33wj
-manager: craigg
+manager: shwang
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/04/2018
-ms.author: jingwang
-ms.openlocfilehash: 57152c7d4aa558c2d6dd7c4ef0ad2c62311fc0c6
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 262afd00428c61d828837fd4692fd4fe110448c8
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73681366"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74931806"
 ---
 # <a name="copy-data-from-amazon-redshift-using-azure-data-factory"></a>Копирование данных из Amazon Redshift с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -41,12 +40,12 @@ ms.locfileid: "73681366"
 > [!TIP]
 > Чтобы обеспечить наилучшую производительность при копировании больших объемов данных из Redshift, рекомендуется использовать встроенный механизм Redshift UNLOAD через Amazon S3. Дополнительные сведения см. в разделе [Копирование данных из Amazon Redshift с помощью UNLOAD](#use-unload-to-copy-data-from-amazon-redshift).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * При копировании данных в локальное хранилище данных с помощью [локальной среды IR](create-self-hosted-integration-runtime.md) предоставьте среде выполнения интеграции доступ к кластеру Amazon Redshift (использовав IP-адрес компьютера). Инструкции см. в статье об [авторизации доступа к кластеру](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html).
 * Если вы копируете данные в хранилище данных Azure, вам нужно знать IP-адреса вычислительных ресурсов и диапазоны SQL, используемые центрами обработки данных Azure. Диапазоны IP-адресов центра обработки данных Azure приведены на [этой странице](https://www.microsoft.com/download/details.aspx?id=41653).
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -56,17 +55,17 @@ ms.locfileid: "73681366"
 
 Для связанной службы Amazon Redshift поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства типа необходимо задать значение **AmazonRedshift**. | Да |
-| server |IP-адрес или имя узла сервера Amazon Redshift. |Да |
+| Тип | Для свойства типа необходимо задать значение **AmazonRedshift**. | ДА |
+| server |IP-адрес или имя узла сервера Amazon Redshift. |ДА |
 | порт |Номер TCP-порта, используемого сервером Amazon Redshift для прослушивания клиентских подключений. |Нет, значение по умолчанию — 5439 |
-| database |Имя базы данных Amazon Redshift. |Да |
-| Имя пользователя |Имя пользователя, имеющего доступ к базе данных. |Да |
-| пароль |Пароль для учетной записи пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да |
+| база данных |Имя базы данных Amazon Redshift. |ДА |
+| Имя пользователя |Имя пользователя, имеющего доступ к базе данных. |ДА |
+| пароль |Пароль для учетной записи пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |ДА |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
-**Пример**
+**Пример.**
 
 ```json
 {
@@ -98,9 +97,9 @@ ms.locfileid: "73681366"
 
 Чтобы скопировать данные из Amazon RedShift, поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство Type набора данных должно иметь значение **амазонредшифттабле** . | Да |
+| Тип | Свойство Type набора данных должно иметь значение **амазонредшифттабле** . | ДА |
 | schema | Имя схемы. |Нет (если свойство query указано в источнике действия)  |
 | таблица | Имя таблицы. |Нет (если свойство query указано в источнике действия)  |
 | tableName | Имя таблицы со схемой. Это свойство поддерживается для обеспечения обратной совместимости. Используйте `schema` и `table` для новой рабочей нагрузки. | Нет (если свойство query указано в источнике действия) |
@@ -133,10 +132,10 @@ ms.locfileid: "73681366"
 
 Чтобы скопировать данные из Amazon Redshift, задайте тип источника **AmazonRedshiftSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Description (Описание) | Обязательно |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство type источника действия копирования должно иметь значение **AmazonRedshiftSource**. | Да |
-| запрос |Используйте пользовательский запрос для чтения данных. Например, select * from MyTable. |Нет (если для набора данных задано свойство tableName) |
+| Тип | Свойство type источника действия копирования должно иметь значение **AmazonRedshiftSource**. | ДА |
+| query |Используйте пользовательский запрос для чтения данных. Например, select * from MyTable. |Нет (если для набора данных задано свойство tableName) |
 | redshiftUnloadSettings | Группа свойств при использовании Amazon Redshift UNLOAD. | Нет |
 | s3LinkedServiceName | Относится к службе Amazon S3, которую необходимо использовать в качестве промежуточного хранилища, указав имя связанной службы типа AmazonS3. | Да, если используется UNLOAD |
 | bucketName | Укажите контейнер S3 для хранения промежуточных данных. Если не указано иное, служба фабрики данных создает его автоматически.  | Да, если используется UNLOAD |
@@ -220,17 +219,17 @@ ms.locfileid: "73681366"
 | Тип данных Amazon Redshift | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | BIGINT |Int64 |
-| BOOLEAN |string |
-| CHAR |string |
-| DATE |DateTime |
-| DECIMAL |DECIMAL |
-| DOUBLE PRECISION |Double |
+| BOOLEAN |Строка |
+| CHAR |Строка |
+| DATE |Дата и время |
+| DECIMAL |Decimal |
+| DOUBLE PRECISION |DOUBLE |
 | INTEGER |Int32 |
-| REAL |Single |
+| REAL |Отдельная |
 | SMALLINT |Int16 |
-| TEXT |string |
-| TIMESTAMP |DateTime |
-| VARCHAR |string |
+| TEXT |Строка |
+| TIMESTAMP |Дата и время |
+| VARCHAR |Строка |
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска
 

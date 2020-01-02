@@ -1,85 +1,85 @@
 ---
-title: Working with projections in a knowledge store (preview)
+title: Работа с проекциями в хранилище знаний (Предварительная версия)
 titleSuffix: Azure Cognitive Search
-description: Save and shape your enriched data from the AI enrichment indexing pipeline into a knowledge store for use in scenarios other than full text search. Сейчас предоставляется общедоступная предварительная версия хранилища знаний.
+description: Сохраняйте обогащенные данные из конвейера индексирования искусственного интеллекта ии в хранилище знаний для использования в сценариях, отличных от полнотекстового поиска. Сейчас предоставляется общедоступная предварительная версия хранилища знаний.
 manager: nitinme
 author: vkurpad
 ms.author: vikurpad
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: e7ed7eef961e357b8c1e4e59790f9f150c286c61
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 47c63118888bc0eaf7a025cd95e2a4c43d6a6cfb
+ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74326591"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74790005"
 ---
-# <a name="working-with-projections-in-a-knowledge-store-in-azure-cognitive-search"></a>Working with projections in a knowledge store in Azure Cognitive Search
+# <a name="working-with-projections-in-a-knowledge-store-in-azure-cognitive-search"></a>Работа с проекциями в хранилище знаний Azure Когнитивный поиск
 
 > [!IMPORTANT] 
 > Сейчас предоставляется общедоступная предварительная версия хранилища знаний. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). [Версия REST API 2019-05-06-Preview](search-api-preview.md) предоставляет предварительные версии функций. В настоящее время предоставляется ограниченная поддержка портала, но поддержка пакета SDK для .NET пока что отсутствует.
 
-Azure Cognitive Search enables content enrichment through built-in cognitive skills and custom skills as part of indexing. Enrichments add structure to your documents and make searching more effective. In many instances, the enriched documents are useful for scenarios other than search, such as for knowledge mining.
+Azure Когнитивный поиск позволяет расширить содержимое с помощью встроенных навыков и пользовательских навыков в процессе индексирования. Дополнения добавляют структуру к документам и делают поиск более эффективным. Во многих случаях обогащенные документы полезны для сценариев, отличных от поиска, например для интеллектуального анализа знаний.
 
-Projections, a component of [knowledge store](knowledge-store-concept-intro.md), are views of enriched documents that can be saved to physical storage for knowledge mining purposes. A projection lets you "project" your data into a shape that aligns with your needs, preserving relationships so that tools like Power BI can read the data with no additional effort.
+Проекции, компонент [хранилища знаний](knowledge-store-concept-intro.md), представляют собой представления расширенных документов, которые можно сохранить в физическом хранилище в целях интеллектуального анализа знаний. Проекция позволяет "проецировать" свои данные в фигуру, которая соответствует вашим потребностям, сохраняя связи, чтобы такие средства, как Power BI, могли считывать данные без дополнительных усилий.
 
-Projections can be tabular, with data stored in rows and columns in Azure Table storage, or JSON objects stored in Azure Blob storage. You can define multiple projections of your data as it is being enriched. Multiple projections are useful when you want the same data shaped differently for individual use cases.
+Проекции могут быть табличными, с данными, хранящимися в строках и столбцах в хранилище таблиц Azure, или в объектах JSON, хранящихся в хранилище BLOB-объектов Azure. Можно определить несколько проекций данных, так как они дополняются углублением. Несколько проекций удобно использовать, если вы хотите, чтобы одни и те же данные отличались для отдельных вариантов использования.
 
-The knowledge store supports three types of projections:
+Хранилище базы знаний поддерживает три типа проекций:
 
-+ **Tables**: For data that's best represented as rows and columns, table projections allow you to define a schematized shape or projection in Table storage.
++ **Таблицы**. для данных, которые лучше представить в виде строк и столбцов, проекции таблиц позволяют определить схематизированных форму или проекцию в хранилище таблиц. Только допустимые объекты JSON можно запланировать как таблицы, в дополненном документе могут содержаться узлы, не имеющие именованных объектов JSON, а при проецировании этих объектов создается допустимый объект JSON с навыком или встроенным изменением формы.
 
-+ **Objects**: When you need a JSON representation of your data and enrichments, object projections are saved as blobs.
++ **Объекты**. Если вам нужно представление JSON данных и дополнений, проекции объектов сохраняются как большие двоичные объекты. Только допустимые объекты JSON могут быть проецированы как объекты, в дополненном документе могут содержаться узлы, которые не называются объектами JSON, и при проецировании этих объектов Создайте допустимый объект JSON с навыком или встроенным изменением формы.
 
-+ **Files**: When you need to save the images extracted from the documents, file projections allow you to save the normalized images.
++ **Файлы**. Если необходимо сохранить изображения, извлеченные из документов, проектные проекции позволяют сохранить нормализованные изображения в хранилище BLOB-объектов.
 
-To see projections defined in context, step through [How to get started with knowledge store](knowledge-store-howto.md).
+Чтобы увидеть проекции, определенные в контексте, пошаговое [руководство по началу работы с хранилищем знаний](knowledge-store-howto.md).
 
-## <a name="projection-groups"></a>Projection groups
+## <a name="projection-groups"></a>Группы проекций
 
-In some cases, you will need to project your enriched data in different shapes to meet different objectives. The knowledge store allows you to define multiple groups of projections. Projection groups have the following key characteristics of mutual exclusivity and relatedness.
+В некоторых случаях необходимо проецировать обогащенные данные на разных фигурах в соответствии с различными целями. Хранилище знаний позволяет определить несколько групп проекций. Группы проекций имеют следующие основные характеристики взаимной исключительные праваи и взаимосвязи.
 
-### <a name="mutual-exclusivity"></a>Mutual exclusivity
+### <a name="mutual-exclusivity"></a>Взаимная исключительные права
 
-All content projected into a single group is independent of data projected into other projection groups.
-This independence implies that you can have the same data shaped differently, yet repeated in each projection group.
+Все содержимое, проецированное в одну группу, не зависит от данных, проецируемых в другие группы проекций.
+Эта независимость подразумевает, что одни и те же данные могут быть разными, но повторяться в каждой группе проекций.
 
-### <a name="relatedness"></a>Relatedness
+### <a name="relatedness"></a>Взаимосвязь
 
-Projection groups now allow you to project your documents across projection types while preserving the relationships across projection types. All content projected within a single projection group preserves relationships within the data across projection types. Within tables, relationships are based on a generated key and each child node retains a reference to the parent node. Across types (tables, objects, and files), relationships are preserved when a single node is projected across different types. For example, consider a scenario where you have a document containing images and text. You could project the text to tables or objects and the images to files where the tables or objects have a property containing the file URL.
+Группы проекции теперь позволяют проецировать документы между типами проекции, сохраняя связи между типами проекций. Все содержимое, проецируемое в одной группе проекции, сохраняет связи между данными в разных типах проекций. В таблицах связи основываются на созданном ключе, и каждый дочерний узел оставляет ссылку на родительский узел. В разных типах (таблицах, объектах и файлах) связи сохраняются, когда один узел проецируется по разным типам. Например, рассмотрим сценарий, в котором есть документ, содержащий изображения и текст. Можно проецировать текст в таблицы или объекты и изображения в файлы, в которых таблицы или объекты имеют столбец или свойство, содержащие URL-адрес файла.
 
-## <a name="input-shaping"></a>Input shaping
+## <a name="input-shaping"></a>Формирование ввода
 
-Getting your data in the right shape or structure is key to effective use, be it tables or objects. The ability to shape or structure your data based on how you plan to access and use it is a key capability exposed as the **Shaper** skill within the skillset.  
+Получение данных в правой форме или структуре является ключом к эффективному использованию, они являются таблицами или объектами. Возможность формирования или структурирования данных в зависимости от того, как вы планируете обращаться к ним и использовать ее, является ключевой возможностью, предоставляемой **в качестве навыка** для набора навыков.  
 
-Projections are easier to define when you have an object in the enrichment tree that matches the schema of the projection. The updated [Shaper skill](cognitive-search-skill-shaper.md) allows you to compose an object from different nodes of the enrichment tree and parent them under a new node. The **Shaper** skill allows you to define complex types with nested objects.
+Проекции проще определить при наличии в дереве обогащения объекта, соответствующего схеме проекции. Обновленные [навыки работы с фигурами](cognitive-search-skill-shaper.md) позволяют создать объект из различных узлов дерева обогащения и сделать его родительским для нового узла. Уровень навыка " **фигура** " позволяет определять сложные типы с вложенными объектами.
 
-When you have a new shape defined that contains all the elements you need to project out, you can now use this shape as the source for your projections or as an input to another skill.
+Если определена новая фигура, содержащая все элементы, которые необходимо проецировать, эту фигуру теперь можно использовать в качестве источника для проекций или в качестве входных данных для другого навыка.
 
-## <a name="projection-slicing"></a>Projection slicing
+## <a name="projection-slicing"></a>Срез проекции
 
-When defining a projection group, a single node in the enrichment tree can be sliced into multiple related tables or objects. Adding a projection with a source path that is a child of an existing projection will result in the child node being sliced out of the parent node and projected into the new yet related table or object. This technique allows you to define a single node in a shaper skill that can be the source for all of your projections.
+При определении группы проекций один узел в дереве обогащения может быть разбит на несколько связанных таблиц или объектов. Добавление проекции с исходным путем, который является дочерним по отношению к существующей проекции, приведет к тому, что дочерний узел выделится из родительского узла и проецируется в новую, но связанную таблицу или объект. Этот метод позволяет определить один узел в навыке, который может быть источником для всех проекций.
 
-## <a name="table-projections"></a>Table projections
+## <a name="table-projections"></a>Проекции таблиц
 
-Because it makes importing easier, we recommend table projections for data exploration with Power BI. Additionally, table projections allow for changing the cardinality between table relationships. 
+Так как это упрощает импорт, мы рекомендуем использовать проекции таблиц для просмотра данных с помощью Power BI. Кроме того, проекции таблиц позволяют изменять количество элементов между связями между таблицами. 
 
-You can project a single document in your index into multiple tables, preserving the relationships. When projecting to multiple tables, the complete shape will be projected into each table, unless a child node is the source of another table within the same group.
+Можно проецировать один документ в индексе в несколько таблиц, сохраняя связи. При проецировании на несколько таблиц в каждой таблице будет отображаться полная фигура, если только дочерний узел не является источником другой таблицы в той же группе.
 
-### <a name="defining-a-table-projection"></a>Defining a table projection
+### <a name="defining-a-table-projection"></a>Определение проекции таблицы
 
-When defining a table projection within the `knowledgeStore` element of your skillset, start by mapping a node on the enrichment tree to the table source. Typically this node is the output of a **Shaper** skill that you added to the list of skills to produce a specific shape that you need to project into tables. The node you choose to project can be sliced to project into multiple tables. The tables definition is a list of tables that you want to project.
+При определении проекции таблицы в элементе `knowledgeStore` набора навыков Начните с сопоставления узла в дереве обогащения с источником таблицы. Обычно этот узел является выходными данными о **навыках** , добавленных в список навыков для создания конкретной формы, необходимой для проецирования в таблицы. Выбранный для проекта узел можно разделить на несколько таблиц. Определение таблиц — это список таблиц, которые необходимо проецировать.
 
-Each table requires three properties:
+Для каждой таблицы требуются три свойства:
 
-+ tableName: The name of the table in Azure Storage.
++ tableName: имя таблицы в службе хранилища Azure.
 
-+ generatedKeyName: The column name for the key that uniquely identifies this row.
++ Женератедкэйнаме: имя столбца для ключа, уникально идентифицирующего эту строку.
 
-+ source: The node from the enrichment tree you are sourcing your enrichments from. This node is usually the output of a shaper, but could be the output of any of the skills.
++ Источник. узел из дерева обогащения, из которого вы исследуете свои дополнения. Этот узел обычно является выходными данными фигуры, но может быть выходом любого из навыков.
 
-Here is an example of table projections.
+Ниже приведен пример проекций таблицы.
 
 ```json
 {
@@ -112,7 +112,7 @@ Here is an example of table projections.
 }
 ```
 
-As demonstrated in this example, the key phrases and entities are modeled into different tables and will contain a reference back to the parent (MainTable) for each row.
+Как показано в этом примере, ключевые фразы и сущности моделируются в разные таблицы и будут содержать ссылку на родительский элемент (MainTable) для каждой строки.
 
 <!---
 The following illustration is a reference to the Case-law exercise in [How to get started with knowledge store](knowledge-store-howto.md). In a scenario where a case has multiple opinions, and each opinion is enriched by identifying entities contained within it, you could model the projections as shown here.
@@ -120,9 +120,9 @@ The following illustration is a reference to the Case-law exercise in [How to ge
 ![Entities and relationships in tables](media/knowledge-store-projection-overview/TableRelationships.png "Modeling relationships in table projections")
 --->
 
-## <a name="object-projections"></a>Object projections
+## <a name="object-projections"></a>Проекции объектов
 
-Object projections are JSON representations of the enrichment tree that can be sourced from any node. In many cases, the same **Shaper** skill that creates a table projection can be used to generate an object projection. 
+Проекции объектов — это представления JSON дерева обогащения, которые могут быть источником из любого узла. Во многих случаях для создания проекции объекта можно использовать **тот же навык** , который создает проекцию таблицы. 
 
 ```json
 {
@@ -158,15 +158,15 @@ Object projections are JSON representations of the enrichment tree that can be s
 }
 ```
 
-Generating an object projection requires a few object-specific attributes:
+Для создания проекции объекта требуется несколько атрибутов, характерных для объекта:
 
-+ storageContainer: The container where the objects will be saved
-+ source: The path to the node of the enrichment tree that is the root of the projection
-+ key: A path that represents a unique key for the object to be stored. It will be used to create the name of the blob in the container.
++ storageContainer: контейнер, в котором будут сохранены объекты
++ Source: путь к узлу дерева обогащения, который является корнем проекции
++ Key: путь, представляющий уникальный ключ для сохраняемого объекта. Он будет использоваться для создания имени большого двоичного объекта в контейнере.
 
-## <a name="file-projection"></a>File projection
+## <a name="file-projection"></a>Проекция файла
 
-File projections are similar to object projections and only act on the `normalized_images` collection. Similar to object projections, file projections are saved in the blob container with folder prefix of the base64 encoded value of the document ID. File projections cannot share the same container as object projections and need to be projected into a different container.
+Проекции файлов похожи на проекции объектов и работают только с коллекцией `normalized_images`. Аналогично проекциям объектов, проекции файлов сохраняются в контейнере больших двоичных объектов с префиксом в виде папки для идентификатора документа в кодировке Base64. Проекции файлов не могут совместно использовать один контейнер с проекциями объектов и должны быть проецированы в другой контейнер.
 
 ```json
 {
@@ -200,23 +200,23 @@ File projections are similar to object projections and only act on the `normaliz
 }
 ```
 
-## <a name="projection-lifecycle"></a>Projection lifecycle
+## <a name="projection-lifecycle"></a>Жизненный цикл проекции
 
-Your projections have a lifecycle that is tied to the source data in your data source. As your data is updated and reindexed, your projections are updated with the results of the enrichments ensuring your projections are eventually consistent with the data in your data source. The projections inherit the delete policy you've configured for your index. Projections are not deleted when the indexer or the search service itself is deleted.
+У ваших проекций есть жизненный цикл, связанный с исходными данными в источнике данных. По мере обновления и повторного индексирования данных проекции обновляются с учетом результатов обогащения, гарантируя, что проекции в конечном итоге согласуются с данными в источнике данных. Проекции наследуют политику удаления, настроенную для индекса. Проекции не удаляются при удалении индексатора или самой службы поиска.
 
-## <a name="using-projections"></a>Using projections
+## <a name="using-projections"></a>Использование проекций
 
-After the indexer is run, you can read the projected data in the containers or tables you specified through projections.
+После выполнения индексатора можно считывать проецированные данные в контейнерах или таблицах, заданных с помощью проекций.
 
-For analytics, exploration in Power BI is as simple as setting Azure Table storage as the data source. You can easily create a set of visualizations on your data using the relationships within.
+Для аналитики исследование в Power BI — это просто Настройка табличного хранилища Azure в качестве источника данных. Вы можете легко создать набор визуализаций на основе данных, используя связи в.
 
-Alternatively, if you need to use the enriched data in a data science pipeline, you could [load the data from blobs into a Pandas DataFrame](../machine-learning/team-data-science-process/explore-data-blob.md).
+Кроме того, если необходимо использовать обогащенные данные в конвейере обработки и анализа данных, вы можете [загрузить данные из больших двоичных объектов в Pandas](../machine-learning/team-data-science-process/explore-data-blob.md).
 
-Finally, if you need to export your data from the knowledge store, Azure Data Factory has connectors to export the data and land it in the database of your choice. 
+Наконец, если необходимо экспортировать данные из хранилища знаний, в фабрике данных Azure есть соединители для экспорта данных и их размещения в выбранной базе данных. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-As a next step, create your first knowledge store using sample data and instructions.
+В качестве следующего шага создайте первое хранилище знаний, используя образцы данных и инструкции.
 
 > [!div class="nextstepaction"]
-> [How to create a knowlege store](knowledge-store-howto.md).
+> [Создание хранилища знаний](knowledge-store-howto.md).

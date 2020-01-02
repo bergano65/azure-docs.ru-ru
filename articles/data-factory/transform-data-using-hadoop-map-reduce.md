@@ -1,24 +1,24 @@
 ---
-title: Преобразование данных с помощью действия Hadoop MapReduce в фабрике данных Azure
+title: Преобразование данных с помощью действия Hadoop MapReduce
 description: Узнайте, как обрабатывать данные путем выполнения программ Hadoop MapReduce в кластере Azure HDInsight из фабрики данных Azure.
 services: data-factory
-documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 01/16/2018
 author: nabhishek
 ms.author: abnarain
-manager: craigg
-ms.openlocfilehash: 49e00d9a47f92fb30a29e7051cba35f54bde3700
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+manager: shwang
+ms.custom: seo-lt-2019
+ms.date: 01/16/2018
+ms.openlocfilehash: 5d38e3126442bcf34c96cead2b2ea59507b50b8c
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73683847"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74912867"
 ---
 # <a name="transform-data-using-hadoop-mapreduce-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hadoop MapReduce в фабрике данных Azure
+
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-map-reduce.md)
 > * [Текущая версия](transform-data-using-hadoop-map-reduce.md)
@@ -60,15 +60,15 @@ ms.locfileid: "73683847"
 
 ## <a name="syntax-details"></a>Сведения о синтаксисе
 
-| Свойство          | Description (Описание)                              | Обязательно |
+| Свойство          | Описание                              | Обязательно для заполнения |
 | ----------------- | ---------------------------------------- | -------- |
-| name              | Имя действия.                     | Да      |
-| description       | Текст, описывающий, для чего используется действие | Нет       |
-| type              | Для действия MapReduce Activity используется тип действия HDinsightMapReduce. | Да      |
-| linkedServiceName (имя связанной службы) | Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md). | Да      |
-| className         | Имя класса для выполнения.         | Да      |
+| name              | Имя действия.                     | ДА      |
+| Description (Описание)       | Текст, описывающий, для чего используется действие | Нет       |
+| Тип              | Для действия MapReduce Activity используется тип действия HDinsightMapReduce. | ДА      |
+| linkedServiceName | Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md). | ДА      |
+| className         | Имя класса для выполнения.         | ДА      |
 | jarLinkedService  | Ссылки на связанные службы хранилища Azure, используемые для хранения файлов Jar. Если не указать эту связанную службу, будет использоваться связанная служба хранилища Azure, определенная в связанной службе HDInsight. | Нет       |
-| jarFilePath       | Укажите путь к файлам Jar, которые хранятся в службе хранилища Azure, на который ссылается jarLinkedService. В имени файла учитывается регистр знаков. | Да      |
+| jarFilePath       | Укажите путь к файлам Jar, которые хранятся в службе хранилища Azure, на который ссылается jarLinkedService. В имени файла учитывается регистр знаков. | ДА      |
 | jarlibs           | Массив строк пути к файлам библиотеки Jar, на которые ссылается задание, хранящееся в службе хранилища Azure, которая, в свою очередь, определена в свойстве jarLinkedService. В имени файла учитывается регистр знаков. | Нет       |
 | getDebugInfo      | Указывает, когда файлы журнала копируются в службу хранилища Azure, используемую кластером HDInsight или определенную jarLinkedService. Допустимые значения: None, Always или Failure. Значение по умолчанию: None. | Нет       |
 | arguments         | Указывает массив аргументов для задания Hadoop. Аргументы передаются в качестве аргументов командной строки в каждую задачу. | Нет       |

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Предоставление доступа для группы с помощью RBAC и Azure PowerShell | Документация Microsoft
+title: Учебник. Предоставление доступа группе к ресурсам Azure с помощью RBAC и Azure PowerShell
 description: Узнайте, как предоставить группе доступ к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и Azure PowerShell.
 services: active-directory
 documentationCenter: ''
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/02/2019
 ms.author: rolyon
-ms.openlocfilehash: 7f080682baf42c5852e167a20bfbad7f00fe8bd3
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
+ms.openlocfilehash: fb26e603ebb867bda47a93162ffef9bf716d3db6
+ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56343695"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74418590"
 ---
-# <a name="tutorial-grant-a-group-access-to-azure-resources-using-rbac-and-azure-powershell"></a>Руководство. Предоставление доступа для группы с помощью RBAC и Azure PowerShell
+# <a name="tutorial-grant-a-group-access-to-azure-resources-using-rbac-and-azure-powershell"></a>Руководство по Предоставление доступа для группы с помощью RBAC и Azure PowerShell
 
 [Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом руководстве описано, как предоставлять групповой доступ для просмотра любого содержимого в рамках подписки и обеспечивать полное управление в группе ресурсов с помощью Azure PowerShell.
 
@@ -48,8 +48,8 @@ ms.locfileid: "56343695"
 
 | Субъект безопасности | Определение роли | Область |
 | --- | --- | --- |
-| Группа<br>(Группа из руководства по RBAC) | [Читатель](built-in-roles.md#reader) | Подписка |
-| Группа<br>(Группа из руководства по RBAC)| [Участник](built-in-roles.md#contributor) | Группа ресурсов<br>(группа-ресурсов-из-руководства-по-rbac) |
+| Группа<br>(Группа из руководства по RBAC) | [Читатель](built-in-roles.md#reader) | Subscription |
+| Группа<br>(Группа из руководства по RBAC)| [Участник](built-in-roles.md#contributor) | группа ресурсов.<br>(группа-ресурсов-из-руководства-по-rbac) |
 
    ![Назначения ролей для группы](./media/tutorial-role-assignments-group-powershell/rbac-role-assignments.png)
 

@@ -21,7 +21,7 @@ ms.locfileid: "74279507"
 - [Помощью параметров auditifnotexists](#auditifnotexists)
 - [Deny](#deny)
 - [DeployIfNotExists](#deployifnotexists)
-- [отключено](#disabled).
+- [Disabled](#disabled)
 - [Енфорцеопаконстраинт](#enforceopaconstraint) (Предварительная версия)
 - [Енфорцерегополици](#enforceregopolicy) (Предварительная версия)
 - [Изменений](#modify)

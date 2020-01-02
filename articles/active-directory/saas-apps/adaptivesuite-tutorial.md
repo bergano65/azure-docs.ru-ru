@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 07/19/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad059e6047dd883c0a5aab0d714d999840050584
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: bf05fc30a2b111a12c0b8e131db5117ec784075b
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70213618"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74232121"
 ---
 # <a name="tutorial-integrate-adaptive-insights-with-azure-active-directory"></a>Руководство по Интеграции Adaptive Insights с Azure Active Directory
 
@@ -195,7 +195,7 @@ ms.locfileid: "70213618"
    c. Нажмите кнопку **Submit**(Отправить).
 
 > [!NOTE]
-> Вы можете использовать любые другие средства создания учетной записи пользователя Adaptive Insights или API, предоставляемые Adaptive Insights для подготовки учетных записей пользователя AAD.
+> Вы можете использовать любые другие средства создания учетной записи пользователя Adaptive Insights или API, предоставляемые Adaptive Insights, для подготовки учетных записей пользователя AAD.
 
 ### <a name="test-sso"></a>Проверка единого входа 
 

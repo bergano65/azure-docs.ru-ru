@@ -1,14 +1,14 @@
 ---
-title: Update an existing assignment from the portal
-description: Learn about the mechanism for updating an existing blueprint assignment from the portal in Azure Blueprints.
+title: Обновление существующего назначения на портале
+description: Сведения о механизме обновления существующего назначения схемы на портале в проекте Azure.
 ms.date: 11/21/2019
-ms.topic: conceptual
-ms.openlocfilehash: b4cf03d88103b85bc00dbd815816ead2740f2093
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.topic: how-to
+ms.openlocfilehash: 3cce84127475b2f11388b4ad4eb48dedec19cd1d
+ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406394"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74873171"
 ---
 # <a name="how-to-update-an-existing-blueprint-assignment"></a>Обновление существующего назначения схемы
 
@@ -24,20 +24,20 @@ ms.locfileid: "74406394"
 
 1. Выберите **Назначенные схемы** на странице слева.
 
-1. В списке схем щелкните левой кнопкой мыши назначение схемы. Then click the **Update assignment** button OR right-click the blueprint assignment and select **Update assignment**.
+1. В списке схем щелкните левой кнопкой мыши назначение схемы. Затем нажмите кнопку " **обновить назначение** " или щелкните правой кнопкой мыши назначение схемы и выберите команду " **обновить назначение**".
 
-   ![Update an existing blueprint assignment](../media/update-existing-assignments/update-assignment.png)
+   ![Обновление существующего назначения схемы](../media/update-existing-assignments/update-assignment.png)
 
-1. The **Assign blueprint** page will load pre-filled with all values from the original assignment.
+1. Страница **назначение** схемы будет загружать предварительно заполненные все значения из исходного назначения.
    Вы можете изменить **версию определения схемы**, состояние **блокировки назначения** и любые динамические параметры в определении схемы. Внеся необходимые изменения, нажмите кнопку **Назначить**.
 
 1. Просмотрите новое состояние на странице сведений об обновленном назначении. В этом примере мы добавили в назначение **блокировку**.
 
-   ![Updated an existing blueprint assignment - lock mode changed](../media/update-existing-assignments/updated-assignment.png)
+   ![Изменен режим блокировки для существующего назначения схемы](../media/update-existing-assignments/updated-assignment.png)
 
-1. Explore details about other **Assignment operations** using the drop-down. The table of **Managed resources** updates by selected assignment operation.
+1. Изучите сведения о других **операциях назначения** с помощью раскрывающегося списка. Таблица обновлений **управляемых ресурсов** по выбранной операции назначения.
 
-   ![Assignment operations of a blueprint assignment](../media/update-existing-assignments/assignment-operations.png)
+   ![Операции присваивания для назначения схемы](../media/update-existing-assignments/assignment-operations.png)
 
 ## <a name="rules-for-updating-assignments"></a>Правила обновления назначений
 

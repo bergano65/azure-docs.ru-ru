@@ -1,6 +1,6 @@
 ---
-title: Azure Functions error handling guidance
-description: Learn to handle errors in Azure Functions with links to specific binding errors.
+title: Руководство по обработке ошибок в функциях Azure
+description: Узнайте, как управлять ошибками в функциях Azure со ссылками на определенные ошибки привязки.
 author: craigshoemaker
 ms.topic: conceptual
 ms.date: 09/11/2019
@@ -14,9 +14,9 @@ ms.locfileid: "74227319"
 ---
 # <a name="azure-functions-error-handling"></a>Обработка ошибок службы "Функции Azure"
 
-Handling errors in Azure Functions is important to avoid lost data, missed events, and to monitor the health of your application.
+Обработка ошибок в функциях Azure важна, чтобы избежать потери данных, пропущенных событий и мониторинга работоспособности приложения.
 
-This article describes general strategies for error handling along with links to binding-specific errors.
+В этой статье описываются общие стратегии обработки ошибок и ссылки на ошибки привязки.
 
 ## <a name="handling-errors"></a>Обработка ошибок
 
@@ -24,7 +24,7 @@ This article describes general strategies for error handling along with links to
 
 ## <a name="binding-error-codes"></a>Коды ошибок привязки
 
-When integrating with Azure services, errors may originate from the APIs of the underlying services. Information relating to binding-specific errors is available in the **Exceptions and return codes** section of the following articles:
+При интеграции со службами Azure ошибки могут исходить из API-интерфейсов базовых служб. Сведения об ошибках, связанных с привязками, доступны в разделе **исключения и коды возврата** в следующих статьях:
 
 + [Azure Cosmos DB](functions-bindings-cosmosdb.md#exceptions-and-return-codes)
 
@@ -32,7 +32,7 @@ When integrating with Azure services, errors may originate from the APIs of the 
 
 + [Центры событий](functions-bindings-event-hubs.md#exceptions-and-return-codes)
 
-+ [центры уведомлений](functions-bindings-notification-hubs.md#exceptions-and-return-codes)
++ [Центры уведомлений](functions-bindings-notification-hubs.md#exceptions-and-return-codes)
 
 + [Хранилище очередей](functions-bindings-storage-queue.md#exceptions-and-return-codes)
 

@@ -1,6 +1,6 @@
 ---
-title: Policy to retain untagged manifests
-description: Learn how to enable a retention policy in your Azure container registry, for automatic deletion of untagged manifests after a defined period.
+title: Политика для удержания манифестов без тегов
+description: Узнайте, как включить политику хранения в реестре контейнеров Azure для автоматического удаления манифестов без тегов после определенного периода.
 ms.topic: article
 ms.date: 10/02/2019
 ms.openlocfilehash: 912616b6ab95cdff91e70477c7d6de476ccfdfa7
@@ -10,99 +10,99 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 11/24/2019
 ms.locfileid: "74454814"
 ---
-# <a name="set-a-retention-policy-for-untagged-manifests"></a>Set a retention policy for untagged manifests
+# <a name="set-a-retention-policy-for-untagged-manifests"></a>Задание политики хранения для манифестов без тегов
 
-Azure Container Registry gives you the option to set a *retention policy* for stored image manifests that don't have any associated tags (*untagged manifests*). When a retention policy is enabled, untagged manifests in the registry are automatically deleted after a number of days you set. This feature prevents the registry from filling up with artifacts that aren't needed and helps you save on storage costs. If the `delete-enabled` attribute of an untagged manifest is set to `false`, the manifest can't be deleted, and the retention policy doesn't apply.
+Реестр контейнеров Azure позволяет задать *политику хранения* для сохраненных манифестов изображений, которые не имеют связанных*тегов (без тегов)* . Если включена политика хранения, манифесты без тегов в реестре автоматически удаляются по истечении заданного количества дней. Эта функция предотвращает заполнение реестра ненужными артефактами и помогает сэкономить на затратах на хранение. Если атрибут `delete-enabled` манифеста без тегов имеет значение `false`, манифест не может быть удален, а политика хранения не применяется.
 
-You can use the Azure Cloud Shell or a local installation of the Azure CLI to run the command examples in this article. If you'd like to use it locally, version 2.0.74 or later is required. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli].
+Для выполнения примеров команд в этой статье можно использовать Azure Cloud Shell или локальную установку Azure CLI. Если вы хотите использовать его локально, требуется версия 2.0.74 или более поздняя. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli].
 
 > [!IMPORTANT]
 > Сейчас эта функция доступна в предварительной версии, и применяются [некоторые ограничения](#preview-limitations). Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования][terms-of-use]. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
 
 > [!WARNING]
-> Set a retention policy with care--deleted image data is UNRECOVERABLE. If you have systems that pull images by manifest digest (as opposed to image name), you should not set a retention policy for untagged manifests. Удаление образов без тегов не позволит этим системам получать образы из реестра. Instead of pulling by manifest, consider adopting a *unique tagging* scheme, a [recommended best practice](container-registry-image-tag-version.md).
+> Задать политику хранения с осторожностью — удаленные данные образа являются невосстанавливаемыми. При наличии систем, которые извлекают образы по дайджесту манифеста (в отличие от имени образа), не следует задавать политику хранения для манифестов без тегов. Удаление образов без тегов не позволит этим системам получать образы из реестра. Вместо того чтобы извлекать манифест, рекомендуется использовать *уникальную схему тегов* , [рекомендуемую рекомендацию](container-registry-image-tag-version.md).
 
 ## <a name="preview-limitations"></a>Ограничения предварительной версии
 
-* Only a **Premium** container registry can be configured with a retention policy. For information about registry service tiers, see [Azure Container Registry SKUs](container-registry-skus.md).
-* You can only set a retention policy for untagged manifests.
-* The retention policy currently applies only to manifests that are untagged *after* the policy is enabled. Existing untagged manifests in the registry aren't subject to the policy. To delete existing untagged manifests, see examples in [Delete container images in Azure Container Registry](container-registry-delete.md).
+* С политикой хранения можно настроить только реестр контейнеров уровня " **премиум** ". Сведения о уровнях служб реестра см. в статье [номера SKU реестра контейнеров Azure](container-registry-skus.md).
+* Политику хранения можно задать только для манифестов без тегов.
+* Политика хранения в настоящее время применяется только к манифестам, которые не помечены *после* включения политики. Существующие манифесты без тегов в реестре не подчиняются политике. Чтобы удалить существующие манифесты без тегов, см. примеры в разделе [Удаление образов контейнеров в реестре контейнеров Azure](container-registry-delete.md).
 
-## <a name="about-the-retention-policy"></a>About the retention policy
+## <a name="about-the-retention-policy"></a>О политике хранения
 
-Azure Container Registry does reference counting for manifests in the registry. When a manifest is untagged, it checks the retention policy. If a retention policy is enabled, a manifest delete operation is queued, with a specific date, according to the number of days set in the policy.
+Реестр контейнеров Azure выполняет подсчет ссылок для манифестов в реестре. Если манифест не помечен, он проверяет политику хранения. Если политика хранения включена, операция удаления манифеста помещается в очередь с определенной датой в соответствии с числом дней, установленным в политике.
 
-A separate queue management job constantly processes messages, scaling as needed. As an example, suppose you untagged two manifests, 1 hour apart, in a registry with a retention policy of 30 days. Two messages would be queued. Then, 30 days later, approximately 1 hour apart, the messages would be retrieved from the queue and processed, assuming the policy was still in effect.
+Отдельное задание управления очередями постоянно обрабатывает сообщения, масштабирование по мере необходимости. В качестве примера предположим, что вы разметили два манифеста (1 час) в реестре с политикой хранения в течение 30 дней. Два сообщения помещаются в очередь. Затем, через 30 дней позже, примерно через 1 час, сообщения извлекаются из очереди и обрабатываются, предполагая, что политика все еще действует.
 
-## <a name="set-a-retention-policy---cli"></a>Set a retention policy - CLI
+## <a name="set-a-retention-policy---cli"></a>Настройка политики хранения-CLI
 
-The following example shows you how to use the Azure CLI to set a retention policy for untagged manifests in a registry.
+В следующем примере показано, как использовать Azure CLI, чтобы задать политику хранения для манифестов без тегов в реестре.
 
-### <a name="enable-a-retention-policy"></a>Enable a retention policy
+### <a name="enable-a-retention-policy"></a>Включение политики хранения
 
-By default, no retention policy is set in a container registry. To set or update a retention policy, run the [az acr config retention update][az-acr-config-retention-update] command in the Azure CLI. You can specify a number of days between 0 and 365 to retain the untagged manifests. If you don't specify a number of days, the command sets a default of 7 days. After the retention period, all untagged manifests in the registry are automatically deleted.
+По умолчанию в реестре контейнеров не задана политика хранения. Чтобы задать или обновить политику хранения, выполните команду [AZ контроля доступа config retention Update][az-acr-config-retention-update] в Azure CLI. Можно указать число дней от 0 до 365, чтобы хранить манифесты без тегов. Если не указать число дней, команда задает значение по умолчанию 7 дней. По истечении срока хранения все манифесты без тегов в реестре автоматически удаляются.
 
-The following example sets a retention policy of 30 days for untagged manifests in the registry *myregistry*:
+В следующем примере задается политика хранения в течение 30 дней для манифестов без тегов в реестре *myregistry*:
 
 ```azurecli
 az acr config retention update --registry myregistry --status enabled --days 30 --type UntaggedManifests
 ```
 
-The following example sets a policy to delete any manifest in the registry as soon as it's untagged. Create this policy by setting a retention period of 0 days. 
+В следующем примере задается политика для удаления манифеста в реестре, как только он размечен. Создайте эту политику, задав срок хранения в 0 дней. 
 
 ```azurecli
 az acr config retention update --registry myregistry --status enabled --days 0 --type UntaggedManifests
 ```
 
-### <a name="validate-a-retention-policy"></a>Validate a retention policy
+### <a name="validate-a-retention-policy"></a>Проверка политики хранения
 
-If you enable the preceding policy with a retention period of 0 days, you can quickly verify that untagged manifests are deleted:
+При включении предыдущей политики с периодом хранения, равным 0 дням, можно быстро проверить удаление непомеченных манифестов:
 
-1. Push a test image `hello-world:latest` image to your registry, or substitute another test image of your choice.
-1. Untag the `hello-world:latest` image, for example, using the [az acr repository untag][az-acr-repository-untag] command. The untagged manifest remains in the registry.
+1. Отправьте тестовое изображение `hello-world:latest` образ в реестр или замените еще одно тестовое изображение по своему усмотрению.
+1. Удалить тег образ `hello-world:latest`, например, с помощью команды [AZ контроля репозиторий удалить тег][az-acr-repository-untag] . Манифест без тегов остается в реестре.
     ```azurecli
     az acr repository untag --name myregistry --image hello-world:latest
     ```
-1. Within a few seconds, the untagged manifest is deleted. You can verify the deletion by listing manifests in the repository, for example, using the [az acr repository show-manifests][az-acr-repository-show-manifests] command. If the test image was the only one in the repository, the repository itself is deleted.
+1. Через несколько секунд манифест без тегов удаляется. Чтобы проверить удаление, перечислите манифесты в репозитории, например, с помощью команды [AZ запись в репозитории "отобразить-манифесты][az-acr-repository-show-manifests] ". Если тестовый образ был единственным в репозитории, сам репозиторий удаляется.
 
-### <a name="disable-a-retention-policy"></a>Disable a retention policy
+### <a name="disable-a-retention-policy"></a>Отключение политики хранения
 
-To see the retention policy set in a registry, run the [az acr config retention show][az-acr-config-retention-show] command:
+Чтобы просмотреть политику хранения, заданную в реестре, выполните команду [AZ контроля доступа config retention-Показать][az-acr-config-retention-show] :
 
 ```azurecli
 az acr config retention show --registry myregistry
 ```
 
-To disable a retention policy in a registry, run the [az acr config retention update][az-acr-config-retention-update] command and set `--status disabled`:
+Чтобы отключить политику хранения в реестре, выполните команду [AZ контроля доступа конфигурации обновления retention][az-acr-config-retention-update] и задайте `--status disabled`:
 
 ```azurecli
 az acr config retention update --registry myregistry --status disabled --type UntaggedManifests
 ```
 
-## <a name="set-a-retention-policy---portal"></a>Set a retention policy - portal
+## <a name="set-a-retention-policy---portal"></a>Настройка политики хранения — портал
 
-You can also set a registry's retention policy in the [Azure portal](https://portal.azure.com). The following example shows you how to use the portal to set a retention policy for untagged manifests in a registry.
+Также можно задать политику хранения реестра в [портал Azure](https://portal.azure.com). В следующем примере показано, как с помощью портала задать политику хранения для манифестов без тегов в реестре.
 
-### <a name="enable-a-retention-policy"></a>Enable a retention policy
+### <a name="enable-a-retention-policy"></a>Включение политики хранения
 
-1. Navigate to your Azure container registry. Under **Policies**, select **Retention** (Preview).
-1. In **Status**, select **Enabled**.
-1. Select a number of days between 0 and 365 to retain the untagged manifests. Щелкните **Сохранить**.
+1. Перейдите к реестру контейнеров Azure. В разделе **политики**выберите **срок хранения** (Предварительная версия).
+1. В списке **состояние**выберите **включено**.
+1. Выберите число дней от 0 до 365 для удержания манифестов без тегов. Щелкните **Сохранить**.
 
-![Enable a retention policy in Azure portal](media/container-registry-retention-policy/container-registry-retention-policy01.png)
+![Включение политики хранения в портал Azure](media/container-registry-retention-policy/container-registry-retention-policy01.png)
 
-### <a name="disable-a-retention-policy"></a>Disable a retention policy
+### <a name="disable-a-retention-policy"></a>Отключение политики хранения
 
-1. Navigate to your Azure container registry. Under **Policies**, select **Retention** (Preview).
-1. In **Status**, select **Disabled**. Щелкните **Сохранить**.
+1. Перейдите к реестру контейнеров Azure. В разделе **политики**выберите **срок хранения** (Предварительная версия).
+1. В списке **состояние**выберите **отключено**. Щелкните **Сохранить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-* Learn more about options to [delete images and repositories](container-registry-delete.md) in Azure Container Registry
+* Дополнительные сведения о параметрах [удаления образов и репозиториев](container-registry-delete.md) в реестре контейнеров Azure
 
-* Learn how to [automatically purge](container-registry-auto-purge.md) selected images and manifests from a registry
+* Узнайте, как [автоматически очищать](container-registry-auto-purge.md) выбранные образы и манифесты из реестра
 
-* Learn more about options to [lock images and manifests](container-registry-image-lock.md) in a registry
+* Дополнительные сведения о параметрах [блокировки образов и манифестов](container-registry-image-lock.md) в реестре
 
 <!-- LINKS - external -->
 [terms-of-use]: https://azure.microsoft.com/support/legal/preview-supplemental-terms/

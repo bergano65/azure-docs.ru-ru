@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef24d55089938f6721eb6461f57797bca9ed82fe
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 7550ba7f375cb7d8b291c0adf7f0ebded16f0990
+ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73159480"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74227517"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lyndacom"></a>Руководство по Интеграция Azure Active Directory с Lynda.com
 
@@ -189,7 +189,7 @@ ms.locfileid: "73159480"
 Если учетная запись пользователя отсутствует, Lynda.com автоматически создает ее.
 
 > [!NOTE]
-> Вы можете использовать любые другие средства создания учетной записи пользователя Lynda.com или API, предоставляемые Lynda.com для подготовки учетных записей пользователя AAD.
+> Вы можете использовать любые другие средства создания учетной записи пользователя Lynda.com или API, предоставляемые Lynda.com, для подготовки учетных записей пользователя AAD.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 

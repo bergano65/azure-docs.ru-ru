@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 06/25/2019
-ms.openlocfilehash: f9a729376baeb03656b7b54fcb8e10a865d1f364
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: fa4b9fb9be6ac4f541448abef1f676875a7ddcfc
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70195144"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74774989"
 ---
 # <a name="quickstart-create-an-azure-database-for-postgresql-server-in-the-azure-portal"></a>Краткое руководство. Создание базы данных Azure для сервера PostgreSQL на портале Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "70195144"
     Параметр|Рекомендуемое значение|ОПИСАНИЕ
     ---|---|---
     Subscription|Имя вашей подписки|Подписка Azure, которую вы хотите использовать для сервера. Если у вас есть несколько подписок, выберите ту, в которой взимается плата за использование ресурса.
-    Resource group|*myresourcegroup*| Новое имя группы ресурсов или уже имеющееся из подписки.
+    группа ресурсов.|*myresourcegroup*| Новое имя группы ресурсов или уже имеющееся из подписки.
     Имя сервера |*mydemoserver*|Уникальное имя, идентифицирующее базу данных Azure для сервера PostgreSQL. Имя домена *postgres.database.azure.com* добавляется к указанному имени сервера. Сервер может содержать только строчные буквы, цифры и знак дефиса (-). Его длина должна составлять от 3 до 63 символов.
     Источник данных | *None* | Чтобы создать сервер с нуля, выберите *Нет*. Если вы создаете сервер из геоизбыточной резервной копии существующего сервера службы "База данных Azure для PostgreSQL", выберите *Резервная копия*.
     Имя администратора |*myadmin*| Собственная учетная запись входа, используемая при подключении к серверу. Не используйте для имени учетной записи администратора такие варианты: **azure_superuser**, **azure_pg_admin**, **admin**, **administrator**, **root**, **guest** или **public**. Оно не может начинаться с **pg_** .

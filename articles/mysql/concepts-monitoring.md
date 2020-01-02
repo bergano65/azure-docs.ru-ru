@@ -1,17 +1,17 @@
 ---
-title: Мониторинг в базе данных Azure для MySQL
+title: Мониторинг — база данных Azure для MySQL
 description: В этой статье описываются метрики для мониторинга и создания предупреждений в базе данных Azure для MySQL, включая ЦП, хранилище и статистику подключений.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: df03f8ba0e522aacd305b6337e506f53e309660a
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.date: 12/02/2019
+ms.openlocfilehash: ec99db9406c5c83cdcbf322c45cea40c6643ee8f
+ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74384043"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74770889"
 ---
 # <a name="monitoring-in-azure-database-for-mysql"></a>Мониторинг в базе данных Azure для MySQL
 Мониторинг данных о серверах помогает устранять неполадки и оптимизировать рабочую нагрузку. База данных Azure для MySQL предоставляет различные метрики, позволяющие понять действия сервера.
@@ -41,24 +41,24 @@ ms.locfileid: "74384043"
 |backup_storage_used|Используемое хранилище резервных копий|Байты|Объем используемого хранилища резервных копий.|
 
 ## <a name="server-logs"></a>Журналы сервера
-You can enable slow query and audit logging on your server. These logs are also available through Azure Diagnostic Logs in Azure Monitor logs, Event Hubs, and Storage Account. To learn more about logging, visit the [audit logs](concepts-audit-logs.md) and [slow query logs](concepts-server-logs.md) articles.
+На сервере можно включить низкую регистрацию запросов и аудита. Эти журналы также доступны в журналах диагностики Azure в Azure Monitor журналов, концентраторах событий и учетной записи хранения. Дополнительные сведения о ведении журналов см. в статьях [журналы аудита](concepts-audit-logs.md) и [журналы медленных запросов](concepts-server-logs.md) .
 
 ## <a name="query-store"></a>Хранилище запросов
-[Query Store](concepts-query-store.md) is a feature that keeps track of query performance over time including query runtime statistics and wait events. The feature persists query runtime performance information in the **mysql** schema. Вы можете управлять процессами сбора и хранения данных с помощью различных приспособлений конфигурации.
+[Хранилище запросов](concepts-query-store.md) — это функция, которая отслеживает производительность запросов с течением времени, включая статистику времени выполнения запросов и события ожидания. Эта функция сохраняет сведения о производительности среды выполнения запросов в схеме **MySQL** . Вы можете управлять процессами сбора и хранения данных с помощью различных приспособлений конфигурации.
 
 ## <a name="query-performance-insight"></a>Сведения о производительности запросов
-Средство [Анализ производительности запросов](concepts-query-performance-insight.md) работает совместно с хранилищем запросов для предоставления визуализаций, доступных на портале Azure. Эти диаграммы позволяют определить основные запросы, влияющие на производительность. Query Performance Insight is accessible in the **Intelligent Performance** section of your Azure Database for MySQL server's portal page.
+Средство [Анализ производительности запросов](concepts-query-performance-insight.md) работает совместно с хранилищем запросов для предоставления визуализаций, доступных на портале Azure. Эти диаграммы позволяют определить основные запросы, влияющие на производительность. Анализ производительности запросов доступен в разделе " **Интеллектуальная производительность** " на странице портала сервера базы данных Azure для MySQL.
 
 ## <a name="performance-recommendations"></a>Рекомендации по производительности
-Функция [Рекомендации по производительности](concepts-performance-recommendations.md) определяет возможности для повышения производительности рабочей нагрузки. Performance Recommendations provides you with recommendations for creating new indexes that have the potential to improve the performance of your workloads. Для создания рекомендаций по индексам эта функция учитывает различные характеристики базы данных, включая ее схемы и рабочую нагрузку по данным хранилища запросов. После реализации любой из рекомендаций по повышению производительности клиенты должны протестировать производительность, чтобы оценить результаты внесенных изменений.
+Функция [Рекомендации по производительности](concepts-performance-recommendations.md) определяет возможности для повышения производительности рабочей нагрузки. Рекомендации по производительности предоставляют рекомендации по созданию новых индексов, которые могут повысить производительность рабочих нагрузок. Для создания рекомендаций по индексам эта функция учитывает различные характеристики базы данных, включая ее схемы и рабочую нагрузку по данным хранилища запросов. После реализации любой из рекомендаций по повышению производительности клиенты должны протестировать производительность, чтобы оценить результаты внесенных изменений.
 
 ## <a name="service-health"></a>Работоспособность службы
-[Azure Service health](../service-health/overview.md) provides a view of all service health notifications in your subscription. You can set up Service Health alerts to notify you via your preferred communication channels when there are issues or changes that may affect the Azure services and regions you use.
+[Служба работоспособности служб Azure](../service-health/overview.md) предоставляет представление всех уведомлений о работоспособности службы в вашей подписке. Вы можете настроить оповещения о работоспособности службы, чтобы уведомлять вас по предпочтительным каналам связи при возникновении проблем или изменений, которые могут повлиять на используемые службы Azure и регионы.
 
-You can view scheduled maintenance events for Azure Database for MySQL by using the **planned maintenance** event type. To learn how to create **service health alerts**, visit the [Create activity log alerts on service notifications](../service-health/alerts-activity-log-service-notifications.md) article.
+События запланированного обслуживания для базы данных Azure для MySQL можно просмотреть с помощью типа события **планового обслуживания** . Сведения о создании **оповещений о работоспособности службы**см. в статье [Создание оповещений журнала действий в службе уведомлений](../service-health/alerts-activity-log-service-notifications.md) .
 
 > [!IMPORTANT]
-> The planned maintenance notifications is available in preview for EAST US and UK South only.
+> Уведомления о плановом обслуживании доступны в предварительной версии только для восточной части США и южная часть Соединенного Королевства.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - См. рекомендации по созданию оповещений для метрики в статье [Как настраивать оповещения](howto-alert-on-metric.md).

@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlrab, mathoma
 ms.date: 08/25/2019
-ms.openlocfilehash: ad96d0a04b03e070a7108832370749377d723826
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: b106b1da5d012309e8d92c8e9555ee3982602e12
+ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73821760"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74707663"
 ---
 # <a name="restore-a-sql-database-in-a-managed-instance-to-a-previous-point-in-time"></a>Восстановление базы данных SQL в управляемом экземпляре до предыдущей точки во времени
 
@@ -48,17 +48,17 @@ ms.locfileid: "73821760"
 
 |           |Восстановление существующей базы данных в том же управляемом экземпляре| Восстановление существующей базы данных в другом управляемом экземпляре|Восстановить удаленную базу данных в том же управляемом экземпляре|Восстановить удаленную базу данных в другом управляемом экземпляре|
 |:----------|:----------|:----------|:----------|:----------|
-|**портал Azure**| Да|Нет |Нет|Нет|
-|**Интерфейс командной строки Azure**|Да |Да |Нет|Нет|
-|**PowerShell**| Да|Да |Да|Да|
+|**Портал Azure**| ДА|Нет |Нет|Нет|
+|**Azure CLI**|ДА |ДА |Нет|Нет|
+|**PowerShell**| ДА|ДА |ДА|ДА|
 
 ## <a name="restore-an-existing-database"></a>Восстановление существующей базы данных
 
 Восстановите существующую базу данных в том же экземпляре с помощью портал Azure, PowerShell или Azure CLI. Чтобы восстановить базу данных на другой экземпляр, используйте PowerShell или Azure CLI, чтобы указать свойства целевого управляемого экземпляра и группы ресурсов. Если эти параметры не заданы, база данных будет восстановлена в существующий экземпляр по умолчанию. Портал Azure в настоящее время не поддерживает восстановление в другой экземпляр.
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
 
-1. Войдите на [портал Azure](https://portal.azure.com). 
+1. Войдите на [портале Azure](https://portal.azure.com). 
 2. Перейдите к управляемому экземпляру и выберите базу данных, которую требуется восстановить.
 3. На странице базы данных выберите **восстановить** .
 
@@ -110,7 +110,7 @@ Restore-AzSqlInstanceDatabase -FromPointInTimeBackup `
 
 Дополнительные сведения см. в разделе [RESTORE-азсклинстанцедатабасе](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqlinstancedatabase).
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Если вы еще не установили Azure CLI, см. статью [установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
@@ -197,7 +197,7 @@ DROP DATABASE WorldWideImporters;
 - [Точка-сеть](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-configure-p2s)
 - [Общедоступная конечная точка](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-public-endpoint-configure)
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
 
 В портал Azure выберите базу данных из управляемого экземпляра, а затем щелкните **Удалить**.
 
@@ -215,7 +215,7 @@ $databaseName = "<Source database>"
 Remove-AzSqlInstanceDatabase -Name $databaseName -InstanceName $managedInstanceName -ResourceGroupName $resourceGroupName
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Используйте следующую команду Azure CLI, чтобы удалить существующую базу данных из управляемого экземпляра.
 
@@ -230,7 +230,7 @@ az sql midb delete -g mygroupname --mi myinstancename -n mymanageddbname
 Подключитесь непосредственно к управляемому экземпляру и запустите SQL Server Management Studio. Затем выполните следующий запрос Transact-SQL (T-SQL). Запрос изменит имя восстановленной базы данных на удаленную базу данных, которую предполагается перезаписать.
 
 ```sql
-ALTER WorldWideImportersPITR MODIFY NAME = WorldWideImporters;
+ALTER DATABASE WorldWideImportersPITR MODIFY NAME = WorldWideImporters;
 ```
 
 Используйте один из следующих методов для подключения к базе данных в управляемом экземпляре:

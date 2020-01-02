@@ -7,21 +7,25 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: load-data
-ms.date: 08/08/2019
+ms.date: 12/06/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 522cb9b75d5c0db270f8ba4a65850e35a2e8c4fd
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: fdbf0eb849549071b4cbbb961c9e9f71fce1faf8
+ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73685693"
+ms.lasthandoff: 12/08/2019
+ms.locfileid: "74923641"
 ---
 # <a name="load-data-from-azure-data-lake-storage-to-sql-data-warehouse"></a>Загрузка данных из Azure Data Lake Storage в хранилище данных SQL
-Используйте внешние таблицы Polybase для загрузки данных из Azure Data Lake Storage в хранилище данных SQL Azure. Несмотря на то, что вы можете выполнять нерегламентированные запросы к данным, хранящимся в Data Lake Storage, мы рекомендуем импортировать данные в хранилище данных SQL для лучшей производительности.
+В этом руководство описано, как использовать внешние таблицы Polybase для загрузки данных из Azure Data Lake Storage в хранилище данных SQL Azure. Несмотря на то, что вы можете выполнять нерегламентированные запросы к данным, хранящимся в Data Lake Storage, мы рекомендуем импортировать данные в хранилище данных SQL для лучшей производительности. 
 
+> [!NOTE]  
+> Альтернативой загрузке является [инструкция копирования](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) , которая сейчас находится в общедоступной предварительной версии. Чтобы оставить отзыв о инструкции COPY, отправьте сообщение электронной почты по следующему списку рассылки: sqldwcopypreview@service.microsoft.com.
+>
 > [!div class="checklist"]
+
 > * Создание объектов базы данных, необходимых для загрузки из Data Lake Storage.
 > * Подключитесь к каталогу Data Lake Storage.
 > * Загрузка данных в хранилище данных SQL Azure.
@@ -33,14 +37,13 @@ ms.locfileid: "73685693"
 
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
-* Приложение Azure Active Directory для проверки подлинности между службами. Создать его помогут инструкции из [этой статьи](../data-lake-store/data-lake-store-authenticate-using-active-directory.md).
-
 * Хранилище данных SQL Azure Ознакомьтесь со статьей [Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md).
-
-* Учетная запись Data Lake Storage. См. статью [Приступая к работе с Azure Data Lake Storage](../data-lake-store/data-lake-store-get-started-portal.md). 
+* Учетная запись Data Lake Storage. См. статью [Приступая к работе с Azure Data Lake Storage](../data-lake-store/data-lake-store-get-started-portal.md). Для этой учетной записи хранения необходимо настроить или указать один из следующих учетных данных для загрузки: ключ учетной записи хранения, пользователь приложения Azure Directory или пользователь AAD с соответствующей ролью RBAC для учетной записи хранения. 
 
 ##  <a name="create-a-credential"></a>Создание учетных данных
-Чтобы получить доступ к учетной записи Data Lake Storage, необходимо создать главный ключ базы данных, чтобы зашифровать секрет учетных данных, используемый на следующем шаге. Затем создайте учетные данные для базы данных. При проверке подлинности с помощью субъектов-служб учетные данные для базы данных сохраняют учетные данные субъекта-службы, настроенные в AAD. Вы также можете использовать ключ учетной записи хранения в учетных данных для базы данных для Gen2. 
+Вы можете пропустить этот раздел и перейти к статье "Создание внешнего источника данных" при проверке подлинности с помощью команды AAD Pass. Учетные данные для базы данных не обязательно создавать или указывать при использовании транзитного агента AAD, но убедитесь, что у пользователя AAD есть соответствующая роль RBAC (читатель данных BLOB-объекта хранилища, участник или роль владельца) в учетной записи хранения. Дополнительные сведения см. [здесь](https://techcommunity.microsoft.com/t5/Azure-SQL-Data-Warehouse/How-to-use-PolyBase-by-authenticating-via-AAD-pass-through/ba-p/862260). 
+
+Чтобы получить доступ к учетной записи Data Lake Storage, необходимо создать главный ключ базы данных для шифрования секрета учетных данных. Затем создайте учетные данные для базы данных, чтобы сохранить секрет. При проверке подлинности с помощью субъектов-служб (пользователь приложения Azure Directory) учетные данные субъекта базы данных хранят учетные данные участника-службы, настроенные в AAD. Для хранения ключа учетной записи хранения для Gen2 можно также использовать учетные данные уровня базы данных.
 
 Чтобы подключиться к Data Lake Storage с помощью субъектов-служб, необходимо **сначала** создать приложение Azure Active Directory, создать ключ доступа и предоставить приложению доступ к учетной записи Data Lake Storage. Инструкции см. [в разделе аутентификация в Azure Data Lake Storage с помощью Active Directory](../data-lake-store/data-lake-store-authenticate-using-active-directory.md).
 
@@ -75,7 +78,7 @@ WITH
     SECRET = '<azure_storage_account_key>'
 ;
 
--- It should look something like this when authenticating using service principals:
+-- It should look something like this when authenticating using service principal:
 CREATE DATABASE SCOPED CREDENTIAL ADLSCredential
 WITH
     IDENTITY = '536540b4-4239-45fe-b9a3-629f97591c0c@https://login.microsoftonline.com/42f988bf-85f1-41af-91ab-2d2cd011da47/oauth2/token',
@@ -84,7 +87,7 @@ WITH
 ```
 
 ## <a name="create-the-external-data-source"></a>Создание внешнего источника данных
-Используйте команду [CREATE EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql), чтобы сохранить расположение данных. 
+Используйте команду [CREATE EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql), чтобы сохранить расположение данных. Если выполняется проверка подлинности в AAD, параметр CREDENTIAL не требуется. 
 
 ```sql
 -- C (for Gen1): Create an external data source
@@ -216,8 +219,8 @@ ALTER INDEX ALL ON [dbo].[DimProduct] REBUILD;
 
 Вы выполнили такие действия:
 > [!div class="checklist"]
-> * Создали объекты базы данных, требуемые для загрузки данных из Data Lake Storage 1-го поколения.
-> * Подключились к Data Lake Storage 1-го поколения.
+> * Созданы объекты базы данных, необходимые для загрузки из Data Lake Storage.
+> * Подключено к каталогу Data Lake Storage.
 > * Загрузка данных в хранилище данных SQL Azure.
 >
 
