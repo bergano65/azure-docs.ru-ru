@@ -12,3 +12,6 @@
         - name: Политика
           tocHref: /azure/azure-monitor
           topicHref: /azure/governance/policy
+        - name: Политика
+          tocHref: /azure/key-vault
+          topicHref: /azure/governance/policy

@@ -13,9 +13,9 @@
       href: search-create-service-portal.md
     - name: Портал
       items:
-        - name: Создание индекса поиска
+        - name: Создание индекса
           href: search-get-started-portal.md
-        - name: Создание приложения (предварительная версия)
+        - name: Создание приложения
           href: search-create-app-portal.md
         - name: Создание набора навыков когнитивного поиска
           href: cognitive-search-quickstart-blob.md
@@ -95,13 +95,13 @@
       href: knowledge-store-projection-overview.md
     - name: Добавочное индексирование
       href: cognitive-search-incremental-indexing-conceptual.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Планирование
       items:
         - name: Выбор уровня
           href: search-sku-tier.md
-        - name: Ограничения служб
+        - name: Ограничения службы
           href: search-limits-quotas-capacity.md
         - name: Масштабирование секций и реплик
           href: search-capacity-planning.md
@@ -109,9 +109,9 @@
           href: search-performance-optimization.md
         - name: Мультитенантная архитектура
           href: search-modeling-multitenant-saas-applications.md
-    - name: Безопасность
+    - name: безопасность
       items:
-        - name: Обзор системы безопасности
+        - name: Общие сведения о безопасности
           href: search-security-overview.md
         - name: Управление ключами службы
           href: search-security-api-keys.md
@@ -145,7 +145,7 @@
               href: search-dotnet-mgmt-sdk-migration.md
         - name: Обновление REST API
           href: search-api-migration.md
-    - name: Создание индексов
+    - name: Создать индексы
       items:
         - name: Создание простого индекса
           href: search-what-is-an-index.md
@@ -307,13 +307,13 @@
           href: search-monitor-usage.md
         - name: Поиск в аналитике трафика
           href: search-traffic-analytics.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: Проблемы с индексатором
           href: search-indexer-troubleshooting.md
         - name: 'Ошибки и предупреждения, касающиеся индексатора'
           href: cognitive-search-common-errors-warnings.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure CLI
       href: 'https://docs.microsoft.com/cli/azure/search?view=azure-cli-latest'
@@ -413,7 +413,7 @@
           href: 'https://aka.ms/azjobsdemo'
         - name: Варианты использования поиска
           href: 'https://searchsamples.azurewebsites.net/'
-    - name: Вопросы и ответы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: search-faq-frequently-asked-questions.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/search/'

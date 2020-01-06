@@ -19,19 +19,21 @@
       href: terminology.md
     - name: Роли и требования
       href: concepts-roles-permissions.md
+    - name: Аварийное восстановление
+      href: disaster-recovery.md
 - name: Примеры
   items:
     - name: Примеры кода
       href: 'https://docs.microsoft.com/samples/browse/?service=data-share/'
     - name: Azure PowerShell
       href: samples-powershell.md
-- name: Руководства
+- name: Практические руководства
   items:
-    - name: Мониторинг
+    - name: Монитор
       href: how-to-monitor.md
     - name: Настройка сопоставления наборов данных
       href: how-to-configure-mapping.md
-    - name: Устранение неполадок
+    - name: Диагностика
       href: data-share-troubleshoot.md
     - name: Добавление наборов данных
       href: how-to-add-datasets.md
@@ -41,7 +43,7 @@
       href: how-to-delete-invitation.md
     - name: Отмена подписки на общую папку
       href: how-to-revoke-share-subscription.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: .NET
       href: /dotnet/api/overview/azure/datashare

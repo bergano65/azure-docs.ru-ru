@@ -136,13 +136,13 @@
       items:
         - name: Мобильные приложения и веб-приложения
           href: 'https://docs.microsoft.com/azure/app-service/configure-ssl-bindings'
-    - name: Backup
+    - name: Резервное копирование
       items:
         - name: Мобильные приложения и веб-приложения
           href: 'https://docs.microsoft.com/azure/app-service/manage-backup'
         - name: Виртуальные машины
           href: 'https://docs.microsoft.com/azure/backup/backup-azure-vms-introduction'
-    - name: Мониторинг
+    - name: Монитор
       items:
         - name: Мобильные приложения и веб-приложения
           href: 'https://docs.microsoft.com/azure/app-service/troubleshoot-diagnostic-logs'
@@ -160,7 +160,7 @@
           href: 'https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-create-vmss'
         - name: Масштабирование виртуальных машин Windows
           href: 'https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-create-vmss'
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: REST
       href: 'https://docs.microsoft.com/rest/api/'
@@ -189,7 +189,7 @@
 - name: Ресурсы
   items:
     - name: Ограничения и квоты Azure
-      href: ../../azure-subscription-service-limits.md?toc=%2fazure%2fguides%2fdeveloper%2ftoc.json
+      href: ../../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fguides%2fdeveloper%2ftoc.json
     - name: Регионы Azure
       href: 'https://azure.microsoft.com/regions/'
     - name: Стратегия развития Azure

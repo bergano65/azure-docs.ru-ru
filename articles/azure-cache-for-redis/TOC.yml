@@ -1,5 +1,5 @@
 - name: Документация по кэшу Redis для Azure
-  href: index.md
+  href: index.yml
 - name: Обзор
   items:
     - name: Общие сведения о кэше Redis для Azure
@@ -39,7 +39,7 @@
       href: cache-best-practices.md
     - name: Рекомендации по архитектуре для кэширования
       href: 'https://docs.microsoft.com/azure/architecture/best-practices/caching?toc=%2Fazure%2Fredis-cache%2Ftoc.json'
-- name: Руководства
+- name: Практические руководства
   items:
     - name: План
       items:
@@ -91,7 +91,7 @@
           href: cache-how-to-redis-cli-tool.md
         - name: "Удаление TLS\_1.0 и 1.1"
           href: cache-remove-tls-10-11.md
-    - name: Мониторинг
+    - name: Монитор
       items:
         - name: Мониторинг на портале Azure
           href: cache-how-to-monitor.md
@@ -111,9 +111,9 @@
       items:
         - name: Обновление до другого размера и уровня
           href: cache-how-to-scale.md
-        - name: Использование кластера Redis для горизонтального масштабирования
+        - name: Использование кластера Redis для свертывания и развертывания
           href: cache-how-to-premium-clustering.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?service=redis-cache'

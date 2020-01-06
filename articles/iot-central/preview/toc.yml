@@ -4,8 +4,6 @@
   items:
     - name: Что собой представляет Azure IoT Central
       href: overview-iot-central.md
-    - name: Параметры решения для Интернета вещей
-      href: ../core/overview-iot-options.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json
     - name: Обзор пользовательского интерфейса
       href: overview-iot-central-tour.md
     - name: Подключение
@@ -49,11 +47,11 @@
           href: 'https://docs.microsoft.com/learn/modules/manage-iot-central-apps-with-rest-api/'
 - name: Основные понятия
   items:
-    - name: Архитектура
+    - name: Architecture
       href: concepts-architecture.md
     - name: Что представляют собой шаблоны приложений?
       href: ../core/concepts-app-templates.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Подключение
       items:
@@ -101,7 +99,7 @@
           items:
             - name: Изменение параметров приложения
               href: howto-administer.md
-            - name: Управление пользователями и ролями
+            - name: управление пользователями и ролями;
               href: howto-manage-users-roles.md
             - name: Управление счетом
               href: howto-view-bill.md

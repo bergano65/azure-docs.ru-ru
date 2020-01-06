@@ -49,6 +49,8 @@
           href: concept-mfa-authprovider.md
         - name: Руководство по безопасности
           href: multi-factor-authentication-security-best-practices.md
+        - name: Местонахождение данных
+          href: concept-mfa-data-residency.md
         - name: MFA для Office 365
           href: 'https://docs.microsoft.com/office365/admin/security-and-compliance/set-up-multi-factor-authentication?view=o365-worldwide'
         - name: 'MFA: вопросы и ответы'
@@ -61,7 +63,7 @@
           href: concept-password-ban-bad-on-premises.md
     - name: Устойчивые элементы управления доступом
       href: concept-resilient-controls.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Самостоятельный сброс пароля
       items:
@@ -158,7 +160,7 @@
           href: howto-sspr-reporting.md
         - name: Отчеты службы "Многофакторная идентификация Azure"
           href: howto-mfa-reporting.md
-        - name: Сбор данных
+        - name: сбор данных
           href: howto-mfa-reporting-datacollection.md
     - name: Сервер MFA
       items:
@@ -200,7 +202,7 @@
               href: howto-mfaserver-nps-vpn.md
             - name: Ошибки расширения NPS
               href: howto-mfa-nps-extension-errors.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: Устранение неполадок с SSPR
           href: active-directory-passwords-troubleshoot.md
@@ -210,7 +212,7 @@
           href: multi-factor-authentication-faq.md
         - name: Расширение NPS
           href: howto-mfa-nps-extension-errors.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Руководство пользователя MFA
       href: ./end-user/current/multi-factor-authentication-end-user.md
