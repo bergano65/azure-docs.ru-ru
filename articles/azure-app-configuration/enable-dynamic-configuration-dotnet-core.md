@@ -1,5 +1,6 @@
 ---
-title: Руководство по использованию динамической конфигурации Azure App Configuration в приложении .NET Core | Документация Майкрософт
+title: Руководство. Использование динамической конфигурации в приложении .NET Core
+titleSuffix: Azure App Configuration
 description: Из этого руководства вы узнаете, как динамически обновлять данные конфигурации для приложений .NET Core.
 services: azure-app-configuration
 documentationcenter: ''
@@ -13,14 +14,14 @@ ms.devlang: csharp
 ms.topic: tutorial
 ms.date: 07/01/2019
 ms.author: abarora
-ms.openlocfilehash: ae753758a3cd5b7dfa8794ccf98f7a8a063f5b18
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: afecc84748ae8ce85c07e3b482bd9b596bdca251
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185191"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75433681"
 ---
-# <a name="tutorial-use-dynamic-configuration-in-a-net-core-app"></a>Руководство по Использование динамической конфигурации в приложении .NET Core
+# <a name="tutorial-use-dynamic-configuration-in-a-net-core-app"></a>Руководство. Использование динамической конфигурации в приложении .NET Core
 
 Клиентская библиотека .NET Core для конфигурации приложений поддерживает обновление набора параметров конфигурации по запросу без перезапуска приложения. Это можно реализовать, сначала получив экземпляр `IConfigurationRefresher` из параметров для поставщика конфигурации, а затем вызвав `Refresh` на этом экземпляре, где угодно в коде.
 
@@ -30,13 +31,13 @@ ms.locfileid: "74185191"
 
 Вы можете выполнять шаги в этом учебнике с помощью любого редактора кода. [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, который доступен на платформах Windows, macOS и Linux.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * настройка приложения .NET Core на обновление конфигурации при изменении данных в хранилище службы "Конфигурация приложений";
 > * использование последней конфигурации в приложении.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим учебником установите [пакет SDK для .NET Core](https://dotnet.microsoft.com/download).
 
@@ -119,11 +120,11 @@ class Program
 
     ![Краткое руководство. Запуск приложения, размещенного локально](./media/quickstarts/dotnet-core-app-run.png)
 
-1. Войдите на [портале Azure](https://portal.azure.com). Щелкните **Все ресурсы** и выберите экземпляр хранилища Конфигурации приложений, который вы создали по инструкциям из краткого руководства.
+1. Войдите на [портал Azure](https://portal.azure.com). Щелкните **Все ресурсы** и выберите экземпляр хранилища Конфигурации приложений, который вы создали по инструкциям из краткого руководства.
 
 1. Выберите **Configuration Explorer** (Обозреватель конфигураций) и измените значения следующих ключей.
 
-    | Ключ | Значение |
+    | Клавиши | Значение |
     |---|---|
     | TestApp:Settings:FontSize | Данные из конфигурации приложений Azure. Обновлено |
 
@@ -138,7 +139,7 @@ class Program
 
 [!INCLUDE [azure-app-configuration-cleanup](../../includes/azure-app-configuration-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этого руководства вы включили в приложении .NET Core динамическое обновление параметров конфигурации из службы "Конфигурация приложения". Чтобы узнать, как с помощью удостоверения, управляемого Azure, упростить доступ к службе "Конфигурация приложений Azure", перейдите к следующему учебнику.
 

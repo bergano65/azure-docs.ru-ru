@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 951cd7ae8962d71f41899eca848ce0740d6395ad
-ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
+ms.openlocfilehash: 1838cfefee8c1cf9ca6548aa64fa7a6fcb46f66a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74538750"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75442860"
 ---
-# <a name="tutorial-scale-applications-in-azure-kubernetes-service-aks"></a>Руководство по Масштабирование приложений в Службе Azure Kubernetes (AKS)
+# <a name="tutorial-scale-applications-in-azure-kubernetes-service-aks"></a>Руководство. Масштабирование приложений в Службе Azure Kubernetes (AKS)
 
 Если вы выполнили инструкции в руководствах, то у вас имеется работающий кластер Kubernetes в AKS, и вы развернули в нем пример приложения для голосования Azure. В этом руководстве (часть 5 из 7) описывается масштабирование pod, содержащихся в приложении, и их автомасштабирование. Вы также узнаете, как масштабировать количество узлов виртуальной машины Azure, чтобы менять емкость кластера для размещения рабочих нагрузок. Вы узнаете, как выполнять следующие задачи:
 
@@ -26,7 +26,7 @@ ms.locfileid: "74538750"
 
 В дополнительных руководствах описано, как обновить приложение Azure для голосования до новой версии.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В предыдущих руководствах приложение было упаковано в образ контейнера. Этот образ был передан в Реестр контейнеров Azure, и вы создали кластер AKS. Затем приложение было развернуто в кластере AKS. Если вы не выполнили эти действия, вы можете начать с раздела руководства 1 [Создание образов контейнеров][aks-tutorial-prepare-app].
 
@@ -139,9 +139,9 @@ az aks scale --resource-group myResourceGroup --name myAKSCluster --node-count 3
   }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы использовали различные возможности масштабирования кластера Kubernetes. Вы научились выполнять следующие задачи:
+В этом руководстве вы использовали различные возможности масштабирования кластера Kubernetes. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Масштабирование модулей pod Kubernetes вручную для выполнения приложения.
@@ -159,7 +159,7 @@ az aks scale --resource-group myResourceGroup --name myAKSCluster --node-count 3
 [kubectl-scale]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#scale
 [kubernetes-hpa]: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
 [metrics-server-github]: https://github.com/kubernetes-incubator/metrics-server/tree/master/deploy/1.8%2B
-[metrics-server]: https://v1-12.docs.kubernetes.io/docs/tasks/debug-application-cluster/core-metrics-pipeline/
+[metrics-server]: https://v1-13.docs.kubernetes.io/docs/tasks/debug-application-cluster/core-metrics-pipeline/
 
 <!-- LINKS - internal -->
 [aks-tutorial-prepare-app]: ./tutorial-kubernetes-prepare-app.md
