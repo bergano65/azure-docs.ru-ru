@@ -15,14 +15,14 @@ ms.workload: infrastructure
 ms.date: 11/30/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 906ac3b28a512a866e712cefda4355ad901c258d
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: aca1f8ce2c125cd90f2e61a7829be09bc81c3938
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74064716"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75464959"
 ---
-# <a name="tutorial-create-a-custom-image-of-an-azure-vm-with-azure-powershell"></a>Руководство по Создание пользовательского образа виртуальной машины Azure с помощью Azure PowerShell
+# <a name="tutorial-create-a-custom-image-of-an-azure-vm-with-azure-powershell"></a>Руководство. Создание пользовательского образа виртуальной машины Azure с помощью Azure PowerShell
 
 Пользовательские образы похожи на образы магазина, однако их можно создавать самостоятельно. Пользовательские образы можно использовать для начальной загрузки развертываний и обеспечения согласованности между несколькими виртуальными машинами. В рамках этого руководства вы создадите собственный пользовательский образ виртуальной машины Azure с помощью PowerShell. Вы узнаете, как выполнять следующие задачи:
 
@@ -35,7 +35,7 @@ ms.locfileid: "74064716"
 
 Мы предлагаем общедоступную предварительную версию службы [построителя образов виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder-overview). Просто опишите настройки в шаблоне, и он автоматически выполнит шаги по созданию образа, описанные в этой статье. [Попробуйте построитель образов Azure (предварительная версия)](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder).
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Ниже подробно описано, как преобразовать существующую виртуальную машину в многократно используемый пользовательский образ, на основе которого можно создавать экземпляры виртуальной машины.
 
@@ -155,9 +155,9 @@ Remove-AzImage `
     -ResourceGroupName myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В рамках этого руководства вы создали пользовательский образ виртуальной машины. Вы научились выполнять следующие задачи:
+В рамках этого руководства вы создали пользовательский образ виртуальной машины. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Подготовка виртуальной машины к использованию с помощью Sysprep
