@@ -1,5 +1,5 @@
 ---
-title: Руководство по Azure Data Lake Storage 2-го поколения, Azure Databricks и Spark | Документация Майкрософт
+title: Руководство. Azure Data Lake Storage 2-го поколения, Azure Databricks и Spark | Документация Майкрософт
 description: В этом руководстве показано, как выполнять запросы Spark в кластере Azure Databricks для получения доступа к данным в учетной записи хранения Azure Data Lake Storage 2-го поколения.
 author: normesta
 ms.subservice: data-lake-storage-gen2
@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: normesta
 ms.reviewer: dineshm
-ms.openlocfilehash: bbe936fd572a8e23fb6e7c5da4a4bffef1c8bf7e
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: e26ae4d384b1718b1cdb12abbda82aad22afde4d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74327537"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75462572"
 ---
-# <a name="tutorial-azure-data-lake-storage-gen2-azure-databricks--spark"></a>Руководство по Azure Data Lake Storage 2-го поколения, Azure Databricks и Spark
+# <a name="tutorial-azure-data-lake-storage-gen2-azure-databricks--spark"></a>Руководство. Azure Data Lake Storage 2-го поколения, Azure Databricks и Spark
 
 В этом руководстве показано, как подключить кластер Azure Databricks к данным, хранящимся в учетной записи хранения Azure с поддержкой Azure Data Lake Storage 2-го поколения. Благодаря этому подключению запросы и аналитику можно изначально выполнять из кластера в данных.
 
@@ -28,17 +28,17 @@ ms.locfileid: "74327537"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Создайте учетную запись Azure Data Lake Storage 2-го поколения.
 
-  См. статью [Краткое руководство. Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
+  Ознакомьтесь со статьей о [создании учетной записи Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
 
 * Убедитесь, что учетная запись пользователя содержит назначенную ей [роль участника для данных хранилища BLOB-объектов](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac).
 
 * Установите AzCopy v10. Дополнительные сведения см. в статье [Передача данных с помощью AzCopy версии 10 (предварительная версия)](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
-* Создание субъекта-службы. Дополнительные сведения см. в статье [Azure Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
+* Создание субъекта-службы. В разделе [Руководство. Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
 
   Существует несколько конкретных действий, которые необходимо выполнить при изучении этой статьи.
 
@@ -71,12 +71,12 @@ ms.locfileid: "74327537"
 
 2. В разделе **Служба Azure Databricks** укажите следующие значения, чтобы создать службу Databricks.
 
-    |Свойство  |ОПИСАНИЕ  |
+    |Свойство  |Description  |
     |---------|---------|
     |**Имя рабочей области**     | Укажите имя рабочей области Databricks.  |
     |**подписка**     | Выберите подписку Azure в раскрывающемся списке.        |
-    |**группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../../azure-resource-manager/resource-group-overview.md). |
-    |**Местоположение.**     | Выберите **Западная часть США 2**. Другие доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/).       |
+    |**группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../../azure-resource-manager/management/overview.md). |
+    |**Местоположение**     | Выберите **Западная часть США 2**. Другие доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/).       |
     |**Ценовая категория**     |  Выберите **Стандартная**.     |
 
     ![Создайте рабочую область Azure Databricks](./media/data-lake-storage-use-databricks-spark/create-databricks-workspace.png "Создание службы Azure Databricks.").
@@ -196,7 +196,7 @@ flightDF.write.mode("append").parquet("/mnt/flightdata/parquet/flights")
 print("Done")
 ```
 
-## <a name="explore-data"></a>Изучение данных
+## <a name="explore-data"></a>Анализ данных
 
 Вставьте в новую ячейку следующий код, чтобы получить список отправленных через средство AzCopy CSV-файлов.
 
@@ -287,7 +287,7 @@ print('Airlines that fly to/from Texas: ', out1.show(100, False))
 
 Удалите группу ресурсов и все связанные с ней ресурсы, когда надобность в них отпадет. Для этого выберите группу ресурсов для учетной записи хранения и выберите **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
 > [Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight](data-lake-storage-tutorial-extract-transform-load-hive.md)
