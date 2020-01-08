@@ -26,8 +26,10 @@
       items:
         - name: Использование лабораторий для проведения учебных занятий
           href: classroom-labs-scenarios.md
-- name: Руководства
+- name: Практические руководства
   items:
+    - name: Руководство для администратора
+      href: administrator-guide.md
     - name: "Лаборатории для аудитории\_— типы классов"
       items:
         - name: Общие сведения о типах классов
@@ -52,6 +54,8 @@
           href: how-to-connect-peer-virtual-network.md
         - name: Подключение и отключение коллекции общих образов
           href: how-to-attach-detach-shared-image-gallery.md
+        - name: Добавление пользователя в качестве владельца в лабораторию для аудитории
+          href: how-to-add-user-lab-owner.md
     - name: Создание и настройка лаборатории для аудитории (инструктор)
       items:
         - name: Создание и администрирование лабораторий для аудитории
@@ -70,6 +74,8 @@
           href: how-to-use-shared-image-gallery.md
         - name: Включение соединения с удаленным рабочим столом для Linux
           href: how-to-enable-remote-desktop-linux.md
+        - name: Включение автоматического завершения работы при отключении
+          href: how-to-enable-shutdown-disconnect.md
         - name: Включение вложенной виртуализации в шаблоне виртуальной машины
           href: how-to-enable-nested-virtualization-template-vm.md
         - name: Подготовка виртуальной машины Windows
@@ -82,7 +88,7 @@
           href: how-to-use-remote-desktop-linux-student.md
         - name: Установка или сброс паролей для виртуальных машин
           href: how-to-set-virtual-machine-passwords-student.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: REST API
       href: 'https://docs.microsoft.com/rest/api/labservices/'

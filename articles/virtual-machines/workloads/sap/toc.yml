@@ -24,7 +24,7 @@
           href: hana-data-tiering-extension-nodes.md
         - name: Модель операций и обязанности
           href: hana-operations-model.md
-    - name: Архитектура
+    - name: Architecture
       items:
         - name: Общая архитектура
           href: hana-architecture.md
@@ -104,6 +104,8 @@
           href: hana-vm-troubleshoot-scale-out-ha-on-sles.md
         - name: Горизонтальное масштабирование SAP HANA с использованием резервного узла и Azure NetApp Files в SLES
           href: sap-hana-scale-out-standby-netapp-files-suse.md
+        - name: Горизонтальное масштабирование SAP HANA с использованием резервного узла и Azure NetApp Files в RHEL
+          href: sap-hana-scale-out-standby-netapp-files-rhel.md
     - name: Общие сведения о резервном копировании SAP HANA
       href: sap-hana-backup-guide.md
     - name: Резервное копирование SAP HANA на уровне файлов
@@ -214,6 +216,8 @@
               href: sap-ascs-ha-multi-sid-wsfc-shared-disk.md
             - name: Использование Windows с общей папкой SOFS для экземпляра (A)SCS
               href: sap-ascs-ha-multi-sid-wsfc-file-share.md
+            - name: Использование SLES с несколькими ИД безопасности Pacemaker для экземпляра ASCS
+              href: high-availability-guide-suse-multi-sid.md
     - name: Использование Azure Site Recovery для аварийного восстановления SAP
       href: '../../../site-recovery/site-recovery-workload.md#protect-sap'
     - name: Группа размещения близкого взаимодействия Azure для оптимизации сетевой задержки с использованием приложений SAP

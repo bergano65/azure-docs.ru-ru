@@ -27,75 +27,83 @@
       href: roles.md
     - name: Расширенное обнаружение многоэтапных атак
       href: fusion.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Подключение источников данных
       href: connect-data-sources.md
       items:
-        - name: Подключение служб Майкрософт
+        - name: Подключение между службами
           items:
-            - name: "Подключение Azure\_AD"
+            - name: AWS
+              href: connect-aws.md
+            - name: Azure AD
               href: connect-azure-active-directory.md
-            - name: "Подключение Office\_365"
+            - name: Office 365
               href: connect-office-365.md
-            - name: Подключение Cloud App Security
+            - name: Cloud App Security
               href: connect-cloud-app-security.md
-            - name: Подключение журнала действий Azure
+            - name: Журнал действий Azure
               href: connect-azure-activity.md
-            - name: Подключение Защиты идентификации Azure AD
+            - name: Защита идентификации Azure AD
               href: connect-azure-ad-identity-protection.md
-            - name: Подключение Azure Information Protection
+            - name: Azure Information Protection
               href: connect-azure-information-protection.md
-            - name: Подключение ATP в Microsoft Defender
+            - name: ATP в Microsoft Defender
               href: connect-microsoft-defender-advanced-threat-protection.md
-            - name: Подключение Azure ATP
+            - name: Azure ATP
               href: connect-azure-atp.md
-            - name: Подключение Центра безопасности Azure
+            - name: Центр безопасности Azure
               href: connect-azure-security-center.md
-            - name: Подключение сервера доменных имен
+            - name: Сервер доменных имен
               href: connect-dns.md
-            - name: Подключение брандмауэра веб-приложений Майкрософт
+            - name: Брандмауэр веб-приложения (Майкрософт)
               href: connect-microsoft-waf.md
-            - name: Подключение брандмауэра Windows
+            - name: Брандмауэр Windows
               href: connect-windows-firewall.md
-            - name: Подключение событий безопасности Windows
+            - name: События безопасности Windows
               href: connect-windows-security-events.md
         - name: Подключение внешних решений
           items:
-            - name: Подключение generic CEF
-              href: connect-common-event-format.md
-            - name: Подключение AWS
-              href: connect-aws.md
-            - name: Подключение Barracuda
+            - name: Barracuda
               href: connect-barracuda.md
-            - name: Подключение Check Point
-              href: connect-checkpoint.md
-            - name: Подключение Palo Alto Networks
-              href: connect-paloalto.md
-            - name: Подключение Fortinet
-              href: connect-fortinet.md
-            - name: Подключение F5
-              href: connect-f5.md
-            - name: "Подключение F5\_BIG-IP"
+            - name: "F5\_BIG-IP"
               href: connect-f5-big-ip.md
-            - name: Подключение Syslog
+            - name: Системный журнал
               href: connect-syslog.md
-            - name: Подключение Symantec ICDX
+            - name: Symantec ICDx
               href: connect-symantec.md
-            - name: Подключение Cisco
-              href: connect-cisco.md
-            - name: Подключение Barracuda CloudGen Firewall
+            - name: Barracuda CloudGen Firewall
               href: connect-barracuda-cloudgen-firewall.md
-            - name: Подключение Citrix Analytics (модуль безопасности)
+            - name: Citrix Analytics (модуль безопасности)
               href: connect-citrix-analytics.md
-            - name: Подключение ExtraHop Reveal(x)
-              href: connect-extrahop.md
-            - name: One Identity Safeguard
-              href: connect-one-identity.md
-            - name: Trend Micro Deep Security
-              href: connect-trend-micro.md
-            - name: Подключение Zscaler
-              href: connect-zscaler.md
+            - name: Решения на основе CEF
+              href: connect-common-event-format.md
+              items:
+                - name: Шаг 1. Развертывание агента
+                  href: connect-cef-agent.md
+                - name: Шаг 2. Настройка решения для обеспечения безопасности
+                  href: connect-cef-solution-config.md
+                  items:
+                    - name: Check Point
+                      href: connect-checkpoint.md
+                    - name: Cisco
+                      href: connect-cisco.md
+                    - name: ExtraHop Reveal(x)
+                      href: connect-extrahop.md
+                    - name: F5
+                      href: connect-f5.md
+                    - name: Fortinet
+                      href: connect-fortinet.md
+                    - name: One Identity Safeguard
+                      href: connect-one-identity.md
+                    - name: Palo Alto Networks
+                      href: connect-paloalto.md
+                    - name: Trend Micro Deep Security
+                      href: connect-trend-micro.md
+                    - name: Zscaler
+                      href: connect-zscaler.md
+                - name: Шаг 3. Проверка подключения
+                  href: connect-cef-verify.md
         - name: Подключение анализа угроз
           href: connect-threat-intelligence.md
         - name: Подключение виртуальных машин Azure Stack

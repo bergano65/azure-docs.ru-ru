@@ -55,12 +55,12 @@
       href: concepts-clusters-workloads.md
     - name: Параметры доступа и идентификации
       href: concepts-identity.md
-    - name: Безопасность
+    - name: безопасность
       href: concepts-security.md
       items: null
     - name: Сеть
       href: concepts-network.md
-    - name: Хранилище
+    - name: Память
       href: concepts-storage.md
     - name: Масштабирование
       href: concepts-scale.md
@@ -84,7 +84,7 @@
               href: operator-best-practices-container-image-management.md
             - name: Сеть
               href: operator-best-practices-network.md
-            - name: Хранилище
+            - name: Память
               href: operator-best-practices-storage.md
             - name: Непрерывность бизнес-процессов и аварийное восстановление (BCDR)
               href: operator-best-practices-multi-region.md
@@ -104,7 +104,7 @@
       href: security-hardened-vm-host-image.md
     - name: Общие сведения о диагностике Службы Azure Kubernetes
       href: concepts-diagnostics.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Операции с кластером
       items:
@@ -218,6 +218,8 @@
           maintainContext: true
         - name: Ротация сертификатов
           href: certificate-rotation.md
+        - name: Создание частного кластера
+          href: private-clusters.md
     - name: Мониторинг и ведение журнала
       items:
         - name: Azure Monitor для контейнеров
@@ -309,6 +311,9 @@
         - name: Использование Базы данных Azure для PostgreSQL
           href: ../postgresql/concepts-aks.md
           maintainContext: true
+        - name: Использование Управления API Azure
+          href: ../api-management/api-management-kubernetes.md
+          maintainContext: true
     - name: Выбор и развертывание слоя взаимодействия служб
       items:
         - name: Сведения о слоях взаимодействия служб
@@ -317,7 +322,7 @@
           items:
             - name: Сведения об Istio
               href: servicemesh-istio-about.md
-            - name: Установка и настройка
+            - name: Установка и настройка.
               href: servicemesh-istio-install.md
             - name: 'Сценарий: интеллектуальная маршрутизация и ранние выпуски'
               href: servicemesh-istio-scenario-routing.md
@@ -325,13 +330,13 @@
           items:
             - name: Сведения о Linkerd
               href: servicemesh-linkerd-about.md
-            - name: Установка и настройка
+            - name: Установка и настройка.
               href: servicemesh-linkerd-install.md
         - name: Использование Consul
           items:
             - name: Сведения о Consul
               href: servicemesh-consul-about.md
-            - name: Установка и настройка
+            - name: Установка и настройка.
               href: servicemesh-consul-install.md
     - name: DevOps
       items:
@@ -347,7 +352,7 @@
           href: deployment-center-launcher.md
         - name: Действия GitHub для Kubernetes
           href: ../aks/kubernetes-action.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: Распространенные проблемы
           href: troubleshooting.md
@@ -355,7 +360,7 @@
           href: kube-advisor-tool.md
         - name: Доступ к узлам SSH
           href: ssh.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure CLI
       href: /cli/azure/aks
@@ -383,7 +388,7 @@
       href: 'https://azure.microsoft.com/pricing/details/container-service/'
     - name: Политики поддержки
       href: support-policies.md
-    - name: Стратегия
+    - name: Схема действий
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Отзыв о продукте
       href: 'https://feedback.azure.com/forums/914020-azure-kubernetes-service-aks'
@@ -391,5 +396,5 @@
       href: 'https://stackoverflow.com/questions/tagged/azure-container-service'
     - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=container-service&sort=newest'
-    - name: Вопросы и ответы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: faq.md

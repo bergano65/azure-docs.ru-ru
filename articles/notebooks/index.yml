@@ -1,61 +1,68 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация по Записным книжкам Azure
+### YamlMime:Landing
+title: Документация по службе "Записные книжки Azure" (предварительная версия)
+summary: Записные книжки Azure (предварительная версия) — это бесплатная размещенная служба для разработки и запуска записных книжек Jupyter в облаке без их установки. Jupyter (прежнее название — IPython) это проект с открытым кодом, который позволяет легко объединять текст с разметкой, исполняемый код (Python, R и F#), хранимые данные, графические элементы и визуализации на одном общем холсте, который называется записной книжкой.
 metadata:
-  title: Документация по Записным книжкам Azure
-  description: 'Узнайте, как создавать, запускать и совместно использовать записные книжки Jupyter через размещенную службу "Записные книжки Azure".'
+  title: Документация по службе "Записные книжки Azure" (предварительная версия)
+  description: Узнайте, как создавать, запускать и совместно использовать записные книжки Jupyter с помощью размещенной службы "Записные книжки Azure" (предварительная версия).
+  ms.service: azure-notebooks
   ms.topic: landing-page
-  ms.date: 12/04/2018
-abstract:
-  description: 'Записные книжки Azure — это бесплатная размещенная служба для разработки и запуска записных книжек Jupyter в облаке без их установки. Jupyter (прежнее название — IPython) — это проект с открытым кодом, который позволяет легко объединять текст с разметкой, исполняемый код (Python, R, и F#), хранимые данные, графики и визуализации на одном общем холсте, который называется записной книжкой.'
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как работать с Записными книжками Azure, изучив эти краткие руководства.'
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 2
-        items:
-          - href: /azure/notebooks/quickstart-create-share-jupyter-notebook
-            html: '<p>Узнайте, как создать и запустить записную книжку Jupyter в Записных книжках Azure, а затем поделитесь этой записной книжкой с другими пользователями.</p>'
-            image:
-              src: media/index/Azure_AddNotebook.svg
-            title: Создание и совместное использование записной книжки
-          - href: /azure/notebooks/quickstart-clone-jupyter-notebook
-            html: '<p>Узнайте, как клонировать записную книжку Jupyter из репозитория GitHub и запустить ее в своей учетной записи в слубе "Записные книжки Azure".</p>'
-            image:
-              src: media/index/Azure_ClonePage.svg
-            title: Клонирование записной книжки
-          - href: /azure/notebooks/quickstart-migrate-local-jupyter-notebook
-            html: '<p>Узнайте, как перенести записную книжку Jupyter в Записные книжки Azure с локального компьютера или URL-адреса, а затем предоставить ее для совместной работы.</p>'
-            image:
-              src: media/index/Azure_MigrateNotebook.svg
-            title: Перенос локальной записной книжки Jupyter
-          - href: /azure/notebooks/quickstart-create-jupyter-notebook-project-environment
-            html: '<p>Узнайте, как настроить проект Записных книжек Azure с использованием определенного набора установленных пакетов и скриптов запуска.</p>'
-            image:
-              src: media/index/Azure_CustomEnvironment.svg
-            title: Создание проекта с настраиваемой средой
-          - href: /azure/notebooks/quickstart-sign-in-azure-notebooks
-            html: '<p>Узнайте, как войти в Записные книжки Azure и настроить идентификатор пользователя для получения доступа к сохраненным проектам и совместного использования записных книжек с другими пользователями.</p>'
-            image:
-              src: media/index/Azure_UserAccount.svg
-            title: Вход и настройка идентификатора пользователя
-  - title: Пошаговые инструкции
-    items:
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/azure/notebooks/tutorial-create-run-jupyter-notebook">Пошаговая инструкция по созданию записной книжки.</a>
-  - title: Примеры
-    items:
-      - type: paragraph
-        text: 'Используйте приведенные ниже примеры для работы с записными книжками:'
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/azure/notebooks/azure-notebooks-samples">Примеры записных книжек Jupyter</a>
+  author: jasonwhowell
+  ms.author: jasonh
+  ms.date: 12/26/2019
+  ms.openlocfilehash: 5044e3d679827982af7259511777f7119188b00b
+  ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 01/04/2020
+  ms.locfileid: "75659123"
+landingContent:
+- title: Сведения о службе "Записные книжки Azure"
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое служба "Записные книжки Azure"?
+      url: azure-notebooks-overview.md
+  - linkListType: deploy
+    links:
+    - text: Примеры для службы "Записные книжки Azure"
+      url: azure-notebooks-samples.md
+  - linkListType: get-started
+    links:
+    - text: Доступ к своим записным книжкам в Azure
+      url: https://notebooks.azure.com/
+- title: Начало работы со службой "Записные книжки Azure"
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Анализ данных о климате с помощью службы "Записные книжки Azure"
+      url: /learn/modules/analyze-climate-data-with-azure-notebooks/
+  - linkListType: tutorial
+    links:
+    - text: Создание и запуск записной книжки Jupyter с помощью Python
+      url: tutorial-create-run-jupyter-notebook.md
+  - linkListType: quickstart
+    links:
+    - text: Вход и настройка идентификатора пользователя
+      url: quickstart-sign-in-azure-notebooks.md
+    - text: Создание и совместное использование записной книжки
+      url: quickstart-create-share-jupyter-notebook.md
+    - text: Клонирование записной книжки
+      url: quickstart-clone-jupyter-notebook.md
+    - text: Перенос локальной записной книжки Jupyter
+      url: quickstart-migrate-local-jupyter-notebook.md
+    - text: Создание проекта с настраиваемой средой
+      url: quickstart-create-jupyter-notebook-project-environment.md
+- title: Основные задачи для службы "Записные книжки Azure"
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Администрирование и настройка проектов
+      url: configure-manage-azure-notebooks-projects.md
+    - text: Работа с файлами данных
+      url: work-with-project-data-files.md
+    - text: Создание и клонирование проектов
+      url: create-clone-jupyter-notebooks.md
+    - text: Доступ к облачным данным в записной книжке
+      url: access-data-resources-jupyter-notebooks.md
+    - text: Установка пакетов в записной книжке
+      url: install-packages-jupyter-notebook.md

@@ -4,30 +4,60 @@
   items:
     - name: Что такое Распознаватель документов?
       href: overview.md
+    - name: Новые возможности
+      href: whats-new.md
 - name: Краткие руководства
   expaned: true
   items:
+    - name: Использование примера средства создания меток
+      items:
+        - name: Обучение настраиваемой модели с помощью меток
+          href: quickstarts/label-tool.md
     - name: Использование REST API
       items:
-        - name: Обучение пользовательской модели и извлечение данных
+        - name: Обучение и использование настраиваемой модели без меток
           items:
-            - name: cURL
-              href: quickstarts/curl-train-extract.md
+            - name: Версия 2.0
+              items:
+                - name: cURL
+                  href: quickstarts/curl-train-extract.md
+                - name: Python
+                  href: quickstarts/python-train-extract.md
+            - name: Версия 1.0
+              items:
+                - name: cURL
+                  href: quickstarts/curl-train-extract-v1.md
+                - name: Python
+                  href: quickstarts/python-train-extract-v1.md
+        - name: Обучение и использование настраиваемой модели с помощью меток
+          items:
             - name: Python
-              href: quickstarts/python-train-extract.md
+              href: quickstarts/python-labeled-data.md
         - name: Использование предварительно созданной модели для обработки товарных чеков
           items:
-            - name: cURL
-              href: quickstarts/curl-receipts.md
+            - name: Версия 2.0
+              items:
+                - name: cURL
+                  href: quickstarts/curl-receipts.md
+                - name: Python
+                  href: quickstarts/python-receipts.md
+            - name: Версия 1.0
+              items:
+                - name: cURL
+                  href: quickstarts/curl-receipts-v1.md
+                - name: Python
+                  href: quickstarts/python-receipts-v1.md
+        - name: Получение сведений о структуре текста
+          items:
             - name: Python
-              href: quickstarts/python-receipts.md
+              href: quickstarts/python-layout.md
     - name: С помощью пакета SDK для .NET
       href: quickstarts/dotnet-sdk.md
 - name: Учебники
   items:
     - name: Использование Распознавателя документов с Logic Apps
       href: tutorial-form-recognizer-with-logic-apps.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Создание набора данных для обучения
       href: build-training-data-set.md
@@ -41,10 +71,12 @@
           displayName: 'docker, container, run, billing, apikey, logging'
         - name: Использование экземпляров контейнеров
           href: deploy-form-recognizer-on-container-instances.md
-- name: Справочные материалы
+- name: Справочник
   items:
-    - name: API Распознавателя документов
-      href: 'https://aka.ms/form-recognizer/api'
+    - name: API Распознавателя документов версии 2.0
+      href: 'https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeWithCustomForm'
+    - name: API Распознавателя документов версии 1.0
+      href: 'https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api/operations/AnalyzeWithCustomModel'
     - name: Пакеты SDK
       items:
         - name: .NET
@@ -61,5 +93,5 @@
       href: 'https://azure.microsoft.com/updates/?product=cognitive-services'
     - name: Доступность по регионам
       href: 'https://go.microsoft.com/fwlink/?linkid=2087185'
-    - name: Соответствие требованиям
+    - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

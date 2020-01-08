@@ -48,7 +48,7 @@
         - name: 'Пользователи, группы и роли'
           tocHref: /azure/active-directory/users-groups-roles/
           topicHref: /azure/active-directory/users-groups-roles/
-        - name: Система управления удостоверениями
+        - name: Identity Governance
           tocHref: /azure/active-directory/governance/
           topicHref: /azure/active-directory/governance/
         - name: Управление приложениями
@@ -61,7 +61,7 @@
         - name: Отчеты и мониторинг
           tocHref: /azure/active-directory/reports-monitoring/
           topicHref: /azure/active-directory/reports-monitoring/
-    - name: Analysis Services
+    - name: Службы Analysis Services
       tocHref: /azure/analysis-services/
       topicHref: /azure/analysis-services/
     - name: Управление API
@@ -139,6 +139,10 @@
     - name: Azure Monitor
       tocHref: /azure/azure-monitor/
       topicHref: /azure/azure-monitor/
+      items:
+        - name: Application Insights
+          tocHref: /azure/azure-monitor/azure-monitor-app-hub
+          topicHref: /azure/azure-monitor/azure-monitor-app-hub
     - name: Пространственные привязки Azure
       tocHref: /azure/spatial-anchors/
       topicHref: /azure/spatial-anchors/
@@ -148,7 +152,7 @@
     - name: Управление затратами
       tocHref: /azure/cost-management/
       topicHref: /azure/cost-management/
-    - name: Функции Azure
+    - name: Функции
       tocHref: /azure/azure-functions/
       topicHref: /azure/azure-functions/
       items:
@@ -167,10 +171,10 @@
     - name: Azure NetApp Files
       tocHref: /azure/azure-netapp-files/
       topicHref: /azure/azure-netapp-files/
-    - name: Решение VMware от CloudSimple в Azure
+    - name: Решение VMware в Azure от CloudSimple
       tocHref: /azure/vmware-cloudsimple/
       topicHref: /azure/vmware-cloudsimple/
-    - name: Настройка портала Azure
+    - name: Документация по порталу Azure
       tocHref: /azure/azure-portal/
       topicHref: /azure/azure-portal/\
     - name: Интернет вещей
@@ -214,7 +218,7 @@
         - name: Акселераторы решений для Интернета вещей
           tocHref: /azure/iot-accelerators/
           topicHref: /azure/iot-accelerators/
-        - name: Подготовка устройств к добавлению в Центр Интернета вещей
+        - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
           tocHref: /azure/iot-dps/
           topicHref: /azure/iot-dps/
         - name: Аналитика временных рядов
@@ -226,6 +230,19 @@
     - name: Resource Manager
       tocHref: /azure/azure-resource-manager/
       topicHref: /azure/azure-resource-manager/
+      items:
+        - name: Шаблоны
+          tocHref: /azure/azure-resource-manager/templates/
+          topicHref: /azure/azure-resource-manager/templates/
+        - name: Управление
+          tocHref: /azure/azure-resource-manager/management/
+          topicHref: /azure/azure-resource-manager/management/
+        - name: Управляемые приложения
+          tocHref: /azure/azure-resource-manager/managed-applications/
+          topicHref: /azure/azure-resource-manager/managed-applications/
+        - name: Настраиваемые поставщики Azure
+          tocHref: /azure/azure-resource-manager/custom-providers/
+          topicHref: /azure/azure-resource-manager/custom-providers/
     - name: Служба SignalR
       tocHref: /azure/azure-signalr/
       topicHref: /azure/azure-signalr/
@@ -238,13 +255,13 @@
     - name: Возможности поддержки
       tocHref: /azure/azure-supportability/
       topicHref: /azure/azure-supportability/
-    - name: Azure Backup
+    - name: Резервное копирование
       tocHref: /azure/backup/
       topicHref: /azure/backup/
     - name: Пакетная служба Azure
       tocHref: /azure/batch/
       topicHref: /azure/batch/
-    - name: Azure Batch AI
+    - name: Batch AI
       tocHref: /azure/batch-ai/
       topicHref: /azure/batch-ai/
     - name: Управление затратами и выставление счетов
@@ -448,7 +465,7 @@
     - name: DNS
       tocHref: /azure/dns/
       topicHref: /azure/dns/
-    - name: Сетка событий
+    - name: Сетка событий Azure
       tocHref: /azure/event-grid/
       topicHref: /azure/event-grid
     - name: Центры событий
@@ -476,7 +493,7 @@
       tocHref: /azure/governance/
       topicHref: /azure/governance/
       items:
-        - name: Схемы
+        - name: Blueprints
           tocHref: /azure/governance/blueprints/
           topicHref: /azure/governance/blueprints/
         - name: Группы управления
@@ -501,7 +518,7 @@
         - name: HBase
           tocHref: /azure/hdinsight/hbase
           topicHref: /azure/hdinsight/hbase/apache-hbase-overview
-        - name: Интерактивные запросы
+        - name: Интерактивный запрос
           tocHref: /azure/hdinsight/interactive-query
           topicHref: /azure/hdinsight/interactive-query/apache-interactive-query-get-started
         - name: Kafka
@@ -649,7 +666,7 @@
     - name: Планировщик
       tocHref: /azure/scheduler/
       topicHref: /azure/scheduler/
-    - name: Безопасность
+    - name: безопасность
       tocHref: /azure/security/
       topicHref: /azure/security/
       items:
@@ -659,13 +676,16 @@
         - name: Разработка
           tocHref: /azure/security/develop/
           topicHref: /azure/security/develop/
+        - name: Тесты производительности
+          tocHref: /azure/security/benchmarks/
+          topicHref: /azure/security/benchmarks/
     - name: Центр безопасности
       tocHref: /azure/security-center/
       topicHref: /azure/security-center/
     - name: Azure Sentinel
       tocHref: /azure/sentinel/
       topicHref: /azure/sentinel/
-    - name: Служебная шина Azure
+    - name: Служебная шина
       tocHref: /azure/service-bus/
       topicHref: /azure/service-bus/
     - name: Обмен сообщениями через Служебную шину
@@ -677,7 +697,7 @@
     - name: Service Fabric
       tocHref: /azure/service-fabric/
       topicHref: /azure/service-fabric/
-    - name: Сетка Service Fabric
+    - name: Служба Microsoft Azure Service Fabric
       tocHref: /azure/service-fabric-mesh/
       topicHref: /azure/service-fabric-mesh/
     - name: Site Recovery
@@ -695,11 +715,11 @@
     - name: SQL Server Stretch Database
       tocHref: /azure/sql-server-stretch-database/
       topicHref: /azure/sql-server-stretch-database/
-    - name: Служба хранилища
+    - name: Память
       tocHref: /azure/storage/
       topicHref: /azure/storage/
       items:
-        - name: Большие двоичные объекты
+        - name: BLOB-объекты
           tocHref: /azure/storage/blobs/
           topicHref: /azure/storage/blobs/storage-blobs-introduction
         - name: Data Lake Storage 2-го поколения
@@ -726,7 +746,7 @@
     - name: Диспетчер трафика
       tocHref: /azure/traffic-manager/
       topicHref: /azure/traffic-manager/
-    - name: Масштабируемые наборы виртуальных машин
+    - name: Масштабируемые наборы виртуальных машин Microsoft Azure
       tocHref: /azure/virtual-machine-scale-sets/
       topicHref: /azure/virtual-machine-scale-sets/
     - name: Виртуальные машины
@@ -743,7 +763,7 @@
             - name: SAP
               tocHref: /azure/virtual-machines/workloads/sap/
               topicHref: /azure/virtual-machines/workloads/sap/get-started
-            - name: Oracle
+            - name: Oracle;
               tocHref: /azure/virtual-machines/workloads/oracle/
               topicHref: /azure/virtual-machines/workloads/oracle/oracle-considerations
             - name: Повторное размещение мейнфреймов

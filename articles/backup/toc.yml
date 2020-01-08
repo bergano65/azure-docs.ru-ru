@@ -36,6 +36,14 @@
       href: tutorial-backup-windows-server-to-azure.md
     - name: Восстановление файлов в Windows Server
       href: tutorial-backup-restore-files-windows-server.md
+    - name: Базы данных SAP HANA на виртуальных машинах Azure (CLI)
+      items:
+        - name: Резервное копирование баз данных SAP HANA с помощью CLI
+          href: tutorial-sap-hana-backup-cli.md
+        - name: Восстановление баз данных SAP HANA с помощью CLI
+          href: tutorial-sap-hana-restore-cli.md
+        - name: Управление резервными копиями баз данных SAP HANA с помощью CLI
+          href: tutorial-sap-hana-manage-cli.md
 - name: Примеры
   items:
     - name: Azure PowerShell
@@ -58,7 +66,7 @@
           href: sap-hana-backup-support-matrix.md
         - name: Поддерживаемые номера SKU виртуальных машин для Политики Azure
           href: backup-azure-policy-supported-skus.md
-    - name: Безопасность
+    - name: безопасность
       items:
         - name: Управление доступом на основе ролей
           href: backup-rbac-rs-vault.md
@@ -244,6 +252,8 @@
           href: manage-monitor-sql-database-backup.md
     - name: Использование баз данных SAP HANA на виртуальных машинах Azure
       items:
+        - name: Сведения о резервном копировании SAP HANA на виртуальных машинах Azure
+          href: sap-hana-db-about.md
         - name: Резервное копирование баз данных SAP HANA на виртуальных машинах Azure
           href: backup-azure-sap-hana-database.md
         - name: Восстановление баз данных SAP HANA на виртуальных машинах Azure
@@ -276,7 +286,7 @@
           href: backup-azure-move-recovery-services-vault.md
         - name: Управление хранилищами Служб восстановления и их мониторинг
           href: backup-azure-manage-windows-server.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: Azure
           href: backup-azure-vms-troubleshoot.md
@@ -292,7 +302,7 @@
           href: backup-azure-mars-troubleshoot.md
         - name: Общая папка Azure
           href: troubleshoot-azure-files.md
-        - name: SQL Server
+        - name: "SQL\_Server"
           href: backup-sql-server-azure-troubleshoot.md
         - name: Резервное копирование SAP HANA на виртуальных машинах Azure
           href: backup-azure-sap-hana-database-troubleshoot.md
@@ -304,11 +314,11 @@
           href: backup-azure-monitoring-built-in-monitor.md
         - name: Использование Azure Monitor
           href: backup-azure-monitoring-use-azuremonitor.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: .NET
       href: /dotnet/api/microsoft.azure.management.recoveryservices.backup
-    - name: "Azure\_CLI"
+    - name: Azure CLI
       href: /cli/azure/backup?view=azure-cli-latest
     - name: PowerShell
       href: /powershell/module/az.recoveryservices

@@ -17,6 +17,8 @@
           href: ./hdinsight-administer-use-dotnet-sdk.md
         - name: "Управление кластерами HDInsight\_— PowerShell"
           href: ./hdinsight-administer-use-powershell.md
+        - name: Создание кластеров с помощью модулей runbook
+          href: ./manage-clusters-runbooks.md
         - name: 'Создание конвейера извлечения, преобразования и загрузки'
           href: ./hdinsight-sales-insights-etl.md
     - name: Примеры
@@ -73,14 +75,29 @@
               href: ./hdinsight-hadoop-create-linux-clusters-curl-rest.md
             - name: "Создание кластеров\_— .NET"
               href: ./hdinsight-hadoop-create-linux-clusters-dotnet-sdk.md
-        - name: Использование системы хранения данных кластера
-          items:
-            - name: Использование службы хранилища Azure
-              href: hdinsight-hadoop-use-blob-storage.md
-            - name: Использование Azure Data Lake Storage 2-го поколения
-              href: hdinsight-hadoop-use-data-lake-storage-gen2.md
-            - name: Использование Azure Data Lake Storage 1-го поколения
-              href: hdinsight-hadoop-use-data-lake-store.md
+            - name: Ошибки с созданием кластера
+              href: ./create-cluster-error-dictionary.md
+              title: null
+              summary: null
+              abstract: null
+              achievement: null
+              iconUrl: null
+              levels:
+                - null
+              roles:
+                - null
+              products:
+                - null
+              units:
+                - null
+                - name: Использование системы хранения данных кластера
+                  items:
+                    - name: Использование службы хранилища Azure
+                      href: hdinsight-hadoop-use-blob-storage.md
+                    - name: Использование Azure Data Lake Storage 2-го поколения
+                      href: hdinsight-hadoop-use-data-lake-storage-gen2.md
+                    - name: Использование Azure Data Lake Storage 1-го поколения
+                      href: hdinsight-hadoop-use-data-lake-store.md
         - name: Расширение кластеров
           items:
             - name: Установка приложений HDInsight
@@ -191,7 +208,7 @@
               href: ./hadoop/hdinsight-tools-for-intellij-with-hortonworks-sandbox.md
             - name: Использование инструментов Data Lake с песочницей Hortonworks
               href: ./hdinsight-hadoop-emulator-visual-studio.md
-        - name: Мониторинг
+        - name: Наблюдение
           items:
             - name: Использование журналов Azure Monitor
               href: ./hdinsight-hadoop-oms-log-analytics-tutorial.md
@@ -201,7 +218,7 @@
               href: ./hdinsight-key-scenarios-to-monitor.md
             - name: Мониторинг доступности кластера с помощью журналов Ambari и Azure Monitor
               href: ./hdinsight-cluster-availability.md
-    - name: Справочные материалы
+    - name: Справочник
       items:
         - name: Azure PowerShell
           href: /powershell/module/az.hdinsight
@@ -363,7 +380,7 @@
                   href: ../cosmos-db/lambda-architecture.md
                 - name: Выполнение рабочих нагрузок Машинного обучения Azure с помощью AutoML
                   href: ./spark/apache-spark-run-machine-learning-automl.md
-        - name: Устранение неполадок
+        - name: Диагностика
           items:
             - name: Исключение OutOfMemoryError
               href: ./spark/apache-spark-troubleshoot-outofmemory.md
@@ -470,7 +487,7 @@
           items:
             - name: Использование пустых граничных узлов
               href: ./hdinsight-apps-use-edge-node.md
-        - name: Устранение неполадок
+        - name: Диагностика
           items:
             - name: Распространенные проблемы
               href: ./hdinsight-troubleshoot-guide.md
@@ -533,6 +550,8 @@
           href: ./hdinsight-apache-kafka-spark-structured-streaming.md
     - name: Основные понятия
       items:
+        - name: Перенос рабочих нагрузок Kafka на версию 4.0
+          href: ./kafka/migrate-versions.md
         - name: Хранение и масштабируемость
           href: ./kafka/apache-kafka-scalability.md
         - name: Высокий уровень доступности данных
@@ -545,6 +564,8 @@
       items:
         - name: Разработка
           items:
+            - name: Использование прокси-сервера REST для Kafka
+              href: ./kafka/rest-proxy.md
             - name: Включение автоматического создания разделов
               href: ./kafka/apache-kafka-auto-create-topics.md
             - name: Использование Apache Kafka с Центром Интернета вещей
@@ -569,7 +590,7 @@
               href: ./kafka/apache-kafka-byok.md
             - name: Шифрование и аутентификация SSL
               href: ./kafka/apache-kafka-ssl-encryption-authentication.md
-        - name: Устранение неполадок
+        - name: Диагностика
           items:
             - name: Недостаточные домены сбоя
               href: ./kafka/kafka-troubleshoot-insufficient-domains.md
@@ -619,7 +640,7 @@
               href: ./hbase/apache-hbase-phoenix-performance.md
             - name: Создание кластера Apache HBase в виртуальной сети Azure
               href: ./hbase/apache-hbase-provision-vnet.md
-        - name: Устранение неполадок
+        - name: Диагностика
           items:
             - name: 'Устранение проблем, связанных с производительностью Apache HBase'
               href: ./hbase/troubleshoot-hbase-performance-issues.md
@@ -697,7 +718,7 @@
               href: ./interactive-query/apache-hive-migrate-workloads.md
             - name: Оптимизация запросов Apache Hive
               href: ./hdinsight-hadoop-optimize-hive-query.md
-        - name: Устранение неполадок
+        - name: Диагностика
           items:
             - name: Исправление ошибки "Недостаточно памяти" в параметрах Apache Hive
               href: ./hdinsight-hadoop-hive-out-of-memory-error-oom.md
@@ -707,6 +728,8 @@
               href: ./interactive-query/interactive-query-troubleshoot-query-performance.md
             - name: Медленная работа средства редукции
               href: ./interactive-query/interactive-query-troubleshoot-slow-reducer.md
+            - name: Превышено время ожидания шлюза Apache Hive
+              href: ./interactive-query/troubleshoot-gateway-timeout.md
             - name: Истечение времени ожидания Apache Hive View
               href: ./interactive-query/interactive-query-troubleshoot-view-time-out.md
             - name: Проблема с разрешениями при создании таблицы
@@ -799,7 +822,7 @@
           items:
             - name: Мониторинг топологий
               href: ./storm/apache-storm-deploy-monitor-topology-linux.md
-        - name: Устранение неполадок
+        - name: Диагностика
           items:
             - name: Устранение неполадок с Apache Storm
               href: ./storm/apache-troubleshoot-storm.md
@@ -835,14 +858,14 @@
           href: ./hdinsight-service-tags.md
     - name: Практическое руководство
       items:
+        - name: Управление учетными данными с помощью брокера удостоверений
+          href: ./domain-joined/identity-broker.md
         - name: Создание кластеров ESP и синхронизация с локальными средами
           href: ./domain-joined/apache-domain-joined-create-configure-enterprise-security-cluster.md
         - name: Создание виртуальных сетей для HDInsight
           href: ./hdinsight-create-virtual-network.md
         - name: Подключение HDInsight к локальной сети
           href: ./connect-on-premises-network.md
-        - name: Настройка системы корпоративной безопасности в HDInsight
-          href: ./domain-joined/apache-domain-joined-configure.md
         - name: Настройка кластеров ESP с помощью Azure AD DS
           href: ./domain-joined/apache-domain-joined-configure-using-azure-adds.md
         - name: Синхронизация пользователей Microsoft Azure AD с кластером HDInsight
@@ -851,7 +874,7 @@
           href: ./domain-joined/apache-domain-joined-manage.md
         - name: Защита данных
           href: ./hdinsight-hadoop-create-linux-clusters-with-secure-transfer-storage.md
-        - name: Устранение неполадок
+        - name: Диагностика
           items:
             - name: Проблемы с аутентификацией ESP
               href: ./domain-joined/domain-joined-authentication-issues.md

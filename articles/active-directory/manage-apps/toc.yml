@@ -21,6 +21,10 @@
       href: /azure/active-directory/saas-apps/
     - name: Добавление локального приложения с помощью прокси приложения
       href: application-proxy-add-on-premises-application.md
+- name: Примеры
+  items:
+    - name: Примеры Azure PowerShell для прокси приложения
+      href: application-proxy-powershell-samples.md
 - name: Основные понятия
   expanded: true
   items:
@@ -54,7 +58,7 @@
           items:
             - name: Что собой представляет единый вход с помощью одного щелчка
               href: one-click-sso-tutorial.md
-        - name: Безопасность приложения
+        - name: Защита приложений
           items:
             - name: Параметры доступа к приложениям
               href: what-is-access-management.md
@@ -70,12 +74,10 @@
               href: end-user-experiences.md
     - name: Подготовка приложения (SCIM)
       items:
+        - name: Описание процесса подготовки
+          href: how-provisioning-works.md
         - name: Планирование развертывания автоматической подготовки пользователей
           href: plan-auto-user-provisioning.md
-        - name: Автоматизация подготовки для приложений с поддержкой SCIM
-          href: use-scim-to-provision-users-and-groups.md
-        - name: Сравнение подготовки вручную и автоматической подготовки
-          href: application-provisioning-config-how-to.md
     - name: Подготовка к управлению кадрами
       items:
         - name: Планирование развертывания подготовки пользователей к управлению кадрами
@@ -90,7 +92,7 @@
           href: application-proxy-connectors.md
         - name: Группы соединителей
           href: application-proxy-connector-groups.md
-        - name: Безопасность
+        - name: безопасность
           href: application-proxy-security.md
         - name: Топология сети
           href: application-proxy-network-topology.md
@@ -98,7 +100,7 @@
           href: application-proxy-high-availability-load-balancing.md
         - name: Сравнение решений для удаленного доступа
           href: application-proxy-migration.md
-- name: Руководства
+- name: Практические руководства
   expanded: true
   items:
     - name: Облачные приложения и единый вход
@@ -139,6 +141,8 @@
           items:
             - name: Настройка согласия пользователя
               href: configure-user-consent.md
+            - name: Предоставление согласия администратора на уровне клиента
+              href: grant-admin-consent.md
             - name: Настройка рабочего процесса согласия администратора (предварительная версия)
               href: configure-admin-consent-workflow.md
             - name: Способы назначения пользователей и групп для приложения
@@ -169,7 +173,7 @@
               href: migrate-adfs-apps-to-azure.md
             - name: "Использование отчета о действиях приложения AD\_FS (предварительная версия)"
               href: migrate-adfs-application-activity.md
-        - name: Устранение неполадок
+        - name: Диагностика
           items:
             - name: Устранение неполадок при добавлении приложений
               items:
@@ -233,28 +237,32 @@
                   href: access-panel-troubleshoot-self-service-access.md
     - name: Подготовка приложения (SCIM)
       items:
-        - name: Настройка подготовки приложений
+        - name: Настройка подготовки для приложения из коллекции
+          href: configure-automatic-user-provisioning-portal.md
+        - name: Создание конечной точки SCIM и настройка подготовки
+          href: use-scim-to-provision-users-and-groups.md
+        - name: Изменение сопоставлений атрибутов
           items:
-            - name: Настройка автоматической подготовки пользователей
-              href: configure-automatic-user-provisioning-portal.md
-            - name: Автоматическая подготовка с помощью SCIM
-              href: use-scim-to-provision-users-and-groups.md
             - name: Настройка сопоставлений атрибутов
               href: Customize-application-attributes.md
             - name: Написание выражений для сопоставления атрибутов
               href: functions-for-customizing-application-data.md
+        - name: Включение и пользователей и групп в область и их исключение оттуда
+          items:
             - name: Фильтрация подготавливаемых пользователей или групп по областям
               href: define-conditional-rules-for-provisioning-user-accounts.md
             - name: 'Пропуск пользователей, которые не входят в текущую область, при удалении'
               href: skip-out-of-scope-deletions.md
+        - name: Мониторинг и отчет о подготовке
+          items:
             - name: Мониторинг состояния подготовки и производительности
               href: application-provisioning-when-will-provisioning-finish-specific-user.md
             - name: Отчет о подготовке приложений
               href: check-status-user-account-provisioning.md
-            - name: Экспорт и импорт конфигурации
+            - name: Импорт и экспорт конфигурации
               href: export-import-provisioning-configuration.md
-            - name: Автоматизация настройки с помощью MS Graph
-              href: application-provisioning-configure-api.md
+        - name: Автоматизация настройки с помощью MS Graph
+          href: application-provisioning-configure-api.md
         - name: Устранение неполадок с подготовкой пользователей
           items:
             - name: Устранение неполадок с подготовкой приложений
@@ -367,7 +375,7 @@
               href: application-proxy-back-end-ping-access-how-to.md
             - name: Ошибка "Can't Access this Corporate Application" (Нет доступа к этому корпоративному приложению)
               href: application-proxy-sign-in-bad-gateway-timeout-error.md
-            - name: Проблема с установкой соединителя агента прокси приложения
+            - name: Проблема при установке соединителя агента прокси приложения
               href: application-proxy-connector-installation-problem.md
             - name: Проблемы со входом
               href: application-sign-in-problem-on-premises-application-proxy.md
@@ -377,7 +385,7 @@
       items:
         - name: Защита устаревших приложений с помощью контроллеров или сетей доставки приложений
           href: secure-hybrid-access.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Подготовка приложения (SCIM)
       items:

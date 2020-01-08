@@ -20,7 +20,7 @@
       href: manage-resources-using-ui.md
     - name: 7. Настройка оповещений служб
       href: set-up-service-alerts.md
-- name: Инструкции
+- name: Практическое руководство
   items:
     - name: Подключение к ресурсам Виртуального рабочего стола Windows
       items:
@@ -56,6 +56,8 @@
           href: customize-rdp-properties.md
         - name: Балансировка нагрузки для объединенных пулов узлов
           href: configure-host-pool-load-balancing.md
+        - name: Тип назначения персонального рабочего стола
+          href: configure-host-pool-personal-desktop-assignment-type.md
     - name: Использование лицензии на Виртуальный рабочий стол Windows
       href: apply-windows-license.md
     - name: Настройка образа узла сеансов
@@ -68,8 +70,12 @@
       href: set-up-scaling-script.md
     - name: Настройка веб-канала
       href: customize-feed-for-virtual-desktop-users.md
-    - name: Развертывание средства диагностики
-      href: deploy-diagnostics.md
+    - name: Использование функций диагностики службы
+      items:
+        - name: Развертывание средства диагностики
+          href: deploy-diagnostics.md
+        - name: Использование функций диагностики в Log Analytics
+          href: diagnostics-log-analytics.md
     - name: Публикация встроенных приложений
       href: publish-apps.md
     - name: Настройка присоединения приложения MSIX
@@ -78,8 +84,6 @@
   items:
     - name: Среда Виртуального рабочего стола Windows
       href: environment-setup.md
-    - name: Рекомендации по пропускной способности для удаленных сеансов
-      href: bandwidth-recommendations.md
     - name: Определение задержки подключения пользователей
       href: connection-latency.md
     - name: Делегированный доступ в Виртуальном рабочем столе Windows
@@ -96,7 +100,7 @@
       href: windows-10-multisession-faq.md
     - name: Расположения данных
       href: data-locations.md
-- name: Устранение неполадок
+- name: Диагностика
   items:
     - name: 'Общие сведения об устранении неисправностей, отзывы и поддержка'
       href: troubleshoot-set-up-overview.md
@@ -110,13 +114,15 @@
       href: troubleshoot-windows-7-vm.md
     - name: Устранение неполадок со средством управления Виртуального рабочего стола Windows
       href: troubleshoot-management-tool.md
-    - name: Подключения клиента удаленного рабочего стола
-      href: troubleshoot-client-connection.md
+    - name: Подключения службы удаленного рабочего стола
+      href: troubleshoot-service-connection.md
+    - name: Проблемы с клиентом удаленного рабочего стола
+      href: troubleshoot-client.md
     - name: "Виртуальный рабочий стол Windows\_— PowerShell"
       href: troubleshoot-powershell.md
     - name: Диагностика проблем с производительностью графической обработки
       href: remotefx-graphics-performance-counters.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: PowerShell
       href: /powershell/windows-virtual-desktop/overview

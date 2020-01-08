@@ -1,59 +1,172 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по службе Azure Maps
+summary: Служба Microsoft Azure Maps предоставляет разработчикам всех направлений мощные геопространственные функции, дополненные актуальными картографическими данными для предоставления географического контекста веб-приложениям и мобильным приложениям. Azure Maps — это совместимый с API Azure One набор интерфейсов REST API для служб карт, поиска, построения маршрутов, отслеживания дорожного движения, мобильности, погоды, часовых поясов, геолокации, геозон и данных карт, а также службы "Пространственные операции", с поддержкой веб-пакетов SDK и пакетов SDK для Android. Это решение делает разработку простой и гибкой, а также обеспечивает возможность переноса на разные платформы.
 metadata:
-  document_id: null
   title: Документация по службе Azure Maps | Документация Майкрософт
-  meta.description: Use Azure Maps to provide geospatial services to your web or mobile application.
-  author: philmea
-  manager: null
+  description: Узнайте больше о возможностях службы Azure Maps и о том, как с ее помощью подключить геопространственные службы к своему мобильному приложению или веб-приложению.
   ms.service: azure-maps
-  services: azure-maps
   ms.topic: landing-page
-  ms.date: 02/14/2019
+  author: philmea
   ms.author: philmea
-abstract:
-  description: "Служба Azure Maps предоставляет разработчикам всех направлений мощные геопространственные функции, дополненные актуальными картографическими данными для предоставления географического контекста веб-приложениям и мобильным приложениям. Azure Maps\_— это совместимый с API Azure One набор интерфейсов REST API для Maps, Поиска, служб маршрутизации, мобильности и часовых поясов, Службы трафика, Службы геолокации, служб геозон и данных карт, а также службы \"Пространственные операции\", с поддержкой веб-пакетов SDK и пакетов SDK для Android. Это решение обеспечивает простоту и гибкость разработки, а также возможность переноса на разные платформы."
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как создавать геопространственные приложения с помощью Azure Maps.'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_js.svg'
-            text: Создание веб-приложения
-            href: /azure/azure-maps/quick-demo-map-app
-  - title: Пошаговые инструкции
-    items:
-      - html: <b>Руководства по веб-пакетам SDK</b>
-      - type: paragraph
-        text: Создавайте геопространственные веб-приложения с помощью веб-пакетов SDK для Azure Maps.
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/azure-maps/tutorial-search-location">Поиск достопримечательностей</a>
-          - html: <a href="/azure/azure-maps/tutorial-route-location">Построение маршрута к достопримечательности</a>
-          - html: <a href="/azure/azure-maps/tutorial-prioritized-routes">Маршруты по видам транспорта</a>
-          - html: <a href="/azure/azure-maps/tutorial-create-store-locator">Создание указателя магазинов</a>
-      - html: <b>Руководства по REST API</b>
-      - type: paragraph
-        text: 'Создавайте геопространственные приложения, которые вызывают службы REST Azure Maps.'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/azure-maps/tutorial-geofence">Настройка геозоны</a>
-          - html: <a href="/azure/azure-maps/tutorial-iot-hub-maps">Пространственная аналитика</a>
-          - html: <a href=/azure/azure-maps/tutorial-ev-routing">Прокладывание маршрута электромобиля с использованием Записных книжек Azure (Python)</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsW
-        items:
-          - title: JavaScript
-            html: '<p><a href="https://docs.microsoft.com/javascript/api/azure-maps-javascript/">Управление картами</a></p><p><a href="https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/">Модуль средств рисования</a></p><p><a href="https://docs.microsoft.com/javascript/api/azure-maps-rest/">Модуль служб</a></p>'
-          - title: REST
-            html: '<p><a href="https://docs.microsoft.com/rest/api/maps/data">Служба данных</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/geolocation">Служба геолокации</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/mobility">Служба Mobility Service</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/render">Служба отрисовки</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/route">Служба построения маршрутов</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/search">Служба поиска</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/spatial">Служба пространственных данных</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/timezone">Служба часового пояса</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/traffic">Служба отслеживания дорожного движения</a></p>'
+  ms.date: 12/19/2019
+  ms.openlocfilehash: 66721caadce09816368d673c217c9bf97daf1b6c
+  ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 12/25/2019
+  ms.locfileid: "75408646"
+landingContent:
+- title: Использование службы "Карты Azure"
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Azure Maps?
+      url: about-azure-maps.md
+  - linkListType: concept
+    links:
+    - text: Покрытие Azure Maps
+      url: render-coverage.md
+    - text: Поддержка локализации
+      url: supported-languages.md
+    - text: Поддерживаемые стили карт
+      url: supported-map-styles.md
+  - linkListType: video
+    links:
+    - text: Общие сведения о службе Azure Maps
+      url: https://sec.ch9.ms/ch9/d498/3d435d2c-ac85-421b-b3a7-5e0c7630d498/IoT_AzureMaps_high.mp4
+- title: Приступая к работе
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создания веб-приложения с помощью Azure Maps
+      url: quick-demo-map-app.md
+  - linkListType: concept
+    links:
+    - text: Выбор подходящей ценовой категории для учетной записи Azure Maps
+      url: choose-pricing-tier.md
+    - text: Аутентификация в Azure Maps
+      url: azure-maps-authentication.md
+  - linkListType: how-to-guide
+    links:
+    - text: Управление учетными записями Azure Maps
+      url: how-to-manage-account-keys.md
+    - text: Управление аутентификацией в Azure Maps
+      url: how-to-manage-authentication.md
+    - text: Управление ценовой категорией учетной записи Azure Maps
+      url: how-to-manage-pricing-tier.md
+    - text: Просмотр метрик использования API Azure Maps
+      url: how-to-view-api-usage.md
+- title: Разработка с использованием веб-пакета SDK
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Начало работы с элементами управления веб-картой
+      url: how-to-use-map-control.md
+    - text: Примеры кода для веб-пакета для Azure Maps
+      url: https://azuremapscodesamples.azurewebsites.net/
+    - text: Браузеры, поддерживаемые в веб-пакетах SDK
+      url: supported-browsers.md
+  - linkListType: tutorial
+    links:
+    - text: Поиск точки интереса
+      url: tutorial-search-location.md
+    - text: Построение маршрута к точке интереса
+      url: tutorial-route-location.md
+    - text: Создание указателя магазинов
+      url: tutorial-create-store-locator.md
+  - linkListType: reference
+    links:
+    - text: Элемент управления картой
+      url: https://docs.microsoft.com/javascript/api/azure-maps-control/?view=azure-maps-typescript-latest
+    - text: Модуль средств рисования
+      url: https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/?view=azure-maps-typescript-latest
+    - text: Модуль службы
+      url: https://docs.microsoft.com/javascript/api/azure-maps-rest/?view=azure-maps-typescript-latest
+- title: Разработка с использованием пакета SDK для Android
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Начало работы с элементами управления картой Android
+      url: how-to-use-android-map-control-library.md
+    - text: Отображение метаданных функции
+      url: display-feature-information-android.md
+    - text: Добавление слоя фрагментов на карту
+      url: how-to-add-tile-layer-android-map.md
+    - text: Добавление фигур на карту
+      url: how-to-add-shapes-to-android-map.md
+- title: Разработка с использованием Location Based Services
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Уровни увеличения и сетки фрагментов
+      url: zoom-levels-and-tile-grid.md
+  - linkListType: tutorial
+    links:
+    - text: Прокладывание маршрута электромобиля с использованием службы "Записные книжки Azure" (Python)
+      url: tutorial-ev-routing.md
+  - linkListType: how-to-guide
+    links:
+    - text: Поиск адреса (геокодирование)
+      url: how-to-search-for-address.md
+    - text: Рекомендации по поиску
+      url: how-to-use-best-practices-for-search.md
+    - text: Отображение пользовательских данных на статической карте
+      url: how-to-render-custom-data.md
+  - linkListType: reference
+    links:
+    - text: Служба поиска
+      url: https://docs.microsoft.com/rest/api/maps/search
+    - text: Служба построения маршрутов
+      url: https://docs.microsoft.com/rest/api/maps/route
+    - text: Служба отслеживания дорожного движения
+      url: https://docs.microsoft.com/rest/api/maps/traffic
+    - text: Служба часовых поясов
+      url: https://docs.microsoft.com/rest/api/maps/timezone
+- title: Пространственная аналитика
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Интеграция Сетки событий Azure Maps
+      url: azure-maps-event-grid-integration.md
+  - linkListType: tutorial
+    links:
+    - text: Настройка геозоны с использованием Azure Maps
+      url: tutorial-geofence.md
+    - text: Реализация пространственной аналитики Интернета вещей с помощью Azure Maps
+      url: tutorial-iot-hub-maps.md
+  - linkListType: reference
+    links:
+    - text: Служба данных
+      url: https://docs.microsoft.com/rest/api/maps/data
+    - text: Служба пространственных данных
+      url: https://docs.microsoft.com/rest/api/maps/spatial
+- title: Разработка с использованием служб "Мобильность"
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Структуры данных службы "Мобильность"
+      url: mobility-service-data-structure.md
+  - linkListType: how-to-guide
+    links:
+    - text: Запрос маршрутов общественного транспорта
+      url: how-to-request-transit-data.md
+    - text: Запрос данных о работе общественного транспорта в реальном времени
+      url: how-to-request-real-time-data.md
+  - linkListType: reference
+    links:
+    - text: Служба Mobility Service
+      url: https://docs.microsoft.com/rest/api/maps/mobility
+- title: Разработка с использованием служб погоды
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Основные понятия, связанные со службой погоды
+      url: weather-services-concepts.md
+  - linkListType: tutorial
+    links:
+    - text: Анализ данных о погоде с помощью службы "Записные книжки Azure" (Python)
+      url: weather-service-tutorial.md
+  - linkListType: reference
+    links:
+    - text: Служба погоды
+      url: https://docs.microsoft.com/rest/api/maps/weather

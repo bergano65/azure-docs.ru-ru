@@ -11,7 +11,7 @@
   items:
     - name: Репликация виртуальной машины Azure в другой регион
       href: azure-to-azure-quickstart.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Аварийное восстановление виртуальной машины Azure в Azure
       items:
@@ -23,7 +23,7 @@
           href: azure-to-azure-tutorial-failover-failback.md
         - name: Запуск восстановления размещения
           href: azure-to-azure-tutorial-failback.md
-    - name: Move (Переместить)
+    - name: Переместить
       items:
         - name: Перенос виртуальных машин Azure в другой регион
           href: azure-to-azure-tutorial-migrate.md
@@ -43,7 +43,7 @@
           href: vmware-azure-tutorial.md
         - name: Отработка аварийного восстановления
           href: tutorial-dr-drill-azure.md
-        - name: Отработка отказа и восстановления размещения
+        - name: Отработка отказа с переходом в Azure
           href: vmware-azure-tutorial-failover-failback.md
     - name: Аварийное восстановление виртуальной машины Hyper-V в Azure
       items:
@@ -57,7 +57,7 @@
           href: hyper-v-vmm-azure-tutorial.md
         - name: Отработка аварийного восстановления
           href: tutorial-dr-drill-azure.md
-        - name: Отработка отказа и восстановления размещения
+        - name: Отработка отказа с переходом в Azure
           href: hyper-v-azure-failover-failback-tutorial.md
     - name: Миграция в Azure
       items:
@@ -73,7 +73,7 @@
   items:
     - name: Часто задаваемые вопросы о Site Recovery
       href: site-recovery-faq.md
-    - name: Сведения об аварийном восстановлении для виртуальных машин Azure
+    - name: Сведения об аварийном восстановлении виртуальной машины Azure
       items:
         - name: "Архитектура \"Azure\_— Azure\""
           href: azure-to-azure-architecture.md
@@ -87,9 +87,9 @@
           href: azure-vm-disaster-recovery-with-accelerated-networking.md
         - name: Использование ExpressRoute с аварийным восстановлением виртуальных машин Azure
           href: azure-vm-disaster-recovery-with-expressroute.md
-    - name: Сведения о перемещении виртуальных машин Azure
+    - name: Сведения о перемещении виртуальных машин Azure в другой регион
       href: azure-to-azure-move-overview.md
-    - name: Сведения об аварийном восстановлении виртуальной машины VMware в Azure
+    - name: Сведения об аварийном восстановлении виртуальной машины VMware
       items:
         - name: Обзор аварийного восстановления VMware
           href: vmware-azure-about-disaster-recovery.md
@@ -103,11 +103,13 @@
           href: vmware-azure-configuration-server-requirements.md
         - name: "Архитектура \"VMware\_— Azure\""
           href: vmware-azure-architecture.md
+        - name: Сведения об исключении дисков из репликации
+          href: exclude-disks-replication.md
         - name: Параметры расположения для восстановления размещения из Azure в VMware
           href: concepts-types-of-failback.md
         - name: Поддержка нескольких клиентов для аварийного восстановления VMware
           href: vmware-azure-multi-tenant-overview.md
-    - name: Сведения об аварийном восстановлении виртуальной машины Hyper-V в Azure
+    - name: Сведения об аварийном восстановлении виртуальной машины Hyper-V
       items:
         - name: Часто задаваемые вопросы
           href: hyper-v-azure-common-questions.md
@@ -115,13 +117,17 @@
           href: hyper-v-azure-support-matrix.md
         - name: "Архитектура \"Hyper-V\_— Azure\""
           href: hyper-v-azure-architecture.md
-    - name: Сведения об аварийном восстановлении физического сервера в Azure
+        - name: Сведения об исключении дисков из репликации
+          href: exclude-disks-replication.md
+    - name: Сведения об аварийном восстановлении физического сервера
       items:
         - name: "Матрица поддержки \"VMware или физический сервер\_— Azure\""
           href: vmware-physical-azure-support-matrix.md
         - name: "Архитектура \"Физические серверы\_— Azure\""
           href: physical-azure-architecture.md
-    - name: Сведения об управлении сетями для аварийного восстановления в Azure
+        - name: Сведения об исключении дисков из репликации
+          href: exclude-disks-replication.md
+    - name: Сведения об управлении сетями для аварийного восстановления
       items:
         - name: Диспетчер трафика Azure и Site Recovery
           href: concepts-traffic-manager-with-site-recovery.md
@@ -131,7 +137,9 @@
           href: concepts-network-security-group-with-site-recovery.md
         - name: Использование общедоступных IP-адресов с Site Recovery
           href: concepts-public-ip-address-with-site-recovery.md
-    - name: Сведения о планах отработки отказа и восстановления
+    - name: Сведения об отработке отказа и восстановлении размещения
+      href: failover-failback-overview.md
+    - name: Сведения о планах восстановления
       href: recovery-plan-overview.md
     - name: Сведения о миграции в Azure
       href: migrate-overview.md
@@ -147,7 +155,7 @@
           href: hyper-v-vmm-secondary-support-matrix.md
         - name: "Архитектура \"Виртуальная машина Hyper-V\_— дополнительный сайт\""
           href: hyper-v-vmm-architecture.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Аварийное восстановление "Azure — Azure"
       items:
@@ -231,13 +239,13 @@
               items:
                 - name: Обзор и установка Службы мобильности
                   href: vmware-physical-mobility-service-overview.md
-                - name: Подготовка к принудительной установке Службы мобильности
+                - name: Подготовка к принудительной установке
                   href: vmware-azure-install-mobility-service.md
-                - name: Развертывание Службы мобильности с помощью System Center Configuration Manager
+                - name: Автоматизация развертывания Mobility Service
                   href: vmware-azure-mobility-install-configuration-mgr.md
             - name: Включение репликации для виртуальных машин VMware
               href: vmware-azure-enable-replication.md
-            - name: Исключение дисков
+            - name: Исключение дисков из репликации
               href: vmware-azure-exclude-disk.md
             - name: Пошаговое руководство. Настройка репликации в мультитенантной среде с поставщиком служб шифрования для виртуальных машин VMware
               href: vmware-azure-multi-tenant-csp-disaster-recovery.md
@@ -249,17 +257,19 @@
               href: site-recovery-test-failover-to-azure.md
             - name: Отработка отказа в Azure
               href: site-recovery-failover.md
-            - name: "Повторное включение защиты: Azure\_— локальная среда VMware"
+            - name: Подготовка к повторному включению защиты и восстановлению размещения
+              href: vmware-azure-prepare-failback.md
+            - name: "Повторное включение защиты: Azure\_— локальная среда"
               href: vmware-azure-reprotect.md
-            - name: Восстановление размещения из Azure в VMware
+            - name: Восстановление размещения из Azure в локальную среду
               href: vmware-azure-failback.md
-            - name: Настройка и администрирование сервера обработки для восстановления размещения в Azure
+            - name: Настройка сервера для восстановления размещения в Azure
               href: vmware-azure-set-up-process-server-azure.md
             - name: Настройка главного целевого сервера Linux для восстановления размещения
               href: vmware-azure-install-linux-master-target.md
         - name: Управление
           items:
-            - name: Управление агентом мобильности для VMware
+            - name: Управление агентом службы "Мобильность"
               href: vmware-physical-manage-mobility-service.md
             - name: Управление сервером конфигурации для VMware
               href: vmware-azure-manage-configuration-server.md
@@ -303,9 +313,9 @@
           href: physical-to-azure-failover-failback.md
         - name: Управление
           items:
-            - name: Управление агентом мобильности для физического сервера
+            - name: Обновление службы "Мобильность"
               href: vmware-physical-manage-mobility-service.md
-            - name: Управление сервером конфигурации для репликации с физического сервера
+            - name: Управление сервером конфигурации
               href: physical-manage-configuration-server.md
             - name: Управление серверами обработки
               href: vmware-azure-manage-process-server.md
@@ -345,7 +355,7 @@
           items:
             - name: Подготовка сетевого сопоставления для аварийного восстановления виртуальных машин Hyper-V
               href: hyper-v-vmm-network-mapping.md
-            - name: Исключение дисков из репликации Hyper-V — Azure
+            - name: Исключение дисков из репликации
               href: hyper-v-exclude-disk.md
         - name: Отработка отказа и восстановления размещения
           items:
@@ -377,7 +387,7 @@
           href: site-recovery-workload.md
         - name: Active Directory и DNS
           href: site-recovery-active-directory.md
-        - name: SQL Server
+        - name: "SQL\_Server"
           href: site-recovery-sql.md
         - name: SharePoint
           href: site-recovery-sharepoint.md
@@ -429,7 +439,7 @@
       href: hyper-v-vmm-powershell-resource-manager.md
     - name: Добавление модулей runbook службы автоматизации в планы восстановления
       href: site-recovery-runbook-automation.md
-- name: Мониторинг
+- name: Наблюдение
   items:
     - name: Часто задаваемые вопросы о мониторинге
       href: monitoring-common-questions.md
@@ -475,7 +485,7 @@
           href: hyper-v-azure-troubleshoot.md
         - name: Устранение неполадок с отработкой отказа в Azure
           href: site-recovery-failover-to-azure-troubleshoot.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure PowerShell
       href: /powershell/module/az.recoveryservices
@@ -483,7 +493,7 @@
       href: /powershell/module/azure/?view=azuresmps-3.7.0
     - name: REST
       href: 'https://msdn.microsoft.com/library/mt750497'
-- name: Связанные материалы
+- name: Сопутствующие материалы
   items:
     - name: Служба автоматизации Azure
       href: /azure/automation/

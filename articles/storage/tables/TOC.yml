@@ -45,11 +45,6 @@
   items:
     - name: Учетные записи хранения
       href: ../common/storage-account-overview.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
-      items:
-        - name: Управление учетной записью хранения
-          href: ../common/storage-account-manage.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
-        - name: Обновление учетной записи хранения
-          href: ../common/storage-account-upgrade.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
     - name: Избыточность данных
       items:
         - name: Репликация Службы хранилища Azure
@@ -62,10 +57,8 @@
           href: ../common/storage-redundancy-grs.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
         - name: 'Хранилище, избыточное между зонами'
           href: ../common/storage-redundancy-gzrs.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
-    - name: Производительность и масштабируемость
+    - name: 'Производительность, масштабирование и оптимизация затрат'
       items:
-        - name: Целевые показатели масштабируемости и производительности хранилища
-          href: ../common/storage-scalability-targets.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
         - name: Контрольный список производительности и масштабируемости
           href: storage-performance-checklist.md
         - name: Разработка масштабируемых и производительных таблиц
@@ -82,14 +75,18 @@
       href: table-storage-design-modeling.md
     - name: Шаблоны для разработки таблиц
       href: table-storage-design-patterns.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Создание учетной записи хранения
       displayName: 'resource manager, resource manager template, template, ARM'
-      href: /azure/storage/common/storage-quickstart-create-account
+      href: ../common/storage-account-create.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
       maintainContext: true
+    - name: Обновление учетной записи хранения
+      href: ../common/storage-account-upgrade.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+    - name: Просмотр ключей учетной записи и управление ими
+      href: ../common/storage-account-keys-manage.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
     - name: Как использовать эмулятор хранилища
-      href: /azure/storage/common/storage-use-emulator
+      href: /azure/storage/common/storage-use-emulator?toc=%2fazure%2fstorage%2ftables%2ftoc.json
       maintainContext: true
     - name: Передача данных
       items:
@@ -101,12 +98,20 @@
           href: ../common/storage-use-azcopy-linux.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
     - name: Инициирование отработки отказа учетной записи
       href: ../common/storage-initiate-account-failover.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: Проблемы с задержкой
           href: ../common/troubleshoot-latency-storage-analytics-logs.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
-- name: Ресурсы
+- name: Справочник
   items:
+    - name: Целевые показатели масштабируемости и производительности хранилища
+      items:
+        - name: Хранилище таблиц
+          href: scalability-targets.md
+        - name: Стандартные учетные записи хранения
+          href: ../common/scalability-targets-standard-account.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+        - name: Поставщик ресурсов хранилища
+          href: ../common/scalability-targets-resource-provider.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
     - name: REST API хранилища таблиц
       href: 'https://docs.microsoft.com/rest/api/storageservices/table-service-rest-api'
       maintainContext: true

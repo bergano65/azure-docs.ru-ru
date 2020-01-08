@@ -6,6 +6,8 @@
       href: api-management-key-concepts.md
     - name: Доступность функций службы "Управление API"
       href: api-management-features.md
+    - name: 'Управление микрослужбами, развернутыми в AKS'
+      href: api-management-kubernetes.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -49,7 +51,7 @@
           href: api-management-howto-policies.md
         - name: Индекс справочника по политикам
           href: api-management-policies.md
-    - name: Безопасность
+    - name: безопасность
       items:
         - name: Встроенные средства управления безопасностью
           href: api-management-security-controls.md
@@ -63,7 +65,7 @@
       href: api-management-api-import-restrictions.md
     - name: Общие сведения о независимом шлюзе
       href: self-hosted-gateway-overview.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Определение интерфейсов API
       items:
@@ -85,7 +87,7 @@
           href: ../service-fabric/service-fabric-tutorial-deploy-api-management.md
         - name: Изменение API
           href: edit-api.md
-    - name: Подготовка и масштабирование
+    - name: Подготовка к работе и масштабирование
       items:
         - name: Метрики емкости
           href: api-management-capacity.md
@@ -231,7 +233,7 @@
               href: ../service-fabric/service-fabric-api-management-overview.md
             - name: Учебник
               href: ../service-fabric/service-fabric-tutorial-deploy-api-management.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure PowerShell
       href: /powershell/module/az.apimanagement/?view=azps-2.6.0
@@ -243,13 +245,13 @@
       href: /azure/templates/microsoft.apimanagement/allversions
 - name: Ресурсы
   items:
-    - name: Часто задаваемые вопросы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: api-management-faq.md
     - name: Цены
       href: 'https://aka.ms/apimpricing'
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
-    - name: Стратегия
+    - name: Схема действий
       href: 'https://aka.ms/apimroadmap'
     - name: Запросы функций
       href: 'https://aka.ms/apimwish'

@@ -1,0 +1,57 @@
+### YamlMime:Landing
+title: Документация по тестам производительности системы безопасности Azure
+summary: Узнайте, как защитить облачные решения в Azure, используя наши рекомендации и руководства.
+metadata:
+  title: Тесты производительности системы безопасности Azure
+  description: Тест производительности элементов управления безопасностью Azure содержит рекомендации, которые помогут повысить безопасность приложений и данных в Azure.
+  services: security
+  ms.service: security
+  ms.subservice: fundamentals
+  ms.topic: landing-page
+  author: msmbaldwin
+  ms.author: mbaldwin
+  manager: rkarlin
+  ms.date: 12/23/2019
+  ms.openlocfilehash: 97f5463ee4348f8e17b8cf571262c361908d7265
+  ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 12/31/2019
+  ms.locfileid: "75563868"
+landingContent:
+- title: Общие средства о тестировании производительности системы безопасности Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Обзор
+      url: overview.md
+    - text: Общие сведения об элементах управления безопасностью
+      url: introduction.md
+    - text: Разделение ответственности в облаке
+      url: ../fundamentals/shared-responsibility.md
+- title: Средства управления безопасностью
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Безопасность сети
+      url: security-control-network-security.md
+    - text: Ведение журналов и мониторинг
+      url: security-control-logging-monitoring.md
+    - text: Идентификатор и управление доступом
+      url: security-control-identity-access-control.md
+    - text: Защита данных
+      url: security-control-data-protection.md
+    - text: Управление уязвимостями
+      url: security-control-vulnerability-management.md
+    - text: Подробнее
+      url: security-control-inventory-asset-management.md
+- title: Дополнительные сведения о системе безопасности Azure
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Основы обеспечения безопасности в Azure
+      url: ../fundamentals/index.yml
+    - text: Центр безопасности Azure
+      url: ../../security-center/index.yml
+    - text: Azure Key Vault
+      url: ../../key-vault/index.yml

@@ -27,7 +27,7 @@
       href: quickstart-create-data-factory-resource-manager-template.md
     - name: Создание потока данных
       href: data-flow-create.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Копирование данных в облаке
       items:
@@ -121,7 +121,7 @@
       items:
         - name: Копирование из Data Lake Storage 1-го поколения
           href: load-azure-data-lake-storage-gen2-from-gen1.md
-    - name: Загрузка Хранилища данных SQL Azure
+    - name: "Загрузка Synapse Analytics (прежнее название\_— Хранилище данных SQL)"
       href: load-azure-sql-data-warehouse.md
     - name: Загрузка Data Lake Storage 1-го поколения
       href: load-azure-data-lake-store.md
@@ -183,7 +183,7 @@
       href: pricing-concepts.md
     - name: Правила именования
       href: naming-rules.md
-- name: Инструкции
+- name: Практические руководства
   items:
     - name: Автор
       items:
@@ -207,7 +207,7 @@
           href: connector-amazon-simple-storage-service.md
         - name: Формат Avro
           href: format-avro.md
-        - name: Хранилище BLOB-объектов Azure
+        - name: хранилище BLOB-объектов Azure
           href: connector-azure-blob-storage.md
         - name: Когнитивный поиск Azure
           href: connector-azure-search.md
@@ -217,7 +217,7 @@
           href: connector-azure-cosmos-db-mongodb-api.md
         - name: Azure Data Explorer
           href: connector-azure-data-explorer.md
-        - name: Azure Data Lake Storage 1-го поколения
+        - name: Хранилище Azure Data Lake Storage 1-го поколения
           href: connector-azure-data-lake-store.md
         - name: Azure Data Lake Storage 2-го поколения
           href: connector-azure-data-lake-storage.md
@@ -233,7 +233,7 @@
           href: connector-azure-sql-database.md
         - name: Управляемый экземпляр Базы данных SQL Azure
           href: connector-azure-sql-database-managed-instance.md
-        - name: "Хранилище данных SQL\_Azure"
+        - name: "Azure Synapse Analytics (прежнее название\_— Хранилище данных SQL)"
           href: connector-azure-sql-data-warehouse.md
         - name: Хранилище таблиц Azure
           href: connector-azure-table-storage.md
@@ -310,9 +310,9 @@
           href: connector-odata.md
         - name: ODBC
           href: connector-odbc.md
-        - name: "Office\_365"
+        - name: Office 365
           href: connector-office-365.md
-        - name: Oracle
+        - name: Oracle;
           href: connector-oracle.md
         - name: Oracle Eloqua
           href: connector-oracle-eloqua.md
@@ -389,14 +389,18 @@
           href: delete-activity.md
         - name: Средство копирования данных
           href: copy-data-tool.md
-        - name: Производительность и настройка
-          href: copy-activity-performance.md
         - name: Поддержка сжатия и форматирования
           href: supported-file-formats-and-compression-codecs.md
+        - name: Производительность и настройка
+          href: copy-activity-performance.md
+        - name: Сохранение метаданных и списков ACL
+          href: copy-activity-preserve-metadata.md
         - name: Сопоставление типа и схемы
           href: copy-activity-schema-and-type-mapping.md
         - name: Отказоустойчивость
           href: copy-activity-fault-tolerance.md
+        - name: Поддержка сжатия и форматирования (устаревшая функция)
+          href: supported-file-formats-and-compression-codecs-legacy.md
     - name: Преобразование данных
       href: transform-data.md
       items:
@@ -468,7 +472,7 @@
           href: control-flow-webhook-activity.md
     - name: Преобразования потока данных
       items:
-        - name: Статистическое вычисление
+        - name: Статистическое
           href: data-flow-aggregate.md
         - name: Изменение строк
           href: data-flow-alter-row.md
@@ -478,9 +482,9 @@
           href: data-flow-derived-column.md
         - name: Exists
           href: data-flow-exists.md
-        - name: Фильтр
+        - name: Filter
           href: data-flow-filter.md
-        - name: Объединение
+        - name: Join
           href: data-flow-join.md
         - name: Поиск
           href: data-flow-lookup.md
@@ -498,7 +502,7 @@
           href: data-flow-source.md
         - name: Суррогатный ключ
           href: data-flow-surrogate-key.md
-        - name: Объединение множеств
+        - name: Union
           href: data-flow-union.md
         - name: Отмена свертывания
           href: data-flow-unpivot.md
@@ -514,7 +518,7 @@
           href: control-flow-system-variables.md
         - name: Параметры потока данных
           href: parameters-data-flow.md
-    - name: Безопасность
+    - name: безопасность
       items:
         - name: Вопросы безопасности при перемещении данных
           href: data-movement-security-considerations.md
@@ -648,7 +652,7 @@
           href: scenario-ssis-migration-overview.md
         - name: Перенос базы данных SSIS в управляемый экземпляр Базы данных SQL Azure
           href: scenario-ssis-migration-ssisdb-mi.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Скрипт потока данных
       href: data-flow-script.md
@@ -668,13 +672,13 @@
       href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDataFactory&filter=alltypes&sort=lastpostdesc'
     - name: "Задать вопрос\_— Stack Overflow"
       href: 'https://stackoverflow.com/questions/tagged/azure-data-factory'
-    - name: Запрос функции
+    - name: Запрашивание функции
       href: 'https://feedback.azure.com/forums/270578-azure-data-factory'
-    - name: Вопросы и ответы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: frequently-asked-questions.md
     - name: Технические документы
       href: whitepapers.md
-    - name: Стратегия развития
+    - name: Схема действий
       href: 'https://azure.microsoft.com/roadmap/?tag=data-factory'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/data-factory/'

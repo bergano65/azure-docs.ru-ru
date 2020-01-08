@@ -4,7 +4,7 @@
   items:
     - name: Сведения о службе "Конфигурация приложений Azure"
       href: overview.md
-    - name: Вопросы и ответы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: faq.md
 - name: Краткие руководства
   expanded: true
@@ -67,7 +67,7 @@
       items:
         - name: Устойчивость и аварийное восстановление
           href: concept-disaster-recovery.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Интеграции с управляемыми удостоверениями Azure
       href: howto-integrate-azure-managed-service-identity.md
@@ -77,7 +77,7 @@
       href: howto-app-configuration-event.md
     - name: Рекомендации
       href: howto-best-practices.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Конфигурация
       items:
@@ -91,11 +91,11 @@
           href: 'https://go.microsoft.com/fwlink/?linkid=2092056'
         - name: Поставщик Java Spring
           href: 'https://go.microsoft.com/fwlink/?linkid=2074659'
-        - name: Пакет SDK Azure для Java
+        - name: Azure SDK для Java
           href: 'https://go.microsoft.com/fwlink/?linkid=2098196'
-        - name: Пакет SDK Azure для Python
+        - name: SDK Azure для Python
           href: 'https://go.microsoft.com/fwlink/?linkid=2103727'
-        - name: Пакет SDK для JavaScript
+        - name: Пакет Azure SDK для JavaScript
           href: 'https://go.microsoft.com/fwlink/?linkid=2103664'
         - name: REST
           href: 'https://go.microsoft.com/fwlink/?linkid=2078296'

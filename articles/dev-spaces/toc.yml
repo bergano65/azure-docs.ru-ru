@@ -91,9 +91,11 @@
           href: how-to/run-dev-spaces-windows-containers.md
         - name: Использование traefik для пользовательского входящего трафика и HTTPS
           href: how-to/ingress-https-traefik.md
+        - name: Использование NGINX для пользовательского входящего трафика и HTTPS
+          href: how-to/ingress-https-nginx.md
         - name: Подключение компьютера для разработки к кластеру AKS (предварительная версия)
           href: how-to/connect.md
     - name: Устранение неполадок
       href: troubleshooting.md
-    - name: Часто задаваемые вопросы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: faq.md

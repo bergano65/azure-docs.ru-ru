@@ -1,0 +1,100 @@
+### YamlMime:Landing
+title: Документация по кэшу Redis для Azure
+summary: Узнайте, как использовать кэш Redis для Azure — защищенный кэш данных и брокер обмена сообщениями, который обеспечивает высокую пропускную способность и низкую задержку при обращении приложений к данным. Руководства, справочники по API и другая документация, в которой показано, как пользоваться кэшем Redis для Azure из любого приложения в Azure.
+metadata:
+  title: Документация по кэшу Redis для Azure
+  description: Узнайте, как использовать кэш Redis для Azure — защищенный кэш данных и брокер обмена сообщениями, который обеспечивает быстрый доступ приложений к данным. Учебники, справочники по API и другие документы.
+  ms.service: cache
+  ms.topic: landing-page
+  author: yegu-ms
+  ms.author: yegu
+  ms.date: 12/16/2019
+  ms.openlocfilehash: fad78db361927a14f393066fb088354552d880a9
+  ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 12/25/2019
+  ms.locfileid: "75470038"
+landingContent:
+- title: Общие сведения о кэше Redis для Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое кэш Azure для Redis?
+      url: cache-overview.md
+    - text: Подробнее о кэше Redis для Azure (цен. категория "Премиум")
+      url: cache-premium-tier-intro.md
+  - linkListType: video
+    links:
+    - text: Варианты администрирования
+      url: https://azure.microsoft.com/resources/videos/azure-redis-cache-administration-options/
+    - text: Кэширование безопасности
+      url: https://azure.microsoft.com/resources/videos/azure-redis-security-cacheing/
+    - text: Рекомендации
+      url: https://azure.microsoft.com/resources/videos/azure-redis-cache-best-practices/
+    - text: Повышение производительности
+      url: https://azure.microsoft.com/resources/videos/increase-performance-through-redis-cluster-in-azure-redis-cache/
+  - linkListType: whats-new
+    links:
+    - text: Часто задаваемые вопросы
+      url: cache-faq.md
+    - text: Рекомендации по использованию Кэша Azure для Redis
+      url: cache-best-practices.md
+    - text: Поставщик состояний сеансов ASP.NET для кэша Azure для Redis
+      url: cache-aspnet-session-state-provider.md
+- title: 'Краткие руководства: Кэш Redis для Azure'
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание приложения .NET Framework
+      url: cache-dotnet-how-to-use-azure-redis-cache.md
+    - text: Создание приложения .NET Core
+      url: cache-dotnet-core-quickstart.md
+    - text: Создание веб-приложения ASP.NET
+      url: cache-web-app-howto.md
+    - text: Создание приложения Java
+      url: cache-java-get-started.md
+    - text: Создание приложения Node.js
+      url: cache-nodejs-get-started.md
+    - text: Создание приложения Python
+      url: cache-python-get-started.md
+  - linkListType: tutorial
+    links:
+    - text: Создание списка лидеров с применением шаблона "Кэш на стороне" в ASP.NET
+      url: cache-web-app-cache-aside-leaderboard.md
+  - linkListType: get-started
+    links:
+    - text: Примеры
+      url: cache-redis-samples.md
+- title: Использование пакетов SDK и командных строк
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: .NET
+      url: /dotnet/api/microsoft.azure.management.redis
+    - text: Java
+      url: /java/api/com.microsoft.azure.management.redis.rediscache
+    - text: REST API
+      url: /rest/api/redis/
+    - text: Клиент Redis
+      url: https://redis.io/clients
+    - text: Команды Redis
+      url: https://redis.io/commands
+  - linkListType: reference
+    links:
+    - text: Azure PowerShell
+      url: /powershell/module/az.rediscache
+    - text: Azure CLI
+      url: /cli/azure/redis
+- title: Диагностика
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Устранение неполадок с печатью на стороне клиента
+      url: cache-troubleshoot-client.md
+    - text: Устранение неполадок с печатью на стороне сервера
+      url: cache-troubleshoot-server.md
+    - text: Устранение ошибок времени ожидания
+      url: cache-troubleshoot-timeouts.md
+    - text: Устранение неполадок с потерей данных
+      url: cache-troubleshoot-data-loss.md

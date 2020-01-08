@@ -1,0 +1,261 @@
+- name: Документация по шаблонам Azure Resource Manager
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что собой представляют шаблоны Azure Resource Manager?
+      href: overview.md
+- name: Краткие руководства
+  items:
+    - name: Создание шаблонов — портал
+      href: quickstart-create-templates-use-the-portal.md
+    - name: Создание шаблонов — VS Code
+      href: quickstart-create-templates-use-visual-studio-code.md
+    - name: Создание шаблонов — Visual Studio
+      href: create-visual-studio-deployment-project.md
+    - name: "Создание шаблонов\_— IntelliJ IDEA"
+      href: create-templates-use-intellij.md
+- name: Учебники
+  items:
+    - name: Для новичков
+      items:
+        - name: 1. Создание первого шаблона
+          href: template-tutorial-create-first-template.md
+        - name: 2. Добавление ресурса
+          href: template-tutorial-add-resource.md
+        - name: 3. Добавление параметров
+          href: template-tutorial-add-parameters.md
+        - name: 4. Функции шаблонов
+          href: template-tutorial-add-functions.md
+        - name: 5. Добавление переменных
+          href: template-tutorial-add-variables.md
+        - name: 6. Добавление выходных данных
+          href: template-tutorial-add-outputs.md
+        - name: 7. Использование экспортированного шаблона
+          href: template-tutorial-export-template.md
+        - name: 8. Шаблон быстрого запуска
+          href: template-tutorial-quickstart-template.md
+        - name: 9. Добавление тегов
+          href: template-tutorial-add-tags.md
+        - name: 10. Использование файла параметров
+          href: template-tutorial-use-parameter-file.md
+    - name: Дополнительно
+      items:
+        - name: Использование справочной документации по шаблонам
+          href: template-tutorial-create-encrypted-storage-accounts.md
+        - name: Развертывание нескольких экземпляров
+          displayName: 'iteration,copy'
+          href: template-tutorial-create-multiple-instances.md
+        - name: Настройка развертывания ресурсов по порядку
+          displayName: 'dependent resources, dependency'
+          href: template-tutorial-create-templates-with-dependent-resources.md
+        - name: Условия использования
+          href: template-tutorial-use-conditions.md
+        - name: Интеграция Key Vault
+          displayName: secrets
+          href: template-tutorial-use-key-vault.md
+        - name: Создание связанных шаблонов
+          href: template-tutorial-create-linked-templates.md
+        - name: Развертывание расширений виртуальных машин
+          displayName: virtual machine extensions
+          href: template-tutorial-deploy-vm-extensions.md
+        - name: Развертывание расширений SQL
+          href: template-tutorial-deploy-sql-extensions-bacpac.md
+        - name: Защита артефактов
+          href: template-tutorial-secure-artifacts.md
+        - name: Непрерывная интеграция с Azure Pipelines
+          displayName: DevOps
+          href: template-tutorial-use-azure-pipelines.md
+        - name: Обновление скрипта развертывания VS для использования Az Powershell
+          href: update-visual-studio-deployment-script.md
+        - name: Использование методик безопасного развертывания
+          displayName: adm
+          href: deployment-manager-tutorial.md
+        - name: Использование проверки работоспособности в диспетчере развертывания
+          displayName: adm
+          href: deployment-manager-tutorial-health-check.md
+        - name: Устранение неполадок развертывания шаблона
+          href: template-tutorial-troubleshoot.md
+- name: Примеры
+  items:
+    - name: Шаблоны быстрого запуска Azure
+      href: 'https://azure.microsoft.com/resources/templates/'
+    - name: Примеры шаблона
+      href: template-samples.md
+- name: Основные понятия
+  items:
+    - name: Рекомендации по работе с шаблоном
+      href: template-best-practices.md
+    - name: Шаблоны для обеспечения согласованности данных в облаке
+      href: templates-cloud-consistency.md
+    - name: Режимы развертывания
+      href: deployment-modes.md
+    - name: Диспетчер развертывания
+      items:
+        - name: Обзор
+          displayName: 'adm, deployment manager'
+          href: deployment-manager-overview.md
+        - name: Проверка работоспособности
+          displayName: 'adm, deployment manager'
+          href: deployment-manager-health-check.md
+- name: Практическое руководство
+  items:
+    - name: Создание шаблонов
+      items:
+        - name: Использование VS Code
+          href: use-vs-code-to-create-template.md
+        - name: Написание выражений шаблонов
+          href: template-expressions.md
+        - name: Параметры
+          href: template-parameters.md
+        - name: Переменные
+          href: template-variables.md
+        - name: Определяемые пользователем функции
+          href: template-user-defined-functions.md
+        - name: Ресурсы
+          items:
+            - name: Имя и тип дочернего ресурса
+              href: child-resource-name-type.md
+            - name: Условное развертывание
+              href: conditional-resource-deployment.md
+            - name: Настройка зависимостей ресурсов
+              href: define-resource-dependency.md
+            - name: Настройка расположения ресурса
+              href: resource-location.md
+            - name: Использование расширений шаблонов
+              href: add-resource-extensions.md
+        - name: Выходные данные
+          href: template-outputs.md
+        - name: Разбиение шаблонов на модули
+          displayName: 'linked templates, nested templates'
+          href: linked-templates.md
+        - name: Развертывание нескольких экземпляров
+          href: create-multiple-instances.md
+        - name: Ресурсы на уровне подписки
+          href: deploy-to-subscription.md
+        - name: Ресурсы уровня группы управления
+          href: deploy-to-management-group.md
+    - name: Развертывание шаблонов
+      items:
+        - name: "Развертывание\_— портал"
+          displayName: deployment
+          href: deploy-portal.md
+        - name: "Развертывание\_— CLI"
+          displayName: deployment
+          href: deploy-cli.md
+        - name: "Развертывание\_— PowerShell"
+          displayName: deployment
+          href: deploy-powershell.md
+        - name: "Развертывание\_— REST API"
+          displayName: deployment
+          href: deploy-rest.md
+        - name: Развертывание "что если"
+          href: template-deploy-what-if.md
+        - name: Повторное развертывание при возникновении ошибки
+          displayName: rollback
+          href: rollback-on-error.md
+        - name: Обеспечение защиты шаблона с помощью маркера SAS
+          href: secure-template-with-sas-token.md
+        - name: Развертывание нескольких подписок или групп ресурсов
+          href: cross-resource-group-deployment.md
+    - name: Предоставление параметров
+      items:
+        - name: Создание файла параметров
+          href: parameter-files.md
+        - name: Передача конфиденциальных значений
+          displayname: key vault
+          href: key-vault-parameter.md
+    - name: CI/CD
+      items:
+        - name: Проект Visual Studio с конвейерами
+          href: add-template-to-azure-pipelines.md
+    - name: Экспорт шаблона
+      href: export-template-portal.md
+    - name: Просмотр журнала развертывания
+      href: deployment-history.md
+    - name: Устранение неполадок развертываний
+      items:
+        - name: Устранение ошибок развертывания
+          href: common-deployment-errors.md
+        - name: AccountNameInvalid
+          href: error-storage-account-name.md
+        - name: DeploymentQuotaExceeded
+          href: deployment-quota-exceeded.md
+        - name: InvalidTemplate
+          href: error-invalid-template.md
+        - name: Проблемы с развертыванием в Linux
+          href: ../../virtual-machines/linux/troubleshoot-deploy-vm.md
+        - name: NoRegisteredProviderFound
+          href: error-register-resource-provider.md
+        - name: NotFound
+          href: error-not-found.md
+        - name: ParentResourceNotFound
+          href: error-parent-resource.md
+        - name: Проблемы подготовки и распределения в Linux
+          href: ../../virtual-machines/linux/troubleshoot-deployment-new-vm.md
+        - name: Проблемы подготовки и распределения в Windows
+          href: ../../virtual-machines/windows/troubleshoot-deployment-new-vm.md
+        - name: RequestDisallowedByPolicy
+          href: error-policy-requestdisallowedbypolicy.md
+        - name: ReservedResourceName
+          href: error-reserved-resource-name.md
+        - name: ResourceQuotaExceeded
+          href: error-resource-quota.md
+        - name: SkuNotAvailable
+          href: error-sku-not-available.md
+        - name: Проблемы с развертыванием в Windows
+          href: ../../virtual-machines/windows/troubleshoot-deploy-vm.md
+- name: Справочник
+  items:
+    - name: Структура файла шаблона
+      displayName: 'parameters,variables,resources,outputs,condition'
+      href: template-syntax.md
+    - name: Справочник по шаблонам
+      href: /azure/templates/
+    - name: Функции шаблонов
+      items:
+        - name: Все функции
+          href: template-functions.md
+        - name: Функции массива и объекта
+          href: template-functions-array.md
+        - name: Функции сравнения
+          href: template-functions-comparison.md
+        - name: Функции развертывания
+          href: template-functions-deployment.md
+        - name: Логические функции
+          href: template-functions-logical.md
+        - name: Числовые функции
+          href: template-functions-numeric.md
+        - name: Функции для работы с ресурсами
+          href: template-functions-resource.md
+        - name: Строковые функции
+          href: template-functions-string.md
+    - name: Возможности ресурсов
+      items:
+        - name: Удаление ресурсов в полном режиме
+          href: complete-mode-deletion.md
+        - name: Типы ресурсов расширения
+          href: extension-resource-types.md
+    - name: REST
+      href: /rest/api/resources/
+    - name: Azure PowerShell
+      href: /powershell/module/az.resources
+    - name: Azure CLI
+      href: /cli/azure/resource
+    - name: .NET
+      href: /dotnet/api/microsoft.azure.management.resourcemanager
+    - name: Java
+      href: /java/api/com.microsoft.azure.management.resources
+    - name: Python
+      href: /python/api/overview/azure/resources?view=azure-python
+- name: Ресурсы
+  items:
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=monitoring-management'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=azure-resource-manager'
+    - name: Stack Overflow
+      href: 'https://stackoverflow.com/questions/tagged/azure-resource-manager'
+    - name: Видео
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=azure-resource-manager'

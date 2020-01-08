@@ -19,7 +19,7 @@
       href: quick-onboard-linux-computer.md
     - name: Виртуальные машины Azure Stack
       href: quick-onboard-azure-stack.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Защита ресурсов
       href: tutorial-protect-resources.md
@@ -31,7 +31,7 @@
   items:
     - name: Разрешения
       href: security-center-permissions.md
-    - name: Защита данных
+    - name: Безопасность данных
       href: security-center-data-security.md
     - name: Использование рекомендаций для повышения уровня безопасности
       href: security-center-using-recommendations.md
@@ -49,6 +49,8 @@
       items:
         - name: Общие сведения об оповещениях системы безопасности
           href: security-center-alerts-overview.md
+        - name: Справочный список оповещений
+          href: alerts-reference.md
         - name: Управление оповещениями системы безопасности
           href: security-center-managing-and-responding-alerts.md
         - name: Управление инцидентами безопасности
@@ -61,7 +63,7 @@
           href: security-center-alerts-data-services.md
         - name: Обнаружение угроз для уровней служб Azure
           href: security-center-alerts-service-layer.md
-        - name: Интеграция с системами и средствами безопасности Azure
+        - name: Обнаружение угроз для Azure WAF и Защиты от атак DDoS Azure
           href: security-center-alerts-integration.md
         - name: Корреляция интеллектуальных оповещений в облаке (инциденты)
           href: security-center-alerts-cloud-smart.md
@@ -69,12 +71,20 @@
           href: security-center-threat-intel.md
         - name: Проверка оповещений (в тестовом файле EICAR)
           href: security-center-alert-validation.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Улучшение результатов оценки безопасности
       href: security-center-secure-score.md
     - name: Переход к расширенным функциям безопасности
       href: security-center-onboarding.md
+    - name: Проверка виртуальных машин на наличие уязвимостей
+      items:
+        - name: Общие сведения о сканировании уязвимостей
+          href: security-center-vulnerability-assessment-recommendations.md
+        - name: Интегрированный сканер уязвимостей для виртуальных машин
+          href: built-in-vulnerability-assessment.md
+        - name: Использование внешних сканеров
+          href: partner-vulnerability-assessment.md
     - name: Защита серверов с помощью ATP в Microsoft Defender
       href: security-center-wdatp.md
     - name: Использование расширенной защиты данных для SQL на виртуальных машинах Azure
@@ -125,14 +135,12 @@
           href: security-center-remediate-recommendations.md
         - name: Повышение уровня безопасности
           href: security-center-monitoring.md
+        - name: Справочный список рекомендаций
+          href: recommendations-reference.md
         - name: Защита компьютеров и приложений
           href: security-center-virtual-machine-protection.md
-        - name: Справочник по рекомендациям для компьютеров и приложений
-          href: recommendations-compute-and-apps.md
         - name: Защита сетевых ресурсов
           href: security-center-network-recommendations.md
-        - name: Справочник по рекомендациям для сети
-          href: recommendations-network.md
         - name: Защита служб данных и хранилища
           href: security-center-sql-service-recommendations.md
         - name: Защита идентификации и доступа
@@ -155,8 +163,6 @@
           href: security-center-apply-system-updates.md
         - name: Установка Endpoint Protection
           href: security-center-install-endpoint-protection.md
-        - name: Решение для оценки уязвимостей не установлено
-          href: security-center-vulnerability-assessment-recommendations.md
         - name: Отчеты об угрозах
           href: security-center-threat-report.md
         - name: Оценка надежности предупреждения
@@ -169,7 +175,7 @@
           href: security-center-playbooks.md
         - name: Планирование и эксплуатация
           href: security-center-planning-and-operations-guide.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Интерфейсы REST API
       href: 'https://docs.microsoft.com/rest/api/securitycenter/'
@@ -187,7 +193,7 @@
       href: security-center-privacy.md
     - name: Документация по Центру безопасности Azure для Интернета вещей
       href: 'https://docs.microsoft.com/azure/asc-for-iot/'
-    - name: Часто задаваемые вопросы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: security-center-faq.md
     - name: Документация по системе безопасности Azure
       href: /azure/security/

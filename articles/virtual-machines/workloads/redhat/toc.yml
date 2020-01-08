@@ -1,0 +1,12 @@
+- name: Обзор
+  href: redhat-overview.md
+- name: Образы Red Hat Enterprise Linux
+  items:
+    - name: Сведения об образах Red Hat Enterprise Linux
+      href: redhat-images.md
+    - name: Список образов Red Hat Enterprise Linux
+      href: redhat-imagelist.md
+- name: Инфраструктура обновления Red Hat в Azure
+  href: redhat-rhui.md
+- name: Предложение образа BYOS Red Hat Enterprise Linux
+  href: redhat-byos.md

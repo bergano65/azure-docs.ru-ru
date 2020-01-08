@@ -24,24 +24,24 @@
 - name: Основные понятия
   items:
     - name: Платформы глубокого обучения и искусственного интеллекта
-      href: dsvm-deep-learning-ai-frameworks.md
+      href: dsvm-tools-deep-learning-frameworks.md
     - name: Языки программирования
-      href: dsvm-languages.md
+      href: dsvm-tools-languages.md
     - name: Инструменты разработки
       href: dsvm-tools-development.md
     - name: Машинное обучение и инструменты обработки и анализа данных
-      href: dsvm-ml-data-science-tools.md
+      href: dsvm-tools-data-science.md
     - name: Платформы данных
-      href: dsvm-data-platforms.md
+      href: dsvm-tools-data-platforms.md
     - name: Инструменты приема данных
       href: dsvm-tools-ingestion.md
-    - name: Инструменты исследования и визуализации данных
-      href: dsvm-tools-explore-and-visualize.md
+    - name: Средства повышения производительности
+      href: dsvm-tools-productivity.md
     - name: Рекомендации для предприятий и корпоративная безопасность
       href: dsvm-enterprise-overview.md
 - name: Примеры
   href: dsvm-samples-and-walkthroughs.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Использование виртуальной машины Windows для обработки и анализа данных
       href: vm-do-ten-things.md
@@ -63,7 +63,7 @@
       href: 'https://stackoverflow.com/search?q=dsvm'
     - name: "Руководство по разработке на\_R"
       href: /azure/architecture/data-guide/technology-choices/r-developers-guide?context=azure/machine-learning/data-science-virtual-machine/context/ml-context
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Виртуальная машина Ubuntu для обработки и анализа данных
       href: reference-ubuntu-vm.md
