@@ -51,6 +51,9 @@
           items:
             - name: Рекомендации по размещению предложений
               href: ./gtm-offer-listing-best-practices.md
+              items:
+                - name: Категории
+                  href: ./gtm-offer-listing-best-practices-categories.md
             - name: Получение описания
               href: ./gtm-how-to-get-featured.md
             - name: Проверка содержимого Marketplace
