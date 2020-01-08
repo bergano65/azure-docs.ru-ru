@@ -1,26 +1,17 @@
 ---
 title: Краткое руководство. Создание приложения Java в Azure Service Fabric
 description: В рамках этого краткого руководства вы создадите приложение Java для Azure, используя пример приложения надежных служб Service Fabric.
-services: service-fabric
-documentationcenter: java
 author: suhuruli
-manager: msfussell
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: java
 ms.topic: quickstart
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 01/29/2019
 ms.author: suhuruli
 ms.custom: mvc, devcenter, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 4ef0db5f72f5849942bb043261f1166cf7c046b1
-ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
+ms.openlocfilehash: 257fd02c2f7ec2aff9d55b91b2cbd54b6eb55431
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71703282"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75464403"
 ---
 # <a name="quickstart--deploy-a-java-app-to-azure-service-fabric-on-linux"></a>Краткое руководство.  Развертывание приложения Java в Azure Service Fabric в Linux
 
@@ -36,7 +27,7 @@ Azure Service Fabric — это платформа распределенных 
 * Развертывание приложения в локальном кластере.
 * Масштабирование приложения на несколько узлов
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим кратким руководством сделайте следующее:
 
@@ -66,7 +57,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
 
 2. Откройте Eclipse.
 3. Щелкните **File** > **Import** > **Gradle** > **Existing Gradle Project** (Файл > Импорт > Gradle > Существующий проект Gradle) и следуйте указаниям мастера.
-4. Щелкните **Каталог** и выберите каталог `Voting` в папке `service-fabric-java-quickstart`, клонированной из GitHub. Выберите **Готово**.
+4. Щелкните **Каталог** и выберите каталог `Voting` в папке `service-fabric-java-quickstart`, клонированной из GitHub. Нажмите кнопку **Готово**.
 
     ![Импорт проекта Gradle в Eclipse](./media/service-fabric-quickstart-java/eclipse-import-gradle-project.png)
 
@@ -105,7 +96,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
 
 С помощью этой простой задачи управления вы удвоили количество ресурсов для обработки пользовательской нагрузки для службы веб-интерфейса. Важно понимать, что для надежной работы службы не требуется запускать несколько экземпляров службы. При сбое в работе службы Service Fabric запускает новый экземпляр службы в кластере.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить следующие действия:
 

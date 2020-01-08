@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-graph
 ms.topic: overview
 ms.date: 06/24/2019
 ms.author: lbosq
-ms.openlocfilehash: 0c1ca054f9d28bb81c6f8acf6c0f43b134a596ed
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: 564e69e3cd852c6a0f8c20278d4742b77f064298
+ms.sourcegitcommit: 801e9118fae92f8eef8d846da009dddbd217a187
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72293789"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75499995"
 ---
 # <a name="azure-cosmos-db-gremlin-graph-support"></a>Поддержка графа Gremlin в базе данных Azure Cosmos DB
 Azure Cosmos DB поддерживает язык обхода графов [Apache Tinkerpop](https://tinkerpop.apache.org), известный как [Gremlin](https://tinkerpop.apache.org/docs/3.3.2/reference/#graph-traversal-steps). Вы можете использовать язык Gremlin, чтобы создать сущности графа (вершины и ребра), изменить свойства в этих сущностях, выполнить запросы и обходы графа, а также удалить сущности. 
@@ -23,7 +23,7 @@ Azure Cosmos DB поддерживает язык обхода графов [Apa
 
 В таблице ниже приведены распространенные драйверы Gremlin, которые вы можете использовать для базы данных Azure Cosmos DB.
 
-| Скачивание | Источник | Начало работы | Поддерживаемая версия соединителя |
+| Скачивание | Источник | Приступая к работе | Поддерживаемая версия соединителя |
 | --- | --- | --- | --- |
 | [.NET](https://tinkerpop.apache.org/docs/3.3.1/reference/#gremlin-DotNet) | [Gremlin.NET в GitHub](https://github.com/apache/tinkerpop/tree/master/gremlin-dotnet) | [Создание приложения Graph с помощью .NET](create-graph-dotnet.md) | 3.4.0-RC2 |
 | [Java](https://mvnrepository.com/artifact/com.tinkerpop.gremlin/gremlin-java) | [Документация по Gremlin для Java](https://tinkerpop.apache.org/javadocs/current/full/) | [Создание приложения Graph с помощью Java](create-graph-java.md) | 3.2.0 и выше |
@@ -48,7 +48,7 @@ TinkerPop — это стандартная платформа, которая 
 
 ## <a name="gremlin-wire-format-graphson"></a>Формат подключения Gremlin: GraphSON
 
-При возвращении результатов операций Gremlin в базе данных Azure Cosmos DB используется [формат GraphSON](http://tinkerpop.apache.org/docs/current/reference/#graphson). Azure Cosmos DB сейчас поддерживает работу с версией GraphSONv2. GraphSON представляет собой стандартный формат Gremlin для представления вершин, ребер и свойств (единичных и со множественными значениями) с помощью JSON.
+При возвращении результатов операций Gremlin в базе данных Azure Cosmos DB используется [формат GraphSON](https://tinkerpop.apache.org/docs/current/reference/#graphson). Azure Cosmos DB сейчас поддерживает работу с версией GraphSONv2. GraphSON представляет собой стандартный формат Gremlin для представления вершин, ребер и свойств (единичных и со множественными значениями) с помощью JSON.
 
 Например, в следующем фрагменте кода показано представление GraphSON вершины, *возвращенной клиенту* из базы данных Azure Cosmos DB. 
 
@@ -91,7 +91,7 @@ TinkerPop — это стандартная платформа, которая 
 
 Свойства вершин, используемые в формате GraphSON, описаны ниже:
 
-| Свойство | ОПИСАНИЕ | 
+| Свойство | Description | 
 | --- | --- | --- |
 | `id` | Идентификатор вершины. Должен иметь уникальное значение (если применимо — со значением `_partition`). Если значение не указано, оно будет предоставляться автоматически с помощью идентификатора GUID. | 
 | `label` | Метка вершины. Это свойство используется для описания типа сущности. |
@@ -102,7 +102,7 @@ TinkerPop — это стандартная платформа, которая 
 
 Ребро содержит приведенные ниже сведения, необходимые для перехода в другие части графа.
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Description |
 | --- | --- |
 | `id` | Идентификатор ребра. Должен иметь уникальное значение (если применимо — со значением `_partition`). |
 | `label` | Метка ребра. Это свойство является необязательным и используется для описания типа связи. |
@@ -111,14 +111,14 @@ TinkerPop — это стандартная платформа, которая 
 
 Каждое свойство может хранить несколько значений в массиве. 
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Description |
 | --- | --- |
-| `value` | Значение свойства.
+| `value` | Значение свойства
 
 ## <a name="gremlin-steps"></a>Шаги Gremlin
 Теперь рассмотрим шаги Gremlin, поддерживаемые базой данных Azure Cosmos DB. Дополнительные сведения о Gremlin см. в [руководстве по TinkerPop](https://tinkerpop.apache.org/docs/3.3.2/reference).
 
-| Шаг | ОПИСАНИЕ | Руководство по TinkerPop 3.2 |
+| Шаг | Description | Руководство по TinkerPop 3.2 |
 | --- | --- | --- |
 | `addE` | Добавляет ребро между двумя вершинами. | [Шаг addE](https://tinkerpop.apache.org/docs/3.3.2/reference/#addedge-step) |
 | `addV` | Добавляет вершину в граф. | [Шаг addV](https://tinkerpop.apache.org/docs/3.3.2/reference/#addvertex-step) |
@@ -164,6 +164,6 @@ TinkerPop — это стандартная платформа, которая 
 
 Оптимизированный для операций записи обработчик Azure Cosmos DB по умолчанию поддерживает автоматическое индексирование всех свойств вершин и ребер. Следовательно, запросы с фильтрами, запросы диапазона, сортировка или статистические функции для любого свойства обрабатываются из индекса и эффективно обслуживаются. Дополнительные сведения о выполнении индексирования в базе данных Azure Cosmos DB см. в руководстве об [индексировании без использования схем](https://www.vldb.org/pvldb/vol8/p1668-shukla.pdf).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Создайте приложение графа [с использованием пакетов SDK](create-graph-dotnet.md). 
 * Дополнительные сведения о [поддержке графа](graph-introduction.md) в Azure Cosmos DB

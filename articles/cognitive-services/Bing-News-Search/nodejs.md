@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: quickstart
-ms.date: 6/18/2019
+ms.date: 12/12/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 501ae6107232287011388bb67e64a1ae3fe5f7e3
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.openlocfilehash: 42ac6cac972374dbd1db42b75742212046d2ce3e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68423723"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383138"
 ---
 # <a name="quickstart-perform-a-news-search-using-nodejs-and-the-bing-news-search-rest-api"></a>Краткое руководство. Поиск новостей с помощью Node.js и REST API Bing для поиска новостей
 
@@ -26,15 +26,13 @@ ms.locfileid: "68423723"
 
 Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/nodejs/Search/BingNewsSearchv7.js).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Последняя версия [Node.js](https://nodejs.org/en/download/).
 
 * [Библиотека запросов JavaScript](https://github.com/request/request)
 
 [!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../includes/cognitive-services-bing-news-search-signup-requirements.md)]
-
-См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 
 ## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
 
@@ -45,7 +43,8 @@ ms.locfileid: "68423723"
     let https = require('https');
     ```
 
-2. Создайте переменные для конечной точки API, пути поиска изображения API, ключа подписки, а также условия поиска.
+2. Создайте переменные для конечной точки API, пути поиска изображения API, ключа подписки, а также условия поиска. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса. 
+
     ```javascript
     let subscriptionKey = 'enter key here';
     let host = 'api.cognitive.microsoft.com';
@@ -181,7 +180,7 @@ ms.locfileid: "68423723"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание одностраничного веб-приложения](tutorial-bing-news-search-single-page-app.md)

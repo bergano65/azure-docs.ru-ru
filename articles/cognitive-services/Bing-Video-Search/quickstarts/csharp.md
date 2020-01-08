@@ -8,22 +8,22 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: quickstart
-ms.date: 06/19/2019
+ms.date: 12/09/2019
 ms.author: aahi
-ms.openlocfilehash: 4a8f7383a298fdb66456eaadeb99b22478c9f39b
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 28c900adadf7d942c9e331e7b77a369db64acf55
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74383829"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75382707"
 ---
 # <a name="quickstart-search-for-videos-using-the-bing-video-search-rest-api-and-c"></a>Краткое руководство. Поиск видео с помощью REST API Поиска видео Bing и C#
 
 Из этого краткого руководства вы узнаете, как сделать первый вызов API Bing для поиска видео и просмотреть результаты поиска в ответе JSON. Это простое приложение C# отправляет HTTP-запрос для поиска видео к API и выводит ответ. Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-Исходный код, используемый в данном примере, вместе с дополнительной обработкой ошибок, функциями и аннотациями можно получить на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/Search/BingVideoSearchv7.cs).
+Исходный код, используемый в данном примере, вместе с дополнительной обработкой ошибок, функциями и аннотациями кода можно получить на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/Search/BingVideoSearchv7.cs).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 * Любой выпуск [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/downloads/).
 * Платформа [Json.NET](https://www.newtonsoft.com/json), доступная в виде пакета NuGet.
 * Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
@@ -42,7 +42,7 @@ ms.locfileid: "74383829"
     using System.Collections.Generic;
     ```
 
-2. Добавьте переменные для вашего ключа подписки, конечной точки и условия поиска.
+2. Добавьте переменные для вашего ключа подписки, конечной точки и условия поиска. В качестве `uriBase` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
 
     ```csharp
     const string accessKey = "enter your key here";
@@ -221,11 +221,11 @@ ms.locfileid: "74383829"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-video-search-single-page-app.md)
 
-## <a name="see-also"></a>См. также 
+## <a name="see-also"></a>См. также раздел 
 
  [Что такое API Bing для поиска видео?](../overview.md)

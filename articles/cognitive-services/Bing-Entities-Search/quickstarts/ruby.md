@@ -8,22 +8,22 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
-ms.date: 08/26/2019
+ms.date: 12/11/2019
 ms.author: aahi
-ms.openlocfilehash: 076fad8c1fc6fdd4bccf07f5eb3223800eddd4a0
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 69e4d992e2ef89b4d3d9408d6e50591fb8166c79
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74323558"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75385785"
 ---
 # <a name="quickstart-for-bing-entity-search-api-with-ruby"></a>Краткое руководство по API Bing для поиска сущностей (Ruby)
 
-Из этого краткого руководства вы узнаете, как вызвать API Поиска сущностей Bing и просмотреть ответ в формате JSON. Это простое приложение Ruby отправляет запрос на поиск новостей к API и отображает ответ. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/ruby/Search/BingEntitySearchv7.rb).
+Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска сущностей и просмотреть ответ в формате JSON. Это простое приложение Ruby отправляет запрос на поиск новостей к API и отображает ответ. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/ruby/Search/BingEntitySearchv7.rb).
 
 Хотя это приложение создается на языке Ruby, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Ruby 2.4](https://www.ruby-lang.org/en/downloads/) или более поздней версии.
 
@@ -39,7 +39,7 @@ ms.locfileid: "74323558"
     require 'json'
     ```
 
-2. Создайте переменные для своей конечной точки API, URL-адрес для Поиска новостей, ключ подписки и поисковый запрос.
+2. Создайте переменные для своей конечной точки API, URL-адрес для Поиска новостей, ключ подписки и поисковый запрос. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
     
     ```ruby
     host = 'https://api.cognitive.microsoft.com'
@@ -140,10 +140,10 @@ ms.locfileid: "74323558"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-entities-search-single-page-app.md)
 
 * [What is Bing Entity Search API?](../search-the-web.md) (Что такое API Поиска сущностей Bing?)
-* [Bing Entity Search API v7 Reference](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference) (Справочник по API Поиска сущностей Bing версии 7)
+* [Справочник по API Bing для поиска сущностей](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference)

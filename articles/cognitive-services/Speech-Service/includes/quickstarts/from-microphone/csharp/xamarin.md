@@ -7,17 +7,17 @@ author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
+ms.topic: include
 ms.date: 10/28/2019
 ms.author: erhopf
-ms.openlocfilehash: ecfdc74c72284da97ebf3107140911e666a3a12d
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 66391f7b9282781902723b0153a5797a5f7ae82b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74818781"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75468525"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Необходимые условия:
 
@@ -145,6 +145,6 @@ ms.locfileid: "74818781"
 
 Создание и запуск приложений для Android и iOS на устройстве или симуляторе происходит так же, как на UWP. Важно убедиться, что все пакеты SDK установлены правильно, как указано в разделе "Необходимые условия" этой статьи.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [footer](./footer.md)]

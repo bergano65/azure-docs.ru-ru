@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: ''
 ms.topic: quickstart
-ms.date: 09/30/2019
+ms.date: 12/17/2019
 ms.author: aahi
-ms.openlocfilehash: 7fb00fd3ce588aeeba4f315f191f6b82d6b75715
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.openlocfilehash: 5a6d39fa6e10ad0ad102f9d25ffd252ec9e0fa8a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "71695727"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75379506"
 ---
 # <a name="quickstart-bing-visual-search-client-library-for-java"></a>Краткое руководство. Клиентская библиотека Визуального поиска Bing
 
@@ -27,20 +27,13 @@ ms.locfileid: "71695727"
 
 [Справочная документация](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/bingvisualsearch?view=azure-java-stable) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Search.BingVisualSearch) | [Артефакт (Maven)](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-visualsearch/) | [Примеры](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Текущая версия [пакета средств разработки Java (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 * [Средство сборки Gradle](https://gradle.org/install/) или другой диспетчер зависимостей
 
-## <a name="setting-up"></a>Настройка
-
-### <a name="create-a-bing-visual-search-azure-resource"></a>Создание ресурса для Визуального поиска Bing
-
-Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для Визуального поиска Bing с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Также можно:
-
-* Получить бесплатный [ключ пробной версии](https://azure.microsoft.com/try/cognitive-services/#decision) на 7 дней. После регистрации он будет доступен на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis/).  
-* Просмотреть этот ресурс на [портале Azure](https://portal.azure.com/).
+[!INCLUDE [cognitive-services-bing-visual-search-signup-requirements](../../../includes/cognitive-services-bing-visual-search-signup-requirements.md)]
 
 После получения ключа из своего ресурса или пробной подписки [задайте переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа с именем `BING_SEARCH_V7_SUBSCRIPTION_KEY`.
 
@@ -173,9 +166,9 @@ gradle run
 Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с ней.
 
 * [Портал](../cognitive-services-apis-create-account.md#clean-up-resources)
-* [Интерфейс командной строки Azure](../cognitive-services-apis-create-account-cli.md#clean-up-resources)
+* [Azure CLI](../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по одностраничным веб-приложениям для наглядного поиска](tutorial-bing-visual-search-single-page-app.md)

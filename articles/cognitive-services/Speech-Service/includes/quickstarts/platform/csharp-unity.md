@@ -7,15 +7,15 @@ author: markamos
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
+ms.topic: include
 ms.date: 10/10/2019
 ms.author: erhopf
-ms.openlocfilehash: 064916c0dad52749f724be8a1912f247128114b6
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 8d9e05b5d8105cce8355d217cc6922c25bbe1730
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74816256"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75468894"
 ---
 Здесь также описано, как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для [Unity](https://unity3d.com/).
 
@@ -24,7 +24,7 @@ ms.locfileid: "74816256"
 
 [!INCLUDE [License Notice](~/includes/cognitive-services-speech-service-license-notice.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
@@ -46,6 +46,6 @@ ms.locfileid: "74816256"
 
 Теперь можно перейти к разделу [Дополнительная информация](#next-steps) ниже.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [windows](../quickstart-list.md)]

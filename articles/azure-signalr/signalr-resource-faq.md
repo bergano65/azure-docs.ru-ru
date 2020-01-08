@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: overview
 ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: 9a8c3fd6c591f25aadc696c3c71f8c4cdfca745f
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: 013cf619edd998752265b8fa7e58e36869c830c4
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74157572"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75450218"
 ---
 # <a name="azure-signalr-service-faq"></a>Вопросы и ответы о Службе SignalR Azure
 
@@ -63,8 +63,8 @@ ms.locfileid: "74157572"
 
 ## <a name="can-i-configure-the-transports-available-in-signalr-service-as-configuring-it-on-server-side-with-aspnet-core-signalr-for-example-disable-websocket-transport"></a>Можно ли настроить транспортировки, доступные в Службе SignalR, так же, как на стороне сервера с помощью ASP.NET Core SignalR? Например, отключить транспортировку WebSocket?
 
-№
+Нет.
 
 Служба Azure SignalR предоставляет все три типа транспортировки, которые поддерживает ASP.NET Core SignalR по умолчанию. Этот параметр не настраивается. Служба SignalR будет обрабатывать подключения и транспортировки для всех клиентских подключений.
 
-Настройка транспортировок на стороне клиента описана в [этой](https://docs.microsoft.com/aspnet/core/signalr/configuration?view=aspnetcore-2.1#configure-allowed-transports) статье.
+Настройка транспортировок на стороне клиента описана в [этой](https://docs.microsoft.com/aspnet/core/signalr/configuration?view=aspnetcore-2.1&tabs=dotnet#configure-allowed-transports-2) статье.

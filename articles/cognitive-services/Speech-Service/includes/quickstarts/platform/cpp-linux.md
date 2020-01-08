@@ -7,15 +7,15 @@ author: markamos
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
+ms.topic: include
 ms.date: 10/14/2019
 ms.author: erhopf
-ms.openlocfilehash: 03aafb133f1d4a18ffe2b46ae5ec36225865a239
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 6bb647273467a07786413ff4ea30cda836b7cb1b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74819030"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75468837"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для Linux.
 
@@ -25,7 +25,7 @@ ms.locfileid: "74819030"
 
 Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
@@ -33,7 +33,7 @@ Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9)
 
 * Для поддерживаемых платформ Linux потребуется установить определенные библиотеки (`libssl` для поддержки протокола SSL и `libasound2` для поддержки звука). Ниже приведены команды, необходимые для установки правильных версий этих библиотек. Используйте команды для своего дистрибутива.
 
-   * Для Ubuntu.
+   * В Ubuntu:
 
      ```sh
      sudo apt-get update
@@ -84,6 +84,6 @@ Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9)
 
 Теперь можно перейти к разделу [Дополнительная информация](#next-steps) ниже.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [windows](../quickstart-list.md)]

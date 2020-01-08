@@ -3,7 +3,7 @@ title: Сбор данных с гибридной виртуальной маш
 description: Из этого краткого руководства вы узнаете, как развернуть агент Log Analytics для компьютеров Windows, которые работают вне среды Azure, и включить сбор данных с помощью журналов Azure Monitor.
 services: azure-monitor
 documentationcenter: azure-monitor
-author: mgoedtel
+author: bwren
 manager: carmonm
 editor: ''
 ms.assetid: ''
@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: quickstart
 ms.date: 08/22/2019
-ms.author: magoedte
+ms.author: bwren
 ms.custom: mvc, seo-javascript-october2019
-ms.openlocfilehash: 26919a64313df823dddad5dcfca6de5d08dcd993
-ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
+ms.openlocfilehash: 11c51ab702399c73dc93f850d4abde49b45b3775
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73199027"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75398941"
 ---
 # <a name="collect-data-from-a-windows-computer-in-a-hybrid-environment-with-azure-monitor"></a>Сбор данных с компьютера Windows в гибридной среде с помощью Azure Monitor
 
@@ -159,7 +159,7 @@ Azure Monitor может собирать события указанного в
 
 ![Удаление рабочей области Log Analytics](media/quick-collect-azurevm/log-analytics-portal-delete-resource.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Итак, вы настроили сбор данных о работе и производительности с локальных компьютеров Windows, и теперь готовы к изучению *бесплатных* возможностей по изучению и анализу собранных данных, а также по выполнению действий на их основе.  
 

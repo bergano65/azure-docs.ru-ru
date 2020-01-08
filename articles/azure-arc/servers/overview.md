@@ -10,12 +10,12 @@ keywords: служба автоматизации Azure, DSC, PowerShell, нас
 ms.date: 11/04/2019
 ms.custom: mvc
 ms.topic: overview
-ms.openlocfilehash: d091b89342570b73ccde5fe496a3432102617918
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 06e3b490f4f9cef64ae8bca5aed4d0518f10ba0e
+ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74951434"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75659627"
 ---
 # <a name="what-is-azure-arc-for-servers"></a>Что собой представляет Azure Arc для серверов
 
@@ -41,7 +41,7 @@ Azure Arc для серверов позволяет управлять комп
 
 ## <a name="azure-subscription-and-service-limits"></a>Ограничения подписки и службы Azure
 
-Обязательно ознакомьтесь с ограничениями Azure Resource Manager и запланируйте количество компьютеров, которые необходимо подключить, в соответствии с рекомендациями, указанными для [подписки](../../azure-subscription-service-limits.md#subscription-limits---azure-resource-manager), а также для [групп ресурсов](../../azure-subscription-service-limits.md#resource-group-limits). В частности, на группу ресурсов по умолчанию установлено ограничение в 800 серверов.
+Обязательно ознакомьтесь с ограничениями Azure Resource Manager и запланируйте количество компьютеров, которые необходимо подключить, в соответствии с рекомендациями, указанными для [подписки](../../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits---azure-resource-manager), а также для [групп ресурсов](../../azure-resource-manager/management/azure-subscription-service-limits.md#resource-group-limits). В частности, на группу ресурсов по умолчанию установлено ограничение в 800 серверов.
 
 ## <a name="networking-configuration"></a>Конфигурация сети
 
@@ -90,7 +90,7 @@ Linux:
 
 Ниже приведены команды, с помощью которых можно зарегистрировать поставщики ресурсов.
 
-Azure PowerShell
+Azure PowerShell:
 
 ```azurepowershell-interactive
 Login-AzAccount
@@ -107,7 +107,7 @@ az provider register --namespace 'Microsoft.HybridCompute'
 az provider register --namespace 'Microsoft.GuestConfiguration'
 ```
 
-Вы также можете зарегистрировать поставщики ресурсов с помощью портала Azure, выполнив действия, описанные в [этом разделе](../../azure-resource-manager/resource-manager-supported-services.md#azure-portal).
+Вы также можете зарегистрировать поставщики ресурсов с помощью портала Azure, выполнив действия, описанные в [этом разделе](../../azure-resource-manager/management/resource-providers-and-types.md#azure-portal).
 
 ## <a name="machine-changes-after-installing-the-agent"></a>Изменения компьютера после установки агента
 
@@ -172,7 +172,7 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
 
 <!-- MMA agent version 10.20.18011 and later -->
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 
 Подключить компьютеры с помощью Azure Arc для серверов можно двумя способами.
 

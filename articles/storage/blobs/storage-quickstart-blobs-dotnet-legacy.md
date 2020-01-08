@@ -7,12 +7,12 @@ ms.date: 07/20/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: ee95ccd30d0f2eddcca7327dc4e5b60a3efe7e64
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: b243d05619642e1dd3ad8dfe2bbe1d0a9661b773
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73825405"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351307"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v11-for-net"></a>Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 11 для .NET
 
@@ -21,7 +21,7 @@ ms.locfileid: "73825405"
 Клиентскую библиотеку хранилища BLOB-объектов Azure для .NET можно использовать для выполнения таких задач:
 
 * Создание контейнера
-* установка разрешений для контейнера;
+* Установка разрешений для контейнера
 * создание большого двоичного объекта в службе хранилища Azure;
 * скачивание большого двоичного объекта на локальный компьютер;
 * перечисление всех больших двоичных объектов в контейнере;
@@ -31,7 +31,7 @@ ms.locfileid: "73825405"
 
 [!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
@@ -145,7 +145,7 @@ namespace blob_quickstart
 #### <a name="windows"></a>Windows
 
 ```cmd
-setx CONNECT_STR "<yourconnectionstring>"
+setx AZURE_STORAGE_CONNECTION_STRING "<yourconnectionstring>"
 ```
 
 После добавления переменной среды в Windows вам необходимо запустить новый экземпляр командного окна.
@@ -153,13 +153,13 @@ setx CONNECT_STR "<yourconnectionstring>"
 #### <a name="linux"></a>Linux
 
 ```bash
-export CONNECT_STR="<yourconnectionstring>"
+export AZURE_STORAGE_CONNECTION_STRING="<yourconnectionstring>"
 ```
 
 #### <a name="macos"></a>MacOS
 
 ```bash
-export CONNECT_STR="<yourconnectionstring>"
+export AZURE_STORAGE_CONNECTION_STRING="<yourconnectionstring>"
 ```
 
 После добавления переменной среды перезапустите все запущенные программы, которым может понадобиться считать переменную среды. Например, перезапустите среду разработки или редактор, прежде чем продолжить.
@@ -204,11 +204,11 @@ export CONNECT_STR="<yourconnectionstring>"
 ```csharp
 // Retrieve the connection string for use with the application. The storage 
 // connection string is stored in an environment variable on the machine 
-// running the application called CONNECT_STR. If the 
+// running the application called AZURE_STORAGE_CONNECTION_STRING. If the 
 // environment variable is created after the application is launched in a 
 // console or with Visual Studio, the shell or application needs to be closed
 // and reloaded to take the environment variable into account.
-string storageConnectionString = Environment.GetEnvironmentVariable("CONNECT_STR");
+string storageConnectionString = Environment.GetEnvironmentVariable("AZURE_STORAGE_CONNECTION_STRING");
 
 // Check whether the connection string can be parsed.
 CloudStorageAccount storageAccount;
@@ -223,7 +223,7 @@ else
     // Otherwise, let the user know that they need to define the environment variable.
     Console.WriteLine(
         "A connection string has not been defined in the system environment variables. " +
-        "Add an environment variable named 'CONNECT_STR' with your storage " +
+        "Add an environment variable named 'AZURE_STORAGE_CONNECTION_STRING' with your storage " +
         "connection string as a value.");
     Console.WriteLine("Press any key to exit the application.");
     Console.ReadLine();
@@ -384,7 +384,7 @@ Press any key to delete the example files and example container.
 
 После проверки файлов нажмите любую клавишу для завершения демонстрации и удаления тестовых файлов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы узнали, как передавать, загружать и перечислять файлы в большие двоичные объекты с помощью .NET.
 

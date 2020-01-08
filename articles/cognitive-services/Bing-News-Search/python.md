@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: quickstart
-ms.date: 6/18/2019
+ms.date: 12/12/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 2fc67cbfedccd69ff9063b0575ae51197eceb09d
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.openlocfilehash: 1c424c75a4df193ec412355607c68abeda0560a5
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68423697"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448492"
 ---
 # <a name="quickstart-perform-a-news-search-using-python-and-the-bing-news-search-rest-api"></a>Краткое руководство. Поиск новостей с помощью REST API Bing для поиска новостей и Python
 
@@ -28,15 +28,13 @@ ms.locfileid: "68423697"
 
 Исходный код этого примера также доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/python/Search/BingNewsSearchv7.py).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../includes/cognitive-services-bing-news-search-signup-requirements.md)]
 
-См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
-
 ## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
 
-1. Создайте файл Python в избранной интегрированной среде разработки или редакторе и импортируйте модуль запроса. Создайте переменные для вашего ключа подписки, конечной точки и условия поиска. Вы можете найти свою конечную точку на информационной панели Azure.
+1. Создайте файл Python в избранной интегрированной среде разработки или редакторе и импортируйте модуль запроса. Создайте переменные для вашего ключа подписки, конечной точки и условия поиска. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
 
 ```python
 import requests
@@ -82,7 +80,7 @@ rows = "\n".join(["<tr><td>{0}</td></tr>".format(desc)
 HTML("<table>"+rows+"</table>")
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание одностраничного веб-приложения](tutorial-bing-news-search-single-page-app.md)

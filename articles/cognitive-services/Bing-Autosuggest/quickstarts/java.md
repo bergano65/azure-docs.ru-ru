@@ -1,28 +1,28 @@
 ---
 title: Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Java
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как быстро начать предложение условий поиска в реальном времени с помощью API Автозаполнения Bing.
+description: Узнайте, как быстро начать предложение условий поиска в режиме реального времени с помощью API Автозаполнения Bing.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-autosuggest
 ms.topic: quickstart
-ms.date: 07/26/2019
+ms.date: 12/11/2019
 ms.author: aahi
-ms.openlocfilehash: 0a0fb1e8f79587223ae1f25ca8a7e0d6dc7cc5bb
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 1593d4079cf7f50d5473f24ecf57351c9d7786e9
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565834"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75384923"
 ---
 # <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-java"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Java
 
 
-В этом кратком руководстве описано, как настроить осуществление вызовов к API Автозаполнения Bing и получение ответа JSON. Это простое приложение Java отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен в репозитории [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/Search/BingAutosuggestv7.java).
+В этом кратком руководстве описано, как настроить осуществление вызовов к API Автозаполнения Bing и получение ответа JSON. Это простое приложение Java отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/Search/BingAutosuggestv7.java).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Комплект разработчика Java (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/).
 * [Библиотека Gson](https://github.com/google/gson).
@@ -44,7 +44,7 @@ ms.locfileid: "68565834"
     import com.google.gson.JsonParser;
     ```
 
-2. Создайте переменные ключа подписки, узла API и пути к нему, [код рынка](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и поисковый запрос.
+2. Создайте переменные ключа подписки, узла API и пути к нему, [код рынка](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и поисковый запрос. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
     
     ```java
     static String subscriptionKey = "enter key here";
@@ -201,7 +201,7 @@ public static String prettify(String json_text) {
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание одностраничного веб-приложения](../tutorials/autosuggest.md)

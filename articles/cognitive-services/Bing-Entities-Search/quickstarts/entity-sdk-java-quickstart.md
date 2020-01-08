@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
-ms.date: 07/24/2019
+ms.date: 12/11/2019
 ms.author: aahi
-ms.openlocfilehash: f39355613382bd5d02b7ef6918598f38737e850f
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: b907b1ed945cd72d51d0b1acd037dbfc93be4873
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74327153"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448645"
 ---
 # <a name="quickstart-send-a-search-request-with-the-bing-entity-search-sdk-for-java"></a>Краткое руководство. Отправка запросов для поиска в пакете SDK для Поиска сущностей Bing для Java
 
 Используйте это краткое руководство, чтобы начать поиск сущностей с помощью пакета SDK для Поиска сущностей Bing для Java. Так как для Поиска сущностей Bing имеется REST API, совместимый с большинством языков программирования, пакет SDK обеспечивает простой способ интеграции службы в ваши приложения. Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples/tree/master/Search/BingEntitySearch).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Комплект разработчика Java (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/).
 
@@ -67,7 +67,7 @@ ms.locfileid: "74327153"
 
 ## <a name="create-a-search-client"></a>Создание клиента для поиска
 
-1. Реализуйте клиент `dominantEntityLookup`, для которого требуется конечная точка API и экземпляр класса `ServiceClientCredentials`.
+1. Реализуйте клиент `dominantEntityLookup`, для которого требуется конечная точка API и экземпляр класса `ServiceClientCredentials`. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
 
     ```java
     public static EntitySearchAPIImpl getClient(final String subscriptionKey) {
@@ -147,7 +147,7 @@ ms.locfileid: "74327153"
     }
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-entities-search-single-page-app.md)

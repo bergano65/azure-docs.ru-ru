@@ -1,26 +1,21 @@
 ---
-title: Краткое руководство Azure Sentinel. Начало работы с Azure Sentinel | Документация Майкрософт
+title: Краткое руководство. Начало работы с Azure Sentinel
 description: Краткое руководство Azure Sentinel. Начало работы с предварительной версией Azure Sentinel
 services: sentinel
-documentationcenter: na
 author: rkarlin
 manager: rkarlin
-editor: ''
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
-ms.devlang: na
 ms.topic: quickstart
 ms.custom: mvc
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 676a41b64b79be6b11c3ef22b34d3de0e37e2a92
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: bf7ff356af343667133c0226b6b31df8fc9e32b8
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72023795"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75563638"
 ---
 # <a name="quickstart-get-started-with-azure-sentinel"></a>Краткое руководство. Начало работы с Azure Sentinel
 
@@ -128,7 +123,7 @@ ms.locfileid: "72023795"
 
 Дополнительные сведения о получении готовых обнаружений см. в разделе [Учебник: Получение встроенной аналитики](tutorial-detect-threats-built-in.md).
  
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого краткого руководства вы узнали, как начать работу с Azure Sentinel. Продолжите изучение в руководстве об [обнаружении угроз](tutorial-detect-threats-built-in.md).
 > [!div class="nextstepaction"]
 > [Создайте пользовательские правила обнаружения угроз](tutorial-detect-threats-custom.md) для автоматизации ответов на угрозы.

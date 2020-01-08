@@ -1,30 +1,30 @@
 ---
 title: Краткое руководство. Синтезирование речи с записью в звуковой файл с помощью C# (.NET) в службе "Речь"
 titleSuffix: Azure Cognitive Services
-description: ПОДЛЕЖИТ УТОЧНЕНИЮ
+description: TBD
 services: cognitive-services
 author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
+ms.topic: include
 ms.date: 10/28/2019
 ms.author: erhopf
-ms.openlocfilehash: 0b34c65f6b7003cbdd4d99b684fe2b5a3249c410
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: dfe2d5925e19697a2e3ed4491958da1325df5574
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74817866"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75469012"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
 > * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=dotnet)
-> * [Создать пустой пример проекта](../../../../quickstarts/create-project.md?tabs=dotnet).
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=dotnet)
 
 ## <a name="open-your-project-in-visual-studio"></a>Откройте проект в Visual Studio.
 
@@ -193,11 +193,11 @@ namespace helloworld
    Speech synthesized to [helloworld.wav] for text [Hello world!]
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [footer](./footer.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Создание пользовательского голоса](~/articles/cognitive-services/Speech-Service/how-to-custom-voice-create-voice.md)
 - [Запись пользовательских образцов голоса](~/articles/cognitive-services/Speech-Service/record-custom-voice-samples.md)

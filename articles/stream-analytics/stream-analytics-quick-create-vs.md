@@ -1,28 +1,27 @@
 ---
 title: Краткое руководство по созданию задания Azure Stream Analytics с помощью Visual Studio
 description: В этом кратком руководстве описано, как создать задание Stream Analytics, настроить для него входные и выходные данные, а также определить запрос с помощью Visual Studio.
-services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
 ms.date: 06/11/2019
 ms.topic: quickstart
 ms.service: stream-analytics
-ms.openlocfilehash: ec3318201fd3fe8f7daf78d05bf316fb88914daf
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 21dbd4128cad7df11aeb713286d868879a58519b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74707337"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75431525"
 ---
 # <a name="quickstart-create-an-azure-stream-analytics-job-by-using-visual-studio"></a>Краткое руководство. Создание задания Azure Stream Analytics с помощью Visual Studio
 
 В этом кратком руководстве описано, как создать и запустить задание Stream Analytics используя инструменты Azure Stream Analytics для Visual Studio. Пример задания считывает данные потоковой передачи из устройства Центра Интернета вещей. Вы определяете задание, которое вычисляет среднюю температуру, когда она превышает 27 °, и записывает полученный результат события в новый файл в хранилище BLOB-объектов.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 
-* Войдите на [портале Azure](https://portal.azure.com/).
+* Войдите на [портал Azure](https://portal.azure.com/).
 
 * Установите Visual Studio 2019, Visual Studio 2015 или Visual Studio 2013 с обновлением 4. Поддерживаются выпуски Enterprise (Ultimate/Premium), Professional и Community. Выпуск Express не поддерживается.
 
@@ -32,7 +31,7 @@ ms.locfileid: "74707337"
 
 Прежде чем определить задание Stream Analytics, необходимо подготовить данные, которые позже настраиваются в качестве входных данных для задания. Чтобы подготовить входные данные, необходимые для задания, выполните следующие действия:
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 2. Выберите **Создать ресурс** > **Интернет вещей** > **Центр Интернета вещей**.
 
@@ -81,7 +80,7 @@ ms.locfileid: "74707337"
 
 ## <a name="create-a-stream-analytics-project"></a>Создание проекта Stream Analytics
 
-1. Запустите Visual Studio.
+1. Запустите среду Visual Studio.
 
 2. Выберите **Файл > Новый проект**.  
 
@@ -168,7 +167,7 @@ ms.locfileid: "74707337"
 
 2. Замените значения заполнителя в 15 строке строкой подключения устройства Центра Интернета вещей, которую вы сохранили при работе с предыдущим разделом.
 
-3. Щелкните **Выполнить**. В выходных данных должны присутствовать показания датчика и сообщения, отправляемые в Центр Интернета вещей.
+3. Нажмите кнопку **Запустить**. В выходных данных должны присутствовать показания датчика и сообщения, отправляемые в Центр Интернета вещей.
 
    ![Онлайн-симулятор Raspberry Pi для Интернета вещей Azure.](./media/stream-analytics-quick-create-portal/ras-pi-connection-string.png)
 
@@ -198,7 +197,7 @@ ms.locfileid: "74707337"
 
 2. На странице группы ресурсов выберите **Удалить**, в текстовом поле введите имя ресурса для удаления и щелкните **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы развернули простое задание Stream Analytics, используя Visual Studio. Вы также можете развертывать задания Stream Analytics, используя [портал Azure](stream-analytics-quick-create-portal.md) и [PowerShell](stream-analytics-quick-create-powershell.md). 
 

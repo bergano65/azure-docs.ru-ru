@@ -9,22 +9,20 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/05/2019
+ms.date: 12/17/2019
 ms.author: diberry
-ms.openlocfilehash: 2d3bffd025d484ac928e21003b7cba9c63d2c514
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: e1709a5e86c8fed8d7f724ad1b105bd02df9fa56
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74885961"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75381772"
 ---
-# <a name="tutorial-extract-structured-data-from-user-utterance-with-machine-learned-entities-in-language-understanding-luis"></a>Руководство по извлечению структурированных данных из речевого фрагмента пользователя с помощью сущностей, прошедших машинное обучение, в службе "Распознавание речи" (LUIS)
+# <a name="tutorial-extract-structured-data-from-user-utterance-with-machine-learned-entities-in-language-understanding-luis"></a>Руководство. извлечению структурированных данных из речевого фрагмента пользователя с помощью сущностей, прошедших машинное обучение, в службе "Распознавание речи" (LUIS)
 
 Из этого руководства вы узнаете, как извлекать структурированные данные из речевого фрагмента с помощью сущности, прошедшей машинное обучение.
 
 Сущность, прошедшая машинное обучение, поддерживает [концепцию разложения модели на составные части](luis-concept-model.md#v3-authoring-model-decomposition), предоставляя сущности подкомпонентов с дескрипторами и ограничениями.
-
-[!INCLUDE [Uses preview portal](includes/uses-portal-preview.md)]
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
@@ -66,7 +64,7 @@ ms.locfileid: "74885961"
 
 ## <a name="import-example-json-to-begin-app"></a>Импорт примера JSON-файла для создания приложения
 
-1.  Скачайте и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/machine-learned-entity/pizza-intents-only.json).
+1.  Скачайте и сохраните [JSON-файл приложения](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-language-understanding/master/documentation-samples/tutorials/machine-learned-entity/pizza-intents-only.json).
 
 [!INCLUDE [Import app steps](includes/import-app-steps.md)]
 
@@ -298,7 +296,7 @@ ms.locfileid: "74885961"
 
 [!INCLUDE [LUIS How to clean up resources](includes/quickstart-tutorial-cleanup-resources.md)]
 
-## <a name="related-information"></a>Связанные сведения
+## <a name="related-information"></a>Дополнительные сведения
 
 * [Руководство по намерениям](luis-quickstart-intents-only.md)
 * [Концепция сущностей](luis-concept-entity-types.md) — основные сведения
@@ -307,7 +305,7 @@ ms.locfileid: "74885961"
 * [Как опубликовать предложение](luis-how-to-publish-app.md)
 * [Тестирование приложения LUIS на портале LUIS](luis-interactive-test.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве приложение использует сущность, прошедшую машинное обучение, для определения намерений пользователя по речевому фрагменту и извлечения сведений из этого речевого фрагмента. Использование сущности, прошедшей машинное обучение, позволяет разложить сведения сущности на составные части.
 

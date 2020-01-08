@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: quickstart
-ms.date: 10/28/2019
+ms.date: 12/12/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 427cf87a8907482ae5346372c2997ce6e01084d0
-ms.sourcegitcommit: d47a30e54c5c9e65255f7ef3f7194a07931c27df
+ms.openlocfilehash: e6911c51ecfe1c8f6924bf403e9ad00e14558a09
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027109"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448483"
 ---
 # <a name="quickstart-search-for-news-using-c-and-the-bing-news-search-rest-api"></a>Краткое руководство. Поиск новостей с помощью C# и REST API Bing для поиска новостей
 
@@ -24,15 +24,13 @@ ms.locfileid: "73027109"
 
 Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Любой выпуск [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/downloads/).
 * Платформа [Json.NET](https://www.newtonsoft.com/json), доступная в виде пакета NuGet.
 * Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
 
 [!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../includes/cognitive-services-bing-news-search-signup-requirements.md)]
-
-См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 
 ## <a name="create-and-initialize-a-project"></a>Создание и инициализация проекта
 
@@ -46,7 +44,7 @@ ms.locfileid: "73027109"
     using System.Collections.Generic;
     ```
 
-2. Создайте переменные для конечной точки API, ключ подписки и условие поиска.
+2. Создайте переменные для конечной точки API, ключ подписки и условие поиска. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
 
     ```csharp
     const string accessKey = "enter key here";
@@ -212,7 +210,7 @@ ms.locfileid: "73027109"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание одностраничного веб-приложения](tutorial-bing-news-search-single-page-app.md)

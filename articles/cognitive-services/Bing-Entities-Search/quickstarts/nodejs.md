@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
-ms.date: 07/24/2019
+ms.date: 12/11/2019
 ms.author: aahi
-ms.openlocfilehash: 48d2b36e35a2e0b41b1202beda9944339dc7530c
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: f3585e96376a25721f478f9dd621835e75e3c600
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74327116"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448632"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-nodejs"></a>Краткое руководство. Отправка запросов для поиска в REST API Bing для поиска сущностей с помощью Node.js
 
@@ -23,7 +23,7 @@ ms.locfileid: "74327116"
 
 Хотя это приложение создается на языке JavaScript, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Последняя версия [Node.js](https://nodejs.org/en/download/).
 
@@ -40,7 +40,7 @@ ms.locfileid: "74327116"
     let https = require ('https');
     ```
 
-2. Создайте переменные для конечной точки API, ключа подписки и поискового запроса.
+2. Создайте переменные для конечной точки API, ключа подписки и поискового запроса. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
 
     ```javascript
     let subscriptionKey = 'ENTER YOUR KEY HERE';
@@ -173,7 +173,7 @@ ms.locfileid: "74327116"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-entities-search-single-page-app.md)

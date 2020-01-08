@@ -7,15 +7,15 @@ author: markamos
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
+ms.topic: include
 ms.date: 10/09/2019
 ms.author: erhopf
-ms.openlocfilehash: 095c591f63cb228b48681ffc67499820631bbaf5
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 37b0deba6531c8e714b8786f8c815cf323c310ba
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74816476"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75468677"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для Python.
 
@@ -28,7 +28,7 @@ ms.locfileid: "74816476"
   - MAC: macOS X версии 10.12 или более поздней.
   - Linux: Ubuntu 16.04, Ubuntu 18.04, Debian 9 на x64.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Для поддерживаемых платформ Linux потребуется установить определенные библиотеки (`libssl` для поддержки протокола SSL и `libasound2` для поддержки звука). Ниже приведены команды, необходимые для установки правильных версий этих библиотек. Используйте команды для своего дистрибутива.
 
@@ -78,7 +78,7 @@ pip install azure-cognitiveservices-speech
 python3 -m pip install --upgrade pip
 ```
 
-Успешно установив `azure-cognitiveservices-speech` с помощью `pip`, можно использовать пакет SDK для службы "Речь", импортировав пространство имен в проекты Python. Например:
+Успешно установив `azure-cognitiveservices-speech` с помощью `pip`, можно использовать пакет SDK для службы "Речь", импортировав пространство имен в проекты Python. Пример:
 
 ```py
 import azure.cognitiveservices.speech as speechsdk
@@ -94,6 +94,6 @@ import azure.cognitiveservices.speech as speechsdk
 
 Если у вас возникла проблема или отсутствует функция, ознакомьтесь со статьей [Возможности получения поддержки и справки](~/articles/cognitive-services/speech-service/support.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [windows](../quickstart-list.md)]

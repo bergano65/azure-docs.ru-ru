@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: quickstart
-ms.date: 6/18/2019
+ms.date: 12/16/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: ad322d9418d81c516b97cd8bd4b039b1640aa9c0
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.openlocfilehash: 1a3e98afacf85bde8180253078cb53eae9a03d2f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72515644"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383618"
 ---
 # <a name="quickstart-perform-a-news-search-using-java-and-the-bing-news-search-rest-api"></a>Краткое руководство. Поиск новостей с помощью Java и REST API Bing для поиска новостей
 
@@ -26,7 +26,7 @@ ms.locfileid: "72515644"
 
 Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/Search/BingNewsSearchv7.java). 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Комплект разработчика Java (JDK) 7 или 8](https://aka.ms/azure-jdks).
 
@@ -34,8 +34,6 @@ ms.locfileid: "72515644"
 
 
 [!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../includes/cognitive-services-bing-news-search-signup-requirements.md)]
-
-См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 
 ## <a name="create-and-initialize-a-project"></a>Создание и инициализация проекта
 
@@ -52,7 +50,7 @@ ms.locfileid: "72515644"
     import com.google.gson.JsonParser;
     ```
 
-2. Создайте класс с переменными для конечной точки API, ключа подписки и термина для поиска.
+2. Создайте класс с переменными для конечной точки API, ключа подписки и термина для поиска. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
 
     ```java
     public static SearchResults SearchNews (String searchQuery) throws Exception {
@@ -224,7 +222,7 @@ ms.locfileid: "72515644"
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание одностраничного веб-приложения](tutorial-bing-news-search-single-page-app.md)

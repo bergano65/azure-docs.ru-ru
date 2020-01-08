@@ -10,12 +10,12 @@ ms.subservice: bing-web-search
 ms.topic: quickstart
 ms.date: 12/09/2019
 ms.author: aahi
-ms.openlocfilehash: 0f6dceac3e46f8e36d2da52c15c0b0696e026a0e
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 64ef052478bed627c896cd0e0b5301961a8b6f21
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74977222"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75562873"
 ---
 # <a name="quickstart-use-the-bing-web-search-sdk-for-python"></a>Краткое руководство. Использование пакета SDK Поиска в Интернете Bing для Python
 
@@ -23,7 +23,7 @@ ms.locfileid: "74977222"
 
 Хотите увидеть код прямо сейчас? [Примеры для пакета SDK Bing для поиска в Интернете для Python](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples) доступны в GitHub.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 Пакет SDK Поиска в Интернете Bing совместим с Python версии 2.7, 3.3, 3.4, 3.5 и 3.6. Мы рекомендуем использовать для этого руководства виртуальное окружение.
 
 * Python версии 2.7, 3.3, 3.4, 3.5 или 3.6
@@ -63,6 +63,12 @@ python -m pip install azure-cognitiveservices-search-websearch
 
 ```console
 python -m venv mytestenv
+```
+
+Активируйте созданное окружение:
+
+```console
+mytestenv\Scripts\activate.bat
 ```
 
 Установите зависимости пакета SDK Bing для поиска в Интернете:
@@ -166,7 +172,7 @@ python -m pip install azure-cognitiveservices-search-websearch
 
 1. Замените `YOUR_ENDPOINT` URL-адресом своей конечной точки на портале.
 
-1. Запустите программу. Например, `python your_program.py`.
+1. Запустите программу. Например: `python your_program.py`.
 
 ## <a name="define-functions-and-filter-results"></a>Определение функций и фильтрация результатов
 
@@ -310,11 +316,11 @@ python -m pip install azure-cognitiveservices-search-websearch
 
 Удалите ключ подписки из кода программы и отключите виртуальное окружение, когда завершите работу с этим проектом.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Примеры пакета SDK для Python в Cognitive Services](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Справочник по пакету SDK Azure для Python](https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/websearch)

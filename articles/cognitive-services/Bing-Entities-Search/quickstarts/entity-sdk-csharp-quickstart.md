@@ -8,21 +8,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
-ms.date: 07/15/2019
+ms.date: 12/11/2019
 ms.author: aahi
-ms.openlocfilehash: f9036e78934ac14017a0437583109c91732ce4b3
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 4c942040a36ae7b103f7dabac62376ea5a4e2890
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74323824"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75384542"
 ---
 # <a name="send-a-search-request-with-the-bing-entity-search-sdk-for-c"></a>Отправка запросов для поиска в пакете SDK Поиска сущностей Bing для C#
 
 Используйте это краткое руководство, чтобы начать поиск сущностей с помощью пакета SDK Поиска сущностей Bing для C#. Так как для Поиска сущностей Bing имеется REST API, совместимый с большинством языков программирования, пакет SDK обеспечивает простой способ интеграции службы в ваши приложения. Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/BingSearchv7/BingEntitySearch).
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Любой выпуск [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/downloads/).
 * Платформа [Json.NET](https://www.newtonsoft.com/json), доступная в виде пакета NuGet.
@@ -55,7 +55,7 @@ ms.locfileid: "74323824"
 1. Создайте клиент для поиска. Добавьте ключ подписки, создав новый `ApiKeyServiceClientCredentials`.
 
     ```csharp
-    var client = new EntitySearchAPI(new ApiKeyServiceClientCredentials("YOUR-ACCESS-KEY"));
+    var client = new EntitySearchClient(new ApiKeyServiceClientCredentials("YOUR-ACCESS-KEY"));
     ```
 
 1. Используйте клиентскую функцию `Entities.Search()` для поиска запроса.
@@ -78,7 +78,7 @@ ms.locfileid: "74323824"
     Console.WriteLine(mainEntity.Description);
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание одностраничного веб-приложения](../tutorial-bing-entities-search-single-page-app.md)

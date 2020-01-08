@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 07/05/2019
+ms.date: 12/17/2019
 ms.author: erhopf
-ms.openlocfilehash: ccc6c2554576d91d2236fb84f81c8aeccdc07be7
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: 2def0eaa2e1ee22498202228cf62257605d940e5
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74815339"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75380326"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-android"></a>Краткое руководство. Запуск примера приложения на базе пакета SDK для речевых устройств в Android
 
@@ -25,7 +25,7 @@ ms.locfileid: "74815339"
 
 Исходный код для примера приложения входит в состав пакета SDK для речевых устройств. Он также [доступен на веб-сайте GitHub](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы начать использовать пакет SDK для речевых устройств, необходимо:
 
@@ -165,7 +165,7 @@ ms.locfileid: "74815339"
 >
 > Если вы видите ошибку `no devices/emulators found`, проверьте, подключен ли USB-кабель, и убедитесь, что он высокого качества.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Просмотр заметки о выпуске](devices-sdk-release-notes.md)

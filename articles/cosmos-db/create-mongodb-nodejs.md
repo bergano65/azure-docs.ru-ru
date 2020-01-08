@@ -9,12 +9,12 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 05/21/2019
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: c2a689f7c3ac1308e12d0e371a9ad7f7187417d6
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 2abf6187be78ee6cb78676284848051a935b150b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72792177"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75445467"
 ---
 # <a name="quickstart-migrate-an-existing-mongodb-nodejs-web-app-to-azure-cosmos-db"></a>Краткое руководство. Перенос имеющегося веб-приложения MongoDB на Node.js в Azure Cosmos DB 
 
@@ -40,7 +40,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>предварительные требования 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 [!INCLUDE [cosmos-db-emulator-mongodb](../../includes/cosmos-db-emulator-mongodb.md)]
 
@@ -97,7 +97,7 @@ az login
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте [группу ресурсов](../azure-resource-manager/resource-group-overview.md) с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure — это логический контейнер, в котором происходит развертывание ресурсов Azure (веб-приложений, баз данных и учетных записей хранения) и управление ими. 
+Создайте [группу ресурсов](../azure-resource-manager/management/overview.md) с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure — это логический контейнер, в котором происходит развертывание ресурсов Azure (веб-приложений, баз данных и учетных записей хранения) и управление ими. 
 
 В следующем примере показано создание группы ресурсов в регионе "Западная Европа". Выберите уникальное имя для группы ресурсов.
 
@@ -251,7 +251,7 @@ git commit -m "configured MongoDB connection string"
 
 [!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого краткого руководства вы узнали, как создать учетную запись и коллекцию Cosmos и запустить консольное приложение. Теперь вы можете импортировать дополнительные данные в базу данных Cosmos. 
 

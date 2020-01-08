@@ -1,24 +1,17 @@
 ---
-title: Что такое служба конфигурации приложений Azure? | Документация Майкрософт
+title: Что такое служба конфигурации приложений Azure?
 description: Описание службы конфигурации приложений Azure.
-services: azure-app-configuration
-documentationcenter: ''
 author: yegu-ms
-manager: balans
-editor: ''
+ms.author: yegu
 ms.service: azure-app-configuration
-ms.workload: tbd
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: overview
 ms.date: 02/24/2019
-ms.author: yegu
-ms.openlocfilehash: 01644054868ffc08738e67654ba181c76e7aed39
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 40630bbbbcea344fb74d8ad971eb4c808bf0c142
+ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185067"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75495246"
 ---
 # <a name="what-is-azure-app-configuration"></a>Что такое служба конфигурации приложений Azure?
 
@@ -67,7 +60,7 @@ ms.locfileid: "74185067"
 | Java Spring | Клиент службы конфигурации приложений для Spring Cloud |
 | Прочее | REST API службы конфигурации приложений |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство по ASP.NET Core](./quickstart-aspnet-core-app.md)
 * [Краткое руководство по .NET](./quickstart-dotnet-core-app.md)

@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 02/15/2019
 ms.reviewer: jeking
-ms.openlocfilehash: 5badd4aeabd8ec322ea5fb847cf134f302269c27
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: a19a6e7e74fc645c891754e5afdbd2a6a1bdefd4
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72331010"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75443811"
 ---
 # <a name="quickstart-analyze-data-in-azure-data-lake-storage-gen2-by-using-azure-databricks"></a>Краткое руководство. Анализ данных в Azure Data Lake Storage 2-го поколения с помощью Azure Databricks
 
@@ -23,13 +23,13 @@ ms.locfileid: "72331010"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Создайте учетную запись Azure Data Lake Storage 2-го поколения. См. [Краткое руководство. учетной записи хранения Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
 
   Скопируйте имя учетной записи хранения в текстовый файл. Оно скоро вам понадобится.
 
-* Создание субъекта-службы. Дополнительные сведения см. в статье [Azure Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
+* Создание субъекта-службы. В разделе [Руководство. Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
 
   Существует несколько конкретных действий, которые необходимо выполнить при изучении этой статьи.
 
@@ -46,20 +46,20 @@ ms.locfileid: "72331010"
 
 1. На портале Azure выберите **Создать ресурс** > **Analytics** > **Azure Databricks**.
 
-    ![Databricks на портале Azure](./media/data-lake-storage-quickstart-create-databricks-account/azure-databricks-on-portal.png "Databricks on Azure portal")
+    ![Databricks на портале Azure](./media/data-lake-storage-quickstart-create-databricks-account/azure-databricks-on-portal.png "Databricks на портале Azure")
 
 2. В разделе **службы Azure Databricks** укажите значения для создания рабочей области Databricks.
 
-    ![Создание рабочей области Azure Databricks](./media/data-lake-storage-quickstart-create-databricks-account/create-databricks-workspace.png "Create an Azure Databricks workspace")
+    ![Создайте рабочую область Azure Databricks](./media/data-lake-storage-quickstart-create-databricks-account/create-databricks-workspace.png "Создание рабочей области Azure Databricks").
 
     Укажите следующие значения.
 
-    |Свойство  |ОПИСАНИЕ  |
+    |Свойство  |Description  |
     |---------|---------|
     |**Имя рабочей области**     | Укажите имя рабочей области Databricks.        |
     |**подписка**     | Выберите подписку Azure в раскрывающемся списке.        |
-    |**группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../../azure-resource-manager/resource-group-overview.md). |
-    |**Местоположение.**     | Выберите **Западная часть США 2**. Если хотите, выберите другую публичную область.        |
+    |**группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../../azure-resource-manager/management/overview.md). |
+    |**Местоположение**     | Выберите **Западная часть США 2**. Если хотите, выберите другую публичную область.        |
     |**Ценовая категория**     |  Вы можете выбрать уровень **Стандартный** или **Премиум**. Дополнительные сведения об этих ценовых категориях см. на [странице цен на Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
 
 3. Создание учетной записи займет несколько минут. Чтобы отслеживать состояние операции, просмотрите индикатор выполнения вверху.
@@ -72,11 +72,11 @@ ms.locfileid: "72331010"
 
 2. Вы будете перенаправлены на портал Azure Databricks. На портале выберите **Новый** > **Кластер**.
 
-    ![Databricks в Azure](./media/data-lake-storage-quickstart-create-databricks-account/databricks-on-azure.png "Databricks on Azure")
+    ![Databricks в Azure](./media/data-lake-storage-quickstart-create-databricks-account/databricks-on-azure.png "Databricks в Azure")
 
 3. На странице **создания кластера** укажите значения для создания кластера.
 
-    ![Создание кластера Databricks Spark в Azure](./media/data-lake-storage-quickstart-create-databricks-account/create-databricks-spark-cluster.png "Create Databricks Spark cluster on Azure")
+    ![Создание кластера Databricks Spark в Azure](./media/data-lake-storage-quickstart-create-databricks-account/create-databricks-spark-cluster.png "Создание кластера Databricks Spark в Azure")
 
     Заполните значения в следующих полях, и примите значения по умолчанию для других полей.
 
@@ -96,11 +96,11 @@ ms.locfileid: "72331010"
 
 2. В левой области выберите **Рабочая область**. В раскрывающемся списке **Рабочая область** выберите **Создать** > **Notebook** (Записная книжка).
 
-    ![Создание записной книжки в Databricks](./media/data-lake-storage-quickstart-create-databricks-account/databricks-create-notebook.png "Create notebook in Databricks")
+    ![Создание записной книжки в Databricks](./media/data-lake-storage-quickstart-create-databricks-account/databricks-create-notebook.png "Создание записной книжки в Databricks")
 
 3. В диалоговом окне **создания записной книжки** введите имя записной книжки. Выберите **Scala** в качестве языка, а затем выберите созданный ранее кластер Spark.
 
-    ![Создание записной книжки в Databricks](./media/data-lake-storage-quickstart-create-databricks-account/databricks-notebook-details.png "Create notebook in Databricks")
+    ![Создание записной книжки в Databricks](./media/data-lake-storage-quickstart-create-databricks-account/databricks-notebook-details.png "Создание записной книжки в Databricks")
 
     Нажмите кнопку **Создать**.
 
@@ -173,17 +173,17 @@ ms.locfileid: "72331010"
 
 3. Отобразятся табличные данные, как показано на следующем снимке экрана (показаны только некоторые столбцы).
 
-    ![Пример данных JSON](./media/data-lake-storage-quickstart-create-databricks-account/databricks-sample-csv-data.png "Sample JSON data")
+    ![Пример данных JSON](./media/data-lake-storage-quickstart-create-databricks-account/databricks-sample-csv-data.png "Пример данных JSON")
 
     Среди прочего пример данных демонстрирует пол аудитории радиоканала (имя столбца **gender**), а также категорию подписки (бесплатная или платная) (имя столбца **level**).
 
 4. Теперь можно создать визуальное представление данных по каждому полу, а также по числу пользователей с бесплатными и платными учетными записями. В нижней части выходных табличных данных щелкните значок **линейчатой диаграммы**, а затем — **параметры построения**.
 
-    ![Создание линейчатой диаграммы](./media/data-lake-storage-quickstart-create-databricks-account/create-plots-databricks-notebook.png "Create bar chart")
+    ![Создание линейчатой диаграммы](./media/data-lake-storage-quickstart-create-databricks-account/create-plots-databricks-notebook.png "Создание линейчатой диаграммы")
 
 5. В разделе **настроек построения** перетащите значения, как показано на снимке экрана.
 
-    ![Настройка линейчатой диаграммы](./media/data-lake-storage-quickstart-create-databricks-account/databricks-notebook-customize-plot.png "Customize bar chart")
+    ![Настройка линейчатой диаграммы](./media/data-lake-storage-quickstart-create-databricks-account/databricks-notebook-customize-plot.png "Настройка линейчатой диаграммы")
 
     - Для параметра **Ключи** задайте значение **gender**.
     - Для параметра **Series groupings** (Группирование ряда) задайте значение **level**.
@@ -194,17 +194,17 @@ ms.locfileid: "72331010"
 
 7. Выходные данные отображают визуальное представление, как показано на следующем снимке экрана:
 
-     ![Настройка линейчатой диаграммы](./media/data-lake-storage-quickstart-create-databricks-account/databricks-sql-query-output-bar-chart.png "Customize bar chart")
+     ![Настройка линейчатой диаграммы](./media/data-lake-storage-quickstart-create-databricks-account/databricks-sql-query-output-bar-chart.png "Настройка линейчатой диаграммы")
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Изучив эту статью, вы можете завершить работу кластера. В рабочей области Azure Databricks выберите **Кластеры** и найдите кластер, работу которого необходимо завершить. Наведите указатель мыши на многоточие в столбце **Действия** и выберите значок **Завершить**.
 
-![Завершение работы кластера Databricks](./media/data-lake-storage-quickstart-create-databricks-account/terminate-databricks-cluster.png "Stop a Databricks cluster")
+![Остановка кластера Databricks](./media/data-lake-storage-quickstart-create-databricks-account/terminate-databricks-cluster.png "Остановка кластера Databricks")
 
 Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после __ мин бездействия). Если установить эту опцию, кластер завершит роботу после того, как не будет активен в течение заданного промежутка времени.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как создать кластер Spark в Azure Databricks и запускать задание Spark с использованием данных, хранящихся в учетной записи хранения с поддержкой Data Lake Storage 2-го поколения. Вы также можете просмотреть [источники данных Spark](https://docs.azuredatabricks.net/spark/latest/data-sources/index.html), чтобы узнать, как импортировать данные из источников данных в Azure Databricks. Перейдите к следующей статье, чтобы узнать, как выполнять операции ETL (извлечения, преобразование и загрузка данных) с помощью Azure Databricks.
 

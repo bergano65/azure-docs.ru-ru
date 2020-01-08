@@ -7,15 +7,15 @@ author: markamos
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
+ms.topic: include
 ms.date: 10/11/2019
 ms.author: erhopf
-ms.openlocfilehash: c3d7f265993a03c637577678cd9b3012776598c7
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: cd99d6227f32e1382f32f5fa3c7455475ebbbcda
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74816329"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75467707"
 ---
 Здесь также описано, как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для Java (Android). Настройка основана на пакете SDK Maven для службы "Речь", а также Android Studio версии 3.3.
 
@@ -34,6 +34,6 @@ ms.locfileid: "74816329"
 
 Теперь можно перейти к разделу [Дополнительная информация](#next-steps) ниже.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [windows](../quickstart-list.md)]

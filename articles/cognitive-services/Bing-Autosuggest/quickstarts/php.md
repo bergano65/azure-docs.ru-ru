@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-autosuggest
 ms.topic: quickstart
-ms.date: 07/26/2019
+ms.date: 12/11/2019
 ms.author: aahi
-ms.openlocfilehash: 7c9c12cd1097ab4a2b7138efd169e4e7a7f03720
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 64874791be62ec1ed5c1c5874fb055efa4b44dc3
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565800"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75384731"
 ---
 # <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-php"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и PHP
 
 В этом кратком руководстве описано, как настроить осуществление вызовов к API Автозаполнения Bing и получение ответа JSON. Это простое приложение PHP отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке PHP, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [PHP 5.6.x](https://php.net/downloads.php) или более поздней версии;
 
@@ -32,7 +32,8 @@ ms.locfileid: "68565800"
 1. Создайте проект PHP в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
 3. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
-4. Запустите программу.
+4. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+5. Запустите программу.
 
 ```php
 <?php
@@ -147,12 +148,12 @@ echo json_encode (json_decode ($result), JSON_PRETTY_PRINT);
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по API автозаполнения Bing](../tutorials/autosuggest.md)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Что такое API автозаполнения Bing?](../get-suggested-search-terms.md)
 - [Справочник по API автозаполнения Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference)

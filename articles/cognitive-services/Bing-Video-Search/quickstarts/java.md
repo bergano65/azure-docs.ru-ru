@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: quickstart
-ms.date: 06/19/2019
+ms.date: 12/09/2019
 ms.author: aahi
-ms.openlocfilehash: 30234758761e06c65e621c7f512ed8cafa02e090
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 8cab88b9d3a861c72d382534705ea5c087fe9ecb
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74378648"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75382656"
 ---
 # <a name="quickstart-search-for-videos-using-the-bing-video-search-rest-api-and-java"></a>Краткое руководство. Поиск видео с помощью REST API и Java API Bing для поиска видео
 
 Из этого краткого руководства вы узнаете, как сделать первый вызов API Bing для поиска видео и просмотреть результаты поиска в ответе JSON. Это простое приложение Java отправляет запрос для поиска видео HTTP к API и выводит ответ. Хотя это приложение создается на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код, используемый в данном примере, вместе с дополнительной обработкой ошибок, функциями и аннотациями кода можно получить на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/Search/BingVideoSearchv7.java).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Комплект разработчика Java (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html).
 
@@ -59,7 +59,7 @@ ms.locfileid: "74378648"
     }
     ```
 
-3. Создайте метод `SearchVideos()` с переменными для узла и пути конечной точки API, ключа подписки и условия поиска. Он возвращает объект `SearchResults`. 
+3. Создайте метод `SearchVideos()` с переменными для узла и пути конечной точки API, ключа подписки и условия поиска. Он возвращает объект `SearchResults`. В качестве `host` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
 
     ```java
     public static SearchResults SearchVideos (String searchQuery) throws Exception {
@@ -243,11 +243,11 @@ ms.locfileid: "74378648"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-video-search-single-page-app.md)
 
-## <a name="see-also"></a>См. также 
+## <a name="see-also"></a>См. также раздел 
 
  [Что такое API Bing для поиска видео?](../overview.md)

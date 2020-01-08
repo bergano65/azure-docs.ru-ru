@@ -2,19 +2,16 @@
 title: Краткое руководство Azure. Создание учетной записи службы автоматизации Azure | Документация Майкрософт
 description: Узнайте, как создать учетную запись службы автоматизации Azure и запустить модуль runbook.
 services: automation
-author: csand-msft
-ms.author: csand
 ms.date: 04/04/2019
 ms.topic: quickstart
-ms.service: automation
 ms.subservice: process-automation
 ms.custom: mvc
-ms.openlocfilehash: 80a175aad3c692a5dfd04c7399211c58134c5164
-ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
+ms.openlocfilehash: a2d15dd520db16012f530d2ac6188a4642c89795
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71937165"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75421662"
 ---
 # <a name="create-an-azure-automation-account"></a>Создание учетной записи службы автоматизации Azure
 
@@ -61,7 +58,7 @@ ms.locfileid: "71937165"
 
 1. Когда в строке **Состояние задания** отобразится значение **Выполняется**, щелкните **Вывод** или **All Logs** (Все журналы), чтобы просмотреть выходные данные задания runbook. Для этого учебного модуля runbook выводится список ресурсов Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы развернули учетную запись службы автоматизации, запустили задание runbook и просмотрели его результаты. Дополнительные сведения о службе автоматизации Azure см. в следующем кратком руководстве по созданию первого модуля runbook.
 

@@ -8,21 +8,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-autosuggest
 ms.topic: quickstart
-ms.date: 07/26/2019
+ms.date: 12/11/2019
 ms.author: aahi
-ms.openlocfilehash: b395c9202ce6d67b76bc0dc6e203a0db275b4fa1
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: ef5180aae04f71f3bbe6fbcd7d3df393b107be35
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565785"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448799"
 ---
 # <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-ruby"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Ruby
 
 В этом кратком руководстве описано, как настроить осуществление вызовов к API Автозаполнения Bing и получение ответа JSON. Это простое приложение Ruby отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке Ruby, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Ruby 2.4](https://www.ruby-lang.org/en/downloads/) или более поздней версии.
 
@@ -38,7 +38,7 @@ ms.locfileid: "68565785"
     require 'json'
     ```
 
-2. Создайте переменные для хоста и пути API, [рыночного кода](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и частичного поискового запроса.
+2. Создайте переменные для хоста и пути API, [рыночного кода](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и частичного поискового запроса. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
 
     ```ruby
     subscriptionKey = 'enter your key here'
@@ -146,12 +146,12 @@ ms.locfileid: "68565785"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание одностраничного веб-приложения](../tutorials/autosuggest.md)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Что такое API автозаполнения Bing?](../get-suggested-search-terms.md)
 - [Справочник по API автозаполнения Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference)

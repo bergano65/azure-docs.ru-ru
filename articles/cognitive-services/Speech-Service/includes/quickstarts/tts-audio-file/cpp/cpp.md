@@ -1,21 +1,21 @@
 ---
 title: Краткое руководство. Синтезирование речи с записью в звуковой файл в службе "Речь" с помощью C++
 titleSuffix: Azure Cognitive Services
-description: ПОДЛЕЖИТ УТОЧНЕНИЮ
+description: TBD
 services: cognitive-services
 author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
+ms.topic: include
 ms.date: 10/28/2019
 ms.author: erhopf
-ms.openlocfilehash: fb26fa2fd43a9976c5abb89cef795c06d700db20
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 3d50b7e8e4455fddf9cfb25e876d677b556bfb31
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74817898"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75468381"
 ---
 [!INCLUDE [windows](./windows.md)]
 

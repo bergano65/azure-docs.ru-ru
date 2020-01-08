@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 09/17/2019
 ms.author: jgao
-ms.openlocfilehash: 1e993ec50694d8672fbe05f982d5dbc45a815abb
-ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
+ms.openlocfilehash: d3c1070577ee57f18018e9b74be5e29998cc3e64
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71161475"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75453665"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-resource-manager-template"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью шаблона Resource Manager
 
@@ -25,7 +25,7 @@ ms.locfileid: "71161475"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этой статьей необходимо иметь следующее.
 
@@ -148,11 +148,11 @@ Write-Host "Press [ENTER] to continue..."
 
 ---
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Работая с этим кратким руководством, вы создали хранилище ключей и секрет с помощью шаблона Azure Resource Manager и проверили развертывание. Дополнительные сведения о Key Vault и Azure Resource Manager см. в следующих статьях.
 
 - [Обзор Azure Key Vault](key-vault-overview.md)
-- Сведения об [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md)
+- Сведения об [Azure Resource Manager](../azure-resource-manager/management/overview.md)
 - Сведения о [ключах, секретах и сертификатах](about-keys-secrets-and-certificates.md)
 - [Рекомендации по Azure Key Vault](key-vault-best-practices.md)

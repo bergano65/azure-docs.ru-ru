@@ -7,27 +7,27 @@ author: markamos
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
+ms.topic: include
 ms.date: 10/10/2019
 ms.author: erhopf
-ms.openlocfilehash: a858a078f8e22a7176fc0eeb09ae0133e2ea11a4
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: db00398efa638ac945bc188ad0c44f904059e689
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74818552"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75468036"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для .NET Framework (Windows).
 
 [!INCLUDE [License Notice](~/includes/cognitive-services-speech-service-license-notice.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
 * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
 
-## <a name="create-a-visual-studio-project-and-install-the-speech-sdk"></a>Создание проекта Visual Studio и установка пакета SDK для службы "Речь"
+## <a name="create-a-visual-studio-project-and-install-the-speech-sdk"></a>Создание проекта Visual Studio и установка пакета SDK службы "Речь"
 
 Вам необходимо установить [пакет SDK NuGet для службы "Речь"](https://aka.ms/csspeech/nuget), чтобы вы могли ссылаться на него в коде. Для этого может потребоваться сначала создать проект **helloworld**. Если у вас уже есть проект с рабочей нагрузкой **Разработка классических приложений .NET**, можно использовать этот проект и перейти к разделу [Установка пакета SDK для службы "Речь" с помощью диспетчера пакетов NuGet](#use-nuget-package-manager-to-install-the-speech-sdk).
 
@@ -73,6 +73,6 @@ ms.locfileid: "74818552"
 
 Теперь можно перейти к разделу [Дополнительная информация](#next-steps) ниже.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [windows](../quickstart-list.md)]

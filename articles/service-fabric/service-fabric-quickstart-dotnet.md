@@ -1,26 +1,17 @@
 ---
 title: Быстрое создание приложения .NET в Service Fabric в Azure
 description: В рамках этого краткого руководства вы создадите приложение .NET для Azure, используя пример приложения надежных служб Service Fabric.
-services: service-fabric
-documentationcenter: .net
 author: mikkelhegn
-manager: msfussell
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: quickstart
-ms.tgt_pltfrm: NA
-ms.workload: azure-vs
 ms.date: 06/26/2019
 ms.author: mikhegn
 ms.custom: mvc, devcenter, vs-azure
-ms.openlocfilehash: dfc8890d58763bd193f6a0b4137fc972d26beb9f
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 545e3efc0815e48d5bd16beabbf9f6ef283fea8d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74013216"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75464421"
 ---
 # <a name="quickstart-deploy-a-net-reliable-services-application-to-service-fabric"></a>Краткое руководство. Развертывание приложения надежных служб .NET в Service Fabric
 
@@ -39,7 +30,7 @@ Azure Service Fabric — это платформа распределенных 
 * Масштабирование приложения на несколько узлов
 * Последовательное обновление приложения
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим кратким руководством сделайте следующее:
 
@@ -183,7 +174,7 @@ Service Fabric развертывает обновления для прилож
 
     Service Fabric выполняет надежное обновление. Для этого после обновления службы на каждом узле кластера выполняется ожидание в течение двух минут, и затем Service Fabric переходит к следующему узлу кластера. Все обновление должно занять около 8 минут.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить следующие действия:
 

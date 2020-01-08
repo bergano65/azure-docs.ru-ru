@@ -11,12 +11,12 @@ ms.date: 4/11/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 44abf23ce632aa1ac630eab3313ffd675eef1a0b
-ms.sourcegitcommit: b5d59c6710046cf105236a6bb88954033bd9111b
+ms.openlocfilehash: 94dcc0dee5dd4fe81eb5ce067d7ace31edeca353
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74559160"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75461521"
 ---
 # <a name="quickstart-create-and-query-an-azure-sql-data-warehouse-with-azure-powershell"></a>Краткое руководство. Создание Хранилища данных SQL Azure и его запрос с помощью Azure PowerShell
 
@@ -73,7 +73,7 @@ $databasename = "mySampleDataWarehosue"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте [группу ресурсов Azure ](../azure-resource-manager/resource-group-overview.md) с помощью команды [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа. В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении `westeurope`.
+Создайте [группу ресурсов Azure ](../azure-resource-manager/management/overview.md) с помощью команды [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа. В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении именем `westeurope`.
 
 ```powershell
 New-AzResourceGroup -Name $resourcegroupname -Location $location
@@ -146,7 +146,7 @@ New-AzSqlDatabase `
 Remove-AzResourceGroup -ResourceGroupName $resourcegroupname
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы создали хранилище данных, создали правило брандмауэра, подключились к этому хранилищу данных и выполнили несколько запросов. Чтобы узнать больше о хранилище данных SQL Azure, перейдите к руководству по загрузке данных.
 > [!div class="nextstepaction"]

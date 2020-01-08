@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 07/05/2019
+ms.date: 12/23/2019
 ms.author: chlandsi
-ms.openlocfilehash: be5f62a75d9a3998d843e9865768b46658b8386c
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: c2f0fbe66b26c6eca6e0c0b2530efacba9bae958
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74815031"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75380598"
 ---
 # <a name="quickstart-recognize-speech-in-objective-c-on-macos-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в macOS с помощью Objective-C и пакета SDK службы "Речь"
 
@@ -23,7 +23,7 @@ ms.locfileid: "74815031"
 
 Из этой статьи вы узнаете, как с помощью пакета SDK для службы "Речь" в Azure Cognitive Services можно создать приложение macOS на Objective-C, которое будет преобразовывать микрофонную запись речи в текст.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы вам потребуются:
 
@@ -89,7 +89,7 @@ ms.locfileid: "74815031"
 1. Скомпилируйте и запустите пример кода, выбрав в меню **Product** > **Run** (Продукт -> Запустить). Можно также выбрать **Play** (Воспроизвести).
 1. Нажав кнопку и произнеся несколько слов, вы должны увидеть произнесенный текст в нижней части экрана. При первом запуске приложения должен отобразится запрос о предоставлении приложению доступа к микрофону компьютера.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Ознакомьтесь с примерами на Objective-C на сайте GitHub](https://aka.ms/csspeech/samples)

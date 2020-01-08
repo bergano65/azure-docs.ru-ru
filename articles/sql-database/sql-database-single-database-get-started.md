@@ -11,12 +11,12 @@ author: sachinpMSFT
 ms.author: ninarn
 ms.reviewer: carlrab, sstein
 ms.date: 09/09/2019
-ms.openlocfilehash: 482fc3f08fb986908efcab83a82338ced36ee689
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 5cfccd6e79b7289b6fd59abcabba05abab6ab09b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73821004"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75443839"
 ---
 # <a name="quickstart-create-a-single-database-in-azure-sql-database-using-the-azure-portal-powershell-and-azure-cli"></a>Краткое руководство. Создание отдельной базы данных в Базе данных SQL Azure с помощью портала Azure, PowerShell и Azure CLI
 
@@ -33,7 +33,7 @@ ms.locfileid: "73821004"
 - Отдельная база данных на уровне подготовленных вычислений имеет определенное количество предварительно выделенных вычислительных ресурсов, в том числе объем памяти и циклов ЦП, для которых используется одна из двух [моделей приобретения](sql-database-purchase-models.md).
 - Отдельная база данных на уровне бессерверных вычислений имеет широкий спектр автоматически масштабирующихся вычислительных ресурсов, в том числе объем памяти и циклов ЦП. Такая база данных доступна только в рамках [моделей приобретения на основе виртуальных ядер](sql-database-service-tiers-vcore.md).
 
-При создании отдельной базы данных можете также определить [Сервер Базы данных SQL](sql-database-servers.md), чтобы управлять им и разместить его в [группе ресурсов Azure](../azure-resource-manager/resource-group-overview.md) в указанном регионе.
+При создании отдельной базы данных можете также определить [Сервер Базы данных SQL](sql-database-servers.md), чтобы управлять им и разместить его в [группе ресурсов Azure](../azure-resource-manager/management/overview.md) в указанном регионе.
 
 > [!NOTE]
 > В этом кратком руководстве используется [модель приобретения на основе виртуальных ядер](sql-database-service-tiers-vcore.md). Также доступна [модель приобретения на основе единиц DTU](sql-database-service-tiers-DTU.md).
@@ -76,7 +76,7 @@ ms.locfileid: "73821004"
 2. На странице группы ресурсов щелкните **Удалить группу ресурсов**.
 3. Введите *myResourceGroup* в поле и щелкните **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Создайте правило брандмауэра на уровне сервера, чтобы подключиться к отдельной базе данных с помощью локальных или удаленных средств. Подробные сведения см. в разделе [Создание правила брандмауэра на уровне сервера](sql-database-server-level-firewall-rule.md).
 - Создав правило брандмауэра на уровне сервера, вы сможете [устанавливать подключение и выполнять запросы к базе данных](sql-database-connect-query.md) с помощью разных средств и языков.

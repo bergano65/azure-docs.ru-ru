@@ -1,5 +1,5 @@
 ---
-title: Руководство по параметрам публикации. Распознавание речи
+title: Руководство. параметрам публикации. Распознавание речи
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве вы измените параметры публикации, чтобы улучшить прогнозирование/
 services: cognitive-services
@@ -9,16 +9,16 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/03/2019
+ms.date: 12/13/2019
 ms.author: diberry
-ms.openlocfilehash: 0e105d70ff7f590a84e0a82c15bcdd83052b63a8
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 7683a73fd1f403847089dc722e5f6382acd948cb
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74808006"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75447698"
 ---
-# <a name="tutorial--add-sentiment-analysis-as-a-publishing-setting"></a>Руководство по  добавлению анализа тональности как параметра публикации
+# <a name="tutorial--add-sentiment-analysis-as-a-publishing-setting"></a>Руководство.  добавлению анализа тональности как параметра публикации
 
 В этом руководстве содержатся сведения об изменении параметров публикации для извлечения анализа тональности и последующего выполнения запроса к конечной точке Распознавания речи, чтобы увидеть возвращенную тональность речевого фрагмента пользователя.
 
@@ -46,7 +46,7 @@ ms.locfileid: "74808006"
 
 ## <a name="import-example-json-to-begin-app"></a>Импорт примера JSON-файла для создания приложения
 
-1.  Скачайте и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/machine-learned-entity/pizza-tutorial-with-entities.json).
+1.  Скачайте и сохраните [JSON-файл приложения](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-language-understanding/master/documentation-samples/tutorials/machine-learned-entity/pizza-tutorial-with-entities.json).
 
 [!INCLUDE [Import app steps](includes/import-app-steps.md)]
 
@@ -126,7 +126,7 @@ ms.locfileid: "74808006"
 
 [!INCLUDE [LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
 
-## <a name="related-information"></a>Связанные сведения
+## <a name="related-information"></a>Дополнительные сведения
 
 * Анализ тональности предоставляется службой [Анализ текста](../Text-Analytics/index.yml) Cognitive Services. Эта функция ограничивается [поддерживаемыми языками](luis-language-support.md##languages-supported) Анализа текста.
 * [Обучение активной версии приложения LUIS](luis-how-to-train.md)
@@ -134,7 +134,7 @@ ms.locfileid: "74808006"
 * [Тестирование приложения LUIS на портале LUIS](luis-interactive-test.md)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В рамках этого руководства вы добавили анализ тональности как параметр публикации, чтобы извлечь значения тональности из всего высказывания.
 
 > [!div class="nextstepaction"]
