@@ -60,7 +60,7 @@ ms.locfileid: "72900569"
 
 ## <a name="configure-app-insights-sdk"></a>Настройка пакета SDK App Insights
 
-1. Откройте **Проект** в веб-приложении ASP.NET Core в Visual Studio, щелкните правой кнопкой мыши AppName в **Обозревателе решений** и щелкните **Добавить** > **Телеметрия Application Insights**.
+1. Откройте **проект** в веб-приложении ASP.NET Core в Visual Studio, щелкните правой кнопкой мыши AppName в **обозревателе решений** и щелкните **Добавить** > **Телеметрия Application Insights**.
 
     ![Добавление телеметрии Application Insights](./media/dotnetcore-quick-start/2vsaddappinsights.png)
 
