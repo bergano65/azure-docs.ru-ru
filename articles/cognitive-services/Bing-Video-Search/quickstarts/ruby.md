@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: quickstart
-ms.date: 06/26/2019
+ms.date: 12/09/2019
 ms.author: aahi
-ms.openlocfilehash: 1f1cde38aa49488a73ce98cc1a9210ed22ebee73
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 8f6022f03d28362e85fba3fd75e60c4d7032b41b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74378638"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448382"
 ---
 # <a name="quickstart-search-for-videos-using-the-bing-video-search-rest-api-and-ruby"></a>Краткое руководство. Поиск видео с помощью REST API Поиска видео Bing и Ruby
 
 Из этого краткого руководства вы узнаете, как сделать первый вызов API Bing для поиска видео и просмотреть результаты поиска в ответе JSON. Это простое приложение Ruby отправляет запрос для поиска видео HTTP к API и выводит ответ. Хотя это приложение создается на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код, используемый в данном примере, вместе с дополнительной обработкой ошибок и аннотациями кода можно получить на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/ruby/Search/BingVideoSearchv7.rb).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Ruby 2.4 или более поздней версии
 
@@ -37,7 +37,7 @@ ms.locfileid: "74378638"
     require 'json'
     ```
 
-2. Создайте переменные для конечной точки API, пути поиска видео API, ключа подписки, а также условия поиска.
+2. Создайте переменные для конечной точки API, пути поиска видео API, ключа подписки, а также условия поиска. В качестве `uri` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
 
     ```ruby
     uri  = "https://api.cognitive.microsoft.com"
@@ -188,12 +188,12 @@ ms.locfileid: "74378638"
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство. Одностраничное приложение для поиска видео](../tutorial-bing-video-search-single-page-app.md)
 
-## <a name="see-also"></a>См. также 
+## <a name="see-also"></a>См. также раздел 
 
  [Что такое API Bing для поиска видео?](../overview.md)
 

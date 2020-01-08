@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/09/2019
 ms.author: sagonzal
 ms.custom: aaddev, scenarios:getting-started, languages:Java
-ms.openlocfilehash: 1a5401ee76f60c9b9c2a75561cad8f6571d3b308
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 7534d425a9a7e00c4e57c0d9faea0750d311dcaf
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74920707"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75549947"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-java-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Java с помощью учетной записи Майкрософт
 
@@ -28,7 +28,7 @@ ms.locfileid: "74920707"
 
 ![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-java-webapp/java-quickstart.svg)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для запуска этого примера потребуется:
 
@@ -39,15 +39,15 @@ ms.locfileid: "74920707"
 > ## <a name="register-and-download-your-quickstart-app"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
 > У вас есть два варианта запуска приложения, используемого в этом кратком руководстве: оперативно (вариант 1) или вручную (вариант 2).
 >
-> ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
+> ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 >
 > 1. Откройте [Регистрация приложений](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps) на портале Azure.
 > 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
 > 1. Следуйте инструкциям, чтобы быстро скачать и автоматически настроить новое приложение.
 >
-> ### <a name="option-2-register-and-manually-configure-your-application-and-code-sample"></a>Вариант 2. Регистрация и настройка приложения и примера кода вручную
+> ### <a name="option-2-register-and-manually-configure-your-application-and-code-sample"></a>Вариант 2. Регистрация и настройка приложения и примера кода вручную
 >
-> #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
+> #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 >
 > Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение вручную, сделайте следующее:
 >
@@ -61,7 +61,7 @@ ms.locfileid: "74920707"
 >    - Оставьте поле **URI-перенаправление** пустым, и выберите **Регистрация**.
 > 1. На странице **Обзор** найдите **идентификатор приложения (клиента)** и **каталога (клиента)** . Скопируйте эти значения для дальнейшего использования.
 > 1. В меню выберите **Проверка подлинности**, а затем добавьте следующие сведения:
->    - В поле**URI-перенаправление** добавьте `http://localhost:8080/msal4jsamples/secure/aad` и `http://localhost:8080/msal4jsamples/graph/me`.
+>    - В поле**URI-перенаправление** добавьте `http://localhost:8080/msal4jsample/secure/aad` и `http://localhost:8080/msal4jsample/graph/me`.
 >    - Щелкните **Сохранить**.
 > 1. В меню выберите **Сертификаты и секреты**, а затем в разделе **Секреты клиента** щелкните **Новый секрет клиента**:
 >
@@ -103,7 +103,7 @@ ms.locfileid: "74920707"
     ```
 
 > [!div renderon="docs"]
-> Описание
+> Где:
 >
 > - `Enter_the_Application_Id_here` — идентификатор регистрируемого приложения.
 > - `Enter_the_Client_Secret_Here` — это **секрет клиента**, созданного вами в пункте **Сертификаты и Секреты** для зарегистрированного приложения.
@@ -121,7 +121,7 @@ ms.locfileid: "74920707"
 
 1. На основной странице нажмите кнопку **Вход**, чтобы перенаправиться в Azure Active Directory и запросить у пользователя учетные данные.
 
-1. После проверки подлинности пользователь перенаправляется на страницу *http://localhost:8080/msal4jsamples/secure/aad* . После входа на странице появятся сведения об учетной записи, с помощью которой выполнен вход. В примере пользовательского интерфейса есть следующие кнопки:
+1. После проверки подлинности пользователь перенаправляется на страницу *http://localhost:8080/msal4jsample/secure/aad* . После входа на странице появятся сведения об учетной записи, с помощью которой выполнен вход. В примере пользовательского интерфейса есть следующие кнопки:
     - *Выход*: пользователь выходит из приложения и перенаправляется на домашнюю страницу.
     - *Показать сведения о пользователе*: получение маркера Microsoft Graph и вызов Microsoft Graph с помощью запроса, содержащего этот маркер. Этот запрос возвращает сведения о пользователе, который выполнил вход в систему.
 
@@ -156,7 +156,7 @@ compile group: 'com.microsoft.azure', name: 'msal4j', version: '1.0.0'
 import com.microsoft.aad.msal4j.*;
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 
 Дополнительные сведения о разрешениях и согласии:
 

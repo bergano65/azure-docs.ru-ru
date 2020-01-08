@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 06/28/2019
+ms.date: 12/23/2019
 ms.author: cbasoglu
-ms.openlocfilehash: 083ac49919bcf60fdd0b34a5007e03d215c23280
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: 7c5611a142087cff06eefb0277b12ff786074e1a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74815008"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75446835"
 ---
 # <a name="quickstart-recognize-speech-in-swift-on-macos-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в Swift с использованием macOS и пакета SDK службы "Речь"
 
@@ -23,7 +23,7 @@ ms.locfileid: "74815008"
 
 Из этой статьи вы узнаете, как с помощью пакета SDK для службы "Речь" в Cognitive Services можно создать приложение macOS на Swift, которое будет преобразовывать микрофонную запись речи в текст.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Предварительные требования для начала работы:
 
@@ -90,7 +90,7 @@ ms.locfileid: "74815008"
 1. Скомпилируйте и запустите пример кода, выбрав в меню **Product** > **Run** (Продукт -> Запустить) или нажав кнопку **Play** (Воспроизвести).
 1. Нажав кнопку Recognize (Распознать) в приложении и сказав несколько слов, вы должны увидеть произнесенный текст в нижней части окна приложения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Примеры на сайте GitHub](https://aka.ms/csspeech/samples)

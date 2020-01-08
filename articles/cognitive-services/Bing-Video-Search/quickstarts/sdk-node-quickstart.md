@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: quickstart
-ms.date: 07/18/2019
+ms.date: 12/09/2019
 ms.author: aahi
-ms.openlocfilehash: 5c8bd4ccadcc3c1947905e6bd74b48045a62ab57
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 10d59da26c4ad583e3cb80b7d5cfc0d569f83ac1
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74383743"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75382622"
 ---
 # <a name="quickstart-perform-a-video-search-with-the-bing-video-search-sdk-for-nodejs"></a>Краткое руководство. Поиск видео с помощью пакета SDK Поиска видео Bing для Node.js
 
 Используйте это краткое руководство, чтобы начать поиск новостей с помощью пакета SDK Поиска видео Bing для Node.js. Пока для Поиска видео Bing имеется REST API, совместимый с большинством языков, пакет SDK предоставляет простой способ интегрировать службу в приложения. Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples/blob/master/Samples/videoSearch.js). Он содержит больше аннотаций и функций.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - [Node.js](https://www.nodejs.org/)
 
@@ -59,12 +59,12 @@ ms.locfileid: "74383743"
     });
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство. Одностраничное приложение для поиска видео](../tutorial-bing-video-search-single-page-app.md)
 
-## <a name="see-also"></a>См. также 
+## <a name="see-also"></a>См. также раздел 
 
 * [Что такое API Bing для поиска видео?](../overview.md)
 * [Примеры пакета SDK для .NET в Cognitive Services](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/BingSearchv7)

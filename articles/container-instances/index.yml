@@ -3,7 +3,7 @@ title: Документация по службе "Экземпляры конт
 summary: Запуск контейнеров Docker по запросу в управляемой бессерверной среде Azure. Экземпляры контейнеров Azure — это решение, которое подойдет для любого сценария. Службу можно использовать в изолированных контейнерах без оркестрации. Запускайте приложения на основе событий, оперативно развертывайте решения из конвейеров разработки контейнеров, а также выполняйте задания обработки данных и сборки.
 metadata:
   title: Документация по Экземплярам контейнеров Azure — запуск бессерверных контейнеров по запросу
-  description: Запуск контейнеров Docker в управляемой бессерверной среде Azure.
+  description: Служба "Экземпляры контейнеров Azure" (ACI) позволяет запускать контейнеры Docker в управляемой безсерверной облачной среде без настройки виртуальных машин, кластеров или оркестраторов.
   services: 
   ms.service: container-instances
   ms.topic: landing-page
@@ -11,12 +11,12 @@ metadata:
   author: dlepow
   ms.author: danlep
   ms.date: 09/25/2019
-  ms.openlocfilehash: a031f70cfaad9369f79a0e18f3527250eb82bfeb
-  ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+  ms.openlocfilehash: 4e7be5b6da633d370a2ccdce7331788f2fbe0440
+  ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/27/2019
-  ms.locfileid: "71326953"
+  ms.lasthandoff: 12/25/2019
+  ms.locfileid: "75445759"
 landingContent:
 - title: Об Экземплярах контейнеров Azure
   linkLists:
@@ -26,7 +26,7 @@ landingContent:
       url: container-instances-overview.md
     - text: Группы контейнеров
       url: container-instances-container-groups.md
-    - text: Часто задаваемые вопросы
+    - text: ВОПРОСЫ И ОТВЕТЫ
       url: container-instances-faq.md
 - title: Начало работы
   linkLists:

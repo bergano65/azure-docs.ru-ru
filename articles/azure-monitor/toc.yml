@@ -8,7 +8,17 @@
       href: terminology.md
 - name: Краткие руководства
   items:
-    - name: Приложения
+    - name: Мониторинг ресурса Azure
+      href: learn/quick-monitor-azure-resource.md
+    - name: Мониторинг виртуальных машин
+      items:
+        - name: Сбор данных виртуальных машин Azure
+          href: learn/quick-collect-azurevm.md
+        - name: "Сбор данных\_— компьютер Linux"
+          href: learn/quick-collect-linux-computer.md
+        - name: "Сбор данных\_— компьютер Windows"
+          href: learn/quick-collect-windows-computer.md
+    - name: Мониторинг приложений
       items:
         - name: Приложение .NET
           href: learn/quick-monitor-portal.md
@@ -20,26 +30,20 @@
           href: learn/mobile-center-quickstart.md
         - name: Веб-приложение
           href: app/website-monitoring.md
-    - name: Виртуальные машины
-      items:
-        - name: "Сбор данных\_— виртуальные машины Azure"
-          href: learn/quick-collect-azurevm.md
-        - name: "Сбор данных\_— компьютер Linux"
-          href: learn/quick-collect-linux-computer.md
-        - name: "Сбор данных\_— компьютер Windows"
-          href: learn/quick-collect-windows-computer.md
 - name: Учебники
   items:
-    - name: Журналы
-      items:
-        - name: Log Analytics
-          href: log-query/get-started-portal.md
-        - name: Запросы журнала
-          href: log-query/get-started-queries.md
-        - name: Панель мониторинга с данными журнала
-          href: learn/tutorial-logs-dashboards.md
-        - name: Создание оповещений о данных журнала
-          href: learn/tutorial-response.md
+    - name: Создание диаграммы метрик
+      href: learn/tutorial-metrics-explorer.md
+    - name: Сбор журналов из ресурса Azure
+      href: learn/tutorial-resource-logs.md
+    - name: Создание запросов журнала
+      href: log-query/get-started-queries.md
+    - name: Создание панели мониторинга из запроса к журналу
+      href: learn/tutorial-logs-dashboards.md
+    - name: Создание оповещения из запроса к журналу
+      href: learn/tutorial-response.md
+    - name: Автомасштабирование в соответствии с производительностью и расписанием
+      href: learn/tutorial-autoscale-performance-schedule.md
     - name: Application Insights
       items:
         - name: Поиск исключений во время выполнения приложения
@@ -52,10 +56,6 @@
           href: learn/tutorial-users.md
         - name: Панель мониторинга с данными приложения
           href: learn/tutorial-app-dashboards.md
-    - name: Архивация данных журнала и метрики платформы
-      href: learn/tutorial-archive-data.md
-    - name: Автомасштабирование в соответствии с производительностью и расписанием
-      href: learn/tutorial-autoscale-performance-schedule.md
 - name: Примеры
   items:
     - name: Azure PowerShell
@@ -93,7 +93,7 @@
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
           href: app/data-retention-privacy.md
-    - name: Оповещения
+    - name: видны узлы
       items:
         - name: Обзор
           href: platform/alerts-overview.md
@@ -105,19 +105,19 @@
           href: platform/activity-log-alerts.md
         - name: Анализ изменений
           href: app/change-analysis.md
-    - name: Визуализация данных
+    - name: Визуализируйте данные
       href: visualizations.md
     - name: Интеграция с партнерскими решениями
       href: platform/partners.md
-    - name: Часто задаваемые вопросы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       items:
-        - name: Анализ журналов
+        - name: Log Analytics
           displayName: FAQ
           href: platform/log-faq.md
         - name: Application Insights
           displayName: FAQ
           href: app/troubleshoot-faq.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Управление Azure Monitor
       items:
@@ -196,7 +196,7 @@
                 - name: Приложение Spring Boot
                   displayname: java
                   href: /java/azure/spring-framework/configure-spring-boot-java-applicationinsights
-                - name: Устранение неполадок
+                - name: Диагностика
                   href: app/java-troubleshoot.md
             - name: Node.js
               href: app/nodejs.md
@@ -368,7 +368,7 @@
               href: app/proactive-potential-memory-leak.md
             - name: Обнаружение системой безопасности
               href: app/proactive-application-security-detection-pack.md
-            - name: Облачные службы Azure
+            - name: Oблачныe службы Azure
               href: app/proactive-cloud-services.md
             - name: Управление правилами интеллектуального обнаружения
               href: app/proactive-arm-config.md
@@ -479,50 +479,46 @@
           href: insights/monitor-azure-resource.md
         - name: Мониторинг групп ресурсов
           href: insights/resource-group-insights.md
-        - name: Общие сведения о журналах платформы
-          href: platform/platform-logs-overview.md
-        - name: Журналы ресурсов
+        - name: Журналы платформы
           items:
             - name: Обзор
-              displayname: Resource logs
-              href: platform/resource-logs-overview.md
-            - name: Сбор журналов в Azure Monitor
-              displayname: Resource logs
-              href: platform/resource-logs-collect-workspace.md
-            - name: Архивирование в хранилище
-              displayname: Resource logs
-              href: platform/resource-logs-collect-storage.md
-            - name: Потоковая передача в Центры событий
-              displayname: Resource logs
-              href: platform/resource-logs-stream-event-hubs.md
-        - name: Журнал действий
-          items:
-            - name: Обзор
-              displayname: Activity log
-              href: platform/activity-logs-overview.md
-            - name: Сбор журналов с использованием параметра диагностики
-              displayname: Activity log
-              href: platform/diagnostic-settings-subscription.md
-            - name: Просмотр и извлечение
-              displayname: Activity log
+              displayName: 'Platform logs, Resource logs, Activity log'
+              href: platform/platform-logs-overview.md
+            - name: Просмотр журнала действий
+              displayName: Platform logs
               href: platform/activity-log-view.md
-            - name: Сбор и анализ
-              displayname: Activity log
-              href: platform/activity-log-collect.md
-            - name: Сбор данных для всех клиентов
-              displayname: Activity log
-              href: platform/activity-log-collect-tenants.md
-            - name: Экспорт
-              displayname: Activity log
-              href: platform/activity-log-export.md
-            - name: Схема
-              displayname: Activity log
-              href: platform/activity-log-schema.md
+            - name: Отправка в места назначения
+              items:
+                - name: Рабочая область Log Analytics
+                  displayname: 'Resource logs, Activity log, Platform logs'
+                  href: platform/resource-logs-collect-workspace.md
+                - name: Хранилище Azure
+                  displayname: 'Resource logs, Activity log, Platform logs'
+                  href: platform/resource-logs-collect-storage.md
+                - name: Центры событий
+                  displayname: 'Resource logs, Activity log, Platform logs'
+                  href: platform/resource-logs-stream-event-hubs.md
+            - name: Сбор устаревших журналов действий
+              items:
+                - name: Обзор
+                  displayName: Resource logs
+                  href: platform/diagnostic-settings-legacy.md
+                - name: Сбор и анализ
+                  displayname: Activity log
+                  href: platform/activity-log-collect.md
+                - name: Сбор данных для всех клиентов
+                  displayname: Activity log
+                  href: platform/activity-log-collect-tenants.md
+                - name: Экспорт
+                  displayname: Activity log
+                  href: platform/activity-log-export.md
         - name: Параметры диагностики
           items:
             - name: Создание параметра диагностики
+              displayName: 'Platform logs, Resource logs, Activity log'
               href: platform/diagnostic-settings.md
-            - name: Создание параметра диагностики с помощью Resource Manager
+            - name: Создание с помощью Resource Manager
+              displayName: 'diagnostic setting, Platform logs, Resource logs, Activity log'
               href: platform/diagnostic-settings-template.md
             - name: Изменение формата хранилища BLOB-объектов
               displayname: Diagnostic settings
@@ -545,7 +541,7 @@
                   items:
                     - name: Журнал версий
                       href: platform/diagnostics-extension-schema.md
-                    - name: Схема
+                    - name: схема
                       href: platform/diagnostics-extension-schema-1dot3.md
                     - name: Отправка в службу хранилища Azure
                       href: platform/diagnostics-extension-to-storage.md
@@ -579,6 +575,8 @@
                   href: platform/log-analytics-agent.md
                 - name: Агенты Windows
                   href: platform/agent-windows.md
+                - name: Агенты Linux
+                  href: platform/agent-linux.md
                 - name: Расширение виртуальной машины для Windows
                   href: ../virtual-machines/windows/extensions-oms.md
                 - name: Расширение виртуальной машины для Linux
@@ -589,7 +587,7 @@
                   href: platform/agent-manage.md
                 - name: Работоспособность агентов
                   href: insights/solution-agenthealth.md
-            - name: Устранение неполадок
+            - name: Диагностика
               items:
                 - name: Расширение службы анализа журналов для виртуальной машины
                   displayname: 'troubleshoot, troubleshooting'
@@ -630,7 +628,7 @@
               href: insights/vminsights-known-issues.md
             - name: Часто задаваемые вопросы об общедоступной версии
               href: insights/vminsights-ga-release-faq.md
-            - name: Часто задаваемые вопросы
+            - name: ВОПРОСЫ И ОТВЕТЫ
               href: insights/vminsights-faq.md
             - name: Включение мониторинга
               items:
@@ -676,7 +674,7 @@
           items:
             - name: Обзор
               href: insights/container-insights-overview.md
-            - name: Вопросы и ответы
+            - name: ВОПРОСЫ И ОТВЕТЫ
               href: insights/container-insights-faq.md
             - name: Включение мониторинга
               items:
@@ -730,7 +728,7 @@
           href: insights/containers.md
     - name: Мониторинг других ресурсов
       items:
-        - name: Хранилище
+        - name: Память
           items:
             - name: Использование Azure Monitor для службы хранилища
               displayname: 'storage, monitor, insights, storage accounts, azure storage'
@@ -739,7 +737,7 @@
           items:
             - name: Azure SQL
               href: insights/azure-sql.md
-            - name: SQL Server
+            - name: "SQL\_Server"
               href: insights/sql-assessment.md
             - name: Azure Cosmos DB
               href: insights/cosmosdb-insights-overview.md
@@ -763,7 +761,7 @@
                   href: insights/network-performance-monitor-expressroute.md
                 - name: Цены
                   href: insights/network-performance-monitor-pricing-faq.md
-                - name: Часто задаваемые вопросы
+                - name: ВОПРОСЫ И ОТВЕТЫ
                   href: insights/network-performance-monitor-faq.md
         - name: Решения для мониторинга
           items:
@@ -832,7 +830,7 @@
                   href: log-query/data-explorer-difference.md
                 - name: Полезные операторы
                   href: log-query/useful-operators.md
-                - name: Функции Azure
+                - name: Функции
                   href: log-query/functions.md
                 - name: Переход с поиска по журналам
                   href: log-query/log-search-transition.md
@@ -1121,7 +1119,7 @@
           href: insights/scom-assessment.md
         - name: Подключение Configuration Manager
           href: platform/collect-sccm.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Ограничения службы
       href: service-limits.md
@@ -1133,7 +1131,7 @@
           href: app/correlation.md
         - name: Пакеты NuGet
           href: app/nuget.md
-        - name: Поддержка платформ
+        - name: Поддержка платформы
           href: app/platforms.md
         - name: Переопределение конечных точек
           href: app/custom-endpoints.md
@@ -1161,11 +1159,17 @@
       items:
         - name: Поддерживаемые метрики
           href: platform/metrics-supported.md
+        - name: Использование экспортируемых метрик с параметрами диагностики
+          href: platform/metrics-supported-export-diagnostic-settings.md
         - name: Поддерживаемые метрики для новых оповещений
           href: platform/alerts-metric-near-real-time.md
-    - name: 'Службы, категории и схемы для журналов платформ'
-      href: platform/diagnostic-logs-schema.md
-    - name: Инфраструктура CLI Azure
+    - name: Журналы платформы
+      items:
+        - name: 'Службы, категории и схемы для журналов ресурсов'
+          href: platform/diagnostic-logs-schema.md
+        - name: Схема журнала действий
+          href: platform/activity-log-schema.md
+    - name: Azure CLI
       href: /cli/azure/monitor?view=azure-cli-latest
     - name: Использование Azure CLI с Application Insights (предварительная версия)
       href: 'https://docs.microsoft.com/cli/azure/ext/application-insights/monitor?view=azure-cli-latest'
@@ -1227,7 +1231,7 @@
           href: app/release-notes.md
     - name: Windows Analytics
       href: 'https://www.microsoft.com/en-us/WindowsForBusiness/windows-analytics'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/?products=monitor&regions=all'
     - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=monitor'

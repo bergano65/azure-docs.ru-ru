@@ -22,11 +22,17 @@
       href: quickstarts/python.md
     - name: Ruby
       href: quickstarts/ruby.md
-- name: Руководства
+- name: Клиентская библиотека
+  items:
+    - name: 'C#'
+      href: quickstarts/csharp-sdk.md
+    - name: Go
+      href: quickstarts/go-sdk.md
+- name: Учебники
   items:
     - name: Одностраничное веб-приложение
       href: tutorials/autosuggest.md
-- name: Инструкции
+- name: Практические руководства
   items:
     - name: Обновление с версии 5 до версии 7
       href: bing-autosuggest-upgrade-guide-v5-to-v7.md
@@ -36,7 +42,7 @@
       href: concepts/get-suggestions.md
     - name: Отправка запросов
       href: concepts/sending-requests.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: API Автозаполнения Bing версии 7
       href: 'https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference'
@@ -78,5 +84,5 @@
     - name: Аналитика для API Автозаполнения Bing
       maintainContext: true
       href: ../bing-web-search/bing-web-stats.md
-    - name: Соответствие требованиям
+    - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

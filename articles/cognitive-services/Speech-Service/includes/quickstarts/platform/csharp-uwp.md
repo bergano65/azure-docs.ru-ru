@@ -7,15 +7,15 @@ author: markamos
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
+ms.topic: include
 ms.date: 10/10/2019
 ms.author: erhopf
-ms.openlocfilehash: ea6218066ce381bbfa7ae8c6a02991b351163084
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 83ae1c83e536e1fdf87fe17c9254e5bef0fdc120
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74815054"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75468038"
 ---
 Здесь также описано, как установить [пакет SDK службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для универсальной платформы Windows (UWP) C#.
 
@@ -24,7 +24,7 @@ ms.locfileid: "74815054"
 
 [!INCLUDE [License Notice](~/includes/cognitive-services-speech-service-license-notice.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
@@ -36,6 +36,6 @@ ms.locfileid: "74815054"
 
 Теперь можно перейти к разделу [Дополнительная информация](#next-steps) ниже.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [windows](../quickstart-list.md)]

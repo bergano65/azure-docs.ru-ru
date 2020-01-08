@@ -17,7 +17,7 @@
       href: stream-analytics-quick-create-vs.md
     - name: "Создание задания\_— Visual Studio Code"
       href: quick-create-vs-code.md
-- name: Руководства
+- name: Учебники
   items:
     - name: 1. Создание и администрирование задания
       href: stream-analytics-manage-job.md
@@ -49,7 +49,7 @@
           href: stream-analytics-define-inputs.md
         - name: Входные эталонные данные
           href: stream-analytics-use-reference-data.md
-        - name: Создание пользовательских десериализаторов .NET
+        - name: Считывание входных данных любого формата с помощью пользовательских десериализаторов
           href: custom-deserializer-examples.md
     - name: Типы выходных данных для задания
       items:
@@ -69,7 +69,7 @@
       href: stream-analytics-geospatial-functions.md
     - name: Уровень совместимости
       href: stream-analytics-compatibility-level.md
-    - name: Стандартные шаблоны запроса
+    - name: Стандартные шаблоны запросов
       href: stream-analytics-stream-analytics-query-patterns.md
     - name: Анализ данных JSON и AVRO
       href: stream-analytics-parsing-json.md
@@ -164,7 +164,7 @@
           href: repartition.md
     - name: Автоматизация
       items:
-        - name: Использование пакета .NET SDK
+        - name: Использование пакета SDK для .NET
           href: stream-analytics-dotnet-management-sdk.md
         - name: Использование Azure PowerShell
           href: 'https://github.com/Azure/azure-stream-analytics/tree/master/Samples/ASAOneClick'
@@ -174,9 +174,9 @@
       items:
         - name: Средства установки
           href: stream-analytics-tools-for-visual-studio-install.md
-        - name: Тестирование с демонстрационными данными
+        - name: Локальное тестирование с использованием примеров данных
           href: stream-analytics-vs-tools-local-run.md
-        - name: Тестирование с реальными данными
+        - name: Локальное тестирование с использованием фактических данных
           href: stream-analytics-live-data-local-testing.md
         - name: Просмотр заданий в Visual Studio
           href: stream-analytics-vs-tools.md
@@ -188,13 +188,15 @@
           href: stream-analytics-edge-csharp-udf-methods.md
     - name: Visual Studio Code
       items:
-        - name: Тестирование с демонстрационными данными
-          href: vscode-local-run.md
+        - name: Локальное тестирование с использованием примеров данных
+          href: visual-studio-code-local-run.md
+        - name: Локальное тестирование с использованием фактических данных
+          href: visual-studio-code-local-run-live-input.md
         - name: Настройка конвейера CI/CD
           href: setup-cicd-vs-code.md
         - name: Обзор заданий
-          href: vscode-explore-jobs.md
-    - name: Устранение неполадок
+          href: visual-studio-code-explore-jobs.md
+    - name: Диагностика
       items:
         - name: Входные данные
           href: stream-analytics-troubleshoot-input.md
@@ -551,7 +553,7 @@
     - name: Гарантии доставки событий
       href: /stream-analytics-query/event-delivery-guarantees-azure-stream-analytics
       maintainContext: true
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure PowerShell
       href: /powershell/module/az.streamanalytics
@@ -581,7 +583,7 @@
       href: 'https://azure.microsoft.com/updates/?product=stream-analytics'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-stream-analytics'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=stream-analytics&sort=newest'
     - name: Примеры реальных клиентов
       href: 'https://azure.microsoft.com/case-studies/?service=stream-analytics'

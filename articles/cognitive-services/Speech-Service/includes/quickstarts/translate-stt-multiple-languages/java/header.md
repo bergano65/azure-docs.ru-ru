@@ -1,20 +1,20 @@
 ---
 title: Краткое руководство. Перевод речи на несколько языков в службе "Речь" с помощью Java
 titleSuffix: Azure Cognitive Services
-description: ПОДЛЕЖИТ УТОЧНЕНИЮ
+description: TBD
 services: cognitive-services
 author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
+ms.topic: include
 ms.date: 12/09/2019
 ms.author: erhopf
-ms.openlocfilehash: 09bfdeed3456ac51b9b36e5e1055bcec55acd1b0
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 73e0bf9bc0d659c2847bc2133b470fee3b748b63
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74980657"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75466504"
 ---
 Если вы предпочитаете сразу перейти к работе, просмотрите или скачайте все <a href="https://aka.ms/speech/github-java">образцы для пакета SDK службы "Речь" для Java</a> в GitHub. В противном случае ознакомьтесь с инструкциями.

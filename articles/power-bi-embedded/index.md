@@ -1,6 +1,6 @@
 ---
-title: Документация по Azure Power BI Embedded. Руководства и справочник по API | Документация Майкрософт
-description: Узнайте, как внедрять в приложения визуализации данных и интерактивные отчеты Power BI. Руководства, справочники по API и другие документы.
+title: Документация по Azure Power BI Embedded
+description: Узнайте, как внедрять в приложения визуализации данных и интерактивные отчеты Power BI. Учебники, справочники по API и другие документы.
 services: power-bi-embedded
 author: rkarlin
 ms.author: rkarlin
@@ -9,14 +9,14 @@ layout: LandingPage
 ms.service: power-bi-embedded
 ms.topic: landing-page
 ms.date: 07/31/2018
-ms.openlocfilehash: decbe7c59f46ea77b1f5088bab8daf64722f2a8c
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: bdc609735380a280b754841009d2706c245af961
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64727726"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75427103"
 ---
-# <a name="power-bi-embedded-documentation"></a>Документация по Power BI Embedded
+# <a name="power-bi-embedded-documentation"></a>Документация по Power BI Embedded
 
 Узнайте, как добавлять в приложения визуализации данных и интерактивные отчеты с помощью Power BI Embedded. В руководствах, справочниках по API и другой документации показано, как можно легко внедрять в приложения отчеты и панели мониторинга Power BI.
 
@@ -50,7 +50,7 @@ ms.locfileid: "64727726"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Видеотека Azure Power BI Embedded</h3>
+                        <h3>Библиотека видео по Azure Power BI Embedded</h3>
                     </div>
                 </div>
             </div>
@@ -97,7 +97,7 @@ ms.locfileid: "64727726"
 
 ---
 
-<h2>Справочные материалы</h2>
+<h2>Справочник</h2>
 <ul class="panelContent cardsW">
     <li>
         <div class="cardSize">
@@ -116,7 +116,7 @@ ms.locfileid: "64727726"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>Languages</h3>
+                        <h3>Языки</h3>
                         <p><a href="https://docs.microsoft.com/dotnet/api/microsoft.azure.management.powerbiembedded?view=azure-dotnet">.NET</a></p>
                         <p><a href="https://www.nuget.org/packages/Microsoft.PowerBI.Api/">Скачивание пакета SDK для .NET</a></p>
                         <p><a href="https://microsoft.github.io/PowerBI-JavaScript/">JavaScript</a></p>

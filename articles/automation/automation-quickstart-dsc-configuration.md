@@ -2,27 +2,23 @@
 title: Быстрое начало работы с Azure — настройка DSC на виртуальной машине | Документация Майкрософт
 description: Создание стека LAMP на виртуальной машине Linux с настройкой требуемого состояния
 services: automation
-ms.service: automation
 ms.subservice: dsc
 keywords: dsc, configuration, automation
-author: KrisBash
-ms.author: krbash
 ms.date: 11/06/2018
 ms.topic: quickstart
 ms.custom: mvc
-manager: carmonm
-ms.openlocfilehash: d5eca6ffce8390b2f8b4deae589d43f40897756d
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 6c3ff10f37233294b75eceddd62c0a33f8864484
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72243459"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75421646"
 ---
 # <a name="configure-a-virtual-machine-with-desired-state-configuration"></a>Настройка Desired State Configuration на виртуальной машине Linux
 
 Включив настройку требуемого состояния (DSC), вы сможете контролировать и отслеживать конфигурации серверов Windows и Linux. Она позволяет выявлять или автоматически исправлять конфигурации, которые отличаются от требуемой конфигурации. Это руководство описывает процедуру подключения виртуальной машины Linux и развертывания стека LAMP с поддержкой DSC.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
@@ -43,7 +39,7 @@ ms.locfileid: "72243459"
 3. Найдите виртуальную машину, для которой вы хотите включить DSC. Для поиска конкретной виртуальной машины можно применить поле поиска и фильтры.
 4. Щелкните виртуальную машину, а затем выберите **Подключить**.
 5. Выберите настройки DSC для этой виртуальной машины. Если у вас есть уже готовая конфигурация, укажите ее в поле *Имя конфигурации узла*. Также вы можете задать [режим конфигурации](https://docs.microsoft.com/powershell/scripting/dsc/managing-nodes/metaConfig), который определяет правила применения настройки для виртуальной машины.
-6. Щелкните **ОК**
+6. Нажмите кнопку **ОК**.
 
 ![Подключение виртуальной машины Azure к DSC](./media/automation-quickstart-dsc-configuration/dsc-onboard-azure-vm.png)
 
@@ -104,7 +100,7 @@ configuration LAMPServer {
 1. На странице учетной записи службы автоматизации в области слева выберите **Настройка состояния (DSC)** , а затем щелкните вкладку **Конфигурации**.
 2. Щелкните **+ Добавить**.
 3. Выберите *файл конфигурации*, который вы сохранили на предыдущем этапе.
-4. Щелкните **ОК**
+4. Нажмите кнопку **ОК**.
 
 ## <a name="compile-a-configuration"></a>Компиляция конфигурации
 
@@ -135,7 +131,7 @@ configuration LAMPServer {
 
 ![Состояние узла DSC](./media/automation-quickstart-dsc-configuration/dsc-node-status.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы подключили виртуальную машину Linux к DSC, создали конфигурацию для стека LAMP и развернули ее на виртуальной машине. Дополнительные сведения о применении службы Automation DSC для непрерывного развертывания вы найдете в следующей статье:
 

@@ -1,0 +1,57 @@
+- name: Документация по Настраиваемым поставщикам Azure
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что такое Настраиваемые поставщики Azure?
+      href: overview.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: Создание настраиваемого поставщика ресурсов
+      href: create-custom-provider.md
+- name: Учебники
+  items:
+    - name: Начало работы с настраиваемыми поставщиками
+      href: tutorial-get-started-with-custom-providers.md
+    - name: Настройка службы "Функции Azure"
+      href: tutorial-custom-providers-function-setup.md
+    - name: Создание конечной точки RESTful
+      href: tutorial-custom-providers-function-authoring.md
+    - name: Создание и использование настраиваемых поставщиков
+      href: tutorial-custom-providers-create.md
+    - name: Расширение ресурсов
+      href: tutorial-resource-onboarding.md
+- name: Основные понятия
+  items:
+    - name: Политика Azure для ассоциаций
+      href: concepts-built-in-policy.md
+    - name: Подключение ресурсов
+      href: concepts-resource-onboarding.md
+- name: Практические руководства
+  items:
+    - name: Добавление пользовательских действий в Azure
+      href: custom-providers-action-endpoint-how-to.md
+    - name: Добавление пользовательских ресурсов в Azure
+      href: custom-providers-resources-endpoint-how-to.md
+- name: Справочник
+  items:
+    - name: Справочник по прокси-серверу пользовательских ресурсов
+      href: proxy-resource-endpoint-reference.md
+    - name: Справочник по кэшу пользовательских ресурсов
+      href: proxy-cache-resource-endpoint-reference.md
+    - name: Справочник по конечной точке RESTful настраиваемого поставщика
+      href: reference-custom-providers-csharp-endpoint.md
+    - name: REST
+      href: /rest/api/customproviders/
+- name: Ресурсы
+  items:
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/managed-applications/'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Рекомендации по работе с шаблонами Resource Manager
+      href: 'https://github.com/Azure/azure-quickstart-templates/blob/master/1-CONTRIBUTION-GUIDE/best-practices.md'
+    - name: Stack Overflow
+      href: 'https://stackoverflow.com/questions/tagged/azure-custom-providers'

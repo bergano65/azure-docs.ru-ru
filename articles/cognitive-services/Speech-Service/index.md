@@ -4,12 +4,12 @@ ms.date: 11-21-2019
 ms.topic: hub-page
 title: Документация по службе "Речь"
 description: Начало работы со службой "Речь" Распознавание речи, синтез речи, получение переводов в реальном времени, транскрибирование бесед или интеграция речи в боты.
-ms.openlocfilehash: df90416b9ef046d68b5785b1fcb203159831e8fd
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 7ae8f33e949519cc32d81b591503a159e045178b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74886064"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75381279"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -590,7 +590,7 @@ ms.locfileid: "74886064"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Применение пользовательских команд</h3>
-                                                    <p>Научитесь создавать простые и надежные команды и управлять взаимодействием с функциями распознавания речи и исправления ошибок.</p>
+                                                    <p>Узнайте, как легко создавать надежные приложения для голосового управления и выполнения команд, чтобы пользователи могли легко выполнять задачи, используя свой голос.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -603,7 +603,7 @@ ms.locfileid: "74886064"
                         <a href="#support">Поддержка</a>
                         <ul id="support" class="cardsC">
                             <li>
-                                <a href="https://github.com/Azure-Samples?utf8=%E2%9C%93&q=cognitive&type=&language=">
+                                <a href="https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -622,7 +622,7 @@ ms.locfileid: "74886064"
                                 </a>
                             </li>
                             <li>
-                                <a href="https://stackoverflow.com/questions/tagged/microsoft-cognitive">
+                                <a href="https://stackoverflow.com/questions/tagged/microsoft-cognitive+speech">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">

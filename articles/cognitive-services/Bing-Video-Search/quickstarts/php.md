@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: quickstart
-ms.date: 06/26/2019
+ms.date: 12/09/2019
 ms.author: aahi
-ms.openlocfilehash: 481bc700f86dfd8a28c074134fd5dcc85bb748c4
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 357cc85991ac88aef4fd0958e2bc776373f56dc8
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74378618"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448362"
 ---
 # <a name="quickstart-search-for-videos-using-the-bing-video-search-rest-api-and-php"></a>Краткое руководство. Поиск видео с помощью REST API Bing для поиска видео и PHP
 
@@ -24,7 +24,7 @@ ms.locfileid: "74378618"
 
 Технические сведения об API-интерфейсах см. в [справочнике по API](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * PHP 5.6 или более поздней версии.
 
@@ -37,7 +37,7 @@ ms.locfileid: "74378618"
 1. Убедитесь, что в `php.ini` включена поддержка безопасного HTTP-подключения, как описано в комментарии к коду.
 2. Создайте проект PHP в используемой вами интегрированной среде разработки или редакторе.
 3. Добавьте указанный ниже код.
-4. Замените значение `accessKey` ключом доступа, допустимым для подписки.
+4. Замените значение `$accessKey` ключом доступа, допустимым для подписки. В качестве `$endpoint` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
 5. Запустите программу.
 
 ```php
@@ -210,11 +210,11 @@ echo json_encode(json_decode($json), JSON_PRETTY_PRINT);
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-video-search-single-page-app.md)
 
-## <a name="see-also"></a>См. также 
+## <a name="see-also"></a>См. также раздел 
 
  [Что такое API Bing для поиска видео?](../overview.md)

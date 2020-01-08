@@ -48,6 +48,7 @@ sections:
               - href: /azure/iot-hub/quickstart-send-telemetry-ios
           - title: Управление устройством
             values:
+              - href: null
               - href: /azure/iot-hub/quickstart-control-device-node
               - href: /azure/iot-hub/quickstart-control-device-dotnet
               - href: /azure/iot-hub/quickstart-control-device-java
@@ -55,6 +56,7 @@ sections:
               - href: /azure/iot-hub/quickstart-control-device-android
           - title: Обмен данными с помощью потоков устройств (предварительная версия)
             values:
+              - href: null
               - href: /azure/iot-hub/quickstart-device-streams-echo-nodejs
               - href: /azure/iot-hub/quickstart-device-streams-echo-csharp
               - href: null
@@ -64,6 +66,7 @@ sections:
               - href: null
           - title: Подключение SSH и RDP с использованием потоков устройств (предварительная версия)
             values:
+              - href: null
               - href: /azure/iot-hub/quickstart-device-streams-proxy-nodejs
               - href: /azure/iot-hub/quickstart-device-streams-proxy-csharp
               - href: null
@@ -80,7 +83,7 @@ sections:
           - html: <a href="/azure/iot-hub/tutorial-device-twins">Настройка устройств из внутренней службы</a>
           - html: <a href="/azure/iot-hub/tutorial-firmware-update">Реализация обновления встроенного ПО устройства</a>
           - html: <a href="/azure/iot-hub/tutorial-connectivity">Проверка подключения к центру Интернета вещей с помощью имитированного устройства</a>
-  - title: Справочные материалы
+  - title: Справочник
     items:
       - type: list
         style: cards

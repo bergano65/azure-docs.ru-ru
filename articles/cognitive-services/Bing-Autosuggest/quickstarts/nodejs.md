@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-autosuggest
 ms.topic: quickstart
-ms.date: 07/26/2019
+ms.date: 12/11/2019
 ms.author: aahi
-ms.openlocfilehash: 0dd25f5ff3767e65eeb293d6a046da034d5c8879
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 9a5cce8102e3a1b3f9beaad8c42b278c56560be9
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564669"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75384940"
 ---
 # <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-nodejs"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Node.js
 
 В этом кратком руководстве описано, как настроить осуществление вызовов к API Автозаполнения Bing и получение ответа JSON. Это простое приложение Node.js отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке JavaScript, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/nodejs/Search/BingAutosuggestv7.js).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Node.js 6](https://nodejs.org/en/download/) или более поздней версии;
 
@@ -37,7 +37,7 @@ ms.locfileid: "68564669"
     let https = require ('https');
     ```
 
-2. Создайте переменные для хоста и пути конечной точки API, вашего ключа подписки, [рыночного кода](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и поискового запроса.
+2. Создайте переменные для хоста и пути конечной точки API, вашего ключа подписки, [рыночного кода](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и поискового запроса. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
 
     ```javascript
     // Replace the subscriptionKey string value with your valid subscription key.
@@ -185,7 +185,7 @@ ms.locfileid: "68564669"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание одностраничного веб-приложения](../tutorials/autosuggest.md)

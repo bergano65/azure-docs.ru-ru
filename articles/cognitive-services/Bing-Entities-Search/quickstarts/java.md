@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
-ms.date: 07/24/2019
+ms.date: 12/11/2019
 ms.author: aahi
-ms.openlocfilehash: 13e25ce0a237d34b98ec42140b86c4955f9058cb
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: c4335e1ac0f0ffc7ee5570a8f0819827fc77dd18
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74323788"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75384157"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-java"></a>Краткое руководство. Отправка запросов для поиска в REST API Bing для поиска сущностей с помощью Java
 
@@ -23,7 +23,7 @@ ms.locfileid: "74323788"
 
 Хотя это приложение создается на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Комплект разработчика Java (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/).
 * [Библиотека Gson](https://github.com/google/gson).
@@ -50,7 +50,7 @@ ms.locfileid: "74323788"
    import com.google.gson.JsonParser;
    ```
 
-2. Создайте переменные для конечной точки API, ключа подписки и поискового запроса в новом классе.
+2. Создайте переменные для конечной точки API, ключа подписки и поискового запроса в новом классе. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
 
    ```java
    public class EntitySearch {
@@ -215,7 +215,7 @@ ms.locfileid: "74323788"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-entities-search-single-page-app.md)

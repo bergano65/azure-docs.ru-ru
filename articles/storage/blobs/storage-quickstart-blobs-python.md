@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: d589215cf79154bcc8aead1d6695bd4cf870fc0a
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: faa73874d7e662eb23e85d46ecaf21a11d10ce73
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74423969"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75443736"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v12-for-python"></a>Краткое руководство. Использование клиентской библиотеки хранилища BLOB-объектов Azure версии 12 для Python
 
@@ -33,7 +33,7 @@ ms.locfileid: "74423969"
 
 [!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
@@ -99,7 +99,7 @@ pip install azure-storage-blob
 
 1. Сохраните новый файл как *blob-quickstart-v12.py* в каталоге *blob-quickstart-v12*.
 
-[!INCLUDE [storage-quickstart-connection-string-include](../../../includes/storage-quickstart-credentials-include.md)]
+[!INCLUDE [storage-quickstart-credentials-include](../../../includes/storage-quickstart-credentials-include.md)]
 
 ## <a name="object-model"></a>Объектная модель
 
@@ -139,11 +139,11 @@ pip install azure-storage-blob
 ```python
 # Retrieve the connection string for use with the application. The storage
 # connection string is stored in an environment variable on the machine
-# running the application called CONNECT_STR. If the environment variable is
+# running the application called AZURE_STORAGE_CONNECTION_STRING. If the environment variable is
 # created after the application is launched in a console or with Visual Studio,
 # the shell or application needs to be closed and reloaded to take the
 # environment variable into account.
-connect_str = os.getenv('CONNECT_STR')
+connect_str = os.getenv('AZURE_STORAGE_CONNECTION_STRING')
 ```
 
 ### <a name="create-a-container"></a>Создание контейнера
@@ -288,7 +288,7 @@ Done
 
 После проверки файлов нажмите клавишу **ВВОД**, чтобы завершить работу с демонстрационной версией и удалить тестовые файлы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы узнали, как передавать и скачивать большие двоичные объекты, а также выводить их список с помощью Python.
 

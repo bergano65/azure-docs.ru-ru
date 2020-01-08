@@ -1,19 +1,18 @@
 ---
 title: Краткое руководство по созданию задания Stream Analytics с помощью Azure PowerShell
 description: В этом кратком руководстве описывается, как с помощью модуля Azure PowerShell развернуть и запустить задание Azure Stream Analytics.
-services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
 ms.date: 12/20/2018
 ms.topic: quickstart
 ms.service: stream-analytics
 ms.custom: mvc
-ms.openlocfilehash: 44fe16caf6805819b0d942a02f5138fe766ae99c
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 8fb4d50a4ba56efd9087a829c7d54c3010fc671e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74707319"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75431513"
 ---
 # <a name="quickstart-create-a-stream-analytics-job-using-azure-powershell"></a>Краткое руководство. Создание задания Stream Analytics с помощью Azure PowerShell
 
@@ -21,7 +20,7 @@ ms.locfileid: "74707319"
 
 Пример задания считывает данные потоковой передачи из устройства Центра Интернета вещей. Входные данные создаются онлайн-симулятором Raspberry Pi. Далее задание Stream Analytics преобразует данные с использованием языка запросов Stream Analytics для фильтрации сообщений с температурой больше 27 градусов. Наконец, оно записывает результирующие выходные события в файл в хранилище BLOB-объектов.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -304,7 +303,7 @@ New-AzStreamAnalyticsTransformation `
 
 2. Замените значения заполнителя в 15-й строке строкой подключения устройства Центра Интернета вещей, которую вы сохранили при работе с предыдущим разделом.
 
-3. Щелкните **Выполнить**. В выходных данных должны присутствовать показания датчика и сообщения, отправляемые в Центр Интернета вещей.
+3. Нажмите кнопку **Запустить**. В выходных данных должны присутствовать показания датчика и сообщения, отправляемые в Центр Интернета вещей.
 
     ![Онлайн-симулятор Raspberry Pi для Интернета вещей Azure.](./media/stream-analytics-quick-create-powershell/ras-pi-connection-string.png)
 
@@ -330,7 +329,7 @@ Remove-AzResourceGroup `
   -Name $resourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы развернули простое задание Stream Analytics, используя PowerShell. Вы также можете развертывать задания Stream Analytics, используя [портал Azure](stream-analytics-quick-create-portal.md) и [Visual Studio](stream-analytics-quick-create-vs.md).
 

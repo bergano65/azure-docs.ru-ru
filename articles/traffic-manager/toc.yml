@@ -59,7 +59,7 @@
       href: traffic-manager-how-it-works.md
     - name: Часто задаваемые вопросы
       href: traffic-manager-FAQs.md
-- name: Практическое руководство
+- name: Инструкции
   items:
     - name: Настройка маршрутизации для повышения производительности в диспетчере трафика
       href: traffic-manager-configure-performance-routing-method.md
@@ -95,11 +95,11 @@
           href: traffic-manager-subnet-override-cli.md
         - name: "Настройка переопределения подсети\_— PowerShell"
           href: traffic-manager-subnet-override-powershell.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: 'Устранение неполадок, связанных с состоянием сниженной функциональности диспетчера трафика'
           href: traffic-manager-troubleshooting-degraded.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?service=traffic-manager'
@@ -140,7 +140,7 @@
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Ограничения службы
-      href: '../azure-subscription-service-limits.md#traffic-manager-limits'
+      href: '../azure-resource-manager/management/azure-subscription-service-limits.md#traffic-manager-limits'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=traffic-manager'
     - name: Соглашение об уровне обслуживания

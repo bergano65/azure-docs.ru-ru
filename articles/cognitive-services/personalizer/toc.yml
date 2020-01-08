@@ -61,7 +61,7 @@
           href: concept-feature-evaluation.md
     - name: Масштабируемость и производительность
       href: concepts-scalability-performance.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Создание и настройка Персонализатора
       href: how-to-settings.md
@@ -70,7 +70,7 @@
       items:
         - name: Автономная оценка
           href: how-to-offline-evaluation.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Примеры
       href: 'https://go.microsoft.com/fwlink/?linkid=2092083'
@@ -80,7 +80,7 @@
       items:
         - name: .NET
           items:
-            - name: Справочные материалы
+            - name: Справочник
               href: 'https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/personalizer?view=azure-dotnet'
             - name: Пакет NuGet
               href: 'https://go.microsoft.com/fwlink/?linkid=2092272'
@@ -94,6 +94,8 @@
               href: 'https://www.npmjs.com/package/@azure/cognitiveservices-personalizer/v/1.0.0'
         - name: Python
           items:
+            - name: Справочник
+              href: 'https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/personalizer?view=azure-python'
             - name: Пакет Pypi
               href: 'https://pypi.org/project/azure-cognitiveservices-personalizer/'
 - name: Ресурсы

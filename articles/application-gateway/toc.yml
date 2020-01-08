@@ -31,7 +31,7 @@
   items:
     - name: Azure PowerShell
       href: powershell-samples.md
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: cli-samples.md
     - name: Шаблоны Resource Manager
       href: resource-manager-template-samples.md
@@ -81,15 +81,15 @@
       href: application-gateway-web-app-overview.md
     - name: Поддержка WebSocket
       href: application-gateway-websocket.md
-    - name: Часто задаваемые вопросы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: application-gateway-faq.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Размещение одного веб-сайта
       items:
         - name: Azure PowerShell
           href: tutorial-manage-web-traffic-powershell.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: tutorial-manage-web-traffic-cli.md
     - name: Настройка внутреннего балансировщика нагрузки
       items:
@@ -207,7 +207,7 @@
           href: application-gateway-create-probe-classic-ps.md
         - name: PowerShell для Resource Manager
           href: application-gateway-create-probe-ps.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: Внутренняя подсистема балансировки нагрузки со Средой службы приложений
           href: create-gateway-internal-load-balancer-app-service-environment.md
@@ -227,11 +227,11 @@
           href: application-gateway-backend-health-troubleshooting.md
     - name: Миграция из версии 1 в версию 2
       href: migrate-v1-v2.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Входящий трафик для заметок AKS
       href: ingress-controller-annotations.md
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/network/application-gateway
     - name: Azure PowerShell
       href: /powershell/azure/overview
@@ -247,7 +247,7 @@
       href: /rest/api/applicationgateway
     - name: Azure Resource Manager
       displayName: ARM
-      href: ../azure-resource-manager/resource-group-overview.md
+      href: ../azure-resource-manager/management/overview.md
     - name: Шаблон Resource Manager
       displayName: ARM
       href: 'https://docs.microsoft.com/azure/templates/microsoft.network/applicationgateways'
@@ -255,7 +255,7 @@
   items:
     - name: Создание шаблонов
       displayName: ARM
-      href: ../azure-resource-manager/resource-group-authoring-templates.md
+      href: ../azure-resource-manager/templates/template-syntax.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Шаблоны от сообщества

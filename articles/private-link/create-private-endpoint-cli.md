@@ -2,17 +2,17 @@
 title: Краткое руководство. Создание частной конечной точки Azure с помощью Azure CLI
 description: В этом кратком руководстве содержатся сведения о частной конечной точке Azure
 services: private-link
-author: asudbring
+author: malopMSFT
 ms.service: private-link
 ms.topic: quickstart
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: 67513c2155e956e005b143c3049abe70a2f126f2
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: dbcb833e6f8b90cebd3d013e58168558bcd96827
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74419813"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75459977"
 ---
 # <a name="quickstart-create-a-private-endpoint-using-azure-cli"></a>Краткое руководство. Создание частной конечной точки с помощью Azure CLI
 Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (ВМ), обмениваться данными с ресурсами частной ссылки в частном порядке. В этом кратком руководстве вы узнаете, как создать виртуальную машину в виртуальной сети и сервер базы данных SQL с частной конечной точкой, используя Azure CLI. После этого вы сможете получить доступ к виртуальной машине и получить безопасный доступ к ресурсу частной ссылки (в этом примере это частный сервер базы данных SQL Azure). 
@@ -165,7 +165,7 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
  Пароль: Введите пароль, указанный во время создания.
  Запомнить пароль: Выберите "Да".
  
- 5. Нажмите кнопку **Подключиться**.
+ 5. Выберите **Подключиться**.
  6. В меню слева выберите **Базы данных**.
  7. (Дополнительно) Создание или запрос информации из базы данных *mydatabase*
  8. Закройте подключение к удаленному рабочему столу *myVm*.
@@ -177,5 +177,5 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 az group delete --name myResourceGroup --yes 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о службе [Приватный канал Azure](private-link-overview.md)

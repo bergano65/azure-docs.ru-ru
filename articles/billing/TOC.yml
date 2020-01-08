@@ -3,6 +3,12 @@
 - name: Сведения о выставлении счетов в Azure
   expanded: true
   items:
+    - name: Учетные записи и области выставления счетов
+      href: billing-view-all-accounts.md
+    - name: Учетные записи выставления счетов для клиентского соглашения Майкрософт
+      href: billing-mca-overview.md
+    - name: Учетные записи выставления счетов для партнерского соглашения Майкрософт
+      href: mpa-overview.md
     - name: Интерпретация счета
       href: billing-understand-your-bill.md
     - name: "Пояснения к счету\_— для клиентского соглашения Майкрософт"
@@ -29,10 +35,6 @@
       href: billing-mpa-invoice-terms-explained.md
     - name: "Как оплатить счет\_— для клиентского соглашения Майкрософт"
       href: billing-how-to-pay-bill.md
-    - name: Учетные записи выставления счетов для клиентского соглашения Майкрософт
-      href: billing-mca-overview.md
-    - name: Учетные записи выставления счетов для партнерского соглашения Майкрософт
-      href: mpa-overview.md
 - name: Управление затратами
   items:
     - name: Предотвращение непредвиденных расходов
@@ -147,8 +149,6 @@
       href: billing-understand-mca-roles.md
     - name: Привязка идентификатора партнера
       href: billing-partner-admin-link-started.md
-    - name: Просмотр учетных записей выставления счетов
-      href: billing-view-all-accounts.md
     - name: Упорядочение затрат с помощью разделов счетов
       href: billing-mca-section-invoice.md
     - name: Задачи EA в клиентском соглашении Майкрософт
@@ -161,9 +161,9 @@
           href: billing-understand-your-bill-ea.md
         - name: Роли EA в Azure
           href: billing-understand-ea-roles.md
-        - name: Администрирование портала Azure EA
+        - name: Администрирование на портале Azure EA
           href: billing-ea-portal-administration.md
-        - name: Соглашения и поправки для Azure EA
+        - name: Соглашения и изменения для Azure EA
           href: billing-ea-portal-agreements.md
         - name: Счета на корпоративную регистрацию
           href: billing-ea-portal-enrollment-invoices.md
@@ -216,8 +216,8 @@
     - name: Привязка клиента Azure AD
       href: ../active-directory/active-directory-how-subscriptions-associated-directory.md?toc=/azure/billing/TOC.json
     - name: Ограничения и квоты
-      href: ../azure-subscription-service-limits.md?toc=/azure/billing/TOC.json
-- name: Устранение неполадок
+      href: ../azure-resource-manager/management/azure-subscription-service-limits.md?toc=/azure/billing/TOC.json
+- name: Диагностика
   items:
     - name: Подписки не найдены
       href: billing-no-subscriptions-found.md
@@ -251,7 +251,7 @@
           href: 'https://github.com/Azure-Samples/billing-dotnet-usage-api'
         - name: Пример кода API RateCard
           href: 'https://github.com/Azure-Samples/billing-dotnet-ratecard-api'
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Сценарии автоматизации выставления счетов
       href: billing-cost-management-automation-scenarios.md

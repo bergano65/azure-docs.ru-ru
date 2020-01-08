@@ -9,14 +9,14 @@ ms.assetid: 2575A80C-FC74-4631-AE5D-8101CF2591D3
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: tutorial
-ms.date: 06/18/2019
+ms.date: 12/19/2019
 ms.author: aahi
-ms.openlocfilehash: cfe198352cae95227a76535544d55a6be0c66abc
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 1c8e0bb136fddeb84dc991e63a761378b38cc470
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67203254"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75382333"
 ---
 # <a name="build-a-console-app-search-client-in-c"></a>Создание клиента поиска в виде консольного приложения на C#
 
@@ -27,12 +27,12 @@ ms.locfileid: "67203254"
 - выполнение простого запроса к API Bing для поиска в Интернете;
 - отображение результатов запроса в порядке приоритета.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством вам потребуется следующее:
 
 - приведенному. [Скачайте и установите бесплатную среду Visual Studio 2017 Community Edition](https://www.visualstudio.com/downloads/), если у вас ее еще нет.
-- Ключ подписки для API Bing для поиска в Интернете. Если у вас его нет, зарегистрируйтесь, чтобы [воспользоваться бесплатной пробной версией](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).
+- Ключ подписки для API Bing для поиска в Интернете. Если у вас его нет, [зарегистрируйтесь, чтобы воспользоваться бесплатной пробной версией](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).
 
 ## <a name="create-a-new-console-app-project"></a>Создание проекта консольного приложения
 
@@ -329,6 +329,6 @@ WebPage:
 ...
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучите дополнительные сведения [об использовании ранжирования при отображении ответов](rank-results.md).

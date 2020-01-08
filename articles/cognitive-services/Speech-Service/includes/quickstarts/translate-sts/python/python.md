@@ -1,23 +1,23 @@
 ---
 title: Краткое руководство. Перевод речи в речь с помощью Python в службе "Речь"
 titleSuffix: Azure Cognitive Services
-description: ПОДЛЕЖИТ УТОЧНЕНИЮ
+description: TBD
 services: cognitive-services
 author: chlandsi
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
+ms.topic: include
 ms.date: 12/09/2019
 ms.author: chlandsi
-ms.openlocfilehash: babcf95598b7de90069e0cc2258f4c730ce603b1
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 80f4535bd5716e1506ed9a862787030111392d77
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74980424"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75468529"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
@@ -111,6 +111,6 @@ ms.locfileid: "74980424"
    TRANSLATED into 'de': Wie ist das Wetter in Seattle?
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [footer](./footer.md)]

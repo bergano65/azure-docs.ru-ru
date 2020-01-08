@@ -4,18 +4,18 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 10/28/2019
 ms.author: aahi
-ms.openlocfilehash: 54aadd22b8f2bbccaa4c5e4f1444aa08279a4773
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: eaaa6ea7c5986a71f298119b5074ae32504ab73b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74125587"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75446274"
 ---
 <a name="HOLTop"></a>
 
 [Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-textanalytics) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-node/tree/master/lib/services/cognitiveServicesTextAnalytics) | [Пакет (NPM)](https://www.npmjs.com/package/azure-cognitiveservices-textanalytics) | [Примеры](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples/)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Текущая версия [Node.js](https://nodejs.org/).
@@ -44,11 +44,14 @@ npm init
 
 [!code-javascript[Const statements](~/cognitive-services-node-sdk-samples/Samples/textAnalytics.js?name=constStatements)]
 
-Создайте переменные для конечной точки ресурса Azure и ключа подписки. Эти значения можно получить из переменных среды `TEXT_ANALYTICS_SUBSCRIPTION_KEY` и `TEXT_ANALYTICS_ENDPOINT`. Если вы создали переменные среды после того как изменили приложение, следует закрыть и повторно открыть редактор, интегрированную среду разработки или оболочку, используемые для доступа к этим переменным.
+Создайте переменные для конечной точки ресурса Azure и ключа подписки.
 
 [!INCLUDE [text-analytics-find-resource-information](../find-azure-resource-info.md)]
 
-[!code-javascript[Key and endpoint vars](~/cognitive-services-node-sdk-samples/Samples/textAnalytics.js?name=keyVars)]
+```javascript
+const subscription_key = '<paste-your-text-analytics-key-here>';
+const endpoint = `<paste-your-text-analytics-endpoint-here>`;
+```
 
 ### <a name="install-the-client-library"></a>Установка клиентской библиотеки
 

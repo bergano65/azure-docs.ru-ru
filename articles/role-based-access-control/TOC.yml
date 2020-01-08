@@ -11,7 +11,7 @@
   items:
     - name: Просмотр разрешений на доступ пользователя
       href: check-access.md
-- name: Руководства
+- name: Учебники
   items:
     - name: "Предоставление доступа пользователю\_— портал"
       href: quickstart-assign-role-user-portal.md
@@ -32,7 +32,7 @@
       href: pim-azure-resource.md
     - name: Условный доступ для управления Azure
       href: conditional-access-azure-management.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Вывод списка определений роли
       items:
@@ -92,14 +92,14 @@
       href: elevate-access-global-admin.md
     - name: Администраторы классической подписки
       href: classic-administrators.md
-    - name: Устранение неполадок
+    - name: Диагностика
       href: troubleshooting.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Операции с поставщиками ресурсов
       href: resource-provider-operations.md
     - name: Ограничения доступа на основе ролей
-      href: '../azure-subscription-service-limits.md#role-based-access-control-limits'
+      href: '../azure-resource-manager/management/azure-subscription-service-limits.md#role-based-access-control-limits'
     - name: Azure PowerShell
       href: /powershell/module/az.resources
     - name: Azure CLI

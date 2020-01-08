@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 09/05/2019
 ms.author: aahi
-ms.openlocfilehash: 6d4076563ac803c72f3749399bed6aaa235a0343
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 7f113a9f1cc13278b7949570fec394ccee7f7437
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74795602"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75446280"
 ---
 <a name="HOLTop"></a>
 
@@ -17,7 +17,7 @@ ms.locfileid: "74795602"
 [Справочная документация](https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/textanalytics?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-language-textanalytics) | [Пакет (PiPy)](https://pypi.org/project/azure-cognitiveservices-language-textanalytics/) | [Примеры](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples)
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * [Python 3.x](https://www.python.org/)
@@ -42,11 +42,15 @@ pip install --upgrade azure-cognitiveservices-language-textanalytics
 
 [!code-python[import statements](~/samples-cognitive-services-python-sdk/samples/language/text_analytics_samples.py?name=imports)]
 
-Создайте переменные для конечной точки ресурса Azure и ключа подписки. Получите эти значения из переменных среды TEXT_ANALYTICS_SUBSCRIPTION_KEY и TEXT_ANALYTICS_ENDPOINT. Если вы создали переменные среды после начала правки приложения, следует закрыть и повторно открыть редактор, интегрированную среду разработки или оболочку, которые использовались для доступа к этим переменным.
+Создайте переменные для конечной точки ресурса Azure и ключа подписки.
 
 [!INCLUDE [text-analytics-find-resource-information](../find-azure-resource-info.md)]
 
-[!code-python[endpoint and key variables](~/samples-cognitive-services-python-sdk/samples/language/text_analytics_samples.py?name=initialVars)]
+```python
+subscription_key = "<paste-your-text-analytics-key-here>"
+endpoint = "<paste-your-text-analytics-endpoint-here>"
+```
+
 
 ## <a name="object-model"></a>Объектная модель
 

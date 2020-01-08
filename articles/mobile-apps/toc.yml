@@ -22,7 +22,7 @@
       href: code-hosting-services.md
     - name: DevOps
       items:
-        - name: Что такое DevOps
+        - name: Что такое DevOps?
           href: devops.md
         - name: Непрерывная сборка и интеграция
           href: continuous-integration.md
@@ -32,7 +32,7 @@
           href: continuous-delivery.md
     - name: Анализ использования и поведения пользователей
       href: analytics.md
-    - name: Создание отчетов о сбоях в режиме реального времени
+    - name: Создание отчетов о сбоях в реальном времени
       href: diagnostics.md
     - name: Push-уведомления
       href: push-notifications.md
@@ -42,7 +42,7 @@
       href: cognitive-services.md
     - name: Azure Maps
       href: azure-maps.md
-    - name: Azure CDN
+    - name: Сеть доставки содержимого Azure
       href: azure-cdn.md
     - name: Когнитивный поиск Azure
       href: azure-search.md

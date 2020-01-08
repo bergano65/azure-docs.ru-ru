@@ -1,17 +1,17 @@
 ---
-title: Руководство по сквозной проверке подлинности AuthN/AuthO
+title: Руководство. сквозной проверке подлинности AuthN/AuthO
 description: Сведения об использовании проверки подлинности и авторизации в службе приложений для защиты приложений службы приложений, включая доступ к удаленным API.
 keywords: app service, azure app service, authN, authZ, secure, security, multi-tiered, azure active directory, azure ad
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 08/14/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6c243839e59038d439e177847df4427d253dbe98
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 41e9ff79ad3f7abeda1b946295e8e0eb519c2554
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74672057"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75561764"
 ---
 # <a name="tutorial-authenticate-and-authorize-users-end-to-end-in-azure-app-service"></a>Руководство. Сквозная проверка подлинности и авторизации в Службе приложений Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "74672057"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством:
 
@@ -185,7 +185,7 @@ return new NoContentResult();
 
 Первая строка осуществляет вызов `DELETE /api/Todo/{id}` к приложению серверного API.
 
-Сохраните все изменения. В окне терминала на локальном компьютере выполните следующие команды Git, чтобы выполнить развертывание аналогичного кода в интерфейсное приложение.
+Сохраните изменения. В окне терминала на локальном компьютере выполните следующие команды Git, чтобы выполнить развертывание аналогичного кода в интерфейсное приложение.
 
 ```bash
 git add .
@@ -312,7 +312,7 @@ public override void OnActionExecuting(ActionExecutingContext context)
 
 Этот код добавляет стандартный HTTP-заголовок `Authorization: Bearer <access-token>` ко всем удаленным вызовам API. В конвейере выполните запрос ASP.NET Core MVC. `OnActionExecuting` выполняется непосредственно перед соответствующим методом действия (например, `GetAll()`), поэтому каждый исходящий вызовов API теперь представляет маркер доступа.
 
-Сохраните все изменения. В окне терминала на локальном компьютере выполните следующие команды Git, чтобы выполнить развертывание аналогичного кода в интерфейсное приложение.
+Сохраните изменения. В окне терминала на локальном компьютере выполните следующие команды Git, чтобы выполнить развертывание аналогичного кода в интерфейсное приложение.
 
 ```bash
 git add .
@@ -396,7 +396,7 @@ $routeProvider.when("/Home", {
 
 ### <a name="deploy-updates-and-test"></a>Развертывание и тестирование
 
-Сохраните все изменения. В окне терминала на локальном компьютере выполните следующие команды Git, чтобы выполнить развертывание аналогичного кода в интерфейсное приложение.
+Сохраните изменения. В окне терминала на локальном компьютере выполните следующие команды Git, чтобы выполнить развертывание аналогичного кода в интерфейсное приложение.
 
 ```bash
 git add .
@@ -423,7 +423,7 @@ az group delete --name myAuthResourceGroup
 Ее выполнение может занять до минуты.
 
 <a name="next"></a>
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы научились выполнять следующие задачи:
 

@@ -1,23 +1,23 @@
 ---
 title: Краткое руководство. Синтезирование речи с записью в звуковой файл с помощью C++ (Windows) в службе "Речь"
 titleSuffix: Azure Cognitive Services
-description: ПОДЛЕЖИТ УТОЧНЕНИЮ
+description: TBD
 services: cognitive-services
 author: wolfma61
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
+ms.topic: include
 ms.date: 08/19/2019
 ms.author: wolfma
-ms.openlocfilehash: 024e6121e950ba27cf18b65434d712af80d1ec17
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 17e986954e98b7a3c0ea85324afbf77ce1428d68
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74817789"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75467433"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
@@ -83,17 +83,17 @@ ms.locfileid: "74817789"
 
 1. Выберите **Отладка** > **Начать отладку** (или нажмите клавишу **F5**), чтобы запустить приложение **helloworld**.
 
-1. Текст преобразуется в речь и сохраняется в указанном звуковом файле.
+1. Текст преобразуется в речь и сохраняется в указанных звуковых данных.
 
    ```text
    Speech synthesized to [helloworld.wav] for text [Hello world!]
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [footer](./footer.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Создание пользовательского голоса](~/articles/cognitive-services/Speech-Service/how-to-custom-voice-create-voice.md)
 - [Запись пользовательских образцов голоса](~/articles/cognitive-services/Speech-Service/record-custom-voice-samples.md)

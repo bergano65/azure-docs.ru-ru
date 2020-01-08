@@ -1,0 +1,65 @@
+### YamlMime:Landing
+title: Документация по Настраиваемым поставщикам Azure
+summary: Определение настраиваемых API, расширяющих возможности Azure
+metadata:
+  title: Документация по Настраиваемым поставщикам Azure
+  description: Настраиваемые поставщики Azure — это платформа расширяемости для Azure, которая позволяет определять пользовательские API.
+  ms.service: azure-custom-providers
+  ms.topic: landing-page
+  ms.collection: na
+  author: tfitzmac
+  ms.author: tomfitz
+  ms.date: 01/02/2020
+  ms.openlocfilehash: 4a778d56aa3d7440715cdd792827b9c4a2837e65
+  ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 01/03/2020
+  ms.locfileid: "75648350"
+landingContent:
+- title: Сведения о Настраиваемых поставщиках Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Настраиваемые поставщики Azure?
+      url: overview.md
+  - linkListType: concept
+    links:
+    - text: Политика Azure для связей пользовательских поставщиков
+      url: concepts-built-in-policy.md
+    - text: Общие сведения об адаптации ресурсов
+      url: concepts-resource-onboarding.md
+- title: Создание настраиваемых поставщиков
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание настраиваемого поставщика ресурсов
+      url: create-custom-provider.md
+  - linkListType: tutorial
+    links:
+    - text: Начало работы с настраиваемыми поставщиками
+      url: tutorial-get-started-with-custom-providers.md
+    - text: Настройка службы "Функции Azure"
+      url: tutorial-custom-providers-function-setup.md
+    - text: Создание конечной точки RESTful
+      url: tutorial-custom-providers-function-authoring.md
+    - text: Создание и использование настраиваемых поставщиков
+      url: tutorial-custom-providers-create.md
+    - text: Расширение ресурсов
+      url: tutorial-resource-onboarding.md
+  - linkListType: how-to-guide
+    links:
+    - text: Добавление пользовательских действий в Azure
+      url: custom-providers-action-endpoint-how-to.md
+    - text: Добавление пользовательских ресурсов в Azure
+      url: custom-providers-resources-endpoint-how-to.md
+- title: Примеры
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Справочник по прокси-серверу пользовательских ресурсов
+      url: proxy-resource-endpoint-reference.md
+    - text: Справочник по кэшу пользовательских ресурсов
+      url: proxy-cache-resource-endpoint-reference.md
+    - text: Справочник по конечной точке RESTful настраиваемого поставщика
+      url: reference-custom-providers-csharp-endpoint.md

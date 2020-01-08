@@ -1,23 +1,23 @@
 ---
 title: Краткое руководство. Перевод речи на несколько языков в службе "Речь" с помощью C# (.NET Core Windows)
 titleSuffix: Azure Cognitive Services
-description: ПОДЛЕЖИТ УТОЧНЕНИЮ
+description: TBD
 services: cognitive-services
 author: wolfma61
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
+ms.topic: include
 ms.date: 12/09/2019
 ms.author: erhopf
-ms.openlocfilehash: 545955cc9c0b73a8ce36fd2a1bb3110ba83d4a08
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: db2b54627bd50d202c3f5631f342b85b22653b4d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74981136"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75469240"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
@@ -126,6 +126,6 @@ TRANSLATED into 'de': Wie ist das Wetter in Seattle?
 TRANSLATED into 'fr': Quel temps fait-il à Seattle ?
 ````
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [footer](./footer.md)]

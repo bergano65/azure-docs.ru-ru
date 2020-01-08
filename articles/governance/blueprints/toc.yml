@@ -17,7 +17,7 @@
     - name: Создание схемы с помощью REST API
       displayName: 'publish, assign, track, unassign, delete'
       href: create-blueprint-rest-api.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Создание на основе примера схемы
       displayName: 'template, resource group, rbac, role assignment'
@@ -63,6 +63,17 @@
         - name: Инструкции по развертыванию
           displayName: 'standards, fedramp, moderate'
           href: ./samples/fedramp-m/deploy.md
+    - name: HIPAA HITRUST
+      items:
+        - name: Обзор
+          displayName: 'standards, HIPAA HITRUST'
+          href: ./samples/HIPAA-HITRUST/index.md
+        - name: Сопоставление элементов управления
+          displayName: 'standards, HIPAA HITRUST'
+          href: ./samples/HIPAA-HITRUST/control-mapping.md
+        - name: Инструкции по развертыванию
+          displayName: 'standards, HIPAA HITRUST'
+          href: ./samples/HIPAA-HITRUST/deploy.md
     - name: IRS 1075
       items:
         - name: Обзор
@@ -200,10 +211,10 @@
       href: ./how-to/configure-for-blueprint-operator.md
     - name: Управление схемами как кодом (сообщество)
       href: 'https://github.com/Azure/azure-blueprints/blob/master/README.md'
-- name: Устранение неполадок
+- name: Диагностика
   displayName: 'errors, violation'
   href: ./troubleshoot/general.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure PowerShell
       href: '/powershell/module/az.blueprint/#blueprint'

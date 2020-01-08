@@ -2,18 +2,18 @@
 title: Документация по Azure Database Migration Service
 summary: Azure Database Migration Service обеспечивает бесперебойную миграцию из нескольких источников баз данных на платформы данных Azure с минимальным временем простоя. Служба использует Помощник по миграции данных для создания экспертных отчетов с рекомендациями по изменениям, которые необходимо выполнить до переноса данных. Когда вы будете готовы приступить к переносу, Azure Database Migration Service выполнит все необходимые действия.
 metadata:
-  description: " Узнайте, как с помощью Azure Database Migration Service обеспечить бесперебойную миграцию из нескольких источников баз данных на платформы данных Azure с минимальным временем простоя."
+  description: Узнайте, как с помощью Azure Database Migration Service обеспечить бесперебойную миграцию из нескольких источников баз данных на платформы данных Azure с минимальным временем простоя.
   author: HJToland3
   ms.author: jtoland
-  ms.date: 10/25/2019
+  ms.date: 12/19/2019
   ms.service: dms
   ms.topic: landing-page
-  ms.openlocfilehash: 1d064144d040a45fbc655879a6869da4ceaa4b79
-  ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+  ms.openlocfilehash: 8ca7f2618c6415dd3dbe22cada35bccb56be50ee
+  ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/04/2019
-  ms.locfileid: "73584007"
+  ms.lasthandoff: 12/25/2019
+  ms.locfileid: "75437883"
 landingContent:
 - title: Сведения о Azure Database Migration Service
   linkLists:
@@ -33,6 +33,10 @@ landingContent:
       url: quickstart-create-data-migration-service-portal.md
     - text: Создание службы в гибридном режиме с помощью портала
       url: quickstart-create-data-migration-service-hybrid-portal.md
+  - linkListType: reference
+    links:
+    - text: Известные проблемы с использованием гибридного режима
+      url: known-issues-dms-hybrid-mode.md
   - linkListType: video
     links:
     - text: Общие сведения об Azure Database Migration Service
@@ -47,7 +51,7 @@ landingContent:
     links:
     - text: Читайте наш блог
       url: https://techcommunity.microsoft.com/t5/Microsoft-Data-Migration/bg-p/MicrosoftDataMigration
-- title: Миграция с SQL Server в Базу данных SQL Azure
+- title: Перенос SQL Server в Базу данных Azure SQL
   linkLists:
   - linkListType: tutorial
     links:
@@ -65,6 +69,8 @@ landingContent:
     links:
     - text: Известные проблемы с миграцией в отдельную базу данных в службе "База данных SQL" по сети
       url: known-issues-azure-sql-online.md
+    - text: Известные проблемы с миграцией в управляемый экземпляр базы данных SQL по сети
+      url: known-issues-azure-sql-db-managed-instance-online.md
     - text: Сетевые топологии для миграции в управляемый экземпляр Базы данных SQL
       url: resource-network-topologies.md
     - text: Пользовательские роли для выполнения миграции с подключением к сети из SQL Server в Управляемый экземпляр Базы данных SQL
@@ -105,7 +111,7 @@ landingContent:
   linkLists:
   - linkListType: reference
     links:
-    - text: Службы и средства по сценариям переноса данных
+    - text: Службы и средства для сценариев переноса данных
       url: dms-tools-matrix.md
     - text: Руководство по переносу баз данных
       url: https://datamigration.microsoft.com/

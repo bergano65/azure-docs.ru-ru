@@ -74,7 +74,7 @@
       href: team-data-science-process-for-data-scientists.md
     - name: Для DevOps
       href: team-data-science-process-for-devops.md
-- name: Практическое руководство
+- name: Инструкции
   items:
     - name: Настройка сред для обработки и анализа данных
       href: environment-setup.md
@@ -134,7 +134,7 @@
           items:
             - name: Подготовка данных
               href: prepare-data.md
-            - name: Изучение данных
+            - name: Анализ данных
               items:
                 - name: Обзор
                   href: explore-data.md
@@ -193,7 +193,7 @@
 - name: Сопутствующие материалы
   items:
     - name: Машинное обучение Azure
-      href: ../service/
+      href: ../
     - name: Коллекция решений ИИ Azure
       href: 'https://gallery.azure.ai'
     - name: Cortana Analytics
@@ -206,7 +206,7 @@
           items:
             - name: Обзор
               href: cortana-analytics-playbook-predictive-maintenance.md
-            - name: Архитектура
+            - name: Architecture
               href: cortana-analytics-architecture-predictive-maintenance.md
             - name: Техническое руководство
               href: cortana-analytics-technical-guide-predictive-maintenance.md

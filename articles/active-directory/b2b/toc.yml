@@ -28,6 +28,8 @@
     - name: Основные понятия
       expanded: false
       items:
+        - name: Рекомендации по B2B
+          href: b2b-fundamentals.md
         - name: Лицензирование B2B
           href: licensing-guidance.md
         - name: "Доступ внешних пользователей к B2B и Office\_365"
@@ -48,7 +50,7 @@
           href: hybrid-organizations.md
         - name: Текущие ограничения
           href: current-limitations.md
-    - name: Руководства
+    - name: Практические руководства
       expanded: true
       items:
         - name: Управление общим доступом B2B
@@ -95,13 +97,13 @@
           href: auditing-and-reporting.md
         - name: Устранение неполадок с B2B
           href: troubleshoot.md
-    - name: Справочные материалы
+    - name: Справочник
       items:
         - name: API диспетчера приглашений
           href: customize-invitation-api.md
     - name: Ресурсы
       items:
-        - name: Часто задаваемые вопросы
+        - name: ВОПРОСЫ И ОТВЕТЫ
           href: faq.md
         - name: Получение технической поддержки для B2B
           href: get-support.md

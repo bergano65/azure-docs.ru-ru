@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
-ms.date: 07/24/2019
+ms.date: 12/11/2019
 ms.author: aahi
-ms.openlocfilehash: 86c0507c3796693f29170f6059d7774312c2b3f0
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 9fdb1e68a413adcbf5d27ec3a90cd79fdeb29f21
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74323845"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75384388"
 ---
 # <a name="quickstart-send-a-search-request-with-the-bing-entity-search-sdk-for-nodejs"></a>Краткое руководство. Отправка запросов для поиска в пакете SDK Поиска сущностей Bing для Node.js
 
 Используйте это краткое руководство, чтобы начать поиск сущностей с помощью пакета SDK Поиска сущностей Bing для Node.js. Так как для Поиска сущностей Bing имеется REST API, совместимый с большинством языков программирования, пакет SDK обеспечивает простой способ интеграции службы в ваши приложения. Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples/blob/master/Samples/entitySearch.js).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Последняя версия [Node.js](https://nodejs.org/en/download/).
 
@@ -69,7 +69,7 @@ ms.locfileid: "74323845"
 ![Entity results](media/entity-search-sdk-node-quickstart-results.png)
 -->
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание одностраничного веб-приложения](../tutorial-bing-entities-search-single-page-app.md)

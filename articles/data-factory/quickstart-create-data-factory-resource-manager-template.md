@@ -10,14 +10,14 @@ ms.date: 02/20/2019
 author: djpmsft
 ms.author: daperlov
 manager: anandsub
-ms.openlocfilehash: d7cafa6ec385ed296a5341efdaec1b16f7742683
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 7ad0367a89730c3aba37c5f75158cb42ae4ae668
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928808"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75440059"
 ---
-# <a name="tutorial-create-an-azure-data-factory-using-azure-resource-manager-template"></a>Руководство по Создание фабрики данных Azure с помощью шаблона Azure Resource Manager
+# <a name="tutorial-create-an-azure-data-factory-using-azure-resource-manager-template"></a>Руководство. Создание фабрики данных Azure с помощью шаблона Azure Resource Manager
 
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-build-your-first-pipeline-using-arm.md)
@@ -38,7 +38,7 @@ ms.locfileid: "74928808"
 
 ## <a name="resource-manager-templates"></a>Шаблоны Resource Manager
 
-Общие сведения о шаблонах Azure Resource Manager см. в руководстве по [созданию шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md).
+Общие сведения о шаблонах Azure Resource Manager см. в руководстве по [созданию шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md).
 
 В следующем разделе содержится полный шаблон Resource Manager для определения сущностей фабрики данных. Таким образом, вы сможете быстро изучить это руководство и протестировать шаблон. Дополнительные сведения о том, как определяется каждая сущность фабрики данных, см. в разделе [Сущности фабрики данных в шаблоне](#data-factory-entities-in-the-template).
 
@@ -287,7 +287,7 @@ ms.locfileid: "74928808"
 
 > [!IMPORTANT]
 > - Укажите значения имени и ключа вашей учетной записи хранения Azure для параметров **storageAccountName** и **storageAccountKey** в этом файле параметров. Вы создали контейнер adftutorial и передали пример файла (emp.txt) в папку входных данных в этом хранилище больших двоичных объектов Azure.
-> - Укажите глобально уникальное имя фабрики данных для параметра **dataFactoryName**. Например:  ARMTutorialFactoryJohnDoe11282017.
+> - Укажите глобально уникальное имя фабрики данных для параметра **dataFactoryName**. Пример: ARMTutorialFactoryJohnDoe11282017.
 > - Для параметра **triggerStartTime** укажите текущую дату в таком формате: `2019-09-08T00:00:00`.
 > - Для параметра **triggerEndTime** укажите завтрашнюю дату в таком формате: `2019-09-09T00:00:00`. Также можно проверить текущее время UTC и указать следующий час или два часа как время окончания. Например, если текущее время UTC — 1:32:00, укажите `2019-09-09:03:00:00` в качестве времени окончания. В этом случае триггер запустит конвейер дважды (в 2:00 и 3:00).
 
@@ -681,7 +681,7 @@ DeploymentDebugLogLevel :
 
 В этом руководстве описывается создание шаблона для определения сущностей фабрики данных, а также шаблона, передающего значения для параметров. Чтобы использовать один шаблон для развертывания сущностей фабрики данных в разных средах, нужно создать файл параметров для каждой среды и использовать его при развертывании в определенной среде.
 
-Пример:
+Пример
 
 ```powershell
 New-AzResourceGroupDeployment -Name MyARMDeployment -ResourceGroupName ADFTutorialResourceGroup -TemplateFile ADFTutorialARM.json -TemplateParameterFile ADFTutorialARM-Parameters-Dev.json
@@ -695,6 +695,6 @@ New-AzResourceGroupDeployment -Name MyARMDeployment -ResourceGroupName ADFTutori
 
 Шаблон можно снова использовать для выполнения повторяющихся задач. Например, создайте несколько фабрик данных с одним или с несколькими конвейерами, которые реализуют одинаковую логику, но чтобы каждая фабрика данных использовала разные учетные записи хранения Azure. В этом сценарии для создания фабрик данных используется один шаблон в той же среде (разработки, тестирования или рабочей) с различными файлами параметров.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом примере конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure. Перейдите к [руководствам](tutorial-copy-data-dot-net.md), чтобы узнать об использовании фабрики данных в различных сценариях.

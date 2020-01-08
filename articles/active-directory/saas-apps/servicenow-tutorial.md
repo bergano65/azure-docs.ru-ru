@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции единого входа Azure Active Directory с приложением ServiceNow | Документация Майкрософт
+title: Руководство. интеграции единого входа Azure Active Directory с приложением ServiceNow | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и ServiceNow.
 services: active-directory
 documentationCenter: na
@@ -11,19 +11,18 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/14/2019
+ms.date: 12/27/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 52b3b7ea34d48c37a4e07ab073e611d5a60399a9
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: c8a8f3895f41ac987b934b86f8d646b281c37c93
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74706925"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75561998"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-servicenow"></a>Руководство по интеграции единого входа Azure Active Directory с приложением ServiceNow
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-servicenow"></a>Руководство. интеграции единого входа Azure Active Directory с приложением ServiceNow
 
 В этом учебнике описано, как интегрировать ServiceNow с Azure Active Directory (Azure AD). Интеграция ServiceNow с Azure AD обеспечивает следующие возможности:
 
@@ -33,11 +32,11 @@ ms.locfileid: "74706925"
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы приступить к работе, потребуется следующее:
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка ServiceNow с поддержкой единого входа.
 * Экземпляр или клиент ServiceNow версии Calgary или более поздней (для ServiceNow).
 * Экземпляр ServiceNow Express версии Helsinki или более поздней (для ServiceNow Express).
@@ -90,7 +89,7 @@ ms.locfileid: "74706925"
 
 4. В разделе **Базовая конфигурация SAML** сделайте следующее:
 
-    a. В поле **URL-адрес для входа** введите URL-адрес в формате `https://<instance-name>.service-now.com/navpage.do`.
+    а. В поле **URL-адрес для входа** введите URL-адрес в формате `https://<instance-name>.service-now.com/navpage.do`.
 
     b. В поле **Идентификатор сущности** введите URL-адрес в формате `https://<instance-name>.service-now.com`.
 
@@ -101,7 +100,7 @@ ms.locfileid: "74706925"
 
    ![Снимок экрана: раздел "Сертификат подписи SAML" с выделенным пунктом "Скачать"](common/certificatebase64.png)
 
-   a. Нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложения**, а затем вставьте его в Блокнот. Этот URL-адрес мы применим позже.
+   а. Нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложения**, а затем вставьте его в Блокнот. Этот URL-адрес мы применим позже.
 
     b. Щелкните **Скачать** чтобы скачать **Сертификат (Base64)** и сохраните файл сертификата на компьютере.
 
@@ -155,7 +154,7 @@ ms.locfileid: "74706925"
 
 4. В разделе **Базовая конфигурация SAML** сделайте следующее:
 
-    a. В поле **URL-адрес для входа** введите URL-адрес в формате `https://<instance-name>.service-now.com/navpage.do`.
+    а. В поле **URL-адрес для входа** введите URL-адрес в формате `https://<instance-name>.service-now.com/navpage.do`.
 
     b. В поле **Идентификатор сущности** введите URL-адрес в формате `https://<instance-name>.service-now.com`.
 
@@ -180,7 +179,7 @@ ms.locfileid: "74706925"
 
 2. Активируйте подключаемый модуль **Integration - Multiple Provider single sign-on Installer** (Интеграция — установщик единого входа для нескольких поставщиков), выполнив следующие действия:
 
-    a. В области навигации слева найдите раздел **System Definition** (Определение системы) с помощью панели поиска и щелкните **Plugins** (Подключаемые модули).
+    а. В области навигации слева найдите раздел **System Definition** (Определение системы) с помощью панели поиска и щелкните **Plugins** (Подключаемые модули).
 
     ![Снимок экрана: раздел System Definition (Определение систем) с выделенным пунктом System Definition and Plugins (Определение системы и подключаемые модули)](./media/servicenow-tutorial/tutorial_servicenow_03.png "Активация подключаемого модуля")
 
@@ -314,7 +313,7 @@ ms.locfileid: "74706925"
 
         * Убедитесь, что параметр **NameID Policy** (Политика NameID) имеет значение `urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`.
 
-        * Нажмите кнопку **Advanced** (Дополнительно). В поле **User Field** (Поле пользователя) введите значение **email** или **user_name**, в зависимости от того, какое поле используется для уникальной идентификации пользователей в развернутой службе ServiceNow.
+        * Выберите **Дополнительно**. В поле **User Field** (Поле пользователя) введите значение **email** или **user_name**, в зависимости от того, какое поле используется для уникальной идентификации пользователей в развернутой службе ServiceNow.
 
             > [!NOTE]
             > Azure AD можно настроить так, чтобы в качестве уникального идентификатора в токене SAML выдавался идентификатор пользователя Azure AD (имя участника-пользователя) или его электронный адрес. Для этого перейдите в раздел **ServiceNow** > **Атрибуты** > **Единый вход** на портале Azure и сопоставьте нужное поле с атрибутом **nameidentifier**. Значение, хранящееся для выбранного атрибута в Azure  AD (например, имя участника-пользователя), должно соответствовать значению, хранящемуся в ServiceNow для заполненного поля (например, user_name).
@@ -344,7 +343,7 @@ ms.locfileid: "74706925"
 
     ![Снимок экрана: диалоговое окно Single Sign-On (Единый вход)](./media/servicenow-tutorial/ic7694981ex.png "Настройка URL-адреса приложения")
 
-    a. Передвиньте переключатель **Enable multiple provider SSO** (Включить единый вход для нескольких поставщиков) вправо.
+    а. Передвиньте переключатель **Enable multiple provider SSO** (Включить единый вход для нескольких поставщиков) вправо.
 
     b. Передвиньте переключатель **Enable debug logging for the multiple provider SSO integration** (Включить ведение журнала отладки для интеграции нескольких поставщиков единого входа) вправо.
 
@@ -358,7 +357,7 @@ ms.locfileid: "74706925"
 
     ![Снимок экрана: диалоговое окно X.509 Certificates (Сертификаты X.509)](./media/servicenow-tutorial/ic7694975.png "Настройка единого входа")
 
-    a. В поле **Name** (Имя) введите имя конфигурации (например, **TestSAML2.0**).
+    а. В поле **Name** (Имя) введите имя конфигурации (например, **TestSAML2.0**).
 
     b. Установите флажок **Активно**.
 
@@ -366,9 +365,9 @@ ms.locfileid: "74706925"
 
     d. В поле **Type** (Тип) выберите **Trust Store Cert** (Сертификат хранилища доверия).
 
-    д. Откройте в Блокноте сертификат в кодировке Base64, скачанный с портала Azure. Скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **сертификата PEM**.
+    д) Откройте в Блокноте сертификат в кодировке Base64, скачанный с портала Azure. Скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **сертификата PEM**.
 
-    Е. Щелкните **Обновить**.
+    е) Щелкните **Обновить**.
 
 6. В диалоговом окне **Single Sign-On** (Единый вход) щелкните **Add New IdP** (Добавить новый поставщик удостоверений).
 
@@ -378,7 +377,7 @@ ms.locfileid: "74706925"
 
     ![Снимок экрана: раздел Add New Identity Provider (Добавление нового поставщика удостоверений)](./media/servicenow-tutorial/ic7694982ex.png "Настройка единого входа")
 
-    a. В поле **Name** (Имя) введите имя конфигурации (например, **SAML 2.0**).
+    а. В поле **Name** (Имя) введите имя конфигурации (например, **SAML 2.0**).
 
     b. В поле **Identity Provider URL** (URL-адрес поставщика удостоверений) вставьте значение идентификатора поставщика удостоверений, которое вы скопировали на портале Azure.
 
@@ -386,13 +385,13 @@ ms.locfileid: "74706925"
 
     d. В поле **Identity Provider SingleLogoutRequest** (SingleLogoutRequest поставщика удостоверений) вставьте значение URL-адреса для выхода, которое вы скопировали на портале Azure.
 
-    д. В поле **Identity Provider Certificate** (Сертификат поставщика удостоверений) выберите сертификат, созданный на предыдущем шаге.
+    д) В поле **Identity Provider Certificate** (Сертификат поставщика удостоверений) выберите сертификат, созданный на предыдущем шаге.
 
 8. Щелкните **Advanced Settings** (Дополнительные параметры). В разделе **Additional Service Provider Properties** (Дополнительные свойства поставщика услуг) выполните следующие действия.
 
     ![Снимок экрана: диалоговое окно Add New Identity Provider (Добавление нового поставщика удостоверений), где выделен пункт Advanced Settings (Дополнительные параметры)](./media/servicenow-tutorial/ic7694983ex.png "Настройка единого входа")
 
-    a. В поле **Protocol Binding for the IDP's SingleLogoutRequest** (Привязка протокола для запроса на единый выход поставщика удостоверений) введите **urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect**.
+    а. В поле **Protocol Binding for the IDP's SingleLogoutRequest** (Привязка протокола для запроса на единый выход поставщика удостоверений) введите **urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect**.
 
     b. В поле **NameID Policy** (Политика идентификатора имени) введите **urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified**.
 
@@ -404,7 +403,7 @@ ms.locfileid: "74706925"
 
     ![Снимок экрана: диалоговое окно Add New Identity Provider (Добавление нового поставщика удостоверений), где выделен пункт различными свойствами](./media/servicenow-tutorial/ic7694984ex.png "Настройка единого входа")
 
-    a. В текстовое поле **ServiceNow Homepage** (Домашняя страница ServiceNow) введите URL-адрес домашней страницы экземпляра ServiceNow.
+    а. В текстовое поле **ServiceNow Homepage** (Домашняя страница ServiceNow) введите URL-адрес домашней страницы экземпляра ServiceNow.
 
     > [!NOTE]
     > URL-адрес домашней страницы экземпляра ServiceNow состоит из **URL-адреса клиента ServiceNow** и **/navpage.do** (например: `https://fabrikam.service-now.com/navpage.do`).
@@ -415,12 +414,12 @@ ms.locfileid: "74706925"
 
     d. В поле **Clock Skew** (Разница в показаниях часов) введите значение **60**.
 
-    д. В поле **User Field** (Поле пользователя) введите значение **email** или **user_name**, в зависимости от того, какое поле используется для уникальной идентификации пользователей в развернутой службе ServiceNow.
+    д) В поле **User Field** (Поле пользователя) введите значение **email** или **user_name**, в зависимости от того, какое поле используется для уникальной идентификации пользователей в развернутой службе ServiceNow.
 
     > [!NOTE]
     > Azure AD можно настроить так, чтобы в качестве уникального идентификатора в токене SAML выдавался идентификатор пользователя Azure AD (имя участника-пользователя) или его электронный адрес. Для этого перейдите в раздел **ServiceNow** > **Атрибуты** > **Единый вход** на портале Azure и сопоставьте нужное поле с атрибутом **nameidentifier**. Значение, хранящееся для выбранного атрибута в Azure  AD (например, имя участника-пользователя), должно соответствовать значению, хранящемуся в ServiceNow для заполненного поля (например, user_name).
 
-    Е. Щелкните **Сохранить**.
+    е) Щелкните **Сохранить**.
 
 ## <a name="test-sso"></a>Проверка единого входа
 
@@ -430,7 +429,7 @@ ms.locfileid: "74706925"
 
 1. Откройте приложение **ServiceNow Classic (Mobile)** и сделайте следующее:
 
-    a. Выберите значок "плюс" в правом нижнем углу.
+    а. Выберите значок "плюс" в правом нижнем углу.
 
     ![Снимок экрана: приложение ServiceNow Classic, где выделен значок "плюс"](./media/servicenow-tutorial/test03.png)
 

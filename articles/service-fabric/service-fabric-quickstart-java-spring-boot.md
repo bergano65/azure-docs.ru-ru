@@ -1,26 +1,17 @@
 ---
 title: Краткое руководство. Создание приложения Spring Boot в Azure Service Fabric
 description: В этом кратком руководстве вы развернете приложение Spring Boot для Azure Service Fabric, используя пример приложения Spring Boot.
-services: service-fabric
-documentationcenter: java
 author: suhuruli
-manager: msfussell
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: java
 ms.topic: quickstart
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 01/29/2019
 ms.author: suhuruli
 ms.custom: mvc, devcenter, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 4ec6addb348b8c13f124ec225e056d2003a93c38
-ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
+ms.openlocfilehash: c12cd53b55cac48aae3d69506204c9d107e34aa6
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71703521"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75464382"
 ---
 # <a name="quickstart-deploy-a-java-spring-boot-app-on-azure-service-fabric"></a>Краткое руководство. Развертывание приложения Java Spring Boot в Azure Service Fabric
 
@@ -37,25 +28,25 @@ ms.locfileid: "71703521"
 * Масштабирование приложения на несколько узлов
 * Отработка отказа службы без ущерба для ее доступности
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим кратким руководством сделайте следующее:
 
 1. Установите пакет SDK и интерфейс командной строки Service Fabric:
 
-    a. [Mac](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli#cli-mac)
+    а. [Mac](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli#cli-mac)
     
     b. [Linux](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#installation-methods)
 
 1. [установите Git](https://git-scm.com/);
 1. установка Yeoman;
 
-    a. [Mac](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-mac#create-your-application-on-your-mac-by-using-yeoman)
+    а. [Mac](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-mac#create-your-application-on-your-mac-by-using-yeoman)
 
     b. [Linux](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#set-up-yeoman-generators-for-containers-and-guest-executables)
 1. Настройте среду Java:
 
-    a. [Mac](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-mac#create-your-application-on-your-mac-by-using-yeoman)
+    а. [Mac](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-mac#create-your-application-on-your-mac-by-using-yeoman)
     
     b.  [Linux](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#set-up-java-development)
 
@@ -214,7 +205,7 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
 
     ![Service Fabric Explorer после успешного перезапуска узла](./media/service-fabric-quickstart-java-spring-boot/service-fabric-explorer-service-moved.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить следующие действия:
 

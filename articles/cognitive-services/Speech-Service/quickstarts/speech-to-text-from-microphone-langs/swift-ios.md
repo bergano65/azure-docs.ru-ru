@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 07/05/2019
+ms.date: 12/23/2019
 ms.author: chlandsi
-ms.openlocfilehash: 53ddf18c0ea102968db03bc4435b7615e724892a
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: 31f5339c70d52019400ca5f1fe873de4790a3bd6
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74818500"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75380530"
 ---
 # <a name="quickstart-recognize-speech-in-swift-on-ios-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в Swift с использованием iOS и пакета SDK службы "Речь"
 
@@ -23,7 +23,7 @@ ms.locfileid: "74818500"
 
 Из этой статьи вы узнаете, как с помощью пакета SDK для службы "Речь" в Azure Cognitive Services можно создать приложение iOS на Swift, которое будет преобразовывать микрофонную запись речи в текст.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы вам потребуются:
 
@@ -95,7 +95,7 @@ ms.locfileid: "74818500"
 1. Соберите и выполните пример кода в симуляторе iOS, выбрав в меню **Product** (Продукт) > **Run** (Запустить). Можно также нажать кнопку **Play** (Воспроизвести).
 1. Нажав кнопку **Recognize** (Распознать) в приложении и сказав несколько слов, вы должны увидеть произнесенный текст в нижней части экрана.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Примеры на сайте GitHub](https://aka.ms/csspeech/samples)

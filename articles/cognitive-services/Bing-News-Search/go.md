@@ -8,31 +8,31 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-visual-search
 ms.topic: quickstart
-ms.date: 2/21/2019
+ms.date: 12/16/2019
 ms.author: aahi
-ms.openlocfilehash: e08fe23f99cbf2fac7fc0528b04360f36d22b875
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: a72859e378bc1f97ebaed6a11ea3b250a33651d5
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74222118"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448530"
 ---
 # <a name="quickstart-get-news-results-using-the-bing-news-search-rest-api-and-go"></a>Краткое руководство. Получайте новости, используя REST API поиска новостей Bing и Go
 
 В этом кратком руководстве используется язык Go для вызова API поиска новостей Bing. Результаты содержат имена и URL-адреса источников новостей, идентифицированные строкой запроса.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 * Установите [двоичные файлы Go](https://golang.org/dl/).
 * Установите go-spew-библиотеку для программы красивой печати, чтобы отобразить результаты.
     * Установить эту библиотеку: `$ go get -u https://github.com/davecgh/go-spew`
 
-[!INCLUDE [bing-web-search-quickstart-signup](../../../includes/bing-web-search-quickstart-signup.md)]
+[!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../includes/cognitive-services-bing-news-search-signup-requirements.md)]
 
 ## <a name="create-a-project-and-import-libraries"></a>Создание проекта и импорт библиотек
 
 Создайте проект Go в используемой интегрированной среде разработки или текстовом редакторе. Затем импортируйте `net/http` для запросов, `ioutil` для чтения ответа и `encoding/json` для обработки текста JSON-результатов. Go-spew-библиотека необходима для анализа JSON. 
 
-```
+```go
 package main
 
 import (
@@ -49,7 +49,7 @@ import (
 
 Структура `NewsAnswer` форматирует данные в ответе. Ответ JSON — многоуровневый и довольно сложный.  В следующей реализации рассматриваются основные компоненты.
 
-```
+```go
 // This struct formats the answer provided by the Bing News Search API.
 type NewsAnswer struct {
     ReadLink       string `json: "readLink"` 
@@ -87,9 +87,9 @@ type NewsAnswer struct {
 
 ## <a name="declare-the-main-function-and-define-variables"></a>Объявление функции main и определение переменных  
 
-Следующий код объявляет основную функцию и назначает необходимые переменные. Убедитесь, что конечная точка указана верно, и замените значение `token` действительным ключом подписки из своей учетной записи Azure.
+Следующий код объявляет основную функцию и назначает необходимые переменные. Убедитесь, что конечная точка указана верно, и замените значение `token` действительным ключом подписки из своей учетной записи Azure. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
 
-```
+```go
 func main() {
     // Verify the endpoint URI and replace the token string with a valid subscription key.  
     const endpoint = "https://api.cognitive.microsoft.com/bing/v7.0/news/search"
@@ -110,7 +110,7 @@ func main() {
 
 Добавьте строку запроса и заголовок ключа доступа.
 
-```
+```go
 // Add the query to the request.  
 param := req.URL.Query()
 param.Add("q", searchTerm)
@@ -125,7 +125,7 @@ req.Header.Add("Ocp-Apim-Subscription-Key", token)
 
 Создайте клиента и отправьте запрос Get. 
 
-```
+```go
 // Instantiate a client.  
 client := new(http.Client)
 
@@ -141,7 +141,7 @@ if err != nil {
 
 Отправьте запрос и считайте ответы с помощью `ioutil`.
 
-```
+```go
 resp, err := client.Do(req)
     if err != nil {
         panic(err)
@@ -162,7 +162,7 @@ if err != nil {
 
 Функция `Unmarshall` извлекает сведения из текста JSON, возвращаемого API поиска новостей.  Затем можно отобразить узлы из результатов с помощью программы красивой печати `go-spew`.
 
-```
+```go
 // Create a new answer object 
 ans := new(NewsAnswer)
 err = json.Unmarshal(body, &ans)
@@ -203,7 +203,7 @@ spew.Dump(result.Name, result.URL)
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Общие сведения об API Bing для поиска новостей](search-the-web.md)

@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-spell-check
 ms.topic: quickstart
-ms.date: 04/11/2019
+ms.date: 12/16/2019
 ms.author: aahi
-ms.openlocfilehash: 0a40163eddffd4e406dd0644f950f6af636a1dfa
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 43c528a1e9e46a67e895679b1a0fd04fef8900a7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74383874"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75382965"
 ---
 # <a name="quickstart-check-spelling-with-the-bing-spell-check-rest-api-and-java"></a>Краткое руководство. Проверка орфографии с помощью REST API проверки орфографии Bing и Java
 
 В этом кратком руководстве показано, как отправить первый вызов к REST API "Проверка орфографии Bing". Это простое приложение Java отправляет запрос к API и возвращает список предлагаемых исправлений. Хотя это приложение создано на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/Search/BingSpellCheckv7.java).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Пакет разработчиков Java (JDK) версии 7 или более поздней.
 
@@ -40,7 +40,7 @@ ms.locfileid: "74383874"
     import javax.net.ssl.HttpsURLConnection;
     ```
 
-2. Создайте переменные для узла конечной точки API, пути и ключа подписки. Затем создайте переменные для вашей отрасли, режима проверки орфографии и текста, который требуется проверить.
+2. Создайте переменные для узла конечной точки API, пути и ключа подписки. Затем создайте переменные для вашей отрасли, режима проверки орфографии и текста, который требуется проверить. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
 
     ```java
     static String host = "https://api.cognitive.microsoft.com";
@@ -187,7 +187,7 @@ java -cp .;gson-2.2.2.jar\* <CLASS_NAME>
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание одностраничного веб-приложения](../tutorials/spellcheck.md)

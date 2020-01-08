@@ -1,23 +1,23 @@
 ---
 title: Краткое руководство. Синтезирование речи с записью в звуковой файл в службе "Речь" с помощью Python
 titleSuffix: Azure Cognitive Services
-description: ПОДЛЕЖИТ УТОЧНЕНИЮ
+description: TBD
 services: cognitive-services
 author: chlandsi
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
+ms.topic: include
 ms.date: 07/05/2019
 ms.author: chlandsi
-ms.openlocfilehash: 314a5302c76157810557036370a18ad6fb605033
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: d82b2904f16cc9816a22caadba598a7a44bfa007
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74817889"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75469007"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Ключ подписки Azure для службы "Речь". [Получить бесплатно](~/articles/cognitive-services/Speech-Service/get-started.md).
 * [Python 3.5 или более поздней версии](https://www.python.org/downloads/).
@@ -27,7 +27,7 @@ ms.locfileid: "74817889"
     * Linux: Ubuntu 16.04, Ubuntu 18.04, Debian 9 на x64.
 * Чтобы установить необходимые пакеты в Linux, выполните следующие команды.
 
-  * Для Ubuntu.
+  * В Ubuntu:
 
     ```sh
     sudo apt-get update
@@ -73,7 +73,7 @@ python quickstart.py
 
 Кроме того, можно скачать это краткое руководство как записную книжку [Jupyter](https://jupyter.org) из [репозитория с примером пакета SDK для службы "Речь"](https://github.com/Azure-Samples/cognitive-services-speech-sdk/) и запустить его как записную книжку.
 
-### <a name="sample-code"></a>Пример кода
+### <a name="sample-code"></a>Образец кода
 
 ````Python
 
@@ -142,11 +142,11 @@ elif result.reason == speechsdk.ResultReason.Canceled:
 
 При возникновении проблемы в процессе работы с данной инструкцией см. более подробное руководство по [Visual Studio Code для Python](https://code.visualstudio.com/docs/python/python-tutorial).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [footer](./footer.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Создание пользовательского голоса](~/articles/cognitive-services/Speech-Service/how-to-custom-voice-create-voice.md)
 - [Запись пользовательских образцов голоса](~/articles/cognitive-services/Speech-Service/record-custom-voice-samples.md)

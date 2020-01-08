@@ -25,6 +25,10 @@
   items:
     - name: Создание бессерверного приложения в реальном времени с аутентификацией
       href: signalr-tutorial-authenticate-azure-functions.md
+    - name: Монитор
+      items:
+        - name: Мониторинг Службы SignalR с помощью журналов диагностики
+          href: signalr-tutorial-diagnostic-logs.md
 - name: Примеры
   items:
     - name: Примеры кода
@@ -51,19 +55,19 @@
           href: signalr-concept-disaster-recovery.md
     - name: Сообщения и подключения
       href: signalr-concept-messages-and-connections.md
-    - name: Рекомендации по производительности
+    - name: Вопросы производительности
       href: signalr-concept-performance.md
     - name: Аутентификация
       href: signalr-concept-authenticate-oauth.md
     - name: Обработка событий
       href: signalr-concept-event-grid-integration.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Масштабирование
       items:
         - name: Единственный экземпляр
           href: signalr-howto-scale-signalr.md
-        - name: Выполнение на нескольких экземплярах
+        - name: Несколько экземпляров
           href: signalr-howto-scale-multi-instances.md
     - name: Безопасность
       items:
@@ -75,7 +79,7 @@
           href: signalr-concept-azure-functions.md
         - name: Интеграция с Сеткой событий
           href: signalr-howto-event-grid-integration.md
-- name: Справочники
+- name: Ссылки
   items:
     - name: Azure CLI
       href: signalr-reference-cli.md
@@ -100,7 +104,7 @@
     - name: Часто задаваемые вопросы
       href: signalr-resource-faq.md
     - name: Ограничения уровней подписки службы SignalR
-      href: 'https://docs.microsoft.com/azure/azure-subscription-service-limits#signalr-service-limits'
+      href: 'https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#signalr-service-limits'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/signalr-service/'
     - name: Видео

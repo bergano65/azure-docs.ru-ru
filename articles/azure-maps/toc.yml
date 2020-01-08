@@ -31,6 +31,16 @@
           href: tutorial-ev-routing.md
         - name: Анализ данных о погоде с помощью Записных книжек Azure (Python)
           href: weather-service-tutorial.md
+    - name: Миграция из Google Карт
+      items:
+        - name: Миграция из Google Карт
+          href: migrate-from-google-maps.md
+        - name: Миграция веб-приложения
+          href: migrate-from-google-maps-web-app.md
+        - name: Миграция приложения Android
+          href: migrate-from-google-maps-android-app.md
+        - name: Миграция веб-службы
+          href: migrate-from-google-maps-web-services.md
 - name: Основные понятия
   items:
     - name: Аутентификация в Azure Maps
@@ -63,7 +73,7 @@
       href: mobility-service-data-structure.md
     - name: Основные понятия службы погоды
       href: weather-services-concepts.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Управление учетными записями службы Maps
       items:
@@ -103,8 +113,12 @@
               href: create-data-source-web-sdk.md
             - name: Добавление слоя символов
               href: map-add-pin.md
+            - name: Добавление контекстного меню
+              href: map-add-popup.md
             - name: Добавление слоя пузырьков
               href: map-add-bubble-layer.md
+            - name: Добавление маркеров HTML
+              href: map-add-custom-html.md
             - name: Добавление слоя линий
               href: map-add-line-layer.md
             - name: Добавление слоя многоугольников
@@ -113,34 +127,34 @@
               href: map-extruded-polygon.md
             - name: Добавление слоя тепловой карты
               href: map-add-heat-map-layer.md
-            - name: Добавление контекстного меню
-              href: map-add-popup.md
+            - name: Добавление слоя изображений
+              href: map-add-image-layer.md
+            - name: Добавление слоев фрагмента карты
+              href: map-add-tile-layer.md
+            - name: Отображение трафика
+              href: map-show-traffic.md
             - name: Данные точек кластера
               href: clustering-point-data-web-sdk.md
             - name: Использование стилистических выражений на основе данных
               href: data-driven-style-expressions-web-sdk.md
             - name: Использование шаблонов образов
               href: how-to-use-image-templates-web-sdk.md
-            - name: Добавление слоя изображений
-              href: map-add-image-layer.md
-            - name: Добавление слоев фрагмента карты
-              href: map-add-tile-layer.md
-            - name: HTML-метки
-              href: map-add-custom-html.md
-            - name: Отображение трафика
-              href: map-show-traffic.md
             - name: Реагирование на события
               href: map-events.md
             - name: Добавление специальных возможностей в приложение
               href: map-accessibility.md
         - name: Инструменты для рисования
           items:
-            - name: Добавление панели инструментов рисования
-              href: map-add-drawing-toolbar.md
-            - name: Настройка параметров рисования
+            - name: Использование модуля средств рисования
               href: set-drawing-options.md
+            - name: Добавление панели средств рисования
+              href: map-add-drawing-toolbar.md
             - name: Получение данных о фигуре
               href: map-get-shape-data.md
+            - name: Реакция на события рисования
+              href: drawing-tools-events.md
+            - name: Типы взаимодействия и сочетания клавиш
+              href: drawing-tools-interactions-keyboard-shortcuts.md
         - name: Модуль служб
           items:
             - name: Использование модуля служб
@@ -169,7 +183,7 @@
           href: how-to-add-tile-layer-android-map.md
     - name: Предоставление отзывов о данных
       href: how-to-use-feedback-tool.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Расширения параметров и API
       items:
@@ -231,6 +245,8 @@
       href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=azurelbs'
     - name: Видео об Azure Maps
       href: 'https://aka.ms/AzureMapsVideos'
+    - name: Проекты с открытым исходным кодом
+      href: open-source-projects.md
     - name: Примеры использования Azure Maps
       href: 'https://aka.ms/AzureMapsCaseStudies'
     - name: Глоссарий Azure Maps

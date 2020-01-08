@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: storage
 author: mhopkins-msft
 ms.service: storage
@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 11/23/2019
 ms.author: mhopkins
 ms.custom: include file
-ms.openlocfilehash: 7e6bdf8f2cede2d55163932bfe8ab58e9ee96e0f
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 7dd22886d11c3a35a7a866ff7c9a4f56ea74cab7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74422041"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351220"
 ---
 ### <a name="copy-your-credentials-from-the-azure-portal"></a>Копирование учетных данных с портала Azure
 
 Когда пример приложения выполняет запрос к службе хранилища Azure, он должен быть авторизован. Для авторизации запроса добавьте в приложение учетные данные учетной записи хранения в виде строки подключения. Чтобы просмотреть учетные данные учетной записи хранения, выполните следующие действия:
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Перейдите к учетной записи хранения.
 3. В разделе **Параметры** учетной записи хранения выберите параметр **Ключи доступа**. На этой странице вы увидите ключи доступа к учетной записи и полную строку подключения для каждого ключа.
 4. Найдите значение для параметра **Строка подключения** в разделе **Key1** и нажмите кнопку **Скопировать**, чтобы скопировать строку подключения. На следующем этапе вы добавите значение строки подключения в переменную среды.
@@ -33,7 +33,7 @@ ms.locfileid: "74422041"
 #### <a name="windows"></a>Windows
 
 ```cmd
-setx CONNECT_STR "<yourconnectionstring>"
+setx AZURE_STORAGE_CONNECTION_STRING "<yourconnectionstring>"
 ```
 
 После добавления переменной среды в Windows вам необходимо запустить новый экземпляр командного окна.
@@ -41,13 +41,13 @@ setx CONNECT_STR "<yourconnectionstring>"
 #### <a name="linux"></a>Linux
 
 ```bash
-export CONNECT_STR="<yourconnectionstring>"
+export AZURE_STORAGE_CONNECTION_STRING="<yourconnectionstring>"
 ```
 
 #### <a name="macos"></a>macOS
 
 ```bash
-export CONNECT_STR="<yourconnectionstring>"
+export AZURE_STORAGE_CONNECTION_STRING="<yourconnectionstring>"
 ```
 
 #### <a name="restart-programs"></a>Перезапуск программ

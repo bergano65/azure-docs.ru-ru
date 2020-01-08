@@ -2,19 +2,16 @@
 title: Краткое руководство по Azure. Создание runbook службы автоматизации Azure | Документация Майкрософт
 description: Узнайте, как создать runbook службы автоматизации Azure
 services: automation
-author: csand-msft
-ms.author: csand
 ms.date: 02/05/2019
 ms.topic: quickstart
-ms.service: automation
 ms.subservice: process-automation
 ms.custom: mvc
-ms.openlocfilehash: 2cbb37b4e93468a42335f40a19baf4c742cb6dbb
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: 5a6dbda59495fccb6b9d53440f408fd4750925b5
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71098628"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75421664"
 ---
 # <a name="create-an-azure-automation-runbook"></a>Создание runbook службы автоматизации Azure
 
@@ -96,7 +93,7 @@ ms.locfileid: "71098628"
 
 Удалите runbook, если он больше не нужен. Для этого выберите ненужный runbook в списке и щелкните **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы создали, изменили, протестировали и опубликовали runbook, а затем запустили задание runbook. Дополнительные сведения о runbook службы автоматизации см. в статьях о разных типах runbook, которые можно создавать и использовать в службе автоматизации.
 

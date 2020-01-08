@@ -1,5 +1,5 @@
 ---
-title: Руководство по сущности списка — LUIS
+title: Руководство. сущности списка — LUIS
 titleSuffix: Azure Cognitive Services
 description: Получите данные, соответствующие определенному списку элементов. У каждого элемента в списке могут быть синонимы, для которых существует точное совпадение.
 services: cognitive-services
@@ -9,20 +9,18 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/04/2019
+ms.date: 12/17/2019
 ms.author: diberry
-ms.openlocfilehash: 83644ac7144adaa664b13b6e7d7993c50da0e779
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 056c64657f42d56879928f518598206d45493f60
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74852472"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75447786"
 ---
-# <a name="tutorial-get-exact-text-matched-data-from-an-utterance-with-list-entity"></a>Руководство по получению точных данных, сравниваемых с текстом, на основе речевого фрагмента с использованием сущности списка
+# <a name="tutorial-get-exact-text-matched-data-from-an-utterance-with-list-entity"></a>Руководство. получению точных данных, сравниваемых с текстом, на основе речевого фрагмента с использованием сущности списка
 
 В этом учебнике вы узнаете, как получить данные, точно соответствующие предварительно определенному списку элементов.
-
-[!INCLUDE [Uses preview portal](includes/uses-portal-preview.md)]
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
@@ -51,7 +49,7 @@ ms.locfileid: "74852472"
 
 ## <a name="import-example-json-and-add-utterances"></a>Импорт примера JSON-файла и добавление речевых фрагментов
 
-1.  Скачайте и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/machine-learned-entity/pizza-tutorial-with-entities.json).
+1.  Скачайте и сохраните [JSON-файл приложения](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-language-understanding/master/documentation-samples/tutorials/machine-learned-entity/pizza-tutorial-with-entities.json).
 
     [!INCLUDE [Import app steps](includes/import-app-steps.md)]
 
@@ -82,7 +80,7 @@ ms.locfileid: "74852472"
 
 1. Выберите **+ Создать**.
 
-1. Во всплывающем диалоговом окне сущности введите имя сущности `CrustList` и **Список** для типа сущности. Щелкните **Далее**.
+1. Во всплывающем диалоговом окне сущности введите имя сущности `CrustList` и **Список** для типа сущности. Выберите **Далее**.
 
     > [!div class="mx-imgBorder"]
     > ![Снимок экрана всплывающего диалогового окна создания сущности](media/luis-quickstart-intent-and-list-entity/create-pizza-crust-list-entity.png)
@@ -192,7 +190,7 @@ ms.locfileid: "74852472"
 
 [!INCLUDE [LUIS How to clean up resources](includes/quickstart-tutorial-cleanup-resources.md)]
 
-## <a name="related-information"></a>Связанные сведения
+## <a name="related-information"></a>Дополнительные сведения
 
 * [Типы сущностей и их задачи в LUIS](luis-concept-entity-types.md#list-entity) — основные сведения
 * [Обучение активной версии приложения LUIS](luis-how-to-train.md)
@@ -202,7 +200,7 @@ ms.locfileid: "74852472"
 * [Regular expression entity](reference-entity-regular-expression.md?tabs=V3) (Сущность регулярного выражения)
 * [Add entities to extract data](luis-how-to-add-entities.md) (Добавление сущностей для извлечения данных)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого учебника вы узнали, как добавить примеры речевых фрагментов, а затем создать сущность списка для извлечения точного текстового совпадения из речевых фрагментов. После обучения и публикации приложения запрос к конечной точке идентифицировал намерение и вернул извлеченные данные.
 
 > [!div class="nextstepaction"]

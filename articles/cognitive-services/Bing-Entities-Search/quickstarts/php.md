@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
-ms.date: 07/24/2019
+ms.date: 12/11/2019
 ms.author: aahi
-ms.openlocfilehash: 2328313e15fafb3c0f96fdb77f3023afc1e4774f
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 41fa0b469d0d86b8c1d9234455ade0395fa86f3d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74323580"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383956"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-php"></a>Краткое руководство. Отправка поисковых запросов в REST API Bing для поиска сущностей с помощью PHP
 
@@ -23,7 +23,7 @@ ms.locfileid: "74323580"
 
 Хотя это приложение создается на языке PHP, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [PHP 5.6.x](https://php.net/downloads.php) или более поздней версии;
 
@@ -36,7 +36,8 @@ ms.locfileid: "74323580"
 1. Создайте проект PHP в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
 3. Замените значение `key` ключом доступа, допустимым для подписки.
-4. Запустите программу.
+4. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+5. Запустите программу.
 
 ```php
 <?php
@@ -147,7 +148,7 @@ echo json_encode (json_decode ($result), JSON_PRETTY_PRINT);
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-entities-search-single-page-app.md)

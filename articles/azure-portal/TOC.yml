@@ -14,8 +14,12 @@
       href: azure-portal-dashboard-share-access.md
     - name: Создание панелей мониторинга Azure программными средствами
       href: azure-portal-dashboards-create-programmatically.md
-- name: Руководства
+- name: Практические руководства
   items:
+    - name: Задание настроек для портала Azure
+      href: set-preferences.md
+    - name: Настройка параметров времени ожидания активности для всех пользователей
+      href: admin-timeout.md
     - name: Включение режима высокой контрастности или изменение темы
       href: azure-portal-change-theme-high-contrast.md
     - name: 'Добавление, удаление и сортировка избранного'
@@ -28,9 +32,9 @@
       href: azure-portal-export-delete-settings.md
     - name: Серия видеоинструкций по работе с порталом Azure
       href: azure-portal-video-series.md
-- name: Справочные материалы
+- name: Справочник
   items:
-    - name: Сочетания клавиш
+    - name: сочетания клавиш
       href: azure-portal-keyboard-shortcuts.md
     - name: Добавление URL-адресов портала Azure в список надежных адресов
       href: azure-portal-safelist-urls.md

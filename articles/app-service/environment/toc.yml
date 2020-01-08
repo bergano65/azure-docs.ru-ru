@@ -1,9 +1,9 @@
 - name: Среда службы приложений
 - name: Обзор
   items:
-    - name: Сведения о средах службы приложений
+    - name: Сведения о Средах службы приложений
       href: intro.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание внешней среды ASE
@@ -18,7 +18,7 @@
       href: app-service-app-service-environment-custom-settings.md
 - name: Примеры
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: ../samples-cli.md?toc=%2fazure%2fapp-service%2fenvironment%2ftoc.json
     - name: Azure PowerShell
       href: ../samples-powershell.md?toc=%2fazure%2fapp-service%2fenvironment%2ftoc.json
@@ -28,17 +28,17 @@
       href: network-info.md
     - name: Географически распределенное масштабирование
       href: app-service-app-service-environment-geo-distributed-scale.md
-    - name: ASEv1
+    - name: ASE версии 1
       href: app-service-app-service-environment-intro.md
     - name: Диагностика
       href: ../overview-diagnostics.md
     - name: Сертификаты
       href: certificates.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Использование ASE
       href: using-an-ase.md
-    - name: Интеграция со шлюзом приложений
+    - name: Интеграция со Шлюзом приложений
       href: integrate-with-application-gateway.md
     - name: Создание среды ASE с помощью шаблона
       href: create-from-template.md
@@ -46,7 +46,7 @@
       href: forced-tunnel-support.md
     - name: Интеграция брандмауэра
       href: firewall-integration.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Адреса управления
       href: management-addresses.md
@@ -83,22 +83,22 @@
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/app-service/'
     - name: Сведения о квотах
-      href: '../../azure-subscription-service-limits.md#app-service-limits'
+      href: '../../azure-resource-manager/management/azure-subscription-service-limits.md#app-service-limits'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=app-service'
     - name: Рекомендации
       href: ../app-service-best-practices.md?toc=%2fazure%2fapp-service%2fenvironment%2ftoc.json
     - name: Примеры
       href: 'https://azure.microsoft.com/resources/samples/?service=app-service'
-    - name: Видеоролики
+    - name: Видео
       items:
         - name: Видео по Azure
           href: 'https://azure.microsoft.com/resources/videos/index/?services=app-service'
-        - name: Создание современной корпоративной платформы PaaS с помощью службы приложений Azure
+        - name: Создание современной корпоративной платформы PaaS с помощью Службы приложений Azure
           href: 'https://channel9.msdn.com/Events/Ignite/2016/BRK3205/player'
         - name: Развертывание высокомасштабируемых и защищенных приложений
           href: 'https://channel9.msdn.com/Events/Microsoft-Azure/AzureCon-2015/ACON325/player'
-        - name: Выполнение корпоративных веб-приложений и мобильных приложений в службе приложений Azure
+        - name: Выполнение корпоративных веб-приложений и мобильных приложений в Службе приложений Azure
           href: 'https://channel9.msdn.com/Events/Ignite/2015/BRK3715/player'
     - name: Учебники
       items:
@@ -114,7 +114,7 @@
           href: ../troubleshoot-http-502-http-503.md?toc=%2fazure%2fapp-service%2fenvironment%2ftoc.json
         - name: Устранение проблем с производительностью
           href: ../troubleshoot-performance-degradation.md?toc=%2fazure%2fapp-service%2fenvironment%2ftoc.json
-        - name: Часто задаваемые вопросы
+        - name: ВОПРОСЫ И ОТВЕТЫ
           items:
             - name: 'Часто задаваемые вопросы о доступности, производительности и приложениях'
               href: ../faq-availability-performance-application-issues.md?toc=%2fazure%2fapp-service%2fenvironment%2ftoc.json

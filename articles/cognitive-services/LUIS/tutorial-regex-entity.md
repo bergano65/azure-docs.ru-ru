@@ -1,5 +1,5 @@
 ---
-title: Руководство по Сущность регулярного выражения — LUIS
+title: Руководство. Сущность регулярного выражения — LUIS
 titleSuffix: Azure Cognitive Services
 description: Извлечение согласованно отформатированных данных из речевого фрагмента с помощью сущности регулярного выражения.
 services: cognitive-services
@@ -9,19 +9,17 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/04/2019
+ms.date: 12/17/2019
 ms.author: diberry
-ms.openlocfilehash: 8da47899e2d3d2c1d04e9cf4768a968e7893ce96
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 0ca6f2a67e01e4c604c2dcc8f8eaa9ffe8bad045
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74852448"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75381534"
 ---
-# <a name="tutorial-get-well-formatted-data-from-the-utterance"></a>Руководство по Получение данных правильного формата из высказывания
+# <a name="tutorial-get-well-formatted-data-from-the-utterance"></a>Руководство. Получение данных правильного формата из высказывания
 В этом учебнике вы создадите сущность регулярного выражения для извлечения согласованно отформатированных данных из речевого фрагмента.
-
-[!INCLUDE [Uses preview portal](includes/uses-portal-preview.md)]
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
@@ -46,7 +44,7 @@ ms.locfileid: "74852448"
 
 ## <a name="import-example-json-to-begin-app"></a>Импорт примера JSON-файла для создания приложения
 
-1.  Скачайте и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/machine-learned-entity/pizza-tutorial-with-entities.json).
+1.  Скачайте и сохраните [JSON-файл приложения](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-language-understanding/master/documentation-samples/tutorials/machine-learned-entity/pizza-tutorial-with-entities.json).
 
 [!INCLUDE [Import app steps](includes/import-app-steps.md)]
 
@@ -189,13 +187,13 @@ ms.locfileid: "74852448"
 
 [!INCLUDE [LUIS How to clean up resources](includes/quickstart-tutorial-cleanup-resources.md)]
 
-## <a name="related-information"></a>Связанные сведения
+## <a name="related-information"></a>Дополнительные сведения
 
 * [Entities and their purpose in LUIS](luis-concept-entity-types.md) (Сущности и их назначение в LUIS)
 * [Regular expression entity](reference-entity-regular-expression.md?tabs=V3) (Сущность регулярного выражения)
 * [Add entities to extract data](luis-how-to-add-entities.md) (Добавление сущностей для извлечения данных)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого руководства вы узнали, как создать новое намерение, добавить примеры высказываний, а затем создать сущность регулярного выражения для извлечения данных в правильном формате из высказывания. После обучения и публикации приложения запрос к конечной точке идентифицировал намерение и вернул извлеченные данные.
 
 > [!div class="nextstepaction"]

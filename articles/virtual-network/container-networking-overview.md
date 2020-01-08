@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 9/18/2018
 ms.author: aanandr
 ms.custom: ''
-ms.openlocfilehash: 2ebc678bffbbbe5d512d620b8f77ac0a245c0aff
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.openlocfilehash: bdd364c097552d3a1b52073af97d33db70d78556
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59579127"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647447"
 ---
 # <a name="enable-containers-to-use-azure-virtual-network-capabilities"></a>Включение контейнеров для использования возможностей виртуальной сети Azure
 
@@ -53,7 +53,7 @@ ms.locfileid: "59579127"
 
 ## <a name="limits"></a>Ограничения
 
-Подключаемый модуль поддерживает до 250 контейнеров Pod на каждую виртуальную машину и до 16 000 контейнеров Pod в виртуальной сети. Эти ограничения отличаются от ограничений для [Службы Azure Kubernetes](../azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-kubernetes-service-limits).
+Подключаемый модуль поддерживает до 250 контейнеров Pod на каждую виртуальную машину и до 16 000 контейнеров Pod в виртуальной сети. Эти ограничения отличаются от ограничений для [Службы Azure Kubernetes](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-kubernetes-service-limits).
 
 ## <a name="using-the-plug-in"></a>Использование подключаемого модуля
 
@@ -64,6 +64,6 @@ ms.locfileid: "59579127"
 - **Создание кластера Kubernetes в Azure** Подключаемый модуль можно использовать для предоставления основных сетей для контейнеров Pod в кластерах Kubernetes, которые вы развертываете самостоятельно, не полагаясь на AKS и такие средства, как обработчик AKS. В этом случае подключаемый модуль установлен и включен на каждой виртуальной машине в кластере. Подробные инструкции см. в разделе [Развертывание подключаемого модуля для кластера Kubernetes](deploy-container-networking.md#deploy-plug-in-for-a-kubernetes-cluster).
 - **Подключение виртуальной сети к контейнерам Docker в Azure**. Подключаемый модуль может использоваться в тех случаях, когда вы не хотите создавать кластер Kubernetes, а хотите создать контейнеры Docker с подключением виртуальной сети в виртуальных машинах. Подробные инструкции см. в разделе [Развертывание подключаемого модуля для контейнеров Docker](deploy-container-networking.md#deploy-plug-in-for-docker-containers).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в разделе о [развертывании подключаемого модуля](deploy-container-networking.md) для кластеров Kubernetes и контейнеров Docker.

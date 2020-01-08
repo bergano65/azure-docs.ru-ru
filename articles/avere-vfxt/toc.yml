@@ -10,7 +10,7 @@
       href: avere-vfxt-deploy-plan.md
     - name: Обзор развертывания Avere vFXT
       href: avere-vfxt-deploy-overview.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Подготовка к созданию Avere vFXT
       href: avere-vfxt-prereqs.md

@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: quickstart
-ms.date: 6/18/2019
+ms.date: 12/12/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: b905993c88bd4425215dd83962980d8e46a7b943
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.openlocfilehash: 79f00e4138d0fecdc7320235dd9c496033693d2b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68423703"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383101"
 ---
 # <a name="quickstart-perform-a-news-search-using-php-and-the-bing-news-search-rest-api"></a>Краткое руководство. Поиск новостей с помощью PHP и REST API Bing для поиска новостей
 
@@ -24,7 +24,7 @@ ms.locfileid: "68423703"
 
 Хотя это приложение создается на языке PHP, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * PHP 5.6 или более поздней версии.
 
@@ -36,10 +36,11 @@ ms.locfileid: "68423703"
 
 [API Bing для поиска новостей](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference) возвращает результаты поиска новостей из поисковой системы Bing.
 
-1. Убедитесь, что в `php.ini` включена поддержка безопасного HTTP, как описано в комментарии к коду.
+1. Убедитесь, что в `php.ini` включена поддержка безопасного HTTP-подключения, как описано в комментарии к коду.
 2. Создайте проект PHP в используемой вами интегрированной среде разработки или редакторе.
 3. Добавьте указанный ниже код.
 4. Замените значение `accessKey` ключом доступа, допустимым для подписки.
+5. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
 5. Запустите программу.
 
 ```php
@@ -197,7 +198,7 @@ echo json_encode(json_decode($json), JSON_PRETTY_PRINT);
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание одностраничного веб-приложения](tutorial-bing-news-search-single-page-app.md)

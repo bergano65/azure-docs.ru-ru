@@ -6,6 +6,14 @@
       href: migrate-services-overview.md
     - name: Новые возможности
       href: whats-new.md
+    - name: Часто задаваемые вопросы
+      items:
+        - name: Вопросы о Миграции Azure
+          href: resources-faq.md
+        - name: Вопросы об устройстве Миграции Azure
+          href: common-questions-appliance.md
+        - name: 'Вопросы об обнаружении, оценке и визуализации зависимостей'
+          href: common-questions-discovery-assessment.md
 - name: Учебники
   items:
     - name: Оценка и перенос виртуальных машин VMware
@@ -44,8 +52,6 @@
           href: tutorial-assess-import.md
 - name: Основные понятия
   items:
-    - name: Часто задаваемые вопросы
-      href: resources-faq.md
     - name: Таблицы поддержки
       items:
         - name: Таблица поддержки для Миграции Azure
@@ -70,7 +76,7 @@
       href: concepts-assessment-calculation.md
     - name: Визуализация зависимостей
       href: concepts-dependency-visualization.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Работа с предыдущей версией
       href: migrate-v1.md
@@ -114,7 +120,7 @@
       href: how-to-migrate-at-scale.md
     - name: Ряд примеров по миграции (Contoso)
       href: contoso-migration-overview.md
-- name: Устранение неполадок
+- name: Диагностика
   items:
     - name: Устранение неполадок в службе "Миграция Azure"
       href: troubleshooting-general.md

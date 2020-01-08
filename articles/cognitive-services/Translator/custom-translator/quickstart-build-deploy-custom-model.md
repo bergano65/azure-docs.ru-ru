@@ -9,18 +9,18 @@ ms.subservice: translator-text
 ms.date: 12/09/2019
 ms.author: swmachan
 ms.topic: quickstart
-ms.openlocfilehash: d93c6333b811885eec37e8401bee27afeedf1475
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 82f2acb811bcb239f6329ab8d8b4008e13ac6490
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74975760"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75446746"
 ---
 # <a name="quickstart-build-deploy-and-use-a-custom-model-for-translation"></a>Краткое руководство. Создание, развертывание и использование пользовательской модели для перевода
 
 В этой статье приведена пошаговая инструкция по созданию системы перевода с помощью Custom Translator.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 1. Чтобы войти на портал [Custom Translator](https://portal.customtranslator.azure.ai) и использовать его, вам потребуется [учетная запись Майкрософт](https://signup.live.com) или [Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis) (размещенная в Azure учетная запись организации).
 
@@ -37,7 +37,7 @@ ms.locfileid: "74975760"
 
 ## <a name="upload-documents"></a>Отправка документов
 
-Затем отправьте наборы документов для [обучения](training-and-model.md#training-dataset-for-custom-translator), [настройки](training-and-model.md#tuning-dataset-for-custom-translator) и [тестирования](training-and-model.md#testing-dataset-for-custom-translator). Вы можете отправить [параллельные](what-are-parallel-documents.md) или комбинированные документы. Можно также отправить [словарь](what-is-dictionary.md).
+Затем отправьте наборы документов для [обучения](training-and-model.md#training-document-type-for-custom-translator), [настройки](training-and-model.md#tuning-document-type-for-custom-translator) и [тестирования](training-and-model.md#testing-dataset-for-custom-translator). Вы можете отправить [параллельные](what-are-parallel-documents.md) или комбинированные документы. Можно также отправить [словарь](what-is-dictionary.md).
 
 Вы можете отправить документы со вкладки документов или со страницы конкретного проекта.
 
@@ -49,7 +49,7 @@ ms.locfileid: "74975760"
 
 После передачи всех необходимых документов нужно переходить к созданию модели.
 
-Выберите проект, который вы создали. Вы увидите все отправленные вами документы, языковая пара которых совпадает с настроенной для этого проекта. Выберите документы, которые необходимо включить в модель. Вы можете выбрать данные для [обучения](training-and-model.md#training-dataset-for-custom-translator), [настройки](training-and-model.md#tuning-dataset-for-custom-translator) или [тестирования](training-and-model.md#testing-dataset-for-custom-translator) либо выбрать только данные для обучения и разрешить Custom Translator автоматически создать для модели наборы для настройки и тестирования.
+Выберите проект, который вы создали. Вы увидите все отправленные вами документы, языковая пара которых совпадает с настроенной для этого проекта. Выберите документы, которые необходимо включить в модель. Вы можете выбрать данные для [обучения](training-and-model.md#training-document-type-for-custom-translator), [настройки](training-and-model.md#tuning-document-type-for-custom-translator) или [тестирования](training-and-model.md#testing-dataset-for-custom-translator) либо выбрать только данные для обучения и разрешить Custom Translator автоматически создать для модели наборы для настройки и тестирования.
 
 ![Создание модели](media/quickstart/ct-how-to-train.png)
 
@@ -71,6 +71,6 @@ ms.locfileid: "74975760"
 
 Доступ к развернутым моделям можно получить через [API перевода текстов Майкрософт версии 3, указав идентификатор категории](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl). Дополнительные сведения об API перевода текстов можно найти на [этой веб-странице](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как переходить между элементами в [рабочей области Custom Translator и управлять проектами](workspace-and-project.md).

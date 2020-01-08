@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Вызов конечной точки Пользовательского поиска Bing с помощью пакета SDK для C# | Документация Майкрософт
+title: Краткое руководство. Вызов конечной точки Пользовательского поиска Bing с помощью пакета SDK для C#
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как запрашивать результаты поиска из экземпляра Пользовательского поиска Bing с помощью пакета SDK для C#.
 services: cognitive-services
@@ -10,18 +10,18 @@ ms.subservice: bing-custom-search
 ms.topic: quickstart
 ms.date: 12/09/2019
 ms.author: scottwhi
-ms.openlocfilehash: 21b192d29f30d66e3d5f0ce6e04317d3ca7c860e
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 5e932b1ff597fc0170a6bb83841bc6ca7306693a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74977154"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448718"
 ---
 # <a name="quickstart-call-your-bing-custom-search-endpoint-using-the-c-sdk"></a>Краткое руководство. Вызов конечной точки Пользовательского поиска Bing с помощью пакета SDK для C# 
 
 Используйте это краткое руководство,чтобы начать запрос результатов поиска из экземпляра Пользовательского поиска Bing с помощью пакета SDK для C#. Хотя Пользовательский поиск Bing имеет API REST, совместимый с большинством языков, пакет SDK для Пользовательского поиска Bing предоставляет простой способ интегрировать службу в приложения. Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/BingSearchv7/BingCustomWebSearch).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Экземпляр службы "Пользовательский поиск Bing". См. [Краткое руководство. Создание первого экземпляра службы "Пользовательский поиск Bing"](quick-start.md), чтобы получить дополнительные сведения.
 - Microsoft [.NET Core](https://www.microsoft.com/net/download/core)

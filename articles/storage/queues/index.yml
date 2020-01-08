@@ -12,12 +12,12 @@ metadata:
   author: mhopkins-msft
   ms.author: mhopkins
   ms.date: 08/27/2019
-  ms.openlocfilehash: 4dcf6ae4e9a5a65e060b647f02761b2c46238d13
-  ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+  ms.openlocfilehash: 871447957b905157625ab487269b9ce1ca105935
+  ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/04/2019
-  ms.locfileid: "70277920"
+  ms.lasthandoff: 12/25/2019
+  ms.locfileid: "75457282"
 landingContent:
 - title: Очереди Azure
   linkLists:
@@ -31,10 +31,18 @@ landingContent:
     links:
     - text: Создание очереди и добавление сообщения в нее с помощью портала Azure
       url: storage-quickstart-queues-portal.md
-    - text: Использование .NET для создания очереди в службе хранилища Azure
-      url: storage-quickstart-queues-dotnet.md
 - title: Разработка с использованием очередей
   linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Хранилище очередей Azure для .NET
+      url: storage-quickstart-queues-dotnet.md
+    - text: Хранилище очередей Azure для Java
+      url: storage-quickstart-queues-java.md
+    - text: Хранилище очередей Azure для Python
+      url: storage-quickstart-queues-python.md
+    - text: Хранилище очередей Azure для JavaScript
+      url: storage-quickstart-queues-nodejs.md
   - linkListType: how-to-guide
     links:
     - text: Приступая к работе с хранилищем очередей Azure с помощью .NET

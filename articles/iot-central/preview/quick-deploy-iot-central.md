@@ -3,18 +3,18 @@ title: Создание приложения Azure IoT Central | Докумен�
 description: Создание приложения Azure IoT Central. Создание пробной версии приложения с оплатой по мере использования с помощью шаблона приложения.
 author: lmasieri
 ms.author: lmasieri
-ms.date: 10/24/2019
+ms.date: 12/18/2019
 ms.topic: quickstart
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: corywink
-ms.openlocfilehash: 1fcaf694e7a628232ea252585d6d9a507a9850da
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: bbb287805ac0351153778191d484bae2ef319705
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74287051"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75434788"
 ---
 # <a name="create-an-azure-iot-central-application-preview-features"></a>Создание приложения Azure IoT Central (предварительная версия функции)
 
@@ -56,7 +56,7 @@ ms.locfileid: "74287051"
 
 1. Просмотрите условия и выберите **Создать** в нижней части страницы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы создали приложение IoT Central. Ниже приведено предлагаемое дальнейшее действие:
 

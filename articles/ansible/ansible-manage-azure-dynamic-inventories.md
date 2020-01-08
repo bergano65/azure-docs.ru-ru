@@ -4,14 +4,14 @@ description: Узнайте, как управлять динамическим�
 keywords: ansible, azure, разработка и операции, bash, cloudshell, динамические списки
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: dea6b47e5e263fdd2e048a0435efbebfa90fe69e
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: f159322a19cc79758de33904bbad9dfce32ff7cc
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74156177"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75442791"
 ---
-# <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>Руководство по настройке динамических списков ресурсов Azure с помощью Ansible
+# <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>Руководство. настройке динамических списков ресурсов Azure с помощью Ansible
 
 Ansible можно использовать для извлечения информации из различных источников (включая облачные источники, такие как Azure) в *динамический список*. 
 
@@ -24,7 +24,7 @@ Ansible можно использовать для извлечения инфо
 > * Установка Nginx на виртуальные машины с тегами.
 > * Настройка динамического списка, содержащего настроенные ресурсы Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
 [!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../../includes/open-source-devops-prereqs-create-service-principal.md)]
@@ -32,7 +32,7 @@ Ansible можно использовать для извлечения инфо
 
 ## <a name="create-the-test-vms"></a>Создание тестовых виртуальных машин
 
-1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
 1. Откройте [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
@@ -228,7 +228,7 @@ Ansible предоставляет сценарий Python [azure_rm.py](https:/
           become: yes
           tasks:
           - name: install nginx
-            apt: pkg=nginx state=installed
+            apt: pkg=nginx state=present
             notify:
             - start nginx
     
@@ -313,7 +313,7 @@ Ansible предоставляет сценарий Python [azure_rm.py](https:/
     tom@ansible-inventory-test-vm2:~$
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
-> [Краткое руководство Настройка виртуальных машин Linux в Azure с помощью Ansible](/azure/virtual-machines/linux/ansible-create-vm)
+> [Краткое руководство. Настройка виртуальных машин Linux в Azure с помощью Ansible](/azure/virtual-machines/linux/ansible-create-vm)

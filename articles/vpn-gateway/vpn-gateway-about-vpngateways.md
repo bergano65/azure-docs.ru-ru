@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: overview
 ms.date: 11/13/2019
 ms.author: cherylmc
-ms.openlocfilehash: 11187b403b9bc23a0aa20eb5ee7a5e4923bb7276
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 1a5859517d2f858086c9034c8ee190e99bce5cd5
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74896668"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647753"
 ---
 # <a name="what-is-vpn-gateway"></a>Сведения о VPN-шлюзе
 
@@ -156,8 +156,8 @@ VPN типа "сеть — сеть" можно настроить как защ
 
 См. [вопросы и ответы, связанные с использованием VPN-шлюза](vpn-gateway-vpn-faq.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье [VPN-шлюз: вопросы и ответы](vpn-gateway-vpn-faq.md).
-- См. дополнительные сведения об [ограничениях подписки и службы](../azure-subscription-service-limits.md#networking-limits).
+- См. дополнительные сведения об [ограничениях подписки и службы](../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits).
 - Дополнительные сведения о некоторых других ключевых [сетевых возможностях](../networking/networking-overview.md) Azure.

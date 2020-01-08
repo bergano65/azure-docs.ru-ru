@@ -1,0 +1,58 @@
+### YamlMime:Landing
+title: Документация по хранилищу таблиц Azure
+summary: Хранилище таблиц Azure — это служба, которая хранит структурированные данные NoSQL в облаке, предоставляя хранилище ключей и атрибутов с бессхемной конструкцией.
+metadata:
+  title: Документация по хранилищу таблиц Azure
+  description: Хранилище таблиц Azure — это служба, которая хранит структурированные данные NoSQL в облаке, предоставляя хранилище ключей и атрибутов с бессхемной конструкцией.
+  ms.service: storage
+  ms.subservice: tables
+  ms.topic: landing-page
+  ms.collection: collection
+  author: tamram
+  ms.author: tamram
+  ms.date: 12/23/2019
+  ms.openlocfilehash: 73dc70fb31508667ebcab4803a9263c716ce35c2
+  ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 12/31/2019
+  ms.locfileid: "75551902"
+landingContent:
+- title: Общие сведения о хранилище таблиц
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое хранилище таблиц Azure?
+      url: table-storage-overview.md
+    - text: Выберите Хранилище таблиц или API таблиц
+      url: ../../cosmos-db/table-support.md?toc=https%3A%2F%2Fdocs.microsoft.com%2Fazure%2Fstorage%2Ftables%2FTOC.json&bc=https%3A%2F%2Fdocs.microsoft.com%2Fazure%2Fbread%2Ftoc.json
+- title: Руководство по проектированию таблиц
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Проектирование для эффективных процессов чтения и записи
+      url: table-storage-design-guidelines.md
+    - text: Разработка для запросов
+      url: table-storage-design-for-query.md
+    - text: Разработка для изменения данных
+      url: table-storage-design-for-modification.md
+    - text: Шаблоны для разработки таблиц
+      url: table-storage-design-patterns.md
+- title: Производительность, масштабирование и оптимизация затрат
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Контрольный список для обеспечения производительности хранилища таблиц
+      url: storage-performance-checklist.md
+    - text: Проектирование для обеспечения оптимальной производительности
+      url: table-storage-design.md
+  - linkListType: reference
+    links:
+    - text: Целевые показатели масштабируемости для хранилища таблиц
+      url: scalability-targets.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание таблицы на портале Azure
+      url: table-storage-quickstart-portal.md

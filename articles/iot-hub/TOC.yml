@@ -63,7 +63,7 @@
               href: tutorial-routing.md
             - name: Шаблон Azure RM
               href: tutorial-routing-config-message-routing-RM-template.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: tutorial-routing-config-message-routing-CLI.md
             - name: PowerShell
               href: tutorial-routing-config-message-routing-PowerShell.md
@@ -83,6 +83,8 @@
       href: tutorial-connectivity.md
 - name: Основные понятия
   items:
+    - name: "Обязательное использование TLS\_1.2"
+      href: tls-1.2-everywhere.md
     - name: Общие сведения об обогащении сообщений
       href: iot-hub-message-enrichments-overview.md
     - name: Обзор управления устройствами
@@ -164,13 +166,13 @@
           href: iot-hub-amqp-support.md
         - name: Глоссарий
           href: iot-hub-devguide-glossary.md
-    - name: Безопасность
+    - name: безопасность
       items:
         - name: Рекомендации
           href: /azure/iot-fundamentals/security-recommendations?context=azure/iot-hub/rc/rc
         - name: Все аспекты безопасности
           href: /azure/iot-fundamentals/iot-security-ground-up?context=azure/iot-hub/rc/rc
-        - name: Рекомендации по обеспечению безопасности
+        - name: Лучшие методики обеспечения безопасности
           href: /azure/iot-fundamentals/iot-security-best-practices?context=azure/iot-hub/rc/rc
         - name: Архитектура безопасности
           href: /azure/iot-fundamentals/iot-security-architecture?context=azure/iot-hub/rc/rc
@@ -182,7 +184,7 @@
           href: iot-hub-x509ca-overview.md
         - name: Понятия безопасности в контексте сертификатов X.509 ЦС
           href: iot-hub-x509ca-concept.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Разработка
       items:
@@ -366,13 +368,13 @@
               href: iot-hub-device-management-iot-extension-azure-cli-2-0.md
             - name: Удаленный мониторинг и отправка уведомлений с помощью Logic Apps
               href: iot-hub-monitoring-notifications-with-azure-logic-apps.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: Отключения устройств
           href: iot-hub-troubleshoot-connectivity.md
-- name: Справочные материалы
+- name: Справочник
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/iot
     - name: .NET (служба)
       href: /dotnet/api/microsoft.azure.devices

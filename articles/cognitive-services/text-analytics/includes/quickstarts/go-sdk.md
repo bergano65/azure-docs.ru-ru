@@ -4,16 +4,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 10/28/2019
 ms.author: aahi
-ms.openlocfilehash: 9b148e413bc7dc6af7eff064e5ff3ec6385cfef4
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 75d32cc038d3dbf0f06a844d35a3e626ffaa67f9
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73750135"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75446253"
 ---
 [Справочная документация](https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/textanalytics?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-language-textanalytics) | [Пакет (GitHub)](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v2.1/textanalytics) | [Примеры](https://github.com/Azure-Samples/cognitive-services-quickstart-code)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Последняя версия [Go](https://golang.org/dl/).
@@ -90,13 +90,23 @@ $ touch quickstart.go
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
 
-Создайте в новой функции переменные для конечной точки ресурса Azure и ключа подписки. Эти значения можно получить из переменных среды `TEXT_ANALYTICS_SUBSCRIPTION_KEY` и `TEXT_ANALYTICS_ENDPOINT`. Если вы создали переменные среды после того как изменили приложение, следует закрыть и повторно открыть редактор, интегрированную среду разработки или оболочку, используемые для доступа к этим переменным.
+Создайте в новой функции переменные для конечной точки ресурса Azure и ключа подписки.
 
 [!INCLUDE [text-analytics-find-resource-information](../find-azure-resource-info.md)]
 
 Создайте новый объект [BaseClient](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/textanalytics#New). Передайте ключ в функцию [autorest.NewCognitiveServicesAuthorizer()](https://godoc.org/github.com/Azure/go-autorest/autorest#NewCognitiveServicesAuthorizer), откуда он будет передан в свойство клиента `authorizer`.
 
-[!code-go[Client creation ](~/azure-sdk-for-go-samples/cognitiveservices/textanalytics.go?name=client)]
+```go
+func GetTextAnalyticsClient() textanalytics.BaseClient {
+    var key string = "<paste-your-text-analytics-key-here>"
+    var endpoint string = "<paste-your-text-analytics-endpoint-here>"
+
+    textAnalyticsClient := textanalytics.New(endpoint)
+    textAnalyticsClient.Authorizer = autorest.NewCognitiveServicesAuthorizer(key)
+
+    return textAnalyticsClient
+}
+```
 
 ## <a name="sentiment-analysis"></a>Анализ мнений
 

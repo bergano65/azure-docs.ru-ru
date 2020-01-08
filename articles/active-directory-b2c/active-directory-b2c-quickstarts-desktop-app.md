@@ -12,12 +12,12 @@ ms.custom: mvc
 ms.date: 09/12/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 8265bad5b756ee2ac23bc41c9c58452251ce0717
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 48362b269f38928fec8b1987ea21397b74e7dfb2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74950653"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75368051"
 ---
 # <a name="quickstart-set-up-sign-in-for-a-desktop-app-using-azure-active-directory-b2c"></a>Краткое руководство. Настройка входа в классическое приложение с помощью Azure Active Directory B2C
 
@@ -25,7 +25,7 @@ Azure Active Directory (Azure AD) B2C обеспечивает управлен�
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - [Visual Studio 2019](https://www.visualstudio.com/downloads/) с рабочей нагрузкой **ASP.NET и веб-разработка**.
 - Учетная запись социальных сетей Facebook, Google или Майкрософт.
@@ -77,9 +77,9 @@ Azure AD B2C позволяет пользователям изменять их
 
 Щелкните **Call API** (Вызвать API), чтобы отправить запрос к защищенному ресурсу.
 
-    ![Call API](media/active-directory-b2c-quickstarts-desktop-app/call-api-wpf.png)
+![Вызов API](media/active-directory-b2c-quickstarts-desktop-app/call-api-wpf.png)
 
-    The application includes the Azure AD access token in the request to the protected web API resource. The web API sends back the display name contained in the access token.
+Приложение включает маркер доступа Azure AD в запрос к защищенному ресурсу веб-API. Веб-API отправляет отображаемое имя, содержащееся в маркере доступа.
 
 Вы успешно применили свою учетную запись пользователя Azure AD B2C, чтобы выполнить авторизованный вызов защищенного веб-API Azure AD B2C.
 
@@ -87,7 +87,7 @@ Azure AD B2C позволяет пользователям изменять их
 
 Вы можете использовать свой клиент Azure AD B2C при работе с другими руководствами или краткими пособиями по Azure AD B2C. [Удалите клиент Azure AD B2C](active-directory-b2c-faqs.md#how-do-i-delete-my-azure-ad-b2c-tenant), если он больше не нужен.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве используется пример классического приложения для выполнения следующих задач:
 

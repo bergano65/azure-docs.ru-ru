@@ -20,7 +20,7 @@
       href: pim-email-notifications.md
     - name: API-интерфейсы Microsoft Graph
       href: pim-apis.md
-- name: Руководства
+- name: Практические руководства
   expanded: true
   items:
     - name: Развертывание PIM
@@ -45,6 +45,8 @@
           href: pim-resource-roles-activate-your-roles.md
     - name: "Управление ролями Azure\_AD"
       items:
+        - name: Обновление компонента
+          href: azure-ad-roles-features.md
         - name: Назначение ролей
           href: pim-how-to-add-role-to-user.md
         - name: Утверждение запросов

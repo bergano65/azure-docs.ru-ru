@@ -14,12 +14,12 @@ metadata:
   ms.author: terrylan
   manager: rkarlin
   ms.date: 08/29/2019
-  ms.openlocfilehash: c3f75decc72cbc314309b8cfb0bd81d9c0be2774
-  ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+  ms.openlocfilehash: a25189e75bcf313a5e2e8eee410a581d50f70584
+  ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/06/2019
-  ms.locfileid: "73686312"
+  ms.lasthandoff: 12/31/2019
+  ms.locfileid: "75563757"
 highlightedContent:
   items:
   - title: Введение в систему безопасности Azure
@@ -46,7 +46,7 @@ conceptualContent:
       text: Средства управления безопасностью для служб Azure
     footerLink:
       url: ./fundamentals/index.yml
-      text: Дополнительные сведения
+      text: Подробнее
   - title: Разработчики
     links:
     - url: ./develop/secure-dev-overview.md
@@ -60,15 +60,18 @@ conceptualContent:
       text: Microsoft Threat Modeling Tool
     footerLink:
       url: ./develop/index.yml
-      text: Дополнительные сведения
+      text: Подробнее
   - title: Тесты производительности и рекомендации
     links:
-    - url: https://azure.microsoft.com/resources/azure-cloud-security-benchmark-draft/
+    - url: ./benchmarks/introduction.md
       itemType: download
       text: Тестирование безопасности в облаке Azure
     - url: ../security-center/security-center-using-recommendations.md
       itemType: overview
       text: Рекомендации Центра безопасности Azure
+    footerLink:
+      url: ./benchmarks/index.yml
+      text: Подробнее
   - title: Секреты и ключи
     links:
     - url: ../key-vault/key-vault-overview.md
@@ -82,7 +85,7 @@ conceptualContent:
       text: Что такое служба выделенных устройств HSM Azure?
     footerLink:
       url: /azure/key-vault/
-      text: Дополнительные сведения
+      text: Подробнее
   - title: Защита данных
     links:
     - url: ./fundamentals/encryption-atrest.md
@@ -96,7 +99,7 @@ conceptualContent:
       text: Безопасность хранилищ
     footerLink:
       url: ./fundamentals/encryption-overview.md
-      text: Дополнительные сведения
+      text: Подробнее
   - title: Управление удостоверениями
     links:
     - url: ./fundamentals/choose-ad-authn.md
@@ -107,10 +110,10 @@ conceptualContent:
       text: Защита инфраструктуры удостоверений
     - url: ./fundamentals/identity-management-best-practices.md
       itemType: concept
-      text: Рекомендации по обеспечению безопасности
+      text: Лучшие методики обеспечения безопасности
     footerLink:
       url: ./fundamentals/identity-management-overview.md
-      text: Дополнительные сведения
+      text: Подробнее
   - title: Мониторинг безопасности
     links:
     - url: ../security-center/security-center-get-started.md
@@ -124,7 +127,7 @@ conceptualContent:
       text: Использование политик безопасности
     footerLink:
       url: /azure/security-center/
-      text: Дополнительные сведения
+      text: Подробнее
   - title: Мониторинг безопасности Интернета вещей
     links:
     - url: ../asc-for-iot/overview.md
@@ -138,7 +141,7 @@ conceptualContent:
       text: Начало работы с Центром безопасности Azure для Интернета вещей
     footerLink:
       url: /azure/asc-for-iot/
-      text: Дополнительные сведения
+      text: Подробнее
   - title: Аналитика безопасности
     links:
     - url: ../sentinel/overview.md
@@ -152,7 +155,7 @@ conceptualContent:
       text: Начало работы с предварительной версией Azure Sentinel
     footerLink:
       url: /azure/sentinel/
-      text: Дополнительные сведения
+      text: Подробнее
   - title: Защита от угроз
     links:
     - url: ../security-center/security-center-alerts-overview.md
@@ -166,7 +169,7 @@ conceptualContent:
       text: Расширенная защита от угроз для Базы данных SQL Azure
     footerLink:
       url: ./fundamentals/threat-detection.md
-      text: Дополнительные сведения
+      text: Подробнее
   - title: Ведение журналов и аудит
     links:
     - url: ./fundamentals/log-audit.md
@@ -185,7 +188,7 @@ conceptualContent:
       text: Общие сведения о безопасности
     - url: ./fundamentals/network-best-practices.md
       itemType: concept
-      text: Рекомендации по обеспечению безопасности
+      text: Лучшие методики обеспечения безопасности
     - url: ./fundamentals/ddos-best-practices.md
       itemType: concept
       text: Защита от атак DDoS
@@ -202,7 +205,7 @@ conceptualContent:
       text: Защита данных клиентов
     footerLink:
       url: ./fundamentals/infrastructure.md
-      text: Дополнительные сведения
+      text: Подробнее
   - title: Безопасность виртуальных машин
     links:
     - url: ./fundamentals/virtual-machines-overview.md
@@ -221,7 +224,7 @@ conceptualContent:
       text: Общие сведения о безопасности
     - url: ./fundamentals/database-best-practices.md
       itemType: concept
-      text: Рекомендации по обеспечению безопасности
+      text: Лучшие методики обеспечения безопасности
     - url: ./fundamentals/database-security-checklist.md
       itemType: concept
       text: Контрольный список по безопасности
@@ -235,4 +238,4 @@ conceptualContent:
       text: Служба Azure Blueprints
     footerLink:
       url: /azure/governance/
-      text: Дополнительные сведения
+      text: Подробнее

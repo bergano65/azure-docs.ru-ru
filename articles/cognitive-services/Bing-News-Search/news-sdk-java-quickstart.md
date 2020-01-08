@@ -8,21 +8,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: quickstart
-ms.date: 06/18/2019
+ms.date: 12/12/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: def964dd932f8a41a877a3d9568a8ec4825874b8
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: b8c2ca3bf919d70123b7b5b6d13c0301e0c1fd13
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74383931"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383584"
 ---
 # <a name="quickstart-search-for-news-with-the-bing-news-search-sdk-for-java"></a>Краткое руководство. Поиск новостей с помощью пакета SDK API Bing для поиска новостей для Java
 
 Используйте это краткое руководство, чтобы начать поиск новостей с помощью пакета SDK API Bing для поиска новостей для Java. Поскольку REST API Поиска новостей Bing совместим с большинством языков программирования, пакет SDK обеспечивает простой способ интеграции службы в ваши приложения. Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples/tree/master/Search/BingNewsSearch).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Установите зависимости пакета SDK API Bing для поиска новостей с помощью Maven, Gradle или другой системы управления зависимостью. Для файла POM Maven требуется следующее объявление:
 
@@ -57,7 +57,7 @@ import java.io.IOException;
 
 ## <a name="create-a-search-client-and-store-credentials"></a>Создание клиента для поиска и хранение учетных данных
 
-1. Создайте метод `getClient()`, возвращающий новый клиент для поиска `NewsSearchAPIImpl`. Добавьте конечную точку в качестве первого параметра для нового объекта `NewsSearchAPIImpl` и нового объекта `ServiceClientCredentials` для хранения учетных данных.
+1. Создайте метод `getClient()`, возвращающий новый клиент для поиска `NewsSearchAPIImpl`. Добавьте конечную точку в качестве первого параметра для нового объекта `NewsSearchAPIImpl` и нового объекта `ServiceClientCredentials` для хранения учетных данных. 
 
     ```java
     public static NewsSearchAPIImpl getClient(final String subscriptionKey) {
@@ -135,7 +135,7 @@ import java.io.IOException;
     }
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание одностраничного веб-приложения](tutorial-bing-news-search-single-page-app.md)

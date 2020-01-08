@@ -129,7 +129,7 @@
         - name: Аудит хранилищ для обнаружения экземпляров без конечных точек виртуальной сети
           displayName: 'audit, KeyVault, indexed'
           href: samples/keyvault-no-vnet-rules.md
-    - name: Мониторинг
+    - name: Наблюдение
       items:
         - name: Аудит параметров диагностики
           displayName: 'auditIfNotExists, resourceTypes'
@@ -149,7 +149,7 @@
               href: samples/use-approved-vnet-vm-nics.md
         - name: Виртуальные сети
           items:
-            - name: Разрешенные SKU для шлюза приложений
+            - name: Разрешенные SKU для шлюзов приложений
               displayName: deny
               href: samples/allowed-app-gateway-sku.md
             - name: Допустимые номера SKU шлюза виртуальной сети
@@ -178,7 +178,7 @@
             - name: Конкретная группа безопасности сети на каждой сетевой карте
               displayName: deny
               href: samples/nsg-on-nic.md
-            - name: NSG X для каждой подсети
+            - name: Конкретная группа безопасности сети для каждой подсети
               displayName: 'deny, all'
               href: samples/nsg-on-subnet.md
         - name: ExpressRoute
@@ -192,7 +192,7 @@
             - name: Допустимые регионы для пиринга ExpressRoute
               displayName: 'deny, Location'
               href: samples/allowed-express-route-peering.md
-        - name: Наблюдатели за сетями
+        - name: Наблюдатель за сетями
           items:
             - name: Проверка отключения службы "Наблюдатель за сетями" для региона
               displayName: 'auditIfNotExists, Location'
@@ -232,7 +232,7 @@
             - name: Аудит параметров аудита уровня базы данных SQL
               displayName: auditIfNotExists
               href: samples/audit-sql-db-audit-setting.md
-    - name: Служба хранилища
+    - name: Память
       items:
         - name: Допустимые номера SKU для учетной записи хранения и виртуальных машин
           displayName: 'initiative, vmSKUs, storageSKUs'
@@ -277,7 +277,7 @@
     - name: Аудит виртуальных машин с гостевой конфигурацией
       displayName: 'provider, tools, definition'
       href: ./concepts/guest-configuration.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Расширение Политики Azure для VS Code
       displayName: visual studio code
@@ -300,6 +300,11 @@
     - name: Исправление несоответствующих ресурсов
       displayName: 'managed identity, task, definition, roleDefinitionIds'
       href: ./how-to/remediate-resources.md
+    - name: Интеграция с хранилищем ключей Azure
+      items:
+        - name: Интеграция Key Vault с Политикой Azure
+          displayName: 'key vault, certificate, key'
+          href: ../../key-vault/azure-policy.md?toc=/azure/governance/policy/toc.json&bc=/azure/governance/policy/breadcrumb/toc.json
     - name: Интеграция Azure Lighthouse
       items:
         - name: Развертывание политики в любом масштабе
@@ -313,7 +318,7 @@
         - name: Включение Azure Monitor для виртуальных машин (предварительная версия)
           displayName: 'monitor, insights, log analytics, builtin'
           href: ../../azure-monitor/insights/vminsights-enable-at-scale-policy.md?toc=/azure/governance/policy/toc.json&bc=/azure/governance/policy/breadcrumb/toc.json
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure CLI
       href: /cli/azure/policy
@@ -325,7 +330,7 @@
           href: '/powershell/module/az.policyinsights#policy_insights'
         - name: Гостевая конфигурация
           href: 'https://www.powershellgallery.com/packages/Az.GuestConfiguration'
-    - name: Пакет Azure SDK для .NET
+    - name: Azure SDK для .NET
       items:
         - name: Назначения
           href: /dotnet/api/microsoft.azure.management.resourcemanager.models.policyassignment
@@ -375,7 +380,7 @@
       href: 'https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ'
     - name: Видео по гостевой конфигурации
       items:
-        - name: Начало работы
+        - name: Приступая к работе
           href: 'https://www.youtube.com/watch?v=mjJw9_EIyHo'
         - name: Основные сведения об инициативах
           href: 'https://www.youtube.com/watch?v=4JZH3kuG8bI'

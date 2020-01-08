@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: quickstart
-ms.date: 06/26/2019
+ms.date: 12/09/2019
 ms.author: aahi
-ms.openlocfilehash: e9d7aeabceb77597d826d6c76dbdddc625ad45cc
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 6ae8afefae9a539812748c0ae5380ddaf1fb084c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74383809"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75382673"
 ---
 # <a name="quickstart-search-for-videos-using-the-bing-video-search-rest-api-and-nodejs"></a>Краткое руководство. Поиск видео с помощью REST API Bing для поиска видео и Node.js
 
 Из этого краткого руководства вы узнаете, как сделать первый вызов API Bing для поиска видео и просмотреть результаты поиска в ответе JSON. Это простое приложение JavaScript отправляет HTTP-запрос для поиска видео к API и выводит ответ. Хотя это приложение создается на языке JavaScript и использует язык Node.js, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код, используемый в данном примере, вместе с дополнительной обработкой ошибок и аннотациями кода можно получить на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/nodejs/Search/BingVideoSearchv7.js).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Node.js](https://nodejs.org/en/download/)
 
@@ -39,7 +39,7 @@ ms.locfileid: "74383809"
     let https = require('https');
     ```
 
-2. Создайте переменные для конечной точки API, ключ подписки и условие поиска.
+2. Создайте переменные для конечной точки API, ключ подписки и условие поиска. В качестве `host` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
 
     ```javascript
     let subscriptionKey = 'enter key here';
@@ -77,7 +77,7 @@ ms.locfileid: "74383809"
 
 ## <a name="create-and-send-the-search-request"></a>Создание и отправка поискового запроса
 
-1. Создание функции с именем `bing_video_search()`. Добавьте параметры для вашего запроса, включая имя узла и заголовки. Выполните кодирование условия поиска и добавьте его к параметру пути с помощью параметра `?q=`. Затем отправьте запрос с `req.end()`.
+1. Создайте функцию `bing_video_search()`. Добавьте параметры для вашего запроса, включая имя узла и заголовки. Выполните кодирование условия поиска и добавьте его к параметру пути с помощью параметра `?q=`. Затем отправьте запрос с `req.end()`.
 
     ```javascript
     let bing_video_search = function (search_term) {
@@ -205,11 +205,11 @@ ms.locfileid: "74383809"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-video-search-single-page-app.md)
 
-## <a name="see-also"></a>См. также 
+## <a name="see-also"></a>См. также раздел 
 
  [Что такое API Bing для поиска видео?](../overview.md)

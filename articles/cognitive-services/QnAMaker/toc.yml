@@ -14,6 +14,8 @@
       href: quickstarts/add-question-metadata-portal.md
     - name: Получение ответа с помощью Postman или cURL
       href: Quickstarts/get-answer-from-knowledge-base-using-url-tool.md
+    - name: Тестирование с помощью пакетного файла
+      href: Quickstarts/batch-testing.md
     - name: С помощью REST API
       items:
         - name: Создание базы знаний
@@ -25,7 +27,7 @@
             - name: Java
               href: Quickstarts/create-new-kb-java.md
             - name: Node.js
-              href: Quickstarts/create-knowledge-rest-api-nodejs.md
+              href: Quickstarts/publish-kb-nodejs.md
             - name: Python
               href: Quickstarts/create-new-kb-python.md
         - name: Публикация базы знаний
@@ -37,7 +39,7 @@
             - name: Java
               href: Quickstarts/publish-kb-java.md
             - name: Node.js
-              href: 'Quickstarts/create-knowledge-rest-api-nodejs.md##publish-a-knowledge-base'
+              href: 'Quickstarts/publish-kb-nodejs.md#publish-a-knowledge-base'
             - name: Python
               href: Quickstarts/publish-kb-python.md
         - name: Получение ответов
@@ -88,7 +90,7 @@
     - name: Поддерживаемые источники данных
       href: Concepts/data-sources-supported.md
       displayName: 'metadata, pair, sharepoint, authentication, permissions, faq, pdf, excel, xls, rtf, html, txt, tsv, url, end of line, new line, carriage return, markdown, commonmark, format, standard'
-- name: Инструкции
+- name: Практические руководства
   items:
     - name: Редактирование базы знаний
       items:
@@ -135,7 +137,7 @@
           href: Tutorials/choosing-capacity-qnamaker-deployment.md
         - name: Создание плана обеспечения непрерывности бизнес-процессов
           href: How-To/business-continuity-plan.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Языки
       href: Overview/language-support.md

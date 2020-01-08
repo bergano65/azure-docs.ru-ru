@@ -1,18 +1,18 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 author: anthonychu
 ms.service: signalr
 ms.topic: include
 ms.date: 09/14/2018
 ms.author: antchu
 ms.custom: include file
-ms.openlocfilehash: ac77f0b6a1d90fd78db64618c1e03ade198a67c0
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 0a228f6d8b4f72acd3783f27bf192fe6bd13f988
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68882147"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75392141"
 ---
 ## <a name="create-an-azure-signalr-service-instance"></a>Создание экземпляра службы Azure SignalR
 
@@ -26,14 +26,14 @@ ms.locfileid: "68882147"
 
 1. Введите следующие параметры.
 
-    | Параметр      | Рекомендуемое значение  | ОПИСАНИЕ                                        |
+    | Параметр      | Рекомендуемое значение  | Description                                        |
     | ------------ |  ------- | -------------------------------------------------- |
     | **Имя ресурса** | Глобально уникальное имя | Имя, которое определяет новый экземпляр службы SignalR. Допустимые символы: `a-z`, `0-9` и `-`.  | 
-    | **Подписка** | Ваша подписка | Подписка, в рамках которой создается экземпляр службы SignalR. | 
-    | **[Группа ресурсов](../../azure-resource-manager/resource-group-overview.md)** |  myResourceGroup | Имя новой группы ресурсов, в которой будет создан экземпляр службы SignalR. | 
-    | **Местоположение.** | Запад США | Выберите ближайший [регион](https://azure.microsoft.com/regions/). |
+    | **подписка** | Ваша подписка | Подписка, в рамках которой создается экземпляр службы SignalR. | 
+    | **[Группа ресурсов](../../azure-resource-manager/management/overview.md)** |  myResourceGroup | Имя новой группы ресурсов, в которой будет создан экземпляр службы SignalR. | 
+    | **Местоположение** | Запад США | Выберите ближайший [регион](https://azure.microsoft.com/regions/). |
     | **Ценовая категория** | Free | Поработайте со службой Azure SignalR бесплатно. |
-    | **Число единиц** |  Не применяется | Число единиц определяет количество подключений, которые поддерживает ваш экземпляр службы SignalR. Это можно настроить только для цен. категории "Стандартный". |
+    | **Число единиц** |  Неприменимо | Число единиц определяет количество подключений, которые поддерживает ваш экземпляр службы SignalR. Это можно настроить только для цен. категории "Стандартный". |
     | **Режим службы** |  Бессерверные приложения | Для использования с Функциями Azure или REST API. |
 
     ![Создание службы SignalR](../media/signalr-quickstart-azure-functions-javascript/signalr-quickstart-create.png)
