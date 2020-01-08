@@ -1,5 +1,5 @@
 ---
-title: Руководство по разработке базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Azure CLI
+title: Руководство. разработке базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Azure CLI
 description: Это руководство содержит сведения о создании и настройке первой базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер", а также о выполнении запросов к ней с помощью Azure CLI.
 author: rachel-msft
 ms.author: raagyema
@@ -8,21 +8,21 @@ ms.custom: mvc
 ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 06/25/2019
-ms.openlocfilehash: 0f1f4c07f3dc694bcae9b540c71a11e53a00eb7f
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: c79e64fddaf404b459dd2215e4a2e9236f1bc221
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74773699"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75460007"
 ---
-# <a name="tutorial-design-an-azure-database-for-postgresql---single-server-using-azure-cli"></a>Руководство по Разработка базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Azure CLI 
+# <a name="tutorial-design-an-azure-database-for-postgresql---single-server-using-azure-cli"></a>Руководство. Разработка базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Azure CLI 
 Из этого руководства вы узнаете, как с помощью Azure CLI (интерфейса командной строки) и других служебных программ выполнять следующие операции:
 > [!div class="checklist"]
 > * Создание сервера Базы данных Azure для PostgreSQL
 > * настройка брандмауэра сервера;
 > * использование служебной программы [**psql**](https://www.postgresql.org/docs/9.6/static/app-psql.html) для создания базы данных;
 > * Загрузка примера данных
-> * Запрос данных
+> * Данные запросов
 > * Обновление данных
 > * восстановление данных.
 
@@ -38,7 +38,7 @@ az account set --subscription 00000000-0000-0000-0000-000000000000
 ```
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
-Создайте [группу ресурсов Azure](../azure-resource-manager/resource-group-overview.md) с помощью команды [az group create](/cli/azure/group). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа. В следующем примере создается группа ресурсов с именем `myresourcegroup` в расположении `westus`.
+Создайте [группу ресурсов Azure](../azure-resource-manager/management/overview.md) с помощью команды [az group create](/cli/azure/group). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа. В следующем примере создается группа ресурсов с именем `myresourcegroup` в расположении именем `westus`.
 ```azurecli-interactive
 az group create --name myresourcegroup --location westus
 ```
@@ -199,7 +199,7 @@ az postgres server restore --resource-group myresourcegroup --name mydemoserver-
 
 Для команды `az postgres server restore` необходимо настроить следующие параметры:
 
-| Параметр | Рекомендуемое значение | ОПИСАНИЕ  |
+| Параметр | Рекомендуемое значение | Description  |
 | --- | --- | --- |
 | resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
 | name | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
@@ -211,14 +211,14 @@ az postgres server restore --resource-group myresourcegroup --name mydemoserver-
 Команда выполняется в синхронном режиме и будет возвращена после восстановления сервера. После завершения восстановления найдите созданный сервер. Убедитесь, что данные восстановлены надлежащим образом.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого руководства вы узнали, как с помощью Azure CLI (интерфейса командной строки) и других служебных программ выполнить следующие операции:
 > [!div class="checklist"]
 > * Создание сервера Базы данных Azure для PostgreSQL
 > * настройка брандмауэра сервера;
 > * использование служебной программы [**psql**](https://www.postgresql.org/docs/9.6/static/app-psql.html) для создания базы данных;
 > * Загрузка примера данных
-> * Запрос данных
+> * Данные запросов
 > * Обновление данных
 > * восстановление данных.
 

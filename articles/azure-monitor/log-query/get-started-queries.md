@@ -7,12 +7,12 @@ ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 10/24/2019
-ms.openlocfilehash: 0503ebc7a585210f95eb58b0f11ae1dd0a835264
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: b3b176a6027b0f03c3802867df7be1e339286df2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74278604"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75365331"
 ---
 # <a name="get-started-with-log-queries-in-azure-monitor"></a>Начало работы с запросами журналов Azure Monitor
 
@@ -24,7 +24,7 @@ ms.locfileid: "74278604"
 - понимать структуру запросов;
 - сортировать результаты запроса;
 - фильтровать результаты запроса;
-- указывать диапазон времени;
+- Указание диапазона времени
 - выбирать поля для включения в результаты;
 - определять и использовать настраиваемые поля;
 - вычислять и группировать результаты.
@@ -105,7 +105,7 @@ SecurityEvent
 
 При написании условий фильтра вы можете использовать следующие выражения:
 
-| Expression | ОПИСАНИЕ | Пример |
+| Выражение | Description | Пример |
 |:---|:---|:---|
 | == | Проверка на равенство<br>(с учетом регистра) | `Level == 8` |
 | =~ | Проверка на равенство<br>(без учета регистра) | `EventSourceName =~ "microsoft-windows-security-auditing"` |
@@ -237,7 +237,7 @@ Perf
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об использовании строкового типа данных в запросе журнала см. в статье [Работа со строками в запросах журнала Azure Monitor](string-operations.md).
 - Дополнительные сведения об агрегировании данных в запросе журнала см. в статье [Расширенное агрегирование в запросах журнала Azure Monitor](advanced-aggregations.md).

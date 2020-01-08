@@ -4,16 +4,16 @@ description: Этот учебник поможет вам понять, как 
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: tutorial
-author: mgoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 06/19/2019
 ms.custom: mvc
-ms.openlocfilehash: baa510e060a3bca46110842600262345072b1a18
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: d06ead285321b780490c816dc3d902dac1b6916f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72894794"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75365585"
 ---
 # <a name="create-and-share-dashboards-of-log-analytics-data"></a>Создание панелей мониторинга данных Log Analytics и предоставление общего доступа к ним
 
@@ -79,7 +79,7 @@ Perf
 
 ![Завершенная конфигурация примера панели мониторинга](media/tutorial-logs-dashboards/log-analytics-modify-dashboard-02.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этом учебнике вы узнали, как создать панель мониторинга на портале Azure и добавить к ней запрос к журналам.  Перейдите к следующему учебнику, чтобы узнать о различных ответах, которые можно реализовать на основе результатов запроса к журналам.  
 
 > [!div class="nextstepaction"]

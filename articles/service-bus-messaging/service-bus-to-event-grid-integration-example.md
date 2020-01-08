@@ -1,6 +1,6 @@
 ---
-title: Руководство по Примеры интеграции служебной шины Azure со службой "Сетка событий"
-description: Руководство по В статье представлены примеры интеграции обмена сообщениями через служебную шину с Сеткой событий.
+title: Руководство. Примеры интеграции служебной шины Azure со службой "Сетка событий"
+description: Руководство. В статье представлены примеры интеграции обмена сообщениями через служебную шину с Сеткой событий.
 services: service-bus-messaging
 documentationcenter: .net
 author: spelluru
@@ -14,14 +14,14 @@ ms.devlang: multiple
 ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: spelluru
-ms.openlocfilehash: d3f523bbc0236536734f21870474492a61532ada
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 3fb2f4a4969e8df94a60ac20c761f073b6a9d030
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73719020"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75462091"
 ---
-# <a name="tutorial-respond-to-azure-service-bus-events-received-via-azure-event-grid-by-using-azure-functions-and-azure-logic-apps"></a>Руководство по Реагирование на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps
+# <a name="tutorial-respond-to-azure-service-bus-events-received-via-azure-event-grid-by-using-azure-functions-and-azure-logic-apps"></a>Руководство. Реагирование на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps
 Узнайте, как отвечать на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps. Вы сделаете следующее:
  
 - Создадите функцию проверки Azure для отладки и просмотра начального потока событий из Сетки событий.
@@ -35,7 +35,7 @@ ms.locfileid: "73719020"
 3. Убедитесь, что функция или приложение логики с подпиской на событие получили это событие. 
 
 ## <a name="create-a-service-bus-namespace"></a>Создание пространства имен служебной шины
-Выполните инструкции, описанные здесь: [Краткое руководство Создание раздела служебной шины и подписок на него с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md). Так вы сделаете следующее:
+Выполните инструкции, описанные здесь: [Краткое руководство. Создание раздела служебной шины и подписок на него с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md). Так вы сделаете следующее:
 
 - Создадите пространство имен служебной шины уровня **Премиум**. 
 - Получите строку подключения. 
@@ -50,7 +50,7 @@ ms.locfileid: "73719020"
 3. Перейдите к проекту **MessageSender**, а затем выберите **Program.cs**.
 4. Введите имя раздела служебной шины и строку соединения, полученные на предыдущем шаге:
 
-    ```CSharp
+    ```csharp
     const string ServiceBusConnectionString = "YOUR CONNECTION STRING";
     const string TopicName = "YOUR TOPIC NAME";
     ```
@@ -69,7 +69,7 @@ ms.locfileid: "73719020"
 
 1. Разверните **Функции** в представлении в виде дерева и выберите нужную функцию. Замените код в функции следующим кодом: 
 
-    ```CSharp
+    ```csharp
     #r "Newtonsoft.Json"
     
     using System.Net;
@@ -131,7 +131,7 @@ ms.locfileid: "73719020"
     2. Выберите значение **~1** для параметра **Версия среды выполнения**. 
 2. Разверните **Функции** в представлении в виде дерева и выберите нужную функцию. Замените код в функции следующим кодом: 
 
-    ```CSharp
+    ```csharp
     #r "Newtonsoft.Json"
     using System.Net;
     using Newtonsoft.Json;
@@ -288,7 +288,7 @@ ms.locfileid: "73719020"
     4. Выберите **Получение сообщений из подписки раздела (с блокировкой при извлечении)** . 
 
         ![Конструктор Logic Apps — действие получения сообщений](./media/service-bus-to-event-grid-integration-example/service-bus-get-messages-step.png)
-    5. Укажите **имя подключения**. Например:  **Получение сообщений из подписки раздела**. Затем выберите пространство имен служебной шины. 
+    5. Укажите **имя подключения**. Пример: **Получение сообщений из подписки раздела**. Затем выберите пространство имен служебной шины. 
 
         ![Конструктор Logic Apps — выбор пространства имен служебной шины](./media/service-bus-to-event-grid-integration-example/logic-apps-select-namespace.png) 
     6. Выберите **RootManageSharedAccessKey**.
@@ -312,7 +312,7 @@ ms.locfileid: "73719020"
 
     ![Конструктор Logic Apps — выполнение приложения логики](./media/service-bus-to-event-grid-integration-example/logic-app-runs.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о службе "Сетка событий" Azure см. [здесь](https://docs.microsoft.com/azure/event-grid/).
 * Дополнительные сведения о решении "Функции Azure" см. [здесь](https://docs.microsoft.com/azure/azure-functions/).
