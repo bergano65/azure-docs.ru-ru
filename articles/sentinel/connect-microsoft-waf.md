@@ -1,26 +1,20 @@
 ---
-title: Подключение данных брандмауэра веб-приложения Майкрософт к Azure Sentinel | Документация Майкрософт
+title: Подключение данных брандмауэра веб-приложения к Azure Sentinel
 description: Узнайте, как подключить данные брандмауэра веб-приложения Майкрософт к Azure Sentinel.
-services: sentinel
-documentationcenter: na
 author: rkarlin
 manager: rkarlin
-editor: ''
 ms.assetid: bfa2eca4-abdc-49ce-b11a-0ee229770cdd
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: e7dc1e6c1bb1ca81ada59cb3dae8fecbc6452b7f
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: 5461f2289a6c60d70efcbb3f7d4d9e7a4d6ee87a
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72029787"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75563655"
 ---
 # <a name="connect-data-from-microsoft-web-application-firewall"></a>Подключение данных из брандмауэра веб-приложения Майкрософт
 
@@ -29,7 +23,7 @@ ms.locfileid: "72029787"
 Вы можете выполнять потоковую передачу журналов из шлюза приложений Azure через брандмауэр веб-приложения Microsoft (WAF). Эта WAF защищает приложения от распространенных веб-уязвимостей, таких как внедрение кода SQL и межсайтовые сценарии, и позволяет настраивать правила для сокращения числа ложных срабатываний. Выполните эти инструкции, чтобы выполнить потоковую передачу журналов брандмауэра веб-приложения Майкрософт в Azure Sentinel.
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 - Существующий ресурс шлюза приложений
 
@@ -48,7 +42,7 @@ ms.locfileid: "72029787"
     1. Выберите типы журналов, которые необходимо проанализировать. Рекомендуется: ApplicationGatewayAccessLog и ApplicationGatewayFirewallLog.
 1. Чтобы использовать соответствующую схему в Log Analytics для оповещений брандмауэра веб-приложения Майкрософт, выполните поиск по запросу **AzureDiagnostics**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить брандмауэр веб-приложения Майкрософт к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
-- Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
+- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

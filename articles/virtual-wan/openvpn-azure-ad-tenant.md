@@ -5,21 +5,21 @@ services: vpn-gateway
 author: anzaman
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 11/13/2019
+ms.date: 12/27/2019
 ms.author: alzam
-ms.openlocfilehash: 6df8a9448873b418dc312ba572ba15d2da69bf32
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: 56226bf0310e51e62fa814b838f157a4e16a9d10
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74822725"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75530720"
 ---
 # <a name="create-an-azure-active-directory-tenant-for-p2s-openvpn-protocol-connections"></a>Создание клиента Azure Active Directory для подключений по протоколу P2S Опенвпн
 
 При подключении к виртуальной сети можно использовать проверку подлинности на основе сертификатов или аутентификацию RADIUS. Однако при использовании открытого протокола VPN можно также использовать проверку подлинности Azure Active Directory. Эта статья поможет вам настроить клиент Azure AD для проверки подлинности P2S Open VPN.
 
 > [!NOTE]
-> Аутентификация Azure AD поддерживается только для подключений по протоколу Опенвпн®.
+> Проверка подлинности Azure AD поддерживается только для подключений по протоколу OpenVPN®.
 >
 
 ## <a name="tenant"></a>1. Создайте клиент Azure AD.
@@ -27,7 +27,7 @@ ms.locfileid: "74822725"
 Создайте клиент Azure AD, выполнив действия, описанные в статье [Создание нового клиента](../active-directory/fundamentals/active-directory-access-create-new-tenant.md) :
 
 * Название организации
-* Имя первоначального домена
+* Первоначальное доменное имя
 
 Пример:
 
@@ -90,31 +90,8 @@ ms.locfileid: "74822725"
 
     ![VPN Azure](./media/openvpn-create-azure-ad-tenant/azurevpn.png)
 
-8. Включите проверку подлинности Azure AD на VPN-шлюзе, выполнив следующие команды, и вы обязательно измените команду, чтобы она отражала собственную среду:
-
-    ```azurepowershell-interactive
-    $gw = Get-AzVirtualNetworkGateway -Name <name of VPN gateway> -ResourceGroupName <Resource group>
-    Set-AzVirtualNetworkGateway -VirtualNetworkGateway $gw -VpnClientRootCertificates @()
-    Set-AzVirtualNetworkGateway -VirtualNetworkGateway $gw -AadTenantUri "https://login.microsoftonline.com/<your Directory ID>" -AadAudienceId "41b23e61-6c1e-4545-b367-cd054e0ed4b4" -AadIssuerUri "https://sts.windows.net/<your Directory ID>/"
-    ```
-
-9. Создайте и скачайте профиль, выполнив следующие команды. Измените значения-Ресауркграупнаме и-Name в соответствии со своими собственными.
-
-    ```azurepowershell-interactive
-    $profile = New-AzVpnClientConfiguration -Name <name of VPN gateway> -ResourceGroupName <Resource group> -AuthenticationMethod "EapTls"
-    $PROFILE.VpnProfileSASUrl
-    ```
-
-10. После выполнения команд вы увидите результат, аналогичный приведенному ниже. Скопируйте полученный URL-адрес в браузер, чтобы скачать его.
-
-    ![VPN Azure](./media/openvpn-create-azure-ad-tenant/profile.png)
-
-11. Извлеките скачанный ZIP-файл.
-
-12. Перейдите к распакованной папке "AzureVPN".
-
-13. Запишите расположение файла "азуревпнконфиг. XML". Азуревпнконфиг. XML содержит параметр для VPN-подключения и может быть импортирован непосредственно в клиентское приложение VPN Azure. Этот файл также можно передать всем пользователям, которым требуется подключение по электронной почте или другим средствам. Для успешного подключения пользователю понадобятся действительные учетные данные Azure AD.
+8. Настройте аутентификацию Azure AD для VPN пользователя и назначьте ее виртуальному концентратору, выполнив действия, описанные в статье [Настройка проверки подлинности Azure AD для подключения типа "точка — сеть" к Azure](virtual-wan-point-to-site-azure-ad.md) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы подключиться к виртуальной сети, необходимо создать и настроить профиль клиента VPN. См. статью [Настройка аутентификации Azure AD для подключения "точка — сеть" к Azure](virtual-wan-point-to-site-azure-ad.md).
+Чтобы подключиться к виртуальной сети, необходимо создать и настроить профиль VPN-клиента и связать его с виртуальным концентратором. См. статью [Настройка аутентификации Azure AD для подключения "точка — сеть" к Azure](virtual-wan-point-to-site-azure-ad.md).

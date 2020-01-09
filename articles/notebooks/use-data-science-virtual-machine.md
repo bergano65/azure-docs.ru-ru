@@ -1,17 +1,17 @@
 ---
 title: Использование виртуальных машин Azure для обработки и анализа данных
-description: Подключитесь к виртуальной машине Azure для обработки и анализа данных (DSVM), чтобы расширить вычислительную мощность, доступную для записных книжек Azure.
+description: Узнайте, как подключиться к виртуальной машине Azure для обработки и анализа данных (DSVM), чтобы расширить вычислительную мощность, доступную для предварительной версии Azure Notebooks.
 author: getroyer
 manager: andneil
 ms.author: getroyer
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/13/2019
-ms.openlocfilehash: 0559442cb3f6c3937e6930082940e9354c43bc30
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 7a47be46818c633c016c791d0c52eb9393029973
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277401"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647000"
 ---
 # <a name="use-azure-data-science-virtual-machines"></a>Использование виртуальных машин Azure для обработки и анализа данных
 
@@ -19,6 +19,8 @@ ms.locfileid: "74277401"
 
 > [!Note]
 > Записные книжки Azure поддерживаются только в Dsvm, созданном с помощью образа Ubuntu в Linux. Записные книжки не поддерживаются в образах Windows 2012, Windows 2016 или Linux CentOS.
+
+[!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
 
 ## <a name="create-a-dsvm-instance"></a>Создание экземпляра DSVM
 
@@ -56,11 +58,11 @@ ms.locfileid: "74277401"
 
 Если несколько пользователей совместно используют DSVM, можно избежать блокировки друг друга, создав и используя пользователя DSVM для каждого пользователя записной книжки:
 
-1. На [портале Azure](https://portal.azure.com)перейдите к своей виртуальной машине.
+1. На [портал Azure](https://portal.azure.com)перейдите к виртуальной машине.
 1. В разделе **Поддержка и устранение неполадок** в левом поле выберите **Сброс пароля**.
 1. Введите новое имя пользователя и пароль и нажмите кнопку **Обновить**. (Существующие имена пользователей не затрагиваются.)
 1. Повторите предыдущий шаг для всех дополнительных пользователей.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Dsvm см. в статье [Введение в виртуальные машины Azure для обработки и анализа данных](/azure/machine-learning/data-science-virtual-machine/overview).

@@ -6,28 +6,27 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 01/14/2019
-ms.openlocfilehash: 4e6b648ed70f6ff57a2d11cde43b8168b800fcb3
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.date: 12/13/2019
+ms.openlocfilehash: 6fc0d4cfe29e0fb189c44b307576bd08d2da8a31
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74806921"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75638890"
 ---
 # <a name="run-azure-machine-learning-workloads-with-automated-machine-learning-on-apache-spark-in-hdinsight"></a>Запуск Машинное обучение Azure рабочих нагрузок с помощью автоматического машинного обучения на Apache Spark в HDInsight
 
 Машинное обучение Azure упрощает и ускоряет создание, обучение и развертывание моделей машинного обучения. В автоматизированном машинном обучении (Аутомл) вы начинаете с обучающих данных, которые имеют определенную целевую функцию, а затем просматриваете сочетания алгоритмов и выбора компонентов, чтобы автоматически выбирать оптимальную модель для данных на основе оценок обучения. HDInsight позволяет клиентам подготавливать кластеры с сотнями узлов. Аутомл, работающий в Spark в кластере HDInsight, позволяет пользователям использовать ресурсы вычислений на этих узлах для выполнения заданий обучения в масштабном режиме и для параллельного выполнения нескольких заданий обучения. Это позволяет пользователям выполнять эксперименты Аутомл при совместном использовании вычислений с другими рабочими нагрузками больших данных.
- 
 
 ## <a name="install-azure-machine-learning-on-an-hdinsight-cluster"></a>Установка Машинного обучения Azure в кластере HDInsight
 
-Общие руководства по автоматическому машинному обучению см. [в разделе Учебник. Использование автоматизированного машинного обучения для создания модели регрессии](../../machine-learning/service/tutorial-auto-train-models.md).
-Все новые кластеры HDInsight-Spark предварительно устанавливаются с помощью пакета SDK AzureML-Аутомл. Вы можете приступить к работе с Аутомл в HDInsight с помощью этого [примера записной книжки Jupyter](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/azure-hdi). Этот пример Jupyter Notebook показывает, как использовать классификатор автоматического машинного обучения для решения простой проблемы классификации.
+Общие руководства по автоматическому машинному обучению см. [в разделе Учебник. Использование автоматизированного машинного обучения для создания модели регрессии](../../machine-learning/tutorial-auto-train-models.md).
+Все новые кластеры HDInsight-Spark предварительно устанавливаются с помощью пакета SDK AzureML-Аутомл.
 
 > [!Note]
 > Пакеты Машинного обучения Azure устанавливаются в среду conda Python3. Установленная записная книжка Jupyter должна выполняться с помощью ядра PySpark3.
 
-Вы также можете использовать записные книжки Zeppelin для использования Аутомл.
+Для использования Аутомл также можно использовать записные книжки Zeppelin.
 
 > [!Note]
 > В Zeppelin есть [известная проблема](https://community.hortonworks.com/content/supportkb/207822/the-livypyspark3-interpreter-uses-python-2-instead.html) , из-за которой PySpark3 не выбирает нужную версию Python. Используйте документированные обходные решения.
@@ -46,6 +45,7 @@ auth_sp = ServicePrincipalAuthentication(
     service_principal_password='<Azure AD Application Key>'
 )
 ```
+
 Следующий фрагмент кода создает маркер аутентификации, используя **пользователя Azure AD**.
 
 ```python

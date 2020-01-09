@@ -1,5 +1,5 @@
 ---
-title: Настройка классического приложения, вызывающего веб-API — платформа Microsoft Identity | Службы
+title: Настройка классических приложений, вызывающих веб-API — платформа Microsoft Identity | Службы
 description: Узнайте, как настроить код для классического приложения, вызывающего веб-API
 services: active-directory
 documentationcenter: dev-center-name
@@ -15,12 +15,12 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d31a70ebc63a5e9a16e0da00623bd5855f0a7d1
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 33b1724c25ef2d85aa8f838811864104b49576a3
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74920265"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423899"
 ---
 # <a name="desktop-app-that-calls-web-apis---code-configuration"></a>Классическое приложение, вызывающее веб-API — конфигурация кода
 
@@ -30,11 +30,11 @@ ms.locfileid: "74920265"
 
 Библиотеки Майкрософт, поддерживающие классические приложения:
 
-  Библиотека MSAL | Описание
+  Библиотека MSAL | Description
   ------------ | ----------
   ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Поддерживает создание классических приложений на нескольких платформах — Linux, Windows и MacOS
-  ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL Python | Поддерживает создание классических приложений на нескольких платформах. Выполняется разработка — в общедоступной предварительной версии
-  ![Java:](media/sample-v2-code/logo_java.png) <br/> MSAL Java | Поддерживает создание классических приложений на нескольких платформах. Выполняется разработка — в общедоступной предварительной версии
+  ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL Python | Поддерживает создание классических приложений на нескольких платформах.
+  ![Java](media/sample-v2-code/logo_java.png) <br/> MSAL Java | Поддерживает создание классических приложений на нескольких платформах.
   ![MSAL iOS](media/sample-v2-code/logo_iOS.png) <br/> MSAL iOS | Поддерживает классические приложения, работающие только на macOS
 
 ## <a name="public-client-application"></a>Общедоступное клиентское приложение
@@ -51,14 +51,14 @@ ms.locfileid: "74920265"
 
 Следующий код создает экземпляр общедоступного клиентского приложения, пользователей для входа в Microsoft Azure общедоступное облако с рабочей или учебной учетной записью или персональным учетная запись Майкрософт.
 
-```CSharp
+```csharp
 IPublicClientApplication app = PublicClientApplicationBuilder.Create(clientId)
     .Build();
 ```
 
 Если вы планируете использовать интерактивную проверку подлинности или поток кода устройства, как показано выше, вы хотите использовать модификатор `.WithRedirectUri`:
 
-```CSharp
+```csharp
 IPublicClientApplication app;
 app = PublicClientApplicationBuilder.Create(clientId)
         .WithDefaultRedirectUri()
@@ -69,7 +69,7 @@ app = PublicClientApplicationBuilder.Create(clientId)
 
 Следующий код создает экземпляр общедоступного клиентского приложения на основе объекта конфигурации, который может быть заполнен программно или прочитан из файла конфигурации.
 
-```CSharp
+```csharp
 PublicClientApplicationOptions options = GetOptions(); // your own method
 IPublicClientApplication app = PublicClientApplicationBuilder.CreateWithApplicationOptions(options)
         .WithDefaultRedirectUri()
@@ -80,7 +80,7 @@ IPublicClientApplication app = PublicClientApplicationBuilder.CreateWithApplicat
 
 Вы можете развить сборку приложений, добавив несколько модификаторов. Например, если вы хотите, чтобы приложение было многопользовательским приложением в национальном облаке (здесь правительство США), можно написать:
 
-```CSharp
+```csharp
 IPublicClientApplication app;
 app = PublicClientApplicationBuilder.Create(clientId)
         .WithDefaultRedirectUri()
@@ -91,7 +91,7 @@ app = PublicClientApplicationBuilder.Create(clientId)
 
 MSAL.NET также содержит модификатор для ADFS 2019:
 
-```CSharp
+```csharp
 IPublicClientApplication app;
 app = PublicClientApplicationBuilder.Create(clientId)
         .WithAdfsAuthority("https://consoso.com/adfs")
@@ -100,14 +100,14 @@ app = PublicClientApplicationBuilder.Create(clientId)
 
 Наконец, если требуется получить токены для клиента Azure AD B2C, можно указать клиент, как показано в следующем фрагменте кода:
 
-```CSharp
+```csharp
 IPublicClientApplication app;
 app = PublicClientApplicationBuilder.Create(clientId)
         .WithB2CAuthority("https://fabrikamb2c.b2clogin.com/tfp/{tenant}/{PolicySignInSignUp}")
         .Build();
 ```
 
-### <a name="learn-more"></a>Дополнительные сведения
+### <a name="learn-more"></a>Подробнее…
 
 Дополнительные сведения о настройке классического приложения MSAL.NET:
 
@@ -134,7 +134,7 @@ app = PublicClientApplicationBuilder.Create(clientId)
 
 У вас есть немало кода для чтения этого файла с помощью платформы конфигурации, предоставленной .NET.
 
-```CSharp
+```csharp
 public class SampleConfiguration
 {
  /// <summary>
@@ -177,7 +177,7 @@ public class SampleConfiguration
 
 Теперь, чтобы создать приложение, нужно просто написать следующий код:
 
-```CSharp
+```csharp
 SampleConfiguration config = SampleConfiguration.ReadFromJsonFile("appsettings.json");
 var app = PublicClientApplicationBuilder.CreateWithApplicationOptions(config.PublicClientApplicationOptions)
            .WithDefaultRedirectUri()

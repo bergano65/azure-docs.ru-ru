@@ -1,18 +1,14 @@
 ---
 title: Общие вопросы о службе Azure Site Recovery
 description: В этой статье рассматриваются популярные общие вопросы о Azure Site Recovery.
-author: rayne-wiselman
-manager: carmonm
-ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/14/2019
-ms.author: raynew
-ms.openlocfilehash: fb88d28ea47495dcbdb0844901a03ee7efa4e4eb
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: f64b885e82d2f790d7d146e16bb6ccb44e207465
+ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74078537"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75497536"
 ---
 # <a name="general-questions-about-azure-site-recovery"></a>Общие вопросы о Azure Site Recovery
 
@@ -25,7 +21,7 @@ ms.locfileid: "74078537"
 ## <a name="general"></a>Общие
 
 ### <a name="what-does-site-recovery-do"></a>Какие функции выполняет служба Site Recovery?
-Служба Site Recovery помогает реализовать стратегии непрерывности бизнес-процессов и аварийного восстановления (BCDR), автоматизируя процессы репликации виртуальных машин Azure между регионами, локальных виртуальных машин и физических серверов в Azure, а также локальных виртуальных машин в дополнительный центр обработки данных и осуществляя управление ими. [Дополнительные сведения](site-recovery-overview.md)
+Служба Site Recovery помогает реализовать стратегии непрерывности бизнес-процессов и аварийного восстановления (BCDR), автоматизируя процессы репликации виртуальных машин Azure между регионами, локальных виртуальных машин и физических серверов в Azure, а также локальных виртуальных машин в дополнительный центр обработки данных и осуществляя управление ими. [Узнайте больше](site-recovery-overview.md).
 
 ### <a name="can-i-protect-a-virtual-machine-that-has-a-docker-disk"></a>Можно ли защитить виртуальную машину с диском DOCKER?
 
@@ -37,7 +33,7 @@ ms.locfileid: "74078537"
 Да, Site Recovery поддерживает как выделенную, так и общую модели инфраструктуры.
 
 ### <a name="for-a-service-provider-is-the-identity-of-my-tenant-shared-with-the-site-recovery-service"></a>Предоставляется ли удостоверение клиента поставщика услуг службе Site Recovery?
-Нет Клиент остается анонимным. Клиентам не требуется доступ к порталу Site Recovery. Только администратор поставщика служб взаимодействует с порталом.
+Нет. Клиент остается анонимным. Клиентам не требуется доступ к порталу Site Recovery. Только администратор поставщика служб взаимодействует с порталом.
 
 ### <a name="will-tenant-application-data-ever-go-to-azure"></a>Будут ли данные приложения клиента передаваться в Azure?
 При репликации между сайтами, принадлежащими поставщику служб, данные приложения никогда не передаются в Azure. Данные шифруются при передаче и реплицируются непосредственно между сайтами поставщика услуг.
@@ -45,7 +41,7 @@ ms.locfileid: "74078537"
 При репликации в Azure данные приложения передаются в службу хранилища Azure, а не в службу Site Recovery. Данные шифруются в процессе передачи и остаются зашифрованными в Azure.
 
 ### <a name="will-my-tenants-receive-a-bill-for-any-azure-services"></a>Будут ли клиенты получать счета за какие-либо службы Azure?
-Нет Azure выставляет счета только поставщику службы. Поставщики служб отвечают за создание специальных счетов для своих клиентов.
+Нет. Azure выставляет счета только поставщику службы. Поставщики служб отвечают за создание специальных счетов для своих клиентов.
 
 ### <a name="if-im-replicating-to-azure-do-we-need-to-run-virtual-machines-in-azure-at-all-times"></a>Нужно ли всегда запускать виртуальные машины при репликации в Azure?
 Нет, данные реплицируются в службу хранилища Azure в вашей подписке. При тестовой отработке отказа (отработке аварийного восстановления) или фактической отработке отказа Site Recovery автоматически создает виртуальные машины в вашей подписке.
@@ -59,7 +55,7 @@ ms.locfileid: "74078537"
 ### <a name="do-you-support-single-azure-pack-and-single-vmm-server-deployments"></a>Поддерживаются ли отдельные развертывания Azure Pack или односерверные развертывания VMM?
 Да, можно выполнять репликацию виртуальных машин Hyper-V в Azure или между сайтами поставщиков служб.  Обратите внимание, что при репликации между сайтами поставщика услуг интеграция Runbook Azure недоступна.
 
-## <a name="pricing"></a>Цены
+## <a name="pricing"></a>Стоимость
 
 ### <a name="where-can-i-find-pricing-information"></a>Где можно найти сведения о ценах?
 Ознакомьтесь [Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/) сведениями о ценах.
@@ -158,7 +154,7 @@ Azure Site Recovery реплицирует данные в учетную зап
 ### <a name="can-i-use-expressroute-to-replicate-virtual-machines-to-azure"></a>Можно ли использовать ExpressRoute для репликации виртуальных машин в Azure?
 Да, [ExpressRoute можно использовать](concepts-expressroute-with-site-recovery.md) для репликации локальных виртуальных машин в Azure.
 
-- Azure Site Recovery реплицирует данные в службу хранилища Azure через общедоступную конечную точку. Чтобы использовать ExpressRoute для Site Recovery репликации, необходимо настроить [пиринг Майкрософт](../expressroute/expressroute-circuit-peerings.md#microsoftpeering) или использовать существующий [общедоступный пиринг](../expressroute/expressroute-circuit-peerings.md#publicpeering) (не рекомендуется для новых каналов).
+- Azure Site Recovery реплицирует данные в службу хранилища Azure через общедоступную конечную точку. Чтобы использовать ExpressRoute для Site Recovery репликации, необходимо настроить [пиринг Майкрософт](../expressroute/expressroute-circuit-peerings.md#microsoftpeering) или использовать существующий [общедоступный пиринг](../expressroute/about-public-peering.md) (не рекомендуется для новых каналов).
 - Пиринг Майкрософт является рекомендуемым доменом маршрутизации для репликации.
 - Репликация через частный пиринг не поддерживается.
 - Если вы защищаете компьютеры VMware или физические компьютеры, убедитесь, что также выполнены [требования к сети](vmware-azure-configuration-server-requirements.md#network-requirements) для сервера конфигурации. Серверу конфигурации требуется подключение к конкретным URL-адресам для согласования Site Recovery репликации. ExpressRoute нельзя использовать для этого подключения.
@@ -194,10 +190,10 @@ Azure Site Recovery реплицирует данные в учетную зап
 
 
 
-## <a name="failover"></a>Отработка отказа
+## <a name="failover"></a>Переход на другой ресурс
 ### <a name="if-im-failing-over-to-azure-how-do-i-access-the-azure-vms-after-failover"></a>При отработке отказа в Azure как получить доступ к виртуальным машинам Azure после отработки отказа?
 
-Доступ к виртуальным машинам Azure можно получить через безопасное подключение к Интернету, подключение VPN типа "сеть — сеть" или с помощью Azure ExpressRoute. Для подключения необходимо подготовить ряд действий. [Дополнительные сведения](site-recovery-test-failover-to-azure.md#prepare-to-connect-to-azure-vms-after-failover)
+Доступ к виртуальным машинам Azure можно получить через безопасное подключение к Интернету, подключение VPN типа "сеть — сеть" или с помощью Azure ExpressRoute. Для подключения необходимо подготовить ряд действий. [Узнайте больше](site-recovery-test-failover-to-azure.md#prepare-to-connect-to-azure-vms-after-failover).
 
 
 ### <a name="if-i-fail-over-to-azure-how-does-azure-make-sure-my-data-is-resilient"></a>Каким образом среда Azure обеспечивает отказоустойчивость данных при отработке отказа?
@@ -219,9 +215,9 @@ Azure Site Recovery реплицирует данные в учетную зап
 Да. Вы можете выполнить восстановление на другой узел из Azure.
 
 * [Для виртуальных машин VMware](concepts-types-of-failback.md#alternate-location-recovery-alr)
-* [Для виртуальных машин Hyper-V](hyper-v-azure-failback.md#perform-failback)
+* [Для виртуальных машин Hyper-V](hyper-v-azure-failback.md#fail-back-to-an-alternate-location)
 
-## <a name="automation"></a>Служба автоматизации
+## <a name="automation"></a>Автоматизация
 
 ### <a name="can-i-automate-site-recovery-scenarios-with-an-sdk"></a>Можно ли автоматизировать сценарии Site Recovery с помощью пакета SDK?
 Да. Рабочие процессы службы Site Recovery можно автоматизировать с помощью интерфейса REST API, PowerShell или пакета SDK для Azure. Ниже перечислены сценарии развертывания Site Recovery с помощью PowerShell, которые поддерживаются в настоящее время.
@@ -236,6 +232,6 @@ Azure Site Recovery реплицирует данные в учетную зап
 
 [Сведения о новых](site-recovery-whats-new.md) обновлениях и [получении сведений о свертке](service-updates-how-to.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Ознакомьтесь со статьей [Обзор Site Recovery](site-recovery-overview.md)
 

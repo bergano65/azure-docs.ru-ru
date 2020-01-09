@@ -1,23 +1,16 @@
 ---
-title: Как указать номер порта службы с помощью параметров в Azure Service Fabric | Документация Майкрософт
+title: Указание номера порта службы с помощью параметров
 description: Показано, как использовать параметры, чтобы задать порт для приложения в Service Fabric.
-documentationcenter: .net
 author: mikkelhegn
-manager: markfuss
-editor: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 12/06/2017
 ms.author: mikhegn
-ms.openlocfilehash: d69e02126564388bf045693b9960e6e574307641
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a53626b8fd362397ba89df30b099fa3c9ff7b0a2
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60720252"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75609865"
 ---
 # <a name="how-to-specify-the-port-number-of-a-service-using-parameters-in-service-fabric"></a>Как указать номер порта службы с помощью параметров в Service Fabric
 

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/14/2019
-ms.openlocfilehash: 057c77d4ddb4a760e196c0dc8d508efe15e6699d
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: c8d2ef0330a32d5cab88355cc749322ec3a5ea30
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69520131"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75530941"
 ---
 # <a name="frequently-asked-questions-about-apache-kafka-in-azure-hdinsight"></a>Часто задаваемые вопросы о Apache Kafka в Azure HDInsight
 
@@ -38,7 +38,7 @@ ms.locfileid: "69520131"
 
 ## <a name="do-apache-kafka-apis-work-with-hdinsight"></a>Работают ли Apache Kafka API с HDInsight?
 
-Да, HDInsight использует собственные API Kafka. Код клиентского приложения изменять не требуется. Пошаговые инструкции см. в [руководстве Используйте API-интерфейсы](./apache-kafka-producer-consumer-api.md) производителя и потребителя Apache Kafka, чтобы узнать, как можно использовать интерфейсы API производителя и потребителя на основе Java с кластером.
+Да, HDInsight использует собственные API Kafka. Код клиентского приложения изменять не требуется. См. раздел [учебник. Использование API-интерфейсов производителя и потребителя Apache Kafka](./apache-kafka-producer-consumer-api.md) для просмотра использования интерфейсов API производителя и потребителя на основе Java с кластером.
 
 ## <a name="can-i-change-cluster-configurations"></a>Можно ли изменить конфигурации кластера?
 
@@ -46,11 +46,11 @@ ms.locfileid: "69520131"
 
 ## <a name="what-type-of-authentication-does-hdinsight-support-for-apache-kafka"></a>Какой тип проверки подлинности поддерживает HDInsight для Apache Kafka?
 
-С помощью [Корпоративный пакет безопасности (ESP)](../domain-joined/apache-domain-joined-architecture.md)можно получить безопасность на уровне разделов для своих кластеров Kafka. Пошаговые инструкции см. в [руководстве Настройка политик Apache Kafka в HDInsight с корпоративный пакет безопасности (Предварительная](../domain-joined/apache-domain-joined-run-kafka.md)версия) для получения дополнительных сведений.
+С помощью [Корпоративный пакет безопасности (ESP)](../domain-joined/apache-domain-joined-architecture.md)можно получить безопасность на уровне разделов для своих кластеров Kafka. Дополнительные сведения см. [в разделе Учебник. Настройка политик Apache Kafka в HDInsight с помощью корпоративный пакет безопасности (Предварительная версия)](../domain-joined/apache-domain-joined-run-kafka.md).
 
 ## <a name="is-my-data-encrypted-can-i-use-my-own-keys"></a>Зашифрованы ли данные? Можно ли использовать собственные ключи?
 
-Все сообщения Kafka на управляемых дисках шифруются с помощью [Azure шифрование службы хранилища (SSE)](../../storage/common/storage-service-encryption.md). Транзитные данные (например, данные, передаваемые от клиентов в брокеры и наоборот), не шифруются по умолчанию. Можно зашифровать такой трафик, настроив [SSL самостоятельно](./apache-kafka-ssl-encryption-authentication.md). Кроме того, HDInsight позволяет управлять собственными ключами для шифрования неактивных данных. Дополнительные сведения см. в статье о том, как получить [собственный ключ для Apache Kafka в Azure HDInsight](apache-kafka-byok.md).
+Все сообщения Kafka на управляемых дисках шифруются с помощью [Azure шифрование службы хранилища (SSE)](../../storage/common/storage-service-encryption.md). Транзитные данные (например, данные, передаваемые от клиентов в брокеры и наоборот), не шифруются по умолчанию. Можно зашифровать такой трафик, [настроив SSL самостоятельно](./apache-kafka-ssl-encryption-authentication.md). Кроме того, HDInsight позволяет управлять собственными ключами для шифрования неактивных данных. Дополнительные сведения см. в статье о том, как получить [собственный ключ для Apache Kafka в Azure HDInsight](apache-kafka-byok.md).
 
 ## <a name="how-do-i-connect-clients-to-my-cluster"></a>Разделы справки подключить клиентов к кластеру?
 
@@ -65,6 +65,10 @@ ms.locfileid: "69520131"
 ## <a name="can-i-add-more-disk-space-on-an-existing-cluster"></a>Можно ли добавить дополнительное дисковое пространство в существующий кластер?
 
 Чтобы увеличить объем пространства, доступного для сообщений Kafka, можно увеличить количество узлов. В настоящее время добавление дисков в существующий кластер не поддерживается.
+
+## <a name="can-a-kafka-cluster-work-with-databricks"></a>Может ли кластер Kafka работать с модулями. 
+
+Да, кластеры Kafka могут работать с модулями, пока они находятся в одной виртуальной сети. Чтобы использовать кластер Kafka с модулями, создайте виртуальную сеть с кластером HDInsight Kafka, а затем укажите эту виртуальную сеть при создании рабочей области "кирпичы" и используйте внедрение виртуальной сети. Дополнительные сведения см. в статье [Deploy Azure Databricks in your Azure Virtual Network (VNet Injection)](https://docs.microsoft.com/azure/databricks/administration-guide/cloud-configurations/azure/vnet-inject) (Развертывание Azure Databricks в виртуальной сети Azure (внедрение виртуальной сети)). При создании рабочей области "кирпичи данных" необходимо указать имена брокера начальной загрузки кластера Kafka. Сведения о получении имен Kafka Broker см. [в статье Получение сведений об узле Apache Zookeeper и брокера](https://docs.microsoft.com/azure/hdinsight/kafka/apache-kafka-get-started#getkafkainfo).
 
 ## <a name="how-can-i-have-maximum-data-durability"></a>Как можно получить максимальную устойчивость данных?
 
@@ -90,7 +94,7 @@ ms.locfileid: "69520131"
 
 Используйте Azure Monitor для анализа [журналов Kafka](./apache-kafka-log-analytics-operations-management.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка шифрования и проверки подлинности SSL (SSL) для Apache Kafka в Azure HDInsight](./apache-kafka-ssl-encryption-authentication.md)
 * [Репликация разделов Apache Kafka с помощью Kafka в HDInsight и MirrorMaker](./apache-kafka-mirroring.md)

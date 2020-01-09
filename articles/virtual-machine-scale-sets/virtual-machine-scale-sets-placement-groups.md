@@ -1,6 +1,6 @@
 ---
-title: Работа с крупными масштабируемыми наборами виртуальных машин Azure | Документация Майкрософт
-description: Сведения об использовании крупных масштабируемых наборов виртуальных машин Azure
+title: Работа с крупными масштабируемыми наборами виртуальных машин Azure
+description: Что необходимо знать о больших масштабируемых наборах виртуальных машин Azure, чтобы использовать их в своем приложении.
 services: virtual-machine-scale-sets
 documentationcenter: ''
 author: rajsqr
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/9/2017
 ms.author: jeconnoc
-ms.openlocfilehash: 46ca46c99187b14974b78ccc4acc134a5f716b05
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 839d889783a7ef3bcd602c37a4975ddeea4e2a16
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68326704"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75459341"
 ---
 # <a name="working-with-large-virtual-machine-scale-sets"></a>Работа с крупными масштабируемыми наборами виртуальных машин
 Теперь вы можете создавать [масштабируемые наборы виртуальных машин](/azure/virtual-machine-scale-sets/) Azure, включающие до 1000 виртуальных машин. В этом документе под _крупным масштабируемым набором виртуальных машин_ подразумевается масштабируемый набор, в который можно добавить более 100 виртуальных машин. Эта возможность задается с помощью свойства масштабируемого набора (_singlePlacementGroup=False_). 
@@ -50,7 +50,7 @@ ms.locfileid: "68326704"
 
 ![](./media/virtual-machine-scale-sets-placement-groups/portal-large-scale.png)
 
-Крупный масштабируемый набор виртуальных машин можно создать с помощью команды [Azure CLI](https://github.com/Azure/azure-cli) _az vmss create_. Эта команда задает интеллектуальные значения по умолчанию, такие как размер подсети, на основе аргумента _instance-count_:
+Вы можете создать большой масштабируемый набор виртуальных машин с помощью команды [Azure CLI](https://github.com/Azure/azure-cli) _AZ vmss Create_ . Эта команда задает интеллектуальные значения по умолчанию, такие как размер подсети, на основе аргумента _instance-count_:
 
 ```bash
 az group create -l southcentralus -n biginfra

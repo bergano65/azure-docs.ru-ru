@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 10/23/2019
-ms.openlocfilehash: 1c78336880d685090ae21c725becc90d689c1817
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 22a7ab7aa5d85e716d9b594ee3fb11aad3fa6a36
+ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73581806"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75496552"
 ---
 # <a name="end-to-end-blob-ingestion-into-azure-data-explorer-through-python"></a>Прием сквозного большого двоичного объекта в Azure обозреватель данных с помощью Python
 
@@ -25,7 +25,7 @@ Azure Data Explorer — это быстрая и масштабируемая �
 
 Вы узнаете, как программным способом создать группу ресурсов, учетную запись хранения и контейнер, концентратор событий и кластер Azure обозреватель данных и базу данных. Вы также узнаете, как программно настроить обозреватель данных Azure для приема данных из новой учетной записи хранения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 
@@ -38,13 +38,14 @@ pip install azure-common
 pip install azure-mgmt-resource
 pip install azure-mgmt-kusto
 pip install azure-mgmt-eventgrid
+pip install azure-kusto-data
 pip install azure-storage-blob
 ```
 [!INCLUDE [data-explorer-authentication](../../includes/data-explorer-authentication.md)]
 
 [!INCLUDE [data-explorer-e2e-event-grid-resource-template](../../includes/data-explorer-e2e-event-grid-resource-template.md)]
 
-## <a name="code-example"></a>Примеры кода 
+## <a name="code-example"></a>Пример кода 
 
 В следующем примере кода вы получите пошаговый процесс, который приводит к приему данных в Azure обозреватель данных. 
 

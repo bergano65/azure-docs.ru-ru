@@ -2,17 +2,17 @@
 title: Подключение облачной службы к пользовательскому контроллеру домена | Документация Майкрософт
 description: Сведения о подключении веб-ролей и рабочих ролей к личному домену AD с помощью PowerShell и расширения домена AD
 services: cloud-services
-author: georgewallace
+author: tgore03
 ms.service: cloud-services
 ms.topic: article
 ms.date: 07/18/2017
-ms.author: gwallace
-ms.openlocfilehash: 97a24720e65539a68745a5a1bb3f13ce1cafb9be
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.author: tagore
+ms.openlocfilehash: d40e392984d2675c748bda00c61cdaeb1c0932da
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359185"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75387026"
 ---
 # <a name="connecting-azure-cloud-services-roles-to-a-custom-ad-domain-controller-hosted-in-azure"></a>Подключение ролей облачных служб Azure к контроллеру личного домена AD, размещенному в Azure
 Сначала настройте виртуальную сеть в Azure. Затем добавьте к ней контроллер домена Active Directory (размещенный на виртуальной машине Azure). После этого добавьте имеющиеся роли облачных служб в заранее созданную виртуальную сеть и подключите их к контроллеру домена.
@@ -26,7 +26,7 @@ ms.locfileid: "68359185"
 
 Сеть, на которую ссылается облачная служба, должна быть **классической виртуальной сетью**.
 
-## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
 Создать виртуальную сеть в Azure можно с помощью портала Azure или PowerShell. В этом руководстве используется PowerShell. Сведения о создании виртуальной сети с помощью портала Azure см. в статье [Создание виртуальной сети с помощью портала Azure](../virtual-network/quick-create-portal.md). В ней описано создание виртуальной сети (Resource Manager), но вам необходимо создать виртуальную сеть (классическую) для облачных служб. Для этого на портале выберите **Создать ресурс**, введите *виртуальная сети* в **поле поиска** и нажмите клавишу **ВВОД**. В результатах поиска в разделе **Все** выберите **Виртуальная сеть**. В разделе **Выбор модели развертывания** щелкните **Классическая** и щелкните **Создать**. Следуйте инструкциям в этой статье.
 
 ```powershell
@@ -141,7 +141,7 @@ $dmcred = New-Object System.Management.Automation.PSCredential ($dmuser, $dmspwd
 Set-AzureServiceADDomainExtension -Service <your-cloud-service-hosted-service-name> -Role <your-role-name> -Slot <staging-or-production> -DomainName $domain -Credential $dmcred -JoinOption 35
 ```
 
-И это все.
+Вот и все!
 
 Облачные службы должны быть присоединены к контроллеру личного домена. Дополнительные сведения о различных параметрах для настройки расширения домена AD см. в справке PowerShell. Вот несколько примеров.
 
@@ -149,3 +149,6 @@ Set-AzureServiceADDomainExtension -Service <your-cloud-service-hosted-service-na
 help Set-AzureServiceADDomainExtension
 help New-AzureServiceADDomainExtensionConfig
 ```
+
+
+

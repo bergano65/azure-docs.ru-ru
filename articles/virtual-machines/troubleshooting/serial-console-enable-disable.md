@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm
 ms.workload: infrastructure-services
 ms.date: 8/20/2019
 ms.author: alsin
-ms.openlocfilehash: fa400d875a8f39d54d10820c603e12e97f0cd854
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: e09e08f8ba36cf576bc27551254225adee3bb0fd
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74452236"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75451306"
 ---
 # <a name="enable-and-disable-the-azure-serial-console"></a>Включение и отключение последовательной консоли Azure
 
@@ -32,6 +32,9 @@ ms.locfileid: "74452236"
 
 
 ## <a name="subscription-level-enabledisable"></a>Включение или отключение уровня подписки
+
+> [!NOTE]
+> Перед выполнением этой команды убедитесь, что вы в правильном облаке (общедоступное облако Azure, облако для государственных организаций США). Вы можете проверить `az cloud list` и задать в облаке `az cloud set -n <Name of cloud>`.
 
 ### <a name="azure-cli"></a>Интерфейс командной строки Azure
 
@@ -58,9 +61,6 @@ subscriptionId=$(az account show --output=json | jq -r .id)
 az resource show --ids "/subscriptions/$subscriptionId/providers/Microsoft.SerialConsole/consoleServices/default" --output=json --api-version="2018-05-01" | jq .properties
 ```
 
-> [!NOTE]
-> Перед выполнением этой команды убедитесь, что вы в правильном облаке (общедоступное облако Azure, облако для государственных организаций США). Вы можете проверить `az cloud list` и задать в облаке `az cloud set -n <Name of cloud>`.
-
 ### <a name="powershell"></a>PowerShell
 
 Серийная консоль также можно включить и отключить с помощью PowerShell.
@@ -79,7 +79,7 @@ $subscription=(Get-AzContext).Subscription.Id
 Invoke-AzResourceAction -Action enableConsole -ResourceId /subscriptions/$subscription/providers/Microsoft.SerialConsole/consoleServices/default -ApiVersion 2018-05-01
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о [последовательной консоли Azure для виртуальных машин Linux](./serial-console-linux.md)
 * Дополнительные сведения о [последовательной консоли Azure для виртуальных машин Windows](./serial-console-windows.md)
 * Сведения о [возможностях управления питанием в последовательной консоли Azure](./serial-console-power-options.md)

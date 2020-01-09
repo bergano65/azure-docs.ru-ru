@@ -5,69 +5,43 @@ author: bwren
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 07/31/2019
+ms.date: 12/13/2019
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: 0cb4cee732b1784de489d97769294c455cfd5efd
-ms.sourcegitcommit: fa5ce8924930f56bcac17f6c2a359c1a5b9660c9
+ms.openlocfilehash: b549cc0e890a122a04984baa2348831fc51abe08
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73200492"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75531009"
 ---
 # <a name="create-diagnostic-setting-in-azure-using-a-resource-manager-template"></a>Создание параметра диагностики в Azure с помощью шаблона диспетчер ресурсов
-[Журналы платформы](platform-logs-overview.md) в Azure предоставляют подробные сведения о диагностике и аудите для ресурсов Azure и платформы Azure, от которых они зависят. В этой статье приводятся сведения об использовании [шаблона Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) для настройки параметров диагностики для получения журналов платформы в разные места назначения. Это позволяет автоматически начать сбор журналов платформы при создании ресурса.
+[Параметры диагностики](diagnostic-settings.md) в Azure Monitor укажите, куда следует отправить [журналы платформы](platform-logs-overview.md) , собираемые ресурсами Azure и платформой Azure, от которых они зависят. В этой статье приводятся подробные сведения и примеры использования [шаблона Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) для создания и настройки параметров диагностики для получения журналов платформы в разные места назначения. 
+
+> [!NOTE]
+> Так как вы не можете [создать параметр диагностики](diagnostic-settings.md) для журнала действий Azure с помощью POWERSHELL или CLI, например параметров диагностики для других ресурсов Azure, создайте шаблон диспетчер ресурсов для журнала действий, используя сведения в этой статье, а затем разверните шаблон с помощью POWERSHELL или CLI.
+
+## <a name="deployment-methods"></a>Методы развертывания
+Вы можете развернуть шаблоны диспетчер ресурсов с помощью любого допустимого метода, включая PowerShell и CLI. Параметры диагностики для журнала действий должны быть развернуты в подписке с помощью `az deployment create` для CLI или `New-AzDeployment` для PowerShell. Параметры диагностики для журналов ресурсов должны быть развернуты в группе ресурсов с помощью `az group deployment create` для CLI или `New-AzResourceGroupDeployment` для PowerShell. 
+
+Дополнительные сведения см. в статьях [развертывание ресурсов с помощью шаблонов диспетчер ресурсов и Azure PowerShell](../../azure-resource-manager/resource-group-template-deploy.md) и [развертывание ресурсов с помощью шаблонов диспетчер ресурсов и Azure CLI](../../azure-resource-manager/resource-group-template-deploy-cli.md) . 
 
 
-## <a name="resource-manager-template"></a>Шаблон Resource Manager
-Существует два раздела шаблона диспетчер ресурсов, которые необходимо изменить для создания параметров диагностики. Эти разделы описаны в следующих разделах.
 
-### <a name="parameters"></a>Параметры
-В зависимости от [целевых](diagnostic-settings.md#destinations) объектов для параметра диагностики добавьте параметры в большой двоичный объект параметров для имени учетной записи хранения, идентификатора правила авторизации концентратора событий и идентификатора рабочей области log Analytics.
-   
-```json
-"settingName": {
-  "type": "string",
-  "metadata": {
-    "description": "Name for the diagnostic setting resource. Eg. 'archiveToStorage' or 'forSecurityTeam'."
-  }
-},
-"storageAccountName": {
-  "type": "string",
-  "metadata": {
-    "description": "Name of the Storage Account in which platform logs should be saved."
-  }
-},
-"eventHubAuthorizationRuleId": {
-  "type": "string",
-  "metadata": {
-    "description": "Resource ID of the event hub authorization rule for the Event Hubs namespace in which the event hub should be created or streamed to."
-  }
-},
-"eventHubName": {
-  "type": "string",
-  "metadata": {
-    "description": "Optional. Name of the event hub within the namespace to which logs are streamed. Without this, an event hub is created for each log category."
-  }
-},
-"workspaceId":{
-  "type": "string",
-  "metadata": {
-    "description": "Azure Resource ID of the Log Analytics workspace to which logs will be sent."
-  }
-}
-```
 
-### <a name="resources"></a>Ресурсы
-В массиве ресурсов ресурса, для которого необходимо создать параметр диагностики, добавьте ресурс типа `[resource namespace]/providers/diagnosticSettings`. Раздел Properties соответствует формату, описанному в разделе [параметры диагностики — создание или обновление](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings/createorupdate). Добавьте свойство `metrics` для сбора метрик ресурсов в те же места назначения, если [ресурс поддерживает метрики](metrics-supported.md).
-   
+
+## <a name="resource-logs"></a>Журналы ресурсов
+Для журналов ресурсов добавьте в шаблон ресурс типа `<resource namespace>/providers/diagnosticSettings`. Раздел Properties соответствует формату, описанному в разделе [параметры диагностики — создание или обновление](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings/createorupdate). Укажите `category` в разделе `logs` для каждой категории, действующей для ресурса, который требуется получить. Добавьте свойство `metrics` для сбора метрик ресурсов в те же места назначения, если [ресурс поддерживает метрики](metrics-supported.md).
+
+Ниже приведен шаблон, собирающий категорию журнала ресурсов для определенного ресурса в Log Analytics рабочей области, учетной записи хранения и концентратора событий. 
+
 ```json
 "resources": [
   {
-    "type": "providers/diagnosticSettings",
-    "name": "[concat('Microsoft.Insights/', parameters('settingName'))]",
+    "type": "/<resource namespace>/providers/diagnosticSettings",
+    "name": "[concat(parameters('resourceName'),'/microsoft.insights/', parameters('settingName'))]",
     "dependsOn": [
-      "[/*resource Id for which resource logs will be enabled>*/]"
+      "[<resource Id for which resource logs will be enabled>]"
     ],
     "apiVersion": "2017-05-01-preview",
     "properties": {
@@ -78,22 +52,14 @@ ms.locfileid: "73200492"
       "workspaceId": "[parameters('workspaceId')]",
       "logs": [ 
         {
-          "category": "/* log category name */",
-          "enabled": true,
-          "retentionPolicy": {
-            "days": 0,
-            "enabled": false
-          }
+          "category": "<category name>",
+          "enabled": true
         }
       ],
       "metrics": [
         {
           "category": "AllMetrics",
-          "enabled": true,
-          "retentionPolicy": {
-            "enabled": false,
-            "days": 0
-          }
+          "enabled": true
         }
       ]
     }
@@ -103,137 +69,171 @@ ms.locfileid: "73200492"
 
 
 
-## <a name="example"></a>Пример
-Ниже приведен полный пример, который создает приложение логики и создает параметр диагностики, позволяющий потоковую передачу журналов ресурсов в концентратор событий и хранилище в учетной записи хранения.
+### <a name="example"></a>Пример
+Ниже приведен пример, в котором создается параметр диагностики для параметра автомасштабирования, который обеспечивает потоковую передачу журналов ресурсов в концентратор событий, учетную запись хранения и рабочую область Log Analytics.
 
 ```json
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "logicAppName": {
-      "type": "string",
-      "metadata": {
-        "description": "Name of the Logic App that will be created."
-      }
-    },
-    "testUri": {
-      "type": "string",
-      "defaultValue": "https://azure.microsoft.com/status/feed/"
-    },
-    "settingName": {
-      "type": "string",
-      "metadata": {
-        "description": "Name of the setting. Name for the diagnostic setting resource. Eg. 'archiveToStorage' or 'forSecurityTeam'."
-      }
-    },
-    "storageAccountName": {
-      "type": "string",
-      "metadata": {
-        "description": "Name of the Storage Account in which resource logs should be saved."
-      }
-    },
-    "eventHubAuthorizationRuleId": {
-      "type": "string",
-      "metadata": {
-        "description": "Resource ID of the event hub authorization rule for the Event Hubs namespace in which the event hub should be created or streamed to."
-      }
-    },
-    "eventHubName": {
-      "type": "string",
-      "metadata": {
-        "description": "Optional. Name of the event hub within the namespace to which logs are streamed. Without this, an event hub is created for each log category."
-      }
-    },
-    "workspaceId": {
-      "type": "string",
-      "metadata": {
-        "description": "Log Analytics workspace ID for the Log Analytics workspace to which logs will be sent."
-      }
-    }
-  },
-  "variables": {},
-  "resources": [
-    {
-      "type": "Microsoft.Logic/workflows",
-      "name": "[parameters('logicAppName')]",
-      "apiVersion": "2016-06-01",
-      "location": "[resourceGroup().location]",
-      "properties": {
-        "definition": {
-          "$schema": "https://schema.management.azure.com/schemas/2016-06-01/Microsoft.Logic.json",
-          "contentVersion": "1.0.0.0",
-          "parameters": {
-            "testURI": {
-              "type": "string",
-              "defaultValue": "[parameters('testUri')]"
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "autoscaleSettingName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of the autoscale setting"
             }
-          },
-          "triggers": {
-            "recurrence": {
-              "type": "recurrence",
-              "recurrence": {
-                "frequency": "Hour",
-                "interval": 1
-              }
-            }
-          },
-          "actions": {
-            "http": {
-              "type": "Http",
-              "inputs": {
-                "method": "GET",
-                "uri": "@parameters('testUri')"
-              },
-              "runAfter": {}
-            }
-          },
-          "outputs": {}
         },
-        "parameters": {}
-      },
-      "resources": [
-        {
-          "type": "providers/diagnosticSettings",
-          "name": "[concat('Microsoft.Insights/', parameters('settingName'))]",
-          "dependsOn": [
-            "[resourceId('Microsoft.Logic/workflows', parameters('logicAppName'))]"
-          ],
-          "apiVersion": "2017-05-01-preview",
-          "properties": {
-            "name": "[parameters('settingName')]",
-            "storageAccountId": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]",
-            "eventHubAuthorizationRuleId": "[parameters('eventHubAuthorizationRuleId')]",
-            "eventHubName": "[parameters('eventHubName')]",
-            "workspaceId": "[parameters('workspaceId')]",
-            "logs": [
-              {
-                "category": "WorkflowRuntime",
-                "enabled": true,
-                "retentionPolicy": {
-                  "days": 0,
-                  "enabled": false
-                }
-              }
-            ],
-            "metrics": [
-              {
-                "timeGrain": "PT1M",
-                "enabled": true,
-                "retentionPolicy": {
-                  "enabled": false,
-                  "days": 0
-                }
-              }
-            ]
-          }
+        "settingName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of the diagnostic setting"
+            }
+        },
+        "workspaceId": {
+            "type": "string",
+            "metadata": {
+                "description": "ResourceIDl of the Log Analytics workspace in which resource logs should be saved."
+            }
+        },
+        "storageAccountId": {
+            "type": "string",
+            "metadata": {
+              "description": "ResourceID of the Storage Account in which resource logs should be saved."
+            }
+        },
+        "eventHubAuthorizationRuleId": {
+            "type": "string",
+            "metadata": {
+              "description": "Resource ID of the event hub authorization rule for the Event Hubs namespace in which the event hub should be created or streamed to."
+            }
+        },
+        "eventHubName": {
+            "type": "string",
+            "metadata": {
+                "description": "Optional. Name of the event hub within the namespace to which logs are streamed. Without this, an event hub is created for each log category."
+            }
         }
+    },
+    "variables": {},
+    "resources": [
+    {
+      "type": "microsoft.insights/autoscalesettings/providers/diagnosticSettings",
+      "apiVersion": "2017-05-01-preview",
+      "name": "[concat(parameters('autoscaleSettingName'),'/microsoft.insights/', parameters('settingName'))]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Insights/autoscalesettings', parameters('autoscaleSettingName'))]"
       ],
-      "dependsOn": []
+      "properties": {
+        "workspaceId": "[parameters('workspaceId')]",
+        "storageAccountId": "[parameters('storageAccountId')]",
+        "eventHubAuthorizationRuleId": "[parameters('eventHubAuthorizationRuleId')]",
+        "eventHubName": "[parameters('eventHubName')]",
+        "logs": [
+          {
+            "category": "AutoscaleScaleActions",
+            "enabled": true
+          },
+          {
+            "category": "AutoscaleEvaluations",
+            "enabled": true
+          }
+        ]
+      }
     }
   ]
 }
+```
 
+## <a name="activity-log"></a>Журнал действий
+Для журнала действий Azure Добавьте ресурс типа `Microsoft.Insights/diagnosticSettings`. Доступные категории перечислены в списке [категории в журнале действий](activity-log-view.md#categories-in-the-activity-log). Ниже приведен шаблон, собирающий все категории журналов действий в Log Analytics рабочей области, учетной записи хранения и концентратора событий.
+
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "settingName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of the diagnostic setting"
+            }
+        },
+        "workspaceId": {
+            "type": "string",
+            "metadata": {
+                "description": "ResourceID of the Log Analytics workspace in which resource logs should be saved."
+            }
+        },
+        "storageAccountId": {
+            "type": "string",
+            "metadata": {
+              "description": "ResourceID of the Storage Account in which resource logs should be saved."
+            }
+        },
+        "eventHubAuthorizationRuleId": {
+            "type": "string",
+            "metadata": {
+              "description": "Resource ID of the event hub authorization rule for the Event Hubs namespace in which the event hub should be created or streamed to."
+            }
+        },
+        "eventHubName": {
+            "type": "string",
+            "metadata": {
+                "description": "Optional. Name of the event hub within the namespace to which logs are streamed. Without this, an event hub is created for each log category."
+            }
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Insights/diagnosticSettings",
+            "apiVersion": "2017-05-01-preview",
+            "name": "[parameters('settingName')]",
+            "location": "global",
+            "properties": {
+                "workspaceId": "[parameters('workspaceId')]",
+                "storageAccountId": "[parameters('storageAccountId')]",
+                "eventHubAuthorizationRuleId": "[parameters('eventHubAuthorizationRuleId')]",
+                "eventHubName": "[parameters('eventHubName')]",
+                "logs": [
+                    {
+                        "category": "Administrative",
+                        "enabled": true
+                    },
+                    {
+                        "category": "Security",
+                        "enabled": true
+                    },
+                    {
+                        "category": "ServiceHealth",
+                        "enabled": true
+                    },
+                    {
+                        "category": "Alert",
+                        "enabled": true
+                    },
+                    {
+                        "category": "Recommendation",
+                        "enabled": true
+                    },
+                    {
+                        "category": "Policy",
+                        "enabled": true
+                    },
+                    {
+                        "category": "Autoscale",
+                        "enabled": true
+                    },
+                    {
+                        "category": "ResourceHealth",
+                        "enabled": true
+                    }
+                ]
+            }
+        }
+    ]
+}
 ```
 
 

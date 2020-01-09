@@ -1,17 +1,17 @@
 ---
-title: Шаблоны Azure Resource Manager для Azure Cosmos DB API для MongoDB
+title: Шаблоны диспетчер ресурсов для Azure Cosmos DB API для MongoDB
 description: Используйте шаблоны Azure Resource Manager, чтобы создать и настроить Azure Cosmos DB API для MongoDB.
 author: TheovanKraay
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: thvankra
-ms.openlocfilehash: e0d28de67082c4b4d582f62653ad474e9ad5dadd
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 66f1ea27692433b72fe05ea89454806bf851c519
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73960579"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75445257"
 ---
 # <a name="manage-azure-cosmos-db-mongodb-api-resources-using-azure-resource-manager-templates"></a>Управление ресурсами Azure Cosmos DB MongoDB API с помощью шаблонов Azure Resource Manager
 
@@ -53,7 +53,7 @@ az cosmosdb show --resource-group $resourceGroupName --name accountName --output
 
 Команда `az cosmosdb show` отображает созданную учетную запись Azure Cosmos после ее подготовки. Если вы решили использовать локально установленную версию Azure CLI вместо использования Cloud Shell, см. статью [Azure CLI](/cli/azure/) .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ниже приведены некоторые дополнительные ресурсы.
 

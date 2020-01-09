@@ -1,5 +1,6 @@
 ---
-title: Вопросы и ответы по проблемам конфигурации и управления для облачных служб Microsoft Azure | Документы Майкрософт
+title: Вопросы, связанные с настройкой и управлением
+titleSuffix: Azure Cloud Services
 description: В этой статье приведены часто задаваемые вопросы по конфигурации и управлению для облачных служб Microsoft Azure.
 services: cloud-services
 documentationcenter: ''
@@ -14,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/23/2018
 ms.author: genli
-ms.openlocfilehash: 704d6d4a12550507a8e38be4777e5abc7b57fe74
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 47a75d10f6016eb49061f9e7158b00899a387f2f
+ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73161766"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75660619"
 ---
 # <a name="configuration-and-management-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Проблемы конфигурации и управления для облачных служб Azure. Вопросы и ответы (FAQ)
 
@@ -49,7 +50,7 @@ ms.locfileid: "73161766"
 - [Какие функции и возможности предоставляют базовые IPS/IDS и DDOS Azure?](#what-are-the-features-and-capabilities-that-azure-basic-ipsids-and-ddos-provides)
 - [Как включить HTTP/2 на виртуальной машине облачных служб?](#how-to-enable-http2-on-cloud-services-vm)
 
-**разрешений**
+**Разрешения**
 
 - [Могут ли инженеры Майкрософт без моего разрешения использовать удаленный рабочий стол для доступа к экземплярам облачной службы?](#can-microsoft-internal-engineers-remote-desktop-to-cloud-service-instances-without-permission)
 - [Не удается выполнить удаленный рабочий стол для виртуальной машины облачной службы с помощью RDP-файла. Я получаю следующую ошибку: произошла ошибка проверки подлинности (код: 0x80004005)](#i-cannot-remote-desktop-to-cloud-service-vm--by-using-the-rdp-file-i-get-following-error-an-authentication-error-has-occurred-code-0x80004005)
@@ -239,7 +240,7 @@ Windows 10 и Windows Server 2016 в стандартной конфигурац
 
 Автомасштабирование на основе метрик памяти в настоящее время не поддерживается для облачных служб. 
 
-Чтобы обойти эту проблему, используйте Application Insights. Автомасштабирование поддерживает Application Insights в качестве источника метрик и позволяет изменять число экземпляров роли по любой гостевой метрике, в том числе "Память".  Чтобы реализовать такой механизм, настройте параметры для Application Insights в файле пакета для проекта облачной службы (CSPKG) и включите для службы расширение диагностики Azure.
+Чтобы обойти эту проблему, используйте Application Insights. Автомасштабирование поддерживает Application Insights в качестве источника метрик и позволяет изменять число экземпляров роли по любой гостевой метрике, в том числе "Память".  Чтобы реализовать такой механизм, настройте параметры для Application Insights в файле пакета для проекта облачной службы (\*.CSPKG) и включите для службы расширение диагностики Azure.
 
 Дополнительные сведения о применении пользовательских метрик Application Insights для автомасштабирования облачных служб вы найдете в статье [Get started with auto scale by custom metric in Azure](../azure-monitor/platform/autoscale-custom-metric.md) (Начало работы с автомасштабированием в Azure по пользовательским метрикам).
 
@@ -249,7 +250,7 @@ Windows 10 и Windows Server 2016 в стандартной конфигурац
 
 Дополнительные сведения о том, как включить ведение журнала диагностики Azure для облачных служб, см. в разделе [Включение диагностики в проектах облачных служб перед их развертыванием](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines#turn-on-diagnostics-in-cloud-service-projects-before-you-deploy-them).
 
-## <a name="generic"></a>Универсальный
+## <a name="generic"></a>Универсальный шаблон
 
 ### <a name="how-do-i-add-nosniff-to-my-website"></a>Как добавить на веб-сайт запрет на сканирование?
 Чтобы помешать клиентам сканировать типы MIME, добавьте соответствующий параметр в файл *web.config*.
@@ -276,7 +277,7 @@ Windows 10 и Windows Server 2016 в стандартной конфигурац
 Используйте сценарий запуска IIS из статьи [Распространенные задачи запуска](cloud-services-startup-tasks-common.md#configure-iis-startup-with-appcmdexe).
 
 ### <a name="what-is-the-quota-limit-for-my-cloud-service"></a>Что такое квота для облачной службы?
-См. раздел [Ограничения определенных служб](../azure-subscription-service-limits.md#subscription-limits).
+См. раздел [Ограничения определенных служб](../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits).
 
 ### <a name="why-does-the-drive-on-my-cloud-service-vm-show-very-little-free-disk-space"></a>Почему на диске виртуальной машины облачной службы отображается очень мало свободного места?
 Это ожидаемое поведение, и оно не должно приводить к проблемам с вашим приложением. Для диска %uproot% в виртуальных машинах PaaS Azure включено ведение журнала, что фактически вдвое увеличивает размер файлов. Однако существует несколько моментов, которые следует учитывать, чтобы это не стало проблемой.
@@ -310,7 +311,7 @@ Azure ничего не будет записывать на диск %approot%.
     
 Как описано [здесь](https://technet.microsoft.com/library/ee790567.aspx), $sslFlags может принимать одно из следующих значений.
 
-|Value|Значение|
+|Значение|Значение|
 ------|------
 |0|Указание имени сервера не используется|
 |1|Указание имени сервера используется|
