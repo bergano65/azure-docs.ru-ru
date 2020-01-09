@@ -3,17 +3,17 @@ title: Сбор данных счетчиков производительнос
 description: Узнайте, как находить, использовать и создавать счетчики производительности в облачных службах с помощью системы диагностики Azure и Application Insights.
 services: cloud-services
 documentationcenter: .net
-author: georgewallace
+author: tgore03
 ms.service: cloud-services
 ms.topic: article
 ms.date: 02/02/2018
-ms.author: gwallace
-ms.openlocfilehash: d6b16b859b29ef835bca75c5fca0ea1a9d35a306
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.author: tagore
+ms.openlocfilehash: 16b0727a78ad8ad582535fa1f5b0e57079cc4c05
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68358935"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75385592"
 ---
 # <a name="collect-performance-counters-for-your-azure-cloud-service"></a>Сбор данных счетчиков производительности для облачной службы Azure
 
@@ -103,7 +103,7 @@ Azure Application Insights для облачных служб позволяет
 
 Application Insights автоматически собирает данные следующих счетчиков производительности:
 
-* \Process(??APP_WIN32_PROC??)\% Загруженность процессора
+* \Process (?? APP_WIN32_PROC??)\% процессорного времени
 * \Память\доступные байты
 * \.NET CLR Exceptions(??APP_CLR_PROC??)\# Исключений в секунду
 * \Process(??APP_WIN32_PROC??)\Байт исключительного пользования
@@ -286,9 +286,12 @@ counterServiceUsed.Increment();
 </DiagnosticsConfiguration>
 ```
 
-## <a name="more-information"></a>Дополнительная информация
+## <a name="more-information"></a>Дополнительные сведения
 
 - [Счетчики производительности](../azure-monitor/app/cloudservices.md#performance-counters)
 - [Системные счетчики производительности в Application Insights](../azure-monitor/app/performance-counters.md)
 - [Specifying a Counter Path](https://msdn.microsoft.com/library/windows/desktop/aa373193(v=vs.85)) (Указание пути счетчика)
 - [Схема Диагностики Azure — элементы PerformanceCounters](../azure-monitor/platform/diagnostics-extension-schema-1dot3.md#performancecounters-element)
+
+
+

@@ -3,14 +3,14 @@ title: Руководство. Создание масштабируемого �
 description: Узнайте, как использовать Terraform для настройки и модификации масштабируемого набора виртуальных машин Azure.
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: ef2ce0a3ea8c50123cd51ab60a6b98894739d859
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: 6dcdad21eef003fe773a2c6ea3cb8a69b9175ecb
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74159078"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75369479"
 ---
-# <a name="tutorial-create-an-azure-virtual-machine-scale-set-using-terraform"></a>Руководство по созданию масштабируемого набора виртуальных машин Azure с помощью Terraform
+# <a name="tutorial-create-an-azure-virtual-machine-scale-set-using-terraform"></a>Руководство. созданию масштабируемого набора виртуальных машин Azure с помощью Terraform
 
 [Масштабируемые наборы виртуальных машин Azure](/azure/virtual-machine-scale-sets) позволяют настроить идентичные виртуальные машины. Количество экземпляров виртуальных машин можно настроить по запросу или расписанию. Дополнительные сведения см. в статье [Автоматическое масштабирование масштабируемого набора виртуальных машин на портале Azure](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal).
 
@@ -26,9 +26,9 @@ ms.locfileid: "74159078"
 > [!NOTE]
 > Последнюю версию файлов конфигурации Terraform, используемых в этой статье, можно скачать из [репозитория Awesome Terraform на GitHub](https://github.com/Azure/awesome-terraform/tree/master/codelab-vmss).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-- **Подписка Azure.** Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) , прежде чем начинать работу.
+- **Подписка Azure**: Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 
 - **Наличие Terraform.** Следуйте указаниям в статье [Terraform и настройка доступа к Azure](/azure/virtual-machines/linux/terraform-install-configure).
 
@@ -107,7 +107,7 @@ ms.locfileid: "74159078"
     ```
 
 1. Вставьте приведенный ниже код в редактор, чтобы предоставить сведения о полном доменном имени (FQDN) виртуальным машинам.
-   :
+   , перечислены ниже.
 
    ```hcl
     output "vmss_public_ip" {
@@ -424,7 +424,7 @@ ms.locfileid: "74159078"
     resource_group_name          = azurerm_resource_group.vmss.name
     allocation_method = "Static"
     domain_name_label            = "${random_string.fqdn.result}-ssh"
-    tags                         = var.tags}
+    tags                         = var.tags
    }
 
    resource "azurerm_network_interface" "jumpbox" {
@@ -518,7 +518,7 @@ terraform destroy
 
 Процесс удаления может занять несколько минут.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
 > [Документация по Terraform в Azure](/azure/terraform)

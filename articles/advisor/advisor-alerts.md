@@ -1,20 +1,14 @@
 ---
-title: Создать оповещения Azure Advisor для получения новых рекомендаций | Документация Майкрософт
+title: Создание оповещений Azure Advisor для получения новых рекомендаций
 description: Создание оповещений помощника Azure для новой рекомендации
-services: advisor
-author: sagupt
-ms.service: advisor
 ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 09/09/2019
-ms.author: sagupt
-ms.openlocfilehash: d641008a7caf4a006344d886aec945a6e8da2568
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: 07cbc57ef718b6cac104d2b5238ff4e3196f197a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71326616"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75443158"
 ---
 # <a name="create-azure-advisor-alerts-on-new-recommendations"></a>Создание оповещений помощника по Azure для новых рекомендаций 
 
@@ -24,7 +18,7 @@ ms.locfileid: "71326616"
 
 Вы также можете определить типы рекомендаций, используя следующие свойства:
 
-* Category
+* Категория
 * Уровень влияния
 * Тип рекомендации
 
@@ -274,7 +268,7 @@ ms.locfileid: "71326616"
 }
 ```
 
-В любой из схем можно задать события рекомендации помощника, выполнив Поиск eventSource `Recommendation` , а operationName `Microsoft.Advisor/recommendations/available/action`—.
+В любой из схем можно задать события рекомендации помощника, выполнив поиск **eventSource** `Recommendation` а **имя_операции** — `Microsoft.Advisor/recommendations/available/action`.
 
 Ниже приведены некоторые другие важные поля, которые можно использовать. 
 

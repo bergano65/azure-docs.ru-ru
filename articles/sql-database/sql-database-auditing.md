@@ -9,12 +9,12 @@ author: barmichal
 ms.author: mibar
 ms.reviewer: vanto
 ms.date: 08/22/2019
-ms.openlocfilehash: f36906bfa6bbef43c0e3133bfa1e8a163810086f
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 450f40c8ba49028d99143d7cf2b2995eb354f8fd
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928699"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551630"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Начало работы с аудитом базы данных SQL
 
@@ -73,7 +73,7 @@ ms.locfileid: "74928699"
 1. Перейдите на [портал Azure](https://portal.azure.com).
 2. Перейдите к параметру **Аудит** в разделе "Безопасность" на панели базы данных или сервера SQL.
 
-    <a id="auditing-screenshot"></a> ![Область навигации][1]
+    <a id="auditing-screenshot"></a>![область навигации][1]
 
 3. Если необходимо настроить политику аудита сервера, выберите ссылку **Просмотреть параметры сервера** на странице аудита базы данных. Вы можете затем просмотреть или изменить параметры аудита сервера. Политики аудита сервера применяются ко всем существующим и создаваемым базам данных на этом сервере.
 
@@ -108,7 +108,7 @@ ms.locfileid: "74928699"
 
     ![концентратор событий;](./media/sql-database-auditing-get-started/auditing_select_event_hub.png)
 
-9. В нижней части страницы нажмите кнопку **Save**.
+9. Выберите команду **Сохранить**.
 10. Настроить события аудита можно с помощью [командлетов PowerShell](#subheading-7) или [REST API](#subheading-9).
 11. После настройки параметров аудита можно включить новую функцию обнаружения угроз и настроить адреса электронной почты для получения предупреждений системы безопасности. Использование функции обнаружения угроз позволяет настроить упреждающие оповещения об аномальной активности в базах данных, которая может указывать на потенциальные угрозы безопасности. Дополнительные сведения см. в статье [Обнаружение угроз для базы данных SQL](sql-database-threat-detection-get-started.md).
 
@@ -210,7 +210,7 @@ ms.locfileid: "74928699"
 
 ### <a id="subheading-6">Повторное создание ключа к хранилищу данных</a>
 
-Обычно в рабочей среде приходится периодически обновлять ключи хранилища. Если журналы аудита записываются в службу хранилища Azure, при обновлении ключей необходимо повторно сохранить политику аудита. Процесс таков:
+Обычно в рабочей среде приходится периодически обновлять ключи хранилища. Если журналы аудита записываются в службу хранилища Azure, при обновлении ключей необходимо повторно сохранить политику аудита. Применяется следующая обработка.
 
 1. Откройте раздел **Сведения о хранилище**. В поле **Ключ доступа к хранилищу** выберите **Вторичный**, а затем нажмите кнопку **OK**. Затем щелкните **Сохранить** в верхней области страницы настройки аудита.
 
@@ -243,7 +243,7 @@ ms.locfileid: "74928699"
 - Если используется проверка подлинности AAD, неудачные попытки входа *не* отображаются в журнале аудита SQL. Чтобы просмотреть записи аудита для неудачных попыток входа, посетите [портал Azure Active Directory]( ../active-directory/reports-monitoring/reference-sign-ins-error-codes.md), который регистрирует сведения об этих событиях.
 
 
-## <a id="subheading-7"></a>Управление аудитом базы данных SQL с помощью Azure PowerShell
+## <a id="subheading-7"></a>Управление SQL Serverом Azure и аудитом базы данных с помощью Azure PowerShell
 
 **Командлеты PowerShell (включая поддержку предложения WHERE для дополнительной фильтрации)** .
 
@@ -256,7 +256,7 @@ ms.locfileid: "74928699"
 
 Пример сценария см. в статье [Настройка аудита и обнаружения угроз для базы данных SQL с помощью PowerShell](scripts/sql-database-auditing-and-threat-detection-powershell.md).
 
-## <a id="subheading-9"></a>Управление аудитом базы данных SQL с помощью REST API
+## <a id="subheading-8"></a>Управление SQL Serverом Azure и аудитом базы данных с помощью REST API
 
 **REST API.**
 
@@ -272,7 +272,7 @@ ms.locfileid: "74928699"
 - [Получение политики *расширенного* аудита базы данных](https://docs.microsoft.com/rest/api/sql/database%20extended%20auditing%20settings/get)
 - [Получить политику *расширенного* аудита сервера](https://docs.microsoft.com/rest/api/sql/server%20auditing%20settings/get)
 
-## <a id="subheading-10"></a>Управление аудитом базы данных SQL с помощью шаблонов Azure Resource Manager
+## <a id="subheading-9"></a>Управление SQL Serverми Azure и аудитом базы данных с помощью шаблонов Azure Resource Manager
 
 Вы можете управлять аудитом базы данных Azure SQL с помощью шаблонов [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), как показано в следующих примерах.
 
@@ -289,10 +289,9 @@ ms.locfileid: "74928699"
 [Analyze audit logs and reports]: #subheading-3
 [Practices for usage in production]: #subheading-5
 [Storage Key Regeneration]: #subheading-6
-[Manage SQL database auditing using Azure PowerShell]: #subheading-7
-[Blob/Table differences in Server auditing policy inheritance]: (#subheading-8)
-[Manage SQL database auditing using REST API]: #subheading-9
-[Manage SQL database auditing using ARM templates]: #subheading-10
+[Manage Azure SQL Server and Database auditing using Azure PowerShell]: #subheading-7
+[Manage SQL database auditing using REST API]: #subheading-8
+[Manage Azure SQL Server and Database auditing using ARM templates]: #subheading-9
 
 <!--Image references-->
 [1]: ./media/sql-database-auditing-get-started/1_auditing_get_started_settings.png

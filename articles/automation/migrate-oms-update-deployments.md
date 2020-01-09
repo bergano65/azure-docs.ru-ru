@@ -2,19 +2,15 @@
 title: Перенос развертываний обновлений OMS в Azure
 description: В этой статье описывается, как перенести существующие развертывания обновлений OMS в Azure
 services: automation
-ms.service: automation
 ms.subservice: update-management
-author: mgoedtel
-ms.author: magoedte
 ms.date: 07/16/2018
 ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: 08b3f11f3e44c6580df9942aab2a890115c79ba3
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 2660e4a348d2ffd71f912ff80c36a5a9a3c9fe88
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849502"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75417783"
 ---
 # <a name="migrate-your-oms-update-deployments-to-azure"></a>Перенос развертываний обновлений OMS в Azure
 
@@ -57,9 +53,9 @@ ms.locfileid: "74849502"
 
 Для обновления компьютеров выберите сохраненный поиск, используемый существующим развертыванием OMS.
 
-| Свойство | Описание |
+| Свойство | Description |
 | --- | --- |
-|Name |Уникальное имя для идентификации развертывания обновлений. |
+|Имя |Уникальное имя для идентификации развертывания обновлений. |
 |Операционная система| Выберите **Linux** или **Windows**.|
 |Компьютеры, на которые нужно установить обновления |Щелкните "Сохраненные условия поиска", "Импортировать группу" или выберите "Компьютер" в раскрывающемся списке и выберите нужные компьютеры. Если выберете **Компьютеры**, готовность к обновлению будет показана в столбце **Готовность к обновлению агента**.</br> Дополнительные сведения о различных способах создания групп компьютеров в журналах Azure Monitor см. в статье [Группы компьютеров в запросах к журналам Azure Monitor](../azure-monitor/platform/computer-groups.md). |
 |Классификации обновлений|Выберите все необходимые категории обновления. CentOS не поддерживает это без дополнительной настройки.|

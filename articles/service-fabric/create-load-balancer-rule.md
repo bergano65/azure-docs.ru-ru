@@ -1,24 +1,14 @@
 ---
 title: Создание правила Azure Load Balancer для кластера
 description: Настройте Azure Load Balancer, чтобы открыть порты для кластера Azure Service Fabric.
-services: service-fabric
-documentationcenter: na
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 12/06/2017
-ms.author: atsenthi
-ms.openlocfilehash: 2e730ae8ecf6f1fab12aff23cab0ac3aa246233a
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: 5cc392a74b8cf5ef92be8b5783b5b70289e602af
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70173360"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351477"
 ---
 # <a name="open-ports-for-a-service-fabric-cluster"></a>Открытие портов для кластера Service Fabric
 
@@ -44,7 +34,7 @@ ms.locfileid: "70173360"
 - внешний порт;
 - внутренний порт.
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Интерфейс командной строки Azure
 Для создания правила подсистемы балансировки нагрузки требуется всего одна команда **Azure CLI**. Чтобы создать правило, необходимо знать имя подсистемы балансировки нагрузки и имя группы ресурсов.
 
 >[!NOTE]
@@ -60,7 +50,7 @@ az network lb rule create --backend-port 40000 --frontend-port 39999 --protocol 
 
 В команде Azure CLI используется несколько параметров, которые описаны в следующей таблице.
 
-| Параметр | Описание |
+| Параметр | Description |
 | --------- | ----------- |
 | `--backend-port`  | Порт, через который приложение Service Fabric ожидает передачи данных. |
 | `--frontend-port` | Порт, который подсистема балансировки нагрузки предоставляет для внешних подключений. |
@@ -103,11 +93,11 @@ $lb.LoadBalancingRules.Add($lbrule)
 $lb | Set-AzLoadBalancer
 ```
 
-В команде `New-AzLoadBalancerRuleConfig` `-FrontendPort` представляет порт, который подсистема балансировки нагрузки предоставляет для внешних подключений, а `-BackendPort` представляет порт, через который приложение Service Fabric ожидает передачи данных.
+В команде `New-AzLoadBalancerRuleConfig``-FrontendPort` представляет порт, который подсистема балансировки нагрузки предоставляет для внешних подключений, а `-BackendPort` представляет порт, через который приложение Service Fabric ожидает передачи данных.
 
 >[!NOTE]
 >Дополнительные сведения о создании подсистемы балансировки нагрузки с помощью PowerShell см. в разделе [Создание балансировщика нагрузки для Интернета в Resource Manager с помощью PowerShell](../load-balancer/load-balancer-get-started-internet-arm-ps.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. дополнительные сведения о [параметрах сети в Service Fabric](service-fabric-patterns-networking.md).

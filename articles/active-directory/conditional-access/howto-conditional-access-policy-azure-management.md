@@ -5,26 +5,26 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 12/03/2019
+ms.date: 12/12/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d0a1f56624314ff0cebe93a46027d3ca5b6a838
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: e6c4e5d90704e847b3bcd033a20311cc6c69cfe7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74803722"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424895"
 ---
 # <a name="conditional-access-require-mfa-for-azure-management"></a>Условный доступ: требовать MFA для управления Azure
 
 Организации используют различные службы Azure и управляют ими на основе Azure Resource Managerных средств, таких как:
 
-* портала Azure
+* Портал Azure
 * Azure PowerShell
-* Azure CLI
+* Интерфейс командной строки Azure
 
 Эти средства могут предоставлять высокопривилегированный доступ к ресурсам, которые могут изменять конфигурации на уровне подписки, параметры службы и выставление счетов за подписку. Для защиты этих привилегированных ресурсов Корпорация Майкрософт рекомендует требовать многофакторную проверку подлинности для любого пользователя, обращающегося к этим ресурсам.
 
@@ -57,5 +57,7 @@ ms.locfileid: "74803722"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие политики условного доступа](concept-conditional-access-policy-common.md)
+
+[Определение влияния с использованием режима "только отчет с условным доступом"](howto-conditional-access-report-only.md)
 
 [Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)

@@ -9,12 +9,12 @@ ms.reviewer: jasonwhowell
 ms.assetid: 49416f38-fcc7-476f-a55e-d67f3f9c1d34
 ms.topic: conceptual
 ms.date: 03/15/2018
-ms.openlocfilehash: d0ccfb00c4b45a2a29ccab74362a4296cdcd7cae
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: c1d7c8cc4b50682a74ac88b2113f0d44ebc55199
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72595707"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75644721"
 ---
 # <a name="adjust-quotas-and-limits-in-azure-data-lake-analytics"></a>Настройка квот и ограничений в Azure Data Lake Analytics
 
@@ -53,12 +53,12 @@ ms.locfileid: "72595707"
 
 1. Выполните вход на [портал Azure](https://portal.azure.com).
 2. Выберите существующую учетную запись ADLA.
-3. Щелкните **Свойства**.
+3. Нажмите кнопку **Свойства**.
 4. Отрегулируйте значения для **Максимум AU**, **Maximum number of running jobs** (Максимальное число выполняемых заданий) и **Пороговые значения для отправки заданий** по необходимости.
 
 ## <a name="increase-maximum-quota-limits"></a>Увеличение максимальной квоты
 
-Дополнительные сведения об ограничениях Azure можно найти в разделе [Ограничения определенных служб](../azure-subscription-service-limits.md#data-lake-analytics-limits).
+Дополнительные сведения об ограничениях Azure можно найти в разделе [Ограничения определенных служб](../azure-resource-manager/management/azure-subscription-service-limits.md#data-lake-analytics-limits).
 
 1. Создайте запрос на поддержку на портале Azure.
 

@@ -7,18 +7,18 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/23/2019
-ms.openlocfilehash: 8f6959eb6f9d17a368e7df7b95ecc511d0396f87
-ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
+ms.openlocfilehash: 6771cdb206920c8e3b746e28573de1742543b4c8
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73621439"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75646699"
 ---
 # <a name="configure-outbound-network-traffic-for-azure-hdinsight-clusters-using-firewall"></a>Настройка исходящего сетевого трафика для кластеров Azure HDInsight с помощью брандмауэра
 
 В этой статье приведены инструкции по защите исходящего трафика из кластера HDInsight с помощью брандмауэра Azure. В описанных ниже действиях предполагается, что вы настраиваете брандмауэр Azure для существующего кластера. При развертывании нового кластера и за брандмауэром сначала создайте кластер HDInsight и подсеть, а затем выполните действия, описанные в этом руководстве.
 
-## <a name="background"></a>Общие сведения
+## <a name="background"></a>Историческая справка
 
 Кластеры Azure HDInsight обычно развертываются в собственной виртуальной сети. Кластер имеет зависимости от служб за пределами этой виртуальной сети, для правильной работы которых требуется сетевой доступ.
 
@@ -63,7 +63,7 @@ ms.locfileid: "73621439"
     |---|---|
     |Имя| фваппруле|
     |Приоритет|200|
-    |Действие|Разрешение|
+    |Действия|Allow|
 
     **Раздел "Теги полного доменного имени"**
 
@@ -97,7 +97,7 @@ ms.locfileid: "73621439"
     |---|---|
     |Имя| фвнетруле|
     |Приоритет|200|
-    |Действие|Разрешение|
+    |Действия|Allow|
 
     **Раздел IP-адресов**
 
@@ -110,7 +110,7 @@ ms.locfileid: "73621439"
 
     **Раздел "Теги служб"**
 
-    | Имя | Протокол | Исходные адреса | Теги службы | Порты назначения | Примечания |
+    | Имя | Протокол | Исходные адреса | Теги служб | Порты назначения | Примечания |
     | --- | --- | --- | --- | --- | --- |
     | Rule_7 | TCP | * | SQL | 1433 | Настройте правило сети в разделе "Теги служб" для SQL, который позволит регистрировать и проверять трафик SQL, если конечные точки службы не настроены для SQL Server в подсети HDInsight, что приведет к обходу брандмауэра. |
 
@@ -178,7 +178,7 @@ AzureDiagnostics | where msg_s contains "Deny" | where TimeGenerated >= ago(1h)
 
 Интеграция брандмауэра Azure с журналами Azure Monitor полезна при первом получении приложения, работающего, если вы не знаете о зависимостях приложений. См. дополнительные сведения о журналах Azure Monitor в статье [Анализ данных журнала в Azure Monitor](../azure-monitor/log-query/log-query-overview.md)
 
-Дополнительные сведения об ограничениях масштабирования в брандмауэре Azure и увеличении запросов см. в [этом](../azure-subscription-service-limits.md#azure-firewall-limits) документе или на [часто задаваемые вопросы](../firewall/firewall-faq.md).
+Дополнительные сведения об ограничениях масштабирования в брандмауэре Azure и увеличении запросов см. в [этом](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-firewall-limits) документе или на [часто задаваемые вопросы](../firewall/firewall-faq.md).
 
 ## <a name="access-to-the-cluster"></a>Доступ к кластеру
 
@@ -204,12 +204,12 @@ AzureDiagnostics | where msg_s contains "Deny" | where TimeGenerated >= ago(1h)
 | **Конечная точка** |
 |---|
 | Azure SQL |
-| Хранилище Azure |
+| Служба хранилища Azure |
 | Azure Active Directory |
 
 #### <a name="ip-address-dependencies"></a>Зависимости IP-адреса
 
-| **Конечная точка** | **Дополнительные сведения** |
+| **Конечная точка** | **Сведения** |
 |---|---|
 | \*:123 | Проверка часов NTP. Трафик проверяется в нескольких конечных точках на порте 123. |
 | IP-адреса, опубликованные [здесь](hdinsight-management-ip-addresses.md) | Это служба HDInsight |

@@ -1,25 +1,14 @@
 ---
-title: Масштабирование кластера Service Fabric | Документация Майкрософт
+title: Масштабирование Service Fabricного кластера
 description: Масштабировать Service Fabric кластер в или в соответствии с потребностями, задавая правила автомасштабирования для каждого типа узла или масштабируемого набора виртуальных машин. Добавление узлов в кластер Service Fabric
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: aeb76f63-7303-4753-9c64-46146340b83d
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 03/12/2019
-ms.author: atsenthi
-ms.openlocfilehash: b1b3c0e6440212474bf356d4204c0dd91c1491fa
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: ef7d4c3d3d48bed790851834d848f05060243636
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599892"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75451943"
 ---
 # <a name="scale-a-cluster-in-or-out"></a>увеличение или уменьшение масштаба кластера;
 
@@ -107,7 +96,7 @@ az vmss scale -g sfclustertutorialgroup -n nt1vm --new-capacity 6
 
 ### <a name="remove-the-service-fabric-node"></a>Удаление узла Service Fabric
 
-Действия по удалению состояния узла вручную применяются только к типам узлов с уровнем устойчивости бронзовой.  Для уровня устойчивости " *серебро* " и " *Gold* " эти действия выполняются автоматически платформой. Дополнительные сведения о устойчивости см. в статье [Service Fabric планирование емкости кластера][durability].
+Действия по удалению состояния узла вручную применяются только к типам узлов с уровнем устойчивости *бронзовой* .  Для уровня устойчивости " *серебро* " и " *Gold* " эти действия выполняются автоматически платформой. Дополнительные сведения о устойчивости см. в статье [Service Fabric планирование емкости кластера][durability].
 
 Чтобы обеспечить равномерное распределение узлов кластера между доменами сбоя и обновления, включив тем самым их сбалансированное использование, необходимо сначала удалить последний созданный узел. Другими словами, необходимо удалить узлы в порядке, обратном порядку их создания. Последний созданный узел — это узел с максимальным значением свойства `virtual machine scale set InstanceId`. В примерах кода ниже возвращается последний созданный узел.
 
@@ -258,7 +247,7 @@ az vmss scale -g sfclustertutorialgroup -n nt1vm --new-capacity 5
 > 
 > 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о планировании емкости кластера, обновлении кластера и секционировании служб см. в следующих статьях:
 
 * [Планирование емкости кластера](service-fabric-cluster-capacity.md)

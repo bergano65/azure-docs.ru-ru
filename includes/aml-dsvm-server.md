@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: machine-learning
 author: sdgilley
 ms.service: machine-learning
@@ -9,14 +9,14 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 01/25/2019
-ms.openlocfilehash: 6bddfa048e4cb9cb7728c236417d4672df6f25b3
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: ac5656a8efe1dee932bfe753f8bdc06b787e20af
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73476117"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75529799"
 ---
-1. [Создайте рабочую область Машинного обучения Azure](../articles/machine-learning/service/how-to-manage-workspace.md).
+1. [Создайте рабочую область Машинного обучения Azure](../articles/machine-learning/how-to-manage-workspace.md).
 
 1. Клонируйте [репозиторий GitHub](https://aka.ms/aml-notebooks).
 

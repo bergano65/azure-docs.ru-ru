@@ -1,31 +1,31 @@
 ---
 title: Включение режима высокой контрастности на портале Azure | Документация Майкрософт
-description: Включение режима высокой контрастности или изменение темы на портале Azure.
+description: Измените тему портал Azure, чтобы выбрать цвета фона и шрифта. Включите режим высокой контрастности, чтобы сделать портал Azure быстрее и проще в чтении.
 services: azure-portal
 keywords: ''
-author: kfollis
-ms.author: kfollis
-ms.date: 04/08/2019
+author: mblythe
+ms.author: mblythe
+ms.date: 12/20/2019
 ms.topic: conceptual
 ms.service: azure-portal
 ms.custom: accessibility
 manager: mtillman
-ms.openlocfilehash: 59824c4a10c50265ea0a15be69755748b87d4a3f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: db0b010d1adcf4f5178390913bedf773580dbb80
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60690414"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75640386"
 ---
 # <a name="turn-on-high-contrast-or-change-the-theme-in-the-azure-portal"></a>Включение режима высокой контрастности или изменение темы на портале Azure
 
-Настройки высокой контрастности облегчают чтение портала Azure. Вы также можете тема, которая меняет цвет фона портала.
+Параметры высокой контрастности упрощают чтение портал Azure. Можно также выбрать тему, которая изменяет цвета фона портала.
 
 Если вы хотите увеличить контрастность или изменить цветовую схему на портале Azure, внесите необходимые изменения в настройки портала.
 
 ## <a name="turn-on-high-contrast"></a>Включение режима высокой контрастности
 
-1. В заголовке [портала Azure](https://portal.azure.com)выберите **параметры**.
+1. В заголовке [портал Azure](https://portal.azure.com)выберите **Параметры**.
 
     ![Снимок экрана: значок шестеренки для настройки параметров на портале Azure](./media/azure-portal-change-theme-high-contrast/azure-portal-settings-icon.png)
 1. Выберите **Белый** или **Черный**.
@@ -34,13 +34,13 @@ ms.locfileid: "60690414"
 1. Нажмите кнопку **Применить**.
 
 > [!NOTE]
-> Если выбрать высококонтрастную тему, она переопределит все остальные параметры темы.
+> Если выбрать тему с высокой контрастностью, она переопределит все остальные параметры темы.
 >
 >
 
 ## <a name="change-theme"></a>Изменение темы
 
-1. В заголовке [портала Azure](https://portal.azure.com)выберите **параметры**.
+1. В заголовке [портал Azure](https://portal.azure.com)выберите **Параметры**.
 
     ![Снимок экрана: значок шестеренки для настройки параметров на портале Azure](./media/azure-portal-change-theme-high-contrast/azure-portal-settings-icon.png)
 

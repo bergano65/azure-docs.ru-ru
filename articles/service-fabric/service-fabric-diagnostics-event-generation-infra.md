@@ -1,25 +1,16 @@
 ---
-title: Мониторинг на уровне платформы службы Azure Service Fabric | Документы Майкрософт
+title: Мониторинг уровня платформы Service Fabric Azure
 description: Ознакомьтесь с событиями на уровне платформы и журналами, используемыми для мониторинга и диагностики кластеров Azure Service Fabric.
-services: service-fabric
-documentationcenter: .net
 author: srrengar
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 11/21/2018
 ms.author: srrengar
-ms.openlocfilehash: cbdbedf32e8a3dad85262f287b27a03df780d95a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 720cc157111293146b796f8567f94a4f1f4830c6
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60393067"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75376942"
 ---
 # <a name="monitoring-the-cluster"></a>Мониторинг кластера
 
@@ -29,7 +20,7 @@ Service Fabric предоставляет несколько событий ст
 
 В Windows доступ к событиям Service Fabric можно получить от одного поставщика трассировки событий Windows с набором соответствующих фильтров `logLevelKeywordFilters`, использующихся для переключения между каналами "Операционный" и "Данные и обмен сообщениями". Так отделяются исходящие события Service Fabric для фильтрации нужным образом.
 
-* **Операционный канал**. Высокоуровневые операции, выполняемые Service Fabric и кластером. Содержит ожидаемые события для узла, новое развертываемое приложение или откат обновления и т. д. Полный список событий см. [здесь](service-fabric-diagnostics-event-generation-operational.md).  
+* **Рабочая** среда Высокоуровневые операции, выполняемые Service Fabric и кластером, включая события для узла, развертывание нового приложения, откат обновления и т. д. Полный список событий см. [здесь](service-fabric-diagnostics-event-generation-operational.md).  
 
 * **Операционный канал (подробные сведения):**  
 отчеты о работоспособности и решения для балансировки нагрузки.
@@ -90,13 +81,13 @@ Service Fabric предоставляет несколько событий ст
 Ниже приведены два простых способа настройки сбора данных производительности для кластера:
 
 * **Использование агента.**  
-Это предпочтительный способ сбора данных производительности на компьютере. У агентов обычно есть список возможных метрик производительности, которые можно собрать. Процесс их выбора или изменения достаточно прост. Узнайте о Azure Monitor, предложение Azure Monitor регистрирует в Service Fabric [интеграции журналов Azure Monitor](service-fabric-diagnostics-event-analysis-oms.md) и [Настройка агента Log Analytics](../log-analytics/log-analytics-windows-agent.md) Дополнительные сведения об агенте Log Analytics, которой — Это агент наблюдения, сможет получить данные производительности для кластера виртуальных машин и контейнеров развертывания.
+Это предпочтительный способ сбора данных производительности на компьютере. У агентов обычно есть список возможных метрик производительности, которые можно собрать. Процесс их выбора или изменения достаточно прост. Сведения о предложении Azure Monitor Azure Monitor журналов в Service Fabric [Azure Monitor журналов интеграции](service-fabric-diagnostics-event-analysis-oms.md) и [настройке агента log Analytics](../log-analytics/log-analytics-windows-agent.md) для получения дополнительных сведений об агенте log Analytics, который является одним из таких агентов мониторинга, которые могут получать данные о производительности для виртуальных машин кластера и развернутых контейнеров.
 
 * **Счетчики производительности в Хранилище таблиц Azure.**  
 Вы также можете отправлять метрики производительности в то же хранилище таблиц, что и события. Это требует изменения конфигурации системы диагностики Azure таким образом, чтобы выполнялся сбор соответствующих данных счетчиков производительности с виртуальных машин в кластере и статистики Docker при развертывании контейнеров. Дополнительные сведения о настройке счетчиков производительности в WAD и Service Fabric для настройки их сбора см. в [этой статье](service-fabric-diagnostics-event-aggregation-wad.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения о Service Fabric [интеграции журналов Azure Monitor](service-fabric-diagnostics-event-analysis-oms.md) для сбора диагностики кластера и создавать пользовательские запросы и оповещения
+* Узнайте об [интеграции журналов Azure Monitor](service-fabric-diagnostics-event-analysis-oms.md) Service Fabric, чтобы получить сведения о диагностике кластера и создать пользовательские запросы и оповещения.
 * Ознакомьтесь со встроенными возможностями диагностики Service Fabric — [службой EventStore](service-fabric-diagnostics-eventstore.md).
 * Рассмотрите некоторые [распространенные сценарии диагностики](service-fabric-diagnostics-common-scenarios.md) в Service Fabric.

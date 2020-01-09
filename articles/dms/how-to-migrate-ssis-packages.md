@@ -1,6 +1,7 @@
 ---
-title: Повторное развертывание пакетов служб интеграции SQL Server в базу данных SQL Azure | Документация Майкрософт
-description: Сведения о переносе пакетов служб интеграции SQL Server в базу данных SQL Azure.
+title: Повторное развертывание пакетов служб SSIS в отдельной базе данных SQL
+titleSuffix: Azure Database Migration Service
+description: Узнайте, как выполнить миграцию или повторное развертывание пакетов SQL Server Integration Services и проектов в базе данных SQL Azure с помощью Azure Database Migration Service и Помощник по миграции данных.
 services: database-migration
 author: HJToland3
 ms.author: jtoland
@@ -8,26 +9,26 @@ manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
-ms.custom: mvc
+ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 06/08/2019
-ms.openlocfilehash: 603a9df8e3f499c832bbfdcbef966de86003d6b7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b1889410a6c6925ebba5632a08c34bc967ced627
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67080633"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75437971"
 ---
-# <a name="redeploy-sql-server-integration-services-packages-to-azure-sql-database"></a>Повторное развертывание пакетов служб интеграции SQL Server в базу данных SQL Azure
+# <a name="redeploy-ssis-packages-to-azure-sql-database-with-azure-database-migration-service"></a>Повторное развертывание пакетов служб SSIS в базе данных SQL Azure с помощью Azure Database Migration Service
 
-Если вы используете SQL Server Integration Services (SSIS) и необходимо выполнить перенос проектов и пакетов служб SSIS из источника SSISDB, размещенной на SQL Server в место назначения данных SSISDB, размещенной в базе данных SQL Azure, можно повторно развернуть их с помощью развертывания служб Integration Services Мастер. Мастер можно запустить из SQL Server Management Studio (SSMS).
+Если вы используете SQL Server Integration Services (SSIS) и хотите перенести проекты или пакеты служб SSIS из исходной базы данных SSISDB, размещенной в SQL Server, в целевом SSISDB, размещенном на сервере SQL Azure, можно повторно развернуть их с помощью мастера развертывания Integration Services. Мастер можно запустить из SQL Server Management Studio (SSMS).
 
 Если используется более ранняя версия служб SSIS, чем 2012, то перед повторным развертыванием пакетов или проектов SSIS в модель развертывания проекта сначала необходимо преобразовать их с помощью мастера преобразования проектов Integration Services, который также можно запустить из SSMS. Дополнительные сведения см. в статье [Преобразование проектов в модель развертывания проекта](https://docs.microsoft.com/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages?view=sql-server-2017#convert).
 
 > [!NOTE]
-> Azure Database Migration Service (DMS) в настоящее время не поддерживает миграцию источника SSISDB на сервер базы данных SQL Azure, но можно повторно развернуть проекты и пакеты SSIS следующим образом.
+> Azure Database Migration Service (DMS) сейчас не поддерживает миграцию исходного SSISDB на сервер базы данных SQL Azure, но вы можете повторно развернуть проекты или пакеты служб SSIS, используя следующий процесс.
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 >
 > * Оценка проектов и пакетов исходной SSIS.
@@ -38,20 +39,20 @@ ms.locfileid: "67080633"
 Для выполнения этих действий вам потребуется следующее:
 
 * SSMS 17.2 или более поздней версии.
-* Экземпляр целевого сервера базы данных для размещения SSISDB. Если ее еще нет, создайте сервер базы данных SQL Azure (без базы данных) с помощью портала Azure, перейдя к SQL Server (только логический сервер) [формы](https://ms.portal.azure.com/#create/Microsoft.SQLServer).
-* Службы SSIS должны быть подготовлены в фабрики данных Azure (ADF) содержащий среды выполнения интеграции Azure SSIS (IR) с назначением SSISDB, размещенной на экземпляре сервера базы данных SQL Azure (как описано в статье [подготовить интеграции Azure SSIS Среда выполнения в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/tutorial-deploy-ssis-packages-azure)).
+* Экземпляр целевого сервера базы данных для размещения SSISDB. Если у вас ее еще нет, создайте сервер базы данных SQL Azure (без базы данных), используя портал Azure, перейдя к [форме](https://ms.portal.azure.com/#create/Microsoft.SQLServer)SQL Server (только логический сервер).
+* Службы SSIS должны быть подготовлены в фабрике данных Azure (ADF), которая содержит Azure-SSIS Integration Runtime (IR) с целевой базой данных SSISDB, размещенной на экземпляре сервера Azure SQL Server (как описано в статье [подготовка Azure-SSIS Integration Runtime в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/tutorial-deploy-ssis-packages-azure)).
 
 ## <a name="assess-source-ssis-projectspackages"></a>Оценка проектов и пакетов исходной SSIS
 
-Во время оценки источника SSISDB еще не интегрирована в помощник по миграции базы данных (DMA) или Azure Database Migration Service (DMS), проектов и пакетов служб SSIS, оценивается ли/проверит как производится повторное развертывание в место назначения, размещались SSISDB Сервер базы данных SQL Azure.
+Хотя оценка исходного SSISDB еще не интегрирована в базу данных Помощник по миграции (DMA) или Azure Database Migration Service (DMS), проекты и пакеты служб SSIS будут оцениваться или проверяться при повторном развертывании в целевом SSISDB, размещенном на сервере базы данных SQL Azure.
 
 ## <a name="migrate-ssis-projectspackages"></a>Управление проектами и пакетами SSIS
 
-Чтобы перенести проекты и пакеты служб SSIS в сервер базы данных SQL Azure, выполните следующие действия.
+Чтобы перенести проекты или пакеты служб SSIS на сервер базы данных SQL Azure, выполните следующие действия.
 
 1. Откройте среду SSMS и выберите **Параметры**, чтобы открыть диалоговое окно **Подключиться к серверу**.
 
-2. На **входа** задайте сведения, необходимые для подключения к серверу базы данных SQL Azure, где будет размещаться назначения SSISDB.
+2. На вкладке **имя входа** укажите сведения, необходимые для подключения к серверу базы данных SQL Azure, на котором будет размещена целевая SSISDB.
 
     ![Вкладка "Вход в систему" SSIS](media/how-to-migrate-ssis-packages/dms-ssis-login-tab.png)
 
@@ -77,16 +78,16 @@ ms.locfileid: "67080633"
 
     ![Страница "Выбрать источник" мастера развертывания](media/how-to-migrate-ssis-packages/dms-deployment-wizard-select-source-page.png)
  
-8. Щелкните **Далее**.
+8. Выберите **Далее**.
 9. На странице **Выбор места назначения** укажите назначение проекта.
 
-    a. В текстовом поле имя сервера, введите полное доменное имя сервера базы данных SQL Azure (< имя_сервера >. database.windows.net).
+    а. В текстовом поле имя сервера введите полное имя сервера базы данных SQL Azure (< server_name >. Database. Windows. NET).
 
-    2\. Укажите сведения для проверки подлинности и выберите **Подключиться**.
+    b. Укажите сведения для проверки подлинности и выберите **Подключиться**.
 
     ![Страница "Выбор места назначения" мастера развертывания](media/how-to-migrate-ssis-packages/dms-deployment-wizard-select-destination-page.png)
 
-    c. Выберите **Обзор** указывается целевая папка, в SSISDB, а затем выберите **Далее**.
+    c. Нажмите кнопку **Обзор** , чтобы указать папку назначения в SSISDB, а затем нажмите кнопку **Далее**.
 
     > [!NOTE]
     > Кнопка **Далее** становится доступной только после того, как вы нажали кнопку **Подключиться**.
@@ -95,18 +96,18 @@ ms.locfileid: "67080633"
 
     ![Страница "Проверка" мастера развертывания](media/how-to-migrate-ssis-packages/dms-deployment-wizard-validate-page.png)
 
-11. Щелкните **Далее**.
+11. Выберите **Далее**.
 
 12. На странице **Обзор** просмотрите параметры развертывания.
 
     > [!NOTE]
-    > Параметры можно изменить, выбрав **Назад** или выбрав любую из ссылок шаг в области слева.
+    > Вы можете изменить параметры, выбрав пункт **назад** или любую из ссылок на шаге в левой области.
 
 13. Выберите **Развернуть**, чтобы запустить процесс развертывания.
 
 14. После завершения развертывания можно просмотреть страницу "Результаты", на которой отображается информация об успешном или неудачном результате каждого действия развертывания.
-    a. Если произошел сбой любого действия, в столбце **Результат** выберите **Сбой**, чтобы отобразить описание ошибки.
-    2\. При необходимости выберите **Сохранить отчет**, чтобы сохранить результаты в XML-файл.
+    а. Если произошел сбой любого действия, в столбце **Результат** выберите **Сбой**, чтобы отобразить описание ошибки.
+    b. При необходимости выберите **Сохранить отчет**, чтобы сохранить результаты в XML-файл.
 
 15. Выберите **Закрыть**, чтобы выйти из мастера развертывания Integration Services.
 

@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b95ea51db4f0c6bcdbfa905ff8b57a5a330411e6
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 1e9a22e6ff76c0d26a346192c69bc067e7d42ccf
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74848550"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75425325"
 ---
 # <a name="password-policies-and-restrictions-in-azure-active-directory"></a>Политики и ограничения для паролей в Azure Active Directory
 
@@ -44,7 +44,7 @@ ms.locfileid: "74848550"
   * администратор SharePoint;
   * администратор соответствия требованиям.
   * администратор приложений;
-  * Администратор безопасности
+  * администратор безопасности;
   * администратор привилегированных ролей;
   * Администратор Intune
   * администратор прокси-сервера приложений;
@@ -54,7 +54,7 @@ ms.locfileid: "74848550"
   * Администратор привилегированной проверки подлинности
 
 * если прошло 30 дней с момента установки пробной подписки; или
-* при наличии личного домена (например, contoso.com); или
+* Для вашего клиента Azure AD настроен пользовательский домен, например *contoso.com*; ни
 * Azure AD Connect выполняет синхронизацию удостоверений из вашего локального каталога.
 
 ### <a name="exceptions"></a>Исключения
@@ -62,7 +62,7 @@ ms.locfileid: "74848550"
 Однофакторная политика требует ввода одного фрагмента данных для аутентификации, такого как адрес электронной почты *или* номер телефона. Однофакторная политика применяется в следующих случаях:
 
 * еще не прошло 30 дней с момента установки пробной подписки; или
-* личный домен отсутствует (*. onmicrosoft.com); и
+* Для вашего клиента Azure AD не настроен пользовательский домен, поэтому используется значение по умолчанию * *. onmicrosoft.com*. Обратите внимание, что домен по умолчанию * *. onmicrosoft.com* не рекомендуется использовать в рабочей среде. перетаскивани
 * Azure AD Connect не выполняет синхронизацию удостоверений.
 
 ## <a name="userprincipalname-policies-that-apply-to-all-user-accounts"></a>Политики UserPrincipalName, которые применяются ко всем учетным записям пользователей
@@ -163,8 +163,8 @@ ms.locfileid: "74848550"
 Дополнительные сведения о сбросе пароля с помощью Azure AD см. в следующих статьях:
 
 * [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
-* [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md).
-* [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md).
+* [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)
+* [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md)
 * [Требования к лицензированию самостоятельного сброса пароля в Azure AD](concept-sspr-licensing.md)
 * [Какие данные используются для SSPR и какие сведения нужно указывать для пользователей](howto-sspr-authenticationdata.md)
 * [Доступные пользователям методы проверки подлинности](concept-sspr-howitworks.md#authentication-methods)

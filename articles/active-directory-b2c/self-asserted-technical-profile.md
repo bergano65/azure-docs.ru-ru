@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/10/2018
+ms.date: 12/10/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: bfa8982fb49b31540d1926bdeb75a96dc1d79cf0
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: b82001b8bceac620dec9f1fe6ef47f4aa81b1011
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74950907"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75425620"
 ---
 # <a name="define-a-self-asserted-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение самоподтвержденного технического профиля в настраиваемой политике Azure Active Directory B2C
 
@@ -26,7 +26,7 @@ ms.locfileid: "74950907"
 
 ## <a name="protocol"></a>Протокол
 
-Для атрибута **Name** элемента **Protocol** необходимо задать значение `Proprietary`. Атрибут **handler** должен содержать полное имя сборки обработчика протокола, которое используется Azure AD B2C, для самоподтверждения: `Web.TPEngine.Providers.SelfAssertedAttributeProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`.
+Атрибуту **Name** элемента **Protocol** необходимо присвоить значение `Proprietary`. Атрибут **handler** должен содержать полное имя сборки обработчика протокола, которое используется Azure AD B2C, для самоподтверждения: `Web.TPEngine.Providers.SelfAssertedAttributeProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`.
 
 В следующем примере показан самоподтвержденный технический профиль для регистрации по электронной почте:
 
@@ -38,7 +38,7 @@ ms.locfileid: "74950907"
 
 ## <a name="input-claims"></a>Входящие утверждения
 
-В самоподтвержденном техническом профиле можно использовать элементы **InputClaims** и **InputClaimsTransformations**, чтобы предварительно заполнять значение утверждений, которые появляются на странице самоподтверждения (исходящие утверждения). Например, в политике изменения профиля путь взаимодействия пользователя сначала считывает профиль пользователя из службы каталогов Azure AD B2C, а затем самоподтвержденный технический профиль задает входящие утверждения с помощью пользовательских данных, хранящихся в профиле пользователя. Эти утверждения собираются из профиля пользователя, а затем представляются пользователю, который после этого может изменить существующие данные.
+В самостоятельно утвержденном техническом профиле можно использовать элементы **inputclaim** и **инпутклаимстрансформатионс** для предварительного заполнения значений утверждений, которые отображаются на странице с самоподтверждением (отображение утверждений). Например, в политике изменения профиля путь взаимодействия пользователя сначала считывает профиль пользователя из службы каталогов Azure AD B2C, а затем самоподтвержденный технический профиль задает входящие утверждения с помощью пользовательских данных, хранящихся в профиле пользователя. Эти утверждения собираются из профиля пользователя, а затем представляются пользователю, который после этого может изменить существующие данные.
 
 ```XML
 <TechnicalProfile Id="SelfAsserted-ProfileUpdate">
@@ -51,31 +51,92 @@ ms.locfileid: "74950907"
   </InputClaims>
 ```
 
+## <a name="display-claims"></a>Отображение утверждений
+
+Функция "Показать утверждения" в настоящее время доступна в **предварительной версии**.
+
+Элемент **дисплайклаимс** содержит список заявок, которые должны быть представлены на экране для сбора данных от пользователя. Чтобы предварительно заполнить значения исходящих утверждений, используйте входные утверждения, которые были описаны ранее. Элемент также может содержать значение по умолчанию.
+
+Порядок утверждений в **дисплайклаимс** указывает порядок, в котором Azure AD B2C отображает утверждения на экране. Чтобы заставить пользователя предоставить значение для конкретного утверждения, задайте для атрибута **Required** элемента **дисплайклаим** `true`.
+
+Элементу **"множество" в** коллекции **дисплайклаимс** необходимо задать для элемента **усеринпуттипе** любой пользовательский тип ввода, поддерживаемый Azure AD B2C. Например, `TextBox` или `DropdownSingleSelect`.
+
+### <a name="add-a-reference-to-a-displaycontrol"></a>Добавление ссылки на элемент типа
+
+В коллекции "Отображение утверждений" можно включить ссылку на созданный элемент типа ( [DisplayControl](display-controls.md) ). Элемент управления "Отображение" — это элемент пользовательского интерфейса, который имеет специальные функции и взаимодействует с серверной службой Azure AD B2C. Она позволяет пользователю выполнять действия на странице, которая вызывает технический профиль проверки на серверной части. Например, проверьте адрес электронной почты, номер телефона или номер клиента по программе лояльности.
+
+В следующем примере `TechnicalProfile` демонстрируется использование отображаемых утверждений с элементами управления отображением.
+
+* Первое утверждение экрана создает ссылку на элемент управления отображением `emailVerificationControl`, который собирает и проверяет адрес электронной почты.
+* Пятый запрос на отображение создает ссылку на элемент управления отображением `phoneVerificationControl`, который собирает и проверяет номер телефона.
+* Другие утверждения на отображение ClaimTypesся для сбора от пользователя.
+
+```XML
+<TechnicalProfile Id="Id">
+  <DisplayClaims>
+    <DisplayClaim DisplayControlReferenceId="emailVerificationControl" />
+    <DisplayClaim ClaimTypeReferenceId="displayName" Required="true" />
+    <DisplayClaim ClaimTypeReferenceId="givenName" Required="true" />
+    <DisplayClaim ClaimTypeReferenceId="surName" Required="true" />
+    <DisplayClaim DisplayControlReferenceId="phoneVerificationControl" />
+    <DisplayClaim ClaimTypeReferenceId="newPassword" Required="true" />
+    <DisplayClaim ClaimTypeReferenceId="reenterPassword" Required="true" />
+  </DisplayClaims>
+</TechnicalProfile>
+```
+
+Как уже упоминалось, утверждение на отображение со ссылкой на элемент управления отображением может выполнять собственную проверку, например проверку адреса электронной почты. Кроме того, самоподтвержденная страница поддерживает использование технического профиля проверки для проверки всей страницы, включая ввод данных пользователем (типы утверждений или элементы управления отображением), перед переходом к следующему этапу оркестрации.
+
+### <a name="combine-usage-of-display-claims-and-output-claims-carefully"></a>Тщательное объединение использования отображаемых утверждений и запросов на выводе
+
+Если указать один или несколько элементов **дисплайклаим** в самостоятельно утвержденном техническом профиле, необходимо использовать дисплайклаим для *каждого* утверждения, которое должно отображаться на экране и получать от пользователя. В самостоятельно утвержденном техническом профиле, содержащем хотя бы одно утверждение, не отображаются выходные утверждения.
+
+Рассмотрим следующий пример, в котором утверждение `age` определено как **выходное** утверждение в базовой политике. Перед добавлением любых утверждений отображения в самоподтвержденный технический профиль `age` на экране отображается утверждение для сбора данных от пользователя:
+
+```XML
+<TechnicalProfile Id="id">
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="age" />
+  </OutputClaims>
+</TechnicalProfile>
+```
+
+Если конечная политика, которая наследует этот базовый объект, в дальнейшем указывает `officeNumber` как утверждение на **Отображение** :
+
+```XML
+<TechnicalProfile Id="id">
+  <DisplayClaims>
+    <DisplayClaim ClaimTypeReferenceId="officeNumber" />
+  </DisplayClaims>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="officeNumber" />
+  </OutputClaims>
+</TechnicalProfile>
+```
+
+Утверждение `age` в базовой политике больше не отображается на экране для пользователя — он фактически скрыт. Чтобы отобразить утверждение `age` и получить значение Age от пользователя, необходимо добавить `age` **дисплайклаим**.
 
 ## <a name="output-claims"></a>Исходящие утверждения
 
-Элемент **OutputClaims** содержит список утверждений, которые будут отображаться для сбора данных от пользователя. Чтобы предварительно заполнить исходящие утверждения какими-либо значениями, используйте описанные ранее входящие утверждения. Элемент также может содержать значение по умолчанию. Порядок утверждений в **OutputClaims** управляет порядком отображения утверждений на экране в Azure AD B2C. Атрибут **DefaultValue** вступает в силу только в том случае, если утверждение до этого никогда не задавалось. Однако, если оно было задано на предыдущем шаге оркестрации, даже если пользователь оставляет значение пустым, значение по умолчанию не ступает в силу. Чтобы принудительно использовать значение по умолчанию, задайте атрибуту **AlwaysUseDefaultValue** значение `true`. Чтобы принудить пользователя предоставлять значение для определенного исходящего утверждения, задайте атрибуту **Required** элемента **OutputClaims** значение `true`.
+Элемент **OutputClaims** содержит список заявок, возвращаемых к следующему этапу оркестрации. Атрибут **DefaultValue** вступает в силу только в том случае, если утверждение никогда не было задано. Если он был задан в предыдущем шаге оркестрации, значение по умолчанию не вступит в силу, даже если пользователь оставляет значение пустым. Чтобы принудительно использовать значение по умолчанию, задайте атрибуту **AlwaysUseDefaultValue** значение `true`.
 
-Элемент **ClaimType** в коллекции **OutputClaims** должен задать для элемента **UserInputType** любой тип ввода пользователя, который поддерживается Azure AD B2C, например `TextBox` или `DropdownSingleSelect`. В противном случае элементу **OutputClaim** необходимо задать значение **DefaultValue**.
+> [!NOTE]
+> В предыдущих версиях инфраструктуры процедур идентификации (инфраструктура процедур идентификации) выходные утверждения использовались для получения данных от пользователя. Чтобы собирать данные от пользователя, используйте вместо этого коллекцию **дисплайклаимс** .
 
-Элемент **OutputClaimsTransformations** может содержать коллекцию элементов **OutputClaimsTransformation**, которые используются для изменения выходных утверждений или создания новых.
+Элемент **OutputClaimsTransformations** может содержать коллекцию элементов **OutputClaimsTransformation**, которые используются для изменения исходящих утверждений или создания новых.
 
-Следующее исходящее утверждение всегда имеет значение `live.com`:
+### <a name="when-you-should-use-output-claims"></a>Когда следует использовать исходящие утверждения
 
-```XML
-<OutputClaim ClaimTypeReferenceId="identityProvider" DefaultValue="live.com" AlwaysUseDefaultValue="true" />
-```
+В самостоятельно утвержденном техническом профиле коллекция утверждений OUTPUT возвращает утверждения на следующий этап оркестрации.
 
-### <a name="use-case"></a>Вариант использования
+Исходящие утверждения следует использовать в следующих случаях:
 
-Существует четыре сценария исходящих утверждений:
-
-- **Сбор исходящих утверждений от пользователя**. При необходимости сбора информации от пользователя, такой как дата рождения, необходимо добавить утверждение в коллекцию **OutputClaims**. Для утверждений, которые видит пользователь, необходимо указать **UserInputType**, например `TextBox` или `DropdownSingleSelect`. Если самоподтвержденный технический профиль содержит технический профиль проверки, который выводит то же утверждение, то Azure AD B2C не представляет утверждение пользователю. Если исходящие утверждения, которые можно представить пользователю, отсутствуют, Azure AD B2C пропускает технический профиль.
-- **Задание значения по умолчанию в исходящем утверждении**. Без сбора данных от пользователя или возвращения данных из технического профиля проверки. Самоподтвержденный технический профиль `LocalAccountSignUpWithLogonEmail` задает утверждению **executed-SelfAsserted-Input** значение `true`.
+- Утверждения выводятся **преобразованием "выходные утверждения**".
+- **Установка значения по умолчанию в выходном утверждении** без сбора данных от пользователя или возврата данных из технического профиля проверки. Самоподтвержденный технический профиль `LocalAccountSignUpWithLogonEmail` задает утверждению **executed-SelfAsserted-Input** значение `true`.
 - **Технический профиль проверки возвращает исходящие утверждения**. Технический профиль может вызывать технический профиль проверки, который возвращает некоторые утверждения. Вы можете перенаправить утверждения и вернуть их на дальнейшие шаги оркестрации на пути взаимодействия пользователя. Например, при входе в систему с помощью локальной учетной записи самоподтвержденный технический профиль с именем `SelfAsserted-LocalAccountSignin-Email` вызывает технический профиль проверки с именем `login-NonInteractive`. Этот технический профиль проверяет учетные данные пользователя и возвращает профиль пользователя. Например, userPrincipalName, displayName, givenName и surName.
-- **Вывод утверждений путем преобразования исходящих утверждений**.
+- **Элемент управления "Отображение" возвращает выходные утверждения** . ваш технический профиль может иметь ссылку на [элемент управления "Отображение](display-controls.md)". Элемент управления отображением возвращает некоторые утверждения, например проверенный адрес электронной почты. Вы можете перенаправить утверждения и вернуть их на дальнейшие шаги оркестрации на пути взаимодействия пользователя. Функция элемента управления отображением в настоящее время доступна в **предварительной версии**.
 
-В следующем примере самоподтвержденный технический профиль `LocalAccountSignUpWithLogonEmail` демонстрирует использование исходящих утверждений и задает для **executed-SelfAsserted-Input** значение `true`. Утверждения `objectId`, `authenticationSource`, `newUser` являются выходными данными технического профиля проверки `AAD-UserWriteUsingLogonEmail` и не отображаются для пользователя.
+В следующем примере демонстрируется использование самостоятельно утвержденного технического профиля, который использует как отображаемые утверждения, так и выходные утверждения.
 
 ```XML
 <TechnicalProfile Id="LocalAccountSignUpWithLogonEmail">
@@ -86,32 +147,30 @@ ms.locfileid: "74950907"
     <Item Key="ContentDefinitionReferenceId">api.localaccountsignup</Item>
     <Item Key="language.button_continue">Create</Item>
   </Metadata>
-  <CryptographicKeys>
-    <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
-  </CryptographicKeys>
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="email" />
   </InputClaims>
+  <DisplayClaims>
+    <DisplayClaim DisplayControlReferenceId="emailVerificationControl" />
+    <DisplayClaim DisplayControlReferenceId="SecondaryEmailVerificationControl" />
+    <DisplayClaim ClaimTypeReferenceId="displayName" Required="true" />
+    <DisplayClaim ClaimTypeReferenceId="givenName" Required="true" />
+    <DisplayClaim ClaimTypeReferenceId="surName" Required="true" />
+    <DisplayClaim ClaimTypeReferenceId="newPassword" Required="true" />
+    <DisplayClaim ClaimTypeReferenceId="reenterPassword" Required="true" />
+  </DisplayClaims>
   <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="email" Required="true" />
     <OutputClaim ClaimTypeReferenceId="objectId" />
-    <OutputClaim ClaimTypeReferenceId="email" PartnerClaimType="Verified.Email" Required="true" />
-    <OutputClaim ClaimTypeReferenceId="newPassword" Required="true" />
-    <OutputClaim ClaimTypeReferenceId="reenterPassword" Required="true" />
     <OutputClaim ClaimTypeReferenceId="executed-SelfAsserted-Input" DefaultValue="true" />
     <OutputClaim ClaimTypeReferenceId="authenticationSource" />
     <OutputClaim ClaimTypeReferenceId="newUser" />
-
-    <!-- Optional claims, to be collected from the user -->
-    <OutputClaim ClaimTypeReferenceId="displayName" />
-    <OutputClaim ClaimTypeReferenceId="givenName" />
-    <OutputClaim ClaimTypeReferenceId="surName" />
   </OutputClaims>
   <ValidationTechnicalProfiles>
     <ValidationTechnicalProfile ReferenceId="AAD-UserWriteUsingLogonEmail" />
   </ValidationTechnicalProfiles>
   <UseTechnicalProfileForSessionManagement ReferenceId="SM-AAD" />
 </TechnicalProfile>
-
 ```
 
 ## <a name="persist-claims"></a>Сохранение утверждений
@@ -128,12 +187,12 @@ ms.locfileid: "74950907"
 
 ## <a name="metadata"></a>Метаданные
 
-| Атрибут | Обязательно для заполнения | Описание |
+| attribute | Обязательно для заполнения | Description |
 | --------- | -------- | ----------- |
 | setting.showContinueButton | Нет | Отображает кнопку "Продолжить". Возможные значения: `true` (по умолчанию) или `false`. |
 | setting.showCancelButton | Нет | Отображает кнопку "Отмена". Возможные значения: `true` (по умолчанию) или `false`. |
 | setting.operatingMode | Нет | Для страницы входа в систему это свойство управляет поведением поля имени пользователя, таким как проверка входных данных и вывод сообщений об ошибках. Ожидаемые значения: `Username` или `Email`. |
-| ContentDefinitionReferenceId | ДА | Идентификатор [определения содержимого](contentdefinitions.md), связанного с этим техническим профилем. |
+| ContentDefinitionReferenceId | Да | Идентификатор [определения содержимого](contentdefinitions.md), связанного с этим техническим профилем. |
 | EnforceEmailVerification | Нет | При регистрации или изменении профиля применяет проверку по электронной почте. Возможные значения: `true` (по умолчанию) или `false`. |
 | setting.showSignupLink | Нет | Отображает кнопку "Регистрация". Возможные значения: `true` (по умолчанию) или `false`. |
 | setting.retryLimit | Нет | Определяет, сколько раз пользователь может попытаться предоставить данные, что проверяется на соответствие техническому профилю проверки. Например, пользователь пытается зарегистрироваться с помощью учетной записи, которая уже существует, и продолжает попытки до достижения предела.
@@ -142,16 +201,3 @@ ms.locfileid: "74950907"
 ## <a name="cryptographic-keys"></a>Криптографические ключи
 
 Элемент **CryptographicKeys** не используется.
-
-
-
-
-
-
-
-
-
-
-
-
-
