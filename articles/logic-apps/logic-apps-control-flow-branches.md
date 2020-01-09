@@ -1,17 +1,17 @@
 ---
-title: Создание или соединение параллельных ветвей
-description: Способы создания и присоединения параллельных ветвей для рабочих процессов в Azure Logic Apps
+title: Создание или соединение параллельных ветвей для действий в рабочих процессах
+description: Узнайте, как создавать или объединять параллельно выполняющиеся ветви для независимых действий рабочего процесса в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/10/2018
-ms.openlocfilehash: bb1c615852fb2bf810abec97e3faeb5775c4a57a
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: c0b1519992ba930382a1987aed185ef3c92eded4
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791456"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75453432"
 ---
 # <a name="create-or-join-parallel-branches-for-workflow-actions-in-azure-logic-apps"></a>Создание или присоединение параллельных ветвей для действий рабочих процессов в Azure Logic Apps
 
@@ -181,7 +181,7 @@ ms.locfileid: "74791456"
 }
 ```
 
-## <a name="get-support"></a>Получение поддержки
+## <a name="get-support"></a>Получить поддержку
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Оставить предложения по функциям или проголосовать за них вы можете на [сайте отзывов пользователей Azure Logic Apps](https://aka.ms/logicapps-wish).

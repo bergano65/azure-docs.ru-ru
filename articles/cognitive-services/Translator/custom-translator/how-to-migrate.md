@@ -1,5 +1,5 @@
 ---
-title: Необходимо перенести рабочую область и проекты Microsoft Translator Hub? Custom Translator
+title: Необходимо перенести рабочую область и проекты Microsoft Translator Hub? — Custom Translator
 titleSuffix: Azure Cognitive Services
 description: В этой статье объясняется, как перенести рабочую область и проекты центра в Azure Cognitive Services настраиваемого транслятора.
 author: swmachan
@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 7ea7b48e1fc36399a0ca173f9068faf8b88849d5
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 2fa90a8099778bf37ce8534e968a2b1b4345c2d8
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73836578"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75446784"
 ---
 # <a name="migrate-hub-workspace-and-projects-to-custom-translator"></a>Перенос рабочей области и проектов центра в Custom Translator
 
@@ -27,7 +27,7 @@ ms.locfileid: "73836578"
 * В любой момент вы можете проверить оценку BLEU, перенесенную из Translator Hub, на странице сведений об обучении для модели, в разделе "Bleu score in MT Hub" (Оценка BLEU в Microsoft Translator Hub).
 
 > [!Note] 
-> Для проведения обучения пользовательскому переводчику требуется как минимум 10 000 уникальных извлеченных предложений. Настраиваемый переводчик не может выполнить обучение меньше [рекомендуемого минимума](sentence-alignment.md#suggested-minimum-number-of-sentences).
+> Для проведения обучения пользовательскому переводчику требуется как минимум 10 000 уникальных извлеченных предложений. Настраиваемый переводчик не может выполнить обучение меньше [рекомендуемого минимума](https://docs.microsoft.com/azure/cognitive-services/translator/custom-translator/sentence-alignment#suggested-minimum-number-of-sentences).
 
 ## <a name="find-custom-translator-workspace-id"></a>Получение идентификатора рабочей области Пользовательского переводчика
 
@@ -132,7 +132,7 @@ ms.locfileid: "73836578"
 
 |   | Microsoft Translator Hub | Пользовательский переводчик |
 |:-----|:----:|:----:|
-|Состояние компонента настройки   | Общедоступная версия  | Общедоступная версия |
+|Состояние компонента настройки   | Общая доступность  | Общая доступность |
 | Версия API перевода текстов  | V2    | V3  |
 | Настройка SMT | Да   | Нет |
 | Настройка NMT | Нет    | Да |
@@ -146,4 +146,4 @@ ms.locfileid: "73836578"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Train a model](how-to-train-model.md) (Обучение модели).
-- Начните использовать развернутую пользовательскую модель перевода с помощью [API перевода текстов Microsoft версии 3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl).
+- Начните использовать развернутую пользовательскую модель перевода с помощью [API перевода текстов Майкрософт версии 3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl).

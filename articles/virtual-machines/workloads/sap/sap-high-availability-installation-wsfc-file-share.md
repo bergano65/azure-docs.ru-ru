@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b7bdd1e1922d9d8845a8187cabb3fd39af4694ab
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 75fe9c8587a15ed37366dceda05b5befb353ebb3
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70077899"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647515"
 ---
 # <a name="install-sap-netweaver-high-availability-on-a-windows-failover-cluster-and-file-share-for-sap-ascsscs-instances-on-azure"></a>Установка в Azure высокодоступной системы SAP NetWeaver в отказоустойчивом кластере Windows с файловым ресурсом для экземпляров SAP ASCS/SCS
 
@@ -36,8 +36,8 @@ ms.locfileid: "70077899"
 
 [sap-powershell-scrips]:https://github.com/Azure-Samples/sap-powershell
 
-[azure-subscription-service-limits]:../../../azure-subscription-service-limits.md
-[azure-subscription-service-limits-subscription]:../../../azure-subscription-service-limits.md
+[azure-resource-manager/management/azure-subscription-service-limits]:../../../azure-resource-manager/management/azure-subscription-service-limits.md
+[azure-resource-manager/management/azure-subscription-service-limits-subscription]:../../../azure-resource-manager/management/azure-subscription-service-limits.md
 
 [s2d-in-win-2016]:https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview
 [sofs-overview]:https://technet.microsoft.com/library/hh831349(v=ws.11).aspx
@@ -193,17 +193,17 @@ ms.locfileid: "70077899"
 [sap-templates-3-tier-multisid-apps-marketplace-image]:https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsap-3-tier-marketplace-image-multi-sid-apps%2Fazuredeploy.json
 [sap-templates-3-tier-multisid-apps-marketplace-image-md]:https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsap-3-tier-marketplace-image-multi-sid-apps-md%2Fazuredeploy.json
 
-[virtual-machines-azure-resource-manager-architecture-benefits-arm]:../../../azure-resource-manager/resource-group-overview.md#the-benefits-of-using-resource-manager
+[virtual-machines-azure-resource-manager-architecture-benefits-arm]:../../../azure-resource-manager/management/overview.md#the-benefits-of-using-resource-manager
 
 [virtual-machines-manage-availability]:../../virtual-machines-windows-manage-availability.md
 
 В этой статье содержатся инструкции по установке и настройке в Azure высокодоступной системы SAP с использованием отказоустойчивого кластера Windows (WSFC) и файлового сервера с возможностью масштабирования для кластеризации экземпляров SAP ASCS/SCS.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Прежде чем начать установку, ознакомьтесь со следующими статьями:
 
-* [Руководство по архитектуре: Кластеризация экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью файлового ресурса][sap-high-availability-guide-wsfc-file-share]
+* [Руководство по архитектуре. кластеризация экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью файлового ресурса][sap-high-availability-guide-wsfc-file-share]
 
 * [Подготовка инфраструктуры Azure SAP с высоким уровнем доступности с помощью отказоустойчивого кластера Windows и файлового ресурса для экземпляров SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-file-share]
 
@@ -231,7 +231,7 @@ ms.locfileid: "70077899"
 
 Создайте в кластере SOFS следующие том и файловый ресурс:
 
-* Структура файлов `C:\ClusterStorage\Volume1\usr\sap\<SID>\SYS\` SAP GLOBALHOST на общем томе кластера SOFS (CSV)
+* Структура `C:\ClusterStorage\Volume1\usr\sap\<SID>\SYS\` файлов SAP GLOBALHOST на общем томе кластера SOFS (CSV)
 
 * файловый ресурс SAPMNT;
 
@@ -299,7 +299,7 @@ Set-Acl $UsrSAPFolder $Acl -Verbose
 
 Установите экземпляр SAP ASCS/SCS на первом узле кластера. Чтобы установить экземпляр, в программе установки SAP SWPM выберите следующие элементы:
 
-**\<Продукт >**  >  >  **СУБД>\<** установки > сервераприложенийABAP(илиJava)>системысвысокимуровнемдоступности >  **Экземпляр ASCS/SCS** **Первый узел кластера.**  > 
+**\<Product >**  >  **\<СУБД >**  > **установки** > **сервера приложений ABAP** (или **Java**) > **высокодоступной системе** > **ASCS/SCS instance** > **первого узла кластера**.
 
 ### <a name="add-a-probe-port"></a>Добавление порта пробы
 
@@ -309,12 +309,12 @@ Set-Acl $UsrSAPFolder $Acl -Verbose
 
 Установите экземпляр SAP ASCS/SCS на втором узле кластера. Чтобы установить экземпляр, в программе установки SAP SWPM выберите следующие элементы:
 
-**\<Продукт >**  >  >  **СУБД>\<** установки > сервераприложенийABAP(илиJava)>системысвысокимуровнемдоступности >  **Экземпляр ASCS/SCS** **Дополнительный узел кластера.**  > 
+**\<Product >**  >  **\<СУБД >**  > **установки** > **сервера приложений ABAP** (или **Java**) > **системы высокого уровня доступности** > **экземпляра ASCS/SCS** > **дополнительного узла кластера**.
 
 
 ## <a name="update-the-sap-ascsscs-instance-profile"></a>Изменение профиля экземпляра SAP ASCS/SCS
 
-Обновите параметры в профиле \<экземпляра SAP ASCS/SCS SID >_ASCS/\<SCS Nr >_ \<Host >.
+Обновите параметры в профиле экземпляра SAP ASCS/SCS \<SID >_ASCS/SCS\<Nr >_ \<узла >.
 
 
 | Имя параметра | Значение параметра |
@@ -323,7 +323,7 @@ Set-Acl $UsrSAPFolder $Acl -Verbose
 | enque/encni/set_so_keepalive  | **true** |
 | service/ha_check_node | **1** |
 
-Перезапустите экземпляр SAP ASCS/SCS. Настройка `KeepAlive` параметров на узлах кластера SAP ASCS/SCS следуйте инструкциям по [установке записей реестра на узлах кластера экземпляра SAP ASCS/SCS][high-availability-guide]. 
+Перезапустите экземпляр SAP ASCS/SCS. Настройка параметров `KeepAlive` на узлах кластера SAP ASCS/SCS следуйте инструкциям по [установке записей реестра на узлах кластера экземпляра SAP ASCS/SCS][high-availability-guide]. 
 
 ## <a name="install-a-dbms-instance-and-sap-application-servers"></a>Установка экземпляра СУБД и серверов приложений SAP
 
@@ -332,7 +332,7 @@ Set-Acl $UsrSAPFolder $Acl -Verbose
 * основной сервер приложений SAP;
 * дополнительный сервер приложений SAP.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Установка экземпляра ASCS/SCS в отказоустойчивом кластере без общих дисков — официальные рекомендации SAP для файлового ресурса с высоким уровнем доступности][sap-official-ha-file-share-document]
 

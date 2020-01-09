@@ -11,12 +11,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 02/08/2019
-ms.openlocfilehash: a57d1c85384204c26e75f7138b9514f2b3297bef
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 41dd336bdb74fbe745ab48ebd3c168af0492ae2c
+ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73823297"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75691001"
 ---
 # <a name="transactional-replication-with-single-pooled-and-instance-databases-in-azure-sql-database"></a>Репликация транзакций с отдельными базами данных, базами данных в составе пула и базами данных экземпляров в Базе данных SQL Azure.
 
@@ -37,7 +37,7 @@ ms.locfileid: "73823297"
 
 **Издатель** — это экземпляр или сервер, который публикует изменения, внесенные в некоторых таблицах (статьях), отправляя обновления распространителю. Публикация в базу данных SQL Azure с локального SQL Server поддерживается в следующих версиях SQL Server:
 
-- SQL Server 2019 (предварительная версия);
+- SQL Server 2019 (предварительная версия)
 - с SQL Server 2016 в SQL 2017;
 - SQL Server 2014 с пакетом обновления 1(SP1) и накопительным пакетом обновления 3 (CU3) или более поздней версии (12.00.4427);
 - SQL Server 2014 RTM с накопительным пакетом обновления 10 (CU10) (12.00.2556);
@@ -80,13 +80,14 @@ ms.locfileid: "73823297"
   ### <a name="supportability-matrix-for-instance-databases-and-on-premises-systems"></a>Матрица поддержки для баз данных экземпляров и локальных систем
   Матрица поддержки репликации для баз данных экземпляров такая же, как и для локальной SQL Server. 
   
-  | **Издатель**   | **Распространитель** | **Абонент** |
+| **Издатель**   | **Распространитель** | **Подписчик** |
 | :------------   | :-------------- | :------------- |
-| SQL Server 2017 | SQL Server 2017 | SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 |
-| SQL Server 2016 | SQL Server 2017 <br/> SQL Server 2016 | SQL Server 2017 <br/>SQL Server 2016 <br/> SQL Server 2014 <br/> SQL Server 2012 |
-| SQL Server 2014 | SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 <br/>| SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 <br/> SQL Server 2012 <br/> SQL Server 2008 R2 <br/> SQL Server 2008 |
-| SQL Server 2012 | SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 <br/>SQL Server 2012 <br/> | SQL Server 2016 <br/> SQL Server 2014 <br/> SQL Server 2012 <br/> SQL Server 2008 R2 <br/> SQL Server 2008 | 
-| SQL Server 2008 R2 <br/> SQL Server 2008 | SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 <br/>SQL Server 2012 <br/> SQL Server 2008 R2 <br/> SQL Server 2008 | SQL Server 2014 <br/> SQL Server 2012 <br/> SQL Server 2008 R2 <br/> SQL Server 2008 <br/>  |
+| SQL Server 2019 | SQL Server 2019 | SQL Server 2019 <br/> SQL Server 2017 <br/> SQL Server 2016 <br/>  |
+| SQL Server 2017 | SQL Server 2019 <br/>SQL Server 2017 | SQL Server 2019 <br/> SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 |
+| SQL Server 2016 | SQL Server 2019 <br/>SQL Server 2017 <br/> SQL Server 2016 | SQL Server 2019 <br/> SQL Server 2017 <br/>SQL Server 2016 <br/> SQL Server 2014 <br/> SQL Server 2012 |
+| SQL Server 2014 | SQL Server 2019 <br/> SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 <br/>| SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 <br/> SQL Server 2012 <br/> SQL Server 2008 R2 <br/> SQL Server 2008 |
+| SQL Server 2012 | SQL Server 2019 <br/> SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 <br/>SQL Server 2012 <br/> | SQL Server 2016 <br/> SQL Server 2014 <br/> SQL Server 2012 <br/> SQL Server 2008 R2 <br/> SQL Server 2008 | 
+| SQL Server 2008 R2 <br/> SQL Server 2008 | SQL Server 2019 <br/> SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 <br/>SQL Server 2012 <br/> SQL Server 2008 R2 <br/> SQL Server 2008 |  SQL Server 2014 <br/> SQL Server 2012 <br/> SQL Server 2008 R2 <br/> SQL Server 2008 <br/>  |
 | &nbsp; | &nbsp; | &nbsp; |
 
 ## <a name="requirements"></a>Требования
@@ -95,15 +96,17 @@ ms.locfileid: "73823297"
 - Общий ресурс учетной записи хранения Azure для рабочей папки, используемой для репликации. 
 - Порт 445 (исходящий трафик TCP) должен быть открыт в правилах безопасности подсети управляемого экземпляра для доступа к файловому ресурсу Azure. 
 - Порт 1433 (исходящий трафик TCP) должен быть открыт, если издатель или распространитель находятся на управляемом экземпляре, а подписчик — в локальной среде.
+- Все типы участников репликации (издатель, распространитель, подписчик по запросу и подписчик push-уведомлений) можно разместить на управляемых экземплярах, но издатель и распространитель должны быть либо в облаке, либо в локальной среде.
+- Если издатель, распространитель и (или) подписчик существуют в разных виртуальных сетях, необходимо установить пиринг VPN между каждой сущностью, чтобы обеспечить пиринг VPN между издателем и распространителем и/или между распространителем и подписчиком установлено одноранговое соединение VPN. 
 
 
 >[!NOTE]
 > - При подключении к файлу службы хранилища Azure может возникнуть ошибка 53, если порт исходящей сетевой группы безопасности (NSG) 445 заблокирован, если распространитель является экземпляром базы данных и подписчиком в локальной среде. Чтобы устранить эту проблему [, обновите NSG виртуальной сети](/azure/storage/files/storage-troubleshoot-windows-file-connection-problems) . 
-> - Если базы данных издателя и распространителя в управляемых экземплярах используют [группы автоматической отработки отказа](sql-database-auto-failover-group.md), администратор управляемого экземпляра должен [удалить все публикации на старом основном экземпляре и перенастроить их на новом первичном экземпляре после отработки отказа](sql-database-managed-instance-transact-sql-information.md#replication).
+
 
 ### <a name="compare-data-sync-with-transactional-replication"></a>Сравнение синхронизации данных с репликацией транзакций
 
-| | Синхронизация данных | Репликация транзакций |
+| | Синхронизация данных | репликация транзакций |
 |---|---|---|
 | Преимущества | — Поддержка режима "активный — активный"<br/>— Двусторонняя передача данных между локальной базой данных и службой "База данных SQL Azure" | — Низкая задержка<br/>— Согласованность транзакций<br/>— Повторное использование существующей топологии после миграции |
 | Недостатки | — Задержка 5 мин или дольше<br/>— Отсутствует согласованность транзакций<br/>— Большее влияние на производительность | — Не поддерживается публикация из отдельной базы данных SQL Azure или базы данных в пуле.<br/>— Дорогое обслуживание |
@@ -137,22 +140,62 @@ ms.locfileid: "73823297"
  
 В этой конфигурации База данных SQL Azure (отдельная база данных, база данных в составе пула и база данных экземпляра) является подписчиком. Эта конфигурация поддерживает миграцию из локальной среды в Azure. Если подписчик находится в отдельной базе данных или базе данных в пуле, он должен находиться в режиме принудительной отправки.  
 
+## <a name="with-failover-groups"></a>С группами отработки отказа
+
+Если Георепликация включена на экземпляре **издателя** или **распространителя** в [группе отработки отказа](sql-database-auto-failover-group.md), администратор управляемого экземпляра должен очистить все публикации на старом первичном ресурсе и перенастроить их на новом первичном ресурсе после отработки отказа. В этом сценарии необходимы следующие действия.
+
+1. Останавливает все задания репликации, выполняющиеся в базе данных, если они есть.
+2. Удалите метаданные подписки из издателя, выполнив следующий скрипт в базе данных издателя:
+
+   ```sql
+   EXEC sp_dropsubscription @publication='<name of publication>', @article='all',@subscriber='<name of subscriber>'
+   ```             
+ 
+1. Удаление метаданных подписки с подписчика. Выполните следующий скрипт в базе данных подписки на экземпляре подписчика:
+
+   ```sql
+   EXEC sp_subscription_cleanup
+      @publisher = N'<full DNS of publisher, e.g. example.ac2d23028af5.database.windows.net>', 
+      @publisher_db = N'<publisher database>', 
+      @publication = N'<name of publication>'; 
+   ```                
+
+1. Принудительно удалите все объекты репликации из издателя, выполнив следующий скрипт в опубликованной базе данных:
+
+   ```sql
+   EXEC sp_removedbreplication
+   ```
+
+1. Принудительно удалить старый распространитель из исходного основного экземпляра (при восстановлении размещения на старом первичном экземпляре, который использовался для создания распространителя). Выполните следующий скрипт в базе данных master в старом управляемом экземпляре распространителя:
+
+   ```sql
+   EXEC sp_dropdistributor 1,1
+   ```
+
+Если Георепликация включена на экземпляре **подписчика** в группе отработки отказа, публикация должна быть настроена для подключения к конечной точке прослушивателя группы отработки отказа для управляемого экземпляра подписчика. В случае отработки отказа последующее действие, выполняемое администратором управляемого экземпляра, зависит от типа отработки отказа, которая произошла: 
+
+- Для отработки отказа без потери данных репликация продолжит работу после отработки отказа. 
+- Для отработки отказа с потерей данных также будет работать репликация. После этого будет выполнена повторная репликация потерянных изменений. 
+- Для отработки отказа с потерей данных, но потери данных за пределами срока хранения базы данных распространителя, администратору управляемого экземпляра придется повторно инициализировать базу данных подписки. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-1. [Настройка репликации между двумя управляемыми экземплярами](replication-with-sql-database-managed-instance.md). 
-1. [Создание публикации](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication).
-1. [Создайте принудительную подписку](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription), используя имя сервера Базы данных SQL Azure в качестве подписчика (например, `N'azuresqldbdns.database.windows.net`) и имя базы данных SQL Azure в качестве целевой базы данных (например, **Adventureworks**). )
-1. Сведения об [ограничениях репликации транзакций для управляемого экземпляра](sql-database-managed-instance-transact-sql-information.md#replication)
+- [Настройка репликации между издателем и подписчиком MI](replication-with-sql-database-managed-instance.md)
+- [Настройка репликации между издателем MI, распространителем MI и подписчиком SQL Server](sql-database-managed-instance-configure-replication-tutorial.md)
+- [Создание публикации](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication).
+- [Создайте принудительную подписку](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription), используя имя сервера Базы данных SQL Azure в качестве подписчика (например, `N'azuresqldbdns.database.windows.net`) и имя базы данных SQL Azure в качестве целевой базы данных (например, **Adventureworks**). )
+
+
+Дополнительные сведения о настройке репликации транзакций см. в следующих учебниках:
 
 
 
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также:  
 
 - [Репликация с помощью MI и группы отработки отказа](sql-database-managed-instance-transact-sql-information.md#replication)
 - [Репликация в Базу данных SQL](replication-to-sql-database.md)
 - [Репликация на управляемый экземпляр](replication-with-sql-database-managed-instance.md)
-- [Создание публикации](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
+- [Create a Publication](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
 - [Создание принудительной подписки](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/)
 - [Типы репликации](https://docs.microsoft.com/sql/relational-databases/replication/types-of-replication)
 - [Мониторинг (репликация)](https://docs.microsoft.com/sql/relational-databases/replication/monitor/monitoring-replication)

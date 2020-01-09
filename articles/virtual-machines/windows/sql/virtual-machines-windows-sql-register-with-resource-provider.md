@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 6b2430b5135a5d3f7ad1f9ef0bd17d9149bf48ee
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: b59470a187fe060bd5e9a2c1bd84e63f598770df
+ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74793451"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75690784"
 ---
 # <a name="register-a-sql-server-virtual-machine-in-azure-with-the-sql-vm-resource-provider"></a>Регистрация SQL Server виртуальной машины в Azure с помощью поставщика ресурсов виртуальной машины SQL
 
@@ -35,7 +35,7 @@ ms.locfileid: "74793451"
 
 - **Упрощенное управление лицензиями**. Регистрация в поставщике ресурсов ВИРТУАЛЬНОЙ машины SQL упрощает управление лицензиями SQL Server и позволяет быстро выявление SQL Server виртуальных машин с преимущество гибридного использования Azure, включенными с помощью [портал Azure](virtual-machines-windows-sql-manage-portal.md), AZ CLI или PowerShell: 
 
-   # <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+   # <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
    ```azurecli-interactive
    $vms = az sql vm list | ConvertFrom-Json
@@ -62,7 +62,7 @@ ms.locfileid: "74793451"
 Чтобы зарегистрировать виртуальную машину SQL Server с поставщиком ресурсов, вам потребуется: 
 
 - [Подписка Azure](https://azure.microsoft.com/free/).
-- Модель ресурсов Azure [SQL Server виртуальную машину](virtual-machines-windows-portal-sql-server-provision.md) , развернутую в общедоступном облаке. 
+- Модель ресурсов Azure [SQL Server виртуальную машину](virtual-machines-windows-portal-sql-server-provision.md) , развернутую в общедоступной или облачной службе Azure для государственных организаций. 
 - Последняя версия [Azure CLI](/cli/azure/install-azure-cli) или [PowerShell](/powershell/azure/new-azureps-module-az). 
 
 ## <a name="management-modes"></a>Режимы управления
@@ -91,7 +91,7 @@ ms.locfileid: "74793451"
 
 Чтобы зарегистрировать виртуальную машину SQL Server с поставщиком ресурсов виртуальной машины SQL, необходимо сначала зарегистрировать подписку в поставщике ресурсов. Это дает поставщику ресурсов виртуальной машины SQL возможность создавать ресурсы в подписке.  Это можно сделать с помощью портал Azure, Azure CLI или PowerShell.
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 1. Откройте портал Azure и перейдите ко **всем службам**. 
 1. Перейдите к разделу **подписки** и выберите интересующую вас подписку.  
@@ -221,9 +221,9 @@ SQL Server виртуальные машины, на которых устано
 Чтобы обновить режим агента до уровня Full, выполните следующие действия. 
 
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Перейдите к ресурсу [виртуальных машин SQL](virtual-machines-windows-sql-manage-portal.md#access-the-sql-virtual-machines-resource) . 
 1. Выберите SQL Server виртуальную машину и щелкните **Обзор**. 
 1. Для SQL Server виртуальных машин с режимом "без агента" или "упрощенный IaaS" выберите **только тип лицензии и обновления выпуска, доступные в сообщении расширения SQL IaaS** .
@@ -263,9 +263,9 @@ SQL Server виртуальные машины, на которых устано
 ## <a name="verify-registration-status"></a>Проверка состояния регистрации
 Вы можете проверить, зарегистрирована ли SQL Server виртуальная машина в поставщике ресурсов виртуальной машины SQL с помощью портал Azure, Azure CLI или PowerShell. 
 
-### <a name="azure-portal"></a>портала Azure 
+### <a name="azure-portal"></a>Портал Azure 
 
-1. Войдите на [портале Azure](https://portal.azure.com). 
+1. Войдите на [портал Azure](https://portal.azure.com). 
 1. Перейдите к [виртуальным машинам SQL Server](virtual-machines-windows-sql-manage-portal.md).
 1. Выберите SQL Server виртуальную машину из списка. Если ваша SQL Server виртуальная машина не указана здесь, скорее всего, она не была зарегистрирована в поставщике ресурсов виртуальной машины SQL. 
 1. Просмотрите значение в разделе **состояние**. Если **состояние** — " **успешно**", SQL Server виртуальная машина успешно зарегистрирована в поставщике ресурсов виртуальной машины SQL. 
@@ -286,8 +286,7 @@ SQL Server виртуальные машины, на которых устано
 # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
 
   ```powershell-interactive
-  Get-AzResource -ResourceName <vm_name> -ResourceGroupName <resource_group> `
-  -ResourceType Microsoft.SqlVirtualMachine/sqlVirtualMachines
+  Get-AzSqlVM -Name <vm_name> -ResourceGroupName <resource_group>
   ```
 
 ---
@@ -301,7 +300,7 @@ SQL Server виртуальные машины, на которых устано
 
 Отмена регистрации виртуальной машины SQL с поставщиком ресурсов виртуальной машины SQL необходима для перехода в режим управления с полной на более раннюю версию. 
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 Чтобы отменить регистрацию SQL Server виртуальной машины с помощью поставщика ресурсов, используя портал Azure, выполните следующие действия.
 
@@ -310,7 +309,7 @@ SQL Server виртуальные машины, на которых устано
   
    ![Ресурс виртуальных машин SQL](media/virtual-machines-windows-sql-manage-portal/sql-vm-manage.png)
 
-1. Нажмите кнопку **Удалить**. 
+1. Выберите команду **Удалить**. 
 
    ![Удаление поставщика ресурсов виртуальной машины SQL](media/virtual-machines-windows-sql-register-with-rp/delete-sql-vm-resource-provider.png)
 
@@ -325,7 +324,7 @@ SQL Server виртуальные машины, на которых устано
 
 ### <a name="command-line"></a>Командная строка
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 Чтобы отменить регистрацию SQL Server виртуальной машины от поставщика ресурсов с помощью Azure CLI, используйте команду [AZ SQL VM Delete](/cli/azure/sql/vm?view=azure-cli-latest#az-sql-vm-delete) . Это приведет к удалению *ресурса* виртуальной машины SQL Server, но не удалит виртуальную машину. 
 
 
@@ -349,7 +348,7 @@ Remove-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name>
 
 Поставщик ресурсов виртуальной машины SQL поддерживает только:
 - SQL Server виртуальные машины, развернутые с помощью Azure Resource Manager. SQL Server виртуальные машины, развернутые с помощью классической модели, не поддерживаются. 
-- SQL Server виртуальные машины, развернутые в общедоступном облаке. Развертывания в частном или правительственном облаке не поддерживаются. 
+- SQL Server виртуальные машины, развернутые в общедоступном облаке или Azure для государственных организаций. Развертывания в других частных или правительственных облаках не поддерживаются. 
 
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы 

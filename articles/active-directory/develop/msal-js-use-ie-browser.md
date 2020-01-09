@@ -1,5 +1,5 @@
 ---
-title: Использование Internet Explorer с MSAL. js | Службы
+title: Проблемы в Internet Explorer (MSAL. js) | Службы
 titleSuffix: Microsoft identity platform
 description: Используйте библиотеку проверки подлинности Майкрософт для JavaScript (MSAL. js) с браузером Internet Explorer.
 services: active-directory
@@ -14,14 +14,14 @@ ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 715e92a10ca0b4cbe38119931bc66d36c3b9259a
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 4de918d87abca521f3b573f831f8bfd6a7e17728
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74916287"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424290"
 ---
-# <a name="use-internet-explorer-and-microsoft-edge-browsers-with-msaljs"></a>Использование браузеров Internet Explorer и Microsoft ребр с MSAL. js
+# <a name="known-issues-on-internet-explorer-and-microsoft-edge-browsers-msaljs"></a>Известные проблемы в Internet Explorer и браузерах Microsoft ребр (MSAL. js)
 
 Библиотека проверки подлинности Microsoft для JavaScript (MSAL. js) создается для [JavaScript ES5](https://fr.wikipedia.org/wiki/ECMAScript#ECMAScript_Edition_5_.28ES5.29) , чтобы его можно было запускать в Internet Explorer. Однако есть несколько моментов, которые следует иметь в курсе.
 
@@ -48,7 +48,7 @@ ms.locfileid: "74916287"
 
     1. Щелкните **инструменты** Internet Explorer (значок шестеренки).
     1. Выберите **Свойства браузера** и перейдите на вкладку **Безопасность** .
-    1. Щелкните зону **Интернета** и снимите флажок **Включить защищенный режим (требуется перезапуск Internet Explorer)** . Internet Explorer предупреждает о том, что компьютер больше не защищен. Последовательно выберите **ОК**.
+    1. Щелкните зону **Интернета** и снимите флажок **Включить защищенный режим (требуется перезапуск Internet Explorer)** . Internet Explorer предупреждает о том, что компьютер больше не защищен. Нажмите кнопку **ОК**.
     1. Перезапустите Internet Explorer.
     1. Запуск и отладка приложения.
 

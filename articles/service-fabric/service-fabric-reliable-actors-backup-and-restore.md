@@ -1,30 +1,21 @@
 ---
-title: Создание резервной копии и восстановление субъектов Azure Service Fabric | Документация Майкрософт
+title: Резервное копирование и восстановление субъектов Azure Service Fabric Actors
 description: Узнайте о реализации резервного копирования и восстановления в субъектах Azure Service Fabric.
-services: service-fabric
-documentationcenter: .net
 author: vturecek
-manager: chackdan
-editor: amanbha
-ms.assetid: 45839a7f-0536-46f1-ae2b-8ba3556407fb
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 10/29/2018
 ms.author: vturecek
-ms.openlocfilehash: cb397141c86f40f02d8046838865106e0fb8992c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 41ba3f9c7d362756b800005d0c140c23dd96caa6
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60726627"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75370465"
 ---
 # <a name="implement-reliable-actors-backup-and-restore"></a>Реализация резервного копирования и восстановления Reliable Actors
 
 > [!NOTE]
-> Корпорация Майкрософт рекомендует использовать [периодическое резервное копирование и восстановление](service-fabric-backuprestoreservice-quickstart-azurecluster.md) для настройки резервного копирования данных из служб с отслеживанием состояния и субъектов Reliable Actors. 
+> Корпорация Майкрософт рекомендует настроить [периодическое резервное копирование и восстановление](service-fabric-backuprestoreservice-quickstart-azurecluster.md) данных из служб с отслеживанием состояния Reliable Services и Reliable Actors. 
 > 
 
 В следующем примере пользовательская служба субъектов предоставляет метод для резервного копирования данных субъектов с использованием прослушивателя удаленных взаимодействий, уже присутствующего в `ActorService`:

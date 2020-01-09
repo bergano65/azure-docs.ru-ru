@@ -1,5 +1,5 @@
 ---
-title: Перенос Xamarin iOS ADAL в MSAL.NET
+title: Перенос приложений Xamarin в MSAL.NET с помощью брокеров
 titleSuffix: Microsoft identity platform
 description: Узнайте, как перенести приложения Xamarin iOS, использующие Microsoft Authenticator из ADAL.NET в MSAL.NET.
 author: jmprieur
@@ -13,12 +13,12 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e70865c897e408f1cebb7359d0890d27b11243b
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: c830b7f6d13d9b85eae34b6193ad2a10e7bfb410
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74921830"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424199"
 ---
 # <a name="migrate-ios-applications-that-use-microsoft-authenticator-from-adalnet-to-msalnet"></a>Перенос приложений iOS, использующих Microsoft Authenticator из ADAL.NET в MSAL.NET
 
@@ -29,7 +29,7 @@ ms.locfileid: "74921830"
 ## <a name="prerequisites"></a>Технические условия
 В этой статье предполагается, что у вас уже есть приложение Xamarin iOS, интегрированное с брокером iOS. Если этого не сделать, перейдите непосредственно к MSAL.NET и начните реализацию брокера. Сведения о том, как вызвать брокер iOS в MSAL.NET с помощью нового приложения, см. в [этой документации](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Leveraging-the-broker-on-iOS#why-use-brokers-on-xamarinios-and-xamarinandroid-applications).
 
-## <a name="background"></a>Фоновый
+## <a name="background"></a>Историческая справка
 
 ### <a name="what-are-brokers"></a>Что такое брокеры?
 
@@ -52,14 +52,14 @@ ms.locfileid: "74921830"
 
 для вызова брокера в конструкторе `PlatformParameters` `useBroker` флаг в значение true:
 
-```CSharp
+```csharp
 public PlatformParameters(
         UIViewController callerViewController, 
         bool useBroker)
 ```
 Кроме того, в коде, зависящем от платформы, в этом примере в модуле подготовки страниц для iOS установите `useBroker` 
 пометить как истинное:
-```CSharp
+```csharp
 page.BrokerParameters = new PlatformParameters(
           this, 
           true, 
@@ -67,7 +67,7 @@ page.BrokerParameters = new PlatformParameters(
 ```
 
 Затем включите параметры в вызов маркера получения:
-```CSharp
+```csharp
  AuthenticationResult result =
                     await
                         AuthContext.AcquireTokenAsync(
@@ -83,7 +83,7 @@ page.BrokerParameters = new PlatformParameters(
 
 `WithBroker()` параметр (по умолчанию задано значение true) для вызова брокера:
 
-```CSharp
+```csharp
 var app = PublicClientApplicationBuilder
                 .Create(ClientId)
                 .WithBroker()
@@ -91,7 +91,7 @@ var app = PublicClientApplicationBuilder
                 .Build();
 ```
 В вызове запроса маркера:
-```CSharp
+```csharp
 result = await app.AcquireTokenInteractive(scopes)
              .WithParentActivityOrWindow(App.RootViewController)
              .ExecuteAsync();
@@ -107,7 +107,7 @@ UIViewController передается в
 
 `PlatformParameters` на платформе iOS.
 
-```CSharp
+```csharp
 page.BrokerParameters = new PlatformParameters(
           this, 
           true, 
@@ -121,17 +121,17 @@ page.BrokerParameters = new PlatformParameters(
 
 **Например:**
 
-В `App.cs` добавьте:
-```CSharp
+В `App.cs`:
+```csharp
    public static object RootViewController { get; set; }
 ```
-В `AppDelegate.cs` добавьте:
-```CSharp
+В `AppDelegate.cs`:
+```csharp
    LoadApplication(new App());
    App.RootViewController = new UIViewController();
 ```
 В вызове запроса маркера:
-```CSharp
+```csharp
 result = await app.AcquireTokenInteractive(scopes)
              .WithParentActivityOrWindow(App.RootViewController)
              .ExecuteAsync();
@@ -140,7 +140,7 @@ result = await app.AcquireTokenInteractive(scopes)
 </table>
 
 ### <a name="step-3-update-appdelegate-to-handle-the-callback"></a>Шаг 3. обновление AppDelegate для обработки обратного вызова
-И ADAL, и MSAL вызывают брокер, а брокер, в свою очередь, обращается к приложению через метод `OpenUrl` класса `AppDelegate`. Дополнительные сведения см. в этой [документации](msal-net-use-brokers-with-xamarin-apps.md#step-2-update-appdelegate-to-handle-the-callback).
+И ADAL, и MSAL вызывают брокер, а брокер, в свою очередь, обращается к приложению через метод `OpenUrl` класса `AppDelegate`. Дополнительные сведения см. в этой [документации](msal-net-use-brokers-with-xamarin-apps.md#step-3-update-appdelegate-to-handle-the-callback).
 
 Нет изменений между ADAL.NET и MSAL.NET.
 
@@ -152,7 +152,7 @@ ADAL.NET и MSAL.NET используют URL-адреса для вызова �
 <tr><td>
 Схема URL-адресов уникальна для вашего приложения.
 </td><td>
-Атрибут 
+Компонент 
 
 имя `CFBundleURLSchemes` должно включать 
 
@@ -162,7 +162,7 @@ ADAL.NET и MSAL.NET используют URL-адреса для вызова �
 
 Например: `$"msauth.(BundleId")`
 
-```CSharp
+```csharp
  <key>CFBundleURLTypes</key>
     <array>
       <dict>
@@ -195,7 +195,7 @@ ADAL.NET и MSAL.NET используют `-canOpenURL:`, чтобы прове�
 `msauth`
 
 
-```CSharp
+```csharp
 <key>LSApplicationQueriesSchemes</key>
 <array>
      <string>msauth</string>
@@ -207,10 +207,11 @@ ADAL.NET и MSAL.NET используют `-canOpenURL:`, чтобы прове�
 `msauthv2`
 
 
-```CSharp
+```csharp
 <key>LSApplicationQueriesSchemes</key>
 <array>
      <string>msauthv2</string>
+     <string>msauthv3</string>
 </array>
 ```
 </table>
@@ -237,7 +238,7 @@ ADAL.NET и MSAL.NET добавляют дополнительные требо�
 
 </table>
 
-Дополнительные сведения о регистрации URI перенаправления на портале см. в разделе [Использование брокера в приложениях Xamarin. iOS](msal-net-use-brokers-with-xamarin-apps.md#step-7-make-sure-the-redirect-uri-is-registered-with-your-app).
+Дополнительные сведения о регистрации URI перенаправления на портале см. в разделе [Использование брокера в приложениях Xamarin. iOS](msal-net-use-brokers-with-xamarin-apps.md#step-8-make-sure-the-redirect-uri-is-registered-with-your-app).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

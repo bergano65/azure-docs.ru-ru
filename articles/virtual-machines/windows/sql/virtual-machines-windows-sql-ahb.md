@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 0aa2cbad75319de93c34128a09f94971e5c70216
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 00262b48b8fa2fd1292554155e8ec8e933d886e6
+ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74790610"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75690910"
 ---
 # <a name="change-the-license-model-for-a-sql-server-virtual-machine-in-azure"></a>Изменение модели лицензирования для SQL Server виртуальной машины в Azure
 В этой статье описывается, как изменить модель лицензии для SQL Server виртуальной машины в Azure с помощью нового поставщика ресурсов виртуальной машины SQL ( **Microsoft. склвиртуалмачине**).
@@ -52,7 +52,7 @@ ms.locfileid: "74790610"
 
 ## <a name="change-the-license-for-vms-already-registered-with-the-resource-provider"></a>Изменение лицензии для виртуальных машин, уже зарегистрированных в поставщике ресурсов 
 
-# <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
+# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 
 [!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
 
@@ -66,7 +66,7 @@ ms.locfileid: "74790610"
 ![Преимущество гибридного использования Azure на портале](media/virtual-machines-windows-sql-ahb/ahb-in-portal.png)
 
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Для изменения модели лицензии можно использовать Azure CLI.  
 
@@ -115,7 +115,7 @@ Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -License
 
 Тип лицензии SQL Server виртуальной машины можно изменить как "Оплата по мере использования" или "Преимущество гибридного использования Azure только в том случае, если SQL Server виртуальная машина зарегистрирована в поставщике ресурсов виртуальной машины SQL.
 
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Remarks
 
 - Клиенты поставщика облачных решений Azure (CSP) могут использовать Преимущество гибридного использования Azure, сначала Развертывая виртуальную машину с оплатой по мере использования, а затем преобразуя ее в собственную лицензию, если у них есть активная программа Software Assurance.
 - Если удалить ресурс виртуальной машины SQL Server, вы вернетесь к жестко запрограммированному параметру лицензии образа. 
@@ -129,7 +129,7 @@ Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -License
    - Доступно только для клиентов с [Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-overview).
    - Поддерживается только для выпусков Standard и Enterprise SQL Server. Изменения лицензий для Express, Web и Developer не поддерживаются. 
    - Поддерживается только для виртуальных машин, развернутых с помощью модели Azure Resource Manager. Виртуальные машины, развернутые с помощью классической модели, не поддерживаются. 
-   - Доступно только для установок общедоступного облака. 
+   - Доступно только для облаков общедоступного облака или Azure для государственных организаций. 
    - Поддерживается только на виртуальных машинах с одним сетевым интерфейсом (NIC). 
 
 
@@ -144,7 +144,7 @@ Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -License
 Вам потребуется зарегистрировать подписку в поставщике ресурсов, а затем [зарегистрировать SQL Server виртуальную машину с помощью поставщика ресурсов](virtual-machines-windows-sql-register-with-resource-provider.md). 
 
 
-## <a name="the-virtual-machine-vmname-has-more-than-one-nic-associated"></a>С виртуальной машиной "\<vmname\>" связано более одной сетевой карты.
+### <a name="the-virtual-machine-vmname-has-more-than-one-nic-associated"></a>С виртуальной машиной "\<vmname\>" связано более одной сетевой карты.
 
 Эта ошибка возникает на виртуальных машинах, имеющих более одного сетевого адаптера. Удалите одну из сетевых карт перед изменением модели лицензирования. Хотя сетевую карту можно добавить обратно в виртуальную машину после изменения модели лицензирования, операции в портал Azure, такие как автоматическое резервное копирование и установка исправлений, больше не будут поддерживаться. 
 

@@ -1,25 +1,16 @@
 ---
-title: Обновление конфигурации изолированного кластера Azure Service Fabric | Документация Майкрософт
+title: Обновление конфигурации изолированного кластера
 description: Узнайте, как обновить конфигурацию, которую использует изолированный кластер Service Fabric.
-services: service-fabric
-documentationcenter: .net
 author: dkkapur
-manager: chackdan
-editor: ''
-ms.assetid: 66296cc6-9524-4c6a-b0a6-57c253bdf67e
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 11/09/2018
 ms.author: dekapur
-ms.openlocfilehash: f99c1ebb64bf881bcd42f15e13bb81b96ccfa064
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8e7e01dac29cb9ba91c83270dac4e46c73b2089e
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60387134"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75610133"
 ---
 # <a name="upgrade-the-configuration-of-a-standalone-cluster"></a>Обновление конфигурации изолированного кластера 
 
@@ -28,7 +19,7 @@ ms.locfileid: "60387134"
 ## <a name="customize-cluster-settings-in-the-clusterconfigjson-file"></a>Настройка параметров кластера в файле ClusterConfig.json
 Изолированные кластеры настраиваются с помощью файла *ClusterConfig.json*. Дополнительные сведения о различных параметрах см. в статье [Параметры конфигурации для изолированного кластера Windows](service-fabric-cluster-manifest.md).
 
-В файле *ClusterConfig.json* в разделе `fabricSettings` [свойств кластера](./service-fabric-cluster-manifest.md#cluster-properties) можно добавлять, изменять и удалять параметры. 
+В файле *ClusterConfig.json* в разделе `fabricSettings`[свойств кластера](./service-fabric-cluster-manifest.md#cluster-properties) можно добавлять, изменять и удалять параметры. 
 
 Например, следующий JSON добавляет новый параметр *MaxDiskQuotaInMB* в разделе *Diagnostics* в строке `fabricSettings`:
 
@@ -59,7 +50,7 @@ TestConfiguration.ps1 -ClusterConfigFilePath <Path to the new Configuration File
 TestConfiguration.ps1 -ClusterConfigFilePath <Path to the new Configuration File> -OldClusterConfigFilePath <Path to the old Configuration File> -FabricRuntimePackagePath <Path to the .cab file which you want to test the configuration against>
 ```
 
-Некоторые конфигурации невозможно обновить, например конечные точки, имена кластеров, IP-адреса узлов и т. д. Мы протестируем новый JSON-файл конфигурации кластера, используя старый файл. При наличии каких-либо проблем в окне PowerShell отобразятся сведения об ошибках.
+Невозможно обновить некоторые конфигурации, например конечные точки, имя кластера, IP-адрес узла и т. д. Новый JSON конфигурации кластера проверяется по старому и выдает ошибки в окне PowerShell при возникновении проблемы.
 
 ## <a name="upgrade-the-cluster-configuration"></a>Обновление конфигурации кластера
 Чтобы обновить конфигурацию кластера, выполните команду [Start-ServiceFabricClusterConfigurationUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/start-servicefabricclusterconfigurationupgrade). Обновление конфигурации обрабатывает домен обновления.
@@ -73,13 +64,13 @@ Start-ServiceFabricClusterConfigurationUpgrade -ClusterConfigPath <Path to Confi
 
 Поддерживаются четыре способа:  
 
-* Однократное обновление сертификата: Путь обновления является сертификат А (основной) -> сертификат B (основной) -> сертификат C (основной) ->...
+* Однократное обновление сертификата. Путь обновления: ''сертификат А (основной) -> сертификат B (основной) -> сертификат C (основной) ->…''.
 
-* Двойное обновление сертификата: Путь обновления является сертификат, А (основной) -> сертификат А (основной) и B (дополнительный) -> сертификат B (основной) -> сертификат B (основной) и С (дополнительный) -> сертификат C (основной) ->...
+* Двойное обновление сертификата. Путь обновления ''сертификат А (основной) -> сертификат А (основной) и В (дополнительный) -> сертификат В (основной) -> сертификат В (основной) и С (дополнительный) -> сертификат C (основной)->…''.
 
-* Обновление типа сертификата: Конфигурация сертификатов на основе CommonName конфигурации <> – основе отпечатка сертификата. Например, отпечаток сертификата A (основной) и отпечаток B (дополнительный) -> CommonName сертификата C.
+* Тип обновления сертификатов: сертификат на основе отпечатка <-> сертификаты на основе конфигурации CommonName. Например, отпечаток сертификата A (основной) и отпечаток B (дополнительный) -> CommonName сертификата C.
 
-* Обновление отпечатка издателя сертификата: Обновление осуществляется сертификата CN = A, общее = IT1 (основной) "->" CN сертификата = A, общее IT1, IT2 (основной) "->" CN сертификата = A, общее = IT2 (основной).
+* Обновление отпечатка издателя сертификата. Путь обновления "общее имя сертификата — A, отпечаток издателя — IT1 (основной) > общее имя сертификата — A, отпечаток издателя — IT1, IT2 (основной) > общее имя сертификата — A, отпечаток издателя — IT2 (основной)".
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

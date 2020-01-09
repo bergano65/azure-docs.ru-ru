@@ -14,12 +14,12 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4731a7265265c48bed02e836de91d61971b9be14
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 17f02d38c77fce6a256e3c42d887f2b7d560add9
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74921910"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424241"
 ---
 # <a name="confidential-client-assertions"></a>Конфиденциальные утверждения клиентов
 
@@ -42,7 +42,7 @@ MSAL.NET состоит из четырех методов предоставл�
 
 Подписанное утверждение клиента принимает форму подписанного JWT с полезной нагрузкой, содержащей необходимые утверждения проверки подлинности, заданные в Azure AD, в кодировке Base64. Чтобы ее использовать, сделайте следующее:
 
-```CSharp
+```csharp
 string signedClientAssertion = ComputeAssertion();
 app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
                                           .WithClientAssertion(signedClientAssertion)
@@ -51,7 +51,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
 
 Утверждения, ожидаемые Azure AD:
 
-Тип утверждения | Value | Описание
+Тип утверждения | Значение | Description
 ---------- | ---------- | ----------
 aud | https://login.microsoftonline.com/{tenantId}/v2.0 | Утверждение "AUD" (аудитория) определяет получателей, для которых предназначено JWT (здесь Azure AD), см. [RFC 7519, раздел 4.1.3]
 exp | Четверг Июн 27 2019 15:04:17 GMT + 0200 (Романское время (лето)) | Утверждение "exp" (время окончания срока действия) указывает время окончания срока действия или время, после которого маркер JWT НЕ ДОЛЖЕН приниматься в обработку. См. [RFC 7519, раздел 4.1.4]
@@ -62,7 +62,7 @@ sub | ClientID | Утверждение "подсистема" (тема) опр
 
 Ниже приведен пример создания этих утверждений.
 
-```CSharp
+```csharp
 private static IDictionary<string, string> GetClaims()
 {
       //aud = https://login.microsoftonline.com/ + Tenant ID + /v2.0
@@ -88,7 +88,7 @@ private static IDictionary<string, string> GetClaims()
 
 Вот как можно создавать подписанное утверждение клиента:
 
-```CSharp
+```csharp
 string Encode(byte[] arg)
 {
     char Base64PadCharacter = '=';
@@ -138,7 +138,7 @@ string GetSignedClientAssertion()
 
 Вы также можете использовать [Microsoft. IdentityModel. токены jsonwebtoken](https://www.nuget.org/packages/Microsoft.IdentityModel.JsonWebTokens/) , чтобы создать утверждение. Код будет более элегантным, как показано в следующем примере:
 
-```CSharp
+```csharp
         string GetSignedClientAssertion()
         {
             var cert = new X509Certificate2("Certificate.pfx", "Password", X509KeyStorageFlags.EphemeralKeySet);
@@ -171,7 +171,7 @@ string GetSignedClientAssertion()
 
 После подписанного утверждения клиента его можно использовать с API-интерфейсами MSAL, как показано ниже.
 
-```CSharp
+```csharp
             string signedClientAssertion = GetSignedClientAssertion();
 
             var confidentialApp = ConfidentialClientApplicationBuilder
@@ -184,7 +184,7 @@ string GetSignedClientAssertion()
 
 `WithClientClaims(X509Certificate2 certificate, IDictionary<string, string> claimsToSign, bool mergeWithDefaultClaims = true)` по умолчанию будет создавать подписанное утверждение, содержащее утверждения, ожидаемые Azure AD, и дополнительные клиентские утверждения, которые требуется отправить. Ниже приведен фрагмент кода для этого.
 
-```CSharp
+```csharp
 string ipAddress = "192.168.1.2";
 X509Certificate2 certificate = ReadCertificate(config.CertificateName);
 app = ConfidentialClientApplicationBuilder.Create(config.ClientId)

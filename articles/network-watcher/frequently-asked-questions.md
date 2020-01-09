@@ -13,19 +13,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/10/2019
 ms.author: damendo
-ms.openlocfilehash: 3305590f2d8abf0d894bc1df42b84edcc96a2b2d
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 97fcd3241be6dac81adfa8e17999d92d84abaa19
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72598226"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647294"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-network-watcher"></a>Часто задаваемые вопросы о наблюдателе за сетями Azure
 Служба [наблюдателя за сетями Azure](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview) предоставляет набор средств для мониторинга, диагностики, просмотра метрик и включения или отключения журналов для ресурсов в виртуальной сети Azure. В этой статье содержатся ответы на часто задаваемые вопросы о службе.
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общие
 
-### <a name="what-is-network-watcher"></a>Что такое наблюдатель за сетями?
+### <a name="what-is-network-watcher"></a>Что такое Наблюдатель за сетями?
 Наблюдатель за сетями предназначен для отслеживания и восстановления работоспособности сети компонентов IaaS (инфраструктура как услуга), включая виртуальные машины, виртуальные сети, шлюзы приложений, подсистемы балансировки нагрузки и другие ресурсы в виртуальной сети Azure. Это решение не является решением для мониторинга инфраструктуры PaaS (платформа как услуга) или получения веб-или мобильной аналитики.
 
 ### <a name="what-tools-does-network-watcher-provide"></a>Какие средства предоставляет наблюдатель за сетями?
@@ -51,14 +51,20 @@ ms.locfileid: "72598226"
 ### <a name="how-does-network-watcher-pricing-work"></a>Как работают цены наблюдателя за сетями?
 Посетите [страницу с ценами](https://azure.microsoft.com/pricing/details/network-watcher/) на компоненты наблюдателя за сетями и их цены.
 
-### <a name="which-regions-is-network-watcher-available-in"></a>В каких регионах доступен наблюдатель за сетями?
+### <a name="which-regions-is-network-watcher-supportedavailable-in"></a>Какие регионы поддерживаются или доступны в наблюдателе за сетями?
 Последнюю версию региональной доступности можно просмотреть на [странице доступности службы Azure](https://azure.microsoft.com/global-infrastructure/services/?products=network-watcher) .
 
 ### <a name="what-are-resource-limits-on-network-watcher"></a>Что такое ограничения ресурсов для наблюдателя за сетями?
-Все ограничения см. на странице " [ограничения службы](https://docs.microsoft.com/azure/azure-subscription-service-limits#network-watcher-limits) ".  
+Все ограничения см. на странице " [ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#network-watcher-limits) ".  
 
 ### <a name="why-is-only-one-instance-of-network-watcher-allowed-per-region"></a>Почему для региона разрешен только один экземпляр наблюдателя за сетями?
 Наблюдатель за сетями должен быть включен один раз для подписки, чтобы ее функции работали, это не ограничение службы.
+
+### <a name="why-do-i-need-to-install-the-network-watcher-extension"></a>Зачем нужно устанавливать расширение наблюдателя за сетями? 
+Расширение наблюдателя за сетями требуется для любой функции, требующей создания или перехвата трафика от виртуальной машины. 
+
+### <a name="which-features-require-the-network-watcher-extension"></a>Какие функции требуются для расширения наблюдателя за сетями?
+Для записи пакетов, устранения неполадок подключения и монитора подключения требуется наличие расширения наблюдателя за сетями.
 
 ## <a name="nsg-flow-logs"></a>Журналы потоков NSG
 

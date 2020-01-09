@@ -6,12 +6,12 @@ ms.author: sacedarb
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 10/31/2019
-ms.openlocfilehash: 0c5f64e08446698bbd8d1ee4af5454e3aa1dd5ff
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 264c434849d5d5afb5934873c75d172a3783ac86
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73693557"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75459675"
 ---
 # <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-power-bi-preview"></a>Использование управляемого удостоверения для проверки подлинности задания Azure Stream Analytics в Power BI (Предварительная версия)
 
@@ -19,7 +19,7 @@ ms.locfileid: "73693557"
 
 В этой статье показано, как включить управляемое удостоверение для Power BI выходных данных Stream Analytics задания с помощью портал Azure и Azure Resource Manager развертывания.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для использования этой функции необходимо следующее:
 
@@ -169,6 +169,29 @@ Azure Resource Manager позволяет полностью автоматиз�
 3. Выберите **Добавить** и закройте панель.
 
    ![Добавление Stream Analytics задания в рабочую область Power BI](./media/stream-analytics-powerbi-output-managed-identity/stream-analytics-add-job-to-powerbi-workspace.png)
+
+### <a name="use-the-power-bi-powershell-cmdlets"></a>Использование командлетов PowerShell Power BI
+
+1. Установите командлеты PowerShell для Power BI `MicrosoftPowerBIMgmt`.
+
+   > [!Important]
+   > Убедитесь, что вы используете командлеты версии 1.0.821 или более поздней.
+
+```powershell
+Install-Module -Name MicrosoftPowerBIMgmt
+```
+
+2. Войдите в Power BI.
+
+```powershell
+Login-PowerBI
+```
+
+3. Добавьте Stream Analytics задание в качестве участника в рабочую область.
+
+```powershell
+Add-PowerBIWorkspaceUser -WorkspaceId <group-id> -PrincipalId <principal-id> -PrincipalType App -AccessRight Contributor
+```
 
 ### <a name="use-the-power-bi-rest-api"></a>Использование REST API Power BI
 

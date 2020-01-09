@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: virtual-network
 author: genlin
 ms.service: virtual-network
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/13/2018
 ms.author: genli
 ms.custom: include file
-ms.openlocfilehash: ac5599a38c3fcbc4a6c331d2b14c6b6c55c31d82
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 8d13d5d93dba66fa0dce08ffbf569164fb03398d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73850473"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75468613"
 ---
 ## <a name="how-to-create-a-classic-vnet-in-the-azure-portal"></a>Создание классической виртуальной сети на портале Azure
 Чтобы создать классическую виртуальную сеть по предыдущему сценарию, выполните следующие действия.
@@ -25,7 +25,7 @@ ms.locfileid: "73850473"
 4. В области **Виртуальная сеть** введите **имя** виртуальной сети и щелкните **Адресное пространство**. Настройте параметры адресного пространства для виртуальной сети и ее первой подсети, а затем нажмите кнопку **ОК**. На следующем снимке экрана показаны параметры блока CIDR для этого сценария.
    
     ![Область адресного пространства](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure2.png)
-5. Выберите параметр **Группы ресурсов** и укажите группу ресурсов, которую нужно добавить в виртуальную сеть, или щелкните **Создать новую группу ресурсов**, чтобы добавить виртуальную сеть в новую группу ресурсов. На следующем снимке экрана показаны параметры новой группы ресурсов с именем **TestRG**. Дополнительные сведения о группах ресурсов см. в разделе "Группы ресурсов" [обзора Azure Resource Manager](../articles/azure-resource-manager/resource-group-overview.md#resource-groups).
+5. Выберите параметр **Группы ресурсов** и укажите группу ресурсов, которую нужно добавить в виртуальную сеть, или щелкните **Создать новую группу ресурсов**, чтобы добавить виртуальную сеть в новую группу ресурсов. На следующем снимке экрана показаны параметры новой группы ресурсов с именем **TestRG**. Дополнительные сведения о группах ресурсов см. в разделе "Группы ресурсов" [обзора Azure Resource Manager](../articles/azure-resource-manager/management/overview.md#resource-groups).
    
     ![Область создания группы ресурсов](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure3.png)
 6. При необходимости измените параметры **Подписка** и **Расположение** для виртуальной сети. 

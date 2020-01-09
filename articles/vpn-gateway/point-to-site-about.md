@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 01/18/2019
+ms.date: 12/17/2019
 ms.author: cherylmc
-ms.openlocfilehash: 7305976060cb5df01f683b3310e59644d7e45b35
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 55433efabea516151cfb858bb61f504e180f5fb7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74975097"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75353596"
 ---
 # <a name="about-point-to-site-vpn"></a>Сведения о VPN-подключениях типа "точка — сеть"
 
@@ -51,11 +51,11 @@ ms.locfileid: "74975097"
 
 На высоком уровне необходимо выполнить следующие действия, чтобы настроить аутентификацию Azure AD.
 
-[1. Настройка клиента Azure AD](openvpn-azure-ad-tenant.md)
+1. [Настройка клиента Azure AD](openvpn-azure-ad-tenant.md)
 
-[2. Включите проверку подлинности Azure AD на шлюзе.](https://docs.microsoft.com/azure/vpn-gateway/openvpn-azure-ad-tenant#enable-authentication)
+2. [Включение проверки подлинности Azure AD на шлюзе](https://docs.microsoft.com/azure/vpn-gateway/openvpn-azure-ad-tenant#enable-authentication)
 
-[3. Скачайте и настройте VPN-клиент Azure (Предварительная версия)](https://www.microsoft.com/p/azure-vpn-client-preview/9np355qt2sqb?rtc=1&activetab=pivot:overviewtab)
+3. [Скачивание и настройка VPN-клиента Azure (Предварительная версия)](https://www.microsoft.com/p/azure-vpn-client-preview/9np355qt2sqb?rtc=1&activetab=pivot:overviewtab)
 
 
 ### <a name="authenticate-using-active-directory-ad-domain-server"></a>Аутентификация с помощью сервера домена Active Directory (AD)
@@ -67,10 +67,6 @@ ms.locfileid: "74975097"
 Сервер RADIUS также можно интегрировать со службами сертификации AD. Эта интеграция позволяет использовать развернутый сервер RADIUS с корпоративным сертификатом для аутентификации сертификата подключения "точка — сеть" вместо аутентификации Azure на основе сертификата. Преимущество этой аутентификации заключается в том, что не нужно передавать в Azure корневые сертификаты и отмененные сертификаты.
 
 Сервер RADIUS также можно интегрировать с другими системами внешних идентификаторов. Благодаря этой возможности для VPN-подключений "точка — сеть" доступно множество вариантов аутентификации, в том числе и варианты многофакторной аутентификации.
-
->[!NOTE]
->**Протокол® опенвпн** не поддерживается при проверке подлинности RADIUS.
->
 
 ![точка-сеть](./media/point-to-site-about/p2s.png "Точка-сеть")
 

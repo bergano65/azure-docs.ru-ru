@@ -1,5 +1,5 @@
 ---
-title: Получение маркера в автоматическом режиме (MSAL.NET)
+title: Получение маркера из кэша (MSAL.NET)
 titleSuffix: Microsoft identity platform
 description: Узнайте, как получить маркер доступа автоматически (из кэша маркеров) с помощью библиотеки проверки подлинности Microsoft для .NET (MSAL.NET).
 services: active-directory
@@ -14,12 +14,12 @@ ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c9c988eba278e184d0e60a4ede456a340c258e71
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 67a72b295005e328723be5d3b577d15330c05134
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74915973"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424279"
 ---
 # <a name="get-a-token-from-the-token-cache-using-msalnet"></a>Получение маркера из кэша маркеров с помощью MSAL.NET
 

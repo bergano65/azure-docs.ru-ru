@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 10/15/2019
 ms.author: radwiv
-ms.openlocfilehash: 41c36d302605bb619899131a8ace649b0f1439b2
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 2429a8d08baa34aed120cffa069abae1fb9a3df9
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74151855"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75353520"
 ---
 # <a name="configure-packet-captures-for-vpn-gateways"></a>Настройка записи пакетов для VPN-шлюзов
 
@@ -24,11 +24,13 @@ ms.locfileid: "74151855"
 
 Записи пакетов VPN-шлюза могут выполняться на шлюзе или в определенном подключении в зависимости от потребностей клиентов. Кроме того, можно выполнять запись пакетов одновременно для нескольких туннелей. Вы можете записывать трафик с одним или двунаправленным направлением, трафик IKE и ESP, а также внутренние пакеты с фильтрацией на VPN-шлюзе.
 
-Использование пяти фильтров кортежей (исходная подсеть, конечная подсеть, порт источника, порт назначения, протокол) и флаги TCP (SYN, ACK, FIN, УРГ, КОМАНДНОМ PSH, RST) полезна при изоляции проблем с большим объемом трафика.
+Использование 5 фильтров кортежей (исходная подсеть, конечная подсеть, порт источника, порт назначения, протокол) и флаги TCP (SYN, ACK, FIN, УРГ, КОМАНДНОМ PSH, RST) полезна при изоляции проблем с большим объемом трафика.
+
+При выполнении записи пакетов можно использовать только один параметр для каждого свойства.
 
 ## <a name="setup-packet-capture-using-powershell"></a>Запись пакетов установки с помощью PowerShell
 
-Примеры команд PowerShell для запуска и отмены записи пакетов см. в приведенных ниже примерах. Дополнительные сведения о параметрах параметров (например, о создании фильтров) см. в этом [документе](https://docs.microsoft.com/powershell/module/az.network/start-azvirtualnetworkgatewaypacketcapture)PowerShell.
+Примеры команд PowerShell для запуска и отмены записи пакетов см. в приведенных ниже примерах. Дополнительные сведения о параметрах параметров (например, о создании фильтра) см. в этом [документе](https://docs.microsoft.com/powershell/module/az.network/start-azvirtualnetworkgatewaypacketcapture)PowerShell.
 
 ### <a name="start-packet-capture-for-a-vpn-gateway"></a>Запуск записи пакетов для VPN-шлюза
 
@@ -36,7 +38,7 @@ ms.locfileid: "74151855"
 Start-AzVirtualnetworkGatewayPacketCapture -ResourceGroupName "YourResourceGroupName" -Name "YourVPNGatewayName"
 ```
 
-Необязательный параметр **-FilterData** можно использовать для применения фильтров.
+Для применения фильтра можно использовать необязательный параметр **-FilterData** .
 
 ### <a name="stop-packet-capture-for-a-vpn-gateway"></a>Завершение записи пакетов для VPN-шлюза
 
@@ -50,7 +52,7 @@ Stop-AzVirtualNetworkGatewayPacketCapture -ResourceGroupName "YourResourceGroupN
 Start-AzVirtualNetworkGatewayConnectionPacketCapture -ResourceGroupName "YourResourceGroupName" -Name "YourVPNGatewayConnectionName"
 ```
 
-Необязательный параметр **-FilterData** можно использовать для применения фильтров.
+Для применения фильтра можно использовать необязательный параметр **-FilterData** .
 
 ### <a name="stop-packet-capture-on-a-vpn-gateway-connection"></a>Прерывать запись пакетов при подключении к VPN-шлюзу
 
@@ -62,8 +64,8 @@ Stop-AzVirtualNetworkGatewayConnectionPacketCapture -ResourceGroupName "YourReso
 
 - Выполнение записи пакетов может повлиять на производительность. Не забудьте прерывать запись пакетов, если она не требуется.
 - Рекомендуемая минимальная длительность записи пакетов составляет 600 секунд. Наличие более короткой длительности записи пакетов может не предоставлять полные данные из-за синхронизации проблем между несколькими компонентами по пути.
-- Файлы данных записи пакетов создаются в форматах ПКАП или ETL. Для понимания данных может потребоваться анализатор Netmon.
+- Файлы данных записи пакетов создаются в формате ПКАП. Используйте Wireshark или другие часто доступные приложения для открытия файлов ПКАП.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о VPN-шлюзе см. в статье [о VPN-шлюзе](vpn-gateway-about-vpngateways.md) .

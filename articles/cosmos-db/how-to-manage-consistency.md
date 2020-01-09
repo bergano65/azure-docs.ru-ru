@@ -1,17 +1,17 @@
 ---
-title: Сведения об управлении согласованностью в Azure Cosmos DB
+title: Управление согласованностью в Azure Cosmos DB
 description: Узнайте, как настраивать уровни согласованности и управлять ими в Azure Cosmos DB с помощью портал Azure, пакета SDK для .NET, пакета SDK для Java и различных других пакетов SDK.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: mjbrown
-ms.openlocfilehash: 46c4c4afe737fd11c2e711a23a3355f48dbd6231
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 68be15e1ffd9093ab67fc046edaad991d633ca7e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74872083"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75445366"
 ---
 # <a name="manage-consistency-levels-in-azure-cosmos-db"></a>Управление уровнями согласованности в Azure Cosmos DB
 
@@ -23,7 +23,7 @@ ms.locfileid: "74872083"
 
 Клиенты по умолчанию используют [стандартный уровень согласованности](consistency-levels.md). Они могут его переопределить в любой момент.
 
-### <a name="cli"></a>CLI
+### <a name="cli"></a>Интерфейс командной строки
 
 ```bash
 # create with a default consistency
@@ -59,7 +59,7 @@ New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
   -Properties $CosmosDBProperties
 ```
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 Чтобы просмотреть или изменить уровень согласованности по умолчанию, войдите на портал Azure. Найдите учетную запись Azure Cosmos DB и откройте область **Согласованность по умолчанию**. Выберите требуемый уровень согласованности в качестве нового значения по умолчанию, а затем выберите **Сохранить**. На портале Azure также представлена визуализация разных уровней согласованности на основе музыкальных нот. 
 
@@ -238,7 +238,7 @@ item = client.ReadItem(doc_link, options)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте больше о том, как управлять конфликтами данных, или перейдите к следующей ключевой концепции в Azure Cosmos DB. Ознакомьтесь со следующими статьями:
+Узнайте больше о том, как управлять конфликтами данных, или перейдите к следующей ключевой концепции в Azure Cosmos DB. См. следующие статьи:
 
 * [Настраиваемые уровни согласованности данных в Azure Cosmos DB](consistency-levels.md)
 * [Управление конфликтами между регионами](how-to-manage-conflicts.md)

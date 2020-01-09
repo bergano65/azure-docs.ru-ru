@@ -1,25 +1,14 @@
 ---
-title: Запуск службы Azure Service Fabric с использованием системных и локальных учетных записей безопасности | Документация Майкрософт
+title: Запуск службы под управлением системы и локальной учетной записи безопасности
 description: Узнайте о том, как запустить приложение Service Fabric с использованием системных и локальных учетных записей системы безопасности.  Создайте субъекты безопасности и примените политику запуска от имени для защищенного выполнения служб.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: 4242a1eb-a237-459b-afbf-1e06cfa72732
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 03/29/2018
-ms.author: atsenthi
-ms.openlocfilehash: 8b0ddc619a7e840b0379a790bd21e7beae812109
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 53212f8636602705899834b6db1d3f0d80b5fe4f
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68600049"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75610134"
 ---
 # <a name="run-a-service-as-a-local-user-account-or-local-system-account"></a>Запуск службы с использованием локальной пользовательской или системной учетной записи
 Платформа Azure Service Fabric помогает защищать приложения, работающие в кластере под разными учетными записями. По умолчанию приложения Service Fabric выполняются под учетной записью, используемой процессом Fabric.exe. Также Service Fabric позволяет запускать приложения от имени локального пользователя или с использованием учетной записи системы. Поддерживаются следующие типы учетных записей локальной системы: **LocalUser**, **NetworkService**, **LocalService** и **LocalSystem**.  При запуске Service Fabric в изолированном кластере Windows службу можно запустить с помощью [учетных записей домена Active Directory](service-fabric-run-service-as-ad-user-or-group.md) или [групповых управляемых учетных записей службы](service-fabric-run-service-as-gmsa.md).
@@ -183,7 +172,7 @@ ms.locfileid: "68600049"
 ```
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Сведения о модели приложения](service-fabric-application-model.md)
 * [Указание ресурсов в манифесте службы](service-fabric-service-manifest-resources.md)
 * [Развертывание приложения](service-fabric-deploy-remove-applications.md)
