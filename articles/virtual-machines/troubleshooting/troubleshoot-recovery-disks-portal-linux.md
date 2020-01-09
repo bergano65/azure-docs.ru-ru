@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/19/2019
 ms.author: genli
-ms.openlocfilehash: 87b4d761eb7bd1c4a16998e44e8160cda24a05b4
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: e45de5c12f0d93645a0b1253acf8300527cafdbc
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71088247"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75374647"
 ---
 # <a name="troubleshoot-a-linux-vm-by-attaching-the-os-disk-to-a-recovery-vm-using-the-azure-portal"></a>Устранение неполадок с виртуальной машиной Linux при присоединении диска операционной системы к виртуальной машине восстановления с помощью портала Azure
 Если возникает проблема с загрузкой или диском на виртуальной машине Linux, возможно, вам нужно устранить неполадки, связанные с самим виртуальным жестким диском. Например, такая ситуация возникает из-за неправильной записи в `/etc/fstab`, которая мешает успешно загрузить виртуальную машину. В этой статье подробно описано, как с помощью портала Azure подключить виртуальный жесткий диск к другой виртуальной машине Linux для устранения ошибок, а затем восстановить исходную виртуальную машину.
@@ -50,7 +50,7 @@ ms.locfileid: "71088247"
 
 1. Перейдите на [портал Azure](https://portal.azure.com). Выберите **виртуальные машины** на боковой панели, а затем выберите виртуальную машину с проблемой.
 1. На левой панели выберите **диски**, а затем выберите имя диска операционной системы.
-    ![Изображение с именем диска ОС](./media/troubleshoot-recovery-disks-portal-windows/select-osdisk.png)
+    ![образ с именем диска ОС](./media/troubleshoot-recovery-disks-portal-windows/select-osdisk.png)
 1. На странице **Обзор** диска операционной системы, а затем выберите **создать моментальный снимок**.
 1. Создайте моментальный снимок в том же расположении, что и диск операционной системы.
 
@@ -170,12 +170,12 @@ ms.locfileid: "71088247"
 
 1. Перейдите на [портал Azure](https://portal.azure.com). Выберите **виртуальные машины** на боковой панели, а затем выберите виртуальную машину с проблемой.
 1. На левой панели выберите **диски**, а затем выберите вариант **переключить диск ОС**.
-        ![Образ, посвященный замене диска ОС в портал Azure](./media/troubleshoot-recovery-disks-portal-windows/swap-os-ui.png)
+        ![образ диска ОС для подкачки в портал Azure](./media/troubleshoot-recovery-disks-portal-windows/swap-os-ui.png)
 
 1. Выберите новый диск, который вы восстановили, а затем введите имя виртуальной машины, чтобы подтвердить изменение. Если диск не отображается в списке, подождите 10 ~ 15 минут после отключения диска от виртуальной машины для устранения неполадок. Также убедитесь, что диск находится в том же расположении, что и виртуальная машина.
-1. Нажмите кнопку ОК.
+1. Нажмите кнопку "ОК".
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 При возникновении проблем с подключением к виртуальной машине см. статью [Устранение неполадок с SSH-подключением к виртуальной машине Azure Linux: сбой, ошибка или отклонение](troubleshoot-ssh-connection.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). Для решения проблем с доступом к приложениям, выполняющимся на виртуальной машине, см. статью [Устранение проблем с подключением к приложениям на виртуальных машинах Linux в Azure](../windows/troubleshoot-app-connection.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
-Дополнительные сведения об использовании Resource Manager вы найдете в статье [Общие сведения об Azure Resource Manager](../../azure-resource-manager/resource-group-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Дополнительные сведения об использовании Resource Manager вы найдете в статье [Общие сведения об Azure Resource Manager](../../azure-resource-manager/management/overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).

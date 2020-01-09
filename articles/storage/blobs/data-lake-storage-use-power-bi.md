@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.date: 07/18/2019
 ms.author: normesta
 ms.reviewer: bensack
-ms.openlocfilehash: d76ea317271ae0e8eb0d54fcfee5dc005d836fc1
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: 156999c6b6d8451516ac1c0f095e1a864420d0b2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70984958"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75354815"
 ---
 # <a name="analyze-data-in-azure-data-lake-storage-gen2-by-using-power-bi"></a>Анализ данных в Azure Data Lake Storage 2-го поколения с помощью Power BI
 
 В этой статье вы узнаете, как использовать Power BI Desktop для анализа и визуализации данных, хранящихся в учетной записи хранения с иерархическим пространством имен (Azure Data Lake Storage 2-го поколения).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед началом работы с этим учебником необходимо иметь следующее:
 
@@ -27,7 +27,8 @@ ms.locfileid: "70984958"
 > * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 > * Учетная запись хранения с иерархическим пространством имен. Чтобы создать его, выполните [следующие](data-lake-storage-quickstart-create-account.md) инструкции.
 > В этой статье предполагается, что вы создали учетную запись с именем `myadlsg2`.
-> * Образец файла данных с именем `Drivers.txt` , который находится в вашей учетной записи хранения.
+> * Для учетной записи хранения предоставлена одна из следующих ролей: **модуль чтения BLOB-данных**, **участник данных большого**двоичного объекта или **владелец данных большого двоичного объекта**.
+> * Пример файла данных с именем `Drivers.txt`, который находится в вашей учетной записи хранения.
 > Вы можете скачать этот пример из [репозитория Git Azure Data Lake](https://github.com/Azure/usql/tree/master/Examples/Samples/Data/AmbulanceData/Drivers.txt), а затем передать этот файл в учетную запись хранения.
 > * **Power BI Desktop**. Это средство можно скачать в [Центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=45331). 
 
@@ -39,9 +40,9 @@ ms.locfileid: "70984958"
 
     ![Страница «получение данных»](media/data-lake-storage-use-power-bi/get-data-page.png)
 
-4. В диалоговом окне **Azure Data Lake Storage 2-го поколения** можно указать URL-адрес учетной записи Azure Data Lake Storage 2-го поколения, файловой системы или вложенной папки, используя формат конечной точки контейнера. URL-адреса для Data Lake Storage 2-го поколения имеют следующий `https://<accountname>.dfs.core.windows.net/<filesystemname>/<subfolder>` шаблон и нажмите кнопку **ОК**.
+4. В диалоговом окне **Azure Data Lake Storage 2-го поколения** можно указать URL-адрес учетной записи Azure Data Lake Storage 2-го поколения, файловой системы или вложенной папки, используя формат конечной точки контейнера. URL-адреса для Data Lake Storage 2-го поколения имеют следующий шаблон `https://<accountname>.dfs.core.windows.net/<filesystemname>/<subfolder>` а затем нажмите кнопку **ОК**.
 
-    ![URL](media/data-lake-storage-use-power-bi/adls-url.png)
+    ![URL-адрес](media/data-lake-storage-use-power-bi/adls-url.png)
 
 5. В следующем диалоговом окне щелкните **войти** , чтобы войти в учетную запись хранения. Вы будете перенаправлены на страницу входа вашей организации. Следуйте инструкциям для входа в учетную запись.
 
@@ -71,7 +72,7 @@ ms.locfileid: "70984958"
 
 10. В **редакторе запросов**в столбце **содержимое** щелкните **двоичный**. Файл будет автоматически обнаружен как CSV, и вы увидите выходные данные, как показано ниже. Данные теперь имеют формат, который можно использовать для создания визуализаций.
 
-    ![Вывод](media/data-lake-storage-use-power-bi/binary.png)
+    ![Выходные данные](media/data-lake-storage-use-power-bi/binary.png)
 
 11. На вкладке **Главная** на ленте нажмите кнопку **Закрыть** и **Применить**, а затем нажмите кнопку **Закрыть** и **Применить**.
 

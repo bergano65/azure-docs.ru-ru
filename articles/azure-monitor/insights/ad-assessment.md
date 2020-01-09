@@ -4,15 +4,15 @@ description: Решение проверки работоспособности 
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
-author: mgoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 09/10/2019
-ms.openlocfilehash: bdc84a9213bd98981040775d3fec90f45edac54f
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: f0de484d58085f598988589d18495c9a6fe1b374
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899202"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75406135"
 ---
 # <a name="optimize-your-active-directory-environment-with-the-active-directory-health-check-solution-in-azure-monitor"></a>Оптимизация среды Active Directory с помощью решения проверки работоспособности Active Directory в Azure Monitor
 
@@ -36,7 +36,7 @@ ms.locfileid: "72899202"
 
 ## <a name="prerequisites"></a>Технические условия
 
-* Для решения Active Directory проверки работоспособности требуется поддерживаемая версия .NET Framework 4.5.2 или более поздней версии на каждом компьютере, где установлен агент Log Analytics для Windows (также называемый Microsoft Monitoring Agent (MMA)).  Агент используется System Center 2016-Operations Manager, Operations Manager 2012 R2 и Azure Monitor.
+* Для решения Active Directory проверки работоспособности требуется поддерживаемая версия .NET Framework 4.6.2 или более поздней версии на каждом компьютере, где установлен агент Log Analytics для Windows (также называемый Microsoft Monitoring Agent (MMA)).  Агент используется System Center 2016-Operations Manager, Operations Manager 2012 R2 и Azure Monitor.
 * Решение поддерживает контроллеры домена под управлением Windows Server 2008 и 2008 R2, Windows Server 2012 и 2012 R2, а также Windows Server 2016.
 * Рабочая область Log Analytics для добавления решения проверки работоспособности Active Directory в Azure Marketplace на портале Azure. Дополнительная настройка не требуется.
 
@@ -63,7 +63,7 @@ ms.locfileid: "72899202"
 - Журнал событий
 - Интерфейс ADSI
 - Windows PowerShell
-- Данные файлов
+- данные файлов;
 - Инструментарий управления Windows (WMI)
 - API инструмента DCDIAG
 - API службы репликации файлов (NTFRS)
@@ -163,7 +163,7 @@ ADAssessmentRecommendation | where RecommendationResult == "Failed" | sort by Co
     ADAssessmentRecommendation | where RecommendationResult == "Ignored" | sort by Computer asc | project Computer, RecommendationId, Recommendation
     ```
 
-2. Если вы решите позже просмотреть игнорируемые рекомендации, удалите все файлы IgnoreRecommendations.txt или RecommendationIDs из них.
+2. Если вы решите позже просмотреть игнорируемые рекомендации, удалите все файлы IgnoreRecommendations.txt или RecommendationIDs можно удалить из них.
 
 ## <a name="ad-health-check-solutions-faq"></a>Вопросы и ответы по решению "Проверка работоспособности AD"
 

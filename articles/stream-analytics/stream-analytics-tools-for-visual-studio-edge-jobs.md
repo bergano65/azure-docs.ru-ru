@@ -1,20 +1,19 @@
 ---
 title: Azure Stream Analytics пограничных заданий в Visual Studio
 description: В этой статье описывается создание, отладка и создание Stream Analytics в IoT Edge заданиях с помощью средств Stream Analytics для Visual Studio.
-services: stream-analytics
 author: su-jie
 ms.author: sujie
-ms.reviewer: jasonh
+ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: ec4a4041378ce94ae70ba7a88b3fef80f7dcd193
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 07f109b3d5539f7cd87a12fb42a36803573c2bdf
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72925024"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75354570"
 ---
 # <a name="develop-stream-analytics-edge-jobs-using-visual-studio-tools"></a>Разработка заданий Edge Stream Analytics с помощью средств Visual Studio
 
@@ -66,9 +65,9 @@ ms.locfileid: "72925024"
 Stream Analytics задания, развернутые в среде Stream Analytics IoT Edge, поддерживают большую часть [справочника по языку запросов Stream Analytics](https://msdn.microsoft.com/azure/stream-analytics/reference/stream-analytics-query-language-reference?f=255&MSPPError=-2147217396). Однако следующие операции еще не поддерживаются для заданий Stream Analytics пограничных устройств: 
 
 
-|**Категория**  | **Команда**  |
+|**Категория**  | **Command**  |
 |---------|---------|
-|Другие операторы | <ul><li>PARTITION BY;</li><li>TIMESTAMP BY OVER</li><li>Определяемая пользователем функция JavaScript</li><li>Определяемые пользователем статистические функции (UDA)</li><li>GetMetadataPropertyValue</li><li>Использование более 14 статистических выражений за один шаг</li></ul>   |
+|Другие операторы | <ul><li>PARTITION BY</li><li>TIMESTAMP BY OVER</li><li>Определяемая пользователем функция JavaScript</li><li>Определяемые пользователем статистические функции (UDA)</li><li>GetMetadataPropertyValue</li><li>Использование более 14 статистических выражений за один шаг</li></ul>   |
 
 При создании задания пограничной Stream Analytics на портале компилятор автоматически выдаст предупреждение, если не используется поддерживаемый оператор.
 
