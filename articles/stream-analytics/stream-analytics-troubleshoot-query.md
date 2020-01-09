@@ -1,7 +1,6 @@
 ---
 title: Устранение неполадок з запросами в службе Azure Stream Analytics
 description: В этой статье описаны методы устранения неполадок с запросами в заданиях Azure Stream Analytics.
-services: stream-analytics
 author: sidram
 ms.author: sidram
 ms.reviewer: mamccrea
@@ -9,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 586ddb237144daddf0cbfd19785fcba7658469a0
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 22e542715afa8c87ffb742bec6c22f758cd16587
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67621475"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75354265"
 ---
 # <a name="troubleshoot-azure-stream-analytics-queries"></a>Устранение неполадок з запросами в службе Azure Stream Analytics
 
@@ -28,7 +27,7 @@ ms.locfileid: "67621475"
 2.  Если используются [**метки времени**](https://docs.microsoft.com/stream-analytics-query/timestamp-by-azure-stream-analytics), убедитесь, что они зарегистрированы для событий после [начала выполнения задания](stream-analytics-out-of-order-and-late-events.md).
 
 3.  Исключите типичные проблемы, например:
-    - Предложение [ **WHERE**](https://docs.microsoft.com/stream-analytics-query/where-azure-stream-analytics) в запросе фильтрует все события, предотвращая создание выходных данных.
+    - Предложение [**WHERE**](https://docs.microsoft.com/stream-analytics-query/where-azure-stream-analytics) в запросе фильтрует все события, предотвращая создание выходных данных.
     - Выполнение функции [**CAST**](https://docs.microsoft.com/stream-analytics-query/cast-azure-stream-analytics) завершается ошибкой, что приводит к сбою всего задания. Чтобы избежать сбоев приведения типов, используйте функцию [**TRY_CAST**](https://docs.microsoft.com/stream-analytics-query/try-cast-azure-stream-analytics).
     - При использовании оконных функций подождите до завершения окна для вывода выходных данных из запроса.
     - Метка времени для событий предшествует времени запуска задания, поэтому события сбрасываются.
@@ -90,7 +89,7 @@ ms.locfileid: "67621475"
 
 ![Запрос итоговой таблицы SELECT INTO Stream Analytics](./media/stream-analytics-select-into/stream-analytics-select-into-final-table.png)
 
-## <a name="get-help"></a>Получение справки
+## <a name="get-help"></a>Справка
 
 За дополнительной помощью обращайтесь на наш [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
 

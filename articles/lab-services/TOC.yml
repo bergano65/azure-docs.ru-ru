@@ -22,7 +22,7 @@
       href: samples-powershell.md
     - name: Azure PowerShell. Модуль Az.DevTestLabs2
       href: 'https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Modules/Library'
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: samples-cli.md
 - name: Основные понятия
   items:
@@ -44,7 +44,7 @@
           href: devtest-lab-training-lab.md
         - name: Сценарии использования запрашиваемых виртуальных машин
           href: devtest-lab-use-claim-capabilities.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Настройка лаборатории
       items:
@@ -72,6 +72,8 @@
           href: devtest-lab-auto-startup-vm.md
         - name: Масштабирование лаборатории
           href: devtest-lab-scale-lab.md
+        - name: Включение управляемых удостоверений для виртуальных машин лабораторий
+          href: enable-managed-identities-lab-vms.md
         - name: Управление резервными копиями виртуальной машины
           items:
             - name: Настройка образов Azure Marketplace
@@ -235,13 +237,13 @@
               href: devtest-lab-guidance-governance-application-migration-integration.md
     - name: Тестирование приложения в Azure
       href: test-app-azure.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: Устранение неполадок при сбоях создания виртуальных машин и сред
           href: troubleshoot-vm-environment-creation-failures.md
         - name: Устранение неполадок при сбоях артефактов
           href: devtest-lab-troubleshoot-artifact-failure.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: CLI
       href: /cli/azure/lab

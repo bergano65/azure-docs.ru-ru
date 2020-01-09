@@ -1,25 +1,16 @@
 ---
-title: Безопасное удаленное взаимодействие со службой в C# в Azure Service Fabric | Документы Майкрософт
+title: Безопасная связь удаленного взаимодействия со службойC#
 description: Узнайте, как защитить удаленное взаимодействие со службой для служб Reliable Services на C#, запущенных в кластере Azure Service Fabric.
-services: service-fabric
-documentationcenter: .net
 author: suchiagicha
-manager: chackdan
-editor: vturecek
-ms.assetid: fc129c1a-fbe4-4339-83ae-0e69a41654e0
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: required
 ms.date: 04/20/2017
 ms.author: pepogors
-ms.openlocfilehash: c252ec31a64fa3a11973db7a8de0a440d8eed6f5
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: ee2f1d70f4094ccc7d80edbfaf16509b5124f607
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72166558"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75609627"
 ---
 # <a name="secure-service-remoting-communications-in-a-c-service"></a>Безопасное удаленное взаимодействие со службой для службы C#
 > [!div class="op_single_selector"]

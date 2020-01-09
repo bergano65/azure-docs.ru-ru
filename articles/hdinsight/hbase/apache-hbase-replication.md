@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/06/2019
-ms.openlocfilehash: 803deb9a4d9eaf02129bd16dd6465362b87b7e84
-ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
+ms.openlocfilehash: 1e6465584dd4e67f736b94d2939678c1a69163bf
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74995921"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75435665"
 ---
 # <a name="set-up-apache-hbase-cluster-replication-in-azure-virtual-networks"></a>Настройка репликации кластера Apache HBase в виртуальных сетях Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "74995921"
 
 В этой статье описан сценарий георепликации.
 
-Чтобы помочь вам в настройке сред мы создали некоторые [шаблоны Azure Resource Manager](../../azure-resource-manager/resource-group-overview.md). Если вы предпочитаете настраивать среды с помощью других методов, см. следующие статьи:
+Чтобы помочь вам в настройке сред мы создали некоторые [шаблоны Azure Resource Manager](../../azure-resource-manager/management/overview.md). Если вы предпочитаете настраивать среды с помощью других методов, см. следующие статьи:
 
 - [Создание кластеров Apache Hadoop в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md)
 - [Создание кластеров Apache HBase в виртуальной сети Azure](apache-hbase-provision-vnet.md)
@@ -66,9 +66,9 @@ ms.locfileid: "74995921"
 
 **VNet 1**
 
-| Свойство | Value |
+| Свойство | Значение |
 |----------|-------|
-| Location | Западная часть США |
+| Расположение | Западная часть США |
 | Имя виртуальной сети | &lt;префикс_имени_кластера>-vnet1 |
 | Address space prefix | 10.1.0.0/16 |
 | Имя подсети | subnet 1 |
@@ -83,9 +83,9 @@ ms.locfileid: "74995921"
 
 **VNet 2**
 
-| Свойство | Value |
+| Свойство | Значение |
 |----------|-------|
-| Location | Восточная часть США |
+| Расположение | Восточная часть США |
 | Имя виртуальной сети | &lt;префикс_имени_кластера>-vnet2 |
 | Address space prefix | 10.2.0.0/16 |
 | Имя подсети | subnet 1 |
@@ -223,7 +223,7 @@ ms.locfileid: "74995921"
     > [!IMPORTANT]  
     > Замените значение `vnet2dns.v5ant3az2hbe1edzthhvwwkcse.bx.internal.cloudapp.net` полным доменным именем (FQDN) виртуальной машины DNS в другой сети.
     >
-    > Замените `10.2.0.4` __внутренним IP-адресом__ пользовательского DNS-сервера в другой виртуальной сети.
+    > Замените `10.2.0.4`__внутренним IP-адресом__ пользовательского DNS-сервера в другой виртуальной сети.
 
     Ответ будет выглядеть следующим образом:
 
@@ -285,7 +285,7 @@ sudo service bind9 status
 
 **Включение репликации HBase на портале Azure**
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Откройте исходный кластер HBase.
 3. В меню кластера выберите **Действия скрипта**.
 4. В верхней части страницы выберите **Отправить новое**.
@@ -307,7 +307,7 @@ sudo service bind9 status
 
 Ниже приведены обязательные аргументы.
 
-|Name|Описание|
+|Имя|Description|
 |----|-----------|
 |-s, --src-cluster | Указывает DNS-имя исходного кластера HBase. например -s hbsrccluster, --src-cluster=hbsrccluster. |
 |-d, --dst-cluster | Указывает DNS-имя кластера назначения (реплики) HBase. например -s dsthbcluster, --src-cluster=dsthbcluster. |
@@ -316,7 +316,7 @@ sudo service bind9 status
 
 Необязательные аргументы для этой команды.
 
-|Name|Описание|
+|Имя|Description|
 |----|-----------|
 |-su, --src-ambari-user | Указывает имя пользователя-администратора для Ambari в исходном кластере HBase. Значение по умолчанию — **admin**. |
 |-du, --dst-ambari-user | Указывает имя пользователя-администратора для Ambari в целевом кластере HBase. Значение по умолчанию — **admin**. |
@@ -326,7 +326,7 @@ sudo service bind9 status
 |-rpm, -replicate-phoenix-meta | Включает репликацию для системных таблиц Phoenix. <br><br>*Используйте этот параметр с осторожностью.* Рекомендуется повторно создать таблицы Phoenix в реплицированных кластерах перед использованием этого скрипта. |
 |-h, --help | Отображает сведения об использовании. |
 
-Раздел `print_usage()` [скрипта](https://github.com/Azure/hbase-utils/blob/master/replication/hdi_enable_replication.sh) содержит подробное описание параметров.
+Раздел `print_usage()`[скрипта](https://github.com/Azure/hbase-utils/blob/master/replication/hdi_enable_replication.sh) содержит подробное описание параметров.
 
 После успешного развертывания действия сценария можно использовать протокол SSH, чтобы подключиться к кластеру назначения HBase, а после убедиться, что данные реплицированы.
 
@@ -362,7 +362,7 @@ sudo service bind9 status
 
     -m hn1 -t <table1:start_timestamp:end_timestamp;table2:start_timestamp:end_timestamp;...> -p <replication_peer> [-everythingTillNow]
 
-Раздел `print_usage()` [скрипта](https://github.com/Azure/hbase-utils/blob/master/replication/hdi_copy_table.sh) содержит подробное описание параметров.
+Раздел `print_usage()`[скрипта](https://github.com/Azure/hbase-utils/blob/master/replication/hdi_copy_table.sh) содержит подробное описание параметров.
 
 ### <a name="scenarios"></a>Сценарии
 
@@ -385,7 +385,7 @@ sudo service bind9 status
 
     -m hn1 -s <source hbase cluster name> -sp <source cluster Ambari password> <-all|-t "table1;table2;...">  
 
-Раздел `print_usage()` [скрипта](https://raw.githubusercontent.com/Azure/hbase-utils/master/replication/hdi_disable_replication.sh) содержит подробное описание параметров.
+Раздел `print_usage()`[скрипта](https://raw.githubusercontent.com/Azure/hbase-utils/master/replication/hdi_disable_replication.sh) содержит подробное описание параметров.
 
 ### <a name="scenarios"></a>Сценарии
 

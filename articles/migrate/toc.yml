@@ -62,12 +62,12 @@
           href: migrate-support-matrix-hyper-v.md
         - name: Таблица поддержки для оценки и переноса физических серверов
           href: migrate-support-matrix-physical.md
+        - name: Матрица поддержки для устройства Миграции Azure
+          href: migrate-appliance.md
     - name: Архитектура миграции для Hyper-V
       href: hyper-v-migration-architecture.md
     - name: Архитектура миграции на основе агента
       href: agent-based-migration-architecture.md
-    - name: Устройство службы "Миграция Azure"
-      href: migrate-appliance.md
     - name: Устройство репликации в службе "Миграция Azure"
       href: migrate-replication-appliance.md
     - name: Рекомендации по оценке
@@ -80,6 +80,8 @@
   items:
     - name: Работа с предыдущей версией
       href: migrate-v1.md
+    - name: Создание и администрирование проектов Миграции Azure
+      href: create-manage-projects.md
     - name: Развертывание устройства VMware
       href: how-to-set-up-appliance-vmware.md
     - name: Развертывание устройства Hyper-V
@@ -123,7 +125,13 @@
 - name: Диагностика
   items:
     - name: Устранение неполадок в службе "Миграция Azure"
-      href: troubleshooting-general.md
+      href: troubleshoot-general.md
+    - name: Устранение неполадок с проектами Миграции Azure
+      href: troubleshoot-project.md
+    - name: Устранение неполадок с устройствами или обнаружением Миграции Azure
+      href: troubleshoot-appliance-discovery.md
+    - name: Устранение неполадок с визуализацией оценок и зависимостей
+      href: troubleshoot-assessment.md
 - name: Ресурсы
   items:
     - name: Миграция с помощью Cloud Adoption Framework

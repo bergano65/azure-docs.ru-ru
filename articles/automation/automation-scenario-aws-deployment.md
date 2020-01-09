@@ -2,19 +2,15 @@
 title: Автоматизация развертывания виртуальной машины в Amazon Web Services
 description: В этой статье показано, как автоматизировать создание виртуальной машины Amazon Web Service с помощью службы автоматизации Azure.
 services: automation
-ms.service: automation
 ms.subservice: process-automation
-author: mgoedtel
-ms.author: magoedte
 ms.date: 03/16/2018
 ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: d2a58d3e79301f277143d8c4b6e810a377a211b9
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: b149a21ef60b22c2e549c91007265ce99babdbe4
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849638"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75420921"
 ---
 # <a name="azure-automation-scenario---provision-an-aws-virtual-machine"></a>Сценарий службы автоматизации Azure: подготовка виртуальной машины AWS
 В этой статье вы узнаете, как с помощью службы автоматизации Azure подготовить виртуальную машину в подписке Amazon Web Service (AWS) и присвоить виртуальной машине конкретное имя, которое в AWS называется "тегом" виртуальной машины.

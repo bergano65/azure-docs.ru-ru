@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: machine-learning
 ms.service: machine-learning
 ms.custom: include file
@@ -8,14 +8,14 @@ ms.topic: include
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 10/18/2019
-ms.openlocfilehash: 08833f869a7838fe893b8e941072078f89033c2b
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: e3cb977871af2e6cd7a59dd48505090dd29e8a76
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73517856"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75541807"
 ---
-1. Войдите в [машинное обучение Azure Studio](https://ml.azure.com).
+1. Войдите в [Студию машинного обучения Azure](https://ml.azure.com).
 
 1. Обновите рабочую область до выпуска Enterprise Edition.
 
@@ -38,5 +38,5 @@ ms.locfileid: "73517856"
 
 - **Импорт данных** или **Экспорт модулей данных**
         
-    Если в эксперименте имеется модуль **Импорт данных** или **Экспорт данных** , необходимо обновить источник данных, чтобы использовать хранилища. Сведения о создании хранилища данных см. в статье [как получить доступ к данным в службах хранилища Azure](../articles/machine-learning/service/how-to-access-data.md). Сведения об учетной записи облачного хранилища добавлены в комментарии для вашего удобства в комментариях к модулю **Импорт данных** или **Экспорт данных** . 
+    Если в эксперименте имеется модуль **Импорт данных** или **Экспорт данных** , необходимо обновить источник данных, чтобы использовать хранилища. Сведения о создании хранилища данных см. в статье [как получить доступ к данным в службах хранилища Azure](../articles/machine-learning/how-to-access-data.md). Сведения об учетной записи облачного хранилища добавлены в комментарии для вашего удобства в комментариях к модулю **Импорт данных** или **Экспорт данных** . 
       

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 08/05/2019
 ms.author: mathoma
-ms.openlocfilehash: c3b4fabb319a3ea76ee62c8c699d4613184a4e76
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 4919c8f303488b583ea4d10dca87dd29bfb52e99
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791045"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75374086"
 ---
 # <a name="frequently-asked-questions-for-sql-server-running-on-windows-virtual-machines-in-azure"></a>Часто задаваемые вопросы об SQL Server на виртуальных машинах Windows в Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "74791045"
 
 1. **Как создать виртуальную машину Azure с SQL Server?**
 
-   Самый простой способ — создать виртуальную машину, которая включает SQL Server. Руководство по регистрации в Azure и созданию SQL Server виртуальной машины на портале см. в разделе [подготавливает SQL Server виртуальную машину в портал Azure](virtual-machines-windows-portal-sql-server-provision.md). Вы можете выбрать образ виртуальной машины, использующей лицензирование SQL Server с посекундной оплатой, или же образ, который позволяет применить собственную лицензию SQL Server. Вы также можете вручную установить SQL Server на виртуальной машине, используя выпуск с бесплатной лицензией (Developer или Express) или повторно применив локальную лицензию. Не забудьте [зарегистрировать SQL Server виртуальную машину с помощью поставщика ресурсов виртуальной машины SQL Server](virtual-machines-windows-sql-register-with-resource-provider.md) , чтобы управлять виртуальной машиной SQL Server на портале, а также использовать такие функции, как автоматическая установка исправлений и автоматическое резервное копирование. При использовании собственной лицензии у вас должно быть преимущество [Перемещение лицензий в рамках программы Software Assurance в Azure](https://azure.microsoft.com/pricing/license-mobility/). Дополнительные сведения см. в [руководстве по выбору ценовой категории для виртуальных машин Azure SQL Server](virtual-machines-windows-sql-server-pricing-guidance.md).
+   Самый простой способ — создать виртуальную машину, которая включает SQL Server. Руководство по регистрации в Azure и созданию SQL Server виртуальной машины на портале см. в разделе [подготавливает SQL Server виртуальную машину в портал Azure](virtual-machines-windows-portal-sql-server-provision.md). Вы можете выбрать образ виртуальной машины, использующей лицензирование SQL Server с посекундной оплатой, или же образ, который позволяет применить собственную лицензию SQL Server. Кроме того, вы можете вручную установить SQL Server на виртуальной машине, используя выпуск с бесплатной лицензией (Developer или Express) или предоставив существующую локальную лицензию. Не забудьте [зарегистрировать SQL Server виртуальную машину с помощью поставщика ресурсов виртуальной машины SQL Server](virtual-machines-windows-sql-register-with-resource-provider.md) , чтобы управлять виртуальной машиной SQL Server на портале, а также использовать такие функции, как автоматическая установка исправлений и автоматическое резервное копирование. При использовании собственной лицензии у вас должно быть преимущество [Перемещение лицензий в рамках программы Software Assurance в Azure](https://azure.microsoft.com/pricing/license-mobility/). Дополнительные сведения см. в [руководстве по выбору ценовой категории для виртуальных машин Azure SQL Server](virtual-machines-windows-sql-server-pricing-guidance.md).
 
 1. **Как перенести локальную базу данных SQL Server в облако?**
 
@@ -84,12 +84,12 @@ ms.locfileid: "74791045"
 
 1. **Нужно ли платить за лицензирование SQL Server на виртуальной машине Azure, если она используется только для резервирования или отработки отказа?**
 
-   Чтобы получить бесплатную пассивную лицензию для резервной вторичной группы доступности или экземпляра отказоустойчивого кластера, необходимо выполнить все следующие условия, как описано в [документе PDF с руководством по лицензированию](https://download.microsoft.com/download/7/8/C/78CDF005-97C1-4129-926B-CE4A6FE92CF5/SQL_Server_2017_Licensing_guide.pdf):
+   Чтобы получить бесплатную пассивную лицензию для резервной вторичной группы доступности или экземпляра отказоустойчивого кластера, необходимо выполнить все следующие условия, описанные в описании [условий лицензирования продуктов](https://www.microsoft.com/licensing/product-licensing/products):
 
    1. У вас есть [мобильность лицензий](https://www.microsoft.com/licensing/licensing-programs/software-assurance-license-mobility?activetab=software-assurance-license-mobility-pivot:primaryr2) в рамках [программы Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default?activetab=software-assurance-default-pivot%3aprimaryr3). 
-   1. Пассивный SQL Server экземпляр не обслуживает данные SQL Server клиентам или выполняет активные SQL Server рабочие нагрузки. Он используется только для синхронизации с сервером-источником и иным образом поддерживает пассивную базу данных в состоянии «горячего» резервирования. Если данные обслуживаются, например отчеты для клиентов, использующих активные SQL Server рабочие нагрузки, или выполнение любой "работы" (например, дополнительные резервные копии с сервера-получателя), то это должен быть платный лицензированный экземпляр SQL Server. 
+   1. Пассивный SQL Server экземпляр не обслуживает данные SQL Server клиентам или выполняет активные SQL Server рабочие нагрузки. Он используется только для синхронизации с сервером-источником и иным образом поддерживает пассивную базу данных в состоянии «горячего» резервирования. Если данные, такие как отчеты, обслуживаются клиентами, выполняющими активные SQL Server рабочие нагрузки, или выполнение любой работы, отличной от той, что указана в условиях продукта, это должен быть оплаченный лицензированный SQL Server экземпляр. На вторичном экземпляре допускается следующее действие: проверки согласованности базы данных или CheckDB, полные резервные копии, резервные копии журналов транзакций и мониторинг данных об использовании ресурсов. Вы также можете одновременно запустить первичный и соответствующий экземпляр аварийного восстановления в течение короткого периода тестирования аварийного восстановления каждые 90 дней. 
    1. Лицензия на активную SQL Server покрывается программой Software Assurance и позволяет получить **один** пассивный вторичный экземпляр SQL Server с тем же объемом вычислений, что и у лицензированного активного сервера. 
-   1. На виртуальной машине-получателе SQL Server используется [модель лицензирования](virtual-machines-windows-sql-ahb.md)"Ваша собственная лицензия" (BYOL) или преимущество ГИБРИДНОГО использования Azure (АХБ). 
+   1. На виртуальной машине-получателе SQL Server используется лицензия на [Аварийное восстановление](virtual-machines-windows-sql-high-availability-dr.md#free-dr-replica-in-azure) в портал Azure.
 
 1. **Можно ли настроить виртуальную машину для использования собственной лицензии SQL Server, если она была создана из одного из образов коллекции с оплатой по мере использования?**
 
@@ -163,8 +163,8 @@ ms.locfileid: "74791045"
 
 1. **Где можно получить установочный носитель, чтобы изменить выпуск или версию SQL Server?**
 
-  Клиенты, у которых есть [Программа Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default) , могут получить установочный носитель из [центра корпоративного лицензирования](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Клиенты, у которых нет программы Software Assurance, могут использовать установочный носитель из Marketplace SQL Server образ виртуальной машины с нужным выпуском.
-
+   Клиенты, у которых есть [Программа Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default) , могут получить установочный носитель из [центра корпоративного лицензирования](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Клиенты, у которых нет программы Software Assurance, могут использовать установочный носитель из Marketplace SQL Server образ виртуальной машины с нужным выпуском.
+   
 1. **Как обновления и пакеты обновления применяются к виртуальной машине SQL Server?**
 
    Виртуальные машины позволяют контролировать сервер, в том числе время и способ применения обновлений. Что касается операционной системы, вы можете вручную применять обновления для Windows или включить службу расписаний под названием [Автоматическое исправление](virtual-machines-windows-sql-automated-patching.md). Эта служба устанавливает все обновления, помеченные как важные, включая обновления SQL Server из этой категории. Другие необязательные обновления для SQL Server необходимо устанавливать вручную.
@@ -173,7 +173,13 @@ ms.locfileid: "74791045"
 
    Да. Можно использовать любой установочный носитель для обновления версии и выпуска SQL Server, после чего вы можете обновить [режим расширения SQL IaaS](virtual-machines-windows-sql-register-with-resource-provider.md#management-modes) _без агента_ на _Full_. Это обеспечит доступ ко всем преимуществам расширения SQL IaaS, таких как Управление порталом, автоматическая архивация и автоматическая установка исправлений. 
 
-## <a name="general"></a>Общие сведения
+1. **Как можно получить бесплатные обновления для системы безопасности на предмет поддержки SQL Server 2008 и SQL Server 2008 R2?**
+
+   Вы можете получить [Бесплатные обновления для системы безопасности](virtual-machines-windows-sql-server-2008-eos-extend-support.md) , переместив SQL Server "как есть" на виртуальную машину Azure SQL. Дополнительные сведения см. в разделе [Параметры окончания поддержки](/sql/sql-server/end-of-support/sql-server-end-of-life-overview). 
+  
+   
+
+## <a name="general"></a>Общие
 
 1. **Поддерживаются ли экземпляры отказоустойчивого кластера SQL Server на виртуальных машинах Azure?**
 
@@ -196,18 +202,18 @@ ms.locfileid: "74791045"
 
 ## <a name="resources"></a>Ресурсы
 
-**Виртуальные машины Windows**:
+**Для виртуальных машин Windows**:
 
 * [Приступая к работе с SQL Server на виртуальных машинах Azure (Windows)](virtual-machines-windows-sql-server-iaas-overview.md)
-* [Подготовка виртуальной машины SQL Server на базе Windows на портале Azure](virtual-machines-windows-portal-sql-server-provision.md)
+* [Подготовка виртуальной машины SQL Server на базе Windows](virtual-machines-windows-portal-sql-server-provision.md).
 * [Миграция базы данных в SQL Server на виртуальной машине Azure](virtual-machines-windows-migrate-sql.md)
 * [Высокий уровень доступности и аварийное восстановление для SQL Server на виртуальных машинах Azure](virtual-machines-windows-sql-high-availability-dr.md)
-* [Рекомендации по оптимизации производительности SQL Server в виртуальных машинах Azure](virtual-machines-windows-sql-performance.md)
+* [Рекомендации по оптимизации производительности SQL Server на виртуальных машинах Azure](virtual-machines-windows-sql-performance.md)
 * [Шаблоны приложений и стратегии разработки для SQL Server на виртуальных машинах Azure](virtual-machines-windows-sql-server-app-patterns-dev-strategies.md)
 
-**Виртуальные машины Linux**:
+**Для виртуальных машин Linux**:
 
 * [Обзор SQL Server на виртуальных машинах Linux](../../linux/sql/sql-server-linux-virtual-machines-overview.md).
-* [Подготовка виртуальной машины SQL Server на базе Linux на портале Azure](../../linux/sql/provision-sql-server-linux-virtual-machine.md)
+* [Подготовка виртуальной машины SQL Server на базе Linux](../../linux/sql/provision-sql-server-linux-virtual-machine.md).
 * [Frequently asked questions for SQL Server on Linux Azure Virtual Machines](../../linux/sql/sql-server-linux-faq.md) (Часто задаваемые вопросы об SQL Server на виртуальных машинах Azure (Linux))
-* [Документация по SQL Server в Linux](https://docs.microsoft.com/sql/linux/sql-server-linux-overview)
+* [Документация по SQL Server в Linux](https://docs.microsoft.com/sql/linux/sql-server-linux-overview).

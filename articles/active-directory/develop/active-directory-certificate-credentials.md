@@ -1,7 +1,7 @@
 ---
-title: Учетные данные сертификата Azure AD
+title: Учетные данные сертификата платформы удостоверений Microsoft Identity
 titleSuffix: Microsoft identity platform
-description: В этой статье рассматривается регистрация и использование учетных данных сертификата для аутентификации приложения.
+description: В этой статье обсуждается регистрация и использование учетных данных сертификата для проверки подлинности приложения.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -10,27 +10,26 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 05/21/2019
+ms.date: 12/18/2019
 ms.author: ryanwi
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d37b390e39d2b991ea01468feffbe39c9578af54
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 7a44d89e19a1efc54e2c3c49053ec9badc91ba97
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74963874"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424718"
 ---
-# <a name="azure-ad-application-authentication-certificate-credentials"></a>Учетные данные сертификата проверки подлинности приложения Azure AD
+# <a name="microsoft-identity-platform-application-authentication-certificate-credentials"></a>Учетные данные сертификата проверки подлинности приложения платформы Microsoft Identity
 
-Azure Active Directory (Azure AD) позволяет приложению использовать для аутентификации свои учетные данные, например, в потоке предоставления учетных данных клиента OAuth 2.0 ([версия 1.0](v1-oauth2-client-creds-grant-flow.md), [версия 2.0](v2-oauth2-client-creds-grant-flow.md)) и потоке On-Behalf-Of ([версия 1.0](v1-oauth2-on-behalf-of-flow.md), [версия 2.0](v2-oauth2-on-behalf-of-flow.md)).
+Платформа Microsoft Identity позволяет приложению использовать собственные учетные данные для проверки подлинности, например, в [учетных данных клиента OAuth 2,0 предоставьте фловв 2.0](v2-oauth2-client-creds-grant-flow.md) и поток "от [имени](v2-oauth2-on-behalf-of-flow.md)".
 
 Одной из форм учетных данных, которые приложение может использовать для аутентификации, является утверждение JSON Web Token (JWT), подписанное с помощью сертификата приложения.
 
 ## <a name="assertion-format"></a>Формат утверждения
-
-Чтобы вычислить утверждение, можно использовать одну из множества библиотек [JSON Web Token](https://jwt.ms/) на удобном для вас языке. Маркер содержит следующие сведения:
+Платформа Microsoft Identity. чтобы вычислить утверждение, можно использовать одну из многих [JSON Web Token](https://jwt.ms/) библиотек на выбранном языке. Маркер содержит следующие сведения:
 
 ### <a name="header"></a>Заголовок
 
@@ -42,7 +41,7 @@ Azure Active Directory (Azure AD) позволяет приложению исп
 
 ### <a name="claims-payload"></a>Утверждения (полезные данные)
 
-| Параметр |  Примечания |
+| Параметр |  Remarks |
 | --- | --- |
 | `aud` | Аудитория: должно быть значение **https://login.microsoftonline.com/*tenant_Id*/oauth2/token** |
 | `exp` | Срок действия: дата, когда истекает срок действия маркера. Время представлено как количество секунд с 1 января 1970 года (1970-01-01T0:0:0Z) в формате UTC до истечения срока действия маркера.|
@@ -51,7 +50,7 @@ Azure Active Directory (Azure AD) позволяет приложению исп
 | `nbf` | Не ранее: дата, до которой маркер не может использоваться. Время представлено как количество секунд с 1 января 1970 года (1970-01-01T0:0:0Z) в формате UTC до времени выдачи маркера. |
 | `sub` | Субъект: параметр должен иметь значение client_id (идентификатор приложения службы клиента), как и `iss` |
 
-### <a name="signature"></a>Подпись
+### <a name="signature"></a>Сигнатура
 
 Подпись формируется через применение сертификата, как описано в [документе RFC7519 о спецификации JSON Web Token](https://tools.ietf.org/html/rfc7519).
 
@@ -89,16 +88,16 @@ Azure Active Directory (Azure AD) позволяет приложению исп
 Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 ```
 
-## <a name="register-your-certificate-with-azure-ad"></a>Регистрация сертификат в Azure AD
+## <a name="register-your-certificate-with-microsoft-identity-platform"></a>Регистрация сертификата на платформе Microsoft Identity
 
-Учетные данные сертификата можно связать с клиентским приложением в Azure AD через портал Azure с помощью любого из следующих методов:
+Учетные данные сертификата можно связать с клиентским приложением на платформе Microsoft Identity с помощью портал Azure одним из следующих способов.
 
 ### <a name="uploading-the-certificate-file"></a>Передача файла сертификата
 
 При регистрации приложения Azure для клиентского приложения сделайте следующее.
 1. Выберите **Сертификаты и секреты**. 
 2. Щелкните **отправить сертификат** и выберите файл сертификата для отправки.
-3. Щелкните **Добавить**.
+3. Нажмите кнопку **Добавить**.
   После отправки сертификата отображаются отпечаток, Дата начала и срок действия. 
 
 ### <a name="updating-the-application-manifest"></a>Обновление манифеста приложения
@@ -125,7 +124,7 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
        }
    ]
    ```
-3. Сохраните изменения в манифесте приложения и передайте его в Azure AD. 
+3. Сохраните изменения в манифесте приложения, а затем отправьте манифест на платформу удостоверений Майкрософт. 
 
    Свойство `keyCredentials` является многозначным, поэтому для расширенного управления ключами можно передать несколько сертификатов.
    
@@ -134,4 +133,4 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 > [!NOTE]
 > Необходимо вычислить заголовок X5T, используя хэш сертификата, и преобразовать его в строку Base64. В C# этом случае будет выглядеть примерно так: `System.Convert.ToBase64String(cert.GetCertHash());`
 
-В примере кода в статье [Authenticating to Azure AD in daemon apps with certificates](https://github.com/Azure-Samples/active-directory-dotnet-daemon-certificate-credential) (Аутентификация приложений управляющей программы в Azure AD с помощью сертификатов) показано, как приложение использует собственные учетные данные для аутентификации. В не также показано, как [создать самозаверяющий сертификат](https://github.com/Azure-Samples/active-directory-dotnet-daemon-certificate-credential#create-a-self-signed-certificate) с помощью команды PowerShell `New-SelfSignedCertificate`. Можно также воспользоваться преимуществами [сценариев создания приложений](https://github.com/Azure-Samples/active-directory-dotnet-daemon-certificate-credential/blob/master/AppCreationScripts/AppCreationScripts.md) для создания сертификатов, вычисления отпечатков и т. д.
+Пример кода для проверки подлинности [на платформе Microsoft Identity в приложениях управляющей программы с сертификатами](https://github.com/Azure-Samples/active-directory-dotnet-daemon-certificate-credential) показывает, как приложение использует собственные учетные данные для аутентификации. В не также показано, как [создать самозаверяющий сертификат](https://github.com/Azure-Samples/active-directory-dotnet-daemon-certificate-credential#create-a-self-signed-certificate) с помощью команды PowerShell `New-SelfSignedCertificate`. Можно также воспользоваться преимуществами [сценариев создания приложений](https://github.com/Azure-Samples/active-directory-dotnet-daemon-certificate-credential/blob/master/AppCreationScripts/AppCreationScripts.md) для создания сертификатов, вычисления отпечатков и т. д.

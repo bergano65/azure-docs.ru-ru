@@ -1,20 +1,21 @@
 ---
-title: Определение используемой модели ключа шифрования для учетной записи хранения в службе хранилища Azure
+title: Определение модели ключа шифрования, используемой для учетной записи хранения
+titleSuffix: Azure Storage
 description: Используйте портал Azure, PowerShell или Azure CLI, чтобы проверить управление ключами шифрования для учетной записи хранения. Ключи могут управляться корпорацией Майкрософт (по умолчанию) или клиентом. Ключи, управляемые клиентом, должны храниться в Azure Key Vault.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 11/26/2019
+ms.date: 01/03/2020
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 967e6f278008a59721d8d0c74e34c0252eeb1138
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.openlocfilehash: 3806fead9226978c277e87f3d97b14ee38d9552d
+ms.sourcegitcommit: 2c59a05cb3975bede8134bc23e27db5e1f4eaa45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
-ms.locfileid: "74666602"
+ms.lasthandoff: 01/05/2020
+ms.locfileid: "75665408"
 ---
 # <a name="determine-which-azure-storage-encryption-key-model-is-in-use-for-the-storage-account"></a>Определение модели ключа шифрования службы хранилища Azure, используемой для учетной записи хранения
 
@@ -54,7 +55,7 @@ $account.Encryption.KeySource
 
 Если свойство **KeySource** имеет значение `Microsoft.Storage`, учетная запись шифруется с помощью ключей, управляемых корпорацией Майкрософт. Если свойство **KeySource** имеет значение `Microsoft.Keyvault`, учетная запись шифруется с помощью ключей, управляемых клиентом.
 
-# <a name="azure-clitabcli"></a>[Azure CLI](#tab/cli)
+# <a name="azure-clitabcli"></a>[Azure CLI](#tab/cli)
 
 Чтобы проверить модель шифрования для учетной записи хранения с помощью Azure CLI, вызовите команду [AZ Storage Account показывать](/cli/azure/storage/account#az-storage-account-show) , а затем проверьте свойство **keySource** для учетной записи.
 

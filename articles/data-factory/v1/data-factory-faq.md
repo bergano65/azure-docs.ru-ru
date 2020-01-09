@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 7c0b5cbfe77a39cbc8ac660178a1c573d1fe8f7d
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 1b042c0279e458cf83bd5c81147f4b1f25d7687d
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70139818"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645146"
 ---
 # <a name="azure-data-factory---frequently-asked-questions"></a>Фабрика данных Azure — часто задаваемые вопросы
 > [!NOTE]
@@ -44,7 +44,7 @@ ms.locfileid: "70139818"
 Фабрика данных доступна в **западной части США** и **Северной Европе**. Службы вычислений и хранения, используемые фабриками данных, могут быть и в других регионах. Ознакомьтесь с разделом [Поддерживаемые регионы](data-factory-introduction.md#supported-regions).
 
 ### <a name="what-are-the-limits-on-number-of-data-factoriespipelinesactivitiesdatasets"></a>Каковы ограничения на число фабрик данных/конвейеров/действий/наборов данных?
-Ознакомьтесь с разделом **Ограничения фабрики данных Azure** в статье [Подписка Azure, границы, квоты и ограничения службы](../../azure-subscription-service-limits.md#data-factory-limits).
+Ознакомьтесь с разделом **Ограничения фабрики данных Azure** в статье [Подписка Azure, границы, квоты и ограничения службы](../../azure-resource-manager/management/azure-subscription-service-limits.md#data-factory-limits).
 
 ### <a name="what-is-the-authoringdeveloper-experience-with-azure-data-factory-service"></a>В чем заключается взаимодействие разработчика со службой фабрики данных Azure?
 Вы можете проектировать и создавать фабрики данных с помощью одного из следующих инструментов или пакетов SDK.
@@ -66,12 +66,12 @@ ms.locfileid: "70139818"
 ### <a name="what-are-the-compute-environments-supported-by-data-factory"></a>Какие вычислительные среды поддерживает фабрика данных?
 Следующая таблица содержит список вычислительных сред, поддерживаемых фабрикой данных, и доступных в них действий.
 
-| Вычислительная среда | activities |
+| Вычислительная среда | Действия |
 | --- | --- |
 | [Кластер HDInsight по запросу](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) или [собственный кластер HDInsight](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) |[DotNet](data-factory-use-custom-activities.md), [Hive](data-factory-hive-activity.md), [Pig](data-factory-pig-activity.md), [MapReduce](data-factory-map-reduce.md), [потоковая передача Hadoop](data-factory-hadoop-streaming-activity.md) |
 | [Пакетная служба Azure](data-factory-compute-linked-services.md#azure-batch-linked-service) |[DotNet](data-factory-use-custom-activities.md) |
-| [машинное обучение Azure](data-factory-compute-linked-services.md#azure-machine-learning-linked-service) |[Действия машинного обучения: выполнение пакета и обновление ресурса](data-factory-azure-ml-batch-execution-activity.md) |
-| [Аналитика озера данных Azure](data-factory-compute-linked-services.md#azure-data-lake-analytics-linked-service) |[Аналитика озера данных U-SQL](data-factory-usql-activity.md) |
+| [Машинное обучение Azure](data-factory-compute-linked-services.md#azure-machine-learning-linked-service) |[Действия машинного обучения: выполнение пакета и обновление ресурса](data-factory-azure-ml-batch-execution-activity.md) |
+| [Azure Data Lake Analytics](data-factory-compute-linked-services.md#azure-data-lake-analytics-linked-service) |[Аналитика озера данных U-SQL](data-factory-usql-activity.md) |
 | [Azure SQL](data-factory-compute-linked-services.md#azure-sql-linked-service), [хранилище данных Azure SQL](data-factory-compute-linked-services.md#azure-sql-data-warehouse-linked-service), [SQL Server](data-factory-compute-linked-services.md#sql-server-linked-service) |[Хранимая процедура](data-factory-stored-proc-activity.md) |
 
 ### <a name="how-does-azure-data-factory-compare-with-sql-server-integration-services-ssis"></a>Чем отличаются возможности фабрики данных Azure и SQL Server Integration Services (SSIS)? 

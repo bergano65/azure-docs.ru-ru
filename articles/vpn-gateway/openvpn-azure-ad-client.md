@@ -5,21 +5,21 @@ services: vpn-gateway
 author: anzaman
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 11/07/2019
+ms.date: 12/18/2019
 ms.author: alzam
-ms.openlocfilehash: 2836a89f491d731a11e6bc6fc56e0d049f01ac9a
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 59af4189b52c2ad7a1109ffb03accedbc69dc6c6
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74151401"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647923"
 ---
 # <a name="configure-a-vpn-client-for-p2s-openvpn-protocol-connections-azure-ad-authentication-preview"></a>Настройка VPN-клиента для подключений по протоколу P2S Опенвпн: проверка подлинности Azure AD (Предварительная версия)
 
 Эта статья поможет настроить VPN-клиент для подключения к виртуальной сети с помощью VPN типа "точка — сеть" и Azure Active Directory проверки подлинности. Прежде чем можно будет подключиться и пройти проверку подлинности с помощью Azure AD, необходимо сначала настроить клиент Azure AD. Дополнительные сведения см. в статье [Настройка клиента Azure AD](openvpn-azure-ad-tenant.md).
 
 > [!NOTE]
-> Аутентификация Azure AD поддерживается только для подключений по протоколу Опенвпн®.
+> Проверка подлинности Azure AD поддерживается только для подключений по протоколу OpenVPN®.
 >
 
 ## <a name="profile"></a>Работа с профилями клиентов
@@ -28,7 +28,7 @@ ms.locfileid: "74151401"
 
 ### <a name="to-download-the-azure-vpn-client"></a>Загрузка VPN-клиента Azure
 
-Используйте эту [ссылку](https://www.microsoft.com/p/azure-vpn-client-preview/9np355qt2sqb?rtc=1&activetab=pivot:overviewtab) , чтобы скачать VPN-клиент Azure (Предварительная версия).
+Используйте эту [ссылку](https://www.microsoft.com/p/azure-vpn-client-preview/9np355qt2sqb?rtc=1&activetab=pivot:overviewtab), чтобы скачать VPN-клиент Azure (Предварительная версия).
 
 ### <a name="cert"></a>Создание профиля клиента на основе сертификата
 
@@ -38,7 +38,11 @@ ms.locfileid: "74151401"
 
 ### <a name="radius"></a>Создание профиля клиента RADIUS
 
-  ![RADIUS](./media/openvpn-azure-ad-client/create/create-radius1.jpg)
+  ![radius](./media/openvpn-azure-ad-client/create/create-radius1.jpg)
+  
+> [!NOTE]
+> Секрет сервера можно экспортировать в профиле VPN-клиента P2S.  Инструкции по экспорту клиентского профиля можно найти [здесь](about-vpn-profile-download.md).
+>
 
 ### <a name="export"></a>Экспорт и распространение клиентского профиля
 
@@ -46,41 +50,41 @@ ms.locfileid: "74151401"
 
 1. Выделите профиль VPN-клиента, который требуется экспортировать, щелкните.. **.** , а затем выберите **Экспорт**.
 
-    ![программе](./media/openvpn-azure-ad-client/export/export1.jpg)
+    ![экспорт](./media/openvpn-azure-ad-client/export/export1.jpg)
 
 2. Выберите расположение, в которое нужно сохранить этот профиль, оставьте имя файла, а затем нажмите кнопку **сохранить** , чтобы сохранить XML-файл.
 
-    ![программе](./media/openvpn-azure-ad-client/export/export2.jpg)
+    ![экспорт](./media/openvpn-azure-ad-client/export/export2.jpg)
 
 ### <a name="import"></a>Импорт профиля клиента
 
-1. На странице выберите **Импорт**.
+1. На странице выберите **Import** (Импорт).
 
     ![импорт](./media/openvpn-azure-ad-client/import/import1.jpg)
 
-2. Перейдите к XML-файлу профиля и выберите его. Выбрав файл, нажмите кнопку **Открыть**.
+2. Перейдите к XML-файлу профиля и выберите его. Выбрав файл, выберите **Open** (Открыть).
 
     ![импорт](./media/openvpn-azure-ad-client/import/import2.jpg)
 
-3. Укажите имя профиля и нажмите кнопку **сохранить**.
+3. Укажите имя профиля и выберите **Save** (Сохранить).
 
     ![импорт](./media/openvpn-azure-ad-client/import/import3.jpg)
 
-4. Выберите **Подключиться** , чтобы подключиться к VPN.
+4. Выберите **Connect** (Подключиться), чтобы подключиться к VPN.
 
     ![импорт](./media/openvpn-azure-ad-client/import/import4.jpg)
 
-5. После подключения значок станет зеленым и будет иметь значение **подключено**.
+5. После подключения значок станет зеленым и выдаст **Connected** (Подключено).
 
     ![импорт](./media/openvpn-azure-ad-client/import/import5.jpg)
 
-### <a name="delete"></a>Удаление клиентского профиля
+### <a name="delete"></a>Удаление профиля клиента
 
-1. Щелкните многоточие рядом с удаляемым клиентским профилем. Затем выберите **Удалить**.
+1. Щелкните многоточие рядом с удаляемым клиентским профилем. Затем щелкните **Remove** (Удалить).
 
     ![удалить](./media/openvpn-azure-ad-client/delete/delete1.jpg)
 
-2. Выберите **Удалить** для удаления.
+2. Выберите **Remove** (Удалить), чтобы выполнить удаление.
 
     ![удалить](./media/openvpn-azure-ad-client/delete/delete2.jpg)
 
@@ -88,23 +92,23 @@ ms.locfileid: "74151401"
 
 1. На странице выберите **+** , а затем **+ Добавить**.
 
-    ![connection;](./media/openvpn-azure-ad-client/create/create1.jpg)
+    ![соединение](./media/openvpn-azure-ad-client/create/create1.jpg)
 
 2. Заполните сведения о подключении. Если вы не уверены в этих значениях, обратитесь к администратору. После заполнения значений выберите **сохранить**.
 
-    ![connection;](./media/openvpn-azure-ad-client/create/create2.jpg)
+    ![соединение](./media/openvpn-azure-ad-client/create/create2.jpg)
 
-3. Выберите **Подключиться** , чтобы подключиться к VPN.
+3. Выберите **Connect** (Подключиться), чтобы подключиться к VPN.
 
-    ![connection;](./media/openvpn-azure-ad-client/create/create3.jpg)
+    ![соединение](./media/openvpn-azure-ad-client/create/create3.jpg)
 
 4. Выберите правильные учетные данные, а затем нажмите кнопку **продолжить**.
 
-    ![connection;](./media/openvpn-azure-ad-client/create/create4.jpg)
+    ![соединение](./media/openvpn-azure-ad-client/create/create4.jpg)
 
 5. После успешного подключения значок будет зеленым и, например, **подключенным**.
 
-    ![connection;](./media/openvpn-azure-ad-client/create/create5.jpg)
+    ![соединение](./media/openvpn-azure-ad-client/create/create5.jpg)
 
 ### <a name="autoconnect"></a>Автоматическое подключение
 
@@ -126,24 +130,44 @@ ms.locfileid: "74151401"
 
     ![авто](./media/openvpn-azure-ad-client/auto/auto4.jpg)
 
-## <a name="diagnose"></a>Диагностика проблем с подключением
+## <a name="diagnose"></a>Diagnose connection issues (Диагностика проблем с подключением)
 
-1. Для диагностики проблем с подключением можно использовать средство **диагностики** . Щелкните **...** рядом с VPN-подключением, которое нужно диагностировать, чтобы открыть меню. Затем выберите **Диагностика**.
+1. Для диагностики проблем с подключением можно использовать средство **Diagnose** (Диагностика). Щелкните **...** рядом с VPN-подключением, которое нужно диагностировать, чтобы открыть меню. Затем выберите **Diagnose** (Диагностика).
 
-    ![обнаруживать](./media/openvpn-azure-ad-client/diagnose/diagnose1.jpg)
+    ![диагностика](./media/openvpn-azure-ad-client/diagnose/diagnose1.jpg)
 
-2. На странице **Свойства соединения** выберите **запустить диагностику**.
+2. На странице **Connection Properties** (Свойства подключения) выберите **Run Diagnosis** (Выполнить диагностику).
 
-    ![обнаруживать](./media/openvpn-azure-ad-client/diagnose/diagnose2.jpg)
+    ![диагностика](./media/openvpn-azure-ad-client/diagnose/diagnose2.jpg)
 
 3. Войдите с помощью своих учетных данных.
 
-    ![обнаруживать](./media/openvpn-azure-ad-client/diagnose/diagnose3.jpg)
+    ![диагностика](./media/openvpn-azure-ad-client/diagnose/diagnose3.jpg)
 
 4. Просмотр результатов диагностики.
 
-    ![обнаруживать](./media/openvpn-azure-ad-client/diagnose/diagnose4.jpg)
+    ![диагностика](./media/openvpn-azure-ad-client/diagnose/diagnose4.jpg)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="faq"></a>Часто задаваемые вопросы
+
+### <a name="how-do-i-add-dns-suffixes-to-the-vpn-client"></a>Разделы справки добавить DNS-суффиксы к VPN-клиенту?
+
+Вы можете изменить скачанный XML-файл профиля и добавить **\<днссуффиксес >\<днссуфикс > \</днссуфикс >\</днссуффиксес >** Tags.
+
+```
+<azvpnprofile>
+<clientconfig>
+
+    <dnssuffixes>
+          <dnssuffix>.mycorp.com</dnssuffix>
+          <dnssuffix>.xyz.com</dnssuffix>
+          <dnssuffix>.etc.net</dnssuffix>
+    </dnssuffixes>
+    
+</clientconfig>
+</azvpnprofile>
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Создание клиента Azure Active Directory для P2S открытых VPN-подключений, использующих проверку подлинности Azure AD](openvpn-azure-ad-tenant.md).

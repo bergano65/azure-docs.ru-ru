@@ -1,25 +1,16 @@
 ---
-title: Описание вариантов поддержки Azure Service Fabric | Документация Майкрософт
+title: Дополнительные сведения о вариантах поддержки Service Fabric Azure
 description: Поддерживаемые версии кластера Service Fabric и ссылки для отправки запросов в службу поддержки.
-services: service-fabric
-documentationcenter: .net
 author: pkcsf
-manager: jpconnock
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: troubleshooting
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 8/24/2018
 ms.author: pkc
-ms.openlocfilehash: ac36b1a538d5899613e19f157695d0bc333d9ece
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 7494f0072f27f2c9b00db7070f19dfc05627eacf
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68679063"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75465615"
 ---
 # <a name="azure-service-fabric-support-options"></a>Варианты поддержки Azure Service Fabric
 
@@ -71,7 +62,7 @@ ms.locfileid: "68679063"
 Время от времени мы выпускаем версии с важными функциями, доступными в виде предварительных версий, отзывы по которым мы хотим получить. Эти предварительные версии следует использовать только для целей тестирования. На производственном кластере всегда должна быть запущена поддерживаемая стабильная версия Service Fabric. Предварительная версия всегда начинается с номера основной и вспомогательной версии, равного 255. Например, если отображается версия Service Fabric 255.255.5703.949, она является предварительной и ее следует использовать в тестовых кластерах. О выходе этих предварительных выпусков также объявляется в [блоге группы Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric) и приводятся сведения о функциях, включенных в их состав.
 Возможность платной технической поддержки для этих предварительных выпусков отсутствует. Чтобы задать вопросы или отправить отзыв, воспользуйтесь одной из возможностей в разделе [Сообщение о проблемах Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-support#report-azure-service-fabric-issues).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Поддерживаемые версии Service Fabric](service-fabric-versions.md)
 

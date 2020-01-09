@@ -1,5 +1,5 @@
 ---
-title: Монитор производительности сети в Azure Log Analytics | Документация Майкрософт
+title: Монитор производительности сети подключения службы решений Azure Log Analytics
 description: С помощью монитора подключений службы в Мониторе производительности сети вы можете отслеживать сетевые подключения к любой конечной точке с открытым TCP-портом.
 ms.service: azure-monitor
 ms.subservice: logs
@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: abshamsft
 ms.author: absha
 ms.date: 02/20/2018
-ms.openlocfilehash: dd02dad6d0f5b42181ad0bb27201384a6336ed6e
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 11975a86b5d9135b42dd51bdd787c2f76cabe259
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72898820"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551511"
 ---
 # <a name="service-connectivity-monitor"></a>Монитор подключений службы
 

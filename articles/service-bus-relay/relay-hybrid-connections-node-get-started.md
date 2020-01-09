@@ -1,5 +1,5 @@
 ---
-title: Начало работы с функциями WebSocket гибридных подключений к Azure Relay в Node | Документация Майкрософт
+title: Azure Relay гибридные подключения-WebSockets в узле
 description: Написание консольного приложения Node.js для функций Websocket гибридных Azure Relay Azure.
 services: service-bus-relay
 documentationcenter: node
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: node
 ms.workload: na
 ms.date: 11/01/2018
 ms.author: spelluru
-ms.openlocfilehash: b4864673e25ba4f5a1f2e8629e0889863051bc07
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 818db4db082a441877b573fd52361e63becce374
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60553921"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352678"
 ---
 # <a name="get-started-with-relay-hybrid-connections-websockets-in-nodejs"></a>Начало работы с гибридными подключениями Azure Relay с использованием WebSocket и Node.js
 

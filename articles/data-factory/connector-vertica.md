@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: bc676d50f84f18e0275a3ed52f14883dd25cf931
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 68e6ba0462563e4da295d73c821c1c4554568aef
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74930904"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75440401"
 ---
 # <a name="copy-data-from-vertica-using-azure-data-factory"></a>Копирование данных из Vertica с помощью Фабрики данных Azure 
 
@@ -47,13 +47,13 @@ ms.locfileid: "74930904"
 
 Для связанной службы Vertica поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **Vertica** | ДА |
-| connectionString | Строка для подключения к Vertica через интерфейс ODBC.<br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `pwd` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
+| type | Для свойства type необходимо задать значение **Vertica** | Да |
+| connectionString | Строка для подключения к Vertica через интерфейс ODBC.<br/>Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `pwd` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
-**Пример.**
+**Пример**.
 
 ```json
 {
@@ -61,10 +61,7 @@ ms.locfileid: "74930904"
     "properties": {
         "type": "Vertica",
         "typeProperties": {
-            "connectionString": {
-                 "type": "SecureString",
-                 "value": "Server=<server>;Port=<port>;Database=<database>;UID=<user name>;PWD=<password>"
-            }
+            "connectionString": "Server=<server>;Port=<port>;Database=<database>;UID=<user name>;PWD=<password>"
         },
         "connectVia": {
             "referenceName": "<name of Integration Runtime>",
@@ -82,10 +79,7 @@ ms.locfileid: "74930904"
     "properties": {
         "type": "Vertica",
         "typeProperties": {
-            "connectionString": {
-                 "type": "SecureString",
-                 "value": "Server=<server>;Port=<port>;Database=<database>;UID=<user name>;"
-            },
+            "connectionString": "Server=<server>;Port=<port>;Database=<database>;UID=<user name>;",
             "pwd": { 
                 "type": "AzureKeyVaultSecret", 
                 "store": { 
@@ -109,11 +103,11 @@ ms.locfileid: "74930904"
 
 Чтобы скопировать данные из Vertica, установите свойство type набора данных **VerticaTable**. Поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство Type набора данных должно иметь значение **вертикатабле** . | ДА |
-| schema | Имя схемы. |Нет (если свойство query указано в источнике действия)  |
-| таблица | Имя таблицы. |Нет (если свойство query указано в источнике действия)  |
+| type | Свойство Type набора данных должно иметь значение **вертикатабле** . | Да |
+| схема | Имя схемы. |Нет (если свойство query указано в источнике действия)  |
+| table | Имя таблицы. |Нет (если свойство query указано в источнике действия)  |
 | tableName | Имя таблицы со схемой. Это свойство поддерживается для обеспечения обратной совместимости. Используйте `schema` и `table` для новой рабочей нагрузки. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -141,12 +135,12 @@ ms.locfileid: "74930904"
 
 Чтобы копировать данные из Vertica, установите тип источника **VerticaSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **VerticaSource**. | ДА |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
+| type | Свойство type источника действия копирования должно иметь значение **VerticaSource**. | Да |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например: `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[

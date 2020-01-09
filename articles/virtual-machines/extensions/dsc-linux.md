@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: robreed
-ms.openlocfilehash: b631a370c64522c201f1208819b5a76895d83b09
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: d19b3d59c48cfc8fc91d4678c2f979b110575b1a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74457519"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75359159"
 ---
 # <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Расширение DSC для Linux (Microsoft. OSTCExtensions. Дскфорлинукс)
 
@@ -38,13 +38,13 @@ ms.locfileid: "74457519"
 
  
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
-### <a name="operating-system"></a>операционная система
+### <a name="operating-system"></a>Операционная система
 
 Расширение DSC для Linux поддерживает все [дистрибутивы Linux, рекомендованные для Azure](/azure/virtual-machines/linux/endorsed-distros), за исключением следующих.
 
-| Дистрибутив | Версия |
+| Дистрибуция | Версия |
 |---|---|
 | Debian | Все версии |
 | Ubuntu| 18,04 |
@@ -281,7 +281,7 @@ $publicConfig = '{
 
 Пример шаблона Resource Manager — [201-dsc-linux-azure-storage-on-ubuntu](https://github.com/Azure/azure-quickstart-templates/tree/master/201-dsc-linux-azure-storage-on-ubuntu) и [201-dsc-linux-public-storage-on-ubuntu](https://github.com/Azure/azure-quickstart-templates/tree/master/201-dsc-linux-public-storage-on-ubuntu).
 
-Дополнительные сведения о шаблоне Azure Resource Manager см. в разделе [authoring Azure Resource Manager Templates](../../azure-resource-manager/resource-group-authoring-templates.md).
+Дополнительные сведения о шаблоне Azure Resource Manager см. в разделе [authoring Azure Resource Manager Templates](../../azure-resource-manager/templates/template-syntax.md).
 
 
 ## <a name="azure-cli-deployment"></a>Развертывание с помощью Azure CLI
@@ -430,5 +430,5 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 
 Если вам нужна дополнительная помощь в любой момент в этой статье, обратитесь к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зафайлировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/)и выберите **получить поддержку**. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о расширениях виртуальных машин см. в обзоре [расширений и компонентов виртуальной машины для Linux](features-linux.md).

@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: 327891f16e3a41b49d43dabed42e8ab55a85fc92
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 682d3f569d2bc3f2ab6793ce99c20b81a76fbbc2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74929392"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75444288"
 ---
 # <a name="copy-data-from-greenplum-using-azure-data-factory"></a>Копирование данных из Greenplum с помощью Фабрики данных Azure
 
@@ -47,13 +47,13 @@ ms.locfileid: "74929392"
 
 Для связанной службы Greenplum поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **Greenplum**. | ДА |
-| connectionString | Строка подключения к Greenplum через интерфейс ODBC. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `pwd` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
+| type | Для свойства type необходимо задать значение **Greenplum**. | Да |
+| connectionString | Строка подключения к Greenplum через интерфейс ODBC. <br/>Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `pwd` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
-**Пример.**
+**Пример**.
 
 ```json
 {
@@ -61,10 +61,7 @@ ms.locfileid: "74929392"
     "properties": {
         "type": "Greenplum",
         "typeProperties": {
-            "connectionString": {
-                "type": "SecureString",
-                "value": "HOST=<server>;PORT=<port>;DB=<database>;UID=<user name>;PWD=<password>"
-            }
+            "connectionString": "HOST=<server>;PORT=<port>;DB=<database>;UID=<user name>;PWD=<password>"
         },
         "connectVia": {
             "referenceName": "<name of Integration Runtime>",
@@ -82,10 +79,7 @@ ms.locfileid: "74929392"
     "properties": {
         "type": "Greenplum",
         "typeProperties": {
-            "connectionString": {
-                 "type": "SecureString",
-                 "value": "HOST=<server>;PORT=<port>;DB=<database>;UID=<user name>;"
-            },
+            "connectionString": "HOST=<server>;PORT=<port>;DB=<database>;UID=<user name>;",
             "pwd": { 
                 "type": "AzureKeyVaultSecret", 
                 "store": { 
@@ -109,11 +103,11 @@ ms.locfileid: "74929392"
 
 Чтобы скопировать данные из Greenplum, задайте для свойства type набора данных значение **GreenplumTable**. Поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство Type набора данных должно иметь значение **гринплумтабле** . | ДА |
-| schema | Имя схемы. |Нет (если свойство query указано в источнике действия)  |
-| таблица | Имя таблицы. |Нет (если свойство query указано в источнике действия)  |
+| type | Свойство Type набора данных должно иметь значение **гринплумтабле** . | Да |
+| схема | Имя схемы. |Нет (если свойство query указано в источнике действия)  |
+| table | Имя таблицы. |Нет (если свойство query указано в источнике действия)  |
 | tableName | Имя таблицы со схемой. Это свойство поддерживается для обеспечения обратной совместимости. Используйте `schema` и `table` для новой рабочей нагрузки. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -141,12 +135,12 @@ ms.locfileid: "74929392"
 
 Чтобы копировать данные из Greenplum, задайте для типа источника в действии копирования значение **GreenplumSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **GreenplumSource**. | ДА |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
+| type | Свойство type источника действия копирования должно иметь значение **GreenplumSource**. | Да |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например: `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[

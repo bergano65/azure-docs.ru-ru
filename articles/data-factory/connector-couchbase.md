@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: 19496d88c1e77a6f6b18ae6f73c289f8617a3c29
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: ac2426bbfa074e58aa5c4a213f3ecbee20052358
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74929553"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75444366"
 ---
 # <a name="copy-data-from-couchbase-using-azure-data-factory-preview"></a>Копирование данных из Couchbase с помощью фабрики данных Azure (предварительная версия)
 
@@ -50,13 +50,13 @@ ms.locfileid: "74929553"
 
 Для связанной службы Couchbase поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **Couchbase**. | ДА |
-| connectionString | Строка подключения к Couchbase через интерфейс ODBC. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить строку учетных данных в Azure Key Vault и извлечь конфигурацию `credString` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
+| type | Для свойства type необходимо задать значение **Couchbase**. | Да |
+| connectionString | Строка подключения к Couchbase через интерфейс ODBC. <br/>Вы можете также поместить строку учетных данных в Azure Key Vault и извлечь конфигурацию `credString` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
-**Пример.**
+**Пример**.
 
 ```json
 {
@@ -64,10 +64,7 @@ ms.locfileid: "74929553"
     "properties": {
         "type": "Couchbase",
         "typeProperties": {
-            "connectionString": {
-                "type": "SecureString",
-                "value": "Server=<server>; Port=<port>;AuthMech=1;CredString=[{\"user\": \"JSmith\", \"pass\":\"access123\"}, {\"user\": \"Admin\", \"pass\":\"simba123\"}];"
-            }
+            "connectionString": "Server=<server>; Port=<port>;AuthMech=1;CredString=[{\"user\": \"JSmith\", \"pass\":\"access123\"}, {\"user\": \"Admin\", \"pass\":\"simba123\"}];"
         },
         "connectVia": {
             "referenceName": "<name of Integration Runtime>",
@@ -85,10 +82,7 @@ ms.locfileid: "74929553"
     "properties": {
         "type": "Couchbase",
         "typeProperties": {
-            "connectionString": {
-                 "type": "SecureString",
-                 "value": "Server=<server>; Port=<port>;AuthMech=1;"
-            },
+            "connectionString": "Server=<server>; Port=<port>;AuthMech=1;",
             "credString": { 
                 "type": "AzureKeyVaultSecret", 
                 "store": { 
@@ -112,9 +106,9 @@ ms.locfileid: "74929553"
 
 Чтобы скопировать данные из Couchbase, задайте для свойства type набора данных значение **CouchbaseTable**. Поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство Type набора данных должно иметь значение **каучбасетабле** . | ДА |
+| type | Свойство Type набора данных должно иметь значение **каучбасетабле** . | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 
@@ -143,12 +137,12 @@ ms.locfileid: "74929553"
 
 Чтобы скопировать данные из Couchbase, задайте для типа источника в действии копирования значение **CouchbaseSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **CouchbaseSource**. | ДА |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
+| type | Свойство type источника действия копирования должно иметь значение **CouchbaseSource**. | Да |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например: `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[

@@ -1,24 +1,15 @@
 ---
-title: Настройка сертификатов для приложений Azure Service Fabric в Linux | Документация Майкрософт
+title: Настройка сертификатов для приложений в Linux
 description: Настройка сертификатов для приложения с помощью среды выполнения Service Fabric в кластере Linux
-services: service-fabric
-documentationcenter: NA
-author: JimacoMS2
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 09/06/2019
 ms.author: pepogors
-ms.openlocfilehash: 8ae25a02e6170972972c5b2b7e159ef39d1a3673
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: 802e76614f51e1f6479a311e61a49d83b8125546
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72167335"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614593"
 ---
 # <a name="certificates-and-security-on-linux-clusters"></a>Сертификаты и безопасность в кластерах Linux
 
@@ -26,7 +17,7 @@ ms.locfileid: "72167335"
 
 ## <a name="location-and-format-of-x509-certificates-on-linux-nodes"></a>Расположение и формат сертификатов X.509 в узлах Linux
 
-Service Fabric обычно ожидает, что сертификаты X.509 будут присутствовать в каталоге */var/lib/sfcerts* в узлах кластера Linux. Это относится к сертификатам кластера, сертификатам клиента и т. д. В некоторых случаях для сертификатов можно указать другое расположение, отличное от папки *var/lib/sfcerts*. Например, при использовании служб Reliable Services, созданных на основе пакета SDK Service Fabric для Java, можно указать для некоторых сертификатов конкретного приложения другое расположение с помощью пакета конфигурации (Settings.xml). Дополнительные сведения см. в разделе [Сертификаты, на которые имеются ссылки в пакете конфигурации (Settings.xml)](#certificates-referenced-in-the-configuration-package-settingsxml).
+Service Fabric обычно ожидает, что сертификаты X.509 будут присутствовать в каталоге */var/lib/sfcerts* в узлах кластера Linux. Это относится к сертификатам кластера, сертификатам клиентов и т. д. В некоторых случаях для сертификатов можно указать расположение, отличное от папки *var/lib/сфцертс* . Например, при использовании служб Reliable Services, созданных на основе пакета SDK Service Fabric для Java, можно указать для некоторых сертификатов конкретного приложения другое расположение с помощью пакета конфигурации (Settings.xml). Дополнительные сведения см. в разделе [Сертификаты, на которые имеются ссылки в пакете конфигурации (Settings.xml)](#certificates-referenced-in-the-configuration-package-settingsxml).
 
 Для кластеров Linux платформа Service Fabric ожидает, что сертификаты должны быть либо PEM-файлом, содержащим сертификат и закрытый ключ, либо CRT-файлом, который содержит сертификат, и KEY-файлом, который содержит закрытый ключ. Все файлы должны быть в формате PEM. 
 

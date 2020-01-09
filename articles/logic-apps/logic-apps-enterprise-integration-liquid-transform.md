@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 08/16/2018
-ms.openlocfilehash: 962a3cf214d202fa9f7640d74036c6700196a5ee
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: fb9f9cfdba07ebe0bc5800def6d93950869e9727
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74792510"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75456649"
 ---
 # <a name="perform-advanced-json-transformations-with-liquid-templates-in-azure-logic-apps"></a>Выполнение сложных преобразований JSON с помощью шаблонов Liquid в Azure Logic Apps
 
@@ -23,20 +23,20 @@ ms.locfileid: "74792510"
 
 ## <a name="prerequisites"></a>Технические условия
 
-* Подписка Azure. Если у вас нет подписки, вы можете [создать бесплатную пробную версию учетной записи Azure](https://azure.microsoft.com/free/). Или [зарегистрироваться для получения подписки с оплатой по мере использования](https://azure.microsoft.com/pricing/purchase-options/).
+* Подписка Azure. Если у вас нет подписки, вы можете [создать бесплатную пробную версию учетной записи Azure](https://azure.microsoft.com/free/). Или [зарегистрируйтесь для получения подписки с оплатой по мере использования](https://azure.microsoft.com/pricing/purchase-options/).
 
 * Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
 * Простая [учетная запись интеграции](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md)
 
-* Базовые знания о [языке шаблонов Liquid.](https://shopify.github.io/liquid/)
+* Основные сведения о [языке шаблона жидкости](https://shopify.github.io/liquid/)
 
 ## <a name="create-liquid-template-or-map-for-your-integration-account"></a>Создание шаблона или сопоставления Liquid в учетной записи интеграции
 
 1. Для данного примера создайте образец шаблона Liquid, описанный на этом шаге. В шаблоне жидкости можно использовать [фильтры жидкостей](https://shopify.github.io/liquid/basics/introduction/#filters), использующие [DotLiquid](https://dotliquidmarkup.org/) и C# соглашения об именовании. 
 
    > [!NOTE]
-   > Убедитесь, что имена фильтров используют *регистр предложений* в шаблоне. В противном случае фильтры не будут работать.
+   > Убедитесь, что имена фильтров используют *регистр предложений* в шаблоне. В противном случае фильтры не будут работать. Кроме того, карты имеют [ограничения на размер файлов](../logic-apps/logic-apps-limits-and-config.md#artifact-capacity-limits).
 
    ```json
    {%- assign deviceList = content.devices | Split: ', ' -%}
@@ -57,7 +57,7 @@ ms.locfileid: "74792510"
    }
    ```
 
-2. Войдите на [портале Azure](https://portal.azure.com). В главном меню Azure выберите **All resources** (Все ресурсы). Найдите с помощью поля поиска и выберите нужную учетную запись интеграции.
+2. Войдите на [портал Azure](https://portal.azure.com). В главном меню Azure выберите **All resources** (Все ресурсы). Найдите с помощью поля поиска и выберите нужную учетную запись интеграции.
 
    ![Выбор учетной записи интеграции](./media/logic-apps-enterprise-integration-liquid-transform/select-integration-account.png)
 
@@ -67,11 +67,11 @@ ms.locfileid: "74792510"
 
 4. Выберите **Добавить** и укажите следующие сведения для сопоставления:
 
-   | Свойство | Value | Описание | 
+   | Свойство | Значение | Description | 
    |----------|-------|-------------|
-   | **Имя** | JsonToJsonTemplate | Это имя сопоставления, в нашем примере это "JsontoJsonTemplate" | 
+   | **Название** | JsonToJsonTemplate | Это имя сопоставления, в нашем примере это "JsontoJsonTemplate" | 
    | **Тип сопоставления** | **liquid** | Обозначает тип сопоставления. Для преобразования JSON в JSON следует выбрать **Liquid**. | 
-   | **Map** | SimpleJsonToJsonTemplate.liquid | Это существующий файл шаблона или сопоставления Liquid, который будет использован для преобразования. В нашем примере это SimpleJsonToJsonTemplate.liquid. Чтобы найти этот файл, используйте средство выбора файлов. |
+   | **Схема** | SimpleJsonToJsonTemplate.liquid | Это существующий файл шаблона или сопоставления Liquid, который будет использован для преобразования. В нашем примере это SimpleJsonToJsonTemplate.liquid. Чтобы найти этот файл, используйте средство выбора файлов. Ограничения размера карт см. в разделе [ограничения и конфигурация](../logic-apps/logic-apps-limits-and-config.md#artifact-capacity-limits). |
    ||| 
 
    ![Добавление шаблона Liquid](./media/logic-apps-enterprise-integration-liquid-transform/add-liquid-template.png)

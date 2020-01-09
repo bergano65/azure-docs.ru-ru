@@ -4,15 +4,15 @@ description: Обновление открытой конфигурации ди
 ms.service: azure-monitor
 ms.subservice: diagnostic-extension
 ms.topic: conceptual
-author: rboucher
-ms.author: robb
+author: bwren
+ms.author: bwren
 ms.date: 03/19/2016
-ms.openlocfilehash: 6165ff13f489f9f23b9ece677b3643641150130d
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: b89e7d93113990e032f526d1f32e4e6acddffa75
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74285993"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75450585"
 ---
 # <a name="send-cloud-service-virtual-machine-or-service-fabric-diagnostic-data-to-application-insights"></a>Отправка в Application Insights диагностических данных облачной службы, виртуальной машины или Service Fabric
 Облачные службы, виртуальные машины, масштабируемые наборы виртуальных машин и Service Fabric используют расширение системы диагностики Azure для сбора данных.  Система диагностики Azure отправляет данные в таблицы службы хранилища Azure.  Тем не менее эти данные можно также полностью или частично передавать в другие расположения, используя расширение системы диагностики Azure 1.5 или более поздней версии.
@@ -57,7 +57,7 @@ ms.locfileid: "74285993"
     ]
 }
 ```
-- Атрибут **Sink** *name* — это строковое значение, однозначно определяющее приемник.
+- Атрибут *имени* **приемника** — это строковое значение, уникально идентифицирующее приемник.
 
 - Элемент **ApplicationInsights** указывает ключ инструментирования ресурса Application Insights, в который отправляется Диагностика Azure.
     - Если ресурс Application Insights еще не существует, см. статью [Создание нового ресурса Application Insights](../../azure-monitor/app/create-new-resource.md ), где содержатся дополнительные сведения о создании ресурса и получении ключа инструментирования.
@@ -66,11 +66,11 @@ ms.locfileid: "74285993"
 - Элемент **Channels** содержит один или несколько элементов **Channel**.
     - Атрибут *name* однозначно ссылается на этот канал.
     - Атрибут *Loglevel* позволяет указать уровень ведения журнала для канала. Доступны следующие уровни ведения журнала (от наиболее к наименее информативным):
-        - Подробная информация
+        - Подробный
         - Информация
         - Предупреждение
         - Ошибка
-        - критические ошибки.
+        - Критический
 
 Канал действует как фильтр и позволяет выбрать конкретные уровни ведения журнала для отправки в приемник. Например, можно собирать подробные журналы и отправлять их в хранилище, а в приемник отправлять только журнал ошибок.
 
@@ -213,8 +213,8 @@ ms.locfileid: "74285993"
 - **Уровень ведения журнала для канала не может превышать уровень ведения журнала, данные которого собираются системой диагностики Azure.** Например, нельзя собирать данные об ошибках в журнале приложений в элементе Logs и пытаться отправлять подробные журналы в приемник Application Insight. Атрибут *ScheduledTransferLogLevelFilter* должен всегда собирать равное или большее число журналов, чем число журналов, которые вы пытаетесь отправить в приемник.
 - **В Application Insights нельзя отправлять собранные расширением системы диагностики Azure данные больших двоичных объектов.** Например, данные, указанные в узле *Directories*. Что касается аварийных дампов, фактический аварийный дамп отправляется в хранилище BLOB-объектов, а в Application Insights отправляется только уведомление о том, что аварийный дамп был создан.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте, как [просматривать данные диагностики Azure](https://docs.microsoft.com/azure/application-insights/app-insights-cloudservices) в Application Insights.
-* Используйте [PowerShell](../../cloud-services/cloud-services-diagnostics-powershell.md) , чтобы включить расширение диагностики Azure для вашего приложения.
+* Используйте [PowerShell](../../cloud-services/cloud-services-diagnostics-powershell.md), чтобы включить расширение диагностики Azure для вашего приложения.
 * Используйте [Visual Studio](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines) , чтобы включить расширение диагностики Azure для вашего приложения.
 

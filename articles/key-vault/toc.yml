@@ -68,7 +68,7 @@
   items:
     - name: Основные понятия
       href: basic-concepts.md
-    - name: Безопасность
+    - name: безопасность
       items:
         - name: Общие сведения о безопасности
           href: overview-security.md
@@ -100,13 +100,13 @@
           href: create-certificate.md
         - name: Мониторинг и администрирование процесса создания сертификатов
           href: create-certificate-scenarios.md
-- name: Руководства
+- name: Практические руководства
   items:
-    - name: Безопасность
+    - name: безопасность
       items:
         - name: Рекомендации
           href: security-recommendations.md
-    - name: Аутентификация
+    - name: Authenticate
       items:
         - name: Использование управляемого удостоверения Службы приложений
           href: managed-identity.md
@@ -138,8 +138,10 @@
       items:
         - name: Использование начального приложения Spring Boot
           href: /java/azure/spring-framework/configure-spring-boot-starter-java-app-with-azure-key-vault
-- name: Справочные материалы
+- name: Справочник
   items:
+    - name: Коды ошибок REST Key Vault
+      href: rest-error-codes.md
     - name: Azure PowerShell
       href: '/powershell/module/az.keyvault/?view=azps-1.2.0#key_vault'
     - name: Azure CLI

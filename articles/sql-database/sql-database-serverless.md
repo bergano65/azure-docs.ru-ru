@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: sstein, carlrab
 ms.date: 12/03/2019
-ms.openlocfilehash: e90bff7548be5f469ebbcdc21dd9b93dc887a30e
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 2b11bbc22714ab1905421812e3cb24ee660ee667
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74931954"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75372336"
 ---
 # <a name="azure-sql-database-serverless"></a>Бессерверные вычисления в Базе данных SQL Azure
 
@@ -67,9 +67,9 @@ ms.locfileid: "74931954"
 |:---|:---|:---|
 |**Шаблон использования базы данных**| Нерегулярное, непредсказуемое использование с более низким средним использованием вычислений с течением времени. |  Более обычные шаблоны использования с более высоким средним использованием вычислений за определенный период времени или несколько баз данных, использующих эластичные пулы.|
 | **Затраты на управление производительностью** |Низкие|Высокие|
-|**Масштабирование вычислительных ресурсов**|Автоматический|Manual|
+|**Масштабирование вычислительных ресурсов**|Автоматически|Manual|
 |**Скорость включения вычислительных ресурсов**|Низкая после периодов бездействия|Немедленно|
-|**Тарификация**|Посекундная|В час|
+|**Тарификация**|посекундно.|В час|
 
 ## <a name="purchasing-model-and-service-tier"></a>Модель приобретения и уровень служб
 
@@ -124,7 +124,7 @@ ms.locfileid: "74931954"
 
 Возобновление активируется, если в любое время выполняется одно из следующих условий:
 
-|Компонент|Триггер автоматического возобновления|
+|Функция|Триггер автоматического возобновления|
 |---|---|
 |Проверка подлинности и авторизация|Вход|
 |Обнаружение угроз|Включение и отключение параметров обнаружения угроз на уровне базы данных или сервера.<br>Изменение параметров обнаружения угроз на уровне базы данных или сервера.|
@@ -155,7 +155,7 @@ ms.locfileid: "74931954"
 
 1. Определение описательного имени службы. Цель службы предписывает уровень служб, поколение оборудования и максимальное виртуальных ядер. В таблице ниже приведены возможные варианты.
 
-   |Описательное имя службы|Уровень служб|Поколение оборудования|Максимальное количество виртуальных ядер|
+   |Описательное имя службы|Уровень служб|Поколение оборудования|Максимальное число виртуальных ядер|
    |---|---|---|---|
    |GP_S_Gen5_1|Универсальные|5-е поколение|1|
    |GP_S_Gen5_2|Универсальные|5-е поколение|2|
@@ -177,30 +177,27 @@ ms.locfileid: "74931954"
 
 ### <a name="create-new-database-in-serverless-compute-tier"></a>Создание новой базы данных на уровне бессерверных вычислений 
 
+В следующих примерах создается новая база данных на уровне бессерверных вычислений. В примерах явно указывается минимальное виртуальных ядер, Max виртуальных ядер и задержка приостановки.
+
 #### <a name="use-azure-portal"></a>Использование портала Azure
 
 См. раздел [Краткое руководство. Создание отдельной базы данных в базе данных SQL Azure с помощью портал Azure](sql-database-single-database-get-started.md).
 
+
 #### <a name="use-powershell"></a>Использование PowerShell
-
-В следующем примере создается новая база данных на уровне бессерверных вычислений.  В этом примере явно указываются такие параметры, как минимальное и максимальное количество виртуальных ядер и задержка автоматический приостановки.
-
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```powershell
 New-AzSqlDatabase -ResourceGroupName $resourceGroupName -ServerName $serverName -DatabaseName $databaseName `
   -ComputeModel Serverless -Edition GeneralPurpose -ComputeGeneration Gen5 `
   -MinVcore 0.5 -MaxVcore 2 -AutoPauseDelayInMinutes 720
 ```
+#### <a name="use-azure-cli"></a>Использование Azure CLI
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
-
-```powershell
+```azurecli
 az sql db create -g $resourceGroupName -s $serverName -n $databaseName `
   -e GeneralPurpose -f Gen5 -min-capacity 0.5 -c 2 --compute-model Serverless --auto-pause-delay 720
 ```
 
-* * *
 
 #### <a name="use-transact-sql-t-sql"></a>Использовать Transact-SQL (T-SQL)
 
@@ -215,11 +212,10 @@ CREATE DATABASE testdb
 
 ### <a name="move-database-from-provisioned-compute-tier-into-serverless-compute-tier"></a>Перемещение базы данных из подготовленного уровня вычислений в бессерверный уровень вычислений
 
+В следующих примерах база данных перемещается из подготовленного уровня вычислений в бессерверный уровень вычислений. В примерах явно указывается минимальное виртуальных ядер, Max виртуальных ядер и задержка приостановки.
+
 #### <a name="use-powershell"></a>Использование PowerShell
 
-В следующем примере база данных перемещается из подготовленного уровня вычислений в бессерверный уровень вычислений. В этом примере явно указываются такие параметры, как минимальное и максимальное количество виртуальных ядер и задержка автоматический приостановки.
-
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```powershell
 Set-AzSqlDatabase -ResourceGroupName $resourceGroupName -ServerName $serverName -DatabaseName $databaseName `
@@ -227,14 +223,13 @@ Set-AzSqlDatabase -ResourceGroupName $resourceGroupName -ServerName $serverName 
   -MinVcore 1 -MaxVcore 4 -AutoPauseDelayInMinutes 1440
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+#### <a name="use-azure-cli"></a>Использование Azure CLI
 
-```powershell
+```azurecli
 az sql db update -g $resourceGroupName -s $serverName -n $databaseName `
   --edition GeneralPurpose --min-capacity 1 --capacity 4 --family Gen5 --compute-model Serverless --auto-pause-delay 1440
 ```
 
-* * *
 
 #### <a name="use-transact-sql-t-sql"></a>Использовать Transact-SQL (T-SQL)
 
@@ -253,15 +248,14 @@ MODIFY ( SERVICE_OBJECTIVE = 'GP_S_Gen5_1') ;
 
 ## <a name="modifying-serverless-configuration"></a>Изменение бессерверной конфигурации
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+### <a name="use-powershell"></a>Использование PowerShell
 
 Изменение максимальной или минимальной виртуальных ядер и задержки приостановки выполняется с помощью команды [Set-азсклдатабасе](/powershell/module/az.sql/set-azsqldatabase) в PowerShell с помощью аргументов `MaxVcore`, `MinVcore`и `AutoPauseDelayInMinutes`.
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="use-azure-cli"></a>Использование Azure CLI
 
 Изменение максимальной или минимальной виртуальных ядер и задержки приостановки выполняется с помощью команды [AZ SQL DB Update](/cli/azure/sql/db#az-sql-db-update) в Azure CLI с помощью аргументов `capacity`, `min-capacity`и `auto-pause-delay`.
 
-* * *
 
 ## <a name="monitoring"></a>Мониторинг
 
@@ -281,7 +275,7 @@ MODIFY ( SERVICE_OBJECTIVE = 'GP_S_Gen5_1') ;
 
 Метрики для мониторинга использования ресурсов пакета приложения и пула пользователей для бессерверной базы данных перечислены в следующей таблице.
 
-|Учреждение|Метрика|Описание|Единицы|
+|Учреждение|Метрика|Description|Единицы|
 |---|---|---|---|
 |Пакет приложения|app_cpu_percent|Количество виртуальных ядер, используемых в приложении относительно максимального количества виртуальных ядер, которое можно использовать в приложении.|Процент|
 |Пакет приложения|app_cpu_billed|Объем вычислительных ресурсов, тарифицируемых для приложения в отчетный период. Сумма, которая насчитывается за этот период, является произведением этого показателя и стоимости виртуального ядра. <br><br>Значение этого показателя вычисляется с учетом потребления максимального количества ресурсов ЦП и памяти в каждую секунду. Если используемые количество виртуальных ядер и объем ресурсов памяти меньше, чем минимальный подготовленный объем, плата взимается за подготовленные ресурсы. Чтобы сравнить ЦП с памятью в целях выставления счетов, память нормализуется в единицы виртуальных ядер путем повторного масштабирования объема памяти в ГБ на 3 ГБ на виртуальное ядро.|Время использования виртуальных ядер в секундах|
@@ -296,22 +290,21 @@ MODIFY ( SERVICE_OBJECTIVE = 'GP_S_Gen5_1') ;
 
 На портале Azure состояние базы данных отображается в разделе "Обзор" для сервера, содержащего список баз данных. Состояние базы данных также отображается в разделе "Обзор" для базы данных.
 
-Просмотреть состояние приостановки и возобновления работы базы данных можно с помощью следующей команды PowerShell:
+Используйте следующие команды для запроса состояния приостановки и возобновления базы данных:
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+#### <a name="use-powershell"></a>Использование PowerShell
 
 ```powershell
 Get-AzSqlDatabase -ResourceGroupName $resourcegroupname -ServerName $servername -DatabaseName $databasename `
   | Select -ExpandProperty "Status"
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+#### <a name="use-azure-cli"></a>Использование Azure CLI
 
-```powershell
+```azurecli
 az sql db show --name $databasename --resource-group $resourcegroupname --server $servername --query 'status' -o json
 ```
 
-* * *
 
 ## <a name="resource-limits"></a>Ограничения ресурсов
 

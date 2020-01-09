@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/09/2019
 ms.author: donkim
-ms.openlocfilehash: 3301c43aa71f041de1c53fb4083de73b6d2e4450
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 69a03ce5a8da7c8af6c17d122be3744e7b79e246
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74976763"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75381109"
 ---
 # <a name="quickstart-connect-to-a-custom-commands-application-with-the-speech-sdk-preview"></a>Краткое руководство. подключение к приложению настраиваемых команд с помощью речевого пакета SDK (Предварительная версия)
 
@@ -36,7 +36,7 @@ ms.locfileid: "74976763"
 Также необходимо:
 
 - [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
-- Ключ подписки Azure для службы "Речь". [Получите его бесплатно](get-started.md) или создайте его на [портал Azure](https://portal.azure.com)
+- Ключ подписки Azure для служб "Речь". [Получите его бесплатно](get-started.md) или создайте его на [портал Azure](https://portal.azure.com)
 
 ## <a name="optional-get-started-fast"></a>Необязательно: быстрое начало работы
 
@@ -309,7 +309,7 @@ ms.locfileid: "74976763"
    const string speechSubscriptionKey = "YourSpeechSubscriptionKey"; // Your subscription key
    const string region = "YourServiceRegion"; // The subscription service region. Note: only 'westus2' is currently supported
 
-   var speechCommandsConfig = DialogServiceConfig.FromSpeechCommandsAppId(speechCommandsApplicationId, speechSubscriptionKey, region);
+   var speechCommandsConfig = CustomCommandsConfig.FromSubscription(speechCommandsApplicationId, speechSubscriptionKey, region);
    speechCommandsConfig.SetProperty(PropertyId.SpeechServiceConnection_RecoLanguage, "en-us");
    connector = new DialogServiceConnector(speechCommandsConfig);
    ```

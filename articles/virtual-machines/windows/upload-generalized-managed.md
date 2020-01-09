@@ -1,25 +1,20 @@
 ---
-title: Создание управляемой виртуальной машины Azure из обобщенного локального виртуального жесткого диска
+title: Создание виртуальной машины на основе загруженного обобщенного виртуального жесткого диска
 description: Отправка универсального диска VHD в Azure и создание виртуальных машин с его помощью в модели развертывания Resource Manager.
 services: virtual-machines-windows
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-editor: ''
 tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
 ms.topic: article
-ms.date: 09/25/2018
+ms.date: 12/12/2019
 ms.author: cynthn
-ms.openlocfilehash: d0995fed61d169cc173ca01767c2e48f4f798b0d
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 3c482caf2407c89ffdb6c55c9184c31e2e3197c4
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74067432"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75464939"
 ---
 # <a name="upload-a-generalized-vhd-and-use-it-to-create-new-vms-in-azure"></a>Отправка универсального диска VHD и создание виртуальных машин с его помощью в Azure
 
@@ -30,14 +25,12 @@ ms.locfileid: "74067432"
 ## <a name="before-you-begin"></a>Перед началом работы
 
 - Прежде чем передавать в Azure какой-либо виртуальный жесткий диск, следует выполнить инструкции из статьи [Подготовка диска VHD или VHDX для Windows к отправке в Azure](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-- Прежде чем начать миграцию на [Управляемые диски](on-prem-to-azure.md#plan-for-the-migration-to-managed-disks), внимательно изучите [этот раздел](managed-disks-overview.md).
+- Прежде чем начать миграцию на [Управляемые диски](managed-disks-overview.md), внимательно изучите [этот раздел](on-prem-to-azure.md#plan-for-the-migration-to-managed-disks).
 
  
-
-
 ## <a name="generalize-the-source-vm-by-using-sysprep"></a>Подготовка исходной виртуальной машины к использованию с помощью Sysprep
 
-Помимо прочих действий Sysprep удаляет все сведения о вашей учетной записи и подготавливает машину к использованию в качестве образа. Дополнительные сведения о Sysprep приведены в [обзоре Sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview).
+Если вы еще не сделали этого, перед отправкой виртуального жесткого диска в Azure необходимо выполнить Sysprep для виртуальной машины. Помимо прочих действий Sysprep удаляет все сведения о вашей учетной записи и подготавливает машину к использованию в качестве образа. Дополнительные сведения о Sysprep приведены в [обзоре Sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview).
 
 Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Дополнительные сведения см. в разделе [Поддержка ролей сервера в Sysprep](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles).
 
@@ -52,44 +45,53 @@ ms.locfileid: "74067432"
 4. В разделе **Параметры завершения работы** выберите **Завершение работы**.
 5. Нажмите кнопку **ОК**.
    
-    ![Запустите Sysprep](./media/upload-generalized-managed/sysprepgeneral.png)
+    ![Запуск Sysprep](./media/upload-generalized-managed/sysprepgeneral.png)
 6. После выполнения всех необходимых действий Sysprep завершает работу виртуальной машины. Не перезапускайте виртуальную машину.
 
 
-## <a name="upload-the-vhd-to-your-storage-account"></a>Передача виртуального жесткого диска в учетную запись хранения
+## <a name="upload-the-vhd"></a>Отправка виртуального жесткого диска 
 
 Теперь виртуальный жесткий диск можно передать прямо в управляемый диск. Инструкции см. в статье [Отправка виртуального жесткого диска в Azure с помощью Azure PowerShell](disks-upload-vhd-to-managed-disk-powershell.md).
 
 
-## <a name="create-a-managed-image-from-the-uploaded-vhd"></a>Создание управляемого образа на основе переданного виртуального жесткого диска 
 
-Создание управляемого образа на основе обобщенного управляемого диска ОС. Подставьте собственные значения.
+После передачи виртуального жесткого диска на управляемый диск необходимо использовать [Get-аздиск](https://docs.microsoft.com/powershell/module/az.compute/get-azdisk) для получения управляемого диска.
 
-
-Сначала задайте некоторые параметры.
-
-```powershell
-$location = "East US" 
-$imageName = "myImage"
+```azurepowershell-interactive
+$disk = Get-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'myDiskName'
 ```
 
-Создайте образ с помощью универсального виртуального жесткого диска ОС.
+## <a name="create-the-image"></a>Создание образа
+Создание управляемого образа на основе обобщенного управляемого диска ОС. Подставьте собственные значения.
+
+Сначала задайте некоторые переменные:
 
 ```powershell
+$location = 'East US'
+$imageName = 'myImage'
+$rgName = 'myResourceGroup'
+```
+
+Создайте образ с помощью управляемого диска.
+
+```azurepowershell-interactive
 $imageConfig = New-AzImageConfig `
    -Location $location
 $imageConfig = Set-AzImageOsDisk `
    -Image $imageConfig `
-   -OsType Windows `
    -OsState Generalized `
-   -BlobUri $urlOfUploadedImageVhd `
-   -DiskSizeGB 20
-New-AzImage `
+   -OsType Windows `
+   -ManagedDiskId $disk.Id
+```
+
+Создайте образ.
+
+```azurepowershell-interactive
+$image = New-AzImage `
    -ImageName $imageName `
    -ResourceGroupName $rgName `
    -Image $imageConfig
 ```
-
 
 ## <a name="create-the-vm"></a>Создание виртуальной машины
 
@@ -100,7 +102,7 @@ New-AzImage `
 New-AzVm `
     -ResourceGroupName $rgName `
     -Name "myVM" `
-    -ImageName $imageName `
+    -Image $image.Id `
     -Location $location `
     -VirtualNetworkName "myVnet" `
     -SubnetName "mySubnet" `
@@ -110,7 +112,7 @@ New-AzVm `
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Войдите на свою новую виртуальную машину. Дополнительные сведения см. в статье [Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее](connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
 

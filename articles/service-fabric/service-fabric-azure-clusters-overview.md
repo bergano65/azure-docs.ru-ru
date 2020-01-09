@@ -1,25 +1,18 @@
 ---
-title: Создание кластеров Service Fabric в Windows Server и Linux | Документация Майкрософт
+title: Создание кластеров на базе Windows Server и Linux
 description: Кластеры Service Fabric выполняются в Windows Server и Linux, позволяя разворачивать и размещать приложения Service Fabric везде, где можно запустить Windows Server или Linux.
 services: service-fabric
 documentationcenter: .net
 author: dkkapur
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 02/01/2019
 ms.author: dekapur
-ms.openlocfilehash: edb6a84762ce65e65ff33492f3a7bcebbce60777
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: b6942c2a0647401df0d88b83e1b144ca3207a6db
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70390375"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614678"
 ---
 # <a name="overview-of-service-fabric-clusters-on-azure"></a>Общие сведения о кластерах Service Fabric в Azure
 Кластер Service Fabric — это подключенный к сети набор виртуальных машин или физических компьютеров, в котором вы развертываете микрослужбы и управляете ими. Узлом кластера называется компьютер или виртуальная машина, которая входит в состав кластера. Кластеры можно масштабировать до нескольких тысяч узлов. Если вы добавите новые узлы в кластер, реплики раздела службы подвергнутся повторной балансировке Service Fabric с учетом этих узлов. Общая производительность приложения улучшится, а конфликт доступа к памяти уменьшится. При неэффективном использовании узлов в кластере вы можете уменьшить их количество. Service Fabric снова перераспределит реплики и экземпляры секции по меньшему количеству узлов, чтобы эффективно использовать оборудование на каждом узле.
@@ -29,8 +22,8 @@ ms.locfileid: "70390375"
 ## <a name="cluster-components-and-resources"></a>Компоненты и ресурсы кластера
 Кластер Service Fabric в Azure — это ресурс Azure, который использует другие ресурсы Azure и взаимодействует с ними, в частности:
 * виртуальными машинами и виртуальными сетевыми картами;
-* масштабируемые наборы виртуальных машин
-* виртуальными сетями;
+* наборы масштабирования виртуальных машин
+* виртуальных сетей
 * подсистемами балансировки нагрузки;
 * учетными записями хранения;
 * общедоступными IP-адресами.
@@ -54,7 +47,7 @@ ms.locfileid: "70390375"
 
 Дополнительные сведения см. в статье [Типы узлов Azure Service Fabric и масштабируемые наборы виртуальных машин](service-fabric-cluster-nodetypes.md).
 
-### <a name="azure-load-balancer"></a>Балансировщик нагрузки Azure
+### <a name="azure-load-balancer"></a>Azure Load Balancer
 Экземпляры виртуальных машин объединяются за [подсистемой балансировки нагрузки Azure](/azure/load-balancer/load-balancer-overview), которая связана с [общедоступным IP-адресом](/azure/virtual-network/virtual-network-ip-addresses-overview-arm#public-ip-addresses) и меткой DNS.  При подготовке кластера с именем *&lt;имя_кластера&gt;* DNS-имя *&lt;имя_кластера&gt;.&lt;расположение&gt;.cloudapp.azure.com* — это метка DNS, связанная с подсистемой балансировки нагрузки Azure, размещенной перед масштабируемым набором.
 
 Виртуальные машины в кластере имеют только [частные IP-адреса](/azure/virtual-network/virtual-network-ip-addresses-overview-arm#private-ip-addresses).  Трафик управления и трафик служб маршрутизируются через общедоступную подсистему балансировки нагрузки.  Сетевой трафик на эти машины маршрутизируется через правила NAT (клиенты подключаются к определенным узлам или экземплярам) или правила балансировки нагрузки (трафик поступает на виртуальные машины циклически).  Подсистема балансировки нагрузки имеет связанный общедоступный IP-адрес с DNS-именем в формате *&lt;имя_кластера&gt;.&lt;расположение&gt;.cloudapp.azure.com*.  Общедоступный IP-адрес представляет собой еще один ресурс Azure в группе ресурсов.  При определении нескольких типов узлов в кластере для каждого типа узла или масштабируемого набора создается подсистема балансировки нагрузки. Можно также настроить одну подсистему балансировки нагрузки для нескольких типов узлов.  Тип первичного узла имеет DNS-метку *&lt;имя_кластера&gt;.&lt;расположение&gt;.cloudapp.azure.com*, а другие типы узлов имеют DNS-метку *&lt;имя_кластера&gt;-&lt;тип_узла&gt;.&lt;расположение&gt;.cloudapp.azure.com*.
@@ -95,7 +88,7 @@ Service Fabric также поддерживает управление дост
 
 Дополнительные сведения см. в статье [Масштабирование кластеров Azure Service Fabric](service-fabric-cluster-scaling.md).
 
-## <a name="upgrading"></a>Идет обновление
+## <a name="upgrading"></a>Обновление
 Кластер Service Fabric Azure представляет собой ресурс, который принадлежит вам, но частично управляется корпорацией Майкрософт. Корпорация Майкрософт отвечает за исправление базовой операционной системы и обновление среды выполнения Service Fabric в кластере. Вы можете настроить для кластера автоматическое обновление среды выполнения по мере выпуска новых версий корпорацией Майкрософт или же выбрать нужную версию в списке поддерживаемых. Кроме обновлений среды выполнения вы можете также обновить конфигурацию кластера, например сертификаты или порты приложения.
 
 Дополнительные сведения см. в статье [Обновление кластера Azure Service Fabric](service-fabric-cluster-upgrade.md).
@@ -105,13 +98,13 @@ Service Fabric также поддерживает управление дост
 
 | Операционная система | Самая ранняя поддерживаемая версия Service Fabric |
 | --- | --- |
-| Windows Server 2012 R2 | Все версии |
-| Windows Server 2016 | Все версии |
-| Windows Server 1709; | 6.0 |
+| Windows Server 2012 R2 | Все версии |
+| Windows Server 2016 | Все версии |
+| Windows Server 1709; | 6,0 |
 | Windows Server 1803. | 6.4 |
 | Windows Server 1809 | 6.4.654.9590 |
-| Windows Server 2019 | 6.4.654.9590 |
-| Linux Ubuntu 16.04 | 6.0 |
+| Windows Server 2019 | 6.4.654.9590 |
+| Linux Ubuntu 16.04 | 6,0 |
 
 Дополнительные сведения см. [в статье Поддерживаемые версии кластеров в Azure](https://docs.microsoft.com/azure/service-fabric/service-fabric-versions#supported-operating-systems) .
 
@@ -120,7 +113,7 @@ Service Fabric также поддерживает управление дост
 >
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со статьями о [защите](service-fabric-cluster-security.md), [масштабировании](service-fabric-cluster-scaling.md) и [обновлении](service-fabric-cluster-upgrade.md) кластеров Azure.
 
 Узнайте о [вариантах поддержки Service Fabric](service-fabric-support.md).

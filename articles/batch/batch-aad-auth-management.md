@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 04/27/2017
 ms.author: lahugh
-ms.openlocfilehash: 3f7ba22fa8e2a8709fc37a891b3da64b6d83e654
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 2fd5867d910d29533eb17a4660039cc7b9610290
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70095639"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75449835"
 ---
 # <a name="authenticate-batch-management-solutions-with-active-directory"></a>Аутентификация решений по управлению пакетной службой с помощью Active Directory
 
@@ -122,7 +122,7 @@ AuthenticationResult authResult = authContext.AcquireToken(ResourceUri,
 
 После указания учетных данных пример приложения может отправлять запросы, прошедшие проверку подлинности, к службе управления пакетами. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о запуске [примера приложения AccountManagement][acct_mgmt_sample]см. в статье [Управление учетными записями пакетной службы и квотами с помощью клиентской библиотеки управления пакетной службой для .NET](batch-management-dotnet.md).
 
@@ -137,4 +137,4 @@ AuthenticationResult authResult = authContext.AcquireToken(ResourceUri,
 [aad_integrate]: ../active-directory/active-directory-integrating-applications.md "Интеграция приложений с Azure Active Directory"
 [acct_mgmt_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/AccountManagement
 [azure_portal]: https://portal.azure.com
-[resman_overview]: ../azure-resource-manager/resource-group-overview.md
+[resman_overview]: ../azure-resource-manager/management/overview.md

@@ -1,20 +1,14 @@
 ---
-title: Примеры экземпляров Сетки Azure Service Fabric | Документация Майкрософт
+title: Поиск примеров сетки Azure Service Fabric
 description: Ниже приведен индекс доступных Service Fabric примеров приложений сетки. Исходный код в этих примерах показывает, как достичь определенного сценария с помощью модели ресурсов Service Fabric.
-services: service-fabric-mesh
-keywords: ''
-author: athinanthny
-ms.author: atsenthi
 ms.date: 12/03/2018
 ms.topic: conceptual
-ms.service: service-fabric-mesh
-manager: chackdan
-ms.openlocfilehash: a300c06a6a18bf2e986b3736b78957daf3d7efd6
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: c944ddc26f2e2d099cf9552acb8287c363d0c768
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73718818"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75461907"
 ---
 # <a name="find-service-fabric-mesh-samples"></a>Примеры экземпляров Сетки Service Fabric
 
@@ -22,7 +16,7 @@ ms.locfileid: "73718818"
 
 Дополнительные сведения о развертывании шаблонов непосредственно в Azure см. в разделе [Страница примера шаблона GitHub](https://github.com/Azure-Samples/service-fabric-mesh/blob/master/templates/README.md).
 
-|Пример шаблона|Описание сценария|Исходный код|Инструменты разработчика|
+|Пример шаблона|Описание сценария|Исходный код|Средства для разработчиков|
 |------------|--------------------|----------|----------------------|
 | [Приложение Hello World](https://github.com/Azure-Samples/service-fabric-mesh/tree/master/templates/helloworld) | Статическая веб-страница размещена в контейнере. Для Linux используется nginx, для Windows — IIS | [Исходный код](https://github.com/Azure-Samples/service-fabric-mesh/tree/master/src/helloworld) | Требования отсутствуют |
 | [Приложение Счетчик для томов файлов Azure](https://github.com/Azure-Samples/service-fabric-mesh/tree/master/templates/counter/readme.md) | Сохранение состояния с помощью подключения тома службы файлов Azure в контейнере. <br><br> **Примечание.** Для этого шаблона требуется, чтобы общий ресурс файлов Azure уже был подготовлен [инструкциями](https://docs.microsoft.com/azure/storage/files/storage-how-to-create-file-share) | [Исходный код](https://github.com/Azure-Samples/service-fabric-mesh/tree/master/src/counter) | Инструментарий Сетки Visual Studio |

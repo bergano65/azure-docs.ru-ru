@@ -1,27 +1,27 @@
 ---
 title: Использование .NET для создания SAS делегирования пользователя для контейнера или большого двоичного объекта
 titleSuffix: Azure Storage
-description: Узнайте, как создать SAS для делегирования пользователей (Предварительная версия) с учетными данными Azure Active Directory с помощью клиентской библиотеки .NET для службы хранилища Azure.
+description: Узнайте, как создать SAS делегирования пользователя с учетными данными Azure Active Directory с помощью клиентской библиотеки .NET для службы хранилища Azure.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/04/2019
+ms.date: 12/18/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
-ms.openlocfilehash: 915f2895fbc1e543fbbfbb408ba27eb758a40515
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 385d2c3b88bc2e4d653dae2dc9670cb9e9388faf
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892538"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75371842"
 ---
-# <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-net-preview"></a>Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с помощью .NET (Предварительная версия)
+# <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-net"></a>Создание SAS делегирования пользователя для контейнера или большого двоичного объекта с помощью .NET
 
 [!INCLUDE [storage-auth-sas-intro-include](../../../includes/storage-auth-sas-intro-include.md)]
 
-В этой статье показано, как использовать учетные данные Azure Active Directory (Azure AD) для создания SAS делегирования пользователя (Предварительная версия) для контейнера или большого двоичного объекта с клиентской библиотекой службы хранилища Azure для .NET.
+В этой статье показано, как использовать учетные данные Azure Active Directory (Azure AD) для создания SAS делегирования пользователя для контейнера или большого двоичного объекта с клиентской библиотекой хранилища Azure для .NET.
 
 [!INCLUDE [storage-auth-user-delegation-include](../../../includes/storage-auth-user-delegation-include.md)]
 
@@ -215,7 +215,7 @@ private static async Task ReadBlobWithSasAsync(Uri sasUri)
     }
     catch (RequestFailedException e)
     {
-        // Check for a 403 (Forbidden) error. If the SAS is invalid, 
+        // Check for a 403 (Forbidden) error. If the SAS is invalid,
         // Azure Storage returns this error.
         if (e.Status == 403)
         {
@@ -235,7 +235,7 @@ private static async Task ReadBlobWithSasAsync(Uri sasUri)
 
 [!INCLUDE [storage-blob-dotnet-resources-include](../../../includes/storage-blob-dotnet-resources-include.md)]
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 - [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](../common/storage-sas-overview.md)
 - [Операция получения ключа делегирования пользователя](/rest/api/storageservices/get-user-delegation-key)

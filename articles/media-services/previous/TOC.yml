@@ -47,9 +47,10 @@
           href: media-services-portal-live-passthrough-get-started.md
         - name: .NET
           href: media-services-dotnet-live-encode-with-onpremises-encoders.md
-- name: Практическое руководство
+- name: Инструкции
   items:
     - name: Устаревшие компоненты
+      displayName: 'deprecated, deprecation, retired, retirement, legacy'
       href: legacy-components.md
       items:
         - name: Миграция из кодировщика мультимедиа Azure
@@ -78,7 +79,7 @@
               href: media-services-portal-manage-streaming-endpoints.md
             - name: .NET
               href: media-services-dotnet-manage-streaming-endpoints.md
-        - name: Служба хранилища
+        - name: Память
           items:
             - name: Обновление Служб мультимедиа после смены ключей доступа к хранилищу
               href: media-services-roll-storage-access-keys.md
@@ -418,7 +419,7 @@
           href: media-services-dotnet-how-to-use-azure-functions.md
         - name: Примеры использования Функций Azure и Служб мультимедиа
           href: 'https://github.com/Azure-Samples/media-services-dotnet-functions-integration'
-    - name: Мониторинг
+    - name: Монитор
       items:
         - name: Проверка хода выполнения задания
           items:
@@ -432,7 +433,7 @@
           href: media-services-dotnet-check-job-progress-with-queues.md
         - name: Мониторинг уведомлений о заданиях с помощью вызовов веб-перехватчиков
           href: media-services-dotnet-check-job-progress-with-webhooks.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: Часто задаваемые вопросы
           href: media-services-frequently-asked-questions.md
@@ -442,7 +443,7 @@
           href: media-services-error-codes.md
         - name: Логика повторных попыток
           href: media-services-retry-logic-in-dotnet-sdk.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?service=media-services'
@@ -462,6 +463,9 @@
           href: ../media-services-specifications-live-timed-metadata.md
         - name: Smooth Streaming для HEVC
           href: ../media-services-specifications-ms-sstr-amendment-hevc.md
+    - name: Устаревшие компоненты
+      displayName: 'deprecated, deprecation, retired, retirement, legacy'
+      href: legacy-components.md
 - name: Ресурсы
   items:
     - name: Сообщество Служб мультимедиа Azure

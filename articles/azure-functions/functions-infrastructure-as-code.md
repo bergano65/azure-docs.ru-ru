@@ -1,34 +1,34 @@
 ---
-title: Автоматизация развертывания ресурсов для приложения-функции в функциях Azure
+title: Автоматизация развертывания ресурсов приложения функции в Azure
 description: Узнайте, как создать шаблон Azure Resource Manager, позволяющий развертывать приложения-функции.
 ms.assetid: d20743e3-aab6-442c-a836-9bcea09bfd32
 ms.topic: conceptual
 ms.date: 04/03/2019
-ms.openlocfilehash: 9c222937831c0e8017a390b16ef192783e9e564a
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 10efe5d09771f4c5f3a2564ef99ff9cae8cf06c0
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74230520"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75433145"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"
 
 Для развертывания приложения-функции можно использовать шаблон Azure Resource Manager. В этой статье рассматриваются необходимые для этого ресурсы и параметры. В зависимости от [триггеров и привязок](functions-triggers-bindings.md) в приложении-функции может потребоваться развернуть дополнительные ресурсы.
 
-Дополнительные сведения о создании шаблонов см. в статье [Создание шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md).
+Дополнительные сведения о создании шаблонов см. в статье [Создание шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md).
 
 Примеры шаблонов см. в следующих статьях:
-- [Function app on Consumption plan] (Приложение-функция в плане потребления);
+- [Function app on Consumption plan] (Приложение-функция в плане потребления)
 - [Function app on Azure App Service plan] (Приложение-функция в плане службы приложений Azure).
 
 ## <a name="required-resources"></a>Необходимые ресурсы
 
 Развертывание функций Azure обычно состоит из следующих ресурсов:
 
-| Resource (Ресурс)                                                                           | Требование | Справочник по синтаксису и свойствам                                                         |   |
+| Ресурс                                                                           | Требование | Справочник по синтаксису и свойствам                                                         |   |
 |------------------------------------------------------------------------------------|-------------|-----------------------------------------------------------------------------------------|---|
-| Приложение-функция.                                                                     | обязательные    | [Microsoft.Web/sites](/azure/templates/microsoft.web/sites)                             |   |
-| [Учетная запись хранения Azure.](../storage/index.yml)                                   | обязательные    | [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |   |
+| Приложение-функция.                                                                     | Обязательно для заполнения    | [Microsoft.Web/sites](/azure/templates/microsoft.web/sites)                             |   |
+| [Учетная запись хранения Azure.](../storage/index.yml)                                   | Обязательно для заполнения    | [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |   |
 | Компонент [Application Insights](../azure-monitor/app/app-insights-overview.md) | Необязательно    | [Microsoft. Insights/компоненты](/azure/templates/microsoft.insights/components)         |   |
 | [План размещения](./functions-scale.md)                                             | Необязательно<sup>1</sup>    | [Microsoft.Web/serverfarms](/azure/templates/microsoft.web/serverfarms)                 |   |
 
@@ -135,11 +135,11 @@ ms.locfileid: "74230520"
 
 Приложение-функция должно включать следующие параметры приложения:
 
-| Имя параметра                 | ОПИСАНИЕ                                                                               | Примеры значений                        |
+| Имя параметра                 | Description                                                                               | Примеры значений                        |
 |------------------------------|-------------------------------------------------------------------------------------------|---------------------------------------|
 | AzureWebJobsStorage          | Строка подключения к учетной записи хранения, которую среда выполнения функций для внутренней очереди | См. [учетную запись хранения](#storage)       |
 | FUNCTIONS_EXTENSION_VERSION  | Версия среды выполнения функций Azure                                                | `~2`                                  |
-| FUNCTIONS_WORKER_RUNTIME     | Стек языка, используемый для функций в этом приложении                                   | `dotnet`, `node`, `java`или `python` |
+| FUNCTIONS_WORKER_RUNTIME     | Стек языка, используемый для функций в этом приложении                                   | `dotnet`, `node`, `java` или `python` |
 | WEBSITE_NODE_DEFAULT_VERSION | Требуется только при использовании стека языков `node`. указывает используемую версию              | `10.14.1`                             |
 
 Эти свойства указываются в коллекции `appSettings` в свойстве `siteConfig`:
@@ -462,7 +462,7 @@ ms.locfileid: "74230520"
 
 Приложения Linux также должны содержать свойство `linuxFxVersion` в разделе `siteConfig`. Если вы только разворачиваете код, значение для этого параметра определяется требуемым стеком времени выполнения:
 
-| Ячейку            | Пример значения                                         |
+| Стек            | Пример значения                                         |
 |------------------|-------------------------------------------------------|
 | Python           | `DOCKER|microsoft/azure-functions-python3.6:2.0`      |
 | JavaScript       | `DOCKER|microsoft/azure-functions-node8:2.0`          |
@@ -567,7 +567,7 @@ ms.locfileid: "74230520"
 Приложение-функция содержит много дочерних ресурсов, которые можно использовать при развертывании, в том числе параметры приложения и параметры системы управления версиями. Вы можете также удалить дочерний ресурс **sourcecontrols** и выбрать другой [вариант развертывания](functions-continuous-deployment.md).
 
 > [!IMPORTANT]
-> Чтобы с помощью Azure Resource Manager успешно развернуть приложение, важно понимать, каким образом ресурсы развертываются в Azure. В следующем примере конфигурации верхнего уровня применяются с помощью **siteConfig**. Их важно задать на верхнем уровне, так как эти конфигурации передают сведения в среду выполнения функций и механизм развертывания. Сведения верхнего уровня требуются перед применением дочернего ресурса **sourcecontrols/web**. Хотя эти параметры можно настроить в дочернем ресурсе **config/appSettings**, в некоторых сценариях приложение-функцию требуется развернуть *до* применения **config/appSettings**. В таких случаях, например в [Logic Apps](../logic-apps/index.yml), функции зависят от другого ресурса.
+> Чтобы с помощью Azure Resource Manager успешно развернуть приложение, важно понимать, каким образом ресурсы развертываются в Azure. В следующем примере конфигурации верхнего уровня применяются с помощью **siteConfig**. Их важно задать на верхнем уровне, так как эти конфигурации передают сведения в среду выполнения функций и механизм развертывания. Сведения верхнего уровня требуются перед применением дочернего ресурса **sourcecontrols/web**. Хотя эти параметры можно настроить в ресурсе **config или appSettings** дочернего уровня, в некоторых случаях приложение-функция должно быть развернуто до применения **config/appSettings** . В таких случаях, например в [Logic Apps](../logic-apps/index.yml), функции зависят от другого ресурса.
 
 ```json
 {
@@ -638,13 +638,13 @@ ms.locfileid: "74230520"
 Для развертывания шаблона можно использовать любой из следующих способов:
 
 * [PowerShell](../azure-resource-manager/resource-group-template-deploy.md)
-* [Интерфейс командной строки Azure](../azure-resource-manager/resource-group-template-deploy-cli.md)
-* [портал Azure](../azure-resource-manager/resource-group-template-deploy-portal.md)
-* [ИНТЕРФЕЙС REST API](../azure-resource-manager/resource-group-template-deploy-rest.md)
+* [Azure CLI](../azure-resource-manager/resource-group-template-deploy-cli.md)
+* [Портал Azure](../azure-resource-manager/resource-group-template-deploy-portal.md)
+* [REST API](../azure-resource-manager/resource-group-template-deploy-rest.md)
 
 ### <a name="deploy-to-azure-button"></a>Кнопка "Развертывание в Azure"
 
-Замените ```<url-encoded-path-to-azuredeploy-json>``` версией необработанного пути к файлу [ на сайте GitHub, указав его в формате ](https://www.bing.com/search?q=url+encode)URL-адреса`azuredeploy.json`.
+Замените ```<url-encoded-path-to-azuredeploy-json>``` версией необработанного пути к файлу `azuredeploy.json` на сайте GitHub, указав его в формате [URL-адреса](https://www.bing.com/search?q=url+encode).
 
 Ниже приведен пример использования разметки:
 
@@ -658,7 +658,7 @@ ms.locfileid: "74230520"
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/<url-encoded-path-to-azuredeploy-json>" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"></a>
 ```
 
-### <a name="deploy-using-powershell"></a>Развертывание с помощью PowerShell
+### <a name="deploy-using-powershell"></a>Развертывание с использованием PowerShell
 
 Следующие команды PowerShell создают группу ресурсов и развертывают шаблон, который создает приложение-функцию с необходимыми ресурсами. Для локального запуска необходимо установить [Azure PowerShell](/powershell/azure/install-az-ps) . Запустите [`Connect-AzAccount`](/powershell/module/az.accounts/connect-azaccount) , чтобы войти.
 
@@ -679,7 +679,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "MyResourceGroup" -TemplateFile
 
 Чтобы протестировать это развертывание, можно использовать [шаблон, аналогичный этому](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-function-app-create-dynamic/azuredeploy.json) , который создает приложение-функцию в Windows в плане потребления. Замените `<function-app-name>` уникальным именем для приложения-функции.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о разработке и настройке Функций Azure:
 
@@ -689,5 +689,5 @@ New-AzResourceGroupDeployment -ResourceGroupName "MyResourceGroup" -TemplateFile
 
 <!-- LINKS -->
 
-[Function app on Consumption plan]: https://github.com/Azure/azure-quickstart-templates/blob/master/101-function-app-create-dynamic/azuredeploy.json (Приложение-функция в плане потребления);
+[Function app on Consumption plan]: https://github.com/Azure/azure-quickstart-templates/blob/master/101-function-app-create-dynamic/azuredeploy.json (Приложение-функция в плане потребления)
 [Function app on Azure App Service plan]: https://github.com/Azure/azure-quickstart-templates/blob/master/101-function-app-create-dedicated/azuredeploy.json (Приложение-функция в плане службы приложений Azure).

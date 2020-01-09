@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 12/04/2019
+ms.date: 12/18/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: e4a5f83e3f4d26c2321ed1b4c48a385d07e6489d
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: ceee257cd09589fc953c2b32e978a35433b0a49b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74895156"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75371825"
 ---
 # <a name="grant-limited-access-to-azure-storage-resources-using-shared-access-signatures-sas"></a>Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)
 
@@ -25,7 +25,7 @@ ms.locfileid: "74895156"
 
 Служба хранилища Azure поддерживает три типа подписанных URL:
 
-- **SAS делегирования пользователя (Предварительная версия).** SAS делегирования пользователя защищен с учетными данными Azure Active Directory (Azure AD), а также с разрешениями, указанными для SAS. SAS делегирования пользователя применяется только к хранилищу BLOB-объектов.
+- **SAS делегирования пользователя.** SAS делегирования пользователя защищен с учетными данными Azure Active Directory (Azure AD), а также с разрешениями, указанными для SAS. SAS делегирования пользователя применяется только к хранилищу BLOB-объектов.
 
     Дополнительные сведения о сопоставлении безопасности для делегирования пользователей см. в статье [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-user-delegation-sas).
 
@@ -122,9 +122,9 @@ ms.locfileid: "74895156"
 
 ### <a name="user-delegation-sas"></a>SAS делегирования пользователя
 
-- [Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с помощью PowerShell (Предварительная версия)](../blobs/storage-blob-user-delegation-sas-create-powershell.md)
-- [Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с Azure CLI (Предварительная версия)](../blobs/storage-blob-user-delegation-sas-create-cli.md)
-- [Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с помощью .NET (Предварительная версия)](../blobs/storage-blob-user-delegation-sas-create-dotnet.md)
+- [Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с помощью PowerShell](../blobs/storage-blob-user-delegation-sas-create-powershell.md)
+- [Создание SAS делегирования пользователя для контейнера или большого двоичного объекта с помощью Azure CLI](../blobs/storage-blob-user-delegation-sas-create-cli.md)
+- [Создание SAS делегирования пользователя для контейнера или большого двоичного объекта с помощью .NET](../blobs/storage-blob-user-delegation-sas-create-dotnet.md)
 
 ### <a name="service-sas"></a>SAS службы
 

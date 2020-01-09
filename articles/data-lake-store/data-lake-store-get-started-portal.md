@@ -6,19 +6,19 @@ ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: twooley
-ms.openlocfilehash: e5a3df82fae9d81a870d3dba929bc7e4cd4123d2
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: 1bfb9362aa0e893a8bf1a758e5a0069e85ab227b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73904696"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438758"
 ---
 # <a name="get-started-with-azure-data-lake-storage-gen1-using-the-azure-portal"></a>Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure
 
 > [!div class="op_single_selector"]
 > * [Портал](data-lake-store-get-started-portal.md)
 > * [PowerShell](data-lake-store-get-started-powershell.md)
-> * [Интерфейс командной строки Azure](data-lake-store-get-started-cli-2.0.md)
+> * [Azure CLI](data-lake-store-get-started-cli-2.0.md)
 >
 >
 
@@ -26,11 +26,11 @@ ms.locfileid: "73904696"
 
 Узнайте, как использовать портал Azure для создания учетной записи Data Lake Storage 1-го поколения и выполнения основных операций, таких как создание папок, отправка и скачивание файлов данных, удаление учетной записи и т. д. Дополнительные сведения см. в разделе Общие сведения о [Azure Data Lake Storage 1-го поколения](data-lake-store-overview.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
-Перед началом работы с этим учебником необходимо иметь следующее:
+Перед началом работы с этим руководством необходимо иметь следующее:
 
-* **Подписка Azure**. Ознакомьтесь с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/).
+* **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="create-a-data-lake-storage-gen1-account"></a>Создание учетной записи Data Lake Storage 1-го поколения
 
@@ -42,7 +42,7 @@ ms.locfileid: "73904696"
 
    * **Имя**. Введите уникальное имя учетной записи Azure Data Lake Storage 1-го поколения (ADLS 1-го поколения).
    * **Подписка**. Выберите подписку, в которой нужно создать учетную запись ADLS 1-го поколения.
-   * **Создать группу ресурсов**, чтобы создать новую. Выберите существующую группу ресурсов или щелкните **Создать**, чтобы создать новую. Дополнительные сведения см. Дополнительные сведения см. в разделе [Группы ресурсов](../azure-resource-manager/resource-group-overview.md#resource-groups).
+   * **Группа ресурсов**: выберите существующую группу ресурсов Azure или создайте новую группу. Выберите существующую группу ресурсов или щелкните **Создать**, чтобы создать новую. Группа ресурсов представляет собой контейнер, содержащий связанные ресурсы для приложения. Дополнительные сведения см. в разделе [Группы ресурсов](../azure-resource-manager/management/overview.md#resource-groups).
    * **Расположение**: выберите расположение, в котором нужно создать учетную запись ADLS 1-го поколения.
    * **Параметры шифрования**. Доступны три параметра:
 
@@ -85,7 +85,7 @@ ms.locfileid: "73904696"
 Чтобы хранить данные и управлять ими, вы можете создать папки в своей учетной записи ADLS 1-го поколения.
 
 1. Откройте созданную учетную запись ADLS 1-го поколения. В левой области щелкните **все ресурсы**, а затем в колонке **все ресурсы** щелкните имя учетной записи, в которой нужно создать папки. Если учетная запись была закреплена на начальной панели, щелкните элемент этой учетной записи.
-2. В колонке учетной записи Data Lake Storage 1-го поколения щелкните **Обозреватель данных**.
+2. В колонке учетной записи Data Lake Storage 1-го поколения щелкните **Azure Data Explorer**.
 
     ![Создание папок в учетной записи Data Lake Storage 1-го поколения](./media/data-lake-store-get-started-portal/ADL.Create.Folder.png "Создание папок в учетной записи Data Lake Storage 1-го поколения")
 3. В колонке обозревателя данных щелкните **Создать папку**, введите имя новой папки и нажмите кнопку **ОК**.
@@ -117,15 +117,15 @@ ms.locfileid: "73904696"
 
 Защитить данные, хранящиеся в учетной записи Data Lake Storage 1-го поколения, можно с помощью Azure Active Directory и управления доступом (ACL). Соответствующие инструкции см. в статье о [защите данных, хранящихся в Azure Data Lake Storage 1-го поколения](data-lake-store-secure-data.md).
 
-## <a name="delete-your-account"></a>Удаление учетной записи
+## <a name="delete-your-account"></a>Удалять учетную запись.
 
 Чтобы удалить учетную запись Data Lake Storage 1-го поколения, в колонке этой учетной записи нажмите кнопку **Удалить**. Чтобы подтвердить действие, вам будет предложено ввести имя учетной записи, которую вы хотите удалить. Введите имя учетной записи и нажмите кнопку **Удалить**.
 
 ![Удалить учетную запись Data Lake Storage 1-го поколения](./media/data-lake-store-get-started-portal/ADL.Delete.Account.png "Удаление учетной записи озера данных")
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Использование Data Lake Storage Gen1 для обеспечения соответствия требованиям больших данных](data-lake-store-data-scenarios.md)
+* [Использование Azure Data Lake Storage 1-го поколения для обеспечения соответствия требованиям больших данных](data-lake-store-data-scenarios.md)
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
-* [Использование Azure Data Lake Analytics с Azure Data Lake Storage 1-го поколения](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
-* [Использование Azure HDInsight с Data Lake Storage 1-го поколения](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
+* [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)

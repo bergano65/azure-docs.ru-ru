@@ -1,6 +1,6 @@
 ---
-title: Обучающие материалы по переходу с Регистрация приложений (Legacy) на новый интерфейс Регистрация приложений в портал Azure
-description: Общие сведения о новом интерфейсе регистрации приложений в портал Azure
+title: Новое учебное руководство по регистрации приложений на портале Azure
+description: Введение в новые возможности регистрации приложений портал Azure
 services: active-directory
 author: archieag
 manager: CelesteDG
@@ -13,14 +13,14 @@ ms.author: aragra
 ms.reviewer: lenalepa, keyam
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f49cac5c8c49fb5c53d3320cb0ab52e0f61acda
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 3726ebbe0ebc3725a885c847f33760ebd7e2e8b0
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74844266"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424661"
 ---
-# <a name="transitioning-from-app-registrations-legacy-to-the-new-app-registrations-experience-in-the-azure-portal"></a>Переход с функции "Регистрация приложений" прежних версий на новую функцию "Регистрация приложений" на портале Azure
+# <a name="new-azure-portal-app-registration-training-guide"></a>Новое учебное руководство по регистрации приложений на портале Azure
 
 В портал Azure можно найти множество улучшений в новом интерфейсе [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) . Если вы знакомы с возможностями Регистрация приложений (устаревшая) в портал Azure, используйте это обучающее руководство, чтобы приступить к работе с новым интерфейсом.
 
@@ -55,7 +55,7 @@ ms.locfileid: "74844266"
 
 У устаревшего интерфейса есть страница **свойств** . **Свойства** имели следующие поля:
 
-- **Имя**
+- **Название**
 - **Идентификатор объекта**
 - **Идентификатор приложения**
 - **URI кода приложения**

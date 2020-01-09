@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/08/2019
+ms.date: 12/17/2019
 ms.author: kumud
-ms.openlocfilehash: b8440efa08e47685d21b0222861f749e8bdffbc9
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: b2dfdbafe0e72e550e44ef12fd53903d947ab3c2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74186383"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75368319"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-using-basic-load-balancer---cli-preview"></a>Развертывание приложения с двумя стеками IPv6 с помощью базового Load Balancer-CLI (Предварительная версия)
 
@@ -35,7 +35,7 @@ ms.locfileid: "74186383"
 
 Если вы решили установить и использовать Azure CLI локально, в этом кратком руководстве необходимо использовать Azure CLI версии 2.0.49 или более поздней. Выполните команду `az --version`, чтобы узнать установленную версию. Сведения об установке или обновлении Azure CLI см. в [этой статье](/cli/azure/install-azure-cli).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 Чтобы использовать функцию IPv6 для виртуальной сети Azure, необходимо настроить подписку с помощью Azure CLI следующим образом.
 
 ```azurecli
@@ -151,7 +151,12 @@ az network lb address-pool create \
 --name dsLbBackEndPool_v6  \
 --resource-group DsResourceGroup01
 ```
+### <a name="create-a-health-probe"></a>Создание пробы работоспособности
+Создайте зонд работоспособности с помощью команды [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest), чтобы отслеживать работоспособность виртуальных машин. 
 
+```azurecli
+az network lb probe create -g DsResourceGroup01  --lb-name dsLB -n dsProbe --protocol tcp --port 3389
+```
 ### <a name="create-a-load-balancer-rule"></a>Создание правила балансировщика нагрузки
 
 Правило балансировщика нагрузки позволяет определить распределение трафика между виртуальными машинами. Вы определяете конфигурацию внешнего IP-адреса для входящего трафика и пул внутренних IP-адресов для приема трафика, а также требуемый порт источника и назначения. 
@@ -167,6 +172,7 @@ az network lb rule create \
 --protocol Tcp  \
 --frontend-port 80  \
 --backend-port 80  \
+--probe-name dsProbe \
 --backend-pool-name dsLbBackEndPool_v4
 
 
@@ -178,13 +184,14 @@ az network lb rule create \
 --protocol Tcp  \
 --frontend-port 80 \
 --backend-port 80  \
+--probe-name dsProbe \
 --backend-pool-name dsLbBackEndPool_v6
 
 ```
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 Перед развертыванием некоторых виртуальных машин необходимо создать вспомогательные сетевые ресурсы — группы доступности, группу безопасности сети, виртуальную сеть и виртуальные сетевые карты. 
-### <a name="create-an-availability-set"></a>"Создать группу доступности"
+### <a name="create-an-availability-set"></a>Создание группы доступности
 Чтобы повысить доступность приложения, разместите виртуальные машины в группе доступности.
 
 Создайте группу доступности с помощью команды [az vm availability-set create](https://docs.microsoft.com/cli/azure/vm/availability-set?view=azure-cli-latest). В следующем примере создается группа доступности с именем *дсавсет*:
@@ -268,7 +275,7 @@ az network nsg rule create \
 ```
 
 
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 Создайте виртуальную сеть с помощью команды [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet?view=azure-cli-latest#az-network-vnet-create). В следующем примере создается виртуальная сеть с именем *дсвнет* с подсетями *dsSubNET_v4* и *dsSubNET_v6*.
 
@@ -387,6 +394,6 @@ az vm create \
  az group delete --name DsResourceGroup01
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы создали базовую Load Balancer с двойной интерфейсной IP-конфигурацией (IPv4 и IPv6). Вы также создали две виртуальные машины, которые включали сетевые карты с двумя IP-конфигурациями (IPV4 + IPv6), которые были добавлены в пул внутренних подсистем подсистемы балансировки нагрузки. Дополнительные сведения о поддержке IPv6 в виртуальных сетях Azure см. в статье [что такое IPv6 для виртуальной сети Azure?](ipv6-overview.md)

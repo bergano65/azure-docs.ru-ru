@@ -1,7 +1,7 @@
 ---
 title: 'SVD рекомендации по оценке: Справочник по модулям'
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как использовать модуль рекомендации "Оценка SVD" в службе Машинное обучение Azure, чтобы оценить прогнозы рекомендаций для набора данных.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как использовать модуль рекомендации по оценке SVD в Машинное обучение Azure, чтобы оценить прогнозы рекомендаций для набора данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,14 +9,14 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 10/10/2019
-ms.openlocfilehash: be590ba04de5c8ee671e7e865d04b4ea6c638c00
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 554101ac70f01f1dd92337a8cf424f8b26ca0fc9
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73717216"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75456340"
 ---
-# <a name="score-svd-recommender"></a>SVD рекомендации по оценке
+# <a name="score-svd-recommender"></a>Оценка рекомендателя SVD
 
 В этой статье описывается, как использовать модуль рекомендуемого SVD для оценки в конструкторе Машинное обучение Azure (Предварительная версия). Используйте этот модуль для создания прогнозов с помощью модели обученной рекомендации, основанной на алгоритме единого значения декомпозиции (SVD).
 
@@ -123,4 +123,4 @@ SVD рекомендации могут формировать два разли
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) для службы машинное обучение Azure. 
+См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 

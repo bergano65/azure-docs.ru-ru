@@ -1,5 +1,5 @@
 ---
-title: Безопасный доступ к учетной записи Azure Cosmos DB с использованием конечной точки службы для виртуальной сети Azure
+title: Безопасный доступ к учетным записям Azure Cosmos DB с помощью конечной точки службы виртуальной сети
 description: В этом документе описано управление доступом к виртуальной сети и подсети для учетной записи Azure Cosmos.
 author: kanshiG
 ms.service: cosmos-db
@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 0023710ff3cfe180b628d1da14b8a3ea9c136026
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: af1032de9aabac45ad7a86cfe1f36ed2c04c0f71
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74896231"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75444623"
 ---
 # <a name="access-azure-cosmos-db-from-virtual-networks-vnet"></a>Доступ к Azure Cosmos DB из виртуальных сетей
 
@@ -68,5 +68,5 @@ ms.locfileid: "74896231"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получение доступа к ресурсам Azure Cosmos DB из виртуальных сетей](how-to-configure-vnet-service-endpoint.md)
-* [How-to configure IP firewall for your Azure Cosmos account](how-to-configure-firewall.md) (Инструкции по настройке брандмауэра IP-адресов для учетной записи Azure Cosmos)
+* [How-to configure IP firewall for your Azure Cosmos account](how-to-configure-firewall.md) (Настройка брандмауэра IP-адресов для учетной записи Azure Cosmos)
 

@@ -1,29 +1,18 @@
 ---
-title: Настройка учетных записей gMSA для служб контейнеров Azure Service Fabric | Документация Майкрософт
-description: Сведения о настройке учетных записей gMSA для контейнера, запущенного в Azure Service Fabric.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: ab49c4b9-74a8-4907-b75b-8d2ee84c6d90
-ms.service: service-fabric
-ms.devlang: dotNet
+title: Настройка gMSA для служб контейнеров Azure Service Fabric
+description: Узнайте, как настроить групповую управляемую учетную запись службы (gMSA) для контейнера, работающего в Azure Service Fabric.
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 03/20/2019
-ms.author: atsenthi
-ms.openlocfilehash: 45fc4c924a8fb794ad81529de74b98ee812f46c5
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: 9873e2d7672412b0e1e22c6c2a774cf629fd728a
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170428"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75639213"
 ---
 # <a name="set-up-gmsa-for-windows-containers-running-on-service-fabric"></a>Настройка учетных записей gMSA для контейнеров Windows, запущенных в Service Fabric
 
-Чтобы настроить gMSA, необходимо разместить файл спецификаций учетных данных (`credspec`) на всех узлах в кластере. Вы можете скопировать файл на все узлы, используя расширение виртуальной машины.  Файл `credspec` должен содержать информацию об учетной записи gMSA. Дополнительные сведения о файле `credspec` см. в разделе [Создание спецификации учетных данных](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/manage-serviceaccounts#create-a-credential-spec). Спецификация учетных данных и тег `Hostname` указаны в манифесте приложения. Тег `Hostname` должен соответствовать имени учетной записи gMSA, которая используется для запуска контейнера.  Тег `Hostname` позволяет контейнеру автоматически проходить проверку подлинности в других службах в домене с помощью проверки подлинности Kerberos.  В следующем фрагменте кода показан пример с указанием тегов `Hostname` и `credspec` в манифесте приложения.
+Чтобы настроить gMSA, необходимо разместить файл спецификаций учетных данных (`credspec`) на всех узлах в кластере. Вы можете скопировать файл на все узлы, используя расширение виртуальной машины.  Файл `credspec` должен содержать информацию об учетной записи gMSA. Дополнительные сведения о `credspec` файле см. в разделе [Создание спецификации учетных данных](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/manage-serviceaccounts#create-a-credential-spec). Спецификация учетных данных и тег `Hostname` указываются в манифесте приложения. Тег `Hostname` должен соответствовать имени учетной записи gMSA, которая используется для запуска контейнера.  Тег `Hostname` позволяет контейнеру автоматически проходить проверку подлинности в других службах в домене с помощью проверки подлинности Kerberos.  В следующем фрагменте кода показан пример с указанием тегов `Hostname` и `credspec` в манифесте приложения.
 
 ```xml
 <Policies>

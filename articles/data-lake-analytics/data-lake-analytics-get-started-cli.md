@@ -7,19 +7,19 @@ ms.author: saveenr
 ms.reviewer: jasonwhowell
 ms.topic: conceptual
 ms.date: 06/18/2017
-ms.openlocfilehash: 94399490453c6a2774f71ef527fd24d543e2a7e2
-ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
+ms.openlocfilehash: c9781165affb1755e73919931d8d158ae9b535ac
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71316569"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438768"
 ---
 # <a name="get-started-with-azure-data-lake-analytics-using-azure-cli"></a>Начало работы с Azure Data Lake Analytics с помощью интерфейса командной строки Azure
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
 
 В этой статье описано, как использовать Azure CLI для создания учетной записи Data Lake Analytics, а также отправки заданий и каталогов U-SQL. Задание, которое считывает файл с разделителями-табуляциями (TSV) и преобразует его в файл с разделителями-запятыми (CSV). 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для работы вам понадобится следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -49,7 +49,7 @@ az account set --subscription <subscription id>
 ## <a name="create-data-lake-analytics-account"></a>Создание учетной записи аналитики озера данных
 Для выполнения любых заданий требуется учетная запись Data Lake Analytics. Для создания учетной записи Data Lake Analytics необходимо указать следующие данные.
 
-* **Группа ресурсов Azure**. В группе ресурсов Azure необходимо создать учетную запись Data Lake Analytics. [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md) позволяет работать с группами ресурсов в приложении. Вы можете развертывать, обновлять или удалять все ресурсы для приложения в рамках одной скоординированной операции.  
+* **Группа ресурсов Azure**. В группе ресурсов Azure необходимо создать учетную запись Data Lake Analytics. [Azure Resource Manager](../azure-resource-manager/management/overview.md) позволяет работать с группами ресурсов в приложении. Вы можете развертывать, обновлять или удалять все ресурсы для приложения в рамках одной скоординированной операции.  
 
 Чтобы отобразить существующие группы ресурсов в своей подписке выполните следующую команду:
 
@@ -65,7 +65,7 @@ az group create --name "<Resource Group Name>" --location "<Azure Location>"
 
 * **Имя учетной записи Data Lake Analytics**. Каждой учетной записи Data Lake Analytics присвоено имя.
 * **Расположение.** Используйте один из центров обработки данных Azure, который поддерживает Data Lake Analytics.
-* **Учетная запись Data Lake Store по умолчанию**: Для каждой учетной записи Data Lake Analytics существует учетная запись Data Lake Store по умолчанию.
+* **Учетная запись Data Lake Store по умолчанию** — каждая учетная запись Data Lake Analytics содержит учетную запись Data Lake Store по умолчанию.
 
 Чтобы получить список существующих учетных записей Data Lake Store, выполните эту команду:
 
@@ -130,7 +130,7 @@ OUTPUT @a
 
 Не меняйте эти два пути, если только исходный файл не был скопирован в другое место.  Data Lake Analytics создаст выходную папку, если ее не существует.
 
-Проще использовать относительные пути для файлов, которые хранятся в учетных записях Data Lake Store по умолчанию. Также можно использовать абсолютные пути.  Пример:
+Проще использовать относительные пути для файлов, которые хранятся в учетных записях Data Lake Store по умолчанию. Также можно использовать абсолютные пути.  Пример.
 
 ```
 adl://<Data LakeStorageAccountName>.azuredatalakestore.net:443/Samples/Data/SearchLog.tsv
@@ -155,7 +155,7 @@ wasb://<BlobContainerName>@<StorageAccountName>.blob.core.windows.net/Samples/Da
 az dla job submit --account "<Data Lake Analytics Account Name>" --job-name "<Job Name>" --script "<Script Path and Name>"
 ```
 
-Пример:
+Пример.
 
 ```
 az dla job submit --account "myadlaaccount" --job-name "myadlajob" --script @"C:\DLA\myscript.txt"
@@ -186,13 +186,13 @@ az dls fs preview --account "<Data Lake Store Account Name>" --path "/Output/Sea
 az dls fs download --account "<Data Lake Store Account Name>" --source-path "/Output/SearchLog-from-Data-Lake.csv" --destination-path "<Destination Path and File Name>"
 ```
 
-Пример:
+Пример.
 
 ```
 az dls fs download --account "myadlsaccount" --source-path "/Output/SearchLog-from-Data-Lake.csv" --destination-path "C:\DLA\myfile.csv"
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. справочную документацию по интерфейсу командной строки Azure для Data Lake Analytics в разделе [Data Lake Analytics](/cli/azure/dla).
 * См. справочную документацию по интерфейсу командной строки Azure для Data Lake Store в разделе [Data Lake Store](/cli/azure/dls).

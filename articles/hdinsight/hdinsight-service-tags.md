@@ -4,15 +4,15 @@ description: Используйте теги службы HDInsight, чтобы 
 author: hrasheed-msft
 ms.author: hrasheed
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 10/19/2019
-ms.openlocfilehash: 7e3ce33bdf0773ababe5eb190877a9288c094c5c
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.custom: hdinsightactive
+ms.date: 12/05/2019
+ms.openlocfilehash: 24ecf90c2ffc88415afbf84f54af3efa7d5f4a39
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74187089"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75435439"
 ---
 # <a name="network-security-group-nsg-service-tags-for-azure-hdinsight"></a>Теги службы группы безопасности сети (NSG) для Azure HDInsight
 
@@ -26,13 +26,23 @@ ms.locfileid: "74187089"
 
 1. Использовать один тег службы HDInsight. Этот параметр откроет виртуальную сеть для всех IP-адресов, используемых службой HDInsight для наблюдения за кластерами во всех регионах. Этот параметр является простейшим методом, но может не подходить, если имеются требования к безопасности.
 
-1. Использовать несколько региональных тегов служб. при выборе этого варианта виртуальная сеть будет открыта только для IP-адресов, используемых HDInsight в определенном регионе. Тем не менее, если вы используете несколько регионов, вам потребуется добавить несколько тегов службы в виртуальную сеть.
+1. Использовать несколько региональных тегов служб. при выборе этого варианта виртуальная сеть будет открыта только для IP-адресов, используемых HDInsight в определенном регионе. Но если вы используете несколько регионов, вам потребуется добавить несколько тегов службы в виртуальную сеть.
 
 ## <a name="use-a-single-global-hdinsight-service-tag"></a>Использовать один глобальный тег службы HDInsight
 
-Самый простой способ начать использовать теги службы с кластером HDInsight — добавить глобальный тег `HDInsight` в правило группы безопасности сети. Инструкции по добавлению тегов службы в группу безопасности сети см. в разделе [группы безопасности: Теги служб](../virtual-network/security-overview.md#service-tags).
+Самый простой способ начать использовать теги службы с кластером HDInsight — добавить глобальный тег `HDInsight` в правило группы безопасности сети.
 
-Этот тег содержит IP-адреса служб работоспособности и управления для всех регионов, в которых доступна служба HDInsight, и гарантирует, что кластер сможет взаимодействовать с необходимыми службами работоспособности и управления независимо от того, где она создана.
+1. В [портал Azure](https://portal.azure.com/)выберите группу безопасности сети.
+
+1. В разделе **Параметры**выберите **правила безопасности для входящего трафика**, а затем щелкните **+ добавить**.
+
+1. В раскрывающемся списке **источник** выберите **тег службы**.
+
+1. В раскрывающемся списке **тег службы источника** выберите **HDInsight**.
+
+    ![портал Azure добавить тег службы](./media/hdinisght-service-tags/azure-portal-add-service-tag.png)
+
+Этот тег содержит IP-адреса служб работоспособности и управления для всех регионов, в которых доступна служба HDInsight, и гарантирует, что кластер сможет взаимодействовать с необходимыми службами работоспособности и управления независимо от того, где они созданы.
 
 ## <a name="use-regional-hdinsight-service-tags"></a>Использование региональных тегов службы HDInsight
 
@@ -46,24 +56,24 @@ ms.locfileid: "74187089"
 
 | Страна | Регион | Тег службы |
 | ---- | ---- | ---- |
-| Австралия | Восточная часть Австралии | HDInsight. AustraliaEast |
-| &nbsp; | Юго-Восточная часть Австралии | HDInsight. AustraliaSoutheast |
+| Австралия | Восточная Австралия | HDInsight. AustraliaEast |
+| &nbsp; | Юго-Восточная Австралия | HDInsight. AustraliaSoutheast |
 | &nbsp; | Центральная Австралия | HDInsight. Аустралиацентрал |
-| Китай | Восточный Китай 2 | HDInsight. ChinaEast2 |
-| &nbsp; | Северный Китай 2 | HDInsight. ChinaNorth2 |
+| Китай | Восточный Китай 2 | HDInsight. ChinaEast2 |
+| &nbsp; | Северный Китай 2 | HDInsight. ChinaNorth2 |
 | США | Центрально-северная часть США | HDInsight. NorthCentralUS |
-| &nbsp; | Западный регион США 2 | HDInsight. WestUS2 |
-| &nbsp; | Западно-центральная часть США | HDInsight. WestCentralUS |
+| &nbsp; | Западная часть США 2 | HDInsight. WestUS2 |
+| &nbsp; | Центрально-западная часть США | HDInsight. WestCentralUS |
 | Канада | Восточная Канада | HDInsight. Канадаеаст |
 | Бразилия | Южная Бразилия | HDInsight. Бразилсаус |
-| Корея | Центральная Корея | HDInsight. Кореацентрал |
-| &nbsp; | Южная Корея | HDInsight. Кореасаус |
+| Республика Корея | Республика Корея, центральный регион | HDInsight. Кореацентрал |
+| &nbsp; | Республика Корея, южный регион | HDInsight. Кореасаус |
 | Индия | Центральная Индия | HDInsight. Централиндиа |
 | &nbsp; | Южная Индия | HDInsight. Саусиндиа |
-| Япония | Западная часть Японии | HDInsight. Жапанвест |
+| Япония | Западная Япония | HDInsight. Жапанвест |
 | Франция | Центральная Франция| HDInsight. Францецентрал |
-| Соединенное Королевство | Южная часть Великобритании | HDInsight. UKSouth |
-| Azure для государственных организаций (Fairfax) | Центральная Восточная   | HDInsight. Усдодцентрал |
+| Соединенное Королевство | Южная часть Соединенного Королевства | HDInsight. UKSouth |
+| Azure для государственных организаций | Центральная Восточная   | HDInsight. Усдодцентрал |
 | &nbsp; | Техас (для обслуживания государственных организаций США) | HDInsight. Усговтексас |
 | &nbsp; | Восточная Восток | HDInsight. Усдодеаст |
 
@@ -85,18 +95,18 @@ ms.locfileid: "74187089"
 
 | Страна | Регион | Тег службы |
 | ---- | ---- | ---- |
-| США | Восток США 2 | HDInsight. EastUS2 |
-| &nbsp; | Central US | HDInsight. CentralUS |
+| США | Восточная часть США 2 | HDInsight. EastUS2 |
+| &nbsp; | Центральная часть США | HDInsight. CentralUS |
 | &nbsp; | Норсцентрал США | HDInsight. NorthCentralUS |
 | &nbsp; | Центрально-южная часть США | HDInsight. SouthCentralUS |
 | &nbsp; | Восточная часть США | HDInsight. EastUS |
-| &nbsp; | Запад США | HDInsight. WestUS |
-| Япония | Восточная часть Японии | HDInsight. Жапанеаст |
+| &nbsp; | Западная часть США | HDInsight. WestUS |
+| Япония | Восточная Япония | HDInsight. Жапанеаст |
 | Европа | Северная Европа | HDInsight. Норсеуропе |
 | &nbsp; | Западная Европа| HDInsight. WestEurope |
 | Азия | Восточная Азия | HDInsight. EastAsia |
 | &nbsp; | Юго-Восточная Азия | HDInsight. SoutheastAsia |
-| Австралия | Восточная часть Австралии | HDInsight. AustraliaEast |
+| Австралия | Восточная Австралия | HDInsight. AustraliaEast |
 
 #### <a name="group-2"></a>Группа 2
 
@@ -110,7 +120,7 @@ ms.locfileid: "74187089"
 
 Кластеры в регионах **центрального** и **Германии**в Германии должны разрешать два тега службы: `HDInsight.GermanyCentral` и `HDInsight.GermanyNorthEast`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Группы безопасности сети — Теги службы](../virtual-network/security-overview.md#security-rules)
-* [Создание виртуальных сетей для кластеров Azure HDInsight](hdinsight-create-virtual-network.md)
+- [Группы безопасности сети — Теги службы](../virtual-network/security-overview.md#security-rules)
+- [Создание виртуальных сетей для кластеров Azure HDInsight](hdinsight-create-virtual-network.md)

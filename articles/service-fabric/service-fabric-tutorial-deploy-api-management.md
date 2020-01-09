@@ -1,26 +1,15 @@
 ---
-title: Интеграция управления API с Service Fabric в Azure | Документы Майкрософт
+title: Развертывание управления API с помощью Service Fabric в Azure
 description: Узнайте, как быстро приступить к работе со службой управления API Azure и перенаправлять трафик во внутреннюю службу в Service Fabric.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 07/10/2019
-ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: 470eacee5c71742678497edf48169e14a4073829
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 201d617ce15216ba168bc484f644e165d5ae0e71
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68598829"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75465359"
 ---
 # <a name="integrate-api-management-with-service-fabric-in-azure"></a>Развертывание управления API с помощью Service Fabric в Azure
 
@@ -36,7 +25,7 @@ ms.locfileid: "68598829"
 > [!IMPORTANT]
 > Эта функция доступна в ценовой категории **Премиум** и **Разработка** управления API, так как необходима поддержка виртуальной сети.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед началом работы
 
@@ -288,7 +277,7 @@ az group deployment create --name ApiMgmtDeployment --resource-group $ResourceGr
 
 Помимо собственных ресурсов кластер содержит другие ресурсы Azure. Чтобы удалить кластер и все ресурсы, который он использует, проще всего удалить группу ресурсов.
 
-Войдите в Azure и выберите идентификатор подписки, в которой вы хотите удалить кластер.  Идентификатор подписки можно узнать, войдя на [портал Azure](https://portal.azure.com). Удалите группу ресурсов и все ресурсы кластера с помощью командлета [Remove-азресаурцеграуп](/en-us/powershell/module/az.resources/remove-azresourcegroup).
+Войдите в Azure и выберите идентификатор подписки, в которой вы хотите удалить кластер.  Идентификатор подписки можно узнать, войдя на [портал Azure](https://portal.azure.com). Удалите группу ресурсов и все ресурсы кластера с помощью [командлета Remove-азресаурцеграуп](/en-us/powershell/module/az.resources/remove-azresourcegroup).
 
 ```powershell
 $ResourceGroupName = "sfclustertutorialgroup"
@@ -300,7 +289,7 @@ ResourceGroupName="sfclustertutorialgroup"
 az group delete --name $ResourceGroupName
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании [управления API](/azure/api-management/import-and-publish).
 

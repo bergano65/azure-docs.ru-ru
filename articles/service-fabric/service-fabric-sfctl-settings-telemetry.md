@@ -1,25 +1,16 @@
 ---
-title: 'Интерфейс командной строки Azure Service Fabric: sfctl settings telemetry | Документация Майкрософт'
-description: Описание команд sfctl settings telemetry интерфейса командной строки Service Fabric.
-services: service-fabric
-documentationcenter: na
+title: Azure Service Fabric CLI — параметры телеметрии sfctl
+description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд для настройки телеметрии sfctl.
 author: jeffj6123
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: cli
 ms.topic: reference
-ms.tgt_pltfrm: na
-ms.workload: multiple
 ms.date: 9/17/2019
 ms.author: jejarry
-ms.openlocfilehash: d926c71ae8fd9e196b86c14c7fb96cc65b587b65
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: cdb4a44c8f19b31c164e2ba3ea5e16b7a09e743e
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900982"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645282"
 ---
 # <a name="sfctl-settings-telemetry"></a>sfctl settings telemetry
 Настройте локальные параметры телеметрии этого экземпляра sfctl.
@@ -28,7 +19,7 @@ sfctl telemetry собирает имя команды без предостав
 
 ## <a name="commands"></a>Команды
 
-|Команда|Описание|
+|Get-Help|Description|
 | --- | --- |
 | set-telemetry | Включение и отключение телеметрии. |
 
@@ -37,20 +28,20 @@ sfctl telemetry собирает имя команды без предостав
 
 ### <a name="arguments"></a>Аргументы
 
-|Аргумент|Описание|
+|Аргумент|Description|
 | --- | --- |
 | --off | Отключение телеметрии. |
 | --on | Включение телеметрии. Это значение по умолчанию. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
-|Аргумент|Описание|
+|Аргумент|Description|
 | --- | --- |
-| --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
+| --debug | Повышение уровня детализации журнала для включения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
-| --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения см. на сайте http\://jmespath.org. |
-| --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
+| --output -o | Формат вывода.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
+| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
+| --verbose | Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug. |
 
 ### <a name="examples"></a>Примеры
 

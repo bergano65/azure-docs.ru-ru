@@ -15,18 +15,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/08/2018
 ms.author: kumud
-ms.openlocfilehash: 208cff3c816b8243bc31b3db819f13dafe58c1d1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6e278172bc1c3ec4e81860c3f6d6a4b644731e2c
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64683206"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647787"
 ---
 # <a name="create-a-virtual-machine-with-a-static-public-ip-address-using-powershell"></a>Создание виртуальной машины со статическим общедоступным IP-адресом с помощью PowerShell
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Вы можете создать виртуальную машину со статическим общедоступным IP-адресом. Общедоступный IP-адрес позволяет подключиться к виртуальной машине из Интернета. Присвойте статический общедоступный IP-адрес, а не динамический, чтобы гарантировать, что адрес никогда не изменится. Подробнее о [статических общедоступных IP-адресах](virtual-network-ip-addresses-overview-arm.md#allocation-method). Чтобы изменить общедоступный IP-адрес, присвоенный существующей виртуальной машине, с динамического на статический или использовать частные IP-адреса, см. статью [Добавление, изменение и удаление IP-адресов для сетевого интерфейса Azure](virtual-network-network-interface-addresses.md). За использование общедоступных IP-адресов взимается [номинальная плата](https://azure.microsoft.com/pricing/details/ip-addresses). Кроме того, существует [ограничение](../azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits) на число общедоступных IP-адресов, которые можно использовать в рамках одной подписки.
+Вы можете создать виртуальную машину со статическим общедоступным IP-адресом. Общедоступный IP-адрес позволяет подключиться к виртуальной машине из Интернета. Присвойте статический общедоступный IP-адрес, а не динамический, чтобы гарантировать, что адрес никогда не изменится. Подробнее о [статических общедоступных IP-адресах](virtual-network-ip-addresses-overview-arm.md#allocation-method). Чтобы изменить общедоступный IP-адрес, присвоенный существующей виртуальной машине, с динамического на статический или использовать частные IP-адреса, см. статью [Добавление, изменение и удаление IP-адресов для сетевого интерфейса Azure](virtual-network-network-interface-addresses.md). За использование общедоступных IP-адресов взимается [номинальная плата](https://azure.microsoft.com/pricing/details/ip-addresses). Кроме того, существует [ограничение](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits) на число общедоступных IP-адресов, которые можно использовать в рамках одной подписки.
 
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 
@@ -39,7 +39,7 @@ ms.locfileid: "64683206"
    New-AzResourceGroup -Name myResourceGroup -Location EastUS
    ```
 
-3. Создание виртуальной машины с [командлета New-AzVM](/powershell/module/az.Compute/New-azVM) команды. Параметр `-AllocationMethod "Static"` присваивает статический общедоступный IP-адрес виртуальной машине. В следующем примере создается виртуальная машина Windows Server со статическим общедоступным IP-адресом SKU "Базовый" с именем *myPublicIpAddress*. Когда появится запрос, укажите имя пользователя и пароль в качестве учетных данных для входа на виртуальную машину.
+3. Создайте виртуальную машину с помощью команды [New-AzVM](/powershell/module/az.Compute/New-azVM) . Параметр `-AllocationMethod "Static"` присваивает статический общедоступный IP-адрес виртуальной машине. В следующем примере создается виртуальная машина Windows Server со статическим общедоступным IP-адресом SKU "Базовый" с именем *myPublicIpAddress*. Когда появится запрос, укажите имя пользователя и пароль в качестве учетных данных для входа на виртуальную машину.
 
    ```azurepowershell-interactive
    New-AzVm `
@@ -52,7 +52,7 @@ ms.locfileid: "64683206"
 
    Если у общедоступного IP-адреса должен быть SKU "Стандартный", вам необходимо выполнить отдельные действия: [создать общедоступный IP-адрес](virtual-network-public-ip-address.md#create-a-public-ip-address), [создать сетевой интерфейс](virtual-network-network-interface.md#create-a-network-interface), [назначить общедоступный IP-адрес сетевому интерфейсу](virtual-network-network-interface-addresses.md#add-ip-addresses), а затем [создать виртуальную машину с помощью сетевого интерфейса](virtual-network-network-interface-vm.md#add-existing-network-interfaces-to-a-new-vm). Дополнительные сведения о [номерах SKU общедоступных IP-адресов](virtual-network-ip-addresses-overview-arm.md#sku). Если виртуальная машина добавляется в серверный пул общедоступной подсистемы Azure Load Balancer, номера SKU общедоступных IP-адресов виртуальной машины и подсистемы балансировки нагрузки должны совпадать. Подробные сведения см. в статье [Что такое Azure Load Balancer](../load-balancer/load-balancer-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#skus).
 
-4. Просмотреть общедоступный IP-адрес и убедитесь, что он был создан в качестве статического адреса, с [Get-AzPublicIpAddress](/powershell/module/az.network/get-azpublicipaddress):
+4. Просмотрите назначенный общедоступный IP-адрес и убедитесь, что он был создан как статический адрес с помощью [Get-азпублиЦипаддресс](/powershell/module/az.network/get-azpublicipaddress):
 
    ```azurepowershell-interactive
    Get-AzPublicIpAddress `

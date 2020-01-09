@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
-ms.openlocfilehash: b448099dab0e79dca38310396896be46cf2e0ff6
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 7a2b167f90b4ec79f5fa515ded1c676ca7085e72
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826258"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647719"
 ---
 # <a name="frequently-asked-questions-for-iot-solution-accelerators"></a>Часто задаваемые вопросы об акселераторах решений для Интернета вещей
 
@@ -28,7 +28,7 @@ ms.locfileid: "73826258"
 * [акселератор решений для прогнозного обслуживания](https://github.com/Azure/azure-iot-predictive-maintenance);
 * [акселератор решения "Подключенная фабрика"](https://github.com/Azure/azure-iot-connected-factory).
 
-### <a name="what-sdks-can-i-use-to-develop-device-clients-for-the-solution-accelerators"></a>Какие пакеты SDK можно использовать для разработки клиентов устройств для акселераторов решений?
+### <a name="what-sdks-can-i-use-to-develop-device-clients-for-the-solution-accelerators"></a>Какие пакеты SDK можно использовать при разработке клиентов устройств для акселераторов решений?
 
 Ссылки на пакеты SDK для устройств Интернета вещей для других языков (C, .NET, Java, Node.js, Python) можно найти в репозиториях GitHub для [пакетов SDK Microsoft Azure для Интернета вещей](https://github.com/Azure/azure-iot-sdks).
 
@@ -82,7 +82,7 @@ ms.locfileid: "73826258"
 
 ### <a name="how-many-iot-hub-instances-can-i-provision-in-a-subscription"></a>Сколько экземпляров центров Интернета вещей можно подготовить в рамках одной подписки?
 
-По умолчанию [в рамках одной подписки можно подготовить 10 экземпляров Центра Интернета вещей](../azure-subscription-service-limits.md#iot-hub-limits). Вы можете отправить [запрос в службу поддержки Azure](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы увеличить этот лимит. Так как каждый акселератор решений подготавливает новый Центр Интернета вещей, в рамках одной подписки можно подготовить не более 10 акселераторов решений.
+По умолчанию [в рамках одной подписки можно подготовить 10 экземпляров Центра Интернета вещей](../azure-resource-manager/management/azure-subscription-service-limits.md#iot-hub-limits). Вы можете отправить [запрос в службу поддержки Azure](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы увеличить этот лимит. Так как каждый акселератор решений подготавливает новый Центр Интернета вещей, в рамках одной подписки можно подготовить не более 10 акселераторов решений.
 
 ### <a name="how-many-azure-cosmos-db-instances-can-i-provision-in-a-subscription"></a>Сколько экземпляров Azure Cosmos DB можно подготовить в рамках одной подписки?
 
@@ -108,6 +108,6 @@ ms.locfileid: "73826258"
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 
 * [Обзор возможностей акселератора решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
-* [Общие сведения об акселераторе решений для диагностического обслуживания](iot-accelerators-predictive-overview.md)
+* [Обзор акселератора решений для прогнозного обслуживания](iot-accelerators-predictive-overview.md)
 * [Развертывание акселератора решения "Подключенная фабрика"](quickstart-connected-factory-deploy.md)
 * [Комплексная защита в Интернете вещей](/azure/iot-fundamentals/iot-security-ground-up)

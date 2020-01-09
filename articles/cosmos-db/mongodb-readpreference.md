@@ -1,5 +1,5 @@
 ---
-title: Использование параметров чтения MongoDB в API Azure Cosmos DB для MongoDB
+title: Использование настройки чтения с помощью API Azure Cosmos DB для MongoDB
 description: Сведения об использовании параметров чтения MongoDB в API Azure Cosmos DB для MongoDB
 author: sivethe
 ms.author: sivethe
@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-mongo
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 02/26/2019
-ms.openlocfilehash: 8fc66d70b840578bff086519a7b39e5f389a3de3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 10e6ed556abe8f8c438e5436fbb93c1b70b85d2b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66479611"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75445157"
 ---
 # <a name="how-to-globally-distribute-reads-using-azure-cosmos-dbs-api-for-mongodb"></a>Глобальное распространение операций чтения с помощью API Azure Cosmos DB для MongoDB
 
@@ -75,9 +75,9 @@ readFromSecondaryfunc query completed!
 
 Протокол MongoDB предоставляет следующие режимы параметров чтения для клиентов.
 
-1. PRIMARY.
+1. PRIMARY
 2. PRIMARY_PREFERRED.
-3. SECONDARY.
+3. SECONDARY
 4. SECONDARY_PREFERRED.
 5. NEAREST.
 

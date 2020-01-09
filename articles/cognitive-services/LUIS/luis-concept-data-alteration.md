@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: diberry
-ms.openlocfilehash: a199821c4db7fd8131ec54700b8c999dfe604a6e
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 1bde70dadbe1e5b8ba9bf90bd9ca2f48a4c65491
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74222024"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75381806"
 ---
 # <a name="alter-utterance-data-before-or-during-prediction"></a>Изменение данных высказываний до или во время прогнозирования
 LUIS предоставляет способы управления высказыванием до или во время прогнозирования. Сюда входит [исправление орфографических](luis-tutorial-bing-spellcheck.md)ошибок и устранение проблем с часовым поясом для предварительно созданной [datetimeV2](luis-reference-prebuilt-datetimev2.md). 
@@ -39,7 +39,7 @@ Usage of the key in the test panel and at the endpoint count toward the [key usa
 
 |Параметр|Значение|
 |--|--|
-|`spellCheck`|логическое значение|
+|`spellCheck`|Логическое|
 |`bing-spell-check-subscription-key`|Ключ конечной точки [API проверки орфографии Bing версии 7](https://azure.microsoft.com/services/cognitive-services/spell-check/)|
 
 Когда [API проверки орфографии Bing версии 7](https://azure.microsoft.com/services/cognitive-services/spell-check/) обнаруживает ошибку, из конечной точки возвращаются исходное выражение, исправленное выражение и прогнозирование.
@@ -119,9 +119,9 @@ HTTPS://{регион}. API. turn. Microsoft. com/Luis/v 3.0-Предварит�
 * * * 
 
 ## <a name="c-code-determines-correct-value-of-timezoneoffset"></a>Код на C# определяет правильное значение timezoneOffset
-В следующем коде на C# для определения правильного значения [ на основе системного времени используется метод ](https://docs.microsoft.com/dotnet/api/system.timezoneinfo)FindSystemTimeZoneById[ класса ](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.findsystemtimezonebyid#examples)TimeZoneInfo`timezoneOffset`:
+В следующем коде на C# для определения правильного значения `timezoneOffset` на основе системного времени используется метод [FindSystemTimeZoneById](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.findsystemtimezonebyid#examples) класса [TimeZoneInfo](https://docs.microsoft.com/dotnet/api/system.timezoneinfo):
 
-```CSharp
+```csharp
 // Get CST zone id
 TimeZoneInfo targetZone = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
 
@@ -135,7 +135,7 @@ DateTime cstDatetime = TimeZoneInfo.ConvertTimeFromUtc(utcDatetime, targetZone);
 int timezoneOffset = (int)((cstDatetime - utcDatetime).TotalMinutes);
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Исправление орфографических ошибок с помощью этого руководства](luis-tutorial-bing-spellcheck.md)

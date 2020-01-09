@@ -2,19 +2,15 @@
 title: Подключение решений "Управление обновлениями", "Отслеживание изменений" и "Инвентаризация" на виртуальной машине Azure
 description: Сведения о том, как на виртуальной машине Azure подключить решения "Управление обновлениями", "Отслеживание изменений" и "Инвентаризация", входящие в состав службы автоматизации Azure.
 services: automation
-author: mgoedtel
-ms.author: magoedte
 ms.date: 03/20/2019
 ms.topic: conceptual
-ms.service: automation
 ms.custom: mvc
-manager: carmonm
-ms.openlocfilehash: 8dd69b1cf4ac8874175cff84d3c2b9fc5e323922
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 93222b1b38fa37ec577da6377fdd9aff3fe12018
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849689"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75421821"
 ---
 # <a name="onboard-update-management-change-tracking-and-inventory-solutions-from-an-azure-virtual-machine"></a>Подключение решений "Управление обновлениями", "Отслеживание изменений" и "Инвентаризация" на виртуальной машине Azure
 
@@ -59,7 +55,7 @@ ms.locfileid: "74849689"
 
 Перейдите в рабочую область. В разделе **Общие** выберите **Сохраненные поисковые запросы**. Два сохраненных поисковых запроса, используемые в этих решениях, показаны в следующей таблице:
 
-|Name     |Категория  |Alias  |
+|Имя     |Категория  |Псевдоним  |
 |---------|---------|---------|
 |MicrosoftDefaultComputerGroup     |  ChangeTracking       | ChangeTracking__MicrosoftDefaultComputerGroup        |
 |MicrosoftDefaultComputerGroup     | Обновления        | Updates__MicrosoftDefaultComputerGroup         |

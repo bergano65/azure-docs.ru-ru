@@ -7,14 +7,14 @@ ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
-manager: cpendleton
+manager: cpendle
 ms.custom: codepen
-ms.openlocfilehash: 4a583f77aac036028fd75d3c05af805031f08ebd
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 56d9a9a629e64430c97cf392ee4381e1ad7ca906
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74480551"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75433036"
 ---
 # <a name="clustering-point-data"></a>Данные точки кластеризации
 
@@ -48,11 +48,11 @@ var datasource = new atlas.source.DataSource(null, {
 
 Класс `DataSource` также содержит следующие методы, связанные с кластеризацией:
 
-| Метод | Тип возвращаемого значения | ОПИСАНИЕ |
+| Метод | Возвращаемый тип | Description |
 |--------|-------------|-------------|
-| Жетклустерчилдрен (clusterId: число) | Promise&lt;Array&lt;функция&lt;Geometry, любая&gt; \| форма&gt;&gt; | Извлекает дочерние элементы заданного кластера на следующем уровне масштабирования. Эти дочерние элементы могут быть сочетанием фигур и подкластеров. Подкластеры будут содержать функции со свойствами, соответствующими Клустередпропертиес. |
+| Жетклустерчилдрен (clusterId: число) | Promise&lt;Array&lt;функция&lt;Geometry, любая&gt; \| форма&gt; | Извлекает дочерние элементы заданного кластера на следующем уровне масштабирования. Эти дочерние элементы могут быть сочетанием фигур и подкластеров. Подкластеры будут содержать функции со свойствами, соответствующими Клустередпропертиес. |
 | Жетклустерекспансионзум (clusterId: число) | Номер&lt;Promise&gt; | Вычисляет уровень масштабирования, при котором кластер начинает разворачиваться или разбиваться на части. |
-| Жетклустерлеавес (clusterId: число, ограничение: число, смещение: число) | Promise&lt;Array&lt;функция&lt;Geometry, любая&gt; \| форма&gt;&gt; | Извлекает все точки в кластере. Задайте `limit`, чтобы вернуть подмножество точек, и используйте `offset`, чтобы пролистать точки. |
+| Жетклустерлеавес (clusterId: число, ограничение: число, смещение: число) | Promise&lt;Array&lt;функция&lt;Geometry, любая&gt; \| форма&gt; | Извлекает все точки в кластере. Задайте `limit`, чтобы вернуть подмножество точек, и используйте `offset`, чтобы пролистать точки. |
 
 ## <a name="display-clusters-using-a-bubble-layer"></a>Отображение кластеров с помощью пузырькового слоя
 
@@ -88,12 +88,12 @@ var datasource = new atlas.source.DataSource(null, {
 
 При возникновении событий мыши на слое, содержащем кластеризованные точки данных, кластеризованная точка данных будет возвращена в событие в качестве объекта функции геообъектной точки. Этот компонент будет иметь следующие свойства:
 
-| Имя свойства | введите | ОПИСАНИЕ |
-|---------------|------|-------------|
-| cluster | логическое значение | Указывает, представляет ли компонент кластер. |
-| cluster_id | строка | Уникальный идентификатор кластера, который можно использовать с методами `getClusterExpansionZoom`DataSource, `getClusterChildren`и `getClusterLeaves`. |
-| point_count | number | Число точек, содержащихся в кластере. |
-| point_count_abbreviated | строка | Строка, которая сокращает значение `point_count`, если оно длинное. (например, 4 000 преобразуется в 4 КБ) |
+| Имя свойства             | Тип    | Description   |
+|---------------------------|---------|---------------|
+| `cluster`                 | Логическое | Указывает, представляет ли компонент кластер. |
+| `cluster_id`              | string  | Уникальный идентификатор кластера, который можно использовать с методами `getClusterExpansionZoom`DataSource, `getClusterChildren`и `getClusterLeaves`. |
+| `point_count`             | number  | Число точек, содержащихся в кластере.  |
+| `point_count_abbreviated` | string  | Строка, которая сокращает значение `point_count`, если оно длинное. (например, 4 000 преобразуется в 4 КБ)  |
 
 В этом примере используется пузырьковый слой, который готовит к просмотру точки кластера и добавляет событие щелчка, которое при активации, вычисляются и масштабирует карту до следующего уровня масштаба, на котором кластер будет разбиваться с помощью метода `getClusterExpansionZoom` класса `DataSource` и свойства `cluster_id` в кластеризованной точке данных, которую щелкнули. 
 
@@ -123,12 +123,12 @@ var datasource = new atlas.source.DataSource(null, {
 См. раздел <a href='https://codepen.io/azuremaps/pen/jgYyRL/'>агрегаты кластера</a> перьев по Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Класс DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest)
+> [DataSource class](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"]
 > [Объект DataSourceOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.datasourceoptions?view=azure-iot-typescript-latest)

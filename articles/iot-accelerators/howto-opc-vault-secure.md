@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: b5c886625c944e2f5501859e78506ca89ec3d765
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: af5e511cbf273bc4e4fa0a08d089a955426fe75c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71203695"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75454193"
 ---
 # <a name="use-the-opc-vault-certificate-management-service"></a>Использование службы управления сертификатами хранилища OPC
 
@@ -36,7 +36,7 @@ ms.locfileid: "71203695"
 > [!IMPORTANT]
 > Для регистрации приложения требуется роль модуля записи.
 
-1. Откройте службу сертификатов по адресу `https://myResourceGroup-app.azurewebsites.net` и выполните вход.
+1. Откройте службу сертификатов по адресу `https://myResourceGroup-app.azurewebsites.net`и выполните вход.
 2. Перейдите к разделу **Регистрация новых**. Для регистрации приложения пользователю необходимо иметь по крайней мере назначенную роль модуля записи.
 2. Форма ввода соответствует соглашениям об именовании в OPC UA. Например, на следующем снимке экрана показаны параметры примера [эталонного сервера OPC UA](https://github.com/OPCFoundation/UA-.NETStandard/tree/master/SampleApplications/Workshop/Reference) в .NET Standardном стеке OPC UA:
 
@@ -98,7 +98,7 @@ ms.locfileid: "71203695"
 
 Теперь он зависит от устройства OPC UA, как применить новый сертификат. Как правило, сертификаты ЦС и CRL копируются в папку `trusted`, а сертификат приложения применяется к папке `own` в хранилище сертификатов. Некоторые устройства могут уже поддерживать принудительную отправку сервером обновлений сертификатов. См. документацию по устройству OPC UA.
 
-### <a name="step-4-device-secured"></a>Шаг 4. Защита устройства
+### <a name="step-3-device-secured"></a>Шаг 3. Защита устройства
 
 Теперь устройство OPC UA готово к взаимодействии с другими устройствами OPC UA, защищенными сертификатами, подписанными ЦС, без дальнейшей настройки.
 

@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как настра
 ms.topic: conceptual
 ms.date: 08/03/2018
 ms.assetid: b80b3a41-87bf-49ca-8ef2-68e43c04c1a3
-ms.openlocfilehash: 4f73958a46e408f85d1f23371552aad0d5540184
-ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
+ms.openlocfilehash: 4789ef1e0e09df521f8cab539d972e9e669e0a58
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74554914"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75450160"
 ---
 # <a name="back-up-an-azure-vm-using-azure-backup-via-rest-api"></a>Резервное копирование виртуальных машин Azure с помощью службы Azure Backup и REST API
 
@@ -41,7 +41,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|Name  |Тип  |Описание  |
+|Имя  |Тип  |Description  |
 |---------|---------|---------|
 |204 No Content (содержимое отсутствует)     |         |  ОК (без содержимого, которое возвращаются)      |
 |202 — принято     |         |     Принято    |
@@ -102,9 +102,9 @@ GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 URI *GET* имеет все необходимые параметры. Для этой операции текст запроса также не требуется.
 
-#### <a name="responses-1"></a>Правляют
+#### <a name="responses-1"></a>Ответы
 
-|Name  |Тип  |Описание  |
+|Имя  |Тип  |Description  |
 |---------|---------|---------|
 |200 ОК     | [WorkloadProtectableItemResourceList](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list#workloadprotectableitemresourcelist)        |       ОК |
 
@@ -180,7 +180,7 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Чтобы создать защищенный элемент, используйте компоненты текста запроса.
 
-|Name  |Тип  |Описание  |
+|Имя  |Тип  |Description  |
 |---------|---------|---------|
 |properties     | AzureIaaSVMProtectedItem        |Свойства ресурса ProtectedItem         |
 
@@ -208,7 +208,7 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|Name  |Тип  |Описание  |
+|Имя  |Тип  |Description  |
 |---------|---------|---------|
 |200 ОК     |    [ProtectedItemResource](https://docs.microsoft.com/rest/api/backup/protecteditemoperationresults/get#protecteditemresource)     |  ОК       |
 |202 — принято     |         |     Принято    |
@@ -235,7 +235,7 @@ Location: https://management.azure.com/subscriptions/00000000-0000-0000-0000-000
 X-Powered-By: ASP.NET
 ```
 
-Отследите итоговую операцию, используя заголовки location или Azure-AsyncOperation с помощью простой команды *GET*.
+Затем отследите итоговую операцию, используя заголовок location или Azure-AsyncOperation с помощью простой команды *GET*.
 
 ```http
 GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testVaultRG/providers/microsoft.recoveryservices/vaults/testVault/backupFabrics/Azure/protectionContainers/iaasvmcontainer;iaasvmcontainerv2;testRG;testVM/protectedItems/vm;testRG;testVM/operationsStatus/a0866047-6fc7-4ac3-ba38-fb0ae8aa550f?api-version=2019-05-13
@@ -294,7 +294,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 Чтобы активировать резервное копирование по запросу, используйте компоненты текста запроса.
 
-|Name  |Тип  |Описание  |
+|Имя  |Тип  |Description  |
 |---------|---------|---------|
 |properties     | [IaaSVMBackupRequest](https://docs.microsoft.com/rest/api/backup/backups/trigger#iaasvmbackuprequest)        |Свойства BackupRequestResource         |
 
@@ -319,7 +319,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|Name  |Тип  |Описание  |
+|Имя  |Тип  |Description  |
 |---------|---------|---------|
 |202 — принято     |         |     Принято    |
 
@@ -345,7 +345,7 @@ Location: https://management.azure.com/subscriptions/00000000-0000-0000-0000-000
 X-Powered-By: ASP.NET
 ```
 
-Отследите итоговую операцию, используя заголовки location или Azure-AsyncOperation с помощью простой команды *GET*.
+Затем отследите итоговую операцию, используя заголовок location или Azure-AsyncOperation с помощью простой команды *GET*.
 
 ```http
 GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testVaultRG/providers/microsoft.recoveryservices/vaults/testVault/backupFabrics/Azure/protectionContainers/iaasvmcontainer;iaasvmcontainerv2;testRG;testVM/protectedItems/vm;testRG;testVM/operationsStatus/a0866047-6fc7-4ac3-ba38-fb0ae8aa550f?api-version=2019-05-13
@@ -433,16 +433,38 @@ DELETE https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroup
 DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testVaultRG/providers/Microsoft.RecoveryServices/vaults/testVault/backupFabrics/Azure/protectionContainers/iaasvmcontainer;iaasvmcontainerv2;testRG;testVM/protectedItems/vm;iaasvmcontainerv2;testRG;testVM?api-version=2019-05-13
 ```
 
-### <a name="responses-2"></a>Правляют
+#### <a name="responses-2"></a>Ответы
 
 *DELETE* — это [асинхронная операция](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 204 (содержимое отсутствует), когда эта операция завершается.
 
-|Name  |Тип  |Описание  |
+|Имя  |Тип  |Description  |
 |---------|---------|---------|
 |204 NoContent (содержимое отсутствует)     |         |  NoContent       |
 |202 — принято     |         |     Принято    |
+
+> [!IMPORTANT]
+> Для защиты от случайных сценариев удаления существует [функция обратимого удаления, доступная](use-restapi-update-vault-properties.md#soft-delete-state) для хранилища служб восстановления. Если состояние "обратимое удаление" хранилища имеет значение "включено", то операция удаления не будет немедленно удалять данные. Он будет храниться в течение 14 дней, а затем окончательно очищен. За этот период за 14 дней клиент не будет оплатить за использование хранилища. Чтобы отменить операцию удаления, ознакомьтесь с [разделом Отмена и удаление](#undo-the-stop-protection-and-delete-data).
+
+### <a name="undo-the-stop-protection-and-delete-data"></a>Отмена защиты от вирусов и удаление данных
+
+Отмена случайного удаления аналогична созданию элемента резервного копирования. После отмены удаления элемент сохраняется, но последующие резервные копии не запускаются.
+
+Отмена удаления — это операция *размещения* , которая очень похожа на [изменение политики](#changing-the-policy-of-protection) и/или [Включение защиты](#enabling-protection-for-the-azure-vm). Просто укажите намерение отменить удаление с помощью переменной *исрехидрате* в [тексте запроса](#example-request-body) и отправьте запрос. Например, чтобы отменить удаление для testVM, следует использовать следующий текст запроса.
+
+```http
+{
+  "properties": {
+    "protectedItemType": "Microsoft.Compute/virtualMachines",
+    "protectionState": "ProtectionStopped",
+    "sourceResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachines/testVM",
+    "isRehydrate": true
+  }
+}
+```
+
+Ответ будет в том же формате, что и при [активации резервного копирования по запросу](#example-responses-3). Итоговое задание должно отслеживаться, как описано в [документации по мониторингу заданий для REST API](backup-azure-arm-userestapi-managejobs.md#tracking-the-job).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

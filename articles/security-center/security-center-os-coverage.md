@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/29/2019
 ms.author: memildin
-ms.openlocfilehash: 47e66bfc4550372b571b7263ef5b7f2f149712dc
-ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
+ms.openlocfilehash: 42bd6037bcc94a83e649433e9ea0425fbdf11cd2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74307309"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75353322"
 ---
 # <a name="supported-platforms"></a>Поддерживаемые платформы 
 
@@ -45,8 +45,8 @@ ms.locfileid: "74307309"
 |:---|:-:|:-:|
 |Windows Server 2019|✔|X|
 |Windows Server 2016|✔|✔|
-|Windows Server 2012 R2|✔|✔|
-|Windows Server 2008 R2|✔|✔|
+|Windows Server 2012 R2|✔|✔|
+|Windows Server 2008 R2|✔|✔|
 
 Дополнительные сведения о поддерживаемых функциях для операционных систем Windows, перечисленных выше, см. в разделе [Поддерживаемые функции виртуальных машин и серверов](security-center-services.md##vm-server-features).
 
@@ -56,11 +56,11 @@ ms.locfileid: "74307309"
 
 * CentOS 6 и 7
 * Amazon Linux 2017.09
-* Oracle Linux 6 и 7
+* Oracle Linux 6 и Oracle Linux 7
 * Red Hat Enterprise Linux Server 6 и 7
 * Debian GNU/Linux 8 и 9
 * Ubuntu Linux 14.04 LTS, 16.04 LTS и 18.04 LTS
-* SUSE Linux Enterprise Server 12
+* SUSE Linux Enterprise Server 12
 
 32-битная
 * CentOS 6
@@ -89,10 +89,10 @@ ms.locfileid: "74307309"
 * SQL
 * PostGreSQL
 * MySQL
-* Cosmos DB
+* Cosmos DB;
 * Учетная запись хранения
 * Служба приложений
-* Функция
+* Компонент
 * Облачная служба
 * Виртуальная сеть
 * Подсеть
@@ -102,21 +102,21 @@ ms.locfileid: "74307309"
 * Учетная запись Service Fabric
 * Учетная запись службы автоматизации
 * Подсистема балансировки нагрузки
-* поиска
+* Поиск
 * Пространство имен служебной шины
 * Stream Analytics
 * Пространство имен концентратора событий
-* приложений логики;
+* Логические приложения
 * Redis
-* Аналитика озера данных
+* Data Lake Analytics
 * Data Lake Store
-* Хранилище ключей
+* Key Vault;
 
 Дополнительные сведения о поддерживаемых функциях для приведенного выше списка ресурсов PaaS см. в разделе [службы PaaS поддерживаемые функции](security-center-services.md#paas-services).
 
 Также поддерживается защита виртуальных машин, размещенных в Azure Stack. Дополнительные сведения об интеграции центра безопасности с Azure Stack см. в статье подключение [Azure Stack виртуальных машин к центру безопасности](https://docs.microsoft.com/azure/security-center/quick-onboard-azure-stack).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [Центр безопасности собирает данные и агент log Analytics](security-center-enable-data-collection.md).
 - Узнайте [, как центр безопасности управляет и защищает данные](security-center-data-security.md).

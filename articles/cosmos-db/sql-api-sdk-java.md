@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: reference
 ms.date: 03/13/2019
 ms.author: sngun
-ms.openlocfilehash: 42dcc0e9bd07f357c17f28dd754e4ae3404e01ff
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.openlocfilehash: 3e36aa268286b9127f36859a1fa4402644994a32
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74561892"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75444846"
 ---
 # <a name="azure-cosmos-db-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Java для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -37,7 +37,7 @@ ms.locfileid: "74561892"
 |**Скачивание пакета SDK**|[Maven](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-documentdb%22)|
 |**Документация по API**|[Справочная документация по API Java](/java/api/com.microsoft.azure.documentdb)|
 |**Участие в разработке пакета SDK**|[GitHub](https://github.com/Azure/azure-documentdb-java/)|
-|**Приступая к работе с условным доступом**|[Приступая к работе с пакетом SDK для Java](sql-api-java-get-started.md)|
+|**Начало работы**|[Приступая к работе с пакетом SDK для Java](sql-api-java-get-started.md)|
 |**Учебник по веб-приложениям**|[Руководство по ASP.NET MVC. Разработка веб-приложений в Azure Cosmos DB](sql-api-java-application.md)|
 |**Минимальная поддерживаемая среда выполнения**|[Пакет средств разработки Java (JDK) 7+](https://aka.ms/azure-jdks)|
 
@@ -48,6 +48,7 @@ ms.locfileid: "74561892"
 
 ### <a name="a-name244244"></a><a name="2.4.4"/>2.4.4
 * Обновление кэша диапазона ключей секционирования.
+* Исправлена ситуация, когда пакет SDK не размещает указание разбиения секций с сервера и приводит к неправильному обновлению кэша маршрутизации на стороне клиента.
 
 ### <a name="a-name242242"></a><a name="2.4.2"/>2.4.2
 * Обновление оптимизированного кэша коллекций.
@@ -298,9 +299,9 @@ ms.locfileid: "74561892"
 | 0.9.1-prelease |19 декабря 2014 г. |29 февраля 2016 г. |
 | 0.9.0-prelease |10 декабря 2014 г. |29 февраля 2016 г. |
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>Часто задаваемые вопросы
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 Дополнительные сведения о Cosmos DB см. на странице службы [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/).
 

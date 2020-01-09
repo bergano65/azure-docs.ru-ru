@@ -1,17 +1,17 @@
 ---
-title: Создание Azure Cosmos DB с помощью шаблонов Azure Resource Manager и управление ими
+title: Создание Azure Cosmos DB с помощью шаблонов диспетчер ресурсов и управление ими
 description: Использование шаблонов Azure Resource Manager для создания и настройки Azure Cosmos DB для API-интерфейса SQL (Core)
 author: TheovanKraay
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: thvankra
-ms.openlocfilehash: 62c04fed03ad2346d0f548a4a8028f2d7d6b3486
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 95301efce4b2abe143ec8c8ea5e5ccc445191d3e
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74850471"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75643803"
 ---
 # <a name="manage-azure-cosmos-db-sql-core-api-resources-with-azure-resource-manager-templates"></a>Управление ресурсами API Azure Cosmos DB SQL (Core) с помощью шаблонов Azure Resource Manager
 
@@ -204,5 +204,5 @@ az cosmosdb show --resource-group $resourceGroupName --name accountName --output
 
 * [Документация по Azure Resource Manager](/azure/azure-resource-manager/)
 * [Схема поставщика ресурсов Azure Cosmos DB](/azure/templates/microsoft.documentdb/allversions)
-* [Шаблоны быстрого запуска Azure Cosmos DB](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.DocumentDB&pageNumber=1&sort=Popular)
+* [Шаблоны быстрого запуска Azure Cosmos DB](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Documentdb&pageNumber=1&sort=Popular)
 * [Устранение распространенных ошибок развертывания Azure Resource Manager](../azure-resource-manager/resource-manager-common-deployment-errors.md)

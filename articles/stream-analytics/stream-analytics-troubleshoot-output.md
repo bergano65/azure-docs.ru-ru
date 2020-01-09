@@ -1,7 +1,6 @@
 ---
 title: Устранение неполадок с выходными данными в Azure Stream Analytics
 description: В этой статье описаны методы устранения неполадок с выходными подключениями в заданиях Azure Stream Analytics.
-services: stream-analytics
 author: sidram
 ms.author: sidram
 ms.reviewer: mamccrea
@@ -9,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: a07ac40ad3adda486b5216e83d683e00ec93265d
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 65d01c5c4dd852cb424c75f170ce52156f1633cc
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67620793"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75354110"
 ---
 # <a name="troubleshoot-azure-stream-analytics-outputs"></a>Устранение неполадок с выходными данными в Azure Stream Analytics
 
@@ -23,7 +22,7 @@ ms.locfileid: "67620793"
 ## <a name="output-not-produced-by-job"></a>Выходные данные, не созданные заданием 
 1.  Проверьте подключение к портам вывода с помощью кнопки **Проверить подключение** для всех выходных данных.
 
-2.  Проверьте [**метрики мониторинга**](stream-analytics-monitoring.md) на вкладке **Монитор**. Так как значения агрегированы, метрики задерживаются на несколько минут.
+2.  Просмотрите [**метрики мониторинга**](stream-analytics-monitoring.md) на вкладке **монитор** . Так как значения суммируются, метрики откладываются на несколько минут.
     - Если значение параметра "Входные события" больше 0, задание может читать данные. Если значение параметра "Входные события" меньше 0, сделайте следующее:
       - Чтобы узнать, используются ли в источнике данных допустимые данные, проверьте [обозреватель служебной шины](https://code.msdn.microsoft.com/windowsapps/Service-Bus-Explorer-f2abca5a). Эта проверка применяется, если задание использует концентратор событий в качестве точки ввода.
       - Проверьте формат сериализации и шифрования данных.
@@ -91,11 +90,11 @@ ms.locfileid: "67620793"
 * Вы можете задать параметр IGNORE_DUP_KEY для уникального индекса при помощи ALTER INDEX. Это ограничение отличается от PRIMARY KEY или UNIQUE и создается с использованием определения CREATE INDEX или INDEX.  
 * IGNORE_DUP_KEY не применяется к индексам хранилища столбцов, так как нельзя обеспечить уникальность таких индексов.  
 
-## <a name="column-names-are-lower-cased-by-azure-stream-analytics"></a>Имена столбцов в нижнем регистре, службой Azure Stream Analytics
-При использовании исходному уровню совместимости (1.0), Azure Stream Analytics используется для изменения имен столбцов в нижний регистр. Такое поведение было исправлено в более поздние версии уровни совместимости. Чтобы сохранить так, мы рекомендуем клиентам перейти на уровень совместимости 1.1 и более поздних версий. Дополнительные сведения можно найти на [уровне совместимости заданий Azure Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-compatibility-level).
+## <a name="column-names-are-lower-cased-by-azure-stream-analytics"></a>Имена столбцов записываются в нижнем регистре Azure Stream Analytics
+При использовании исходного уровня совместимости (1,0) Azure Stream Analytics используется для изменения имен столбцов на нижний регистр. Это поведение было исправлено на более поздних уровнях совместимости. Чтобы сохранить вариант, мы советуем клиентам перейти на уровень совместимости 1,1 и более поздней версии. Дополнительные сведения об [уровне совместимости для Azure Stream Analyticsных заданий](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-compatibility-level)см. здесь.
 
 
-## <a name="get-help"></a>Получение справки
+## <a name="get-help"></a>Справка
 
 За дополнительной помощью обращайтесь на наш [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
 

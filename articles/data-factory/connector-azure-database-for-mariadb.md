@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/04/2019
-ms.openlocfilehash: 00fdeb71cec5995a229c5408429a0369d4317b66
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 20e84b584fa4d654500efc47786fa8db0cd9c238
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74931671"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75440801"
 ---
 # <a name="copy-data-from-azure-database-for-mariadb-using-azure-data-factory"></a>Копирование данных из Базы данных Azure для MariaDB с помощью Фабрики данных Azure 
 
@@ -43,13 +43,13 @@ ms.locfileid: "74931671"
 
 Для связанной службы Базы данных Azure для MariaDB поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства Type необходимо задать значение **азуремариадб** . | ДА |
-| connectionString | Строка подключения к Базе данных Azure для MariaDB. Ее можно найти на портале Azure -> База данных Azure для MariaDB -> Строки подключения -> ADO.NET. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `pwd` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
+| type | Для свойства Type необходимо задать значение **азуремариадб** . | Да |
+| connectionString | Строка подключения к Базе данных Azure для MariaDB. Ее можно найти на портале Azure -> База данных Azure для MariaDB -> Строки подключения -> ADO.NET. <br/> Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `pwd` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
-**Пример.**
+**Пример**.
 
 ```json
 {
@@ -57,10 +57,7 @@ ms.locfileid: "74931671"
     "properties": {
         "type": "AzureMariaDB",
         "typeProperties": {
-            "connectionString": {
-                "type": "SecureString",
-                "value": "Server={your_server}.mariadb.database.azure.com; Port=3306; Database={your_database}; Uid={your_user}@{your_server}; Pwd={your_password}; SslMode=Preferred;"
-            }
+            "connectionString": "Server={your_server}.mariadb.database.azure.com; Port=3306; Database={your_database}; Uid={your_user}@{your_server}; Pwd={your_password}; SslMode=Preferred;"
         },
         "connectVia": {
             "referenceName": "<name of Integration Runtime>",
@@ -78,10 +75,7 @@ ms.locfileid: "74931671"
     "properties": {
         "type": "AzureMariaDB",
         "typeProperties": {
-            "connectionString": {
-                 "type": "SecureString",
-                 "value": "Server={your_server}.mariadb.database.azure.com; Port=3306; Database={your_database}; Uid={your_user}@{your_server}; SslMode=Preferred;"
-            },
+            "connectionString": "Server={your_server}.mariadb.database.azure.com; Port=3306; Database={your_database}; Uid={your_user}@{your_server}; SslMode=Preferred;",
             "pwd": { 
                 "type": "AzureKeyVaultSecret", 
                 "store": { 
@@ -105,9 +99,9 @@ ms.locfileid: "74931671"
 
 Чтобы скопировать данные из базы данных Azure для MariaDB, поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство Type набора данных должно иметь значение **азуремариадбтабле** . | ДА |
+| type | Свойство Type набора данных должно иметь значение **азуремариадбтабле** . | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -135,12 +129,12 @@ ms.locfileid: "74931671"
 
 Чтобы скопировать данные из базы данных Azure для MariaDB, в разделе **источник** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство Type источника действия копирования должно иметь значение **азуремариадбсаурце** . | ДА |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
+| type | Свойство Type источника действия копирования должно иметь значение **азуремариадбсаурце** . | Да |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например: `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[

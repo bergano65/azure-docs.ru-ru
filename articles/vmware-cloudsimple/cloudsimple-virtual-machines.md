@@ -1,5 +1,6 @@
 ---
-title: Решение Azure VMware по Клаудсимпле — общие сведения о виртуальных машинах
+title: Обзор виртуальных машин
+titleSuffix: Azure VMware Solution by CloudSimple
 description: Узнайте о виртуальных машинах Клаудсимпле и их преимуществах.
 author: sharaths-cs
 ms.author: dikamath
@@ -8,12 +9,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 213ab51dae20d281a1a0e0f8ea18f4bde888e64d
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 436a5ab6fb286ce206f981487b6a29d774ecd1a1
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69877899"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75372795"
 ---
 # <a name="cloudsimple-virtual-machines-overview"></a>Общие сведения о виртуальных машинах Клаудсимпле
 
@@ -34,7 +35,7 @@ ms.locfileid: "69877899"
   * Сброс виртуальной машины
 * Удаление виртуальной машины
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [использовать виртуальные машины VMware в Azure](quickstart-create-vmware-virtual-machine.md) .
-* Сведения о сопоставлении [подписки Azure](azure-subscription-mapping.md)
+* Сведения о [сопоставлении подписки Azure](azure-subscription-mapping.md)

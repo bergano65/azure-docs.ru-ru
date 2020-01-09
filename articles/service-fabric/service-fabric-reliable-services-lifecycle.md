@@ -1,25 +1,16 @@
 ---
-title: Общие сведения о жизненном цикле Reliable Services в Azure Service Fabric | Документация Майкрософт
-description: Сведения о различных событиях жизненного цикла служб Reliable Services в Service Fabric
-services: Service-Fabric
-documentationcenter: .net
+title: Общие сведения о жизненном цикле Reliable Services
+description: Сведения о событиях жизненного цикла в приложении Azure Service Fabric Reliable Services для служб с отслеживанием состояния и без отслеживания состояния.
 author: masnider
-manager: chackdan
-editor: vturecek;
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: ebc7aec63b34630b606178aa17e2ae7fdd0fc87f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fe338ca3f25cd606da7f95f6c9437a3cd3dc4e69
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60723576"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645503"
 ---
 # <a name="reliable-services-lifecycle-overview"></a>Жизненный цикл Reliable Services
 > [!div class="op_single_selector"]

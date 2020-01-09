@@ -1,20 +1,16 @@
 ---
-title: Масштабируемость приложений службы "Сетка Azure Service Fabric" | Документация Майкрософт
+title: Масштабируемость приложений сети Azure Service Fabric
 description: Одним из преимуществ развертывания приложений в Service Fabricной сети является возможность легко масштабировать службы либо вручную, либо с помощью политик автоматического масштабирования.
-services: service-fabric-mesh
-keywords: ''
 author: dkkapur
 ms.author: dekapur
 ms.date: 10/26/2018
 ms.topic: conceptual
-ms.service: service-fabric-mesh
-manager: timlt
-ms.openlocfilehash: 59fdf68ed1ead4665ec8944d67f2d5112d370716
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 474eda904df653d514fd2ee59fa046f1f87a66aa
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73662997"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75458997"
 ---
 # <a name="scaling-service-fabric-mesh-applications"></a>Масштабирование приложений службы "Сетка Service Fabric"
 

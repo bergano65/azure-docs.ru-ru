@@ -1,5 +1,6 @@
 ---
-title: Решение VMware для Azure, Клаудсимпле — обслуживание и обновления Клаудсимпле
+title: Обслуживание и обновления Клаудсимпле
+titleSuffix: Azure VMware Solution by CloudSimple
 description: Описание процесса службы Клаудсимпле для запланированного обслуживания и обновлений
 author: sharaths-cs
 ms.author: dikamath
@@ -8,12 +9,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 92f02c0abef6755213d4c73189c7e0a593867ef6
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 826fae1123b355a4143118b53ba649f0939acaf7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69877932"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75372829"
 ---
 # <a name="cloudsimple-maintenance-and-updates"></a>Обслуживание и обновления Клаудсимпле
 
@@ -38,7 +39,7 @@ ms.locfileid: "69877932"
 * Физические порты сетевого адаптера
 * Серверы
 * Фанатов
-* Возведение в степень
+* Power
 * Коммутаторы
 * Порты коммутатора
 
@@ -50,9 +51,9 @@ ms.locfileid: "69877932"
 * Службы платформы vCenter
 * Контроллер
 * vSAN
-* НСКС
+* нскс
 
-## <a name="back-up-and-restore"></a>Резервное копирование и восстановление
+## <a name="back-up-and-restore"></a>Архивация и восстановление
 
 Резервная копия Клаудсимпле включает:
 
@@ -103,6 +104,6 @@ ms.locfileid: "69877932"
 
 Клаудсимпле обеспечивает ежеквартальное обслуживание программных компонентов VMware. Когда доступна новая основная версия программного обеспечения VMware, Клаудсимпле работает с клиентами, чтобы координировать подходящее окно обслуживания для обновления.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Резервное копирование виртуальных машин рабочей нагрузки с помощью Veeam](backup-workloads-veeam.md)

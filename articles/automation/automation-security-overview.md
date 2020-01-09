@@ -3,20 +3,16 @@ title: Общие сведения о проверке подлинности в
 description: В этой статье содержатся общие сведения об автоматическом обеспечении безопасности с использованием разных методов проверки подлинности, доступных для учетных записей службы автоматизации в службе автоматизации Azure.
 keywords: безопасность в службе автоматизации, обеспечение безопасности в службе автоматизации, проверка подлинности в службе автоматизации
 services: automation
-ms.service: automation
 ms.subservice: process-automation
-author: mgoedtel
-ms.author: magoedte
 ms.date: 03/19/2018
 ms.topic: conceptual
-manager: carmonm
 ROBOTS: NOINDEX
-ms.openlocfilehash: 0a05497c05051576868c1311857d58caa0d76055
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: b2003469fa35de837c3a9214e40cfb333156b40c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74850675"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75420680"
 ---
 # <a name="introduction-to-authentication-in-azure-automation"></a>Общие сведения о проверке подлинности в службе автоматизации Azure  
 С помощью службы автоматизации Azure можно автоматизировать задачи, выполняемые с ресурсами Azure (локально), а также с ресурсами других поставщиков облачных служб, например Amazon Web Services (AWS).  Для выполнения необходимых действий модуль Runbook должен иметь разрешения на безопасный доступ к ресурсам с минимальными правами, требуемыми в рамках подписки.
@@ -45,7 +41,7 @@ ms.locfileid: "74850675"
 | Метод | Среда | Статья |
 | --- | --- | --- |
 | Учетная запись пользователя Azure AD |Azure Resource Manager и классическая модель Azure |[Проверка подлинности модулей Runbook с помощью Azure Service Management и Resource Manager](automation-create-aduser-account.md) |
-| Учетная запись запуска от имени Azure |Диспетчер ресурсов Azure |[Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](automation-sec-configure-azure-runas-account.md) |
+| Учетная запись запуска от имени Azure |Azure Resource Manager |[Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](automation-sec-configure-azure-runas-account.md) |
 | Классическая учетная запись запуска от имени Azure |Классическая модель Azure |[Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](automation-sec-configure-azure-runas-account.md) |
 | Проверка подлинности Windows |Локальный центр обработки данных |[Гибридные компоненты Runbook Worker в службе автоматизации Azure](automation-hybrid-runbook-worker.md) |
 | Учетные данные AWS |Amazon Web Services |[Authenticate Runbooks with Amazon Web Services (AWS) (Проверка подлинности модулей Runbook с помощью Amazon Web Services)](automation-config-aws-account.md) |

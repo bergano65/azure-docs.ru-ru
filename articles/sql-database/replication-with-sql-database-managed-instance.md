@@ -1,26 +1,30 @@
 ---
 title: Настройка репликации в базе данных управляемого экземпляра
-description: Дополнительные сведения о настройке репликации транзакций в базе данных Управляемого экземпляра Базы данных SQL Azure.
+description: Узнайте, как настроить репликацию транзакций между издателем и распространителем управляемого экземпляра базы данных SQL Azure и подписчиком управляемого экземпляра.
 services: sql-database
 ms.service: sql-database
 ms.subservice: data-movement
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: allenwux
-ms.author: xiwu
+author: MashaMSFT
+ms.author: ferno
 ms.reviewer: mathoma
 ms.date: 02/07/2019
-ms.openlocfilehash: f303a363fd4d42889e7817273be5d5e5440a2293
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: fd881142e0260d313e197d5e40ae25a2621646df
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73822588"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75372484"
 ---
 # <a name="configure-replication-in-an-azure-sql-database-managed-instance-database"></a>Настройка репликации в базе данных Управляемого экземпляра Базы данных SQL Azure
 
 Репликация транзакций позволяет реплицировать данные в базу данных Управляемого экземпляра Базы данных SQL Azure из базы данных SQL Server или другой базы данных экземпляра. 
+
+В этой статье показано, как настроить репликацию между издателем или распространителем управляемого экземпляра и подписчиком управляемого экземпляра. 
+
+![Репликация между двумя управляемыми экземплярами](media/replication-with-sql-database-managed-instance/sqlmi-sqlmi-repl.png)
 
 Можно также использовать репликацию транзакций для отправки изменений, внесенных в базу данных экземпляра в управляемом экземпляре базы данных SQL Azure, в:
 
@@ -31,7 +35,8 @@ ms.locfileid: "73822588"
 Репликация транзакций доступна в общедоступной предварительной версии [управляемого экземпляра базы данных SQL Azure](sql-database-managed-instance.md). В управляемом экземпляре может размещаться база данных издателя, распространителя и подписчика. Сведения о доступных конфигурациях см. [здесь](sql-database-managed-instance-transactional-replication.md#common-configurations).
 
   > [!NOTE]
-  > В этой статье описано, как настроить репликацию с помощью управляемого экземпляра базы данных Azure с начала до конца, начиная с создания группы ресурсов. Если вы уже развернули управляемые экземпляры, перейдите к [шагу 4](#4---create-a-publisher-database) , чтобы создать базу данных издателя, или [Шаг 6](#6---configure-distribution) , если у вас уже есть база данных издателя и подписчика, и все готово для начала настройки репликации.  
+  > - В этой статье описано, как настроить репликацию с помощью управляемого экземпляра базы данных Azure с начала до конца, начиная с создания группы ресурсов. Если вы уже развернули управляемые экземпляры, перейдите к [шагу 4](#4---create-a-publisher-database) , чтобы создать базу данных издателя, или [Шаг 6](#6---configure-distribution) , если у вас уже есть база данных издателя и подписчика, и все готово для начала настройки репликации.  
+  > - В этой статье описывается настройка издателя и распространителя в одном управляемом экземпляре. Сведения о размещении распространителя на отдельном управляемом экземпляре см. в руководстве по [настройке репликации между издателем MI и распространителем MI](sql-database-managed-instance-configure-replication-tutorial.md). 
 
 ## <a name="requirements"></a>Требования
 
@@ -48,9 +53,9 @@ ms.locfileid: "73822588"
  > Отдельные базы данных и базы данных в пуле в Базе данных SQL Azure могут быть только подписчиками. 
 
 
-## <a name="features"></a>Функции
+## <a name="features"></a>Возможности
 
-Поддерживает:
+Поддерживаются следующие возможности:
 
 - Сочетание транзакционной репликации и репликации моментальных снимков локального и управляемого экземпляров SQL Server в Базе данных SQL Azure.
 - Подписчики могут находиться в локальных базах данных SQL Server, отдельных базах данных или управляемых экземплярах в базе данных SQL Azure или в базах данных пула в эластичных пулах базы данных SQL Azure.
@@ -67,10 +72,10 @@ ms.locfileid: "73822588"
 
 ## <a name="2---create-managed-instances"></a>2\. Создание управляемых экземпляров
 
-Используйте [портал Azure](https://portal.azure.com) , чтобы создать два [управляемых экземпляра](sql-database-managed-instance-create-tutorial-portal.md) в одной виртуальной сети и подсети. Два управляемых экземпляра должны называться:
+Используйте [портал Azure](https://portal.azure.com) , чтобы создать два [управляемых экземпляра](sql-database-managed-instance-create-tutorial-portal.md) в одной виртуальной сети и подсети. Например, назовите два управляемых экземпляра:
 
-- `sql-mi-pub`
-- `sql-mi-sub`
+- `sql-mi-pub` (вместе с некоторыми символами для случайного выбора)
+- `sql-mi-sub` (вместе с некоторыми символами для случайного выбора)
 
 Кроме того, необходимо [настроить виртуальную машину Azure для подключения](sql-database-managed-instance-configure-vm.md) к управляемым экземплярам базы данных SQL Azure. 
 
@@ -80,9 +85,13 @@ ms.locfileid: "73822588"
 
 Скопируйте путь к общей папке в формате: `\\storage-account-name.file.core.windows.net\file-share-name`
 
+Пример: `\\replstorage.file.core.windows.net\replshare`
+
 Скопируйте ключи доступа к хранилищу в формате: `DefaultEndpointsProtocol=https;AccountName=<Storage-Account-Name>;AccountKey=****;EndpointSuffix=core.windows.net`
 
- Дополнительные сведения см. в разделе [Просмотр и копирование ключей доступа к хранилищу](../storage/common/storage-account-manage.md#access-keys). 
+Пример: `DefaultEndpointsProtocol=https;AccountName=replstorage;AccountKey=dYT5hHZVu9aTgIteGfpYE64cfis0mpKTmmc8+EP53GxuRg6TCwe5eTYWrQM4AmQSG5lb3OBskhg==;EndpointSuffix=core.windows.net`
+
+Дополнительные сведения см. в статье [Управление ключами доступа учетной записи хранения](../storage/common/storage-account-keys-manage.md). 
 
 ## <a name="4---create-a-publisher-database"></a>4\. Создание базы данных издателя
 
@@ -160,8 +169,9 @@ GO
 :setvar username loginUsedToAccessSourceManagedInstance
 :setvar password passwordUsedToAccessSourceManagedInstance
 :setvar file_storage "\\storage-account-name.file.core.windows.net\file-share-name"
+-- example: file_storage "\\replstorage.file.core.windows.net\replshare"
 :setvar file_storage_key "DefaultEndpointsProtocol=https;AccountName=<Storage-Account-Name>;AccountKey=****;EndpointSuffix=core.windows.net"
-
+-- example: file_storage_key "DefaultEndpointsProtocol=https;AccountName=replstorage;AccountKey=dYT5hHZVu9aTgIteGfpYE64cfis0mpKTmmc8+EP53GxuRg6TCwe5eTYWrQM4AmQSG5lb3OBskhg==;EndpointSuffix=core.windows.net"
 
 USE [master]
 EXEC sp_adddistpublisher
@@ -173,6 +183,9 @@ EXEC sp_adddistpublisher
   @working_directory = N'$(file_storage)',
   @storage_connection_string = N'$(file_storage_key)'; -- Remove this parameter for on-premises publishers
 ```
+
+   > [!NOTE]
+   > Для параметра file_storage следует использовать только символы обратной косой черты (`\`). Использование косой черты (`/`) может вызвать ошибку при подключении к общей папке. 
 
 Этот сценарий настраивает локальный издатель на управляемом экземпляре, добавляет связанный сервер и создает набор заданий для агент SQL Server. 
 
@@ -322,10 +335,11 @@ EXEC sp_dropdistributor @no_checks = 1
 GO
 ```
 
-Вы можете очистить ресурсы Azure, [удалив ресурсы управляемого экземпляра из группы ресурсов](../azure-resource-manager/manage-resources-portal.md#delete-resources) , а затем удалив группу ресурсов `SQLMI-Repl`. 
+Вы можете очистить ресурсы Azure, [удалив ресурсы управляемого экземпляра из группы ресурсов](../azure-resource-manager/management/manage-resources-portal.md#delete-resources) , а затем удалив группу ресурсов `SQLMI-Repl`. 
 
    
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
 - [Репликация транзакций](sql-database-managed-instance-transactional-replication.md)
+- [Учебник. Настройка репликации транзакций между издателем MI и подписчиком SQL Server](sql-database-managed-instance-configure-replication-tutorial.md)
 - [Общие сведения об Управляемом экземпляре](sql-database-managed-instance.md)

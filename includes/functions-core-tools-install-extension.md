@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: functions
 author: ggailey777
 ms.service: azure-functions
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/25/2019
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: a050ce62f745591608249b41ba56992d8fd35204
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 94cac0932da5880e5e7b8a8fac3870b5bc464af9
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74935876"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75564683"
 ---
 ## <a name="register-extensions"></a>Регистрация расширений
 
@@ -25,7 +25,7 @@ ms.locfileid: "74935876"
 
 [!INCLUDE [Register extensions](functions-extension-bundles.md)]
 
-Дополнительные сведения см. в статье [Регистрация расширений привязки функций Azure](../articles/azure-functions/functions-bindings-register.md#extension-bundles). Перед добавлением привязок в файл functions. JSON необходимо добавить пакеты расширений в Host. JSON.
+Дополнительные сведения см. в статье [Регистрация расширений привязки функций Azure](../articles/azure-functions/functions-bindings-register.md#extension-bundles). Перед добавлением привязок в файл function. JSON необходимо добавить расширения в Host. JSON.
 
 ### <a name="register-individual-extensions"></a>Регистрация отдельных расширений
 

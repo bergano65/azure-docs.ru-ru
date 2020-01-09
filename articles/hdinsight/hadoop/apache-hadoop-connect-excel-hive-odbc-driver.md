@@ -1,20 +1,19 @@
 ---
 title: Excel & Apache Hadoop с драйвером ODBC — Azure HDInsight
 description: Узнайте, как установить и использовать драйвер Microsoft Hive ODBC для Excel, чтобы запрашивать данные в кластерах HDInsight из Microsoft Excel.
-keywords: hadoop excel, hive excel, hive odbc
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 10/08/2019
-ms.openlocfilehash: 37cb05c4bf3822c9dc21b1fa9cd0ea4a2ba6d933
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.custom: hdinsightactive,hdiseo17may2017
+ms.date: 12/11/2019
+ms.openlocfilehash: 883192e1d041014c23445b7a2fa0ece45eb76f10
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73177340"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75435814"
 ---
 # <a name="connect-excel-to-apache-hadoop-in-azure-hdinsight-with-the-microsoft-hive-odbc-driver"></a>Подключение Excel к Apache Hadoop с помощью драйвера Microsoft Hive ODBC в Azure HDInsight
 
@@ -41,7 +40,7 @@ ms.locfileid: "73177340"
 
 1. В Windows откройте "Пуск > Средства администрирования Windows > Источники данных ODBC" (32-разрядная или 64-разрядная версия).  В результате откроется окно **Администратор источников данных ODBC**.
 
-    ![Администратор источника данных ODBC](./media/apache-hadoop-connect-excel-hive-odbc-driver/simbahiveodbc-datasourceadmin1.png "Настройка имени DSN с помощью администратора источников данных ODBC")
+    ![Администратор источника данных ODBC](./media/apache-hadoop-connect-excel-hive-odbc-driver/simbahiveodbc-datasourceadmin1.png "Настройка DSN с помощью администратора источников данных ODBC")
 
 1. На вкладке **DSN пользователя** выберите **Добавить**, чтобы открыть окно **Создание нового источника данных**.
 
@@ -49,10 +48,10 @@ ms.locfileid: "73177340"
 
 1. Введите или выберите следующие значения:
 
-   | Свойство | Описание |
+   | Свойство | Description |
    | --- | --- |
-   |  Имя источника данных |Присвойте имя источнику данных |
-   |  Узлы |Укажите `HDInsightClusterName.azurehdinsight.net`. Например `myHDICluster.azurehdinsight.net`. |
+   |  Имя базы данных-источника |Присвойте имя источнику данных |
+   |  Узлы |Введите `HDInsightClusterName.azurehdinsight.net`. Например, `myHDICluster.azurehdinsight.net`. Примечание. `HDInsightClusterName-int.azurehdinsight.net` поддерживается до тех пор, пока клиентская виртуальная машина соединена с той же виртуальной сетью. |
    |  Port |Используйте **443**. (Этот порт был изменен с 563 на 443.) |
    |  База данных |Используйте **значение по умолчанию**. |
    |  Механизм |Выберите **Windows Azure HDInsight Service**. |
@@ -61,13 +60,13 @@ ms.locfileid: "73177340"
 
 1. Необязательно: выберите **Дополнительные параметры...**  
 
-   | Параметр | Описание |
+   | Параметр | Description |
    | --- | --- |
    |  Использовать исходный запрос |При выборе этого параметра драйвер ODBC НЕ пытается преобразовать TSQL в HiveQL. Его следует использовать только в том случае, если у вас 100%, что вы отправляете чистые инструкции HiveQL. При подключении к серверу SQL Server или базе данных Azure SQL необходимо снять этот флажок. |
    |  Строки, загружаемые для каждого блока |При получении большого объема записей включение этого параметра может обеспечить оптимальную производительность. |
    |  Длина столбца строки по умолчанию, длина столбца двоичного кода, масштаб столбца десятичных значений |Длина и точность типа данных может повлиять на способ выведения данных. Это приведет к возврату недопустимой информации из-за потери точности и (или) усечения. |
 
-    ![Расширенные параметры конфигурации DSN](./media/apache-hadoop-connect-excel-hive-odbc-driver/hiveodbc-datasource-advancedoptions1.png "Расширенные параметры конфигурации DSN")
+    ![Дополнительные параметры конфигурации DSN](./media/apache-hadoop-connect-excel-hive-odbc-driver/hiveodbc-datasource-advancedoptions1.png "Дополнительные параметры конфигурации DSN")
 
 1. Щелкните **Тест** для проверки источника данных. При правильной настройке источника данных в результатах теста отображается **Успешно!** .  
 

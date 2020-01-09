@@ -14,23 +14,23 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 07/17/2017
 ms.author: cynthn
-ms.openlocfilehash: bf0f2928bd7cbac08a2a887481f19b3acb99f6fa
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 618d9a8d941202db05981566203bf96c02f415a5
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74039718"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75358315"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-java"></a>Создание виртуальных машин Windows в Azure и управление ими с помощью Java
 
-[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины с помощью Java. Вы узнаете, как выполнять такие задачи.
+[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины с помощью Java. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание проекта Maven
 > * Добавление зависимостей
-> * Создание учетных данных.
+> * Создание учетных данных
 > * Создание ресурсов
-> * Выполнение задач управления
+> * Выполнение задач управления.
 > * Удаление ресурсов
 > * Выполнение приложения
 
@@ -114,7 +114,7 @@ ms.locfileid: "74039718"
 
 3. Сохраните файл.
 
-## <a name="create-credentials"></a>Создание учетных данных.
+## <a name="create-credentials"></a>Создание учетных данных
 
 Прежде чем выполнить этот шаг, убедитесь в наличии доступа к [субъекту-службе Active Directory](../../active-directory/develop/howto-create-service-principal-portal.md). Кроме того, необходимо записать идентификатор приложения, ключ проверки подлинности и идентификатор клиента, которые понадобятся позже.
 
@@ -140,7 +140,7 @@ ms.locfileid: "74039718"
 
 ### <a name="create-the-management-client"></a>Создание клиента управления
 
-1. В папке `App.java` откройте файл `src\main\java\com\fabrikam` и убедитесь, что этот оператор statement находится в верхней части:
+1. В папке `src\main\java\com\fabrikam` откройте файл `App.java` и убедитесь, что этот оператор statement находится в верхней части:
 
     ```java
     package com.fabrikam.testAzureApp;
@@ -188,7 +188,7 @@ ms.locfileid: "74039718"
 
 ### <a name="create-the-resource-group"></a>Создание группы ресурсов
 
-Все ресурсы должны содержаться в [группе ресурсов](../../azure-resource-manager/resource-group-overview.md).
+Все ресурсы должны содержаться в [группе ресурсов](../../azure-resource-manager/management/overview.md).
 
 Чтобы определить значения для приложения и создать группу ресурсов, добавьте этот код в блок Try метода Main:
 
@@ -318,7 +318,7 @@ azure.virtualMachines.define("myVM")
     .create();
 ```
 
-## <a name="perform-management-tasks"></a>Выполнение задач управления
+## <a name="perform-management-tasks"></a>Выполнение задач управления.
 
 В течение жизненного цикла виртуальной машины можно выполнять задачи управления, такие как запуск, остановка или удаление виртуальной машины. Кроме того, можно создавать код для автоматизации повторяющихся или сложных задач.
 
@@ -470,6 +470,6 @@ input.nextLine();
 2. Прежде чем нажать клавишу **ВВОД** и начать удаление ресурсов, потратьте несколько минут и проверьте на портале Azure, созданы ли эти ресурсы. Щелкните состояние развертывания, чтобы просмотреть сведения о развертывании.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения об использовании библиотек Azure для Java см. в [этой статье](https://docs.microsoft.com/java/azure/java-sdk-azure-overview).
 

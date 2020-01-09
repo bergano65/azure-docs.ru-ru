@@ -32,11 +32,13 @@
       href: ingest-data-overview.md
     - name: Обзор визуализации данных
       href: viz-overview.md
-- name: Руководства
+    - name: Общие сведения о безопасности
+      href: security.md
+- name: Практические руководства
   items:
     - name: Создание кластера и базы данных
       items:
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: create-cluster-database-cli.md
         - name: PowerShell
           href: create-cluster-database-powershell.md
@@ -52,30 +54,30 @@
           items:
             - name: Портал Azure
               href: ingest-data-event-hub.md
-            - name: Python
-              href: data-connection-event-hub-python.md
             - name: 'C#'
               href: data-connection-event-hub-csharp.md
+            - name: Python
+              href: data-connection-event-hub-python.md
             - name: Шаблон Azure Resource Manager
               href: data-connection-event-hub-resource-manager.md
         - name: Сетка событий Azure
           items:
             - name: Портал Azure
               href: ingest-data-event-grid.md
-            - name: Python
-              href: data-connection-event-grid-python.md
             - name: 'C#'
               href: data-connection-event-grid-csharp.md
+            - name: Python
+              href: data-connection-event-grid-python.md
             - name: Шаблон Azure Resource Manager
               href: data-connection-event-grid-resource-manager.md
         - name: Центр Интернета вещей
           items:
             - name: Портал Azure
               href: ingest-data-iot-hub.md
-            - name: Python
-              href: data-connection-iot-hub-python.md
             - name: 'C#'
               href: data-connection-iot-hub-csharp.md
+            - name: Python
+              href: data-connection-iot-hub-python.md
             - name: Шаблон Azure Resource Manager
               href: data-connection-iot-hub-resource-manager.md
         - name: Прием данных одним щелчком
@@ -94,7 +96,7 @@
           href: ingest-data-logstash.md
         - name: Копирование данных с помощью Фабрики данных Azure
           href: data-factory-load-data.md
-    - name: Запрашивание данных
+    - name: Данные запросов
       items:
         - name: Написание запросов
           href: write-queries.md
@@ -126,7 +128,7 @@
               href: power-bi-connector.md
             - name: Импортированный запрос
               href: power-bi-imported-query.md
-            - name: Запросы SQL
+            - name: SQL-запрос
               href: power-bi-sql-query.md
         - name: Excel
           items:
@@ -144,9 +146,21 @@
           href: sisense.md
         - name: Redash
           href: redash.md
+    - name: Безопасность
+      items:
+        - name: Управление безопасностью кластера
+          href: manage-cluster-security.md
+        - name: Настройка управляемых удостоверений
+          href: managed-identities.md
+        - name: 'Настройка ключей, управляемых клиентом'
+          items:
+            - name: 'C#'
+              href: customer-managed-keys-csharp.md
+            - name: Шаблон Azure Resource Manager
+              href: customer-managed-keys-resource-manager.md
     - name: Управление
       items:
-        - name: HDInsight
+        - name: Кластер
           items:
             - name: Выбор номера SKU виртуальной машины кластера
               href: manage-cluster-choose-sku.md
@@ -154,8 +168,6 @@
               href: manage-cluster-horizontal-scaling.md
             - name: Управление вертикальным масштабированием кластера
               href: manage-cluster-vertical-scaling.md
-            - name: Управление безопасностью кластера
-              href: manage-cluster-security.md
             - name: Проверка работоспособности кластера
               href: check-cluster-health.md
         - name: База данных
@@ -180,7 +192,7 @@
       items:
         - name: Развертывание кластера в виртуальной сети
           href: vnet-deployment.md
-    - name: Мониторинг
+    - name: Монитор
       items:
         - name: Использование журналов диагностики для мониторинга приема
           href: using-diagnostic-logs.md
@@ -204,7 +216,7 @@
           href: kqlmagic.md
         - name: Azure Pipelines
           href: devops.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: Создание кластера
           href: troubleshoot-create-cluster.md
@@ -212,7 +224,7 @@
           href: troubleshoot-connect-cluster.md
         - name: Работа с базами данных и таблицами
           href: troubleshoot-database-table.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Язык запросов
       href: /azure/kusto/query/
@@ -220,7 +232,7 @@
       href: /azure/kusto/management/
     - name: Программные интерфейсы
       href: /azure/kusto/api/
-    - name: Средства
+    - name: Инструменты
       href: /azure/kusto/tools/
     - name: Основные понятия
       href: /azure/kusto/concepts/

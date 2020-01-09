@@ -1,25 +1,16 @@
 ---
-title: Создание службы на основе субъекта в Azure Service Fabric | Документация Майкрософт
+title: Создание службы на основе субъектов в Azure Service Fabric
 description: Узнайте, как создать, выполнить отладку и развернуть первую службу на основе субъекта на C#, используя Reliable Actors в Service Fabric.
-services: service-fabric
-documentationcenter: .net
 author: vturecek
-manager: chackdan
-editor: ''
-ms.assetid: d4aebe72-1551-4062-b1eb-54d83297f139
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 07/10/2019
 ms.author: vturecek
-ms.openlocfilehash: d870690416f96a2e1c24e6de16bdc8faa060f6bd
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: a6e4fb48653572139463738c82de632ff7d55074
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68225165"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75466250"
 ---
 # <a name="getting-started-with-reliable-actors"></a>Приступая к работе с Reliable Actors
 > [!div class="op_single_selector"]
@@ -28,7 +19,7 @@ ms.locfileid: "68225165"
 
 В этой статье описывается создание и отладка простого приложения Reliable Actor в Visual Studio. Дополнительные сведения о Reliable Actors см. в статье [Общие сведения о надежных субъектах Service Fabric](service-fabric-reliable-actors-introduction.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Приступая к работе, убедитесь, что на вашем компьютере установлена и настроена среда разработки Service Fabric, включая Visual Studio. Дополнительные сведения см. в разделе [Подготовка среды разработки в Linux](service-fabric-get-started.md).
 
@@ -116,7 +107,7 @@ internal class HelloWorld : Actor, IHelloWorld
 
     Пакет NuGet и все его зависимости будут установлены в проект ActorClient.
 
-5. В проекте клиента также требуется ссылка на проект интерфейсов.  В проекте ActorClient щелкните правой кнопкой мыши **Зависимости** и выберите **Добавить ссылку**.  Выберите **Проекты > Решение** (если не выбрали ранее), затем установите флажок рядом с проектом **HelloWorld.Interfaces**.  Нажмите кнопку **ОК**.
+5. В проекте клиента также требуется ссылка на проект интерфейсов.  В проекте ActorClient щелкните правой кнопкой мыши элемент **зависимости** и выберите команду **Добавить ссылку...** .  Выберите **проекты > решение** (если оно еще не выбрано), а затем установите флажок рядом с **HelloWorld. interfaces**.  Нажмите кнопку **ОК**.
     
     ![Диалоговое окно "Добавление ссылки"][7]
 
@@ -157,7 +148,7 @@ internal class HelloWorld : Actor, IHelloWorld
 > [!TIP]
 > В среде выполнения субъектов Service Fabric предусмотрены некоторые [события и счетчики производительности, связанные с методами субъекта](service-fabric-reliable-actors-diagnostics.md#actor-method-events-and-performance-counters). Они полезны при диагностике и мониторинге производительности.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о том, [как Reliable Actors использует платформу Service Fabric](service-fabric-reliable-actors-platform.md).
 
 

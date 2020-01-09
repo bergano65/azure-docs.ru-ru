@@ -2,14 +2,14 @@
 title: Привязки для устойчивых функций — Azure
 description: Инструкции по использованию триггеров и привязок в расширении Устойчивых функций для Функций Azure.
 ms.topic: conceptual
-ms.date: 11/02/2019
+ms.date: 12/17/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 40b5f0f17cbb6867a6ef293a485d728141a012ef
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 1f42c6c9b0086d49e539040334c83cfc0c6feb42
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74233020"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75410226"
 ---
 # <a name="bindings-for-durable-functions-azure-functions"></a>Привязки для устойчивых функций (Функции Azure)
 
@@ -87,7 +87,7 @@ module.exports = df.orchestrator(function*(context) {
 ```
 
 > [!NOTE]
-> Объект `context` в JavaScript не представляет DurableOrchestrationContext, а [контекст функции в целом](../functions-reference-node.md#context-object). Получить доступ к методам оркестрации можно через свойство `context` объекта `df`.
+> Объект `context` в JavaScript не представляет DurableOrchestrationContext, а [контекст функции в целом](../functions-reference-node.md#context-object). Получить доступ к методам оркестрации можно через свойство `df` объекта `context`.
 
 > [!NOTE]
 > Для оркестраторов JavaScript нужно использовать `return`. Библиотека `durable-functions` отвечает за вызов метода `context.done`.
@@ -398,7 +398,7 @@ module.exports = async function (context) {
 * **Делетестате ()** : удаляет состояние сущности. 
 * Ввод **\<тинпут > ()** : получает входные данные для текущей операции. Параметр типа `TInput` должен быть примитивным или сериализуемым типом JSON.
 * **Return (ARG)** : Возвращает значение для оркестрации, вызвавшего операцию. Параметр `arg` должен быть объектом-примитивом или сериализуемым в формат JSON.
-* **Сигналентити (EntityId, Operation, input)** : отправляет одностороннее сообщение в сущность. Параметр `operation` должен быть строкой, отличной от NULL, а параметр `input` должен быть объектом-примитивом или сериализуемым в JSON.
+* **Сигналентити (EntityId, счедуледтимеутк, Operation, input)** : отправляет одностороннее сообщение в сущность. Параметр `operation` должен быть строкой, не имеющей значения NULL, необязательным `scheduledTimeUtc` должен быть DateTime в формате UTC, в который вызывается операция, а параметр `input` должен быть объектом-примитивом или сериализуемым в JSON.
 * **Креатеневорчестратион (орчестраторфунктионнаме, input)** : запускает новое согласование. Параметр `input` должен быть объектом-примитивом или сериализуемым в формат JSON.
 
 Доступ к `IDurableEntityContext` объекту, переданному в функцию сущности, можно получить с помощью свойства `Entity.Current` Async-Local. Этот подход удобен при использовании модели программирования на основе классов.
@@ -519,7 +519,7 @@ module.exports = df.entity(function(context) {
     "taskHub": "<Optional - name of the task hub>",
     "connectionName": "<Optional - name of the connection string app setting>",
     "type": "durableClient",
-    "direction": "out"
+    "direction": "in"
 }
 ```
 
@@ -535,6 +535,7 @@ module.exports = df.entity(function(context) {
 
 * **Реадентитистатеасинк\<t >** : считывает состояние сущности. Он возвращает ответ, указывающий, существует ли целевая сущность, и, если да, то что ее состояние —.
 * **Сигналентитясинк**: отправляет одностороннее сообщение в сущность и ожидает его постановки в очередь.
+* **Листентитиесасинк**: запросы состояния нескольких сущностей. К сущностям можно обращаться по *имени* и *времени последней операции*.
 
 Нет необходимости создавать целевую сущность перед отправкой сигнала. состояние сущности можно создать в функции сущности, которая обрабатывает сигнал.
 
@@ -640,7 +641,7 @@ module.exports = async function (context) {
 
 [!INCLUDE [durabletask](../../../includes/functions-host-json-durabletask.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Встроенная Справочник по HTTP API для управления экземплярами](durable-functions-http-api.md)

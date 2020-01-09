@@ -1,20 +1,19 @@
 ---
 title: Смена учетных данных для входа в заданиях Azure Stream Analytics
 description: В этой статье объясняется, как обновить учетные данные для приемников входных и выходных данных в заданиях Azure Stream Analytics.
-services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
-ms.reviewer: jasonh
+ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: aad6f237a37ce4782e2c103a7a14e0a3951093de
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 3ae639dd7c5a42fc6880240988f0fb2817b09f43
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67612348"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75425978"
 ---
 # <a name="rotate-login-credentials-for-inputs-and-outputs-of-a-stream-analytics-job"></a>Смена учетных данных для источников входных данных и мест назначения выходных данных задания Stream Analytics
 
@@ -32,7 +31,7 @@ ms.locfileid: "67612348"
 4. На портале Azure найдите необходимое задание Stream Analytics, выберите **Stop** (Остановить) и дождитесь остановки задания.    
 5. Найдите входные или выходные данные хранилища BLOB-объектов или таблиц, для которых требуется обновить учетные данные.    
 6. Найдите поле **Ключ учетной записи хранения**, вставьте в него созданный ключ и щелкните **Сохранить**.    
-7. При сохранении изменений автоматически запускается проверка подключения. Вы можете увидеть это на вкладке уведомлений. Здесь отображается два уведомления (о сохранении обновления и тестировании соединения):  
+7. Проверка подключения будет автоматически запускаться при сохранении изменений. ее можно просмотреть на вкладке "уведомления". Существует два уведомления: одно соответствует сохранению обновления, а другое соответствует проверке подключения.  
    ![Уведомления после редактирования ключа](media/stream-analytics-login-credentials-inputs-outputs/edited-key-notifications.png)
 8. Перейдите к разделу [Запуск задания с момента последней остановки](#start-your-job-from-the-last-stopped-time).
 
@@ -81,7 +80,7 @@ ms.locfileid: "67612348"
 2. Выберите **Во время последней остановки** и щелкните **Start** (Запустить). Обратите внимание, что параметр "Во время последней остановки" отображается, только если задание запускалось ранее и были созданы выходные данные. Задание перезапускается на основе значения последних выходных данных.
    ![Запуск задания Stream Analytics](media/stream-analytics-login-credentials-inputs-outputs/start-stream-analytics-job.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)

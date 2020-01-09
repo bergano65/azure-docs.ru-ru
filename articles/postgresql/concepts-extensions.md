@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 12/03/2019
-ms.openlocfilehash: 7a55cc9398cc511ced0a43f0d7a0c1aa6e37f155
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.date: 12/20/2019
+ms.openlocfilehash: 069fc83e773c00be41e21e23fc01c589c13d687d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74790397"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75372709"
 ---
 # <a name="postgresql-extensions-in-azure-database-for-postgresql---single-server"></a>Расширения PostgreSQL в базе данных Azure для PostgreSQL — один сервер
 PostgreSQL предоставляет возможность расширить функциональность базы данных с помощью расширений. Расширения объединяют несколько связанных объектов SQL в один пакет, который можно загрузить или удалить из базы данных с помощью одной команды. После загрузки в базу данных функции расширений, такие как встроенные функции.
@@ -252,6 +252,26 @@ CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
 > Если появится сообщение об ошибке, убедитесь, что [сервер был перезагружен](howto-restart-server-portal.md) после сохранения shared_preload_libraries. 
 
 Теперь можно создать таблицу Тимескаледб [с нуля](https://docs.timescale.com/getting-started/creating-hypertables) или перенести [существующие данные временных рядов в PostgreSQL](https://docs.timescale.com/getting-started/migrating-data).
+
+### <a name="restoring-a-timescale-database"></a>Восстановление базы данных шкалы времени
+Чтобы восстановить базу данных шкалы времени с помощью pg_dump и pg_restore, необходимо выполнить две вспомогательные процедуры в целевой базе данных: `timescaledb_pre_restore()` и `timescaledb_post restore()`.
+
+Сначала подготовьте целевую базу данных:
+
+```SQL
+--create the new database where you'll perform the restore
+CREATE DATABASE tutorial;
+\c tutorial --connect to the database 
+CREATE EXTENSION timescaledb;
+
+SELECT timescaledb_pre_restore();
+```
+
+Теперь можно запустить pg_dump в исходной базе данных, а затем выполнить pg_restore. После восстановления убедитесь, что в восстановленной базе данных выполнена следующая команда:
+
+```SQL
+SELECT timescaledb_post_restore();
+```
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

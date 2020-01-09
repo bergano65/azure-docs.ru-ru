@@ -4,22 +4,22 @@ description: Узнайте, как подготавливать пропуск�
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 12/12/2019
+ms.date: 12/13/2019
 ms.author: mjbrown
-ms.openlocfilehash: ed6a55c8b6049f16e96a4a95ecf3ef125db908d7
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: bfd18a009ed9ab5edffafcd0327b1d846cae02d8
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74872049"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75643854"
 ---
 # <a name="provision-throughput-on-an-azure-cosmos-container"></a>Подготовка пропускной способности для контейнера Azure Cosmos
 
 Узнайте, как подготовить пропускную способность для контейнера (коллекции, графа или таблицы) в Azure Cosmos DB. Вы можете подготовить пропускную способность для одного контейнера или [базы данных](how-to-provision-database-throughput.md) и предоставить к ней общий доступ для контейнеров в пределах этой базы данных. Пропускную способность для контейнера можно подготовить с помощью портала Azure, Azure CLI или пакетов SDK Azure Cosmos DB.
 
-## <a name="azure-portal"></a>портала Azure
+## <a name="azure-portal"></a>Портал Azure
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. [Создайте новую учетную запись Azure Cosmos](create-sql-api-dotnet.md#create-account) или выберите существующую.
 
@@ -77,7 +77,7 @@ const { database } = await client.databases.createIfNotExists({ id: "databaseId"
 
 // Create a container with the specified throughput
 const { resource } = await database.containers.createIfNotExists({
-id: "contaierId ",
+id: "containerId",
 throughput: 1000
 });
 

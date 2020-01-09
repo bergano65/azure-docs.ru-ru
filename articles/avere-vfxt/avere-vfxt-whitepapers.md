@@ -6,42 +6,42 @@ author: ekpgh
 ms.author: rohogue
 ms.topic: conceptual
 ms.date: 02/13/2019
-ms.openlocfilehash: 257164a7417d4356c83cd1804939973b7029a4f1
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: a85b939eb222fa459d33ba4eb79b4937baf9056f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72255342"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75414278"
 ---
-# <a name="azure-vftx-for-azure-whitepapers-and-other-resources"></a>Техническая документация и другие ресурсы Avere vFXT для Azure 
+# <a name="azure-vftx-for-azure-whitepapers-and-other-resources"></a>Техническая документация и другие ресурсы Avere vFXT для Azure
 
-Ресурсы, указанные в данной таблице, включают примеры, техническую документацию, инфографику и другие статьи, в которых приведены сведения, помогающие понять, подходит ли Avere vFXT для Azure для рабочего процесса. 
+Ресурсы, указанные в данной таблице, включают примеры, техническую документацию, инфографику и другие статьи, в которых приведены сведения, помогающие понять, подходит ли Avere vFXT для Azure для рабочего процесса.
 
 ## <a name="deploy-agisoft-photoscan-on-azure"></a>Развертывание Agisoft PhotoScan в Azure
 
-**Ссылка:** [Deploy Agisoft PhotoScan on Azure with Avere vFXT for Azure or BeeGFS](https://azure.microsoft.com/mediahandler/files/resourcefiles/deploy-agisoft-photoscan-on-azure-with-azere-vfxt-for-azure-or-beegfs/AgiSoft%20PhotoScan%20on%20Azure%20using%20Avere%20vFXT%20or%20BeeGFS.pdf) (Развертывание Agisoft PhotoScan на Azure с помощью Avere vFXT для Azure или BeeGFS). 
+**Ссылка:** [развертывание агисофтной фотопроверки в Azure с помощью Авере вфкст для Azure или BeeGFS](https://azure.microsoft.com/mediahandler/files/resourcefiles/deploy-agisoft-photoscan-on-azure-with-azere-vfxt-for-azure-or-beegfs/AgiSoft%20PhotoScan%20on%20Azure%20using%20Avere%20vFXT%20or%20BeeGFS.pdf)
 
 В данном руководстве приведены пошаговые инструкции по установке программного обеспечения фотограмметрии Agisoft PhotoScan с подключенным хранилищем Avere vFXT или параллельной файловой системой BeeGFS. Создатель AzureCAT, Пауло Маркес да Коста (Paulo Marques da Costa), показывает, как настраивать PhotoScan на Виртуальных машинах Azure. Использование высокопроизводительного хранилища увеличивает время обработки и включает результаты тестов производительности. По мере необходимости можно увеличивать и уменьшать масштаб среды выполнения. Она поддерживает хранилища объемом в несколько терабайт без ущерба для производительности.
 
-## <a name="datasheet-avere-vfxt-for-azure"></a>Таблица. Avere vFXT для Azure
+## <a name="datasheet-avere-vfxt-for-azure"></a>Таблица: Авере Вфкст для Azure
 
-**Ссылка:** [Avere vFXT for Azure datasheet](https://azure.microsoft.com/resources/avere-vfxt-for-azure-data-sheet/) (Avere vFXT в таблице Azure).
+**Ссылка:** [Авере вфкст for Azure в режиме таблицы](https://azure.microsoft.com/resources/avere-vfxt-for-azure-data-sheet/)
 
 В данном кратком описании приведены основные сведения и схемы, в которых объясняется, как использовать Avere vFXT для Azure в нескольких вариантах сценариев.
 
-## <a name="hybrid-cloud-for-file-based-workloads"></a>Гибридное облако для файловых рабочих нагрузок
+## <a name="hybrid-cloud-for-file-based-workloads"></a>гибридное облако для файловых рабочих нагрузок
 
-**Ссылка:** [Infographic: Building a hybrid cloud for file-based workloads](https://azure.microsoft.com/resources/building-a-hybrid-cloud-for-file-based-hpc-workloads/) (Инфографика. Создание гибридного облака для файловых рабочих нагрузок). 
+**Ссылка:** [Инфографика: создание гибридного облака для файловых рабочих нагрузок](https://azure.microsoft.com/resources/building-a-hybrid-cloud-for-file-based-hpc-workloads/)
 
-На графике показаны компоненты и макеты в случае использования Avere vFXT для Azure для добавления облачной инфраструктуры в существующую систему. Avere vFXT для Azure можно использовать для увеличения производительности вычисления в существующей локальной инфраструктуре или для переноса данных и вычислений в облако на временной или постоянной основе.  
+На графике показаны компоненты и макеты в случае использования Avere vFXT для Azure для добавления облачной инфраструктуры в существующую систему. Avere vFXT для Azure можно использовать для увеличения производительности вычисления в существующей локальной инфраструктуре или для переноса данных и вычислений в облако на временной или постоянной основе.
 
-## <a name="cloud-bursting"></a>Выход в облако 
+## <a name="cloud-bursting"></a>Выход в облако
 
-**Ссылка:** [Cloud bursting for high performance, scalable NAS](https://microsoft.sharepoint.com/sites/Infopedia_G01KC/KCDOCs2/Avere%20customer%20resources/Solution%20Brief%20Cloud%20Bursting.pdf) (Выход в облако для высокопроизводительного масштабируемого NAS). 
+**Ссылка:** [ускорение облака для обеспечения высокой производительности, масштабируемого NAS](https://microsoft.sharepoint.com/sites/Infopedia_G01KC/KCDOCs2/Avere%20customer%20resources/Solution%20Brief%20Cloud%20Bursting.pdf)
 
  В этом кратком руководстве о решении по выходу в облако показано, как, не прерывая работу с Avere vFXT для Azure, можно быстро сделать доступными данные для облачных вычислений.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы планировать развертывание Avere vFXT в Azure, ознакомьтесь со статьей [Планирование системы Avere vFXT](avere-vfxt-deploy-plan.md).
 * Дополнительные сведения см. в статье [Часто задаваемые вопросы об Avere vFXT для Azure](avere-vfxt-faq.md).

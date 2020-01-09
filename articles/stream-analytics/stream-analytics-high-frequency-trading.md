@@ -1,20 +1,19 @@
 ---
 title: Торговля с высокой частотой с помощью Azure Stream Analytics
 description: Обучение и оценка модели линейной регрессии в задании Stream Analytics
-services: stream-analytics
-author: zhongc
-ms.author: zhongc
-ms.reviewer: jasonh
+author: mamccrea
+ms.author: mamccrea
+ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 9d3c1a730c34632403669794bdd97f95e3b3662d
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 06a4bdb8a8ee5d458347d30b53f740952151799e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72925511"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75426210"
 ---
 # <a name="high-frequency-trading-simulation-with-stream-analytics"></a>Моделирование высокочастотного трейдинга с помощью Stream Analytics
 Совместное использование языка SQL, пользовательских функций и пользовательских агрегатных функций в Azure Stream Analytics позволяет пользователям выполнять расширенную аналитику. Расширенная аналитика может включать обучающие онлайн-сценарии машинного обучения и оценки, а также моделирование процесса с отслеживанием состояния. В этой статье описывается, как работать с линейной регрессией в задании Azure Stream Analytics, которое выполняет непрерывное обучение и оценку в сценарии с высокочастным трейдингом.
@@ -456,7 +455,7 @@ FROM simulation /* output trade simulation to PBI */
 ![Точечная диаграмма прибыли и убытков в Power BI](./media/stream-analytics-high-frequency-trading/pnl-power-bi-chart.png)
 
 
-## <a name="summary"></a>Резюме
+## <a name="summary"></a>Сводка
 Мы можем реализовать реалистичную модель высокочастотного трейдинга, выполнив в Azure Stream Analytics запрос умеренной сложности. Из-за отсутствия встроенной функции линейной регрессии мы упростили эту модель, сократив число переменных с пяти до двух. Но при необходимости вы также можете реализовать более сложные алгоритмы с большим числом измерений в качестве пользовательской агрегатной функции JavaScript. 
 
 Следует отметить, что большую часть запроса (кроме пользовательской агрегатной функции JavaScript), можно протестировать и отладить в Visual Studio с помощью [инструментов Azure Stream Analytics для Visual Studio](stream-analytics-tools-for-visual-studio-install.md). Написав начальный запрос, автор потратил меньше 30 минут на тестирование и отладку запроса в Visual Studio. 

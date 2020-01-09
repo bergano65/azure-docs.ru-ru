@@ -17,12 +17,12 @@ ms.date: 08/08/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ed91396dd747bb800d88bc3cd083439a5648624
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: fa19425de41b182db8c0a8c3b1a7940dbdf5701f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74786373"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75429496"
 ---
 # <a name="sign-in-activity-report-error-codes"></a>Коды ошибок отчета о действиях при входе 
 
@@ -36,9 +36,13 @@ ms.locfileid: "74786373"
 
 ## <a name="how-can-i-display-failed-sign-ins"></a>Как отобразить входы, завершившиеся сбоем? 
 
-Перейдите к [отчету о действиях при входе](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/SignIns) на [портале Azure](https://portal.azure.com).
+В меню [портал Azure](https://portal.azure.com) выберите **Azure Active Directory**или выполните поиск и выберите **Azure Active Directory** на любой странице.
 
-![Действие входа](./media/reference-sign-ins-error-codes/61.png "Действия при входе")
+![Выберите Azure Active Directory](./media/reference-sign-ins-error-codes/select-azure-active-directory.png "Azure Active Directory")
+
+В разделе **мониторинг**выберите **входы** , чтобы открыть [отчет о событиях входа](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/SignIns).
+
+![Действие входа](./media/reference-sign-ins-error-codes/monitoring-sign-ins-in-azure-active-directory.png "Действия при входе")
 
 Отфильтруйте отчет, чтобы отобразить все входы, завершившиеся сбоем, выбрав **Сбой** из раскрывающегося списка **Состояние входа**.
 
@@ -53,7 +57,7 @@ ms.locfileid: "74786373"
 ## <a name="error-codes"></a>Коды ошибок
 
 
-|Ошибка|Описание|
+|Ошибка|Description|
 |---|---|
 |16000|Это описание внутренней реализации, а не ошибка. Этот код можно игнорировать.|
 |20001|Проблема с федеративным поставщиком удостоверений. Чтобы решить эту проблему, обратитесь к поставщику удостоверений.|

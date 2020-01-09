@@ -1,5 +1,6 @@
 ---
-title: Пример политики службы управления API Azure. Авторизации доступа с помощью токена OAuth Google | Документация Майкрософт
+title: Пример политики управления API. Авторизация доступа с помощью токена Google OAuth
+titleSuffix: Azure API Management
 description: Пример политики службы управления API Azure. Авторизация доступа к конечным точкам, используя Google в качестве поставщика токена OAuth.
 services: api-management
 documentationcenter: ''
@@ -12,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
-ms.openlocfilehash: 7acc9071008937cd85c628878b385f1f53707e53
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: d606d29d84cd5917c74efe188ae02627ad55d4ab
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70071928"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75442374"
 ---
 # <a name="authorize-access-using-google-oauth-token"></a>Авторизации доступа с помощью токена OAuth Google
 
@@ -29,7 +30,7 @@ ms.locfileid: "70071928"
 
 [!code-xml[Main](../../../api-management-policy-samples/examples/Simple Google OAuth validate-jwt.policy.xml)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Подробнее о политиках службы управления API:
 

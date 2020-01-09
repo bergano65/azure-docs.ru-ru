@@ -1,19 +1,18 @@
 ---
 title: Использование конечных точек службы "Машинное обучение" в Azure Stream Analytics
 description: В этой статье объясняется, как использовать определяемые пользователем функции машинного обучения в Azure Stream Analytics.
-services: stream-analytics
 author: jseb225
 ms.author: jeanb
-ms.reviewer: jasonh
+ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/11/2019
-ms.openlocfilehash: 1adb7d58246ea37fd8322cb6fc6ffd53c5f19efb
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 239955025f21d8679cbcf0bbfe68f9070f0217c6
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73467818"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75426199"
 ---
 # <a name="azure-machine-learning-studio-classic-integration-in-stream-analytics-preview"></a>Интеграция Машинное обучение Azure Studio (классическая модель) в Stream Analytics (Предварительная версия)
 Stream Analytics поддерживает пользовательские функции, которые вызывают конечные точки Машинное обучение Azure Studio (классические). Поддержка этой возможности в REST API описана в статье [Библиотека REST API Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx). В этой статье приведены дополнительные сведения, необходимые для успешной реализации этой возможности в Stream Analytics. Также было размещено руководство, которое доступно [здесь](stream-analytics-machine-learning-integration-tutorial.md).
@@ -188,7 +187,7 @@ PATCH : /subscriptions/<subscriptionId>/resourceGroups/<resourceGroup>/providers
 ```
 
 
-## <a name="get-help"></a>Получение справки
+## <a name="get-help"></a>Справка
 Дополнительную помощь и поддержку вы можете получить на нашем [форуме Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics)
 
 ## <a name="next-steps"></a>Дальнейшие действия
