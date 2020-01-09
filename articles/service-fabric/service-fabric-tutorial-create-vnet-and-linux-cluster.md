@@ -1,32 +1,21 @@
 ---
-title: Создание кластера Service Fabric на платформе Linux в Azure | Документация Майкрософт
+title: Создание кластера Linux Service Fabric в Azure
 description: Узнайте, как развернуть кластер Service Fabric на платформе Linux в существующей виртуальной сети с помощью Azure CLI.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 02/14/2019
-ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: 2ba157d7bf2e6effbaf7ab129dbbbfd1ca8b9667
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 059f0f4b1eac9546f1adc05bf1f2799affc0dd8e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68598854"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75465397"
 ---
 # <a name="deploy-a-linux-service-fabric-cluster-into-an-azure-virtual-network"></a>Развертывание кластера Service Fabric на платформе Linux в виртуальной сети Azure
 
 Из этой статьи вы узнаете как развернуть кластер Service Fabric на платформе Linux в [виртуальную сеть Azure](../virtual-network/virtual-networks-overview.md) с помощью Azure CLI и шаблона. После окончания этого учебника у вас будет кластер в облаке, в который можно разворачивать приложения. Создание кластера Windows с помощью PowerShell описывается в разделе [Развертывание безопасного кластера Service Fabric на платформе Windows в виртуальной сети Azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед началом работы
 
@@ -53,7 +42,7 @@ ms.locfileid: "68598854"
 
 * три типа узлов;
 * пять узлов на первичном типе узла (можно настроить в параметрах шаблона), по одном узлу на каждый тип узла;
-* ОС: Ubuntu 16.04 LTS (можно настроить в параметрах шаблона);
+* ОС: Ubuntu 16.04 LTS (можно настроить в параметрах шаблона);
 * защищенный сертификат (можно настроить в параметрах шаблона);
 * [служба DNS](service-fabric-dnsservice.md) включена;
 * [уровень устойчивости](service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster) Bronze (можно настроить в параметрах шаблона);
@@ -61,21 +50,21 @@ ms.locfileid: "68598854"
 * конечная точка подключения клиента: 19000 (можно настроить в параметрах шаблона);
 * конечная точка HTTP-шлюза: 19080 (можно настроить в параметрах шаблона).
 
-### <a name="azure-load-balancer"></a>Балансировщик нагрузки Azure
+### <a name="azure-load-balancer"></a>Azure Load Balancer
 
 В ресурсе **Microsoft.Network/loadBalancers** настроена подсистема балансировки нагрузки, а также указаны пробы и правила для следующих портов:
 
 * конечная точка подключения клиента: 19000;
-* конечная точка HTTP-шлюза: 19080;
-* порт приложения: 80
-* порт приложения: 443
+* конечная точка HTTP шлюза: 19080;
+* порт приложения: 80;
+* порт приложения: 443;
 
 ### <a name="virtual-network-and-subnet"></a>Виртуальная сеть и подсеть
 
 В параметрах шаблона объявляются имена виртуальной сети и подсети.  Адресные пространства виртуальной сети и подсети также объявляются в параметрах шаблона и настраиваются в ресурсе **Microsoft.Network/virtualNetworks**:
 
-* Диапазон адресов виртуальной сети: 10.0.0.0/16
-* Диапазон адресов подсети Service Fabric: 10.0.2.0/24
+* адресное пространство виртуальной сети: 10.0.0.0/16;
+* адресное пространство подсети Service Fabric: 10.0.2.0/24.
 
 Если нужны другие порты приложений, нужно настроить ресурс Microsoft.Network/loadBalancers, чтобы разрешить входящий трафик.
 
@@ -162,7 +151,7 @@ sfctl cluster health
 
 Если вы не собираетесь немедленно приступить к следующей статье, то можете [удалить кластер](service-fabric-cluster-delete.md), чтобы за него не взималась плата.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [масштабировать кластер](service-fabric-tutorial-scale-cluster.md).
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/06/2019
 ms.author: chmutali
-ms.openlocfilehash: d032bf1241f355af110ee8f4da38ff4685bd2e3f
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 2ae951896e9c97826264990dc33b9a1930b0eec2
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74932298"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75530057"
 ---
 # <a name="tutorial-configure-sap-successfactors-to-azure-ad-user-provisioning-preview"></a>Руководство по настройке SAP SuccessFactors для подготовки пользователей в Azure AD (Предварительная версия)
 Цель этого учебника — продемонстрировать шаги, которые необходимо выполнить, чтобы подготовить рабочие данные от SuccessFactors сотрудника к Azure Active Directory с дополнительным адресом электронной почты, перезаписываемым в SuccessFactors. Эта интеграция доступна в общедоступной предварительной версии и поддерживает получение более [70 атрибутов пользователей](../manage-apps/sap-successfactors-attribute-reference.md) из SuccessFactors Employee Central. 
@@ -27,7 +27,7 @@ ms.locfileid: "74932298"
 >[!NOTE]
 >Используйте этот учебник, если пользователи, которые вы хотите подготавливать из SuccessFactors, являются только облачными пользователями, которым не требуется локальная учетная запись AD. Если пользователям требуется только локальная учетная запись AD или учетная запись AD и Azure AD, обратитесь к руководству по [настройке SAP SuccessFactors для Active Directory](sap-successfactors-inbound-provisioning-tutorial.md#overview) подготовки пользователей. 
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 [Служба подготовки пользователей Azure Active Directory](../manage-apps/user-provisioning.md) интегрируется с [центральным сотрудником SuccessFactors](https://www.successfactors.com/products-services/core-hr-payroll/employee-central.html) для управления жизненным циклом идентификации пользователей. 
 
@@ -60,7 +60,7 @@ SuccessFactors решение Azure Active Directory для подготовки
 * **Достоверный поток данных HR — от SuccessFactors до Azure Active Directory:** В рамках этого потока событий потоков (например, новых сотрудников, перемещений, завершений) в центре Cloud SuccessFactors сотрудники Central, а затем данные события переводятся в Azure Active Directory. В зависимости от события это может привести к созданию, обновлению, включению и отключению операций в Azure AD.
 * **Поток обратной записи электронной почты — из локальной Active Directory в SuccessFactors:** После завершения создания учетной записи в Azure Active Directory значение атрибута электронной почты или имя участника-пользователя, созданное в Azure AD, можно записать обратно в SuccessFactors.
 
-  ![Краткое описание](./media/sap-successfactors-inbound-provisioning/sf2aad-overview.png)
+  ![Обзор](./media/sap-successfactors-inbound-provisioning/sf2aad-overview.png)
 
 ### <a name="end-to-end-user-data-flow"></a>Полноценный поток данных пользователей
 
@@ -110,7 +110,7 @@ SuccessFactors решение Azure Active Directory для подготовки
 * Прокрутите вниз в том же окне и выберите **Центральный API сотрудника**. Добавьте разрешения, как показано ниже, для чтения с помощью API ODATA и редактирования с помощью API ODATA. Выберите параметр изменить, если вы планируете использовать одну и ту же учетную запись для сценария SuccessFactors для обратной записи. 
   > [!div class="mx-imgBorder"]
   > ![разрешения на запись](./media/sap-successfactors-inbound-provisioning/odata-read-write-perm.png)
-* Нажмите кнопку **Готово**. Нажмите кнопку **Сохранить изменения**.
+* Нажмите кнопку **Готово**. Щелкните **Сохранить изменения**.
 
 ### <a name="create-a-permission-group-for-the-api-user"></a>Создание группы разрешений для пользователя API
 
@@ -139,7 +139,7 @@ SuccessFactors решение Azure Active Directory для подготовки
 * Проверьте роль разрешений, предоставляемую группе разрешений. 
   > [!div class="mx-imgBorder"]
   > ![роли разрешений и сведений о группе](./media/sap-successfactors-inbound-provisioning/permission-role-group.png)
-* Нажмите кнопку **Сохранить изменения**.
+* Щелкните **Сохранить изменения**.
 
 ## <a name="configuring-user-provisioning-from-successfactors-to-azure-ad"></a>Настройка подготовки пользователей из SuccessFactors в Azure AD
 
@@ -165,7 +165,7 @@ SuccessFactors решение Azure Active Directory для подготовки
 
 6. После добавления приложения и отображения экрана сведений о приложений выберите **Подготовка**.
 
-7. Для параметра **Режим подготовки** **к работе** выберите значение **Автоматически**.
+7. Изменение режима **подготовки** на **Автоматический**
 
 8. В разделе **Учетные данные администратора** заполните поля следующим образом.
 
@@ -176,8 +176,8 @@ SuccessFactors решение Azure Active Directory для подготовки
    * **URL-адрес клиента —** Введите имя конечной точки служб API OData SuccessFactors. Введите только имя узла сервера без HTTP или HTTPS. Это значение должно выглядеть следующим образом: **API-Server-Name.successfactors.com**.
 
    * **Адрес электронной почты для уведомлений** — введите адрес электронной почты и установите флажок "send email if failure occurs" (Отправлять по электронной почте в случае сбоя).
-         > [!NOTE]
-         > The Azure AD Provisioning Service sends email notification if the provisioning job goes into a [quarantine](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning#quarantine) state.
+    > [!NOTE]
+    > Служба подготовки Azure AD отправляет уведомление по электронной почте, если задание подготовки переходит в состояние [Карантин](/azure/active-directory/manage-apps/application-provisioning-quarantine-status).
 
    * Нажмите кнопку **Проверить подключение**. Если проверка подключения выполнена успешно, нажмите кнопку **Сохранить** в верхней части. В случае сбоя Проверьте правильность учетных данных и URL-адреса SuccessFactors.
     >[!div class="mx-imgBorder"]
@@ -261,7 +261,7 @@ SuccessFactors решение Azure Active Directory для подготовки
 
 1. На вкладке **Подготовка** установите для параметра **Состояние подготовки** значение **Вкл**.
 
-2. В нижней части страницы нажмите кнопку **Save**.
+2. Выберите команду **Сохранить**.
 
 3. Эта операция начнет начальную синхронизацию, что может занять переменное количество часов в зависимости от количества пользователей в клиенте SuccessFactors. Можно проверить индикатор выполнения, чтобы отслеживать ход выполнения цикла синхронизации. 
 

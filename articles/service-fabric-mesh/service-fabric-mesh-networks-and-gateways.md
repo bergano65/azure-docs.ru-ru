@@ -1,26 +1,17 @@
 ---
-title: Общие сведения о сетевых подключениях в Azure Service Fabric | Документация Майкрософт
+title: Общие сведения об Azure Service Fabric Networking
 description: Сведения о сетях, шлюзах и интеллектуальной маршрутизации трафика в службе "Сетка Service Fabric".
-services: service-fabric-mesh
-documentationcenter: .net
 author: dkkapur
-manager: timlt
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric-mesh
-ms.devlang: dotNet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 11/26/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: b0e1047c5bbd7d8caaf2afd8b002be1c46837852
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dc793e2991783cc9b7b46d92fcc8e0267feb529b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60811019"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75459141"
 ---
 # <a name="introduction-to-networking-in-service-fabric-mesh-applications"></a>Общие сведения о сетевых подключениях в приложениях службы "Сетка Service Fabric"
 В этой статье описываются разные подсистемы балансировки нагрузки, подключение сетей с приложениями к другим сетям через шлюзы, а также маршрутизация трафика между службами в приложениях.

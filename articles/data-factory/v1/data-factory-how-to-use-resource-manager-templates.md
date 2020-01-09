@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: d9ee060b7d1f7a443357c7116c01e8aaf972e666
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 96adcfa4bbfc4ed0066ccfbdbe57f9840e8b07f8
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73682521"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438808"
 ---
 # <a name="use-templates-to-create-azure-data-factory-entities"></a>Создание сущностей фабрики данных Azure с помощью шаблонов
 > [!NOTE]
@@ -32,7 +32,7 @@ ms.locfileid: "73682521"
 Кроме того, так как организации нужно развернуть эти 10 фабрик данных несколько раз в различных средах, шаблоны могут получить эту **возможность многократного использования** за счет использования отдельных файлов параметров для сред разработки, тестирования и рабочих сред.
 
 ## <a name="templating-with-azure-resource-manager"></a>Использование шаблонов с помощью Azure Resource Manager
-[Шаблоны Azure Resource Manager](../../azure-resource-manager/template-deployment-overview.md) — отличный способ реализации возможности использования шаблонов в фабрике данных Azure. Они определяют инфраструктуру и конфигурацию решения Azure в JSON-файле. Так как шаблоны Azure Resource Manager совместимы почти со всеми службами Azure, с их помощью можно упростить управление всеми ресурсами Azure. Общие сведения о шаблонах Azure Resource Manager см. в статье [Создание шаблонов диспетчера ресурсов Azure](../../azure-resource-manager/resource-group-authoring-templates.md).
+[Шаблоны Azure Resource Manager](../../azure-resource-manager/template-deployment-overview.md) — отличный способ реализации возможности использования шаблонов в фабрике данных Azure. Они определяют инфраструктуру и конфигурацию решения Azure в JSON-файле. Так как шаблоны Azure Resource Manager совместимы почти со всеми службами Azure, с их помощью можно упростить управление всеми ресурсами Azure. Общие сведения о шаблонах Azure Resource Manager см. в статье [Создание шаблонов диспетчера ресурсов Azure](../../azure-resource-manager/templates/template-syntax.md).
 
 ## <a name="tutorials"></a>Учебники
 Пошаговые инструкции по созданию сущностей фабрики данных с помощью шаблонов Resource Manager см. в следующих руководствах:

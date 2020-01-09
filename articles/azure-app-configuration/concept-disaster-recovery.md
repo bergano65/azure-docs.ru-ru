@@ -1,23 +1,17 @@
 ---
-title: 'Конфигурация приложений Azure: устойчивость и аварийное восстановление | Документация Майкрософт'
-description: Общие сведения о реализации устойчивости и аварийного восстановления с помощью Конфигурации приложений Azure.
-services: azure-app-configuration
-documentationcenter: ''
+title: Устойчивость и аварийное восстановление конфигурации приложений Azure
+description: Поэкономично реализовать устойчивость и аварийное восстановление с помощью конфигурации приложения Azure.
 author: yegu-ms
-manager: maiye
-editor: ''
-ms.service: azure-app-configuration
-ms.devlang: na
-ms.topic: overview
-ms.workload: tbd
-ms.date: 05/29/2019
 ms.author: yegu
-ms.openlocfilehash: 291f6fe48d81397d293ab54a73e777831e25f6ea
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
-ms.translationtype: HT
+ms.service: azure-app-configuration
+ms.topic: conceptual
+ms.date: 05/29/2019
+ms.openlocfilehash: f2f914ec993670b8ba7a596f873234afd9ffc8e8
+ms.sourcegitcommit: 2c59a05cb3975bede8134bc23e27db5e1f4eaa45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185278"
+ms.lasthandoff: 01/05/2020
+ms.locfileid: "75665050"
 ---
 # <a name="resiliency-and-disaster-recovery"></a>Устойчивость и аварийное восстановление
 
@@ -29,7 +23,7 @@ ms.locfileid: "74185278"
 
 ![Геоизбыточные хранилища](./media/geo-redundant-app-configuration-stores.png)
 
-Приложение загрузит конфигурацию из основного и дополнительного хранилищ в параллельном режиме. Это повышает вероятность успешного получения данных конфигурации. Вы ответственны за синхронизацию данных в обоих хранилищах. В следующих разделах объясняется, как внедрить географическую устойчивость в приложение.
+Приложение загрузит конфигурацию из основного и дополнительного хранилищ в параллельном режиме. Это повышает вероятность успешного получения данных конфигурации. Вы несете ответственность за хранение данных в обоих магазинах в синхронизации. В следующих разделах объясняется, как можно создать геоустойчивость в приложении.
 
 ## <a name="failover-between-configuration-stores"></a>Отработка отказа между хранилищами конфигураций
 
@@ -68,7 +62,7 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
     az appconfig kv export --destination appconfig --name {PrimaryStore} --label {Label} --dest-name {SecondaryStore} --dest-label {Label}
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как расширить возможности приложения, чтобы достичь географической устойчивости во время выполнения для Конфигурации приложений. Также на этапе сборки или развертывания можно внедрить данные конфигурации из Конфигурации приложений. Дополнительную информацию см. в разделе [Интеграция с конвейером CI/CD](./integrate-ci-cd-pipeline.md).
 

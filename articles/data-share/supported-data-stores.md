@@ -6,12 +6,12 @@ author: joannapea
 ms.author: joanpo
 ms.topic: conceptual
 ms.date: 10/30/2019
-ms.openlocfilehash: 762cea6dce3e0c6be3f5e977c5f9de806ca0880e
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 56103ed89d2e7813fd60bc50ecca7271f5421a4a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73516400"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438685"
 ---
 # <a name="supported-data-stores-in-azure-data-share"></a>Поддерживаемые хранилища данных в общей папке данных Azure
 
@@ -25,26 +25,26 @@ ms.locfileid: "73516400"
 
 | Хранилище данных | Общий доступ на основе моментальных снимков | Общий доступ на месте 
 |:--- |:--- |:--- |:--- |:--- |:--- |
-| Хранилище больших двоичных объектов Azure |✓ | |
-| Хранилище Azure Data Lake Storage 1-го поколения |✓ | |
-| Azure Data Lake Storage 2-го поколения |✓ ||
+| Хранилище BLOB-объектов Azure |✓ | |
+| Azure Data Lake Storage Gen1 |✓ | |
+| Azure Data Lake Storage Gen2 |✓ ||
 | База данных SQL Azure |Общедоступная предварительная версия | |
-| Хранилище данных SQL Azure |Общедоступная предварительная версия | |
-| Azure Data Explorer | |[Ограниченный предварительный просмотр](https://aka.ms/azuredatasharepreviewsignup) |
+| Azure синапсе Analytics (ранее — хранилище данных SQL Azure) |Общедоступная предварительная версия | |
+| Обозреватель данных Azure | |[Ограниченный предварительный просмотр](https://aka.ms/azuredatasharepreviewsignup) |
 
 ## <a name="data-store-support-matrix"></a>Матрица поддержки хранилища данных
 
-Общая папка данных Azure предоставляет потребителям данных гибкие возможности при выборе хранилища данных для приема данных в. Например, данные, общие для базы данных SQL Azure, можно получить в Azure Data Lake Store Gen2, базе данных SQL Azure или хранилище данных SQL Azure. Клиенты могут выбрать формат для получения данных при настройке полученного общего ресурса данных. 
+Общая папка данных Azure предоставляет потребителям данных гибкие возможности при выборе хранилища данных для приема данных в. Например, данные, общие для базы данных SQL Azure, можно получить в Azure Data Lake Store Gen2, базе данных SQL Azure или Azure синапсе Analytics. Клиенты могут выбрать формат для получения данных при настройке полученного общего ресурса данных. 
 
 В таблице ниже приведены различные сочетания и варианты, которые пользователи данных имеют при принятии и настройке общей папки данных. Дополнительные сведения о настройке сопоставлений наборов данных см. в разделе [Настройка сопоставлений наборов данных](how-to-configure-mapping.md).
 
-|  | Хранилище больших двоичных объектов Azure | Gen1 Azure SQL Data Lake | Gen2 Azure SQL Data Lake | База данных SQL Azure | Хранилище данных SQL Azure 
+|  | Хранилище BLOB-объектов Azure | Gen1 Azure SQL Data Lake | Gen2 Azure SQL Data Lake | База данных SQL Azure | Azure Synapse Analytics 
 |:--- |:--- |:--- |:--- |:--- |:--- |
-| Хранилище больших двоичных объектов Azure |✓ ||✓|
-| Хранилище Azure Data Lake Storage 1-го поколения |✓ | |✓|
-| Azure Data Lake Storage 2-го поколения |✓ | |✓|
+| Хранилище BLOB-объектов Azure |✓ ||✓|
+| Azure Data Lake Storage Gen1 |✓ | |✓|
+| Azure Data Lake Storage Gen2 |✓ | |✓|
 | База данных SQL Azure |✓ | |✓|✓|✓|
-| Хранилище данных SQL Azure |✓ | |✓|✓|✓|
+| Azure Synapse Analytics |✓ | |✓|✓|✓|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

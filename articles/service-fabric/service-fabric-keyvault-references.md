@@ -1,25 +1,20 @@
 ---
-title: Service Fabric Azure. Использование Service Fabric приложений KeyVault ссылки | Документация Майкрософт
+title: Service Fabric Azure. Использование Service Fabricных ссылок на KeyVault приложений
 description: В этой статье объясняется, как использовать поддержку Кэйваултреференце Service-Fabric для секретов приложений.
-services: service-fabric
-author: athinanthny
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: article
 ms.date: 09/20/2019
-ms.author: atsenthi
-ms.openlocfilehash: 96da89a00b054767553b0ed3d8debf30c344dd62
-ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
+ms.openlocfilehash: b0e882c2b39c06a3040d22fc6694599966ceeb39
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74307337"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75463037"
 ---
 #  <a name="keyvaultreference-support-for-service-fabric-applications-preview"></a>Поддержка Кэйваултреференце приложений для Service Fabric (Предварительная версия)
 
 Распространенной проблемой при создании облачных приложений является безопасное хранение секретов, необходимых для приложения. Например, может потребоваться сохранить учетные данные репозитория контейнеров в keyvault и ссылаться на них в манифесте приложения. Service Fabric Кэйваултреференце использует Service Fabric управляемое удостоверение и упрощает ссылку на секреты keyvault. В оставшейся части этой статьи подробно описано, как использовать Service Fabric Кэйваултреференце, а также некоторые типичные способы их использования.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 - Управляемое удостоверение для приложения (MIT)
     
@@ -36,8 +31,8 @@ ms.locfileid: "74307337"
     [
         ...
     {
-        "parameters":  [
-            "name":  "CentralSecretService",
+                "name":  "CentralSecretService",
+                "parameters":  [
                 {
                     "name":  "IsEnabled",
                     "value":  "true"
@@ -50,7 +45,7 @@ ms.locfileid: "74307337"
                     "name":  "TargetReplicaSetSize",
                     "value":  "3"
                 }
-                ],
+                ]
             },
             {
                 "name":  "ManagedIdentityTokenService",
@@ -142,13 +137,13 @@ string eventStorePassword =  Environment.GetEnvironmentVariable("EventStorePassw
         <RepositoryCredentials AccountName="user1" Type="KeyVaultReference" Password="https://ttkvault.vault.azure.net/secrets/containerpwd/e225bd97e203430d809740b47736b9b8"/>
       </ContainerHostPolicies>
 ```
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>Часто задаваемые вопросы
 - Для поддержки Кэйваултреференце необходимо включить управляемое удостоверение. Активация приложения завершится ошибкой, если Кэйваултреференце используется без включения управляемого удостоверения.
 
 - Если вы используете назначенное системой удостоверение, оно создается только после развертывания приложения и создает циклическую зависимость. После развертывания приложения можно предоставить системному назначению разрешение на доступ к удостоверениям keyvault. Удостоверение, назначенное системой, можно найти по имени {Cluster}/{аппликатион имя}/{сервиценаме}
 
 - Keyvault должен находиться в той же подписке, что и кластер Service Fabric. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Документация по Azure KeyVault](https://docs.microsoft.com/azure/key-vault/)

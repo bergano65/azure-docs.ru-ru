@@ -1,27 +1,20 @@
 ---
-title: Рекомендации по тестированию производительности для Azure NetApp Files | Документация Майкрософт
-description: Содержит рекомендации по тестированию производительности и метрики с помощью Azure NetApp Files.
-services: azure-netapp-files
-documentationcenter: ''
+title: Рекомендации по тестированию производительности — Azure NetApp Files
+description: Узнайте о рекомендациях по тестированию производительности и метрикам, используя Azure NetApp Files.
 author: b-juche
-manager: ''
-editor: ''
-ms.assetid: ''
+ms.author: b-juche
 ms.service: azure-netapp-files
 ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/07/2019
-ms.author: b-juche
-ms.openlocfilehash: 1969b3c237a4133df6f53bd6426ca4d50581cbcb
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 8f354152c23dd7ad0413f27585d724f8070ca003
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68881732"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551528"
 ---
-# <a name="performance-benchmark-test-recommendations-for-azure-netapp-files"></a>Рекомендации по тестированию производительности для Azure NetApp Files
+# <a name="performance-benchmark-test-recommendations-for-azure-netapp-files"></a>Рекомендации по тестам производительности для Azure NetApp Files
 
 В этой статье приводятся рекомендации по тестированию производительности и метрик с помощью Azure NetApp Files.
 
@@ -51,25 +44,25 @@ FIO доступен в двоичном формате как для Linux, т�
 
 В примерах FIO в этом разделе используется следующая настройка:
 * Размер экземпляра виртуальной машины: D32s_v3
-* Уровень и размер службы пула ресурсов: Premium или 50 тиб
+* Уровень и размер службы пула ресурсов: Premium/50 тиб
 * Размер квоты тома: 48 тиб
 
 В следующих примерах показаны FIO случайные операции чтения и записи.
 
-### <a name="fio-8k-block-size-100-random-reads"></a>FIO Размер блока 8 КБ 100% случайных операций чтения
+### <a name="fio-8k-block-size-100-random-reads"></a>FIO: размер блока 8 КБ 100% случайных операций чтения
 
 `fio --name=8krandomreads --rw=randread --direct=1 --ioengine=libaio --bs=8k --numjobs=4 --iodepth=128 --size=4G --runtime=600 --group_reporting`
 
-### <a name="output-68k-read-iops-displayed"></a>Выходные данные: 68k прочитанные операции ввода-вывода
+### <a name="output-68k-read-iops-displayed"></a>Выходные данные: отображено операций ввода-вывода 68k чтения
 
 `Starting 4 processes`  
 `Jobs: 4 (f=4): [r(4)][84.4%][r=537MiB/s,w=0KiB/s][r=68.8k,w=0 IOPS][eta 00m:05s]`
 
-### <a name="fio-8k-block-size-100-random-writes"></a>FIO Размер блока 8 КБ 100% случайных записей
+### <a name="fio-8k-block-size-100-random-writes"></a>FIO: размер блока 8 КБ 100% случайных записей
 
 `fio --name=8krandomwrites --rw=randwrite --direct=1 --ioengine=libaio --bs=8k --numjobs=4 --iodepth=128  --size=4G --runtime=600 --group_reporting`
 
-### <a name="output-73k-write-iops-displayed"></a>Выходные данные: 73k записи ввода-вывода
+### <a name="output-73k-write-iops-displayed"></a>Выходные данные: отображаются 73k записи ввода-вывода
 
 `Starting 4 processes`  
 `Jobs: 4 (f=4): [w(4)][26.7%][r=0KiB/s,w=571MiB/s][r=0,w=73.0k IOPS][eta 00m:22s]`
@@ -78,7 +71,7 @@ FIO доступен в двоичном формате как для Linux, т�
 
 В примерах этого раздела показаны FIO последовательные операции чтения и записи.
 
-### <a name="fio-64k-block-size-100-sequential-reads"></a>FIO Размер блока 64k 100% последовательных операций чтения
+### <a name="fio-64k-block-size-100-sequential-reads"></a>FIO: размер блока 64k 100% последовательных операций чтения
 
 `fio --name=64kseqreads --rw=read --direct=1 --ioengine=libaio --bs=64k --numjobs=4 --iodepth=128  --size=4G --runtime=600 --group_reporting`
 
@@ -87,7 +80,7 @@ FIO доступен в двоичном формате как для Linux, т�
 `Starting 4 processes`  
 `Jobs: 4 (f=4): [R(4)][40.0%][r=1313MiB/s,w=0KiB/s][r=21.0k,w=0 IOPS][eta 00m:09s]`
 
-### <a name="fio-64k-block-size-100-sequential-writes"></a>FIO Размер блока 64k 100% последовательных операций записи
+### <a name="fio-64k-block-size-100-sequential-writes"></a>FIO: размер блока 64k 100% последовательных операций записи
 
 `fio --name=64kseqwrites --rw=write --direct=1 --ioengine=libaio --bs=64k --numjobs=4 --iodepth=128  --size=4G --runtime=600 --group_reporting`
 
@@ -120,7 +113,7 @@ FIO доступен в двоичном формате как для Linux, т�
 
 ### <a name="azure-monitor-api-access"></a>Доступ к Azure Monitor API
 
-Доступ к счетчикам Azure NetApp Files можно получить с помощью вызовов REST API. См [. раздел Поддерживаемые метрики с Azure Monitor. Microsoft. NetApp/нетаппаккаунтс/капаЦитипулс/Volumes](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported#microsoftnetappnetappaccountscapacitypoolsvolumes) для счетчиков пулов и томов емкости.
+Доступ к счетчикам Azure NetApp Files можно получить с помощью вызовов REST API. См. раздел [Поддерживаемые метрики с Azure Monitor: Microsoft. NetApp/нетаппаккаунтс/капаЦитипулс/Volumes](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported#microsoftnetappnetappaccountscapacitypoolsvolumes) для счетчиков пулов и томов емкости.
 
 В следующем примере показан URL-адрес GET для просмотра размера логического тома.
 
@@ -128,7 +121,7 @@ FIO доступен в двоичном формате как для Linux, т�
 `curl -X GET -H "Authorization: Bearer TOKENGOESHERE" -H "Content-Type: application/json" https://management.azure.com/subscriptions/SUBIDGOESHERE/resourceGroups/RESOURCEGROUPGOESHERE/providers/Microsoft.NetApp/netAppAccounts/ANFACCOUNTGOESHERE/capacityPools/ANFPOOLGOESHERE/Volumes/ANFVOLUMEGOESHERE/providers/microsoft.insights/metrics?api-version=2018-01-01&metricnames=VolumeLogicalSize`
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Service levels for Azure NetApp Files](azure-netapp-files-service-levels.md) (Уровни обслуживания для для службы Azure NetApp Files)
 - [Показатели производительности для Azure NetApp Files](azure-netapp-files-performance-benchmarks.md)

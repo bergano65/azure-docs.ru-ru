@@ -11,17 +11,17 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/25/2019
-ms.openlocfilehash: 9dd81484d8afab66fcb76f8fccdea348ef6a34c4
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 90e51e8b56bd3fb63d56c630d47770e97f439796
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73681489"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75563551"
 ---
 # <a name="linked-services-in-azure-data-factory"></a>Связанные службы в фабрике данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-create-datasets.md)
-> * [Текущая версия](concepts-datasets-linked-services.md)
+> * [Текущая версия](concepts-linked-services.md)
 
 В этой статье описываются связанные службы, их определение в формате JSON и их использование в конвейерах фабрики данных Azure.
 
@@ -61,7 +61,7 @@ ms.locfileid: "73681489"
 
 В следующей таблице описаны свойства приведенного выше объекта JSON.
 
-Свойство | Description (Описание) | Обязательно |
+Свойство | Description | Обязательно для заполнения |
 -------- | ----------- | -------- |
 name | Имя связанной службы. Дополнительные сведения см. в статье [Фабрика данных Azure — правила именования](naming-rules.md). |  Да |
 type | Тип связанной службы. Например, AzureStorage (хранилище данных) или AzureBatch (служба вычислений). См. описание typeProperties. | Да |
@@ -77,10 +77,7 @@ connectVia | [Среда выполнения интеграции](concepts-int
     "properties": {
         "type": "AzureStorage",
         "typeProperties": {
-            "connectionString": {
-                "type": "SecureString",
-                "value": "DefaultEndpointsProtocol=https;AccountName=<accountname>;AccountKey=<accountkey>"
-            }
+            "connectionString": "DefaultEndpointsProtocol=https;AccountName=<accountname>;AccountKey=<accountkey>"
         },
         "connectVia": {
             "referenceName": "<name of Integration Runtime>",
@@ -95,7 +92,7 @@ connectVia | [Среда выполнения интеграции](concepts-int
 Связанные службы можно создать с помощью одного из следующих средств или пакетов SDK: [.NET API](quickstart-create-data-factory-dot-net.md), [PowerShell](quickstart-create-data-factory-powershell.md), [REST API](quickstart-create-data-factory-rest-api.md), Azure Resource Manager шаблона и портал Azure
 
 ## <a name="data-store-linked-services"></a>Связанные службы хранилища данных
-Список сохраненных данных, поддерживаемых фабрикой данных, можно найти в статье [Обзор соединителя](copy-activity-overview.md#supported-data-stores-and-formats) . Щелкните хранилище данных, чтобы узнать о поддерживаемых свойствах соединения.
+Список хранилищ данных, поддерживаемых фабрикой данных, можно найти в статье [Обзор соединителя](copy-activity-overview.md#supported-data-stores-and-formats) . Щелкните хранилище данных, чтобы узнать о поддерживаемых свойствах соединения.
 
 ## <a name="compute-linked-services"></a>Связанные службы вычислений
 Справочные [вычислительные среды, поддерживаемые](compute-linked-services.md) для получения сведений о различных вычислительных средах, к которым можно подключиться из фабрики данных, а также различных конфигураций.
@@ -103,7 +100,7 @@ connectVia | [Среда выполнения интеграции](concepts-int
 ## <a name="next-steps"></a>Дальнейшие действия
 Пошаговые инструкции по созданию конвейеров и наборов данных с помощью одного из указанных ниже инструментов или пакетов SDK приведены в указанных ниже руководствах.
 
-- [Create a data factory and pipeline using .NET SDK](quickstart-create-data-factory-dot-net.md) (Создание фабрики данных и конвейера с помощью пакета SDK для .NET)
+- [Создание фабрики данных и конвейера с помощью пакета SDK для .NET](quickstart-create-data-factory-dot-net.md)
 - [Создание фабрики данных и конвейера с помощью пакета PowerShell](quickstart-create-data-factory-powershell.md)
 - [Создание фабрики данных Azure и конвейера с помощью REST API](quickstart-create-data-factory-rest-api.md)
 - [Краткое руководство. Создание фабрики данных с помощью портал Azure](quickstart-create-data-factory-portal.md)

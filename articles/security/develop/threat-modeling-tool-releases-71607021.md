@@ -1,26 +1,18 @@
 ---
-title: Выпуски Microsoft Threat Modeling Tool в Azure | Документация Майкрософт
+title: Microsoft Threat Modeling Tool выпуск 7/2/2019 — Azure
 description: Документирование заметок о выпуске средства моделирования угроз
-services: security
-documentationcenter: na
 author: jegeib
-manager: jegeib
-editor: jegeib
-ms.assetid: na
+ms.author: jegeib
 ms.service: security
 ms.subservice: security-develop
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/02/2019
-ms.author: jegeib
-ms.openlocfilehash: 44fd84af629fadfc96d738e81f2568359ee19d66
-ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
+ms.openlocfilehash: d26ff015156f5d050a74733ff82c811ff5f1700a
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71219853"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75548768"
 ---
 # <a name="threat-modeling-tool-update-release-71607021---722019"></a>Threat Modeling Tool обновления выпуска 7.1.60702.1 — 7/2/2019
 
@@ -38,7 +30,7 @@ ms.locfileid: "71219853"
 
 ![Параметр проверки модели](./media/threat-modeling-tool-releases-71607021/tmt-template-selection.png)
 
-## <a name="system-requirements"></a>Требования к системе
+## <a name="system-requirements"></a>Системные требования
 
 - Поддерживаемые операционные системы
   - [Юбилейное обновление Microsoft Windows 10](https://blogs.windows.com/windowsexperience/2016/08/02/how-to-get-the-windows-10-anniversary-update/#HTkoK5Zdv0g2F2Zq.97) или более поздней версии
@@ -51,6 +43,6 @@ ms.locfileid: "71219853"
 
 - Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](threat-modeling-tool.md) и содержит информацию [об использовании средства](threat-modeling-tool-getting-started.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

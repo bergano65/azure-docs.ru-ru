@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/25/2019
-ms.openlocfilehash: cd3a069eb24b6390629cfaf9a4f19f47e8978d8a
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: f5203de43a3d12c40e6cb5bbb33547769f5824c7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74931647"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75440780"
 ---
 # <a name="copy-data-to-and-from-azure-database-for-mysql-using-azure-data-factory"></a>Копирование данных в базу данных Azure для MySQL и из нее с помощью фабрики данных Azure
 
@@ -45,20 +45,20 @@ ms.locfileid: "74931647"
 
 Для связанной службы базы данных Azure для MySQL поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **AzureMySql**. | ДА |
-| connectionString | Укажите сведения, необходимые для подключения к экземпляру базы данных Azure для MySQL. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `password` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
+| type | Для свойства type необходимо задать значение **AzureMySql**. | Да |
+| connectionString | Укажите сведения, необходимые для подключения к экземпляру базы данных Azure для MySQL. <br/> Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `password` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
 Типичная строка подключения — `Server=<server>.mysql.database.azure.com;Port=<port>;Database=<database>;UID=<username>;PWD=<password>`. Дополнительные свойства, которые вы можете установить в вашем случае:
 
-| Свойство | Описание | Параметры | Обязательно для заполнения |
+| Свойство | Description | Параметры | Обязательно для заполнения |
 |:--- |:--- |:--- |:--- |
 | SSLMode | Этот параметр указывает, использует ли драйвер SSL-шифрование и проверку при подключении к MySQL. Например, `SSLMode=<0/1/2/3/4>`| DISABLED (0) / PREFERRED (1) **(по умолчанию)** / REQUIRED (2) / VERIFY_CA (3) / VERIFY_IDENTITY (4) | Нет |
 | useSystemTrustStore | Этот параметр указывает, следует ли использовать сертификат ЦС из доверенного системного хранилища или из указанного PEM-файла. Например, `UseSystemTrustStore=<0/1>;`| Enabled (1) / Disabled (0) **(по умолчанию)** | Нет |
 
-**Пример.**
+**Пример**.
 
 ```json
 {
@@ -66,10 +66,7 @@ ms.locfileid: "74931647"
     "properties": {
         "type": "AzureMySql",
         "typeProperties": {
-            "connectionString": {
-                "type": "SecureString",
-                "value": "Server=<server>.mysql.database.azure.com;Port=<port>;Database=<database>;UID=<username>;PWD=<password>"
-            }
+            "connectionString": "Server=<server>.mysql.database.azure.com;Port=<port>;Database=<database>;UID=<username>;PWD=<password>"
         },
         "connectVia": {
             "referenceName": "<name of Integration Runtime>",
@@ -87,10 +84,7 @@ ms.locfileid: "74931647"
     "properties": {
         "type": "AzureMySql",
         "typeProperties": {
-            "connectionString": {
-                 "type": "SecureString",
-                 "value": "Server=<server>.mysql.database.azure.com;Port=<port>;Database=<database>;UID=<username>;"
-            },
+            "connectionString": "Server=<server>.mysql.database.azure.com;Port=<port>;Database=<database>;UID=<username>;",
             "password": { 
                 "type": "AzureKeyVaultSecret", 
                 "store": { 
@@ -114,9 +108,9 @@ ms.locfileid: "74931647"
 
 Чтобы скопировать данные из базы данных Azure для MySQL, задайте для свойства type набора данных значение **AzureMySqlTable**. Поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство type набора данных должно иметь значение **AzureMySqlTable**. | ДА |
+| type | Свойство type набора данных должно иметь значение **AzureMySqlTable**. | Да |
 | tableName | Имя таблицы в базе данных MySQL. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -145,13 +139,13 @@ ms.locfileid: "74931647"
 
 Чтобы скопировать данные из базы данных Azure для MySQL, в разделе **источник** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **AzureMySqlSource**. | ДА |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
+| type | Свойство type источника действия копирования должно иметь значение **AzureMySqlSource**. | Да |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например: `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 | куерикоммандтимеаут | Время ожидания до истечения времени ожидания запроса. Значение по умолчанию — 120 минут (02:00:00) | Нет |
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[
@@ -187,14 +181,14 @@ ms.locfileid: "74931647"
 
 Чтобы скопировать данные в базу данных Azure для MySQL, в разделе **приемника** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство Type приемника действия копирования должно иметь значение **азуремисклсинк** . | ДА |
+| type | Свойство Type приемника действия копирования должно иметь значение **азуремисклсинк** . | Да |
 | preCopyScript | Укажите SQL-запрос для действия копирования, который будет выполнен перед записью данных в базу данных Azure для MySQL при каждом запуске. Это свойство можно использовать для очистки предварительно загруженных данных. | Нет |
 | writeBatchSize | Вставляет данные в таблицу базы данных Azure для MySQL, когда размер буфера достигает writeBatchSize.<br>Допустимое значение — целое число, представляющее количество строк. | Нет (значение по умолчанию — 10 000) |
 | writeBatchTimeout | Время ожидания до выполнения операции пакетной вставки, пока не завершится срок ее действия.<br>Допустимые значения: временной диапазон. Например, 00:30:00 (30 минут). | Нет (значение по умолчанию — 00:00:30) |
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[
