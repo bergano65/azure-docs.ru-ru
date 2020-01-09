@@ -8,12 +8,12 @@ author: bwren
 ms.author: bwren
 ms.date: 03/20/2017
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 97472a65af6eb2c5c2da93d93f38450cc021f680
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 8c08dc5091e7ab0eec5d4e6dd455e6adb3caa35f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72555289"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75402048"
 ---
 # <a name="design-and-build-a-management-solution-in-azure-preview"></a>Проектирование и сборка решения по управлению в Azure (предварительная версия)
 > [!NOTE]
@@ -60,7 +60,7 @@ ms.locfileid: "72555289"
 
 
 ## <a name="create-solution-file"></a>Создание файла решения
-После настройки и тестирования компонентов, которые будут входить в решение, можно [создавать файл решения]( solutions-solution-file.md).  Реализуйте компоненты решения в [шаблоне Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md), который включает [ресурс решения]( solutions-solution-file.md#solution-resource) и связи с другими ресурсами в файле.  
+После настройки и тестирования компонентов, которые будут входить в решение, можно [создавать файл решения]( solutions-solution-file.md).  Реализуйте компоненты решения в [шаблоне Resource Manager](../../azure-resource-manager/templates/template-syntax.md), который включает [ресурс решения]( solutions-solution-file.md#solution-resource) и связи с другими ресурсами в файле.  
 
 
 ## <a name="test-your-solution"></a>Тестирование решения
@@ -76,5 +76,5 @@ ms.locfileid: "72555289"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [создать файл решения]( solutions-solution-file.md) для решения по управлению.
-* Узнайте больше о [создании шаблонов Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md).
+* Узнайте больше о [создании шаблонов Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md).
 * Найдите в коллекции [шаблонов быстрого запуска Azure](https://azure.microsoft.com/documentation/templates) примеры разных шаблонов Resource Manager.

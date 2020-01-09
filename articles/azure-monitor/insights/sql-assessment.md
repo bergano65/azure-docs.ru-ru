@@ -4,15 +4,15 @@ description: С помощью Azure Monitor можно использовать
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
-author: mgoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 03/28/2019
-ms.openlocfilehash: 7808ead7ec4191bdf17e3ab225aeaa909abd7d08
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: e3e399e99dca453a84c4daef782027b2b1ad6da1
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900680"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75401034"
 ---
 # <a name="optimize-your-sql-environment-with-the-sql-server-health-check-solution-in-azure-monitor"></a>Оптимизируйте среду SQL с помощью решения SQL Server проверки работоспособности в Azure Monitor
 
@@ -34,7 +34,7 @@ ms.locfileid: "72900680"
 
 ## <a name="prerequisites"></a>Технические условия
 
-* Для решения проверки работоспособности SQL на каждом компьютере с агентом Microsoft Monitoring Agent (MMA) должна быть установлена поддерживаемая версия платформы .NET Framework 4.  Агент MMA используется решением System Center 2016 Operations Manager и Operations Manager 2012 R2, а также Azure Monitor.  
+* Для решения "Проверка работоспособности SQL" требуется поддерживаемая версия .NET Framework 4.6.2, установленная на каждом компьютере с установленным Microsoft Monitoring Agent (MMA).  Агент MMA используется решением System Center 2016 Operations Manager и Operations Manager 2012 R2, а также Azure Monitor.  
 * Решение поддерживает SQL Server версий 2012, 2014 и 2016.
 * Рабочая область Log Analytics для добавления решения проверки работоспособности SQL в Azure Marketplace на портале Azure.  Чтобы установить решение, вы должны быть администратором или участником подписки Azure.
 
@@ -86,7 +86,7 @@ Log Analytics использует агент Operations Manager и группу
    > Тип учетной записи «Запуск от имени» должен быть указан как Windows. Учетная запись запуска от имени также должна входить в группу локальных администраторов на всех серверах Windows Server, на которых размещены экземпляры SQL Server.
    >
    >
-5. В нижней части страницы нажмите кнопку **Save**.
+5. Выберите команду **Сохранить**.
 6. Измените, а затем выполните приведенный ниже пример T-SQL на каждом экземпляре SQL Server. Это позволит предоставить минимальные разрешения, необходимые учетной записи запуска от имени для проверки работоспособности SQL. Но это не требуется делать в том случае, если учетная запись запуска от имени уже является частью серверной роли sysadmin в экземплярах SQL Server.
 
 ```
@@ -157,7 +157,7 @@ Log Analytics использует агент Operations Manager и группу
 
 ### <a name="to-view-recommendations-for-a-focus-area-and-take-corrective-action"></a>Просмотр рекомендаций для приоритетной области и выполнение действий по исправлению
 1. Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
-2. На портале Azure щелкните ссылку **Другие службы** в нижнем левом углу. В списке ресурсов введите **Монитор**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Мониторинг**.
+2. На портале Azure щелкните **Другие службы** в нижнем левом углу. В списке ресурсов введите **Монитор**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Щелкните **Монитор**.
 3. В разделе **Insights** в меню выберите **больше**.  
 4. На странице **Обзор** щелкните плитку **Проверка работоспособности SQL**.
 5. На странице **Проверка работоспособности** просмотрите сводные данные в одной из колонок приоритетной области, а затем щелкните ее, чтобы ознакомиться с рекомендациями для этой приоритетной области.
@@ -193,7 +193,7 @@ Log Analytics использует агент Operations Manager и группу
     ```
     SQLAssessmentRecommendation | where RecommendationResult == "Ignored" | sort by Computer asc | project Computer, RecommendationId, Recommendation
     ```
-3. Если вы решите позже просмотреть игнорируемые рекомендации, удалите все файлы IgnoreRecommendations.txt или RecommendationIDs из них.
+3. Если вы решите позже просмотреть игнорируемые рекомендации, удалите все файлы IgnoreRecommendations.txt или RecommendationIDs можно удалить из них.
 
 ## <a name="sql-health-check-solution-faq"></a>Вопросы и ответы по решению "Проверка работоспособности SQL"
 *Как часто выполняется проверка работоспособности?*

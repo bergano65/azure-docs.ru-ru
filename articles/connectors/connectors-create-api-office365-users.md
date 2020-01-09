@@ -1,20 +1,21 @@
 ---
 title: Подключение к пользователям Office 365
-description: Управляйте профилями пользователей с помощью интерфейсов REST API службы "Пользователи Office 365" и Azure Logic Apps.
+description: Автоматизируйте задачи и рабочие процессы, которые получают профили и управляют ими в профилях пользователей Office 365 с помощью Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.date: 08/18/2016
 ms.topic: article
 tags: connectors
-ms.openlocfilehash: addb64a9b43c51af8363caa6f0fb3261a618e893
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 179c7538d8072f0e1a4f7d049cf521971efd7a21
+ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74789531"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75666862"
 ---
-# <a name="get-started-with-the-office-365-users-connector"></a>Начало работы с соединителем Office 365 Пользователи
+# <a name="get-and-manage-profiles-in-office-365-users-by-using-azure-logic-apps"></a>Получение профилей и управление ими в Office 365 пользователи с помощью Azure Logic Apps
+
 Подключившись к Office 365 Пользователи, вы сможете получать профили, искать пользователей и выполнять многие другие действия. С помощью Office 365 Пользователи вы можете:
 
 * формировать бизнес-процессы на основе данных, получаемых из Office 365 Пользователи; 
@@ -23,7 +24,8 @@ ms.locfileid: "74789531"
 Для начала можно создать приложение логики, как описано [здесь](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
 ## <a name="create-a-connection-to-office-365-users"></a>Создание подключения к Office 365 Пользователи
-При добавлении этого соединителя в приложения логики необходимо войти в учетную запись Office 365 Пользователи и разрешить приложениям логики подключаться к вашей учетной записи.
+
+При добавлении этого соединителя в приложения логики необходимо войти в учетную запись Office 365, чтобы Azure Logic Apps мог подключиться к вашей учетной записи.
 
 > [!INCLUDE [Steps to create a connection to Office 365 Users](../../includes/connectors-create-api-office365users.md)]
 > 
@@ -33,7 +35,8 @@ ms.locfileid: "74789531"
 
 ## <a name="connector-specific-details"></a>Сведения о соединителях
 
-Информацию о существующих ограничениях, а также о триггерах и действиях, определенных в Swagger, см. в статье со [сведениями о соединителях](/connectors/officeusers/).
+Технические сведения о триггерах, действиях и ограничениях, которые описаны в описании Swagger соединителя, см. на [странице справочника по соединителю](/connectors/officeusers/).
 
-## <a name="more-connectors"></a>Дополнительные сведения о соединителях
-Вы можете вернуться к [списку интерфейсов API](apis-list.md).
+## <a name="next-steps"></a>Дальнейшие действия
+
+* См. дополнительные сведения о других [соединителях Logic Apps](apis-list.md).

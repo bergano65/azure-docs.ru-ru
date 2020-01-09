@@ -1,5 +1,5 @@
 ---
-title: Моделирование отношений в структуре таблиц службы хранилища Azure | Документация Майкрософт
+title: Моделирование отношений в структуре хранилища таблиц Azure | Документация Майкрософт
 description: Сведения о процессе моделирования при разработке решения хранилища таблиц.
 services: storage
 author: MarkMcGeeAtAquent
@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/23/2018
 ms.author: sngun
 ms.subservice: tables
-ms.openlocfilehash: 5d83e61282d2f21a3016997e324d0f58eff15e78
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 25082c107fbc0feeb533aa2b4fc56cff960e778d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60502542"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75457562"
 ---
 # <a name="modeling-relationships"></a>Моделирование отношений
 В этой статье рассматривается процесс моделирования при разработке решений хранилища таблиц Azure.
@@ -43,8 +43,8 @@ ms.locfileid: "60502542"
 <table>
 <tr>
 <th>Подход</th>
-<th>Преимущества</th>
-<th>Недостатки</th>
+<th>Плюсы</th>
+<th>Минусы</th>
 </tr>
 <tr>
 <td>Отдельные типы сущностей, один раздел, одна таблица</td>

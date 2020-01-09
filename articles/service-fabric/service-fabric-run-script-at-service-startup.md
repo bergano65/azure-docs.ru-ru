@@ -1,25 +1,16 @@
 ---
-title: Выполнение скрипта при запуске службы Azure Service Fabric | Документация Майкрософт
+title: Запуск скрипта при запуске службы Service Fabric Azure
 description: Сведения о настройке политики для точки входа настройки службы Service Fabric и выполнения скрипта во время запуска службы.
-services: service-fabric
-documentationcenter: .net
 author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 03/21/2018
 ms.author: atsenthi
-ms.openlocfilehash: 76be814e0dd4c054fc3a873716dbfe395eeeb2dc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a25f16f08ab8ae9564363f179d19d4b30c5315fa
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60837798"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75464283"
 ---
 # <a name="run-a-service-startup-script-as-a-local-user-or-system-account"></a>Выполнение скрипта при запуске службы от имени локального пользователя или системной учетной записи
 Перед запуском исполняемого файла службы Service Fabric могут потребоваться некоторые действия по настройке,  например для установки переменных среды. Вы можете указать в манифесте службы скрипт, который будет выполняться перед запуском исполняемого файла службы. Настроив политику запуска от имени для точки входа установки службы, вы можете изменить учетную запись, от имени которой выполняется исполняемый файл установки.  Отдельная точка входа установки позволяет на короткое время запускать конфигурацию с высоким уровнем привилегий, чтобы исполняемый узел службы не работал с высоким уровнем привилегий в течение продолжительного периода.

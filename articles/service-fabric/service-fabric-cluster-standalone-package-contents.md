@@ -1,24 +1,16 @@
 ---
-title: Изолированный пакет Azure Service Fabric для Windows Server | Документация Майкрософт
+title: Автономный пакет Azure Service Fabric для Windows Server
 description: Описание изолированного пакета Azure Service Fabric для Windows Server и его содержимого.
-services: service-fabric
-documentationcenter: .net
 author: maburlik
-manager: chackdan
-editor: ''
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 8/10/2017
 ms.author: maburlik
-ms.openlocfilehash: facdcd162826e6f77ace098391459cba00061c4f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1bb73fa69717f067139067f127a0d50af4878d6c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60711090"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75451847"
 ---
 # <a name="contents-of-service-fabric-standalone-package-for-windows-server"></a>Содержимое изолированного пакета Service Fabric для Windows Server
 В [скачанном](https://go.microsoft.com/fwlink/?LinkId=730690) изолированном пакете Service Fabric для Windows Server вы найдете приведенные ниже файлы.
@@ -57,6 +49,6 @@ ms.locfileid: "60711090"
 ## <a name="independent-runtime-package"></a>Независимый пакет среды выполнения
 Последняя версия пакета среды выполнения автоматически загружается во время развертывания кластера по [ссылке для скачивания среды выполнения Service Fabric для Windows Server](https://go.microsoft.com/fwlink/?linkid=839354).
 
-## <a name="related"></a>Сопутствующие материалы
+## <a name="related"></a>Связанная информация
 * [Создание изолированного кластера Azure Service Fabric](service-fabric-cluster-creation-for-windows-server.md)
 * [Сценарии защиты кластера Service Fabric](service-fabric-windows-cluster-windows-security.md)

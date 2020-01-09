@@ -2,7 +2,6 @@
 documentType: LandingData
 title: Платформа как услуга
 metadata:
-  document_id: 36d89c48-3646-380e-34a0-ae3ac62e2641
   title: База данных SQL Azure — платформа как услуга
   meta.description: Learn about the PaaS capabilities of Azure SQL Database.
   services: sql-database

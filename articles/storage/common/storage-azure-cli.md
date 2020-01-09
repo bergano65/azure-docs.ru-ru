@@ -1,5 +1,5 @@
 ---
-title: Использование интерфейса командной строки Azure со службой хранилища Azure | Документация Майкрософт
+title: Использование интерфейса командной строки (CLI) Azure со службой хранилища Azure
 description: Узнайте, как использовать интерфейс командной строки Azure (Azure CLI) для создания учетных записей хранения и управления ими, а также для работы с большими двоичными объектами и файлами Azure в службе хранилища Azure.
 services: storage
 author: tamram
@@ -10,12 +10,12 @@ ms.date: 06/02/2017
 ms.author: tamram
 ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: 46ae70bf4f1c2fe0276a3327ff37650dd57341d0
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: f8e745b214ced865ac41d72bdfd5e44ca36b803a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70259387"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75460460"
 ---
 # <a name="using-the-azure-cli-with-azure-storage"></a>Использование интерфейса командной строки (CLI) Azure со службой хранилища Azure
 
@@ -29,12 +29,12 @@ ms.locfileid: "70259387"
 
 [!INCLUDE [storage-cli-versions](../../../includes/storage-cli-versions.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 В этом руководстве предполагается, что вам знакомы основные понятия службы хранилища Azure. Также предполагается, что вы можете выполнить требования для создания учетной записи и службы хранилища Azure. Эти требования перечислены ниже.
 
-### <a name="accounts"></a>Учет. записи
+### <a name="accounts"></a>Учетные записи
 * **Учетная запись Azure.** Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
-* **Учетная запись хранения**. См. статью [Создание учетной записи хранения](storage-quickstart-create-account.md) в документации [по учетным записям хранения Azure](storage-create-storage-account.md).
+* **Учетная запись хранения**. См. раздел [Создание учетной записи хранения](storage-quickstart-create-account.md) в статье [Об учетных записях хранения Azure](storage-create-storage-account.md).
 
 ### <a name="install-the-azure-cli"></a>Установка Azure CLI
 
@@ -147,7 +147,7 @@ echo "Done"
 
 4. При необходимости пометьте скрипт как исполняемый файл: `chmod +x my_storage_sample.sh`
 
-5. Выполните скрипт, например в Bash: `./my_storage_sample.sh`
+5. Выполните скрипт. например в Bash: `./my_storage_sample.sh`
 
 Вы увидите результат, аналогичный приведенному ниже. Указанный в скрипте **\<destination_file\>** появится на локальном компьютере.
 
@@ -175,7 +175,7 @@ Done
 
 ## <a name="manage-storage-accounts"></a>Управление учетными записями хранения
 
-### <a name="create-a-new-storage-account"></a>Создание учетной записи хранения
+### <a name="create-a-new-storage-account"></a>Создание новой учетной записи хранения
 Для использования службы хранилища Azure вам потребуется учетная запись хранения. После настройки компьютера для подключения к подписке можно создать новую учетную запись хранения Azure.
 
 ```azurecli
@@ -186,17 +186,17 @@ az storage account create \
     --sku <account_sku>
 ```
 
-* `--location` [обязательный параметр] — Расположение. Например, "западная часть США".
-* `--name` [обязательный параметр] — имя учетной записи хранения. Имя должно быть не меньше 3 и не больше 24 символов и содержать только буквенно-цифровые символы.
-* `--resource-group` [обязательный параметр] — Имя группы ресурсов.
-* `--sku` [обязательный параметр] — номер SKU учетной записи хранения. Допустимые значения:
+* `--location` — расположение (обязательный параметр). Например, "западная часть США".
+* `--name` — имя учетной записи хранения (обязательный параметр). Имя должно быть не меньше 3 и не больше 24 символов и содержать только буквенно-цифровые символы.
+* `--resource-group` — имя группы ресурсов (обязательный параметр).
+* `--sku` — номер SKU учетной записи хранения (обязательный параметр). Допустимые значения:
   * `Premium_LRS`
   * `Standard_GRS`
   * `Standard_LRS`
   * `Standard_RAGRS`
   * `Standard_ZRS`
-  * `Standard_GZRS`образца
-  * `Standard_RAGZRS`образца
+  * `Standard_GZRS` (Предварительная версия)
+  * `Standard_RAGZRS` (Предварительная версия)
 
 ### <a name="set-default-azure-storage-account-environment-variables"></a>Установка учетной записи хранения Azure по умолчанию в переменные среды
 
@@ -238,7 +238,7 @@ export AZURE_STORAGE_CONNECTION_STRING="<connection_string>"
 ## <a name="create-and-manage-blobs"></a>Создание больших двоичных объектов (BLOB-объектов) и управление ими
 Хранилище BLOB-объектов Azure — это служба хранения большого количества неструктурированных данных, таких как текстовые или бинарные файлы, к которым можно получить доступ практически из любой точки мира по протоколу HTTP или HTTPS. В этом разделе предполагается, что вы уже знакомы с понятиями службы хранилища BLOB-объектов Azure. Дополнительные сведения см. в статьях [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../blobs/storage-dotnet-how-to-use-blobs.md) и [Основные понятия службы BLOB-объектов](/rest/api/storageservices/blob-service-concepts).
 
-### <a name="create-a-container"></a>Создать контейнер
+### <a name="create-a-container"></a>Создание контейнера
 Каждый BLOB-объект в хранилище Azure должен находиться в контейнере. Вы можете создать контейнер с помощью команды `az storage container create`:
 
 ```azurecli
@@ -247,9 +247,9 @@ az storage container create --name <container_name>
 
 Для нового контейнера можно задать один из трех уровней доступа на чтение с помощью необязательного аргумента `--public-access`.
 
-* `off` (значение по умолчанию): данные контейнера являются личными данными владельца учетной записи.
-* `blob`. общий доступ на чтение для больших двоичных объектов.
-* `container`. общий доступ на чтение и создание списков для всего контейнера.
+* `off`: данные контейнера являются личными данными владельца учетной записи (значение по умолчанию).
+* `blob`: общий доступ на чтение для больших двоичных объектов.
+* `container`: общий доступ на чтение и создание списков для всего контейнера.
 
 Дополнительные сведения см. в статье [Управление анонимным доступом на чтение к контейнерам и большим двоичным объектам](../blobs/storage-manage-access-to-resources.md).
 
@@ -331,7 +331,7 @@ az storage blob delete --container-name <container_name> --name <blob_name>
 
 ### <a name="set-the-content-type"></a>Определение типа содержимого
 
-Тип содержимого (или тип MIME) определяет формат данных в большом двоичном объекте. Браузеры и другое программное обеспечение используют тип содержимого, чтобы определять способы обработки данных. Например, тип содержимого для изображений PNG — `image/png`. Чтобы задать тип содержимого, используйте `blob update` команду:
+Тип содержимого (или тип MIME) определяет формат данных в большом двоичном объекте. Браузеры и другое программное обеспечение используют тип содержимого, чтобы определять способы обработки данных. Например, тип содержимого для изображений PNG — `image/png`. Чтобы задать тип содержимого, используйте команду `blob update`.
 
 ```azurecli
 az storage blob update
@@ -350,7 +350,7 @@ az storage blob update
 az storage share create --name myshare
 ```
 
-### <a name="create-a-directory"></a>создать каталог;
+### <a name="create-a-directory"></a>Создание каталога
 Каталог обеспечивает иерархическую структуру в общей папке Azure. В следующем примере в общей папке создается каталог с именем **myDir** .
 
 ```azurecli
@@ -398,7 +398,7 @@ az storage file copy start \
 ```
 
 ## <a name="create-share-snapshot"></a>Создание моментального снимка общей папки
-Вы можете создать моментальный снимок общей папки с помощью команды `az storage share snapshot`:
+Вы можете создать моментальный снимок общих ресурсов с помощью команды `az storage share snapshot`:
 
 ```cli
 az storage share snapshot -n <share name>
@@ -426,7 +426,7 @@ az storage share snapshot -n <share name>
 az storage share list --include-snapshots
 ```
 
-**Пример выходных данных**
+**Образец вывода**
 ```json
 [
   {
@@ -469,7 +469,7 @@ az storage share list --include-snapshots
 az storage file list --share-name sharesnapshotdefs --snapshot '2017-10-04T19:45:18.0000000Z' -otable
 ```
 
-**Пример выходных данных**
+**Образец вывода**
 ```
 Name            Content Length    Type    Last Modified
 --------------  ----------------  ------  ---------------
@@ -490,7 +490,7 @@ IMG_1635.JPG    974058            file
 ```azurecli-interactive
 az storage file download --path IMG_0966.JPG --share-name sharesnapshotdefs --snapshot '2017-10-04T19:45:18.0000000Z'
 ```
-**Пример выходных данных**
+**Образец вывода**
 ```
 {
   "content": null,
@@ -521,7 +521,7 @@ az storage file download --path IMG_0966.JPG --share-name sharesnapshotdefs --sn
 }
 ```
 ## <a name="delete-share-snapshot"></a>Удаление моментального снимка общей папки
-Чтобы удалить моментальный снимок общей папки, используйте команду `az storage share delete` и укажите для параметра `--snapshot` метку времени этого снимка.
+Чтобы удалить моментальный снимок общего ресурса, используйте команду `az storage share delete` и укажите для параметра `--snapshot` метку времени этого снимка.
 
 ```cli
 az storage share delete -n <share name> --snapshot '2017-10-04T23:28:35.0000000Z' 
@@ -534,7 +534,7 @@ az storage share delete -n <share name> --snapshot '2017-10-04T23:28:35.0000000Z
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о работе с Azure CLI 2.0 доступны в следующих ресурсах: 
 
 * [Приступая к работе с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2)

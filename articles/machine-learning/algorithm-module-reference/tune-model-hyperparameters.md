@@ -1,7 +1,7 @@
 ---
 title: Настройка гиперпараметров модели
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как использовать модуль настройки параметров модели в службе Машинное обучение Azure для выполнения очистки параметров в модели для определения оптимальных параметров параметров.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как использовать модуль настройки параметров модели в Машинное обучение Azure для выполнения очистки параметров в модели для определения оптимальных параметров параметров.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 10/16/2019
-ms.openlocfilehash: 834907528e4062de583197cf91e98372b96451d7
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 3db20110571203588ac15f4f64a2ae0a6ab6ef27
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74131224"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75428412"
 ---
 # <a name="tune-model-hyperparameters"></a>Настройка гиперпараметров модели
 
@@ -153,7 +153,7 @@ ms.locfileid: "74131224"
 Почти все средства обучения в Машинное обучение Azure поддерживают перекрестную проверку с помощью встроенной очистки параметров, которая позволяет выбирать параметры конвейера. Если разработчик не поддерживает задание диапазона значений, вы по-прежнему можете использовать его при перекрестной проверке. В этом случае для очистки выбирается диапазон допустимых значений. 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) для службы машинное обучение Azure. 
+См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 
 

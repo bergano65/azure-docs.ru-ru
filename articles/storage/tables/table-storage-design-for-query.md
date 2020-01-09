@@ -1,5 +1,5 @@
 ---
-title: Проектирование таблиц службы хранилища Azure для запросов | Документация Майкрософт
+title: Создание табличного хранилища Azure для запросов | Документация Майкрософт
 description: Проектирование таблиц для запросов в хранилище таблиц Azure.
 services: storage
 author: MarkMcGeeAtAquent
@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/23/2018
 ms.author: sngun
 ms.subservice: tables
-ms.openlocfilehash: 97373f6f0138d3ed8028ed4327b7e6cf90ad76a7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 41a588ddc0c1be8014a84d8fe181013d8566f68d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60325873"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75457642"
 ---
 # <a name="design-for-querying"></a>Разработка для запросов
 в решениях службы таблиц может быть связана с большим количеством операций чтения, записи или сочетания этих двух видов нагрузки. В этой статье рассматриваются вопросы, которые необходимо учесть при разработке службы таблиц для эффективной поддержки операций чтения. Как правило, схема, поддерживающая операции чтения, также эффективна для операций записи. Тем не менее, при реализации поддержки операций записи следует придерживаться дополнительных рекомендаций, которые приводятся в статье [Design for data modification](table-storage-design-for-modification.md) (Проектирование изменения данных).
@@ -35,7 +35,7 @@ ms.locfileid: "60325873"
 ## <a name="how-your-choice-of-partitionkey-and-rowkey-impacts-query-performance"></a>Влияние выбора свойств PartitionKey и RowKey на производительность запросов
 В следующих примерах предполагается, что сущности сотрудников хранятся в службе таблиц согласно приведенной далее структуре (для большей ясности во многих примерах свойство **Timestamp** опущено).  
 
-| *Имя столбца* | *Тип данных* |
+| *Имя столбца* | *Data type* |
 | --- | --- |
 | **PartitionKey** (Название отдела) |String |
 | **RowKey** (ИД сотрудника) |String |

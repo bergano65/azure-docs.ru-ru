@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: cshoe
-ms.openlocfilehash: 019c44cedba166dc1ac06a0244fa2b2e7930e673
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: e4f35495d8a01146068cffb9159c29c46c3c0d29
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74230368"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75561873"
 ---
 # <a name="azure-functions-reliable-event-processing"></a>Обработка надежных событий в функциях Azure
 
@@ -82,7 +82,7 @@ ms.locfileid: "74230368"
 
 ## <a name="stop-and-restart-execution"></a>Завершение и перезапуск выполнения
 
-Хотя некоторые ошибки могут быть приемлемыми, что происходит, если в вашем приложении возникают серьезные сбои? Может потребоваться отключить активацию событий до тех пор, пока система не достигнет работоспособного состояния. Обработка приостановки возможной сделки часто достигается с помощью шаблона автоматического выключения. Шаблон автоматического выключения позволяет приложению "прерывать канал" процесса события и возобновлять его позже.
+Хотя некоторые ошибки могут быть приемлемыми, что происходит, если в вашем приложении возникают серьезные сбои? Может потребоваться отключить активацию событий до тех пор, пока система не достигнет работоспособного состояния. Возможность приостановки обработки часто достигается с помощью шаблона автоматического выключения. Шаблон автоматического выключения позволяет приложению "прерывать канал" процесса события и возобновлять его позже.
 
 Существует две части, необходимые для реализации автоматического прерывания в процессе события:
 
@@ -125,10 +125,10 @@ Azure Logic Apps поставляется с встроенными соедин
 - [Примеры обработки надежных событий](https://github.com/jeffhollan/functions-csharp-eventhub-ordered-processing)
 - [Автоматическое выключение цепи Azure Устойчивые функции](https://github.com/jeffhollan/functions-durable-actor-circuitbreaker)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений см. следующие ресурсы:
 
 - [Обработка ошибок службы "Функции Azure"](./functions-bindings-error-pages.md)
-- [Автоматическое изменение размера переданных изображений с помощью сетки событий](../event-grid/resize-images-on-storage-blob-upload-event.md?toc=%2Fazure%2Fazure-functions%2Ftoc.json&tabs=dotnet)
+- [Автоматическое изменение размера переданных изображений с помощью Сетки событий](../event-grid/resize-images-on-storage-blob-upload-event.md?toc=%2Fazure%2Fazure-functions%2Ftoc.json&tabs=dotnet)
 - [Создание функции, интегрируемой с Azure Logic Apps](./functions-twitter-email.md)

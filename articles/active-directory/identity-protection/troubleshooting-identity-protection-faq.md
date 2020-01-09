@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: troubleshooting
-ms.date: 10/18/2019
+ms.date: 12/13/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d22973867782ddb64ced2ac95e84c0b27a3addd
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: 140ad45d9c4f6b6f49a4ea4aefb9298e58a2cf10
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72887602"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75443573"
 ---
 # <a name="frequently-asked-questions-identity-protection-in-azure-active-directory"></a>Часто задаваемые вопросы о защите идентификации в Azure Active Directory
 
@@ -42,6 +42,14 @@ ms.locfileid: "72887602"
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
+### <a name="why-is-a-user-is-at-risk"></a>Почему пользователь находится под угрозой?
+
+Если вы являетесь защита идентификации Azure AD клиентом, перейдите в представление [рискованных пользователей](howto-identity-protection-investigate-risk.md#risky-users) и щелкните пользователя с риском. В ящике внизу на вкладке "Журнал рисков" отобразятся все события, которые привели к изменению риска для пользователя. Чтобы просмотреть все рискованные входы для пользователя, щелкните "рискованные входы пользователя". Чтобы просмотреть все обнаружения рисков для этого пользователя, щелкните "обнаружение рисков пользователя".
+
+### <a name="how-can-i-get-a-report-of-detections-of-a-specific-type"></a>Как можно получить отчет об обнаружении определенного типа?
+
+Перейдите к представлению "определения рисков" и отфильтруйте по "тип обнаружения". Затем этот отчет можно загрузить в. CSV или. Формат JSON с помощью кнопки **скачать** вверху. Дополнительные сведения см. в статье [как исследовать риски](howto-identity-protection-investigate-risk.md#risk-detections).
+
 ### <a name="why-cant-i-set-my-own-risk-levels-for-each-risk-detection"></a>Почему я не могу задать собственные уровни риска для каждого обнаружения рисков?
 
 В службе "Защита идентификации" уровни риска определяются в зависимости от точности обнаружения с помощью контролируемого машинного обучения. Чтобы настроить возможности для пользователей, администратор может включить определенных пользователей или группы в политики пользователей, совершающих рискованные действия, и политики риска при входе в систему, или исключить их из этих политик.
@@ -49,6 +57,20 @@ ms.locfileid: "72887602"
 ### <a name="why-does-the-location-of-a-sign-in-not-match-where-the-user-truly-signed-in-from"></a>Почему место входа в систему не совпадает с тем, откуда пользователь действительно выполнил вход?
 
 Сопоставление IP-адресов с географическим положением — это сложная задача для всей отрасли. Если вы считаете, что расположение, указанное в отчете о входе, не соответствует фактическому расположению, обратитесь в службу поддержки Майкрософт. 
+
+### <a name="how-can-i-close-specific-risk-detections-like-i-did-in-the-old-ui"></a>Как можно закрыть определенные определения рисков, как в старом пользовательском интерфейсе?
+
+Вы можете отправить отзыв об обнаружении рисков, убедившись в том, что связанный вход считается скомпрометированным или надежным. Обратная связь, предоставленная для входа, функциях до всех обнаружений, выполненных на этом входе. Если вы хотите закрыть обнаружения, которые не связаны с входом, можно отправить отзыв на уровне пользователя. Дополнительные сведения см. в статье [как предоставить отзыв о рисках в Защита идентификации Azure AD](howto-identity-protection-risk-feedback.md).
+
+### <a name="how-far-can-i-go-back-in-time-to-understand-whats-going-on-with-my-user"></a>Сколько времени можно вернуться назад, чтобы понять, что происходит с моим пользователем?
+
+- В представлении [рискованных пользователей](howto-identity-protection-investigate-risk.md#risky-users) отображается риск пользователя на основе всех прошлых входов. 
+- В представлении " [рискованные операции входа](howto-identity-protection-investigate-risk.md#risky-sign-ins) " отображаются знаки риска в течение последних 30 дней. 
+- В представлении " [обнаружения рисков](howto-identity-protection-investigate-risk.md#risk-detections) " отображаются определения рисков, сделанные за последние 90 дней.
+
+### <a name="how-can-i-learn-more-about-a-specific-detection"></a>Как получить дополнительные сведения о конкретном обнаружении?
+
+Все обнаружения рисков описаны в статье [что такое риск](concept-identity-protection-risks.md#risk-types-and-detection). Можно навести указатель мыши на символ (i) рядом с обнаружением на портал Azure, чтобы узнать больше об обнаружении.
 
 ### <a name="how-do-the-feedback-mechanisms-in-identity-protection-work"></a>Как работают механизмы обратной связи в службе защиты идентификации?
 

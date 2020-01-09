@@ -4,15 +4,15 @@ description: Решения мониторинга в Azure Monitor — это 
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
-author: MGoedtel
+author: bwren
 ms.author: bwren
 ms.date: 06/26/2018
-ms.openlocfilehash: 6012a74c00b64c818434ea1744d86c6cf67dd463
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 9b0140b843d7da1b892463bff7d6014a3f9584ad
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72931331"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75402025"
 ---
 # <a name="inventory-and-data-collection-details-for-monitoring-solutions-in-azure"></a>Сведения об инвентаризации и сборе данных для решений мониторинга в Azure
 [Решения для мониторинга](solutions.md) используют службы в Azure для предоставления дополнительных сведений об операциях конкретного приложения или службы. Как правило, решения мониторинга собирают данные журналов, а также предоставляют запросы и представления для анализа собранных данных. В Azure Monitor вы можете добавить решения мониторинга для всех используемых приложений и служб. Обычно они предоставляются бесплатно, но сбор данных может повлечь определенную плату за использование ресурсов.
@@ -36,7 +36,7 @@ ms.locfileid: "72931331"
 
 
 
-| **Решение для мониторинга** | **Платформа** | **Microsoft Monitoring Agent** | **Агент Operations Manager** | **служба хранилища Azure** | **Нужен ли Operations Manager?** | **Данные агента Operations Manager отправляются через группу управления** | **Частота сбора** |
+| **Решение для мониторинга** | **Платформа** | **Microsoft Monitoring Agent** | **Агент Operations Manager** | **Служба хранилища Azure** | **Нужен ли Operations Manager?** | **Данные агента Operations Manager отправляются через группу управления** | **Частота сбора** |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | [Аналитический журнал действий](../platform/activity-log-collect.md) | Azure | | | | | | при уведомлении |
 | [Оценка AD](ad-assessment.md) |Windows |&#8226; |&#8226; | | |&#8226; |7 дней |
@@ -49,7 +49,7 @@ ms.locfileid: "72931331"
 | [Соединитель Application Insights (не рекомендуется)](../platform/app-insights-connector.md) | Azure | | | |  |  | при уведомлении |
 | [Гибридная рабочая роль службы автоматизации](../../automation/automation-hybrid-runbook-worker.md) | Windows | &#8226; | &#8226; |  |  |  | Н/Д |
 | [Анализ шлюзов приложений Azure](azure-networking-analytics.md) | Azure |  |  |  |  |  | при уведомлении |
-| **Решение для мониторинга** | **Платформа** | **Microsoft Monitoring Agent** | **Агент Operations Manager** | **служба хранилища Azure** | **Нужен ли Operations Manager?** | **Данные агента Operations Manager отправляются через группу управления** | **Частота сбора** |
+| **Решение для мониторинга** | **Платформа** | **Microsoft Monitoring Agent** | **Агент Operations Manager** | **Служба хранилища Azure** | **Нужен ли Operations Manager?** | **Данные агента Operations Manager отправляются через группу управления** | **Частота сбора** |
 | [Аналитика групп безопасности сетей Azure (не рекомендуется)](azure-networking-analytics.md) | Azure |  |  |  |  |  | при уведомлении |
 | [Службы анализа SQL Azure (предварительная версия)](azure-sql.md) | Windows | | | | | | 1 мин |
 | [Azure Backup](https://azure.microsoft.com/resources/templates/101-backup-oms-monitoring/) | Azure |  |  |  |  |  | при уведомлении |
@@ -61,7 +61,7 @@ ms.locfileid: "72931331"
 | [Оценка вредоносных программ](../../security-center/security-center-install-endpoint-protection.md) |Windows |&#8226; |&#8226; | | |&#8226; |Ежечасно |
 | [Монитор производительности сети](network-performance-monitor.md) | Windows | &#8226; | &#8226; |  |  |  | Подтверждения TCP выполняются каждые 5 секунд, данные отправляются каждые 3 минуты |
 | [Аналитика Office 365 (предварительная версия)](solution-office-365.md) |Windows | | | | | |при уведомлении |
-| **Решение для мониторинга** | **Платформа** | **Microsoft Monitoring Agent** | **Агент Operations Manager** | **служба хранилища Azure** | **Нужен ли Operations Manager?** | **Данные агента Operations Manager отправляются через группу управления** | **Частота сбора** |
+| **Решение для мониторинга** | **Платформа** | **Microsoft Monitoring Agent** | **Агент Operations Manager** | **Служба хранилища Azure** | **Нужен ли Operations Manager?** | **Данные агента Operations Manager отправляются через группу управления** | **Частота сбора** |
 | [Аналитика Service Fabric](../../service-fabric/service-fabric-diagnostics-oms-setup.md) |Windows | | |&#8226; | | |5 мин |
 | [Схема услуги](service-map.md) | Windows и Linux | &#8226; | &#8226; |  |  |  | 15 секунд |
 | [Оценка SQL](sql-assessment.md) |Windows |&#8226; |&#8226; | | |&#8226; |7 дней |

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/29/2019
-ms.openlocfilehash: 2bd25ad823217c5e9260142912a3d2d748b9c15a
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 0f444838c87e14fa88f2785030c29915df637cf8
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74767712"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75552208"
 ---
 # <a name="use-mirrormaker-to-replicate-apache-kafka-topics-with-kafka-on-hdinsight"></a>Репликация разделов Apache Kafka с помощью Kafka в HDInsight и MirrorMaker
 
@@ -63,7 +63,7 @@ ms.locfileid: "74767712"
 
 1. Создайте две новые группы ресурсов:
 
-    |Группа ресурсов | Location |
+    |Группа ресурсов | Расположение |
     |---|---|
     | Kafka-PRIMARY-RG | Центральная часть США |
     | Kafka-Secondary-RG | Центрально-северная часть США |
@@ -86,36 +86,41 @@ ms.locfileid: "74767712"
 
         ![Добавление пиринга виртуальной сети HDInsight Kafka](./media/apache-kafka-mirroring/hdi-add-vnet-peering.png)
 
-1. Настройка объявления IP-адресов:
-    1. Перейдите на панель мониторинга Ambari для основного кластера: `https://PRIMARYCLUSTERNAME.azurehdinsight.net`.
-    1. Выберите **службы** > **Kafka**. Клиселекткк на вкладке **конфигурации** .
-    1. Добавьте следующие строки конфигурации в нижнюю часть **шаблона Kafka-env** . Щелкните **Сохранить**.
+### <a name="configure-ip-advertising"></a>Настройка объявления IP-адресов
 
-        ```
-        # Configure Kafka to advertise IP addresses instead of FQDN
-        IP_ADDRESS=$(hostname -i)
-        echo advertised.listeners=$IP_ADDRESS
-        sed -i.bak -e '/advertised/{/advertised@/!d;}' /usr/hdp/current/kafka-broker/conf/server.properties
-        echo "advertised.listeners=PLAINTEXT://$IP_ADDRESS:9092" >> /usr/hdp/current/kafka-broker/conf/server.properties
-        ```
+Настройте объявления IP-адресов, чтобы разрешить клиенту подключаться по IP-адресам компонента Service Broker вместо доменных имен.
 
-    1. Введите примечание на экране **сохранения конфигурации** и нажмите кнопку **сохранить**.
-    1. Если появится предупреждение о настройке, нажмите кнопку **продолжить**.
-    1. Нажмите кнопку **ОК** в области **сохранить изменения конфигурации**.
-    1. Выберите **перезапустить > ** **перезапустить все, затронутые** в уведомлении **требуется перезагрузка** . Щелкните **Confirm Restart All** (Подтвердить перезапуск всех).
+1. Перейдите на панель мониторинга Ambari для основного кластера: `https://PRIMARYCLUSTERNAME.azurehdinsight.net`.
+1. Выберите **службы** > **Kafka**. Клиселекткк на вкладке **конфигурации** .
+1. Добавьте следующие строки конфигурации в нижнюю часть **шаблона Kafka-env** . Щелкните **Сохранить**.
 
-        ![Apache Ambari перезапускает все затронутые](./media/apache-kafka-mirroring/ambari-restart-notification.png)
+    ```
+    # Configure Kafka to advertise IP addresses instead of FQDN
+    IP_ADDRESS=$(hostname -i)
+    echo advertised.listeners=$IP_ADDRESS
+    sed -i.bak -e '/advertised/{/advertised@/!d;}' /usr/hdp/current/kafka-broker/conf/server.properties
+    echo "advertised.listeners=PLAINTEXT://$IP_ADDRESS:9092" >> /usr/hdp/current/kafka-broker/conf/server.properties
+    ```
 
-1. Настройте Kafka для прослушивания всех сетевых интерфейсов.
-    1. Оставайтесь на вкладке **конфигурации** в разделе **службы** > **Kafka**. В разделе **Kafka Broker** задайте для свойства **listeners** значение `PLAINTEXT://0.0.0.0:9092`.
-    1. Щелкните **Сохранить**.
-    1. Выберите **перезапустить**и **Подтвердите перезапустить все**.
+1. Введите примечание на экране **сохранения конфигурации** и нажмите кнопку **сохранить**.
+1. Если появится предупреждение о настройке, нажмите кнопку **продолжить**.
+1. Нажмите кнопку **ОК** в области **сохранить изменения конфигурации**.
+1. Выберите **перезапустить > ** **перезапустить все, затронутые** в уведомлении **требуется перезагрузка** . Щелкните **Confirm Restart All** (Подтвердить перезапуск всех).
 
-1. IP-адреса брокера записи и адреса Zookeeper для основного кластера.
-    1. Выберите **узлы** на панели мониторинга Ambari.
-    1. Запишите IP-адреса для брокеров и Zookeeper. Узлы брокера **WN** первыми двумя буквами имени узла, а узлы Zookeeper имеют **ZK** в качестве первых двух букв имени узла.
+    ![Apache Ambari перезапускает все затронутые](./media/apache-kafka-mirroring/ambari-restart-notification.png)
 
-        ![IP-адреса узла представления Apache Ambari](./media/apache-kafka-mirroring/view-node-ip-addresses2.png)
+### <a name="configure-kafka-to-listen-on-all-network-interfaces"></a>Настройте Kafka для прослушивания всех сетевых интерфейсов.
+    
+1. Оставайтесь на вкладке **конфигурации** в разделе **службы** > **Kafka**. В разделе **Kafka Broker** задайте для свойства **listeners** значение `PLAINTEXT://0.0.0.0:9092`.
+1. Щелкните **Сохранить**.
+1. Выберите **перезапустить**и **Подтвердите перезапустить все**.
+
+### <a name="record-broker-ip-addresses-and-zookeeper-addresses-for-primary-cluster"></a>IP-адреса брокера записи и адреса Zookeeper для основного кластера.
+
+1. Выберите **узлы** на панели мониторинга Ambari.
+1. Запишите IP-адреса для брокеров и Zookeeper. Узлы брокера **WN** первыми двумя буквами имени узла, а узлы Zookeeper имеют **ZK** в качестве первых двух букв имени узла.
+
+    ![IP-адреса узла представления Apache Ambari](./media/apache-kafka-mirroring/view-node-ip-addresses2.png)
 
 1. Повторите предыдущие три шага для второго кластера **Kafka-вторичного кластера**: Настройте объявления IP-адресов, настройте прослушиватели и запишите IP-адреса брокера и Zookeeper.
 
@@ -263,7 +268,7 @@ ms.locfileid: "74767712"
 
     В этом примере используются следующие параметры.
 
-    |Параметр |Описание |
+    |Параметр |Description |
     |---|---|
     |--Consumer. config|указывает файл, который содержит свойства получателя. Эти свойства используются для создания объекта-получателя, считывающего данные из *основного* кластера Kafka.|
     |--Producer. config|указывает файл, который содержит свойства производителя. Эти свойства используются для создания производителя, записывающего данные в *дополнительный* кластер Kafka.|

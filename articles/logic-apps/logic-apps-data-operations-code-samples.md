@@ -1,17 +1,17 @@
 ---
-title: Примеры операций с данными
-description: Примеры кода для действий операций с данными в Azure Logic Apps
+title: Примеры кода для использования операций с данными
+description: Воспользуйтесь примерами кода, показывающими, как можно использовать операции с данными в автоматизированных рабочих процессах, созданных с помощью Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 09/01/2019
-ms.openlocfilehash: d59e461fab52bddf9cb1f881d52a751931c7312b
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: c56c31bb6f56efb10808ce25b6b232089391e831
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74793091"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75428692"
 ---
 # <a name="data-operation-code-samples-for-azure-logic-apps"></a>Примеры кода операций с данными для Azure Logic Apps
 
@@ -222,7 +222,7 @@ ms.locfileid: "74793091"
 
 <a name="join-action-example"></a>
 
-## <a name="join"></a>Объединение
+## <a name="join"></a>Join
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Объединить**](../logic-apps/logic-apps-perform-data-operations.md#join-action).
 

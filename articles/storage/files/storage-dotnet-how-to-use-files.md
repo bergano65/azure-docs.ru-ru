@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/7/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 6f2159ddf3e3039dc0c38fc8f942c508ac177f06
-ms.sourcegitcommit: d773b5743cb54b8cbcfa5c5e4d21d5b45a58b081
+ms.openlocfilehash: dfb1d71a02ae3bf06a5f2d8a93bcb3ac83433a86
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72038186"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75460362"
 ---
 # <a name="develop-for-azure-files-with-net"></a>Разработка для службы файлов Azure с помощью .NET
 
@@ -23,7 +23,7 @@ ms.locfileid: "72038186"
 
 * Получение содержимого файла.
 * Задайте максимальный размер или *квоту* для общей папки.
-* Создайте подпись общего доступа (ключ SAS) для файла, который использует политику общего доступа, определенную в общей папке.
+* Создайте подписанный URL-адрес (ключ SAS) для файла, который использует хранимую политику доступа, определенную в общей папке.
 * Скопируйте файл в другой файл в той же учетной записи хранения
 * Скопируйте файл в BLOB-объект в той же учетной записи хранения
 * Используйте метрики службы хранилища Azure для устранения неполадок.
@@ -34,7 +34,7 @@ ms.locfileid: "72038186"
 
 ## <a name="understanding-the-net-apis"></a>Основные сведения об API-интерфейсах .NET
 
-Служба файлов Azure предлагает два широких подхода к использованию клиентских приложений: SMB (блок сообщений сервера) и REST. В .NET эти подходы являются абстрактными API `System.IO` и `WindowsAzure.Storage`.
+Служба файлов Azure предлагает два широких подхода к использованию клиентских приложений: SMB (блок сообщений сервера) и REST. В .NET API-интерфейсы `System.IO` и `WindowsAzure.Storage` абстрактно представляют эти подходы.
 
 API | Сценарии использования | Примечания
 ----|-------------|------
@@ -49,7 +49,7 @@ API | Сценарии использования | Примечания
 1. В окне **Создание нового проекта**выберите **консольное приложение (.NET Framework)** для C#, а затем нажмите кнопку **Далее**.
 1. В окне **Настройка нового проекта**введите имя приложения и нажмите кнопку **создать**.
 
-Вы можете добавить все примеры кода из этого руководства в метод `Main()` файла `Program.cs` консольного приложения.
+Вы можете добавить все примеры кода из этого руководства в метод `Main()` файла `Program.cs` приложения консоли.
 
 Клиентскую библиотеку службы хранилища Azure можно использовать в любом типе приложения .NET. К этим типам относятся облачная служба Azure, веб-приложение, настольные и мобильные приложения. Для упрощения в этом руководстве мы будем использовать консольное приложение.
 
@@ -84,7 +84,7 @@ API | Сценарии использования | Примечания
 
 ## <a name="save-your-storage-account-credentials-to-the-appconfig-file"></a>Сохранение учетных данных учетной записи хранения в файле App. config
 
-Затем сохраните свои учетные данные в файле `App.config` проекта. В **Обозреватель решений**дважды щелкните `App.config` и измените файл, чтобы он был похож на следующий пример. Замените `myaccount` именем вашей учетной записи хранения и `mykey` на ключ учетной записи хранения.
+Затем сохраните учетные данные в файле `App.config` проекта. В **Обозреватель решений**дважды щелкните `App.config` и измените файл, чтобы он был похож на следующий пример. Замените `myaccount` именем учетной записи хранения и `mykey` ключом учетной записи хранения.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -192,9 +192,9 @@ if (share.Exists())
 
 ### <a name="generate-a-shared-access-signature-for-a-file-or-file-share"></a>Создание подписи общего доступа для файла или файлового ресурса
 
-Начиная с версии 5.x клиентской библиотеки хранилища Azure можно создать подпись общего доступа (SAS) для файлового ресурса или отдельного файла. Также можно создать политики общего доступа на файловом ресурсе, чтобы управлять подписями общего доступа. Рекомендуется создать политику общего доступа, так как она позволяет отозвать SAS, если она будет скомпрометирована.
+Начиная с версии 5.x клиентской библиотеки хранилища Azure можно создать подпись общего доступа (SAS) для файлового ресурса или отдельного файла. Вы также можете создать хранимую политику доступа в общей папке для управления подписанными URL-доступом. Рекомендуется создать хранимую политику доступа, так как она позволяет отозвать SAS, если она будет скомпрометирована.
 
-В следующем примере создается политика общего доступа для общей папки. В примере эта политика используется для предоставления ограничений для SAS в файле в общей папке.
+В следующем примере создается хранимая политика доступа для общей папки. В примере эта политика используется для предоставления ограничений для SAS в файле в общей папке.
 
 ```csharp
 // Parse the connection string for the storage account.
@@ -212,7 +212,7 @@ if (share.Exists())
 {
     string policyName = "sampleSharePolicy" + DateTime.UtcNow.Ticks;
 
-    // Create a new shared access policy and define its constraints.
+    // Create a new stored access policy and define its constraints.
     SharedAccessFilePolicy sharedPolicy = new SharedAccessFilePolicy()
         {
             SharedAccessExpiryTime = DateTime.UtcNow.AddHours(24),
@@ -222,7 +222,7 @@ if (share.Exists())
     // Get existing permissions for the share.
     FileSharePermissions permissions = share.GetPermissions();
 
-    // Add the shared access policy to the share's policies. Note that each policy must have a unique name.
+    // Add the stored access policy to the share's policies. Note that each policy must have a unique name.
     permissions.SharedAccessPolicies.Add(policyName, sharedPolicy);
     share.SetPermissions(permissions);
 
@@ -428,14 +428,14 @@ CloudFileShare mySnapshot = fClient.GetShareReference(baseShareName, snapshotTim
 
 В следующем примере кода показано, как использовать клиентскую библиотеку хранилища для .NET, чтобы включить метрики для службы файлов Azure.
 
-Сначала добавьте следующие директивы `using` в файл `Program.cs` вместе с добавленными выше.
+Сначала добавьте следующие директивы `using` в файл `Program.cs`, а также добавленные выше объекты.
 
 ```csharp
 using Microsoft.Azure.Storage.File.Protocol;
 using Microsoft.Azure.Storage.Shared.Protocol;
 ```
 
-Хотя большие двоичные объекты Azure, таблицы Azure и очереди Azure используют общий тип `ServiceProperties` в пространстве имен `Microsoft.Azure.Storage.Shared.Protocol`, службы файлов Azure используют собственный тип, тип `FileServiceProperties` в пространстве имен `Microsoft.Azure.Storage.File.Protocol`. Однако для компиляции следующего кода необходимо сослаться на оба пространства имен из кода.
+Несмотря на то, что большие двоичные объекты Azure, таблицы Azure и очереди Azure используют общий тип `ServiceProperties` в пространстве имен `Microsoft.Azure.Storage.Shared.Protocol`, служба файлов Azure использует собственный тип `FileServiceProperties` в пространстве имен `Microsoft.Azure.Storage.File.Protocol`. Однако для компиляции следующего кода необходимо сослаться на оба пространства имен из кода.
 
 ```csharp
 // Parse your storage connection string from your application's configuration file.
@@ -480,7 +480,7 @@ Console.WriteLine(serviceProperties.MinuteMetrics.Version);
 
 Если возникнут проблемы, см. статью [Устранение неполадок с файлами Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о службе файлов Azure см. в следующих ресурсах:
 
@@ -495,9 +495,9 @@ Console.WriteLine(serviceProperties.MinuteMetrics.Version);
 * [Использование интерфейса командной строки (CLI) Azure со службой хранилища Azure](../common/storage-azure-cli.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json#create-and-manage-file-shares)
 * [Устранение неполадок службы файлов Azure в Windows](https://docs.microsoft.com/azure/storage/storage-troubleshoot-file-connection-problems)
 
-### <a name="reference"></a>Ссылка
+### <a name="reference"></a>Справочные материалы
 
-* [API-интерфейсы службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage)
+* [API-интерфейсы хранилища Azure для .NET](/dotnet/api/overview/azure/storage)
 * [File Service REST API](/rest/api/storageservices/File-Service-REST-API) (API-интерфейс REST файловой службы)
 
 ### <a name="blog-posts"></a>Записи блога

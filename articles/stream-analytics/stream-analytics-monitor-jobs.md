@@ -1,30 +1,28 @@
 ---
 title: Мониторинг заданий Azure Stream Analytics и управление ими с помощью программных средств
 description: В этой статье объясняется, как с помощью программных средств отслеживать задания Stream Analytics, созданные с помощью REST API, пакета SDK для Azure или PowerShell.
-services: stream-analytics
 author: jseb225
 ms.author: jeanb
-manager: kfile
-ms.reviewer: jasonh
+ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 04/20/2017
-ms.openlocfilehash: bf84a5b89e4769e37c45714a30d5d98300a4328d
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 23c0cc0d0e4a007fdf46021f857b559266f6a193
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67612259"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75431671"
 ---
 # <a name="programmatically-create-a-stream-analytics-job-monitor"></a>Создание монитора заданий Stream Analytics программным способом
 
 В этой статье рассказывается, как включить функцию отслеживания задания Stream Analytics. Отслеживание заданий Stream Analytics, созданных с помощью интерфейсов API REST, пакета SDK для Azure и оболочки PowerShell, по умолчанию отключено. Вы можете вручную включить отслеживание на портале Azure. Для этого перейдите на страницу "Отслеживание" задания и нажмите кнопку "Включить". Этот процесс также можно автоматизировать, выполнив описанные в этой статье действия. Данные отслеживания будут отображаться в области метрики на портале Azure для задания Stream Analytics.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-Прежде чем начать этот процесс, необходимо иметь следующее:
+Прежде чем начать этот процесс, необходимо выполнить следующие предварительные требования.
 
-* 2019 г. Visual Studio или Visual Studio 2015
+* Visual Studio 2019 или 2015
 * Скачанный и установленный [пакет SDK Azure для .NET](https://azure.microsoft.com/downloads/).
 * Существующее задание Stream Analytics, отслеживание которого нужно включить.
 
@@ -137,7 +135,7 @@ ms.locfileid: "67612259"
 
 ## <a name="enable-monitoring-for-an-existing-stream-analytics-job"></a>Включение отслеживания существующего задания Stream Analytics
 
-С помощью следующего кода можно включить отслеживание **имеющегося** задания Stream Analytics. В первой части кода в службу Stream Analytics отправляется запрос GET, что позволяет получить сведения о конкретном задании Stream Analytics. Она использует *идентификатор* свойство (полученное в результате выполнения запроса GET) в качестве параметра метода Put во второй части кода, который отправляет запрос PUT запрос в службу Insights для включения отслеживания и задание Stream Analytics.
+С помощью следующего кода можно включить отслеживание **имеющегося** задания Stream Analytics. В первой части кода в службу Stream Analytics отправляется запрос GET, что позволяет получить сведения о конкретном задании Stream Analytics. В нем используется свойство *ID* (полученное из запроса GET) в качестве параметра для метода размещения во второй половине кода, который отправляет запрос на размещение в службу Insights, чтобы включить мониторинг для задания Stream Analytics.
 
 > [!WARNING]
 > Если ранее вы включили функцию отслеживания для другого задания Stream Analytics либо на портале Azure, либо программным способом с помощью указанного ниже кода, **мы рекомендуем использовать ту же учетную запись хранения, которую вы использовали для включения функции отслеживания.**
@@ -169,7 +167,7 @@ ms.locfileid: "67612259"
 >   ```
 
 
-## <a name="get-support"></a>Получение поддержки
+## <a name="get-support"></a>Получить поддержку
 
 За дополнительной помощью обращайтесь на наш [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
 

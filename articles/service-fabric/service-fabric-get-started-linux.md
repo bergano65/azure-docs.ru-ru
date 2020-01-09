@@ -1,25 +1,14 @@
 ---
-title: Настройка среды разработки в Linux | Документация Майкрософт
+title: Настройка среды разработки в Linux
 description: Установите среду выполнения и пакет SDK, а затем создайте локальный кластер разработки в Linux. По завершении установки вы сможете создавать приложения.
-services: service-fabric
-documentationcenter: .net
-author: mani-ramaswamy
-manager: chackdan
-editor: ''
-ms.assetid: d552c8cd-67d1-45e8-91dc-871853f44fc6
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 2/23/2018
-ms.author: atsenthi
-ms.openlocfilehash: 6471d3f58fbe0e19910f39e9527f193d00a228be
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: 572b1509f45a7f5bf2c63619809f01d17c3493d1
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170625"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75457895"
 ---
 # <a name="prepare-your-development-environment-on-linux"></a>Подготовка среды разработки в Linux
 > [!div class="op_single_selector"]
@@ -36,7 +25,7 @@ ms.locfileid: "72170625"
 Установка среды выполнения Service Fabric и пакета SDK в подсистеме Windows для Linux не поддерживается. Вы можете управлять сущностями Service Fabric, размещенными в другой сети в облачной или локальной среде, с помощью интерфейса командной строки Azure Service Fabric. Дополнительные сведения об установке интерфейса командной строки см. в [этой статье](./service-fabric-cli.md).
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Для разработки поддерживаются следующие операционные системы.
 
@@ -176,10 +165,10 @@ sudo yum install servicefabricsdkcommon
 
 Среда выполнения Service Fabric, которая поставляется с установкой пакета SDK, содержит пакеты, перечисленные в следующей таблице. 
 
- | | DotNetCore | Java: | Python | NodeJs | 
+ | | DotNetCore | Java | Python | NodeJs | 
 --- | --- | --- | --- |---
-Ubuntu | 2.0.0 | AzulJDK 1.8 | Неявно с использованием npm | последних |
-RHEL | - | OpenJDK 1.8 | Неявно с использованием npm | последних |
+Ubuntu | 2.0.0 | AzulJDK 1.8 | Неявно с использованием npm | latest |
+RHEL | - | OpenJDK 1.8 | Неявно с использованием npm | latest |
 
 ## <a name="set-up-a-local-cluster"></a>Настройка локального кластера
 Запустите локальный кластер после завершения установки.
@@ -235,7 +224,7 @@ Service Fabric предоставляет средства формирован�
 
 ## <a name="set-up-net-core-20-development"></a>Настройка разработки .NET Core 2.0
 
-Чтобы начать [создавать приложения Service Fabric на C#](https://www.microsoft.com/net/core#linuxubuntu), установите [.NET Core SDK 2.0 для Ubuntu](service-fabric-create-your-first-linux-application-with-csharp.md). На NuGet.org доступны пакеты для приложений .NET Core 2.0 Service Fabric в режиме предварительной версии.
+Чтобы начать [создавать приложения Service Fabric на C#](service-fabric-create-your-first-linux-application-with-csharp.md), установите [.NET Core SDK 2.0 для Ubuntu](https://www.microsoft.com/net/core#linuxubuntu). На NuGet.org доступны пакеты для приложений .NET Core 2.0 Service Fabric в режиме предварительной версии.
 
 ## <a name="set-up-java-development"></a>Настройка разработки Java
 
@@ -324,7 +313,7 @@ sudo apt-get install servicefabric servicefabricsdkcommon
     npm uninstall -g generator-azuresfguest
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание первого Java-приложения Service Fabric в Linux](service-fabric-create-your-first-linux-application-with-java.md)
 * [Подключаемый модуль Service Fabric для разработки приложений Eclipse на Java](service-fabric-get-started-eclipse.md)

@@ -1,18 +1,18 @@
 ---
-title: Application Insights для приложений службы рабочей роли (приложений, отличных от HTTP) | Документация Майкрософт
-description: Мониторинг приложений .NET Core/. NET Framework, отличных от HTTP, с Application Insights.
+title: Application Insights для приложений службы рабочей роли (приложений, отличных от HTTP)
+description: Мониторинг приложений .NET Core/. NET Framework, отличных от HTTP, с Azure Monitor Application Insights.
 ms.service: azure-monitor
 ms.subservice: application-insights
 ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
-ms.date: 09/15/2019
-ms.openlocfilehash: 386c171e4785fac2c7fa6da39f249e211f4c660c
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.date: 12/16/2019
+ms.openlocfilehash: bea30ade6d9f6eb77d18c671b824b138ba94fddb
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74893304"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75406188"
 ---
 # <a name="application-insights-for-worker-service-applications-non-http-applications"></a>Application Insights для приложений службы рабочей роли (приложений, отличных от HTTP)
 
@@ -20,7 +20,7 @@ Application Insights выпускает новый пакет SDK, именуе�
 
 Новый пакет SDK не выполняет сбор данных телеметрии самим собой. Вместо этого он переносит другие хорошо известные Application Insights автособирающие, такие как [DependencyCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DependencyCollector/), [перфкаунтерколлектор](https://www.nuget.org/packages/Microsoft.ApplicationInsights.PerfCounterCollector/), [аппликатионинсигхтслоггингпровидер](https://www.nuget.org/packages/Microsoft.Extensions.Logging.ApplicationInsights) и т. д. Этот пакет SDK предоставляет методы расширения на `IServiceCollection` для включения и настройки сбора данных телеметрии.
 
-## <a name="supported-scenarios"></a>Поддерживаемые сценарии использования.
+## <a name="supported-scenarios"></a>Поддерживаемые сценарии
 
 Пакет [SDK Application Insights для службы рабочей роли](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) лучше всего подходит для приложений, отличных от HTTP, независимо от того, где или как они выполняются. Если приложение работает и имеет сетевое подключение к Azure, можно собирать данные телеметрии. Мониторинг Application Insights поддерживается везде, где поддерживается .NET Core. Этот пакет можно использовать в новой добавленной [службе рабочей роли .NET Core 3,0](https://devblogs.microsoft.com/aspnet/dotnet-core-workers-in-azure-container-instances), [фоновых задачах в ASP.NET Core 2.1/2.2](https://docs.microsoft.com/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-2.2), консольных приложениях (.NET Core/.NET Framework) и т. д.
 
@@ -35,7 +35,7 @@ Application Insights выпускает новый пакет SDK, именуе�
 
 ```xml
     <ItemGroup>
-        <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.8.2" />
+        <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.12.0" />
     </ItemGroup>
 ```
 
@@ -125,7 +125,7 @@ Application Insights выпускает новый пакет SDK, именуе�
 ```
 
 Кроме того, можно указать ключ инструментирования в любой из следующих переменных среды.
-`APPINSIGHTS_INSTRUMENTATIONKEY` или `ApplicationInsights:InstrumentationKey`
+`APPINSIGHTS_INSTRUMENTATIONKEY` либо `ApplicationInsights:InstrumentationKey`
 
 Например: `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
 ИЛИ `SET APPINSIGHTS_INSTRUMENTATIONKEY=putinstrumentationkeyhere`
@@ -251,7 +251,8 @@ Application Insights выпускает новый пакет SDK, именуе�
                 IServiceCollection services = new ServiceCollection();
 
                 // Being a regular console app, there is no appsettings.json or configuration providers enabled by default.
-                // Hence instrumentation key must be specified here.
+                // Hence instrumentation key and any changes to default logging level must be specified here.
+                services.AddLogging(loggingBuilder => loggingBuilder.AddFilter<Microsoft.Extensions.Logging.ApplicationInsights.ApplicationInsightsLoggerProvider>("Category", LogLevel.Information));
                 services.AddApplicationInsightsTelemetryWorkerService("instrumentationkeyhere");
 
                 // Build ServiceProvider.
@@ -354,7 +355,7 @@ Application Insights выпускает новый пакет SDK, именуе�
 
 Часто используемые параметры в `ApplicationInsightsServiceOptions`
 
-|Параметр | Описание | значение по умолчанию
+|Параметр | Description | По умолчанию
 |---------------|-------|-------
 |енаблекуиккпулсеметрикстреам | Включить или отключить функцию Ливеметрикс | true
 |енаблеадаптивесамплинг | Включение или отключение адаптивной выборки | true

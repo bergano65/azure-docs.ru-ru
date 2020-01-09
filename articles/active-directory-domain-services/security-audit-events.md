@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: iainfou
-ms.openlocfilehash: ad4a30b9bcd537a59f3d2ef17d3d2f215c1f4b98
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 5c51eff77c0375491f4376f12c9ff959f033e2ad
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74848903"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75425372"
 ---
 # <a name="enable-security-audits-for-azure-active-directory-domain-services"></a>Включение аудита безопасности для доменных служб Azure Active Directory
 
@@ -31,7 +31,7 @@ ms.locfileid: "74848903"
 
 Доступны следующие категории событий аудита:
 
-| Имя категории аудита | Описание |
+| Имя категории аудита | Description |
 |:---|:---|
 | Вход учетной записи|Аудит пытается проверить подлинность данных учетной записи на контроллере домена или в локальном диспетчере учетных записей безопасности (SAM).</p>Параметры и события политики входа и выхода из системы следят за попытками доступа к определенному компьютеру. Параметры и события в этой категории сосредоточены на используемой базе данных учетных записей. Эта категория содержит следующие подкатегории:<ul><li>[Проверка учетных данных аудита](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-credential-validation)</li><li>[Аудит проверки подлинности Kerberos](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-kerberos-authentication-service)</li><li>[Аудит операций билета службы Kerberos](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-kerberos-service-ticket-operations)</li><li>[Аудит других событий входа и выхода](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-logonlogoff-events)</li></ul>|
 | Управление учетными записями|Аудит изменений учетных записей и групп пользователей и компьютеров. Эта категория содержит следующие подкатегории:<ul><li>[Аудит управления группами приложений](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-application-group-management)</li><li>[Аудит управления учетными записями компьютеров](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-computer-account-management)</li><li>[Аудит управления группами распространения](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-distribution-group-management)</li><li>[Аудит управления другими учетными записями](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-account-management-events)</li><li>[Аудит управления группами безопасности](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-security-group-management)</li><li>[Аудит управления учетными записями пользователей](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-user-account-management)</li></ul>|
@@ -70,7 +70,7 @@ ms.locfileid: "74848903"
 
 | Целевой ресурс | Сценарий |
 |:---|:---|
-|Служба хранилища Azure| Этот целевой объект следует использовать, если основным необходимо хранить события аудита безопасности в целях архивирования. Другие целевые объекты можно использовать в целях архивирования, однако эти целевые объекты предоставляют возможности, которые выходят за пределы основного нужды в архивации. Прежде чем включать события аудита безопасности Azure AD DS, [Создайте учетную запись хранения Azure](../storage/common/storage-quickstart-create-account.md?tabs=azure-portal#create-a-storage-account-1).|
+|Служба хранилища Azure| Этот целевой объект следует использовать, если основным необходимо хранить события аудита безопасности в целях архивирования. Другие целевые объекты можно использовать в целях архивирования, однако эти целевые объекты предоставляют возможности, которые выходят за пределы основного нужды в архивации. Прежде чем включать события аудита безопасности Azure AD DS, сначала [Создайте учетную запись хранения Azure](../storage/common/storage-account-create.md).|
 |Центры событий Azure| Этот целевой объект следует использовать, когда основная потребность заключается в совместном использовании событий аудита безопасности с дополнительным программным обеспечением, например программным обеспечением анализа данных или программным обеспечением для управления & событий (SIEM). Прежде чем включать события аудита безопасности Azure AD DS, [Создайте концентратор событий с помощью портал Azure](https://docs.microsoft.com/azure/event-hubs/event-hubs-create)|
 |Рабочая область Azure Log Analytics| Этот целевой объект следует использовать, если необходимо проанализировать и проверить безопасные аудиты портал Azure напрямую. Прежде чем включать события аудита безопасности Azure AD DS, [Создайте рабочую область log Analytics в портал Azure.](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace)|
 
@@ -82,7 +82,7 @@ ms.locfileid: "74848903"
 > Аудиты безопасности AD DS Azure не ретроактивного. Невозможно извлечь события из прошлого или воспроизвести события из предыдущего. AD DS Azure может отсылать только события, происходящие после включения.
 
 1. Войдите на портал Azure по адресу https://portal.azure.com.
-1. В верхней части портал Azure найдите и выберите **доменные службы Azure AD**. Выберите управляемый домен, например *aadds.contoso.com*.
+1. В верхней части портал Azure найдите и выберите **доменные службы Azure AD**. Выберите нужный управляемый домен, например *aadds.contoso.com.*
 1. В окне AD DS Azure выберите **параметры диагностики** в левой части.
 1. Диагностика не настраивается по умолчанию. Чтобы начать работу, выберите **Добавить параметр диагностики**.
 
@@ -94,7 +94,7 @@ ms.locfileid: "74848903"
 
     ![Включение отслеживания необходимого назначения и типа событий аудита](./media/security-audit-events/diagnostic-settings-page.png)
 
-    * **служба хранилища Azure**
+    * **Служба хранилища Azure**
         * Выберите **архивировать в учетной записи хранения**, а затем щелкните **настроить**.
         * Выберите **подписку** и **учетную запись хранения** , которые вы хотите использовать для архивации событий аудита безопасности.
         * Когда все будет готово, нажмите кнопку **ОК**.
@@ -173,7 +173,7 @@ ms.locfileid: "74848903"
 Аналитические рабочие области журналов позволяют просматривать и анализировать события аудита безопасности с помощью Azure Monitor и языка запросов Kusto. Этот язык запросов предназначен для использования только для чтения, может похвастаться возможности Power Analytics с простым и удобочитаемым синтаксисом. Дополнительные сведения о том, как приступить к работе с языками запросов Kusto, см. в следующих статьях:
 
 * [Документация по Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/)
-* [Начало работы с Log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md)
+* [Log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md);
 * [Начало работы с запросами журналов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 * [Создание панелей мониторинга данных Log Analytics и предоставление общего доступа к ним](../azure-monitor/learn/tutorial-logs-dashboards.md)
 

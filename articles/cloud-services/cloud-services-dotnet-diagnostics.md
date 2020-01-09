@@ -3,19 +3,19 @@ title: Как использовать систему диагностики Azu
 description: Сбор данных облачных служб Azure с помощью системы диагностики Azure для отладки, оценки производительности, мониторинга, анализа трафика и многого другого.
 services: cloud-services
 documentationcenter: .net
-author: georgewallace
+author: tgore03
 manager: carmonm
 ms.service: cloud-services
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 05/22/2017
-ms.author: gwallace
-ms.openlocfilehash: 5f2ec77452b90d4270de043955fc0b443f045d5b
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.author: tagore
+ms.openlocfilehash: d5a4e5ce40726ea36734a0dcf751b79225d5e153
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68359686"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75361119"
 ---
 # <a name="enabling-azure-diagnostics-in-azure-cloud-services"></a>Включение системы диагностики Azure в облачных службах Azure
 Основные сведения о системе диагностики Azure см. в [обзоре системы диагностики Azure](../azure-diagnostics.md).
@@ -23,10 +23,10 @@ ms.locfileid: "68359686"
 ## <a name="how-to-enable-diagnostics-in-a-worker-role"></a>Как включить диагностику в рабочей роли
 В этом пошаговом руководстве описывается, как реализовать рабочую роль Azure, которая передает данные телеметрии с помощью класса EventSource .NET. Система диагностики Azure используется для сбора данных телеметрии и хранения их в учетной записи хранения Azure. При создании рабочей роли Visual Studio автоматически включает систему диагностики 1.0 как часть решения в пакетах SDK Azure для .NET версии 2.4 или более поздней. В следующих указаниях описывается процесс создания рабочей роли, отключение системы диагностики 1.0 в решении и развертывание системы диагностики 1.2 или 1.3 в рабочей роли.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Технические условия
 В данной статье предполагается, что у вас есть подписка Azure и вы используете Visual Studio с пакетом SDK для Azure. Если у вас нет подписки Azure, можно зарегистрироваться для получения [бесплатной пробной версии][Free Trial]. Следует обязательно [установить и настроить Azure PowerShell версии 0.8.7 или более поздней][Install and configure Azure PowerShell version 0.8.7 or later].
 
-### <a name="step-1-create-a-worker-role"></a>Шаг 1.: Создание рабочей роли
+### <a name="step-1-create-a-worker-role"></a>Шаг 1. Создание рабочей роли
 1. Запустите **Visual Studio**.
 2. Создайте проект **облачной службы Azure** из шаблона **Облако**, предназначенного для .NET Framework 4.5.  Назовите проект WadExample и нажмите кнопку «ОК».
 3. Выберите **рабочую роль** и нажмите кнопку «ОК». После этих действий будет создан новый проект.
@@ -34,8 +34,8 @@ ms.locfileid: "68359686"
 5. На вкладке **Настройка** снимите флажок **Включить диагностику**, чтобы отключить систему диагностики Diagnostics 1.0 (пакет Azure SDK 2.4 и предыдущих версий).
 6. Создайте свое решение, чтобы проверить, что в нем нет ошибок.
 
-### <a name="step-2-instrument-your-code"></a>Шаг 2. Инструментирование кода
-Замените содержимое файла WorkerRole.cs следующим кодом. Класс SampleEventSourceWriter, наследуемый от [класса EventSource][EventSource Class], реализует четыре метода ведения журнала: **SendEnums**, **MessageMethod**, **SetOther** и HighFreq. Первый параметр для метода **WriteEvent** определяет идентификатор соответствующего события. Метод Run реализует бесконечный цикл, который вызывает каждый из методов ведения журнала, реализованных в классе **SampleEventSourceWriter** , каждые 10 секунд.
+### <a name="step-2-instrument-your-code"></a>Шаг 2. Инструментирование кода
+Замените содержимое файла WorkerRole.cs следующим кодом. Класс SampleEventSourceWriter, унаследованный от [класса EventSource][EventSource Class], реализует четыре метода ведения журнала: **SendEnums**, **MessageMethod**, **SetOther** и **HighFreq**. Первый параметр для метода **WriteEvent** определяет идентификатор соответствующего события. Метод Run реализует бесконечный цикл, который вызывает каждый из методов ведения журнала, реализованных в классе **SampleEventSourceWriter** , каждые 10 секунд.
 
 ```csharp
 using Microsoft.WindowsAzure.ServiceRuntime;
@@ -118,7 +118,7 @@ namespace WorkerRole1
 ```
 
 
-### <a name="step-3-deploy-your-worker-role"></a>Шаг 3. Развертывание рабочей роли
+### <a name="step-3-deploy-your-worker-role"></a>Шаг 3. Развертывание рабочей роли
 
 [!INCLUDE [cloud-services-wad-warning](../../includes/cloud-services-wad-warning.md)]
 
@@ -130,7 +130,7 @@ namespace WorkerRole1
 6. Измените любые другие **Параметры** по необходимости и щелкните **Опубликовать**.
 7. После завершения развертывания на портале Azure должно быть указано, что облачная служба находится в состоянии **Выполняется**.
 
-### <a name="step-4-create-your-diagnostics-configuration-file-and-install-the-extension"></a>Шаг 4. Создание файла конфигурации системы диагностики и установка расширения
+### <a name="step-4-create-your-diagnostics-configuration-file-and-install-the-extension"></a>Шаг 4. Создание файла конфигурации системы диагностики и установка расширения
 1. Скачайте общедоступное определение схемы файла конфигурации, выполнив следующую команду PowerShell:
 
     ```powershell
@@ -166,7 +166,7 @@ namespace WorkerRole1
 </PublicConfig>
 ```
 
-### <a name="step-5-install-diagnostics-on-your-worker-role"></a>Шаг 5. Установка системы диагностики в рабочей роли
+### <a name="step-5-install-diagnostics-on-your-worker-role"></a>Шаг 5. Установка системы диагностики в рабочей роли
 Командлеты PowerShell для управления диагностикой в веб-роли или в рабочей роли: Set-AzureServiceDiagnosticsExtension, Get-AzureServiceDiagnosticsExtension и Remove-AzureServiceDiagnosticsExtension.
 
 1. Откройте Azure PowerShell.
@@ -181,7 +181,7 @@ $storageContext = New-AzureStorageContext -StorageAccountName $storage_name -Sto
 Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -DiagnosticsConfigurationPath $config_path -ServiceName $service_name -Slot Staging -Role WorkerRole1
 ```
 
-### <a name="step-6-look-at-your-telemetry-data"></a>Шаг 6. Просмотр данных телеметрии
+### <a name="step-6-look-at-your-telemetry-data"></a>Шаг 6. Просмотр данных телеметрии
 В **обозревателе решений** Visual Studio перейдите к учетной записи хранения wadexample. После того как облачная служба проработает около пяти (5) минут, следует просмотреть таблицы **WADEnumsTable**, **WADHighFreqTable**, **WADMessageTable**, **WADPerformanceCountersTable** и **WADSetOtherTable**. Дважды щелкните одну из таблиц, чтобы просмотреть собранные данные телеметрии.
 
 ![CloudServices_diag_tables](./media/cloud-services-dotnet-diagnostics/WadExampleTables.png)
@@ -189,7 +189,7 @@ Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -Diagnostic
 ## <a name="configuration-file-schema"></a>Схема файла конфигурации
 Файл конфигурации системы диагностики определяет значения, которые используются для инициализации параметров конфигурации диагностики, когда запускается агент диагностики. Допустимые значения и примеры см. в [последнем справочнике по схеме](/azure/azure-monitor/platform/diagnostics-extension-schema).
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 Если возникли проблемы, см. сведения в статье [Устранение неполадок с помощью системы диагностики Azure](../azure-diagnostics-troubleshooting.md). Это поможет вам устранить распространенные проблемы.
 
 ## <a name="next-steps"></a>Следующие шаги
@@ -201,3 +201,6 @@ Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -Diagnostic
 [Collect Logging Data by Using Azure Diagnostics]: https://msdn.microsoft.com/library/windowsazure/gg433048.aspx
 [Free Trial]: https://azure.microsoft.com/pricing/free-trial/
 [Install and configure Azure PowerShell version 0.8.7 or later]: https://azure.microsoft.com/documentation/articles/install-configure-powershell/
+
+
+

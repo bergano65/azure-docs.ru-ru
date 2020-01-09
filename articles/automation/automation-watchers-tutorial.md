@@ -2,24 +2,21 @@
 title: Создание задачи наблюдателя в учетной записи службы автоматизации Azure
 description: Узнайте, как создать задачу наблюдателя в учетной записи службы автоматизации Azure, чтобы отслеживать создание файлов в папке.
 services: automation
-ms.service: automation
 ms.subservice: process-automation
-author: eamonoreilly
-ms.author: eamono
 ms.topic: conceptual
 ms.date: 10/30/2018
-ms.openlocfilehash: 75341fa2df6972dbf05542577d56ab35315919e6
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 5dc6145940883ff6f4446ad67c399cdf4931d38e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68989237"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75419755"
 ---
 # <a name="create-an-azure-automation-watcher-tasks-to-track-file-changes-on-a-local-machine"></a>Создание задач службы "Наблюдатель за автоматизацией Azure" для отслеживания изменений файлов на локальном компьютере
 
 Служба автоматизации Azure использует задачи службы "Наблюдатель" для слежения за событиями и активации действий с помощью модулей runbook PowerShell. В этом руководстве пошагово описывается создание задачи службы "Наблюдатель" для отслеживания добавления новых файлов в каталог.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Импорт runbook службы "Наблюдатель"
@@ -29,7 +26,7 @@ ms.locfileid: "68989237"
 > * Активация службы "Наблюдатель"
 > * Изучение выходных данных
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Ниже перечислены необходимые условия для выполнения инструкций из этого руководства.
 
@@ -67,7 +64,7 @@ ms.locfileid: "68989237"
 1. Выберите тип "Дата и время".
 1. Нажмите кнопку **Создать**. Будет создана переменная автоматизации.
 
-## <a name="create-an-action-runbook"></a>Создание runbook действия.
+## <a name="create-an-action-runbook"></a>Создание runbook действия
 
 Runbook действия используется в задаче службы "Наблюдатель" для работы с данными, передаваемыми в нее из runbook службы "Наблюдатель". Модули runbook рабочих процессов PowerShell не поддерживаются в задачах службы "Наблюдатель". Необходимо использовать модули runbook PowerShell. Необходимо импортировать предварительно определенный Runbook действия **Process-NewFile**.
 
@@ -154,9 +151,9 @@ Message is Process new file...
 Passed in data is @{FileName=D:\examplefiles\ExampleFile1.txt; Length=0}
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы узнали, как:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Импорт runbook службы "Наблюдатель"

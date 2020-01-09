@@ -1,5 +1,6 @@
 ---
-title: Внедрение аварийного восстановления с помощью функций архивации и восстановления в службе управления API Azure | Документация Майкрософт
+title: Реализация аварийного восстановления с помощью резервного копирования и восстановления в управлении API
+titleSuffix: Azure API Management
 description: Использование архивации и восстановления для выполнения аварийного восстановления в службе управления API Azure.
 services: api-management
 documentationcenter: ''
@@ -12,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 06/26/2019
 ms.author: apimpm
-ms.openlocfilehash: 9c97723687484e8af82d63b6fb4999401a69fb2c
-ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
+ms.openlocfilehash: fccb9dfe88d39849fb87bdce4b81ac9ee22fada5
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71958527"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75430694"
 ---
 # <a name="how-to-implement-disaster-recovery-using-service-backup-and-restore-in-azure-api-management"></a>Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management
 
@@ -66,8 +67,8 @@ ms.locfileid: "71958527"
 
 4. Введите имя приложения.
 5. Выберите тип приложения **Машинный код**.
-6. Введите в поле `http://resources`URI перенаправления**любой URL-адрес, например**. Это поле является обязательным, но введенное значение впоследствии не используется. Установите флажок, чтобы сохранить приложение.
-7. Щелкните **Создать**.
+6. Введите в поле **URI перенаправления** любой URL-адрес, например `http://resources`. Это поле является обязательным, но введенное значение впоследствии не используется. Установите флажок, чтобы сохранить приложение.
+7. Нажмите кнопку **Создать**.
 
 ### <a name="add-an-application"></a>Добавление приложения
 
@@ -75,14 +76,14 @@ ms.locfileid: "71958527"
 2. Теперь щелкните **Требуемые разрешения**.
 3. Щелкните **+Добавить**.
 4. Нажмите кнопку **Выбор API**.
-5. Выберите **Windows** **Azure Service Management API** (API управления службами Azure).
+5. Выберите **Windows** **Azure API управления службами**.
 6. Нажмите кнопку **Выбрать**.
 
     ![Добавление разрешений](./media/api-management-howto-disaster-recovery-backup-restore/add-app.png)
 
 7. Щелкните **Делегированные разрешения** рядом с только что добавленным приложением и установите флажок **Access Azure Service Management (preview)** (Доступ к управлению службами Azure (предварительная версия)).
 8. Нажмите кнопку **Выбрать**.
-9. Щелкните **Предоставить разрешение**
+9. Нажмите кнопку **Предоставить разрешения**.
 
 ### <a name="configuring-your-app"></a>Настройка приложения
 
@@ -117,14 +118,14 @@ namespace GetTokenResourceManagerRequests
 
 1. Замените `{tenant id}` идентификатором клиента для созданного приложения Azure Active Directory. Чтобы узнать этот идентификатор, выберите **Регистрация приложений** -> **Конечные точки**.
 
-    ![конечные точки;][api-management-endpoint]
+    ![Конечные точки][api-management-endpoint]
 
 2. Замените `{application id}` значением, которое представлено на странице **Параметры**.
 3. Замените значение `{redirect uri}` на значение с вкладки **URI перенаправления** приложения Azure Active Directory.
 
     Когда все значения будут указаны, этот пример кода должен вернуть примерно такой маркер:
 
-    ![Маркер][api-management-arm-token]
+    ![Токен][api-management-arm-token]
 
     > [!NOTE]
     > Срок действия маркера может истечь после определенного периода. Выполнить образец кода снова, чтобы создать новый маркер.
@@ -139,7 +140,7 @@ namespace GetTokenResourceManagerRequests
 request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + token);
 ```
 
-### <a name="step1"> </a>Архивация службы управления API
+### <a name="step1"> </a>Резервное копирование службы управления API
 
 Чтобы выполнить архивацию службы управления API, отправьте следующий HTTP-запрос:
 
@@ -147,7 +148,7 @@ request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + token);
 POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/backup?api-version={api-version}
 ```
 
-Описание:
+где:
 
 -   `subscriptionId` — идентификатор подписки, содержащей службу управления API, для которой вы пытаетесь выполнить резервное копирование;
 -   `resourceGroupName` — имя группы ресурсов службы управления API Azure
@@ -188,7 +189,7 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/restore?api-version={api-version}
 ```
 
-Описание:
+где:
 
 -   `subscriptionId` — идентификатор подписки, включающей в себя службу управления API, которую нужно восстановить из резервной копии;
 -   `resourceGroupName` — имя группы ресурсов, включающей в себя службу управления API Azure, в которую нужно восстановить резервную копию;
@@ -220,7 +221,7 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 > [!NOTE]
 > Операции резервного копирования и восстановления также можно выполнять с помощью команд PowerShell [_BACKUP-азапиманажемент_](/powershell/module/az.apimanagement/backup-azapimanagement) и [_RESTORE-азапиманажемент_](/powershell/module/az.apimanagement/restore-azapimanagement) соответственно.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы ознакомиться с другими способами резервного копирования и восстановления, ознакомьтесь со следующими ресурсами.
 

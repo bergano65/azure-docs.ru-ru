@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/27/2018
 ms.author: labattul
-ms.openlocfilehash: c5cb840035c5d0d5694982324c7237c58001e689
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 876e64cd29aabe1fd4274872800a29cf1a83a0d6
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60731606"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75350488"
 ---
 # <a name="set-up-dpdk-in-a-linux-virtual-machine"></a>Настройка DPDK в виртуальной машине Linux
 
@@ -33,7 +33,7 @@ DPDK может работать на виртуальных машинах Azur
 
 ## <a name="benefit"></a>Преимущество
 
-**Выше пакетов в секунду (PPS)** : Обход ядра и перехват управления пакетов в пространстве пользователя уменьшает счетчик цикла, устраняя переключений контекста. Благодаря этому также повышается скорость обработки пакетов в секунду на виртуальных машинах Linux в Azure.
+**Большее количество пакетов в секунду (PPS)** . Обход ядра и управление пакетами в пространстве пользователя уменьшают количество циклов за счет исключения переключения контекста. Благодаря этому также повышается скорость обработки пакетов в секунду на виртуальных машинах Linux в Azure.
 
 
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
@@ -43,7 +43,7 @@ DPDK может работать на виртуальных машинах Azur
 | ОС Linux     | Версия ядра        |
 |--------------|----------------       |
 | Ubuntu 16.04 | 4.15.0-1015-azure     |
-| Ubuntu 18.04 | 4.15.0-1015-azure     |
+| Ubuntu 18.04 | 4.15.0-1015-azure     |
 | SLES 15      | 4.12.14-5.5-azure     |
 | RHEL 7.5     | 3.10.0-862.9.1.el7    |
 | CentOS 7.5   | 3.10.0-862.3.3.el7    |
@@ -70,9 +70,10 @@ sudo apt-get update
 sudo apt-get install -y librdmacm-dev librdmacm1 build-essential libnuma-dev libmnl-dev
 ```
 
-### <a name="ubuntu-1804"></a>Ubuntu 18.04
+### <a name="ubuntu-1804"></a>Ubuntu 18.04
 
 ```bash
+sudo add-apt-repository ppa:canonical-server/dpdk-azure -y
 sudo apt-get update
 sudo apt-get install -y librdmacm-dev librdmacm1 build-essential libnuma-dev libmnl-dev
 ```
@@ -133,7 +134,7 @@ zypper \
      > [!NOTE]
      > Вы можете изменить файл grub, чтобы большие страницы были зарезервированы при загрузке, выполнив [эти инструкции](https://dpdk.org/doc/guides/linux_gsg/sys_reqs.html#use-of-hugepages-in-the-linux-environment) для DPDK. Инструкции находятся в нижней части страницы. При использовании виртуальной машины Linux Azure измените файлы в разделе **/etc/config/grub.d**, чтобы резервировать большие страницы при перезагрузках.
 
-2. MAC и IP-адреса: Используйте `ifconfig –a` для просмотра MAC и IP-адреса сетевых интерфейсов. Сетевые интерфейсы *VF* и *NETVSC* имеют одинаковый MAC-адрес, но лишь сетевой интерфейс *NETVSC* имеет IP-адрес. Интерфейсы VF работают как подчиненные интерфейсов NETVSC.
+2. MAC- и IP-адреса. Эти адреса сетевых интерфейсов можно просмотреть с помощью команды `ifconfig –a`. Сетевые интерфейсы *VF* и *NETVSC* имеют одинаковый MAC-адрес, но лишь сетевой интерфейс *NETVSC* имеет IP-адрес. Интерфейсы VF работают как подчиненные интерфейсов NETVSC.
 
 3. PCI-адреса
 
@@ -152,7 +153,7 @@ zypper \
 
 Чтобы запустить *testpmd* в режиме root, выполните сначала команду `sudo`.
 
-### <a name="basic-sanity-check-failsafe-adapter-initialization"></a>Базовый уровень: Проверка исправности, failsafe инициализации адаптера
+### <a name="basic-sanity-check-failsafe-adapter-initialization"></a>Основное: проверка работоспособности, инициализация отказоустойчивого адаптера
 
 1. Выполните следующие команды, чтобы запустить приложение testpmdс с одним портом:
 
@@ -180,7 +181,7 @@ zypper \
 
 Предыдущие команды запускают *testpmd* в интерактивном режиме, что и рекомендуется, чтобы попробовать выполнить команды testpmd.
 
-### <a name="basic-single-sendersingle-receiver"></a>Базовый уровень: Единый отправителя и одним получателем
+### <a name="basic-single-sendersingle-receiver"></a>Основное: одиночные отправитель и получатель
 
 Следующие команды периодически выводят статистику пакетов в секунду:
 
@@ -216,7 +217,7 @@ zypper \
 
 При выполнении предыдущих команд в виртуальной машине измените адреса *IP_SRC_ADDR* и *IP_DST_ADDR* в `app/test-pmd/txonly.c`, чтобы они соответствовали фактическому IP-адресу виртуальных машин перед сборкой. В противном случае пакеты будут удалены, прежде чем они достигнут получателя.
 
-### <a name="advanced-single-sendersingle-forwarder"></a>Дополнительно: Сервер пересылки одного отправителя и одним
+### <a name="advanced-single-sendersingle-forwarder"></a>Дополнительно: одиночные отправитель и сервер пересылки
 Следующие команды периодически выводят статистику пакетов в секунду:
 
 1. Выполните приведенную ниже команду на стороне отправки:
@@ -252,7 +253,7 @@ zypper \
 
 При выполнении предыдущих команд в виртуальной машине измените адреса *IP_SRC_ADDR* и *IP_DST_ADDR* в `app/test-pmd/txonly.c`, чтобы они соответствовали фактическому IP-адресу виртуальных машин перед сборкой. В противном случае пакеты будут удалены, прежде чем они достигнут сервера пересылки. Третий компьютер не сможет получить отправленный трафик, потому что сервер пересылки *testpmd* не изменяет адреса уровня 3, если вы не внесли изменения в код.
 
-## <a name="references"></a>Справочники
+## <a name="references"></a>Ссылки
 
 * [Параметры командной строки EAL](https://dpdk.org/doc/guides/testpmd_app_ug/run_app.html#eal-command-line-options)
 * [Параметры командной строки testpmd](https://dpdk.org/doc/guides/testpmd_app_ug/run_app.html#testpmd-command-line-options)

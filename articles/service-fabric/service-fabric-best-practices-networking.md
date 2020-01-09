@@ -1,31 +1,22 @@
 ---
-title: Рекомендации по сетевой активности в Azure Service Fabric | Документация Майкрософт
-description: Рекомендации по управлению сетевыми подключениями Service Fabric.
-services: service-fabric
-documentationcenter: .net
+title: Рекомендации по Service Fabric сети Azure
+description: Рекомендации и вопросы проектирования по управлению сетевыми подключениями с помощью Azure Service Fabric.
 author: peterpogorski
-manager: chackdan
-editor: ''
-ms.assetid: 19ca51e8-69b9-4952-b4b5-4bf04cded217
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: 317977af9d41163013545a6e5f60bee887da596c
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: de2a74ad2d61de18d2150b72be3251e5b5583f2e
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71262250"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551800"
 ---
-# <a name="networking"></a>Сети
+# <a name="networking"></a>Работа в сети
 
 При создании кластеров Azure Service Fabric и управлении ими вы обеспечиваете сетевое подключение для узлов и приложений. Сетевые ресурсы включают в себя диапазоны IP-адресов, виртуальные сети, подсистемы балансировки нагрузки и группы безопасности сети. В этой статье вы узнаете рекомендации по работе с этими ресурсами.
 
-Просмотрите [схемы сетевых подключений Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-patterns-networking), чтобы узнать, как создавать кластеры, использующие следующие функции: имеющаяся виртуальная сеть или подсеть, статический общедоступный IP-адрес, только внутренняя подсистема балансировки нагрузки или внутренняя и внешняя подсистема балансировки нагрузки.
+Изучите [шаблоны сетей Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-patterns-networking) , чтобы узнать, как создавать кластеры, использующие следующие функции: существующую виртуальную сеть или подсеть, статический общедоступный IP-адрес, подсистему балансировки нагрузки только для внутреннего использования или внутреннюю и внешнюю подсистемы балансировки нагрузки.
 
 ## <a name="infrastructure-networking"></a>Сеть инфраструктуры
 Увеличьте производительность виртуальной машины с помощью ускорения работы в сети, объявив свойство enableAcceleratedNetworking в шаблоне Resource Manager. В следующем фрагменте кода представлено свойство NetworkInterfaceConfigurations масштабируемого набора виртуальных машин, позволяющее ускорить работу в сети.
@@ -48,7 +39,7 @@ ms.locfileid: "71262250"
 ```
 Кластер Service Fabric можно подготовить с ускоренной работой в сети в [Linux](https://docs.microsoft.com/azure/virtual-network/create-vm-accelerated-networking-cli) и [Windows](https://docs.microsoft.com/azure/virtual-network/create-vm-accelerated-networking-powershell).
 
-Ускоренная работа в сети поддерживается для следующих номеров SKU виртуальных машин Azure: D/DSv2, D/DSv3, E/ESv3, F/FS, FSv2 и Ms/Mms. Ускоренная работа в сети успешно опробована с помощью номера SKU Standard_DS8_v3 23.01.2019 в кластере Service Fabric на платформе Windows и номера SKU Standard_DS12_v2 29.01.2019 в кластере Service Fabric на платформе Linux.
+Ускоренная сеть поддерживается для номеров SKU серии виртуальных машин Azure: D/DSv2, D/DSv3, E/ESv3, F/FS, серия fsv2 и MS/MMS. Ускоренная работа в сети успешно опробована с помощью номера SKU Standard_DS8_v3 23.01.2019 в кластере Service Fabric на платформе Windows и номера SKU Standard_DS12_v2 29.01.2019 в кластере Service Fabric на платформе Linux.
 
 Чтобы включить ускоренную работу в сети в имеющемся кластере Service Fabric, следует [масштабировать кластер Service Fabric путем добавления масштабируемого набора виртуальных машин](https://docs.microsoft.com/azure/service-fabric/virtual-machine-scale-set-scale-node-type-scale-out). Затем вы сможете выполнить следующие действия:
 1. Подготовить NodeType с поддержкой ускоренной работы в сети.
@@ -60,7 +51,7 @@ ms.locfileid: "71262250"
 
 * Кластеры Service Fabric можно развернуть в имеющейся виртуальной сети, выполнив действия, описанные в статье [Схемы сетевых подключений Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-patterns-networking).
 
-* Группы безопасности сети (NSG) рекомендуются для типов узлов, которые ограничивают входящий и исходящий трафик в своем кластере. Убедитесь, что в NSG открыты необходимые порты. Пример: ![Правила группы безопасности сети Service Fabric][NSGSetup]
+* Группы безопасности сети (NSG) рекомендуются для типов узлов, которые ограничивают входящий и исходящий трафик в своем кластере. Убедитесь, что в NSG открыты необходимые порты. Например: ![Service Fabric правила NSG][NSGSetup]
 
 * Основной тип узла, который содержит системные службы Service Fabric, не должен предоставляться через внешний балансировщик нагрузки и может предоставляться с помощью [внутреннего](https://docs.microsoft.com/azure/service-fabric/service-fabric-patterns-networking#internal-only-load-balancer).
 
@@ -74,10 +65,10 @@ ms.locfileid: "71262250"
 
 * Для контейнеров Windows, размещенных на компьютерах Air гаппед, которые не могут получать базовые уровни из облачного хранилища Azure, переопределяйте поведение внешнего слоя с помощью флага [--allow-нераспространяемый-артефакты](https://docs.microsoft.com/virtualization/windowscontainers/about/faq#how-do-i-make-my-container-images-available-on-air-gapped-machines) в управляющей программе DOCKER.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Создание кластера на основе виртуальных машин или компьютеров под управлением Windows Server: [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md)
-* Создание кластера на основе виртуальных машин или компьютеров под управлением Linux: [Создание кластера Service Fabric в Azure с помощью портала Azure](service-fabric-cluster-creation-via-portal.md)
+* Создание кластера на основе виртуальных машин или компьютеров под управлением Windows Server: [Создание кластера Azure Service Fabric в локальной или облачной средах](service-fabric-cluster-creation-for-windows-server.md)
+* Создание кластера на основе виртуальных машин или компьютеров под управлением Linux: [Создание кластера Linux](service-fabric-cluster-creation-via-portal.md).
 * [Сведения о вариантах поддержки Service Fabric](service-fabric-support.md)
 
 [NSGSetup]: ./media/service-fabric-best-practices/service-fabric-nsg-rules.png

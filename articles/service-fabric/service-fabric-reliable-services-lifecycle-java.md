@@ -1,24 +1,16 @@
 ---
-title: Жизненный цикл Reliable Services в Azure Service Fabric | Документация Майкрософт
-description: Сведения о событиях жизненного цикла служб Reliable Services в Service Fabric.
-services: service-fabric
-documentationcenter: java
+title: Жизненный цикл Reliable Services Service Fabric Azure
+description: Сведения о событиях жизненного цикла в приложении Azure Service Fabric Reliable Services, использующем Java для служб с отслеживанием состояния и без отслеживания состояния.
 author: PavanKunapareddyMSFT
-manager: chackdan
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: java
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 06/30/2017
 ms.author: pakunapa
-ms.openlocfilehash: 36c1ff2ace944d84120bf456060c7504170a814c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1d3be958a0649ed3e80df2d63adbdf0b91831dbd
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60772947"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75639604"
 ---
 # <a name="reliable-services-lifecycle"></a>Жизненный цикл Reliable Services
 > [!div class="op_single_selector"]

@@ -1,6 +1,7 @@
 ---
-title: Пользовательские роли для SQL Server для оперативной миграции управляемого экземпляра базы данных SQL | Документация Майкрософт
-description: Узнайте, как использовать пользовательские роли для SQL Server для оперативной миграции управляемого экземпляра базы данных SQL.
+title: 'Пользовательские роли: оперативное SQL Server для миграций управляемого экземпляра SQL'
+titleSuffix: Azure Database Migration Service
+description: Узнайте, как использовать пользовательские роли для SQL Server к оперативным миграциям управляемого экземпляра базы данных SQL Azure.
 services: database-migration
 author: HJToland3
 ms.author: jtoland
@@ -8,15 +9,15 @@ manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
-ms.custom: mvc
+ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 10/25/2019
-ms.openlocfilehash: 8148e029bf343613a230b20d0397fa7851c96712
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 85c70968eb0f8a5752bbfa338918a8bba2fe7794
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72952359"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75437697"
 ---
 # <a name="custom-roles-for-sql-server-to-sql-database-managed-instance-online-migrations"></a>Пользовательские роли для SQL Server для оперативной миграции управляемого экземпляра базы данных SQL
 
@@ -31,7 +32,7 @@ Azure Database Migration Service использует идентификатор
 > [!NOTE]
 > Последнее требование пользовательской роли может быть удалено по мере развертывания нового кода управляемого экземпляра базы данных SQL в Azure.
 
-**Настраиваемая роль для идентификатора приложения**. Эта роль необходима для Azure Database Migration Service миграции на уровне *ресурсов* или *групп ресурсов* (Дополнительные сведения об идентификаторе приложения см. в статье [Создание приложения Azure AD и субъекта-службы с помощью портала). может получить доступ к ресурсам](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal)).
+**Настраиваемая роль для идентификатора приложения**. Эта роль необходима для Azure Database Migration Service миграции на уровне *ресурсов* или *групп ресурсов* (Дополнительные сведения об идентификаторе приложения см. в статье [Использование портала для создания приложения Azure AD и субъекта-службы, который имеет доступ к ресурсам](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal)).
 
 ```json
 {

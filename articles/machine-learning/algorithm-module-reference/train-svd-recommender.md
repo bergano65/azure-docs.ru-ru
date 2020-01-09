@@ -1,7 +1,7 @@
 ---
 title: 'Совет по обучению SVD: Справочник по модулям'
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как использовать модуль рекомендации для обучения SVD в службе Машинное обучение Azure, чтобы обучить Байеса рекомендацию с помощью алгоритма SVD.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как использовать модуль рекомендации для обучения SVD в Машинное обучение Azure для обучения Байеса рекомендует с помощью алгоритма SVD.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,14 +9,14 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 10/10/2019
-ms.openlocfilehash: 2019b752ab224abc244e471de3d427a77f7ed93a
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: dc78322b09548e4e9c2f666e0c8315ce688d6541
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73716903"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75428422"
 ---
-# <a name="train-svd-recommender"></a>Совет по обучению SVD
+# <a name="train-svd-recommender"></a>Обучение рекомендателя SVD
 
 В этой статье описывается, как использовать модуль SVD рекомендовать для обучения в конструкторе Машинное обучение Azure (Предварительная версия). Используйте этот модуль для обучения модели рекомендаций на основе алгоритма одиночного значения декомпозиции (SVD).  
 
@@ -50,10 +50,10 @@ ms.locfileid: "73716903"
 
 В наборе данных **рейтинги ресторана** в машинное обучение Azure Designer (выбор **сохраненных наборов данных** и затем **примеры**) демонстрируется ожидаемый формат:
 
-|UserID|плацеид|рейтинг|
+|Идентификатор пользователя|плацеид|рейтинг|
 |------------|-------------|------------|
-|NMAKE U1077|135085|2|
-|NMAKE U1077|135038|2|
+|U1077|135085|2|
+|U1077|135038|2|
 
 В этом примере видно, что один пользователь имеет оценку двух отдельных ресторанов. 
 
@@ -76,4 +76,4 @@ ms.locfileid: "73716903"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) для службы машинное обучение Azure. 
+См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 

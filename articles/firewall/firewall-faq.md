@@ -7,23 +7,23 @@ ms.service: firewall
 ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: victorh
-ms.openlocfilehash: 418fafdec9bd44fa3682e33cc53bbca9c716dcf2
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: ac8ec9a86c388f41493d60d79a21db28fbf2aa95
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74167032"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75646217"
 ---
 # <a name="azure-firewall-faq"></a>Часто задаваемые вопросы о службе "Брандмауэр Azure"
 
-## <a name="what-is-azure-firewall"></a>Что такое брандмауэр Azure?
+## <a name="what-is-azure-firewall"></a>Что такое Брандмауэр Azure?
 
 Брандмауэр Azure — это управляемая облачная служба сетевой безопасности, которая защищает ресурсы виртуальной сети Azure. Брандмауэр разработан как служба с полным отслеживанием состояния со встроенной высокой доступностью и неограниченной облачной масштабируемостью. Вы можете централизованно создавать, применять и регистрировать политики приложений и сетевых подключений в подписках и виртуальных сетях.
 
 ## <a name="what-capabilities-are-supported-in-azure-firewall"></a>Характеристики и функции Брандмауэра Azure:
 
-* Брандмауэр как услуга с отслеживанием состояния.
-* Встроенные функции обеспечения высокой доступности и неограниченная масштабируемость в облаке.
+* Брандмауэр как услуга с отслеживанием состояния
+* Встроенные функции высокой доступности и неограниченная масштабируемость в облаке.
 * фильтрацию FQDN;
 * Теги FQDN
 * правила фильтрации трафика;
@@ -88,7 +88,7 @@ ms.locfileid: "74167032"
 
 Вы можете использовать методы Azure PowerShell *deallocate* и *allocate*.
 
-Например,
+Пример.
 
 ```azurepowershell
 # Stop an existing firewall
@@ -113,7 +113,7 @@ Set-AzFirewall -AzureFirewall $azfw
 
 ## <a name="what-are-the-known-service-limits"></a>Каковы известные ограничения службы?
 
-Ограничения службы брандмауэра Azure см. в статье [Подписка Azure, пределы, квоты и ограничения службы](../azure-subscription-service-limits.md#azure-firewall-limits).
+Ограничения службы брандмауэра Azure см. в статье [Подписка Azure, пределы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-firewall-limits).
 
 ## <a name="can-azure-firewall-in-a-hub-virtual-network-forward-and-filter-network-traffic-between-two-spoke-virtual-networks"></a>Может ли Брандмауэр Azure, подключенный к концентратору виртуальной сети, передавать и фильтровать трафик, проходящий между двумя периферийными зонами виртуальной сети?
 
@@ -139,7 +139,7 @@ Set-AzFirewall -AzureFirewall $azfw
 
 ## <a name="when-configuring-dnat-for-inbound-network-traffic-do-i-also-need-to-configure-a-corresponding-network-rule-to-allow-that-traffic"></a>Настраивая DNAT для входящего трафика, нужно ли также настроить соответствующее правило сети для разрешения этого трафика?
 
-Нет Правила NAT позволяют неявно добавить соответствующее правило сети, чтобы разрешить преобразованный трафик. Чтобы переопределить эту реакцию, явно добавьте коллекцию правил сети с запрещающими правилами, которые соответствуют преобразованному трафику. Дополнительные сведения о логике обработки правил Брандмауэра Azure см. в [соответствующей статье](rule-processing.md).
+Нет. Правила NAT позволяют неявно добавить соответствующее правило сети, чтобы разрешить преобразованный трафик. Чтобы переопределить эту реакцию, явно добавьте коллекцию правил сети с запрещающими правилами, которые соответствуют преобразованному трафику. Дополнительные сведения о логике обработки правил Брандмауэра Azure см. в [соответствующей статье](rule-processing.md).
 
 ## <a name="how-do-wildcards-work-in-an-application-rule-target-fqdn"></a>Как использовать подстановочные знаки в целевом полном доменном имени правила приложения?
 
@@ -162,7 +162,7 @@ Set-AzFirewall -AzureFirewall $azfw
 
 ## <a name="does-the-firewall-subnet-size-need-to-change-as-the-service-scales"></a>Требуется ли изменение размера подсети брандмауэра при масштабировании службы?
 
-Нет Для брандмауэра Azure не требуется подсеть больше/26.
+Нет. Для брандмауэра Azure не требуется подсеть больше/26.
 
 ## <a name="how-can-i-increase-my-firewall-throughput"></a>Как можно увеличить пропускную способность брандмауэра?
 
@@ -174,4 +174,4 @@ Set-AzFirewall -AzureFirewall $azfw
 
 ## <a name="does-azure-firewall-allow-access-to-active-directory-by-default"></a>Разрешает ли брандмауэр Azure доступ к Active Directory по умолчанию?
 
-Нет Брандмауэр Azure блокирует Active Directory доступ по умолчанию. Чтобы разрешить доступ, настройте тег службы AzureActiveDirectory. Дополнительные сведения см. в статье [теги службы брандмауэра Azure](service-tags.md).
+Нет. Брандмауэр Azure блокирует Active Directory доступ по умолчанию. Чтобы разрешить доступ, настройте тег службы AzureActiveDirectory. Дополнительные сведения см. в статье [теги службы брандмауэра Azure](service-tags.md).

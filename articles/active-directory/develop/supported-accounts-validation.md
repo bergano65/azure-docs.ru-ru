@@ -1,5 +1,5 @@
 ---
-title: Различия в проверке по типу учетной записи — платформа Microsoft Identity | Службы
+title: Различия в проверке по поддерживаемым типам учетных записей — платформа Microsoft Identity | Службы
 description: Сведения о различиях в проверке различных свойств для различных поддерживаемых типов учетных записей при регистрации приложения на платформе Microsoft Identity.
 author: SureshJa
 ms.author: sureshja
@@ -11,12 +11,12 @@ ms.custom: aaddev
 ms.service: active-directory
 ms.reviewer: lenalepa, manrath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 576adc99ef7d794f50efeb61375f3e59f8815033
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 2d15c22e2495432926285dbdbd55a4a6f3b0aa35
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74919364"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423455"
 ---
 # <a name="validation-differences-by-supported-account-types-signinaudience"></a>Различия в проверке по поддерживаемым типам счетов (Сигнинаудиенце)
 

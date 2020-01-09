@@ -1,20 +1,21 @@
 ---
-title: Настройка строки подключения для службы хранилища Azure
+title: Настройка строки подключения
+titleSuffix: Azure Storage
 description: Настройка строки подключения для учетной записи хранения Azure. Строка подключения содержит сведения, необходимые для авторизации доступа к учетной записи хранения из приложения во время выполнения с помощью авторизации общего ключа.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 06/20/2019
+ms.date: 12/20/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: d1106865b3a2ea3164090896c5b90ab08f996f3d
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: f617beec8a53570ede7755040cfbb92a7d1712b7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640493"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75460557"
 ---
 # <a name="configure-azure-storage-connection-strings"></a>Настройка строк подключения службы хранилища Azure
 
@@ -23,8 +24,6 @@ ms.locfileid: "69640493"
 * подключиться к эмулятору хранилища Azure;
 * получить доступ к учетной записи хранения в Azure;
 * получить доступ к указанным ресурсам Azure через подписанный URL-адрес (SAS).
-
-[!INCLUDE [storage-recommend-azure-ad-include](../../../includes/storage-recommend-azure-ad-include.md)]
 
 [!INCLUDE [storage-account-key-note-include](../../../includes/storage-account-key-note-include.md)]
 
@@ -141,8 +140,8 @@ EndpointSuffix=core.chinacloudapi.cn;
 
 [!INCLUDE [storage-cloud-configuration-manager-include](../../../includes/storage-cloud-configuration-manager-include.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование эмулятора хранения Azure для разработки и тестирования](storage-use-emulator.md)
 * [Клиентские инструменты службы хранилища Azure](storage-explorers.md)
-* [С помощью подписи коллективного доступа (SAS)](storage-sas-overview.md)
+* [Использование подписанных URL-адресов](storage-sas-overview.md)

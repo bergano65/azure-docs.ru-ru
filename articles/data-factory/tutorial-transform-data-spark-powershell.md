@@ -10,12 +10,12 @@ ms.date: 01/22/2018
 author: nabhishek
 ms.author: abnarain
 manager: anandsub
-ms.openlocfilehash: 62e760da58eeff265e560d7cbc5dc044bf053de2
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: e70a59a75531cb7c3a7e5c5573f9e50cc574ab09
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74924958"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75439149"
 ---
 # <a name="transform-data-in-the-cloud-by-using-spark-activity-in-azure-data-factory"></a>Преобразование данных в облаке с помощью действия Spark в фабрике данных Azure
 В этом руководстве вы используете Azure PowerShell для создания конвейера фабрики данных, который преобразовывает данные с помощью действия Spark и служба, связанная по запросу HDInsight. В этом руководстве вы выполните следующие шаги:
@@ -29,7 +29,7 @@ ms.locfileid: "74924958"
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -90,10 +90,7 @@ ms.locfileid: "74924958"
     "properties": {
       "type": "AzureStorage",
       "typeProperties": {
-        "connectionString": {
-          "value": "DefaultEndpointsProtocol=https;AccountName=<storageAccountName>;AccountKey=<storageAccountKey>",
-          "type": "SecureString"
-        }
+        "connectionString": "DefaultEndpointsProtocol=https;AccountName=<storageAccountName>;AccountKey=<storageAccountKey>"
       }
     }
 }
@@ -251,7 +248,7 @@ ms.locfileid: "74924958"
     
 ## <a name="start-and-monitor-a-pipeline-run"></a>Запуск и мониторинг выполнения конвейера  
 
-1. Запустите конвейер. Эта команда также запишет идентификатор выполнения конвейера для будущего мониторинга.
+1. Запуск конвейера. Эта команда также запишет идентификатор выполнения конвейера для будущего мониторинга.
 
     ```powershell
     $runId = Invoke-AzDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -PipelineName $pipelineName  
@@ -331,15 +328,15 @@ ms.locfileid: "74924958"
 4. Убедитесь, что папка с именем `outputfiles` создана в папке `spark` контейнера adftutorial с выходными данными программы Spark. 
 
 
-## <a name="next-steps"></a>Дополнительная информация
-В этом примере конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure. Вы научились выполнять следующие задачи: 
+## <a name="next-steps"></a>Дальнейшие действия
+В этом примере конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure. Вы ознакомились с выполнением следующих задач: 
 
 > [!div class="checklist"]
 > * Создали фабрику данных. 
 > * Создали и развернули эти связанные службы.
 > * Создание и развертывание конвейера. 
 > * Запуск конвейера.
-> * Выполнение мониторинга выполнения конвейера.
+> * Осуществили мониторинг выполнения конвейера.
 
 Чтобы узнать, как преобразовать данные, запустив скрипт Hive в кластере Azure HDInsight, который находится в виртуальной сети, ознакомьтесь со следующим руководством. 
 

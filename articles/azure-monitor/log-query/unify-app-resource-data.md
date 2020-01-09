@@ -1,23 +1,18 @@
 ---
 title: Объединение нескольких ресурсов Azure Monitor Application Insights | Документация Майкрософт
 description: В этой статье содержатся сведения по использованию функции журналов Azure Monitor для запроса нескольких ресурсов Application Insights и визуализации данных.
-services: azure-monitor
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.service: azure-monitor
+author: bwren
+ms.author: bwren
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/19/2019
-ms.author: magoedte
-ms.openlocfilehash: d441b72b34da6146eba523563a09c2908cdcbbf4
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 07dd4c96ba51b1ac1e0cb2807c9e26df87a6daa7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69650132"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75364974"
 ---
 # <a name="unify-multiple-azure-monitor-application-insights-resources"></a>Объединение нескольких ресурсов Azure Monitor Application Insights 
 В этой статье описывается, как запрашивать и просматривать все данные журнала Application Insights в одном месте, даже если они находятся в разных подписках Azure, в качестве замены нерекомендуемых Соединитель Application Insights. Количество Application Insights ресурсов, которые можно включить в один запрос, ограничено 100.
@@ -103,17 +98,17 @@ applicationsScoping //this brings data from Application Insights resources
 | ApplicationName | appName|
 | ApplicationTypeVersion | application_Version |
 | AvailabilityCount | itemCount |
-| AvailabilityDuration | duration |
+| AvailabilityDuration | длительность |
 | AvailabilityMessage | message |
-| AvailabilityRunLocation | расположение |
-| AvailabilityTestId | id |
+| AvailabilityRunLocation | location |
+| AvailabilityTestId | идентификатор |
 | AvailabilityTestName | name |
-| AvailabilityTimestamp | timestamp |
-| Browser | client_browser |
+| AvailabilityTimestamp | TIMESTAMP |
+| Браузер | client_browser |
 | Город | client_city |
 | ClientIP | client_IP |
 | Компьютер | cloud_RoleInstance | 
-| Country | client_CountryOrRegion | 
+| Страна | client_CountryOrRegion | 
 | CustomEventCount | itemCount | 
 | CustomEventDimensions | customDimensions |
 | CustomEventName | name | 
@@ -125,25 +120,25 @@ applicationsScoping //this brings data from Application Insights resources
 | ExceptionType | type |
 | OperationID | operation_id |
 | OperationName | operation_Name | 
-| OS | client_OS | 
+| ОС | client_OS | 
 | PageViewCount | itemCount |
-| PageViewDuration | duration | 
+| PageViewDuration | длительность | 
 | PageViewName | name | 
 | ParentOperationID | operation_Id | 
 | RequestCount | itemCount | 
-| RequestDuration | duration | 
-| RequestID | id | 
+| RequestDuration | длительность | 
+| RequestID | идентификатор | 
 | RequestName | name | 
-| RequestSuccess | success | 
+| RequestSuccess | Успешное завершение | 
 | ResponseCode | resultCode | 
-| Role | cloud_RoleName |
+| Роль | cloud_RoleName |
 | RoleInstance | cloud_RoleInstance |
 | SessionId | session_Id | 
 | SourceSystem | operation_SyntheticSource |
 | TelemetryTYpe | type |
-| URL | url |
+| URL-адрес | url |
 | UserAccountId | user_AccountId |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте [поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просматривать подробные сведения о приложениях Application Insights.

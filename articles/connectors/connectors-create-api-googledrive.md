@@ -1,20 +1,20 @@
 ---
 title: Подключение к Google Drive
-description: Создавайте файлы и управляйте ими с помощью интерфейсов REST API Google Диск и Azure Logic Apps.
+description: Автоматизируйте рабочие процессы, создающие файлы для Google диска и управляющие ими с помощью Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 11/07/2016
 tags: connectors
-ms.openlocfilehash: 6310c3b7e5b84915fa336708bc702e94317ad04c
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 155a579438747ca7de67eba6449b8a0191e86e2c
+ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74789718"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75666845"
 ---
-# <a name="get-started-with-the-google-drive-connector"></a>Начало работы с соединителем Google-диска
+# <a name="create-and-manage-files-for-google-drive-by-using-azure-logic-apps"></a>Создание файлов для Google диска и управление ими с помощью Azure Logic Apps
 
 Подключитесь к Google-диску, чтобы создавать файлы, получать строки и выполнять множество других действий. С помощью Google-диска вы можете: 
 
@@ -33,8 +33,8 @@ ms.locfileid: "74789718"
 
 ## <a name="connector-specific-details"></a>Сведения о соединителях
 
-Информацию о существующих ограничениях, а также о триггерах и действиях, определенных в Swagger, см. в статье со [сведениями о соединителях](/connectors/googledrive/).
+Технические сведения о триггерах, действиях и ограничениях, которые описаны в описании Swagger соединителя, см. на [странице справочника по соединителю](/connectors/googledrive/).
 
-## <a name="more-connectors"></a>Дополнительные сведения о соединителях
+## <a name="next-steps"></a>Дальнейшие действия
 
-Вы можете вернуться к [списку интерфейсов API](apis-list.md).
+* См. дополнительные сведения о других [соединителях Logic Apps](apis-list.md).

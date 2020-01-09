@@ -11,18 +11,18 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ed35abd5b9bfb8b9a74d598f1fa93d8f1a985bfb
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 52d9f7a0b2a7cebefdb5ade8e16417043c5c83d3
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74848278"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75425296"
 ---
 # <a name="reports-in-azure-multi-factor-authentication"></a>Отчеты в службе Многофакторной идентификации Azure
 
 Служба "Многофакторная идентификация Azure" предоставляет несколько типов отчетов, которые могут быть полезны для вас и вашей организации. Просмотреть их можно на портале Azure. В следующей таблице перечислены доступные отчеты:
 
-| Отчет | Location | Описание |
+| Отчет | Расположение | Description |
 |:--- |:--- |:--- |
 | Журнал заблокированных пользователей | Azure AD > Security > MFA > Блокировка и разблокировка пользователей | История запросов на блокировку или разблокирование пользователей. |
 | Предупреждения об использовании и о мошенничестве | "Azure AD > События входа" | Сведения об общем использовании, сводка пользователей, сведения о пользователях, а также история предупреждений о мошенничестве, отправленных в течение указанного диапазона дат. |
@@ -32,7 +32,7 @@ ms.locfileid: "74848278"
 
 ## <a name="view-mfa-reports"></a>Просмотр отчетов MFA
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Слева выберите **Azure Active Directory** > **Безопасность** > **MFA**.
 3. Выберите отчет, который нужно просмотреть.
 
@@ -134,11 +134,21 @@ ms.locfileid: "74848278"
 
 ```Get-MsolUser -All | Where-Object {$_.StrongAuthenticationMethods.Count -eq 0} | Select-Object -Property UserPrincipalName```
 
+Выявление зарегистрированных пользователей и методов вывода. 
+
+```PowerShell
+Get-MsolUser -All | Select-Object @{N='UserPrincipalName';E={$_.UserPrincipalName}},
+
+@{N='MFA Status';E={if ($_.StrongAuthenticationRequirements.State){$_.StrongAuthenticationRequirements.State} else {"Disabled"}}},
+
+@{N='MFA Methods';E={$_.StrongAuthenticationMethods.methodtype}} | Export-Csv -Path c:\MFA_Report.csv -NoTypeInformation
+```
+
 ## <a name="possible-results-in-activity-reports"></a>Возможные результаты в отчетах об активности
 
 Следующая таблица может использоваться для устранения неполадок многофакторной проверки подлинности с помощью скачанной версии отчета о действиях многофакторной проверки подлинности. Они не будут отображаться непосредственно в портал Azure.
 
-| Результат вызова | Описание | Общее описание |
+| Результат вызова | Description | Общее описание |
 | --- | --- | --- |
 | SUCCESS_WITH_PIN | ПИН-код введен | Пользователь ввел ПИН-код.  Если проверка подлинности прошла удачно, они указали правильный ПИН-код.  Если проверка подлинности запрещена, то введен неверный ПИН-код или пользователь настроен на стандартный режим. |
 | SUCCESS_NO_PIN | Только указанный # | Если пользователь находится в режиме ПИН-кода и в проверке подлинности отказано, это значит, что он не ввел ПИН-код, а ввел только «#».  Если пользователь находится в стандартном режиме и проверка подлинности успешно пройдена, это значит, что он ввел только «#», что является правильным действием в этом режиме. |

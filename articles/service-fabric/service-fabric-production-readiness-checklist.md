@@ -1,25 +1,14 @@
 ---
-title: Контрольный список готовности рабочей среды Azure Service Fabric | Документация Майкрософт
+title: Контрольный список готовности к производству Azure Service Fabric
 description: Подготовка приложения Service Fabric и рабочей среде кластера с помощью рекомендаций.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chakdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 6/05/2019
-ms.author: atsenthi
-ms.openlocfilehash: 9e86f7306ee70bee2e084b967867e2a9be5b66e1
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 90d600b01aa870f7b3a58e70ef32e774e7107524
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599360"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75376806"
 ---
 # <a name="production-readiness-checklist"></a>Контрольный список готовности рабочей среды
 
@@ -27,7 +16,7 @@ ms.locfileid: "68599360"
 
 
 ## <a name="prerequisites-for-production"></a>Предварительные требования для рабочей среды
-1. Рекомендации по Service Fabric Azure: [Проектирование приложений](./service-fabric-best-practices-applications.md), [Безопасность](./service-fabric-best-practices-security.md), работа в [сети](./service-fabric-best-practices-networking.md), [планирование и масштабирование ресурсов](./service-fabric-best-practices-capacity-scaling.md), [инфраструктура как код](./service-fabric-best-practices-infrastructure-as-code.md), [мониторинг и диагностика](./service-fabric-best-practices-monitoring.md). 
+1. Рекомендации по работе с Azure Service Fabric: [проектирование приложений](./service-fabric-best-practices-applications.md), [Безопасность](./service-fabric-best-practices-security.md), работа в [сети](./service-fabric-best-practices-networking.md), [планирование и масштабирование ресурсов](./service-fabric-best-practices-capacity-scaling.md), [инфраструктура как код](./service-fabric-best-practices-infrastructure-as-code.md), [мониторинг и диагностика](./service-fabric-best-practices-monitoring.md). 
 1. Если используется модель программирования субъектов, реализуйте конфигурации безопасности на основе Reliable Actors.
 1. Для кластеров с более чем 20 ядрами или 10 узлами создайте выделенный тип основного узла для системных служб. Добавьте [ограничения размещения](service-fabric-cluster-resource-manager-advanced-placement-rules-placement-policies.md), чтобы зарезервировать тип основного узла для системных служб.
 1. Используйте номер SKU D2v2 или выше для типа основного узла. Рекомендуется выбрать номер SKU с емкостью диска по меньшей мере 50 ГБ.
@@ -65,7 +54,7 @@ ms.locfileid: "68599360"
 1. Разверните пользовательскую службу наблюдения, которая отслеживает приложение и сообщает о [загрузке](service-fabric-cluster-resource-manager-metrics.md) для [балансировки ресурсов](service-fabric-cluster-resource-manager-balancing.md). 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Руководство. Развертывание кластера Service Fabric на платформе Windows в виртуальной сети Azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md)
 * [Руководство. Развертывание кластера Service Fabric на платформе Linux в виртуальной сети Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md)
 * Дополнительные сведения о [жизненном цикле приложения](service-fabric-application-lifecycle.md) Service Fabric.

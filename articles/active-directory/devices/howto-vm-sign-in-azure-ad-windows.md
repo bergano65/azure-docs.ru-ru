@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba8f4f715856538b9555b1bcb8c8a812503fabd2
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 77e24fa41c5f716460d82e1079659e6aee5e9a9b
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74842413"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75561156"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
 
@@ -33,9 +33,12 @@ ms.locfileid: "74842413"
 - Больше не требуется управлять учетными записями локального администратора.
 - Azure RBAC позволяет предоставлять соответствующий доступ к виртуальным машинам в зависимости от необходимости и удалять его, если он больше не нужен.
 - Перед предоставлением доступа к виртуальной машине условный доступ Azure AD может применять дополнительные требования, например: 
-   - Многофакторная Идентификация
+   - Многофакторная проверка подлинности
    - Проверка риска при входе
 - Автоматизируйте и масштабируйте присоединение Azure AD к виртуальным машинам Windows Azure, которые являются частью развертывания VDI.
+
+> [!NOTE]
+> После включения этой возможности виртуальные машины Windows в Azure будут присоединены к Azure AD. Вы не можете присоединить его к другому домену, например в локальной службе AD или Azure AD DS. Если это необходимо, необходимо отключить виртуальную машину от клиента Azure AD путем удаления расширения.
 
 ## <a name="requirements"></a>Требования
 
@@ -187,7 +190,7 @@ az role assignment create \
 Дополнительные сведения об использовании RBAC для управления доступом к ресурсам подписки Azure см. в следующих статьях:
 
 - [Управление доступом к ресурсам Azure с помощью RBAC и Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli)
-- [Управление доступом к ресурсам Azure с помощью RBAC и портала Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
+- [Управление доступом с помощью RBAC и портала Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
 - [Управление доступом к ресурсам Azure с помощью RBAC и Azure PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell).
 
 ## <a name="using-conditional-access"></a>Использование условного доступа
@@ -200,7 +203,7 @@ az role assignment create \
 ## <a name="log-in-using-azure-ad-credentials-to-a-windows-vm"></a>Вход с использованием учетных данных Azure AD для виртуальной машины Windows
 
 > [!IMPORTANT]
-> Удаленное подключение к виртуальным машинам, присоединенным к Azure AD, разрешено только с компьютеров Windows 10, присоединенных к Azure AD или гибридных служб Azure AD, присоединенных к **тому каталогу** , что и виртуальная машина Кроме того, в RDP с использованием учетных данных Azure AD пользователь должен принадлежать к одной из двух ролей RBAC, имени входа администратора виртуальной машины или имени входа пользователя виртуальной машины.
+> Удаленное подключение к виртуальным машинам, присоединенным к Azure AD, разрешено только с компьютеров Windows 10, присоединенных к Azure AD или гибридных служб Azure AD, присоединенных к **тому каталогу** , что и виртуальная машина Кроме того, в RDP с использованием учетных данных Azure AD пользователь должен принадлежать к одной из двух ролей RBAC, имени входа администратора виртуальной машины или имени входа пользователя виртуальной машины. В настоящее время Azure бастиона не может использоваться для входа с использованием Azure Active Directory проверки подлинности с помощью расширения Аадлогинфорвиндовс. Поддерживается только прямой протокол RDP.
 
 Чтобы войти на виртуальную машину Windows Server 2019 с помощью Azure AD, выполните следующие действия. 
 

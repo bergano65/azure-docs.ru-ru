@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/19/2019
-ms.openlocfilehash: 9404bbf0ad79df41b0b5960977d6605697da5df5
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 68cd0d51c16ecd63a1446c284f81c5dea07b8c06
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74894569"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75363546"
 ---
 # <a name="manage-log-analytics-workspace-in-azure-monitor-using-powershell"></a>Управление рабочей областью Log Analytics в Azure Monitor с помощью PowerShell
 
@@ -177,6 +177,10 @@ New-AzOperationalInsightsWindowsPerformanceCounterDataSource -ResourceGroupName 
 New-AzOperationalInsightsCustomLogDataSource -ResourceGroupName $ResourceGroup -WorkspaceName $WorkspaceName -CustomLogRawJson "$CustomLog" -Name "Example Custom Log Collection"
 
 ```
+
+> [!NOTE]
+> Формат параметра **кустомлогравжсон** , который определяет конфигурацию для пользовательского журнала, может быть сложным. Используйте [Get-азоператионалинсигхтсдатасаурце](https://docs.microsoft.com/powershell/module/az.operationalinsights/get-azoperationalinsightsdatasource?view=azps-3.2.0) , чтобы получить конфигурацию для существующего пользовательского журнала. Свойство **Properties** является конфигурацией, необходимой для параметра **кустомлогравжсон** .
+
 В указанном примере regexDelimiter был определен как \\n для новой строки. Разделителем журнала также может служить метка времени.  Далее приведены поддерживаемые форматы.
 
 | Формат | В стандартных RegEx формат JSON RegEx использует два знака \\ для каждого "\", если тестирование в приложениях RegEx уменьшить с \\ на "\". | | |
@@ -198,24 +202,24 @@ New-AzOperationalInsightsCustomLogDataSource -ResourceGroupName $ResourceGroup -
 
 | Тип ресурса | Журналы | Метрики |
 | --- | --- | --- |
-| Шлюзы приложений    | ДА | ДА |
-| Учетные записи службы автоматизации     | ДА | |
-| Учетные записи пакетной службы          | ДА | ДА |
-| Data Lake Analytics     | ДА | |
-| Data Lake Store         | ДА | |
-| пул эластичных баз данных SQL;        |     | ДА |
-| пространство имен концентратора событий;     |     | ДА |
-| Центры Интернета вещей.                |     | ДА |
-| Key Vault               | ДА | |
-| подсистемы балансировки нагрузки;          | ДА | |
-| приложения логики;              | ДА | ДА |
-| Группы безопасности сети | ДА | |
-| Кэш Redis для Azure             |     | ДА |
-| Службы поиска         | ДА | ДА |
-| Пространство имен служебной шины   |     | ДА |
-| SQL (версия 12)               |     | ДА |
-| Веб-сайты               |     | ДА |
-| Фермы веб-серверов        |     | ДА |
+| Шлюзы приложений    | Да | Да |
+| Учетные записи службы автоматизации     | Да | |
+| Учетные записи пакетной службы          | Да | Да |
+| Data Lake Analytics     | Да | |
+| Data Lake Store         | Да | |
+| пул эластичных баз данных SQL;        |     | Да |
+| пространство имен концентратора событий;     |     | Да |
+| Центры Интернета вещей.                |     | Да |
+| Key Vault               | Да | |
+| подсистемы балансировки нагрузки;          | Да | |
+| Приложения логики              | Да | Да |
+| Группы безопасности сети | Да | |
+| Кэш Azure для Redis             |     | Да |
+| Службы поиска         | Да | Да |
+| Пространство имен служебной шины   |     | Да |
+| SQL (версия 12)               |     | Да |
+| Веб-сайты               |     | Да |
+| Фермы веб-серверов        |     | Да |
 
 Дополнительные сведения о доступных метриках см. в разделе [Метрики, поддерживаемые Azure Monitor](../../azure-monitor/platform/metrics-supported.md).
 

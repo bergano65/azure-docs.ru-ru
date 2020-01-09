@@ -1,25 +1,16 @@
 ---
-title: 'Диспетчер кластерных ресурсов Service Fabric: группы приложений | Документация Майкрософт'
+title: Диспетчер ресурсов кластера Service Fabric. группы приложений
 description: Общие сведения о назначении групп приложений в диспетчере кластерных ресурсов службы Fabric Service
-services: service-fabric
-documentationcenter: .net
 author: masnider
-manager: chackdan
-editor: ''
-ms.assetid: 4cae2370-77b3-49ce-bf40-030400c4260d
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: 7e90dc00a8e042e48d8016e25dda04c15ce9f619
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 988c7ce52125800c16aa785d5b1458604a927ecd
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62114079"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75452152"
 ---
 # <a name="introduction-to-application-groups"></a>Введение в группы приложений
 Диспетчер кластерных ресурсов Service Fabric, который управляет ресурсами кластера, обычно равномерно распределяет нагрузку (представленную в [метриках](service-fabric-cluster-resource-manager-metrics.md)) по всему кластеру. Service Fabric управляет емкостью узлов в кластере и [емкостью](service-fabric-cluster-resource-manager-cluster-description.md) кластера в целом. Метрики и емкость отлично работают для большинства рабочих нагрузок, но для структур, активно использующих разные экземпляры приложений Service Fabric, иногда возникают дополнительные требования. Например, может потребоваться следующее.
@@ -37,14 +28,14 @@ ms.locfileid: "62114079"
 
 <center>
 
-![Определение максимального количества узлов для экземпляров приложения][Image1]
+![экземпляр приложения, определяющий максимальное количество узлов][Image1]
 </center>
 
 В примере слева для приложения с тремя службами не определено максимальное число узлов. Менеджер кластерных ресурсов распределил реплики по всем шести доступным узлам, чтобы сбалансировать нагрузку на кластер (поведение по умолчанию). В примере справа мы видим то же приложение, но с ограничением до трех узлов.
 
 Такое поведение управляется параметром MaximumNodes. Этот параметр можно задать при создании приложения или изменить для уже выполняющегося экземпляра приложения.
 
-PowerShell
+Powershell
 
 ``` posh
 New-ServiceFabricApplication -ApplicationName fabric:/AppName -ApplicationTypeName AppType1 -ApplicationTypeVersion 1.0.0.0 -MaximumNodes 3
@@ -78,7 +69,7 @@ await fc.ApplicationManager.UpdateApplicationAsync(adUpdate);
 - **Максимальная емкость узла**. Это значение определяет максимальную общую нагрузку для приложения на отдельном узле. Если нагрузка превышает емкость, диспетчер кластерных ресурсов перемещает реплики на другие узлы, тем самым уменьшая нагрузку.
 
 
-PowerShell:
+В PowerShell:
 
 ``` posh
 New-ServiceFabricApplication -ApplicationName fabric:/AppName -ApplicationTypeName AppType1 -ApplicationTypeVersion 1.0.0.0 -Metrics @("MetricName:Metric1,MaximumNodeCapacity:100,MaximumApplicationCapacity:1000")
@@ -108,7 +99,7 @@ await fc.ApplicationManager.CreateApplicationAsync(ad);
 - число служб в экземпляре приложения каждый раз изменяется; 
 - службы существуют, но не используют ресурсы. 
 
-Зарезервировать ресурсы для экземпляра приложения требуется указать два дополнительных параметра: *MinimumNodes* и *NodeReservationCapacity*
+Чтобы зарезервировать ресурсы для экземпляра приложения, следует использовать два дополнительных параметра: *MinimumNodes* и *NodeReservationCapacity*.
 
 - **MinimumNodes**. Этот параметр определяет минимальное количество узлов, на которых должен работать экземпляр приложения.  
 - **NodeReservationCapacity**. Этот параметр задается на уровне метрики для приложения. Его значение — это объем данной метрики, резервируемый для приложения на любом узле, на котором выполняются службы в этом приложении.
@@ -119,7 +110,7 @@ await fc.ApplicationManager.CreateApplicationAsync(ad);
 
 <center>
 
-![Определение резервируемой емкости для экземпляров приложения][Image2]
+![экземпляры приложения, определяющие зарезервированную емкость][Image2]
 </center>
 
 В примере слева для приложений не определены параметры емкости. Диспетчер кластерных ресурсов распределяет всю нагрузку по обычным правилам.
@@ -130,7 +121,7 @@ await fc.ApplicationManager.CreateApplicationAsync(ad);
 - для приложения определена метрика со следующими значениями:
   - NodeReservationCapacity = 20;
 
-PowerShell
+Powershell
 
  ``` posh
  New-ServiceFabricApplication -ApplicationName fabric:/AppName -ApplicationTypeName AppType1 -ApplicationTypeVersion 1.0.0.0 -MinimumNodes 2 -Metrics @("MetricName:Metric1,NodeReservationCapacity:20")
@@ -159,7 +150,7 @@ Service Fabric резервирует емкость для Application1 на д
 ## <a name="obtaining-the-application-load-information"></a>Получение сведений о нагрузке приложения
 Для каждого приложения с емкостью, определенной для одной или нескольких метрик, вы можете получить сведения о суммарной нагрузке, создаваемой репликами его служб.
 
-PowerShell:
+В PowerShell:
 
 ``` posh
 Get-ServiceFabricApplicationLoadInformation –ApplicationName fabric:/MyApplication1
@@ -180,13 +171,13 @@ foreach (ApplicationLoadMetricInformation metric in metrics)
 
 Запрос ApplicationLoad возвращает основные сведения о параметрах емкости, указанных для приложения. Сюда входят данные о минимальном и максимальном числе узлов, а также о том, сколько узлов приложение занимает в настоящее время. Также вы получите информацию по каждой метрике нагрузки для приложения, в том числе перечисленные ниже сведения.
 
-* Metric Name: Имя метрики.
-* Reservation Capacity: Емкость, зарезервированная в кластере для этого приложения.
-* Загрузка приложения: Общая нагрузка, создаваемая дочерними репликами этого приложения.
-* Емкость приложения: Максимально допустимое значение нагрузки приложения.
+* Metric Name: имя метрики.
+* Reservation Capacity: емкость, зарезервированная в кластере для этого приложения.
+* Application Load: общая нагрузка, создаваемая дочерними репликами этого приложения.
+* Application Capacity: максимально допустимое значение нагрузки приложения.
 
 ## <a name="removing-application-capacity"></a>Удаление емкости приложения
-Когда для приложения будут установлены параметры емкости приложения, их можно будет удалить с помощью API-интерфейсов обновления приложения или командлетов PowerShell. Пример:
+Когда для приложения будут установлены параметры емкости приложения, их можно будет удалить с помощью API-интерфейсов обновления приложения или командлетов PowerShell. Пример.
 
 ``` posh
 Update-ServiceFabricApplication –Name fabric:/MyApplication1 –RemoveApplicationCapacity

@@ -6,12 +6,12 @@ ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 10/31/2018
 ms.author: rohogue
-ms.openlocfilehash: 77fc5a53c8bdc389c24cd1e6406415eefc3f167b
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: d50c07d78c15d26a191b982d24da8a4808a31ecd
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72256185"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75415056"
 ---
 # <a name="authorize-non-owners-to-deploy-avere-vfxt"></a>Разрешение на развертывание Avere vFXT для пользователей без роли владельца
 
@@ -19,11 +19,11 @@ ms.locfileid: "72256185"
 
 (Рекомендуемый способ развертывания системы Avere vFXT — попросить пользователя с правами владельца выполнить действия по созданию, как описано в статье [Подготовка к созданию Avere vFXT](avere-vfxt-prereqs.md).)  
 
-Обходной путь заключается в создании дополнительной роли доступа, которая предоставляет пользователям необходимые разрешения для установки кластера. Эта роль должна быть создана владельцем подписки и назначена им соответствующим пользователям. 
+Обходной путь заключается в создании дополнительной роли доступа, которая предоставляет пользователям необходимые разрешения для установки кластера. Эта роль должна быть создана владельцем подписки и назначена им соответствующим пользователям.
 
-Владелец подписки также должен [принять условия использования](avere-vfxt-prereqs.md) для образа Avere vFXT из marketplace. 
+Владелец подписки также должен [принять условия использования](avere-vfxt-prereqs.md) для образа Avere vFXT из marketplace.
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > Все эти шаги должны выполняться пользователем с правами владельца в подписке, которая будет использоваться для кластера.
 
 1. Скопируйте эти строки и сохраните их в файле (например, `averecreatecluster.json`). Используйте идентификатор подписки в операторе `AssignableScopes`.
@@ -49,7 +49,7 @@ ms.locfileid: "72256185"
            "Microsoft.Network/routeTables/routes/delete",
            "Microsoft.Network/virtualNetworks/subnets/join/action",
            "Microsoft.Network/virtualNetworks/subnets/read",
-   
+
            "Microsoft.Resources/subscriptions/resourceGroups/read",
            "Microsoft.Resources/subscriptions/resourceGroups/resources/read",
            "Microsoft.Storage/*/read",
@@ -63,6 +63,7 @@ ms.locfileid: "72256185"
    `az role definition create --role-definition <PATH_TO_FILE>`
 
     Пример:
+
     ```azurecli
     az role definition create --role-definition ./averecreatecluster.json
     ```
@@ -71,7 +72,7 @@ ms.locfileid: "72256185"
 
    `az role assignment create --assignee <USERNAME> --scope /subscriptions/<SUBSCRIPTION_ID> --role 'avere-create-cluster'`
 
-Когда вы выполните эту процедуру, у любого пользователя с этой ролью будут следующие разрешения для подписки: 
+Когда вы выполните эту процедуру, у любого пользователя с этой ролью будут следующие разрешения для подписки:
 
 * создание и настройка сетевой инфраструктуры;
 * создание контроллера кластера;

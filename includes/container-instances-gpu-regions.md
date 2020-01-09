@@ -2,20 +2,20 @@
 author: dlepow
 ms.service: container-instances
 ms.topic: include
-ms.date: 03/01/2019
+ms.date: 10/17/2019
 ms.author: danlep
-ms.openlocfilehash: 48d25427d68f9da4cfe3f25b155f81d801e30fa2
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
-ms.translationtype: HT
+ms.openlocfilehash: 7f5b6780fd330489a893354143dc866bf416c8e8
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185848"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75445813"
 ---
-### <a name="supported-regions"></a>Поддерживаемые регионы
+### <a name="region-availability"></a>Доступность по регионам
 
-* Восточная часть США 
-* Западный регион США 2 
-* Центрально-южная часть США 
-* Западная Европа 
-* Северная Европа
-* Центральная Индия 
+| Регионы | ОС | Доступные номера SKU GPU |
+| -------- | ---- | :-----------: |
+| Восточная часть США, Западная Европа, Западная часть США 2 | Linux | K80, P100, V100 |
+| Юго-Восточная Азия | Linux | P100, V100|
+| Центральная Индия | Linux | V100 |
+| Северная Европа | Linux | K80 |

@@ -1,7 +1,7 @@
 ---
 title: 'Преобразование "Выбор столбцов": ссылка на модуль'
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как использовать модуль преобразования «выбор столбцов» в службе Машинное обучение Azure для создания преобразования, которое выбирает то же подмножество столбцов, что и в данном наборе данных.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как использовать модуль преобразования Select Columns в Машинное обучение Azure для создания преобразования, которое выбирает то же подмножество столбцов, что и в данном наборе данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 10/10/2019
-ms.openlocfilehash: 383adeb2bd081893d4202239cb97c12bf9a5a170
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: d0dfbec3abd379c7bf8add6445296dff74d92a76
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73717031"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75428473"
 ---
 # <a name="select-columns-transform"></a>Преобразование "Выбор столбцов"
 
@@ -55,4 +55,4 @@ ms.locfileid: "73717031"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) для службы машинное обучение Azure. 
+См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 

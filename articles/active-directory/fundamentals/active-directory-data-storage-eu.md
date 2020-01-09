@@ -1,5 +1,5 @@
 ---
-title: Хранение данных удостоверений клиентов из ЕС — Azure Active Directory | Документация Майкрософт
+title: Хранилище данных удостоверений для европейских клиентов — Azure AD
 description: Узнайте, где Azure Active Directory хранит данные, связанные с идентификаторами клиентов из ЕС.
 services: active-directory
 author: msaburnley
@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 03/04/2019
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 178f81cf42e5c57be4a0b69ada6560d46951a3a3
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 7360b11f41cc08c2beb3ffa227e1658881798502
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68942846"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75422999"
 ---
 # <a name="identity-data-storage-for-european-customers-in-azure-active-directory"></a>Хранение данных удостоверений клиентов из ЕС — Azure Active Directory
 Данные удостоверений хранятся в службе Azure AD в географическом расположении на основе адреса, предоставленного вашей организацией, при подписке на Microsoft Online Service, например Office 365 и Azure. Сведения о том, где хранятся данные удостоверений, можно найти в разделе [где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) центра управления безопасностью Майкрософт.
@@ -30,7 +30,7 @@ ms.locfileid: "68942846"
 - Push-уведомления, использующие приложение Microsoft Authenticator, берутся из центров обработки данных США. Кроме того, службы, связанные с поставщиками устройств, также могут играть в игру, а эти службы, возможно, вне Европы.
 - OATH-коды всегда проверяются в США. 
 
-Дополнительные сведения о том, какие сведения о пользователях собираются сервером многофакторной идентификации Azure (сервером MFA) и облачным Azure MFA, см. в статье [сбор данных пользователей многофакторной идентификации Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-reporting-datacollection).
+Дополнительные сведения о том, какие сведения о пользователе собираются в Azure сервер Многофакторной идентификации (сервер MFA) и в облачной службе Azure MFA, см. в статье [сбор данных пользователей многофакторной идентификации Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-reporting-datacollection).
 
 ## <a name="microsoft-azure-active-directory-b2c-azure-ad-b2c"></a>Microsoft Azure Active Directory B2C (Azure AD B2C)
 
@@ -50,16 +50,16 @@ Azure AD DS хранит данные пользователей в том же 
 - Список утвержденных федеративных доменов для приложения
 - Открытый ключ подписи маркера приложения 
 
-Дополнительные сведения о Федерации в Microsoft Exchange Server см. в [разделе Федерация: Справочная статья](https://docs.microsoft.com/exchange/federation-exchange-2013-help) по Exchange 2013.
+Дополнительные сведения о Федерации в Microsoft Exchange Server см. в статье [интеграция: Exchange 2013](https://docs.microsoft.com/exchange/federation-exchange-2013-help) .
 
 
-## <a name="other-considerations"></a>Дополнительные рекомендации
+## <a name="other-considerations"></a>Другие замечания
 
 Службы и приложения, которые интегрируются с Azure AD, имеют доступ к данным удостоверений. Оцените каждую службу и приложение, используемые для определения того, как данные удостоверений обрабатываются этой конкретной службой и приложением, а также соответствуют ли они требованиям к хранению данных вашей компании.
 
 Дополнительные сведения о местонахождении данных служб Майкрософт см. в разделе [Где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) Центра управления безопасностью Майкрософт.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об этих функциях и возможностях, описанных выше, смотрите в следующих статьях.
 - [Что такое Многофакторная идентификация Azure?](https://docs.microsoft.com/azure/active-directory/authentication/multi-factor-authentication)
 

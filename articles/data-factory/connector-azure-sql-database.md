@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 11/13/2019
-ms.openlocfilehash: ad802521fe4202b8c5e27a82e0adf142dfa69228
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.date: 12/13/2019
+ms.openlocfilehash: 7ef28933dc7d10817982690aa3c7bc866c33eb03
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74929646"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75440695"
 ---
 # <a name="copy-and-transform-data-in-azure-sql-database-by-using-azure-data-factory"></a>Копирование и преобразование данных в базе данных SQL Azure с помощью фабрики данных Azure
 
@@ -58,10 +58,10 @@ ms.locfileid: "74929646"
 
 Для связанной службы Базы данных SQL Azure поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства **type** необходимо задать значение **AzureSqlDatabase**. | ДА |
-| connectionString | В свойстве **connectionString** указываются сведения, необходимые для подключения к экземпляру Базы данных SQL Azure. <br/>Пометьте это поле как **SecureString** , чтобы безопасно хранить его в фабрике данных Azure. Вы также можете добавить пароль или ключ субъекта-службы в Azure Key Vault. Если это проверка подлинности SQL, вытяните конфигурацию `password` из строки подключения. Дополнительные сведения см. в примере JSON, который следует за таблицей, и [Храните учетные данные в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
+| type | Для свойства **type** необходимо задать значение **AzureSqlDatabase**. | Да |
+| connectionString | В свойстве **connectionString** указываются сведения, необходимые для подключения к экземпляру Базы данных SQL Azure. <br/>Вы также можете добавить пароль или ключ субъекта-службы в Azure Key Vault. Если это проверка подлинности SQL, вытяните конфигурацию `password` из строки подключения. Дополнительные сведения см. в примере JSON, который следует за таблицей, и [Храните учетные данные в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | servicePrincipalId | Укажите идентификатора клиента приложения. | Да, при использовании проверки подлинности Azure AD с субъектом-службой |
 | servicePrincipalKey | Укажите ключ приложения. Пометьте это поле как **SecureString** , чтобы безопасно хранить его в фабрике данных Azure, или [сослаться на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да, при использовании проверки подлинности Azure AD с субъектом-службой |
 | tenant | Укажите сведения о клиенте, например имя домена или идентификатор клиента, в котором находится приложение. Извлеките его, наведя указатель мыши на правый верхний угол портал Azure. | Да, при использовании проверки подлинности Azure AD с субъектом-службой |
@@ -76,7 +76,7 @@ ms.locfileid: "74929646"
 >[!TIP]
 >При возникновении ошибки с кодом ошибки "UserErrorFailedToConnectToSqlServer" и сообщением, например "ограничение сеанса для базы данных равно XXX и достигнуто", добавьте `Pooling=false` в строку подключения и повторите попытку.
 
-### <a name="sql-authentication"></a>Аутентификация SQL
+### <a name="sql-authentication"></a>Проверка подлинности SQL
 
 #### <a name="linked-service-example-that-uses-sql-authentication"></a>Пример использования проверки подлинности SQL в связанной службе
 
@@ -86,10 +86,7 @@ ms.locfileid: "74929646"
     "properties": {
         "type": "AzureSqlDatabase",
         "typeProperties": {
-            "connectionString": {
-                "type": "SecureString",
-                "value": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;User ID=<username>@<servername>;Password=<password>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30"
-            }
+            "connectionString": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;User ID=<username>@<servername>;Password=<password>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30"
         },
         "connectVia": {
             "referenceName": "<name of Integration Runtime>",
@@ -107,10 +104,7 @@ ms.locfileid: "74929646"
     "properties": {
         "type": "AzureSqlDatabase",
         "typeProperties": {
-            "connectionString": {
-                "type": "SecureString",
-                "value": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;User ID=<username>@<servername>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30"
-            },
+            "connectionString": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;User ID=<username>@<servername>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30",
             "password": { 
                 "type": "AzureKeyVaultSecret", 
                 "store": { 
@@ -140,7 +134,7 @@ ms.locfileid: "74929646"
 
 2. [Предоставьте администратору Azure Active Directory](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server) SQL Server Azure на портал Azure, если вы еще этого не сделали. Администратор Azure AD должен быть пользователем Azure AD или группой Azure AD, но он не может быть субъектом-службой. Этот шаг нужен, чтобы затем можно было использовать удостоверение Azure AD для создания пользователя автономной базы данных для субъекта-службы.
 
-3. [Создайте пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities) для субъекта-службы. Подключитесь к базе данных из или, в которую необходимо скопировать данные с помощью таких средств, как SQL Server Management Studio, с удостоверением Azure AD, имеющим по крайней мере разрешение ALTER ANY USER. Выполните следующую инструкцию T-SQL: 
+3. [Создайте пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities) для субъекта-службы. Подключитесь к базе данных из или, в которую необходимо скопировать данные с помощью таких средств, как SQL Server Management Studio, с удостоверением Azure AD, имеющим по крайней мере разрешение ALTER ANY USER. Выполните следующий код T-SQL: 
   
     ```sql
     CREATE USER [your application name] FROM EXTERNAL PROVIDER;
@@ -163,10 +157,7 @@ ms.locfileid: "74929646"
     "properties": {
         "type": "AzureSqlDatabase",
         "typeProperties": {
-            "connectionString": {
-                "type": "SecureString",
-                "value": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;Connection Timeout=30"
-            },
+            "connectionString": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;Connection Timeout=30",
             "servicePrincipalId": "<service principal id>",
             "servicePrincipalKey": {
                 "type": "SecureString",
@@ -184,13 +175,13 @@ ms.locfileid: "74929646"
 
 ### <a name="managed-identity"></a> Управляемые удостоверения для аутентификации ресурсов Azure
 
-Фабрика данных может быть связана с [управляемым удостоверением ресурсов Azure](data-factory-service-identity.md), которое представляет отдельную фабрику данных. Это управляемое удостоверение можно использовать для проверки подлинности базы данных SQL Azure. Назначенная фабрика может получить доступ и скопировать данные из вашей базы данных или в нее, используя этот идентификатор.
+Фабрика данных может быть связана с [управляемым удостоверением ресурсов Azure](data-factory-service-identity.md), которое представляет отдельную фабрику данных. Это управляемое удостоверение можно использовать для проверки подлинности базы данных SQL Azure. С помощью этого удостоверения назначенная фабрика может обращаться к данным и копировать их из вашей базы данных или в нее.
 
 Чтобы использовать аутентификацию управляемого удостоверения, выполните следующие действия.
 
 1. [Предоставьте администратору Azure Active Directory](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server) SQL Server Azure на портал Azure, если вы еще этого не сделали. Администратор Azure AD может быть пользователем Azure AD или группой Azure AD. Если вы предоставляете группе с управляемым удостоверением роль администратора, пропустите шаги 3 и 4. Администратор имеет полный доступ к базе данных.
 
-2. [Создание пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities) для управляемого удостоверения в фабрике данных Azure. Подключитесь к базе данных из или, в которую необходимо скопировать данные с помощью таких средств, как SQL Server Management Studio, с удостоверением Azure AD, имеющим по крайней мере разрешение ALTER ANY USER. Выполните следующую инструкцию T-SQL: 
+2. [Создание пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities) для управляемого удостоверения в фабрике данных Azure. Подключитесь к базе данных из или, в которую необходимо скопировать данные с помощью таких средств, как SQL Server Management Studio, с удостоверением Azure AD, имеющим по крайней мере разрешение ALTER ANY USER. Выполните следующий код T-SQL: 
   
     ```sql
     CREATE USER [your Data Factory name] FROM EXTERNAL PROVIDER;
@@ -212,10 +203,7 @@ ms.locfileid: "74929646"
     "properties": {
         "type": "AzureSqlDatabase",
         "typeProperties": {
-            "connectionString": {
-                "type": "SecureString",
-                "value": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;Connection Timeout=30"
-            }
+            "connectionString": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;Connection Timeout=30"
         },
         "connectVia": {
             "referenceName": "<name of Integration Runtime>",
@@ -231,11 +219,11 @@ ms.locfileid: "74929646"
 
 Для набора данных SQL Azure поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство **type** для набора данных должно иметь значение: **AzureSqlTable**. | ДА |
-| schema | Имя схемы. |"Нет" для источника, "Да" для приемника  |
-| таблица | Имя таблицы или представления. |"Нет" для источника, "Да" для приемника  |
+| type | Свойство **type** для набора данных должно иметь значение: **AzureSqlTable**. | Да |
+| схема | Имя схемы. |"Нет" для источника, "Да" для приемника  |
+| table | Имя таблицы или представления. |"Нет" для источника, "Да" для приемника  |
 | tableName | Имя таблицы или представления со схемой. Это свойство поддерживается для обеспечения обратной совместимости. Для новой рабочей нагрузки используйте `schema` и `table`. | "Нет" для источника, "Да" для приемника |
 
 #### <a name="dataset-properties-example"></a>Пример свойств набора данных
@@ -267,9 +255,9 @@ ms.locfileid: "74929646"
 
 Чтобы скопировать данные из базы данных SQL Azure, в разделе **источник** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство **Type** источника действия копирования должно иметь значение **азуресклсаурце**. Тип "SqlSource" по-прежнему поддерживается для обратной совместимости. | ДА |
+| type | Свойство **Type** источника действия копирования должно иметь значение **азуресклсаурце**. Тип "SqlSource" по-прежнему поддерживается для обратной совместимости. | Да |
 | sqlReaderQuery | Это свойство применяет пользовательский SQL-запрос для чтения данных. Например, `select * from MyTable`. | Нет |
 | sqlReaderStoredProcedureName | Имя хранимой процедуры, которая считывает данные из исходной таблицы. Последней инструкцией SQL должна быть инструкция SELECT в хранимой процедуре. | Нет |
 | storedProcedureParameters | Параметры для хранимой процедуры.<br/>Допустимые значения: пары имен или значений. Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. | Нет |
@@ -373,9 +361,9 @@ GO
 
 Чтобы скопировать данные в базу данных SQL Azure, в разделе **приемника** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство **Type** приемника действия копирования должно иметь значение **азуресклсинк**. Тип "SqlSink" по-прежнему поддерживается для обратной совместимости. | ДА |
+| type | Свойство **Type** приемника действия копирования должно иметь значение **азуресклсинк**. Тип "SqlSink" по-прежнему поддерживается для обратной совместимости. | Да |
 | writeBatchSize | Число строк, вставляемых в таблицу SQL для *каждого пакета*.<br/> Допустимое значение: **целое число** (количество строк). По умолчанию фабрика данных Azure динамически определяет соответствующий размер пакета в зависимости от размера строки. | Нет |
 | writeBatchTimeout | Время ожидания до выполнения операции пакетной вставки, пока не закончится срок ее действия.<br/> Допустимое значение — **timespan**. Например, "00:30:00" (30 минут). | Нет |
 | preCopyScript | Укажите SQL-запрос для выполнения действия копирования перед записью данных в базу данных SQL Azure. Он вызывается однократно при каждом запуске копирования. Это свойство используется для очистки предварительно загруженных данных. | Нет |
@@ -573,7 +561,45 @@ END
 
 ## <a name="mapping-data-flow-properties"></a>Сопоставление свойств потока данных
 
-Дополнительные сведения см. в статье преобразование [источника](data-flow-source.md) и [Преобразование приемника](data-flow-sink.md) в потоке данных сопоставления.
+При преобразовании данных в потоке сопоставления данных можно выполнять чтение и запись в таблицы из базы данных SQL Azure. Дополнительные сведения см. в разделе Преобразование [исходного кода](data-flow-source.md) и [приемника](data-flow-sink.md) при сопоставлении потоков данных.
+
+### <a name="source-transformation"></a>Преобразование источника
+
+Параметры, относящиеся к базе данных SQL Azure, доступны на вкладке " **Параметры источника** " преобразования "источник". 
+
+**Входные данные:** Укажите, следует ли указывать источник в таблице (эквивалентно ```Select * from <table-name>```) или введите пользовательский SQL-запрос.
+
+**Запрос**: при выборе запроса в поле ввода введите SQL-запрос для источника. Этот параметр переопределяет любую таблицу, выбранную в наборе данных. Предложения **ORDER BY** не поддерживаются здесь, но можно задать полную инструкцию SELECT FROM. Можно также использовать определяемые пользователем табличные функции. **SELECT * FROM удфжетдата ()** — это определяемая пользователем функция в SQL, возвращающая таблицу. Этот запрос приведет к созданию исходной таблицы, которую можно использовать в потоке данных. Использование запросов также является отличным способом сокращения количества строк для тестирования или поиска. 
+
+* Пример SQL: ```Select * from MyTable where customerId > 1000 and customerId < 2000```
+
+**Размер пакета**: введите размер пакета для фрагментов больших данных в операциях чтения.
+
+**Уровень изоляции**: значение по умолчанию для источников SQL в потоке данных сопоставления — READ UNCOMMITTED. Здесь можно изменить уровень изоляции на одно из следующих значений:
+* Фиксированное чтение
+* Незафиксированное чтение
+* Повторяющаяся операция чтения
+* Упорядочиваемый уровень изоляции
+* Нет (пропускать уровень изоляции)
+
+![Уровень изоляции](media/data-flow/isolationlevel.png "Уровень изоляции")
+
+### <a name="sink-transformation"></a>Преобразование приемника
+
+Параметры, относящиеся к базе данных SQL Azure, доступны на вкладке " **Параметры** " преобразования "приемник".
+
+**Метод обновления:** Определяет, какие операции разрешены в назначении базы данных. По умолчанию разрешены только вставки. Для обновления, Upsert или удаления строк необходимо преобразование «изменение строки» для добавления тегов в строки для этих действий. Для обновлений, операции Upsert и DELETE необходимо задать ключевой столбец или столбцы, чтобы определить, какая строка будет изменена.
+
+**Действие таблицы:** Определяет, следует ли повторно создавать или удалять все строки целевой таблицы перед записью.
+* Нет: никаких действий над таблицей не выполняется.
+* Повторное создание: таблица будет удалена и создана повторно. Требуется при динамическом создании таблицы.
+* Усечение: все строки из целевой таблицы будут удалены.
+
+**Размер пакета**: определяет, сколько строк записывается в каждом контейнере. Более крупные размеры пакетов улучшают сжатие и оптимизацию памяти, но при кэшировании данных возникает риск нехватки памяти.
+
+**Пред-и POST-скрипты SQL**: введите многострочные скрипты SQL, которые будут выполняться до (Предварительная обработка) и после чего в базу данных приемника записываются данные (после обработки).
+
+![пред и POST скрипты обработки SQL](media/data-flow/prepost1.png "Скрипты обработки SQL")
 
 ## <a name="data-type-mapping-for-azure-sql-database"></a>Сопоставление типов данных для Базы данных SQL Azure
 
@@ -581,23 +607,23 @@ END
 
 | Тип данных в Базе данных SQL Azure | Промежуточный тип данных Фабрики данных Azure |
 |:--- |:--- |
-| bigint |Int64 |
+| BIGINT |Int64 |
 | binary |Byte[] |
-| bit |Логический |
+| bit |Логическое |
 | char |String, Char[] |
-| date |Дата и время |
-| DateTime |Дата и время |
+| Дата |Дата и время |
+| Datetime |Дата и время |
 | datetime2 |Дата и время |
 | Datetimeoffset |DateTimeOffset |
 | Decimal |Decimal |
 | FILESTREAM attribute (varbinary(max)) |Byte[] |
-| Float |DOUBLE |
-| image |Byte[] |
+| Float |Double |
+| изображение |Byte[] |
 | int |Int32 |
 | money |Decimal |
 | nchar |String, Char[] |
 | ntext |String, Char[] |
-| numeric |Decimal |
+| NUMERIC |Decimal |
 | nvarchar |String, Char[] |
 | real |Отдельная |
 | rowversion |Byte[] |
@@ -605,14 +631,14 @@ END
 | smallint |Int16 |
 | smallmoney |Decimal |
 | sql_variant |Объекты |
-| текст |String, Char[] |
-| time |Интервал времени |
-| Timestamp |Byte[] |
+| text |String, Char[] |
+| time |TimeSpan |
+| TIMESTAMP |Byte[] |
 | tinyint |Byte |
-| uniqueidentifier |GUID |
+| UNIQUEIDENTIFIER |GUID |
 | varbinary |Byte[] |
 | varchar |String, Char[] |
-| Xml |xml |
+| Xml |Xml |
 
 >[!NOTE]
 > В настоящее время для типов данных, которые сопоставляются с промежуточными типом Decimal, Фабрика данных Azure поддерживает точность до 28. Если у вас есть данные с точностью больше 28, рассмотрите возможность преобразования в строку в SQL-запросе.

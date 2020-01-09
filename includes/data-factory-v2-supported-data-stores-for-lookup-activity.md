@@ -1,19 +1,19 @@
 ---
-title: включение файла
+title: включить файл
 description: поддерживаемые соединители для действия поиска
 services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: include
-ms.date: 10/25/2019
+ms.date: 12/13/2019
 ms.author: jingwang
 ms.custom: include file
-ms.openlocfilehash: 527114adbe2422148605fd878723ae74fa7c3304
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: fb44f217b7a940bc07a164e482b67ddb53835715
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72958751"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75440474"
 ---
 | Категория | Хранилище данных |
 |:--- |:--- |
@@ -21,14 +21,14 @@ ms.locfileid: "72958751"
 | &nbsp; |[Azure Cosmos DB (SQL API)](../articles/data-factory/connector-azure-cosmos-db.md) |
 | &nbsp; |[Обозреватель данных Azure](../articles/data-factory/connector-azure-data-explorer.md) |
 | &nbsp; |[Хранилище Azure Data Lake Gen1](../articles/data-factory/connector-azure-data-lake-store.md) |
-| &nbsp; |[Хранилище Azure Data Lake Storage 2-го поколения](../articles/data-factory/connector-azure-data-lake-storage.md) |
+| &nbsp; |[Azure Data Lake Storage 2-го поколения](../articles/data-factory/connector-azure-data-lake-storage.md) |
 | &nbsp; |[База данных Azure для MariaDB](../articles/data-factory/connector-azure-database-for-mariadb.md) |
 | &nbsp; |[База данных Azure для MySQL](../articles/data-factory/connector-azure-database-for-mysql.md) |
 | &nbsp; |[База данных Azure для PostgreSQL](../articles/data-factory/connector-azure-database-for-postgresql.md) |
 | &nbsp; |[Файлы Azure](../articles/data-factory/connector-azure-file-storage.md) |
-| &nbsp; |[база данных SQL Azure;](../articles/data-factory/connector-azure-sql-database.md) |
+| &nbsp; |[База данных SQL Azure](../articles/data-factory/connector-azure-sql-database.md) |
 | &nbsp; |[Управляемый экземпляр Базы данных SQL Azure](../articles/data-factory/connector-azure-sql-database-managed-instance.md) |
-| &nbsp; |[Хранилище данных SQL Azure](../articles/data-factory/connector-azure-sql-data-warehouse.md) |
+| &nbsp; |[Azure синапсе Analytics (ранее — хранилище данных SQL)](../articles/data-factory/connector-azure-sql-data-warehouse.md) |
 | &nbsp; |[Хранилище таблиц Azure](../articles/data-factory/connector-azure-table-storage.md) |
 | **База данных** |[Amazon Redshift](../articles/data-factory/connector-amazon-redshift.md) |
 | &nbsp; |[DB2](../articles/data-factory/connector-db2.md) |
@@ -58,7 +58,7 @@ ms.locfileid: "72958751"
 | &nbsp; |[Vertica](../articles/data-factory/connector-vertica.md) |
 | **NoSQL** |[Cassandra](../articles/data-factory/connector-cassandra.md) |
 | &nbsp; |[Couchbase (предварительная версия)](../articles/data-factory/connector-couchbase.md) |
-| **File** |[Amazon S3](../articles/data-factory/connector-amazon-simple-storage-service.md) |
+| **Файл** |[Amazon S3](../articles/data-factory/connector-amazon-simple-storage-service.md) |
 | &nbsp; |[Файловая система](../articles/data-factory/connector-file-system.md) |
 | &nbsp; |[FTP](../articles/data-factory/connector-ftp.md) |
 | &nbsp; |[Google Cloud Storage](../articles/data-factory/connector-google-cloud-storage.md) |

@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c2ccfc2219c063a9cef25f82cef33f446993a02
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: f446f1549b3efcd5f27752fac972dfd80c8650d6
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74848380"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75425400"
 ---
 # <a name="integrate-your-vpn-infrastructure-with-azure-mfa-by-using-the-network-policy-server-extension-for-azure"></a>Интеграция инфраструктуры VPN с Azure MFA с помощью расширения сервера политики сети для Azure
 
@@ -82,7 +82,7 @@ ms.locfileid: "74848380"
 * программное обеспечение Windows Server;
 * Библиотеки
 * синхронизация Azure Active Directory (Azure AD) с локальной службой Active Directory;
-* Идентификатор GUID Azure Active Directory
+* идентификатор GUID Azure Active Directory.
 
 ### <a name="vpn-infrastructure"></a>Инфраструктура VPN
 
@@ -119,7 +119,7 @@ ms.locfileid: "74848380"
 
 Дополнительные сведения об Azure AD Connect см. в статье [История выпусков версий соединителей](../hybrid/whatis-hybrid-identity.md).
 
-### <a name="azure-active-directory-guid-id"></a>Идентификатор GUID Azure Active Directory
+### <a name="azure-active-directory-guid-id"></a>идентификатор GUID Azure Active Directory.
 
 Чтобы установить расширение NPS, необходимо знать идентификатор GUID Azure Active Directory. Инструкции по поиску идентификатора GUID Azure Active Directory приведены в следующем разделе.
 
@@ -167,7 +167,7 @@ ms.locfileid: "74848380"
 
     ![Создание нового RADIUS-окна клиента](./media/howto-mfa-nps-extension-vpn/image5.png)
 
-6. Нажмите кнопку **ОК**, а затем щелкните **Создать**.
+6. Нажмите кнопку **ОК**, а затем кнопку **Далее**.
 
 7. В окне **Настройка методов проверки подлинности** примите параметр по умолчанию (**Шифрованная проверка (Microsoft, версия 2, MS-CHAP v2)** ) или выберите другой параметр, после чего нажмите кнопку **Далее**.
 
@@ -178,7 +178,7 @@ ms.locfileid: "74848380"
 
     ![Укажите окно групп пользователей, чтобы разрешить или запретить доступ](./media/howto-mfa-nps-extension-vpn/image7.png)
 
-9. Щелкните **Далее**.
+9. Выберите **Далее**.
 
 10. В окне **Задайте IP-фильтры** щелкните **Далее**.
 
@@ -240,11 +240,11 @@ ms.locfileid: "74848380"
 
 7. В окне **Добавление RADIUS-сервера** выполните следующие действия.
 
-    а) В поле **Имя сервера** добавьте имя или IP-адрес сервера RADIUS, настроенного в предыдущем разделе.
+    а. В поле **Имя сервера** добавьте имя или IP-адрес сервера RADIUS, настроенного в предыдущем разделе.
 
-    б) В разделе **Общий секрет** щелкните **Изменить** и введите общий секретный пароль, который вы создали и записали ранее.
+    b. В разделе **Общий секрет** щелкните **Изменить** и введите общий секретный пароль, который вы создали и записали ранее.
 
-    в) В поле **время ожидания (секунды)** введите значение **30**.  
+    c. В поле **время ожидания (секунды)** введите значение **30**.  
     Это необходимо, чтобы предоставить достаточно времени для второго фактора аутентификации.
 
     ![Окно добавления сервера RADIUS, которое настраивает время ожидания](./media/howto-mfa-nps-extension-vpn/image16.png)
@@ -326,13 +326,13 @@ ms.locfileid: "74848380"
 
 1. Войдите на [портал Azure](https://portal.azure.com) как глобальный администратор клиента Azure.
 
-2. В области слева нажмите кнопку **Azure Active Directory**.
+2. В меню портал Azure выберите **Azure Active Directory**или выполните поиск и выберите **Azure Active Directory** на любой странице.
 
 3. Выберите **Свойства**.
 
 4. Чтобы скопировать идентификатор Azure AD, нажмите кнопку **Копировать**.
 
-    ![Идентификатор каталога Azure AD в портал Azure](./media/howto-mfa-nps-extension-vpn/image35.png)
+    ![Идентификатор каталога Azure AD в портал Azure](./media/howto-mfa-nps-extension-vpn/azure-active-directory-id-in-azure-portal.png)
 
 ### <a name="install-the-nps-extension"></a>Установка расширения NPS
 

@@ -1,6 +1,6 @@
 ---
 title: Аварийное восстановление для учетных записей интеграции
-description: Настройка аварийного восстановления в разных регионах для учетных записей интеграции в Azure Logic Apps
+description: Настройка учетных записей интеграции и артефактов B2B с помощью аварийного восстановления в разных регионах Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 author: divyaswarnkar
@@ -8,19 +8,19 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 04/10/2017
-ms.openlocfilehash: 5ab0b14a190461d4dfba74e277f3d2ec30d9981a
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 25dff0cb14467513bf1cc60fd1fb6c2205bd2276
+ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74793134"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75666909"
 ---
 # <a name="set-up-cross-region-disaster-recovery-for-integration-accounts-in-azure-logic-apps"></a>Настройка аварийного восстановления в разных регионах для учетных записей интеграции в Azure Logic Apps
 
 Рабочие нагрузки B2B включают денежные транзакции, например заказы и счета. Для компаний в случае аварии чрезвычайно важно быстро восстановить систему для соответствия Соглашениям об уровне обслуживания корпоративного уровня по договоренности с партнерами. В этой статье описывается создание плана обеспечения непрерывности бизнес-процессов для рабочих нагрузок B2B. 
 
 * Готовность к аварийному восстановлению 
-* отработка отказа в дополнительный регион во время аварии; 
+* Отработка отказа в дополнительный регион во время аварии 
 * Восстановление размещения в основной регион после аварийного восстановления
 
 ## <a name="disaster-recovery-readiness"></a>Готовность к аварийному восстановлению  

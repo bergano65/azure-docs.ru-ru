@@ -2,19 +2,15 @@
 title: Управление учетными записями запуска от имени службы автоматизации Azure
 description: В этой статье объясняется, как управлять учетными записями запуска от имени с помощью PowerShell или портала.
 services: automation
-ms.service: automation
 ms.subservice: shared-capabilities
-author: mgoedtel
-ms.author: magoedte
 ms.date: 05/24/2019
 ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: 2ce6c27487e834325b59fb21ba0d54d1e788ea57
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 34dd15ee638335048c983fbb752bd812291456ca
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74951383"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75418058"
 ---
 # <a name="manage-azure-automation-run-as-accounts"></a>Управление учетными записями запуска от имени службы автоматизации Azure
 
@@ -36,7 +32,7 @@ ms.locfileid: "74951383"
   * Для создания или продления подписки необходимо быть соадминистратором в подписке.
 
   > [!NOTE]
-  > Подписки поставщика облачных решений Azure (Azure CSP) поддерживают только модель Azure Resource Manager, в этой программе отсутствуют все службы, созданные с помощью других моделей. При использовании подписки CSP учетная запись запуска от имени Azure не создается. Учетная запись запуска от имени Azure по-прежнему создается. Дополнительные сведения о подписках CSP см. в разделе [Доступные службы в подписках CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services#comments).
+  > Подписки поставщика облачных решений Azure (Azure CSP) поддерживают только модель Azure Resource Manager; в этой программе отсутствуют все службы, созданные с помощью других моделей. При использовании подписки CSP учетная запись запуска от имени Azure не создается. Учетная запись запуска от имени Azure по-прежнему создается. Дополнительные сведения о подписках CSP см. в разделе [Доступные службы в подписках CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services#comments).
 
   > [!NOTE]
   > Субъект-служба для учетной записи запуска от имени не имеет разрешений на чтение Azure Active Directory по умолчанию. Если вы хотите добавить разрешения для чтения или управления Azure Active Directory, необходимо предоставить это разрешение для субъекта-службы в разделе **разрешения API**. Дополнительные сведения см. в разделе [Добавление разрешений для доступа к веб-API](../active-directory/develop/quickstart-configure-app-access-web-apis.md#add-permissions-to-access-web-apis).

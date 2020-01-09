@@ -1,25 +1,16 @@
 ---
-title: Настройка сетевых режимов для службы контейнеров Azure Service Fabric | Документация Майкрософт
+title: Настройка сетевых режимов для служб контейнеров
 description: Узнайте, как настроить разные сетевые режимы, которые поддерживаются в Azure Service Fabric.
-services: service-fabric
-documentationcenter: .net
 author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: d552c8cd-67d1-45e8-91dc-871853f44fc6
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 2/23/2018
 ms.author: atsenthi
-ms.openlocfilehash: aa7b63453a5147742e27b9bb32ad05221e745f8c
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: ba1fa92559d39a481008d1dd18036e4232be1bfa
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72168806"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75639808"
 ---
 # <a name="service-fabric-container-networking-modes"></a>Сетевые режимы контейнеров Service Fabric
 
@@ -30,7 +21,7 @@ ms.locfileid: "72168806"
 Когда служба контейнеров перезапускается или перемещается на другой узел в кластере, ее IP-адрес изменяется. По этой причине мы не рекомендуем использовать динамически назначаемый IP-адрес для обнаружения служб контейнеров. Для обнаружения служб следует использовать только службу именования Service Fabric или службу DNS. 
 
 >[!WARNING]
->Azure позволяет всего 65 356 IP-адресов на виртуальную сеть. Сумма количества узлов и количества экземпляров службы контейнеров (использующих открытый режим) не может превышать 65 356 IP-адресов в виртуальной сети. Для сценариев высокой плотности мы рекомендуем применять сетевой режим NAT. Кроме того, другие зависимости, такие как балансировщик нагрузки, будут иметь другие [ограничения](https://docs.microsoft.com/azure/azure-subscription-service-limits) , которые следует учитывать. В настоящее время до 50 IP-адресов на узел проверено и проверено стабильно. 
+>Azure позволяет всего 65 356 IP-адресов на виртуальную сеть. Сумма количества узлов и количества экземпляров службы контейнеров (использующих открытый режим) не может превышать 65 356 IP-адресов в виртуальной сети. Для сценариев высокой плотности мы рекомендуем применять сетевой режим NAT. Кроме того, другие зависимости, такие как балансировщик нагрузки, будут иметь другие [ограничения](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits) , которые следует учитывать. В настоящее время до 50 IP-адресов на узел проверено и проверено стабильно. 
 >
 
 ## <a name="set-up-open-networking-mode"></a>Настройка открытого сетевого режима
@@ -202,12 +193,12 @@ ms.locfileid: "72168806"
 
    |Параметр |Значение | |
    | --- | --- | --- |
-   |Priority |2000 | |
-   |ИМЯ |Custom_Dns  | |
-   |Source |VirtualNetwork | |
-   |Destination | VirtualNetwork | |
-   |Service | DNS (UDP/53) | |
-   |Action | Allow  | |
+   |Приоритет |2000 | |
+   |Имя |Custom_Dns  | |
+   |Источник |Виртуальная сеть | |
+   |Место назначения | Виртуальная сеть | |
+   |Служба | DNS (UDP/53) | |
+   |Действия | Allow  | |
    | | |
 
 4. Укажите сетевой режим в манифесте приложения для каждой службы: `<NetworkConfig NetworkType="Open">`. При использовании **открытого** сетевого режима служба получит выделенный IP-адрес. Если режим не указан, по умолчанию служба использует режим **NAT**. В следующем примере манифеста видно, что службы `NodeContainerServicePackage1` и `NodeContainerServicePackage2` могут ожидать передачи данных на одном и том же порту (обе службы прослушивают `Endpoint1`). Если установлен открытый режим сети, вы не сможете задать конфигурации `PortBinding`.
@@ -271,7 +262,7 @@ ms.locfileid: "72168806"
             ],          
  ``` 
  
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Моделирование приложения в Service Fabric](service-fabric-application-model.md)
 * [Указание ресурсов в манифесте службы](https://docs.microsoft.com/azure/service-fabric/service-fabric-service-manifest-resources) для Service Fabric
 * [Развертывание контейнера Windows в Service Fabric на платформе Windows Server 2016](service-fabric-get-started-containers.md)

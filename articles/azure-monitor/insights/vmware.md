@@ -4,15 +4,15 @@ description: Узнайте о том, как решение для монито
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
-author: mgoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 05/04/2018
-ms.openlocfilehash: dc453ad42312bb096aed1356d376b0906870a7b0
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: ac735c9131ebe7b7273d93a927cb4d4a8be24508
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900612"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75399190"
 ---
 # <a name="vmware-monitoring-deprecated-solution-in-azure-monitor"></a>Мониторинг VMware (не рекомендуется) решение в Azure Monitor
 
@@ -67,7 +67,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 
 1. В портал Azure выполните запрос журнала для `VMware_CL`. Когда Azure Monitor собирает данные системного журнала, он сохраняет формат системного журнала. На портале регистрируются некоторые поля, включая *Hostname* и *ProcessName*.  
 
-    ![Тип](./media/vmware/type.png)  
+    ![type](./media/vmware/type.png)  
 
     Если представление с результатами поиска по журналам похоже на изображенное выше, это значит, что панель мониторинга для соответствующего решения для мониторинга VMware настроена.  
 
@@ -82,7 +82,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 
 В следующей таблице приведены примеры типов данных, собираемых решением для мониторинга VMware.
 
-| Имя поля | Description (Описание) |
+| Имя поля | description |
 | --- | --- |
 | Device_s |Запоминающие устройства VMware |
 | ESXIFailure_s |Типы сбоев |
@@ -189,13 +189,13 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
   1. Log Analytics ожидает передачи данных через порт 1514. Чтобы проверить, что он открыт, выполните следующую команду: `netstat -a | grep 1514`
   1. Вы увидите, что порт `1514/tcp` открыт. В противном случае проверьте, правильно ли установлен агент OMS. Если сведения о порте не отображаются, порт системного журнала не открыт на виртуальной машине.
 
-    а) Убедитесь, что агент Log Analytics запущен, с помощью `ps -ef | grep oms`. Если это не так, запустите его, выполнив команду `sudo /opt/microsoft/omsagent/bin/service_control start`
+    а. Убедитесь, что агент Log Analytics запущен, с помощью `ps -ef | grep oms`. Если это не так, запустите его, выполнив команду `sudo /opt/microsoft/omsagent/bin/service_control start`
 
-     б) Откройте файл `/etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf` .
+     b. Откройте файл `/etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf` .
 
-     в) Убедитесь, что настройки пользователей и группы допустимы. Они должны выглядеть следующим образом: `-rw-r--r-- 1 omsagent omiusers 677 Sep 20 16:46 vmware_esxi.conf`
+     c. Убедитесь, что настройки пользователей и группы допустимы. Они должны выглядеть следующим образом: `-rw-r--r-- 1 omsagent omiusers 677 Sep 20 16:46 vmware_esxi.conf`
 
-     г) Если файл не существует или настройки пользователя и группы неправильны, выполните действия по исправлению, приведенные в разделе [Подготовка сервера под управлением Linux](#prepare-a-linux-server).
+     d. Если файл не существует или настройки пользователя и группы неправильны, выполните действия по исправлению, приведенные в разделе [Подготовка сервера под управлением Linux](#prepare-a-linux-server).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Используйте [запросы журналов в Log Analytics](../log-query/log-query-overview.md) для просмотра подробных данных об узле VMware.

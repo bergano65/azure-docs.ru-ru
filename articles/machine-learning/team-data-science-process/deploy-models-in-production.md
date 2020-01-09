@@ -10,24 +10,24 @@ ms.topic: article
 ms.date: 11/30/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 6f371d07fdf09aae6ce4396f0916758f8588506b
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: ed48ab9f85d28bec926120fea87a5ccf8bb6f9af
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73670311"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75526776"
 ---
 # <a name="deploy-models-to-production-to-play-an-active-role-in-making-business-decisions"></a>Развертывание моделей в рабочей среде должно играть активную роль в принятии бизнес-решений
 
-Развертывание в рабочей среде позволяет использовать модель для выполнения активной роли в организации. Прогнозы, полученные от развернутой модели можно использовать для принятия бизнес-решений.
+Развертывание в рабочей среде позволяет использовать модель как важный элемент в работе организации. Прогнозы, полученные от развернутой модели можно использовать для принятия бизнес-решений.
 
 ## <a name="production-platforms"></a>Рабочие платформы
 
 Поместить модели в рабочую среду можно с использованием разных подходов и платформ. Вот некоторые из них:
 
-- [Где развертываются модели с Машинное обучение Azure](../service/how-to-deploy-and-where.md)
+- [Где развертываются модели с Машинное обучение Azure](../how-to-deploy-and-where.md)
 - [Развертывание модели на сервере SQL Server](https://docs.microsoft.com/sql/advanced-analytics/tutorials/sqldev-py6-operationalize-the-model)
-- [Сервер машинного обучения Майкрософт](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
+- [Microsoft Machine Learning Server](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
 
 >[!NOTE]
 >Перед развертыванием необходимо убедиться, что показатели задержки модели достаточно малы для использования в рабочей среде.

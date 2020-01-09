@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019
 ms.date: 01/22/2018
-ms.openlocfilehash: a019928f710d4b94cc3e5c4c14b559ef7d491ae2
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 4ab467c0dc5014ec6c8a543fe7e8ecc136dfa02d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74926649"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75439505"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "74926649"
 В целом это руководство включает следующие шаги:
 
 > [!div class="checklist"]
-> * Создание фабрики данных.
+> * Создали фабрику данных.
 > * Создание связанных служб базы данных SQL Azure, хранилища данных SQL Azure и службы хранилища Azure.
 > * Создание наборов данных Базы данных SQL Azure и хранилища данных SQL.
 > * Создание конвейера для поиска таблиц, которые нужно скопировать, и конвейера для выполнения операции копирования. 
@@ -44,7 +44,7 @@ ms.locfileid: "74926649"
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -128,10 +128,7 @@ ms.locfileid: "74926649"
         "properties": {
             "type": "AzureSqlDatabase",
             "typeProperties": {
-                "connectionString": {
-                    "type": "SecureString",
-                    "value": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;User ID=<username>@<servername>;Password=<password>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30"
-                }
+                "connectionString": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;User ID=<username>@<servername>;Password=<password>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30"
             }
         }
     }
@@ -167,10 +164,7 @@ ms.locfileid: "74926649"
         "properties": {
             "type": "AzureSqlDW",
             "typeProperties": {
-                "connectionString": {
-                    "type": "SecureString",
-                    "value": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;User ID=<username>@<servername>;Password=<password>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30"
-            }
+                "connectionString": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;User ID=<username>@<servername>;Password=<password>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30"
             }
         }
     }
@@ -206,10 +200,7 @@ ms.locfileid: "74926649"
         "properties": {
             "type": "AzureStorage",
             "typeProperties": {
-                "connectionString": {
-                    "type": "SecureString",
-                    "value": "DefaultEndpointsProtocol=https;AccountName=<accountName>;AccountKey=<accountKey>"
-                }
+                "connectionString": "DefaultEndpointsProtocol=https;AccountName=<accountName>;AccountKey=<accountKey>"
             }
         }
     }
@@ -582,11 +573,11 @@ ms.locfileid: "74926649"
 
 3. Подключитесь к хранилищу данных-приемнику SQL Azure и подтвердите, что данные из базы данных SQL Azure скопированы надлежащим образом.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этом руководстве вы выполнили следующие шаги: 
 
 > [!div class="checklist"]
-> * Создание фабрики данных.
+> * Создали фабрику данных.
 > * Создание связанных служб базы данных SQL Azure, хранилища данных SQL Azure и службы хранилища Azure.
 > * Создание наборов данных Базы данных SQL Azure и хранилища данных SQL.
 > * Создание конвейера для поиска таблиц, которые нужно скопировать, и конвейера для выполнения операции копирования. 

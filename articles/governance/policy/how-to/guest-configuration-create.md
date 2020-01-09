@@ -1,14 +1,14 @@
 ---
 title: Создание политик конфигурации гостя
 description: Узнайте, как создать политику гостевой конфигурации политики Azure для виртуальных машин Windows или Linux с Azure PowerShell.
-ms.date: 11/21/2019
+ms.date: 12/16/2019
 ms.topic: how-to
-ms.openlocfilehash: d31c03f05f3a27207eb4c184b78cb531f8bb43d6
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: f2e611998e42510eccde64ff6f945f58133fc4e9
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74873086"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75608530"
 ---
 # <a name="how-to-create-guest-configuration-policies"></a>Создание политик конфигурации гостя
 
@@ -24,6 +24,9 @@ ms.locfileid: "74873086"
 ## <a name="add-the-guestconfiguration-resource-module"></a>Добавление модуля ресурсов Гуестконфигуратион
 
 Чтобы создать политику конфигурации гостевой системы, необходимо добавить модуль ресурсов. Этот модуль ресурсов можно использовать с локально установленным PowerShell с [Azure Cloud Shell](https://shell.azure.com)или с [образом DOCKER Azure PowerShell Core](https://hub.docker.com/r/azuresdk/azure-powershell-core).
+
+> [!NOTE]
+> Хотя модуль **гуестконфигуратион** работает в указанных выше средах, действия по компиляции конфигурации DSC должны быть выполнены в Windows PowerShell 5,1.
 
 ### <a name="base-requirements"></a>Основные требования
 
@@ -59,6 +62,12 @@ ms.locfileid: "74873086"
 ### <a name="requirements-for-guest-configuration-custom-resources"></a>Требования к настраиваемым ресурсам настройки гостевой системы
 
 Когда гостевая конфигурация выполняет аудит компьютера, сначала выполняется `Test-TargetResource`, чтобы определить, находится ли он в правильном состоянии. Логическое значение, возвращаемое функцией, определяет, является ли состояние Azure Resource Manager для назначения гостя соответствующим или несоответствующим. Если логическое значение `$false` для любого ресурса в конфигурации, то поставщик будет запущен `Get-TargetResource`. Если логическое значение `$true`, то `Get-TargetResource` не вызывается.
+
+#### <a name="configuration-requirements"></a>Требования настройки
+
+Единственным требованием настройки гостевой конфигурации является использование настраиваемой конфигурации для того, чтобы имя конфигурации соответствовало используемому везде.  Сюда входит имя ZIP-файла для пакета содержимого, имя конфигурации в MOF-файле, сохраненное в пакете содержимого, и имя конфигурации, используемое в ARM в качестве имени назначения гостя.
+
+#### <a name="get-targetresource-requirements"></a>Требования Get-TargetResource
 
 Функция `Get-TargetResource` имеет особые требования к гостевой конфигурации, которые не требуются для настройки требуемого состояния Windows.
 
@@ -96,7 +105,7 @@ return @{
 
 В следующем примере создается конфигурация с именем **Baseline**, импортируется модуль ресурсов **гуестконфигуратион** , а в `ChefInSpecResource` ресурсу задается имя определения спецификации в **Linux-Patch-Baseline**:
 
-```azurepowershell-interactive
+```powershell
 # Define the DSC configuration and import GuestConfiguration
 Configuration baseline
 {
@@ -120,7 +129,7 @@ baseline
 
 В следующем примере создается конфигурация с именем **аудитбитлоккер**, импортируется модуль ресурсов **гуестконфигуратион** и используется ресурс `Service` для аудита работающей службы.
 
-```azurepowershell-interactive
+```powershell
 # Define the DSC configuration and import GuestConfiguration
 Configuration AuditBitLocker
 {
@@ -298,7 +307,7 @@ New-GuestConfigurationPolicy
 
 Для политик Linux Включите свойство **аттрибутесимлконтент** в конфигурацию и запишите соответствующие значения. Агент конфигурации гостя автоматически создает файл YaML, используемый в параметре спец для хранения атрибутов. Ознакомьтесь с примером ниже.
 
-```azurepowershell-interactive
+```powershell
 Configuration FirewalldEnabled {
 
     Import-DscResource -ModuleName 'GuestConfiguration'
@@ -403,7 +412,7 @@ $Cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 
 После публикации содержимого добавьте тег с именем `GuestConfigPolicyCertificateValidation` и значением `enabled` на все виртуальные машины, где требуется подписывание кода. Этот тег можно доставлять в масштабе с помощью политики Azure. См. [тег Apply и пример значения по умолчанию](../samples/apply-tag-default-value.md) . После создания тега определение политики, созданное с помощью командлета `New-GuestConfigurationPolicy`, обеспечивает требование с помощью модуля настройки гостевой конфигурации.
 
-## <a name="preview-troubleshooting-guest-configuration-policy-assignments"></a>ОБРАЗЦА Устранение неполадок назначений политик гостевой конфигурации
+## <a name="troubleshooting-guest-configuration-policy-assignments-preview"></a>Устранение неполадок назначений политик гостевой конфигурации (Предварительная версия)
 
 Средство можно просмотреть в предварительной версии, чтобы помочь в устранении неполадок назначений гостевой конфигурации политики Azure. Средство находится на этапе предварительной версии и Опубликовано в коллекция PowerShell в качестве имени модуля [средство устранения неполадок конфигурации гостя](https://www.powershellgallery.com/packages/GuestConfigurationTroubleshooter/).
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/30/2016
 ms.author: anavin
-ms.openlocfilehash: fcb9cc817128bce9498312d3fb016761b6382634
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 66cbb843369dee103f102c9c743da544a833ccf1
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67612753"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75646401"
 ---
 # <a name="assign-multiple-ip-addresses-to-virtual-machines-using-the-azure-portal"></a>Назначение виртуальным машинам нескольких IP-адресов с помощью портала Azure
 
@@ -66,10 +66,10 @@ ms.locfileid: "67612753"
 
 ### <a name="add-a-public-ip-address"></a>Добавление общедоступного IP-адреса
 
-Чтобы добавить общедоступный IP-адрес, соответствующий ресурс необходимо связать с новой или имеющейся IP-конфигурацией.
+Чтобы добавить общедоступный IP-адрес, его ресурс необходимо связать с новой или существующей IP-конфигурацией.
 
 > [!NOTE]
-> За общедоступные IP-адреса взимается номинальная плата. Дополнительные сведения о ценах на IP-адреса см. на странице [Цены на IP-адреса](https://azure.microsoft.com/pricing/details/ip-addresses). Число общедоступных IP-адресов, которые можно использовать в одной подписке, ограничено. Сведения об ограничениях см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md#networking-limits).
+> За общедоступные IP-адреса взимается номинальная плата. Дополнительные сведения о ценах на IP-адреса см. на странице [Цены на IP-адреса](https://azure.microsoft.com/pricing/details/ip-addresses). Число общедоступных IP-адресов, которые можно использовать в одной подписке, ограничено. Сведения об ограничениях см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits).
 > 
 
 ### <a name="create-public-ip"></a>Создание ресурса общедоступного IP-адреса

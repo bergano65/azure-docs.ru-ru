@@ -1,25 +1,16 @@
 ---
-title: Доступность служб Service Fabric | Документация Майкрософт
-description: Описание процессов обнаружения сбоев, отработки отказа и восстановления служб
-services: service-fabric
-documentationcenter: .net
+title: Доступность служб структуры служб
+description: Описывает обнаружение сбоя, отработку отказа и восстановление службы в приложении Service Fabric Azure.
 author: masnider
-manager: chackdan
-editor: ''
-ms.assetid: 279ba4a4-f2ef-4e4e-b164-daefd10582e4
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: dd10af0d3c8a57168a27a039286ea0ec4c1dad02
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5306439184561e8dec8303a7b149f51d6c2f6e08
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60310950"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551868"
 ---
 # <a name="availability-of-service-fabric-services"></a>Доступность служб структуры служб
 В этой статье представлен обзор способа, который используется в Azure Service Fabric для поддержания доступности службы.
@@ -46,5 +37,5 @@ ms.locfileid: "60310950"
 - [Масштабирование служб Service Fabric](service-fabric-concepts-scalability.md)
 - [Разделение служб Service Fabric](service-fabric-concepts-partitioning.md)
 - [Определение состояния и управление им](service-fabric-concepts-state.md)
-- [Надежные службы](service-fabric-reliable-services-introduction.md)
+- [Reliable Services](service-fabric-reliable-services-introduction.md)
 

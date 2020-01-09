@@ -3,18 +3,18 @@ title: портал Azure URL-адреса списка надежных отп�
 description: Добавьте эти URL-адреса в обход сервера для взаимодействия с портал Azure и его службами.
 services: azure-portal
 keywords: ''
-author: kfollis
-ms.author: kfollis
+author: mblythe
+ms.author: mblythe
 ms.date: 09/13/2019
 ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
-ms.openlocfilehash: 9618d99495e65231de22eb719355e2ca75a17600
-ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
+ms.openlocfilehash: 4f4badbd923b10cf2cd66f7df9742a6bc657a01c
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71218039"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75637548"
 ---
 # <a name="safelist-the-azure-portal-urls-on-your-firewall-or-proxy-server"></a>Допортал Azure URL-адреса в брандмауэре или прокси-сервере.
 
@@ -47,7 +47,7 @@ ms.locfileid: "71218039"
 *.windows-int.net
 ```
 
-#### <a name="us-government-cloudtabus-government-cloud"></a>[АМЕРИКАНСКОГО Облако для государственных организаций](#tab/us-government-cloud)
+#### <a name="us-government-cloudtabus-government-cloud"></a>[Облако для государственных организаций США](#tab/us-government-cloud)
 ```
 *.azure.us
 *.loganalytics.us
@@ -75,12 +75,12 @@ ms.locfileid: "71218039"
 > Трафик к этим конечным точкам использует стандартные TCP-порты для HTTP (80) и HTTPS (443).
 >
 >
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Требуется адрес списка надежных отправителей IP-адресов? Скачайте список диапазонов IP-адресов центра обработки данных Microsoft Azure для вашего облака:
 
 * [По всему миру](https://www.microsoft.com/download/details.aspx?id=56519)
-* [АМЕРИКАНСКОГО Учреждений](https://www.microsoft.com/download/details.aspx?id=57063)
+* [Правительство США](https://www.microsoft.com/download/details.aspx?id=57063)
 * [Германия](https://www.microsoft.com/download/details.aspx?id=57064)
 * [Китай](https://www.microsoft.com/download/details.aspx?id=57062)
 

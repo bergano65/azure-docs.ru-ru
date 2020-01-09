@@ -7,15 +7,15 @@ services: iot-pnp
 ms.topic: tutorial
 ms.author: koichih
 author: konichi3
-ms.date: 06/21/2019
-ms.openlocfilehash: 1516a132372a81d06d82de2409c48220f27b8d87
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.date: 12/27/2019
+ms.openlocfilehash: dc2c33659f3f3a3df0f11fcc6ab36a9fc993da43
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69878735"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75550168"
 ---
-# <a name="tutorial-certify-your-iot-plug-and-play-preview-device"></a>Руководство по Сертификация устройства IoT Plug and Play (предварительная версия)
+# <a name="tutorial-certify-your-iot-plug-and-play-preview-device"></a>Руководство. Сертификация устройства IoT Plug and Play (предварительная версия)
 
 Чтобы опубликовать устройство IoT Plug and Play (предварительная версия) в [каталоге устройств, сертифицированных по программе Azure Certified for IoT](https://aka.ms/iotdevcat), оно должно пройти ряд сертификационных тестов. Отправьте свое устройство на сертификацию на портале [Azure Certified for IoT](https://aka.ms/ACFI). [Служба сертификации Azure IoT](https://aka.ms/azure-iot-aics) выполняет сертификационные тесты.
 
@@ -28,7 +28,7 @@ ms.locfileid: "69878735"
 > * Как проверить интерфейсы IoT Plug and Play и выполнить сертификационные тесты.
 > * Как опубликовать в каталоге сертифицированное устройство IoT Plug and Play.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
@@ -99,7 +99,7 @@ ms.locfileid: "69878735"
 1. Опубликуйте в каталоге сертифицированное устройство IoT Plug and Play. Чтобы добавить сертифицированное устройство в каталог, щелкните **Add to catalog** (Добавить в каталог) на панели инструментов. Если элемент **Add to catalog** (Добавить в каталог) отображается серым цветом, это означает, что либо информация о продукте неполная, либо тесты не пройдены. 
 1. Щелкните ссылку CERTIFIED AND IN THE CATALOG (СЕРТИФИЦИРОВАНО И В КАТАЛОГЕ), чтобы просмотреть опубликованное устройство в каталоге устройств.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы ознакомились с сертификацией устройств IoT Plug and Play, узнайте больше об управлении моделями возможностей:
 

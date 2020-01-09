@@ -1,20 +1,16 @@
 ---
-title: Service Fabricное хранилище секретов | Документация Майкрософт
+title: Хранилище секретов Service Fabric
 description: В этой статье описывается, как использовать хранилище секретов Service Fabric.
-services: service-fabric
-author: athinanthny
-ms.service: service-fabric
 ms.topic: conceptual
 ms.date: 07/25/2019
-ms.author: atsenthi
-ms.openlocfilehash: 5315a8806f45e40204e8500e97c3440bfa9ab8b2
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 16608d9eaf12fc9abc535ef316d7b5e8b74a8b37
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74077353"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75457508"
 ---
-#  <a name="service-fabric-secrets-store"></a>Service Fabricное хранилище секретов
+#  <a name="service-fabric-secrets-store"></a>Хранилище секретов Service Fabric
 В этой статье описывается создание и использование секретов в Service Fabric приложениях с помощью хранилища секретов (CSS) Service Fabric. CSS — это локальный кэш хранилища секретов, используемый для хранения конфиденциальных данных, таких как пароль, маркеры и ключи, зашифрованные в памяти.
 
 ## <a name="enabling-secrets-store"></a>Включение хранилища секретов
@@ -24,8 +20,8 @@ ms.locfileid: "74077353"
     [
         ...
     {
+        "name":  "CentralSecretService",
         "parameters":  [
-            "name":  "CentralSecretService"
                 {
                     "name":  "IsEnabled",
                     "value":  "true"
@@ -46,6 +42,9 @@ ms.locfileid: "74077353"
                 ],
             },
             ]
+     }
+        ...
+     ]
 ```
 ## <a name="declare-secret-resource"></a>Объявить секретный ресурс
 Вы можете создать секретный ресурс либо с помощью шаблона диспетчер ресурсов, либо с помощью REST API.
@@ -180,5 +179,5 @@ secretValue = IO.ReadFile(Path.Join(Environment.GetEnvironmentVariable("SecretPa
   <EnvironmentVariable Name="MySuperSecret" Type="SecretsStoreRef" Value="supersecret:ver1"/>
 </EnvironmentVariables>
 ```
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с дополнительными сведениями о [безопасности приложений и служб](service-fabric-application-and-service-security.md).

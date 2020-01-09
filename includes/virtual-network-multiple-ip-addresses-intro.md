@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: virtual-network
 author: jimdial
 ms.service: virtual-network
@@ -8,17 +8,17 @@ ms.topic: include
 ms.date: 04/09/2018
 ms.author: jdial
 ms.custom: include file
-ms.openlocfilehash: 0c3bc3f2995131c7777bfc48269a17fceda33192
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: c63160d7514dccb0d2a9c2879db6d3fd614e1a96
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185211"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75646400"
 ---
 > [!div class="op_single_selector"]
-> * [портал Azure](../articles/virtual-network/virtual-network-multiple-ip-addresses-portal.md)
+> * [Портал Azure](../articles/virtual-network/virtual-network-multiple-ip-addresses-portal.md)
 > * [PowerShell](../articles/virtual-network/virtual-network-multiple-ip-addresses-powershell.md)
-> * [Интерфейс командной строки Azure](../articles/virtual-network/virtual-network-multiple-ip-addresses-cli.md)
+> * [Azure CLI](../articles/virtual-network/virtual-network-multiple-ip-addresses-cli.md)
 >
 
 К виртуальной машине Azure подключены один или несколько сетевых интерфейсов. Каждому такому адаптеру статически или динамически назначается один или несколько общедоступных или частных IP-адресов. Назначение нескольких IP-адресов виртуальной машине дает следующие возможности:
@@ -29,4 +29,4 @@ ms.locfileid: "67185211"
 
 Каждому сетевому адаптеру, подключенному к виртуальной машине, присвоена одна или несколько конфигураций IP-адресов. Каждая конфигурация получает один статический или динамический частный IP-адрес. Кроме того, каждой конфигурации также может быть присвоен один ресурс общедоступного IP-адреса. Ресурсу общедоступного IP-адреса назначен один динамический или статический общедоступный IP-адрес. Дополнительные сведения об IP-адресах в Azure см. в [этой статье](../articles/virtual-network/virtual-network-ip-addresses-overview-arm.md). 
 
-Сетевой карте может быть назначено ограниченное число частных IP-адресов. Число общедоступных IP-адресов, которые можно использовать в одной подписке Azure, также ограничено. См. дополнительные сведения об [ограничениях в Azure](../articles/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits).
+Сетевой карте может быть назначено ограниченное число частных IP-адресов. Число общедоступных IP-адресов, которые можно использовать в одной подписке Azure, также ограничено. См. дополнительные сведения об [ограничениях в Azure](../articles/azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits).

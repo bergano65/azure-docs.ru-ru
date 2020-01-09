@@ -1,7 +1,6 @@
 ---
 title: Учебник. Создание пользовательских функций на C# для заданий Azure Stream Analytics с помощью Visual Studio (предварительная версия)
 description: В этом учебнике показано, как написать определяемые пользователем функции C# для заданий Stream Analytics в Visual Studio.
-services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
 ms.reviewer: mamccrea
@@ -9,25 +8,25 @@ ms.service: stream-analytics
 ms.topic: tutorial
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: d600c891f35a0719012707bdc2cb45101e14e090
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 1d71f4c5616efb05efe2733c49507b085ca2dcf6
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74707357"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75426300"
 ---
-# <a name="tutorial-write-a-c-user-defined-function-for-azure-stream-analytics-job-preview"></a>Руководство по написанию определяемой пользователем функции на C# для задания Azure Stream Analytics (предварительная версия)
+# <a name="tutorial-write-a-c-user-defined-function-for-azure-stream-analytics-job-preview"></a>Руководство. написанию определяемой пользователем функции на C# для задания Azure Stream Analytics (предварительная версия)
 
 Пользовательские функции C#, создаваемые в Visual Studio, позволяют расширить язык запросов Azure Stream Analytics за счет собственных функций. Вы можете повторно использовать уже существующий код (включая DLL), а также математическую или комплексную логику с C#. Существует три способа реализации пользовательских функций: Файлы кода программной части в проекте Stream Analytics, пользовательские функции из локального проекта C# и пользовательские функции из существующего пакета в учетной записи хранения. В этом руководстве для реализации базовой функции C# используется метод кода программной части. Пользовательские функции для заданий Stream Analytics сейчас находятся на этапе предварительной версии, и их не следует использовать в рабочих нагрузках.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Создание пользовательской функции C# с помощью кода программной части
 > * Тестирование задания Stream Analytics на локальном компьютере.
 > * Публикация задания в Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем приступить к работе, выполните следующие предварительные требования:
 
@@ -41,7 +40,7 @@ ms.locfileid: "74707357"
 
 ## <a name="create-a-stream-analytics-project-in-visual-studio"></a>Создание проекта Stream Analytics в Visual Studio
 
-1. Запустите Visual Studio.
+1. Запустите среду Visual Studio.
 
 2. Выберите **Файл > Создать > Проект**.
 
@@ -147,7 +146,7 @@ ms.locfileid: "74707357"
 ## <a name="deploy-to-iot-edge-devices"></a>Развертывание на устройствах IoT Edge
 Если вы решили создать задание Edge в Stream Analytics, теперь его можно развернуть как модуль IoT Edge. Согласно [краткому руководству по IoT Edge](https://docs.microsoft.com/azure/iot-edge/quickstart) создайте центр IoT, зарегистрируйте устройство IoT Edge, а затем установите и запустите среду выполнения IoT Edge на своем устройстве. Далее в соответствии с руководством по [развертыванию заданий](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics#deploy-the-job) разверните задание Stream Analytics как модуль IoT Edge. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы создали простую пользовательскую функцию C#, используя код программной части, опубликовали и развернули задание в Azure или на устройствах IoT Edge. 
 

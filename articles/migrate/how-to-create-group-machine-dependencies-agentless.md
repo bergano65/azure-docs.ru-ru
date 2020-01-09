@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 11/18/2019
 ms.author: hamusa
-ms.openlocfilehash: d0e002f0f1e620c108b23790dfc81574bee23795
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: b13ad375adf20a606b48755a6d57851abf89e549
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74158436"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75454656"
 ---
 # <a name="set-up-agentless-dependency-visualization-for-assessment"></a>Настройка визуализации зависимостей без агента для оценки
 
@@ -19,7 +19,7 @@ ms.locfileid: "74158436"
 
 > [!IMPORTANT]
 > Визуализация зависимостей без агента сейчас доступна в предварительной версии для виртуальных машин Azure VMware, обнаруженных с помощью устройства миграции Azure.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
+> Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Эта предварительная версия охватывается службой поддержки клиентов и может использоваться для рабочих нагрузок.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="about-dependency-mapping"></a>О сопоставлении зависимостей
@@ -39,7 +39,7 @@ ms.locfileid: "74158436"
     - TCP-подключения
     - Имена процессов, имеющих активные соединения
     - Имена установленных приложений, запускающих описанные выше процессы
-    - Нет подключений, обнаруженных при каждом интервале опроса
+    - Нет. подключений, обнаруженных при каждом интервале опроса
 
 ## <a name="current-limitations"></a>Текущие ограничения
 
@@ -53,7 +53,7 @@ ms.locfileid: "74158436"
 - Убедитесь, что вы [создали](how-to-add-tool-first-time.md) проект "миграция Azure".
 - Анализ зависимостей без агента в настоящее время доступен только для компьютеров VMware.
 - Если вы уже создали проект, убедитесь, что вы [добавили](how-to-assess.md) средство Azure Migrate: Server для оценки серверов.
-- Убедитесь, что вы обнаружили компьютеры VMware в службе "миграция Azure". Это можно сделать, настроив устройство Azure Migrate для [VMware](how-to-set-up-appliance-vmware.md). Устройство обнаруживает локальные компьютеры и отправляет метаданные и данные производительности в службу "миграция Azure": Оценка сервера. [Дополнительные сведения](migrate-appliance.md)
+- Убедитесь, что вы обнаружили компьютеры VMware в службе "миграция Azure". Это можно сделать, настроив устройство Azure Migrate для [VMware](how-to-set-up-appliance-vmware.md). Устройство обнаруживает локальные компьютеры и отправляет метаданные и данные производительности в службу "миграция Azure": Оценка сервера. [Узнайте больше](migrate-appliance.md).
 - Убедитесь, что виртуальные машины VMware поддерживаются для визуализации зависимостей без агента, как описано в таблице ниже.
 
 
@@ -63,7 +63,7 @@ ms.locfileid: "74158436"
 
 **Тип** | **Поддерживаемые операционные системы**
 --- | ---
-**Windows** | Microsoft Windows Server 2016 <br/> Microsoft Windows Server 2012 R2 <br/> Microsoft Windows Server 2012 <br/> Microsoft Windows Server 2008 R2 (64-разрядная версия)
+**Windows** | Microsoft Windows Server 2016 <br/> Microsoft Windows Server2012 R2 <br/> Microsoft Windows Server 2012 <br/> Microsoft Windows Server 2008 R2 (64-разрядная версия)
 **Linux** | Red Hat Enterprise Linux 7, 6, 5 <br/> Ubuntu Linux 14,04, 16,04 <br/> Debian 7, 8. <br/> Oracle Linux 6, 7 <br/> CentOS 5, 6, 7  
 
 
@@ -138,6 +138,6 @@ ms.locfileid: "74158436"
 5. Нажмите кнопку " **Отключить обнаружение зависимостей** ".
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Сгруппируйте компьютеры](how-to-create-a-group.md)

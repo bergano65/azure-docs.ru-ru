@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 10/10/2019
 ms.author: cynthn
-ms.openlocfilehash: ac18056f9bfdf22c55b5effac810b8c24ab4d81d
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: fc157c2253a718860e028fa493574cb9aa2ccdf2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74033855"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75460193"
 ---
 # <a name="create-a-windows-vm-from-a-specialized-disk-by-using-powershell"></a>Создание виртуальной машины Windows из специализированного диска с помощью PowerShell
 
@@ -70,7 +70,7 @@ $osDisk = Get-AzDisk `
 
 Вы можете создать копию виртуальной машины, использующую управляемые диски. Для этого создайте моментальный снимок виртуальной машины, а затем с его помощью создайте новый управляемый диск и новую виртуальную машину.
 
-Если вы хотите скопировать существующую виртуальную машину в другой регион, вы можете использовать azcopy, чтобы [создать копию диска в другом регионе](disks-upload-vhd-to-managed-disk-powershell.md#copy-a-managed-disk). 
+Если вы хотите скопировать существующую виртуальную машину в другой регион, может потребоваться использовать azcopy для [создания копии диска в другом регионе](disks-upload-vhd-to-managed-disk-powershell.md#copy-a-managed-disk). 
 
 ### <a name="take-a-snapshot-of-the-os-disk"></a>Создание моментального снимка диска операционной системы
 
@@ -165,7 +165,7 @@ $osDisk = New-AzDisk -DiskName $osDiskName -Disk `
        -AddressPrefix 10.0.0.0/24
     ```
     
-2. Создание виртуальной сети. В этом примере задается имя виртуальной сети *myVnetName*, расположение *западная часть США* и префикс адреса виртуальной сети *10.0.0.0/16*. 
+2. Создание виртуальной сети. В этом примере задается имя виртуальной сети *myVnetName*, расположение *Западная часть США* и префикс адреса виртуальной сети *10.0.0.0/16*. 
    
     ```powershell
     $vnetName = "myVnetName"
@@ -274,6 +274,6 @@ $vmList = Get-AzVM -ResourceGroupName $destinationResourceGroup
 $vmList.Name
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Войдите на свою новую виртуальную машину. Дополнительные сведения см. в статье [Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее](connect-logon.md).
 

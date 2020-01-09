@@ -1,5 +1,5 @@
 ---
-title: Проверка областей и ролей приложений | Службы
+title: Проверка областей & защищенных ролей приложений веб-API | Службы
 titleSuffix: Microsoft identity platform
 description: Узнайте, как создать защищенный веб-API и настроить код приложения.
 services: active-directory
@@ -17,12 +17,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a20a7a5a0df87910d2093bfee47e46c9c1a06530
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 2eb9cdf68bf5103776d50db28e9e6facc89c9278
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74965387"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423691"
 ---
 # <a name="protected-web-api-verify-scopes-and-app-roles"></a>Защищенный веб-API: Проверка областей и ролей приложений
 
@@ -42,7 +42,7 @@ ms.locfileid: "74965387"
 - Сам контроллер, если требуется защитить все действия контроллера
 - Действие отдельного контроллера для API
 
-```CSharp
+```csharp
     [Authorize]
     public class TodoListController : Controller
     {
@@ -59,7 +59,7 @@ ms.locfileid: "74965387"
 
 Если API вызывается клиентским приложением от имени пользователя, ему необходимо запросить токен носителя с конкретными областями для API. (См. раздел [Конфигурация кода | Токен носителя](scenario-protected-web-api-app-configuration.md#bearer-token).)
 
-```CSharp
+```csharp
 [Authorize]
 public class TodoListController : Controller
 {
@@ -86,7 +86,7 @@ public class TodoListController : Controller
 - Убедитесь в наличии утверждения с именем `http://schemas.microsoft.com/identity/claims/scope` или `scp`.
 - Убедитесь, что утверждение имеет значение, которое содержит область, ожидаемую API.
 
-```CSharp
+```csharp
     /// <summary>
     /// When applied to a <see cref="HttpContext"/>, verifies that the user authenticated in the 
     /// web API has any of the accepted scopes.
@@ -121,7 +121,7 @@ public class TodoListController : Controller
 Если веб-API вызывается с помощью [управляющего приложения](scenario-daemon-overview.md), ему должно быть назначено разрешение приложения для веб-API. Мы видели [разрешения приложений (роли приложений)](https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-app-registration#exposing-application-permissions-app-roles) , которые API предоставляет для доступа к таким разрешениям (например, роль приложения `access_as_application`).
 Теперь интерфейсы API должны проверять, что полученный маркер содержит утверждение `roles` и что это утверждение имеет ожидаемое значение. Код, выполняющий эту проверку, аналогичен коду, который проверяет делегированные разрешения, за исключением того, что вместо проверки `scopes`, действие контроллера будет проверять наличие `roles`:
 
-```CSharp
+```csharp
 [Authorize]
 public class TodoListController : ApiController
 {
@@ -134,7 +134,7 @@ public class TodoListController : ApiController
 
 Метод `ValidateAppRole()` может выглядеть следующим образом:
 
-```CSharp
+```csharp
 private void ValidateAppRole(string appRole)
 {
     //
@@ -161,7 +161,7 @@ private void ValidateAppRole(string appRole)
 
 Если вы хотите разрешить только приложениям управляющей программы вызывать веб-API, добавьте условие при проверке роли приложения, чтобы маркер был маркером только для приложения:
 
-```CSharp
+```csharp
 string oid = ClaimsPrincipal.Current.FindFirst("oid")?.Value;
 string sub = ClaimsPrincipal.Current.FindFirst("sub")?.Value;
 bool isAppOnlyToken = oid == sub;

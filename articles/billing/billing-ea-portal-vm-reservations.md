@@ -4,16 +4,16 @@ description: В этой статье рассказывается о том, к
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 12/04/2019
+ms.date: 01/02/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 manager: boalcsva
-ms.openlocfilehash: 3c3d95feed4f7cf47448c4fe62d8368fa5498dd7
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 11cdf3ec03c125b98938847390c71eb12d1b4800
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74841326"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75644517"
 ---
 # <a name="azure-ea-vm-reserved-instances"></a>Зарезервированные экземпляры виртуальной машины Azure EA
 
@@ -81,7 +81,7 @@ ms.locfileid: "74841326"
 
 Вы получите уведомление по электронной почте за 30 дней до резервирования и в день окончания срока действия. По истечении срока резервирования развернутые виртуальные машины будут выполняться с оплатой по мере использования. Дополнительные сведения см. на странице [Зарезервированные экземпляры виртуальных машин Azure](https://azure.microsoft.com/pricing/reserved-vm-instances/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о резервировании Azure см. в статье [Основные сведения о резервировании в Azure](billing-save-compute-costs-reservations.md).
 - Дополнительные сведения о стоимости резервирования и использовании для компании см. в статье [Получение сведений о стоимости резервирования и использования по соглашению Enterprise](billing-understand-reserved-instance-usage-ea.md).
 - Дополнительные сведения о ценах см. в разделе [Цены на виртуальные машины Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) или [Цены на виртуальные машины Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/).

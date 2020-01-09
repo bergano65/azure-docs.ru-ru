@@ -1,35 +1,38 @@
 ---
-title: Требование безопасной передачи в службе хранилища Azure | Документация Майкрософт
-description: Узнайте о функции "Требуется безопасное перемещение" для службы хранилища Azure и о том, как ее включить.
+title: Требовать безопасное перемещение для обеспечения безопасных соединений
+titleSuffix: Azure Storage
+description: Узнайте, как требовать безопасной пересылки запросов в службу хранилища Azure. Если для учетной записи хранения требуется безопасное перемещение, все запросы, поступающие от небезопасного подключения, отклоняются.
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: article
-ms.date: 06/20/2017
+ms.topic: how-to
+ms.date: 12/12/2019
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: 7239e7fbe1221acc3c302260045d6fc510db2cbe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3b2d78bd929e23d49a57f337022f6678114bb5fe
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65148575"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75457450"
 ---
-# <a name="require-secure-transfer-in-azure-storage"></a>Требование безопасной передачи в службе хранилища Azure
+# <a name="require-secure-transfer-to-ensure-secure-connections"></a>Требовать безопасное перемещение для обеспечения безопасных соединений
 
-Параметр "Требуется безопасное перемещение" повышает безопасность учетной записи хранения, разрешая выполнять к ней запросы, отправленные только посредством безопасных подключений. Например, при вызове интерфейсов REST API для доступа к своей учетной записи хранения необходимо подключиться с помощью протокола HTTPS. Функция "Требуется безопасное перемещение" отклоняет запросы, использующие протокол HTTP.
+Вы можете настроить учетную запись хранения для приема запросов только от безопасных подключений, задав для учетной записи хранения свойство **требуется безопасное перемещение** . При необходимости безопасной пересылки все запросы, исходящие из незащищенного соединения, отклоняются. Корпорация Майкрософт рекомендует всегда требовать безопасной пересылки для всех учетных записей хранения.
 
-Кроме того, если этот параметр включен, то при использовании службы файлов Azure любое подключение без шифрования завершается сбоем. Это относится к сценариям, включающим в себя SMB 2.1, SMB 3.0 без шифрования и некоторые версии SMB-клиента Linux. 
+Если требуется безопасная операция передачи, вызов операции REST API службы хранилища Azure должен выполняться по протоколу HTTPS. Любой запрос, отправленный по протоколу HTTP, отклоняется.
 
-Если вы создаете учетную запись хранения с помощью пакета SDK, параметр "Требуется безопасное перемещение" отключен по умолчанию. Этот параметр включен по умолчанию, если вы создаете учетную запись хранения на портале Azure.
+Подключение к файловому ресурсу Azure через SMB без шифрования завершается сбоем, если для учетной записи хранения требуется безопасная отправка. Примеры небезопасных подключений включают в себя протоколы SMB 2,1, SMB 3,0 без шифрования или некоторые версии клиента SMB для Linux.
+
+По умолчанию при создании учетной записи хранения в портал Azure включается свойство **Обязательное безопасное перемещение** . Однако при создании учетной записи хранения с помощью пакета SDK она отключена.
 
 > [!NOTE]
 > Так как служба хранилища Azure не поддерживает протокол HTTPS для имен личных доменов, при использовании данных имен этот параметр не применяется. Классические учетные записи хранения не поддерживаются.
 
-## <a name="enable-secure-transfer-required-in-the-azure-portal"></a>Включение параметра "Требуется безопасное перемещение" на портале Azure
+## <a name="require-secure-transfer-in-the-azure-portal"></a>Требовать безопасной пересылки в портал Azure
 
-Параметр "Требуется безопасное перемещение" можно включить при создании учетной записи хранения на [портале Azure](https://portal.azure.com). Его также можно включить для имеющихся учетных записей хранения.
+При создании учетной записи хранения в [портал Azure](https://portal.azure.com)можно включить свойство **требуется безопасное перемещение** . Его также можно включить для имеющихся учетных записей хранения.
 
 ### <a name="require-secure-transfer-for-a-new-storage-account"></a>Включение требования безопасной передачи для новой учетной записи хранения
 
@@ -46,19 +49,19 @@ ms.locfileid: "65148575"
 
    ![Область меню учетной записи хранения](./media/storage-require-secure-transfer/secure_transfer_field_in_portal_en_2.png)
 
-## <a name="enable-secure-transfer-required-programmatically"></a>Включение параметра "Требуется безопасное перемещение" программным способом
+## <a name="require-secure-transfer-from-code"></a>Требовать безопасной перенос из кода
 
-Чтобы программно включить требование безопасного перемещения, укажите параметр _supportsHttpsTrafficOnly_ в свойствах учетной записи хранения с помощью REST API, инструментов или библиотек:
+Чтобы настроить безопасную пересылку программно, установите свойство _supportsHttpsTrafficOnly_ в учетной записи хранения. Это свойство можно задать с помощью REST API поставщика ресурсов хранилища, клиентских библиотек или средств.
 
-* [REST API](https://docs.microsoft.com/rest/api/storagerp/storageaccounts) (версия 2016-12-01);
-* [PowerShell](https://docs.microsoft.com/powershell/module/az.storage/set-azstorageaccount) (версия 0.7)
-* [CLI](https://pypi.python.org/pypi/azure-cli-storage/2.0.11) (версия 2.0.11)
-* [NodeJS](https://www.npmjs.com/package/azure-arm-storage/) (версия 1.1.0);
-* [пакет SDK для .NET ](https://www.nuget.org/packages/Microsoft.Azure.Management.Storage/6.3.0-preview) (версия 6.3.0);
-* [пакет SDK для Python](https://pypi.python.org/pypi/azure-mgmt-storage/1.1.0) (версия 1.1.0);
-* [пакет SDK для Ruby](https://rubygems.org/gems/azure_mgmt_storage) (версия 0.11.0).
+* [REST API](/rest/api/storagerp/storageaccounts)
+* [PowerShell](/powershell/module/az.storage/set-azstorageaccount)
+* [CLI](/cli/azure/storage/account)
+* [NodeJS](https://www.npmjs.com/package/azure-arm-storage/)
+* [Пакет SDK для .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Storage)
+* [Пакет SDK для Python](https://pypi.org/project/azure-mgmt-storage)
+* [Пакет SDK для Ruby](https://rubygems.org/gems/azure_mgmt_storage)
 
-### <a name="enable-secure-transfer-required-setting-with-powershell"></a>Включение параметра Secure transfer required (Требуется безопасное перемещение) с помощью PowerShell
+## <a name="require-secure-transfer-with-powershell"></a>Требовать безопасное перемещение с помощью PowerShell
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -69,7 +72,7 @@ ms.locfileid: "65148575"
  Для проверки параметра можно использовать командную строку ниже:
 
 ```powershell
-> Get-AzStorageAccount -Name "{StorageAccountName}" -ResourceGroupName "{ResourceGroupName}"
+Get-AzStorageAccount -Name "{StorageAccountName}" -ResourceGroupName "{ResourceGroupName}"
 StorageAccountName     : {StorageAccountName}
 Kind                   : Storage
 EnableHttpsTrafficOnly : False
@@ -80,7 +83,7 @@ EnableHttpsTrafficOnly : False
 Для включения параметра можно использовать командную строку ниже:
 
 ```powershell
-> Set-AzStorageAccount -Name "{StorageAccountName}" -ResourceGroupName "{ResourceGroupName}" -EnableHttpsTrafficOnly $True
+Set-AzStorageAccount -Name "{StorageAccountName}" -ResourceGroupName "{ResourceGroupName}" -EnableHttpsTrafficOnly $True
 StorageAccountName     : {StorageAccountName}
 Kind                   : Storage
 EnableHttpsTrafficOnly : True
@@ -88,16 +91,16 @@ EnableHttpsTrafficOnly : True
 
 ```
 
-### <a name="enable-secure-transfer-required-setting-with-cli"></a>Включение параметра Secure transfer required (Требуется безопасное перемещение) с помощью интерфейса командной строки
+## <a name="require-secure-transfer-with-azure-cli"></a>Требовать безопасное перемещение с помощью Azure CLI
 
 [!INCLUDE [sample-cli-install](../../../includes/sample-cli-install.md)]
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
- Для проверки параметра можно использовать командную строку ниже:
+ Для проверки параметра используйте следующую команду:
 
 ```azurecli-interactive
-> az storage account show -g {ResourceGroupName} -n {StorageAccountName}
+az storage account show -g {ResourceGroupName} -n {StorageAccountName}
 {
   "name": "{StorageAccountName}",
   "enableHttpsTrafficOnly": false,
@@ -107,10 +110,10 @@ EnableHttpsTrafficOnly : True
 
 ```
 
-Для включения параметра можно использовать командную строку ниже:
+Чтобы включить этот параметр, используйте следующую команду:
 
 ```azurecli-interactive
-> az storage account update -g {ResourceGroupName} -n {StorageAccountName} --https-only true
+az storage account update -g {ResourceGroupName} -n {StorageAccountName} --https-only true
 {
   "name": "{StorageAccountName}",
   "enableHttpsTrafficOnly": true,
@@ -121,4 +124,5 @@ EnableHttpsTrafficOnly : True
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Служба хранилища Azure предоставляет полный набор возможностей обеспечения безопасности, которые в совокупности позволяют разработчикам создавать защищенные приложения. Дополнительные сведения можно получить в [руководстве по безопасности службы хранилища](storage-security-guide.md).
+
+[Рекомендации по безопасности для хранилища BLOB-объектов](../blobs/security-recommendations.md)

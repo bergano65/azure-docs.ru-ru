@@ -11,16 +11,15 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 03/27/2019
+ms.date: 12/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 0c3173841de25a30b84870332c7334a81773e84d
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 604dca2861b7a7126d2e37b5a01bcb85c530546e
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "68561582"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75561463"
 ---
 # <a name="tutorial-configure-atlassian-cloud-for-automatic-user-provisioning"></a>Руководство. Настройка Atlassian Cloud для автоматической подготовки пользователей
 
@@ -28,7 +27,6 @@ ms.locfileid: "68561582"
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
-
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -102,55 +100,57 @@ Azure Active Directory использует концепцию, называем
 
     ![Подготовка облака Atlassian](./media/atlassian-cloud-provisioning-tutorial/credentials.png)
 
-5. В разделе **учетные данные администратора** введите **URL-адрес клиента** и **маркер секрета** учетной записи облака Atlassian. Примеры этих значений:
+5. Перейдите в [Atlassian Organization Manager](https://admin.atlassian.com) **> выберите каталог >** Организации.
+
+    ![Подготовка облака Atlassian](./media/atlassian-cloud-provisioning-tutorial/select-directory.png)
+
+6. Щелкните **подготовка пользователей** и щелкните **создать каталог**. Скопируйте **базовый URL-адрес каталога** и **токен носителя** в поля **URL-адрес клиента** и **секретный токен** соответственно.
+
+    ![Atlassian Cloud подготовка](./media/atlassian-cloud-provisioning-tutorial/secret-token-1.png) ![Atlassian Cloud подготовка](./media/atlassian-cloud-provisioning-tutorial/secret-token-2.png) ![Atlassian Cloud подготовка](./media/atlassian-cloud-provisioning-tutorial/secret-token-3.png)
+
+7. В разделе **учетные данные администратора** введите **URL-адрес клиента** и **маркер секрета** учетной записи облака Atlassian. Примеры этих значений:
 
    * В поле **URL-адрес клиента** Введите конкретную конечную точку клиента, полученную от Atlassian, как описано в шаге 6. Например: `https://api.atlassian.com/scim/directory/{directoryId}`.
 
    * В поле **маркер секрета** введите маркер секрета, как описано в шаге 6.
 
-6. Перейдите в [Atlassian Organization Manager](https://admin.atlassian.com) **> подготовки пользователей** и щелкните **создать маркер**. Скопируйте **базовый URL-адрес каталога** и **токен носителя** в поля **URL-адрес клиента** и **секретный токен** соответственно.
-
-    ![Atlassian подготовки облака ](./media/atlassian-cloud-provisioning-tutorial/secret-token-1.png) ![Atlassian подготовки облака ](./media/atlassian-cloud-provisioning-tutorial/secret-token-2.png)
-
-    ![Подготовка облака Atlassian](./media/atlassian-cloud-provisioning-tutorial/secret-token-3.png)
-
-7. После заполнения полей, показанных на шаге 5, нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Atlassian Cloud. В случае сбоя подключения убедитесь, что у учетной записи Atlassian Cloud есть разрешения администратора, и повторите попытку.
+8. После заполнения полей, показанных на шаге 7, нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Atlassian Cloud. В случае сбоя подключения убедитесь, что у учетной записи Atlassian Cloud есть разрешения администратора, и повторите попытку.
 
     ![Подготовка облака Atlassian](./media/atlassian-cloud-provisioning-tutorial/test-connection.png)
 
-8. В поле **Уведомление по электронной почте** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Send an email notification when a failure occurs** (Отправить уведомление по электронной почте при сбое).
+9. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Send an email notification when a failure occurs** (Отправить уведомление по электронной почте при сбое).
 
     ![Подготовка облака Atlassian](./media/atlassian-cloud-provisioning-tutorial/notification.png)
 
-9. В нижней части страницы нажмите кнопку **Save**.
+10. Выберите команду **Сохранить**.
 
-10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Atlassian Cloud**.
+11. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Atlassian Cloud**.
 
     ![Подготовка облака Atlassian](./media/atlassian-cloud-provisioning-tutorial/provision-users.png)
 
-11. Проверьте пользовательские атрибуты, которые синхронизированы из Azure AD в Atlassian Cloud, в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Atlassian Cloud для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+12. Проверьте пользовательские атрибуты, которые синхронизированы из Azure AD в Atlassian Cloud, в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Atlassian Cloud для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
     ![Подготовка облака Atlassian](./media/atlassian-cloud-provisioning-tutorial/user-mapping.png)
 
-12. В разделе **сопоставления** выберите **синхронизировать Azure Active Directoryные группы с Atlassian Cloud**.
+13. В разделе **сопоставления** выберите **синхронизировать Azure Active Directoryные группы с Atlassian Cloud**.
 
     ![Подготовка облака Atlassian](./media/atlassian-cloud-provisioning-tutorial/provision-groups.png)
 
-13. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Atlassian Cloud в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Atlassian Cloud для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+14. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Atlassian Cloud в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Atlassian Cloud для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
     ![Подготовка облака Atlassian](./media/atlassian-cloud-provisioning-tutorial/group-mapping.png)
 
-14. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
+15. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
-15. Чтобы включить службу подготовки Azure AD для Atlassian Cloud, измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
+16. Чтобы включить службу подготовки Azure AD для Atlassian Cloud, измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
 
     ![Подготовка облака Atlassian](./media/atlassian-cloud-provisioning-tutorial/provisioning-on.png)
 
-16. Определите пользователей и (или) группы, которые вы хотите подготавливать в Atlassian Cloud, выбрав нужные значения в **области** в разделе **Параметры** .
+17. Определите пользователей и (или) группы, которые вы хотите подготавливать в Atlassian Cloud, выбрав нужные значения в **области** в разделе **Параметры** .
 
     ![Подготовка облака Atlassian](./media/atlassian-cloud-provisioning-tutorial/provisioning-options.png)
 
-17. Когда будете готовы выполнить подготовку, нажмите кнопку **Сохранить**.
+18. Когда будете готовы выполнить подготовку, нажмите кнопку **Сохранить**.
 
     ![Подготовка облака Atlassian](./media/atlassian-cloud-provisioning-tutorial/save.png)
 

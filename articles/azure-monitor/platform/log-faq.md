@@ -4,17 +4,17 @@ description: Ответы на часто задаваемые вопросы о
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
-author: MGoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 11/01/2019
-ms.openlocfilehash: 9eb921fc8ea19486db0fc3311764931f09e11464
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 77159e0fa73a1f56688c867c55ae46f28016992c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73579306"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75394786"
 ---
-# <a name="log-analytics-faq"></a>Часто задаваемые вопросы по Log Analytics
+# <a name="log-analytics-faq"></a>Вопросы и ответы о Log Analytics
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -31,63 +31,58 @@ ms.locfileid: "73579306"
 
 О. Поиск по журналам в настоящее время все еще доступен на портале OMS и на портале Azure под именем **Журналы (классические)** . Портал OMS будет официально выведен из эксплуатации 15 января 2019 г. Классические журналы на портале Azure постепенно прекратят использовать и заменят новыми. 
 
-### <a name="q-can-i-still-use-advanced-analytics-portal"></a>В. Можно ли по-прежнему использовать портал расширенной аналитики? 
+### <a name="q-can-i-still-use-advanced-analytics-portal"></a>У. Можно ли по-прежнему использовать портал расширенной аналитики? 
 Работа с журналами на портале Azure во многом похожа на работу с журналами на портале расширенной аналитики, который будет по-прежнему доступен вне портала Azure. О стратегии прекращения использования этого внешнего портала вскоре будет объявлено.
 
-### <a name="q-why-cant-i-see-query-explorer-and-save-buttons-in-the-new-logs-experience"></a>В. Почему я не вижу кнопки "Обозреватель запросов" и "Сохранить" в новом интерфейсе журналов?
+### <a name="q-why-cant-i-see-query-explorer-and-save-buttons-in-the-new-logs-experience"></a>У. Почему я не вижу кнопки "Обозреватель запросов" и "Сохранить" в новом интерфейсе журналов?
 
 Кнопки **Обозреватель запросов**, **Сохранить** и **Задание оповещения** недоступны при просмотре журналов в контексте конкретного ресурса. Чтобы создать оповещения, сохранить или загрузить запрос, журналы должны быть ограничены рабочей областью. Чтобы открыть журналы в контексте рабочей области, выберите **Все службы** > **Монитор** > **Журналы**. Выбирается последняя использованная рабочая область, но вы можете выбрать и любую другую рабочую область. Дополнительные сведения см. в статье [Просмотр и анализ данных в Log Analytics](../log-query/portals.md).
 
-### <a name="q-how-do-i-extract-custom-fields-in-the-new-logs-experience"></a>В. Как извлечь настраиваемые поля в новом интерфейсе журналов? 
+### <a name="q-how-do-i-extract-custom-fields-in-the-new-logs-experience"></a>У. Как извлечь настраиваемые поля в новом интерфейсе журналов? 
 
 О. Извлечение настраиваемых полей в настоящее время поддерживается классическими журналами. 
 
-### <a name="q-where-do-i-find-list-view-in-the-new-logs"></a>В. Где найти представление списка в новых журналах? 
+### <a name="q-where-do-i-find-list-view-in-the-new-logs"></a>У. Где найти представление списка в новых журналах? 
 
 О. Представление списка недоступно в новых журналах. В таблице результатов слева от каждой записи находится стрелка. Щелкните эту стрелку, чтобы открыть сведения о конкретной записи. 
 
-### <a name="q-after-running-a-query-a-list-of-suggested-filters-are-available-how-can-i-see-filters"></a>В. После выполнения запроса отображается список предлагаемых фильтров. Как просмотреть фильтры? 
+### <a name="q-after-running-a-query-a-list-of-suggested-filters-are-available-how-can-i-see-filters"></a>У. После выполнения запроса отображается список предлагаемых фильтров. Как просмотреть фильтры? 
 
 Ответ. Щелкните "фильтры" на левой панели, чтобы просмотреть предварительную версию реализации новых фильтров. Теперь основой является полный набор результатов, не ограничивающийся 10 000 записей пользовательского интерфейса. В настоящее время это список самых популярных фильтров и 10 самых распространенных значений для каждого фильтра. 
 
-### <a name="q-why-am-i-getting-the-error-register-resource-provider-microsoftinsights-for-this-subscription-to-enable-this-query-in-logs-after-drilling-in-from-vm"></a>В. Почему после перехода в систему из виртуальной машины я получаю в журналах ошибку: "Зарегистрируйте поставщик ресурсов Microsoft.Insights для этой подписки, чтобы выполнить этот запрос"? 
+### <a name="q-why-am-i-getting-the-error-register-resource-provider-microsoftinsights-for-this-subscription-to-enable-this-query-in-logs-after-drilling-in-from-vm"></a>У. Почему после перехода в систему из виртуальной машины я получаю в журналах ошибку: "Зарегистрируйте поставщик ресурсов Microsoft.Insights для этой подписки, чтобы выполнить этот запрос"? 
 
-О. По умолчанию многие поставщики ресурсов регистрируются автоматически. Тем не менее некоторые поставщики ресурсов, возможно, потребуется зарегистрировать вручную. При этом настраивается подписка для работы с поставщиком ресурсов. Областью регистрации всегда является подписка. См. дополнительные сведения о [поставщиках и типах ресурсов](../../azure-resource-manager/resource-manager-supported-services.md#azure-portal).
+О. По умолчанию многие поставщики ресурсов регистрируются автоматически. Тем не менее некоторые поставщики ресурсов, возможно, потребуется зарегистрировать вручную. При этом настраивается подписка для работы с поставщиком ресурсов. Областью регистрации всегда является подписка. См. дополнительные сведения о [поставщиках и типах ресурсов](../../azure-resource-manager/management/resource-providers-and-types.md#azure-portal).
 
-### <a name="q-why-am-i-am-getting-no-access-error-message-when-accessing-logs-from-a-vm-page"></a>В. Почему я получаю сообщение об ошибке "Нет доступа" при доступе к журналам со страницы виртуальной машины? 
+### <a name="q-why-am-i-am-getting-no-access-error-message-when-accessing-logs-from-a-vm-page"></a>У. Почему я получаю сообщение об ошибке "Нет доступа" при доступе к журналам со страницы виртуальной машины? 
 
 О. Чтобы просмотреть журналы виртуальных машин, необходимо предоставить разрешение на чтение рабочим областям, в которых хранятся журналы виртуальных машин. В таком случае администратору необходимо предоставить вам разрешения в Azure.
 
-### <a name="q-why-can-i-can-access-my-workspace-in-oms-portal-but-i-get-the-error-you-have-no-access-in-the-azure-portal"></a>В. Почему я могу получить доступ к своей рабочей области на портале OMS, но на портале Azure возникает ошибка "У вас нет доступа"?  
+### <a name="q-why-can-i-can-access-my-workspace-in-oms-portal-but-i-get-the-error-you-have-no-access-in-the-azure-portal"></a>У. Почему я могу получить доступ к своей рабочей области на портале OMS, но на портале Azure возникает ошибка "У вас нет доступа"?  
 
 О. Чтобы получить доступ к рабочей области в Azure, вам должны быть назначены разрешения Azure. В некоторых случаях у вас может не оказаться соответствующих разрешений на доступ. В этих случаях ваш администратор должен предоставить вам разрешения в Azure. Дополнительные сведения см. в статье [Перемещение портала OMS в Azure](oms-portal-transition.md).
 
-### <a name="q-why-cant-i-cant-see-view-designer-entry-in-logs"></a>В. Почему я не вижу запись "Конструктор представлений" в журналах?
+### <a name="q-why-cant-i-cant-see-view-designer-entry-in-logs"></a>У. Почему я не вижу запись "Конструктор представлений" в журналах?
 
 О. Конструктор представлений доступен только в журналах для пользователей, которым назначены разрешения участника или роли с большими правами.
 
-### <a name="q-can-i-still-use-the-analytics-portal-outside-of-azure"></a>В. Я по-прежнему могу использовать портал аналитики, который не относится к Azure?
+### <a name="q-can-i-still-use-the-analytics-portal-outside-of-azure"></a>У. Я по-прежнему могу использовать портал аналитики, который не относится к Azure?
 
-О. Да, страницы "Журналы" на портале Azure и портале расширенной аналитики основаны на одном и том же коде. Log Analytics интегрируется в качестве компонента в Azure Monitor, чтобы сделать мониторинг более унифицированным. Вы по-прежнему можете получить доступ к порталу аналитики с помощью URL-адреса: https:\/\/Portal. loganalytics. IO/Subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/workspaces/{workspaceName}.
+A. Да, страницы "Журналы" на портале Azure и портале расширенной аналитики основаны на одном и том же коде. Log Analytics интегрируется в качестве компонента в Azure Monitor, чтобы сделать мониторинг более унифицированным. Вы по-прежнему можете получить доступ к порталу аналитики с помощью URL-адреса: https:\/\/Portal. loganalytics. IO/Subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/workspaces/{workspaceName}.
 
 
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общие
 
-### <a name="q-how-can-i-see-my-views-and-solutions-in-azure-portal"></a>В. Как просмотреть свои представления и решения на портале Azure? 
+### <a name="q-how-can-i-see-my-views-and-solutions-in-azure-portal"></a>У. Как просмотреть свои представления и решения на портале Azure? 
 
 О. Список представлений и установленных решений доступен на портале Azure. Щелкните **Все службы**. В списке ресурсов выберите **Монитор**, затем щелкните **...Дополнительно**. Выбирается последняя использованная рабочая область, но вы можете выбрать и любую другую рабочую область. 
 
-### <a name="q-why-i-cant-create-workspaces-in-west-central-us-region"></a>В. Почему не удается создать рабочие области в центрально-западной части США? 
-
-О. Для этого региона установлено временное ограничение по емкости. Это ограничение планируется до конца сентября 2019.
-
-
-### <a name="q-does-log-analytics-use-the-same-agent-as-azure-security-center"></a>В. Использует ли Log Analytics тот же агент, что и центр безопасности Azure?
+### <a name="q-does-log-analytics-use-the-same-agent-as-azure-security-center"></a>У. Использует ли Log Analytics тот же агент, что и центр безопасности Azure?
 
 О. С начала июня 2017 г. в центре безопасности Azure используется Microsoft Monitoring Agent для сбора и хранения данных. Дополнительные сведения см. в статье [Вопросы и ответы по миграции платформы центра безопасности Azure](../../security-center/security-center-enable-data-collection.md).
 
-### <a name="q-what-checks-are-performed-by-the-ad-and-sql-assessment-solutions"></a>В. Какие проверки выполняют AD и решение по оценке SQL?
+### <a name="q-what-checks-are-performed-by-the-ad-and-sql-assessment-solutions"></a>У. Какие проверки выполняют AD и решение по оценке SQL?
 
 О. В следующем запросе показано описание всех проверок, которые выполняются в настоящее время:
 
@@ -97,7 +92,7 @@ ms.locfileid: "73579306"
 
 Результаты можно экспортировать в Excel для дальнейшего анализа.
 
-### <a name="q-why-do-i-see-something-different-than-oms-in-the-system-center-operations-manager-console"></a>В. Почему в консоли System Center Operations Manager отображается другое значение (не OMS)?
+### <a name="q-why-do-i-see-something-different-than-oms-in-the-system-center-operations-manager-console"></a>У. Почему в консоли System Center Operations Manager отображается другое значение (не OMS)?
 
 О. В зависимости от того, какую версию накопительного обновления Operations Manager вы используете, может отображаться узел *System Center Advisor*, *Operational Insights* или *Log Analytics*.
 
@@ -107,7 +102,7 @@ ms.locfileid: "73579306"
 
 О. Нет. Log Analytics — это масштабируемая облачная служба, которая обрабатывает и хранит больше объемы данных. 
 
-### <a name="q-how-can-i-be-notified-when-data-collection-stops"></a>В. Как получить уведомление о прекращении сбора данных?
+### <a name="q-how-can-i-be-notified-when-data-collection-stops"></a>У. Как получить уведомление о прекращении сбора данных?
 
 О. Выполните действия, описанные в разделе о [создании оповещений журналов](../../azure-monitor/platform/alerts-metric.md), чтобы получать уведомления при прекращении сбора данных.
 
@@ -117,7 +112,7 @@ ms.locfileid: "73579306"
 - Для **критериев оповещения** укажите следующее:
    - для **названия сигнала** выберите значение **Пользовательский поиск по журналам**;
    - **поисковому запросу** — `Heartbeat | summarize LastCall = max(TimeGenerated) by Computer | where LastCall < ago(15m)`;
-   - **логика оповещений** должна быть **основана на** *числе результатов*, а значение **условия** должно быть *больше* **порогового значения** *0*;
+   - **Логика генерации оповещений** **основана на** *количестве результатов* , а **условие** *превышает* **пороговое значение** *0*
    - **период времени** — *30* минут, **частота оповещений** — каждые *10* минут.
 - В разделе **Определение сведений об оповещении** задайте такие значения:
    - **имени**  — *остановка сбора данных*;
@@ -125,27 +120,27 @@ ms.locfileid: "73579306"
 
 Укажите существующую или создайте новую [группу действий](../../azure-monitor/platform/action-groups.md), чтобы получать соответствующее уведомление, когда оповещение журнала соответствует заданным критериям, если пульс отсутствует более 15 минут.
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Настройка
 
-### <a name="q-can-i-change-the-name-of-the-tableblob-container-used-to-read-from-azure-diagnostics-wad"></a>В. Можно ли изменить имя таблицы или контейнера больших двоичных объектов, используемое для чтения из Диагностики Azure (WAD)?
+### <a name="q-can-i-change-the-name-of-the-tableblob-container-used-to-read-from-azure-diagnostics-wad"></a>У. Можно ли изменить имя таблицы или контейнера больших двоичных объектов, используемое для чтения из Диагностики Azure (WAD)?
 
-О. Нет, в настоящее время невозможно выполнить чтение из произвольных таблиц или контейнеров в хранилище Azure.
+A. Нет, в настоящее время невозможно выполнить чтение из произвольных таблиц или контейнеров в хранилище Azure.
 
-### <a name="q-what-ip-addresses-does-the-log-analytics-service-use-how-do-i-ensure-that-my-firewall-only-allows-traffic-to-the-log-analytics-service"></a>В. Какие IP-адреса использует служба Log Analytics? Как сделать так, чтобы мой брандмауэр разрешал только трафик к службам Log Analytics?
+### <a name="q-what-ip-addresses-does-the-log-analytics-service-use-how-do-i-ensure-that-my-firewall-only-allows-traffic-to-the-log-analytics-service"></a>У. Какие IP-адреса использует служба Log Analytics? Как сделать так, чтобы мой брандмауэр разрешал только трафик к службам Log Analytics?
 
-О. В основе службы Log Analytics лежит Azure. IP-адреса Log Analytics находятся в [диапазонах IP-адресов центра обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653).
+A. В основе службы Log Analytics лежит Azure. IP-адреса Log Analytics находятся в [диапазонах IP-адресов центра обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653).
 
 При развертывании службы фактические IP-адреса службы Log Analytics изменяются. DNS-имена, обеспечивающие передачу данных через брандмауэр, описаны в [требованиях к сети](../../azure-monitor/platform/log-analytics-agent.md#network-firewall-requirements).
 
-### <a name="q-i-use-expressroute-for-connecting-to-azure-does-my-log-analytics-traffic-use-my-expressroute-connection"></a>В. Я применяю ExpressRoute для подключения к Azure. Будет ли трафик Log Analytics использовать подключение ExpressRoute?
+### <a name="q-i-use-expressroute-for-connecting-to-azure-does-my-log-analytics-traffic-use-my-expressroute-connection"></a>У. Я применяю ExpressRoute для подключения к Azure. Будет ли трафик Log Analytics использовать подключение ExpressRoute?
 
-О. Различные типы трафика ExpressRoute описаны в [документации по ExpressRoute](../../expressroute/expressroute-faqs.md#supported-services).
+A. Различные типы трафика ExpressRoute описаны в [документации по ExpressRoute](../../expressroute/expressroute-faqs.md#supported-services).
 
 Трафик к Log Analytics использует общедоступный пиринговый канал ExpressRoute.
 
-### <a name="q-is-there-a-simple-and-easy-way-to-move-an-existing-log-analytics-workspace-to-another-log-analytics-workspaceazure-subscription"></a>В. Есть ли простой способ переместить существующую рабочую область Log Analytics в другую рабочую область или подписку Azure для Log Analytics?
+### <a name="q-is-there-a-simple-and-easy-way-to-move-an-existing-log-analytics-workspace-to-another-log-analytics-workspaceazure-subscription"></a>У. Есть ли простой способ переместить существующую рабочую область Log Analytics в другую рабочую область или подписку Azure для Log Analytics?
 
-О. С помощью командлета `Move-AzResource` вы можете переместить рабочую область Log Analytics, а также учетную запись службы автоматизации из одной подписки Azure в другую. Дополнительные сведения см. в разделе [Move-азресаурце](https://msdn.microsoft.com/library/mt652516.aspx).
+A. С помощью командлета `Move-AzResource` вы можете переместить рабочую область Log Analytics, а также учетную запись службы автоматизации из одной подписки Azure в другую. Дополнительные сведения см. в разделе [Move-азресаурце](https://msdn.microsoft.com/library/mt652516.aspx).
 
 Это изменение также можно выполнить на портале Azure.
 
@@ -191,20 +186,20 @@ ms.locfileid: "73579306"
 ```
 
 ## <a name="agent-data"></a>Данные агента
-### <a name="q-how-much-data-can-i-send-through-the-agent-to-log-analytics-is-there-a-maximum-amount-of-data-per-customer"></a>В. Каков объем данных, которые можно отправить с помощью агента в Log Analytics? Существует ли максимальный объем данных для одного клиента?
-О. Количество передаваемых данных не ограничено, оно зависит от выбранного варианта ценообразования — резервирование емкости или оплата по мере использования. Рабочая область Log Analytics предназначена для автоматического масштабирования, чтобы управлять томом, поступающим от клиента, даже если он равен терабайтам в день. Дополнительные сведения см. в разделе [сведения о ценах](https://azure.microsoft.com/pricing/details/monitor/).
+### <a name="q-how-much-data-can-i-send-through-the-agent-to-log-analytics-is-there-a-maximum-amount-of-data-per-customer"></a>У. Каков объем данных, которые можно отправить с помощью агента в Log Analytics? Существует ли максимальный объем данных для одного клиента?
+A. Количество передаваемых данных не ограничено, оно зависит от выбранного варианта ценообразования — резервирование емкости или оплата по мере использования. Рабочая область Log Analytics предназначена для автоматического масштабирования, чтобы управлять томом, поступающим от клиента, даже если он равен терабайтам в день. Дополнительные сведения см. в разделе [сведения о ценах](https://azure.microsoft.com/pricing/details/monitor/).
 
 Агент Log Analytics оказывает минимальное влияние на систему. Том данных зависит от решений, которые включены. Подробные сведения об объеме данных и сведения для каждого решения можно найти в статье об [использовании данных](../../azure-monitor/platform/data-usage.md).
 
 Дополнительные сведения см. в [блоге клиента](https://thoughtsonopsmgr.blogspot.com/2015/09/one-small-footprint-for-server-one.html) , в котором отображаются результаты после оценки использования ресурсов (объемного) агента log Analytics.
 
-### <a name="q-how-much-network-bandwidth-is-used-by-the-microsoft-management-agent-mma-when-sending-data-to-log-analytics"></a>В. Какой объем пропускной способности сети использует Microsoft Management Agent (MMA) при отправке данных в Log Analytics?
+### <a name="q-how-much-network-bandwidth-is-used-by-the-microsoft-management-agent-mma-when-sending-data-to-log-analytics"></a>У. Какой объем пропускной способности сети использует Microsoft Management Agent (MMA) при отправке данных в Log Analytics?
 
-О. Пропускная способность зависит от объема отправляемых данных. При передаче по сети данные сжимаются.
+A. Пропускная способность зависит от объема отправляемых данных. При передаче по сети данные сжимаются.
 
-### <a name="q-how-much-data-is-sent-per-agent"></a>В. Какой объем данных отправляет каждый агент?
+### <a name="q-how-much-data-is-sent-per-agent"></a>У. Какой объем данных отправляет каждый агент?
 
-О. Объем данных, отправляемых каждым агентом, зависит от:
+A. Объем данных, отправляемых каждым агентом, зависит от:
 
 * решения, которое вы используете;
 * количества журналов и счетчиков производительности, которые вы собираете;

@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 10/03/2019
 ms.author: mimart
 ms.reviewer: japere
-ms.openlocfilehash: 612b6caf47ec4764aa2bbef162592100198ed0c4
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 47c1ce3391129525237566fb92cec2e9b33ca08f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73832215"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75443414"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Часто задаваемые вопросы о прокси приложения Active Directory (Azure AD)
 
@@ -53,9 +53,9 @@ ms.locfileid: "73832215"
 
 Нет, этот сценарий не поддерживается. Только соединители и службы обновления можно настроить для использования прокси-сервера пересылки для исходящего трафика в Azure. См. раздел [Работа с существующими локальными прокси-серверами](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-connectors-with-proxy-servers) .
 
-### <a name="is-ssl-termination-sslhhtps-inspection-or-acceleration-on-traffic-from-the-connector-servers-to-azure-supported"></a>Поддерживается ли завершение SSL (SSL/ХХТПС-проверка или ускорение) трафика от серверов соединителей в Azure?
+### <a name="is-ssl-termination-sslhttps-inspection-or-acceleration-on-traffic-from-the-connector-servers-to-azure-supported"></a>Поддерживается ли прерывание SSL (проверка или ускорение SSL/HTTPS) на трафике с серверов соединителей в Azure?
 
-Соединитель прокси приложения выполняет проверку подлинности на основе сертификата в Azure. Прерывание SSL (проверка или ускорение SSL/ХХТПС) прерывает этот метод проверки подлинности и не поддерживается. Трафик из соединителя в Azure должен обходить все устройства, выполняющие завершение SSL.  
+Соединитель прокси приложения выполняет проверку подлинности на основе сертификата в Azure. Прерывание SSL (проверка или ускорение SSL/HTTPS) прерывает этот метод проверки подлинности и не поддерживается. Трафик из соединителя в Azure должен обходить все устройства, выполняющие завершение SSL.  
 
 ### <a name="should-i-create-a-dedicated-account-to-register-the-connector-with-azure-ad-application-proxy"></a>Следует ли создать выделенную учетную запись для регистрации соединителя в Azure AD Application Proxy?
 
@@ -63,7 +63,7 @@ ms.locfileid: "73832215"
 
 ### <a name="how-can-i-monitor-the-performance-of-the-azure-ad-application-proxy-connector"></a>Как можно отслеживать производительность соединителя Azure AD Application Proxy?
 
-Существуют счетчики системного монитора, которые устанавливаются вместе с соединителем. Для просмотра:  
+Существуют счетчики системного монитора, которые устанавливаются вместе с соединителем. Чтобы просмотреть эти элементы:  
 
 1. Нажмите кнопку **Пуск**, введите "PerfMon" и нажмите клавишу ВВОД.
 2. Выберите **системный монитор** и щелкните зеленый значок **+** .
@@ -117,7 +117,7 @@ ms.locfileid: "73832215"
 
 Нет, этот сценарий не поддерживается.  
 
-### <a name="my-users-dont-use-internet-explorer-11-and-the-pre-authentication-scenario-doesnt-work-for-them-is-this-expected"></a>Пользователи не используют Internet Explorer 11, и сценарий предварительной проверки подлинности не подходит для них. Ожидается ли это?
+### <a name="my-users-dont-use-internet-explorer-11-and-the-pre-authentication-scenario-doesnt-work-for-them-is-this-expected"></a>Пользователи не используют Internet Explorer 11, и сценарий предварительной проверки подлинности не подходит для них. Это нормально?
 
 Да, это ожидаемое значение. Для сценария предварительной проверки подлинности требуется элемент управления ActiveX, который не поддерживается сторонними браузерами.
 
@@ -125,7 +125,7 @@ ms.locfileid: "73832215"
 
 Нет, в настоящее время этот сценарий не поддерживается. Ознакомьтесь с нашим форумом по обратной связи [UserVoice](https://aka.ms/aadapuservoice) , чтобы получить обновления для этой функции.
 
-### <a name="after-i-configured-the-pre-authentication-scenario-i-realized-that-the-user-has-to-authenticate-twice-first-on-the-azure-ad-sign-in-form-and-then-on-the-rdweb-sign-in-form-is-this-expected-how-can-i-reduce-this-to-one-sign-in"></a>После настройки сценария предварительной проверки подлинности я понял, что пользователь должен пройти проверку подлинности дважды: сначала на форме входа в Azure AD, а затем на форме входа RDWeb. Ожидается ли это? Как можно сократить это до одного входа?
+### <a name="after-i-configured-the-pre-authentication-scenario-i-realized-that-the-user-has-to-authenticate-twice-first-on-the-azure-ad-sign-in-form-and-then-on-the-rdweb-sign-in-form-is-this-expected-how-can-i-reduce-this-to-one-sign-in"></a>После настройки сценария предварительной проверки подлинности я понял, что пользователь должен пройти проверку подлинности дважды: сначала на форме входа в Azure AD, а затем на форме входа RDWeb. Это нормально? Как можно сократить это до одного входа?
 
 Да, это ожидаемое значение. Если компьютер пользователя подключен к Azure AD, он автоматически входит в Azure AD. Пользователь должен предоставить свои учетные данные только в форме входа RDWeb.
 

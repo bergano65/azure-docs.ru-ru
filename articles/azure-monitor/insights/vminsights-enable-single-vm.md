@@ -4,15 +4,15 @@ description: Узнайте, как оценить Azure Monitor для вирт
 ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
-author: mgoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 11/14/2019
-ms.openlocfilehash: 3ab3164db7702566e62b2eedf2a9a03e9f7fb55c
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: c77fabf0220ecfcb889ce7cb71fa075fde27226f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74109125"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75400591"
 ---
 # <a name="enable-azure-monitor-for-vms-preview-for-evaluation"></a>Включение Azure Monitor для виртуальных машин (Предварительная версия) для оценки
 
@@ -23,7 +23,7 @@ ms.locfileid: "74109125"
 ## <a name="enable-monitoring-for-a-single-azure-vm"></a>Включение мониторинга для одной виртуальной машины Azure
 Чтобы включить мониторинг виртуальной машины Azure, выполните следующие действия.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
 1. Выберите **Виртуальные машины**.
 
@@ -50,7 +50,7 @@ ms.locfileid: "74109125"
 
 Чтобы включить мониторинг масштабируемого набора виртуальных машин Azure, выполните следующие действия.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
 2. Выберите **масштабируемые наборы виртуальных машин**.
 
@@ -76,7 +76,7 @@ ms.locfileid: "74109125"
 
 Теперь, когда вы включили мониторинг для виртуальной машины или масштабируемого набора виртуальных машин, данные мониторинга доступны для анализа в Azure Monitor для виртуальных машин. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы просмотреть зависимости обнаруженных приложений, см. статью [использование Azure Monitor для виртуальных машин Map](vminsights-maps.md). 
 * Чтобы определить узкие места, общее использование и производительность виртуальной машины, см. статью [Просмотр производительности виртуальной машины Azure](vminsights-performance.md).

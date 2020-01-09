@@ -1,25 +1,14 @@
 ---
-title: Развертывание существующего исполняемого файла в Azure Service Fabric | Документация Майкрософт
+title: Развертывание существующего исполняемого файла в Azure Service Fabric
 description: Узнайте, как упаковать существующее приложение в качестве гостевого исполняемого файла для его развертывания в кластере Service Fabric.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: d799c1c6-75eb-4b8a-9f94-bf4f3dadf4c3
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: na
 ms.date: 07/02/2017
-ms.author: atsenthi
-ms.openlocfilehash: 575303cc2ec3e880187bac64da06d05721df14e6
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: cdbc965d0e8ec4a8f42fbe438b8ac6ddfe05a1b3
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599668"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75377112"
 ---
 # <a name="package-and-deploy-an-existing-executable-to-service-fabric"></a>Упаковка и развертывание существующего исполняемого файла вручную
 При упаковке существующего исполняемого файла в качестве [гостевого](service-fabric-guest-executables-introduction.md) вы можете использовать шаблон проекта Visual Studio или [создать пакет приложения вручную](#manually). При использовании Visual Studio шаблон проекта создает для вас структуру пакета приложения и файлы манифеста.
@@ -42,7 +31,7 @@ Visual Studio предоставляет шаблон службы Service Fabri
      * `CodePackage`. Рабочим каталогом будет корневой каталог в пакете приложения (каталог `GuestService1Pkg` в показанной выше структуре файлов).
      * `Work`. Файлы помещаются в подкаталог, который называется рабочим.
 4. Присвойте службе имя и нажмите кнопку **ОК**.
-5. Если службе нужна конечная точка для обмена данными, можно добавить значения протокола, порта и типа в файл ServiceManifest.xml. Например, `<Endpoint Name="NodeAppTypeEndpoint" Protocol="http" Port="3000" UriScheme="http" PathSuffix="myapp/" Type="Input" />`.
+5. Если службе нужна конечная точка для обмена данными, можно добавить значения протокола, порта и типа в файл ServiceManifest.xml. Например: `<Endpoint Name="NodeAppTypeEndpoint" Protocol="http" Port="3000" UriScheme="http" PathSuffix="myapp/" Type="Input" />`.
 6. Теперь можно выполнить упаковку и публикацию на локальном кластере, выполнив отладку решения в Visual Studio. Когда все будет готово, можно опубликовать приложение на удаленном кластере или вернуть решение в систему управления версиями.
 7. Прочтите сведения о [проверке работающего приложения](#check-your-running-application), чтобы узнать, как просмотреть данные о работе гостевого исполняемого файла в Service Fabric Explorer.
 
@@ -143,7 +132,7 @@ Service Fabric создает расширенную копию содержим
 
 Атрибут `Name` определяет имя каталога в пакете приложения, где хранится код службы. `CodePackage` также имеет атрибут `version`. Он определяет версию кода, а также может использоваться для обновления кода службы с помощью инфраструктуры Service Fabric для управления жизненным циклом приложения.
 
-#### <a name="optional-update-setupentrypoint"></a>Необязательно: обновление SetupEntryPoint
+#### <a name="optional-update-setupentrypoint"></a>Обновление SetupEntrypoint (необязательно)
 ```xml
 <SetupEntryPoint>
    <ExeHost>
@@ -251,7 +240,7 @@ Service Fabric создает расширенную копию содержим
 
 Файлы журналов сохраняются в один из рабочих каталогов службы. Чтобы определить, где находятся файлы, откройте Service Fabric Explorer и посмотрите, на каком узле запущена служба и какой рабочий каталог используется. Эта процедура рассмотрена далее в этой статье.
 
-## <a name="deployment"></a>Развертывание
+## <a name="deployment"></a>Развертывание.
 Последним шагом является [развертывание приложения](service-fabric-deploy-remove-applications.md). В приведенном ниже скрипте PowerShell показано, как можно развернуть приложение в локальном кластере разработки и запустить новую службу Service Fabric.
 
 ```powershell
@@ -296,7 +285,7 @@ New-ServiceFabricService -ApplicationName 'fabric:/nodeapp' -ServiceName 'fabric
 
 ![Расположение журнала](./media/service-fabric-deploy-existing-app/loglocation.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Из этой статьи вы узнали об основной процедуре упаковки гостевого исполняемого файла и его развертывания в Service Fabric. В приведенных ниже статьях описаны связанные сведения и задачи.
 
 * [Пример для упаковки и развертывания гостевого исполняемого файла](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started), включая ссылку на предварительную версию средства упаковки

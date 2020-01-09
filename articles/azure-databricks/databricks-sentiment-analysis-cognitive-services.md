@@ -9,14 +9,14 @@ ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 07/29/2019
-ms.openlocfilehash: 13afdf4d6c45927c60e8de9fd228f70b7c0a3c68
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: ff16458bb853323181ad8006e378a061572db463
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74286541"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75411130"
 ---
-# <a name="tutorial-sentiment-analysis-on-streaming-data-using-azure-databricks"></a>Руководство по оценке тональности сообщений при потоковой передаче данных с использованием Azure Databricks
+# <a name="tutorial-sentiment-analysis-on-streaming-data-using-azure-databricks"></a>Руководство. Анализ тональности сообщений при потоковой передаче данных с использованием Azure Databricks
 
 Из этого руководства вы узнаете, как выполнять анализ тональности при потоковой передаче данных практически в реальном времени с использованием Azure Databricks. Вам следует настроить прием данных с использованием Центров событий Azure. Затем вы получите сообщения из Центров событий в Databricks Azure с помощью соединителя Центров событий Spark. И наконец, вы выполните анализ тональности данных потоковой передачи с использованием API Cognitive Service.
 
@@ -45,7 +45,7 @@ ms.locfileid: "74286541"
 > Инструкции из этого руководство нельзя выполнять с **бесплатной пробной версией подписки**.
 > Если у вас есть бесплатная учетная запись, перейдите к профилю и измените подписку на подписку с **оплатой по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/). Затем [удалите предельную сумму расходов](https://docs.microsoft.com/azure/billing/billing-spending-limit#remove-the-spending-limit-in-azure-portal) и [запросите увеличение квоты](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) на ЦП в своем регионе. При создании рабочей области Azure Databricks можно выбрать ценовую категорию **Пробная версия ("Премиум" — 14 дней бесплатно (DBU))** для предоставления рабочей области доступа к бесплатным DBU Azure Databricks уровня "Премиум" на 14 дней.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем приступить к изучению этого руководства, убедитесь, что выполнены следующие требования.
 - Пространство имен Центров событий Azure.
@@ -57,7 +57,7 @@ ms.locfileid: "74286541"
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портале Azure](https://portal.azure.com/?WT.mc_id=sparkeventhubs-docs-alehall).
+Войдите на [портал Azure](https://portal.azure.com/?WT.mc_id=sparkeventhubs-docs-alehall).
 
 ## <a name="create-an-azure-databricks-workspace"></a>Создание рабочей области Azure Databricks
 
@@ -73,12 +73,12 @@ ms.locfileid: "74286541"
 
     Укажите следующие значения.
 
-    |Свойство  |ОПИСАНИЕ  |
+    |Свойство  |Description  |
     |---------|---------|
     |**Имя рабочей области**     | Укажите имя рабочей области Databricks.        |
     |**подписка**     | Выберите подписку Azure в раскрывающемся списке.        |
-    |**группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md). |
-    |**Местоположение.**     | Выберите регион **Восточная часть США 2**. Другие доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/?WT.mc_id=sparkeventhubs-docs-alehall).        |
+    |**группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../azure-resource-manager/management/overview.md). |
+    |**Местоположение**     | Выберите регион **Восточная часть США 2**. Другие доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/?WT.mc_id=sparkeventhubs-docs-alehall).        |
     |**Ценовая категория**     |  Вы можете выбрать уровень **Стандартный** или **Премиум**. Дополнительные сведения об этих ценовых категориях см. на [странице цен на Databricks](https://azure.microsoft.com/pricing/details/databricks/?WT.mc_id=sparkeventhubs-docs-alehall).       |
 
     Установите флажок **Закрепить на панели мониторинга** и щелкните **Создать**.
@@ -148,7 +148,7 @@ ms.locfileid: "74286541"
 
      ![Указание координат Maven](./media/databricks-sentiment-analysis-cognitive-services/databricks-add-library-search-dialogue.png "Поиск координат Maven")
 
-3. Щелкните **Установить**.
+3. Выберите пункт **Установить**.
 
 4. В меню кластера убедитесь, что обе библиотеки установлены и подключены правильно.
 
@@ -160,7 +160,7 @@ ms.locfileid: "74286541"
 
 В рамках этого учебника для анализа тональности потока твитов практически в реальном времени используются [API Анализа текста Azure Cognitive Services](../cognitive-services/text-analytics/overview.md). Прежде чем использовать API, необходимо создать учетную запись Azure Cognitive Services в Azure и получить ключ доступа к API Анализа текста.
 
-1. Войдите на [портале Azure](https://portal.azure.com/?WT.mc_id=sparkeventhubs-docs-alehall).
+1. Войдите на [портал Azure](https://portal.azure.com/?WT.mc_id=sparkeventhubs-docs-alehall).
 
 2. Выберите действие **Создать ресурс**.
 
@@ -216,7 +216,7 @@ ms.locfileid: "74286541"
 В записной книжке **SendTweetsToEventHub** вставьте приведенный ниже код и замените заполнители значениями вашего пространства имен Центров событий и созданного ранее приложения Twitter. Эта записная книжка выполняет потоковую передачу твитов с ключевым словом Azure в Центры событий в режиме реального времени.
 
 > [!NOTE]
-> API Twitter имеет определенные ограничения запроса и [квоты](https://developer.twitter.com/en/docs/basics/rate-limiting.html). Если вас не удовлетворяет ограничение стандартной частоты в API Twitter, вы можете создавать содержимое текста без использования API Twitter в этом примере. Для этого установите переменную **dataSource** `test`вместо`twitter` и заполните список **testSource** предпочтительными вводными данными теста.
+> API Twitter имеет определенные ограничения запроса и [квоты](https://developer.twitter.com/en/docs/basics/rate-limiting.html). Если вас не удовлетворяет ограничение стандартной частоты в API Twitter, вы можете создавать содержимое текста без использования API Twitter в этом примере. Для этого установите переменную **dataSource**`test`вместо`twitter` и заполните список **testSource** предпочтительными вводными данными теста.
 
 ```scala
     import scala.collection.JavaConverters._
@@ -624,8 +624,8 @@ streamingDataFrame.writeStream.outputMode("append").format("console").option("tr
 
 Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после \_\_ мин бездействия). В этом случае работа кластера должна завершиться автоматически, если кластер был неактивным в течение определенного времени.
 
-## <a name="next-steps"></a>Дополнительная информация
-В этом руководстве вы узнали, как с помощью Azure Databricks выполнить потоковую передачу данных в Центры событий Azure с последующим чтением данных потоковой передачи из Центров событий в реальном времени. Вы научились выполнять следующие задачи:
+## <a name="next-steps"></a>Дальнейшие действия
+В этом руководстве вы узнали, как с помощью Azure Databricks выполнить потоковую передачу данных в Центры событий Azure с последующим чтением данных потоковой передачи из Центров событий в реальном времени. Вы ознакомились с выполнением следующих задач:
 > [!div class="checklist"]
 > * Создание рабочей области Azure Databricks
 > * Создание кластера Spark в Azure Databricks.
@@ -635,7 +635,7 @@ streamingDataFrame.writeStream.outputMode("append").format("console").option("tr
 > * Создание учетной записи Microsoft Cognitive Services и получение ключа доступа.
 > * Отправка твитов в Центры событий.
 > * Чтение твитов из Центров событий.
-> * Анализ тональности твитов.
+> * Анализ тональности твитов
 
 Перейдите к следующему руководству, чтобы ознакомиться с выполнением задач машинного обучения с помощью Azure Databricks.
 

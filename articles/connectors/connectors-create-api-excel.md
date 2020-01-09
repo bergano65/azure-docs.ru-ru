@@ -1,22 +1,22 @@
 ---
-title: Подключение к Excel Online
-description: Сведения об управлении данными с помощью интерфейсов REST API Excel Online и Azure Logic Apps
+title: Управление данными, листами и таблицами в Excel Online
+description: Управление данными в листах и таблицах Excel Online для бизнеса или Excel Online для OneDrive с помощью Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 08/23/2018
 tags: connectors
-ms.openlocfilehash: a4356b4f88df3fc457917be563a79e9054a1638e
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: b1df1219590aa94331a4404b1315eb7231c59699
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74789799"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75445884"
 ---
 # <a name="manage-excel-online-data-with-azure-logic-apps"></a>Управление данными Excel Online с помощью Azure Logic Apps
 
-С помощью Azure Logic Apps и соединителя Excel Online можно создать автоматизированные задачи и рабочие процессы, основанные на данных в Excel Online для бизнеса или OneDrive. Этот соединитель выполняет действия, которые помогут вам работать с данными и управлять электронными таблицами, например:
+С помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и соединителя [Excel Online для Business](/connectors/excelonlinebusiness/) или [Excel Online для onedrive](/connectors/excelonline/) можно создавать автоматизированные задачи и рабочие процессы на основе данных в Excel Online для бизнеса или onedrive. Этот соединитель выполняет действия, которые помогут вам работать с данными и управлять электронными таблицами, например:
 
 * создавать листы и таблицы;
 * получать листы, таблицы и строки, а также управлять ими;

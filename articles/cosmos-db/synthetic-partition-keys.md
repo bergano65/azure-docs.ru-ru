@@ -1,17 +1,17 @@
 ---
-title: Создание искусственного ключа секции в Azure Cosmos DB для равномерного распределения данных и рабочей нагрузки.
+title: Создание ключа искусственного раздела в Azure Cosmos DB
 description: Сведения об использовании ключей искусственного секционирования в контейнерах Azure Cosmos для равномерного распределения данных и рабочей нагрузки по ключам секций.
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/03/2019
 author: markjbrown
 ms.author: mjbrown
-ms.openlocfilehash: 093610777b150c90ad55f1ce18337f1de8b17219
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: e8786c2d6e93c18a5bf9856a5555d6b528f842c5
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74870502"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75441224"
 ---
 # <a name="create-a-synthetic-partition-key"></a>Создание искусственного ключа секции
 
@@ -58,7 +58,7 @@ ms.locfileid: "74870502"
 
 Подробнее о концепции разделения вы можете узнать в следующих статьях:
 
-* Подробнее о [логических разделах](partition-data.md).
+* Подробнее о [логических секциях](partition-data.md).
 * Подробнее о [подготовке пропускной способности в контейнерах и базах данных Azure Cosmos](set-throughput.md).
 * Подробнее о [подготовке пропускной способности для контейнера Azure Cosmos](how-to-provision-container-throughput.md).
 * Подробнее о [подготовке пропускной способности для базы данных Azure Cosmos](how-to-provision-database-throughput.md).

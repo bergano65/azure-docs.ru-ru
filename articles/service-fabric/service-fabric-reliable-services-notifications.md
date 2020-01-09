@@ -1,28 +1,19 @@
 ---
-title: Уведомления Reliable Services | Документация Майкрософт
-description: Содержательная документация по уведомлениям Reliable Services в Service Fabric
-services: service-fabric
-documentationcenter: .net
+title: Уведомления Reliable Services
+description: Концептуальная документация по Service Fabric Reliable Services уведомлений для диспетчера надежных состояний и надежного словаря
 author: mcoskun
-manager: chackdan
-editor: masnider,vturecek
-ms.assetid: cdc918dd-5e81-49c8-a03d-7ddcd12a9a76
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 6/29/2017
 ms.author: mcoskun
-ms.openlocfilehash: d009749b7bc31595be26124b9d1eee7666e95bd4
-ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
+ms.openlocfilehash: 1f3239ea1da252ccd84c6572b562756c8fd1677d
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551674"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75639570"
 ---
 # <a name="reliable-services-notifications"></a>Уведомления Reliable Services
-Уведомления позволяют клиентам отслеживать изменения, которые вносятся в интересующий их объект. Два типа объектов поддерживает уведомления: *Диспетчер надежных состояний* и *надежного словаря*.
+Уведомления позволяют клиентам отслеживать изменения, которые вносятся в интересующий их объект. Существует два типа объектов, поддерживающих уведомления: *диспетчер надежных состояний* и *надежный словарь*.
 
 Распространенные причины для использования уведомлений:
 
@@ -35,9 +26,9 @@ ms.locfileid: "67551674"
 Диспетчер надежных состояний предоставляет уведомления для следующих событий:
 
 * транзакция:
-  * Фиксация
+  * Commit
 * Диспетчер состояний:
-  * перестроение;
+  * Перестроение
   * добавление надежного состояния;
   * удаление надежного состояния.
 
@@ -46,9 +37,9 @@ ms.locfileid: "67551674"
 Диспетчер надежных состояний поддерживает коллекцию надежных состояний, таких как надежный словарь и надежная очередь. При изменении этой коллекции он активирует уведомления. Это может быть добавление или удаление надежного состояния, а также перестроение всей коллекции.
 Перестроение коллекции диспетчера надежных состояний происходит в трех случаях.
 
-* Восстановление: При запуске реплики, он восстанавливает предыдущее состояние с диска. По завершении восстановления активируется событие с экземпляром **NotifyStateManagerChangedEventArgs**, содержащим набор восстановленных надежных состояний.
-* Полная копия: Прежде чем реплику можно присоединить к набору конфигурации, она должна быть сформирована. В некоторых случаях может потребоваться применить к неактивной вторичной реплике полную копию состояния диспетчера надежных состояний из первичной реплики. Диспетчер надежных состояний для вторичной реплики использует экземпляр **NotifyStateManagerChangedEventArgs**, чтобы активировать событие, содержащее набор надежных состояний, полученный из первичной реплики.
-* Восстановление: В сценарии аварийного восстановления состояние реплики может быть восстановлена из резервной копии с помощью **RestoreAsync**. В таких случаях диспетчер надежных состояний для первичной реплики использует экземпляр **NotifyStateManagerChangedEventArgs**, чтобы активировать событие, содержащее набор надежных состояний, восстановленный из резервной копии.
+* Восстановление. При запуске реплики ее предыдущее состояние будет восстановлено с диска. По завершении восстановления активируется событие с экземпляром **NotifyStateManagerChangedEventArgs**, содержащим набор восстановленных надежных состояний.
+* Полная копия. Прежде чем реплику можно будет присоединить к набору конфигурации, нужно выполнить ее сборку. В некоторых случаях может потребоваться применить к неактивной вторичной реплике полную копию состояния диспетчера надежных состояний из первичной реплики. Диспетчер надежных состояний для вторичной реплики использует экземпляр **NotifyStateManagerChangedEventArgs**, чтобы активировать событие, содержащее набор надежных состояний, полученный из первичной реплики.
+* Восстановление. В сценариях аварийного восстановления состояние реплики можно восстановить из резервной копии с помощью **RestoreAsync**. В таких случаях диспетчер надежных состояний для первичной реплики использует экземпляр **NotifyStateManagerChangedEventArgs**, чтобы активировать событие, содержащее набор надежных состояний, восстановленный из резервной копии.
 
 Для получения уведомлений о транзакциях и (или) уведомлений диспетчера состояний необходимо выполнить регистрацию в диспетчере надежных состояний, используя событие **TransactionChanged** или **StateManagerChanged**. Чаще всего для регистрации в этих обработчиках событий используется конструктор службы с отслеживанием состояния. Если выполнить регистрацию в конструкторе, вы будете получать все уведомления в связи с изменениями в течение всего времени существования **IReliableStateManager**.
 
@@ -84,11 +75,11 @@ private void OnTransactionChangedHandler(object sender, NotifyTransactionChanged
 ```
 
 Обработчик событий **StateManagerChanged** использует **NotifyStateManagerChangedEventArgs** для предоставления сведений о событии.
-**NotifyStateManagerChangedEventArgs** есть два подкласса: **NotifyStateManagerRebuildEventArgs** и **NotifyStateManagerSingleEntityChangedEventArgs**.
+Существуют два подкласса экземпляра **NotifyStateManagerChangedEventArgs**: **NotifyStateManagerRebuildEventArgs** и **NotifyStateManagerSingleEntityChangedEventArgs**.
 Свойство Action в **NotifyStateManagerChangedEventArgs** используется для приведения **NotifyStateManagerChangedEventArgs** к правильному подклассу:
 
-* **NotifyStateManagerChangedAction.Rebuild**: **NotifyStateManagerRebuildEventArgs**
-* **NotifyStateManagerChangedAction.Add** и **NotifyStateManagerChangedAction.Remove**: **NotifyStateManagerSingleEntityChangedEventArgs**
+* **NotifyStateManagerChangedAction.Rebuild**: **NotifyStateManagerRebuildEventArgs**;
+* **NotifyStateManagerChangedAction.Add** и **NotifyStateManagerChangedAction.Remove**: **NotifyStateManagerSingleEntityChangedEventArgs**.
 
 Ниже приведен пример обработчика уведомлений **StateManagerChanged** .
 
@@ -109,11 +100,11 @@ public void OnStateManagerChangedHandler(object sender, NotifyStateManagerChange
 ## <a name="reliable-dictionary-notifications"></a>Уведомления надежного словаря
 Надежный словарь предоставляет уведомления для следующих событий:
 
-* Повторная сборка. Вызывается, когда **ReliableDictionary** был восстановлен свое состояние из восстановленного или скопированного локального состояния или резервной копии.
-* Очистить: Вызывается, когда состояние **ReliableDictionary** был очищен через **ClearAsync** метод.
-* Добавьте следующие пакеты: Вызывается, когда элемент был добавлен **ReliableDictionary**.
-* Обновление: Вызывается, когда элемент в **IReliableDictionary** был обновлен.
-* Удалить: Вызывается, когда элемент в **IReliableDictionary** был удален.
+* Перестроение. Вызывается при восстановлении состояния **ReliableDictionary** из восстановленного или скопированного локального состояния либо из резервной копии.
+* Очистка. Вызывается при очистке состояния **ReliableDictionary** с помощью метода **ClearAsync**.
+* Добавление. Вызывается при добавлении элемента в **ReliableDictionary**.
+* Обновление. Вызывается при обновлении элемента в **IReliableDictionary**.
+* Удаление. Вызывается при удалении элемента из **IReliableDictionary**.
 
 Для получения уведомлений надежного словаря нужно выполнить регистрацию обработчика событий **DictionaryChanged** для **IReliableDictionary**. Чаще всего для регистрации этих обработчиков событий используется уведомление о добавлении **ReliableStateManager.StateManagerChanged** .
 Если вы выполните регистрацию во время добавления **IReliableDictionary** для **IReliableStateManager**, то не пропустите ни одно уведомление.
@@ -165,11 +156,11 @@ public async Task OnDictionaryRebuildNotificationHandlerAsync(
 Обработчик событий **DictionaryChanged** использует **NotifyDictionaryChangedEventArgs** для предоставления сведений о событии.
 **NotifyDictionaryChangedEventArgs** . Свойство Action в **NotifyDictionaryChangedEventArgs** используется для приведения **NotifyDictionaryChangedEventArgs** к правильному подклассу:
 
-* **NotifyDictionaryChangedAction.Rebuild**: **NotifyDictionaryRebuildEventArgs**
-* **NotifyDictionaryChangedAction.Clear**: **NotifyDictionaryClearEventArgs**
-* **NotifyDictionaryChangedAction.Add**: **NotifyDictionaryItemAddedEventArgs**
-* **NotifyDictionaryChangedAction.Update**: **NotifyDictionaryItemUpdatedEventArgs**
-* **NotifyDictionaryChangedAction.Remove**: **NotifyDictionaryItemRemovedEventArgs**
+* **NotifyDictionaryChangedAction.Rebuild**: **NotifyDictionaryRebuildEventArgs**;
+* **NotifyDictionaryChangedAction.Clear**: **NotifyDictionaryClearEventArgs**;
+* **NotifyDictionaryChangedAction. Add**: **нотифидиктионаритемаддедевентаргс**
+* **NotifyDictionaryChangedAction.Update**: **NotifyDictionaryItemUpdatedEventArgs**;
+* **NotifyDictionaryChangedAction.Remove**: **NotifyDictionaryItemRemovedEventArgs**.
 
 ```csharp
 public void OnDictionaryChangedHandler(object sender, NotifyDictionaryChangedEventArgs<TKey, TValue> e)
@@ -216,7 +207,7 @@ public void OnDictionaryChangedHandler(object sender, NotifyDictionaryChangedEve
 * При обработке хода выполнения с результатом false некоторые операции могут быть отменены. Для таких операций отмены будут создаваться уведомления и выполнен откат состояния реплики до стабильный точки. Одно важное отличие уведомлений об отмене — события с повторяющимися ключами агрегируются. Например, если упомянутая выше транзакция T1 отменяется, то пользователь увидит одно уведомление для операции Delete(X).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Reliable Collections](service-fabric-work-with-reliable-collections.md)
+* [Надежные коллекции](service-fabric-work-with-reliable-collections.md)
 * [Краткое руководство по надежным службам Reliable Services](service-fabric-reliable-services-quick-start.md)
 * [Архивация и восстановление (аварийное восстановление) надежных служб](service-fabric-reliable-services-backup-restore.md)
 * [Справочник разработчика по надежным коллекциям](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.data.collections.aspx)

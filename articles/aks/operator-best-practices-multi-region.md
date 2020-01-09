@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: thfalgou
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 5fdb189fcab3da4dad52642571ac42e669828fe3
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: ff55257891ff379bea9ff44aa5136195ced44354
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74971661"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75613114"
 ---
 # <a name="best-practices-for-business-continuity-and-disaster-recovery-in-azure-kubernetes-service-aks"></a>Рекомендации по обеспечению непрерывности бизнес-процессов и аварийного восстановления в Службе Azure Kubernetes (AKS)
 
 При управлении кластерами в Службе Azure Kubernetes (AKS) время бесперебойной работы приложений является важным аспектом. AKS обеспечивает высокий уровень доступности, объединяя несколько узлов в одну группу доступности. Но эти несколько узлов не защищают систему от сбоя региона. Чтобы максимально увеличить время работы, планируйте непрерывность бизнес-процессов и подготовьте аварийное восстановление.
 
-Эта статья посвящена планированию непрерывности бизнес-процессов и аварийного восстановления в AKS. Вы узнаете, как выполнять такие задачи.
+Эта статья посвящена планированию непрерывности бизнес-процессов и аварийного восстановления в AKS. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Спланируйте кластеры AKS в нескольких регионах.
@@ -114,7 +114,7 @@ ms.locfileid: "74971661"
 
 Приложениям может требоваться постоянное хранилище даже после удаления Pod. В Kubernetes можно использовать постоянные тома для сохранения хранилища данных. Постоянные тома подключены к виртуальной машине узла, а затем доступны для модулей Pod. Постоянные тома следуют модулям Pod, даже если они перемещаются на другой узел в пределах одного кластера.
 
-Используемая стратегия репликации зависит от решения хранилища. Общие решения для хранения данных, такие как [Gluster](https://docs.gluster.org/en/latest/Administrator%20Guide/Geo%20Replication/), [ЦЕФ](https://docs.ceph.com/docs/master/cephfs/disaster-recovery/), [рук](https://rook.io/docs/rook/master/disaster-recovery.html)и [Portworx](https://docs.portworx.com/scheduler/kubernetes/going-production-with-k8s.html#disaster-recovery-with-cloudsnaps) , предоставляют собственные рекомендации по аварийному восстановлению и репликации.
+Используемая стратегия репликации зависит от решения хранилища. Общие решения для хранения данных, такие как [Gluster](https://docs.gluster.org/en/latest/Administrator%20Guide/Geo%20Replication/), [ЦЕФ](https://docs.ceph.com/docs/master/cephfs/disaster-recovery/), [рук](https://rook.io/docs/rook/v1.2/ceph-disaster-recovery.html)и [Portworx](https://docs.portworx.com/scheduler/kubernetes/going-production-with-k8s.html#disaster-recovery-with-cloudsnaps) , предоставляют собственные рекомендации по аварийному восстановлению и репликации.
 
 Типичной стратегией является предоставление общей точки хранения, где приложения могут записывать свои данные. Затем эти данные реплицируются в другие регионы и предоставляются для локального доступа.
 

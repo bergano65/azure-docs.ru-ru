@@ -12,12 +12,12 @@ ms.date: 05/22/2019
 ms.author: baselden
 ms.reviewer: jeeds
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c05ad3eace1219e19e0bfb117d3ec8de68a756f9
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 3b3edbbe037c3874d639476e516b3732b7573d9b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74232291"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75443373"
 ---
 # <a name="choose-the-right-federation-protocol-for-your-multi-tenant-application"></a>Выбор правильного протокола Федерации для приложения с несколькими клиентами
 
@@ -30,7 +30,7 @@ ms.locfileid: "74232291"
 * Security Assertion Markup Language (SAML)
 * Web Services Federation (WSFed)
 
-| Функция| OAuth/OIDC| SAML/WSFed |
+| Возможность| OAuth/OIDC| SAML/WSFed |
 | - |-|-|
 | Единый вход на основе веб-сайта| √| √ |
 | Единый выход через Интернет| √| √ |
@@ -44,7 +44,7 @@ ms.locfileid: "74232291"
 
 ## <a name="oauth-20-and-open-id-connect"></a>OAuth 2,0 и Open ID Connect
 
-OAuth 2,0 является [стандартным промышленным](https://oauth.net/2/) протоколом для авторизации. OIDC (OpenID Connect Connect) — это [стандартный](https://openid.net/connect/) уровень проверки подлинности идентификации на основе протокола Oath 2,0.
+OAuth 2,0 является [стандартным промышленным](https://oauth.net/2/) протоколом для авторизации. OIDC (OpenID Connect Connect) — это [стандартный](https://openid.net/connect/) уровень проверки подлинности идентификации на основе протокола OAuth 2,0.
 
 ### <a name="benefits"></a>Преимущества
 
@@ -94,7 +94,7 @@ Microsoft Graph — это структура данных для всех Micro
 
 Если для проверки подлинности используется открытая ИДЕНТИФИКАЦИя Connect, то процесс разработки будет непростым, так как вы будете использовать OAuth2, фундамент открытого идентификатора Connect, чтобы получить маркеры, которые можно использовать для вызова Microsoft Graph API. Если приложение использует SAML или WSFed, необходимо добавить дополнительный код в приложение, чтобы получить эти OAuth2 для получения маркеров, необходимых для вызова Microsoft Graph API. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Включение единого входа для приложения с несколькими клиентами](isv-sso-content.md)
 

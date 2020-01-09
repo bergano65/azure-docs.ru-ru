@@ -1,25 +1,14 @@
 ---
-title: Модель приложений Azure Service Fabric | Документация Майкрософт
-description: Описание моделирования и описания приложений и служб в Service Fabric.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: mani-ramaswamy
-ms.assetid: 17a99380-5ed8-4ed9-b884-e9b827431b02
-ms.service: service-fabric
-ms.devlang: dotnet
+title: Модель приложения Service Fabric Azure
+description: Как моделировать и описывать приложения и службы в Azure Service Fabric с помощью файлов манифеста приложения и службы.
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 2/23/2018
-ms.author: atsenthi
-ms.openlocfilehash: 750970233cbcb14d901dbb5fa94f649f6ff8ae6c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7179686b7d4ef2df267cb95ece8f83d5fb7682b8
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60621451"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551885"
 ---
 # <a name="model-an-application-in-service-fabric"></a>Моделирование приложения в структуре службы
 В этой статье приведен обзор модели приложений Azure Service Fabric и описывается, как определить приложение и службу с помощью файлов манифеста.

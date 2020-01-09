@@ -1,6 +1,7 @@
 ---
-title: Статья об известных проблемах и ограничениях миграции при оперативной миграции из Oracle в базу данных Azure для PostgreSQL — один сервер | Документация Майкрософт
-description: Сведения об известных проблемах и ограничениях миграции при оперативной миграции из Oracle в базу данных Azure для PostgreSQL.
+title: 'Известные проблемы: миграция из Oracle в базу данных Azure для PostgreSQL'
+titleSuffix: Azure Database Migration Service
+description: Сведения об известных проблемах и ограничениях миграции с миграцией из Oracle в базу данных Azure для PostgreSQL-Single Server с помощью Azure Database Migration Service.
 services: database-migration
 author: HJToland3
 ms.author: jtoland
@@ -8,15 +9,15 @@ manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
-ms.custom: mvc
+ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 11/05/2019
-ms.openlocfilehash: ecd2750926fd04c84d2d6b48f5fde06363dd15df
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 0a1f46698ddb966c315d08a794dd710a74295f97
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73606758"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75437819"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-from-oracle-to-azure-db-for-postgresql-single-server"></a>Известные проблемы и ограничения миграции при оперативной миграции из Oracle в базу данных Azure для PostgreSQL — один сервер
 
@@ -41,11 +42,11 @@ Azure Database Migration Service поддерживает миграцию в б
 
 - BFILE
 - ROWID
-- ЗНАЧ
+- REF
 - UROWID
 - анидата
 - SDO_GEOMETRY
-- Вложенные таблицы
+- Вложенные таблицы;
 - Определяемые пользователем типы данных
 - Примечания
 - Виртуальные столбцы

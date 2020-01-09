@@ -6,14 +6,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 10/02/2019
+ms.date: 12/11/2019
 ms.author: cherylmc
-ms.openlocfilehash: f22b29cfcaf1d4c4ce28b2b0557d70b281b6891f
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 6f0c33ee7fd5790a060574230f1156c569a63936
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74146396"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75425672"
 ---
 # <a name="configure-an-always-on-vpn-device-tunnel"></a>Настройка туннеля Always On VPN для устройства
 
@@ -37,7 +37,7 @@ Always On VPN-подключения включают два типа тунне
 
 Чтобы успешно установить туннель устройства, необходимо соблюдение следующих требований.
 
-* Устройство должно быть присоединенным к домену компьютером под управлением Windows 10 Корпоративная или образовательных версий 1709 или более поздней версии.
+* Устройство должно быть присоединенным к домену компьютером под управлением Windows 10 Корпоративная или образовательных версий 1809 или более поздней версии.
 * Туннель можно настроить только для встроенного решения VPN Windows и устанавливается с использованием IKEv2 с проверкой подлинности сертификата компьютера. 
 * Для каждого устройства можно настроить только один туннель устройства.
 
@@ -139,15 +139,15 @@ Always On VPN-подключения включают два типа тунне
 1. В командной строке администратора запустите PowerShell, выполнив следующую команду:
 
    ```
-   C:\PsTools\PsExec.exe Powershell for 32-bit Windows
-   C:\PsTools\PsExec64.exe Powershell for 64-bit Windows
+   PsExec.exe Powershell for 32-bit Windows
+   PsExec64.exe Powershell for 64-bit Windows
    ```
 
-   ![оболочк](./media/vpn-gateway-howto-always-on-device-tunnel/powershell.png)
+   ![powershell](./media/vpn-gateway-howto-always-on-device-tunnel/powershell.png)
 1. В PowerShell перейдите в папку, где находятся **девицецерт. ps1** и **впнпрофиле. XML** , и выполните следующую команду:
 
    ```powershell
-   C:\> .\devicecert.ps1 .\VPNProfile.xml MachineCertTest
+   .\devicecert.ps1 .\VPNProfile.xml MachineCertTest
    ```
    
    ![мачинецерттест](./media/vpn-gateway-howto-always-on-device-tunnel/machinecerttest.png)
@@ -156,7 +156,7 @@ Always On VPN-подключения включают два типа тунне
    ![Rasphone](./media/vpn-gateway-howto-always-on-device-tunnel/rasphone.png)
 1. Найдите запись **мачинецерттест** и нажмите кнопку **подключить**.
 
-   ![Подключение](./media/vpn-gateway-howto-always-on-device-tunnel/connect.png)
+   ![Подключиться](./media/vpn-gateway-howto-always-on-device-tunnel/connect.png)
 1. Если подключение будет выполнено, перезагрузите компьютер. Туннель будет подключен автоматически.
 
 ## <a name="cleanup"></a>Очистка
@@ -165,6 +165,6 @@ Always On VPN-подключения включают два типа тунне
 
 ![Очистка](./media/vpn-gateway-howto-always-on-device-tunnel/cleanup.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об устранении неполадок см. [в статье проблемы с подключением "точка — сеть" в Azure](vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md) .

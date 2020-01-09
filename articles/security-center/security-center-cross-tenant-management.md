@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/11/2019
 ms.author: memildin
-ms.openlocfilehash: 5c654610df8c00e1e80382687bd30dca0c02b69f
-ms.sourcegitcommit: b5d59c6710046cf105236a6bb88954033bd9111b
+ms.openlocfilehash: 3dc7ebe224f1edb1b0fabc40441bd399fda6c133
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74558951"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75355591"
 ---
 # <a name="cross-tenant-management-in-security-center"></a>Управление между клиентами в центре безопасности
 
@@ -48,7 +48,7 @@ ms.locfileid: "74558951"
 - **Управление политиками безопасности**. из одного представления вы управляете безопасностью множества ресурсов с помощью [политик](tutorial-security-policy.md), принимаете меры по обеспечению безопасности и собирайте данные, связанные с безопасностью, и управляйте ими.
 - **Улучшение обеспечения безопасности и соответствия требованиям**. видимость между клиентами позволяет просматривать общую безопасность всех клиентов, а также то, где и как лучше всего улучшить безопасность [оценки](security-center-secure-score.md) и [соответствия](security-center-compliance-dashboard.md) для каждого из них.
 - Устранение **рекомендаций**. Отслеживайте и исправьте [рекомендации](security-center-recommendations.md) для многих ресурсов из разных клиентов за один раз. Затем можно сразу же разобраться в уязвимостях, представляющих наивысший риск для всех клиентов.
-- **Управление оповещениями**: обнаружение [оповещений](security-center-alerts-overview.md) в разных клиентах. Выполните действия с ресурсами, которые не соответствуют требованиям с действиями по [исправлению](security-center-managing-and-responding-alerts.md).
+- **Управление оповещениями**: обнаружение [оповещений](security-center-alerts-overview.md) в разных клиентах. Выполните действия с ресурсами, которые не соответствуют требованиям с действиями [по исправлению](security-center-managing-and-responding-alerts.md).
 
 - **Управление расширенными функциями защиты облака и многое другое**: управление различными службами обнаружения и защиты угроз, такими как [JIT-доступ к виртуальной машине](security-center-just-in-time.md), [Адаптивное усиление защиты сети](security-center-adaptive-network-hardening.md), [адаптивное управление приложениями](security-center-adaptive-application.md)и многое другое.
  

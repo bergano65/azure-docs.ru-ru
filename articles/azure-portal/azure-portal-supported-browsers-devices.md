@@ -1,6 +1,6 @@
 ---
 title: Браузеры и устройства, поддерживаемые порталом Azure | Документация Майкрософт
-description: Описание браузеров и устройств, поддерживаемых порталом Azure.
+description: Вы можете использовать портал Azure на всех современных устройствах и в последних версиях браузера. Ознакомьтесь с этой статьей, чтобы убедиться, что ваш браузер поддерживается.
 services: azure-portal
 documentationcenter: ''
 author: adamabmsft
@@ -12,19 +12,19 @@ ms.workload: multiple
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/27/2019
-ms.author: kfollis
+ms.date: 12/20/2019
+ms.author: mblythe
 ms.custom: accessibility
-ms.openlocfilehash: 1595d744fbfda47a9db9ff27de09cd53c6f73ece
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 792864022cb7c1b2b4b43a4980d86e32b213525c
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60551164"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75640110"
 ---
 # <a name="supported-devices"></a>Поддерживаемые устройства
 
-[Портала Azure](https://portal.azure.com) — это веб-консоль и выполняется в браузере и всех современных настольных компьютеров и планшетных устройств. Если вам нужно управлять ресурсами Azure с мобильного устройства, попробуйте [мобильное приложение Azure](https://azure.microsoft.com/features/azure-portal/mobile-app/). Она доступна для iOS и Android.
+[Портал Azure](https://portal.azure.com) является веб-консолью и работает в браузере всех современных настольных систем и планшетных устройств. Если вам нужно управлять ресурсами Azure с мобильного устройства, попробуйте [мобильное приложение Azure](https://azure.microsoft.com/features/azure-portal/mobile-app/). Он доступен для iOS и Android.
 
 ## <a name="recommended-browsers"></a>Рекомендуемые браузеры
 

@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/05/2018
-ms.openlocfilehash: 6b9f9e3cfc198610cf1f5f76b267ea52c551716a
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: e5ff88b9a677fa53a70a28dbefc5d84cae2d1041
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838643"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75427508"
 ---
 # <a name="create-azure-machine-learning-studio-classic-experiments-from-working-examples-in-azure-ai-gallery"></a>Создавайте эксперименты Машинное обучение Azure Studio (классические) на основе рабочих примеров в Коллекция решений ИИ Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "73838643"
     ![Пример эксперимента](./media/sample-experiments/example-experiment.png)
 
 ## <a name="create-a-new-experiment-using-an-example-as-a-template"></a>Создание эксперимента, используя в качестве шаблона пример
-Вы также можете создать новый эксперимент в классической версии Машинное обучение Studio, используя пример из коллекции в качестве шаблона.
+Вы также можете создать новый эксперимент в Машинное обучение Studio (классическая модель), используя пример из коллекции в качестве шаблона.
 
 1. Войдите в [Студию](https://studio.azureml.net) с использованием учетной записи Майкрософт, после чего щелкните **Создать**, чтобы создать эксперимент.
 2. Просмотрите примеры содержимого и выберите то, что вам подходит.

@@ -1,5 +1,5 @@
 ---
-title: Преобразование хранилища управляемых дисков Azure из уровня "Стандартный" в "Премиум" или "Премиум" в "Стандартный"
+title: Преобразование хранилища управляемых дисков между SSD уровня "Стандартный" и "Премиум"
 description: Сведения о том, как преобразовать хранилище управляемых дисков Azure с уровня "Стандартный" на "Премиум" или "Премиум" на "Стандартный" с помощью Azure CLI.
 author: roygara
 ms.service: virtual-machines-linux
@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/12/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: abd3c7112a70850d137f77d28e83c60916a96ea3
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: cd9bb92b3ed86c3a57b5fc70411a4593335acedb
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036623"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75431503"
 ---
 # <a name="convert-azure-managed-disks-storage-from-standard-to-premium-or-premium-to-standard"></a>Преобразование хранилища управляемых дисков Azure из уровня "Стандартный" в "Премиум" или "Премиум" в "Стандартный"
 
@@ -129,7 +129,7 @@ az vm start --ids $vmId
 
 ## <a name="switch-managed-disks-between-standard-and-premium-in-azure-portal"></a>Переключение управляемых дисков между уровнями "Стандартный" и "Премиум" в портал Azure
 
-Выполните следующие действия:
+Выполните следующие действия.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Выберите виртуальную машину из списка **виртуальных машин**.
@@ -142,6 +142,6 @@ az vm start --ids $vmId
 
 Обновление типа диска происходит мгновенно. После преобразования виртуальную машину можно перезапустить.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сделайте копию виртуальной машины, доступную только для чтения, с помощью [моментальных снимков](snapshot-copy-managed-disk.md).

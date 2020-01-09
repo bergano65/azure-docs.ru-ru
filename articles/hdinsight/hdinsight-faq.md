@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/20/2019
-ms.openlocfilehash: 37b8ad0fc09644d746c3528c174d1bf95d546d0f
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: f688f0ddfb62e988ddebada1f612aa842afa5181
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74706265"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75644602"
 ---
 # <a name="azure-hdinsight-frequently-asked-questions"></a>Azure HDInsight: часто задаваемые вопросы
 
@@ -114,7 +114,7 @@ ms.locfileid: "74706265"
 
 ### <a name="how-do-i-change-timezone-in-ambari"></a>Разделы справки изменить часовой пояс в Ambari?
 
-1. Откройте веб-интерфейс Ambari в https://CLUSTERNAME.azurehdinsight.net, где ИМЯ_КЛАСТЕРА — это имя кластера.
+1. Откройте веб-интерфейс Ambari в `https://CLUSTERNAME.azurehdinsight.net`, где ИМЯ_КЛАСТЕРА — это имя кластера.
 2. В правом верхнем углу выберите Admin | Параметры. 
 
    ![Параметры Ambari](media/hdinsight-faq/ambari-settings.png)
@@ -251,7 +251,7 @@ ktutil: q
 Это можно сделать двумя способами: 1. Вы можете повторно создать кластер и добавить дополнительную группу во время создания кластера. Если вы используете синхронизацию с заданной областью в AAD-DS, убедитесь, что Группа B включена в синхронизацию с заданной областью.
 2\. Добавьте группу в качестве вложенной подгруппы предыдущей группы, которая использовалась для создания кластера ESP. Например, если вы создали кластер ESP с группой `A`, позже можно будет добавить группу `B` как вложенную подгруппу `A` и через примерно один час синхронизация и доступность в кластере будут выполняться автоматически. 
 
-## <a name="storage"></a>Storage
+## <a name="storage"></a>Хранилище
 
 ### <a name="can-i-add-an-azure-data-lake-storage-gen2-to-an-existing-hdinsight-cluster-as-an-additional-storage-account"></a>Можно ли добавить Azure Data Lake Storage 2-го поколения в существующий кластер HDInsight в качестве дополнительной учетной записи хранения?
 
@@ -267,7 +267,7 @@ ktutil: q
 
 - [Использование PowerShell](../storage/scripts/storage-blobs-container-calculate-size-powershell.md)
 
-- Найти размер */Усер/Хиве/. Корзина/* папка в кластере HDInsight с помощью следующей командной строки:
+- Найти размер */user/hive/.Trash/* папка в кластере HDInsight с помощью следующей командной строки:
   
   `hdfs dfs -du -h /user/hive/.Trash/`
 
@@ -316,7 +316,7 @@ done
 
 Сохраненные сценарии используются для настройки новых рабочих узлов, добавляемых в кластер с помощью операций масштабирования. Сохраненные сценарии не применяются к граничным узлам.
 
-## <a name="rest-api"></a>REST API
+## <a name="rest-api"></a>REST API
 
 ### <a name="what-are-the-rest-api-calls-to-pull-a-tez-query-view-from-the-cluster"></a>Какие REST API вызовы, чтобы извлечь представление запроса Tez из кластера?
 

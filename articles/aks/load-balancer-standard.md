@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 09/27/2019
 ms.author: zarhoads
-ms.openlocfilehash: ef826239bc916b4ccf25785f92397286017d00f7
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 43a2c64560b145531e15a35deb9321b6553782a4
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74171408"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75430827"
 ---
 # <a name="use-a-standard-sku-load-balancer-in-azure-kubernetes-service-aks"></a>Использование балансировщика нагрузки "Стандартный" в службе Kubernetes Azure (AKS)
 
@@ -22,7 +22,7 @@ ms.locfileid: "74171408"
 
 В этой статье предполагается, что основное понимание Kubernetes и Azure Load Balancer концепций. Дополнительные сведения см. в разделе [Основные понятия Kubernetes Core для службы Kubernetes Azure (AKS)][kubernetes-concepts] и [что Azure Load Balancer?][azure-lb].
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -54,6 +54,10 @@ ms.locfileid: "74171408"
 * Определение номера SKU подсистемы балансировки нагрузки может выполняться только при создании кластера AKS. Вы не можете изменить SKU балансировщика нагрузки после создания кластера AKS.
 * В одном кластере можно использовать только один тип номера SKU балансировщика нагрузки (базовый или стандартный).
 * *Стандартный выпуск* Подсистемы балансировки нагрузки SKU поддерживают только IP-адреса *стандартного* SKU.
+
+## <a name="use-the-standard-sku-load-balancer"></a>Использование балансировщика нагрузки SKU " *стандартный* "
+
+При создании кластера AKS по умолчанию подсистема балансировки нагрузки уровня " *стандартный* " используется при запуске служб в этом кластере. Например, [Краткое руководство][aks-quickstart-cli] , в котором используется Azure CLI, развертывает пример приложения, использующего подсистему балансировки нагрузки уровня " *стандартный* ". 
 
 ## <a name="configure-the-load-balancer-to-be-internal"></a>Настройка подсистемы балансировки нагрузки в качестве внутренней
 
@@ -177,12 +181,34 @@ AllocatedOutboundPorts    EnableTcpReset    IdleTimeoutInMinutes    Name        
 
 В примере выходных данных *аллокатедаутбаундпортс* имеет значение 0. Значение параметра *аллокатедаутбаундпортс* означает, что распределение портов SNAT возвращается к автоматическому назначению на основе размера внутреннего пула. Дополнительные сведения см. в разделе [Load Balancer правила исходящих][azure-lb-outbound-rules] [подключений и исходящие подключения в Azure][azure-lb-outbound-connections] .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="restrict-access-to-specific-ip-ranges"></a>Ограничение доступа к определенным диапазонам IP-адресов
+
+Группа безопасности сети (NSG), связанная с виртуальной сетью для балансировщика нагрузки, по умолчанию имеет правило, разрешающее весь входящий внешний трафик. Вы можете обновить это правило, разрешающее только определенные диапазоны IP-адресов для входящего трафика. Следующий манифест использует *лоадбаланцерсаурцеранжес* для указания нового диапазона IP-адресов для входящего внешнего трафика:
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: azure-vote-front
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: azure-vote-front
+  loadBalancerSourceRanges:
+  - MY_EXTERNAL_IP_RANGE
+```
+
+В приведенном выше примере правило обновляется, разрешающим только входящий внешний трафик из диапазона *MY_EXTERNAL_IP_RANGE* . Дополнительные сведения об использовании этого метода для ограничения доступа к службе балансировщика нагрузки доступны в [документации по Kubernetes][kubernetes-cloud-provider-firewall].
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Kubernetes Services см. в [документации по службам Kubernetes][kubernetes-services].
 
 <!-- LINKS - External -->
 [kubectl]: https://kubernetes.io/docs/user-guide/kubectl/
+[kubernetes-cloud-provider-firewall]: https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/#restrict-access-for-loadbalancer-service
 [kubectl-delete]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#delete
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
 [kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply

@@ -4,15 +4,15 @@ description: Ответы на часто задаваемые вопросы п
 ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
-author: mgoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 01/09/2018
-ms.openlocfilehash: 579538996e934c7068c397a284d819f5ddb92f08
-ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
+ms.openlocfilehash: fa47606112c562402a42bd5ca503ed2d9a311268
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74305463"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75400385"
 ---
 # <a name="azure-monitor-for-vms-preview-frequently-asked-questions"></a>Azure Monitor для виртуальных машин (предварительная версия): часто задаваемые вопросы
 В этом списке вопросов и ответов от Майкрософт приведены часто задаваемые вопросы об Azure Monitor для виртуальных машин. Если у вас есть другие вопросы об этом решении, вы можете задать их на [форуме для обсуждений](https://feedback.azure.com/forums/34192--general-feedback). Если вопрос задается часто, мы добавим его в эту статью, чтобы его можно было найти быстро и легко.
@@ -134,5 +134,5 @@ ms.locfileid: "74305463"
 
 В этом случае отобразится предложение **Попробовать сейчас** при открытии виртуальной машины и выборе функции **Аналитические сведения (предварительная версия)** в левой области, даже если эта функция ранее была установлена на виртуальной машине.  Предложение не отобразится, если эта виртуальная машина не подключена к Azure Monitor для виртуальных машин. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с [Разрешите Azure Monitor для виртуальных машин](vminsights-enable-overview.md) , чтобы узнать о требованиях и методах для обеспечения мониторинга виртуальных машин.

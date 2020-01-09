@@ -11,12 +11,12 @@ ms.reviewer: ''
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/09/2019
-ms.openlocfilehash: 1f31bb78fced6db2a26559cbd098407823161dfc
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: fc38dce3deaa601c9ed36f60439a08bb89cc7630
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928766"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75646903"
 ---
 # <a name="source-control-in-azure-data-factory"></a>Система управления версиями в фабрике данных Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "74928766"
 
 В области Конфигурация отображаются следующие Azure Repos параметры репозитория кода.
 
-| Параметр | Описание | Value |
+| Параметр | Description | Значение |
 |:--- |:--- |:--- |
 | **Тип репозитория** | Тип репозитория кода Azure Repos.<br/> | Azure DevOps Git или GitHub |
 | **Azure Active Directory** | Имя вашего клиента Azure AD. | `<your tenant name>` |
@@ -137,11 +137,11 @@ ms.locfileid: "74928766"
 
 В области Конфигурация отображаются следующие параметры репозитория GitHub:
 
-| **Параметр** | **Описание**  | **Значение**  |
+| **Параметр** | **Описание**  | **Value**  |
 |:--- |:--- |:--- |
 | **Тип репозитория** | Тип репозитория кода Azure Repos. | GitHub |
 | **Use GitHub Enterprise** (Использовать GitHub Enterprise) | Флажок для выбора GitHub Enterprise. | не выбрано (по умолчанию) |
-| **GitHub Enterprise URL** (URL-адрес GitHub Enterprise) | Корневой URL-адрес GitHub Enterprise. Например, https://github.mydomain.com. Требуется только в том случае, если выбрано **Использование GitHub Enterprise** . | `<your GitHub enterprise url>` |                                                           
+| **GitHub Enterprise URL** (URL-адрес GitHub Enterprise) | Корневой URL-адрес GitHub Enterprise. Например: https://github.mydomain.com. Требуется только в том случае, если выбрано **Использование GitHub Enterprise** . | `<your GitHub enterprise url>` |                                                           
 | **Учетная запись GitHub** | Имя учетной записи GitHub. Это имя можно найти по имени HTTPS:\//гисуб.ком/{аккаунт имя/{репоситори}. При переходе на эту страницу вам предложат ввести учетные данные OAuth GitHub для вашей учетной записи GitHub. | `<your GitHub account name>` |
 | **Имя репозитория**  | Имя репозитория кода GitHub. Учетные записи GitHub содержат репозитории Git для управления исходным кодом. Создайте репозиторий либо используйте уже имеющийся в учетной записи. | `<your repository name>` |
 | **Ветвь совместной работы** | Ветвь вашей совместной работы в GitHub, которая используется для публикации. По умолчанию это Master. Измените этот параметр, если нужно опубликовать ресурсы из другой ветви. | `<your collaboration branch>` |
@@ -156,6 +156,8 @@ ms.locfileid: "74928766"
 - GitHub Enterprise версии ниже 2.14.0 не работает в браузере Microsoft Edge.
 
 - Интеграция GitHub с визуальными инструментами для создания фабрики данных работает только в общедоступной версии фабрики данных.
+
+- В одной ветви GitHub можно получить не более 1 000 сущностей на каждый тип ресурсов (например, конвейеры и наборы данных). Если это ограничение достигнуто, рекомендуется разделить ресурсы на отдельные фабрики.
 
 ## <a name="switch-to-a-different-git-repo"></a>Выберите другой репозиторий Git
 

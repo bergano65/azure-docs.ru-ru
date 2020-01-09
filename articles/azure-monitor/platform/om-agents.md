@@ -4,15 +4,15 @@ description: Чтобы не увеличивать затраты на System C
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
-author: MGoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 08/13/2019
-ms.openlocfilehash: 79fcbb6f972eb022ce4d0e47a608e6f0d053a9ad
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 5dc9412c7884eb62795fd04240f6cfa7d103e3be
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73162242"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75363665"
 ---
 # <a name="connect-operations-manager-to-azure-monitor"></a>Подключение Operations Manager к Azure Monitor
 
@@ -66,22 +66,22 @@ ms.locfileid: "73162242"
 >- Для System Center Operations Manager 2012 R2 Загрузите пакет управления [отсюда](https://www.microsoft.com/download/details.aspx?id=57171).  
 
 
-### <a name="network"></a>Network
+### <a name="network"></a>Сеть
 
 Ниже перечислены сведения о конфигурации прокси-сервера и брандмауэра, необходимые для взаимодействия агента Operations Manager, серверов управления и консоли Operations с Azure Monitor. Трафик от каждого компонента исходит из сети в Azure Monitor.
 
 |Ресурс | Номер порта| Обход проверки HTTP|  
 |---------|------|-----------------------|  
 |**Агент**|||  
-|\*.ods.opinsights.azure.com| 443 |ДА|  
-|\*.oms.opinsights.azure.com| 443|ДА|  
-|\*.blob.core.windows.net| 443|ДА|  
-|\*.azure-automation.net| 443|ДА|  
+|\*.ods.opinsights.azure.com| 443 |Да|  
+|\*.oms.opinsights.azure.com| 443|Да|  
+|\*.blob.core.windows.net| 443|Да|  
+|\*.azure-automation.net| 443|Да|  
 |**Сервер управления**|||  
 |\*.service.opinsights.azure.com| 443||  
-|\*.blob.core.windows.net| 443| ДА|  
-|\*.ods.opinsights.azure.com| 443| ДА|  
-|*.azure-automation.net | 443| ДА|  
+|\*.blob.core.windows.net| 443| Да|  
+|\*.ods.opinsights.azure.com| 443| Да|  
+|*.azure-automation.net | 443| Да|  
 |**Operations Manager консоль для Azure Monitor**|||  
 |service.systemcenteradvisor.com| 443||  
 |\*.service.opinsights.azure.com| 443||  
@@ -105,8 +105,8 @@ ms.locfileid: "73162242"
 Во время первой регистрации группы управления Operations Manager в рабочей области Log Analytics параметр для указания конфигурации прокси-сервера для группы управления недоступен в консоли управления.  Этот параметр станет доступным после успешной регистрации группы управления в службе.  Для обхода этой проблемы вам необходимо обновить конфигурацию прокси-сервера системы с помощью Netsh в системе, в которой выполняется консоль управления, чтобы настроить интеграцию, и обновить все серверы управления в группе управления.  
 
 1. Откройте командную строку с повышенными привилегиями.
-   а) Перейдите в **Пуск** и введите **cmd**.
-   б) Щелкните правой кнопкой мыши **командную строку**, а затем выберите "Запустить от имени администратора".
+   а. Перейдите в **Пуск** и введите **cmd**.
+   b. Щелкните правой кнопкой мыши **командную строку**, а затем выберите "Запустить от имени администратора".
 1. Введите следующую команду и нажмите клавишу **ВВОД**:
 
     `netsh winhttp set proxy <proxy>:<port>`
@@ -181,7 +181,7 @@ ms.locfileid: "73162242"
 ## <a name="switch-an-operations-manager-group-to-a-new-log-analytics-workspace"></a>Перевод группы Operations Manager в новую рабочую область Log Analytics
 
 1. Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
-1. На портале Azure щелкните ссылку **Другие службы** в нижнем левом углу. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**, а затем создайте рабочую область.  
+1. На портале Azure щелкните **Другие службы** в нижнем левом углу. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**, а затем создайте рабочую область.  
 1. Откройте консоль Operations Manager под учетной записью пользователя, который является членом роли администраторов Operations Manager, и выберите **администрирование** рабочей области.
 1. Разверните Log Analytics и выберите **Подключения**.
 1. Щелкните ссылку **Повторная настройка Operation Management Suite** в середине панели.
@@ -198,7 +198,7 @@ ms.locfileid: "73162242"
 
 ### <a name="to-confirm-integration-from-the-azure-portal"></a>Подтверждение интеграции на портале Azure
 
-1. На портале Azure щелкните ссылку **Другие службы** в нижнем левом углу. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом.
+1. На портале Azure щелкните **Другие службы** в нижнем левом углу. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом.
 1. В списке рабочих областей Log Analytics выберите необходимую рабочую область.  
 1. Выберите **Дополнительные параметры**, **Подключенные источники**, а затем — **System Center**.
 1. В разделе System Center Operations Manager вы увидите название группы управления с указанием числа агентов и состояния, а также сведениями о последнем получении данных.
@@ -248,7 +248,7 @@ ms.locfileid: "73162242"
     > Ссылка **Удалить** не будет доступна в течение 14 дней, если не будет обнаружено никакой активности из подключенной группы управления.  
     >
 
-1. Откроется окно с запросом подтверждения удаления.  Нажмите кнопку **Да** , чтобы продолжить.
+1. Откроется окно с запросом подтверждения удаления.  Щелкните **Да** для продолжения.
 
 Чтобы удалить два соединителя — Microsoft.SystemCenter.Advisor.DataConnector и Advisor Connector, сохраните приведенный ниже скрипт PowerShell на свой компьютер и выполните его, как показано в следующих примерах.
 

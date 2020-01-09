@@ -8,12 +8,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 04/22/2019
 ms.reviewer: sdash
-ms.openlocfilehash: ac2aabe12697336377df808e02e283dde0e4da16
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 00fae22b91b2ad68392a21a29df3c2aec6bf5c5e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74927226"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75406748"
 ---
 # <a name="live-metrics-stream-monitor--diagnose-with-1-second-latency"></a>Live Metrics Stream: мониторинг и диагностика с задержкой в 1 секунду
 
@@ -35,7 +35,7 @@ ms.locfileid: "74927226"
 
 ## <a name="get-started"></a>Начать
 
-1. Если вы еще не [установили Application Insights в своем веб-приложении](../../azure-monitor/azure-monitor-app-hub.md), сделайте это сейчас.
+1. Если вы еще не [установили Application Insights в своем веб-приложении](../../azure-monitor/azure-monitor-app-hub.yml), сделайте это сейчас.
 2. В дополнение к стандартным пакетам Application Insights пакет [Microsoft.ApplicationInsights.PerfCounterCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.PerfCounterCollector/) также требуется, чтобы включить Live Metrics Stream.
 3. **Выполните обновление до последней версии** пакета Application Insights. В Visual Studio щелкните проект правой кнопкой мыши и выберите пункт **Управление пакетами NuGet**. Откройте вкладку **Обновления** и выберите все пакеты "Microsoft.ApplicationInsights.*".
 
@@ -157,7 +157,7 @@ using Microsoft.ApplicationInsights.Extensibility;
 
 Создайте ключ API из ресурса Application Insights и перейдите к **параметрам приложения** вашего приложения-функции. Выберите **Добавить новый параметр** и введите имя `APPINSIGHTS_QUICKPULSEAUTHAPIKEY` и значение, соответствующее ключу API.
 
-### <a name="aspnet-core-requires-application-insights-aspnet-core-sdk-230-beta-or-greater"></a>ASP.NET Core (требует пакет SDK для ASP.NET Core для Application Insights версии 2.3.0-beta или выше)
+### <a name="aspnet-core-requires-application-insights-aspnet-core-sdk-230-or-greater"></a>ASP.NET Core (требуется Application Insights ASP.NET Core SDK 2.3.0 или более поздней версии)
 
 Измените файл startup.cs следующим образом.
 
@@ -189,7 +189,7 @@ services.ConfigureTelemetryModule<QuickPulseTelemetryModule> ((module, o) => mod
 | .NET Core (целевой объект =. NET Framework)| Поддерживается (V 2.4.1 +) | Поддерживается (V 2.4.1 +) | Поддерживается (V 2.4.1 +) | Поддерживается (V 2.4.1 +) | Поддерживается (V 2.4.1 +)  |
 | .NET Core (целевой объект =. NET Core)     | Поддерживается (V 2.4.1 +) | Поддерживается*          | Поддерживается (V 2.4.1 +) | Поддерживается (V 2.4.1 +) | **Не поддерживается**    |
 | Функции Azure v2               | Поддерживается           | Поддерживается           | Поддерживается           | Поддерживается           | **Не поддерживается**    |
-| Java:                             | Поддерживается (V 2.0.0 +) | Поддерживается (V 2.0.0 +) | **Не поддерживается**   | **Не поддерживается**   | **Не поддерживается**    |
+| Java                             | Поддерживается (V 2.0.0 +) | Поддерживается (V 2.0.0 +) | **Не поддерживается**   | **Не поддерживается**   | **Не поддерживается**    |
 | Node.js                          | Поддерживается (V 1.3.0 +) | Поддерживается (V 1.3.0 +) | **Не поддерживается**   | Поддерживается (V 1.3.0 +) | **Не поддерживается**    |
 
 Основные метрики включают в себя запрос, зависимость и частоту исключений. Метрики производительности (счетчики производительности) включают в себя память и ЦП. Пример телеметрии показывает поток подробных сведений о неудачных запросах и зависимостях, исключениях, событиях и трассировках.
@@ -209,5 +209,5 @@ services.ConfigureTelemetryModule<QuickPulseTelemetryModule> ((module, o) => mod
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Отслеживание использования Application Insights.](../../azure-monitor/app/usage-overview.md)
 * [Использование диагностического поиска](../../azure-monitor/app/diagnostic-search.md)
-* [Профилировщик](../../azure-monitor/app/profiler.md)
+* [Profiler](../../azure-monitor/app/profiler.md)
 * [Отладчик моментальных снимков](../../azure-monitor/app/snapshot-debugger.md)

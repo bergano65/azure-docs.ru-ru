@@ -1,28 +1,19 @@
 ---
-title: Руководство по Созданию приложения Java в Azure Service Fabric
+title: Руководство. Создание приложения Java в Azure Service Fabric
 description: В этом руководстве вы узнаете, как создать приложение Java надежной службы с внешним интерфейсом, создать серверную часть с отслеживанием состояния надежных служб и развернуть приложение в кластер.
-services: service-fabric
-documentationcenter: java
 author: suhuruli
-manager: mfussell
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: java
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 09/01/2018
 ms.author: suhuruli
 ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 5e9b94f0c67b4b4630d554f4dde22502c90e777c
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: 019e50057497c9f98d303a93dfa3f905226fa246
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72376374"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75465456"
 ---
-# <a name="tutorial-create-an-application-with-a-java-api-front-end-service-and-a-stateful-back-end-service-on-azure-service-fabric"></a>Руководство по Создание приложения с интерфейсной службой API Java и серверной службой с отслеживанием состояния в Azure Service Fabric
+# <a name="tutorial-create-an-application-with-a-java-api-front-end-service-and-a-stateful-back-end-service-on-azure-service-fabric"></a>Руководство. Создание приложения с интерфейсной службой API Java и серверной службой с отслеживанием состояния в Azure Service Fabric
 
 Это руководство представляет первую часть цикла. Выполнив инструкции из этого руководства, вы получите приложение для голосования с клиентской частью в виде веб-приложения Java, которое сохраняет результаты голосования во внутренней службе с отслеживанием состояния в Azure Service Fabric. В этой серии руководств требуется, чтобы у вас был работающий компьютер для разработчиков Mac OSX или Linux. Если вы не хотите вручную создавать приложение для голосования, вы можете [скачать исходный код](https://github.com/Azure-Samples/service-fabric-java-quickstart) для завершенного приложения и сразу перейти к [описанию примера приложения для голосования](service-fabric-tutorial-create-java-app.md#walk-through-the-voting-sample-application). Кроме того, ознакомьтесь с [кратким руководством по развертыванию приложения Java в Azure Service Fabric](service-fabric-quickstart-java-reliable-services.md).
 
@@ -45,7 +36,7 @@ ms.locfileid: "72376374"
 > * Использование удаленного взаимодействия службы для связи со службой с отслеживанием состояния.
 > * Развертывание приложения в локальном кластере Service Fabric.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -555,7 +546,7 @@ class VotingDataService extends StatefulService implements VotingRPC {
 
  Следующий шаг — подключение интерфейсной службы без отслеживания состояния и внутренней службы. Обе службы используют интерфейс VotingRPC, который определяет операции приложения для голосования. Этот интерфейс реализуется с помощью интерфейсных и серверных служб, включая удаленные вызовы процедур между двумя службами. К сожалению, Eclipse не поддерживает добавление подпроектов Gradle, поэтому пакет, который содержит интерфейс, нужно добавить вручную.
 
-1. Щелкните правой кнопкой мыши проект **Voting** в обозревателе пакетов и выберите **Новая**  > **Папка**. Назовите папку **VotingRPC/src/rpcmethods**.
+1. Щелкните правой кнопкой мыши проект **Voting** в обозревателе пакетов и выберите **Новая** > **Папка**. Назовите папку **VotingRPC/src/rpcmethods**.
 
     ![Создание пакета VotingRPC в обозревателе пакетов Eclipse](./media/service-fabric-tutorial-create-java-app/create-voting-rpc-package-java.png)
 
@@ -913,7 +904,7 @@ class VotingDataService extends StatefulService implements VotingRPC {
 5. В окне **Публикация приложения** выберите **Local.json** в раскрывающемся списке и выберите **Опубликовать**.
 6. В веб-браузере перейдите по адресу http:\//localhost:8080, чтобы просмотреть выполняющееся приложение в локальном кластере Service Fabric. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства вы узнали, как выполнить следующие действия:
 
