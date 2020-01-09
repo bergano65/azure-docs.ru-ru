@@ -1,28 +1,19 @@
 ---
-title: Мониторинг и диагностика приложений Сетки Service Fabric в Azure | Документы Майкрософт
+title: Мониторинг и диагностика в Azure Service Fabric приложения сети
 description: Сведения мониторинге и диагностике приложений в Сетке Service Fabric в Azure.
-services: service-fabric-mesh
-documentationcenter: .net
 author: srrengar
-manager: timlt
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric-mesh
-ms.devlang: dotNet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 03/19/2019
 ms.author: srrengar
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 36c9a5d75c4a72365638619ab85d451df647feb3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 247a1de4d00668371337295616d31caf101f0cc5
+ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64939819"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75498143"
 ---
-# <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика.
+# <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика
 Сетка Azure Service Fabric — это полностью управляемая служба, которая позволяет разработчикам развертывать приложения для микрослужб без управления виртуальными машинами, хранилищем или сетями. В мониторинге и диагностике для Сетки Service Fabric выделяют три основных типа диагностических данных.
 
 - Журналы приложений определяются как журналы из контейнерных приложений в зависимости от способа инструментирования приложения (например, журналы Docker).
@@ -40,7 +31,7 @@ az mesh code-package-log get --resource-group <nameOfRG> --app-name <nameOfApp> 
 ```
 
 > [!NOTE]
-> Для получения имени реплики можно использовать команду az mesh service-replica. Имена реплики увеличивая целых чисел от 0.
+> Для получения имени реплики можно использовать команду az mesh service-replica. Имена реплик увеличиваются в целых числах от 0.
 
 Далее приводится пример просмотра журналов из контейнера VotingWeb.Code из приложения для голосования.
 
@@ -48,49 +39,49 @@ az mesh code-package-log get --resource-group <nameOfRG> --app-name <nameOfApp> 
 az mesh code-package-log get --resource-group <nameOfRG> --application-name SbzVoting --service-name VotingWeb --replica-name 0 --code-package-name VotingWeb.Code
 ```
 
-## <a name="container-metrics"></a>Метрики контейнера 
+## <a name="container-metrics"></a>Метрики контейнеров 
 
-Среде сетки предоставляет небольшое число метрик, указывающее, как выполняется контейнеров. Доступны следующие метрики через Azure портала и Azure отслеживать интерфейса командной строки:
+Среда сетки предоставляет несколько метрик, которые указывают, как выполняются контейнеры. Следующие метрики доступны через портал Azure и CLI Azure Monitor:
 
-| Метрика | Описание | Units|
+| Метрика | Description | Единицы|
 |----|----|----|
-| CpuUtilization | ActualCpu/AllocatedCpu в процентах | % |
-| MemoryUtilization | ActualMem/AllocatedMem в процентах | % |
-| AllocatedCpu | ЦП, выделенных в соответствии с шаблона Azure Resource Manager | Миллиардах |
-| AllocatedMemory | Память, выделенную в соответствии с шаблона Azure Resource Manager | МБ |
-| ActualCpu | Загрузка ЦП. | Миллиардах |
-| ActualMemory | Использование памяти | МБ |
-| Состояние_контейнера | 0 — недопустимое: Состояние контейнера неизвестно <br> 1 - ожидает обработки: Контейнер запланирован к запуску <br> 2 - начала: Контейнер находится в процессе запуска <br> 3 - started: Контейнер успешно запущена <br> 4 - остановка: Выполняется остановка контейнера <br> 5 - остановлено: Контейнер успешно остановлена | Н/Д |
-| ApplicationStatus | 0 — неизвестно: Не удается найти состояние <br> 1 - все готово: Приложение выполняется успешно <br> 2 — обновление: Установить обновление выполняется <br> 3 - Создание: Создается приложение <br> 4 — удаление: Приложение удаляется. <br> 5 - не удалось: Не удалось развернуть приложение | Н/Д |
-| ServiceStatus | 0 — недопустимое: В настоящее время служба не имеет состояния работоспособности <br> 1 - ОК: Служба находится в работоспособном состоянии  <br> 2 - предупреждение. Возможно, проблемы, требующие исследования <br> 3 - ошибка: Что-то не так, что требуется исследование <br> 4 — неизвестно: Не удается найти состояние | Н/Д |
-| ServiceReplicaStatus | 0 — недопустимое: Реплика не имеет состояния работоспособности <br> 1 - ОК: Служба находится в работоспособном состоянии  <br> 2 - предупреждение. Возможно, проблемы, требующие исследования <br> 3 - ошибка: Что-то не так, что требуется исследование <br> 4 — неизвестно: Не удается найти состояние | Н/Д | 
-| RestartCount | Количество перезагрузок контейнера | Н/Д |
+| График | Актуалкпу/Аллокатедкпу в процентах | % |
+| меморютилизатион | Актуалмем/Аллокатедмем в процентах | % |
+| аллокатедкпу | ЦП выделено в соответствии с Azure Resource Manager шаблоном | Миллиардах |
+| аллокатедмемори | Память, выделенная в соответствии с шаблоном Azure Resource Manager | МБ |
+| актуалкпу | Загрузка ЦП. | Миллиардах |
+| актуалмемори | Использование памяти | МБ |
+| контаинерстатус | 0 — недопустимо: состояние контейнера неизвестно <br> 1-Ожидание: контейнер запланирован на запуск <br> 2 — Запуск: контейнер находится в процессе запуска <br> 3 — запущено: контейнер успешно запущен <br> 4 — остановка — контейнер останавливается <br> 5 — остановлено: контейнер успешно остановлен | Н/Д |
+| аппликатионстатус | 0 — неизвестно: состояние не может быть извлечено <br> 1 — готово: приложение успешно запущено <br> 2\. обновление: выполняется обновление <br> 3\. Создание: приложение создается <br> 4 — Удаление: приложение удаляется <br> 5 — ошибка: не удалось развернуть приложение | Н/Д |
+| сервицестатус | 0 — недопустимо: служба в настоящее время не имеет состояния работоспособности <br> 1-ОК: служба работоспособна  <br> 2 — предупреждение. возможно, возникло что-то неправильное исследование <br> 3 — ошибка. возникли проблемы, требующие исследования <br> 4 — неизвестно. состояние не может быть извлечено | Н/Д |
+| сервицерепликастатус | 0 — недопустимо: Реплика в настоящее время не имеет состояния работоспособности <br> 1-ОК: служба работоспособна  <br> 2 — предупреждение. возможно, возникло что-то неправильное исследование <br> 3 — ошибка. возникли проблемы, требующие исследования <br> 4 — неизвестно. состояние не может быть извлечено | Н/Д | 
+| рестарткаунт | Число перезапусков контейнера | Н/Д |
 
 > [!NOTE]
-> Значения ServiceStatus и ServiceReplicaStatus совпадают [HealthState](https://docs.microsoft.com/dotnet/api/system.fabric.health.healthstate?view=azure-dotnet) в Service Fabric. 
+> Значения Сервицестатус и Сервицерепликастатус совпадают со значением [HealthState](https://docs.microsoft.com/dotnet/api/system.fabric.health.healthstate?view=azure-dotnet) в Service Fabric. 
 
-Каждой метрики можно найти в различных измерений, чтобы можно было видеть статистические выражения на разных уровнях. Текущий список измерений, следующим образом:
+Каждая метрика доступна в разных измерениях, что позволяет просматривать статистические выражения на разных уровнях. Текущий список измерений выглядит следующим образом:
 
 * ApplicationName
 * ServiceName
-* ServiceReplicaName
-* Имя_пакета_кода
+* сервицерепликанаме
+* кодепаккаженаме
 
 > [!NOTE]
-> Измерение Имя_пакета_кода недоступен для приложений Linux. 
+> Измерение Кодепаккаженаме недоступно для приложений Linux. 
 
-Каждое измерение соответствует различные компоненты [модель приложения Service Fabric](service-fabric-mesh-service-fabric-resources.md#applications-and-services)
+Каждое измерение соответствует различным компонентам [модели приложения Service Fabric](service-fabric-mesh-service-fabric-resources.md#applications-and-services)
 
-### <a name="azure-monitor-cli"></a>Монитор Azure CLI
+### <a name="azure-monitor-cli"></a>Azure Monitor CLI
 
-Полный список команд, доступных в [документация CLI для Azure Monitor](https://docs.microsoft.com/cli/azure/monitor/metrics?view=azure-cli-latest#az-monitor-metrics-list) , но мы добавили несколько полезных примеров ниже 
+Полный список команд доступен в документации по [Azure Monitor CLI](https://docs.microsoft.com/cli/azure/monitor/metrics?view=azure-cli-latest#az-monitor-metrics-list) , но мы включили несколько полезных примеров ниже. 
 
-В каждом примере идентификатор ресурса соответствует данному шаблону
+В каждом примере идентификатор ресурса соответствует этому шаблону.
 
 `"/subscriptions/<your sub ID>/resourcegroups/<your RG>/providers/Microsoft.ServiceFabricMesh/applications/<your App name>"`
 
 
-* Использование ЦП контейнеров в приложение
+* Использование ЦП контейнерами в приложении
 
 ```cli
     az monitor metrics list --resource <resourceId> --metric "CpuUtilization"
@@ -100,19 +91,19 @@ az mesh code-package-log get --resource-group <nameOfRG> --application-name SbzV
     az monitor metrics list --resource <resourceId> --metric "MemoryUtilization" --dimension "ServiceReplicaName"
 ``` 
 
-* Перезагрузка для каждого контейнера в окне 1 час 
+* Перезапускается для каждого контейнера в течение одного часа 
 ```cli
     az monitor metrics list --resource <resourceId> --metric "RestartCount" --start-time 2019-02-01T00:00:00Z --end-time 2019-02-01T01:00:00Z
 ``` 
 
-* Средний объем использования ЦП на службы с именем «VotingWeb» в окне 1 час
+* Средняя загрузка ЦП между службами с именем "VotingWeb" в течение одного часа
 ```cli
     az monitor metrics list --resource <resourceId> --metric "CpuUtilization" --start-time 2019-02-01T00:00:00Z --end-time 2019-02-01T01:00:00Z --aggregation "Average" --filter "ServiceName eq 'VotingWeb'"
 ``` 
 
 ### <a name="metrics-explorer"></a>Обозреватель метрик
 
-Обозреватель метрик является колонка на портале, в котором вы можете визуализировать все метрики для приложения сетки. В этой колонке отображается на странице приложения на портале и колонку Azure monitor, последний из которых можно использовать для просмотра метрик для всех ресурсов Azure, которые поддерживают Azure Monitor. 
+Обозреватель метрик — это колонка на портале, с помощью которой можно визуализировать все метрики для приложения сетки. Эта колонка доступна на странице приложения на портале и в колонке Azure Monitor, второй из которых можно использовать для просмотра метрик для всех ресурсов Azure, поддерживающих Azure Monitor. 
 
 ![Обозреватель метрик](./media/service-fabric-mesh-monitoring-diagnostics/metricsexplorer.png)
 
@@ -127,4 +118,4 @@ In addition to the metrics explorer, we also have a dashboard available out of t
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о службе "Сетка Service Fabric" из раздела [Что такое Сетка Service Fabric?](service-fabric-mesh-overview.md)
-* Дополнительные сведения о командах метрик Azure Monitor, ознакомьтесь с [документация CLI для Azure Monitor](https://docs.microsoft.com/cli/azure/monitor/metrics?view=azure-cli-latest#az-monitor-metrics-list).
+* Чтобы узнать больше о командах метрик Azure Monitor, ознакомьтесь с [документацией по Azure Monitor CLI](https://docs.microsoft.com/cli/azure/monitor/metrics?view=azure-cli-latest#az-monitor-metrics-list).

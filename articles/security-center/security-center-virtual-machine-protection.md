@@ -13,23 +13,24 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/20/2019
 ms.author: memildin
-ms.openlocfilehash: 4a6d733b490edd892136f6febcc90c29a5a865e1
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: b7e5b0286cdd15834b84e4fd3e619c6555054823
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74766809"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75553007"
 ---
 # <a name="protect-your-machines-and-applications"></a>Защитите свои компьютеры и приложения
-Когда центр безопасности выявляет потенциальные уязвимости системы безопасности, он создает рекомендации по настройке необходимых элементов управления. 
+Когда центр безопасности Azure выявляет потенциальные уязвимости системы безопасности, он создает рекомендации по настройке необходимых элементов управления для защиты ресурсов.
 
-В этой статье описывается страница " **Вычисление и приложения** " в разделе "безопасность ресурсов" центра безопасности Azure. Здесь также описаны некоторые рекомендации, которые вы увидите.
+В этой статье описывается страница " **Вычисление и приложения** " в разделе "безопасность ресурсов" центра безопасности.
 
-Полный список рекомендаций по службам вычислений и приложений см. в статье [рекомендации для вычислений и приложений](recommendations-compute-and-apps.md).
+Полный список рекомендаций, которые могут отображаться на этой странице, см. в разделе [рекомендации по данным и хранению](recommendations-reference.md#recs-computeapp).
+
 
 ## <a name="view-the-security-of-your-compute-and-apps-resources"></a>Просмотр безопасности ресурсов вычислений и приложений
 
-![Панель мониторинга центра безопасности](./media/security-center-virtual-machine-recommendations/overview.png)
+[панель мониторинга центра безопасности ![](./media/security-center-virtual-machine-recommendations/overview.png)](./media/security-center-virtual-machine-recommendations/overview.png#lightbox)
 
 Чтобы просмотреть состояние ресурсов вычислений и приложений, выберите **compute & приложения** в разделе **ресурсы** на боковой панели центра безопасности. Доступны следующие вкладки:
 
@@ -62,7 +63,7 @@ ms.locfileid: "74766809"
 ### <a name="vms-and-computers"></a>Виртуальные машины и компьютеры
 Раздел виртуальные машины и компьютеры содержит обзор всех рекомендаций по безопасности для виртуальных машин и компьютеров. Включены четыре типа компьютеров:
 
-![Компьютер, который не относится к Azure](./media/security-center-virtual-machine-recommendations/security-center-monitoring-icon1.png) Компьютер, который не относится к Azure.
+![компьютер, который не относится к Azure;](./media/security-center-virtual-machine-recommendations/security-center-monitoring-icon1.png) Компьютер, который не относится к Azure.
 
 ![Виртуальная машина, развернутая с помощью модели Azure Resource Manager](./media/security-center-virtual-machine-recommendations/security-center-monitoring-icon2.png) Виртуальная машина, развернутая с помощью модели Azure Resource Manager.
 
@@ -74,7 +75,8 @@ ms.locfileid: "74766809"
 
 Для детализации рекомендаций по безопасности для каждой виртуальной машины щелкните виртуальную машину.
 Здесь отображаются сведения о состоянии защиты виртуальной машины или компьютера. В нижней части экрана можно увидеть рекомендуемое действие и серьезность каждой проблемы.
-![Облачные службы](./media/security-center-virtual-machine-recommendations/recommendation-list.png)
+
+[![облачных служб](./media/security-center-virtual-machine-recommendations/recommendation-list.png)](./media/security-center-virtual-machine-recommendations/recommendation-list.png#lightbox)
 
 ### <a name="cloud-services"></a>Облачные службы
 Рекомендация создается для облачных служб, если версия операционной системы устарела.
@@ -141,6 +143,7 @@ ms.locfileid: "74766809"
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о рекомендациях, которые относятся к другим типам ресурсов Azure, см. в следующих статьях:
 
+* [Полный список ссылок на рекомендации по безопасности центра безопасности Azure](recommendations-reference.md)
 * [Мониторинг идентификации и доступа в центре безопасности Azure (предварительная версия)](security-center-identity-access.md)
-* [Защита сети в центре безопасности Azure](security-center-network-recommendations.md)
+* [Защита сети в центре безопасности Azure.](security-center-network-recommendations.md)
 * [Защита службы SQL Azure в центре безопасности Azure.](security-center-sql-service-recommendations.md)
