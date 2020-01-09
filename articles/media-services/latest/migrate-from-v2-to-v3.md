@@ -15,14 +15,16 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 05/01/2019
 ms.author: juliako
-ms.openlocfilehash: fb36387764efbdaa1ad3d164ba419bee49770871
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.openlocfilehash: 5b5956094da497cfbb72608587b2e0389ceec8fc
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74049005"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75427131"
 ---
 # <a name="migration-guidance-for-moving-from-media-services-v2-to-v3"></a>Руководство по миграции из версии 2 в версию 3 Служб мультимедиа
+
+>Получите уведомления о том, когда следует повторно посетить эту страницу для получения обновлений путем копирования и вставления этого URL-адреса: `https://docs.microsoft.com/api/search/rss?search=%22Migrate+from+Azure+Media+Services+v2+to+v3%22&locale=en-us` в средство чтения канала RSS.
 
 В этой статье описаны изменения, которые впервые появились в Службе мультимедиа Azure версии 3, приведены различия между двумя версиями и предоставлено руководство по миграции.
 
@@ -41,7 +43,7 @@ ms.locfileid: "74049005"
 * Пакеты SDK для [.NET](https://aka.ms/ams-v3-dotnet-ref), .NET Core, [Node.js](/javascript/api/overview/azure/mediaservices/management), [Python](https://aka.ms/ams-v3-python-ref), [Java](https://aka.ms/ams-v3-java-ref), [Go](https://aka.ms/ams-v3-go-ref) и Ruby.
 * Интеграция [Azure CLI](https://aka.ms/ams-v3-cli-ref) для простых скриптов поддержки.
 
-### <a name="new-features"></a>новые функции;
+### <a name="new-features"></a>Новые функции
 
 * Для обработки задания на основе файла можно использовать URL-адрес HTTP в качестве входных данных.<br/>Вам не обязательно ни хранить содержимое в Azure, ни создавать ресурсы.
 * Для обработки задания на основе файла введено понятие [преобразования](transforms-jobs-concept.md). Преобразование можно использовать для создания повторно используемых конфигураций, создания шаблонов Azure Resource Manager и изолирования параметров обработки между несколькими пользователями или клиентами.
@@ -124,7 +126,7 @@ API версии 3 содержит следующие недочеты функ
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать, как легко начать кодирование и потоковую передачу видеофайлов, ознакомьтесь со сведениями о [файлах потоковой передачи](stream-files-dotnet-quickstart.md). 
 

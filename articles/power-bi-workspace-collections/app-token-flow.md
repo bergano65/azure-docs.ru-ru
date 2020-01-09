@@ -1,5 +1,5 @@
 ---
-title: Аутентификация и авторизация в коллекциях рабочих областей Power BI | Документация Майкрософт
+title: Проверка подлинности и авторизация — Power BI коллекции рабочих областей
 description: Аутентификация и авторизация в коллекциях рабочих областей Power BI.
 services: power-bi-workspace-collections
 author: rkarlin
@@ -8,12 +8,12 @@ ms.service: power-bi-embedded
 ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
-ms.openlocfilehash: 713c56904769c133272db4fb65f8b596ab66804b
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 8fcd7caffb041c57090d7256361421cb49a9a5fc
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67672506"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75427113"
 ---
 # <a name="authenticating-and-authorizing-with-power-bi-workspace-collections"></a>Аутентификация и авторизация в коллекциях рабочих областей Power BI
 
@@ -36,7 +36,7 @@ ms.locfileid: "67672506"
 
 Маркер приложения может содержать следующие утверждения:
 
-| Утверждение | Описание |    
+| Утверждение | Description |    
 | --- | --- |
 | **ver** |Версия маркера приложения. Текущая версия — 0.2.0. |
 | **aud** |Целевой получатель маркера. Для коллекций рабочих областей Power BI используйте адрес *https:\//analysis.windows.net/powerbi/api*. |
@@ -92,7 +92,7 @@ Body
 
 Ниже приведены доступные области применения коллекций рабочих областей Power BI.
 
-|`Scope`|Описание|
+|Область действия|Description|
 |---|---|
 |Dataset.Read|Предоставляет разрешение на чтение указанного набора данных.|
 |Dataset.Write|Предоставляет разрешение на запись в указанном наборе данных.|
@@ -142,8 +142,8 @@ Body
 
 |Операция|Целевой ресурс|Разрешения для маркеров|
 |---|---|---|
-|Создайте (в памяти) новый отчет на основе набора данных.|Выборка|Dataset.Read|
-|Создайте (в памяти) новый отчет на основе набора данных и сохраните этот отчет.|Выборка|* Dataset.Read<br>* Workspace.Report.Create|
+|Создайте (в памяти) новый отчет на основе набора данных.|Dataset|Dataset.Read|
+|Создайте (в памяти) новый отчет на основе набора данных и сохраните этот отчет.|Dataset|* Dataset.Read<br>* Workspace.Report.Create|
 |Просмотр и изменение (в памяти) существующего отчета. Report.Read подразумевает наличие Dataset.Read. Report.Read не допускает сохранение изменений.|Отчет|Report.Read|
 |Изменение и сохранение существующего отчета.|Отчет|Report.ReadWrite|
 |Сохранение копии отчета ("Сохранить как").|Отчет|* Report.Read<br>* Workspace.Report.Copy|
@@ -172,7 +172,7 @@ Body
 
 ![Пример отчета, внедренного в приложение](media/get-started-sample/sample-web-app.png)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
 [CreateReportEmbedToken](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.powerbitoken?redirectedfrom=MSDN)  
 [Пример для начала работы с коллекциями рабочих областей Power BI](get-started-sample.md)  

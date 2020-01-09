@@ -1,5 +1,5 @@
 ---
-title: Перенос приложений в MSAL (iOS и macOS) | Службы
+title: Руководством по миграции ADAL в MSAL (MSAL iOS/macOS) | Службы
 titleSuffix: Microsoft identity platform
 description: Узнайте о различиях между MSAL для iOS и macOS и библиотекой аутентификация Azure AD для ObjectiveC (ADAL. ObjC) и как перейти на MSAL для iOS/macOS.
 services: active-directory
@@ -14,12 +14,12 @@ ms.author: twhitney
 ms.reviewer: oldalton
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88fcb3422c900419abf68173ff5026a7dd0b87ea
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: f35243e29755c42dbe8e3a696f2718ee3d10178c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74963602"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424432"
 ---
 # <a name="migrate-applications-to-msal-for-ios-and-macos"></a>Перенос приложений в MSAL для iOS и macOS
 
@@ -76,7 +76,7 @@ ms.locfileid: "74963602"
 
 Это встроенная область для каждого приложения. Он относится к статическому списку разрешений, настроенных при регистрации приложения. Его поведение аналогично поведению `resource`. Это может быть полезно при миграции, чтобы обеспечить соблюдение аналогичного набора областей и взаимодействия с пользователем.
 
-Чтобы использовать область `/.default`, добавьте `/.default` в идентификатор ресурса. Например, `https://graph.microsoft.com/.default`. Если ресурс заканчивается косой чертой (`/`), то все равно следует добавлять `/.default`, включая предшествующую косую черту, что приводит к области с двойной косой чертой (`//`).
+Чтобы использовать область `/.default`, добавьте `/.default` в идентификатор ресурса. Например: `https://graph.microsoft.com/.default`. Если ресурс заканчивается косой чертой (`/`), то все равно следует добавлять `/.default`, включая предшествующую косую черту, что приводит к области с двойной косой чертой (`//`).
 
 Дополнительные сведения об использовании области "/.дефаулт" можно прочитать [здесь](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#the-default-scope) .
 

@@ -1,24 +1,20 @@
 ---
-title: Возможности хранения состояний в службе "Сетка Azure Service Fabric" | Документация Майкрософт
+title: Варианты хранения состояния в сети Azure Service Fabric
 description: Узнайте о надежном сохранении состояний в приложениях службы "Сетка Service Fabric", работающих в службе "Сетка Azure Service Fabric".
-services: service-fabric-mesh
-keywords: ''
 author: dkkapur
 ms.author: dekapur
 ms.date: 11/27/2018
 ms.topic: conceptual
-ms.service: service-fabric-mesh
-manager: jeconnoc
-ms.openlocfilehash: ef51040d1bad74ee74d5901d1f5acbe875c02a07
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0b0bd611fa86d155bb5bf2e07808e7365e28871c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60810539"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352344"
 ---
 # <a name="state-management-with-service-fabric"></a>Управление состояниями с помощью Service Fabric
 
-Service Fabric поддерживает множество разных способов хранения состояний. Концептуальный обзор шаблонов управления состояниями и службы Service Fabric представлен в статье [Понятия Service Fabric: состояние](/azure/service-fabric/service-fabric-concepts-state). Эти принципы применимы независимо от того, выполняются службы внутри или вне службы "Сетка Service Fabric". 
+Service Fabric поддерживает множество разных способов хранения состояний. Принципы работы шаблонов управления состояниями и Service Fabric представлены в разделе [Состояние службы](/azure/service-fabric/service-fabric-concepts-state). Эти принципы применимы независимо от того, выполняются службы внутри или вне службы "Сетка Service Fabric". 
 
 С помощью службы "Сетка Service Fabric" можно легко развернуть новое приложение и подключить его к существующему хранилищу данных, размещенному в Azure. Помимо использования любой удаленной базы данных существует несколько вариантов хранения данных, в зависимости от того, какое хранилище требуется службе, локальное или удаленное. 
 

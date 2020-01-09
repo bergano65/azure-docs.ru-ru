@@ -1,30 +1,22 @@
 ---
-title: Выпуски Microsoft Threat Modeling Tool в Azure | Документация Майкрософт
+title: Microsoft Threat Modeling Tool выпуск 9/12/2018 — Azure
 description: Документирование заметок о выпуске средства моделирования угроз
-services: security
-documentationcenter: na
 author: jegeib
-manager: jegeib
-editor: jegeib
-ms.assetid: na
+ms.author: jegeib
 ms.service: security
 ms.subservice: security-develop
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/15/2019
-ms.author: jegeib
-ms.openlocfilehash: ce5f2b5541da3b3a3db046ba0dc768e3fbe2431e
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: ad489d6de222380e85a962c7b50c63a5c2122c72
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68928116"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75548808"
 ---
 # <a name="threat-modeling-tool-ga-release-71509112---9122018"></a>Threat Modeling Tool, общедоступный выпуск 7.1.50911.2 от 12.09.2018
 
-Мы рады сообщить о том, что Microsoft Threat Modeling Tool теперь доступно для скачивания в качестве поддерживаемого общедоступного выпуска. Этот выпуск содержит важные обновления конфиденциальности и безопасности, а также исправления ошибок, обновления функций и улучшения стабильности. Пользователям предварительной версии 2017 года будет предложено обновить ее до последнего выпуска с помощью технологии ClickOnce после открытия клиента. Новым пользователям средства необходимо [щелкнуть здесь, чтобы скачать клиент](https://aka.ms/threatmodelingtool).
+Мы рады сообщить о том, что Microsoft Threat Modeling Tool теперь доступно для скачивания в качестве поддерживаемого общедоступного выпуска. Этот выпуск содержит важные обновления конфиденциальности и безопасности, а также исправления ошибок, обновления функций и улучшения стабильности. Пользователям предварительной версии 2017 года будет предложено обновить ее до последнего выпуска с помощью технологии ClickOnce после открытия клиента. Для новых пользователей этого средства можно [скачать клиент](https://aka.ms/threatmodelingtool).
 
 В этом выпуске мы прекращаем поддержку предварительной версии 2017 года и рекомендуем всем пользователям обновить ее до общедоступного выпуска. 15 октября 2018 года или позже мы установим минимальную требуемую версию ClickOnce для Threat Modeling Tool, и все клиенты предварительной версии должны будут выполнить обновление.
 
@@ -56,25 +48,25 @@ ms.locfileid: "68928116"
 
 ### <a name="users-of-high-resolution-screens-may-experience-small-text-in-the-threat-properties"></a>Пользователи экранов с высоким разрешением могут видеть мелкий текст в свойствах угрозы
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 В представлении "Анализ" средства, если пользователь использует экран с высоким разрешением, который по умолчанию настроен на увеличение масштаба для удобства чтения в Windows, раздел Possible Mitigation(s) (Возможные способы устранения рисков) может отображаться мелким текстом.
 
 ![Известная проблема с экранами с высоким разрешением](./media/threat-modeling-tool-releases-71509112/tmt_screen_resolution-300x153.png)
 
-#### <a name="workaround"></a>Возможное решение
+#### <a name="workaround"></a>Обходной путь
 
 Пользователь может щелкнуть текст устранения рисков и использовать стандартное управление масштабированием Windows (CRTL+прокрутить колесико мыши вверх), чтобы увеличить масштаб этого раздела.
 
 ### <a name="files-in-the-recently-opened-models-section-of-the-main-window-may-fail-to-open"></a>Не удается открыть файлы в разделе Recently Opened Models (Недавно открытые модели) главного окна
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Функция, позволяющая открыть из OneDrive, в предварительной версии была удалена. Пользователи с недавно открытыми моделями, которые были сохранены в OneDrive, получат следующую ошибку.
 
 ![Функция OneDrive удалена](./media/threat-modeling-tool-releases-71509112/tmt_save_error-300x131.png)
 
-#### <a name="workaround"></a>Возможное решение
+#### <a name="workaround"></a>Обходной путь
 
 Пользователям OneDrive рекомендуется использовать клиент Майкрософт [OneDrive для Windows](https://onedrive.live.com/about/en-us/download/) для доступа к файлам, хранящимся в OneDrive, через стандартное диалоговое окно Open a model (Открытие модели).
 
@@ -82,14 +74,14 @@ ms.locfileid: "68928116"
 
 ### <a name="my-organization-uses-the-2016-version-of-the-tool-can-i-use-the-azure-stencil-set"></a>Моя организация использует версию средства 2016 года. Могу ли я использовать набор элементов Azure?
 
-Да, можете. [Набор элементов Azure доступен на GitHub](https://github.com/Microsoft/threat-modeling-templates/) и может быть загружен в версии средства 2016 года. Чтобы создать модель с набором элементов Azure, используйте диалоговое окно Template For New Models (Шаблон для новых моделей) на экране главного меню. TMT 2016 не может отобразить ссылки, найденные в полях Possible Mitigations (Возможные способы устранения) набора элементов Azure, поэтому вы можете увидеть ссылки, отображаемые в виде тегов HTML.
+Да, можете. [Набор элементов Azure доступен на сайте GitHub](https://github.com/Microsoft/threat-modeling-templates/), и его можно загрузить в версии 2016 средства. Чтобы создать модель с набором элементов Azure, используйте диалоговое окно Template For New Models (Шаблон для новых моделей) на экране главного меню. TMT 2016 не может отобразить ссылки, найденные в полях Possible Mitigations (Возможные способы устранения) набора элементов Azure, поэтому вы можете увидеть ссылки, отображаемые в виде тегов HTML.
 
 ![Обновления набора элементов Azure в клиенте 2016](./media/threat-modeling-tool-releases-71509112/tmt_azure_stencils-300x212.png)
 
-## <a name="system-requirements"></a>Требования к системе
+## <a name="system-requirements"></a>Системные требования
 
 - Поддерживаемые операционные системы
-  - Microsoft Windows 10.
+  - Microsoft Windows 10
 - Требуемая версия .NET
   - 3\.5.2 .NET
 - Дополнительные требования
@@ -99,6 +91,6 @@ ms.locfileid: "68928116"
 
 - Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](threat-modeling-tool.md) и содержит информацию [об использовании средства](threat-modeling-tool-getting-started.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

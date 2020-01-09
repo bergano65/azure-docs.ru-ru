@@ -1,18 +1,14 @@
 ---
 title: Мониторинг кластера службы Azure Kubernetes Service (AKS) | Документация Майкрософт
 description: Узнайте, как включить мониторинг кластера Azure Kubernetes Service (AKS) с Azure Monitor для контейнеров, уже развернутых в вашей подписке.
-ms.service: azure-monitor
-ms.subservice: ''
 ms.topic: conceptual
-author: mgoedtel
-ms.author: magoedte
 ms.date: 09/12/2019
-ms.openlocfilehash: 5d68c343fee5807c430ce42777b988a48b9227f8
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: eced371f7d44b486d671c2c22ca9fbb4c0b65fbb
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73478601"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75405492"
 ---
 # <a name="enable-monitoring-of-azure-kubernetes-service-aks-cluster-already-deployed"></a>Включение мониторинга уже развернутого кластера Azure Kubernetes Service (AKS)
 
@@ -20,12 +16,12 @@ ms.locfileid: "73478601"
 
 Вы можете включить мониторинг кластера AKS, который уже развернут, с помощью одного из поддерживаемых методов:
 
-* Azure CLI
+* Интерфейс командной строки Azure
 * Terraform
 * [Из Azure Monitor](#enable-from-azure-monitor-in-the-portal) или [непосредственно из кластера AKS](#enable-directly-from-aks-cluster-in-the-portal) в портал Azure 
 * С [предоставленным шаблоном Azure Resource Manager](#enable-using-an-azure-resource-manager-template) с помощью командлета Azure PowerShell `New-AzResourceGroupDeployment` или с Azure CLI. 
 
-## <a name="sign-in-to-the-azure-portal"></a>Выполните вход на портал Azure.
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 Войдите на [портал Azure](https://portal.azure.com). 
 
@@ -45,7 +41,7 @@ provisioningState       : Succeeded
 
 ### <a name="integrate-with-an-existing-workspace"></a>Интеграция с существующей рабочей областью
 
-Если вы предпочитаете интегрировать с существующей рабочей областью, выполните следующие действия, чтобы сначала указать полный идентификатор ресурса Log Analytics рабочей области, необходимый для параметра `--workspace-resource-id`, а затем выполнить команду, чтобы включить надстройку мониторинга для Указанная Рабочая область.  
+Если вы предпочитаете интегрировать с существующей рабочей областью, выполните следующие действия, чтобы сначала указать полный идентификатор ресурса Log Analytics рабочей области, необходимый для параметра `--workspace-resource-id`, а затем выполнить команду, чтобы включить надстройку мониторинга для указанной рабочей области.  
 
 1. Перечислите все подписки, к которым у вас есть доступ, с помощью следующей команды:
 

@@ -1,25 +1,16 @@
 ---
-title: Диагностика и мониторинг в Azure Service Fabric | Документация Майкрософт
+title: Диагностика и мониторинг Azure ServiceFabric
 description: В этой статье описаны функции мониторинга производительности в среде выполнения Service Fabric Reliable ServiceRemoting, такие как генерируемые ею счетчики производительности.
-services: service-fabric
-documentationcenter: .net
 author: suchiagicha
-manager: chackdan
-editor: suchiagicha
-ms.assetid: 1c229923-670a-4634-ad59-468ff781ad18
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 06/29/2017
 ms.author: pepogors
-ms.openlocfilehash: a7c5ec023eb03d7d68a43ffecdc74aa4e505a0ce
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: 31095a619fc4d756fa4ef9c29691d1d511d59ece
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170476"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75426702"
 ---
 # <a name="diagnostics-and-performance-monitoring-for-reliable-service-remoting"></a>Диагностика и мониторинг производительности в модели Reliable Service Remoting
 Среда выполнения Reliable ServiceRemoting генерирует [счетчики производительности](https://msdn.microsoft.com/library/system.diagnostics.performancecounter.aspx). Они содержат полезную информацию о работоспособности ServiceRemoting и помогают устранять неполадки и контролировать производительность.
@@ -28,7 +19,7 @@ ms.locfileid: "72170476"
 ## <a name="performance-counters"></a>Счетчики производительности
 Среда выполнения Reliable ServiceRemoting определяет указанные ниже категории счетчиков производительности.
 
-| Category | Описание |
+| Категория | Description |
 | --- | --- |
 | Service Fabric Service |Счетчики, относящиеся к Azure Service Fabric Service Remoting, например счетчик среднего времени, затраченного на обработку запроса. |
 | Service Fabric Service Method |Счетчики, относящиеся к методам, которые реализуются Service Fabric Remoting Service, например выявляющие частоту вызова того или иного метода службы. |
@@ -83,7 +74,7 @@ ms.locfileid: "72170476"
 
 Среда выполнения Reliable Service публикует следующие счетчики производительности, связанные с выполнением методов службы.
 
-| Имя категории | Имя счетчика | Описание |
+| Имя категории | Имя счетчика | Description |
 | --- | --- | --- |
 | Service Fabric Service Method |Вызовов в секунду |Количество вызовов метода службы в секунду |
 | Service Fabric Service Method |Среднее время вызова (мс) |Время, затраченное на выполнение метода службы, в миллисекундах |
@@ -92,13 +83,13 @@ ms.locfileid: "72170476"
 ### <a name="service-request-processing-performance-counters"></a>Счетчики производительности обработки запросов службы
 Когда клиент вызывает метод через объект прокси службы, это приводит к отправке по сети сообщения запроса в Remoting Service. Служба обрабатывает сообщение запроса и отправляет ответ обратно клиенту. Среда выполнения Reliable ServiceRemoting публикует следующие счетчики производительности, связанные с обработкой запросов службы.
 
-| Имя категории | Имя счетчика | Описание |
+| Имя категории | Имя счетчика | Description |
 | --- | --- | --- |
 | Service Fabric Service |Число невыполненных запросов |Число запросов, обрабатываемых в службе |
 | Service Fabric Service |Среднее время запроса (мс) |Время обработки запроса службой (мс) |
-| Service Fabric Service |Среднее время десериализации запроса, мс |Время десериализации сообщения запроса службы при получении его службой (мс) |
+| Service Fabric Service |Среднее время десериализации запроса (мс) |Время десериализации сообщения запроса службы при получении его службой (мс) |
 | Service Fabric Service |Среднее время сериализации ответа (мс) |Время сериализации ответного сообщения службы в службе до отправки ответа клиенту (мс) |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Пример кода](https://azure.microsoft.com/resources/samples/?service=service-fabric&sort=0)
 * [Поставщики EventSource в PerfView](https://blogs.msdn.microsoft.com/vancem/2012/07/09/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource/)

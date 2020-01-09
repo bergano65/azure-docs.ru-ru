@@ -1,33 +1,33 @@
 ---
 title: Создание SAS делегирования пользователя для контейнера или большого двоичного объекта с помощью PowerShell
 titleSuffix: Azure Storage
-description: Узнайте, как создать SAS делегирования пользователя (Предварительная версия) с учетными данными Azure Active Directory с помощью PowerShell.
+description: Узнайте, как создать SAS делегирования пользователя с учетными данными Azure Active Directory с помощью PowerShell.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/04/2019
+ms.date: 12/18/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
-ms.openlocfilehash: 5f4947921a77f2bc94d1810c9b1d1951431d3d71
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 63075152ea4b3bf1a3aa208cf2a9642ef46642db
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892521"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75371787"
 ---
-# <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-powershell-preview"></a>Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с помощью PowerShell (Предварительная версия)
+# <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-powershell"></a>Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с помощью PowerShell
 
 [!INCLUDE [storage-auth-sas-intro-include](../../../includes/storage-auth-sas-intro-include.md)]
 
-В этой статье показано, как использовать учетные данные Azure Active Directory (Azure AD) для создания SAS делегирования пользователя для контейнера или большого двоичного объекта с Azure PowerShell (Предварительная версия).
+В этой статье показано, как использовать учетные данные Azure Active Directory (Azure AD) для создания SAS делегирования пользователя для контейнера или большого двоичного объекта с Azure PowerShell.
 
 [!INCLUDE [storage-auth-user-delegation-include](../../../includes/storage-auth-user-delegation-include.md)]
 
-## <a name="install-the-preview-module"></a>Установка модуля предварительной версии
+## <a name="install-the-powershell-module"></a>Установка модуля PowerShell
 
-Чтобы создать SAS делегирования пользователя с помощью PowerShell, сначала необходимо установить модуль AZ. Storage 1.3.1-Preview. Чтобы установить модуль, выполните следующие действия.
+Чтобы создать SAS для делегирования пользователей с помощью PowerShell, установите версию 1.10.0 или более позднюю версию модуля AZ. Storage. Чтобы установить последнюю версию модуля, выполните следующие действия.
 
 1. Удалите все ранее установленные версии Azure PowerShell.
 
@@ -48,23 +48,18 @@ ms.locfileid: "74892521"
     Install-Module Az –Repository PSGallery –AllowClobber
     ```
 
-1. Установите модуль предварительной версии службы хранилища Azure, поддерживающий SAS для делегирования пользователей:
+1. Убедитесь, что установлен Azure PowerShell версии 3.2.0 или более поздней. Выполните следующую команду, чтобы установить последнюю версию модуля PowerShell для службы хранилища Azure:
 
     ```powershell
-    Install-Module Az.Storage `
-        –Repository PSGallery `
-        -RequiredVersion 1.3.1-preview `
-        –AllowPrerelease `
-        –AllowClobber `
-        –Force
+    Install-Module -Name Az.Storage -Repository PSGallery -Force
     ```
 
 1. Закройте и снова откройте окно PowerShell.
 
-Так как PowerShell загружает последний модуль AZ. Storage по умолчанию, может потребоваться явная загрузка модуля 1.3.1-Preview при запуске консоли. Чтобы явно загрузить модуль предварительного просмотра, выполните команду [Import-Module](/powershell/module/microsoft.powershell.core/import-module) :
+Чтобы проверить, какая версия модуля AZ. Storage установлена, выполните следующую команду:
 
 ```powershell
-Import-Module Az.Storage -RequiredVersion 1.3.1
+Get-Module -ListAvailable -Name Az.Storage -Refresh
 ```
 
 Дополнительные сведения об установке Azure PowerShell см. в [статье установка Azure PowerShell с помощью PowerShellGet](/powershell/azure/install-az-ps).

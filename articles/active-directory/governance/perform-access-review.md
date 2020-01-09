@@ -1,5 +1,5 @@
 ---
-title: Просмотр доступа к группам или приложениям в проверках доступа — Azure Active Directory | Документация Майкрософт
+title: Просмотр доступа к группам & приложений в проверках доступа — Azure AD
 description: Узнайте, как просматривать доступ к членам группы или доступ к приложениям в Azure Active Directory проверках доступа.
 services: active-directory
 author: msaburnley
@@ -15,14 +15,14 @@ ms.date: 05/21/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e51ad8faecd935ea999b1287e542e4b14d55290a
-ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.openlocfilehash: 8393a1e4719137aa09233d0a87dabdf81d8ccb59
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71948245"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75422455"
 ---
-# <a name="review-access-to-groups-or-applications-in-azure-ad-access-reviews"></a>Просмотр доступа к группам или приложениям в проверках доступа Azure AD
+# <a name="review-access-to-groups-and-applications-in-azure-ad-access-reviews"></a>Просмотр доступа к группам и приложениям в проверках доступа Azure AD
 
 Azure Active Directory (Azure AD) упрощает управление доступом к группам и приложениям в Azure AD и других службах Microsoft Online Services с помощью функций, которые называются проверками доступа Azure AD.
 
@@ -104,6 +104,6 @@ Azure Active Directory (Azure AD) упрощает управление дост
 
 1. Нажмите кнопку **ОК** , чтобы принять рекомендации.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Выполнение проверки доступа для групп или приложений](complete-access-review.md)

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: c17b344764fd9c1d18f787952a6193f0c8b634d0
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 2bda344c32d03425c7cfec4d253e18451eb1f5a1
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71065015"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75367509"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-qq-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью QQ через Azure Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "71065015"
 
 ## <a name="create-a-qq-application"></a>Создание приложения QQ
 
-Чтобы использовать учетную запись QQ в качестве поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C), необходимо создать в своем клиенте приложение, которое его представляет. Если у вас еще нет учетной записи QQ, вы можете зарегистрироваться по [https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033](https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033)адресу.
+Чтобы использовать учетную запись QQ в качестве поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C), необходимо создать в своем клиенте приложение, которое его представляет. Если у вас еще нет учетной записи QQ, вы можете зарегистрироваться по адресу [https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033](https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033).
 
 ### <a name="register-for-the-qq-developer-program"></a>Регистрация в программе разработчиков QQ
 
@@ -35,7 +35,7 @@ ms.locfileid: "71065015"
 
 ### <a name="register-a-qq-application"></a>Регистрация приложения QQ
 
-1. Перейдите к [https://connect.qq.com/index.html](https://connect.qq.com/index.html).
+1. Перейдите на сайт [https://connect.qq.com/index.html](https://connect.qq.com/index.html).
 1. Выберите **应用管理**(Управление приложениями).
 1. Выберите **创建应用**(Создать приложение) и введите необходимые сведения.
 1. Введите значение `https://your-tenant-name.b2clogin.com/your-tenant-name}.onmicrosoft.com/oauth2/authresp` в поле **授权回调域** (URL-адрес обратного вызова). Например, если `tenant_name` — contoso, задайте URL-адрес `https://contoso.b2clogin.com/contoso.onmicrosoft.com/oauth2/authresp`.
@@ -43,13 +43,13 @@ ms.locfileid: "71065015"
 1. На странице подтверждения выберите **应用管理** (Управление приложениями), чтобы вернуться на страницу управления приложениями.
 1. Выберите **查看** (Просмотр) рядом с только что созданным приложением.
 1. Выберите **修改** (Редактирование).
-1. Найдите и скопируйте **Идентификатор приложения** и **Ключ приложения**. Оба этих значения потребуются при добавлении поставщика удостоверений для вашего клиента.
+1. Скопируйте **идентификатор приложения** и **ключ приложения**. Оба этих значения потребуются при добавлении поставщика удостоверений для вашего клиента.
 
 ## <a name="configure-qq-as-an-identity-provider"></a>Настройка QQ в качестве поставщика удостоверений
 
-1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
-1. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C, выбрав фильтр " **каталог и подписка** " в верхнем меню и выбрав Каталог, содержащий ваш клиент.
-1. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
+1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Щелкните значок **Каталог + подписка** на панели инструментов портала, а затем выберите каталог, содержащий клиент Azure AD B2C.
+1. В портал Azure найдите и выберите **Azure AD B2C**.
 1. Выберите **поставщики удостоверений**, а затем выберите **QQ (Предварительная версия)** .
 1. Введите **Имя**. Например, *QQ*.
 1. В поле **идентификатор клиента**введите идентификатор приложения QQ, созданного ранее.

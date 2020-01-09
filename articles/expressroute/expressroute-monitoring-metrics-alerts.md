@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 08/22/2019
 ms.author: cherylmc
-ms.openlocfilehash: 95083809f8fcfe42ae76faa0af507c7ce4acd709
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 268a7e7c94285d3c4fdcb0c5fb91b685c09b58c8
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083428"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75436914"
 ---
 # <a name="expressroute-monitoring-metrics-and-alerts"></a>Мониторинг, метрики и оповещения в ExpressRoute
 
@@ -24,19 +24,19 @@ ms.locfileid: "74083428"
 
 ## <a name="expressroute-metrics"></a>Метрики ExpressRoute
 
-Чтобы просмотреть **метрики**, перейдите на страницу *Azure Monitor* и щелкните *метрики*. Чтобы просмотреть метрики **expressroute** , фильтр по типу ресурса *каналы ExpressRoute*. Чтобы просмотреть метрики **Global REACH** , отфильтруйте по типу ресурса *каналы expressroute* и выберите ресурс канала expressroute, в котором включено Global REACH. Чтобы просмотреть метрики **Direct expressroute** , отфильтруйте тип ресурса по *портам ExpressRoute*. 
+Чтобы просмотреть **метрики**, перейдите на страницу *Azure Monitor* и щелкните *метрики*. Чтобы просмотреть метрики **expressroute** , отфильтруйте по типу ресурса *каналы ExpressRoute*. Чтобы просмотреть метрики **Global REACH** , отфильтруйте по типу ресурса *каналы expressroute* и выберите ресурс канала expressroute, в котором включено Global REACH. Чтобы просмотреть метрики **Direct expressroute** , отфильтруйте тип ресурса по *портам ExpressRoute*. 
 
 После выбора метрики будет применено агрегирование по умолчанию. При необходимости можно применить разделение, которое будет показывать метрику с разными измерениями.
 
-### <a name="available-metrics"></a>Доступные метрики
+### <a name="available-metrics"></a>Доступные показатели
 |**Метрика**|**Категория**|**Измерения (s)**|**Функции**|
 | --- | --- | --- | --- |
 |Доступность ARP|Доступность|<ui><li>Одноранговый (основной или дополнительный маршрутизатор ExpressRoute)</ui></li><ui><li> Тип пиринга (частный/открытый/Майкрософт)</ui></li>|ExpressRoute|
 |Доступность BGP|Доступность|<ui><li> Одноранговый (основной или дополнительный маршрутизатор ExpressRoute)</ui></li><ui><li> Тип пиринга</ui></li>|ExpressRoute|
-|BitsInPerSecond|Трафик|<ui><li> Тип пиринга (ExpressRoute)</ui></li><ui><li>Ссылка (ExpressRoute Direct)</ui></li>| <li> ExpressRoute</li><li>ExpressRoute Direct|
-|BitsOutPerSecond|Трафик| <ui><li>Тип пиринга (ExpressRoute)</ui></li><ui><li> Ссылка (с ExpressRoute Direct) | <ui><li><ui> ExpressRoute<li>Прямой</ui> ExpressRoute</li> |
-|глобалреачбитсинперсеконд|Трафик|<ui><li></ui> с одноранговым каналом (Скэй ключ службы)</li>|Global Reach|
-|глобалреачбитсаутперсеконд|Трафик|<ui><li></ui> с одноранговым каналом (Скэй ключ службы)</li>|Global Reach|
+|BitsInPerSecond|Поток автотранспорта|<ui><li> Тип пиринга (ExpressRoute)</ui></li><ui><li>Ссылка (ExpressRoute Direct)</ui></li>| <li> ExpressRoute</li><li>ExpressRoute Direct|
+|BitsOutPerSecond|Поток автотранспорта| <ui><li>Тип пиринга (ExpressRoute)</ui></li><ui><li> Ссылка (с ExpressRoute Direct) | <ui><li><ui> ExpressRoute<li>Прямой</ui> ExpressRoute</li> |
+|глобалреачбитсинперсеконд|Поток автотранспорта|<ui><li></ui> с одноранговым каналом (Скэй ключ службы)</li>|Глобальный доступ|
+|глобалреачбитсаутперсеконд|Поток автотранспорта|<ui><li></ui> с одноранговым каналом (Скэй ключ службы)</li>|Глобальный доступ|
 |админстате|Физическое подключение|Ссылка|ExpressRoute Direct|
 |линепротокол|Физическое подключение|Ссылка|ExpressRoute Direct|
 |ркслигхтлевел|Физическое подключение|<ui><li>Ссылка</ui></li><ui><li></ui> Lane</li>|ExpressRoute Direct|
@@ -134,10 +134,10 @@ ms.locfileid: "74083428"
 
   ![другое](./media/expressroute-monitoring-metrics-alerts/alertshowto6activitylog.jpg)
   
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Настройте подключение ExpressRoute.
   
-  * [Создание и изменение канала ExpressRoute с помощью PowerShell](expressroute-howto-circuit-arm.md)
-  * [Создание и изменение пиринга для канала ExpressRoute с помощью PowerShell](expressroute-howto-routing-arm.md)
+  * [Создание и изменение канала](expressroute-howto-circuit-arm.md)
+  * [Создание и изменение конфигурации пиринга](expressroute-howto-routing-arm.md)
   * [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md)

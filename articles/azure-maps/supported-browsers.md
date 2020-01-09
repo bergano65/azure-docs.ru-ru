@@ -7,13 +7,13 @@ ms.date: 03/25/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
-manager: cpendleton
-ms.openlocfilehash: d867e9a1afcb495aee7e8b0e0b3b001104f48a4c
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+manager: cpendle
+ms.openlocfilehash: 6aa256f026033a8b204b3c2ab1080f9f63ef63d7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70844824"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432792"
 ---
 # <a name="web-sdk-supported-browsers"></a>Браузеры, поддерживаемые в веб-пакетах SDK
 
@@ -29,7 +29,7 @@ if (!atlas.isSupported()) {
 }
 ```
 
-## <a name="desktop"></a>Рабочий стол
+## <a name="desktop"></a>Классические приложения
 
 Веб-пакет SDK Azure Maps поддерживает следующие браузеры для настольных систем:
 
@@ -40,7 +40,7 @@ if (!atlas.isSupported()) {
 
 См. также в разделе [устаревшие браузеры](#Target-Legacy-Browsers) ниже в этой статье.
 
-## <a name="mobile"></a>Мобильный
+## <a name="mobile"></a>Мобильные приложения
 
 Веб-пакет SDK Azure Maps поддерживает следующие мобильные браузеры:
 
@@ -59,7 +59,7 @@ if (!atlas.isSupported()) {
 
 В Node. js также поддерживаются следующие модули веб-пакета SDK:
 
-- Модуль служб ([Документация](how-to-use-services-module.md) | [NPM Module](https://www.npmjs.com/package/azure-maps-rest))
+- Модуль служб ([документация](how-to-use-services-module.md) | [модуль NPM](https://www.npmjs.com/package/azure-maps-rest))
 
 ## <a name="Target-Legacy-Browsers"></a>Целевые браузеры прежних версий
 
@@ -68,11 +68,11 @@ if (!atlas.isSupported()) {
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Azure Maps + Леафлет" src="//codepen.io/azuremaps/embed/GeLgyx/?height=500&theme-id=0&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел "перо <a href='https://codepen.io/azuremaps/pen/GeLgyx/'>Azure Maps + леафлет</a> by<a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps () в <a href='https://codepen.io'>CodePen</a>.
+Дополнительные сведения см. в разделе Перо <a href='https://codepen.io/azuremaps/pen/GeLgyx/'>Azure Maps + леафлет</a> by Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о веб-пакете SDK для Azure Maps:
 

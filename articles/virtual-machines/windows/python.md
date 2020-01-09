@@ -14,23 +14,23 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 06/22/2017
 ms.author: cynthn
-ms.openlocfilehash: 1686e86600fb28165ae44e7ca6c0c406dfa26d72
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: a85a9c28acd2d50d95159883a01b27c8ed1d2f1a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74065604"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75461093"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-python"></a>Развертывание виртуальной машины Azure с помощью Python
 
-[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины с помощью Python. Вы узнаете, как выполнять такие задачи.
+[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины с помощью Python. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание проекта Visual Studio
-> * Установка пакетов.
-> * Создание учетных данных.
+> * Установка пакетов
+> * Создание учетных данных
 > * Создание ресурсов
-> * Выполнение задач управления
+> * Выполнение задач управления.
 > * Удаление ресурсов
 > * Выполнение приложения
 
@@ -42,7 +42,7 @@ ms.locfileid: "74065604"
 2. После установки и запуска Visual Studio щелкните **Файл** > **Создать** > **Проект**.
 3. В разделе **Шаблоны** > **Python** > **Приложение Python** укажите имя *myPythonProject* и расположение проекта, а затем нажмите кнопку **ОК**.
 
-## <a name="install-packages"></a>Установка пакетов.
+## <a name="install-packages"></a>Установка пакетов
 
 1. В обозревателе решений в разделе *myPythonProject* щелкните правой кнопкой мыши **Python Environments** (Среды Python) и выберите **Add virtual environment** (Добавление виртуальной среды).
 2. На странице добавления виртуальной среды примите имя по умолчанию *env*, убедитесь, что в качестве базового интерпретатора выбран *Python 3.6 (64-разрядная версия)* и нажмите кнопку **Создать**.
@@ -50,7 +50,7 @@ ms.locfileid: "74065604"
 
 В окнах вывода вы увидите, что пакеты Аzure успешно установлены. 
 
-## <a name="create-credentials"></a>Создание учетных данных.
+## <a name="create-credentials"></a>Создание учетных данных
 
 Прежде чем выполнить этот шаг, убедитесь, что у вас есть [субъект-служба Active Directory](../../active-directory/develop/howto-create-service-principal-portal.md). Кроме того, необходимо записать идентификатор приложения, ключ проверки подлинности и идентификатор клиента, которые понадобятся позже.
 
@@ -125,7 +125,7 @@ compute_client = ComputeManagementClient(
 
 ### <a name="create-the-vm-and-supporting-resources"></a>Создание виртуальной машины и ресурсов поддержки
 
-Все ресурсы должны содержаться в [группе ресурсов](../../azure-resource-manager/resource-group-overview.md).
+Все ресурсы должны содержаться в [группе ресурсов](../../azure-resource-manager/management/overview.md).
 
 1. Чтобы создать группу ресурсов, добавьте эту функцию после переменных в PY-файле:
 
@@ -361,7 +361,7 @@ compute_client = ComputeManagementClient(
     input('Press enter to continue...')
     ```
 
-## <a name="perform-management-tasks"></a>Выполнение задач управления
+## <a name="perform-management-tasks"></a>Выполнение задач управления.
 
 В течение жизненного цикла виртуальной машины можно выполнять задачи управления, такие как запуск, остановка или удаление виртуальной машины. Кроме того, можно создавать код для автоматизации повторяющихся или сложных задач.
 
@@ -570,7 +570,7 @@ compute_client = ComputeManagementClient(
     На полное выполнение этого консольного приложения потребуется примерно 5 минут. После закрытия приложения на удаление ресурсов и групп ресурсов может потребоваться несколько минут.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - При наличии проблем с развертыванием ознакомьтесь с информацией об [устранении неполадок развертываний групп ресурсов с помощью портала Azure](../../resource-manager-troubleshoot-deployments-portal.md).
 - Узнайте больше о [библиотеке Azure для Python](https://docs.microsoft.com/python/api/overview/azure/?view=azure-python).

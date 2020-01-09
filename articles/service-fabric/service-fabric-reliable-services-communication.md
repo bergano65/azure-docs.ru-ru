@@ -1,25 +1,16 @@
 ---
-title: Общие сведения об обмене данными с Reliable Services | Документация Майкрософт
+title: Общие сведения о Reliable Services связи
 description: Общие сведения о модели обмена данными с Reliable Services, включая открытие прослушивателей для служб, разрешение конечных точек и обмен данными между службами.
-services: service-fabric
-documentationcenter: .net
 author: vturecek
-manager: chackdan
-editor: BharatNarasimman
-ms.assetid: 36217988-420e-409d-b0a4-e0e875b6eac8
-ms.service: service-fabric
-ms.devlang: csharp, java
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: required
 ms.date: 11/01/2017
 ms.author: vturecek
-ms.openlocfilehash: 4d3deb7f3b7e7fb6334525886c6d5b8787a8f940
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 3c1a6cfa5227369bf1cde4af087019727c22c0c2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69036778"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75462951"
 ---
 # <a name="how-to-use-the-reliable-services-communication-apis"></a>Использование API связи служб Reliable Services
 Обмен данными между службами совершенно не влияет на работу платформы Azure Service Fabric. Допускается использование любых протоколов и стеков, от UDP до HTTP. Способ взаимодействия служб зависит только от выбора разработчика. Платформа приложений служб Reliable Services предоставляет несколько встроенных стеков связи, а также API-интерфейсы для создания пользовательских компонентов связи.
@@ -156,7 +147,7 @@ int port = codePackageActivationContext.getEndpoint("ServiceEndpoint").getPort()
 >
 
 ### <a name="service-address-registration"></a>Регистрация адреса службы
-Системная *служба именования* работает на кластерах Service Fabric. Служба именования — это регистратор для служб и их адресов, которые прослушивает каждый экземпляр или реплика службы. Когда метод `OpenAsync(C#) / openAsync(Java)` `ICommunicationListener(C#) / CommunicationListener(Java)` завершает выполнение, возвращаемое значение регистрируется в службе именования. Значение, которое публикуется в службе именования, — это строка, значением которой может что угодно. Это строковое значение определяет, что клиенты могут видеть при запросе адреса службы у службы именования.
+Системная *служба именования* работает на кластерах Service Fabric. Служба именования — это регистратор для служб и их адресов, которые прослушивает каждый экземпляр или реплика службы. Когда метод `OpenAsync(C#) / openAsync(Java)``ICommunicationListener(C#) / CommunicationListener(Java)` завершает выполнение, возвращаемое значение регистрируется в службе именования. Значение, которое публикуется в службе именования, — это строка, значением которой может что угодно. Это строковое значение определяет, что клиенты могут видеть при запросе адреса службы у службы именования.
 
 ```csharp
 public Task<string> OpenAsync(CancellationToken cancellationToken)
@@ -216,7 +207,7 @@ ServicePartitionResolver resolver = ServicePartitionResolver.GetDefault();
 FabricServicePartitionResolver resolver = FabricServicePartitionResolver.getDefault();
 ```
 
-Чтобы подключиться к службам в другом кластере, ServicePartitionResolver можно создать с набором конечных точек шлюза кластера. Обратите внимание, что конечные точки шлюза — это просто другие конечные точки для подключения к тому же кластеру. Пример:
+Чтобы подключиться к службам в другом кластере, ServicePartitionResolver можно создать с набором конечных точек шлюза кластера. Обратите внимание, что конечные точки шлюза — это просто другие конечные точки для подключения к тому же кластеру. Пример.
 
 ```csharp
 ServicePartitionResolver resolver = new  ServicePartitionResolver("mycluster.cloudapp.azure.com:19000", "mycluster.cloudapp.azure.com:19001");
@@ -430,7 +421,7 @@ CompletableFuture<?> result = myServicePartitionClient.invokeWithRetryAsync(clie
 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [ASP.NET Core в Service Fabric Reliable Services](service-fabric-reliable-services-communication-aspnetcore.md)
 * [Удаленное взаимодействие службы с Reliable Services](service-fabric-reliable-services-communication-remoting.md)
 * [Коммуникационный стек WCF для надежных служб](service-fabric-reliable-services-communication-wcf.md)

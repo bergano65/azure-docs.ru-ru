@@ -1,25 +1,16 @@
 ---
-title: Анализ событий Azure Service Fabric с помощью Application Insights | Документы Майкрософт
+title: Анализ событий Azure Service Fabric с Application Insights
 description: Ознакомьтесь со сведениями о визуализации и анализе событий с использованием Application Insights для мониторинга и диагностики кластеров Azure Service Fabric.
-services: service-fabric
-documentationcenter: .net
 author: srrengar
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 11/21/2018
 ms.author: srrengar
-ms.openlocfilehash: 8e682a5c768ed4b3f35382c87528c1b0d11a3c3d
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
+ms.openlocfilehash: 5c80dc9f350fec30469a9bce2ed836c276ef3a7f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69019717"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75464757"
 ---
 # <a name="event-analysis-and-visualization-with-application-insights"></a>Анализ и визуализация событий с помощью Application Insights
 
@@ -80,7 +71,7 @@ Application Insights имеет специальное представлени�
 
 Если щелкнуть **Аналитика**, откроется портал аналитики Application Insights, на котором доступно больше возможностей по запросу событий и трассировок. Дополнительные сведения см. в статье [Аналитика в Application Insights](../azure-monitor/app/analytics.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройте оповещения в Application Insights](../azure-monitor/app/alerts.md), чтобы узнавать об изменениях в производительности или характере использования.
 * [Интеллектуальное обнаружение в Application Insights](../azure-monitor/app/proactive-diagnostics.md) осуществляет упреждающий анализ данных телеметрии, отправляемых в Application Insights, и предупреждает о потенциальных проблемах с производительностью.

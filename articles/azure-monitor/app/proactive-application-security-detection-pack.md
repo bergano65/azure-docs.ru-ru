@@ -1,18 +1,18 @@
 ---
-title: Интеллектуальное обнаружение. Пакет обнаружения угроз безопасности в Azure Application Insights | Документация Майкрософт
-description: Мониторинг приложения с помощью Azure Application Insights позволяет выявлять потенциальные проблемы безопасности.
+title: Пакет обнаружения безопасности с Application Insights Azure
+description: Мониторинг приложения с помощью Application Insights Azure и интеллектуального обнаружения для потенциальных проблем безопасности.
 ms.service: azure-monitor
 ms.subservice: application-insights
 ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 12/12/2017
-ms.openlocfilehash: 10c8a38af9e4f04b874bfa75e9e78d241b093117
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: ba35b3a3e1985f49ade468c4d2e82ca579fdac2a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72820645"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432476"
 ---
 # <a name="application-security-detection-pack-preview"></a>Пакет обнаружения угроз безопасности приложений (предварительная версия)
 

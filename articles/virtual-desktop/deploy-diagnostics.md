@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 10/02/2019
+ms.date: 12/18/2019
 ms.author: helohr
-ms.openlocfilehash: 27231dc25604e9031f0456d787530bf2a29616f7
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: b6b310bf1958671583aab873ab42a70845f93f9a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74167430"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75452429"
 ---
 # <a name="deploy-the-diagnostics-tool"></a>Развертывание средства диагностики
 
@@ -25,7 +25,7 @@ ms.locfileid: "74167430"
 - Отправка сообщения активным пользователям на определенном узле сеансов.
 - Подписывать пользователей из узла сеансов.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Прежде чем можно будет развернуть шаблон Azure Resource Manager для средства, необходимо создать регистрацию приложения Azure Active Directory и рабочую область Log Analytics. Для этого вам или администратору требуются следующие разрешения:
 
@@ -50,7 +50,7 @@ ms.locfileid: "74167430"
 >[!NOTE]
 >Разрешения API представляют собой виртуальные рабочие столы Windows, Log Analytics и Microsoft Graph разрешения API добавляются в приложение Azure Active Directory.
 
-1. Откройте PowerShell с правами администратора.
+1. Откройте PowerShell от имени администратора.
 2. Войдите в Azure с помощью учетной записи, имеющей разрешения владельца или участника на подписку Azure, которую вы хотите использовать для средства диагностики:
    ```powershell
    Login-AzAccount
@@ -83,7 +83,7 @@ ms.locfileid: "74167430"
 
 Чтобы запустить сценарий PowerShell, выполните следующие действия.
 
-1.  Откройте PowerShell с правами администратора.
+1.  Откройте PowerShell от имени администратора.
 2.  Перейдите в [репозиторий GitHub RDS-Templates](https://github.com/Azure/RDS-Templates/tree/master/wvd-templates/diagnostics-sample/deploy/scripts) и запустите сценарий **креателоганалитиксворкспацефордиагностикс. ps1** в PowerShell.
 3. Введите следующие значения параметров.
 
@@ -156,7 +156,7 @@ ms.locfileid: "74167430"
 2. Перейдите в рабочую область Log Analytics.
 3. На левой панели в разделе источники данных рабочей области выберите **виртуальные машины**.
 4. Выберите имя виртуальной машины, к которой необходимо подключиться.
-5. Нажмите кнопку **Подключиться**.
+5. Выберите **Подключиться**.
 
 ## <a name="deploy-the-diagnostics-tool"></a>Развертывание средства диагностики
 
@@ -185,7 +185,7 @@ ms.locfileid: "74167430"
 4.  На левой панели в разделе Управление выберите **Проверка подлинности**.
 5.  Введите нужный URI перенаправления в текстовое поле **URI перенаправления** , а затем выберите **сохранить** в левом верхнем углу меню.
 6. Выберите **веб-сайт** в раскрывающемся меню в разделе тип.
-7. Введите URL-адрес на странице обзора приложения и добавьте **/секурити/сигнин-каллбакк** в конец. Например, `https://<yourappname>.azurewebsites.net/security/signin-callback`.
+7. Введите URL-адрес на странице обзора приложения и добавьте **/секурити/сигнин-каллбакк** в конец. Например: `https://<yourappname>.azurewebsites.net/security/signin-callback`.
 
    ![Страница URI перенаправления](media/redirect-uri-page.png)
 
@@ -256,3 +256,8 @@ ms.locfileid: "74167430"
 - [Задержка ввода данных пользователем на сеанс (\*)\\максимальная задержка ввода](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-rdsh-performance-counters):
 
     - Пороговое значение: выше 2000 мс помечено как неработоспособное.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Узнайте, как отслеживать журналы действий при [использовании диагностики с log Analytics](diagnostics-log-analytics.md).
+- Ознакомьтесь с распространенными сценариями ошибок и способами их устранения в статье [Обнаружение и диагностика проблем](diagnostics-role-service.md).

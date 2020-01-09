@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 09/11/2019
-ms.openlocfilehash: 356c8389ed486246ce55b5006e1e489ac7c3c1e3
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 5a647dda21855f754754f76682e5c00443eaac55
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73884783"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432603"
 ---
 # <a name="geolocation-and-ip-address-handling"></a>Обработка геолокации и IP-адресов
 
@@ -154,7 +154,7 @@ namespace MyWebApp
 > [!NOTE]
 > Если вам не удается получить доступ к `ISupportProperties`, проверьте и убедитесь, что вы используете последний стабильный выпуск пакета SDK для Application Insights. `ISupportProperties` предназначены для больших значений кратности, тогда как `GlobalProperties` более подходят для значений низкого уровня кратности, таких как имя региона, имя среды и т. д. 
 
-### <a name="enable-telemetry-initializer-for-aspnet"></a>Включите инициализатор телеметрии для. ASP.NET
+### <a name="enable-telemetry-initializer-for-aspnet"></a>Включение инициализатора телеметрии для ASP.NET
 
 ```csharp
 using Microsoft.ApplicationInsights.Extensibility;
@@ -235,7 +235,7 @@ requests
 
 Новые собранные IP-адреса должны появиться в столбце `customDimensions_client-ip`. По умолчанию столбец `client-ip` по-прежнему будет иметь все 4 октета либо обнуляться, либо отобразить первые три октета в зависимости от того, как настроена коллекция IP-адресов на уровне компонента. Если вы тестируете локально после реализации инициализатора телеметрии и значение, отображаемое для `customDimensions_client-ip`, имеет `::1` это ожидаемое поведение. `::1` представляет петлевой адрес в IPv6. Он эквивалентен `127.0.01` в IPv4 и является результатом, который будет отображаться при тестировании из localhost.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о [сборе персональных данных](https://docs.microsoft.com/azure/azure-monitor/platform/personal-data-mgmt) в Application Insights.
 

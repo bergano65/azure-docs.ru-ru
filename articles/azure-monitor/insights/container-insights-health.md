@@ -1,25 +1,16 @@
 ---
 title: Мониторинг работоспособности кластера Kubernetes с помощью Azure Monitor для контейнеров | Документация Майкрософт
 description: В этой статье описывается, как просмотреть и проанализировать работоспособность AKS и AKS кластеров с помощью Azure Monitor для контейнеров.
-services: azure-monitor
-documentationcenter: ''
-author: mgoedtel
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: azure-monitor
 ms.topic: conceptual
-ms.workload: infrastructure-services
-ms.date: 11/18/2019
-ms.author: magoedte
-ms.openlocfilehash: 08f7cf5a26108608aa3719085d69ec9543f4aa51
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.date: 12/01/2019
+ms.openlocfilehash: 9ee710eb916923756633e65f3287751ba9a9dde3
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74279655"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75405096"
 ---
-# <a name="understand-kubernetes-cluster-health-with-azure-monitor-for-containers"></a>Сведения о работоспособности кластера Kubernetes с Azure Monitor для контейнеров
+# <a name="understand-kubernetes-cluster-health-with-azure-monitor-for-containers"></a>Общие сведения о производительности кластера Kubernetes с Azure Monitor для контейнеров
 
 С Azure Monitor для контейнеров он отслеживает состояние работоспособности управляемых компонентов инфраструктуры и сообщает о них, а также о всех узлах, работающих в любом кластере Kubernetes, поддерживаемом Azure Monitor для контейнеров. Этот процесс выходит за пределы состояния работоспособности кластера и сообщает о нем в [представлении с несколькими кластерами](container-insights-analyze.md#multi-cluster-view-from-azure-monitor), где теперь можно понять, ограничен ли ресурс одним или несколькими узлами в кластере, или недоступен узел или модуль, которые могут повлиять на работу приложения в кластере на основе проверенных метрик.
 
@@ -57,13 +48,13 @@ ms.locfileid: "74279655"
 * Оцените использование памяти на узле и в контейнере.
 * Состояние модулей Pod и узлов на основе вычисления состояния готовности, сообщаемого Kubernetes.
 
-Для обозначения состояния используются следующие значки:
+Для обозначения состояния используются перечисленные ниже значки.
 
 |Значок|Значение|  
 |--------|-----------|  
-|![Зеленый значок галочки указывает на работоспособность](./media/container-insights-health/healthyicon.png)|Успешно, работоспособность — нормальное состояние (зеленый)|  
-|![Желтый треугольник и восклицательный знак — предупреждение](./media/container-insights-health/warningicon.png)|Предупреждение (желтый)|  
-|![Красная кнопка с белым крестиком означает критическое состояние](./media/container-insights-health/criticalicon.png)|Критический (красный)|  
+|![Зеленая галочка обозначает работоспособное состояние](./media/container-insights-health/healthyicon.png)|Успешно, работоспособное состояние (зеленый)|  
+|![Желтый треугольник и восклицательный знак обозначают предупреждение](./media/container-insights-health/warningicon.png)|Предупреждение (желтый)|  
+|![Красная кнопка с белым знаком X обозначает критическое состояние](./media/container-insights-health/criticalicon.png)|Критическое состояние (красный)|  
 |![Значок серого цвета](./media/container-insights-health/grayicon.png)|Неизвестно (серый)|  
 
 ## <a name="monitor-configuration"></a>Конфигурация монитора
@@ -72,7 +63,7 @@ ms.locfileid: "74279655"
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портале Azure](https://portal.azure.com). 
+Войдите на [портал Azure](https://portal.azure.com). 
 
 ## <a name="view-health-of-an-aks-or-non-aks-cluster"></a>Просмотр работоспособности кластера AKS или AKS
 
@@ -109,6 +100,6 @@ ms.locfileid: "74279655"
 
 Данные мониторинга на этой странице не обновляются автоматически. для просмотра последнего состояния работоспособности, полученного из кластера, необходимо выбрать **Обновление** в верхней части страницы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотрите [примеры запросов журналов](container-insights-log-search.md#search-logs-to-analyze-data) , чтобы ознакомиться с предопределенными запросами и примерами, чтобы оценить, визуализировать или проанализировать кластеры.

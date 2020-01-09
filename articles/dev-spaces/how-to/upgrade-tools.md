@@ -3,14 +3,14 @@ title: Обновление средств Azure Dev Spaces
 services: azure-dev-spaces
 ms.date: 07/03/2018
 ms.topic: conceptual
-description: Быстрая разработка Kubernetes с использованием контейнеров и микрослужб в Azure
+description: Узнайте, как обновить средства командной строки Azure Dev Spaces, расширение Visual Studo Code и расширение Visual Studio.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Container Service, containers
-ms.openlocfilehash: 6ad28a5da05cf77cfaa834ed9752daefeb5f4fdb
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 07d55689ac94a865527f4b595765d67b28ddb97a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74279972"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438419"
 ---
 # <a name="how-to-upgrade-azure-dev-spaces-tools"></a>Обновление средств Azure Dev Spaces
 
@@ -41,6 +41,6 @@ az aks use-dev-spaces -n <your-aks-cluster> -g <your-aks-cluster-resource-group>
 
 Чтобы обновить средства в Visual Studio, выберите пункты меню **Сервис > Расширения и обновления**, а затем слева выберите **Обновления**. Найдите **Средства Visual Studio для Kubernetes** и нажмите кнопку **Обновить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Протестируйте новые средства, создав новый кластер. Изучите руководства по [Azure Dev Spaces](/azure/dev-spaces).

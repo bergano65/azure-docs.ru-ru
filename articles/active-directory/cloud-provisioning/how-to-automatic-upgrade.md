@@ -1,6 +1,6 @@
 ---
 title: 'Azure AD Connect агент подготовки облака: автоматическое обновление | Документация Майкрософт'
-description: В этом разделе описывается встроенная функция автоматического обновления в Azure AD Connect агент подготовки облака.
+description: В этой статье описывается встроенная функция автоматического обновления в Azure AD Connect агент подготовки облака.
 services: active-directory
 documentationcenter: ''
 author: billmath
@@ -15,40 +15,40 @@ ms.date: 12/02/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 193804064fbf6d1abb2ce06df1e923ec709ef6de
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: d3786386f75f4b85fe89562254eab63471de6cb2
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74794462"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75549403"
 ---
 # <a name="azure-ad-connect-cloud-provisioning-agent-automatic-upgrade"></a>Azure AD Connect агент подготовки облака: автоматическое обновление
 
-Проверка того, что ваша Azure AD Connectная Установка агента подготовки облачной службы в актуальном состоянии, никогда не была проще с помощью функции **автоматического обновления** . Эта функция включена по умолчанию и не может быть отключена.
+Проверка того, что ваша Azure Active Directory (Azure AD) Connect Cloud Подготовка агента подготовки к работе в облаке, всегда является самой простой функцией автоматического обновления. Эта функция включена по умолчанию и не может быть отключена.
 
-Агент устанавливается здесь: **"Program FILES\AZURE Multi AD Connect подготовка ажент\аадконнектпровисионингажент.ЕКСЕ"**
+Агент устанавливается здесь: "Program Files\azure Multi AD Connect подготовка Ажент\аадконнектпровисионингажент.ЕКСЕ"
 
-Вы можете проверить версию, щелкнув исполняемый файл правой кнопкой мыши и выбрав пункт Свойства, а затем — сведения.
+Чтобы проверить версию, щелкните исполняемый файл правой кнопкой мыши и выберите пункт Свойства, а затем — сведения.
 
 ![Версия файла агента](media/how-to-automatic-upgrade/agent1.png)
 
-Агент обновления устанавливается здесь: **"Program FILES\AZURE Multi AD Connect Подготовка агента упдатер\азуреадконнектажентупдатер.ЕКСЕ"**
+Агент обновления устанавливается здесь: "Program Files\azure Multi AD Connect Подготовка агента Упдатер\азуреадконнектажентупдатер.ЕКСЕ"
 
-Вы можете проверить версию, щелкнув исполняемый файл правой кнопкой мыши и выбрав пункт Свойства, а затем — сведения.
+Чтобы проверить версию, щелкните исполняемый файл правой кнопкой мыши и выберите пункт Свойства, а затем — сведения.
 
 ![Версия агента обновления](media/how-to-automatic-upgrade/agent2.png)
 
-## <a name="uninstalling-the-agent"></a>Удаление агента
+## <a name="uninstall-the-agent"></a>Удаление агента
 Чтобы удалить агент, перейдите к разделу **Удаление или изменение программы** и удалите следующее:
 
-- Microsoft Azure AD Connect Agent Updater;
-- агент подготовки Microsoft Azure AD Connect;
-- пакет агента подготовки Microsoft Azure AD Connect.
+- **Microsoft Azure AD подключить обновление агента**
+- **Агент подготовки Microsoft Azure AD подключения**
+- **Пакет агента подготовки Microsoft Azure AD подключения**
 
 ![Удаление агента](media/how-to-automatic-upgrade/agent3.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия 
 
-- [Что такое подготовка?](what-is-provisioning.md)
-- [Что такое Azure AD Connect подготовки облака?](what-is-cloud-provisioning.md)
+- [Что собой представляет подготовка?](what-is-provisioning.md)
+- [What is Azure AD Connect cloud provisioning?](what-is-cloud-provisioning.md) (Что такое подготовка облака Azure AD Connect?)
 

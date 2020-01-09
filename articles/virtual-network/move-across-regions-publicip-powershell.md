@@ -6,12 +6,12 @@ ms.service: virtual-network
 ms.topic: article
 ms.date: 08/29/2019
 ms.author: allensu
-ms.openlocfilehash: d18dfa7ebed3aefbf6fdb3ffdb6fdd2cf2160cb4
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: c55b6011381d385fed7c7b8175ff02ec9be66fdb
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71038931"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75641559"
 ---
 # <a name="move-azure-public-ip-to-another-region-using-azure-powershell"></a>Перемещение общедоступного IP-адреса Azure в другой регион с помощью Azure PowerShell
 
@@ -20,7 +20,7 @@ ms.locfileid: "71038931"
 Общедоступные IP-адреса Azure относятся к регионам и не могут быть перемещены из одного региона в другой. Однако можно использовать шаблон Azure Resource Manager для экспорта существующей конфигурации общедоступного IP-адреса.  Затем можно разместить ресурс в другом регионе, экспортировав общедоступный IP-адрес в шаблон, изменив параметры в соответствии с регионом назначения, а затем развернув шаблон в новом регионе.  Дополнительные сведения о диспетчер ресурсов и шаблонах см. [в статье экспорт групп ресурсов в шаблоны](https://docs.microsoft.com/azure/azure-resource-manager/manage-resource-groups-powershell#export-resource-groups-to-templates) .
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Убедитесь, что общедоступный IP-адрес Azure находится в регионе Azure, из которого вы хотите переместиться.
 
@@ -32,7 +32,7 @@ ms.locfileid: "71038931"
 
 - Убедитесь, что подписка Azure позволяет создавать общедоступные IP-адреса в используемом целевом регионе. Свяжитесь со службой поддержки, чтобы включить необходимые квоты.
 
-- Убедитесь, что у вашей подписки достаточно ресурсов для поддержки добавления общедоступных IP-адресов для этого процесса.  Ознакомьтесь со статьей [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-subscription-service-limits#networking-limits).
+- Убедитесь, что у вашей подписки достаточно ресурсов для поддержки добавления общедоступных IP-адресов для этого процесса.  Ознакомьтесь со статьей [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#networking-limits).
 
 
 ## <a name="prepare-and-move"></a>Подготовка и перемещение
@@ -61,7 +61,7 @@ ms.locfileid: "71038931"
    Export-AzResourceGroup -ResourceGroupName <source-resource-group-name> -Resource $sourceVNETID -IncludeParameterDefaultValue
    ```
 
-4. Скачанный файл будет называться именем группы ресурсов, из которой был экспортирован ресурс.  Выберите файл, который был экспортирован из команды с именем  **\<Resource-Group-name >. JSON** , и откройте ее в любом редакторе:
+4. Скачанный файл будет называться именем группы ресурсов, из которой был экспортирован ресурс.  Выберите файл, который был экспортирован из команды с именем **\<Resource-Group-name >. JSON** , и откройте ее в любом редакторе:
    
    ```azurepowershell
    notepad <source-resource-group-name>.json
@@ -117,7 +117,7 @@ ms.locfileid: "71038931"
     ```
 8. Кроме того, можно изменить другие параметры в шаблоне, если вы выбираете и являются необязательными в зависимости от ваших требований:
 
-    * **SKU** . Вы можете изменить номер SKU общедоступного IP-адреса в конфигурации с Standard на Basic или Basic на Standard, изменив свойство**имя** **SKU** > в  **\<файле Resource-Group-name >. JSON** :
+    * **SKU** . Вы можете изменить номер SKU общедоступного IP-адреса в конфигурации с Standard на Basic или Basic на Standard, изменив свойство **SKU** > **Name** в файле **\<Resource-Group-name >. JSON** :
 
          ```json
             "resources": [
@@ -134,7 +134,7 @@ ms.locfileid: "71038931"
 
          Дополнительные сведения о различиях между общедоступными IP-адресами уровня "базовый" и "Стандартный" см. [в статье Создание, изменение или удаление общедоступного адреса](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address).
 
-    * **Метод выделения общедоступного IP-адреса** и **время ожидания простоя** . Вы можете изменить оба этих параметра в шаблоне, изменив свойство **публиЦипаллокатионмесод** с **dynamic** на **static** или **static** на **dynamic.** . Время ожидания простоя можно изменить, изменив свойство **идлетимеаутинминутес** на желаемое значение.  Значение по умолчанию — **4**:
+    * **Метод выделения общедоступного IP-адреса** и **время ожидания простоя** . Вы можете изменить оба этих параметра в шаблоне, изменив свойство **публиЦипаллокатионмесод** с **dynamic** на **static** или **static** на **dynamic**. Время ожидания простоя можно изменить, изменив свойство **идлетимеаутинминутес** на желаемое значение.  Значение по умолчанию — **4**:
 
          ```json
          "resources": [
@@ -162,14 +162,14 @@ ms.locfileid: "71038931"
         Дополнительные сведения о методах выделения и значениях времени ожидания простоя см. в разделе [Создание, изменение или удаление общедоступного IP-адреса](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address).
 
 
-9. Сохраните файл Resource- **Group-name >. JSON. \<**
+9. Сохраните файл **\<Resource-Group-name >. JSON** .
 
 10. Создайте группу ресурсов в целевом регионе для развертывания целевого общедоступного IP-адреса с помощью [New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0).
     
     ```azurepowershell-interactive
     New-AzResourceGroup -Name <target-resource-group-name> -location <target-region>
     ```
-11. Разверните измененный  **\<файл Resource-Group-name >. JSON** в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-азресаурцеграупдеплоймент](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0).
+11. Разверните измененный файл **\<Resource-Group-name >. JSON** в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-азресаурцеграупдеплоймент](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
 
     ```azurepowershell-interactive
 
@@ -190,7 +190,7 @@ ms.locfileid: "71038931"
     Get-AzPublicIPAddress -Name <target-publicip-name> -ResourceGroupName <target-resource-group-name>
 
     ```
-## <a name="discard"></a>Отменить 
+## <a name="discard"></a>Игнорировать 
 
 Если после развертывания вы хотите начать или отклонить общедоступный IP-адрес в целевом объекте, удалите группу ресурсов, созданную в целевом объекте, и перемещенный общедоступный IP-адрес будет удален.  Чтобы удалить группу ресурсов, используйте команду [Remove-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.6.0):
 
@@ -216,7 +216,7 @@ Remove-AzPublicIpAddress -Name <source-publicip-name> -ResourceGroupName <resour
 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы переместили общедоступный IP-адрес Azure из одного региона в другой и очистили исходные ресурсы.  Дополнительные сведения о перемещении ресурсов между регионами и аварийным восстановлением в Azure см. по следующим ссылке:
 

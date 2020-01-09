@@ -1,6 +1,6 @@
 ---
-title: Мониторинг данных с помощью панелей мониторинга на основе книг Azure Monitor в Azure Sentinel | Документация Майкрософт
-description: Используйте этот учебник, чтобы узнать, как отслеживать данные с помощью панелей мониторинга на основе книг в Azure Sentinel.
+title: Визуализация данных с помощью панелей мониторинга на основе книг Azure Monitor в Azure Sentinel | Документация Майкрософт
+description: Используйте этот учебник, чтобы узнать, как визуализировать данные с помощью панелей мониторинга на основе книг в Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -12,28 +12,28 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/17/2019
+ms.date: 01/01/2020
 ms.author: rkarlin
-ms.openlocfilehash: c5f4bd079fa215e3fbd4241f603aa29d19f7aad7
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: 7baf8cf2e954d773376b7c3c989bce01f60ae0a6
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74158853"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75610460"
 ---
-# <a name="tutorial-monitor-your-data"></a>Учебник. мониторинг данных
+# <a name="tutorial-visualize-and-monitor-your-data"></a>Руководство. Визуализация и мониторинг данных
 
 
 
-После [подключения источников данных](quickstart-onboard.md) к Azure Sentinel вы можете отслеживать данные с помощью интеграции Sentinel azure с Azure Monitor книгами, что обеспечивает универсальность при создании настраиваемых панелей мониторинга. Хотя рабочие книги отображаются по-разному в Azure Sentinel, может быть полезно ознакомиться [с созданием интерактивных отчетов с Azure Monitor книгами](../azure-monitor/app/usage-workbooks.md). Azure Sentinel позволяет создавать пользовательские книги для данных, а также встроенные шаблоны книг, позволяющие быстро получать ценные сведения по данным сразу после подключения к источнику данных.
+После [подключения к источникам данных](quickstart-onboard.md) к Azure Sentinel вы можете визуализировать и отслеживать данные с помощью внедрения Sentinel в Azure Azure Monitor книг, что обеспечивает универсальность при создании настраиваемых панелей мониторинга. Хотя рабочие книги отображаются по-разному в Azure Sentinel, может быть полезно ознакомиться [с созданием интерактивных отчетов с Azure Monitor книгами](../azure-monitor/app/usage-workbooks.md). Azure Sentinel позволяет создавать пользовательские книги для данных, а также встроенные шаблоны книг, позволяющие быстро получать ценные сведения по данным сразу после подключения к источнику данных.
 
 
-Этот учебник поможет вам отслеживать данные в Azure Sentinel.
+Этот учебник поможет вам визуализировать данные в Azure Sentinel.
 > [!div class="checklist"]
 > * Использование встроенных книг
 > * Создание новых книг
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 - У вас должно быть по крайней мере разрешение на доступ к книге или участник книги в группе ресурсов рабочей области "Sentinel" Azure.
 
@@ -86,7 +86,7 @@ ms.locfileid: "74158853"
 > [!NOTE]
 > При этом удаляется ресурс, а также все изменения, внесенные в шаблон. Исходный шаблон останется доступным.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как просматривать данные в Azure Sentinel.
 

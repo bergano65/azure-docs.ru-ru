@@ -1,29 +1,20 @@
 ---
-title: Автомасштабирование приложения, работающего в Сетке Azure Service Fabric | Документация Майкрософт
+title: Автоматическое масштабирование приложения, работающего в сети Azure Service Fabric
 description: Сведения о настройке политики автомасштабирования для служб приложения Сетки Service Fabric.
-services: service-fabric-mesh
-documentationcenter: .net
 author: dkkapur
-manager: jeconnoc
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric-mesh
-ms.devlang: dotNet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 12/07/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 2233dffabd7c76ca55cf215f8bc04e66134f5799
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: fb72806dd7ba838ba7170bda409715bc074e1d99
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60583610"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75461973"
 ---
 # <a name="create-autoscale-policies-for-a-service-fabric-mesh-application"></a>Создание политик автомасштабирования для приложения Сетки Service Fabric
-Одним из основных преимуществ развертывания приложений в Сетке Service Fabric является возможность легко масштабировать службы. Это можно использовать для обработки изменяющихся объемов нагрузки в службах или для повышения уровня доступности. Вы можете вручную выполнять масштабирование своих служб или же настроить автомасштабирование.
+Одним из основных преимуществ развертывания приложений на Service Fabricной сетке является возможность легко масштабировать службы в или. Его следует использовать для обработки различных объемов нагрузки на службы или для повышения доступности. Вы можете вручную выполнять масштабирование своих служб или же настроить автомасштабирование.
 
 [Автомасштабирование](service-fabric-mesh-scalability.md#autoscaling-service-instances) позволяет динамически масштабировать количество экземпляров службы (горизонтальное масштабирование). Автомасштабирование обеспечивает большую эластичность и позволяет подготовить к работе или удалить экземпляры служб на основе данных об использовании ЦП или памяти.
 

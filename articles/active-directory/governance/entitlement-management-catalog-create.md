@@ -1,5 +1,5 @@
 ---
-title: Создание каталога ресурсов и управление им с помощью управления назначением Azure AD — Azure Active Directory
+title: Создание & управление ресурсами в управлении объемом обслуживания — Azure AD
 description: Узнайте, как создать новый контейнер ресурсов и получать доступ к пакетам в Azure Active Directory управлении назначением.
 services: active-directory
 documentationCenter: ''
@@ -16,12 +16,12 @@ ms.date: 10/07/2019
 ms.author: ajburnle
 ms.reviewer: hanki
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b66e3dee83ccf4a857fda9d5804848108c0cc251
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 24e82abd2c95bcbfdde843a6636a809bb3aeb70c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73174429"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75422644"
 ---
 # <a name="create-and-manage-a-catalog-of-resources-in-azure-ad-entitlement-management"></a>Создание каталога ресурсов и управление им в управлении назначением Azure AD
 
@@ -129,7 +129,7 @@ ms.locfileid: "73174429"
 
     ![Изменить параметры каталога](./media/entitlement-management-shared/catalog-edit.png)
 
-1. В нижней части страницы нажмите кнопку **Save**.
+1. Выберите команду **Сохранить**.
 
 ## <a name="delete-a-catalog"></a>Удаление каталога
 

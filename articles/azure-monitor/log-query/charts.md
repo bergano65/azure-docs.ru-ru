@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
-ms.openlocfilehash: 34975a1752467c61ea5b329210473eee266c98d1
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: ca60ed68277486ca5ed7d7d90ad72506a4844936
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900399"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75398085"
 ---
 # <a name="creating-charts-and-diagrams-from-azure-monitor-log-queries"></a>Создание диаграмм и схем из запросов журнала Azure Monitor
 
@@ -95,4 +95,4 @@ SecurityEvent
 - [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
 - [Работа с JSON и структурами данных в запросах Log Analytics](json-data-structures.md)
 - [Составление расширенных запросов](advanced-query-writing.md)
-- [Соединения](joins.md)
+- [Joins](joins.md)

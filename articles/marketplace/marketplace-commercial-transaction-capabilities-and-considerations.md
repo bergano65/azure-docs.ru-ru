@@ -9,12 +9,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 10/29/2018
 ms.author: pabutler
-ms.openlocfilehash: 5219ff94b29d4fd02edb8567ae59884ced07b37e
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 969f2f6b2e25d9eb804349eccbed66e17b7fbb87
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791352"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75427157"
 ---
 # <a name="commercial-marketplace-transaction-capabilities-and-considerations"></a>Возможности и рекомендации для коммерческих операций Marketplace
 
@@ -163,7 +163,7 @@ ms.locfileid: "74791352"
 
 Например, если клиент приобретает решение с помощью кредитной карты:
 
-|Описание    |    Дата  |
+|Description    |    Дата  |
 |----------|----------|
 |Период заказа   | 15 августа 2018 г. – 30 августа 2018 г. |
 |Окончание срока (месяц)   | 30 августа 2018 г. |
@@ -177,7 +177,7 @@ ms.locfileid: "74791352"
 
 Если клиент совершает покупку с помощью Соглашения Enterprise:
 
-| Описание |    Дата  |
+| Description |    Дата  |
 |----------|----------|
 |Период заказа | 15 августа 2018 г. – 30 августа 2018 г. |
 |Окончание периода (квартал) | 30 сентября 2018 г. |
@@ -223,7 +223,7 @@ ms.locfileid: "74791352"
 - Для варианта публикации на языке Transact требуется учетная запись Майкрософт и финансовая информация, независимо от модели ценообразования предложения.
 - Обязательные финансовые сведения включают счет выплата и налоговый профиль.
 
-Дополнительные сведения о настройке этих учетных записей см. в статье [Управление учетной записью центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/manage-account#financial-details).
+Дополнительные сведения о настройке этих учетных записей см. в статье [Управление учетной записью центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/manage-account).
 
 
 ### <a name="requirements-for-specific-offer-types"></a>Требования для предложений определенных типов

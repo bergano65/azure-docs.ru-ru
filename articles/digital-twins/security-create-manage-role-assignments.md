@@ -7,14 +7,14 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 10/02/2019
+ms.date: 12/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 45ce22f208ee31b7202705eb4e42c38bedf09a8b
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 7eeaadc80a97a96e6effdfc9e5cc76c201998f3f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74014002"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438064"
 ---
 # <a name="create-and-manage-role-assignments-in-azure-digital-twins"></a>Создание назначений ролей и управление ими в Azure Digital Twins
 
@@ -36,13 +36,13 @@ ms.locfileid: "74014002"
 
 В таблице ниже описывается каждый атрибут.
 
-| Атрибут | имя | обязательные | введите | ОПИСАНИЕ |
+| attribute | Имя | Обязательно для заполнения | Тип | Description |
 | --- | --- | --- | --- | --- |
-| roleId | Идентификатор определения роли | Yes | Строка, | Уникальный идентификатор необходимого назначения ролей. Поиск определения ролей и их идентификаторов с помощью запроса API или проверки таблицы ниже. |
-| objectId | Идентификатор объекта | Yes | Строка, | Идентификатор Azure Active Directory, идентификатор объекта субъекта-службы или доменное имя. Чему или кому назначается роль. Назначение ролей должно быть отформатировано в соответствии со связанным типом. Для objectIdType `DomainName` свойство objectId должно начинаться со знака `“@”`. |
-| objectIdType | Тип идентификатора объекта | Yes | Строка, | Использованный вид идентификатора объекта. См. **Поддерживаемые objectIdTypes** ниже. |
-| path | Путь пространства | Yes | Строка, | Полный путь к объекту `Space`. Например, `/{Guid}/{Guid}`. Если идентификатору требуется назначение ролей для всего графа, укажите `"/"`. Этот символ обозначает корень, но его использование не рекомендуется. Всегда следуйте принципу минимальных привилегий. |
-| tenantId | Идентификатор клиента | Varies | Строка, | В большинстве случаев идентификатор клиента Azure Active Directory. Не разрешено для ObjectIdTypes свойства `DeviceId` и `TenantId`. Требуется для ObjectIdTypes свойства `UserId` и `ServicePrincipalId`. Необязательно для ObjectIdType свойства DomainName. |
+| roleId | Идентификатор определения роли | Да | String | Уникальный идентификатор необходимого назначения ролей. Поиск определения ролей и их идентификаторов с помощью запроса API или проверки таблицы ниже. |
+| objectId | Идентификаторы объектов | Да | String | Идентификатор Azure Active Directory, идентификатор объекта субъекта-службы или доменное имя. Чему или кому назначается роль. Назначение ролей должно быть отформатировано в соответствии со связанным типом. Для objectIdType `DomainName` свойство objectId должно начинаться со знака `“@”`. |
+| objectIdType | Тип идентификатора объекта | Да | String | Использованный вид идентификатора объекта. См. **Поддерживаемые objectIdTypes** ниже. |
+| path | Путь пространства | Да | String | Полный путь к объекту `Space`. Например, `/{Guid}/{Guid}`. Если идентификатору требуется назначение ролей для всего графа, укажите `"/"`. Этот символ обозначает корень, но его использование не рекомендуется. Всегда следуйте принципу минимальных привилегий. |
+| tenantId | Идентификатор клиента | Различается | String | В большинстве случаев идентификатор клиента Azure Active Directory. Не разрешено для ObjectIdTypes свойства `DeviceId` и `TenantId`. Требуется для ObjectIdTypes свойства `UserId` и `ServicePrincipalId`. Необязательно для ObjectIdType свойства DomainName. |
 
 ### <a name="supported-role-definition-identifiers"></a>Поддерживаемые идентификаторы определения ролей
 
@@ -161,12 +161,12 @@ YOUR_MANAGEMENT_API_URL/system/roles
 YOUR_MANAGEMENT_API_URL/roleassignments/check?userId=YOUR_USER_ID&path=YOUR_PATH&accessType=YOUR_ACCESS_TYPE&resourceType=YOUR_RESOURCE_TYPE
 ```
 
-| **Значение параметра** | **Обязательный** |  **Тип** |  **Описание** |
+| **Значение параметра** | **Обязательно** |  **Тип** |  **Описание** |
 | --- | --- | --- | --- |
-| YOUR_USER_ID |  True, | Строка, |   Свойство objectId для objectIdType идентификатора пользователя. |
-| YOUR_PATH | True, | Строка, |   Выбранный путь для проверки доступа. |
-| YOUR_ACCESS_TYPE |  True, | Строка, |   *Чтение*, *Создание*, *Обновление*или *Удаление* |
-| YOUR_RESOURCE_TYPE | True, | Строка, |  *Device*, *девицеблобметадата*, *девицеекстендедпроперти*, *екстендедпропертикэй*, *ExtendedType*, *Endpoint*, *хранилище ключей*, *Match*, *онтологи*, *отчет*, *определения роли*, *датчик*, *сенсорекстендедпроперти*, *пространство*, *SpaceBlobMetadata*, *SpaceExtendedProperty*, *SpaceResource*, *SpaceRoleAssignment*, *система*,  *Уердефинедфунктион*, *User*, *усерблобметадата*или *усерекстендедпроперти* |
+| YOUR_USER_ID |  Да | String |   Свойство objectId для objectIdType идентификатора пользователя. |
+| YOUR_PATH | Да | String |   Выбранный путь для проверки доступа. |
+| YOUR_ACCESS_TYPE |  Да | String |   *Чтение*, *Создание*, *Обновление*или *Удаление* |
+| YOUR_RESOURCE_TYPE | Да | String |  *Device*, *девицеблобметадата*, *девицеекстендедпроперти*, *екстендедпропертикэй*, *ExtendedType*, *Endpoint*, *хранилище ключей*, *Match*, *онтологи*, *отчет*, *определения роли*, *датчик*, *сенсорекстендедпроперти*, *пространство*, *SpaceBlobMetadata*, *SpaceExtendedProperty*, *SpaceResource*, *SpaceRoleAssignment*, *система*,  *Уердефинедфунктион*, *User*, *усерблобметадата*или *усерекстендедпроперти* |
 
 Успешный запрос возвращает логическое значение `true` или `false` для указания того, назначен ли тип доступа пользователю для данного пути и ресурса.
 
@@ -236,7 +236,7 @@ YOUR_MANAGEMENT_API_URL/roleassignments
 "d92c7823-6e65-41d4-aaaa-f5b32e3f01b9"
 ```
 
-## <a name="configuration-examples"></a>Примеры конфигурации
+## <a name="configuration-examples"></a>Примеры конфигураций
 
 Следующие примеры демонстрируют, как настроить текст JSON в нескольких распространенных сценариях назначения ролей.
 
@@ -275,7 +275,7 @@ YOUR_MANAGEMENT_API_URL/roleassignments
    }
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Подробнее об управлении доступом на основе ролей Azure Digital Twins см. в статье [Подключение к API и аутентификация](./security-authenticating-apis.md).
 

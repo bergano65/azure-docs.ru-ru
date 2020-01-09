@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: tokaplan
 ms.author: alkaplan
 ms.date: 04/25/2019
-ms.openlocfilehash: 3056b6c56be32cf5c054c4526a88157650a3e30b
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: a7821db85d4218cbccb6c10f12ecbc624f2702fe
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72820778"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432525"
 ---
 # <a name="zero-instrumentation-application-monitoring-for-kubernetes-hosted-applications"></a>Мониторинг приложений с нулевым инструментированием для приложений, размещенных в Kubernetes
 
@@ -21,10 +21,10 @@ ms.locfileid: "72820778"
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Azure Monitor теперь использует службу "сеть за пределами службы" в кластере Kubernetes, чтобы обеспечить поддержку мониторинга приложений для любого приложения Kubernetes. С помощью стандартных функций Application Insights, таких как [схема приложений](../../azure-monitor/app/app-map.md) , для моделирования зависимостей, [Live Metrics Stream](../../azure-monitor/app/live-stream.md) для мониторинга в режиме реального времени, мощных визуализаций с помощью [панели мониторинга по умолчанию](../../azure-monitor/app/overview-dashboard.md), [обозревателя метрик](../../azure-monitor/platform/metrics-getting-started.md)и [ Книги](../../azure-monitor/app/usage-workbooks.md). Эта функция поможет пользователям выявить узкие места производительности и точки отказа во всех рабочих нагрузках Kubernetes в выбранном пространстве имен Kubernetes. При использовании существующих инвестиций в сеть служб с помощью таких технологий, как Istio, Azure Monitor обеспечивает автоматическое отслеживание приложений без каких-либо изменений в коде приложения.
+Azure Monitor теперь использует службу "сеть за пределами службы" в кластере Kubernetes, чтобы обеспечить поддержку мониторинга приложений для любого приложения Kubernetes. С помощью стандартных функций Application Insights, таких как [схема приложений](../../azure-monitor/app/app-map.md) , для моделирования зависимостей, [Live Metrics Stream](../../azure-monitor/app/live-stream.md) для мониторинга в режиме реального времени, мощных визуализаций с помощью [панели мониторинга по умолчанию](../../azure-monitor/app/overview-dashboard.md), [обозревателя метрик](../../azure-monitor/platform/metrics-getting-started.md)и [книг](../../azure-monitor/app/usage-workbooks.md). Эта функция поможет пользователям выявить узкие места производительности и точки отказа во всех рабочих нагрузках Kubernetes в выбранном пространстве имен Kubernetes. При использовании существующих инвестиций в сеть служб с помощью таких технологий, как Istio, Azure Monitor обеспечивает автоматическое отслеживание приложений без каких-либо изменений в коде приложения.
 
 > [!NOTE]
-> Это один из многих способов выполнения мониторинга приложений на Kubernetes. Вы также можете инструментировать любое приложение, размещенное в Kubernetes, с помощью [пакета SDK для Application Insights](../../azure-monitor/azure-monitor-app-hub.md) , не требуя наличия сетки службы. Для мониторинга Kubernetes без инструментирования приложения с помощью пакета SDK можно использовать приведенный ниже метод.
+> Это один из многих способов выполнения мониторинга приложений на Kubernetes. Вы также можете инструментировать любое приложение, размещенное в Kubernetes, с помощью [пакета SDK для Application Insights](../../azure-monitor/azure-monitor-app-hub.yml) , не требуя наличия сетки службы. Для мониторинга Kubernetes без инструментирования приложения с помощью пакета SDK можно использовать приведенный ниже метод.
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -75,8 +75,8 @@ kubectl label namespace <my-app-namespace> istio-injection=enabled
 1. Скачайте и извлеките [ *Application Insightsный выпуск адаптера* ](https://github.com/Microsoft/Application-Insights-Istio-Adapter/releases/).
 2. Перейдите к */СРК/кубернетес/* в папке Release.
 3. Изменение *Application-Insights-istio-микшер-Adapter-Deployment. YAML*
-    - Измените значение переменной среды *ISTIO_MIXER_PLUGIN_AI_INSTRUMENTATIONKEY* , чтобы она содержала ключ инструментирования ресурса Application Insights в портал Azure для хранения данных телеметрии.
-    - При необходимости измените значение переменной среды *ISTIO_MIXER_PLUGIN_WATCHLIST_NAMESPACES* , чтобы оно содержало разделенный запятыми список пространств имен, для которых необходимо включить мониторинг. Оставьте поле пустым, чтобы отслеживать все пространства имен.
+    - Измените значение переменной среды *ISTIO_MIXER_PLUGIN_AI_INSTRUMENTATIONKEY* , чтобы она содержала ключ инструментирования Application Insights ресурса в портал Azure для хранения данных телеметрии.
+    - При необходимости измените значение переменной среды *ISTIO_MIXER_PLUGIN_WATCHLIST_NAMESPACES* , чтобы она содержала разделенный запятыми список пространств имен, для которых вы хотите включить мониторинг. Оставьте поле пустым, чтобы отслеживать все пространства имен.
 4. Примените *все* файлы YAML, найденные в разделе *src/kubernetes/* , выполнив следующую команду (по-прежнему необходимо находиться внутри */СРК/кубернетес/* ):
 
    ```console
@@ -129,7 +129,7 @@ kubectl label namespace <my-app-namespace> istio-injection=enabled
    ```
    Найдите ошибки, особенно относящиеся к связи с адаптером *аппликатионинсигхтсадаптер* .
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>Часто задаваемые вопросы
 
 Последние сведения о ходе выполнения этого проекта см. в [Application Insights адаптере GitHub для проекта Istio микшера](https://github.com/Microsoft/Application-Insights-Istio-Adapter/blob/master/SETUP.md#faq).
 

@@ -1,22 +1,22 @@
 ---
-title: Azure Monitor-Azure Application Insights переопределить конечные точки пакета SDK по умолчанию | Документация Майкрософт
-description: Измените конечные точки Azure Application Insights SDK по умолчанию для регионов, таких как Azure для государственных организаций.
+title: Azure Application Insights переопределить конечные точки пакета SDK по умолчанию
+description: Измените Azure Monitor по умолчанию конечные точки пакета SDK Application Insights для регионов, таких как Azure для государственных организаций.
 ms.service: azure-monitor
 ms.subservice: application-insights
 ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 07/26/2019
-ms.openlocfilehash: e1db9782fe923f7a5759f4e001cd0db970606fed
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: c04b793512eccf6aaff7d3ed3cc65efdd3dfc303
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72677482"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432594"
 ---
 # <a name="application-insights-overriding-default-endpoints"></a>Application Insights переопределение конечных точек по умолчанию
 
-Чтобы отправить данные из Application Insights в определенные регионы, необходимо переопределить адреса конечных точек по умолчанию. Каждый пакет SDK требует немного других изменений, все из которых описаны в этой статье. Для этих изменений требуется настроить пример кода и заменить значения заполнителей для `QuickPulse_Endpoint_Address`, `TelemetryChannel_Endpoint_Address` и `Profile_Query_Endpoint_address` фактическими адресами конечной точки для вашего региона. В конце этой статьи содержатся ссылки на адреса конечных точек для регионов, где требуется такая конфигурация.
+Чтобы отправить данные из Application Insights в определенные регионы, необходимо переопределить адреса конечных точек по умолчанию. Каждый пакет SDK требует немного других изменений, все из которых описаны в этой статье. Для этих изменений требуется настроить пример кода и заменить значения заполнителей для `QuickPulse_Endpoint_Address`, `TelemetryChannel_Endpoint_Address`и `Profile_Query_Endpoint_address` фактическими адресами конечной точки для вашего региона. В конце этой статьи содержатся ссылки на адреса конечных точек для регионов, где требуется такая конфигурация.
 
 ## <a name="sdk-code-changes"></a>Изменения кода пакета SDK
 
@@ -124,7 +124,7 @@ namespace Example
 }
 ```
 
-### <a name="java"></a>Java:
+### <a name="java"></a>Java
 
 Измените файл applicationinsights. XML, чтобы изменить адрес конечной точки по умолчанию.
 
@@ -195,7 +195,7 @@ Live Metrics Endpoint: "QuickPulse_Endpoint_Address"
 
 Сейчас только регионы, требующие внесения изменений в конечную точку, — это [Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/documentation-government-services-monitoringandmanagement#application-insights) и [Azure для Китая](https://docs.microsoft.com/azure/china/resources-developer-guide).
 
-|Регион |  Имя конечной точки | Value |
+|Регион |  Имя конечной точки | Значение |
 |-----------------|:------------|:-------------|
 | Azure для Китая | Канал телеметрии | `https://dc.applicationinsights.azure.cn/v2/track` |
 | Azure для Китая | Куиккпулсе (динамические метрики) |`https://live.applicationinsights.azure.cn/QuickPulseService.svc` |
@@ -207,10 +207,10 @@ Live Metrics Endpoint: "QuickPulse_Endpoint_Address"
 Если в настоящее время используется [Application Insights REST API](https://dev.applicationinsights.io/
 ) , доступ к которому обычно осуществляется через "API.applicationinsights.IO", необходимо использовать конечную точку, которая является локальной для вашего региона:
 
-|Регион |  Имя конечной точки | Value |
+|Регион |  Имя конечной точки | Значение |
 |-----------------|:------------|:-------------|
-| Azure для Китая | REST API | `api.applicationinsights.azure.cn` |
-| Azure для государственных организаций | REST API | `api.applicationinsights.us`|
+| Azure для Китая | REST API | `api.applicationinsights.azure.cn` |
+| Azure для государственных организаций | REST API | `api.applicationinsights.us`|
 
 > [!NOTE]
 > Мониторинг на основе модуля и агента без кода для служб приложений Azure **сейчас не поддерживается** в этих регионах. Как только эта функция станет доступна, эта статья будет обновлена.

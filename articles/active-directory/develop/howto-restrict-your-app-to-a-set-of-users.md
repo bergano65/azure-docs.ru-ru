@@ -1,5 +1,5 @@
 ---
-title: Ограничение пользователей приложения, зарегистрированных Azure Active Directory | Службы
+title: Ограничить приложение Azure AD набором пользователей | Службы
 titleSuffix: Microsoft identity platform
 description: Сведения о предоставлении доступа к приложениям, зарегистрированным в AAD, только для выбранного набора пользователей.
 services: active-directory
@@ -14,12 +14,12 @@ ms.author: kkrishna
 ms.reviewer: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f1cd52a62d5ab8185e18c849f6009e4632c96ede
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: ff6e9d101159af33a05a2dc50e227bc97970b12d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74917630"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424464"
 ---
 # <a name="how-to-restrict-your-azure-ad-app-to-a-set-of-users"></a>Пошаговое руководство. ограничение приложения Azure AD набором пользователей
 
@@ -46,7 +46,7 @@ Azure AD позволяет администраторам и разработч
 
 Существует два способа создания приложения с включенным назначением пользователей. Одна из них требует роли **глобального администратора** , а вторая — нет.
 
-### <a name="enterprise-applications-requires-the-global-adminstrator-role"></a>Корпоративные приложения (требуется роль глобального администратора)
+### <a name="enterprise-applications-requires-the-global-administrator-role"></a>Корпоративные приложения (требуется роль глобального администратора)
 
 1. Перейдите к [**портал Azure**](https://portal.azure.com/) и войдите в систему как **глобальный администратор**.
 1. В верхней панели выберите учетную запись, с помощью которой выполнен вход. 

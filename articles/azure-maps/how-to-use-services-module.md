@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
-ms.openlocfilehash: 3911d4e780e993fdd1c2945b34cd683d47fb884a
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 24777c0b14bc6bb16a5f9c5c8213a9f3d524833e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73827275"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75408673"
 ---
 # <a name="use-the-azure-maps-services-module"></a>Использование модуля Azure Maps Services
 
@@ -29,14 +29,14 @@ ms.locfileid: "73827275"
         <script src="https://atlas.microsoft.com/sdk/javascript/service/2/atlas-service.min.js"></script>
         ```
 
-    - Кроме того, можно загрузить исходный код веб-пакета SDK Azure Maps локально с помощью пакета [Azure-Maps-](https://www.npmjs.com/package/azure-maps-rest) NPM, а затем разместить его в приложении. Этот пакет также включает определения TypeScript. Используйте следующую команду:
+    - Также можно загрузить модуль служб для исходного кода веб-пакета SDK Azure Maps с помощью пакета [Azure-Maps-](https://www.npmjs.com/package/azure-maps-rest) NPM, а затем разместить его в приложении. Этот пакет также включает определения TypeScript. Выполните эту команду:
     
-        > **NPM установка Azure-Maps-RESTful**
+        > **npm install azure-maps-rest**
     
         Затем добавьте ссылку на скрипт в элемент `<head>` файла:
 
          ```html
-        <script src="node_modules/azure-maps-rest/dist/js/atlas-service.min.js"></script>
+        <script src="node_modules/azure-maps-rest/dist/atlas-service.min.js"></script>
          ```
 
 1. Создайте конвейер проверки подлинности. Прежде чем можно будет инициализировать конечную точку клиента URL-адреса службы, необходимо создать конвейер. Используйте собственный ключ учетной записи Azure Maps или учетные данные Azure Active Directory (Azure AD) для проверки подлинности клиента службы поиска Azure Maps. В этом примере будет создан клиент URL-адреса службы поиска. 
@@ -162,6 +162,28 @@ ms.locfileid: "73827275"
 <iframe height="500" style="width: 100%;" scrolling="no" title="Использование модуля "службы"" src="//codepen.io/azuremaps/embed/zbXGMR/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
 Посмотрите перо <a href='https://codepen.io/azuremaps/pen/zbXGMR/'>с помощью модуля службы</a> , Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+<br/>
+
+## <a name="azure-government-cloud-support"></a>Облачная поддержка Azure для государственных организаций
+
+Azure Maps веб-пакет SDK поддерживает облако Azure для государственных организаций. Все URL-адреса JavaScript и CSS, используемые для доступа к Azure Maps Web SDK, остаются прежними, однако для подключения к облачной версии платформы Azure Maps на платформе Azure для государственных организаций необходимо выполнить следующие задачи.
+
+При использовании интерактивного элемента управления картой добавьте следующую строку кода перед созданием экземпляра класса `Map`. 
+
+```javascript
+atlas.setDomain('atlas.azure.us');
+```
+
+При проверке подлинности карт и служб обязательно используйте сведения о проверке подлинности Azure Maps на облачной платформе Azure для государственных организаций.
+
+При использовании модуля служб необходимо задать домен для служб при создании экземпляра конечной точки URL-адреса API. Например, следующий код создает экземпляр класса `SearchURL` и указывает домен в облаке Azure для государственных организаций.
+
+```javascript
+var searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');
+```
+
+При непосредственном доступе к службам Azure Maps RESTFUL измените домен URL-адресов на `atlas.azure.us`. Например, при использовании службы API поиска измените домен URL-адреса с `https://atlas.microsoft.com/search/` на `https://atlas.azure.us/search/`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

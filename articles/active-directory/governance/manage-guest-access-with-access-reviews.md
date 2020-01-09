@@ -1,5 +1,5 @@
 ---
-title: Управление доступом гостей с помощью проверок доступа — Azure Active Directory | Документация Майкрософт
+title: Управление гостевым доступом с помощью проверок доступа в Azure AD
 description: Управление гостевыми пользователями как участниками группы или участниками, назначенными приложению, с помощью проверок доступа Azure Active Directory
 services: active-directory
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.date: 12/13/2018
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a982b97bcef6a24f026bf6ad2943661db18d6af0
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: 562a94bbbd1999b9ca9cf0c65cdb816848648133
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68499470"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75422474"
 ---
 # <a name="manage-guest-access-with-azure-ad-access-reviews"></a>Управление гостевым доступом с помощью проверок доступа Azure AD
 
@@ -33,7 +33,7 @@ ms.locfileid: "68499470"
 > [!NOTE]
 > В этой статье рассматривается проверка доступа гостевых пользователей. Если вы хотите проверять доступ всех пользователей, а не только гостей, то ознакомьтесь с разделом [Управление пользовательским доступом с помощью проверок доступа Azure AD](manage-user-access-with-access-reviews.md). Если же необходимо проверить членство пользователя с административной ролью, например с ролью глобального администратора, прочитайте статью [Запуск проверки доступа в управлении привилегированными пользователями Azure AD](../privileged-identity-management/pim-how-to-start-security-review.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Azure AD Premium P2
 
@@ -117,7 +117,7 @@ Azure AD обеспечивает несколько сценариев пров
 
 5. Отключите доступ для гостей, которые не были участниками проверки доступа, не выполнили проверку или не приняли приглашение ранее. Если некоторые гости не приняли приглашение, но они являются контактами, выбранными для участия в проверке доступа, вы можете отключить их учетные записи. Для этого используйте портал Azure или PowerShell. Если гостю больше не требуется доступ и он не является контактом, можно удалить объект пользователя из каталога с помощью портала Azure или PowerShell.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание проверки доступа для групп или приложений](create-access-review.md)
 

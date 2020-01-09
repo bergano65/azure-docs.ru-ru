@@ -1,25 +1,14 @@
 ---
-title: Управление сертификатами в кластере Azure Service Fabric | Документация Майкрософт
+title: Управление сертификатами в кластере Azure Service Fabric
 description: В этой статье рассказывается о том, как добавить новые, а также сменить или удалить имеющиеся сертификаты в кластере Service Fabric.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chakdan
-editor: ''
-ms.assetid: 91adc3d3-a4ca-46cf-ac5f-368fb6458d74
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 11/13/2018
-ms.author: atsenthi
-ms.openlocfilehash: a993c71e362a61b6861e001dfb5d6eca24873293
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: a3c92e1b39261af32085e4d9b6cb2462d5c0eb64
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73903272"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75458348"
 ---
 # <a name="add-or-remove-certificates-for-a-service-fabric-cluster-in-azure"></a>Добавление и удаление сертификатов для кластера Service Fabric в Azure
 Рекомендуется ознакомиться с тем, как Service Fabric использует сертификаты X.509, и просмотреть раздел [Сценарии защиты кластера Service Fabric](service-fabric-cluster-security.md). Необходимо понять, что такое сертификат кластера и для чего он используется, прежде чем продолжить.
@@ -292,7 +281,7 @@ Get-ServiceFabricClusterHealth
 
 Сведения о развертывании сертификата, используемого для приложений в кластере, см. в [этом образце сценария PowerShell](scripts/service-fabric-powershell-add-application-certificate.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об управлении кластерами доступны в следующих статьях.
 
 * [Обновление кластера Service Fabric](service-fabric-cluster-upgrade.md)

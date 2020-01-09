@@ -17,12 +17,12 @@ ms.author: jmprieur
 ms.reviwer: brandwe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db58f94501590eb3150700d282377ec1b2378cea
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 3f56d55a08c46338fb7916664834b69005419e72
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74962548"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423754"
 ---
 # <a name="mobile-app-that-calls-web-apis---call-a-web-api"></a>Мобильное приложение, вызывающее веб-API — вызов веб-API
 
@@ -134,7 +134,7 @@ task.resume()
 
 Если необходимо вызвать несколько API для одного и того же пользователя, то после получения маркера для пользователя вы можете избежать неоднократного запроса учетных данных, вызвав `AcquireTokenSilent`, чтобы получить маркер.
 
-```CSharp
+```csharp
 var result = await app.AcquireTokenXX("scopeApi1")
                       .ExecuteAsync();
 
@@ -147,7 +147,7 @@ result = await app.AcquireTokenSilent("scopeApi2")
 - Пользователь, которому предоставлен доступ к первому API, теперь должен предоставить согласие на дополнительные области (последовательное согласие)
 - Первый API не требует многофакторной проверки подлинности, а следующий —.
 
-```CSharp
+```csharp
 var result = await app.AcquireTokenXX("scopeApi1")
                       .ExecuteAsync();
 

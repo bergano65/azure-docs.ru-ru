@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.date: 11/24/2019
 ms.author: normesta
 ms.reviewer: prishet
-ms.openlocfilehash: dcd75cfefd53b3c9104052146607869515e1c86e
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 596f8334b647daf6fe3a15521f7caeecb0c0e303
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74534293"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75462601"
 ---
-# <a name="use-azure-cli-for-files--acls-in-azure-data-lake-storage-gen2-preview"></a>Использование Azure CLI для файлов & ACL в Azure Data Lake Storage 2-го поколения (Предварительная версия)
+# <a name="use-azure-cli-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2-preview"></a>Использование Azure CLI для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения (Предварительная версия)
 
 В этой статье показано, как использовать [интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) для создания каталогов, файлов и разрешений в учетных записях хранения с иерархическим пространством имен и управления ими. 
 
@@ -28,7 +28,7 @@ ms.locfileid: "74534293"
 
 > [!div class="checklist"]
 > * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-> * Учетная запись хранения, в которой включено иерархическое пространство имен (HNS). Чтобы создать его [, выполните следующие](data-lake-storage-quickstart-create-account.md) инструкции.
+> * Учетная запись хранения, в которой включено иерархическое пространство имен (HNS). Чтобы создать его, выполните [следующие](data-lake-storage-quickstart-create-account.md) инструкции.
 > * Azure CLI версии `2.0.67` или более поздней.
 
 ## <a name="install-the-storage-cli-extension"></a>Установка расширения CLI хранилища
@@ -80,7 +80,7 @@ ms.locfileid: "74534293"
 az storage container create --name my-file-system
 ```
 
-## <a name="create-a-directory"></a>создать каталог;
+## <a name="create-a-directory"></a>Создание каталога
 
 Создайте ссылку на каталог с помощью команды `az storage blob directory create`. 
 
@@ -296,9 +296,9 @@ az storage blob directory metadata update --metadata tag1=value1 tag2=value2 -c 
 az storage blob directory metadata show -c my-file-system -d my-directory --account-name mystorageaccount
 ```
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
-* [Пример](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview)
+* [Образец](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview)
 * [Сопоставление Gen1 с Gen2](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview#mapping-from-adls-gen1-to-adls-gen2)
 * [Отправка отзывов](https://github.com/Azure/azure-cli-extensions/issues)
 * [Известные проблемы](data-lake-storage-known-issues.md#api-scope-data-lake-client-library)

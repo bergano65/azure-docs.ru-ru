@@ -1,5 +1,6 @@
 ---
-title: Развертывание служб управления API Azure в нескольких регионах Azure | Документация Майкрософт
+title: Развертывание служб управления API Azure в нескольких регионах Azure
+titleSuffix: Azure API Management
 description: Дополнительные сведения о развертывании экземпляра службы управления Azure API в различных регионах Azure.
 services: api-management
 documentationcenter: ''
@@ -12,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 08/12/2019
 ms.author: apimpm
-ms.openlocfilehash: 7cd0533dcbc9b367fa9a1e138b1aa1257989a3d7
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 5c71f37741de06b8633e7eafaae2f29823214f74
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70072426"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75442668"
 ---
 # <a name="how-to-deploy-an-azure-api-management-service-instance-to-multiple-azure-regions"></a>Развертывание экземпляра службы управления Azure API в различных регионах Azure
 
@@ -30,7 +31,7 @@ ms.locfileid: "70072426"
 
 [!INCLUDE [premium.md](../../includes/api-management-availability-premium.md)]
 
-## <a name="add-region"> </a>Создание экземпляра службы управления API в новом регионе
+## <a name="add-region"> </a>Развертывание экземпляра службы управления API в новом регионе
 
 > [!NOTE]
 > Если экземпляр службы управления API еще не создан, см. раздел [Создание экземпляра службы управления API][create an api management service instance].
@@ -41,7 +42,7 @@ ms.locfileid: "70072426"
 
 Чтобы развернуть службу в новом регионе, щелкните **+ Add region** (+ Добавить регион) на панели инструментов.
 
-![Добавить регион][api-management-add-region]
+![Добавление региона][api-management-add-region]
 
 Выберите расположение из раскрывающегося списка и задайте число единиц с помощью ползунка.
 
@@ -61,7 +62,7 @@ ms.locfileid: "70072426"
 
 Подтвердите удаление и нажмите кнопку **Сохранить**, чтобы применить изменения.
 
-## <a name="route-backend"> </a>Маршрутизация вызовов API в региональных серверных службах
+## <a name="route-backend"> </a>Маршрутизация вызовов API к региональным внутренним службам
 
 Служба управления API Azure поддерживает только один URL-адрес внутренней службы. Несмотря на то что экземпляры службы управления API Azure существуют в разных регионах, шлюз API будет по-прежнему перенаправлять запросы к одной и той же внутренней службе, которая развертывается только в один регион. В этом случае выигрыш в производительности будет поступать только из ответов, кэшированных в службе управления API Azure в регионе, указанном для запроса, но обращение к серверной части по всему миру может по-прежнему вызывать большую задержку.
 
@@ -114,8 +115,8 @@ ms.locfileid: "70072426"
 
 1. Создайте собственный [диспетчер трафика Azure](https://azure.microsoft.com/services/traffic-manager/).
 1. Если вы используете личный домен, [используйте его с диспетчером трафика](../traffic-manager/traffic-manager-point-internet-domain.md) вместо службы управления API.
-1. [Настройте региональные конечные точки управления API в диспетчере трафика](../traffic-manager/traffic-manager-manage-endpoints.md). Региональные конечные точки соответствуют шаблону `https://<service-name>-<region>-01.regional.azure-api.net`URL-адреса, например. `https://contoso-westus2-01.regional.azure-api.net`
-1. [Настройка конечных точек регионального состояния управления API в диспетчере трафика](../traffic-manager/traffic-manager-monitoring.md). Конечные точки регионального состояния следуют шаблону `https://<service-name>-<region>-01.regional.azure-api.net/status-0123456789abcdef`URL-адреса, например. `https://contoso-westus2-01.regional.azure-api.net/status-0123456789abcdef`
+1. [Настройте региональные конечные точки управления API в диспетчере трафика](../traffic-manager/traffic-manager-manage-endpoints.md). Региональные конечные точки соответствуют шаблону URL-адреса `https://<service-name>-<region>-01.regional.azure-api.net`, например `https://contoso-westus2-01.regional.azure-api.net`.
+1. [Настройка конечных точек регионального состояния управления API в диспетчере трафика](../traffic-manager/traffic-manager-monitoring.md). Конечные точки регионального состояния соответствуют шаблону URL-адреса `https://<service-name>-<region>-01.regional.azure-api.net/status-0123456789abcdef`, например `https://contoso-westus2-01.regional.azure-api.net/status-0123456789abcdef`.
 1. Укажите [метод маршрутизации](../traffic-manager/traffic-manager-routing-methods.md) диспетчера трафика.
 
 [api-management-management-console]: ./media/api-management-howto-deploy-multi-region/api-management-management-console.png

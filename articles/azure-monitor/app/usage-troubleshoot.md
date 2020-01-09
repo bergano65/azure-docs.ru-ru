@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок со средствами для анализа поведения пользователей в Azure Application Insights
+title: Устранение неполадок средств анализа пользователей — Azure Application Insights
 description: Руководство по устранению неполадок. Анализ использования сайта и приложения с помощью Application Insights.
 ms.service: azure-monitor
 ms.subservice: application-insights
@@ -8,12 +8,12 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 07/11/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 9222f4611f87869c1bacf3084035c0ab9322fa40
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: aa540cdaef1af3016d87ab93768ceb30802cef0e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899351"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432283"
 ---
 # <a name="troubleshoot-user-behavior-analytics-tools-in-application-insights"></a>Устранение неполадок со средствами для анализа поведения пользователей в Application Insights
 Возникли вопросы о [средствах для анализа поведения пользователей в Application Insights](usage-overview.md), касающиеся [пользователей, сеансов, событий](usage-segmentation.md), [воронок](usage-funnels.md), [маршрутов пользователей](usage-flows.md), [периода удержания](usage-retention.md) или когорт? Ниже приведен ряд ответов.
@@ -50,6 +50,6 @@ ms.locfileid: "72899351"
 
 * [Обзор использования средств для анализа поведения пользователей](usage-overview.md)
 
-## <a name="get-help"></a>Получение справки
+## <a name="get-help"></a>Справка
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/ms-application-insights)
 

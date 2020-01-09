@@ -1,6 +1,6 @@
 ---
-title: Добавление слоя многоугольников объемной фигуры в Azure Maps | Документация Майкрософт
-description: Добавление уровня многоугольника объемной фигуры в веб-пакет SDK Azure Maps.
+title: Добавление слоя объемной фигуры в Azure Maps | Документация Майкрософт
+description: Добавление слоя объемной фигуры в веб-пакет SDK Azure Maps.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 10/08/2019
@@ -9,14 +9,14 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: e6858359549f6a54513eda7bc692adcbc7d7e71b
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: a357545bedde6a4e859a671005083a0fc665340d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74484343"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432837"
 ---
-# <a name="add-an-extrusion-polygon-layer-to-the-map"></a>Добавление слоя многоугольников объемной фигуры на карту
+# <a name="add-a-polygon-extrusion-layer-to-the-map"></a>Добавление слоя объема фигуры многоугольника к карте
 
 В этой статье показано, как использовать слой объемного многоугольника для отображения областей `Polygon` и `MultiPolygon` геометрических объектов в виде вытянутых фигур на карте. Azure Maps веб-пакет SDK также поддерживает создание круговых геометрических объектов, как определено в [расширенной схеме геоjson](extend-geojson.md#circle). Эти круги преобразуются в многоугольники при отображении на карте. Все геометрические функции также можно легко обновлять, если они заключены в [Atlas. Класс Shape](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.shape?view=azure-iot-typescript-latest) .
 
@@ -46,7 +46,7 @@ ms.locfileid: "74484343"
 
 ## <a name="add-a-circle-to-the-map"></a>Добавление окружности к карте
 
-Azure Maps использует расширенную версию схемы геоjson, которая предоставляет определение для кругов, как указано [здесь](https://docs.microsoft.com/azure/azure-maps/extend-geojson#circle). Вытянутый круг можно визуализировать на карте, создав `point`ную функцию со свойством `subType` `Circle` и числовым свойством `Radius`, представляющим радиус в **метрах**. Например,
+Azure Maps использует расширенную версию схемы геоjson, которая предоставляет определение для кругов, как указано [здесь](https://docs.microsoft.com/azure/azure-maps/extend-geojson#circle). Вытянутый круг можно визуализировать на карте, создав `point`ную функцию со свойством `subType` `Circle` и числовым свойством `Radius`, представляющим радиус в **метрах**. Пример.
 
 ```Javascript
 {
@@ -72,19 +72,19 @@ Azure Maps веб-пакет SDK преобразует эти функции `P
 
 ## <a name="customize-a-polygon-extrusion-layer"></a>Настройка уровня объемной фигуры многоугольника
 
-Уровень объема многоугольников: несколько вариантов стилей. которые можно опробовать.
+Уровень объема многоугольников: несколько вариантов стилей. которые можно опробовать с помощью представленного ниже средства.
 
 <br/>
 
 <iframe height='700' scrolling='no' title='пугбрж' src='//codepen.io/azuremaps/embed/PoogBRJ/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. <a href='https://codepen.io/azuremaps/pen/PoogBRJ/'>Пугбрж</a> пера by Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Polygon](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.polygon?view=azure-iot-typescript-latest)
+> [Многоугольник](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.polygon?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"]
 > [уровень объемной фигуры многоугольника](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.polygonextrusionlayer?view=azure-maps-typescript-latest)

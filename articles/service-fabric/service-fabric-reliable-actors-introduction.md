@@ -1,27 +1,18 @@
 ---
-title: Общие сведения о Reliable Actors в Service Fabric | Документация Майкрософт
-description: Общие сведения о модели программирования на основе субъектов Reliable Actors Service Fabric.
-services: service-fabric
-documentationcenter: .net
+title: Обзор субъектов Service Fabric Reliable Actors
+description: Введение в модель программирования Reliable Actors Service Fabric, основанную на шаблоне виртуального субъекта.
 author: vturecek
-manager: chackdan
-editor: ''
-ms.assetid: 7fdad07f-f2d6-4c74-804d-e0d56131f060
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 11/01/2017
 ms.author: vturecek
-ms.openlocfilehash: 5a237e23dffed76e6122e17b59c85d20ca7e1baf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6aafa2a3372c431f8afa7fad41051c26c3fe5fcd
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60727204"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645571"
 ---
-# <a name="introduction-to-service-fabric-reliable-actors"></a>Общие сведения о надежных субъектах Service Fabric
+# <a name="introduction-to-service-fabric-reliable-actors"></a>Введение в Service Fabric Reliable Actors
 Субъекты Reliable Actors — это платформа приложений Service Fabric, основанная на шаблоне [виртуальных субъектов](https://research.microsoft.com/en-us/projects/orleans/). API субъектов Reliable Actors предоставляет однопоточную модель программирования, основанную на той надежности и масштабируемости, которые гарантирует Service Fabric.
 
 ## <a name="what-are-actors"></a>Что представляют собой субъекты?
@@ -37,7 +28,7 @@ ms.locfileid: "60727204"
 * Экземпляры субъекта не должны блокировать вызывающие объекты с непредсказуемыми задержками, выполняя операции ввода-вывода.
 
 ## <a name="actors-in-service-fabric"></a>Субъекты в Service Fabric
-В Service Fabric субъекты реализуются на платформе надежных субъектов: Платформу приложения на основе шаблона субъекта, создаются на основе [Service Fabric Reliable Services](service-fabric-reliable-services-introduction.md). Каждая написанный вами субъект Reliable Actor фактически представляет собой секционированную надежную службу Reliable Service с отслеживанием состояния.
+В Service Fabric субъекты реализуются на платформе субъектов Reliable Actors: платформа приложений на основе шаблона субъекта опирается на [службы Reliable Services Service Fabric](service-fabric-reliable-services-introduction.md). Каждая написанный вами субъект Reliable Actor фактически представляет собой секционированную надежную службу Reliable Service с отслеживанием состояния.
 
 Аналогично объектам .NET, которые являются экземплярами типа .NET, каждый субъект определяется как экземпляр типа субъекта. Предположим, есть тип субъекта, который реализует функции калькулятора, и есть много субъектов этого типа, распределенных по разным узлам кластера. У каждого такого субъекта есть уникальный идентификатор.
 

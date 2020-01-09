@@ -1,27 +1,18 @@
 ---
-title: Создание первого приложения Service Fabric на языке C# | Документация Майкрософт
+title: Создайте свое первое приложение Service Fabric вC#
 description: Вводные сведения о создании приложения Service Fabric Microsoft Azure со службами с отслеживанием состояния и без него.
-services: service-fabric
-documentationcenter: .net
 author: vturecek
-manager: chackdan
-editor: ''
-ms.assetid: d9b44d75-e905-468e-b867-2190ce97379a
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 07/10/2019
 ms.author: vturecek
-ms.openlocfilehash: f3b3d5c3dcea7d190724ae946a27c47b34a26c31
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: e7c5c30dc7cbfa0a3f5a8dc76899c5c8bad6e6ea
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68225049"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75462813"
 ---
-# <a name="get-started-with-reliable-services"></a>Приступая к работе с надежными службами
+# <a name="get-started-with-reliable-services"></a>Начало работы с Reliable Services
 > [!div class="op_single_selector"]
 > * [C# в Windows](service-fabric-reliable-services-quick-start.md)
 > * [Java в Linux](service-fabric-reliable-services-quick-start-java.md)
@@ -35,7 +26,7 @@ ms.locfileid: "68225049"
 
 * **Тип службы**. Это ваша реализация службы. Ее определяет создаваемый вами класс, который расширяет `StatelessService`, и любой другой код или зависимости, используемые в нем, а также имя и номер версии.
 * **Именованный экземпляр службы**. Для запуска службы создаются именованные экземпляры вашего типа службы, что во многом похоже на создание экземпляров объектов типа класса. Экземпляр службы имеет имя в формате универсального кода ресурса (URI), использующее шаблон fabric:/. Пример: fabric:/MyApp/MyService.
-* **Узел службы**. Создаваемые именованные экземпляры службы должны выполняться в процессе узла. Узел службы — это просто процесс, в котором можно запускать экземпляры вашей службы.
+* **Узел службы**. Создаваемые экземпляры службы должны выполняться в хост-процессе. Узел службы — это просто процесс, в котором можно запускать экземпляры вашей службы.
 * **Регистрации службы**. Регистрация объединяет все элементы. Тип службы должен быть зарегистрирован в среде выполнения Service Fabric на узле службы, что позволит Service Fabric создавать экземпляры службы для запуска.  
 
 ## <a name="create-a-stateless-service"></a>Создание службы без отслеживания состояния
@@ -214,10 +205,10 @@ using (ITransaction tx = this.StateManager.CreateTransaction())
 
 ![Просмотр событий диагностики в Visual Studio](media/service-fabric-reliable-services-quick-start/hello-stateful-Output.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Отладка приложения Service Fabric с помощью Visual Studio](service-fabric-debugging-your-application.md)
 
-[Начало работы. Службы веб-API Service Fabric с саморазмещением OWIN](service-fabric-reliable-services-communication-webapi.md)
+[Приступая к работе со службами веб-API Service Fabric с саморазмещением OWIN](service-fabric-reliable-services-communication-webapi.md)
 
 [Дополнительные сведения о надежных коллекциях](service-fabric-reliable-services-reliable-collections.md)
 

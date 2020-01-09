@@ -1,5 +1,5 @@
 ---
-title: Преобразование хранилища управляемых дисков Azure из уровня "Стандартный" в "Премиум" или "Премиум" в "Стандартный"
+title: Преобразование хранилища управляемых дисков между SSD уровня "Стандартный" и "Премиум"
 description: Как преобразовать управляемые диски Azure с уровня "Стандартный" на "Премиум" или "Премиум" на "Стандартный" с помощью Azure PowerShell.
 author: roygara
 ms.service: virtual-machines-windows
@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/22/2019
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: b63d4d0247fd640e961d03d336d6b211473c48fb
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: cbc2d09429c0a36992167b8c8251d0a570ffbae3
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74033928"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75563315"
 ---
 # <a name="update-the-storage-type-of-a-managed-disk"></a>Обновление типа хранилища управляемого диска
 
@@ -22,7 +22,7 @@ ms.locfileid: "74033928"
 
  
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * Так как для преобразования требуется перезагрузка виртуальной машины, необходимо запланировать миграцию дискового накопителя во время работы предварительно существующего периода обслуживания.
 * Если диск не управляется, сначала [преобразуйте его в управляемый диск](convert-unmanaged-to-managed-disks.md) , чтобы можно было переключаться между вариантами хранения.
@@ -111,7 +111,7 @@ Start-AzVM -ResourceGroupName $vm.ResourceGroupName -Name $vm.Name
 
 ## <a name="convert-managed-disks-from-standard-to-premium-in-the-azure-portal"></a>Преобразование управляемых дисков из уровня "Стандартный" в "Премиум" в портал Azure
 
-Выполните следующие действия:
+Выполните следующие действия.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Выберите виртуальную машину из списка **виртуальных машин** на портале.
@@ -122,7 +122,7 @@ Start-AzVM -ResourceGroupName $vm.ResourceGroupName -Name $vm.Name
 6. Измените **тип учетной записи** с **HDD (цен. Категория "Стандартный")** на **SSD (цен. Категория "Премиум")** .
 7. Нажмите кнопку **сохранить**и закройте область диск.
 
-Преобразование типа диска происходит мгновенно. После преобразования виртуальную машину можно перезапустить.
+Преобразование типа диска происходит мгновенно. После преобразования можно запустить виртуальную машину.
 
 ## <a name="switch-managed-disks-between-standard-hdd-and-standard-ssd"></a>Переключение управляемых дисков между HDD (цен. категория "Стандартный") и SSD (цен. категория "Стандартный") 
 
@@ -154,6 +154,6 @@ Update-AzDisk -DiskUpdate $diskUpdateConfig -ResourceGroupName $rgName `
 Start-AzVM -ResourceGroupName $vm.ResourceGroupName -Name $vm.Name
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Создайте копию виртуальной машины, доступную только для чтения, с помощью [моментальных снимков](snapshot-copy-managed-disk.md).

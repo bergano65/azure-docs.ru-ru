@@ -1,20 +1,15 @@
 ---
-title: Распространенные вопросы о службе "Сетка Azure Service Fabric" | Документация Майкрософт
+title: Распространенные вопросы по сети Azure Service Fabric
 description: Изучите ответы на распространенные вопросы о службе "Сетка Azure Service Fabric".
-services: service-fabric-mesh
-keywords: ''
-author: chackdan
 ms.author: pepogors
 ms.date: 4/23/2019
 ms.topic: troubleshooting
-ms.service: service-fabric-mesh
-manager: jeanpaul.connock
-ms.openlocfilehash: edd30dc8799ae9e5410ebc862574d632d09b9483
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: 3fe6289ad7616dec97706c2f1779a74c508a0f76
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72168683"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75461993"
 ---
 # <a name="commonly-asked-service-fabric-mesh-questions"></a>Распространенные вопросы о службе "Сетка Service Fabric"
 
@@ -35,10 +30,10 @@ ms.locfileid: "72168683"
 Да. Ниже приведены соответствующие квоты.
 
 - Число приложений: 5
-- Ядер на приложение: 12
-- Общий объем оперативной памяти на приложение: 48 ГБ
-- Конечных точек сети и входящего трафика: 5
-- Томов Azure, которые можно подключить: 10
+- Количество ядер на приложение: 12
+- Общий объем ОЗУ на приложение: 48 ГБ
+- Конечные точки сети и входящего трафика: 5
+- Тома Azure, которые можно подключить: 10
 - Число реплик службы: 3
 - Наибольший контейнер, который вы можете развернуть, может использовать 4 ядра и 16 ГБ ОЗУ.
 - Вы можете выделять для контейнеров частичные ядра с шагом в 0,5 ядра, но не более 6 ядер.
@@ -49,7 +44,7 @@ ms.locfileid: "72168683"
 
 Если приложение было отключено, вы можете проверить, было ли это сделано системой, с помощью команды `az mesh app show` в Azure CLI. Выполните команду, чтобы увидеть, вернется ли результат `"status": "Failed", "statusDetails": "Stopped resource due to max lifetime policies for an application during preview. Delete the resource to continue."`. 
 
-Пример: 
+Пример. 
 
 ```cli
 ~$ az mesh app show --resource-group myResourceGroup --name helloWorldApp
@@ -86,7 +81,6 @@ ms.locfileid: "72168683"
 При разработке на компьютере с обновлением Windows 10 за апрель 2018 г. (версия 1803) можно использовать образы Docker как версии 1709, так и версии 1803.
 
 Ниже приведены образы ОС контейнера, которые можно использовать для развертывания служб.
-
 - Windows: windowsservercore и nanoserver
     - Windows Server 1709;
     - Windows Server 1803.
@@ -109,8 +103,8 @@ ms.locfileid: "72168683"
 Исходящие запросы DNS из контейнера в службу DNS Service Fabric могут завершиться ошибкой при определенных обстоятельствах. Эта проблема рассматривается. Чтобы устранить эту проблему, сделайте следующее.
 
 - Используйте обновление Windows Fall Creators (версии 1709) или выше как базовый образ контейнера.
-- Если само имя службы не работает, попробуйте полное имя: ServiceName.ApplicationName.
-- В файле Docker своей службы добавьте `EXPOSE <port>`, где port означает порт, через который вы предоставляете свою службу. Пример:
+- Если имя службы не работает, попробуйте использовать полное имя: ServiceName. ApplicationName.
+- В файле Docker своей службы добавьте `EXPOSE <port>`, где port означает порт, через который вы предоставляете свою службу. Пример.
 
 ```Dockerfile
 EXPOSE 80
@@ -124,9 +118,9 @@ EXPOSE 80
 
 Сейчас служба "Сетка Azure" не поддерживает разрешение DNS между приложениями.
 
-Другие известные проблемы с DNS при запуске кластера разработки Service Fabric в Windows 10 описаны здесь: [Практическое руководство. Отладка контейнеров Windows в Azure Service Fabric с помощью Visual Studio 2017](/azure/service-fabric/service-fabric-how-to-debug-windows-containers), [Известные проблемы](https://docs.microsoft.com/azure/service-fabric/service-fabric-dnsservice#known-issues).
+Другие известные проблемы DNS, связанные с запуском кластера Service Fabric Development в Windows 10, см. в разделе [Отладка контейнеров Windows](/azure/service-fabric/service-fabric-how-to-debug-windows-containers) и [известных проблем с DNS](https://docs.microsoft.com/azure/service-fabric/service-fabric-dnsservice#known-issues).
 
-### <a name="networking"></a>Сеть
+### <a name="networking"></a>Работа в сети
 
 Преобразование сетевых адресов (NAT) сети ServiceFabric может исчезнуть при запуске приложения на локальном компьютере. Чтобы определить, случилось ли это, выполните в командной строке команду
 
@@ -170,6 +164,6 @@ EXPOSE 80
 
 Над устранением этой ошибки работают.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше о службе "Сетка Service Fabric", прочитайте этот [обзор](service-fabric-mesh-overview.md).

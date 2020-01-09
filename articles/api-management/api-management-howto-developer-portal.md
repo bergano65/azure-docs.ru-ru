@@ -1,5 +1,6 @@
 ---
-title: Обзор портала разработчика управления API Azure — управление API Azure | Документация Майкрософт
+title: Обзор портала разработчика службы управления API Azure
+titleSuffix: Azure API Management
 description: Сведения о портале разработчика в оснастке управления API.
 services: api-management
 documentationcenter: API Management
@@ -12,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/22/2019
 ms.author: apimpm
-ms.openlocfilehash: 2b69fdd7abefca360433fc9fb090569cba23febe
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: a06184cb45280d323a050085e94945a730d6c72c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74454386"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75442592"
 ---
 # <a name="azure-api-management-developer-portal-overview"></a>Обзор портала разработчика управления API Azure
 
@@ -67,7 +68,7 @@ ms.locfileid: "74454386"
 
 Портал построен на основе адаптированной вилки [папербитс Framework](https://paperbits.io/). Первоначальная функциональность Папербитс была расширена для предоставления мини-приложений для управления API (например, списка интерфейсов API, списка продуктов) и соединителя со службой управления API для сохранения и извлечения содержимого.
 
-## <a name="faq"></a>Часто задаваемые вопросы
+## <a name="faq"></a> Часто задаваемые вопросы
 
 В этом разделе мы будем отвечать на часто задаваемые вопросы о новом портале разработчика, который является общим характером. Вопросы, относящиеся к локальной версии, см. в [разделе Wiki репозитория GitHub](https://github.com/Azure/api-management-developer-portal/wiki).
 
@@ -109,7 +110,7 @@ API описан в [разделе вики репозитория GitHub][2]. 
 
 ### <a name="does-the-portal-support-azure-resource-manager-templates-andor-is-it-compatible-with-api-management-devops-resource-kit"></a>Поддерживает ли портал Azure Resource Manager шаблоны и/или является ли он совместимым с набором средств API Management DevOps Resource Kit?
 
-Нет
+Нет.
 
 ### <a name="do-i-need-to-enable-additional-vnet-connectivity-for-the-new-managed-portal-dependencies"></a>Нужно ли включать дополнительное подключение к виртуальной сети для новых зависимостей управляемого портала?
 
@@ -135,7 +136,7 @@ API описан в [разделе вики репозитория GitHub][2]. 
 
 ### <a name="im-getting-a-cors-error-when-using-the-interactive-console"></a>При использовании интерактивной консоли возникает ошибка CORS
 
-Интерактивная консоль выполняет клиентский запрос API из браузера. Проблему CORS можно устранить, добавив [политику CORS](api-management-cross-domain-policies.md#CORS) в API-интерфейсы. Можно указать все параметры вручную или использовать `*` подстановочных знаков. Например,
+Интерактивная консоль выполняет клиентский запрос API из браузера. Проблему CORS можно устранить, добавив [политику CORS](api-management-cross-domain-policies.md#CORS) в API-интерфейсы. Можно указать все параметры вручную или использовать `*` подстановочных знаков. Пример.
 
 ```XML
 <cors>
@@ -209,7 +210,7 @@ New-AzRoleAssignment -SignInName "user1@contoso.com" -RoleDefinitionName "APIM N
 
 Сбой вызова также может быть вызван сертификатом SSL, который назначается пользовательскому домену и не является доверенным для браузера. Для устранения этой проблемы можно удалить пользовательскую конечную точку управления. Управление доменными API будет возвращаться к конечной точке по умолчанию с доверенным сертификатом.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о новом портале разработчика:
 

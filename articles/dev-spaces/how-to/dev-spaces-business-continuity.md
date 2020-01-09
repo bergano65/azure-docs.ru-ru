@@ -5,15 +5,15 @@ author: lisaguthrie
 ms.author: lcozzens
 ms.date: 01/28/2019
 ms.topic: conceptual
-description: Быстрая разработка Kubernetes с использованием контейнеров и микрослужб в Azure
-keywords: 'Docker, Kubernetes, Azure, служба контейнеров Azure, служба Azure Kubernetes, контейнеры, Helm, сетка службы, сетка службы маршрутизации, kubectl, k8s '
+description: Узнайте, как использовать Azure Dev Spaces и службы Azure Kubernetes Services для обеспечения непрерывности бизнес-процессов и подготовки к аварийному восстановлению
+keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
 manager: gwallace
-ms.openlocfilehash: c7594059a5627c3967aba52144ed3dc99cb510e3
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 8a223e9610d2b243cd78bf8b674262d6438421a9
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74327294"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438523"
 ---
 # <a name="business-continuity-and-disaster-recovery-in-azure-dev-spaces"></a>Непрерывность бизнес-процессов и аварийное восстановление в Azure Dev Spaces
 

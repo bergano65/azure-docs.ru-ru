@@ -1,5 +1,5 @@
 ---
-title: Профилирование веб-приложений, работающих на виртуальной машине Azure, с использованием Application Insights Profiler | Документация Майкрософт
+title: Профилирование веб-приложений на виртуальной машине Azure — Application Insights Profiler
 description: Профилируйте веб-приложения на виртуальной машине Azure с использованием Application Insights Profiler.
 ms.service: azure-monitor
 ms.subservice: application-insights
@@ -8,20 +8,20 @@ author: cweining
 ms.author: cweining
 ms.date: 11/08/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: fa1179e55a4826450d30351be0a905efb059780b
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 046128fda385486f5a92d215e349760483c5dfa4
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74031017"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432364"
 ---
 # <a name="profile-web-apps-running-on-an-azure-virtual-machine-or-a-virtual-machine-scale-set-by-using-application-insights-profiler"></a>Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с использованием Application Insights Profiler
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 Вы можете развернуть Azure Application Insights Profiler для таких служб:
-* [службы приложений Azure](../../azure-monitor/app/profiler.md?toc=/azure/azure-monitor/toc.json)
-* [Облачные службы Azure](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
+* [Служба приложений Azure](../../azure-monitor/app/profiler.md?toc=/azure/azure-monitor/toc.json)
+* [Oблачныe службы Azure2}
 * [Azure Service Fabric](profiler-vm.md?toc=/azure/azure-monitor/toc.json)
 
 ## <a name="deploy-profiler-on-a-virtual-machine-or-a-virtual-machine-scale-set"></a>Развертывание Profiler на виртуальной машине или в масштабируемом наборе виртуальных машин
@@ -69,12 +69,12 @@ ms.locfileid: "74031017"
 
 1. Если нужное приложение выполняется с помощью [IIS](https://www.microsoft.com/web/downloads/platform.aspx), необходимо включить компонент Windows `IIS Http Tracing`.
 
-   a. Установите удаленный доступ к среде, а затем используйте окно [Добавить функции Windows]( https://docs.microsoft.com/iis/configuration/system.webserver/tracing/) или выполните следующую команду в PowerShell (с правами администратора):  
+   а. Установите удаленный доступ к среде, а затем используйте окно [Добавить функции Windows]( https://docs.microsoft.com/iis/configuration/system.webserver/tracing/) или выполните следующую команду в PowerShell (с правами администратора):  
 
     ```powershell
     Enable-WindowsOptionalFeature -FeatureName IIS-HttpTracing -Online -All
     ```  
-   Б. Если не удается установить удаленный доступ, можно использовать [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli), чтобы выполнить следующую команду:  
+   b. Если не удается установить удаленный доступ, можно использовать [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli), чтобы выполнить следующую команду:  
 
     ```powershell
     az vm run-command invoke -g MyResourceGroupName -n MyVirtualMachineName --command-id RunPowerShellScript --scripts "Enable-WindowsOptionalFeature -FeatureName IIS-HttpTracing -Online -All"
@@ -89,7 +89,7 @@ ms.locfileid: "74031017"
 
     ![Проверьте, установлено ли расширение WAD][wadextension]
 
-2. Найдите расширение диагностики виртуальных машин для виртуальной машины. Перейдите к [https://resources.azure.com](https://resources.azure.com). Разверните группу ресурсов, Microsoft. COMPUTE virtualMachines, имя виртуальной машины и расширения.  
+2. Найдите расширение диагностики виртуальных машин для виртуальной машины. Перейдите на сайт [https://resources.azure.com](https://resources.azure.com). Разверните группу ресурсов, Microsoft. COMPUTE virtualMachines, имя виртуальной машины и расширения.  
 
     ![Перейдите к WAD config в обозреватель ресурсов Azure][azureresourceexplorer]
 
@@ -109,7 +109,7 @@ ms.locfileid: "74031017"
 ## <a name="can-profiler-run-on-on-premises-servers"></a>Можно ли запустить Profiler на локальных серверах?
 Поддержка Application Insights Profiler на локальных серверах не планируется.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Создайте трафик к приложению (например, запустите [тест доступности](monitor-web-app-availability.md)). Подождите 10–15 минут, пока трассировки не начнут отправляться в экземпляр Application Insights.
 - См. раздел [Включение профилировщика](profiler-overview.md?toc=/azure/azure-monitor/toc.json).

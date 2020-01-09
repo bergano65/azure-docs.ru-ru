@@ -2,20 +2,16 @@
 title: Развертывание шаблона Azure Resource Manager в runbook службы автоматизации Azure
 description: Как развернуть шаблон Azure Resource Manager, хранящийся в службе хранилища Azure, из runbook.
 services: automation
-ms.service: automation
 ms.subservice: process-automation
-author: mgoedtel
-ms.author: magoedte
 ms.date: 03/16/2018
 ms.topic: conceptual
-manager: carmonm
 keywords: powershell, runbook, json, служба автоматизации azure
-ms.openlocfilehash: 922a4e8d98405de9e2b8420da4abf0e157011546
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: d4adbea42cda54380ad32dce40cfa0d8391ee490
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74850930"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75366640"
 ---
 # <a name="deploy-an-azure-resource-manager-template-in-an-azure-automation-powershell-runbook"></a>Развертывание шаблона Azure Resource Manager в runbook PowerShell службы автоматизации Azure
 
@@ -238,13 +234,13 @@ $job = Start-AzureRmAutomationRunbook @startParams
 Get-AzureRmStorageAccount
 ```
 
-## <a name="summary"></a>Резюме
+## <a name="summary"></a>Сводка
 
 Вот и все! Теперь с помощью службы автоматизации Azure, службы хранилища Azure и шаблонов Resource Manager можно развернуть все свои ресурсы Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о шаблонах Resource Manager см. в статье [Общие сведения о диспетчере ресурсов Azure](../azure-resource-manager/resource-group-overview.md).
+* Дополнительные сведения о шаблонах Resource Manager см. в статье [Общие сведения о диспетчере ресурсов Azure](../azure-resource-manager/management/overview.md).
 * Чтобы приступить к работе со службой хранилища Azure, изучите раздел [Введение в хранилище Microsoft Azure](../storage/common/storage-introduction.md).
 * Другие полезные runbook службы автоматизации Azure приведены в разделе [Коллекции модулей Runbook и других модулей для службы автоматизации Azure](automation-runbook-gallery.md).
 * Другие полезные шаблоны Resource Manager можно найти на странице [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/).

@@ -8,14 +8,14 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 10/22/2019
+ms.date: 12/13/2019
 ms.custom: seodec18
-ms.openlocfilehash: df8300e84309a874faa4b1c06891a4c5b549fce6
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 0e4ec63ffe715b17f55fde2a53c15d96d391cdba
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74014781"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75452514"
 ---
 # <a name="diagnose-and-troubleshoot-a-preview-environment"></a>Диагностика и устранение неполадок в среде предварительной версии
 
@@ -25,7 +25,7 @@ ms.locfileid: "74014781"
 
 Эта проблема может возникнуть, если у вас нет прав доступа к среде службы "Аналитика временных рядов". Для просмотра такой среды пользователям необходима роль доступа на уровне читателя. Чтобы проверить текущие уровни доступа и предоставить дополнительный доступ, перейдите к разделу **политики доступа к данным** в ресурсе "аналитика временных рядов" в [портал Azure](https://portal.azure.com/).
 
-  [Среда ![](media/v2-update-diagnose-and-troubleshoot/environment.png)](media/v2-update-diagnose-and-troubleshoot/environment.png#lightbox)
+  [![проверить политики доступа к данным.](media/preview-troubleshoot/verify-data-access-policies.png)](media/preview-troubleshoot/verify-data-access-policies.png#lightbox)
 
 ## <a name="problem-no-data-is-seen-in-the-preview-explorer"></a>Проблема. в обозревателе предварительной версии данные не отображаются
 
@@ -35,7 +35,7 @@ ms.locfileid: "74014781"
 
     Убедитесь, что источник события, представляющий собой концентратор событий или центр Интернета вещей, получает данные из ваших тегов или экземпляров. Для этого перейдите к странице обзора вашего ресурса на портале Azure.
 
-    [![панели мониторинга — аналитика](media/v2-update-diagnose-and-troubleshoot/dashboard-insights.png)](media/v2-update-diagnose-and-troubleshoot/dashboard-insights.png#lightbox)
+    [Обзор метрик панели мониторинга ![.](media/preview-troubleshoot/verify-dashboard-metrics.png)](media/preview-troubleshoot/verify-dashboard-metrics.png#lightbox)
 
 - Источник события не содержит данные в формате JSON.
 
@@ -45,14 +45,15 @@ ms.locfileid: "74014781"
 
   * Для Центра Интернета вещей необходимо указать ключ с разрешением на **подключение службы**.
 
-    [![Конфигурация](media/v2-update-diagnose-and-troubleshoot/configuration.png)](media/v2-update-diagnose-and-troubleshoot/configuration.png#lightbox)
+    [![проверить разрешения центра Интернета вещей.](media/preview-troubleshoot/verify-correct-permissions.png)](media/preview-troubleshoot/verify-correct-permissions.png#lightbox)
 
-  * Как показано на предыдущем рисунке, можно использовать политики **iothubowner** и **service**, так как обеим назначено разрешение на **подключение службы**.
+    * Политики **iothubowner** и **Service** работают, так как у них есть разрешение на **Подключение к службе** .
+
   * Для концентратора событий необходимо указать ключ с разрешением на **прослушивание**.
   
-    [![разрешения](media/v2-update-diagnose-and-troubleshoot/permissions.png)](media/v2-update-diagnose-and-troubleshoot/permissions.png#lightbox)
+    [![проверить разрешения концентратора событий.](media/preview-troubleshoot/verify-eh-permissions.png)](media/preview-troubleshoot/verify-eh-permissions.png#lightbox)
 
-  * Как показано на предыдущем рисунке, можно использовать политики **read** и **manage**, так как обеим назначено разрешение на **прослушивание**.
+    * Политики **чтения** и **управления** работают, так как они имеют разрешение на **прослушивание** .
 
 - Указанная группа объектов-получателей не является уникальной для службы "Аналитика временных рядов".
 
@@ -79,7 +80,7 @@ ms.locfileid: "74014781"
 * В имени свойства метки времени учитывается регистр.
 * Значение свойства timestamp, которое берется из источника события в виде строки JSON, имеет формат `yyyy-MM-ddTHH:mm:ss.FFFFFFFK`. Пример такой строки — `“2008-04-12T12:53Z”`.
 
-Самый простой способ убедиться, что имя свойства метки времени зафиксировано и работает правильно, — использовать обозреватель службы "Аналитика временных рядов" (предварительная версия). В этом обозревателе с помощью схемы выберите период времени после предоставления имени свойства метки времени. Щелкните выделение правой кнопкой мыши и выберите параметр **обзора событий**. Заголовок первого столбца — это имя вашего свойства метки времени. Рядом со словом `($ts)` должен находиться аргумент `Timestamp` вместо приведенных ниже вариантов:
+Самый простой способ убедиться, что имя свойства метки времени зафиксировано и работает правильно, — использовать обозреватель службы "Аналитика временных рядов" (предварительная версия). В этом обозревателе с помощью схемы выберите период времени после предоставления имени свойства метки времени. Щелкните выделение правой кнопкой мыши и выберите параметр **обзора событий**. Заголовок первого столбца — это имя вашего свойства метки времени. Рядом со словом `Timestamp` должен находиться аргумент `($ts)` вместо приведенных ниже вариантов:
 
 * `(abc)` указывает на то, что служба "Аналитика временных рядов" считывает значения данных в виде строк.
 * Значок **календаря** , указывающий, что Time Series Insights считывает значение данных как DateTime.
@@ -98,7 +99,7 @@ ms.locfileid: "74014781"
 
    Модели временных рядов поддерживаются только в средах с оплатой по мере использования. Дополнительные сведения о доступе к среде S1 или S2 из обозревателя предварительного просмотра аналитики временных рядов см. в разделе [Визуализация данных в обозревателе](./time-series-insights-update-explorer.md).
 
-   [Доступ к ![](media/v2-update-diagnose-and-troubleshoot/access.png)](media/v2-update-diagnose-and-troubleshoot/access.png#lightbox)
+   [![в среде нет событий.](media/preview-troubleshoot/troubleshoot-no-events.png)](media/preview-troubleshoot/troubleshoot-no-events.png#lightbox)
 
 - Возможно, у вас нет прав на просмотр и изменение модели.
 
@@ -108,10 +109,12 @@ ms.locfileid: "74014781"
 
 Эта проблема может возникнуть, если в вашей среде не определена иерархия модели временных рядов. Дополнительные сведения см. в статье о [работе с моделями временных рядов](./time-series-insights-update-how-to-tsm.md).
 
-  [Модели временных рядов ![](media/v2-update-diagnose-and-troubleshoot/tsm.png)](media/v2-update-diagnose-and-troubleshoot/tsm.png#lightbox)
+  [![неродительские экземпляры будут отображать предупреждение.](media/preview-troubleshoot/unparented-instances.png)](media/preview-troubleshoot/unparented-instances.png#lightbox)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Data modeling in Azure Time Series Insights Preview](./time-series-insights-update-how-to-tsm.md) (Моделирование данных в службе "Аналитика временных рядов Azure" (предварительная версия))
+
 - Дополнительные сведения о [поддерживаемых фигурах JSON](./how-to-shape-query-json.md).
+
 - Ознакомьтесь [с планированием и ограничениями](./time-series-insights-update-plan.md) в предварительной версии службы "аналитика временных рядов Azure".

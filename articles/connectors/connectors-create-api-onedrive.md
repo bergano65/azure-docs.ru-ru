@@ -1,22 +1,22 @@
 ---
-title: Создание подключения к OneDrive
-description: Передавайте файлы и управляйте ими с помощью интерфейсов REST API OneDrive и Azure Logic Apps.
+title: Доступ к файлам и управление ими в Microsoft OneDrive
+description: Отправка файлов в OneDrive и управление ими путем создания автоматических рабочих процессов в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/18/2016
 tags: connectors
-ms.openlocfilehash: 93528e257ab45644a79c58fbf600dca10317eb0b
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: edfbf090c3409d583cda6fd2c9957c37be5dfb7a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74789682"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75378438"
 ---
-# <a name="get-started-with-the-onedrive-connector"></a>Начало работы с соединителем OneDrive
+# <a name="access-and-manage-files-in-onedrive-connector-by-using-azure-logic-apps"></a>Доступ к файлам в соединители OneDrive и управление ими с помощью Azure Logic Apps
 
-Подключитесь к OneDrive для управления файлами, включая передачу, получение, удаление файлов и многое другое. С помощью OneDrive можно выполнять следующие задачи:
+С помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [соединителя OneDrive](/connectors/onedriveconnector/)можно создавать автоматизированные задачи и рабочие процессы для управления файлами, включая отправку, получение, удаление файлов и многое другое. С помощью OneDrive можно выполнять следующие задачи:
 
 * создавать рабочие процессы, сохраняя файлы в OneDrive, или обновлять имеющиеся файлы; 
 * использовать триггеры для запуска рабочего процесса при создании или обновлении файлов в OneDrive;
@@ -38,7 +38,7 @@ ms.locfileid: "74789682"
 
 Триггер — это событие, которое можно использовать для запуска рабочего процесса, определенного в приложении логики. Триггеры опрашивают службу с определенным интервалом и частотой. [Дополнительные сведения о триггерах](../logic-apps/logic-apps-overview.md#logic-app-concepts).
 
-1. Чтобы открыть список триггеров, в текстовом поле приложения логики введите onedrive.  
+1. В конструкторе приложений логики введите `onedrive`, чтобы получить список триггеров:  
 
    ![](./media/connectors-create-api-onedrive/onedrive-1.png)
 
@@ -66,7 +66,7 @@ ms.locfileid: "74789682"
 
 2. Выберите **Добавить действие**.
 
-3. Чтобы открыть список всех доступных действий, в текстовом поле введите onedrive.
+3. В поле поиска введите `onedrive`, чтобы получить список всех доступных действий.
 
    ![](./media/connectors-create-api-onedrive/onedrive-actions.png) 
 

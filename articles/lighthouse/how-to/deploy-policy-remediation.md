@@ -3,20 +3,20 @@ title: Развертывание политики, которую можно и
 description: Узнайте, как подключить клиента к системе делегированного управления ресурсами Azure, предоставив доступ к ресурсам и возможность управления ими через собственный клиент.
 ms.date: 10/11/2019
 ms.topic: conceptual
-ms.openlocfilehash: 4522c9ebad741f5ec0cb7e56e68467312ef8f037
-ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
+ms.openlocfilehash: c06ed4ea597808aee18d4a848bcfea7152b9cf8e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74463876"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75456857"
 ---
 # <a name="deploy-a-policy-that-can-be-remediated-within-a-delegated-subscription"></a>Развертывание политики, которую можно исправить в рамках делегированной подписки
 
-[Azure Lighthouse](../overview.md) позволяет поставщикам служб создавать и редактировать определения политики в рамках делегированной подписки. Однако для развертывания политик, использующих [задачу исправления](https://docs.microsoft.com/azure/governance/policy/how-to/remediate-resources) (то есть политики с эффектом [deployIfNotExists](https://docs.microsoft.com/azure/governance/policy/concepts/effects#deployifnotexists) или [modify](https://docs.microsoft.com/azure/governance/policy/concepts/effects#modify)), в клиенте клиента необходимо создать [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview). Это управляемое удостоверение может использоваться политикой Azure для развертывания шаблона в политике. Для включения этого сценария, как при подключении клиента к управлению делегированными ресурсами Azure, так и при развертывании самой политики необходимо выполнять некоторые шаги.
+[Azure Lighthouse](../overview.md) позволяет поставщикам служб создавать и редактировать определения политики в рамках делегированной подписки. Однако для развертывания политик, использующих [задачу исправления](../../governance/policy/how-to/remediate-resources.md) (то есть политики с эффектом [deployIfNotExists](../../governance/policy/concepts/effects.md#deployifnotexists) или [modify](../../governance/policy/concepts/effects.md#modify)), в клиенте клиента необходимо создать [управляемое удостоверение](../../active-directory/managed-identities-azure-resources/overview.md). Это управляемое удостоверение может использоваться политикой Azure для развертывания шаблона в политике. Для включения этого сценария, как при подключении клиента к управлению делегированными ресурсами Azure, так и при развертывании самой политики необходимо выполнять некоторые шаги.
 
 ## <a name="create-a-user-who-can-assign-roles-to-a-managed-identity-in-the-customer-tenant"></a>Создание пользователя, который может назначать роли управляемому удостоверению в клиенте клиента
 
-При подключении клиента к управлению делегированными ресурсами Azure используется [шаблон Azure Resource Manager](https://docs.microsoft.com/azure/lighthouse/how-to/onboard-customer#create-an-azure-resource-manager-template) с файлом параметров, определяющим пользователей, группы пользователей и субъекты-службы в управляющем клиенте, который будет иметь доступ к делегированным ресурсам в клиенте клиента. В файле параметров каждому из этих пользователей (**principalId**) назначается [встроенная роль](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles) (**roleDefinitionId**), определяющая уровень доступа.
+При подключении клиента к управлению делегированными ресурсами Azure используется [шаблон Azure Resource Manager](onboard-customer.md#create-an-azure-resource-manager-template) с файлом параметров, определяющим пользователей, группы пользователей и субъекты-службы в управляющем клиенте, который будет иметь доступ к делегированным ресурсам в клиенте клиента. В файле параметров каждому из этих пользователей (**principalId**) назначается [встроенная роль](../../role-based-access-control/built-in-roles.md) (**roleDefinitionId**), определяющая уровень доступа.
 
 Чтобы разрешить **principalId** создать управляемое удостоверение в клиенте клиента, необходимо задать для его **roleDefinitionId** значение **Администратор доступа пользователя**. Хотя эта роль обычно не поддерживается, ее можно использовать в этом конкретном сценарии, позволяя пользователям с этим разрешением назначать одну или несколько конкретных встроенных ролей управляемым удостоверениям. Эти роли определяются в свойстве **delegatedRoleDefinitionIds**. Сюда можно включить любую встроенную роль, кроме администратора доступа пользователей или владельца.
 
@@ -64,7 +64,7 @@ ms.locfileid: "74463876"
 > [!TIP]
 > Доступен [аналогичный пример](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/Azure-Delegated-Resource-Management/templates/policy-add-or-replace-tag), демонстрирующий, как развернуть политику, которая добавляет или удаляет тег (используя эффект изменения) в делегированной подписке.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Сведения о службе [Политика Azure](https://docs.microsoft.com/azure/governance/policy/).
-- Сведения об [управляемых удостоверениях для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
+- Сведения о службе [Политика Azure](../../governance/policy/index.yml).
+- Сведения об [управляемых удостоверениях для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).

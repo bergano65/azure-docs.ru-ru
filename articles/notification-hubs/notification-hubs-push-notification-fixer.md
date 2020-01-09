@@ -16,12 +16,12 @@ ms.date: 04/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 04/04/2019
-ms.openlocfilehash: 3aaa99caca461d4b8e339cf4c1f7847adef4027a
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 3c84277603420567485b5199cdd2fa63ee3a2654
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74076847"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75378387"
 ---
 # <a name="diagnose-dropped-notifications-in-azure-notification-hubs"></a>Диагностика удаленных уведомлений в центрах уведомлений Azure
 
@@ -103,7 +103,7 @@ ms.locfileid: "74076847"
 
 В этом случае сбойная регистрация удаляется из базы данных. Затем мы повторяем попытку доставки уведомлений для остальных устройств в этом пакете.
 
-Чтобы получить дополнительные сведения об ошибке неудачной попытки доставки для регистрации, можно использовать API-интерфейсы для интерфейсов RESTFUL для передачи сообщений [уведомлений](https://msdn.microsoft.com/library/azure/mt608135.aspx) и [PNS Отзывы](https://msdn.microsoft.com/library/azure/mt705560.aspx). Пример кода приведен в [репозитории примеров для отправки с помощью REST](https://github.com/Azure/azure-notificationhubs-dotnet/tree/master/Samples/SendRestExample/).
+Чтобы получить дополнительные сведения об ошибке неудачной попытки доставки для регистрации, можно использовать API-интерфейсы для интерфейсов RESTFUL для передачи сообщений [уведомлений](https://docs.microsoft.com/rest/api/notificationhubs/get-notification-message-telemetry) и [PNS Отзывы](https://msdn.microsoft.com/library/azure/mt705560.aspx). Пример кода приведен в [репозитории примеров для отправки с помощью REST](https://github.com/Azure/azure-notificationhubs-dotnet/tree/master/Samples/SendRestExample/).
 
 ## <a name="push-notification-service-issues"></a>Проблемы службы push-уведомлений
 
@@ -127,7 +127,7 @@ ms.locfileid: "74076847"
 
 Проверьте учетные данные на соответствующем портале разработчика службы push-уведомлений (APNs, FCM, служба уведомлений Windows и т. д.). Дополнительные сведения см. [в статье учебник. Отправка уведомлений в универсальная платформа Windows приложения с помощью центров уведомлений Azure](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification).
 
-#### <a name="azure-portal"></a>портале Azure ####
+#### <a name="azure-portal"></a>Портал Azure ####
 
 Чтобы проверить и сопоставить учетные данные с данными, полученными на портале разработчика службы push-уведомлений, перейдите на вкладку **политики доступа** в портал Azure.
 
@@ -162,13 +162,13 @@ ms.locfileid: "74076847"
 > [!NOTE]
 > Используйте Visual Studio для изменения регистраций только во время разработки или тестирования, а также с ограниченным количеством регистраций. Если вам необходимо выполнить многофункциональное изменение регистраций, рассмотрите возможность использования функций регистрации экспорта и импорта, описанных в статье [как выполнять операции экспорта и изменения регистраций](https://msdn.microsoft.com/library/dn790624.aspx).
 
-#### <a name="service-bus-explorer"></a>Service Bus Explorer ####
+#### <a name="service-bus-explorer"></a>Обозреватель служебной шины ####
 
 Многие клиенты используют [Обозреватель служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer) для просмотра концентраторов уведомлений и управления ими. который представляет собой проект с открытым кодом. 
 
 ### <a name="verify-message-notifications"></a>Проверка уведомлений о сообщениях
 
-#### <a name="azure-portal"></a>портале Azure ####
+#### <a name="azure-portal"></a>Портал Azure ####
 
 Чтобы отправить тестовые уведомления клиентам, не запуская серверную часть службы, в разделе **Поддержка и устранение неполадок** выберите **Тестовая отправка**.
 
@@ -196,7 +196,7 @@ ms.locfileid: "74076847"
 
 Информацию об ошибках службы push-уведомлений можно получить с помощью свойства [Сведения о свойстве EnableTestSend]. Оно автоматически включается при отправке тестового сообщения с портала или клиентского приложения Visual Studio Это свойство можно использовать для просмотра подробных сведений об отладке, а также через API. Сейчас его можно использовать в пакете SDK для .NET. В конечном итоге он будет добавлен во все клиентские пакеты SDK.
 
-Чтобы использовать свойство `EnableTestSend` с вызовом REST, добавьте параметр строки запроса с именем *test* в конце вызова отправки. Например,
+Чтобы использовать свойство `EnableTestSend` с вызовом REST, добавьте параметр строки запроса с именем *test* в конце вызова отправки. Пример.
 
 ```text
 https://mynamespace.servicebus.windows.net/mynotificationhub/messages?api-version=2013-10&test
@@ -245,7 +245,7 @@ The Token obtained from the Token Provider is wrong
 
 ### <a name="review-telemetry"></a>Просмотр телеметрии ###
 
-#### <a name="azure-portal"></a>портале Azure ####
+#### <a name="azure-portal"></a>Портал Azure ####
 
 На портале вы можете получить краткий обзор всех операций, выполняемых в Центре уведомлений.
 

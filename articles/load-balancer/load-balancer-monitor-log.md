@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/27/2018
 ms.author: allensu
-ms.openlocfilehash: 23a3a2629c6f2f89c4b8f6d5af57bcf3b6bb67dd
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 63f386212b0277c3b5ee383e707d4c32fa4e63fc
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74214913"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75428854"
 ---
 # <a name="azure-monitor-logs-for-public-basic-load-balancer"></a>Azure Monitor журналов для общедоступного базового Load Balancer
 
@@ -38,7 +38,7 @@ ms.locfileid: "74214913"
 
 Ведение журнала действий автоматически включается для каждого ресурса Resource Manager. Включите ведение журнала событий и проверки работоспособности, чтобы начать сбор данных, доступных в этих журналах. Вот как можно включить ведение журнала:
 
-Войдите на [портале Azure](https://portal.azure.com). Если у вас еще нет балансировщика нагрузки, [создайте балансировщик нагрузки](https://docs.microsoft.com/azure/load-balancer/quickstart-create-basic-load-balancer-portal) перед продолжением.
+Войдите на [портал Azure](https://portal.azure.com). Если у вас еще нет балансировщика нагрузки, [создайте балансировщик нагрузки](https://docs.microsoft.com/azure/load-balancer/quickstart-create-basic-load-balancer-portal) перед продолжением.
 
 1. На портале щелкните **группы ресурсов**.
 2. Выберите **\<ресурс-группа-имя >** , в которой находится подсистема балансировки нагрузки.
@@ -58,7 +58,7 @@ ms.locfileid: "74214913"
     2. Щелкните **настроить** , чтобы открыть панель **Выбор учетной записи хранения** .
     3. В раскрывающемся списке выберите **подписку** , в которой была создана учетная запись хранения.
     4. В раскрывающемся списке выберите имя учетной записи хранения в разделе **учетная запись хранения** . 
-    5. Нажмите кнопку ОК.
+    5. Нажмите кнопку "ОК".
 
     ### <a name="stream-to-an-event-hub"></a>"Передать в концентратор событий";
     Вам потребуется концентратор событий, уже созданный для этого процесса.  Сведения о создании концентратора событий см [. в разделе Краткое руководство. Создание концентратора событий с помощью портал Azure](https://docs.microsoft.com/azure/event-hubs/event-hubs-create)
@@ -68,9 +68,9 @@ ms.locfileid: "74214913"
     3. В раскрывающемся списке выберите **подписку** , в которой был создан концентратор событий.
     4. В раскрывающемся списке **выберите пространство имен концентратора событий** .
     5. В раскрывающемся списке **выберите имя политики концентратора событий** .
-    6. Нажмите кнопку ОК.
+    6. Нажмите кнопку "ОК".
 
-    ### <a name="send-to-log-analytics"></a>"Отправить в Log Analytics".
+    ### <a name="send-to-log-analytics"></a>Отправка в Log Analytics
     Для этого процесса необходимо, чтобы Рабочая область log Analytics была создана и настроена.  Сведения о создании рабочей области Log Analytics см. в разделе [создание log Analytics рабочей области на портал Azure](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace)
 
     1. Установите флажок рядом с пунктом **отправить на log Analytics**.
@@ -171,11 +171,11 @@ ms.locfileid: "74214913"
 > Если вы знакомы с Visual Studio и основными понятиями изменения значений констант и переменных в C#, можно использовать [инструменты преобразования журналов](https://github.com/Azure-Samples/networking-dotnet-log-converter), доступные на сайте GitHub.
 
 ## <a name="stream-to-an-event-hub"></a>"Передать в концентратор событий";
-Когда диагностические данные передаются в концентратор событий, их можно использовать для централизованного анализа журналов в средстве SIEM стороннего производителя с интеграцией Azure Monitor. Дополнительные сведения см. [в статье потоковая передача данных мониторинга Azure в концентратор событий](https://docs.microsoft.com/azure/azure-monitor/platform/stream-monitoring-data-event-hubs#tools-with-azure-monitor-integration) .
+Когда диагностические данные передаются в концентратор событий, их можно использовать для централизованного анализа журналов в средстве SIEM стороннего производителя с интеграцией Azure Monitor. Дополнительные сведения см. [в статье потоковая передача данных мониторинга Azure в концентратор событий](../azure-monitor/platform/stream-monitoring-data-event-hubs.md#partner-tools-with-azure-monitor-integration) .
 
-## <a name="send-to-log-analytics"></a>"Отправить в Log Analytics".
+## <a name="send-to-log-analytics"></a>Отправка в Log Analytics
 Ресурсы в Azure могут отправлять диагностические сведения непосредственно в Log Analytics рабочую область, где можно выполнять сложные запросы к информации для устранения неполадок и анализа.  Дополнительные сведения см. в статье [Получение журналов ресурсов Azure в log Analytics рабочей области в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-collect-workspace)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Проверки балансировщика нагрузки](load-balancer-custom-probe-overview.md)
+[Основные сведения о пробах подсистемы балансировки нагрузки](load-balancer-custom-probe-overview.md)

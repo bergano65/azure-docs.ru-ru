@@ -15,12 +15,12 @@ ms.date: 07/23/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44392882a7d3e1816b952969dbadb518e2762142
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 3d7148b104c723d124a954cf858ca77ff6552f94
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74919959"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423798"
 ---
 # <a name="mobile-app-that-calls-web-apis---code-configuration"></a>Мобильное приложение, вызывающее веб-API — конфигурация кода
 
@@ -30,7 +30,7 @@ ms.locfileid: "74919959"
 
 Библиотеки Майкрософт, поддерживающие мобильные приложения:
 
-  Библиотека MSAL | Описание
+  Библиотека MSAL | Description
   ------------ | ----------
   ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Для разработки переносимых приложений. MSAL.NET поддерживаемые платформы для создания мобильного приложения — UWP, Xamarin. iOS и Xamarin. Android.
   ![MSAL.iOS](media/sample-v2-code/logo_iOS.png) <br/> MSAL.iOS | Разработка собственных приложений iOS с помощью цели-C или SWIFT
@@ -77,7 +77,7 @@ if let application = try? MSALPublicClientApplication(configuration: config){ /*
 
 В Xamarin или UWP самый простой способ создания экземпляра приложения выглядит следующим образом, где `ClientId` является идентификатором GUID зарегистрированного приложения.
 
-```CSharp
+```csharp
 var app = PublicClientApplicationBuilder.Create(clientId)
                                         .Build();
 ```
@@ -88,7 +88,7 @@ var app = PublicClientApplicationBuilder.Create(clientId)
 
 В Android перед выполнением интерактивной проверки подлинности необходимо передать родительское действие. В iOS при использовании брокера необходимо передать ViewController. Точно так же, как и в UWP, может потребоваться передать родительское окно. Это возможно при получении маркера, но можно также указать обратный вызов во время создания приложения делегат, возвращающий Уипарент.
 
-```CSharp
+```csharp
 IPublicClientApplication application = PublicClientApplicationBuilder.Create(clientId)
   .ParentActivityOrWindowFunc(() => parentUi)
   .Build();
@@ -96,7 +96,7 @@ IPublicClientApplication application = PublicClientApplicationBuilder.Create(cli
 
 В Android рекомендуется использовать `CurrentActivityPlugin` [здесь](https://github.com/jamesmontemagno/CurrentActivityPlugin).  После этого код `PublicClientApplication` построителя будет выглядеть следующим образом:
 
-```CSharp
+```csharp
 // Requires MSAL.NET 4.2 or above
 var pca = PublicClientApplicationBuilder
   .Create("<your-client-id-here>")
@@ -175,7 +175,7 @@ var pca = PublicClientApplicationBuilder
 
 Поддержка брокера включена для каждого`PublicClientApplication`. Она отключена по умолчанию. Необходимо использовать параметр `WithBroker()` (по умолчанию задано значение true) при создании `PublicClientApplication` с помощью `PublicClientApplicationBuilder`.
 
-```CSharp
+```csharp
 var app = PublicClientApplicationBuilder
                 .Create(ClientId)
                 .WithBroker()
@@ -187,7 +187,7 @@ var app = PublicClientApplicationBuilder
 
 Когда MSAL.NET вызывает брокер, брокер, в свою очередь, выполняет обратный вызов к приложению с помощью метода `AppDelegate.OpenUrl`. Так как MSAL будет ждать ответа от брокера, ваше приложение должно взаимодействовать для вызова MSAL.NET назад. Это можно сделать, обновив файл `AppDelegate.cs`, чтобы переопределить приведенный ниже метод.
 
-```CSharp
+```csharp
 public override bool OpenUrl(UIApplication app, NSUrl url,
                              string sourceApplication,
                              NSObject annotation)
@@ -218,17 +218,17 @@ public override bool OpenUrl(UIApplication app, NSUrl url,
 
 **Например:**
 
-В `App.cs` добавьте:
-```CSharp
+В `App.cs`:
+```csharp
    public static object RootViewController { get; set; }
 ```
-В `AppDelegate.cs` добавьте:
-```CSharp
+В `AppDelegate.cs`:
+```csharp
    LoadApplication(new App());
    App.RootViewController = new UIViewController();
 ```
 В вызове запроса маркера:
-```CSharp
+```csharp
 result = await app.AcquireTokenInteractive(scopes)
              .WithParentActivityOrWindow(App.RootViewController)
              .ExecuteAsync();

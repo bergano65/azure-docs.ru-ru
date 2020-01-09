@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 07/10/2019
-ms.openlocfilehash: 4512fd8a236c888937eb60a75d01cfb0ef2c1913
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 616f10b32d0a9c1a05d759a0e27550cd2808808b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74792641"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75428880"
 ---
 # <a name="export-flows-from-power-automate-and-deploy-to-azure-logic-apps"></a>Экспорт потоков из Power Automate и их развертывание в Azure Logic Apps
 
@@ -28,7 +28,7 @@ ms.locfileid: "74792641"
 
 * Последовательность, которую требуется экспортировать из Power автоматизирующие
 
-## <a name="export-a-flow"></a>Экспорт последовательности
+## <a name="export-a-flow"></a>Экспорт потока
 
 1. Войдите в [Power Автоматизируйте](https://flow.microsoft.com)и выберите **мои потоки**. Найдите и выберите свой поток. На панели инструментов нажмите кнопку с многоточием ( **...** ). Выберите **экспорт** > **Logic Apps шаблон (. JSON)** .
 
@@ -81,7 +81,7 @@ ms.locfileid: "74792641"
 
       Для каждого подключения, требующего авторизации, отображается значок предупреждения:
 
-      ![Значок "Внимание!"](./media/export-from-microsoft-flow-logic-app-template/authorize-connections.png)
+      ![Значок предупреждения](./media/export-from-microsoft-flow-logic-app-template/authorize-connections.png)
 
    1. Для каждого шага, для которого требуется авторизация подключения, разверните этот шаг и выберите **Добавить новый**.
 
@@ -133,7 +133,7 @@ ms.locfileid: "74792641"
 
 1. В обозреватель решений откройте контекстное меню проекта и выберите **развернуть** > **создать**. Если отобразится запрос на вход в учетную запись Azure, выполните его.
 
-1. При появлении запроса подтвердите подписку Azure, группу ресурсов Azure и другие параметры, которые вы хотите использовать для развертывания, например [файл параметров](../azure-resource-manager/resource-group-template-deploy.md#parameter-files) , который будет использоваться для передачи значений параметров шаблона, а затем нажмите кнопку **развернуть**.
+1. При появлении запроса подтвердите подписку Azure, группу ресурсов Azure и другие параметры, которые вы хотите использовать для развертывания, например [файл параметров](../azure-resource-manager/templates/parameter-files.md) , который будет использоваться для передачи значений параметров шаблона, а затем нажмите кнопку **развернуть**.
 
    ![Подтверждение параметров развертывания](./media/export-from-microsoft-flow-logic-app-template/confirm-azure-subscription-resource-group-deployment.png)
 

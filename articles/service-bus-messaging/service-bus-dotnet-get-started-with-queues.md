@@ -14,12 +14,12 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 11/27/2019
 ms.author: aschhab
-ms.openlocfilehash: c1f9c8a03a503444c7c45d5374b67e5b453a8931
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.openlocfilehash: 49abd1b0542b1a658517561cf1ffead402fa93a5
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74561621"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75563400"
 ---
 # <a name="get-started-with-service-bus-queues"></a>Начало работы с очередями служебной шины
 [!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "74561621"
 ### <a name="add-the-service-bus-nuget-package"></a>Получение пакета NuGet для служебной шины
 
 1. Щелкните созданный проект правой кнопкой мыши и выберите **Управление пакетами NuGet**.
-1. Щелкните **Обзор**. Найдите и выберите **[Microsoft. Azure. servicebus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/)** .
+1. Нажмите кнопку **Обзор**. Найдите и выберите **[Microsoft. Azure. servicebus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/)** .
 1. Нажмите кнопку **установить** , чтобы завершить установку, а затем закройте диспетчер пакетов NuGet.
 
     ![Установка пакета NuGet][nuget-pkg]
@@ -74,7 +74,7 @@ ms.locfileid: "74561621"
 
     Введите строку подключения для пространства имен в качестве `ServiceBusConnectionString` переменной. Введите имя очереди.
 
-1. Замените метод `Main()` следующим **асинхронным** методом `Main`. Он вызывает метод Сендмессажесасинк, который будет добавлен на следующем шаге для отправки сообщений в очередь. 
+1. Замените метод `Main()` следующим **асинхронным** методом `Main`. Он вызывает метод `SendMessagesAsync()`, который будет добавлен на следующем шаге для отправки сообщений в очередь. 
 
     ```csharp
     public static async Task Main(string[] args)

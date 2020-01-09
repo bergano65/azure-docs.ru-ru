@@ -1,6 +1,6 @@
 ---
 title: Планирование среды предварительного просмотра с помощью Azure Time Series Insights | Документация Майкрософт
-description: Узнайте, как спланировать среду предварительной версии службы "аналитика временных рядов Azure".
+description: Рекомендации по настройке, управлению, планированию и развертыванию среды предварительной версии службы "аналитика временных рядов Azure".
 author: deepakpalled
 ms.author: dpalled
 manager: cshankar
@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 11/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 9fb2dcf2c05b709340f8e9ae549bab5756e6abf2
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: c305da097a4474e6a4aa91ec0e784e627533ee43
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74420307"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75452437"
 ---
 # <a name="plan-your-azure-time-series-insights-preview-environment"></a>Запланируйте среду службы"Аналитика временных рядов Azure (предварительная версия)"
 
@@ -48,7 +48,7 @@ ms.locfileid: "74420307"
 Запросы в горячий магазин предоставляются бесплатно, а запросы в холодном магазине требуют затрат. Важно понимать шаблоны запросов и соответствующим образом спланировать конфигурацию "горячий". Рекомендуется, чтобы интерактивная аналитика в самых последних данных находилась в горячий магазин, анализ шаблонов и долгосрочные тенденции находились в холодном состоянии.
 
 > [!NOTE]
-> Сейчас поддерживается не более 1 000 свойств с горячим хранилищем.
+> Дополнительные сведения о том, как запрашивать данные о теплом доступе, [см. здесь](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/execute#uri-parameters).
 
 Для начала работы вам понадобятся три дополнительных элемента:
 
@@ -97,7 +97,7 @@ ms.locfileid: "74420307"
 
 [!INCLUDE [business-disaster-recover](../../includes/time-series-insights-business-recovery.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [помощником по Azure](../advisor/advisor-overview.md) , чтобы спланировать параметры конфигурации бизнес-восстановления.
 - Дополнительные сведения о [хранении и входе см](./time-series-insights-update-storage-ingress.md) . в статье Предварительная версия службы "аналитика временных рядов".

@@ -1,26 +1,63 @@
 ---
 title: 'Azure Monitor для контейнеров: вопросы и ответы | Документация Майкрософт'
 description: Решение Azure Monitor для контейнеров отслеживает состояние работоспособности кластера AKS и Экземпляров контейнеров в Azure. В этой статье приведены ответы на распространенные вопросы.
-ms.service: azure-monitor
-ms.subservice: ''
 ms.topic: conceptual
-author: mgoedtel
-ms.author: magoedte
 ms.date: 10/15/2019
-ms.openlocfilehash: d3779a2d48db82bfccdc0f047119a36ef56c3bdf
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 0984de51221c506bb1824e4dcfd93eef56453a4d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73477413"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75405068"
 ---
 # <a name="azure-monitor-for-containers-frequently-asked-questions"></a>Azure Monitor для контейнеров: вопросы и ответы
 
 В этом списке корпорация Майкрософт собрала часто задаваемые вопросы с ответами об Azure Monitor для контейнеров. Если у вас есть другие вопросы об этом решении, вы можете задать их на [форуме для обсуждений](https://feedback.azure.com/forums/34192--general-feedback). Если вопрос задается часто, мы добавим его в эту статью, чтобы его можно было найти быстро и легко.
 
+## <a name="i-dont-see-image-and-name-property-values-populated-when-i-query-the-containerlog-table"></a>Не отображаются значения свойств Image и Name, заполненные при запросе таблицы Контаинерлог.
+
+Для агента версии ciprod12042019 и более поздних версий по умолчанию эти два свойства не заполняются для каждой строки журнала, чтобы максимально сокращать затраты на собираемые данные журнала. Существует два варианта запроса таблицы, включающей эти свойства со своими значениями:
+
+### <a name="option-1"></a>Вариант 1 
+
+Присоедините другие таблицы, чтобы включить эти значения свойств в результаты.
+
+Измените запросы, включив свойства Image и Имажетаг из таблицы ```ContainerInventory```, присоединяясь к свойству ContainerID. Можно включить свойство Name (как оно было ранее появилось в ```ContainerLog``` таблице) из поля Контаиненаме таблицы Кубеподинвентори путем соединения по свойству ContainerID. Это рекомендуемый вариант.
+
+Ниже приведен пример подробного запроса, посвященного получению значений полей с помощью соединений.
+
+```
+//lets say we are querying an hour worth of logs
+let startTime = ago(1h);
+let endTime = now();
+//below gets the latest Image & ImageTag for every containerID, during the time window
+let ContainerInv = ContainerInventory | where TimeGenerated >= startTime and TimeGenerated < endTime | summarize arg_max(TimeGenerated, *)  by ContainerID, Image, ImageTag | project-away TimeGenerated | project ContainerID1=ContainerID, Image1=Image ,ImageTag1=ImageTag;
+//below gets the latest Name for every containerID, during the time window
+let KubePodInv  = KubePodInventory | where ContainerID != "" | where TimeGenerated >= startTime | where TimeGenerated < endTime | summarize arg_max(TimeGenerated, *)  by ContainerID2 = ContainerID, Name1=ContainerName | project ContainerID2 , Name1;
+//now join the above 2 to get a 'jointed table' that has name, image & imagetag. Outer left is safer in-case there are no kubepod records are if they are latent
+let ContainerData = ContainerInv | join kind=leftouter (KubePodInv) on $left.ContainerID1 == $right.ContainerID2;
+//now join ContainerLog table with the 'jointed table' above and project-away redundant fields/columns and rename columns that were re-written
+//Outer left is safer so you dont lose logs even if we cannot find container metadata for loglines (due to latency, time skew between data types etc...)
+ContainerLog
+| where TimeGenerated >= startTime and TimeGenerated < endTime 
+| join kind= leftouter (
+   ContainerData
+) on $left.ContainerID == $right.ContainerID2 | project-away ContainerID1, ContainerID2, Name, Image, ImageTag | project-rename Name = Name1, Image=Image1, ImageTag=ImageTag1 
+
+```
+
+### <a name="option-2"></a>Вариант 2
+
+Повторно включите коллекцию для этих свойств для каждой строки журнала контейнера.
+
+Если первый вариант неудобен из-за изменений запросов, можно снова включить сбор этих полей, включив параметр ```log_collection_settings.enrich_container_logs``` в карте конфигурации агента, как описано в разделе [Параметры конфигурации сбора данных](./container-insights-agent-config.md).
+
+> [!NOTE]
+> Второй вариант не рекомендуется для больших кластеров, имеющих более 50 узлов, так как он создает вызовы API-сервера из каждого узла > в кластере для выполнения этого дополнения. Этот параметр также увеличивает размер данных для каждой собираемой строки журнала.
+
 ## <a name="can-i-view-metrics-collected-in-grafana"></a>Можно ли просматривать метрики, собранные в Grafana?
 
-Azure Monitor для контейнеров поддерживает просмотр метрик, хранящихся в рабочей области Log Analytics, на панелях мониторинга Grafana. Мы предоставили шаблон, который можно скачать из [репозитория панели мониторинга](https://grafana.com/grafana/dashboards?dataSource=grafana-azure-monitor-datasource&category=docker) Grafana, чтобы получить сведения о том, как запросить дополнительные данные из наблюдаемых кластеров для визуализации в пользовательском Grafana панелей мониторинга. 
+Azure Monitor для контейнеров поддерживает просмотр метрик, хранящихся в рабочей области Log Analytics, на панелях мониторинга Grafana. Мы предоставили шаблон, который можно скачать из [репозитория панели мониторинга](https://grafana.com/grafana/dashboards?dataSource=grafana-azure-monitor-datasource&category=docker) Grafana, чтобы получить сведения о том, как запросить дополнительные данные из наблюдаемых кластеров для визуализации на пользовательских панелях мониторинга Grafana. 
 
 ## <a name="can-i-monitor-my-aks-engine-cluster-with-azure-monitor-for-containers"></a>Можно ли отслеживать кластер AKS Engine с Azure Monitor для контейнеров?
 

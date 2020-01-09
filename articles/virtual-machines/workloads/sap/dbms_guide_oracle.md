@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 12/14/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b912743c758f33173b568944341fab4e815300ed
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: a23fb981e24f6152d99b76bd72115f8159f5d60f
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70099986"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645850"
 ---
 # <a name="azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Развертывание СУБД на Виртуальных машинах Azure для рабочей нагрузки SAP
 
@@ -77,8 +77,8 @@ ms.locfileid: "70099986"
 [azure-ps]:/powershell/azureps-cmdlets-docs
 [azure-quickstart-templates-github]:https://github.com/Azure/azure-quickstart-templates
 [azure-script-ps]:https://go.microsoft.com/fwlink/p/?LinkID=395017
-[azure-subscription-service-limits]:../../../azure-subscription-service-limits.md
-[azure-subscription-service-limits-subscription]:../../../azure-subscription-service-limits.md#subscription-limits
+[azure-resource-manager/management/azure-subscription-service-limits]:../../../azure-resource-manager/management/azure-subscription-service-limits.md
+[azure-resource-manager/management/azure-subscription-service-limits-subscription]:../../../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits
 
 [dbms-guide]:dbms-guide.md 
 [dbms-guide-2.1]:dbms-guide.md#c7abf1f0-c927-4a7c-9c1d-c7b5b3b7212f 
@@ -235,7 +235,7 @@ ms.locfileid: "70099986"
 [planning-guide-storage-microsoft-azure-storage-and-data-disks]:planning-guide.md#a72afa26-4bf4-4a25-8cf7-855d6032157f 
 
 [resource-group-authoring-templates]:../../../resource-group-authoring-templates.md
-[resource-group-overview]:../../../azure-resource-manager/resource-group-overview.md
+[resource-group-overview]:../../../azure-resource-manager/management/overview.md
 [resource-groups-networking]:../../../networking/networking-overview.md
 [sap-pam]:https://support.sap.com/pam 
 [sap-templates-2-tier-marketplace-image]:https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsap-2-tier-marketplace-image%2Fazuredeploy.json
@@ -249,7 +249,7 @@ ms.locfileid: "70099986"
 [storage-powershell-guide-full-copy-vhd]:../../../storage/common/storage-powershell-guide-full.md#how-to-copy-blobs-from-one-storage-container-to-another
 [storage-premium-storage-preview-portal]:../../windows/disks-types.md
 [storage-redundancy]:../../../storage/common/storage-redundancy.md
-[storage-scalability-targets]:../../../storage/common/storage-scalability-targets.md
+[storage-scalability-targets]:../../../storage/common/scalability-targets-standard-accounts.md
 [storage-use-azcopy]:../../../storage/common/storage-use-azcopy.md
 [template-201-vm-from-specialized-vhd]:https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-from-specialized-vhd
 [templates-101-simple-windows-vm]:https://github.com/Azure/azure-quickstart-templates/tree/master/101-simple-windows-vm
@@ -318,14 +318,14 @@ ms.locfileid: "70099986"
 
 Следующие примечания к SAP актуальны для развертывания SAP в Azure.
 
-| Номер примечания | Заголовок |
+| Номер примечания | Title |
 | --- | --- |
-| [1928533] |Приложения SAP в Azure: поддерживаемые продукты и типы виртуальных машин Azure |
-| [2015553] |SAP в Microsoft Azure: необходимые компоненты для поддержки |
+| [1928533] |Приложения SAP в Azure: Поддерживаемые продукты и типы виртуальных машин Azure |
+| [2015553] |SAP на Microsoft Azure: поддержка предварительных требований |
 | [1999351] |Устранение неполадок, связанных с расширенным мониторингом Azure для SAP |
 | [2178632] |Ключевые метрики мониторинга для SAP в Microsoft Azure |
-| [2191498] |SAP на платформе Linux в Azure: расширенный мониторинг |
-| [2039619] |Приложения SAP в Microsoft Azure с использованием Oracle Database: поддерживаемые продукты и версии |
+| [2191498] |SAP на Linux с Azure: Расширенный мониторинг |
+| [2039619] |Приложения SAP на Microsoft Azure с использованием базы данных Oracle: Поддерживаемые продукты и версии |
 | [2243692] |Linux на виртуальной машине Microsoft Azure (IaaS): проблемы с лицензированием SAP |
 | [2069760] |Установка и обновление Oracle Linux 7.x SAP |
 | [1597355] |Рекомендация по области буфера для Linux |
@@ -357,7 +357,7 @@ Windows и Oracle Linux являются единственными операц
 
 Мы настоятельно рекомендуем использовать [Управляемые диски Azure](https://docs.microsoft.com/azure/storage/storage-managed-disks-overview), а для развертываний Oracle Database — [диски SSD ценовой категории "Премиум"](../../windows/disks-types.md).
 
-Сетевые диски и удаленные общие ресурсы, включая файловые службы Azure, не поддерживаются для файлов Oracle Database. Дополнительные сведения можно найти в разделе
+Сетевые диски и удаленные общие ресурсы, включая файловые службы Azure, не поддерживаются для файлов Oracle Database. Дополнительные сведения см. здесь:
 
 - [Введение в службы файлов Microsoft Azure](https://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 
@@ -372,12 +372,12 @@ Windows и Oracle Linux являются единственными операц
 
 Минимальная конфигурация выглядит следующим образом. 
 
-| Компонент | Диск | Кэширование | Пул хранилищ |
+| Компонент | Диски | Caching | Пул носителей |
 | --- | ---| --- | --- |
-| \oracle\<SID>\origlogaA & mirrlogB | Премиум | Отсутствуют | Не требуется. |
-| \oracle\<SID>\origlogaB & mirrlogA | Премиум | Отсутствуют | Не требуется. |
-| \oracle\<SID>\sapdata1...n | Премиум | Только для чтения | Можно использовать |
-| \oracle\<SID>\oraarch | Стандарт | Отсутствуют | Не требуется. |
+| \oracle\<SID>\origlogaA & mirrlogB | "Премиум" | Нет | Не требуется. |
+| \oracle\<SID>\origlogaB & mirrlogA | "Премиум" | Нет | Не требуется. |
+| \oracle\<SID>\sapdata1...n | "Премиум" | Только для чтения | Можно использовать |
+| \oracle\<SID>\oraarch | Стандартный | Нет | Не требуется. |
 | Oracle Home, saptrace, ... | Диск ОС | | Не требуется. |
 
 
@@ -385,15 +385,15 @@ Windows и Oracle Linux являются единственными операц
 
 Конфигурация производительности выглядит следующим образом.
 
-| Компонент | Диск | Кэширование | Пул хранилищ |
+| Компонент | Диски | Caching | Пул носителей |
 | --- | ---| --- | --- |
-| \oracle\<SID>\origlogaA | Премиум | Отсутствуют | Можно использовать  |
-| \oracle\<SID>\origlogaB | Премиум | Отсутствуют | Можно использовать |
-| \oracle\<SID>\mirrlogAB | Премиум | Отсутствуют | Можно использовать |
-| \oracle\<SID>\mirrlogBA | Премиум | Отсутствуют | Можно использовать |
-| \oracle\<SID>\sapdata1...n | Премиум | Только для чтения | Рекомендуется  |
-| \oracle\SID\sapdata(n+1)* | Премиум | Отсутствуют | Можно использовать |
-| \oracle\<SID>\oraarch* | Премиум | Отсутствуют | Не требуется. |
+| \oracle\<SID>\origlogaA | "Премиум" | Нет | Можно использовать  |
+| \oracle\<SID>\origlogaB | "Премиум" | Нет | Можно использовать |
+| \oracle\<SID>\mirrlogAB | "Премиум" | Нет | Можно использовать |
+| \oracle\<SID>\mirrlogBA | "Премиум" | Нет | Можно использовать |
+| \oracle\<SID>\sapdata1...n | "Премиум" | Только для чтения | Рекомендуется  |
+| \oracle\SID\sapdata(n+1)* | "Премиум" | Нет | Можно использовать |
+| \oracle\<SID>\oraarch* | "Премиум" | Нет | Не требуется. |
 | Oracle Home, saptrace, ... | Диск ОС | Не требуется. |
 
 * (n+1): размещение табличных пространств SYSTEM, TEMP и UNDO. Характеристики ввода-вывода для табличных пространств System и Undo существенно отличаются от характеристик других табличных пространств, в которых размещаются данные приложений. Для повышения производительности табличных пространств System и Undo лучше всего отключить кэширование.
@@ -413,14 +413,14 @@ Windows и Oracle Linux являются единственными операц
 Для резервного копирования виртуальных машин с согласованием на уровне приложений также можно использовать Azure Backup. В статье [Резервное копирование виртуальных машин Azure](https://docs.microsoft.com/azure/backup/backup-azure-vms-introduction) объясняется, как Azure Backup использует функциональность Windows VSS для резервного копирования виртуальных машин с согласованием на уровне приложений. Выпуски СУБД Oracle, которые поддерживаются в Azure для SAP, могут использовать функциональность VSS для резервного копирования. Дополнительные сведения см. в разделе об [основных понятиях, связанных с резервным копированием и восстановлением баз данных с помощью VSS](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/ntqrf/basic-concepts-of-database-backup-and-recovery-with-vss.html#GUID-C085101B-237F-4773-A2BF-1C8FD040C701) в документации Oracle.
 
 
-### <a name="high-availability"></a>Высокая надежность
+### <a name="high-availability"></a>Высокий уровень доступности
 Для обеспечения высокой доступности и аварийного восстановления можно использовать Oracle Data Guard. Чтобы обеспечить автоматический переход на другой ресурс в Data Guard, необходимо использовать FSFA (быстрый запуск отработки отказа). Наблюдатель (FSFA) запускает отработку отказа. Если вы не используете FSFA, вам подходит только конфигурация перехода на другой ресурс вручную.
 
 Дополнительные сведения об аспектах аварийного восстановления баз данных Oracle в Azure см. в статье [Аварийное восстановление базы данных Oracle Database 12c в среде Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/oracle-disaster-recovery).
 
-### <a name="accelerated-networking"></a>Ускоренная сеть
+### <a name="accelerated-networking"></a>Ускорение работы в сети
 Для развертываний Oracle в Windows мы настоятельно рекомендуем использовать ускорение работы в сети, как описано в [этой статье](https://azure.microsoft.com/blog/maximize-your-vm-s-performance-with-accelerated-networking-now-generally-available-for-both-windows-and-linux/). Обратите также внимание на рекомендации, приведенные в документе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md). 
-### <a name="other"></a>Другой
+### <a name="other"></a>Прочее
 Другие важные концепции, относящиеся к развертываниям виртуальных машин в Oracle Database, включая группы доступности Azure и мониторинг SAP, описываются в статье [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md).
 
 ## <a name="specifics-for-oracle-database-on-oracle-linux"></a>Особенности Oracle Database в Oracle Linux
@@ -448,7 +448,7 @@ Windows и Oracle Linux являются единственными операц
 
 Настоятельно рекомендуем использовать [Управляемые диски Azure](../../windows/managed-disks-overview.md). Также для развертываний Oracle Database настоятельно рекомендуется использовать [диски SSD Azure ценовой категории "Премиум"](../../windows/disks-types.md).
 
-Сетевые диски и удаленные общие ресурсы, включая файловые службы Azure, не поддерживаются для файлов Oracle Database. Дополнительную информацию см. в следующих разделах. 
+Сетевые диски и удаленные общие ресурсы, включая файловые службы Azure, не поддерживаются для файлов Oracle Database. Дополнительные сведения см. в следующих разделах: 
 
 - [Введение в службы файлов Microsoft Azure](https://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 
@@ -462,34 +462,34 @@ Windows и Oracle Linux являются единственными операц
 
 Минимальная конфигурация:
 
-| Компонент | Диск | Кэширование | Чередование* |
+| Компонент | Диски | Caching | Чередование* |
 | --- | ---| --- | --- |
-| /Оракле/\<SID >/ориглогаа & миррлогб | Премиум | Отсутствуют | Не требуется. |
-| /Оракле/\<SID >/ориглогаб & миррлога | Премиум | Отсутствуют | Не требуется. |
-| /Оракле/\<SID >/sapdata1... \n | Премиум | Только для чтения | Можно использовать |
-| /Оракле/\<SID >/ораарч | Стандарт | Отсутствуют | Не требуется. |
+| /Оракле/\<SID >/Ориглогаа & Миррлогб | "Премиум" | Нет | Не требуется. |
+| /Оракле/\<SID >/Ориглогаб & Миррлога | "Премиум" | Нет | Не требуется. |
+| /Оракле/\<SID >/sapdata1... \n | "Премиум" | Только для чтения | Можно использовать |
+| /Оракле/\<SID >/ораарч | Стандартный | Нет | Не требуется. |
 | Oracle Home, saptrace, ... | Диск ОС | | Не требуется. |
 
-* Чередование: LVM или MDADM на основе RAID0.
+*Чередование: LVM или MDADM на основе RAID0
 
 Выбор дисков для размещения оперативных журналов повторяемых операций Oracle следует основывать на требованиях к операциям ввода-вывода. Есть возможность хранить все табличные пространства (sapdata1...n) на одном подключенном диске, если он соответствует всем требованиям к объему, операциям ввода-вывода в секунду и пропускной способности. 
 
 Конфигурация производительности:
 
-| Компонент | Диск | Кэширование | Чередование* |
+| Компонент | Диски | Caching | Чередование* |
 | --- | ---| --- | --- |
-| /Оракле/\<SID >/ориглогаа | Премиум | Отсутствуют | Можно использовать  |
-| /Оракле/\<SID >/ориглогаб | Премиум | Отсутствуют | Можно использовать |
-| /Оракле/\<SID >/миррлогаб | Премиум | Отсутствуют | Можно использовать |
-| /Оракле/\<SID >/миррлогба | Премиум | Отсутствуют | Можно использовать |
-| /Оракле/\<SID >/sapdata1... \n | Премиум | Только для чтения | Рекомендуется  |
-| /Оракле/\<SID >/sapdata (n + 1) * | Премиум | Отсутствуют | Можно использовать |
-| /Оракле/\<SID >/ораарч * | Премиум | Отсутствуют | Не требуется. |
+| /Оракле/\<SID >/Ориглогаа | "Премиум" | Нет | Можно использовать  |
+| /Оракле/\<SID >/Ориглогаб | "Премиум" | Нет | Можно использовать |
+| /Оракле/\<SID >/Миррлогаб | "Премиум" | Нет | Можно использовать |
+| /Оракле/\<SID >/Миррлогба | "Премиум" | Нет | Можно использовать |
+| /Оракле/\<SID >/sapdata1... \n | "Премиум" | Только для чтения | Рекомендуется  |
+| /Оракле/\<SID >/sapdata (n + 1) * | "Премиум" | Нет | Можно использовать |
+| /Оракле/\<SID >/ораарч * | "Премиум" | Нет | Не требуется. |
 | Oracle Home, saptrace, ... | Диск ОС | Не требуется. |
 
-* Чередование: LVM или MDADM на основе RAID0.
+*Чередование: LVM или MDADM на основе RAID0
 
-* (n+1): размещение табличных пространств SYSTEM, TEMP и UNDO. Характеристики ввода-вывода для табличных пространств System и Undo существенно отличаются от характеристик других табличных пространств, в которых размещаются данные приложений. Для повышения производительности табличных пространств System и Undo лучше всего отключить кэширование.
+\* (n + 1): размещение СИСТЕМНЫХ, временных и ОТМЕНЕНных табличных пространств: шаблон ввода-вывода систем и таблиц отмены отличается от других табличных пространств, в которых размещены данные приложений. Для повышения производительности табличных пространств System и Undo лучше всего отключить кэширование.
 
 * oraarch: пул носителей не является обязательным с точки зрения производительности.
 
@@ -506,13 +506,13 @@ Windows и Oracle Linux являются единственными операц
 
 Дополнительные сведения об использовании служб архивации и восстановления Azure для резервного копирования и восстановления баз данных Oracle см. в статье [Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/oracle-backup-recovery).
 
-### <a name="high-availability"></a>Высокая надежность
+### <a name="high-availability"></a>Высокий уровень доступности
 Для обеспечения высокой доступности и аварийного восстановления можно использовать Oracle Data Guard. Чтобы обеспечить автоматический переход на другой ресурс в Data Guard, необходимо использовать FSFA (быстрый запуск отработки отказа). Компонент "Наблюдатель" (FSFA) запускает отработку отказа. Если вы не используете FSFA, вам подходит только конфигурация перехода на другой ресурс вручную. Дополнительные сведения см. в статье [Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux](https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/configure-oracle-dataguard).
 
 
 Аспекты аварийного восстановления для баз данных Oracle в Azure описаны в статье [Аварийное восстановление базы данных Oracle Database 12c в среде Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/oracle-disaster-recovery).
 
-### <a name="accelerated-networking"></a>Ускоренная сеть
+### <a name="accelerated-networking"></a>Ускорение работы в сети
 Поддержка ускорения работы в сети Azure в Oracle Linux предоставляется в Oracle Linux 7 с обновлением 5 (Oracle Linux 7.5). Если вы не можете обновить Oracle Linux до версии 7.5, можно попробовать применить RedHat Compatible Kernel (RHCK) вместо ядра Oracle UEK. 
 
 Использование ядра RHEL в Oracle Linux поддерживается в соответствии с примечанием SAP [1565179](https://launchpad.support.sap.com/#/notes/1565179). Для ускорения сети Azure можно использовать ядро RHCKL выпуска не менее 3.10.0-862.13.1.el7. Если вы используете ядро UEK в Oracle Linux вместе с [ускоренной сетью Azure](https://azure.microsoft.com/blog/maximize-your-vm-s-performance-with-accelerated-networking-now-generally-available-for-both-windows-and-linux/), необходимо ядро Oracle UEK версии 5.
@@ -523,5 +523,5 @@ sudo curl -so /etc/udev/rules.d/68-azure-sriov-nm-unmanaged.rules https://raw.gi
 </code></pre>
 
 
-### <a name="other"></a>Другой
+### <a name="other"></a>Прочее
 Другие важные концепции, относящиеся к развертываниям виртуальных машин в Oracle Database, включая группы доступности Azure и мониторинг SAP, описываются в статье [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md).

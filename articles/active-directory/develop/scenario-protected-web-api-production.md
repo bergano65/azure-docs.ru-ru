@@ -16,12 +16,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1f643d26e48dce0d2ee8718ac54bbd4bc8a248ab
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 4111945d11fd9b42ae8a7daba9ec993a875a5fd0
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74962497"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423713"
 ---
 # <a name="protected-web-api---move-to-production"></a>Защищенный веб-API — переместить в рабочую среду
 
@@ -36,7 +36,12 @@ ms.locfileid: "74962497"
 > [!div class="nextstepaction"]
 > [Сценарий. веб-API вызывает нисходящие API](scenario-web-api-call-api-overview.md)
 
+
 Дополнительные сведения см. в руководствах и образцах:
+
+
+> [!div class="nextstepaction"]
+> [Вызов защищенного API с помощью управляющей программы](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/tree/master/2-Call-OwnApi)
 
 > [!div class="nextstepaction"]
 > [Учебник по ASP.NET Core веб-API](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2)

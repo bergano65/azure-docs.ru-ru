@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: fab3b919ee3ecb1f8e76b70bada57a5380aaeab8
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 20df41ce6fe2bd6e18445877da4cb4de3c9c3d5b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74927813"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75444207"
 ---
 # <a name="copy-data-from-postgresql-by-using-azure-data-factory"></a>Копирование данных из PostgreSQL с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -52,20 +52,20 @@ ms.locfileid: "74927813"
 
 Для связанной службы PostgreSQL поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **PostgreSql** | ДА |
-| connectionString | Строка подключения к базе данных Azure для PostgreSQL через интерфейс ODBC. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `password` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
+| type | Для свойства type необходимо задать значение **PostgreSql** | Да |
+| connectionString | Строка подключения к базе данных Azure для PostgreSQL через интерфейс ODBC. <br/>Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `password` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
 Типичная строка подключения — `Server=<server>;Database=<database>;Port=<port>;UID=<username>;Password=<Password>`. Дополнительные свойства, которые вы можете установить в вашем случае:
 
-| Свойство | Описание | Параметры | Обязательно для заполнения |
+| Свойство | Description | Параметры | Обязательно для заполнения |
 |:--- |:--- |:--- |:--- |
 | EncryptionMethod (EM)| Метод, используемый драйвером для шифрования данных, отправленных между драйвером и сервером базы данных. Например, `EncryptionMethod=<0/1/6>;`| 0 (без шифрования) **(по умолчанию)** -1 (SSL) или 6 (RequestSSL) | Нет |
 | ValidateServerCertificate (VSC) | Определяет, проверяет ли драйвер сертификат, отправленный сервером базы данных, когда включено шифрование SSL (метод шифрования = 1). Например, `ValidateServerCertificate=<0/1>;`| 0 (отключено) **(по умолчанию)** -1 (включено) | Нет |
 
-**Пример.**
+**Пример**.
 
 ```json
 {
@@ -73,10 +73,7 @@ ms.locfileid: "74927813"
     "properties": {
         "type": "PostgreSql",
         "typeProperties": {
-            "connectionString": {
-                "type": "SecureString",
-                "value": "Server=<server>;Database=<database>;Port=<port>;UID=<username>;Password=<Password>"
-            }
+            "connectionString": "Server=<server>;Database=<database>;Port=<port>;UID=<username>;Password=<Password>"
         },
         "connectVia": {
             "referenceName": "<name of Integration Runtime>",
@@ -94,10 +91,7 @@ ms.locfileid: "74927813"
     "properties": {
         "type": "PostgreSql",
         "typeProperties": {
-            "connectionString": {
-                "type": "SecureString",
-                "value": "Server=<server>;Database=<database>;Port=<port>;UID=<username>;"
-            },
+            "connectionString": "Server=<server>;Database=<database>;Port=<port>;UID=<username>;",
             "password": { 
                 "type": "AzureKeyVaultSecret", 
                 "store": { 
@@ -147,11 +141,11 @@ ms.locfileid: "74927813"
 
 Чтобы скопировать данные из PostgreSQL, поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство Type набора данных должно иметь значение **постгресклтабле** . | ДА |
-| schema | Имя схемы. |Нет (если свойство query указано в источнике действия)  |
-| таблица | Имя таблицы. |Нет (если свойство query указано в источнике действия)  |
+| type | Свойство Type набора данных должно иметь значение **постгресклтабле** . | Да |
+| схема | Имя схемы. |Нет (если свойство query указано в источнике действия)  |
+| table | Имя таблицы. |Нет (если свойство query указано в источнике действия)  |
 | tableName | Имя таблицы со схемой. Это свойство поддерживается для обеспечения обратной совместимости. Используйте `schema` и `table` для новой рабочей нагрузки. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -182,15 +176,15 @@ ms.locfileid: "74927813"
 
 Чтобы скопировать данные из PostgreSQL, в разделе **источник** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство Type источника действия копирования должно иметь значение **постгресклсаурце** . | ДА |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"query": "SELECT * FROM \"MySchema\".\"MyTable\""`. | Нет (если для набора данных задано свойство tableName) |
+| type | Свойство Type источника действия копирования должно иметь значение **постгресклсаурце** . | Да |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например: `"query": "SELECT * FROM \"MySchema\".\"MyTable\""`. | Нет (если для набора данных задано свойство tableName) |
 
 > [!NOTE]
 > В именах схем и таблиц учитывается регистр. Заключите имя в `""` (двойные кавычки) в запросе.
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[

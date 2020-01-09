@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/08/2019
-ms.openlocfilehash: 352e31e2a2f1a88a33e82134460e6df0911dbd2e
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: 33dc415e06b7f49f75697abb05248750444fea7c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72677632"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432642"
 ---
 # <a name="explore-netnet-core-and-python-trace-logs-in-application-insights"></a>Изучение журналов трассировки .NET и .NET Core и Python в Application Insights
 
@@ -135,14 +135,14 @@ ms.locfileid: "72677632"
 ## <a name="use-the-trace-api-directly"></a>Использование API трассировки напрямую
 API трассировки в Application Insights можно вызывать напрямую. Адаптеры ведения журналов используют этот API.
 
-Пример:
+Пример.
 
     var telemetry = new Microsoft.ApplicationInsights.TelemetryClient();
     telemetry.TrackTrace("Slow response - database01");
 
 Преимуществом TrackTrace является возможность добавления в сообщения относительно длинных данных, например данных POST.
 
-Можно также добавить уровень серьезности к сообщению. И, как и другие данные телеметрии, можно добавить значения свойств, чтобы помочь фильтровать или искать различные наборы трассировок. Пример:
+Можно также добавить уровень серьезности к сообщению. И, как и другие данные телеметрии, можно добавить значения свойств, чтобы помочь фильтровать или искать различные наборы трассировок. Пример.
 
     var telemetry = new Microsoft.ApplicationInsights.TelemetryClient();
     telemetry.TrackTrace("Slow database response",
@@ -184,7 +184,7 @@ logger.warning('Hello, World!')
 >Если приложение отправляет большой объем данных и вы используете Application Insights пакет SDK для ASP.NET версии 2.0.0-beta3 или более поздней, функция *адаптивной выборки* может выполнять работу и отправлять только часть вашей телеметрии. [Дополнительная информация о выборке.](../../azure-monitor/app/sampling.md)
 >
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 ### <a name="how-do-i-do-this-for-java"></a>Как это сделать в Java?
 Используйте [адаптеры журналов Java](../../azure-monitor/app/java-trace-logs.md).
 
@@ -209,7 +209,7 @@ logger.warning('Hello, World!')
 ### <a name="i-dont-see-some-log-entries-that-i-expected"></a>Я не вижу некоторые ожидаемые записи журнала
 Если приложение отправляет волуминаус объемы данных и вы используете пакет SDK Application Insights для ASP.NET версии 2.0.0-beta3 или более поздней, функция адаптивной выборки может выполнять работу и отправлять только часть телеметрии. [Дополнительная информация о выборке.](../../azure-monitor/app/sampling.md)
 
-## <a name="add"></a>Дальнейшие действия
+## <a name="add"></a>Следующие шаги
 
 * [Диагностика сбоев и исключений в ASP.NET][exceptions]
 * [Дополнительные сведения о поиске][diagnostic]

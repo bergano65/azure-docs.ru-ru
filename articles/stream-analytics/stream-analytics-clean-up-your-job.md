@@ -1,20 +1,19 @@
 ---
 title: Очистка задания Azure Stream Analytics
 description: В этой статье показаны различные методы удаления заданий Azure Stream Analytics.
-services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
-ms.reviewer: jasonh
+ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: 093ada2b2751540b986154be3a2f333784c1259f
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: d99920417f20034da1001a821c02376ac19274d2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70173287"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75426489"
 ---
 # <a name="stop-or-delete-your-azure-stream-analytics-job"></a>Завершение или удаление задания Azure Stream Analytics
 
@@ -27,7 +26,7 @@ Azure Stream Analytics задания можно легко остановить
 
 При остановке задания ресурсы отменяются и прекращается обработка событий. Расходы, связанные с этим заданием, также останавливаются. Однако все ваши настройки сохраняются, и вы можете перезапустить задание позже. 
 
-1. Войдите на [портале Azure](https://portal.azure.com). 
+1. Войдите на [портал Azure](https://portal.azure.com). 
 
 2. Найдите выполняющееся задание Stream Analytics и выберите его.
 

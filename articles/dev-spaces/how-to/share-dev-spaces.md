@@ -3,14 +3,14 @@ title: Совместное использование Azure Dev Spaces
 services: azure-dev-spaces
 ms.date: 05/11/2018
 ms.topic: conceptual
-description: Быстрая разработка Kubernetes с использованием контейнеров и микрослужб в Azure
-keywords: 'Docker, Kubernetes, Azure, служба контейнеров Azure, служба Azure Kubernetes, контейнеры, Helm, сетка службы, сетка службы маршрутизации, kubectl, k8s '
-ms.openlocfilehash: 2c85625a4f61b701bc1e8b0a4a06f71dc0989ce0
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+description: Узнайте, как использовать Azure Dev Spaces для совместного использования пространства разработки в службе Azure Kubernetes с другими пользователями вашей команды
+keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
+ms.openlocfilehash: 5e3a18ea205eda5617eab094046ec6536e82d113
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74279992"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438435"
 ---
 # <a name="share-azure-dev-spaces"></a>Общий доступ к средам разработки в Azure Dev Spaces
 
@@ -26,6 +26,6 @@ ms.locfileid: "74279992"
 
      ![Раскрывающийся список параметров запуска в Visual Studio](../media/get-started-netcore-visualstudio/LaunchSettings.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. [дополнительные сведения о коллективной разработке](../team-development-nodejs.md).

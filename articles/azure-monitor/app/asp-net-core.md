@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/22/2019
-ms.openlocfilehash: 823527af81e0cb22fb59421b84983684d4cdfffd
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: 52314f0802acd6a296177d53ee9babb133172761
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74286247"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75407506"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights для ASP.NET Core приложений
 
@@ -20,7 +20,7 @@ ms.locfileid: "74286247"
 
 В качестве примера мы будем использовать [приложение MVC](https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app) , предназначенное для `netcoreapp2.2`. Эти инструкции можно применить ко всем ASP.NET Coreным приложениям.
 
-## <a name="supported-scenarios"></a>Поддерживаемые сценарии использования.
+## <a name="supported-scenarios"></a>Поддерживаемые сценарии
 
 [Пакет SDK Application Insights для ASP.NET Core](https://nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore) может отслеживать приложения независимо от того, где или как они выполняются. Если приложение работает и имеет сетевое подключение к Azure, можно собирать данные телеметрии. Мониторинг Application Insights поддерживается везде, где поддерживается .NET Core. Поддержка:
 * **Операционная система**: Windows, Linux или Mac.
@@ -34,7 +34,7 @@ ms.locfileid: "74286247"
 > [!NOTE]
 > Если вы используете ASP.NET Core 3,0 вместе с Application Insights, используйте версию [2.8.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.8.0) или более позднюю. Это единственная версия, которая поддерживает ASP.NET Core 3,0.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 - Работающее приложение ASP.NET Core. Если необходимо создать ASP.NET Core приложение, следуйте указаниям в этом [ASP.NET Coreном руководстве](https://docs.microsoft.com/aspnet/core/getting-started/).
 - Допустимый ключ инструментирования Application Insights. Этот ключ необходим для отправки любых данных телеметрии в Application Insights. Если необходимо создать новый Application Insights ресурс для получения ключа инструментирования, см. раздел [Создание ресурса Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource).
@@ -66,7 +66,7 @@ ms.locfileid: "74286247"
 
     ```xml
         <ItemGroup>
-          <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.8.0" />
+          <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.12.0" />
         </ItemGroup>
     ```
 
@@ -107,7 +107,7 @@ ms.locfileid: "74286247"
 
     * `ApplicationInsights:InstrumentationKey`
 
-    Например,
+    Пример.
 
     * `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
 
@@ -195,7 +195,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Полный список параметров в `ApplicationInsightsServiceOptions`
 
-|Настройка | ОПИСАНИЕ | значение по умолчанию
+|Параметр | Description | По умолчанию
 |---------------|-------|-------
 |енаблекуиккпулсеметрикстреам | Включить или отключить функцию Ливеметрикс | true
 |енаблеадаптивесамплинг | Включение или отключение адаптивной выборки | true
@@ -205,7 +205,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Просмотрите [Настраиваемые параметры в `ApplicationInsightsServiceOptions`](https://github.com/microsoft/ApplicationInsights-dotnet/blob/develop/NETCORE/src/Shared/Extensions/ApplicationInsightsServiceOptions.cs) для наиболее актуального списка.
 
-### <a name="sampling"></a>выборки
+### <a name="sampling"></a>Выборка
 
 Пакет SDK Application Insights для ASP.NET Core поддерживает как фиксированную, так и адаптивную выборку. Адаптивная выборка включена по умолчанию. 
 
@@ -406,7 +406,7 @@ public class HomeController : Controller
 
 ### <a name="can-i-enable-application-insights-monitoring-by-using-tools-like-status-monitor"></a>Можно ли включить Application Insights мониторинг с помощью таких средств, как монитор состояния?
 
-Нет В настоящее время [Монитор состояния](https://docs.microsoft.com/azure/azure-monitor/app/monitor-performance-live-website-now) и [Монитор состояния v2](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview) поддерживают только ASP.NET 4. x.
+Нет. В настоящее время [Монитор состояния](https://docs.microsoft.com/azure/azure-monitor/app/monitor-performance-live-website-now) и [Монитор состояния v2](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview) поддерживают только ASP.NET 4. x.
 
 ### <a name="is-application-insights-automatically-enabled-for-my-aspnet-core-20-application"></a>Включено ли Application Insights для приложения ASP.NET Core 2,0 автоматически?
 
@@ -441,14 +441,14 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 
 ## <a name="open-source-sdk"></a>Пакет SDK с открытым исходным кодом
 
-[Чтение кода и дополнительные наработки](https://github.com/Microsoft/ApplicationInsights-aspnetcore#recent-updates).
+[Чтение кода и дополнительные наработки](https://github.com/microsoft/ApplicationInsights-dotnet#recent-updates).
 
 ## <a name="video"></a>Видео
 
 - Ознакомьтесь с этим внешним пошаговым видео, чтобы [настроить Application Insights с .NET Core и Visual Studio](https://www.youtube.com/watch?v=NoS9UhcR4gA&t) с нуля.
 - Ознакомьтесь с этим внешним пошаговым видео, чтобы [настроить Application Insights с .NET Core и Visual Studio Code](https://youtu.be/ygGt84GDync) с нуля.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Изучите потоки пользователей](../../azure-monitor/app/usage-flows.md) , чтобы понять, как пользователи переходят через приложение.
 * [Настройте сбор моментальных снимков](https://docs.microsoft.com/azure/application-insights/app-insights-snapshot-debugger) для просмотра состояния исходного кода и переменных в момент возникновения исключения.

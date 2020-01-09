@@ -1,25 +1,16 @@
 ---
-title: Запрос событий кластера с помощью интерфейсов API EventStore в кластерах Azure Service Fabric | Документация Майкрософт
+title: Запрос событий кластера с помощью API-интерфейсов Евентсторе
 description: Узнайте, как использовать интерфейсы API EventStore в Azure Service Fabric для запроса событий платформы.
-services: service-fabric
-documentationcenter: .net
 author: srrengar
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 02/25/2019
 ms.author: srrengar
-ms.openlocfilehash: facbcd6def7451ca83bdf00fe9b7c7cac2c74945
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 48350caef6bdaafda9aff7ac776d67b314aeaf8c
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60392880"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614406"
 ---
 # <a name="query-eventstore-apis-for-cluster-events"></a>Выполнение запросов к интерфейсам API EventStore для получения событий кластера
 
@@ -41,7 +32,7 @@ ms.locfileid: "60392880"
 
 У каждой сущности в кластере можно запросить события. Можно также запрашивать события для всех сущностей определенного типа. Например, можно запросить события для конкретного узла или для всех узлов в кластере. Текущий набор сущностей, для которых вы можете запрашивать события (и структура запроса):
 * кластер: `/EventsStore/Cluster/Events`;
-* узлы: `/EventsStore/Nodes/Events`;
+* Узлы: `/EventsStore/Nodes/Events`
 * узел: `/EventsStore/Nodes/<NodeName>/$/Events`;
 * приложения: `/EventsStore/Applications/Events`;
 * приложение: `/EventsStore/Applications/<AppName>/$/Events`;

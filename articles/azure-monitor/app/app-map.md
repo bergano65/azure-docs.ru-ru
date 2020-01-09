@@ -8,12 +8,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 03/15/2019
 ms.reviewer: sdash
-ms.openlocfilehash: 305de556cc6e50af21cb38aa1b8073b420efbf43
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 006ea071ce1ab0354ecf191cdde2e031255ef4ce
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73887751"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75407698"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -69,13 +69,13 @@ ms.locfileid: "73887751"
 
 ![Снимок экрана с окном сведений о сквозных транзакциях](media/app-map/end-to-end-transaction.png)
 
-### <a name="view-in-analytics"></a>Просмотр в службе Analytics
+### <a name="view-logs-analytics"></a>Просмотр журналов (аналитика)
 
-Чтобы запросить и исследовать данные о приложении, нажмите кнопку **Просмотр в службе Analytics**.
+Для дальнейшего запроса и изучения данных приложений щелкните **Просмотр в журналах (аналитика)** .
 
-![Снимок экрана с кнопкой "Просмотр в службе Analytics"](media/app-map/view-in-analytics.png)
+![Снимок экрана с кнопкой "Просмотр в службе Analytics"](media/app-map/view-logs.png)
 
-![Снимок экрана с интерфейсом службы Analytics](media/app-map/analytics.png)
+![Снимок экрана с аналитическими возможностями. Линейный график, суммирующий среднюю продолжительность ответа запроса за последние 12 часов.](media/app-map/log-analytics.png)
 
 ### <a name="alerts"></a>Оповещения
 
@@ -178,7 +178,7 @@ appInsights.defaultClient.addTelemetryProcessor(envelope => {
 });
 ```
 
-### <a name="java"></a>Java:
+### <a name="java"></a>Java
 
 Начиная с Application Insights пакета SDK 2.5.0 для Java можно указать имя облачной роли, добавив `<RoleName>` в файл `ApplicationInsights.xml`, например
 
@@ -230,13 +230,13 @@ appInsights.addTelemetryInitializer((envelope) => {
     715: string      CloudRoleInstance = "ai.cloud.roleInstance";
 ```
 
-Кроме того, **экземпляр облачной роли** может быть полезен в сценариях, где **имя роли облака** сообщает о проблеме в клиентском веб-интерфейсе, но может быть запущен внешний веб-интерфейс на нескольких серверах с балансировкой нагрузки, чтобы иметь возможность подробное изучение слоя с помощью запросов Kusto и знание того, влияет ли эта ошибка на все серверы и экземпляры клиентского веб-интерфейса или только на один из них, может быть чрезвычайно важен.
+Кроме того, **экземпляр облачной роли** может быть полезен в сценариях, где **имя роли облака** сообщает о проблеме в веб-интерфейсе, но вы можете запустить веб-интерфейс на нескольких серверах с балансировкой нагрузки, чтобы иметь возможность детально углубиться в слое через запросы Kusto и знать, что проблема влияет на все серверы и экземпляры клиентского веб-интерфейса, или только на один из них чрезвычайно важен.
 
 Сценарий, в котором может потребоваться переопределить значение для экземпляра облачной роли, может быть в том случае, если приложение выполняется в контейнерной среде, в котором только знание отдельного сервера может оказаться недостаточно для определения конкретной проблемы.
 
 Дополнительные сведения о том, как переопределить свойство имени облачной роли с помощью инициализаторов телеметрии, см. в разделе [Добавление свойств: ITelemetryInitializer](api-filtering-sampling.md#addmodify-properties-itelemetryinitializer).
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
 Если схема приложений не работает должным образом, попробуйте сделать следующее:
 
@@ -274,7 +274,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 ![Изображение MapLink-1](./media/app-map/14-updated.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о работе корреляции в Application Insights см. в [статье корреляция телеметрии](https://docs.microsoft.com/azure/application-insights/application-insights-correlation).
 * Средство [диагностики сквозных транзакций](transaction-diagnostics.md) сопоставляет данные телеметрии на стороне сервера от всех Application Insights отслеживаемых компонентов в едином представлении.

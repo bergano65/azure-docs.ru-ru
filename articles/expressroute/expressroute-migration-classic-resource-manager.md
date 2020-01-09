@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 06/13/2019
 ms.author: cherylmc
-ms.openlocfilehash: 2b74523f42a1f57805388aa8c60cf1ad5b1d1331
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: b24400b2a6a2050fa74b23f936253046f96a9028
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74080085"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75436892"
 ---
 # <a name="migrate-expressroute-associated-virtual-networks-from-classic-to-resource-manager"></a>Перенос виртуальных сетей, связанных с ExpressRoute, из классической модели в модель развертывания с помощью Resource Manager
 
@@ -22,7 +22,7 @@ ms.locfileid: "74080085"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-* Убедитесь, что у вас установлены последние версии модулей Azure PowerShell. Дополнительные сведения см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview). Сведения об установке модуля управления службами PowerShell (который необходим для классической модели развертывания) см. в разделе [Установка модуля управления Azure PowerShell служб](/powershell/azure/servicemanagement/install-azure-ps).
+* Убедитесь, что у вас установлены последние версии модулей Azure PowerShell. Подробнее: [Установка и настройка Azure PowerShell](/powershell/azure/overview). Сведения об установке модуля управления службами PowerShell (который необходим для классической модели развертывания) см. в разделе [Установка модуля управления Azure PowerShell служб](/powershell/azure/servicemanagement/install-azure-ps).
 * Не забудьте изучить [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md), прежде чем приступать к настройке.
 * Просмотрите сведения в статье [Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager](expressroute-move.md). Убедитесь, что вам полностью понятны пределы и ограничения.
 * Убедитесь, что канал полноценно работает в классической модели развертывания.
@@ -40,7 +40,7 @@ ms.locfileid: "74080085"
 * Виртуальные сети, шлюзы и связанные развертывания в виртуальной сети, подключенные к каналу ExpressRoute в одной подписке, можно перенести в среду Resource Manager без простоев. Выполните приведенные ниже действия, чтобы перенести ресурсы, такие как виртуальные сети, шлюзы и виртуальные машины, развернутые в виртуальной сети. Прежде чем приступать к переносу виртуальных сетей, необходимо убедиться, что они настроены правильно. 
 * Для переноса виртуальных сетей, шлюзов и связанных развертываний в виртуальной сети, которые принадлежат не к той подписке, где находится канал ExpressRoute, требуется некоторое время простоя. В последнем разделе статьи описываются шаги, которые необходимо выполнить при переносе ресурсов.
 * Виртуальную сеть с обоими шлюзами (ExpressRoute и VPN-шлюз) нельзя переместить.
-* Перенос канала ExpressRoute в другие подписки не поддерживается. Дополнительные сведения см. в разделе [Поддержка перемещения Microsoft. Network](../azure-resource-manager/move-support-resources.md#microsoftnetwork).
+* Перенос канала ExpressRoute в другие подписки не поддерживается. Дополнительные сведения см. в разделе [Поддержка перемещения Microsoft. Network](../azure-resource-manager/management/move-support-resources.md#microsoftnetwork).
 
 ## <a name="move-an-expressroute-circuit-from-classic-to-resource-manager"></a>Перемещение канала ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager
 Прежде чем приступить к переносу ресурсов, подключенных к каналу ExpressRoute, этот канал необходимо переместить из классической среды в среду Resource Manager. Для этого используйте приведенные ниже ссылки:
@@ -81,7 +81,7 @@ ms.locfileid: "74080085"
    Move-AzureVirtualNetwork -Abort $vnetName
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Поддерживаемый платформой перенос ресурсов IaaS из классической модели в модель Azure Resource Manager](../virtual-machines/virtual-machines-windows-migration-classic-resource-manager.md)
 * [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](../virtual-machines/virtual-machines-windows-migration-classic-resource-manager-deep-dive.md)
 * [Platform-supported migration of IaaS resources from classic to Azure Resource Manager](../virtual-machines/virtual-machines-windows-migration-classic-resource-manager.md) (Поддерживаемый платформой перенос ресурсов IaaS из классической модели в модель Azure Resource Manager)

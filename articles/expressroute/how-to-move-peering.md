@@ -5,15 +5,14 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: article
-ms.date: 03/12/2018
+ms.date: 12/12/2019
 ms.author: cherylmc
-ms.custom: seodec18
-ms.openlocfilehash: f9ed841d347d99a2208971d164bbd7b9044e3b09
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 48ecfcc0d6241e7926892a3ca1c9925b0dc07241
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74031588"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75436839"
 ---
 # <a name="move-a-public-peering-to-microsoft-peering"></a>Переход с общедоступного пиринга на пиринг Майкрософт
 
@@ -63,9 +62,9 @@ ms.locfileid: "74031588"
 
 Убедитесь, что включен пиринг Майкрософт и объявленные общедоступные префиксы находятся в настроенном состоянии.
 
-* [портал Azure](expressroute-howto-routing-portal-resource-manager.md#getmsft)<br>
+* [Портал Azure](expressroute-howto-routing-portal-resource-manager.md#getmsft)<br>
 * [Azure PowerShell](expressroute-howto-routing-arm.md#getmsft)<br>
-* [Интерфейс командной строки Azure](howto-routing-cli.md#getmsft)
+* [Azure CLI](howto-routing-cli.md#getmsft)
 
 ## <a name="routefilter"></a>3. Настройка и присоединение фильтра маршрута к каналу
 
@@ -83,14 +82,13 @@ ms.locfileid: "74031588"
 
 Убедившись, что пиринг Майкрософт настроен и префиксы, которые вы хотите использовать, правильно объявлены, можно удалять общедоступный пиринг. Чтобы удалить общедоступный пиринг, воспользуйтесь инструкциями в любой из следующих статей:
 
-* [Удаление общедоступного пиринга Azure на портале Azure](expressroute-howto-routing-portal-resource-manager.md#deletepublic)<br>
-* [Удаление общедоступного пиринга Azure с помощью Azure PowerShell](expressroute-howto-routing-arm.md#deletepublic)<br>
-* [Удаление общедоступного пиринга Azure с помощью CLI](howto-routing-cli.md#deletepublic)
+* [Удаление общедоступного пиринга Azure с помощью Azure PowerShell](about-public-peering.md#powershell)
+* [Удаление общедоступного пиринга Azure с помощью CLI](about-public-peering.md#cli)
   
 ## <a name="view"></a>5. Просмотр пиринга
   
 На портале Azure вы можете просмотреть список всех каналов и пирингов ExpressRoute. Дополнительные сведения см. в разделе [Просмотр сведений о пиринге Майкрософт](expressroute-howto-routing-portal-resource-manager.md#getmsft).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

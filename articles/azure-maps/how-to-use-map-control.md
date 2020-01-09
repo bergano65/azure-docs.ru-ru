@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: ff183261f67ff76f56fc034d8102e3aa3a4838a8
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: d70d0e1107a6ee1b53b178d8912c1b808472b142
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74480518"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432913"
 ---
 # <a name="use-the-azure-maps-map-control"></a>Использование элемента управления картой Azure Maps
 
@@ -27,7 +27,7 @@ ms.locfileid: "74480518"
 
 2. Загрузите в веб-пакет SDK Azure Maps. Это можно сделать с помощью одного из двух параметров.
 
-    a. Используйте размещенную на глобальном уровне версию CDN веб-пакета SDK Azure Maps, добавив конечные точки URL-адреса в таблицу стилей и источник сценария в элементе `<head>` файла.
+    а. Используйте размещенную на глобальном уровне версию CDN веб-пакета SDK Azure Maps, добавив конечные точки URL-адреса в таблицу стилей и источник сценария в элементе `<head>` файла.
 
     ```HTML
     <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css">
@@ -36,7 +36,7 @@ ms.locfileid: "74480518"
 
     b. Кроме того, загрузите исходный код веб-пакета SDK Azure Maps локально с помощью пакета NPM [azure-maps-control](https://www.npmjs.com/package/azure-maps-control) и разместите его в приложении. Этот пакет также включает определения TypeScript.
 
-    > npm install azure-maps-control
+    > **NPM. Установка Azure-Maps-Control**
 
     Затем добавьте ссылки на стили и источник сценария Azure Maps в элемент `<head>` файла.
 
@@ -66,7 +66,7 @@ ms.locfileid: "74480518"
     </style>
     ```
 
-4. В основной области страницы добавьте элемент `<div>` и присвойте ему `id` **myMap**.
+4. В основной области страницы добавьте элемент `<div>` и присвойте ему `id`**myMap**.
 
     ```HTML
     <body>
@@ -74,7 +74,7 @@ ms.locfileid: "74480518"
     </body>
     ```
 
-5. Для инициализации элемента управления картой определите новый раздел в тексте html и создайте сценарий. Передайте `id` `<div>` карты или `HTMLElement` (например, `document.getElementById('myMap')`) в качестве первого параметра при создании экземпляра класса `Map`. Используйте собственный ключ учетной записи Azure Maps или учетные данные Azure Active Directory (AAD), чтобы выполнить проверку подлинности сопоставления с помощью [параметров проверки подлинности](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.authenticationoptions). Если вам нужно создать учетную запись или найти ключ, см. статью об [управлении учетной записью и ключами в Azure Maps](how-to-manage-account-keys.md). Параметр **language** задает язык, который используется для метки схемы и элементов управления. Полный список поддерживаемых языков см. в разделе [Поддерживаемые языки](supported-languages.md). Если используется ключ подписки для проверки подлинности.
+5. Для инициализации элемента управления картой определите новый раздел в тексте html и создайте сценарий. Передайте `id` `<div>` карты или `HTMLElement` (например, `document.getElementById('myMap')`) в качестве первого параметра при создании экземпляра класса `Map`. Используйте собственный ключ учетной записи Azure Maps или учетные данные Azure Active Directory (AAD), чтобы выполнить проверку подлинности сопоставления с помощью [параметров проверки подлинности](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.authenticationoptions). Если вам нужно создать учетную запись или найти свой ключ, следуйте инструкциям в разделе [Создание учетной](quick-demo-map-app.md#create-an-account-with-azure-maps) записи для создания подписки на учетную запись Azure Maps и выполните действия, описанные в статье [Получение первичного ключа](quick-demo-map-app.md#get-the-primary-key-for-your-account) для получения первичного ключа для вашей учетной записи. Параметр **language** задает язык, который используется для метки схемы и элементов управления. Полный список поддерживаемых языков см. в разделе [Поддерживаемые языки](supported-languages.md). Если используется ключ подписки для проверки подлинности.
 
     ```HTML
     <script type="text/javascript">
@@ -211,7 +211,27 @@ map = new atlas.Map('myMap', {
 
 Полный список поддерживаемых языков и региональных представлений приведен [здесь](supported-languages.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="azure-government-cloud-support"></a>Облачная поддержка Azure для государственных организаций
+
+Azure Maps веб-пакет SDK поддерживает облако Azure для государственных организаций. Все URL-адреса JavaScript и CSS, используемые для доступа к Azure Maps Web SDK, остаются прежними, однако для подключения к облачной версии платформы Azure Maps на платформе Azure для государственных организаций необходимо выполнить следующие задачи.
+
+При использовании интерактивного элемента управления картой добавьте следующую строку кода перед созданием экземпляра класса `Map`. 
+
+```javascript
+atlas.setDomain('atlas.azure.us');
+```
+
+При проверке подлинности карт и служб обязательно используйте сведения о проверке подлинности Azure Maps на облачной платформе Azure для государственных организаций.
+
+При использовании модуля служб необходимо задать домен для служб при создании экземпляра конечной точки URL-адреса API. Например, следующий код создает экземпляр класса `SearchURL` и указывает домен в облаке Azure для государственных организаций.
+
+```javascript
+var searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');
+```
+
+При непосредственном доступе к службам Azure Maps RESTFUL измените домен URL-адресов на `atlas.azure.us`. Например, при использовании службы API поиска измените домен URL-адреса с `https://atlas.microsoft.com/search/` на `https://atlas.azure.us/search/`.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как создавать и взаимодействовать с картой:
 

@@ -1,5 +1,6 @@
 ---
-title: Изменение содержимого страниц на портале разработчика в службе управления API Azure | Документация Майкрософт
+title: Изменение содержимого страницы на портале разработчика в управлении API
+titleSuffix: Azure API Management
 description: Узнайте, как изменить содержимое страниц на портале разработчика в службе управления API Azure.
 services: api-management
 documentationcenter: ''
@@ -13,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/09/2017
 ms.author: vlvinogr
-ms.openlocfilehash: 0a333b1fac78889b61829b869c23efea5e312adf
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: ebf2cbd430339378a09d10d91ad61327d24842e4
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70072267"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75430633"
 ---
 # <a name="modify-the-content-and-layout-of-pages-on-the-developer-portal-in-azure-api-management"></a>Изменение содержимого и макета страниц на портале разработчика в службе управления API Azure
 Существуют три основных способа настройки портала разработчика в службе управления Azure API.
 
-* [Изменение содержимого статических страниц и элементов макета страницы][modify-content-layout] (описывается в этом разделе)
+* [Изменение содержимого статических страниц и элементов макета страницы][modify-content-layout] (см. описание в этом пошаговом окне)
 * [Обновление стилей, используемых для элементов страницы на портале разработчика][customize-styles]
-* [Изменение шаблонов, используемых для страниц][portal-templates] , создаваемых порталом (например, документация по API, продукты, проверка подлинности пользователей и т. д.)
+* [Изменение шаблонов, используемых для страниц, создаваемых порталом][portal-templates] (например, документация по API, продукты, проверка подлинности пользователей и т. д.).
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
@@ -56,7 +57,7 @@ ms.locfileid: "70072267"
 
 ## <a name="next-steps"> </a>Дальнейшие действия
 * [Обновление стилей, используемых для элементов страницы на портале разработчика][customize-styles]
-* [Изменение шаблонов, используемых для страниц][portal-templates] , создаваемых порталом (например, документация по API, продукты, проверка подлинности пользователей и т. д.)
+* [Изменение шаблонов, используемых для страниц, создаваемых порталом][portal-templates] (например, документация по API, продукты, проверка подлинности пользователей и т. д.).
 
 [Structure of developer portal pages]: #page-structure
 [Modifying the contents of a layout widget]: #modify-layout-widget
