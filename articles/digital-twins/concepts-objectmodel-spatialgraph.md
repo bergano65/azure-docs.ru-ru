@@ -7,13 +7,13 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 11/05/2019
-ms.openlocfilehash: 85fb67248a69a2726fef99ebe4749d61807631e4
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.date: 12/30/2019
+ms.openlocfilehash: cafec321e7c40e27d8de731feda1103451271507
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74010089"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75562601"
 ---
 # <a name="understand-digital-twins-object-models-and-spatial-intelligence-graph"></a>Основные сведения об объектных моделях и пространственном интеллектуальном графе в Digital Twins
 
@@ -58,7 +58,7 @@ Azure Digital Twins — это служба Интернета вещей Azure,
 
 Пространственный граф — это иерархический граф пространств, устройств и людей, определенных в объектной модели Digital Twins. Пространственный граф поддерживает наследование, фильтрацию, обход, масштабируемость и расширяемость. Вы можете взаимодействовать с пространственным графом и управлять им с помощью коллекции REST API.
 
-Развернув службу Digital Twins в подписке, вы становитесь глобальным администратором корневого узла. Вы автоматически получаете полный доступ ко всей структуре. Пространства в графе предоставляются через API Space. API Device позволяет предоставлять службы, а API Sensor — датчики. Кроме того, для подготовки графа в пакетном режиме доступны [инструменты с открытым кодом](https://github.com/Azure-Samples/digital-twins-samples-csharp).
+Развернув службу Digital Twins в подписке, вы становитесь глобальным администратором корневого узла. Вы автоматически получаете полный доступ ко всей структуре. Пространства в графе предоставляются через API Space. API Device позволяет предоставлять службы, а API Sensor — датчики. [Средства с открытым исходным кодом](https://github.com/Azure-Samples/digital-twins-samples-csharp) также доступны для выполнения операций с графикой.
 
 **Наследование в графе.** Наследование применяется к разрешениям и свойствам, которые распространяются с родительского узла на все дочерние. Например, пользователю на узле назначается определенная роль. Этот пользователь получает соответствующие разрешения как для этого узла, так и для всех его дочерних узлов. Дочерние узлы также наследуют все ключи свойств и расширенные типы, определенные для родительского узла.
 
@@ -78,7 +78,7 @@ Azure Digital Twins — это служба Интернета вещей Azure,
 https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/swagger
 ```
 
-| имя | Заменить на |
+| Имя | Заменить на |
 | --- | --- |
 | YOUR_INSTANCE_NAME | Имя экземпляра Digital Twins |
 | YOUR_LOCATION | Регион сервера, в котором размещен ваш экземпляр |
@@ -97,7 +97,7 @@ https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/swagger
 
 Все вызовы API должны пройти аутентификацию с помощью [OAuth](https://docs.microsoft.com/azure/active-directory/develop/v1-protocols-oauth-code). В API-интерфейсах выполняются [рекомендации по REST API от корпорации Майкрософт](https://github.com/Microsoft/api-guidelines/blob/master/Guidelines.md). Большинство API-интерфейсов, возвращающих коллекции, поддерживают параметры системного запроса [OData](https://www.odata.org/getting-started/basic-tutorial/#queryData).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о подключении к устройству и отправке сообщений телеметрии в Digital Twins см. в статье [Возможность подключения устройств и входящие данные телеметрии](concepts-device-ingress.md).
 

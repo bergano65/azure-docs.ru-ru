@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 92ac1e6a85023d49ceb8242b93651a60da3d2166
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 996893f95b11d716feb4253688d3ab1d62d140ee
+ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71064184"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75659531"
 ---
 # <a name="javascript-samples-for-use-in-azure-active-directory-b2c"></a>Примеры JavaScript для Azure Active Directory B2C
 
@@ -26,9 +26,13 @@ ms.locfileid: "71064184"
 > [!NOTE]
 > Если вы хотите включить JavaScript для потоков пользователей, см. раздел [версии JavaScript и страницы в Azure Active Directory B2C](user-flow-javascript-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-Выберите макет страницы для элементов пользовательского интерфейса приложения. Если вы планируете использовать JavaScript, необходимо определить версию макета страницы для всех определений содержимого в пользовательской политике.
+### <a name="select-a-page-layout"></a>Выберите макет страницы
+
+* [Выберите макет страницы](page-layout.md) для элементов пользовательского интерфейса приложения.
+
+    Если предполагается использовать JavaScript, необходимо [определить версию макета страницы](page-layout.md#replace-datauri-values) для *всех* определений содержимого в пользовательской политике.
 
 ## <a name="add-the-scriptexecution-element"></a>Добавление элемента ScriptExecution
 
@@ -145,6 +149,6 @@ function addTermsOfUseLink() {
 
 Замените `termsOfUseUrl` ссылкой на ваше соглашение об условиях использования. Для каталога создайте новый атрибут пользователя с именем **термсофусе** , а затем включите **термсофусе** в качестве атрибута пользователя.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о настройке пользовательского интерфейса приложений см. в статье [Настройка пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C](active-directory-b2c-ui-customization-custom.md).

@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/13/2019
+ms.date: 12/30/2019
 ms.author: rkarlin
-ms.openlocfilehash: 5142204db86158937c16d19bf52fb677099598a5
-ms.sourcegitcommit: e0a1a9e4a5c92d57deb168580e8aa1306bd94723
+ms.openlocfilehash: 97f10058038e3bf4fbcca2cf86d074869ffefed4
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72284663"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75610698"
 ---
 # <a name="connect-your-barracuda-appliance"></a>Подключение устройства Barracuda 
 
@@ -37,7 +37,7 @@ ms.locfileid: "72284663"
 1. Перейдите в [Barracuda WAF Configuration Flow](https://campus.barracuda.com/product/webapplicationfirewall/doc/73696965/configure-the-barracuda-web-application-firewall-to-integrate-with-the-oms-server-and-export-logs/)и следуйте инструкциям по настройке подключения, используя следующие параметры:
     - **Идентификатор рабочей области**: СКОПИРУЙТЕ значение идентификатора рабочей области со страницы соединителя Azure Sentinel Barracuda.
     - **Первичный ключ**. Скопируйте значение первичного ключа со страницы соединителя Azure Sentinel Barracuda.
-1. Чтобы использовать соответствующую схему в Log Analytics для событий Barracuda, выполните поиск по запросу **CommonSecurityLog** и **barracuda_CL**.
+1. Чтобы использовать соответствующую схему в Log Analytics для событий Barracuda, выполните поиск **CommonSecurityLog** и **barracuda_CL**.
 
 
 ## <a name="validate-connectivity"></a>Проверка подключения
@@ -46,8 +46,10 @@ ms.locfileid: "72284663"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить устройства Barracuda к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
-- Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
+- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+
 

@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/04/2019
+ms.date: 12/30/2019
 ms.author: cabailey
-ms.openlocfilehash: 3d467026022a7bc90babd94827d64828f59ea714
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: f7d5531c8aba3e2e7abb56d82342bfda79dbc71b
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73518129"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75610732"
 ---
-# <a name="connect-barracuda-cloudgen-firewall"></a>Подключение брандмауэра Barracuda Клауджен
+# <a name="connect-barracuda-cloudgen-firewall"></a>Подключение Barracuda CloudGen Firewall
 
 Соединитель Barracuda Клауджен Firewall (КГФВ) позволяет легко подключать журналы Barracuda КГФВ к Azure Sentinel, просматривать панели мониторинга, создавать пользовательские оповещения и улучшать расследования. Это позволяет получить более подробные сведения о сети организации и улучшить возможности обеспечения безопасности.
 
@@ -45,6 +45,8 @@ ms.locfileid: "73518129"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить Barracuda Клауджен Firewall к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
-- Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
+- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+
 

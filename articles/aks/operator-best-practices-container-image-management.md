@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: mlearned
-ms.openlocfilehash: 3feadaca361950df2a09f8da33fe380fc3763763
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: cd859a4009782ca39732ec004a3d3e05edd377b0
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67614815"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75442900"
 ---
 # <a name="best-practices-for-container-image-management-and-security-in-azure-kubernetes-service-aks"></a>Рекомендации по управлению и защите образов контейнеров в Службе Azure Kubernetes (AKS)
 
@@ -25,6 +25,8 @@ ms.locfileid: "67614815"
 > * автоматически активировать и повторно развертывать образы контейнеров при обновлении базового образа.
 
 Вы также можете ознакомиться с рекомендациями по [обеспечению безопасности кластера][best-practices-cluster-security] и [безопасности Pod][best-practices-pod-security].
+
+Вы также можете использовать [безопасность контейнеров в центре безопасности][security-center-containers] , чтобы найти уязвимости в контейнерах.  Существует также [Интеграция реестра контейнеров Azure][security-center-acr] с центром безопасности для защиты образов и реестра от уязвимостей.
 
 ## <a name="secure-the-images-and-run-time"></a>Защита образов и время выполнения
 
@@ -46,7 +48,7 @@ ms.locfileid: "67614815"
 
 Дополнительные сведения об обновлениях базовых образов см. в разделе [Автоматизация сборок образа в базовом обновлении образа с помощью задач реестра контейнеров Azure][acr-base-image-update].
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Эта статья посвящена вопросам безопасности контейнеров. Для реализации части этих рекомендаций требуются сведения, опубликованные в следующих статьях:
 
@@ -61,3 +63,5 @@ ms.locfileid: "67614815"
 [best-practices-cluster-security]: operator-best-practices-cluster-security.md
 [best-practices-pod-security]: developer-best-practices-pod-security.md
 [acr-base-image-update]: ../container-registry/container-registry-tutorial-base-image-update.md
+[security-center-containers]: /azure/security-center/container-security
+[security-center-acr]: /azure/security-center/azure-container-registry-integration

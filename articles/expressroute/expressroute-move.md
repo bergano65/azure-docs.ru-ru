@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: ganesr
-ms.openlocfilehash: f232e1e8a1f7121b047a846fc2c614b48e757f76
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: c4fed30f7f4b723f04cd59b2a987b498e3d614a5
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74076642"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645911"
 ---
 # <a name="moving-expressroute-circuits-from-the-classic-to-the-resource-manager-deployment-model"></a>Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager
 В этой статье описывается перемещение канала Azure ExpressRoute из классической модели развертывания в модель развертывания с помощью Azure Resource Manager.
@@ -39,7 +39,7 @@ ms.locfileid: "74076642"
 * Доступ к классической модели развертывания контролируется параметром **allowClassicOperations** в канале ExpressRoute.
 
 > [!IMPORTANT]
-> Применяются все квоты, описанные на странице об [ограничениях службы](../azure-subscription-service-limits.md) . Например, в стандартном канале может быть установлено не более 10 связей или подключений между виртуальными сетями как при классической модели, так и модели развертывания с помощью Resource Manager.
+> Применяются все квоты, описанные на странице об [ограничениях службы](../azure-resource-manager/management/azure-subscription-service-limits.md) . Например, в стандартном канале может быть установлено не более 10 связей или подключений между виртуальными сетями как при классической модели, так и модели развертывания с помощью Resource Manager.
 > 
 > 
 
@@ -87,10 +87,10 @@ ms.locfileid: "74076642"
 * Управление жизненным циклом канала ExpressRoute в классической модели развертывания.
 * Управление доступом на основе ролей (RBAC) в классической модели развертывания. Элементы управления RBAC невозможно использовать для канала в классической модели развертывания. Любой администратор или соадминистратор подписки может связать виртуальную сеть с каналом или удалить связь между ними.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Настройка
 Следуйте указаниям в статье [Перемещение каналов ExpressRoute из классической модели развертывания в модель Resource Manager](expressroute-howto-move-arm.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Перенос связанных виртуальных сетей ExpressRoute из классической модели на модель Resource Manager](expressroute-migration-classic-resource-manager.md)
 * Сведения о рабочем процессе см. в статье [Процедуры ExpressRoute для подготовки каналов и состояний каналов](expressroute-workflows.md).
 * Чтобы создать подключение ExpressRoute, выполните действия в следующих статьях:

@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/23/2019
+ms.date: 12/30/2019
 ms.author: rkarlin
-ms.openlocfilehash: ff5a8f940348c36ca2a19fb31a173b2dfc4f4d6b
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 273bea7fa8629dd907c228416d06dac087b0ec85
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73514138"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75610596"
 ---
 # <a name="connect-your-f5-big-ip-appliance"></a>Подключение устройства F5 с большим IP-адресом 
 
@@ -42,7 +42,7 @@ F5 BIG-IP может интегрировать и экспортировать 
 1. Чтобы подключиться к серверу F5 BIG-IP, необходимо опубликовать объявление JSON в конечной точке API системы. Инструкции по выполнению этой задачи см. в статье [Интеграция команды F5 BIG-IP с Sentinel](https://devcentral.f5.com/s/articles/Integrating-the-F5-BIGIP-with-Azure-Sentinel).
 8. На странице соединителя F5 BIG-IP скопируйте идентификатор рабочей области и первичный ключ и вставьте их, как описано в разделе [потоковая передача данных в Azure log Analytics](https://devcentral.f5.com/s/articles/Integrating-the-F5-BIGIP-with-Azure-Sentinel#streaming-data-to-azure-log-analytics).
 1. После выполнения инструкций F5 BIG-IP на странице соединителя Sentinel Azure отображаются подключенные типы данных.
-1. Чтобы использовать соответствующую схему в Log Analytics для событий больших IP-адресов F5, выполните поиск по запросу **F5Telemetry_LTM_CL**, **F5Telemetry_system_CL**и **F5Telemetry_ASM_CL**.
+1. Чтобы использовать соответствующую схему в Log Analytics для событий больших IP-адресов F5, выполните поиск **F5Telemetry_LTM_CL**, **F5Telemetry_system_CL**и **F5Telemetry_ASM_CL**.
 
 
 ## <a name="validate-connectivity"></a>Проверка подключения
@@ -53,6 +53,8 @@ F5 BIG-IP может интегрировать и экспортировать 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить метку F5 BIG-IP к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
-- Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
+- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+
 

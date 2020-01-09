@@ -1,26 +1,26 @@
 ---
 title: Поиск по Azure Cosmos DBным данным
 titleSuffix: Azure Cognitive Search
-description: Выполняет сканирование источника данных Azure Cosmos DB и прием данных в полнотекстовом индексе с возможностью поиска в Когнитивный поиск Azure. Индексаторы автоматизируют прием данных из выбранных источников, таких как Azure Cosmos DB.
+description: Импорт данных из Azure Cosmos DB в индекс с возможностью поиска в Когнитивный поиск Azure. Индексаторы автоматизируют прием данных из выбранных источников, таких как Azure Cosmos DB.
 author: mgottein
 manager: nitinme
 ms.author: magottei
 ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: 616e5dc5ac6416d2efe1d9338b99c2b400fe572a
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.date: 01/02/2020
+ms.openlocfilehash: ef136345c7c41c720efd3c79923b6ce646de41e2
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74977120"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75642171"
 ---
 # <a name="how-to-index-cosmos-db-data-using-an-indexer-in-azure-cognitive-search"></a>Индексирование Cosmos DB данных с помощью индексатора в Azure Когнитивный поиск 
 
 > [!IMPORTANT] 
 > API SQL общедоступен.
-> API MongoDB, API Gremlin и поддержка API Cassandra в настоящее время доступны в общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Вы можете запросить доступ к предварительным просмотрам, заполнив [эту форму](https://aka.ms/azure-cognitive-search/indexer-preview). [Версия REST API 2019-05-06-Preview](search-api-preview.md) предоставляет предварительные версии функций. В настоящее время предоставляется ограниченная поддержка портала, но поддержка пакета SDK для .NET пока что отсутствует.
+> API MongoDB, API Gremlin и поддержка API Cassandra в настоящее время доступны в общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Вы можете запросить доступ к предварительным просмотрам, заполнив [эту форму](https://aka.ms/azure-cognitive-search/indexer-preview). [Версия REST API 2019-05-06-Preview](search-api-preview.md) предоставляет предварительные версии функций. Сейчас доступна ограниченная поддержка портала. Поддержка пакета SDK для .NET пока не реализована.
 
 > [!WARNING]
 > Когнитивный поиск Azure поддерживает только Cosmos DB коллекции с [политикой индексирования](https://docs.microsoft.com/azure/cosmos-db/index-policy) , для которой задано значение [consistent](https://docs.microsoft.com/azure/cosmos-db/index-policy#indexing-mode) . Индексирование коллекций с политикой отложенной индексации не рекомендуется и может привести к отсутствующим данным. Коллекции с отключенным индексированием не поддерживаются.
@@ -173,14 +173,14 @@ ms.locfileid: "74977120"
 
 Текст запроса содержит определение источника данных, который должен включать следующие поля.
 
-| Поле   | Описание |
+| Поле   | Description |
 |---------|-------------|
-| **name** | Обязательный параметр. Выберите любое имя, представляющее объект источника данных. |
-|**type**| Обязательный параметр. Этот параметр должен содержать значение `cosmosdb`. |
-|**credentials** | Обязательный параметр. Должна быть Cosmos DB строкой подключения.<br/>Для коллекций SQL строки подключения имеют следующий формат: `AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<br/><br/>Для MongoDB Collections добавьте **типа API = MongoDB** в строку подключения:<br/>`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<br/><br/>Чтобы получить доступ к предварительной версии и сведения о том, как отформатировать учетные данные, для графов Gremlin и таблиц Cassandra Зарегистрируйте [предварительную версию для создания условного индексатора](https://aka.ms/azure-cognitive-search/indexer-preview) .<br/><br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если указать номер порта, Когнитивный поиск Azure не сможет индексировать базу данных Azure Cosmos DB.|
+| **name** | Обязательный элемент. Выберите любое имя, представляющее объект источника данных. |
+|**type**| Обязательный элемент. Этот параметр должен содержать значение `cosmosdb`. |
+|**credentials** | Обязательный элемент. Должна быть Cosmos DB строкой подключения.<br/>Для коллекций SQL строки подключения имеют следующий формат: `AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<br/><br/>Для MongoDB Collections добавьте **типа API = MongoDB** в строку подключения:<br/>`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<br/><br/>Чтобы получить доступ к предварительной версии и сведения о том, как отформатировать учетные данные, для графов Gremlin и таблиц Cassandra Зарегистрируйте [предварительную версию для создания условного индексатора](https://aka.ms/azure-cognitive-search/indexer-preview) .<br/><br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если указать номер порта, Когнитивный поиск Azure не сможет индексировать базу данных Azure Cosmos DB.|
 | **container** | В данной вкладке содержатся следующие элементы. <br/>**name**: обязательное поле. Укажите идентификатор коллекции баз данных для индексирования.<br/>**query**: необязательное поле. Можно указать запрос на сведение произвольного документа JSON в плоскую схему, которую Azure Когнитивный поиск может индексировать.<br/>Для API MongoDB, API Gremlin и API Cassandra запросы не поддерживаются. |
 | **датачанжедетектионполици** | (рекомендуется). Ознакомьтесь с разделом [Индексация измененных документов](#DataChangeDetectionPolicy).|
-|**датаделетиондетектионполици** | Необязательный элемент. Ознакомьтесь с разделом [удаленных документов](#DataDeletionDetectionPolicy).|
+|**датаделетиондетектионполици** | Необязательный параметр. Ознакомьтесь с разделом [удаленных документов](#DataDeletionDetectionPolicy).|
 
 ### <a name="using-queries-to-shape-indexed-data"></a>Использование запросов для формирования индексированных данных
 Вы можете указать SQL-запрос для преобразования вложенных свойств или массивов в плоскую структуру, проецирования свойств JSON, а также для фильтрации данных, подлежащих индексированию. 
@@ -257,7 +257,7 @@ ms.locfileid: "74977120"
 | Bool |Edm.Boolean, Edm.String |
 | Числа, которые выглядят как целые числа |Edm.Int32, Edm.Int64, Edm.String |
 | Числа, которые выглядят как числа с плавающей запятой |Edm.Double, Edm.String |
-| Строка |Edm.String |
+| String |Edm.String |
 | Массивы типов-примитивов, например [a, b, c] |Collection(Edm.String) |
 | Строки, которые выглядят как даты |Edm.DateTimeOffset, Edm.String |
 | Геообъекты JSON, например { "тип": "Точка", "координаты": [ долгота, широта ] } |Edm.GeographyPoint |
@@ -362,7 +362,7 @@ ms.locfileid: "74977120"
         }
     }
 
-## <a name="NextSteps"></a>Дальнейшие действия
+## <a name="NextSteps"></a>Следующие шаги
 
 Поздравляем! Вы узнали, как интегрировать Azure Cosmos DB с Azure Когнитивный поиск с помощью индексатора.
 

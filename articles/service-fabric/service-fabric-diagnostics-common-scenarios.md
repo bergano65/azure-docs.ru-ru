@@ -1,29 +1,20 @@
 ---
-title: Диагностика распространенных сценариев Azure Service Fabric | Документация Майкрософт
-description: Узнайте, как устранять неполадки распространенных сценариев с помощью Azure Service Fabric
-services: service-fabric
-documentationcenter: .net
+title: Azure Service Fabric диагностировать распространенные сценарии
+description: Сведения об устранении распространенных сценариев мониторинга и диагностики в приложениях Service Fabric Azure.
 author: srrengar
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 02/25/2019
 ms.author: srrengar
-ms.openlocfilehash: 265aea1b8873d812859b39175c732c3e7118cbb5
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: b012e37bef7fe21e869fc3af415ca57b74c61dd8
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "60394260"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645792"
 ---
 # <a name="diagnose-common-scenarios-with-service-fabric"></a>Диагностика распространенных сценариев с помощью Service Fabric
 
-В этой статье показаны общие сценарии, с которыми сталкиваются пользователи в области мониторинга и диагностики с помощью Service Fabric. Представленные сценарии охватывают все три уровня Service Fabric: приложения, кластеры и инфраструктуры. Каждое решение использует журналы Application Insights и Azure Monitor, средства мониторинга Azure для выполнения каждого сценария. Действия, описанные в каждом решении, дают пользователям общие сведения об использовании Application Insights и Azure Monitor журналов в контексте Service Fabric.
+В этой статье показаны общие сценарии, с которыми сталкиваются пользователи в области мониторинга и диагностики с помощью Service Fabric. Представленные сценарии охватывают все 3 уровня Service Fabric: приложение, кластер и инфраструктуру. Каждое решение использует журналы Application Insights и Azure Monitor, средства мониторинга Azure для выполнения каждого сценария. Действия, описанные в каждом решении, дают пользователям общие сведения об использовании Application Insights и Azure Monitor журналов в контексте Service Fabric.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -56,7 +47,7 @@ ms.locfileid: "60394260"
 1. В том же ресурсе Application Insights вы можете фильтровать запросы вместо исключений и просматривать все сделанные запросы.
 2. Если вы используете пакет SDK для Service Fabric Application Insights, вы можете увидеть визуальное представление ваших служб, связанных друг с другом, а также количество успешных и неудачных запросов. В левой части экрана нажмите вкладку "Схема приложений"
 
-    ![Колонка схемы приложения AI](media/service-fabric-diagnostics-common-scenarios/app-map-blade.png) ![Схема приложения AI](media/service-fabric-diagnostics-common-scenarios/app-map-new.png)
+    ![колонка "схема приложений искусственного интеллекта"](media/service-fabric-diagnostics-common-scenarios/app-map-blade.png) ![схема приложения AI](media/service-fabric-diagnostics-common-scenarios/app-map-new.png)
 
     Дополнительные сведения о схеме приложения см. в документации [по схеме приложения](../azure-monitor/app/app-map.md).
 
@@ -101,7 +92,7 @@ ms.locfileid: "60394260"
 
 ## <a name="how-can-i-monitor-performance-counters"></a>Как я могу контролировать счетчики производительности?
 
-1. После того как вы добавили агент Log Analytics в свой кластер, вам нужно добавить определенные счетчики производительности, которые вы хотите отслеживать. Перейдите на страницу рабочей области Log Analytics на портале. На странице решения вкладка рабочей области находится в меню слева.
+1. После добавления агента Log Analytics в кластер необходимо добавить конкретные счетчики производительности, которые необходимо отслеживанию. Перейдите на страницу Log Analytics рабочей области на портале — на странице решения вкладка Рабочая область находится в меню слева.
 
     ![Вкладка рабочей области Log Analytics](media/service-fabric-diagnostics-common-scenarios/workspacetab.png)
 
@@ -141,7 +132,7 @@ ms.locfileid: "60394260"
 
 Проверьте полный список счетчиков производительности по этим ссылкам [Reliable Services](service-fabric-reliable-serviceremoting-diagnostics.md) и [Субъекты](service-fabric-reliable-actors-diagnostics.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройте оповещения в Application Insights](../azure-monitor/app/alerts.md), чтобы узнавать об изменениях в производительности или характере использования.
 * [Интеллектуальное обнаружение в Application Insights](../azure-monitor/app/proactive-diagnostics.md) осуществляет упреждающий анализ данных телеметрии, отправляемых в Application Insights, и предупреждает о потенциальных проблемах с производительностью.

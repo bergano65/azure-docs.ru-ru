@@ -1,20 +1,20 @@
 ---
 title: Подключение к видео Office 365
-description: Управляйте видео с помощью интерфейсов REST API Office 365 Видео и Azure Logic Apps.
+description: Автоматизация задач и рабочих процессов, управляющих видео в Office 365 видео с помощью Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 05/18/2016
 tags: connectors
-ms.openlocfilehash: bf3c7c4faac3fcd4dd0c3f368fbe18a224ed591b
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 8ac6b7b411e7f42dd076c5b16e7b500a819c617f
+ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74789496"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75665791"
 ---
-# <a name="get-started-with-the-office365-video-connector"></a>Начало работы с соединителем Office 365 Видео
+# <a name="manage-videos-in-office365-video-by-using-azure-logic-apps"></a>Управление видео в Office 365 видео с помощью Azure Logic Apps
 
 Подключившись к Office 365 Видео, вы сможете получать информацию об Office 365 Видео, список видео и многое другое. С помощью Office 365 Видео вы можете:
 
@@ -26,7 +26,7 @@ ms.locfileid: "74789496"
 
 Для начала можно создать приложение логики, как описано [здесь](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-## <a name="create-a-connection-to-office365-video-connector"></a>Создание подключения к соединителю Office 365 Видео
+## <a name="connect-to-office365-video"></a>Подключение к Office 365 видео
 
 При добавлении этого соединителя в приложения логики необходимо войти в учетную запись Office 365 Видео и разрешить приложениям логики подключаться к вашей учетной записи.
 

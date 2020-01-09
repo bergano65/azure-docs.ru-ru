@@ -2,20 +2,16 @@
 title: Управление виртуальной машиной Azure с помощью сбора данных инвентаризации | Документация Майкрософт
 description: Управление виртуальной машиной с помощью сбора данных инвентаризации.
 services: automation
-ms.service: automation
 ms.subservice: change-inventory-management
 keywords: данные инвентаризации, автоматизация, отслеживание
-author: jennyhunter-msft
-ms.author: jehunte
 ms.date: 02/06/2019
 ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: 59f36595e0b6cc8b9d9ea0669c9ecb5be1e74b42
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c5ac5cb1b1f02ea1e8b7eccb65fba978c99cc4f7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61304152"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75419811"
 ---
 # <a name="manage-an-azure-virtual-machine-with-inventory-collection"></a>Управление виртуальной машиной Azure с помощью сбора данных инвентаризации
 
@@ -29,14 +25,14 @@ ms.locfileid: "61304152"
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портале Azure](https://portal.azure.com/).
+Войдите на [портал Azure](https://portal.azure.com/).
 
 ## <a name="enable-inventory-collection-from-the-virtual-machine-resource-page"></a>Включение сбора данных инвентаризации на странице ресурсов виртуальной машины
 
 1. В левой области на портале Azure выберите **Виртуальные машины**.
 2. В списке виртуальных машин выберите виртуальную машину.
 3. В меню **Ресурс** в разделе **Операции** выберите **Инвентаризация**.
-4. Выберите рабочую область Log Analytics для хранения данных журналов.
+4. Выберите рабочую область Log Analytics для хранения журналов данных.
     Если рабочая область для этого региона недоступна, вам будет предложено создать рабочую область по умолчанию и учетную запись службы автоматизации.
 5. Чтобы запустить подключение компьютера, выберите **Включить**.
 
@@ -60,27 +56,27 @@ ms.locfileid: "61304152"
 
 ### <a name="windows-registry"></a>реестр Windows;
 
-|Свойство  |ОПИСАНИЕ  |
+|Свойство  |Description  |
 |---------|---------|
-|Enabled     | Определяет, применяется ли параметр        |
+|Активировано     | Определяет, применяется ли параметр        |
 |Имя элемента     | Понятное имя файла для отслеживания        |
 |Группа     | Имя группы для логического группирования файлов        |
-|Раздел реестра Windows   | Путь для проверки наличия файла. Например: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\Common Startup      |
+|Раздел реестра Windows   | Путь для проверки наличия файла. Например, HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\Common Startup.      |
 
 ### <a name="windows-files"></a>файлы Windows.
 
-|Свойство  |ОПИСАНИЕ  |
+|Свойство  |Description  |
 |---------|---------|
-|Enabled     | Определяет, применяется ли параметр        |
+|Активировано     | Определяет, применяется ли параметр        |
 |Имя элемента     | Понятное имя файла для отслеживания        |
 |Группа     | Имя группы для логического группирования файлов        |
 |Укажите путь     | Путь для проверки наличия файла. Например, c:\temp\myfile.txt.
 
 ### <a name="linux-files"></a>Файлы Linux
 
-|Свойство  |ОПИСАНИЕ  |
+|Свойство  |Description  |
 |---------|---------|
-|Enabled     | Определяет, применяется ли параметр        |
+|Активировано     | Определяет, применяется ли параметр        |
 |Имя элемента     | Понятное имя файла для отслеживания        |
 |Группа     | Имя группы для логического группирования файлов        |
 |Укажите путь     | Путь для проверки наличия файла. Например, /etc/*.conf.       |
@@ -91,7 +87,7 @@ ms.locfileid: "61304152"
 
 ## <a name="manage-machine-groups"></a>Управление группами компьютеров
 
-Инвентаризации позволяет создавать и просматривать группы компьютеров в Azure Monitor журналы. Группы компьютеров являются коллекциями машины, определенные в запросе в журналах Azure Monitor.
+Инвентаризация позволяет создавать и просматривать группы компьютеров в журналах Azure Monitor. Группы компьютеров — это коллекции компьютеров, определяемые запросом в журналах Azure Monitor.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -118,7 +114,7 @@ ms.locfileid: "61304152"
 3. Из списка выберите виртуальную машину, которую необходимо отключить. Рядом с ней будет зеленый флажок с текстом **This workspace** (Эта рабочая область) в столбце **OMS Connection** (Подключение OMS).
 
    >[!NOTE]
-   >OMS, теперь называется журналы Azure Monitor.
+   >Теперь OMS называется журналами Azure Monitor.
    
 4. В верхней части следующей страницы выберите **Отключить**.
 5. В диалоговом окне подтверждения выберите **Да**.

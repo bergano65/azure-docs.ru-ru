@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: jeffya
-ms.openlocfilehash: 32dd3fa1fc137d786174e47d842f762c2a479d64
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 9ba68e90b5ac64c7bdb08af2b567f00c1a076808
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849002"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75453921"
 ---
 # <a name="connect-an-mxchip-iot-devkit-device-to-your-azure-iot-central-application-preview-features"></a>Подключение устройства MXChip IoT DevKit к приложению IoT Central Azure (Предварительная версия компонентов)
 
@@ -52,7 +52,7 @@ ms.locfileid: "74849002"
 
 ## <a name="prepare-the-device"></a>Подготовка устройства
 
-1. Скачайте последнюю [предварительно созданную версию встроенного по Azure IoT Central Plug and Play](https://github.com/MXCHIP/IoTDevKit/raw/master/pnp/iotc_devkit/bin/iotc_devkit.bin) для устройства DevKit из GitHub.
+1. Скачайте последнюю [предварительно созданную версию встроенного по Azure IoT Central Plug and Play](https://github.com/Azure-Samples/mxchip-iot-devkit-pnp/raw/master/bin/iotc_devkit.bin) для устройства DevKit из GitHub.
 
 1. Подключите устройство DevKit к компьютеру, на котором будет выполняться разработка, с помощью USB-кабеля. В Windows в проводнике откроется диск, сопоставленный с хранилищем на устройстве DevKit. Например, этот диск может называться **AZ3166 (D:)** .
 

@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/04/2019
+ms.date: 12/30/2019
 ms.author: cabailey
-ms.openlocfilehash: ac9de44603eb80ca526e358013d2148240f85258
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 90d2a5a985e904217a461b509fb171822d266f60
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73514164"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75610583"
 ---
-# <a name="connect-extrahop-revealx"></a>Подключиться к Екстрахоп раскрытия (x)
+# <a name="connect-extrahop-revealx"></a>Подключение ExtraHop Reveal(x)
 
 Соединитель Екстрахоп (x) Data Connector позволяет легко подключить систему отображения (x) с помощью Sentinel Azure для просмотра панелей мониторинга, создания пользовательских оповещений и улучшения расследования. Такая интеграция дает возможность получить представление о сети организации и улучшить возможности обеспечения безопасности.
 
@@ -42,6 +42,8 @@ ms.locfileid: "73514164"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить Екстрахоп "обнаружить (x)" к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
-- Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
+- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+
 

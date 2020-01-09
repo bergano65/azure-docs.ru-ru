@@ -1,6 +1,6 @@
 ---
 title: Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server | Документы Майкрософт
-description: Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server
+description: Рабочие нагрузки SAP на Виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server
 services: virtual-machines-linux,virtual-machines-windows
 documentationcenter: ''
 author: msjuergent
@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 09/26/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 803b1e397efd4a6f9ddaa3bae1d101c8f204e728
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: a0fbed1f4dd62b2d75d39f475d2fe124c55a2b97
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74328291"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645809"
 ---
 # <a name="sql-server-azure-virtual-machines-dbms-deployment-for-sap-netweaver"></a>SAP NetWeaver на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server
 
@@ -77,8 +77,8 @@ ms.locfileid: "74328291"
 [azure-ps]:/powershell/azureps-cmdlets-docs
 [azure-quickstart-templates-github]:https://github.com/Azure/azure-quickstart-templates
 [azure-script-ps]:https://go.microsoft.com/fwlink/p/?LinkID=395017
-[azure-subscription-service-limits]:../../../azure-subscription-service-limits.md
-[azure-subscription-service-limits-subscription]:../../../azure-subscription-service-limits.md#subscription-limits
+[azure-resource-manager/management/azure-subscription-service-limits]:../../../azure-resource-manager/management/azure-subscription-service-limits.md
+[azure-resource-manager/management/azure-subscription-service-limits-subscription]:../../../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits
 
 [dbms-guide]:dbms-guide_general.md 
 [dbms-guide-2.1]:dbms-guide.md#c7abf1f0-c927-4a7c-9c1d-c7b5b3b7212f 
@@ -235,7 +235,7 @@ ms.locfileid: "74328291"
 [planning-guide-storage-microsoft-azure-storage-and-data-disks]:planning-guide.md#a72afa26-4bf4-4a25-8cf7-855d6032157f 
 
 [resource-group-authoring-templates]:../../../resource-group-authoring-templates.md
-[resource-group-overview]:../../../azure-resource-manager/resource-group-overview.md
+[resource-group-overview]:../../../azure-resource-manager/management/overview.md
 [resource-groups-networking]:../../../networking/networking-overview.md
 [sap-pam]:https://support.sap.com/pam 
 [sap-templates-2-tier-marketplace-image]:https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsap-2-tier-marketplace-image%2Fazuredeploy.json
@@ -249,7 +249,7 @@ ms.locfileid: "74328291"
 [storage-powershell-guide-full-copy-vhd]:../../../storage/common/storage-powershell-guide-full.md#how-to-copy-blobs-from-one-storage-container-to-another
 [storage-premium-storage-preview-portal]:../../windows/disks-types.md
 [storage-redundancy]:../../../storage/common/storage-redundancy.md
-[storage-scalability-targets]:../../../storage/common/storage-scalability-targets.md
+[storage-scalability-targets]:../../../storage/common/scalability-targets-standard-accounts.md
 [storage-use-azcopy]:../../../storage/common/storage-use-azcopy.md
 [template-201-vm-from-specialized-vhd]:https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-from-specialized-vhd
 [templates-101-simple-windows-vm]:https://github.com/Azure/azure-quickstart-templates/tree/master/101-simple-windows-vm
@@ -552,7 +552,7 @@ Azure предлагает службу [Key Vault](https://azure.microsoft.com/
 1. Используйте новейшую версию СУБД, например SQL Server 2017, которая обладает максимумом преимуществ в Azure. 
 2. Тщательно планируйте ландшафт системы SAP в Azure, чтобы сбалансировать структуру файлов данных и ограничения Azure.
    * Не устанавливайте слишком много дисков, но обеспечьте достаточное количество для достижения необходимого числа операций ввода-вывода.
-   * Если вы не используете управляемые диски, помните, что операции ввода-вывода также ограничены для каждой учетной записи хранения Azure, и эти учетные записи хранения ограничены в каждой подписке Azure ([Дополнительные сведения][azure-subscription-service-limits]). 
+   * Если вы не используете управляемые диски, помните, что операции ввода-вывода также ограничены для каждой учетной записи хранения Azure, и эти учетные записи хранения ограничены в каждой подписке Azure ([Дополнительные сведения][azure-resource-manager/management/azure-subscription-service-limits]). 
    * Создавайте stripe-массив из дисков только при необходимости обеспечить более высокую пропускную способность.
 3. Никогда не устанавливайте программное обеспечение и не помещайте файлы, которые требуется сохранять на постоянной основе, на диск D:\, так как он является непостоянным, и любое содержимое этого диска будет потеряно при перезагрузке Windows.
 4. Не используйте кэширование дисков для хранилища Azure класса Standard.

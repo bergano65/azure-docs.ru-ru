@@ -1,32 +1,23 @@
 ---
-title: Изменение параметров FabricTransport в субъектах Azure Service Fabric | Документация Майкрософт
-description: Узнайте, как настроить параметры связи субъекта Azure Service Fabric.
-services: Service-Fabric
-documentationcenter: .net
+title: Изменить параметры FabricTransport
+description: Узнайте, как настроить параметры связи с Service Fabric субъекта Azure для различных конфигураций субъектов.
 author: suchiagicha
-manager: chackdan
-editor: ''
-ms.assetid: dbed72f4-dda5-4287-bd56-da492710cd96
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 04/20/2017
 ms.author: pepogors
-ms.openlocfilehash: c840280e0a9662cd0175feed04f37119443efc3c
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: 182b35194a647f5de706f9ada07b8e9db51bb4c2
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170571"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645588"
 ---
 # <a name="configure-fabrictransport-settings-for-reliable-actors"></a>Настройка параметров FabricTransport для Reliable Actors
 
 Ниже приведены параметры, которые можно настраивать.
 - C#: [FabricTransportRemotingSettings](
 https://docs.microsoft.com/java/api/microsoft.servicefabric.services.remoting.fabrictransport.fabrictransportremotingsettings)
-- Java: [FabricTransportRemotingSettings](https://docs.microsoft.com/java/api/microsoft.servicefabric.services.remoting.fabrictransport.fabrictransportremotingsettings)
+- Java: [FabricTransportRemotingSettings](https://docs.microsoft.com/java/api/microsoft.servicefabric.services.remoting.fabrictransport.fabrictransportremotingsettings).
 
 Конфигурацию FabricTransport по умолчанию можно изменить одним из следующих способов.
 

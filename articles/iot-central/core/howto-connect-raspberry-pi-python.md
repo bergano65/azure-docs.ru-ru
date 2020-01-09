@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: timlt
-ms.openlocfilehash: 258410bcd4f916ac381188bb38d90a3b89c87c89
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 3daa567a916bd0abeb407028c7d06bd1f2bd464b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72954244"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75454079"
 ---
 # <a name="connect-a-raspberry-pi-to-your-azure-iot-central-application-python"></a>Подключение устройства Raspberry Pi к приложению Azure IoT Central (Python)
 
@@ -27,15 +27,15 @@ ms.locfileid: "72954244"
 
 Чтобы выполнить действия, описанные в этой статье, вам потребуются следующие компоненты:
 
-* Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
+* Приложение IoT Central Azure, созданное из шаблона приложения **устаревшего** приложения. Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
 * Устройство Raspberry Pi с операционной системой Raspbian. Raspberry Pi должен иметь возможность подключения к Интернету. Дополнительные сведения см. в разделе [Настройка устройства Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/3).
 
 > [!TIP]
 > Дополнительные сведения о настройке устройства Raspberry Pi и подключении к нему см. в статье [Приступая к работе с Raspberry Pi](https://projects.raspberrypi.org/en/pathways/getting-started-with-raspberry-pi) .
 
-## <a name="sample-devkits-application"></a>Пример **приложения Devkits**
+## <a name="add-a-device-template"></a>Добавление шаблона устройства
 
-Приложение, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits), включает в себя шаблон приложения **Raspberry Pi** со следующими характеристиками:
+В приложении IoT Central Azure добавьте новый шаблон устройства **Raspberry Pi** со следующими характеристиками:
 
 - Данные телеметрии. К ним относятся следующие показатели, которые устройство будет собирать:
   - влажность.
@@ -46,12 +46,17 @@ ms.locfileid: "72954244"
   - гироскоп (X, Y, Z).
 - Настройки
   - Напряжение
-  - Текущее значение
+  - Текущий
   - Скорость вращения вентилятора
   - ИК-переключатель.
-- properties
+- Свойства
   - Свойство серийного номера устройства
   - Свойство расположения облака
+
+1. Выберите **+ создать** на основе шаблонов устройств ![шаблон устройства](media/howto-connect-raspberry-pi-python/adddevicetemplate.png)
+   
+
+2. Выберите **Raspberry Pi** и создайте шаблон устройства Raspberry Pi ![добавить шаблон устройства](media/howto-connect-raspberry-pi-python/newdevicetemplate.png)
 
 Полные сведения о конфигурации шаблона устройства см. в разделе [сведения о шаблоне устройства Raspberry Pi](howto-connect-raspberry-pi-python.md#raspberry-pi-device-template-details).
 
@@ -105,7 +110,7 @@ ms.locfileid: "72954244"
 
 ### <a name="telemetry-measurements"></a>Измерения телеметрии
 
-| Имя поля     | Единицы  | Минимальная | Максимальная | Число десятичных знаков |
+| Имя поля     | Единицы  | Минимальные | Максимальная | Число десятичных знаков |
 | -------------- | ------ | ------- | ------- | -------------- |
 | Влажность       | %      | 0       | 100     | 0              |
 | temp           | °C     | –40     | 120     | 0              |
@@ -124,24 +129,24 @@ ms.locfileid: "72954244"
 
 Числовые параметры
 
-| Отображаемое имя | Имя поля | Единицы | Число десятичных знаков | Минимальная | Максимальная | Initial |
+| Отображаемое имя | Имя поля | Единицы | Число десятичных знаков | Минимальные | Максимальная | Initial |
 | ------------ | ---------- | ----- | -------------- | ------- | ------- | ------- |
 | Напряжение      | setVoltage | В | 0              | 0       | 240     | 0       |
-| Текущее значение      | setCurrent | Амперы  | 0              | 0       | 100     | 0       |
+| Текущий      | setCurrent | Амперы  | 0              | 0       | 100     | 0       |
 | Скорость вращения вентилятора    | fanSpeed   | Об/мин   | 0              | 0       | 1000    | 0       |
 
 Параметры переключения
 
 | Отображаемое имя | Имя поля | Включение текста | Отключение текста | Initial |
 | ------------ | ---------- | ------- | -------- | ------- |
-| IR           | activateIR | ВКЛ      | ВЫКЛ.      | Выключено     |
+| IR           | activateIR | ON      | OFF      | Выключено     |
 
-### <a name="properties"></a>properties
+### <a name="properties"></a>Свойства
 
 | Тип            | Отображаемое имя | Имя поля | Тип данных |
 | --------------- | ------------ | ---------- | --------- |
 | Свойство устройства | Серийный номер   | dieNumber  | number    |
-| Текст            | Location     | location   | Н/Д       |
+| Текст            | Расположение     | location   | Н/Д       |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

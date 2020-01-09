@@ -1,5 +1,5 @@
 ---
-title: Настройка утверждений для приложений клиента Azure AD
+title: Настройка утверждений для приложения клиента Azure AD (PowerShell)
 titleSuffix: Microsoft identity platform
 description: На этой странице описываются сопоставления утверждений Azure Active Directory.
 services: active-directory
@@ -14,12 +14,12 @@ ms.date: 10/22/2019
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8d15631c30566d7588b562f1bb0d6ba5280e699
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 6ad2d6ec7a98a82917916bba2930149705ebfd87
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74918429"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75531077"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Практическое руководство. Настройка утверждений, добавляемых в токены для определенных служб в клиенте (предварительная версия)
 
@@ -45,7 +45,7 @@ ms.locfileid: "74918429"
 
 Существуют определенные наборы утверждений, которые определяют, как и когда они используются в токенах.
 
-| Набор утверждений | Описание |
+| Набор утверждений | Description |
 |---|---|
 | Набор основных утверждений | Имеется в каждом токене, независимо от политики. Эти утверждения также считаются ограниченными, изменить их не удастся. |
 | Набор базовых утверждений | Включает в себя утверждения, которые по умолчанию добавляются в токены (в дополнение к основному набору утверждений). Вы можете опустить или изменить базовые утверждения с помощью политик сопоставления утверждений. |
@@ -88,7 +88,7 @@ ms.locfileid: "74918429"
 | cloud_graph_host_name |
 | cloud_instance_name |
 | cnf |
-| Код |
+| код |
 | controls |
 | credential_keys |
 | csr |
@@ -143,7 +143,7 @@ ms.locfileid: "74918429"
 | onprem_sam_account_name |
 | onprem_sid |
 | openid2_id |
-| пароль |
+| password |
 | platf |
 | polids |
 | pop_jwk |
@@ -157,13 +157,13 @@ ms.locfileid: "74918429"
 | refresh_token |
 | refreshtoken |
 | request_nonce |
-| resource |
-| role |
+| ресурс |
+| роль |
 | roles |
-| scope |
+| область |
 | scp |
 | sid |
-| signature |
+| подпись |
 | signin_state |
 | src1 |
 | src2 |
@@ -178,7 +178,7 @@ ms.locfileid: "74918429"
 | unique_name |
 | upn |
 | user_setting_sync_url |
-| Имя пользователя |
+| username |
 | uti |
 | ver |
 | verified_primary_email |
@@ -285,14 +285,14 @@ ms.locfileid: "74918429"
 
 #### <a name="table-3-valid-id-values-per-source"></a>Таблица 3. Допустимый идентификатор значения для источника
 
-| Источник | ИД | Описание |
+| Источник | ID | Description |
 |-----|-----|-----|
 | Пользователь | surname | Фамилия |
 | Пользователь | givenname | Заданное имя |
 | Пользователь | displayname | Отображаемое имя |
 | Пользователь | objectid | ObjectID |
 | Пользователь | mail | Электронная почта |
-| Пользователь | userprincipalname | User Principal Name |
+| Пользователь | userprincipalname | Имя участника-пользователя |
 | Пользователь | department|отдел;|
 | Пользователь | onpremisessamaccountname | Имя локальной учетной записи SAM |
 | Пользователь | netbiosname| NetBIOS-имя |
@@ -359,9 +359,9 @@ ms.locfileid: "74918429"
 
 #### <a name="table-4-transformation-methods-and-expected-inputs-and-outputs"></a>Таблица 4. Методы преобразования и ожидаемые входные и выходные данные
 
-|TransformationMethod|Ожидаемые входные данные|Ожидаемые выходные данные|Описание|
+|TransformationMethod|Ожидаемые входные данные|Ожидаемые выходные данные|Description|
 |-----|-----|-----|-----|
-|Объединение|строка 1, строка 2, разделитель|outputClaim|Объединение входных строк с помощью разделителя между ними. Например, результатом строка 1:"foo@bar.com", строка 2:"sandbox", разделитель:"." будет outputClaim:"foo@bar.com.sandbox"|
+|Join|строка 1, строка 2, разделитель|outputClaim|Объединение входных строк с помощью разделителя между ними. Например, результатом строка 1:"foo@bar.com", строка 2:"sandbox", разделитель:"." будет outputClaim:"foo@bar.com.sandbox"|
 |ExtractMailPrefix|mail|outputClaim|Извлекает локальную часть адреса электронной почты. Например, результатом mail:"foo@bar.com" будет outputClaim:"foo". Если символ \@ отсутствует, то исходная входная строка возвращается в состоянии "как есть".|
 
 **InputClaims:** элемент InputClaims используется для передачи данных из записи схемы утверждения в преобразование. Он имеет два атрибута: **ClaimTypeReferenceId** и **TransformationClaimType**.
@@ -385,10 +385,10 @@ ms.locfileid: "74918429"
 
 #### <a name="table-5-attributes-allowed-as-a-data-source-for-saml-nameid"></a>Таблица 5. Атрибуты, разрешенные в качестве источника данных для идентификатора имени SAML NameID
 
-|Источник|ИД|Описание|
+|Источник|ID|Description|
 |-----|-----|-----|
 | Пользователь | mail|Электронная почта|
-| Пользователь | userprincipalname|User Principal Name|
+| Пользователь | userprincipalname|Имя участника-пользователя|
 | Пользователь | onpremisessamaccountname|Имя локальной учетной записи SAM|
 | Пользователь | employeeid|Код сотрудника|
 | Пользователь | extensionattribute1 | Атрибут расширения 1 |
@@ -412,11 +412,17 @@ ms.locfileid: "74918429"
 | TransformationMethod | Ограничения |
 | ----- | ----- |
 | ExtractMailPrefix | Нет |
-| Объединение | Присоединяемый суффикс должен быть подтвержденным доменом клиента ресурса. |
+| Join | Присоединяемый суффикс должен быть подтвержденным доменом клиента ресурса. |
 
 ### <a name="custom-signing-key"></a>Пользовательский ключ подписывания
 
-Чтобы политика сопоставления утверждений вступила в силу, объекту субъекта-службы необходимо назначить пользовательский ключ подписывания. Это гарантирует подтверждение того, что токены были изменены создателем политики сопоставления утверждений и защищают приложения от политик сопоставления утверждений, созданных злоумышленниками.  Приложения с включенным сопоставлением утверждений должны проверять Специальный универсальный код ресурса (URI) для ключей подписывания маркера путем добавления `appid={client_id}` к их [запросам метаданных Connect OpenID Connect](v2-protocols-oidc.md#fetch-the-openid-connect-metadata-document).  
+Чтобы политика сопоставления утверждений вступила в силу, объекту субъекта-службы необходимо назначить пользовательский ключ подписывания. Это гарантирует подтверждение того, что токены были изменены создателем политики сопоставления утверждений и защищают приложения от политик сопоставления утверждений, созданных злоумышленниками. Чтобы добавить пользовательский ключ подписывания, можно использовать командлет Azure PowerShell `new-azureadapplicationkeycredential`, чтобы создать учетные данные симметричного ключа для объекта приложения. Чтобы получить дополнительные сведения об этом командлете Azure PowerShell, щелкните [здесь](https://docs.microsoft.com/powershell/module/Azuread/New-AzureADApplicationKeyCredential?view=azureadps-2.0).
+
+Приложения с включенным сопоставлением утверждений должны проверять ключи подписывания маркеров, добавляя `appid={client_id}` к их [запросам метаданных Connect OpenID Connect](v2-protocols-oidc.md#fetch-the-openid-connect-metadata-document). Ниже приведен формат документа метаданных OpenID Connect Connect, который следует использовать: 
+
+```
+https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration?appid={client-id}
+```
 
 ### <a name="cross-tenant-scenarios"></a>Межклиентские сценарии
 
@@ -519,6 +525,6 @@ ms.locfileid: "74918429"
       Add-AzureADServicePrincipalPolicy -Id <ObjectId of the ServicePrincipal> -RefObjectId <ObjectId of the Policy>
       ```
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 Чтобы узнать, как настроить утверждения, выданные в токене SAML с помощью портал Azure, см [. раздел как настроить утверждения, выданные в токене SAML для корпоративных приложений](active-directory-saml-claims-customization.md) .

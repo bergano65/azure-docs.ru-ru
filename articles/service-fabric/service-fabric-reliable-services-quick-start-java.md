@@ -1,27 +1,18 @@
 ---
-title: Создание первой надежной службы Azure Service Fabric на Java | Документация Майкрософт
+title: Создание первой надежной службы на Java
 description: Вводные сведения о создании приложения Service Fabric Microsoft Azure со службами с отслеживанием состояния и без него.
-services: service-fabric
-documentationcenter: java
 author: suhuruli
-manager: chackdan
-editor: ''
-ms.assetid: 7831886f-7ec4-4aef-95c5-b2469a5b7b5d
-ms.service: service-fabric
-ms.devlang: java
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 11/02/2017
 ms.author: suhuruli
-ms.openlocfilehash: 6bf8c632a7513d018745bc74aa0a1db95a39af8b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c3b301a7a9039f1fe8095950f0a5a4e23eb52a9b
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62130132"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614219"
 ---
-# <a name="get-started-with-reliable-services"></a>Приступая к работе с надежными службами
+# <a name="get-started-with-reliable-services-in-java"></a>Приступая к работе с Reliable Services в Java
 > [!div class="op_single_selector"]
 > * [C# в Windows](service-fabric-reliable-services-quick-start.md)
 > * [Java в Linux](service-fabric-reliable-services-quick-start-java.md)

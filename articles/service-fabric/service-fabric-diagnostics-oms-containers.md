@@ -1,29 +1,20 @@
 ---
-title: Мониторинг контейнеров в Service Fabric с помощью журналов Azure Monitor | Документация Майкрософт
-description: Используйте журналы Azure Monitor для мониторинга контейнеров, работающих в кластерах Azure Service Fabric.
-services: service-fabric
-documentationcenter: .net
+title: Мониторинг контейнеров с помощью журналов Azure Monitor
+description: Используйте журналы Azure Monitor для мониторинга контейнеров, работающих в кластерах Service Fabric Azure.
 author: srrengar
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 02/25/2019
 ms.author: srrengar
-ms.openlocfilehash: d03d68560502821b9c343be983d9f7b5a83ed977
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8d4231de13da3f8b2960bd4852136f803a97a546
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60321918"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614440"
 ---
 # <a name="monitor-containers-with-azure-monitor-logs"></a>Мониторинг контейнеров с помощью журналов Azure Monitor
  
-В этой статье рассматриваются шаги, необходимые для настройки решения мониторинга контейнеров журналы Azure Monitor для просмотра событий контейнера. См. дополнительные сведения о [настройке кластера для сбора событий контейнера](service-fabric-tutorial-monitoring-wincontainers.md). 
+В этой статье рассматриваются шаги, необходимые для настройки решения для мониторинга контейнеров Azure Monitor журналов. См. дополнительные сведения о [настройке кластера для сбора событий контейнера](service-fabric-tutorial-monitoring-wincontainers.md). 
 
 [!INCLUDE [log-analytics-agent-note.md](../../includes/log-analytics-agent-note.md)]
 
@@ -32,9 +23,9 @@ ms.locfileid: "60321918"
 ## <a name="set-up-the-container-monitoring-solution"></a>Настройка решения для мониторинга контейнера
 
 > [!NOTE]
-> Необходимо иметь Azure Monitor журналы для кластера, а также развернуть на узлах агент Log Analytics. Если не сделать, выполните действия, описанные в [настроить журналы Azure Monitor](service-fabric-diagnostics-oms-setup.md) и [Добавление агента Log Analytics в кластер](service-fabric-diagnostics-oms-agent.md) первого.
+> Необходимо иметь Azure Monitor журналов, настроенных для кластера, а также агент Log Analytics, развернутый на узлах. В противном случае выполните действия, описанные в разделе [Настройка журналов Azure Monitor](service-fabric-diagnostics-oms-setup.md) и сначала [Добавьте агент log Analytics в кластер](service-fabric-diagnostics-oms-agent.md) .
 
-1. После настройки кластера с журналами Azure Monitor и агент Log Analytics, разверните контейнеры. Прежде чем перейти к следующему шагу, подождите, пока ваши контейнеры развернутся.
+1. После настройки кластера с Azure Monitor журналами и агентом Log Analytics разверните контейнеры. Прежде чем перейти к следующему шагу, подождите, пока ваши контейнеры развернутся.
 
 2. Найдите *Решение для мониторинга контейнеров* в Azure Marketplace и щелкните ресурс **Решения для мониторинга контейнеров** в категории "Мониторинг и управление".
 
@@ -44,7 +35,7 @@ ms.locfileid: "60321918"
 
     ![Базовая панель мониторинга Log Analytics](./media/service-fabric-diagnostics-event-analysis-oms/oms-containers-dashboard.png)
 
-Агент включает сбор нескольких журналов конкретного контейнера, которые можно запрашивать в журналах Azure Monitor, и использовать для визуализации показателей эффективности. Собираются следующие типы журналов.
+Агент включает сбор нескольких журналов, зависящих от контейнера, которые могут запрашиваться в Azure Monitor журналах или использоваться для визуализации индикаторов производительности. Собираются следующие типы журналов.
 
 * ContainerInventory — отображает информацию о местонахождении контейнера, имени и образах.
 * ContainerImageInventory — информация о развернутых образах, в том числе их идентификаторы или размеры.
@@ -55,7 +46,7 @@ ms.locfileid: "60321918"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Дополнительные сведения о [Azure Monitor входит решение "контейнеры"](../azure-monitor/insights/containers.md).
+* Дополнительные сведения о [решении "контейнеры журналов Azure Monitor](../azure-monitor/insights/containers.md)".
 * Дополнительные сведения об оркестрации контейнера в Service Fabric см. в статье [Service Fabric и контейнеры](service-fabric-containers-overview.md)
-* Ознакомьтесь с функциями [поиска и запроса журналов](../log-analytics/log-analytics-log-searches.md) функции, предоставляемые как часть журналов Azure Monitor
-* Настройка журналов Azure Monitor для настройки [автоматические оповещения](../log-analytics/log-analytics-alerts.md) правила помогают выполнять обнаружение и диагностика
+* Ознакомьтесь с функциями поиска по [журналам и запросами](../log-analytics/log-analytics-log-searches.md) , предлагаемыми в составе журналов Azure Monitor
+* Настройка журналов Azure Monitor для настройки правил [автоматического оповещения](../log-analytics/log-analytics-alerts.md) , помогающих в обнаружении и диагностике

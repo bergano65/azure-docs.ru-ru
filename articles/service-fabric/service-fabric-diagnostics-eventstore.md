@@ -1,27 +1,18 @@
 ---
-title: Хранилище событий Azure Service Fabric | Документация Майкрософт
-description: Дополнительные сведения о службе EventStore Azure Service Fabric
-services: service-fabric
-documentationcenter: .net
+title: Хранилище событий Azure Service Fabric
+description: Узнайте о Евентстореах Azure Service Fabric, способах понимания и мониторинга состояния кластера или рабочих нагрузок в любое время.
 author: srrengar
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 6/6/2019
 ms.author: srrengar
-ms.openlocfilehash: e7ae4c77f958bacabea50b7193817cd41ea54aa9
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: d23c8114bf10ef3225775accef6910c0ba539e15
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67449770"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645741"
 ---
-# <a name="eventstore-overview"></a>Общие сведения об EventStore
+# <a name="eventstore-overview"></a>Обзор Евентсторе
 
 >[!NOTE]
 >Начиная с версии Service Fabric 6.4 интерфейсы API EventStore доступны только для кластеров Windows, работающих в Azure. Мы работаем над переносом этих функциональных возможностей в Linux, а также в изолированные кластеры.
@@ -40,7 +31,7 @@ EventStore — это служба Service Fabric с отслеживанием
 Полный список событий, доступных в EventStore, см. в [этом](service-fabric-diagnostics-event-generation-operational.md) разделе.
 
 >[!NOTE]
->Начиная с версии Service Fabric 6.4 к API EventStore и UX являются общедоступными, для кластеров Windows Azure. Мы работаем над переносом этих функциональных возможностей в Linux, а также в изолированные кластеры.
+>Начиная с версии Service Fabric 6.4 Интерфейсы API и UX Евентсторе общедоступны для кластеров Windows Azure. Мы работаем над переносом этих функциональных возможностей в Linux, а также в изолированные кластеры.
 
 Службу EventStore можно запрашивать для событий, доступных для каждой сущности и типа сущности в кластере. Это означает, что вы можете запрашивать события на следующих уровнях:
 * Кластер. События, относящиеся к кластеру (например, обновление кластера).
@@ -71,11 +62,11 @@ EventStore — это служба Service Fabric с отслеживанием
     ],
 ```
 
-### <a name="azure-cluster-version-65"></a>Кластер Azure 6.5 и более поздних версиях
-Если кластеру Azure обновляется до версии 6.5 или более поздней версии, EventStore автоматически включается в кластере. Такая возможность, необходимо обновить шаблон кластера на следующий:
+### <a name="azure-cluster-version-65"></a>Кластер Azure версии 6.5 +
+Если ваш кластер Azure обновлен до версии 6,5 или более поздней, Евентсторе будет автоматически включен в кластере. Чтобы отказаться от этого, необходимо обновить шаблон кластера следующим образом:
 
-* Используйте API версии `2019-03-01` или более поздней версии 
-* Добавьте следующий код в раздел свойств в кластере
+* Использовать версию API `2019-03-01` или более поздней версии 
+* Добавьте следующий код в раздел свойств кластера.
   ```json  
     "fabricSettings": [
       …
@@ -83,9 +74,9 @@ EventStore — это служба Service Fabric с отслеживанием
     "eventStoreServiceEnabled": false
   ```
 
-### <a name="azure-cluster-version-64"></a>Кластер Azure версии 6.4
+### <a name="azure-cluster-version-64"></a>Кластер Azure версии 6,4
 
-Если вы используете версию 6.4, можно изменить шаблон Azure Resource Manager для включения службы EventStore. Это достигается путем выполнения [обновление конфигурации кластера](service-fabric-cluster-config-upgrade-azure.md) и добавив следующий код, можно использовать ограничения размещения для размещения реплики службы EventStore на конкретных NodeType например NodeType, предназначенный для системных служб . Раздел `upgradeDescription` настраивает обновление конфигурации, чтобы активировать перезапуск узлов. Раздел можно удалить в другом обновлении.
+Если вы используете версию 6,4, можно изменить шаблон Azure Resource Manager, чтобы включить службу Евентсторе. Это можно сделать, выполнив [Обновление конфигурации кластера](service-fabric-cluster-config-upgrade-azure.md) и добавив следующий код. Вы можете использовать размещения, чтобы разместить реплики службы евентсторе на определенном NodeType, например, для системных служб. Раздел `upgradeDescription` настраивает обновление конфигурации, чтобы активировать перезапуск узлов. Раздел можно удалить в другом обновлении.
 
 ```json
     "fabricSettings": [

@@ -1,18 +1,18 @@
 ---
 title: Подключение к Dropbox
-description: Передавайте файлы и управляйте ими с помощью интерфейсов REST API Dropbox и Azure Logic Apps.
+description: Автоматизация задач и рабочих процессов, которые передают файлы в Dropbox и управляют ими с помощью Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 03/01/2019
 tags: connectors
-ms.openlocfilehash: b38f9b9626e5eec0272256aacc71f7503a006dd6
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 8f54f832884b172761f62b16db29d2f0abd0dd46
+ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74789817"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75665757"
 ---
 # <a name="upload-and-manage-files-in-dropbox-by-using-azure-logic-apps"></a>Передача файлов в Dropbox и управление ими с помощью Azure Logic Apps
 
@@ -64,7 +64,7 @@ ms.locfileid: "74789817"
 
 ## <a name="connector-reference"></a>Справочник по соединителям
 
-Для получения технических сведений, таких как триггеры, действия и ограничения, как описано в файле OpenAPI (ранее Swagger) соединителя, см. [страницу справочника по соединителю](/connectors/dropbox/).
+См. дополнительные технические сведения о [триггерах, действиях и ограничениях, описываемых файлом Swagger соединителя](/connectors/dropbox/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

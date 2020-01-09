@@ -1,18 +1,20 @@
 ---
-title: Использование Машинное обучение Azure в записных книжках Azure
-description: Обзор примеров записных книжек для Машинное обучение Azure, которые можно использовать с записными книжками Azure.
-ms.topic: article
+title: Использование Машинное обучение Azure в предварительной версии Azure Notebook
+description: Обзор примеров записных книжек для Машинное обучение Azure, которые можно использовать с предварительной версией Azure Notebooks.
+ms.topic: how-to
 ms.date: 12/04/2018
-ms.openlocfilehash: e3c4fbdf35bf7ea1f4dddbceb9d7235c67ed13a4
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 3c0e0e9ccea079d7e8f4e35e9af2a0e1c1ec5051
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277461"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75646958"
 ---
-# <a name="use-azure-machine-learning-in-a-notebook"></a>Использование Машинное обучение Azure в записной книжке
+# <a name="use-azure-machine-learning-in-azure-notebooks-preview"></a>Использование Машинное обучение Azure в предварительной версии Azure Notebook
 
 В записных книжках Azure предварительно настроена необходимая среда для работы с [машинное обучение Azure](/azure/machine-learning/service/). Можно легко клонировать пример проекта в свою учетную запись Записных книжек для изучения различных сценариев Машинного обучения.
+
+[!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
 
 ## <a name="clone-the-sample-into-your-account"></a>Клонирование примера в свою учетную запись
 
@@ -33,7 +35,7 @@ ms.locfileid: "74277461"
 
 1. После завершения настройки выберите **01. Приступая к работе** , чтобы открыть папку, содержащую тринадцать различные примеры записных книжек, каждая из которых является ясной.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Документация по Машинное обучение Azure содержит различные другие ресурсы, которые помогут вам работать с Машинное обучение в записных книжках.
 
